@@ -2647,7 +2647,7 @@
         display: grid;
         pointer-events: auto;
       }
-      .mod-panel-right { height: 260px; }
+      .mod-panel-right { min-height: 260px; height: auto; }
     }
 
     /* ── GIS Panel ── */
@@ -4674,24 +4674,146 @@
 
     // ── Touch / swipe support for mobile ──
     (function() {
-      const swipeTarget = document.querySelector('.modules-section');
-      if (!swipeTarget) return;
-      let touchStartX = 0;
-      let touchStartY = 0;
-      swipeTarget.addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
+      const section    = document.querySelector('.modules-section');
+      const panelsWrap = document.querySelector('.mod-panels');
+      if (!section || !panelsWrap) return;
+
+      const THRESHOLD  = 50;
+      const SLIDE_EASE = 'transform 0.32s cubic-bezier(0.25,0.46,0.45,0.94)';
+
+      let startX = 0, startY = 0, currentDx = 0;
+      let dragging = false, axisLocked = false, isHoriz = false;
+      let dragDir  = 0;   // +1 = going next, -1 = going prev
+      let activeEl = null, adjEl = null, wrapW = 0;
+
+      function isMobile() { return window.innerWidth <= 680; }
+
+      function setupDrag(dir) {
+        dragDir  = dir;
+        activeEl = panelsWrap.querySelector('.mod-panel.active');
+        const ai = (modIdx + dir + MOD_ORDER.length) % MOD_ORDER.length;
+        adjEl    = document.getElementById('panel-' + MOD_ORDER[ai]);
+        if (!activeEl || !adjEl) return false;
+
+        wrapW = panelsWrap.offsetWidth;
+        // Fix wrap height so it doesn't collapse when children go absolute
+        panelsWrap.style.height   = activeEl.offsetHeight + 'px';
+        panelsWrap.style.overflow = 'hidden';
+
+        // Pin active panel in place, absolutely
+        activeEl.style.position   = 'absolute';
+        activeEl.style.top        = '0';
+        activeEl.style.left       = '0';
+        activeEl.style.width      = '100%';
+        activeEl.style.transition = 'none';
+        activeEl.style.transform  = 'translateX(0)';
+
+        // Pre-position & reveal adjacent panel off-screen
+        adjEl.style.display    = 'grid';
+        adjEl.style.position   = 'absolute';
+        adjEl.style.top        = '0';
+        adjEl.style.left       = '0';
+        adjEl.style.width      = '100%';
+        adjEl.style.transition = 'none';
+        adjEl.style.transform  = dir === 1 ? `translateX(${wrapW}px)` : `translateX(-${wrapW}px)`;
+        return true;
+      }
+
+      function resetPanels() {
+        modPanels.forEach(p => {
+          p.style.transform = p.style.transition = p.style.position =
+          p.style.top = p.style.left = p.style.width = p.style.display = '';
+        });
+        panelsWrap.style.height = panelsWrap.style.overflow = '';
+      }
+
+      function commit() {
+        const dir     = dragDir;
+        const adjIdx  = (modIdx + dir + MOD_ORDER.length) % MOD_ORDER.length;
+        const nextMod = MOD_ORDER[adjIdx];
+
+        activeEl.style.transition = SLIDE_EASE;
+        adjEl.style.transition    = SLIDE_EASE;
+        activeEl.style.transform  = dir === 1 ? `translateX(-${wrapW}px)` : `translateX(${wrapW}px)`;
+        adjEl.style.transform     = 'translateX(0)';
+
+        adjEl.addEventListener('transitionend', function done() {
+          adjEl.removeEventListener('transitionend', done);
+          // Disable transitions briefly so switchMod's class changes are instant
+          modPanels.forEach(p => p.style.transition = 'none');
+          resetPanels();
+          modIdx = adjIdx;
+          switchMod(nextMod);
+          clearInterval(autoTimer);
+          startAuto();
+          requestAnimationFrame(() => modPanels.forEach(p => p.style.transition = ''));
+          cleanup();
+        });
+      }
+
+      function snapBack() {
+        activeEl.style.transition = SLIDE_EASE;
+        adjEl.style.transition    = SLIDE_EASE;
+        activeEl.style.transform  = 'translateX(0)';
+        adjEl.style.transform     = dragDir === 1 ? `translateX(${wrapW}px)` : `translateX(-${wrapW}px)`;
+
+        activeEl.addEventListener('transitionend', function done() {
+          activeEl.removeEventListener('transitionend', done);
+          resetPanels();
+          cleanup();
+        });
+      }
+
+      function cleanup() {
+        dragging = axisLocked = isHoriz = false;
+        dragDir  = 0;
+        activeEl = adjEl = null;
+        currentDx = 0;
+      }
+
+      section.addEventListener('touchstart', function(e) {
+        if (!isMobile()) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        currentDx = 0; dragging = axisLocked = isHoriz = false;
       }, { passive: true });
-      swipeTarget.addEventListener('touchend', function(e) {
-        const dx = e.changedTouches[0].clientX - touchStartX;
-        const dy = e.changedTouches[0].clientY - touchStartY;
-        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return; // too short or mostly vertical
-        if (dx < 0) {
-          modIdx = (modIdx + 1) % MOD_ORDER.length;
-        } else {
-          modIdx = (modIdx - 1 + MOD_ORDER.length) % MOD_ORDER.length;
+
+      section.addEventListener('touchmove', function(e) {
+        if (!isMobile()) return;
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+
+        if (!axisLocked) {
+          if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+          axisLocked = true;
+          isHoriz    = Math.abs(dx) >= Math.abs(dy);
         }
-        jumpTo(MOD_ORDER[modIdx]);
+        if (!isHoriz) return;
+
+        currentDx = dx;
+        const dir = dx < 0 ? 1 : -1;
+
+        if (!dragging) {
+          dragging = true;
+          if (!setupDrag(dir)) { dragging = false; return; }
+        }
+        if (!activeEl || !adjEl) return;
+
+        activeEl.style.transform = `translateX(${dx}px)`;
+        adjEl.style.transform    = dir === 1
+          ? `translateX(${wrapW + dx}px)`
+          : `translateX(${-wrapW + dx}px)`;
+      }, { passive: true });
+
+      section.addEventListener('touchend', function() {
+        if (!isMobile() || !dragging) { dragging = false; return; }
+        // Only commit if still moving in the original swipe direction past threshold
+        const shouldCommit = dragDir === 1 ? currentDx <= -THRESHOLD : currentDx >= THRESHOLD;
+        shouldCommit ? commit() : snapBack();
+      }, { passive: true });
+
+      section.addEventListener('touchcancel', function() {
+        if (dragging) snapBack();
       }, { passive: true });
     })();
 

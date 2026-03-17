@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.6] 2026-03-17 — Improved mobile swipe for modules carousel
+
+**Improved**
+- `hero-mockup.html`: Replaced basic touchstart/touchend swipe with a full drag-based animation system
+  - Real-time panel dragging follows finger position during the swipe
+  - Axis locking: distinguishes horizontal swipe from vertical scroll before committing to drag
+  - Threshold-based commit (≥50 px) or snap-back if swipe is too short
+  - Smooth cubic-bezier slide animation on commit and snap-back
+  - Proper cleanup and state reset after each gesture
+- `.mod-panel-right` height changed from fixed `260px` to `min-height: 260px; height: auto` so taller content is no longer clipped
+
+---
+
 ## [0.5] 2026-03-17 — Changelog page created
 
 **Added**
