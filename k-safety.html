@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1724">
+  <title>KabatOne — K-Safety</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0f1724;
+      --bg-2:       #0b1220;
+      --blue:       #3b82f6;
+      --blue-light: #60a5fa;
+      --cyan:       #06b6d4;
+      --white:      #e6eef8;
+      --muted:      #4a5c7a;
+      --dim:        #94a3b8;
+      --border:     rgba(255,255,255,0.06);
+      --border-b:   rgba(59,130,246,0.28);
+      --accent:     #3b82f6;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      color-scheme: dark;
+    }
+
+    /* BACKGROUND */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .bg-layer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-layer::after {
+      content: '';
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130%;
+      height: 65%;
+      background: radial-gradient(
+        ellipse at center bottom,
+        rgba(59,130,246,0.18) 0%,
+        rgba(6,182,212,0.07) 28%,
+        transparent 68%
+      );
+    }
+
+    .scan-line {
+      position: fixed;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+      animation: scan 9s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { top: -2px; opacity: 0; }
+      4%   { opacity: 1; }
+      96%  { opacity: 0.6; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    .node {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .node::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,207,239,0.25);
+      animation: node-pulse 3.5s ease-out infinite;
+    }
+    @keyframes node-pulse {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(3.5); opacity: 0; }
+    }
+
+    .city-svg {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: relative;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,12,28,0.72);
+      backdrop-filter: blur(16px);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dim);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav {
+      background: var(--blue);
+      color: white;
+      padding: 9px 22px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+      box-shadow: 0 0 20px rgba(59,130,246,0.35);
+    }
+    .btn-nav:hover {
+      background: var(--blue-light);
+      box-shadow: 0 0 32px rgba(59,130,246,0.55);
+      transform: translateY(-1px);
+    }
+
+    /* NAV DROPDOWN */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 20px; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { transition: transform 0.2s; opacity: 0.6; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .nav-drop-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 200px;
+      background: rgba(8,15,32,0.97);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px; padding: 8px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+      z-index: 200; backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .nav-dropdown:hover .nav-drop-menu {
+      opacity: 1; visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-drop-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px;
+      text-decoration: none; color: var(--dim) !important;
+      font-size: 13px !important; font-weight: 500 !important;
+      letter-spacing: 0.03em !important; text-transform: none !important;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-drop-item:hover { background: rgba(59,130,246,0.1); color: var(--white) !important; }
+    .nav-drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--accent);
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 40px rgba(59,130,246,0.38), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(59,130,246,0.55), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: transparent;
+      color: var(--dim);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 14px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* EYEBROW */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+    }
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    /* SECTION COMMONS */
+    section {
+      position: relative;
+      z-index: 10;
+    }
+    .section-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 100px 40px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 4.5vw, 56px);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      line-height: 1.05;
+    }
+    .section-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.75;
+      margin-top: 14px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* HERO */
+    .hero-section {
+      position: relative;
+      z-index: 10;
+    }
+    .hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 90px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-left {}
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 22px;
+    }
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    .hero-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 5vw, 68px);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 22px;
+    }
+    .hero-h1 .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+    }
+    .hero-stat {
+      flex: 1;
+      padding: 14px 20px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .hero-stat-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* HERO MOCKUP */
+    .hero-mockup {
+      background: var(--bg-2);
+      border: 1px solid var(--border-b);
+      border-radius: 14px;
+      box-shadow: 0 0 60px rgba(59,130,246,0.12), 0 0 120px rgba(59,130,246,0.06);
+      overflow: hidden;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(59,130,246,0.04);
+    }
+    .mockup-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+      color: #4ade80;
+      background: rgba(74,222,128,0.1);
+      border: 1px solid rgba(74,222,128,0.28);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .badge-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 6px #4ade80;
+      animation: blink 1.6s ease-in-out infinite;
+    }
+    .mockup-body {
+      display: grid;
+      grid-template-columns: 1fr 160px;
+      gap: 0;
+    }
+    .mockup-map {
+      padding: 16px;
+      border-right: 1px solid var(--border);
+      background: rgba(6,12,28,0.5);
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mockup-map svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+    .mockup-sidebar {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .sidebar-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .incident-row {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .incident-id {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .incident-type {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    .incident-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+    .badge-red    { background: rgba(239,68,68,0.18);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .badge-orange { background: rgba(249,115,22,0.18); color: #fb923c; border: 1px solid rgba(249,115,22,0.3); }
+    .badge-blue   { background: rgba(59,130,246,0.18); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .mockup-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 12px 18px;
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,0.2);
+    }
+    .mockup-metric {
+      text-align: center;
+    }
+    .metric-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+    }
+    .metric-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .metric-val.green { color: #4ade80; }
+
+    /* KEY BENEFITS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .benefit-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(59,130,246,0.1);
+      transform: translateY(-3px);
+    }
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .benefit-icon svg { color: var(--accent); }
+    .benefit-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .benefit-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.7;
+    }
+
+    /* HOW IT WORKS */
+    .how-bg { background: rgba(0,0,0,0.15); }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+      margin-bottom: 48px;
+    }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-b), transparent);
+      z-index: 0;
+    }
+    .step {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--border-b);
+      background: var(--bg-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--accent);
+      box-shadow: 0 0 24px rgba(59,130,246,0.15);
+    }
+    .step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.65;
+    }
+    .steps-cta { text-align: center; }
+
+    /* CAPABILITIES */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .cap-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cap-item:hover {
+      border-color: rgba(59,130,246,0.2);
+      background: rgba(59,130,246,0.05);
+    }
+    .cap-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cap-check svg { color: var(--accent); }
+    .cap-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--dim);
+    }
+
+    /* INTEGRATIONS */
+    .integrations-bg { background: rgba(0,0,0,0.15); }
+    .integrations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .int-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .int-card:hover {
+      border-color: rgba(59,130,246,0.25);
+      box-shadow: 0 0 30px rgba(59,130,246,0.08);
+      transform: translateY(-2px);
+    }
+    .int-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .int-icon svg { color: var(--accent); }
+    .int-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .int-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* CASE STUDY */
+    .case-study-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .stats-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .stat-box-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 38px;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-box-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .case-study-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .case-study-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px, 3vw, 42px);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .case-study-body {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--dim);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta-section { padding: 0 40px 100px; }
+    .bottom-cta-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .bottom-cta-box {
+      border-radius: 20px;
+      border: 1px solid var(--border-b);
+      background: radial-gradient(ellipse 80% 100% at 50% 120%, rgba(59,130,246,0.14) 0%, transparent 70%),
+                  rgba(255,255,255,0.02);
+      padding: 72px 40px;
+      text-align: center;
+      box-shadow: 0 0 80px rgba(59,130,246,0.1);
+    }
+    .bottom-cta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+    .bottom-cta-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(40px, 5vw, 64px);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .bottom-cta-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--dim);
+      margin-bottom: 40px;
+    }
+    .bottom-cta-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* DIVIDERS */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    /* ── MOBILE NAV ─────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 4px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--dim);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 768px) {
+      nav { padding: 0 20px !important; position: relative; }
+      .nav-hamburger { display: flex; }
+      .btn-nav { display: none !important; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(6,12,28,0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(59,130,246,0.15);
+        padding: 12px 20px 24px;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+      .nav-links > li > a:hover { background: rgba(255,255,255,0.04); }
+      .nav-drop-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255,255,255,0.04) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        margin: 0 0 4px !important;
+        padding: 4px !important;
+        min-width: auto !important;
+      }
+      .nav-drop-item { padding: 11px 14px !important; }
+      .nav-links.open .btn-nav { display: inline-flex !important; background: none; box-shadow: none; color: var(--blue-light); padding: 13px 12px; font-size: 14px; font-weight: 600; }
+    }
+
+    /* ── RESPONSIVE LAYOUT ──────────────────────────────── */
+@media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr !important; padding: 60px 40px 56px !important; }
+      .hero-right { display: none !important; }
+      .section-inner { padding: 64px 40px !important; }
+      .benefits-top, .integrations-top { grid-template-columns: repeat(2, 1fr) !important; }
+      .steps-row, .ai-workflow-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .steps-row::before, .ai-workflow-grid::after { display: none !important; }
+      .case-stats-row, .stats-grid-2x2 { grid-template-columns: repeat(2, 1fr) !important; }
+      .case-study-inner { flex-direction: column !important; gap: 40px; }
+    }
+@media (max-width: 640px) {
+      .hero-inner { padding: 40px 20px 36px !important; }
+      .section-inner { padding: 48px 20px !important; }
+      .benefits-top, .benefits-bottom,
+      .integrations-top, .integrations-bottom,
+      .steps-row, .ai-workflow-grid,
+      .case-stats-row, .stats-grid-2x2 { grid-template-columns: 1fr !important; }
+      .hero-stats { flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-logo { height: 22px; opacity: 0.5; }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="scan-line"></div>
+
+  <div class="node" style="top:9%;left:6%"></div>
+  <div class="node" style="top:24%;left:93%"></div>
+  <div class="node" style="top:55%;left:3%"></div>
+  <div class="node" style="top:14%;left:78%"></div>
+  <div class="node" style="top:72%;left:89%"></div>
+
+  <svg class="city-svg" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="var(--blue)" d="M0,200 L0,148 L18,148 L18,128 L36,128 L36,90 L54,90 L54,108 L72,108 L72,68 L90,68 L90,88 L108,88 L108,48 L126,48 L126,68 L144,68 L144,108 L162,108 L162,88 L180,88 L180,128 L198,128 L198,100 L216,100 L216,58 L234,58 L234,100 L252,100 L252,78 L270,78 L270,108 L288,108 L288,88 L306,88 L306,138 L324,138 L324,118 L342,118 L342,78 L360,78 L360,58 L378,58 L378,88 L396,88 L396,108 L414,108 L414,68 L432,68 L432,48 L450,48 L450,68 L468,68 L468,98 L486,98 L486,78 L504,78 L504,118 L522,118 L522,88 L540,88 L540,108 L558,108 L558,68 L576,68 L576,38 L594,38 L594,68 L612,68 L612,88 L630,88 L630,58 L648,58 L648,98 L666,98 L666,78 L684,78 L684,118 L702,118 L702,98 L720,98 L720,68 L738,68 L738,88 L756,88 L756,128 L774,128 L774,108 L792,108 L792,78 L810,78 L810,58 L828,58 L828,88 L846,88 L846,68 L864,68 L864,108 L882,108 L882,88 L900,88 L900,128 L918,128 L918,98 L936,98 L936,78 L954,78 L954,108 L972,108 L972,68 L990,68 L990,46 L1008,46 L1008,86 L1026,86 L1026,108 L1044,108 L1044,78 L1062,78 L1062,118 L1080,118 L1080,88 L1098,88 L1098,58 L1116,58 L1116,98 L1134,98 L1134,78 L1152,78 L1152,128 L1170,128 L1170,108 L1188,108 L1188,88 L1206,88 L1206,68 L1224,68 L1224,108 L1242,108 L1242,78 L1260,78 L1260,138 L1278,138 L1278,118 L1296,118 L1296,98 L1314,98 L1314,68 L1332,68 L1332,108 L1350,108 L1350,138 L1368,138 L1368,118 L1386,118 L1386,148 L1440,148 L1440,200 Z"/>
+  </svg>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="hero-mockup.html">
+      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" height="32" alt="KabatOne">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="solutions.html">Solutions <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="k-safety.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>K-Safety</a>
+          <a href="k-dispatch.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>K-Dispatch</a>
+          <a href="k-traffic.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>K-Traffic</a>
+          <a href="k-video.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#a855f7"></span>K-Video</a>
+          <a href="k-connect.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#22c55e"></span>K-Connect</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="hero-mockup.html#industries">Industries <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="industry-public-safety.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>Public Safety</a>
+          <a href="industry-municipalities.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>Municipalities</a>
+          <a href="industry-airport.html"        class="nav-drop-item"><span class="nav-drop-dot" style="background:#8b5cf6"></span>Airports</a>
+          <a href="industry-retail.html"         class="nav-drop-item"><span class="nav-drop-dot" style="background:#f59e0b"></span>Retail</a>
+          <a href="industry-logistics.html"      class="nav-drop-item"><span class="nav-drop-dot" style="background:#10b981"></span>Logistics</a>
+          <a href="industry-ports.html"          class="nav-drop-item"><span class="nav-drop-dot" style="background:#0ea5e9"></span>Ports</a>
+          <a href="industry-stadiums.html"       class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>Stadiums &amp; Venues</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn-nav">Book a Demo</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Public Safety &middot; K-Safety
+        </div>
+        <h1 class="hero-h1">AI-Driven Public Safety and Incident Response</h1>
+        <p class="hero-sub">K-Safety unifies public safety operations by integrating event management, GIS, VMS, mobile apps, and seamless third-party integrations into one command center.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn-primary">Book a Demo</a>
+          <a href="contact.html" class="btn-ghost">Talk to an Expert</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-val">5,400+</div>
+            <div class="hero-stat-lbl">Cameras</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-val">530+</div>
+            <div class="hero-stat-lbl">Panic Buttons</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-val">40+</div>
+            <div class="hero-stat-lbl">Cities</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-mockup">
+          <div class="mockup-header">
+            <span class="mockup-title">K-Safety Command Center</span>
+            <span class="badge-live">LIVE</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-map">
+              <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+                <defs>
+                  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="0.5"/>
+                  </pattern>
+                </defs>
+                <rect width="320" height="220" fill="url(#grid)"/>
+                <line x1="0" y1="110" x2="320" y2="110" stroke="rgba(59,130,246,0.07)" stroke-width="1"/>
+                <line x1="160" y1="0" x2="160" y2="220" stroke="rgba(59,130,246,0.07)" stroke-width="1"/>
+                <ellipse cx="140" cy="95" rx="38" ry="24" fill="rgba(59,130,246,0.05)" stroke="rgba(59,130,246,0.15)" stroke-width="1"/>
+                <ellipse cx="200" cy="140" rx="28" ry="18" fill="rgba(6,182,212,0.05)" stroke="rgba(6,182,212,0.12)" stroke-width="1"/>
+                <!-- incident dots -->
+                <circle cx="88" cy="72" r="6" fill="rgba(239,68,68,0.9)" stroke="rgba(239,68,68,0.3)" stroke-width="8"/>
+                <circle cx="88" cy="72" r="3" fill="#ef4444"/>
+                <circle cx="180" cy="118" r="6" fill="rgba(249,115,22,0.9)" stroke="rgba(249,115,22,0.3)" stroke-width="8"/>
+                <circle cx="180" cy="118" r="3" fill="#f97316"/>
+                <circle cx="240" cy="60" r="6" fill="rgba(59,130,246,0.9)" stroke="rgba(59,130,246,0.3)" stroke-width="8"/>
+                <circle cx="240" cy="60" r="3" fill="#3b82f6"/>
+                <circle cx="130" cy="160" r="5" fill="rgba(239,68,68,0.7)" stroke="rgba(239,68,68,0.25)" stroke-width="7"/>
+                <circle cx="130" cy="160" r="2.5" fill="#ef4444"/>
+                <circle cx="280" cy="145" r="4" fill="rgba(249,115,22,0.7)" stroke="rgba(249,115,22,0.2)" stroke-width="6"/>
+                <!-- unit paths -->
+                <path d="M88,72 Q140,95 180,118" stroke="rgba(59,130,246,0.3)" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
+                <circle cx="134" cy="96" r="4" fill="rgba(6,182,212,0.8)" stroke="rgba(6,182,212,0.3)" stroke-width="5"/>
+                <circle cx="134" cy="96" r="2" fill="var(--cyan)"/>
+                <!-- map label -->
+                <text x="12" y="18" font-family="DM Mono, monospace" font-size="8" fill="rgba(148,163,184,0.5)" letter-spacing="1">GIS MAP VIEW</text>
+                <text x="12" y="208" font-family="DM Mono, monospace" font-size="7" fill="rgba(74,222,128,0.6)" letter-spacing="1">3 UNITS ACTIVE</text>
+              </svg>
+            </div>
+            <div class="mockup-sidebar">
+              <div class="sidebar-label">Incidents</div>
+              <div class="incident-row">
+                <div class="incident-id">#INC-4821</div>
+                <div class="incident-type">Armed Robbery</div>
+                <span class="incident-badge badge-red">ACTIVE</span>
+              </div>
+              <div class="incident-row">
+                <div class="incident-id">#INC-4822</div>
+                <div class="incident-type">Traffic Collision</div>
+                <span class="incident-badge badge-orange">PENDING</span>
+              </div>
+              <div class="incident-row">
+                <div class="incident-id">#INC-4820</div>
+                <div class="incident-type">Perimeter Alert</div>
+                <span class="incident-badge badge-blue">DISPATCH</span>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-footer">
+            <div class="mockup-metric">
+              <div class="metric-val">94</div>
+              <div class="metric-lbl">Active Incidents</div>
+            </div>
+            <div class="mockup-metric">
+              <div class="metric-val">12</div>
+              <div class="metric-lbl">Dispatched</div>
+            </div>
+            <div class="mockup-metric">
+              <div class="metric-val green">98.2%</div>
+              <div class="metric-lbl">Uptime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- KEY BENEFITS -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Why K-Safety</div>
+        <h2 class="section-headline">Smarter, Connected Public Safety Operations</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div class="benefit-title">Safety Management</div>
+          <div class="benefit-desc">Automates event handling from detection to resolution, reducing response times and manual coordination.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="3"/>
+              <circle cx="6" cy="6" r="3"/>
+              <circle cx="18" cy="6" r="3"/>
+              <circle cx="6" cy="18" r="3"/>
+              <line x1="9" y1="6" x2="15" y2="6"/>
+              <line x1="9" y1="18" x2="15" y2="18"/>
+              <line x1="6" y1="9" x2="6" y2="15"/>
+              <line x1="18" y1="9" x2="18" y2="15"/>
+            </svg>
+          </div>
+          <div class="benefit-title">Connected Ecosystem</div>
+          <div class="benefit-desc">Seamlessly integrates with leading public safety technologies — VMS, LPR, IoT sensors, radio systems.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10"/>
+              <path d="M12 6v6l4 2"/>
+              <circle cx="19" cy="5" r="3"/>
+              <path d="M17.5 3.5 19 5l1.5-1.5"/>
+            </svg>
+          </div>
+          <div class="benefit-title">Predictive &amp; Real-Time AI</div>
+          <div class="benefit-desc">Forecasts threats, optimizes response times, and provides strategic insights for decision-makers.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+              <path d="M6 7h12M6 11h8"/>
+            </svg>
+          </div>
+          <div class="benefit-title">Scalable &amp; Flexible</div>
+          <div class="benefit-desc">Cloud or on-premises deployment. Scales from a single city to a nationwide network.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-bg">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>The Process</div>
+        <h2 class="section-headline">From Raw Data to Resolved Incident</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Data Aggregation &amp; Analysis</div>
+          <div class="step-desc">Sensors, cameras, IoT devices, and third-party systems feed live data into the platform.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Identify Events</div>
+          <div class="step-desc">AI detects and categorizes incidents in real time, cross-referencing multiple data streams.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Business Logic</div>
+          <div class="step-desc">Applies AI-driven decision-making to prioritize threats and trigger automated workflows.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Event Management</div>
+          <div class="step-desc">Coordinates response across agencies, dispatches resources, and tracks resolution.</div>
+        </div>
+      </div>
+      <div class="steps-cta">
+        <a href="contact.html" class="btn-ghost">Talk to an Expert</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- BUILT-IN CAPABILITIES -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Capabilities</div>
+        <h2 class="section-headline">An All-in-One Public Safety Command Platform</h2>
+      </div>
+      <div class="capabilities-grid">
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">Event detection &amp; automated alerting</span>
+        </div>
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">GIS mapping with live unit tracking</span>
+        </div>
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">Video Management System (VMS) integration</span>
+        </div>
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">Mobile apps for field responders</span>
+        </div>
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">Panic button &amp; IoT sensor network</span>
+        </div>
+        <div class="cap-item">
+          <div class="cap-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="cap-text">AI-powered threat forecasting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- KEY INTEGRATIONS -->
+  <section class="integrations-bg">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Integrations</div>
+        <h2 class="section-headline">Connect K-Safety to Your Existing Infrastructure</h2>
+      </div>
+      <div class="integrations-grid">
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <div class="int-title">Critical Infrastructure &amp; IoT</div>
+          <div class="int-desc">Radars, fire sensors, smart fences, environmental monitors</div>
+        </div>
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-1.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 15l.18 1.92z"/>
+            </svg>
+          </div>
+          <div class="int-title">Communication &amp; Dispatch</div>
+          <div class="int-desc">Radio systems, CAD platforms, inter-agency communication tools</div>
+        </div>
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 7l-7 5 7 5V7z"/>
+              <rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          <div class="int-title">Video Management Systems</div>
+          <div class="int-desc">CCTV, IP cameras, body cams, drone feeds</div>
+        </div>
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="2"/>
+              <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+            </svg>
+          </div>
+          <div class="int-title">AI &amp; Analytics</div>
+          <div class="int-desc">Facial recognition, LPR, gunshot detection, behavioral analytics</div>
+        </div>
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="int-title">Emergency Response Tools</div>
+          <div class="int-desc">Panic buttons, 911 CAD, mobile responder apps, sensors</div>
+        </div>
+        <div class="int-card">
+          <div class="int-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="int-title">GIS &amp; Mapping</div>
+          <div class="int-desc">Real-time mapping, routing, zone management, geofencing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CASE STUDY -->
+  <section>
+    <div class="section-inner">
+      <div class="case-study-inner">
+        <div class="stats-grid-2x2">
+          <div class="stat-box">
+            <div class="stat-box-val">5,400+</div>
+            <div class="stat-box-lbl">Active cameras</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-val">530+</div>
+            <div class="stat-box-lbl">Panic buttons</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-val">100+</div>
+            <div class="stat-box-lbl">Facial recognition cameras</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-val">10,000+</div>
+            <div class="stat-box-lbl">Direct reports</div>
+          </div>
+        </div>
+        <div>
+          <div class="case-study-tag">Case Study</div>
+          <h2 class="case-study-headline">Transforming Public Safety in Jalisco, Mexico</h2>
+          <p class="case-study-body">K-Safety powers one of Latin America's most advanced public safety command centers — integrating thousands of cameras, panic buttons, and AI-driven analytics to protect millions of citizens across the state of Jalisco.</p>
+          <a href="contact.html" class="btn-ghost">See More Case Studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta-section">
+    <div class="bottom-cta-inner" style="padding-top:80px;">
+      <div class="bottom-cta-box">
+        <div class="bottom-cta-label">Get Started</div>
+        <h2 class="bottom-cta-headline">Ready to Transform Public Safety?</h2>
+        <p class="bottom-cta-sub">Schedule a personalized demo and see how K-Safety can protect your city.</p>
+        <div class="bottom-cta-btns">
+          <a href="contact.html" class="btn-primary">Book a Demo</a>
+          <a href="contact.html" class="btn-ghost">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      var btn = document.getElementById("navToggle");
+      var links = document.querySelector(".nav-links");
+      if(btn && links){
+        btn.addEventListener("click", function(){
+          btn.classList.toggle("open");
+          links.classList.toggle("open");
+        });
+        document.addEventListener("click", function(e){
+          if(!btn.contains(e.target) && !links.contains(e.target)){
+            btn.classList.remove("open");
+            links.classList.remove("open");
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png"
+         alt="KabatOne" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
+    <nav class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Security</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>

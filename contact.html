@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1724">
+  <title>KabatOne — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0f1724;
+      --bg-2:       #0b1220;
+      --blue:       #3b82f6;
+      --blue-light: #60a5fa;
+      --cyan:       #06b6d4;
+      --white:      #e6eef8;
+      --muted:      #4a5c7a;
+      --dim:        #94a3b8;
+      --border:     rgba(255,255,255,0.06);
+      --border-b:   rgba(59,130,246,0.28);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      color-scheme: dark;
+    }
+
+    /* BACKGROUND */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .bg-layer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-layer::after {
+      content: '';
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130%;
+      height: 65%;
+      background: radial-gradient(
+        ellipse at center bottom,
+        rgba(59,130,246,0.18) 0%,
+        rgba(6,182,212,0.07) 28%,
+        transparent 68%
+      );
+    }
+
+    .scan-line {
+      position: fixed;
+      top: -2px; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+      animation: scan 9s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { top: -2px; opacity: 0; }
+      4%   { opacity: 1; }
+      96%  { opacity: 0.6; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    .node {
+      position: fixed;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .node::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,207,239,0.25);
+      animation: node-pulse 3.5s ease-out infinite;
+    }
+    @keyframes node-pulse {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(3.5); opacity: 0; }
+    }
+
+    .city-svg {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      width: 100%;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: relative;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,12,28,0.72);
+      backdrop-filter: blur(16px);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dim);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links li.active > a { color: var(--white); }
+    .btn-nav {
+      background: var(--blue);
+      color: white;
+      padding: 9px 22px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+      box-shadow: 0 0 20px rgba(59,130,246,0.35);
+    }
+    .btn-nav:hover {
+      background: var(--blue-light);
+      box-shadow: 0 0 32px rgba(59,130,246,0.55);
+      transform: translateY(-1px);
+    }
+
+    /* NAV DROPDOWN */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { transition: transform 0.2s; opacity: 0.6; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .nav-drop-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 200px;
+      background: rgba(8,15,32,0.97);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px; padding: 8px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+      z-index: 200; backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .nav-dropdown:hover .nav-drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--dim) !important; font-size: 13px !important; font-weight: 500 !important; letter-spacing: 0.03em !important; text-transform: none !important; transition: background 0.15s, color 0.15s; }
+    .nav-drop-item:hover { background: rgba(59,130,246,0.1); color: var(--white) !important; }
+    .nav-drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* PAGE WRAPPER */
+    .page-wrap {
+      position: relative;
+      z-index: 10;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 20px;
+    }
+    .page-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+    .page-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .page-headline span {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-sub {
+      font-size: 1.05rem;
+      color: var(--dim);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* MAIN GRID */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* FORM */
+    .contact-form-wrap {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+    }
+    .form-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      margin-bottom: 8px;
+    }
+    .form-sub {
+      font-size: 0.875rem;
+      color: var(--dim);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    input, textarea, select {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+      width: 100%;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(59,130,246,0.5);
+      background: rgba(59,130,246,0.06);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+    }
+    select option { background: #0f1724; color: var(--white); }
+    textarea { resize: vertical; min-height: 130px; }
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue);
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 15px 36px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+      box-shadow: 0 0 40px rgba(59,130,246,0.38), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-submit:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(59,130,246,0.55), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .btn-submit svg { flex-shrink: 0; }
+
+    /* SIDEBAR */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* INFO CARD */
+    .info-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      transition: border-color 0.2s;
+    }
+    .info-card:hover { border-color: rgba(59,130,246,0.25); }
+    .info-card-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+    }
+
+    /* CONTACT ITEM */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--blue-light);
+    }
+    .contact-item-content {}
+    .contact-item-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .contact-item-val {
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .contact-item-val a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .contact-item-val a:hover { color: var(--blue-light); }
+
+    /* SOCIAL LINKS */
+    .social-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--dim);
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .social-link:hover {
+      background: rgba(59,130,246,0.1);
+      border-color: rgba(59,130,246,0.3);
+      color: var(--white);
+    }
+
+    /* RESPONSE TIME BADGE */
+    .response-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: rgba(6,182,212,0.06);
+      border: 1px solid rgba(6,182,212,0.18);
+      border-radius: 12px;
+    }
+    .response-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+    .response-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 11.5px;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    /* GLOBAL PRESENCE */
+    .offices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .office-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+    .office-flag {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .office-name {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--dim);
+    }
+
+    /* SECTION DIVIDER */
+    .section-divider {
+      position: relative;
+      z-index: 10;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-b), transparent);
+      margin: 0 40px;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta-section {
+      position: relative;
+      z-index: 10;
+      padding: 80px 40px 100px;
+      text-align: center;
+    }
+    .bottom-cta-box {
+      max-width: 620px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border-b);
+      border-radius: 24px;
+      padding: 56px 48px;
+    }
+    .bottom-cta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+    .bottom-cta-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .bottom-cta-sub {
+      color: var(--dim);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--blue);
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 40px rgba(59,130,246,0.38), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px rgba(59,130,246,0.55), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-sidebar { order: -1; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .page-wrap { padding: 48px 20px 80px; }
+      .contact-form-wrap { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .offices-grid { grid-template-columns: 1fr; }
+      .bottom-cta-box { padding: 40px 24px; }
+    }
+
+    /* ── MOBILE NAV ─────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 4px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--dim);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 768px) {
+      nav { padding: 0 20px !important; position: relative; }
+      .nav-hamburger { display: flex; }
+      .btn-nav { display: none !important; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(6,12,28,0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(59,130,246,0.15);
+        padding: 12px 20px 24px;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+      .nav-links > li > a:hover { background: rgba(255,255,255,0.04); }
+      .nav-drop-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255,255,255,0.04) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        margin: 0 0 4px !important;
+        padding: 4px !important;
+        min-width: auto !important;
+      }
+      .nav-drop-item { padding: 11px 14px !important; }
+      .nav-links.open .btn-nav { display: inline-flex !important; background: none; box-shadow: none; color: var(--blue-light); padding: 13px 12px; font-size: 14px; font-weight: 600; }
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-logo { height: 22px; opacity: 0.5; }
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="scan-line"></div>
+
+  <div class="node" style="top:13%;left:7%;animation-delay:0s"></div>
+  <div class="node" style="top:28%;left:91%;animation-delay:0.8s"></div>
+  <div class="node" style="top:62%;left:4%;animation-delay:1.6s"></div>
+  <div class="node" style="top:18%;left:76%;animation-delay:2.4s"></div>
+  <div class="node" style="top:78%;left:87%;animation-delay:0.4s"></div>
+
+  <svg class="city-svg" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax meet" fill="rgba(24,88,245,0.8)" aria-hidden="true">
+    <path d="M0,200 L0,148 L18,148 L18,128 L36,128 L36,90 L54,90 L54,108 L72,108 L72,68 L90,68 L90,88 L108,88 L108,48 L126,48 L126,68 L144,68 L144,108 L162,108 L162,88 L180,88 L180,128 L198,128 L198,100 L216,100 L216,58 L234,58 L234,100 L252,100 L252,78 L270,78 L270,108 L288,108 L288,88 L306,88 L306,138 L324,138 L324,118 L342,118 L342,78 L360,78 L360,58 L378,58 L378,88 L396,88 L396,108 L414,108 L414,68 L432,68 L432,48 L450,48 L450,68 L468,68 L468,98 L486,98 L486,78 L504,78 L504,118 L522,118 L522,88 L540,88 L540,108 L558,108 L558,68 L576,68 L576,38 L594,38 L594,68 L612,68 L612,88 L630,88 L630,58 L648,58 L648,98 L666,98 L666,78 L684,78 L684,118 L702,118 L702,98 L720,98 L720,68 L738,68 L738,88 L756,88 L756,128 L774,128 L774,108 L792,108 L792,78 L810,78 L810,58 L828,58 L828,88 L846,88 L846,68 L864,68 L864,108 L882,108 L882,88 L900,88 L900,128 L918,128 L918,98 L936,98 L936,78 L954,78 L954,108 L972,108 L972,68 L990,68 L990,46 L1008,46 L1008,86 L1026,86 L1026,108 L1044,108 L1044,78 L1062,78 L1062,118 L1080,118 L1080,88 L1098,88 L1098,58 L1116,58 L1116,98 L1134,98 L1134,78 L1152,78 L1152,128 L1170,128 L1170,108 L1188,108 L1188,88 L1206,88 L1206,68 L1224,68 L1224,108 L1242,108 L1242,78 L1260,78 L1260,138 L1278,138 L1278,118 L1296,118 L1296,98 L1314,98 L1314,68 L1332,68 L1332,108 L1350,108 L1350,138 L1368,138 L1368,118 L1386,118 L1386,148 L1440,148 L1440,200 Z"/>
+  </svg>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="hero-mockup.html">
+      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" height="32" alt="KabatOne">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="solutions.html">Solutions <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="k-safety.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>K-Safety</a>
+          <a href="k-dispatch.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>K-Dispatch</a>
+          <a href="k-traffic.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>K-Traffic</a>
+          <a href="k-video.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#a855f7"></span>K-Video</a>
+          <a href="k-connect.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#22c55e"></span>K-Connect</a>
+        </div>
+      </li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li class="active"><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav">Book a Demo</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-wrap">
+    <div class="page-header">
+      <div class="page-eyebrow">
+        <span class="page-eyebrow-dot"></span>
+        Get in Touch
+      </div>
+      <h1 class="page-headline">Talk to Our<br><span>Expert Team</span></h1>
+      <p class="page-sub">Whether you're ready for a demo or just exploring — we're here. Our team typically responds within one business day.</p>
+    </div>
+
+    <!-- CONTACT GRID -->
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <div class="form-title">Send Us a Message</div>
+        <p class="form-sub">Fill out the form and the right person will get back to you.</p>
+
+        <form action="https://formspree.io/f/info@kabatone.com" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Agency</label>
+              <input type="text" id="company" name="company" placeholder="City of Acme">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@agency.gov" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm interested in…</label>
+            <select id="interest" name="interest">
+              <option value="">Select a product or topic</option>
+              <option value="K-Safety">K-Safety — GIS &amp; Situational Awareness</option>
+              <option value="K-Dispatch">K-Dispatch — Emergency Dispatch</option>
+              <option value="K-Traffic">K-Traffic — Traffic Management</option>
+              <option value="K-Video">K-Video — Video Intelligence</option>
+              <option value="K-Connect">K-Connect — Citizen Engagement</option>
+              <option value="Platform">Full KabatOne Platform</option>
+              <option value="Partnership">Partnership / Integration</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your city's challenges or what you'd like to see in a demo…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="contact-sidebar">
+
+        <!-- Response time -->
+        <div class="response-badge">
+          <div class="response-dot"></div>
+          <div class="response-text">Our team is available Mon–Fri<br>and responds within 1 business day</div>
+        </div>
+
+        <!-- Contact details -->
+        <div class="info-card">
+          <div class="info-card-label">Direct Contact</div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-val"><a href="mailto:info@kabatone.com">info@kabatone.com</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.59 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l1.08-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-val"><a href="tel:+525565331725">(52) 55 – 6533 – 1725</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="contact-item-label">Headquarters</div>
+              <div class="contact-item-val">Blvd. Palmas Hills MZ.1<br>Hacienda de las Palmas<br>Huixquilucan, México</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="contact-item-label">U.S. Office</div>
+              <div class="contact-item-val">Cresskill, NJ<br>United States</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="info-card">
+          <div class="info-card-label">Follow Us</div>
+          <div class="social-row">
+            <a href="https://linkedin.com/company/grupo-kabat" target="_blank" rel="noopener" class="social-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://instagram.com/kabat.one/" target="_blank" rel="noopener" class="social-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://facebook.com/profile.php?id=61577965919028" target="_blank" rel="noopener" class="social-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <!-- Global presence -->
+        <div class="info-card">
+          <div class="info-card-label">Global Presence</div>
+          <div class="offices-grid">
+            <div class="office-chip"><span class="office-flag">🇲🇽</span><span class="office-name">Mexico</span></div>
+            <div class="office-chip"><span class="office-flag">🇺🇸</span><span class="office-name">United States</span></div>
+            <div class="office-chip"><span class="office-flag">🇮🇱</span><span class="office-name">Israel</span></div>
+            <div class="office-chip"><span class="office-flag">🌎</span><span class="office-name">Latin America</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta-section">
+    <div class="bottom-cta-box">
+      <div class="bottom-cta-label">See It Live</div>
+      <h2 class="bottom-cta-headline">Ready for a Personalized Demo?</h2>
+      <p class="bottom-cta-sub">Walk through the KabatOne platform with one of our solutions engineers — tailored to your city's specific challenges.</p>
+      <a href="mailto:info@kabatone.com?subject=Demo Request" class="btn-primary">
+        Request a Demo
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8M7 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      var btn = document.getElementById("navToggle");
+      var links = document.querySelector(".nav-links");
+      if(btn && links){
+        btn.addEventListener("click", function(){
+          btn.classList.toggle("open");
+          links.classList.toggle("open");
+        });
+        document.addEventListener("click", function(e){
+          if(!btn.contains(e.target) && !links.contains(e.target)){
+            btn.classList.remove("open");
+            links.classList.remove("open");
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png"
+         alt="KabatOne" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
+    <nav class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Security</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>

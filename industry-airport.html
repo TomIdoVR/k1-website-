@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1724">
+  <title>KabatOne — Airport Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #0f1724; --bg-2: #0b1220; --blue: #3b82f6; --blue-light: #60a5fa; --cyan: #06b6d4; --white: #e6eef8; --muted: #4a5c7a; --dim: #94a3b8; --border: rgba(255,255,255,0.06); --border-b: rgba(59,130,246,0.28); }
+    html, body { min-height: 100%; background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; color-scheme: dark; padding-top: 70px; }
+    .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .bg-layer::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px); background-size: 56px 56px; }
+    .bg-layer::after { content: ''; position: absolute; bottom: -5%; left: 50%; transform: translateX(-50%); width: 130%; height: 65%; background: radial-gradient(ellipse at center bottom, rgba(59,130,246,0.18) 0%, rgba(6,182,212,0.07) 28%, transparent 68%); }
+    .scan-line { position: fixed; top: -2px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%); animation: scan 9s linear infinite; z-index: 1; pointer-events: none; }
+    @keyframes scan { 0% { top: -2px; opacity: 0; } 4% { opacity: 1; } 96% { opacity: 0.6; } 100% { top: 100vh; opacity: 0; } }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 70px; border-bottom: 1px solid var(--border); background: rgba(6,12,28,0.92); backdrop-filter: blur(16px); }
+    .nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--dim); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.18s; }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav { background: var(--blue) !important; color: white !important; padding: 9px 22px !important; border-radius: 7px !important; font-weight: 500 !important; transition: background 0.18s, transform 0.15s !important; box-shadow: 0 0 20px rgba(24,88,245,0.35); }
+    .btn-nav:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
+    .breadcrumb { position: relative; z-index: 10; max-width: 1160px; margin: 0 auto; padding: 20px 40px 0; display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.18s; }
+    .breadcrumb a:hover { color: var(--cyan); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cyan); }
+    .ind-hero { position: relative; z-index: 10; }
+    .ind-hero-inner { max-width: 1160px; margin: 0 auto; padding: 60px 40px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .ind-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--cyan); margin-bottom: 22px; }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); animation: blink 2.2s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    .ind-h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(48px, 5.5vw, 76px); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.0; color: var(--white); margin-bottom: 22px; }
+    .ind-h1 .grad { background: linear-gradient(130deg, #60a5fa 10%, #06b6d4 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .ind-sub { font-size: 17px; font-weight: 300; color: var(--dim); line-height: 1.75; margin-bottom: 36px; max-width: 520px; }
+    .ind-ctas { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--blue); color: white; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 30px; border-radius: 8px; text-decoration: none; box-shadow: 0 0 44px rgba(24,88,245,0.40), inset 0 1px 0 rgba(255,255,255,0.1); transition: background 0.2s, transform 0.2s; }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: var(--dim); font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 400; padding: 14px 24px; border-radius: 8px; text-decoration: none; border: 1px solid var(--border); transition: color 0.2s, border-color 0.2s, transform 0.2s; }
+    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.18); transform: translateY(-2px); }
+    .hero-panel { background: var(--bg-2); border: 1px solid var(--border-b); border-radius: 14px; box-shadow: 0 0 60px rgba(59,130,246,0.12), 0 0 120px rgba(59,130,246,0.06); overflow: hidden; }
+    .panel-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); background: rgba(59,130,246,0.04); }
+    .panel-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .panel-dot.red { background: #ef4444; } .panel-dot.yellow { background: #f59e0b; } .panel-dot.green { background: #10b981; }
+    .panel-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-left: auto; }
+    .panel-body { padding: 20px; }
+    .terminal-map { width: 100%; aspect-ratio: 16/9; background: rgba(6,182,212,0.03); border: 1px solid rgba(59,130,246,0.15); border-radius: 10px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .terminal-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px); background-size: 32px 32px; }
+    .terminal-outline { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; height: 75%; border: 1px solid rgba(59,130,246,0.3); border-radius: 6px; }
+    .gate-marker { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+    .gate-marker.alert { background: #ef4444; box-shadow: 0 0 10px #ef4444; animation: blink 1.5s ease-in-out infinite; }
+    .radar-sweep { position: absolute; left: 50%; top: 50%; width: 60%; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(6,182,212,0.1); transform: translate(-50%, -50%); }
+    .radar-sweep::after { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 50%; transform-origin: 0% 100%; background: linear-gradient(to right, transparent, rgba(6,182,212,0.15)); animation: radar 4s linear infinite; }
+    @keyframes radar { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .zone-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .zone-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 7px; }
+    .zone-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .zone-dot.ok { background: #10b981; } .zone-dot.warn { background: #f59e0b; } .zone-dot.alert { background: #ef4444; }
+    .zone-name { font-size: 13px; font-weight: 500; color: var(--white); flex: 1; }
+    .zone-status { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .ind-section { position: relative; z-index: 10; padding: 80px 0; border-top: 1px solid var(--border); }
+    .ind-container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    .alt-bg { background: rgba(255,255,255,0.01); }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
+    .section-h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(36px, 4vw, 56px); line-height: 1.0; letter-spacing: 0.01em; text-transform: uppercase; color: var(--white); margin-bottom: 12px; }
+    .section-desc { font-size: 16px; font-weight: 300; color: var(--dim); line-height: 1.75; max-width: 620px; margin-bottom: 52px; }
+    .challenges-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .challenge-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 28px; transition: border-color 0.2s, background 0.2s; }
+    .challenge-card:hover { border-color: rgba(59,130,246,0.25); background: rgba(59,130,246,0.04); }
+    .challenge-icon { width: 40px; height: 40px; background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--cyan); }
+    .challenge-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+    .challenge-desc { font-size: 14px; font-weight: 300; color: var(--dim); line-height: 1.7; }
+    .workflow-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+    .workflow-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(59,130,246,0.4), transparent); }
+    .workflow-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; position: relative; }
+    .step-num { width: 56px; height: 56px; border-radius: 50%; background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.25); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: var(--cyan); margin-bottom: 16px; position: relative; z-index: 1; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 12px; color: var(--dim); line-height: 1.6; }
+    .products-strip { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .product-chip { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 6px; padding: 8px 14px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+    .product-chip:hover { border-color: rgba(59,130,246,0.35); color: var(--white); background: rgba(59,130,246,0.06); }
+    .chip-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cyan); }
+    .cta-section { position: relative; z-index: 10; border-top: 1px solid var(--border); padding: 96px 40px; text-align: center; }
+    .cta-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; }
+    .cta-h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(40px, 5vw, 64px); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.0; color: var(--white); margin-bottom: 16px; }
+    .cta-sub { font-size: 17px; font-weight: 300; color: var(--dim); line-height: 1.75; max-width: 560px; margin: 0 auto 40px; }
+    .cta-btns { display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .site-footer { border-top: 1px solid var(--border); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+    .footer-logo { height: 22px; opacity: 0.5; }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 20px; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { transition: transform 0.2s; opacity: 0.6; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .nav-drop-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 200px;
+      background: rgba(8,15,32,0.97);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px; padding: 8px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+      z-index: 200; backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .nav-dropdown:hover .nav-drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--dim) !important; font-size: 13px !important; font-weight: 500 !important; letter-spacing: 0.03em !important; text-transform: none !important; transition: background 0.15s, color 0.15s; }
+    .nav-drop-item:hover { background: rgba(59,130,246,0.1); color: var(--white) !important; }
+    .nav-drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <div class="scan-line"></div>
+
+  <nav>
+    <a href="hero-mockup.html" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" alt="KabatOne" width="160" height="32" fetchpriority="high" style="height:32px;width:auto;display:block;">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="hero-mockup.html">Solutions <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="k-safety.html"   class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>K-Safety</a>
+          <a href="k-dispatch.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>K-Dispatch</a>
+          <a href="k-traffic.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>K-Traffic</a>
+          <a href="k-video.html"    class="nav-drop-item"><span class="nav-drop-dot" style="background:#a855f7"></span>K-Video</a>
+          <a href="k-connect.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#22c55e"></span>K-Connect</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="hero-mockup.html#industries">Industries <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="industry-public-safety.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>Public Safety</a>
+          <a href="industry-municipalities.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>Municipalities</a>
+          <a href="industry-airport.html"        class="nav-drop-item"><span class="nav-drop-dot" style="background:#8b5cf6"></span>Airports</a>
+          <a href="industry-retail.html"         class="nav-drop-item"><span class="nav-drop-dot" style="background:#f59e0b"></span>Retail</a>
+          <a href="industry-logistics.html"      class="nav-drop-item"><span class="nav-drop-dot" style="background:#10b981"></span>Logistics</a>
+          <a href="industry-ports.html"          class="nav-drop-item"><span class="nav-drop-dot" style="background:#0ea5e9"></span>Ports</a>
+          <a href="industry-stadiums.html"       class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>Stadiums &amp; Venues</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="btn-nav">Book a Demo</a></li>
+    </ul>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="hero-mockup.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="#">Industries</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Airport Security</span>
+  </div>
+
+  <section class="ind-hero">
+    <div class="ind-hero-inner">
+      <div class="ind-hero-left">
+        <div class="ind-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Industry — Airport Security
+        </div>
+        <h1 class="ind-h1">
+          Redefining<br>
+          Airport Safety<br>
+          <span class="grad">&amp; Operations</span>
+        </h1>
+        <p class="ind-sub">
+          Where AI meets safety and operation — shaping the future of integrated solutions for the airport sector, from perimeter to gate.
+        </p>
+        <div class="ind-ctas">
+          <a href="contact.html" class="btn-primary">
+            Book a Demo
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="contact.html" class="btn-ghost">See the Platform</a>
+        </div>
+      </div>
+
+      <div class="ind-hero-right">
+        <div class="hero-panel">
+          <div class="panel-bar">
+            <span class="panel-dot red"></span>
+            <span class="panel-dot yellow"></span>
+            <span class="panel-dot green"></span>
+            <span class="panel-label">AIRPORT SECURITY — LIVE</span>
+          </div>
+          <div class="panel-body">
+            <div class="terminal-map">
+              <div class="terminal-grid"></div>
+              <div class="terminal-outline"></div>
+              <div class="radar-sweep"></div>
+              <div class="gate-marker" style="left:22%;top:30%"></div>
+              <div class="gate-marker" style="left:40%;top:20%"></div>
+              <div class="gate-marker alert" style="left:62%;top:35%"></div>
+              <div class="gate-marker" style="left:75%;top:55%"></div>
+              <div class="gate-marker" style="left:30%;top:65%"></div>
+              <div class="gate-marker" style="left:55%;top:70%"></div>
+            </div>
+            <div class="zone-list">
+              <div class="zone-item">
+                <span class="zone-dot ok"></span>
+                <span class="zone-name">Terminal A — Departures</span>
+                <span class="zone-status">Secure</span>
+              </div>
+              <div class="zone-item">
+                <span class="zone-dot warn"></span>
+                <span class="zone-name">Gate C7 — Perimeter</span>
+                <span class="zone-status">Reviewing</span>
+              </div>
+              <div class="zone-item">
+                <span class="zone-dot alert"></span>
+                <span class="zone-name">Cargo Zone 3</span>
+                <span class="zone-status">Alert Active</span>
+              </div>
+              <div class="zone-item">
+                <span class="zone-dot ok"></span>
+                <span class="zone-name">Access Control — Staff</span>
+                <span class="zone-status">Normal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section class="ind-section">
+    <div class="ind-container">
+      <div class="section-label">The Challenges We Solve</div>
+      <h2 class="section-h2">Airport Security Complexity</h2>
+      <p class="section-desc">Airports are among the most complex security environments in the world — vast footprints, high traffic, and zero tolerance for failure.</p>
+      <div class="challenges-grid">
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2C6 2 3 5 3 10s3 8 7 8 7-3 7-8-3-8-7-8z" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="challenge-title">Passenger &amp; Facility Security</div>
+          <div class="challenge-desc">Ensuring protection across vast areas with multiple environments and access points, including detection of suspicious behavior and abandoned objects.</div>
+        </div>
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><rect x="2" y="6" width="16" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 6V4a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="challenge-title">Scalability &amp; Integration</div>
+          <div class="challenge-desc">Integrating diverse legacy technologies while reducing installation, integration, and operational costs across a growing infrastructure.</div>
+        </div>
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M4 4h12v3l-3 3 3 3v3H4v-3l3-3-3-3V4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="challenge-title">Operational Compliance</div>
+          <div class="challenge-desc">Managing integration of different systems accumulated over time to minimize expenses while maintaining compliance with aviation security standards.</div>
+        </div>
+        <div class="challenge-card">
+          <div class="challenge-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M3 10h4l2.5-6L12 16l2.5-4H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="challenge-title">Incident Detection &amp; Management</div>
+          <div class="challenge-desc">Real-time threat identification from perimeter security through facial recognition and anomaly detection — before threats escalate.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section class="ind-section alt-bg">
+    <div class="ind-container">
+      <div class="section-label">Platform Workflow</div>
+      <h2 class="section-h2">Five Steps From Detection to Resolution</h2>
+      <p class="section-desc">KabatOne's airport security platform follows a structured, automated workflow that ensures no threat goes unaddressed.</p>
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="step-num">01</div>
+          <div class="step-title">Detection</div>
+          <div class="step-desc">AI video analytics detect threats and anomalies in real time across all zones</div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">02</div>
+          <div class="step-title">Sorting</div>
+          <div class="step-desc">Events are automatically classified by severity, type, and required response</div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">03</div>
+          <div class="step-title">Management</div>
+          <div class="step-desc">Protocol-based management ensures correct procedures are triggered instantly</div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">04</div>
+          <div class="step-title">Dispatch</div>
+          <div class="step-desc">Resources are assigned and dispatched with full coordination across security teams</div>
+        </div>
+        <div class="workflow-step">
+          <div class="step-num">05</div>
+          <div class="step-title">Reporting</div>
+          <div class="step-desc">Every incident is documented for compliance, audit, and continuous improvement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="ind-section">
+    <div class="ind-container">
+      <div class="section-label">Platform Products</div>
+      <h2 class="section-h2">Built for Aviation Security</h2>
+      <p class="section-desc">KabatOne deploys an integrated suite purpose-built for airport environments.</p>
+      <div class="products-strip">
+        <a href="k-safety.html" class="product-chip"><span class="chip-dot"></span>K-Safety</a>
+        <a href="k-video.html" class="product-chip"><span class="chip-dot"></span>K-Video</a>
+        <a href="k-dispatch.html" class="product-chip"><span class="chip-dot"></span>K-Dispatch</a>
+        <a href="k-connect.html" class="product-chip"><span class="chip-dot"></span>K-Connect</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-label">Get Started</div>
+    <h2 class="cta-h2">Elevate Your<br>Airport's Security</h2>
+    <p class="cta-sub">From perimeter to gate — KabatOne unifies every system into a single intelligent command center for aviation security.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-primary">Book a Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" alt="KabatOne" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
+    <nav class="footer-links">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a><a href="#">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>
