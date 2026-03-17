@@ -18,7 +18,7 @@
       --blue-light: #60a5fa;
       --cyan:       #06b6d4;
       --white:      #e6eef8;
-      --muted:      #4a5c7a;
+      --muted: #748aab;
       --dim:        #94a3b8;
       --border:     rgba(255,255,255,0.06);
       --border-b:   rgba(59,130,246,0.28);
@@ -4671,6 +4671,29 @@
       modIdx = (modIdx + 1) % MOD_ORDER.length;
       jumpTo(MOD_ORDER[modIdx]);
     });
+
+    // ── Touch / swipe support for mobile ──
+    (function() {
+      const swipeTarget = document.querySelector('.modules-section');
+      if (!swipeTarget) return;
+      let touchStartX = 0;
+      let touchStartY = 0;
+      swipeTarget.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      swipeTarget.addEventListener('touchend', function(e) {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return; // too short or mostly vertical
+        if (dx < 0) {
+          modIdx = (modIdx + 1) % MOD_ORDER.length;
+        } else {
+          modIdx = (modIdx - 1 + MOD_ORDER.length) % MOD_ORDER.length;
+        }
+        jumpTo(MOD_ORDER[modIdx]);
+      }, { passive: true });
+    })();
 
     startAuto();
 
