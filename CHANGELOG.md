@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.7] 2026-03-17 — Nav & footer link fixes on remaining pages
+
+**Fixed**
+- `contact.html`: Industries nav item expanded from plain link to full dropdown (all 7 industry pages); About link fixed to `about.html`; "Book a Demo" button moved inside `<ul>` (was incorrectly outside)
+- `about.html`: Contact link in nav and footer fixed to `contact.html` (was `#`)
+- All 7 industry pages (`industry-public-safety`, `industry-municipalities`, `industry-airport`, `industry-retail`, `industry-logistics`, `industry-ports`, `industry-stadiums`): Footer Contact link fixed to `contact.html` (was `#`)
+
+---
+
 ## [0.6] 2026-03-17 — Improved mobile swipe for modules carousel
 
 **Improved**
