@@ -30,9 +30,15 @@ If you made local changes and haven't logged them yet — log them now before do
 - **Remote:** `https://github.com/TomIdoVR/k1-website-.git` — branch `main`
 - **Full rules:** See `AGENTS.md`
 
+## Git workflow
+
+- **Commit your changes** when the task is complete — do not leave edits as uncommitted local changes
+- **Do not push** without explicit user request — commit locally, then wait
+- Commit message format: `Type: short description (vX.Y)` — e.g. `Fix: nav links on industry pages (v0.7)`
+- Always include `CHANGELOG.md` and `changelog.html` in the same commit as your changes
+
 ## Key constraints
 
 - Do not restructure existing CSS — append new rules at the bottom of `<style>`
 - Do not rename element IDs — JS relies on them
-- Do not push without explicit user request
 - Do not delete files without asking first
