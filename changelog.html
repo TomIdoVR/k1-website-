@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1724">
+  <title>KabatOne — Changelog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0f1724;
+      --bg-2:       #0b1220;
+      --blue:       #3b82f6;
+      --blue-light: #60a5fa;
+      --cyan:       #06b6d4;
+      --white:      #e6eef8;
+      --muted:      #4a5c7a;
+      --dim:        #94a3b8;
+      --border:     rgba(255,255,255,0.06);
+      --border-b:   rgba(59,130,246,0.28);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND */
+    .bg-layer {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    }
+    .bg-layer::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-layer::after {
+      content: '';
+      position: absolute; bottom: -5%; left: 50%;
+      transform: translateX(-50%);
+      width: 130%; height: 65%;
+      background: radial-gradient(ellipse at center bottom,
+        rgba(59,130,246,0.18) 0%, rgba(6,182,212,0.07) 28%, transparent 68%);
+    }
+
+    .scan-line {
+      position: fixed; top: -2px; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+      animation: scan 9s linear infinite;
+      z-index: 1; pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { top: -2px; opacity: 0; }
+      4%   { opacity: 1; }
+      96%  { opacity: 0.6; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    .city-svg {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      width: 100%; opacity: 0.06; pointer-events: none; z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: relative; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px; height: 70px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,12,28,0.72);
+      backdrop-filter: blur(16px);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--dim);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links li.active > a { color: var(--white); }
+    .btn-nav {
+      background: var(--blue); color: white;
+      padding: 9px 22px; border-radius: 7px;
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+      box-shadow: 0 0 20px rgba(59,130,246,0.35);
+    }
+    .btn-nav:hover {
+      background: var(--blue-light);
+      box-shadow: 0 0 32px rgba(59,130,246,0.55);
+      transform: translateY(-1px);
+    }
+
+    /* NAV DROPDOWN */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { transition: transform 0.2s; opacity: 0.6; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .nav-drop-menu {
+      position: absolute; top: calc(100% + 14px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 200px; background: rgba(8,15,32,0.97);
+      border: 1px solid rgba(59,130,246,0.25);
+      border-radius: 12px; padding: 8px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+      z-index: 200; backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .nav-dropdown:hover .nav-drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-drop-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--dim) !important; font-size: 13px !important; font-weight: 500 !important; letter-spacing: 0.03em !important; text-transform: none !important; transition: background 0.15s, color 0.15s; }
+    .nav-drop-item:hover { background: rgba(59,130,246,0.1); color: var(--white) !important; }
+    .nav-drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* MOBILE NAV */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; background: none; border: none; cursor: pointer;
+      padding: 8px 4px; z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--dim); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px !important; position: relative; }
+      .nav-hamburger { display: flex; }
+      .btn-nav { display: none !important; }
+      .nav-links {
+        display: none; position: absolute; top: 70px; left: 0; right: 0;
+        background: rgba(6,12,28,0.98); backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(59,130,246,0.15);
+        padding: 12px 20px 24px; flex-direction: column; gap: 2px; z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > li > a { display: block; padding: 13px 12px; font-size: 14px; border-radius: 8px; }
+      .nav-links > li > a:hover { background: rgba(255,255,255,0.04); }
+      .nav-drop-menu {
+        position: static !important; opacity: 1 !important; visibility: visible !important;
+        transform: none !important; background: rgba(255,255,255,0.04) !important;
+        border: none !important; border-radius: 8px !important; box-shadow: none !important;
+        backdrop-filter: none !important; margin: 0 0 4px !important;
+        padding: 4px !important; min-width: auto !important;
+      }
+      .nav-drop-item { padding: 11px 14px !important; }
+    }
+
+    /* PAGE */
+    .page-wrap {
+      position: relative; z-index: 10;
+      max-width: 860px; margin: 0 auto;
+      padding: 72px 40px 120px;
+    }
+
+    /* HEADER */
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 20px;
+    }
+    .eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .page-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: clamp(2.6rem, 6vw, 4rem);
+      color: var(--white); line-height: 1.0; letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .page-sub {
+      font-size: 1rem; color: var(--dim);
+      max-width: 520px; line-height: 1.65; margin-bottom: 64px;
+    }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute; top: 8px; left: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--border-b), transparent 90%);
+    }
+
+    .tl-entry { position: relative; margin-bottom: 52px; }
+    .tl-entry:last-child { margin-bottom: 0; }
+
+    /* dot on the line */
+    .tl-dot {
+      position: absolute; left: -34px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--bg-2);
+      border: 2px solid var(--blue);
+      box-shadow: 0 0 10px rgba(59,130,246,0.4);
+    }
+    .tl-entry.fix .tl-dot  { border-color: var(--cyan); box-shadow: 0 0 10px rgba(6,182,212,0.4); }
+    .tl-entry.feat .tl-dot { border-color: #a855f7;     box-shadow: 0 0 10px rgba(168,85,247,0.4); }
+
+    /* meta row */
+    .tl-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 10px; flex-wrap: wrap;
+    }
+    .tl-version {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      font-weight: 500; letter-spacing: 0.14em;
+      color: var(--blue); text-transform: uppercase;
+    }
+    .tl-entry.fix  .tl-version { color: var(--cyan); }
+    .tl-entry.feat .tl-version { color: #a855f7; }
+    .tl-date {
+      font-family: 'DM Mono', monospace; font-size: 10.5px;
+      color: var(--muted); letter-spacing: 0.08em;
+    }
+    .tl-badge {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px;
+    }
+    .badge-feature { background: rgba(168,85,247,0.12); color: #c084fc; border: 1px solid rgba(168,85,247,0.25); }
+    .badge-fix     { background: rgba(6,182,212,0.1);   color: var(--cyan); border: 1px solid rgba(6,182,212,0.2); }
+    .badge-infra   { background: rgba(59,130,246,0.1);  color: var(--blue-light); border: 1px solid rgba(59,130,246,0.2); }
+
+    .tl-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.35rem;
+      color: var(--white); letter-spacing: 0.01em;
+      margin-bottom: 14px; line-height: 1.2;
+    }
+
+    /* change groups */
+    .change-group { margin-bottom: 14px; }
+    .change-group:last-child { margin-bottom: 0; }
+    .change-group-label {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .label-added   { color: #4ade80; }
+    .label-fixed   { color: var(--cyan); }
+    .label-changed { color: #fbbf24; }
+
+    .change-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .change-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: var(--dim); line-height: 1.55;
+    }
+    .change-list li::before {
+      content: '—'; color: var(--muted); flex-shrink: 0;
+      font-family: 'DM Mono', monospace; font-size: 11px; margin-top: 2px;
+    }
+    .change-list li strong { color: var(--white); font-weight: 500; }
+
+    /* divider */
+    .tl-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      transition: border-color 0.2s;
+    }
+    .tl-card:hover { border-color: rgba(59,130,246,0.2); }
+
+    /* FOOTER */
+    .site-footer {
+      position: relative; z-index: 10;
+      border-top: 1px solid var(--border);
+      padding: 28px 52px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { height: 20px; opacity: 0.45; }
+    .footer-copy {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: 12px; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 640px) {
+      .page-wrap { padding: 48px 20px 80px; }
+      .tl-card { padding: 20px 18px; }
+      .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="scan-line"></div>
+  <svg class="city-svg" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax meet" fill="rgba(24,88,245,0.8)" aria-hidden="true">
+    <path d="M0,200 L0,148 L18,148 L18,128 L36,128 L36,90 L54,90 L54,108 L72,108 L72,68 L90,68 L90,88 L108,88 L108,48 L126,48 L126,68 L144,68 L144,108 L162,108 L162,88 L180,88 L180,128 L198,128 L198,100 L216,100 L216,58 L234,58 L234,100 L252,100 L252,78 L270,78 L270,108 L288,108 L288,88 L306,88 L306,138 L324,138 L324,118 L342,118 L342,78 L360,78 L360,58 L378,58 L378,88 L396,88 L396,108 L414,108 L414,68 L432,68 L432,48 L450,48 L450,68 L468,68 L468,98 L486,98 L486,78 L504,78 L504,118 L522,118 L522,88 L540,88 L540,108 L558,108 L558,68 L576,68 L576,38 L594,38 L594,68 L612,68 L612,88 L630,88 L630,58 L648,58 L648,98 L666,98 L666,78 L684,78 L684,118 L702,118 L702,98 L720,98 L720,68 L738,68 L738,88 L756,88 L756,128 L774,128 L774,108 L792,108 L792,78 L810,78 L810,58 L828,58 L828,88 L846,88 L846,68 L864,68 L864,108 L882,108 L882,88 L900,88 L900,128 L918,128 L918,98 L936,98 L936,78 L954,78 L954,108 L972,108 L972,68 L990,68 L990,46 L1008,46 L1008,86 L1026,86 L1026,108 L1044,108 L1044,78 L1062,78 L1062,118 L1080,118 L1080,88 L1098,88 L1098,58 L1116,58 L1116,98 L1134,98 L1134,78 L1152,78 L1152,128 L1170,128 L1170,108 L1188,108 L1188,88 L1206,88 L1206,68 L1224,68 L1224,108 L1242,108 L1242,78 L1260,78 L1260,138 L1278,138 L1278,118 L1296,118 L1296,98 L1314,98 L1314,68 L1332,68 L1332,108 L1350,108 L1350,138 L1368,138 L1368,118 L1386,118 L1386,148 L1440,148 L1440,200 Z"/>
+  </svg>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="hero-mockup.html">
+      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" height="32" alt="KabatOne">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="solutions.html">Solutions <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 4l3.5 3.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-drop-menu">
+          <a href="k-safety.html"   class="nav-drop-item"><span class="nav-drop-dot" style="background:#3b82f6"></span>K-Safety</a>
+          <a href="k-dispatch.html" class="nav-drop-item"><span class="nav-drop-dot" style="background:#ef4444"></span>K-Dispatch</a>
+          <a href="k-traffic.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#06b6d4"></span>K-Traffic</a>
+          <a href="k-video.html"    class="nav-drop-item"><span class="nav-drop-dot" style="background:#a855f7"></span>K-Video</a>
+          <a href="k-connect.html"  class="nav-drop-item"><span class="nav-drop-dot" style="background:#22c55e"></span>K-Connect</a>
+        </div>
+      </li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-nav">Book a Demo</a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page-wrap">
+
+    <div class="page-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Site History
+    </div>
+    <h1 class="page-headline">Changelog</h1>
+    <p class="page-sub">A running log of every change made to this website — by any agent or contributor. Updated with each deployment.</p>
+
+    <div class="timeline">
+
+      <!-- v0.5 -->
+      <div class="tl-entry" id="v0-5">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.5</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-infra">Infrastructure</span>
+          </div>
+          <div class="tl-title">Changelog page created</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>CHANGELOG.md</strong> — source-of-truth change log for the repo; all agents required to update before committing</li>
+              <li><strong>changelog.html</strong> — this page, matching the site's design system</li>
+              <li>AGENTS.md rule: every agent must log changes before committing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.4 -->
+      <div class="tl-entry fix" id="v0-4">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.4</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Nav &amp; link fixes across all pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li>Logo link now points to <strong>hero-mockup.html</strong> on all pages (was <code>#</code>)</li>
+              <li>Footer "Contact" link on homepage now points to <strong>contact.html</strong></li>
+              <li>Contact form: replaced invalid Formspree URL with JS <strong>mailto: handler</strong> — "Send Message" now opens the email client with all fields pre-filled to info@kabatone.com</li>
+              <li>Minor nav and link corrections on all industry pages and solution pages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.3 -->
+      <div class="tl-entry fix" id="v0-3">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.3</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Mobile responsiveness</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>Hamburger nav</strong> (≤768px) on all 8 pages — animates to ×, closes on outside tap, Solutions dropdown shows flat in mobile menu</li>
+              <li>Responsive layout CSS on all 5 solution pages: 900px collapses hero to 1-col, 640px all grids go single-column</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li>Removed broken CSS rule that hid all nav links on mobile in hero-mockup.html</li>
+              <li>Hamburger touch target enlarged; nav uses <code>position: fixed</code> on mobile</li>
+              <li>Product screen images now fill full width at tablet breakpoint</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.2 -->
+      <div class="tl-entry feat" id="v0-2">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.2</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-feature">Feature</span>
+          </div>
+          <div class="tl-title">Solutions, Contact &amp; Industry pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>k-safety.html</strong> — K-Safety product page (GIS &amp; Situational Awareness)</li>
+              <li><strong>k-dispatch.html</strong> — K-Dispatch product page (Emergency Dispatch)</li>
+              <li><strong>k-traffic.html</strong> — K-Traffic product page (Traffic Management)</li>
+              <li><strong>k-video.html</strong> — K-Video product page (Video Intelligence)</li>
+              <li><strong>k-connect.html</strong> — K-Connect product page (Citizen Engagement)</li>
+              <li><strong>solutions.html</strong> — Solutions overview linking to all 5 products</li>
+              <li><strong>contact.html</strong> — Contact page: form, HQ &amp; US office, social links, global presence</li>
+              <li><strong>about.html</strong> — About page</li>
+              <li>7 industry vertical pages: Public Safety, Municipalities, Airport, Retail, Logistics, Ports, Stadiums</li>
+              <li>Products Section added to homepage between Proof and Why sections</li>
+              <li>Solutions &amp; Industries nav dropdowns added to all pages</li>
+              <li>All "Contact" nav links updated to point to contact.html</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.1 -->
+      <div class="tl-entry feat" id="v0-1">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.1</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-feature">Feature</span>
+          </div>
+          <div class="tl-title">Initial commit — Homepage</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>hero-mockup.html</strong> — Main homepage: hero, modules carousel, proof/logos, Why KabatOne, industries grid, platform section, bottom CTA</li>
+              <li><strong>images/modules/</strong> — Module screenshot assets (GIS, dispatch, video, citizen, etc.)</li>
+              <li><strong>AGENTS.md</strong> — Multi-agent coordination file with design system, page structure, and git workflow rules</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" alt="KabatOne" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
+    <nav class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function(){
+      var btn = document.getElementById("navToggle");
+      var links = document.querySelector(".nav-links");
+      if(btn && links){
+        btn.addEventListener("click", function(){
+          btn.classList.toggle("open");
+          links.classList.toggle("open");
+        });
+        document.addEventListener("click", function(e){
+          if(!btn.contains(e.target) && !links.contains(e.target)){
+            btn.classList.remove("open");
+            links.classList.remove("open");
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

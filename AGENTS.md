@@ -81,6 +81,7 @@ Each module has: a tab button + a panel (`#panel-{name}`) + an image in `images/
 4. **Images stay in** `images/modules/` — do not move or rename them
 5. **Ask before deleting** any existing content
 6. **Test locally** before requesting a push
+7. **Update the changelog before every commit** — add a new entry to `CHANGELOG.md` describing what you changed. Use the existing format: version, date, title, and bullet points grouped by Added / Fixed / Changed. Also update `changelog.html` with a matching `<div class="tl-entry">` block at the top of the timeline.
 
 ---
 
