@@ -18,7 +18,7 @@
       --blue-light: #60a5fa;
       --cyan:       #06b6d4;
       --white:      #e6eef8;
-      --muted:      #4a5c7a;
+      --muted: #748aab;
       --dim:        #94a3b8;
       --border:     rgba(255,255,255,0.06);
       --border-b:   rgba(59,130,246,0.28);
@@ -723,7 +723,7 @@
         <div class="form-title">Send Us a Message</div>
         <p class="form-sub">Fill out the form and the right person will get back to you.</p>
 
-        <form action="https://formspree.io/f/info@kabatone.com" method="POST">
+        <form id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -884,6 +884,25 @@
   </section>
 
   <script>
+    // Contact form → mailto
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name     = document.getElementById('name').value;
+      var company  = document.getElementById('company').value;
+      var email    = document.getElementById('email').value;
+      var phone    = document.getElementById('phone').value;
+      var interest = document.getElementById('interest').value;
+      var message  = document.getElementById('message').value;
+      var subject  = 'Contact Form' + (interest ? ': ' + interest : '');
+      var body = 'Name: ' + name +
+        '\nEmail: ' + email +
+        (company ? '\nCompany: ' + company : '') +
+        (phone   ? '\nPhone: '   + phone   : '') +
+        (interest? '\nInterest: '+ interest : '') +
+        '\n\nMessage:\n' + message;
+      window.location.href = 'mailto:info@kabatone.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+
     (function(){
       var btn = document.getElementById("navToggle");
       var links = document.querySelector(".nav-links");
