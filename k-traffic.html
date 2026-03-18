@@ -881,7 +881,9 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (max-width: 768px) {
-      nav { padding: 0 20px !important; position: relative; }
+      nav { padding: 0 20px !important; position: fixed; }
+      .hiw-diagram { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .hiw-diagram svg { min-width: 560px; }
       .nav-hamburger { display: flex; }
       .btn-nav { display: none !important; }
       .nav-links {

@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.27] 2026-03-17 — Fix sticky nav on mobile + diagram horizontal scroll on all product pages
+**Fixed**
+- Mobile nav was `position: relative` — changed to `position: fixed` so header stays sticky on scroll on all 5 product pages
+- Hub-and-spoke diagram now horizontally scrollable on mobile (`overflow-x: auto`, `min-width: 560px`) instead of shrinking to illegible size
+
 ## [0.26] 2026-03-17 — Add animated hub-and-spoke "How It Works" diagrams to all product pages
 **Added**
 - SVG animated hub-and-spoke flow diagram replacing plain numbered steps in "How It Works" sections
