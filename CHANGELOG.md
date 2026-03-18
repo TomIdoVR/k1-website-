@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.32] 2026-03-18 — Improve K-Traffic hero mockup with city map and live panels
+
+**Improved**
+- Replaced basic intersection diagram in K-Traffic hero with a full city-grid SVG map
+- Added color-coded traffic flow overlays (green/orange/red) on road segments
+- Added animated vehicle dots traversing streets using SVG animateMotion
+- Added pulsing incident markers at congested intersections
+- Added camera feed panel (CAM-07 with scan lines, REC badge, speeding alert)
+- Added active incident card (signal fault with location and timestamp)
+
 ## [0.31] 2026-03-18 — Add mobile layout for How It Works diagrams on all product pages
 **Added**
 - All 5 product pages (k-traffic, k-safety, k-dispatch, k-connect, k-video) now show a compact 3-column grid layout (inputs | hub | outputs) on mobile (≤640px) instead of the unreadable scaled-down SVG. Desktop SVG is unchanged.
