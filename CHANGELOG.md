@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.28] 2026-03-17 — Fix sticky nav on all remaining pages (solutions, about, contact, industries)
+**Fixed**
+- Same `position: relative` nav bug found on solutions.html, about.html, contact.html, and all 7 industry pages — all updated to `position: fixed !important`
+
 ## [0.27] 2026-03-17 — Fix sticky nav on mobile + diagram horizontal scroll on all product pages
 **Fixed**
 - Mobile nav was `position: relative` — changed to `position: fixed` so header stays sticky on scroll on all 5 product pages
