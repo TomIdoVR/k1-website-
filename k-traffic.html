@@ -973,6 +973,65 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--white); }
+
+    /* ── Mobile How-It-Works layout ── */
+    .hiw-mobile { display: none; }
+    @media (max-width: 640px) {
+      .hiw-diagram { display: none !important; }
+      .hiw-mobile {
+        display: grid;
+        grid-template-columns: 1fr 72px 1fr;
+        align-items: center;
+        gap: 0 10px;
+        padding: 0 16px;
+        margin: 24px auto 8px;
+      }
+      .hiw-m-side { display: flex; flex-direction: column; gap: 8px; }
+      .hiw-m-node {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(59,130,246,0.18);
+        border-radius: 7px;
+        padding: 6px 8px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--dim);
+        text-align: center;
+        line-height: 1.3;
+      }
+      .hiw-m-out { border-color: rgba(6,182,212,0.22); }
+      .hiw-m-hub {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(59,130,246,0.55);
+        background: radial-gradient(circle at center, rgba(26,50,96,0.85), rgba(11,18,32,0.95));
+        box-shadow: 0 0 18px rgba(59,130,246,0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6px;
+        flex-shrink: 0;
+      }
+      .hiw-m-hub-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 7.5px;
+        font-weight: 700;
+        color: #60a5fa;
+        letter-spacing: 0.4px;
+        line-height: 1.2;
+      }
+      .hiw-m-hub-tag {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 4.5px;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.2px;
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1087,22 +1146,106 @@
                     <div class="signal-text">Route<br>7 North</div>
                   </div>
                 </div>
-                <div class="intersection-area">
-                  <div class="intersection">
-                    <!-- Road layout -->
-                    <div class="road-h"></div>
-                    <div class="road-v"></div>
-                    <div class="road-center"></div>
-                    <!-- Corners -->
-                    <div class="corner tl"><div class="corner-icon"></div></div>
-                    <div class="corner tr"><div class="corner-icon"></div></div>
-                    <div class="corner bl"><div class="corner-icon"></div></div>
-                    <div class="corner br"><div class="corner-icon"></div></div>
-                    <!-- Flow indicators -->
-                    <div class="flow green flow-h-l"></div>
-                    <div class="flow red   flow-h-r"></div>
-                    <div class="flow green flow-v-t"></div>
-                    <div class="flow yellow flow-v-b"></div>
+                <div class="map-area">
+                  <!-- City grid map -->
+                  <svg class="city-map-svg" viewBox="0 0 278 138" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="278" height="138" fill="#060d18"/>
+                    <!-- Blocks row 1 -->
+                    <rect x="0" y="0" width="77" height="59" fill="#0c1826"/>
+                    <rect x="89" y="0" width="81" height="59" fill="#0c1826"/>
+                    <rect x="182" y="0" width="96" height="59" fill="#0c1826"/>
+                    <!-- Blocks row 2 -->
+                    <rect x="0" y="71" width="77" height="67" fill="#0c1826"/>
+                    <rect x="89" y="71" width="81" height="67" fill="#0c1826"/>
+                    <rect x="182" y="71" width="96" height="67" fill="#0c1826"/>
+                    <!-- Streets base -->
+                    <rect x="77" y="0" width="12" height="138" fill="#101c2c"/>
+                    <rect x="170" y="0" width="12" height="138" fill="#101c2c"/>
+                    <rect x="0" y="59" width="278" height="12" fill="#101c2c"/>
+                    <!-- Dashed center lines -->
+                    <line x1="83" y1="2" x2="83" y2="59" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="83" y1="71" x2="83" y2="136" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="176" y1="2" x2="176" y2="59" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="176" y1="71" x2="176" y2="136" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="2" y1="65" x2="77" y2="65" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="89" y1="65" x2="170" y2="65" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <line x1="182" y1="65" x2="276" y2="65" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="5,5"/>
+                    <!-- Traffic flow overlays -->
+                    <rect x="0" y="59" width="77" height="6" fill="rgba(249,115,22,0.6)"/>
+                    <rect x="89" y="59" width="81" height="6" fill="rgba(239,68,68,0.55)"/>
+                    <rect x="182" y="59" width="96" height="6" fill="rgba(34,197,94,0.5)"/>
+                    <rect x="77" y="0" width="5" height="138" fill="rgba(34,197,94,0.4)"/>
+                    <rect x="170" y="0" width="5" height="59" fill="rgba(239,68,68,0.5)"/>
+                    <rect x="170" y="71" width="5" height="67" fill="rgba(234,179,8,0.45)"/>
+                    <!-- Intersection tints -->
+                    <rect x="170" y="59" width="12" height="12" fill="rgba(239,68,68,0.2)"/>
+                    <rect x="77" y="59" width="12" height="12" fill="rgba(249,115,22,0.2)"/>
+                    <!-- Building detail dots -->
+                    <circle cx="28" cy="20" r="2" fill="rgba(6,182,212,0.22)"/>
+                    <circle cx="56" cy="42" r="1.5" fill="rgba(6,182,212,0.16)"/>
+                    <circle cx="42" cy="32" r="1.5" fill="rgba(6,182,212,0.13)"/>
+                    <circle cx="120" cy="16" r="2" fill="rgba(6,182,212,0.22)"/>
+                    <circle cx="108" cy="44" r="1.5" fill="rgba(6,182,212,0.16)"/>
+                    <circle cx="140" cy="30" r="1.5" fill="rgba(6,182,212,0.13)"/>
+                    <circle cx="222" cy="24" r="2" fill="rgba(6,182,212,0.22)"/>
+                    <circle cx="246" cy="46" r="1.5" fill="rgba(6,182,212,0.16)"/>
+                    <circle cx="200" cy="48" r="1.5" fill="rgba(6,182,212,0.13)"/>
+                    <circle cx="28" cy="96" r="2" fill="rgba(6,182,212,0.18)"/>
+                    <circle cx="55" cy="118" r="1.5" fill="rgba(6,182,212,0.14)"/>
+                    <circle cx="118" cy="104" r="2" fill="rgba(6,182,212,0.18)"/>
+                    <circle cx="222" cy="92" r="2" fill="rgba(6,182,212,0.18)"/>
+                    <circle cx="246" cy="116" r="1.5" fill="rgba(6,182,212,0.14)"/>
+                    <!-- Incident: red pulse at Main × Central -->
+                    <circle cx="176" cy="65" r="8" fill="rgba(239,68,68,0.12)">
+                      <animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.3;0.06;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="176" cy="65" r="3" fill="#ef4444" opacity="0.9"/>
+                    <!-- Warning: yellow pulse at Main × Park -->
+                    <circle cx="83" cy="65" r="6" fill="rgba(234,179,8,0.12)">
+                      <animate attributeName="r" values="4;8;4" dur="2.6s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.25;0.05;0.25" dur="2.6s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="83" cy="65" r="2.5" fill="#eab308" opacity="0.9"/>
+                    <!-- Moving vehicles -->
+                    <circle r="2.5" fill="#22c55e" opacity="0.85">
+                      <animateMotion dur="4.5s" repeatCount="indefinite" path="M0,62 L278,62"/>
+                    </circle>
+                    <circle r="2" fill="#f97316" opacity="0.7">
+                      <animateMotion dur="6s" repeatCount="indefinite" begin="1.5s" path="M278,69 L0,69"/>
+                    </circle>
+                    <circle r="2.5" fill="#ef4444" opacity="0.75">
+                      <animateMotion dur="5s" repeatCount="indefinite" begin="0.5s" path="M173,0 L173,138"/>
+                    </circle>
+                    <circle r="2" fill="#22c55e" opacity="0.7">
+                      <animateMotion dur="5.5s" repeatCount="indefinite" begin="2s" path="M80,138 L80,0"/>
+                    </circle>
+                    <!-- Street labels -->
+                    <text x="3" y="9" font-family="DM Mono,monospace" font-size="5.5" fill="rgba(6,182,212,0.45)" letter-spacing="0.08em">MAIN ST</text>
+                    <text x="92" y="9" font-family="DM Mono,monospace" font-size="5.5" fill="rgba(6,182,212,0.4)" letter-spacing="0.07em">ELM AVE</text>
+                    <text x="185" y="9" font-family="DM Mono,monospace" font-size="5.5" fill="rgba(6,182,212,0.4)" letter-spacing="0.07em">HARBOR</text>
+                    <!-- Border -->
+                    <rect width="278" height="138" fill="none" stroke="rgba(6,182,212,0.1)" stroke-width="1"/>
+                  </svg>
+                  <!-- Bottom panels: camera feed + active incident -->
+                  <div class="mockup-panels">
+                    <div class="cam-panel">
+                      <div class="cam-screen">
+                        <div class="cam-scanlines"></div>
+                        <div class="cam-top-row">
+                          <span class="cam-id">CAM-07</span>
+                          <span class="cam-rec">&#9679; REC</span>
+                        </div>
+                        <div class="cam-alert">&#9650; SPEEDING</div>
+                      </div>
+                      <div class="cam-meta">Route 7 North — Highway</div>
+                    </div>
+                    <div class="incident-card">
+                      <div class="incident-type">&#9888; ACTIVE INCIDENT</div>
+                      <div class="incident-loc">Main St &times; Central Blvd</div>
+                      <div class="incident-detail">Signal fault — manual override active</div>
+                      <div class="incident-time">2 min ago</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1246,6 +1389,25 @@
             <rect x="678" y="313" width="82" height="22" rx="11" fill="#0a1e2a" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.4"/>
             <text x="719" y="328.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#06b6d4">Analytics</text>
           </svg>
+        </div>
+        <!-- Mobile How It Works layout -->
+        <div class="hiw-mobile" aria-hidden="true">
+          <div class="hiw-m-side">
+            <div class="hiw-m-node">IoT Sensors</div>
+            <div class="hiw-m-node">Cameras</div>
+            <div class="hiw-m-node">Loop Detectors</div>
+            <div class="hiw-m-node">Vehicles / V2X</div>
+            <div class="hiw-m-node">Field Reports</div>
+          </div>
+          <div class="hiw-m-hub">
+            <div class="hiw-m-hub-title">K-TRAFFIC</div>
+            <div class="hiw-m-hub-tag">MONITOR · OPTIMIZE · ALERT</div>
+          </div>
+          <div class="hiw-m-side">
+            <div class="hiw-m-node hiw-m-out">Signal Control</div>
+            <div class="hiw-m-node hiw-m-out">Incident Alert</div>
+            <div class="hiw-m-node hiw-m-out">Analytics</div>
+          </div>
         </div>
         <div class="steps-cta reveal reveal-d2">
           <a href="contact.html" class="btn-ghost">Talk to an Expert</a>

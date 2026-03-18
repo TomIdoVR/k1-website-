@@ -1002,6 +1002,65 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--white); }
+
+    /* ── Mobile How-It-Works layout ── */
+    .hiw-mobile { display: none; }
+    @media (max-width: 640px) {
+      .hiw-diagram { display: none !important; }
+      .hiw-mobile {
+        display: grid;
+        grid-template-columns: 1fr 72px 1fr;
+        align-items: center;
+        gap: 0 10px;
+        padding: 0 16px;
+        margin: 24px auto 8px;
+      }
+      .hiw-m-side { display: flex; flex-direction: column; gap: 8px; }
+      .hiw-m-node {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(59,130,246,0.18);
+        border-radius: 7px;
+        padding: 6px 8px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--dim);
+        text-align: center;
+        line-height: 1.3;
+      }
+      .hiw-m-out { border-color: rgba(6,182,212,0.22); }
+      .hiw-m-hub {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(59,130,246,0.55);
+        background: radial-gradient(circle at center, rgba(26,50,96,0.85), rgba(11,18,32,0.95));
+        box-shadow: 0 0 18px rgba(59,130,246,0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6px;
+        flex-shrink: 0;
+      }
+      .hiw-m-hub-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 7.5px;
+        font-weight: 700;
+        color: #60a5fa;
+        letter-spacing: 0.4px;
+        line-height: 1.2;
+      }
+      .hiw-m-hub-tag {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 4.5px;
+        color: rgba(255,255,255,0.35);
+        letter-spacing: 0.2px;
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1304,6 +1363,25 @@
           <rect x="678" y="313" width="82" height="22" rx="11" fill="#0a1e2a" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.4"/>
           <text x="719" y="328.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#06b6d4">Analytics</text>
         </svg>
+      </div>
+      <!-- Mobile How It Works layout -->
+      <div class="hiw-mobile" aria-hidden="true">
+        <div class="hiw-m-side">
+          <div class="hiw-m-node">Voice Calls</div>
+          <div class="hiw-m-node">SMS / Text</div>
+          <div class="hiw-m-node">Field Units</div>
+          <div class="hiw-m-node">IoT Alerts</div>
+          <div class="hiw-m-node">Mobile App</div>
+        </div>
+        <div class="hiw-m-hub">
+          <div class="hiw-m-hub-title">K-DISPATCH</div>
+          <div class="hiw-m-hub-tag">RECEIVE · TRIAGE · DISPATCH</div>
+        </div>
+        <div class="hiw-m-side">
+          <div class="hiw-m-node hiw-m-out">Responders</div>
+          <div class="hiw-m-node hiw-m-out">Coordination</div>
+          <div class="hiw-m-node hiw-m-out">Analytics</div>
+        </div>
       </div>
       <div class="steps-cta">
         <a href="contact.html" class="btn-ghost">Talk to an Expert</a>
