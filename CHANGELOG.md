@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.39] 2026-03-18 — Next.js scaffold: content structure, EN+ES metadata, metadata helper
+**Added**
+- New `nextjs` branch for clean Next.js 16.2.0 rebuild (TypeScript, Tailwind v4, App Router)
+- Scaffolded Next.js into repo; existing HTML files untouched
+- `src/content/en/metadata.ts` — English SEO metadata for all 15 pages
+- `src/content/es/metadata.ts` — Spanish SEO metadata for all 15 pages
+- `src/lib/metadata.ts` — `generatePageMetadata()` helper with canonical + hreflang + OG tags
+- Empty content stubs for EN+ES pages (home, products ×5, industries ×7, about, contact)
+- `next-intl` installed for i18n routing
+
 ## [0.37] 2026-03-18 — Fix: nav bar not full-width on mobile on all 5 product pages
 
 **Fixed**
