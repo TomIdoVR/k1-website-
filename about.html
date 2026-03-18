@@ -622,5 +622,42 @@
     })();
   </script>
 
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE OVERRIDES  ·  v1.0
+       Appended after all existing styles — takes priority.
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── 640px: Large phone ── */
+    @media (max-width: 640px) {
+      .hero-h1 { font-size: 46px; line-height: 0.95; }
+      .section  { padding: 56px 0; }
+    }
+
+    /* ── 480px: Small phone ── */
+    @media (max-width: 480px) {
+      .about-hero  { padding: 40px 16px 56px; }
+      .hero-h1     { font-size: 38px; line-height: 0.95; }
+      .hero-sub    { font-size: 16px; }
+      .hero-btns   { flex-direction: column; align-items: stretch; gap: 10px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-ghost { justify-content: center; }
+      .section       { padding: 44px 0; }
+      .section-inner { padding: 0 16px; }
+      .stat-val      { font-size: 36px; }
+      .stats-inner   { padding: 0 16px; }
+      .cta-title     { font-size: 32px; }
+      .cta-section   { padding: 48px 16px; }
+    }
+
+    /* ── 360px: Tiny phones ── */
+    @media (max-width: 360px) {
+      .hero-h1       { font-size: 30px; }
+      .section-inner { padding: 0 12px; }
+    }
+
+  </style>
+
 </body>
 </html>

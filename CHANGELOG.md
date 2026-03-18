@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.33] 2026-03-18 — Mobile-first responsive adaptation across all 17 pages
+
+**Added**
+- Standardized 5-point breakpoint system (360 / 480 / 640 / 768 / 1024px) applied to every HTML file
+- hero-mockup.html: headline scaling (116px→30px on small phones), section padding reduction, CTA stacking at 480px, modules title/quote reduction
+- 5 product pages (k-safety, k-dispatch, k-traffic, k-video, k-connect): hero-h1 scaling, section-inner padding tightening, hero-ctas and bottom-cta-btns stacking at 480px, footer stacking at 640px
+- about.html: hero-h1 scaling, section padding reduction, hero-btns stacking at 480px
+- solutions.html: page-headline scaling, solutions grids collapse to 1-col at 640px, CTA stacking, footer stacking
+- contact.html: page-wrap padding reduction, bottom-cta tightening, footer stacking
+- 7 industry pages (airport, logistics, municipalities, ports, public-safety, retail, stadiums): ind-hero-inner collapses to 1-col at 768px, challenges-grid/workflow-steps collapse, cta-btns stack, font scaling 76px→30px
+
 ## [0.32] 2026-03-18 — Improve K-Traffic hero mockup with city map and live panels
 
 **Improved**

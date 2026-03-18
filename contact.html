@@ -944,5 +944,53 @@
       <a href="contact.html">Contact</a>
     </nav>
   </footer>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE OVERRIDES  ·  v1.0
+       Appended after all existing styles — takes priority.
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── 768px: Tablet portrait ── */
+    @media (max-width: 768px) {
+      .bottom-cta-section { padding: 56px 24px 72px; }
+      .bottom-cta-box     { padding: 48px 28px; }
+    }
+
+    /* ── 640px: Large phone ── (mostly handled by existing rules) */
+    @media (max-width: 640px) {
+      .bottom-cta-section { padding: 48px 16px 56px; }
+      .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 28px 20px;
+      }
+    }
+
+    /* ── 480px: Small phone ── */
+    @media (max-width: 480px) {
+      .page-wrap          { padding: 40px 16px 60px; }
+      .page-headline      { font-size: 2.2rem; }
+      .contact-form-wrap  { padding: 24px 16px; }
+      .bottom-cta-section { padding: 36px 12px 48px; }
+      .bottom-cta-box     { padding: 36px 20px; }
+      .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 24px 16px;
+      }
+    }
+
+    /* ── 360px: Tiny phones ── */
+    @media (max-width: 360px) {
+      .page-wrap { padding: 32px 12px 48px; }
+    }
+
+  </style>
+
 </body>
 </html>

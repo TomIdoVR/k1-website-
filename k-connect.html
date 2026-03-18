@@ -1423,5 +1423,78 @@
       <a href="contact.html">Contact</a>
     </nav>
   </footer>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE OVERRIDES  ·  v1.0
+       Standardized breakpoints: 768 · 640 · 480 · 360
+       Appended after all existing styles — takes priority.
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── 768px: Tablet portrait ── */
+    @media (max-width: 768px) {
+      .section-header     { margin-bottom: 44px; }
+      .bottom-cta-section { padding: 0 24px 64px; }
+      .bottom-cta-box     { padding: 56px 32px; }
+    }
+
+    /* ── 640px: Large phone ── */
+    @media (max-width: 640px) {
+      .section-header      { margin-bottom: 36px; }
+      .bottom-cta-section  { padding: 0 16px 48px; }
+      .bottom-cta-box      { padding: 48px 24px; }
+      .bottom-cta-headline { font-size: 38px; }
+      .section-sub         { font-size: 16px; }
+      .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 28px 20px;
+      }
+    }
+
+    /* ── 480px: Small phone ── */
+    @media (max-width: 480px) {
+      /* Hero headline */
+      .hero-h1 { font-size: 38px; line-height: 1.0; }
+
+      /* Section inner */
+      .section-inner  { padding: 36px 16px !important; }
+
+      /* Section header */
+      .section-header { margin-bottom: 28px; }
+
+      /* Hero CTAs: stack vertically */
+      .hero-ctas            { flex-direction: column; align-items: stretch; gap: 10px; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-ghost { text-align: center; justify-content: center; }
+
+      /* Bottom CTA */
+      .bottom-cta-section  { padding: 0 12px 40px; }
+      .bottom-cta-box      { padding: 40px 20px; }
+      .bottom-cta-headline { font-size: 32px; }
+      .bottom-cta-btns     { flex-direction: column; align-items: stretch; gap: 10px; }
+      .bottom-cta-btns .btn-primary,
+      .bottom-cta-btns .btn-ghost { justify-content: center; }
+
+      /* Footer */
+      .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 24px 16px;
+      }
+    }
+
+    /* ── 360px: Tiny phones ── */
+    @media (max-width: 360px) {
+      .section-inner  { padding: 28px 12px !important; }
+      .bottom-cta-box { padding: 32px 14px; }
+    }
+
+  </style>
+
 </body>
 </html>

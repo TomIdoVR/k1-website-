@@ -5937,5 +5937,112 @@
       </div>
     </div>
   </div>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE OVERRIDES  ·  v1.0
+       Standardized breakpoints: 1024 · 768 · 640 · 480 · 360
+       Appended after all existing styles — takes priority.
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── 1024px: Tablet landscape ── */
+    @media (max-width: 1024px) {
+      .products-section   { padding: 80px 0 64px; }
+      .industries-section { padding: 80px 0 64px; }
+      .cta-section        { padding: 100px 0; }
+    }
+
+    /* ── 768px: Tablet portrait ── */
+    @media (max-width: 768px) {
+      /* Hero headline */
+      .headline { font-size: 52px; line-height: 0.95; }
+
+      /* Section padding reduction */
+      .products-section       { padding: 64px 0 48px; }
+      .products-header        { margin-bottom: 48px; }
+      .industries-section     { padding: 64px 0 48px; }
+      .cta-section            { padding: 80px 0; }
+      .proof-inner            { padding: 0 24px; }
+      .cta-inner              { padding: 0 24px; }
+      .cta-sub                { font-size: 16px; }
+
+      /* CTA actions: allow wrap on tablet */
+      .cta-actions { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ── 640px: Large phone ── */
+    @media (max-width: 640px) {
+      /* Hero */
+      .headline { font-size: 44px; line-height: 0.95; }
+      .sub      { font-size: 16px; margin-bottom: 36px; }
+
+      /* Section padding tightening */
+      .products-section   { padding: 48px 0 36px; }
+      .products-header    { margin-bottom: 36px; }
+      .industries-section { padding: 48px 0 36px; }
+      .cta-section        { padding: 64px 0; }
+      .proof-section      { padding: 44px 0; }
+      .proof-inner        { padding: 0 20px; }
+      .cta-inner          { padding: 0 20px; }
+
+      /* Typography scaling */
+      .cta-headline          { font-size: 42px; }
+      .modules-title         { font-size: 36px; }
+      blockquote.proof-quote { font-size: 17px; }
+      .proof-quote-block     { padding: 0 16px; }
+    }
+
+    /* ── 480px: Small phone ── */
+    @media (max-width: 480px) {
+      /* Hero */
+      .headline { font-size: 36px; line-height: 0.95; }
+      .sub      { font-size: 15px; margin-bottom: 28px; }
+      .hero     { padding-top: 32px; }
+
+      /* CTA buttons: stack vertically for tapability */
+      .cta-row     { flex-direction: column; align-items: stretch; gap: 10px; }
+      .btn-primary { text-align: center; justify-content: center; }
+      .btn-ghost   { text-align: center; justify-content: center; }
+
+      /* Section padding */
+      .products-section   { padding: 40px 0 32px; }
+      .products-header    { margin-bottom: 28px; }
+      .products-inner     { padding: 0 16px; }
+      .industries-section { padding: 40px 0 32px; }
+      .cta-section        { padding: 52px 0; }
+      .proof-section      { padding: 36px 0; }
+      .proof-inner        { padding: 0 16px; }
+      .cta-inner          { padding: 0 16px; }
+
+      /* Product rows */
+      .prod-row { margin-bottom: 44px; }
+
+      /* Typography */
+      .cta-headline          { font-size: 32px; }
+      .modules-title         { font-size: 30px; }
+      blockquote.proof-quote { font-size: 16px; }
+      .proof-quote-block     { padding: 0 12px; }
+
+      /* CTA actions: stack vertically */
+      .cta-actions            { flex-direction: column; align-items: stretch; gap: 10px; }
+      .cta-actions .btn-primary,
+      .cta-actions .btn-ghost { justify-content: center; }
+
+      /* Modules section */
+      .modules-section { padding-top: 16px; }
+      .mc-header       { padding: 0 16px; gap: 14px; }
+      .mod-viewer-wrap { padding: 0 12px; }
+    }
+
+    /* ── 360px: Tiny phones ── */
+    @media (max-width: 360px) {
+      .headline       { font-size: 30px; }
+      .products-inner { padding: 0 12px; }
+      .proof-inner    { padding: 0 12px; }
+      .cta-inner      { padding: 0 12px; }
+    }
+
+  </style>
+
 </body>
 </html>

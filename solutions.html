@@ -1323,5 +1323,62 @@
       <a href="contact.html">Contact</a>
     </nav>
   </footer>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE-FIRST RESPONSIVE OVERRIDES  ·  v1.0
+       Appended after all existing styles — takes priority.
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ── 768px: Tablet portrait ── */
+    @media (max-width: 768px) {
+      .page-hero         { padding: 64px 20px 48px; }
+      .page-headline     { font-size: 52px; }
+      .solutions-section { padding: 0 32px 64px; }
+      .solutions-bottom  { grid-template-columns: 1fr 1fr; }
+      .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 28px 20px;
+      }
+    }
+
+    /* ── 640px: Large phone ── */
+    @media (max-width: 640px) {
+      .page-headline     { font-size: 44px; }
+      .page-sub          { font-size: 16px; }
+      .solutions-section { padding: 0 20px 48px; }
+      .solutions-top     { grid-template-columns: 1fr; }
+      .solutions-bottom  { grid-template-columns: 1fr; }
+      .sol-card          { padding: 28px 24px; }
+      .sol-card.large    { padding: 28px 24px; }
+      .cta-row           { flex-direction: column; align-items: stretch; gap: 10px; }
+      .cta-row .btn-primary,
+      .cta-row .btn-ghost { justify-content: center; }
+    }
+
+    /* ── 480px: Small phone ── */
+    @media (max-width: 480px) {
+      .page-hero         { padding: 48px 16px 36px; }
+      .page-headline     { font-size: 36px; line-height: 0.95; }
+      .page-sub          { font-size: 15px; margin-bottom: 36px; }
+      .solutions-section { padding: 0 12px 40px; }
+      .sol-card          { padding: 24px 18px; }
+      .sol-card.large    { padding: 24px 18px; }
+      .cta-btns          { flex-direction: column; align-items: stretch; gap: 10px; }
+      .cta-btns .btn-primary,
+      .cta-btns .btn-ghost { justify-content: center; }
+    }
+
+    /* ── 360px: Tiny phones ── */
+    @media (max-width: 360px) {
+      .page-headline     { font-size: 30px; }
+      .solutions-section { padding: 0 10px 32px; }
+    }
+
+  </style>
+
 </body>
 </html>
