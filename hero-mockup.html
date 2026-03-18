@@ -1339,6 +1339,29 @@
       .nav-drop-item { padding: 11px 14px !important; }
       .nav-links.open .btn-nav { display: inline-flex !important; background: none; box-shadow: none; color: var(--blue-light); padding: 13px 12px; font-size: 14px; font-weight: 600; }
     }
+
+    /* ── Mobile tab scroll fix ── */
+    @media (max-width: 768px) {
+      .mod-tabs-row {
+        justify-content: flex-start;
+        padding: 0 20px;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+      }
+      .mod-tabs-row::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 48px;
+        height: 100%;
+        background: linear-gradient(to right, transparent, var(--bg, #0f1724));
+        pointer-events: none;
+      }
+      .mod-tabs {
+        padding-right: 40px;
+      }
+    }
   </style>
 </head>
 <body>
