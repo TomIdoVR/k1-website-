@@ -7,6 +7,24 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.40] 2026-03-18 — Next.js: i18n routing, K-Dispatch + K-Video + K-Safety pages EN+ES
+**Added**
+- `src/i18n/routing.ts` — next-intl routing config (`localePrefix: 'always'`, locales: en/es)
+- `src/i18n/request.ts` — `getRequestConfig` for locale detection
+- `src/i18n/navigation.ts` — locale-aware `Link`, `useRouter`, `usePathname` via `createNavigation`
+- `middleware.ts` — next-intl middleware at project root
+- `src/app/[locale]/layout.tsx` — locale layout with `NextIntlClientProvider` and `lang` attr
+- `src/app/[locale]/k-dispatch/page.tsx` — K-Dispatch page (EN+ES, all sections, red accent)
+- `src/app/[locale]/k-video/page.tsx` — K-Video page (EN+ES, all sections, purple accent, camera grid)
+- `src/app/[locale]/k-safety/page.tsx` — K-Safety page (EN+ES, all sections, cyan accent, GIS mockup)
+- `src/components/Nav.tsx` — shared nav with dropdown menus, language switcher, mobile hamburger
+**Changed**
+- `next.config.ts` — wrapped with `createNextIntlPlugin`, added CDN image domain
+- `src/app/globals.css` — added KabatOne design tokens (CSS custom properties)
+- `src/app/layout.tsx` — replaced with pass-through root layout (locale layout is effective root)
+**Fixed**
+- i18n locale routing: switched from `as-needed` to `always` prefix to fix App Router `[locale]` segment matching
+
 ## [0.39] 2026-03-18 — Next.js scaffold: content structure, EN+ES metadata, metadata helper
 **Added**
 - New `nextjs` branch for clean Next.js 16.2.0 rebuild (TypeScript, Tailwind v4, App Router)
