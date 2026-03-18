@@ -18,7 +18,7 @@
       --blue-light: #60a5fa;
       --cyan:       #06b6d4;
       --white:      #e6eef8;
-      --muted: #748aab;
+      --muted: #9dbdd0;
       --dim:        #94a3b8;
       --border:     rgba(255,255,255,0.06);
       --border-b:   rgba(59,130,246,0.28);
@@ -1438,8 +1438,8 @@
       </button>
       <div class="mc-info">
         <div class="mc-counter" id="mcCounter">01 / 09</div>
-        <div class="mc-name" id="mcName">GIS — Situational Awareness</div>
-        <div class="mc-tagline" id="mcTagline">Real-time operational maps with live unit tracking and threat zone overlays</div>
+        <div class="mc-name" id="mcName">Video — Surveillance &amp; Analytics</div>
+        <div class="mc-tagline" id="mcTagline">Live feeds from all cameras with AI-powered object detection and behavioral anomaly alerts</div>
       </div>
       <button class="mc-arrow mc-next" aria-label="Next module">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 14l4-5-4-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1449,11 +1449,7 @@
     <!-- Tab Pills -->
     <div class="mod-tabs-row">
       <div class="mod-tabs" role="tablist" aria-label="Platform modules">
-        <button class="mod-tab active" role="tab" aria-selected="true" id="tab-gis" data-mod="gis" style="--tc:#3b82f6">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M6 7v4M4.5 11h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          GIS
-        </button>
-        <button class="mod-tab" role="tab" aria-selected="false" id="tab-video" data-mod="video" style="--tc:#06b6d4">
+        <button class="mod-tab active" role="tab" aria-selected="true" id="tab-video" data-mod="video" style="--tc:#06b6d4">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="0.5" y="2" width="7.5" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M8 4.8l3.5-2v5.5L8 6.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
           Video
         </button>
@@ -1464,6 +1460,10 @@
         <button class="mod-tab" role="tab" aria-selected="false" id="tab-events" data-mod="events" style="--tc:#f97316">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v2M6 9v2M1 6h2M9 6h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="2.5" stroke="currentColor" stroke-width="1.2"/></svg>
           Events
+        </button>
+        <button class="mod-tab" role="tab" aria-selected="false" id="tab-gis" data-mod="gis" style="--tc:#3b82f6">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M6 7v4M4.5 11h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          GIS
         </button>
         <button class="mod-tab" role="tab" aria-selected="false" id="tab-integrations" data-mod="integrations" style="--tc:#22c55e">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="0.5" y="4" width="3" height="2.5" rx="0.5" stroke="currentColor" stroke-width="1.1"/><rect x="8.5" y="2" width="3" height="2.5" rx="0.5" stroke="currentColor" stroke-width="1.1"/><rect x="8.5" y="7.5" width="3" height="2.5" rx="0.5" stroke="currentColor" stroke-width="1.1"/><path d="M3.5 5.25h2.5l2.5-2M3.5 5.25h2.5l2.5 3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
@@ -1500,7 +1500,7 @@
               <span style="background:#FFBD2E"></span>
               <span style="background:#28C840"></span>
             </div>
-            <span class="mvc-title" id="viewerTitle">GIS &amp; Situational Awareness</span>
+            <span class="mvc-title" id="viewerTitle">Video Surveillance &amp; Analytics</span>
           </div>
           <div class="mvc-right">
             <div class="mvc-live-badge"><span class="mvc-live-dot"></span>LIVE</div>
@@ -1511,7 +1511,7 @@
         <div class="mod-panels">
 
           <!-- ══ GIS ══ -->
-          <div class="mod-panel active" id="panel-gis" role="tabpanel" aria-labelledby="tab-gis">
+          <div class="mod-panel" id="panel-gis" role="tabpanel" aria-labelledby="tab-gis">
             <div class="mod-panel-left" style="--pc:#3b82f6">
               <div class="mpl-tag">GIS</div>
               <div class="mpl-name">Situational<br>Awareness</div>
@@ -1529,7 +1529,7 @@
           </div>
 
           <!-- ══ VIDEO ══ -->
-          <div class="mod-panel" id="panel-video" role="tabpanel" aria-labelledby="tab-video">
+          <div class="mod-panel active" id="panel-video" role="tabpanel" aria-labelledby="tab-video">
             <div class="mod-panel-left" style="--pc:#06b6d4">
               <div class="mpl-tag">Video</div>
               <div class="mpl-name">Surveillance<br>&amp; Analytics</div>
@@ -1719,10 +1719,10 @@
     <!-- Carousel Dots -->
     <div class="mc-dots-wrap">
       <div class="mc-dots">
-        <button class="mc-dot active" data-mod="gis" aria-label="GIS"></button>
-        <button class="mc-dot" data-mod="video" aria-label="Video"></button>
+        <button class="mc-dot active" data-mod="video" aria-label="Video"></button>
         <button class="mc-dot" data-mod="dispatch" aria-label="Dispatch"></button>
         <button class="mc-dot" data-mod="events" aria-label="Events"></button>
+        <button class="mc-dot" data-mod="gis" aria-label="GIS"></button>
         <button class="mc-dot" data-mod="integrations" aria-label="Integrations"></button>
         <button class="mc-dot" data-mod="responder" aria-label="Responder"></button>
         <button class="mc-dot" data-mod="citizen" aria-label="Citizens"></button>
@@ -1885,7 +1885,63 @@
           <a href="k-safety.html" class="prod-link">Learn more →</a>
         </div>
         <div class="prod-screen">
-          <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680977ac7c76efc930d8b6d6_1816456636499a496d19050a07038f57_k_safety.avif" alt="K-Safety interface" style="width:100%;border-radius:12px;border:1px solid rgba(59,130,246,0.2);">
+          <div class="prod-chrome">
+            <div class="prod-chrome-left">
+              <div class="prod-chrome-dots">
+                <span style="background:#FF5F57"></span>
+                <span style="background:#FFBD2E"></span>
+                <span style="background:#28C840"></span>
+              </div>
+              <span class="prod-chrome-title">K-SAFETY — Situational Awareness</span>
+            </div>
+            <div class="prod-live-badge"><span class="prod-live-dot"></span>LIVE</div>
+          </div>
+          <div class="prod-screen-body">
+            <div class="pmock">
+              <div class="pmock-bar">
+                <div class="pmock-bar-left">
+                  <div class="pmock-logo" style="background:#3b82f6">k</div>
+                  <span class="pmock-bar-title">K-SAFETY — C5 · Command Center</span>
+                </div>
+                <div class="pmock-bar-left" style="gap:10px">
+                  <span class="pmock-bar-time">17:31:51</span>
+                  <span class="pmock-sys-badge"><span class="pmock-sys-dot"></span>SYSTEM ACTIVE</span>
+                </div>
+              </div>
+              <div class="pmock-map">
+                <svg class="pmock-map-svg" viewBox="0 0 560 260" preserveAspectRatio="xMidYMid slice">
+                  <rect width="560" height="260" fill="#090e1c"/>
+                  <line x1="0" y1="65" x2="560" y2="65" stroke="#131d35" stroke-width="7"/>
+                  <line x1="0" y1="145" x2="560" y2="145" stroke="#131d35" stroke-width="11"/>
+                  <line x1="0" y1="205" x2="560" y2="205" stroke="#131d35" stroke-width="6"/>
+                  <line x1="75"  y1="0" x2="75"  y2="260" stroke="#131d35" stroke-width="6"/>
+                  <line x1="195" y1="0" x2="195" y2="260" stroke="#131d35" stroke-width="10"/>
+                  <line x1="330" y1="0" x2="330" y2="260" stroke="#131d35" stroke-width="7"/>
+                  <line x1="460" y1="0" x2="460" y2="260" stroke="#131d35" stroke-width="5"/>
+                  <line x1="155" y1="0" x2="400" y2="260" stroke="#0f1830" stroke-width="5"/>
+                  <circle cx="270" cy="128" r="82" fill="none" stroke="rgba(59,130,246,0.22)" stroke-width="1" stroke-dasharray="4 4"/>
+                </svg>
+                <div class="pmock-ring" style="left:48%;top:49%"></div>
+                <div class="pmock-dot" style="left:48%;top:48%;background:#ef4444;box-shadow:0 0 10px #ef4444bb"></div>
+                <div class="pmock-dot" style="left:33%;top:31%;background:#3b82f6;box-shadow:0 0 8px #3b82f6bb"></div>
+                <div class="pmock-dot" style="left:63%;top:37%;background:#3b82f6;box-shadow:0 0 8px #3b82f6bb"></div>
+                <div class="pmock-dot" style="left:40%;top:63%;background:#f97316;box-shadow:0 0 8px #f97316bb"></div>
+                <div class="pmock-dot" style="left:70%;top:58%;background:#3b82f6;box-shadow:0 0 6px #3b82f6aa"></div>
+                <div class="pmock-dot" style="left:55%;top:28%;background:#22c55e;box-shadow:0 0 6px #22c55eaa"></div>
+                <div class="pmock-overlay-bar">
+                  <div class="pmock-ev-header">
+                    <span>EVENTOS CERCANOS · Radio 2.5 km · <span style="color:#ef4444">5 ACTIVOS</span></span>
+                    <span>17:31:51 — 17/03/2026</span>
+                  </div>
+                  <table class="pmock-ev-table">
+                    <tr><td style="font-family:'DM Mono',monospace;color:#3b82f6">CS/00051</td><td style="color:rgba(255,255,255,0.65);font-weight:600">ABANDONO ANIMAL</td><td style="color:rgba(255,255,255,0.3)">Av. Los Maestros 73</td><td><span class="pmk-badge pmk-curso">EN CURSO</span></td><td style="font-family:'DM Mono',monospace;color:rgba(255,255,255,0.3)">0.3 km</td></tr>
+                    <tr><td style="font-family:'DM Mono',monospace;color:#3b82f6">CS/00048</td><td style="color:rgba(255,255,255,0.65);font-weight:600">ACCIDENTE VIAL</td><td style="color:rgba(255,255,255,0.3)">Av. Insurgentes Norte</td><td><span class="pmk-badge pmk-curso">EN CURSO</span></td><td style="font-family:'DM Mono',monospace;color:rgba(255,255,255,0.3)">0.8 km</td></tr>
+                    <tr><td style="font-family:'DM Mono',monospace;color:#3b82f6">CS/00047</td><td style="color:rgba(255,255,255,0.65);font-weight:600">INCENDIO-ESTRUCTURA</td><td style="color:rgba(255,255,255,0.3)">Priv. Moctezuma 23</td><td><span class="pmk-badge pmk-pend">PENDIENTE</span></td><td style="font-family:'DM Mono',monospace;color:rgba(255,255,255,0.3)">1.2 km</td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1907,7 +1963,64 @@
           <a href="k-dispatch.html" class="prod-link">Learn more →</a>
         </div>
         <div class="prod-screen">
-          <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680977ac4139882e79670669_d8aa7b3fd2f0504dd36391f6c3e3affe_k_dispatch.avif" alt="K-Dispatch interface" style="width:100%;border-radius:12px;border:1px solid rgba(239,68,68,0.2);">
+          <div class="prod-chrome">
+            <div class="prod-chrome-left">
+              <div class="prod-chrome-dots">
+                <span style="background:#FF5F57"></span>
+                <span style="background:#FFBD2E"></span>
+                <span style="background:#28C840"></span>
+              </div>
+              <span class="prod-chrome-title">K-DISPATCH — Emergency Operations</span>
+            </div>
+            <div class="prod-live-badge"><span class="prod-live-dot"></span>LIVE</div>
+          </div>
+          <div class="prod-screen-body">
+            <div class="pmock">
+              <div class="pmock-bar">
+                <div class="pmock-bar-left">
+                  <div class="pmock-logo" style="background:#ef4444">k</div>
+                  <span class="pmock-bar-title">K-DISPATCH — C5 CDMX · Dispatcher</span>
+                </div>
+                <div class="pmock-bar-left" style="gap:10px">
+                  <span style="font-family:'DM Mono',monospace;font-size:0.46rem;color:rgba(255,255,255,0.28)"><span style="color:#3b82f6">●</span> 2 NEW &nbsp;<span style="color:#f97316">●</span> 2 REVIEW &nbsp;<span style="color:#ef4444">●</span> 1 ON SCENE</span>
+                  <span class="pmock-sys-badge"><span class="pmock-sys-dot"></span>ACTIVE</span>
+                </div>
+              </div>
+              <div class="pmock-dispatch">
+                <div class="pmock-sidebar">
+                  <div style="padding:5px 8px 4px;font-family:'DM Mono',monospace;font-size:0.44rem;color:rgba(255,255,255,0.18);letter-spacing:0.08em;border-bottom:1px solid rgba(255,255,255,0.04)">UNITS (7)</div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#ef4444"></div><div class="pmock-r2-info"><div class="pmock-r2-name">AMBUMED-01</div><div class="pmock-r2-st">ON SCENE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#22c55e"></div><div class="pmock-r2-info"><div class="pmock-r2-name">AMBUMED-02</div><div class="pmock-r2-st">AVAILABLE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#f97316"></div><div class="pmock-r2-info"><div class="pmock-r2-name">PMUN-02</div><div class="pmock-r2-st">EN ROUTE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#ef4444"></div><div class="pmock-r2-info"><div class="pmock-r2-name">BAMBE-01</div><div class="pmock-r2-st">ON SCENE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#f97316"></div><div class="pmock-r2-info"><div class="pmock-r2-name">BAMBE-03</div><div class="pmock-r2-st">EN ROUTE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#22c55e"></div><div class="pmock-r2-info"><div class="pmock-r2-name">SUMA-04</div><div class="pmock-r2-st">AVAILABLE</div></div></div>
+                  <div class="pmock-res2"><div class="pmock-r2-dot" style="background:#22c55e"></div><div class="pmock-r2-info"><div class="pmock-r2-name">PGJE-01</div><div class="pmock-r2-st">AVAILABLE</div></div></div>
+                </div>
+                <div class="pmock-kanban">
+                  <div class="pmock-col">
+                    <div class="pmock-col-h" style="background:rgba(59,130,246,0.1);border-bottom:1px solid rgba(59,130,246,0.2)"><span class="pmock-col-t" style="color:#60a5fa;font-size:0.52rem;font-weight:700">NEW</span><span class="pmock-col-n" style="background:rgba(59,130,246,0.2);color:#60a5fa">2</span></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00051</span><span class="pmock-card-t" style="font-size:0.6rem">ANIMAL ABANDONMENT</span><span class="pmock-card-a">Av. Maestros 73</span><div class="pmock-card-ft"><span class="pmock-card-tm">13:45</span><span class="pmk-badge pmk-baja">LOW</span></div></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00049</span><span class="pmock-card-t" style="font-size:0.6rem">TRAFFIC ACCIDENT</span><span class="pmock-card-a">Insurgentes N. 1500</span><div class="pmock-card-ft"><span class="pmock-card-tm">13:31</span><span class="pmk-badge pmk-media">MED</span></div></div>
+                  </div>
+                  <div class="pmock-col">
+                    <div class="pmock-col-h" style="background:rgba(249,115,22,0.1);border-bottom:1px solid rgba(249,115,22,0.2)"><span class="pmock-col-t" style="color:#fb923c;font-size:0.52rem;font-weight:700">IN REVIEW</span><span class="pmock-col-n" style="background:rgba(249,115,22,0.2);color:#fb923c">2</span></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00047</span><span class="pmock-card-t" style="font-size:0.6rem">GAS LEAK</span><span class="pmock-card-a">Priv. Moctezuma 23</span><div class="pmock-card-ft"><span class="pmock-card-tm">13:18</span><span class="pmk-badge pmk-alta">HIGH</span></div></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00044</span><span class="pmock-card-t" style="font-size:0.6rem">INJURED PERSON</span><span class="pmock-card-a">Calz. Misterios S/N</span><div class="pmock-card-ft"><span class="pmock-card-tm">13:02</span><span class="pmk-badge pmk-alta">HIGH</span></div></div>
+                  </div>
+                  <div class="pmock-col">
+                    <div class="pmock-col-h" style="background:rgba(59,130,246,0.1);border-bottom:1px solid rgba(59,130,246,0.2)"><span class="pmock-col-t" style="color:#3b82f6;font-size:0.52rem;font-weight:700">ASSIGNED</span><span class="pmock-col-n" style="background:rgba(59,130,246,0.2);color:#3b82f6">2</span></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00040</span><span class="pmock-card-t" style="font-size:0.6rem">PEDESTRIAN ROBBERY</span><span class="pmock-card-a">Metro Potrero, Eje 2</span><div class="pmock-card-ft"><span class="pmock-card-tm">12:47</span><span class="pmk-badge pmk-media">MED</span></div></div>
+                    <div class="pmock-card"><span class="pmock-card-f">CS/2026/00039</span><span class="pmock-card-t" style="font-size:0.6rem">PARTIAL COLLAPSE</span><span class="pmock-card-a">Tenochtitlán 45</span><div class="pmock-card-ft"><span class="pmock-card-tm">12:30</span><span class="pmk-badge pmk-alta">HIGH</span></div></div>
+                  </div>
+                  <div class="pmock-col">
+                    <div class="pmock-col-h" style="background:rgba(239,68,68,0.1);border-bottom:1px solid rgba(239,68,68,0.2)"><span class="pmock-col-t" style="color:#ef4444;font-size:0.52rem;font-weight:700">ON SCENE</span><span class="pmock-col-n" style="background:rgba(239,68,68,0.2);color:#ef4444">1</span></div>
+                    <div class="pmock-card" style="border-left:2px solid #ef4444;background:rgba(239,68,68,0.04)"><span class="pmock-card-f">CS/2026/00035</span><span class="pmock-card-t" style="font-size:0.6rem;color:#fff">STRUCTURE FIRE</span><span class="pmock-card-a">Peralvillo 87</span><div class="pmock-card-ft"><span class="pmock-card-tm">12:05</span><span class="pmk-badge pmk-alta">HIGH</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1929,7 +2042,72 @@
           <a href="k-traffic.html" class="prod-link">Learn more →</a>
         </div>
         <div class="prod-screen">
-          <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680977acfa0d49beac9384dc_e0e798fd34a9b9a8e1a8246a5670c11e_k_traffic.avif" alt="K-Traffic interface" style="width:100%;border-radius:12px;border:1px solid rgba(6,182,212,0.2);">
+          <div class="prod-chrome">
+            <div class="prod-chrome-left">
+              <div class="prod-chrome-dots">
+                <span style="background:#FF5F57"></span>
+                <span style="background:#FFBD2E"></span>
+                <span style="background:#28C840"></span>
+              </div>
+              <span class="prod-chrome-title">K-TRAFFIC — Adaptive Control</span>
+            </div>
+            <div class="prod-live-badge"><span class="prod-live-dot"></span>LIVE</div>
+          </div>
+          <div class="prod-screen-body">
+            <div class="pmock">
+              <div class="pmock-bar">
+                <div class="pmock-bar-left">
+                  <div class="pmock-logo" style="background:#06b6d4">k</div>
+                  <span class="pmock-bar-title">K-TRAFFIC — Adaptive Traffic Management</span>
+                </div>
+                <div class="pmock-bar-left" style="gap:10px">
+                  <span class="pmock-sys-badge"><span class="pmock-sys-dot"></span>SYSTEM ACTIVE</span>
+                </div>
+              </div>
+              <div class="pmock-traffic">
+                <!-- Traffic map -->
+                <div class="pmock-map" style="flex:1">
+                  <img src="images/k-traffic-mockup.png" alt="K-Traffic map" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                  <!-- Floating accident camera popup -->
+                  <div class="pmock-traf-popup">
+                    <div class="pmock-popup-bar"><span style="width:5px;height:5px;border-radius:50%;background:#ef4444;display:inline-block;animation:prodlp 1.2s ease-in-out infinite"></span>CAM-031 · Periférico × Tlalpan</div>
+                    <div class="pmock-popup-feed">
+                      <svg viewBox="0 0 150 78" fill="none">
+                        <rect width="150" height="78" fill="#08090f"/>
+                        <polygon points="48,78 102,78 86,32 64,32" fill="#111620"/>
+                        <line x1="48" y1="78" x2="64" y2="32" stroke="#1a1d2a" stroke-width="0.8"/>
+                        <line x1="102" y1="78" x2="86" y2="32" stroke="#1a1d2a" stroke-width="0.8"/>
+                        <line x1="75" y1="35" x2="74.5" y2="46" stroke="#f5f5dc" stroke-width="0.8" opacity="0.5"/>
+                        <line x1="74.5" y1="51" x2="74" y2="62" stroke="#f5f5dc" stroke-width="0.8" opacity="0.5"/>
+                        <!-- Accident vehicles -->
+                        <rect x="56" y="55" width="18" height="10" rx="1.5" fill="#8b1c1c" transform="rotate(-6 56 55)"/>
+                        <rect x="58" y="56.5" width="14" height="7" rx="1" fill="#a52828"/>
+                        <rect x="56" y="57" width="3" height="3.5" rx="0.5" fill="#ff3333"/>
+                        <rect x="71" y="57" width="3" height="3.5" rx="0.5" fill="#ff3333"/>
+                        <rect x="75" y="57" width="15" height="9" rx="1.5" fill="#1a3a5a"/>
+                        <!-- Hazard cone -->
+                        <polygon points="70,64 74,64 72,58" fill="#f97316"/>
+                        <!-- AI bounding box -->
+                        <rect x="53" y="51" width="24" height="17" rx="0.8" stroke="#22c55e" stroke-width="1.2" fill="none"/>
+                        <rect x="53" y="43" width="70" height="9" rx="1" fill="#22c55e"/>
+                        <text x="56" y="49.5" fill="#000" font-size="5" font-family="monospace" font-weight="bold">ACCIDENT · HIGH · 96%</text>
+                        <!-- Emergency lights -->
+                        <rect x="0" y="0" width="18" height="78" fill="#ef4444" opacity="0.05"/>
+                        <rect x="132" y="0" width="18" height="78" fill="#3b82f6" opacity="0.05"/>
+                        <circle cx="75" cy="20" r="3" fill="#ef4444" opacity="0.6"/>
+                        <!-- Street lamps -->
+                        <line x1="30" y1="32" x2="35" y2="78" stroke="#1a1d28" stroke-width="1.5"/>
+                        <circle cx="30" cy="32" r="3" fill="#fff9c4" opacity="0.7"/>
+                        <line x1="120" y1="32" x2="115" y2="78" stroke="#1a1d28" stroke-width="1.5"/>
+                        <circle cx="120" cy="32" r="3" fill="#fff9c4" opacity="0.7"/>
+                      </svg>
+                      <div class="pmock-popup-alert">⚠ ROAD ACCIDENT DETECTED</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1951,7 +2129,106 @@
           <a href="k-video.html" class="prod-link">Learn more →</a>
         </div>
         <div class="prod-screen">
-          <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680977ac8a2e1f12dfcbcdd3_2abad53d08acb5e50457a8e81bf0b327_k_video.avif" alt="K-Video interface" style="width:100%;border-radius:12px;border:1px solid rgba(168,85,247,0.2);">
+          <div class="prod-chrome">
+            <div class="prod-chrome-left">
+              <div class="prod-chrome-dots">
+                <span style="background:#FF5F57"></span>
+                <span style="background:#FFBD2E"></span>
+                <span style="background:#28C840"></span>
+              </div>
+              <span class="prod-chrome-title">K-VIDEO — Unified Surveillance</span>
+            </div>
+            <div class="prod-live-badge"><span class="prod-live-dot"></span>LIVE</div>
+          </div>
+          <div class="prod-screen-body">
+            <div class="pmock">
+              <div class="pmock-bar">
+                <div class="pmock-bar-left">
+                  <div class="pmock-logo" style="background:#a855f7">k</div>
+                  <span class="pmock-bar-title">K-VIDEO — Unified Surveillance</span>
+                </div>
+                <div class="pmock-bar-left" style="gap:8px">
+                  <span style="font-family:'DM Mono',monospace;font-size:0.46rem;color:rgba(255,255,255,0.28)">Cameras near CS/2026/00051</span>
+                </div>
+              </div>
+              <div class="pmock-vid">
+                <div class="pmock-camlist">
+                  <div style="padding:4px 8px 3px;font-family:'DM Mono',monospace;font-size:0.44rem;color:rgba(255,255,255,0.18);letter-spacing:0.06em;border-bottom:1px solid rgba(255,255,255,0.04)">CAMERAS</div>
+                  <div class="pmock-camitem on"><div class="pmock-camdot" style="background:#ef4444"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-047</div><div class="pmock-camloc">Insurgentes N.</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#22c55e"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-112</div><div class="pmock-camloc">Guadalupe 402</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#22c55e"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-089</div><div class="pmock-camloc">Eje Central</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#22c55e"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-203</div><div class="pmock-camloc">Reforma 505</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#f97316"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-156</div><div class="pmock-camloc">Chapultepec 280</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#22c55e"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-301</div><div class="pmock-camloc">Maestros 73</div></div></div>
+                  <div class="pmock-camitem"><div class="pmock-camdot" style="background:#22c55e"></div><div class="pmock-caminfo"><div class="pmock-camid">CAM-077</div><div class="pmock-camloc">Hidalgo esq. Ref.</div></div></div>
+                </div>
+                <div class="pmock-vid-main">
+                  <div class="pmock-camgrid">
+                    <!-- Feed 1: Glorieta del Ángel - active incident -->
+                    <div class="pmock-feed" style="border:1px solid rgba(239,68,68,0.35)">
+                      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/69979b97a7abadd4301fac6e_reforma-angel-k-video.jpg" alt="CAM-047">
+                      <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 210 130">
+                        <rect x="58" y="50" width="76" height="9" rx="1" fill="#22c55e"/>
+                        <text x="61" y="56.5" fill="#000" font-size="5.5" font-family="monospace" font-weight="bold">ACCIDENT · HIGH · 96.8%</text>
+                        <rect x="58" y="58" width="48" height="30" rx="1" stroke="#22c55e" stroke-width="1.5" fill="none"/>
+                      </svg>
+                      <span class="pmock-feed-id">CAM-047 · Glorieta del Ángel</span>
+                      <span class="pmock-feed-rec">REC</span>
+                      <span class="pmock-feed-ts">17:32:21</span>
+                    </div>
+                    <!-- Feed 2: Fuente de la Diana -->
+                    <div class="pmock-feed">
+                      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/6997a20ce857649b677c9a62_diana-k-video.jpeg" alt="CAM-112">
+                      <span class="pmock-feed-id">CAM-112 · Fuente de la Diana</span>
+                      <span class="pmock-feed-rec">REC</span>
+                      <span class="pmock-feed-ts">17:32:21</span>
+                    </div>
+                    <!-- Feed 3: Explanada Juárez -->
+                    <div class="pmock-feed">
+                      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/6997a20c4c12d686af032bd2_alameda-k-video.jpeg" alt="CAM-089">
+                      <span class="pmock-feed-id">CAM-089 · Explanada Juárez</span>
+                      <span class="pmock-feed-rec">REC</span>
+                      <span class="pmock-feed-ts">17:32:21</span>
+                    </div>
+                    <!-- Feed 4: Periférico / Autopista Urbana -->
+                    <div class="pmock-feed">
+                      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/6997a20c09ca794995af763b_periferico-k-video.jpeg" alt="CAM-203">
+                      <span class="pmock-feed-id">CAM-203 · Autopista Urbana</span>
+                      <span class="pmock-feed-ts">17:32:21</span>
+                    </div>
+                  </div>
+                  <!-- Video controls -->
+                  <div class="pmock-vidcontrols">
+                    <!-- Play/Pause/Stop -->
+                    <div class="pmock-vbtn" style="color:#ef4444" title="Recording">
+                      <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>
+                    </div>
+                    <div class="pmock-vbtn" title="Pause">
+                      <svg width="10" height="10" viewBox="0 0 10 10"><rect x="2" y="1" width="2.5" height="8" rx="0.5" fill="currentColor"/><rect x="5.5" y="1" width="2.5" height="8" rx="0.5" fill="currentColor"/></svg>
+                    </div>
+                    <div class="pmock-vbtn" title="Stop">
+                      <svg width="10" height="10" viewBox="0 0 10 10"><rect x="1.5" y="1.5" width="7" height="7" rx="1" fill="currentColor"/></svg>
+                    </div>
+                    <div class="pmock-vsep"></div>
+                    <!-- Scrubber -->
+                    <div class="pmock-scrub">
+                      <div class="pmock-scrub-fill"></div>
+                      <div class="pmock-scrub-thumb"></div>
+                    </div>
+                    <span class="pmock-vts">17:29:44 / 17:35:00</span>
+                    <div class="pmock-vsep"></div>
+                    <!-- Fullscreen & snapshot -->
+                    <div class="pmock-vbtn" title="Snapshot">
+                      <svg width="10" height="10" viewBox="0 0 10 10"><rect x="1" y="2.5" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="5" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1" fill="none"/><rect x="3.5" y="1" width="3" height="1.5" rx="0.5" fill="currentColor"/></svg>
+                    </div>
+                    <div class="pmock-vbtn" title="Fullscreen">
+                      <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3.5V1h2.5M6.5 1H9v2.5M9 6.5V9H6.5M3.5 9H1V6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" fill="none"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1962,18 +2239,162 @@
             <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bca3c6f9301c805cf0_5e614308b651cd2f4647083dd820e98c_k-connect.png" alt="K-Connect" style="height:28px;width:auto;vertical-align:middle;margin-right:8px;">
             K-CONNECT
           </div>
-          <h3 class="prod-headline">Citizen Engagement &amp; Reporting</h3>
-          <p class="prod-desc">Close the loop between residents and responders. K-Connect lets citizens report incidents, receive alerts, and track resolution — while feeding verified data directly into the KabatOne platform.</p>
+          <h3 class="prod-headline">Secure community-based video sharing</h3>
+          <p class="prod-desc">Privacy-focused platform enabling secure public-private video sharing between businesses, residents, and regional command centers with AI-driven monitoring.</p>
           <ul class="prod-feats">
-            <li>Multi-channel reporting: app, web, SMS, WhatsApp</li>
-            <li>Automated routing to the right department</li>
-            <li>Status updates &amp; resolution tracking for citizens</li>
-            <li>Analytics on community hotspots &amp; response SLAs</li>
+            <li>Secure Public-Private Video Sharing: Businesses &amp; residents connect to regional command centers</li>
+            <li>AI-Driven Alerts &amp; Monitoring</li>
+            <li>Privacy-Focused Access Control</li>
+            <li>Seamless Emergency Coordination</li>
+            <li>Effortless Integration</li>
           </ul>
           <a href="k-connect.html" class="prod-link">Learn more →</a>
         </div>
         <div class="prod-screen">
-          <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680977ac1d704920a711b04f_0e970ec0e82e21350e26fd915cf42a41_k_konnect.avif" alt="K-Connect interface" style="width:100%;border-radius:12px;border:1px solid rgba(34,197,94,0.2);">
+          <div class="prod-chrome">
+            <div class="prod-chrome-left">
+              <div class="prod-chrome-dots">
+                <span style="background:#FF5F57"></span>
+                <span style="background:#FFBD2E"></span>
+                <span style="background:#28C840"></span>
+              </div>
+              <span class="prod-chrome-title">K-CONNECT — Citizen Portal</span>
+            </div>
+            <div class="prod-live-badge"><span class="prod-live-dot"></span>LIVE</div>
+          </div>
+          <div class="prod-screen-body">
+            <div class="pmock">
+              <div class="pmock-bar">
+                <div class="pmock-bar-left">
+                  <div class="pmock-logo" style="background:#22c55e">k</div>
+                  <span class="pmock-bar-title">K-CONNECT — Citizen Portal · CDMX</span>
+                </div>
+                <div class="pmock-bar-left" style="gap:10px">
+                  <span class="pmock-sys-badge"><span class="pmock-sys-dot"></span>SYSTEM ACTIVE</span>
+                </div>
+              </div>
+              <div class="pmock-connect" style="position:relative;overflow:hidden;background:#090e1c">
+                <img src="images/k-connect-mockup.png" alt="K-Connect Citizen Portal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:-webkit-optimize-contrast">
+                <!-- hidden original diagram preserved below -->
+                <div class="pmock-netbox" style="display:none">
+                  <div class="pmock-net-label"><span>CONNECTED FACILITIES</span><span style="color:#22c55e">● LIVE</span></div>
+                  <div class="pmock-netdiag">
+                    <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 195 185" preserveAspectRatio="xMidYMid slice">
+                      <!-- Background -->
+                      <rect width="195" height="185" fill="#090e1c"/>
+                      <!-- City blocks -->
+                      <rect x="0" y="0" width="37" height="45" fill="#0b0f1e"/>
+                      <rect x="44" y="0" width="51" height="45" fill="#0a0d1b"/>
+                      <rect x="102" y="0" width="50" height="45" fill="#0b0f1e"/>
+                      <rect x="159" y="0" width="36" height="45" fill="#0a0d1b"/>
+                      <rect x="0" y="52" width="37" height="82" fill="#0a0d1b"/>
+                      <rect x="0" y="141" width="37" height="44" fill="#0b0f1e"/>
+                      <rect x="44" y="141" width="51" height="44" fill="#0a0d1b"/>
+                      <rect x="102" y="141" width="50" height="44" fill="#0b0f1e"/>
+                      <rect x="159" y="141" width="36" height="44" fill="#0a0d1b"/>
+                      <!-- Roads -->
+                      <rect x="0" y="45" width="195" height="7" fill="#111827"/>
+                      <rect x="0" y="134" width="195" height="7" fill="#111827"/>
+                      <rect x="0" y="90" width="195" height="5" fill="#0f1525"/>
+                      <rect x="37" y="0" width="7" height="185" fill="#111827"/>
+                      <rect x="152" y="0" width="7" height="185" fill="#111827"/>
+                      <rect x="93" y="0" width="5" height="185" fill="#0f1525"/>
+                      <!-- Diagonal (Reforma-style) -->
+                      <line x1="0" y1="70" x2="195" y2="38" stroke="#101624" stroke-width="6"/>
+                      <!-- Connection lines: facility → hub (dashed green) -->
+                      <line x1="21" y1="24" x2="95" y2="90" stroke="rgba(34,197,94,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="173" y1="24" x2="95" y2="90" stroke="rgba(59,130,246,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="21" y1="112" x2="93" y2="92" stroke="rgba(239,68,68,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="173" y1="112" x2="97" y2="92" stroke="rgba(249,115,22,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="65" y1="160" x2="93" y2="97" stroke="rgba(34,197,94,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="130" y1="160" x2="97" y2="97" stroke="rgba(59,130,246,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <line x1="21" y1="160" x2="90" y2="97" stroke="rgba(249,115,22,0.14)" stroke-width="0.8" stroke-dasharray="3 3"/>
+                      <!-- KabatOne hub (center) -->
+                      <circle cx="95" cy="92" r="13" fill="rgba(34,197,94,0.1)" stroke="#22c55e" stroke-width="1.5"/>
+                      <circle cx="95" cy="92" r="19" fill="none" stroke="rgba(34,197,94,0.18)" stroke-width="1" stroke-dasharray="3 4"/>
+                      <text x="95" y="96" text-anchor="middle" fill="#22c55e" font-size="10" font-family="monospace" font-weight="bold">k</text>
+                      <!-- SCHOOL markers (blue) -->
+                      <!-- School 1: top-left -->
+                      <circle cx="21" cy="24" r="10" fill="#0d1628" stroke="#3b82f6" stroke-width="1.3"/>
+                      <rect x="16" y="20" width="10" height="7" fill="none" stroke="#3b82f6" stroke-width="0.9"/>
+                      <polygon points="15,20 27,20 21,15" fill="#3b82f6" opacity="0.65"/>
+                      <!-- School 2: bottom-center-right -->
+                      <circle cx="130" cy="160" r="10" fill="#0d1628" stroke="#3b82f6" stroke-width="1.3"/>
+                      <rect x="125" y="156" width="10" height="7" fill="none" stroke="#3b82f6" stroke-width="0.9"/>
+                      <polygon points="124,156 136,156 130,151" fill="#3b82f6" opacity="0.65"/>
+                      <!-- HOSPITAL markers (red) -->
+                      <!-- Hospital 1: top-right -->
+                      <circle cx="173" cy="24" r="10" fill="#1a0d0d" stroke="#ef4444" stroke-width="1.3"/>
+                      <line x1="169" y1="24" x2="177" y2="24" stroke="#ef4444" stroke-width="2"/>
+                      <line x1="173" y1="20" x2="173" y2="28" stroke="#ef4444" stroke-width="2"/>
+                      <!-- Hospital 2: left-mid -->
+                      <circle cx="21" cy="112" r="10" fill="#1a0d0d" stroke="#ef4444" stroke-width="1.3"/>
+                      <line x1="17" y1="112" x2="25" y2="112" stroke="#ef4444" stroke-width="2"/>
+                      <line x1="21" y1="108" x2="21" y2="116" stroke="#ef4444" stroke-width="2"/>
+                      <!-- FACTORY markers (orange) -->
+                      <!-- Factory 1: right-mid -->
+                      <circle cx="173" cy="112" r="10" fill="#150e04" stroke="#f97316" stroke-width="1.3"/>
+                      <rect x="167" y="110" width="12" height="6" fill="none" stroke="#f97316" stroke-width="0.9"/>
+                      <rect x="169" y="106" width="2.5" height="5" fill="#f97316" opacity="0.7"/>
+                      <rect x="173" y="104" width="2.5" height="7" fill="#f97316" opacity="0.8"/>
+                      <rect x="177" y="107" width="2.5" height="4" fill="#f97316" opacity="0.6"/>
+                      <!-- Factory 2: bottom-left -->
+                      <circle cx="21" cy="160" r="10" fill="#150e04" stroke="#f97316" stroke-width="1.3"/>
+                      <rect x="15" y="158" width="12" height="6" fill="none" stroke="#f97316" stroke-width="0.9"/>
+                      <rect x="17" y="154" width="2.5" height="5" fill="#f97316" opacity="0.7"/>
+                      <rect x="21" y="152" width="2.5" height="7" fill="#f97316" opacity="0.8"/>
+                      <rect x="25" y="155" width="2.5" height="4" fill="#f97316" opacity="0.6"/>
+                      <!-- SCHOOL 3: bottom-center-left -->
+                      <circle cx="65" cy="160" r="10" fill="#0d1628" stroke="#3b82f6" stroke-width="1.3"/>
+                      <rect x="60" y="156" width="10" height="7" fill="none" stroke="#3b82f6" stroke-width="0.9"/>
+                      <polygon points="59,156 71,156 65,151" fill="#3b82f6" opacity="0.65"/>
+                      <!-- Animated flow dots (facility → hub) -->
+                      <circle r="2" fill="#22c55e" opacity="0.9"><animateMotion dur="2.4s" repeatCount="indefinite" path="M21,24 L95,90" calcMode="linear"/></circle>
+                      <circle r="2" fill="#3b82f6" opacity="0.85"><animateMotion dur="3s" repeatCount="indefinite" begin="-1s" path="M173,24 L95,90" calcMode="linear"/></circle>
+                      <circle r="2" fill="#ef4444" opacity="0.85"><animateMotion dur="2.7s" repeatCount="indefinite" begin="-0.5s" path="M21,112 L93,92" calcMode="linear"/></circle>
+                      <circle r="2" fill="#f97316" opacity="0.85"><animateMotion dur="2.9s" repeatCount="indefinite" begin="-1.8s" path="M173,112 L97,92" calcMode="linear"/></circle>
+                      <circle r="2" fill="#3b82f6" opacity="0.85"><animateMotion dur="2.6s" repeatCount="indefinite" begin="-0.8s" path="M65,160 L93,97" calcMode="linear"/></circle>
+                      <circle r="2" fill="#3b82f6" opacity="0.8"><animateMotion dur="3.1s" repeatCount="indefinite" begin="-2s" path="M130,160 L97,97" calcMode="linear"/></circle>
+                      <circle r="2" fill="#f97316" opacity="0.8"><animateMotion dur="2.5s" repeatCount="indefinite" begin="-1.4s" path="M21,160 L90,97" calcMode="linear"/></circle>
+                      <!-- Labels -->
+                      <text x="21" y="38" text-anchor="middle" fill="#60a5fa" font-size="5" font-family="monospace">SCHOOL</text>
+                      <text x="173" y="38" text-anchor="middle" fill="#f87171" font-size="5" font-family="monospace">HOSPITAL</text>
+                      <text x="173" y="126" text-anchor="middle" fill="#fb923c" font-size="5" font-family="monospace">FACTORY</text>
+                      <text x="21" y="126" text-anchor="middle" fill="#f87171" font-size="5" font-family="monospace">HOSPITAL</text>
+                      <text x="65" y="174" text-anchor="middle" fill="#60a5fa" font-size="5" font-family="monospace">SCHOOL</text>
+                      <text x="130" y="174" text-anchor="middle" fill="#60a5fa" font-size="5" font-family="monospace">SCHOOL</text>
+                      <text x="21" y="174" text-anchor="middle" fill="#fb923c" font-size="5" font-family="monospace">FACTORY</text>
+                    </svg>
+                  </div>
+                  <div class="pmock-netstats">
+                    <div><div class="pmock-net-statv" style="color:#3b82f6">12</div><div class="pmock-net-statl">SCHOOLS</div></div>
+                    <div><div class="pmock-net-statv" style="color:#ef4444">8</div><div class="pmock-net-statl">HOSPITALS</div></div>
+                    <div><div class="pmock-net-statv" style="color:#f97316">6</div><div class="pmock-net-statl">FACTORIES</div></div>
+                  </div>
+                </div>
+                <div class="pmock-kpis" style="display:none">
+                  <div class="pmock-kpi-head">
+                    <span>CITIZEN PORTAL ANALYTICS</span>
+                    <span style="font-size:0.38rem;color:rgba(34,197,94,0.6);font-weight:400">TODAY · CDMX</span>
+                  </div>
+                  <div class="pmock-kpi-grid">
+                    <div class="pmock-kpi"><div class="pmock-kpi-v" style="color:#22c55e">1,204</div><div class="pmock-kpi-l">Reports today</div></div>
+                    <div class="pmock-kpi"><div class="pmock-kpi-v" style="color:#3b82f6">94%</div><div class="pmock-kpi-l">Resolution rate</div></div>
+                    <div class="pmock-kpi"><div class="pmock-kpi-v" style="color:#f97316">4.2m</div><div class="pmock-kpi-l">Avg. response</div></div>
+                    <div class="pmock-kpi"><div class="pmock-kpi-v" style="color:#a855f7">28</div><div class="pmock-kpi-l">Active depts</div></div>
+                  </div>
+                  <div class="pmock-slabar">
+                    <div class="pmock-sla-lbl"><span>24h Resolution SLA</span><span style="color:#22c55e">94%</span></div>
+                    <div class="pmock-sla-track"><div class="pmock-sla-fill" style="width:94%;background:#22c55e"></div></div>
+                  </div>
+                  <div class="pmock-slabar">
+                    <div class="pmock-sla-lbl"><span>Citizen satisfaction</span><span style="color:#3b82f6">87%</span></div>
+                    <div class="pmock-sla-track"><div class="pmock-sla-fill" style="width:87%;background:#3b82f6"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2638,8 +3059,8 @@
         position: relative;
         inset: auto;
         grid-template-columns: 1fr;
-        transform: none !important;
-        opacity: 1 !important;
+        transform: none;
+        opacity: 1;
         pointer-events: none;
         display: none;
       }
@@ -2768,7 +3189,7 @@
       bottom: 5px; left: 6px;
       font-family: 'DM Mono', monospace;
       font-size: 8px;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.65);
       letter-spacing: 0.05em;
     }
     .mpr-feed-dot {
@@ -3170,14 +3591,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px 28px;
+      padding: 32px 20px;
+      overflow: hidden;
     }
     .int-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       width: 100%;
-      max-width: 440px;
+      max-width: 100%;
     }
     .int-card {
       display: flex;
@@ -3208,8 +3630,8 @@
       color: rgba(255,255,255,0.8);
     }
     .int-cat {
-      font-size: 10px;
-      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      color: var(--muted);
       letter-spacing: 0.04em;
       font-family: 'DM Mono', monospace;
       margin-top: 2px;
@@ -3638,9 +4060,9 @@
     }
     .proof-quote-org {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--dim);
       margin-top: 2px;
     }
     /* Logo carousel */
@@ -3651,8 +4073,8 @@
     }
     .logo-carousel-label {
       font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.3em;
+      font-size: 11px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--muted);
       text-align: center;
@@ -4061,6 +4483,7 @@
     }
     .footer-logo {
       height: 22px;
+      width: auto;
       opacity: 0.5;
     }
     .footer-copy {
@@ -4390,6 +4813,363 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
+    /* ── PRODUCTS SECTION — CHROME FRAME REDESIGN ───────────────── */
+    .prod-screen {
+      flex: 0 0 48%;
+      max-width: 48%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 0 80px color-mix(in srgb, var(--pc) 18%, transparent),
+        0 28px 64px rgba(0,0,0,0.65),
+        0 0 0 1px rgba(255,255,255,0.04);
+      background: rgba(9,15,34,0.97);
+    }
+    .prod-chrome {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      height: 38px;
+      background: rgba(4,8,20,0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    .prod-chrome-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .prod-chrome-dots {
+      display: flex;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .prod-chrome-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: block;
+    }
+    .prod-chrome-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.28);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .prod-live-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: #22c55e;
+      flex-shrink: 0;
+    }
+    .prod-live-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: prodlp 1.8s ease-in-out infinite;
+    }
+    @keyframes prodlp {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+    .prod-screen-body {
+      position: relative;
+      line-height: 0;
+    }
+    .prod-screen-body img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .prod-chips {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: flex;
+      gap: 8px;
+    }
+    .prod-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      background: rgba(4,8,20,0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+    .chip-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--pc);
+      line-height: 1;
+    }
+    .chip-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.58rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    @media (max-width: 860px) {
+      .prod-screen { flex: none; width: 100%; max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .prod-chips { display: none; }
+    }
+
+    /* ── PRODUCT MOCK PANELS ───────────────────────────────────── */
+    .pmock {
+      width: 100%; height: 330px;
+      background: #090c18; overflow: hidden;
+      display: flex; flex-direction: column;
+      font-family: 'Space Grotesk', sans-serif; position: relative;
+    }
+    .pmock-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 12px; height: 34px; flex-shrink: 0;
+      background: #060910; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .pmock-bar-left { display: flex; align-items: center; gap: 8px; }
+    .pmock-logo {
+      width: 20px; height: 20px; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 12px;
+      font-weight: 900; color: white; letter-spacing: -0.05em; flex-shrink: 0;
+    }
+    .pmock-bar-title {
+      font-family: 'DM Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.06em; color: rgba(255,255,255,0.35);
+    }
+    .pmock-bar-time {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      color: rgba(255,255,255,0.65); letter-spacing: 0.05em;
+    }
+    .pmock-sys-badge {
+      display: flex; align-items: center; gap: 4px;
+      font-family: 'DM Mono', monospace; font-size: 0.5rem;
+      color: #22c55e; letter-spacing: 0.1em;
+    }
+    .pmock-sys-dot {
+      width: 5px; height: 5px; border-radius: 50%; background: #22c55e;
+      animation: prodlp 1.8s ease-in-out infinite;
+    }
+    /* Badges */
+    .pmk-badge {
+      display: inline-flex; align-items: center; padding: 2px 5px;
+      border-radius: 3px; font-family: 'DM Mono', monospace;
+      font-size: 0.48rem; font-weight: 700; letter-spacing: 0.06em;
+    }
+    .pmk-alta { background: #ef4444; color: #fff; }
+    .pmk-media { background: #f97316; color: #fff; }
+    .pmk-baja { background: #22c55e; color: #fff; }
+    .pmk-curso { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+    .pmk-pend  { background: rgba(249,115,22,0.15); color: #f97316; border: 1px solid rgba(249,115,22,0.3); }
+    .pmk-ok    { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+    .pmk-blue  { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    /* ── K-SAFETY MAP ── */
+    .pmock-map { flex: 1; position: relative; background: #090e1c; overflow: hidden; }
+    .pmock-map-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .pmock-dot {
+      position: absolute; width: 11px; height: 11px; border-radius: 50%;
+      transform: translate(-50%,-50%); border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .pmock-ring {
+      position: absolute; width: 160px; height: 160px; border-radius: 50%;
+      border: 1px dashed rgba(59,130,246,0.3); transform: translate(-50%,-50%);
+    }
+    .pmock-overlay-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(6,9,24,0.88); backdrop-filter: blur(4px);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .pmock-ev-header {
+      padding: 5px 10px 3px; display: flex; justify-content: space-between;
+      font-family: 'DM Mono', monospace; font-size: 0.48rem;
+      color: rgba(255,255,255,0.3); letter-spacing: 0.08em;
+    }
+    .pmock-ev-table { width: 100%; border-collapse: collapse; }
+    .pmock-ev-table td {
+      padding: 4px 8px; font-size: 0.5rem; border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    /* ── K-DISPATCH KANBAN ── */
+    .pmock-dispatch { display: flex; flex: 1; overflow: hidden; }
+    .pmock-sidebar {
+      width: 100px; background: #07091a; flex-shrink: 0;
+      border-right: 1px solid rgba(255,255,255,0.05); overflow-y: auto; padding: 4px 0;
+    }
+    .pmock-res {
+      padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.03);
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .pmock-res-name { font-family: 'DM Mono', monospace; font-size: 0.5rem; color: rgba(255,255,255,0.65); }
+    .pmock-res-type { font-size: 0.44rem; color: rgba(255,255,255,0.28); }
+    .pmock-res-st {
+      font-family: 'DM Mono', monospace; font-size: 0.42rem;
+      padding: 1px 4px; border-radius: 2px; width: fit-content;
+    }
+    .pmock-kanban { flex: 1; display: flex; gap: 5px; padding: 7px; overflow: hidden; }
+    .pmock-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+    .pmock-col-h {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 3px 6px; border-radius: 4px;
+    }
+    .pmock-col-t { font-family: 'DM Mono', monospace; font-size: 0.46rem; letter-spacing: 0.07em; }
+    .pmock-col-n {
+      font-family: 'DM Mono', monospace; font-size: 0.45rem; width: 14px; height: 14px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);
+    }
+    .pmock-card {
+      background: #0f1526; border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 5px; padding: 6px 7px; display: flex; flex-direction: column; gap: 3px;
+    }
+    .pmock-card-f { font-family: 'DM Mono', monospace; font-size: 0.42rem; color: #3b82f6; letter-spacing: 0.03em; }
+    .pmock-card-t { font-size: 0.55rem; color: rgba(255,255,255,0.85); font-weight: 600; line-height: 1.2; }
+    .pmock-card-a { font-size: 0.44rem; color: rgba(255,255,255,0.28); line-height: 1.2; }
+    .pmock-card-ft { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+    .pmock-card-tm { font-family: 'DM Mono', monospace; font-size: 0.42rem; color: rgba(255,255,255,0.2); }
+    /* ── K-VIDEO ── */
+    .pmock-vid { display: flex; flex: 1; overflow: hidden; }
+    .pmock-camlist {
+      width: 90px; background: #07091a; border-right: 1px solid rgba(255,255,255,0.05);
+      overflow-y: auto; padding: 3px 0; flex-shrink: 0;
+    }
+    .pmock-camitem {
+      padding: 5px 8px; display: flex; align-items: center; gap: 5px;
+      border-left: 2px solid transparent;
+    }
+    .pmock-camitem.on { border-left-color: #ef4444; background: rgba(239,68,68,0.06); }
+    .pmock-camdot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .pmock-caminfo { flex: 1; min-width: 0; }
+    .pmock-camid { font-family: 'DM Mono', monospace; font-size: 0.5rem; color: rgba(255,255,255,0.65); }
+    .pmock-camloc { font-size: 0.42rem; color: rgba(255,255,255,0.22); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pmock-camgrid {
+      flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr; gap: 1px; background: #000;
+    }
+    .pmock-feed {
+      background: #060a14; position: relative;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .pmock-feed-id {
+      position: absolute; top: 5px; left: 6px;
+      font-family: 'DM Mono', monospace; font-size: 0.46rem; color: rgba(255,255,255,0.4);
+    }
+    .pmock-feed-rec {
+      position: absolute; top: 5px; right: 6px; display: flex; align-items: center; gap: 3px;
+      font-family: 'DM Mono', monospace; font-size: 0.42rem; color: #ef4444;
+    }
+    .pmock-feed-rec::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%; background: currentColor;
+    }
+    .pmock-no-sig { font-family: 'DM Mono', monospace; font-size: 0.5rem; color: #ef4444; letter-spacing: 0.1em; }
+    .pmock-feed-ts { position: absolute; bottom: 4px; left: 6px; font-family: 'DM Mono', monospace; font-size: 0.42rem; color: rgba(255,255,255,0.22); }
+    .pmock-vid-bar {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 5px; background: #07091a; border-top: 1px solid rgba(255,255,255,0.05); flex-shrink: 0;
+    }
+    /* ── K-TRAFFIC ── */
+    .pmock-traffic { display: flex; flex: 1; overflow: hidden; }
+    .pmock-sigrid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 8px; }
+    .pmock-sigcard {
+      background: #0f1526; border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 6px; padding: 9px 10px; display: flex; flex-direction: column; gap: 5px;
+    }
+    .pmock-sig-id { font-family: 'DM Mono', monospace; font-size: 0.48rem; color: rgba(255,255,255,0.3); }
+    .pmock-sig-loc { font-size: 0.55rem; color: rgba(255,255,255,0.7); font-weight: 500; line-height: 1.2; }
+    .pmock-lights { display: flex; gap: 4px; align-items: center; }
+    .pmock-light { width: 9px; height: 9px; border-radius: 50%; opacity: 0.18; }
+    .pmock-light.on { opacity: 1; }
+    .pmock-lr { background: #ef4444; } .pmock-ly { background: #eab308; } .pmock-lg { background: #22c55e; }
+    .pmock-sig-phase { font-family: 'DM Mono', monospace; font-size: 0.48rem; }
+    .pmock-traffstats {
+      width: 108px; background: #07091a; border-left: 1px solid rgba(255,255,255,0.05);
+      padding: 10px 10px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;
+    }
+    .pmock-stat { display: flex; flex-direction: column; gap: 2px; }
+    .pmock-stat-v { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 700; line-height: 1; }
+    .pmock-stat-l { font-size: 0.48rem; color: rgba(255,255,255,0.3); line-height: 1.3; }
+    .pmock-divider { height: 1px; background: rgba(255,255,255,0.05); }
+    /* ── K-CONNECT ── */
+    .pmock-connect { display: flex; flex: 1; overflow: hidden; }
+    .pmock-rptlist {
+      width: 195px; background: #07091a; border-right: 1px solid rgba(255,255,255,0.05);
+      overflow-y: auto; padding: 4px 0; flex-shrink: 0;
+    }
+    .pmock-rpt {
+      padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .pmock-rpt-h { display: flex; align-items: center; justify-content: space-between; }
+    .pmock-rpt-id { font-family: 'DM Mono', monospace; font-size: 0.48rem; color: #22c55e; }
+    .pmock-rpt-t { font-size: 0.55rem; color: rgba(255,255,255,0.8); font-weight: 500; line-height: 1.2; }
+    .pmock-rpt-m { font-size: 0.46rem; color: rgba(255,255,255,0.28); }
+    .pmock-kpis { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .pmock-kpi-head { font-family: 'DM Mono', monospace; font-size: 0.48rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
+    .pmock-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+    .pmock-kpi { background: #0f1526; border: 1px solid rgba(255,255,255,0.05); border-radius: 5px; padding: 7px 9px; }
+    .pmock-kpi-v { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 700; line-height: 1; }
+    .pmock-kpi-l { font-size: 0.46rem; color: rgba(255,255,255,0.28); margin-top: 3px; line-height: 1.3; }
+    .pmock-slabar { display: flex; flex-direction: column; gap: 3px; }
+    .pmock-sla-lbl { display: flex; justify-content: space-between; font-size: 0.46rem; color: rgba(255,255,255,0.3); }
+    .pmock-sla-track { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.07); overflow: hidden; }
+    .pmock-sla-fill { height: 100%; border-radius: 2px; }
+
+    /* ── REFINED PANELS v2 ──────────────────────────────────────── */
+    /* K-Dispatch sidebar improved */
+    .pmock-sidebar { width: 115px; }
+    .pmock-res2 { display: flex; align-items: center; gap: 5px; padding: 5px 8px 4px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .pmock-r2-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .pmock-r2-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+    .pmock-r2-name { font-family: 'DM Mono', monospace; font-size: 0.52rem; color: rgba(255,255,255,0.68); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pmock-r2-st { font-size: 0.42rem; color: rgba(255,255,255,0.3); white-space: nowrap; }
+    /* K-Traffic video popup */
+    .pmock-traf-popup { position: absolute; top: 10px; right: 10px; width: 150px; background: rgba(4,8,20,0.93); backdrop-filter: blur(8px); border: 1px solid rgba(239,68,68,0.35); border-radius: 6px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.6); z-index: 2; }
+    .pmock-popup-bar { background: rgba(239,68,68,0.18); padding: 4px 8px; font-family: 'DM Mono', monospace; font-size: 0.46rem; color: #ef4444; display: flex; align-items: center; gap: 5px; }
+    .pmock-popup-feed { height: 78px; position: relative; overflow: hidden; background: #050810; line-height: 0; }
+    .pmock-popup-feed svg { width: 100%; height: 100%; }
+    .pmock-popup-alert { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(239,68,68,0.82); padding: 2px 6px; font-family: 'DM Mono', monospace; font-size: 0.4rem; color: #fff; letter-spacing: 0.06em; }
+    /* K-Video controls */
+    .pmock-vid-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .pmock-vidcontrols { height: 32px; background: #060910; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 2px; padding: 0 8px; flex-shrink: 0; }
+    .pmock-vbtn { width: 24px; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5); flex-shrink: 0; }
+    .pmock-vsep { width: 1px; height: 16px; background: rgba(255,255,255,0.07); margin: 0 4px; flex-shrink: 0; }
+    .pmock-scrub { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.1); margin: 0 8px; position: relative; cursor: pointer; }
+    .pmock-scrub-fill { position: absolute; left: 0; top: 0; height: 100%; background: #a855f7; border-radius: 2px; width: 35%; }
+    .pmock-scrub-thumb { position: absolute; left: 35%; top: 50%; width: 8px; height: 8px; border-radius: 50%; background: white; transform: translate(-50%, -50%); box-shadow: 0 0 4px rgba(168,85,247,0.5); }
+    .pmock-vts { font-family: 'DM Mono', monospace; font-size: 0.44rem; color: rgba(255,255,255,0.3); flex-shrink: 0; }
+    .pmock-feed svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .pmock-feed img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* K-Connect network diagram (adapted from k-connect.html) */
+    .pmock-netbox { display: flex; flex-direction: column; width: 195px; flex-shrink: 0; background: #07091a; border-right: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
+    .pmock-net-label { padding: 5px 10px 4px; font-family: 'DM Mono', monospace; font-size: 0.42rem; color: rgba(255,255,255,0.2); letter-spacing: 0.08em; border-bottom: 1px solid rgba(255,255,255,0.04); flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; }
+    .pmock-netdiag { position: relative; flex: 1; min-height: 0; }
+    .pmock-net-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
+    .pmock-conn-line { stroke: rgba(34,197,94,0.22); stroke-width: 1; fill: none; stroke-dasharray: 4 4; animation: pmock-dash-flow 3s linear infinite; }
+    @keyframes pmock-dash-flow { to { stroke-dashoffset: -24; } }
+    .pmock-flow-dot { fill: #22c55e; r: 2; opacity: 0.8; }
+    .pmock-hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 1.5px solid #22c55e; box-shadow: 0 0 16px rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; z-index: 4; font-family: 'DM Mono', monospace; font-size: 0.7rem; font-weight: 700; color: #22c55e; }
+    .pmock-hub::after { content:''; position:absolute; inset:-8px; border-radius:50%; border:1px solid rgba(34,197,94,0.18); animation: pmock-node-pulse 2.8s ease-out infinite; }
+    @keyframes pmock-node-pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .pmock-sat { position: absolute; width: 26px; height: 26px; border-radius: 50%; background: rgba(7,9,26,0.95); border: 1px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; transform: translate(-50%,-50%); z-index: 3; font-size: 0.68rem; line-height: 1; }
+    .pmock-sat-lbl { position: absolute; font-family: 'DM Mono', monospace; font-size: 0.37rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.3); white-space: nowrap; left: 50%; top: 100%; transform: translate(-50%, 3px); pointer-events: none; text-align: center; }
+    .pmock-netstats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(255,255,255,0.05); text-align: center; flex-shrink: 0; }
+    .pmock-net-statv { font-family: 'DM Mono', monospace; font-size: 0.54rem; font-weight: 700; color: #22c55e; padding: 5px 0 1px; }
+    .pmock-net-statl { font-family: 'DM Mono', monospace; font-size: 0.35rem; color: rgba(255,255,255,0.22); padding-bottom: 5px; letter-spacing: 0.04em; }
 
   </style>
 
@@ -4612,7 +5392,7 @@
       if (mcTagline)  mcTagline.textContent  = meta.tagline || '';
     }
 
-    const MOD_ORDER = ['gis','video','dispatch','events','integrations','responder','citizen','ai','bi'];
+    const MOD_ORDER = ['video','dispatch','events','gis','integrations','responder','citizen','ai','bi'];
     let modIdx = 0;
     let paused = false;
     let autoTimer = null;

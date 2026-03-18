@@ -18,7 +18,7 @@
       --blue-light: #60a5fa;
       --cyan:       #06b6d4;
       --white:      #e6eef8;
-      --muted: #748aab;
+      --muted: #9dbdd0;
       --dim:        #94a3b8;
       --border:     rgba(255,255,255,0.06);
       --border-b:   rgba(59,130,246,0.28);
@@ -445,6 +445,78 @@
     .nav-drop-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--dim) !important; font-size: 13px !important; font-weight: 500 !important; letter-spacing: 0.03em !important; text-transform: none !important; transition: background 0.15s, color 0.15s; }
     .nav-drop-item:hover { background: rgba(59,130,246,0.1); color: var(--white) !important; }
     .nav-drop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── MOBILE NAV ─────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 14px 11px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dim);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px !important; position: relative; }
+      .nav-hamburger { display: flex; }
+      .btn-nav { display: none !important; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        background: rgba(6,12,28,0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(59,130,246,0.15);
+        padding: 12px 20px 24px;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+      .nav-links > li > a:hover { background: rgba(255,255,255,0.04); }
+      .nav-drop-menu {
+        display: none !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255,255,255,0.04) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        margin: 0 0 4px !important;
+        padding: 4px !important;
+        min-width: auto !important;
+      }
+      .nav-dropdown.mobile-open .nav-drop-menu { display: flex !important; flex-direction: column !important; }
+      .nav-dropdown.mobile-open > a svg { transform: rotate(180deg); }
+      .nav-drop-item { padding: 11px 14px !important; }
+      .nav-links.open .btn-nav { display: inline-flex !important; background: none; box-shadow: none; color: var(--blue-light); padding: 13px 12px; font-size: 14px; font-weight: 600; }
+    }
   </style>
 </head>
 <body>
@@ -485,6 +557,9 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="btn-nav">Book a Demo</a></li>
     </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- Breadcrumb -->
