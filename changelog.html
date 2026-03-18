@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v0.42 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.42</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: MIDDLEWARE_INVOCATION_FAILED on Vercel edge runtime</div>
+          <ul class="tl-list">
+            <li>Wrapped <code>createMiddleware</code> in explicit function — skips <code>/_next</code>, <code>/api</code>, favicon, and static file extensions before invoking intl middleware</li>
+            <li>Prevents Vercel edge runtime crash when middleware tries to process static assets</li>
+            <li><code>npm run build</code> → 0 errors, middleware compiled successfully as edge proxy</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.41 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>
