@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.36] 2026-03-18 — Fix: hamburger menu JS missing on all 7 industry pages
+
+**Fixed**
+- Mobile nav hamburger button had no JS on any of the 7 industry pages
+- Added navToggle click handler and mobile dropdown expand/collapse script to all 7 files
+- Both hamburger toggle and Solutions dropdown now work correctly on mobile
+
 ## [0.35] 2026-03-18 — Fix: move responsive CSS into head style block on all 7 industry pages
 
 **Fixed**
