@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.37] 2026-03-18 — Fix: nav bar not full-width on mobile on all 5 product pages
+
+**Fixed**
+- Mobile nav `left: 0; right: 0` were missing `!important` on all 5 product pages (k-safety, k-dispatch, k-traffic, k-video, k-connect)
+- Nav bar was clipped short on the right side on mobile — now spans full viewport width
+
 ## [0.36] 2026-03-18 — Fix: hamburger menu JS missing on all 7 industry pages
 
 **Fixed**
