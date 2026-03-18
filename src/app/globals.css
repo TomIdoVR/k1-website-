@@ -25,6 +25,13 @@ body {
   min-height: 100%;
   background: var(--bg);
   color: var(--white);
-  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3,
+.font-condensed,
+.hero-title,
+.stat-number {
+  font-family: var(--font-barlow-condensed), sans-serif;
 }

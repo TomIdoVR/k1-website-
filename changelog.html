@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v0.41 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.41</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: EN at root URL, load Barlow Condensed + Space Grotesk fonts</div>
+          <ul class="tl-list">
+            <li>Changed <code>localePrefix</code> to <code>as-needed</code> — EN at <code>/k-dispatch</code>, ES at <code>/es/k-dispatch</code></li>
+            <li><code>redirects()</code> in next.config.ts — <code>/en/:path*</code> → <code>/:path*</code> (308 permanent)</li>
+            <li><code>beforeFiles</code> rewrite — <code>/k-dispatch</code> → <code>/en/k-dispatch</code> internally so App Router <code>[locale]</code> = en</li>
+            <li>Fonts loaded via <code>next/font/google</code>: Space Grotesk (body) + Barlow Condensed (headlines)</li>
+            <li>globals.css uses CSS font variables; h1/h2/h3 use Barlow Condensed</li>
+            <li>0 TypeScript errors — all 6 product page URLs confirmed 200, correct <code>lang=</code> and titles</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.40 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>
