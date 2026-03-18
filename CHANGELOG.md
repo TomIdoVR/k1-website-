@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.34] 2026-03-18 — Fix missing grid-collapse rules on industry pages
+
+**Fixed**
+- municipalities: `.benefits-grid` (3-col) and `.features-two-col` (2-col) now collapse to 1-col at 640px
+- public-safety: `.cap-grid` (2-col numbered cards) now collapses to 1-col at 640px
+- logistics: `.coverage-grid` and `.cap-grid` now collapse to 1-col at 640px
+- retail, stadiums: `.cap-grid` now collapses to 1-col at 640px
+- stadiums: `.zones-grid` now collapses to 1-col at 640px
+- ports: `.advantages-grid` (3-col) now collapses to 1-col at 640px
+
 ## [0.33] 2026-03-18 — Mobile-first responsive adaptation across all 17 pages
 
 **Added**
