@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.29] 2026-03-18 — Fix mobile nav full-width on all pages
+**Fixed**
+- Mobile nav was only covering the left portion of the header on 15 pages — `position: fixed` override was missing `left: 0; right: 0`, so the nav didn't stretch to full viewport width. Fixed across all product, industry, and content pages.
+
 ## [0.28] 2026-03-17 — Fix sticky nav on all remaining pages (solutions, about, contact, industries)
 **Fixed**
 - Same `position: relative` nav bug found on solutions.html, about.html, contact.html, and all 7 industry pages — all updated to `position: fixed !important`
