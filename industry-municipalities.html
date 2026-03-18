@@ -200,6 +200,45 @@
       .nav-drop-item { padding: 11px 14px !important; }
       .nav-links.open .btn-nav { display: inline-flex !important; background: none; box-shadow: none; color: var(--blue-light); padding: 13px 12px; font-size: 14px; font-weight: 600; }
     }
+
+  /* ── MOBILE RESPONSIVE LAYOUT ───────────────────────── */
+  @media (max-width: 768px) {
+    .ind-hero-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 24px 56px; }
+    .ind-hero-right { display: none; }
+    .ind-container  { padding: 0 24px; }
+    .ind-section    { padding: 64px 0; }
+    .cta-section    { padding: 72px 24px; }
+    .site-footer    { flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 28px 20px; }
+  }
+  @media (max-width: 640px) {
+    .ind-h1           { font-size: 44px; line-height: 0.95; }
+    .ind-hero-inner   { padding: 40px 20px 48px; gap: 28px; }
+    .ind-section      { padding: 48px 0; }
+    .ind-container    { padding: 0 20px; }
+    .benefits-grid    { grid-template-columns: 1fr; }
+    .features-two-col { grid-template-columns: 1fr; }
+    .cta-section      { padding: 56px 20px; }
+    .cta-h2           { font-size: 38px; line-height: 1.0; }
+    .cta-btns         { flex-direction: column; align-items: stretch; gap: 10px; }
+    .cta-btns .btn-primary, .cta-btns .btn-ghost { justify-content: center; }
+    .section-desc     { margin-bottom: 36px; }
+    .site-footer      { flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 28px 20px; }
+  }
+  @media (max-width: 480px) {
+    .ind-h1         { font-size: 36px; line-height: 0.95; }
+    .ind-hero-inner { padding: 32px 16px 40px; }
+    .ind-section    { padding: 40px 0; }
+    .ind-container  { padding: 0 16px; }
+    .cta-section    { padding: 44px 16px; }
+    .cta-h2         { font-size: 32px; }
+    .section-desc   { margin-bottom: 28px; }
+    .site-footer    { padding: 24px 16px; }
+  }
+  @media (max-width: 360px) {
+    .ind-h1        { font-size: 30px; }
+    .ind-container { padding: 0 12px; }
+    .cta-section   { padding: 36px 12px; }
+  }
   </style>
 </head>
 <body>

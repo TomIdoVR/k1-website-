@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.35] 2026-03-18 — Fix: move responsive CSS into head style block on all 7 industry pages
+
+**Fixed**
+- Responsive media query rules were in a body `<style>` tag which some browsers ignore
+- Moved all responsive CSS into the `<head>` `<style>` block for all 7 industry pages
+- Each page now has authoritative breakpoint rules (768/640/480/360px) in the proper location
+
 ## [0.34] 2026-03-18 — Fix missing grid-collapse rules on industry pages
 
 **Fixed**
