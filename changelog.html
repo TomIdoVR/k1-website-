@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v0.43 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.43</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: replace next-intl middleware with Node.js-compatible locale routing</div>
+          <ul class="tl-list">
+            <li><code>middleware.ts</code> — replaced <code>createMiddleware</code> (imports <code>negotiator</code> CJS, crashes in Vercel V8 edge isolate) with pure <code>NextResponse</code> implementation; no CJS dependencies</li>
+            <li>Custom middleware handles: <code>/en/*</code> redirect, ES prefix passthrough, EN internal rewrite to <code>/en/</code></li>
+            <li><code>next.config.ts</code> — removed <code>withNextIntl</code> plugin and <code>beforeFiles</code> rewrites (now handled by middleware)</li>
+            <li><code>routing.ts</code> — simplified to plain config object; <code>localePrefix: as-needed</code> kept for correct Nav URL generation</li>
+            <li><code>[locale]/layout.tsx</code> — explicit <code>locale={locale}</code> on <code>NextIntlClientProvider</code> so <code>useLocale()</code> resolves without server plugin</li>
+            <li><code>npm run build</code> → 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.42 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>

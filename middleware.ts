@@ -1,27 +1,46 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './src/i18n/routing'
+import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const intlMiddleware = createMiddleware(routing)
+const locales = ['en', 'es']
+const defaultLocale = 'en'
 
-export default function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
+function getLocale(request: NextRequest): string {
+  const acceptLanguage = request.headers.get('accept-language') || ''
+  const preferred = acceptLanguage.split(',')[0].trim().split('-')[0].toLowerCase()
+  return locales.includes(preferred) ? preferred : defaultLocale
+}
 
-  // Skip middleware for Next.js internals and static files
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
+  // Skip static files and Next.js internals
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
-    pathname.includes('/favicon') ||
-    pathname.match(/\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2)$/)
+    pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$/)
   ) {
-    return
+    return NextResponse.next()
   }
 
-  return intlMiddleware(request)
+  // Redirect /en/* to /* (strip explicit en prefix)
+  if (pathname.startsWith('/en/') || pathname === '/en') {
+    const newPath = pathname.replace(/^\/en/, '') || '/'
+    return NextResponse.redirect(new URL(newPath, request.url), 308)
+  }
+
+  // Check if path already has /es/ prefix
+  const hasEsPrefix = pathname.startsWith('/es/') || pathname === '/es'
+
+  // Rewrite clean English paths to /en/ internally for App Router
+  if (!hasEsPrefix) {
+    const url = request.nextUrl.clone()
+    url.pathname = `/en${pathname === '/' ? '' : pathname}`
+    return NextResponse.rewrite(url)
+  }
+
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next|api|favicon\\.ico|.*\\.(?:png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2)).*)',
-  ],
+  matcher: ['/((?!_next|api|.*\\..*).*)'],
 }
