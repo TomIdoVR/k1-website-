@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.26] 2026-03-17 — Add animated hub-and-spoke "How It Works" diagrams to all product pages
+**Added**
+- SVG animated hub-and-spoke flow diagram replacing plain numbered steps in "How It Works" sections
+- Diagrams feature: animated glowing dots flowing from input nodes → hub → output nodes, pulsing hub ring, and rotating dashed inner circle
+- Each product has unique node labels and icons: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect
+
+## [0.25] 2026-03-17 — Update K-Safety hero stats to platform-wide figures
+**Changed**
+- Replaced single-site stats (5,400 cameras, 530 panic buttons, 40 cities) with platform-wide figures: 68 Projects, 100+ Agencies, 30+ Integrations
+
 ## [0.24] 2026-03-17 — Update K-Connect section text to match Kabatone.com
 **Changed**
 - Headline: "Citizen Engagement & Reporting" → "Secure community-based video sharing"

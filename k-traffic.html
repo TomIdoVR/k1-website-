@@ -669,6 +669,10 @@
     .step:last-child::after { display: none; }
     .steps-cta { text-align: center; }
 
+    /* HOW IT WORKS — ANIMATED DIAGRAM */
+    .hiw-diagram { margin: 32px auto 8px; max-width: 860px; }
+    .hiw-diagram svg { display: block; width: 100%; height: auto; overflow: visible; }
+
     /* ══════════════════════════════
        CAPABILITIES
     ══════════════════════════════ */
@@ -1166,27 +1170,80 @@
           <h2 class="section-h2">Data-Driven Traffic Orchestration<br>with Real-Time AI Insights</h2>
           <div class="divider"></div>
         </div>
-        <div class="steps-row reveal reveal-d1">
-          <div class="step">
-            <div class="step-num">01</div>
-            <h4>Data Collection</h4>
-            <p>IoT sensors, cameras, loop detectors, and connected vehicles feed live traffic data to the platform.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">02</div>
-            <h4>AI &amp; Analytics Processing</h4>
-            <p>Machine learning models analyze patterns, detect anomalies, and predict congestion build-up.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">03</div>
-            <h4>Traffic Coordination</h4>
-            <p>Adaptive signal plans are applied, routes are optimized, and operators are alerted.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">04</div>
-            <h4>Incident Response &amp; Reporting</h4>
-            <p>Incidents trigger automated workflows. Post-event analytics improve future responses.</p>
-          </div>
+        <div class="hiw-diagram">
+          <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="kt-gn" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="kt-gp" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="kt-gh" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <radialGradient id="kt-hbg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a3260"/><stop offset="100%" stop-color="#0b1220"/></radialGradient>
+              <radialGradient id="kt-aura" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="60%" stop-color="#3b82f6" stop-opacity="0.05"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+              <path id="kt-s1" d="M165,52 L400,225"/>
+              <path id="kt-s2" d="M165,137 L400,225"/>
+              <path id="kt-s3" d="M165,222 L400,225"/>
+              <path id="kt-s4" d="M165,307 L400,225"/>
+              <path id="kt-s5" d="M165,392 L400,225"/>
+              <path id="kt-s6" d="M400,225 L635,120"/>
+              <path id="kt-s7" d="M400,225 L635,222"/>
+              <path id="kt-s8" d="M400,225 L635,324"/>
+            </defs>
+            <circle cx="400" cy="225" r="160" fill="url(#kt-aura)"/>
+            <g stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.28"><line x1="165" y1="52" x2="400" y2="225"/><line x1="165" y1="137" x2="400" y2="225"/><line x1="165" y1="222" x2="400" y2="225"/><line x1="165" y1="307" x2="400" y2="225"/><line x1="165" y1="392" x2="400" y2="225"/></g>
+            <g stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.28"><line x1="400" y1="225" x2="635" y2="120"/><line x1="400" y1="225" x2="635" y2="222"/><line x1="400" y1="225" x2="635" y2="324"/></g>
+            <circle r="4" fill="#60a5fa" filter="url(#kt-gp)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0s"><mpath href="#kt-s1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0s"/></circle>
+            <circle r="4" fill="#60a5fa" filter="url(#kt-gp)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="-0.5s"><mpath href="#kt-s2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="-0.5s"/></circle>
+            <circle r="4" fill="#60a5fa" filter="url(#kt-gp)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="-1s"><mpath href="#kt-s3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="-1s"/></circle>
+            <circle r="4" fill="#60a5fa" filter="url(#kt-gp)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="-1.5s"><mpath href="#kt-s4"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="-1.5s"/></circle>
+            <circle r="4" fill="#60a5fa" filter="url(#kt-gp)"><animateMotion dur="2.5s" repeatCount="indefinite" begin="-2s"><mpath href="#kt-s5"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="-2s"/></circle>
+            <circle r="5" fill="#06d6a0" filter="url(#kt-gp)"><animateMotion dur="2s" repeatCount="indefinite" begin="-0.3s"><mpath href="#kt-s6"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="-0.3s"/></circle>
+            <circle r="4.5" fill="#06b6d4" filter="url(#kt-gp)"><animateMotion dur="2s" repeatCount="indefinite" begin="-1s"><mpath href="#kt-s7"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="-1s"/></circle>
+            <circle r="4.5" fill="#06b6d4" filter="url(#kt-gp)"><animateMotion dur="2s" repeatCount="indefinite" begin="-1.7s"><mpath href="#kt-s8"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" begin="-1.7s"/></circle>
+            <!-- HUB -->
+            <circle cx="400" cy="225" r="75" fill="url(#kt-hbg)" stroke="#3b82f6" stroke-width="1.5" filter="url(#kt-gh)"><animate attributeName="stroke-opacity" values="0.5;0.85;0.5" dur="3s" repeatCount="indefinite"/></circle>
+            <circle cx="400" cy="225" r="60" fill="none" stroke="#3b82f6" stroke-width="0.6" stroke-dasharray="4,6"><animate attributeName="stroke-opacity" values="0.12;0.38;0.12" dur="3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0 400 225" to="360 400 225" dur="25s" repeatCount="indefinite"/></circle>
+            <text x="400" y="218" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="20" fill="#e6eef8" letter-spacing="3">K-TRAFFIC</text>
+            <text x="400" y="238" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7" fill="#60a5fa" letter-spacing="1.5">MONITOR · OPTIMIZE · ALERT</text>
+            <!-- INPUT: IoT Sensors (y=52) -->
+            <circle cx="165" cy="52" r="35" fill="#0d1e38" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" filter="url(#kt-gn)"/>
+            <g transform="translate(165,52)" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" fill="none"><circle cx="0" cy="3" r="4.5" fill="#60a5fa" stroke="none"/><path d="M-9,-6 A13,13 0 0,1 9,-6"/><path d="M-14,-12 A20,20 0 0,1 14,-12"/><line x1="0" y1="7.5" x2="0" y2="13"/><line x1="-4" y1="13" x2="4" y2="13"/></g>
+            <rect x="18" y="41" width="100" height="22" rx="11" fill="#111e33" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="68" y="56.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#9dbdd0">IoT Sensors</text>
+            <!-- INPUT: Cameras (y=137) -->
+            <circle cx="165" cy="137" r="35" fill="#0d1e38" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" filter="url(#kt-gn)"/>
+            <g transform="translate(165,137)" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></g>
+            <rect x="18" y="126" width="100" height="22" rx="11" fill="#111e33" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="68" y="141.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#9dbdd0">Cameras</text>
+            <!-- INPUT: Loop Detectors (y=222) -->
+            <circle cx="165" cy="222" r="35" fill="#0d1e38" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" filter="url(#kt-gn)"/>
+            <g transform="translate(165,222)" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" fill="none"><rect x="-13" y="-8" width="26" height="16" rx="2"/><line x1="-8" y1="-8" x2="-8" y2="-14"/><line x1="8" y1="-8" x2="8" y2="-14"/><line x1="-8" y1="8" x2="-8" y2="14"/><line x1="8" y1="8" x2="8" y2="14"/><line x1="-13" y1="0" x2="-20" y2="0"/><line x1="13" y1="0" x2="20" y2="0"/></g>
+            <rect x="8" y="211" width="116" height="22" rx="11" fill="#111e33" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="66" y="226.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#9dbdd0">Loop Detectors</text>
+            <!-- INPUT: Connected Vehicles (y=307) -->
+            <circle cx="165" cy="307" r="35" fill="#0d1e38" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" filter="url(#kt-gn)"/>
+            <g transform="translate(165,307)" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-13" y="-5" width="26" height="12" rx="4"/><path d="M-8,-5 L-5,-13 L5,-13 L8,-5"/><circle cx="-8" cy="7" r="3"/><circle cx="8" cy="7" r="3"/></g>
+            <rect x="6" y="296" width="120" height="22" rx="11" fill="#111e33" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="66" y="311.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#9dbdd0">Vehicles / V2X</text>
+            <!-- INPUT: Field Reports (y=392) -->
+            <circle cx="165" cy="392" r="35" fill="#0d1e38" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" filter="url(#kt-gn)"/>
+            <g transform="translate(165,392)" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-10" y="-13" width="20" height="26" rx="2"/><line x1="-5" y1="-6" x2="5" y2="-6"/><line x1="-5" y1="0" x2="5" y2="0"/><line x1="-5" y1="6" x2="2" y2="6"/></g>
+            <rect x="18" y="381" width="100" height="22" rx="11" fill="#111e33" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="68" y="396.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#9dbdd0">Field Reports</text>
+            <!-- OUTPUT: Signal Control (y=120) -->
+            <circle cx="635" cy="120" r="35" fill="#0d1e38" stroke="#06d6a0" stroke-width="1.5" stroke-opacity="0.65" filter="url(#kt-gn)"/>
+            <g transform="translate(635,120)" stroke="#06d6a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-7" y="-15" width="14" height="30" rx="3"/><circle cx="0" cy="-8" r="3.5" fill="#ff4444" stroke="none"/><circle cx="0" cy="0" r="3.5" fill="#ffaa00" stroke="none"/><circle cx="0" cy="8" r="3.5" fill="#06d6a0" stroke="#06d6a0"/></g>
+            <rect x="678" y="109" width="110" height="22" rx="11" fill="#0a2218" stroke="#06d6a0" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="733" y="124.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#06d6a0">Signal Control</text>
+            <!-- OUTPUT: Incident Alert (y=222) -->
+            <circle cx="635" cy="222" r="35" fill="#0d1e38" stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.65" filter="url(#kt-gn)"/>
+            <g transform="translate(635,222)" stroke="#06b6d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M0,-14 L12,8 L-12,8 Z"/><line x1="0" y1="-6" x2="0" y2="0"/><circle cx="0" cy="4" r="1.5" fill="#06b6d4" stroke="none"/></g>
+            <rect x="678" y="211" width="110" height="22" rx="11" fill="#0a1e2a" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="733" y="226.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#06b6d4">Incident Alert</text>
+            <!-- OUTPUT: Analytics (y=324) -->
+            <circle cx="635" cy="324" r="35" fill="#0d1e38" stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.65" filter="url(#kt-gn)"/>
+            <g transform="translate(635,324)" stroke="#06b6d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="-13" y="-13" width="26" height="26" rx="2"/><line x1="-8" y1="6" x2="-8" y2="-2"/><line x1="-2" y1="6" x2="-2" y2="-6"/><line x1="4" y1="6" x2="4" y2="0"/><line x1="10" y1="6" x2="10" y2="-8"/></g>
+            <rect x="678" y="313" width="82" height="22" rx="11" fill="#0a1e2a" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.4"/>
+            <text x="719" y="328.5" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="500" fill="#06b6d4">Analytics</text>
+          </svg>
         </div>
         <div class="steps-cta reveal reveal-d2">
           <a href="contact.html" class="btn-ghost">Talk to an Expert</a>
