@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.45] 2026-03-18 — Align Next.js homepage with GitHub Pages version
+**Added**
+- `ModulesSection.tsx` — 9-tab interactive Business Intelligence section (Video, Dispatch, Events, GIS, Integrations, Responder, Citizen, AI, BI) with auto-rotation, pause on hover, ARIA support, and animated progress bar
+- Module screenshots in product cards (replacing placeholder grid pattern)
+- Moved `/images/` to `/public/images/` so static assets are served correctly by Next.js
+
+**Fixed**
+- Product cards now show actual module screenshots instead of empty dark placeholders
+- Hero headline no longer applies gradient to "Public Safety" — matches original all-white styling
+- Section order now matches original: Hero → Modules tabs → Stats → Products → Why → Industries → CTA
+
+---
+
 ## [0.44] 2026-03-18 — Next.js: all 15 pages ported EN+ES, sitemap, robots, shared components
 **Added**
 - Ported 12 remaining pages: K-Traffic, K-Connect, 7 industry pages (Public Safety, Municipalities, Airport, Retail, Logistics, Ports, Stadiums), Homepage, About, Contact

@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
+import ModulesSection from '@/components/ModulesSection'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 
@@ -21,6 +22,7 @@ const products = [
     key: 'k-safety',
     href: '/k-safety',
     color: '#3b82f6',
+    mockup: '/images/modules/gis.png',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bcf0f51afe19ee6f62_bfc934fae88e789f0a34a1e98034f547_k-safety.png',
     en: {
       label: 'K-SAFETY',
@@ -50,6 +52,7 @@ const products = [
     href: '/k-dispatch',
     color: '#ef4444',
     flip: true,
+    mockup: '/images/modules/dispatch.png',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bcfa466ab895831d3e_bbb2ae471a4de092b2a368cc525f60fa_k-dispatch.png',
     en: {
       label: 'K-DISPATCH',
@@ -78,6 +81,7 @@ const products = [
     key: 'k-traffic',
     href: '/k-traffic',
     color: '#06b6d4',
+    mockup: '/images/k-traffic-mockup.png',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bc2144d373f0c08bf0_f578e42b45f19b452bdd296b179abcfa_k-traffic.png',
     en: {
       label: 'K-TRAFFIC',
@@ -107,6 +111,7 @@ const products = [
     href: '/k-video',
     color: '#a855f7',
     flip: true,
+    mockup: '/images/modules/video.png',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bdcaa9de22148bd63a_3e3c3f4158736d63a3d69eaf38c04bd5_k-video.png',
     en: {
       label: 'K-VIDEO',
@@ -135,6 +140,7 @@ const products = [
     key: 'k-connect',
     href: '/k-connect',
     color: '#22c55e',
+    mockup: '/images/k-connect-mockup.png',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bca3c6f9301c805cf0_5e614308b651cd2f4647083dd820e98c_k-connect.png',
     en: {
       label: 'K-CONNECT',
@@ -365,11 +371,9 @@ export default async function HomePage({
 
           {/* H1 */}
           <h1 className="hp-headline">
-            {es ? (
-              <>El Sistema Operativo para la{' '}<span className="hp-headline-grad">Seguridad Publica</span></>
-            ) : (
-              <>The Unified Operating System for{' '}<span className="hp-headline-grad">Public Safety</span></>
-            )}
+            {es
+              ? 'El Sistema Operativo Unificado para la Seguridad Publica'
+              : 'The Unified Operating System for Public Safety'}
           </h1>
 
           {/* Subtitle */}
@@ -414,6 +418,9 @@ export default async function HomePage({
             </div>
           </div>
         </section>
+
+        {/* ═══ MODULES / BI TABBED SECTION ═══ */}
+        <ModulesSection es={es} />
 
         {/* ═══ PROOF / STATS SECTION ═══ */}
         <section className="hp-proof">
@@ -531,8 +538,8 @@ export default async function HomePage({
                       </div>
                     </div>
                     <div className="hp-prod-body">
-                      <div className="hp-prod-mockup-grid" />
-                      <div className="hp-prod-mockup-label">{c.label}</div>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={prod.mockup} alt={c.label} className="hp-prod-screenshot" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -1243,25 +1250,11 @@ export default async function HomePage({
           height: 260px;
           overflow: hidden;
         }
-        .hp-prod-mockup-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
-          background-size: 32px 32px;
-        }
-        .hp-prod-mockup-label {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-family: 'Barlow Condensed', sans-serif;
-          font-weight: 800;
-          font-size: 24px;
-          color: rgba(255,255,255,0.08);
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
+        .hp-prod-screenshot {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         /* ── Why Section ── */
