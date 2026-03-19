@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.52] 2026-03-19 — Perf: WebP images + vercel.json for static Vercel deploy
+
+**Changed**
+- Converted all 11 PNG images (175MB) to WebP (582KB) — 99.7% reduction
+- Updated image references in hero-mockup.html from .png to .webp
+- Deleted unused test2.png
+- Added vercel.json for static hosting (cleanUrls, homepage rewrite, image caching)
+- Switched deployment strategy: static HTML via Vercel CLI instead of Next.js
+
 ## [0.37] 2026-03-18 — Fix: nav bar not full-width on mobile on all 5 product pages
 
 **Fixed**
