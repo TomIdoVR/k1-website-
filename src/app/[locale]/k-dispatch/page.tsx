@@ -331,6 +331,65 @@ export default async function KDispatchPage({
           </div>
         </section>
 
+        {/* ── RELATED RESOURCES ── */}
+        <section style={{ padding: '64px 0', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: 'var(--cyan)', marginBottom: '24px',
+            }}>
+              {es ? 'Recursos Relacionados' : 'Related Resources'}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+              <Link href="/resources/what-is-a-public-safety-platform" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es una plataforma de seguridad pública?' : 'What Is a Public Safety Platform?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/how-c5-command-centers-work" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Cómo funcionan los centros C5' : 'How C5 Command Centers Work'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/public-safety-software-municipalities-mexico" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Software de seguridad pública para México' : 'Public Safety Software for Mexico'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Ver por industria:' : 'Browse by industry:'}
+              </span>
+              <Link href="/industries/public-safety" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Seguridad Pública' : 'Public Safety'}
+              </Link>
+              <Link href="/industries/municipalities" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Municipios' : 'Municipalities'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── BOTTOM CTA ── */}
         <section style={{ padding: '96px 32px', textAlign: 'center' }}>
           <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--cyan)', marginBottom: '16px' }}>{es ? 'Comenzar' : 'Get Started'}</p>

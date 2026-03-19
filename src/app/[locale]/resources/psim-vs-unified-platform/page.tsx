@@ -424,6 +424,57 @@ export default async function PsimVsUnifiedPlatformPage({
           </div>
         </section>
 
+        {/* ── RELATED ARTICLES ── */}
+        <section style={{ padding: '64px 0', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto', padding: '0 40px' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '24px',
+            }}>
+              {es ? 'Artículos Relacionados' : 'Related Articles'}
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <Link href="/resources/what-is-a-public-safety-platform" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? '¿Qué es una plataforma de seguridad pública?' : 'What Is a Public Safety Platform?'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/how-c5-command-centers-work" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Cómo funcionan los centros C5' : 'How C5 Command Centers Work'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/smart-city-platform-guide" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Guía de plataformas de ciudad inteligente' : 'Smart City Platform Guide'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/public-safety-software-municipalities-mexico" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Software de seguridad pública para México' : 'Public Safety Software for Mexico'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <CTASection
           es={es}

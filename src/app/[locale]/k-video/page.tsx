@@ -305,6 +305,68 @@ export default async function KVideoPage({
           </div>
         </section>
 
+        {/* ── RELATED RESOURCES ── */}
+        <section style={{ padding: '64px 0', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: 'var(--cyan)', marginBottom: '24px',
+            }}>
+              {es ? 'Recursos Relacionados' : 'Related Resources'}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+              <Link href="/resources/what-is-a-public-safety-platform" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es una plataforma de seguridad pública?' : 'What Is a Public Safety Platform?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/psim-vs-unified-platform" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/smart-city-platform-guide" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Guía de plataformas de ciudad inteligente' : 'Smart City Platform Guide'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Ver por industria:' : 'Browse by industry:'}
+              </span>
+              <Link href="/industries/public-safety" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Seguridad Pública' : 'Public Safety'}
+              </Link>
+              <Link href="/industries/airport" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Aeropuertos' : 'Airports'}
+              </Link>
+              <Link href="/industries/retail" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Retail' : 'Retail'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── BOTTOM CTA ── */}
         <section style={{ padding: '96px 32px', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '16px' }}>{content.ctaH2}</h2>

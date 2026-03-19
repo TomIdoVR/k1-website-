@@ -156,7 +156,7 @@
 | SEO-009: Schema markup (Organization + SoftwareApplication) | Low | Done |
 | SEO-010: OG tags on all pages | Low | Done |
 | Core Web Vitals audit (LCP, CLS, INP) | High | Not started |
-| Internal linking pass — module → solution → resource | High | Not started |
+| Internal linking pass — module → solution → resource | High | Done |
 | Backlink outreach — industry publications | Medium | Not started |
 
 ### Performance baselines to establish

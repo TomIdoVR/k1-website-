@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.49] 2026-03-19 — Internal linking pass across all 17 pages
+**Added**
+- "Related Resources" section on all 5 product pages with 3 resource links + industry cross-links each
+- "Related Resources" section on all 7 industry pages with 2-3 resource links + 2 related industry links each
+- "Related Articles" cross-links on all 5 resource pages (each links to the other 4)
+- All links bilingual EN/ES, placed before CTA sections for consistent UX
+
+---
+
 ## [0.48] 2026-03-19 — GEO: 5 citeable explainer pages (GEO-003 through GEO-007)
 **Added**
 - 5 new `/resources/` explainer pages — bilingual EN/ES, optimized for AI citation (GEO):

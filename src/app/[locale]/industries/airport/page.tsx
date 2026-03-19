@@ -285,6 +285,53 @@ export default async function AirportPage({
           </div>
         </section>
 
+        {/* ── RELATED RESOURCES ── */}
+        <section style={{ padding: '64px 0', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '24px',
+            }}>
+              {es ? 'Recursos Relacionados' : 'Related Resources'}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+              <Link href="/resources/smart-city-platform-guide" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+              }}>
+                {es ? 'Guía de plataformas de ciudad inteligente' : 'Smart City Platform Guide'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/psim-vs-unified-platform" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+              }}>
+                {es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+            </div>
+
+            <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Industrias relacionadas:' : 'Related industries:'}
+              </span>
+              <Link href="/industries/logistics" style={{ fontSize: '13px', color: ACCENT, textDecoration: 'none' }}>
+                {es ? 'Logística' : 'Logistics'}
+              </Link>
+              <Link href="/industries/ports" style={{ fontSize: '13px', color: ACCENT, textDecoration: 'none' }}>
+                {es ? 'Puertos' : 'Ports'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── BOTTOM CTA ── */}
         <CTASection
           es={es}
