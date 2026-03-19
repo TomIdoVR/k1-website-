@@ -4,12 +4,6 @@ import type { NextRequest } from 'next/server'
 const locales = ['en', 'es']
 const defaultLocale = 'en'
 
-function getLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get('accept-language') || ''
-  const preferred = acceptLanguage.split(',')[0].trim().split('-')[0].toLowerCase()
-  return locales.includes(preferred) ? preferred : defaultLocale
-}
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -17,7 +11,7 @@ export function middleware(request: NextRequest) {
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
-    pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$/)
+    pathname.match(/\.\w+$/)
   ) {
     return NextResponse.next()
   }
@@ -42,5 +36,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|.*\\..*).*)'],
+  matcher: ['/:path*'],
 }

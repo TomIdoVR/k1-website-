@@ -7,6 +7,23 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.44] 2026-03-18 — Next.js: all 15 pages ported EN+ES, sitemap, robots, shared components
+**Added**
+- Ported 12 remaining pages: K-Traffic, K-Connect, 7 industry pages (Public Safety, Municipalities, Airport, Retail, Logistics, Ports, Stadiums), Homepage, About, Contact
+- Shared components: `Footer.tsx`, `CTASection.tsx`, `PageHero.tsx` — used across all 15 pages
+- `src/app/sitemap.ts` — 30 entries (15 EN + 15 ES) with hreflang alternates
+- `src/app/robots.ts` — allows all crawlers, points to sitemap
+- Updated existing K-Dispatch, K-Video, K-Safety pages to use shared Footer component
+- Middleware matcher updated to `/:path*` for broader compatibility; file extension skip uses `\.\w+$` regex
+
+**Verified**
+- All 30 URLs return HTTP 200
+- `/sitemap.xml` returns 30 `<url>` entries
+- `/robots.txt` returns correct content
+- `/en/k-dispatch` returns 308 redirect
+- `npm run build` → 0 TypeScript errors
+- `npx tsc --noEmit` → 0 errors
+
 ## [0.43] 2026-03-18 — Fix: replace next-intl middleware with Node.js-compatible locale routing
 **Fixed**
 - `middleware.ts` — replaced `createMiddleware` from next-intl (which imports `negotiator` CJS, crashing in Vercel V8 edge isolate) with a pure Next.js `NextResponse` implementation; handles `/en/*` redirect, ES prefix passthrough, and EN internal rewrite with zero CJS dependencies

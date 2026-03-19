@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
 import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -314,9 +315,7 @@ export default async function KDispatchPage({
         </section>
 
         {/* Footer */}
-        <footer style={{ borderTop: '1px solid var(--border)', padding: '32px', textAlign: 'center', color: 'var(--dim)', fontSize: '13px' }}>
-          © 2026 KabatOne Inc. All rights reserved.
-        </footer>
+        <Footer es={es} />
 
         <style>{`
           @keyframes pulse {
