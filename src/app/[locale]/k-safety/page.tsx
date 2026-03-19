@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
+import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
@@ -119,6 +119,11 @@ export default async function KSafetyPage({
     { question: 'How does K-Safety compare to traditional PSIM?', answer: 'K-Safety surpasses traditional PSIM by offering real-time predictive AI, flexible cloud or on-premises deployment, and scalability from a single city to a nationwide network. It includes event automation, smart dispatch, and integrated geospatial analytics.' },
   ]
 
+  const breadcrumbs = [
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: 'K-Safety', url: es ? 'https://kabatone.com/es/k-safety/' : 'https://kabatone.com/k-safety/' },
+  ]
+
   return (
     <>
       <Nav />
@@ -134,6 +139,10 @@ export default async function KSafetyPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(safetyFaqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 

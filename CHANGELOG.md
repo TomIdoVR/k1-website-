@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.50] 2026-03-19 — GEO-012: Structured data audit and fixes
+**Fixed**
+- Added BreadcrumbList JSON-LD schema to 5 product pages (K-Dispatch, K-Video, K-Safety, K-Traffic, K-Connect) and About page — previously missing
+- Fixed locale-specific URLs in what-is-a-public-safety-platform breadcrumb + Article schema (was hardcoded to EN, now locale-aware)
+- Audited all 17+ pages: Organization, SoftwareApplication, FAQPage, Article, BreadcrumbList schemas validated
+
+---
+
 ## [0.49] 2026-03-19 — Internal linking pass across all 17 pages
 **Added**
 - "Related Resources" section on all 5 product pages with 3 resource links + industry cross-links each

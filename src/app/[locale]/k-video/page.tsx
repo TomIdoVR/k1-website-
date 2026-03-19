@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
+import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
@@ -128,6 +128,11 @@ export default async function KVideoPage({
     { question: 'What is intelligent video search in K-Video?', answer: 'K-Video\'s intelligent search lets you find specific events in seconds instead of hours, using AI filters like facial recognition, LPR, motion detection, and behavioral analysis across stored video archives.' },
   ]
 
+  const breadcrumbs = [
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: 'K-Video', url: es ? 'https://kabatone.com/es/k-video/' : 'https://kabatone.com/k-video/' },
+  ]
+
   return (
     <>
       <Nav />
@@ -143,6 +148,10 @@ export default async function KVideoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(videoFaqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 

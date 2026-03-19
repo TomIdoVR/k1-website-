@@ -377,7 +377,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | Not started |
 | GEO-010 | FAQPage schema on all industry pages | Medium | Done |
 | GEO-011 | FAQPage schema on all remaining product pages | Medium | Done |
-| GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Not started |
+| GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Done |
 | GEO-013 | Monitor AI citation — test KabatOne mentions in ChatGPT, Perplexity, Gemini monthly | Low | Not started |
 
 ### GEO-001 — Entity definition page

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
+import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -136,6 +136,11 @@ export default async function KTrafficPage({
     { question: 'What sensors does K-Traffic integrate with?', answer: 'K-Traffic integrates with IoT sensors, speed cameras, inductive loops, V2X systems, tunnel control, and smart signals. It also connects with public safety dispatch platforms and emergency services.' },
   ]
 
+  const breadcrumbs = [
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: 'K-Traffic', url: es ? 'https://kabatone.com/es/k-traffic/' : 'https://kabatone.com/k-traffic/' },
+  ]
+
   return (
     <>
       <Nav />
@@ -151,6 +156,10 @@ export default async function KTrafficPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(trafficFaqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 

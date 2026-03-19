@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
+import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -110,6 +110,11 @@ export default async function KConnectPage({
     { question: 'How does K-Connect work with public safety agencies?', answer: 'K-Connect integrates with K-Safety, K-Dispatch, and third-party CAD/RTCC systems. It enables schools, businesses, residential communities, and government facilities to share real-time video with the agencies that protect their community.' },
   ]
 
+  const breadcrumbs = [
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: 'K-Connect', url: es ? 'https://kabatone.com/es/k-connect/' : 'https://kabatone.com/k-connect/' },
+  ]
+
   return (
     <>
       <Nav />
@@ -125,6 +130,10 @@ export default async function KConnectPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(connectFaqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 

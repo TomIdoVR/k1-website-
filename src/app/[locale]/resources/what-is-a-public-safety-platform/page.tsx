@@ -93,11 +93,11 @@ export default async function WhatIsPublicSafetyPlatformPage({
 
   /* ── Breadcrumb items ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
     {
       name: es ? '¿Que Es una Plataforma de Seguridad Publica?' : 'What Is a Public Safety Platform?',
-      url: 'https://kabatone.com/resources/what-is-a-public-safety-platform/',
+      url: es ? 'https://kabatone.com/es/resources/what-is-a-public-safety-platform/' : 'https://kabatone.com/resources/what-is-a-public-safety-platform/',
     },
   ]
 
@@ -166,7 +166,7 @@ export default async function WhatIsPublicSafetyPlatformPage({
               es
                 ? 'Una plataforma de seguridad publica unifica despacho CAD, gestion de video, GIS y operaciones de campo. Aprende como las ciudades protegen a sus ciudadanos.'
                 : 'A public safety platform unifies CAD dispatch, video management, GIS, and field operations into one system. Learn how cities use unified platforms to protect citizens.',
-              'https://kabatone.com/resources/what-is-a-public-safety-platform/',
+              es ? 'https://kabatone.com/es/resources/what-is-a-public-safety-platform/' : 'https://kabatone.com/resources/what-is-a-public-safety-platform/',
               '2026-03-19'
             )
           ),

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
+import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
@@ -117,6 +117,11 @@ export default async function KDispatchPage({
     { question: 'What makes K-Dispatch different from legacy CAD systems?', answer: 'K-Dispatch uses AI to automatically triage incidents, predict escalations, and optimize dispatch routing. It handles 25,000+ daily calls with a 5-minute average response time, significantly outperforming legacy CAD systems.' },
   ]
 
+  const breadcrumbs = [
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: 'K-Dispatch', url: es ? 'https://kabatone.com/es/k-dispatch/' : 'https://kabatone.com/k-dispatch/' },
+  ]
+
   return (
     <>
       <Nav />
@@ -132,6 +137,10 @@ export default async function KDispatchPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(dispatchFaqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
