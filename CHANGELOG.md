@@ -7,6 +7,23 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.48] 2026-03-19 — GEO: 5 citeable explainer pages (GEO-003 through GEO-007)
+**Added**
+- 5 new `/resources/` explainer pages — bilingual EN/ES, optimized for AI citation (GEO):
+  - `what-is-a-public-safety-platform` — definition, core components, legacy comparison
+  - `psim-vs-unified-platform` — PSIM vs unified architecture comparison table
+  - `how-c5-command-centers-work` — C5 architecture, technology, emergency workflow
+  - `smart-city-platform-guide` — capabilities, evaluation criteria, deployments
+  - `public-safety-software-municipalities-mexico` — Mexico requirements, C5, 911 integration
+- `articleSchema()` added to `src/lib/schema.ts` for resource pages
+- Article + FAQPage (6 Q&A each) + BreadcrumbList JSON-LD on all 5 pages
+- Metadata entries for all 5 pages in both `en/metadata.ts` and `es/metadata.ts`
+- 5 pages added to `sitemap.ts` with hreflang alternates
+- "Resources" nav link added to desktop and mobile Nav
+- Internal links to product pages throughout all resource content
+
+---
+
 ## [0.47] 2026-03-18 — SEO: Schema markup, OG tags, hreflang fixes, Nav i18n, public assets
 **Added**
 - `src/lib/schema.ts` — JSON-LD schema builders (Organization, SoftwareApplication, FAQPage, BreadcrumbList)

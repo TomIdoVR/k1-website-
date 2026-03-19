@@ -74,4 +74,29 @@ export const metadata = {
     description: "Schedule a live demo with KabatOne's solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
     canonical: "https://kabatone.com/contact/",
   },
+  whatIsPublicSafetyPlatform: {
+    title: "What Is a Public Safety Platform? Definition & Guide | KabatOne",
+    description: "A public safety platform unifies CAD dispatch, video management, GIS, and field operations into one system. Learn how cities use unified platforms to protect citizens.",
+    canonical: "https://kabatone.com/resources/what-is-a-public-safety-platform/",
+  },
+  psimVsUnifiedPlatform: {
+    title: "PSIM vs Unified Platform — What's the Difference? | KabatOne",
+    description: "PSIM integrates alarms from siloed systems. Unified platforms replace silos entirely. Compare architectures, costs, and real-world outcomes for public safety.",
+    canonical: "https://kabatone.com/resources/psim-vs-unified-platform/",
+  },
+  c5CommandCenters: {
+    title: "How Do C5 Command Centers Work? Architecture & Technology | KabatOne",
+    description: "C5 command centers coordinate emergency response, video surveillance, and traffic across Mexican cities. Learn the architecture, technology stack, and operational model.",
+    canonical: "https://kabatone.com/resources/how-c5-command-centers-work/",
+  },
+  smartCityPlatformGuide: {
+    title: "Smart City Platform Guide — Technology, Use Cases & Selection | KabatOne",
+    description: "A smart city platform connects IoT sensors, video, traffic systems, and emergency services into one operational view. Guide to selecting and deploying the right platform.",
+    canonical: "https://kabatone.com/resources/smart-city-platform-guide/",
+  },
+  publicSafetySoftwareMexico: {
+    title: "Public Safety Software for Municipalities in Mexico | KabatOne",
+    description: "Mexican municipalities need software that integrates C5 operations, video surveillance, CAD dispatch, and traffic management. Guide to choosing the right public safety platform.",
+    canonical: "https://kabatone.com/resources/public-safety-software-municipalities-mexico/",
+  },
 } as const

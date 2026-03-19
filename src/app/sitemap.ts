@@ -16,6 +16,11 @@ const pages = [
   { path: '/industries/logistics', priority: 0.7 },
   { path: '/industries/ports', priority: 0.7 },
   { path: '/industries/stadiums', priority: 0.7 },
+  { path: '/resources/what-is-a-public-safety-platform', priority: 0.6 },
+  { path: '/resources/psim-vs-unified-platform', priority: 0.6 },
+  { path: '/resources/how-c5-command-centers-work', priority: 0.6 },
+  { path: '/resources/smart-city-platform-guide', priority: 0.6 },
+  { path: '/resources/public-safety-software-municipalities-mexico', priority: 0.6 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
 ]

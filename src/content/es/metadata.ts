@@ -74,4 +74,29 @@ export const metadata = {
     description: "Agenda una demo con el equipo de KabatOne. Te mostramos la plataforma con datos reales de ciudad en 30 minutos, sin compromiso.",
     canonical: "https://kabatone.com/es/contact/",
   },
+  whatIsPublicSafetyPlatform: {
+    title: "¿Qué Es una Plataforma de Seguridad Pública? Definición y Guía | KabatOne",
+    description: "Una plataforma de seguridad pública unifica despacho CAD, gestión de video, GIS y operaciones de campo. Aprende cómo las ciudades protegen a sus ciudadanos.",
+    canonical: "https://kabatone.com/es/resources/what-is-a-public-safety-platform/",
+  },
+  psimVsUnifiedPlatform: {
+    title: "PSIM vs Plataforma Unificada — ¿Cuál Es la Diferencia? | KabatOne",
+    description: "PSIM integra alarmas de sistemas aislados. Las plataformas unificadas reemplazan los silos. Compara arquitecturas, costos y resultados reales en seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
+  },
+  c5CommandCenters: {
+    title: "¿Cómo Funcionan los Centros de Mando C5? Arquitectura y Tecnología | KabatOne",
+    description: "Los centros C5 coordinan respuesta a emergencias, videovigilancia y tráfico en ciudades mexicanas. Conoce su arquitectura, tecnología y modelo operativo.",
+    canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
+  },
+  smartCityPlatformGuide: {
+    title: "Guía de Plataformas de Ciudad Inteligente — Tecnología y Casos de Uso | KabatOne",
+    description: "Una plataforma de ciudad inteligente conecta sensores IoT, video, tráfico y servicios de emergencia. Guía para seleccionar e implementar la plataforma correcta.",
+    canonical: "https://kabatone.com/es/resources/smart-city-platform-guide/",
+  },
+  publicSafetySoftwareMexico: {
+    title: "Software de Seguridad Pública para Municipios en México | KabatOne",
+    description: "Los municipios mexicanos necesitan software que integre operaciones C5, videovigilancia, despacho CAD y gestión de tráfico. Guía para elegir la plataforma correcta.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-municipalities-mexico/",
+  },
 } as const

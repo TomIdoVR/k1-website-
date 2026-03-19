@@ -18,7 +18,7 @@
 | Phase 3 — Post-launch growth | Not started | 0% |
 | Phase 4 — Spanish (es-MX) | In progress | 60% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 30% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 70% |
 
 ---
 
@@ -80,6 +80,7 @@
 | Implementation run 1 | 2026-03-18 | Implementor | 60 changes applied, English copy override |
 | Validation run 1 | 2026-03-18 | Validator | 615 checks, 612 passed, 3 minor post-launch items |
 | SEO implementation 2 | 2026-03-18 | Claude Code (4 parallel agents) | Schema/JSON-LD on all 15 pages, OG+hreflang fixes, Nav i18n, public assets — build passes 0 errors |
+| GEO explainer pages | 2026-03-19 | Claude Code (5 parallel agents) | 5 /resources/ pages created (GEO-003–007), articleSchema added, metadata+sitemap updated, Resources nav link — build passes 0 errors |
 
 ### Pre-launch checklist
 | Item | Status |
@@ -367,11 +368,11 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 |----|------|----------|--------|
 | GEO-001 | Entity definition — expand About page to structured entity description | High | Done |
 | GEO-002 | FAQPage schema on K-Dispatch, K-Video, K-Safety | High | Done |
-| GEO-003 | Citeable explainer: "What is a public safety platform?" | High | Not started |
-| GEO-004 | Citeable explainer: "PSIM vs unified platform — what's the difference?" | High | Not started |
-| GEO-005 | Citeable explainer: "How do C5 command centers work?" | Medium | Not started |
-| GEO-006 | Citeable explainer: "Smart city platform guide" | Medium | Not started |
-| GEO-007 | Citeable explainer: "Public safety software for municipalities in Mexico" | High | Not started |
+| GEO-003 | Citeable explainer: "What is a public safety platform?" | High | Done |
+| GEO-004 | Citeable explainer: "PSIM vs unified platform — what's the difference?" | High | Done |
+| GEO-005 | Citeable explainer: "How do C5 command centers work?" | Medium | Done |
+| GEO-006 | Citeable explainer: "Smart city platform guide" | Medium | Done |
+| GEO-007 | Citeable explainer: "Public safety software for municipalities in Mexico" | High | Done |
 | GEO-008 | Wikipedia research — does KabatOne qualify for an entry? | Medium | Not started |
 | GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | Not started |
 | GEO-010 | FAQPage schema on all industry pages | Medium | Done |
