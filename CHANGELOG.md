@@ -7,6 +7,28 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.47] 2026-03-18 — SEO: Schema markup, OG tags, hreflang fixes, Nav i18n, public assets
+**Added**
+- `src/lib/schema.ts` — JSON-LD schema builders (Organization, SoftwareApplication, FAQPage, BreadcrumbList)
+- Organization schema injected globally via layout.tsx
+- SoftwareApplication + FAQPage schema on all 5 product pages (bilingual EN/ES, 4-5 Q&A each)
+- BreadcrumbList + FAQPage schema on all 7 industry pages (bilingual EN/ES)
+- GEO entity definition block on About page (structured, citation-optimized text with 73M+ citizens stat)
+- FAQPage schema on About page (4 Q&A pairs)
+- OG image (1200x630) and branded K1 favicon/PWA icons generated
+- Web manifest (`site.webmanifest`) for PWA support
+
+**Fixed**
+- Hreflang: changed `es-MX` to `es` in metadata.ts + sitemap.ts to match routing locale
+- Hreflang: added `x-default` pointing to EN canonical on all pages
+- OG tags: added `og:image`, `og:locale`, `twitter:card` (summary_large_image) on all 15 pages
+
+**Changed**
+- Nav.tsx: all labels now bilingual (Solutions/Soluciones, Industries/Industrias, About/Nosotros, Contact/Contacto)
+- Nav arrays moved inside component for locale access
+
+---
+
 ## [0.46] 2026-03-18 — Add carousel header to modules section
 **Added**
 - Carousel header with prev/next arrow buttons, module counter (01/09), large module name, and tagline — matching the original GitHub Pages layout

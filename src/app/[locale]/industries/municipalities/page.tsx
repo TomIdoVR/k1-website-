@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -188,9 +189,31 @@ export default async function MunicipalitiesPage({
     </svg>
   )
 
+  const municipalityFaqs = es ? [
+    { question: '¿Cómo ayuda KabatOne a los municipios?', answer: 'KabatOne unifica cámaras, sensores, analítica, flujos de despacho y alertas de emergencia en una sola plataforma de comando, brindando a las ciudades claridad inmediata y una respuesta más rápida y coordinada.' },
+    { question: '¿Qué resultados obtienen los municipios con KabatOne?', answer: 'Los municipios que usan KabatOne han reducido los tiempos promedio de respuesta de 12.5 minutos a 7 minutos — una mejora del 40% en velocidad de respuesta a emergencias.' },
+    { question: '¿Se integra KabatOne con sistemas municipales existentes?', answer: 'Sí. KabatOne se conecta a los sistemas existentes de la ciudad sin reemplazarlos, funcionando con cámaras, sensores e infraestructura legada. Las ciudades pueden expandirse a su propio ritmo con total compatibilidad.' },
+  ] : [
+    { question: 'How does KabatOne help municipalities?', answer: 'KabatOne unifies cameras, sensors, analytics, dispatch workflows, and emergency alerts into a single command platform, giving cities immediate clarity and faster, more coordinated response.' },
+    { question: 'What results do municipalities get with KabatOne?', answer: 'Municipalities using KabatOne have reduced average response times from 12.5 minutes to 7 minutes — a 40% improvement in emergency response speed.' },
+    { question: 'Does KabatOne integrate with existing municipal systems?', answer: 'Yes. KabatOne connects to existing city systems without replacement, working with legacy cameras, sensors, and infrastructure. Cities can expand at their own pace with full compatibility.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: es ? 'Municipios' : 'Municipalities', url: 'https://kabatone.com/industries/municipalities/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(municipalityFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

@@ -5,24 +5,6 @@ import Image from 'next/image'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
 
-const solutions = [
-  { href: '/k-safety', label: 'K-Safety', color: '#3b82f6' },
-  { href: '/k-dispatch', label: 'K-Dispatch', color: '#ef4444' },
-  { href: '/k-traffic', label: 'K-Traffic', color: '#06b6d4' },
-  { href: '/k-video', label: 'K-Video', color: '#a855f7' },
-  { href: '/k-connect', label: 'K-Connect', color: '#22c55e' },
-]
-
-const industries = [
-  { href: '/industries/public-safety', label: 'Public Safety', color: '#3b82f6' },
-  { href: '/industries/municipalities', label: 'Municipalities', color: '#06b6d4' },
-  { href: '/industries/airport', label: 'Airports', color: '#8b5cf6' },
-  { href: '/industries/retail', label: 'Retail', color: '#f59e0b' },
-  { href: '/industries/logistics', label: 'Logistics', color: '#10b981' },
-  { href: '/industries/ports', label: 'Ports', color: '#0ea5e9' },
-  { href: '/industries/stadiums', label: 'Stadiums & Venues', color: '#ef4444' },
-]
-
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
@@ -30,6 +12,24 @@ export default function Nav() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+
+  const solutions = [
+    { href: '/k-safety', label: 'K-Safety', color: '#3b82f6' },
+    { href: '/k-dispatch', label: 'K-Dispatch', color: '#ef4444' },
+    { href: '/k-traffic', label: 'K-Traffic', color: '#06b6d4' },
+    { href: '/k-video', label: 'K-Video', color: '#a855f7' },
+    { href: '/k-connect', label: 'K-Connect', color: '#22c55e' },
+  ]
+
+  const industries = [
+    { href: '/industries/public-safety', label: locale === 'es' ? 'Seguridad Publica' : 'Public Safety', color: '#3b82f6' },
+    { href: '/industries/municipalities', label: locale === 'es' ? 'Municipios' : 'Municipalities', color: '#06b6d4' },
+    { href: '/industries/airport', label: locale === 'es' ? 'Aeropuertos' : 'Airports', color: '#8b5cf6' },
+    { href: '/industries/retail', label: 'Retail', color: '#f59e0b' },
+    { href: '/industries/logistics', label: locale === 'es' ? 'Logistica' : 'Logistics', color: '#10b981' },
+    { href: '/industries/ports', label: locale === 'es' ? 'Puertos' : 'Ports', color: '#0ea5e9' },
+    { href: '/industries/stadiums', label: locale === 'es' ? 'Estadios y Recintos' : 'Stadiums & Venues', color: '#ef4444' },
+  ]
 
   function switchLocale(next: string) {
     router.replace(pathname, { locale: next })
@@ -85,7 +85,7 @@ export default function Nav() {
             textTransform: 'uppercase', letterSpacing: '0.06em',
             display: 'flex', alignItems: 'center', gap: '4px',
           }}>
-            Solutions
+            {locale === 'es' ? 'Soluciones' : 'Solutions'}
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -132,7 +132,7 @@ export default function Nav() {
             textTransform: 'uppercase', letterSpacing: '0.06em',
             display: 'flex', alignItems: 'center', gap: '4px',
           }}>
-            Industries
+            {locale === 'es' ? 'Industrias' : 'Industries'}
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -169,8 +169,8 @@ export default function Nav() {
           )}
         </li>
 
-        <li><Link href="/about" style={{ color: 'var(--dim)', textDecoration: 'none' }}>About</Link></li>
-        <li><Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>Contact</Link></li>
+        <li><Link href="/about" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Nosotros' : 'About'}</Link></li>
+        <li><Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Contacto' : 'Contact'}</Link></li>
 
         {/* Language switcher */}
         <li style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}>
@@ -277,8 +277,8 @@ export default function Nav() {
           ))}
           <hr style={{ borderColor: 'var(--border)', margin: '4px 0' }} />
           <div style={{ display: 'flex', gap: '16px' }}>
-            <Link href="/about" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>About</Link>
-            <Link href="/contact" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>Contact</Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Nosotros' : 'About'}</Link>
+            <Link href="/contact" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Contacto' : 'Contact'}</Link>
           </div>
           <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
             <button onClick={() => switchLocale('en')} style={{ background: 'none', border: '1px solid var(--border)', borderRadius: '4px', color: locale === 'en' ? 'var(--white)' : 'var(--dim)', padding: '4px 10px', cursor: 'pointer' }}>EN</button>

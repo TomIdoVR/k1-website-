@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
@@ -113,9 +114,36 @@ export default async function KVideoPage({
     { id: 'CAM-12', loc: es ? 'Puerta Norte' : 'North Gate', img: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/6997a20c09ca794995af763b_periferico-k-video.jpeg', alert: false },
   ]
 
+  const videoFaqs = es ? [
+    { question: '¿Qué es K-Video?', answer: 'K-Video es un sistema de gestión de video (VMS) escalable en nube y local, potenciado por analítica de IA. Permite monitoreo en tiempo real, búsqueda forense y detección automatizada de amenazas en miles de cámaras.' },
+    { question: '¿Cómo utiliza K-Video la IA para analítica de video?', answer: 'K-Video integra reconocimiento facial con 94% de precisión, reconocimiento de placas vehiculares (LPR) con 99% de tasa de lectura, detección de anomalías y análisis de comportamiento — todo automatizado y en tiempo real.' },
+    { question: '¿Cuántas cámaras puede gestionar K-Video?', answer: 'K-Video soporta más de 10,000 cámaras gracias a su arquitectura de microservicios. Maneja cámaras IP, body cams y streams de drones con 98% de disponibilidad y conmutación automática por fallo.' },
+    { question: '¿Soporta K-Video cámaras de terceros?', answer: 'Sí. K-Video es compatible con las principales plataformas VMS y fabricantes de cámaras IP, soportando múltiples protocolos de streaming incluyendo HLS, WebRTC, RTMP y RTSP.' },
+    { question: '¿Qué es la búsqueda inteligente de video en K-Video?', answer: 'La búsqueda inteligente de K-Video permite encontrar eventos específicos en segundos en lugar de horas, utilizando filtros de IA como reconocimiento facial, LPR, detección de movimiento y análisis de comportamiento en archivos de video almacenados.' },
+  ] : [
+    { question: 'What is K-Video?', answer: 'K-Video is a scalable cloud and on-premises video management system (VMS) powered by AI-driven analytics. It enables real-time monitoring, forensic search, and automated threat detection across thousands of cameras.' },
+    { question: 'How does K-Video use AI for video analytics?', answer: 'K-Video integrates facial recognition at 94% accuracy, license plate recognition (LPR) at 99% read rate, anomaly detection, and behavioral analysis — all automated and in real time.' },
+    { question: 'How many cameras can K-Video manage?', answer: 'K-Video supports over 10,000 cameras through its microservices architecture. It handles IP cameras, body cams, and drone streams with 98% uptime and automatic failover.' },
+    { question: 'Does K-Video support third-party cameras?', answer: 'Yes. K-Video is compatible with major VMS platforms and IP camera manufacturers, supporting multiple streaming protocols including HLS, WebRTC, RTMP, and RTSP.' },
+    { question: 'What is intelligent video search in K-Video?', answer: 'K-Video\'s intelligent search lets you find specific events in seconds instead of hours, using AI filters like facial recognition, LPR, motion detection, and behavioral analysis across stored video archives.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(
+          'K-Video',
+          es ? 'Sistema de gestión de video escalable en nube y local, potenciado por analítica de IA para monitoreo en tiempo real y detección automatizada de amenazas.' : 'Scalable cloud and on-premises video management system powered by AI-driven analytics for real-time monitoring and automated threat detection.',
+          'Video Management System (VMS)',
+          'https://kabatone.com/k-video'
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(videoFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

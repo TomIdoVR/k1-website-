@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -104,9 +105,33 @@ export default async function PortsPage({
   const descStyle = { fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
+  const portsFaqs = es ? [
+    { question: '¿Cómo asegura KabatOne los puertos marítimos?', answer: 'KabatOne conecta cámaras, radares, sensores IoT, control de acceso y analítica de video en una sola plataforma para proteger personal, carga e infraestructura portuaria crítica con monitoreo en tiempo real.' },
+    { question: '¿Cumple KabatOne con los estándares ISPS e IMO?', answer: 'Sí. KabatOne registra cada evento cumpliendo con estándares ISPS e IMO, asegurando trazabilidad regulatoria completa y preparación para auditorías en operaciones portuarias.' },
+    { question: '¿Qué sistemas integra KabatOne en puertos?', answer: 'KabatOne unifica videovigilancia, radares, sensores, control de acceso y drones en un solo entorno operativo. Es compatible con múltiples VMS, radares y sistemas de control con integración ilimitada de cámaras y dispositivos.' },
+    { question: '¿Ofrece KabatOne gestión predictiva para puertos?', answer: 'Sí. El motor de reglas de KabatOne activa respuestas automatizadas basadas en datos de sensores, analítica de video y protocolos de seguridad predefinidos, proporcionando dashboards en tiempo real con visualización geoespacial de embarcaciones, activos e incidentes.' },
+  ] : [
+    { question: 'How does KabatOne secure maritime ports?', answer: 'KabatOne connects cameras, radars, IoT sensors, access control, and video analytics on a single platform to protect personnel, cargo, and critical port infrastructure with real-time monitoring.' },
+    { question: 'Does KabatOne comply with ISPS and IMO standards?', answer: 'Yes. KabatOne records every event complying with ISPS and IMO standards, ensuring full regulatory traceability and audit readiness in port operations.' },
+    { question: 'What systems does KabatOne integrate in ports?', answer: 'KabatOne unifies video surveillance, radars, sensors, access control, and drones in a single operational environment. It is compatible with multiple VMS, radars, and control systems with unlimited camera and device integration.' },
+    { question: 'Does KabatOne offer predictive management for ports?', answer: 'Yes. KabatOne\'s rule engine triggers automated responses based on sensor data, video analytics, and predefined security protocols, providing real-time dashboards with geospatial visualization of vessels, assets, and incidents.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: es ? 'Puertos' : 'Ports', url: 'https://kabatone.com/industries/ports/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(portsFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

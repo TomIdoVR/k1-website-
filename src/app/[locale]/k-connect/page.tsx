@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -97,9 +98,34 @@ export default async function KConnectPage({
     ? ['Fuerzas del Orden', 'Operaciones de Ciudad', 'Pista de Auditor\u00eda']
     : ['Law Enforcement', 'City Operations', 'Audit Trail']
 
+  const connectFaqs = es ? [
+    { question: '¿Qué es K-Connect?', answer: 'K-Connect es una plataforma segura de videovigilancia comunitaria que conecta cámaras de negocios, escuelas y ciudadanos al centro de mando municipal. Amplía la cobertura de vigilancia sin infraestructura adicional mediante compartición controlada de video.' },
+    { question: '¿Cómo comparten los ciudadanos video con K-Connect?', answer: 'Las organizaciones comparten cámaras o transmisiones específicas con las fuerzas del orden bajo demanda, con controles granulares de permisos. Todas las partes conectadas ven las mismas transmisiones en vivo durante un incidente activo, acelerando la coordinación.' },
+    { question: '¿Cumple K-Connect con normas de privacidad?', answer: 'Sí. K-Connect implementa acceso basado en roles, pistas de auditoría completas y expiración automática de compartición para asegurar el cumplimiento regulatorio total. Todos los canales de comunicación están encriptados de extremo a extremo.' },
+    { question: '¿Cómo funciona K-Connect con agencias de seguridad pública?', answer: 'K-Connect se integra con K-Safety, K-Dispatch y sistemas CAD/RTCC de terceros. Permite a escuelas, negocios, comunidades residenciales e instalaciones gubernamentales compartir video en tiempo real con las agencias que protegen su comunidad.' },
+  ] : [
+    { question: 'What is K-Connect?', answer: 'K-Connect is a secure community-based video sharing platform that connects cameras from businesses, schools, and citizens to the municipal command center. It expands surveillance coverage without additional infrastructure through controlled video sharing.' },
+    { question: 'How do citizens share video with K-Connect?', answer: 'Organizations share specific cameras or streams with law enforcement on-demand, with granular permission controls. All connected parties see the same live feeds during an active incident, accelerating coordination.' },
+    { question: 'Is K-Connect privacy-compliant?', answer: 'Yes. K-Connect implements role-based access, full audit trails, and automatic sharing expiry to ensure complete regulatory compliance. All communication channels are end-to-end encrypted.' },
+    { question: 'How does K-Connect work with public safety agencies?', answer: 'K-Connect integrates with K-Safety, K-Dispatch, and third-party CAD/RTCC systems. It enables schools, businesses, residential communities, and government facilities to share real-time video with the agencies that protect their community.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(
+          'K-Connect',
+          es ? 'Plataforma segura de videovigilancia comunitaria que conecta cámaras de organizaciones privadas con agencias de seguridad pública.' : 'Secure community-based video sharing platform connecting private organizations\' cameras with public safety agencies.',
+          'Community Video Sharing Platform',
+          'https://kabatone.com/k-connect'
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(connectFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* -- HERO -- */}

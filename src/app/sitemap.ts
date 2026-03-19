@@ -32,7 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           en: `${baseUrl}${page.path}/`,
-          'es-MX': `${baseUrl}/es${page.path}/`,
+          es: `${baseUrl}/es${page.path}/`,
+          'x-default': `${baseUrl}${page.path}/`,
         },
       },
     })
@@ -44,7 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: {
         languages: {
           en: `${baseUrl}${page.path}/`,
-          'es-MX': `${baseUrl}/es${page.path}/`,
+          es: `${baseUrl}/es${page.path}/`,
+          'x-default': `${baseUrl}${page.path}/`,
         },
       },
     })

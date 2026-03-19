@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -118,9 +119,31 @@ export default async function LogisticsPage({
   const descStyle = { fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
+  const logisticsFaqs = es ? [
+    { question: '¿Cómo protege KabatOne las operaciones logísticas?', answer: 'KabatOne asegura cada punto de la operación logística con cuatro zonas de cobertura: interior del almacén, puntos de acceso y control, patios de maniobras y muelles, y perímetro exterior. Integra analítica de video, LPR, RFID y sensores IoT.' },
+    { question: '¿Qué zonas cubre KabatOne en instalaciones logísticas?', answer: 'KabatOne cubre cuatro zonas: interior del almacén con detección de incendio e intrusión, puntos de acceso con reconocimiento facial y LPR, patios de maniobras con seguimiento vehicular, y perímetro exterior con cámaras PTZ e imagen térmica.' },
+    { question: '¿Escala KabatOne desde una instalación a redes nacionales?', answer: 'Sí. KabatOne es modular y escalable, protegiendo desde una sola instalación hasta redes de distribución nacionales con dashboards personalizables, análisis de tendencias de riesgo y reportes automáticos de cumplimiento.' },
+  ] : [
+    { question: 'How does KabatOne protect logistics operations?', answer: 'KabatOne secures every point of the logistics operation across four coverage zones: inside warehouse, access and control points, maneuvering yards and docks, and perimeter exterior. It integrates video analytics, LPR, RFID, and IoT sensors.' },
+    { question: 'What zones does KabatOne cover in logistics facilities?', answer: 'KabatOne covers four zones: warehouse interior with fire and intrusion detection, access points with facial recognition and LPR, maneuvering yards with vehicle tracking, and perimeter exterior with PTZ cameras and thermal imaging.' },
+    { question: 'Does KabatOne scale from single facilities to national networks?', answer: 'Yes. KabatOne is modular and scalable, protecting from a single facility to nationwide distribution networks with customizable dashboards, risk trend analysis, and automatic compliance reports.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: es ? 'Logística' : 'Logistics', url: 'https://kabatone.com/industries/logistics/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(logisticsFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

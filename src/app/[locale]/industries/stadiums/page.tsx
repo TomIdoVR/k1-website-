@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -131,9 +132,33 @@ export default async function StadiumsPage({
   const descStyle = { fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
+  const stadiumFaqs = es ? [
+    { question: '¿Cómo gestiona KabatOne la seguridad de estadios?', answer: 'KabatOne unifica todos los sistemas del recinto — CCTV, control de acceso, alarmas y comunicaciones — en una sola plataforma con mando y control impulsado por IA, reduciendo los tiempos de resolución de incidentes en un 60%.' },
+    { question: '¿Qué zonas cubre KabatOne en estadios?', answer: 'KabatOne cubre cuatro zonas: entradas y acceso con conteo de personas y reconocimiento facial, áreas de estacionamiento con LPR, interior del estadio con detección de incendio y análisis de multitudes, y centro de comunicaciones con coordinación entre equipos.' },
+    { question: '¿Qué analítica de IA utiliza KabatOne en estadios?', answer: 'KabatOne utiliza detección de anomalías de densidad de multitudes, detección de incendios y humo, identificación de objetos sospechosos y análisis de patrones de comportamiento para prevenir incidentes críticos durante eventos.' },
+    { question: '¿Se integra KabatOne con sistemas existentes del estadio?', answer: 'Sí. KabatOne se integra con los sistemas existentes del recinto sin necesidad de reemplazarlos, proporcionando inteligencia unificada sobre la infraestructura actual de CCTV, control de acceso y comunicaciones.' },
+  ] : [
+    { question: 'How does KabatOne manage stadium security?', answer: 'KabatOne unifies all venue systems — CCTV, access control, alarms, and communications — into a single platform with AI-powered command and control, reducing incident resolution times by 60%.' },
+    { question: 'What zones does KabatOne cover in stadiums?', answer: 'KabatOne covers four zones: entrances and access with people counting and facial recognition, parking areas with LPR, stadium interior with fire detection and crowd analysis, and communications hub with team coordination.' },
+    { question: 'What AI analytics does KabatOne use in stadiums?', answer: 'KabatOne uses crowd density anomaly detection, fire and smoke detection, suspicious object identification, and behavioral pattern analysis to prevent critical incidents during events.' },
+    { question: 'Does KabatOne integrate with existing stadium systems?', answer: 'Yes. KabatOne integrates with existing venue systems without rip-and-replace, providing unified intelligence on top of current CCTV, access control, and communications infrastructure.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: es ? 'Estadios' : 'Stadiums', url: 'https://kabatone.com/industries/stadiums/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(stadiumFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

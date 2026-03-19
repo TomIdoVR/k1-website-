@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
@@ -102,9 +103,36 @@ export default async function KDispatchPage({
     ? ['Respondedores', 'Coordinación', 'Análisis']
     : ['Responders', 'Coordination', 'Analytics']
 
+  const dispatchFaqs = es ? [
+    { question: '¿Qué es K-Dispatch?', answer: 'K-Dispatch es una plataforma de Despacho Asistido por Computadora (CAD) potenciada por IA que optimiza la respuesta a emergencias, mejora la comunicación multiagencia y se integra con todas las tecnologías de seguridad pública.' },
+    { question: '¿Cómo maneja K-Dispatch las llamadas al 911?', answer: 'K-Dispatch integra llamadas de voz 911, texto-a-911 y mensajería multimedia de emergencia. El sistema clasifica automáticamente los incidentes, asigna prioridad y recomienda la respuesta óptima utilizando inteligencia artificial.' },
+    { question: '¿Con qué sistemas se integra K-Dispatch?', answer: 'K-Dispatch se conecta con las principales tecnologías de seguridad pública incluyendo sistemas de radio, GIS, VMS, aplicaciones móviles de respondedores, reconocimiento facial, LPR, detección de disparos y feeds de drones.' },
+    { question: '¿Es K-Dispatch adecuado para despacho multiagencia?', answer: 'Sí. K-Dispatch está diseñado para coordinación multiagencia, conectando policía, bomberos, servicios médicos y tránsito en una sola plataforma. Actualmente impulsa el centro 911 más grande de México con más de 100 agencias conectadas.' },
+    { question: '¿Qué diferencia a K-Dispatch de los sistemas CAD tradicionales?', answer: 'K-Dispatch utiliza IA para clasificar incidentes automáticamente, predecir escalaciones y optimizar el enrutamiento de despacho. Gestiona más de 25,000 llamadas diarias con un tiempo promedio de respuesta de 5 minutos, superando significativamente a los sistemas CAD heredados.' },
+  ] : [
+    { question: 'What is K-Dispatch?', answer: 'K-Dispatch is an AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.' },
+    { question: 'How does K-Dispatch handle 911 calls?', answer: 'K-Dispatch integrates voice 911, text-to-911, and multimedia emergency messaging. The system automatically triages incidents, assigns priority, and recommends optimal response using artificial intelligence.' },
+    { question: 'What systems does K-Dispatch integrate with?', answer: 'K-Dispatch connects with leading public safety technologies including radio systems, GIS, VMS, mobile responder apps, facial recognition, LPR, gunshot detection, and drone feeds.' },
+    { question: 'Is K-Dispatch suitable for multi-agency dispatch?', answer: 'Yes. K-Dispatch is built for multi-agency coordination, connecting police, fire, medical, and traffic departments on a single platform. It currently powers Mexico\'s largest 911 center with 100+ connected agencies.' },
+    { question: 'What makes K-Dispatch different from legacy CAD systems?', answer: 'K-Dispatch uses AI to automatically triage incidents, predict escalations, and optimize dispatch routing. It handles 25,000+ daily calls with a 5-minute average response time, significantly outperforming legacy CAD systems.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(
+          'K-Dispatch',
+          es ? 'Plataforma de Despacho Asistida por Computadora (CAD) potenciada por IA que optimiza la respuesta a emergencias y la comunicación multiagencia.' : 'AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response and multi-agency communication.',
+          'Computer-Aided Dispatch (CAD)',
+          'https://kabatone.com/k-dispatch'
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(dispatchFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

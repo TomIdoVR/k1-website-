@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -136,9 +137,31 @@ export default async function AirportPage({
     ),
   }
 
+  const airportFaqs = es ? [
+    { question: '¿Cómo protege KabatOne los aeropuertos?', answer: 'KabatOne unifica videovigilancia con IA, control de acceso, detección perimetral y gestión de incidentes en una sola plataforma. Cubre desde el perímetro hasta la puerta de embarque con un flujo de trabajo automatizado de cinco pasos.' },
+    { question: '¿Qué analítica de IA utiliza KabatOne en aeropuertos?', answer: 'KabatOne utiliza reconocimiento facial, detección de anomalías, identificación de comportamiento sospechoso y detección de objetos abandonados para identificar amenazas en tiempo real antes de que escalen.' },
+    { question: '¿Cumple KabatOne con los estándares de seguridad aeronáutica?', answer: 'Sí. La plataforma documenta cada incidente para cumplimiento y auditoría, gestionando la integración de diferentes sistemas mientras mantiene el cumplimiento con estándares de seguridad aeronáutica.' },
+  ] : [
+    { question: 'How does KabatOne protect airports?', answer: 'KabatOne unifies AI video surveillance, access control, perimeter detection, and incident management into a single platform. It covers from perimeter to gate with an automated five-step workflow.' },
+    { question: 'What AI analytics does KabatOne use in airports?', answer: 'KabatOne uses facial recognition, anomaly detection, suspicious behavior identification, and abandoned object detection to identify threats in real time before they escalate.' },
+    { question: 'Does KabatOne comply with aviation security standards?', answer: 'Yes. The platform documents every incident for compliance and audit, managing integration of different systems while maintaining compliance with aviation security standards.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: es ? 'Aeropuertos' : 'Airports', url: 'https://kabatone.com/industries/airport/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(airportFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { breadcrumbSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -100,9 +101,31 @@ export default async function RetailPage({
   const descStyle = { fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
+  const retailFaqs = es ? [
+    { question: '¿Cómo protege KabatOne los entornos retail?', answer: 'KabatOne integra CCTV, control de acceso, alarmas e IoT en una sola plataforma que protege activos mientras genera inteligencia de negocio. Utiliza IA para detección de violencia, objetos desatendidos y comportamiento sospechoso.' },
+    { question: '¿Qué analítica de negocio ofrece KabatOne para retail?', answer: 'KabatOne proporciona mapas de calor, analítica de flujo peatonal, conteo de clientes y dashboards operativos que convierten datos de seguridad en ventaja competitiva para retailers.' },
+    { question: '¿Se adapta KabatOne desde tiendas individuales a cadenas nacionales?', answer: 'Sí. La plataforma modular de KabatOne despliega exactamente lo que cada entorno retail necesita, escalando desde tiendas individuales hasta cadenas nacionales con gestión centralizada.' },
+  ] : [
+    { question: 'How does KabatOne protect retail environments?', answer: 'KabatOne integrates CCTV, access control, alarms, and IoT into a single platform that protects assets while generating business intelligence. It uses AI for violence detection, unattended objects, and suspicious behavior.' },
+    { question: 'What business analytics does KabatOne offer for retail?', answer: 'KabatOne provides heat maps, foot traffic analytics, customer counting, and operational dashboards that turn security data into competitive advantage for retailers.' },
+    { question: 'Does KabatOne scale from single stores to national chains?', answer: 'Yes. KabatOne\'s modular platform deploys exactly what each retail environment needs, scaling from single stores to nationwide chains with centralized management.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
+          { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
+          { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
+          { name: 'Retail', url: 'https://kabatone.com/industries/retail/' },
+        ])) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(retailFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

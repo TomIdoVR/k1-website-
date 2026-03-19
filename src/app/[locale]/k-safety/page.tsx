@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
@@ -104,9 +105,36 @@ export default async function KSafetyPage({
     ? ['Detección de Evento', 'Localización', 'Acción']
     : ['Event Detection', 'Location', 'Action']
 
+  const safetyFaqs = es ? [
+    { question: '¿Qué es K-Safety?', answer: 'K-Safety es una plataforma de seguridad pública que unifica gestión de eventos, GIS, VMS, aplicaciones móviles e integraciones de terceros en un solo centro de mando. Proporciona conciencia situacional en tiempo real para ciudades y agencias de seguridad.' },
+    { question: '¿Cómo proporciona K-Safety conciencia situacional?', answer: 'K-Safety superpone incidentes, unidades y transmisiones en vivo en un mapa operativo unificado con GIS en tiempo real. Conecta cámaras, sensores, puntos de acceso, aplicaciones móviles y dispositivos IoT en una sola imagen operativa.' },
+    { question: '¿Qué módulos integra K-Safety?', answer: 'K-Safety integra detección de eventos y alertas automáticas, mapeo GIS con seguimiento de unidades en vivo, integración VMS, aplicaciones móviles para respondedores de campo, red de botones de pánico y sensores IoT, y pronóstico de amenazas con IA.' },
+    { question: '¿Quién usa K-Safety?', answer: 'K-Safety es utilizado por ciudades, municipios y agencias de seguridad pública. Actualmente opera en 68 proyectos activos, conectando más de 100 agencias con más de 30 integraciones de terceros.' },
+    { question: '¿Cómo se compara K-Safety con los PSIM tradicionales?', answer: 'K-Safety supera a los PSIM tradicionales al ofrecer IA predictiva en tiempo real, despliegue flexible en nube o local, y escalabilidad desde una sola ciudad hasta una red nacional. Incluye automatización de eventos, despacho inteligente y analítica geoespacial integrada.' },
+  ] : [
+    { question: 'What is K-Safety?', answer: 'K-Safety is a public safety platform that unifies event management, GIS, VMS, mobile apps, and third-party integrations into one command center. It provides real-time situational awareness for cities and security agencies.' },
+    { question: 'How does K-Safety provide situational awareness?', answer: 'K-Safety overlays incidents, units, and live streams on a unified operational map with real-time GIS. It connects cameras, sensors, access points, mobile apps, and IoT devices into a single operational picture.' },
+    { question: 'What modules does K-Safety integrate?', answer: 'K-Safety integrates event detection and automated alerting, GIS mapping with live unit tracking, VMS integration, mobile apps for field responders, panic button and IoT sensor networks, and AI-powered threat forecasting.' },
+    { question: 'Who uses K-Safety?', answer: 'K-Safety is used by cities, municipalities, and public safety agencies. It currently operates across 68 active projects, connecting 100+ agencies with 30+ third-party integrations.' },
+    { question: 'How does K-Safety compare to traditional PSIM?', answer: 'K-Safety surpasses traditional PSIM by offering real-time predictive AI, flexible cloud or on-premises deployment, and scalability from a single city to a nationwide network. It includes event automation, smart dispatch, and integrated geospatial analytics.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(
+          'K-Safety',
+          es ? 'Plataforma de seguridad pública que unifica gestión de eventos, GIS en tiempo real, VMS y aplicaciones móviles en un solo centro de mando.' : 'Public safety platform that unifies event management, real-time GIS, VMS, and mobile apps into one command center.',
+          'Public Safety Platform',
+          'https://kabatone.com/k-safety'
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(safetyFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

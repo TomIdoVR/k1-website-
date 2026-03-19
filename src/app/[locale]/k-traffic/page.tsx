@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { softwareApplicationSchema, faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -123,9 +124,34 @@ export default async function KTrafficPage({
     { icon: '\uD83D\uDEA8', title: 'Traffic Operations & Incident Coordination', desc: 'Links to public safety dispatch, emergency services, road crews.' },
   ]
 
+  const trafficFaqs = es ? [
+    { question: '¿Qué es K-Traffic?', answer: 'K-Traffic es una plataforma de gestión de tráfico inteligente que conecta semáforos, cámaras, sensores y centros de control en un sistema integrado. Reduce la congestión, detecta incidentes y optimiza la movilidad urbana en tiempo real.' },
+    { question: '¿Cómo gestiona K-Traffic los semáforos?', answer: 'K-Traffic utiliza control adaptativo de señales con un tiempo de respuesta del 98%. La plataforma ajusta automáticamente los ciclos de semáforos basándose en datos en tiempo real de sensores IoT, cámaras y detectores de lazo inductivo.' },
+    { question: '¿Soporta K-Traffic control adaptativo de señales?', answer: 'Sí. K-Traffic incluye analítica predictiva y control adaptativo de semáforos que mejora el flujo vehicular, reduce la congestión en un 34% y acorta los tiempos de viaje utilizando modelos de IA con 87% de precisión.' },
+    { question: '¿Con qué sensores se integra K-Traffic?', answer: 'K-Traffic se integra con sensores IoT, cámaras de velocidad, lazos inductivos, sistemas V2X, control de túneles y semáforos inteligentes. También se conecta con plataformas de despacho de seguridad pública y servicios de emergencia.' },
+  ] : [
+    { question: 'What is K-Traffic?', answer: 'K-Traffic is an intelligent traffic management platform that connects traffic signals, cameras, sensors, and control centers into one integrated system. It reduces congestion, detects incidents, and optimizes city mobility in real time.' },
+    { question: 'How does K-Traffic manage traffic signals?', answer: 'K-Traffic uses adaptive signal control with 98% signal response time. The platform automatically adjusts signal cycles based on real-time data from IoT sensors, cameras, and inductive loop detectors.' },
+    { question: 'Does K-Traffic support adaptive signal control?', answer: 'Yes. K-Traffic includes predictive analytics and adaptive signal control that improves traffic flow, reduces congestion by 34%, and cuts travel times using AI models with 87% accuracy.' },
+    { question: 'What sensors does K-Traffic integrate with?', answer: 'K-Traffic integrates with IoT sensors, speed cameras, inductive loops, V2X systems, tunnel control, and smart signals. It also connects with public safety dispatch platforms and emergency services.' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema(
+          'K-Traffic',
+          es ? 'Plataforma de gestión de tráfico inteligente que conecta semáforos, cámaras y sensores para reducir la congestión y optimizar la movilidad urbana.' : 'Intelligent traffic management platform connecting signals, cameras, and sensors to reduce congestion and optimize city mobility.',
+          'Traffic Management Software',
+          'https://kabatone.com/k-traffic'
+        )) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(trafficFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── HERO ── */}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
+import { faqPageSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
@@ -153,9 +154,25 @@ export default async function AboutPage({
     { regionColor: '#a855f7', region: 'Europe & Israel', title: 'R&D & Partnerships', desc: 'Our Israeli R&D center drives core platform innovation. European partnerships extend our reach into smart city and port security markets.' },
   ]
 
+  const aboutFaqs = es ? [
+    { question: '¿Qué es KabatOne?', answer: 'KabatOne es una plataforma de tecnología de seguridad pública que integra despacho CAD, gestión de video, GIS en tiempo real, gestión de tráfico y video comunitario en un sistema unificado. Atiende a más de 40 ciudades protegiendo a más de 73 millones de ciudadanos.' },
+    { question: '¿Dónde tiene su sede KabatOne?', answer: 'KabatOne tiene su sede corporativa en Cresskill, Nueva Jersey, EE.UU., con operaciones de desarrollo en Ciudad de México, un centro de I+D en Israel y alianzas en Europa.' },
+    { question: '¿Cuántas ciudades usan KabatOne?', answer: 'KabatOne opera en más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos.' },
+    { question: '¿Qué productos ofrece KabatOne?', answer: 'KabatOne ofrece cinco productos principales: K-Safety (plataforma de seguridad pública), K-Dispatch (despacho CAD), K-Video (gestión de video), K-Traffic (gestión de tráfico) y K-Connect (video comunitario compartido).' },
+  ] : [
+    { question: 'What is KabatOne?', answer: 'KabatOne is a public safety technology platform that integrates CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into one unified system. It serves 40+ cities protecting over 73 million citizens.' },
+    { question: 'Where is KabatOne headquartered?', answer: 'KabatOne is headquartered in Cresskill, New Jersey, USA, with development operations in Mexico City, an R&D center in Israel, and partnerships across Europe.' },
+    { question: 'How many cities use KabatOne?', answer: 'KabatOne operates in 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens.' },
+    { question: 'What products does KabatOne offer?', answer: 'KabatOne offers five core products: K-Safety (public safety platform), K-Dispatch (CAD dispatch), K-Video (video management), K-Traffic (traffic management), and K-Connect (community video sharing).' },
+  ]
+
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(aboutFaqs)) }}
+      />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── BREADCRUMB ── */}
@@ -460,6 +477,34 @@ export default async function AboutPage({
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── ENTITY DEFINITION ── */}
+        <section id="entity" style={{ padding: '96px 0', borderTop: '1px solid var(--border)', background: 'rgba(59,130,246,0.03)' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: 'var(--cyan)', marginBottom: '16px',
+            }}>
+              {es ? 'Acerca de KabatOne' : 'About KabatOne'}
+            </p>
+            <div style={{
+              fontSize: '17px', fontWeight: 300, color: 'var(--dim)',
+              lineHeight: 1.75, maxWidth: '800px',
+            }}>
+              <p style={{ marginBottom: '16px' }}>
+                {es
+                  ? 'KabatOne es una empresa de tecnología de seguridad pública con sede en Cresskill, Nueva Jersey, fundada por Omer Cnaani. La compañía desarrolla la plataforma Avalon — un sistema unificado de inteligencia operativa que integra despacho asistido por computadora (CAD), gestión de video (VMS), conciencia situacional GIS en tiempo real, gestión de tráfico y video comunitario compartido.'
+                  : 'KabatOne is a public safety technology company headquartered in Cresskill, New Jersey, founded by Omer Cnaani. The company develops the Avalon platform — a unified operational intelligence system integrating computer-aided dispatch (CAD), video management (VMS), real-time GIS situational awareness, traffic management, and community video sharing.'}
+              </p>
+              <p>
+                {es
+                  ? 'KabatOne atiende a más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos. Productos: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Categoría: Plataforma de Seguridad Pública / Alternativa PSIM / Plataforma de Ciudad Inteligente.'
+                  : 'KabatOne serves 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens. Products: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Category: Public Safety Platform / PSIM Alternative / Smart City Platform.'}
+              </p>
             </div>
           </div>
         </section>
