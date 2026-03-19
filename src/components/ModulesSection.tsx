@@ -8,64 +8,64 @@ type ModKey = (typeof MOD_ORDER)[number]
 
 interface ModuleData {
   color: string
-  en: { tab: string; tag: string; name: string; desc: string; feats: string[] }
-  es: { tab: string; tag: string; name: string; desc: string; feats: string[] }
+  en: { tab: string; tag: string; name: string; desc: string; feats: string[]; headerName: string; tagline: string }
+  es: { tab: string; tag: string; name: string; desc: string; feats: string[]; headerName: string; tagline: string }
   image: string
 }
 
 const modules: Record<ModKey, ModuleData> = {
   video: {
     color: '#06b6d4',
-    en: { tab: 'Video', tag: 'Video', name: 'Surveillance\n& Analytics', desc: 'Live feeds from all cameras with AI-powered object detection, facial recognition, and behavioral anomaly alerts.', feats: ['142 live camera feeds', 'Object & face detection', 'Behavioral analytics', 'Automatic alert routing'] },
-    es: { tab: 'Video', tag: 'Video', name: 'Vigilancia\ny Analitica', desc: 'Transmisiones en vivo de todas las camaras con deteccion de objetos, reconocimiento facial y alertas de anomalias por IA.', feats: ['142 camaras en vivo', 'Deteccion de objetos y rostros', 'Analitica de comportamiento', 'Enrutamiento automatico de alertas'] },
+    en: { tab: 'Video', tag: 'Video', name: 'Surveillance\n& Analytics', headerName: 'Video & Analytics', tagline: 'AI-powered surveillance across 142 cameras with object detection and alerts', desc: 'Live feeds from all cameras with AI-powered object detection, facial recognition, and behavioral anomaly alerts.', feats: ['142 live camera feeds', 'Object & face detection', 'Behavioral analytics', 'Automatic alert routing'] },
+    es: { tab: 'Video', tag: 'Video', name: 'Vigilancia\ny Analitica', headerName: 'Video y Analitica', tagline: 'Vigilancia con IA en 142 camaras con deteccion de objetos y alertas', desc: 'Transmisiones en vivo de todas las camaras con deteccion de objetos, reconocimiento facial y alertas de anomalias por IA.', feats: ['142 camaras en vivo', 'Deteccion de objetos y rostros', 'Analitica de comportamiento', 'Enrutamiento automatico de alertas'] },
     image: '/images/modules/video.png',
   },
   dispatch: {
     color: '#ef4444',
-    en: { tab: 'Dispatch', tag: '911 Dispatch', name: 'Intelligent\nDispatch', desc: 'NG911-ready call taking with intelligent routing, real-time unit dispatch, and full CAD integration.', feats: ['NG911 call taking', 'Intelligent unit routing', 'CAD integration', 'Real-time unit status'] },
-    es: { tab: 'Despacho', tag: 'Despacho 911', name: 'Despacho\nInteligente', desc: 'Toma de llamadas NG911 con enrutamiento inteligente, despacho de unidades en tiempo real e integracion CAD completa.', feats: ['Toma de llamadas NG911', 'Enrutamiento inteligente de unidades', 'Integracion CAD', 'Estado de unidades en tiempo real'] },
+    en: { tab: 'Dispatch', tag: '911 Dispatch', name: 'Intelligent\nDispatch', headerName: '911 & Dispatch', tagline: 'NG911-ready call taking with intelligent unit routing and full CAD integration', desc: 'NG911-ready call taking with intelligent routing, real-time unit dispatch, and full CAD integration.', feats: ['NG911 call taking', 'Intelligent unit routing', 'CAD integration', 'Real-time unit status'] },
+    es: { tab: 'Despacho', tag: 'Despacho 911', name: 'Despacho\nInteligente', headerName: '911 y Despacho', tagline: 'Toma de llamadas NG911 con enrutamiento inteligente y CAD integrado', desc: 'Toma de llamadas NG911 con enrutamiento inteligente, despacho de unidades en tiempo real e integracion CAD completa.', feats: ['Toma de llamadas NG911', 'Enrutamiento inteligente de unidades', 'Integracion CAD', 'Estado de unidades en tiempo real'] },
     image: '/images/modules/dispatch.png',
   },
   events: {
     color: '#f97316',
-    en: { tab: 'Events', tag: 'Events', name: 'Event\nManagement', desc: 'Unified incident lifecycle — from detection to resolution, with full audit trails and SLA tracking.', feats: ['Incident lifecycle tracking', 'Full audit trails', 'SLA monitoring', 'Multi-agency coordination'] },
-    es: { tab: 'Eventos', tag: 'Eventos', name: 'Gestion de\nEventos', desc: 'Ciclo de vida unificado de incidentes — desde la deteccion hasta la resolucion, con rastros de auditoria y seguimiento de SLA.', feats: ['Seguimiento del ciclo de vida', 'Rastros de auditoria completos', 'Monitoreo de SLA', 'Coordinacion multi-agencia'] },
+    en: { tab: 'Events', tag: 'Events', name: 'Event\nManagement', headerName: 'Event Management', tagline: 'Full incident lifecycle — from detection to resolution with audit trails', desc: 'Unified incident lifecycle — from detection to resolution, with full audit trails and SLA tracking.', feats: ['Incident lifecycle tracking', 'Full audit trails', 'SLA monitoring', 'Multi-agency coordination'] },
+    es: { tab: 'Eventos', tag: 'Eventos', name: 'Gestion de\nEventos', headerName: 'Gestion de Eventos', tagline: 'Ciclo de vida completo de incidentes — de la deteccion a la resolucion', desc: 'Ciclo de vida unificado de incidentes — desde la deteccion hasta la resolucion, con rastros de auditoria y seguimiento de SLA.', feats: ['Seguimiento del ciclo de vida', 'Rastros de auditoria completos', 'Monitoreo de SLA', 'Coordinacion multi-agencia'] },
     image: '/images/modules/events.png',
   },
   gis: {
     color: '#3b82f6',
-    en: { tab: 'GIS', tag: 'GIS', name: 'Situational\nAwareness', desc: 'Real-time operational map with live unit tracking, geofences, and threat zone overlays across your entire jurisdiction.', feats: ['Live unit GPS tracking', 'Geofence alerts', 'Threat zone overlays', 'CAD-linked incidents'] },
-    es: { tab: 'GIS', tag: 'GIS', name: 'Conciencia\nSituacional', desc: 'Mapa operativo en tiempo real con rastreo de unidades, geovallas y superposiciones de zonas de amenaza en toda tu jurisdiccion.', feats: ['Rastreo GPS de unidades en vivo', 'Alertas de geovalla', 'Superposiciones de zonas de amenaza', 'Incidentes vinculados al CAD'] },
+    en: { tab: 'GIS', tag: 'GIS', name: 'Situational\nAwareness', headerName: 'GIS & Situational Awareness', tagline: 'Real-time operational maps with live unit tracking and threat zone overlays', desc: 'Real-time operational map with live unit tracking, geofences, and threat zone overlays across your entire jurisdiction.', feats: ['Live unit GPS tracking', 'Geofence alerts', 'Threat zone overlays', 'CAD-linked incidents'] },
+    es: { tab: 'GIS', tag: 'GIS', name: 'Conciencia\nSituacional', headerName: 'GIS y Conciencia Situacional', tagline: 'Mapas operativos en tiempo real con rastreo de unidades y zonas de amenaza', desc: 'Mapa operativo en tiempo real con rastreo de unidades, geovallas y superposiciones de zonas de amenaza en toda tu jurisdiccion.', feats: ['Rastreo GPS de unidades en vivo', 'Alertas de geovalla', 'Superposiciones de zonas de amenaza', 'Incidentes vinculados al CAD'] },
     image: '/images/modules/gis.png',
   },
   integrations: {
     color: '#22c55e',
-    en: { tab: 'Integrations', tag: 'Integrations', name: 'Open API\nPlatform', desc: 'Connect to CAD, RMS, traffic systems, IoT sensors, and smart city infrastructure through our open API layer.', feats: ['REST & WebSocket APIs', 'CAD / RMS connectors', 'IoT sensor ingestion', 'Smart city mesh'] },
-    es: { tab: 'Integraciones', tag: 'Integraciones', name: 'Plataforma\nAPI Abierta', desc: 'Conecta con CAD, RMS, sistemas de trafico, sensores IoT e infraestructura de ciudad inteligente a traves de nuestra capa API.', feats: ['APIs REST y WebSocket', 'Conectores CAD / RMS', 'Ingestion de sensores IoT', 'Malla de ciudad inteligente'] },
+    en: { tab: 'Integrations', tag: 'Integrations', name: 'Open API\nPlatform', headerName: 'Integrations — Open API Platform', tagline: 'Open API connecting CAD, RMS, IoT sensors, and smart city infrastructure', desc: 'Connect to CAD, RMS, traffic systems, IoT sensors, and smart city infrastructure through our open API layer.', feats: ['REST & WebSocket APIs', 'CAD / RMS connectors', 'IoT sensor ingestion', 'Smart city mesh'] },
+    es: { tab: 'Integraciones', tag: 'Integraciones', name: 'Plataforma\nAPI Abierta', headerName: 'Integraciones — API Abierta', tagline: 'API abierta conectando CAD, RMS, sensores IoT e infraestructura de ciudad inteligente', desc: 'Conecta con CAD, RMS, sistemas de trafico, sensores IoT e infraestructura de ciudad inteligente a traves de nuestra capa API.', feats: ['APIs REST y WebSocket', 'Conectores CAD / RMS', 'Ingestion de sensores IoT', 'Malla de ciudad inteligente'] },
     image: '/images/modules/integrations.png',
   },
   responder: {
     color: '#eab308',
-    en: { tab: 'Responder', tag: 'Responder Apps', name: 'Field\nOperations', desc: 'Mobile apps for officers, paramedics, and firefighters — with maps, assignments, forms, and push-to-talk.', feats: ['iOS & Android native', 'Offline capability', 'Push-to-talk radio', 'Digital incident forms'] },
-    es: { tab: 'Respondiente', tag: 'Apps de Respuesta', name: 'Operaciones\nde Campo', desc: 'Apps moviles para oficiales, paramedicos y bomberos — con mapas, asignaciones, formularios y push-to-talk.', feats: ['Nativo iOS y Android', 'Capacidad offline', 'Radio push-to-talk', 'Formularios digitales'] },
+    en: { tab: 'Responder', tag: 'Responder Apps', name: 'Field\nOperations', headerName: 'First Responder Apps', tagline: 'iOS & Android field apps for officers, paramedics, and firefighters', desc: 'Mobile apps for officers, paramedics, and firefighters — with maps, assignments, forms, and push-to-talk.', feats: ['iOS & Android native', 'Offline capability', 'Push-to-talk radio', 'Digital incident forms'] },
+    es: { tab: 'Respondiente', tag: 'Apps de Respuesta', name: 'Operaciones\nde Campo', headerName: 'Apps de Primera Respuesta', tagline: 'Apps de campo iOS y Android para oficiales, paramedicos y bomberos', desc: 'Apps moviles para oficiales, paramedicos y bomberos — con mapas, asignaciones, formularios y push-to-talk.', feats: ['Nativo iOS y Android', 'Capacidad offline', 'Radio push-to-talk', 'Formularios digitales'] },
     image: '/images/modules/responder.png',
   },
   citizen: {
     color: '#60a5fa',
-    en: { tab: 'Citizens', tag: 'Citizen Apps', name: 'Community\nSafety', desc: 'Public-facing apps for incident reporting, push alerts, emergency SOS buttons, and real-time safety updates.', feats: ['One-tap SOS button', 'Push safety alerts', 'Anonymous reporting', 'Real-time updates'] },
-    es: { tab: 'Ciudadanos', tag: 'Apps Ciudadanas', name: 'Seguridad\nComunitaria', desc: 'Apps publicas para reporte de incidentes, alertas push, botones SOS de emergencia y actualizaciones de seguridad en tiempo real.', feats: ['Boton SOS de un toque', 'Alertas push de seguridad', 'Reportes anonimos', 'Actualizaciones en tiempo real'] },
+    en: { tab: 'Citizens', tag: 'Citizen Apps', name: 'Community\nSafety', headerName: 'Citizen Safety', tagline: 'Public apps for SOS alerts, anonymous reporting, and real-time safety updates', desc: 'Public-facing apps for incident reporting, push alerts, emergency SOS buttons, and real-time safety updates.', feats: ['One-tap SOS button', 'Push safety alerts', 'Anonymous reporting', 'Real-time updates'] },
+    es: { tab: 'Ciudadanos', tag: 'Apps Ciudadanas', name: 'Seguridad\nComunitaria', headerName: 'Seguridad Ciudadana', tagline: 'Apps publicas para alertas SOS, reportes anonimos y actualizaciones en tiempo real', desc: 'Apps publicas para reporte de incidentes, alertas push, botones SOS de emergencia y actualizaciones de seguridad en tiempo real.', feats: ['Boton SOS de un toque', 'Alertas push de seguridad', 'Reportes anonimos', 'Actualizaciones en tiempo real'] },
     image: '/images/modules/citizen.png',
   },
   ai: {
     color: '#06b6d4',
-    en: { tab: 'AI Engine', tag: 'AI Engine', name: 'Predictive\nIntelligence', desc: 'Threat scoring, anomaly detection, NLP for 911 calls, and automated decision support across all platform modules.', feats: ['Predictive threat scoring', 'Anomaly detection', 'NLP call analysis', 'Auto decision support'] },
-    es: { tab: 'Motor IA', tag: 'Motor IA', name: 'Inteligencia\nPredictiva', desc: 'Puntuacion de amenazas, deteccion de anomalias, NLP para llamadas 911 y soporte de decisiones automatizado.', feats: ['Puntuacion predictiva de amenazas', 'Deteccion de anomalias', 'Analisis NLP de llamadas', 'Soporte de decisiones automatico'] },
+    en: { tab: 'AI Engine', tag: 'AI Engine', name: 'Predictive\nIntelligence', headerName: 'AI Engine', tagline: 'Predictive threat scoring, anomaly detection, and automated decision support', desc: 'Threat scoring, anomaly detection, NLP for 911 calls, and automated decision support across all platform modules.', feats: ['Predictive threat scoring', 'Anomaly detection', 'NLP call analysis', 'Auto decision support'] },
+    es: { tab: 'Motor IA', tag: 'Motor IA', name: 'Inteligencia\nPredictiva', headerName: 'Motor de IA', tagline: 'Puntuacion predictiva de amenazas, deteccion de anomalias y soporte automatizado', desc: 'Puntuacion de amenazas, deteccion de anomalias, NLP para llamadas 911 y soporte de decisiones automatizado.', feats: ['Puntuacion predictiva de amenazas', 'Deteccion de anomalias', 'Analisis NLP de llamadas', 'Soporte de decisiones automatico'] },
     image: '/images/modules/ai.png',
   },
   bi: {
     color: '#a855f7',
-    en: { tab: 'Analytics/BI', tag: 'Analytics', name: 'Business\nIntelligence', desc: 'Operational dashboards, KPI monitoring, trend analysis, and executive reporting across all platform modules.', feats: ['Real-time KPI dashboards', 'Response time trends', 'Resource utilization', 'Executive reporting'] },
-    es: { tab: 'Analitica/BI', tag: 'Analitica', name: 'Inteligencia\nde Negocios', desc: 'Dashboards operativos, monitoreo de KPIs, analisis de tendencias y reportes ejecutivos en todos los modulos.', feats: ['Dashboards KPI en tiempo real', 'Tendencias de tiempo de respuesta', 'Utilizacion de recursos', 'Reportes ejecutivos'] },
+    en: { tab: 'Analytics/BI', tag: 'Analytics', name: 'Business\nIntelligence', headerName: 'Business Intelligence', tagline: 'KPI dashboards, response time trends, and executive reporting across all modules', desc: 'Operational dashboards, KPI monitoring, trend analysis, and executive reporting across all platform modules.', feats: ['Real-time KPI dashboards', 'Response time trends', 'Resource utilization', 'Executive reporting'] },
+    es: { tab: 'Analitica/BI', tag: 'Analitica', name: 'Inteligencia\nde Negocios', headerName: 'Inteligencia de Negocios', tagline: 'Dashboards KPI, tendencias de respuesta y reportes ejecutivos en todos los modulos', desc: 'Dashboards operativos, monitoreo de KPIs, analisis de tendencias y reportes ejecutivos en todos los modulos.', feats: ['Dashboards KPI en tiempo real', 'Tendencias de tiempo de respuesta', 'Utilizacion de recursos', 'Reportes ejecutivos'] },
     image: '/images/modules/bi.png',
   },
 }
@@ -129,6 +129,28 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
     }
   }
 
+  const goPrev = () => {
+    setActive(prev => {
+      const idx = MOD_ORDER.indexOf(prev)
+      return MOD_ORDER[(idx - 1 + MOD_ORDER.length) % MOD_ORDER.length]
+    })
+    if (timerRef.current) clearInterval(timerRef.current)
+    if (!paused) {
+      timerRef.current = setInterval(advance, INTERVAL)
+    }
+  }
+
+  const goNext = () => {
+    setActive(prev => {
+      const idx = MOD_ORDER.indexOf(prev)
+      return MOD_ORDER[(idx + 1) % MOD_ORDER.length]
+    })
+    if (timerRef.current) clearInterval(timerRef.current)
+    if (!paused) {
+      timerRef.current = setInterval(advance, INTERVAL)
+    }
+  }
+
   const sectionLabel = es ? 'INTELIGENCIA OPERATIVA' : 'BUSINESS INTELLIGENCE'
   const activeIdx = MOD_ORDER.indexOf(active)
   const m = modules[active]
@@ -143,6 +165,23 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
       <div className="ms-inner">
         {/* Section label */}
         <div className="ms-label">{sectionLabel}</div>
+
+        {/* Carousel header with prev/next arrows */}
+        <div className="ms-carousel-header">
+          <button className="ms-arrow" onClick={goPrev} aria-label={es ? 'Modulo anterior' : 'Previous module'}>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 14L7 9l4-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+          <div className="ms-carousel-info">
+            <div className="ms-carousel-counter">
+              {String(activeIdx + 1).padStart(2, '0')} / {String(MOD_ORDER.length).padStart(2, '0')}
+            </div>
+            <div className="ms-carousel-name">{c.headerName}</div>
+            <div className="ms-carousel-tagline">{c.tagline}</div>
+          </div>
+          <button className="ms-arrow" onClick={goNext} aria-label={es ? 'Siguiente modulo' : 'Next module'}>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 14l4-5-4-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+        </div>
 
         {/* Tab row */}
         <div className="ms-tabs-row">
@@ -266,6 +305,63 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           height: 1px;
           background: var(--cyan);
           opacity: 0.5;
+        }
+
+        /* ── Carousel Header ── */
+        .ms-carousel-header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          padding: 0 24px;
+          margin-bottom: 28px;
+        }
+        .ms-arrow {
+          flex-shrink: 0;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(255,255,255,0.04);
+          color: var(--dim);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .ms-arrow:hover {
+          background: rgba(255,255,255,0.09);
+          color: var(--white);
+          border-color: rgba(255,255,255,0.2);
+        }
+        .ms-carousel-info {
+          text-align: center;
+          flex: 1;
+          max-width: 560px;
+          min-width: 0;
+        }
+        .ms-carousel-counter {
+          font-family: 'DM Mono', monospace;
+          font-size: 11px;
+          letter-spacing: 0.2em;
+          color: var(--muted);
+          margin-bottom: 10px;
+        }
+        .ms-carousel-name {
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: clamp(26px, 3.5vw, 40px);
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          color: var(--white);
+          margin-bottom: 8px;
+          line-height: 1;
+        }
+        .ms-carousel-tagline {
+          font-size: 14px;
+          color: var(--dim);
+          line-height: 1.5;
         }
 
         /* ── Tabs ── */

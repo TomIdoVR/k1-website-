@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.46] 2026-03-18 — Add carousel header to modules section
+**Added**
+- Carousel header with prev/next arrow buttons, module counter (01/09), large module name, and tagline — matching the original GitHub Pages layout
+- Header name and tagline metadata for all 9 modules (EN + ES)
+
+---
+
 ## [0.45] 2026-03-18 — Align Next.js homepage with GitHub Pages version
 **Added**
 - `ModulesSection.tsx` — 9-tab interactive Business Intelligence section (Video, Dispatch, Events, GIS, Integrations, Responder, Citizen, AI, BI) with auto-rotation, pause on hover, ARIA support, and animated progress bar
