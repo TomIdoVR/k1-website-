@@ -22,7 +22,7 @@ const products = [
     key: 'k-safety',
     href: '/k-safety',
     color: '#3b82f6',
-    mockup: '/images/modules/gis.png',
+    mockup: '/images/modules/gis.webp',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bcf0f51afe19ee6f62_bfc934fae88e789f0a34a1e98034f547_k-safety.png',
     en: {
       label: 'K-SAFETY',
@@ -52,7 +52,7 @@ const products = [
     href: '/k-dispatch',
     color: '#ef4444',
     flip: true,
-    mockup: '/images/modules/dispatch.png',
+    mockup: '/images/modules/dispatch.webp',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bcfa466ab895831d3e_bbb2ae471a4de092b2a368cc525f60fa_k-dispatch.png',
     en: {
       label: 'K-DISPATCH',
@@ -81,7 +81,7 @@ const products = [
     key: 'k-traffic',
     href: '/k-traffic',
     color: '#06b6d4',
-    mockup: '/images/k-traffic-mockup.png',
+    mockup: '/images/k-traffic-mockup.webp',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bc2144d373f0c08bf0_f578e42b45f19b452bdd296b179abcfa_k-traffic.png',
     en: {
       label: 'K-TRAFFIC',
@@ -111,7 +111,7 @@ const products = [
     href: '/k-video',
     color: '#a855f7',
     flip: true,
-    mockup: '/images/modules/video.png',
+    mockup: '/images/modules/video.webp',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bdcaa9de22148bd63a_3e3c3f4158736d63a3d69eaf38c04bd5_k-video.png',
     en: {
       label: 'K-VIDEO',
@@ -140,7 +140,7 @@ const products = [
     key: 'k-connect',
     href: '/k-connect',
     color: '#22c55e',
-    mockup: '/images/k-connect-mockup.png',
+    mockup: '/images/k-connect-mockup.webp',
     icon: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/682661bca3c6f9301c805cf0_5e614308b651cd2f4647083dd820e98c_k-connect.png',
     en: {
       label: 'K-CONNECT',

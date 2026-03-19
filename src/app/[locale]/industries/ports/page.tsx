@@ -5,6 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
+import PortCommandHero from '@/components/industry-heroes/PortCommandHero'
+import Breadcrumb from '@/components/Breadcrumb'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -134,6 +136,11 @@ export default async function PortsPage({
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
+        <Breadcrumb items={[
+          { label: es ? 'Inicio' : 'Home', href: '/' },
+          { label: es ? 'Industrias' : 'Industries' },
+          { label: es ? 'Puertos' : 'Ports' },
+        ]} />
         {/* ── HERO ── */}
         <PageHero
           accent={ACCENT}
@@ -144,7 +151,7 @@ export default async function PortsPage({
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Ver la Plataforma' : 'See the Platform'}
         >
-          {/* Compliance badge below subtitle, rendered as part of hero left */}
+          <PortCommandHero />
         </PageHero>
 
         {/* ── ISPS COMPLIANCE BADGE ── */}

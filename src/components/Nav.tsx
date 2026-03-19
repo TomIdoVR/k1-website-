@@ -59,7 +59,6 @@ export default function Nav() {
           width={160}
           height={32}
           priority
-          unoptimized
         />
       </Link>
 
@@ -170,6 +169,7 @@ export default function Nav() {
         </li>
 
         <li><Link href="/resources/what-is-a-public-safety-platform" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Recursos' : 'Resources'}</Link></li>
+        <li><a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>Blog</a></li>
         <li><Link href="/about" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Nosotros' : 'About'}</Link></li>
         <li><Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Contacto' : 'Contact'}</Link></li>
 
@@ -279,6 +279,7 @@ export default function Nav() {
           <hr style={{ borderColor: 'var(--border)', margin: '4px 0' }} />
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/resources/what-is-a-public-safety-platform" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Recursos' : 'Resources'}</Link>
+            <a href="#" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>Blog</a>
             <Link href="/about" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Nosotros' : 'About'}</Link>
             <Link href="/contact" onClick={() => setMenuOpen(false)} style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Contacto' : 'Contact'}</Link>
           </div>

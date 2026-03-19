@@ -5,6 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
+import AirportSecurityHero from '@/components/industry-heroes/AirportSecurityHero'
+import Breadcrumb from '@/components/Breadcrumb'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -164,6 +166,11 @@ export default async function AirportPage({
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
+        <Breadcrumb items={[
+          { label: es ? 'Inicio' : 'Home', href: '/' },
+          { label: es ? 'Industrias' : 'Industries' },
+          { label: es ? 'Aeropuertos' : 'Airports' },
+        ]} />
         {/* ── HERO ── */}
         <PageHero
           accent={ACCENT}
@@ -173,7 +180,9 @@ export default async function AirportPage({
           stats={content.stats}
           cta1={content.cta1}
           cta2={content.cta2}
-        />
+        >
+          <AirportSecurityHero />
+        </PageHero>
 
         {/* ── CHALLENGES ── */}
         <section style={{ borderTop: '1px solid var(--border)', padding: '80px 32px' }}>

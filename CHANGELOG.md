@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.51] 2026-03-19 — Production-ready Vercel deployment
+**Changed / Added / Fixed**
+- Converted all module images from PNG to WebP (86MB → 507KB) — fixes 30s page load timeout
+- Replaced raw `<img>` tags with Next.js `<Image>` for automatic optimization in ModulesSection
+- Removed `unoptimized` flag from Nav logo, enabling Next.js image optimization
+- Added `formats` and `deviceSizes` to next.config.ts image config
+- Created 7 industry hero visualization components (city map, dispatch board, terminal map, port map, logistics tracker, store layout, stadium view) with animated CSS panels
+- Wired hero visualizations into all 7 industry pages via `PageHero` children prop
+- Added visible breadcrumb navigation (`Home / Industries / Page`) to all 7 industry pages
+- Expanded footer with Privacy, Terms, Security placeholder links
+- Added Blog placeholder link to Nav (desktop + mobile)
+
+---
+
 ## [0.50] 2026-03-19 — GEO-012: Structured data audit and fixes
 **Fixed**
 - Added BreadcrumbList JSON-LD schema to 5 product pages (K-Dispatch, K-Video, K-Safety, K-Traffic, K-Connect) and About page — previously missing

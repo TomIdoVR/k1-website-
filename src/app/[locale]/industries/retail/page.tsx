@@ -5,6 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
+import RetailAnalyticsHero from '@/components/industry-heroes/RetailAnalyticsHero'
+import Breadcrumb from '@/components/Breadcrumb'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -128,6 +130,11 @@ export default async function RetailPage({
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
+        <Breadcrumb items={[
+          { label: es ? 'Inicio' : 'Home', href: '/' },
+          { label: es ? 'Industrias' : 'Industries' },
+          { label: 'Retail' },
+        ]} />
         {/* ── HERO ── */}
         <PageHero
           accent={ACCENT}
@@ -137,7 +144,9 @@ export default async function RetailPage({
           stats={[]}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Ver la Plataforma' : 'See the Platform'}
-        />
+        >
+          <RetailAnalyticsHero />
+        </PageHero>
 
         {/* ── CHALLENGES ── */}
         <section style={sectionStyle}>
