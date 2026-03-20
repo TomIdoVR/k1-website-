@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.66] 2026-03-20 — Fix: Footer competitor links now visible in static site
+
+**Fixed**
+- Global `nav { position: fixed }` rule was causing `<nav class="footer-links">` to float up into the fixed nav bar, making links invisible in the footer. Changed footer link containers to `<div>` elements.
+
 ## [0.65] 2026-03-20 — Fix: Footer competitors column is now vertical
 
 **Fixed**
