@@ -104,4 +104,9 @@ export const metadata = {
     description: "Genetec gestiona cámaras y control de acceso. KabatOne agrega despacho CAD, GIS, gestión de tráfico y operaciones de campo — conectando el flujo completo de respuesta en una sola plataforma.",
     canonical: "https://kabatone.com/es/vs/genetec/",
   },
+  vsMilestone: {
+    title: "KabatOne vs Milestone XProtect — Comparación de Plataformas de Seguridad Pública",
+    description: "Milestone XProtect gestiona video. KabatOne agrega despacho CAD, conciencia situacional GIS, gestión de tráfico y operaciones de campo — conectando el flujo completo de respuesta sin integrar sistemas de terceros.",
+    canonical: "https://kabatone.com/es/vs/milestone/",
+  },
 } as const

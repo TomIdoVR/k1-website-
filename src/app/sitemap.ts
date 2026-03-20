@@ -22,6 +22,7 @@ const pages = [
   { path: '/resources/smart-city-platform-guide', priority: 0.6 },
   { path: '/resources/public-safety-software-municipalities-mexico', priority: 0.6 },
   { path: '/vs/genetec', priority: 0.7 },
+  { path: '/vs/milestone', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
 ]

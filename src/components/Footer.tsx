@@ -11,6 +11,7 @@ export default function Footer({ es }: { es: boolean }) {
           <Link href="/about" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Nosotros' : 'About'}</Link>
           <Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Contacto' : 'Contact'}</Link>
           <Link href="/vs/genetec" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Genetec' : 'vs. Genetec'}</Link>
+          <Link href="/vs/milestone" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Milestone' : 'vs. Milestone'}</Link>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Privacidad' : 'Privacy'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Términos' : 'Terms'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Seguridad' : 'Security'}</a>

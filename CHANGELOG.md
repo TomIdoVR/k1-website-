@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.58] 2026-03-20 — Feat: KabatOne vs Milestone XProtect comparison page /vs/milestone/
+**Added**
+- New comparison page at `/vs/milestone/` (EN + ES) — KabatOne vs Milestone XProtect
+- 7-row comparison table, 6 FAQ pairs with FAQPage schema, BreadcrumbList schema
+- Metadata entries in `en/metadata.ts` and `es/metadata.ts`
+- Added `/vs/milestone` to sitemap at priority 0.7
+- Added "vs. Milestone" link to footer (EN + ES)
+
 ## [0.57] 2026-03-20 — Feat: add vs. Genetec link to footer
 **Added**
 - Added "vs. Genetec" link in the footer nav (both EN and ES) pointing to `/vs/genetec/`
