@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.59] 2026-03-19 — Fix: mobile hero gap — trust badges now visible above the fold
+**Fixed**
+- Reduced `margin-bottom` on `.hp-sub`, `.hp-cta-row`, and `.hp-badges` at ≤560px breakpoint
+- SOC 2 / Uptime / 24/7 badges now visible in initial mobile viewport without scrolling
+
 ## [0.58] 2026-03-20 — Feat: KabatOne vs Milestone XProtect comparison page /vs/milestone/
 **Added**
 - New comparison page at `/vs/milestone/` (EN + ES) — KabatOne vs Milestone XProtect

@@ -1601,7 +1601,10 @@ export default async function HomePage({
           .hp-industries-inner { padding: 0 20px; }
           .hp-why-inner { padding: 0 20px; }
           .hp-proof-inner { padding: 0 20px; }
-          .hp-hero { padding: 48px 16px 24px; }
+          .hp-hero { padding: 48px 16px 16px; }
+          .hp-sub { margin-bottom: 28px; }
+          .hp-cta-row { margin-bottom: 28px; }
+          .hp-badges { margin-bottom: 16px; }
         }
         @media (max-width: 480px) {
           .hp-ind-grid { grid-template-columns: 1fr; }
