@@ -7,14 +7,229 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
-## [0.52] 2026-03-19 — Perf: WebP images + vercel.json for static Vercel deploy
+## [0.60] 2026-03-20 — Feat: KabatOne vs Traditional VMS comparison page /vs/vms/
+**Added**
+- New category-level comparison page at `/vs/vms/` (EN + ES) — KabatOne vs Traditional VMS
+- 7-row comparison table, 6 FAQ pairs with FAQPage + BreadcrumbList schema
+- Angle: "The real cost of building on top of a VMS" — fragmentation, integration burden, operational delays
+- Metadata, sitemap entry, footer link ("vs. VMS") added
+
+## [0.59] 2026-03-19 — Fix: mobile hero gap — trust badges now visible above the fold
+**Fixed**
+- Reduced `margin-bottom` on `.hp-sub`, `.hp-cta-row`, and `.hp-badges` at ≤560px breakpoint
+- SOC 2 / Uptime / 24/7 badges now visible in initial mobile viewport without scrolling
+
+## [0.58] 2026-03-20 — Feat: KabatOne vs Milestone XProtect comparison page /vs/milestone/
+**Added**
+- New comparison page at `/vs/milestone/` (EN + ES) — KabatOne vs Milestone XProtect
+- 7-row comparison table, 6 FAQ pairs with FAQPage schema, BreadcrumbList schema
+- Metadata entries in `en/metadata.ts` and `es/metadata.ts`
+- Added `/vs/milestone` to sitemap at priority 0.7
+- Added "vs. Milestone" link to footer (EN + ES)
+
+## [0.57] 2026-03-20 — Feat: add vs. Genetec link to footer
+**Added**
+- Added "vs. Genetec" link in the footer nav (both EN and ES) pointing to `/vs/genetec/`
+
+## [0.56] 2026-03-19 — Perf: host logo locally — LCP 1.4s → 0.8s, score 96 → 100
+**Improved**
+- Downloaded KabatOne logo from CDN and hosted at `/public/images/logo.png`
+- Updated `Nav.tsx` to use local path instead of `cdn.prod.website-files.com`
+- Eliminates cross-origin connection for the LCP element (logo on every page, `priority`)
+- Lighthouse: Performance 96 → **100/100**, LCP 1.4s → **0.8s**, all CWV green
+
+## [0.55] 2026-03-20 — Fix: replace custom middleware with next-intl built-in middleware
+**Fixed**
+- Replaced hand-rolled locale middleware with `createMiddleware(routing)` from next-intl — fixes 404 on all nested EN routes (industries, resources, vs) in production
+- Removed redundant `/en/:path*` redirect from `next.config.ts` (next-intl handles it natively)
+- All 21 routes now return 200 in both EN and ES locales
+
+## [0.54] 2026-03-19 — Perf: replace raw img with next/image in product carousel
+**Improved**
+- Replaced the only remaining raw `<img>` tag in `page.tsx` with `<Image fill>` from `next/image`
+- First product (K-Safety) gets `priority={true}` — triggers browser preload for LCP candidate
+- Added `sizes` hint for responsive image serving
+- Lighthouse Next.js score: 96/100 (A), images 333 KB vs static HTML 91.7 MB
+
+## [0.53] 2026-03-19 — KabatOne vs Genetec comparison page
+**Added**
+- New `/vs/genetec/` comparison page (EN + ES) — KabatOne vs Genetec Security Center
+- 7-row comparison table: category, dispatch/CAD, GIS, traffic, community video, field ops, target market
+- 6 FAQ pairs with FAQPage schema
+- BreadcrumbList schema + metadata in en/metadata.ts and es/metadata.ts
+- `/vs/genetec` added to sitemap.ts (priority 0.7)
+- Built on positioning doc brand identity: Genetec = monitoring-first; KabatOne = end-to-end response workflow
+
+## [0.52] 2026-03-19 — Core Web Vitals audit and fixes
+**Improved**
+- Performance: LCP 3.7s → 2.4s on homepage by adding `priority` to initial ModulesSection image
+- Performance: Product icons moved from CDN (330KB each, unoptimized) to local paths with Next.js optimization
+- Accessibility: Added `<main>` landmark to layout — fixes missing landmark audit failure
+- Accessibility: Fixed color contrast — `--blue` darkened from `#3b82f6` to `#2563eb` (all CTA buttons)
+- Accessibility: Module active tab text changed to `#fff`; ms-tag changed to white on colored background
+- Accessibility: Carousel dot touch targets enlarged from 8px visual to 24px clickable hit area
+- Accessibility: Removed opacity reduction on product chrome titles
+- Lighthouse homepage: Performance 88→98, Accessibility 92→100, Best Practices 100, SEO 100
+
+---
+
+## [0.51] 2026-03-19 — Production-ready Vercel deployment
+**Changed / Added / Fixed**
+- Converted all module images from PNG to WebP (86MB → 507KB) — fixes 30s page load timeout
+- Replaced raw `<img>` tags with Next.js `<Image>` for automatic optimization in ModulesSection
+- Removed `unoptimized` flag from Nav logo, enabling Next.js image optimization
+- Added `formats` and `deviceSizes` to next.config.ts image config
+- Created 7 industry hero visualization components (city map, dispatch board, terminal map, port map, logistics tracker, store layout, stadium view) with animated CSS panels
+- Wired hero visualizations into all 7 industry pages via `PageHero` children prop
+- Added visible breadcrumb navigation (`Home / Industries / Page`) to all 7 industry pages
+- Expanded footer with Privacy, Terms, Security placeholder links
+- Added Blog placeholder link to Nav (desktop + mobile)
+
+---
+
+## [0.50] 2026-03-19 — GEO-012: Structured data audit and fixes
+**Fixed**
+- Added BreadcrumbList JSON-LD schema to 5 product pages (K-Dispatch, K-Video, K-Safety, K-Traffic, K-Connect) and About page — previously missing
+- Fixed locale-specific URLs in what-is-a-public-safety-platform breadcrumb + Article schema (was hardcoded to EN, now locale-aware)
+- Audited all 17+ pages: Organization, SoftwareApplication, FAQPage, Article, BreadcrumbList schemas validated
+
+---
+
+## [0.49] 2026-03-19 — Internal linking pass across all 17 pages
+**Added**
+- "Related Resources" section on all 5 product pages with 3 resource links + industry cross-links each
+- "Related Resources" section on all 7 industry pages with 2-3 resource links + 2 related industry links each
+- "Related Articles" cross-links on all 5 resource pages (each links to the other 4)
+- All links bilingual EN/ES, placed before CTA sections for consistent UX
+
+---
+
+## [0.48] 2026-03-19 — GEO: 5 citeable explainer pages (GEO-003 through GEO-007)
+**Added**
+- 5 new `/resources/` explainer pages — bilingual EN/ES, optimized for AI citation (GEO):
+  - `what-is-a-public-safety-platform` — definition, core components, legacy comparison
+  - `psim-vs-unified-platform` — PSIM vs unified architecture comparison table
+  - `how-c5-command-centers-work` — C5 architecture, technology, emergency workflow
+  - `smart-city-platform-guide` — capabilities, evaluation criteria, deployments
+  - `public-safety-software-municipalities-mexico` — Mexico requirements, C5, 911 integration
+- `articleSchema()` added to `src/lib/schema.ts` for resource pages
+- Article + FAQPage (6 Q&A each) + BreadcrumbList JSON-LD on all 5 pages
+- Metadata entries for all 5 pages in both `en/metadata.ts` and `es/metadata.ts`
+- 5 pages added to `sitemap.ts` with hreflang alternates
+- "Resources" nav link added to desktop and mobile Nav
+- Internal links to product pages throughout all resource content
+
+---
+
+## [0.47] 2026-03-18 — SEO: Schema markup, OG tags, hreflang fixes, Nav i18n, public assets
+**Added**
+- `src/lib/schema.ts` — JSON-LD schema builders (Organization, SoftwareApplication, FAQPage, BreadcrumbList)
+- Organization schema injected globally via layout.tsx
+- SoftwareApplication + FAQPage schema on all 5 product pages (bilingual EN/ES, 4-5 Q&A each)
+- BreadcrumbList + FAQPage schema on all 7 industry pages (bilingual EN/ES)
+- GEO entity definition block on About page (structured, citation-optimized text with 73M+ citizens stat)
+- FAQPage schema on About page (4 Q&A pairs)
+- OG image (1200x630) and branded K1 favicon/PWA icons generated
+- Web manifest (`site.webmanifest`) for PWA support
+
+**Fixed**
+- Hreflang: changed `es-MX` to `es` in metadata.ts + sitemap.ts to match routing locale
+- Hreflang: added `x-default` pointing to EN canonical on all pages
+- OG tags: added `og:image`, `og:locale`, `twitter:card` (summary_large_image) on all 15 pages
 
 **Changed**
-- Converted all 11 PNG images (175MB) to WebP (582KB) — 99.7% reduction
-- Updated image references in hero-mockup.html from .png to .webp
-- Deleted unused test2.png
-- Added vercel.json for static hosting (cleanUrls, homepage rewrite, image caching)
-- Switched deployment strategy: static HTML via Vercel CLI instead of Next.js
+- Nav.tsx: all labels now bilingual (Solutions/Soluciones, Industries/Industrias, About/Nosotros, Contact/Contacto)
+- Nav arrays moved inside component for locale access
+
+---
+
+## [0.46] 2026-03-18 — Add carousel header to modules section
+**Added**
+- Carousel header with prev/next arrow buttons, module counter (01/09), large module name, and tagline — matching the original GitHub Pages layout
+- Header name and tagline metadata for all 9 modules (EN + ES)
+
+---
+
+## [0.45] 2026-03-18 — Align Next.js homepage with GitHub Pages version
+**Added**
+- `ModulesSection.tsx` — 9-tab interactive Business Intelligence section (Video, Dispatch, Events, GIS, Integrations, Responder, Citizen, AI, BI) with auto-rotation, pause on hover, ARIA support, and animated progress bar
+- Module screenshots in product cards (replacing placeholder grid pattern)
+- Moved `/images/` to `/public/images/` so static assets are served correctly by Next.js
+
+**Fixed**
+- Product cards now show actual module screenshots instead of empty dark placeholders
+- Hero headline no longer applies gradient to "Public Safety" — matches original all-white styling
+- Section order now matches original: Hero → Modules tabs → Stats → Products → Why → Industries → CTA
+
+---
+
+## [0.44] 2026-03-18 — Next.js: all 15 pages ported EN+ES, sitemap, robots, shared components
+**Added**
+- Ported 12 remaining pages: K-Traffic, K-Connect, 7 industry pages (Public Safety, Municipalities, Airport, Retail, Logistics, Ports, Stadiums), Homepage, About, Contact
+- Shared components: `Footer.tsx`, `CTASection.tsx`, `PageHero.tsx` — used across all 15 pages
+- `src/app/sitemap.ts` — 30 entries (15 EN + 15 ES) with hreflang alternates
+- `src/app/robots.ts` — allows all crawlers, points to sitemap
+- Updated existing K-Dispatch, K-Video, K-Safety pages to use shared Footer component
+- Middleware matcher updated to `/:path*` for broader compatibility; file extension skip uses `\.\w+$` regex
+
+**Verified**
+- All 30 URLs return HTTP 200
+- `/sitemap.xml` returns 30 `<url>` entries
+- `/robots.txt` returns correct content
+- `/en/k-dispatch` returns 308 redirect
+- `npm run build` → 0 TypeScript errors
+- `npx tsc --noEmit` → 0 errors
+
+## [0.43] 2026-03-18 — Fix: replace next-intl middleware with Node.js-compatible locale routing
+**Fixed**
+- `middleware.ts` — replaced `createMiddleware` from next-intl (which imports `negotiator` CJS, crashing in Vercel V8 edge isolate) with a pure Next.js `NextResponse` implementation; handles `/en/*` redirect, ES prefix passthrough, and EN internal rewrite with zero CJS dependencies
+- `src/i18n/routing.ts` — simplified to plain config object (no `defineRouting`), keeps `localePrefix: 'as-needed'` for correct Nav URL generation
+- `next.config.ts` — removed `withNextIntl` plugin and `beforeFiles` rewrites (now handled by custom middleware); kept `/en/:path*` → `/:path*` redirect
+- `[locale]/layout.tsx` — explicit `locale={locale}` prop on `NextIntlClientProvider` so `useLocale()` in Nav.tsx resolves correctly without server-side plugin context
+- `npm run build` → 0 errors, middleware compiled as edge proxy
+
+## [0.42] 2026-03-18 — Fix: MIDDLEWARE_INVOCATION_FAILED on Vercel edge runtime
+**Fixed**
+- `middleware.ts` — wrap `createMiddleware` in explicit function; skip `/_next`, `/api`, favicon, and static file extensions before invoking intl middleware (prevents edge runtime crash on Vercel)
+- No changes to `next.config.ts` or `request.ts` — already correct
+- `npm run build` → 0 errors, middleware compiled as edge proxy
+
+## [0.41] 2026-03-18 — Fix: EN at root URL, load Barlow Condensed + Space Grotesk fonts
+**Fixed / Added**
+- `localePrefix: 'as-needed'` — EN pages now at `/k-dispatch`, ES at `/es/k-dispatch` (no /en/ prefix visible)
+- `next.config.ts` `redirects()` — `/en/:path*` → `/:path*` (308), removes redundant default locale prefix
+- `next.config.ts` `rewrites(beforeFiles)` — internally maps `/k-dispatch` → `/en/k-dispatch` so App Router `[locale]` segment correctly receives 'en'
+- `[locale]/layout.tsx` — Space Grotesk + Barlow Condensed loaded via `next/font/google`, CSS variables applied to `<html>`
+- `globals.css` — body uses `var(--font-space-grotesk)`, h1/h2/h3 use `var(--font-barlow-condensed)`
+- 0 TypeScript errors, all 6 URLs confirmed (correct lang= and page titles)
+
+## [0.40] 2026-03-18 — Next.js: i18n routing, K-Dispatch + K-Video + K-Safety pages EN+ES
+**Added**
+- `src/i18n/routing.ts` — next-intl routing config (`localePrefix: 'always'`, locales: en/es)
+- `src/i18n/request.ts` — `getRequestConfig` for locale detection
+- `src/i18n/navigation.ts` — locale-aware `Link`, `useRouter`, `usePathname` via `createNavigation`
+- `middleware.ts` — next-intl middleware at project root
+- `src/app/[locale]/layout.tsx` — locale layout with `NextIntlClientProvider` and `lang` attr
+- `src/app/[locale]/k-dispatch/page.tsx` — K-Dispatch page (EN+ES, all sections, red accent)
+- `src/app/[locale]/k-video/page.tsx` — K-Video page (EN+ES, all sections, purple accent, camera grid)
+- `src/app/[locale]/k-safety/page.tsx` — K-Safety page (EN+ES, all sections, cyan accent, GIS mockup)
+- `src/components/Nav.tsx` — shared nav with dropdown menus, language switcher, mobile hamburger
+**Changed**
+- `next.config.ts` — wrapped with `createNextIntlPlugin`, added CDN image domain
+- `src/app/globals.css` — added KabatOne design tokens (CSS custom properties)
+- `src/app/layout.tsx` — replaced with pass-through root layout (locale layout is effective root)
+**Fixed**
+- i18n locale routing: switched from `as-needed` to `always` prefix to fix App Router `[locale]` segment matching
+
+## [0.39] 2026-03-18 — Next.js scaffold: content structure, EN+ES metadata, metadata helper
+**Added**
+- New `nextjs` branch for clean Next.js 16.2.0 rebuild (TypeScript, Tailwind v4, App Router)
+- Scaffolded Next.js into repo; existing HTML files untouched
+- `src/content/en/metadata.ts` — English SEO metadata for all 15 pages
+- `src/content/es/metadata.ts` — Spanish SEO metadata for all 15 pages
+- `src/lib/metadata.ts` — `generatePageMetadata()` helper with canonical + hreflang + OG tags
+- Empty content stubs for EN+ES pages (home, products ×5, industries ×7, about, contact)
+- `next-intl` installed for i18n routing
 
 ## [0.37] 2026-03-18 — Fix: nav bar not full-width on mobile on all 5 product pages
 

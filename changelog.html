@@ -356,22 +356,339 @@
 
     <div class="timeline">
 
-      <!-- v0.52 -->
-      <div class="tl-entry feat" id="v0-52">
+      <!-- v0.60 -->
+      <div class="tl-entry">
         <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta">
-            <span class="tl-version">v0.52</span>
-            <span class="tl-date">2026-03-19</span>
-            <span class="tl-badge badge-feat">Changed</span>
-          </div>
-          <div class="tl-title">WebP images + vercel.json for static Vercel deploy</div>
-          <ul class="tl-bullets">
-            <li>Converted all 11 PNG images (175MB) to WebP (582KB) — 99.7% size reduction</li>
-            <li>Updated image references in hero-mockup.html from .png to .webp</li>
-            <li>Deleted unused test2.png</li>
-            <li>Added vercel.json for static hosting (cleanUrls, homepage rewrite, image caching)</li>
-            <li>Switched deployment strategy: static HTML via Vercel CLI instead of Next.js</li>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.60</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: KabatOne vs Traditional VMS comparison page /vs/vms/</div>
+          <ul class="tl-list">
+            <li>Category-level comparison page at <code>/vs/vms/</code> (EN + ES) — 7-row table, 6 FAQs, schema markup</li>
+            <li>Angle: "The real cost of building on top of a VMS" — fragmentation, integration burden, operational delays</li>
+            <li>Footer link "vs. VMS" added; sitemap updated</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.59 -->
+      <div class="tl-entry">
+        <div class="tl-meta">
+          <span class="tl-version">v0.59</span>
+          <span class="tl-date">2026-03-19</span>
+          <span class="tl-tag tag-fix">Fix</span>
+        </div>
+        <h2 class="tl-title">Mobile hero gap — trust badges visible above fold</h2>
+        <ul class="tl-list">
+          <li>Reduced margins on subtitle, CTA row, and badges at ≤560px breakpoint</li>
+          <li>SOC 2 / Uptime / 24/7 trust badges now visible in initial mobile viewport</li>
+        </ul>
+      </div>
+
+      <!-- v0.58 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.58</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: KabatOne vs Milestone XProtect comparison page /vs/milestone/</div>
+          <ul class="tl-list">
+            <li>New comparison page at <code>/vs/milestone/</code> (EN + ES) — 7-row table, 6 FAQ pairs, schema markup</li>
+            <li>Added to sitemap at priority 0.7; "vs. Milestone" link added to footer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.57 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.57</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: add vs. Genetec link to footer</div>
+          <ul class="tl-list">
+            <li>Added "vs. Genetec" link in the footer nav (EN + ES) pointing to <code>/vs/genetec/</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.56 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.56</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: host logo locally — LCP 1.4s → 0.8s, Lighthouse 96 → 100</div>
+          <ul class="tl-list">
+            <li>Downloaded KabatOne logo from CDN, hosted at <code>/public/images/logo.png</code></li>
+            <li>Updated <code>Nav.tsx</code> to use local path — eliminates cross-origin connection for LCP element</li>
+            <li>Lighthouse Performance: <strong>96 → 100/100</strong>, LCP: <strong>1.4s → 0.8s</strong>, all CWV green</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.55 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.55</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: replace custom middleware with next-intl built-in middleware</div>
+          <ul class="tl-list">
+            <li>Replaced hand-rolled locale middleware with <code>createMiddleware(routing)</code> from next-intl — fixes 404 on all nested EN routes</li>
+            <li>Removed redundant <code>/en/:path*</code> redirect from <code>next.config.ts</code></li>
+            <li>All 21 routes return 200 in both EN and ES locales in production</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.54 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.54</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: replace raw img with next/image in product carousel</div>
+          <ul class="tl-list">
+            <li>Replaced the only remaining raw <code>&lt;img&gt;</code> in <code>page.tsx</code> with <code>&lt;Image fill&gt;</code> from next/image</li>
+            <li>First product (K-Safety) gets <code>priority={true}</code> — preloads as LCP candidate</li>
+            <li>Added <code>sizes</code> hint for responsive image serving</li>
+            <li>Lighthouse score: 96/100 (A) — images 333 KB vs 91.7 MB on static site</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.53 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.53</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">KabatOne vs Genetec comparison page</div>
+          <ul class="tl-list">
+            <li>New <code>/vs/genetec/</code> page (EN + ES) — first Phase 3 comparison page</li>
+            <li>7-row comparison table: category, dispatch/CAD, GIS, traffic, community video, field ops, target market</li>
+            <li>6 FAQ pairs with FAQPage schema + BreadcrumbList schema</li>
+            <li>Metadata added to en/es metadata.ts; page added to sitemap.ts (priority 0.7)</li>
+            <li>Positioning based on brand identity V3: Genetec = monitoring-first; KabatOne = full response workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.52 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.52</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Core Web Vitals audit and fixes</div>
+          <ul class="tl-list">
+            <li>Performance: LCP 3.7s → 2.4s — added <code>priority</code> to initial ModulesSection image</li>
+            <li>Performance: Product icons moved from CDN (330KB unoptimized) to local paths with Next.js optimization</li>
+            <li>Accessibility: Added <code>&lt;main&gt;</code> landmark to layout</li>
+            <li>Accessibility: <code>--blue</code> darkened from #3b82f6 to #2563eb — fixes contrast on all CTA buttons</li>
+            <li>Accessibility: Module tab/tag text changed to white on colored backgrounds</li>
+            <li>Accessibility: Carousel dots enlarged to 24px touch target</li>
+            <li>Lighthouse: Performance 88→98, Accessibility 92→100, Best Practices 100, SEO 100</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.51 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.51</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Production-ready Vercel deployment</div>
+          <ul class="tl-list">
+            <li>Converted all module images from PNG to WebP (86MB → 507KB) — fixes 30s page load timeout</li>
+            <li>Replaced raw <code>&lt;img&gt;</code> tags with Next.js <code>&lt;Image&gt;</code> for automatic optimization</li>
+            <li>Removed <code>unoptimized</code> flag from Nav logo</li>
+            <li>Created 7 industry hero visualization components with animated CSS panels</li>
+            <li>Added visible breadcrumb navigation to all 7 industry pages</li>
+            <li>Expanded footer with Privacy, Terms, Security links</li>
+            <li>Added Blog placeholder link to Nav (desktop + mobile)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.50 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.50</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">GEO-012: Structured data audit and fixes</div>
+          <ul class="tl-list">
+            <li>Added BreadcrumbList JSON-LD to 5 product pages + About page (previously missing)</li>
+            <li>Fixed locale URLs in what-is-a-public-safety-platform breadcrumb &amp; Article schema</li>
+            <li>Full audit of all 17+ pages: Organization, SoftwareApplication, FAQPage, Article, BreadcrumbList validated</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.49 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.49</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Internal linking pass across all 17 pages</div>
+          <ul class="tl-list">
+            <li>"Related Resources" on 5 product pages — 3 resource links + industry cross-links each</li>
+            <li>"Related Resources" on 7 industry pages — 2-3 resource links + 2 related industry links each</li>
+            <li>"Related Articles" on 5 resource pages — each cross-links to the other 4</li>
+            <li>All links bilingual EN/ES, placed before CTA sections</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.48 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.48</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">GEO: 5 citeable explainer pages (GEO-003 through GEO-007)</div>
+          <ul class="tl-list">
+            <li>5 new /resources/ pages: public-safety-platform, psim-vs-unified, c5-command-centers, smart-city-guide, public-safety-mexico</li>
+            <li>All pages bilingual EN/ES with Article + FAQPage (6 Q&amp;A each) + BreadcrumbList JSON-LD</li>
+            <li>articleSchema() added to schema.ts for resource pages</li>
+            <li>Metadata entries + sitemap.ts updated for all 5 pages with hreflang alternates</li>
+            <li>"Resources" nav link added to desktop and mobile Nav</li>
+            <li>Content optimized for AI citation: self-contained paragraphs, specific stats, authoritative reference tone</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.47 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.47</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">SEO: Schema markup, OG tags, hreflang fixes, Nav i18n, public assets</div>
+          <ul class="tl-list">
+            <li>JSON-LD schema on all 15 pages: Organization (global), SoftwareApplication (products), FAQPage (all), BreadcrumbList (industries)</li>
+            <li>GEO entity definition block on About page — structured, citation-optimized text</li>
+            <li>Fixed hreflang: es-MX → es alignment + x-default on all pages</li>
+            <li>OG image, og:locale, twitter:card on all 15 pages</li>
+            <li>Nav fully translated EN/ES (Soluciones, Industrias, Nosotros, Contacto)</li>
+            <li>Branded K1 favicon, apple-touch-icon, PWA icons, web manifest</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.46 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.46</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Add carousel header to modules section</div>
+          <ul class="tl-list">
+            <li>Carousel header with prev/next arrows, counter (01/09), module name, and tagline</li>
+            <li>Header name and tagline metadata for all 9 modules (EN + ES)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.45 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.45</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Align Next.js homepage with GitHub Pages version</div>
+          <ul class="tl-list">
+            <li>Added <code>ModulesSection.tsx</code> — 9-tab interactive BI section with auto-rotation, ARIA, and animated progress bar</li>
+            <li>Product cards now show actual module screenshots instead of empty placeholders</li>
+            <li>Hero headline restored to all-white (no gradient on "Public Safety")</li>
+            <li>Moved <code>/images/</code> to <code>/public/images/</code> for correct Next.js static serving</li>
+            <li>Section order now matches original: Hero → Modules → Stats → Products → Why → Industries → CTA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.44 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.44</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js: all 15 pages ported EN+ES, sitemap, robots, shared components</div>
+          <ul class="tl-list">
+            <li>Ported 12 remaining pages: K-Traffic, K-Connect, 7 industry pages, Homepage, About, Contact</li>
+            <li>Shared components: <code>Footer.tsx</code>, <code>CTASection.tsx</code>, <code>PageHero.tsx</code></li>
+            <li><code>sitemap.ts</code> — 30 entries (15 EN + 15 ES) with hreflang alternates</li>
+            <li><code>robots.ts</code> — allows all crawlers, points to sitemap</li>
+            <li>All 30 URLs verified HTTP 200, 0 TypeScript errors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.43 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.43</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: replace next-intl middleware with Node.js-compatible locale routing</div>
+          <ul class="tl-list">
+            <li><code>middleware.ts</code> — replaced <code>createMiddleware</code> (imports <code>negotiator</code> CJS, crashes in Vercel V8 edge isolate) with pure <code>NextResponse</code> implementation; no CJS dependencies</li>
+            <li>Custom middleware handles: <code>/en/*</code> redirect, ES prefix passthrough, EN internal rewrite to <code>/en/</code></li>
+            <li><code>next.config.ts</code> — removed <code>withNextIntl</code> plugin and <code>beforeFiles</code> rewrites (now handled by middleware)</li>
+            <li><code>routing.ts</code> — simplified to plain config object; <code>localePrefix: as-needed</code> kept for correct Nav URL generation</li>
+            <li><code>[locale]/layout.tsx</code> — explicit <code>locale={locale}</code> on <code>NextIntlClientProvider</code> so <code>useLocale()</code> resolves without server plugin</li>
+            <li><code>npm run build</code> → 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.42 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.42</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: MIDDLEWARE_INVOCATION_FAILED on Vercel edge runtime</div>
+          <ul class="tl-list">
+            <li>Wrapped <code>createMiddleware</code> in explicit function — skips <code>/_next</code>, <code>/api</code>, favicon, and static file extensions before invoking intl middleware</li>
+            <li>Prevents Vercel edge runtime crash when middleware tries to process static assets</li>
+            <li><code>npm run build</code> → 0 errors, middleware compiled successfully as edge proxy</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.41 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.41</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: EN at root URL, load Barlow Condensed + Space Grotesk fonts</div>
+          <ul class="tl-list">
+            <li>Changed <code>localePrefix</code> to <code>as-needed</code> — EN at <code>/k-dispatch</code>, ES at <code>/es/k-dispatch</code></li>
+            <li><code>redirects()</code> in next.config.ts — <code>/en/:path*</code> → <code>/:path*</code> (308 permanent)</li>
+            <li><code>beforeFiles</code> rewrite — <code>/k-dispatch</code> → <code>/en/k-dispatch</code> internally so App Router <code>[locale]</code> = en</li>
+            <li>Fonts loaded via <code>next/font/google</code>: Space Grotesk (body) + Barlow Condensed (headlines)</li>
+            <li>globals.css uses CSS font variables; h1/h2/h3 use Barlow Condensed</li>
+            <li>0 TypeScript errors — all 6 product page URLs confirmed 200, correct <code>lang=</code> and titles</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.40 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.40</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js: i18n routing, K-Dispatch + K-Video + K-Safety pages EN+ES</div>
+          <ul class="tl-list">
+            <li>next-intl routing with <code>localePrefix: always</code> — EN at <code>/en/</code>, ES at <code>/es/</code></li>
+            <li>K-Dispatch page (EN+ES) — all 7 sections, red accent, CAD queue mockup, Mexico 911 case study</li>
+            <li>K-Video page (EN+ES) — all 6 sections, purple accent, live camera grid mockup, AI metrics</li>
+            <li>K-Safety page (EN+ES) — all 7 sections, cyan accent, GIS command center mockup, Jalisco case study</li>
+            <li>Shared <code>Nav</code> component — dropdowns, language switcher, mobile hamburger</li>
+            <li>0 TypeScript errors — all 6 URLs confirmed 200 with correct titles and lang attributes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.39 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.39</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js scaffold: content structure, EN+ES metadata, metadata helper</div>
+          <ul class="tl-list">
+            <li>New <code>nextjs</code> branch — clean Next.js 16.2.0 rebuild (TypeScript, Tailwind v4, App Router)</li>
+            <li>EN + ES SEO metadata for all 15 pages in <code>src/content/</code></li>
+            <li><code>generatePageMetadata()</code> helper with canonical, hreflang, and OpenGraph tags</li>
+            <li>Empty content stubs for all pages (EN + ES)</li>
+            <li><code>next-intl</code> installed for i18n routing</li>
           </ul>
         </div>
       </div>

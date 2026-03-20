@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* KabatOne design tokens */
+:root {
+  --bg: #0f1724;
+  --bg-2: #0b1220;
+  --blue: #2563eb;
+  --blue-light: #60a5fa;
+  --cyan: #06b6d4;
+  --white: #e6eef8;
+  --muted: #9dbdd0;
+  --dim: #94a3b8;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-b: rgba(59, 130, 246, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-space-grotesk), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3,
+.font-condensed,
+.hero-title,
+.stat-number {
+  font-family: var(--font-barlow-condensed), sans-serif;
+}
