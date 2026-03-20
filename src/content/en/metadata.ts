@@ -159,4 +159,19 @@ export const metadata = {
     description: "KabatOne's privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
     canonical: "https://kabatone.com/privacy/",
   },
+  resources: {
+    title: "Resources & Guides — Public Safety Platform | KabatOne",
+    description: "Guides, deep dives, and reference articles on public safety platforms, RTCC, CAD dispatch, and smart city technology. For city officials and security directors.",
+    canonical: "https://kabatone.com/resources/",
+  },
+  rtccSetupGuide: {
+    title: "Real-Time Crime Center (RTCC) Setup Guide | KabatOne",
+    description: "Step-by-step guide to planning, building, and operating a Real-Time Crime Center. Covers infrastructure, software, camera integration, training, and key metrics.",
+    canonical: "https://kabatone.com/resources/rtcc-setup-guide/",
+  },
+  aiInPublicSafety: {
+    title: "AI in Public Safety: A Guide for Cities | KabatOne",
+    description: "How artificial intelligence is transforming emergency response, video surveillance, and dispatch. Use cases, real benefits, limitations, and what to look for in an AI platform.",
+    canonical: "https://kabatone.com/resources/ai-in-public-safety/",
+  },
 } as const

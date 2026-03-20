@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
 
-**Current site size:** 32 unique routes × 2 locales (EN + ES) = 64 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 11 | /resources/: 5 | Other: 3 (about, contact, privacy)
+**Current site size:** 35 unique routes × 2 locales (EN + ES) = 70 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 11 | /resources/: 8 (hub + 7 articles) | Other: 3 (about, contact, privacy)
 
 ---
 
@@ -89,6 +89,7 @@
 | Comparison pages batch 2 | 2026-03-19 | Claude Code | /vs/motorola, /vs/hexagon, /vs/mark43, /vs/axon, /vs/carbyne, /vs/cad — full EN+ES (v0.61) |
 | Comparison pages batch 3 | 2026-03-20 | Claude Code | /vs/fusus, /vs/prepared911 — full EN+ES, FAQ schema, breadcrumb schema (v0.69) |
 | Privacy page | 2026-03-20 | Claude Code | /privacy route EN+ES with full policy content (v0.68) |
+| Resources hub + blog articles | 2026-03-20 | Claude Code | /resources/ hub index + /resources/rtcc-setup-guide + /resources/ai-in-public-safety — full EN+ES, all schemas, nav updated, sitemap updated (v0.73) |
 
 ### Pre-launch checklist
 | Item | Status |
@@ -154,12 +155,13 @@
 | /vs/cad/ — traditional CAD alternative | Medium | Done | v0.61 |
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
-| Blog post: AI in public safety | Medium | Not started | |
-| Blog post: RTCC setup guide | Medium | Not started | |
+| Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
+| Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
+| /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
 | Integration page: LPR | Medium | Not started | |
 | Integration page: Face recognition | Medium | Not started | |
 | Integration page: Sensor fusion | Low | Not started | |
-| solutions.html audit + SEO fix | High | Not started | |
+| solutions.html audit + SEO fix | High | N/A | solutions.html deleted — static files removed from nextjs branch v0.72 |
 
 ### Technical post-launch
 | Item | Priority | Status |
@@ -167,7 +169,7 @@
 | SEO-008: Fix nav Solutions link inconsistency | Low | Done |
 | SEO-009: Schema markup (Organization + SoftwareApplication) | Low | Done |
 | SEO-010: OG tags on all pages | Low | Done |
-| Core Web Vitals audit (LCP, CLS, INP) | High | Not started |
+| Core Web Vitals audit (LCP, CLS, INP) | High | Done | v0.71 — 84/100 B grade, SEO 100/100, images main issue, lazy loading added |
 | Internal linking pass — module → solution → resource | High | Done |
 | Backlink outreach — industry publications | Medium | Not started |
 

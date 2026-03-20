@@ -159,4 +159,19 @@ export const metadata = {
     description: "Política de privacidad de KabatOne — cómo recopilamos, usamos y protegemos tus datos personales. Conoce tus derechos ARCO y nuestras prácticas de seguridad.",
     canonical: "https://kabatone.com/es/privacy/",
   },
+  resources: {
+    title: "Recursos y Guías — Plataforma de Seguridad Pública | KabatOne",
+    description: "Guías, análisis y artículos de referencia sobre plataformas de seguridad pública, centros de crimen en tiempo real, despacho CAD y tecnología de ciudad inteligente.",
+    canonical: "https://kabatone.com/es/resources/",
+  },
+  rtccSetupGuide: {
+    title: "Guía para Implementar un Centro de Crimen en Tiempo Real (RTCC) | KabatOne",
+    description: "Guía paso a paso para planificar, construir y operar un Centro de Crimen en Tiempo Real. Cubre infraestructura, software, integración de cámaras, capacitación y métricas clave.",
+    canonical: "https://kabatone.com/es/resources/rtcc-setup-guide/",
+  },
+  aiInPublicSafety: {
+    title: "Inteligencia Artificial en Seguridad Pública: Guía para Ciudades | KabatOne",
+    description: "Cómo la inteligencia artificial está transformando la respuesta a emergencias, la videovigilancia y el despacho. Casos de uso, beneficios reales, limitaciones y qué buscar en una plataforma IA.",
+    canonical: "https://kabatone.com/es/resources/ai-in-public-safety/",
+  },
 } as const
