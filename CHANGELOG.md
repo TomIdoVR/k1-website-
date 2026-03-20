@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.57] 2026-03-20 — Feat: add vs. Genetec link to footer
+**Added**
+- Added "vs. Genetec" link in the footer nav (both EN and ES) pointing to `/vs/genetec/`
+
 ## [0.56] 2026-03-19 — Perf: host logo locally — LCP 1.4s → 0.8s, score 96 → 100
 **Improved**
 - Downloaded KabatOne logo from CDN and hosted at `/public/images/logo.png`
