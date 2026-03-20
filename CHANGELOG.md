@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.56] 2026-03-19 — Perf: host logo locally — LCP 1.4s → 0.8s, score 96 → 100
+**Improved**
+- Downloaded KabatOne logo from CDN and hosted at `/public/images/logo.png`
+- Updated `Nav.tsx` to use local path instead of `cdn.prod.website-files.com`
+- Eliminates cross-origin connection for the LCP element (logo on every page, `priority`)
+- Lighthouse: Performance 96 → **100/100**, LCP 1.4s → **0.8s**, all CWV green
+
 ## [0.55] 2026-03-20 — Fix: replace custom middleware with next-intl built-in middleware
 **Fixed**
 - Replaced hand-rolled locale middleware with `createMiddleware(routing)` from next-intl — fixes 404 on all nested EN routes (industries, resources, vs) in production

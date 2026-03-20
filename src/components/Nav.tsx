@@ -54,10 +54,10 @@ export default function Nav() {
       {/* Logo */}
       <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
         <Image
-          src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png"
+          src="/images/logo.png"
           alt="KabatOne"
           width={160}
-          height={32}
+          height={27}
           priority
         />
       </Link>

@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v0.56 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.56</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: host logo locally — LCP 1.4s → 0.8s, Lighthouse 96 → 100</div>
+          <ul class="tl-list">
+            <li>Downloaded KabatOne logo from CDN, hosted at <code>/public/images/logo.png</code></li>
+            <li>Updated <code>Nav.tsx</code> to use local path — eliminates cross-origin connection for LCP element</li>
+            <li>Lighthouse Performance: <strong>96 → 100/100</strong>, LCP: <strong>1.4s → 0.8s</strong>, all CWV green</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.55 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>
