@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.53] 2026-03-19 — KabatOne vs Genetec comparison page
+**Added**
+- New `/vs/genetec/` comparison page (EN + ES) — KabatOne vs Genetec Security Center
+- 7-row comparison table: category, dispatch/CAD, GIS, traffic, community video, field ops, target market
+- 6 FAQ pairs with FAQPage schema
+- BreadcrumbList schema + metadata in en/metadata.ts and es/metadata.ts
+- `/vs/genetec` added to sitemap.ts (priority 0.7)
+- Built on positioning doc brand identity: Genetec = monitoring-first; KabatOne = end-to-end response workflow
+
 ## [0.52] 2026-03-19 — Core Web Vitals audit and fixes
 **Improved**
 - Performance: LCP 3.7s → 2.4s on homepage by adding `priority` to initial ModulesSection image

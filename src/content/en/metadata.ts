@@ -99,4 +99,9 @@ export const metadata = {
     description: "Mexican municipalities need software that integrates C5 operations, video surveillance, CAD dispatch, and traffic management. Guide to choosing the right public safety platform.",
     canonical: "https://kabatone.com/resources/public-safety-software-municipalities-mexico/",
   },
+  vsGenetec: {
+    title: "KabatOne vs Genetec — Public Safety Platform Comparison",
+    description: "Genetec manages cameras and access control. KabatOne adds CAD dispatch, GIS, traffic management, and field operations to video — connecting the full response workflow in one platform.",
+    canonical: "https://kabatone.com/vs/genetec/",
+  },
 } as const
