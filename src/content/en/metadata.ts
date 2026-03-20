@@ -109,4 +109,9 @@ export const metadata = {
     description: "Milestone XProtect manages video. KabatOne adds CAD dispatch, GIS situational awareness, traffic management, and field operations — connecting the full response workflow without stitching together third-party systems.",
     canonical: "https://kabatone.com/vs/milestone/",
   },
+  vsVms: {
+    title: "KabatOne vs Traditional VMS — Beyond Video Monitoring for Public Safety",
+    description: "A standard VMS manages cameras. KabatOne adds CAD dispatch, GIS, traffic management, and field operations natively — replacing fragmented multi-vendor stacks with one unified public safety platform.",
+    canonical: "https://kabatone.com/vs/vms/",
+  },
 } as const

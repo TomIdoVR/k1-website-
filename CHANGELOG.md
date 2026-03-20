@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.60] 2026-03-20 — Feat: KabatOne vs Traditional VMS comparison page /vs/vms/
+**Added**
+- New category-level comparison page at `/vs/vms/` (EN + ES) — KabatOne vs Traditional VMS
+- 7-row comparison table, 6 FAQ pairs with FAQPage + BreadcrumbList schema
+- Angle: "The real cost of building on top of a VMS" — fragmentation, integration burden, operational delays
+- Metadata, sitemap entry, footer link ("vs. VMS") added
+
 ## [0.59] 2026-03-19 — Fix: mobile hero gap — trust badges now visible above the fold
 **Fixed**
 - Reduced `margin-bottom` on `.hp-sub`, `.hp-cta-row`, and `.hp-badges` at ≤560px breakpoint
