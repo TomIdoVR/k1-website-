@@ -4516,6 +4516,7 @@
     .footer-links {
       display: flex;
       gap: 24px;
+      align-items: flex-start;
     }
     .footer-links a {
       font-family: 'Space Grotesk', sans-serif;
@@ -4525,6 +4526,23 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--white); }
+    .footer-competitors {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .footer-competitors-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-competitors a {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer-competitors a:last-child { margin-bottom: 0; }
 
     /* ── GIS Map (CDMX SVG) ── */
     .mpr-gis-map {
@@ -5668,15 +5686,18 @@
       <a href="#">Terms</a>
       <a href="#">Security</a>
       <a href="contact.html">Contact</a>
-      <a href="/vs/genetec">vs. Genetec</a>
-      <a href="/vs/milestone">vs. Milestone</a>
-      <a href="/vs/vms">vs. VMS</a>
-      <a href="/vs/motorola">vs. Motorola</a>
-      <a href="/vs/hexagon">vs. Hexagon</a>
-      <a href="/vs/mark43">vs. Mark43</a>
-      <a href="/vs/axon">vs. Axon</a>
-      <a href="/vs/carbyne">vs. Carbyne</a>
-      <a href="/vs/cad">vs. CAD</a>
+      <div class="footer-competitors">
+        <div class="footer-competitors-label">Competitors</div>
+        <a href="/vs/genetec">vs. Genetec</a>
+        <a href="/vs/milestone">vs. Milestone</a>
+        <a href="/vs/vms">vs. VMS</a>
+        <a href="/vs/motorola">vs. Motorola</a>
+        <a href="/vs/hexagon">vs. Hexagon</a>
+        <a href="/vs/mark43">vs. Mark43</a>
+        <a href="/vs/axon">vs. Axon</a>
+        <a href="/vs/carbyne">vs. Carbyne</a>
+        <a href="/vs/cad">vs. CAD</a>
+      </div>
     </nav>
   </footer>
 

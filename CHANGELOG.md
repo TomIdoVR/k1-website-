@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.63] 2026-03-20 — Fix: Group competitor links under "Competitors" heading in footer
+
+**Fixed**
+- Competitor links in `Footer.tsx` (Next.js) and `hero-mockup.html` now grouped under a "Competitors" / "Competidores" label with a vertical list, instead of appearing as individual inline links
+
 ## [0.62] 2026-03-20 — Fix: Add competitor links to static footer
 
 **Fixed**

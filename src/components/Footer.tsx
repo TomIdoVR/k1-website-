@@ -7,18 +7,25 @@ export default function Footer({ es }: { es: boolean }) {
         <div style={{ fontSize: '13px', color: 'var(--dim)' }}>
           © 2026 KabatOne Inc. {es ? 'Todos los derechos reservados.' : 'All rights reserved.'}
         </div>
-        <div style={{ display: 'flex', gap: '24px', fontSize: '13px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '32px', fontSize: '13px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <Link href="/about" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Nosotros' : 'About'}</Link>
           <Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Contacto' : 'Contact'}</Link>
-          <Link href="/vs/genetec" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Genetec' : 'vs. Genetec'}</Link>
-          <Link href="/vs/milestone" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Milestone' : 'vs. Milestone'}</Link>
-          <Link href="/vs/vms" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. VMS' : 'vs. VMS'}</Link>
-          <Link href="/vs/motorola" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Motorola' : 'vs. Motorola'}</Link>
-          <Link href="/vs/hexagon" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Hexagon' : 'vs. Hexagon'}</Link>
-          <Link href="/vs/mark43" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Mark43' : 'vs. Mark43'}</Link>
-          <Link href="/vs/axon" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Axon' : 'vs. Axon'}</Link>
-          <Link href="/vs/carbyne" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Carbyne' : 'vs. Carbyne'}</Link>
-          <Link href="/vs/cad" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. CAD' : 'vs. CAD'}</Link>
+          <div>
+            <div style={{ color: 'var(--text)', fontWeight: 600, marginBottom: '8px', fontSize: '12px' }}>
+              {es ? 'Competidores' : 'Competitors'}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <Link href="/vs/genetec"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Genetec</Link>
+              <Link href="/vs/milestone" style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Milestone</Link>
+              <Link href="/vs/vms"       style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. VMS</Link>
+              <Link href="/vs/motorola"  style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Motorola</Link>
+              <Link href="/vs/hexagon"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Hexagon</Link>
+              <Link href="/vs/mark43"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Mark43</Link>
+              <Link href="/vs/axon"      style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Axon</Link>
+              <Link href="/vs/carbyne"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Carbyne</Link>
+              <Link href="/vs/cad"       style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. CAD</Link>
+            </div>
+          </div>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Privacidad' : 'Privacy'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Términos' : 'Terms'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Seguridad' : 'Security'}</a>
