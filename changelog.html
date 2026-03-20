@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v0.55 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.55</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: replace custom middleware with next-intl built-in middleware</div>
+          <ul class="tl-list">
+            <li>Replaced hand-rolled locale middleware with <code>createMiddleware(routing)</code> from next-intl — fixes 404 on all nested EN routes</li>
+            <li>Removed redundant <code>/en/:path*</code> redirect from <code>next.config.ts</code></li>
+            <li>All 21 routes return 200 in both EN and ES locales in production</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.54 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>

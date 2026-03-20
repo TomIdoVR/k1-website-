@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.55] 2026-03-20 — Fix: replace custom middleware with next-intl built-in middleware
+**Fixed**
+- Replaced hand-rolled locale middleware with `createMiddleware(routing)` from next-intl — fixes 404 on all nested EN routes (industries, resources, vs) in production
+- Removed redundant `/en/:path*` redirect from `next.config.ts` (next-intl handles it natively)
+- All 21 routes now return 200 in both EN and ES locales
+
 ## [0.54] 2026-03-19 — Perf: replace raw img with next/image in product carousel
 **Improved**
 - Replaced the only remaining raw `<img>` tag in `page.tsx` with `<Image fill>` from `next/image`
