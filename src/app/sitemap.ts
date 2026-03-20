@@ -30,6 +30,8 @@ const pages = [
   { path: '/vs/axon', priority: 0.7 },
   { path: '/vs/carbyne', priority: 0.7 },
   { path: '/vs/cad', priority: 0.7 },
+  { path: '/vs/fusus', priority: 0.7 },
+  { path: '/vs/prepared911', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
 ]

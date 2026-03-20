@@ -144,4 +144,19 @@ export const metadata = {
     description: "Los sistemas CAD tradicionales despachan unidades y registran llamadas. KabatOne agrega video nativo, conciencia situacional GIS, gestión de tráfico y operaciones de campo — reemplazando stacks fragmentados con una plataforma unificada.",
     canonical: "https://kabatone.com/es/vs/cad/",
   },
+  vsFusus: {
+    title: "KabatOne vs Fusus — Centro de Crimen en Tiempo Real vs Plataforma de Operaciones Completa",
+    description: "Fusus agrega video de cámaras públicas y privadas para conciencia situacional en tiempo real. KabatOne agrega despacho CAD completo, GIS y gestión de tráfico — una plataforma de operaciones unificada que va más allá de la inteligencia de video.",
+    canonical: "https://kabatone.com/es/vs/fusus/",
+  },
+  vsPrepared911: {
+    title: "KabatOne vs Prepared 911 — Recepción de Llamadas NG911 vs Plataforma de Respuesta Completa",
+    description: "Prepared 911 moderniza la recepción de llamadas 911 con NG911, video del llamante y texto al 911. KabatOne gestiona todo lo que sigue: CAD completo, video de cámaras de ciudad, conciencia situacional GIS y gestión de tráfico.",
+    canonical: "https://kabatone.com/es/vs/prepared911/",
+  },
+  privacy: {
+    title: "Política de Privacidad | KabatOne",
+    description: "Política de privacidad de KabatOne — cómo recopilamos, usamos y protegemos tus datos personales. Conoce tus derechos ARCO y nuestras prácticas de seguridad.",
+    canonical: "https://kabatone.com/es/privacy/",
+  },
 } as const

@@ -36,8 +36,10 @@ export default function Footer({ es }: { es: boolean }) {
               <Link href="/vs/hexagon"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Hexagon</Link>
               <Link href="/vs/mark43"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Mark43</Link>
               <Link href="/vs/axon"      style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Axon</Link>
-              <Link href="/vs/carbyne"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Carbyne</Link>
-              <Link href="/vs/cad"       style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. CAD</Link>
+              <Link href="/vs/carbyne"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Carbyne</Link>
+              <Link href="/vs/cad"        style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. CAD</Link>
+              <Link href="/vs/fusus"      style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Fusus</Link>
+              <Link href="/vs/prepared911" style={{ color: 'var(--dim)', textDecoration: 'none' }}>vs. Prepared 911</Link>
             </div>
           </div>
         </div>

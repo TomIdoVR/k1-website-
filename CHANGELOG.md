@@ -7,6 +7,24 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.69] 2026-03-20 — Feat: KabatOne vs Fusus and vs Prepared 911 comparison pages
+
+**Added**
+- `/vs/fusus` comparison page (EN + ES) — KabatOne vs Fusus RTCC platform; covers video intelligence vs full operations, community video, CAD, GIS, traffic, FAQ schema, breadcrumb schema
+- `/vs/prepared911` comparison page (EN + ES) — KabatOne vs Prepared 911; covers NG911 call taking vs full response cycle, CAD, GIS, traffic, FAQ schema, breadcrumb schema
+- Metadata registered in EN and ES metadata files (`vsFusus`, `vsPrepared911`)
+- Both routes added to sitemap.ts
+- Footer links added to Footer.tsx and hero-mockup.html
+
+---
+
+## [0.68] 2026-03-20 — Add: Privacy Policy page
+
+**Added**
+- New `/privacy` route (EN + ES) with full privacy policy content sourced from kabatone.com/privacy-policy
+- Sections: scope, data collected, processing purposes, social media, cookies, security, third-party transfers, ARCO rights, minors, jurisdiction, modifications, and contact
+- Metadata registered in both EN and ES metadata files
+
 ## [0.67] 2026-03-20 — Fix: Footer columns grouped and right-aligned
 
 **Fixed**
