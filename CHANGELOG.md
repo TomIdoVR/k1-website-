@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.54] 2026-03-19 — Perf: replace raw img with next/image in product carousel
+**Improved**
+- Replaced the only remaining raw `<img>` tag in `page.tsx` with `<Image fill>` from `next/image`
+- First product (K-Safety) gets `priority={true}` — triggers browser preload for LCP candidate
+- Added `sizes` hint for responsive image serving
+- Lighthouse Next.js score: 96/100 (A), images 333 KB vs static HTML 91.7 MB
+
 ## [0.53] 2026-03-19 — KabatOne vs Genetec comparison page
 **Added**
 - New `/vs/genetec/` comparison page (EN + ES) — KabatOne vs Genetec Security Center

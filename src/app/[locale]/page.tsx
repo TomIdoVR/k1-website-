@@ -505,7 +505,7 @@ export default async function HomePage({
               </p>
             </div>
 
-            {products.map((prod) => {
+            {products.map((prod, i) => {
               const c = es ? prod.es : prod.en
               return (
                 <div key={prod.key} className={`hp-prod-row${prod.flip ? ' hp-prod-row-flip' : ''}`} style={{ '--pc': prod.color } as React.CSSProperties}>
@@ -538,8 +538,15 @@ export default async function HomePage({
                       </div>
                     </div>
                     <div className="hp-prod-body">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={prod.mockup} alt={c.label} className="hp-prod-screenshot" loading="lazy" />
+                      <Image
+                        src={prod.mockup}
+                        alt={c.label}
+                        fill
+                        className="hp-prod-screenshot"
+                        sizes="(max-width: 900px) 100vw, 60vw"
+                        style={{ objectFit: 'cover' }}
+                        priority={i === 0}
+                      />
                     </div>
                   </div>
                 </div>

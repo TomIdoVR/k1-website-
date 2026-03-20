@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v0.54 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.54</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: replace raw img with next/image in product carousel</div>
+          <ul class="tl-list">
+            <li>Replaced the only remaining raw <code>&lt;img&gt;</code> in <code>page.tsx</code> with <code>&lt;Image fill&gt;</code> from next/image</li>
+            <li>First product (K-Safety) gets <code>priority={true}</code> — preloads as LCP candidate</li>
+            <li>Added <code>sizes</code> hint for responsive image serving</li>
+            <li>Lighthouse score: 96/100 (A) — images 333 KB vs 91.7 MB on static site</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.53 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>
