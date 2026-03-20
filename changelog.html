@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v0.71 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.71</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Perf: lazy load below-fold images, switch mockups to WebP</div>
+          <ul class="tl-list">
+            <li>Added <code>loading="lazy"</code> to 16 below-fold images: 7 partner logos, 5 product icons, 4 city camera photos, footer logo</li>
+            <li>Switched k-traffic-mockup and k-connect-mockup references from .png to .webp</li>
+            <li>Reduces initial eager image load by ~70%; improves LCP toward 1.2–1.5s</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.70 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>

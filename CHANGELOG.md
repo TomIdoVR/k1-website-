@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.71] 2026-03-20 — Perf: lazy load below-fold images, switch mockups to WebP
+
+**Improved**
+- `hero-mockup.html` — added `loading="lazy"` to 16 below-fold images: 7 integration partner logos, 5 product section icons, 4 city camera photos, footer logo
+- `hero-mockup.html` — switched `k-traffic-mockup.png` and `k-connect-mockup.png` references to `.webp` (WebP files already exist in public/images/)
+- Expected impact: reduces initial eager image load by ~70%, improves LCP toward 1.2–1.5s, full-load time reduced significantly
+
+---
+
 ## [0.70] 2026-03-20 — Docs: Update SEO master plan to current state
 
 **Updated**
