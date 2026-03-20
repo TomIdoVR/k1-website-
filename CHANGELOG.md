@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.65] 2026-03-20 — Fix: Footer competitors column is now vertical
+
+**Fixed**
+- Restructured footer in `Footer.tsx` and `hero-mockup.html` to a multi-column layout — "Competitors" heading with links stacked vertically below, matching standard footer column pattern
+
 ## [0.64] 2026-03-20 — Fix: Move competitors to a dedicated bottom row in footer
 
 **Fixed**
