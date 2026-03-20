@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.67] 2026-03-20 — Fix: Footer columns grouped and right-aligned
+
+**Fixed**
+- Company and Competitors columns are now grouped together on the right side of the footer, eliminating excess stretch between them
+
 ## [0.66] 2026-03-20 — Fix: Footer competitor links now visible in static site
 
 **Fixed**
