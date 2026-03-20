@@ -114,4 +114,34 @@ export const metadata = {
     description: "Un VMS estándar gestiona cámaras. KabatOne agrega despacho CAD, GIS, gestión de tráfico y operaciones de campo de forma nativa — reemplazando stacks fragmentados de múltiples proveedores con una plataforma unificada.",
     canonical: "https://kabatone.com/es/vs/vms/",
   },
+  vsMotorola: {
+    title: "KabatOne vs Motorola Solutions — Comparación de Plataformas de Seguridad Pública",
+    description: "Motorola Solutions ofrece PremierOne CAD, video Avigilon y CommandCentral Aware como productos separados. KabatOne integra video, CAD, GIS y tráfico en una plataforma nativa — sin proyectos de integración entre sistemas.",
+    canonical: "https://kabatone.com/es/vs/motorola/",
+  },
+  vsHexagon: {
+    title: "KabatOne vs Hexagon Safety — CAD, GIS y Más",
+    description: "Hexagon HxGN OnCall ofrece CAD maduro y GIS de clase mundial. KabatOne incluye esas capacidades y agrega gestión de video y tráfico nativas — conectando el flujo completo de respuesta sin integraciones adicionales.",
+    canonical: "https://kabatone.com/es/vs/hexagon/",
+  },
+  vsMark43: {
+    title: "KabatOne vs Mark43 — Comparación de Plataformas Cloud-Native de Seguridad Pública",
+    description: "Mark43 modernizó el CAD con arquitectura cloud-native. KabatOne extiende esa visión: video, CAD, GIS y gestión de tráfico en un solo flujo de respuesta unificado.",
+    canonical: "https://kabatone.com/es/vs/mark43/",
+  },
+  vsAxon: {
+    title: "KabatOne vs Axon — Comparación de Plataformas para Centros de Mando",
+    description: "Axon construyó un poderoso ecosistema de cámaras corporales y evidencia. KabatOne es software nativo: video de cámaras fijas, CAD completo, conciencia situacional GIS y gestión de tráfico — sin hardware propietario.",
+    canonical: "https://kabatone.com/es/vs/axon/",
+  },
+  vsCarbyne: {
+    title: "KabatOne vs Carbyne — Next-Gen 911 vs Plataforma de Respuesta Completa",
+    description: "Carbyne reinventó la recepción de llamadas 911 con ubicación en tiempo real y video del teléfono del llamante. KabatOne gestiona todo lo que sigue: despacho CAD, video de cámaras de ciudad, GIS y gestión de tráfico.",
+    canonical: "https://kabatone.com/es/vs/carbyne/",
+  },
+  vsCad: {
+    title: "KabatOne vs Sistemas CAD Tradicionales — Más Allá del Despacho para Seguridad Pública",
+    description: "Los sistemas CAD tradicionales despachan unidades y registran llamadas. KabatOne agrega video nativo, conciencia situacional GIS, gestión de tráfico y operaciones de campo — reemplazando stacks fragmentados con una plataforma unificada.",
+    canonical: "https://kabatone.com/es/vs/cad/",
+  },
 } as const

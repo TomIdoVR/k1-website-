@@ -13,6 +13,12 @@ export default function Footer({ es }: { es: boolean }) {
           <Link href="/vs/genetec" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Genetec' : 'vs. Genetec'}</Link>
           <Link href="/vs/milestone" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Milestone' : 'vs. Milestone'}</Link>
           <Link href="/vs/vms" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. VMS' : 'vs. VMS'}</Link>
+          <Link href="/vs/motorola" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Motorola' : 'vs. Motorola'}</Link>
+          <Link href="/vs/hexagon" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Hexagon' : 'vs. Hexagon'}</Link>
+          <Link href="/vs/mark43" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Mark43' : 'vs. Mark43'}</Link>
+          <Link href="/vs/axon" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Axon' : 'vs. Axon'}</Link>
+          <Link href="/vs/carbyne" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. Carbyne' : 'vs. Carbyne'}</Link>
+          <Link href="/vs/cad" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'vs. CAD' : 'vs. CAD'}</Link>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Privacidad' : 'Privacy'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Términos' : 'Terms'}</a>
           <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Seguridad' : 'Security'}</a>

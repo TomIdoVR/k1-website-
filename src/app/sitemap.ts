@@ -24,6 +24,12 @@ const pages = [
   { path: '/vs/genetec', priority: 0.7 },
   { path: '/vs/milestone', priority: 0.7 },
   { path: '/vs/vms', priority: 0.7 },
+  { path: '/vs/motorola', priority: 0.7 },
+  { path: '/vs/hexagon', priority: 0.7 },
+  { path: '/vs/mark43', priority: 0.7 },
+  { path: '/vs/axon', priority: 0.7 },
+  { path: '/vs/carbyne', priority: 0.7 },
+  { path: '/vs/cad', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
 ]

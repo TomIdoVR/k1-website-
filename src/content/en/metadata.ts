@@ -114,4 +114,34 @@ export const metadata = {
     description: "A standard VMS manages cameras. KabatOne adds CAD dispatch, GIS, traffic management, and field operations natively — replacing fragmented multi-vendor stacks with one unified public safety platform.",
     canonical: "https://kabatone.com/vs/vms/",
   },
+  vsMotorola: {
+    title: "KabatOne vs Motorola Solutions — Unified Public Safety Platform Comparison",
+    description: "Motorola Solutions offers PremierOne CAD, Avigilon video, and CommandCentral Aware as separate products. KabatOne integrates video, CAD, GIS, and traffic in one native platform — no cross-system integration projects required.",
+    canonical: "https://kabatone.com/vs/motorola/",
+  },
+  vsHexagon: {
+    title: "KabatOne vs Hexagon Safety — CAD, GIS, and Beyond",
+    description: "Hexagon HxGN OnCall delivers mature CAD and world-class GIS. KabatOne matches that and adds native video management and traffic management — connecting the full response workflow without additional integrations.",
+    canonical: "https://kabatone.com/vs/hexagon/",
+  },
+  vsMark43: {
+    title: "KabatOne vs Mark43 — Cloud-Native Public Safety Platform Comparison",
+    description: "Mark43 modernized CAD with cloud-native architecture. KabatOne extends that vision: cloud-native across video, CAD, GIS, and traffic management in one unified response workflow.",
+    canonical: "https://kabatone.com/vs/mark43/",
+  },
+  vsAxon: {
+    title: "KabatOne vs Axon — Command Center Platform Comparison",
+    description: "Axon built a powerful body camera and evidence ecosystem. KabatOne is software-native: fixed camera video, full CAD dispatch, GIS situational awareness, and traffic management — no proprietary hardware required.",
+    canonical: "https://kabatone.com/vs/axon/",
+  },
+  vsCarbyne: {
+    title: "KabatOne vs Carbyne — Next-Gen 911 vs Full Response Platform",
+    description: "Carbyne reinvented 911 call intake with real-time caller location and phone video. KabatOne manages everything after the call: CAD dispatch, city camera video, GIS situational awareness, and traffic management.",
+    canonical: "https://kabatone.com/vs/carbyne/",
+  },
+  vsCad: {
+    title: "KabatOne vs Traditional CAD Systems — Beyond Dispatch for Public Safety",
+    description: "Traditional CAD dispatches units and logs calls. KabatOne adds native video management, GIS situational awareness, traffic management, and field operations — replacing fragmented stacks with one unified platform.",
+    canonical: "https://kabatone.com/vs/cad/",
+  },
 } as const
