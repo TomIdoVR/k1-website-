@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.72] 2026-03-20 — Chore: remove static HTML files from nextjs branch
+
+**Removed**
+- Deleted 16 static website HTML files from `nextjs` branch: `hero-mockup.html`, `about.html`, `contact.html`, `solutions.html`, 7 industry pages, 5 product pages
+- Updated `CLAUDE.md` project snapshot to reflect the current Next.js stack — `main` branch is now the legacy static site only
+
+---
+
 ## [0.71] 2026-03-20 — Perf: lazy load below-fold images, switch mockups to WebP
 
 **Improved**

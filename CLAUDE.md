@@ -24,10 +24,11 @@ If you made local changes and haven't logged them yet — log them now before do
 
 ## Project snapshot
 
-- **Stack:** Static HTML/CSS/JS, no build system
-- **Primary file:** `hero-mockup.html` (~4400 lines — all HTML + CSS + JS)
-- **Live URL:** `https://tomidovr.github.io/k1-website-/hero-mockup.html`
-- **Remote:** `https://github.com/TomIdoVR/k1-website-.git` — branch `main`
+- **Stack:** Next.js 15 (App Router) + TypeScript, deployed on Vercel
+- **Active branch:** `nextjs` — all development happens here
+- **Production domain:** `kabatone.com` (not yet live)
+- **Static fallback:** `main` branch on GitHub Pages — legacy, no longer synced
+- **Remote:** `https://github.com/TomIdoVR/k1-website-.git`
 - **Full rules:** See `AGENTS.md`
 
 ## Git workflow
@@ -39,6 +40,7 @@ If you made local changes and haven't logged them yet — log them now before do
 
 ## Key constraints
 
-- Do not restructure existing CSS — append new rules at the bottom of `<style>`
-- Do not rename element IDs — JS relies on them
+- All pages live under `src/app/[locale]/` — EN and ES served via i18n routing
+- Metadata is in `src/content/en/metadata.ts` and `src/content/es/metadata.ts`
+- Schema helpers are in `src/lib/schema.ts`
 - Do not delete files without asking first
