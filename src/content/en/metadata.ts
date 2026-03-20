@@ -174,4 +174,19 @@ export const metadata = {
     description: "How artificial intelligence is transforming emergency response, video surveillance, and dispatch. Use cases, real benefits, limitations, and what to look for in an AI platform.",
     canonical: "https://kabatone.com/resources/ai-in-public-safety/",
   },
+  integrationLpr: {
+    title: "License Plate Recognition (LPR) Integration | KabatOne",
+    description: "How KabatOne integrates LPR and ALPR into public safety operations. Real-time hot list matching, stolen vehicle alerts, and automatic evidence capture for cities and command centers.",
+    canonical: "https://kabatone.com/integrations/lpr/",
+  },
+  integrationFaceRecognition: {
+    title: "Facial Recognition Integration for Public Safety | KabatOne",
+    description: "How KabatOne integrates facial recognition for wanted persons, missing persons, and crowd monitoring. Privacy-first architecture with full audit trail and CJIS-aligned access controls.",
+    canonical: "https://kabatone.com/integrations/face-recognition/",
+  },
+  integrationSensorFusion: {
+    title: "Sensor Fusion Platform for Public Safety | KabatOne",
+    description: "How KabatOne fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view. Multi-sensor correlation for faster, more accurate incident response.",
+    canonical: "https://kabatone.com/integrations/sensor-fusion/",
+  },
 } as const

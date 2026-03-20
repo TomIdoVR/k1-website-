@@ -23,6 +23,17 @@ export default function Footer({ es }: { es: boolean }) {
               <a href="#" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Seguridad' : 'Security'}</a>
             </div>
           </div>
+          {/* Integrations column */}
+          <div>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px' }}>
+              {es ? 'Integraciones' : 'Integrations'}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
+              <Link href="/integrations/lpr"              style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}</Link>
+              <Link href="/integrations/face-recognition" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Reconocimiento Facial' : 'Face Recognition'}</Link>
+              <Link href="/integrations/sensor-fusion"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Fusión de Sensores' : 'Sensor Fusion'}</Link>
+            </div>
+          </div>
           {/* Competitors column */}
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px' }}>

@@ -356,6 +356,60 @@
 
     <div class="timeline">
 
+      <!-- v0.76 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.76</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Next.js 16 dev routing + layout restructure + footer integrations</div>
+          <ul class="tl-list">
+            <li><strong>next.config.ts</strong> — Added <code>rewrites()</code> as dev fallback: Next.js 16 + Turbopack doesn't invoke middleware edge rewrites; rewrite rules map <code>/path</code> → <code>/en/path</code> so App Router correctly matches <code>[locale]</code> segments</li>
+            <li><strong>src/app/layout.tsx</strong> — Moved <code>&lt;html&gt;/&lt;body&gt;</code> and font variables to root layout (required by Next.js 16 Turbopack)</li>
+            <li><strong>src/components/Footer.tsx</strong> — Added Integrations column: LPR, Face Recognition, Sensor Fusion links (EN + ES labels)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.75 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.75</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Chore: Combined site-manager page (Dev Environment + Changelog tabs)</div>
+          <ul class="tl-list">
+            <li>Created <strong>site-manager.html</strong> — single internal management page with two tabs: Dev Environment map and full Changelog timeline</li>
+            <li>Dev Environment tab shows flow from Mac → GitHub (main/nextjs branches) → GitHub Pages / Vercel Staging / Vercel Preview → kabatone.com</li>
+            <li>Replaces managing two separate files; all future changelog entries should be logged in site-manager.html as well</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.74 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.74</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: Integration pages — LPR, Face Recognition, Sensor Fusion</div>
+          <div class="tl-card">
+            <div class="change-group">
+              <div class="change-group-label label-added">Added</div>
+              <ul class="change-list">
+                <li><strong>integrations/lpr/</strong> — License Plate Recognition integration page: what is LPR, how KabatOne integrates it, 4 use cases, technical specs table, FAQ (6 Q&amp;A), ArticleSchema + FAQSchema + BreadcrumbSchema, bilingual EN/ES</li>
+                <li><strong>integrations/face-recognition/</strong> — Face Recognition integration page: two operational modes, 4 use cases, privacy &amp; compliance controls section, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                <li><strong>integrations/sensor-fusion/</strong> — Sensor Fusion integration page: 6 sensor types, 5-step correlation engine flow, 3 use cases, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                <li>Metadata keys added to EN + ES metadata files: <strong>integrationLpr</strong>, <strong>integrationFaceRecognition</strong>, <strong>integrationSensorFusion</strong></li>
+              </ul>
+            </div>
+            <div class="change-group">
+              <div class="change-group-label label-changed">Changed</div>
+              <ul class="change-list">
+                <li><strong>sitemap.ts</strong> — Added 3 new paths (/integrations/lpr, /integrations/face-recognition, /integrations/sensor-fusion); site now 38 routes / 76 sitemap URLs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- v0.73 -->
       <div class="tl-entry feat">
         <div class="tl-dot"></div>
