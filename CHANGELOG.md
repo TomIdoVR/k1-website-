@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.70] 2026-03-20 — Docs: Update SEO master plan to current state
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — reflects all work done through v0.69
+- Stack corrected to Next.js on Vercel; all 11 /vs/ comparison pages marked Done; competitor tracking, keyword map, performance targets, and agent run log updated
+
+---
+
 ## [0.69] 2026-03-20 — Feat: KabatOne vs Fusus and vs Prepared 911 comparison pages
 
 **Added**
