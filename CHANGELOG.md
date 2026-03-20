@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.52] 2026-03-19 — Core Web Vitals audit and fixes
+**Improved**
+- Performance: LCP 3.7s → 2.4s on homepage by adding `priority` to initial ModulesSection image
+- Performance: Product icons moved from CDN (330KB each, unoptimized) to local paths with Next.js optimization
+- Accessibility: Added `<main>` landmark to layout — fixes missing landmark audit failure
+- Accessibility: Fixed color contrast — `--blue` darkened from `#3b82f6` to `#2563eb` (all CTA buttons)
+- Accessibility: Module active tab text changed to `#fff`; ms-tag changed to white on colored background
+- Accessibility: Carousel dot touch targets enlarged from 8px visual to 24px clickable hit area
+- Accessibility: Removed opacity reduction on product chrome titles
+- Lighthouse homepage: Performance 88→98, Accessibility 92→100, Best Practices 100, SEO 100
+
+---
+
 ## [0.51] 2026-03-19 — Production-ready Vercel deployment
 **Changed / Added / Fixed**
 - Converted all module images from PNG to WebP (86MB → 507KB) — fixes 30s page load timeout

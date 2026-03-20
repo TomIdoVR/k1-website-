@@ -37,7 +37,9 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
         />
         <NextIntlClientProvider locale={locale}>
-          {children}
+          <main>
+            {children}
+          </main>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -252,6 +252,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
                       fill
                       sizes="(max-width: 768px) 100vw, 780px"
                       style={{ objectFit: 'cover' }}
+                      priority={mod === 'video'}
                     />
                   </div>
                 </div>
@@ -405,9 +406,9 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           border-color: rgba(255,255,255,0.15);
         }
         .ms-tab-active {
-          color: var(--tc);
+          color: #fff;
           border-color: color-mix(in srgb, var(--tc) 50%, transparent);
-          background: color-mix(in srgb, var(--tc) 10%, transparent);
+          background: color-mix(in srgb, var(--tc) 25%, transparent);
         }
         .ms-tab-active::after {
           content: '';
@@ -504,9 +505,9 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           font-size: 9px;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: var(--pc);
-          background: color-mix(in srgb, var(--pc) 12%, transparent);
-          border: 1px solid color-mix(in srgb, var(--pc) 30%, transparent);
+          color: #fff;
+          background: color-mix(in srgb, var(--pc) 25%, transparent);
+          border: 1px solid color-mix(in srgb, var(--pc) 40%, transparent);
           border-radius: 20px;
           padding: 3px 10px;
           margin-bottom: 14px;
@@ -576,19 +577,33 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           border-top: 1px solid var(--border);
         }
         .ms-dot {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: none;
+          background: transparent;
+          cursor: pointer;
+          padding: 0;
+          transition: background 0.2s, box-shadow 0.2s;
+          position: relative;
+        }
+        .ms-dot::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           width: 8px;
           height: 8px;
           border-radius: 50%;
           border: 1px solid rgba(255,255,255,0.15);
           background: transparent;
-          cursor: pointer;
-          padding: 0;
           transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
-        .ms-dot:hover {
+        .ms-dot:hover::after {
           border-color: rgba(255,255,255,0.3);
         }
-        .ms-dot-active {
+        .ms-dot-active::after {
           background: var(--dc);
           border-color: var(--dc);
           box-shadow: 0 0 8px var(--dc);
