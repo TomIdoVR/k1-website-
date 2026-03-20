@@ -4497,10 +4497,15 @@
       border-top: 1px solid var(--border);
       padding: 32px 48px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 20px;
       position: relative;
       z-index: 1;
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .footer-logo {
       height: 22px;
@@ -4516,7 +4521,7 @@
     .footer-links {
       display: flex;
       gap: 24px;
-      align-items: flex-start;
+      align-items: center;
     }
     .footer-links a {
       font-family: 'Space Grotesk', sans-serif;
@@ -4526,23 +4531,31 @@
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--white); }
-    .footer-competitors {
+    .footer-competitors-row {
       display: flex;
-      flex-direction: column;
-      gap: 0;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
     }
     .footer-competitors-label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      color: var(--white);
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
     }
-    .footer-competitors a {
-      display: block;
-      margin-bottom: 6px;
+    .footer-competitors-row a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .footer-competitors a:last-child { margin-bottom: 0; }
+    .footer-competitors-row a:hover { color: var(--white); }
 
     /* ── GIS Map (CDMX SVG) ── */
     .mpr-gis-map {
@@ -5678,27 +5691,29 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png"
-         alt="KabatOne" class="footer-logo">
-    <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
-    <nav class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Security</a>
-      <a href="contact.html">Contact</a>
-      <div class="footer-competitors">
-        <div class="footer-competitors-label">Competitors</div>
-        <a href="/vs/genetec">vs. Genetec</a>
-        <a href="/vs/milestone">vs. Milestone</a>
-        <a href="/vs/vms">vs. VMS</a>
-        <a href="/vs/motorola">vs. Motorola</a>
-        <a href="/vs/hexagon">vs. Hexagon</a>
-        <a href="/vs/mark43">vs. Mark43</a>
-        <a href="/vs/axon">vs. Axon</a>
-        <a href="/vs/carbyne">vs. Carbyne</a>
-        <a href="/vs/cad">vs. CAD</a>
-      </div>
-    </nav>
+    <div class="footer-top">
+      <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png"
+           alt="KabatOne" class="footer-logo">
+      <div class="footer-copy">&copy; 2026 KabatOne Inc. All rights reserved.</div>
+      <nav class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-competitors-row">
+      <span class="footer-competitors-label">Competitors</span>
+      <a href="/vs/genetec">vs. Genetec</a>
+      <a href="/vs/milestone">vs. Milestone</a>
+      <a href="/vs/vms">vs. VMS</a>
+      <a href="/vs/motorola">vs. Motorola</a>
+      <a href="/vs/hexagon">vs. Hexagon</a>
+      <a href="/vs/mark43">vs. Mark43</a>
+      <a href="/vs/axon">vs. Axon</a>
+      <a href="/vs/carbyne">vs. Carbyne</a>
+      <a href="/vs/cad">vs. CAD</a>
+    </div>
   </footer>
 
   <script>
@@ -5908,13 +5923,14 @@
 
     /* ── Footer mobile ── */
     @media (max-width: 600px) {
-      .site-footer {
+      .site-footer { padding: 28px 20px; }
+      .footer-top {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 16px;
-        padding: 28px 20px;
+        gap: 12px;
       }
+      .footer-competitors-row { justify-content: center; }
     }
   </style>
 

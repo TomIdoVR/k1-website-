@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.64] 2026-03-20 — Fix: Move competitors to a dedicated bottom row in footer
+
+**Fixed**
+- Restructured footer in both `Footer.tsx` and `hero-mockup.html` — competitors now appear in a clear second row below the copyright/nav row, separated by a border
+
 ## [0.63] 2026-03-20 — Fix: Group competitor links under "Competitors" heading in footer
 
 **Fixed**
