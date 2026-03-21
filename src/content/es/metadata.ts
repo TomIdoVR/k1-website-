@@ -189,4 +189,19 @@ export const metadata = {
     description: "Cómo KabatOne integra detección de disparos, sensores IoT, datos ambientales y video en una sola vista de conciencia situacional. Correlación multisensor para respuesta a incidentes más rápida y precisa.",
     canonical: "https://kabatone.com/es/integrations/sensor-fusion/",
   },
+  integrationAccessControl: {
+    title: "Integración de Control de Acceso para Seguridad Pública | KabatOne",
+    description: "Cómo KabatOne integra sistemas de control de acceso físico con video, despacho CAD y GIS. Respuesta automática a violaciones de acceso en edificios de gobierno, hospitales, infraestructura crítica y campus.",
+    canonical: "https://kabatone.com/es/integrations/access-control/",
+  },
+  integrationDrones: {
+    title: "Integración de Drones (UAV/UAS) para Seguridad Pública | KabatOne",
+    description: "Cómo KabatOne integra drones con gestión de video, despacho CAD y GIS. Telemetría aérea en tiempo real, despacho automático desde dock stations y análisis de IA sobre feeds aéreos.",
+    canonical: "https://kabatone.com/es/integrations/drones/",
+  },
+  integrationPanicButtons: {
+    title: "Integración de Botones de Pánico para Seguridad Pública | KabatOne",
+    description: "Cómo KabatOne integra botones de pánico físicos y wearables con despacho CAD, video y GIS. Una alerta silenciosa activa despacho, cámaras y notificación a unidades en menos de 4 segundos.",
+    canonical: "https://kabatone.com/es/integrations/panic-buttons/",
+  },
 } as const

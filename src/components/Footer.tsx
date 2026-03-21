@@ -32,6 +32,9 @@ export default function Footer({ es }: { es: boolean }) {
               <Link href="/integrations/lpr"              style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}</Link>
               <Link href="/integrations/face-recognition" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Reconocimiento Facial' : 'Face Recognition'}</Link>
               <Link href="/integrations/sensor-fusion"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Fusión de Sensores' : 'Sensor Fusion'}</Link>
+              <Link href="/integrations/access-control"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Control de Acceso' : 'Access Control'}</Link>
+              <Link href="/integrations/drones"           style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Drones (UAV/UAS)' : 'Drones (UAV/UAS)'}</Link>
+              <Link href="/integrations/panic-buttons"    style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Botones de Pánico' : 'Panic Buttons'}</Link>
             </div>
           </div>
           {/* Competitors column */}

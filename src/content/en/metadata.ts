@@ -189,4 +189,19 @@ export const metadata = {
     description: "How KabatOne fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view. Multi-sensor correlation for faster, more accurate incident response.",
     canonical: "https://kabatone.com/integrations/sensor-fusion/",
   },
+  integrationAccessControl: {
+    title: "Access Control Integration for Public Safety | KabatOne",
+    description: "How KabatOne integrates physical access control systems with video, CAD dispatch, and GIS. Automatic response to access violations at government buildings, hospitals, critical infrastructure, and campuses.",
+    canonical: "https://kabatone.com/integrations/access-control/",
+  },
+  integrationDrones: {
+    title: "Drone (UAV/UAS) Integration for Public Safety | KabatOne",
+    description: "How KabatOne integrates drones with video management, CAD dispatch, and GIS. Real-time aerial telemetry, automatic dispatch from dock stations, and AI analytics on aerial feeds.",
+    canonical: "https://kabatone.com/integrations/drones/",
+  },
+  integrationPanicButtons: {
+    title: "Panic Button Integration for Public Safety | KabatOne",
+    description: "How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS. Silent alert triggers dispatch, camera activation, and unit notification in under 4 seconds.",
+    canonical: "https://kabatone.com/integrations/panic-buttons/",
+  },
 } as const

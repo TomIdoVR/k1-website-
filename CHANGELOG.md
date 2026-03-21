@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.78] 2026-03-21 — Feat: 3 new integration pages — Access Control, Drones, Panic Buttons
+
+**Added**
+- `/integrations/access-control/` — Physical access control (EN + ES): OSDP/Wiegand/REST/ONVIF protocols, 4 facility use cases, metrics strip, 6 FAQs, hero image
+- `/integrations/drones/` — UAV/UAS integration (EN + ES): 6 capability cards, 4 operational scenarios, specs table, 6 FAQs, hero image
+- `/integrations/panic-buttons/` — Panic button integration (EN + ES): 5-step response flow, 6 sector verticals, 6 FAQs, hero image
+- Metadata (EN + ES) for all 3 pages
+- Footer: 3 new integration links
+- 3 hero images generated via Nano Banana
+
 ## [0.77] 2026-03-20 — Design: Integration pages visual overhaul — hero images + section illustrations
 
 **Improved**
