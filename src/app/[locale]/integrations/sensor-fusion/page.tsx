@@ -222,11 +222,19 @@ export default async function SensorFusionIntegrationPage({
                 ? 'Fusión de Sensores: Conciencia Situacional Unificada desde Cada Fuente'
                 : 'Sensor Fusion: Unified Situational Awareness from Every Input'}
             </h1>
-            <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '0' }}>
+            <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
                 ? 'Un disparo aislado, un sensor de calidad del aire fuera de rango, y tres reportes en redes sociales sobre un incidente en el mismo bloque. Por separado, son alertas individuales. Juntos, son evidencia de una emergencia. KabatOne correlaciona automáticamente múltiples fuentes de sensores para darte la imagen completa — no fragmentos.'
                 : 'An isolated gunshot, an out-of-range air quality sensor, and three social media reports about an incident on the same block. Separately, they are individual alerts. Together, they are evidence of an emergency. KabatOne automatically correlates multiple sensor sources to give you the complete picture — not fragments.'}
             </p>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+              <img
+                src="/images/integrations/fusion-hero.jpeg"
+                alt={es ? 'Mapa de conciencia situacional con red de sensores integrados sobre una cuadrícula urbana' : 'Situational awareness map with integrated sensor network over city grid'}
+                style={{ width: '100%', display: 'block' }}
+                loading="eager"
+              />
+            </div>
           </div>
         </section>
 
@@ -309,6 +317,14 @@ export default async function SensorFusionIntegrationPage({
                 ? 'El motor de correlación de KabatOne procesa todos los eventos de sensores en tiempo real y aplica reglas de correlación configurables:'
                 : 'KabatOne\'s correlation engine processes all sensor events in real time and applies configurable correlation rules:'}
             </p>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)', marginBottom: '32px' }}>
+              <img
+                src="/images/integrations/fusion-correlation.jpeg"
+                alt={es ? 'Diagrama de correlación temporal: múltiples sensores convergen en una alerta consolidada de alta prioridad' : 'Temporal correlation diagram: multiple sensors converging into a single high-priority consolidated alert'}
+                style={{ width: '100%', display: 'block' }}
+                loading="lazy"
+              />
+            </div>
             {(es
               ? [
                   { step: '01', title: 'Ingestión en Tiempo Real', desc: 'Todos los eventos de sensores llegan al motor de correlación con latencia inferior a 500 ms. Cada evento incluye timestamp, coordenadas geográficas, tipo de sensor y nivel de confianza del sensor de origen.' },

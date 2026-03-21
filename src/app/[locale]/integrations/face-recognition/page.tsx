@@ -220,11 +220,19 @@ export default async function FaceRecognitionIntegrationPage({
                 ? 'Reconocimiento Facial: Identificación Biométrica con Privacidad por Diseño'
                 : 'Face Recognition Integration: AI-Powered Biometric Matching'}
             </h1>
-            <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '0' }}>
+            <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
                 ? 'El reconocimiento facial en seguridad pública es una herramienta poderosa cuando se implementa correctamente — con controles de privacidad rigurosos, confirmación humana obligatoria y auditoría completa. KabatOne integra reconocimiento facial con esos controles incorporados, no como opciones adicionales.'
                 : 'Facial recognition in public safety is a powerful tool when implemented correctly — with rigorous privacy controls, mandatory human confirmation, and a complete audit trail. KabatOne integrates facial recognition with those controls built in, not as optional add-ons.'}
             </p>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+              <img
+                src="/images/integrations/face-hero.jpeg"
+                alt={es ? 'Interfaz de reconocimiento facial biométrico con análisis de confianza y confirmación del analista' : 'Biometric facial recognition interface with confidence analysis and analyst confirmation'}
+                style={{ width: '100%', display: 'block' }}
+                loading="eager"
+              />
+            </div>
           </div>
         </section>
 
@@ -306,6 +314,21 @@ export default async function FaceRecognitionIntegrationPage({
                 ? 'El reconocimiento facial es la tecnología de seguridad pública más sensible desde el punto de vista de los derechos civiles. KabatOne incorpora cuatro controles de privacidad que no son opcionales — son parte de la arquitectura base:'
                 : 'Facial recognition is the most civil-rights-sensitive public safety technology. KabatOne incorporates four privacy controls that are not optional — they are part of the base architecture:'}
             </p>
+
+            {/* ── Key metrics strip ── */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '28px' }} className="metrics-grid">
+              {[
+                { value: '95%+', label: es ? 'Tasa de identificación' : 'Identification rate', color: '#3b82f6' },
+                { value: '<1%', label: es ? 'Falsos positivos' : 'False positives', color: '#22c55e' },
+                { value: '100%', label: es ? 'Confirmación humana' : 'Human confirmation', color: '#f59e0b' },
+              ].map((m, i) => (
+                <div key={i} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
+                  <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '36px', fontWeight: 800, color: m.color, lineHeight: 1 }}>{m.value}</div>
+                  <div style={{ fontSize: '12px', fontWeight: 400, color: 'var(--dim)', marginTop: '6px', letterSpacing: '0.05em' }}>{m.label}</div>
+                </div>
+              ))}
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {privacyControls.map((ctrl, i) => (
                 <div
@@ -445,6 +468,7 @@ export default async function FaceRecognitionIntegrationPage({
         <style>{`
           @media (max-width: 640px) {
             .usecase-grid { grid-template-columns: 1fr !important; }
+            .metrics-grid { grid-template-columns: 1fr !important; }
             section { padding-left: 20px !important; padding-right: 20px !important; }
           }
         `}</style>

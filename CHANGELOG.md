@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.77] 2026-03-20 — Design: Integration pages visual overhaul — hero images + section illustrations
+
+**Improved**
+- Added AI-generated hero illustration to LPR, Face Recognition, and Sensor Fusion integration pages
+- Added "From Plate to Alert in Under 3 Seconds" flow diagram section on LPR page
+- Added correlation timeline diagram to Sensor Fusion "How the Engine Works" section
+- Added 3-metric stats strip (identification rate, false positives, human confirmation) to Face Recognition privacy section
+- Generated 5 illustrations via Nano Banana: lpr-hero, lpr-flow, face-hero, fusion-hero, fusion-correlation
+
 ## [0.76] 2026-03-20 — Fix: Next.js 16 dev routing + layout restructure + footer integrations
 
 **Fixed**
