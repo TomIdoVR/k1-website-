@@ -154,6 +154,16 @@ export const metadata = {
     description: "Prepared 911 modernizes 911 call receipt with NG911, caller video, and text-to-911. KabatOne manages everything after the call: full CAD dispatch, city camera video, GIS situational awareness, and traffic management.",
     canonical: "https://kabatone.com/vs/prepared911/",
   },
+  vsPeregrine: {
+    title: "KabatOne vs Peregrine — Predictive Analytics vs Unified Operations Platform",
+    description: "Peregrine delivers predictive crime analytics and resource deployment intelligence. KabatOne is the operational platform where response happens: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
+    canonical: "https://kabatone.com/vs/peregrine/",
+    og: {
+      title: "KabatOne vs Peregrine — Predictive Analytics vs Unified Operations",
+      description: "Peregrine delivers predictive crime analytics and resource deployment intelligence. KabatOne is the operational platform where response happens: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   privacy: {
     title: "Privacy Policy | KabatOne",
     description: "KabatOne's privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",

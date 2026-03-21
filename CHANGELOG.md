@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.80] 2026-03-21 — Feat: KabatOne vs Peregrine comparison page /vs/peregrine/
+
+**Added**
+- `/vs/peregrine/` — EN + ES comparison page: Peregrine predictive analytics vs KabatOne unified operations platform
+- 7-row comparison table (primary category, predictive analytics, CAD, video, GIS, traffic, integration model)
+- 6 FAQ pairs in EN and ES with FAQPage schema + BreadcrumbSchema
+- "Strategic Intelligence vs Operational Platform" positioning section
+- Metadata (EN + ES) + sitemap entry
+- Related links to /vs/fusus, /vs/motorola, /vs/hexagon, /resources/ai-in-public-safety
+
 ## [0.79] 2026-03-21 — Fix: sitemap orphans + SEO master plan sync
 
 **Fixed**

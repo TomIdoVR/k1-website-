@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
 
-**Current site size:** 41 unique routes × 2 locales (EN + ES) = 82 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 11 | /resources/: 8 (hub + 7 articles) | /integrations/: 6 | Other: 3 (about, contact, privacy)
+**Current site size:** 42 unique routes × 2 locales (EN + ES) = 84 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 8 (hub + 7 articles) | /integrations/: 6 | Other: 3 (about, contact, privacy)
 
 ---
 
@@ -155,6 +155,7 @@
 | /vs/cad/ — traditional CAD alternative | Medium | Done | v0.61 |
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
+| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
 | Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
 | Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
 | /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
@@ -301,7 +302,7 @@
 | Axon | axon.com | Body cameras + evidence | /vs/axon/ | Rankings for public safety cloud, evidence mgmt |
 | Fusus (Axon) | fusus.com | RTCC, private camera networks | /vs/fusus/ | Rankings for real-time crime center, RTCC |
 | Prepared 911 | prepared.com | NG911 PSAP modernization | /vs/prepared911/ | Rankings for NG911, 911 software, PSAP |
-| Peregrine | peregrine.ai | RTCC, predictive policing | — | Rankings for real-time crime center |
+| Peregrine | peregrine.ai | RTCC, predictive policing | /vs/peregrine/ | Rankings for real-time crime center |
 
 ---
 
