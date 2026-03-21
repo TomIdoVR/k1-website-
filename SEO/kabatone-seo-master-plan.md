@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
 
-**Current site size:** 35 unique routes × 2 locales (EN + ES) = 70 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 11 | /resources/: 8 (hub + 7 articles) | Other: 3 (about, contact, privacy)
+**Current site size:** 41 unique routes × 2 locales (EN + ES) = 82 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 11 | /resources/: 8 (hub + 7 articles) | /integrations/: 6 | Other: 3 (about, contact, privacy)
 
 ---
 
@@ -158,9 +158,12 @@
 | Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
 | Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
 | /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
-| Integration page: LPR | Medium | Not started | |
-| Integration page: Face recognition | Medium | Not started | |
-| Integration page: Sensor fusion | Low | Not started | |
+| Integration page: LPR | Medium | Done | v0.74 — /integrations/lpr/ |
+| Integration page: Face recognition | Medium | Done | v0.74 — /integrations/face-recognition/ |
+| Integration page: Sensor fusion | Low | Done | v0.74 — /integrations/sensor-fusion/ |
+| Integration page: Access Control | Medium | Done | v0.78 — /integrations/access-control/ |
+| Integration page: Drones (UAV/UAS) | Medium | Done | v0.78 — /integrations/drones/ |
+| Integration page: Panic Buttons | Medium | Done | v0.78 — /integrations/panic-buttons/ |
 | solutions.html audit + SEO fix | High | N/A | solutions.html deleted — static files removed from nextjs branch v0.72 |
 
 ### Technical post-launch

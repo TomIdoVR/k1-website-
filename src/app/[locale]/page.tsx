@@ -393,30 +393,6 @@ export default async function HomePage({
             </Link>
           </div>
 
-          {/* Trust Badges */}
-          <div className="hp-badges">
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <path d="M9 2L15 5v4c0 3.7-2.6 7-6 8-3.4-1-6-4.3-6-8V5L9 2z" stroke="#60a5fa" strokeWidth="1.3" strokeLinejoin="round"/>
-                <path d="M6 9l2 2 4-4" stroke="#60a5fa" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="hp-badge-label"><strong>SOC 2</strong> {es ? 'Certificado' : 'Certified'}</span>
-            </div>
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <rect x="2" y="6" width="14" height="9" rx="1.5" stroke="#60a5fa" strokeWidth="1.3"/>
-                <path d="M5 6V4.5a4 4 0 018 0V6" stroke="#60a5fa" strokeWidth="1.3"/>
-              </svg>
-              <span className="hp-badge-label"><strong>99.9%</strong> Uptime SLA</span>
-            </div>
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <circle cx="9" cy="9" r="7" stroke="#60a5fa" strokeWidth="1.3"/>
-                <path d="M9 5v4l3 2" stroke="#60a5fa" strokeWidth="1.3" strokeLinecap="round"/>
-              </svg>
-              <span className="hp-badge-label"><strong>24/7</strong> {es ? 'Soporte' : 'Support'}</span>
-            </div>
-          </div>
         </section>
 
         {/* ═══ MODULES / BI TABBED SECTION ═══ */}
@@ -732,7 +708,7 @@ export default async function HomePage({
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 80px 24px 40px;
+          padding: 80px 24px 16px;
           text-align: center;
         }
         .hp-eyebrow {

@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.79] 2026-03-21 — Fix: sitemap orphans + SEO master plan sync
+
+**Fixed**
+- `src/app/sitemap.ts` — added 3 missing integration paths (`/integrations/access-control/`, `/integrations/drones/`, `/integrations/panic-buttons/`) that were built in v0.78 but never added to the sitemap
+- `SEO/kabatone-seo-master-plan.md` — corrected site size (35 → 41 unique routes, 70 → 82 sitemap URLs); marked all 6 integration pages as Done with correct version numbers (v0.74 + v0.78)
+
 ## [0.78] 2026-03-21 — Feat: 3 new integration pages — Access Control, Drones, Panic Buttons
 
 **Added**

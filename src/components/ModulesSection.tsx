@@ -152,10 +152,10 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
     }
   }
 
-  const sectionLabel = es ? 'INTELIGENCIA OPERATIVA' : 'BUSINESS INTELLIGENCE'
   const activeIdx = MOD_ORDER.indexOf(active)
   const m = modules[active]
   const c = es ? m.es : m.en
+  const sectionLabel = c.headerName.toUpperCase()
 
   return (
     <section

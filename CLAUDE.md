@@ -38,6 +38,13 @@ If you made local changes and haven't logged them yet — log them now before do
 - Commit message format: `Type: short description (vX.Y)` — e.g. `Fix: nav links on industry pages (v0.7)`
 - Always include `CHANGELOG.md` and `changelog.html` in the same commit as your changes
 
+## Hub
+- name: KabatOne Website
+- color: #3b82f6
+- description: KabatOne marketing site — Next.js 15, TypeScript, i18n (EN/ES), Vercel
+- agents:
+  - id: k1-website-dev | name: Website Developer | status: active | desc: Develops and maintains the KabatOne Next.js site. Pages, components, i18n, SEO. | triggers: update the site, fix bug on, add section, new page, update metadata | skills: frontend-design, website-qa, website-performance, seo-technical-implementation
+
 ## Key constraints
 
 - All pages live under `src/app/[locale]/` — EN and ES served via i18n routing
