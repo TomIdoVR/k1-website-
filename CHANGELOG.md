@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.88] 2026-03-23 — Feat: Vertical proof points on all 7 industry pages
+
+**Added**
+- All 7 industry pages — inserted an "In Practice" callout block between the Challenges and Capabilities sections. Each block shows a concrete, vertical-specific metric with a one-sentence scenario:
+  - **Public Safety**: `< 90s` dispatch time vs. 4–6 min on legacy CAD
+  - **Airport**: `3×` faster incident escalation — one screen vs. three systems
+  - **Municipalities**: `4 → 1` vendor contracts eliminated with one command platform
+  - **Ports**: `< 90s` perimeter breach alert vs. 8–12 min manual CCTV review, ISPS-compliant
+  - **Logistics**: `65%` reduction in gate processing time via LPR + automated bay assignment
+  - **Retail**: `4×` faster incident detection — proactive alerts vs. reactive CCTV review
+  - **Stadiums**: `1 screen` for 40,000+ attendees across all 4 venue coverage zones
+
+---
+
 ## [0.87] 2026-03-23 — Feat: How It Works section + buzzword pass + footer cleanup
 
 **Added**
