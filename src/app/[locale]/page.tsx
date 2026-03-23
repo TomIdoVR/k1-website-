@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import ModulesSection from '@/components/ModulesSection'
+import HowItWorks from '@/components/HowItWorks'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 
@@ -188,11 +189,11 @@ const whyCards = [
     tagES: 'TIEMPO DE RESPUESTA',
     en: {
       title: 'Seconds Matter. We Built for That.',
-      body: 'From 911 call intake to unit dispatch to AI-assisted triage -- every workflow is optimized to shave seconds off response time.',
+      body: 'From 911 call intake to unit recommendation to field deployment — the average dispatch cycle runs under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD systems.',
     },
     es: {
       title: 'Cada Segundo Cuenta. Construido Para Eso.',
-      body: 'Desde la recepcion de llamadas 911 hasta el despacho de unidades con triaje asistido por IA -- cada flujo esta optimizado para reducir segundos del tiempo de respuesta.',
+      body: 'Desde la recepcion de llamadas 911 hasta la recomendacion de unidades y el despliegue — el ciclo de despacho promedio es menor a 90 segundos en KabatOne vs. 4–6 minutos en sistemas CAD heredados.',
     },
   },
   {
@@ -214,11 +215,11 @@ const whyCards = [
     tagES: 'INTELIGENCIA PREDICTIVA',
     en: {
       title: 'AI That Earns Its Keep',
-      body: 'Pattern recognition, predictive deployment, and anomaly detection built in -- not bolted on. The AI layer learns from your city\'s data.',
+      body: 'Pattern recognition and anomaly detection are built into the rules engine — not a separate add-on. It flags unusual behavior before an operator notices, using your city\'s own historical data.',
     },
     es: {
       title: 'IA Que Demuestra Su Valor',
-      body: 'Reconocimiento de patrones, despliegue predictivo y deteccion de anomalias integrados -- no anadidos. La capa de IA aprende de los datos de tu ciudad.',
+      body: 'El reconocimiento de patrones y la deteccion de anomalias estan integrados en el motor de reglas — no son un modulo separado. Detecta comportamientos inusuales antes de que el operador los note, usando los datos historicos de tu ciudad.',
     },
   },
 ]
@@ -394,6 +395,9 @@ export default async function HomePage({
           </div>
 
         </section>
+
+        {/* ═══ HOW IT WORKS ═══ */}
+        <HowItWorks es={es} />
 
         {/* ═══ MODULES / BI TABBED SECTION ═══ */}
         <ModulesSection es={es} />
