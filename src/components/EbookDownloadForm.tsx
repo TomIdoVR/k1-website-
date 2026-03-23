@@ -47,7 +47,7 @@ export default function EbookDownloadForm({
     labelRole: es ? 'Cargo' : 'Job Title / Role',
     placeholderName: es ? 'Juan Pérez' : 'Jane Smith',
     placeholderEmail: es ? 'juan@agencia.gob.mx' : 'jane@agency.gov',
-    placeholderOrg: es ? 'Ciudad de México' : 'City of Acme',
+    placeholderOrg: es ? 'Organización' : 'Organization',
     placeholderRole: es ? 'Director de Seguridad Pública' : 'Director of Public Safety',
     btnSubmit: es ? 'Descargar el Informe' : 'Download the Brief',
     successTitle: es ? '¡Listo! Tu informe está disponible.' : 'You\'re all set.',
@@ -55,6 +55,7 @@ export default function EbookDownloadForm({
       ? 'Haz clic abajo para descargar el informe en PDF.'
       : 'Click below to download the industry brief PDF.',
     downloadBtn: es ? 'Descargar PDF' : 'Download PDF',
+    readOnlineBtn: es ? 'Leer en línea' : 'Read online',
     disclaimer: es
       ? 'No compartimos tu información. Puedes darte de baja en cualquier momento.'
       : 'We never share your data. Unsubscribe anytime.',
@@ -132,6 +133,25 @@ export default function EbookDownloadForm({
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           {c.downloadBtn}
+        </a>
+
+        <a
+          href="/ebook/siloed-response-en.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            marginTop: '12px',
+            color: 'var(--dim)',
+            fontFamily: 'Space Grotesk, sans-serif', fontSize: '13px', fontWeight: 500,
+            textDecoration: 'none', letterSpacing: '0.01em',
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+          {c.readOnlineBtn}
         </a>
       </div>
     )

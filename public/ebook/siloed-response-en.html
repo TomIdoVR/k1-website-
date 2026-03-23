@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The End of Siloed Response — KabatOne 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark:#0b1220; --dark2:#060d1a; --cyan:#06b6d4; --blue:#3b82f6;
+  --green:#22c55e; --red:#ef4444; --amber:#f59e0b;
+  --white:#fff; --off:#F5F7FA; --body:#1a2035; --muted:#64748b;
+  --H:'Barlow Condensed',sans-serif; --B:'Space Grotesk',sans-serif; --M:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@media print{
+  @page{size:A4 portrait;margin:0;}
+  body{background:#fff;}
+  .page{page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .no-break{page-break-inside:avoid;}
+  h2,h3,.sl{page-break-after:avoid;}
+  p{orphans:3;widows:3;}
+}
+@media screen{
+  body{background:#c8cdd8;padding:16px 0;}
+  .page{width:210mm;margin:0 auto 10px;box-shadow:0 6px 40px rgba(0,0,0,.4);}
+}
+.page{width:210mm;min-height:297mm;position:relative;overflow:hidden;}
+
+/* ── DARK BASE ──────────────────────────────── */
+.pd{background:var(--dark);background-image:radial-gradient(ellipse at 78% 14%,rgba(59,130,246,.18) 0%,transparent 55%),radial-gradient(ellipse at 12% 88%,rgba(6,182,212,.11) 0%,transparent 50%);color:#fff;display:flex;flex-direction:column;padding:18mm 16mm 15mm;}
+
+/* ── COVER ──────────────────────────────────── */
+.cover{justify-content:space-between;}
+.c-eye{display:flex;align-items:center;gap:8px;font-family:var(--M);font-size:7pt;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;}
+.c-dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;flex-shrink:0;}
+.c-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8mm 0;}
+.c-title{font-family:var(--H);font-weight:800;font-size:72pt;line-height:.88;color:#fff;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:5mm;}
+.c-title span{color:var(--cyan);}
+.c-rule{width:48mm;height:2px;background:linear-gradient(to right,var(--cyan),transparent);margin:5mm 0;}
+.c-sub{font-family:var(--B);font-weight:300;font-size:12pt;color:rgba(255,255,255,.72);line-height:1.45;max-width:135mm;margin-bottom:4mm;}
+.c-lbl{font-family:var(--M);font-size:7pt;color:rgba(255,255,255,.38);letter-spacing:.18em;text-transform:uppercase;}
+.c-stats{display:flex;border:1px solid rgba(255,255,255,.10);border-radius:8px;overflow:hidden;margin-bottom:9mm;}
+.c-stat{flex:1;padding:10px 14px;border-right:1px solid rgba(255,255,255,.10);text-align:center;}
+.c-stat:last-child{border-right:none;}
+.c-sn{display:block;font-family:var(--H);font-weight:800;font-size:22pt;color:var(--cyan);line-height:1;}
+.c-sl{display:block;font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.45);letter-spacing:.12em;text-transform:uppercase;margin-top:3px;}
+.c-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.10);padding-top:5mm;}
+.bmark{display:flex;align-items:center;gap:7px;font-family:var(--B);font-weight:600;font-size:11pt;color:#fff;}
+.bdot{width:8px;height:8px;background:var(--cyan);border-radius:50%;}
+.c-url{font-family:var(--M);font-size:7.5pt;color:rgba(255,255,255,.35);}
+
+/* ── TOC ────────────────────────────────────── */
+.toc-h{font-family:var(--H);font-weight:800;font-size:34pt;text-transform:uppercase;color:#fff;margin-bottom:7mm;}
+.toc-rule{width:100%;height:1px;background:rgba(255,255,255,.10);margin-bottom:7mm;}
+.toc-list{list-style:none;}
+.ti{display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.ti:last-child{border-bottom:none;}
+.tn{font-family:var(--M);font-size:7pt;color:var(--cyan);min-width:18mm;flex-shrink:0;}
+.tt{font-family:var(--B);font-weight:400;font-size:9.5pt;color:rgba(255,255,255,.75);flex:1;}
+.tdots{flex:1;border-bottom:1px dotted rgba(255,255,255,.18);margin:0 6px;min-width:10mm;}
+.tpg{font-family:var(--M);font-size:7pt;color:rgba(255,255,255,.32);}
+
+/* ── OPENERS ────────────────────────────────── */
+.opener{justify-content:flex-end;padding-bottom:20mm;}
+.op-top{font-family:var(--M);font-size:7.5pt;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:auto;}
+.op-bg{font-family:var(--H);font-weight:800;font-size:150pt;line-height:.85;color:rgba(255,255,255,.035);position:absolute;right:-5mm;bottom:14mm;letter-spacing:-.05em;}
+.op-rule{width:20mm;height:3px;background:var(--cyan);margin-bottom:5mm;position:relative;z-index:1;}
+.op-title{font-family:var(--H);font-weight:800;font-size:42pt;text-transform:uppercase;color:#fff;line-height:1.0;letter-spacing:.01em;margin-bottom:5mm;max-width:158mm;position:relative;z-index:1;}
+.op-title em{color:var(--cyan);font-style:normal;}
+.op-sub{font-family:var(--B);font-weight:300;font-size:10.5pt;color:rgba(255,255,255,.55);max-width:138mm;line-height:1.5;position:relative;z-index:1;}
+
+/* ── BODY PAGES ─────────────────────────────── */
+.pb{background:var(--off);display:flex;flex-direction:column;}
+.bh{background:var(--dark);padding:6px 17mm;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--cyan);}
+.bhl{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.40);letter-spacing:.15em;text-transform:uppercase;}
+.bhr{font-family:var(--M);font-size:6pt;color:var(--cyan);letter-spacing:.10em;}
+.bc{flex:1;padding:11mm 17mm 8mm;}
+.bf{padding:5px 17mm;border-top:1px solid rgba(26,32,53,.12);display:flex;justify-content:space-between;align-items:center;}
+.bf span{font-family:var(--M);font-size:6pt;color:var(--muted);}
+.bf .pg{color:var(--cyan);font-weight:500;}
+
+/* ── TYPOGRAPHY ─────────────────────────────── */
+.sl{font-family:var(--M);font-size:6.5pt;color:var(--cyan);letter-spacing:.18em;text-transform:uppercase;margin-bottom:3px;margin-top:7mm;}
+.sl:first-child{margin-top:0;}
+h2{font-family:var(--H);font-weight:700;font-size:20pt;text-transform:uppercase;color:var(--body);letter-spacing:.02em;line-height:1.1;margin-bottom:4mm;}
+h3{font-family:var(--H);font-weight:700;font-size:13.5pt;text-transform:uppercase;color:var(--body);letter-spacing:.04em;margin-top:5mm;margin-bottom:2mm;padding-left:9px;border-left:3px solid var(--cyan);}
+p{font-family:var(--B);font-weight:300;font-size:9.5pt;color:var(--body);line-height:1.72;margin-bottom:3.5mm;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600;}
+ul,ol{padding-left:5mm;margin-bottom:3mm;}
+li{font-family:var(--B);font-size:9pt;font-weight:300;line-height:1.62;color:var(--body);margin-bottom:1.5mm;}
+
+/* ── CALLOUTS ───────────────────────────────── */
+.callout{background:var(--dark);border-left:4px solid var(--cyan);padding:10px 14px;margin:5mm 0;border-radius:0 6px 6px 0;}
+.callout p{color:rgba(255,255,255,.80);font-size:9.5pt;font-style:italic;margin-bottom:0;line-height:1.65;}
+.cl-lbl{font-family:var(--M);font-size:6pt;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px;}
+
+/* ── QUOTE ──────────────────────────────────── */
+.qblock{background:var(--dark);border-radius:8px;padding:13px 17px;margin:5mm 0;position:relative;}
+.qmark{font-family:var(--H);font-size:56pt;color:var(--cyan);opacity:.22;line-height:1;position:absolute;top:2px;left:11px;}
+.qtext{font-family:var(--B);font-size:10pt;font-weight:400;font-style:italic;color:rgba(255,255,255,.86);line-height:1.65;margin-bottom:6px;padding-left:8mm;position:relative;}
+.qattr{font-family:var(--M);font-size:6.5pt;color:var(--cyan);letter-spacing:.10em;text-transform:uppercase;padding-left:8mm;}
+
+/* ── STAT BAR ───────────────────────────────── */
+.sbar{display:flex;background:var(--dark);border-radius:8px;overflow:hidden;margin:5mm 0;}
+.si{flex:1;padding:11px 9px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.si:last-child{border-right:none;}
+.sn{display:block;font-family:var(--H);font-weight:800;font-size:25pt;color:var(--cyan);line-height:1.1;}
+.sl2{display:block;font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.48);letter-spacing:.10em;text-transform:uppercase;margin-top:2px;}
+
+/* ── TABLES ─────────────────────────────────── */
+.tw{margin:4mm 0;overflow:hidden;border-radius:6px;}
+table{width:100%;border-collapse:collapse;font-family:var(--B);font-size:8.5pt;}
+thead tr{background:var(--dark);}
+thead th{font-family:var(--M);font-size:6pt;font-weight:500;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;padding:7px 9px;text-align:left;border-right:1px solid rgba(255,255,255,.08);}
+thead th:last-child{border-right:none;}
+tbody tr:nth-child(odd) td{background:rgba(255,255,255,.55);}
+tbody tr:nth-child(even) td{background:rgba(6,182,212,.04);}
+td{padding:6px 9px;border-bottom:1px solid rgba(26,32,53,.08);border-right:1px solid rgba(26,32,53,.05);color:var(--body);vertical-align:top;line-height:1.48;font-weight:300;}
+td:last-child{border-right:none;}
+td strong{font-weight:600;color:var(--dark);}
+.tc{font-family:var(--M);font-size:6pt;color:var(--muted);letter-spacing:.08em;text-align:center;margin-top:3px;}
+
+/* ── TIMELINE ───────────────────────────────── */
+.tl{margin:5mm 0;}
+.tl-track{display:flex;background:var(--dark);border-radius:8px;overflow:hidden;}
+.tl-era{flex:1;padding:11px 9px;border-right:1px solid rgba(255,255,255,.08);text-align:center;}
+.tl-era:last-child{border-right:none;}
+.tl-dec{font-family:var(--M);font-size:6.5pt;color:var(--cyan);letter-spacing:.12em;display:block;margin-bottom:3px;}
+.tl-name{font-family:var(--H);font-weight:700;font-size:12pt;color:#fff;text-transform:uppercase;display:block;margin-bottom:3px;}
+.tl-desc{font-family:var(--B);font-size:7pt;color:rgba(255,255,255,.45);line-height:1.4;}
+.tl-note{font-family:var(--M);font-size:6pt;color:var(--muted);text-align:center;margin-top:3px;}
+
+/* ── WORKFLOW ───────────────────────────────── */
+.wf{display:flex;align-items:stretch;margin:5mm 0;gap:2px;}
+.wfs{flex:1;background:var(--dark);padding:9px 7px;text-align:center;position:relative;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 50%,calc(100% - 7px) 100%,0 100%);}
+.wfs:last-child{clip-path:none;}
+.wf-ic{font-size:13pt;display:block;margin-bottom:3px;}
+.wf-t{font-family:var(--H);font-weight:700;font-size:9pt;color:#fff;text-transform:uppercase;display:block;margin-bottom:2px;}
+.wf-s{font-family:var(--B);font-size:6.5pt;color:rgba(255,255,255,.42);line-height:1.3;}
+
+/* ── CHECKLIST ──────────────────────────────── */
+.ck{list-style:none;padding:0;margin:3mm 0;}
+.cki{display:flex;align-items:flex-start;gap:7px;padding:6px 9px;border-bottom:1px solid rgba(26,32,53,.08);font-size:9pt;line-height:1.48;}
+.cki:last-child{border-bottom:none;}
+.ck-box{width:13px;height:13px;border:1.5px solid var(--cyan);border-radius:3px;flex-shrink:0;margin-top:1px;background:rgba(6,182,212,.05);}
+.ck-num{font-family:var(--M);font-size:7pt;color:var(--cyan);flex-shrink:0;min-width:6mm;margin-top:1px;}
+
+/* ── BEFORE/AFTER ───────────────────────────── */
+.ba{display:flex;gap:3mm;margin:4mm 0;}
+.ba-col{flex:1;border-radius:8px;overflow:hidden;}
+.ba-hd{padding:7px 11px;font-family:var(--H);font-weight:700;font-size:11pt;text-transform:uppercase;text-align:center;}
+.ba-hd.frag{background:#2d1515;color:#ef4444;}
+.ba-hd.uni{background:#0d2a1a;color:#22c55e;}
+.ba-row{display:flex;justify-content:space-between;padding:5px 11px;border-bottom:1px solid rgba(26,32,53,.08);font-family:var(--B);font-size:8pt;font-weight:300;line-height:1.38;background:var(--off);}
+.ba-row:last-child{border-bottom:none;}
+.ba-m{color:var(--muted);font-size:7.5pt;}
+.ba-v{color:var(--body);font-weight:500;}
+
+/* ── DARK FULL ──────────────────────────────── */
+.pdf{background:var(--dark);background-image:radial-gradient(ellipse at 85% 10%,rgba(59,130,246,.15) 0%,transparent 55%),radial-gradient(ellipse at 10% 90%,rgba(6,182,212,.10) 0%,transparent 50%);color:#fff;display:flex;flex-direction:column;padding:18mm 18mm 15mm;}
+.pdf h2{color:#fff;margin-bottom:5mm;}
+.pdf h3{color:rgba(255,255,255,.78);border-left-color:var(--cyan);}
+.pdf p{color:rgba(255,255,255,.70);margin-bottom:4mm;}
+.pdf p strong{color:#fff;}
+.cta-box{background:var(--blue);border-radius:8px;padding:13px 19px;margin-top:auto;display:flex;justify-content:space-between;align-items:center;}
+.cta-t{font-family:var(--B);font-size:10pt;font-weight:500;color:#fff;}
+.cta-u{font-family:var(--M);font-size:9pt;color:rgba(255,255,255,.78);}
+.client-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4mm;}
+.ctag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:3px 11px;font-family:var(--M);font-size:6.5pt;color:rgba(255,255,255,.55);letter-spacing:.07em;}
+.fig-lbl{font-family:var(--M);font-size:6.5pt;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+.fig-cap{font-family:var(--M);font-size:6pt;color:var(--muted);text-align:center;margin-top:3px;}
+
+/* ════════════════════════════════════════════
+   VISUAL COMPONENTS
+   ════════════════════════════════════════════ */
+
+/* FRAGMENTATION VISUAL (Ch2) */
+.frag-viz{background:var(--dark);border-radius:8px;padding:10px;margin:5mm 0;}
+.frag-label{font-family:var(--M);font-size:6.5pt;color:rgba(255,255,255,.40);letter-spacing:.15em;text-transform:uppercase;text-align:center;margin-bottom:7px;}
+.frag-screens{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.frag-screen{border-radius:4px;padding:7px 8px;border:1px solid rgba(255,255,255,.08);}
+.frag-screen.vms{background:#0d2035;border-top:2px solid #3b82f6;}
+.frag-screen.gis{background:#0d2518;border-top:2px solid #22c55e;}
+.frag-screen.cad{background:#201008;border-top:2px solid #f59e0b;}
+.frag-screen.radio{background:#200d1a;border-top:2px solid #a855f7;}
+.frag-stitle{font-family:var(--M);font-size:6.5pt;font-weight:500;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;}
+.frag-screen.vms .frag-stitle{color:#3b82f6;}
+.frag-screen.gis .frag-stitle{color:#22c55e;}
+.frag-screen.cad .frag-stitle{color:#f59e0b;}
+.frag-screen.radio .frag-stitle{color:#a855f7;}
+.frag-line{height:5px;border-radius:2px;margin-bottom:3px;opacity:.25;}
+.frag-screen.vms .frag-line{background:#3b82f6;}
+.frag-screen.gis .frag-line{background:#22c55e;}
+.frag-screen.cad .frag-line{background:#f59e0b;}
+.frag-screen.radio .frag-line{background:#a855f7;}
+.frag-line.w60{width:60%;}
+.frag-line.w80{width:80%;}
+.frag-line.w40{width:40%;}
+.frag-line.w70{width:70%;}
+.frag-grid-lbl{height:36px;display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px;}
+.frag-cell{background:rgba(255,255,255,.06);border-radius:2px;display:flex;align-items:center;justify-content:center;}
+.frag-cell span{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.30);}
+.frag-arrow-row{display:flex;align-items:center;justify-content:center;gap:3px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.06);}
+.frag-arrow-icon{font-size:8pt;}
+.frag-arrow-txt{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;}
+
+/* M&A VISUAL TIMELINE (Ch3) */
+.ma-vis{background:var(--dark);border-radius:8px;padding:12px 14px;margin:4mm 0;}
+.ma-track{display:flex;flex-direction:column;gap:12px;}
+.ma-row{display:flex;align-items:center;gap:10px;}
+.ma-vendor{font-family:var(--M);font-size:6.5pt;color:rgba(255,255,255,.50);letter-spacing:.10em;text-transform:uppercase;min-width:20mm;flex-shrink:0;}
+.ma-line{flex:1;position:relative;height:28px;display:flex;align-items:center;}
+.ma-axis{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,.10);}
+.ma-bubble{position:absolute;display:flex;flex-direction:column;align-items:center;transform:translateX(-50%);}
+.ma-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.ma-btext{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.55);text-align:center;margin-top:2px;white-space:nowrap;}
+.ma-years{display:flex;justify-content:space-between;margin-top:4px;padding:0 2px;}
+.ma-yr{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.25);}
+
+/* VIDEO GRID MOCKUP (Ch7) */
+.vid-mockup{background:#06101e;border-radius:8px;overflow:hidden;margin:5mm 0;}
+.vid-bar{background:#040d1a;padding:5px 10px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.07);}
+.vid-bar-l{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.40);letter-spacing:.15em;text-transform:uppercase;}
+.vid-bar-r{display:flex;align-items:center;gap:5px;}
+.live-dot{width:5px;height:5px;background:#22c55e;border-radius:50;}
+.vid-bar-r span{font-family:var(--M);font-size:6pt;color:#22c55e;letter-spacing:.12em;}
+.vid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;padding:5px;}
+.cam-feed{background:#090f1c;border-radius:3px;position:relative;overflow:hidden;aspect-ratio:4/3;}
+.cam-top{position:absolute;top:0;left:0;right:0;padding:4px 6px;display:flex;justify-content:space-between;align-items:center;background:rgba(4,13,26,.7);}
+.cam-name{font-family:var(--M);font-size:5pt;color:rgba(255,255,255,.65);letter-spacing:.08em;text-transform:uppercase;}
+.cam-status{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.cam-status.on{background:#22c55e;}
+.cam-status.off{background:rgba(255,255,255,.20);}
+.cam-scene{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding-top:16px;padding-bottom:14px;}
+.cam-offline-lbl{font-family:var(--M);font-size:7pt;color:rgba(255,255,255,.20);letter-spacing:.12em;text-transform:uppercase;}
+.cam-bottom{position:absolute;bottom:0;left:0;right:0;padding:3px 6px;background:rgba(4,13,26,.7);}
+.cam-ts{font-family:var(--M);font-size:4.5pt;color:rgba(255,255,255,.35);letter-spacing:.05em;}
+.ai-box{position:absolute;border:1.5px solid;border-radius:2px;padding:1px 4px;}
+.ai-box.person{border-color:#22c55e;color:#22c55e;font-family:var(--M);font-size:4.5pt;top:40%;left:25%;}
+.ai-box.vehicle{border-color:#f59e0b;color:#f59e0b;font-family:var(--M);font-size:4.5pt;top:45%;left:35%;}
+.vid-status-bar{background:#040d1a;padding:4px 10px;display:flex;align-items:center;gap:8px;border-top:1px solid rgba(255,255,255,.07);}
+.vsb-ok{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.40);letter-spacing:.08em;}
+.vsb-ok strong{color:#22c55e;}
+.vsb-alert{font-family:var(--M);font-size:5.5pt;color:#ef4444;background:rgba(239,68,68,.12);border-radius:3px;padding:1px 5px;letter-spacing:.07em;}
+.vsb-off{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.35);background:rgba(255,255,255,.06);border-radius:3px;padding:1px 5px;letter-spacing:.07em;}
+
+/* GIS MAP MOCKUP (Ch7) */
+.gis-mockup{background:#060f1e;border-radius:8px;overflow:hidden;margin:5mm 0;}
+.gis-bar{background:#040d1a;padding:5px 10px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.07);}
+.gis-bar-l{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.40);letter-spacing:.15em;text-transform:uppercase;}
+.gis-bar-r{font-family:var(--M);font-size:6pt;color:var(--cyan);letter-spacing:.10em;}
+.gis-body{position:relative;width:100%;}
+.gis-panel{position:absolute;top:8px;right:8px;background:rgba(4,13,26,.88);border:1px solid rgba(255,255,255,.10);border-radius:5px;padding:7px 10px;z-index:10;min-width:85px;}
+.gp-row{display:flex;justify-content:space-between;gap:8px;margin-bottom:3px;}
+.gp-row:last-child{margin-bottom:0;}
+.gp-lbl{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.40);}
+.gp-val{font-family:var(--M);font-size:5.5pt;color:#fff;font-weight:500;}
+
+/* ARCHITECTURE HUB (Ch7) */
+.hub-wrap{margin:5mm 0;background:var(--dark);border-radius:8px;padding:14px;}
+.hub-diagram{display:flex;align-items:stretch;gap:8px;}
+.hub-left,.hub-right{display:flex;flex-direction:column;gap:6px;justify-content:space-around;flex:1;}
+.hub-ext{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:5px;padding:5px 8px;text-align:center;}
+.hub-ext-name{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.50);letter-spacing:.08em;text-transform:uppercase;display:block;}
+.hub-ext-type{font-family:var(--B);font-size:6.5pt;color:rgba(255,255,255,.28);display:block;margin-top:1px;}
+.hub-center{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:0 0 auto;width:55mm;}
+.hub-core{background:linear-gradient(135deg,#0d2a4a,#0a1e38);border:2px solid var(--cyan);border-radius:10px;padding:10px 14px;text-align:center;position:relative;}
+.hub-core-name{font-family:var(--H);font-weight:800;font-size:16pt;color:#fff;text-transform:uppercase;display:block;letter-spacing:.02em;}
+.hub-core-sub{font-family:var(--M);font-size:5.5pt;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:2px;}
+.hub-modules{display:flex;flex-direction:column;gap:4px;width:100%;margin-top:8px;}
+.hub-mod{background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.22);border-radius:4px;padding:3px 7px;display:flex;align-items:center;justify-content:space-between;}
+.hub-mod-name{font-family:var(--M);font-size:6pt;color:var(--cyan);letter-spacing:.08em;font-weight:500;}
+.hub-mod-cat{font-family:var(--B);font-size:5.5pt;color:rgba(255,255,255,.38);}
+.hub-arrows{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.22);letter-spacing:.08em;margin-top:3px;text-align:center;}
+
+/* CITY CARDS (Ch8) */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:5mm 0;}
+.city-card{background:var(--dark);border-radius:7px;padding:10px 12px;border-top:3px solid var(--cyan);}
+.city-card.ec{border-top-color:#22c55e;}
+.city-card.co{border-top-color:#f59e0b;}
+.city-card.br{border-top-color:#ef4444;}
+.city-flag{font-size:14pt;margin-bottom:4px;display:block;}
+.city-system{font-family:var(--H);font-weight:700;font-size:13pt;color:#fff;text-transform:uppercase;display:block;line-height:1.1;margin-bottom:2px;}
+.city-name{font-family:var(--M);font-size:6pt;color:var(--cyan);letter-spacing:.10em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.city-card.ec .city-name{color:#22c55e;}
+.city-card.co .city-name{color:#f59e0b;}
+.city-card.br .city-name{color:#ef4444;}
+.city-stats{display:flex;flex-direction:column;gap:3px;}
+.city-stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.city-stat-row:last-child{border-bottom:none;}
+.cs-lbl{font-family:var(--B);font-size:7.5pt;color:rgba(255,255,255,.45);}
+.cs-val{font-family:var(--H);font-weight:700;font-size:11pt;color:#fff;}
+.cs-val.cyan{color:var(--cyan);}
+.cs-val.green{color:#22c55e;}
+.cs-val.amber{color:#f59e0b;}
+.cs-val.red{color:#ef4444;}
+.city-badge{margin-top:5px;display:inline-block;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.25);border-radius:20px;padding:2px 9px;font-family:var(--M);font-size:5.5pt;color:var(--cyan);letter-spacing:.10em;text-transform:uppercase;}
+.city-badge.green{background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.25);color:#22c55e;}
+.city-badge.amber{background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.25);color:#f59e0b;}
+.city-badge.red{background:rgba(239,68,68,.10);border-color:rgba(239,68,68,.25);color:#ef4444;}
+
+/* IMPROVEMENT CHART (Ch9) */
+.chart{background:var(--dark);border-radius:8px;padding:12px 14px;margin:5mm 0;}
+.chart-title{font-family:var(--M);font-size:6.5pt;color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;}
+.chart-row{margin-bottom:9px;}
+.chart-row:last-child{margin-bottom:0;}
+.chart-lbl{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;}
+.chart-lbl-text{font-family:var(--B);font-size:7.5pt;color:rgba(255,255,255,.60);}
+.chart-lbl-val{font-family:var(--H);font-weight:700;font-size:11pt;color:var(--cyan);}
+.chart-track{background:rgba(255,255,255,.06);border-radius:4px;height:14px;position:relative;overflow:hidden;}
+.chart-bar{height:100%;border-radius:4px;position:relative;display:flex;align-items:center;padding-left:7px;}
+.chart-bar span{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.70);letter-spacing:.06em;position:relative;z-index:1;}
+.bar-before{background:rgba(100,116,139,.35);}
+.bar-after-resp{background:linear-gradient(to right,var(--cyan),var(--blue));}
+.bar-after-res{background:linear-gradient(to right,#22c55e,var(--cyan));}
+
+/* AI DASHBOARD MOCKUP */
+.ai-mockup{background:#06101e;border-radius:8px;overflow:hidden;margin:5mm 0;}
+.ai-bar{background:#040d1a;padding:5px 10px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.07);}
+.ai-bar-l{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.40);letter-spacing:.15em;text-transform:uppercase;}
+.ai-bar-r{display:flex;gap:4px;}
+.ai-badge{font-family:var(--M);font-size:5.5pt;padding:2px 7px;border-radius:3px;letter-spacing:.08em;}
+.ai-badge.admin{background:rgba(255,255,255,.06);color:rgba(255,255,255,.45);}
+.ai-badge.live{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.25);}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:5px;}
+.ai-panel{background:#090f1c;border-radius:4px;padding:7px 9px;}
+.ai-panel-title{font-family:var(--M);font-size:6pt;color:rgba(255,255,255,.45);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:4px;}
+.ai-panel-icon{font-size:8pt;}
+.ai-event-list{display:flex;flex-direction:column;gap:4px;}
+.ai-event{display:flex;gap:6px;align-items:flex-start;padding:4px 6px;border-radius:3px;background:rgba(255,255,255,.03);}
+.ai-event-num{font-family:var(--M);font-size:7pt;font-weight:500;color:rgba(255,255,255,.40);min-width:10px;}
+.ai-event-body{flex:1;}
+.ai-event-tag{font-family:var(--M);font-size:5pt;padding:1px 4px;border-radius:2px;letter-spacing:.06em;margin-bottom:2px;display:inline-block;}
+.tag-crit{background:rgba(239,68,68,.18);color:#ef4444;}
+.tag-urg{background:rgba(245,158,11,.18);color:#f59e0b;}
+.tag-low{background:rgba(34,197,94,.18);color:#22c55e;}
+.ai-event-name{font-family:var(--B);font-size:6.5pt;color:rgba(255,255,255,.70);display:block;}
+.ai-event-loc{font-family:var(--M);font-size:5.5pt;color:rgba(255,255,255,.35);}
+.ai-chat{display:flex;flex-direction:column;gap:4px;}
+.ai-msg{padding:4px 6px;border-radius:3px;font-family:var(--B);font-size:6.5pt;line-height:1.4;}
+.ai-msg.ai-sent{background:rgba(6,182,212,.12);color:rgba(255,255,255,.70);align-self:flex-start;border:1px solid rgba(6,182,212,.18);}
+.ai-msg.ai-label{font-family:var(--M);font-size:5pt;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;}
+.ai-msg.user-sent{background:rgba(255,255,255,.06);color:rgba(255,255,255,.55);align-self:flex-start;}
+.wave-bars{display:flex;align-items:center;gap:2px;height:20px;margin:4px 0;}
+.wb{width:3px;border-radius:2px;background:var(--cyan);opacity:.6;}
+
+/* ── ILLUSTRATION PAGES ─────────────────────── */
+.pi{display:flex;flex-direction:column;}
+.pi-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:10mm 14mm;}
+.pi-body img{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 4px 22px rgba(0,0,0,.16);}
+.pi-body .fig-lbl{margin-bottom:4mm;margin-top:0;text-align:center;}
+.pi-cap{font-family:var(--M);font-size:5.5pt;color:var(--muted);letter-spacing:.10em;margin-top:4mm;text-align:center;}
+.pi.pi-light{background:#F4F3EE;}
+.pi.pi-dark2{background:var(--dark);background-image:radial-gradient(ellipse at 80% 20%,rgba(59,130,246,.14) 0%,transparent 60%);}
+.pi.pi-dark2 .pi-cap{color:rgba(255,255,255,.25);}
+.pi.pi-dark2 .bhl,.pi.pi-dark2 .bhr{color:rgba(255,255,255,.40);}
+.pi.pi-dark2 .fig-lbl{color:rgba(255,255,255,.75);}
+.pi.pi-dark2 .bf{border-top-color:rgba(255,255,255,.10);}
+.pi.pi-dark2 .bf span{color:rgba(255,255,255,.30);}
+.pi.pi-dark2 .bf .pg{color:var(--cyan);}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<section class="page pd cover">
+  <div class="c-eye"><div class="c-dot"></div>PUBLIC SAFETY PLATFORM — INDUSTRY BRIEF</div>
+  <div class="c-main">
+    <div class="c-title">The End of<br><span>Siloed</span><br>Response</div>
+    <div class="c-rule"></div>
+    <div class="c-sub">How Unified Public Safety Platforms Are Replacing Fragmented Systems</div>
+    <div class="c-lbl">A KabatOne Industry Brief &nbsp;|&nbsp; 2026</div>
+  </div>
+  <div>
+    <div class="c-stats">
+      <div class="c-stat"><span class="c-sn">40+</span><span class="c-sl">Cities Deployed</span></div>
+      <div class="c-stat"><span class="c-sn">70M+</span><span class="c-sl">Citizens Protected</span></div>
+      <div class="c-stat"><span class="c-sn">NG911</span><span class="c-sl">Ready</span></div>
+    </div>
+    <div class="c-foot">
+      <div class="bmark"><div class="bdot"></div>KabatOne</div>
+      <div class="c-url">kabatone.com</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ TOC ══════════════════════ -->
+<section class="page pd">
+  <div class="toc-h">Contents</div>
+  <div class="toc-rule"></div>
+  <ul class="toc-list">
+    <li class="ti"><span class="tn">EXEC SUMMARY</span><span class="tt">Why the Fragmented Model Is Failing</span><span class="tdots"></span><span class="tpg">3</span></li>
+    <li class="ti"><span class="tn">HOOK</span><span class="tt">The $3 Billion Market Signal</span><span class="tdots"></span><span class="tpg">4</span></li>
+    <li class="ti"><span class="tn">CH 01</span><span class="tt">Why Systems Were Always Siloed</span><span class="tdots"></span><span class="tpg">6</span></li>
+    <li class="ti"><span class="tn">CH 02</span><span class="tt">The Operational Cost of Fragmentation</span><span class="tdots"></span><span class="tpg">8</span></li>
+    <li class="ti"><span class="tn">CH 03</span><span class="tt">The Convergence Signals — Acquisitions &amp; Market</span><span class="tdots"></span><span class="tpg">10</span></li>
+    <li class="ti"><span class="tn">CH 04</span><span class="tt">The Standards Foundation</span><span class="tdots"></span><span class="tpg">12</span></li>
+    <li class="ti"><span class="tn">CH 05</span><span class="tt">What Unified Response Actually Requires</span><span class="tdots"></span><span class="tpg">13</span></li>
+    <li class="ti"><span class="tn">CH 06</span><span class="tt">Diagnosing Your Current Architecture</span><span class="tdots"></span><span class="tpg">15</span></li>
+    <li class="ti"><span class="tn">CH 07</span><span class="tt">KabatOne Mapped to the Convergence Stack</span><span class="tdots"></span><span class="tpg">16</span></li>
+    <li class="ti"><span class="tn">CH 08</span><span class="tt">LATAM at the Inflection Point</span><span class="tdots"></span><span class="tpg">19</span></li>
+    <li class="ti"><span class="tn">CH 09</span><span class="tt">Building the Business Case</span><span class="tdots"></span><span class="tpg">21</span></li>
+    <li class="ti"><span class="tn">CH 10</span><span class="tt">Questions to Ask Any Unified Platform Vendor</span><span class="tdots"></span><span class="tpg">23</span></li>
+    <li class="ti"><span class="tn">CLOSING</span><span class="tt">The Agencies That Act Now</span><span class="tdots"></span><span class="tpg">24</span></li>
+  </ul>
+</section>
+
+
+<!-- ══════════════════════ EXEC SUMMARY ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Executive Summary</div>
+  <div class="op-bg" aria-hidden="true">ES</div>
+  <div class="op-rule"></div>
+  <div class="op-title">Why the Fragmented<br>Model Is <em>Failing</em></div>
+  <div class="op-sub">The era of disconnected video, dispatch, GIS, and access control is ending. This brief explains why — and what comes next.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">Why the Fragmented Model Is Failing</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">The Illusion of Connected Fragmentation — Technical Integration vs. Operational Unification</div>
+    <img src="img/ups-04.png" alt="Fragmented vs Unified — operators must re-enter context across Video, Map, CAD, and Alert systems">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">Executive Summary</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>In Q1 2026, Axon acquired Carbyne — a next-generation 911 call-handling platform — for <strong>$625 million</strong>. Motorola Solutions has spent more than <strong>$3 billion</strong> acquiring public safety technology companies over the past decade. Hexagon absorbed Intergraph for <strong>$2.125 billion</strong>. These are not isolated bets. They are a structural signal: the era of fragmented public safety systems is ending.</p>
+    <p>For decades, governments managed emergencies through disconnected systems — video management, access control, computer-aided dispatch, and physical security information management all running in separate silos. Operators switched between screens, duplicated data, and lost critical seconds at the moments that mattered most.</p>
+    <div class="callout no-break">
+      <div class="cl-lbl">Core Argument</div>
+      <p>The question is no longer <em>whether</em> to unify. It is how quickly each agency gets there — and on whose terms. Agencies that define their technology strategy now will choose a platform that fits their environment. Agencies that wait will find their choices shaped by consolidation decisions of global vendors whose primary design context is not LATAM.</p>
+    </div>
+    <p>KabatOne was designed natively for this moment — not assembled through acquisition. This document explains why the shift is happening, what it requires, and how agencies can build the business case for unified response.</p>
+    <div class="sbar no-break">
+      <div class="si"><span class="sn">40+</span><span class="sl2">Cities</span></div>
+      <div class="si"><span class="sn">70M+</span><span class="sl2">Citizens Protected</span></div>
+      <div class="si"><span class="sn">40%</span><span class="sl2">Faster Response</span></div>
+      <div class="si"><span class="sn">60%</span><span class="sl2">Faster Resolution</span></div>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">3</span></div>
+</section>
+
+
+<!-- ══════════════════════ HOOK ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Hook</div>
+  <div class="op-bg" aria-hidden="true">$3B</div>
+  <div class="op-rule"></div>
+  <div class="op-title">The <em>$3 Billion</em><br>Market Signal</div>
+  <div class="op-sub">Axon. Motorola. Hexagon. Three global vendors. Billions spent. One shared thesis: integrated platforms have replaced point solutions as the standard for public safety.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">Hook — The $3B Market Signal</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">The $3 Billion Market Signal — Motorola, Axon, and Hexagon Assembling the Unified Stack</div>
+    <img src="img/ups-03.png" alt="$3 Billion Market Signal — Motorola Solutions, Axon Enterprise, and Hexagon acquisition circles">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">Hook — The $3B Market Signal</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>On a morning in early 2026, Axon Enterprise announced it had acquired Carbyne, one of the leading next-generation 911 call-handling platforms, for <strong>$625 million</strong>. The deal closed in Q1 2026 and immediately became the most discussed transaction in the public safety technology market.</p>
+    <p>Motorola Solutions had spent the previous decade systematically acquiring the components of a unified public safety stack: Spillman Technologies (CAD, $221M), Avigilon (video, ~$1B), Rave Mobile Safety (mass notification, $553M), RapidDeploy (cloud CAD, $241M). Hexagon had done the same, beginning with Intergraph ($2.125B) and extending into video analytics with Qognify. Axon, already owning Fusus (real-time crime centers) and Prepared (AI-assisted dispatch), added Carbyne to close the loop from field devices to 911 intake.</p>
+    <p>These acquisitions share a common thesis: the future of public safety is not point solutions. It is integrated operational environments where video, dispatch, GIS, AI, and field response work as one.</p>
+    <div class="callout no-break">
+      <div class="cl-lbl">Category Shift</div>
+      <p>The vendors who arrived at this conclusion spent billions to build what the market is demanding. KabatOne was built this way from the start. This is not a product race. It is a category shift. For government agencies evaluating their infrastructure today — in Mexico, Peru, across Latin America, and in the United States — the strategic question is not whether to unify, but <em>when</em>, and <em>how</em>.</p>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">4</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 01 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 01 / 10</div>
+  <div class="op-bg" aria-hidden="true">01</div>
+  <div class="op-rule"></div>
+  <div class="op-title">Why Systems Were<br><em>Always</em> Siloed</div>
+  <div class="op-sub">Four technology lineages. Four decades. Four disconnected tracks — each optimized for a specific function and never designed to work together.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">CH 01 — Why Systems Were Always Siloed</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">The Four Eras of Public Safety Technology</div>
+    <img src="img/kuo-03.png" alt="Four Eras of Public Safety Technology">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 01 — Why Systems Were Always Siloed</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>The answer is not poor planning. It is the natural consequence of how the technology evolved. Each category emerged from a different engineering lineage, in a different decade, optimized for a different function.</p>
+
+    <div class="fig-lbl">Figure 1 — The Four Technology Lineages (1970–2020)</div>
+    <div class="tl no-break">
+      <div class="tl-track">
+        <div class="tl-era"><span class="tl-dec">1970s–1990s</span><span class="tl-name">CAD</span><span class="tl-desc">Call intake, unit dispatch, incident logging. Built for telephone + radio. No GIS or video integration.</span></div>
+        <div class="tl-era"><span class="tl-dec">1980s–2000s</span><span class="tl-name">Access</span><span class="tl-desc">Badging, perimeter, entry logs. Facilities management problem — not public safety operations.</span></div>
+        <div class="tl-era"><span class="tl-dec">1990s–2000s</span><span class="tl-name">VMS</span><span class="tl-desc">Video capture, storage, playback. Optimized for codec efficiency — not dispatch or GIS integration.</span></div>
+        <div class="tl-era"><span class="tl-dec">2000s–2010s</span><span class="tl-name">PSIM</span><span class="tl-desc">Aggregation layer for the other three. Surfaces information — does not coordinate response.</span></div>
+      </div>
+      <div class="tl-note">Each lineage remains a separate track through 2020 — disconnected by design, not by accident</div>
+    </div>
+
+    <h3>Video Management (VMS) — 1990s–2000s</h3>
+    <p>Early VMS vendors — Milestone, Genetec, Avigilon — built software optimized for video ingestion, recording, and playback. They were not designed to share data with dispatch systems or GIS layers. Video was a recording tool, not an operational layer.</p>
+
+    <h3>Computer-Aided Dispatch (CAD) — 1970s–1990s</h3>
+    <p>CAD is the operational backbone of emergency response, built around telephone-based call intake and radio dispatch. The core data model — incident type, unit ID, location, timestamp — was designed for a world without IP cameras, GPS tracking, or real-time GIS overlay.</p>
+
+    <h3>Access Control &amp; PSIM</h3>
+    <p>Access control emerged from building security and facilities management — rarely a public safety operations priority. PSIM emerged as an aggregation layer for the other three, but it surfaces information rather than coordinating response. PSIM deployments were notoriously expensive, brittle, and slow to adapt.</p>
+    <p>The result: an operational environment built from independent tracks. Each category had its own vendors, data formats, operator interfaces, and procurement cycle. They were never designed to work together — and in most agencies today, they still do not.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">6</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 02 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 02 / 10</div>
+  <div class="op-bg" aria-hidden="true">02</div>
+  <div class="op-rule"></div>
+  <div class="op-title">The Operational Cost<br>of <em>Fragmentation</em></div>
+  <div class="op-sub">A command center operator managing four simultaneous screens during a critical incident. Each system shows a piece of the picture. None show the full picture.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">CH 02 — The Operational Cost of Fragmentation</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Architecture of Delay — Four Screens, Zero Shared Context</div>
+    <img src="img/kuo-02.png" alt="Architecture of Delay — operator managing four disconnected systems">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 02 — The Operational Cost of Fragmentation</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+
+    <div class="fig-lbl">Figure 2 — The Multi-Screen Reality: What a Typical Operator Manages</div>
+    <div class="frag-viz no-break">
+      <div class="frag-label">FOUR SEPARATE SYSTEMS — ZERO SHARED CONTEXT</div>
+      <div class="frag-screens">
+        <div class="frag-screen vms">
+          <div class="frag-stitle">📹 VMS — VIDEO MANAGEMENT</div>
+          <div class="frag-grid-lbl">
+            <div class="frag-cell"><span>CAM 01 ●</span></div>
+            <div class="frag-cell"><span>CAM 02 ●</span></div>
+            <div class="frag-cell"><span>CAM 03 ●</span></div>
+            <div class="frag-cell"><span>CAM 04 ○</span></div>
+          </div>
+          <div class="frag-line w80"></div><div class="frag-line w60"></div>
+        </div>
+        <div class="frag-screen gis">
+          <div class="frag-stitle">🗺 GIS — GEOGRAPHIC SYSTEM</div>
+          <div class="frag-grid-lbl">
+            <div class="frag-cell"><span>ZONE A</span></div>
+            <div class="frag-cell"><span>ZONE B</span></div>
+            <div class="frag-cell"><span>ZONE C</span></div>
+            <div class="frag-cell"><span>ZONE D</span></div>
+          </div>
+          <div class="frag-line w70"></div><div class="frag-line w40"></div>
+        </div>
+        <div class="frag-screen cad">
+          <div class="frag-stitle">📋 CAD — COMPUTER AIDED DISPATCH</div>
+          <div class="frag-grid-lbl">
+            <div class="frag-cell"><span>CALL #1842</span></div>
+            <div class="frag-cell"><span>U-14 ►</span></div>
+            <div class="frag-cell"><span>OPEN</span></div>
+            <div class="frag-cell"><span>PENDING</span></div>
+          </div>
+          <div class="frag-line w80"></div><div class="frag-line w60"></div>
+        </div>
+        <div class="frag-screen radio">
+          <div class="frag-stitle">📻 RADIO — COMMUNICATIONS</div>
+          <div class="frag-grid-lbl">
+            <div class="frag-cell"><span>CH 1</span></div>
+            <div class="frag-cell"><span>CH 2</span></div>
+            <div class="frag-cell"><span>CH 3</span></div>
+            <div class="frag-cell"><span>CH 4</span></div>
+          </div>
+          <div class="frag-line w60"></div><div class="frag-line w80"></div>
+        </div>
+      </div>
+      <div class="frag-arrow-row">
+        <span class="frag-arrow-icon">⚠️</span>
+        <span class="frag-arrow-txt">Operator must manually synthesize all four — under pressure, in real time, during active incidents</span>
+      </div>
+    </div>
+
+    <h3>The Dispatch Gap</h3>
+    <p>According to NENA data, the average time from a 911 call to unit dispatch is between <strong>90 and 150 seconds</strong> in a typical U.S. urban center. A significant portion is spent on data entry — not decision-making. APCO has documented that telecommunicators managing <strong>four or more simultaneous screens experience measurably higher error rates</strong> and longer call-to-dispatch intervals than those operating from a unified interface.</p>
+
+    <h3>The Handoff Problem</h3>
+    <p>When a camera feed shows a developing incident, the operator must: identify it on the VMS, locate the address on a separate GIS tool, open the CAD system, create a new incident record, manually enter location and incident type, assign a unit, and initiate radio contact. Each handoff is a friction point. Each friction point introduces delay measured in outcomes — not seconds.</p>
+
+    <h3>The Audit and Compliance Cost</h3>
+    <p>After an incident, reconstructing a timeline from four separate systems — each with its own export format — is time-consuming, error-prone, and legally problematic. NG911 Phase II mandates and NIEM-based data sharing requirements assume agencies can produce integrated, timestamped records of incident lifecycle. Fragmented architectures make this significantly harder to achieve.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">8</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 03 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 03 / 10</div>
+  <div class="op-bg" aria-hidden="true">03</div>
+  <div class="op-rule"></div>
+  <div class="op-title">The Convergence<br><em>Signals</em></div>
+  <div class="op-sub">Acquisitions totaling more than $7 billion. A category shift documented in real transactions. Every major vendor betting on the same thesis.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">CH 03 — The Convergence Signals</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">The Multi-Billion Dollar Category Shift — Acquisition Spend by Capability</div>
+    <img src="img/upso-04.png" alt="The Multi-Billion Dollar Category Shift — M&A spend across Video, CAD, 911, Records, GIS">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 03 — The Convergence Signals</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>The acquisition activity of the past decade is the clearest market signal that unified platforms are the direction. These are not opportunistic bets — they reflect a deliberate strategy to assemble the full stack: video, 911 intake, CAD dispatch, field comms, and AI analytics.</p>
+
+    <div class="fig-lbl">Figure 3 — M&amp;A Activity by Vendor (2010–2026)</div>
+    <div class="ma-vis no-break">
+      <div class="ma-track">
+        <div class="ma-row">
+          <div class="ma-vendor">Motorola</div>
+          <div class="ma-line">
+            <div class="ma-axis"></div>
+            <div class="ma-bubble" style="left:20%"><div class="ma-dot" style="background:#3b82f6;"></div><div class="ma-btext">Spillman<br>$221M · 2016</div></div>
+            <div class="ma-bubble" style="left:38%"><div class="ma-dot" style="background:#3b82f6;"></div><div class="ma-btext">Avigilon<br>~$1B · 2018</div></div>
+            <div class="ma-bubble" style="left:62%"><div class="ma-dot" style="background:#3b82f6;"></div><div class="ma-btext">Rave<br>$553M · 2021</div></div>
+            <div class="ma-bubble" style="left:80%"><div class="ma-dot" style="background:#3b82f6;"></div><div class="ma-btext">RapidDeploy<br>$241M · 2022</div></div>
+          </div>
+        </div>
+        <div class="ma-row">
+          <div class="ma-vendor">Hexagon</div>
+          <div class="ma-line">
+            <div class="ma-axis"></div>
+            <div class="ma-bubble" style="left:5%"><div class="ma-dot" style="background:#f59e0b;"></div><div class="ma-btext">Intergraph<br>$2.125B · 2010</div></div>
+            <div class="ma-bubble" style="left:62%"><div class="ma-dot" style="background:#f59e0b;"></div><div class="ma-btext">Qognify<br>2021</div></div>
+          </div>
+        </div>
+        <div class="ma-row">
+          <div class="ma-vendor">Axon</div>
+          <div class="ma-line">
+            <div class="ma-axis"></div>
+            <div class="ma-bubble" style="left:70%"><div class="ma-dot" style="background:var(--cyan);"></div><div class="ma-btext">Fusus<br>2023</div></div>
+            <div class="ma-bubble" style="left:84%"><div class="ma-dot" style="background:var(--cyan);"></div><div class="ma-btext">Prepared<br>2024</div></div>
+            <div class="ma-bubble" style="left:96%"><div class="ma-dot" style="background:var(--cyan);width:11px;height:11px;"></div><div class="ma-btext" style="color:var(--cyan);font-weight:600;">Carbyne<br>$625M · Q1 2026</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ma-years"><span class="ma-yr">2010</span><span class="ma-yr">2013</span><span class="ma-yr">2016</span><span class="ma-yr">2019</span><span class="ma-yr">2022</span><span class="ma-yr">2026</span></div>
+    </div>
+
+    <h3>Market Size — The Opportunity</h3>
+    <div class="tw no-break">
+      <table>
+        <thead><tr><th>Segment</th><th>North America (2024)</th><th>Latin America (2024)</th></tr></thead>
+        <tbody>
+          <tr><td>Video Surveillance</td><td><strong>$23.6 billion</strong></td><td>$2.3 billion</td></tr>
+          <tr><td>Video Management Software</td><td>$4.1 billion</td><td>$654 million</td></tr>
+          <tr><td>Physical Access Control</td><td>$3.5 billion</td><td>$501 million</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-2">Global vendors are increasingly present in LATAM, but their platforms were built for North American regulatory environments and procurement models. The gap between what they offer and what LATAM governments need — integration flexibility, language support, local deployment expertise — remains significant.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">10</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 04 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 04 / 10</div>
+  <div class="op-bg" aria-hidden="true">04</div>
+  <div class="op-rule"></div>
+  <div class="op-title">The Standards<br><em>Foundation</em></div>
+  <div class="op-sub">NIEM. OASIS EDXL. ONVIF. The technical conditions for true interoperability are already in place. What agencies build on top of them determines whether they lead or follow.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">CH 04 — The Standards Foundation</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">The Standards Foundation — NIEM, ONVIF, NENA i3, OASIS EDXL</div>
+    <img src="img/upso-05.png" alt="The Standards Foundation — NIEM, ONVIF, NENA i3, and OASIS EDXL definitions and roles">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 04 — The Standards Foundation</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>Three standards frameworks define the technical foundation for unified response. Agencies and vendors that build to these standards can interoperate across any combination of equipment. Those that do not become permanent integration problems — and compliance liabilities as NG911 Phase II mandates become enforceable.</p>
+
+    <div class="tw no-break" style="margin-top:5mm;">
+      <table>
+        <thead><tr><th>Standard</th><th>Governs</th><th>What It Enables</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>NIEM</strong></td><td>Data exchange model</td><td>Incident records, unit IDs, location data flow across agencies without custom translation</td><td>Required for federal/multi-state frameworks</td></tr>
+          <tr><td><strong>OASIS EDXL</strong></td><td>Emergency alerting</td><td>Structured message formats for alerts, resource messaging, situation reports across platforms</td><td>Multi-agency response requirement</td></tr>
+          <tr><td><strong>ONVIF Profile S</strong></td><td>Live video streaming</td><td>Any camera streams to any VMS without proprietary drivers</td><td>De facto standard</td></tr>
+          <tr><td><strong>ONVIF Profile T</strong></td><td>Advanced video</td><td>PTZ control, motion detection, video analytics triggers</td><td>De facto standard</td></tr>
+          <tr><td><strong>ONVIF Profile M</strong></td><td>Metadata &amp; AI</td><td>AI analytics output exposed as structured metadata</td><td>Emerging standard</td></tr>
+          <tr><td><strong>NENA i3</strong></td><td>NG911 call intake</td><td>Text, video, and data alongside voice — multi-agency data sharing</td><td>Phase II mandate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout no-break" style="margin-top:5mm;">
+      <div class="cl-lbl">Strategic Implication</div>
+      <p>These three frameworks define a common data model (NIEM), a common alerting format (EDXL), and a common video interface (ONVIF). Agencies that build procurement requirements around these standards protect themselves from vendor lock-in and ensure interoperability as their infrastructure evolves. KabatOne is built natively to all of them.</p>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">12</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 05 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 05 / 10</div>
+  <div class="op-bg" aria-hidden="true">05</div>
+  <div class="op-rule"></div>
+  <div class="op-title">What Unified Response<br><em>Actually</em> Requires</div>
+  <div class="op-sub">Not all platforms marketed as unified are genuinely integrated. Five primitives separate real unification from better-designed aggregation.</div>
+</section>
+
+<section class="page pi pi-dark2">
+  <div class="bh"><span class="bhl">CH 05 — What Unified Response Actually Requires</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Unified Response Workflow — Detection to Resolution</div>
+    <img src="img/upso-06.png" alt="Unified Response Workflow — from detection through dispatch to resolution">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 05 — What Unified Response Actually Requires</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <div class="fig-lbl">Figure 4 — The Unified Response Workflow: Detection to Resolution</div>
+    <div class="wf no-break">
+      <div class="wfs"><span class="wf-ic">📡</span><span class="wf-t">Detection</span><span class="wf-s">Camera / sensor / 911 / field report</span></div>
+      <div class="wfs"><span class="wf-ic">🗺</span><span class="wf-t">GIS Overlay</span><span class="wf-s">Incident plotted, units identified, cameras activated</span></div>
+      <div class="wfs"><span class="wf-ic">📻</span><span class="wf-t">Dispatch</span><span class="wf-s">CAD record, unit assigned, comms opened</span></div>
+      <div class="wfs"><span class="wf-ic">🚓</span><span class="wf-t">Response</span><span class="wf-s">En route, real-time status, resources</span></div>
+      <div class="wfs"><span class="wf-ic">✅</span><span class="wf-t">Resolution</span><span class="wf-s">Incident closed, audit trail complete</span></div>
+    </div>
+
+    <h3>1. Video Ingestion at Scale</h3>
+    <p>Connect cameras from any manufacturer via ONVIF — no proprietary VMS license per ecosystem. Handle live feeds, recorded footage, AI-generated alerts, and mobile video from field devices in a single interface. Video that must be toggled to manually is not integrated — it is adjacent.</p>
+
+    <h3>2. Real-Time GIS Overlay</h3>
+    <p>Every incident, unit, camera, and sensor must be geolocated and displayed on a common operational map. The GIS layer is not a reporting tool — it is the operational canvas on which command decisions are made. Dispatching a unit without knowing where it is relative to the incident and other units is a coordination failure by design.</p>
+
+    <h3>3. CAD Connectivity and NG911 Compliance</h3>
+    <p>A platform that shows video and GIS but cannot initiate or receive CAD workflow is not a unified response environment — it is a monitoring environment. NG911 compliance (NENA i3) ensures participation in next-generation emergency communication networks including text-to-911, video-to-911, and multi-agency data sharing.</p>
+
+    <h3>4. AI Analytics Embedded in Workflow</h3>
+    <p>Object detection, crowd density analysis, license plate recognition — these are only useful if they surface actionable alerts within the command workflow, attached to the relevant GIS location and video feed, with the ability to initiate dispatch. AI that outputs to a separate alert dashboard is one more screen to monitor.</p>
+
+    <h3>5. Open Architecture — Integration, Not Replacement</h3>
+    <p>A genuine unified platform connects to existing cameras via ONVIF, integrates with existing CAD via standard APIs, and provides a migration path rather than a migration mandate. A platform that demands rip-and-replace is not a platform — it is a vendor lock-in strategy.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">13</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 06 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 06 / 10</div>
+  <div class="op-bg" aria-hidden="true">06</div>
+  <div class="op-rule"></div>
+  <div class="op-title">Diagnosing Your<br>Current <em>Architecture</em></div>
+  <div class="op-sub">Eight questions designed to surface the operational and compliance cost of fragmentation in concrete terms — before any procurement conversation begins.</div>
+</section>
+
+<section class="page pi pi-dark2">
+  <div class="bh"><span class="bhl">CH 06 — Diagnosing Your Current Architecture</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Is Your Environment Still Siloed? — Fragmented Architecture vs. Unified Platform</div>
+    <img src="img/upso-07.png" alt="Is Your Environment Still Siloed? — comparison table of fragmented vs KabatOne unified platform">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 06 — Diagnosing Your Current Architecture</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>Answer these honestly before any procurement conversation. Each "no" or "not easily" is a quantifiable operational liability.</p>
+    <ul class="ck">
+      <li class="cki"><span class="ck-num">01</span><span><strong>How many separate interfaces</strong> does an operator manage during a critical incident? If three or more, each is a coordination gap.</span></li>
+      <li class="cki"><span class="ck-num">02</span><span><strong>What is your current call-to-dispatch time</strong>, and how much of it is data entry — not decision-making?</span></li>
+      <li class="cki"><span class="ck-num">03</span><span><strong>When a camera alert occurs, how many manual steps</strong> does it take to create a CAD record? Each step is a delay that compounds under volume.</span></li>
+      <li class="cki"><span class="ck-num">04</span><span><strong>Can your agency produce a complete timestamped incident lifecycle record</strong> from four separate systems in under 30 minutes? If not, you have an audit liability.</span></li>
+      <li class="cki"><span class="ck-num">05</span><span><strong>Are your video, GIS, and dispatch systems from different vendors</strong> with separate contracts, maintenance cycles, and operator training programs?</span></li>
+      <li class="cki"><span class="ck-num">06</span><span><strong>How long does it take to onboard a new operator</strong> to full proficiency across all systems? Fragmented environments have measurably longer ramp times.</span></li>
+      <li class="cki"><span class="ck-num">07</span><span><strong>Does your current architecture support NG911 Phase II</strong> requirements — text, video, and data alongside voice call intake?</span></li>
+      <li class="cki"><span class="ck-num">08</span><span><strong>Can you share structured incident data with partner agencies</strong> in NIEM-compatible formats without a manual export process?</span></li>
+    </ul>
+    <div class="callout no-break">
+      <div class="cl-lbl">Interpretation</div>
+      <p>If three or more of these answers are "no" or "not easily," fragmentation is your operational liability — not a future risk. It is a current cost distributed across training, overtime, integration maintenance, and incident reconstruction. The business case for unification starts here.</p>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">15</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 07 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 07 / 10</div>
+  <div class="op-bg" aria-hidden="true">07</div>
+  <div class="op-rule"></div>
+  <div class="op-title">KabatOne Mapped to<br>the <em>Convergence Stack</em></div>
+  <div class="op-sub">Built natively as a unified response platform — not assembled through acquisition. Each module addresses a specific operational domain while sharing one data layer, one GIS canvas, one workflow engine.</div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 07 — KabatOne Platform</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+
+    <!-- VIDEO GRID MOCKUP -->
+    <div class="fig-lbl">K-Video — Live Surveillance &amp; AI Analytics</div>
+    <img src="img/kuo-08.png" alt="KabatOne Layer 1 — Detection &amp; Intake: live video feeds, NG911 dispatch, and citizen reporting" class="no-break" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 4px 22px rgba(0,0,0,.12);margin:3mm 0;">
+
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">16</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 07 — KabatOne Platform (cont.)</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+
+    <!-- GIS MAP MOCKUP -->
+    <div class="fig-lbl">K-Safety — Live GIS &amp; Dispatch Operations</div>
+    <img src="img/kuo-09.png" alt="KabatOne Layer 2 — Coordination &amp; Response: GIS map, dispatch workflow, field responder" class="no-break" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 4px 22px rgba(0,0,0,.12);margin:3mm 0 3mm;">
+
+    <!-- MODULE TABLE -->
+    <div class="fig-lbl" style="margin-top:5mm;">Figure 5 — Module-to-Category Mapping</div>
+    <div class="tw no-break">
+      <table>
+        <thead><tr><th>Module</th><th>Industry Category</th><th>Standards</th><th>Function</th></tr></thead>
+        <tbody>
+          <tr><td><strong>K-Video</strong></td><td>VMS / Analytics</td><td>ONVIF S/T/M/G, RTSP</td><td>All cameras + AI in one searchable view</td></tr>
+          <tr><td><strong>K-Safety</strong></td><td>PSIM / GIS</td><td>NIEM, REST API</td><td>Live operational map — incidents, units, feeds</td></tr>
+          <tr><td><strong>K-Dispatch</strong></td><td>CAD / NG911</td><td>NENA i3, SIP</td><td>Call intake to dispatch in seconds</td></tr>
+          <tr><td><strong>K-Traffic</strong></td><td>Traffic Mgmt</td><td>NTCIP, REST API</td><td>Signals, sensors, enforcement on one map</td></tr>
+          <tr><td><strong>K-Connect</strong></td><td>Secure Video Share</td><td>OAuth 2.0, WebRTC</td><td>Controlled public-private video sharing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qblock no-break" style="margin-top:4mm;">
+      <div class="qmark">&ldquo;</div>
+      <div class="qtext">Agencies that consolidate detection, coordination, and response into one environment don't just operate faster — they operate with a level of shared situational awareness that fragmented systems structurally cannot deliver.</div>
+      <div class="qattr">— KabatOne · The End of Siloed Response, 2026</div>
+    </div>
+
+    <div class="sbar no-break" style="margin-top:4mm;">
+      <div class="si"><span class="sn">40+</span><span class="sl2">Cities</span></div>
+      <div class="si"><span class="sn">70M+</span><span class="sl2">Citizens Protected</span></div>
+      <div class="si"><span class="sn">40%</span><span class="sl2">Faster Response</span></div>
+      <div class="si"><span class="sn">60%</span><span class="sl2">Faster Resolution</span></div>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">17</span></div>
+</section>
+
+<section class="page pi pi-dark2">
+  <div class="bh"><span class="bhl">CH 07 — KabatOne Platform</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">KabatOne Architecture — The Unified Operations Hub</div>
+    <img src="img/upso-08.png" alt="KabatOne Architecture Hub — unified operations platform diagram">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 08 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 08 / 10</div>
+  <div class="op-bg" aria-hidden="true">08</div>
+  <div class="op-rule"></div>
+  <div class="op-title">LATAM at the<br><em>Inflection Point</em></div>
+  <div class="op-sub">Latin America is not behind the curve. In several cases, it is ahead of it. The region's investment in command-and-control infrastructure has produced some of the most sophisticated public safety environments in the world.</div>
+</section>
+
+<section class="page pi pi-dark2">
+  <div class="bh"><span class="bhl">CH 08 — LATAM at the Inflection Point</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Regional Deployment Models — LATAM vs. North America</div>
+    <img src="img/upso-13.png" alt="Regional architectures comparison — LATAM vs North America public safety deployments">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 08 — LATAM at the Inflection Point</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+
+    <div class="fig-lbl">Figure 6 — Key Deployments Across Latin America</div>
+    <div class="city-grid no-break">
+      <div class="city-card">
+        <span class="city-flag">🇲🇽</span>
+        <span class="city-system">C5i CDMX</span>
+        <span class="city-name">Ciudad de México — KabatOne Deployed</span>
+        <div class="city-stats">
+          <div class="city-stat-row"><span class="cs-lbl">Cameras connected</span><span class="cs-val cyan">83,000+</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Population served</span><span class="cs-val">22M</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Integration model</span><span class="cs-val" style="font-size:8pt;">C5/C4 Multi-agency</span></div>
+        </div>
+        <span class="city-badge">KabatOne Deployed</span>
+      </div>
+      <div class="city-card ec">
+        <span class="city-flag">🇪🇨</span>
+        <span class="city-system">ECU 911</span>
+        <span class="city-name" style="color:#22c55e;">Ecuador — National Unified Model</span>
+        <div class="city-stats">
+          <div class="city-stat-row"><span class="cs-lbl">Command centers</span><span class="cs-val green">17</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Cameras nationwide</span><span class="cs-val green">7,000+</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Integration model</span><span class="cs-val" style="font-size:8pt;">Unified national 911</span></div>
+        </div>
+        <span class="city-badge green">National Scale</span>
+      </div>
+      <div class="city-card co">
+        <span class="city-flag">🇨🇴</span>
+        <span class="city-system">Línea 123</span>
+        <span class="city-name" style="color:#f59e0b;">Bogotá — Multimodal 911</span>
+        <div class="city-stats">
+          <div class="city-stat-row"><span class="cs-lbl">Contact channels</span><span class="cs-val amber">Voice + Video + WhatsApp</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Population served</span><span class="cs-val">11M</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Innovation</span><span class="cs-val" style="font-size:8pt;">Digital-first intake</span></div>
+        </div>
+        <span class="city-badge amber">Multimodal</span>
+      </div>
+      <div class="city-card br">
+        <span class="city-flag">🇧🇷</span>
+        <span class="city-system">COR Rio</span>
+        <span class="city-name" style="color:#ef4444;">Rio de Janeiro — City Operations Center</span>
+        <div class="city-stats">
+          <div class="city-stat-row"><span class="cs-lbl">Data sources integrated</span><span class="cs-val red">Video + Weather + Traffic</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Population served</span><span class="cs-val">13M</span></div>
+          <div class="city-stat-row"><span class="cs-lbl">Achievement</span><span class="cs-val" style="font-size:8pt;">City-scale COP</span></div>
+        </div>
+        <span class="city-badge red">City Scale</span>
+      </div>
+    </div>
+
+    <p style="margin-top:5mm;">The pattern across these deployments is consistent: the agencies that have invested in unified command infrastructure have demonstrably better response coordination, clearer audit trails, and stronger inter-agency collaboration than those operating from fragmented systems.</p>
+
+    <div class="callout no-break">
+      <div class="cl-lbl">Mexico — National Topology</div>
+      <p>Mexico's public safety infrastructure includes <strong>31 Public Safety Answering Points (PSAPs)</strong> and <strong>164 sub-centers</strong> organized around the C5/C4 model — Centros de Control, Comando, Comunicación, Cómputo y Coordinación. KabatOne operates within this ecosystem at C5i Ciudad de México, C4 Monterrey, Guardia Nacional, SSP Michoacán, SSP Jalisco, and SSC CDMX.</p>
+    </div>
+
+    <p>Latin America is not at the beginning of this transition. It is in the middle of it. The agencies that define their technology strategy now will determine whether they lead or follow.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">19</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 09 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 09 / 10</div>
+  <div class="op-bg" aria-hidden="true">09</div>
+  <div class="op-rule"></div>
+  <div class="op-title">Building the<br><em>Business Case</em></div>
+  <div class="op-sub">A budget decision, a procurement decision, and often a political decision. This chapter provides the framework to address each dimension with quantified arguments.</div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 09 — Building the Business Case</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+
+    <div class="fig-lbl">Figure 7 — Documented Performance Improvements</div>
+    <div class="chart no-break">
+      <div class="chart-title">RESPONSE TIME &amp; INCIDENT RESOLUTION — KABATONE DEPLOYMENTS VS. BASELINE</div>
+      <div class="chart-row">
+        <div class="chart-lbl">
+          <span class="chart-lbl-text">Emergency Response Time — Municipal Deployments</span>
+          <span class="chart-lbl-val">−40%</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="chart-track">
+            <div class="chart-bar bar-before" style="width:100%;"><span>Fragmented — baseline (90–150 sec)</span></div>
+          </div>
+          <div class="chart-track">
+            <div class="chart-bar bar-after-resp" style="width:60%;"><span>KabatOne unified</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-row" style="margin-top:8px;">
+        <div class="chart-lbl">
+          <span class="chart-lbl-text">Incident Resolution Time — Complex Environments (Stadiums)</span>
+          <span class="chart-lbl-val">−60%</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="chart-track">
+            <div class="chart-bar bar-before" style="width:100%;"><span>Fragmented — baseline</span></div>
+          </div>
+          <div class="chart-track">
+            <div class="chart-bar bar-after-res" style="width:40%;"><span>KabatOne unified</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-row" style="margin-top:8px;">
+        <div class="chart-lbl">
+          <span class="chart-lbl-text">Time to Full Common Operating Picture (Go-Live)</span>
+          <span class="chart-lbl-val">72 hrs</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div class="chart-track">
+            <div class="chart-bar bar-before" style="width:100%;"><span>Fragmented — hours or days</span></div>
+          </div>
+          <div class="chart-track">
+            <div class="chart-bar" style="width:18%;background:linear-gradient(to right,var(--cyan),var(--blue));"><span>72h</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fig-lbl" style="margin-top:5mm;">Figure 8 — Fragmented vs. Unified: Before and After</div>
+    <div class="ba no-break">
+      <div class="ba-col">
+        <div class="ba-hd frag">Fragmented</div>
+        <div class="ba-row"><span class="ba-m">Operator interfaces</span><span class="ba-v">4+</span></div>
+        <div class="ba-row"><span class="ba-m">Call-to-dispatch</span><span class="ba-v">90–150 sec</span></div>
+        <div class="ba-row"><span class="ba-m">Audit trail</span><span class="ba-v">Manual correlation</span></div>
+        <div class="ba-row"><span class="ba-m">Time to COP</span><span class="ba-v">Hours or days</span></div>
+        <div class="ba-row"><span class="ba-m">Compliance</span><span class="ba-v">Variable</span></div>
+      </div>
+      <div class="ba-col">
+        <div class="ba-hd uni">Unified</div>
+        <div class="ba-row"><span class="ba-m">Operator interfaces</span><span class="ba-v">1 canvas</span></div>
+        <div class="ba-row"><span class="ba-m">Call-to-dispatch</span><span class="ba-v">−40%</span></div>
+        <div class="ba-row"><span class="ba-m">Audit trail</span><span class="ba-v">Automatic</span></div>
+        <div class="ba-row"><span class="ba-m">Time to COP</span><span class="ba-v">72 hours</span></div>
+        <div class="ba-row"><span class="ba-m">Compliance</span><span class="ba-v">NIEM / NG911 native</span></div>
+      </div>
+    </div>
+
+    <h3>The True Cost of Fragmentation</h3>
+    <p>The business case for unification is often framed around the cost of the new platform. The more accurate frame is the total cost of the status quo: multiple vendor contracts with annual maintenance fees, multiple operator training programs, custom integration development, incident reconstruction costs, compliance remediation, and IT overhead. When aggregated over a five-year horizon, the economic case for unification is typically compelling. Fragmentation costs are invisible as a category — even when they are large in aggregate.</p>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">21</span></div>
+</section>
+
+<section class="page pi pi-dark2">
+  <div class="bh"><span class="bhl">CH 09 — Building the Business Case</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Proven Impact at Scale — Performance Data from Live Deployments</div>
+    <img src="img/upso-14.png" alt="Proven Impact at Scale — performance metrics from KabatOne deployments">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+
+<!-- ══════════════════════ CH 10 ══════════════════════ -->
+<section class="page pd opener">
+  <div class="op-top">Chapter 10 / 10</div>
+  <div class="op-bg" aria-hidden="true">10</div>
+  <div class="op-rule"></div>
+  <div class="op-title">Questions to Ask<br>Any <em>Platform Vendor</em></div>
+  <div class="op-sub">Not all platforms marketed as unified are genuinely integrated. These ten questions are designed to separate real unification from aggregation before a procurement decision is made.</div>
+</section>
+
+<section class="page pi pi-light">
+  <div class="bh"><span class="bhl">CH 10 — Vendor Evaluation Questions</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="pi-body">
+    <div class="fig-lbl">Redefining the Procurement Standard — Four Tests Every Platform Must Pass</div>
+    <img src="img/ups-12.png" alt="Redefining the Procurement Standard — Architecture, Infrastructure, Cognitive, and Phasing tests">
+    <div class="pi-cap">SOURCE: KABATONE RESEARCH · THE END OF SILOED RESPONSE · 2026</div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">—</span></div>
+</section>
+
+<section class="page pb">
+  <div class="bh"><span class="bhl">CH 10 — Vendor Evaluation Questions</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div class="bc">
+    <p>Use these questions in any vendor evaluation session. The answers will reveal whether the platform is genuinely unified — or a better-designed aggregation layer.</p>
+    <ul class="ck">
+      <li class="cki"><span class="ck-num">01</span><span><strong>Camera integration:</strong> Does the platform connect to cameras from any manufacturer via ONVIF — without requiring proprietary hardware or an additional VMS license per ecosystem?</span></li>
+      <li class="cki"><span class="ck-num">02</span><span><strong>CAD integration:</strong> Is the dispatch module integrated natively, or does the platform require a separate third-party CAD system to function?</span></li>
+      <li class="cki"><span class="ck-num">03</span><span><strong>GIS capability:</strong> Is the GIS layer operational — dispatch-ready, with real-time unit positioning — or only informational (map display without workflow integration)?</span></li>
+      <li class="cki"><span class="ck-num">04</span><span><strong>Implementation timeline:</strong> What is your documented go-live timeline for a command center of our scale? Can you provide references from comparable deployments?</span></li>
+      <li class="cki"><span class="ck-num">05</span><span><strong>Multi-agency experience:</strong> Have you deployed in environments where multiple agencies share a single common operating picture?</span></li>
+      <li class="cki"><span class="ck-num">06</span><span><strong>NG911 compliance:</strong> How does the platform handle Phase II — text-to-911, video-to-911, and structured data alongside voice call intake?</span></li>
+      <li class="cki"><span class="ck-num">07</span><span><strong>Data standards:</strong> What is the data export format? Does it support NIEM for multi-agency and federal data sharing?</span></li>
+      <li class="cki"><span class="ck-num">08</span><span><strong>Existing infrastructure:</strong> Can we connect our existing cameras, radios, and legacy systems — or does integration require replacing equipment?</span></li>
+      <li class="cki"><span class="ck-num">09</span><span><strong>Post-go-live support:</strong> What does your ongoing support model look like for government clients — SLA, escalation path, local presence?</span></li>
+      <li class="cki"><span class="ck-num">10</span><span><strong>Data portability:</strong> If we transition to a different platform in the future, how do we export our incident and operational data?</span></li>
+    </ul>
+    <div class="callout no-break">
+      <div class="cl-lbl">How KabatOne answers</div>
+      <p>KabatOne satisfies all ten criteria natively: ONVIF camera integration, K-Dispatch native CAD, operational GIS in K-Safety, 72-hour go-live track record, multi-agency C5/C4 deployments, NENA i3 NG911 compliance, NIEM data export, open architecture preserving existing infrastructure, government-grade SLA, and full data portability. We encourage you to ask these questions to every vendor you evaluate.</p>
+    </div>
+  </div>
+  <div class="bf"><span>The End of Siloed Response</span><span class="pg">23</span></div>
+</section>
+
+
+<!-- ══════════════════════ CONCLUSION ══════════════════════ -->
+<section class="page pdf">
+  <div class="sl" style="color:var(--cyan);margin-top:0;">Conclusion</div>
+  <h2 style="color:#fff;font-size:30pt;margin-bottom:6mm;">The Agencies That Act Now</h2>
+  <div style="width:18mm;height:3px;background:var(--cyan);margin-bottom:8mm;"></div>
+  <p>The convergence happening in the public safety technology market is not speculative. It is documented in acquisition records, standards bodies, market data, and operational deployments across Latin America and North America.</p>
+  <p>The vendors that will dominate the category in five years are assembling the unified stack today — through M&amp;A, through standards adoption, and through deployment experience that only comes from operating at scale in complex environments.</p>
+  <p>For government agencies, the strategic question is not whether unified response platforms will become the operational standard. <strong>They already are.</strong> The question is how quickly each agency gets there, and on whose terms.</p>
+  <p>Agencies that define their technology strategy now will have the advantage of choosing a platform that fits their environment, their existing systems, and their operational requirements. Agencies that wait will face a market where their choices are increasingly shaped by global vendors whose primary design context is not LATAM — and whose integration models assume replacement, not connection.</p>
+  <p><strong>The industry is converging. The standards are in place. The deployments are proven.</strong><br>The next step is yours.</p>
+  <div style="margin-top:auto;">
+    <div style="font-family:var(--M);font-size:6pt;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:4mm;">Next Step</div>
+    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(6,182,212,.30);border-radius:10px;padding:15px 20px;margin-bottom:4mm;">
+      <div style="font-family:var(--B);font-size:13pt;font-weight:600;color:#fff;margin-bottom:2.5mm;">Unified Response Architecture Review</div>
+      <div style="font-family:var(--B);font-size:9.5pt;font-weight:300;color:rgba(255,255,255,.68);line-height:1.55;">Map your current infrastructure against the unified response stack. Identify integration gaps, sequencing options, and a practical path to unified operations — without replacing what already works.</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-family:var(--B);font-size:8.5pt;font-weight:300;color:rgba(255,255,255,.40);">Available for agencies, municipalities, and command-center operators across LATAM and North America.</div>
+      <div style="font-family:var(--M);font-size:9pt;color:var(--cyan);white-space:nowrap;margin-left:10mm;">kabatone.com</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<section class="page pdf">
+  <div class="sl" style="color:var(--cyan);margin-top:0;">About</div>
+  <h2 style="color:#fff;font-size:26pt;margin-bottom:4mm;">KabatOne</h2>
+  <div style="width:14mm;height:3px;background:var(--cyan);margin-bottom:7mm;"></div>
+  <p>KabatOne is a unified operations and public safety platform connecting video, sensors, GIS, dispatch, AI analytics, field response, and third-party systems into a single operational environment. With deployments across more than 40 cities protecting more than 70 million citizens, KabatOne operates in some of the most complex command and public safety environments in North America and Latin America.</p>
+  <h3 style="margin-top:6mm;margin-bottom:3mm;">Deployed Clients</h3>
+  <div class="client-tags">
+    <span class="ctag">C5i Ciudad de México</span>
+    <span class="ctag">Guardia Nacional</span>
+    <span class="ctag">SSP Michoacán</span>
+    <span class="ctag">SSP Jalisco</span>
+    <span class="ctag">SSC CDMX</span>
+    <span class="ctag">C4 Monterrey</span>
+  </div>
+  <h3 style="margin-top:7mm;margin-bottom:3mm;">Platform Modules</h3>
+  <div class="client-tags">
+    <span class="ctag">K-Video — Surveillance &amp; Analytics</span>
+    <span class="ctag">K-Safety — GIS &amp; Incident Management</span>
+    <span class="ctag">K-Dispatch — CAD &amp; NG911</span>
+    <span class="ctag">K-Traffic — Traffic Management</span>
+    <span class="ctag">K-Connect — Secure Video Sharing</span>
+  </div>
+  <div style="margin-top:auto;padding-top:8mm;border-top:1px solid rgba(255,255,255,.10);display:flex;justify-content:space-between;align-items:center;">
+    <div class="bmark"><div class="bdot"></div>KabatOne</div>
+    <div style="text-align:right;">
+      <div style="font-family:var(--M);font-size:8pt;color:rgba(255,255,255,.40);">kabatone.com</div>
+      <div style="font-family:var(--M);font-size:7pt;color:rgba(255,255,255,.22);margin-top:2px;">© 2026 KabatOne · Cresskill, NJ</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ SOURCES ══════════════════════ -->
+<section class="page pb" style="padding:14mm 18mm 12mm;">
+  <div class="bh"><span class="bhl">Sources &amp; References</span><span class="bhr">KabatOne Industry Brief 2026</span></div>
+  <div style="margin-top:6mm;columns:2;column-gap:10mm;font-family:var(--M);font-size:7pt;color:#374151;line-height:1.55;">
+
+    <!-- MARKET SIZE -->
+    <div style="break-inside:avoid;margin-bottom:5mm;">
+      <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3mm;border-bottom:1px solid rgba(59,130,246,.2);padding-bottom:1.5mm;">Market Size &amp; Forecasts</div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">1.</span> <strong>Video Surveillance Market Size Report</strong><br>
+        Grand View Research, 2023<br>
+        <span style="color:#6b7280;">grandviewresearch.com/industry-analysis/video-surveillance-market</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">2.</span> <strong>Video Surveillance &amp; VSaaS Market Report</strong><br>
+        MarketsandMarkets<br>
+        <span style="color:#6b7280;">marketsandmarkets.com/Market-Reports/video-surveillance-market-645.html</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">3.</span> <strong>Access Control Market Report</strong><br>
+        Fortune Business Insights<br>
+        <span style="color:#6b7280;">fortunebusinessinsights.com/access-control-market-102594</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">4.</span> <strong>Public Safety &amp; Security Market</strong><br>
+        MarketsandMarkets<br>
+        <span style="color:#6b7280;">marketsandmarkets.com/Market-Reports/public-safety-security-market-163.html</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">5.</span> <strong>NG911 Market Overview</strong><br>
+        Frost &amp; Sullivan<br>
+        <span style="color:#6b7280;">store.frost.com/next-generation-9-1-1-ng911-market.html</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">6.</span> <strong>Esri Public Safety GIS Overview</strong><br>
+        Esri<br>
+        <span style="color:#6b7280;">esri.com/en-us/industries/public-safety/overview</span>
+      </div>
+    </div>
+
+    <!-- M&A -->
+    <div style="break-inside:avoid;margin-bottom:5mm;">
+      <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3mm;border-bottom:1px solid rgba(59,130,246,.2);padding-bottom:1.5mm;">Ecosystem Consolidation &amp; M&amp;A</div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">7.</span> <strong>Motorola Solutions Acquires Avigilon</strong><br>
+        Motorola Solutions Press Release, Feb. 2018<br>
+        <span style="color:#6b7280;">newsroom.motorolasolutions.com</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">8.</span> <strong>Motorola Solutions Acquires Openpath</strong><br>
+        Motorola Solutions Press Release, Jul. 2021<br>
+        <span style="color:#6b7280;">newsroom.motorolasolutions.com</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">9.</span> <strong>Motorola Solutions Acquires WatchGuard</strong><br>
+        Motorola Solutions Press Release, Jul. 2019<br>
+        <span style="color:#6b7280;">newsroom.motorolasolutions.com</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">10.</span> <strong>Motorola Solutions Annual Report (Form 10-K)</strong><br>
+        Motorola Solutions Investor Relations<br>
+        <span style="color:#6b7280;">investors.motorolasolutions.com/financials/sec-filings</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">11.</span> <strong>Axon Acquires Fusus</strong><br>
+        Axon Press Release, 2024<br>
+        <span style="color:#6b7280;">investor.axon.com/press-releases</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">12.</span> <strong>Axon Strategic Investment in Carbyne</strong><br>
+        Axon Investor Relations<br>
+        <span style="color:#6b7280;">investor.axon.com/news</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">13.</span> <strong>Axon Acquires Prepared</strong><br>
+        Axon Press Release<br>
+        <span style="color:#6b7280;">investor.axon.com/press-releases</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">14.</span> <strong>Axon Form 10-K</strong><br>
+        Axon Investor Relations<br>
+        <span style="color:#6b7280;">investor.axon.com/financials/sec-filings</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">15.</span> <strong>Hexagon Acquires Intergraph</strong><br>
+        Hexagon Newsroom<br>
+        <span style="color:#6b7280;">hexagon.com/company/newsroom/press-releases</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">16.</span> <strong>Hexagon Safety &amp; Infrastructure</strong><br>
+        Hexagon Investor Relations<br>
+        <span style="color:#6b7280;">investors.hexagon.com</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">17.</span> <strong>Genetec Unified Security Platform Overview</strong><br>
+        Genetec<br>
+        <span style="color:#6b7280;">genetec.com/products/security-center</span>
+      </div>
+    </div>
+
+    <!-- NG911 -->
+    <div style="break-inside:avoid;margin-bottom:5mm;">
+      <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3mm;border-bottom:1px solid rgba(59,130,246,.2);padding-bottom:1.5mm;">NG911 &amp; Emergency Communications</div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">18.</span> <strong>National 911 Program — NG911 Overview</strong><br>
+        U.S. Department of Transportation<br>
+        <span style="color:#6b7280;">911.gov/project/ng911/</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">19.</span> <strong>FCC NG911 Reports</strong><br>
+        Federal Communications Commission<br>
+        <span style="color:#6b7280;">fcc.gov/general/9-1-1-and-e9-1-1-services</span>
+      </div>
+    </div>
+
+    <!-- LATAM -->
+    <div style="break-inside:avoid;margin-bottom:5mm;">
+      <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3mm;border-bottom:1px solid rgba(59,130,246,.2);padding-bottom:1.5mm;">LATAM Market Data</div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">20.</span> <strong>Brazil Public Security Investment Reports</strong><br>
+        Brazilian Ministry of Justice<br>
+        <span style="color:#6b7280;">gov.br/mj</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">21.</span> <strong>Mexico Public Security Budget Reports</strong><br>
+        Government of Mexico<br>
+        <span style="color:#6b7280;">gob.mx</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">22.</span> <strong>IDB Digital Government &amp; Public Safety Reports</strong><br>
+        Inter-American Development Bank<br>
+        <span style="color:#6b7280;">iadb.org/en</span>
+      </div>
+    </div>
+
+    <!-- RTCC -->
+    <div style="break-inside:avoid;margin-bottom:5mm;">
+      <div style="font-size:6pt;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:3mm;border-bottom:1px solid rgba(59,130,246,.2);padding-bottom:1.5mm;">Real-Time Crime Centers &amp; Fusion</div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">23.</span> <strong>Major Cities Chiefs Association — RTCC Resources</strong><br>
+        Major Cities Chiefs Association<br>
+        <span style="color:#6b7280;">majorcitieschiefs.com/resources</span>
+      </div>
+      <div style="margin-bottom:3mm;break-inside:avoid;">
+        <span style="color:var(--blue);font-weight:600;">24.</span> <strong>PERF Real-Time Crime Center Reports</strong><br>
+        Police Executive Research Forum<br>
+        <span style="color:#6b7280;">policeforum.org</span>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:auto;padding-top:4mm;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center;font-family:var(--M);font-size:6.5pt;color:#9ca3af;">
+    <span>The End of Siloed Response · KabatOne Industry Brief 2026</span>
+    <span>kabatone.com</span>
+  </div>
+</section>
+
+</body>
+</html>
