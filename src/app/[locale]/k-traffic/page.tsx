@@ -307,7 +307,7 @@ export default async function KTrafficPage({
         </PageHero>
 
         {/* ── BENEFITS ── */}
-        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{content.benefitsLabel}</p>
@@ -318,7 +318,7 @@ export default async function KTrafficPage({
               {benefits.map((b, i) => (
                 <div key={i} style={{
                   background: 'rgba(11,18,32,0.7)', borderRadius: '14px',
-                  border: '1px solid var(--border)', borderTop: `3px solid ${ACCENT}`,
+                  border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`,
                   padding: '28px 30px',
                 }}>
                   <div style={{
@@ -336,7 +336,7 @@ export default async function KTrafficPage({
         </section>
 
         {/* ── PROCESS / HOW IT WORKS ── */}
-        <section style={{ padding: '80px 32px' }}>
+        <section style={{ padding: '100px 40px' }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
@@ -364,7 +364,7 @@ export default async function KTrafficPage({
         </section>
 
         {/* ── CAPABILITIES ── */}
-        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
               {/* Left: heading + checklist */}
@@ -384,7 +384,7 @@ export default async function KTrafficPage({
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div style={{
                   background: 'rgba(11,18,32,0.7)', border: '1px solid var(--border)',
-                  borderRadius: '14px', borderTop: `3px solid ${ACCENT}`, padding: '28px', width: '100%', maxWidth: '360px',
+                  borderRadius: '14px', borderTop: `2px solid ${ACCENT}`, padding: '28px', width: '100%', maxWidth: '360px',
                 }}>
                   <div style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: ACCENT, marginBottom: '20px' }}>
                     {es ? 'Rendimiento del Sistema' : 'System Performance'}
@@ -409,7 +409,7 @@ export default async function KTrafficPage({
         </section>
 
         {/* ── INTEGRATIONS ── */}
-        <section style={{ padding: '80px 32px' }}>
+        <section style={{ padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{es ? 'Integraciones' : 'Integrations'}</p>
