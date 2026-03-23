@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.86] 2026-03-23 — Fix: commit missing EbookDownloadForm component from v0.81
+
+**Fixed**
+- `src/components/EbookDownloadForm.tsx` — client component was built in v0.81 but never staged; added to repo
+
+---
+
 ## [0.85] 2026-03-23 — New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema
 
 **Added**
