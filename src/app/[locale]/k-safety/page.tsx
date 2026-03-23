@@ -172,7 +172,6 @@ export default async function KSafetyPage({
             </div>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <Link href="/contact" style={{ background: 'var(--blue)', color: '#fff', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', boxShadow: '0 0 24px rgba(59,130,246,0.4)' }}>{content.cta1}</Link>
-              <Link href="/contact" style={{ background: 'transparent', color: 'var(--white)', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', border: '1px solid var(--border-b)' }}>{content.cta2}</Link>
             </div>
           </div>
 

@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.90] 2026-03-23 — Fix: single CTA sitewide — remove all secondary buttons
+
+**Changed**
+- `src/components/CTASection.tsx` — Removed "or contact sales" text link. Now renders only the single primary "Book a Demo" button.
+- `src/components/PageHero.tsx` — Removed ghost secondary `cta2` button. All industry and product page heroes now show only the primary CTA.
+- `src/app/[locale]/k-safety/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-video/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-dispatch/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-traffic/page.tsx` — Removed two inline "Talk to an Expert" ghost buttons.
+- `src/app/[locale]/about/page.tsx` — Removed secondary "Our Mission" anchor from hero CTA row.
+
+---
+
 ## [0.89] 2026-03-23 — Fix: homepage copy + ModulesSection + HowItWorks visuals
 
 **Changed**

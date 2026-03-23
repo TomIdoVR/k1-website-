@@ -367,13 +367,6 @@ export default async function KTrafficPage({
                 ))}
               </div>
             </div>
-            <div style={{ marginTop: '48px' }}>
-              <Link href="/contact" style={{
-                background: 'transparent', color: 'var(--dim)', padding: '15px 34px',
-                borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
-                border: '1px solid var(--border-b)', display: 'inline-flex', alignItems: 'center', gap: '8px',
-              }}>{content.cta2}</Link>
-            </div>
           </div>
         </section>
 
@@ -393,13 +386,6 @@ export default async function KTrafficPage({
                     </li>
                   ))}
                 </ul>
-                <div style={{ marginTop: '32px' }}>
-                  <Link href="/contact" style={{
-                    background: 'transparent', color: 'var(--dim)', padding: '15px 34px',
-                    borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
-                    border: '1px solid var(--border-b)', display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  }}>{content.cta2}</Link>
-                </div>
               </div>
               {/* Right: Performance Visual */}
               <div style={{ display: 'flex', justifyContent: 'center' }}>

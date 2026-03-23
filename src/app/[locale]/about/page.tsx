@@ -229,14 +229,6 @@ export default async function AboutPage({
               }}>
                 {content.cta1}
               </Link>
-              <a href="#mission" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                border: '1px solid rgba(255,255,255,0.15)', color: 'var(--dim)',
-                padding: '13px 28px', borderRadius: '8px', fontSize: '14px',
-                fontWeight: 500, textDecoration: 'none',
-              }}>
-                {content.cta2}
-              </a>
             </div>
           </div>
 
