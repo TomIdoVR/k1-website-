@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.89] 2026-03-23 — Fix: homepage copy + ModulesSection + HowItWorks visuals
+
+**Changed**
+- `src/app/[locale]/page.tsx` — Reverted hero H1 to original: "The Unified Operating System for Public Safety". Section heading changed from "Five Products" to "Five Solutions" (EN/ES).
+- `src/components/ModulesSection.tsx` — Section label is now static "PLATFORM MODULES" instead of the dynamic active-module name. Renamed "Analytics/BI" tab to "Analytics" to fix second-row wrapping bug.
+- `src/components/HowItWorks.tsx` — Replaced small icon circles with illustrated SVGs per step (Collect / Process / Respond), each with a radial glow background. More visual and distinctive.
+
+---
+
 ## [0.88] 2026-03-23 — Feat: Vertical proof points on all 7 industry pages
 
 **Added**

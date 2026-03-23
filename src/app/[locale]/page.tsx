@@ -373,8 +373,8 @@ export default async function HomePage({
           {/* H1 */}
           <h1 className="hp-headline">
             {es
-              ? 'Una pantalla. Cada camara, despacho y unidad en campo — conectados.'
-              : 'One screen. Every camera, dispatch call, and field unit — connected.'}
+              ? 'El Sistema Operativo Unificado para la Seguridad Publica'
+              : 'The Unified Operating System for Public Safety'}
           </h1>
 
           {/* Subtitle */}
@@ -476,7 +476,7 @@ export default async function HomePage({
                 {es ? 'LA PLATAFORMA' : 'THE PLATFORM'}
               </div>
               <h2 className="hp-products-h2">
-                {es ? (<>Cinco Productos.<br/>Una Imagen Operativa.</>) : (<>Five Products.<br/>One Operating Picture.</>)}
+                {es ? (<>Cinco Soluciones.<br/>Una Imagen Operativa.</>) : (<>Five Solutions.<br/>One Operating Picture.</>)}
               </h2>
               <p className="hp-products-sub">
                 {es

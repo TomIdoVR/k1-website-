@@ -1,7 +1,7 @@
 const steps = [
   {
     num: '01',
-    iconPath: 'M7 3h14M7 8h14M7 13h8M3 3h1M3 8h1M3 13h1',
+    color: '#06b6d4',
     en: {
       label: 'Collect',
       title: 'Every sensor, camera, and channel in',
@@ -15,7 +15,7 @@ const steps = [
   },
   {
     num: '02',
-    iconPath: 'M12 3L3 8.5V15c0 4.5 4 8.5 9 10 5-1.5 9-5.5 9-10V8.5L12 3zM9 12l2.5 2.5L15 9',
+    color: '#3b82f6',
     en: {
       label: 'Process',
       title: 'Rules engine classifies and escalates',
@@ -29,7 +29,7 @@ const steps = [
   },
   {
     num: '03',
-    iconPath: 'M2 12h4M18 12h4M12 2v4M12 18v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8',
+    color: '#22c55e',
     en: {
       label: 'Respond',
       title: 'One screen. One decision. Fast.',
@@ -43,7 +43,149 @@ const steps = [
   },
 ]
 
+/* Step illustrations */
+function CollectIllustration({ color }: { color: string }) {
+  return (
+    <svg width="120" height="100" viewBox="0 0 120 100" fill="none" aria-hidden="true">
+      {/* Central hub */}
+      <circle cx="60" cy="50" r="16" fill={`${color}18`} stroke={color} strokeWidth="1.5" />
+      <circle cx="60" cy="50" r="8" fill={`${color}30`} />
+      <circle cx="60" cy="50" r="3" fill={color} />
+      {/* Pulsing rings */}
+      <circle cx="60" cy="50" r="22" stroke={color} strokeWidth="0.75" strokeDasharray="3 3" opacity="0.4" />
+      <circle cx="60" cy="50" r="30" stroke={color} strokeWidth="0.5" strokeDasharray="2 4" opacity="0.2" />
+      {/* Camera — top-left */}
+      <rect x="8" y="10" width="18" height="12" rx="2" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <path d="M26 14.5l7-3.5v9l-7-3.5" stroke={color} strokeWidth="1.3" strokeLinejoin="round" />
+      <line x1="17" y1="16" x2="40" y2="38" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      {/* Drone — top-right */}
+      <circle cx="95" cy="14" r="4" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <path d="M89 10l-4-4M101 10l4-4M89 18l-4 4M101 18l4 4" stroke={color} strokeWidth="1" strokeLinecap="round" opacity="0.7" />
+      <line x1="91" y1="17" x2="75" y2="38" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      {/* Radio — left */}
+      <rect x="4" y="44" width="12" height="16" rx="2" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <path d="M10 41l-3-4M10 41l3-4" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="16" y1="50" x2="44" y2="50" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      {/* IoT sensor — right */}
+      <circle cx="108" cy="50" r="7" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <path d="M105 50h6M108 47v6" stroke={color} strokeWidth="1.3" strokeLinecap="round" />
+      <line x1="101" y1="50" x2="76" y2="50" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      {/* Phone — bottom-left */}
+      <rect x="12" y="74" width="10" height="16" rx="2" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <rect x="14.5" y="76.5" width="5" height="7" rx="0.5" fill={`${color}30`} />
+      <line x1="20" y1="80" x2="44" y2="63" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+      {/* Body cam — bottom-right */}
+      <rect x="88" y="74" width="16" height="14" rx="2" stroke={color} strokeWidth="1.3" fill={`${color}12`} />
+      <circle cx="96" cy="81" r="3.5" stroke={color} strokeWidth="1" fill={`${color}20`} />
+      <line x1="88" y1="79" x2="76" y2="62" stroke={color} strokeWidth="0.8" strokeDasharray="2 2" opacity="0.5" />
+    </svg>
+  )
+}
+
+function ProcessIllustration({ color }: { color: string }) {
+  return (
+    <svg width="120" height="100" viewBox="0 0 120 100" fill="none" aria-hidden="true">
+      {/* Central processor */}
+      <rect x="40" y="30" width="40" height="40" rx="4" fill={`${color}12`} stroke={color} strokeWidth="1.5" />
+      {/* CPU grid lines */}
+      <line x1="52" y1="30" x2="52" y2="70" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      <line x1="60" y1="30" x2="60" y2="70" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      <line x1="68" y1="30" x2="68" y2="70" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      <line x1="40" y1="42" x2="80" y2="42" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      <line x1="40" y1="50" x2="80" y2="50" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      <line x1="40" y1="58" x2="80" y2="58" stroke={color} strokeWidth="0.5" opacity="0.3" />
+      {/* Inner chip */}
+      <rect x="48" y="38" width="24" height="24" rx="2" fill={`${color}25`} stroke={color} strokeWidth="1" />
+      {/* Chip pins - top */}
+      <line x1="52" y1="30" x2="52" y2="34" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="60" y1="30" x2="60" y2="34" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="68" y1="30" x2="68" y2="34" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Chip pins - bottom */}
+      <line x1="52" y1="70" x2="52" y2="66" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="60" y1="70" x2="60" y2="66" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="68" y1="70" x2="68" y2="66" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Chip pins - left */}
+      <line x1="40" y1="42" x2="44" y2="42" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="40" y1="50" x2="44" y2="50" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="40" y1="58" x2="44" y2="58" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Chip pins - right */}
+      <line x1="80" y1="42" x2="76" y2="42" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="80" y1="50" x2="76" y2="50" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="80" y1="58" x2="76" y2="58" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      {/* Check mark in center */}
+      <path d="M54 50l4 4 8-8" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Input stream — left */}
+      <rect x="4" y="36" width="24" height="8" rx="2" fill={`${color}12`} stroke={color} strokeWidth="1" />
+      <rect x="6" y="38" width="8" height="4" rx="1" fill={`${color}30`} />
+      <path d="M28 40h12" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M36 37l4 3-4 3" stroke={color} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Input stream 2 */}
+      <rect x="4" y="50" width="24" height="8" rx="2" fill={`${color}12`} stroke={color} strokeWidth="1" />
+      <rect x="6" y="52" width="12" height="4" rx="1" fill={`${color}30`} />
+      <path d="M28 54h12" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M36 51l4 3-4 3" stroke={color} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Output — right */}
+      <path d="M80 50h12" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M88 46l5 4-5 4" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Output badge */}
+      <rect x="92" y="44" width="24" height="12" rx="6" fill={color} opacity="0.9" />
+      <path d="M98 50h8M104 47l3 3-3 3" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Timer label */}
+      <text x="60" y="90" textAnchor="middle" fontFamily="monospace" fontSize="8" fill={color} opacity="0.7">{'< 5 sec'}</text>
+    </svg>
+  )
+}
+
+function RespondIllustration({ color }: { color: string }) {
+  return (
+    <svg width="120" height="100" viewBox="0 0 120 100" fill="none" aria-hidden="true">
+      {/* Screen frame */}
+      <rect x="10" y="12" width="100" height="65" rx="4" fill={`${color}08`} stroke={color} strokeWidth="1.5" />
+      {/* Screen header */}
+      <rect x="10" y="12" width="100" height="14" rx="4" fill={`${color}18`} />
+      <rect x="10" y="20" width="100" height="6" fill={`${color}18`} />
+      <circle cx="18" cy="19" r="3" fill={`${color}50`} />
+      <circle cx="26" cy="19" r="3" fill={`${color}30`} />
+      <circle cx="34" cy="19" r="3" fill={`${color}20`} />
+      {/* Map background */}
+      <rect x="14" y="30" width="60" height="44" rx="2" fill={`${color}08`} stroke={color} strokeWidth="0.5" opacity="0.5" />
+      {/* Map grid */}
+      <line x1="14" y1="44" x2="74" y2="44" stroke={color} strokeWidth="0.4" opacity="0.3" />
+      <line x1="14" y1="58" x2="74" y2="58" stroke={color} strokeWidth="0.4" opacity="0.3" />
+      <line x1="34" y1="30" x2="34" y2="74" stroke={color} strokeWidth="0.4" opacity="0.3" />
+      <line x1="54" y1="30" x2="54" y2="74" stroke={color} strokeWidth="0.4" opacity="0.3" />
+      {/* Incident marker */}
+      <circle cx="44" cy="52" r="5" fill={`${color}30`} stroke={color} strokeWidth="1.2" />
+      <circle cx="44" cy="52" r="2" fill={color} />
+      <circle cx="44" cy="52" r="9" stroke={color} strokeWidth="0.7" strokeDasharray="2 2" opacity="0.5" />
+      {/* Unit A */}
+      <rect x="20" y="36" width="10" height="8" rx="1.5" fill={`${color}25`} stroke={color} strokeWidth="1" />
+      <path d="M21 41l8 0M25 37v2" stroke={color} strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="30" y1="42" x2="39" y2="50" stroke={color} strokeWidth="0.8" strokeDasharray="2 1.5" opacity="0.6" />
+      {/* Unit B */}
+      <rect x="56" y="60" width="10" height="8" rx="1.5" fill={`${color}25`} stroke={color} strokeWidth="1" />
+      <path d="M57 65l8 0M61 61v2" stroke={color} strokeWidth="0.8" strokeLinecap="round" />
+      <line x1="56" y1="63" x2="49" y2="55" stroke={color} strokeWidth="0.8" strokeDasharray="2 1.5" opacity="0.6" />
+      {/* Right panel */}
+      <rect x="78" y="30" width="28" height="10" rx="2" fill={`${color}15`} stroke={color} strokeWidth="0.7" />
+      <rect x="80" y="32.5" width="16" height="5" rx="1" fill={`${color}30`} />
+      <rect x="78" y="44" width="28" height="10" rx="2" fill={`${color}15`} stroke={color} strokeWidth="0.7" />
+      <rect x="80" y="46.5" width="12" height="5" rx="1" fill={`${color}30`} />
+      <rect x="78" y="58" width="28" height="10" rx="2" fill={color} opacity="0.85" />
+      <path d="M85 63h8M92 60.5l3 2.5-3 2.5" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Screen base */}
+      <path d="M50 77v8M38 85h24" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export default function HowItWorks({ es }: { es: boolean }) {
+  const illustrations = [
+    <CollectIllustration key="collect" color={steps[0].color} />,
+    <ProcessIllustration key="process" color={steps[1].color} />,
+    <RespondIllustration key="respond" color={steps[2].color} />,
+  ]
+
   return (
     <section style={{
       position: 'relative',
@@ -85,69 +227,37 @@ export default function HowItWorks({ es }: { es: boolean }) {
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '0',
-          position: 'relative',
         }}>
-          {/* Connecting line */}
-          <div style={{
-            position: 'absolute',
-            top: '32px',
-            left: 'calc(16.67% + 20px)',
-            right: 'calc(16.67% + 20px)',
-            height: '1px',
-            background: 'linear-gradient(90deg, rgba(6,182,212,0.4), rgba(59,130,246,0.4))',
-            zIndex: 0,
-          }} />
-
           {steps.map((step, i) => {
             const c = es ? step.es : step.en
-            const colors = ['#06b6d4', '#3b82f6', '#22c55e']
-            const color = colors[i]
             return (
               <div key={step.num} style={{
-                padding: '0 32px',
+                padding: '36px 32px',
                 borderRight: i < 2 ? '1px solid var(--border)' : 'none',
-                position: 'relative',
-                zIndex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
               }}>
-                {/* Icon circle */}
+                {/* Illustration */}
                 <div style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  background: `rgba(${i === 0 ? '6,182,212' : i === 1 ? '59,130,246' : '34,197,94'},0.1)`,
-                  border: `1px solid ${color}40`,
+                  width: '100%',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '24px',
-                  boxShadow: `0 0 24px ${color}20`,
+                  marginBottom: '28px',
+                  padding: '20px 0',
+                  background: `radial-gradient(ellipse at center, ${step.color}0a 0%, transparent 70%)`,
+                  borderRadius: '12px',
                 }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    {i === 0 && <>
-                      <rect x="2" y="3" width="20" height="14" rx="2"/>
-                      <path d="M8 21h8M12 17v4"/>
-                      <circle cx="17" cy="7" r="1" fill={color}/>
-                      <circle cx="17" cy="11" r="1" fill={color}/>
-                    </>}
-                    {i === 1 && <>
-                      <path d="M12 2L2 7v5c0 5.5 4.5 10.7 10 12 5.5-1.3 10-6.5 10-12V7L12 2z"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </>}
-                    {i === 2 && <>
-                      <rect x="2" y="3" width="20" height="14" rx="2"/>
-                      <path d="M8 21h8M12 17v4"/>
-                      <path d="M6 8h4M6 11h8" strokeWidth="1.5"/>
-                      <circle cx="17" cy="9.5" r="2.5" fill={`${color}30`} stroke={color}/>
-                    </>}
-                  </svg>
+                  {illustrations[i]}
                 </div>
 
+                {/* Step number + label */}
                 <div style={{
                   fontFamily: 'DM Mono, monospace',
                   fontSize: '10px',
                   letterSpacing: '0.2em',
                   textTransform: 'uppercase',
-                  color,
+                  color: step.color,
                   marginBottom: '10px',
                   display: 'flex',
                   alignItems: 'center',

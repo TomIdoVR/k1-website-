@@ -65,8 +65,8 @@ const modules: Record<ModKey, ModuleData> = {
   },
   bi: {
     color: '#a855f7',
-    en: { tab: 'Analytics/BI', tag: 'Analytics', name: 'Business\nIntelligence', headerName: 'Business Intelligence', tagline: 'KPI dashboards, response time trends, and executive reporting across all modules', desc: 'Operational dashboards, KPI monitoring, trend analysis, and executive reporting across all platform modules.', feats: ['Real-time KPI dashboards', 'Response time trends', 'Resource utilization', 'Executive reporting'] },
-    es: { tab: 'Analitica/BI', tag: 'Analitica', name: 'Inteligencia\nde Negocios', headerName: 'Inteligencia de Negocios', tagline: 'Dashboards KPI, tendencias de respuesta y reportes ejecutivos en todos los modulos', desc: 'Dashboards operativos, monitoreo de KPIs, analisis de tendencias y reportes ejecutivos en todos los modulos.', feats: ['Dashboards KPI en tiempo real', 'Tendencias de tiempo de respuesta', 'Utilizacion de recursos', 'Reportes ejecutivos'] },
+    en: { tab: 'Analytics', tag: 'Analytics', name: 'Business\nIntelligence', headerName: 'Business Intelligence', tagline: 'KPI dashboards, response time trends, and executive reporting across all modules', desc: 'Operational dashboards, KPI monitoring, trend analysis, and executive reporting across all platform modules.', feats: ['Real-time KPI dashboards', 'Response time trends', 'Resource utilization', 'Executive reporting'] },
+    es: { tab: 'Analitica', tag: 'Analitica', name: 'Inteligencia\nde Negocios', headerName: 'Inteligencia de Negocios', tagline: 'Dashboards KPI, tendencias de respuesta y reportes ejecutivos en todos los modulos', desc: 'Dashboards operativos, monitoreo de KPIs, analisis de tendencias y reportes ejecutivos en todos los modulos.', feats: ['Dashboards KPI en tiempo real', 'Tendencias de tiempo de respuesta', 'Utilizacion de recursos', 'Reportes ejecutivos'] },
     image: '/images/modules/bi.webp',
   },
 }
@@ -155,7 +155,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
   const activeIdx = MOD_ORDER.indexOf(active)
   const m = modules[active]
   const c = es ? m.es : m.en
-  const sectionLabel = c.headerName.toUpperCase()
+  const sectionLabel = es ? 'MÓDULOS DE LA PLATAFORMA' : 'PLATFORM MODULES'
 
   return (
     <section
