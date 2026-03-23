@@ -26,6 +26,14 @@ export default async function ResourcesPage({
   const articles = es
     ? [
         {
+          href: '/resources/end-of-siloed-response',
+          category: 'Informe del Sector',
+          title: 'El Fin de la Respuesta en Silos',
+          excerpt: 'Por qué las agencias de seguridad pública siguen operando con sistemas fragmentados — y cómo la coordinación unificada reduce el tiempo de respuesta en un 42%.',
+          readTime: '15 min',
+          isNew: true,
+        },
+        {
           href: '/resources/rtcc-setup-guide',
           category: 'Guía',
           title: 'Cómo Implementar un Centro de Crimen en Tiempo Real (RTCC)',
@@ -39,6 +47,14 @@ export default async function ResourcesPage({
           title: 'Inteligencia Artificial en Seguridad Pública: Guía para Ciudades',
           excerpt: 'Cómo la IA está transformando la respuesta a emergencias, el despacho y la videovigilancia. Casos de uso reales, beneficios, limitaciones y qué buscar.',
           readTime: '8 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/what-is-cad-dispatch-software',
+          category: 'Guía de Referencia',
+          title: '¿Qué Es el Software CAD de Despacho?',
+          excerpt: 'El software CAD gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Cómo funciona y qué buscar en un sistema moderno.',
+          readTime: '9 min',
           isNew: true,
         },
         {
@@ -84,6 +100,14 @@ export default async function ResourcesPage({
       ]
     : [
         {
+          href: '/resources/end-of-siloed-response',
+          category: 'Industry Brief',
+          title: 'The End of Siloed Response',
+          excerpt: 'Why public safety agencies are still operating fragmented systems — and how unified coordination cuts response time by 42%. Download the Q2 2026 industry brief.',
+          readTime: '15 min',
+          isNew: true,
+        },
+        {
           href: '/resources/rtcc-setup-guide',
           category: 'Guide',
           title: 'Real-Time Crime Center (RTCC) Setup Guide',
@@ -97,6 +121,14 @@ export default async function ResourcesPage({
           title: 'AI in Public Safety: A Guide for Cities',
           excerpt: 'How AI is transforming emergency response, dispatch, and video surveillance. Real use cases, benefits, limitations, and what to look for in a platform.',
           readTime: '8 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/what-is-cad-dispatch-software',
+          category: 'Reference Guide',
+          title: 'What Is CAD Dispatch Software?',
+          excerpt: 'CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. How it works step by step and what to look for in a modern system.',
+          readTime: '9 min',
           isNew: true,
         },
         {

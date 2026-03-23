@@ -214,4 +214,14 @@ export const metadata = {
     description: "Cómo KabatOne integra botones de pánico físicos y wearables con despacho CAD, video y GIS. Una alerta silenciosa activa despacho, cámaras y notificación a unidades en menos de 4 segundos.",
     canonical: "https://kabatone.com/es/integrations/panic-buttons/",
   },
+  endOfSiloedResponse: {
+    title: "El Fin de la Respuesta en Silos — Informe 2026 | KabatOne",
+    description: "Informe gratuito: cómo los líderes de seguridad pública pueden pasar de sistemas fragmentados a operaciones unificadas. Señales del mercado, estándares, despliegues en LATAM y la arquitectura de KabatOne. Descarga el PDF de 20 páginas.",
+    canonical: "https://kabatone.com/es/resources/end-of-siloed-response/",
+  },
+  whatIsCadDispatchSoftware: {
+    title: "¿Qué Es el Software CAD de Despacho? Guía para Agencias de Seguridad Pública | KabatOne",
+    description: "El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y cómo el CAD se integra con video y GIS en una plataforma unificada.",
+    canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
+  },
 } as const

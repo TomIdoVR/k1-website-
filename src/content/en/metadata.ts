@@ -214,4 +214,14 @@ export const metadata = {
     description: "How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS. Silent alert triggers dispatch, camera activation, and unit notification in under 4 seconds.",
     canonical: "https://kabatone.com/integrations/panic-buttons/",
   },
+  endOfSiloedResponse: {
+    title: "The End of Siloed Response — Industry Brief 2026 | KabatOne",
+    description: "Free industry brief: how public safety leaders can move from fragmented systems to unified operations. Covers market signals, standards, LATAM deployments, and KabatOne's architecture. Download the 20-page PDF.",
+    canonical: "https://kabatone.com/resources/end-of-siloed-response/",
+  },
+  whatIsCadDispatchSoftware: {
+    title: "What Is CAD Dispatch Software? A Guide for Public Safety Agencies | KabatOne",
+    description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS in a unified platform.",
+    canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
+  },
 } as const

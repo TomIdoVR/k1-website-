@@ -372,15 +372,15 @@ export default async function HomePage({
           {/* H1 */}
           <h1 className="hp-headline">
             {es
-              ? 'El Sistema Operativo Unificado para la Seguridad Publica'
-              : 'The Unified Operating System for Public Safety'}
+              ? 'Una pantalla. Cada camara, despacho y unidad en campo — conectados.'
+              : 'One screen. Every camera, dispatch call, and field unit — connected.'}
           </h1>
 
           {/* Subtitle */}
           <p className="hp-sub">
             {es
-              ? 'Una plataforma unificada que conecta despacho, videovigilancia, trafico y operaciones en campo. Utilizada por mas de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
-              : 'One unified platform connecting dispatch, surveillance, traffic, and field operations. Trusted by 40+ cities, protecting 70 million citizens.'}
+              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad publica. Cinco modulos integrados. Una imagen operativa unificada. Utilizada por mas de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
+              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated modules. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
           </p>
 
           {/* CTA Row */}
@@ -476,8 +476,8 @@ export default async function HomePage({
               </h2>
               <p className="hp-products-sub">
                 {es
-                  ? 'Cada modulo funciona por si solo -- y juntos forman una capa de inteligencia unificada para cualquier agencia o ciudad.'
-                  : 'Each module stands alone -- and together they form a unified intelligence layer for any agency or city.'}
+                  ? 'Cada modulo funciona de forma independiente. Juntos, le dan a su centro de mando una imagen operativa comun -- sin integrar seis proveedores distintos.'
+                  : 'Each module works independently. Together, they give your command center one common operating picture — without stitching together six different vendors.'}
               </p>
             </div>
 

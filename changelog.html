@@ -356,6 +356,80 @@
 
     <div class="timeline">
 
+      <!-- v0.85 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.85</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx</strong> — Full EN+ES explainer targeting "CAD dispatch software" keyword cluster. Covers core CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria.</li>
+            <li><strong>Schemas</strong> — ArticleSchema, FAQPageSchema (6 Q&amp;A pairs), BreadcrumbSchema.</li>
+            <li><strong>metadata.ts (EN + ES)</strong> — Added <code>whatIsCadDispatchSoftware</code> key with keyword-targeted title and meta description.</li>
+            <li><strong>sitemap.ts</strong> — Added <code>/resources/what-is-cad-dispatch-software</code> (priority 0.6). Site now 44 routes × 2 = 88 URLs.</li>
+            <li><strong>resources/page.tsx</strong> — Hub card added in both EN and ES arrays (isNew: true).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.84 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.84</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Copy: hero rewrite + CTA consolidation + products framing</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx hero H1</strong> — Rewritten from abstract "Unified Operating System" to "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what: "KabatOne is the command-and-control platform for governments and public safety agencies."</li>
+            <li><strong>page.tsx products section</strong> — Subline updated: replaced "unified intelligence layer" buzzword with "without stitching together six different vendors"</li>
+            <li><strong>CTASection.tsx</strong> — Consolidated from two equal-weight CTA buttons to one primary "Book a Demo" + a subtle text link fallback; eliminates competing CTAs across all pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.83 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.83</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card</div>
+          <ul class="tl-list">
+            <li>Added <code>/resources/end-of-siloed-response</code> and <code>/privacy</code> to sitemap.ts — both pages existed but were invisible to Google</li>
+            <li>Added ebook card for <code>/resources/end-of-siloed-response</code> to resources hub (EN + ES) — page had no internal discovery path</li>
+            <li>SEO master plan synced: agent log updated (v0.78–v0.82), Phase 3 → 0% Not started, Phase 4 → 30%, site size → 43 routes / 86 URLs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.82 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.82</span><span class="tl-date">2026-03-22</span></div>
+          <div class="tl-title">Design: industry brief landing page visual overhaul</div>
+          <ul class="tl-list">
+            <li>Removed Carbyne reference from stat labels</li>
+            <li>Removed cover card from hero; form narrowed to 360px, moved up</li>
+            <li>Redesigned SVG illustration (960×420): dot grids, red-tinted fragmented side, orange warning triangles, response time comparison, LIVE badge on hub</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.81 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.81</span><span class="tl-date">2026-03-22</span></div>
+          <div class="tl-title">Feat: Industry brief landing page /resources/end-of-siloed-response/</div>
+          <ul class="tl-list">
+            <li>Added <code>/resources/end-of-siloed-response/</code> — EN + ES landing page for Q2 2026 brief "The End of Siloed Response"</li>
+            <li>EbookDownloadForm client component: 4-field lead capture form with success state and PDF download link</li>
+            <li>Ebook cover visual, 4 key stats ($625M, >$3B, 83K+, 40%), 9-chapter grid, pull quote, bottom CTA</li>
+            <li>Full bilingual support, ArticleSchema + BreadcrumbSchema JSON-LD, metadata EN + ES</li>
+            <li>Created <code>public/downloads/</code> directory for PDF hosting</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.80 -->
       <div class="tl-entry feat">
         <div class="tl-dot"></div>

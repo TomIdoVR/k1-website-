@@ -7,6 +7,62 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.85] 2026-03-23 — New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-cad-dispatch-software/page.tsx` — Full EN+ES explainer page targeting "CAD dispatch software" keyword cluster. Covers CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- `src/content/en/metadata.ts` + `src/content/es/metadata.ts` — Added `whatIsCadDispatchSoftware` key with keyword-targeted title and description.
+- `src/app/sitemap.ts` — Added `/resources/what-is-cad-dispatch-software` (priority 0.6). Site now 44 routes × 2 = 88 URLs.
+- `src/app/[locale]/resources/page.tsx` — Added hub card for new page in both EN and ES arrays (isNew: true), inserted after existing "new" articles.
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — Added v0.83–v0.84 log rows, new explainer to Phase 3 content table, site size to 44 routes / 88 URLs.
+
+---
+
+## [0.84] 2026-03-23 — Copy: hero rewrite + CTA consolidation + products framing
+
+**Changed**
+- `src/app/[locale]/page.tsx` — Hero H1 rewritten from abstract "Unified Operating System" to concrete "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what: "KabatOne is the command-and-control platform for governments and public safety agencies."
+- `src/app/[locale]/page.tsx` — Products section subline updated: replaced "unified intelligence layer" buzzword with concrete "without stitching together six different vendors"
+- `src/components/CTASection.tsx` — Consolidated from two equal-weight CTA buttons to one primary "Book a Demo" button + a subtle text link fallback; eliminates competing CTAs across all pages that use this component
+
+---
+
+## [0.83] 2026-03-23 — Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card
+
+**Fixed**
+- `src/app/sitemap.ts` — added `/resources/end-of-siloed-response` (priority 0.7) and `/privacy` (priority 0.3), both built in v0.81 and v0.68 respectively but never added to sitemap
+- `src/app/[locale]/resources/page.tsx` — added ebook card for `/resources/end-of-siloed-response` at top of both EN and ES article arrays; page was an internal orphan with no discovery path from the hub
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — synced agent run log (v0.78–v0.82), updated Phase 3 to 0%/Not started, Phase 4 to 30%, site size to 43 routes / 86 URLs, added /vs/peregrine to keyword map, added industry brief to Phase 3 content table
+
+---
+
+## [0.82] 2026-03-22 — Design: industry brief landing page visual overhaul
+
+**Changed**
+- Removed Carbyne reference from stat labels — replaced with "Market consolidation signal"
+- Removed cover card from hero right column; form is now the sole focus, column narrowed to 360px
+- Redesigned SVG illustration: larger viewBox (960×420), richer detail — dot grid backgrounds, red-tinted fragmented side with orange warning triangles, response time comparison bar (8m 24s vs 3m 12s), blue unified side with subtitles in each node, LIVE badge on hub, improved glow filters and animations
+
+## [0.81] 2026-03-22 — Feat: Industry brief landing page /resources/end-of-siloed-response/
+
+**Added**
+- `/resources/end-of-siloed-response/` — EN + ES landing page for the Q2 2026 industry brief "The End of Siloed Response"
+- `EbookDownloadForm` client component: 4-field lead capture form (name, email, org, role) with success state and PDF download link
+- Ebook cover visual built in pure CSS/JSX — no image dependency
+- 9-chapter content grid with numbered cards
+- 4 key data point stats from the brief ($625M, >$3B, 83K+, 40%)
+- "What's inside" checklist (7 bullets EN + ES)
+- Pull quote from Chief of Operations testimonial
+- Bottom CTA pointing to architecture review request
+- `public/downloads/` directory for PDF hosting
+- Metadata entries in EN + ES metadata files
+- ArticleSchema + BreadcrumbSchema + OrganizationSchema JSON-LD
+- Full bilingual support (EN + ES)
+
 ## [0.80] 2026-03-21 — Feat: KabatOne vs Peregrine comparison page /vs/peregrine/
 
 **Added**

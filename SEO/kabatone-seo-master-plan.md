@@ -1,5 +1,5 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-03-20
+**Last updated:** 2026-03-23
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
@@ -16,13 +16,13 @@
 | Phase 0 — Foundation & audit | Done | 100% |
 | Phase 1 — Pre-launch fixes | Done | 100% |
 | Phase 2 — Launch | In progress | 0% |
-| Phase 3 — Post-launch growth | In progress | 60% |
-| Phase 4 — Spanish (es-MX) | In progress | 60% |
+| Phase 3 — Post-launch growth | Not started | 0% |
+| Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
 
-**Current site size:** 42 unique routes × 2 locales (EN + ES) = 84 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 8 (hub + 7 articles) | /integrations/: 6 | Other: 3 (about, contact, privacy)
+**Current site size:** 44 unique routes × 2 locales (EN + ES) = 88 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 10 (hub + 8 articles + 1 ebook) | /integrations/: 6 | Other: 3 (about, contact, privacy)
 
 ---
 
@@ -156,6 +156,8 @@
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
 | /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
+| Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
+| Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
 | Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
 | Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
 | /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
@@ -286,6 +288,7 @@
 | /vs/cad/ | KabatOne vs traditional CAD | Done |
 | /vs/fusus/ | KabatOne vs Fusus | Done |
 | /vs/prepared911/ | KabatOne vs Prepared 911 | Done |
+| /vs/peregrine/ | KabatOne vs Peregrine | Done |
 
 ---
 
@@ -335,6 +338,13 @@
 | 2026-03-19 | Claude Code | 6 /vs/ pages | — | Next.js + static | /vs/motorola, /vs/hexagon, /vs/mark43, /vs/axon, /vs/carbyne, /vs/cad — v0.61 |
 | 2026-03-20 | Claude Code | 2 /vs/ pages | — | Next.js + static | /vs/fusus, /vs/prepared911 — v0.69 |
 | 2026-03-20 | Claude Code | 1 page | — | Next.js | /privacy policy EN+ES — v0.68 |
+| 2026-03-21 | Claude Code | 3 integration pages | — | Next.js | /integrations/access-control, /drones, /panic-buttons — v0.78 |
+| 2026-03-21 | Claude Code | Sitemap fix | — | sitemap.ts | Added 3 missing integration paths, master plan sync — v0.79 |
+| 2026-03-21 | Claude Code | 1 /vs/ page | — | Next.js | /vs/peregrine — EN+ES, FAQ+breadcrumb schema — v0.80 |
+| 2026-03-22 | Claude Code | 1 resources page | — | Next.js | /resources/end-of-siloed-response ebook landing page + lead form — v0.81 |
+| 2026-03-22 | Claude Code | Design | — | Next.js | Industry brief page visual overhaul — v0.82 |
+| 2026-03-23 | Claude Code | Sitemap fix | — | sitemap.ts + resources/page.tsx | Fix sitemap orphans /privacy + /resources/end-of-siloed-response, add resources hub card — v0.83 |
+| 2026-03-23 | Claude Code | 1 resources page | — | Next.js | /resources/what-is-cad-dispatch-software — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v0.85 |
 
 ---
 
