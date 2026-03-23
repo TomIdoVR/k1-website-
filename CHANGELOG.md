@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.00] 2026-03-23 — Content: ebook page stat + quote update + PDF asset
+
+**Changed**
+- `end-of-siloed-response/page.tsx`: stat updated `73M+` → `70M+`; quote replaced with KabatOne-attributed thought leadership line
+- `public/downloads/the-end-of-siloed-response.pdf`: PDF asset added
+
 ## [0.99] 2026-03-23 — Feat: PDF feedback batch — content, data, and UX updates
 
 **Changed**

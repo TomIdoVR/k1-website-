@@ -43,7 +43,7 @@ export default async function EndOfSiloedResponsePage({
 
     stats: [
       { value: '40+', label: es ? 'Ciudades con operaciones unificadas' : 'Cities running unified command' },
-      { value: '73M+', label: es ? 'Ciudadanos protegidos' : 'Citizens protected' },
+      { value: '70M+', label: es ? 'Ciudadanos protegidos' : 'Citizens protected' },
       { value: '40%', label: es ? 'Respuesta más rápida documentada' : 'Faster response time documented' },
     ],
 
@@ -56,11 +56,11 @@ export default async function EndOfSiloedResponsePage({
     rightLabel: es ? 'UNIFICADO' : 'UNIFIED',
 
     quoteText: es
-      ? '"KabatOne reemplazó cuatro sistemas separados de la noche a la mañana. Nuestros despachadores tenían una imagen operativa común completa a las 72 horas del go-live."'
-      : '"KabatOne replaced four separate systems overnight. Our dispatchers had a full common operating picture within 72 hours of go-live."',
+      ? '"Las agencias que consolidan detección, coordinación y respuesta en un solo entorno no solo operan más rápido — operan con un nivel de conciencia situacional compartida que los sistemas fragmentados estructuralmente no pueden ofrecer."'
+      : '"Agencies that consolidate detection, coordination, and response into one environment don\'t just operate faster — they operate with a level of shared situational awareness that fragmented systems structurally cannot deliver."',
     quoteAttrib: es
-      ? '— Jefe de Operaciones, Policía Metropolitana EE.UU.'
-      : '— Chief of Operations, Major U.S. Metropolitan Police Department',
+      ? '— KabatOne · The End of Siloed Response, 2026'
+      : '— KabatOne · The End of Siloed Response, 2026',
 
     ctaEyebrow: es ? 'PRÓXIMO PASO' : 'NEXT STEP',
     ctaH2: es ? '¿Listo para Evaluar tu Arquitectura?' : 'Ready to Evaluate Your Architecture?',
