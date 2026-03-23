@@ -158,6 +158,7 @@
 | /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
 | Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
 | Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
+| Explainer: What Is a Real-Time Crime Center? | High | Done | v0.92 — /resources/what-is-a-real-time-crime-center/ |
 | Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
 | Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
 | /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |

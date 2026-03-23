@@ -58,6 +58,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/what-is-a-real-time-crime-center',
+          category: 'Guía de Referencia',
+          title: '¿Qué Es un Centro de Crimen en Tiempo Real (RTCC)?',
+          excerpt: 'Un RTCC integra videovigilancia en vivo, analítica de IA, LPR y despacho en un solo entorno de comando. Aprende cómo funciona y qué tecnologías necesita.',
+          readTime: '10 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-a-public-safety-platform',
           category: 'Guía de Referencia',
           title: '¿Qué Es una Plataforma de Seguridad Pública?',
@@ -129,6 +137,14 @@ export default async function ResourcesPage({
           title: 'What Is CAD Dispatch Software?',
           excerpt: 'CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. How it works step by step and what to look for in a modern system.',
           readTime: '9 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/what-is-a-real-time-crime-center',
+          category: 'Reference Guide',
+          title: 'What Is a Real-Time Crime Center (RTCC)?',
+          excerpt: 'An RTCC integrates live video surveillance, AI analytics, LPR, and dispatch into a single command environment. How it works and what technologies it requires.',
+          readTime: '10 min',
           isNew: true,
         },
         {

@@ -224,4 +224,9 @@ export const metadata = {
     description: "El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y cómo el CAD se integra con video y GIS en una plataforma unificada.",
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
+  whatIsARealTimeCrimeCenter: {
+    title: "¿Qué Es un Centro de Crimen en Tiempo Real (RTCC)? Guía Completa | KabatOne",
+    description: "Un Centro de Crimen en Tiempo Real (RTCC) integra video en vivo, analítica de IA, LPR, detección de disparos y despacho en un entorno de comando unificado. Aprende cómo funciona un RTCC y qué tecnologías necesita.",
+    canonical: "https://kabatone.com/es/resources/what-is-a-real-time-crime-center/",
+  },
 } as const

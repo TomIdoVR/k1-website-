@@ -224,4 +224,9 @@ export const metadata = {
     description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS in a unified platform.",
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
+  whatIsARealTimeCrimeCenter: {
+    title: "What Is a Real-Time Crime Center (RTCC)? Complete Guide | KabatOne",
+    description: "A Real-Time Crime Center (RTCC) integrates live video, AI analytics, LPR, gunshot detection, and dispatch into a unified command environment. Learn how RTCCs work, what technologies they use, and how to build one.",
+    canonical: "https://kabatone.com/resources/what-is-a-real-time-crime-center/",
+  },
 } as const
