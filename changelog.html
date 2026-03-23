@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v0.94 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.94</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: populate benefit icon boxes + transparent integration cards + Nav logo</div>
+          <ul class="tl-list">
+            <li><strong>k-safety, k-dispatch, k-video</strong> — Benefit card icon boxes now render emoji icons; added <code>benefitIcons</code> arrays per page (second grid uses <code>i + 3</code> offset).</li>
+            <li><strong>k-safety, k-dispatch, k-video, k-connect</strong> — Integration cards updated from solid <code>#0b1628</code> → <code>rgba(255,255,255,0.03)</code> + <code>borderTop: 2px solid ACCENT</code>.</li>
+            <li><strong>Nav.tsx</strong> — Logo image now includes <code>style={{ height: 'auto' }}</code> to resolve Next.js aspect-ratio console warning.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.93 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>

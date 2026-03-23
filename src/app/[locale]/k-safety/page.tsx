@@ -55,6 +55,8 @@ export default async function KSafetyPage({
     ctaContact: es ? 'Contactar Ventas' : 'Contact Sales',
   }
 
+  const benefitIcons = ['🛡️', '🔗', '🧠', '⚡']
+
   const benefits = es ? [
     { title: 'Gestión de Seguridad', desc: 'Automatiza el manejo de eventos desde la detección hasta la resolución, reduciendo tiempos de respuesta y coordinación manual.' },
     { title: 'Ecosistema Conectado', desc: 'Se integra perfectamente con las principales tecnologías de seguridad pública: VMS, LPR, sensores IoT, sistemas de radio.' },
@@ -241,7 +243,7 @@ export default async function KSafetyPage({
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
               {benefits.map((b, i) => (
                 <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, marginBottom: '16px' }} />
+                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', marginBottom: '16px' }}>{benefitIcons[i]}</div>
                   <h3 style={{ fontSize: '17px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--white)', marginBottom: '10px' }}>{b.title}</h3>
                   <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.65 }}>{b.desc}</p>
                 </div>
@@ -299,7 +301,7 @@ export default async function KSafetyPage({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px', textAlign: 'center' }}>{content.intH2}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {integrations.map((int, i) => (
-                <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }}>
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px' }}>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '10px' }}>{int.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.65 }}>{int.desc}</p>
                 </div>

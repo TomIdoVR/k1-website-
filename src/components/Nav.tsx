@@ -59,6 +59,7 @@ export default function Nav() {
           width={160}
           height={27}
           priority
+          style={{ height: 'auto' }}
         />
       </Link>
 
