@@ -19,12 +19,12 @@ const steps = [
     en: {
       label: 'Process',
       title: 'Rules engine classifies and escalates',
-      body: 'The Avalon engine evaluates every event against configurable rules, scores priority, cross-references GIS and dispatch data, and triggers the right protocol — in under 5 seconds.',
+      body: 'The K1 engine evaluates every event against configurable rules, scores priority, cross-references GIS and dispatch data, and triggers the right protocol — in under 5 seconds.',
     },
     es: {
       label: 'Procesamiento',
       title: 'Motor de reglas clasifica y escala',
-      body: 'El motor Avalon evalua cada evento contra reglas configurables, puntua la prioridad, cruza datos GIS y de despacho, y activa el protocolo correcto — en menos de 5 segundos.',
+      body: 'El motor K1 evalua cada evento contra reglas configurables, puntua la prioridad, cruza datos GIS y de despacho, y activa el protocolo correcto — en menos de 5 segundos.',
     },
   },
   {

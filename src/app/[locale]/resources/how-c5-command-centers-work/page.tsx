@@ -42,7 +42,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
     },
     {
       question: '¿Qué plataformas de software operan en los centros C5?',
-      answer: 'Los centros C5 modernos utilizan plataformas de software unificadas que integran CAD, VMS, GIS, tráfico y analítica en un solo sistema. La plataforma Avalon de KabatOne opera en más de 40 ciudades de América Latina, proporcionando conciencia situacional en tiempo real para operaciones C5.',
+      answer: 'Los centros C5 modernos utilizan plataformas de software unificadas que integran CAD, VMS, GIS, tráfico y analítica en un solo sistema. La plataforma K1 de KabatOne opera en más de 40 ciudades de América Latina, proporcionando conciencia situacional en tiempo real para operaciones C5.',
     },
     {
       question: '¿Cómo integran videovigilancia los centros C5?',
@@ -67,7 +67,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
     },
     {
       question: 'What software platforms power C5 centers?',
-      answer: 'Modern C5 centers use unified software platforms that integrate CAD, VMS, GIS, traffic, and analytics into a single system. KabatOne\'s Avalon platform operates in over 40 cities across Latin America, providing real-time situational awareness for C5 operations.',
+      answer: 'Modern C5 centers use unified software platforms that integrate CAD, VMS, GIS, traffic, and analytics into a single system. KabatOne\'s K1 platform operates in over 40 cities across Latin America, providing real-time situational awareness for C5 operations.',
     },
     {
       question: 'How do C5 centers integrate video surveillance?',
@@ -407,8 +407,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </p>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
             {es
-              ? 'La plataforma Avalon de KabatOne es un ejemplo de esta arquitectura unificada. Avalon opera en más de 40 ciudades de América Latina, conectando módulos de despacho (K-Dispatch), gestión de video (K-Video), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en un ecosistema integrado.'
-              : 'KabatOne\'s Avalon platform exemplifies this unified architecture. Avalon operates in over 40 cities across Latin America, connecting dispatch modules (K-Dispatch), video management (K-Video), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) into an integrated ecosystem.'}
+              ? 'La plataforma K1 de KabatOne es un ejemplo de esta arquitectura unificada. K1 opera en más de 40 ciudades de América Latina, conectando módulos de despacho (K-Dispatch), gestión de video (K-Video), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en un ecosistema integrado.'
+              : 'KabatOne\'s K1 platform exemplifies this unified architecture. K1 operates in over 40 cities across Latin America, connecting dispatch modules (K-Dispatch), video management (K-Video), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) into an integrated ecosystem.'}
           </p>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
@@ -512,8 +512,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           es={es}
           h2={es ? 'Transforma tu Centro C5 con Tecnología Unificada' : 'Transform Your C5 Center with Unified Technology'}
           subtitle={es
-            ? 'La plataforma Avalon de KabatOne opera en más de 40 ciudades de América Latina. Descubre cómo una plataforma unificada puede mejorar los tiempos de respuesta y la coordinación operativa de tu centro de mando.'
-            : 'KabatOne\'s Avalon platform operates in over 40 cities across Latin America. Discover how a unified platform can improve response times and operational coordination at your command center.'}
+            ? 'La plataforma K1 de KabatOne opera en más de 40 ciudades de América Latina. Descubre cómo una plataforma unificada puede mejorar los tiempos de respuesta y la coordinación operativa de tu centro de mando.'
+            : 'KabatOne\'s K1 platform operates in over 40 cities across Latin America. Discover how a unified platform can improve response times and operational coordination at your command center.'}
         />
 
         <Footer es={es} />

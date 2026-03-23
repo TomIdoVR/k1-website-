@@ -38,7 +38,7 @@ export default async function VsMotorolaPage({
     },
     {
       question: '¿Motorola Solutions incluye CAD y video en una sola plataforma?',
-      answer: 'No directamente. PremierOne CAD es el sistema de despacho de Motorola, Avigilon es su plataforma de video inteligente y CommandCentral Aware es su solución de conciencia situacional — cada uno es un producto con licencia independiente que requiere integración. KabatOne, en cambio, integra video, CAD, GIS y gestión de tráfico como módulos nativos en una sola plataforma sobre la base Avalon, eliminando la necesidad de conectar múltiples sistemas.',
+      answer: 'No directamente. PremierOne CAD es el sistema de despacho de Motorola, Avigilon es su plataforma de video inteligente y CommandCentral Aware es su solución de conciencia situacional — cada uno es un producto con licencia independiente que requiere integración. KabatOne, en cambio, integra video, CAD, GIS y gestión de tráfico como módulos nativos en una sola plataforma sobre la plataforma K1, eliminando la necesidad de conectar múltiples sistemas.',
     },
     {
       question: '¿Puede KabatOne trabajar con infraestructura de radio Motorola existente?',
@@ -63,7 +63,7 @@ export default async function VsMotorolaPage({
     },
     {
       question: 'Does Motorola Solutions include CAD and video in one platform?',
-      answer: 'Not directly. PremierOne CAD is Motorola\'s dispatch system, Avigilon is its intelligent video platform, and CommandCentral Aware is its situational awareness solution — each is an independently licensed product requiring integration. KabatOne, in contrast, integrates video, CAD, GIS, and traffic management as native modules in one platform on the Avalon foundation, eliminating the need to stitch together multiple systems.',
+      answer: 'Not directly. PremierOne CAD is Motorola\'s dispatch system, Avigilon is its intelligent video platform, and CommandCentral Aware is its situational awareness solution — each is an independently licensed product requiring integration. KabatOne, in contrast, integrates video, CAD, GIS, and traffic management as native modules in one platform on the K1 platform, eliminating the need to stitch together multiple systems.',
     },
     {
       question: 'Can KabatOne work with existing Motorola radio infrastructure?',
@@ -255,8 +255,8 @@ export default async function VsMotorolaPage({
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la base Avalon.'
-                : 'KabatOne is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the Avalon foundation.'}
+                ? 'KabatOne es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'KabatOne is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es

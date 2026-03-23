@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.96] 2026-03-23 — Copy: rename platform "Avalon" → "K1" across 14 files
+
+**Changed**
+- Replaced all occurrences of "Avalon" (as the KabatOne platform name) with "K1" across 14 files: `HowItWorks.tsx`, `psim-vs-unified-platform/page.tsx`, `smart-city-platform-guide/page.tsx`, `how-c5-command-centers-work/page.tsx`, `vs/vms`, `vs/hexagon`, `vs/genetec`, `vs/milestone`, `vs/carbyne`, `vs/cad`, `vs/motorola`, `vs/mark43`, `about/page.tsx`, `public-safety-software-municipalities-mexico/page.tsx`
+- No structural or logic changes — copy-only rename
+
+## [0.95] 2026-03-23 — Feat: auto-detect Spanish browser language
+
+**Added**
+- `localeDetection: true` in `src/i18n/routing.ts` — visitors whose browser is set to Spanish are automatically redirected to `/es/`; preference is persisted via `NEXT_LOCALE` cookie
+
 ## [0.94] 2026-03-23 — Fix: populate benefit icon boxes + transparent integration cards + Nav logo
 
 **Fixed**
