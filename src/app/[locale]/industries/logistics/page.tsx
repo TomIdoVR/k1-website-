@@ -92,8 +92,8 @@ export default async function LogisticsPage({
   ]
 
   /* products */
-  const productsLabel = es ? 'Productos de la Plataforma' : 'Platform Products'
-  const productsH2 = es ? 'Productos para Operaciones Logísticas' : 'Products for Logistics Operations'
+  const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
+  const productsH2 = es ? 'Soluciones para Operaciones Logísticas' : 'Solutions for Logistics Operations'
   const productsDesc = es
     ? 'Modular y escalable — desde una sola instalación hasta redes de distribución nacionales.'
     : 'Modular and scalable — from a single facility to nationwide distribution networks.'

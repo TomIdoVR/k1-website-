@@ -45,8 +45,8 @@ export default async function KDispatchPage({
     intH2: es ? 'Mejora la Respuesta con Integraciones Perfectas' : 'Enhance Emergency Response with Seamless Integrations',
     caseTag: es ? 'Caso de Éxito' : 'Case Study',
     caseH2: es
-      ? 'Transformando la Respuesta de Emergencias: Centro 911 de México'
-      : 'Transforming Emergency Response: Mexico\'s 911 Center',
+      ? 'C5CDMX: Transformando la Respuesta de Emergencias en México'
+      : 'C5CDMX: Transforming Emergency Response in Mexico',
     caseBody: es
       ? 'Sirviendo a más de 22 millones de personas a través de 500+ operadores, K-Dispatch impulsa el mayor centro 911 de México con coordinación potenciada por IA en más de 100 agencias.'
       : 'Serving over 22 million people through 500+ operators, K-Dispatch powers Mexico\'s largest 911 center with AI-driven coordination across 100+ agencies — cutting response times and dramatically increasing dispatch efficiency.',
@@ -74,15 +74,15 @@ export default async function KDispatchPage({
   ]
 
   const aiCards = es ? [
-    { title: 'Recolección e Integración de Datos', desc: 'Agrega datos en tiempo real de centros 911, sensores, AVL y unidades de campo.' },
-    { title: 'Gestión y Respuesta a Incidentes', desc: 'La IA clasifica incidentes, asigna prioridad y recomienda la respuesta óptima.' },
-    { title: 'Análisis Potenciado por IA', desc: 'Analiza patrones, predice escalada y optimiza el enrutamiento de despacho.' },
-    { title: 'Información Post-Incidente', desc: 'Genera informes de acción posterior y retroalimenta los aprendizajes al modelo de IA.' },
+    { title: 'Recolección e Integración de Datos', desc: 'Agrega datos en tiempo real de centros 911, sensores, AVL y unidades de campo.', icon: '📥' },
+    { title: 'Gestión y Respuesta a Incidentes', desc: 'La IA clasifica incidentes, asigna prioridad y recomienda la respuesta óptima.', icon: '🚨' },
+    { title: 'Análisis Potenciado por IA', desc: 'Analiza patrones, predice escalada y optimiza el enrutamiento de despacho.', icon: '🤖' },
+    { title: 'Información Post-Incidente', desc: 'Genera informes de acción posterior y retroalimenta los aprendizajes al modelo de IA.', icon: '📊' },
   ] : [
-    { title: 'Data Collection & Integration', desc: 'Aggregates real-time data from 911 centers, sensors, AVL, and field units.' },
-    { title: 'Incident Management & Response', desc: 'AI triages incidents, assigns priority, and recommends optimal response.' },
-    { title: 'AI-Powered Analysis', desc: 'Analyzes patterns, predicts escalation, and optimizes dispatch routing.' },
-    { title: 'Post-Incident Insights', desc: 'Generates after-action reports and feeds learnings back to the AI model.' },
+    { title: 'Data Collection & Integration', desc: 'Aggregates real-time data from 911 centers, sensors, AVL, and field units.', icon: '📥' },
+    { title: 'Incident Management & Response', desc: 'AI triages incidents, assigns priority, and recommends optimal response.', icon: '🚨' },
+    { title: 'AI-Powered Analysis', desc: 'Analyzes patterns, predicts escalation, and optimizes dispatch routing.', icon: '🤖' },
+    { title: 'Post-Incident Insights', desc: 'Generates after-action reports and feeds learnings back to the AI model.', icon: '📊' },
   ]
 
   const integrations = es ? [
@@ -283,7 +283,7 @@ export default async function KDispatchPage({
               {aiCards.map((c, i) => (
                 <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px', position: 'relative' }}>
                   <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.2em', color: ACCENT, marginBottom: '16px' }}>{String(i + 1).padStart(2, '0')}</div>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, marginBottom: '16px' }} />
+                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>{c.icon}</div>
                   <h3 style={{ fontSize: '17px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', letterSpacing: '0.03em', color: 'var(--white)', marginBottom: '10px' }}>{c.title}</h3>
                   <p style={{ fontSize: '13px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.65 }}>{c.desc}</p>
                 </div>

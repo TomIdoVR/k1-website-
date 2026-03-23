@@ -40,11 +40,11 @@ export default async function StadiumsPage({
   const heroStats = es ? [
     { value: '60%', label: 'Resolución Más Rápida' },
     { value: '24/7', label: 'Monitoreo' },
-    { value: '4', label: 'Zonas de Cobertura' },
+    { value: '360°', label: 'Cobertura Total' },
   ] : [
     { value: '60%', label: 'Faster Resolution' },
     { value: '24/7', label: 'Monitoring' },
-    { value: '4', label: 'Coverage Zones' },
+    { value: '360°', label: 'Full Coverage' },
   ]
 
   /* challenges */
@@ -105,7 +105,7 @@ export default async function StadiumsPage({
   ]
 
   /* products */
-  const productsLabel = es ? 'Productos de la Plataforma' : 'Platform Products'
+  const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'El Stack Completo de Seguridad para Recintos' : 'The Full Venue Security Stack'
   const productsDesc = es
     ? 'KabatOne se integra con tus sistemas existentes — sin necesidad de reemplazar, solo inteligencia unificada.'

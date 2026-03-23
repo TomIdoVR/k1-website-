@@ -77,7 +77,7 @@ export default async function PortsPage({
   ]
 
   /* products */
-  const productsLabel = es ? 'Productos de la Plataforma' : 'Platform Products'
+  const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'Diseñado para Entornos Marítimos' : 'Built for Maritime Environments'
   const productsDesc = es
     ? 'KabatOne despliega una suite completa diseñada específicamente para seguridad y operaciones portuarias.'

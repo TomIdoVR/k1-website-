@@ -44,10 +44,10 @@ export default async function KSafetyPage({
     capH2: es ? 'Plataforma de Mando de Seguridad Pública Todo en Uno' : 'An All-in-One Public Safety Command Platform',
     intH2: es ? 'Conecta K-Safety a tu Infraestructura Existente' : 'Connect K-Safety to Your Existing Infrastructure',
     caseTag: es ? 'Caso de Éxito' : 'Case Study',
-    caseH2: es ? 'Transformando la Seguridad Pública en Jalisco, México' : 'Transforming Public Safety in Jalisco, Mexico',
+    caseH2: es ? 'Transformando la Seguridad Pública en Michoacán, México' : 'Transforming Public Safety in Michoacán, Mexico',
     caseBody: es
-      ? 'K-Safety impulsa uno de los centros de mando de seguridad pública más avanzados de América Latina — integrando miles de cámaras, botones de pánico y analítica con IA para proteger a millones de ciudadanos en todo el estado de Jalisco.'
-      : 'K-Safety powers one of Latin America\'s most advanced public safety command centers — integrating thousands of cameras, panic buttons, and AI-driven analytics to protect millions of citizens across the state of Jalisco.',
+      ? 'K-Safety impulsa uno de los centros de mando de seguridad pública más avanzados de América Latina — integrando miles de cámaras, botones de pánico y analítica con IA para proteger a millones de ciudadanos en todo el estado de Michoacán.'
+      : 'K-Safety powers one of Latin America\'s most advanced public safety command centers — integrating thousands of cameras, panic buttons, and AI-driven analytics to protect millions of citizens across the state of Michoacán.',
     ctaH2: es ? '¿Listo para Transformar la Seguridad Pública?' : 'Ready to Transform Public Safety?',
     ctaSub: es
       ? 'Agenda una demo personalizada y descubre cómo K-Safety puede proteger tu ciudad.'
@@ -321,7 +321,7 @@ export default async function KSafetyPage({
                 { value: '5,400+', label: es ? 'Cámaras activas' : 'Active cameras' },
                 { value: '530+', label: es ? 'Botones de pánico' : 'Panic buttons' },
                 { value: '100+', label: es ? 'Cámaras de reconocimiento facial' : 'Facial recognition cameras' },
-                { value: '10,000+', label: es ? 'Reportes directos' : 'Direct reports' },
+                { value: '80', label: es ? 'Operadores' : 'Operators' },
               ].map((s, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '24px 16px' }}>
                   <div style={{ fontSize: '32px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif' }}>{s.value}</div>

@@ -63,10 +63,18 @@ export default function EbookDownloadForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // Simulate brief API delay — connect to your CRM/form service here
-    await new Promise((r) => setTimeout(r, 600))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch('https://formspree.io/f/xbdzngyq', {
+        method: 'POST',
+        body: new FormData(e.currentTarget),
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      }
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {

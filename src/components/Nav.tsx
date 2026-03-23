@@ -174,23 +174,24 @@ export default function Nav() {
         <li><Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{locale === 'es' ? 'Contacto' : 'Contact'}</Link></li>
 
         {/* Language switcher */}
-        <li style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}>
+        <li style={{ display: 'flex', alignItems: 'center', border: '1px solid var(--border)', borderRadius: '6px', padding: '2px', gap: '2px' }}>
           <button
             onClick={() => switchLocale('en')}
             style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: locale === 'en' ? 'var(--white)' : 'var(--dim)',
-              fontSize: '12px', fontWeight: locale === 'en' ? 600 : 400,
-              padding: '2px 4px',
+              background: locale === 'en' ? 'rgba(255,255,255,0.08)' : 'none',
+              border: 'none', borderRadius: '4px', cursor: 'pointer',
+              color: locale === 'en' ? 'var(--white)' : 'var(--muted)',
+              fontSize: '11px', fontWeight: locale === 'en' ? 700 : 400,
+              padding: '3px 8px', fontFamily: 'DM Mono, monospace', letterSpacing: '0.05em',
             }}>EN</button>
-          <span style={{ color: 'var(--border-b)' }}>|</span>
           <button
             onClick={() => switchLocale('es')}
             style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              color: locale === 'es' ? 'var(--white)' : 'var(--dim)',
-              fontSize: '12px', fontWeight: locale === 'es' ? 600 : 400,
-              padding: '2px 4px',
+              background: locale === 'es' ? 'rgba(255,255,255,0.08)' : 'none',
+              border: 'none', borderRadius: '4px', cursor: 'pointer',
+              color: locale === 'es' ? 'var(--white)' : 'var(--muted)',
+              fontSize: '11px', fontWeight: locale === 'es' ? 700 : 400,
+              padding: '3px 8px', fontFamily: 'DM Mono, monospace', letterSpacing: '0.05em',
             }}>ES</button>
         </li>
 

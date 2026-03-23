@@ -376,7 +376,7 @@ export default async function PublicSafetyPage({
         <section style={{ borderTop: '1px solid var(--border)', padding: '80px 32px' }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Productos de la Plataforma' : 'Platform Products'}
+              {es ? 'Soluciones de la Plataforma' : 'Platform Solutions'}
             </p>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.0, marginBottom: '12px' }}>
               {es ? 'La Suite Completa para Seguridad Publica' : 'The Full Stack for Public Safety'}

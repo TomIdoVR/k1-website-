@@ -335,14 +335,18 @@ const industryCards = [
 
 /* ── Trusted agencies carousel ── */
 const agencies = [
-  { abbr: 'SSP', name: 'Secretaria de Seguridad\nMichoacan' },
-  { abbr: 'C5i', name: 'Centro de Comando\nCiudad de Mexico' },
-  { abbr: 'GN', name: 'Guardia\nNacional' },
-  { abbr: 'C4', name: 'Centro de Mando\nMonterrey' },
-  { abbr: 'SSC', name: 'Secretaria de Seguridad\nCiudadana CDMX' },
-  { abbr: 'SSPC', name: 'Secretaria de Seguridad\nPublica Federal' },
-  { abbr: 'SSP', name: 'Secretaria de Seguridad\nJalisco' },
-  { abbr: 'C5', name: 'Centro de Inteligencia\nGuerrero' },
+  { abbr: 'C5CDMX', name: 'Centro de Mando\nCiudad de Mexico' },
+  { abbr: 'YUC', name: 'Secretaria de Seguridad\nYucatan' },
+  { abbr: 'DGO', name: 'Secretaria de Seguridad\nDurango' },
+  { abbr: 'SIN', name: 'Secretaria de Seguridad\nSinaloa' },
+  { abbr: 'TAM', name: 'Secretaria de Seguridad\nTamaulipas' },
+  { abbr: 'INAMI', name: 'Instituto Nacional\nde Migracion' },
+  { abbr: 'JAL', name: 'Secretaria de Seguridad\nJalisco' },
+  { abbr: 'MICH', name: 'Secretaria de Seguridad\nMichoacan' },
+  { abbr: 'CHIS', name: 'Secretaria de Seguridad\nChiapas' },
+  { abbr: 'PUE', name: 'Secretaria de Seguridad\nPuebla' },
+  { abbr: 'NAU', name: 'Centro de Mando\nNaucalpan' },
+  { abbr: 'NAY', name: 'Secretaria de Seguridad\nNayarit' },
 ]
 
 export default async function HomePage({
@@ -401,6 +405,31 @@ export default async function HomePage({
 
         {/* ═══ MODULES / BI TABBED SECTION ═══ */}
         <ModulesSection es={es} />
+
+        {/* ═══ INTEGRATION PARTNER LOGOS ═══ */}
+        <section style={{ padding: '40px 40px', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '1060px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '32px' }}>
+              {es ? 'Ecosistema de Integraciones' : 'Integration Ecosystem'}
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '48px' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.milestonesys.com/Static/Img/Global/logo.svg" alt="Milestone" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.genetec.com/binaries/content/gallery/genetecweb/ie/genetec_logo.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://rapidsos.com/wp-content/uploads/2022/10/rapidsos-horizontal-logo.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://carbyne.com/wp-content/uploads/2024/12/carbyne-registered-logo.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.corsight.ai/wp-content/uploads/2021/05/corsight-logo-white.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://motorola-style.cdn.prismic.io/motorola-style/656612a6531ac2845a2568a5_LogoFill-1-.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.i-pro.com/products_and_solutions/themes/custom/ipro/logo.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+            </div>
+          </div>
+        </section>
 
         {/* ═══ PROOF / STATS SECTION ═══ */}
         <section className="hp-proof">

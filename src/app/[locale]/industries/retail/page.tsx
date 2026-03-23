@@ -75,7 +75,7 @@ export default async function RetailPage({
   ]
 
   /* products */
-  const productsLabel = es ? 'Productos de la Plataforma' : 'Platform Products'
+  const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'El Stack de Seguridad Retail' : 'The Retail Security Stack'
   const productsDesc = es
     ? 'La plataforma modular de KabatOne despliega exactamente lo que tu entorno retail necesita.'

@@ -36,7 +36,7 @@ export default async function KVideoPage({
       : 'Scalable cloud and on-premises video management system powered by AI-driven analytics — enabling real-time monitoring, forensic search, and automated threat detection across thousands of cameras.',
     stat1: { value: '1,204+', label: es ? 'Cámaras Activas' : 'Active Cameras' },
     stat2: { value: '98%', label: es ? 'Disponibilidad' : 'Uptime' },
-    stat3: { value: 'IA', label: es ? 'Analítica' : 'AI Analytics' },
+    stat3: { value: '15+', label: es ? 'Modelos de IA' : 'AI Models' },
     cta1: es ? 'Solicita una Demo' : 'Book a Demo',
     cta2: es ? 'Ver la Plataforma' : 'Talk to an Expert',
     benefitsLabel: es ? 'Por qué K-Video' : 'Why K-Video',
@@ -383,6 +383,9 @@ export default async function KVideoPage({
 
         {/* ── BOTTOM CTA ── */}
         <section style={{ padding: '96px 32px', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: ACCENT, marginBottom: '16px' }}>
+            {es ? 'Video Inteligente · K-Video' : 'Video Intelligence · K-Video'}
+          </p>
           <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '16px' }}>{content.ctaH2}</h2>
           <p style={{ fontSize: '16px', color: 'var(--dim)', marginBottom: '40px' }}>{content.ctaSub}</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -7,6 +7,32 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [0.99] 2026-03-23 — Feat: PDF feedback batch — content, data, and UX updates
+
+**Changed**
+- k-safety case study: "Jalisco" → "Michoacán"; stat "10,000+ Direct reports" → "80 Operators"
+- k-dispatch case study: renamed to "C5CDMX: Transforming Emergency Response in Mexico"
+- k-dispatch AI Workflow cards: added emoji icons (📥 🚨 🤖 📊) to empty icon boxes
+- k-video hero stat3: placeholder "IA" → "15+ AI Models"; added section eyebrow to bottom CTA
+- k-connect HubDiagram inputs: replaced with Campuses, Universities, Factories, Stores, Citizens, Gov. Facilities
+- Homepage agencies strip: updated to 12 clients (C5CDMX, YUC, DGO, SIN, TAM, INAMI, JAL, MICH, CHIS, PUE, NAU, NAY)
+- About page regions: restructured to Mexico (HQ), Israel (R&D), United States (Commercial office)
+- Stadiums hero stat: "4 Coverage Zones" → "360° Full Coverage"
+- Industry pages: "Platform Products" → "Platform Solutions" in 7 pages (airport, public-safety, municipalities, logistics, ports, retail, stadiums)
+- EN/ES language switcher: restyled as a segmented pill control (visually distinct from nav links)
+- ModulesSection: fixed Analytics tab wrapping to second row (flex-wrap: nowrap)
+
+**Added**
+- Integration partner logo strip on homepage after ModulesSection: Milestone, Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro
+
+---
+
+## [0.97] 2026-03-23 — Feat: contact form connected to Formspree
+
+**Added**
+- New `ContactForm` client component (`src/components/ContactForm.tsx`) — submits to Formspree via AJAX (no page redirect)
+- Loading, success, and error states; EN + ES strings fully supported
+
 ## [0.96] 2026-03-23 — Copy: rename platform "Avalon" → "K1" across 14 files
 
 **Changed**

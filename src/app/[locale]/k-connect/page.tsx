@@ -269,11 +269,12 @@ export default async function KConnectPage({
               product="K-CONNECT"
               tagline="SHARE · MONITOR · RESPOND"
               inputs={[
-                { label: 'Cameras',      pillW: 88,  icon: <><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></> },
-                { label: 'Organizations',pillW: 112, icon: <><rect x="-13" y="-6" width="26" height="20" rx="2"/><rect x="-6" y="-13" width="12" height="8" rx="1"/><line x1="-7" y1="14" x2="-7" y2="7"/><line x1="0" y1="14" x2="0" y2="7"/><line x1="7" y1="14" x2="7" y2="7"/></> },
-                { label: 'Permissions',  pillW: 100, icon: <><rect x="-9" y="-2" width="18" height="15" rx="2"/><path d="M-5,-2 L-5,-7 C-5,-11 5,-11 5,-7 L5,-2"/><circle cx="0" cy="5.5" r="2.5" fill="#60a5fa" stroke="none"/></> },
-                { label: 'AI Monitoring',pillW: 108, icon: <><circle cx="0" cy="-2" r="8" fill="none"/><circle cx="-6" cy="-4" r="2" fill="#60a5fa" stroke="none"/><circle cx="6" cy="-4" r="2" fill="#60a5fa" stroke="none"/><path d="M-5,-7 Q0,-13 5,-7"/><path d="M-8,2 Q-13,6 -9,10"/><path d="M8,2 Q13,6 9,10"/></> },
-                { label: 'Event Feeds',  pillW: 100, icon: <><line x1="-12" y1="-10" x2="0" y2="-10"/><line x1="-12" y1="-4" x2="4" y2="-4"/><line x1="-12" y1="2" x2="2" y2="2"/><line x1="-12" y1="8" x2="-2" y2="8"/><polyline points="6,-2 12,4 6,10"/></> },
+                { label: 'Campuses',            pillW: 90,  icon: <><rect x="-10" y="-8" width="12" height="16" rx="1"/><rect x="4" y="-4" width="9" height="12" rx="1"/><line x1="-10" y1="8" x2="13" y2="8"/><rect x="-7" y="-4" width="4" height="4" rx="0.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Universities',        pillW: 105, icon: <><polygon points="0,-12 -13,-4 0,4 13,-4"/><line x1="0" y1="4" x2="0" y2="12"/><line x1="-4" y1="12" x2="4" y2="12"/></> },
+                { label: 'Factories',           pillW: 84,  icon: <><rect x="-13" y="-2" width="26" height="10" rx="1"/><rect x="-10" y="-12" width="6" height="10"/><rect x="2" y="-8" width="6" height="6"/><line x1="-13" y1="8" x2="13" y2="8"/></> },
+                { label: 'Stores',              pillW: 68,  icon: <><rect x="-12" y="-8" width="24" height="16" rx="2"/><polyline points="-12,-8 -15,-14 15,-14 12,-8"/><rect x="-4" y="0" width="8" height="8" rx="1" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Citizens',            pillW: 78,  icon: <><circle cx="0" cy="-8" r="5"/><path d="M-10,14 C-10,4 10,4 10,14"/></> },
+                { label: 'Gov. Facilities',     pillW: 112, icon: <><rect x="-13" y="-1" width="26" height="9" rx="0"/><line x1="-10" y1="-1" x2="-10" y2="-9"/><line x1="-3" y1="-1" x2="-3" y2="-9"/><line x1="4" y1="-1" x2="4" y2="-9"/><line x1="11" y1="-1" x2="11" y2="-9"/><polygon points="-15,-9 -1,-16 15,-9"/><line x1="-13" y1="8" x2="13" y2="8"/></> },
               ]}
               outputs={[
                 { label: 'Law Enforcement', pillW: 118, icon: <><path d="M0,-14 L10,-8 L10,2 C10,8 5,13 0,15 C-5,13 -10,8 -10,2 L-10,-8 Z"/><line x1="-4" y1="-2" x2="4" y2="-2"/><line x1="0" y1="-6" x2="0" y2="2"/></> },

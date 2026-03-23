@@ -380,7 +380,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           display: flex;
           align-items: center;
           gap: 8px;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           justify-content: center;
         }
         .ms-tab {
