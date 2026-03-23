@@ -4,6 +4,7 @@ import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/li
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import HubDiagram from '@/components/HubDiagram'
+import KSafetyCommandHero from '@/components/industry-heroes/KSafetyCommandHero'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -178,61 +179,7 @@ export default async function KSafetyPage({
             </div>
           </div>
 
-          {/* GIS Command Center Mockup */}
-          <div style={{ background: '#0b1628', borderRadius: '16px', border: `1px solid ${ACCENT}55`, overflow: 'hidden', boxShadow: '0 24px 80px rgba(0,0,0,0.5)' }}>
-            <div style={{ padding: '14px 20px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '13px', fontWeight: 600 }}>{es ? 'Centro de Mando K-Safety' : 'K-Safety Command Center'}</span>
-              <span style={{ fontSize: '10px', fontWeight: 700, background: '#22c55e', color: '#fff', padding: '2px 8px', borderRadius: '4px', letterSpacing: '0.1em' }}>LIVE</span>
-            </div>
-            {/* GIS Map placeholder */}
-            <div style={{ height: '180px', background: 'linear-gradient(135deg, #0d1f35 0%, #0b2840 50%, #091c30 100%)', position: 'relative', overflow: 'hidden' }}>
-              {/* Grid lines */}
-              <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.2 }}>
-                {[20, 40, 60, 80].map(p => <line key={`h${p}`} x1="0" y1={`${p}%`} x2="100%" y2={`${p}%`} stroke="#3b82f6" strokeWidth="0.5" />)}
-                {[16, 33, 50, 66, 83].map(p => <line key={`v${p}`} x1={`${p}%`} y1="0" x2={`${p}%`} y2="100%" stroke="#3b82f6" strokeWidth="0.5" />)}
-              </svg>
-              {/* Incident dots */}
-              {[
-                { x: '30%', y: '40%', color: '#ef4444', size: 12 },
-                { x: '55%', y: '60%', color: '#f97316', size: 10 },
-                { x: '70%', y: '30%', color: '#3b82f6', size: 10 },
-                { x: '20%', y: '70%', color: '#22c55e', size: 8 },
-              ].map((dot, i) => (
-                <div key={i} style={{
-                  position: 'absolute', left: dot.x, top: dot.y,
-                  width: dot.size, height: dot.size,
-                  borderRadius: '50%', background: dot.color,
-                  transform: 'translate(-50%, -50%)',
-                  boxShadow: `0 0 ${dot.size * 2}px ${dot.color}`,
-                }} />
-              ))}
-              {/* Map label */}
-              <div style={{ position: 'absolute', bottom: '8px', left: '12px', fontSize: '10px', color: ACCENT, fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                GIS {es ? 'Vista Operativa' : 'Operational View'}
-              </div>
-            </div>
-            {/* Incident list */}
-            <div style={{ padding: '8px 20px' }}>
-              {[
-                { id: '#INC-4821', name: es ? 'Robo a Mano Armada' : 'Armed Robbery', status: 'ACTIVE', color: '#ef4444' },
-                { id: '#INC-4822', name: es ? 'Colisión de Tráfico' : 'Traffic Collision', status: 'PENDING', color: '#f97316' },
-                { id: '#INC-4820', name: es ? 'Alerta Perimetral' : 'Perimeter Alert', status: 'DISPATCH', color: '#3b82f6' },
-              ].map((inc) => (
-                <div key={inc.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid var(--border)' }}>
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600 }}>{inc.name}</div>
-                    <div style={{ fontSize: '10px', color: 'var(--muted)', fontFamily: 'monospace' }}>{inc.id}</div>
-                  </div>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: inc.color, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{inc.status}</span>
-                </div>
-              ))}
-            </div>
-            <div style={{ padding: '12px 20px', display: 'flex', gap: '20px' }}>
-              <span style={{ fontSize: '11px', color: 'var(--white)' }}>94 {es ? 'Incidentes Activos' : 'Active Incidents'}</span>
-              <span style={{ fontSize: '11px', color: ACCENT }}>12 {es ? 'Despachados' : 'Dispatched'}</span>
-              <span style={{ fontSize: '11px', color: '#22c55e' }}>98.2% Uptime</span>
-            </div>
-          </div>
+          <KSafetyCommandHero />
         </section>
 
         {/* ── BENEFITS ── */}

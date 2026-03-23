@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.01] 2026-03-23 — Feat: KSafetyCommandHero + KTrafficCommandHero panel components
+
+**Added**
+- `src/components/industry-heroes/KSafetyCommandHero.tsx`: animated GIS command panel with street grid SVG, pulsing incident markers, unit/camera dots, metric sidebar, and incident list
+- `src/components/industry-heroes/KTrafficCommandHero.tsx`: traffic control panel with city grid SVG, signal state panel, live camera feed, active incident card, and footer stats
+
+**Changed**
+- `k-safety/page.tsx`: replaced inline GIS mockup with `<KSafetyCommandHero />`
+- `k-traffic/page.tsx`: replaced inline traffic mockup inside PageHero with `<KTrafficCommandHero />`
+
+---
+
 ## [1.00] 2026-03-23 — Content: ebook page stat + quote update + PDF asset
 
 **Changed**
