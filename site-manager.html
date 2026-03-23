@@ -848,6 +848,217 @@
 
       <div class="timeline">
 
+        <!-- v0.91 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.91</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: animated hub-and-spoke diagrams restored on all 5 product pages</div>
+            <ul class="tl-list">
+              <li><strong>HubDiagram.tsx</strong> — Shared animated SVG component: SMIL pulses travel along spokes, hub has pulsing outer ring + rotating dashed inner ring.</li>
+              <li><strong>k-safety</strong> → Event Detection / Location / Action</li>
+              <li><strong>k-dispatch</strong> → Responders / Coordination / Analytics</li>
+              <li><strong>k-video</strong> → Live View / Event Alert / Investigation</li>
+              <li><strong>k-traffic</strong> → Signal Control / Incident Alert / Analytics</li>
+              <li><strong>k-connect</strong> → Law Enforcement / City Operations / Audit Trail</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.90 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.90</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: single CTA sitewide — remove all secondary buttons</div>
+            <ul class="tl-list">
+              <li>CTASection.tsx, PageHero.tsx — removed secondary "or contact sales" and ghost CTA buttons across all industry and product pages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.89 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.89</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: homepage copy + ModulesSection + HowItWorks visuals</div>
+            <ul class="tl-list">
+              <li><strong>page.tsx</strong> — Hero H1 reverted to "The Unified Operating System for Public Safety". "Five Products" → "Five Solutions".</li>
+              <li><strong>ModulesSection.tsx</strong> — Section label is static "PLATFORM MODULES"; tab renamed "Analytics" to fix wrapping bug.</li>
+              <li><strong>HowItWorks.tsx</strong> — Replaced small icon circles with illustrated SVGs per step, each with radial glow background.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.88 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.88</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: Vertical proof points on all 7 industry pages</div>
+            <ul class="tl-list">
+              <li>All 7 industry pages — "In Practice" callout between Challenges and Capabilities with a vertical-specific metric: &lt;90s dispatch (Public Safety), 3× faster escalation (Airport), 4→1 vendors (Municipalities), &lt;90s perimeter alert (Ports), 65% gate time reduction (Logistics), 4× detection speed (Retail), 1 screen for 40K+ attendees (Stadiums).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.87 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.87</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: How It Works section + buzzword pass + footer cleanup</div>
+            <ul class="tl-list">
+              <li><strong>HowItWorks.tsx</strong> — New 3-step "From sensor to response" section (Collect → Process → Respond) with icon circles, connecting line, bilingual EN/ES copy. Added to homepage between hero and ModulesSection.</li>
+              <li><strong>page.tsx</strong> — Why card 02: "under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD". Why card 04: replaced AI buzzword with concrete rules engine explanation.</li>
+              <li><strong>Footer.tsx</strong> — Removed dead <code>href="#"</code> Terms and Security links. Privacy now links to <code>/privacy</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.86 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.86</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: commit missing EbookDownloadForm component from v0.81</div>
+            <ul class="tl-list">
+              <li><strong>EbookDownloadForm.tsx</strong> — Client component built in v0.81 but never staged; now committed to repo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.85 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.85</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema</div>
+            <ul class="tl-list">
+              <li><strong>resources/what-is-cad-dispatch-software/page.tsx</strong> — Full EN+ES explainer page targeting "CAD dispatch software" keyword cluster. Covers CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.</li>
+              <li><strong>metadata.ts (EN + ES)</strong> — Added <code>whatIsCadDispatchSoftware</code> key with keyword-targeted title and description.</li>
+              <li><strong>sitemap.ts</strong> — Added <code>/resources/what-is-cad-dispatch-software</code> (priority 0.6). Site now 44 routes × 2 = 88 URLs.</li>
+              <li><strong>resources/page.tsx</strong> — Added hub card for new page in both EN and ES arrays (isNew: true).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.84 -->
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.84</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Copy: hero rewrite + CTA consolidation + products framing</div>
+            <ul class="tl-list">
+              <li><strong>page.tsx (hero)</strong> — H1 rewritten to "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what.</li>
+              <li><strong>page.tsx (products)</strong> — Section subline: replaced "unified intelligence layer" with "without stitching together six different vendors".</li>
+              <li><strong>CTASection.tsx</strong> — Consolidated to one primary "Book a Demo" + subtle text link fallback; eliminates competing CTAs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.83 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.83</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card</div>
+            <ul class="tl-list">
+              <li><strong>sitemap.ts</strong> — Added <code>/resources/end-of-siloed-response</code> (priority 0.7) and <code>/privacy</code> (priority 0.3); both built in v0.81/v0.68 but never indexed.</li>
+              <li><strong>resources/page.tsx</strong> — Added ebook card for <code>/resources/end-of-siloed-response</code>; page was an internal orphan with no discovery path.</li>
+              <li><strong>SEO master plan</strong> — Synced agent log v0.78–v0.82, Phase 3 → 0%, Phase 4 → 30%, site size → 43 routes / 86 URLs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.82 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.82</span><span class="tl-date">2026-03-22</span></div>
+            <div class="tl-title">Design: industry brief landing page visual overhaul</div>
+            <ul class="tl-list">
+              <li>Removed Carbyne reference from stat labels — replaced with "Market consolidation signal".</li>
+              <li>Removed cover card from hero right column; form is now the sole focus (column narrowed to 360px).</li>
+              <li>Redesigned SVG illustration: larger viewBox (960×420), dot grid backgrounds, red-tinted fragmented side with warning triangles, response time comparison bar (8m 24s vs 3m 12s), LIVE badge on hub, improved glow filters and animations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.81 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.81</span><span class="tl-date">2026-03-22</span></div>
+            <div class="tl-title">Feat: Industry brief landing page /resources/end-of-siloed-response/</div>
+            <ul class="tl-list">
+              <li><strong>/resources/end-of-siloed-response/</strong> — EN + ES landing page for "The End of Siloed Response" Q2 2026 industry brief.</li>
+              <li><strong>EbookDownloadForm</strong> — 4-field lead capture form (name, email, org, role) with success state and PDF download link.</li>
+              <li>Ebook cover visual in pure CSS/JSX, 9-chapter content grid, 4 key stats, "What's inside" checklist (7 bullets), pull quote, bottom CTA.</li>
+              <li>ArticleSchema + BreadcrumbSchema + OrganizationSchema; full bilingual EN/ES support.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.80 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.80</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Feat: KabatOne vs Peregrine comparison page /vs/peregrine/</div>
+            <ul class="tl-list">
+              <li><strong>/vs/peregrine/</strong> — EN + ES comparison page: Peregrine predictive analytics vs KabatOne unified operations platform.</li>
+              <li>7-row comparison table, 6 FAQ pairs, "Strategic Intelligence vs Operational Platform" positioning section.</li>
+              <li>Metadata (EN + ES), sitemap entry, related links to other /vs/ pages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.79 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.79</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Fix: sitemap orphans + SEO master plan sync</div>
+            <ul class="tl-list">
+              <li><strong>sitemap.ts</strong> — Added 3 missing integration paths (<code>/integrations/access-control/</code>, <code>/integrations/drones/</code>, <code>/integrations/panic-buttons/</code>) built in v0.78 but never indexed.</li>
+              <li><strong>SEO master plan</strong> — Corrected site size (35 → 41 unique routes, 70 → 82 sitemap URLs); all 6 integration pages marked Done.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.78 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.78</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Feat: 3 new integration pages — Access Control, Drones, Panic Buttons</div>
+            <ul class="tl-list">
+              <li><strong>/integrations/access-control/</strong> — OSDP/Wiegand/REST/ONVIF protocols, 4 facility use cases, metrics strip, 6 FAQs (EN + ES).</li>
+              <li><strong>/integrations/drones/</strong> — UAV/UAS integration, 6 capability cards, 4 operational scenarios, specs table, 6 FAQs (EN + ES).</li>
+              <li><strong>/integrations/panic-buttons/</strong> — 5-step response flow, 6 sector verticals, 6 FAQs (EN + ES).</li>
+              <li>Metadata (EN + ES), footer links, 3 hero images generated via Nano Banana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.77 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.77</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Design: Integration pages visual overhaul — hero images + section illustrations</div>
+            <ul class="tl-list">
+              <li>Added AI-generated hero illustration to LPR, Face Recognition, and Sensor Fusion integration pages.</li>
+              <li>Added "From Plate to Alert in Under 3 Seconds" flow diagram on LPR page.</li>
+              <li>Added correlation timeline diagram to Sensor Fusion "How the Engine Works" section.</li>
+              <li>Added 3-metric stats strip to Face Recognition privacy section.</li>
+              <li>Generated 5 illustrations via Nano Banana: lpr-hero, lpr-flow, face-hero, fusion-hero, fusion-correlation.</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- v0.76 -->
         <div class="tl-entry fix">
           <div class="tl-dot"></div>

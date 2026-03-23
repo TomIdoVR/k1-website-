@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
 import { Link } from '@/i18n/navigation'
@@ -336,37 +337,29 @@ export default async function KTrafficPage({
 
         {/* ── PROCESS / HOW IT WORKS ── */}
         <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ marginBottom: '56px' }}>
-              <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{es ? 'El Proceso' : 'The Process'}</p>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase' }}>{content.processH2}</h2>
-              <div style={{ width: '64px', height: '3px', background: ACCENT, borderRadius: '2px', margin: '18px auto 0' }} />
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              {/* Inputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>{'\u2192'}</div>
-              {/* Hub */}
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-TRAFFIC</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'DETECTAR \u00B7 GESTIONAR \u00B7 OPTIMIZAR' : 'DETECT \u00B7 MANAGE \u00B7 OPTIMIZE'}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>{'\u2192'}</div>
-              {/* Outputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
-            </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="kt"
+              product="K-TRAFFIC"
+              tagline="MONITOR · OPTIMIZE · ALERT"
+              inputs={[
+                { label: 'IoT Sensors',    pillW: 100, icon: <><circle cx="0" cy="3" r="4.5" fill="#60a5fa" stroke="none"/><path d="M-9,-6 A13,13 0 0,1 9,-6"/><path d="M-14,-12 A20,20 0 0,1 14,-12"/><line x1="0" y1="7.5" x2="0" y2="13"/><line x1="-4" y1="13" x2="4" y2="13"/></> },
+                { label: 'Cameras',        pillW: 88,  icon: <><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Loop Detectors', pillW: 112, icon: <><rect x="-13" y="-8" width="26" height="16" rx="2"/><line x1="-8" y1="-8" x2="-8" y2="-14"/><line x1="8" y1="-8" x2="8" y2="-14"/><line x1="-8" y1="8" x2="-8" y2="14"/><line x1="8" y1="8" x2="8" y2="14"/><line x1="-13" y1="0" x2="-20" y2="0"/><line x1="13" y1="0" x2="20" y2="0"/></> },
+                { label: 'Vehicles / V2X', pillW: 112, icon: <><rect x="-13" y="-5" width="26" height="12" rx="4"/><path d="M-8,-5 L-5,-13 L5,-13 L8,-5"/><circle cx="-8" cy="7" r="3"/><circle cx="8" cy="7" r="3"/></> },
+                { label: 'Field Reports',  pillW: 104, icon: <><rect x="-10" y="-13" width="20" height="26" rx="2"/><line x1="-5" y1="-6" x2="5" y2="-6"/><line x1="-5" y1="0" x2="5" y2="0"/><line x1="-5" y1="6" x2="2" y2="6"/></> },
+              ]}
+              outputs={[
+                { label: 'Signal Control',  pillW: 110, icon: <><rect x="-7" y="-15" width="14" height="30" rx="3"/><circle cx="0" cy="-8" r="3.5" fill="#ff4444" stroke="none"/><circle cx="0" cy="0" r="3.5" fill="#ffaa00" stroke="none"/><circle cx="0" cy="8" r="3.5" fill="#06d6a0" stroke="#06d6a0"/></> },
+                { label: 'Incident Alert',  pillW: 110, icon: <><path d="M0,-14 L12,8 L-12,8 Z"/><line x1="0" y1="-6" x2="0" y2="0"/><circle cx="0" cy="4" r="1.5" fill="#06b6d4" stroke="none"/></> },
+                { label: 'Analytics',       pillW: 82,  icon: <><rect x="-13" y="-13" width="26" height="26" rx="2"/><line x1="-8" y1="6" x2="-8" y2="-2"/><line x1="-2" y1="6" x2="-2" y2="-6"/><line x1="4" y1="6" x2="4" y2="0"/><line x1="10" y1="6" x2="10" y2="-8"/></> },
+              ]}
+            />
           </div>
         </section>
 

@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -250,28 +251,29 @@ export default async function KSafetyPage({
 
         {/* ── PROCESS ── */}
         <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>{content.processH2}</h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              <div style={{ fontSize: '24px', color: ACCENT }}>→</div>
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-SAFETY</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'RECOPILAR · ANALIZAR · INTEGRAR' : 'COLLECT · ANALYZE · INTEGRATE'}
-                </div>
-              </div>
-              <div style={{ fontSize: '24px', color: ACCENT }}>→</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="ks"
+              product="K-SAFETY"
+              tagline="COLLECT · ANALYZE · INTEGRATE"
+              inputs={[
+                { label: 'Cameras',       pillW: 100, icon: <><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Sensors',       pillW: 100, icon: <><path d="M-12,-10 A17,17 0 0,1 12,-10"/><path d="M-8,-4 A11,11 0 0,1 8,-4"/><path d="M-4,2 A6,6 0 0,1 4,2"/><circle cx="0" cy="7" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Access Points', pillW: 116, icon: <><rect x="-11" y="-13" width="22" height="26" rx="3"/><circle cx="-4" cy="-5" r="1.5" fill="#60a5fa" stroke="none"/><circle cx="0" cy="-5" r="1.5" fill="#60a5fa" stroke="none"/><circle cx="4" cy="-5" r="1.5" fill="#60a5fa" stroke="none"/><circle cx="-4" cy="1" r="1.5" fill="#60a5fa" stroke="none"/><circle cx="0" cy="1" r="1.5" fill="#60a5fa" stroke="none"/><circle cx="4" cy="1" r="1.5" fill="#60a5fa" stroke="none"/><rect x="-3" y="6" width="6" height="4" rx="1" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Mobile App',    pillW: 100, icon: <><rect x="-7" y="-13" width="14" height="26" rx="3"/><line x1="-2" y1="-8" x2="2" y2="-8"/><circle cx="0" cy="9" r="2" fill="#60a5fa" stroke="none"/></> },
+                { label: 'IoT / SMP',     pillW: 100, icon: <><circle cx="0" cy="3" r="4.5" fill="#60a5fa" stroke="none"/><path d="M-9,-6 A13,13 0 0,1 9,-6"/><path d="M-14,-12 A20,20 0 0,1 14,-12"/><line x1="0" y1="7.5" x2="0" y2="13"/><line x1="-4" y1="13" x2="4" y2="13"/></> },
+              ]}
+              outputs={[
+                { label: 'Event Detection', pillW: 118, icon: <><path d="M0,-13 C-5,-13 -10,-8 -10,-1 L-10,6 L10,6 L10,-1 C10,-8 5,-13 0,-13 Z"/><line x1="-13" y1="6" x2="13" y2="6"/><path d="M-2,8 A3,3 0 0,0 2,8"/></> },
+                { label: 'Location',        pillW: 82,  icon: <><path d="M0,-14 C-8,-14 -13,-8 -13,-2 C-13,6 0,15 0,15 C0,15 13,6 13,-2 C13,-8 8,-14 0,-14 Z"/><circle cx="0" cy="-2" r="4.5"/></> },
+                { label: 'Action',          pillW: 72,  icon: <><polyline points="5,-13 -4,0 5,0 -5,13"/></> },
+              ]}
+            />
           </div>
         </section>
 

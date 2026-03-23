@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
 import { Link } from '@/i18n/navigation'
@@ -255,33 +256,29 @@ export default async function KConnectPage({
 
         {/* -- PROCESS DIAGRAM -- */}
         <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>{content.processH2}</h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              {/* Inputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>&rarr;</div>
-              {/* Hub */}
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-CONNECT</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'CONECTAR \u00b7 COMPARTIR \u00b7 PROTEGER' : 'CONNECT \u00b7 SHARE \u00b7 PROTECT'}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>&rarr;</div>
-              {/* Outputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="kc"
+              product="K-CONNECT"
+              tagline="SHARE · MONITOR · RESPOND"
+              inputs={[
+                { label: 'Cameras',      pillW: 88,  icon: <><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Organizations',pillW: 112, icon: <><rect x="-13" y="-6" width="26" height="20" rx="2"/><rect x="-6" y="-13" width="12" height="8" rx="1"/><line x1="-7" y1="14" x2="-7" y2="7"/><line x1="0" y1="14" x2="0" y2="7"/><line x1="7" y1="14" x2="7" y2="7"/></> },
+                { label: 'Permissions',  pillW: 100, icon: <><rect x="-9" y="-2" width="18" height="15" rx="2"/><path d="M-5,-2 L-5,-7 C-5,-11 5,-11 5,-7 L5,-2"/><circle cx="0" cy="5.5" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'AI Monitoring',pillW: 108, icon: <><circle cx="0" cy="-2" r="8" fill="none"/><circle cx="-6" cy="-4" r="2" fill="#60a5fa" stroke="none"/><circle cx="6" cy="-4" r="2" fill="#60a5fa" stroke="none"/><path d="M-5,-7 Q0,-13 5,-7"/><path d="M-8,2 Q-13,6 -9,10"/><path d="M8,2 Q13,6 9,10"/></> },
+                { label: 'Event Feeds',  pillW: 100, icon: <><line x1="-12" y1="-10" x2="0" y2="-10"/><line x1="-12" y1="-4" x2="4" y2="-4"/><line x1="-12" y1="2" x2="2" y2="2"/><line x1="-12" y1="8" x2="-2" y2="8"/><polyline points="6,-2 12,4 6,10"/></> },
+              ]}
+              outputs={[
+                { label: 'Law Enforcement', pillW: 118, icon: <><path d="M0,-14 L10,-8 L10,2 C10,8 5,13 0,15 C-5,13 -10,8 -10,2 L-10,-8 Z"/><line x1="-4" y1="-2" x2="4" y2="-2"/><line x1="0" y1="-6" x2="0" y2="2"/></> },
+                { label: 'City Operations',  pillW: 110, icon: <><rect x="-13" y="-6" width="26" height="20" rx="2"/><rect x="-6" y="-13" width="12" height="8" rx="1"/><line x1="-7" y1="14" x2="-7" y2="7"/><line x1="0" y1="14" x2="0" y2="7"/><line x1="7" y1="14" x2="7" y2="7"/></> },
+                { label: 'Audit Trail',      pillW: 90,  icon: <><rect x="-10" y="-13" width="20" height="26" rx="2"/><line x1="-5" y1="-6" x2="5" y2="-6"/><line x1="-5" y1="0" x2="5" y2="0"/><polyline points="-5,6 -2,9 5,2"/></> },
+              ]}
+            />
           </div>
         </section>
 

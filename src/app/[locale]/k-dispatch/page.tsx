@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -244,33 +245,29 @@ export default async function KDispatchPage({
 
         {/* ── PROCESS ── */}
         <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>{content.processH2}</h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              {/* Inputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>→</div>
-              {/* Hub */}
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-DISPATCH</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'RECIBIR · CLASIFICAR · DESPACHAR' : 'RECEIVE · TRIAGE · DISPATCH'}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>→</div>
-              {/* Outputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="kd"
+              product="K-DISPATCH"
+              tagline="RECEIVE · TRIAGE · DISPATCH"
+              inputs={[
+                { label: 'Voice Calls',  pillW: 100, icon: <><path d="M-10,4 C-10,-4 -4,-10 4,-10 L4,-4 L0,-2 C0,-2 2,0 4,4 L8,2 L8,8 C8,8 2,10 -2,6 Z"/></> },
+                { label: 'SMS / Text',   pillW: 88,  icon: <><rect x="-12" y="-12" width="24" height="18" rx="3"/><polyline points="-4,6 -4,13 0,10 4,13 4,6"/><line x1="-6" y1="-5" x2="6" y2="-5"/><line x1="-6" y1="0" x2="3" y2="0"/></> },
+                { label: 'Field Units',  pillW: 92,  icon: <><circle cx="0" cy="-10" r="5"/><path d="M-10,13 L-8,2 C-8,2 -2,-2 8,2 L10,13"/><line x1="-4" y1="5" x2="4" y2="5"/></> },
+                { label: 'IoT Alerts',   pillW: 92,  icon: <><circle cx="0" cy="3" r="4.5" fill="#60a5fa" stroke="none"/><path d="M-9,-6 A13,13 0 0,1 9,-6"/><path d="M-14,-12 A20,20 0 0,1 14,-12"/><line x1="0" y1="7.5" x2="0" y2="13"/><line x1="-4" y1="13" x2="4" y2="13"/></> },
+                { label: 'Mobile App',   pillW: 100, icon: <><rect x="-7" y="-13" width="14" height="26" rx="3"/><line x1="-2" y1="-8" x2="2" y2="-8"/><circle cx="0" cy="9" r="2" fill="#60a5fa" stroke="none"/></> },
+              ]}
+              outputs={[
+                { label: 'Responders',   pillW: 110, icon: <><circle cx="0" cy="-10" r="5"/><path d="M-10,13 L-8,2 C-8,2 -2,-2 8,2 L10,13"/><line x1="-13" y1="-4" x2="-18" y2="4"/><line x1="13" y1="-4" x2="18" y2="4"/></> },
+                { label: 'Coordination', pillW: 110, icon: <><circle cx="0" cy="0" r="5"/><circle cx="-14" cy="-8" r="3"/><circle cx="14" cy="-8" r="3"/><circle cx="0" cy="15" r="3"/><line x1="-11" y1="-6" x2="-4" y2="-2"/><line x1="11" y1="-6" x2="4" y2="-2"/><line x1="0" y1="5" x2="0" y2="12"/></> },
+                { label: 'Analytics',    pillW: 82,  icon: <><rect x="-13" y="-13" width="26" height="26" rx="2"/><line x1="-8" y1="6" x2="-8" y2="-2"/><line x1="-2" y1="6" x2="-2" y2="-6"/><line x1="4" y1="6" x2="4" y2="0"/><line x1="10" y1="6" x2="10" y2="-8"/></> },
+              ]}
+            />
           </div>
         </section>
 
