@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.06] 2026-03-24 — Feat: real partner logos in Integrations module panel
+
+**Changed**
+- `src/components/ModulesSection.tsx`: Replaced static placeholder image with code-based partner grid showing real logos (Milestone, Genetec, RapidSOS, Carbyne, Corsight, Motorola Solutions, iPro); responsive 4-col desktop / 3-col mobile layout
+- Added `public/images/partners/` with 7 local partner logo files (SVG + PNG)
+- Fixed Milestone and RapidSOS SVGs missing explicit width/height attributes
+
+---
+
 ## [1.05] 2026-03-24 — Fix: last ES accent correction (Acción) on About page
 
 **Fixed**
