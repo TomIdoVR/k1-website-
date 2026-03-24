@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.05] 2026-03-24 — Fix: last ES accent correction (Acción) on About page
+
+**Fixed**
+- `src/app/[locale]/about/page.tsx`: Corrected `'Accion'` → `'Acción'` in the CTA heading
+
+---
+
 ## [1.04] 2026-03-24 — Fix: HowItWorks mobile layout + ES accent corrections on About & Contact pages
 
 **Fixed**
