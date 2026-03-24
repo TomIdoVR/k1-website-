@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
 
-**Current site size:** 44 unique routes × 2 locales (EN + ES) = 88 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 10 (hub + 8 articles + 1 ebook) | /integrations/: 6 | Other: 3 (about, contact, privacy)
+**Current site size:** 45 unique routes × 2 locales (EN + ES) = 90 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 11 (hub + 9 articles + 1 ebook) | /integrations/: 6 | Other: 3 (about, contact, privacy)
 
 ---
 

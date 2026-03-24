@@ -25,11 +25,19 @@ If you made local changes and haven't logged them yet — log them now before do
 ## Project snapshot
 
 - **Stack:** Next.js 15 (App Router) + TypeScript, deployed on Vercel
-- **Active branch:** `nextjs` — all development happens here
-- **Production domain:** `kabatone.com` (not yet live)
-- **Static fallback:** `main` branch on GitHub Pages — legacy, no longer synced
 - **Remote:** `https://github.com/TomIdoVR/k1-website-.git`
 - **Full rules:** See `AGENTS.md`
+
+## Deployment environments
+
+| Branch | Environment | URL |
+|--------|-------------|-----|
+| `nextjs` | **Staging** | `staging.kabatone.com` — auto-deploys on every push |
+| `main` | **Production** | `kabatone.com` — only updates when `nextjs` is merged into `main` |
+
+- All development happens on `nextjs`
+- Never push directly to `main` — it is the production branch
+- To promote staging → production: merge `nextjs` into `main` (via PR or direct merge, on explicit request only)
 
 ## Git workflow
 
