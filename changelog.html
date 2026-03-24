@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v1.03 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.03</span><span class="tl-date">2026-03-24</span><span class="tl-tag fix">Fix</span></div>
+          <div class="tl-title">Remove dev-only rewrites causing MIDDLEWARE_INVOCATION_FAILED on production</div>
+          <ul class="tl-list">
+            <li><strong>Fixed</strong> — <code>next.config.ts</code>: Removed <code>rewrites()</code> block that was added as a Next.js 16 + Turbopack dev workaround. These rewrites were running in production and causing <code>500 MIDDLEWARE_INVOCATION_FAILED</code> on Vercel.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v1.02 -->
       <div class="tl-entry fix">
         <div class="tl-dot"></div>
