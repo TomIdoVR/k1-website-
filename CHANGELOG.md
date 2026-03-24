@@ -7,6 +7,392 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.02] 2026-03-24 — Fix: Spanish (ES) content — accents, rewrites, and corrections
+
+**Fixed**
+- `src/app/[locale]/page.tsx`: corrected all missing accents and rewrites in ES content — hero, products (K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect), why-cards, industry cards, quote, and CTA section
+- `src/components/HowItWorks.tsx`: fixed ES step labels, titles, and body copy (Recolección, decisión, pestañas, etc.)
+- `src/components/ModulesSection.tsx`: fixed all 9 ES module blocks — accents, rewrites, and updated feature labels (Analítica, Gestión, Detección, etc.)
+
+---
+
+## [1.01] 2026-03-23 — Feat: KSafetyCommandHero + KTrafficCommandHero panel components
+
+**Added**
+- `src/components/industry-heroes/KSafetyCommandHero.tsx`: animated GIS command panel with street grid SVG, pulsing incident markers, unit/camera dots, metric sidebar, and incident list
+- `src/components/industry-heroes/KTrafficCommandHero.tsx`: traffic control panel with city grid SVG, signal state panel, live camera feed, active incident card, and footer stats
+
+**Changed**
+- `k-safety/page.tsx`: replaced inline GIS mockup with `<KSafetyCommandHero />`
+- `k-traffic/page.tsx`: replaced inline traffic mockup inside PageHero with `<KTrafficCommandHero />`
+
+---
+
+## [1.00] 2026-03-23 — Content: ebook page stat + quote update + PDF asset
+
+**Changed**
+- `end-of-siloed-response/page.tsx`: stat updated `73M+` → `70M+`; quote replaced with KabatOne-attributed thought leadership line
+- `public/downloads/the-end-of-siloed-response.pdf`: PDF asset added
+
+## [0.99] 2026-03-23 — Feat: PDF feedback batch — content, data, and UX updates
+
+**Changed**
+- k-safety case study: "Jalisco" → "Michoacán"; stat "10,000+ Direct reports" → "80 Operators"
+- k-dispatch case study: renamed to "C5CDMX: Transforming Emergency Response in Mexico"
+- k-dispatch AI Workflow cards: added emoji icons (📥 🚨 🤖 📊) to empty icon boxes
+- k-video hero stat3: placeholder "IA" → "15+ AI Models"; added section eyebrow to bottom CTA
+- k-connect HubDiagram inputs: replaced with Campuses, Universities, Factories, Stores, Citizens, Gov. Facilities
+- Homepage agencies strip: updated to 12 clients (C5CDMX, YUC, DGO, SIN, TAM, INAMI, JAL, MICH, CHIS, PUE, NAU, NAY)
+- About page regions: restructured to Mexico (HQ), Israel (R&D), United States (Commercial office)
+- Stadiums hero stat: "4 Coverage Zones" → "360° Full Coverage"
+- Industry pages: "Platform Products" → "Platform Solutions" in 7 pages (airport, public-safety, municipalities, logistics, ports, retail, stadiums)
+- EN/ES language switcher: restyled as a segmented pill control (visually distinct from nav links)
+- ModulesSection: fixed Analytics tab wrapping to second row (flex-wrap: nowrap)
+
+**Added**
+- Integration partner logo strip on homepage after ModulesSection: Milestone, Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro
+
+---
+
+## [0.97] 2026-03-23 — Feat: contact form connected to Formspree
+
+**Added**
+- New `ContactForm` client component (`src/components/ContactForm.tsx`) — submits to Formspree via AJAX (no page redirect)
+- Loading, success, and error states; EN + ES strings fully supported
+
+## [0.96] 2026-03-23 — Copy: rename platform "Avalon" → "K1" across 14 files
+
+**Changed**
+- Replaced all occurrences of "Avalon" (as the KabatOne platform name) with "K1" across 14 files: `HowItWorks.tsx`, `psim-vs-unified-platform/page.tsx`, `smart-city-platform-guide/page.tsx`, `how-c5-command-centers-work/page.tsx`, `vs/vms`, `vs/hexagon`, `vs/genetec`, `vs/milestone`, `vs/carbyne`, `vs/cad`, `vs/motorola`, `vs/mark43`, `about/page.tsx`, `public-safety-software-municipalities-mexico/page.tsx`
+- No structural or logic changes — copy-only rename
+
+## [0.95] 2026-03-23 — Feat: auto-detect Spanish browser language
+
+**Added**
+- `localeDetection: true` in `src/i18n/routing.ts` — visitors whose browser is set to Spanish are automatically redirected to `/es/`; preference is persisted via `NEXT_LOCALE` cookie
+
+## [0.94] 2026-03-23 — Fix: populate benefit icon boxes + transparent integration cards + Nav logo
+
+**Fixed**
+- `k-safety`, `k-dispatch`, `k-video`: benefit card icon boxes now render emoji icons (previously empty accent squares); added `benefitIcons` arrays per page, second grid uses `i + 3` offset
+- `k-safety`, `k-dispatch`, `k-video`, `k-connect`: integration cards updated from solid `#0b1628` → `rgba(255,255,255,0.03)` + `borderTop: 2px solid ACCENT` to match approved design
+- `Nav.tsx`: logo `<Image>` now includes `style={{ height: 'auto' }}` to resolve Next.js aspect-ratio console warning (was firing 8× per page)
+
+---
+
+## [0.93] 2026-03-23 — Fix: restore original card styling across all 5 product pages
+
+**Fixed**
+- All 5 product pages (`k-safety`, `k-dispatch`, `k-video`, `k-connect`, `k-traffic`): section padding restored from `80px 32px` → `100px 40px` to match original static site
+- Benefit cards across all 5 pages: background changed from solid `#0b1628` → `rgba(255,255,255,0.03)` (transparent glass effect), added `borderTop: 2px solid ACCENT`, added 40×40px accent icon box, h3 updated to Barlow Condensed 700 uppercase 17px
+- `k-safety`: benefits grid changed from `repeat(4, 1fr)` → `1fr 1fr` (2-column)
+- `k-connect`: benefit card icons (emoji) now rendered inside icon boxes; `borderTop` corrected from 3px → 2px
+- `k-traffic`: `borderTop` corrected from 3px → 2px on benefit cards and capabilities panel
+- `k-dispatch` AI workflow cards: background → transparent, `borderTop` added, number changed from filled circle → DM Mono `01/02/03/04` label, added icon box, h3 updated to Barlow Condensed uppercase
+
+---
+
+## [0.92] 2026-03-23 — New: /resources/what-is-a-real-time-crime-center — RTCC explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-a-real-time-crime-center/page.tsx` — Full EN+ES explainer targeting "what is a real time crime center" keyword cluster. Covers RTCC capabilities (video, LPR, gunshot detection, AI analytics), 5-step incident response flow, integrated vs standalone comparison, and 6 technology evaluation criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- `src/content/en/metadata.ts` + `src/content/es/metadata.ts` — Added `whatIsARealTimeCrimeCenter` key.
+- `src/app/sitemap.ts` — Added `/resources/what-is-a-real-time-crime-center` (priority 0.7). Site now 45 routes × 2 = 90 URLs.
+- `src/app/[locale]/resources/page.tsx` — Added hub card in both EN and ES arrays (isNew: true).
+
+---
+
+## [0.91] 2026-03-23 — Feat: animated hub-and-spoke diagrams restored on all 5 product pages
+
+**Added**
+- `src/components/HubDiagram.tsx` — Shared animated SVG hub-and-spoke component. Accepts `uid`, `product`, `tagline`, 5 input nodes, and 3 output nodes. Each node has a label, inline SVG icon, and optional pill width. Pulses travel along spokes via SMIL `animateMotion`; hub has a pulsing outer ring and a rotating dashed inner ring.
+
+**Changed**
+- `src/app/[locale]/k-safety/page.tsx` — PROCESS section replaced with `HubDiagram uid="ks"` (Cameras / Sensors / Access Points / Mobile App / IoT SMP → Event Detection / Location / Action).
+- `src/app/[locale]/k-dispatch/page.tsx` — PROCESS section replaced with `HubDiagram uid="kd"` (Voice Calls / SMS Text / Field Units / IoT Alerts / Mobile App → Responders / Coordination / Analytics).
+- `src/app/[locale]/k-video/page.tsx` — PROCESS section replaced with `HubDiagram uid="kv"` (IP Cameras / RTSP Streams / Drones / Archives / AI Analytics → Live View / Event Alert / Investigation).
+- `src/app/[locale]/k-traffic/page.tsx` — PROCESS section replaced with `HubDiagram uid="kt"` (IoT Sensors / Cameras / Loop Detectors / Vehicles V2X / Field Reports → Signal Control / Incident Alert / Analytics).
+- `src/app/[locale]/k-connect/page.tsx` — PROCESS section replaced with `HubDiagram uid="kc"` (Cameras / Organizations / Permissions / AI Monitoring / Event Feeds → Law Enforcement / City Operations / Audit Trail).
+
+---
+
+## [0.90] 2026-03-23 — Fix: single CTA sitewide — remove all secondary buttons
+
+**Changed**
+- `src/components/CTASection.tsx` — Removed "or contact sales" text link. Now renders only the single primary "Book a Demo" button.
+- `src/components/PageHero.tsx` — Removed ghost secondary `cta2` button. All industry and product page heroes now show only the primary CTA.
+- `src/app/[locale]/k-safety/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-video/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-dispatch/page.tsx` — Removed inline "Talk to an Expert" ghost button.
+- `src/app/[locale]/k-traffic/page.tsx` — Removed two inline "Talk to an Expert" ghost buttons.
+- `src/app/[locale]/about/page.tsx` — Removed secondary "Our Mission" anchor from hero CTA row.
+
+---
+
+## [0.89] 2026-03-23 — Fix: homepage copy + ModulesSection + HowItWorks visuals
+
+**Changed**
+- `src/app/[locale]/page.tsx` — Reverted hero H1 to original: "The Unified Operating System for Public Safety". Section heading changed from "Five Products" to "Five Solutions" (EN/ES).
+- `src/components/ModulesSection.tsx` — Section label is now static "PLATFORM MODULES" instead of the dynamic active-module name. Renamed "Analytics/BI" tab to "Analytics" to fix second-row wrapping bug.
+- `src/components/HowItWorks.tsx` — Replaced small icon circles with illustrated SVGs per step (Collect / Process / Respond), each with a radial glow background. More visual and distinctive.
+
+---
+
+## [0.88] 2026-03-23 — Feat: Vertical proof points on all 7 industry pages
+
+**Added**
+- All 7 industry pages — inserted an "In Practice" callout block between the Challenges and Capabilities sections. Each block shows a concrete, vertical-specific metric with a one-sentence scenario:
+  - **Public Safety**: `< 90s` dispatch time vs. 4–6 min on legacy CAD
+  - **Airport**: `3×` faster incident escalation — one screen vs. three systems
+  - **Municipalities**: `4 → 1` vendor contracts eliminated with one command platform
+  - **Ports**: `< 90s` perimeter breach alert vs. 8–12 min manual CCTV review, ISPS-compliant
+  - **Logistics**: `65%` reduction in gate processing time via LPR + automated bay assignment
+  - **Retail**: `4×` faster incident detection — proactive alerts vs. reactive CCTV review
+  - **Stadiums**: `1 screen` for 40,000+ attendees across all 4 venue coverage zones
+
+---
+
+## [0.87] 2026-03-23 — Feat: How It Works section + buzzword pass + footer cleanup
+
+**Added**
+- `src/components/HowItWorks.tsx` — New 3-step "From sensor to response" section (Collect → Process → Respond) with icon circles, connecting line, bilingual EN/ES copy. Added to homepage between hero and ModulesSection.
+
+**Changed**
+- `src/app/[locale]/page.tsx` — Why card 02: replaced vague "shave seconds" with specific "under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD". Why card 04: replaced AI buzzword with concrete rules engine explanation.
+- `src/components/Footer.tsx` — Removed dead `href="#"` Terms and Security links. Privacy now links to `/privacy`.
+
+---
+
+## [0.86] 2026-03-23 — Fix: commit missing EbookDownloadForm component from v0.81
+
+**Fixed**
+- `src/components/EbookDownloadForm.tsx` — client component was built in v0.81 but never staged; added to repo
+
+---
+
+## [0.85] 2026-03-23 — New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-cad-dispatch-software/page.tsx` — Full EN+ES explainer page targeting "CAD dispatch software" keyword cluster. Covers CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- `src/content/en/metadata.ts` + `src/content/es/metadata.ts` — Added `whatIsCadDispatchSoftware` key with keyword-targeted title and description.
+- `src/app/sitemap.ts` — Added `/resources/what-is-cad-dispatch-software` (priority 0.6). Site now 44 routes × 2 = 88 URLs.
+- `src/app/[locale]/resources/page.tsx` — Added hub card for new page in both EN and ES arrays (isNew: true), inserted after existing "new" articles.
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — Added v0.83–v0.84 log rows, new explainer to Phase 3 content table, site size to 44 routes / 88 URLs.
+
+---
+
+## [0.84] 2026-03-23 — Copy: hero rewrite + CTA consolidation + products framing
+
+**Changed**
+- `src/app/[locale]/page.tsx` — Hero H1 rewritten from abstract "Unified Operating System" to concrete "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what: "KabatOne is the command-and-control platform for governments and public safety agencies."
+- `src/app/[locale]/page.tsx` — Products section subline updated: replaced "unified intelligence layer" buzzword with concrete "without stitching together six different vendors"
+- `src/components/CTASection.tsx` — Consolidated from two equal-weight CTA buttons to one primary "Book a Demo" button + a subtle text link fallback; eliminates competing CTAs across all pages that use this component
+
+---
+
+## [0.83] 2026-03-23 — Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card
+
+**Fixed**
+- `src/app/sitemap.ts` — added `/resources/end-of-siloed-response` (priority 0.7) and `/privacy` (priority 0.3), both built in v0.81 and v0.68 respectively but never added to sitemap
+- `src/app/[locale]/resources/page.tsx` — added ebook card for `/resources/end-of-siloed-response` at top of both EN and ES article arrays; page was an internal orphan with no discovery path from the hub
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — synced agent run log (v0.78–v0.82), updated Phase 3 to 0%/Not started, Phase 4 to 30%, site size to 43 routes / 86 URLs, added /vs/peregrine to keyword map, added industry brief to Phase 3 content table
+
+---
+
+## [0.82] 2026-03-22 — Design: industry brief landing page visual overhaul
+
+**Changed**
+- Removed Carbyne reference from stat labels — replaced with "Market consolidation signal"
+- Removed cover card from hero right column; form is now the sole focus, column narrowed to 360px
+- Redesigned SVG illustration: larger viewBox (960×420), richer detail — dot grid backgrounds, red-tinted fragmented side with orange warning triangles, response time comparison bar (8m 24s vs 3m 12s), blue unified side with subtitles in each node, LIVE badge on hub, improved glow filters and animations
+
+## [0.81] 2026-03-22 — Feat: Industry brief landing page /resources/end-of-siloed-response/
+
+**Added**
+- `/resources/end-of-siloed-response/` — EN + ES landing page for the Q2 2026 industry brief "The End of Siloed Response"
+- `EbookDownloadForm` client component: 4-field lead capture form (name, email, org, role) with success state and PDF download link
+- Ebook cover visual built in pure CSS/JSX — no image dependency
+- 9-chapter content grid with numbered cards
+- 4 key data point stats from the brief ($625M, >$3B, 83K+, 40%)
+- "What's inside" checklist (7 bullets EN + ES)
+- Pull quote from Chief of Operations testimonial
+- Bottom CTA pointing to architecture review request
+- `public/downloads/` directory for PDF hosting
+- Metadata entries in EN + ES metadata files
+- ArticleSchema + BreadcrumbSchema + OrganizationSchema JSON-LD
+- Full bilingual support (EN + ES)
+
+## [0.80] 2026-03-21 — Feat: KabatOne vs Peregrine comparison page /vs/peregrine/
+
+**Added**
+- `/vs/peregrine/` — EN + ES comparison page: Peregrine predictive analytics vs KabatOne unified operations platform
+- 7-row comparison table (primary category, predictive analytics, CAD, video, GIS, traffic, integration model)
+- 6 FAQ pairs in EN and ES with FAQPage schema + BreadcrumbSchema
+- "Strategic Intelligence vs Operational Platform" positioning section
+- Metadata (EN + ES) + sitemap entry
+- Related links to /vs/fusus, /vs/motorola, /vs/hexagon, /resources/ai-in-public-safety
+
+## [0.79] 2026-03-21 — Fix: sitemap orphans + SEO master plan sync
+
+**Fixed**
+- `src/app/sitemap.ts` — added 3 missing integration paths (`/integrations/access-control/`, `/integrations/drones/`, `/integrations/panic-buttons/`) that were built in v0.78 but never added to the sitemap
+- `SEO/kabatone-seo-master-plan.md` — corrected site size (35 → 41 unique routes, 70 → 82 sitemap URLs); marked all 6 integration pages as Done with correct version numbers (v0.74 + v0.78)
+
+## [0.78] 2026-03-21 — Feat: 3 new integration pages — Access Control, Drones, Panic Buttons
+
+**Added**
+- `/integrations/access-control/` — Physical access control (EN + ES): OSDP/Wiegand/REST/ONVIF protocols, 4 facility use cases, metrics strip, 6 FAQs, hero image
+- `/integrations/drones/` — UAV/UAS integration (EN + ES): 6 capability cards, 4 operational scenarios, specs table, 6 FAQs, hero image
+- `/integrations/panic-buttons/` — Panic button integration (EN + ES): 5-step response flow, 6 sector verticals, 6 FAQs, hero image
+- Metadata (EN + ES) for all 3 pages
+- Footer: 3 new integration links
+- 3 hero images generated via Nano Banana
+
+## [0.77] 2026-03-20 — Design: Integration pages visual overhaul — hero images + section illustrations
+
+**Improved**
+- Added AI-generated hero illustration to LPR, Face Recognition, and Sensor Fusion integration pages
+- Added "From Plate to Alert in Under 3 Seconds" flow diagram section on LPR page
+- Added correlation timeline diagram to Sensor Fusion "How the Engine Works" section
+- Added 3-metric stats strip (identification rate, false positives, human confirmation) to Face Recognition privacy section
+- Generated 5 illustrations via Nano Banana: lpr-hero, lpr-flow, face-hero, fusion-hero, fusion-correlation
+
+## [0.76] 2026-03-20 — Fix: Next.js 16 dev routing + layout restructure + footer integrations
+
+**Fixed**
+- `next.config.ts` — Added `rewrites()` as dev fallback for Next.js 16 + Turbopack: middleware edge rewrites don't fire in Turbopack dev; rewrite rules map `/path` → `/en/path` to let the `[locale]` App Router match routes correctly
+- `src/app/layout.tsx` — Moved `<html>/<body>` and font variables here (root layout, required by Next.js 16 Turbopack); was missing `<html>/<body>` tags causing runtime error
+
+**Added**
+- `src/components/Footer.tsx` — Integrations column: LPR, Face Recognition, Sensor Fusion links (EN + ES labels)
+- `src/app/[locale]/layout.tsx` — Locale layout now sets `lang` attribute via inline script; removed `<html>/<body>` (now in root layout)
+
+---
+
+## [0.75] 2026-03-20 — Chore: Combined site-manager page (Dev Environment + Changelog in one tabbed file)
+
+**Added**
+- `site-manager.html` — Single internal management page with two tabs: "Dev Environment" (flow map: Mac → GitHub → Vercel/GitHub Pages → production) and "Changelog" (full timeline). Replaces `changelog.html` as the go-to management file.
+
+---
+
+## [0.74] 2026-03-20 — Feat: Integration pages — LPR, Face Recognition, Sensor Fusion
+
+**Added**
+- `src/app/[locale]/integrations/lpr/page.tsx` — License Plate Recognition integration page: what is LPR, how KabatOne integrates it, 4 use cases, technical specs table, FAQ (6 Q&A), ArticleSchema + FAQSchema + BreadcrumbSchema, bilingual EN/ES
+- `src/app/[locale]/integrations/face-recognition/page.tsx` — Face Recognition integration page: two operational modes, 4 use cases, privacy & compliance controls section (4 controls), FAQ (6 Q&A), schemas, bilingual EN/ES
+- `src/app/[locale]/integrations/sensor-fusion/page.tsx` — Sensor Fusion integration page: 6 sensor types, 5-step correlation engine flow, 3 use cases, FAQ (6 Q&A), schemas, bilingual EN/ES
+- Metadata keys added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts`: `integrationLpr`, `integrationFaceRecognition`, `integrationSensorFusion`
+
+**Changed**
+- `src/app/sitemap.ts` — Added 3 new paths: `/integrations/lpr`, `/integrations/face-recognition`, `/integrations/sensor-fusion` (priority 0.6 each); site now 38 routes / 76 sitemap URLs
+
+---
+
+## [0.73] 2026-03-20 — Feat: Resources hub + 2 new blog-style articles
+
+**Added**
+- `src/app/[locale]/resources/page.tsx` — Resources hub index page with 7 article cards (3-column responsive grid), bilingual EN/ES
+- `src/app/[locale]/resources/rtcc-setup-guide/page.tsx` — "Real-Time Crime Center Setup Guide": 5 setup steps, common mistakes, metrics to track, FAQ (6 Q&A), ArticleSchema + FAQSchema + BreadcrumbSchema
+- `src/app/[locale]/resources/ai-in-public-safety/page.tsx` — "AI in Public Safety: A Guide for Cities": 6 use cases, real benefits, challenges, what to look for, FAQ (6 Q&A), schemas
+- Metadata keys added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts`: `resources`, `rtccSetupGuide`, `aiInPublicSafety`
+
+**Changed**
+- `src/components/Nav.tsx` — Resources nav link now points to `/resources` (hub index); removed the dead Blog `href="#"` link (desktop + mobile)
+- `src/app/sitemap.ts` — Added 3 new paths: `/resources` (priority 0.7), `/resources/rtcc-setup-guide`, `/resources/ai-in-public-safety`
+
+---
+
+## [0.72] 2026-03-20 — Chore: remove static HTML files from nextjs branch
+
+**Removed**
+- Deleted 16 static website HTML files from `nextjs` branch: `hero-mockup.html`, `about.html`, `contact.html`, `solutions.html`, 7 industry pages, 5 product pages
+- Updated `CLAUDE.md` project snapshot to reflect the current Next.js stack — `main` branch is now the legacy static site only
+
+---
+
+## [0.71] 2026-03-20 — Perf: lazy load below-fold images, switch mockups to WebP
+
+**Improved**
+- `hero-mockup.html` — added `loading="lazy"` to 16 below-fold images: 7 integration partner logos, 5 product section icons, 4 city camera photos, footer logo
+- `hero-mockup.html` — switched `k-traffic-mockup.png` and `k-connect-mockup.png` references to `.webp` (WebP files already exist in public/images/)
+- Expected impact: reduces initial eager image load by ~70%, improves LCP toward 1.2–1.5s, full-load time reduced significantly
+
+---
+
+## [0.70] 2026-03-20 — Docs: Update SEO master plan to current state
+
+**Updated**
+- `SEO/kabatone-seo-master-plan.md` — reflects all work done through v0.69
+- Stack corrected to Next.js on Vercel; all 11 /vs/ comparison pages marked Done; competitor tracking, keyword map, performance targets, and agent run log updated
+
+---
+
+## [0.69] 2026-03-20 — Feat: KabatOne vs Fusus and vs Prepared 911 comparison pages
+
+**Added**
+- `/vs/fusus` comparison page (EN + ES) — KabatOne vs Fusus RTCC platform; covers video intelligence vs full operations, community video, CAD, GIS, traffic, FAQ schema, breadcrumb schema
+- `/vs/prepared911` comparison page (EN + ES) — KabatOne vs Prepared 911; covers NG911 call taking vs full response cycle, CAD, GIS, traffic, FAQ schema, breadcrumb schema
+- Metadata registered in EN and ES metadata files (`vsFusus`, `vsPrepared911`)
+- Both routes added to sitemap.ts
+- Footer links added to Footer.tsx and hero-mockup.html
+
+---
+
+## [0.68] 2026-03-20 — Add: Privacy Policy page
+
+**Added**
+- New `/privacy` route (EN + ES) with full privacy policy content sourced from kabatone.com/privacy-policy
+- Sections: scope, data collected, processing purposes, social media, cookies, security, third-party transfers, ARCO rights, minors, jurisdiction, modifications, and contact
+- Metadata registered in both EN and ES metadata files
+
+## [0.67] 2026-03-20 — Fix: Footer columns grouped and right-aligned
+
+**Fixed**
+- Company and Competitors columns are now grouped together on the right side of the footer, eliminating excess stretch between them
+
+## [0.66] 2026-03-20 — Fix: Footer competitor links now visible in static site
+
+**Fixed**
+- Global `nav { position: fixed }` rule was causing `<nav class="footer-links">` to float up into the fixed nav bar, making links invisible in the footer. Changed footer link containers to `<div>` elements.
+
+## [0.65] 2026-03-20 — Fix: Footer competitors column is now vertical
+
+**Fixed**
+- Restructured footer in `Footer.tsx` and `hero-mockup.html` to a multi-column layout — "Competitors" heading with links stacked vertically below, matching standard footer column pattern
+
+## [0.64] 2026-03-20 — Fix: Move competitors to a dedicated bottom row in footer
+
+**Fixed**
+- Restructured footer in both `Footer.tsx` and `hero-mockup.html` — competitors now appear in a clear second row below the copyright/nav row, separated by a border
+
+## [0.63] 2026-03-20 — Fix: Group competitor links under "Competitors" heading in footer
+
+**Fixed**
+- Competitor links in `Footer.tsx` (Next.js) and `hero-mockup.html` now grouped under a "Competitors" / "Competidores" label with a vertical list, instead of appearing as individual inline links
+
+## [0.62] 2026-03-20 — Fix: Add competitor links to static footer
+
+**Fixed**
+- Added 9 competitor links (vs. Genetec through vs. CAD) to `hero-mockup.html` footer — previously only on the Next.js branch footer
+
+## [0.61] 2026-03-19 — Feat: Batch competitor comparison pages — Motorola, Hexagon, Mark43, Axon, Carbyne, CAD
+**Added**
+- `/vs/motorola/` — KabatOne vs Motorola Solutions (PremierOne CAD, Avigilon, CommandCentral) — angle: the real cost of separate products vs a unified platform
+- `/vs/hexagon/` — KabatOne vs Hexagon Safety (HxGN OnCall CAD) — angle: great CAD + GIS, missing video and traffic
+- `/vs/mark43/` — KabatOne vs Mark43 (cloud-native CAD/RMS) — angle: cloud-native extended to full response lifecycle
+- `/vs/axon/` — KabatOne vs Axon (body cameras + Evidence.com) — angle: officer-centric vs command center-centric; no hardware lock-in
+- `/vs/carbyne/` — KabatOne vs Carbyne (next-gen 911) — angle: Carbyne reinvented call intake; KabatOne manages everything after
+- `/vs/cad/` — KabatOne vs Traditional CAD Systems (category page, names Motorola PremierOne, Hexagon HxGN OnCall, Tyler New World, CentralSquare, Mark43)
+- All 6 pages: 7-row comparison table, 6 FAQ pairs, FAQPage schema, BreadcrumbList schema, EN + ES
+- Metadata entries in `en/metadata.ts` and `es/metadata.ts` for all 6 pages
+- 6 new routes added to sitemap at priority 0.7
+- Footer updated with all 6 new links (vs. Motorola, vs. Hexagon, vs. Mark43, vs. Axon, vs. Carbyne, vs. CAD)
+
 ## [0.60] 2026-03-20 — Feat: KabatOne vs Traditional VMS comparison page /vs/vms/
 **Added**
 - New category-level comparison page at `/vs/vms/` (EN + ES) — KabatOne vs Traditional VMS

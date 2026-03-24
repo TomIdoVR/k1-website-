@@ -356,6 +356,614 @@
 
     <div class="timeline">
 
+      <!-- v1.02 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.02</span><span class="tl-date">2026-03-24</span></div>
+          <div class="tl-title">Fix: Spanish (ES) content — accents, rewrites, and corrections</div>
+          <ul class="tl-list">
+            <li><code>page.tsx</code> — corrected all missing accents in ES hero, products, why-cards, industry cards, quote, and CTA</li>
+            <li><code>HowItWorks.tsx</code> — fixed ES step labels and body copy (Recolección, decisión, pestañas, etc.)</li>
+            <li><code>ModulesSection.tsx</code> — fixed all 9 ES module blocks: Analítica, Gestión, Detección, Auditoría, Coordinación, and more</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v1.01 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.01</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: KSafetyCommandHero + KTrafficCommandHero panel components</div>
+          <ul class="tl-list">
+            <li>Added <code>KSafetyCommandHero.tsx</code> — animated GIS command panel with street grid SVG, pulsing incident markers, unit/camera dots, metric sidebar, and incident list</li>
+            <li>Added <code>KTrafficCommandHero.tsx</code> — traffic control panel with city grid SVG, signal state panel, live camera feed, active incident card, and footer stats</li>
+            <li>k-safety page: replaced inline GIS mockup with new component</li>
+            <li>k-traffic page: replaced inline traffic mockup with new component</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v1.00 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.00</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Content: ebook page stat + quote update + PDF asset</div>
+          <ul class="tl-list">
+            <li><strong>end-of-siloed-response</strong> — Stat updated <code>73M+</code> → <code>70M+</code>; quote replaced with KabatOne-attributed line.</li>
+            <li><strong>public/downloads/</strong> — PDF asset <code>the-end-of-siloed-response.pdf</code> added to repo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.99 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.99</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: PDF feedback batch — content, data, and UX updates</div>
+          <ul class="tl-list">
+            <li><strong>k-safety</strong> — Case study: "Jalisco" → "Michoacán"; "10,000+ Direct reports" → "80 Operators"</li>
+            <li><strong>k-dispatch</strong> — Case study renamed to "C5CDMX: Transforming Emergency Response"; AI Workflow cards now show icons (📥 🚨 🤖 📊)</li>
+            <li><strong>k-video</strong> — Hero stat "IA" → "15+ AI Models"; added eyebrow to bottom CTA section</li>
+            <li><strong>k-connect</strong> — HubDiagram inputs: Campuses, Universities, Factories, Stores, Citizens, Gov. Facilities</li>
+            <li><strong>Homepage</strong> — 12-client agencies strip + integration partner logos (Milestone, Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro)</li>
+            <li><strong>About</strong> — Regions: Mexico (HQ), Israel (R&D), United States (Commercial)</li>
+            <li><strong>Stadiums</strong> — "4 Coverage Zones" → "360° Full Coverage"</li>
+            <li><strong>Industry pages</strong> — "Platform Products" → "Platform Solutions" in 7 pages</li>
+            <li><strong>Nav</strong> — EN/ES switcher restyled as segmented pill control</li>
+            <li><strong>ModulesSection</strong> — Fixed Analytics tab wrapping (flex-wrap: nowrap)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.98 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.98</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: ebook download form connected to Formspree</div>
+          <ul class="tl-list">
+            <li><strong>EbookDownloadForm.tsx</strong> — Replaced fake delay with real Formspree POST (<code>xbdzngyq</code>); PDF download button appears on success.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.97 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.97</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: contact form connected to Formspree</div>
+          <ul class="tl-list">
+            <li><strong>ContactForm.tsx</strong> — New client component; submits to Formspree via AJAX with loading, success, and error states. EN + ES fully supported.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.96 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.96</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Copy: rename platform "Avalon" → "K1" across 14 files</div>
+          <ul class="tl-list">
+            <li>Replaced all occurrences of the platform name "Avalon" with "K1" in 14 .tsx files: <code>HowItWorks.tsx</code>, <code>psim-vs-unified-platform</code>, <code>smart-city-platform-guide</code>, <code>how-c5-command-centers-work</code>, <code>vs/vms</code>, <code>vs/hexagon</code>, <code>vs/genetec</code>, <code>vs/milestone</code>, <code>vs/carbyne</code>, <code>vs/cad</code>, <code>vs/motorola</code>, <code>vs/mark43</code>, <code>about</code>, <code>public-safety-software-municipalities-mexico</code>.</li>
+            <li>Copy-only rename — no structural or logic changes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.95 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.95</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: auto-detect Spanish browser language</div>
+          <ul class="tl-list">
+            <li><strong>routing.ts</strong> — Added <code>localeDetection: true</code>; visitors with a Spanish browser are automatically redirected to <code>/es/</code>. Preference is persisted via <code>NEXT_LOCALE</code> cookie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.94 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.94</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: populate benefit icon boxes + transparent integration cards + Nav logo</div>
+          <ul class="tl-list">
+            <li><strong>k-safety, k-dispatch, k-video</strong> — Benefit card icon boxes now render emoji icons; added <code>benefitIcons</code> arrays per page (second grid uses <code>i + 3</code> offset).</li>
+            <li><strong>k-safety, k-dispatch, k-video, k-connect</strong> — Integration cards updated from solid <code>#0b1628</code> → <code>rgba(255,255,255,0.03)</code> + <code>borderTop: 2px solid ACCENT</code>.</li>
+            <li><strong>Nav.tsx</strong> — Logo image now includes <code>style={{ height: 'auto' }}</code> to resolve Next.js aspect-ratio console warning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.93 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.93</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: restore original card styling across all 5 product pages</div>
+          <ul class="tl-list">
+            <li><strong>All 5 product pages</strong> — Section padding restored from <code>80px 32px</code> → <code>100px 40px</code> to match original static site.</li>
+            <li><strong>Benefit cards (all pages)</strong> — Background: solid <code>#0b1628</code> → <code>rgba(255,255,255,0.03)</code> (glass effect); added <code>borderTop: 2px solid ACCENT</code>; added 40×40px accent icon box; h3 updated to Barlow Condensed 700 uppercase 17px.</li>
+            <li><strong>k-safety</strong> — Benefits grid changed from <code>repeat(4, 1fr)</code> → <code>1fr 1fr</code> (2-column layout).</li>
+            <li><strong>k-connect</strong> — Benefit card emoji icons now rendered inside icon boxes; borderTop corrected from 3px → 2px.</li>
+            <li><strong>k-traffic</strong> — borderTop corrected from 3px → 2px on benefit cards and capabilities panel.</li>
+            <li><strong>k-dispatch AI workflow cards</strong> — Background → transparent; borderTop added; step number changed from filled circle → DM Mono <code>01/02/03/04</code>; icon box added; h3 → Barlow Condensed uppercase.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.92 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.92</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">New: /resources/what-is-a-real-time-crime-center — RTCC explainer + FAQ schema</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx</strong> — Full EN+ES explainer targeting "what is a real time crime center" keyword cluster. Core capabilities section (video, LPR, gunshot detection, AI analytics), 5-step incident response flow, integrated vs standalone comparison grid, 6 technology evaluation criteria.</li>
+            <li><strong>Schemas</strong> — ArticleSchema, FAQPageSchema (6 Q&amp;A pairs EN+ES), BreadcrumbSchema.</li>
+            <li><strong>metadata.ts (EN + ES)</strong> — Added <code>whatIsARealTimeCrimeCenter</code> key with keyword-targeted title and meta description.</li>
+            <li><strong>sitemap.ts</strong> — Added <code>/resources/what-is-a-real-time-crime-center</code> (priority 0.7). Site now 45 routes × 2 = 90 URLs.</li>
+            <li><strong>resources/page.tsx</strong> — Added hub card in EN and ES arrays (isNew: true).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.91 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.91</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: animated hub-and-spoke diagrams restored on all 5 product pages</div>
+          <ul class="tl-list">
+            <li><strong>HubDiagram.tsx</strong> — Shared animated SVG component: SMIL pulses travel along spokes, hub has pulsing outer ring + rotating dashed inner ring. Accepts uid, product, tagline, 5 inputs, 3 outputs.</li>
+            <li><strong>k-safety</strong> — Cameras / Sensors / Access Points / Mobile App / IoT SMP → Event Detection / Location / Action</li>
+            <li><strong>k-dispatch</strong> — Voice Calls / SMS Text / Field Units / IoT Alerts / Mobile App → Responders / Coordination / Analytics</li>
+            <li><strong>k-video</strong> — IP Cameras / RTSP Streams / Drones / Archives / AI Analytics → Live View / Event Alert / Investigation</li>
+            <li><strong>k-traffic</strong> — IoT Sensors / Cameras / Loop Detectors / Vehicles V2X / Field Reports → Signal Control / Incident Alert / Analytics</li>
+            <li><strong>k-connect</strong> — Cameras / Organizations / Permissions / AI Monitoring / Event Feeds → Law Enforcement / City Operations / Audit Trail</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.90 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.90</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: single CTA sitewide — remove all secondary buttons</div>
+          <ul class="tl-list">
+            <li><strong>CTASection</strong> — Removed "or contact sales" text link. One button only.</li>
+            <li><strong>PageHero</strong> — Removed ghost secondary button from all industry + product page heroes.</li>
+            <li><strong>k-safety, k-video, k-dispatch, k-traffic (×2), about</strong> — Removed all inline secondary "Talk to an Expert" / "Our Mission" buttons.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.89 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.89</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: homepage copy + ModulesSection + HowItWorks visuals</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx</strong> — Reverted hero H1 to original. Changed "Five Products" → "Five Solutions".</li>
+            <li><strong>ModulesSection.tsx</strong> — Static "PLATFORM MODULES" label; renamed "Analytics/BI" → "Analytics" to fix second-row tab bug.</li>
+            <li><strong>HowItWorks.tsx</strong> — Replaced small icon circles with illustrated SVGs (Collect / Process / Respond) + radial glow backgrounds.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.88 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.88</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: Vertical proof points on all 7 industry pages</div>
+          <ul class="tl-list">
+            <li><strong>All 7 industry pages</strong> — Added an "In Practice" callout block between Challenges and Capabilities. Each shows a concrete vertical-specific metric: Public Safety &lt;90s dispatch, Airport 3× escalation, Municipalities 4→1 vendors, Ports &lt;90s perimeter alert, Logistics 65% gate time, Retail 4× detection, Stadiums 1 screen / 40K attendees.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.87 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.87</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Feat: How It Works section + buzzword pass + footer cleanup</div>
+          <ul class="tl-list">
+            <li><strong>HowItWorks.tsx</strong> — New 3-step "From sensor to response" section (Collect → Process → Respond) added to homepage between hero and ModulesSection. Bilingual EN/ES, responsive.</li>
+            <li><strong>page.tsx</strong> — Why card 02: replaced vague copy with "under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD". Why card 04: replaced AI buzzword with concrete rules engine explanation.</li>
+            <li><strong>Footer.tsx</strong> — Removed dead Terms and Security links. Privacy now links to <code>/privacy</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.86 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.86</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: commit missing EbookDownloadForm component from v0.81</div>
+          <ul class="tl-list">
+            <li><strong>EbookDownloadForm.tsx</strong> — Client component built in v0.81 but never staged; now committed to repo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.85 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.85</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx</strong> — Full EN+ES explainer targeting "CAD dispatch software" keyword cluster. Covers core CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria.</li>
+            <li><strong>Schemas</strong> — ArticleSchema, FAQPageSchema (6 Q&amp;A pairs), BreadcrumbSchema.</li>
+            <li><strong>metadata.ts (EN + ES)</strong> — Added <code>whatIsCadDispatchSoftware</code> key with keyword-targeted title and meta description.</li>
+            <li><strong>sitemap.ts</strong> — Added <code>/resources/what-is-cad-dispatch-software</code> (priority 0.6). Site now 44 routes × 2 = 88 URLs.</li>
+            <li><strong>resources/page.tsx</strong> — Hub card added in both EN and ES arrays (isNew: true).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.84 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.84</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Copy: hero rewrite + CTA consolidation + products framing</div>
+          <ul class="tl-list">
+            <li><strong>page.tsx hero H1</strong> — Rewritten from abstract "Unified Operating System" to "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what: "KabatOne is the command-and-control platform for governments and public safety agencies."</li>
+            <li><strong>page.tsx products section</strong> — Subline updated: replaced "unified intelligence layer" buzzword with "without stitching together six different vendors"</li>
+            <li><strong>CTASection.tsx</strong> — Consolidated from two equal-weight CTA buttons to one primary "Book a Demo" + a subtle text link fallback; eliminates competing CTAs across all pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.83 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.83</span><span class="tl-date">2026-03-23</span></div>
+          <div class="tl-title">Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card</div>
+          <ul class="tl-list">
+            <li>Added <code>/resources/end-of-siloed-response</code> and <code>/privacy</code> to sitemap.ts — both pages existed but were invisible to Google</li>
+            <li>Added ebook card for <code>/resources/end-of-siloed-response</code> to resources hub (EN + ES) — page had no internal discovery path</li>
+            <li>SEO master plan synced: agent log updated (v0.78–v0.82), Phase 3 → 0% Not started, Phase 4 → 30%, site size → 43 routes / 86 URLs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.82 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.82</span><span class="tl-date">2026-03-22</span></div>
+          <div class="tl-title">Design: industry brief landing page visual overhaul</div>
+          <ul class="tl-list">
+            <li>Removed Carbyne reference from stat labels</li>
+            <li>Removed cover card from hero; form narrowed to 360px, moved up</li>
+            <li>Redesigned SVG illustration (960×420): dot grids, red-tinted fragmented side, orange warning triangles, response time comparison, LIVE badge on hub</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.81 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.81</span><span class="tl-date">2026-03-22</span></div>
+          <div class="tl-title">Feat: Industry brief landing page /resources/end-of-siloed-response/</div>
+          <ul class="tl-list">
+            <li>Added <code>/resources/end-of-siloed-response/</code> — EN + ES landing page for Q2 2026 brief "The End of Siloed Response"</li>
+            <li>EbookDownloadForm client component: 4-field lead capture form with success state and PDF download link</li>
+            <li>Ebook cover visual, 4 key stats ($625M, >$3B, 83K+, 40%), 9-chapter grid, pull quote, bottom CTA</li>
+            <li>Full bilingual support, ArticleSchema + BreadcrumbSchema JSON-LD, metadata EN + ES</li>
+            <li>Created <code>public/downloads/</code> directory for PDF hosting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.80 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.80</span><span class="tl-date">2026-03-21</span></div>
+          <div class="tl-title">Feat: KabatOne vs Peregrine comparison page /vs/peregrine/</div>
+          <ul class="tl-list">
+            <li>Added <code>/vs/peregrine/</code> — EN + ES: Peregrine predictive analytics vs KabatOne unified operations</li>
+            <li>7-row comparison table: primary category, predictive analytics, CAD, video, GIS, traffic, integration model</li>
+            <li>6 FAQ pairs EN + ES — FAQPage schema + BreadcrumbSchema</li>
+            <li>"Strategic Intelligence vs Operational Platform" positioning section</li>
+            <li>Metadata (EN + ES) + sitemap entry</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.79 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.79</span><span class="tl-date">2026-03-21</span></div>
+          <div class="tl-title">Fix: sitemap orphans + SEO master plan sync</div>
+          <ul class="tl-list">
+            <li>Sitemap — added 3 missing integration paths (access-control, drones, panic-buttons) built in v0.78 but never indexed</li>
+            <li>SEO master plan — corrected site size (35 → 41 routes, 70 → 82 URLs); marked all 6 integration pages Done</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.78 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.78</span><span class="tl-date">2026-03-21</span></div>
+          <div class="tl-title">Feat: 3 new integration pages — Access Control, Drones, Panic Buttons</div>
+          <ul class="tl-list">
+            <li>Added <code>/integrations/access-control/</code> — OSDP/Wiegand/REST/ONVIF protocols, 4 facility use cases, hero image, EN + ES</li>
+            <li>Added <code>/integrations/drones/</code> — 6 capability cards, 4 operational scenarios, specs table, hero image, EN + ES</li>
+            <li>Added <code>/integrations/panic-buttons/</code> — 5-step response flow, 6 sector verticals, hero image, EN + ES</li>
+            <li>Metadata (EN + ES) and Footer links added for all 3 new pages</li>
+            <li>3 hero images generated via Nano Banana</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.77 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.77</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Design: Integration pages visual overhaul — hero images + section illustrations</div>
+          <ul class="tl-list">
+            <li>Added AI-generated hero illustration to LPR, Face Recognition, and Sensor Fusion integration pages</li>
+            <li>Added "From Plate to Alert in Under 3 Seconds" flow diagram section on LPR page</li>
+            <li>Added correlation timeline diagram to Sensor Fusion "How the Engine Works" section</li>
+            <li>Added 3-metric stats strip (identification rate, false positives, human confirmation) to Face Recognition privacy section</li>
+            <li>Generated 5 illustrations via Nano Banana: lpr-hero, lpr-flow, face-hero, fusion-hero, fusion-correlation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.76 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.76</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Next.js 16 dev routing + layout restructure + footer integrations</div>
+          <ul class="tl-list">
+            <li><strong>next.config.ts</strong> — Added <code>rewrites()</code> as dev fallback: Next.js 16 + Turbopack doesn't invoke middleware edge rewrites; rewrite rules map <code>/path</code> → <code>/en/path</code> so App Router correctly matches <code>[locale]</code> segments</li>
+            <li><strong>src/app/layout.tsx</strong> — Moved <code>&lt;html&gt;/&lt;body&gt;</code> and font variables to root layout (required by Next.js 16 Turbopack)</li>
+            <li><strong>src/components/Footer.tsx</strong> — Added Integrations column: LPR, Face Recognition, Sensor Fusion links (EN + ES labels)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.75 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.75</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Chore: Combined site-manager page (Dev Environment + Changelog tabs)</div>
+          <ul class="tl-list">
+            <li>Created <strong>site-manager.html</strong> — single internal management page with two tabs: Dev Environment map and full Changelog timeline</li>
+            <li>Dev Environment tab shows flow from Mac → GitHub (main/nextjs branches) → GitHub Pages / Vercel Staging / Vercel Preview → kabatone.com</li>
+            <li>Replaces managing two separate files; all future changelog entries should be logged in site-manager.html as well</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.74 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.74</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: Integration pages — LPR, Face Recognition, Sensor Fusion</div>
+          <div class="tl-card">
+            <div class="change-group">
+              <div class="change-group-label label-added">Added</div>
+              <ul class="change-list">
+                <li><strong>integrations/lpr/</strong> — License Plate Recognition integration page: what is LPR, how KabatOne integrates it, 4 use cases, technical specs table, FAQ (6 Q&amp;A), ArticleSchema + FAQSchema + BreadcrumbSchema, bilingual EN/ES</li>
+                <li><strong>integrations/face-recognition/</strong> — Face Recognition integration page: two operational modes, 4 use cases, privacy &amp; compliance controls section, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                <li><strong>integrations/sensor-fusion/</strong> — Sensor Fusion integration page: 6 sensor types, 5-step correlation engine flow, 3 use cases, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                <li>Metadata keys added to EN + ES metadata files: <strong>integrationLpr</strong>, <strong>integrationFaceRecognition</strong>, <strong>integrationSensorFusion</strong></li>
+              </ul>
+            </div>
+            <div class="change-group">
+              <div class="change-group-label label-changed">Changed</div>
+              <ul class="change-list">
+                <li><strong>sitemap.ts</strong> — Added 3 new paths (/integrations/lpr, /integrations/face-recognition, /integrations/sensor-fusion); site now 38 routes / 76 sitemap URLs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.73 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.73</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: Resources hub + 2 new blog-style articles</div>
+          <ul class="tl-list">
+            <li>Created <code>/resources/</code> hub index page — 7 article cards, 3-column responsive grid, bilingual EN/ES</li>
+            <li>New article: <code>/resources/rtcc-setup-guide/</code> — RTCC Setup Guide (5 steps, mistakes, metrics, FAQ + schemas)</li>
+            <li>New article: <code>/resources/ai-in-public-safety/</code> — AI in Public Safety guide (6 use cases, benefits, challenges, FAQ + schemas)</li>
+            <li>Nav Resources link now points to <code>/resources</code> index; removed dead Blog link</li>
+            <li>Sitemap updated with 3 new paths; metadata added EN + ES for all 3 pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.72 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.72</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Chore: remove static HTML files from nextjs branch</div>
+          <ul class="tl-list">
+            <li>Deleted 16 static website HTML files (hero-mockup, about, contact, solutions, 7 industry pages, 5 product pages)</li>
+            <li>Updated CLAUDE.md project snapshot to reflect Next.js stack</li>
+            <li>main branch remains as legacy static site; nextjs branch is now clean Next.js only</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.71 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.71</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Perf: lazy load below-fold images, switch mockups to WebP</div>
+          <ul class="tl-list">
+            <li>Added <code>loading="lazy"</code> to 16 below-fold images: 7 partner logos, 5 product icons, 4 city camera photos, footer logo</li>
+            <li>Switched k-traffic-mockup and k-connect-mockup references from .png to .webp</li>
+            <li>Reduces initial eager image load by ~70%; improves LCP toward 1.2–1.5s</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.70 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.70</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Docs: SEO master plan updated to current state</div>
+          <ul class="tl-list">
+            <li>Stack corrected to Next.js on Vercel; all 11 /vs/ comparison pages marked Done</li>
+            <li>Competitor tracking expanded; keyword map and performance targets (15 → 32 pages) updated</li>
+            <li>Agent run log: 5 new entries covering all /resources/ and /vs/ builds through v0.69</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.69 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.69</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: vs Fusus and vs Prepared 911 comparison pages</div>
+          <ul class="tl-list">
+            <li>New /vs/fusus page (EN + ES) — KabatOne vs Fusus RTCC; video intelligence vs full operations platform, community video, CAD, GIS, traffic</li>
+            <li>New /vs/prepared911 page (EN + ES) — KabatOne vs Prepared 911; NG911 call taking vs full response cycle</li>
+            <li>Metadata, sitemap, and footer links updated in both Next.js and static site</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.68 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.68</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Add: Privacy Policy page (EN + ES)</div>
+          <ul class="tl-list">
+            <li>New /privacy route with full privacy policy sourced from kabatone.com/privacy-policy</li>
+            <li>Bilingual (EN/ES) with all sections: data collected, ARCO rights, cookies, security, jurisdiction, and contact</li>
+            <li>Metadata registered in both EN and ES metadata files</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.67 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.67</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer columns grouped and right-aligned</div>
+          <ul class="tl-list">
+            <li>Company and Competitors columns now grouped together on the right side of the footer, eliminating excess stretch</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.66 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.66</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer competitor links now visible in static site</div>
+          <ul class="tl-list">
+            <li>Global <code>nav { position: fixed }</code> rule was pulling footer <code>&lt;nav&gt;</code> elements into the fixed top nav bar. Changed footer link containers to <code>&lt;div&gt;</code> elements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.65 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.65</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer competitors column is now vertical</div>
+          <ul class="tl-list">
+            <li>Footer restructured to multi-column layout in both <code>Footer.tsx</code> and <code>hero-mockup.html</code> — "Competitors" heading with links stacked vertically below</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.64 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.64</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Move competitors to a dedicated bottom row in footer</div>
+          <ul class="tl-list">
+            <li>Footer restructured in both <code>Footer.tsx</code> and <code>hero-mockup.html</code> — competitors now appear in a clear second row below the copyright/nav row, separated by a border</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.63 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.63</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Group competitor links under "Competitors" heading in footer</div>
+          <ul class="tl-list">
+            <li>Competitor links in <code>Footer.tsx</code> and <code>hero-mockup.html</code> now grouped under a "Competitors" label with a vertical list below</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.62 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.62</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Add competitor links to static footer</div>
+          <ul class="tl-list">
+            <li>Added 9 competitor links (vs. Genetec through vs. CAD) to <code>hero-mockup.html</code> footer — previously only on the Next.js branch footer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.61 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.61</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Feat: Batch competitor comparison pages — Motorola, Hexagon, Mark43, Axon, Carbyne, CAD</div>
+          <ul class="tl-list">
+            <li>Added <code>/vs/motorola/</code> — KabatOne vs Motorola Solutions (PremierOne CAD, Avigilon, CommandCentral)</li>
+            <li>Added <code>/vs/hexagon/</code> — KabatOne vs Hexagon Safety (HxGN OnCall CAD) — great CAD + GIS, missing video and traffic</li>
+            <li>Added <code>/vs/mark43/</code> — KabatOne vs Mark43 (cloud-native CAD/RMS) — cloud-native extended to full response lifecycle</li>
+            <li>Added <code>/vs/axon/</code> — KabatOne vs Axon (body cameras + Evidence.com) — officer-centric vs command center-centric</li>
+            <li>Added <code>/vs/carbyne/</code> — KabatOne vs Carbyne (next-gen 911) — Carbyne reinvented call intake; KabatOne manages everything after</li>
+            <li>Added <code>/vs/cad/</code> — Category page: KabatOne vs Traditional CAD Systems (names Motorola PremierOne, Hexagon, Tyler, CentralSquare, Mark43)</li>
+            <li>All 6 pages: 7-row comparison table, 6 FAQ pairs, FAQPage + BreadcrumbList schema, EN + ES</li>
+            <li>Metadata, sitemap entries, and footer links added for all 6 pages</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v0.60 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>

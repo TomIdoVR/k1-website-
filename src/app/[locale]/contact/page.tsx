@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
+import ContactForm from '@/components/ContactForm'
 
 export async function generateMetadata({
   params,
@@ -102,28 +103,6 @@ export default async function ContactPage({
     { flag: '\uD83C\uDF0E', name: 'Latin America' },
   ]
 
-  /* Shared input style */
-  const inputStyle: React.CSSProperties = {
-    background: '#0b1628',
-    border: '1px solid var(--border)',
-    color: 'var(--white)',
-    borderRadius: '8px',
-    padding: '12px 16px',
-    fontFamily: 'Space Grotesk, sans-serif',
-    fontSize: '0.9rem',
-    outline: 'none',
-    width: '100%',
-  }
-
-  const labelStyle: React.CSSProperties = {
-    fontFamily: 'DM Mono, monospace',
-    fontSize: '10.5px',
-    fontWeight: 500,
-    letterSpacing: '0.14em',
-    textTransform: 'uppercase',
-    color: 'var(--dim)',
-  }
-
   return (
     <>
       <Nav />
@@ -161,76 +140,27 @@ export default async function ContactPage({
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '48px', alignItems: 'start' }}>
 
             {/* FORM */}
-            <div style={{
-              background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
-              borderRadius: '20px', padding: '48px',
-            }}>
-              <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '1.5rem', color: 'var(--white)', letterSpacing: '0.01em', marginBottom: '8px' }}>
-                {content.formTitle}
-              </div>
-              <p style={{ fontSize: '0.875rem', color: 'var(--dim)', marginBottom: '36px', lineHeight: 1.5 }}>
-                {content.formSub}
-              </p>
-
-              <form action="#">
-                {/* Row 1: Name + Company */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                    <label style={labelStyle}>{content.labelName}</label>
-                    <input type="text" name="name" placeholder={content.placeholderName} required style={inputStyle} />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                    <label style={labelStyle}>{content.labelCompany}</label>
-                    <input type="text" name="company" placeholder={content.placeholderCompany} style={inputStyle} />
-                  </div>
-                </div>
-
-                {/* Row 2: Email + Phone */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                    <label style={labelStyle}>{content.labelEmail}</label>
-                    <input type="email" name="email" placeholder={content.placeholderEmail} required style={inputStyle} />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                    <label style={labelStyle}>{content.labelPhone}</label>
-                    <input type="tel" name="phone" placeholder={content.placeholderPhone} style={inputStyle} />
-                  </div>
-                </div>
-
-                {/* Interest select */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                  <label style={labelStyle}>{content.labelInterest}</label>
-                  <select name="interest" style={{ ...inputStyle, appearance: 'auto' as const }}>
-                    <option value="">{content.selectDefault}</option>
-                    {selectOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Message textarea */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-                  <label style={labelStyle}>{content.labelMessage}</label>
-                  <textarea name="message" placeholder={content.placeholderMessage} rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }} />
-                </div>
-
-                {/* Submit */}
-                <button type="submit" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '10px',
-                  background: 'var(--blue)', color: 'white',
-                  fontFamily: 'Space Grotesk, sans-serif', fontSize: '15px', fontWeight: 600,
-                  padding: '15px 36px', borderRadius: '10px', border: 'none', cursor: 'pointer',
-                  width: '100%', justifyContent: 'center', marginTop: '8px',
-                  boxShadow: '0 0 40px rgba(59,130,246,0.38), inset 0 1px 0 rgba(255,255,255,0.1)',
-                  letterSpacing: '0.02em',
-                }}>
-                  {content.btnSubmit}
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </form>
-            </div>
+            <ContactForm
+              es={es}
+              labels={{
+                formTitle: content.formTitle,
+                formSub: content.formSub,
+                labelName: content.labelName,
+                labelCompany: content.labelCompany,
+                labelEmail: content.labelEmail,
+                labelPhone: content.labelPhone,
+                labelInterest: content.labelInterest,
+                labelMessage: content.labelMessage,
+                placeholderName: content.placeholderName,
+                placeholderCompany: content.placeholderCompany,
+                placeholderEmail: content.placeholderEmail,
+                placeholderPhone: content.placeholderPhone,
+                placeholderMessage: content.placeholderMessage,
+                selectDefault: content.selectDefault,
+                btnSubmit: content.btnSubmit,
+              }}
+              selectOptions={selectOptions}
+            />
 
             {/* SIDEBAR */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>

@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import ModulesSection from '@/components/ModulesSection'
+import HowItWorks from '@/components/HowItWorks'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 
@@ -38,12 +39,12 @@ const products = [
     es: {
       label: 'K-SAFETY',
       headline: 'Conciencia Situacional GIS en Tiempo Real',
-      desc: 'Convierte datos de ubicacion en inteligencia accionable. K-Safety superpone incidentes, unidades y transmisiones en vivo en un mapa unificado para que despachadores y comandantes siempre tengan el panorama completo.',
+      desc: 'Convierte datos de ubicación en inteligencia accionable. K-Safety superpone incidentes, unidades y transmisiones en vivo en un mapa unificado para que despachadores y comandantes siempre tengan el panorama completo.',
       feats: [
-        'Mapeo de incidentes en vivo con auto-clasificacion',
-        'Rastreo de unidades de campo y alertas de geovalla',
-        'Integracion GIS multicapa (CAD, sensores, camaras)',
-        'Analitica de patrones para despliegue proactivo',
+        'Mapeo de incidentes en vivo con autoclasificación',
+        'Rastreo de unidades de campo y alertas de geo valla',
+        'Integración GIS multicapa (CAD, sensores, cámaras)',
+        'Analítica de patrones para despliegue proactivo',
       ],
     },
   },
@@ -68,12 +69,12 @@ const products = [
     es: {
       label: 'K-DISPATCH',
       headline: 'Despacho de Emergencia Potenciado por IA',
-      desc: 'De la llamada al despliegue en segundos. K-Dispatch centraliza la recepcion multicanal, recomienda automaticamente las unidades mas cercanas y registra cada accion.',
+      desc: 'De la llamada al despliegue en segundos. K-Dispatch centraliza la recepción multicanal, recomienda automáticamente las unidades más cercanas y registra cada acción.',
       feats: [
-        'Recepcion multicanal: telefono, radio, IoT, app ciudadana',
-        'Triaje de llamadas asistido por IA y puntuacion de prioridad',
-        'Motor de recomendacion inteligente de unidades',
-        'Rastro de auditoria completo e informes post-incidente',
+        'Recepción multicanal: teléfono, radio, IoT, app ciudadana',
+        'Clasificación de llamadas por IA y asignación de prioridad',
+        'Motor de recomendación inteligente de unidades',
+        'Rastro de auditoría completo e informes posts-incidentes',
       ],
     },
   },
@@ -96,13 +97,13 @@ const products = [
     },
     es: {
       label: 'K-TRAFFIC',
-      headline: 'Gestion Inteligente de Trafico',
-      desc: 'Optimiza el flujo, detecta infracciones y responde a incidentes antes de que se conviertan en congestion. K-Traffic conecta senales, sensores y cumplimiento en un sistema adaptativo.',
+      headline: 'Gestión Inteligente de Tráfico',
+      desc: 'Optimiza el flujo, detecta infracciones y responde a incidentes antes de que se conviertan en congestión. K-Traffic conecta señales, sensores y cumplimiento en un sistema adaptativo.',
       feats: [
-        'Control adaptativo de senales y optimizacion de corredores',
-        'Deteccion automatizada de infracciones (semaforo, velocidad, contrasentido)',
-        'Deteccion de incidentes y prioridad vehicular de emergencia',
-        'Dashboard de analitica de trafico en tiempo real',
+        'Control adaptativo de señales y optimización de corredores',
+        'Detección automatizada de infracciones (semáforo, velocidad, contrasentido)',
+        'Detección de incidentes y prioridad vehicular de emergencia',
+        'Dashboard de analítica de tráfico en tiempo real',
       ],
     },
   },
@@ -127,11 +128,11 @@ const products = [
     es: {
       label: 'K-VIDEO',
       headline: 'Inteligencia de Video Unificada',
-      desc: 'Agrega cada camara -- CCTV, corporal, dron, trafico -- en una sola vista buscable. K-Video anade analitica de IA para encontrar lo relevante en segundos.',
+      desc: 'Agrega cada cámara -- CCTV, corporal, dron, tráfico -- en una interfaz de búsqueda unificada. K-Video añade analítica de IA para encontrar lo relevante en segundos.',
       feats: [
         'VMS unificado: cualquier marca, cualquier protocolo',
-        'Deteccion de objetos, comportamiento y placas por IA',
-        'Busqueda forense de video en todas las camaras',
+        'Detección de objetos, comportamiento y placas por IA',
+        'Búsqueda forense de video en todas las cámaras',
         'Alertas en vivo sobre eventos y zonas definidos',
       ],
     },
@@ -155,13 +156,13 @@ const products = [
     },
     es: {
       label: 'K-CONNECT',
-      headline: 'Comparticion Segura de Video Comunitario',
+      headline: 'Red segura de video vigilancia comunitaria',
       desc: 'Plataforma enfocada en privacidad que permite compartir video seguro entre empresas, residentes y centros de mando regionales con monitoreo impulsado por IA.',
       feats: [
-        'Comparticion de video publico-privada segura',
+        'Colaboración de video público-privada segura',
         'Alertas y monitoreo impulsados por IA',
         'Control de acceso enfocado en privacidad',
-        'Coordinacion de emergencia integrada',
+        'Coordinación de emergencia integrada',
       ],
     },
   },
@@ -179,7 +180,7 @@ const whyCards = [
     },
     es: {
       title: 'Imagen Operativa Unificada',
-      body: 'Video, despacho, GIS y operaciones de campo comparten una sola capa de datos en tiempo real. Sin mas cambio de pestanas. Sin mas puntos ciegos.',
+      body: 'Video, despacho, GIS y operaciones de campo comparten una sola capa de datos en tiempo real. Se acabaron los cambios de pestañas y los puntos ciegos.',
     },
   },
   {
@@ -188,11 +189,11 @@ const whyCards = [
     tagES: 'TIEMPO DE RESPUESTA',
     en: {
       title: 'Seconds Matter. We Built for That.',
-      body: 'From 911 call intake to unit dispatch to AI-assisted triage -- every workflow is optimized to shave seconds off response time.',
+      body: 'From 911 call intake to unit recommendation to field deployment — the average dispatch cycle runs under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD systems.',
     },
     es: {
       title: 'Cada Segundo Cuenta. Construido Para Eso.',
-      body: 'Desde la recepcion de llamadas 911 hasta el despacho de unidades con triaje asistido por IA -- cada flujo esta optimizado para reducir segundos del tiempo de respuesta.',
+      body: 'Desde la recepción de llamadas 911 hasta la recomendación de unidades y el despliegue — el ciclo de despacho promedio es menor a 90 segundos en KabatOne vs. 4–6 minutos en sistemas CAD heredados.',
     },
   },
   {
@@ -205,7 +206,7 @@ const whyCards = [
     },
     es: {
       title: 'Seguridad de Nivel Empresarial',
-      body: 'Certificado SOC 2 Tipo II. Cifrado de extremo a extremo. Controles de acceso basados en roles. Construido desde cero para estandares de datos policiales.',
+      body: 'Certificado SOC 2 Tipo II. Cifrado de extremo a extremo. Controles de acceso basados en roles. Construido desde cero para estándares de datos policiales.',
     },
   },
   {
@@ -214,11 +215,11 @@ const whyCards = [
     tagES: 'INTELIGENCIA PREDICTIVA',
     en: {
       title: 'AI That Earns Its Keep',
-      body: 'Pattern recognition, predictive deployment, and anomaly detection built in -- not bolted on. The AI layer learns from your city\'s data.',
+      body: 'Pattern recognition and anomaly detection are built into the rules engine — not a separate add-on. It flags unusual behavior before an operator notices, using your city\'s own historical data.',
     },
     es: {
       title: 'IA Que Demuestra Su Valor',
-      body: 'Reconocimiento de patrones, despliegue predictivo y deteccion de anomalias integrados -- no anadidos. La capa de IA aprende de los datos de tu ciudad.',
+      body: 'El reconocimiento de patrones y la detección de anomalías están integrados en el motor de reglas — no son un módulo separado. Detecta comportamientos inusuales antes de que el operador los note, usando los datos históricos de tu ciudad.',
     },
   },
 ]
@@ -235,8 +236,8 @@ const industryCards = [
       pills: ['GIS Awareness', 'Video Analytics', 'AI Events'],
     },
     es: {
-      name: 'Seguridad Publica y Ciudades Inteligentes',
-      desc: 'Soluciones inteligentes para seguridad proactiva, unificando camaras, sensores y despacho en ciudades enteras.',
+      name: 'Seguridad Pública y Ciudades Inteligentes',
+      desc: 'Soluciones inteligentes para seguridad proactiva, unificando cámaras, sensores y despacho en ciudades enteras.',
       pills: ['Conciencia GIS', 'Video Analitico', 'Eventos IA'],
     },
   },
@@ -251,7 +252,7 @@ const industryCards = [
     },
     es: {
       name: 'Municipios',
-      desc: 'Despacho de emergencia en tiempo real y mando unificado para gobiernos municipales -- 40% mas rapido demostrado.',
+      desc: 'Despacho de emergencia en tiempo real y mando unificado para gobiernos municipales — 40% más rápido demostrado.',
       pills: ['Despacho C4/C5', 'Ruteo Inteligente', 'Multi-Agencia'],
     },
   },
@@ -266,7 +267,7 @@ const industryCards = [
     },
     es: {
       name: 'Seguridad Aeroportuaria',
-      desc: 'Monitoreo perimetral con IA, deteccion de anomalias y gestion de incidentes de terminal a pista.',
+      desc: 'Monitoreo perimetral con IA, detección de anomalías y gestión de incidentes de terminal a pista.',
       pills: ['IA Perimetral', 'Control de Acceso', 'Cumplimiento'],
     },
   },
@@ -281,8 +282,8 @@ const industryCards = [
     },
     es: {
       name: 'Retail',
-      desc: 'Seguridad 360 grados e inteligencia de negocio -- prevencion de perdidas, mapas de calor y analitica de afluencia.',
-      pills: ['Prevencion de Perdidas', 'Mapas de Calor', 'Conteo de Personas'],
+      desc: 'Seguridad 360 grados e inteligencia de negocio: prevención de pérdidas, mapas de calor y analítica de afluencia.',
+      pills: ['Prevención de Pérdidas', 'Mapas de Calor', 'Conteo de Personas'],
     },
   },
   {
@@ -295,9 +296,9 @@ const industryCards = [
       pills: ['LPR', 'Warehouse AI', 'Traceability'],
     },
     es: {
-      name: 'Logistica',
-      desc: 'Seguridad inteligente del almacen a la ultima milla -- LPR, IA perimetral y trazabilidad en tiempo real.',
-      pills: ['LPR', 'IA de Almacen', 'Trazabilidad'],
+      name: 'Logística',
+      desc: 'Seguridad inteligente del almacén a la última milla: LPR, IA perimetral y trazabilidad en tiempo real.',
+      pills: ['LPR', 'IA de Almacén', 'Trazabilidad'],
     },
   },
   {
@@ -311,7 +312,7 @@ const industryCards = [
     },
     es: {
       name: 'Seguridad Portuaria',
-      desc: 'Plataforma conforme a ISPS/IMO unificando radares, camaras, sensores IoT y rastreo de embarcaciones.',
+      desc: 'Plataforma conforme a ISPS/IMO unificando radares, cámaras, sensores IoT y rastreo de embarcaciones.',
       pills: ['ISPS/IMO', 'Rastreo de Embarcaciones', 'Radar Costero'],
     },
   },
@@ -326,22 +327,26 @@ const industryCards = [
     },
     es: {
       name: 'Estadios y Recintos',
-      desc: 'Centro de mando IA para estadios -- analitica de multitudes, respuesta instantanea a incidentes y 60% mas rapido.',
-      pills: ['Analitica de Multitudes', 'Acceso Inteligente', '60% Mas Rapido'],
+      desc: 'Centro de mando IA para estadios: analítica de multitudes, respuesta instantánea a incidentes y 60% más rápido.',
+      pills: ['Analítica de Multitudes', 'Acceso Inteligente', '60% más rápido'],
     },
   },
 ]
 
 /* ── Trusted agencies carousel ── */
 const agencies = [
-  { abbr: 'SSP', name: 'Secretaria de Seguridad\nMichoacan' },
-  { abbr: 'C5i', name: 'Centro de Comando\nCiudad de Mexico' },
-  { abbr: 'GN', name: 'Guardia\nNacional' },
-  { abbr: 'C4', name: 'Centro de Mando\nMonterrey' },
-  { abbr: 'SSC', name: 'Secretaria de Seguridad\nCiudadana CDMX' },
-  { abbr: 'SSPC', name: 'Secretaria de Seguridad\nPublica Federal' },
-  { abbr: 'SSP', name: 'Secretaria de Seguridad\nJalisco' },
-  { abbr: 'C5', name: 'Centro de Inteligencia\nGuerrero' },
+  { abbr: 'C5CDMX', name: 'Centro de Mando\nCiudad de Mexico' },
+  { abbr: 'YUC', name: 'Secretaria de Seguridad\nYucatan' },
+  { abbr: 'DGO', name: 'Secretaria de Seguridad\nDurango' },
+  { abbr: 'SIN', name: 'Secretaria de Seguridad\nSinaloa' },
+  { abbr: 'TAM', name: 'Secretaria de Seguridad\nTamaulipas' },
+  { abbr: 'INAMI', name: 'Instituto Nacional\nde Migracion' },
+  { abbr: 'JAL', name: 'Secretaria de Seguridad\nJalisco' },
+  { abbr: 'MICH', name: 'Secretaria de Seguridad\nMichoacan' },
+  { abbr: 'CHIS', name: 'Secretaria de Seguridad\nChiapas' },
+  { abbr: 'PUE', name: 'Secretaria de Seguridad\nPuebla' },
+  { abbr: 'NAU', name: 'Centro de Mando\nNaucalpan' },
+  { abbr: 'NAY', name: 'Secretaria de Seguridad\nNayarit' },
 ]
 
 export default async function HomePage({
@@ -366,21 +371,21 @@ export default async function HomePage({
           {/* Eyebrow */}
           <div className="hp-eyebrow">
             <span className="hp-eyebrow-dot" />
-            {es ? 'Plataforma de Seguridad Publica' : 'Public Safety Platform'}
+            {es ? 'Plataforma de Seguridad Pública' : 'Public Safety Platform'}
           </div>
 
           {/* H1 */}
           <h1 className="hp-headline">
             {es
-              ? 'El Sistema Operativo Unificado para la Seguridad Publica'
+              ? 'El Sistema Operativo Unificado para la Seguridad Pública'
               : 'The Unified Operating System for Public Safety'}
           </h1>
 
           {/* Subtitle */}
           <p className="hp-sub">
             {es
-              ? 'Una plataforma unificada que conecta despacho, videovigilancia, trafico y operaciones en campo. Utilizada por mas de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
-              : 'One unified platform connecting dispatch, surveillance, traffic, and field operations. Trusted by 40+ cities, protecting 70 million citizens.'}
+              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco módulos integrados. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
+              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated modules. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
           </p>
 
           {/* CTA Row */}
@@ -393,34 +398,38 @@ export default async function HomePage({
             </Link>
           </div>
 
-          {/* Trust Badges */}
-          <div className="hp-badges">
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <path d="M9 2L15 5v4c0 3.7-2.6 7-6 8-3.4-1-6-4.3-6-8V5L9 2z" stroke="#60a5fa" strokeWidth="1.3" strokeLinejoin="round"/>
-                <path d="M6 9l2 2 4-4" stroke="#60a5fa" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="hp-badge-label"><strong>SOC 2</strong> {es ? 'Certificado' : 'Certified'}</span>
-            </div>
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <rect x="2" y="6" width="14" height="9" rx="1.5" stroke="#60a5fa" strokeWidth="1.3"/>
-                <path d="M5 6V4.5a4 4 0 018 0V6" stroke="#60a5fa" strokeWidth="1.3"/>
-              </svg>
-              <span className="hp-badge-label"><strong>99.9%</strong> Uptime SLA</span>
-            </div>
-            <div className="hp-badge">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                <circle cx="9" cy="9" r="7" stroke="#60a5fa" strokeWidth="1.3"/>
-                <path d="M9 5v4l3 2" stroke="#60a5fa" strokeWidth="1.3" strokeLinecap="round"/>
-              </svg>
-              <span className="hp-badge-label"><strong>24/7</strong> {es ? 'Soporte' : 'Support'}</span>
-            </div>
-          </div>
         </section>
+
+        {/* ═══ HOW IT WORKS ═══ */}
+        <HowItWorks es={es} />
 
         {/* ═══ MODULES / BI TABBED SECTION ═══ */}
         <ModulesSection es={es} />
+
+        {/* ═══ INTEGRATION PARTNER LOGOS ═══ */}
+        <section style={{ padding: '40px 40px', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '1060px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '32px' }}>
+              {es ? 'Ecosistema de Integraciones' : 'Integration Ecosystem'}
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '48px' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.milestonesys.com/Static/Img/Global/logo.svg" alt="Milestone" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.genetec.com/binaries/content/gallery/genetecweb/ie/genetec_logo.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://rapidsos.com/wp-content/uploads/2022/10/rapidsos-horizontal-logo.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://carbyne.com/wp-content/uploads/2024/12/carbyne-registered-logo.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.corsight.ai/wp-content/uploads/2021/05/corsight-logo-white.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://motorola-style.cdn.prismic.io/motorola-style/656612a6531ac2845a2568a5_LogoFill-1-.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.i-pro.com/products_and_solutions/themes/custom/ipro/logo.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+            </div>
+          </div>
+        </section>
 
         {/* ═══ PROOF / STATS SECTION ═══ */}
         <section className="hp-proof">
@@ -456,14 +465,14 @@ export default async function HomePage({
               <div className="hp-quote-line" />
               <blockquote className="hp-quote">
                 {es
-                  ? '"KabatOne reemplazo cuatro sistemas separados de la noche a la manana. Nuestros despachadores tenian un panorama operativo completo dentro de 72 horas del lanzamiento. No fue una actualizacion -- fue una categoria diferente de herramienta."'
+                  ? '"KabatOne reemplazó cuatro sistemas separados de la noche a la mañana. Nuestros despachadores tuvieron un panorama operativo completo a las 72 horas del lanzamiento. No fue una actualización; fue una categoría de herramienta totalmente diferente."'
                   : '"KabatOne replaced four separate systems overnight. Our dispatchers had a full common operating picture within 72 hours of go-live. It wasn\'t an upgrade -- it was a different category of tool."'}
               </blockquote>
               <div className="hp-quote-attr">
                 <span className="hp-quote-dot" />
                 <div>
                   <div className="hp-quote-name">{es ? 'Director de Operaciones' : 'Chief of Operations'}</div>
-                  <div className="hp-quote-org">{es ? 'Departamento de Policia Metropolitana de EE.UU.' : 'Major U.S. Metropolitan Police Dept.'}</div>
+                  <div className="hp-quote-org">{es ? 'Departamento de Policía Metropolitana de EEUU.' : 'Major U.S. Metropolitan Police Dept.'}</div>
                 </div>
               </div>
               <div className="hp-quote-line hp-quote-line-bottom" />
@@ -496,12 +505,12 @@ export default async function HomePage({
                 {es ? 'LA PLATAFORMA' : 'THE PLATFORM'}
               </div>
               <h2 className="hp-products-h2">
-                {es ? (<>Cinco Productos.<br/>Una Imagen Operativa.</>) : (<>Five Products.<br/>One Operating Picture.</>)}
+                {es ? (<>Cinco Soluciones.<br/>Una Imagen Operativa.</>) : (<>Five Solutions.<br/>One Operating Picture.</>)}
               </h2>
               <p className="hp-products-sub">
                 {es
-                  ? 'Cada modulo funciona por si solo -- y juntos forman una capa de inteligencia unificada para cualquier agencia o ciudad.'
-                  : 'Each module stands alone -- and together they form a unified intelligence layer for any agency or city.'}
+                  ? 'Cada módulo funciona de forma independiente. Juntos, le dan a su centro de mando una imagen operativa común -- sin integrar seis proveedores distintos.'
+                  : 'Each module works independently. Together, they give your command center one common operating picture — without stitching together six different vendors.'}
               </p>
             </div>
 
@@ -520,7 +529,7 @@ export default async function HomePage({
                       {c.feats.map((f, i) => <li key={i}>{f}</li>)}
                     </ul>
                     <Link href={prod.href} className="hp-prod-link">
-                      {es ? 'Mas informacion' : 'Learn more'} <span className="hp-prod-link-arrow">&rarr;</span>
+                      {es ? 'Más información' : 'Learn more'} <span className="hp-prod-link-arrow">&rarr;</span>
                     </Link>
                   </div>
                   <div className="hp-prod-visual">
@@ -560,7 +569,7 @@ export default async function HomePage({
           <div className="hp-why-inner">
             <div className="hp-why-header">
               <div className="hp-section-label">
-                {es ? 'POR QUE KABATONE' : 'WHY KABATONE'}
+                {es ? 'POR QUÉ KABATONE' : 'WHY KABATONE'}
               </div>
               <div className="hp-why-header-grid">
                 <h2 className="hp-why-h2">
@@ -568,7 +577,7 @@ export default async function HomePage({
                 </h2>
                 <p className="hp-why-sub">
                   {es
-                    ? 'La mayoria de las agencias operan 6-12 herramientas desconectadas. KabatOne las reemplaza todas -- con una imagen operativa unificada que realmente se comunica consigo misma.'
+                    ? 'La mayoría de las agencias operan 6-12 herramientas desconectadas. KabatOne las reemplaza todas -- con una imagen operativa unificada que realmente se comunica consigo misma.'
                     : 'Most agencies run 6-12 disconnected tools. KabatOne replaces them all -- with a unified operating picture that actually talks to itself.'}
                 </p>
               </div>
@@ -629,11 +638,11 @@ export default async function HomePage({
                 {es ? 'INDUSTRIAS QUE SERVIMOS' : 'INDUSTRIES WE SERVE'}
               </div>
               <h2 className="hp-ind-h2">
-                {es ? (<>Una Plataforma.<br/>Cada Primera Linea.</>) : (<>One Platform.<br/>Every Frontline.</>)}
+                {es ? (<>Una Plataforma.<br/>Cada Primera Línea.</>) : (<>One Platform.<br/>Every Frontline.</>)}
               </h2>
               <p className="hp-ind-sub">
                 {es
-                  ? 'Desplegado en seguridad publica, respuesta a emergencias, infraestructura critica y movilidad urbana -- KabatOne se adapta a las demandas operativas de cada dominio.'
+                  ? 'Desplegado en seguridad pública, respuesta a emergencias, infraestructura crítica y movilidad urbana -- KabatOne se adapta a las demandas operativas de cada dominio.'
                   : 'Deployed across public safety, emergency response, critical infrastructure, and urban mobility -- KabatOne adapts to the operational demands of each domain.'}
               </p>
             </div>
@@ -657,7 +666,7 @@ export default async function HomePage({
                     <div className="hp-ind-pills">
                       {c.pills.map((p, i) => <span key={i}>{p}</span>)}
                     </div>
-                    <div className="hp-ind-more">{es ? 'Mas informacion' : 'Learn more'} <span>&rarr;</span></div>
+                    <div className="hp-ind-more">{es ? 'Más información' : 'Learn more'} <span>&rarr;</span></div>
                   </Link>
                 )
               })}
@@ -668,7 +677,7 @@ export default async function HomePage({
         {/* ═══ FINAL CTA ═══ */}
         <CTASection
           es={es}
-          h2={es ? 'Vea KabatOne en Accion' : 'See KabatOne in Action'}
+          h2={es ? 'Vea KabatOne en Acción' : 'See KabatOne in Action'}
           subtitle={es
             ? 'Agenda una demo en vivo con nuestro equipo de soluciones. Te mostraremos la plataforma funcionando con datos reales de ciudades -- no diapositivas.'
             : 'Schedule a live demo with our solutions team. We\'ll show you the platform running on real city data -- not slides.'}
@@ -732,7 +741,7 @@ export default async function HomePage({
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 80px 24px 40px;
+          padding: 80px 24px 16px;
           text-align: center;
         }
         .hp-eyebrow {

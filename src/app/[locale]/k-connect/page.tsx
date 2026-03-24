@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
 import { Link } from '@/i18n/navigation'
@@ -230,23 +231,25 @@ export default async function KConnectPage({
         </PageHero>
 
         {/* -- BENEFITS -- */}
-        <section style={{ background: 'var(--bg-2)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{content.benefitsLabel}</p>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>{content.benefitsH2}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {benefits.slice(0, 3).map((b, i) => (
-                <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', borderTop: `3px solid ${ACCENT}` }}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '10px' }}>{b.title}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--dim)', lineHeight: 1.65 }}>{b.desc}</p>
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', marginBottom: '16px' }}>{b.icon}</div>
+                  <h3 style={{ fontSize: '17px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--white)', marginBottom: '10px' }}>{b.title}</h3>
+                  <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.65 }}>{b.desc}</p>
                 </div>
               ))}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginTop: '20px' }}>
               {benefits.slice(3).map((b, i) => (
-                <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', borderTop: `3px solid ${ACCENT}` }}>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '10px' }}>{b.title}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--dim)', lineHeight: 1.65 }}>{b.desc}</p>
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: `${ACCENT}18`, border: `1px solid ${ACCENT}33`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', marginBottom: '16px' }}>{b.icon}</div>
+                  <h3 style={{ fontSize: '17px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--white)', marginBottom: '10px' }}>{b.title}</h3>
+                  <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.65 }}>{b.desc}</p>
                 </div>
               ))}
             </div>
@@ -254,39 +257,36 @@ export default async function KConnectPage({
         </section>
 
         {/* -- PROCESS DIAGRAM -- */}
-        <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>{content.processH2}</h2>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              {/* Inputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>&rarr;</div>
-              {/* Hub */}
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-CONNECT</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'CONECTAR \u00b7 COMPARTIR \u00b7 PROTEGER' : 'CONNECT \u00b7 SHARE \u00b7 PROTECT'}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>&rarr;</div>
-              {/* Outputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
+        <section style={{ padding: '100px 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="kc"
+              product="K-CONNECT"
+              tagline="SHARE · MONITOR · RESPOND"
+              inputs={[
+                { label: 'Campuses',            pillW: 90,  icon: <><rect x="-10" y="-8" width="12" height="16" rx="1"/><rect x="4" y="-4" width="9" height="12" rx="1"/><line x1="-10" y1="8" x2="13" y2="8"/><rect x="-7" y="-4" width="4" height="4" rx="0.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Universities',        pillW: 105, icon: <><polygon points="0,-12 -13,-4 0,4 13,-4"/><line x1="0" y1="4" x2="0" y2="12"/><line x1="-4" y1="12" x2="4" y2="12"/></> },
+                { label: 'Factories',           pillW: 84,  icon: <><rect x="-13" y="-2" width="26" height="10" rx="1"/><rect x="-10" y="-12" width="6" height="10"/><rect x="2" y="-8" width="6" height="6"/><line x1="-13" y1="8" x2="13" y2="8"/></> },
+                { label: 'Stores',              pillW: 68,  icon: <><rect x="-12" y="-8" width="24" height="16" rx="2"/><polyline points="-12,-8 -15,-14 15,-14 12,-8"/><rect x="-4" y="0" width="8" height="8" rx="1" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Citizens',            pillW: 78,  icon: <><circle cx="0" cy="-8" r="5"/><path d="M-10,14 C-10,4 10,4 10,14"/></> },
+                { label: 'Gov. Facilities',     pillW: 112, icon: <><rect x="-13" y="-1" width="26" height="9" rx="0"/><line x1="-10" y1="-1" x2="-10" y2="-9"/><line x1="-3" y1="-1" x2="-3" y2="-9"/><line x1="4" y1="-1" x2="4" y2="-9"/><line x1="11" y1="-1" x2="11" y2="-9"/><polygon points="-15,-9 -1,-16 15,-9"/><line x1="-13" y1="8" x2="13" y2="8"/></> },
+              ]}
+              outputs={[
+                { label: 'Law Enforcement', pillW: 118, icon: <><path d="M0,-14 L10,-8 L10,2 C10,8 5,13 0,15 C-5,13 -10,8 -10,2 L-10,-8 Z"/><line x1="-4" y1="-2" x2="4" y2="-2"/><line x1="0" y1="-6" x2="0" y2="2"/></> },
+                { label: 'City Operations',  pillW: 110, icon: <><rect x="-13" y="-6" width="26" height="20" rx="2"/><rect x="-6" y="-13" width="12" height="8" rx="1"/><line x1="-7" y1="14" x2="-7" y2="7"/><line x1="0" y1="14" x2="0" y2="7"/><line x1="7" y1="14" x2="7" y2="7"/></> },
+                { label: 'Audit Trail',      pillW: 90,  icon: <><rect x="-10" y="-13" width="20" height="26" rx="2"/><line x1="-5" y1="-6" x2="5" y2="-6"/><line x1="-5" y1="0" x2="5" y2="0"/><polyline points="-5,6 -2,9 5,2"/></> },
+              ]}
+            />
           </div>
         </section>
 
         {/* -- TARGET AUDIENCE -- */}
-        <section style={{ background: 'var(--bg-2)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{content.audienceLabel}</p>
@@ -314,7 +314,7 @@ export default async function KConnectPage({
         </section>
 
         {/* -- INTEGRATIONS -- */}
-        <section style={{ padding: '80px 32px' }}>
+        <section style={{ padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '48px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{content.intLabel}</p>
@@ -322,7 +322,7 @@ export default async function KConnectPage({
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {integrations.map((int, i) => (
-                <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }}>
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 24px' }}>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '10px' }}>{int.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.65 }}>{int.desc}</p>
                 </div>

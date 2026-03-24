@@ -107,15 +107,13 @@ export default async function AboutPage({
   ]
 
   const regions = es ? [
-    { color: '#3b82f6', label: 'Norteamerica \u2014 Sede Central, Cresskill NJ' },
-    { color: '#06b6d4', label: 'America Latina \u2014 Operaciones y Desarrollo, Mexico' },
-    { color: '#a855f7', label: 'Europa \u2014 Despliegue y Alianzas' },
-    { color: '#f59e0b', label: 'Israel \u2014 Centro de I+D' },
+    { color: '#06b6d4', label: 'Mexico \u2014 Sede Central' },
+    { color: '#f59e0b', label: 'Israel \u2014 Oficina de I+D' },
+    { color: '#3b82f6', label: 'Estados Unidos \u2014 Oficina Comercial, Cresskill NJ' },
   ] : [
-    { color: '#3b82f6', label: 'North America \u2014 Headquarters, Cresskill NJ' },
-    { color: '#06b6d4', label: 'Latin America \u2014 Operations & Development, Mexico' },
-    { color: '#a855f7', label: 'Europe \u2014 Deployment & Partnerships' },
-    { color: '#f59e0b', label: 'Israel \u2014 R&D Center' },
+    { color: '#06b6d4', label: 'Mexico \u2014 Headquarters' },
+    { color: '#f59e0b', label: 'Israel \u2014 R&D Office' },
+    { color: '#3b82f6', label: 'United States \u2014 Commercial Office, Cresskill NJ' },
   ]
 
   const values = es ? [
@@ -229,14 +227,6 @@ export default async function AboutPage({
               }}>
                 {content.cta1}
               </Link>
-              <a href="#mission" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                border: '1px solid rgba(255,255,255,0.15)', color: 'var(--dim)',
-                padding: '13px 28px', borderRadius: '8px', fontSize: '14px',
-                fontWeight: 500, textDecoration: 'none',
-              }}>
-                {content.cta2}
-              </a>
             </div>
           </div>
 
@@ -504,8 +494,8 @@ export default async function AboutPage({
             }}>
               <p style={{ marginBottom: '16px' }}>
                 {es
-                  ? 'KabatOne es una empresa de tecnología de seguridad pública con sede en Cresskill, Nueva Jersey, fundada por Omer Cnaani. La compañía desarrolla la plataforma Avalon — un sistema unificado de inteligencia operativa que integra despacho asistido por computadora (CAD), gestión de video (VMS), conciencia situacional GIS en tiempo real, gestión de tráfico y video comunitario compartido.'
-                  : 'KabatOne is a public safety technology company headquartered in Cresskill, New Jersey, founded by Omer Cnaani. The company develops the Avalon platform — a unified operational intelligence system integrating computer-aided dispatch (CAD), video management (VMS), real-time GIS situational awareness, traffic management, and community video sharing.'}
+                  ? 'KabatOne es una empresa de tecnología de seguridad pública con sede en Cresskill, Nueva Jersey, fundada por Omer Cnaani. La compañía desarrolla la plataforma K1 — un sistema unificado de inteligencia operativa que integra despacho asistido por computadora (CAD), gestión de video (VMS), conciencia situacional GIS en tiempo real, gestión de tráfico y video comunitario compartido.'
+                  : 'KabatOne is a public safety technology company headquartered in Cresskill, New Jersey, founded by Omer Cnaani. The company develops the K1 platform — a unified operational intelligence system integrating computer-aided dispatch (CAD), video management (VMS), real-time GIS situational awareness, traffic management, and community video sharing.'}
               </p>
               <p>
                 {es

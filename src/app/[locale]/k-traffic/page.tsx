@@ -3,8 +3,10 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HubDiagram from '@/components/HubDiagram'
 import CTASection from '@/components/CTASection'
 import PageHero from '@/components/PageHero'
+import KTrafficCommandHero from '@/components/industry-heroes/KTrafficCommandHero'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -173,140 +175,11 @@ export default async function KTrafficPage({
           cta1={content.cta1}
           cta2={content.cta2}
         >
-          {/* Traffic Control Center Mockup */}
-          <div style={{
-            background: '#0b1628', borderRadius: '16px', border: '1px solid var(--border-b)',
-            overflow: 'hidden', boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
-            borderTop: `3px solid ${ACCENT}`,
-          }}>
-            {/* Header */}
-            <div style={{ padding: '14px 20px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--dim)', fontFamily: 'monospace', letterSpacing: '0.12em', textTransform: 'uppercase' }}>K-Traffic Control Center</span>
-              <span style={{ fontSize: '10px', fontWeight: 700, background: 'rgba(6,182,212,0.1)', color: ACCENT, padding: '3px 10px', borderRadius: '20px', letterSpacing: '0.16em', border: '1px solid rgba(6,182,212,0.25)', fontFamily: 'monospace' }}>LIVE</span>
-            </div>
-            {/* Signal + Map Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '90px 1fr', minHeight: '220px' }}>
-              {/* Signal Panel */}
-              <div style={{ borderRight: '1px solid var(--border)', padding: '16px 12px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <div style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '0.12em', color: 'var(--muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
-                  {es ? 'Señales' : 'Signals'}
-                </div>
-                {[
-                  { color: '#22c55e', name: 'Main &\n1st Ave' },
-                  { color: '#ef4444', name: 'Elm &\nHarbor' },
-                  { color: '#eab308', name: 'Central\nLoop' },
-                  { color: ACCENT, name: 'Route\n7 North' },
-                ].map((sig, i) => (
-                  <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
-                    <div style={{ width: '14px', height: '14px', borderRadius: '50%', background: sig.color, boxShadow: `0 0 10px ${sig.color}88` }} />
-                    <div style={{ fontFamily: 'monospace', fontSize: '8px', color: 'var(--muted)', textAlign: 'center', letterSpacing: '0.08em', whiteSpace: 'pre-line', lineHeight: 1.3 }}>{sig.name}</div>
-                  </div>
-                ))}
-              </div>
-              {/* Map Area */}
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {/* Mini city grid */}
-                <div style={{ flex: 1, background: '#060d18', position: 'relative', overflow: 'hidden', minHeight: '140px' }}>
-                  {/* Simplified city grid with colored overlays */}
-                  <svg viewBox="0 0 278 138" style={{ width: '100%', height: '100%', display: 'block' }}>
-                    <rect width="278" height="138" fill="#060d18"/>
-                    <rect x="0" y="0" width="77" height="59" fill="#0c1826"/>
-                    <rect x="89" y="0" width="81" height="59" fill="#0c1826"/>
-                    <rect x="182" y="0" width="96" height="59" fill="#0c1826"/>
-                    <rect x="0" y="71" width="77" height="67" fill="#0c1826"/>
-                    <rect x="89" y="71" width="81" height="67" fill="#0c1826"/>
-                    <rect x="182" y="71" width="96" height="67" fill="#0c1826"/>
-                    <rect x="77" y="0" width="12" height="138" fill="#101c2c"/>
-                    <rect x="170" y="0" width="12" height="138" fill="#101c2c"/>
-                    <rect x="0" y="59" width="278" height="12" fill="#101c2c"/>
-                    <line x1="83" y1="2" x2="83" y2="59" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="83" y1="71" x2="83" y2="136" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="176" y1="2" x2="176" y2="59" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="176" y1="71" x2="176" y2="136" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="2" y1="65" x2="77" y2="65" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="89" y1="65" x2="170" y2="65" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    <line x1="182" y1="65" x2="276" y2="65" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="5,5"/>
-                    {/* Traffic flow overlays */}
-                    <rect x="0" y="59" width="77" height="6" fill="rgba(249,115,22,0.6)"/>
-                    <rect x="89" y="59" width="81" height="6" fill="rgba(239,68,68,0.55)"/>
-                    <rect x="182" y="59" width="96" height="6" fill="rgba(34,197,94,0.5)"/>
-                    <rect x="77" y="0" width="5" height="138" fill="rgba(34,197,94,0.4)"/>
-                    <rect x="170" y="0" width="5" height="59" fill="rgba(239,68,68,0.5)"/>
-                    <rect x="170" y="71" width="5" height="67" fill="rgba(234,179,8,0.45)"/>
-                    {/* Intersection tints */}
-                    <rect x="170" y="59" width="12" height="12" fill="rgba(239,68,68,0.2)"/>
-                    <rect x="77" y="59" width="12" height="12" fill="rgba(249,115,22,0.2)"/>
-                    {/* Building dots */}
-                    <circle cx="28" cy="20" r="2" fill="rgba(6,182,212,0.22)"/>
-                    <circle cx="56" cy="42" r="1.5" fill="rgba(6,182,212,0.16)"/>
-                    <circle cx="120" cy="16" r="2" fill="rgba(6,182,212,0.22)"/>
-                    <circle cx="222" cy="24" r="2" fill="rgba(6,182,212,0.22)"/>
-                    <circle cx="28" cy="96" r="2" fill="rgba(6,182,212,0.18)"/>
-                    <circle cx="118" cy="104" r="2" fill="rgba(6,182,212,0.18)"/>
-                    <circle cx="222" cy="92" r="2" fill="rgba(6,182,212,0.18)"/>
-                    {/* Incident pulse */}
-                    <circle cx="176" cy="65" r="3" fill="#ef4444" opacity="0.9"/>
-                    <circle cx="83" cy="65" r="2.5" fill="#eab308" opacity="0.9"/>
-                    {/* Street labels */}
-                    <text x="3" y="9" fontFamily="monospace" fontSize="5.5" fill="rgba(6,182,212,0.45)" letterSpacing="0.08em">MAIN ST</text>
-                    <text x="92" y="9" fontFamily="monospace" fontSize="5.5" fill="rgba(6,182,212,0.4)" letterSpacing="0.07em">ELM AVE</text>
-                    <text x="185" y="9" fontFamily="monospace" fontSize="5.5" fill="rgba(6,182,212,0.4)" letterSpacing="0.07em">HARBOR</text>
-                    <rect width="278" height="138" fill="none" stroke="rgba(6,182,212,0.1)" strokeWidth="1"/>
-                  </svg>
-                </div>
-                {/* Bottom panels */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: '1px solid var(--border)' }}>
-                  {/* Camera Feed */}
-                  <div style={{ borderRight: '1px solid var(--border)' }}>
-                    <div style={{ background: 'linear-gradient(180deg, #050b14 0%, #0e1e2f 35%, #162439 55%, #0e1e2f 75%, #050b14 100%)', padding: '5px 7px', minHeight: '50px', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontFamily: 'monospace', fontSize: '8px', color: 'rgba(6,182,212,0.75)', letterSpacing: '0.1em' }}>CAM-07</span>
-                        <span style={{ fontFamily: 'monospace', fontSize: '7px', color: '#ef4444', letterSpacing: '0.08em' }}>● REC</span>
-                      </div>
-                      <span style={{ fontFamily: 'monospace', fontSize: '7.5px', color: '#eab308', background: 'rgba(234,179,8,0.12)', border: '1px solid rgba(234,179,8,0.28)', padding: '2px 5px', borderRadius: '3px', letterSpacing: '0.09em', alignSelf: 'flex-start' }}>
-                        {es ? '▲ EXCESO VEL.' : '▲ SPEEDING'}
-                      </span>
-                    </div>
-                    <div style={{ padding: '4px 8px', fontFamily: 'monospace', fontSize: '7.5px', color: 'var(--muted)', letterSpacing: '0.07em', borderTop: '1px solid var(--border)' }}>
-                      Route 7 North — Highway
-                    </div>
-                  </div>
-                  {/* Incident Card */}
-                  <div style={{ padding: '10px 11px', display: 'flex', flexDirection: 'column', gap: '3px', justifyContent: 'center' }}>
-                    <div style={{ fontFamily: 'monospace', fontSize: '8px', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ef4444', marginBottom: '1px' }}>
-                      {es ? '⚠ INCIDENTE ACTIVO' : '⚠ ACTIVE INCIDENT'}
-                    </div>
-                    <div style={{ fontFamily: 'monospace', fontSize: '8.5px', color: 'var(--white)', letterSpacing: '0.05em' }}>
-                      Main St × Central Blvd
-                    </div>
-                    <div style={{ fontSize: '8.5px', color: 'var(--dim)', lineHeight: 1.4 }}>
-                      {es ? 'Falla de señal — anulación manual activa' : 'Signal fault — manual override active'}
-                    </div>
-                    <div style={{ fontFamily: 'monospace', fontSize: '7.5px', color: 'rgba(6,182,212,0.5)', letterSpacing: '0.07em', marginTop: '1px' }}>
-                      {es ? 'Hace 2 min' : '2 min ago'}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Footer Stats */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid var(--border)' }}>
-              {[
-                { val: '247', label: es ? 'Intersecciones Monitoreadas' : 'Monitored Intersections' },
-                { val: '3', label: es ? 'Incidentes Activos' : 'Active Incidents', color: '#ef4444' },
-                { val: '42 km/h', label: es ? 'Vel. Promedio' : 'Avg Speed' },
-              ].map((ms, i) => (
-                <div key={i} style={{ padding: '12px 14px', borderRight: i < 2 ? '1px solid var(--border)' : 'none', fontFamily: 'monospace' }}>
-                  <div style={{ fontSize: '13px', fontWeight: 500, color: ms.color || 'var(--white)', letterSpacing: '0.02em' }}>{ms.val}</div>
-                  <div style={{ fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginTop: '2px' }}>{ms.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <KTrafficCommandHero />
         </PageHero>
 
         {/* ── BENEFITS ── */}
-        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{content.benefitsLabel}</p>
@@ -317,7 +190,7 @@ export default async function KTrafficPage({
               {benefits.map((b, i) => (
                 <div key={i} style={{
                   background: 'rgba(11,18,32,0.7)', borderRadius: '14px',
-                  border: '1px solid var(--border)', borderTop: `3px solid ${ACCENT}`,
+                  border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`,
                   padding: '28px 30px',
                 }}>
                   <div style={{
@@ -335,50 +208,35 @@ export default async function KTrafficPage({
         </section>
 
         {/* ── PROCESS / HOW IT WORKS ── */}
-        <section style={{ padding: '80px 32px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ marginBottom: '56px' }}>
-              <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{es ? 'El Proceso' : 'The Process'}</p>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase' }}>{content.processH2}</h2>
-              <div style={{ width: '64px', height: '3px', background: ACCENT, borderRadius: '2px', margin: '18px auto 0' }} />
+        <section style={{ padding: '100px 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Mono, monospace', fontSize: '11px', fontWeight: 500, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#06b6d4', marginBottom: '18px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#06b6d4', boxShadow: '0 0 8px #06b6d4', display: 'inline-block' }}/>
+              The Process
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              {/* Inputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processInputs.map((inp) => (
-                  <div key={inp} style={{ background: '#0b1628', border: '1px solid var(--border)', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: 'var(--muted)', textAlign: 'center' }}>{inp}</div>
-                ))}
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>{'\u2192'}</div>
-              {/* Hub */}
-              <div style={{ background: `${ACCENT}18`, border: `2px solid ${ACCENT}`, borderRadius: '16px', padding: '24px 32px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.1em' }}>K-TRAFFIC</div>
-                <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '0.2em', marginTop: '4px' }}>
-                  {es ? 'DETECTAR \u00B7 GESTIONAR \u00B7 OPTIMIZAR' : 'DETECT \u00B7 MANAGE \u00B7 OPTIMIZE'}
-                </div>
-              </div>
-              {/* Arrow */}
-              <div style={{ fontSize: '24px', color: ACCENT }}>{'\u2192'}</div>
-              {/* Outputs */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {processOutputs.map((out) => (
-                  <div key={out} style={{ background: '#0b1628', border: `1px solid ${ACCENT}55`, borderRadius: '8px', padding: '8px 16px', fontSize: '13px', color: ACCENT, textAlign: 'center', fontWeight: 600 }}>{out}</div>
-                ))}
-              </div>
-            </div>
-            <div style={{ marginTop: '48px' }}>
-              <Link href="/contact" style={{
-                background: 'transparent', color: 'var(--dim)', padding: '15px 34px',
-                borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
-                border: '1px solid var(--border-b)', display: 'inline-flex', alignItems: 'center', gap: '8px',
-              }}>{content.cta2}</Link>
-            </div>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', marginBottom: '0' }}>{content.processH2}</h2>
+            <HubDiagram
+              uid="kt"
+              product="K-TRAFFIC"
+              tagline="MONITOR · OPTIMIZE · ALERT"
+              inputs={[
+                { label: 'IoT Sensors',    pillW: 100, icon: <><circle cx="0" cy="3" r="4.5" fill="#60a5fa" stroke="none"/><path d="M-9,-6 A13,13 0 0,1 9,-6"/><path d="M-14,-12 A20,20 0 0,1 14,-12"/><line x1="0" y1="7.5" x2="0" y2="13"/><line x1="-4" y1="13" x2="4" y2="13"/></> },
+                { label: 'Cameras',        pillW: 88,  icon: <><rect x="-10" y="-7" width="15" height="12" rx="2"/><polyline points="5,-5 14,-9 14,3 5,1"/><circle cx="-3" cy="-1" r="2.5" fill="#60a5fa" stroke="none"/></> },
+                { label: 'Loop Detectors', pillW: 112, icon: <><rect x="-13" y="-8" width="26" height="16" rx="2"/><line x1="-8" y1="-8" x2="-8" y2="-14"/><line x1="8" y1="-8" x2="8" y2="-14"/><line x1="-8" y1="8" x2="-8" y2="14"/><line x1="8" y1="8" x2="8" y2="14"/><line x1="-13" y1="0" x2="-20" y2="0"/><line x1="13" y1="0" x2="20" y2="0"/></> },
+                { label: 'Vehicles / V2X', pillW: 112, icon: <><rect x="-13" y="-5" width="26" height="12" rx="4"/><path d="M-8,-5 L-5,-13 L5,-13 L8,-5"/><circle cx="-8" cy="7" r="3"/><circle cx="8" cy="7" r="3"/></> },
+                { label: 'Field Reports',  pillW: 104, icon: <><rect x="-10" y="-13" width="20" height="26" rx="2"/><line x1="-5" y1="-6" x2="5" y2="-6"/><line x1="-5" y1="0" x2="5" y2="0"/><line x1="-5" y1="6" x2="2" y2="6"/></> },
+              ]}
+              outputs={[
+                { label: 'Signal Control',  pillW: 110, icon: <><rect x="-7" y="-15" width="14" height="30" rx="3"/><circle cx="0" cy="-8" r="3.5" fill="#ff4444" stroke="none"/><circle cx="0" cy="0" r="3.5" fill="#ffaa00" stroke="none"/><circle cx="0" cy="8" r="3.5" fill="#06d6a0" stroke="#06d6a0"/></> },
+                { label: 'Incident Alert',  pillW: 110, icon: <><path d="M0,-14 L12,8 L-12,8 Z"/><line x1="0" y1="-6" x2="0" y2="0"/><circle cx="0" cy="4" r="1.5" fill="#06b6d4" stroke="none"/></> },
+                { label: 'Analytics',       pillW: 82,  icon: <><rect x="-13" y="-13" width="26" height="26" rx="2"/><line x1="-8" y1="6" x2="-8" y2="-2"/><line x1="-2" y1="6" x2="-2" y2="-6"/><line x1="4" y1="6" x2="4" y2="0"/><line x1="10" y1="6" x2="10" y2="-8"/></> },
+              ]}
+            />
           </div>
         </section>
 
         {/* ── CAPABILITIES ── */}
-        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '80px 32px' }}>
+        <section style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
               {/* Left: heading + checklist */}
@@ -393,19 +251,12 @@ export default async function KTrafficPage({
                     </li>
                   ))}
                 </ul>
-                <div style={{ marginTop: '32px' }}>
-                  <Link href="/contact" style={{
-                    background: 'transparent', color: 'var(--dim)', padding: '15px 34px',
-                    borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
-                    border: '1px solid var(--border-b)', display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  }}>{content.cta2}</Link>
-                </div>
               </div>
               {/* Right: Performance Visual */}
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <div style={{
                   background: 'rgba(11,18,32,0.7)', border: '1px solid var(--border)',
-                  borderRadius: '14px', borderTop: `3px solid ${ACCENT}`, padding: '28px', width: '100%', maxWidth: '360px',
+                  borderRadius: '14px', borderTop: `2px solid ${ACCENT}`, padding: '28px', width: '100%', maxWidth: '360px',
                 }}>
                   <div style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: ACCENT, marginBottom: '20px' }}>
                     {es ? 'Rendimiento del Sistema' : 'System Performance'}
@@ -430,7 +281,7 @@ export default async function KTrafficPage({
         </section>
 
         {/* ── INTEGRATIONS ── */}
-        <section style={{ padding: '80px 32px' }}>
+        <section style={{ padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginBottom: '12px' }}>{es ? 'Integraciones' : 'Integrations'}</p>

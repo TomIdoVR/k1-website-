@@ -24,11 +24,20 @@ If you made local changes and haven't logged them yet — log them now before do
 
 ## Project snapshot
 
-- **Stack:** Static HTML/CSS/JS, no build system
-- **Primary file:** `hero-mockup.html` (~4400 lines — all HTML + CSS + JS)
-- **Live URL:** `https://tomidovr.github.io/k1-website-/hero-mockup.html`
-- **Remote:** `https://github.com/TomIdoVR/k1-website-.git` — branch `main`
+- **Stack:** Next.js 15 (App Router) + TypeScript, deployed on Vercel
+- **Remote:** `https://github.com/TomIdoVR/k1-website-.git`
 - **Full rules:** See `AGENTS.md`
+
+## Deployment environments
+
+| Branch | Environment | URL |
+|--------|-------------|-----|
+| `nextjs` | **Staging** | `staging.kabatone.com` — auto-deploys on every push |
+| `main` | **Production** | `kabatone.com` — only updates when `nextjs` is merged into `main` |
+
+- All development happens on `nextjs`
+- Never push directly to `main` — it is the production branch
+- To promote staging → production: merge `nextjs` into `main` (via PR or direct merge, on explicit request only)
 
 ## Git workflow
 
@@ -37,8 +46,16 @@ If you made local changes and haven't logged them yet — log them now before do
 - Commit message format: `Type: short description (vX.Y)` — e.g. `Fix: nav links on industry pages (v0.7)`
 - Always include `CHANGELOG.md` and `changelog.html` in the same commit as your changes
 
+## Hub
+- name: KabatOne Website
+- color: #3b82f6
+- description: KabatOne marketing site — Next.js 15, TypeScript, i18n (EN/ES), Vercel
+- agents:
+  - id: k1-website-dev | name: Website Developer | status: active | desc: Develops and maintains the KabatOne Next.js site. Pages, components, i18n, SEO. | triggers: update the site, fix bug on, add section, new page, update metadata | skills: frontend-design, website-qa, website-performance, seo-technical-implementation
+
 ## Key constraints
 
-- Do not restructure existing CSS — append new rules at the bottom of `<style>`
-- Do not rename element IDs — JS relies on them
+- All pages live under `src/app/[locale]/` — EN and ES served via i18n routing
+- Metadata is in `src/content/en/metadata.ts` and `src/content/es/metadata.ts`
+- Schema helpers are in `src/lib/schema.ts`
 - Do not delete files without asking first

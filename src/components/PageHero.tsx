@@ -44,11 +44,6 @@ export default function PageHero({ accent, eyebrow, h1, subtitle, stats, cta1, c
             borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
             boxShadow: '0 0 24px rgba(59,130,246,0.4)',
           }}>{cta1}</Link>
-          <Link href="/contact" style={{
-            background: 'transparent', color: 'var(--white)', padding: '14px 28px',
-            borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px',
-            border: '1px solid var(--border-b)',
-          }}>{cta2}</Link>
         </div>
       </div>
       {children}

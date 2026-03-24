@@ -264,11 +264,42 @@ export default async function AirportPage({
           </div>
         </section>
 
+        {/* ── PROOF POINT ── */}
+        <section style={{ padding: '0 32px 64px' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
+            <div style={{
+              background: `${ACCENT}0d`, border: `1px solid ${ACCENT}28`,
+              borderLeft: `3px solid ${ACCENT}`, borderRadius: '12px',
+              padding: '32px 36px', display: 'flex', gap: '40px',
+              alignItems: 'center', flexWrap: 'wrap',
+            }}>
+              <div style={{ flexShrink: 0, minWidth: '80px' }}>
+                <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: 'clamp(44px, 5vw, 64px)', fontWeight: 800, color: ACCENT, lineHeight: 1 }}>
+                  {'3×'}
+                </div>
+                <div style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginTop: '4px', opacity: 0.8 }}>
+                  {es ? 'Escalación más rápida' : 'Faster escalation'}
+                </div>
+              </div>
+              <div style={{ borderLeft: `1px solid ${ACCENT}28`, paddingLeft: '40px', flex: 1, minWidth: '240px' }}>
+                <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.25em', color: ACCENT, marginBottom: '8px', opacity: 0.8 }}>
+                  {es ? 'En Práctica' : 'In Practice'}
+                </p>
+                <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, margin: 0 }}>
+                  {es
+                    ? 'Cuando alertas de perímetro, CCTV de terminales y control de acceso llegan a un solo operador en lugar de tres sistemas separados. Un incidente que antes requería tres llamadas ahora activa un protocolo automático en segundos.'
+                    : 'When perimeter alerts, terminal CCTV, and access control reach one operator instead of three separate systems. An incident that previously required three phone calls now triggers an automatic protocol in seconds.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── PRODUCTS ── */}
         <section style={{ borderTop: '1px solid var(--border)', padding: '80px 32px' }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Productos de la Plataforma' : 'Platform Products'}
+              {es ? 'Soluciones de la Plataforma' : 'Platform Solutions'}
             </p>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.0, marginBottom: '12px' }}>
               {es ? 'Disenado para Seguridad Aeronautica' : 'Built for Aviation Security'}

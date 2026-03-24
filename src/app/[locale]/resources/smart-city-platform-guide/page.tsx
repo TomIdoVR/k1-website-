@@ -349,8 +349,8 @@ export default async function SmartCityPlatformGuidePage({
           </h2>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)', marginBottom: '16px' }}>
             {es
-              ? 'KabatOne opera en mas de 40 ciudades de America Latina y Estados Unidos, protegiendo a 73 millones de ciudadanos. La plataforma Avalon de KabatOne integra K-Safety, K-Video, K-Traffic, K-Connect y K-Dispatch en despliegues que van desde municipios de 100,000 habitantes hasta estados completos con poblaciones superiores a 8 millones.'
-              : 'KabatOne operates in more than 40 cities across Latin America and the United States, protecting 73 million citizens. The KabatOne Avalon platform integrates K-Safety, K-Video, K-Traffic, K-Connect, and K-Dispatch in deployments ranging from municipalities of 100,000 residents to entire states with populations exceeding 8 million.'}
+              ? 'KabatOne opera en mas de 40 ciudades de America Latina y Estados Unidos, protegiendo a 73 millones de ciudadanos. La plataforma K1 de KabatOne integra K-Safety, K-Video, K-Traffic, K-Connect y K-Dispatch en despliegues que van desde municipios de 100,000 habitantes hasta estados completos con poblaciones superiores a 8 millones.'
+              : 'KabatOne operates in more than 40 cities across Latin America and the United States, protecting 73 million citizens. The KabatOne K1 platform integrates K-Safety, K-Video, K-Traffic, K-Connect, and K-Dispatch in deployments ranging from municipalities of 100,000 residents to entire states with populations exceeding 8 million.'}
           </p>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)', marginBottom: '16px' }}>
             {es
@@ -445,8 +445,8 @@ export default async function SmartCityPlatformGuidePage({
           es={es}
           h2={es ? '¿Listo para Implementar una Plataforma de Ciudad Inteligente?' : 'Ready to Deploy a Smart City Platform?'}
           subtitle={es
-            ? 'Agenda una demo con el equipo de KabatOne y descubre como la plataforma Avalon puede unificar las operaciones de tu ciudad.'
-            : 'Schedule a demo with the KabatOne team and discover how the Avalon platform can unify your city\'s operations.'}
+            ? 'Agenda una demo con el equipo de KabatOne y descubre como la plataforma K1 puede unificar las operaciones de tu ciudad.'
+            : 'Schedule a demo with the KabatOne team and discover how the K1 platform can unify your city\'s operations.'}
         />
       </main>
 

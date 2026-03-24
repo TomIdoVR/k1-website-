@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f1724">
+  <title>KabatOne — Site Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0f1724;
+      --bg-2:       #0b1220;
+      --bg-card:    rgba(255,255,255,0.025);
+      --blue:       #3b82f6;
+      --blue-light: #60a5fa;
+      --cyan:       #06b6d4;
+      --green:      #22c55e;
+      --amber:      #f59e0b;
+      --purple:     #a855f7;
+      --white:      #e6eef8;
+      --muted:      #9dbdd0;
+      --dim:        #b4c4d4;
+      --border:     rgba(255,255,255,0.06);
+      --border-b:   rgba(59,130,246,0.28);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND */
+    .bg-layer {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    }
+    .bg-layer::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-layer::after {
+      content: '';
+      position: absolute; bottom: -5%; left: 50%;
+      transform: translateX(-50%);
+      width: 130%; height: 65%;
+      background: radial-gradient(ellipse at center bottom,
+        rgba(59,130,246,0.18) 0%, rgba(6,182,212,0.07) 28%, transparent 68%);
+    }
+
+    .scan-line {
+      position: fixed; top: -2px; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+      animation: scan 9s linear infinite;
+      z-index: 1; pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { top: -2px; opacity: 0; }
+      4%   { opacity: 1; }
+      96%  { opacity: 0.6; }
+      100% { top: 100vh; opacity: 0; }
+    }
+
+    /* NAV */
+    nav.site-nav {
+      position: relative; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px; height: 70px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,12,28,0.72);
+      backdrop-filter: blur(16px);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-badge {
+      margin-left: 16px;
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cyan); padding: 3px 10px;
+      border: 1px solid rgba(6,182,212,0.3); border-radius: 20px;
+      background: rgba(6,182,212,0.07);
+    }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link {
+      font-size: 12px; font-weight: 500; color: var(--dim);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.18s;
+    }
+    .nav-link:hover { color: var(--white); }
+
+    /* TABS */
+    .tabs-bar {
+      position: relative; z-index: 10;
+      display: flex; align-items: center; gap: 4px;
+      padding: 0 52px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(6,12,28,0.5);
+      backdrop-filter: blur(12px);
+    }
+    .tab-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 0 20px; height: 52px;
+      background: none; border: none; cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px; font-weight: 500;
+      color: var(--dim); letter-spacing: 0.04em;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .tab-btn:hover { color: var(--white); }
+    .tab-btn.active { color: var(--white); border-bottom-color: var(--blue); }
+    .tab-btn svg { opacity: 0.6; }
+    .tab-btn.active svg { opacity: 1; }
+
+    /* TAB PANELS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ═══════════════════════════════════════
+       TAB 1: DEV ENVIRONMENT MAP
+    ═══════════════════════════════════════ */
+    .env-wrap {
+      position: relative; z-index: 10;
+      max-width: 960px; margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    .env-header { text-align: center; margin-bottom: 56px; }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 20px;
+    }
+    .eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .page-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: var(--white); line-height: 1.0; letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .page-sub {
+      font-size: 1rem; color: var(--dim);
+      max-width: 480px; margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Flow layout */
+    .env-flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* arrow connector */
+    .flow-arrow {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0; padding: 6px 0;
+    }
+    .flow-arrow-line {
+      width: 1px; height: 28px;
+      background: linear-gradient(to bottom, var(--border-b), transparent);
+    }
+    .flow-arrow-head {
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid rgba(59,130,246,0.5);
+    }
+
+    /* branching arrows row */
+    .flow-branch {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 0; width: 100%; position: relative;
+    }
+    .flow-branch-line {
+      position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 66%; height: 1px;
+      background: var(--border-b);
+    }
+    .flow-branch-col {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      padding-top: 28px;
+    }
+    .flow-branch-col .flow-arrow-line { height: 20px; }
+
+    /* reconnect */
+    .flow-reconnect {
+      display: flex; align-items: flex-end; justify-content: center;
+      gap: 0; width: 100%; position: relative;
+      padding-bottom: 20px;
+    }
+    .flow-reconnect-line {
+      position: absolute; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 44%; height: 1px;
+      background: var(--border-b);
+    }
+    .flow-reconnect-col {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+    }
+    .flow-reconnect-col .flow-arrow-line { height: 20px; }
+
+    /* ENV CARD */
+    .env-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      width: 100%; max-width: 480px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .env-card:hover { border-color: rgba(59,130,246,0.2); }
+    .env-card.sm { max-width: 280px; }
+    .env-card.wide { max-width: 640px; }
+
+    .env-card-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .env-card-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+      background: rgba(255,255,255,0.05);
+    }
+    .env-card-badge {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .badge-local    { background: rgba(34,197,94,0.1);   color: var(--green); border: 1px solid rgba(34,197,94,0.25); }
+    .badge-github   { background: rgba(168,85,247,0.1);  color: #c084fc;      border: 1px solid rgba(168,85,247,0.25); }
+    .badge-live     { background: rgba(34,197,94,0.1);   color: var(--green); border: 1px solid rgba(34,197,94,0.25); }
+    .badge-staging  { background: rgba(245,158,11,0.1);  color: var(--amber); border: 1px solid rgba(245,158,11,0.25); }
+    .badge-preview  { background: rgba(59,130,246,0.1);  color: var(--blue-light); border: 1px solid rgba(59,130,246,0.25); }
+    .badge-pending  { background: rgba(245,158,11,0.08); color: var(--amber); border: 1px solid rgba(245,158,11,0.2); }
+
+    .env-card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.2rem;
+      color: var(--white); margin-bottom: 2px;
+    }
+    .env-card-sub {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: var(--muted); letter-spacing: 0.05em;
+    }
+    .env-card-path {
+      font-family: 'DM Mono', monospace; font-size: 10.5px;
+      color: var(--blue-light); margin: 8px 0 6px;
+    }
+    .env-card-desc {
+      font-size: 12.5px; color: var(--dim); line-height: 1.6;
+    }
+
+    /* Branch cards inside GitHub */
+    .branch-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-top: 14px;
+    }
+    .branch-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
+    }
+    .branch-label {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 5px;
+    }
+    .branch-name {
+      font-family: 'DM Mono', monospace; font-size: 13px;
+      font-weight: 500; color: var(--white);
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 4px;
+    }
+    .branch-dot {
+      width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+    }
+    .dot-main    { background: var(--muted); }
+    .dot-nextjs  { background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .branch-detail {
+      font-size: 11px; color: var(--muted); line-height: 1.5;
+    }
+    .branch-active-tag {
+      font-family: 'DM Mono', monospace; font-size: 8.5px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--green); padding: 1px 7px;
+      border: 1px solid rgba(34,197,94,0.3); border-radius: 10px;
+      background: rgba(34,197,94,0.08);
+    }
+
+    /* meta items in env cards */
+    .env-meta-list {
+      list-style: none; margin-top: 10px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .env-meta-list li {
+      display: flex; align-items: flex-start; gap: 7px;
+      font-size: 11.5px; color: var(--dim); line-height: 1.5;
+    }
+    .env-meta-list li::before {
+      content: '·'; color: var(--muted); flex-shrink: 0;
+      font-family: 'DM Mono', monospace; margin-top: 1px;
+    }
+    .env-meta-list li strong { color: var(--white); font-weight: 500; }
+
+    /* note bar */
+    .env-note {
+      margin-top: 40px;
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.2);
+      border-radius: 12px; padding: 16px 20px;
+    }
+    .env-note-title {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 6px;
+    }
+    .env-note-body {
+      font-size: 13px; color: var(--dim); line-height: 1.65;
+    }
+    .env-note-body strong { color: var(--white); font-weight: 500; }
+    .env-note-body code {
+      font-family: 'DM Mono', monospace; font-size: 11.5px;
+      color: var(--blue-light);
+    }
+
+    /* ═══════════════════════════════════════
+       TAB 2: CHANGELOG
+    ═══════════════════════════════════════ */
+    .page-wrap {
+      position: relative; z-index: 10;
+      max-width: 860px; margin: 0 auto;
+      padding: 72px 40px 120px;
+    }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute; top: 8px; left: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--border-b), transparent 90%);
+    }
+
+    .tl-entry { position: relative; margin-bottom: 52px; }
+    .tl-entry:last-child { margin-bottom: 0; }
+
+    .tl-dot {
+      position: absolute; left: -34px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--bg-2);
+      border: 2px solid var(--blue);
+      box-shadow: 0 0 10px rgba(59,130,246,0.4);
+    }
+    .tl-entry.fix .tl-dot  { border-color: var(--cyan); box-shadow: 0 0 10px rgba(6,182,212,0.4); }
+    .tl-entry.feat .tl-dot { border-color: #a855f7;     box-shadow: 0 0 10px rgba(168,85,247,0.4); }
+
+    .tl-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 10px; flex-wrap: wrap;
+    }
+    .tl-version {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      font-weight: 500; letter-spacing: 0.14em;
+      color: var(--blue); text-transform: uppercase;
+    }
+    .tl-entry.fix  .tl-version { color: var(--cyan); }
+    .tl-entry.feat .tl-version { color: #a855f7; }
+    .tl-date {
+      font-family: 'DM Mono', monospace; font-size: 10.5px;
+      color: var(--muted); letter-spacing: 0.08em;
+    }
+    .tl-badge {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px;
+    }
+    .badge-feature  { background: rgba(168,85,247,0.12); color: #c084fc; border: 1px solid rgba(168,85,247,0.25); }
+    .badge-fix      { background: rgba(6,182,212,0.1);   color: var(--cyan); border: 1px solid rgba(6,182,212,0.2); }
+    .badge-infra    { background: rgba(59,130,246,0.1);  color: var(--blue-light); border: 1px solid rgba(59,130,246,0.2); }
+    .badge-add      { background: rgba(34,197,94,0.1);   color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+    .badge-change   { background: rgba(245,158,11,0.1);  color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+    .badge-improve  { background: rgba(59,130,246,0.08); color: var(--blue-light); border: 1px solid rgba(59,130,246,0.18); }
+    .badge-improved { background: rgba(59,130,246,0.08); color: var(--blue-light); border: 1px solid rgba(59,130,246,0.18); }
+
+    .tl-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.35rem;
+      color: var(--white); letter-spacing: 0.01em;
+      margin-bottom: 14px; line-height: 1.2;
+    }
+
+    .change-group { margin-bottom: 14px; }
+    .change-group:last-child { margin-bottom: 0; }
+    .change-group-label {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .label-added   { color: #4ade80; }
+    .label-fixed   { color: var(--cyan); }
+    .label-changed { color: #fbbf24; }
+    .label-improved { color: var(--blue-light); }
+
+    .change-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .change-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: var(--dim); line-height: 1.55;
+    }
+    .change-list li::before {
+      content: '—'; color: var(--muted); flex-shrink: 0;
+      font-family: 'DM Mono', monospace; font-size: 11px; margin-top: 2px;
+    }
+    .change-list li strong { color: var(--white); font-weight: 500; }
+    .change-list li code {
+      font-family: 'DM Mono', monospace; font-size: 11.5px; color: var(--blue-light);
+    }
+
+    .tl-list { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 0; }
+    .tl-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: var(--dim); line-height: 1.55;
+    }
+    .tl-list li::before {
+      content: '—'; color: var(--muted); flex-shrink: 0;
+      font-family: 'DM Mono', monospace; font-size: 11px; margin-top: 2px;
+    }
+    .tl-list li strong { color: var(--white); font-weight: 500; }
+    .tl-list li code {
+      font-family: 'DM Mono', monospace; font-size: 11.5px; color: var(--blue-light);
+    }
+
+    .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 0; }
+    .tl-bullets li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: var(--dim); line-height: 1.55;
+    }
+    .tl-bullets li::before {
+      content: '—'; color: var(--muted); flex-shrink: 0;
+      font-family: 'DM Mono', monospace; font-size: 11px; margin-top: 2px;
+    }
+    .tl-bullets li strong { color: var(--white); font-weight: 500; }
+    .tl-bullets li code {
+      font-family: 'DM Mono', monospace; font-size: 11.5px; color: var(--blue-light);
+    }
+
+    .tl-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      transition: border-color 0.2s;
+    }
+    .tl-card:hover { border-color: rgba(59,130,246,0.2); }
+
+    /* FOOTER */
+    .site-footer {
+      position: relative; z-index: 10;
+      border-top: 1px solid var(--border);
+      padding: 28px 52px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { height: 20px; opacity: 0.45; }
+    .footer-copy {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: 12px; color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      nav.site-nav { padding: 0 20px; }
+      .tabs-bar { padding: 0 16px; overflow-x: auto; }
+      .env-wrap { padding: 40px 20px 80px; }
+      .page-wrap { padding: 48px 20px 80px; }
+      .branch-row { grid-template-columns: 1fr; }
+      .env-card.sm { max-width: 100%; }
+      .flow-branch { flex-direction: column; align-items: center; gap: 12px; }
+      .flow-branch-line { display: none; }
+      .flow-reconnect { flex-direction: column; align-items: center; gap: 8px; }
+      .flow-reconnect-line { display: none; }
+      .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 20px; }
+      .tl-card { padding: 20px 18px; }
+    }
+
+    /* ═══════════════════════════════════════
+       DATA FLOW TABLE
+    ═══════════════════════════════════════ */
+    .flow-table-section { margin-top: 52px; }
+
+    .flow-table-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted);
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .flow-table-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .flow-table { width: 100%; border-collapse: collapse; }
+    .flow-table th {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted); text-align: left;
+      padding: 0 16px 12px 0; border-bottom: 1px solid var(--border);
+    }
+    .flow-table td {
+      padding: 14px 16px 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px; color: var(--dim); vertical-align: middle;
+    }
+    .flow-table tr:last-child td { border-bottom: none; }
+    .flow-table td code {
+      font-family: 'DM Mono', monospace; font-size: 11px; color: var(--blue-light);
+    }
+
+    .ft-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      padding: 3px 10px; border-radius: 6px; white-space: nowrap;
+    }
+    .ft-git     { background: rgba(59,130,246,0.14); color: var(--blue-light); border: 1px solid rgba(59,130,246,0.3); }
+    .ft-deploy  { background: rgba(6,182,212,0.12);  color: var(--cyan);       border: 1px solid rgba(6,182,212,0.25); }
+    .ft-dns     { background: rgba(245,158,11,0.12); color: var(--amber);      border: 1px solid rgba(245,158,11,0.25); }
+
+    /* LEGEND */
+    .flow-legend {
+      display: flex; align-items: center; gap: 28px;
+      margin-top: 24px; flex-wrap: wrap;
+    }
+    .flow-legend-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: var(--muted); letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="scan-line"></div>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div style="display:flex;align-items:center;">
+      <a class="nav-logo" href="#">
+        <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" height="30" alt="KabatOne">
+      </a>
+      <span class="nav-badge">Site Manager</span>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="https://github.com/TomIdoVR/k1-website-" target="_blank">GitHub ↗</a>
+      <a class="nav-link" href="https://vercel.com" target="_blank">Vercel ↗</a>
+    </div>
+  </nav>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" data-tab="env" onclick="switchTab('env')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <rect x="1" y="1" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M4 13h6M7 10v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      Dev Environment
+    </button>
+    <button class="tab-btn" data-tab="changelog" onclick="switchTab('changelog')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2 4h10M2 7h10M2 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      Changelog
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       TAB 1: DEV ENVIRONMENT MAP
+  ═══════════════════════════════════ -->
+  <div id="tab-env" class="tab-panel active">
+    <div class="env-wrap">
+
+      <div class="env-header">
+        <div class="page-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Kabatone Infrastructure
+        </div>
+        <h1 class="page-headline">Dev Environment Map</h1>
+        <p class="page-sub">How local code flows from your Mac to production.</p>
+      </div>
+
+      <div class="env-flow">
+
+        <!-- Your Mac -->
+        <div class="env-card wide">
+          <div class="env-card-header">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="env-card-icon">💻</div>
+              <div>
+                <div class="env-card-name">Your Mac</div>
+                <div class="env-card-sub">Omer's machine</div>
+              </div>
+            </div>
+            <span class="env-card-badge badge-local">● Local</span>
+          </div>
+          <div class="env-card-path">/Users/omercnaani/…/k1 Website/</div>
+          <div class="env-card-desc">Edit files → save → see changes instantly at <strong>localhost:3000</strong> (<code>npm run dev</code>). Nothing is shared until you push.</div>
+        </div>
+
+        <!-- Arrow down -->
+        <div class="flow-arrow">
+          <div class="flow-arrow-line"></div>
+          <div class="flow-arrow-head"></div>
+        </div>
+
+        <!-- GitHub Repository -->
+        <div class="env-card wide">
+          <div class="env-card-header">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="env-card-icon">🐙</div>
+              <div>
+                <div class="env-card-name">GitHub Repository</div>
+                <div class="env-card-sub">TomIdoVR/k1-website-</div>
+              </div>
+            </div>
+            <span class="env-card-badge badge-github">● GitHub</span>
+          </div>
+          <div class="branch-row">
+            <div class="branch-card">
+              <div class="branch-label">Branch</div>
+              <div class="branch-name"><span class="branch-dot dot-main"></span>main</div>
+              <div class="branch-detail">Static HTML site<br>(hero-mockup.html)</div>
+            </div>
+            <div class="branch-card" style="border-color:rgba(34,197,94,0.2);">
+              <div class="branch-label">Branch — <span class="branch-active-tag">Active ✦</span></div>
+              <div class="branch-name"><span class="branch-dot dot-nextjs"></span>nextjs</div>
+              <div class="branch-detail">Next.js app<br>(src/, components/, app/)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branch arrows down to three columns -->
+        <div class="flow-branch" style="width:100%;max-width:720px;margin-top:0;position:relative;padding-top:20px;">
+          <div class="flow-branch-line"></div>
+          <div class="flow-branch-col">
+            <div class="flow-arrow-line"></div>
+            <div class="flow-arrow-head"></div>
+          </div>
+          <div class="flow-branch-col">
+            <div class="flow-arrow-line"></div>
+            <div class="flow-arrow-head"></div>
+          </div>
+          <div class="flow-branch-col">
+            <div class="flow-arrow-line"></div>
+            <div class="flow-arrow-head"></div>
+          </div>
+        </div>
+
+        <!-- Three deployment cards -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:720px;">
+
+          <!-- GitHub Pages -->
+          <div class="env-card sm">
+            <div class="env-card-header" style="flex-direction:column;align-items:flex-start;gap:8px;">
+              <span class="env-card-badge badge-live">● Live</span>
+              <div>
+                <div class="env-card-name">GitHub Pages</div>
+                <div class="env-card-sub" style="font-size:9.5px;margin-top:2px;">tomidovr.github.io/k1-website-/hero-mockup.html</div>
+              </div>
+            </div>
+            <ul class="env-meta-list" style="margin-top:8px;">
+              <li><strong>Source:</strong> main branch</li>
+              <li><strong>Trigger:</strong> push to main</li>
+              <li>Serves hero-mockup.html as static file</li>
+            </ul>
+          </div>
+
+          <!-- Vercel Staging -->
+          <div class="env-card sm">
+            <div class="env-card-header" style="flex-direction:column;align-items:flex-start;gap:8px;">
+              <span class="env-card-badge badge-staging">● Staging</span>
+              <div>
+                <div class="env-card-name">Vercel Staging</div>
+                <div class="env-card-sub" style="font-size:9.5px;margin-top:2px;">staging-k1-website.vercel.app</div>
+              </div>
+            </div>
+            <ul class="env-meta-list" style="margin-top:8px;">
+              <li>URL you currently use for review</li>
+              <li>Serves hero-mockup.html from the connected branch</li>
+            </ul>
+          </div>
+
+          <!-- Vercel Preview -->
+          <div class="env-card sm">
+            <div class="env-card-header" style="flex-direction:column;align-items:flex-start;gap:8px;">
+              <span class="env-card-badge badge-preview">● Preview</span>
+              <div>
+                <div class="env-card-name">Vercel Next.js Preview</div>
+                <div class="env-card-sub" style="font-size:9.5px;margin-top:2px;">Auto-generated preview URL</div>
+              </div>
+            </div>
+            <ul class="env-meta-list" style="margin-top:8px;">
+              <li><strong>Source:</strong> nextjs branch</li>
+              <li><strong>Trigger:</strong> every push</li>
+              <li>Serves full Next.js app (all /vs/ pages)</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Reconnect arrows to Production -->
+        <div class="flow-reconnect" style="width:100%;max-width:340px;position:relative;padding-bottom:20px;margin-top:0;">
+          <div class="flow-reconnect-line"></div>
+          <div class="flow-reconnect-col">
+            <div class="flow-arrow-line"></div>
+          </div>
+          <div class="flow-reconnect-col" style="padding-bottom:0;">
+            <div class="flow-arrow-line"></div>
+            <div class="flow-arrow-head"></div>
+          </div>
+          <div class="flow-reconnect-col">
+            <div class="flow-arrow-line"></div>
+          </div>
+        </div>
+
+        <!-- Production -->
+        <div class="env-card" style="max-width:400px;border-color:rgba(245,158,11,0.2);">
+          <div class="env-card-header">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="env-card-icon">🌐</div>
+              <div>
+                <div class="env-card-name">kabatone.com</div>
+                <div class="env-card-sub">Production domain</div>
+              </div>
+            </div>
+            <span class="env-card-badge badge-pending">⏳ Pending</span>
+          </div>
+          <div class="env-card-desc" style="margin-top:10px;">
+            ⚠ Awaiting domain host access to point DNS to the Vercel Next.js deployment.
+          </div>
+        </div>
+
+      </div><!-- /env-flow -->
+
+      <!-- Note -->
+      <div class="env-note">
+        <div class="env-note-title">Why you can't see changes at staging-k1-website.vercel.app:</div>
+        <div class="env-note-body">
+          That URL serves <code>hero-mockup.html</code> from the <strong>main</strong> branch. The competitor footer links were added to the <strong>nextjs</strong> branch. Until the domain switches to the Next.js Vercel deployment — or the changes are merged into <code>main</code> — they won't appear at that URL.
+        </div>
+      </div>
+
+      <!-- Data Flow Table -->
+      <div class="flow-table-section">
+        <div class="flow-table-label">Data Flow</div>
+        <table class="flow-table">
+          <thead>
+            <tr>
+              <th style="width:130px;">Action</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ft-badge ft-git">git push</span></td>
+              <td>Local Mac</td>
+              <td>GitHub (main or nextjs branch)</td>
+              <td>Manual — you run <code>git push</code></td>
+            </tr>
+            <tr>
+              <td><span class="ft-badge ft-deploy">auto-deploy</span></td>
+              <td>GitHub → main</td>
+              <td>GitHub Pages</td>
+              <td>Every push to main</td>
+            </tr>
+            <tr>
+              <td><span class="ft-badge ft-deploy">auto-deploy</span></td>
+              <td>GitHub → main or nextjs</td>
+              <td>Vercel (respective deployment)</td>
+              <td>Every push to the branch</td>
+            </tr>
+            <tr>
+              <td><span class="ft-badge ft-dns">DNS</span></td>
+              <td>Vercel (nextjs deployment)</td>
+              <td>kabatone.com</td>
+              <td>⚠ Pending — domain host access needed</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Legend -->
+        <div class="flow-legend">
+          <div class="flow-legend-item">
+            <svg width="32" height="8" viewBox="0 0 32 8"><line x1="0" y1="4" x2="23" y2="4" stroke="#3b82f6" stroke-width="2"/><polygon points="23,0 32,4 23,8" fill="#3b82f6"/></svg>
+            git push
+          </div>
+          <div class="flow-legend-item">
+            <svg width="32" height="8" viewBox="0 0 32 8"><line x1="0" y1="4" x2="23" y2="4" stroke="#22c55e" stroke-width="2"/><polygon points="23,0 32,4 23,8" fill="#22c55e"/></svg>
+            Auto-deploy (main)
+          </div>
+          <div class="flow-legend-item">
+            <svg width="32" height="8" viewBox="0 0 32 8"><line x1="0" y1="4" x2="23" y2="4" stroke="#06b6d4" stroke-width="2"/><polygon points="23,0 32,4 23,8" fill="#06b6d4"/></svg>
+            Auto-deploy (nextjs)
+          </div>
+          <div class="flow-legend-item">
+            <svg width="32" height="8" viewBox="0 0 32 8"><line x1="0" y1="4" x2="23" y2="4" stroke="#f59e0b" stroke-width="2"/><polygon points="23,0 32,4 23,8" fill="#f59e0b"/></svg>
+            DNS / domain pointing
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /env-wrap -->
+  </div><!-- /tab-env -->
+
+  <!-- ═══════════════════════════════════
+       TAB 2: CHANGELOG
+  ═══════════════════════════════════ -->
+  <div id="tab-changelog" class="tab-panel">
+    <div class="page-wrap">
+
+      <div class="page-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Site History
+      </div>
+      <h1 class="page-headline">Changelog</h1>
+      <p class="page-sub" style="margin-bottom:64px;">A running log of every change made to this website — by any agent or contributor. Updated with each deployment.</p>
+
+      <div class="timeline">
+
+        <!-- v0.91 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.91</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: animated hub-and-spoke diagrams restored on all 5 product pages</div>
+            <ul class="tl-list">
+              <li><strong>HubDiagram.tsx</strong> — Shared animated SVG component: SMIL pulses travel along spokes, hub has pulsing outer ring + rotating dashed inner ring.</li>
+              <li><strong>k-safety</strong> → Event Detection / Location / Action</li>
+              <li><strong>k-dispatch</strong> → Responders / Coordination / Analytics</li>
+              <li><strong>k-video</strong> → Live View / Event Alert / Investigation</li>
+              <li><strong>k-traffic</strong> → Signal Control / Incident Alert / Analytics</li>
+              <li><strong>k-connect</strong> → Law Enforcement / City Operations / Audit Trail</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.90 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.90</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: single CTA sitewide — remove all secondary buttons</div>
+            <ul class="tl-list">
+              <li>CTASection.tsx, PageHero.tsx — removed secondary "or contact sales" and ghost CTA buttons across all industry and product pages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.89 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.89</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: homepage copy + ModulesSection + HowItWorks visuals</div>
+            <ul class="tl-list">
+              <li><strong>page.tsx</strong> — Hero H1 reverted to "The Unified Operating System for Public Safety". "Five Products" → "Five Solutions".</li>
+              <li><strong>ModulesSection.tsx</strong> — Section label is static "PLATFORM MODULES"; tab renamed "Analytics" to fix wrapping bug.</li>
+              <li><strong>HowItWorks.tsx</strong> — Replaced small icon circles with illustrated SVGs per step, each with radial glow background.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.88 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.88</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: Vertical proof points on all 7 industry pages</div>
+            <ul class="tl-list">
+              <li>All 7 industry pages — "In Practice" callout between Challenges and Capabilities with a vertical-specific metric: &lt;90s dispatch (Public Safety), 3× faster escalation (Airport), 4→1 vendors (Municipalities), &lt;90s perimeter alert (Ports), 65% gate time reduction (Logistics), 4× detection speed (Retail), 1 screen for 40K+ attendees (Stadiums).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.87 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.87</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Feat: How It Works section + buzzword pass + footer cleanup</div>
+            <ul class="tl-list">
+              <li><strong>HowItWorks.tsx</strong> — New 3-step "From sensor to response" section (Collect → Process → Respond) with icon circles, connecting line, bilingual EN/ES copy. Added to homepage between hero and ModulesSection.</li>
+              <li><strong>page.tsx</strong> — Why card 02: "under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD". Why card 04: replaced AI buzzword with concrete rules engine explanation.</li>
+              <li><strong>Footer.tsx</strong> — Removed dead <code>href="#"</code> Terms and Security links. Privacy now links to <code>/privacy</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.86 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.86</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: commit missing EbookDownloadForm component from v0.81</div>
+            <ul class="tl-list">
+              <li><strong>EbookDownloadForm.tsx</strong> — Client component built in v0.81 but never staged; now committed to repo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.85 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.85</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">New: /resources/what-is-cad-dispatch-software — GEO explainer + FAQ schema</div>
+            <ul class="tl-list">
+              <li><strong>resources/what-is-cad-dispatch-software/page.tsx</strong> — Full EN+ES explainer page targeting "CAD dispatch software" keyword cluster. Covers CAD functions, 6-step dispatch workflow, CAD vs unified platform comparison, and buyer evaluation criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.</li>
+              <li><strong>metadata.ts (EN + ES)</strong> — Added <code>whatIsCadDispatchSoftware</code> key with keyword-targeted title and description.</li>
+              <li><strong>sitemap.ts</strong> — Added <code>/resources/what-is-cad-dispatch-software</code> (priority 0.6). Site now 44 routes × 2 = 88 URLs.</li>
+              <li><strong>resources/page.tsx</strong> — Added hub card for new page in both EN and ES arrays (isNew: true).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.84 -->
+        <div class="tl-entry">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.84</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Copy: hero rewrite + CTA consolidation + products framing</div>
+            <ul class="tl-list">
+              <li><strong>page.tsx (hero)</strong> — H1 rewritten to "One screen. Every camera, dispatch call, and field unit — connected." Subtitle now opens with explicit who/what.</li>
+              <li><strong>page.tsx (products)</strong> — Section subline: replaced "unified intelligence layer" with "without stitching together six different vendors".</li>
+              <li><strong>CTASection.tsx</strong> — Consolidated to one primary "Book a Demo" + subtle text link fallback; eliminates competing CTAs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.83 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.83</span><span class="tl-date">2026-03-23</span></div>
+            <div class="tl-title">Fix: sitemap orphans — /privacy and /resources/end-of-siloed-response + resources hub card</div>
+            <ul class="tl-list">
+              <li><strong>sitemap.ts</strong> — Added <code>/resources/end-of-siloed-response</code> (priority 0.7) and <code>/privacy</code> (priority 0.3); both built in v0.81/v0.68 but never indexed.</li>
+              <li><strong>resources/page.tsx</strong> — Added ebook card for <code>/resources/end-of-siloed-response</code>; page was an internal orphan with no discovery path.</li>
+              <li><strong>SEO master plan</strong> — Synced agent log v0.78–v0.82, Phase 3 → 0%, Phase 4 → 30%, site size → 43 routes / 86 URLs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.82 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.82</span><span class="tl-date">2026-03-22</span></div>
+            <div class="tl-title">Design: industry brief landing page visual overhaul</div>
+            <ul class="tl-list">
+              <li>Removed Carbyne reference from stat labels — replaced with "Market consolidation signal".</li>
+              <li>Removed cover card from hero right column; form is now the sole focus (column narrowed to 360px).</li>
+              <li>Redesigned SVG illustration: larger viewBox (960×420), dot grid backgrounds, red-tinted fragmented side with warning triangles, response time comparison bar (8m 24s vs 3m 12s), LIVE badge on hub, improved glow filters and animations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.81 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.81</span><span class="tl-date">2026-03-22</span></div>
+            <div class="tl-title">Feat: Industry brief landing page /resources/end-of-siloed-response/</div>
+            <ul class="tl-list">
+              <li><strong>/resources/end-of-siloed-response/</strong> — EN + ES landing page for "The End of Siloed Response" Q2 2026 industry brief.</li>
+              <li><strong>EbookDownloadForm</strong> — 4-field lead capture form (name, email, org, role) with success state and PDF download link.</li>
+              <li>Ebook cover visual in pure CSS/JSX, 9-chapter content grid, 4 key stats, "What's inside" checklist (7 bullets), pull quote, bottom CTA.</li>
+              <li>ArticleSchema + BreadcrumbSchema + OrganizationSchema; full bilingual EN/ES support.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.80 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.80</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Feat: KabatOne vs Peregrine comparison page /vs/peregrine/</div>
+            <ul class="tl-list">
+              <li><strong>/vs/peregrine/</strong> — EN + ES comparison page: Peregrine predictive analytics vs KabatOne unified operations platform.</li>
+              <li>7-row comparison table, 6 FAQ pairs, "Strategic Intelligence vs Operational Platform" positioning section.</li>
+              <li>Metadata (EN + ES), sitemap entry, related links to other /vs/ pages.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.79 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.79</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Fix: sitemap orphans + SEO master plan sync</div>
+            <ul class="tl-list">
+              <li><strong>sitemap.ts</strong> — Added 3 missing integration paths (<code>/integrations/access-control/</code>, <code>/integrations/drones/</code>, <code>/integrations/panic-buttons/</code>) built in v0.78 but never indexed.</li>
+              <li><strong>SEO master plan</strong> — Corrected site size (35 → 41 unique routes, 70 → 82 sitemap URLs); all 6 integration pages marked Done.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.78 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.78</span><span class="tl-date">2026-03-21</span></div>
+            <div class="tl-title">Feat: 3 new integration pages — Access Control, Drones, Panic Buttons</div>
+            <ul class="tl-list">
+              <li><strong>/integrations/access-control/</strong> — OSDP/Wiegand/REST/ONVIF protocols, 4 facility use cases, metrics strip, 6 FAQs (EN + ES).</li>
+              <li><strong>/integrations/drones/</strong> — UAV/UAS integration, 6 capability cards, 4 operational scenarios, specs table, 6 FAQs (EN + ES).</li>
+              <li><strong>/integrations/panic-buttons/</strong> — 5-step response flow, 6 sector verticals, 6 FAQs (EN + ES).</li>
+              <li>Metadata (EN + ES), footer links, 3 hero images generated via Nano Banana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.77 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.77</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Design: Integration pages visual overhaul — hero images + section illustrations</div>
+            <ul class="tl-list">
+              <li>Added AI-generated hero illustration to LPR, Face Recognition, and Sensor Fusion integration pages.</li>
+              <li>Added "From Plate to Alert in Under 3 Seconds" flow diagram on LPR page.</li>
+              <li>Added correlation timeline diagram to Sensor Fusion "How the Engine Works" section.</li>
+              <li>Added 3-metric stats strip to Face Recognition privacy section.</li>
+              <li>Generated 5 illustrations via Nano Banana: lpr-hero, lpr-flow, face-hero, fusion-hero, fusion-correlation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.76 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.76</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Fix: Next.js 16 dev routing + layout restructure + footer integrations</div>
+            <ul class="tl-list">
+              <li><strong>next.config.ts</strong> — Added <code>rewrites()</code> as dev fallback: Next.js 16 + Turbopack doesn't invoke middleware edge rewrites; rewrite rules map <code>/path</code> → <code>/en/path</code> so App Router correctly matches <code>[locale]</code> segments</li>
+              <li><strong>src/app/layout.tsx</strong> — Moved <code>&lt;html&gt;/&lt;body&gt;</code> and font variables to root layout (required by Next.js 16 Turbopack)</li>
+              <li><strong>src/components/Footer.tsx</strong> — Added Integrations column: LPR, Face Recognition, Sensor Fusion links (EN + ES labels)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.75 -->
+        <div class="tl-entry fix">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.75</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Chore: Combined site-manager page (Dev Environment + Changelog tabs)</div>
+            <ul class="tl-list">
+              <li>Created <strong>site-manager.html</strong> — single internal management page with two tabs: Dev Environment map and full Changelog timeline</li>
+              <li>Dev Environment tab shows flow from Mac → GitHub (main/nextjs branches) → GitHub Pages / Vercel Staging / Vercel Preview → kabatone.com</li>
+              <li>Replaces managing two separate files; all future changelog entries should be logged in site-manager.html as well</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- v0.74 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.74</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Feat: Integration pages — LPR, Face Recognition, Sensor Fusion</div>
+            <div class="tl-card">
+              <div class="change-group">
+                <div class="change-group-label label-added">Added</div>
+                <ul class="change-list">
+                  <li><strong>integrations/lpr/</strong> — License Plate Recognition integration page: what is LPR, how KabatOne integrates it, 4 use cases, technical specs table, FAQ (6 Q&amp;A), ArticleSchema + FAQSchema + BreadcrumbSchema, bilingual EN/ES</li>
+                  <li><strong>integrations/face-recognition/</strong> — Face Recognition integration page: two operational modes, 4 use cases, privacy &amp; compliance controls section, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                  <li><strong>integrations/sensor-fusion/</strong> — Sensor Fusion integration page: 6 sensor types, 5-step correlation engine flow, 3 use cases, FAQ (6 Q&amp;A), schemas, bilingual EN/ES</li>
+                  <li>Metadata keys added to EN + ES metadata files: <strong>integrationLpr</strong>, <strong>integrationFaceRecognition</strong>, <strong>integrationSensorFusion</strong></li>
+                </ul>
+              </div>
+              <div class="change-group">
+                <div class="change-group-label label-changed">Changed</div>
+                <ul class="change-list">
+                  <li><strong>sitemap.ts</strong> — Added 3 new paths (/integrations/lpr, /integrations/face-recognition, /integrations/sensor-fusion); site now 38 routes / 76 sitemap URLs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- v0.73 -->
+        <div class="tl-entry feat">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-version">v0.73</span><span class="tl-date">2026-03-20</span></div>
+            <div class="tl-title">Feat: Resources hub + 2 new blog-style articles</div>
+            <ul class="tl-list">
+              <li>Created <code>/resources/</code> hub index page — 7 article cards, 3-column responsive grid, bilingual EN/ES</li>
+              <li>New article: <code>/resources/rtcc-setup-guide/</code> — RTCC Setup Guide (5 steps, mistakes, metrics, FAQ + schemas)</li>
+              <li>New article: <code>/resources/ai-in-public-safety/</code> — AI in Public Safety guide (6 use cases, benefits, challenges, FAQ + schemas)</li>
+              <li>Nav Resources link now points to <code>/resources</code> index; removed dead Blog link</li>
+              <li>Sitemap updated with 3 new paths; metadata added EN + ES for all 3 pages</li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- v0.72 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.72</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Chore: remove static HTML files from nextjs branch</div>
+          <ul class="tl-list">
+            <li>Deleted 16 static website HTML files (hero-mockup, about, contact, solutions, 7 industry pages, 5 product pages)</li>
+            <li>Updated CLAUDE.md project snapshot to reflect Next.js stack</li>
+            <li>main branch remains as legacy static site; nextjs branch is now clean Next.js only</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.71 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.71</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Perf: lazy load below-fold images, switch mockups to WebP</div>
+          <ul class="tl-list">
+            <li>Added <code>loading="lazy"</code> to 16 below-fold images: 7 partner logos, 5 product icons, 4 city camera photos, footer logo</li>
+            <li>Switched k-traffic-mockup and k-connect-mockup references from .png to .webp</li>
+            <li>Reduces initial eager image load by ~70%; improves LCP toward 1.2–1.5s</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.70 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.70</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Docs: SEO master plan updated to current state</div>
+          <ul class="tl-list">
+            <li>Stack corrected to Next.js on Vercel; all 11 /vs/ comparison pages marked Done</li>
+            <li>Competitor tracking expanded; keyword map and performance targets (15 → 32 pages) updated</li>
+            <li>Agent run log: 5 new entries covering all /resources/ and /vs/ builds through v0.69</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.69 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.69</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: vs Fusus and vs Prepared 911 comparison pages</div>
+          <ul class="tl-list">
+            <li>New /vs/fusus page (EN + ES) — KabatOne vs Fusus RTCC; video intelligence vs full operations platform, community video, CAD, GIS, traffic</li>
+            <li>New /vs/prepared911 page (EN + ES) — KabatOne vs Prepared 911; NG911 call taking vs full response cycle</li>
+            <li>Metadata, sitemap, and footer links updated in both Next.js and static site</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.68 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.68</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Add: Privacy Policy page (EN + ES)</div>
+          <ul class="tl-list">
+            <li>New /privacy route with full privacy policy sourced from kabatone.com/privacy-policy</li>
+            <li>Bilingual (EN/ES) with all sections: data collected, ARCO rights, cookies, security, jurisdiction, and contact</li>
+            <li>Metadata registered in both EN and ES metadata files</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.67 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.67</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer columns grouped and right-aligned</div>
+          <ul class="tl-list">
+            <li>Company and Competitors columns now grouped together on the right side of the footer, eliminating excess stretch</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.66 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.66</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer competitor links now visible in static site</div>
+          <ul class="tl-list">
+            <li>Global <code>nav { position: fixed }</code> rule was pulling footer <code>&lt;nav&gt;</code> elements into the fixed top nav bar. Changed footer link containers to <code>&lt;div&gt;</code> elements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.65 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.65</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Footer competitors column is now vertical</div>
+          <ul class="tl-list">
+            <li>Footer restructured to multi-column layout in both <code>Footer.tsx</code> and <code>hero-mockup.html</code> — "Competitors" heading with links stacked vertically below</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.64 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.64</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Move competitors to a dedicated bottom row in footer</div>
+          <ul class="tl-list">
+            <li>Footer restructured in both <code>Footer.tsx</code> and <code>hero-mockup.html</code> — competitors now appear in a clear second row below the copyright/nav row, separated by a border</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.63 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.63</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Group competitor links under "Competitors" heading in footer</div>
+          <ul class="tl-list">
+            <li>Competitor links in <code>Footer.tsx</code> and <code>hero-mockup.html</code> now grouped under a "Competitors" label with a vertical list below</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.62 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.62</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: Add competitor links to static footer</div>
+          <ul class="tl-list">
+            <li>Added 9 competitor links (vs. Genetec through vs. CAD) to <code>hero-mockup.html</code> footer — previously only on the Next.js branch footer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.61 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.61</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Feat: Batch competitor comparison pages — Motorola, Hexagon, Mark43, Axon, Carbyne, CAD</div>
+          <ul class="tl-list">
+            <li>Added <code>/vs/motorola/</code> — KabatOne vs Motorola Solutions (PremierOne CAD, Avigilon, CommandCentral)</li>
+            <li>Added <code>/vs/hexagon/</code> — KabatOne vs Hexagon Safety (HxGN OnCall CAD) — great CAD + GIS, missing video and traffic</li>
+            <li>Added <code>/vs/mark43/</code> — KabatOne vs Mark43 (cloud-native CAD/RMS) — cloud-native extended to full response lifecycle</li>
+            <li>Added <code>/vs/axon/</code> — KabatOne vs Axon (body cameras + Evidence.com) — officer-centric vs command center-centric</li>
+            <li>Added <code>/vs/carbyne/</code> — KabatOne vs Carbyne (next-gen 911) — Carbyne reinvented call intake; KabatOne manages everything after</li>
+            <li>Added <code>/vs/cad/</code> — Category page: KabatOne vs Traditional CAD Systems (names Motorola PremierOne, Hexagon, Tyler, CentralSquare, Mark43)</li>
+            <li>All 6 pages: 7-row comparison table, 6 FAQ pairs, FAQPage + BreadcrumbList schema, EN + ES</li>
+            <li>Metadata, sitemap entries, and footer links added for all 6 pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.60 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.60</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: KabatOne vs Traditional VMS comparison page /vs/vms/</div>
+          <ul class="tl-list">
+            <li>Category-level comparison page at <code>/vs/vms/</code> (EN + ES) — 7-row table, 6 FAQs, schema markup</li>
+            <li>Angle: "The real cost of building on top of a VMS" — fragmentation, integration burden, operational delays</li>
+            <li>Footer link "vs. VMS" added; sitemap updated</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.59 -->
+      <div class="tl-entry">
+        <div class="tl-meta">
+          <span class="tl-version">v0.59</span>
+          <span class="tl-date">2026-03-19</span>
+          <span class="tl-tag tag-fix">Fix</span>
+        </div>
+        <h2 class="tl-title">Mobile hero gap — trust badges visible above fold</h2>
+        <ul class="tl-list">
+          <li>Reduced margins on subtitle, CTA row, and badges at ≤560px breakpoint</li>
+          <li>SOC 2 / Uptime / 24/7 trust badges now visible in initial mobile viewport</li>
+        </ul>
+      </div>
+
+      <!-- v0.58 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.58</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: KabatOne vs Milestone XProtect comparison page /vs/milestone/</div>
+          <ul class="tl-list">
+            <li>New comparison page at <code>/vs/milestone/</code> (EN + ES) — 7-row table, 6 FAQ pairs, schema markup</li>
+            <li>Added to sitemap at priority 0.7; "vs. Milestone" link added to footer</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.57 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.57</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Feat: add vs. Genetec link to footer</div>
+          <ul class="tl-list">
+            <li>Added "vs. Genetec" link in the footer nav (EN + ES) pointing to <code>/vs/genetec/</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.56 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.56</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: host logo locally — LCP 1.4s → 0.8s, Lighthouse 96 → 100</div>
+          <ul class="tl-list">
+            <li>Downloaded KabatOne logo from CDN, hosted at <code>/public/images/logo.png</code></li>
+            <li>Updated <code>Nav.tsx</code> to use local path — eliminates cross-origin connection for LCP element</li>
+            <li>Lighthouse Performance: <strong>96 → 100/100</strong>, LCP: <strong>1.4s → 0.8s</strong>, all CWV green</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.55 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.55</span><span class="tl-date">2026-03-20</span></div>
+          <div class="tl-title">Fix: replace custom middleware with next-intl built-in middleware</div>
+          <ul class="tl-list">
+            <li>Replaced hand-rolled locale middleware with <code>createMiddleware(routing)</code> from next-intl — fixes 404 on all nested EN routes</li>
+            <li>Removed redundant <code>/en/:path*</code> redirect from <code>next.config.ts</code></li>
+            <li>All 21 routes return 200 in both EN and ES locales in production</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.54 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.54</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Perf: replace raw img with next/image in product carousel</div>
+          <ul class="tl-list">
+            <li>Replaced the only remaining raw <code>&lt;img&gt;</code> in <code>page.tsx</code> with <code>&lt;Image fill&gt;</code> from next/image</li>
+            <li>First product (K-Safety) gets <code>priority={true}</code> — preloads as LCP candidate</li>
+            <li>Added <code>sizes</code> hint for responsive image serving</li>
+            <li>Lighthouse score: 96/100 (A) — images 333 KB vs 91.7 MB on static site</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.53 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.53</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">KabatOne vs Genetec comparison page</div>
+          <ul class="tl-list">
+            <li>New <code>/vs/genetec/</code> page (EN + ES) — first Phase 3 comparison page</li>
+            <li>7-row comparison table: category, dispatch/CAD, GIS, traffic, community video, field ops, target market</li>
+            <li>6 FAQ pairs with FAQPage schema + BreadcrumbList schema</li>
+            <li>Metadata added to en/es metadata.ts; page added to sitemap.ts (priority 0.7)</li>
+            <li>Positioning based on brand identity V3: Genetec = monitoring-first; KabatOne = full response workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.52 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.52</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Core Web Vitals audit and fixes</div>
+          <ul class="tl-list">
+            <li>Performance: LCP 3.7s → 2.4s — added <code>priority</code> to initial ModulesSection image</li>
+            <li>Performance: Product icons moved from CDN (330KB unoptimized) to local paths with Next.js optimization</li>
+            <li>Accessibility: Added <code>&lt;main&gt;</code> landmark to layout</li>
+            <li>Accessibility: <code>--blue</code> darkened from #3b82f6 to #2563eb — fixes contrast on all CTA buttons</li>
+            <li>Accessibility: Module tab/tag text changed to white on colored backgrounds</li>
+            <li>Accessibility: Carousel dots enlarged to 24px touch target</li>
+            <li>Lighthouse: Performance 88→98, Accessibility 92→100, Best Practices 100, SEO 100</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.51 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.51</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Production-ready Vercel deployment</div>
+          <ul class="tl-list">
+            <li>Converted all module images from PNG to WebP (86MB → 507KB) — fixes 30s page load timeout</li>
+            <li>Replaced raw <code>&lt;img&gt;</code> tags with Next.js <code>&lt;Image&gt;</code> for automatic optimization</li>
+            <li>Removed <code>unoptimized</code> flag from Nav logo</li>
+            <li>Created 7 industry hero visualization components with animated CSS panels</li>
+            <li>Added visible breadcrumb navigation to all 7 industry pages</li>
+            <li>Expanded footer with Privacy, Terms, Security links</li>
+            <li>Added Blog placeholder link to Nav (desktop + mobile)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.50 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.50</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">GEO-012: Structured data audit and fixes</div>
+          <ul class="tl-list">
+            <li>Added BreadcrumbList JSON-LD to 5 product pages + About page (previously missing)</li>
+            <li>Fixed locale URLs in what-is-a-public-safety-platform breadcrumb &amp; Article schema</li>
+            <li>Full audit of all 17+ pages: Organization, SoftwareApplication, FAQPage, Article, BreadcrumbList validated</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.49 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.49</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">Internal linking pass across all 17 pages</div>
+          <ul class="tl-list">
+            <li>"Related Resources" on 5 product pages — 3 resource links + industry cross-links each</li>
+            <li>"Related Resources" on 7 industry pages — 2-3 resource links + 2 related industry links each</li>
+            <li>"Related Articles" on 5 resource pages — each cross-links to the other 4</li>
+            <li>All links bilingual EN/ES, placed before CTA sections</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.48 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.48</span><span class="tl-date">2026-03-19</span></div>
+          <div class="tl-title">GEO: 5 citeable explainer pages (GEO-003 through GEO-007)</div>
+          <ul class="tl-list">
+            <li>5 new /resources/ pages: public-safety-platform, psim-vs-unified, c5-command-centers, smart-city-guide, public-safety-mexico</li>
+            <li>All pages bilingual EN/ES with Article + FAQPage (6 Q&amp;A each) + BreadcrumbList JSON-LD</li>
+            <li>articleSchema() added to schema.ts for resource pages</li>
+            <li>Metadata entries + sitemap.ts updated for all 5 pages with hreflang alternates</li>
+            <li>"Resources" nav link added to desktop and mobile Nav</li>
+            <li>Content optimized for AI citation: self-contained paragraphs, specific stats, authoritative reference tone</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.47 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.47</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">SEO: Schema markup, OG tags, hreflang fixes, Nav i18n, public assets</div>
+          <ul class="tl-list">
+            <li>JSON-LD schema on all 15 pages: Organization (global), SoftwareApplication (products), FAQPage (all), BreadcrumbList (industries)</li>
+            <li>GEO entity definition block on About page — structured, citation-optimized text</li>
+            <li>Fixed hreflang: es-MX → es alignment + x-default on all pages</li>
+            <li>OG image, og:locale, twitter:card on all 15 pages</li>
+            <li>Nav fully translated EN/ES (Soluciones, Industrias, Nosotros, Contacto)</li>
+            <li>Branded K1 favicon, apple-touch-icon, PWA icons, web manifest</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.46 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.46</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Add carousel header to modules section</div>
+          <ul class="tl-list">
+            <li>Carousel header with prev/next arrows, counter (01/09), module name, and tagline</li>
+            <li>Header name and tagline metadata for all 9 modules (EN + ES)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.45 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.45</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Align Next.js homepage with GitHub Pages version</div>
+          <ul class="tl-list">
+            <li>Added <code>ModulesSection.tsx</code> — 9-tab interactive BI section with auto-rotation, ARIA, and animated progress bar</li>
+            <li>Product cards now show actual module screenshots instead of empty placeholders</li>
+            <li>Hero headline restored to all-white (no gradient on "Public Safety")</li>
+            <li>Moved <code>/images/</code> to <code>/public/images/</code> for correct Next.js static serving</li>
+            <li>Section order now matches original: Hero → Modules → Stats → Products → Why → Industries → CTA</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.44 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.44</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js: all 15 pages ported EN+ES, sitemap, robots, shared components</div>
+          <ul class="tl-list">
+            <li>Ported 12 remaining pages: K-Traffic, K-Connect, 7 industry pages, Homepage, About, Contact</li>
+            <li>Shared components: <code>Footer.tsx</code>, <code>CTASection.tsx</code>, <code>PageHero.tsx</code></li>
+            <li><code>sitemap.ts</code> — 30 entries (15 EN + 15 ES) with hreflang alternates</li>
+            <li><code>robots.ts</code> — allows all crawlers, points to sitemap</li>
+            <li>All 30 URLs verified HTTP 200, 0 TypeScript errors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.43 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.43</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: replace next-intl middleware with Node.js-compatible locale routing</div>
+          <ul class="tl-list">
+            <li><code>middleware.ts</code> — replaced <code>createMiddleware</code> (imports <code>negotiator</code> CJS, crashes in Vercel V8 edge isolate) with pure <code>NextResponse</code> implementation; no CJS dependencies</li>
+            <li>Custom middleware handles: <code>/en/*</code> redirect, ES prefix passthrough, EN internal rewrite to <code>/en/</code></li>
+            <li><code>next.config.ts</code> — removed <code>withNextIntl</code> plugin and <code>beforeFiles</code> rewrites (now handled by middleware)</li>
+            <li><code>routing.ts</code> — simplified to plain config object; <code>localePrefix: as-needed</code> kept for correct Nav URL generation</li>
+            <li><code>[locale]/layout.tsx</code> — explicit <code>locale={locale}</code> on <code>NextIntlClientProvider</code> so <code>useLocale()</code> resolves without server plugin</li>
+            <li><code>npm run build</code> → 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.42 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.42</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: MIDDLEWARE_INVOCATION_FAILED on Vercel edge runtime</div>
+          <ul class="tl-list">
+            <li>Wrapped <code>createMiddleware</code> in explicit function — skips <code>/_next</code>, <code>/api</code>, favicon, and static file extensions before invoking intl middleware</li>
+            <li>Prevents Vercel edge runtime crash when middleware tries to process static assets</li>
+            <li><code>npm run build</code> → 0 errors, middleware compiled successfully as edge proxy</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.41 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.41</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Fix: EN at root URL, load Barlow Condensed + Space Grotesk fonts</div>
+          <ul class="tl-list">
+            <li>Changed <code>localePrefix</code> to <code>as-needed</code> — EN at <code>/k-dispatch</code>, ES at <code>/es/k-dispatch</code></li>
+            <li><code>redirects()</code> in next.config.ts — <code>/en/:path*</code> → <code>/:path*</code> (308 permanent)</li>
+            <li><code>beforeFiles</code> rewrite — <code>/k-dispatch</code> → <code>/en/k-dispatch</code> internally so App Router <code>[locale]</code> = en</li>
+            <li>Fonts loaded via <code>next/font/google</code>: Space Grotesk (body) + Barlow Condensed (headlines)</li>
+            <li>globals.css uses CSS font variables; h1/h2/h3 use Barlow Condensed</li>
+            <li>0 TypeScript errors — all 6 product page URLs confirmed 200, correct <code>lang=</code> and titles</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.40 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.40</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js: i18n routing, K-Dispatch + K-Video + K-Safety pages EN+ES</div>
+          <ul class="tl-list">
+            <li>next-intl routing with <code>localePrefix: always</code> — EN at <code>/en/</code>, ES at <code>/es/</code></li>
+            <li>K-Dispatch page (EN+ES) — all 7 sections, red accent, CAD queue mockup, Mexico 911 case study</li>
+            <li>K-Video page (EN+ES) — all 6 sections, purple accent, live camera grid mockup, AI metrics</li>
+            <li>K-Safety page (EN+ES) — all 7 sections, cyan accent, GIS command center mockup, Jalisco case study</li>
+            <li>Shared <code>Nav</code> component — dropdowns, language switcher, mobile hamburger</li>
+            <li>0 TypeScript errors — all 6 URLs confirmed 200 with correct titles and lang attributes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.39 -->
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v0.39</span><span class="tl-date">2026-03-18</span></div>
+          <div class="tl-title">Next.js scaffold: content structure, EN+ES metadata, metadata helper</div>
+          <ul class="tl-list">
+            <li>New <code>nextjs</code> branch — clean Next.js 16.2.0 rebuild (TypeScript, Tailwind v4, App Router)</li>
+            <li>EN + ES SEO metadata for all 15 pages in <code>src/content/</code></li>
+            <li><code>generatePageMetadata()</code> helper with canonical, hreflang, and OpenGraph tags</li>
+            <li>Empty content stubs for all pages (EN + ES)</li>
+            <li><code>next-intl</code> installed for i18n routing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.37 -->
+      <div class="tl-entry fix" id="v0-37">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.37</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Nav bar not full-width on mobile — all 5 product pages</div>
+          <ul class="tl-bullets">
+            <li>Mobile nav <code>left: 0; right: 0</code> were missing <code>!important</code> on k-safety, k-dispatch, k-traffic, k-video, k-connect</li>
+            <li>Nav bar was visibly clipped short on the right edge on mobile Safari — now spans full viewport width</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.36 -->
+      <div class="tl-entry fix" id="v0-36">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.36</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Hamburger menu JS missing on all 7 industry pages</div>
+          <ul class="tl-bullets">
+            <li>Mobile nav hamburger button had no JavaScript — button was visible but did nothing on tap</li>
+            <li>Added navToggle click handler and mobile dropdown expand/collapse to all 7 industry pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.35 -->
+      <div class="tl-entry fix" id="v0-35">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.35</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Move responsive CSS into head style block — all 7 industry pages</div>
+          <ul class="tl-bullets">
+            <li>Responsive media queries were in a body &lt;style&gt; tag which some browsers deprioritize; moved into &lt;head&gt; &lt;style&gt; block for guaranteed application</li>
+            <li>All 7 pages: grids now reliably collapse to 1-col at ≤640px, padding tightens, CTAs stack</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.34 -->
+      <div class="tl-entry fix" id="v0-34">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.34</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Fix missing grid-collapse rules on industry pages</div>
+          <ul class="tl-bullets">
+            <li>municipalities: benefits-grid (3-col) and features-two-col (2-col) now collapse to 1-col at 640px</li>
+            <li>public-safety: cap-grid (2-col numbered cards) now collapses to 1-col at 640px</li>
+            <li>logistics: coverage-grid and cap-grid now collapse to 1-col at 640px</li>
+            <li>retail, stadiums: cap-grid and zones-grid now collapse to 1-col at 640px</li>
+            <li>ports: advantages-grid (3-col) now collapses to 1-col at 640px</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.33 -->
+      <div class="tl-entry add" id="v0-33">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.33</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-add">Added</span>
+          </div>
+          <div class="tl-title">Mobile-first responsive adaptation — all 17 pages</div>
+          <ul class="tl-bullets">
+            <li>Standardized 5-point breakpoint system (360 / 480 / 640 / 768 / 1024px) applied to every HTML file</li>
+            <li>hero-mockup.html: headline scales from 116px down to 30px on small phones; section padding, CTA, modules, and quote sections all tightened for mobile</li>
+            <li>5 product pages: hero-h1 scaling, section-inner padding reduction, hero-ctas and bottom-cta-btns stack vertically at 480px, footer stacks at 640px</li>
+            <li>about.html, solutions.html, contact.html: hero/headline scaling, grid collapse, CTA stacking, footer stacking</li>
+            <li>7 industry pages: ind-hero-inner collapses to 1-col at 768px, challenges-grid/workflow-steps collapse on small screens, cta-btns stack, font scaling 76px→30px</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.32 -->
+      <div class="tl-entry improve" id="v0-32">
+        <div class="tl-meta">
+          <span class="tl-version">v0.32</span>
+          <span class="tl-date">2026-03-18</span>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Improve K-Traffic hero mockup with city map and live panels</div>
+          <ul class="tl-list">
+            <li>Replaced basic intersection diagram with a full city-grid SVG map</li>
+            <li>Added color-coded traffic flow overlays (green/orange/red) on road segments</li>
+            <li>Added animated vehicle dots traversing streets using SVG animateMotion</li>
+            <li>Added pulsing incident markers at congested intersections</li>
+            <li>Added camera feed panel (CAM-07 with scan lines, REC badge, speeding alert)</li>
+            <li>Added active incident card with location and timestamp</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.31 -->
+      <div class="tl-entry add" id="v0-31">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.31</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-add">Added</span>
+          </div>
+          <div class="tl-title">Mobile layout for How It Works diagrams — all 5 product pages</div>
+          <ul class="tl-bullets">
+            <li>The 800×450 SVG diagrams were unreadable on mobile (text scaled below 5px). Added a compact 3-column HTML/CSS grid (inputs | hub | outputs) that displays on ≤640px viewports. Desktop SVG is unchanged and hidden on mobile.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.30 -->
+      <div class="tl-entry fix" id="v0-30">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.30</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Fix mobile tab bar scroll + swipe hint</div>
+          <ul class="tl-bullets">
+            <li>Module tabs (Video, Dispatch, GIS, etc.) showed only middle tabs on mobile — <code>justify-content: center</code> made left tabs unreachable. Fixed to <code>flex-start</code> with iOS momentum scroll and a right-edge fade gradient as a swipe hint.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.29 -->
+      <div class="tl-entry fix" id="v0-29">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.29</span>
+            <span class="tl-date">2026-03-18</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Fix mobile nav full-width on all pages</div>
+          <ul class="tl-bullets">
+            <li>Mobile nav only covered the left side of the header on 15 pages — <code>position: fixed</code> override was missing <code>left: 0; right: 0</code>. Fixed across all product, industry, and content pages.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.28 -->
+      <div class="tl-entry fix" id="v0-28">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.28</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Fix sticky nav on all remaining pages (solutions, about, contact, industries)</div>
+          <ul class="tl-bullets">
+            <li>Same mobile nav <code>position: relative</code> bug existed on solutions, about, contact, and all 7 industry pages — all fixed to <code>position: fixed !important</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.27 -->
+      <div class="tl-entry fix" id="v0-27">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.27</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fixed</span>
+          </div>
+          <div class="tl-title">Fix sticky nav on mobile + diagram horizontal scroll on all product pages</div>
+          <ul class="tl-bullets">
+            <li>Mobile nav was <code>position: relative</code> — changed to <code>position: fixed</code> so header stays sticky on all 5 product pages</li>
+            <li>Hub-and-spoke diagram now horizontally scrollable on mobile instead of shrinking to illegible size</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.26 -->
+      <div class="tl-entry add" id="v0-26">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.26</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-add">Added</span>
+          </div>
+          <div class="tl-title">Animated hub-and-spoke "How It Works" diagrams on all product pages</div>
+          <ul class="tl-bullets">
+            <li>SVG animated hub-and-spoke flow diagram replacing plain numbered steps in "How It Works" sections</li>
+            <li>Animated glowing dots flow from inputs → hub → outputs; hub features pulsing border and rotating dashed inner ring</li>
+            <li>Each product has unique node labels and icons: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v0.25 -->
+      <div class="tl-entry change" id="v0-25">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.25</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-change">Changed</span>
+          </div>
+          <div class="tl-title">Update K-Safety hero stats to platform-wide figures</div>
+          <div class="change-group">
+            <ul><li>Replaced single-site stats (5,400 cameras / 530 panic buttons / 40 cities) with platform-wide figures: 68 Projects · 100+ Agencies · 30+ Integrations</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.24 -->
+      <div class="tl-entry change" id="v0-24">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.24</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-change">Changed</span>
+          </div>
+          <div class="tl-title">Update K-Connect section text to match Kabatone.com</div>
+          <div class="change-group">
+            <ul>
+              <li>Headline updated to "Secure community-based video sharing"</li>
+              <li>Description and feature bullets synced with live site copy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.23 -->
+      <div class="tl-entry feat" id="v0-23">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.23</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improved">Improved</span>
+          </div>
+          <div class="tl-title">Add real camera feeds to K-Video hero mockup</div>
+          <div class="change-group">
+            <ul>
+              <li>Replaced empty CSS-gradient camera cells in K-Video hero with actual street camera images from CDN</li>
+              <li>Added subtle purple/teal tint overlays per cell for surveillance aesthetic</li>
+              <li>Reused 4 images across 6 cells with varied object-position for variety</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.22 -->
+      <div class="tl-entry change" id="v0-22">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.22</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-change">Changed</span>
+          </div>
+          <div class="tl-title">Update K-Connect mockup image</div>
+          <div class="change-group">
+            <ul><li>Swapped k-connect-mockup.png with updated version</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.21 -->
+      <div class="tl-entry change" id="v0-21">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.21</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-change">Changed</span>
+          </div>
+          <div class="tl-title">Replace K-Connect product image on home page</div>
+          <div class="change-group">
+            <ul><li>Replaced SVG network diagram with new mockup image (images/k-connect-mockup.png)</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.20 -->
+      <div class="tl-entry change" id="v0-20">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.20</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-change">Changed</span>
+          </div>
+          <div class="tl-title">Replace K-Traffic product image on home page</div>
+          <div class="change-group">
+            <ul><li>Replaced CDN-hosted K-Traffic map image with new local mockup (images/k-traffic-mockup.png)</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.19 -->
+      <div class="tl-entry improve" id="v0-19">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.19</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">Reorder modules carousel on home page</div>
+          <div class="change-group">
+            <div class="change-group-label label-changed">Changed</div>
+            <ul class="change-list">
+              <li>Modules section: new tab order — Video, Dispatch, Events, GIS, Integrations, Responder, Citizens, AI Engine, Analytics/BI</li>
+              <li>Video is now the default active module on page load (was GIS)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.18 -->
+      <div class="tl-entry fix" id="v0-18">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.18</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Translate remaining Spanish labels to English</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li><strong>K-Safety</strong>: "C5 · Centro de Comando" → "C5 · Command Center"; "SISTEMA ACTIVO" → "SYSTEM ACTIVE"</li>
+              <li><strong>K-Traffic</strong>: "SISTEMA ACTIVO" → "SYSTEM ACTIVE"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.17 -->
+      <div class="tl-entry improve" id="v0-17">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.17</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">K-Connect: facility map + K-Traffic: simplified panel</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>K-Connect</strong>: replaced abstract network diagram with a dark city GIS map — color-coded facility markers (blue=schools, red=hospitals, orange=factories), animated data-flow dots, stats bar showing 12/8/6 connected facilities</li>
+              <li><strong>K-Traffic</strong>: removed metrics panel and legend, full-width map + accident camera popup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.16 -->
+      <div class="tl-entry improve" id="v0-16">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.16</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">Product panels: real images + full English translation</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>K-Traffic</strong>: replaced SVG drawing with real product AVIF from kabatone.com; translated all labels to English</li>
+              <li><strong>K-Video</strong>: replaced 4 SVG feeds with real camera JPEGs (Reforma Ángel, Diana, Alameda, Periférico); AI bounding-box overlay on feed 1</li>
+              <li><strong>K-Dispatch</strong>: full Spanish → English translation (units, statuses, incident types, priority badges)</li>
+              <li><strong>K-Connect</strong>: translated network diagram + KPI panel; header renamed to "CITIZEN PORTAL ANALYTICS" for clarity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.15 -->
+      <div class="tl-entry improve" id="v0-15">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.15</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">K-Connect: network diagram illustration</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>K-Connect</strong>: replaced phone mockup with animated network diagram from k-connect.html — central KabatOne hub + 5 satellite nodes (Schools, Police, Emergency, Business, City Hall) with animated SVG flow dots and dashed connection lines + stats bar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.14 -->
+      <div class="tl-entry improve" id="v0-14">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.14</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">Product mock panel refinements</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>K-Dispatch</strong>: fixed sidebar layout (colored dot + name/status rows), improved kanban column headers with accent borders</li>
+              <li><strong>K-Traffic</strong>: replaced signal grid with SVG traffic map (green/orange/red route lines) + floating accident camera popup (CAM-031)</li>
+              <li><strong>K-Video</strong>: 4 SVG-drawn street scene feeds with AI bounding box on accident feed + video controls bar (Record, Pause, Stop, scrubber, Snapshot, Fullscreen)</li>
+              <li><strong>K-Connect</strong>: replaced report list with citizen phone mockup showing incident-reporting app UI (category picker, location, description, submit)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.13 -->
+      <div class="tl-entry improve" id="v0-13">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.13</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">Product section HTML/CSS mock dashboards</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>hero-mockup.html</strong> — Replaced all 5 static AVIF product screenshots with inline HTML/CSS operational dashboard panels matching the KabatOne admin prototype aesthetic</li>
+              <li><strong>K-Safety</strong>: dark GIS map (SVG road grid, incident dots, radius ring, "Eventos Cercanos" table overlay)</li>
+              <li><strong>K-Dispatch</strong>: Kanban board with 7-unit resource sidebar and 4 workflow columns with priority badges</li>
+              <li><strong>K-Traffic</strong>: 2×2 signal status grid with traffic light indicators and live metrics side panel</li>
+              <li><strong>K-Video</strong>: camera list sidebar + 2×2 dark feed grid with REC/SIN SEÑAL indicators</li>
+              <li><strong>K-Connect</strong>: citizen report list with status badges + KPI grid and SLA progress bars</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.12 -->
+      <div class="tl-entry feat" id="v0-12">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.12</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-feature">Feature</span>
+          </div>
+          <div class="tl-title">About page: Customer Success &amp; Services section</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>about.html</strong> — New "Customer Success &amp; Services" section with 5 prominent service cards: 24/7 Support, Dedicated Customer Success, Training, Professional Services, and White Glove Service</li>
+              <li>Each card has a colored accent border, icon, labeled tag, and description; fully responsive (5→3→2→1 columns)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.11 -->
+      <div class="tl-entry improve" id="v0-11">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.11</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-improve">Improve</span>
+          </div>
+          <div class="tl-title">Product section chrome frame &amp; live stat chips</div>
+          <div class="change-group">
+            <div class="change-group-label label-improved">Improved</div>
+            <ul class="change-list">
+              <li><strong>hero-mockup.html</strong> — redesigned product card screenshots with app chrome frame (traffic-light dots, product title, pulsing LIVE badge) and floating stat chips per product</li>
+              <li>Each card shows contextual live metrics: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect each have two data chips</li>
+              <li>Added per-product colored glow shadow reinforcing brand identity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.10 -->
+      <div class="tl-entry fix" id="v0-10">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.10</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Gray text contrast improvements across all pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li><strong>All 17 HTML pages</strong> — raised <code>--muted</code> from <code>#7b9db8</code> to <code>#9dbdd0</code> and <code>--dim</code> from <code>#94a3b8</code> to <code>#b4c4d4</code>; contrast ratio on dark background improved from ~6:1 to ~8–9:1</li>
+              <li><strong>changelog.html</strong> — corrected <code>--muted: #4a5c7a</code> which had only ~2.7:1 contrast (WCAG AA failure) to the updated site-wide value</li>
+              <li><strong>hero-mockup.html</strong> — raised <code>.mpr-feed-label</code> opacity from <code>0.4</code> to <code>0.65</code> for small-text readability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.9 -->
+      <div class="tl-entry fix" id="v0-9">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.9</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Mobile nav missing on industry pages + logos overflow fix</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li><strong>All 7 industry pages</strong> — added missing mobile nav CSS, hamburger <code>&lt;button&gt;</code> HTML, and JS toggle/dropdown logic; these pages were rendering the full desktop nav on mobile with no hamburger</li>
+              <li><strong>Integration logos panel</strong> (<code>.int-logos-wall</code>) — added <code>overflow: hidden</code>, reduced padding from <code>28px</code> to <code>20px</code>, changed <code>.int-grid</code> <code>max-width</code> from <code>440px</code> to <code>100%</code> to eliminate right-column clipping on narrow viewports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.8 -->
+      <div class="tl-entry fix" id="v0-8">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.8</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Mobile QA pass: layout, touch &amp; accessibility fixes</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li><strong>Hamburger tap target</strong> — padding enlarged from <code>8px 4px</code> to <code>14px 11px</code> (span width <code>22px</code> → <code>24px</code>) to meet 44×44 px minimum</li>
+              <li><strong>Stat counters</strong> — HTML pre-populated with real values (40 / 70 / 99 / 24) so they no longer flash "0" if JS animation is delayed or disabled</li>
+              <li><strong>Platform pillars grid</strong> — switches to single column below 480 px (was 2-col at all mobile sizes, producing cramped ~175 px cells)</li>
+              <li><strong>Quote block padding</strong> — reduced from <code>0 48px</code> to <code>0 20px</code> on ≤480 px screens</li>
+              <li><strong>CTA fine-print</strong> — font size raised from <code>10px</code> to <code>12px</code></li>
+              <li><strong>Product demo panel</strong> — height increased from <code>220px</code> to <code>260px</code> on mobile to reduce image clipping</li>
+              <li><strong>Logo link</strong> — <code>aria-label="KabatOne — Home"</code> added for screen reader accessibility</li>
+              <li><strong>Module swipe animation</strong> — removed <code>!important</code> from <code>transform: none</code> and <code>opacity: 1</code> in mobile media query; the flag was blocking JS inline transforms, causing panels to jump instead of slide during swipe</li>
+              <li><strong>Footer logo</strong> — added <code>width: auto</code> to prevent layout distortion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.7 -->
+      <div class="tl-entry fix" id="v0-7">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.7</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Nav &amp; footer link fixes on remaining pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li><strong>contact.html</strong> — Industries nav expanded to full dropdown (all 7 industry pages); About link fixed to <code>about.html</code>; "Book a Demo" button moved inside <code>&lt;ul&gt;</code></li>
+              <li><strong>about.html</strong> — Contact links in nav and footer fixed to <code>contact.html</code></li>
+              <li><strong>All 7 industry pages</strong> — footer Contact link fixed to <code>contact.html</code> (was <code>#</code>)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.6 -->
+      <div class="tl-entry fix" id="v0-6">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.6</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Improved</span>
+          </div>
+          <div class="tl-title">Improved mobile swipe for modules carousel</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Improved</div>
+            <ul class="change-list">
+              <li><strong>hero-mockup.html</strong> — replaced basic touchstart/touchend swipe with a full drag-based animation system: real-time panel dragging, axis locking, threshold-based commit or snap-back (≥50 px), smooth cubic-bezier slide transitions</li>
+              <li><strong>.mod-panel-right</strong> — height changed from fixed <code>260px</code> to <code>min-height: 260px; height: auto</code> so taller content is no longer clipped on mobile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.5 -->
+      <div class="tl-entry" id="v0-5">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.5</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-infra">Infrastructure</span>
+          </div>
+          <div class="tl-title">Changelog page created</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>CHANGELOG.md</strong> — source-of-truth change log for the repo; all agents required to update before committing</li>
+              <li><strong>changelog.html</strong> — this page, matching the site's design system</li>
+              <li>AGENTS.md rule: every agent must log changes before committing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.4 -->
+      <div class="tl-entry fix" id="v0-4">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.4</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Nav &amp; link fixes across all pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li>Logo link now points to <strong>hero-mockup.html</strong> on all pages (was <code>#</code>)</li>
+              <li>Footer "Contact" link on homepage now points to <strong>contact.html</strong></li>
+              <li>Contact form: replaced invalid Formspree URL with JS <strong>mailto: handler</strong> — "Send Message" now opens the email client with all fields pre-filled to info@kabatone.com</li>
+              <li>Minor nav and link corrections on all industry pages and solution pages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.3 -->
+      <div class="tl-entry fix" id="v0-3">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.3</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-fix">Fix</span>
+          </div>
+          <div class="tl-title">Mobile responsiveness</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>Hamburger nav</strong> (≤768px) on all 8 pages — animates to ×, closes on outside tap, Solutions dropdown shows flat in mobile menu</li>
+              <li>Responsive layout CSS on all 5 solution pages: 900px collapses hero to 1-col, 640px all grids go single-column</li>
+            </ul>
+          </div>
+          <div class="change-group">
+            <div class="change-group-label label-fixed">Fixed</div>
+            <ul class="change-list">
+              <li>Removed broken CSS rule that hid all nav links on mobile in hero-mockup.html</li>
+              <li>Hamburger touch target enlarged; nav uses <code>position: fixed</code> on mobile</li>
+              <li>Product screen images now fill full width at tablet breakpoint</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.2 -->
+      <div class="tl-entry feat" id="v0-2">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.2</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-feature">Feature</span>
+          </div>
+          <div class="tl-title">Solutions, Contact &amp; Industry pages</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>k-safety.html</strong> — K-Safety product page (GIS &amp; Situational Awareness)</li>
+              <li><strong>k-dispatch.html</strong> — K-Dispatch product page (Emergency Dispatch)</li>
+              <li><strong>k-traffic.html</strong> — K-Traffic product page (Traffic Management)</li>
+              <li><strong>k-video.html</strong> — K-Video product page (Video Intelligence)</li>
+              <li><strong>k-connect.html</strong> — K-Connect product page (Citizen Engagement)</li>
+              <li><strong>solutions.html</strong> — Solutions overview linking to all 5 products</li>
+              <li><strong>contact.html</strong> — Contact page: form, HQ &amp; US office, social links, global presence</li>
+              <li><strong>about.html</strong> — About page</li>
+              <li>7 industry vertical pages: Public Safety, Municipalities, Airport, Retail, Logistics, Ports, Stadiums</li>
+              <li>Products Section added to homepage between Proof and Why sections</li>
+              <li>Solutions &amp; Industries nav dropdowns added to all pages</li>
+              <li>All "Contact" nav links updated to point to contact.html</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- v0.1 -->
+      <div class="tl-entry feat" id="v0-1">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-version">v0.1</span>
+            <span class="tl-date">2026-03-17</span>
+            <span class="tl-badge badge-feature">Feature</span>
+          </div>
+          <div class="tl-title">Initial commit — Homepage</div>
+          <div class="change-group">
+            <div class="change-group-label label-added">Added</div>
+            <ul class="change-list">
+              <li><strong>hero-mockup.html</strong> — Main homepage: hero, modules carousel, proof/logos, Why KabatOne, industries grid, platform section, bottom CTA</li>
+              <li><strong>images/modules/</strong> — Module screenshot assets (GIS, dispatch, video, citizen, etc.)</li>
+              <li><strong>AGENTS.md</strong> — Multi-agent coordination file with design system, page structure, and git workflow rules</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      </div><!-- /timeline -->
+    </div><!-- /page-wrap -->
+  </div><!-- /tab-changelog -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" alt="KabatOne" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 KabatOne Inc. — Internal Tool</div>
+    <nav class="footer-links">
+      <a href="https://github.com/TomIdoVR/k1-website-" target="_blank">GitHub</a>
+      <a href="https://vercel.com" target="_blank">Vercel</a>
+    </nav>
+  </footer>
+
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

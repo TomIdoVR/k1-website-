@@ -65,11 +65,12 @@ Each module has: a tab button + a panel (`#panel-{name}`) + an image in `images/
 
 ## Git Workflow
 
-- **Branch:** `main`
+- **Active branch:** `nextjs` — staging (auto-deploys to `staging.kabatone.com`)
+- **Production branch:** `main` — deploys to `kabatone.com` on merge only
 - **Remote:** `https://github.com/TomIdoVR/k1-website-.git`
-- **Live URL (GitHub Pages):** `https://tomidovr.github.io/k1-website-/hero-mockup.html`
 - Pushes to GitHub are done **on explicit request only** — do not auto-push
-- Commit message format: `"Section: short description of change"`
+- Merges to `main` (production promotion) require **explicit owner approval**
+- Commit message format: `Type: short description (vX.Y)`
 
 ---
 

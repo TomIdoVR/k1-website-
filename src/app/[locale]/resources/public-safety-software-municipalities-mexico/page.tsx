@@ -58,8 +58,8 @@ export default async function PublicSafetySoftwareMexicoPage({
       answer: 'Si. Las plataformas modernas de seguridad publica como KabatOne soportan integracion con camaras de multiples fabricantes y protocolos. Esto permite a los municipios aprovechar su infraestructura de videovigilancia existente sin reemplazar equipos, reduciendo costos y acelerando el tiempo de despliegue.',
     },
     {
-      question: '¿Que es la plataforma Avalon?',
-      answer: 'Avalon es la plataforma tecnologica desarrollada por KabatOne que unifica despacho CAD, gestion de video, GIS en tiempo real, gestion de trafico y video comunitario en un solo sistema operativo. Avalon opera en mas de 40 ciudades, protegiendo a mas de 73 millones de ciudadanos en America Latina, Norteamerica y Europa.',
+      question: '¿Que es la plataforma K1?',
+      answer: 'K1 es la plataforma tecnologica desarrollada por KabatOne que unifica despacho CAD, gestion de video, GIS en tiempo real, gestion de trafico y video comunitario en un solo sistema operativo. K1 opera en mas de 40 ciudades, protegiendo a mas de 73 millones de ciudadanos en America Latina, Norteamerica y Europa.',
     },
   ] : [
     {
@@ -83,8 +83,8 @@ export default async function PublicSafetySoftwareMexicoPage({
       answer: 'Yes. Modern public safety platforms like KabatOne support integration with cameras from multiple manufacturers and protocols. This allows municipalities to leverage existing video surveillance infrastructure without replacing equipment, reducing costs and accelerating deployment timelines.',
     },
     {
-      question: 'What is the Avalon platform?',
-      answer: 'Avalon is the technology platform developed by KabatOne that unifies CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into a single operational system. Avalon operates in 40+ cities, protecting over 73 million citizens across Latin America, North America, and Europe.',
+      question: 'What is the K1 platform?',
+      answer: 'K1 is the technology platform developed by KabatOne that unifies CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into a single operational system. K1 operates in 40+ cities, protecting over 73 million citizens across Latin America, North America, and Europe.',
     },
   ]
 
@@ -333,8 +333,8 @@ export default async function PublicSafetySoftwareMexicoPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne opera en mas de 40 ciudades en America Latina, Norteamerica y Europa, protegiendo a mas de 73 millones de ciudadanos. La oficina de KabatOne en la Ciudad de Mexico funciona como el centro principal de desarrollo y operaciones para America Latina. La plataforma Avalon de KabatOne integra los cinco componentes criticos que requieren los centros C5 mexicanos: conciencia situacional en tiempo real con K-Safety, despacho CAD con K-Dispatch, gestion de video con K-Video, gestion de trafico con K-Traffic y video comunitario con K-Connect.'
-                : 'KabatOne operates in 40+ cities across Latin America, North America, and Europe, protecting over 73 million citizens. KabatOne\'s Mexico City office serves as the primary development and operations hub for Latin America. The KabatOne Avalon platform integrates the five critical components that Mexican C5 centers require: real-time situational awareness with K-Safety, CAD dispatch with K-Dispatch, video management with K-Video, traffic management with K-Traffic, and community video sharing with K-Connect.'}
+                ? 'KabatOne opera en mas de 40 ciudades en America Latina, Norteamerica y Europa, protegiendo a mas de 73 millones de ciudadanos. La oficina de KabatOne en la Ciudad de Mexico funciona como el centro principal de desarrollo y operaciones para America Latina. La plataforma K1 de KabatOne integra los cinco componentes criticos que requieren los centros C5 mexicanos: conciencia situacional en tiempo real con K-Safety, despacho CAD con K-Dispatch, gestion de video con K-Video, gestion de trafico con K-Traffic y video comunitario con K-Connect.'
+                : 'KabatOne operates in 40+ cities across Latin America, North America, and Europe, protecting over 73 million citizens. KabatOne\'s Mexico City office serves as the primary development and operations hub for Latin America. The KabatOne K1 platform integrates the five critical components that Mexican C5 centers require: real-time situational awareness with K-Safety, CAD dispatch with K-Dispatch, video management with K-Video, traffic management with K-Traffic, and community video sharing with K-Connect.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '32px' }}>
               {es

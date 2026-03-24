@@ -1,10 +1,11 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-03-18
+**Last updated:** 2026-03-23
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
-**Staging:** https://tomidovr.github.io/k1-website-/
-**Stack:** Static HTML (staging) → Webflow (production)
+**Staging (static):** https://staging-k1-website.vercel.app/hero-mockup
+**Stack:** Next.js (App Router) on Vercel — branch `nextjs` in TomIdoVR/k1-website-
+**Static fallback:** `hero-mockup.html` on `main` branch — kept in sync for comparison pages and footer links
 
 ---
 
@@ -16,9 +17,12 @@
 | Phase 1 — Pre-launch fixes | Done | 100% |
 | Phase 2 — Launch | In progress | 0% |
 | Phase 3 — Post-launch growth | Not started | 0% |
-| Phase 4 — Spanish (es-MX) | In progress | 60% |
+| Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 70% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
+
+**Current site size:** 45 unique routes × 2 locales (EN + ES) = 90 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 12 | /resources/: 11 (hub + 9 articles + 1 ebook) | /integrations/: 6 | Other: 3 (about, contact, privacy)
 
 ---
 
@@ -81,6 +85,11 @@
 | Validation run 1 | 2026-03-18 | Validator | 615 checks, 612 passed, 3 minor post-launch items |
 | SEO implementation 2 | 2026-03-18 | Claude Code (4 parallel agents) | Schema/JSON-LD on all 15 pages, OG+hreflang fixes, Nav i18n, public assets — build passes 0 errors |
 | GEO explainer pages | 2026-03-19 | Claude Code (5 parallel agents) | 5 /resources/ pages created (GEO-003–007), articleSchema added, metadata+sitemap updated, Resources nav link — build passes 0 errors |
+| Comparison pages batch 1 | 2026-03-19 | Claude Code | /vs/genetec, /vs/milestone, /vs/vms — full EN+ES, FAQ schema, breadcrumb schema (v0.56–v0.60) |
+| Comparison pages batch 2 | 2026-03-19 | Claude Code | /vs/motorola, /vs/hexagon, /vs/mark43, /vs/axon, /vs/carbyne, /vs/cad — full EN+ES (v0.61) |
+| Comparison pages batch 3 | 2026-03-20 | Claude Code | /vs/fusus, /vs/prepared911 — full EN+ES, FAQ schema, breadcrumb schema (v0.69) |
+| Privacy page | 2026-03-20 | Claude Code | /privacy route EN+ES with full policy content (v0.68) |
+| Resources hub + blog articles | 2026-03-20 | Claude Code | /resources/ hub index + /resources/rtcc-setup-guide + /resources/ai-in-public-safety — full EN+ES, all schemas, nav updated, sitemap updated (v0.73) |
 
 ### Pre-launch checklist
 | Item | Status |
@@ -133,21 +142,33 @@
 ## Phase 3 — Post-launch growth (Weeks 5–12)
 
 ### Content and page creation
-| Item | Priority | Status |
-|------|----------|--------|
-| /vs/genetec/ — competitor comparison | High | Not started |
-| /vs/motorola-solutions/ | High | Not started |
-| /vs/psim/ — PSIM alternative | High | Not started |
-| /vs/hexagon/ | Medium | Not started |
-| /vs/carbyne/ | Medium | Not started |
-| Blog post: AI in public safety | Medium | Not started |
-| Blog post: Smart city platform guide | Medium | Not started |
-| Blog post: RTCC setup guide | Medium | Not started |
-| Integration page: VMS | Medium | Not started |
-| Integration page: LPR | Medium | Not started |
-| Integration page: Face recognition | Medium | Not started |
-| Integration page: Sensor fusion | Low | Not started |
-| solutions.html audit + SEO fix | High | Not started |
+| Item | Priority | Status | Notes |
+|------|----------|--------|-------|
+| /vs/genetec/ — competitor comparison | High | Done | v0.56 |
+| /vs/milestone/ | High | Done | v0.58 |
+| /vs/vms/ — VMS alternative | High | Done | v0.60 |
+| /vs/motorola/ | High | Done | v0.61 |
+| /vs/hexagon/ | Medium | Done | v0.61 |
+| /vs/mark43/ | Medium | Done | v0.61 |
+| /vs/axon/ | Medium | Done | v0.61 |
+| /vs/carbyne/ | Medium | Done | v0.61 |
+| /vs/cad/ — traditional CAD alternative | Medium | Done | v0.61 |
+| /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
+| /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
+| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
+| Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
+| Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
+| Explainer: What Is a Real-Time Crime Center? | High | Done | v0.92 — /resources/what-is-a-real-time-crime-center/ |
+| Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
+| Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
+| /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
+| Integration page: LPR | Medium | Done | v0.74 — /integrations/lpr/ |
+| Integration page: Face recognition | Medium | Done | v0.74 — /integrations/face-recognition/ |
+| Integration page: Sensor fusion | Low | Done | v0.74 — /integrations/sensor-fusion/ |
+| Integration page: Access Control | Medium | Done | v0.78 — /integrations/access-control/ |
+| Integration page: Drones (UAV/UAS) | Medium | Done | v0.78 — /integrations/drones/ |
+| Integration page: Panic Buttons | Medium | Done | v0.78 — /integrations/panic-buttons/ |
+| solutions.html audit + SEO fix | High | N/A | solutions.html deleted — static files removed from nextjs branch v0.72 |
 
 ### Technical post-launch
 | Item | Priority | Status |
@@ -155,21 +176,21 @@
 | SEO-008: Fix nav Solutions link inconsistency | Low | Done |
 | SEO-009: Schema markup (Organization + SoftwareApplication) | Low | Done |
 | SEO-010: OG tags on all pages | Low | Done |
-| Core Web Vitals audit (LCP, CLS, INP) | High | Not started |
+| Core Web Vitals audit (LCP, CLS, INP) | High | Done | v0.71 — 84/100 B grade, SEO 100/100, images main issue, lazy loading added |
 | Internal linking pass — module → solution → resource | High | Done |
 | Backlink outreach — industry publications | Medium | Not started |
 
 ### Performance baselines to establish
 | Metric | Target | Baseline | Status |
 |--------|--------|----------|--------|
-| GSC impressions (30 days) | — | Not set | Not started |
-| GSC clicks (30 days) | — | Not set | Not started |
-| Average position — branded | < 3 | Not set | Not started |
-| Average position — K-Dispatch target KW | < 20 | Not set | Not started |
-| Average position — K-Video target KW | < 20 | Not set | Not started |
-| Average position — K-Safety target KW | < 20 | Not set | Not started |
-| Pages indexed | 15 | 0 | Not started |
-| Pages ranking pos 6–20 | — | 0 | Not started |
+| GSC impressions (30 days) | — | Not set | Pending launch |
+| GSC clicks (30 days) | — | Not set | Pending launch |
+| Average position — branded | < 3 | Not set | Pending launch |
+| Average position — K-Dispatch target KW | < 20 | Not set | Pending launch |
+| Average position — K-Video target KW | < 20 | Not set | Pending launch |
+| Average position — K-Safety target KW | < 20 | Not set | Pending launch |
+| Pages indexed | 32 | 0 | Pending launch |
+| Pages ranking pos 6–20 | — | 0 | Pending launch |
 
 ---
 
@@ -254,26 +275,38 @@
 | Ports | port security platform | ISPS port security software, vessel tracking platform | Commercial |
 | Stadiums | stadium venue security software | stadium crowd analytics, event security AI | Commercial |
 
-### Comparison pages (to build)
+### Comparison pages
 | Page | Primary keyword | Status |
 |------|----------------|--------|
-| /vs/genetec/ | KabatOne vs Genetec | Not started |
-| /vs/motorola-solutions/ | KabatOne vs Motorola Solutions | Not started |
-| /vs/psim/ | PSIM alternative | Not started |
-| /vs/hexagon/ | KabatOne vs Hexagon | Not started |
-| /vs/carbyne/ | KabatOne vs Carbyne | Not started |
+| /vs/genetec/ | KabatOne vs Genetec | Done |
+| /vs/milestone/ | KabatOne vs Milestone XProtect | Done |
+| /vs/vms/ | KabatOne vs traditional VMS | Done |
+| /vs/motorola/ | KabatOne vs Motorola Solutions | Done |
+| /vs/hexagon/ | KabatOne vs Hexagon Safety | Done |
+| /vs/mark43/ | KabatOne vs Mark43 | Done |
+| /vs/axon/ | KabatOne vs Axon | Done |
+| /vs/carbyne/ | KabatOne vs Carbyne | Done |
+| /vs/cad/ | KabatOne vs traditional CAD | Done |
+| /vs/fusus/ | KabatOne vs Fusus | Done |
+| /vs/prepared911/ | KabatOne vs Prepared 911 | Done |
+| /vs/peregrine/ | KabatOne vs Peregrine | Done |
 
 ---
 
 ## Competitor tracking
 
-| Competitor | Domain | Primary strength | Monitor for |
-|------------|--------|-----------------|-------------|
-| Genetec | genetec.com | VMS + access control | Rankings for VMS, command center terms |
-| Motorola Solutions | motorolasolutions.com | CAD, radio, public safety | Rankings for CAD, dispatch, PSIM |
-| Hexagon | hexagon.com | Public safety + GIS | Rankings for situational awareness, GIS |
-| Carbyne | carbyne.com | NG911, CAD | Rankings for 911 dispatch, CAD |
-| Peregrine | peregrine.ai | RTCC, predictive policing | Rankings for real-time crime center |
+| Competitor | Domain | Primary strength | Comparison page | Monitor for |
+|------------|--------|-----------------|-----------------|-------------|
+| Genetec | genetec.com | VMS + access control | /vs/genetec/ | Rankings for VMS, command center terms |
+| Motorola Solutions | motorolasolutions.com | CAD, radio, public safety | /vs/motorola/ | Rankings for CAD, dispatch, PSIM |
+| Hexagon | hexagon.com | Public safety + GIS | /vs/hexagon/ | Rankings for situational awareness, GIS |
+| Carbyne | carbyne.com | NG911, CAD | /vs/carbyne/ | Rankings for 911 dispatch, CAD |
+| Milestone XProtect | milestonesys.com | VMS (open platform) | /vs/milestone/ | Rankings for VMS, video management |
+| Mark43 | mark43.com | Cloud-native CAD/RMS | /vs/mark43/ | Rankings for cloud CAD, modern dispatch |
+| Axon | axon.com | Body cameras + evidence | /vs/axon/ | Rankings for public safety cloud, evidence mgmt |
+| Fusus (Axon) | fusus.com | RTCC, private camera networks | /vs/fusus/ | Rankings for real-time crime center, RTCC |
+| Prepared 911 | prepared.com | NG911 PSAP modernization | /vs/prepared911/ | Rankings for NG911, 911 software, PSAP |
+| Peregrine | peregrine.ai | RTCC, predictive policing | /vs/peregrine/ | Rankings for real-time crime center |
 
 ---
 
@@ -281,13 +314,14 @@
 
 | Metric | Month 1 | Month 3 | Month 6 | Month 12 |
 |--------|---------|---------|---------|----------|
-| Pages indexed | 15 | 15 | 20+ | 30+ |
+| Pages indexed | 32 | 35+ | 40+ | 50+ |
 | GSC impressions/mo | — | 500+ | 2,000+ | 8,000+ |
 | GSC clicks/mo | — | 50+ | 300+ | 1,000+ |
 | Branded avg position | < 5 | < 3 | < 2 | 1 |
 | Non-branded avg position | — | < 40 | < 25 | < 15 |
-| Pages ranking pos 1–10 | 0 | 1–3 | 5–10 | 15+ |
-| Pages ranking pos 6–20 | 0 | 3–6 | 8–15 | 20+ |
+| Pages ranking pos 1–10 | 0 | 1–3 | 5–10 | 20+ |
+| Pages ranking pos 6–20 | 0 | 3–6 | 8–15 | 25+ |
+| Comparison page impressions | 0 | 200+ | 1,000+ | 4,000+ |
 | Demo requests from organic | 0 | 1–3/mo | 5–10/mo | 15+/mo |
 
 ---
@@ -300,6 +334,18 @@
 | 2026-03-18 | Analyzer | 15 | outputs/audit-raw/ | outputs/analysis/ | Spanish copy generated — overridden to English |
 | 2026-03-18 | Implementor | 15 | outputs/analysis/ | outputs/implementation/ | 60 changes applied, English copy, 5 H1 artifacts corrected, commit b5b5795 |
 | 2026-03-18 | Validator | 15 | outputs/implementation/ | outputs/validation/ | 99.5% pass rate — SAFE TO PUSH — pushed to origin/main |
+| 2026-03-19 | Claude Code | 5 GEO pages | /resources/ | Next.js pages | what-is-a-public-safety-platform, psim-vs-unified-platform, how-c5-command-centers-work, smart-city-platform-guide, public-safety-software-municipalities-mexico |
+| 2026-03-19 | Claude Code | 3 /vs/ pages | — | Next.js + static | /vs/genetec v0.55, /vs/milestone v0.58, /vs/vms v0.60 |
+| 2026-03-19 | Claude Code | 6 /vs/ pages | — | Next.js + static | /vs/motorola, /vs/hexagon, /vs/mark43, /vs/axon, /vs/carbyne, /vs/cad — v0.61 |
+| 2026-03-20 | Claude Code | 2 /vs/ pages | — | Next.js + static | /vs/fusus, /vs/prepared911 — v0.69 |
+| 2026-03-20 | Claude Code | 1 page | — | Next.js | /privacy policy EN+ES — v0.68 |
+| 2026-03-21 | Claude Code | 3 integration pages | — | Next.js | /integrations/access-control, /drones, /panic-buttons — v0.78 |
+| 2026-03-21 | Claude Code | Sitemap fix | — | sitemap.ts | Added 3 missing integration paths, master plan sync — v0.79 |
+| 2026-03-21 | Claude Code | 1 /vs/ page | — | Next.js | /vs/peregrine — EN+ES, FAQ+breadcrumb schema — v0.80 |
+| 2026-03-22 | Claude Code | 1 resources page | — | Next.js | /resources/end-of-siloed-response ebook landing page + lead form — v0.81 |
+| 2026-03-22 | Claude Code | Design | — | Next.js | Industry brief page visual overhaul — v0.82 |
+| 2026-03-23 | Claude Code | Sitemap fix | — | sitemap.ts + resources/page.tsx | Fix sitemap orphans /privacy + /resources/end-of-siloed-response, add resources hub card — v0.83 |
+| 2026-03-23 | Claude Code | 1 resources page | — | Next.js | /resources/what-is-cad-dispatch-software — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v0.85 |
 
 ---
 
