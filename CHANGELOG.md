@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.07] 2026-03-24 — Fix: restore mobile swipe carousel for Modules section
+
+**Fixed / Improved**
+- `src/components/ModulesSection.tsx`: Restored mobile swipe carousel — panels were using display:none toggling with no touch support
+- Added touch/swipe gesture handling (touchstart/move/end) with horizontal lock detection
+- New mobile card layout: rounded cards with image on top, title + description below (Yotpo-style)
+- Active dot indicator stretches into a pill shape for clear swipe affordance
+- Desktop layout remains unchanged (tabs + viewer chrome)
+
 ## [1.06] 2026-03-24 — Feat: real partner logos in Integrations module panel
 
 **Changed**

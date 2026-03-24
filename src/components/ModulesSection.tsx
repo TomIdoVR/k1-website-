@@ -120,6 +120,60 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
   const [paused, setPaused] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
+  /* ── Touch / swipe handling for mobile ── */
+  const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
+  const touchDeltaX = useRef(0)
+  const isSwiping = useRef(false)
+  const [swipeOffset, setSwipeOffset] = useState(0)
+  const panelsContainerRef = useRef<HTMLDivElement>(null)
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+    touchDeltaX.current = 0
+    isSwiping.current = false
+  }, [])
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const dx = e.touches[0].clientX - touchStartX.current
+    const dy = e.touches[0].clientY - touchStartY.current
+
+    // Lock into horizontal swipe once we detect it
+    if (!isSwiping.current && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      isSwiping.current = true
+    }
+
+    if (isSwiping.current) {
+      e.preventDefault()
+      touchDeltaX.current = dx
+      setSwipeOffset(dx)
+    }
+  }, [])
+
+  const handleTouchEnd = useCallback(() => {
+    if (!isSwiping.current) {
+      setSwipeOffset(0)
+      return
+    }
+    const threshold = 50
+    if (touchDeltaX.current < -threshold) {
+      // swipe left → next
+      setActive(prev => {
+        const idx = MOD_ORDER.indexOf(prev)
+        return MOD_ORDER[(idx + 1) % MOD_ORDER.length]
+      })
+    } else if (touchDeltaX.current > threshold) {
+      // swipe right → prev
+      setActive(prev => {
+        const idx = MOD_ORDER.indexOf(prev)
+        return MOD_ORDER[(idx - 1 + MOD_ORDER.length) % MOD_ORDER.length]
+      })
+    }
+    setSwipeOffset(0)
+    isSwiping.current = false
+  }, [])
+
   const advance = useCallback(() => {
     setActive(prev => {
       const idx = MOD_ORDER.indexOf(prev)
@@ -215,8 +269,8 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           </div>
         </div>
 
-        {/* Viewer */}
-        <div className="ms-viewer">
+        {/* Desktop viewer */}
+        <div className="ms-viewer ms-viewer-desktop">
           {/* Header bar */}
           <div className="ms-viewer-header">
             <div className="ms-viewer-left">
@@ -305,6 +359,77 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
                 key={mod}
                 className={`ms-dot${active === mod ? ' ms-dot-active' : ''}`}
                 style={{ '--dc': modules[mod].color } as React.CSSProperties}
+                onClick={() => jumpTo(mod)}
+                aria-label={es ? modules[mod].es.tab : modules[mod].en.tab}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile swipeable carousel */}
+        <div
+          className="ms-mobile-carousel"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          ref={panelsContainerRef}
+        >
+          <div
+            className="ms-mobile-track"
+            style={{
+              transform: `translateX(calc(-${activeIdx * 100}% + ${swipeOffset}px))`,
+              transition: swipeOffset !== 0 ? 'none' : 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
+            {MOD_ORDER.map((mod) => {
+              const md = modules[mod]
+              const mc = es ? md.es : md.en
+              return (
+                <div key={mod} className="ms-mobile-card" style={{ '--mc': md.color } as React.CSSProperties}>
+                  <div className="ms-mobile-card-inner">
+                    {/* Image / Partner section */}
+                    <div className="ms-mobile-card-visual">
+                      {mod === 'integrations' ? (
+                        <div className="ms-partners ms-partners-mobile">
+                          <div className="ms-partners-grid">
+                            {partners.map((p) => (
+                              <div key={p.name} className="ms-partner-card">
+                                <div className="ms-partner-logo">
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img src={p.logo} alt={p.name} />
+                                </div>
+                                <div className="ms-partner-name">{p.name}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Image
+                          src={md.image}
+                          alt={mc.name.replace('\n', ' ')}
+                          fill
+                          sizes="85vw"
+                          style={{ objectFit: 'cover' }}
+                        />
+                      )}
+                    </div>
+                    {/* Text content */}
+                    <div className="ms-mobile-card-body">
+                      <h3 className="ms-mobile-card-title">{mc.headerName}</h3>
+                      <p className="ms-mobile-card-desc">{mc.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Mobile dot indicators */}
+          <div className="ms-mobile-dots">
+            {MOD_ORDER.map((mod, i) => (
+              <button
+                key={mod}
+                className={`ms-mobile-dot${active === mod ? ' ms-mobile-dot-active' : ''}`}
                 onClick={() => jumpTo(mod)}
                 aria-label={es ? modules[mod].es.tab : modules[mod].en.tab}
               />
@@ -738,55 +863,112 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           gap: 10px;
         }
 
+        /* ── Mobile carousel (hidden on desktop) ── */
+        .ms-mobile-carousel {
+          display: none;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
-          .ms-panels {
-            height: auto;
-          }
-          .ms-panel {
-            position: relative;
-            grid-template-columns: 1fr;
+          /* Hide desktop viewer, show mobile carousel */
+          .ms-viewer-desktop {
             display: none;
           }
-          .ms-panel-active {
-            display: grid;
-            opacity: 1;
-            transform: none;
+          .ms-carousel-header {
+            margin-bottom: 20px;
           }
-          .ms-panel-right {
-            height: 220px;
+          .ms-tabs-row {
+            display: none;
           }
-          .ms-panel-right:has(.ms-partners) {
-            height: auto;
+          .ms-mobile-carousel {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            touch-action: pan-y;
           }
-          .ms-partners {
-            padding: 12px 12px;
+          .ms-mobile-track {
+            display: flex;
+            will-change: transform;
           }
-          .ms-partners-grid {
+          .ms-mobile-card {
+            flex: 0 0 100%;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+          }
+          .ms-mobile-card-inner {
+            background: rgba(11,18,40,0.85);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+          }
+          .ms-mobile-card-visual {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+          }
+          .ms-mobile-card-body {
+            padding: 20px 18px 24px;
+          }
+          .ms-mobile-card-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--white);
+            margin: 0 0 10px;
+            line-height: 1.1;
+          }
+          .ms-mobile-card-desc {
+            font-size: 14px;
+            color: var(--dim);
+            line-height: 1.6;
+            margin: 0;
+          }
+
+          /* Mobile dots */
+          .ms-mobile-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            padding: 20px 0 8px;
+          }
+          .ms-mobile-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s, transform 0.3s, width 0.3s;
+          }
+          .ms-mobile-dot-active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--cyan);
+          }
+
+          /* Mobile partner grid adjustments */
+          .ms-partners-mobile {
+            padding: 12px;
+            height: 100%;
+          }
+          .ms-partners-mobile .ms-partners-grid {
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
+            height: 100%;
           }
-          .ms-partner-card {
-            padding: 10px 6px;
+          .ms-partners-mobile .ms-partner-card {
+            padding: 8px 4px;
           }
-          .ms-partner-logo img {
-            max-height: 24px;
-            max-width: 70px;
+          .ms-partners-mobile .ms-partner-logo img {
+            max-height: 22px;
+            max-width: 60px;
           }
-          .ms-partner-name {
-            font-size: 9.5px;
-          }
-          .ms-partner-cat {
-            font-size: 7.5px;
-            padding: 1px 5px;
-          }
-          .ms-partners-header {
-            font-size: 11px;
-            margin-bottom: 10px;
-          }
-          .ms-partners-footer {
-            font-size: 10px;
-            padding-top: 8px;
+          .ms-partners-mobile .ms-partner-name {
+            font-size: 8.5px;
           }
         }
       `}</style>
