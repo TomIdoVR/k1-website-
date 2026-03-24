@@ -86,7 +86,7 @@ export default async function AboutPage({
       : 'Development teams in Mexico and Israel combine with operations across three continents to deliver localized solutions with world-class engineering.',
 
     // CTA
-    ctaH2: es ? 'Ve KabatOne en Accion' : 'See KabatOne in Action',
+    ctaH2: es ? 'Ve KabatOne en Acción' : 'See KabatOne in Action',
     ctaSub: es
       ? 'Únete a más de 68 organizaciones en todo el mundo que confían en KabatOne para proteger a sus personas, operaciones y comunidades.'
       : 'Join 68+ organizations worldwide that trust KabatOne to protect their people, operations, and communities.',
