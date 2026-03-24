@@ -102,6 +102,17 @@ const tabIcons: Record<ModKey, React.ReactNode> = {
   ),
 }
 
+/* ── Integration partners (real logos) ── */
+const partners = [
+  { name: 'Milestone Systems', cat: 'VMS', logo: '/images/partners/milestone.svg' },
+  { name: 'Genetec', cat: 'VMS, Access Control', logo: '/images/partners/genetec.svg' },
+  { name: 'RapidSOS', cat: 'Emergency Data', logo: '/images/partners/rapidsos.svg' },
+  { name: 'Carbyne', cat: 'NG911', logo: '/images/partners/carbyne.png' },
+  { name: 'Corsight', cat: 'Face Recognition', logo: '/images/partners/corsight.svg' },
+  { name: 'Motorola Solutions', cat: 'Radio, PTT', logo: '/images/partners/motorola.svg' },
+  { name: 'iPro', cat: 'IP Cameras', logo: '/images/partners/ipro.svg' },
+]
+
 const INTERVAL = 3000
 
 export default function ModulesSection({ es = false }: { es?: boolean }) {
@@ -246,14 +257,41 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
                     </ul>
                   </div>
                   <div className="ms-panel-right">
-                    <Image
-                      src={md.image}
-                      alt={mc.name.replace('\n', ' ')}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 780px"
-                      style={{ objectFit: 'cover' }}
-                      priority={mod === 'video'}
-                    />
+                    {mod === 'integrations' ? (
+                      <div className="ms-partners">
+                        <div className="ms-partners-header">
+                          <span className="ms-partners-title">{es ? 'HUB DE INTEGRACIÓN' : 'INTEGRATION HUB'}</span>
+                          <span className="ms-partners-sep">|</span>
+                          <span className="ms-partners-sub">{es ? 'SOCIOS TECNOLÓGICOS' : 'PARTNER MARKETPLACE'}</span>
+                        </div>
+                        <div className="ms-partners-grid">
+                          {partners.map((p) => (
+                            <div key={p.name} className="ms-partner-card">
+                              <div className="ms-partner-logo">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={p.logo} alt={p.name} />
+                              </div>
+                              <div className="ms-partner-name">{p.name}</div>
+                              <div className="ms-partner-cat">{p.cat}</div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="ms-partners-footer">
+                          <span>API SOLUTIONS</span>
+                          <span className="ms-partners-sep">|</span>
+                          <span>OPEN API: {'{ }'} REST &amp; ⚡ WebSocket</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <Image
+                        src={md.image}
+                        alt={mc.name.replace('\n', ' ')}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 780px"
+                        style={{ objectFit: 'cover' }}
+                        priority={mod === 'video'}
+                      />
+                    )}
                   </div>
                 </div>
               )
@@ -609,6 +647,97 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           box-shadow: 0 0 8px var(--dc);
         }
 
+        /* ── Partner grid (integrations panel) ── */
+        .ms-partners {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          background: rgba(4,8,20,0.96);
+          padding: 16px 20px;
+        }
+        .ms-partners-header {
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: var(--dim);
+          margin-bottom: 14px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .ms-partners-title { color: var(--white); }
+        .ms-partners-sub { font-weight: 500; color: var(--muted); }
+        .ms-partners-sep { color: rgba(255,255,255,0.15); }
+        .ms-partners-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+          flex: 1;
+        }
+        .ms-partner-card {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 12px 8px;
+          transition: border-color 0.2s, background 0.2s;
+        }
+        .ms-partner-card:hover {
+          border-color: rgba(34,197,94,0.3);
+          background: rgba(34,197,94,0.04);
+        }
+        .ms-partner-logo {
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ms-partner-logo img {
+          max-height: 32px;
+          max-width: 100px;
+          width: auto;
+          filter: brightness(0) invert(1);
+          opacity: 0.85;
+        }
+        .ms-partner-name {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--white);
+          text-align: center;
+          line-height: 1.2;
+        }
+        .ms-partner-cat {
+          font-family: 'DM Mono', monospace;
+          font-size: 8.5px;
+          letter-spacing: 0.05em;
+          color: var(--muted);
+          background: rgba(255,255,255,0.05);
+          border-radius: 8px;
+          padding: 2px 8px;
+          text-align: center;
+        }
+        .ms-partners-footer {
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: var(--dim);
+          text-align: center;
+          padding-top: 12px;
+          margin-top: auto;
+          border-top: 1px solid rgba(255,255,255,0.05);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
           .ms-panels {
@@ -626,6 +755,38 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           }
           .ms-panel-right {
             height: 220px;
+          }
+          .ms-panel-right:has(.ms-partners) {
+            height: auto;
+          }
+          .ms-partners {
+            padding: 12px 12px;
+          }
+          .ms-partners-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+          }
+          .ms-partner-card {
+            padding: 10px 6px;
+          }
+          .ms-partner-logo img {
+            max-height: 24px;
+            max-width: 70px;
+          }
+          .ms-partner-name {
+            font-size: 9.5px;
+          }
+          .ms-partner-cat {
+            font-size: 7.5px;
+            padding: 1px 5px;
+          }
+          .ms-partners-header {
+            font-size: 11px;
+            margin-bottom: 10px;
+          }
+          .ms-partners-footer {
+            font-size: 10px;
+            padding-top: 8px;
           }
         }
       `}</style>
