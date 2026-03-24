@@ -25,48 +25,48 @@ export default async function ContactPage({
   const ACCENT = '#3b82f6'
 
   const content = {
-    eyebrow: es ? 'Contactanos' : 'Get in Touch',
+    eyebrow: es ? 'Contáctanos' : 'Get in Touch',
     h1: es ? 'Habla con Nuestro Equipo de Expertos' : 'Talk to Our Public Safety Experts',
     subtitle: es
-      ? 'Ya sea que estes listo para una demo o solo explorando \u2014 estamos aqui. Nuestro equipo generalmente responde dentro de un dia habil.'
+      ? 'Ya sea que estés listo para una demo o solo explorando \u2014 estamos aquí. Nuestro equipo generalmente responde dentro de un día hábil.'
       : 'Whether you\u2019re ready for a demo or just exploring \u2014 we\u2019re here. Our team typically responds within one business day.',
 
     // Form
-    formTitle: es ? 'Envianos un Mensaje' : 'Send Us a Message',
-    formSub: es ? 'Completa el formulario y la persona indicada se pondra en contacto contigo.' : 'Fill out the form and the right person will get back to you.',
+    formTitle: es ? 'Envíanos un Mensaje' : 'Send Us a Message',
+    formSub: es ? 'Completa el formulario y la persona indicada se pondrá en contacto contigo.' : 'Fill out the form and the right person will get back to you.',
     labelName: es ? 'Nombre Completo' : 'Full Name',
     labelCompany: es ? 'Empresa / Agencia' : 'Company / Agency',
-    labelEmail: es ? 'Correo Electronico' : 'Email',
-    labelPhone: es ? 'Telefono' : 'Phone',
+    labelEmail: es ? 'Correo Electrónico' : 'Email',
+    labelPhone: es ? 'Teléfono' : 'Phone',
     labelInterest: es ? 'Me interesa...' : 'I\u2019m interested in\u2026',
     labelMessage: es ? 'Mensaje' : 'Message',
-    placeholderName: es ? 'Juan Perez' : 'Jane Smith',
-    placeholderCompany: es ? 'Ciudad de Mexico' : 'City of Acme',
+    placeholderName: es ? 'Juan Pérez' : 'Jane Smith',
+    placeholderCompany: es ? 'Ciudad de México' : 'City of Acme',
     placeholderEmail: es ? 'juan@agencia.gob.mx' : 'jane@agency.gov',
     placeholderPhone: '+1 (555) 000-0000',
     placeholderMessage: es
-      ? 'Cuentanos sobre los desafios de tu ciudad o lo que te gustaria ver en una demo...'
+      ? 'Cuéntanos sobre los desafíos de tu ciudad o lo que te gustaría ver en una demo...'
       : 'Tell us about your city\u2019s challenges or what you\u2019d like to see in a demo\u2026',
     selectDefault: es ? 'Selecciona un producto o tema' : 'Select a product or topic',
     btnSubmit: es ? 'Enviar Mensaje' : 'Send Message',
 
     // Sidebar
     responseBadge: es
-      ? 'Nuestro equipo esta disponible Lun\u2013Vie y responde dentro de 1 dia habil'
+      ? 'Nuestro equipo está disponible Lun\u2013Vie y responde dentro de 1 día hábil'
       : 'Our team is available Mon\u2013Fri and responds within 1 business day',
     directContact: es ? 'Contacto Directo' : 'Direct Contact',
     emailLabel: es ? 'Correo' : 'Email',
-    phoneLabel: es ? 'Telefono' : 'Phone',
+    phoneLabel: es ? 'Teléfono' : 'Phone',
     hqLabel: es ? 'Sede Principal' : 'Headquarters',
     usOfficeLabel: es ? 'Oficina EE.UU.' : 'U.S. Office',
-    followUs: es ? 'Siguenos' : 'Follow Us',
+    followUs: es ? 'Síguenos' : 'Follow Us',
     globalPresence: es ? 'Presencia Global' : 'Global Presence',
 
     // Bottom CTA
     ctaLabel: es ? 'Velo en Vivo' : 'See It Live',
     ctaH2: es ? '\u00BFListo para una Demo Personalizada?' : 'Ready for a Personalized Demo?',
     ctaSub: es
-      ? 'Recorre la plataforma KabatOne con uno de nuestros ingenieros de soluciones \u2014 adaptado a los desafios especificos de tu ciudad.'
+      ? 'Recorre la plataforma KabatOne con uno de nuestros ingenieros de soluciones \u2014 adaptado a los desafíos específicos de tu ciudad.'
       : 'Walk through the KabatOne platform with one of our solutions engineers \u2014 tailored to your city\u2019s specific challenges.',
     ctaBtn: es ? 'Solicita una Demo' : 'Request a Demo',
   }
@@ -74,11 +74,11 @@ export default async function ContactPage({
   const selectOptions = es ? [
     { value: 'K-Safety', label: 'K-Safety \u2014 GIS y Conciencia Situacional' },
     { value: 'K-Dispatch', label: 'K-Dispatch \u2014 Despacho de Emergencias' },
-    { value: 'K-Traffic', label: 'K-Traffic \u2014 Gestion de Trafico' },
+    { value: 'K-Traffic', label: 'K-Traffic \u2014 Gestión de Tráfico' },
     { value: 'K-Video', label: 'K-Video \u2014 Inteligencia de Video' },
-    { value: 'K-Connect', label: 'K-Connect \u2014 Participacion Ciudadana' },
+    { value: 'K-Connect', label: 'K-Connect \u2014 Participación Ciudadana' },
     { value: 'Platform', label: 'Plataforma Completa KabatOne' },
-    { value: 'Partnership', label: 'Alianza / Integracion' },
+    { value: 'Partnership', label: 'Alianza / Integración' },
     { value: 'Other', label: 'Otro' },
   ] : [
     { value: 'K-Safety', label: 'K-Safety \u2014 GIS & Situational Awareness' },
@@ -92,12 +92,12 @@ export default async function ContactPage({
   ]
 
   const offices = es ? [
-    { flag: '\uD83C\uDDF2\uD83C\uDDFD', name: 'Mexico' },
+    { flag: '\uD83C\uDDF2\uD83C\uDDFD', name: 'México' },
     { flag: '\uD83C\uDDFA\uD83C\uDDF8', name: 'Estados Unidos' },
     { flag: '\uD83C\uDDEE\uD83C\uDDF1', name: 'Israel' },
-    { flag: '\uD83C\uDF0E', name: 'America Latina' },
+    { flag: '\uD83C\uDF0E', name: 'América Latina' },
   ] : [
-    { flag: '\uD83C\uDDF2\uD83C\uDDFD', name: 'Mexico' },
+    { flag: '\uD83C\uDDF2\uD83C\uDDFD', name: 'México' },
     { flag: '\uD83C\uDDFA\uD83C\uDDF8', name: 'United States' },
     { flag: '\uD83C\uDDEE\uD83C\uDDF1', name: 'Israel' },
     { flag: '\uD83C\uDF0E', name: 'Latin America' },
@@ -261,7 +261,7 @@ export default async function ContactPage({
                       {content.hqLabel}
                     </div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--white)', fontWeight: 500, lineHeight: 1.45 }}>
-                      Blvd. Palmas Hills MZ.1<br />Hacienda de las Palmas<br />Huixquilucan, {es ? 'Mexico' : 'M\u00E9xico'}
+                      Blvd. Palmas Hills MZ.1<br />Hacienda de las Palmas<br />Huixquilucan, México
                     </div>
                   </div>
                 </div>
