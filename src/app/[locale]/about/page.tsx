@@ -31,10 +31,10 @@ export default async function AboutPage({
     eyebrow: es ? 'Quienes Somos' : 'Who We Are',
     h1: es ? 'Somos KabatOne' : 'The Team Behind KabatOne',
     subtitle: es
-      ? 'Una nueva generacion de inteligencia, tecnologia y proteccion. Operamos en America Latina, Norteamerica y Europa -- brindando inteligencia de seguridad en tiempo real que salva vidas.'
+      ? 'Una nueva generación de inteligencia, tecnología y protección. Operamos en América Latina, Norteamérica y Europa — brindando inteligencia de seguridad en tiempo real que salva vidas.'
       : 'A new generation of intelligence, technology, and protection. We operate across Latin America, North America, and Europe \u2014 delivering real-time safety intelligence that saves lives.',
     cta1: es ? 'Solicita una Demo' : 'Book a Demo',
-    cta2: es ? 'Nuestra Mision' : 'Our Mission',
+    cta2: es ? 'Nuestra Misión' : 'Our Mission',
 
     // Globe metrics
     metricCitizens: es ? 'Ciudadanos Protegidos' : 'Citizens Protected',
@@ -45,58 +45,58 @@ export default async function AboutPage({
     // Stats bar
     stat1Label: es ? 'Ciudadanos Protegidos' : 'Protected Citizens',
     stat2Label: es ? 'Proyectos Mundiales' : 'Projects Worldwide',
-    stat3Label: es ? 'Tecnologia 100% Propia' : 'In-House Technology',
+    stat3Label: es ? 'Tecnología 100% Propia' : 'In-House Technology',
     stat4Label: es ? 'Expertos Mundiales' : 'Experts Worldwide',
 
     // Mission
-    missionEyebrow: es ? 'Nuestra Mision' : 'Our Mission',
+    missionEyebrow: es ? 'Nuestra Misión' : 'Our Mission',
     missionH2: es
-      ? <>Construido para Proteger.<br />Disenado para Decidir.</>
+      ? <>Construido para Proteger.<br />Diseñado para Decidir.</>
       : <>Built to Protect.<br />Designed to Decide.</>,
     missionBody: es
-      ? 'Nuestra mision es mejorar la seguridad y la eficiencia operativa a traves de consultoria personalizada, sistemas propietarios e integraciones tecnologicas de vanguardia. Brindamos servicios gestionados de extremo a extremo que empoderan la toma de decisiones y salvan vidas.'
+      ? 'Nuestra misión es mejorar la seguridad y la eficiencia operativa a través de consultoría personalizada, sistemas propietarios e integraciones tecnológicas de vanguardia. Brindamos servicios gestionados de extremo a extremo que empoderan la toma de decisiones y salvan vidas.'
       : 'Our mission is to enhance security and operational efficiency through tailored consultancy, proprietary systems, and cutting-edge technological integrations. We deliver end-to-end managed services that empower decision-making and save lives.',
-    missionPanelLabel: es ? 'Dos Decadas de Experiencia' : 'Two Decades of Experience',
+    missionPanelLabel: es ? 'Dos Décadas de Experiencia' : 'Two Decades of Experience',
     missionPanelQuote: es
-      ? '\u201CNo solo desplegamos tecnologia \u2014 construimos sistemas que deciden, responden y salvan vidas en tiempo real.\u201D'
+      ? '\u201CNo solo desplegamos tecnología \u2014 construimos sistemas que deciden, responden y salvan vidas en tiempo real.\u201D'
       : '\u201CWe don\u2019t just deploy technology \u2014 we build systems that decide, respond, and save lives in real time.\u201D',
 
     // Values
     valuesEyebrow: es ? 'Nuestros Valores' : 'Our Values',
     valuesH2: es
-      ? <>Por Que los Equipos Eligen<br />Construir con Nosotros</>
+      ? <>Por Qué los Equipos Eligen<br />Construir con Nosotros</>
       : <>Why Teams Choose<br />to Build with Us</>,
 
     // Customer Success
-    csEyebrow: es ? 'Exito del Cliente' : 'Customer Success',
+    csEyebrow: es ? 'Éxito del Cliente' : 'Customer Success',
     csH2: es
       ? <>Estamos Contigo.<br />En Cada Paso.</>
       : <>We&apos;re With You.<br />Every Step of the Way.</>,
     csBody: es
-      ? 'Desde el despliegue hasta las operaciones diarias, KabatOne proporciona la infraestructura completa de soporte que las organizaciones de mision critica necesitan para mantenerse seguras, capaces y cubiertas.'
+      ? 'Desde el despliegue hasta las operaciones diarias, KabatOne proporciona la infraestructura completa de soporte que las organizaciones de misión crítica necesitan para mantenerse seguras, capaces y cubiertas.'
       : 'From deployment to daily operations, KabatOne provides the full support infrastructure that mission-critical organizations need to stay confident, capable, and covered.',
 
     // Global Presence
     gpEyebrow: es ? 'Presencia Global' : 'Global Presence',
     gpH2: es
-      ? <>Atencion Local.<br />Innovacion Global.</>
+      ? <>Atención Local.<br />Innovación Global.</>
       : <>Local Attention.<br />Global Innovation.</>,
     gpBody: es
-      ? 'Equipos de desarrollo en Mexico e Israel se combinan con operaciones en tres continentes para entregar soluciones localizadas con ingenieria de clase mundial.'
+      ? 'Equipos de desarrollo en México e Israel se combinan con operaciones en tres continentes para entregar soluciones localizadas con ingeniería de clase mundial.'
       : 'Development teams in Mexico and Israel combine with operations across three continents to deliver localized solutions with world-class engineering.',
 
     // CTA
     ctaH2: es ? 'Ve KabatOne en Accion' : 'See KabatOne in Action',
     ctaSub: es
-      ? 'Unete a mas de 68 organizaciones en todo el mundo que confian en KabatOne para proteger a sus personas, operaciones y comunidades.'
+      ? 'Únete a más de 68 organizaciones en todo el mundo que confían en KabatOne para proteger a sus personas, operaciones y comunidades.'
       : 'Join 68+ organizations worldwide that trust KabatOne to protect their people, operations, and communities.',
   }
 
   const missionBullets = es ? [
     'Software y hardware propietario desarrollado completamente internamente',
     'Inteligencia urbana y de emergencias en tiempo real a escala',
-    'Integracion perfecta con sistemas y plataformas de terceros',
-    'Alta disponibilidad y escalabilidad para infraestructura critica',
+    'Integración perfecta con sistemas y plataformas de terceros',
+    'Alta disponibilidad y escalabilidad para infraestructura crítica',
     'Soporte 24/7 y servicios completamente gestionados',
   ] : [
     'Proprietary software and hardware developed entirely in-house',
@@ -107,20 +107,20 @@ export default async function AboutPage({
   ]
 
   const regions = es ? [
-    { color: '#06b6d4', label: 'Mexico \u2014 Sede Central' },
+    { color: '#06b6d4', label: 'México \u2014 Sede Central' },
     { color: '#f59e0b', label: 'Israel \u2014 Oficina de I+D' },
     { color: '#3b82f6', label: 'Estados Unidos \u2014 Oficina Comercial, Cresskill NJ' },
   ] : [
-    { color: '#06b6d4', label: 'Mexico \u2014 Headquarters' },
+    { color: '#06b6d4', label: 'México \u2014 Headquarters' },
     { color: '#f59e0b', label: 'Israel \u2014 R&D Office' },
     { color: '#3b82f6', label: 'United States \u2014 Commercial Office, Cresskill NJ' },
   ]
 
   const values = es ? [
-    { icon: 'rgba(59,130,246,0.12)', emoji: '\uD83C\uDF0D', title: 'Impacto Global', text: 'Nuestros proyectos abarcan Mexico, America Latina, Norteamerica y Europa \u2014 protegiendo a millones de ciudadanos a traves de jurisdicciones y culturas.' },
-    { icon: 'rgba(6,182,212,0.12)', emoji: '\u26A1', title: 'Innovacion Tecnologica', text: 'Trabajamos en la frontera de la IA, IoT, big data y plataformas de seguridad \u2014 siempre construyendo lo que el mercado aun no ha visto.' },
+    { icon: 'rgba(59,130,246,0.12)', emoji: '\uD83C\uDF0D', title: 'Impacto Global', text: 'Nuestros proyectos abarcan México, América Latina, Norteamérica y Europa \u2014 protegiendo a millones de ciudadanos a través de jurisdicciones y culturas.' },
+    { icon: 'rgba(6,182,212,0.12)', emoji: '\u26A1', title: 'Innovación Tecnológica', text: 'Trabajamos en la frontera de la IA, IoT, big data y plataformas de seguridad \u2014 siempre construyendo lo que el mercado aún no ha visto.' },
     { icon: 'rgba(168,85,247,0.12)', emoji: '\uD83E\uDD1D', title: 'Cultura Colaborativa', text: 'Creemos que los mejores sistemas son construidos por equipos diversos y apasionados. Valoramos el talento, la creatividad y el coraje para desafiar el status quo.' },
-    { icon: 'rgba(34,197,94,0.12)', emoji: '\uD83D\uDCC8', title: 'Crecimiento Continuo', text: 'Invertimos en nuestra gente tanto como en nuestros productos \u2014 capacitacion continua, exposicion global y espacio para crecer junto a la tecnologia.' },
+    { icon: 'rgba(34,197,94,0.12)', emoji: '\uD83D\uDCC8', title: 'Crecimiento Continuo', text: 'Invertimos en nuestra gente tanto como en nuestros productos \u2014 capacitación continua, exposición global y espacio para crecer junto a la tecnología.' },
   ] : [
     { icon: 'rgba(59,130,246,0.12)', emoji: '\uD83C\uDF0D', title: 'Global Impact', text: 'Our projects span Mexico, Latin America, North America, and Europe \u2014 protecting millions of citizens across jurisdictions and cultures.' },
     { icon: 'rgba(6,182,212,0.12)', emoji: '\u26A1', title: 'Technological Innovation', text: 'We work at the frontier of AI, IoT, big data, and security platforms \u2014 always building what the market hasn\u2019t seen yet.' },
@@ -129,11 +129,11 @@ export default async function AboutPage({
   ]
 
   const services = es ? [
-    { color: '#06b6d4', emoji: '\uD83D\uDD50', tag: 'Siempre Activo', name: 'Soporte 24/7', desc: 'Soporte tecnico las 24 horas con SLAs de respuesta garantizados. Nuestro equipo de operaciones esta disponible cada hora de cada dia \u2014 porque la seguridad publica nunca descansa.' },
-    { color: '#3b82f6', emoji: '\uD83E\uDD1D', tag: 'Dedicado', name: 'Exito del Cliente', desc: 'Un Customer Success Manager dedicado asignado a tu cuenta \u2014 impulsando la adopcion, dando seguimiento a resultados y asegurando que tu equipo obtenga el maximo valor de cada modulo.' },
-    { color: '#a855f7', emoji: '\uD83C\uDF93', tag: 'Habilitacion', name: 'Capacitacion', desc: 'Programas de incorporacion estructurados y capacitacion continua para operadores, supervisores y equipos de TI \u2014 disponibles en sitio, remoto o a traves de nuestro portal de aprendizaje.' },
-    { color: '#f59e0b', emoji: '\uD83D\uDEE0\uFE0F', tag: 'Servicios Expertos', name: 'Servicios Profesionales', desc: 'Integraciones personalizadas, diseno de flujos de trabajo y configuracion de sistemas entregados por nuestros ingenieros certificados \u2014 adaptados a los requisitos operativos unicos de tu organizacion.' },
-    { color: '#22c55e', emoji: '\u2B50', tag: 'Nivel Premium', name: 'Servicio White Glove', desc: 'Servicio gestionado de extremo a extremo para organizaciones que demandan el mas alto nivel de atencion \u2014 desde la instalacion hasta la gestion operativa continua y revisiones estrategicas.' },
+    { color: '#06b6d4', emoji: '\uD83D\uDD50', tag: 'Siempre Activo', name: 'Soporte 24/7', desc: 'Soporte técnico las 24 horas con SLAs de respuesta garantizados. Nuestro equipo de operaciones está disponible cada hora de cada día \u2014 porque la seguridad pública nunca descansa.' },
+    { color: '#3b82f6', emoji: '\uD83E\uDD1D', tag: 'Dedicado', name: 'Éxito del Cliente', desc: 'Un Customer Success Manager dedicado asignado a tu cuenta \u2014 impulsando la adopción, dando seguimiento a resultados y asegurando que tu equipo obtenga el máximo valor de cada módulo.' },
+    { color: '#a855f7', emoji: '\uD83C\uDF93', tag: 'Habilitación', name: 'Capacitación', desc: 'Programas de incorporación estructurados y capacitación continua para operadores, supervisores y equipos de TI \u2014 disponibles en sitio, remoto o a través de nuestro portal de aprendizaje.' },
+    { color: '#f59e0b', emoji: '\uD83D\uDEE0\uFE0F', tag: 'Servicios Expertos', name: 'Servicios Profesionales', desc: 'Integraciones personalizadas, diseño de flujos de trabajo y configuración de sistemas entregados por nuestros ingenieros certificados \u2014 adaptados a los requisitos operativos únicos de tu organización.' },
+    { color: '#22c55e', emoji: '\u2B50', tag: 'Nivel Premium', name: 'Servicio White Glove', desc: 'Servicio gestionado de extremo a extremo para organizaciones que demandan el más alto nivel de atención \u2014 desde la instalación hasta la gestión operativa continua y revisiones estratégicas.' },
   ] : [
     { color: '#06b6d4', emoji: '\uD83D\uDD50', tag: 'Always On', name: '24/7 Support', desc: 'Round-the-clock technical support with guaranteed response SLAs. Our operations team is available every hour of every day \u2014 because public safety never sleeps.' },
     { color: '#3b82f6', emoji: '\uD83E\uDD1D', tag: 'Dedicated', name: 'Customer Success', desc: 'A named Customer Success Manager assigned to your account \u2014 driving adoption, tracking outcomes, and ensuring your team gets maximum value from every module.' },
@@ -143,9 +143,9 @@ export default async function AboutPage({
   ]
 
   const presenceCards = es ? [
-    { regionColor: '#60a5fa', region: 'Norteamerica', title: 'Sede Central', desc: 'Cresskill, Nueva Jersey. Nuestra sede corporativa impulsa la estrategia, alianzas y ventas empresariales en EE.UU. y Canada.' },
-    { regionColor: 'var(--cyan)', region: 'America Latina', title: 'Operaciones y Desarrollo', desc: 'Ciudad de Mexico sirve como nuestro centro principal de desarrollo y operaciones para America Latina, con despliegues en mas de 10 paises de la region.' },
-    { regionColor: '#a855f7', region: 'Europa e Israel', title: 'I+D y Alianzas', desc: 'Nuestro centro de I+D en Israel impulsa la innovacion central de la plataforma. Las alianzas europeas extienden nuestro alcance a los mercados de ciudades inteligentes y seguridad portuaria.' },
+    { regionColor: '#60a5fa', region: 'Norteamérica', title: 'Sede Central', desc: 'Cresskill, Nueva Jersey. Nuestra sede corporativa impulsa la estrategia, alianzas y ventas empresariales en EE.UU. y Canadá.' },
+    { regionColor: 'var(--cyan)', region: 'América Latina', title: 'Operaciones y Desarrollo', desc: 'Ciudad de México sirve como nuestro centro principal de desarrollo y operaciones para América Latina, con despliegues en más de 10 países de la región.' },
+    { regionColor: '#a855f7', region: 'Europa e Israel', title: 'I+D y Alianzas', desc: 'Nuestro centro de I+D en Israel impulsa la innovación central de la plataforma. Las alianzas europeas extienden nuestro alcance a los mercados de ciudades inteligentes y seguridad portuaria.' },
   ] : [
     { regionColor: '#60a5fa', region: 'North America', title: 'Headquarters', desc: 'Cresskill, New Jersey. Our corporate headquarters drives strategy, partnerships, and enterprise sales across the US and Canada.' },
     { regionColor: 'var(--cyan)', region: 'Latin America', title: 'Operations & Development', desc: 'Mexico City serves as our primary development and operations hub for Latin America, with deployments across 10+ countries in the region.' },
@@ -512,7 +512,7 @@ export default async function AboutPage({
           h2={content.ctaH2}
           subtitle={content.ctaSub}
           cta1={es ? 'Solicita una Demo' : 'Request a Demo'}
-          cta2={es ? 'Contactanos' : 'Contact Us'}
+          cta2={es ? 'Contáctanos' : 'Contact Us'}
         />
 
         <Footer es={es} />

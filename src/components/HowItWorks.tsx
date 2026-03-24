@@ -223,7 +223,7 @@ export default function HowItWorks({ es }: { es: boolean }) {
         </div>
 
         {/* Steps */}
-        <div style={{
+        <div className="hiw-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '0',
@@ -231,7 +231,7 @@ export default function HowItWorks({ es }: { es: boolean }) {
           {steps.map((step, i) => {
             const c = es ? step.es : step.en
             return (
-              <div key={step.num} style={{
+              <div key={step.num} className="hiw-step" style={{
                 padding: '36px 32px',
                 borderRight: i < 2 ? '1px solid var(--border)' : 'none',
                 display: 'flex',
@@ -296,6 +296,8 @@ export default function HowItWorks({ es }: { es: boolean }) {
       <style>{`
         @media (max-width: 760px) {
           .hiw-grid { grid-template-columns: 1fr !important; }
+          .hiw-step { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+          .hiw-step:last-child { border-bottom: none !important; }
         }
       `}</style>
     </section>
