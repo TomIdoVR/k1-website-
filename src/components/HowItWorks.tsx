@@ -8,9 +8,9 @@ const steps = [
       body: 'Cameras, body-worn devices, drones, radios, IoT sensors, and citizen apps all feed into a single ingestion layer — regardless of brand or protocol.',
     },
     es: {
-      label: 'Recoleccion',
-      title: 'Cada sensor, camara y canal integrado',
-      body: 'Camaras, dispositivos corporales, drones, radios, sensores IoT y apps ciudadanas se integran en una sola capa de ingestion — sin importar la marca o protocolo.',
+      label: 'Recolección',
+      title: 'Cada sensor, cámara y canal integrado',
+      body: 'Cámaras, dispositivos corporales, drones, radios, sensores IoT y apps ciudadanas se integran en una sola capa de ingestión, sin importar la marca o el protocolo.',
     },
   },
   {
@@ -24,7 +24,7 @@ const steps = [
     es: {
       label: 'Procesamiento',
       title: 'Motor de reglas clasifica y escala',
-      body: 'El motor K1 evalua cada evento contra reglas configurables, puntua la prioridad, cruza datos GIS y de despacho, y activa el protocolo correcto — en menos de 5 segundos.',
+      body: 'El motor K1 evalúa cada evento según reglas configurables, califica la prioridad, cruza datos GIS y de despacho, y activa el protocolo correcto en menos de 5 segundos.',
     },
   },
   {
@@ -37,8 +37,8 @@ const steps = [
     },
     es: {
       label: 'Respuesta',
-      title: 'Una pantalla. Una decision. Rapido.',
-      body: 'Despachadores, comandantes y unidades de campo actuan desde una sola pantalla unificada. Sin cambio de pestanas, sin llamadas duplicadas, sin informacion perdida entre sistemas.',
+      title: 'Una pantalla. Una decisión rápida.',
+      body: 'Despachadores, comandantes y unidades de campo actúan desde una sola pantalla unificada. Sin cambio de pestañas, sin llamadas duplicadas y sin pérdida de información entre sistemas.',
     },
   },
 ]
@@ -207,7 +207,7 @@ export default function HowItWorks({ es }: { es: boolean }) {
             color: 'var(--cyan)',
             marginBottom: '14px',
           }}>
-            {es ? 'COMO FUNCIONA' : 'HOW IT WORKS'}
+            {es ? 'CÓMO FUNCIONA' : 'HOW IT WORKS'}
           </p>
           <h2 style={{
             fontFamily: 'Barlow Condensed, sans-serif',
