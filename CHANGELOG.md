@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.09] 2026-03-25 — Feat: alternating light/dark homepage design
+
+**Changed / Improved**
+- Homepage now uses alternating light and dark sections for a modern, Yotpo-inspired look
+- Light sections: Hero, How It Works, Integration Logos, Products, Industries
+- Dark sections: Modules, Proof/Stats, Why KabatOne, CTA + Footer
+- Added `.page-light` and `.dark-section` CSS utility classes with full variable overrides
+- Replaced all hardcoded dark `rgba()` / hex colors across components with CSS variables
+- Fixed Milestone logo (switched from broken external URL to local `/images/partners/milestone.svg`)
+- Integration logos use `brightness(0)` filter for clean dark appearance on light background
+- Nav, ContactForm, EbookDownloadForm, ModulesSection, HeroPanel all theme-aware via CSS variables
+
 ## [1.08] 2025-03-25 — Feat: production health check & auto-rollback
 
 **Added**

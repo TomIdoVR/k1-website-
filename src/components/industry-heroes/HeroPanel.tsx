@@ -6,7 +6,7 @@ interface HeroPanelProps {
 export default function HeroPanel({ label, children }: HeroPanelProps) {
   return (
     <div style={{
-      background: 'rgba(11,18,40,0.85)',
+      background: 'var(--card-bg)',
       border: '1px solid var(--border)',
       borderRadius: '12px',
       overflow: 'hidden',
@@ -17,7 +17,7 @@ export default function HeroPanel({ label, children }: HeroPanelProps) {
         alignItems: 'center',
         padding: '10px 16px',
         borderBottom: '1px solid var(--border)',
-        background: 'rgba(11,18,40,0.95)',
+        background: 'var(--card-bg)',
       }}>
         <div style={{ display: 'flex', gap: '6px' }}>
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF5F57' }} />

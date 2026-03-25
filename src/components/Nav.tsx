@@ -46,7 +46,7 @@ export default function Nav() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '0 52px',
-      background: 'rgba(6,12,28,0.92)',
+      background: 'var(--nav-bg)',
       backdropFilter: 'blur(16px)',
       borderBottom: '1px solid var(--border)',
       zIndex: 100,
@@ -96,11 +96,11 @@ export default function Nav() {
               minWidth: '180px', zIndex: 200,
             }}>
               <div style={{
-                background: '#0b1628',
+                background: 'var(--dropdown-bg)',
                 border: '1px solid var(--border-b)',
                 borderRadius: '10px',
                 padding: '8px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+                boxShadow: '0 20px 60px var(--shadow)',
               }}>
                 {solutions.map((s) => (
                   <Link key={s.href} href={s.href} style={{
@@ -143,11 +143,11 @@ export default function Nav() {
               minWidth: '200px', zIndex: 200,
             }}>
               <div style={{
-                background: '#0b1628',
+                background: 'var(--dropdown-bg)',
                 border: '1px solid var(--border-b)',
                 borderRadius: '10px',
                 padding: '8px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+                boxShadow: '0 20px 60px var(--shadow)',
               }}>
                 {industries.map((i) => (
                   <Link key={i.href} href={i.href} style={{
@@ -253,7 +253,7 @@ export default function Nav() {
       {menuOpen && (
         <div style={{
           position: 'fixed', top: '70px', left: 0, right: 0,
-          background: '#0b1220',
+          background: 'var(--dropdown-bg)',
           borderBottom: '1px solid var(--border)',
           padding: '20px',
           display: 'flex',

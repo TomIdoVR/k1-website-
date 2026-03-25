@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* KabatOne design tokens */
+/* KabatOne design tokens — dark (default) */
 :root {
   --bg: #0f1724;
   --bg-2: #0b1220;
@@ -12,6 +12,73 @@
   --dim: #94a3b8;
   --border: rgba(255, 255, 255, 0.06);
   --border-b: rgba(59, 130, 246, 0.28);
+  --nav-bg: rgba(6, 12, 28, 0.92);
+  --dropdown-bg: #0b1628;
+  --card-bg: rgba(11, 18, 40, 0.85);
+  --card-bg-deep: rgba(4, 8, 20, 0.96);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+  --subtle-bg: rgba(255, 255, 255, 0.02);
+  --feat-border: rgba(255, 255, 255, 0.05);
+  --prod-chrome-bg: #0b1220;
+  --prod-body-bg: #060d1a;
+  --prod-visual-border: rgba(255, 255, 255, 0.1);
+  --prod-visual-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Light section overrides ── */
+.page-light {
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --white: #1e293b;
+  --muted: #64748b;
+  --dim: #475569;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-b: rgba(59, 130, 246, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --dropdown-bg: #ffffff;
+  --card-bg: rgba(241, 245, 249, 0.95);
+  --card-bg-deep: rgba(226, 232, 240, 0.96);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --glass: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-hover-bg: rgba(0, 0, 0, 0.04);
+  --subtle-bg: rgba(0, 0, 0, 0.02);
+  --feat-border: rgba(0, 0, 0, 0.06);
+  --prod-chrome-bg: #e8ecf1;
+  --prod-body-bg: #f1f5f9;
+  --prod-visual-border: rgba(0, 0, 0, 0.1);
+  --prod-visual-shadow: rgba(0, 0, 0, 0.12);
+}
+
+/* Dark section islands within a light page */
+.dark-section {
+  --bg: #0f1724;
+  --bg-2: #0b1220;
+  --white: #e6eef8;
+  --muted: #9dbdd0;
+  --dim: #94a3b8;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-b: rgba(59, 130, 246, 0.28);
+  --card-bg: rgba(11, 18, 40, 0.85);
+  --card-bg-deep: rgba(4, 8, 20, 0.96);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+  --subtle-bg: rgba(255, 255, 255, 0.02);
+  --feat-border: rgba(255, 255, 255, 0.05);
+  --prod-chrome-bg: #0b1220;
+  --prod-body-bg: #060d1a;
+  --prod-visual-border: rgba(255, 255, 255, 0.1);
+  --prod-visual-shadow: rgba(0, 0, 0, 0.5);
+  background: var(--bg);
+  color: var(--white);
 }
 
 * {

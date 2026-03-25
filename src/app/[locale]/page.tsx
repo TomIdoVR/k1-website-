@@ -360,7 +360,7 @@ export default async function HomePage({
   return (
     <>
       <Nav />
-      <div style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh' }}>
+      <div className="page-light" style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
 
         {/* ═══ BACKGROUND EFFECTS ═══ */}
         <div className="hp-bg-layer" />
@@ -404,7 +404,9 @@ export default async function HomePage({
         <HowItWorks es={es} />
 
         {/* ═══ MODULES / BI TABBED SECTION ═══ */}
-        <ModulesSection es={es} />
+        <div className="dark-section">
+          <ModulesSection es={es} />
+        </div>
 
         {/* ═══ INTEGRATION PARTNER LOGOS ═══ */}
         <section style={{ padding: '40px 40px', borderTop: '1px solid var(--border)' }}>
@@ -414,25 +416,25 @@ export default async function HomePage({
             </p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '48px' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.milestonesys.com/Static/Img/Global/logo.svg" alt="Milestone" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="/images/partners/milestone.svg" alt="Milestone" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.genetec.com/binaries/content/gallery/genetecweb/ie/genetec_logo.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://www.genetec.com/binaries/content/gallery/genetecweb/ie/genetec_logo.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://rapidsos.com/wp-content/uploads/2022/10/rapidsos-horizontal-logo.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://rapidsos.com/wp-content/uploads/2022/10/rapidsos-horizontal-logo.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://carbyne.com/wp-content/uploads/2024/12/carbyne-registered-logo.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://carbyne.com/wp-content/uploads/2024/12/carbyne-registered-logo.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.corsight.ai/wp-content/uploads/2021/05/corsight-logo-white.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://www.corsight.ai/wp-content/uploads/2021/05/corsight-logo-white.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://motorola-style.cdn.prismic.io/motorola-style/656612a6531ac2845a2568a5_LogoFill-1-.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://motorola-style.cdn.prismic.io/motorola-style/656612a6531ac2845a2568a5_LogoFill-1-.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.i-pro.com/products_and_solutions/themes/custom/ipro/logo.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.45 }} />
+              <img src="https://www.i-pro.com/products_and_solutions/themes/custom/ipro/logo.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
             </div>
           </div>
         </section>
 
         {/* ═══ PROOF / STATS SECTION ═══ */}
-        <section className="hp-proof">
+        <section className="hp-proof dark-section">
           <div className="hp-proof-inner">
             <div className="hp-stats-row">
               <div className="hp-stat">
@@ -565,7 +567,7 @@ export default async function HomePage({
         </section>
 
         {/* ═══ WHY KABATONE SECTION ═══ */}
-        <section className="hp-why">
+        <section className="hp-why dark-section">
           <div className="hp-why-inner">
             <div className="hp-why-header">
               <div className="hp-section-label">
@@ -675,6 +677,7 @@ export default async function HomePage({
         </section>
 
         {/* ═══ FINAL CTA ═══ */}
+        <div className="dark-section">
         <CTASection
           es={es}
           h2={es ? 'Vea KabatOne en Acción' : 'See KabatOne in Action'}
@@ -684,6 +687,7 @@ export default async function HomePage({
         />
 
         <Footer es={es} />
+        </div>
       </div>
 
       {/* ═══════════════════════════════════════
@@ -702,8 +706,8 @@ export default async function HomePage({
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+            linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
           background-size: 56px 56px;
         }
         .hp-bg-layer::after {
@@ -714,7 +718,7 @@ export default async function HomePage({
           transform: translateX(-50%);
           width: 130%;
           height: 65%;
-          background: radial-gradient(ellipse at center bottom, rgba(59,130,246,0.18) 0%, rgba(6,182,212,0.07) 28%, transparent 68%);
+          background: radial-gradient(ellipse at center bottom, rgba(59,130,246,0.08) 0%, rgba(6,182,212,0.04) 28%, transparent 68%);
         }
         .hp-scan-line {
           position: fixed;
@@ -722,7 +726,7 @@ export default async function HomePage({
           left: 0;
           right: 0;
           height: 2px;
-          background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+          background: linear-gradient(90deg, transparent 0%, rgba(37,99,235,0.35) 50%, transparent 100%);
           animation: hp-scan 9s linear infinite;
           z-index: 1;
           pointer-events: none;
@@ -1173,7 +1177,7 @@ export default async function HomePage({
           color: var(--dim);
           padding: 7px 0 7px 18px;
           position: relative;
-          border-top: 1px solid rgba(255,255,255,0.05);
+          border-top: 1px solid var(--feat-border);
           line-height: 1.5;
         }
         .hp-prod-feats li:first-child { border-top: none; }
@@ -1210,16 +1214,16 @@ export default async function HomePage({
           min-width: 0;
           border-radius: 10px;
           overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.1);
-          box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+          border: 1px solid var(--prod-visual-border);
+          box-shadow: 0 24px 60px var(--prod-visual-shadow);
         }
         .hp-prod-chrome {
-          background: #0b1220;
+          background: var(--prod-chrome-bg);
           padding: 10px 14px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid var(--border);
         }
         .hp-prod-chrome-left {
           display: flex;
@@ -1260,7 +1264,7 @@ export default async function HomePage({
           animation: hp-blink 2s ease-in-out infinite;
         }
         .hp-prod-body {
-          background: #060d1a;
+          background: var(--prod-body-bg);
           position: relative;
           height: 260px;
           overflow: hidden;
@@ -1315,7 +1319,7 @@ export default async function HomePage({
         }
         .hp-why-card {
           position: relative;
-          background: rgba(11,18,40,0.6);
+          background: var(--card-bg);
           border: 1px solid var(--border);
           border-top: 2px solid rgba(6,182,212,0.35);
           border-radius: 12px;
@@ -1325,7 +1329,7 @@ export default async function HomePage({
         }
         .hp-why-card:hover {
           border-top-color: var(--cyan);
-          background: rgba(11,18,40,0.85);
+          background: var(--card-bg-deep);
           transform: translateY(-3px);
         }
         .hp-why-card-blue {
@@ -1472,8 +1476,8 @@ export default async function HomePage({
         }
         .hp-ind-card {
           position: relative;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.07);
+          background: var(--subtle-bg);
+          border: 1px solid var(--card-border);
           border-radius: 12px;
           padding: 28px 24px 24px;
           display: flex;
@@ -1487,7 +1491,7 @@ export default async function HomePage({
         }
         .hp-ind-card:hover {
           border-color: color-mix(in srgb, var(--ind-color) 40%, transparent);
-          background: rgba(255,255,255,0.05);
+          background: var(--card-hover-bg);
           transform: translateY(-3px);
         }
         .hp-ind-card-glow {
