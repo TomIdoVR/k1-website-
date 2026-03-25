@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.08] 2025-03-25 — Feat: production health check & auto-rollback
+
+**Added**
+- GitHub Actions workflow (`.github/workflows/health-check.yml`) — checks production health after every Vercel deploy and every 5 minutes
+- Auto-rollback: if `www.kabatone.com` returns non-200, promotes the last working deployment automatically
+- Incident alerts: creates a GitHub issue on failure to ensure visibility
+- Verifies both EN and ES locales to catch middleware/i18n failures
+
 ## [1.07] 2026-03-24 — Fix: restore mobile swipe carousel for Modules section
 
 **Fixed / Improved**
