@@ -445,6 +445,31 @@ export default async function MunicipalitiesPage({
                 {es ? 'Estadios y Recintos' : 'Stadiums & Venues'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/panic-buttons" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Botones de Pánico' : 'Panic Buttons'}
+              </Link>
+              <Link href="/integrations/sensor-fusion" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Fusión de Sensores' : 'Sensor Fusion'}
+              </Link>
+              <Link href="/integrations/access-control" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Control de Acceso' : 'Access Control'}
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              <Link href="/resources/how-c5-command-centers-work" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Cómo Funcionan los Centros de Mando C5?' : 'How C5 Command Centers Work'}
+              </Link>
+              <Link href="/resources/what-is-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?'}
+              </Link>
+            </div>
           </div>
         </section>
 

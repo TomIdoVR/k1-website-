@@ -224,9 +224,29 @@ export const metadata = {
     description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS in a unified platform.",
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
+  whatIsVideoManagementSoftware: {
+    title: "What Is Video Management Software (VMS)? A Guide for Public Safety | KabatOne",
+    description: "VMS software aggregates cameras from any manufacturer, adds AI analytics like LPR and facial recognition, and integrates with CAD dispatch and GIS. Complete guide for public safety agencies.",
+    canonical: "https://kabatone.com/resources/what-is-video-management-software/",
+  },
   whatIsARealTimeCrimeCenter: {
     title: "What Is a Real-Time Crime Center (RTCC)? Complete Guide | KabatOne",
     description: "A Real-Time Crime Center (RTCC) integrates live video, AI analytics, LPR, gunshot detection, and dispatch into a unified command environment. Learn how RTCCs work, what technologies they use, and how to build one.",
     canonical: "https://kabatone.com/resources/what-is-a-real-time-crime-center/",
+  },
+  vsRapidsos: {
+    title: "KabatOne vs RapidSOS — Call Data Enrichment vs Full Operations Platform",
+    description: "RapidSOS enriches 911 call intake with precise caller location, health data, and device context. KabatOne manages the full response: CAD dispatch, city camera video, GIS, and traffic management. See how they compare and work together.",
+    canonical: "https://kabatone.com/vs/rapidssos/",
+  },
+  whatIsSituationalAwarenessSoftware: {
+    title: "What Is Situational Awareness Software? A Guide for Public Safety | KabatOne",
+    description: "Situational awareness software aggregates cameras, sensors, dispatch, and GIS into a unified operational map. Learn how command centers use it to coordinate response faster.",
+    canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
+  },
+  simulator: {
+    title: "Incident Simulator — Unified vs Fragmented Response | KabatOne",
+    description: "Interactive simulator comparing fragmented public safety systems with KabatOne's unified platform. Watch the same incident unfold two ways and see the difference in real time.",
+    canonical: "https://kabatone.com/simulator/",
   },
 } as const
