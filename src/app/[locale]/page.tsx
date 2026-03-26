@@ -362,11 +362,10 @@ export default async function HomePage({
       <Nav />
       <div className="page-light" style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
 
-        {/* ═══ BACKGROUND EFFECTS ═══ */}
+        {/* ═══ HERO SECTION ═══ */}
+        <div className="dark-section hp-hero-wrap">
         <div className="hp-bg-layer" />
         <div className="hp-scan-line" />
-
-        {/* ═══ HERO SECTION ═══ */}
         <section className="hp-hero">
           {/* Eyebrow */}
           <div className="hp-eyebrow">
@@ -399,6 +398,7 @@ export default async function HomePage({
           </div>
 
         </section>
+        </div>
 
         {/* ═══ HOW IT WORKS ═══ */}
         <HowItWorks es={es} />
@@ -709,6 +709,14 @@ export default async function HomePage({
           4%   { opacity: 1; }
           96%  { opacity: 0.6; }
           100% { top: 100vh; opacity: 0; }
+        }
+
+        /* ── Hero wrapper ── */
+        .hp-hero-wrap {
+          position: relative;
+          margin: -70px -40px 0;
+          padding-top: 70px;
+          border-radius: 0;
         }
 
         /* ── Hero ── */

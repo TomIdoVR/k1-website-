@@ -7,6 +7,38 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.18] 2026-03-26 — Dark hero section + module tab clip fix
+
+**Changed**
+- Hero section now uses dark background with grid overlay instead of light
+- Fixed module tab buttons being clipped at container edges (added vertical padding & overflow-y visible)
+
+## [1.17] 2026-03-26 — New: Incident Simulator (/simulator)
+
+**Added**
+- Full interactive incident simulator at `/simulator` (EN + ES)
+- 4-screen experience: Entry → Split-View Playback → Scorecard → Module Deep Dive
+- Playback engine with 10-step auto-advancing scenario, dual clocks, pause/resume, speed toggle (1x/2x)
+- Split-view: fragmented legacy systems (left) vs unified KabatOne (right)
+- Failure effects on steps 5/7/8 (typo error, missed alert, no citizen channel)
+- Scorecard with time comparison (2:34 vs 0:52), bar chart, module contributions, summary table
+- 3x3 expandable module deep dive grid with counterfactual descriptions
+- Framer Motion for animations (badge glows, screen transitions, staggered reveals)
+- Metadata (EN + ES), sitemap entry added. Site now 49 routes × 2 = 98 URLs.
+
+---
+
+## [1.16] 2026-03-26 — New: /resources/what-is-situational-awareness-software — GEO explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-situational-awareness-software/page.tsx` — Full EN+ES explainer targeting "situational awareness software" keyword cluster. Covers core SA platform capabilities (GIS operational map, event correlation, contextual video, field unit tracking), 5-step detection-to-decision workflow, unified vs siloed comparison, 6 evaluation criteria, and KabatOne product links with internal linking.
+- ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES) — added `whatIsSituationalAwarenessSoftware` key.
+- Sitemap — added `/resources/what-is-situational-awareness-software` (priority 0.6). Site now 48 routes × 2 = 96 URLs.
+- Resources hub — card added in both EN and ES arrays.
+
+---
+
 ## [1.15] 2026-03-26 — Google Analytics GA4 tracking
 
 **Added**
