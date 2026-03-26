@@ -7,6 +7,45 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.15] 2026-03-26 — Google Analytics GA4 tracking
+
+**Added**
+- `src/components/GoogleAnalytics.tsx` — GA4 component using `next/script` with `afterInteractive` strategy
+- GA4 Measurement ID `G-5MB9CK1FGS` integrated into root layout for site-wide tracking
+
+## [1.14] 2026-03-26 — New: /vs/rapidssos — RapidSOS comparison page + FAQ schema
+
+**Added**
+- `src/app/[locale]/vs/rapidssos/page.tsx` — Full EN+ES comparison page. RapidSOS as call data enrichment vs KabatOne as full response platform. Complementary framing, integration model section, 7-row comparison table, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap. Site now 47 routes × 2 = 94 URLs.
+
+---
+
+## [1.13] 2026-03-26 — SEO: internal links — industry pages → /resources/ and /integrations/
+
+**Added**
+- All 7 industry pages (`public-safety`, `municipalities`, `airport`, `retail`, `logistics`, `ports`, `stadiums`) now link to relevant /integrations/ and /resources/ pages via inline link rows matching the product page pattern from v1.11.
+
+---
+
+## [1.12] 2026-03-26 — New: /resources/what-is-video-management-software — VMS explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-video-management-software/page.tsx` — Full EN+ES explainer targeting "video management software" keyword cluster. VMS capabilities, VMS vs NVR vs CCTV comparison table, standalone vs unified platform, 6 buyer criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap, resources hub card. Site now 46 routes × 2 = 92 URLs.
+
+---
+
+## [1.11] 2026-03-26 — SEO: internal links — product pages → /integrations/
+
+**Added**
+- `k-dispatch/page.tsx` — Added "Integrations:" inline link row: Panic Buttons, Sensor Fusion, License Plate Recognition
+- `k-video/page.tsx` — Added "Integrations:" inline link row: LPR, Facial Recognition, Drones, Access Control
+- `k-safety/page.tsx` — Added "Integrations:" inline link row: Sensor Fusion, Panic Buttons, LPR, Access Control
+- 6 integration pages were live but received no PageRank flow from core product pages. This fix connects the product → integrations link graph.
+
+---
+
 ## [1.10] 2026-03-26 — Feat: compact solutions grid + favicon fix + terminology
 
 **Changed / Improved**

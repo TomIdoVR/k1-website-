@@ -1,5 +1,6 @@
 import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning className={`${spaceGrotesk.variable} ${barlowCondensed.variable}`}>
       <body suppressHydrationWarning>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
