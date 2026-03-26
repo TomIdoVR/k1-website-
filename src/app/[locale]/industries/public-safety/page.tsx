@@ -456,6 +456,31 @@ export default async function PublicSafetyPage({
                 {es ? 'Estadios y Recintos' : 'Stadiums & Venues'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/sensor-fusion" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Fusión de Sensores' : 'Sensor Fusion'}
+              </Link>
+              <Link href="/integrations/lpr" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}
+              </Link>
+              <Link href="/integrations/panic-buttons" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Botones de Pánico' : 'Panic Buttons'}
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              <Link href="/resources/what-is-a-public-safety-platform" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es una Plataforma de Seguridad Pública?' : 'What Is a Public Safety Platform?'}
+              </Link>
+              <Link href="/resources/what-is-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?'}
+              </Link>
+            </div>
           </div>
         </section>
 

@@ -322,6 +322,31 @@ export default async function LogisticsPage({
                 Retail
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/lpr" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}
+              </Link>
+              <Link href="/integrations/access-control" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Control de Acceso' : 'Access Control'}
+              </Link>
+              <Link href="/integrations/drones" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                Drones
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              <Link href="/resources/what-is-video-management-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es el Software de Gestión de Video?' : 'What Is Video Management Software?'}
+              </Link>
+              <Link href="/resources/smart-city-platform-guide" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Guía de Plataformas de Ciudad Inteligente' : 'Smart City Platform Guide'}
+              </Link>
+            </div>
           </div>
         </section>
 

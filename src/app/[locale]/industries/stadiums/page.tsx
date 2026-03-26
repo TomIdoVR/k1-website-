@@ -343,6 +343,31 @@ export default async function StadiumsPage({
                 {es ? 'Municipios' : 'Municipalities'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/face-recognition" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento Facial' : 'Face Recognition'}
+              </Link>
+              <Link href="/integrations/panic-buttons" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Botones de Pánico' : 'Panic Buttons'}
+              </Link>
+              <Link href="/integrations/access-control" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Control de Acceso' : 'Access Control'}
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              <Link href="/resources/what-is-video-management-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es el Software de Gestión de Video?' : 'What Is Video Management Software?'}
+              </Link>
+              <Link href="/resources/ai-in-public-safety" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'IA en Seguridad Pública' : 'AI in Public Safety'}
+              </Link>
+            </div>
           </div>
         </section>
 

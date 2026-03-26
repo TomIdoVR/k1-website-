@@ -338,6 +338,23 @@ export default async function KSafetyPage({
                 {es ? 'Estadios y Recintos' : 'Stadiums & Venues'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/sensor-fusion" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Fusión de Sensores' : 'Sensor Fusion'}
+              </Link>
+              <Link href="/integrations/panic-buttons" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Botones de Pánico' : 'Panic Buttons'}
+              </Link>
+              <Link href="/integrations/lpr" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}
+              </Link>
+              <Link href="/integrations/access-control" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Control de Acceso' : 'Access Control'}
+              </Link>
+            </div>
           </div>
         </section>
 

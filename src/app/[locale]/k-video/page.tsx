@@ -378,6 +378,23 @@ export default async function KVideoPage({
                 {es ? 'Retail' : 'Retail'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/lpr" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}
+              </Link>
+              <Link href="/integrations/face-recognition" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento Facial' : 'Facial Recognition'}
+              </Link>
+              <Link href="/integrations/drones" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Drones (UAV/UAS)' : 'Drones (UAV/UAS)'}
+              </Link>
+              <Link href="/integrations/access-control" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Control de Acceso' : 'Access Control'}
+              </Link>
+            </div>
           </div>
         </section>
 

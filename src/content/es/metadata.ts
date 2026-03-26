@@ -224,9 +224,29 @@ export const metadata = {
     description: "El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y cómo el CAD se integra con video y GIS en una plataforma unificada.",
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
+  whatIsVideoManagementSoftware: {
+    title: "¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública | KabatOne",
+    description: "El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA como LPR y reconocimiento facial, y se integra con despacho CAD y GIS. Guía completa para agencias de seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
+  },
   whatIsARealTimeCrimeCenter: {
     title: "¿Qué Es un Centro de Crimen en Tiempo Real (RTCC)? Guía Completa | KabatOne",
     description: "Un Centro de Crimen en Tiempo Real (RTCC) integra video en vivo, analítica de IA, LPR, detección de disparos y despacho en un entorno de comando unificado. Aprende cómo funciona un RTCC y qué tecnologías necesita.",
     canonical: "https://kabatone.com/es/resources/what-is-a-real-time-crime-center/",
+  },
+  vsRapidsos: {
+    title: "KabatOne vs RapidSOS — Enriquecimiento de Datos de Llamada vs Plataforma de Operaciones Completa",
+    description: "RapidSOS enriquece la recepción de llamadas 911 con ubicación precisa, datos de salud y contexto del dispositivo. KabatOne gestiona la respuesta completa: despacho CAD, video de cámaras de ciudad, GIS y gestión de tráfico. Compara ambas soluciones.",
+    canonical: "https://kabatone.com/es/vs/rapidssos/",
+  },
+  whatIsSituationalAwarenessSoftware: {
+    title: "¿Qué Es un Software de Conciencia Situacional? Guía para Seguridad Pública | KabatOne",
+    description: "Un software de conciencia situacional agrega cámaras, sensores, despacho y GIS en un mapa operativo unificado. Cómo los centros de mando lo usan para coordinar respuestas más rápido.",
+    canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
+  },
+  simulator: {
+    title: "Simulador de Incidentes — Respuesta Unificada vs Fragmentada | KabatOne",
+    description: "Simulador interactivo que compara sistemas de seguridad pública fragmentados con la plataforma unificada de KabatOne. Observa el mismo incidente de dos formas y ve la diferencia en tiempo real.",
+    canonical: "https://kabatone.com/es/simulator/",
   },
 } as const

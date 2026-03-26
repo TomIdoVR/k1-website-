@@ -304,6 +304,31 @@ export default async function PortsPage({
                 {es ? 'Aeropuertos' : 'Airports'}
               </Link>
             </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              <Link href="/integrations/sensor-fusion" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Fusión de Sensores' : 'Sensor Fusion'}
+              </Link>
+              <Link href="/integrations/drones" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                Drones
+              </Link>
+              <Link href="/integrations/lpr" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition'}
+              </Link>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              <Link href="/resources/what-is-video-management-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? '¿Qué Es el Software de Gestión de Video?' : 'What Is Video Management Software?'}
+              </Link>
+              <Link href="/resources/ai-in-public-safety" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'IA en Seguridad Pública' : 'AI in Public Safety'}
+              </Link>
+            </div>
           </div>
         </section>
 

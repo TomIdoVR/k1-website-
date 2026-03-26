@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.19] 2026-03-26 — SEO internal links, new pages, simulator
+
+**Added**
+- `/resources/what-is-video-management-software` — New SEO resource article (EN+ES)
+- `/resources/what-is-situational-awareness-software` — New SEO resource article (EN+ES)
+- `/vs/rapidssos` — RapidSOS competitor comparison page (EN+ES)
+- `/simulator` — Interactive incident simulator with scenarios, playback, and scorecard
+- Internal linking (integrations + resources) on all 7 industry pages and 3 product pages
+- Metadata (EN+ES) for all new pages; sitemap updated
+
 ## [1.18] 2026-03-26 — Dark hero section + module tab clip fix
 
 **Changed**
