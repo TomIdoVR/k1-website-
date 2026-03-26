@@ -8,7 +8,7 @@ interface EbookDownloadFormProps {
 }
 
 const inputStyle: React.CSSProperties = {
-  background: '#0b1628',
+  background: 'var(--dropdown-bg)',
   border: '1px solid var(--border)',
   color: 'var(--white)',
   borderRadius: '8px',

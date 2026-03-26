@@ -1,0 +1,155 @@
+name: Production Health Check & Auto-Rollback
+
+on:
+  # Triggers after Vercel deploys to production
+  deployment_status:
+  # Fallback: check every 5 minutes
+  schedule:
+    - cron: '*/5 * * * *'
+  # Manual trigger
+  workflow_dispatch:
+
+env:
+  SITE_URL: https://www.kabatone.com
+
+jobs:
+  health-check:
+    # Run on: successful production deploys, scheduled, or manual trigger
+    if: |
+      (github.event_name == 'deployment_status' &&
+       github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production') ||
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for deployment to propagate
+        if: github.event_name == 'deployment_status'
+        run: sleep 30
+
+      - name: Check site health
+        id: check
+        run: |
+          HEALTHY=false
+          for i in 1 2 3; do
+            STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
+            echo "Attempt $i: HTTP $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              HEALTHY=true
+              break
+            fi
+            sleep 10
+          done
+
+          # Also verify Spanish locale works (middleware + i18n)
+          if [ "$HEALTHY" = "true" ]; then
+            ES_STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL/es")
+            echo "ES locale: HTTP $ES_STATUS"
+            if [ "$ES_STATUS" != "200" ]; then
+              HEALTHY=false
+            fi
+          fi
+
+          echo "healthy=$HEALTHY" >> "$GITHUB_OUTPUT"
+          if [ "$HEALTHY" = "false" ]; then
+            echo "::error::Site health check FAILED"
+          fi
+
+      - name: Find and promote last working deployment
+        if: steps.check.outputs.healthy == 'false'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
+        run: |
+          echo "🚨 Site is down! Finding last working deployment..."
+
+          # Fetch recent production deployments via Vercel API
+          RESPONSE=$(curl -s \
+            "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&teamId=$VERCEL_TEAM_ID&target=production&limit=10&state=READY" \
+            -H "Authorization: Bearer $VERCEL_TOKEN")
+
+          # Test each deployment until we find one that works
+          URLS=$(echo "$RESPONSE" | jq -r '.deployments[].url')
+
+          for URL in $URLS; do
+            STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "https://$URL")
+            echo "Testing $URL → HTTP $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              DEPLOY_ID=$(echo "$RESPONSE" | jq -r --arg url "$URL" '.deployments[] | select(.url == $url) | .uid')
+              echo "Promoting deployment: $DEPLOY_ID ($URL)"
+
+              PROMOTE_RESULT=$(curl -s -X POST \
+                "https://api.vercel.com/v10/projects/$VERCEL_PROJECT_ID/promote/$DEPLOY_ID?teamId=$VERCEL_TEAM_ID" \
+                -H "Authorization: Bearer $VERCEL_TOKEN" \
+                -H "Content-Type: application/json")
+
+              echo "Promote response: $PROMOTE_RESULT"
+
+              # Verify rollback worked
+              sleep 15
+              VERIFY=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
+              echo "Verification after rollback: HTTP $VERIFY"
+              exit 0
+            fi
+          done
+
+          echo "::error::No working deployment found!"
+          exit 1
+
+      - name: Create or update incident issue
+        if: steps.check.outputs.healthy == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Avoid duplicate issues — check for open incidents
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'incident',
+              state: 'open',
+              per_page: 1
+            });
+
+            if (issues.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body: `Health check failed again at ${new Date().toISOString()}. Auto-rollback attempted.`
+              });
+              return;
+            }
+
+            // Ensure 'incident' label exists
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'incident'
+              });
+            } catch {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'incident',
+                color: 'FF0000',
+                description: 'Production incident'
+              });
+            }
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Production down — auto-rollback triggered',
+              body: [
+                '## Production Health Check Failed',
+                '',
+                `**Time:** ${new Date().toISOString()}`,
+                `**Trigger:** ${context.eventName}`,
+                '',
+                'Auto-rollback to the last working deployment was attempted.',
+                'Please investigate the root cause before re-deploying.',
+              ].join('\n'),
+              labels: ['incident']
+            });

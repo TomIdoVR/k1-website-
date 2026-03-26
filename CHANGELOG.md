@@ -7,6 +7,74 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.15] 2026-03-26 — Google Analytics GA4 tracking
+
+**Added**
+- `src/components/GoogleAnalytics.tsx` — GA4 component using `next/script` with `afterInteractive` strategy
+- GA4 Measurement ID `G-5MB9CK1FGS` integrated into root layout for site-wide tracking
+
+## [1.14] 2026-03-26 — New: /vs/rapidssos — RapidSOS comparison page + FAQ schema
+
+**Added**
+- `src/app/[locale]/vs/rapidssos/page.tsx` — Full EN+ES comparison page. RapidSOS as call data enrichment vs KabatOne as full response platform. Complementary framing, integration model section, 7-row comparison table, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap. Site now 47 routes × 2 = 94 URLs.
+
+---
+
+## [1.13] 2026-03-26 — SEO: internal links — industry pages → /resources/ and /integrations/
+
+**Added**
+- All 7 industry pages (`public-safety`, `municipalities`, `airport`, `retail`, `logistics`, `ports`, `stadiums`) now link to relevant /integrations/ and /resources/ pages via inline link rows matching the product page pattern from v1.11.
+
+---
+
+## [1.12] 2026-03-26 — New: /resources/what-is-video-management-software — VMS explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-video-management-software/page.tsx` — Full EN+ES explainer targeting "video management software" keyword cluster. VMS capabilities, VMS vs NVR vs CCTV comparison table, standalone vs unified platform, 6 buyer criteria. ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap, resources hub card. Site now 46 routes × 2 = 92 URLs.
+
+---
+
+## [1.11] 2026-03-26 — SEO: internal links — product pages → /integrations/
+
+**Added**
+- `k-dispatch/page.tsx` — Added "Integrations:" inline link row: Panic Buttons, Sensor Fusion, License Plate Recognition
+- `k-video/page.tsx` — Added "Integrations:" inline link row: LPR, Facial Recognition, Drones, Access Control
+- `k-safety/page.tsx` — Added "Integrations:" inline link row: Sensor Fusion, Panic Buttons, LPR, Access Control
+- 6 integration pages were live but received no PageRank flow from core product pages. This fix connects the product → integrations link graph.
+
+---
+
+## [1.10] 2026-03-26 — Feat: compact solutions grid + favicon fix + terminology
+
+**Changed / Improved**
+- Replaced full-width alternating product rows with compact 3+2 card grid (no screenshots)
+- Updated subtitle copy: solutions are chosen per customer needs, not "working together"
+- Changed "modules" → "solutions" in hero subtitle and products section
+- Fixed favicon/icon/apple-icon white corners — now transparent
+- Fixed ModulesSection tab clipping on narrower viewports
+
+## [1.09] 2026-03-25 — Feat: alternating light/dark homepage design
+
+**Changed / Improved**
+- Homepage now uses alternating light and dark sections for a modern, Yotpo-inspired look
+- Light sections: Hero, How It Works, Integration Logos, Products, Industries
+- Dark sections: Modules, Proof/Stats, Why KabatOne, CTA + Footer
+- Added `.page-light` and `.dark-section` CSS utility classes with full variable overrides
+- Replaced all hardcoded dark `rgba()` / hex colors across components with CSS variables
+- Fixed Milestone logo (switched from broken external URL to local `/images/partners/milestone.svg`)
+- Integration logos use `brightness(0)` filter for clean dark appearance on light background
+- Nav, ContactForm, EbookDownloadForm, ModulesSection, HeroPanel all theme-aware via CSS variables
+
+## [1.08] 2025-03-25 — Feat: production health check & auto-rollback
+
+**Added**
+- GitHub Actions workflow (`.github/workflows/health-check.yml`) — checks production health after every Vercel deploy and every 5 minutes
+- Auto-rollback: if `www.kabatone.com` returns non-200, promotes the last working deployment automatically
+- Incident alerts: creates a GitHub issue on failure to ensure visibility
+- Verifies both EN and ES locales to catch middleware/i18n failures
+
 ## [1.07] 2026-03-24 — Fix: restore mobile swipe carousel for Modules section
 
 **Fixed / Improved**

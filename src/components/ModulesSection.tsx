@@ -533,7 +533,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
         .ms-tabs-row {
           display: flex;
           justify-content: center;
-          padding: 0 24px;
+          padding: 0 40px;
           margin-bottom: 32px;
           overflow-x: auto;
           scrollbar-width: none;
@@ -545,6 +545,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           gap: 8px;
           flex-wrap: nowrap;
           justify-content: center;
+          padding: 0 4px;
         }
         .ms-tab {
           display: inline-flex;
