@@ -384,8 +384,8 @@ export default async function HomePage({
           {/* Subtitle */}
           <p className="hp-sub">
             {es
-              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco módulos integrados. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
-              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated modules. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
+              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco soluciones integradas. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
+              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated solutions. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
           </p>
 
           {/* CTA Row */}
@@ -511,22 +511,21 @@ export default async function HomePage({
               </h2>
               <p className="hp-products-sub">
                 {es
-                  ? 'Cada módulo funciona de forma independiente. Juntos, le dan a su centro de mando una imagen operativa común -- sin integrar seis proveedores distintos.'
-                  : 'Each module works independently. Together, they give your command center one common operating picture — without stitching together six different vendors.'}
+                  ? 'Cada solución se adapta a las necesidades de su operación. Elija una o combínelas para construir la plataforma ideal para su centro de mando.'
+                  : 'Each solution is tailored to your operational needs. Choose one or combine them to build the right platform for your command center.'}
               </p>
             </div>
 
-            {products.map((prod, i) => {
-              const c = es ? prod.es : prod.en
-              return (
-                <div key={prod.key} className={`hp-prod-row${prod.flip ? ' hp-prod-row-flip' : ''}`} style={{ '--pc': prod.color } as React.CSSProperties}>
-                  <div className="hp-prod-text">
+            <div className="hp-prod-grid">
+              {products.map((prod) => {
+                const c = es ? prod.es : prod.en
+                return (
+                  <div key={prod.key} className="hp-prod-card" style={{ '--pc': prod.color } as React.CSSProperties}>
                     <div className="hp-prod-label">
-                      <Image src={prod.icon} alt={c.label} width={28} height={28} style={{ height: '28px', width: 'auto', verticalAlign: 'middle', marginRight: '8px' }} />
+                      <Image src={prod.icon} alt={c.label} width={22} height={22} style={{ height: '22px', width: 'auto', verticalAlign: 'middle', marginRight: '8px' }} />
                       {c.label}
                     </div>
                     <h3 className="hp-prod-headline">{c.headline}</h3>
-                    <p className="hp-prod-desc">{c.desc}</p>
                     <ul className="hp-prod-feats">
                       {c.feats.map((f, i) => <li key={i}>{f}</li>)}
                     </ul>
@@ -534,35 +533,9 @@ export default async function HomePage({
                       {es ? 'Más información' : 'Learn more'} <span className="hp-prod-link-arrow">&rarr;</span>
                     </Link>
                   </div>
-                  <div className="hp-prod-visual">
-                    <div className="hp-prod-chrome">
-                      <div className="hp-prod-chrome-left">
-                        <div className="hp-chrome-dots">
-                          <span style={{ background: '#FF5F57' }} />
-                          <span style={{ background: '#FFBD2E' }} />
-                          <span style={{ background: '#28C840' }} />
-                        </div>
-                        <span className="hp-chrome-title">{c.label}</span>
-                      </div>
-                      <div className="hp-prod-live">
-                        <span className="hp-live-dot" />LIVE
-                      </div>
-                    </div>
-                    <div className="hp-prod-body">
-                      <Image
-                        src={prod.mockup}
-                        alt={c.label}
-                        fill
-                        className="hp-prod-screenshot"
-                        sizes="(max-width: 900px) 100vw, 60vw"
-                        style={{ objectFit: 'cover' }}
-                        priority={i === 0}
-                      />
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </section>
 
@@ -1089,7 +1062,7 @@ export default async function HomePage({
         }
         .hp-products-header {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 48px;
         }
         .hp-section-label {
           font-family: 'DM Mono', monospace;
@@ -1129,58 +1102,54 @@ export default async function HomePage({
           line-height: 1.6;
         }
 
-        /* Product rows */
-        .hp-prod-row {
-          display: flex;
-          align-items: center;
-          gap: 64px;
-          margin-bottom: 100px;
+        /* Product grid */
+        .hp-prod-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+          justify-items: center;
         }
-        .hp-prod-row:last-child { margin-bottom: 0; }
-        .hp-prod-row-flip { flex-direction: row-reverse; }
-        .hp-prod-text {
-          flex: 0 0 38%;
-          min-width: 0;
+        .hp-prod-card {
+          background: var(--subtle-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 12px;
+          padding: 28px 24px;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
         }
         .hp-prod-label {
           font-family: 'DM Mono', monospace;
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           font-weight: 500;
           color: var(--pc);
           letter-spacing: 0.14em;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
           display: flex;
           align-items: center;
         }
         .hp-prod-headline {
           font-family: 'Barlow Condensed', sans-serif;
           font-weight: 700;
-          font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+          font-size: 1.25rem;
           color: var(--white);
-          line-height: 1.15;
+          line-height: 1.2;
           margin: 0 0 14px;
           text-transform: uppercase;
-        }
-        .hp-prod-desc {
-          font-size: 0.95rem;
-          color: var(--dim);
-          line-height: 1.65;
-          margin-bottom: 22px;
         }
         .hp-prod-feats {
           list-style: none;
           padding: 0;
-          margin: 0 0 28px;
+          margin: 0 0 20px;
+          flex: 1;
         }
         .hp-prod-feats li {
-          font-size: 0.875rem;
+          font-size: 0.8rem;
           color: var(--dim);
-          padding: 7px 0 7px 18px;
+          padding: 5px 0 5px 16px;
           position: relative;
-          border-top: 1px solid var(--feat-border);
-          line-height: 1.5;
+          line-height: 1.45;
         }
-        .hp-prod-feats li:first-child { border-top: none; }
         .hp-prod-feats li::before {
           content: '';
           position: absolute;
@@ -1197,7 +1166,7 @@ export default async function HomePage({
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-size: 0.875rem;
+          font-size: 0.82rem;
           font-weight: 500;
           color: var(--pc);
           text-decoration: none;
@@ -1206,75 +1175,6 @@ export default async function HomePage({
         .hp-prod-link:hover { gap: 10px; opacity: 0.8; }
         .hp-prod-link-arrow { transition: transform 0.2s; }
         .hp-prod-link:hover .hp-prod-link-arrow { transform: translateX(4px); }
-
-        /* Product visual */
-        .hp-prod-visual {
-          flex: 0 0 44%;
-          max-width: 44%;
-          min-width: 0;
-          border-radius: 10px;
-          overflow: hidden;
-          border: 1px solid var(--prod-visual-border);
-          box-shadow: 0 24px 60px var(--prod-visual-shadow);
-        }
-        .hp-prod-chrome {
-          background: var(--prod-chrome-bg);
-          padding: 10px 14px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border-bottom: 1px solid var(--border);
-        }
-        .hp-prod-chrome-left {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        .hp-chrome-dots {
-          display: flex;
-          gap: 5px;
-        }
-        .hp-chrome-dots span {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          display: block;
-        }
-        .hp-chrome-title {
-          font-family: 'DM Mono', monospace;
-          font-size: 0.62rem;
-          color: var(--pc);
-          letter-spacing: 0.1em;
-        }
-        .hp-prod-live {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-family: 'DM Mono', monospace;
-          font-size: 10px;
-          color: #28C840;
-          letter-spacing: 0.05em;
-        }
-        .hp-live-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #28C840;
-          box-shadow: 0 0 6px #28C840;
-          animation: hp-blink 2s ease-in-out infinite;
-        }
-        .hp-prod-body {
-          background: var(--prod-body-bg);
-          position: relative;
-          height: 260px;
-          overflow: hidden;
-        }
-        .hp-prod-screenshot {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
 
         /* ── Why Section ── */
         .hp-why {
@@ -1592,14 +1492,7 @@ export default async function HomePage({
           .hp-quote-block { padding: 0 20px; }
         }
         @media (max-width: 860px) {
-          .hp-prod-row,
-          .hp-prod-row-flip {
-            flex-direction: column;
-            gap: 32px;
-          }
-          .hp-prod-text { flex: none; width: 100%; }
-          .hp-prod-visual { flex: none; width: 100%; max-width: 100%; }
-          .hp-prod-row { margin-bottom: 60px; }
+          .hp-prod-grid { grid-template-columns: repeat(2, 1fr); }
           .hp-why-header-grid {
             grid-template-columns: 1fr;
             gap: 16px;
@@ -1610,6 +1503,7 @@ export default async function HomePage({
           .hp-why-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 560px) {
+          .hp-prod-grid { grid-template-columns: 1fr; }
           .hp-products-inner { padding: 0 20px; }
           .hp-industries-inner { padding: 0 20px; }
           .hp-why-inner { padding: 0 20px; }

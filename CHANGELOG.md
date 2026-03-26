@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.10] 2026-03-26 — Feat: compact solutions grid + favicon fix + terminology
+
+**Changed / Improved**
+- Replaced full-width alternating product rows with compact 3+2 card grid (no screenshots)
+- Updated subtitle copy: solutions are chosen per customer needs, not "working together"
+- Changed "modules" → "solutions" in hero subtitle and products section
+- Fixed favicon/icon/apple-icon white corners — now transparent
+- Fixed ModulesSection tab clipping on narrower viewports
+
 ## [1.09] 2026-03-25 — Feat: alternating light/dark homepage design
 
 **Changed / Improved**

@@ -533,7 +533,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
         .ms-tabs-row {
           display: flex;
           justify-content: center;
-          padding: 0 24px;
+          padding: 0 40px;
           margin-bottom: 32px;
           overflow-x: auto;
           scrollbar-width: none;
@@ -545,6 +545,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           gap: 8px;
           flex-wrap: nowrap;
           justify-content: center;
+          padding: 0 4px;
         }
         .ms-tab {
           display: inline-flex;
@@ -593,7 +594,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
 
         /* ── Viewer chrome ── */
         .ms-viewer {
-          background: var(--card-bg);
+          background: rgba(11,18,40,0.85);
           border: 1px solid var(--border);
           border-radius: 12px;
           overflow: hidden;
@@ -604,7 +605,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           justify-content: space-between;
           padding: 10px 16px;
           border-bottom: 1px solid var(--border);
-          background: var(--card-bg);
+          background: rgba(11,18,40,0.95);
         }
         .ms-viewer-left {
           display: flex;
@@ -654,7 +655,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           transform: translateY(0);
         }
         .ms-panel-left {
-          background: var(--card-bg);
+          background: rgba(11,18,40,0.95);
           border-right: 1px solid rgba(255,255,255,0.05);
           padding: 28px 24px;
           display: flex;
@@ -720,7 +721,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
 
         /* ── Right panel (image) ── */
         .ms-panel-right {
-          background: var(--card-bg-deep);
+          background: rgba(4,8,20,0.96);
           overflow: hidden;
           position: relative;
         }
@@ -777,7 +778,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
           display: flex;
           flex-direction: column;
           height: 100%;
-          background: var(--card-bg-deep);
+          background: rgba(4,8,20,0.96);
           padding: 16px 20px;
         }
         .ms-partners-header {
@@ -897,7 +898,7 @@ export default function ModulesSection({ es = false }: { es?: boolean }) {
             box-sizing: border-box;
           }
           .ms-mobile-card-inner {
-            background: var(--card-bg);
+            background: rgba(11,18,40,0.85);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px;
             overflow: hidden;
