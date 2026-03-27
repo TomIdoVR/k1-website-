@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>KABAT_ONE | ACT - Responder Communication</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '      tailwind.config = {
+' +
+    '        darkMode: "class",
+' +
+    '        theme: {
+' +
+    '          extend: {
+' +
+    '            colors: {
+' +
+    '              "tertiary-container": "#ff7f85",
+' +
+    '              "on-secondary-fixed": "#161c26",
+' +
+    '              "on-secondary-fixed-variant": "#414753",
+' +
+    '              "inverse-on-surface": "#2b313c",
+' +
+    '              "primary-fixed-dim": "#4cd7f6",
+' +
+    '              "on-primary-container": "#00424f",
+' +
+    '              "tertiary": "#ffb3b4",
+' +
+    '              "on-secondary": "#2b313c",
+' +
+    '              "surface-container-lowest": "#080e18",
+' +
+    '              "inverse-surface": "#dde2f1",
+' +
+    '              "error": "#ffb4ab",
+' +
+    '              "on-secondary-container": "#afb5c3",
+' +
+    '              "surface-container-highest": "#2f3540",
+' +
+    '              "on-surface-variant": "#bcc9cd",
+' +
+    '              "on-error": "#690005",
+' +
+    '              "on-surface": "#dde2f1",
+' +
+    '              "primary-fixed": "#acedff",
+' +
+    '              "primary-container": "#06b6d4",
+' +
+    '              "on-primary-fixed-variant": "#004e5c",
+' +
+    '              "on-tertiary-fixed-variant": "#920023",
+' +
+    '              "surface-bright": "#343945",
+' +
+    '              "on-primary-fixed": "#001f26",
+' +
+    '              "on-primary": "#003640",
+' +
+    '              "surface-container-high": "#242a35",
+' +
+    '              "tertiary-fixed-dim": "#ffb3b4",
+' +
+    '              "surface-container": "#1a202a",
+' +
+    '              "primary": "#4cd7f6",
+' +
+    '              "background": "#0e131e",
+' +
+    '              "on-error-container": "#ffdad6",
+' +
+    '              "error-container": "#93000a",
+' +
+    '              "on-tertiary": "#680016",
+' +
+    '              "surface-dim": "#0e131e",
+' +
+    '              "outline-variant": "#3d494c",
+' +
+    '              "on-background": "#dde2f1",
+' +
+    '              "secondary": "#c1c6d5",
+' +
+    '              "surface-tint": "#4cd7f6",
+' +
+    '              "outline": "#869397",
+' +
+    '              "inverse-primary": "#00687a",
+' +
+    '              "surface-variant": "#2f3540",
+' +
+    '              "tertiary-fixed": "#ffdad9",
+' +
+    '              "secondary-fixed-dim": "#c1c6d5",
+' +
+    '              "surface-container-low": "#161c26",
+' +
+    '              "secondary-container": "#414753",
+' +
+    '              "on-tertiary-fixed": "#40000a",
+' +
+    '              "surface": "#0e131e",
+' +
+    '              "on-tertiary-container": "#7d001d",
+' +
+    '              "secondary-fixed": "#dde2f1",
+' +
+    '              "responder-yellow": "#eab308"
+' +
+    '            },
+' +
+    '            fontFamily: {
+' +
+    '              "headline": ["Inter"],
+' +
+    '              "body": ["Inter"],
+' +
+    '              "label": ["Inter"]
+' +
+    '            },
+' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '          },
+' +
+    '        },
+' +
+    '      }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '      .material-symbols-outlined {
+' +
+    "        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '      }
+' +
+    '      ::-webkit-scrollbar { width: 4px; }
+' +
+    '      ::-webkit-scrollbar-track { background: #080e18; }
+' +
+    '      ::-webkit-scrollbar-thumb { background: #2f3540; }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+' +
+    '<!-- TopAppBar -->
+' +
+    `<header class="bg-[#0e131e] text-[#4cd7f6] font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] docked full-width top-0 border-0 shadow-[0_0_15px_rgba(76,215,246,0.1)] flex justify-between items-center w-full px-6 py-4 h-16 sticky z-50">
+` +
+    '<div class="flex items-center gap-4">
+' +
+    '<span class="text-xl font-normal text-[#4cd7f6] tracking-tighter">KABAT_ONE</span>
+' +
+    '</div>
+' +
+    '<nav class="hidden md:flex items-center gap-8">
+' +
+    '<div class="flex items-center gap-2 text-[#4cd7f6]/50">
+' +
+    `<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    '<span>DETECT</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 text-[#4cd7f6]/50">
+' +
+    `<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    '<span>UNDERSTAND</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 text-[#4cd7f6]/50">
+' +
+    `<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    '<span>DECIDE</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 text-[#ffb4ab] drop-shadow-[0_0_8px_rgba(255,180,171,0.6)] font-bold">
+' +
+    '<span class="w-2 h-2 bg-responder-yellow rounded-full animate-pulse shadow-[0_0_8px_#eab308]"></span>
+' +
+    '<span>ACT</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 text-[#4cd7f6]/50">
+' +
+    '<span class="w-2 h-2 bg-[#4cd7f6]/20 rounded-full"></span>
+' +
+    '<span>LEARN</span>
+' +
+    '</div>
+' +
+    '</nav>
+' +
+    '<div class="flex items-center gap-3">
+' +
+    '<span class="text-[10px] bg-error-container text-on-error-container px-2 py-0.5 font-bold">SCENARIO_ALPHA_01: CROWD DISTURBANCE</span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="min-h-[calc(100vh-64px-48px)] p-6 md:p-10 flex flex-col gap-8">
+' +
+    '<!-- Title Section -->
+' +
+    '<section class="flex flex-col gap-1">
+' +
+    '<div class="flex items-baseline gap-4">
+' +
+    '<h1 class="text-6xl font-normal tracking-tighter text-on-surface">04 ACT</h1>
+' +
+    '<span class="text-xs uppercase tracking-[0.2em] text-primary">Field Response</span>
+' +
+    '</div>
+' +
+    '<p class="text-on-surface-variant font-medium tracking-wide">Dispatch and execute in the field</p>
+' +
+    '</section>
+' +
+    '<!-- Content Grid -->
+' +
+    '<div class="grid grid-cols-1 md:grid-cols-10 gap-6 flex-grow">
+' +
+    '<!-- LEFT 40%: K-Responder Mobile App Mockup -->
+' +
+    '<div class="md:col-span-4 flex justify-center items-start bg-surface-container-low p-8 border-r border-outline-variant/10">
+' +
+    '<div class="relative w-[280px] h-[580px] bg-black rounded-[40px] border-[8px] border-surface-container-highest shadow-2xl overflow-hidden">
+' +
+    '<!-- Screen Content -->
+' +
+    '<div class="bg-background h-full w-full flex flex-col text-[11px]">
+' +
+    '<!-- App Top Bar -->
+' +
+    '<div class="bg-surface-container-highest p-4 flex flex-col gap-1">
+' +
+    '<div class="flex justify-between items-center">
+' +
+    '<span class="font-bold text-[10px] tracking-tight">INCIDENT INC-2026-0847</span>
+' +
+    '<span class="bg-error text-on-error px-1.5 py-0.5 text-[9px] font-bold">HIGH</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- App Map -->
+' +
+    '<div class="h-48 relative bg-surface-container">
+' +
+    '<img class="w-full h-full object-cover opacity-50 grayscale contrast-125" data-alt="dark schematic night map of city streets with glowing blue lines and data overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8cEVoHd4crtbI0uUfvBBIHBwPNE8-9X7RjO9cDx9YYLMOpL0gYkFo2vVeGHKzPlixCfJTMrYrUR9zmkfDYvAKFifu1wNJwifZ0XZESnVg3TWfDrylichhoRGKxnKRCEvNUyLenAvxi7Cd4hA8cBeyXcQuC1sxmrMNJpBiHZtAIxb5P0aVl92yLGhfe8z58kVFh9TIB55lOoYFgfaIoE8WrqL4YmQtNsEMikANtbivgIGYbdz0rak4SnWYVpcerpsBpyZr3XiEZ9M"/>
+' +
+    '<div class="absolute inset-0 flex items-center justify-center">
+' +
+    '<div class="relative">
+' +
+    `<span class="material-symbols-outlined text-primary text-lg animate-bounce" style="font-variation-settings: 'FILL' 1;">navigation</span>
+` +
+    '<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping"></span>
+' +
+    '</div>
+' +
+    `<span class="material-symbols-outlined text-error text-lg absolute top-10 right-10" style="font-variation-settings: 'FILL' 1;">location_on</span>
+` +
+    '</div>
+' +
+    '<div class="absolute bottom-2 left-2 bg-black/80 px-2 py-1 text-[9px] font-mono border-l-2 border-primary">
+' +
+    '                                ETA 1:30 | HEADING NORTH
+' +
+    '                            </div>
+' +
+    '</div>
+' +
+    '<!-- Incident Brief -->
+' +
+    '<div class="p-4 flex flex-col gap-3 overflow-y-auto flex-grow">
+' +
+    '<div class="bg-surface-container-high p-3 space-y-2">
+' +
+    '<div class="flex justify-between border-b border-outline-variant/20 pb-1">
+' +
+    '<span class="text-on-surface-variant">TYPE</span>
+' +
+    '<span class="font-bold">CROWD DISTURBANCE</span>
+' +
+    '</div>
+' +
+    '<div class="flex justify-between border-b border-outline-variant/20 pb-1">
+' +
+    '<span class="text-on-surface-variant">LOCATION</span>
+' +
+    '<span class="font-bold">ZONE B - METRO HUB</span>
+' +
+    '</div>
+' +
+    '<div class="space-y-1 pt-1">
+' +
+    '<span class="text-[9px] text-primary font-bold tracking-widest">PROTOCOL</span>
+' +
+    '<ul class="list-disc list-inside text-on-surface-variant space-y-0.5">
+' +
+    '<li>ESTABLISH PERIMETER</li>
+' +
+    '<li>DE-ESCALATION PRIORITY</li>
+' +
+    '<li>VIDEO LOGGING ACTIVE</li>
+' +
+    '</ul>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="relative aspect-video bg-surface-container-lowest">
+' +
+    '<img class="w-full h-full object-cover opacity-60" data-alt="security camera footage grain and scanlines showing a gathered crowd at night in an urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbS3QGT6PM1ZdqlPsluGa9PW3JqvRf6uLt4qvUvGvIYnRjTIIcKONi4xCszwWlkCQlF6DwnN5q3EShcnQ79JCRVyqu0voqfxTIf9DhrpLAJ5BqTPvE8ze4qwejAh-npvHRHorMr0obnqWit4SZ6VZhVXH-0T300InrRjkZ_X76CjjQqFzBAi3L5c00F0648G-nmmv7vHq7l5NEQqISZ7EmS_GEPWpbbePGZD8P2nbx66Z4wabkdRhkfIlvmJFRmAvxyxIDVfKO1D4"/>
+' +
+    '<div class="absolute top-1 left-1 flex items-center gap-1 bg-error/80 px-1 text-[8px] font-bold">
+' +
+    '<span class="w-1 h-1 bg-white rounded-full"></span> LIVE CAMERA 03
+' +
+    '                                </div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- App Buttons -->
+' +
+    '<div class="p-4 grid grid-cols-2 gap-2 mt-auto pb-8">
+' +
+    '<button class="bg-[#10b981] text-white py-3 font-bold text-[10px] tracking-tighter">ARRIVED ON SCENE</button>
+' +
+    '<button class="bg-[#f59e0b] text-white py-3 font-bold text-[10px] tracking-tighter">REQUEST BACKUP</button>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- CENTER 30%: Live Chat Panel -->
+' +
+    '<div class="md:col-span-3 flex flex-col bg-surface-container shadow-xl">
+' +
+    '<div class="p-4 bg-surface-container-highest flex items-center justify-between border-b border-primary/10">
+' +
+    '<span class="text-[10px] font-bold tracking-[0.2em] text-primary">UNIT-14 COMMS</span>
+' +
+    '<span class="flex ite

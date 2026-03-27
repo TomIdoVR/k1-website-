@@ -1,0 +1,187 @@
+{
+  screenId: '67a5aae09cd4458abdd7e3491c9b99cc',
+  projectId: '7710557073318701828',
+  htmlContent: '<!DOCTYPE html>\n' +
+    '\n' +
+    '<html class="dark" lang="en"><head>\n' +
+    '<meta charset="utf-8"/>\n' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>\n' +
+    '<title>K1 - Stage 02: UNDERSTAND</title>\n' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>\n' +
+    '<script id="tailwind-config">\n' +
+    '        tailwind.config = {\n' +
+    '            darkMode: "class",\n' +
+    '            theme: {\n' +
+    '                extend: {\n' +
+    '                    colors: {\n' +
+    '                        "error-container": "#93000a",\n' +
+    '                        "on-tertiary": "#00344d",\n' +
+    '                        "surface-dim": "#10131a",\n' +
+    '                        "tertiary-fixed-dim": "#89ceff",\n' +
+    '                        "background": "#10131a",\n' +
+    '                        "surface-container": "#1c2026",\n' +
+    '                        "primary": "#4cd7f6",\n' +
+    '                        "on-error-container": "#ffdad6",\n' +
+    '                        "on-primary": "#003640",\n' +
+    '                        "surface-bright": "#363940",\n' +
+    '                        "on-primary-fixed": "#001f26",\n' +
+    '                        "surface-container-high": "#272a31",\n' +
+    '                        "on-tertiary-fixed-variant": "#004c6e",\n' +
+    '                        "on-tertiary-fixed": "#001e2f",\n' +
+    '                        "on-tertiary-container": "#00405e",\n' +
+    '                        "surface": "#10131a",\n' +
+    '                        "secondary-fixed": "#dde2f9",\n' +
+    '                        "secondary-fixed-dim": "#c1c6dc",\n' +
+    '                        "surface-container-low": "#181c22",\n' +
+    '                        "secondary-container": "#414659",\n' +
+    '                        "outline": "#869397",\n' +
+    '                        "surface-tint": "#4cd7f6",\n' +
+    '                        "inverse-primary": "#00687a",\n' +
+    '                        "surface-variant": "#31353c",\n' +
+    '                        "tertiary-fixed": "#c9e6ff",\n' +
+    '                        "outline-variant": "#3d494c",\n' +
+    '                        "on-background": "#e0e2eb",\n' +
+    '                        "secondary": "#c1c6dc",\n' +
+    '                        "tertiary": "#89ceff",\n' +
+    '                        "inverse-on-surface": "#2d3037",\n' +
+    '                        "on-primary-container": "#00424f",\n' +
+    '                        "primary-fixed-dim": "#4cd7f6",\n' +
+    '                        "tertiary-container": "#2bb0f5",\n' +
+    '                        "on-secondary-fixed": "#151b2c",\n' +
+    '                        "on-secondary-fixed-variant": "#414659",\n' +
+    '                        "on-error": "#690005",\n' +
+    '                        "on-surface": "#e0e2eb",\n' +
+    '                        "primary-container": "#06b6d4",\n' +
+    '                        "primary-fixed": "#acedff",\n' +
+    '                        "on-primary-fixed-variant": "#004e5c",\n' +
+    '                        "error": "#ffb4ab",\n' +
+    '                        "on-secondary-container": "#afb4ca",\n' +
+    '                        "surface-container-highest": "#31353c",\n' +
+    '                        "on-surface-variant": "#bcc9cd",\n' +
+    '                        "inverse-surface": "#e0e2eb",\n' +
+    '                        "on-secondary": "#2a3041",\n' +
+    '                        "surface-container-lowest": "#0b0e14"\n' +
+    '                    },\n' +
+    '                    fontFamily: {\n' +
+    '                        "headline": ["Inter"],\n' +
+    '                        "body": ["Inter"],\n' +
+    '                        "label": ["Inter"]\n' +
+    '                    },\n' +
+    '                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },\n' +
+    '                },\n' +
+    '            },\n' +
+    '        }\n' +
+    '    </script>\n' +
+    '<style>\n' +
+    '        .material-symbols-outlined {\n' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;\n" +
+    '            display: inline-block;\n' +
+    '            vertical-align: middle;\n' +
+    '        }\n' +
+    '        .map-grid {\n' +
+    '            background-image: \n' +
+    '                linear-gradient(to right, rgba(76, 215, 246, 0.05) 1px, transparent 1px),\n' +
+    '                linear-gradient(to bottom, rgba(76, 215, 246, 0.05) 1px, transparent 1px);\n' +
+    '            background-size: 32px 32px;\n' +
+    '        }\n' +
+    '        .scanline {\n' +
+    '            background: linear-gradient(to bottom, transparent 50%, rgba(6, 182, 212, 0.02) 50%);\n' +
+    '            background-size: 100% 4px;\n' +
+    '        }\n' +
+    '        @keyframes pulse-glow {\n' +
+    '            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }\n' +
+    '            70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }\n' +
+    '            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }\n' +
+    '        }\n' +
+    '        .pulse-red { animation: pulse-glow 2s infinite; }\n' +
+    '    </style>\n' +
+    '</head>\n' +
+    '<body class="bg-background text-on-background font-body selection:bg-primary/30 overflow-hidden">\n' +
+    '<!-- TopNavBar -->\n' +
+    '<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#06090f] border-b border-cyan-500/30 shadow-[0_1px_10px_rgba(6,182,212,0.2)]">\n' +
+    '<div class="flex items-center space-x-4">\n' +
+    '<span class="text-cyan-400 font-black text-xl tracking-tighter">K1</span>\n' +
+    '<div class="h-4 w-[1px] bg-outline-variant"></div>\n' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-400">MISSION CLOCK: 14:22:08</span>\n` +
+    '</div>\n' +
+    '<!-- Lifecycle Progress Bar -->\n' +
+    '<div class="flex items-center space-x-0 relative">\n' +
+    '<!-- Detective (Completed) -->\n' +
+    '<div class="flex flex-col items-center">\n' +
+    '<div class="w-4 h-4 rounded-full bg-primary-container flex items-center justify-center">\n' +
+    '<span class="material-symbols-outlined text-[10px] text-on-primary font-bold">check</span>\n' +
+    '</div>\n' +
+    `<span class="absolute -bottom-6 font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-600">DETECT</span>\n` +
+    '</div>\n' +
+    '<div class="w-16 h-[2px] bg-primary-container"></div>\n' +
+    '<!-- Understand (Active) -->\n' +
+    '<div class="flex flex-col items-center">\n' +
+    '<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.6)] border-2 border-primary-fixed">\n' +
+    '<div class="w-2 h-2 rounded-full bg-on-primary"></div>\n' +
+    '</div>\n' +
+    `<span class="absolute -bottom-6 font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-cyan-400 pb-1 border-b-2 border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)]">UNDERSTAND</span>\n` +
+    '</div>\n' +
+    '<div class="w-16 h-[2px] border-t-2 border-dashed border-outline-variant"></div>\n' +
+    '<!-- Decide -->\n' +
+    '<div class="flex flex-col items-center">\n' +
+    '<div class="w-3 h-3 rounded-full border-2 border-outline-variant bg-transparent"></div>\n' +
+    `<span class="absolute -bottom-6 font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-600">DECIDE</span>\n` +
+    '</div>\n' +
+    '<div class="w-16 h-[2px] border-t-2 border-dashed border-outline-variant"></div>\n' +
+    '<!-- Act -->\n' +
+    '<div class="flex flex-col items-center">\n' +
+    '<div class="w-3 h-3 rounded-full border-2 border-outline-variant bg-transparent"></div>\n' +
+    `<span class="absolute -bottom-6 font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-600">ACT</span>\n` +
+    '</div>\n' +
+    '<div class="w-16 h-[2px] border-t-2 border-dashed border-outline-variant"></div>\n' +
+    '<!-- Learn -->\n' +
+    '<div class="flex flex-col items-center">\n' +
+    '<div class="w-3 h-3 rounded-full border-2 border-outline-variant bg-transparent"></div>\n' +
+    `<span class="absolute -bottom-6 font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-600">LEARN</span>\n` +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="flex items-center">\n' +
+    '<div class="px-3 py-1 border border-error/40 bg-error-container/20 text-error text-[10px] font-black tracking-widest uppercase">\n' +
+    '                CROWD DISTURBANCE\n' +
+    '            </div>\n' +
+    '</div>\n' +
+    '</header>\n' +
+    '<main class="pt-16 h-screen flex flex-col">\n' +
+    '<!-- Headline Section -->\n' +
+    '<section class="w-full bg-[#181c22] px-8 py-10 border-b border-white/5">\n' +
+    '<h1 class="text-6xl font-black text-white tracking-tighter leading-none">02 UNDERSTAND</h1>\n' +
+    `<p class="mt-2 text-slate-400 font-['Inter'] uppercase tracking-[0.2em] text-sm">Correlate, verify, and contextualize situational data</p>\n` +
+    '</section>\n' +
+    '<!-- Main Workspace -->\n' +
+    '<div class="flex-1 flex overflow-hidden">\n' +
+    '<!-- Left Column: GIS Map (70%) -->\n' +
+    '<div class="w-[70%] relative bg-[#0a1020] overflow-hidden map-grid">\n' +
+    '<!-- Map UI Elements (Simulated) -->\n' +
+    '<div class="absolute inset-0 scanline opacity-30 pointer-events-none"></div>\n' +
+    '<!-- Base Map Image (Atmospheric Data) -->\n' +
+    '<div class="absolute inset-0 opacity-40 mix-blend-overlay grayscale">\n' +
+    '<img alt="Tactical GIS map interface with dark navy background and minimalist vector road networks" class="w-full h-full object-cover" data-location="Mexico City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsWlQMjBJ-Xy72dfxNeoG6LB80bQ1OsiC44hlere8hc6bKnbpZeNtTD69yohtPeZ4-cNHDyl8BXGvZq0Yczxjbm8aDVjC8lo31z1g8EWd0mOTlD036HhKEh4rJuLRtb1fOyxI8KmoJ9MJxyIUpQGCKFRsenNZnX0SDbStZK8EdZOryFRncQ8MWxBYLbwXQer-vIwIqqbN7Sm3ZFah9cXqCOz1p8wNhZP6Btvl5F6MLT8-MRNJSSieNpYMGh3_d4MMIvqnjQ8hgFLE"/>\n' +
+    '</div>\n' +
+    '<!-- Incident Pin -->\n' +
+    '<div class="absolute top-[45%] left-[40%] flex flex-col items-center -translate-x-1/2 -translate-y-1/2">\n' +
+    '<div class="w-48 h-48 rounded-full border-2 border-error/30 bg-error/5 absolute -z-10 animate-pulse"></div>\n' +
+    '<div class="w-12 h-12 bg-error rounded-none flex items-center justify-center pulse-red">\n' +
+    '<span class="material-symbols-outlined text-on-error font-bold" data-icon="warning">warning</span>\n' +
+    '</div>\n' +
+    '<div class="mt-2 bg-error-container px-2 py-1 text-[10px] font-mono font-bold text-on-error-container border border-error">\n' +
+    '                        INC-2026-0847\n' +
+    '                    </div>\n' +
+    '</div>\n' +
+    '<!-- Camera Cones -->\n' +
+    '<div class="absolute top-[30%] left-[25%] -rotate-45">\n' +
+    '<div class="w-32 h-32 bg-cyan-500/10 clip-path-cone" style="clip-path: polygon(0 0, 100% 40%, 100% 60%);"></div>\n' +
+    '<div class="p-1 bg-surface-container border border-cyan-500/50">\n' +
+    '<span class="material-symbols-outlined text-cyan-400 text-sm" data-icon="videocam">videocam</span>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="absolute top-[60%] left-[65%] rotate-150">\n' +
+    '<div class="w-40 h-40 bg-c'... 9180 more characters
+}

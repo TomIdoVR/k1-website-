@@ -244,6 +244,16 @@ export const metadata = {
     description: "Situational awareness software aggregates cameras, sensors, dispatch, and GIS into a unified operational map. Learn how command centers use it to coordinate response faster.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
   },
+  whatIsACommandCenter: {
+    title: "What Is a Command Center? C2–C5 Guide for Public Safety | KabatOne",
+    description: "A command center (C2/C5) is a centralized facility that coordinates video surveillance, dispatch, GIS, and field response. Learn how unified command centers work and how KabatOne powers them.",
+    canonical: "https://kabatone.com/resources/what-is-a-command-center/",
+  },
+  whatIsGunshotDetectionSoftware: {
+    title: "What Is Gunshot Detection Software? Complete Guide | KabatOne",
+    description: "Gunshot detection software uses acoustic sensors to detect gunfire, triangulate its location, and alert command centers in seconds. Learn how it works and how it integrates with video and dispatch.",
+    canonical: "https://kabatone.com/resources/what-is-gunshot-detection-software/",
+  },
   simulator: {
     title: "Incident Simulator — Unified vs Fragmented Response | KabatOne",
     description: "Interactive simulator comparing fragmented public safety systems with KabatOne's unified platform. Watch the same incident unfold two ways and see the difference in real time.",

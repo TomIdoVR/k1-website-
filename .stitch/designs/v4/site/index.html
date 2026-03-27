@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne — Incident Lifecycle</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0f1724; color: #e6eef8; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+.logo { margin-bottom: 32px; }
+.logo img { height: 36px; width: auto; }
+h1 { font-size: 42px; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+.tagline { color: #9dbdd0; font-size: 16px; margin-bottom: 48px; }
+.stages { display: flex; gap: 24px; margin-bottom: 48px; align-items: center; }
+.stage-dot { width: 12px; height: 12px; border-radius: 50%; background: #2563eb; }
+.stage-line { width: 40px; height: 2px; background: linear-gradient(90deg, #2563eb, #60a5fa); }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1000px; width: 100%; }
+.card { background: rgba(11, 18, 40, 0.85); border: 1px solid rgba(255, 255, 255, 0.07); padding: 20px; text-decoration: none; color: #e6eef8; transition: all 0.2s; border-left: 3px solid transparent; }
+.card:hover { background: rgba(255, 255, 255, 0.05); transform: translateY(-2px); }
+.card.detect { border-left-color: #06b6d4; }
+.card.understand { border-left-color: #2563eb; }
+.card.decide { border-left-color: #f97316; }
+.card.act { border-left-color: #ef4444; }
+.card.learn { border-left-color: #a855f7; }
+.card-stage { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.card.detect .card-stage { color: #06b6d4; }
+.card.understand .card-stage { color: #60a5fa; }
+.card.decide .card-stage { color: #f97316; }
+.card.act .card-stage { color: #ef4444; }
+.card.learn .card-stage { color: #a855f7; }
+.card-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.card-desc { font-size: 12px; color: #9dbdd0; line-height: 1.5; }
+.arrow { font-size: 11px; color: #60a5fa; margin-top: 12px; display: inline-block; }
+.start-btn { margin-top: 32px; padding: 14px 48px; background: #2563eb; color: #fff; font-size: 14px; font-weight: 700; border: none; cursor: pointer; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; }
+.start-btn:hover { background: #3b82f6; }
+</style>
+</head>
+<body>
+<div class="logo"><img src="https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png" alt="KabatOne"></div>
+<h1>Incident Lifecycle</h1>
+<p class="tagline">From detection to resolution — watch the platform in action</p>
+
+<div class="stages">
+  <div class="stage-dot"></div><div class="stage-line"></div>
+  <div class="stage-dot"></div><div class="stage-line"></div>
+  <div class="stage-dot"></div><div class="stage-line"></div>
+  <div class="stage-dot"></div><div class="stage-line"></div>
+  <div class="stage-dot"></div>
+</div>
+
+<div class="cards">
+  <a href="01-detect.html" class="card detect">
+    <div class="card-stage">01 Detect</div>
+    <div class="card-title">Surveillance Wall</div>
+    <div class="card-desc">AI detects crowd anomaly on Camera 3. Threat score: 0.91.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="02a-understand-video.html" class="card understand">
+    <div class="card-stage">02 Understand</div>
+    <div class="card-title">Video Analysis</div>
+    <div class="card-desc">AI-enhanced video exploration. 18 individuals detected, 3 flagged.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="02b-understand-gis.html" class="card understand">
+    <div class="card-stage">02 Understand</div>
+    <div class="card-title">GIS Triage</div>
+    <div class="card-desc">Incident mapped. Nearest units and camera coverage identified.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="03a-decide-events.html" class="card decide">
+    <div class="card-stage">03 Decide</div>
+    <div class="card-title">Events Dashboard</div>
+    <div class="card-desc">All active events prioritized. New incident flagged for handling.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="03b-decide-protocol.html" class="card decide">
+    <div class="card-stage">03 Decide</div>
+    <div class="card-title">Response Protocol</div>
+    <div class="card-desc">Structured response protocol with SLA countdown timer.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="04a-act-dispatch.html" class="card act">
+    <div class="card-stage">04 Act</div>
+    <div class="card-title">Dispatch</div>
+    <div class="card-desc">AI-ranked units. Optimized routing. Unit-14 dispatched, ETA 3 min.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="04b-act-responder.html" class="card act">
+    <div class="card-stage">04 Act</div>
+    <div class="card-title">Field Response</div>
+    <div class="card-desc">Mobile app, live tactical chat, operator monitoring dashboard.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+  <a href="05-learn-bi.html" class="card learn">
+    <div class="card-stage">05 Learn</div>
+    <div class="card-title">BI Analytics</div>
+    <div class="card-desc">Response time 8:38 within SLA. AI recommendations for improvement.</div>
+    <span class="arrow">View screen &rarr;</span>
+  </a>
+</div>
+
+<a href="01-detect.html" class="start-btn">Start the walkthrough</a>
+</body>
+</html>

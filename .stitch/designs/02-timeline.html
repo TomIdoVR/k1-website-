@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>The Showdown - Incident Simulation</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "on-tertiary-fixed": "#002113",
+' +
+    '                        "surface-tint": "#aec6ff",
+' +
+    '                        "outline-variant": "#414754",
+' +
+    '                        "on-primary-fixed": "#001a42",
+' +
+    '                        "outline": "#8b90a0",
+' +
+    '                        "on-tertiary-fixed-variant": "#005236",
+' +
+    '                        "on-primary-container": "#00275e",
+' +
+    '                        "on-secondary-container": "#00424e",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "tertiary-container": "#00a571",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "secondary": "#4cd7f6",
+' +
+    '                        "primary-container": "#4f8eff",
+' +
+    '                        "primary-fixed-dim": "#aec6ff",
+' +
+    '                        "primary-fixed": "#d8e2ff",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "on-primary": "#002e6b",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "tertiary-fixed-dim": "#2ae19e",
+' +
+    '                        "secondary-container": "#03b5d3",
+' +
+    '                        "on-primary-fixed-variant": "#004396",
+' +
+    '                        "on-surface-variant": "#c1c6d7",
+' +
+    '                        "primary": "#aec6ff",
+' +
+    '                        "on-tertiary-container": "#00311e",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "tertiary-fixed": "#55feb8",
+' +
+    '                        "on-secondary-fixed": "#001f26",
+' +
+    '                        "on-secondary": "#003640",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "on-secondary-fixed-variant": "#004e5c",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "secondary-fixed": "#acedff",
+' +
+    '                        "tertiary": "#2ae19e",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "inverse-primary": "#005ac4",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "secondary-fixed-dim": "#4cd7f6",
+' +
+    '                        "on-tertiary": "#003824",
+' +
+    '                        "brand-navy": "#050a14",
+' +
+    '                        "brand-red": "#ff5263"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '        }
+' +
+    '        .glass-panel {
+' +
+    '            background: rgba(47, 53, 64, 0.4);
+' +
+    '            backdrop-filter: blur(20px);
+' +
+    '            border: 1px solid rgba(174, 198, 255, 0.1);
+' +
+    '        }
+' +
+    '        .scanline {
+' +
+    '            background: linear-gradient(to bottom, transparent 50%, rgba(76, 215, 246, 0.05) 50%);
+' +
+    '            background-size: 100% 4px;
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-brand-navy text-on-surface font-body overflow-hidden">
+' +
+    '<!-- TopAppBar Execution -->
+' +
+    '<header class="flex justify-between items-center w-full px-4 h-12 fixed top-0 z-50 bg-[#0e131e] border-b border-[#414754]/15 shadow-[0_0_20px_rgba(174,198,255,0.08)]">
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<span class="text-sm font-black text-[#aec6ff] tracking-tighter">THE SHOWDOWN</span>
+' +
+    '<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+' +
+    `<span class="font-['Inter'] font-bold uppercase tracking-wider text-xs text-[#2ae19e] font-mono">4 OF 10: LOCATION MAPPING</span>
+` +
+    '</div>
+' +
+    '<div class="flex items-center gap-6">
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<button class="text-[#c1c6d7] hover:bg-[#2f3540] hover:text-white transition-colors p-1 active:scale-95 duration-100">
+' +
+    '<span class="material-symbols-outlined text-sm">pause</span>
+' +
+    '</button>
+' +
+    '<button class="text-[#c1c6d7] hover:bg-[#2f3540] hover:text-white transition-colors p-1 active:scale-95 duration-100">
+' +
+    '<span class="material-symbols-outlined text-sm">play_arrow</span>
+' +
+    '</button>
+' +
+    '<button class="text-[#c1c6d7] hover:bg-[#2f3540] hover:text-white transition-colors p-1 active:scale-95 duration-100">
+' +
+    '<span class="material-symbols-outlined text-sm">fast_forward</span>
+' +
+    '</button>
+' +
+    '</div>
+' +
+    '<span class="font-mono text-xs font-bold text-[#aec6ff]">00:38</span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="pt-12 pb-16 h-screen flex flex-row">
+' +
+    '<!-- Main Content Area (70%) -->
+' +
+    '<section class="w-[75%] relative p-8 flex flex-col items-center scanline">
+' +
+    '<!-- Active Module Badges -->
+' +
+    '<div class="absolute top-12 flex gap-3 z-10">
+' +
+    '<div class="px-3 py-1 bg-secondary/10 border border-secondary text-secondary text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(76,215,246,0.3)]">GIS ACTIVE</div>
+' +
+    '<div class="px-3 py-1 bg-brand-red/10 border border-brand-red text-brand-red text-[10px] font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(255,82,99,0.3)]">DISPATCH READY</div>
+' +
+    '</div>
+' +
+    '<!-- Horizontal Timeline -->
+' +
+    '<div class="w-full mt-20 relative flex items-center justify-between px-12">
+' +
+    '<!-- Data Flow Line Background -->
+' +
+    '<div class="absolute top-1/2 left-12 right-12 h-[1px] bg-outline-variant/20 -translate-y-1/2"></div>
+' +
+    '<!-- Completed Line -->
+' +
+    '<div class="absolute top-1/2 left-12 w-[30%] h-[2px] bg-secondary -translate-y-1/2 shadow-[0_0_10px_rgba(76,215,246,0.5)]"></div>
+' +
+    '<!-- Timeline Nodes -->
+' +
+    '<div class="relative flex flex-col items-center group">
+' +
+    '<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary z-10 shadow-[0_0_10px_rgba(76,215,246,0.5)]">
+' +
+    '<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+' +
+    '</div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-secondary whitespace-nowrap">Detection</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary z-10 shadow-[0_0_10px_rgba(76,215,246,0.5)]">
+' +
+    '<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+' +
+    '</div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-secondary whitespace-nowrap">Verification</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary z-10 shadow-[0_0_10px_rgba(76,215,246,0.5)]">
+' +
+    '<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+' +
+    '</div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-secondary whitespace-nowrap">Location</span>
+' +
+    '</div>
+' +
+    '<!-- Active Node -->
+' +
+    '<div class="relative flex flex-col items-center">
+' +
+    '<div class="w-10 h-10 rounded-full border-2 border-secondary bg-surface-dim flex items-center justify-center z-20 animate-pulse shadow-[0_0_20px_rgba(76,215,246,0.6)]">
+' +
+    '<div class="w-4 h-4 bg-secondary rounded-full"></div>
+' +
+    '</div>
+' +
+    '<span class="absolute top-12 text-[10px] font-black uppercase tracking-widest text-secondary whitespace-nowrap">Location Mapping</span>
+' +
+    '</div>
+' +
+    '<!-- Upcoming Nodes -->
+' +
+    '<div class="relative flex flex-col items-center opacity-40">
+' +
+    '<div class="w-6 h-6 rounded-full border border-outline-variant bg-surface-container z-10"></div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-on-surface-variant whitespace-nowrap">Context</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center opacity-40">
+' +
+    '<div class="w-6 h-6 rounded-full border border-outline-variant bg-surface-container z-10"></div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-on-surface-variant whitespace-nowrap">Record</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center opacity-40">
+' +
+    '<div class="w-6 h-6 rounded-full border border-outline-variant bg-surface-container z-10"></div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-on-surface-variant whitespace-nowrap">Dispatch</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center opacity-40">
+' +
+    '<div class="w-6 h-6 rounded-full border border-outline-variant bg-surface-container z-10"></div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-on-surface-variant whitespace-nowrap">Escalation</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-center opacity-40">
+' +
+    '<div class="w-6 h-6 rounded-full border border-outline-variant bg-surface-container z-10"></div>
+' +
+    '<span class="absolute top-8 text-[9px] font-bold uppercase tracking-tighter text-on-surface-variant whitespace-nowrap">Citizen Input</span>
+' +
+    '</div>
+' +
+    '<div class="relative flex flex-col items-cente

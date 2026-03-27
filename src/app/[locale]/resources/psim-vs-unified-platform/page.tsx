@@ -383,6 +383,37 @@ export default async function PsimVsUnifiedPlatformPage({
                 ))}
               </div>
             </div>
+
+            {/* ── Internal links ── */}
+            <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Integraciones:' : 'Integrations:'}
+                </span>
+                {[
+                  { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                  { href: '/integrations/access-control', label: es ? 'Control de Acceso' : 'Access Control' },
+                  { href: '/integrations/lpr', label: 'LPR' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Recursos:' : 'Resources:'}
+                </span>
+                {[
+                  { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas de Seguridad Pública' : 'What Is a Public Safety Platform' },
+                  { href: '/resources/smart-city-platform-guide', label: es ? 'Guía de Ciudad Inteligente' : 'Smart City Platform Guide' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

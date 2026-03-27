@@ -1,53 +1,58 @@
-/* ── Simulator Types ── */
+/* ── Simulator Types (v2 — Lifecycle Walkthrough) ── */
 
 export type ModuleKey = 'video' | 'dispatch' | 'events' | 'gis' | 'integrations' | 'responder' | 'citizen' | 'ai' | 'bi'
 
-export type PanelId = 'vms' | 'gis' | 'cad' | 'radio'
+export type LifecycleStage = 'detect' | 'understand' | 'decide' | 'act' | 'learn'
 
-export type Screen = 'entry' | 'playback' | 'scorecard' | 'deep-dive'
+export type LifecycleScreenId =
+  | '01-detect'
+  | '02a-understand-video'
+  | '02b-understand-gis'
+  | '03a-decide-events'
+  | '03b-decide-protocol'
+  | '04a-act-dispatch'
+  | '04b-act-responder'
+  | '05-learn-bi'
+
+export type Screen = 'entry' | 'lifecycle' | 'summary'
 
 export type PlaybackStatus = 'idle' | 'playing' | 'paused' | 'completed'
-
-export type SpeedMultiplier = 1 | 2
 
 export interface I18nString {
   en: string
   es: string
 }
 
-export interface FailureEvent {
-  type: 'typo' | 'missed_alert' | 'no_channel'
-  message: I18nString
-  timePenalty: number // seconds added to fragmented display clock
+export interface SideNavItem {
+  icon: string
+  label: I18nString
+  active: boolean
 }
 
-export interface ScenarioStep {
-  id: number
-  name: I18nString
-  fragmentedDuration: number // seconds at 1x
-  unifiedDuration: number    // seconds at 1x
+export interface LifecycleScreenDef {
+  id: LifecycleScreenId
+  stage: LifecycleStage
+  stageNumber: string
+  stageLabel: I18nString
+  title: I18nString
+  subtitle: I18nString
   modules: ModuleKey[]
-  fragmented: {
-    description: I18nString
-    activePanel: PanelId
-    failure?: FailureEvent
-  }
-  unified: {
-    description: I18nString
-    dataFlows: Array<{ from: ModuleKey; to: ModuleKey }>
-  }
-}
-
-export interface TimeLostCategory {
-  category: I18nString
-  percentage: number
+  durationSec: number
+  sideNav: SideNavItem[]
 }
 
 export interface ModuleContribution {
   moduleId: ModuleKey
-  timeSaved: I18nString
+  label: I18nString
   description: I18nString
-  stepsInvolved: number[]
+}
+
+export interface ScenarioSummary {
+  totalResponseTime: string
+  unitsDeployed: number
+  slaCompliance: string
+  aiRecommendations: I18nString[]
+  moduleContributions: ModuleContribution[]
 }
 
 export interface Scenario {
@@ -57,41 +62,32 @@ export interface Scenario {
   icon: string
   duration: I18nString
   available: boolean
-  steps: ScenarioStep[]
-  totalFragmentedTime: number  // display seconds (including penalties)
-  totalUnifiedTime: number     // display seconds
-  timeLostBreakdown: TimeLostCategory[]
-  moduleContributions: ModuleContribution[]
+  screens: LifecycleScreenDef[]
+  summary: ScenarioSummary
 }
 
-export interface PlaybackState {
+export interface LifecycleState {
   status: PlaybackStatus
-  currentStep: number          // 0-indexed
-  speed: SpeedMultiplier
-  fragmentedElapsed: number    // ms elapsed on fragmented side
-  unifiedElapsed: number       // ms elapsed on unified side
-  errorCount: number
-  missedCount: number
-  activeModules: ModuleKey[]   // currently glowing on unified side
-  stepPhase: 'running' | 'transitioning'
+  currentScreenIndex: number
+  autoAdvance: boolean
+  autoAdvanceTimer: number
 }
 
 export interface SimulatorState {
   screen: Screen
   selectedScenario: string | null
-  playback: PlaybackState
+  lifecycle: LifecycleState
 }
 
 export type SimulatorAction =
   | { type: 'SELECT_SCENARIO'; scenarioId: string }
-  | { type: 'START_PLAYBACK' }
+  | { type: 'START_LIFECYCLE' }
+  | { type: 'NEXT_SCREEN'; scenario: Scenario }
+  | { type: 'PREV_SCREEN' }
+  | { type: 'GO_TO_SCREEN'; index: number }
+  | { type: 'TOGGLE_AUTO_ADVANCE' }
   | { type: 'PAUSE' }
   | { type: 'RESUME' }
-  | { type: 'REWIND' }
-  | { type: 'SET_SPEED'; speed: SpeedMultiplier }
-  | { type: 'TICK'; deltaMs: number; scenario: Scenario }
-  | { type: 'ADVANCE_STEP'; scenario: Scenario }
-  | { type: 'COMPLETE_PLAYBACK' }
-  | { type: 'GO_TO_SCORECARD' }
-  | { type: 'GO_TO_DEEP_DIVE' }
+  | { type: 'AUTO_ADVANCE_TICK'; deltaMs: number; scenario: Scenario }
+  | { type: 'GO_TO_SUMMARY' }
   | { type: 'GO_TO_ENTRY' }

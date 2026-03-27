@@ -1,6 +1,8 @@
-/* ── Simulator Constants ── */
+/* ── Simulator Constants (v2 — Lifecycle Walkthrough) ── */
 
-import type { ModuleKey, PanelId, I18nString } from './types'
+import type { ModuleKey, LifecycleStage, I18nString } from './types'
+
+/* ── Module Colors ── */
 
 export const MODULE_COLORS: Record<ModuleKey, string> = {
   video: '#06b6d4',
@@ -38,16 +40,34 @@ export const MODULE_ROLES: Record<ModuleKey, I18nString> = {
   bi:           { en: 'Business Intelligence',       es: 'Inteligencia de Negocios' },
 }
 
-export const PANEL_NAMES: Record<PanelId, I18nString> = {
-  vms:   { en: 'VMS',   es: 'VMS' },
-  gis:   { en: 'GIS',   es: 'GIS' },
-  cad:   { en: 'CAD',   es: 'CAD' },
-  radio: { en: 'Radio', es: 'Radio' },
+/* ── Lifecycle Stage Colors ── */
+
+export const STAGE_COLORS: Record<LifecycleStage, string> = {
+  detect:     '#06b6d4',  // Cyan
+  understand: '#2563eb',  // Blue
+  decide:     '#f97316',  // Orange
+  act:        '#ef4444',  // Red
+  learn:      '#a855f7',  // Purple
 }
 
-export const STEP_TRANSITION_MS = 500
-export const TOOLTIP_DURATION_MS = 2000
+export const LIFECYCLE_STAGES: LifecycleStage[] = [
+  'detect', 'understand', 'decide', 'act', 'learn',
+]
 
-// Display times for the clocks (the "scenario time" shown to viewers)
-export const FRAGMENTED_DISPLAY_TOTAL = 154 // 2:34 in seconds
-export const UNIFIED_DISPLAY_TOTAL = 52      // 0:52 in seconds
+/* ── Tactical UI Colors ── */
+
+export const TACTICAL = {
+  bg:        '#050a14',
+  surface:   '#0a1224',
+  container: '#0e1830',
+  header:    '#06090f',
+  border:    '#1e293b',
+  text:      '#e2e8f0',
+  textMuted: '#94a3b8',
+  textDim:   '#64748b',
+}
+
+/* ── Timing ── */
+
+export const AUTO_ADVANCE_DEFAULT_SEC = 8
+export const SCREEN_TRANSITION_MS = 600

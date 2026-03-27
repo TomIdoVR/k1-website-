@@ -2,13 +2,12 @@
 
 import { useReducer, useMemo, createContext, useContext, Component, type ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { simulatorReducer, initialState, usePlaybackTick } from '@/lib/simulator/engine'
+import { simulatorReducer, initialState, useAutoAdvance } from '@/lib/simulator/engine'
 import { getScenario } from '@/lib/simulator/scenarios'
 import type { SimulatorState, SimulatorAction, Scenario } from '@/lib/simulator/types'
 import EntryScreen from './components/EntryScreen'
-import PlaybackScreen from './components/PlaybackScreen'
-import ScorecardScreen from './components/ScorecardScreen'
-import ModuleDeepDive from './components/ModuleDeepDive'
+import LifecycleScreen from './components/LifecycleScreen'
+import SummaryScreen from './components/SummaryScreen'
 
 /* ── Error Boundary ── */
 
@@ -56,11 +55,10 @@ export default function SimulatorApp({ es }: { es: boolean }) {
     [state.selectedScenario],
   )
 
-  // Drive the playback tick loop
-  usePlaybackTick(
-    state.playback.status,
-    state.playback.stepPhase,
-    state.playback.speed,
+  // Drive auto-advance when playing
+  useAutoAdvance(
+    state.lifecycle.status,
+    state.lifecycle.autoAdvance,
     scenario,
     dispatch,
   )
@@ -73,9 +71,8 @@ export default function SimulatorApp({ es }: { es: boolean }) {
   return (
     <SimulatorContext.Provider value={contextValue}>
       <div style={{
-        minHeight: 'calc(100vh - 70px)',
-        paddingTop: 70,
-        background: 'var(--bg)',
+        minHeight: '100vh',
+        background: '#050a14',
         display: 'flex',
         flexDirection: 'column',
       }}>
@@ -93,40 +90,28 @@ export default function SimulatorApp({ es }: { es: boolean }) {
                 <EntryScreen />
               </motion.div>
             )}
-            {state.screen === 'playback' && (
+            {state.screen === 'lifecycle' && (
               <motion.div
-                key="playback"
+                key="lifecycle"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
+                style={{ position: 'fixed', inset: 0, zIndex: 200 }}
               >
-                <PlaybackScreen />
+                <LifecycleScreen />
               </motion.div>
             )}
-            {state.screen === 'scorecard' && (
+            {state.screen === 'summary' && (
               <motion.div
-                key="scorecard"
+                key="summary"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
+                style={{ position: 'fixed', inset: 0, zIndex: 200 }}
               >
-                <ScorecardScreen />
-              </motion.div>
-            )}
-            {state.screen === 'deep-dive' && (
-              <motion.div
-                key="deep-dive"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
-              >
-                <ModuleDeepDive />
+                <SummaryScreen />
               </motion.div>
             )}
           </AnimatePresence>

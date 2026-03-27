@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne Incident Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060d1a;
+    --surface: #0c1629;
+    --card: #111827;
+    --card-hover: #162540;
+    --accent: #1a2640;
+    --primary: #2b7fff;
+    --cyan: #06b6d4;
+    --border: rgba(43, 127, 255, 0.10);
+    --text: #e8edf5;
+    --text-2: #b4bcd0;
+    --text-3: #7b8db0;
+    --red: #ff5263;
+    --green: #00d492;
+    --amber: #f59e0b;
+    --font: 'Inter', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); }
+
+  /* ── Subtle grid ── */
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(43,127,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,127,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .page {
+    max-width: 1080px; margin: 0 auto; padding: 40px 32px 80px;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════ HEADER ══════════ */
+  .header {
+    text-align: center; margin-bottom: 48px;
+  }
+  .logo {
+    font-size: 12px; font-weight: 800; letter-spacing: 2px;
+    color: var(--text-3); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .logo span { color: var(--cyan); }
+  h1 {
+    font-size: 40px; font-weight: 800; letter-spacing: -0.5px;
+    line-height: 1.1; margin-bottom: 10px;
+  }
+  h1 em { font-style: normal; color: var(--cyan); }
+  .tagline {
+    font-size: 16px; color: var(--text-3); font-weight: 400;
+  }
+
+  /* ══════════ SCENARIO TABS ══════════ */
+  .scenarios {
+    display: flex; justify-content: center; gap: 8px;
+    margin-bottom: 48px;
+  }
+  .sc-tab {
+    font-family: var(--font); font-size: 13px; font-weight: 600;
+    padding: 10px 22px; border-radius: 10px;
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text-3); cursor: pointer; transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .sc-tab:hover { background: var(--card-hover); color: var(--text-2); }
+  .sc-tab.active {
+    background: var(--primary); color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 16px rgba(43,127,255,0.3);
+  }
+  .sc-tab.disabled { opacity: 0.35; cursor: not-allowed; }
+  .sc-tab .soon {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.5px;
+    color: var(--text-3); margin-left: 6px; text-transform: uppercase;
+  }
+
+  /* ══════════ MODULE BAR ══════════ */
+  .module-bar {
+    display: flex; justify-content: center; gap: 6px;
+    margin-bottom: 40px; flex-wrap: wrap;
+  }
+  .m-chip {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+    padding: 5px 12px; border-radius: 6px;
+    background: var(--accent); color: var(--text-3);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .m-chip.on {
+    border-color: currentColor;
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* ══════════ FLOW TIMELINE ══════════ */
+  .flow {
+    position: relative;
+    padding-left: 56px;
+  }
+  /* Vertical line */
+  .flow::before {
+    content: ''; position: absolute;
+    left: 23px; top: 20px; bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--cyan), var(--green));
+    border-radius: 1px;
+  }
+
+  .step {
+    position: relative;
+    margin-bottom: 0;
+    padding: 20px 0;
+  }
+  .step:last-child { margin-bottom: 0; }
+
+  /* Step number circle */
+  .step-dot {
+    position: absolute;
+    left: -56px; top: 22px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 14px; font-weight: 500;
+    color: var(--primary);
+    z-index: 2;
+  }
+  .step.failure .step-dot {
+    border-color: var(--red);
+    color: var(--red);
+    box-shadow: 0 0 12px rgba(255,82,99,0.2);
+  }
+
+  /* Step card */
+  .step-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    transition: all 0.2s;
+  }
+  .step-card:hover {
+    background: var(--card-hover);
+    border-color: rgba(43,127,255,0.2);
+  }
+
+  .step-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .step-title {
+    font-size: 16px; font-weight: 700; color: var(--text);
+  }
+  .step-modules {
+    display: flex; gap: 4px;
+  }
+  .step-mod {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.3px;
+    padding: 3px 8px; border-radius: 4px;
+    border: 1px solid;
+  }
+
+  /* Comparison row */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .side {
+    padding: 14px 16px; border-radius: 10px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .side-frag {
+    background: rgba(255,82,99,0.04);
+    border: 1px solid rgba(255,82,99,0.12);
+    color: var(--text-2);
+  }
+  .side-uni {
+    background: rgba(0,212,146,0.04);
+    border: 1px solid rgba(0,212,146,0.12);
+    color: var(--text-2);
+  }
+  .side-label {
+    font-size: 9px; font-weight: 800; letter-spacing: 1.2px;
+    text-transform: uppercase; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .side-frag .side-label { color: var(--red); }
+  .side-uni .side-label { color: var(--green); }
+  .side-label .time {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    opacity: 0.7;
+  }
+
+  /* Failure badge */
+  .failure-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+    color: var(--red); margin-top: 8px;
+    background: rgba(255,82,99,0.08);
+    padding: 4px 10px; border-radius: 5px;
+  }
+
+  /* ══════════ RESULT SUMMARY ══════════ */
+  .result-section {
+    margin-top: 56px;
+    text-align: center;
+  }
+  .result-section h2 {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-3);
+    margin-bottom: 24px;
+  }
+
+  .result-boxes {
+    display: flex; justify-content: center; gap: 24px;
+    margin-bottom: 32px;
+  }
+  .rbox {
+    padding: 28px 40px; border-radius: 14px;
+    background: var(--card); border: 1px solid var(--border);
+    text-align: center; min-width: 180px;
+  }
+  .rbox::before {
+    content: ''; display: block;
+    width: 40px; height: 3px; border-radius: 2px;
+    margin: 0 auto 14px;
+  }
+  .rbox.frag::before { background: var(--red); }
+  .rbox.uni::before { background: var(--green); }
+  .rbox-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .rbox.frag .rbox-label { color: var(--red); }
+  .rbox.uni .rbox-label { color: var(--green); }
+  .rbox-time {
+    font-family: var(--mono); font-size: 40px; font-weight: 500;
+    color: var(--text); line-height: 1;
+  }
+
+  .result-stats {
+    display: flex; justify-content: center; gap: 10px;
+    flex-wrap: wrap; margin-bottom: 32px;
+  }
+  .rstat {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 20px;
+    text-align: center; min-width: 120px;
+  }
+  .rstat-val {
+    font-family: var(--mono); font-size: 20px; font-weight: 500;
+    color: var(--green); margin-bottom: 2px;
+  }
+  .rstat-label {
+    font-size: 10px; color: var(--text-3); letter-spacing: 0.3px;
+  }
+
+  .closing-line {
+    font-size: 18px; font-weight: 600; color: var(--text-2);
+    margin-bottom: 36px; line-height: 1.5;
+  }
+  .closing-line em { font-style: normal; color: var(--cyan); }
+
+  /* CTA */
+  .cta-row { display: flex; justify-content: center; gap: 10px; }
+  .btn {
+    font-family: var(--font); font-size: 14px; font-weight: 700;
+    padding: 14px 28px; border-radius: 12px; cursor: pointer;
+    transition: all 0.2s; border: none;
+  }
+  .btn-primary {
+    background: var(--primary); color: #fff;
+    box-shadow: 0 4px 16px rgba(43,127,255,0.3);
+  }
+  .btn-primary:hover { background: #3d8cff; transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent; color: var(--text-3);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--card); color: var(--text-2); }
+
+  /* ── Module color map ── */
+  .c-video { color: #06b6d4; border-color: #06b6d4; background: rgba(6,182,212,0.08); }
+  .c-dispatch { color: #ef4444; border-color: #ef4444; background: rgba(239,68,68,0.08); }
+  .c-events { color: #f97316; border-color: #f97316; background: rgba(249,115,22,0.08); }
+  .c-gis { color: #3b82f6; border-color: #3b82f6; background: rgba(59,130,246,0.08); }
+  .c-integ { color: #22c55e; border-color: #22c55e; background: rgba(34,197,94,0.08); }
+  .c-resp { color: #eab308; border-color: #eab308; background: rgba(234,179,8,0.08); }
+  .c-citizen { color: #60a5fa; border-color: #60a5fa; background: rgba(96,165,250,0.08); }
+  .c-ai { color: #06b6d4; border-color: #06b6d4; background: rgba(6,182,212,0.08); }
+  .c-bi { color: #a855f7; border-color: #a855f7; background: rgba(168,85,247,0.08); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════ HEADER ══════════ -->
+  <div class="header">
+    <div class="logo"><span>Kabat</span>One</div>
+    <h1>The Incident <em>Simulator</em></h1>
+    <p class="tagline">Same operator. Same incident. Completely different outcome.</p>
+  </div>
+
+  <!-- ══════════ SCENARIO SELECTOR ══════════ -->
+  <div class="scenarios">
+    <button class="sc-tab active">Crowd Disturbance</button>
+    <button class="sc-tab disabled">Active Shooter <span class="soon">Soon</span></button>
+    <button class="sc-tab disabled">Natural Disaster <span class="soon">Soon</span></button>
+    <button class="sc-tab disabled">Stadium Event <span class="soon">Soon</span></button>
+  </div>
+
+  <!-- ══════════ MODULE BAR ══════════ -->
+  <div class="module-bar">
+    <span class="m-chip c-video on">Video</span>
+    <span class="m-chip c-dispatch on">Dispatch</span>
+    <span class="m-chip c-events on">Events</span>
+    <span class="m-chip c-gis on">GIS</span>
+    <span class="m-chip c-integ on">Integrations</span>
+    <span class="m-chip c-resp on">Responder</span>
+    <span class="m-chip c-citizen on">Citizen</span>
+    <span class="m-chip c-ai on">AI Engine</span>
+    <span class="m-chip c-bi on">BI</span>
+  </div>
+
+  <!-- ══════════ FLOW TIMELINE ══════════ -->
+  <div class="flow">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-dot">1</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Detection</div>
+          <div class="step-modules">
+            <span class="step-mod c-ai">AI Engine</span>
+            <span class="step-mod c-video">Video</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~5s</span></div>
+            Operator manually scans multiple camera feeds. Must notice the alert among dozens of streams.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~2s</span></div>
+            AI auto-detects crowd anomaly (score: 0.91). Camera auto-focuses. Alert surfaced instantly.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-dot">2</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Verification</div>
+          <div class="step-modules">
+            <span class="step-mod c-video">Video</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~4s</span></div>
+            Switch to VMS (1.2s delay), search camera grid, manually zoom and verify.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1.5s</span></div>
+            Video already showing. AI bounding boxes highlight subjects. One click to confirm.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-dot">3</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Location</div>
+          <div class="step-modules">
+            <span class="step-mod c-gis">GIS</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~6s</span></div>
+            Switch to GIS (1.2s delay). Manually type address. Search. Wait for pin.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1s</span></div>
+            GIS auto-plots from camera GPS coordinates. Nearby units and cameras visible immediately.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <div class="step-dot">4</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Context &amp; Resources</div>
+          <div class="step-modules">
+            <span class="step-mod c-gis">GIS</span>
+            <span class="step-mod c-dispatch">Dispatch</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~5s</span></div>
+            Switch to CAD, look up available units, cross-reference location with GIS manually.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1s</span></div>
+            Map already shows 3 nearest units ranked by distance and status. No switching needed.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step failure">
+      <div class="step-dot">5</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Create Record</div>
+          <div class="step-modules">
+            <span class="step-mod c-events">Events</span>
+            <span class="step-mod c-dispatch">Dispatch</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~6s</span></div>
+            Open CAD, manually type incident details — location, type, priority. Slow, error-prone.
+            <div class="failure-badge">&#9888; Typo in address — unit dispatched to wrong sector. +30s</div>
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1s</span></div>
+            Event auto-created with all fields pre-populated from detection data. Zero manual entry.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step">
+      <div class="step-dot">6</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Dispatch Unit</div>
+          <div class="step-modules">
+            <span class="step-mod c-dispatch">Dispatch</span>
+            <span class="step-mod c-resp">Responder</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~5s</span></div>
+            Select unit in CAD, confirm dispatch, switch to radio panel to initiate contact.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~2s</span></div>
+            Select pre-ranked unit (1 click). Dispatch confirmed. Responder app notified automatically.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step failure">
+      <div class="step-dot">7</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Escalation — 2nd Camera</div>
+          <div class="step-modules">
+            <span class="step-mod c-ai">AI Engine</span>
+            <span class="step-mod c-video">Video</span>
+            <span class="step-mod c-gis">GIS</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~8s</span></div>
+            Alert appears in VMS while operator is in CAD. Completely missed.
+            <div class="failure-badge">&#9888; Alert missed — operator in different system. +25s</div>
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~2s</span></div>
+            AI auto-correlates 2nd detection. Links to existing incident. GIS updates threat zone.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="step failure">
+      <div class="step-dot">8</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Citizen Report</div>
+          <div class="step-modules">
+            <span class="step-mod c-citizen">Citizen</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">—</span></div>
+            No citizen channel exists. The SOS is never received. Context lost forever.
+            <div class="failure-badge">&#9888; Citizen tried to report. No intake channel.</div>
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~2s</span></div>
+            SOS appears on map, attached to incident, providing additional context for responders.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 9 -->
+    <div class="step">
+      <div class="step-dot">9</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Field Response</div>
+          <div class="step-modules">
+            <span class="step-mod c-resp">Responder</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~5s</span></div>
+            Unit arrives. Requests radio briefing. Context is scattered across 4 separate systems.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1.5s</span></div>
+            Full incident brief on mobile app: video, map, event history, related alerts. No radio needed.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 10 -->
+    <div class="step">
+      <div class="step-dot">10</div>
+      <div class="step-card">
+        <div class="step-top">
+          <div class="step-title">Resolution</div>
+          <div class="step-modules">
+            <span class="step-mod c-events">Events</span>
+            <span class="step-mod c-bi">BI</span>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side side-frag">
+            <div class="side-label">Fragmented <span class="time">~5s</span></div>
+            Manual close in CAD. No unified timeline. Export reports from 4 different systems.
+          </div>
+          <div class="side side-uni">
+            <div class="side-label">Unified <span class="time">~1.5s</span></div>
+            One-click resolution. Automatic audit trail. BI dashboard updates in real time.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /flow -->
+
+  <!-- ══════════ RESULT ══════════ -->
+  <div class="result-section">
+    <h2>The Evidence</h2>
+
+    <div class="result-boxes">
+      <div class="rbox frag">
+        <div class="rbox-label">Fragmented</div>
+        <div class="rbox-time">2:34</div>
+      </div>
+      <div class="rbox uni">
+        <div class="rbox-label">Unified</div>
+        <div class="rbox-time">0:52</div>
+      </div>
+    </div>
+
+    <div class="result-stats">
+      <div class="rstat"><div class="rstat-val">10 → 3</div><div class="rstat-label">Manual steps → Decisions</div></div>
+      <div class="rstat"><div class="rstat-val">4 → 1</div><div class="rstat-label">Screens → Canvas</div></div>
+      <div class="rstat"><div class="rstat-val">3 → 0</div><div class="rstat-label">Errors</div></div>
+      <div class="rstat"><div class="rstat-val">1 → 0</div><div class="rstat-label">Missed alerts</div></div>
+      <div class="rstat"><div class="rstat-val">0 → 1</div><div class="rstat-label">Citizen reports</div></div>
+    </div>
+
+    <p class="closing-line">Same incident. Same operator.<br><em>The architecture made the difference.</em></p>
+
+    <div class="cta-row">
+      <button class="btn btn-primary">Book Architecture Review</button>
+      <button class="btn btn-ghost">Download PDF</button>
+      <button class="btn btn-ghost">Share</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

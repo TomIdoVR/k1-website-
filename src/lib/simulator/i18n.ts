@@ -1,4 +1,4 @@
-/* ── Simulator i18n Strings ── */
+/* ── Simulator i18n Strings (v2 — Lifecycle Walkthrough) ── */
 
 import type { I18nString } from './types'
 
@@ -10,63 +10,55 @@ export const strings = {
   // Entry screen
   title: { en: 'Incident Simulator', es: 'Simulador de Incidentes' },
   subtitle: {
-    en: 'Same operator. Same incident. Completely different outcome.',
-    es: 'Mismo operador. Mismo incidente. Resultado completamente diferente.',
+    en: 'Experience the full lifecycle of incident response — from detection to resolution.',
+    es: 'Experimenta el ciclo completo de respuesta a incidentes — desde la detección hasta la resolución.',
   },
   chooseScenario: { en: 'Choose a scenario', es: 'Elige un escenario' },
   runScenario: { en: 'Run Scenario', es: 'Ejecutar Escenario' },
-  durationHint: { en: '~2 min · Just watch', es: '~2 min · Solo observa' },
+  durationHint: { en: '~2 min · Interactive walkthrough', es: '~2 min · Recorrido interactivo' },
   comingSoon: { en: 'Coming Soon', es: 'Próximamente' },
 
-  // Playback
-  fragmented: { en: 'Fragmented', es: 'Fragmentado' },
-  fragmentedSub: { en: 'Legacy Systems', es: 'Sistemas Heredados' },
-  unified: { en: 'Unified — KabatOne', es: 'Unificado — KabatOne' },
-  unifiedSub: { en: 'Command Center', es: 'Centro de Comando' },
-  step: { en: 'Step', es: 'Paso' },
-  of: { en: 'of', es: 'de' },
+  // Lifecycle stages
+  stageDetect: { en: 'DETECT', es: 'DETECTAR' },
+  stageUnderstand: { en: 'UNDERSTAND', es: 'COMPRENDER' },
+  stageDecide: { en: 'DECIDE', es: 'DECIDIR' },
+  stageAct: { en: 'ACT', es: 'ACTUAR' },
+  stageLearn: { en: 'LEARN', es: 'APRENDER' },
+
+  // Navigation controls
+  prev: { en: 'Previous', es: 'Anterior' },
+  next: { en: 'Next', es: 'Siguiente' },
   pause: { en: 'Pause', es: 'Pausar' },
   play: { en: 'Play', es: 'Reproducir' },
-  rewind: { en: 'Restart', es: 'Reiniciar' },
-  speed: { en: 'Speed', es: 'Velocidad' },
-  errors: { en: 'Errors', es: 'Errores' },
-  missed: { en: 'Missed', es: 'Perdidos' },
+  autoAdvance: { en: 'Auto-advance', es: 'Avance automático' },
+  skipToSummary: { en: 'Skip to Summary', es: 'Ir al Resumen' },
+  screenOf: { en: 'of', es: 'de' },
 
-  // Scorecard
-  theEvidence: { en: 'The Evidence', es: 'La Evidencia' },
-  totalResponse: { en: 'Total Response', es: 'Respuesta Total' },
-  faster: { en: 'faster', es: 'más rápido' },
-  whereTimeLost: { en: 'Where Time Was Lost', es: 'Dónde Se Perdió el Tiempo' },
-  moduleContribution: { en: 'Module Contribution', es: 'Contribución de Módulos' },
-  comparison: { en: 'The Difference', es: 'La Diferencia' },
-  sameIncident: {
-    en: 'Same incident. Same operator. The architecture made the difference.',
-    es: 'Mismo incidente. Mismo operador. La arquitectura hizo la diferencia.',
+  // Summary screen
+  summaryTitle: { en: 'Incident Resolved', es: 'Incidente Resuelto' },
+  summarySubtitle: {
+    en: 'The unified platform handled the entire lifecycle seamlessly.',
+    es: 'La plataforma unificada manejó todo el ciclo sin interrupciones.',
   },
+  totalResponseTime: { en: 'Total Response Time', es: 'Tiempo Total de Respuesta' },
+  unitsDeployed: { en: 'Units Deployed', es: 'Unidades Desplegadas' },
+  slaCompliance: { en: 'SLA Compliance', es: 'Cumplimiento SLA' },
+  aiRecommendations: { en: 'AI Recommendations', es: 'Recomendaciones IA' },
+  moduleContributions: { en: 'Module Contributions', es: 'Contribución de Módulos' },
+  activeModules: { en: 'Active Modules', es: 'Módulos Activos' },
 
   // CTAs
   exploreModules: { en: 'Explore Modules', es: 'Explorar Módulos' },
   bookReview: { en: 'Book Architecture Review', es: 'Agendar Revisión de Arquitectura' },
   tryAnother: { en: 'Try Another Scenario', es: 'Probar Otro Escenario' },
-  backToResults: { en: 'Back to Results', es: 'Volver a Resultados' },
   backToSite: { en: 'Back to Site', es: 'Volver al Sitio' },
+  restartWalkthrough: { en: 'Restart Walkthrough', es: 'Reiniciar Recorrido' },
 
-  // Module deep dive
-  moduleDeepDive: { en: 'Module Deep Dive', es: 'Detalle de Módulos' },
-  timeSaved: { en: 'Time Saved', es: 'Tiempo Ahorrado' },
-  stepsInvolved: { en: 'Steps Involved', es: 'Pasos Involucrados' },
-  withoutThisModule: { en: 'Without this module:', es: 'Sin este módulo:' },
-
-  // Comparison table rows
-  manualSteps: { en: 'manual steps', es: 'pasos manuales' },
-  decisions: { en: 'decisions', es: 'decisiones' },
-  screens: { en: 'screens', es: 'pantallas' },
-  canvas: { en: 'canvas', es: 'canvas' },
-  dataReEntries: { en: 'data re-entries', es: 're-ingresos de datos' },
-  missedAlerts: { en: 'missed alerts', es: 'alertas perdidas' },
-  dispatchErrors: { en: 'dispatch errors', es: 'errores de despacho' },
-  citizenInput: { en: 'No citizen input', es: 'Sin datos ciudadanos' },
-  sosReceived: { en: 'SOS received', es: 'SOS recibido' },
-  manualAudit: { en: 'Manual audit', es: 'Auditoría manual' },
-  autoAudit: { en: 'Automatic audit trail', es: 'Auditoría automática' },
+  // Shared labels
+  live: { en: 'LIVE', es: 'EN VIVO' },
+  critical: { en: 'CRITICAL', es: 'CRÍTICO' },
+  optimal: { en: 'OPTIMAL', es: 'ÓPTIMO' },
+  active: { en: 'ACTIVE', es: 'ACTIVO' },
+  responding: { en: 'RESPONDING', es: 'RESPONDIENDO' },
+  resolved: { en: 'RESOLVED', es: 'RESUELTO' },
 } as const

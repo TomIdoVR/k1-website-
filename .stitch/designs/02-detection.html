@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>Tactical Incident Command - Detection</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "on-primary-container": "#00424f",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "surface-tint": "#4cd7f6",
+' +
+    '                        "on-tertiary-container": "#4e3800",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "secondary-fixed": "#ffdad9",
+' +
+    '                        "tertiary": "#fbbc00",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "tertiary-container": "#d39e00",
+' +
+    '                        "on-secondary-fixed-variant": "#920023",
+' +
+    '                        "on-secondary": "#680016",
+' +
+    '                        "on-tertiary-fixed": "#261a00",
+' +
+    '                        "tertiary-fixed": "#ffdfa0",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "tertiary-fixed-dim": "#fbbc00",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "on-secondary-fixed": "#40000a",
+' +
+    '                        "on-tertiary-fixed-variant": "#5c4300",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "on-tertiary": "#402d00",
+' +
+    '                        "on-secondary-container": "#ffadae",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "secondary": "#ffb3b4",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "secondary-container": "#a30229",
+' +
+    '                        "secondary-fixed-dim": "#ffb3b4"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Space Grotesk"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .scanline-overlay {
+' +
+    '            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+' +
+    '            background-size: 100% 2px, 3px 100%;
+' +
+    '            pointer-events: none;
+' +
+    '        }
+' +
+    '        .glow-primary { box-shadow: 0px 0px 15px rgba(76, 215, 246, 0.3); }
+' +
+    '        .glow-error { box-shadow: 0px 0px 15px rgba(255, 82, 99, 0.4); }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+' +
+    '<!-- TopAppBar -->
+' +
+    '<header class="bg-[#0e131e] dark:bg-[#0e131e] flex justify-between items-center w-full px-6 py-3 h-16 fixed top-0 z-50">
+' +
+    '<div class="text-lg font-black tracking-widest text-cyan-400 dark:text-cyan-400 uppercase font-headline">
+' +
+    '            TACTICAL INCIDENT COMMAND
+' +
+    '        </div>
+' +
+    '<nav class="hidden md:flex gap-8 items-center h-full">
+' +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">DETECTION</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">GIS</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">EVENT_MGMT</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">DISPATCH</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">RESPONDER</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">RESOLUTION</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-[0.05em] text-xs text-slate-500 hover:text-cyan-200 transition-colors" href="#">DATA</a>
+` +
+    '</nav>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<button class="material-symbols-outlined text-slate-400 hover:bg-cyan-900/20 p-2 transition-transform duration-150 active:scale-95">settings</button>
+' +
+    '<button class="material-symbols-outlined text-slate-400 hover:bg-cyan-900/20 p-2 transition-transform duration-150 active:scale-95">notifications</button>
+' +
+    '<button class="material-symbols-outlined text-slate-400 hover:bg-cyan-900/20 p-2 transition-transform duration-150 active:scale-95">account_circle</button>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="pt-16 pb-14 min-h-screen flex flex-col md:flex-row">
+' +
+    '<!-- Main Content Area: 2x2 Video Grid -->
+' +
+    '<section class="flex-grow p-4 grid grid-cols-2 grid-rows-2 gap-1 bg-surface-container-lowest">
+' +
+    '<!-- Camera 1 -->
+' +
+    '<div class="relative group border border-outline-variant/10 overflow-hidden bg-black">
+' +
+    '<img alt="Camera 1" class="w-full h-full object-cover opacity-70" data-alt="CCTV security footage of a crowded train station platform with commuters moving in an orderly fashion, cold industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU8R6w0YScNT_JK8RyU1Z_UbTJ3Sa4ezjNCgFBFNrZ4SZ6xsCU16DXv3ktGLXTSidiaEsSBLLEza6yPmQNf62EClTyDnYflr3T5tMpZntdORaAnWEjjuPoE6qRPhlhoRlT5cvo_yMMTy_nqVmPYUWMo--dqmuN5UqYneEjWeex7UiR7BnzR0fcNIYtuD0aTzL_TLGMLmK-H_94LFkvTkkgspyD1pvyFvcYQQ7TTK3EtZsYIMhdwgcOGZ0x7JkFyVXgyBQ6X4yjbmlW"/>
+' +
+    '<div class="absolute top-2 left-2 flex items-center gap-2 bg-black/60 px-2 py-1">
+' +
+    '<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+' +
+    '<span class="font-label text-[10px] text-white tracking-widest uppercase">CAM_01 // PUBLIC_CONCOURSE</span>
+' +
+    '</div>
+' +
+    '<div class="absolute bottom-2 right-2 font-label text-[10px] text-green-400">STATUS: OK</div>
+' +
+    '</div>
+' +
+    '<!-- Camera 2 -->
+' +
+    '<div class="relative group border border-outline-variant/10 overflow-hidden bg-black">
+' +
+    '<img alt="Camera 2" class="w-full h-full object-cover opacity-70" data-alt="Wide angle high vantage point security camera view of a city crosswalk at night with heavy pedestrian traffic and bright streetlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZiYQk0NVbpHcBqVbX-3M7sWCLRWKHc-3LszwvryjKFB5jBbwcWKArMSogPeAMwF8QQGEuBIbzsL1OBcvkLXb_GnCRUyuRjejr-1nVCK_GEKr8NQ0WL9ee-C-B6x-7dexJDBSCuDBlHHVwBo8ndKlm0MhFgxSEmb1iO2Fw_dEj3td9jardq63hhDh2UPi_ZIyPCH--A8YesBp27CoHT1BwKAAZ4VOqJwwJ8XZh-OC_OHOKyOyghMHAbNKn5NE-Fry-oKoVt-QmBeCc"/>
+' +
+    '<div class="absolute top-2 left-2 flex items-center gap-2 bg-black/60 px-2 py-1">
+' +
+    '<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+' +
+    '<span class="font-label text-[10px] text-white tracking-widest uppercase">CAM_02 // PLAZA_WEST</span>
+' +
+    '</div>
+' +
+    '<div class="absolute bottom-2 right-2 font-label text-[10px] text-green-400">STATUS: OK</div>
+' +
+    '</div>
+' +
+    '<!-- Camera 3: ANOMALY DETECTED -->
+' +
+    '<div class="relative group border-2 border-primary glow-primary overflow-hidden bg-black">
+' +
+    '<img alt="Camera 3" class="w-full h-full object-cover opacity-90" data-alt="Grainy low light security footage of a dense agitated crowd in a narrow alleyway with flickering neon lights and high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSoI4PJkNLmXOzMf0LuDQzBT_0y5MF9nOBvuL9pMI9RTmZHLFPOQGU_LA2O-oB-dUpL7lJzYPOTp76CsDBKrxdMk4WX5UqMMsSpIpg_nmiusmr-31fpvWAr8sDa_ctDrK7HXUB29hynDZvqNNUR0JyegfhPUgTZGixDG4p9X8Q9xKcqzYt38gAS8se9gvurmjx1wFz-Xt7qAyJ7uiq9WGdAgOJQ0kEeJTb8HHWqWLFOXxco6ka7N-YJTq6ci_ALP2ZR8Mp1e5i16rS"/>
+' +
+    '<!-- AI Overlay Bounding Boxes Simulation -->
+' +
+    '<div class="absolute inset-0 border-[1px] border-secondary/40 m-20 pointer-events-none"></div>
+' +
+    '<div class="absolute inset-0 border-[1px] border-tertiary/40 m-32 pointer-events-none"></div>
+' +
+    '<div class="absolute top-2 left-2 flex items-center gap-2 bg-primary/90 px-2 py-1">
+' +
+    '<span class="w-2 h-2 bg-white animate-pulse rounded-full"></span>
+' +
+    '<span class="font-label text-[10px] text-on-primary-container font-bold tracking-widest uppercase">CAM_03 // ZONE_B_SECTOR_4</span>
+' +
+    '</div>
+' +
+    '<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/40 to-transparent p-4">
+' +
+    '<div class="flex justify-between items-end">
+' +
+    '<div>
+' +
+    '<div class="font-label text-[10px] text-white/80 uppercase">Anomaly Analysis</div>
+' +
+    '<div class="font-headline text-xl font-black text-white tracking-tig

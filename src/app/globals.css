@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* ── Simulator keyframes ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.15); }
+}
+@keyframes sim-scan {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(8px); }
+}
+@keyframes sim-flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96%           { opacity: 0.85; }
+  98%           { opacity: 0.95; }
+}
+@keyframes sim-box-drift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(3px, -2px); }
+  50%  { transform: translate(-2px, 4px); }
+  75%  { transform: translate(4px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
 /* KabatOne design tokens — dark (default) */
 :root {
   --bg: #0f1724;

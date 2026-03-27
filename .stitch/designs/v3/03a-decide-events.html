@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>KABATONE | DECIDE - Events Table</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '      tailwind.config = {
+' +
+    '        darkMode: "class",
+' +
+    '        theme: {
+' +
+    '          extend: {
+' +
+    '            colors: {
+' +
+    '              "surface-container-highest": "#2f3540",
+' +
+    '              "primary": "#4cd7f6",
+' +
+    '              "inverse-surface": "#dde2f1",
+' +
+    '              "tertiary-fixed": "#ffdad9",
+' +
+    '              "primary-fixed-dim": "#4cd7f6",
+' +
+    '              "secondary-fixed": "#dde2f1",
+' +
+    '              "primary-container": "#06b6d4",
+' +
+    '              "on-background": "#dde2f1",
+' +
+    '              "error-container": "#93000a",
+' +
+    '              "on-secondary": "#2b313c",
+' +
+    '              "on-tertiary-fixed": "#40000a",
+' +
+    '              "secondary-fixed-dim": "#c1c6d5",
+' +
+    '              "outline-variant": "#3d494c",
+' +
+    '              "surface-container-low": "#161c26",
+' +
+    '              "on-primary-container": "#00424f",
+' +
+    '              "surface-tint": "#4cd7f6",
+' +
+    '              "surface": "#0e131e",
+' +
+    '              "surface-dim": "#0e131e",
+' +
+    '              "error": "#ffb4ab",
+' +
+    '              "background": "#0e131e",
+' +
+    '              "on-error": "#690005",
+' +
+    '              "secondary-container": "#414753",
+' +
+    '              "surface-container": "#1a202a",
+' +
+    '              "surface-container-high": "#242a35",
+' +
+    '              "outline": "#869397",
+' +
+    '              "on-secondary-fixed-variant": "#414753",
+' +
+    '              "surface-container-lowest": "#080e18",
+' +
+    '              "on-secondary-container": "#afb5c3",
+' +
+    '              "on-error-container": "#ffdad6",
+' +
+    '              "on-primary": "#003640",
+' +
+    '              "on-primary-fixed": "#001f26",
+' +
+    '              "on-surface": "#dde2f1",
+' +
+    '              "on-secondary-fixed": "#161c26",
+' +
+    '              "inverse-on-surface": "#2b313c",
+' +
+    '              "primary-fixed": "#acedff",
+' +
+    '              "surface-bright": "#343945",
+' +
+    '              "secondary": "#c1c6d5",
+' +
+    '              "on-primary-fixed-variant": "#004e5c",
+' +
+    '              "tertiary-container": "#ff7f85",
+' +
+    '              "tertiary": "#ffb3b4",
+' +
+    '              "surface-variant": "#2f3540",
+' +
+    '              "on-tertiary-fixed-variant": "#920023",
+' +
+    '              "on-surface-variant": "#bcc9cd",
+' +
+    '              "inverse-primary": "#00687a",
+' +
+    '              "tertiary-fixed-dim": "#ffb3b4",
+' +
+    '              "on-tertiary": "#680016",
+' +
+    '              "on-tertiary-container": "#7d001d",
+' +
+    '              "command-orange": "#f97316"
+' +
+    '            },
+' +
+    '            fontFamily: {
+' +
+    '              "headline": ["Inter"],
+' +
+    '              "body": ["Inter"],
+' +
+    '              "label": ["Inter"]
+' +
+    '            },
+' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '          },
+' +
+    '        },
+' +
+    '      }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '      .material-symbols-outlined {
+' +
+    "        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '      }
+' +
+    '      .brutalist-border { border: 1px solid rgba(255,255,255,0.1); }
+' +
+    '      .orange-glow { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6)); }
+' +
+    '      .cyan-glow { filter: drop-shadow(0 0 8px rgba(76, 215, 246, 0.4)); }
+' +
+    '      body { background-color: #050a14; }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="font-body text-on-surface selection:bg-primary selection:text-on-primary">
+' +
+    '<!-- TopAppBar (JSON Mapping) -->
+' +
+    '<header class="bg-[#080e18] flex justify-between items-center px-6 w-full z-50 fixed top-0 h-16 transition-all border-b border-white/5">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<span class="text-xl font-normal text-cyan-400 font-headline tracking-tighter">K1</span>
+' +
+    '<!-- Lifecycle Progress Dots -->
+' +
+    '<nav class="hidden md:flex items-center gap-6">
+' +
+    '<div class="flex items-center gap-2 group cursor-pointer">
+' +
+    `<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-gray-600">DETECT</span>
+` +
+    '</div>
+' +
+    '<div class="w-4 h-[1px] bg-white/10"></div>
+' +
+    '<div class="flex items-center gap-2 group cursor-pointer">
+' +
+    `<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-gray-600">UNDERSTAND</span>
+` +
+    '</div>
+' +
+    '<div class="w-4 h-[1px] bg-white/10"></div>
+' +
+    '<div class="flex items-center gap-2 group cursor-pointer">
+' +
+    '<div class="w-2 h-2 bg-command-orange orange-glow"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-command-orange drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">DECIDE</span>
+` +
+    '</div>
+' +
+    '<div class="w-4 h-[1px] bg-white/10"></div>
+' +
+    '<div class="flex items-center gap-2 group cursor-pointer opacity-40">
+' +
+    '<div class="w-2 h-2 bg-gray-600"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-gray-600">ACT</span>
+` +
+    '</div>
+' +
+    '<div class="w-4 h-[1px] bg-white/10"></div>
+' +
+    '<div class="flex items-center gap-2 group cursor-pointer opacity-40">
+' +
+    '<div class="w-2 h-2 bg-gray-600"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-gray-600">LEARN</span>
+` +
+    '</div>
+' +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<div class="flex flex-col items-end">
+' +
+    `<span class="font-['Inter'] uppercase tracking-[0.1em] text-[10px] text-primary">SCENARIO_ALPHA_01</span>
+` +
+    `<span class="font-['Inter'] uppercase tracking-[0.05em] text-[0.6875rem] text-on-surface">CROWD DISTURBANCE</span>
+` +
+    '</div>
+' +
+    '<div class="w-8 h-8 bg-surface-container-highest border border-white/10 flex items-center justify-center">
+' +
+    '<span class="material-symbols-outlined text-sm">settings</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="pt-24 px-6 pb-20 max-w-[1600px] mx-auto">
+' +
+    '<!-- Title Section -->
+' +
+    '<section class="mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
+' +
+    '<div class="space-y-1">
+' +
+    '<h1 class="text-6xl font-extrabold text-[#2f3540] tracking-tighter leading-none">03 DECIDE</h1>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<p class="font-headline font-bold uppercase tracking-widest text-primary text-sm">PRIORITIZE AND DETERMINE BEST RESPONSE</p>
+' +
+    '<div class="h-[1px] w-12 bg-outline-variant"></div>
+' +
+    '<p class="font-headline font-semibold uppercase tracking-widest text-command-orange text-xs">EVENTS OVERVIEW</p>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="bg-command-orange/10 border border-command-orange/30 px-4 py-2 flex items-center gap-3">
+' +
+    `<span class="font-['Inter'] uppercase tracking-[0.15em] text-[10px] text-command-orange font-bold">K-EVENTS</span>
+` +
+    '<div class="w-1.5 h-1.5 bg-command-orange orange-glow animate-pulse"></div>
+' +
+    '</div>
+' +
+    '</section>
+' +
+    '<!-- Stats Strip -->
+' +
+    '<section class="bg-surface-container-lowest border-y border-white/5 py-3 mb-6 flex items-center justify-between px-4">
+' +
+    `<div class="flex items-center gap-8 font-['Inter'] uppercase tracking-widest text-[11px]">
+` +
+    '<div class="flex items-center gap-2">
+' +
+    '<span class="text-on-surface-variant">Total Events:</span>
+' +
+    '<span class="text-on-surface font-bold">06</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<span class="text-on-surface-variant">Active:</span>
+' +
+    '<span class="text-command-orange font-bold">02</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<span class="text-on-surface-variant">Monitoring:</span>
+' +
+    '<span class="text-primary font-bold">01</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 border-l border-white/10 pl-8">
+' +
+    '<span class="text-on-surface-variant">Resolved Today:</span>
+' +
+    '<span class="text-green-500 font-bold">03</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<span class="material-symbols-outlined text-on-surface-variant text-lg">refresh</span>
+' +
+    '<span class="material-symbols-outlined text-on-surface-variant text-lg">more_vert</span>
+' +
+    '</div>
+' +
+    '</section>
+' +
+    '<!-- Filter Bar -->
+' +
+    '<section class="flex flex-wrap gap-4 mb-6">
+' +
+    '<div class="flex bg-surface-container-low p-1 border border-white/5">
+' +
+    '<button class="bg-command-orange text-black px-4 py-1 text-[10px] font-bold uppercase tracking-wider">All Events</button>
+' +
+    '<button class="text-on-surface-variant hover:text-on-surface px-4 py-1 text-[10px] font-bold uppercase tracking-wider transition-colors">Active</button>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 bg-surface-container-low px-3 border border-white/5 text-on-surface-variant cursor-pointer">
+' +
+    '<span class="text-[10px] font-bold uppercase tracking-wider">Priority: ALL</span>
+' +
+    '<span class="material-symbols-outlined text-sm">expand_more</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 bg-surface-container-low px-3 border border-white/5 text-on-surface-variant cursor-pointer">
+' +
+    '<span class="text-[10px] font-bold uppercase tracking-wider">Type: ALL</span>
+' +
+    '<span class="material-symbols-outlined text-sm">expand_more</span>
+' +
+    '</div>
+' +
+    '<div class="ml-auto flex items-center gap-2">
+' +
+    '<span class="text-[10px] font-bold text-outline uppercase tracking-tighter">DATA LATENCY: 2.4MS</span>
+' +
+    '<div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+' +
+    '</div>
+' +
+    '</section>
+' +
+    '<!-- Main Events Table -->
+' +
+    '<section class="w-full overflow-x-auto bg-surface-container-lowest border border-white/5">
+' +
+    '<table class="w-full text-left border-collapse">
+' +
+    '<thead>
+' +
+    '<tr class="bg-surface-container-highest border-b border-white/10">
+' +
+    `<th class="px-4 py-3 font-['Inter'] uppercase tracking-widest text-[10px] text-on-surface-variant">PRI</th>
+` +
+    `<th class="px-4 py-3 font-['Inter'] uppercase tracking-widest text-[10px] text-on-surface-variant">Event ID</th>
+` +
+    `<th class="px-4 py-3 font-['Inter'] uppercase tracking-widest text-[10px] text-on-surface-variant">Type</th>
+` +
+    `<th class="px-4 py-3 font-['Inter

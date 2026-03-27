@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+
+export const metadata: Metadata = {
+  verification: {
+    google: 'DTq9cTtA8K66rDO1x_BKB49knpC4BhRobzjiuYtrQk8',
+  },
+}
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],

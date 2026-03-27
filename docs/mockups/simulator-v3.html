@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne Incident Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060d1a;
+    --surface: #0c1629;
+    --card: #111827;
+    --card2: #0e1a2e;
+    --accent: #1a2640;
+    --primary: #2b7fff;
+    --cyan: #06b6d4;
+    --border: rgba(43,127,255,0.10);
+    --text: #e8edf5;
+    --text2: #b4bcd0;
+    --text3: #7b8db0;
+    --red: #ff5263;
+    --green: #00d492;
+    --amber: #f59e0b;
+    --orange: #f97316;
+    --purple: #a855f7;
+    --yellow: #eab308;
+    --lblue: #60a5fa;
+    --font: 'Inter', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:var(--font)}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(43,127,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(43,127,255,.02) 1px,transparent 1px);
+    background-size:80px 80px}
+  .page{max-width:1100px;margin:0 auto;padding:40px 32px 80px;position:relative;z-index:1}
+
+  /* ═══ HEADER ═══ */
+  .header{text-align:center;margin-bottom:44px}
+  .logo{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:14px}
+  .logo span{color:var(--cyan)}
+  h1{font-size:38px;font-weight:800;letter-spacing:-.5px;line-height:1.1;margin-bottom:8px}
+  h1 em{font-style:normal;color:var(--cyan)}
+  .tagline{font-size:15px;color:var(--text3)}
+
+  /* ═══ SCENARIOS ═══ */
+  .scenarios{display:flex;justify-content:center;gap:8px;margin-bottom:44px}
+  .sc{font-family:var(--font);font-size:13px;font-weight:600;padding:10px 20px;border-radius:10px;
+    background:var(--card);border:1px solid var(--border);color:var(--text3);cursor:pointer;transition:all .2s}
+  .sc.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 4px 16px rgba(43,127,255,.3)}
+  .sc.off{opacity:.35;cursor:not-allowed}
+  .sc .soon{font-size:9px;font-weight:700;margin-left:4px;letter-spacing:.5px;color:var(--text3);text-transform:uppercase}
+
+  /* ═══ STEP SECTION ═══ */
+  .step{margin-bottom:56px;position:relative}
+  .step-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .step-num{width:40px;height:40px;border-radius:50%;background:var(--card);border:2px solid var(--primary);
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--primary);flex-shrink:0}
+  .step.fail .step-num{border-color:var(--red);color:var(--red);box-shadow:0 0 12px rgba(255,82,99,.2)}
+  .step-title{font-size:20px;font-weight:800;color:var(--text)}
+  .step-mods{display:flex;gap:4px;margin-left:auto}
+  .sm{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;border:1px solid;letter-spacing:.3px}
+
+  /* Module visual area */
+  .step-visual{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .vis-panel{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    overflow:hidden;
+  }
+  .vis-panel.frag{border-color:rgba(255,82,99,.15)}
+  .vis-panel.uni{border-color:rgba(0,212,146,.15)}
+
+  .vis-label{
+    padding:10px 16px;font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:1px solid var(--border);
+  }
+  .vis-panel.frag .vis-label{color:var(--red);background:rgba(255,82,99,.04)}
+  .vis-panel.uni .vis-label{color:var(--green);background:rgba(0,212,146,.04)}
+  .vis-label .time{font-family:var(--mono);font-size:11px;font-weight:500;opacity:.7}
+
+  .vis-body{padding:16px;min-height:180px;position:relative}
+
+  /* ═══ VISUAL COMPONENTS ═══ */
+
+  /* Camera grid */
+  .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+  .cam{background:#080f1c;border-radius:6px;height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;border:1px solid transparent}
+  .cam .cam-id{font-family:var(--mono);font-size:8px;color:var(--text3);position:absolute;top:4px;left:6px}
+  .cam .cam-status{font-family:var(--mono);font-size:7px;color:var(--green);position:absolute;top:4px;right:6px;display:flex;align-items:center;gap:3px}
+  .cam .cam-status::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--green)}
+  .cam .cam-icon{color:var(--text3);opacity:.3}
+  .cam.alert{border-color:var(--red);box-shadow:inset 0 0 20px rgba(255,82,99,.08)}
+  .cam.alert .cam-icon{color:var(--red);opacity:.6}
+  .cam.focused{border-color:var(--cyan);box-shadow:inset 0 0 20px rgba(6,182,212,.08)}
+  .cam.focused .cam-icon{color:var(--cyan);opacity:.7}
+
+  /* AI detection overlay */
+  .ai-box{position:absolute;border:1.5px solid var(--cyan);border-radius:4px;
+    padding:2px 6px;font-family:var(--mono);font-size:8px;color:var(--cyan);background:rgba(6,182,212,.06)}
+  .ai-score{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--cyan);
+    display:flex;align-items:center;gap:6px;margin-top:8px}
+  .ai-score::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  /* Map */
+  .map{width:100%;height:100%;min-height:160px;background:linear-gradient(135deg,#0a1628,#0f1d30,#0a1628);
+    border-radius:8px;position:relative;overflow:hidden}
+  .map-grid{position:absolute;inset:0;
+    background-image:linear-gradient(rgba(43,127,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,127,255,.04) 1px,transparent 1px);
+    background-size:30px 30px}
+  .marker{position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .marker-dot{width:12px;height:12px;border-radius:50%;position:relative}
+  .marker-dot.inc{background:var(--red);box-shadow:0 0 10px rgba(255,82,99,.5)}
+  .marker-dot.inc::after{content:'';position:absolute;inset:-5px;border:1.5px solid var(--red);border-radius:50%;opacity:.4;animation:ring 2s infinite}
+  @keyframes ring{0%{transform:scale(1);opacity:.4}100%{transform:scale(1.6);opacity:0}}
+  .marker-dot.unit{background:var(--primary)}
+  .marker-dot.sos{background:var(--lblue);box-shadow:0 0 8px rgba(96,165,250,.4)}
+  .marker-dot.zone{width:60px;height:60px;border-radius:50%;background:rgba(255,82,99,.08);border:1px dashed rgba(255,82,99,.3)}
+  .marker-lbl{font-family:var(--mono);font-size:7px;color:var(--text2);background:rgba(6,13,26,.85);padding:1px 5px;border-radius:3px;white-space:nowrap}
+
+  /* Dispatch card */
+  .dsp-card{background:var(--card2);border-radius:8px;padding:12px;border-left:3px solid var(--red)}
+  .dsp-folio{font-family:var(--mono);font-size:9px;color:var(--text3);margin-bottom:4px}
+  .dsp-type{font-size:13px;font-weight:700;margin-bottom:8px}
+  .dsp-row{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:4px}
+  .dsp-row .val{color:var(--text2);font-weight:600}
+  .dsp-row .val.high{color:var(--red)}
+  .dsp-btn{width:100%;padding:8px;border-radius:6px;border:none;background:var(--primary);color:#fff;font-family:var(--font);
+    font-size:11px;font-weight:700;cursor:pointer;margin-top:8px}
+  .dsp-auto{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--green);font-weight:600;margin-top:8px}
+  .dsp-auto::before{content:'✓';font-size:12px}
+
+  /* Unit list */
+  .units{display:flex;flex-direction:column;gap:6px}
+  .u-card{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--card2);border-radius:6px}
+  .u-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .u-name{font-family:var(--mono);font-size:11px;color:var(--text2);flex:1}
+  .u-dist{font-family:var(--mono);font-size:10px;color:var(--text3)}
+  .u-rank{font-size:9px;font-weight:700;color:var(--green);background:rgba(0,212,146,.1);padding:2px 6px;border-radius:3px}
+
+  /* Event timeline */
+  .evt-list{display:flex;flex-direction:column;gap:6px}
+  .evt{display:flex;align-items:flex-start;gap:8px;font-size:11px}
+  .evt-time{font-family:var(--mono);color:var(--text3);width:32px;flex-shrink:0;font-size:10px}
+  .evt-dot{width:6px;height:6px;border-radius:50%;margin-top:5px;flex-shrink:0}
+  .evt-text{color:var(--text2);line-height:1.35}
+
+  /* App screen (responder) */
+  .app-frame{width:140px;margin:0 auto;background:var(--card2);border-radius:12px;border:1px solid var(--border);overflow:hidden}
+  .app-bar{background:var(--accent);padding:6px 10px;font-size:8px;font-weight:700;color:var(--cyan);letter-spacing:.5px;text-transform:uppercase;text-align:center}
+  .app-body{padding:8px;display:flex;flex-direction:column;gap:4px}
+  .app-row{font-size:8px;color:var(--text3);display:flex;align-items:center;gap:4px}
+  .app-row .dot{width:4px;height:4px;border-radius:50%;background:var(--cyan);flex-shrink:0}
+
+  /* BI dashboard */
+  .bi-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .bi-card{background:var(--card2);border-radius:6px;padding:10px;text-align:center}
+  .bi-val{font-family:var(--mono);font-size:18px;font-weight:500;color:var(--green)}
+  .bi-lbl{font-size:8px;color:var(--text3);margin-top:2px;letter-spacing:.3px}
+
+  /* Failure callout */
+  .fail-box{margin-top:10px;padding:10px 12px;border-radius:8px;background:rgba(255,82,99,.06);border:1px solid rgba(255,82,99,.15);
+    display:flex;align-items:flex-start;gap:8px;font-size:11px;color:var(--text2);line-height:1.4}
+  .fail-icon{color:var(--red);font-size:14px;flex-shrink:0;margin-top:1px}
+  .fail-cost{font-family:var(--mono);font-size:10px;color:var(--red);font-weight:600;margin-top:4px}
+
+  /* Ghost (missing feature) */
+  .ghost{padding:20px;text-align:center;opacity:.5}
+  .ghost-text{font-size:12px;color:var(--text3);font-style:italic;margin-top:8px}
+
+  /* Delay overlay */
+  .delay{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;
+    background:rgba(6,13,26,.7);border-radius:8px;margin-bottom:10px;
+    font-size:11px;color:var(--amber);font-weight:600}
+  .spinner{width:14px;height:14px;border:2px solid var(--accent);border-top-color:var(--amber);border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Empty state (waiting) */
+  .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:100px;color:var(--text3);font-size:11px;gap:6px;opacity:.5}
+  .empty-bar{width:60%;height:6px;background:var(--accent);border-radius:3px}
+  .empty-bar:nth-child(2){width:80%}
+  .empty-bar:nth-child(3){width:45%}
+
+  /* ═══ RESULT ═══ */
+  .result{margin-top:64px;text-align:center}
+  .result h2{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:24px}
+  .rboxes{display:flex;justify-content:center;gap:24px;margin-bottom:28px}
+  .rb{padding:28px 44px;border-radius:14px;background:var(--card);border:1px solid var(--border);text-align:center;min-width:180px}
+  .rb::before{content:'';display:block;width:40px;height:3px;border-radius:2px;margin:0 auto 14px}
+  .rb.f::before{background:var(--red)}.rb.u::before{background:var(--green)}
+  .rb-lbl{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+  .rb.f .rb-lbl{color:var(--red)}.rb.u .rb-lbl{color:var(--green)}
+  .rb-val{font-family:var(--mono);font-size:42px;font-weight:500;line-height:1}
+  .rstats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+  .rs{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-align:center;min-width:110px}
+  .rs-v{font-family:var(--mono);font-size:18px;font-weight:500;color:var(--green);margin-bottom:2px}
+  .rs-l{font-size:9px;color:var(--text3)}
+  .close-line{font-size:18px;font-weight:600;color:var(--text2);margin-bottom:36px;line-height:1.5}
+  .close-line em{font-style:normal;color:var(--cyan)}
+  .ctas{display:flex;justify-content:center;gap:10px}
+  .bt{font-family:var(--font);font-size:14px;font-weight:700;padding:14px 28px;border-radius:12px;cursor:pointer;transition:all .2s;border:none}
+  .bt-p{background:var(--primary);color:#fff;box-shadow:0 4px 16px rgba(43,127,255,.3)}.bt-p:hover{background:#3d8cff}
+  .bt-g{background:transparent;color:var(--text3);border:1px solid var(--border)}.bt-g:hover{background:var(--card)}
+
+  /* Module colors */
+  .c-vid{color:#06b6d4;border-color:#06b6d4;background:rgba(6,182,212,.08)}
+  .c-dsp{color:#ef4444;border-color:#ef4444;background:rgba(239,68,68,.08)}
+  .c-evt{color:#f97316;border-color:#f97316;background:rgba(249,115,22,.08)}
+  .c-gis{color:#3b82f6;border-color:#3b82f6;background:rgba(59,130,246,.08)}
+  .c-int{color:#22c55e;border-color:#22c55e;background:rgba(34,197,94,.08)}
+  .c-rsp{color:#eab308;border-color:#eab308;background:rgba(234,179,8,.08)}
+  .c-cit{color:#60a5fa;border-color:#60a5fa;background:rgba(96,165,250,.08)}
+  .c-ai{color:#06b6d4;border-color:#06b6d4;background:rgba(6,182,212,.08)}
+  .c-bi{color:#a855f7;border-color:#a855f7;background:rgba(168,85,247,.08)}
+
+  /* connector line between steps */
+  .connector{display:flex;justify-content:center;margin:0 0 0 19px;padding:8px 0}
+  .connector-line{width:2px;height:28px;background:linear-gradient(var(--primary),var(--cyan));border-radius:1px;opacity:.3}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="logo"><span>Kabat</span>One</div>
+    <h1>The Incident <em>Simulator</em></h1>
+    <p class="tagline">Same operator. Same incident. Completely different outcome.</p>
+  </div>
+
+  <div class="scenarios">
+    <button class="sc active">Crowd Disturbance</button>
+    <button class="sc off">Active Shooter <span class="soon">Soon</span></button>
+    <button class="sc off">Natural Disaster <span class="soon">Soon</span></button>
+    <button class="sc off">Stadium Event <span class="soon">Soon</span></button>
+  </div>
+
+  <!-- ════════════ STEP 1: DETECTION ════════════ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">Detection</div>
+      <div class="step-mods"><span class="sm c-ai">AI Engine</span><span class="sm c-vid">Video</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~5 sec</span></div>
+        <div class="vis-body">
+          <div class="cam-grid">
+            <div class="cam"><span class="cam-id">CAM-01</span><span class="cam-status">LIVE</span><svg class="cam-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="cam alert"><span class="cam-id">CAM-02</span><span class="cam-status">LIVE</span><svg class="cam-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="cam"><span class="cam-id">CAM-03</span><span class="cam-status">LIVE</span><svg class="cam-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="cam"><span class="cam-id">CAM-04</span><span class="cam-status">LIVE</span><svg class="cam-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          </div>
+          <p style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">Operator scans 4 feeds manually. Must spot the anomaly.</p>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~2 sec</span></div>
+        <div class="vis-body">
+          <div class="cam-grid">
+            <div class="cam focused" style="grid-column:1/3;height:110px">
+              <span class="cam-id">CAM-02 — Auto-focused</span><span class="cam-status">LIVE</span>
+              <svg class="cam-icon" width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg>
+              <div class="ai-box" style="bottom:8px;right:8px">AI Detected</div>
+            </div>
+          </div>
+          <div class="ai-score"><span>Threat: 0.91</span></div>
+          <p style="font-size:11px;color:var(--green);margin-top:4px">AI auto-surfaces alert. Camera auto-focuses on anomaly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 3: LOCATION ════════════ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Location</div>
+      <div class="step-mods"><span class="sm c-gis">GIS</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~6 sec</span></div>
+        <div class="vis-body">
+          <div class="delay"><div class="spinner"></div>Switching to GIS... 1.2s</div>
+          <div class="map" style="min-height:120px">
+            <div class="map-grid"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center">
+              <div style="font-family:var(--mono);font-size:10px;color:var(--amber);animation:blink .8s step-end infinite">Typing address..._</div>
+              <div style="font-size:9px;color:var(--text3);margin-top:4px">Manual entry required</div>
+            </div>
+          </div>
+          @keyframes blink{50%{opacity:0}}
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~1 sec</span></div>
+        <div class="vis-body">
+          <div class="map" style="min-height:160px">
+            <div class="map-grid"></div>
+            <div class="marker" style="top:40%;left:45%"><div class="marker-dot inc"></div><div class="marker-lbl">Incident</div></div>
+            <div class="marker" style="top:55%;left:60%"><div class="marker-dot unit"></div><div class="marker-lbl">U-14 · 2.1km</div></div>
+            <div class="marker" style="top:30%;left:65%"><div class="marker-dot unit"></div><div class="marker-lbl">U-07 · 3.4km</div></div>
+            <div class="marker" style="top:48%;left:35%"><div class="marker-dot unit"></div><div class="marker-lbl">U-22 · 4.8km</div></div>
+            <!-- Camera coverage hint -->
+            <div style="position:absolute;bottom:6px;left:8px;font-size:8px;color:var(--cyan);font-family:var(--mono)">3 cameras in range</div>
+          </div>
+          <p style="font-size:11px;color:var(--green);margin-top:8px">Auto-plotted from camera GPS. Nearest units visible instantly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 3: DISPATCH ════════════ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Dispatch</div>
+      <div class="step-mods"><span class="sm c-dsp">Dispatch</span><span class="sm c-rsp">Responder</span><span class="sm c-evt">Events</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~11 sec</span></div>
+        <div class="vis-body">
+          <div class="delay"><div class="spinner"></div>Switching to CAD... 1.2s</div>
+          <div class="dsp-card">
+            <div class="dsp-folio">NEW RECORD — Manual Entry</div>
+            <div class="dsp-type">Crowd Disturbance</div>
+            <div class="dsp-row"><span>Location</span><span class="val" style="font-family:var(--mono);font-size:10px">Av. Insurgent<span style="color:var(--red);text-decoration:line-through">se</span>es...</span></div>
+            <div class="dsp-row"><span>Priority</span><span class="val high">HIGH</span></div>
+            <div class="dsp-row"><span>Unit</span><span class="val">Searching...</span></div>
+            <div class="dsp-btn" style="opacity:.5">Dispatch</div>
+          </div>
+          <div class="fail-box">
+            <div class="fail-icon">⚠</div>
+            <div>Typo in address — unit dispatched to wrong sector.<div class="fail-cost">+30 seconds to correct</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~3 sec</span></div>
+        <div class="vis-body">
+          <div class="dsp-card" style="border-left-color:var(--green)">
+            <div class="dsp-folio">#INC-4821 — Auto-created</div>
+            <div class="dsp-type">Crowd Disturbance</div>
+            <div class="dsp-row"><span>Location</span><span class="val" style="color:var(--green)">Auto-populated ✓</span></div>
+            <div class="dsp-row"><span>Priority</span><span class="val high">HIGH</span></div>
+          </div>
+          <div style="margin-top:10px">
+            <div style="font-size:10px;font-weight:700;color:var(--text3);margin-bottom:6px;letter-spacing:.5px">PRE-RANKED UNITS</div>
+            <div class="units">
+              <div class="u-card"><div class="u-dot" style="background:var(--green)"></div><span class="u-name">Unit-14</span><span class="u-dist">2.1 km</span><span class="u-rank">#1</span></div>
+              <div class="u-card"><div class="u-dot" style="background:var(--green)"></div><span class="u-name">Unit-07</span><span class="u-dist">3.4 km</span></div>
+              <div class="u-card"><div class="u-dot" style="background:var(--amber)"></div><span class="u-name">Unit-22</span><span class="u-dist">4.8 km</span></div>
+            </div>
+          </div>
+          <div class="dsp-auto">Dispatched — Responder app notified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 4: ESCALATION ════════════ -->
+  <div class="step fail">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">Escalation — 2nd Camera</div>
+      <div class="step-mods"><span class="sm c-ai">AI Engine</span><span class="sm c-vid">Video</span><span class="sm c-gis">GIS</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~8 sec</span></div>
+        <div class="vis-body">
+          <div class="cam-grid">
+            <div class="cam"><span class="cam-id">CAM-01</span><svg class="cam-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="cam alert"><span class="cam-id">CAM-05</span><div class="ai-box" style="position:relative;margin-top:4px;font-size:7px">NEW ALERT</div></div>
+            <div class="cam"><span class="cam-id">CAM-03</span><svg class="cam-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="cam"><span class="cam-id">CAM-04</span><svg class="cam-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M17 10l4-2v8l-4-2" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          </div>
+          <div class="fail-box">
+            <div class="fail-icon">⚠</div>
+            <div>Operator is in CAD — alert blinks in VMS unnoticed.<div class="fail-cost">Alert missed. +25 seconds</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~2 sec</span></div>
+        <div class="vis-body">
+          <div class="map" style="min-height:140px">
+            <div class="map-grid"></div>
+            <div class="marker" style="top:40%;left:42%"><div class="marker-dot inc"></div><div class="marker-lbl">Incident</div></div>
+            <div class="marker" style="top:40%;left:42%"><div class="marker-dot zone" style="position:absolute;top:-24px;left:-24px"></div></div>
+            <div class="marker" style="top:28%;left:58%"><div class="marker-dot inc" style="width:8px;height:8px;background:var(--amber)"></div><div class="marker-lbl">2nd detection</div></div>
+            <div style="position:absolute;top:10px;right:10px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);border-radius:6px;padding:6px 10px">
+              <div style="font-size:8px;font-weight:700;color:var(--cyan);letter-spacing:.5px">AI CORRELATED</div>
+              <div style="font-size:9px;color:var(--text2);margin-top:2px">Linked to #INC-4821</div>
+              <div style="font-size:9px;color:var(--text2)">Threat zone expanded</div>
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--green);margin-top:8px">AI auto-correlates both cameras. GIS updates threat zone in real time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 5: CITIZEN ════════════ -->
+  <div class="step fail">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">Citizen Report</div>
+      <div class="step-mods"><span class="sm c-cit">Citizen</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">—</span></div>
+        <div class="vis-body">
+          <div class="ghost">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="var(--text3)" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div class="ghost-text">No citizen channel exists.</div>
+            <div class="ghost-text">A citizen tried to report. Information lost forever.</div>
+          </div>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~2 sec</span></div>
+        <div class="vis-body">
+          <div class="map" style="min-height:140px">
+            <div class="map-grid"></div>
+            <div class="marker" style="top:40%;left:45%"><div class="marker-dot inc"></div><div class="marker-lbl">Incident</div></div>
+            <div class="marker" style="top:58%;left:38%"><div class="marker-dot sos"></div><div class="marker-lbl">SOS Report</div></div>
+            <div style="position:absolute;bottom:10px;right:10px;background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.2);border-radius:6px;padding:6px 10px">
+              <div style="font-size:8px;font-weight:700;color:var(--lblue);letter-spacing:.5px">CITIZEN SOS</div>
+              <div style="font-size:9px;color:var(--text2);margin-top:2px">"Group fighting near plaza"</div>
+              <div style="font-size:8px;color:var(--text3);margin-top:2px">Attached to #INC-4821</div>
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--green);margin-top:8px">SOS received on map. Additional context for responders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 6: FIELD RESPONSE ════════════ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div class="step-title">Field Response</div>
+      <div class="step-mods"><span class="sm c-rsp">Responder</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~5 sec</span></div>
+        <div class="vis-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;opacity:.4"><path d="M12 18.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="var(--text3)"/><path d="M19.5 9.5L12 4 4.5 9.5v9h15v-9z" stroke="var(--text3)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <div style="font-size:12px;color:var(--text3);text-align:center">Unit arrives. Requests radio briefing.</div>
+          <div style="font-size:11px;color:var(--text3);text-align:center;margin-top:4px;opacity:.6">Context scattered across 4 systems.</div>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~1.5 sec</span></div>
+        <div class="vis-body" style="display:flex;align-items:center;justify-content:center;gap:20px">
+          <div class="app-frame">
+            <div class="app-bar">K1 Responder App</div>
+            <div class="app-body">
+              <div class="app-row"><div class="dot"></div>Crowd disturbance</div>
+              <div class="app-row"><div class="dot"></div>Av. Insurgentes 1500</div>
+              <div class="app-row"><div class="dot"></div>2 detections, 1 SOS</div>
+              <div class="app-row"><div class="dot"></div>Threat score: 0.91</div>
+              <div class="app-row"><div class="dot"></div>Video feed available</div>
+              <div class="app-row"><div class="dot"></div>Citizen report attached</div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:var(--green);max-width:160px;line-height:1.5">Full incident brief on mobile — video, map, history, alerts. No radio needed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- ════════════ STEP 7: RESOLUTION ════════════ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div class="step-title">Resolution</div>
+      <div class="step-mods"><span class="sm c-evt">Events</span><span class="sm c-bi">BI</span></div>
+    </div>
+    <div class="step-visual">
+      <div class="vis-panel frag">
+        <div class="vis-label">Fragmented <span class="time">~5 sec</span></div>
+        <div class="vis-body">
+          <div style="font-size:11px;color:var(--text3);margin-bottom:10px">Manual close in CAD. Export from 4 systems separately:</div>
+          <div class="empty"><div class="empty-bar"></div><div class="empty-bar"></div><div class="empty-bar"></div></div>
+          <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+            <span style="font-size:9px;padding:3px 8px;border-radius:4px;background:var(--accent);color:var(--text3)">VMS Export</span>
+            <span style="font-size:9px;padding:3px 8px;border-radius:4px;background:var(--accent);color:var(--text3)">GIS Export</span>
+            <span style="font-size:9px;padding:3px 8px;border-radius:4px;background:var(--accent);color:var(--text3)">CAD Export</span>
+            <span style="font-size:9px;padding:3px 8px;border-radius:4px;background:var(--accent);color:var(--text3)">Radio Log</span>
+          </div>
+          <div style="font-size:10px;color:var(--text3);margin-top:8px;opacity:.6">No unified timeline. Manual audit.</div>
+        </div>
+      </div>
+      <div class="vis-panel uni">
+        <div class="vis-label">Unified — KabatOne <span class="time">~1.5 sec</span></div>
+        <div class="vis-body">
+          <div style="font-size:10px;font-weight:700;color:var(--text3);margin-bottom:8px;letter-spacing:.5px">EVENT TIMELINE — Auto-generated</div>
+          <div class="evt-list">
+            <div class="evt"><span class="evt-time">00:00</span><div class="evt-dot" style="background:var(--cyan)"></div><span class="evt-text">AI detection (score: 0.91)</span></div>
+            <div class="evt"><span class="evt-time">00:08</span><div class="evt-dot" style="background:var(--cyan)"></div><span class="evt-text">Verified by operator</span></div>
+            <div class="evt"><span class="evt-time">00:15</span><div class="evt-dot" style="background:var(--primary)"></div><span class="evt-text">GIS auto-plot, units ranked</span></div>
+            <div class="evt"><span class="evt-time">00:22</span><div class="evt-dot" style="background:var(--red)"></div><span class="evt-text">Unit-14 dispatched</span></div>
+            <div class="evt"><span class="evt-time">00:35</span><div class="evt-dot" style="background:var(--amber)"></div><span class="evt-text">2nd camera correlated</span></div>
+            <div class="evt"><span class="evt-time">00:42</span><div class="evt-dot" style="background:var(--lblue)"></div><span class="evt-text">Citizen SOS received</span></div>
+            <div class="evt"><span class="evt-time">00:52</span><div class="evt-dot" style="background:var(--green)"></div><span class="evt-text" style="color:var(--green);font-weight:600">Resolved — audit complete</span></div>
+          </div>
+          <div style="margin-top:12px">
+            <div style="font-size:10px;font-weight:700;color:var(--text3);margin-bottom:6px;letter-spacing:.5px">BI DASHBOARD — Live</div>
+            <div class="bi-grid">
+              <div class="bi-card"><div class="bi-val">0:52</div><div class="bi-lbl">Response Time</div></div>
+              <div class="bi-card"><div class="bi-val">0</div><div class="bi-lbl">Errors</div></div>
+              <div class="bi-card"><div class="bi-val">3</div><div class="bi-lbl">Data Sources</div></div>
+              <div class="bi-card"><div class="bi-val">100%</div><div class="bi-lbl">Audit Coverage</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ RESULT ═══════ -->
+  <div class="result">
+    <h2>The Evidence</h2>
+    <div class="rboxes">
+      <div class="rb f"><div class="rb-lbl">Fragmented</div><div class="rb-val">2:34</div></div>
+      <div class="rb u"><div class="rb-lbl">Unified</div><div class="rb-val">0:52</div></div>
+    </div>
+    <div class="rstats">
+      <div class="rs"><div class="rs-v">10 → 3</div><div class="rs-l">Steps → Decisions</div></div>
+      <div class="rs"><div class="rs-v">4 → 1</div><div class="rs-l">Screens → Canvas</div></div>
+      <div class="rs"><div class="rs-v">3 → 0</div><div class="rs-l">Errors</div></div>
+      <div class="rs"><div class="rs-v">1 → 0</div><div class="rs-l">Missed Alerts</div></div>
+    </div>
+    <p class="close-line">Same incident. Same operator.<br><em>The architecture made the difference.</em></p>
+    <div class="ctas">
+      <button class="bt bt-p">Book Architecture Review</button>
+      <button class="bt bt-g">Download PDF</button>
+      <button class="bt bt-g">Share</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

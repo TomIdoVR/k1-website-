@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>K1 - UNDERSTAND | Tactical Video Analysis</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "secondary-fixed-dim": "#bcc6e6",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "surface-tint": "#4cd7f6",
+' +
+    '                        "on-tertiary": "#68000a",
+' +
+    '                        "tertiary-fixed-dim": "#ffb3ad",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "on-tertiary-container": "#7e000f",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "on-secondary-container": "#abb4d4",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "on-secondary": "#263049",
+' +
+    '                        "on-secondary-fixed": "#111b33",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "secondary-fixed": "#dae2ff",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "on-secondary-fixed-variant": "#3d4661",
+' +
+    '                        "tertiary-container": "#ff817a",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "tertiary-fixed": "#ffdad7",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "on-tertiary-fixed-variant": "#930013",
+' +
+    '                        "on-primary-container": "#00424f",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "on-tertiary-fixed": "#410004",
+' +
+    '                        "secondary-container": "#3d4661",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "secondary": "#bcc6e6",
+' +
+    '                        "tertiary": "#ffb3ad",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "on-surface": "#dde2f1"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '        }
+' +
+    '        .glow-line {
+' +
+    '            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+' +
+    '        }
+' +
+    '        .ai-overlay {
+' +
+    '            background: rgba(6, 182, 212, 0.05);
+' +
+    '            backdrop-filter: blur(2px);
+' +
+    '        }
+' +
+    '        .scanline {
+' +
+    '            background: linear-gradient(to bottom, transparent 50%, rgba(76, 215, 246, 0.05) 50%);
+' +
+    '            background-size: 100% 4px;
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-surface font-body overflow-hidden">
+' +
+    '<!-- TopAppBar (Shared Component Execution) -->
+' +
+    '<header class="fixed top-0 left-0 w-full h-[64px] bg-[#06090f] border-b border-cyan-500/30 flex justify-between items-center px-6 z-50">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<span class="text-xl font-black text-cyan-500 tracking-tighter">K1</span>
+' +
+    '<!-- Lifecycle Progress Bar -->
+' +
+    '<nav class="hidden md:flex items-center gap-4">
+' +
+    '<!-- DETECT (Completed) -->
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+' +
+    '<span class="material-symbols-outlined text-[12px] text-on-primary font-bold">check</span>
+' +
+    '</div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-slate-500">DETECT</span>
+` +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] bg-primary"></div>
+' +
+    '<!-- UNDERSTAND (Active) -->
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<div class="w-6 h-6 border-2 border-primary rounded-full flex items-center justify-center bg-primary-container shadow-[0_0_12px_rgba(6,182,212,0.6)]">
+' +
+    '<div class="w-2 h-2 bg-white rounded-full"></div>
+' +
+    '</div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-cyan-400 border-b-2 border-cyan-400 pb-1">UNDERSTAND</span>
+` +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] border-t-2 border-dashed border-slate-700"></div>
+' +
+    '<!-- Future Stages -->
+' +
+    '<div class="flex items-center gap-2 opacity-40">
+' +
+    '<div class="w-5 h-5 border-2 border-slate-500 rounded-full"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-slate-500">DECIDE</span>
+` +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] border-t-2 border-dashed border-slate-700"></div>
+' +
+    '<div class="flex items-center gap-2 opacity-40">
+' +
+    '<div class="w-5 h-5 border-2 border-slate-500 rounded-full"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-slate-500">ACT</span>
+` +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] border-t-2 border-dashed border-slate-700"></div>
+' +
+    '<div class="flex items-center gap-2 opacity-40">
+' +
+    '<div class="w-5 h-5 border-2 border-slate-500 rounded-full"></div>
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-medium text-slate-500">LEARN</span>
+` +
+    '</div>
+' +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center">
+' +
+    `<span class="font-['Inter'] uppercase tracking-widest text-[10px] font-bold text-cyan-400 bg-cyan-950/40 px-3 py-1 border border-cyan-500/30">
+` +
+    '                CROWD DISTURBANCE
+' +
+    '            </span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- SideNavBar (Shared Component Execution) -->
+' +
+    '<aside class="fixed left-0 top-[64px] h-[calc(100%-64px)] w-64 bg-[#080e18] border-r border-cyan-900/20 flex flex-col z-40">
+' +
+    '<div class="p-6 border-b border-cyan-900/10">
+' +
+    '<h1 class="font-headline font-black text-white text-2xl tracking-tighter">02 UNDERSTAND</h1>
+' +
+    `<p class="font-['Inter'] uppercase tracking-wider text-[10px] text-slate-500 mt-1">Correlate, verify, and contextualize</p>
+` +
+    '<div class="mt-4 inline-flex items-center gap-2 px-2 py-1 bg-primary-container/10 border border-primary/20">
+' +
+    '<span class="w-2 h-2 bg-primary animate-pulse"></span>
+' +
+    '<span class="text-[10px] font-bold text-primary tracking-widest uppercase">Video Analysis</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<nav class="flex-1 py-4">
+' +
+    '<a class="flex items-center gap-4 px-6 py-4 text-cyan-400 bg-cyan-950/30 border-l-2 border-cyan-400 transition-all" href="#">
+' +
+    `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+` +
+    `<span class="font-['Inter'] uppercase tracking-wider text-xs font-bold">K-Video</span>
+` +
+    '</a>
+' +
+    '<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:bg-[#242a35] hover:text-cyan-200 transition-all" href="#">
+' +
+    '<span class="material-symbols-outlined">psychology</span>
+' +
+    `<span class="font-['Inter'] uppercase tracking-wider text-xs">AI Engine</span>
+` +
+    '</a>
+' +
+    '<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:bg-[#242a35] hover:text-cyan-200 transition-all" href="#">
+' +
+    '<span class="material-symbols-outlined">query_stats</span>
+' +
+    `<span class="font-['Inter'] uppercase tracking-wider text-xs">Telemetry</span>
+` +
+    '</a>
+' +
+    '<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:bg-[#242a35] hover:text-cyan-200 transition-all" href="#">
+' +
+    '<span class="material-symbols-outlined">history</span>
+' +
+    `<span class="font-['Inter'] uppercase tracking-wider text-xs">Archives</span>
+` +
+    '</a>
+' +
+    '</nav>
+' +
+    '<div class="p-6 border-t border-cyan-900/10 bg-cyan-950/5">
+' +
+    '<div class="flex items-center gap-3">
+' +
+    '<div class="w-8 h-8 bg-surface-container-highest border border-cyan-500/30 flex items-center justify-center">
+' +
+    '<span class="material-symbols-outlined text-cyan-400 text-sm">shield_person</span>
+' +
+    '</div>
+' +
+    '<div>
+' +
+    '<p class="text-[10px] font-bold text-white uppercase tracking-tighter">OP-7429</p>
+' +
+    '<p class="text-[9px] text-cyan-500/70 uppercase">System Active</p>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</aside>
+' +
+    '<!-- Main Content Workspace -->
+' +
+    '<main class="ml-64 mt-[64px] h-[calc(100vh-64px)] grid grid-cols-10 bg-[#050a14]">
+' +
+    '<!-- LEFT SIDE: Video Player & Timeline (60%) -->
+' +
+    '<section class="col-span-6 flex flex-col p-6 gap-6 border-r border-cyan-900/10">
+' +
+    '<!-- Video Feed Panel -->
+' +
+    '<div class="relative flex-1 bg-black border border-cyan-500/20 shadow-[inset_0_0_100px_rgba(0,0,0,1)] group overflow-hidden">
+' +
+    '<img alt="Live Crowd Feed" class="w-full h-full object-cover opacity-70 grayscale-[20%]" data-alt="Cinematic security camera view of a crowded public square at night with neon lights, high angle, technical data overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBttNKz_MJqBtKyrOQ2HCA10YPqssN4haf_yNY8lNPnKvdKs6dGuD-lDxMQ4AzYZPMH5YCHZz2XbARFkf1FM1QvRwbLAddAeZMHCu4Gskr5KqzCnVjVmRMH6ZrZFGjfTOIT2vvyiuXF0nBXKMgt4hWZRomBI_HJWY78aNdUCDB_988H-w7Lg

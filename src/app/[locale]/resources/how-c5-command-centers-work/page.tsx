@@ -415,6 +415,37 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
               ? 'La transición de sistemas fragmentados a plataformas unificadas ha permitido a los centros C5 reducir tiempos de respuesta hasta en un 40%, mejorar la coordinación multiagencia y cumplir de manera consistente con los indicadores de Calidad que exige el modelo C5.'
               : 'The transition from fragmented systems to unified platforms has enabled C5 centers to reduce response times by up to 40%, improve multi-agency coordination, and consistently meet the Quality indicators required by the C5 model.'}
           </p>
+
+          {/* ── Internal links ── */}
+          <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              {[
+                { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                { href: '/integrations/lpr', label: 'LPR' },
+                { href: '/integrations/panic-buttons', label: es ? 'Botones de Pánico' : 'Panic Buttons' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              {[
+                { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un RTCC?' : 'What Is a Real-Time Crime Center' },
+                { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* -- FAQ SECTION -- */}

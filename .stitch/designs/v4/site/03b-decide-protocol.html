@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>K1 - DECIDE - Event Protocol</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "tertiary-container": "#e89337",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "on-secondary-fixed-variant": "#783200",
+' +
+    '                        "secondary-fixed-dim": "#ffb690",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "on-primary-container": "#00424f",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "on-tertiary-fixed-variant": "#6a3b00",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "on-secondary-fixed": "#341100",
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "on-tertiary-fixed": "#2d1600",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "secondary-container": "#ec6a06",
+' +
+    '                        "tertiary-fixed": "#ffdcbf",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "on-secondary": "#552100",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "on-tertiary": "#4b2800",
+' +
+    '                        "secondary-fixed": "#ffdbca",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "surface-tint": "#4cd7f6",
+' +
+    '                        "on-secondary-container": "#4a1c00",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "tertiary-fixed-dim": "#ffb873",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "on-tertiary-container": "#5b3200",
+' +
+    '                        "tertiary": "#ffb873",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "secondary": "#ffb690",
+' +
+    '                        "on-background": "#dde2f1"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "none": "0px", "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '            vertical-align: middle;
+' +
+    '        }
+' +
+    '        .glow-ring {
+' +
+    '            box-shadow: inset 0 0 4px rgba(76, 215, 246, 0.3);
+' +
+    '        }
+' +
+    '        .glow-orange {
+' +
+    '            box-shadow: 0 0 15px rgba(236, 106, 6, 0.4);
+' +
+    '        }
+' +
+    '        ::-webkit-scrollbar { width: 4px; }
+' +
+    '        ::-webkit-scrollbar-track { background: #080e18; }
+' +
+    '        ::-webkit-scrollbar-thumb { background: #2f3540; }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-[#050a14] text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col">
+' +
+    '<!-- TopNavBar (JSON Managed) -->
+' +
+    '<nav class="bg-[#06090f] dark:bg-[#06090f] docked full-width top-0 h-16 border-none flex justify-between items-center w-full px-6 max-w-full sticky z-50">
+' +
+    '<div class="text-2xl font-black text-cyan-400 tracking-tighter uppercase">K1</div>
+' +
+    '<div class="hidden md:flex gap-8 items-center h-full">
+' +
+    '<a class="text-slate-600 text-xs font-bold uppercase tracking-widest Inter hover:text-cyan-300 transition-colors" href="#">DETECT</a>
+' +
+    '<a class="text-slate-600 text-xs font-bold uppercase tracking-widest Inter hover:text-cyan-300 transition-colors" href="#">UNDERSTAND</a>
+' +
+    '<a class="text-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.5)] text-xs font-bold uppercase tracking-widest Inter scale-110 glow-ring px-2 py-1" href="#">DECIDE</a>
+' +
+    '<a class="text-slate-600 text-xs font-bold uppercase tracking-widest Inter hover:text-cyan-300 transition-colors" href="#">ACT</a>
+' +
+    '<a class="text-slate-600 text-xs font-bold uppercase tracking-widest Inter hover:text-cyan-300 transition-colors" href="#">LEARN</a>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<div class="px-3 py-1 bg-error-container text-white text-[10px] font-black tracking-widest uppercase">CROWD DISTURBANCE</div>
+' +
+    '<span class="material-symbols-outlined text-cyan-400">notifications</span>
+' +
+    '</div>
+' +
+    '</nav>
+' +
+    '<!-- Header Section -->
+' +
+    '<header class="px-8 pt-8 pb-4">
+' +
+    '<div class="flex flex-col gap-1">
+' +
+    '<div class="flex items-baseline gap-4">
+' +
+    '<h1 class="text-6xl font-black text-white tracking-tighter uppercase">03 DECIDE</h1>
+' +
+    '<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase opacity-80">Response Protocol</span>
+' +
+    '</div>
+' +
+    '<p class="text-slate-400 text-sm font-medium tracking-wide uppercase">Prioritize and determine best response.</p>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- Main Content Grid -->
+' +
+    '<main class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-0 px-0 pb-16">
+' +
+    '<!-- LEFT COLUMN: Event Detail Card -->
+' +
+    '<section class="p-8 flex flex-col">
+' +
+    '<div class="bg-[#0e1830] border-l-4 border-error h-full flex flex-col">
+' +
+    '<!-- Card Header -->
+' +
+    '<div class="p-6 flex justify-between items-start bg-surface-container-low/50">
+' +
+    '<div>
+' +
+    '<h2 class="text-2xl font-extrabold text-white tracking-tight">INC-2026-0847</h2>
+' +
+    '<h3 class="text-lg font-bold text-error tracking-wide uppercase">CROWD DISTURBANCE</h3>
+' +
+    '</div>
+' +
+    '<div class="flex gap-2">
+' +
+    '<span class="bg-error px-3 py-1 text-[10px] font-black text-on-error uppercase tracking-widest">HIGH</span>
+' +
+    '<span class="bg-secondary px-3 py-1 text-[10px] font-black text-on-secondary uppercase tracking-widest">ACTIVE</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Card Body -->
+' +
+    '<div class="p-6 grid grid-cols-2 gap-y-6 gap-x-8 flex-grow">
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Type</label>
+' +
+    '<p class="text-on-surface font-bold text-sm">Crowd Disturbance</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Location</label>
+' +
+    '<p class="text-on-surface font-bold text-sm">Av. Reforma Zone B</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Detected Via</label>
+' +
+    '<p class="text-on-surface font-bold text-sm">AI Camera 3</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Time</label>
+' +
+    '<p class="text-on-surface font-bold text-sm tracking-widest">14:23:07</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Estimated Individuals</label>
+' +
+    '<p class="text-on-surface font-bold text-sm">18</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Risk Level</label>
+' +
+    '<p class="text-error font-black text-sm uppercase">HIGH</p>
+' +
+    '</div>
+' +
+    '<div class="space-y-1">
+' +
+    '<label class="block text-[9px] font-black text-primary uppercase tracking-[0.15em]">Cameras Active</label>
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<p class="text-on-surface font-bold text-sm">2</p>
+' +
+    '<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Event Timeline Strip -->
+' +
+    '<div class="mt-auto bg-surface-container-lowest p-6 grid grid-cols-4 gap-2 relative">
+' +
+    '<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+' +
+    '<div class="relative z-10 flex flex-col items-center gap-2 text-center">
+' +
+    '<div class="bg-primary text-on-primary p-1 flex items-center justify-center">
+' +
+    `<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">radar</span>
+` +
+    '</div>
+' +
+    '<div class="space-y-0.5">
+' +
+    '<p class="text-[9px] font-bold text-on-surface-variant tracking-tighter">14:23:07</p>
+' +
+    '<p class="text-[8px] font-black text-primary uppercase leading-none">AI Detection</p>
+' +
+    '</div>
+' +
+    '<span class="material-symbols-outlined text-[12px] text-primary">check_circle</span>
+' +
+    '</div>
+' +
+    '<div class="relative z-10 flex flex-col items-center gap-2 text-center">
+' +
+    '<div class="bg-primary text-on-primary p-1 flex items-center justify-center">
+' +
+    `<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">videocam</span>
+` +
+    '</div>
+' +
+    '<div class="space-y-0.5">
+' +
+    '<p class="text-[9px] font-bold text-on-surface-variant tracking-tighter">14:23:09</p>
+' +
+    '<p class="text-[8px] font-black text-primary uppercase leading-none">Video Verified</p>
+' +
+    '</div>
+' +
+    '<span class="material-symbols-outlined text-[12px] text-primary">check_circle</span>
+' +
+    '</div>
+' +
+    '<div class="relative z-10 flex flex-col items-center gap-2 text-center">
+' +
+    '<div class="bg-primary text-on-pr
