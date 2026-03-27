@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 import EbookDownloadForm from '@/components/EbookDownloadForm'
+import { Link } from '@/i18n/navigation'
 import { organizationSchema, articleSchema, breadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({
@@ -462,6 +463,40 @@ export default async function EndOfSiloedResponsePage({
             }}>
               {content.quoteAttrib}
             </cite>
+          </div>
+        </section>
+
+        {/* ── Internal links ── */}
+        <section style={{ padding: '0 32px 48px' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Integraciones:' : 'Integrations:'}
+                </span>
+                {[
+                  { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                  { href: '/integrations/lpr', label: 'LPR' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Recursos:' : 'Resources:'}
+                </span>
+                {[
+                  { href: '/resources/psim-vs-unified-platform', label: es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform' },
+                  { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas' : 'Platforms' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

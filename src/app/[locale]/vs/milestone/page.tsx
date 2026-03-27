@@ -487,6 +487,20 @@ export default async function VsMilestonePage({
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px', marginTop: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              {[
+                { href: '/integrations/lpr', label: 'LPR' },
+                { href: '/integrations/facial-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                { href: '/integrations/drones', label: 'Drones' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

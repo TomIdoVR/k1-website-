@@ -244,6 +244,16 @@ export const metadata = {
     description: "Un software de conciencia situacional agrega cámaras, sensores, despacho y GIS en un mapa operativo unificado. Cómo los centros de mando lo usan para coordinar respuestas más rápido.",
     canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
   },
+  whatIsACommandCenter: {
+    title: "¿Qué Es un Centro de Mando? Guía C2–C5 para Seguridad Pública | KabatOne",
+    description: "Un centro de mando (C2/C5) es una instalación centralizada que coordina videovigilancia, despacho, GIS y respuesta en campo. Conoce cómo funcionan los centros de mando unificados y cómo KabatOne los potencia.",
+    canonical: "https://kabatone.com/es/resources/what-is-a-command-center/",
+  },
+  whatIsGunshotDetectionSoftware: {
+    title: "¿Qué Es un Software de Detección de Disparos? Guía Completa | KabatOne",
+    description: "Un software de detección de disparos usa sensores acústicos para detectar disparos, triangular su ubicación y alertar a los centros de mando en segundos. Cómo funciona y cómo se integra con video y despacho.",
+    canonical: "https://kabatone.com/es/resources/what-is-gunshot-detection-software/",
+  },
   simulator: {
     title: "Simulador de Incidentes — Respuesta Unificada vs Fragmentada | KabatOne",
     description: "Simulador interactivo que compara sistemas de seguridad pública fragmentados con la plataforma unificada de KabatOne. Observa el mismo incidente de dos formas y ve la diferencia en tiempo real.",

@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne Incident Simulator — Split-View Playback</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060d1a;
+    --bg-elevated: #0a1628;
+    --card: #111827;
+    --card-hover: #162540;
+    --card-active: #1b2e4a;
+    --foreground: #e8edf5;
+    --primary: #2b7fff;
+    --primary-glow: rgba(43, 127, 255, 0.35);
+    --cyan: #06b6d4;
+    --accent: #202e4b;
+    --border: rgba(43, 127, 255, 0.12);
+    --border-strong: rgba(43, 127, 255, 0.25);
+    --text-primary: #e8edf5;
+    --text-secondary: #cecfda;
+    --text-tertiary: #99a1af;
+    --text-muted: #7b8db0;
+    --red: #ff5263;
+    --red-bg: rgba(255, 82, 99, 0.08);
+    --red-border: rgba(255, 82, 99, 0.2);
+    --green: #00d492;
+    --green-bg: rgba(0, 212, 146, 0.08);
+    --green-border: rgba(0, 212, 146, 0.2);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245, 158, 11, 0.08);
+    --blue: #4d7cfe;
+    --cyan-bg: rgba(6, 182, 212, 0.1);
+    --radius: 0.625rem;
+    --radius-lg: 0.875rem;
+    --elevation-md: 0px 8px 32px rgba(0,0,0,0.55);
+    --font-body: 'Public Sans', sans-serif;
+    --font-ui: 'Inter', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Top Bar ── */
+  .top-bar {
+    height: 52px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  .top-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .top-logo {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .top-logo span { color: var(--cyan); }
+
+  .divider-v {
+    width: 1px;
+    height: 20px;
+    background: var(--border-strong);
+  }
+
+  .scenario-name {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+  }
+
+  .top-center {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .step-badge {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cyan);
+    background: var(--cyan-bg);
+    padding: 4px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .progress-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--cyan));
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+
+  .playback-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ctrl-btn {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 14px;
+  }
+  .ctrl-btn:hover { background: var(--card-hover); border-color: var(--border-strong); }
+  .ctrl-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+  .speed-chip {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+
+  .top-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-sm {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Split View ── */
+  .split-container {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+  }
+
+  .half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .half-fragmented {
+    border-right: 1px solid var(--border);
+  }
+
+  /* Half headers */
+  .half-header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-shrink: 0;
+  }
+  .half-fragmented .half-header {
+    background: var(--red-bg);
+    border-bottom: 1px solid var(--red-border);
+  }
+  .half-unified .half-header {
+    background: var(--cyan-bg);
+    border-bottom: 1px solid var(--green-border);
+  }
+
+  .half-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  .half-fragmented .half-label { color: var(--red); }
+  .half-unified .half-label { color: var(--cyan); }
+
+  .half-sublabel {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* Clock + KPIs */
+  .kpi-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .clock {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .half-fragmented .clock { color: var(--red); }
+  .half-unified .clock { color: var(--green); }
+
+  .kpi {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .kpi .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .kpi .dot.red { background: var(--red); }
+  .kpi .dot.green { background: var(--green); }
+
+  /* ── Panel Content ── */
+  .half-content {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Fragmented: 4 panels */
+  .panels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .mini-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .mini-panel.dimmed {
+    opacity: 0.4;
+  }
+  .mini-panel.active-panel {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 1px var(--amber), inset 0 0 12px rgba(245, 158, 11, 0.06);
+  }
+
+  .panel-label {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .panel-label .panel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .panel-content-area {
+    flex: 1;
+    background: var(--bg-elevated);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* VMS camera grid */
+  .cam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+  }
+  .cam-cell {
+    background: #0c1420;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    position: relative;
+  }
+  .cam-cell.alert::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid var(--red);
+    animation: pulse-border 1.5s infinite;
+  }
+
+  @keyframes pulse-border {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* GIS placeholder */
+  .gis-placeholder {
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(135deg, #0a1628 0%, #0f1d30 50%, #0a1628 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .gis-placeholder .typing-indicator {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--amber);
+    animation: blink 0.8s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* CAD placeholder */
+  .cad-lines {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+  }
+  .cad-line {
+    height: 6px;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .cad-line:nth-child(1) { width: 70%; }
+  .cad-line:nth-child(2) { width: 90%; }
+  .cad-line:nth-child(3) { width: 55%; }
+
+  /* Radio channels */
+  .radio-channels {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .radio-ch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+  }
+  .radio-ch .ch-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .radio-ch .ch-dot.idle { background: var(--text-muted); opacity: 0.4; }
+
+  /* Delay overlay */
+  .delay-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 13, 26, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    color: var(--amber);
+    font-weight: 600;
+    z-index: 5;
+  }
+  .delay-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--accent);
+    border-top-color: var(--amber);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Unified: Command Center ── */
+  .cc-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 180px 1fr 200px;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .cc-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  .cc-panel-header {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Map area */
+  .cc-map {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .cc-map-bg {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 45% 40%, rgba(43, 127, 255, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #0a1628 0%, #0f1d30 50%, #0a1628 100%);
+  }
+
+  /* Map markers */
+  .map-marker {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .marker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid;
+    position: relative;
+  }
+  .marker-dot.incident {
+    background: var(--red);
+    border-color: var(--red);
+    box-shadow: 0 0 12px rgba(255, 82, 99, 0.5);
+  }
+  .marker-dot.incident::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1.5px solid var(--red);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: pulse-ring 2s infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.4; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+  .marker-dot.unit {
+    background: var(--primary);
+    border-color: var(--primary);
+  }
+  .marker-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    background: rgba(6, 13, 26, 0.8);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  /* Module badges row */
+  .module-badges {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .mod-badge {
+    font-family: var(--font-ui);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.5);
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .mod-badge.active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(43, 127, 255, 0.15);
+    box-shadow: 0 0 8px rgba(43, 127, 255, 0.2);
+  }
+  .mod-badge.glow-cyan {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: rgba(6, 182, 212, 0.12);
+  }
+  .mod-badge.glow-red {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(255, 82, 99, 0.12);
+  }
+
+  /* Dispatch panel */
+  .dispatch-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    background: var(--bg-elevated);
+    border-radius: 6px;
+    border-left: 3px solid var(--red);
+  }
+  .dispatch-folio {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+  }
+  .dispatch-type {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .dispatch-field {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-tertiary);
+  }
+  .dispatch-select {
+    width: 100%;
+    height: 28px;
+    background: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-family: var(--font-ui);
+    font-size: 10px;
+    padding: 0 8px;
+    margin-top: 4px;
+  }
+
+  /* Timeline events */
+  .timeline-entry {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 10px;
+  }
+  .tl-time {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    width: 36px;
+    flex-shrink: 0;
+  }
+  .tl-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .tl-text {
+    color: var(--text-tertiary);
+    line-height: 1.35;
+  }
+
+  /* Right column panels */
+  .cc-right {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ai-alert {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: var(--cyan-bg);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    border-radius: 6px;
+    align-items: flex-start;
+  }
+  .ai-alert-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(6, 182, 212, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--cyan);
+    font-size: 10px;
+  }
+  .ai-alert-text {
+    font-size: 10px;
+    color: var(--text-secondary);
+    line-height: 1.35;
+  }
+  .ai-score {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--cyan);
+    margin-top: 2px;
+  }
+
+  /* Unit cards */
+  .unit-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: var(--bg-elevated);
+    border-radius: 6px;
+  }
+  .unit-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .unit-name {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  .unit-dist {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+
+  /* ── Narrator Bar ── */
+  .narrator-bar {
+    height: 64px;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  .narrator-step {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .narrator-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--border-strong);
+    flex-shrink: 0;
+  }
+
+  .narrator-comparison {
+    display: flex;
+    gap: 32px;
+    flex: 1;
+  }
+  .narrator-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+  .narrator-side .side-label {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .narrator-side .side-label.frag {
+    background: var(--red-bg);
+    color: var(--red);
+  }
+  .narrator-side .side-label.uni {
+    background: var(--cyan-bg);
+    color: var(--cyan);
+  }
+
+  .narrator-modules {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .narrator-modules .nm-label {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+  .narrator-mod-chip {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  .narrator-mod-chip.gis { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .narrator-mod-chip.dispatch { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+  /* Annotation */
+  .annotation {
+    position: fixed;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+  .annotation span { color: var(--cyan); }
+
+  /* ── Tooltip (module activation) ── */
+  .module-tooltip {
+    position: absolute;
+    top: 50px;
+    right: 12px;
+    background: var(--card);
+    border: 1px solid var(--cyan);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.15);
+    max-width: 200px;
+    z-index: 20;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .tooltip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+  .tooltip-title {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tooltip-text {
+    font-size: 10px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-left">
+    <div class="top-logo"><span>Kabat</span>One</div>
+    <div class="divider-v"></div>
+    <div class="scenario-name">Crowd Disturbance</div>
+  </div>
+
+  <div class="top-center">
+    <div class="step-badge">Step 4 / 10</div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <div class="playback-controls">
+      <button class="ctrl-btn" title="Rewind">&#9194;</button>
+      <button class="ctrl-btn active" title="Pause">&#9208;</button>
+      <button class="ctrl-btn" title="Forward">&#9193;</button>
+    </div>
+    <div class="speed-chip">1x</div>
+  </div>
+
+  <div class="top-right">
+    <div class="lang-sm">EN</div>
+  </div>
+</div>
+
+<!-- Split View -->
+<div class="split-container">
+
+  <!-- LEFT: Fragmented -->
+  <div class="half half-fragmented">
+    <div class="half-header">
+      <div>
+        <div class="half-label">FRAGMENTED</div>
+        <div class="half-sublabel">Legacy Systems &mdash; 4 Disconnected Panels</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi"><div class="dot red"></div> Errors: 1</div>
+        <div class="kpi"><div class="dot red"></div> Missed: 0</div>
+        <div class="clock">01:42</div>
+      </div>
+    </div>
+
+    <div class="half-content">
+      <div class="panels-grid">
+        <!-- VMS -->
+        <div class="mini-panel dimmed">
+          <div class="panel-label"><div class="panel-dot" style="background: var(--cyan)"></div>VMS</div>
+          <div class="panel-content-area">
+            <div class="cam-grid">
+              <div class="cam-cell alert">CAM-01</div>
+              <div class="cam-cell">CAM-02</div>
+              <div class="cam-cell">CAM-03</div>
+              <div class="cam-cell">CAM-04</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GIS (active) -->
+        <div class="mini-panel active-panel">
+          <div class="panel-label"><div class="panel-dot" style="background: var(--blue)"></div>GIS</div>
+          <div class="panel-content-area">
+            <div class="gis-placeholder">
+              <span class="typing-indicator">Typing address..._</span>
+              <span style="font-size: 8px; color: var(--text-muted);">Manual entry required</span>
+            </div>
+            <!-- Delay overlay -->
+            <div class="delay-overlay">
+              <div class="delay-spinner"></div>
+              Switching panel... 1.2s
+            </div>
+          </div>
+        </div>
+
+        <!-- CAD -->
+        <div class="mini-panel dimmed">
+          <div class="panel-label"><div class="panel-dot" style="background: var(--amber)"></div>CAD</div>
+          <div class="panel-content-area">
+            <div class="cad-lines">
+              <div class="cad-line"></div>
+              <div class="cad-line"></div>
+              <div class="cad-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radio -->
+        <div class="mini-panel dimmed">
+          <div class="panel-label"><div class="panel-dot" style="background: var(--green)"></div>RADIO</div>
+          <div class="panel-content-area">
+            <div class="radio-channels">
+              <div class="radio-ch"><div class="ch-dot"></div> CH1 Active</div>
+              <div class="radio-ch"><div class="ch-dot idle"></div> CH2 Idle</div>
+              <div class="radio-ch"><div class="ch-dot idle"></div> CH3 Idle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Unified -->
+  <div class="half half-unified">
+    <div class="half-header">
+      <div>
+        <div class="half-label">UNIFIED &mdash; KabatOne</div>
+        <div class="half-sublabel">Command Center &mdash; Single Canvas</div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi"><div class="dot green"></div> Errors: 0</div>
+        <div class="kpi"><div class="dot green"></div> Missed: 0</div>
+        <div class="clock">00:38</div>
+      </div>
+    </div>
+
+    <div class="half-content">
+      <div class="cc-layout">
+        <!-- Left column: Dispatch + Events -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="cc-panel" style="flex: 1;">
+            <div class="cc-panel-header">DISPATCH</div>
+            <div class="dispatch-item">
+              <div class="dispatch-folio">#INC-4821</div>
+              <div class="dispatch-type">Crowd Disturbance</div>
+              <div class="dispatch-field"><span>Priority</span><span style="color: var(--red); font-weight: 600;">HIGH</span></div>
+              <select class="dispatch-select">
+                <option>Unit-14 (2.1 km)</option>
+              </select>
+            </div>
+          </div>
+          <div class="cc-panel" style="flex: 1;">
+            <div class="cc-panel-header">EVENTS</div>
+            <div class="timeline-entry"><span class="tl-time">00:00</span><div class="tl-dot"></div><span class="tl-text">AI detection</span></div>
+            <div class="timeline-entry"><span class="tl-time">00:08</span><div class="tl-dot"></div><span class="tl-text">Verified</span></div>
+            <div class="timeline-entry"><span class="tl-time">00:15</span><div class="tl-dot"></div><span class="tl-text">GIS auto-plot</span></div>
+            <div class="timeline-entry"><span class="tl-time">00:22</span><div class="tl-dot" style="background: var(--cyan);"></div><span class="tl-text" style="color: var(--cyan);">Units ranked</span></div>
+          </div>
+        </div>
+
+        <!-- Center: Map -->
+        <div class="cc-map">
+          <div class="cc-map-bg">
+            <!-- Incident marker -->
+            <div class="map-marker" style="top: 38%; left: 45%;">
+              <div class="marker-dot incident"></div>
+              <div class="marker-label">Incident</div>
+            </div>
+            <!-- Unit markers -->
+            <div class="map-marker" style="top: 52%; left: 58%;">
+              <div class="marker-dot unit"></div>
+              <div class="marker-label">U-14 &middot; 2.1km</div>
+            </div>
+            <div class="map-marker" style="top: 30%; left: 62%;">
+              <div class="marker-dot unit"></div>
+              <div class="marker-label">U-07 &middot; 3.4km</div>
+            </div>
+          </div>
+          <!-- Module badges -->
+          <div class="module-badges">
+            <div class="mod-badge glow-cyan">Video</div>
+            <div class="mod-badge glow-red">Dispatch</div>
+            <div class="mod-badge">Events</div>
+            <div class="mod-badge active">GIS</div>
+            <div class="mod-badge">Integ</div>
+            <div class="mod-badge">Resp</div>
+            <div class="mod-badge">Citizen</div>
+            <div class="mod-badge glow-cyan">AI</div>
+            <div class="mod-badge">BI</div>
+          </div>
+
+          <!-- Module tooltip -->
+          <div class="module-tooltip">
+            <div class="tooltip-header">
+              <div class="tooltip-dot"></div>
+              <div class="tooltip-title">GIS Module</div>
+            </div>
+            <div class="tooltip-text">Auto-plotted incident from camera GPS. Showing 3 nearest units ranked by distance.</div>
+          </div>
+        </div>
+
+        <!-- Right column: AI + Responder -->
+        <div class="cc-right">
+          <div class="cc-panel" style="flex: 1;">
+            <div class="cc-panel-header">AI ALERTS</div>
+            <div class="ai-alert">
+              <div class="ai-alert-icon">!</div>
+              <div>
+                <div class="ai-alert-text">Crowd anomaly detected</div>
+                <div class="ai-score">Score: 0.91</div>
+              </div>
+            </div>
+          </div>
+          <div class="cc-panel" style="flex: 1;">
+            <div class="cc-panel-header">RESPONDER</div>
+            <div class="unit-card"><div class="unit-dot"></div><span class="unit-name">U-14</span><span class="unit-dist">2.1 km</span></div>
+            <div class="unit-card"><div class="unit-dot"></div><span class="unit-name">U-07</span><span class="unit-dist">3.4 km</span></div>
+            <div class="unit-card"><div class="unit-dot" style="background: var(--amber);"></div><span class="unit-name">U-22</span><span class="unit-dist">On Call</span></div>
+          </div>
+          <div class="cc-panel" style="flex: 0 0 auto;">
+            <div class="cc-panel-header">BI</div>
+            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">
+              Resp: 00:38<br>Active: 1<br>Pending: 0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Narrator Bar -->
+<div class="narrator-bar">
+  <div class="narrator-step">Step 4: Context</div>
+  <div class="narrator-divider"></div>
+  <div class="narrator-comparison">
+    <div class="narrator-side">
+      <span class="side-label frag">FRAG</span>
+      Operator switches to CAD, cross-references with GIS manually
+    </div>
+    <div class="narrator-side">
+      <span class="side-label uni">UNI</span>
+      Map already shows 3 nearest units ranked by distance
+    </div>
+  </div>
+  <div class="narrator-modules">
+    <span class="nm-label">Active:</span>
+    <span class="narrator-mod-chip gis">GIS</span>
+    <span class="narrator-mod-chip dispatch">Dispatch</span>
+  </div>
+</div>
+
+</body>
+</html>

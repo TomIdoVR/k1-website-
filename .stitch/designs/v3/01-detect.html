@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>KabatOne | DETECT Stage</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '      tailwind.config = {
+' +
+    '        darkMode: "class",
+' +
+    '        theme: {
+' +
+    '          extend: {
+' +
+    '            colors: {
+' +
+    '              "on-tertiary": "#680016",
+' +
+    '              "on-primary-container": "#00424f",
+' +
+    '              "surface-container-lowest": "#080e18",
+' +
+    '              "surface-tint": "#4cd7f6",
+' +
+    '              "on-surface": "#dde2f1",
+' +
+    '              "on-secondary-fixed-variant": "#414753",
+' +
+    '              "primary-container": "#06b6d4",
+' +
+    '              "on-primary": "#003640",
+' +
+    '              "secondary-container": "#414753",
+' +
+    '              "primary-fixed": "#acedff",
+' +
+    '              "on-error-container": "#ffdad6",
+' +
+    '              "outline-variant": "#3d494c",
+' +
+    '              "secondary-fixed": "#dde2f1",
+' +
+    '              "surface": "#0e131e",
+' +
+    '              "inverse-on-surface": "#2b313c",
+' +
+    '              "inverse-surface": "#dde2f1",
+' +
+    '              "tertiary-fixed": "#ffdad9",
+' +
+    '              "primary-fixed-dim": "#4cd7f6",
+' +
+    '              "on-primary-fixed-variant": "#004e5c",
+' +
+    '              "tertiary-container": "#ff7f85",
+' +
+    '              "on-primary-fixed": "#001f26",
+' +
+    '              "surface-container-low": "#161c26",
+' +
+    '              "inverse-primary": "#00687a",
+' +
+    '              "primary": "#4cd7f6",
+' +
+    '              "surface-container-highest": "#2f3540",
+' +
+    '              "surface-variant": "#2f3540",
+' +
+    '              "on-secondary-container": "#afb5c3",
+' +
+    '              "on-surface-variant": "#bcc9cd",
+' +
+    '              "on-secondary-fixed": "#161c26",
+' +
+    '              "surface-dim": "#0e131e",
+' +
+    '              "background": "#0e131e",
+' +
+    '              "error": "#ffb4ab",
+' +
+    '              "surface-container-high": "#242a35",
+' +
+    '              "surface-bright": "#343945",
+' +
+    '              "outline": "#869397",
+' +
+    '              "surface-container": "#1a202a",
+' +
+    '              "on-tertiary-fixed-variant": "#920023",
+' +
+    '              "tertiary": "#ffb3b4",
+' +
+    '              "on-tertiary-container": "#7d001d",
+' +
+    '              "on-tertiary-fixed": "#40000a",
+' +
+    '              "secondary": "#c1c6d5",
+' +
+    '              "on-background": "#dde2f1",
+' +
+    '              "on-secondary": "#2b313c",
+' +
+    '              "secondary-fixed-dim": "#c1c6d5",
+' +
+    '              "tertiary-fixed-dim": "#ffb3b4",
+' +
+    '              "error-container": "#93000a",
+' +
+    '              "on-error": "#690005"
+' +
+    '            },
+' +
+    '            fontFamily: {
+' +
+    '              "headline": ["Inter"],
+' +
+    '              "body": ["Inter"],
+' +
+    '              "label": ["Inter"]
+' +
+    '            },
+' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '          },
+' +
+    '        },
+' +
+    '      }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '            display: inline-block;
+' +
+    '            line-height: 1;
+' +
+    '            text-transform: none;
+' +
+    '            letter-spacing: normal;
+' +
+    '            word-wrap: normal;
+' +
+    '            white-space: nowrap;
+' +
+    '            direction: ltr;
+' +
+    '        }
+' +
+    '        .bento-grid {
+' +
+    '            display: grid;
+' +
+    '            grid-template-columns: repeat(3, 1fr);
+' +
+    '            gap: 2px;
+' +
+    '        }
+' +
+    '        .pulse-ring {
+' +
+    '            animation: pulse-animation 2s infinite;
+' +
+    '        }
+' +
+    '        @keyframes pulse-animation {
+' +
+    '            0% { box-shadow: 0 0 0 0px rgba(76, 215, 246, 0.4); }
+' +
+    '            100% { box-shadow: 0 0 0 10px rgba(76, 215, 246, 0); }
+' +
+    '        }
+' +
+    '        .scan-line {
+' +
+    '            position: absolute;
+' +
+    '            width: 100%;
+' +
+    '            height: 2px;
+' +
+    '            background: rgba(76, 215, 246, 0.2);
+' +
+    '            top: 0;
+' +
+    '            left: 0;
+' +
+    '            animation: scan 4s linear infinite;
+' +
+    '        }
+' +
+    '        @keyframes scan {
+' +
+    '            0% { top: 0; }
+' +
+    '            100% { top: 100%; }
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col overflow-hidden">
+' +
+    '<!-- TopAppBar Shell -->
+' +
+    '<header class="bg-[#080e18] shadow-[0_0_15px_rgba(76,215,246,0.1)] flex justify-between items-center px-6 w-full h-16 z-50 fixed top-0">
+' +
+    '<!-- Logo -->
+' +
+    '<div class="text-2xl font-normal text-cyan-400 font-inter">K1</div>
+' +
+    '<!-- Lifecycle Progress Indicator -->
+' +
+    '<nav class="hidden md:flex items-center space-x-12">
+' +
+    '<div class="flex flex-col items-center gap-2">
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_#4cd7f6] ring-4 ring-primary/20"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.6875rem] text-cyan-400 ring-1 ring-cyan-400/50 px-2">DETECT</span>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col items-center gap-2 relative">
+' +
+    '<div class="absolute -left-12 top-1.5 w-12 h-[1px] bg-outline-variant"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.6875rem] text-slate-500">UNDERSTAND</span>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col items-center gap-2 relative">
+' +
+    '<div class="absolute -left-12 top-1.5 w-12 h-[1px] bg-outline-variant"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.6875rem] text-slate-500">DECIDE</span>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col items-center gap-2 relative">
+' +
+    '<div class="absolute -left-12 top-1.5 w-12 h-[1px] bg-outline-variant"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.6875rem] text-slate-500">ACT</span>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col items-center gap-2 relative">
+' +
+    '<div class="absolute -left-12 top-1.5 w-12 h-[1px] bg-outline-variant"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.6875rem] text-slate-500">LEARN</span>
+' +
+    '</div>
+' +
+    '</nav>
+' +
+    '<!-- Scenario Label -->
+' +
+    '<div class="text-slate-500 font-inter uppercase tracking-widest text-[10px] bg-white/5 px-3 py-1 border border-white/10">
+' +
+    '            SCENARIO_ALPHA_01: <span class="text-on-surface">Crowd Disturbance</span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- Main Canvas -->
+' +
+    '<main class="flex-1 mt-16 p-6 flex flex-col gap-6 relative">
+' +
+    '<!-- Notification Toast -->
+' +
+    '<div class="absolute top-6 right-6 z-[60] bg-surface-container-highest border-l-4 border-error p-4 w-80 shadow-2xl">
+' +
+    '<div class="flex items-start justify-between">
+' +
+    '<div class="flex items-center gap-3">
+' +
+    '<span class="w-2 h-2 bg-error rounded-full animate-pulse"></span>
+' +
+    '<span class="text-[0.6875rem] font-bold uppercase tracking-wider text-error">ANOMALY DETECTED</span>
+' +
+    '</div>
+' +
+    '<span class="text-[0.625rem] text-on-surface-variant font-mono">14:23:07</span>
+' +
+    '</div>
+' +
+    '<p class="mt-2 text-xs font-medium text-on-surface">Zone B Camera 3: Behavioral trigger activated. Crowd density exceeded threshold.</p>
+' +
+    '</div>
+' +
+    '<!-- Header Titles -->
+' +
+    '<div class="flex flex-col">
+' +
+    '<h1 class="text-4xl md:text-6xl font-normal tracking-tighter text-on-surface flex items-baseline gap-4">
+' +
+    '<span class="text-primary opacity-50 font-light">01</span> DETECT
+' +
+    '            </h1>
+' +
+    '<p class="text-on-surface-variant uppercase tracking-[0.2em] text-xs mt-1">Capture signals from any source.</p>
+' +
+    '</div>
+' +
+    '<!-- Video Wall Grid -->
+' +
+    '<div class="flex-1 bento-grid overflow-hidden border border-white/5 bg-black/20">
+' +
+    '<!-- Cam 1 -->
+' +
+    '<div class="relative aspect-video bg-surface-container-lowest group overflow-hidden">
+' +
+    '<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="high-angle security camera view of a quiet urban subway station platform with industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA85SXr57x0JufRk-5-TORgoaSzDZxCsPIsJr9RuZWB5hCGisdFdt97LMCdRHBuOIk6U-qyt4S45Nvww4NlXj6OIvoxyRQ61MJjb61RloaaNeeQkM7FIIxWaB0ySOi-bKVOnNHis2K-kLzYOKjkkSi1Gjvsni_Ut7U6okdY0z0N9ma01aR22R-bvS0ffztjH5Zx_vxnlfAtLHQUlddMUz0aIMaLTKnX7onDK4oIDKhl7TX-WOyc2VCGC6cRxFTrvGuyuBa4EbAveXE"/>
+' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+' +
+    '<div class="absolute top-2 left-2 flex items-center gap-2 bg-black/60 px-2 py-1">
+' +
+    '<span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+' +
+    '<span class="text-[10px] font-bold tracking-tighter uppercase">CAM 1</span>
+' +
+    '</div>
+' +
+    '<div class="scan-line"></div>
+' +
+    '</div>
+' +
+    '<!-- Cam 2 -->
+' +
+    '<div class="relative aspect-video bg-surface-container-lowest group overflow-hidden">
+' +
+    '<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="cctv footage of a busy city intersection at night with light trails and modern skyscrapers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSddZVH0qd_50OiUqaXH-GgzioSzLzT6MkLvadCofqYsf9IBlxKO3g-0FXO_ExpnijR9RJkZoniuuhsVTi02vdJ6t20UHW89l62qC9_zQfS5In7FlzwhfKNN4UoGWe5Rd1ORdvWAhtFA3b_jONoy5qYvWQKbeQSJr5JaB3xsB8D2zkexUGdxcw3qB1WNiXNDFr6YU5ozAO1mVGnkBhgfTGplWNDcdy1rgaw6k4qO51IRbsvGi1RwfPjJkEB_u7WBGHRZW3XeL8M1U"/>
+' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+' +
+    '<div class="absolute top-2 left-2 flex items-center gap-2 bg-black/60 px-2 py-1">
+' +
+    '<span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+' +
+    '<span class="text-[10px] font-bold tracking-tighter uppercase">CAM 2</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Cam 3 (ALERT) -->
+' +
+    '<div class="relative aspect-video bg-surface-container-lowest ring-2 ring-primary pulse-ring z-10 overflow-hidden">
+' +
+    '<img class="w-full h-full object-cover" data-alt="surveillance view of a dense protest crowd in a public square with dark mo

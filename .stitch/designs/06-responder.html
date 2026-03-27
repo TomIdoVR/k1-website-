@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>RESPONDER MODULE - MISSION CRITICAL</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "outline": "#707583",
+' +
+    '                        "error-container": "#b92902",
+' +
+    '                        "surface-bright": "#232c3c",
+' +
+    '                        "secondary-fixed": "#fddb42",
+' +
+    '                        "primary-dim": "#edb60f",
+' +
+    '                        "background": "#080e18",
+' +
+    '                        "secondary-container": "#6f5d00",
+' +
+    '                        "on-primary-fixed-variant": "#624900",
+' +
+    '                        "surface-container-highest": "#1e2635",
+' +
+    '                        "tertiary-dim": "#e9e958",
+' +
+    '                        "on-surface-variant": "#a6abb9",
+' +
+    '                        "on-tertiary-fixed-variant": "#686800",
+' +
+    '                        "on-secondary-fixed-variant": "#685700",
+' +
+    '                        "on-secondary-fixed": "#473b00",
+' +
+    '                        "inverse-surface": "#f9f9ff",
+' +
+    '                        "tertiary": "#fffea2",
+' +
+    '                        "surface-tint": "#fdc425",
+' +
+    '                        "secondary-dim": "#eecd34",
+' +
+    '                        "surface-container-lowest": "#000000",
+' +
+    '                        "surface-variant": "#1e2635",
+' +
+    '                        "primary-fixed": "#fdc425",
+' +
+    '                        "surface-container-high": "#18202d",
+' +
+    '                        "surface-container": "#131a26",
+' +
+    '                        "on-primary-fixed": "#3f2e00",
+' +
+    '                        "error": "#ff7351",
+' +
+    '                        "error-dim": "#d53d18",
+' +
+    '                        "on-surface": "#e0e5f4",
+' +
+    '                        "tertiary-fixed-dim": "#e9e958",
+' +
+    '                        "surface-container-low": "#0d131f",
+' +
+    '                        "on-error-container": "#ffd2c8",
+' +
+    '                        "on-secondary": "#5d4d00",
+' +
+    '                        "surface-dim": "#080e18",
+' +
+    '                        "on-error": "#450900",
+' +
+    '                        "secondary": "#fddb42",
+' +
+    '                        "on-primary-container": "#473400",
+' +
+    '                        "surface": "#080e18",
+' +
+    '                        "primary-fixed-dim": "#edb60f",
+' +
+    '                        "on-tertiary": "#626200",
+' +
+    '                        "on-secondary-container": "#fff7e6",
+' +
+    '                        "on-tertiary-container": "#5a5a00",
+' +
+    '                        "primary-container": "#e7b102",
+' +
+    '                        "secondary-fixed-dim": "#eecd34",
+' +
+    '                        "tertiary-fixed": "#f7f865",
+' +
+    '                        "on-background": "#e0e5f4",
+' +
+    '                        "tertiary-container": "#f1f260",
+' +
+    '                        "on-tertiary-fixed": "#4a4b00",
+' +
+    '                        "inverse-primary": "#785a00",
+' +
+    '                        "inverse-on-surface": "#4f5561",
+' +
+    '                        "outline-variant": "#424854",
+' +
+    '                        "on-primary": "#574000",
+' +
+    '                        "primary": "#fdc425"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '            display: inline-block;
+' +
+    '            line-height: 1;
+' +
+    '        }
+' +
+    '        .glow-primary { text-shadow: 0 0 8px rgba(253, 196, 37, 0.6); }
+' +
+    '        .glow-error { text-shadow: 0 0 8px rgba(255, 115, 81, 0.6); }
+' +
+    '        .no-scrollbar::-webkit-scrollbar { display: none; }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen overflow-hidden">
+' +
+    '<!-- TopAppBar -->
+' +
+    '<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#080e18] border-b-0">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<span class="text-xl font-black tracking-tighter text-[#fdc425]">RESPONDER MODULE</span>
+' +
+    '<nav class="hidden md:flex gap-6 items-center">
+' +
+    `<a class="font-['Inter'] font-bold uppercase tracking-tighter text-sm text-[#a6abb9] hover:bg-[#1e2635] transition-colors px-3 py-1" href="#">INCIDENT ALPHA-9</a>
+` +
+    `<a class="font-['Inter'] font-bold uppercase tracking-tighter text-sm text-[#fdc425] shadow-[0_0_10px_rgba(253,196,37,0.5)] border-b-2 border-[#fdc425] px-3 py-1" href="#">TIMELINE: 04/05</a>
+` +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-highest border-l-4 border-primary">
+' +
+    `<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">sensors</span>
+` +
+    `<span class="font-['Inter'] font-bold uppercase tracking-tighter text-xs text-primary">RESPONDER ACTIVE</span>
+` +
+    '</div>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- Main Content Canvas -->
+' +
+    '<main class="pt-16 pb-20 h-screen flex flex-col">
+' +
+    '<!-- Compact Timeline Strip -->
+' +
+    '<div class="w-full bg-surface-container-low h-12 flex items-center px-6 gap-1 overflow-x-auto no-scrollbar">
+' +
+    '<div class="flex items-center gap-2 opacity-40 shrink-0">
+' +
+    '<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">STEP 01</span>
+' +
+    '<span class="h-[2px] w-8 bg-on-surface-variant"></span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 opacity-40 shrink-0">
+' +
+    '<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">STEP 02</span>
+' +
+    '<span class="h-[2px] w-8 bg-on-surface-variant"></span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 opacity-40 shrink-0">
+' +
+    '<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">STEP 03</span>
+' +
+    '<span class="h-[2px] w-8 bg-on-surface-variant"></span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 opacity-40 shrink-0">
+' +
+    '<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">STEP 04</span>
+' +
+    '<span class="h-[2px] w-8 bg-on-surface-variant"></span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2 shrink-0 px-4 py-1 bg-primary/10 border-b-2 border-primary">
+' +
+    '<span class="text-[10px] font-black text-primary uppercase tracking-widest glow-primary">STEP 05: RESPONDER</span>
+' +
+    `<span class="material-symbols-outlined text-primary text-xs" style="font-variation-settings: 'FILL' 1;">radiology</span>
+` +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="flex-1 grid grid-cols-1 md:grid-cols-12 gap-0 overflow-hidden">
+' +
+    '<!-- LEFT: Smartphone Mockup Area -->
+' +
+    '<div class="md:col-span-5 bg-surface flex items-center justify-center p-8 border-r border-surface-container-highest">
+' +
+    '<div class="relative w-[340px] h-[680px] bg-black border-[8px] border-surface-container-highest shadow-2xl overflow-hidden">
+' +
+    '<!-- App Interface -->
+' +
+    '<div class="flex flex-col h-full bg-background font-body">
+' +
+    '<!-- App Header -->
+' +
+    '<div class="bg-surface-container-high px-4 pt-8 pb-4 flex justify-between items-center">
+' +
+    '<div>
+' +
+    '<p class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">K-RESPONDER v2.4</p>
+' +
+    '<h2 class="text-sm font-black text-on-surface tracking-tight">INCIDENT 2026-0847</h2>
+' +
+    '</div>
+' +
+    '<span class="bg-error-container text-on-error-container text-[10px] font-black px-2 py-0.5 tracking-tighter">HIGH PRIORITY</span>
+' +
+    '</div>
+' +
+    '<!-- Mini Map -->
+' +
+    '<div class="h-48 relative bg-surface-container-low">
+' +
+    '<img class="w-full h-full object-cover opacity-50 grayscale" data-alt="Top down technical schematic map of an urban grid with high contrast dark blue and grey tones" data-location="Metropolis Street View" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZRKUOsNgNKoKfebCTvOId-91MZU-o0EJ8ba6mMX33a103UvQQ-N0kgAB_Xe57Gi5wLy8ykLzfJLWPe76DOTW1LsuoCwRHh48my4HZAW9OB3nd9w9mfjpV1mIMoTD1DHa6_3OEuxhQ7d6Nmkc6nPqA2nhiN2phPpfM8P-aOar4w5B0kWz7cw2JtgfctfM525ftnrhuOvuVDVAqzGCFBjdIGZ_axbX48mZPLG_msUilIUnXfgTG6d8-CO0BqS1lCzH3oYG2w-tDevZ"/>
+' +
+    '<!-- GPS Marker -->
+' +
+    '<div class="absolute top-1/2 left-1/3 w-4 h-4 bg-primary border-2 border-black animate-pulse"></div>
+' +
+    '<div class="absolute top-1/4 right-1/4 w-4 h-4 bg-error border-2 border-black"></div>
+' +
+    '<div class="absolute bottom-4 left-4 bg-black/80 px-2 py-1">
+' +
+    '<span class="text-[10px] font-bold text-primary">GPS LOCKED: UNIT-14</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Content Cards -->
+' +
+    '<div class="flex-1 p-4 space-y-4 overflow-y-auto no-scrollbar">
+' +
+    '<div class="bg-surface-container p-3 border-l-2 border-primary">
+' +
+    '<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Incident Brief</p>
+' +
+    '<div class="grid grid-cols-2 gap-2 text-[11px]">
+' +
+    '<span class="text-on-surface-variant">Type:</span>
+' +
+    '<span class="text-on-surface font-bold uppercase">Crowd Disturbance</span>
+' +
+    '<span class="text-on-surface-variant">Location:</span>
+' +
+    '<span class="text-on-surface font-bold">Zone B (Main Plaza)</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="bg-surface-container-lowest overflow-hidden">
+' +
+    '<p class="px-3 py-1 bg-surface-container text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Live Feed: CAM-03</p>
+' +
+    '<img class="w-full h-24 object-cover grayscale" data-alt="Grainy CCTV surveillance footage of a crowded urban plaza at night with harsh security lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4fIK0pQWIZuU41rPMADOx0AUE0596z95po_LWod5bGs__Zkp_hZkyRdgpx0dOUPnKHPRUQhb0t7IlMBz5Wf-34wZcXKP5blm16PJqmqwFIMtPAcN7

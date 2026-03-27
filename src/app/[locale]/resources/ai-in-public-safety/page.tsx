@@ -466,6 +466,38 @@ export default async function AiInPublicSafetyPage({
                 </Link>
               ))}
             </div>
+
+            {/* ── Internal links ── */}
+            <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Integraciones:' : 'Integrations:'}
+                </span>
+                {[
+                  { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                  { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                  { href: '/integrations/lpr', label: 'LPR' },
+                  { href: '/integrations/drones', label: 'Drones' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Recursos:' : 'Resources:'}
+                </span>
+                {[
+                  { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
+                  { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

@@ -20,6 +20,22 @@ export function organizationSchema() {
   }
 }
 
+// WebSite schema for sitelinks search box and brand identity
+export function webSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'KabatOne',
+    url: 'https://kabatone.com',
+    publisher: {
+      '@type': 'Organization',
+      name: 'KabatOne',
+      url: 'https://kabatone.com',
+    },
+    inLanguage: ['en', 'es'],
+  }
+}
+
 // SoftwareApplication schema for product pages
 export function softwareApplicationSchema(
   name: string,

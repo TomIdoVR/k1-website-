@@ -487,6 +487,19 @@ export default async function VsMark43Page({
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px', marginTop: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              {[
+                { href: '/integrations/lpr', label: 'LPR' },
+                { href: '/integrations/panic-buttons', label: es ? 'Botones de Panico' : 'Panic Buttons' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

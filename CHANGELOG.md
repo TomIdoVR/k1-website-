@@ -7,6 +7,47 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.23] 2026-03-26 — New: /resources/what-is-a-command-center — C2–C5 explainer + FAQ schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-a-command-center/page.tsx` — Full EN+ES command center explainer targeting "command center" / "centro de mando" / "C2 C5" keyword cluster. C1–C5 LATAM classification, unified vs fragmented comparison, 6 evaluation criteria.
+- ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap, resources hub. Site now 51 routes × 2 = 102 URLs.
+
+---
+
+## [1.22] 2026-03-26 — New: /resources/what-is-gunshot-detection-software + WebSite schema
+
+**Added**
+- `src/app/[locale]/resources/what-is-gunshot-detection-software/page.tsx` — Full EN+ES gunshot detection explainer. Acoustic TDOA triangulation, detection workflow, standalone vs integrated comparison, 6 evaluation criteria.
+- ArticleSchema, FAQPageSchema (6 Q&A), BreadcrumbSchema.
+- Metadata (EN + ES), sitemap, resources hub.
+- `src/lib/schema.ts` — Added `webSiteSchema()` for brand identity.
+- `src/app/[locale]/layout.tsx` — Now injects WebSite JSON-LD alongside Organization schema.
+
+---
+
+## [1.21] 2026-03-26 — SEO: full cross-linking audit — /vs/ + /resources/ pages
+
+**Added**
+- All 13 `/vs/` comparison pages now have "Integrations:" inline link rows pointing to relevant `/integrations/` pages.
+- 7 `/vs/` pages (axon, carbyne, cad, fusus, prepared911, peregrine, rapidssos) also received new "Resources:" link rows.
+- All 11 `/resources/` pages (excluding `what-is-situational-awareness-software` which already had them) now have "Integrations:" and "Resources:" inline link rows with 2–4 relevant cross-links each.
+- Total: 24 pages updated with internal linking improvements.
+
+---
+
+## [1.20] 2026-03-26 — Simulator v2: lifecycle walkthrough redesign
+
+**Changed**
+- Complete redesign of the incident simulator from side-by-side comparison to lifecycle walkthrough
+- 8 rich command-center screens: Detect → Understand (Video, GIS) → Decide (Events, Protocol) → Act (Dispatch, Responder) → Learn (BI)
+- Dark tactical UI following Stitch v4 mockups (bg: #050a14, stage-colored accents)
+- New components: LifecycleHeader, SideNav, StageHeader, NavigationControls, CameraFeed, AlertBanner, MapView, UnitCard, KpiCard, StatusBadge
+- Auto-advance with RAF-based timer, manual prev/next, skip-to-summary
+- Summary screen with KPI cards, module contributions, AI recommendations
+- Removed old fragmented-vs-unified comparison (PlaybackScreen, ScorecardScreen, ModuleDeepDive)
+
 ## [1.19] 2026-03-26 — SEO internal links, new pages, simulator
 
 **Added**

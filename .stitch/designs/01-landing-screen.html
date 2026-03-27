@@ -1,0 +1,193 @@
+{
+  screenId: '30d4f5ba6234478495d183fefd8206d1',
+  projectId: '17823983395537078806',
+  htmlContent: '<!DOCTYPE html>\n' +
+    '\n' +
+    '<html class="dark" lang="en"><head>\n' +
+    '<meta charset="utf-8"/>\n' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>\n' +
+    '<title>KABATONE | Incident Simulator</title>\n' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>\n' +
+    '<style>\n' +
+    '        .material-symbols-outlined {\n' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;\n" +
+    '        }\n' +
+    '        body {\n' +
+    '            background-color: #071425;\n' +
+    '            color: #D6E3FB;\n' +
+    "            font-family: 'Inter', sans-serif;\n" +
+    '            overflow-x: hidden;\n' +
+    '        }\n' +
+    '        .scanline {\n' +
+    '            width: 100%;\n' +
+    '            height: 2px;\n' +
+    '            background: rgba(217, 119, 7, 0.1);\n' +
+    '            position: absolute;\n' +
+    '            top: 0;\n' +
+    '            left: 0;\n' +
+    '            pointer-events: none;\n' +
+    '        }\n' +
+    '        .hex-grid {\n' +
+    '            background-image: radial-gradient(circle, #293548 1px, transparent 1px);\n' +
+    '            background-size: 30px 30px;\n' +
+    '        }\n' +
+    '        .glass-panel {\n' +
+    '            background: rgba(30, 43, 60, 0.6);\n' +
+    '            backdrop-filter: blur(12px);\n' +
+    '        }\n' +
+    '    </style>\n' +
+    '<script id="tailwind-config">\n' +
+    '      tailwind.config = {\n' +
+    '        darkMode: "class",\n' +
+    '        theme: {\n' +
+    '          extend: {\n' +
+    '            colors: {\n' +
+    '              "error-container": "#93000a",\n' +
+    '              "outline": "#a38c7c",\n' +
+    '              "surface-bright": "#2e3a4c",\n' +
+    '              "primary-fixed-dim": "#ffb77d",\n' +
+    '              "secondary-container": "#673d17",\n' +
+    '              "primary-container": "#d97707",\n' +
+    '              "on-primary-fixed-variant": "#6e3900",\n' +
+    '              "inverse-surface": "#d6e3fb",\n' +
+    '              "primary": "#ffb77d",\n' +
+    '              "surface-container-highest": "#293548",\n' +
+    '              "surface-container-lowest": "#030e1f",\n' +
+    '              "tertiary": "#bcc7de",\n' +
+    '              "on-secondary-fixed-variant": "#673d17",\n' +
+    '              "on-primary": "#4d2600",\n' +
+    '              "on-tertiary-container": "#1f2a3c",\n' +
+    '              "surface-container-high": "#1e2b3c",\n' +
+    '              "on-tertiary-fixed": "#111c2d",\n' +
+    '              "secondary-fixed-dim": "#f7ba8a",\n' +
+    '              "on-error-container": "#ffdad6",\n' +
+    '              "secondary": "#f7ba8a",\n' +
+    '              "tertiary-container": "#8691a7",\n' +
+    '              "primary-fixed": "#ffdcc3",\n' +
+    '              "surface-container-low": "#0f1c2d",\n' +
+    '              "surface-tint": "#ffb77d",\n' +
+    '              "inverse-on-surface": "#253143",\n' +
+    '              "on-secondary-fixed": "#2f1500",\n' +
+    '              "background": "#071425",\n' +
+    '              "inverse-primary": "#904d00",\n' +
+    '              "on-secondary": "#4c2703",\n' +
+    '              "error": "#ffb4ab",\n' +
+    '              "on-surface": "#d6e3fb",\n' +
+    '              "secondary-fixed": "#ffdcc3",\n' +
+    '              "on-secondary-container": "#e4a97a",\n' +
+    '              "on-tertiary-fixed-variant": "#3c475a",\n' +
+    '              "on-background": "#d6e3fb",\n' +
+    '              "on-primary-fixed": "#2f1500",\n' +
+    '              "tertiary-fixed-dim": "#bcc7de",\n' +
+    '              "surface-container": "#142031",\n' +
+    '              "surface": "#071425",\n' +
+    '              "on-primary-container": "#432100",\n' +
+    '              "surface-dim": "#071425",\n' +
+    '              "tertiary-fixed": "#d8e3fb",\n' +
+    '              "outline-variant": "#554336",\n' +
+    '              "on-surface-variant": "#dbc2b0",\n' +
+    '              "on-tertiary": "#263143",\n' +
+    '              "surface-variant": "#293548",\n' +
+    '              "on-error": "#690005"\n' +
+    '            },\n' +
+    '            fontFamily: {\n' +
+    '              "headline": ["Space Grotesk"],\n' +
+    '              "body": ["Inter"],\n' +
+    '              "label": ["Space Grotesk"]\n' +
+    '            },\n' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},\n' +
+    '          },\n' +
+    '        },\n' +
+    '      }\n' +
+    '    </script>\n' +
+    '</head>\n' +
+    '<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">\n' +
+    '<!-- TopAppBar -->\n' +
+    '<nav class="flex justify-between items-center w-full px-6 h-14 bg-[#071425] border-t-2 border-amber-600 fixed top-0 z-50">\n' +
+    '<div class="flex items-center gap-8">\n' +
+    `<div class="text-xl font-black tracking-tighter text-amber-600 border-t-2 border-amber-600 pt-1 font-['Space_Grotesk'] uppercase">\n` +
+    '                KABATONE\n' +
+    '            </div>\n' +
+    '<div class="hidden md:flex gap-6">\n' +
+    `<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-xs text-amber-600 border-b-2 border-amber-600 pb-1" href="#">SIMULATION</a>\n` +
+    `<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-xs text-[#BCC7DE] hover:text-white transition-colors" href="#">ANALYTICS</a>\n` +
+    `<a class="font-['Space_Grotesk'] tracking-tighter uppercase font-bold text-xs text-[#BCC7DE] hover:text-white transition-colors" href="#">ARCHIVE</a>\n` +
+    '</div>\n' +
+    '</div>\n' +
+    '<div class="flex items-center gap-6">\n' +
+    '<div class="hidden lg:flex flex-col items-end">\n' +
+    `<span class="text-[10px] font-['Space_Grotesk'] uppercase tracking-widest text-amber-600 leading-none">ACTIVE STATUS</span>\n` +
+    '<span class="text-[10px] font-mono text-[#BCC7DE] leading-none mt-1">00:14:32:04</span>\n' +
+    '</div>\n' +
+    '<div class="flex gap-4">\n' +
+    '<span class="material-symbols-outlined text-[#BCC7DE] cursor-pointer hover:text-amber-600 transition-all active:scale-[0.99]" data-icon="settings">settings</span>\n' +
+    '<span class="material-symbols-outlined text-[#BCC7DE] cursor-pointer hover:text-amber-600 transition-all active:scale-[0.99]" data-icon="notifications">notifications</span>\n' +
+    '<span class="material-symbols-outlined text-[#BCC7DE] cursor-pointer hover:text-amber-600 transition-all active:scale-[0.99]" data-icon="account_circle">account_circle</span>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</nav>\n' +
+    '<!-- SideNavBar (Desktop Only) -->\n' +
+    '<aside class="fixed left-0 top-14 bottom-0 flex flex-col z-40 w-20 md:w-64 border-r border-[#293548] bg-[#0F1C2D]">\n' +
+    '<div class="p-4 border-b border-[#293548] hidden md:block">\n' +
+    '<div class="flex items-center gap-3">\n' +
+    '<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center">\n' +
+    '<span class="material-symbols-outlined text-primary text-sm" data-icon="shield">shield</span>\n' +
+    '</div>\n' +
+    '<div>\n' +
+    `<div class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px] font-bold text-on-surface">OP_CENTER_ALPHA</div>\n` +
+    `<div class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[8px] text-tertiary">SECTOR 7G</div>\n` +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '<nav class="flex-1 py-4 overflow-y-auto">\n' +
+    '<div class="flex items-center gap-3 bg-[#1E2B3C] text-amber-600 border-r-4 border-amber-600 px-4 py-3 cursor-pointer group">\n' +
+    '<span class="material-symbols-outlined" data-icon="videocam">videocam</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px] font-bold">VMS FEED</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] hover:bg-[#1E2B3C] hover:text-white px-4 py-3 cursor-pointer transition-colors duration-200">\n' +
+    '<span class="material-symbols-outlined" data-icon="map">map</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">GIS MAPS</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] hover:bg-[#1E2B3C] hover:text-white px-4 py-3 cursor-pointer transition-colors duration-200">\n' +
+    '<span class="material-symbols-outlined" data-icon="assignment">assignment</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">CAD FORMS</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] hover:bg-[#1E2B3C] hover:text-white px-4 py-3 cursor-pointer transition-colors duration-200">\n' +
+    '<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">LOGISTICS</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] hover:bg-[#1E2B3C] hover:text-white px-4 py-3 cursor-pointer transition-colors duration-200">\n' +
+    '<span class="material-symbols-outlined" data-icon="hub">hub</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">COMMS</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] hover:bg-[#1E2B3C] hover:text-white px-4 py-3 cursor-pointer transition-colors duration-200">\n' +
+    '<span class="material-symbols-outlined" data-icon="terminal">terminal</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">TERMINAL</span>\n` +
+    '</div>\n' +
+    '</nav>\n' +
+    '<div class="p-4 mt-auto border-t border-[#293548]">\n' +
+    `<button class="w-full bg-primary-container text-on-primary-container font-['Space_Grotesk'] uppercase tracking-widest text-[10px] py-3 font-black hover:bg-primary transition-colors border-t border-transparent hover:border-white">\n` +
+    '                DEPLOY ASSETS\n' +
+    '            </button>\n' +
+    '<div class="mt-4 space-y-2">\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] px-4 py-1 cursor-pointer hover:text-white">\n' +
+    '<span class="material-symbols-outlined text-sm" data-icon="help">help</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">SUPPORT</span>\n` +
+    '</div>\n' +
+    '<div class="flex items-center gap-3 text-[#BCC7DE] px-4 py-1 cursor-pointer hover:text-white">\n' +
+    '<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>\n' +
+    `<span class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-[10px]">SYSTEM</span>\n` +
+    '</div>\n' +
+    '</div>\n' +
+    '</div>\n' +
+    '</aside>\n' +
+    '<!-- Main Content Canvas -->\n' +
+    '<main class="ml-20 md:ml-64 pt-14 min-h-screen relative flex items-center justify-center">\n' +
+    '<!-- Background Imagery -->\n' +
+    '<div class="absolute inset-0 z-0 overflow-hidden bg-surface-container-lowest">\n' +
+    '<div class="absolute inset-0 hex-grid opacity-20"></div>\n' +
+    '<img alt="Network Grid" class="absolute inset-0 w-full h-'... 8015 more characters
+}

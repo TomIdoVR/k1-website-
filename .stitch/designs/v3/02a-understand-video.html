@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>KabatOne - Stage 02: UNDERSTAND</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "secondary": "#c1c6d5",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "tertiary-container": "#ff7f85",
+' +
+    '                        "tertiary": "#ffb3b4",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "on-tertiary-fixed-variant": "#920023",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "tertiary-fixed-dim": "#ffb3b4",
+' +
+    '                        "on-tertiary": "#680016",
+' +
+    '                        "on-tertiary-container": "#7d001d",
+' +
+    '                        "on-secondary-fixed-variant": "#414753",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "on-secondary-container": "#afb5c3",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "on-secondary-fixed": "#161c26",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "surface-tint": "#4cd7f6",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "secondary-container": "#414753",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "tertiary-fixed": "#ffdad9",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "secondary-fixed": "#dde2f1",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "on-secondary": "#2b313c",
+' +
+    '                        "on-tertiary-fixed": "#40000a",
+' +
+    '                        "secondary-fixed-dim": "#c1c6d5",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "on-primary-container": "#00424f"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '        }
+' +
+    '        .glow-cyan {
+' +
+    '            box-shadow: 0 0 15px rgba(76, 215, 246, 0.4);
+' +
+    '        }
+' +
+    '        .pulse-ring {
+' +
+    '            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+' +
+    '        }
+' +
+    '        @keyframes pulse-ring {
+' +
+    '            0% { transform: scale(0.8); opacity: 0.5; }
+' +
+    '            50% { transform: scale(1.2); opacity: 0.2; }
+' +
+    '            100% { transform: scale(1.4); opacity: 0; }
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-[#050a14] text-on-surface font-body selection:bg-primary selection:text-on-primary">
+' +
+    '<!-- TopAppBar -->
+' +
+    '<header class="bg-[#080e18] h-16 fixed top-0 w-full z-50 flex justify-between items-center px-6 shadow-[0_0_15px_rgba(76,215,246,0.1)]">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<span class="text-2xl font-normal text-cyan-400 tracking-tighter">K1</span>
+' +
+    '<!-- Progress Indicator -->
+' +
+    '<nav class="hidden md:flex items-center gap-0">
+' +
+    '<!-- Step 1: DETECT (Completed) -->
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-4 h-4 bg-cyan-400 flex items-center justify-center">
+' +
+    '<span class="material-symbols-outlined text-[12px] text-on-primary font-bold">check</span>
+' +
+    '</div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.625rem] mt-1 text-cyan-400">DETECT</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] bg-cyan-400 mb-4"></div>
+' +
+    '<!-- Step 2: UNDERSTAND (Active) -->
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="relative flex items-center justify-center">
+' +
+    '<div class="absolute w-6 h-6 bg-cyan-400/20 pulse-ring"></div>
+' +
+    '<div class="w-5 h-5 bg-cyan-400 glow-cyan"></div>
+' +
+    '</div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.625rem] mt-1 text-cyan-400">UNDERSTAND</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] bg-slate-700 mb-4"></div>
+' +
+    '<!-- Step 3: DECIDE -->
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-4 h-4 border border-slate-600"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.625rem] mt-1 text-slate-500">DECIDE</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] bg-slate-700 mb-4"></div>
+' +
+    '<!-- Step 4: ACT -->
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-4 h-4 border border-slate-600"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.625rem] mt-1 text-slate-500">ACT</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[2px] bg-slate-700 mb-4"></div>
+' +
+    '<!-- Step 5: LEARN -->
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-4 h-4 border border-slate-600"></div>
+' +
+    '<span class="font-inter uppercase tracking-[0.05em] text-[0.625rem] mt-1 text-slate-500">LEARN</span>
+' +
+    '</div>
+' +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center">
+' +
+    '<span class="font-inter uppercase tracking-[0.1em] text-[0.6875rem] text-cyan-400 border-l border-white/10 pl-6 py-2">
+' +
+    '                SCENARIO_ALPHA_01: <span class="text-on-surface">CROWD DISTURBANCE</span>
+' +
+    '</span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="pt-24 pb-20 px-6 max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-10 gap-6">
+' +
+    '<!-- Left Column: Video Exploration (65%) -->
+' +
+    '<div class="lg:col-span-6 flex flex-col gap-6">
+' +
+    '<!-- Stage Header -->
+' +
+    '<div class="flex flex-col border-l-4 border-cyan-400 pl-6 py-2">
+' +
+    '<div class="flex items-baseline gap-4">
+' +
+    '<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">02 UNDERSTAND</h1>
+' +
+    '<span class="text-cyan-400 font-inter text-xs tracking-[0.2em] uppercase">Video Exploration</span>
+' +
+    '</div>
+' +
+    '<p class="text-slate-400 font-inter tracking-[0.05em] text-sm uppercase">CORRELATE, VERIFY, AND CONTEXTUALIZE.</p>
+' +
+    '</div>
+' +
+    '<!-- Video Player Container -->
+' +
+    '<div class="relative aspect-video bg-surface-container-lowest overflow-hidden">
+' +
+    '<img class="w-full h-full object-cover opacity-60 grayscale-[0.5]" data-alt="CCTV perspective of a crowded urban plaza at night with harsh artificial lighting and digital AI bounding boxes over people" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu21QLK_HuKTZohtUakMvt-klZWoJULuhDNIrRk0YyZejBrNhwYOfzLrPkv9shaAHol4KiCGEtrXJS-Gjamn9ATuR4SDt9TvX1aSNS8XRswOmiWk5EkDMiPe-z1MuEXh-MiCFKfl161K-a5PKTVO8IkJjOPkjiPoIPXeXgyTDnM9W_HNeElWRX_F0bxOfT3Bq5xQ1DieFoKzFnP1hgp4A3RBGlKoBjdy_CZHPRF4aSNbL3lXld8pWSOS8xxtS3wsu9D1KGfdyxP20"/>
+' +
+    '<!-- AI Overlays -->
+' +
+    '<div class="absolute inset-0 pointer-events-none">
+' +
+    '<!-- Bounding Boxes (Simulated) -->
+' +
+    '<div class="absolute top-[30%] left-[45%] w-16 h-32 border border-error bg-error/10">
+' +
+    '<span class="absolute -top-5 left-0 text-[10px] bg-error text-on-error px-1 font-bold">AGGRESSIVE</span>
+' +
+    '</div>
+' +
+    '<div class="absolute top-[35%] left-[52%] w-16 h-32 border border-error bg-error/10">
+' +
+    '<span class="absolute -top-5 left-0 text-[10px] bg-error text-on-error px-1 font-bold">AGGRESSIVE</span>
+' +
+    '</div>
+' +
+    '<div class="absolute top-[28%] left-[20%] w-14 h-28 border border-cyan-400/50"></div>
+' +
+    '<div class="absolute top-[40%] left-[80%] w-18 h-36 border border-cyan-400/50"></div>
+' +
+    '<!-- HUD Data -->
+' +
+    '<div class="absolute top-4 left-4 flex flex-col gap-1">
+' +
+    '<div class="bg-black/60 backdrop-blur-md px-3 py-1 border-l-2 border-cyan-400">
+' +
+    '<span class="text-[10px] uppercase tracking-widest text-cyan-400">CAMERA 3 / ZONE B / ZOOM 2.4X</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="absolute bottom-4 right-4 flex flex-col items-end gap-2">
+' +
+    '<div class="bg-[#080e18]/80 backdrop-blur-md p-4 flex flex-col gap-2">
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<span class="material-symbols-outlined text-cyan-400 text-sm">group</span>
+' +
+    '<span class="text-xs font-bold uppercase tracking-tight">18 INDIVIDUALS DETECTED</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<span class="material-symbols-outlined text-error text-sm">warning</span>
+' +
+    '<span class="text-xs font-bold uppercase tracking-tight text-error">3 FLAGGED AGGRESSIVE</span>
+' +
+    '</div>
+' +
+    '<div class="h-[1px] bg-white/10 my-1"></div>
+' +
+    '<div class="flex justify-between items-center gap-8">
+' +
+    '<span class="text-[10px] text-slate-500 uppercase">Confidence</span>
+' +
+    '<span class="text-sm font-mono text-cyan-400">91.4%</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Timeline Scrubber -->
+' +
+    '<div class="bg-surface-container-low p-4 flex flex-col gap-4">
+' +
+    '<div class="flex justify-between items-center">
+' +
+    '<div class="flex items-center gap-3">
+' +
+    '<button class="material-symbols-outlined text-cyan-400 hover:text-white transition-colors">play_arrow</button>
+' +
+    '<sp

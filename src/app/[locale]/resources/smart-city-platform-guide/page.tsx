@@ -362,6 +362,37 @@ export default async function SmartCityPlatformGuidePage({
               ? 'A nivel global, ciudades como Singapur han invertido mas de 2,400 millones de dolares en infraestructura de ciudad inteligente. Barcelona redujo el consumo de agua en un 25% mediante sensores IoT de riego inteligente. Seul procesa mas de 30 millones de eventos urbanos por dia a traves de su plataforma integrada. Estos despliegues demuestran que las plataformas de ciudad inteligente generan retorno medible en eficiencia operativa, seguridad publica y calidad de vida urbana.'
               : 'Globally, cities like Singapore have invested over $2.4 billion in smart city infrastructure. Barcelona reduced water consumption by 25% through smart irrigation IoT sensors. Seoul processes more than 30 million urban events per day through its integrated platform. These deployments demonstrate that smart city platforms deliver measurable returns in operational efficiency, public safety, and urban quality of life.'}
           </p>
+
+          {/* ── Internal links ── */}
+          <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Integraciones:' : 'Integrations:'}
+              </span>
+              {[
+                { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                { href: '/integrations/drones', label: 'Drones' },
+                { href: '/integrations/lpr', label: 'LPR' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+              <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {es ? 'Recursos:' : 'Resources:'}
+              </span>
+              {[
+                { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas de Seguridad Pública' : 'What Is a Public Safety Platform' },
+                { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* FAQ Section */}

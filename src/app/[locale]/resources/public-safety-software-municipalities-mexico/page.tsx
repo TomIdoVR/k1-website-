@@ -372,6 +372,37 @@ export default async function PublicSafetySoftwareMexicoPage({
                 </Link>
               ))}
             </div>
+
+            {/* ── Internal links ── */}
+            <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Integraciones:' : 'Integrations:'}
+                </span>
+                {[
+                  { href: '/integrations/panic-buttons', label: es ? 'Botones de Pánico' : 'Panic Buttons' },
+                  { href: '/integrations/lpr', label: 'LPR' },
+                  { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Recursos:' : 'Resources:'}
+                </span>
+                {[
+                  { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
+                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software de Despacho CAD' : 'What Is CAD Dispatch Software' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

@@ -375,6 +375,36 @@ export default async function VsPeregrinePage({
                 </Link>
               ))}
             </div>
+
+            {/* ── Internal links ── */}
+            <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Integraciones:' : 'Integrations:'}
+                </span>
+                {[
+                  { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
+                  { href: '/integrations/lpr', label: 'LPR' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '12px' }}>
+                <span style={{ fontFamily: 'DM Mono, monospace', fontWeight: 600, color: 'var(--muted)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  {es ? 'Recursos:' : 'Resources:'}
+                </span>
+                {[
+                  { href: '/resources/what-is-situational-awareness-software', label: es ? 'Qué es Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
+                  { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

@@ -1,4 +1,4 @@
-/* ── Scenario: Crowd Disturbance Escalation ── */
+/* ── Scenario: Crowd Disturbance — Lifecycle Walkthrough (v2) ── */
 
 import type { Scenario } from '../types'
 
@@ -6,314 +6,241 @@ export const crowdDisturbance: Scenario = {
   id: 'crowd-disturbance',
   name: { en: 'Crowd Disturbance', es: 'Disturbio en Multitud' },
   description: {
-    en: 'A disturbance is detected at a public venue. Watch how fragmented systems and a unified platform handle the same incident.',
-    es: 'Se detecta un disturbio en un lugar público. Observa cómo los sistemas fragmentados y una plataforma unificada manejan el mismo incidente.',
+    en: 'A disturbance is detected at a public venue. Experience how the KabatOne platform handles every stage of the incident lifecycle.',
+    es: 'Se detecta un disturbio en un lugar público. Experimenta cómo la plataforma KabatOne maneja cada etapa del ciclo de vida del incidente.',
   },
   icon: '👥',
   duration: { en: '~2 min', es: '~2 min' },
   available: true,
 
-  steps: [
+  screens: [
+    /* ── 01 DETECT — Surveillance Wall ── */
     {
-      id: 1,
-      name: { en: 'Detection', es: 'Detección' },
-      fragmentedDuration: 5,
-      unifiedDuration: 2,
+      id: '01-detect',
+      stage: 'detect',
+      stageNumber: '01',
+      stageLabel: { en: 'DETECT', es: 'DETECTAR' },
+      title: { en: 'Surveillance Wall', es: 'Muro de Vigilancia' },
+      subtitle: {
+        en: 'AI Engine detects crowd anomaly across 47 active camera feeds. Threat score: 0.91.',
+        es: 'El Motor IA detecta anomalía en la multitud entre 47 cámaras activas. Puntuación de amenaza: 0.91.',
+      },
       modules: ['ai', 'video'],
-      fragmented: {
-        description: {
-          en: 'Operator scans multiple VMS feeds manually. Takes time to notice the anomaly among dozens of cameras.',
-          es: 'El operador escanea múltiples cámaras manualmente. Tarda en notar la anomalía entre docenas de feeds.',
-        },
-        activePanel: 'vms',
-      },
-      unified: {
-        description: {
-          en: 'AI Engine detects crowd anomaly (threat score: 0.91). Video module auto-focuses on relevant camera.',
-          es: 'El Motor IA detecta anomalía (puntuación: 0.91). El módulo Video enfoca automáticamente la cámara relevante.',
-        },
-        dataFlows: [{ from: 'ai', to: 'video' }],
-      },
+      durationSec: 8,
+      sideNav: [
+        { icon: 'videocam', label: { en: 'Camera Grid', es: 'Grilla de Cámaras' }, active: true },
+        { icon: 'warning', label: { en: 'Alerts', es: 'Alertas' }, active: true },
+        { icon: 'analytics', label: { en: 'AI Score', es: 'Puntuación IA' }, active: true },
+        { icon: 'map', label: { en: 'Map', es: 'Mapa' }, active: false },
+        { icon: 'assignment', label: { en: 'Events', es: 'Eventos' }, active: false },
+      ],
     },
+    /* ── 02a UNDERSTAND — Video Analysis ── */
     {
-      id: 2,
-      name: { en: 'Verification', es: 'Verificación' },
-      fragmentedDuration: 4,
-      unifiedDuration: 1.5,
-      modules: ['video'],
-      fragmented: {
-        description: {
-          en: 'Operator switches to VMS (1.2s delay), searches camera grid, zooms in manually to confirm the incident.',
-          es: 'El operador cambia al VMS (1.2s demora), busca en la grilla de cámaras, hace zoom manualmente para confirmar.',
-        },
-        activePanel: 'vms',
+      id: '02a-understand-video',
+      stage: 'understand',
+      stageNumber: '02',
+      stageLabel: { en: 'UNDERSTAND', es: 'COMPRENDER' },
+      title: { en: 'Video Analysis', es: 'Análisis de Video' },
+      subtitle: {
+        en: 'AI bounding boxes identify 3 flagged subjects. Behavioral analysis confirms escalation pattern.',
+        es: 'Cajas de IA identifican 3 sujetos marcados. El análisis conductual confirma patrón de escalamiento.',
       },
-      unified: {
-        description: {
-          en: 'One-click confirm — video already showing incident. AI bounding boxes highlight 3 flagged subjects.',
-          es: 'Confirmación con un clic — el video ya muestra el incidente. Cajas IA resaltan 3 sujetos.',
-        },
-        dataFlows: [],
-      },
+      modules: ['video', 'ai'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'videocam', label: { en: 'Video Feed', es: 'Feed de Video' }, active: true },
+        { icon: 'person_search', label: { en: 'Detection', es: 'Detección' }, active: true },
+        { icon: 'psychology', label: { en: 'AI Analysis', es: 'Análisis IA' }, active: true },
+        { icon: 'history', label: { en: 'Timeline', es: 'Línea de Tiempo' }, active: false },
+      ],
     },
+    /* ── 02b UNDERSTAND — GIS Triage ── */
     {
-      id: 3,
-      name: { en: 'Location', es: 'Ubicación' },
-      fragmentedDuration: 6,
-      unifiedDuration: 1,
-      modules: ['gis'],
-      fragmented: {
-        description: {
-          en: 'Operator switches to GIS (1.2s delay), manually types address. Cursor animation shows slow data entry.',
-          es: 'El operador cambia al GIS (1.2s demora), escribe la dirección manualmente. Ingreso lento de datos.',
-        },
-        activePanel: 'gis',
+      id: '02b-understand-gis',
+      stage: 'understand',
+      stageNumber: '02',
+      stageLabel: { en: 'UNDERSTAND', es: 'COMPRENDER' },
+      title: { en: 'GIS Triage', es: 'Triaje GIS' },
+      subtitle: {
+        en: 'Incident auto-plotted from camera GPS. 3 nearest units and camera coverage zones displayed.',
+        es: 'Incidente ubicado automáticamente por GPS de cámara. 3 unidades más cercanas y zonas de cobertura visibles.',
       },
-      unified: {
-        description: {
-          en: 'GIS auto-plots incident from camera GPS coordinates. Nearby units and camera coverage displayed instantly.',
-          es: 'El GIS ubica el incidente desde coordenadas GPS de la cámara. Unidades cercanas y cobertura visibles al instante.',
-        },
-        dataFlows: [{ from: 'video', to: 'gis' }],
-      },
+      modules: ['gis', 'video'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'map', label: { en: 'Map', es: 'Mapa' }, active: true },
+        { icon: 'my_location', label: { en: 'Incident', es: 'Incidente' }, active: true },
+        { icon: 'directions_car', label: { en: 'Units', es: 'Unidades' }, active: true },
+        { icon: 'camera_outdoor', label: { en: 'Coverage', es: 'Cobertura' }, active: true },
+      ],
     },
+    /* ── 03a DECIDE — Events Dashboard ── */
     {
-      id: 4,
-      name: { en: 'Context', es: 'Contexto' },
-      fragmentedDuration: 5,
-      unifiedDuration: 1,
-      modules: ['gis', 'dispatch'],
-      fragmented: {
-        description: {
-          en: 'Operator switches to CAD (1.2s delay), cross-references available units with GIS data manually.',
-          es: 'El operador cambia al CAD (1.2s demora), cruza datos de unidades disponibles con el GIS manualmente.',
-        },
-        activePanel: 'cad',
+      id: '03a-decide-events',
+      stage: 'decide',
+      stageNumber: '03',
+      stageLabel: { en: 'DECIDE', es: 'DECIDIR' },
+      title: { en: 'Events Dashboard', es: 'Panel de Eventos' },
+      subtitle: {
+        en: 'Event auto-created with all fields pre-populated. Priority: CRITICAL. Zero manual entry.',
+        es: 'Evento creado automáticamente con campos pre-llenados. Prioridad: CRÍTICO. Cero ingreso manual.',
       },
-      unified: {
-        description: {
-          en: 'Map already shows 3 nearest available units ranked by distance. Unit status visible in real time.',
-          es: 'El mapa ya muestra las 3 unidades más cercanas por distancia. Estado de unidades visible en tiempo real.',
-        },
-        dataFlows: [{ from: 'gis', to: 'dispatch' }],
-      },
+      modules: ['events', 'ai'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'assignment', label: { en: 'Event', es: 'Evento' }, active: true },
+        { icon: 'priority_high', label: { en: 'Priority', es: 'Prioridad' }, active: true },
+        { icon: 'link', label: { en: 'Related', es: 'Relacionados' }, active: false },
+        { icon: 'history', label: { en: 'History', es: 'Historial' }, active: false },
+      ],
     },
+    /* ── 03b DECIDE — Response Protocol ── */
     {
-      id: 5,
-      name: { en: 'Create Record', es: 'Crear Registro' },
-      fragmentedDuration: 6,
-      unifiedDuration: 1,
-      modules: ['events', 'dispatch'],
-      fragmented: {
-        description: {
-          en: 'Operator types incident details into CAD. Fields populate slowly — manual data entry with errors.',
-          es: 'El operador escribe los detalles del incidente en el CAD. Campos se llenan lentamente — ingreso manual con errores.',
-        },
-        activePanel: 'cad',
-        failure: {
-          type: 'typo',
-          message: {
-            en: 'Typo in address — unit dispatched to wrong sector. Correcting...',
-            es: 'Error en dirección — unidad despachada al sector incorrecto. Corrigiendo...',
-          },
-          timePenalty: 30,
-        },
+      id: '03b-decide-protocol',
+      stage: 'decide',
+      stageNumber: '03',
+      stageLabel: { en: 'DECIDE', es: 'DECIDIR' },
+      title: { en: 'Response Protocol', es: 'Protocolo de Respuesta' },
+      subtitle: {
+        en: 'SLA countdown active. AI recommends crowd control protocol with 3 required actions.',
+        es: 'Cuenta regresiva SLA activa. La IA recomienda protocolo de control de multitudes con 3 acciones requeridas.',
       },
-      unified: {
-        description: {
-          en: 'Event auto-created with all fields pre-populated from detection data. Zero manual entry.',
-          es: 'Evento creado automáticamente con todos los campos pre-llenados. Cero ingreso manual.',
-        },
-        dataFlows: [{ from: 'ai', to: 'events' }, { from: 'events', to: 'dispatch' }],
-      },
+      modules: ['events', 'ai', 'dispatch'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'timer', label: { en: 'SLA Timer', es: 'Timer SLA' }, active: true },
+        { icon: 'checklist', label: { en: 'Protocol', es: 'Protocolo' }, active: true },
+        { icon: 'smart_toy', label: { en: 'AI Assist', es: 'Asist. IA' }, active: true },
+        { icon: 'timeline', label: { en: 'Timeline', es: 'Línea Temporal' }, active: true },
+      ],
     },
+    /* ── 04a ACT — Dispatch ── */
     {
-      id: 6,
-      name: { en: 'Dispatch', es: 'Despacho' },
-      fragmentedDuration: 5,
-      unifiedDuration: 2,
-      modules: ['dispatch', 'responder'],
-      fragmented: {
-        description: {
-          en: 'Operator selects unit, confirms dispatch, initiates radio contact on a separate panel.',
-          es: 'El operador selecciona unidad, confirma despacho, inicia contacto por radio en un panel separado.',
-        },
-        activePanel: 'radio',
+      id: '04a-act-dispatch',
+      stage: 'act',
+      stageNumber: '04',
+      stageLabel: { en: 'ACT', es: 'ACTUAR' },
+      title: { en: 'Dispatch', es: 'Despacho' },
+      subtitle: {
+        en: 'AI-ranked units selected. One-click dispatch. Responder app notified instantly.',
+        es: 'Unidades seleccionadas por IA. Despacho con un clic. App del respondiente notificada al instante.',
       },
-      unified: {
-        description: {
-          en: 'AI-ranked unit selected. Dispatch confirmed with one click. Responder app notified instantly.',
-          es: 'Unidad seleccionada por IA. Despacho confirmado con un clic. App del respondiente notificada al instante.',
-        },
-        dataFlows: [{ from: 'dispatch', to: 'responder' }],
-      },
+      modules: ['dispatch', 'gis', 'responder'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'directions_car', label: { en: 'Units', es: 'Unidades' }, active: true },
+        { icon: 'route', label: { en: 'Routing', es: 'Ruta' }, active: true },
+        { icon: 'send', label: { en: 'Dispatch', es: 'Despacho' }, active: true },
+        { icon: 'phone_android', label: { en: 'Notify', es: 'Notificar' }, active: true },
+      ],
     },
+    /* ── 04b ACT — Field Response ── */
     {
-      id: 7,
-      name: { en: 'Escalation', es: 'Escalamiento' },
-      fragmentedDuration: 8,
-      unifiedDuration: 2,
-      modules: ['ai', 'video', 'gis'],
-      fragmented: {
-        description: {
-          en: 'Second camera detects related activity. Alert flashes in VMS corner while operator is in CAD — MISSED.',
-          es: 'Segunda cámara detecta actividad relacionada. La alerta parpadea en el VMS mientras el operador está en el CAD — PERDIDA.',
-        },
-        activePanel: 'cad',
-        failure: {
-          type: 'missed_alert',
-          message: {
-            en: 'Alert missed — operator was in a different system. +25 sec.',
-            es: 'Alerta perdida — el operador estaba en otro sistema. +25 seg.',
-          },
-          timePenalty: 25,
-        },
+      id: '04b-act-responder',
+      stage: 'act',
+      stageNumber: '04',
+      stageLabel: { en: 'ACT', es: 'ACTUAR' },
+      title: { en: 'Field Response', es: 'Respuesta en Campo' },
+      subtitle: {
+        en: 'Full incident brief on mobile app. Tactical chat active. Citizen SOS report integrated.',
+        es: 'Briefing completo en app móvil. Chat táctico activo. Reporte SOS ciudadano integrado.',
       },
-      unified: {
-        description: {
-          en: 'AI auto-correlates new activity to existing incident. GIS updates with expanded threat zone.',
-          es: 'La IA auto-correlaciona la nueva actividad al incidente existente. El GIS actualiza con zona de amenaza expandida.',
-        },
-        dataFlows: [{ from: 'ai', to: 'video' }, { from: 'video', to: 'gis' }],
-      },
+      modules: ['responder', 'citizen', 'video'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'phone_android', label: { en: 'Mobile App', es: 'App Móvil' }, active: true },
+        { icon: 'chat', label: { en: 'Tactical Chat', es: 'Chat Táctico' }, active: true },
+        { icon: 'sos', label: { en: 'Citizen SOS', es: 'SOS Ciudadano' }, active: true },
+        { icon: 'dashboard', label: { en: 'Operator', es: 'Operador' }, active: true },
+      ],
     },
+    /* ── 05 LEARN — BI Analytics ── */
     {
-      id: 8,
-      name: { en: 'Citizen Input', es: 'Reporte Ciudadano' },
-      fragmentedDuration: 3,
-      unifiedDuration: 2,
-      modules: ['citizen'],
-      fragmented: {
-        description: {
-          en: 'A citizen tries to report. No intake channel available. Information never arrives.',
-          es: 'Un ciudadano intenta reportar. No hay canal disponible. La información nunca llega.',
-        },
-        activePanel: 'cad',
-        failure: {
-          type: 'no_channel',
-          message: {
-            en: 'No citizen channel — report lost.',
-            es: 'Sin canal ciudadano — reporte perdido.',
-          },
-          timePenalty: 0,
-        },
+      id: '05-learn-bi',
+      stage: 'learn',
+      stageNumber: '05',
+      stageLabel: { en: 'LEARN', es: 'APRENDER' },
+      title: { en: 'Analytics Dashboard', es: 'Panel de Analítica' },
+      subtitle: {
+        en: 'Automatic audit trail. KPI dashboard updates in real time. AI generates improvement recommendations.',
+        es: 'Auditoría automática. Dashboard KPI actualizado en tiempo real. La IA genera recomendaciones de mejora.',
       },
-      unified: {
-        description: {
-          en: 'Citizen SOS appears on map, attached to incident. Additional context for responders.',
-          es: 'SOS ciudadano aparece en el mapa, vinculado al incidente. Contexto adicional para los respondientes.',
-        },
-        dataFlows: [{ from: 'citizen', to: 'gis' }],
-      },
-    },
-    {
-      id: 9,
-      name: { en: 'Field Response', es: 'Respuesta en Campo' },
-      fragmentedDuration: 5,
-      unifiedDuration: 1.5,
-      modules: ['responder'],
-      fragmented: {
-        description: {
-          en: 'Unit arrives. Operator scrambles to radio briefing — context scattered across 4 systems.',
-          es: 'La unidad llega. El operador improvisa un briefing por radio — contexto disperso en 4 sistemas.',
-        },
-        activePanel: 'radio',
-      },
-      unified: {
-        description: {
-          en: 'Full incident brief on mobile app: video, map, event history, and related alerts.',
-          es: 'Briefing completo en app móvil: video, mapa, historial del evento y alertas relacionadas.',
-        },
-        dataFlows: [{ from: 'events', to: 'responder' }],
-      },
-    },
-    {
-      id: 10,
-      name: { en: 'Resolution', es: 'Resolución' },
-      fragmentedDuration: 5,
-      unifiedDuration: 1.5,
-      modules: ['events', 'bi'],
-      fragmented: {
-        description: {
-          en: 'Manual close in CAD. No unified timeline. Operator exports data from 4 separate systems.',
-          es: 'Cierre manual en CAD. Sin línea de tiempo unificada. El operador exporta datos de 4 sistemas separados.',
-        },
-        activePanel: 'cad',
-      },
-      unified: {
-        description: {
-          en: 'One-click resolution. Automatic audit trail. BI dashboard updates in real time.',
-          es: 'Resolución con un clic. Auditoría automática. Dashboard de BI actualizado en tiempo real.',
-        },
-        dataFlows: [{ from: 'events', to: 'bi' }],
-      },
+      modules: ['bi', 'ai', 'events'],
+      durationSec: 8,
+      sideNav: [
+        { icon: 'bar_chart', label: { en: 'KPIs', es: 'KPIs' }, active: true },
+        { icon: 'speed', label: { en: 'SLA', es: 'SLA' }, active: true },
+        { icon: 'smart_toy', label: { en: 'AI Insights', es: 'Insights IA' }, active: true },
+        { icon: 'download', label: { en: 'Export', es: 'Exportar' }, active: false },
+      ],
     },
   ],
 
-  totalFragmentedTime: 154, // 2:34 displayed (includes time penalties)
-  totalUnifiedTime: 52,     // 0:52 displayed
-
-  timeLostBreakdown: [
-    { category: { en: 'System Switching', es: 'Cambio entre Sistemas' }, percentage: 42 },
-    { category: { en: 'Manual Data Entry', es: 'Ingreso Manual de Datos' }, percentage: 31 },
-    { category: { en: 'Data Correlation', es: 'Correlación de Datos' }, percentage: 19 },
-    { category: { en: 'Confirmation Delays', es: 'Retrasos de Confirmación' }, percentage: 8 },
-  ],
-
-  moduleContributions: [
-    {
-      moduleId: 'ai',
-      timeSaved: { en: '38 sec', es: '38 seg' },
-      description: { en: 'Auto-detection & correlation eliminated manual scanning', es: 'Auto-detección y correlación eliminaron escaneo manual' },
-      stepsInvolved: [1, 7],
-    },
-    {
-      moduleId: 'gis',
-      timeSaved: { en: '25 sec', es: '25 seg' },
-      description: { en: 'Auto-locate from camera GPS, instant unit proximity', es: 'Auto-ubicación por GPS de cámara, proximidad de unidades instantánea' },
-      stepsInvolved: [3, 4],
-    },
-    {
-      moduleId: 'dispatch',
-      timeSaved: { en: '18 sec', es: '18 seg' },
-      description: { en: 'Pre-ranked units, one-click dispatch', es: 'Unidades pre-rankeadas, despacho con un clic' },
-      stepsInvolved: [4, 5, 6],
-    },
-    {
-      moduleId: 'events',
-      timeSaved: { en: '12 sec', es: '12 seg' },
-      description: { en: 'Auto-created record, zero manual entry', es: 'Registro auto-creado, cero ingreso manual' },
-      stepsInvolved: [5, 10],
-    },
-    {
-      moduleId: 'video',
-      timeSaved: { en: '10 sec', es: '10 seg' },
-      description: { en: 'AI auto-focus, no manual camera search', es: 'Auto-enfoque IA, sin búsqueda manual de cámaras' },
-      stepsInvolved: [1, 2, 7],
-    },
-    {
-      moduleId: 'citizen',
-      timeSaved: { en: 'New data', es: 'Datos nuevos' },
-      description: { en: 'SOS report added context (lost in fragmented)', es: 'Reporte SOS agregó contexto (perdido en fragmentado)' },
-      stepsInvolved: [8],
-    },
-    {
-      moduleId: 'responder',
-      timeSaved: { en: '8 sec', es: '8 seg' },
-      description: { en: 'Full incident brief on mobile, eliminated radio scramble', es: 'Briefing completo en móvil, eliminó improvisación por radio' },
-      stepsInvolved: [6, 9],
-    },
-    {
-      moduleId: 'bi',
-      timeSaved: { en: 'Instant', es: 'Instantáneo' },
-      description: { en: 'Real-time KPI dashboard, no manual audit export', es: 'Dashboard KPI en tiempo real, sin exportación manual' },
-      stepsInvolved: [10],
-    },
-    {
-      moduleId: 'integrations',
-      timeSaved: { en: 'Always on', es: 'Siempre activo' },
-      description: { en: 'Data layer connecting all modules — zero re-entry', es: 'Capa de datos conectando todos los módulos — cero re-ingreso' },
-      stepsInvolved: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    },
-  ],
+  summary: {
+    totalResponseTime: '00:52',
+    unitsDeployed: 3,
+    slaCompliance: '98.2%',
+    aiRecommendations: [
+      {
+        en: 'Deploy additional camera coverage at venue north entrance',
+        es: 'Desplegar cobertura adicional de cámaras en la entrada norte del recinto',
+      },
+      {
+        en: 'Pre-position rapid response unit during high-attendance events',
+        es: 'Pre-posicionar unidad de respuesta rápida durante eventos de alta asistencia',
+      },
+      {
+        en: 'Update crowd density thresholds based on venue capacity data',
+        es: 'Actualizar umbrales de densidad de multitud basados en datos de capacidad del recinto',
+      },
+    ],
+    moduleContributions: [
+      {
+        moduleId: 'ai',
+        label: { en: 'AI Engine', es: 'Motor IA' },
+        description: { en: 'Auto-detection & correlation eliminated manual scanning', es: 'Auto-detección y correlación eliminaron escaneo manual' },
+      },
+      {
+        moduleId: 'video',
+        label: { en: 'Video', es: 'Video' },
+        description: { en: 'AI auto-focus, bounding boxes, behavioral analysis', es: 'Auto-enfoque IA, cajas de detección, análisis conductual' },
+      },
+      {
+        moduleId: 'gis',
+        label: { en: 'GIS', es: 'GIS' },
+        description: { en: 'Auto-locate from camera GPS, instant unit proximity', es: 'Auto-ubicación por GPS de cámara, proximidad de unidades instantánea' },
+      },
+      {
+        moduleId: 'events',
+        label: { en: 'Events', es: 'Eventos' },
+        description: { en: 'Auto-created record, zero manual entry, SLA tracking', es: 'Registro auto-creado, cero ingreso manual, seguimiento SLA' },
+      },
+      {
+        moduleId: 'dispatch',
+        label: { en: 'Dispatch', es: 'Despacho' },
+        description: { en: 'AI-ranked units, one-click dispatch, ETA routing', es: 'Unidades rankeadas por IA, despacho con un clic, ruta ETA' },
+      },
+      {
+        moduleId: 'responder',
+        label: { en: 'Responder', es: 'Respondiente' },
+        description: { en: 'Full brief on mobile, tactical chat, live video', es: 'Briefing completo en móvil, chat táctico, video en vivo' },
+      },
+      {
+        moduleId: 'citizen',
+        label: { en: 'Citizen', es: 'Ciudadano' },
+        description: { en: 'SOS report added context, geo-tagged to incident', es: 'Reporte SOS agregó contexto, geo-etiquetado al incidente' },
+      },
+      {
+        moduleId: 'bi',
+        label: { en: 'Analytics', es: 'Analítica' },
+        description: { en: 'Real-time KPI dashboard, automatic audit trail', es: 'Dashboard KPI en tiempo real, auditoría automática' },
+      },
+      {
+        moduleId: 'integrations',
+        label: { en: 'Integrations', es: 'Integraciones' },
+        description: { en: 'Data layer connecting all modules — zero re-entry', es: 'Capa de datos conectando todos los módulos — cero re-ingreso' },
+      },
+    ],
+  },
 }

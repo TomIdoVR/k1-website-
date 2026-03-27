@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>TACTICAL SIMULATOR - STEP 7 ESCALATION</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '        }
+' +
+    '        .flicker-on-load {
+' +
+    '            animation: flicker 0.5s ease-out;
+' +
+    '        }
+' +
+    '        @keyframes flicker {
+' +
+    '            0% { opacity: 0.1; }
+' +
+    '            10% { opacity: 0.4; }
+' +
+    '            20% { opacity: 0.1; }
+' +
+    '            100% { opacity: 1; }
+' +
+    '        }
+' +
+    '        .scanline {
+' +
+    '            background: linear-gradient(to bottom, transparent 50%, rgba(6, 182, 212, 0.05) 50%);
+' +
+    '            background-size: 100% 4px;
+' +
+    '        }
+' +
+    '        .corner-bracket {
+' +
+    '            position: absolute;
+' +
+    '            width: 8px;
+' +
+    '            height: 8px;
+' +
+    '            border-color: rgba(76, 215, 246, 0.4);
+' +
+    '        }
+' +
+    '        .bracket-tl { top: 0; left: 0; border-top: 1px solid; border-left: 1px solid; }
+' +
+    '        .bracket-tr { top: 0; right: 0; border-top: 1px solid; border-right: 1px solid; }
+' +
+    '        .bracket-bl { bottom: 0; left: 0; border-bottom: 1px solid; border-left: 1px solid; }
+' +
+    '        .bracket-br { bottom: 0; right: 0; border-bottom: 1px solid; border-right: 1px solid; }
+' +
+    '    </style>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "tertiary-container": "#e79400",
+' +
+    '                        "on-secondary-fixed": "#001a42",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "tertiary-fixed-dim": "#ffb95f",
+' +
+    '                        "on-tertiary": "#472a00",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "on-primary-container": "#00424f",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "on-secondary-container": "#e6ecff",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "surface-tint": "#4cd7f6",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "on-tertiary-fixed-variant": "#653e00",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "on-secondary": "#002e6a",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "on-tertiary-container": "#563400",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "tertiary-fixed": "#ffddb8",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "secondary-fixed": "#d8e2ff",
+' +
+    '                        "secondary-fixed-dim": "#adc6ff",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "tertiary": "#ffb95f",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "secondary": "#adc6ff",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "on-tertiary-fixed": "#2a1700",
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "on-secondary-fixed-variant": "#004395",
+' +
+    '                        "secondary-container": "#0566d9"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Space Grotesk"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Inter"]
+' +
+    '                    },
+' +
+    '                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '</head>
+' +
+    '<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen overflow-x-hidden">
+' +
+    '<!-- Top Navigation Shell -->
+' +
+    '<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 bg-[#0e131e]/80 backdrop-blur-xl h-[80px] shadow-[inset_0_0_8px_rgba(6,182,212,0.3)] bg-gradient-to-b from-cyan-500/10 to-transparent flicker-on-load">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<div class="text-lg font-black text-cyan-400 tracking-tighter font-headline uppercase">TACTICAL SIMULATOR</div>
+' +
+    '<nav class="hidden md:flex gap-6 items-center">
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 01</div>
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 02</div>
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 03</div>
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 04</div>
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 05</div>
+' +
+    '<div class="text-slate-600 font-headline uppercase tracking-[0.15em] text-xs font-bold hover:text-cyan-300 transition-colors">NODE 06</div>
+' +
+    '<div class="text-amber-400 animate-pulse border-b-2 border-amber-400 pb-1 font-headline uppercase tracking-[0.15em] text-xs font-bold">ESCALATION</div>
+' +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<div class="flex gap-1 h-2 items-center">
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-3 h-3 bg-primary rounded-full"></div>
+' +
+    '<div class="w-5 h-5 bg-tertiary rounded-full animate-ping absolute opacity-25"></div>
+' +
+    '<div class="w-5 h-5 bg-tertiary rounded-full border-2 border-tertiary flex items-center justify-center">
+' +
+    '<span class="material-symbols-outlined text-[10px] text-on-tertiary font-bold">warning</span>
+' +
+    '</div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '<div class="w-2 h-2 border border-outline-variant rounded-full"></div>
+' +
+    '</div>
+' +
+    '<span class="material-symbols-outlined text-primary ml-4">warning</span>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- Side Navigation Shell -->
+' +
+    '<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-4 z-40 bg-[#080e18] border-r border-cyan-500/15 w-20 pt-[90px]">
+' +
+    '<div class="mb-8 text-center">
+' +
+    '<div class="font-headline tabular-nums text-[10px] tracking-widest uppercase text-cyan-400 drop-shadow-[0_0_8px_rgba(76,215,246,0.6)] font-bold">00:38</div>
+' +
+    '<div class="font-headline tabular-nums text-[8px] tracking-widest uppercase text-slate-500">K1 UNIFIED</div>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col gap-6 w-full items-center">
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-cyan-400 drop-shadow-[0_0_8px_rgba(76,215,246,0.6)] scale-95 transition-transform">
+' +
+    `<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+` +
+    '<span class="font-label text-[10px] tracking-widest uppercase font-bold">AI</span>
+' +
+    '</div>
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-slate-700 hover:bg-cyan-500/5 w-full py-2 transition-all">
+' +
+    '<span class="material-symbols-outlined text-2xl">videocam</span>
+' +
+    '<span class="font-label text-[10px] tracking-widest uppercase">VIDEO</span>
+' +
+    '</div>
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-slate-700 hover:bg-cyan-500/5 w-full py-2 transition-all">
+' +
+    '<span class="material-symbols-outlined text-2xl">distance</span>
+' +
+    '<span class="font-label text-[10px] tracking-widest uppercase">GIS</span>
+' +
+    '</div>
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-slate-700 hover:bg-cyan-500/5 w-full py-2 transition-all">
+' +
+    '<span class="material-symbols-outlined text-2xl">emergency</span>
+' +
+    '<span class="font-label text-[10px] tracking-widest uppercase">DISPATCH</span>
+' +
+    '</div>
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-slate-700 hover:bg-cyan-500/5 w-full py-2 transition-all">
+' +
+    '<span class="material-symbols-outlined text-2xl">event_note</span>
+' +
+    '<span class="font-label text-[10px] tracking-widest uppercase">EVENTS</span>
+' +
+    '</div>
+' +
+    '<div class="group cursor-pointer flex flex-col items-center gap-1 text-slate-700 hover:bg-cyan-500/5 w-full py-2 transition-all">
+' +
+    '<span class="material-symbols-outlined text-2xl">support_agent</span>
+' +
+    '<span class="font-label text-[10px] tracking-widest uppercase">RESPONDER</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</aside>
+' +
+    '<!-- Main Content Canvas -->
+' +
+    '<main class="pl-20 pt-[80px] pb-16 min-h-screen grid grid-cols-12 gap-0">
+' +
+    '<!-- Left Column: Visual Telemetry -->
+' +
+    '<section class="col-span-12 lg:c

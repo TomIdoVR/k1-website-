@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>THE SHOWDOWN | K1 Tactical Operations</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '        tailwind.config = {
+' +
+    '            darkMode: "class",
+' +
+    '            theme: {
+' +
+    '                extend: {
+' +
+    '                    colors: {
+' +
+    '                        "secondary-container": "#026fef",
+' +
+    '                        "surface-bright": "#343945",
+' +
+    '                        "outline-variant": "#3d494c",
+' +
+    '                        "on-secondary": "#002e6b",
+' +
+    '                        "error": "#ffb4ab",
+' +
+    '                        "surface-container-highest": "#2f3540",
+' +
+    '                        "tertiary-container": "#00be82",
+' +
+    '                        "on-secondary-fixed-variant": "#004396",
+' +
+    '                        "on-secondary-container": "#fefcff",
+' +
+    '                        "on-primary": "#003640",
+' +
+    '                        "on-background": "#dde2f1",
+' +
+    '                        "inverse-on-surface": "#2b313c",
+' +
+    '                        "surface-variant": "#2f3540",
+' +
+    '                        "primary-fixed-dim": "#4cd7f6",
+' +
+    '                        "on-primary-fixed-variant": "#004e5c",
+' +
+    '                        "on-primary-container": "#00424f",
+' +
+    '                        "inverse-surface": "#dde2f1",
+' +
+    '                        "primary-container": "#06b6d4",
+' +
+    '                        "background": "#0e131e",
+' +
+    '                        "tertiary-fixed-dim": "#2ae19e",
+' +
+    '                        "surface-container-lowest": "#080e18",
+' +
+    '                        "on-error": "#690005",
+' +
+    '                        "on-primary-fixed": "#001f26",
+' +
+    '                        "secondary": "#aec6ff",
+' +
+    '                        "tertiary": "#2ae19e",
+' +
+    '                        "on-tertiary": "#003824",
+' +
+    '                        "on-secondary-fixed": "#001a42",
+' +
+    '                        "inverse-primary": "#00687a",
+' +
+    '                        "on-tertiary-fixed": "#002113",
+' +
+    '                        "outline": "#869397",
+' +
+    '                        "surface-container": "#1a202a",
+' +
+    '                        "secondary-fixed": "#d8e2ff",
+' +
+    '                        "on-surface": "#dde2f1",
+' +
+    '                        "primary-fixed": "#acedff",
+' +
+    '                        "on-error-container": "#ffdad6",
+' +
+    '                        "on-tertiary-container": "#00462d",
+' +
+    '                        "surface": "#0e131e",
+' +
+    '                        "error-container": "#93000a",
+' +
+    '                        "tertiary-fixed": "#55feb8",
+' +
+    '                        "primary": "#4cd7f6",
+' +
+    '                        "surface-container-high": "#242a35",
+' +
+    '                        "surface-container-low": "#161c26",
+' +
+    '                        "on-tertiary-fixed-variant": "#005236",
+' +
+    '                        "surface-dim": "#0e131e",
+' +
+    '                        "secondary-fixed-dim": "#aec6ff",
+' +
+    '                        "on-surface-variant": "#bcc9cd",
+' +
+    '                        "surface-tint": "#4cd7f6"
+' +
+    '                    },
+' +
+    '                    fontFamily: {
+' +
+    '                        "headline": ["Inter"],
+' +
+    '                        "body": ["Inter"],
+' +
+    '                        "label": ["Space Grotesk"]
+' +
+    '                    },
+' +
+    '                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '                },
+' +
+    '            },
+' +
+    '        }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '            vertical-align: middle;
+' +
+    '        }
+' +
+    '        .glass-panel {
+' +
+    '            background: rgba(26, 32, 42, 0.6);
+' +
+    '            backdrop-filter: blur(20px);
+' +
+    '        }
+' +
+    '        .cyan-glow {
+' +
+    '            box-shadow: 0 0 20px rgba(76, 215, 246, 0.15);
+' +
+    '        }
+' +
+    '        .active-glow {
+' +
+    '            box-shadow: 0 0 30px rgba(76, 215, 246, 0.4);
+' +
+    '        }
+' +
+    '        body {
+' +
+    '            background-color: #0e131e;
+' +
+    '            color: #dde2f1;
+' +
+    '            overflow-x: hidden;
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="font-body selection:bg-primary/30 selection:text-primary">
+' +
+    '<!-- TopAppBar -->
+' +
+    '<header class="fixed top-0 w-full z-50 bg-[#0e131e] border-b border-[#2f3540]/15 shadow-[0_0_15px_rgba(76,215,246,0.05)]">
+' +
+    '<div class="flex justify-between items-center px-6 py-4 w-full">
+' +
+    '<div class="text-2xl font-black text-[#4cd7f6] tracking-tighter">K1</div>
+' +
+    '<nav class="hidden md:flex items-center gap-8">
+' +
+    `<a class="font-['Inter'] uppercase tracking-tighter font-bold text-[#4cd7f6] border-b-2 border-[#4cd7f6] py-1 transition-all duration-150" href="#">Scenarios</a>
+` +
+    `<a class="font-['Inter'] uppercase tracking-tighter font-bold text-[#2f3540] hover:bg-[#4cd7f6]/10 hover:text-[#4cd7f6] px-2 py-1 transition-all duration-150" href="#">Intelligence</a>
+` +
+    `<a class="font-['Inter'] uppercase tracking-tighter font-bold text-[#2f3540] hover:bg-[#4cd7f6]/10 hover:text-[#4cd7f6] px-2 py-1 transition-all duration-150" href="#">Network</a>
+` +
+    '</nav>
+' +
+    '<div class="flex items-center gap-4 text-[#4cd7f6]">
+' +
+    '<span class="material-symbols-outlined cursor-pointer hover:bg-[#4cd7f6]/10 p-1">language</span>
+' +
+    '<span class="material-symbols-outlined cursor-pointer hover:bg-[#4cd7f6]/10 p-1">terminal</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<main class="pt-24 pb-32">
+' +
+    '<!-- Hero Section -->
+' +
+    '<section class="px-6 md:px-12 mb-20">
+' +
+    '<div class="max-w-7xl mx-auto flex flex-col items-start gap-4">
+' +
+    '<div class="bg-surface-bright/40 px-3 py-1 flex items-center gap-2 mb-4">
+' +
+    '<span class="w-2 h-2 bg-primary animate-pulse"></span>
+' +
+    '<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">System Status: Operational</span>
+' +
+    '</div>
+' +
+    '<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter uppercase relative leading-[0.9]">
+' +
+    '                    THE SHOWDOWN
+' +
+    '                    <span class="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent blur-[2px]"></span>
+' +
+    '<span class="absolute -bottom-4 left-0 w-1/3 h-1 bg-primary"></span>
+' +
+    '</h1>
+' +
+    '<p class="mt-8 font-label text-lg md:text-xl text-outline max-w-2xl leading-relaxed">
+' +
+    '                    Same operator. Same incident. <br class="hidden md:block"/>
+' +
+    '<span class="text-on-surface">Completely different outcome.</span>
+' +
+    '</p>
+' +
+    '<div class="mt-10">
+' +
+    '<button class="bg-primary text-on-primary font-headline font-black px-10 py-5 text-xl tracking-tighter uppercase active-glow hover:scale-[1.02] transition-all flex items-center gap-3">
+' +
+    '                        RUN SCENARIO
+' +
+    '                        <span class="material-symbols-outlined">play_arrow</span>
+' +
+    '</button>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</section>
+' +
+    '<!-- Featured Scenario Grid -->
+' +
+    '<section class="px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
+' +
+    '<!-- Main Content: Scenario Detail -->
+' +
+    '<div class="lg:col-span-8 space-y-8">
+' +
+    '<div class="bg-surface-container-low border-l-4 border-primary p-8 relative overflow-hidden">
+' +
+    '<!-- Technical Background Decorations -->
+' +
+    '<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+' +
+    '<span class="font-label text-6xl font-bold">01</span>
+' +
+    '</div>
+' +
+    '<div class="flex justify-between items-start mb-12">
+' +
+    '<div>
+' +
+    '<span class="font-label text-xs tracking-widest text-primary uppercase mb-2 block">Active Mission Profile</span>
+' +
+    '<h2 class="font-headline font-bold text-3xl uppercase tracking-tight">Crowd Disturbance Escalation</h2>
+' +
+    '</div>
+' +
+    '<div class="text-right">
+' +
+    '<span class="font-label text-[10px] text-outline block uppercase tracking-tighter">Loc: Sector 7-G</span>
+' +
+    '<span class="font-label text-[10px] text-outline block uppercase tracking-tighter">Lat: 40.7128° N</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- Steps List -->
+' +
+    '<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+' +
+    '<div class="space-y-4">
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">01</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">ANOMALY DETECTION</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">02</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">THREAT ASSESSMENT</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">03</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">PERIMETER LOCKDOWN</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">04</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">ASSET DEPLOYMENT</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">05</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">SIGNAL INTERCEPTION</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="space-y-4">
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">06</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">NEUTRALIZATION PATH</span>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4 group">
+' +
+    '<span class="font-label text-primary text-xs font-bold">07</span>
+' +
+    '<span class="font-label text-sm tracking-widest group-hover:text-primary transition-colors cursor-default uppercase">EXTRICATION PROTOCOL</span>
+' +
+    '</div>
+' +
+    '<div class="flex ite

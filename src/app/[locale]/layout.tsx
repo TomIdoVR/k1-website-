@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { organizationSchema } from '@/lib/schema'
+import { organizationSchema, webSiteSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   manifest: '/site.webmanifest',
@@ -21,6 +21,10 @@ export default async function LocaleLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema()) }}
       />
       <main>
         {children}

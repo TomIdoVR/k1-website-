@@ -1,27 +1,19 @@
-/* ── Playback Engine — Reducer + Hook ── */
+/* ── Lifecycle Engine — Reducer + Auto-Advance Hook (v2) ── */
 
-import { useEffect, useRef, useCallback } from 'react'
-import type { SimulatorState, SimulatorAction, PlaybackState, Scenario } from './types'
-import { STEP_TRANSITION_MS } from './constants'
+import { useEffect, useRef } from 'react'
+import type { SimulatorState, SimulatorAction, Scenario, PlaybackStatus } from './types'
 
 /* ── Initial State ── */
-
-const initialPlayback: PlaybackState = {
-  status: 'idle',
-  currentStep: 0,
-  speed: 1,
-  fragmentedElapsed: 0,
-  unifiedElapsed: 0,
-  errorCount: 0,
-  missedCount: 0,
-  activeModules: [],
-  stepPhase: 'running',
-}
 
 export const initialState: SimulatorState = {
   screen: 'entry',
   selectedScenario: null,
-  playback: initialPlayback,
+  lifecycle: {
+    status: 'idle',
+    currentScreenIndex: 0,
+    autoAdvance: true,
+    autoAdvanceTimer: 0,
+  },
 }
 
 /* ── Reducer ── */
@@ -31,194 +23,147 @@ export function simulatorReducer(state: SimulatorState, action: SimulatorAction)
     case 'SELECT_SCENARIO':
       return { ...state, selectedScenario: action.scenarioId }
 
-    case 'START_PLAYBACK':
+    case 'START_LIFECYCLE':
       return {
         ...state,
-        screen: 'playback',
-        playback: {
-          ...initialPlayback,
+        screen: 'lifecycle',
+        lifecycle: {
           status: 'playing',
+          currentScreenIndex: 0,
+          autoAdvance: true,
+          autoAdvanceTimer: 0,
+        },
+      }
+
+    case 'NEXT_SCREEN': {
+      const { scenario } = action
+      const nextIndex = state.lifecycle.currentScreenIndex + 1
+      if (nextIndex >= scenario.screens.length) {
+        return {
+          ...state,
+          screen: 'summary',
+          lifecycle: { ...state.lifecycle, status: 'completed', autoAdvanceTimer: 0 },
+        }
+      }
+      return {
+        ...state,
+        lifecycle: {
+          ...state.lifecycle,
+          currentScreenIndex: nextIndex,
+          autoAdvanceTimer: 0,
+        },
+      }
+    }
+
+    case 'PREV_SCREEN': {
+      const prevIndex = Math.max(0, state.lifecycle.currentScreenIndex - 1)
+      return {
+        ...state,
+        lifecycle: {
+          ...state.lifecycle,
+          currentScreenIndex: prevIndex,
+          autoAdvanceTimer: 0,
+        },
+      }
+    }
+
+    case 'GO_TO_SCREEN':
+      return {
+        ...state,
+        lifecycle: {
+          ...state.lifecycle,
+          currentScreenIndex: action.index,
+          autoAdvanceTimer: 0,
+        },
+      }
+
+    case 'TOGGLE_AUTO_ADVANCE':
+      return {
+        ...state,
+        lifecycle: {
+          ...state.lifecycle,
+          autoAdvance: !state.lifecycle.autoAdvance,
+          autoAdvanceTimer: 0,
         },
       }
 
     case 'PAUSE':
       return {
         ...state,
-        playback: { ...state.playback, status: 'paused' },
+        lifecycle: { ...state.lifecycle, status: 'paused' },
       }
 
     case 'RESUME':
       return {
         ...state,
-        playback: { ...state.playback, status: 'playing' },
+        lifecycle: { ...state.lifecycle, status: 'playing', autoAdvanceTimer: 0 },
       }
 
-    case 'REWIND':
-      return {
-        ...state,
-        playback: {
-          ...initialPlayback,
-          status: 'playing',
-        },
-      }
+    case 'AUTO_ADVANCE_TICK': {
+      const { lifecycle } = state
+      if (lifecycle.status !== 'playing' || !lifecycle.autoAdvance) return state
 
-    case 'SET_SPEED':
-      return {
-        ...state,
-        playback: { ...state.playback, speed: action.speed },
-      }
+      const { scenario } = action
+      const currentScreen = scenario.screens[lifecycle.currentScreenIndex]
+      if (!currentScreen) return state
 
-    case 'TICK': {
-      const { playback } = state
-      if (playback.status !== 'playing' || playback.stepPhase === 'transitioning') return state
+      const newTimer = lifecycle.autoAdvanceTimer + action.deltaMs
+      const durationMs = currentScreen.durationSec * 1000
 
-      const scenario = action.scenario
-      if (!scenario) return state
-
-      const step = scenario.steps[playback.currentStep]
-      if (!step) return state
-
-      const fDur = step.fragmentedDuration * 1000
-      const uDur = step.unifiedDuration * 1000
-
-      const newFElapsed = Math.min(playback.fragmentedElapsed + action.deltaMs, fDur)
-      const newUElapsed = Math.min(playback.unifiedElapsed + action.deltaMs, uDur)
-
-      const bothDone = newFElapsed >= fDur && newUElapsed >= uDur
-
-      // Determine active modules for this step
-      const activeModules = step.modules
-
-      if (bothDone) {
-        // Check if this was the last step
-        const isLast = playback.currentStep >= scenario.steps.length - 1
-
-        // Count errors/missed from this step's failure
-        let errorCount = playback.errorCount
-        let missedCount = playback.missedCount
-        if (step.fragmented.failure) {
-          if (step.fragmented.failure.type === 'missed_alert' || step.fragmented.failure.type === 'no_channel') {
-            missedCount += 1
-          } else {
-            errorCount += 1
-          }
-        }
-
-        if (isLast) {
+      if (newTimer >= durationMs) {
+        // Time to advance
+        const nextIndex = lifecycle.currentScreenIndex + 1
+        if (nextIndex >= scenario.screens.length) {
           return {
             ...state,
-            playback: {
-              ...playback,
-              fragmentedElapsed: fDur,
-              unifiedElapsed: uDur,
-              activeModules,
-              errorCount,
-              missedCount,
-              status: 'completed',
-              stepPhase: 'running',
-            },
+            screen: 'summary',
+            lifecycle: { ...lifecycle, status: 'completed', autoAdvanceTimer: 0 },
           }
         }
-
-        // Start transition to next step
         return {
           ...state,
-          playback: {
-            ...playback,
-            fragmentedElapsed: fDur,
-            unifiedElapsed: uDur,
-            activeModules,
-            errorCount,
-            missedCount,
-            stepPhase: 'transitioning',
+          lifecycle: {
+            ...lifecycle,
+            currentScreenIndex: nextIndex,
+            autoAdvanceTimer: 0,
           },
         }
       }
 
       return {
         ...state,
-        playback: {
-          ...playback,
-          fragmentedElapsed: newFElapsed,
-          unifiedElapsed: newUElapsed,
-          activeModules,
-        },
+        lifecycle: { ...lifecycle, autoAdvanceTimer: newTimer },
       }
     }
 
-    case 'ADVANCE_STEP': {
-      const scenario = action.scenario
-      if (!scenario) return state
-      const nextStep = state.playback.currentStep + 1
-      if (nextStep >= scenario.steps.length) {
-        return {
-          ...state,
-          playback: { ...state.playback, status: 'completed', stepPhase: 'running' },
-        }
-      }
+    case 'GO_TO_SUMMARY':
       return {
         ...state,
-        playback: {
-          ...state.playback,
-          currentStep: nextStep,
-          fragmentedElapsed: 0,
-          unifiedElapsed: 0,
-          activeModules: scenario.steps[nextStep].modules,
-          stepPhase: 'running',
-        },
+        screen: 'summary',
+        lifecycle: { ...state.lifecycle, status: 'completed' },
       }
-    }
-
-    case 'COMPLETE_PLAYBACK':
-      return {
-        ...state,
-        playback: { ...state.playback, status: 'completed' },
-      }
-
-    case 'GO_TO_SCORECARD':
-      return { ...state, screen: 'scorecard' }
-
-    case 'GO_TO_DEEP_DIVE':
-      return { ...state, screen: 'deep-dive' }
 
     case 'GO_TO_ENTRY':
-      return {
-        ...initialState,
-      }
+      return { ...initialState }
 
     default:
       return state
   }
 }
 
-/* ── RAF Tick Hook ── */
+/* ── Auto-Advance Hook (RAF-based) ── */
 
-export function usePlaybackTick(
-  status: PlaybackState['status'],
-  stepPhase: PlaybackState['stepPhase'],
-  speed: number,
+export function useAutoAdvance(
+  status: PlaybackStatus,
+  autoAdvance: boolean,
   scenario: Scenario | undefined,
   dispatch: React.Dispatch<SimulatorAction>,
 ) {
   const rafRef = useRef<number>(0)
   const lastTimeRef = useRef<number>(0)
-  const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Handle step transitions
   useEffect(() => {
-    if (stepPhase === 'transitioning' && scenario) {
-      transitionTimerRef.current = setTimeout(() => {
-        dispatch({ type: 'ADVANCE_STEP', scenario })
-      }, STEP_TRANSITION_MS)
-      return () => {
-        if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current)
-      }
-    }
-  }, [stepPhase, scenario, dispatch])
-
-  // Handle RAF tick loop
-  useEffect(() => {
-    if (status !== 'playing' || stepPhase === 'transitioning' || !scenario) {
+    if (status !== 'playing' || !autoAdvance || !scenario) {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       return
     }
@@ -226,9 +171,9 @@ export function usePlaybackTick(
     lastTimeRef.current = performance.now()
 
     function tick(timestamp: number) {
-      const delta = (timestamp - lastTimeRef.current) * speed
+      const delta = timestamp - lastTimeRef.current
       lastTimeRef.current = timestamp
-      dispatch({ type: 'TICK', deltaMs: delta, scenario: scenario! })
+      dispatch({ type: 'AUTO_ADVANCE_TICK', deltaMs: delta, scenario: scenario! })
       rafRef.current = requestAnimationFrame(tick)
     }
 
@@ -237,37 +182,5 @@ export function usePlaybackTick(
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
-  }, [status, stepPhase, speed, scenario, dispatch])
-}
-
-/* ── Utility: Compute cumulative display time ── */
-
-export function computeDisplayTime(scenario: Scenario, currentStep: number, sideElapsed: number, side: 'fragmented' | 'unified'): number {
-  let total = 0
-  for (let i = 0; i < currentStep; i++) {
-    const step = scenario.steps[i]
-    total += side === 'fragmented' ? step.fragmentedDuration : step.unifiedDuration
-    // Add time penalties for fragmented failures
-    if (side === 'fragmented' && step.fragmented.failure) {
-      total += step.fragmented.failure.timePenalty
-    }
-  }
-  // Add current step progress
-  const currentStepData = scenario.steps[currentStep]
-  if (currentStepData) {
-    const stepDur = side === 'fragmented' ? currentStepData.fragmentedDuration : currentStepData.unifiedDuration
-    const progress = Math.min(sideElapsed / (stepDur * 1000), 1)
-    total += stepDur * progress
-    // Add penalty proportionally during the failing step
-    if (side === 'fragmented' && currentStepData.fragmented.failure) {
-      total += currentStepData.fragmented.failure.timePenalty * progress
-    }
-  }
-  return total // in seconds
-}
-
-export function formatTime(seconds: number): string {
-  const m = Math.floor(seconds / 60)
-  const s = Math.floor(seconds % 60)
-  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
+  }, [status, autoAdvance, scenario, dispatch])
 }

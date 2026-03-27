@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>Sovereign Command | GIS LOCATION</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '      tailwind.config = {
+' +
+    '        darkMode: "class",
+' +
+    '        theme: {
+' +
+    '          extend: {
+' +
+    '            colors: {
+' +
+    '              "secondary-fixed-dim": "#4cd7f6",
+' +
+    '              "secondary-container": "#03b5d3",
+' +
+    '              "secondary": "#4cd7f6",
+' +
+    '              "on-primary-fixed-variant": "#004395",
+' +
+    '              "outline": "#8c909f",
+' +
+    '              "error": "#ffb4ab",
+' +
+    '              "on-surface": "#dde2f1",
+' +
+    '              "on-secondary-container": "#00424e",
+' +
+    '              "surface-container-high": "#242a35",
+' +
+    '              "surface-container-highest": "#2f3540",
+' +
+    '              "on-tertiary": "#502400",
+' +
+    '              "inverse-on-surface": "#2b313c",
+' +
+    '              "on-tertiary-fixed-variant": "#723600",
+' +
+    '              "on-secondary-fixed": "#001f26",
+' +
+    '              "on-error": "#690005",
+' +
+    '              "on-surface-variant": "#c2c6d6",
+' +
+    '              "primary": "#adc6ff",
+' +
+    '              "on-primary": "#002e6a",
+' +
+    '              "surface-variant": "#2f3540",
+' +
+    '              "tertiary-fixed-dim": "#ffb786",
+' +
+    '              "primary-fixed": "#d8e2ff",
+' +
+    '              "surface-dim": "#0e131e",
+' +
+    '              "on-tertiary-fixed": "#311400",
+' +
+    '              "tertiary-fixed": "#ffdcc6",
+' +
+    '              "tertiary-container": "#df7412",
+' +
+    '              "on-secondary": "#003640",
+' +
+    '              "on-secondary-fixed-variant": "#004e5c",
+' +
+    '              "tertiary": "#ffb786",
+' +
+    '              "secondary-fixed": "#acedff",
+' +
+    '              "surface-container-low": "#161c26",
+' +
+    '              "surface": "#0e131e",
+' +
+    '              "on-error-container": "#ffdad6",
+' +
+    '              "on-primary-fixed": "#001a42",
+' +
+    '              "background": "#0e131e",
+' +
+    '              "on-tertiary-container": "#461f00",
+' +
+    '              "on-background": "#dde2f1",
+' +
+    '              "primary-container": "#4d8eff",
+' +
+    '              "primary-fixed-dim": "#adc6ff",
+' +
+    '              "surface-container": "#1a202a",
+' +
+    '              "inverse-surface": "#dde2f1",
+' +
+    '              "surface-container-lowest": "#080e18",
+' +
+    '              "surface-tint": "#adc6ff",
+' +
+    '              "outline-variant": "#424754",
+' +
+    '              "on-primary-container": "#00285d",
+' +
+    '              "error-container": "#93000a",
+' +
+    '              "surface-bright": "#343945",
+' +
+    '              "inverse-primary": "#005ac2"
+' +
+    '            },
+' +
+    '            fontFamily: {
+' +
+    '              "headline": ["Inter"],
+' +
+    '              "body": ["Inter"],
+' +
+    '              "label": ["Inter"]
+' +
+    '            },
+' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '          },
+' +
+    '        },
+' +
+    '      }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '        .material-symbols-outlined {
+' +
+    "            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '        }
+' +
+    '        .glow-blue { box-shadow: 0 0 12px rgba(173, 198, 255, 0.3); }
+' +
+    '        .glow-cyan { box-shadow: 0 0 12px rgba(76, 215, 246, 0.3); }
+' +
+    '        .map-grid {
+' +
+    '            background-image: linear-gradient(to right, rgba(76, 215, 246, 0.05) 1px, transparent 1px),
+' +
+    '                              linear-gradient(to bottom, rgba(76, 215, 246, 0.05) 1px, transparent 1px);
+' +
+    '            background-size: 40px 40px;
+' +
+    '        }
+' +
+    '        .pulse-red {
+' +
+    '            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+' +
+    '        }
+' +
+    '        @keyframes pulse-ring {
+' +
+    '            0% { transform: scale(0.8); opacity: 0.5; }
+' +
+    '            50% { transform: scale(1.2); opacity: 0.2; }
+' +
+    '            100% { transform: scale(0.8); opacity: 0.5; }
+' +
+    '        }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="bg-surface-dim text-on-surface font-body overflow-hidden">
+' +
+    '<!-- TopAppBar -->
+' +
+    '<header class="flex justify-between items-center w-full px-6 h-16 bg-[#080e18] fixed top-0 left-0 z-50">
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<span class="text-xl font-black tracking-widest text-blue-500 dark:text-blue-400">SOVEREIGN COMMAND</span>
+' +
+    '<div class="h-6 w-[2px] bg-outline-variant/30 mx-2"></div>
+' +
+    '<div class="flex gap-6">
+' +
+    `<a class="font-['Inter'] tracking-tighter uppercase font-bold text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">DETECTION</a>
+` +
+    `<a class="font-['Inter'] tracking-tighter uppercase font-bold text-xs text-[#4cd7f6] border-l-2 border-[#4cd7f6] pl-2 shadow-[0_0_8px_rgba(76,215,246,0.3)]" href="#">GIS LOCATION</a>
+` +
+    `<a class="font-['Inter'] tracking-tighter uppercase font-bold text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">STRATEGY</a>
+` +
+    `<a class="font-['Inter'] tracking-tighter uppercase font-bold text-xs text-slate-500 hover:text-slate-300 transition-colors" href="#">EXECUTION</a>
+` +
+    '</div>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-6">
+' +
+    '<div class="flex items-center bg-surface-container-high px-3 py-1.5 gap-3">
+' +
+    '<span class="material-symbols-outlined text-secondary text-sm">search</span>
+' +
+    '<input class="bg-transparent border-none focus:ring-0 text-[10px] font-bold tracking-widest uppercase w-48 text-on-surface-variant placeholder:text-outline" placeholder="SEARCH SECTOR..." type="text"/>
+' +
+    '</div>
+' +
+    '<div class="flex gap-4">
+' +
+    '<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">notifications</span>
+' +
+    '<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">settings</span>
+' +
+    '</div>
+' +
+    '<img alt="Operator Profile" class="w-8 h-8 object-cover grayscale brightness-75 border border-primary-container" data-alt="Close-up portrait of a professional tactical operations center specialist wearing a headset in a dark room with blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9rx19WBfKWCWaSDI1mY6Uw5qpcQOEQEfzB3DZXH14LJmDcNeiEO559PcL_380vh7lOEw8iN7vPrcBbHUhoT8v91Rgbm50oHsXhiUerZlARm3U_BLWHurnAC6tQ8GVoVKUN3encvCqfp-yJVdLK-5pm0D-EK7wJ5ck-aeiXDS9hKglsJg5tiv4orH6l-0g_2vIfmr14Q-yEIGVNzjPOqpv6ElMc7vNu8y3ocAExjJiDb034YPtFeAf_TSD1JnKDvnuh5pdBpGT-3wx"/>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- SideNavBar -->
+' +
+    '<nav class="fixed left-0 top-0 h-full flex flex-col items-center py-8 z-40 bg-[#080e18] w-20 pt-20">
+' +
+    '<div class="flex flex-col items-center gap-1 mb-8">
+' +
+    '<span class="text-blue-500 font-black text-xs">S07</span>
+' +
+    '<div class="w-10 h-[1px] bg-blue-500/30"></div>
+' +
+    '</div>
+' +
+    '<div class="flex flex-col w-full gap-2">
+' +
+    '<button class="w-full py-4 flex flex-col items-center gap-1 transition-all duration-100 ease-in text-slate-600 hover:bg-[#0e131e] hover:text-blue-300">
+' +
+    '<span class="material-symbols-outlined">grid_view</span>
+' +
+    `<span class="font-['Inter'] text-[10px] font-bold tracking-widest uppercase">DASHBOARD</span>
+` +
+    '</button>
+' +
+    '<button class="w-full py-4 flex flex-col items-center gap-1 transition-all duration-100 ease-in bg-[#242a35] text-[#4cd7f6] border-l-4 border-[#4cd7f6] shadow-[0_0_12px_rgba(76,215,246,0.2)]">
+' +
+    '<span class="material-symbols-outlined">map</span>
+' +
+    `<span class="font-['Inter'] text-[10px] font-bold tracking-widest uppercase">MAPS</span>
+` +
+    '</button>
+' +
+    '<button class="w-full py-4 flex flex-col items-center gap-1 transition-all duration-100 ease-in text-slate-600 hover:bg-[#0e131e] hover:text-blue-300">
+' +
+    '<span class="material-symbols-outlined">videocam</span>
+' +
+    `<span class="font-['Inter'] text-[10px] font-bold tracking-widest uppercase">SENSORS</span>
+` +
+    '</button>
+' +
+    '<button class="w-full py-4 flex flex-col items-center gap-1 transition-all duration-100 ease-in text-slate-600 hover:bg-[#0e131e] hover:text-blue-300">
+' +
+    '<span class="material-symbols-outlined">emergency</span>
+' +
+    `<span class="font-['Inter'] text-[10px] font-bold tracking-widest uppercase">UNITS</span>
+` +
+    '</button>
+' +
+    '<button class="w-full py-4 flex flex-col items-center gap-1 transition-all duration-100 ease-in text-slate-600 hover:bg-[#0e131e] hover:text-blue-300">
+' +
+    '<span class="material-symbols-outlined">list_alt</span>
+' +
+    `<span class="font-['Inter'] text-[10px] font-bold tracking-widest uppercase">LOGS</span>
+` +
+    '</button>
+' +
+    '</div>
+' +
+    '<div class="mt-auto flex flex-col w-full gap-4 pb-4">
+' +
+    '<button class="w-full flex flex-col items-center text-slate-600 hover:text-white">
+' +
+    '<span class="material-symbols-outlined">help</span>
+' +
+    '</button>
+' +
+    '<button class="w-full flex flex-col items-center text-slate-600 hover:text-white">
+' +
+    '<span class="material-symbols-outlined">lock</span>
+' +
+    '</button>
+' +
+    '</div>
+' +
+    '</nav>
+' +
+    '<!-- Main Content Canvas -->
+' +
+    '<main class="ml-20 mt-16 flex flex-col h-[calc(100vh-64px)]">
+' +
+    '<!-- Timeline Strip -->
+' +
+    '<div class="h-10 bg-surface-container-lowest border-b border-outline-variant/10 flex items-center px-6 gap-8">
+' +
+    '<div class="flex items-center gap-2 opacity-60">
+' +
+    `<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+` +
+    '<span class="text-[10px] font-bold tracking-widest text-on-surface-variant">STEP 01 DETECTION // COMPLETED</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+' +
+    '<div class="flex items-center gap-2">
+' +
+    '<div class="w-2 h-2 bg-primary glow-blue"></div>
+' +
+    '<span class="text-[10px] font-bold tracking-widest text-primary">STEP 02 GIS LOCATION // ACTIVE</span>
+' +
+    '</div>
+' +
+    '<div class="w-12 h-[1px] bg-outline-variant/30"></div>
+' +
+    '<div class="flex items-center gap-2 opacity-30">
+' +
+    '<div class="w-2 h-2 bg-outline"></div>
+' +
+    '<span class="text-[10px] font-bold tracking-widest text-outline">STEP 03 STRATEGY // PENDING</span>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '<!-- GIS Interface -->
+' +
+    '<div class="flex flex-1 overflow-hidden">
+' +
+    '<!-- Map Area (75%) -->
+' +
+    '<div class="relative w-3/4 bg-[#050a14] map-grid overflow-hidden border-r border-outline-variant/20">
+' +
+    '<!-- Static Map Simulation -->
+' +
+    '<div class="absolute inset-0 o

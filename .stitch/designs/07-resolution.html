@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+' +
+    '
+' +
+    '<html class="dark" lang="en"><head>
+' +
+    '<meta charset="utf-8"/>
+' +
+    '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+' +
+    '<title>Kinetic Resolution | Incident Resolved</title>
+' +
+    '<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+' +
+    '<script id="tailwind-config">
+' +
+    '      tailwind.config = {
+' +
+    '        darkMode: "class",
+' +
+    '        theme: {
+' +
+    '          extend: {
+' +
+    '            colors: {
+' +
+    '              "secondary-container": "#6f00be",
+' +
+    '              "primary-container": "#00d492",
+' +
+    '              "background": "#0e131e",
+' +
+    '              "on-surface": "#dde2f1",
+' +
+    '              "surface-container-high": "#242a35",
+' +
+    '              "inverse-surface": "#dde2f1",
+' +
+    '              "surface": "#0e131e",
+' +
+    '              "primary": "#44f1ac",
+' +
+    '              "outline": "#85948a",
+' +
+    '              "primary-fixed": "#55feb8",
+' +
+    '              "on-surface-variant": "#bacabf",
+' +
+    '              "surface-container": "#1a202a",
+' +
+    '              "surface-bright": "#343945",
+' +
+    '              "surface-container-lowest": "#080e18",
+' +
+    '              "on-secondary-fixed-variant": "#6900b3",
+' +
+    '              "secondary": "#ddb7ff",
+' +
+    '              "error": "#ffb4ab",
+' +
+    '              "on-secondary-fixed": "#2c0051",
+' +
+    '              "on-secondary": "#490080",
+' +
+    '              "on-error-container": "#ffdad6",
+' +
+    '              "on-error": "#690005",
+' +
+    '              "on-primary-container": "#005538",
+' +
+    '              "tertiary": "#00eeee",
+' +
+    '              "surface-container-highest": "#2f3540",
+' +
+    '              "tertiary-container": "#00cfcf",
+' +
+    '              "on-tertiary-fixed": "#002020",
+' +
+    '              "inverse-primary": "#006c49",
+' +
+    '              "outline-variant": "#3c4a41",
+' +
+    '              "surface-dim": "#0e131e",
+' +
+    '              "error-container": "#93000a",
+' +
+    '              "tertiary-fixed-dim": "#00dddd",
+' +
+    '              "on-tertiary": "#003737",
+' +
+    '              "secondary-fixed": "#f0dbff",
+' +
+    '              "surface-tint": "#2ae19e",
+' +
+    '              "inverse-on-surface": "#2b313c",
+' +
+    '              "primary-fixed-dim": "#2ae19e",
+' +
+    '              "tertiary-fixed": "#00fbfb",
+' +
+    '              "on-primary-fixed": "#002113",
+' +
+    '              "surface-container-low": "#161c26",
+' +
+    '              "on-primary-fixed-variant": "#005236",
+' +
+    '              "on-background": "#dde2f1",
+' +
+    '              "on-tertiary-fixed-variant": "#004f4f",
+' +
+    '              "on-primary": "#003824",
+' +
+    '              "secondary-fixed-dim": "#ddb7ff",
+' +
+    '              "on-secondary-container": "#d6a9ff",
+' +
+    '              "on-tertiary-container": "#005353",
+' +
+    '              "surface-variant": "#2f3540"
+' +
+    '            },
+' +
+    '            fontFamily: {
+' +
+    '              "headline": ["Inter"],
+' +
+    '              "body": ["Inter"],
+' +
+    '              "label": ["Inter"]
+' +
+    '            },
+' +
+    '            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+' +
+    '          },
+' +
+    '        },
+' +
+    '      }
+' +
+    '    </script>
+' +
+    '<style>
+' +
+    '      .material-symbols-outlined {
+' +
+    "        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+" +
+    '      }
+' +
+    '      .kinetic-glow {
+' +
+    '        box-shadow: 0 0 20px rgba(68, 241, 172, 0.15);
+' +
+    '      }
+' +
+    '      .resolution-active-glow {
+' +
+    '        box-shadow: 0 0 15px rgba(0, 212, 146, 0.4);
+' +
+    '      }
+' +
+    '      body {
+' +
+    '        background-color: #050a14;
+' +
+    '        color: #dde2f1;
+' +
+    "        font-family: 'Inter', sans-serif;
+" +
+    '      }
+' +
+    '      .no-scrollbar::-webkit-scrollbar { display: none; }
+' +
+    '    </style>
+' +
+    '</head>
+' +
+    '<body class="flex overflow-hidden h-screen selection:bg-primary selection:text-on-primary">
+' +
+    '<!-- SideNavBar (Shared Component) -->
+' +
+    '<aside class="fixed left-0 top-0 h-full z-40 flex flex-col bg-[#0e131e] w-64 border-r-0">
+' +
+    '<div class="p-6">
+' +
+    `<h2 class="text-[#44f1ac] font-bold font-['Inter'] uppercase tracking-[0.05rem] text-[10px]">OPERATOR_01</h2>
+` +
+    `<p class="text-slate-500 font-['Inter'] uppercase tracking-[0.05rem] text-[10px]">SECTOR_ALPHA</p>
+` +
+    '</div>
+' +
+    '<nav class="flex-1 px-4 space-y-1">
+' +
+    `<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-[#161c26] transition-all duration-200 font-['Inter'] uppercase tracking-[0.05rem] text-[10px]" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+' +
+    '<span>Incident Hub</span>
+' +
+    '</a>
+' +
+    `<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-[#161c26] transition-all duration-200 font-['Inter'] uppercase tracking-[0.05rem] text-[10px] relative" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="warning">warning</span>
+' +
+    '<span>Events</span>
+' +
+    '<span class="absolute right-4 w-1 h-4 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]"></span>
+' +
+    '</a>
+' +
+    `<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-[#161c26] transition-all duration-200 font-['Inter'] uppercase tracking-[0.05rem] text-[10px] relative" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+' +
+    '<span>Intelligence</span>
+' +
+    '<span class="absolute right-4 w-1 h-4 bg-secondary shadow-[0_0_8px_rgba(221,183,255,0.6)]"></span>
+' +
+    '</a>
+' +
+    `<a class="flex items-center gap-3 px-4 py-3 bg-[#242a35] text-[#44f1ac] border-l-4 border-[#44f1ac] transition-all duration-200 font-['Inter'] uppercase tracking-[0.05rem] text-[10px]" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+' +
+    '<span>Archive</span>
+' +
+    '</a>
+' +
+    '</nav>
+' +
+    '<div class="p-4 mt-auto border-t border-outline-variant/10">
+' +
+    '<button class="w-full bg-primary text-on-primary py-3 font-bold uppercase tracking-widest text-[10px] kinetic-glow hover:brightness-110 active:scale-95 transition-all">
+' +
+    '                RESOLVE INCIDENT
+' +
+    '            </button>
+' +
+    '<div class="mt-4 space-y-1">
+' +
+    `<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-[#44f1ac] transition-colors font-['Inter'] uppercase tracking-[0.05rem] text-[10px]" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="settings">settings</span>
+' +
+    '<span>Settings</span>
+' +
+    '</a>
+' +
+    `<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-[#44f1ac] transition-colors font-['Inter'] uppercase tracking-[0.05rem] text-[10px]" href="#">
+` +
+    '<span class="material-symbols-outlined" data-icon="help">help</span>
+' +
+    '<span>Support</span>
+' +
+    '</a>
+' +
+    '</div>
+' +
+    '</div>
+' +
+    '</aside>
+' +
+    '<!-- Main Canvas -->
+' +
+    '<main class="flex-1 ml-64 flex flex-col min-h-screen bg-[#050a14]">
+' +
+    '<!-- TopAppBar (Shared Component) -->
+' +
+    '<header class="flex justify-between items-center w-full px-6 h-14 bg-[#0e131e] z-30">
+' +
+    '<div class="flex items-center gap-8">
+' +
+    '<span class="text-xl font-black text-[#44f1ac] tracking-tighter">KINETIC RESOLUTION</span>
+' +
+    '<nav class="hidden md:flex gap-6">
+' +
+    `<a class="text-slate-500 font-['Inter'] tabular-nums uppercase tracking-[0.05rem] text-[10px] font-bold hover:bg-[#242a35] transition-colors duration-150 py-1" href="#">Timeline</a>
+` +
+    `<a class="text-slate-500 font-['Inter'] tabular-nums uppercase tracking-[0.05rem] text-[10px] font-bold hover:bg-[#242a35] transition-colors duration-150 py-1" href="#">Analysis</a>
+` +
+    `<a class="text-[#44f1ac] border-b-2 border-[#44f1ac] pb-1 font-['Inter'] tabular-nums uppercase tracking-[0.05rem] text-[10px] font-bold" href="#">Resolution</a>
+` +
+    `<a class="text-slate-500 font-['Inter'] tabular-nums uppercase tracking-[0.05rem] text-[10px] font-bold hover:bg-[#242a35] transition-colors duration-150 py-1" href="#">Audit</a>
+` +
+    '</nav>
+' +
+    '</div>
+' +
+    '<div class="flex items-center gap-4">
+' +
+    '<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors" data-icon="download">download</button>
+' +
+    '<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors" data-icon="share">share</button>
+' +
+    '</div>
+' +
+    '</header>
+' +
+    '<!-- Content Area -->
+' +
+    '<div class="flex-1 overflow-y-auto no-scrollbar p-6 space-y-6">
+' +
+    '<!-- Compact Timeline Strip -->
+' +
+    '<div class="bg-surface-container-low p-4 flex items-center justify-between">
+' +
+    '<div class="flex items-center w-full max-w-5xl mx-auto">
+' +
+    '<!-- Step 1-6 (Completed) -->
+' +
+    '<template id="step-template">
+' +
+    '<div class="flex items-center flex-1 group">
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 bg-primary-container flex items-center justify-center text-on-primary-container">
+' +
+    `<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+` +
+    '</div>
+' +
+    '<span class="mt-1 text-[8px] uppercase tracking-tighter text-primary font-bold">Step</span>
+' +
+    '</div>
+' +
+    '<div class="flex-1 h-[2px] bg-primary-container mx-2 opacity-50 group-last:hidden"></div>
+' +
+    '</div>
+' +
+    '</template>
+' +
+    '<!-- Loop for 6 completed steps -->
+' +
+    '<div class="flex items-center flex-1">
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 bg-primary-container flex items-center justify-center text-on-primary-container">
+' +
+    `<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+` +
+    '</div>
+' +
+    '<span class="mt-1 text-[8px] uppercase tracking-tighter text-primary font-bold">DETECTION</span>
+' +
+    '</div>
+' +
+    '<div class="flex-1 h-[2px] bg-primary-container mx-2 opacity-50"></div>
+' +
+    '</div>
+' +
+    '<div class="flex items-center flex-1">
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 bg-primary-container flex items-center justify-center text-on-primary-container">
+' +
+    `<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+` +
+    '</div>
+' +
+    '<span class="mt-1 text-[8px] uppercase tracking-tighter text-primary font-bold">LOCATION</span>
+' +
+    '</div>
+' +
+    '<div class="flex-1 h-[2px] bg-primary-container mx-2 opacity-50"></div>
+' +
+    '</div>
+' +
+    '<div class="flex items-center flex-1">
+' +
+    '<div class="flex flex-col items-center">
+' +
+    '<div class="w-6 h-6 bg-primary-container flex items-center justify-center text-on-primary-container">
+' +
+    '<span class="material-symbols-outline

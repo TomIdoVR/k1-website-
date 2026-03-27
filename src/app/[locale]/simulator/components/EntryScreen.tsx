@@ -14,7 +14,7 @@ export default function EntryScreen() {
 
   const handleRun = () => {
     if (state.selectedScenario) {
-      dispatch({ type: 'START_PLAYBACK' })
+      dispatch({ type: 'START_LIFECYCLE' })
     }
   }
 
@@ -36,7 +36,7 @@ export default function EntryScreen() {
         fontWeight: 700,
         letterSpacing: 3,
         textTransform: 'uppercase' as const,
-        color: 'var(--cyan)',
+        color: '#4cd7f6',
         marginBottom: 16,
       }}>
         KabatOne
@@ -44,7 +44,7 @@ export default function EntryScreen() {
       <h1 style={{
         fontSize: 'clamp(32px, 5vw, 48px)',
         fontWeight: 900,
-        color: 'var(--white)',
+        color: '#dde2f1',
         textAlign: 'center',
         letterSpacing: -1,
         marginBottom: 12,
@@ -54,7 +54,7 @@ export default function EntryScreen() {
       </h1>
       <p style={{
         fontSize: 16,
-        color: 'var(--muted)',
+        color: '#bcc9cd',
         textAlign: 'center',
         maxWidth: 500,
         lineHeight: 1.6,
@@ -67,7 +67,7 @@ export default function EntryScreen() {
       <div style={{
         fontSize: 13,
         fontWeight: 600,
-        color: 'var(--dim)',
+        color: '#869397',
         letterSpacing: 1,
         textTransform: 'uppercase' as const,
         marginBottom: 20,
@@ -108,13 +108,13 @@ export default function EntryScreen() {
           fontWeight: 700,
           letterSpacing: 2,
           textTransform: 'uppercase' as const,
-          background: state.selectedScenario ? 'var(--blue)' : 'rgba(37, 99, 235, 0.3)',
-          color: '#fff',
+          background: state.selectedScenario ? '#06b6d4' : 'rgba(6, 182, 212, 0.3)',
+          color: '#003640',
           border: 'none',
-          borderRadius: 8,
+          borderRadius: 0,
           cursor: state.selectedScenario ? 'pointer' : 'not-allowed',
           transition: 'all 0.2s',
-          boxShadow: state.selectedScenario ? '0 0 30px rgba(37, 99, 235, 0.4)' : 'none',
+          boxShadow: state.selectedScenario ? '0 0 30px rgba(6, 182, 212, 0.4)' : 'none',
         }}
       >
         ▶ {t(strings.runScenario, es)}
@@ -122,7 +122,7 @@ export default function EntryScreen() {
 
       <p style={{
         fontSize: 12,
-        color: 'var(--dim)',
+        color: '#869397',
         marginTop: 16,
       }}>
         {t(strings.durationHint, es)}
