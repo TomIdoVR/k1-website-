@@ -7,6 +7,24 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.30] 2026-03-28 — Feat: Scenario Explorer Phase 1 — LPR/Stolen Vehicle interactive demo
+**Added**
+- New `/demo` hub page (`src/app/[locale]/demo/page.tsx`) — scenario card grid listing LPR and future scenarios
+- New `/demo/lpr` page (`src/app/[locale]/demo/lpr/page.tsx`) — full LPR/Stolen Vehicle interactive demo
+- Custom `DemoLayout` (`src/app/[locale]/demo/layout.tsx`) — standalone dark shell, no marketing nav/footer; loads Space Mono font
+- 14 new components in `src/components/demo/`: TopBar, StageNav, BottomNav, ModuleTags, PIPWindow, LiveTimestamp, StageContent, NextStagePanel, StageScreen, ProtocolPanel, SplitLayout, LearnLayout, LprScenario (orchestrator)
+- `src/data/demo/types.ts` — TypeScript interfaces for scenario data (Stage, ProtocolStep, ScenarioConfig)
+- `src/data/demo/lpr.ts` — Full LPR scenario config: 5 stages, all content, protocol steps, module tags
+- Stage navigation via pill clicks, bottom nav buttons, and keyboard (← → 1-5 keys)
+- Deep-linking: `/demo/lpr?stage=decide` loads Stage 3 directly
+- Framer Motion fade transitions between stages (300ms)
+- Stage 3: ProtocolPanel with 7-step LPR Hit Response Protocol checklist
+- Stage 4: SplitLayout — field officer mobile app mockup (40%) + dispatcher admin console (60%)
+- Stage 5: LearnLayout — Critical Events Timeline + Resolution Metrics + Trend Analysis
+- PIP (picture-in-picture) window on stages 2–4 showing previous stage feed
+- Static timestamps per stage (12:04:01 → 12:12:15)
+- Image placeholders using existing LPR images (Stitch exports to be swapped in next iteration)
+
 ## [1.25] 2026-03-28 — New: /privacy-policy-tamaulipas — Tamaulipas Contigo privacy policy page
 **Added**
 - Created `/privacy-policy-tamaulipas` page under `src/app/[locale]/privacy-policy-tamaulipas/page.tsx`

@@ -356,6 +356,25 @@
 
     <div class="timeline">
 
+      <!-- v1.30 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.30</span><span class="tl-date">2026-03-28</span></div>
+          <div class="tl-title">Feat: Scenario Explorer Phase 1 — LPR/Stolen Vehicle interactive demo</div>
+          <ul class="tl-list">
+            <li>New <code>/demo</code> hub page — scenario card grid (LPR + 3 coming-soon scenarios)</li>
+            <li>New <code>/demo/lpr</code> — full 5-stage LPR/Stolen Vehicle interactive demo (Detect → Understand → Decide → Act → Learn)</li>
+            <li>Custom demo shell layout with no marketing nav/footer; Space Mono font loaded</li>
+            <li>14 new components: TopBar (incident badge), StageNav (pill navigation), BottomNav, ModuleTags, PIPWindow, LiveTimestamp, StageContent, NextStagePanel, StageScreen, ProtocolPanel (7-step checklist), SplitLayout (40/60 officer+dispatcher), LearnLayout (3-column analytics), LprScenario (client orchestrator)</li>
+            <li>Stage navigation: pill clicks, prev/next buttons, keyboard arrows (←→) and 1–5 number keys</li>
+            <li>Deep-linking supported: <code>/demo/lpr?stage=decide</code> loads Stage 3 directly</li>
+            <li>Framer Motion fade transitions between stages (300ms ease-in-out)</li>
+            <li>Data-driven architecture in <code>src/data/demo/lpr.ts</code> — adding future scenarios requires no component changes</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v1.25 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>
