@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.25] 2026-03-28 — New: /privacy-policy-tamaulipas — Tamaulipas Contigo privacy policy page
+**Added**
+- Created `/privacy-policy-tamaulipas` page under `src/app/[locale]/privacy-policy-tamaulipas/page.tsx`
+- Migrated full privacy policy content for the Tamaulipas Contigo app from PDF
+- Page follows existing privacy page styling (same Nav, Footer, section layout)
+
+## [1.24] 2026-03-27 — New: /lp — Generic campaign landing page (EN + ES)
+
+**Added**
+- `src/app/[locale]/lp/page.tsx` — Generic campaign landing page with adaptable headline, subhead, and CTA via URL searchParams (`?headline=`, `?sub=`, `?cta=`, `?campaign=`). Sections: minimal header, hero, stats bar (40+ cities / 70M+ citizens / 40% faster / 72h), 3-column value props, client proof + quote, lead form, footer.
+- `ContactForm.tsx` — Added optional `campaignSource` prop that injects a hidden `campaign_source` field into the Formspree submission for campaign tracking.
+
+---
+
 ## [1.23] 2026-03-26 — New: /resources/what-is-a-command-center — C2–C5 explainer + FAQ schema
 
 **Added**
