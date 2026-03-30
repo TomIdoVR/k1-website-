@@ -7,6 +7,23 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.32] 2026-03-30 — Feat: /resources/what-is-a-psap — PSAP explainer article (EN + ES)
+**Added**
+- New `/resources/what-is-a-psap` page — full GEO-optimized explainer: what a PSAP does, technology stack (CAD/GIS/TEL/RMS/VMS/NG911), Legacy vs Modern comparison, evaluation criteria, KabatOne section with product links
+- EN + ES metadata keys (`whatIsAPsap`)
+- BreadcrumbSchema + ArticleSchema + FAQPageSchema (6 Q&A)
+- Internal links to K-Dispatch, K-Video, K-Safety, K-Connect, sensor-fusion, panic-buttons, LPR, CAD dispatch, emergency management, command center articles
+- Added to sitemap.ts (priority 0.6) and resources hub page
+
+## [1.31] 2026-03-30 — Feat: /resources/what-is-emergency-management-software — EMS explainer article (EN + ES)
+**Added**
+- New `/resources/what-is-emergency-management-software` page — full GEO-optimized explainer: core capabilities, incident lifecycle, unified vs fragmented comparison, evaluation criteria, KabatOne section
+- EN + ES metadata keys (`whatIsEmergencyManagementSoftware`)
+- BreadcrumbSchema + ArticleSchema + FAQPageSchema (6 Q&A)
+- Internal links to K-Dispatch, K-Safety, K-Video, sensor-fusion, LPR, RTCC setup guide, CAD dispatch, command center, PSAP articles
+- Added to sitemap.ts (priority 0.6) and resources hub page
+- Synced SEO master plan: updated site size (47→63 routes, 94→126 URLs), fixed GA4 status, added GEO-014–020, updated phase progress
+
 ## [1.30] 2026-03-28 — Feat: Scenario Explorer Phase 1 — LPR/Stolen Vehicle interactive demo
 **Added**
 - New `/demo` hub page (`src/app/[locale]/demo/page.tsx`) — scenario card grid listing LPR and future scenarios

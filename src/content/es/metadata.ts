@@ -254,6 +254,16 @@ export const metadata = {
     description: "Un software de detección de disparos usa sensores acústicos para detectar disparos, triangular su ubicación y alertar a los centros de mando en segundos. Cómo funciona y cómo se integra con video y despacho.",
     canonical: "https://kabatone.com/es/resources/what-is-gunshot-detection-software/",
   },
+  whatIsEmergencyManagementSoftware: {
+    title: "¿Qué Es un Software de Gestión de Emergencias? Guía Completa | KabatOne",
+    description: "Un software de gestión de emergencias coordina el ciclo completo del incidente: detección, despacho, coordinación en campo y resolución. Cómo las plataformas unificadas reducen los tiempos de respuesta entre 30% y 40%.",
+    canonical: "https://kabatone.com/es/resources/what-is-emergency-management-software/",
+  },
+  whatIsAPsap: {
+    title: "¿Qué Es un PSAP? Guía sobre Centros de Recepción de Emergencias 911 | KabatOne",
+    description: "Un PSAP (Public Safety Answering Point) es donde se reciben las llamadas al 911 y se despachan las unidades de emergencia. Cómo funcionan, la evolución a NG911 y qué tecnología necesitan.",
+    canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
+  },
   simulator: {
     title: "Simulador de Incidentes — Respuesta Unificada vs Fragmentada | KabatOne",
     description: "Simulador interactivo que compara sistemas de seguridad pública fragmentados con la plataforma unificada de KabatOne. Observa el mismo incidente de dos formas y ve la diferencia en tiempo real.",

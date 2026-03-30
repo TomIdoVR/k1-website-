@@ -31,6 +31,8 @@ const pages = [
   { path: '/resources/what-is-situational-awareness-software', priority: 0.6 },
   { path: '/resources/what-is-gunshot-detection-software', priority: 0.6 },
   { path: '/resources/what-is-a-command-center', priority: 0.6 },
+  { path: '/resources/what-is-emergency-management-software', priority: 0.6 },
+  { path: '/resources/what-is-a-psap', priority: 0.6 },
   { path: '/integrations/lpr', priority: 0.6 },
   { path: '/integrations/face-recognition', priority: 0.6 },
   { path: '/integrations/sensor-fusion', priority: 0.6 },
@@ -53,7 +55,11 @@ const pages = [
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
   { path: '/privacy', priority: 0.3 },
+  { path: '/privacy-policy-tamaulipas', priority: 0.2 },
   { path: '/simulator', priority: 0.8 },
+  { path: '/demo', priority: 0.7 },
+  { path: '/demo/lpr', priority: 0.7 },
+  { path: '/lp', priority: 0.4 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

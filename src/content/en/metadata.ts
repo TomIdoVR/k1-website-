@@ -254,6 +254,16 @@ export const metadata = {
     description: "Gunshot detection software uses acoustic sensors to detect gunfire, triangulate its location, and alert command centers in seconds. Learn how it works and how it integrates with video and dispatch.",
     canonical: "https://kabatone.com/resources/what-is-gunshot-detection-software/",
   },
+  whatIsEmergencyManagementSoftware: {
+    title: "What Is Emergency Management Software? Complete Guide | KabatOne",
+    description: "Emergency management software coordinates the full incident lifecycle: detection, dispatch, field coordination, and resolution. Learn how unified platforms reduce response times by 30–40%.",
+    canonical: "https://kabatone.com/resources/what-is-emergency-management-software/",
+  },
+  whatIsAPsap: {
+    title: "What Is a PSAP? Guide to Public Safety Answering Points | KabatOne",
+    description: "A PSAP (Public Safety Answering Point) is where 911 calls are received and emergency units dispatched. Learn how PSAPs work, NG911 evolution, and what technology modern PSAPs need.",
+    canonical: "https://kabatone.com/resources/what-is-a-psap/",
+  },
   simulator: {
     title: "Incident Simulator — Unified vs Fragmented Response | KabatOne",
     description: "Interactive simulator comparing fragmented public safety systems with KabatOne's unified platform. Watch the same incident unfold two ways and see the difference in real time.",
