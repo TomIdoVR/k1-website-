@@ -26,6 +26,7 @@ export default function StageScreen({
 
       {/* ── Cinematic panel ── */}
       <div
+        className="demo-stage-panel"
         style={{
           position: 'relative',
           width: '90vw',
@@ -227,6 +228,7 @@ export default function StageScreen({
           pip.img ? (
             <div
               key={idx}
+              className={`demo-pip demo-pip-${idx}`}
               style={{
                 position: 'absolute',
                 bottom: idx === 0 ? 36 : 36 + 116 + 10,
@@ -580,6 +582,7 @@ export default function StageScreen({
 
       {/* ── Navigation below panel — always centered ── */}
       <div
+        className="demo-stage-nav"
         style={{
           display: 'flex',
           alignItems: 'center',

@@ -32,6 +32,7 @@ interface TopBarProps {
 export default function TopBar({ incidentBadge, currentStage, onNavigate, activeModules }: TopBarProps) {
   return (
     <header
+      className="demo-header"
       style={{
         position: 'fixed',
         top: 0,
@@ -45,6 +46,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
     >
       {/* ── Row 1: Logo · incident badge · icons ── */}
       <div
+        className="demo-header-row1"
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -70,6 +72,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
           </Link>
 
           <div
+            className="demo-incident-badge"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -135,6 +138,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
 
       {/* ── Row 2: Stage lifecycle pills ── */}
       <div
+        className="demo-header-row2"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -148,6 +152,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
           return (
             <div key={stage.id} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <button
+                className="demo-stage-pill"
                 onClick={() => onNavigate(stage.id)}
                 style={{
                   padding: '7px 22px',
@@ -168,7 +173,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
               </button>
               {i < STAGES.length - 1 && (
                 <span
-                  className="material-symbols-outlined"
+                  className="material-symbols-outlined demo-stage-chevron"
                   style={{ color: 'rgba(255,255,255,0.18)', fontSize: 14 }}
                 >
                   chevron_right
@@ -181,7 +186,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
 
       {/* ── Row 3: Platform modules strip ── */}
       <div
-        className="scrollbar-hide"
+        className="scrollbar-hide demo-header-row3"
         style={{
           display: 'flex',
           alignItems: 'center',

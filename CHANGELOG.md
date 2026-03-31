@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.34] 2026-03-31 — Feat: Mobile responsiveness for demo/scenario explorer (v1.34)
+**Added**
+- Comprehensive mobile-responsive CSS in `DemoLayout` targeting breakpoints ≤768px and ≤480px
+- `TopBar`: module strip hidden on mobile, stage pills scroll horizontally, chevrons hidden, header height reduced to ~52px
+- `ScenarioPlayer`: `paddingTop` overridden to 108px on mobile (matching shorter header)
+- `StageScreen`: cinematic panel adapts to `96vw` on mobile; PiP windows shrink to 110px (hidden on ≤480px); nav buttons stack vertically
+- `SplitLayout`: fixed height removed on mobile — phone mockup and dispatcher console stack vertically
+- `LearnLayout`: fixed height removed on mobile — timeline, metrics, and recommendations stack vertically
+- Demo Hub page: nav links hidden on mobile, padding reduced
+
 ## [1.33] 2026-03-30 — Feat: Violence Detection scenario + ScenarioPlayer refactor (v1.33)
 **Added**
 - New `/demo/violence` route — full 5-stage Violence Detection scenario (Detect → Understand → Decide → Act → Learn)

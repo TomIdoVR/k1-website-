@@ -127,7 +127,7 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
       />
 
       {/* Main content — pt-[168px] clears the fixed 3-row header */}
-      <main style={{ position: 'relative', zIndex: 1, paddingTop: '168px' }}>
+      <main className="demo-main" style={{ position: 'relative', zIndex: 1, paddingTop: '168px' }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStageId}

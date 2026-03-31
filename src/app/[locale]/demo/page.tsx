@@ -97,7 +97,7 @@ export default function DemoHubPage() {
             justifyContent: 'space-between',
             maxWidth: 1920,
             margin: '0 auto',
-            padding: '16px 32px',
+            padding: '16px 20px',
           }}
         >
           {/* Logo */}
@@ -115,6 +115,7 @@ export default function DemoHubPage() {
 
           {/* Nav links */}
           <nav
+            className="demo-hub-nav"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -170,6 +171,7 @@ export default function DemoHubPage() {
 
       {/* ─── Main ─── */}
       <main
+        className="demo-hub-main"
         style={{
           maxWidth: 1920,
           margin: '0 auto',
@@ -559,19 +561,15 @@ export default function DemoHubPage() {
         dangerouslySetInnerHTML={{
           __html: `
             @media (max-width: 1200px) {
-              .demo-card-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-              }
+              .demo-card-grid { grid-template-columns: repeat(3, 1fr) !important; }
             }
             @media (max-width: 768px) {
-              .demo-card-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-              }
+              .demo-card-grid { grid-template-columns: repeat(2, 1fr) !important; }
+              .demo-hub-nav { display: none !important; }
+              .demo-hub-main { padding: 32px 20px 32px !important; }
             }
             @media (max-width: 480px) {
-              .demo-card-grid {
-                grid-template-columns: 1fr !important;
-              }
+              .demo-card-grid { grid-template-columns: 1fr !important; }
             }
             .group:hover {
               border-color: rgba(75,142,255,0.35) !important;

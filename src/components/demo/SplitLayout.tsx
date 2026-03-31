@@ -1,13 +1,8 @@
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import type { Stage } from '@/data/demo/types'
 
-const UNITS = [
-  { id: '12-CHARLIE', role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  statusColor: '#3B9EFF', active: true },
-  { id: '08-BRAVO',   role: 'BACKUP EN ROUTE',   status: 'EN ROUTE',  statusColor: '#3B9EFF', active: true },
-  { id: '04-ALPHA',   role: 'STATIONARY',         status: 'STANDBY',   statusColor: '#48647A', active: false },
-  { id: '05-ALPHA',   role: 'K.CHEN · 4.1 MI',   status: 'AVAILABLE', statusColor: '#00C98A', active: false },
-  { id: '11-ECHO',    role: 'P.GOMEZ · 6.2 MI',  status: 'AVAILABLE', statusColor: '#00C98A', active: false },
-]
+const DispatchMap = dynamic(() => import('./DispatchMap'), { ssr: false })
 
 interface SplitLayoutProps {
   stage: Stage
@@ -18,18 +13,34 @@ interface SplitLayoutProps {
 }
 
 export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPrev }: SplitLayoutProps) {
+  const primaryUnit = stage.dataPoints.find(d => d.key === 'PRIMARY UNIT')?.value ?? ''
+  const etaRaw = stage.dataPoints.find(d => d.key === 'ETA')?.value ?? ''
+  const etaNum = etaRaw.split(' ')[0]
+  const units = stage.splitUnits ?? []
+  const phoneRows = stage.splitPhoneRows ?? stage.dataPoints
+  const cameraImage = stage.splitCameraImage ?? stage.pipImage ?? ''
+  const cameraLabel = stage.splitCameraLabel ?? 'CAM · LIVE'
+  const incidentBadge = stage.splitIncidentBadge ?? ''
+  const incidentDot = stage.splitIncidentDot ?? 'INCIDENT'
+  const unitDot = stage.splitUnitDot ?? 'UNIT'
+  const mapImage = stage.pipImage ?? ''
+
   return (
     <div
+      className="demo-split-root"
       style={{
-        height: 'calc(100vh - 168px)',
-        background: '#08101A',
+        height: 'calc(58vh + 110px)',
+        background: '#162235',
         display: 'flex',
         flexDirection: 'column',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+        overflow: 'hidden',
+        marginBottom: 40,
       }}
     >
       {/* ── Stage header — same style as other stages ── */}
       <div
+        className="demo-split-header"
         style={{
           padding: '16px 32px 12px',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -56,18 +67,18 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             {stage.headline}
           </h2>
           <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)', marginTop: 6, fontWeight: 500 }}>
-            Units 12-Charlie + 08-Bravo · En Route
+            {primaryUnit} · En Route
           </p>
         </div>
 
         {/* Right: ETA + live badge */}
-        <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
+        <div className="demo-split-eta" style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 12px', borderRadius: 9999, background: 'rgba(16,19,27,0.6)', border: '1px solid rgba(255,255,255,0.06)' }}>
             <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#adc6ff' }} />
             <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>Live Monitoring</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-            <span style={{ fontSize: '2rem', fontWeight: 900, fontStyle: 'italic', color: '#fff', fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1 }}>2.8</span>
+            <span style={{ fontSize: '2rem', fontWeight: 900, fontStyle: 'italic', color: '#fff', fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1 }}>{etaNum}</span>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', color: '#adc6ff', textTransform: 'uppercase' }}>MIN ETA</span>
           </div>
         </div>
@@ -79,10 +90,11 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
       </div>
 
       {/* ── Main split ── */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+      <div className="demo-split-body" style={{ flex: 1, minHeight: 0, display: 'flex', overflow: 'hidden' }}>
 
         {/* ── LEFT — Smartphone mockup ── */}
         <div
+          className="demo-split-left"
           style={{
             width: '36%',
             display: 'flex',
@@ -90,6 +102,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             alignItems: 'center',
             borderRight: '2px solid rgba(173,198,255,0.08)',
             padding: '12px 24px 0',
+            overflowY: 'auto',
           }}
         >
           {/* Panel title */}
@@ -123,7 +136,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
               style={{
                 borderRadius: 38,
                 overflow: 'hidden',
-                background: '#0a0f18',
+                background: '#162235',
                 display: 'flex',
                 flexDirection: 'column',
               }}
@@ -162,36 +175,36 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
 
             {/* Camera feed */}
             <div style={{ position: 'relative', height: 110, background: '#000' }}>
-              <Image
-                src="/images/integrations/lpr-hero.jpeg"
-                alt="CCTV Feed"
-                fill
-                style={{ objectFit: 'cover', filter: 'brightness(0.65)' }}
-                sizes="260px"
-              />
+              {cameraImage && (
+                <Image
+                  src={cameraImage}
+                  alt="CCTV Feed"
+                  fill
+                  style={{ objectFit: 'cover', filter: 'brightness(0.65)' }}
+                  sizes="260px"
+                />
+              )}
               <div style={{ position: 'absolute', top: 6, left: 8, fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>
-                CAM_ID: HWY_34_WEST
+                {cameraLabel}
               </div>
-              <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)',
-                background: 'rgba(255,69,96,0.2)', border: '1.5px solid #FF4560', padding: '3px 12px', borderRadius: 2,
-                fontSize: '8px', fontWeight: 800, color: '#FF4560', letterSpacing: '0.15em', whiteSpace: 'nowrap'
-              }}>
-                STOLEN · 7JKY442
-              </div>
+              {incidentBadge && (
+                <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)',
+                  background: 'rgba(255,69,96,0.2)', border: '1.5px solid #FF4560', padding: '3px 12px', borderRadius: 2,
+                  fontSize: '8px', fontWeight: 800, color: '#FF4560', letterSpacing: '0.15em', whiteSpace: 'nowrap'
+                }}>
+                  {incidentBadge}
+                </div>
+              )}
             </div>
 
             {/* Data rows */}
             <div style={{ padding: '10px 14px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {[
-                { key: 'PLATE', value: '7JKY442', valueColor: '#E0ECF8' },
-                { key: 'VELOCITY', value: '72 MPH', valueColor: '#E0ECF8' },
-                { key: 'THREAT LEVEL', value: 'HIGH', valueColor: '#FF4560' },
-              ].map((row) => (
+              {phoneRows.map((row) => (
                 <div key={row.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: '8px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#48647A' }}>
                     {row.key}
                   </span>
-                  <span style={{ fontSize: '11px', fontWeight: 800, fontFamily: 'monospace', color: row.valueColor }}>
+                  <span style={{ fontSize: '11px', fontWeight: 800, fontFamily: 'monospace', color: row.key === 'THREAT LEVEL' ? '#FF4560' : '#E0ECF8' }}>
                     {row.value}
                   </span>
                 </div>
@@ -207,19 +220,21 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
                 overflow: 'hidden',
                 border: '1px solid rgba(255,255,255,0.06)',
                 position: 'relative',
-                background: '#060d16',
+                background: '#0a1520',
               }}
             >
-              <Image
-                src="/demo/lpr/stage-2-understand.jpg"
-                alt="Route Map"
-                fill
-                style={{ objectFit: 'cover', filter: 'brightness(0.5) saturate(0.6)' }}
-                sizes="232px"
-              />
+              {mapImage && (
+                <Image
+                  src={mapImage}
+                  alt="Route Map"
+                  fill
+                  style={{ objectFit: 'cover', filter: 'brightness(0.5) saturate(0.6)' }}
+                  sizes="232px"
+                />
+              )}
               <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(173,198,255,0.6)', textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                  INTERCEPT ROUTE · HWY 45
+                  {cameraLabel}
                 </span>
               </div>
             </div>
@@ -254,7 +269,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             <div
               style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                padding: '6px 0 8px', background: '#0a0f18',
+                padding: '6px 0 8px', background: '#162235',
               }}
             >
               <span style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', background: '#48647A' }} />
@@ -279,7 +294,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
         </div>
 
         {/* ── RIGHT — Dispatcher console ── */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <div className="demo-split-right" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
 
           {/* Right panel title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 20px 8px', flexShrink: 0 }}>
@@ -310,8 +325,8 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             </div>
 
             {/* Unit rows */}
-            <div style={{ flex: 1, overflowY: 'auto' }}>
-              {UNITS.map((unit) => (
+            <div className="demo-split-units" style={{ flex: 1, overflowY: 'auto' }}>
+              {units.map((unit) => (
                 <div
                   key={unit.id}
                   style={{
@@ -367,103 +382,23 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
           </div>
 
           {/* Operational map */}
-          <div style={{ flex: 1, position: 'relative', background: '#060d16', overflow: 'hidden' }}>
-            {/* Map background */}
-            <Image
-              src="/demo/lpr/stage-2-understand.jpg"
-              alt="Operational Map"
-              fill
-              style={{ objectFit: 'cover', filter: 'brightness(0.35) saturate(0.5)' }}
-              sizes="50vw"
-            />
-
-            {/* Coords overlay */}
-            <div
-              style={{
-                position: 'absolute', top: 12, right: 12, zIndex: 10,
-                background: 'rgba(8,16,26,0.75)', backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.06)',
-                padding: '6px 10px', borderRadius: 6,
-                fontSize: '8px', fontWeight: 700, fontFamily: 'monospace', color: 'rgba(255,255,255,0.4)',
-                lineHeight: 1.6,
-              }}
-            >
-              LAT: 34.0522° N<br />LNG: 118.2437° W
-            </div>
-
-            {/* Target dot — 7JKY442 */}
-            <div
-              style={{
-                position: 'absolute', top: '42%', left: '58%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 10,
-                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-              }}
-            >
-              <div
-                className="animate-pulse"
-                style={{
-                  width: 12, height: 12, borderRadius: '50%',
-                  background: '#FF4560', boxShadow: '0 0 16px #FF4560',
-                }}
+          <div className="demo-split-map" style={{ flex: 1, position: 'relative', background: '#0a1520', overflow: 'hidden' }}>
+            {stage.splitMapCoords ? (
+              <DispatchMap
+                incident={stage.splitMapCoords.incident}
+                unit={stage.splitMapCoords.unit}
+                incidentLabel={incidentDot}
+                unitLabel={unitDot}
               />
-              <div style={{
-                background: 'rgba(255,69,96,0.15)', border: '1px solid rgba(255,69,96,0.4)',
-                padding: '2px 7px', borderRadius: 3,
-                fontSize: '8px', fontWeight: 800, color: '#FF4560', fontFamily: 'monospace', letterSpacing: '0.08em',
-              }}>
-                7JKY442
-              </div>
-            </div>
-
-            {/* Unit 12-C dot */}
-            <div
-              style={{
-                position: 'absolute', top: '62%', left: '42%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 10,
-                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
-              }}
-            >
-              <div
-                style={{
-                  width: 14, height: 14, borderRadius: '50%',
-                  background: '#3B9EFF', boxShadow: '0 0 12px rgba(59,158,255,0.6)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}
-              >
-                <span style={{ fontSize: '6px', fontWeight: 900, color: '#fff' }}>◆</span>
-              </div>
-              <div style={{
-                background: 'rgba(59,158,255,0.15)', border: '1px solid rgba(59,158,255,0.35)',
-                padding: '2px 7px', borderRadius: 3,
-                fontSize: '8px', fontWeight: 800, color: '#3B9EFF', fontFamily: 'monospace',
-              }}>
-                12-C
-              </div>
-            </div>
-
-            {/* Zoom controls */}
-            <div
-              style={{
-                position: 'absolute', bottom: 12, right: 12, zIndex: 10,
-                display: 'flex', flexDirection: 'column', gap: 1,
-              }}
-            >
-              {['+', '−'].map((s) => (
-                <div
-                  key={s}
-                  style={{
-                    width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: 'rgba(8,16,26,0.75)', backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,0.08)', borderRadius: 4,
-                    fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.45)', cursor: 'pointer',
-                  }}
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
+            ) : mapImage ? (
+              <Image
+                src={mapImage}
+                alt="Operational Map"
+                fill
+                style={{ objectFit: 'cover', filter: 'brightness(0.75) saturate(0.85)' }}
+                sizes="50vw"
+              />
+            ) : null}
           </div>
           </div>{/* end inner flex */}
         </div>{/* end right panel */}
@@ -471,6 +406,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
 
       {/* ── PREV / NEXT buttons ── */}
       <div
+        className="demo-split-footer"
         style={{
           display: 'flex',
           alignItems: 'center',

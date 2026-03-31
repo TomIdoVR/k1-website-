@@ -23,17 +23,20 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
 
   return (
     <div
+      className="demo-learn-root"
       style={{
-        height: 'calc(100vh - 168px)',
-        background: '#08101A',
+        height: 'calc(58vh + 110px)',
+        background: '#162235',
         display: 'flex',
         flexDirection: 'column',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
         overflow: 'hidden',
+        marginBottom: 40,
       }}
     >
       {/* ── Stage header — same as other stages ── */}
       <div
+        className="demo-learn-header"
         style={{
           padding: '16px 32px 12px',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -64,7 +67,7 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
         </div>
 
         {/* Resolved badge */}
-        <div style={{
+        <div className="demo-learn-resolved-badge" style={{
           display: 'flex', alignItems: 'center', gap: 8,
           padding: '8px 18px', borderRadius: 9999,
           background: 'rgba(0,201,138,0.1)', border: '1px solid rgba(0,201,138,0.3)',
@@ -77,81 +80,104 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
       </div>
 
       {/* ── Three-column body ── */}
-      <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+      <div className="demo-learn-body" style={{ flex: 1, minHeight: 0, display: 'flex', overflow: 'hidden' }}>
 
         {/* LEFT — Timeline */}
-        <div style={{ width: '28%', padding: '20px 24px', borderRight: '1px solid rgba(255,255,255,0.06)', overflowY: 'auto' }}>
-          <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#48647A', marginBottom: 16 }}>
+        <div className="demo-learn-left" style={{ width: '28%', padding: '20px 24px', borderRight: '1px solid rgba(255,255,255,0.06)', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8fa8bc', marginBottom: 16 }}>
             Critical Events
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0, flex: 1 }}>
             {EVENTS.map((event, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                <div style={{ flexShrink: 0, marginTop: 2 }}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, paddingBottom: 0 }}>
+                {/* Dot + connector */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
                     <circle cx="8" cy="8" r="7" fill="rgba(0,201,138,0.12)" stroke="#00C98A" strokeWidth="1.5" />
                     <path d="M5 8l2.5 2.5L11 5" stroke="#00C98A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
+                  {i < EVENTS.length - 1 && (
+                    <div style={{ width: 1, flex: 1, minHeight: 20, background: 'rgba(0,201,138,0.15)', margin: '3px 0' }} />
+                  )}
                 </div>
-                <div>
-                  <div style={{ fontSize: '9px', fontWeight: 700, color: '#48647A', fontFamily: 'var(--font-space-mono), monospace' }}>{event.time}</div>
-                  <div style={{ fontSize: '12px', color: '#7A9DB8', marginTop: 2, lineHeight: 1.4 }}>{event.text}</div>
+                <div style={{ paddingBottom: i < EVENTS.length - 1 ? 16 : 0 }}>
+                  <div style={{ fontSize: '9px', fontWeight: 700, color: '#8fa8bc', fontFamily: 'var(--font-space-mono), monospace' }}>{event.time}</div>
+                  <div style={{ fontSize: '12px', color: '#b8ceda', marginTop: 2, lineHeight: 1.4 }}>{event.text}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Module tags */}
-          <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {stage.modules.map((m) => (
-              <div key={m} style={{
-                fontSize: '8px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-                padding: '3px 10px', borderRadius: 4,
-                background: 'rgba(173,198,255,0.08)', border: '1px solid rgba(173,198,255,0.18)', color: '#adc6ff',
-              }}>
-                {m}
-              </div>
-            ))}
+          {/* Summary box */}
+          <div style={{ marginTop: 20, padding: '14px 16px', borderRadius: 10, background: 'rgba(0,201,138,0.05)', border: '1px solid rgba(0,201,138,0.18)', flexShrink: 0 }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#00C98A', marginBottom: 10 }}>Incident Summary</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { key: 'Case #', value: stage.description.includes('auto-generated') ? 'TX-2024-9147' : 'TX-2024-8821' },
+                { key: 'Timestamp', value: stage.timestamp },
+                { key: 'Resolution', value: 'Successful' },
+              ].map((row) => (
+                <div key={row.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '10px', color: '#8fa8bc', fontWeight: 600 }}>{row.key}</span>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#c1c6d7', fontFamily: 'var(--font-space-mono), monospace' }}>{row.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* CENTER — Metrics */}
-        <div style={{ width: '24%', padding: '20px 24px', borderRight: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+        <div className="demo-learn-center" style={{ width: '24%', padding: '20px 24px', borderRight: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, overflowY: 'auto' }}>
           {/* Timer ring */}
-          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="120" height="120" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
-              <circle cx="60" cy="60" r="52" fill="none" stroke="#00C98A" strokeWidth="8"
-                strokeDasharray={`${2 * Math.PI * 52 * 0.82} ${2 * Math.PI * 52}`}
-                strokeLinecap="round" transform="rotate(-90 60 60)"
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="60" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="9" />
+              <circle cx="70" cy="70" r="60" fill="none" stroke="#00C98A" strokeWidth="9"
+                strokeDasharray={`${2 * Math.PI * 60 * 0.82} ${2 * Math.PI * 60}`}
+                strokeLinecap="round" transform="rotate(-90 70 70)"
               />
             </svg>
             <div style={{ position: 'absolute', textAlign: 'center' }}>
-              <div style={{ fontSize: '26px', fontWeight: 700, color: '#E0ECF8', fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1 }}>8:14</div>
-              <div style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#48647A', marginTop: 4 }}>Total Time</div>
+              <div style={{ fontSize: '30px', fontWeight: 700, color: '#E0ECF8', fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'TOTAL TIME')?.value ?? '8:14'}</div>
+              <div style={{ fontSize: '9px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8fa8bc', marginTop: 4 }}>Total Time</div>
             </div>
           </div>
 
           {/* Metric cards */}
           <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
-              { label: 'Performance', value: '+18% vs Avg Incident' },
-              { label: 'SLA Variance', value: '−1:46 vs 10m Target' },
+              { label: 'Performance', value: stage.dataPoints.find(d => d.key === 'PERFORMANCE')?.value ?? '+18% vs Avg', color: '#00C98A' },
+              { label: 'SLA Variance', value: '−1:46 vs 10m Target', color: '#00C98A' },
+              { label: 'Units Deployed', value: '2 units', color: '#adc6ff' },
+              { label: 'AI Actions', value: '7 automated', color: '#adc6ff' },
+              { label: 'Civilian Risk', value: 'Contained', color: '#FFB020' },
+              { label: 'Case Status', value: 'CLOSED', color: '#00C98A' },
             ].map((m) => (
-              <div key={m.label} style={{ padding: '12px 14px', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
-                <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#48647A' }}>{m.label}</div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A', marginTop: 4, fontFamily: 'var(--font-space-mono), monospace' }}>{m.value}</div>
+              <div key={m.label} style={{ padding: '10px 14px', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#8fa8bc' }}>{m.label}</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: m.color, marginTop: 4, fontFamily: 'var(--font-space-mono), monospace' }}>{m.value}</div>
               </div>
+            ))}
+          </div>
+
+          {/* Module tags */}
+          <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 'auto' }}>
+            {stage.modules.map((m) => (
+              <div key={m} style={{
+                fontSize: '8px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                padding: '3px 10px', borderRadius: 4,
+                background: 'rgba(173,198,255,0.08)', border: '1px solid rgba(173,198,255,0.18)', color: '#adc6ff',
+              }}>{m}</div>
             ))}
           </div>
         </div>
 
         {/* RIGHT — Stage breakdown + trend + recommendation */}
-        <div style={{ flex: 1, padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 14, overflowY: 'auto' }}>
+        <div className="demo-learn-right" style={{ flex: 1, padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 14, overflowY: 'auto' }}>
 
           {/* Stage time breakdown — horizontal bars */}
           <div style={{ flexShrink: 0 }}>
-            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#48647A', marginBottom: 12 }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8fa8bc', marginBottom: 12 }}>
               Incident Stage Breakdown
             </div>
             {[
@@ -189,7 +215,7 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
 
           {/* Trend chart — compact */}
           <div style={{ flexShrink: 0 }}>
-            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#48647A', marginBottom: 10 }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8fa8bc', marginBottom: 10 }}>
               Trend — Last 10 Incidents
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-end', gap: 5, height: 60 }}>
@@ -211,29 +237,78 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
             <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.12)', marginTop: 4 }}>Response time (seconds)</div>
           </div>
 
-          {/* Recommendation */}
-          <div style={{ flex: 1, padding: '16px 18px', borderRadius: 12, background: 'rgba(173,198,255,0.04)', border: '1px solid rgba(173,198,255,0.15)', minHeight: 100 }}>
-            <div style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#adc6ff', marginBottom: 8 }}>
-              Strategic Recommendation
+          {/* Recommendations */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8fa8bc' }}>
+              Strategic Recommendations
             </div>
-            <p style={{ fontSize: '0.8125rem', lineHeight: 1.6, color: '#7A9DB8', marginBottom: 12 }}>
-              Data confirms a recurring visibility gap at Exit 42 during peak evening hours. System recommends a priority expansion of ALPR coverage on the I-10 westbound corridor.
-            </p>
-            <button style={{
-              padding: '7px 16px', borderRadius: 8,
-              border: '1px solid rgba(255,255,255,0.18)', background: 'transparent',
-              color: '#E0ECF8', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em',
-              textTransform: 'uppercase', cursor: 'pointer',
-              fontFamily: 'var(--font-manrope), Manrope, sans-serif',
-            }}>
-              Deploy Coverage Upgrade →
-            </button>
+            {[
+              {
+                priority: 'HIGH',
+                priorityColor: '#FF4560',
+                icon: 'videocam',
+                title: 'Expand Coverage at Exit 42',
+                body: 'Recurring visibility gap detected during peak evening hours. Priority ALPR expansion recommended on the I-10 westbound corridor.',
+                cta: 'Deploy Coverage Upgrade',
+              },
+              {
+                priority: 'MEDIUM',
+                priorityColor: '#FFB020',
+                icon: 'schedule',
+                title: 'Optimize Shift Overlap — 14:00–16:00',
+                body: 'Unit availability drops 31% during afternoon shift transition. Recommend staggered shift schedule to maintain minimum 4 active units.',
+                cta: 'Review Shift Schedule',
+              },
+              {
+                priority: 'LOW',
+                priorityColor: '#adc6ff',
+                icon: 'psychology',
+                title: 'AI Threshold Calibration',
+                body: 'Confidence threshold of 94% generated 2 false positives in last 30 incidents. Raising to 96% projected to reduce false alerts by 60%.',
+                cta: 'Adjust AI Settings',
+              },
+            ].map((rec) => (
+              <div
+                key={rec.title}
+                style={{
+                  padding: '14px 18px', borderRadius: 10,
+                  background: 'rgba(255,255,255,0.02)',
+                  border: `1px solid rgba(255,255,255,0.07)`,
+                  display: 'flex', flexDirection: 'column', gap: 8,
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: 14, color: rec.priorityColor }}>{rec.icon}</span>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#c1c6d7' }}>{rec.title}</span>
+                  </div>
+                  <span style={{
+                    fontSize: '8px', fontWeight: 900, letterSpacing: '0.15em',
+                    padding: '2px 8px', borderRadius: 99,
+                    background: `${rec.priorityColor}18`,
+                    border: `1px solid ${rec.priorityColor}44`,
+                    color: rec.priorityColor,
+                  }}>{rec.priority}</span>
+                </div>
+                <p style={{ fontSize: '0.75rem', lineHeight: 1.55, color: '#b8ceda', margin: 0 }}>{rec.body}</p>
+                <button style={{
+                  alignSelf: 'flex-start', padding: '5px 14px', borderRadius: 6,
+                  border: '1px solid rgba(255,255,255,0.14)', background: 'transparent',
+                  color: '#c1c6d7', fontSize: '10px', fontWeight: 700, letterSpacing: '0.08em',
+                  textTransform: 'uppercase', cursor: 'pointer',
+                  fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+                }}>
+                  {rec.cta} →
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* ── Bottom nav — PREV + RESTART ── */}
       <div
+        className="demo-learn-footer"
         style={{
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
           padding: '14px 0',
