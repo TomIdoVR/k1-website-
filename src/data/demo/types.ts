@@ -26,12 +26,30 @@ export interface Stage {
   nextStageTeaser: string
   backgroundImage?: string
   backgroundFit?: 'cover' | 'contain'
+  // Optional bounding-box overlay shown on the detect stage cinematic panel
+  detectOverlay?: {
+    label: string        // e.g. "Stolen Vehicle Alert"
+    tagKey: string       // e.g. "License Plate"
+    tagValue: string     // e.g. "7JKY442"
+  }
   pipImage?: string
   pipLabel?: string
   pip2Image?: string
   pip2Label?: string
   layout: StageLayout
   protocolSteps?: ProtocolStep[]
+  // SplitLayout (act stage) overrides
+  splitCameraImage?: string
+  splitCameraLabel?: string
+  splitIncidentBadge?: string
+  splitIncidentDot?: string
+  splitUnitDot?: string
+  splitPhoneRows?: DataPoint[]
+  splitUnits?: Array<{ id: string; role: string; status: string; active: boolean }>
+  splitMapCoords?: {
+    incident: [number, number]
+    unit: [number, number]
+  }
 }
 
 export interface ScenarioConfig {

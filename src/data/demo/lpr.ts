@@ -24,6 +24,11 @@ export const lprScenario: ScenarioConfig = {
       nextStageTeaser: 'Live map. Nearest units. Intercept window.',
       backgroundImage: '/images/integrations/lpr-hero.jpeg',
       layout: 'default',
+      detectOverlay: {
+        label: 'Stolen Vehicle Alert',
+        tagKey: 'License Plate',
+        tagValue: '7JKY442',
+      },
     },
     {
       id: 'understand',
@@ -84,9 +89,30 @@ export const lprScenario: ScenarioConfig = {
       ],
       modules: ['911 & DISPATCH', 'FIRST RESPONDER APPS'],
       nextStageTeaser: 'Incident auto-filed. Patterns updated.',
-      pipImage: '/images/integrations/lpr-flow.jpeg',
+      pipImage: '/demo/lpr/stage-2-understand.jpg',
       pipLabel: 'GIS TRACK · ACTIVE',
       layout: 'split',
+      splitCameraImage: '/images/integrations/lpr-hero.jpeg',
+      splitCameraLabel: 'CAM 402 · HIGHWAY 45',
+      splitIncidentBadge: 'STOLEN · 7JKY442',
+      splitIncidentDot: '7JKY442',
+      splitUnitDot: '12-C',
+      splitPhoneRows: [
+        { key: 'PLATE', value: '7JKY442' },
+        { key: 'VELOCITY', value: '72 MPH' },
+        { key: 'THREAT LEVEL', value: 'HIGH' },
+      ],
+      splitUnits: [
+        { id: '12-CHARLIE', role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
+        { id: '08-BRAVO',   role: 'BACKUP EN ROUTE',   status: 'EN ROUTE',  active: true },
+        { id: '04-ALPHA',   role: 'STATIONARY',         status: 'STANDBY',   active: false },
+        { id: '05-ALPHA',   role: 'K.CHEN · 4.1 MI',   status: 'AVAILABLE', active: false },
+        { id: '11-ECHO',    role: 'P.GOMEZ · 6.2 MI',  status: 'AVAILABLE', active: false },
+      ],
+      splitMapCoords: {
+        incident: [29.7540, -95.3910],
+        unit: [29.7620, -95.3660],
+      },
     },
     {
       id: 'learn',

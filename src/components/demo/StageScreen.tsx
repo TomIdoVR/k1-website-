@@ -64,100 +64,102 @@ export default function StageScreen({
           }}
         />
 
-        {/* ── Scanning grid + bounding box — detect stage only ── */}
+        {/* ── Scanning grid overlay — detect stage only ── */}
         {isFirst && (
-          <>
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              opacity: 0.05,
+              pointerEvents: 'none',
+              backgroundImage: [
+                'linear-gradient(0deg, transparent 24%, rgba(75,142,255,.3) 25%, rgba(75,142,255,.3) 26%, transparent 27%, transparent 74%, rgba(75,142,255,.3) 75%, rgba(75,142,255,.3) 76%, transparent 77%, transparent)',
+                'linear-gradient(90deg, transparent 24%, rgba(75,142,255,.3) 25%, rgba(75,142,255,.3) 26%, transparent 27%, transparent 74%, rgba(75,142,255,.3) 75%, rgba(75,142,255,.3) 76%, transparent 77%, transparent)',
+              ].join(', '),
+              backgroundSize: '50px 50px',
+            }}
+          />
+        )}
+
+        {/* ── Bounding box overlay — only when stage provides detectOverlay ── */}
+        {isFirst && stage.detectOverlay && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '40%',
+              left: '35%',
+              width: '30%',
+              height: '25%',
+              border: '2px solid rgba(173,198,255,0.6)',
+              borderRadius: 2,
+              zIndex: 10,
+            }}
+          >
             <div
+              className="animate-pulse"
               style={{
                 position: 'absolute',
-                inset: 0,
-                opacity: 0.05,
-                pointerEvents: 'none',
-                backgroundImage: [
-                  'linear-gradient(0deg, transparent 24%, rgba(75,142,255,.3) 25%, rgba(75,142,255,.3) 26%, transparent 27%, transparent 74%, rgba(75,142,255,.3) 75%, rgba(75,142,255,.3) 76%, transparent 77%, transparent)',
-                  'linear-gradient(90deg, transparent 24%, rgba(75,142,255,.3) 25%, rgba(75,142,255,.3) 26%, transparent 27%, transparent 74%, rgba(75,142,255,.3) 75%, rgba(75,142,255,.3) 76%, transparent 77%, transparent)',
-                ].join(', '),
-                backgroundSize: '50px 50px',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                top: '40%',
-                left: '35%',
-                width: '30%',
-                height: '25%',
-                border: '2px solid rgba(173,198,255,0.6)',
-                borderRadius: 2,
-                zIndex: 10,
+                bottom: -30,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: '#ffb4ab',
+                color: '#690005',
+                fontSize: '9px',
+                fontWeight: 900,
+                padding: '4px 14px',
+                borderRadius: 4,
+                whiteSpace: 'nowrap',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
               }}
             >
-              <div
-                className="animate-pulse"
+              {stage.detectOverlay.label}
+            </div>
+            <div
+              style={{
+                position: 'absolute',
+                right: -4,
+                top: 0,
+                transform: 'translateX(100%)',
+                background: 'rgba(16,19,27,0.55)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(173,198,255,0.4)',
+                padding: '8px 10px',
+                borderRadius: 8,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 4,
+                minWidth: 112,
+              }}
+            >
+              <span
                 style={{
-                  position: 'absolute',
-                  bottom: -30,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: '#ffb4ab',
-                  color: '#690005',
-                  fontSize: '9px',
-                  fontWeight: 900,
-                  padding: '4px 14px',
-                  borderRadius: 4,
-                  whiteSpace: 'nowrap',
-                  letterSpacing: '0.15em',
+                  fontSize: '8px',
+                  fontWeight: 700,
+                  color: 'rgba(173,198,255,0.65)',
                   textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
                 }}
               >
-                Stolen Vehicle Alert
-              </div>
+                {stage.detectOverlay.tagKey}
+              </span>
               <div
                 style={{
-                  position: 'absolute',
-                  right: -4,
-                  top: 0,
-                  transform: 'translateX(100%)',
-                  background: 'rgba(16,19,27,0.55)',
-                  backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(173,198,255,0.4)',
-                  padding: '8px 10px',
-                  borderRadius: 8,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 4,
-                  minWidth: 112,
+                  background: 'rgba(255,255,255,0.92)',
+                  color: '#000',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                  fontWeight: 700,
+                  fontSize: '0.875rem',
+                  textAlign: 'center',
+                  padding: '3px 8px',
+                  borderRadius: 4,
+                  letterSpacing: '0.1em',
                 }}
               >
-                <span
-                  style={{
-                    fontSize: '8px',
-                    fontWeight: 700,
-                    color: 'rgba(173,198,255,0.65)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                  }}
-                >
-                  License Plate
-                </span>
-                <div
-                  style={{
-                    background: 'rgba(255,255,255,0.92)',
-                    color: '#000',
-                    fontFamily: 'var(--font-space-mono), monospace',
-                    fontWeight: 700,
-                    fontSize: '0.875rem',
-                    textAlign: 'center',
-                    padding: '3px 8px',
-                    borderRadius: 4,
-                    letterSpacing: '0.1em',
-                  }}
-                >
-                  7JKY442
-                </div>
+                {stage.detectOverlay.tagValue}
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {/* ── Top-right: live monitoring + timestamp ── */}
