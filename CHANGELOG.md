@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.35] 2026-03-31 — Feat: Scenario 03 — 911 Medical Emergency (v1.35)
+**Added**
+- New `/demo/medical` route — full 5-stage 911 Medical Emergency scenario (Detect → Understand → Decide → Act → Learn)
+- `src/data/demo/medical.ts` — scenario config: cardiac event at 4817 Westheimer Rd, AMB-7 primary unit, Leaflet map with Houston coords
+- 3 Imagen-4 generated background images in `public/demo/medical/` (call intake panel, AI caller analysis, unit assignment)
+- Scenario 03 set to `live: true` on the demo hub page
+**Changed**
+- Demo hub scenario 03 href updated from `#` to `/demo/medical`
+
 ## [1.34] 2026-03-31 — Feat: Mobile responsiveness for demo/scenario explorer (v1.34)
 **Added**
 - Comprehensive mobile-responsive CSS in `DemoLayout` targeting breakpoints ≤768px and ≤480px

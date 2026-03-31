@@ -47,8 +47,8 @@ const SCENARIOS = [
     title: '911 MEDICAL EMERGENCY',
     desc: 'Call intake · geo-location · priority dispatch',
     image: '/demo/hub/scenario-03.jpg',
-    href: '#',
-    live: false,
+    href: '/demo/medical',
+    live: true,
   },
   {
     num: '04',
