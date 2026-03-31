@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Stage } from '@/data/demo/types'
 import StageContent from './StageContent'
 import NextStagePanel from './NextStagePanel'
@@ -16,9 +17,23 @@ export default function ProtocolPanel({ stage, nextStage, onNext }: ProtocolPane
   return (
     <div
       className="relative w-full flex flex-col"
-      style={{ height: 'calc(100vh - 60px - 44px - 72px)', background: '#08101A' }}
+      style={{ height: 'calc(100vh - 168px - 72px)', background: '#08101A', position: 'relative' }}
     >
-      <div className="flex flex-col flex-1 overflow-hidden px-8 pt-8 pb-4">
+      {/* Background image */}
+      {stage.backgroundImage && (
+        <>
+          <Image
+            src={stage.backgroundImage}
+            alt=""
+            fill
+            style={{ objectFit: 'cover', opacity: 0.5 }}
+            sizes="100vw"
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,16,26,0.4)', zIndex: 0 }} />
+        </>
+      )}
+
+      <div className="flex flex-col flex-1 overflow-hidden px-8 pt-8 pb-4" style={{ position: 'relative', zIndex: 1 }}>
         {/* Panel header */}
         <div className="mb-2">
           <div
@@ -57,7 +72,7 @@ export default function ProtocolPanel({ stage, nextStage, onNext }: ProtocolPane
         {/* Protocol steps */}
         <div
           className="flex-1 rounded-lg overflow-hidden"
-          style={{ background: '#0D1825', border: '1px solid rgba(255,255,255,0.07)' }}
+          style={{ background: 'rgba(13,24,37,0.65)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(8px)' }}
         >
           {steps.map((step, i) => (
             <div

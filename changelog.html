@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v1.33 -->
+      <div class="tl-entry feat">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.33</span><span class="tl-date">2026-03-30</span></div>
+          <div class="tl-title">Feat: Violence Detection scenario + ScenarioPlayer refactor</div>
+          <ul class="tl-list">
+            <li>New <code>/demo/violence</code> — full 5-stage Violence Detection scenario (Detect → Understand → Decide → Act → Learn)</li>
+            <li><code>src/data/demo/violence.ts</code> — scenario config with AI video analytics content and 3 Imagen-4 generated background images</li>
+            <li><code>ScenarioPlayer.tsx</code> — generic scenario orchestrator extracted from LprScenario; accepts <code>ScenarioConfig</code> + <code>basePath</code> props</li>
+            <li>Violence scenario now live on hub page (scenario 02)</li>
+            <li><code>LprScenario.tsx</code> refactored into thin wrapper around <code>ScenarioPlayer</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v1.32 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>

@@ -25,8 +25,11 @@ export interface Stage {
   modules: string[]
   nextStageTeaser: string
   backgroundImage?: string
+  backgroundFit?: 'cover' | 'contain'
   pipImage?: string
   pipLabel?: string
+  pip2Image?: string
+  pip2Label?: string
   layout: StageLayout
   protocolSteps?: ProtocolStep[]
 }
