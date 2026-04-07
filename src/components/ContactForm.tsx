@@ -9,6 +9,7 @@ interface SelectOption {
 
 interface ContactFormProps {
   es: boolean
+  campaignSource?: string
   labels: {
     formTitle: string
     formSub: string
@@ -52,7 +53,7 @@ const labelStyle: React.CSSProperties = {
   color: 'var(--dim)',
 }
 
-export default function ContactForm({ es, labels, selectOptions }: ContactFormProps) {
+export default function ContactForm({ es, campaignSource, labels, selectOptions }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -67,6 +68,12 @@ export default function ContactForm({ es, labels, selectOptions }: ContactFormPr
       })
 
       if (res.ok) {
+        // Fire GA4 / GTM conversion event
+        if (typeof window !== 'undefined') {
+          const w = window as Window & { dataLayer?: object[] }
+          w.dataLayer = w.dataLayer || []
+          w.dataLayer.push({ event: 'generate_lead' })
+        }
         setStatus('success')
       } else {
         setStatus('error')
@@ -118,6 +125,7 @@ export default function ContactForm({ es, labels, selectOptions }: ContactFormPr
       </p>
 
       <form onSubmit={handleSubmit}>
+        {campaignSource && <input type="hidden" name="campaign_source" value={campaignSource} />}
         {/* Row 1: Name + Company */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>

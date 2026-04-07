@@ -7,6 +7,120 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.45] 2026-04-07 — Analytics: GTM scaffold + GA4 env var + conversion events
+
+**Added**
+- `src/components/GoogleTagManager.tsx` — GTM snippet component (activates when `NEXT_PUBLIC_GTM_ID` env var is set)
+- `src/app/global-error.tsx` — Minimal global error boundary to fix Next.js prerender issue
+- `generate_lead` dataLayer event on successful contact form submission
+- `book_demo` dataLayer event on CTA "Book a Demo" button clicks
+
+**Changed**
+- `GoogleAnalytics.tsx` — GA4 Measurement ID now reads from `NEXT_PUBLIC_GA4_ID` env var (fallback: hardcoded `G-5MB9CK1FGS`)
+- `CTASection.tsx` — converted to client component to support `book_demo` onClick tracking
+- Root `layout.tsx` — GTM component added alongside existing GA4 script
+
+---
+
+## [1.44] 2026-04-07 — Competitor: vs Verkada comparison page (EN + ES)
+
+**Added**
+- `/vs/verkada/` — KabatOne vs Verkada comparison page, EN + ES
+- Focus: cloud physical security (cameras, access, alarms) vs unified public safety platform (CAD, GIS, traffic, multi-agency)
+- 9-row comparison table, 4 "why KabatOne wins" cards, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsVerkada`, sitemap entry (priority 0.7)
+
+---
+
+## [1.43] 2026-04-07 — GEO: Incident management software explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-incident-management-software/` — Full EN + ES GEO explainer
+- 5-step incident lifecycle (detection → classification → dispatch → coordination → resolution)
+- IMS vs CAD vs PSIM comparison table, 4 key capabilities cards
+- FAQ (6 Q&A), FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `whatIsIncidentManagementSoftware`, sitemap entry (priority 0.6)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+---
+
+## [1.42] 2026-04-07 — Competitor: vs NICE Systems (Qognify) comparison page (EN + ES)
+
+**Added**
+- `/vs/nice-systems/` — KabatOne vs NICE Systems/Qognify comparison page, EN + ES
+- Focus: PSIM + video evidence management vs unified public safety platform with native CAD, GIS, and traffic
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsNiceSystems`, sitemap entry (priority 0.7)
+
+---
+
+## [1.41] 2026-04-07 — Competitor: vs Verint comparison page (EN + ES)
+
+**Added**
+- `/vs/verint/` — KabatOne vs Verint comparison page, EN + ES
+- Focus: video intelligence/analytics platform vs unified C5 command center platform
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsVerint`, sitemap entry (priority 0.7)
+
+---
+
+## [1.40] 2026-04-07 — GEO: Sensor fusion explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-sensor-fusion/` — Full EN + ES GEO page explaining sensor fusion for command centers
+- 6 sensor types: video, acoustic/gunshot, LPR, IoT, GPS/mobile units, citizen signals
+- 4 benefit cards: unified picture, faster detection, reduced false positives, multi-layer validation
+- FAQ (6 Q&A), FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `whatIsSensorFusion`, sitemap entry (priority 0.6)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+---
+
+## [1.39] 2026-04-07 — Competitor: vs Avigilon comparison page (EN + ES)
+
+**Added**
+- `/vs/avigilon/` — KabatOne vs Avigilon (Motorola Solutions VMS) comparison page, EN + ES
+- Comparison: video-only VMS vs unified platform (CAD, GIS, event management, multi-agency)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsAvigilon`, sitemap entry (priority 0.7)
+
+---
+
+## [1.38] 2026-04-07 — GEO: Video analytics explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-video-analytics/` — GEO explainer targeting "video analytics", "AI surveillance", "VCA/IVA" keyword cluster
+- Content: definition, 6 detection types (intrusion, LPR, counting, gunshot, abandoned objects, fire), edge vs server comparison table, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata, sitemap entry (priority 0.6), resources hub cards
+
+---
+
+## [1.37] 2026-04-07 — GEO: LPR/ALPR explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-lpr-license-plate-recognition/` — GEO explainer targeting "LPR", "ALPR", "license plate recognition" keyword cluster
+- Content: definition, 4-step workflow (capture → OCR → cross-reference → alert), fixed vs mobile comparison table, 6 public safety use cases, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- Internal links to LPR integration, sensor fusion, face recognition + RTCC, situational awareness, VMS resources
+- EN + ES metadata, sitemap entry (priority 0.6), resources hub cards
+
+---
+
+## [1.36] 2026-04-07 — GEO: Emergency dispatch software explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-emergency-dispatch-software/` — full EN+ES GEO explainer targeting "emergency dispatch software" keyword cluster (broader than CAD, higher search volume)
+- Content: definition, 6-step dispatch workflow, dispatch software vs CAD comparison table, NG911 section, 6 evaluation criteria, FAQ (6 Q&A), related resources
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- Internal links: LPR, panic buttons, sensor fusion integrations + PSAP, CAD, command center, emergency management resources
+- EN + ES metadata keys: `whatIsEmergencyDispatchSoftware`
+- Sitemap entry: `/resources/what-is-emergency-dispatch-software` (priority 0.6)
+- Resources hub: card added to ES and EN article arrays
+
+---
+
 ## [1.35] 2026-03-31 — Feat: Scenario 03 — 911 Medical Emergency (v1.35)
 **Added**
 - New `/demo/medical` route — full 5-stage 911 Medical Emergency scenario (Detect → Understand → Decide → Act → Learn)
