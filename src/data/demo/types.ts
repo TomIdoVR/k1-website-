@@ -34,9 +34,20 @@ export interface Stage {
   }
   // Optional inline admin panel rendered instead of a background image
   detectCard?: {
-    type: 'call-intake'
+    type: 'call-intake' | 'panic-alert'
     fields: Array<{ key: string; value: string; highlight?: boolean }>
-    transcript: string[]
+    transcript?: string[]
+    alertTimeline?: Array<{ time: string; event: string; done: boolean }>
+    cameraImage?: string   // CCTV feed image for panic-alert type
+    cameraLabel?: string   // e.g. "CAM-07 · BUILDING A HALLWAY"
+  }
+  // Optional decide panel (unit assignment + AI scoring + map)
+  decideCard?: {
+    incidentCoords: [number, number]
+    units: Array<{ id: string; role: string; status: string; distance: string; eta: string; active: boolean; coords: [number, number] }>
+    aiScore: number
+    briefItems: string[]
+    dispatchedTo: string
   }
   // Optional geo-analysis panel (replaces background image for understand-type stages)
   geoPanel?: {

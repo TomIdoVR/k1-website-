@@ -25,8 +25,6 @@ export default function Nav() {
     { href: '/industries/public-safety', label: locale === 'es' ? 'Seguridad Publica' : 'Public Safety', color: '#3b82f6' },
     { href: '/industries/municipalities', label: locale === 'es' ? 'Municipios' : 'Municipalities', color: '#06b6d4' },
     { href: '/industries/airport', label: locale === 'es' ? 'Aeropuertos' : 'Airports', color: '#8b5cf6' },
-    { href: '/industries/retail', label: 'Retail', color: '#f59e0b' },
-    { href: '/industries/logistics', label: locale === 'es' ? 'Logistica' : 'Logistics', color: '#10b981' },
     { href: '/industries/ports', label: locale === 'es' ? 'Puertos' : 'Ports', color: '#0ea5e9' },
     { href: '/industries/stadiums', label: locale === 'es' ? 'Estadios y Recintos' : 'Stadiums & Venues', color: '#ef4444' },
   ]
@@ -52,7 +50,7 @@ export default function Nav() {
       zIndex: 100,
     }}>
       {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+      <Link href="/" aria-label="KabatOne Home" style={{ display: 'flex', alignItems: 'center' }}>
         <Image
           src="/images/logo.png"
           alt="KabatOne"

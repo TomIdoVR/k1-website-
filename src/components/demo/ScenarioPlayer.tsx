@@ -1,8 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from '@/i18n/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScenarioConfig, StageId } from '@/data/demo/types'
 import TopBar from './TopBar'
@@ -26,6 +25,10 @@ interface ScenarioPlayerProps {
 export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const pathname = usePathname()
+  // Extract locale prefix (e.g. '/en' or '/es') from current URL and prepend to basePath
+  const localePrefix = pathname.match(/^\/(en|es)/)?.[0] ?? ''
+  const fullBasePath = `${localePrefix}${basePath}`
 
   const rawStage = searchParams.get('stage') ?? 'detect'
   const initialStage = isValidStageId(rawStage) ? rawStage : 'detect'
@@ -33,9 +36,9 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
 
   useEffect(() => {
     if (!isValidStageId(rawStage)) {
-      router.replace(`${basePath}?stage=detect`)
+      router.replace(`${fullBasePath}?stage=detect`)
     }
-  }, [rawStage, router, basePath])
+  }, [rawStage, router, fullBasePath])
 
   const currentIndex = STAGE_IDS.indexOf(currentStageId)
   const currentStage = scenario.stages[currentIndex]
@@ -45,9 +48,9 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
   const navigateTo = useCallback(
     (stageId: StageId) => {
       setCurrentStageId(stageId)
-      router.push(`${basePath}?stage=${stageId}`, { scroll: false })
+      router.push(`${fullBasePath}?stage=${stageId}`, { scroll: false })
     },
-    [router, basePath]
+    [router, fullBasePath]
   )
 
   const goNext = useCallback(() => { if (nextStage) navigateTo(nextStage.id) }, [nextStage, navigateTo])
@@ -154,7 +157,7 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
               <SplitLayout stage={currentStage} nextStage={nextStage} prevStage={prevStage} onNext={goNext} onPrev={goPrev} />
             )}
             {currentStage.layout === 'learn' && (
-              <LearnLayout stage={currentStage} prevStage={prevStage} onPrev={goPrev} onRestart={restart} />
+              <LearnLayout stage={currentStage} prevStage={prevStage} onPrev={goPrev} onRestart={restart} hubPath={`${localePrefix}/demo`} />
             )}
           </motion.div>
         </AnimatePresence>

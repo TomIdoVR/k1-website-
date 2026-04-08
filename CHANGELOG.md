@@ -7,6 +7,72 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.52] 2026-04-07 — Fix: QA fixes — nav aria-label, remove off-brand industries, mobile hero overflow
+
+**Fixed**
+- Nav logo link: added `aria-label="KabatOne Home"` for accessibility
+- Industries dropdown: removed Retail and Logistics (off-brand for B2G public safety audience)
+- Mobile hero: added `overflow-x: hidden` on `.hp-hero-wrap` + `padding: 0 8px` on `.hp-sub` at mobile breakpoint to prevent text clipping on iPhone
+
+## [1.51] 2026-04-08 — GEO: Peru guide + RTCC implementation guide + 911 call center guide (EN + ES)
+
+**Added**
+- `/resources/public-safety-software-peru/` — Peru market guide (EN + ES): serenazgo/PNP structure, CONASEC, FONIPREL, fragmented vs unified comparison table, FAQ (6 Q&A)
+- `/resources/build-rtcc-implementation-guide/` — Practical RTCC implementation guide (EN + ES): 4-phase build plan, 6-step tech stack, staffing model, common mistakes, Basic vs Full RTCC comparison
+- `/resources/911-call-center-software-guide/` — 911 call center software guide (EN + ES): 6 core functions, 911 vs CAD comparison, NG911 section, 6 evaluation criteria, FAQ (6 Q&A)
+- Hub cards added to `/resources/` index (EN + ES) for all 3 pages
+- EN + ES metadata keys: `publicSafetySoftwarePeru`, `buildRtccImplementationGuide`, `callCenterSoftwareGuide`
+- Sitemap entries added (priority 0.7 / 0.7 / 0.6)
+
+**Fixed**
+- `StageScreen.tsx` line 200: `transcript` possibly undefined — added `?? []` guard
+
+---
+
+## [1.50] 2026-04-08 — Feat: School detect stage — CCTV image + floor plan split
+
+**Changed**
+- School Panic Button detect stage redesigned: CCTV camera feed (left 55%) + floor plan (right 45%)
+- CCTV feed shows green-tinted security camera look, scanlines, bounding box over panic button area, REC indicator, camera HUD overlays
+- Generated `public/demo/school/stage-1-detect.jpg` — surveillance-style image of teacher pressing panic button
+
+## [1.49] 2026-04-08 — Feat: Scenario 04 — School Panic Button + Decide map panel
+
+**Added**
+- Scenario 04: School Panic Button — full 5-stage scenario (Lincoln Middle School, Houston TX)
+- New `panic-alert` detectCard type with floor plan visualization (rooms 201–224, Room 214 highlighted), alert timeline, and system status
+- `DecideMapPanel` component: Leaflet map for the Decide stage showing incident location + all unit positions with dashed routing lines and color-coded status
+- Redesigned Decide stage layout: map (55%) + unit roster + AI score ring + dispatch brief (45%)
+- `hubPath` prop on `LearnLayout` so "Choose Another Scenario" links back to the locale-correct `/demo` hub
+- `/demo/school` route — live in hub as Scenario 04
+
+**Fixed**
+- "Choose Another Scenario" button now navigates to locale-prefixed `/en/demo` instead of bare `/demo`
+
+## [1.48] 2026-04-08 — Fix: build failure due to NODE_ENV + analytics in root layout
+
+**Fixed**
+- Build was failing with `TypeError: Cannot read properties of null (reading 'useContext')` during prerendering of `/_global-error` and `/_not-found` when `NODE_ENV=development` was active in the shell. Root cause: non-standard NODE_ENV caused React hooks state issues during static generation.
+- Moved `GoogleAnalytics`, `GoogleTagManager`, `GoogleTagManagerNoScript` from root `layout.tsx` to `[locale]/layout.tsx` — keeps analytics out of the error-rendering path (correct architecture).
+
+**Added**
+- `src/app/not-found.tsx` — custom 404 page replacing Next.js built-in (self-contained, dark KabatOne theme).
+
+---
+
+## [1.47] 2026-04-08 — GEO: C5 Command Centers Mexico 2026 guide + metadata optimization
+
+**Added**
+- `/resources/c5-command-centers-mexico-2026/` — Full EN + ES guide: C5 definition, 3-layer structure, 6-component tech stack, integration challenge, unified platform benefits, Legacy vs Modern C5 comparison table (7 rows), FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `c5CommandCentersMexico2026`, sitemap entry (priority 0.7)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+**Improved**
+- Metadata optimization: Home, K-Dispatch, K-Traffic, Municipalities — titles extended to 55-62 chars, descriptions to 150-160 chars (EN + ES)
+
+---
+
 ## [1.46] 2026-04-07 — Feat: 5 new resource articles, 4 VS pages, demo scenario updates, /lp page
 
 **Added**

@@ -16,9 +16,10 @@ interface LearnLayoutProps {
   prevStage?: Stage
   onPrev?: () => void
   onRestart?: () => void
+  hubPath?: string
 }
 
-export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: LearnLayoutProps) {
+export default function LearnLayout({ stage, prevStage, onPrev, onRestart, hubPath = '/demo' }: LearnLayoutProps) {
   const maxVal = Math.max(...CHART_DATA)
 
   return (
@@ -341,7 +342,7 @@ export default function LearnLayout({ stage, prevStage, onPrev, onRestart }: Lea
         )}
 
         <a
-          href="/demo"
+          href={hubPath}
           style={{
             display: 'flex', alignItems: 'center', gap: 14,
             padding: '10px 28px', borderRadius: 12,

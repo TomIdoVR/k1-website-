@@ -1,12 +1,12 @@
 export const metadata = {
   home: {
-    title: "Public Safety Platform for Cities | KabatOne",
-    description: "One platform connecting dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. See KabatOne in action.",
+    title: "Public Safety Platform for Cities & Command Centers | KabatOne",
+    description: "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
     canonical: "https://kabatone.com/",
   },
   kDispatch: {
-    title: "CAD and Emergency Dispatch Software | KabatOne",
-    description: "From call intake to unit dispatch in seconds. K-Dispatch centralizes 911 intake, auto-recommends units, and logs every action. Request a demo.",
+    title: "CAD and Emergency Dispatch Software for 911 Centers | KabatOne",
+    description: "From call intake to unit dispatch in seconds. K-Dispatch centralizes 911 intake, recommends units automatically, and logs every action for public safety teams.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
@@ -20,8 +20,8 @@ export const metadata = {
     canonical: "https://kabatone.com/k-safety/",
   },
   kTraffic: {
-    title: "Intelligent Traffic Management Software | KabatOne",
-    description: "Optimize flow, detect violations, and respond to incidents before they become gridlock. K-Traffic connects signals, sensors, and enforcement in one system.",
+    title: "Traffic Management Software for Municipalities | KabatOne",
+    description: "Optimize traffic flow, detect violations, and respond to incidents before gridlock. K-Traffic connects signals, sensors, and enforcement in one unified system.",
     canonical: "https://kabatone.com/k-traffic/",
   },
   kConnect: {
@@ -36,7 +36,7 @@ export const metadata = {
   },
   municipalities: {
     title: "Emergency Management Software for Municipalities | KabatOne",
-    description: "Real-time emergency dispatch and unified command for city governments. Proven 40% faster response times across 40+ cities. See how KabatOne works.",
+    description: "Real-time emergency dispatch and unified command for city governments. Proven 40% faster response times across 40+ cities. See how KabatOne works for your city.",
     canonical: "https://kabatone.com/industries/municipalities/",
   },
   airport: {
@@ -313,5 +313,10 @@ export const metadata = {
     title: "KabatOne vs Verkada — Cloud Physical Security vs Unified Public Safety Platform",
     description: "Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — the complete workflow from detection to response.",
     canonical: "https://kabatone.com/vs/verkada/",
+  },
+  c5CommandCentersMexico2026: {
+    title: "C5 Command Centers in Mexico: 2026 Technology Guide | KabatOne",
+    description: "C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.",
+    canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026/",
   },
 } as const
