@@ -7,6 +7,206 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.46] 2026-04-07 — Feat: 5 new resource articles, 4 VS pages, demo scenario updates, /lp page
+
+**Added**
+- `/resources/what-is-emergency-dispatch-software` — EN + ES GEO article
+- `/resources/what-is-incident-management-software` — EN + ES GEO article
+- `/resources/what-is-lpr-license-plate-recognition` — EN + ES GEO article
+- `/resources/what-is-sensor-fusion` — EN + ES GEO article
+- `/resources/what-is-video-analytics` — EN + ES GEO article
+- `/vs/avigilon`, `/vs/nice-systems`, `/vs/verint`, `/vs/verkada` — competitor comparison pages
+- `/lp` — generic campaign landing page (URL param-driven: `?headline`, `?sub`, `?cta`, `?campaign`)
+- `GeoPanel` demo component for scenario explorer
+- Violence scenario (Scenario 02) data + 3 stage images (optimized)
+
+**Changed**
+- Demo `StageScreen` — significant updates for geo panel and scenario routing
+- Demo `medical.ts` and `violence.ts` — scenario data updates
+- `demo/page.tsx` — scenario hub updates
+- `sitemap.ts` — new entries for all new pages
+- `metadata.ts` (EN + ES) — new metadata keys for all new pages
+- `resources/page.tsx` — new article cards added
+- `site-manager.html` — updated
+- `ModulesSection.tsx` — minor update
+
+## [1.45] 2026-04-07 — Analytics: GTM scaffold + GA4 env var + conversion events
+
+**Added**
+- `src/components/GoogleTagManager.tsx` — GTM snippet component (activates when `NEXT_PUBLIC_GTM_ID` env var is set)
+- `src/app/global-error.tsx` — Minimal global error boundary to fix Next.js prerender issue
+- `generate_lead` dataLayer event on successful contact form submission
+- `book_demo` dataLayer event on CTA "Book a Demo" button clicks
+
+**Changed**
+- `GoogleAnalytics.tsx` — GA4 Measurement ID now reads from `NEXT_PUBLIC_GA4_ID` env var (fallback: hardcoded `G-5MB9CK1FGS`)
+- `CTASection.tsx` — converted to client component to support `book_demo` onClick tracking
+- Root `layout.tsx` — GTM component added alongside existing GA4 script
+
+---
+
+## [1.44] 2026-04-07 — Competitor: vs Verkada comparison page (EN + ES)
+
+**Added**
+- `/vs/verkada/` — KabatOne vs Verkada comparison page, EN + ES
+- Focus: cloud physical security (cameras, access, alarms) vs unified public safety platform (CAD, GIS, traffic, multi-agency)
+- 9-row comparison table, 4 "why KabatOne wins" cards, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsVerkada`, sitemap entry (priority 0.7)
+
+---
+
+## [1.43] 2026-04-07 — GEO: Incident management software explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-incident-management-software/` — Full EN + ES GEO explainer
+- 5-step incident lifecycle (detection → classification → dispatch → coordination → resolution)
+- IMS vs CAD vs PSIM comparison table, 4 key capabilities cards
+- FAQ (6 Q&A), FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `whatIsIncidentManagementSoftware`, sitemap entry (priority 0.6)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+---
+
+## [1.42] 2026-04-07 — Competitor: vs NICE Systems (Qognify) comparison page (EN + ES)
+
+**Added**
+- `/vs/nice-systems/` — KabatOne vs NICE Systems/Qognify comparison page, EN + ES
+- Focus: PSIM + video evidence management vs unified public safety platform with native CAD, GIS, and traffic
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsNiceSystems`, sitemap entry (priority 0.7)
+
+---
+
+## [1.41] 2026-04-07 — Competitor: vs Verint comparison page (EN + ES)
+
+**Added**
+- `/vs/verint/` — KabatOne vs Verint comparison page, EN + ES
+- Focus: video intelligence/analytics platform vs unified C5 command center platform
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsVerint`, sitemap entry (priority 0.7)
+
+---
+
+## [1.40] 2026-04-07 — GEO: Sensor fusion explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-sensor-fusion/` — Full EN + ES GEO page explaining sensor fusion for command centers
+- 6 sensor types: video, acoustic/gunshot, LPR, IoT, GPS/mobile units, citizen signals
+- 4 benefit cards: unified picture, faster detection, reduced false positives, multi-layer validation
+- FAQ (6 Q&A), FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `whatIsSensorFusion`, sitemap entry (priority 0.6)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+---
+
+## [1.39] 2026-04-07 — Competitor: vs Avigilon comparison page (EN + ES)
+
+**Added**
+- `/vs/avigilon/` — KabatOne vs Avigilon (Motorola Solutions VMS) comparison page, EN + ES
+- Comparison: video-only VMS vs unified platform (CAD, GIS, event management, multi-agency)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `vsAvigilon`, sitemap entry (priority 0.7)
+
+---
+
+## [1.38] 2026-04-07 — GEO: Video analytics explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-video-analytics/` — GEO explainer targeting "video analytics", "AI surveillance", "VCA/IVA" keyword cluster
+- Content: definition, 6 detection types (intrusion, LPR, counting, gunshot, abandoned objects, fire), edge vs server comparison table, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata, sitemap entry (priority 0.6), resources hub cards
+
+---
+
+## [1.37] 2026-04-07 — GEO: LPR/ALPR explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-lpr-license-plate-recognition/` — GEO explainer targeting "LPR", "ALPR", "license plate recognition" keyword cluster
+- Content: definition, 4-step workflow (capture → OCR → cross-reference → alert), fixed vs mobile comparison table, 6 public safety use cases, FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- Internal links to LPR integration, sensor fusion, face recognition + RTCC, situational awareness, VMS resources
+- EN + ES metadata, sitemap entry (priority 0.6), resources hub cards
+
+---
+
+## [1.36] 2026-04-07 — GEO: Emergency dispatch software explainer (EN + ES)
+
+**Added**
+- `/resources/what-is-emergency-dispatch-software/` — full EN+ES GEO explainer targeting "emergency dispatch software" keyword cluster (broader than CAD, higher search volume)
+- Content: definition, 6-step dispatch workflow, dispatch software vs CAD comparison table, NG911 section, 6 evaluation criteria, FAQ (6 Q&A), related resources
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- Internal links: LPR, panic buttons, sensor fusion integrations + PSAP, CAD, command center, emergency management resources
+- EN + ES metadata keys: `whatIsEmergencyDispatchSoftware`
+- Sitemap entry: `/resources/what-is-emergency-dispatch-software` (priority 0.6)
+- Resources hub: card added to ES and EN article arrays
+
+---
+
+## [1.35] 2026-03-31 — Feat: Scenario 03 — 911 Medical Emergency (v1.35)
+**Added**
+- New `/demo/medical` route — full 5-stage 911 Medical Emergency scenario (Detect → Understand → Decide → Act → Learn)
+- `src/data/demo/medical.ts` — scenario config: cardiac event at 4817 Westheimer Rd, AMB-7 primary unit, Leaflet map with Houston coords
+- 3 Imagen-4 generated background images in `public/demo/medical/` (call intake panel, AI caller analysis, unit assignment)
+- Scenario 03 set to `live: true` on the demo hub page
+**Changed**
+- Demo hub scenario 03 href updated from `#` to `/demo/medical`
+
+## [1.34] 2026-03-31 — Feat: Mobile responsiveness for demo/scenario explorer (v1.34)
+**Added**
+- Comprehensive mobile-responsive CSS in `DemoLayout` targeting breakpoints ≤768px and ≤480px
+- `TopBar`: module strip hidden on mobile, stage pills scroll horizontally, chevrons hidden, header height reduced to ~52px
+- `ScenarioPlayer`: `paddingTop` overridden to 108px on mobile (matching shorter header)
+- `StageScreen`: cinematic panel adapts to `96vw` on mobile; PiP windows shrink to 110px (hidden on ≤480px); nav buttons stack vertically
+- `SplitLayout`: fixed height removed on mobile — phone mockup and dispatcher console stack vertically
+- `LearnLayout`: fixed height removed on mobile — timeline, metrics, and recommendations stack vertically
+- Demo Hub page: nav links hidden on mobile, padding reduced
+
+## [1.33] 2026-03-30 — Feat: Violence Detection scenario + ScenarioPlayer refactor (v1.33)
+**Added**
+- New `/demo/violence` route — full 5-stage Violence Detection scenario (Detect → Understand → Decide → Act → Learn)
+- `src/data/demo/violence.ts` — scenario config with AI video analytics content, 3 Imagen-4 generated background images
+- `src/components/demo/ScenarioPlayer.tsx` — generic scenario orchestrator extracted from LprScenario; accepts `ScenarioConfig` + `basePath` props
+- Violence scenario now live on hub page (scenario 02)
+**Changed**
+- `LprScenario.tsx` refactored into thin wrapper around `ScenarioPlayer`
+
+## [1.32] 2026-03-30 — Feat: /resources/what-is-a-psap — PSAP explainer article (EN + ES)
+**Added**
+- New `/resources/what-is-a-psap` page — full GEO-optimized explainer: what a PSAP does, technology stack (CAD/GIS/TEL/RMS/VMS/NG911), Legacy vs Modern comparison, evaluation criteria, KabatOne section with product links
+- EN + ES metadata keys (`whatIsAPsap`)
+- BreadcrumbSchema + ArticleSchema + FAQPageSchema (6 Q&A)
+- Internal links to K-Dispatch, K-Video, K-Safety, K-Connect, sensor-fusion, panic-buttons, LPR, CAD dispatch, emergency management, command center articles
+- Added to sitemap.ts (priority 0.6) and resources hub page
+
+## [1.31] 2026-03-30 — Feat: /resources/what-is-emergency-management-software — EMS explainer article (EN + ES)
+**Added**
+- New `/resources/what-is-emergency-management-software` page — full GEO-optimized explainer: core capabilities, incident lifecycle, unified vs fragmented comparison, evaluation criteria, KabatOne section
+- EN + ES metadata keys (`whatIsEmergencyManagementSoftware`)
+- BreadcrumbSchema + ArticleSchema + FAQPageSchema (6 Q&A)
+- Internal links to K-Dispatch, K-Safety, K-Video, sensor-fusion, LPR, RTCC setup guide, CAD dispatch, command center, PSAP articles
+- Added to sitemap.ts (priority 0.6) and resources hub page
+- Synced SEO master plan: updated site size (47→63 routes, 94→126 URLs), fixed GA4 status, added GEO-014–020, updated phase progress
+
+## [1.30] 2026-03-28 — Feat: Scenario Explorer Phase 1 — LPR/Stolen Vehicle interactive demo
+**Added**
+- New `/demo` hub page (`src/app/[locale]/demo/page.tsx`) — scenario card grid listing LPR and future scenarios
+- New `/demo/lpr` page (`src/app/[locale]/demo/lpr/page.tsx`) — full LPR/Stolen Vehicle interactive demo
+- Custom `DemoLayout` (`src/app/[locale]/demo/layout.tsx`) — standalone dark shell, no marketing nav/footer; loads Space Mono font
+- 14 new components in `src/components/demo/`: TopBar, StageNav, BottomNav, ModuleTags, PIPWindow, LiveTimestamp, StageContent, NextStagePanel, StageScreen, ProtocolPanel, SplitLayout, LearnLayout, LprScenario (orchestrator)
+- `src/data/demo/types.ts` — TypeScript interfaces for scenario data (Stage, ProtocolStep, ScenarioConfig)
+- `src/data/demo/lpr.ts` — Full LPR scenario config: 5 stages, all content, protocol steps, module tags
+- Stage navigation via pill clicks, bottom nav buttons, and keyboard (← → 1-5 keys)
+- Deep-linking: `/demo/lpr?stage=decide` loads Stage 3 directly
+- Framer Motion fade transitions between stages (300ms)
+- Stage 3: ProtocolPanel with 7-step LPR Hit Response Protocol checklist
+- Stage 4: SplitLayout — field officer mobile app mockup (40%) + dispatcher admin console (60%)
+- Stage 5: LearnLayout — Critical Events Timeline + Resolution Metrics + Trend Analysis
+- PIP (picture-in-picture) window on stages 2–4 showing previous stage feed
+- Static timestamps per stage (12:04:01 → 12:12:15)
+- Image placeholders using existing LPR images (Stitch exports to be swapped in next iteration)
+
 ## [1.25] 2026-03-28 — New: /privacy-policy-tamaulipas — Tamaulipas Contigo privacy policy page
 **Added**
 - Created `/privacy-policy-tamaulipas` page under `src/app/[locale]/privacy-policy-tamaulipas/page.tsx`

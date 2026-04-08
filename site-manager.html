@@ -26,6 +26,33 @@
       --dim:        #b4c4d4;
       --border:     rgba(255,255,255,0.06);
       --border-b:   rgba(59,130,246,0.28);
+      --nav-bg:     rgba(6,12,28,0.72);
+      --tabs-bg:    rgba(6,12,28,0.5);
+      --scan-color: rgba(0,207,239,0.65);
+      --grid-color: rgba(59,130,246,0.055);
+      --glow-1:     rgba(59,130,246,0.18);
+      --glow-2:     rgba(6,182,212,0.07);
+      --card-hover: rgba(59,130,246,0.2);
+      --code-color: var(--blue-light);
+    }
+
+    html.light {
+      --bg:         #f4f6f9;
+      --bg-2:       #eaecf0;
+      --bg-card:    rgba(0,0,0,0.03);
+      --white:      #1a2233;
+      --muted:      #6b7a8d;
+      --dim:        #4a5568;
+      --border:     rgba(0,0,0,0.08);
+      --border-b:   rgba(59,130,246,0.22);
+      --nav-bg:     rgba(255,255,255,0.88);
+      --tabs-bg:    rgba(255,255,255,0.7);
+      --scan-color: rgba(59,130,246,0.35);
+      --grid-color: rgba(59,130,246,0.04);
+      --glow-1:     rgba(59,130,246,0.06);
+      --glow-2:     rgba(6,182,212,0.03);
+      --card-hover: rgba(59,130,246,0.12);
+      --code-color: #2563eb;
     }
 
     html, body {
@@ -45,8 +72,8 @@
       content: '';
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(59,130,246,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59,130,246,0.055) 1px, transparent 1px);
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
       background-size: 56px 56px;
     }
     .bg-layer::after {
@@ -55,13 +82,13 @@
       transform: translateX(-50%);
       width: 130%; height: 65%;
       background: radial-gradient(ellipse at center bottom,
-        rgba(59,130,246,0.18) 0%, rgba(6,182,212,0.07) 28%, transparent 68%);
+        var(--glow-1) 0%, var(--glow-2) 28%, transparent 68%);
     }
 
     .scan-line {
       position: fixed; top: -2px; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent 0%, rgba(0,207,239,0.65) 50%, transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, var(--scan-color) 50%, transparent 100%);
       animation: scan 9s linear infinite;
       z-index: 1; pointer-events: none;
     }
@@ -78,7 +105,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 52px; height: 70px;
       border-bottom: 1px solid var(--border);
-      background: rgba(6,12,28,0.72);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
     }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
@@ -104,7 +131,7 @@
       display: flex; align-items: center; gap: 4px;
       padding: 0 52px;
       border-bottom: 1px solid var(--border);
-      background: rgba(6,12,28,0.5);
+      background: var(--tabs-bg);
       backdrop-filter: blur(12px);
     }
     .tab-btn {
@@ -224,7 +251,7 @@
       position: relative;
       transition: border-color 0.2s;
     }
-    .env-card:hover { border-color: rgba(59,130,246,0.2); }
+    .env-card:hover { border-color: var(--card-hover); }
     .env-card.sm { max-width: 280px; }
     .env-card.wide { max-width: 640px; }
 
@@ -467,7 +494,7 @@
       padding: 28px 32px;
       transition: border-color 0.2s;
     }
-    .tl-card:hover { border-color: rgba(59,130,246,0.2); }
+    .tl-card:hover { border-color: var(--card-hover); }
 
     /* FOOTER */
     .site-footer {
@@ -555,6 +582,41 @@
       font-family: 'DM Mono', monospace; font-size: 10px;
       color: var(--muted); letter-spacing: 0.05em;
     }
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      display: flex; align-items: center; gap: 8px;
+      background: none; border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 14px;
+      cursor: pointer; font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); transition: all 0.2s;
+    }
+    .theme-toggle:hover { color: var(--white); border-color: var(--blue); }
+    .theme-toggle svg { width: 14px; height: 14px; }
+    .theme-icon-light, .theme-icon-dark { display: none; }
+    html:not(.light) .theme-icon-light { display: block; }
+    html.light .theme-icon-dark { display: block; }
+
+    /* Light mode overrides for hardcoded rgba elements */
+    html.light .branch-card {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.08);
+    }
+    html.light .env-card-icon {
+      background: rgba(0,0,0,0.05);
+    }
+    html.light .env-note {
+      background: rgba(245,158,11,0.06);
+      border-color: rgba(245,158,11,0.15);
+    }
+    html.light .tl-dot {
+      background: var(--bg);
+    }
+    html.light .tl-card {
+      background: rgba(0,0,0,0.02);
+    }
+    html.light .footer-logo { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -573,6 +635,11 @@
     <div class="nav-right">
       <a class="nav-link" href="https://github.com/TomIdoVR/k1-website-" target="_blank">GitHub ↗</a>
       <a class="nav-link" href="https://vercel.com" target="_blank">Vercel ↗</a>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+        <svg class="theme-icon-light" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="4"/><path d="M10 1v2M10 17v2M3.5 3.5l1.4 1.4M15.1 15.1l1.4 1.4M1 10h2M17 10h2M3.5 16.5l1.4-1.4M15.1 4.9l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="theme-icon-dark" viewBox="0 0 20 20" fill="currentColor"><path d="M17.3 13.3A8 8 0 016.7 2.7a8 8 0 1010.6 10.6z"/></svg>
+        <span class="theme-label">Light</span>
+      </button>
     </div>
   </nav>
 
@@ -2380,6 +2447,24 @@
       document.querySelector('[data-tab="' + id + '"]').classList.add('active');
       document.getElementById('tab-' + id).classList.add('active');
     }
+
+    function toggleTheme() {
+      var isLight = document.documentElement.classList.toggle('light');
+      document.querySelector('.theme-label').textContent = isLight ? 'Dark' : 'Light';
+      localStorage.setItem('site-manager-theme', isLight ? 'light' : 'dark');
+    }
+
+    // Restore saved preference
+    (function() {
+      var saved = localStorage.getItem('site-manager-theme');
+      if (saved === 'light') {
+        document.documentElement.classList.add('light');
+        document.addEventListener('DOMContentLoaded', function() {
+          var label = document.querySelector('.theme-label');
+          if (label) label.textContent = 'Dark';
+        });
+      }
+    })();
   </script>
 
 </body>

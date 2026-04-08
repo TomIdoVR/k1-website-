@@ -1,5 +1,5 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-03-23
+**Last updated:** 2026-03-30
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
@@ -15,14 +15,14 @@
 |-------|--------|----------|
 | Phase 0 — Foundation & audit | Done | 100% |
 | Phase 1 — Pre-launch fixes | Done | 100% |
-| Phase 2 — Launch | In progress | 0% |
-| Phase 3 — Post-launch growth | Not started | 0% |
+| Phase 2 — Launch | In progress | 10% |
+| Phase 3 — Post-launch growth | In progress | 75% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 85% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 95% |
 
-**Current site size:** 47 unique routes × 2 locales (EN + ES) = 94 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 13 | /resources/: 12 (hub + 10 articles + 1 ebook) | /integrations/: 6 | Other: 3 (about, contact, privacy)
+**Current site size:** 63 unique routes × 2 locales (EN + ES) = 126 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 13 | /resources/: 16 (hub + 14 articles + 1 ebook) | /integrations/: 6 | /demo/: 2 | Other: 7 (about, contact, privacy, privacy-policy-tamaulipas, simulator, lp) | Interactive: 5 (simulator, demo hub, demo/lpr, lp)
 
 ---
 
@@ -104,7 +104,7 @@
 | Webflow publish | Not started |
 | GSC verified + sitemap submitted | Not started |
 | GSC property created for kabatone.com | Not started |
-| GA4 installed with conversion events | Not started |
+| GA4 installed with conversion events | Done | G-5MB9CK1FGS — v1.15 |
 | robots.txt verified in Webflow | Not started |
 | Staging site blocked from Google | Not started |
 
@@ -156,12 +156,23 @@
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
 | /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
+| /vs/rapidssos/ — RapidSOS comparison | Medium | Done | v1.14 |
 | Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
 | Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
 | Explainer: What Is a Real-Time Crime Center? | High | Done | v0.92 — /resources/what-is-a-real-time-crime-center/ |
+| Explainer: What Is Video Management Software? | Medium | Done | v1.12 — /resources/what-is-video-management-software/ |
+| Explainer: What Is Situational Awareness Software? | Medium | Done | v1.16 — /resources/what-is-situational-awareness-software/ |
+| Explainer: What Is Gunshot Detection Software? | Medium | Done | v1.22 — /resources/what-is-gunshot-detection-software/ |
+| Explainer: What Is a Command Center? | High | Done | v1.23 — /resources/what-is-a-command-center/ |
+| Explainer: What Is Emergency Management Software? | High | Done | v1.31 — /resources/what-is-emergency-management-software/ |
+| Explainer: What Is a PSAP? | High | Done | v1.32 — /resources/what-is-a-psap/ |
 | Blog post: AI in public safety | Medium | Done | v0.73 — /resources/ai-in-public-safety/ |
 | Blog post: RTCC setup guide | Medium | Done | v0.73 — /resources/rtcc-setup-guide/ |
-| /resources/ hub index page | Medium | Done | v0.73 — 7 article cards, bilingual EN/ES |
+| /resources/ hub index page | Medium | Done | v0.73 — 14 article cards, bilingual EN/ES |
+| Interactive: Incident Simulator | High | Done | v1.17/v1.20 — /simulator/ lifecycle walkthrough |
+| Interactive: Scenario Explorer (Demo) | High | Done | v1.30 — /demo/ hub + /demo/lpr/ LPR scenario |
+| Campaign landing page | Medium | Done | v1.24 — /lp/ with URL param customization |
+| Privacy: Tamaulipas Contigo | Low | Done | v1.25 — /privacy-policy-tamaulipas/ |
 | Integration page: LPR | Medium | Done | v0.74 — /integrations/lpr/ |
 | Integration page: Face recognition | Medium | Done | v0.74 — /integrations/face-recognition/ |
 | Integration page: Sensor fusion | Low | Done | v0.74 — /integrations/sensor-fusion/ |
@@ -177,7 +188,9 @@
 | SEO-009: Schema markup (Organization + SoftwareApplication) | Low | Done |
 | SEO-010: OG tags on all pages | Low | Done |
 | Core Web Vitals audit (LCP, CLS, INP) | High | Done | v0.71 — 84/100 B grade, SEO 100/100, images main issue, lazy loading added |
-| Internal linking pass — module → solution → resource | High | Done |
+| Internal linking pass — module → solution → resource | High | Done | v1.13 industry pages, v1.19 product pages |
+| Cross-linking audit — /vs/ + /resources/ pages | High | Done | v1.21 — 24 pages updated with integration + resource links |
+| WebSite schema (JSON-LD) | Medium | Done | v1.22 — injected in root layout |
 | Backlink outreach — industry publications | Medium | Not started |
 
 ### Performance baselines to establish
@@ -290,6 +303,7 @@
 | /vs/fusus/ | KabatOne vs Fusus | Done |
 | /vs/prepared911/ | KabatOne vs Prepared 911 | Done |
 | /vs/peregrine/ | KabatOne vs Peregrine | Done |
+| /vs/rapidssos/ | KabatOne vs RapidSOS | Done |
 
 ---
 
@@ -307,6 +321,7 @@
 | Fusus (Axon) | fusus.com | RTCC, private camera networks | /vs/fusus/ | Rankings for real-time crime center, RTCC |
 | Prepared 911 | prepared.com | NG911 PSAP modernization | /vs/prepared911/ | Rankings for NG911, 911 software, PSAP |
 | Peregrine | peregrine.ai | RTCC, predictive policing | /vs/peregrine/ | Rankings for real-time crime center |
+| RapidSOS | rapidsos.com | Call data enrichment, NG911 data | /vs/rapidssos/ | Rankings for 911 data, call enrichment |
 
 ---
 
@@ -314,7 +329,7 @@
 
 | Metric | Month 1 | Month 3 | Month 6 | Month 12 |
 |--------|---------|---------|---------|----------|
-| Pages indexed | 32 | 35+ | 40+ | 50+ |
+| Pages indexed | 61 | 61+ | 65+ | 75+ |
 | GSC impressions/mo | — | 500+ | 2,000+ | 8,000+ |
 | GSC clicks/mo | — | 50+ | 300+ | 1,000+ |
 | Branded avg position | < 5 | < 3 | < 2 | 1 |
@@ -346,6 +361,17 @@
 | 2026-03-22 | Claude Code | Design | — | Next.js | Industry brief page visual overhaul — v0.82 |
 | 2026-03-23 | Claude Code | Sitemap fix | — | sitemap.ts + resources/page.tsx | Fix sitemap orphans /privacy + /resources/end-of-siloed-response, add resources hub card — v0.83 |
 | 2026-03-23 | Claude Code | 1 resources page | — | Next.js | /resources/what-is-cad-dispatch-software — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v0.85 |
+| 2026-03-26 | Claude Code | 2 resources pages | — | Next.js | /resources/what-is-video-management-software, /resources/what-is-situational-awareness-software — v1.12, v1.16 |
+| 2026-03-26 | Claude Code | 1 /vs/ page | — | Next.js | /vs/rapidssos — EN+ES, FAQ+breadcrumb schema — v1.14 |
+| 2026-03-26 | Claude Code | GA4 install | — | Next.js | GoogleAnalytics component, G-5MB9CK1FGS — v1.15 |
+| 2026-03-26 | Claude Code | Simulator | — | Next.js | /simulator — interactive incident walkthrough v1.17, redesign v1.20 |
+| 2026-03-26 | Claude Code | Internal links | — | Next.js | Industry pages → /integrations/ + /resources/ v1.13, /vs/ + /resources/ cross-links v1.21 |
+| 2026-03-26 | Claude Code | 2 resources pages | — | Next.js | /resources/what-is-gunshot-detection-software + WebSite schema v1.22, /resources/what-is-a-command-center v1.23 |
+| 2026-03-27 | Claude Code | 1 landing page | — | Next.js | /lp generic campaign landing page with URL params — v1.24 |
+| 2026-03-28 | Claude Code | 1 privacy page | — | Next.js | /privacy-policy-tamaulipas — Tamaulipas Contigo app — v1.25 |
+| 2026-03-28 | Claude Code | Demo system | — | Next.js | /demo hub + /demo/lpr interactive LPR scenario — 14 components, 5 stages — v1.30 |
+| 2026-03-30 | Claude Code | SEO sync | — | sitemap.ts + master plan | Fix 4 sitemap orphans, full master plan sync v0.85→v1.30 |
+| 2026-03-30 | Claude Code | 2 resources pages | — | Next.js | /resources/what-is-emergency-management-software v1.31, /resources/what-is-a-psap v1.32 — EN+ES, FAQ+breadcrumb+article schema, resources hub, sitemap |
 
 ---
 
@@ -378,8 +404,8 @@
 | Confirm production domain is kabatone.com | Team | Not confirmed |
 | Confirm Webflow clean URL setting is enabled | Dev | Not confirmed |
 | GSC property created for kabatone.com? | Team | Not confirmed |
-| GA4 installed with conversion events defined? | Dev | Not confirmed |
-| solutions.html — does this page exist? | Dev | Not confirmed |
+| GA4 installed with conversion events defined? | Dev | Done — G-5MB9CK1FGS v1.15 |
+| solutions.html — does this page exist? | Dev | Resolved — deleted in v0.72, static files removed |
 | When is production launch target? | Team | Not confirmed |
 | Spanish copywriter — who and when? | Team | Not started |
 | Legal/brand sign-off on competitor comparison pages? | Team | Not started |
@@ -425,6 +451,13 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-011 | FAQPage schema on all remaining product pages | Medium | Done |
 | GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Done |
 | GEO-013 | Monitor AI citation — test KabatOne mentions in ChatGPT, Perplexity, Gemini monthly | Low | Not started |
+| GEO-014 | Citeable explainer: "What is video management software?" | Medium | Done | v1.12 |
+| GEO-015 | Citeable explainer: "What is situational awareness software?" | Medium | Done | v1.16 |
+| GEO-016 | Citeable explainer: "What is gunshot detection software?" | Medium | Done | v1.22 |
+| GEO-017 | Citeable explainer: "What is a command center?" (C2–C5) | High | Done | v1.23 |
+| GEO-018 | WebSite schema — brand identity JSON-LD in root layout | Medium | Done | v1.22 |
+| GEO-019 | Citeable explainer: "What is emergency management software?" | High | Done | v1.31 |
+| GEO-020 | Citeable explainer: "What is a PSAP?" | High | Done | v1.32 |
 
 ### GEO-001 — Entity definition page
 

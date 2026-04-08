@@ -43,12 +43,12 @@ const sections = [
   {
     id: 'security',
     heading: '7. Security',
-    body: 'We take great care in implementing and maintaining the security of the App and your information. We employ industry-standard procedures and policies to ensure the safety of our users\' information and prevent unauthorized use of any such information. Although we take reasonable steps to safeguard information, we cannot be responsible for the acts of those who gain unauthorized access or abuse our App, and we make no warranty, express, implied, or otherwise, that we will prevent such access.\n\nIf you feel that your privacy was not treated in accordance with our policy, or if any person attempted to abuse our service or acted in an inappropriate manner, please contact us directly at: support@kabatone.com',
+    body: 'We take great care in implementing and maintaining the security of the App and your information. We employ industry-standard procedures and policies to ensure the safety of our users\' information and prevent unauthorized use of any such information. Although we take reasonable steps to safeguard information, we cannot be responsible for the acts of those who gain unauthorized access or abuse our App, and we make no warranty, express, implied, or otherwise, that we will prevent such access.\n\nIf you feel that your privacy was not treated in accordance with our policy, or if any person attempted to abuse our service or acted in an inappropriate manner, please contact us directly at: info@kabatone.com',
   },
   {
     id: 'children',
     heading: '8. Children',
-    body: 'If a parent or guardian becomes aware that his or her child has provided us with information without their consent, he or she should contact us at: support@kabatone.com',
+    body: 'If a parent or guardian becomes aware that his or her child has provided us with information without their consent, he or she should contact us at: info@kabatone.com',
   },
   {
     id: 'geolocation',
@@ -120,7 +120,7 @@ const sections = [
   {
     id: 'contact',
     heading: '10. How to contact us',
-    body: 'If you have any general questions about the Application, the information that we collect about you, and how we use it, you can contact us at: support@kabatone.com',
+    body: 'If you have any general questions about the Application, the information that we collect about you, and how we use it, you can contact us at: info@kabatone.com',
   },
 ]
 

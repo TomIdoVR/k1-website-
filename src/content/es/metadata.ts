@@ -254,9 +254,64 @@ export const metadata = {
     description: "Un software de detección de disparos usa sensores acústicos para detectar disparos, triangular su ubicación y alertar a los centros de mando en segundos. Cómo funciona y cómo se integra con video y despacho.",
     canonical: "https://kabatone.com/es/resources/what-is-gunshot-detection-software/",
   },
+  whatIsEmergencyManagementSoftware: {
+    title: "¿Qué Es un Software de Gestión de Emergencias? Guía Completa | KabatOne",
+    description: "Un software de gestión de emergencias coordina el ciclo completo del incidente: detección, despacho, coordinación en campo y resolución. Cómo las plataformas unificadas reducen los tiempos de respuesta entre 30% y 40%.",
+    canonical: "https://kabatone.com/es/resources/what-is-emergency-management-software/",
+  },
+  whatIsAPsap: {
+    title: "¿Qué Es un PSAP? Guía sobre Centros de Recepción de Emergencias 911 | KabatOne",
+    description: "Un PSAP (Public Safety Answering Point) es donde se reciben las llamadas al 911 y se despachan las unidades de emergencia. Cómo funcionan, la evolución a NG911 y qué tecnología necesitan.",
+    canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
+  },
+  whatIsVideoAnalytics: {
+    title: "¿Qué Es la Analítica de Video con IA? Guía Completa | KabatOne",
+    description: "La analítica de video usa IA para detectar intrusiones, LPR, aglomeraciones, disparos y anomalías en cámaras de vigilancia. Edge vs servidor, falsos positivos e integración en centros de mando.",
+    canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
+  },
+  whatIsLprLicensePlateRecognition: {
+    title: "¿Qué Es el LPR / ALPR? Guía de Reconocimiento de Placas Vehiculares | KabatOne",
+    description: "El LPR/ALPR captura y coteja placas vehiculares contra bases de datos de alertas en tiempo real. Cómo funciona, LPR fijo vs móvil, precisión e integración en plataformas de seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition/",
+  },
+  whatIsEmergencyDispatchSoftware: {
+    title: "¿Qué Es un Software de Despacho de Emergencias? Guía Completa | KabatOne",
+    description: "El software de despacho de emergencias gestiona la recepción de llamadas al 911, la clasificación del incidente y el despacho de unidades. Cómo funciona, diferencia con CAD y NG911.",
+    canonical: "https://kabatone.com/es/resources/what-is-emergency-dispatch-software/",
+  },
   simulator: {
     title: "Simulador de Incidentes — Respuesta Unificada vs Fragmentada | KabatOne",
     description: "Simulador interactivo que compara sistemas de seguridad pública fragmentados con la plataforma unificada de KabatOne. Observa el mismo incidente de dos formas y ve la diferencia en tiempo real.",
     canonical: "https://kabatone.com/es/simulator/",
+  },
+  vsAvigilon: {
+    title: "KabatOne vs Avigilon — VMS Premium vs Plataforma de Seguridad Pública Unificada",
+    description: "Avigilon gestiona cámaras y analítica de video. KabatOne agrega despacho CAD completo, GIS operacional, gestión de tráfico y coordinación multiagencia — conectando el flujo completo de respuesta en una sola plataforma sin hardware propietario.",
+    canonical: "https://kabatone.com/es/vs/avigilon/",
+  },
+  whatIsSensorFusion: {
+    title: "¿Qué Es la Fusión de Sensores? Integración de Datos con IA para Seguridad Pública | KabatOne",
+    description: "La fusión de sensores combina video, acústica, LPR, IoT, GPS y señales ciudadanas en una sola capa de inteligencia en tiempo real para centros de mando. Cómo funciona y por qué supera a los sensores aislados.",
+    canonical: "https://kabatone.com/es/resources/what-is-sensor-fusion/",
+  },
+  vsVerint: {
+    title: "KabatOne vs Verint — Inteligencia de Video vs Plataforma de Operaciones Unificada",
+    description: "Verint gestiona videovigilancia y analítica IA para gobiernos y aeropuertos. KabatOne agrega despacho CAD completo, GIS operacional y gestión de tráfico — la plataforma C5 completa sin hardware propietario y más de 40 despliegues en LATAM.",
+    canonical: "https://kabatone.com/es/vs/verint/",
+  },
+  vsNiceSystems: {
+    title: "KabatOne vs NICE Systems (Qognify) — PSIM vs Plataforma de Operaciones Unificada",
+    description: "NICE Systems/Qognify ofrece gestión de evidencia de video y PSIM. KabatOne agrega despacho CAD nativo, GIS operacional y gestión de tráfico — plataforma unificada de seguridad pública para centros C5 y municipios sin hardware propietario.",
+    canonical: "https://kabatone.com/es/vs/nice-systems/",
+  },
+  whatIsIncidentManagementSoftware: {
+    title: "¿Qué Es un Software de Gestión de Incidentes? Guía de Seguridad Pública | KabatOne",
+    description: "El software de gestión de incidentes rastrea, coordina y resuelve emergencias en tiempo real — conectando despacho, unidades de campo, video y mando. Cómo funciona y qué considerar al elegirlo.",
+    canonical: "https://kabatone.com/es/resources/what-is-incident-management-software/",
+  },
+  vsVerkada: {
+    title: "KabatOne vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada",
+    description: "Verkada ofrece cámaras, control de acceso y alarmas en la nube. KabatOne agrega despacho CAD completo, GIS operacional, gestión de tráfico y coordinación multiagencia — el flujo completo desde detección hasta respuesta.",
+    canonical: "https://kabatone.com/es/vs/verkada/",
   },
 } as const
