@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.59] 2026-04-08 — Fix: SOS button event card visible on map (offset coords + zIndex)
+
+**Fixed**
+- `school.ts` — moved sosEvent coords away from caller marker (were overlapping)
+- `GeoPanel.tsx` — added `zIndexOffset: 2000` so SOS card renders above camera thumbnails
+- `GeoPanel.tsx` — added `sosEvent` to useEffect dependency array
+
 ## [1.58] 2026-04-08 — Feat: SOS button event card marker on Understand stage map
 
 **Added**

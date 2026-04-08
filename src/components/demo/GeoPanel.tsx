@@ -155,17 +155,17 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
         const sosIcon = L.divIcon({
           className: 'sos-icon',
           html: sosHtml,
-          iconSize: [160, 52],
-          iconAnchor: [80, 52],
+          iconSize: [170, 60],
+          iconAnchor: [85, 60],
         })
-        L.marker(sosEvent.coords, { icon: sosIcon }).addTo(map)
+        L.marker(sosEvent.coords, { icon: sosIcon, zIndexOffset: 2000 }).addTo(map)
       }
 
       // Fit bounds
       const allCoords = [caller.coords, ...aeds.map(a => a.coords), ...cameras.map(c => c.coords), ...(sosEvent ? [sosEvent.coords] : [])]
       map.fitBounds(L.latLngBounds(allCoords), { padding: [50, 50] })
     })
-  }, [caller, aeds, cameras])
+  }, [caller, aeds, cameras, sosEvent])
 
   return <div ref={ref} style={{ width: '100%', height: '100%' }} />
 }

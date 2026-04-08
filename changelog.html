@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v1.59 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.59</span><span class="tl-date">2026-04-08</span></div>
+        <div class="tl-title">Fix: SOS button event card now visible on map</div>
+        <ul class="tl-list">
+          <li>Moved SOS event coords away from caller marker to avoid overlap</li>
+          <li>Added zIndexOffset: 2000 so card renders above camera thumbnails</li>
+          <li>Added sosEvent to useEffect dependency array</li>
+        </ul>
+      </div>
+
       <!-- v1.58 -->
       <div class="tl-entry">
         <div class="tl-meta"><span class="tl-ver">v1.58</span><span class="tl-date">2026-04-08</span></div>
