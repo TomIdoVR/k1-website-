@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.56] 2026-04-08 — Feat: Live camera thumbnails on Understand stage map (School scenario)
+
+**Added**
+- `GeoPanel.tsx` — camera markers now render as CCTV thumbnail cards when an `image` is provided; card shows grayscale-filtered feed image, scanlines overlay, REC badge, label bar, connector line + dot anchor
+- Alert camera (CAM-07) styled in red tones; normal cameras in blue
+- `types.ts` — added `image?: string` and `alert?: boolean` to `geoPanel.cameras` items
+- `school.ts` — wired 4 Imagen 4-generated camera images: CAM-01 entrance, CAM-07 hallway, CAM-12 parking lot, CAM-15 2F hallway
+- Generated 4 CCTV-style school interior/exterior images in `public/demo/school/`
+
 ## [1.55] 2026-04-08 — Feat: School Panic Button detect stage — architectural blueprint floor plan
 
 **Changed**

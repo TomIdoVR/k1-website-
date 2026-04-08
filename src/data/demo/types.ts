@@ -53,7 +53,7 @@ export interface Stage {
   geoPanel?: {
     caller: { coords: [number, number]; label: string }
     aeds: Array<{ coords: [number, number]; label: string }>
-    cameras: Array<{ coords: [number, number]; label: string }>
+    cameras: Array<{ coords: [number, number]; label: string; image?: string; alert?: boolean }>
     tags: string[]
     analysisRows: Array<{ key: string; value: string; color?: string }>
   }

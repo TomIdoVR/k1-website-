@@ -25,7 +25,7 @@ export const schoolScenario: ScenarioConfig = {
       layout: 'default',
       detectCard: {
         type: 'panic-alert',
-        cameraImage: '/demo/school/stage-1-detect.jpg',
+        cameraImage: '/demo/school/stage-1-detect-v2.jpg',
         cameraLabel: 'CAM-07 · BUILDING A · HALLWAY 2F',
         fields: [
           { key: 'SOURCE',            value: 'M. Chen · TEACHER',            highlight: true },
@@ -68,10 +68,10 @@ export const schoolScenario: ScenarioConfig = {
           { coords: [29.7562, -95.3700], label: 'UNIT-14 · 0.4 mi' },
         ],
         cameras: [
-          { coords: [29.7555, -95.3675], label: 'CAM-01 · Main Entrance' },
-          { coords: [29.7545, -95.3688], label: 'CAM-07 · Bldg A Hallway' },
-          { coords: [29.7560, -95.3660], label: 'CAM-12 · Parking Lot' },
-          { coords: [29.7542, -95.3672], label: 'CAM-15 · Bldg A 2F' },
+          { coords: [29.7555, -95.3675], label: 'CAM-01 · Main Entrance',  image: '/demo/school/cam01-entrance.jpg' },
+          { coords: [29.7545, -95.3688], label: 'CAM-07 · Bldg A Hallway', image: '/demo/school/cam07-hallway.jpg', alert: true },
+          { coords: [29.7560, -95.3660], label: 'CAM-12 · Parking Lot',    image: '/demo/school/cam12-parking.jpg' },
+          { coords: [29.7542, -95.3672], label: 'CAM-15 · Bldg A 2F',      image: '/demo/school/cam15-hallway2f.jpg' },
         ],
         tags: ['LOCKDOWN ACTIVE', '847 STUDENTS', 'ROOM 214', 'P1 THREAT', 'SRO ON-SITE'],
         analysisRows: [
