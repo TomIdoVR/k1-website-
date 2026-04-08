@@ -7,6 +7,29 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.46] 2026-04-07 — Feat: 5 new resource articles, 4 VS pages, demo scenario updates, /lp page
+
+**Added**
+- `/resources/what-is-emergency-dispatch-software` — EN + ES GEO article
+- `/resources/what-is-incident-management-software` — EN + ES GEO article
+- `/resources/what-is-lpr-license-plate-recognition` — EN + ES GEO article
+- `/resources/what-is-sensor-fusion` — EN + ES GEO article
+- `/resources/what-is-video-analytics` — EN + ES GEO article
+- `/vs/avigilon`, `/vs/nice-systems`, `/vs/verint`, `/vs/verkada` — competitor comparison pages
+- `/lp` — generic campaign landing page (URL param-driven: `?headline`, `?sub`, `?cta`, `?campaign`)
+- `GeoPanel` demo component for scenario explorer
+- Violence scenario (Scenario 02) data + 3 stage images (optimized)
+
+**Changed**
+- Demo `StageScreen` — significant updates for geo panel and scenario routing
+- Demo `medical.ts` and `violence.ts` — scenario data updates
+- `demo/page.tsx` — scenario hub updates
+- `sitemap.ts` — new entries for all new pages
+- `metadata.ts` (EN + ES) — new metadata keys for all new pages
+- `resources/page.tsx` — new article cards added
+- `site-manager.html` — updated
+- `ModulesSection.tsx` — minor update
+
 ## [1.45] 2026-04-07 — Analytics: GTM scaffold + GA4 env var + conversion events
 
 **Added**

@@ -1,7 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ScenarioConfig, StageId } from '@/data/demo/types'
 import TopBar from './TopBar'

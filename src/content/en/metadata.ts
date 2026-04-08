@@ -264,9 +264,54 @@ export const metadata = {
     description: "A PSAP (Public Safety Answering Point) is where 911 calls are received and emergency units dispatched. Learn how PSAPs work, NG911 evolution, and what technology modern PSAPs need.",
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
+  whatIsVideoAnalytics: {
+    title: "What Is Video Analytics? AI Surveillance Guide | KabatOne",
+    description: "Video analytics uses AI to automatically detect intrusions, LPR, crowds, gunshots, and anomalies in surveillance footage. Edge vs server processing, accuracy, and command center integration.",
+    canonical: "https://kabatone.com/resources/what-is-video-analytics/",
+  },
+  whatIsLprLicensePlateRecognition: {
+    title: "What Is LPR / ALPR? License Plate Recognition Guide | KabatOne",
+    description: "License Plate Recognition (LPR/ALPR) captures and cross-references vehicle plates against alert databases in real time. Learn how it works, fixed vs mobile types, accuracy, and public safety integration.",
+    canonical: "https://kabatone.com/resources/what-is-lpr-license-plate-recognition/",
+  },
+  whatIsEmergencyDispatchSoftware: {
+    title: "What Is Emergency Dispatch Software? Complete Guide | KabatOne",
+    description: "Emergency dispatch software manages 911 call intake, incident classification, and response unit assignment. Learn how it works, how it differs from CAD, and NG911 integration.",
+    canonical: "https://kabatone.com/resources/what-is-emergency-dispatch-software/",
+  },
   simulator: {
     title: "Incident Simulator — Unified vs Fragmented Response | KabatOne",
     description: "Interactive simulator comparing fragmented public safety systems with KabatOne's unified platform. Watch the same incident unfold two ways and see the difference in real time.",
     canonical: "https://kabatone.com/simulator/",
+  },
+  vsAvigilon: {
+    title: "KabatOne vs Avigilon — Premium VMS vs Unified Public Safety Platform",
+    description: "Avigilon manages cameras and video analytics. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — connecting the complete response workflow in one platform without proprietary hardware.",
+    canonical: "https://kabatone.com/vs/avigilon/",
+  },
+  whatIsSensorFusion: {
+    title: "What Is Sensor Fusion? AI Data Integration for Public Safety | KabatOne",
+    description: "Sensor fusion combines video, acoustic, LPR, IoT, GPS, and citizen signals into a single real-time intelligence layer for command centers. Learn how it works and why unified detection outperforms isolated sensors.",
+    canonical: "https://kabatone.com/resources/what-is-sensor-fusion/",
+  },
+  vsVerint: {
+    title: "KabatOne vs Verint — Video Intelligence vs Unified Operations Platform",
+    description: "Verint manages video surveillance and AI analytics for governments and airports. KabatOne adds full CAD dispatch, operational GIS, and traffic management — the complete C5 command center platform with no proprietary hardware and 40+ LATAM deployments.",
+    canonical: "https://kabatone.com/vs/verint/",
+  },
+  vsNiceSystems: {
+    title: "KabatOne vs NICE Systems (Qognify) — PSIM vs Unified Operations Platform",
+    description: "NICE Systems/Qognify provides video evidence management and PSIM. KabatOne adds native CAD dispatch, operational GIS, and traffic management — a unified public safety platform built for C5 command centers and municipalities without proprietary hardware.",
+    canonical: "https://kabatone.com/vs/nice-systems/",
+  },
+  whatIsIncidentManagementSoftware: {
+    title: "What Is Incident Management Software? Public Safety Guide | KabatOne",
+    description: "Incident management software tracks, coordinates, and resolves emergencies in real time — connecting dispatch, field units, video, and command. How it works, key features, and what to look for.",
+    canonical: "https://kabatone.com/resources/what-is-incident-management-software/",
+  },
+  vsVerkada: {
+    title: "KabatOne vs Verkada — Cloud Physical Security vs Unified Public Safety Platform",
+    description: "Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — the complete workflow from detection to response.",
+    canonical: "https://kabatone.com/vs/verkada/",
   },
 } as const

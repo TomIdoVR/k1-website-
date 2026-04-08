@@ -22,9 +22,24 @@ export const medicalScenario: ScenarioConfig = {
       ],
       modules: ['911 & DISPATCH', 'AI ENGINE', 'INTEGRATIONS'],
       nextStageTeaser: 'Caller geo-locked. Nearest units scored.',
-      backgroundImage: '/demo/medical/stage-1-detect.jpg',
-      backgroundFit: 'cover',
       layout: 'default',
+      detectCard: {
+        type: 'call-intake',
+        fields: [
+          { key: 'INCIDENT TYPE', value: 'CARDIAC EVENT', highlight: true },
+          { key: 'CALLER',        value: 'M. Rivera' },
+          { key: 'ADDRESS',       value: '4817 Westheimer Rd, Houston TX' },
+          { key: 'PRIORITY',      value: 'P1 · LIFE THREATENING', highlight: true },
+          { key: 'CALL DURATION', value: '00:00:03' },
+          { key: 'UNIT ASSIGNED', value: 'Pending AI scoring...' },
+        ],
+        transcript: [
+          'CALLER: He just collapsed, he\'s not breathing—',
+          'DISPATCH: What is your location?',
+          'CALLER: 4817 Westheimer, please hurry—',
+          'DISPATCH: Units are being dispatched now.',
+        ],
+      },
     },
     {
       id: 'understand',
@@ -41,11 +56,27 @@ export const medicalScenario: ScenarioConfig = {
       ],
       modules: ['911 & DISPATCH', 'AI ENGINE', 'GIS & SITUATIONAL AWARENESS'],
       nextStageTeaser: 'AI selects closest paramedic unit.',
-      backgroundImage: '/demo/medical/stage-2-understand.jpg',
-      backgroundFit: 'contain',
-      pipImage: '/demo/medical/stage-1-detect.jpg',
-      pipLabel: 'CALL INTAKE · ME-0847',
       layout: 'default',
+      geoPanel: {
+        caller: { coords: [29.7358, -95.4697], label: 'CALLER · 4817 Westheimer' },
+        aeds: [
+          { coords: [29.7368, -95.4710], label: 'AED · Shell Station' },
+          { coords: [29.7345, -95.4680], label: 'AED · CVS Pharmacy' },
+        ],
+        cameras: [
+          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner' },
+          { coords: [29.7351, -95.4690], label: 'CAM-22 · Westheimer/Wilcrest' },
+          { coords: [29.7372, -95.4682], label: 'CAM-08 · Intersection' },
+        ],
+        tags: ['CARDIAC', 'UNCONSCIOUS', 'ADULT MALE', 'GEO-LOCKED', '2 AED NEARBY'],
+        analysisRows: [
+          { key: 'GEO-LOCK', value: '4817 Westheimer Rd', color: '#adc6ff' },
+          { key: 'CONFIDENCE', value: '98.4%', color: '#00C98A' },
+          { key: 'AED NEAREST', value: '42m · Shell Station', color: '#00C98A' },
+          { key: 'CAMERAS', value: '3 active in radius', color: '#adc6ff' },
+          { key: 'CONDITION', value: 'CARDIAC · UNCONSCIOUS', color: '#FF8C9E' },
+        ],
+      },
     },
     {
       id: 'decide',

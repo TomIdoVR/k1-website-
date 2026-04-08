@@ -32,6 +32,20 @@ export interface Stage {
     tagKey: string       // e.g. "License Plate"
     tagValue: string     // e.g. "7JKY442"
   }
+  // Optional inline admin panel rendered instead of a background image
+  detectCard?: {
+    type: 'call-intake'
+    fields: Array<{ key: string; value: string; highlight?: boolean }>
+    transcript: string[]
+  }
+  // Optional geo-analysis panel (replaces background image for understand-type stages)
+  geoPanel?: {
+    caller: { coords: [number, number]; label: string }
+    aeds: Array<{ coords: [number, number]; label: string }>
+    cameras: Array<{ coords: [number, number]; label: string }>
+    tags: string[]
+    analysisRows: Array<{ key: string; value: string; color?: string }>
+  }
   pipImage?: string
   pipLabel?: string
   pip2Image?: string
