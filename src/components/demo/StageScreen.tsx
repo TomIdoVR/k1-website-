@@ -1522,6 +1522,109 @@ export default function StageScreen({
                 </div>
               )}
 
+              {/* BLUEPRINT PANEL — office floor plan (shown when blueprintPanel='office') */}
+              {stage.geoPanel.blueprintPanel === 'office' && (
+                <div style={{ flex: '0 0 45%', position: 'relative', borderLeft: '1px solid rgba(255,80,80,0.15)', background: '#030f20', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ padding: '6px 12px', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+                    <span style={{ fontSize: '7px', fontWeight: 800, letterSpacing: '0.25em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>BUILDING BLUEPRINT</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <span className="animate-pulse" style={{ width: 5, height: 5, borderRadius: '50%', background: '#FF4444', display: 'inline-block' }} />
+                      <span style={{ fontSize: '7px', fontWeight: 700, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace' }}>BREACH · SERVER ROOM B</span>
+                    </div>
+                  </div>
+                  <div style={{ flex: 1, padding: '4px 6px 2px', minHeight: 0 }}>
+                    <svg viewBox="0 0 360 254" style={{ width: '100%', height: '100%' }}>
+                      <defs>
+                        <pattern id="off-grid" width="14" height="14" patternUnits="userSpaceOnUse">
+                          <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(80,130,210,0.08)" strokeWidth="0.35"/>
+                        </pattern>
+                        <pattern id="off-wall" width="5" height="5" patternUnits="userSpaceOnUse">
+                          <rect width="5" height="5" fill="rgba(190,215,255,0.82)"/>
+                          <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(80,120,200,0.45)" strokeWidth="0.9"/>
+                        </pattern>
+                        <pattern id="off-alert-wall" width="5" height="5" patternUnits="userSpaceOnUse">
+                          <rect width="5" height="5" fill="rgba(220,160,165,0.85)"/>
+                          <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(200,60,60,0.5)" strokeWidth="0.9"/>
+                        </pattern>
+                      </defs>
+                      <rect x="0" y="0" width="360" height="254" fill="#030f20"/>
+                      <rect x="0" y="0" width="360" height="254" fill="url(#off-grid)"/>
+                      {/* Outer walls */}
+                      <rect x="8" y="8" width="344" height="7" fill="url(#off-wall)"/>
+                      <rect x="8" y="239" width="344" height="7" fill="url(#off-wall)"/>
+                      <rect x="8" y="8" width="7" height="238" fill="url(#off-wall)"/>
+                      <rect x="345" y="8" width="7" height="238" fill="url(#off-wall)"/>
+                      {/* Corridor walls at y=105 and y=125 */}
+                      <rect x="15" y="105" width="180" height="6" fill="url(#off-wall)"/>
+                      {/* Main entrance door gap at x=195-225 */}
+                      <rect x="225" y="105" width="120" height="6" fill="url(#off-wall)"/>
+                      <line x1="195" y1="105" x2="195" y2="111" stroke="rgba(255,80,80,0.8)" strokeWidth="1.2"/>
+                      <path d="M195,105 A30,30 0 0,1 225,111" fill="none" stroke="rgba(255,80,80,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
+                      {/* Turnstile symbol */}
+                      <rect x="196" y="112" width="28" height="18" rx="2" fill="rgba(255,40,40,0.1)" stroke="rgba(255,80,80,0.6)" strokeWidth="0.9"/>
+                      <line x1="196" y1="121" x2="224" y2="121" stroke="rgba(255,80,80,0.4)" strokeWidth="0.7"/>
+                      <line x1="200" y1="114" x2="220" y2="128" stroke="rgba(255,80,80,0.6)" strokeWidth="1"/>
+                      <line x1="220" y1="114" x2="200" y2="128" stroke="rgba(255,80,80,0.6)" strokeWidth="1"/>
+                      <text x="210" y="140" textAnchor="middle" fill="rgba(255,120,120,0.6)" fontSize="4.5" fontFamily="monospace" fontWeight="700">MAIN ENTRANCE</text>
+                      {/* Bottom corridor wall */}
+                      <rect x="15" y="125" width="65" height="6" fill="url(#off-wall)"/>
+                      {/* Server Room B door gap at x=80-104 */}
+                      <rect x="104" y="125" width="241" height="6" fill="url(#off-wall)"/>
+                      <line x1="80" y1="131" x2="80" y2="125" stroke="rgba(255,80,80,0.8)" strokeWidth="1.2"/>
+                      <path d="M80,131 A24,24 0 0,0 104,125" fill="none" stroke="rgba(255,80,80,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
+                      {/* Vertical dividers top */}
+                      <rect x="140" y="15" width="6" height="90" fill="url(#off-wall)"/>
+                      <rect x="230" y="15" width="6" height="90" fill="url(#off-wall)"/>
+                      {/* Vertical dividers bottom */}
+                      <rect x="160" y="131" width="6" height="108" fill="url(#off-wall)"/>
+                      <rect x="255" y="131" width="6" height="108" fill="url(#off-wall)"/>
+                      {/* Alert left wall of Server Room B */}
+                      <rect x="15" y="131" width="6" height="108" fill="url(#off-alert-wall)"/>
+                      {/* Stairwell */}
+                      <rect x="310" y="111" width="35" height="14" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.3)" strokeWidth="0.8"/>
+                      {[0,1,2,3].map(i => <line key={i} x1="310" y1={112+i*3} x2="345" y2={112+i*3} stroke="rgba(180,210,255,0.2)" strokeWidth="0.6"/>)}
+                      <line x1="310" y1="125" x2="345" y2="111" stroke="rgba(180,210,255,0.15)" strokeWidth="0.7"/>
+                      {/* Corridor */}
+                      <text x="155" y="121" textAnchor="middle" fill="rgba(160,200,255,0.18)" fontSize="6" letterSpacing="4" fontFamily="monospace">C O R R I D O R</text>
+                      <circle cx="90"  cy="117" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      <circle cx="230" cy="117" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      {/* Top rooms */}
+                      <rect x="15" y="15" width="125" height="90" fill="rgba(255,255,255,0.012)"/>
+                      <text x="77" y="58" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">IT OPERATIONS</text>
+                      <circle cx="27" cy="25" r="3.2" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      <rect x="146" y="15" width="84" height="90" fill="rgba(255,255,255,0.012)"/>
+                      <text x="188" y="55" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7" fontWeight="700" fontFamily="sans-serif">CONFERENCE</text>
+                      <text x="188" y="64" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7" fontWeight="700" fontFamily="sans-serif">ROOM</text>
+                      <circle cx="158" cy="25" r="3.2" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      <rect x="236" y="15" width="109" height="90" fill="rgba(255,255,255,0.012)"/>
+                      <text x="290" y="55" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7" fontWeight="700" fontFamily="sans-serif">SECURITY</text>
+                      <text x="290" y="64" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7" fontWeight="700" fontFamily="sans-serif">DESK</text>
+                      <circle cx="248" cy="25" r="3.2" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      {/* SERVER ROOM B — ALERT */}
+                      <rect x="21" y="131" width="139" height="108" fill="rgba(255,20,20,0.07)"/>
+                      <rect x="21" y="131" width="139" height="108" fill="rgba(255,50,50,0.06)">
+                        <animate attributeName="fill-opacity" values="0.06;0.18;0.06" dur="1.2s" repeatCount="indefinite"/>
+                      </rect>
+                      <text x="90" y="178" textAnchor="middle" fill="rgba(255,140,158,0.7)" fontSize="7" fontWeight="700" fontFamily="sans-serif">SERVER</text>
+                      <text x="90" y="190" textAnchor="middle" fill="#FF6688" fontSize="11" fontWeight="900" fontFamily="monospace">ROOM B</text>
+                      <rect x="28" y="201" width="120" height="12" rx="2" fill="rgba(255,40,40,0.18)" stroke="rgba(255,80,80,0.55)" strokeWidth="0.7"/>
+                      <text x="88" y="210" textAnchor="middle" fill="#FF8C9E" fontSize="5.5" fontWeight="900" fontFamily="monospace">⚠ FORCED ENTRY</text>
+                      {[0,1,2].map(i => <rect key={i} x={28+i*38} y="220" width="28" height="12" rx="1" fill="rgba(59,100,180,0.1)" stroke="rgba(100,150,255,0.2)" strokeWidth="0.5"/>)}
+                      <circle cx="140" cy="142" r="3.2" fill="rgba(255,60,60,0.2)" stroke="rgba(255,100,100,0.85)" strokeWidth="0.9"/>
+                      {/* Storage */}
+                      <rect x="166" y="131" width="89" height="108" fill="rgba(255,255,255,0.012)"/>
+                      <text x="210" y="188" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">STORAGE</text>
+                      <circle cx="178" cy="142" r="3.2" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                      {/* Network Hub */}
+                      <rect x="261" y="131" width="84" height="108" fill="rgba(255,255,255,0.012)"/>
+                      <text x="303" y="182" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7" fontWeight="700" fontFamily="sans-serif">NETWORK</text>
+                      <text x="303" y="191" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7" fontWeight="700" fontFamily="sans-serif">HUB</text>
+                      <circle cx="273" cy="142" r="3.2" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    </svg>
+                  </div>
+                </div>
+              )}
+
               {/* RIGHT — analysis sidebar */}
               <div style={{
                 width: 240, background: 'rgba(8,16,26,0.97)',
