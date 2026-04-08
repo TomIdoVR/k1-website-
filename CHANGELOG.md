@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.55] 2026-04-08 — Feat: School Panic Button detect stage — architectural blueprint floor plan
+
+**Changed**
+- `StageScreen.tsx` — replaced SVG floor plan on School scenario detect stage with a true architectural blueprint
+- Blueprint style: dark navy background, wall hatching pattern (diagonal lines inside thick filled wall rects), proper door swing quarter-circle arcs
+- Realistic school layout: Assembly Hall, Principal's Office, Registrar's Office (top); Classroom 1, Classroom 2, Teacher's Faculty Room, Classroom 214 ALERT (bottom)
+- Corridor with stairwell symbols (parallel lines + diagonal cross), two camera markers
+- Entrance indicator cut into bottom outer wall
+- Alert room 214: pulsing red fill, red-tinted divider wall with alert hatching, animated panic button with expanding ring, ⚠ ALERT ACTIVE badge
+
 ## [1.54] 2026-04-08 — Design: K-Safety hero map restyled to blueprint aesthetic
 
 **Changed**

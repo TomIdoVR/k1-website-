@@ -354,174 +354,192 @@ export default function StageScreen({
 
                 {/* SVG Architectural Floor Plan */}
                 <div style={{ flex: 1, padding: '6px 10px 4px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-                  <svg viewBox="0 0 340 240" style={{ flex: 1, width: '100%', height: '100%' }}>
+                  <svg viewBox="0 0 360 254" style={{ flex: 1, width: '100%', height: '100%' }}>
                     <defs>
-                      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(59,130,200,0.06)" strokeWidth="0.5"/>
+                      {/* Blueprint fine grid */}
+                      <pattern id="bp-grid" width="14" height="14" patternUnits="userSpaceOnUse">
+                        <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(80,130,210,0.1)" strokeWidth="0.35"/>
+                      </pattern>
+                      {/* Wall hatching — diagonal lines inside thick walls */}
+                      <pattern id="wall-fill" width="5" height="5" patternUnits="userSpaceOnUse">
+                        <rect width="5" height="5" fill="rgba(190,215,255,0.82)"/>
+                        <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(80,120,200,0.45)" strokeWidth="0.9"/>
+                      </pattern>
+                      {/* Alert wall hatching */}
+                      <pattern id="alert-wall-fill" width="5" height="5" patternUnits="userSpaceOnUse">
+                        <rect width="5" height="5" fill="rgba(220,160,165,0.85)"/>
+                        <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(200,60,60,0.5)" strokeWidth="0.9"/>
                       </pattern>
                     </defs>
 
-                    {/* Blueprint grid background */}
-                    <rect x="0" y="0" width="340" height="240" fill="url(#grid)"/>
+                    {/* Blueprint background */}
+                    <rect x="0" y="0" width="360" height="254" fill="#030f20"/>
+                    <rect x="0" y="0" width="360" height="254" fill="url(#bp-grid)"/>
 
-                    {/* ── WALL CONSTANTS: W=wall thickness ── */}
-                    {/* Building footprint: x=10,y=10 w=320 h=220
-                        Hallway: y=100..130 (30px wide)
-                        Top rooms: y=10..100  Bottom rooms: y=130..230
-                        Room width: 4 rooms → 80px each (with 4px walls between)
-                        Stairwells: left x=10..40, right x=290..330 */}
+                    {/* ── OUTER WALLS (7px thick) ── */}
+                    <rect x="8" y="8"   width="344" height="7" fill="url(#wall-fill)"/>  {/* top */}
+                    <rect x="8" y="239" width="344" height="7" fill="url(#wall-fill)"/>  {/* bottom */}
+                    <rect x="8" y="8"   width="7"   height="238" fill="url(#wall-fill)"/>{/* left */}
+                    <rect x="345" y="8" width="7"   height="238" fill="url(#wall-fill)"/>{/* right */}
 
-                    {/* Outer building fill */}
-                    <rect x="10" y="10" width="320" height="220" fill="rgba(14,24,44,0.6)"/>
+                    {/* ── VERTICAL INNER WALLS — top section ── */}
+                    {/* Assembly Hall | Principal's Office  at x=192 */}
+                    <rect x="192" y="15" width="7" height="87" fill="url(#wall-fill)"/>
+                    {/* Principal's | Registrar's at x=264 */}
+                    <rect x="264" y="15" width="7" height="87" fill="url(#wall-fill)"/>
 
-                    {/* ── OUTER WALLS (thick) ── */}
-                    {/* Top wall */}
-                    <rect x="10" y="10" width="320" height="5" fill="rgba(140,180,240,0.55)"/>
-                    {/* Bottom wall */}
-                    <rect x="10" y="225" width="320" height="5" fill="rgba(140,180,240,0.55)"/>
-                    {/* Left wall */}
-                    <rect x="10" y="10" width="5" height="220" fill="rgba(140,180,240,0.55)"/>
-                    {/* Right wall */}
-                    <rect x="325" y="10" width="5" height="220" fill="rgba(140,180,240,0.55)"/>
+                    {/* ── VERTICAL INNER WALLS — bottom section ── */}
+                    {/* Classroom 1 | 2  at x=102 */}
+                    <rect x="102" y="128" width="7" height="111" fill="url(#wall-fill)"/>
+                    {/* Classroom 2 | Faculty  at x=192 */}
+                    <rect x="192" y="128" width="7" height="111" fill="url(#wall-fill)"/>
+                    {/* Faculty | 214 (alert)  at x=272 */}
+                    <rect x="272" y="128" width="7" height="111" fill="url(#wall-fill)"/>
 
-                    {/* ── INNER HORIZONTAL WALLS (hallway dividers) ── */}
-                    {/* Top of hallway — with door gaps */}
-                    {/* Segment 1: x=15..75 */}
-                    <rect x="15" y="98" width="62" height="4" fill="rgba(140,180,240,0.45)"/>
-                    {/* Door gap 76-94 */}
-                    {/* Door arc top room 201 */}
-                    <path d="M76,98 A18,18 0 0,0 94,98" fill="none" stroke="rgba(140,180,240,0.3)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    {/* Segment 2: x=94..157 */}
-                    <rect x="94" y="98" width="63" height="4" fill="rgba(140,180,240,0.45)"/>
-                    {/* Door gap 157-175 */}
-                    <path d="M157,98 A18,18 0 0,0 175,98" fill="none" stroke="rgba(140,180,240,0.3)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    {/* Segment 3: x=175..237 */}
-                    <rect x="175" y="98" width="62" height="4" fill="rgba(140,180,240,0.45)"/>
-                    {/* Door gap 237-255 */}
-                    <path d="M237,98 A18,18 0 0,0 255,98" fill="none" stroke="rgba(140,180,240,0.3)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    {/* Segment 4: x=255..325 */}
-                    <rect x="255" y="98" width="70" height="4" fill="rgba(140,180,240,0.45)"/>
+                    {/* ── TOP HALLWAY WALL at y=102 (with door gaps) ── */}
+                    {/* Assembly Hall door gap at x=76, w=16 */}
+                    <rect x="15" y="102" width="61" height="6" fill="url(#wall-fill)"/>
+                    {/* door swing arc — opens into hallway */}
+                    <line x1="76" y1="102" x2="76" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M76,102 A16,16 0 0,1 92,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="92" y="102" width="100" height="6" fill="url(#wall-fill)"/>
+                    {/* Principal's door gap at x=210, w=16 — after vertical wall at 192-199 */}
+                    <rect x="199" y="102" width="11" height="6" fill="url(#wall-fill)"/>
+                    <line x1="210" y1="102" x2="210" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M210,102 A16,16 0 0,1 226,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="226" y="102" width="38" height="6" fill="url(#wall-fill)"/>
+                    {/* Registrar door gap at x=286, w=16 — after vertical wall at 264-271 */}
+                    <rect x="271" y="102" width="15" height="6" fill="url(#wall-fill)"/>
+                    <line x1="286" y1="102" x2="286" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M286,102 A16,16 0 0,1 302,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="302" y="102" width="43" height="6" fill="url(#wall-fill)"/>
 
-                    {/* Bottom of hallway — door gaps for lower rooms */}
-                    <rect x="15" y="130" width="62" height="4" fill="rgba(140,180,240,0.45)"/>
-                    <path d="M77,134 A18,18 0 0,1 95,134" fill="none" stroke="rgba(140,180,240,0.3)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <rect x="95" y="130" width="63" height="4" fill="rgba(140,180,240,0.45)"/>
-                    <path d="M158,134 A18,18 0 0,1 176,134" fill="none" stroke="rgba(140,180,240,0.3)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <rect x="176" y="130" width="62" height="4" fill="rgba(140,180,240,0.45)"/>
-                    {/* Room 214 alert — no door gap needed, door is on alert side */}
-                    <path d="M238,134 A18,18 0 0,1 256,134" fill="none" stroke="rgba(255,80,80,0.5)" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <rect x="256" y="130" width="69" height="4" fill="rgba(140,180,240,0.45)"/>
+                    {/* ── BOTTOM HALLWAY WALL at y=122 (with door gaps) ── */}
+                    {/* Room 211 door gap at x=42, w=16 */}
+                    <rect x="15" y="122" width="27" height="6" fill="url(#wall-fill)"/>
+                    <line x1="42" y1="128" x2="42" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M42,128 A16,16 0 0,0 58,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="58" y="122" width="44" height="6" fill="url(#wall-fill)"/>
+                    {/* Room 212 door gap at x=128, w=16 — after vertical wall at 102-109 */}
+                    <rect x="109" y="122" width="19" height="6" fill="url(#wall-fill)"/>
+                    <line x1="128" y1="128" x2="128" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M128,128 A16,16 0 0,0 144,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="144" y="122" width="48" height="6" fill="url(#wall-fill)"/>
+                    {/* Faculty door gap at x=210, w=16 — after vertical wall at 192-199 */}
+                    <rect x="199" y="122" width="11" height="6" fill="url(#wall-fill)"/>
+                    <line x1="210" y1="128" x2="210" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                    <path d="M210,128 A16,16 0 0,0 226,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="226" y="122" width="46" height="6" fill="url(#wall-fill)"/>
+                    {/* Room 214 door gap at x=296, w=16 — after vertical wall at 272-279 (alert — use red tint) */}
+                    <rect x="279" y="122" width="17" height="6" fill="url(#wall-fill)"/>
+                    <line x1="296" y1="128" x2="296" y2="122" stroke="rgba(255,100,100,0.7)" strokeWidth="0.9"/>
+                    <path d="M296,128 A16,16 0 0,0 312,122" fill="none" stroke="rgba(255,100,100,0.4)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                    <rect x="312" y="122" width="33" height="6" fill="url(#wall-fill)"/>
 
-                    {/* ── VERTICAL ROOM DIVIDERS (top rooms) ── */}
-                    {/* Between 201/202 */}
-                    <rect x="95" y="15" width="4" height="83" fill="rgba(140,180,240,0.35)"/>
-                    {/* Between 202/203 */}
-                    <rect x="175" y="15" width="4" height="83" fill="rgba(140,180,240,0.35)"/>
-                    {/* Between 203/204 */}
-                    <rect x="255" y="15" width="4" height="83" fill="rgba(140,180,240,0.35)"/>
+                    {/* ── STAIRWELL LEFT — inside hallway ── */}
+                    <rect x="15" y="108" width="32" height="14" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.35)" strokeWidth="0.8"/>
+                    {[0,1,2,3].map(i => (
+                      <line key={i} x1="15" y1={109.5+i*3} x2="47" y2={109.5+i*3} stroke="rgba(180,210,255,0.22)" strokeWidth="0.6"/>
+                    ))}
+                    <line x1="15" y1="122" x2="47" y2="108" stroke="rgba(180,210,255,0.18)" strokeWidth="0.7"/>
 
-                    {/* ── VERTICAL ROOM DIVIDERS (bottom rooms) ── */}
-                    {/* Between 211/212 */}
-                    <rect x="95" y="134" width="4" height="91" fill="rgba(140,180,240,0.35)"/>
-                    {/* Between 212/213 */}
-                    <rect x="175" y="134" width="4" height="91" fill="rgba(140,180,240,0.35)"/>
-                    {/* Between 213/214 — alert room divider */}
-                    <rect x="255" y="134" width="4" height="91" fill="rgba(140,180,240,0.35)"/>
+                    {/* ── STAIRWELL RIGHT — inside hallway ── */}
+                    <rect x="313" y="108" width="32" height="14" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.35)" strokeWidth="0.8"/>
+                    {[0,1,2,3].map(i => (
+                      <line key={i} x1="313" y1={109.5+i*3} x2="345" y2={109.5+i*3} stroke="rgba(180,210,255,0.22)" strokeWidth="0.6"/>
+                    ))}
+                    <line x1="313" y1="122" x2="345" y2="108" stroke="rgba(180,210,255,0.18)" strokeWidth="0.7"/>
 
-                    {/* ── STAIRWELL LEFT ── */}
-                    <rect x="15" y="105" width="28" height="22" fill="rgba(0,201,138,0.08)" stroke="rgba(0,201,138,0.4)" strokeWidth="1"/>
-                    {/* Stair lines */}
-                    {[0,1,2,3].map(i => <line key={i} x1="15" y1={107+i*4} x2="43" y2={107+i*4} stroke="rgba(0,201,138,0.3)" strokeWidth="0.6"/>)}
-                    <text x="29" y="119" textAnchor="middle" fill="rgba(0,201,138,0.7)" fontSize="5" fontFamily="monospace" letterSpacing="0.5">STAIRS</text>
+                    {/* ── CORRIDOR LABEL ── */}
+                    <text x="183" y="118" textAnchor="middle" fill="rgba(160,200,255,0.2)" fontSize="6" letterSpacing="5" fontFamily="monospace" fontWeight="600">C O R R I D O R</text>
+                    {/* Corridor cameras */}
+                    <circle cx="100" cy="114" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="100" y1="108" x2="100" y2="110.5" stroke="rgba(59,158,255,0.4)" strokeWidth="0.7"/>
+                    <circle cx="248" cy="114" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="248" y1="108" x2="248" y2="110.5" stroke="rgba(59,158,255,0.4)" strokeWidth="0.7"/>
 
-                    {/* ── STAIRWELL RIGHT ── */}
-                    <rect x="297" y="105" width="28" height="22" fill="rgba(0,201,138,0.08)" stroke="rgba(0,201,138,0.4)" strokeWidth="1"/>
-                    {[0,1,2,3].map(i => <line key={i} x1="297" y1={107+i*4} x2="325" y2={107+i*4} stroke="rgba(0,201,138,0.3)" strokeWidth="0.6"/>)}
-                    <text x="311" y="119" textAnchor="middle" fill="rgba(0,201,138,0.7)" fontSize="5" fontFamily="monospace" letterSpacing="0.5">STAIRS</text>
+                    {/* ════ TOP ROOMS ════ */}
 
-                    {/* ── HALLWAY ── */}
-                    <rect x="43" y="102" width="254" height="28" fill="rgba(59,130,200,0.05)"/>
-                    <text x="170" y="119" textAnchor="middle" fill="rgba(100,160,240,0.35)" fontSize="7" letterSpacing="5" fontFamily="monospace">HALLWAY</text>
-                    {/* Hallway cam markers */}
-                    <circle cx="90" cy="114" r="4" fill="rgba(59,158,255,0.15)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
-                    <line x1="90" y1="102" x2="90" y2="110" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
-                    <circle cx="210" cy="114" r="4" fill="rgba(59,158,255,0.15)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
-                    <line x1="210" y1="102" x2="210" y2="110" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
+                    {/* ASSEMBLY HALL */}
+                    <rect x="15" y="15" width="177" height="87" fill="rgba(255,255,255,0.018)"/>
+                    <text x="103" y="54" textAnchor="middle" fill="rgba(180,210,255,0.72)" fontSize="9.5" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.5">ASSEMBLY HALL</text>
+                    <text x="103" y="66" textAnchor="middle" fill="rgba(140,180,255,0.28)" fontSize="5.5" fontFamily="monospace" letterSpacing="1.5">CAPACITY · 300</text>
+                    {/* Assembly cameras */}
+                    <circle cx="28" cy="25" r="4" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="28" y1="15" x2="28" y2="21" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
+                    <circle cx="180" cy="25" r="4" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="180" y1="15" x2="180" y2="21" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
-                    {/* ── TOP ROOMS CONTENT ── */}
-                    {/* Room 201 */}
-                    <rect x="15" y="15" width="80" height="83" fill="rgba(59,100,180,0.05)"/>
-                    <text x="55" y="52" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">201</text>
-                    <text x="55" y="64" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="26" cy="26" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="26" y1="15" x2="26" y2="21.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* PRINCIPAL'S OFFICE */}
+                    <rect x="199" y="15" width="65" height="87" fill="rgba(255,255,255,0.015)"/>
+                    <text x="231" y="53" textAnchor="middle" fill="rgba(180,210,255,0.65)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">PRINCIPAL</text>
+                    <text x="231" y="63" textAnchor="middle" fill="rgba(180,210,255,0.65)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">OFFICE</text>
+                    <circle cx="212" cy="25" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="212" y1="15" x2="212" y2="21.5" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
-                    {/* Room 202 */}
-                    <rect x="99" y="15" width="76" height="83" fill="rgba(59,100,180,0.05)"/>
-                    <text x="137" y="52" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">202</text>
-                    <text x="137" y="64" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="110" cy="26" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="110" y1="15" x2="110" y2="21.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* REGISTRAR'S OFFICE */}
+                    <rect x="271" y="15" width="74" height="87" fill="rgba(255,255,255,0.015)"/>
+                    <text x="308" y="53" textAnchor="middle" fill="rgba(180,210,255,0.65)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">REGISTRAR</text>
+                    <text x="308" y="63" textAnchor="middle" fill="rgba(180,210,255,0.65)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">OFFICE</text>
+                    <circle cx="284" cy="25" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="284" y1="15" x2="284" y2="21.5" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
-                    {/* Room 203 */}
-                    <rect x="179" y="15" width="76" height="83" fill="rgba(59,100,180,0.05)"/>
-                    <text x="217" y="52" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">203</text>
-                    <text x="217" y="64" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="190" cy="26" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="190" y1="15" x2="190" y2="21.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* ════ BOTTOM ROOMS ════ */}
 
-                    {/* Room 204 (library) */}
-                    <rect x="259" y="15" width="66" height="83" fill="rgba(59,100,180,0.05)"/>
-                    <text x="292" y="52" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">204</text>
-                    <text x="292" y="64" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">LIBRARY</text>
-                    <circle cx="270" cy="26" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="270" y1="15" x2="270" y2="21.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* CLASSROOM 1 (211) */}
+                    <rect x="15" y="128" width="87" height="111" fill="rgba(255,255,255,0.015)"/>
+                    <text x="58" y="181" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="7" fontWeight="700" fontFamily="sans-serif">CLASS</text>
+                    <text x="58" y="191" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="7" fontWeight="700" fontFamily="sans-serif">ROOM 1</text>
+                    <circle cx="27" cy="140" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="27" y1="128" x2="27" y2="136" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
-                    {/* ── BOTTOM ROOMS CONTENT ── */}
-                    {/* Room 211 */}
-                    <rect x="15" y="134" width="80" height="91" fill="rgba(59,100,180,0.05)"/>
-                    <text x="55" y="183" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">211</text>
-                    <text x="55" y="196" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="26" cy="145" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="26" y1="134" x2="26" y2="140.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* CLASSROOM 2 (212) */}
+                    <rect x="109" y="128" width="83" height="111" fill="rgba(255,255,255,0.015)"/>
+                    <text x="150" y="181" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="7" fontWeight="700" fontFamily="sans-serif">CLASS</text>
+                    <text x="150" y="191" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="7" fontWeight="700" fontFamily="sans-serif">ROOM 2</text>
+                    <circle cx="121" cy="140" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="121" y1="128" x2="121" y2="136" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
-                    {/* Room 212 */}
-                    <rect x="99" y="134" width="76" height="91" fill="rgba(59,100,180,0.05)"/>
-                    <text x="137" y="183" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">212</text>
-                    <text x="137" y="196" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="110" cy="145" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="110" y1="134" x2="110" y2="140.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
-
-                    {/* Room 213 */}
-                    <rect x="179" y="134" width="76" height="91" fill="rgba(59,100,180,0.05)"/>
-                    <text x="217" y="183" textAnchor="middle" fill="rgba(140,180,240,0.7)" fontSize="13" fontWeight="bold" fontFamily="monospace">213</text>
-                    <text x="217" y="196" textAnchor="middle" fill="rgba(140,180,240,0.3)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
-                    <circle cx="190" cy="145" r="4.5" fill="rgba(59,158,255,0.12)" stroke="rgba(59,158,255,0.65)" strokeWidth="1.2"/>
-                    <line x1="190" y1="134" x2="190" y2="140.5" stroke="rgba(59,158,255,0.5)" strokeWidth="0.8"/>
+                    {/* TEACHER'S FACULTY ROOM (213) */}
+                    <rect x="199" y="128" width="73" height="111" fill="rgba(255,255,255,0.015)"/>
+                    <text x="235" y="174" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">TEACHER</text>
+                    <text x="235" y="184" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">FACULTY</text>
+                    <text x="235" y="194" textAnchor="middle" fill="rgba(180,210,255,0.62)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">ROOM</text>
+                    <circle cx="211" cy="140" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="1"/>
+                    <line x1="211" y1="128" x2="211" y2="136" stroke="rgba(59,158,255,0.4)" strokeWidth="0.8"/>
 
                     {/* ── ROOM 214 — ALERT ── */}
-                    <rect x="259" y="134" width="66" height="91" fill="rgba(255,30,30,0.12)"/>
-                    {/* Flashing fill */}
-                    <rect x="259" y="134" width="66" height="91" fill="rgba(255,50,50,0.08)">
-                      <animate attributeName="fill-opacity" values="0.08;0.2;0.08" dur="1.2s" repeatCount="indefinite"/>
+                    <rect x="279" y="128" width="66" height="111" fill="rgba(255,20,20,0.08)"/>
+                    {/* Pulsing alert fill */}
+                    <rect x="279" y="128" width="66" height="111" fill="rgba(255,50,50,0.07)">
+                      <animate attributeName="fill-opacity" values="0.07;0.22;0.07" dur="1.2s" repeatCount="indefinite"/>
                     </rect>
-                    {/* Alert room camera — red */}
-                    <circle cx="270" cy="145" r="4.5" fill="rgba(255,60,60,0.2)" stroke="rgba(255,100,100,0.8)" strokeWidth="1.2"/>
-                    <line x1="270" y1="134" x2="270" y2="140.5" stroke="rgba(255,80,80,0.6)" strokeWidth="0.8"/>
+                    {/* Alert wall highlight on left divider */}
+                    <rect x="272" y="128" width="7" height="111" fill="url(#alert-wall-fill)"/>
                     {/* Room label */}
-                    <text x="292" y="168" textAnchor="middle" fill="#FF8C9E" fontSize="15" fontWeight="bold" fontFamily="monospace">214</text>
-                    <text x="292" y="181" textAnchor="middle" fill="rgba(255,140,158,0.5)" fontSize="6" fontFamily="monospace">CLASSROOM</text>
+                    <text x="312" y="168" textAnchor="middle" fill="rgba(255,140,158,0.75)" fontSize="7" fontWeight="700" fontFamily="sans-serif">CLASSROOM</text>
+                    <text x="312" y="180" textAnchor="middle" fill="#FF6688" fontSize="13" fontWeight="900" fontFamily="monospace">214</text>
+                    {/* Alert camera (red) */}
+                    <circle cx="292" cy="140" r="3.5" fill="rgba(255,60,60,0.2)" stroke="rgba(255,100,100,0.85)" strokeWidth="1"/>
+                    <line x1="292" y1="128" x2="292" y2="136" stroke="rgba(255,80,80,0.6)" strokeWidth="0.8"/>
                     {/* Panic button */}
-                    <circle cx="308" cy="155" r="7" fill="rgba(255,30,30,0.3)" stroke="#FF4444" strokeWidth="1.8"/>
-                    <circle cx="308" cy="155" r="4" fill="#FF4444"/>
-                    <circle cx="308" cy="155" r="7" fill="none" stroke="rgba(255,60,60,0.6)" strokeWidth="2">
-                      <animate attributeName="r" values="7;14;7" dur="1.3s" repeatCount="indefinite"/>
-                      <animate attributeName="opacity" values="0.7;0;0.7" dur="1.3s" repeatCount="indefinite"/>
+                    <circle cx="325" cy="152" r="7" fill="rgba(255,30,30,0.28)" stroke="#FF4444" strokeWidth="1.6"/>
+                    <circle cx="325" cy="152" r="3.8" fill="#FF4444"/>
+                    <circle cx="325" cy="152" r="7" fill="none" stroke="rgba(255,60,60,0.5)" strokeWidth="1.5">
+                      <animate attributeName="r" values="7;15;7" dur="1.3s" repeatCount="indefinite"/>
+                      <animate attributeName="opacity" values="0.6;0;0.6" dur="1.3s" repeatCount="indefinite"/>
                     </circle>
-                    <text x="308" y="169" textAnchor="middle" fill="rgba(255,140,158,0.9)" fontSize="5" fontWeight="bold" fontFamily="monospace">PANIC</text>
-                    {/* Alert label */}
-                    <rect x="263" y="190" width="58" height="13" rx="2" fill="rgba(255,40,40,0.2)" stroke="rgba(255,80,80,0.5)" strokeWidth="0.8"/>
-                    <text x="292" y="200" textAnchor="middle" fill="#FF8C9E" fontSize="6" fontWeight="bold" fontFamily="monospace">⚠ ALERT ACTIVE</text>
+                    <text x="325" y="165" textAnchor="middle" fill="rgba(255,140,158,0.85)" fontSize="4.5" fontWeight="bold" fontFamily="monospace">PANIC</text>
+                    {/* Alert badge */}
+                    <rect x="281" y="198" width="62" height="13" rx="2" fill="rgba(255,40,40,0.18)" stroke="rgba(255,80,80,0.5)" strokeWidth="0.7"/>
+                    <text x="312" y="207.5" textAnchor="middle" fill="#FF8C9E" fontSize="5.5" fontWeight="bold" fontFamily="monospace">⚠ ALERT ACTIVE</text>
+
+                    {/* ── ENTRANCE indicator at bottom center ── */}
+                    {/* Door opening in bottom wall at center */}
+                    <rect x="155" y="239" width="50" height="7" fill="#030f20"/>
+                    <line x1="155" y1="239" x2="155" y2="246" stroke="rgba(190,215,255,0.7)" strokeWidth="1.2"/>
+                    <line x1="205" y1="239" x2="205" y2="246" stroke="rgba(190,215,255,0.7)" strokeWidth="1.2"/>
+                    <text x="180" y="252" textAnchor="middle" fill="rgba(180,210,255,0.35)" fontSize="5.5" fontFamily="monospace" letterSpacing="2">ENTRANCE</text>
                   </svg>
                 </div>
 
