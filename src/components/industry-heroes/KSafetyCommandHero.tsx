@@ -36,70 +36,232 @@ export default function KSafetyCommandHero() {
   return (
     <HeroPanel label="LIVE — K-SAFETY COMMAND">
       <style>{`
-        @keyframes ksc-pulse { 0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)} 50%{opacity:0.5;transform:translate(-50%,-50%) scale(1.5)} }
-        @keyframes ksc-ping  { 0%{transform:translate(-50%,-50%) scale(1);opacity:0.7} 100%{transform:translate(-50%,-50%) scale(2.8);opacity:0} }
+        @keyframes ksc-pulse { 0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)} 50%{opacity:0.6;transform:translate(-50%,-50%) scale(1.6)} }
+        @keyframes ksc-ping  { 0%{transform:translate(-50%,-50%) scale(1);opacity:0.8} 100%{transform:translate(-50%,-50%) scale(3.2);opacity:0} }
+        @keyframes ksc-scan  { 0%{transform:translateY(-100%)} 100%{transform:translateY(500%)} }
         .ksc-dot-active { animation: ksc-pulse 1.2s ease-in-out infinite; }
         .ksc-dot-ping   { animation: ksc-ping  1.5s ease-out infinite; }
+        .ksc-scan-line  { animation: ksc-scan  3s linear infinite; }
       `}</style>
 
       {/* Map + sidebar */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 88px', gap: 10 }}>
 
-        {/* GIS Map */}
+        {/* Blueprint Map */}
         <div style={{
           aspectRatio: '4/3',
-          background: 'linear-gradient(145deg, #050e1f 0%, #071527 100%)',
-          borderRadius: 8, border: '1px solid rgba(6,182,212,0.15)',
+          background: 'linear-gradient(160deg, #071630 0%, #0a1e3c 60%, #071630 100%)',
+          borderRadius: 8,
+          border: '1px solid rgba(147,197,253,0.25)',
           position: 'relative', overflow: 'hidden',
         }}>
-          {/* Street grid */}
-          <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} viewBox="0 0 100 75" preserveAspectRatio="none">
-            <g stroke="rgba(59,130,246,0.18)" strokeWidth="2.5">
-              <line x1="0" y1="25" x2="100" y2="25" />
-              <line x1="0" y1="50" x2="100" y2="50" />
-              <line x1="33" y1="0" x2="33" y2="75" />
-              <line x1="66" y1="0" x2="66" y2="75" />
+
+          {/* Blueprint SVG — grid, roads, buildings, annotations */}
+          <svg
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+            viewBox="0 0 120 90"
+            preserveAspectRatio="none"
+          >
+            {/* Fine background grid */}
+            <defs>
+              <pattern id="bp-fine" width="5" height="5" patternUnits="userSpaceOnUse">
+                <path d="M5,0 L0,0 0,5" fill="none" stroke="rgba(147,197,253,0.06)" strokeWidth="0.3"/>
+              </pattern>
+              <pattern id="bp-major" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20,0 L0,0 0,20" fill="none" stroke="rgba(147,197,253,0.14)" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="120" height="90" fill="url(#bp-fine)" />
+            <rect width="120" height="90" fill="url(#bp-major)" />
+
+            {/* Major roads — thick white lines */}
+            <g stroke="rgba(191,219,254,0.55)" strokeWidth="1.8" strokeLinecap="round">
+              {/* Horizontal roads */}
+              <line x1="0" y1="22" x2="120" y2="22" />
+              <line x1="0" y1="45" x2="120" y2="45" />
+              <line x1="0" y1="68" x2="120" y2="68" />
+              {/* Vertical roads */}
+              <line x1="30" y1="0" x2="30" y2="90" />
+              <line x1="60" y1="0" x2="60" y2="90" />
+              <line x1="90" y1="0" x2="90" y2="90" />
             </g>
-            <g stroke="rgba(59,130,246,0.07)" strokeWidth="1">
-              <line x1="0" y1="12" x2="100" y2="12" />
-              <line x1="0" y1="37" x2="100" y2="37" />
-              <line x1="0" y1="62" x2="100" y2="62" />
-              <line x1="17" y1="0" x2="17" y2="75" />
-              <line x1="50" y1="0" x2="50" y2="75" />
-              <line x1="83" y1="0" x2="83" y2="75" />
+
+            {/* Secondary roads — thinner */}
+            <g stroke="rgba(147,197,253,0.28)" strokeWidth="0.8">
+              <line x1="0" y1="11" x2="120" y2="11" />
+              <line x1="0" y1="33" x2="120" y2="33" />
+              <line x1="0" y1="56" x2="120" y2="56" />
+              <line x1="0" y1="79" x2="120" y2="79" />
+              <line x1="15" y1="0" x2="15" y2="90" />
+              <line x1="45" y1="0" x2="45" y2="90" />
+              <line x1="75" y1="0" x2="75" y2="90" />
+              <line x1="105" y1="0" x2="105" y2="90" />
             </g>
+
+            {/* Building footprints — blueprint outlines */}
+            <g fill="rgba(147,197,253,0.06)" stroke="rgba(147,197,253,0.3)" strokeWidth="0.5">
+              <rect x="3"   y="3"   width="10" height="6"  rx="0.5"/>
+              <rect x="3"   y="14"  width="9"  height="5"  rx="0.5"/>
+              <rect x="17"  y="3"   width="11" height="7"  rx="0.5"/>
+              <rect x="17"  y="14"  width="7"  height="5"  rx="0.5"/>
+              <rect x="32"  y="3"   width="12" height="8"  rx="0.5"/>
+              <rect x="32"  y="14"  width="8"  height="5"  rx="0.5"/>
+              <rect x="47"  y="3"   width="11" height="6"  rx="0.5"/>
+              <rect x="47"  y="14"  width="10" height="5"  rx="0.5"/>
+              <rect x="62"  y="3"   width="10" height="7"  rx="0.5"/>
+              <rect x="62"  y="14"  width="8"  height="5"  rx="0.5"/>
+              <rect x="77"  y="3"   width="11" height="7"  rx="0.5"/>
+              <rect x="77"  y="14"  width="9"  height="5"  rx="0.5"/>
+              <rect x="93"  y="3"   width="12" height="8"  rx="0.5"/>
+              <rect x="93"  y="14"  width="7"  height="5"  rx="0.5"/>
+              <rect x="108" y="3"   width="9"  height="7"  rx="0.5"/>
+
+              <rect x="3"   y="25"  width="10" height="6"  rx="0.5"/>
+              <rect x="3"   y="35"  width="9"  height="7"  rx="0.5"/>
+              <rect x="17"  y="25"  width="11" height="5"  rx="0.5"/>
+              <rect x="17"  y="35"  width="8"  height="7"  rx="0.5"/>
+              <rect x="32"  y="25"  width="10" height="6"  rx="0.5"/>
+              <rect x="32"  y="35"  width="11" height="7"  rx="0.5"/>
+              <rect x="47"  y="25"  width="11" height="6"  rx="0.5"/>
+              <rect x="47"  y="35"  width="9"  height="8"  rx="0.5"/>
+              <rect x="62"  y="25"  width="10" height="5"  rx="0.5"/>
+              <rect x="62"  y="35"  width="11" height="7"  rx="0.5"/>
+              <rect x="77"  y="25"  width="11" height="6"  rx="0.5"/>
+              <rect x="77"  y="35"  width="8"  height="7"  rx="0.5"/>
+              <rect x="93"  y="25"  width="10" height="5"  rx="0.5"/>
+              <rect x="93"  y="35"  width="12" height="7"  rx="0.5"/>
+              <rect x="108" y="25"  width="9"  height="6"  rx="0.5"/>
+              <rect x="108" y="35"  width="8"  height="7"  rx="0.5"/>
+
+              <rect x="3"   y="48"  width="10" height="6"  rx="0.5"/>
+              <rect x="3"   y="59"  width="9"  height="6"  rx="0.5"/>
+              <rect x="17"  y="48"  width="11" height="7"  rx="0.5"/>
+              <rect x="17"  y="59"  width="8"  height="5"  rx="0.5"/>
+              <rect x="32"  y="48"  width="10" height="6"  rx="0.5"/>
+              <rect x="32"  y="59"  width="11" height="7"  rx="0.5"/>
+              <rect x="47"  y="48"  width="11" height="5"  rx="0.5"/>
+              <rect x="47"  y="59"  width="9"  height="6"  rx="0.5"/>
+              <rect x="62"  y="48"  width="10" height="6"  rx="0.5"/>
+              <rect x="62"  y="59"  width="11" height="7"  rx="0.5"/>
+              <rect x="77"  y="48"  width="11" height="5"  rx="0.5"/>
+              <rect x="77"  y="59"  width="8"  height="6"  rx="0.5"/>
+              <rect x="93"  y="48"  width="12" height="6"  rx="0.5"/>
+              <rect x="93"  y="59"  width="9"  height="5"  rx="0.5"/>
+              <rect x="108" y="48"  width="9"  height="6"  rx="0.5"/>
+              <rect x="108" y="59"  width="8"  height="7"  rx="0.5"/>
+
+              <rect x="3"   y="71"  width="10" height="7"  rx="0.5"/>
+              <rect x="3"   y="81"  width="9"  height="6"  rx="0.5"/>
+              <rect x="17"  y="71"  width="11" height="5"  rx="0.5"/>
+              <rect x="17"  y="81"  width="8"  height="6"  rx="0.5"/>
+              <rect x="32"  y="71"  width="10" height="7"  rx="0.5"/>
+              <rect x="32"  y="81"  width="11" height="6"  rx="0.5"/>
+              <rect x="47"  y="71"  width="11" height="6"  rx="0.5"/>
+              <rect x="47"  y="81"  width="9"  height="7"  rx="0.5"/>
+              <rect x="62"  y="71"  width="10" height="7"  rx="0.5"/>
+              <rect x="62"  y="81"  width="8"  height="6"  rx="0.5"/>
+              <rect x="77"  y="71"  width="11" height="5"  rx="0.5"/>
+              <rect x="77"  y="81"  width="9"  height="6"  rx="0.5"/>
+              <rect x="93"  y="71"  width="12" height="7"  rx="0.5"/>
+              <rect x="93"  y="81"  width="7"  height="6"  rx="0.5"/>
+              <rect x="108" y="71"  width="9"  height="7"  rx="0.5"/>
+              <rect x="108" y="81"  width="8"  height="6"  rx="0.5"/>
+            </g>
+
+            {/* Grid coordinate labels — top */}
+            <g fill="rgba(147,197,253,0.4)" fontFamily="monospace" fontSize="3.2" textAnchor="middle">
+              <text x="15" y="2">A</text>
+              <text x="45" y="2">B</text>
+              <text x="75" y="2">C</text>
+              <text x="105" y="2">D</text>
+            </g>
+            {/* Grid coordinate labels — left */}
+            <g fill="rgba(147,197,253,0.4)" fontFamily="monospace" fontSize="3.2" textAnchor="end">
+              <text x="2" y="11.5">1</text>
+              <text x="2" y="34">2</text>
+              <text x="2" y="56.5">3</text>
+              <text x="2" y="79">4</text>
+            </g>
+
+            {/* North arrow — top right */}
+            <g transform="translate(113,6)">
+              <line x1="0" y1="5" x2="0" y2="-5" stroke="rgba(147,197,253,0.7)" strokeWidth="0.7"/>
+              <polygon points="0,-5 -1.5,0 0,-2 1.5,0" fill="rgba(147,197,253,0.7)"/>
+              <text x="0" y="8" textAnchor="middle" fontFamily="monospace" fontSize="3" fill="rgba(147,197,253,0.6)">N</text>
+            </g>
+
+            {/* Scale bar — bottom right */}
+            <g transform="translate(88,85)">
+              <line x1="0" y1="0" x2="20" y2="0" stroke="rgba(147,197,253,0.5)" strokeWidth="0.6"/>
+              <line x1="0" y1="-1.5" x2="0" y2="1.5" stroke="rgba(147,197,253,0.5)" strokeWidth="0.6"/>
+              <line x1="20" y1="-1.5" x2="20" y2="1.5" stroke="rgba(147,197,253,0.5)" strokeWidth="0.6"/>
+              <text x="10" y="-2" textAnchor="middle" fontFamily="monospace" fontSize="2.5" fill="rgba(147,197,253,0.45)">500 m</text>
+            </g>
+
+            {/* Scan line effect */}
+            <rect className="ksc-scan-line" x="0" y="0" width="120" height="3"
+              fill="url(#bp-scan-grad)" opacity="0.12" />
+            <defs>
+              <linearGradient id="bp-scan-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#93c5fd" stopOpacity="0"/>
+                <stop offset="50%" stopColor="#93c5fd" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#93c5fd" stopOpacity="0"/>
+              </linearGradient>
+            </defs>
           </svg>
 
-          {/* Active incident (pulsing + ping ring) */}
+          {/* Active incident — pulsing crosshair */}
           {mapMarkers.incidents.filter(m => m.active).map((m, i) => (
             <div key={i} style={{ position: 'absolute', left: m.x, top: m.y }}>
-              <div className="ksc-dot-ping" style={{ position: 'absolute', width: 10, height: 10, borderRadius: '50%', background: '#ef4444', zIndex: 1 }} />
-              <div className="ksc-dot-active" style={{ position: 'absolute', width: 10, height: 10, borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 8px #ef4444', zIndex: 2 }} />
+              {/* Ping ring */}
+              <div className="ksc-dot-ping" style={{ position: 'absolute', width: 14, height: 14, borderRadius: '50%', border: '1.5px solid #ef4444', zIndex: 1 }} />
+              {/* Core dot */}
+              <div className="ksc-dot-active" style={{ position: 'absolute', width: 6, height: 6, borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 10px #ef4444, 0 0 20px rgba(239,68,68,0.4)', zIndex: 2 }} />
+              {/* Crosshair lines */}
+              <div style={{ position: 'absolute', left: 3, top: -8, width: '1px', height: '6px', background: 'rgba(239,68,68,0.6)', transform: 'translateX(-50%)' }} />
+              <div style={{ position: 'absolute', left: 3, top: 5, width: '1px', height: '6px', background: 'rgba(239,68,68,0.6)', transform: 'translateX(-50%)' }} />
+              <div style={{ position: 'absolute', left: -8, top: 3, width: '6px', height: '1px', background: 'rgba(239,68,68,0.6)', transform: 'translateY(-50%)' }} />
+              <div style={{ position: 'absolute', left: 5, top: 3, width: '6px', height: '1px', background: 'rgba(239,68,68,0.6)', transform: 'translateY(-50%)' }} />
             </div>
           ))}
-          {/* Pending incident */}
+
+          {/* Pending incident — diamond marker */}
           {mapMarkers.incidents.filter(m => !m.active).map((m, i) => (
-            <div key={i} style={{ position: 'absolute', left: m.x, top: m.y, width: 8, height: 8, borderRadius: '50%', background: '#f97316', boxShadow: '0 0 6px #f97316', transform: 'translate(-50%,-50%)' }} />
+            <div key={i} style={{ position: 'absolute', left: m.x, top: m.y, transform: 'translate(-50%,-50%) rotate(45deg)', width: 7, height: 7, border: '1.5px solid #f97316', boxShadow: '0 0 6px rgba(249,115,22,0.5)' }} />
           ))}
-          {/* Units */}
+
+          {/* Units — triangle markers */}
           {mapMarkers.units.map((u, i) => (
-            <div key={i} style={{ position: 'absolute', left: u.x, top: u.y, width: 6, height: 6, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 5px #22c55e', transform: 'translate(-50%,-50%)' }} />
+            <div key={i} style={{ position: 'absolute', left: u.x, top: u.y, transform: 'translate(-50%,-50%)' }}>
+              <svg width="9" height="9" viewBox="0 0 9 9">
+                <polygon points="4.5,1 8,8 1,8" fill="none" stroke="#22c55e" strokeWidth="1.2" style={{ filter: 'drop-shadow(0 0 3px #22c55e)' }} />
+              </svg>
+            </div>
           ))}
-          {/* Cameras */}
+
+          {/* Cameras — square bracket markers */}
           {mapMarkers.cameras.map((c, i) => (
-            <div key={i} style={{ position: 'absolute', left: c.x, top: c.y, width: 5, height: 4, borderRadius: '1px', background: '#06b6d4', boxShadow: '0 0 4px #06b6d4', transform: 'translate(-50%,-50%)' }} />
+            <div key={i} style={{ position: 'absolute', left: c.x, top: c.y, transform: 'translate(-50%,-50%)', width: 7, height: 7, border: '1px solid #06b6d4', boxShadow: '0 0 4px rgba(6,182,212,0.5)' }}>
+              <div style={{ position: 'absolute', inset: '1.5px', background: 'rgba(6,182,212,0.15)' }} />
+            </div>
           ))}
+
+          {/* Blueprint watermark label */}
+          <div style={{ position: 'absolute', top: 5, left: 7, fontFamily: 'monospace', fontSize: 6, color: 'rgba(147,197,253,0.35)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            GRID REF: 19°26′N 99°08′W
+          </div>
 
           {/* Legend */}
           <div style={{ position: 'absolute', bottom: 6, left: 8, display: 'flex', gap: 8 }}>
-            {[['#ef4444','INC'],['#22c55e','UNIT'],['#06b6d4','CAM']].map(([c,l]) => (
+            {([['#ef4444','INC'],['#22c55e','UNIT'],['#06b6d4','CAM']] as [string,string][]).map(([c,l]) => (
               <div key={l} style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
-                <div style={{ width: 5, height: 5, borderRadius: '50%', background: c }} />
-                <span style={{ fontFamily: 'monospace', fontSize: 7, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.08em' }}>{l}</span>
+                <div style={{ width: 5, height: 5, border: `1px solid ${c}`, background: 'transparent' }} />
+                <span style={{ fontFamily: 'monospace', fontSize: 7, color: 'rgba(147,197,253,0.45)', letterSpacing: '0.08em' }}>{l}</span>
               </div>
             ))}
           </div>
-          <div style={{ position: 'absolute', top: 6, right: 8, fontFamily: 'monospace', fontSize: 8, color: '#22c55e', letterSpacing: '0.1em' }}>
+
+          <div style={{ position: 'absolute', top: 5, right: 22, fontFamily: 'monospace', fontSize: 7.5, color: '#22c55e', letterSpacing: '0.1em' }}>
             94 UNITS
           </div>
         </div>

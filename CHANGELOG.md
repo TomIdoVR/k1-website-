@@ -7,6 +7,33 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.54] 2026-04-08 — Design: K-Safety hero map restyled to blueprint aesthetic
+
+**Changed**
+- `KSafetyCommandHero.tsx` — map visualization redesigned from dark tactical to architectural blueprint style
+- Deep navy blueprint background (`#071630 → #0a1e3c`)
+- SVG grid rebuilt: fine `5×5` + major `20×20` pattern, major roads (`1.8px`), secondary roads (`0.8px`)
+- Building footprints added as outlined SVG rectangles across all city blocks
+- Grid coordinate labels (A–D / 1–4) added on top and left edges
+- North arrow and 500 m scale bar added to blueprint corners
+- Animated scan-line overlay for live-data feel
+- Incident markers: pulsing crosshair with ring instead of plain dot
+- Pending incidents: rotated diamond outline
+- Unit markers: hollow triangle (SVG polygon)
+- Camera markers: square bracket with translucent fill
+- Legend icons updated to match new blueprint marker shapes
+- Coordinate watermark added (`GRID REF: 19°26′N 99°08′W`)
+
+## [1.53] 2026-04-08 — SEO: 3 new GEO resource pages (small cities, Colombia, best public safety)
+
+**Added**
+- `/resources/public-safety-software-small-cities/` — bilingual EN+ES guide for municipalities under 100K residents; ACCENT #16a34a; FORTASEG/SUBSEMUN LATAM context; 4 need cards, 6 eval criteria, comparison table, FAQ (GEO-022)
+- `/resources/public-safety-software-colombia/` — bilingual EN+ES guide for Colombian governments; PNC/FONSET/PISCC/CRUM framework; 4 challenge cards, 5-step workflow, comparison table, FAQ (GEO-023)
+- `/resources/best-public-safety-software/` — bilingual EN+ES synthesized comparison; 6 software categories, unified vs specialized editorial, 7-row comparison table, best-by-use-case cards, FAQ (GEO-024)
+- Hub cards added to `/resources/page.tsx` for all 3 new pages (EN + ES sections)
+- `publicSafetySoftwareSmallCities`, `publicSafetySoftwareColombia`, `bestPublicSafetySoftware` keys added to EN + ES metadata
+- 3 new sitemap entries (priority 0.7 each)
+
 ## [1.52] 2026-04-07 — Fix: QA fixes — nav aria-label, remove off-brand industries, mobile hero overflow
 
 **Fixed**
