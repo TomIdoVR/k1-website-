@@ -608,6 +608,60 @@ export default function StageScreen({
                   fontFamily: 'var(--font-space-mono), monospace',
                 }}>ACCESS DENIED</div>
               </div>
+              {/* Face recognition overlay card — top-right corner */}
+              <div style={{
+                position: 'absolute', top: 44, right: 12, zIndex: 20,
+                width: 130,
+                background: 'rgba(8,12,24,0.92)',
+                border: '1.5px solid rgba(255,60,60,0.7)',
+                borderRadius: 5,
+                overflow: 'hidden',
+                boxShadow: '0 0 18px rgba(255,40,40,0.35), 0 4px 16px rgba(0,0,0,0.8)',
+              }}>
+                {/* Face image with corner detection brackets */}
+                <div style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
+                  <img
+                    src="/demo/access-control/face-match.jpg"
+                    alt="face"
+                    style={{
+                      position: 'absolute', inset: 0, width: '100%', height: '100%',
+                      objectFit: 'cover', objectPosition: 'center top',
+                      filter: 'grayscale(30%) contrast(1.1) brightness(0.85)',
+                    }}
+                  />
+                  {/* Corner bracket overlays */}
+                  {[
+                    { top: 6, left: 6, borderTop: '2px solid #FF4444', borderLeft: '2px solid #FF4444' },
+                    { top: 6, right: 6, borderTop: '2px solid #FF4444', borderRight: '2px solid #FF4444' },
+                    { bottom: 6, left: 6, borderBottom: '2px solid #FF4444', borderLeft: '2px solid #FF4444' },
+                    { bottom: 6, right: 6, borderBottom: '2px solid #FF4444', borderRight: '2px solid #FF4444' },
+                  ].map((s, i) => (
+                    <div key={i} style={{ position: 'absolute', width: 10, height: 10, ...s }} />
+                  ))}
+                  {/* Scan line animation */}
+                  <div style={{
+                    position: 'absolute', left: 0, right: 0, height: 1,
+                    background: 'rgba(255,80,80,0.6)',
+                    boxShadow: '0 0 6px rgba(255,60,60,0.8)',
+                    animation: 'faceScan 1.8s linear infinite',
+                  }} />
+                </div>
+                {/* Labels */}
+                <div style={{ padding: '5px 8px 6px' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 900, color: '#FF4444', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em' }}>
+                    ⚠ WATCHLIST MATCH
+                  </div>
+                  <div style={{ fontSize: '7px', color: 'rgba(255,160,160,0.75)', fontFamily: 'var(--font-space-mono), monospace', marginTop: 2, letterSpacing: '0.05em' }}>
+                    J. MORALES · BADGE #4491
+                  </div>
+                  <div style={{ fontSize: '6.5px', color: 'rgba(255,120,120,0.55)', fontFamily: 'var(--font-space-mono), monospace', marginTop: 1 }}>
+                    CONFIDENCE: 98.4%
+                  </div>
+                </div>
+              </div>
+              {/* Keyframe for scan line */}
+              <style>{`@keyframes faceScan { 0%{top:0} 100%{top:100%} }`}</style>
+
               {/* Bottom HUD */}
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 10,
