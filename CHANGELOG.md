@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.60] 2026-04-08 — Fix: SOS event card fully visible — moved coords + explicit z-index
+
+**Fixed**
+- `school.ts` — moved SOS coords northeast, clear of school marker and CAM-15
+- `GeoPanel.tsx` — added `z-index:9999` to .sos-icon and .sos-card; larger card (12px label, wider box, bigger dot)
+- `GeoPanel.tsx` — increased iconSize to 190×68 to match
+
 ## [1.59] 2026-04-08 — Fix: SOS button event card visible on map (offset coords + zIndex)
 
 **Fixed**

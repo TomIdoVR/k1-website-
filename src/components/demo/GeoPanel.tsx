@@ -51,13 +51,13 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
       .cam-thumb-label { font-size:7.5px;font-weight:700;font-family:monospace;letter-spacing:0.06em; }
       .cam-thumb-line { width:1px;height:7px; }
       .cam-thumb-dot { width:8px;height:8px;border-radius:50%;border:2px solid rgba(255,255,255,0.85); }
-      .sos-icon { background:none!important;border:none!important; }
-      .sos-card { display:flex;flex-direction:column;align-items:center; }
-      .sos-card-box { background:rgba(20,4,4,0.92);border:1.5px solid rgba(255,70,70,0.75);border-radius:5px;padding:5px 10px 4px;text-align:center;box-shadow:0 0 16px rgba(255,50,50,0.35),0 3px 12px rgba(0,0,0,0.8); }
-      .sos-card-label { font-size:10px;font-weight:900;font-family:monospace;letter-spacing:0.1em;color:#FF5F5F; }
-      .sos-card-sub { font-size:7.5px;font-weight:700;font-family:monospace;letter-spacing:0.08em;color:rgba(255,140,158,0.7);margin-top:1px; }
-      .sos-card-line { width:1.5px;height:10px;background:rgba(255,70,70,0.55); }
-      .sos-card-dot { width:10px;height:10px;border-radius:50%;background:#FF4444;border:2px solid rgba(255,255,255,0.9);box-shadow:0 0 8px rgba(255,50,50,0.9); }
+      .sos-icon { background:none!important;border:none!important;z-index:9999!important; }
+      .sos-card { display:flex;flex-direction:column;align-items:center;position:relative;z-index:9999; }
+      .sos-card-box { background:rgba(16,2,2,0.96);border:2px solid rgba(255,60,60,0.85);border-radius:5px;padding:7px 14px 5px;text-align:center;box-shadow:0 0 20px rgba(255,40,40,0.5),0 4px 16px rgba(0,0,0,0.9);white-space:nowrap; }
+      .sos-card-label { font-size:12px;font-weight:900;font-family:monospace;letter-spacing:0.1em;color:#FF4444; }
+      .sos-card-sub { font-size:8.5px;font-weight:700;font-family:monospace;letter-spacing:0.08em;color:rgba(255,160,160,0.8);margin-top:2px; }
+      .sos-card-line { width:2px;height:12px;background:rgba(255,60,60,0.65); }
+      .sos-card-dot { width:12px;height:12px;border-radius:50%;background:#FF3333;border:2px solid rgba(255,255,255,0.95);box-shadow:0 0 12px rgba(255,40,40,1); }
     `
     document.head.appendChild(style)
 
@@ -155,8 +155,8 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
         const sosIcon = L.divIcon({
           className: 'sos-icon',
           html: sosHtml,
-          iconSize: [170, 60],
-          iconAnchor: [85, 60],
+          iconSize: [190, 68],
+          iconAnchor: [95, 68],
         })
         L.marker(sosEvent.coords, { icon: sosIcon, zIndexOffset: 2000 }).addTo(map)
       }
