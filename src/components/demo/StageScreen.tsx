@@ -647,15 +647,12 @@ export default function StageScreen({
                   }} />
                 </div>
                 {/* Labels */}
-                <div style={{ padding: '5px 8px 6px' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 900, color: '#FF4444', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em' }}>
+                <div style={{ padding: '4px 8px 5px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 900, color: '#FF4444', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.06em' }}>
                     ⚠ WATCHLIST MATCH
                   </div>
-                  <div style={{ fontSize: '7px', color: 'rgba(255,160,160,0.75)', fontFamily: 'var(--font-space-mono), monospace', marginTop: 2, letterSpacing: '0.05em' }}>
-                    J. MORALES · BADGE #4491
-                  </div>
-                  <div style={{ fontSize: '6.5px', color: 'rgba(255,120,120,0.55)', fontFamily: 'var(--font-space-mono), monospace', marginTop: 1 }}>
-                    CONFIDENCE: 98.4%
+                  <div style={{ fontSize: '7px', color: 'rgba(255,140,140,0.6)', fontFamily: 'var(--font-space-mono), monospace' }}>
+                    98.4%
                   </div>
                 </div>
               </div>
@@ -1362,14 +1359,18 @@ export default function StageScreen({
               border: '1px solid rgba(59,158,255,0.15)',
               boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
             }}>
-              {/* LEFT — map */}
-              <div style={{ flex: 1, position: 'relative' }}>
+              {/* LEFT — street map (full width, or 55% when blueprintPanel active) */}
+              <div style={{ flex: stage.geoPanel.blueprintPanel ? '0 0 55%' : 1, position: 'relative' }}>
                 <GeoPanel
                   caller={stage.geoPanel.caller}
                   aeds={stage.geoPanel.aeds}
                   cameras={stage.geoPanel.cameras}
                   sosEvent={stage.geoPanel.sosEvent}
                 />
+                {/* Map label */}
+                <div style={{ position: 'absolute', top: 8, left: 10, zIndex: 999, display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: '7px', fontWeight: 800, letterSpacing: '0.25em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>STREET MAP</span>
+                </div>
                 {/* Map legend */}
                 <div style={{
                   position: 'absolute', bottom: 10, left: 10, zIndex: 999,
@@ -1389,6 +1390,137 @@ export default function StageScreen({
                   ))}
                 </div>
               </div>
+
+              {/* BLUEPRINT PANEL — school floor plan (shown when blueprintPanel='school') */}
+              {stage.geoPanel.blueprintPanel === 'school' && (
+                <div style={{ flex: '0 0 45%', position: 'relative', borderLeft: '1px solid rgba(59,158,255,0.15)', background: '#030f20', display: 'flex', flexDirection: 'column' }}>
+                  {/* Header */}
+                  <div style={{ padding: '6px 12px', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+                    <span style={{ fontSize: '7px', fontWeight: 800, letterSpacing: '0.25em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>BUILDING BLUEPRINT</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <span className="animate-pulse" style={{ width: 5, height: 5, borderRadius: '50%', background: '#FF4444', display: 'inline-block' }} />
+                      <span style={{ fontSize: '7px', fontWeight: 700, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace' }}>ALERT · ROOM 214</span>
+                    </div>
+                  </div>
+                  {/* SVG — reuse school blueprint */}
+                  <div style={{ flex: 1, padding: '4px 6px 2px', minHeight: 0 }}>
+                    <svg viewBox="0 0 360 254" style={{ width: '100%', height: '100%' }}>
+                      <defs>
+                        <pattern id="bp-grid-2" width="14" height="14" patternUnits="userSpaceOnUse">
+                          <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(80,130,210,0.1)" strokeWidth="0.35"/>
+                        </pattern>
+                        <pattern id="wall-fill-2" width="5" height="5" patternUnits="userSpaceOnUse">
+                          <rect width="5" height="5" fill="rgba(190,215,255,0.82)"/>
+                          <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(80,120,200,0.45)" strokeWidth="0.9"/>
+                        </pattern>
+                        <pattern id="alert-wall-fill-2" width="5" height="5" patternUnits="userSpaceOnUse">
+                          <rect width="5" height="5" fill="rgba(220,160,165,0.85)"/>
+                          <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(200,60,60,0.5)" strokeWidth="0.9"/>
+                        </pattern>
+                      </defs>
+                      <rect x="0" y="0" width="360" height="254" fill="#030f20"/>
+                      <rect x="0" y="0" width="360" height="254" fill="url(#bp-grid-2)"/>
+                      {/* Outer walls */}
+                      <rect x="8" y="8"   width="344" height="7" fill="url(#wall-fill-2)"/>
+                      <rect x="8" y="239" width="344" height="7" fill="url(#wall-fill-2)"/>
+                      <rect x="8" y="8"   width="7"   height="238" fill="url(#wall-fill-2)"/>
+                      <rect x="345" y="8" width="7"   height="238" fill="url(#wall-fill-2)"/>
+                      {/* Vertical inner walls top */}
+                      <rect x="192" y="15" width="7" height="87" fill="url(#wall-fill-2)"/>
+                      <rect x="264" y="15" width="7" height="87" fill="url(#wall-fill-2)"/>
+                      {/* Vertical inner walls bottom */}
+                      <rect x="102" y="128" width="7" height="111" fill="url(#wall-fill-2)"/>
+                      <rect x="192" y="128" width="7" height="111" fill="url(#wall-fill-2)"/>
+                      <rect x="272" y="128" width="7" height="111" fill="url(#wall-fill-2)"/>
+                      {/* Top hallway wall segments + door swings */}
+                      <rect x="15"  y="102" width="61" height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="76" y1="102" x2="76" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M76,102 A16,16 0 0,1 92,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="92"  y="102" width="100" height="6" fill="url(#wall-fill-2)"/>
+                      <rect x="199" y="102" width="11"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="210" y1="102" x2="210" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M210,102 A16,16 0 0,1 226,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="226" y="102" width="38"  height="6" fill="url(#wall-fill-2)"/>
+                      <rect x="271" y="102" width="15"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="286" y1="102" x2="286" y2="108" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M286,102 A16,16 0 0,1 302,108" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="302" y="102" width="43"  height="6" fill="url(#wall-fill-2)"/>
+                      {/* Bottom hallway wall + door swings */}
+                      <rect x="15"  y="122" width="27"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="42" y1="128" x2="42" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M42,128 A16,16 0 0,0 58,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="58"  y="122" width="44"  height="6" fill="url(#wall-fill-2)"/>
+                      <rect x="109" y="122" width="19"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="128" y1="128" x2="128" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M128,128 A16,16 0 0,0 144,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="144" y="122" width="48"  height="6" fill="url(#wall-fill-2)"/>
+                      <rect x="199" y="122" width="11"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="210" y1="128" x2="210" y2="122" stroke="rgba(190,215,255,0.6)" strokeWidth="0.9"/>
+                      <path d="M210,128 A16,16 0 0,0 226,122" fill="none" stroke="rgba(190,215,255,0.45)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="226" y="122" width="46"  height="6" fill="url(#wall-fill-2)"/>
+                      <rect x="279" y="122" width="17"  height="6" fill="url(#wall-fill-2)"/>
+                      <line x1="296" y1="128" x2="296" y2="122" stroke="rgba(255,100,100,0.7)" strokeWidth="0.9"/>
+                      <path d="M296,128 A16,16 0 0,0 312,122" fill="none" stroke="rgba(255,100,100,0.4)" strokeWidth="0.8" strokeDasharray="2.5,1.5"/>
+                      <rect x="312" y="122" width="33"  height="6" fill="url(#wall-fill-2)"/>
+                      {/* Stairwells */}
+                      <rect x="15" y="108" width="32" height="14" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.35)" strokeWidth="0.8"/>
+                      {[0,1,2,3].map(i => <line key={i} x1="15" y1={109.5+i*3} x2="47" y2={109.5+i*3} stroke="rgba(180,210,255,0.22)" strokeWidth="0.6"/>)}
+                      <line x1="15" y1="122" x2="47" y2="108" stroke="rgba(180,210,255,0.18)" strokeWidth="0.7"/>
+                      <rect x="313" y="108" width="32" height="14" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.35)" strokeWidth="0.8"/>
+                      {[0,1,2,3].map(i => <line key={i} x1="313" y1={109.5+i*3} x2="345" y2={109.5+i*3} stroke="rgba(180,210,255,0.22)" strokeWidth="0.6"/>)}
+                      <line x1="313" y1="122" x2="345" y2="108" stroke="rgba(180,210,255,0.18)" strokeWidth="0.7"/>
+                      {/* Corridor */}
+                      <text x="183" y="118" textAnchor="middle" fill="rgba(160,200,255,0.2)" fontSize="6" letterSpacing="5" fontFamily="monospace" fontWeight="600">C O R R I D O R</text>
+                      {/* Camera dots in corridor */}
+                      <circle cx="100" cy="114" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      <circle cx="248" cy="114" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.8"/>
+                      {/* Top rooms */}
+                      <rect x="15"  y="15" width="177" height="87" fill="rgba(255,255,255,0.015)"/>
+                      <text x="103" y="56" textAnchor="middle" fill="rgba(180,210,255,0.65)" fontSize="8.5" fontWeight="700" fontFamily="sans-serif">ASSEMBLY HALL</text>
+                      <circle cx="28" cy="24" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.9"/>
+                      <circle cx="180" cy="24" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.9"/>
+                      <rect x="199" y="15" width="65" height="87" fill="rgba(255,255,255,0.015)"/>
+                      <text x="231" y="53" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="6" fontWeight="700" fontFamily="sans-serif">PRINCIPAL</text>
+                      <text x="231" y="62" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="6" fontWeight="700" fontFamily="sans-serif">OFFICE</text>
+                      <rect x="271" y="15" width="74" height="87" fill="rgba(255,255,255,0.015)"/>
+                      <text x="308" y="53" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="6" fontWeight="700" fontFamily="sans-serif">REGISTRAR</text>
+                      <text x="308" y="62" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="6" fontWeight="700" fontFamily="sans-serif">OFFICE</text>
+                      {/* Bottom rooms */}
+                      <rect x="15"  y="128" width="87"  height="111" fill="rgba(255,255,255,0.013)"/>
+                      <text x="58"  y="182" textAnchor="middle" fill="rgba(180,210,255,0.58)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">CLASS 1</text>
+                      <rect x="109" y="128" width="83"  height="111" fill="rgba(255,255,255,0.013)"/>
+                      <text x="150" y="182" textAnchor="middle" fill="rgba(180,210,255,0.58)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">CLASS 2</text>
+                      <rect x="199" y="128" width="73"  height="111" fill="rgba(255,255,255,0.013)"/>
+                      <text x="235" y="175" textAnchor="middle" fill="rgba(180,210,255,0.58)" fontSize="6" fontWeight="700" fontFamily="sans-serif">FACULTY</text>
+                      <text x="235" y="184" textAnchor="middle" fill="rgba(180,210,255,0.58)" fontSize="6" fontWeight="700" fontFamily="sans-serif">ROOM</text>
+                      {/* Room 214 ALERT */}
+                      <rect x="279" y="128" width="66" height="111" fill="rgba(255,20,20,0.08)"/>
+                      <rect x="279" y="128" width="66" height="111" fill="rgba(255,50,50,0.07)">
+                        <animate attributeName="fill-opacity" values="0.07;0.22;0.07" dur="1.2s" repeatCount="indefinite"/>
+                      </rect>
+                      <rect x="272" y="128" width="7" height="111" fill="url(#alert-wall-fill-2)"/>
+                      <text x="312" y="172" textAnchor="middle" fill="rgba(255,140,158,0.7)" fontSize="6.5" fontWeight="700" fontFamily="sans-serif">ROOM</text>
+                      <text x="312" y="183" textAnchor="middle" fill="#FF6688" fontSize="12" fontWeight="900" fontFamily="monospace">214</text>
+                      <circle cx="292" cy="140" r="3" fill="rgba(255,60,60,0.2)" stroke="rgba(255,100,100,0.85)" strokeWidth="0.9"/>
+                      {/* Panic button pulse */}
+                      <circle cx="325" cy="152" r="6" fill="rgba(255,30,30,0.28)" stroke="#FF4444" strokeWidth="1.4"/>
+                      <circle cx="325" cy="152" r="3.5" fill="#FF4444"/>
+                      <circle cx="325" cy="152" r="6" fill="none" stroke="rgba(255,60,60,0.5)" strokeWidth="1.2">
+                        <animate attributeName="r" values="6;13;6" dur="1.3s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.6;0;0.6" dur="1.3s" repeatCount="indefinite"/>
+                      </circle>
+                      {/* Alert badge */}
+                      <rect x="283" y="200" width="58" height="12" rx="2" fill="rgba(255,40,40,0.18)" stroke="rgba(255,80,80,0.5)" strokeWidth="0.7"/>
+                      <text x="312" y="209" textAnchor="middle" fill="#FF8C9E" fontSize="5" fontWeight="900" fontFamily="monospace">⚠ ALERT ACTIVE</text>
+                      {/* Entrance */}
+                      <rect x="155" y="239" width="50" height="7" fill="#030f20"/>
+                      <line x1="155" y1="239" x2="155" y2="246" stroke="rgba(190,215,255,0.7)" strokeWidth="1.2"/>
+                      <line x1="205" y1="239" x2="205" y2="246" stroke="rgba(190,215,255,0.7)" strokeWidth="1.2"/>
+                      <text x="180" y="252" textAnchor="middle" fill="rgba(180,210,255,0.3)" fontSize="5" fontFamily="monospace" letterSpacing="2">ENTRANCE</text>
+                    </svg>
+                  </div>
+                </div>
+              )}
 
               {/* RIGHT — analysis sidebar */}
               <div style={{

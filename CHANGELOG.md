@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.64] 2026-04-08 — Feat: split map + blueprint on School understand stage + face card cleanup
+
+**Changed**
+- `types.ts` — added `blueprintPanel?: 'school' | 'office'` to geoPanel type
+- `school.ts` — set `blueprintPanel: 'school'` on understand stage geoPanel
+- `StageScreen.tsx` — geoPanel now splits into 55% street map + 45% building blueprint when `blueprintPanel` is set; school blueprint shows full floor plan with animated Room 214 alert; "STREET MAP" label on map pane
+- `StageScreen.tsx` — face recognition card simplified: removed verbose sub-labels, kept "⚠ WATCHLIST MATCH" + "98.4%" only
+
 ## [1.63] 2026-04-08 — Feat: Scenario 05 — face recognition card on detect + protocol on understand
 
 **Added**

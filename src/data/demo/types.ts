@@ -58,6 +58,8 @@ export interface Stage {
     analysisRows: Array<{ key: string; value: string; color?: string }>
     // Optional SOS / panic event card shown at the incident coords
     sosEvent?: { coords: [number, number]; label: string; sublabel?: string }
+    // When set, shows a building blueprint panel to the right of the street map
+    blueprintPanel?: 'school' | 'office'
   }
   pipImage?: string
   pipLabel?: string
