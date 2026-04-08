@@ -231,17 +231,17 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Panic-alert admin panel (school / panic button scenarios) ── */}
+        {/* ── Panic-alert panel: CCTV image left + floor plan right ── */}
         {isFirst && stage.detectCard?.type === 'panic-alert' && (
           <div style={{
             position: 'absolute', inset: 0,
             display: 'flex', flexDirection: 'column',
             padding: '20px 32px 16px',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
-            background: 'rgba(8,14,24,0.97)',
+            background: 'rgba(6,10,20,0.97)',
           }}>
-            {/* Title */}
-            <div style={{ marginBottom: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            {/* Title row */}
+            <div style={{ marginBottom: 12, display: 'flex', alignItems: 'baseline', gap: 20 }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                   <span style={{ fontSize: '10px', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#FF8C9E' }}>
@@ -257,7 +257,7 @@ export default function StageScreen({
                   {stage.headline}
                 </h2>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span className="animate-pulse" style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: '#FF5F5F' }} />
                 <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#FF8C9E' }}>LOCKDOWN ACTIVE</span>
               </div>
@@ -268,44 +268,87 @@ export default function StageScreen({
               flex: 1, minHeight: 0, display: 'flex', gap: 0,
               borderRadius: 10, overflow: 'hidden',
               border: '1px solid rgba(255,95,95,0.2)',
-              boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
+              boxShadow: '0 8px 40px rgba(0,0,0,0.7)',
             }}>
-              {/* LEFT — alert fields + timeline */}
-              <div style={{ width: '42%', background: 'rgba(6,10,20,0.98)', borderRight: '1px solid rgba(255,95,95,0.1)', display: 'flex', flexDirection: 'column' }}>
-                {/* Fields */}
-                <div style={{ padding: '12px 16px 10px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(255,140,158,0.5)' }}>ALERT DETAILS</span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                  {stage.detectCard.fields.map((f) => (
-                    <div key={f.key} style={{
-                      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                      padding: '8px 16px', borderBottom: '1px solid rgba(255,255,255,0.04)',
-                      background: f.highlight ? 'rgba(255,95,95,0.04)' : 'transparent',
-                    }}>
-                      <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(193,198,215,0.35)' }}>{f.key}</span>
-                      <span style={{
-                        fontSize: '11px', fontWeight: f.highlight ? 800 : 600,
-                        color: f.highlight ? '#FF8C9E' : '#c8dff0',
-                        fontFamily: 'var(--font-space-mono), monospace',
-                        letterSpacing: f.highlight ? '0.05em' : '0',
-                      }}>{f.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* RIGHT — floor plan + alert timeline */}
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: 'rgba(8,14,24,0.98)' }}>
-                {/* Building floor plan */}
-                <div style={{ flex: 1, padding: '14px 20px 10px', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 10 }}>
-                    BUILDING A — 2ND FLOOR
+              {/* LEFT — CCTV camera feed */}
+              {stage.detectCard.cameraImage && (
+                <div style={{ flex: '0 0 55%', position: 'relative', background: '#000', overflow: 'hidden' }}>
+                  <Image
+                    src={stage.detectCard.cameraImage}
+                    alt="CCTV feed"
+                    fill
+                    style={{ objectFit: 'cover', filter: 'saturate(0.3) brightness(0.85) contrast(1.1)', mixBlendMode: 'luminosity' }}
+                    sizes="55vw"
+                  />
+                  {/* Green tint overlay for CCTV feel */}
+                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,40,20,0.35)', mixBlendMode: 'multiply' }} />
+                  {/* Scanlines */}
+                  <div style={{
+                    position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.12,
+                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.8) 2px, rgba(0,0,0,0.8) 4px)',
+                  }} />
+                  {/* Camera HUD — top bar */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0,
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    padding: '10px 14px',
+                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), transparent)',
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#FF5F5F' }} />
+                      <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.2em', color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace' }}>
+                        {stage.detectCard.cameraLabel ?? 'SECURITY CAM'}
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(193,255,180,0.7)', fontFamily: 'var(--font-space-mono), monospace' }}>
+                      {stage.timestamp}
+                    </span>
                   </div>
-                  {/* Floor plan grid */}
+                  {/* Alert box highlight — bounding box around panic button area */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '35%', right: '18%',
+                    width: '22%', height: '30%',
+                    border: '2px solid rgba(255,60,60,0.8)',
+                    borderRadius: 3,
+                    boxShadow: '0 0 20px rgba(255,60,60,0.4), inset 0 0 20px rgba(255,60,60,0.05)',
+                  }}>
+                    <div style={{
+                      position: 'absolute', top: -20, left: 0,
+                      fontSize: '8px', fontWeight: 800, letterSpacing: '0.15em',
+                      color: '#FF8C9E', background: 'rgba(255,60,60,0.2)',
+                      padding: '2px 8px', borderRadius: '3px 3px 0 0',
+                      fontFamily: 'var(--font-space-mono), monospace',
+                    }}>PANIC BUTTON</div>
+                  </div>
+                  {/* Camera HUD — bottom bar */}
+                  <div style={{
+                    position: 'absolute', bottom: 0, left: 0, right: 0,
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    padding: '10px 14px',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                  }}>
+                    <span style={{ fontSize: '8px', color: 'rgba(193,255,180,0.5)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.1em' }}>
+                      LINCOLN MIDDLE SCHOOL · BLDG A 2F
+                    </span>
+                    <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace' }}>
+                      ● REC
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* RIGHT — floor plan + timeline */}
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: 'rgba(8,14,24,0.98)', borderLeft: '1px solid rgba(255,95,95,0.12)' }}>
+
+                {/* Floor plan */}
+                <div style={{ flex: 1, padding: '14px 18px 10px', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 10 }}>
+                    BUILDING A · 2ND FLOOR
+                  </div>
                   <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    {/* Hallway label */}
-                    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: 4 }}>
                       {['201','202','203','204'].map(r => (
                         <div key={r} style={{
                           flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
@@ -320,7 +363,7 @@ export default function StageScreen({
                       <span style={{ fontSize: '7px', color: 'rgba(193,198,215,0.2)', padding: '0 8px', letterSpacing: '0.2em' }}>CORRIDOR</span>
                       <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
                     </div>
-                    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: 4 }}>
                       {['211','212','213','214'].map(r => (
                         <div key={r} style={{
                           flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
@@ -348,7 +391,7 @@ export default function StageScreen({
                       <span style={{ fontSize: '7px', color: 'rgba(193,198,215,0.2)', padding: '0 8px', letterSpacing: '0.2em' }}>CORRIDOR</span>
                       <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
                     </div>
-                    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: 4 }}>
                       {['221','222','223','224'].map(r => (
                         <div key={r} style={{
                           flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
@@ -358,7 +401,6 @@ export default function StageScreen({
                         }}>{r}</div>
                       ))}
                     </div>
-                    {/* Exit marker */}
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '4px 14px', borderRadius: 4, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)' }}>
                         <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#00C98A' }}>exit_to_app</span>
@@ -369,7 +411,7 @@ export default function StageScreen({
                 </div>
 
                 {/* Alert timeline */}
-                <div style={{ padding: '10px 20px 12px' }}>
+                <div style={{ padding: '10px 18px 12px' }}>
                   <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 8 }}>SYSTEM RESPONSE TIMELINE</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     {stage.detectCard.alertTimeline?.map((item, i) => (

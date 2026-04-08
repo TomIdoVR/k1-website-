@@ -25,6 +25,8 @@ export const schoolScenario: ScenarioConfig = {
       layout: 'default',
       detectCard: {
         type: 'panic-alert',
+        cameraImage: '/demo/school/stage-1-detect.jpg',
+        cameraLabel: 'CAM-07 · BUILDING A · HALLWAY 2F',
         fields: [
           { key: 'SOURCE',            value: 'M. Chen · TEACHER',            highlight: true },
           { key: 'ROOM',              value: '214 · Building A · 2nd Floor' },

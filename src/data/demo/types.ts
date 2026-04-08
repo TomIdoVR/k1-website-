@@ -38,6 +38,8 @@ export interface Stage {
     fields: Array<{ key: string; value: string; highlight?: boolean }>
     transcript?: string[]
     alertTimeline?: Array<{ time: string; event: string; done: boolean }>
+    cameraImage?: string   // CCTV feed image for panic-alert type
+    cameraLabel?: string   // e.g. "CAM-07 · BUILDING A HALLWAY"
   }
   // Optional decide panel (unit assignment + AI scoring + map)
   decideCard?: {

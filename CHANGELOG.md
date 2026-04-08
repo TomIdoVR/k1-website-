@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.50] 2026-04-08 — Feat: School detect stage — CCTV image + floor plan split
+
+**Changed**
+- School Panic Button detect stage redesigned: CCTV camera feed (left 55%) + floor plan (right 45%)
+- CCTV feed shows green-tinted security camera look, scanlines, bounding box over panic button area, REC indicator, camera HUD overlays
+- Generated `public/demo/school/stage-1-detect.jpg` — surveillance-style image of teacher pressing panic button
+
 ## [1.49] 2026-04-08 — Feat: Scenario 04 — School Panic Button + Decide map panel
 
 **Added**
