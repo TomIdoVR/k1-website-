@@ -63,8 +63,8 @@ const SCENARIOS = [
     title: 'ACCESS CONTROL',
     desc: 'Face recognition · watchlist match · gate denial',
     image: '/demo/hub/scenario-05.jpg',
-    href: '#',
-    live: false,
+    href: '/demo/access-control',
+    live: true,
   },
 ]
 

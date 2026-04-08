@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.61] 2026-04-08 — Feat: Scenario 05 — Unauthorized Access Control (v1.61)
+
+**Added**
+- `src/data/demo/access-control.ts` — full 5-stage scenario: badge denied ×3 → forced entry → Server Room B
+  - detect: panic-alert card with CCTV overhead of server corridor, badge mismatch fields, 5-item alert timeline
+  - understand: geoPanel with building coords, SEC-1/SEC-2 units, 4 cameras, SOS forced-entry card
+  - decide: decideCard — SEC-1/SEC-2 + UNIT-9/UNIT-3/K9-2, AI score 97, full dispatch brief
+  - act: splitLayout — server room CCTV, unit roster, map routing
+  - learn: incident closed, intruder detained, badge deactivated
+- `src/app/[locale]/demo/access-control/page.tsx` — new route
+- Generated 2 Imagen 4 images: server corridor CAM-03 (detect), server room interior (act)
+- `src/app/[locale]/demo/page.tsx` — scenario 05 set live, href → /demo/access-control
+
 ## [1.60] 2026-04-08 — Fix: SOS event card fully visible — moved coords + explicit z-index
 
 **Fixed**
