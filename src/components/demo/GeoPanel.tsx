@@ -97,8 +97,8 @@ export default function GeoPanel({ caller, aeds, cameras }: GeoPanelProps) {
           const labelColor  = alert ? '#FF8C9E' : '#adc6ff'
           const lineColor   = alert ? 'rgba(255,95,95,0.45)' : 'rgba(59,158,255,0.45)'
 
-          // Width 116, thumbnail height 73, line 7, dot 8 → total icon height 88
-          const W = 116, TH = 73
+          // Width 144, thumbnail height 91, line 7, dot 8 → total icon height 106
+          const W = 144, TH = 91
           const html = `
             <div class="cam-thumb">
               <div class="cam-thumb-img" style="width:${W}px;height:${TH}px;border:1.5px solid ${borderColor};filter:grayscale(22%) contrast(1.08) brightness(0.86);">

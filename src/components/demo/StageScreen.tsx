@@ -547,7 +547,7 @@ export default function StageScreen({
                 <div style={{ padding: '5px 12px 8px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', gap: 14, flexWrap: 'wrap', flexShrink: 0 }}>
                   {[
                     { color: 'rgba(59,158,255,0.7)', label: 'CAMERA' },
-                    { color: '#FF4444',               label: 'PANIC BTN' },
+                    { color: '#FF4444',               label: 'SOS BUTTON' },
                     { color: 'rgba(0,201,138,0.7)',   label: 'STAIRWELL' },
                   ].map(l => (
                     <div key={l.label} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>

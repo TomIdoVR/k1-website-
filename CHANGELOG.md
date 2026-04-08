@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.57] 2026-04-08 — Fix: larger CCTV thumbnails on map + rename legend label to SOS BUTTON
+
+**Changed**
+- `GeoPanel.tsx` — camera thumbnail size increased from 116×73 to 144×91px
+- `StageScreen.tsx` — floor plan legend label changed from "PANIC BTN" to "SOS BUTTON"
+
 ## [1.56] 2026-04-08 — Feat: Live camera thumbnails on Understand stage map (School scenario)
 
 **Added**
