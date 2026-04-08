@@ -717,6 +717,7 @@ export default async function HomePage({
           margin: -70px -40px 0;
           padding-top: 70px;
           border-radius: 0;
+          overflow-x: hidden;
         }
 
         /* ── Hero ── */
@@ -1488,7 +1489,7 @@ export default async function HomePage({
         }
         @media (max-width: 900px) {
           .hp-headline { font-size: clamp(44px, 7vw, 80px); }
-          .hp-sub { font-size: 16px; }
+          .hp-sub { font-size: 16px; padding: 0 8px; }
           .hp-badges { gap: 16px; flex-wrap: wrap; }
           .hp-badge { border-right: none; padding: 0 16px; }
           .hp-stats-row { flex-wrap: wrap; gap: 24px; }

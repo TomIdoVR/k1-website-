@@ -7,6 +7,28 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.52] 2026-04-07 — Fix: QA fixes — nav aria-label, remove off-brand industries, mobile hero overflow
+
+**Fixed**
+- Nav logo link: added `aria-label="KabatOne Home"` for accessibility
+- Industries dropdown: removed Retail and Logistics (off-brand for B2G public safety audience)
+- Mobile hero: added `overflow-x: hidden` on `.hp-hero-wrap` + `padding: 0 8px` on `.hp-sub` at mobile breakpoint to prevent text clipping on iPhone
+
+## [1.51] 2026-04-08 — GEO: Peru guide + RTCC implementation guide + 911 call center guide (EN + ES)
+
+**Added**
+- `/resources/public-safety-software-peru/` — Peru market guide (EN + ES): serenazgo/PNP structure, CONASEC, FONIPREL, fragmented vs unified comparison table, FAQ (6 Q&A)
+- `/resources/build-rtcc-implementation-guide/` — Practical RTCC implementation guide (EN + ES): 4-phase build plan, 6-step tech stack, staffing model, common mistakes, Basic vs Full RTCC comparison
+- `/resources/911-call-center-software-guide/` — 911 call center software guide (EN + ES): 6 core functions, 911 vs CAD comparison, NG911 section, 6 evaluation criteria, FAQ (6 Q&A)
+- Hub cards added to `/resources/` index (EN + ES) for all 3 pages
+- EN + ES metadata keys: `publicSafetySoftwarePeru`, `buildRtccImplementationGuide`, `callCenterSoftwareGuide`
+- Sitemap entries added (priority 0.7 / 0.7 / 0.6)
+
+**Fixed**
+- `StageScreen.tsx` line 200: `transcript` possibly undefined — added `?? []` guard
+
+---
+
 ## [1.50] 2026-04-08 — Feat: School detect stage — CCTV image + floor plan split
 
 **Changed**
