@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
-import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager'
 
 export const metadata: Metadata = {
   verification: {
@@ -27,9 +25,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning className={`${spaceGrotesk.variable} ${barlowCondensed.variable}`}>
       <body suppressHydrationWarning>
-        <GoogleTagManagerNoScript />
-        <GoogleAnalytics />
-        <GoogleTagManager />
         {children}
       </body>
     </html>

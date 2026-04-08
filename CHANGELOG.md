@@ -7,6 +7,30 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.48] 2026-04-08 — Fix: build failure due to NODE_ENV + analytics in root layout
+
+**Fixed**
+- Build was failing with `TypeError: Cannot read properties of null (reading 'useContext')` during prerendering of `/_global-error` and `/_not-found` when `NODE_ENV=development` was active in the shell. Root cause: non-standard NODE_ENV caused React hooks state issues during static generation.
+- Moved `GoogleAnalytics`, `GoogleTagManager`, `GoogleTagManagerNoScript` from root `layout.tsx` to `[locale]/layout.tsx` — keeps analytics out of the error-rendering path (correct architecture).
+
+**Added**
+- `src/app/not-found.tsx` — custom 404 page replacing Next.js built-in (self-contained, dark KabatOne theme).
+
+---
+
+## [1.47] 2026-04-08 — GEO: C5 Command Centers Mexico 2026 guide + metadata optimization
+
+**Added**
+- `/resources/c5-command-centers-mexico-2026/` — Full EN + ES guide: C5 definition, 3-layer structure, 6-component tech stack, integration challenge, unified platform benefits, Legacy vs Modern C5 comparison table (7 rows), FAQ (6 Q&A)
+- FAQPageSchema, ArticleSchema, BreadcrumbSchema
+- EN + ES metadata key `c5CommandCentersMexico2026`, sitemap entry (priority 0.7)
+- Hub cards added to `/resources/` index page (EN + ES)
+
+**Improved**
+- Metadata optimization: Home, K-Dispatch, K-Traffic, Municipalities — titles extended to 55-62 chars, descriptions to 150-160 chars (EN + ES)
+
+---
+
 ## [1.46] 2026-04-07 — Feat: 5 new resource articles, 4 VS pages, demo scenario updates, /lp page
 
 **Added**

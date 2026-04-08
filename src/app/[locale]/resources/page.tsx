@@ -154,6 +154,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/c5-command-centers-mexico-2026',
+          category: 'Guía México',
+          title: 'Centros C5 en México: Guía de Tecnología 2026',
+          excerpt: 'Qué es un C5, cómo está estructurado, el stack tecnológico completo y cómo las plataformas unificadas mejoran los tiempos de respuesta en municipios y estados de México.',
+          readTime: '11 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-a-public-safety-platform',
           category: 'Guía de Referencia',
           title: '¿Qué Es una Plataforma de Seguridad Pública?',
@@ -321,6 +329,14 @@ export default async function ResourcesPage({
           title: 'What Is Incident Management Software?',
           excerpt: 'Incident management software tracks, coordinates, and resolves emergencies in real time — connecting dispatch, field units, video, and command. How it works and what to look for.',
           readTime: '9 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/c5-command-centers-mexico-2026',
+          category: 'Mexico Guide',
+          title: 'C5 Command Centers in Mexico: 2026 Technology Guide',
+          excerpt: 'What a C5 is, how it is structured, the complete technology stack, and how unified platforms improve response times in Mexican municipalities and states.',
+          readTime: '11 min',
           isNew: true,
         },
         {

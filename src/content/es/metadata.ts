@@ -1,12 +1,12 @@
 export const metadata = {
   home: {
-    title: "Plataforma de Seguridad Pública | KabatOne",
+    title: "Plataforma de Seguridad Pública para Municipios y C5 | KabatOne",
     description: "La plataforma unificada de seguridad pública. Conecta video, despacho, GIS y campo en una sola vista operativa. Más de 40 ciudades confían en KabatOne.",
     canonical: "https://kabatone.com/es/",
   },
   kDispatch: {
-    title: "Software CAD y Despacho de Emergencias | KabatOne",
-    description: "Software CAD que reduce el tiempo de despacho de emergencias. K-Dispatch conecta despachadores y unidades en tiempo real. Solicita una demo.",
+    title: "Software CAD y Despacho de Emergencias para 911 | KabatOne",
+    description: "Software CAD que reduce el despacho de emergencias. K-Dispatch centraliza el 911, recomienda unidades automáticamente y registra cada acción en tiempo real.",
     canonical: "https://kabatone.com/es/k-dispatch/",
   },
   kVideo: {
@@ -20,8 +20,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/k-safety/",
   },
   kTraffic: {
-    title: "Software de Gestión de Tráfico Inteligente | KabatOne",
-    description: "Gestión inteligente del tráfico urbano. K-Traffic optimiza semáforos, detecta incidentes y coordina vehículos de emergencia en tiempo real.",
+    title: "Software de Gestión de Tráfico para Municipios | KabatOne",
+    description: "Optimiza el flujo vehicular, detecta infracciones y responde antes de que colapsen. K-Traffic conecta semáforos, sensores y enforcement en un sistema unificado.",
     canonical: "https://kabatone.com/es/k-traffic/",
   },
   kConnect: {
@@ -36,7 +36,7 @@ export const metadata = {
   },
   municipalities: {
     title: "Software de Gestión de Emergencias para Municipios | KabatOne",
-    description: "Centro de mando unificado para gobiernos municipales. Despacho inteligente, coordinación multiagencia y respuesta 40% más rápida.",
+    description: "Centro de mando unificado para gobiernos municipales. Despacho inteligente, coordinación multiagencia y respuesta 40% más rápida en más de 40 ciudades.",
     canonical: "https://kabatone.com/es/industries/municipalities/",
   },
   airport: {
@@ -313,5 +313,10 @@ export const metadata = {
     title: "KabatOne vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada",
     description: "Verkada ofrece cámaras, control de acceso y alarmas en la nube. KabatOne agrega despacho CAD completo, GIS operacional, gestión de tráfico y coordinación multiagencia — el flujo completo desde detección hasta respuesta.",
     canonical: "https://kabatone.com/es/vs/verkada/",
+  },
+  c5CommandCentersMexico2026: {
+    title: "Centros C5 en México: Guía de Tecnología 2026 | KabatOne",
+    description: "Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.",
+    canonical: "https://kabatone.com/es/resources/c5-command-centers-mexico-2026/",
   },
 } as const

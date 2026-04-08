@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v1.48 -->
+      <div class="tl-entry fix">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-version">v1.48</span><span class="tl-date">2026-04-08</span></div>
+          <div class="tl-title">Fix: build failure — analytics in root layout + NODE_ENV prerender issue</div>
+          <ul class="tl-list">
+            <li>Moved <code>GoogleAnalytics</code>, <code>GoogleTagManager</code>, <code>GoogleTagManagerNoScript</code> from root <code>layout.tsx</code> to <code>[locale]/layout.tsx</code> — keeps analytics out of error-boundary rendering path</li>
+            <li>Added custom <code>not-found.tsx</code> at root level — replaces Next.js built-in 404 that failed prerendering with <code>NODE_ENV=development</code></li>
+            <li>Build now passes cleanly with all resource pages including <code>c5-command-centers-mexico-2026</code> and all new pages</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v1.46 -->
       <div class="tl-entry">
         <div class="tl-dot"></div>
