@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.49] 2026-04-08 — Feat: Scenario 04 — School Panic Button + Decide map panel
+
+**Added**
+- Scenario 04: School Panic Button — full 5-stage scenario (Lincoln Middle School, Houston TX)
+- New `panic-alert` detectCard type with floor plan visualization (rooms 201–224, Room 214 highlighted), alert timeline, and system status
+- `DecideMapPanel` component: Leaflet map for the Decide stage showing incident location + all unit positions with dashed routing lines and color-coded status
+- Redesigned Decide stage layout: map (55%) + unit roster + AI score ring + dispatch brief (45%)
+- `hubPath` prop on `LearnLayout` so "Choose Another Scenario" links back to the locale-correct `/demo` hub
+- `/demo/school` route — live in hub as Scenario 04
+
+**Fixed**
+- "Choose Another Scenario" button now navigates to locale-prefixed `/en/demo` instead of bare `/demo`
+
 ## [1.48] 2026-04-08 — Fix: build failure due to NODE_ENV + analytics in root layout
 
 **Fixed**

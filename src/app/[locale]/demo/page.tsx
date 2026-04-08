@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Scenario Explorer | KabatOne Platform',
@@ -55,8 +55,8 @@ const SCENARIOS = [
     title: 'SCHOOL PANIC BUTTON',
     desc: 'Instant lockdown · camera sweep · responder brief',
     image: '/demo/hub/scenario-04.jpg',
-    href: '#',
-    live: false,
+    href: '/demo/school',
+    live: true,
   },
   {
     num: '05',
@@ -70,7 +70,8 @@ const SCENARIOS = [
 
 /* ── page ── */
 
-export default function DemoHubPage() {
+export default async function DemoHubPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
   return (
     <div
       style={{
@@ -493,8 +494,9 @@ export default function DemoHubPage() {
               </>
             )
 
+            const localizedHref = s.href === '#' ? '#' : `/${locale}${s.href}`
             return s.live ? (
-              <Link key={s.num} href={s.href} className="group" style={cardStyle}>
+              <Link key={s.num} href={localizedHref} className="group" style={cardStyle}>
                 {cardInner}
               </Link>
             ) : (
