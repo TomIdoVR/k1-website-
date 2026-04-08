@@ -339,100 +339,116 @@ export default function StageScreen({
                 </div>
               )}
 
-              {/* RIGHT — floor plan + timeline */}
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: 'rgba(8,14,24,0.98)', borderLeft: '1px solid rgba(255,95,95,0.12)' }}>
+              {/* RIGHT — floor plan + system status */}
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: 'rgba(8,14,24,0.98)', borderLeft: '1px solid rgba(255,95,95,0.15)' }}>
 
-                {/* Floor plan */}
-                <div style={{ flex: 1, padding: '14px 18px 10px', borderBottom: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 10 }}>
-                    BUILDING A · 2ND FLOOR
-                  </div>
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <div style={{ display: 'flex', gap: 4 }}>
-                      {['201','202','203','204'].map(r => (
-                        <div key={r} style={{
-                          flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
-                          background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)',
-                          fontSize: '9px', fontWeight: 700, color: 'rgba(193,198,215,0.4)',
-                          fontFamily: 'var(--font-space-mono), monospace',
-                        }}>{r}</div>
-                      ))}
-                    </div>
-                    <div style={{ height: 14, display: 'flex', alignItems: 'center', padding: '0 8px' }}>
-                      <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
-                      <span style={{ fontSize: '7px', color: 'rgba(193,198,215,0.2)', padding: '0 8px', letterSpacing: '0.2em' }}>CORRIDOR</span>
-                      <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
-                    </div>
-                    <div style={{ display: 'flex', gap: 4 }}>
-                      {['211','212','213','214'].map(r => (
-                        <div key={r} style={{
-                          flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
-                          position: 'relative',
-                          background: r === '214' ? 'rgba(255,60,60,0.18)' : 'rgba(255,255,255,0.04)',
-                          border: r === '214' ? '1.5px solid rgba(255,60,60,0.6)' : '1px solid rgba(255,255,255,0.07)',
-                          boxShadow: r === '214' ? '0 0 16px rgba(255,60,60,0.25)' : 'none',
-                          fontSize: '9px', fontWeight: r === '214' ? 900 : 700,
-                          color: r === '214' ? '#FF8C9E' : 'rgba(193,198,215,0.4)',
-                          fontFamily: 'var(--font-space-mono), monospace',
-                        }}>
-                          {r}
-                          {r === '214' && (
-                            <span className="animate-pulse" style={{
-                              position: 'absolute', top: -4, right: -4,
-                              width: 8, height: 8, borderRadius: '50%',
-                              background: '#FF5F5F', border: '1px solid rgba(255,255,255,0.5)',
-                            }} />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                    <div style={{ height: 14, display: 'flex', alignItems: 'center', padding: '0 8px' }}>
-                      <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
-                      <span style={{ fontSize: '7px', color: 'rgba(193,198,215,0.2)', padding: '0 8px', letterSpacing: '0.2em' }}>CORRIDOR</span>
-                      <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.05)' }} />
-                    </div>
-                    <div style={{ display: 'flex', gap: 4 }}>
-                      {['221','222','223','224'].map(r => (
-                        <div key={r} style={{
-                          flex: 1, padding: '8px 4px', borderRadius: 5, textAlign: 'center',
-                          background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)',
-                          fontSize: '9px', fontWeight: 700, color: 'rgba(193,198,215,0.4)',
-                          fontFamily: 'var(--font-space-mono), monospace',
-                        }}>{r}</div>
-                      ))}
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '4px 14px', borderRadius: 4, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)' }}>
-                        <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#00C98A' }}>exit_to_app</span>
-                        <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', color: '#00C98A' }}>EMERGENCY EXIT</span>
+                {/* Section header */}
+                <div style={{ padding: '12px 18px 10px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,140,158,0.7)' }}>BUILDING MAP</span>
+                  <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.15em', color: 'rgba(173,198,215,0.4)', fontFamily: 'var(--font-space-mono), monospace' }}>BLDG A · 2F</span>
+                </div>
+
+                {/* Floor plan — taller, more readable */}
+                <div style={{ padding: '14px 18px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  {/* Row 200s */}
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['201','202','203','204'].map(r => (
+                      <div key={r} style={{
+                        flex: 1, padding: '10px 4px', borderRadius: 6, textAlign: 'center',
+                        background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.09)',
+                        fontSize: '11px', fontWeight: 700, color: 'rgba(193,198,215,0.5)',
+                        fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1,
+                      }}>
+                        <div>{r}</div>
+                        <div style={{ fontSize: '7px', color: 'rgba(193,198,215,0.25)', marginTop: 3, letterSpacing: '0.05em' }}>LOCKED</div>
                       </div>
+                    ))}
+                  </div>
+
+                  {/* Corridor */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0 4px' }}>
+                    <div style={{ flex: 1, height: 18, borderRadius: 4, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(59,158,255,0.5)' }}>HALLWAY</span>
+                    </div>
+                  </div>
+
+                  {/* Row 210s — with Room 214 highlighted */}
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['211','212','213','214'].map(r => (
+                      <div key={r} style={{
+                        flex: 1, padding: '10px 4px', borderRadius: 6, textAlign: 'center',
+                        position: 'relative',
+                        background: r === '214' ? 'rgba(255,50,50,0.2)' : 'rgba(255,255,255,0.035)',
+                        border: r === '214' ? '2px solid rgba(255,60,60,0.7)' : '1px solid rgba(255,255,255,0.09)',
+                        boxShadow: r === '214' ? '0 0 20px rgba(255,60,60,0.3), inset 0 0 12px rgba(255,60,60,0.08)' : 'none',
+                        fontSize: '11px', fontWeight: r === '214' ? 900 : 700,
+                        color: r === '214' ? '#FF8C9E' : 'rgba(193,198,215,0.5)',
+                        fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1,
+                      }}>
+                        {r === '214' && (
+                          <span className="animate-pulse" style={{
+                            position: 'absolute', top: -5, right: -5,
+                            width: 10, height: 10, borderRadius: '50%',
+                            background: '#FF4444', border: '2px solid #fff',
+                            boxShadow: '0 0 8px rgba(255,60,60,0.8)',
+                          }} />
+                        )}
+                        <div>{r}</div>
+                        <div style={{ fontSize: '7px', marginTop: 3, letterSpacing: '0.05em', color: r === '214' ? 'rgba(255,140,158,0.7)' : 'rgba(193,198,215,0.25)' }}>
+                          {r === '214' ? '⚠ ALERT' : 'LOCKED'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Corridor */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0 4px' }}>
+                    <div style={{ flex: 1, height: 18, borderRadius: 4, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(59,158,255,0.5)' }}>HALLWAY</span>
+                    </div>
+                  </div>
+
+                  {/* Row 220s */}
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['221','222','223','224'].map(r => (
+                      <div key={r} style={{
+                        flex: 1, padding: '10px 4px', borderRadius: 6, textAlign: 'center',
+                        background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.09)',
+                        fontSize: '11px', fontWeight: 700, color: 'rgba(193,198,215,0.5)',
+                        fontFamily: 'var(--font-space-mono), monospace', lineHeight: 1,
+                      }}>
+                        <div>{r}</div>
+                        <div style={{ fontSize: '7px', color: 'rgba(193,198,215,0.25)', marginTop: 3, letterSpacing: '0.05em' }}>LOCKED</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Exit */}
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 2 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '4px 12px', borderRadius: 4, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.25)' }}>
+                      <span className="material-symbols-outlined" style={{ fontSize: 12, color: '#00C98A' }}>exit_to_app</span>
+                      <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.12em', color: '#00C98A' }}>STAIRWELL EXIT</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Alert timeline */}
-                <div style={{ padding: '10px 18px 12px' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 8 }}>SYSTEM RESPONSE TIMELINE</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    {stage.detectCard.alertTimeline?.map((item, i) => (
-                      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-                        <span style={{ fontSize: '9px', color: 'rgba(193,198,215,0.4)', fontFamily: 'var(--font-space-mono), monospace', flexShrink: 0, width: 54 }}>{item.time}</span>
-                        <div style={{
-                          width: 6, height: 6, borderRadius: '50%', flexShrink: 0,
-                          background: item.done ? '#00C98A' : 'rgba(255,255,255,0.15)',
-                          boxShadow: item.done ? '0 0 6px rgba(0,201,138,0.5)' : 'none',
-                        }} />
-                        <span style={{
-                          fontSize: '10px', fontWeight: item.done ? 600 : 400,
-                          color: item.done ? '#c8dff0' : 'rgba(193,198,215,0.4)',
-                          fontFamily: 'var(--font-space-mono), monospace',
-                        }}>
-                          {!item.done && <span className="animate-pulse" style={{ marginRight: 4, color: '#FF8C9E' }}>▶</span>}
-                          {item.event}
-                        </span>
+                {/* System status strip */}
+                <div style={{ padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(173,198,215,0.35)', marginBottom: 2 }}>SYSTEM STATUS</div>
+                  {[
+                    { label: 'DOOR LOCKS', value: 'ALL ENGAGED', color: '#00C98A' },
+                    { label: 'PA SYSTEM',  value: 'LOCKDOWN BROADCAST', color: '#00C98A' },
+                    { label: 'CAMERAS',    value: '12 ACTIVE · RECORDING', color: '#3B9EFF' },
+                    { label: 'DISPATCH',   value: 'UNITS ASSIGNED', color: '#3B9EFF' },
+                  ].map(s => (
+                    <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                      <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(193,198,215,0.4)', textTransform: 'uppercase' }}>{s.label}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                        <div style={{ width: 5, height: 5, borderRadius: '50%', background: s.color, boxShadow: `0 0 5px ${s.color}88` }} />
+                        <span style={{ fontSize: '9px', fontWeight: 700, color: s.color, letterSpacing: '0.08em', fontFamily: 'var(--font-space-mono), monospace' }}>{s.value}</span>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
