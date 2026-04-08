@@ -73,6 +73,7 @@ export const schoolScenario: ScenarioConfig = {
           { coords: [29.7560, -95.3660], label: 'CAM-12 · Parking Lot',    image: '/demo/school/cam12-parking.jpg' },
           { coords: [29.7542, -95.3672], label: 'CAM-15 · Bldg A 2F',      image: '/demo/school/cam15-hallway2f.jpg' },
         ],
+        sosEvent: { coords: [29.7548, -95.3682], label: '⚠ SOS BUTTON EVENT', sublabel: 'ROOM 214 · BLDG A 2F' },
         tags: ['LOCKDOWN ACTIVE', '847 STUDENTS', 'ROOM 214', 'P1 THREAT', 'SRO ON-SITE'],
         analysisRows: [
           { key: 'THREAT LEVEL',  value: 'LEVEL 3 · ACTIVE',       color: '#FF8C9E' },

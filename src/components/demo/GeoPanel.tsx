@@ -13,9 +13,10 @@ interface GeoPanelProps {
   caller: { coords: [number, number]; label: string }
   aeds: Array<{ coords: [number, number]; label: string }>
   cameras: Camera[]
+  sosEvent?: { coords: [number, number]; label: string; sublabel?: string }
 }
 
-export default function GeoPanel({ caller, aeds, cameras }: GeoPanelProps) {
+export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -50,6 +51,13 @@ export default function GeoPanel({ caller, aeds, cameras }: GeoPanelProps) {
       .cam-thumb-label { font-size:7.5px;font-weight:700;font-family:monospace;letter-spacing:0.06em; }
       .cam-thumb-line { width:1px;height:7px; }
       .cam-thumb-dot { width:8px;height:8px;border-radius:50%;border:2px solid rgba(255,255,255,0.85); }
+      .sos-icon { background:none!important;border:none!important; }
+      .sos-card { display:flex;flex-direction:column;align-items:center; }
+      .sos-card-box { background:rgba(20,4,4,0.92);border:1.5px solid rgba(255,70,70,0.75);border-radius:5px;padding:5px 10px 4px;text-align:center;box-shadow:0 0 16px rgba(255,50,50,0.35),0 3px 12px rgba(0,0,0,0.8); }
+      .sos-card-label { font-size:10px;font-weight:900;font-family:monospace;letter-spacing:0.1em;color:#FF5F5F; }
+      .sos-card-sub { font-size:7.5px;font-weight:700;font-family:monospace;letter-spacing:0.08em;color:rgba(255,140,158,0.7);margin-top:1px; }
+      .sos-card-line { width:1.5px;height:10px;background:rgba(255,70,70,0.55); }
+      .sos-card-dot { width:10px;height:10px;border-radius:50%;background:#FF4444;border:2px solid rgba(255,255,255,0.9);box-shadow:0 0 8px rgba(255,50,50,0.9); }
     `
     document.head.appendChild(style)
 
@@ -133,8 +141,28 @@ export default function GeoPanel({ caller, aeds, cameras }: GeoPanelProps) {
         }
       })
 
+      // SOS event card
+      if (sosEvent) {
+        const sosHtml = `
+          <div class="sos-card">
+            <div class="sos-card-box">
+              <div class="sos-card-label">${sosEvent.label}</div>
+              ${sosEvent.sublabel ? `<div class="sos-card-sub">${sosEvent.sublabel}</div>` : ''}
+            </div>
+            <div class="sos-card-line"></div>
+            <div class="sos-card-dot"></div>
+          </div>`
+        const sosIcon = L.divIcon({
+          className: 'sos-icon',
+          html: sosHtml,
+          iconSize: [160, 52],
+          iconAnchor: [80, 52],
+        })
+        L.marker(sosEvent.coords, { icon: sosIcon }).addTo(map)
+      }
+
       // Fit bounds
-      const allCoords = [caller.coords, ...aeds.map(a => a.coords), ...cameras.map(c => c.coords)]
+      const allCoords = [caller.coords, ...aeds.map(a => a.coords), ...cameras.map(c => c.coords), ...(sosEvent ? [sosEvent.coords] : [])]
       map.fitBounds(L.latLngBounds(allCoords), { padding: [50, 50] })
     })
   }, [caller, aeds, cameras])

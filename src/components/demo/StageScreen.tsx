@@ -1077,6 +1077,7 @@ export default function StageScreen({
                   caller={stage.geoPanel.caller}
                   aeds={stage.geoPanel.aeds}
                   cameras={stage.geoPanel.cameras}
+                  sosEvent={stage.geoPanel.sosEvent}
                 />
                 {/* Map legend */}
                 <div style={{

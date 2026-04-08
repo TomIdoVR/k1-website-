@@ -56,6 +56,8 @@ export interface Stage {
     cameras: Array<{ coords: [number, number]; label: string; image?: string; alert?: boolean }>
     tags: string[]
     analysisRows: Array<{ key: string; value: string; color?: string }>
+    // Optional SOS / panic event card shown at the incident coords
+    sosEvent?: { coords: [number, number]; label: string; sublabel?: string }
   }
   pipImage?: string
   pipLabel?: string

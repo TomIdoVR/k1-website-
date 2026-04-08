@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.58] 2026-04-08 — Feat: SOS button event card marker on Understand stage map
+
+**Added**
+- `GeoPanel.tsx` — new `sosEvent` prop renders a labeled card marker (dark red card + connector line + pulsing dot) anchored to the panic button location
+- `types.ts` — added `sosEvent?: { coords, label, sublabel }` to geoPanel type
+- `school.ts` — wired SOS event at Room 214 coords: "⚠ SOS BUTTON EVENT · ROOM 214 · BLDG A 2F"
+
 ## [1.57] 2026-04-08 — Fix: larger CCTV thumbnails on map + rename legend label to SOS BUTTON
 
 **Changed**
