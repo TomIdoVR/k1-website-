@@ -24,9 +24,9 @@ export const accessControlScenario: ScenarioConfig = {
       nextStageTeaser: 'Building mapped. Security units located.',
       layout: 'default',
       detectCard: {
-        type: 'panic-alert',
-        cameraImage: '/demo/access-control/stage-1-detect.jpg',
-        cameraLabel: 'CAM-03 · SERVER CORRIDOR · EAST WING',
+        type: 'access-breach',
+        cameraImage: '/demo/access-control/stage-1-detect-v2.jpg',
+        cameraLabel: 'CAM-03 · MAIN ENTRANCE · TURNSTILE GATE',
         fields: [
           { key: 'BADGE ID',       value: '#4491 · J. MORALES',             highlight: true },
           { key: 'DOOR',           value: 'Server Room B · Level 3 · East Wing' },

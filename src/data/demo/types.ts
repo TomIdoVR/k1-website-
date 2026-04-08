@@ -34,7 +34,7 @@ export interface Stage {
   }
   // Optional inline admin panel rendered instead of a background image
   detectCard?: {
-    type: 'call-intake' | 'panic-alert'
+    type: 'call-intake' | 'panic-alert' | 'access-breach'
     fields: Array<{ key: string; value: string; highlight?: boolean }>
     transcript?: string[]
     alertTimeline?: Array<{ time: string; event: string; done: boolean }>

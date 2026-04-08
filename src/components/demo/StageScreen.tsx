@@ -561,6 +561,243 @@ export default function StageScreen({
           </div>
         )}
 
+        {/* ── Access-breach panel: CCTV left + corporate floor plan right ── */}
+        {isFirst && stage.detectCard?.type === 'access-breach' && (
+          <div style={{
+            position: 'absolute', inset: 0,
+            display: 'flex', flexDirection: 'row',
+            background: 'rgba(6,10,20,0.98)',
+          }}>
+            {/* LEFT — CCTV feed */}
+            <div style={{ flex: '0 0 55%', position: 'relative', overflow: 'hidden' }}>
+              {/* HUD top bar */}
+              <div style={{
+                position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10,
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '10px 14px', background: 'linear-gradient(to bottom, rgba(6,10,20,0.9), transparent)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#FF4444', boxShadow: '0 0 6px #FF4444' }} className="animate-pulse" />
+                  <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.25em', color: 'rgba(255,140,140,0.9)', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.detectCard.cameraLabel}</span>
+                </div>
+                <span style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,180,180,0.7)', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.timestamp}</span>
+              </div>
+              {/* Image */}
+              {stage.detectCard.cameraImage && (
+                <img
+                  src={stage.detectCard.cameraImage}
+                  alt="CCTV"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(18%) contrast(1.1) brightness(0.82)' }}
+                />
+              )}
+              {/* Scanlines */}
+              <div style={{
+                position: 'absolute', inset: 0, pointerEvents: 'none',
+                background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px)',
+              }} />
+              {/* Bounding box — turnstile / access gate area */}
+              <div style={{
+                position: 'absolute', top: '30%', left: '35%', width: '30%', height: '45%',
+                border: '2px solid rgba(255,80,80,0.75)', borderRadius: 2, zIndex: 10,
+              }}>
+                <div style={{
+                  position: 'absolute', bottom: -22, left: '50%', transform: 'translateX(-50%)',
+                  background: '#FF4444', color: '#fff',
+                  fontSize: '8px', fontWeight: 900, padding: '3px 10px', borderRadius: 3,
+                  whiteSpace: 'nowrap', letterSpacing: '0.15em',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                }}>ACCESS DENIED</div>
+              </div>
+              {/* Bottom HUD */}
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 10,
+                display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
+                padding: '12px 14px', background: 'linear-gradient(to top, rgba(6,10,20,0.92), transparent)',
+              }}>
+                <span style={{ fontSize: '10px', color: 'rgba(255,200,200,0.5)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.1em' }}>
+                  BADGE #4491 · UNAUTHORIZED
+                </span>
+                <span style={{ fontSize: '9px', color: '#FF5F5F', fontFamily: 'var(--font-space-mono), monospace', fontWeight: 700 }}>● REC</span>
+              </div>
+            </div>
+
+            {/* RIGHT — Corporate building floor plan */}
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: 'rgba(6,10,20,0.99)', borderLeft: '1px solid rgba(255,80,80,0.15)' }}>
+              {/* Header */}
+              <div style={{ padding: '10px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#FF4444' }} />
+                  <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,140,140,0.8)' }}>EAST WING · LEVEL 3</span>
+                </div>
+                <span style={{ fontSize: '8px', fontWeight: 700, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace' }}>⚠ BREACH</span>
+              </div>
+
+              {/* SVG Corporate Floor Plan */}
+              <div style={{ flex: 1, padding: '6px 10px 4px', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+                <svg viewBox="0 0 360 254" style={{ flex: 1, width: '100%', height: '100%' }}>
+                  <defs>
+                    <pattern id="ac-grid" width="14" height="14" patternUnits="userSpaceOnUse">
+                      <path d="M 14 0 L 0 0 0 14" fill="none" stroke="rgba(80,130,210,0.08)" strokeWidth="0.35"/>
+                    </pattern>
+                    <pattern id="ac-wall" width="5" height="5" patternUnits="userSpaceOnUse">
+                      <rect width="5" height="5" fill="rgba(190,215,255,0.82)"/>
+                      <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(80,120,200,0.45)" strokeWidth="0.9"/>
+                    </pattern>
+                    <pattern id="ac-alert-wall" width="5" height="5" patternUnits="userSpaceOnUse">
+                      <rect width="5" height="5" fill="rgba(220,160,165,0.85)"/>
+                      <line x1="0" y1="5" x2="5" y2="0" stroke="rgba(200,60,60,0.5)" strokeWidth="0.9"/>
+                    </pattern>
+                  </defs>
+
+                  <rect x="0" y="0" width="360" height="254" fill="#030f20"/>
+                  <rect x="0" y="0" width="360" height="254" fill="url(#ac-grid)"/>
+
+                  {/* ── OUTER WALLS ── */}
+                  <rect x="8"   y="8"   width="344" height="7"   fill="url(#ac-wall)"/>
+                  <rect x="8"   y="239" width="344" height="7"   fill="url(#ac-wall)"/>
+                  <rect x="8"   y="8"   width="7"   height="238" fill="url(#ac-wall)"/>
+                  <rect x="345" y="8"   width="7"   height="238" fill="url(#ac-wall)"/>
+
+                  {/* ── CORRIDOR horizontal walls ── */}
+                  {/* Top of corridor at y=102 */}
+                  <rect x="15"  y="102" width="180" height="6"  fill="url(#ac-wall)"/>
+                  {/* gap for main entrance door at x=195–225 */}
+                  <rect x="225" y="102" width="120" height="6"  fill="url(#ac-wall)"/>
+                  {/* Bottom of corridor at y=128 */}
+                  <rect x="15"  y="128" width="65"  height="6"  fill="url(#ac-wall)"/>
+                  {/* gap for server room B door at x=80–104 */}
+                  <rect x="104" y="128" width="241" height="6"  fill="url(#ac-wall)"/>
+
+                  {/* ── VERTICAL DIVIDERS — top row ── */}
+                  {/* IT Office | Conf Room at x=140 */}
+                  <rect x="140" y="15"  width="6" height="87" fill="url(#ac-wall)"/>
+                  {/* Conf Room | Security Desk at x=230 */}
+                  <rect x="230" y="15"  width="6" height="87" fill="url(#ac-wall)"/>
+
+                  {/* ── VERTICAL DIVIDERS — bottom row ── */}
+                  {/* Server Room B | Storage at x=160 */}
+                  <rect x="160" y="134" width="6" height="105" fill="url(#ac-wall)"/>
+                  {/* Storage | Network Hub at x=255 */}
+                  <rect x="255" y="134" width="6" height="105" fill="url(#ac-wall)"/>
+
+                  {/* ── SERVER ROOM B alert divider (left wall) ── */}
+                  <rect x="15" y="134" width="6" height="105" fill="url(#ac-alert-wall)"/>
+
+                  {/* ── MAIN ENTRANCE — badge gate at top corridor gap ── */}
+                  {/* Door swing into corridor */}
+                  <line x1="195" y1="102" x2="195" y2="108" stroke="rgba(255,80,80,0.8)" strokeWidth="1.2"/>
+                  <path d="M195,102 A30,30 0 0,1 225,108" fill="none" stroke="rgba(255,80,80,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
+                  {/* Turnstile / gate symbol */}
+                  <rect x="196" y="109" width="28" height="19" rx="2" fill="rgba(255,40,40,0.12)" stroke="rgba(255,80,80,0.7)" strokeWidth="1"/>
+                  <line x1="196" y1="118" x2="224" y2="118" stroke="rgba(255,80,80,0.45)" strokeWidth="0.8"/>
+                  {/* X mark — denied */}
+                  <line x1="200" y1="111" x2="220" y2="126" stroke="rgba(255,80,80,0.7)" strokeWidth="1.2"/>
+                  <line x1="220" y1="111" x2="200" y2="126" stroke="rgba(255,80,80,0.7)" strokeWidth="1.2"/>
+                  {/* Badge reader dot */}
+                  <circle cx="189" cy="108" r="3.5" fill="rgba(255,40,40,0.3)" stroke="rgba(255,80,80,0.9)" strokeWidth="1.2"/>
+                  <circle cx="189" cy="108" r="3.5" fill="none" stroke="rgba(255,40,40,0.4)" strokeWidth="1.5">
+                    <animate attributeName="r" values="3.5;7;3.5" dur="1.4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.5;0;0.5" dur="1.4s" repeatCount="indefinite"/>
+                  </circle>
+                  <text x="210" y="138" textAnchor="middle" fill="rgba(255,120,120,0.7)" fontSize="5" fontFamily="monospace" fontWeight="700" letterSpacing="0.5">MAIN ENTRANCE</text>
+
+                  {/* ── SERVER ROOM B door gap at bottom wall y=128, x=80–104 ── */}
+                  <line x1="80" y1="134" x2="80" y2="128" stroke="rgba(255,80,80,0.8)" strokeWidth="1.2"/>
+                  <path d="M80,134 A24,24 0 0,0 104,128" fill="none" stroke="rgba(255,80,80,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
+                  {/* Server room B door label */}
+                  <text x="50" y="145" textAnchor="middle" fill="rgba(255,120,120,0.8)" fontSize="5" fontFamily="monospace" fontWeight="700">SERVER RM B</text>
+                  <text x="50" y="153" textAnchor="middle" fill="rgba(255,90,90,0.6)" fontSize="4.5" fontFamily="monospace">DOOR FORCED</text>
+
+                  {/* ── STAIRWELL (right side of corridor) ── */}
+                  <rect x="310" y="108" width="35" height="20" fill="rgba(180,210,255,0.04)" stroke="rgba(180,210,255,0.3)" strokeWidth="0.8"/>
+                  {[0,1,2,3].map(i => (
+                    <line key={i} x1="310" y1={109.5+i*4} x2="345" y2={109.5+i*4} stroke="rgba(180,210,255,0.2)" strokeWidth="0.6"/>
+                  ))}
+                  <line x1="310" y1="128" x2="345" y2="108" stroke="rgba(180,210,255,0.15)" strokeWidth="0.7"/>
+                  <text x="327" y="123" textAnchor="middle" fill="rgba(180,210,255,0.3)" fontSize="4.5" fontFamily="monospace">STAIR</text>
+
+                  {/* Corridor label */}
+                  <text x="155" y="120" textAnchor="middle" fill="rgba(160,200,255,0.18)" fontSize="6" letterSpacing="4" fontFamily="monospace">C O R R I D O R</text>
+                  {/* Corridor cameras */}
+                  <circle cx="90"  cy="115" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="0.9"/>
+                  <line x1="90"  y1="109" x2="90"  y2="112" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+                  <circle cx="230" cy="115" r="3" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="0.9"/>
+                  <line x1="230" y1="109" x2="230" y2="112" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+
+                  {/* ════ TOP ROOMS ════ */}
+                  {/* IT OPERATIONS */}
+                  <rect x="15" y="15" width="125" height="87" fill="rgba(255,255,255,0.012)"/>
+                  <text x="77" y="55" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="8" fontWeight="700" fontFamily="sans-serif">IT OPERATIONS</text>
+                  <circle cx="28" cy="25" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="0.9"/>
+                  <line x1="28" y1="15" x2="28" y2="21" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+
+                  {/* CONFERENCE ROOM */}
+                  <rect x="146" y="15" width="84" height="87" fill="rgba(255,255,255,0.012)"/>
+                  <text x="188" y="53" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">CONFERENCE</text>
+                  <text x="188" y="63" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">ROOM</text>
+                  <circle cx="158" cy="25" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="0.9"/>
+                  <line x1="158" y1="15" x2="158" y2="21" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+
+                  {/* SECURITY DESK */}
+                  <rect x="236" y="15" width="109" height="87" fill="rgba(255,255,255,0.012)"/>
+                  <text x="290" y="53" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">SECURITY</text>
+                  <text x="290" y="63" textAnchor="middle" fill="rgba(180,210,255,0.6)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">DESK</text>
+                  <circle cx="248" cy="25" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.6)" strokeWidth="0.9"/>
+                  <line x1="248" y1="15" x2="248" y2="21" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+
+                  {/* ════ BOTTOM ROOMS ════ */}
+
+                  {/* SERVER ROOM B — ALERT */}
+                  <rect x="21" y="134" width="139" height="105" fill="rgba(255,20,20,0.07)"/>
+                  <rect x="21" y="134" width="139" height="105" fill="rgba(255,50,50,0.06)">
+                    <animate attributeName="fill-opacity" values="0.06;0.18;0.06" dur="1.2s" repeatCount="indefinite"/>
+                  </rect>
+                  <text x="90" y="175" textAnchor="middle" fill="rgba(255,140,158,0.7)" fontSize="7" fontWeight="700" fontFamily="sans-serif">SERVER</text>
+                  <text x="90" y="185" textAnchor="middle" fill="#FF6688" fontSize="11" fontWeight="900" fontFamily="monospace">ROOM B</text>
+                  {/* Forced entry indicator */}
+                  <rect x="30" y="196" width="120" height="14" rx="2" fill="rgba(255,40,40,0.18)" stroke="rgba(255,80,80,0.55)" strokeWidth="0.8"/>
+                  <text x="90" y="206" textAnchor="middle" fill="#FF8C9E" fontSize="6" fontWeight="900" fontFamily="monospace">⚠ FORCED ENTRY</text>
+                  {/* Server rack symbols */}
+                  {[0,1,2].map(i => (
+                    <rect key={i} x={30+i*38} y="218" width="28" height="14" rx="1"
+                      fill="rgba(59,100,180,0.1)" stroke="rgba(100,150,255,0.25)" strokeWidth="0.6"/>
+                  ))}
+                  {/* Alert camera */}
+                  <circle cx="140" cy="144" r="3.5" fill="rgba(255,60,60,0.2)" stroke="rgba(255,100,100,0.85)" strokeWidth="1"/>
+                  <line x1="140" y1="134" x2="140" y2="140" stroke="rgba(255,80,80,0.6)" strokeWidth="0.8"/>
+
+                  {/* STORAGE */}
+                  <rect x="166" y="134" width="89" height="105" fill="rgba(255,255,255,0.012)"/>
+                  <text x="210" y="185" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">STORAGE</text>
+                  <circle cx="178" cy="144" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.9"/>
+                  <line x1="178" y1="134" x2="178" y2="140" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+
+                  {/* NETWORK HUB */}
+                  <rect x="261" y="134" width="84" height="105" fill="rgba(255,255,255,0.012)"/>
+                  <text x="303" y="178" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">NETWORK</text>
+                  <text x="303" y="188" textAnchor="middle" fill="rgba(180,210,255,0.55)" fontSize="7.5" fontWeight="700" fontFamily="sans-serif">HUB</text>
+                  <circle cx="273" cy="144" r="3.5" fill="rgba(59,158,255,0.1)" stroke="rgba(59,158,255,0.55)" strokeWidth="0.9"/>
+                  <line x1="273" y1="134" x2="273" y2="140" stroke="rgba(59,158,255,0.35)" strokeWidth="0.7"/>
+                </svg>
+              </div>
+
+              {/* Legend */}
+              <div style={{ padding: '5px 12px 8px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', gap: 14, flexWrap: 'wrap', flexShrink: 0 }}>
+                {[
+                  { color: 'rgba(59,158,255,0.7)', label: 'CAMERA' },
+                  { color: '#FF4444',               label: 'BREACH POINT' },
+                  { color: 'rgba(180,210,255,0.5)', label: 'STAIRWELL' },
+                ].map(l => (
+                  <div key={l.label} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                    <div style={{ width: 7, height: 7, borderRadius: '50%', background: l.color }}/>
+                    <span style={{ fontSize: '7px', color: l.color, fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em' }}>{l.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Gradient overlay */}
         <div
           style={{
