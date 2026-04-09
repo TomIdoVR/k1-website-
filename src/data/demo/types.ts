@@ -41,6 +41,12 @@ export interface Stage {
     cameraImage?: string   // CCTV feed image for panic-alert type
     cameraLabel?: string   // e.g. "CAM-07 · BUILDING A HALLWAY"
   }
+  // Optional decide map (unit positions + cameras on protocol-layout decide stage)
+  decideMap?: {
+    incidentCoords: [number, number]
+    units: Array<{ id: string; status: string; active: boolean; coords: [number, number] }>
+    cameras?: Array<{ label: string; image?: string; alert?: boolean }>
+  }
   // Optional decide panel (unit assignment + AI scoring + map)
   decideCard?: {
     incidentCoords: [number, number]

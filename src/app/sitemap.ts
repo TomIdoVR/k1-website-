@@ -39,6 +39,12 @@ const pages = [
   { path: '/resources/what-is-sensor-fusion', priority: 0.6 },
   { path: '/resources/c5-command-centers-mexico-2026', priority: 0.7 },
   { path: '/resources/what-is-incident-management-software', priority: 0.6 },
+  { path: '/resources/911-call-center-software-guide', priority: 0.7 },
+  { path: '/resources/best-public-safety-software', priority: 0.7 },
+  { path: '/resources/build-rtcc-implementation-guide', priority: 0.7 },
+  { path: '/resources/public-safety-software-colombia', priority: 0.7 },
+  { path: '/resources/public-safety-software-peru', priority: 0.7 },
+  { path: '/resources/public-safety-software-small-cities', priority: 0.7 },
   { path: '/integrations/lpr', priority: 0.6 },
   { path: '/integrations/face-recognition', priority: 0.6 },
   { path: '/integrations/sensor-fusion', priority: 0.6 },
@@ -69,6 +75,10 @@ const pages = [
   { path: '/simulator', priority: 0.8 },
   { path: '/demo', priority: 0.7 },
   { path: '/demo/lpr', priority: 0.7 },
+  { path: '/demo/school', priority: 0.7 },
+  { path: '/demo/violence', priority: 0.7 },
+  { path: '/demo/medical', priority: 0.7 },
+  { path: '/demo/access-control', priority: 0.7 },
   { path: '/lp', priority: 0.4 },
 ]
 

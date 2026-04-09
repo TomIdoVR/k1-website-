@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.66] 2026-04-09 — SEO: add 4 demo scenario pages to sitemap + metadata
+
+**Added**
+- `sitemap.ts` — added `/demo/school`, `/demo/violence`, `/demo/medical`, `/demo/access-control` (were live pages not indexed by Google)
+- `demo/school/page.tsx` — added full metadata: title, description, OG tags, canonical
+- `demo/access-control/page.tsx` — added full metadata: title, description, OG tags, canonical
+- `data/demo/types.ts` — added `decideMap` to `Stage` interface (was used in lpr.ts + violence.ts but missing from type — pre-existing TypeScript error)
+
+---
+
 ## [1.65] 2026-04-08 — Fix: Scenario 05 stage order — map+blueprint on understand, protocol on decide
 
 **Changed**

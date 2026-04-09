@@ -16,13 +16,14 @@
 | Phase 0 — Foundation & audit | Done | 100% |
 | Phase 1 — Pre-launch fixes | Done | 100% |
 | Phase 2 — Launch | In progress | 10% |
-| Phase 3 — Post-launch growth | In progress | 75% |
+| Phase 3 — Post-launch growth | In progress | 85% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 95% |
 
-**Current site size:** 63 unique routes × 2 locales (EN + ES) = 126 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 13 | /resources/: 16 (hub + 14 articles + 1 ebook) | /integrations/: 6 | /demo/: 2 | Other: 7 (about, contact, privacy, privacy-policy-tamaulipas, simulator, lp) | Interactive: 5 (simulator, demo hub, demo/lpr, lp)
+**Last updated:** 2026-04-09
+**Current site size:** 71 unique routes × 2 locales (EN + ES) = 142 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 17 | /resources/: 29 (hub + articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 5 (about, contact, privacy, privacy-policy-tamaulipas, simulator, lp)
 
 ---
 
