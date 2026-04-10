@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.80] 2026-04-10 — Demo: DECIDE camera panel no longer disappears at narrow widths
+
+**Fixed**
+- `ProtocolPanel.tsx` — removed `display: none !important` from `pp-camera-panel` at ≤1100px; camera panel now stays visible at all widths and stacks at the bottom at ≤768px. Also moved `height: auto` scrollable rule to ≤1100px (was only at ≤768px) so the outer wrapper never clips content.
+
 ## [1.79] 2026-04-10 — Demo: UNDERSTAND narrow-screen fix — panels scroll instead of clipping
 
 **Fixed**

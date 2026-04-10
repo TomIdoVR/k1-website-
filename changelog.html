@@ -356,6 +356,16 @@
 
     <div class="timeline">
 
+      <!-- v1.80 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.80</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: DECIDE camera panel no longer disappears at narrow widths</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>ProtocolPanel.tsx</code> — removed <code>display: none !important</code> from <code>pp-camera-panel</code> at ≤1100px. Camera panel now stays visible at all widths, stacking at the bottom at ≤768px with a top separator.</li>
+          <li>Moved <code>height: auto</code> scrollable rule to ≤1100px (was only ≤768px) so the outer wrapper never clips content on medium screens.</li>
+        </ul>
+      </div>
+
       <!-- v1.79 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.79</span><span class="tl-date">2026-04-10</span></div>
