@@ -31,17 +31,18 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
     <>
     <style>{`
       .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; }
-      .demo-split-phone { flex: 0 0 260px; max-width: 260px; }
-      .demo-split-map { flex: 1; min-width: 0; }
-      .demo-split-units { width: 220px; flex-shrink: 0; }
+      .demo-split-phone { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.12) !important; }
+      .demo-split-map { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.12); }
+      .demo-split-units { flex: 1; min-width: 0; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .demo-split-units { display: none !important; }
+        .demo-split-map { border-right: none !important; }
       }
       @media (max-width: 768px) {
         .demo-split-body { flex-direction: column !important; }
-        .demo-split-phone { flex: 0 0 auto !important; max-width: 100% !important; width: 100% !important; max-height: 52%; overflow-y: auto; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.08) !important; }
-        .demo-split-map { flex: 1 !important; min-height: 200px; }
+        .demo-split-phone { flex: 0 0 auto !important; max-width: 100% !important; width: 100% !important; max-height: 52%; overflow-y: auto; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.12) !important; }
+        .demo-split-map { flex: 1 !important; min-height: 200px; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.12); }
         .demo-stage-nav-btn { padding: 8px 16px !important; gap: 10px !important; }
         .demo-stage-nav-sublabel { display: none !important; }
         .demo-stage-nav-mainlabel { font-size: 0.78rem !important; }
@@ -190,7 +191,6 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            borderRight: '2px solid rgba(173,198,255,0.08)',
             padding: '12px 24px 0',
             overflowY: 'auto',
             background: 'radial-gradient(ellipse at 50% 44%, #2a5280 0%, #111e2f 70%)',
@@ -448,8 +448,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             display: 'flex',
             flexDirection: 'column',
             overflow: 'hidden',
-            borderLeft: '1px solid rgba(255,255,255,0.06)',
-          }}
+            }}
         >
           {/* Header */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
