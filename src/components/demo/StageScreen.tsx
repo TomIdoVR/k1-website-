@@ -46,11 +46,15 @@ export default function StageScreen({
           .understand-right { flex: 1 !important; min-height: 160px; }
         }
         @media (max-width: 680px) {
-          .understand-left { flex: 0 0 100% !important; max-height: 200px; overflow-y: auto; }
-          .understand-right { flex: 0 0 100% !important; min-height: 220px; }
+          .understand-outer { height: auto !important; overflow-y: visible !important; }
+          .understand-row { flex-wrap: wrap; overflow: visible !important; flex: none !important; min-height: 0 !important; }
+          .understand-center { height: 300px !important; min-height: 300px !important; }
+          .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; }
+          .understand-right { flex: 0 0 100% !important; min-height: 320px; }
+          .understand-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
         }
       `}</style>
-      <div style={{
+      <div className="understand-outer" style={{
         display: 'flex', flexDirection: 'column', alignItems: 'stretch',
         height: 'calc(100vh - 120px)', padding: '20px 16px 14px',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
@@ -69,7 +73,7 @@ export default function StageScreen({
           <p style={{ color: 'rgba(15,35,75,0.48)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480, marginBottom: 10 }}>
             {stage.description}
           </p>
-          <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+          <div className="understand-modules-row" style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
             {ALL_MODULES.map(m => {
               const active = stage.modules.includes(m.key)
               return (

@@ -77,54 +77,50 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
 
   const isDefaultLayout = currentStage.layout === 'default' || currentStage.layout === 'split' || currentStage.layout === 'learn'
 
-  const isLightBg = currentStage.layout === 'default' || currentStage.layout === 'protocol' || currentStage.layout === 'split' || currentStage.layout === 'learn'
-
   return (
     <div
       style={{
-        background: isLightBg ? '#f1f4f8' : '#10131b',
+        background: '#10131b',
         minHeight: '100vh',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
         overflowX: 'hidden',
       }}
     >
-      {/* Ambient background glow — dark layouts only */}
-      {!isLightBg && (
+      {/* Ambient background glow */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          pointerEvents: 'none',
+          zIndex: 0,
+          overflow: 'hidden',
+        }}
+      >
         <div
           style={{
-            position: 'fixed',
-            inset: 0,
-            pointerEvents: 'none',
-            zIndex: 0,
-            overflow: 'hidden',
+            position: 'absolute',
+            top: '-10%',
+            left: '-10%',
+            width: '40%',
+            height: '40%',
+            borderRadius: '50%',
+            background: 'rgba(173,198,255,0.04)',
+            filter: 'blur(120px)',
           }}
-        >
-          <div
-            style={{
-              position: 'absolute',
-              top: '-10%',
-              left: '-10%',
-              width: '40%',
-              height: '40%',
-              borderRadius: '50%',
-              background: 'rgba(173,198,255,0.04)',
-              filter: 'blur(120px)',
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '-10%',
-              right: '-10%',
-              width: '40%',
-              height: '40%',
-              borderRadius: '50%',
-              background: 'rgba(173,198,255,0.04)',
-              filter: 'blur(120px)',
-            }}
-          />
-        </div>
-      )}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-10%',
+            right: '-10%',
+            width: '40%',
+            height: '40%',
+            borderRadius: '50%',
+            background: 'rgba(173,198,255,0.04)',
+            filter: 'blur(120px)',
+          }}
+        />
+      </div>
 
       {/* Fixed 3-row header */}
       <TopBar
@@ -134,12 +130,8 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
         activeModules={currentStage.modules}
       />
 
-      {/* Main content — pt clears fixed header */}
-      <main className="demo-main demo-main-pad" style={{ position: 'relative', zIndex: 1, paddingTop: '120px' }}>
-        <style>{`
-          @media (max-width: 480px) { .demo-main-pad { padding-top: 48px !important; } }
-          @media (max-width: 768px) and (min-width: 481px) { .demo-main-pad { padding-top: 88px !important; } }
-        `}</style>
+      {/* Main content — pt-[168px] clears the fixed 3-row header */}
+      <main className="demo-main" style={{ position: 'relative', zIndex: 1, paddingTop: '168px' }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStageId}
@@ -159,20 +151,20 @@ export default function ScenarioPlayer({ scenario, basePath }: ScenarioPlayerPro
               />
             )}
             {currentStage.layout === 'protocol' && (
-              <ProtocolPanel stage={currentStage} nextStage={nextStage} prevStage={prevStage} onNext={goNext} onPrev={goPrev} isLightBg />
+              <ProtocolPanel stage={currentStage} nextStage={nextStage} onNext={goNext} />
             )}
             {currentStage.layout === 'split' && (
-              <SplitLayout stage={currentStage} nextStage={nextStage} prevStage={prevStage} onNext={goNext} onPrev={goPrev} isLightBg />
+              <SplitLayout stage={currentStage} nextStage={nextStage} prevStage={prevStage} onNext={goNext} onPrev={goPrev} />
             )}
             {currentStage.layout === 'learn' && (
-              <LearnLayout stage={currentStage} prevStage={prevStage} onPrev={goPrev} onRestart={restart} hubPath={`${localePrefix}/demo`} isLightBg />
+              <LearnLayout stage={currentStage} prevStage={prevStage} onPrev={goPrev} onRestart={restart} hubPath={`${localePrefix}/demo`} />
             )}
           </motion.div>
         </AnimatePresence>
       </main>
 
-      {/* Floating BottomNav — shown for all stages except LEARN (which has its own completion nav) */}
-      {currentStage.layout !== 'learn' && (
+      {/* BottomNav only for non-default layouts (protocol / split / learn) */}
+      {!isDefaultLayout && (
         <BottomNav
           currentStageIndex={currentIndex}
           totalStages={STAGE_IDS.length}
