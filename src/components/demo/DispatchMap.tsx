@@ -7,11 +7,12 @@ interface DispatchMapProps {
   unit: [number, number]
   incidentLabel: string
   unitLabel: string
+  route?: [number, number][]
 }
 
 let leafletCssLoaded = false
 
-export default function DispatchMap({ incident, unit, incidentLabel, unitLabel }: DispatchMapProps) {
+export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, route }: DispatchMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel }
         scrollWheelZoom: false,
         dragging: false,
       })
+      setTimeout(() => map?.invalidateSize(), 0)
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         subdomains: 'abcd',
@@ -55,18 +57,8 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel }
 
       if (cancelled || !map) return
 
-      // Fetch real road route from OSRM
-      let routeCoords: [number, number][] = [incident, unit]
-      try {
-        const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${incident[1]},${incident[0]};${unit[1]},${unit[0]}?overview=full&geometries=geojson`
-        const res = await fetch(osrmUrl, { signal: AbortSignal.timeout(4000) })
-        if (res.ok) {
-          const data = await res.json()
-          routeCoords = data.routes[0].geometry.coordinates.map(
-            ([lng, lat]: [number, number]) => [lat, lng] as [number, number]
-          )
-        }
-      } catch { /* use straight line fallback */ }
+      // Use pre-computed route if provided, otherwise fall back to straight line
+      let routeCoords: [number, number][] = route && route.length > 2 ? route : [incident, unit]
 
       if (cancelled || !map) return
 
@@ -119,8 +111,8 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel }
         })
         .openTooltip()
 
-      // Fit to show both points
-      map.fitBounds(L.latLngBounds([incident, unit]), { padding: [48, 48] })
+      // Fit to show full route (not just endpoints — the path may curve outside the straight-line bbox)
+      map.fitBounds(L.latLngBounds(routeCoords), { padding: [48, 48] })
 
       // Inject label CSS
       if (!document.getElementById('dispatch-map-style')) {
