@@ -356,6 +356,16 @@
 
     <div class="timeline">
 
+      <!-- v1.81 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.81</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: full responsiveness applied to ACT and LEARN stages</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>SplitLayout.tsx</code> (ACT) — removed <code>display: none !important</code> from <code>demo-split-units</code> at ≤1100px and <code>demo-split-map</code> at ≤480px. Outer wrapper now scrollable at ≤1100px. Units panel stacks below map at ≤768px with <code>min-height: 220px</code>; map gets <code>min-height: 180px</code> at ≤480px instead of vanishing.</li>
+          <li><strong>Fixed</strong> <code>LearnLayout.tsx</code> (LEARN) — added <code>learn-outer</code> class; new ≤1100px rule makes outer scrollable. Replaced <code>max-height: 35%</code> on card-1 (which clipped against the fixed parent) with <code>min-height: 200px</code>; cards 2 and 3 get <code>min-height</code> values so all content is reachable by scrolling.</li>
+        </ul>
+      </div>
+
       <!-- v1.80 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.80</span><span class="tl-date">2026-04-10</span></div>

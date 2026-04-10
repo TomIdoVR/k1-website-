@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.81] 2026-04-10 — Demo: full responsiveness applied to ACT and LEARN stages
+
+**Fixed**
+- `SplitLayout.tsx` (ACT) — removed `display: none !important` from `demo-split-units` at ≤1100px and `demo-split-map` at ≤480px; outer wrapper now scrollable at ≤1100px; units panel stacks below map at ≤768px with `min-height: 220px`; map gets `min-height: 180px` at ≤480px instead of vanishing
+- `LearnLayout.tsx` (LEARN) — added `learn-outer` class to root div; new `@media (max-width: 1100px)` rule makes outer scrollable (`height: auto`); at ≤768px replaced `max-height: 35%` on card-1 (which clipped content against the fixed parent height) with `min-height: 200px`; cards 2 and 3 get `min-height: 260px` / `300px` so all content is reachable by scrolling
+
 ## [1.80] 2026-04-10 — Demo: DECIDE camera panel no longer disappears at narrow widths
 
 **Fixed**
