@@ -40,15 +40,15 @@ export default function StageScreen({
         .understand-center { flex: 1; min-width: 0; }
         .understand-right { flex: 1; min-width: 0; }
         @media (max-width: 1100px) {
-          .understand-row { flex-wrap: wrap; }
-          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 38vh; min-height: 220px; }
-          .understand-left { flex: 1 !important; min-height: 160px; }
-          .understand-right { flex: 1 !important; min-height: 160px; }
+          .understand-outer { height: auto !important; overflow-y: visible !important; }
+          .understand-row { flex-wrap: wrap; flex: none !important; overflow: visible !important; }
+          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 300px; min-height: 220px; }
+          .understand-left { flex: 1 !important; min-height: 260px; }
+          .understand-right { flex: 1 !important; min-height: 300px; }
         }
         @media (max-width: 680px) {
-          .understand-outer { height: auto !important; overflow-y: visible !important; }
-          .understand-row { flex-wrap: wrap; overflow: visible !important; flex: none !important; min-height: 0 !important; }
-          .understand-center { height: 300px !important; min-height: 300px !important; }
+          .understand-row { flex-wrap: wrap; overflow: visible !important; min-height: 0 !important; }
+          .understand-center { height: 280px !important; min-height: 280px !important; }
           .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; }
           .understand-right { flex: 0 0 100% !important; min-height: 320px; }
           .understand-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
