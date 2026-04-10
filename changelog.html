@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v1.82 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.82</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: DispatchMap Leaflet init fix + visual improvements</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>DispatchMap.tsx</code> — replaced one-shot <code>setTimeout(invalidateSize, 0)</code> with a <code>requestAnimationFrame</code> loop that waits for the container to have real pixel dimensions before initialising Leaflet, plus a <code>ResizeObserver</code> to keep the map in sync. Previously Leaflet could initialise with a zero-height container, causing blank tiles and invisible route markers.</li>
+          <li>Tile layers split into <code>dark_matter_no_labels</code> base + <code>dark_only_labels</code> overlay for sharper street labels. Route now rendered as glow (8px/22% opacity) + solid line (3.5px/95%) for visibility on dark background.</li>
+          <li><strong>Fixed</strong> <code>SplitLayout.tsx</code> — added <code>minHeight: 300</code> to <code>demo-split-map</code> panel to guarantee Leaflet always has a visible render target.</li>
+        </ul>
+      </div>
+
       <!-- v1.81 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.81</span><span class="tl-date">2026-04-10</span></div>

@@ -417,7 +417,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
         </div>
 
         {/* ── PANEL 2 — Operational map ── */}
-        <div className="demo-split-map" style={{ position: 'relative', background: '#0a1520', overflow: 'hidden' }}>
+        <div className="demo-split-map" style={{ position: 'relative', background: '#0a1520', overflow: 'hidden', minHeight: 300 }}>
           {/* Map panel title */}
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 2, display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px 8px', background: 'linear-gradient(to bottom, rgba(10,21,32,0.9) 0%, rgba(10,21,32,0) 100%)', pointerEvents: 'none' }}>
             <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>map</span>
