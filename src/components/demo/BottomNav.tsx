@@ -1,7 +1,5 @@
 'use client'
 
-import type { StageId } from '@/data/demo/types'
-
 interface BottomNavProps {
   currentStageIndex: number
   totalStages: number
@@ -18,7 +16,6 @@ export default function BottomNav({
   totalStages,
   prevLabel,
   nextLabel,
-  nextTeaser,
   onPrev,
   onNext,
   onRestart,
@@ -27,74 +24,123 @@ export default function BottomNav({
   const isLast = currentStageIndex === totalStages - 1
 
   return (
-    <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-8"
-      style={{
-        height: '72px',
-        background: '#08101A',
-        borderTop: '1px solid rgba(255,255,255,0.07)',
-      }}
-    >
-      {/* Previous */}
-      <button
-        onClick={onPrev}
-        disabled={isFirst}
-        className="flex items-center gap-2 text-xs font-mono font-semibold tracking-widest transition-opacity"
-        style={{
-          color: isFirst ? '#1A3050' : '#48647A',
-          cursor: isFirst ? 'default' : 'pointer',
-        }}
-      >
-        ‹ PREVIOUS: {prevLabel}
-      </button>
+    <>
+    <style>{`
+      .demo-float-nav {
+        position: fixed;
+        bottom: 24px;
+        right: 28px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-manrope), Manrope, sans-serif;
+      }
+      .demo-float-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(8,16,26,0.72);
+        backdrop-filter: blur(20px);
+        color: rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: all 0.18s;
+        font-size: 18px;
+      }
+      .demo-float-prev:hover {
+        border-color: rgba(255,255,255,0.22);
+        color: rgba(255,255,255,0.75);
+      }
+      .demo-float-prev:disabled {
+        opacity: 0.22;
+        cursor: default;
+        pointer-events: none;
+      }
+      .demo-float-next {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background: #3B9EFF;
+        color: #fff;
+        font-family: var(--font-manrope), Manrope, sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.18s;
+        box-shadow: 0 4px 20px rgba(59,158,255,0.35);
+        white-space: nowrap;
+      }
+      .demo-float-next:hover {
+        background: #2d8fe8;
+        box-shadow: 0 6px 28px rgba(59,158,255,0.5);
+        transform: translateY(-1px);
+      }
+      .demo-float-restart {
+        background: rgba(0,201,138,0.15);
+        border: 1px solid rgba(0,201,138,0.4);
+        color: #00C98A;
+        box-shadow: 0 4px 20px rgba(0,201,138,0.18);
+      }
+      .demo-float-restart:hover {
+        background: rgba(0,201,138,0.25);
+        box-shadow: 0 6px 28px rgba(0,201,138,0.3);
+      }
+      .demo-float-next-arrow {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      @media (max-width: 480px) {
+        .demo-float-nav { bottom: 16px; right: 16px; }
+        .demo-float-next-label { display: none; }
+        .demo-float-next { padding: 10px 14px; }
+      }
+    `}</style>
 
-      {/* Center teaser */}
-      {!isLast ? (
-        <div className="flex flex-col items-center gap-0.5 text-center">
-          <span className="text-xs font-mono tracking-widest" style={{ color: '#48647A' }}>
-            NEXT STAGE ›
-          </span>
-          <span className="text-sm font-semibold tracking-wider" style={{ color: '#E0ECF8' }}>
-            {nextLabel}
-          </span>
-          <span className="text-xs" style={{ color: '#48647A' }}>
-            {nextTeaser}
-          </span>
-        </div>
-      ) : (
-        <div className="flex items-center gap-2" style={{ color: '#00C98A' }}>
-          <span className="h-2 w-2 rounded-full" style={{ background: '#00C98A' }} />
-          <span className="text-xs font-mono font-semibold tracking-widest">
-            LEARNING CYCLE COMPLETE
-          </span>
-        </div>
+    <div className="demo-float-nav">
+      {/* Prev — small ghost icon */}
+      {!isFirst && (
+        <button
+          className="demo-float-prev"
+          onClick={onPrev}
+          title={`Previous: ${prevLabel}`}
+          aria-label={`Previous: ${prevLabel}`}
+        >
+          ‹
+        </button>
       )}
 
-      {/* Next / Restart */}
+      {/* Next / Restart — primary action */}
       {isLast ? (
-        <button
-          onClick={onRestart}
-          className="flex items-center gap-2 rounded px-4 py-2 text-xs font-mono font-semibold tracking-widest transition-colors"
-          style={{
-            background: 'rgba(59,158,255,0.12)',
-            border: '1px solid rgba(59,158,255,0.35)',
-            color: '#3B9EFF',
-          }}
-        >
-          RESTART SCENARIO ↺
+        <button className="demo-float-next demo-float-restart" onClick={onRestart}>
+          <div className="demo-float-next-arrow">
+            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>replay</span>
+          </div>
+          <span className="demo-float-next-label">RESTART</span>
         </button>
       ) : (
-        <button
-          onClick={onNext}
-          className="flex items-center gap-2 rounded px-4 py-2 text-xs font-mono font-semibold tracking-widest transition-colors hover:bg-blue-600"
-          style={{
-            background: '#3B9EFF',
-            color: '#fff',
-          }}
-        >
-          NEXT: {nextLabel} ›
+        <button className="demo-float-next" onClick={onNext}>
+          <span className="demo-float-next-label">NEXT: {nextLabel}</span>
+          <div className="demo-float-next-arrow">
+            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>arrow_forward</span>
+          </div>
         </button>
       )}
     </div>
+    </>
   )
 }

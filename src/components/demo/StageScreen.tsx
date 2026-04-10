@@ -2326,9 +2326,8 @@ export default function StageScreen({
       </div>
 
       {/* ── Navigation handled by floating BottomNav in ScenarioPlayer ── */}
-      <div
+      {false && <div
         className="demo-stage-nav"
-        style={{ display: 'none' }}
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -2443,7 +2442,7 @@ export default function StageScreen({
             </div>
           </button>
         )}
-      </div>
+      </div>}
     </div>
     </>
   )
