@@ -7,12 +7,11 @@ interface DispatchMapProps {
   unit: [number, number]
   incidentLabel: string
   unitLabel: string
-  route?: [number, number][]
 }
 
 let leafletCssLoaded = false
 
-export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, route }: DispatchMapProps) {
+export default function DispatchMap({ incident, unit, incidentLabel, unitLabel }: DispatchMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -22,7 +21,6 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
 
     let map: import('leaflet').Map | null = null
     let cancelled = false
-    let ro: ResizeObserver | null = null
 
     const init = async () => {
       const L = (await import('leaflet')).default
@@ -34,23 +32,9 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
         link.rel = 'stylesheet'
         link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
         document.head.appendChild(link)
-        await new Promise(r => setTimeout(r, 60))
+        // Wait a tick for CSS to apply
+        await new Promise(r => setTimeout(r, 50))
       }
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      if (cancelled || !containerRef.current || (containerRef.current as any)._leaflet_id) return
-
-      // Wait for the container to have real pixel dimensions before initialising Leaflet
-      await new Promise<void>(resolve => {
-        const check = () => {
-          const el = containerRef.current
-          if (!el) { resolve(); return }
-          const { width, height } = el.getBoundingClientRect()
-          if (width > 0 && height > 0) { resolve() }
-          else { requestAnimationFrame(check) }
-        }
-        check()
-      })
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (cancelled || !containerRef.current || (containerRef.current as any)._leaflet_id) return
@@ -64,11 +48,6 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
         dragging: false,
       })
 
-      // Use ResizeObserver so Leaflet stays in sync with CSS layout changes
-      ro = new ResizeObserver(() => { map?.invalidateSize() })
-      ro.observe(containerRef.current)
-
-      // Dark tile layer — CartoCDN dark_all (streets + labels on black background)
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         subdomains: 'abcd',
         maxZoom: 19,
@@ -76,24 +55,32 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
 
       if (cancelled || !map) return
 
-      const routeCoords: [number, number][] = route && route.length > 2 ? route : [incident, unit]
+      // Fetch real road route from OSRM
+      let routeCoords: [number, number][] = [incident, unit]
+      try {
+        const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${incident[1]},${incident[0]};${unit[1]},${unit[0]}?overview=full&geometries=geojson`
+        const res = await fetch(osrmUrl, { signal: AbortSignal.timeout(4000) })
+        if (res.ok) {
+          const data = await res.json()
+          routeCoords = data.routes[0].geometry.coordinates.map(
+            ([lng, lat]: [number, number]) => [lat, lng] as [number, number]
+          )
+        }
+      } catch { /* use straight line fallback */ }
 
-      // Route glow (wider, lower opacity) + solid line on top
+      if (cancelled || !map) return
+
+      // Draw route
       L.polyline(routeCoords, {
         color: '#3B9EFF',
-        weight: 8,
-        opacity: 0.22,
-      }).addTo(map)
-      L.polyline(routeCoords, {
-        color: '#3B9EFF',
-        weight: 3.5,
-        opacity: 0.95,
+        weight: 3,
+        opacity: 0.9,
         dashArray: routeCoords.length === 2 ? '6 5' : undefined,
       }).addTo(map)
 
-      // Incident marker — red pin
+      // Incident marker — red circle with pulsing ring + label
       L.circleMarker(incident, {
-        radius: 9,
+        radius: 8,
         color: '#fff',
         weight: 2,
         fillColor: '#FF4560',
@@ -102,23 +89,23 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
         .bindTooltip(`<span style="font-size:9px;font-weight:800;font-family:monospace;letter-spacing:.06em;color:#FF4560">${incidentLabel}</span>`, {
           permanent: true,
           direction: 'top',
-          offset: [0, -14],
+          offset: [0, -12],
           className: 'dispatch-label-red',
         })
         .openTooltip()
 
       // Pulse ring around incident
       L.circleMarker(incident, {
-        radius: 18,
+        radius: 16,
         color: '#FF4560',
         weight: 1.5,
         fillOpacity: 0,
-        opacity: 0.45,
+        opacity: 0.4,
       }).addTo(map)
 
-      // Unit marker — blue pin
+      // Unit marker — blue circle + label
       L.circleMarker(unit, {
-        radius: 9,
+        radius: 8,
         color: '#fff',
         weight: 2,
         fillColor: '#3B9EFF',
@@ -127,13 +114,13 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
         .bindTooltip(`<span style="font-size:9px;font-weight:800;font-family:monospace;letter-spacing:.06em;color:#3B9EFF">${unitLabel}</span>`, {
           permanent: true,
           direction: 'top',
-          offset: [0, -14],
+          offset: [0, -12],
           className: 'dispatch-label-blue',
         })
         .openTooltip()
 
-      // Fit to full route with generous padding
-      map.fitBounds(L.latLngBounds(routeCoords), { padding: [56, 56] })
+      // Fit to show both points
+      map.fitBounds(L.latLngBounds([incident, unit]), { padding: [48, 48] })
 
       // Inject label CSS
       if (!document.getElementById('dispatch-map-style')) {
@@ -147,8 +134,8 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
             padding: 2px 7px !important;
             border-radius: 3px !important;
           }
-          .dispatch-label-red  { border: 1px solid rgba(255,69,96,0.5) !important; }
-          .dispatch-label-blue { border: 1px solid rgba(59,158,255,0.5) !important; }
+          .dispatch-label-red { border: 1px solid rgba(255,69,96,0.4) !important; }
+          .dispatch-label-blue { border: 1px solid rgba(59,158,255,0.4) !important; }
           .leaflet-tooltip-top::before { display: none !important; }
         `
         document.head.appendChild(style)
@@ -159,11 +146,10 @@ export default function DispatchMap({ incident, unit, incidentLabel, unitLabel, 
 
     return () => {
       cancelled = true
-      ro?.disconnect()
       if (map) { map.remove(); map = null }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100%', minHeight: 280 }} />
+  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
 }

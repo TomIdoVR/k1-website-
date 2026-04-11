@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.85] 2026-04-10 — Demo: LEARN nav buttons — floating fixed overlay
+
+**Changed**
+- `LearnLayout.tsx` — replaced the inline centered nav buttons (which sat below the dark panel in document flow) with a `position: fixed; bottom: 24px; right: 28px` floating overlay matching the `BottomNav` pattern used by all other stages. The "← ACT" prev button uses the same ghost pill style as `demo-float-prev`; the "Choose Scenario" button uses the green restart palette from `demo-float-restart`.
+
 ## [1.84] 2026-04-10 — Demo: DispatchMap — fix white tile background
 
 **Fixed**
