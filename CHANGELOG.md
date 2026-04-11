@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.88] 2026-04-10 — Demo: Leaflet init fix + dark tiles across all scenario maps
+
+**Fixed**
+- `GeoPanel.tsx` — replaced direct `L.map()` call (which fires before flex container has real pixel dimensions) with the same `requestAnimationFrame` polling loop + `ResizeObserver` pattern used in DispatchMap and UnderstandMapPanel. Affects UNDERSTAND stage maps for school, medical, and access-control scenarios.
+- `DecideMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` + voyager tiles + CSS filter hack with RAF polling + `dark_all` CartoCDN tiles. Affects DECIDE stage maps for violence and medical scenarios. Map now renders immediately with the correct dark tactical appearance, consistent with all other maps in the demo.
+
 ## [1.87] 2026-04-10 — Demo: title emphasis across all stages
 
 **Improved**

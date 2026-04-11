@@ -356,6 +356,16 @@
 
     <div class="timeline">
 
+      <!-- v1.88 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.88</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: Leaflet init fix + dark tiles across all scenario maps</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>GeoPanel.tsx</code> — replaced direct <code>L.map()</code> call with <code>requestAnimationFrame</code> polling loop + <code>ResizeObserver</code>. Fixes blank map on school, medical, and access-control UNDERSTAND stages.</li>
+          <li><strong>Fixed</strong> <code>DecideMapPanel.tsx</code> — replaced <code>setTimeout(invalidateSize)</code> + voyager tiles + CSS filter hack with RAF polling + <code>dark_all</code> CartoCDN tiles. Fixes blank/wrong-color map on violence and medical DECIDE stages. All maps now share the same init pattern and dark tile style.</li>
+        </ul>
+      </div>
+
       <!-- v1.87 -->
       <div class="tl-entry changed">
         <div class="tl-meta"><span class="tl-ver">v1.87</span><span class="tl-date">2026-04-10</span></div>
