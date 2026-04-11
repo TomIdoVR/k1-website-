@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.84] 2026-04-10 — Demo: DispatchMap — fix white tile background
+
+**Fixed**
+- `DispatchMap.tsx` — the v1.82 tile layer split used `dark_matter_no_labels` which is not a valid CartoCDN style name; the map rendered as white/gray with only road labels visible. Reverted to the single correct `dark_all` style which renders black background + roads + labels in one layer.
+
 ## [1.83] 2026-04-10 — Demo: UNDERSTAND — restore 3-column layout at all desktop widths
 
 **Fixed**
