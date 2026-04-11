@@ -356,6 +356,15 @@
 
     <div class="timeline">
 
+      <!-- v1.89 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.89</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UNDERSTAND left panel now scenario-specific</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>StageScreen.tsx</code> — left tracking panel and GIS overlay were hardcoded with LPR data (plate <code>7JKY442</code>, "ACTIVE TRACK") and appeared on every scenario with an <code>understandMap</code>, including violence. Added <code>isLprTrack</code> flag derived from <code>dataPoints</code> to branch rendering. LPR shows the existing vehicle card; all other scenarios show a generic card with their actual <code>dataPoints</code>, GIS status, and nearest unit label.</li>
+        </ul>
+      </div>
+
       <!-- v1.88 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.88</span><span class="tl-date">2026-04-10</span></div>

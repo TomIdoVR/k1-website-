@@ -30,6 +30,11 @@ export default function StageScreen({
   // Applies to all stages without a full-panel detectCard overlay (detect, understand, etc.)
   const isLightBg = !stage.detectCard
 
+  // True for LPR scenario only — drives conditional left-panel and map-overlay content
+  const isLprTrack = !!stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')
+  // Sub-label from "STAGE 02: UNDERSTAND — MULTI-CAM TRACK" → "MULTI-CAM TRACK"
+  const trackSubLabel = stage.stageLabel.split(' — ')[1] ?? stage.label
+
   // ── UNDERSTAND stage: 3-panel flex layout ──────────────────────────────────
   if (!isFirst && stage.understandMap) {
     return (
@@ -102,54 +107,91 @@ export default function StageScreen({
         {/* 3-panel row */}
         <div className="understand-row" style={{ flex: 1, display: 'flex', gap: 8, minHeight: 0 }}>
 
-          {/* ── Panel 1: Vehicle tracking data ── */}
+          {/* ── Panel 1: Tracking / intelligence data ── */}
           <div className="understand-left" style={{
             background: '#07101c', borderRadius: 12, padding: '18px 16px',
             display: 'flex', flexDirection: 'column', gap: 0, overflowY: 'auto',
             border: '1px solid rgba(59,158,255,0.12)',
             fontFamily: 'var(--font-space-mono), monospace',
           }}>
-            {/* Active track header */}
+            {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 16 }}>
               <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#FF4560', display: 'inline-block', flexShrink: 0 }} className="animate-pulse" />
-              <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.8)' }}>ACTIVE TRACK</span>
+              <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.8)' }}>
+                {isLprTrack ? 'ACTIVE TRACK' : trackSubLabel}
+              </span>
             </div>
-            {/* Plate */}
-            <div style={{ marginBottom: 16 }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 4 }}>License Plate</div>
-              <div style={{ fontSize: '26px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 24px rgba(59,158,255,0.4)' }}>7JKY442</div>
-              <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.8)', marginTop: 4, letterSpacing: '0.1em' }}>STOLEN · NCIC CONFIRMED</div>
-            </div>
-            <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 14 }} />
-            {/* Data rows */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 16 }}>
-              {[
-                { label: 'Direction', value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
-                { label: 'Speed', value: '72 MPH' },
-                { label: 'GIS Lock', value: 'ACTIVE' },
-                { label: 'Confidence', value: '98.4%' },
-              ].map((row) => (
-                <div key={row.label}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+
+            {isLprTrack ? (
+              <>
+                {/* LPR: Plate hero */}
+                <div style={{ marginBottom: 16 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 4 }}>License Plate</div>
+                  <div style={{ fontSize: '26px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 24px rgba(59,158,255,0.4)' }}>7JKY442</div>
+                  <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.8)', marginTop: 4, letterSpacing: '0.1em' }}>STOLEN · NCIC CONFIRMED</div>
                 </div>
-              ))}
-            </div>
-            {/* ETA */}
-            <div style={{ padding: '10px 12px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 10 }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 3 }}>Intercept Window</div>
-              <div style={{ fontSize: '22px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</div>
-              <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
-            </div>
-            {/* Unit */}
-            <div style={{ padding: '8px 10px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 4 }}>Nearest Unit</div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
-                <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
-              </div>
-              <div style={{ fontSize: '8px', color: 'rgba(173,198,255,0.4)', marginTop: 2 }}>J. Reyes · SHIFT ACTIVE</div>
-            </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 14 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 16 }}>
+                  {[
+                    { label: 'Direction', value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
+                    { label: 'Speed', value: '72 MPH' },
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Confidence', value: '98.4%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ padding: '10px 12px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 10 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 3 }}>Intercept Window</div>
+                  <div style={{ fontSize: '22px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</div>
+                  <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
+                </div>
+                <div style={{ padding: '8px 10px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 4 }}>Nearest Unit</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
+                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
+                  </div>
+                  <div style={{ fontSize: '8px', color: 'rgba(173,198,255,0.4)', marginTop: 2 }}>J. Reyes · SHIFT ACTIVE</div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Generic: dataPoints as hero rows */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 16 }}>
+                  {stage.dataPoints.map((dp) => (
+                    <div key={dp.key}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3 }}>{dp.key}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2 }}>{dp.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 14 }} />
+                {/* GIS status */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
+                  {[
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Confidence', value: '94.7%' },
+                    { label: 'Track Type', value: trackSubLabel },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Unit card */}
+                {stage.understandMap.unitLabel && (
+                  <div style={{ padding: '8px 10px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                    <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 4 }}>Nearest Unit</div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#adc6ff' }}>{stage.understandMap.unitLabel}</div>
+                  </div>
+                )}
+              </>
+            )}
           </div>
 
           {/* ── Panel 2: GIS scene (static background + direction overlay) ── */}
@@ -219,25 +261,51 @@ export default function StageScreen({
             )}
             {/* Incident data at bottom */}
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 40, background: 'linear-gradient(to top, rgba(5,12,22,0.97) 0%, rgba(5,12,22,0.85) 70%, transparent 100%)', padding: '20px 14px 12px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
-                <div>
-                  <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
-                  <div style={{ fontSize: '18px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 16px rgba(59,158,255,0.5)' }}>7JKY442</div>
-                  <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 2, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
-                </div>
-                <div style={{ padding: '4px 8px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
-                  <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: 5 }}>
-                {[{ label: 'Direction', value: 'Westbound I-10' }, { label: 'Speed', value: '72 MPH' }, { label: 'Unit', value: '12-CHARLIE' }].map(item => (
-                  <div key={item.label} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
-                    <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 1, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
-                    <div style={{ fontSize: '9px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
+              {isLprTrack ? (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <div>
+                      <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 16px rgba(59,158,255,0.5)' }}>7JKY442</div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 2, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
+                    </div>
+                    <div style={{ padding: '4px 8px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                      <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</span>
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {[{ label: 'Direction', value: 'Westbound I-10' }, { label: 'Speed', value: '72 MPH' }, { label: 'Unit', value: '12-CHARLIE' }].map(item => (
+                      <div key={item.label} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 1, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
+                        <div style={{ fontSize: '9px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <div>
+                      <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.label ?? 'GIS TRACK'}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '0.04em', lineHeight: 1.2, fontFamily: 'var(--font-space-mono), monospace' }}>
+                        {stage.understandMap.unitLabel ?? ''}
+                      </div>
+                    </div>
+                    <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.06em', textAlign: 'right' }}>
+                      {stage.understandMap.incidentCoords[0].toFixed(4)}°N<br />{Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {stage.dataPoints.slice(0, 3).map(dp => (
+                      <div key={dp.key} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 1, fontFamily: 'var(--font-space-mono), monospace' }}>{dp.key}</div>
+                        <div style={{ fontSize: '9px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{dp.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -1382,49 +1450,59 @@ export default function StageScreen({
               background: 'linear-gradient(to top, rgba(5,12,22,0.97) 0%, rgba(5,12,22,0.85) 70%, transparent 100%)',
               padding: '24px 16px 14px',
             }}>
-              {/* Plate + status */}
-              <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 10 }}>
-                <div>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3, fontFamily: 'var(--font-space-mono), monospace' }}>
-                    Tracked Vehicle
+              {isLprTrack ? (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 10 }}>
+                    <div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
+                      <div style={{ fontSize: '22px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 20px rgba(59,158,255,0.5)' }}>7JKY442</div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 3, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
+                      <div style={{ padding: '4px 10px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                        <span style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
+                        <span style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</span>
+                      </div>
+                      <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.05em' }}>
+                        {stage.understandMap.incidentCoords[0].toFixed(4)}°N {Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                      </div>
+                    </div>
                   </div>
-                  <div style={{ fontSize: '22px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 20px rgba(59,158,255,0.5)' }}>
-                    7JKY442
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {[{ label: 'Direction', value: 'Westbound I-10' }, { label: 'Speed', value: '72 MPH' }, { label: 'Unit', value: '12-CHARLIE' }].map(item => (
+                      <div key={item.label} style={{ padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
+                      </div>
+                    ))}
                   </div>
-                  <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 3, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>
-                    STOLEN · NCIC CONFIRMED
+                </>
+              ) : (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 10 }}>
+                    <div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.label ?? trackSubLabel}</div>
+                      <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff', letterSpacing: '0.06em', lineHeight: 1.2, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.unitLabel ?? ''}</div>
+                    </div>
+                    <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.05em', textAlign: 'right' }}>
+                      {stage.understandMap.incidentCoords[0].toFixed(4)}°N<br />{Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                    </div>
                   </div>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
-                  <div style={{ padding: '4px 10px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
-                    <span style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
-                    <span style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>
-                      {stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}
-                    </span>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {stage.dataPoints.slice(0, 3).map(dp => (
+                      <div key={dp.key} style={{ padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{dp.key}</div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{dp.value}</div>
+                      </div>
+                    ))}
                   </div>
-                  <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.05em' }}>
-                    {stage.understandMap.incidentCoords[0].toFixed(4)}°N {Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
-                  </div>
-                </div>
-              </div>
-              {/* Data pills */}
-              <div style={{ display: 'flex', gap: 6 }}>
-                {[
-                  { label: 'Direction', value: 'Westbound I-10' },
-                  { label: 'Speed', value: '72 MPH' },
-                  { label: 'Unit', value: '12-CHARLIE' },
-                ].map(item => (
-                  <div key={item.label} style={{ padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
-                    <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
-                    <div style={{ fontSize: '10px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
-                  </div>
-                ))}
-              </div>
+                </>
+              )}
             </div>
           </div>
         )}
 
-        {/* ── Understand stage: left-side vehicle tracking panel ── */}
+        {/* ── Understand stage: left-side tracking panel ── */}
         {!isFirst && stage.understandMap && isLightBg && (
           <div style={{
             position: 'absolute',
@@ -1441,60 +1519,79 @@ export default function StageScreen({
             <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 18 }}>
               <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#FF4560', display: 'inline-block', flexShrink: 0 }} className="animate-pulse" />
               <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.8)' }}>
-                ACTIVE TRACK
+                {isLprTrack ? 'ACTIVE TRACK' : trackSubLabel}
               </span>
             </div>
 
-            {/* Plate number — hero */}
-            <div style={{ marginBottom: 18 }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 5 }}>License Plate</div>
-              <div style={{ fontSize: '28px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 30px rgba(59,158,255,0.4)' }}>
-                7JKY442
-              </div>
-              <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.75)', marginTop: 4, letterSpacing: '0.1em' }}>
-                STOLEN · NCIC CONFIRMED
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
-
-            {/* Data rows */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 18 }}>
-              {[
-                { label: 'Direction',  value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
-                { label: 'Speed',      value: '72 MPH' },
-                { label: 'GIS Lock',   value: 'ACTIVE' },
-                { label: 'Confidence', value: '98.4%' },
-              ].map((row) => (
-                <div key={row.label}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+            {isLprTrack ? (
+              <>
+                {/* Plate number — hero */}
+                <div style={{ marginBottom: 18 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 5 }}>License Plate</div>
+                  <div style={{ fontSize: '28px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 30px rgba(59,158,255,0.4)' }}>7JKY442</div>
+                  <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.75)', marginTop: 4, letterSpacing: '0.1em' }}>STOLEN · NCIC CONFIRMED</div>
                 </div>
-              ))}
-            </div>
-
-            {/* Divider */}
-            <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
-
-            {/* Intercept ETA — prominent */}
-            <div style={{ padding: '12px 14px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 14 }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 4 }}>Intercept Window</div>
-              <div style={{ fontSize: '26px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>
-                {stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}
-              </div>
-              <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
-            </div>
-
-            {/* Unit assignment */}
-            <div style={{ padding: '10px 12px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
-              <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 5 }}>Nearest Unit</div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '13px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
-                <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
-              </div>
-              <div style={{ fontSize: '9px', color: 'rgba(173,198,255,0.4)', marginTop: 2, letterSpacing: '0.05em' }}>J. Reyes · SHIFT ACTIVE</div>
-            </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 18 }}>
+                  {[
+                    { label: 'Direction',  value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
+                    { label: 'Speed',      value: '72 MPH' },
+                    { label: 'GIS Lock',   value: 'ACTIVE' },
+                    { label: 'Confidence', value: '98.4%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ padding: '12px 14px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 14 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 4 }}>Intercept Window</div>
+                  <div style={{ fontSize: '26px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</div>
+                  <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
+                </div>
+                <div style={{ padding: '10px 12px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 5 }}>Nearest Unit</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
+                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
+                  </div>
+                  <div style={{ fontSize: '9px', color: 'rgba(173,198,255,0.4)', marginTop: 2, letterSpacing: '0.05em' }}>J. Reyes · SHIFT ACTIVE</div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Generic: headline dataPoints */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 18 }}>
+                  {stage.dataPoints.map((dp) => (
+                    <div key={dp.key}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 4 }}>{dp.key}</div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.2 }}>{dp.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 18 }}>
+                  {[
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Track Type', value: trackSubLabel },
+                    { label: 'Confidence', value: stage.dataPoints.find(d => d.key === 'CONFIDENCE')?.value ?? '94.7%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                {stage.understandMap.unitLabel && (
+                  <div style={{ padding: '10px 12px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                    <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 5 }}>Nearest Unit</div>
+                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#adc6ff' }}>{stage.understandMap.unitLabel}</div>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         )}
 
