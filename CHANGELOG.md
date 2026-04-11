@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.86] 2026-04-10 — Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays
+
+**Fixed / Improved**
+- `UnderstandMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` with `requestAnimationFrame` loop (same pattern as DispatchMap fix in v1.82) that waits for real container dimensions before calling `L.map()`, then attaches `ResizeObserver`. Previously the voyager tiles loaded into a collapsed height leaving large dark margins.
+- Switched to `dark_all` CartoCDN tiles (matches ACT stage). Removed the `hue-rotate` brightness filter hack.
+- Route now rendered as glow (10px/18% opacity) + solid line (3px/95%) in green (`#00C98A`).
+- Stolen vehicle marker enlarged (36px circle, 2.5px border, larger pulse rings), plate badge background changed from semi-transparent to solid `#FF4560`.
+- Intercept/unit marker redesigned as blue `#3B9EFF` crosshair with "12-CHARLIE" label.
+- Added CCTV camera marker (amber `#FFB020`, video camera SVG icon, CAM 402 label) placed just east of the incident coords where the vehicle was first detected. Accepts optional `cameraCoords` prop for overrides.
+- `fitBounds` now includes camera positions in the bounding box so all overlay elements are visible.
+
 ## [1.85] 2026-04-10 — Demo: LEARN nav buttons — floating fixed overlay
 
 **Changed**

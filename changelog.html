@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v1.86 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.86</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> Leaflet init — replaced <code>setTimeout(invalidateSize)</code> with <code>requestAnimationFrame</code> loop + <code>ResizeObserver</code>; map now fills the full panel without dark margins.</li>
+          <li>Switched to <code>dark_all</code> CartoCDN tiles. Route: green glow (10px) + solid line (3px). Stolen car marker enlarged with solid red plate badge. Intercept marker redesigned as blue crosshair with unit label.</li>
+          <li><strong>Added</strong> amber CCTV camera marker (CAM 402) at the Highway 45 detection point. <code>fitBounds</code> updated to include camera positions.</li>
+        </ul>
+      </div>
+
       <!-- v1.85 -->
       <div class="tl-entry changed">
         <div class="tl-meta"><span class="tl-ver">v1.85</span><span class="tl-date">2026-04-10</span></div>
