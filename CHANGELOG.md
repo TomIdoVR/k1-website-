@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.87] 2026-04-10 — Demo: title emphasis across all stages
+
+**Improved**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx`, `LearnLayout.tsx` — replaced the thin, low-contrast stage label with a left accent bar (3×14px `#1755c2`) + bolder tracking. Increased headline `font-size` from `clamp(1.35rem, 1.9vw, 1.85rem)` to `clamp(1.9rem, 2.6vw, 2.8rem)` and tightened `line-height` to 1.0. Description text opacity raised from 0.48 to 0.62. Changes are identical across DETECT/UNDERSTAND (StageScreen), DECIDE (ProtocolPanel), ACT (SplitLayout), and LEARN (LearnLayout).
+
 ## [1.86] 2026-04-10 — Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays
 
 **Fixed / Improved**
