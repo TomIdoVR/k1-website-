@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.83] 2026-04-10 — Demo: UNDERSTAND — restore 3-column layout at all desktop widths
+
+**Fixed**
+- `StageScreen.tsx` — the UNDERSTAND stage was wrapping its center panel to full-width at ≤1100px (matching the old fixed-height overflow fix), which broke the three-equal-column layout on common desktop viewports. Fix: removed `flex-wrap` and `order: -1` from the ≤1100px rule; the outer now uses `min-height: calc(100vh - 200px)` instead so the columns fill the screen without a fixed height. Wrapping to the stacked layout is deferred to ≤768px (center full-width top, left+right split) and ≤540px (all three stack vertically).
+
 ## [1.82] 2026-04-10 — Demo: DispatchMap Leaflet init fix + visual improvements
 
 **Fixed**

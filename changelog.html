@@ -356,6 +356,15 @@
 
     <div class="timeline">
 
+      <!-- v1.83 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.83</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UNDERSTAND — restore 3-column layout at all desktop widths</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>StageScreen.tsx</code> — the ≤1100px breakpoint was wrapping the center panel to full-width, breaking the three-even-column layout on desktop. The outer now uses <code>min-height: calc(100vh - 200px)</code> so the three columns fill the screen. Stacking is deferred to ≤768px (center full-width, left+right side-by-side) and ≤540px (all three stacked vertically).</li>
+        </ul>
+      </div>
+
       <!-- v1.82 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.82</span><span class="tl-date">2026-04-10</span></div>
