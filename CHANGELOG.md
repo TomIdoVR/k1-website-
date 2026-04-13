@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.97] 2026-04-13 — Fix: sync all demo components and data files to branch
+
+**Fixed**
+- 6 component files (`DispatchMap`, `GeoPanel`, `ScenarioPlayer`, `SplitLayout`, `StageScreen`, `TopBar`) and 5 data files (`lpr`, `medical`, `school`, `types`, `violence`) were out of sync between the local working copy and the `demo-light-redesign` branch, causing cascading TypeScript build errors on Vercel. All files synced in one commit.
+
 ## [1.96] 2026-04-13 — Fix: ProtocolPanel TypeScript error on prevStage
 
 **Fixed**
