@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.00] 2026-04-13 — Demo: fix panel separator contrast (gap bg matches container)
+
+**Fixed**
+- Gap background in ProtocolPanel and SplitLayout changed from `#03080f` to `#162235` (matches stage container)
+- Darker panel backgrounds (`#0b1622`, `#060e18`, `#07101c`) now contrast against the lighter gap, creating clearly visible separators
+- Mirrors the same technique already used by the UNDERSTAND stage
+
 ## [1.99] 2026-04-13 — Demo: make panel separators clearly visible
 
 **Fixed**
