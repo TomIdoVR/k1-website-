@@ -354,30 +354,35 @@ export default function LearnLayout({
           </div>
         </div>
 
-        {/* ── Floating nav — fixed bottom-right, matches BottomNav pattern ── */}
+        {/* ── Floating nav — fixed bottom-center, matches BottomNav pattern ── */}
         <div style={{
-          position: 'fixed', bottom: 24, right: 28, zIndex: 9999,
-          display: 'flex', alignItems: 'center', gap: 8,
+          position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 9999,
+          display: 'flex', alignItems: 'center', gap: 10,
           fontFamily: 'var(--font-manrope), Manrope, sans-serif',
         }}>
           {prevStage && onPrev && (
             <button
               onClick={onPrev}
-              title={`Previous: ${prevStage.label}`}
+              aria-label={`Previous: ${prevStage?.label}`}
               style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                width: 40, height: 40, borderRadius: 10,
-                border: '1px solid rgba(255,255,255,0.1)',
+                display: 'flex', alignItems: 'center', gap: 7,
+                padding: '9px 14px', borderRadius: 10,
+                border: '1px solid rgba(255,255,255,0.13)',
                 background: 'rgba(8,16,26,0.72)',
                 backdropFilter: 'blur(20px)',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.55)',
                 cursor: 'pointer', transition: 'all 0.18s',
-                fontSize: 18,
+                fontSize: 10, fontWeight: 700,
+                letterSpacing: '0.1em', textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.26)'; e.currentTarget.style.color = 'rgba(255,255,255,0.85)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.13)'; e.currentTarget.style.color = 'rgba(255,255,255,0.55)' }}
             >
-              ‹
+              <div style={{ width: 22, height: 22, borderRadius: 5, background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 13 }}>arrow_back</span>
+              </div>
+              {prevStage.label}
             </button>
           )}
           <a

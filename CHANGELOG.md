@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.94] 2026-04-13 — Demo: LearnLayout nav centered + prev button updated
+
+**Fixed**
+- `LearnLayout.tsx` — floating nav strip (CHOOSE SCENARIO + prev arrow) was still bottom-right. Repositioned to bottom-center to match BottomNav. Also updated the old ghost `‹` prev button to the labeled pill style introduced in v1.92.
+
 ## [1.93] 2026-04-13 — Demo: BottomNav moved to bottom-center
 
 **Changed**
