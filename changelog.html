@@ -356,6 +356,15 @@
 
     <div class="timeline">
 
+      <!-- v1.90 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.90</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: access-control DECIDE stage map panel populated</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>access-control.ts</code> — DECIDE stage had no <code>decideMap</code>, causing <code>ProtocolPanel</code> to show "NO MAP DATA" on the right panel. Added <code>decideMap</code> with incident coords, five units (SEC-1 ASSIGNED, SEC-2 + UNIT-9 EN ROUTE, UNIT-3 STANDBY, K9-2 AVAILABLE), and two camera thumbnails (cam03 alert + cam07). Now renders the same <code>DecideMapPanel</code> as violence and medical scenarios.</li>
+        </ul>
+      </div>
+
       <!-- v1.89 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.89</span><span class="tl-date">2026-04-10</span></div>

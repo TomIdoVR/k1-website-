@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.90] 2026-04-13 — Demo: access-control DECIDE stage map panel populated
+
+**Fixed**
+- `access-control.ts` — the DECIDE stage had `layout: 'protocol'` and `protocolSteps` but no `decideMap`, causing `ProtocolPanel` to render "NO MAP DATA" on the right panel. Added `decideMap` with incident coords `[29.7362, -95.4625]`, five units (SEC-1 ASSIGNED, SEC-2 EN ROUTE, UNIT-9 EN ROUTE, UNIT-3 STANDBY, K9-2 AVAILABLE), and two camera thumbnails (cam03-server-corridor alert + cam07-east-wing). Now renders the same `DecideMapPanel` as violence and medical scenarios.
+
 ## [1.89] 2026-04-10 — Demo: UNDERSTAND left panel now scenario-specific
 
 **Fixed**
