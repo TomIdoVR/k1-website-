@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.95] 2026-04-13 — Fix: missing map components added to branch
+
+**Fixed**
+- `UnderstandMapPanel.tsx` and `StaticMapPanel.tsx` were never committed to `demo-light-redesign`, causing a Vercel build failure ("Module not found"). Both files added to the branch.
+
 ## [1.94] 2026-04-13 — Demo: LearnLayout nav centered + prev button updated
 
 **Fixed**
