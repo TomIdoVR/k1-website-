@@ -102,7 +102,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           radius: 7, color: '#00C98A', fillColor: '#00C98A',
           fillOpacity: 0.85, weight: 2,
         }).addTo(map).bindTooltip(`⊕ ${label}`, {
-          permanent: true, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
+          permanent: false, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
         })
       })
 
@@ -115,7 +115,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           const labelColor  = alert ? '#FF8C9E' : '#adc6ff'
           const lineColor   = alert ? 'rgba(255,95,95,0.45)' : 'rgba(59,158,255,0.45)'
 
-          const W = 112, TH = 70
+          const W = 160, TH = 100
           const html = `
             <div class="cam-thumb">
               <div class="cam-thumb-img" style="width:${W}px;height:${TH}px;border:1.5px solid ${borderColor};">
@@ -148,7 +148,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
             radius: 6, color: '#adc6ff', fillColor: '#3B9EFF',
             fillOpacity: 0.75, weight: 2,
           }).addTo(map).bindTooltip(`▣ ${label}`, {
-            permanent: true, direction: 'top', className: 'geo-tooltip geo-tooltip-camera',
+            permanent: false, direction: 'top', className: 'geo-tooltip geo-tooltip-camera',
           })
         }
       })
@@ -175,7 +175,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
 
       // Fit bounds
       const allCoords = [caller.coords, ...aeds.map(a => a.coords), ...cameras.map(c => c.coords), ...(sosEvent ? [sosEvent.coords] : [])]
-      map.fitBounds(L.latLngBounds(allCoords), { padding: [50, 50] })
+      map.fitBounds(L.latLngBounds(allCoords), { padding: [60, 60], maxZoom: 15 })
 
       // Keep map sized correctly as container resizes
       observer = new ResizeObserver(() => map.invalidateSize())

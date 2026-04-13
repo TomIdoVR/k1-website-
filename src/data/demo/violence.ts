@@ -45,6 +45,12 @@ export const violenceScenario: ScenarioConfig = {
       backgroundFit: 'contain',
       pipImage: '/demo/violence/stage-1-detect.jpg',
       pipLabel: 'CAM 7 · CENTRAL PLAZA',
+      understandMap: {
+        incidentCoords: [29.7604, -95.3698],
+        label: 'THREAT ZONE',
+        unitCoords: [29.7680, -95.3800],
+        unitLabel: '04-DELTA NEARBY',
+      },
       layout: 'default',
     },
     {
@@ -53,7 +59,7 @@ export const violenceScenario: ScenarioConfig = {
       label: 'DECIDE',
       stageLabel: 'STAGE 03: DECIDE — RESPONSE ASSIGNED',
       timestamp: '15:23:05',
-      headline: 'UNIT ASSIGNED: 04-DELTA',
+      headline: 'THREAT RESPONSE PROTOCOL',
       description:
         'AI evaluated threat level, unit proximity, and civilian density. Tactical brief auto-generated and pushed to field officer in 3 seconds.',
       dataPoints: [
@@ -68,7 +74,28 @@ export const violenceScenario: ScenarioConfig = {
       pipLabel: 'MULTI-CAM TRACK · ACTIVE',
       pip2Image: '/demo/violence/stage-1-detect.jpg',
       pip2Label: 'CAM 7 · CENTRAL PLAZA',
-      layout: 'default',
+      layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7604, -95.3698],
+        units: [
+          { id: '04-DELTA',   status: 'ASSIGNED',  active: true,  coords: [29.7680, -95.3800] },
+          { id: '09-ECHO',    status: 'EN ROUTE',  active: true,  coords: [29.7520, -95.3600] },
+          { id: '02-BRAVO',   status: 'STANDBY',   active: false, coords: [29.7700, -95.3500] },
+          { id: '07-ALPHA',   status: 'AVAILABLE', active: false, coords: [29.7450, -95.3900] },
+        ],
+        cameras: [
+          { label: 'CAM 7 · CENTRAL PLAZA',   image: '/demo/violence/stage-1-detect.jpg',   alert: true },
+          { label: 'MULTI-CAM TRACK · ACTIVE', image: '/demo/violence/stage-2-understand.jpg' },
+        ],
+      },
+      protocolSteps: [
+        { id: 1, text: 'VIOLENCE DETECTED — CAM 7 · Central Plaza · AI confidence 94.7% · weapon indicator elevated', status: 'complete' },
+        { id: 2, text: 'MULTI-CAM LOCK — 3 subjects tracked simultaneously · 1 armed confirmed', status: 'complete' },
+        { id: 3, text: 'CIVILIAN RISK MAPPED — 12m radius · 40+ civilians in zone · evacuation advisory issued', status: 'complete' },
+        { id: 4, text: 'UNIT SCORED — 04-Delta selected · 0.8 mi · tactical unit · closest available', status: 'complete' },
+        { id: 5, text: 'TACTICAL BRIEF SENT — Live cam feed · subject count · risk zone coords pushed to officer', status: 'active' },
+        { id: 6, text: 'BACKUP UNIT ASSIGNED — 09-Echo · 1.2 mi · en route for perimeter control', status: 'pending' },
+      ],
     },
     {
       id: 'act',

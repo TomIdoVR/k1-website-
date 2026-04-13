@@ -1319,8 +1319,8 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Top-right: live monitoring + timestamp ── */}
-        <div
+        {/* ── Top-right: live monitoring + timestamp — hidden when decideCard present ── */}
+        {!stage.decideCard && <div
           style={{
             position: 'absolute',
             top: 40,
@@ -1377,7 +1377,7 @@ export default function StageScreen({
           >
             {stage.timestamp}
           </div>
-        </div>
+        </div>}
 
         {/* ── Understand map panel — full-height right side ── */}
         {!isFirst && stage.understandMap && (
@@ -1761,32 +1761,9 @@ export default function StageScreen({
           <div style={{
             position: 'absolute', inset: 0,
             display: 'flex', flexDirection: 'column',
-            padding: '20px 32px 16px',
+            padding: '12px 16px',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
           }}>
-            {/* Title row */}
-            <div style={{ marginBottom: 12, display: 'flex', alignItems: 'baseline', gap: 20 }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-                  <span style={{ fontSize: '10px', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#adc6ff' }}>
-                    {stage.stageLabel.split(' — ')[0]}
-                  </span>
-                  <div style={{ height: 1, width: 28, background: 'rgba(173,198,255,0.3)' }} />
-                </div>
-                <h2 style={{
-                  fontSize: 'clamp(1.2rem, 1.8vw, 2rem)', fontWeight: 900, fontStyle: 'italic',
-                  letterSpacing: '-0.02em', textTransform: 'uppercase', lineHeight: 1.05,
-                  color: '#fff', margin: 0, textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-                }}>
-                  {stage.headline}
-                </h2>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
-                <span className="animate-pulse" style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#00C98A' }} />
-                <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#00C98A' }}>LIVE MONITORING</span>
-              </div>
-            </div>
-
             {/* Main 2-column layout: map | sidebar */}
             <div style={{
               flex: 1, minHeight: 0, display: 'flex', gap: 0,
@@ -1802,6 +1779,11 @@ export default function StageScreen({
                   incidentCoords={stage.decideCard.incidentCoords}
                   units={stage.decideCard.units}
                 />
+                {/* Live monitoring pill */}
+                <div style={{ position: 'absolute', top: 10, right: 10, zIndex: 1000, display: 'flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 20, background: 'rgba(8,14,24,0.88)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                  <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A' }} />
+                  <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>LIVE</span>
+                </div>
                 {/* Map legend overlay */}
                 <div style={{
                   position: 'absolute', bottom: 10, left: 10, zIndex: 1000,
@@ -1828,76 +1810,107 @@ export default function StageScreen({
                 </div>
               </div>
 
-              {/* RIGHT — unit list + AI score + brief */}
-              <div style={{ flex: 1, background: 'rgba(6,12,22,0.98)', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(59,158,255,0.1)' }}>
+              {/* RIGHT — 3 equal modules stacked */}
+              <div style={{ flex: 1, minWidth: 0, background: 'rgba(6,12,22,0.98)', display: 'grid', gridTemplateRows: '1fr 1fr 1fr', borderLeft: '1px solid rgba(59,158,255,0.1)' }}>
 
-                {/* Unit roster */}
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div style={{ padding: '10px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)' }}>AVAILABLE EMS UNITS</span>
+                {/* MODULE 1 — Unit roster */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(59,158,255,0.06)', borderBottom: '2px solid rgba(59,158,255,0.2)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#3B9EFF', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#3B9EFF' }}>AVAILABLE UNITS</span>
                   </div>
-                  {stage.decideCard.units.map((u) => {
-                    const statusBg = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.15)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.15)' : 'rgba(255,255,255,0.04)'
-                    const statusColor = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : '#48647A'
-                    const statusBorder = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.3)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.3)' : 'rgba(255,255,255,0.06)'
-                    const leftBorder = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : 'transparent'
-                    return (
-                      <div key={u.id} style={{
-                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                        padding: '8px 16px',
-                        borderBottom: '1px solid rgba(255,255,255,0.04)',
-                        borderLeft: `3px solid ${leftBorder}`,
-                        background: u.active ? 'rgba(59,158,255,0.04)' : 'transparent',
-                      }}>
-                        <div>
-                          <div style={{ fontSize: '12px', fontWeight: 700, color: u.active ? '#E0ECF8' : '#48647A', letterSpacing: '0.05em' }}>{u.id}</div>
-                          <div style={{ fontSize: '8px', color: '#48647A', marginTop: 1, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{u.role} · {u.distance} · {u.eta}</div>
+                  <div style={{ flex: 1, overflowY: 'auto' }}>
+                    {stage.decideCard.units.map((u) => {
+                      const statusBg = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.15)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.15)' : 'rgba(255,255,255,0.04)'
+                      const statusColor = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : '#48647A'
+                      const statusBorder = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.3)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.3)' : 'rgba(255,255,255,0.06)'
+                      const leftBorder = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : 'transparent'
+                      return (
+                        <div key={u.id} style={{
+                          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                          padding: '6px 16px',
+                          borderBottom: '1px solid rgba(255,255,255,0.04)',
+                          borderLeft: `3px solid ${leftBorder}`,
+                          background: u.active ? 'rgba(59,158,255,0.04)' : 'transparent',
+                        }}>
+                          <div>
+                            <div style={{ fontSize: '11px', fontWeight: 700, color: u.active ? '#E0ECF8' : '#48647A', letterSpacing: '0.05em' }}>{u.id}</div>
+                            <div style={{ fontSize: '7.5px', color: '#48647A', marginTop: 1, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{u.role} · {u.distance} · {u.eta}</div>
+                          </div>
+                          <div style={{
+                            fontSize: '7px', fontWeight: 800, letterSpacing: '0.12em', padding: '2px 7px', borderRadius: 3,
+                            background: statusBg, color: statusColor, border: `1px solid ${statusBorder}`,
+                          }}>{u.status}</div>
                         </div>
-                        <div style={{
-                          fontSize: '7px', fontWeight: 800, letterSpacing: '0.12em', padding: '2px 7px', borderRadius: 3,
-                          background: statusBg, color: statusColor, border: `1px solid ${statusBorder}`,
-                        }}>{u.status}</div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* MODULE 2 — Protocol steps OR dispatch brief */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderTop: '2px solid rgba(173,198,255,0.08)' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(173,198,255,0.04)', borderBottom: '2px solid rgba(173,198,255,0.12)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#adc6ff', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.7)' }}>
+                      {stage.protocolSteps ? 'RESPONSE PROTOCOL' : 'DISPATCH BRIEF SENT'}
+                    </span>
+                  </div>
+                  <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 4, padding: '8px 16px' }}>
+                    {stage.protocolSteps ? stage.protocolSteps.map((step) => {
+                      const isDone   = step.status === 'complete'
+                      const isActive = step.status === 'active'
+                      const dotColor  = isDone ? '#00C98A' : isActive ? '#3B9EFF' : 'rgba(173,198,255,0.2)'
+                      const textColor = isDone ? 'rgba(200,255,230,0.75)' : isActive ? '#c8dff0' : 'rgba(173,198,255,0.35)'
+                      const borderCol = isDone ? 'rgba(0,201,138,0.18)' : isActive ? 'rgba(59,158,255,0.18)' : 'rgba(255,255,255,0.04)'
+                      const bg        = isDone ? 'rgba(0,201,138,0.05)' : isActive ? 'rgba(59,158,255,0.06)' : 'transparent'
+                      return (
+                        <div key={step.id} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '5px 8px', borderRadius: 4, background: bg, border: `1px solid ${borderCol}` }}>
+                          <div style={{ flexShrink: 0, marginTop: 4, width: 6, height: 6, borderRadius: '50%', background: dotColor, boxShadow: isActive ? '0 0 6px rgba(59,158,255,0.6)' : 'none' }} />
+                          <div style={{ flex: 1, display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 6 }}>
+                            <span style={{ fontSize: '9.5px', color: textColor, lineHeight: 1.45, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: isActive ? 600 : 500 }}>{step.text}</span>
+                            {isDone && <span style={{ flexShrink: 0, fontSize: '6.5px', fontWeight: 800, letterSpacing: '0.1em', color: '#00C98A', background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.25)', borderRadius: 3, padding: '1px 5px', marginTop: 2 }}>DONE</span>}
+                            {isActive && <span style={{ flexShrink: 0, fontSize: '6.5px', fontWeight: 800, letterSpacing: '0.1em', color: '#3B9EFF', background: 'rgba(59,158,255,0.12)', border: '1px solid rgba(59,158,255,0.3)', borderRadius: 3, padding: '1px 5px', marginTop: 2 }}>ACTIVE</span>}
+                          </div>
+                        </div>
+                      )
+                    }) : stage.decideCard.briefItems.map((item, i) => (
+                      <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '5px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#3B9EFF', flexShrink: 0, marginTop: 1 }}>check_circle</span>
+                        <span style={{ fontSize: '9.5px', color: '#c8dff0', lineHeight: 1.45, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 500 }}>{item}</span>
                       </div>
-                    )
-                  })}
-                </div>
-
-                {/* AI score + dispatched */}
-                <div style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <svg width="72" height="72" viewBox="0 0 72 72">
-                      <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
-                      <circle cx="36" cy="36" r="30" fill="none" stroke="#00C98A" strokeWidth="6"
-                        strokeDasharray={`${2 * Math.PI * 30 * (stage.decideCard.aiScore / 100)} ${2 * Math.PI * 30}`}
-                        strokeLinecap="round" transform="rotate(-90 36 36)"
-                      />
-                    </svg>
-                    <div style={{ position: 'absolute', textAlign: 'center' }}>
-                      <div style={{ fontSize: '15px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.decideCard.aiScore}%</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '7px', color: 'rgba(173,198,215,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>AI SELECTION SCORE</div>
-                    <div style={{ fontSize: '7px', color: 'rgba(0,201,138,0.7)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 2 }}>DISPATCHED TO</div>
-                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A' }}>{stage.decideCard.dispatchedTo}</div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Dispatch brief */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '10px 16px', gap: 6, overflow: 'hidden' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 4 }}>DISPATCH BRIEF SENT</div>
-                  {stage.decideCard.briefItems.map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '6px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                      <span className="material-symbols-outlined" style={{ fontSize: 12, color: '#3B9EFF', flexShrink: 0, marginTop: 1 }}>check_circle</span>
-                      <span style={{ fontSize: '10px', color: '#c8dff0', lineHeight: 1.5, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 500 }}>{item}</span>
+                {/* MODULE 3 — AI score + dispatched + banner */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderTop: '2px solid rgba(0,201,138,0.1)' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(0,201,138,0.05)', borderBottom: '2px solid rgba(0,201,138,0.2)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#00C98A', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#00C98A' }}>AI RECOMMENDATION</span>
+                  </div>
+                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 14, padding: '10px 16px' }}>
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <svg width="64" height="64" viewBox="0 0 72 72">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#00C98A" strokeWidth="6"
+                          strokeDasharray={`${2 * Math.PI * 30 * (stage.decideCard.aiScore / 100)} ${2 * Math.PI * 30}`}
+                          strokeLinecap="round" transform="rotate(-90 36 36)"
+                        />
+                      </svg>
+                      <div style={{ position: 'absolute', textAlign: 'center' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.decideCard.aiScore}%</div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-
-                {/* Dispatch confirmed banner */}
-                <div style={{ margin: '0 12px 12px', padding: '8px 12px', borderRadius: 6, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.25)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A', flexShrink: 0 }} />
-                  <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>DISPATCH CONFIRMED · UNITS EN ROUTE</span>
+                    <div>
+                      <div style={{ fontSize: '7px', color: 'rgba(173,198,215,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>AI SELECTION SCORE</div>
+                      <div style={{ fontSize: '7px', color: 'rgba(0,201,138,0.7)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 2 }}>DISPATCHED TO</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#00C98A' }}>{stage.decideCard.dispatchedTo}</div>
+                    </div>
+                  </div>
+                  <div style={{ margin: '0 12px 10px', padding: '7px 12px', borderRadius: 6, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.25)', display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+                    <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8.5px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>DISPATCH CONFIRMED · UNITS EN ROUTE</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2490,7 +2503,7 @@ export default function StageScreen({
                 Go back
               </span>
               <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.05rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
-                ‹ PREVIOUS: {prevStage.label}
+                ‹ PREVIOUS: {prevStage?.label}
               </span>
             </div>
           </button>
@@ -2528,7 +2541,7 @@ export default function StageScreen({
                 Proceed to next step
               </span>
               <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
-                NEXT: {nextStage.label}
+                NEXT: {nextStage?.label}
               </span>
             </div>
             <div
