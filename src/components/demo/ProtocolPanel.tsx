@@ -165,8 +165,8 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         minHeight: 0,
         flex: 1,
         padding: '8px',
-        gap: '12px',
-        background: 'rgba(173,198,255,0.08)',
+        gap: '8px',
+        background: '#03080f',
       }}>
 
         {/* ── LEFT: Protocol steps (dark) ── */}

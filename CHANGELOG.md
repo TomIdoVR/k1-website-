@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.99] 2026-04-13 — Demo: make panel separators clearly visible
+
+**Fixed**
+- Changed gap background from near-invisible `rgba(173,198,255,0.08)` to solid `#03080f` (deep near-black) in `SplitLayout.tsx` and `ProtocolPanel.tsx`
+- Panel gaps now create a clear dark separator between modules, matching the UNDERSTAND stage treatment
+- Standardised gap/padding to 8px to align with all stage layouts
+
 ## [1.98] 2026-04-13 — Demo: vertical gaps between panels on all stage layouts
 
 **Improved**

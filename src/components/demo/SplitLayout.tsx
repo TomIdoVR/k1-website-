@@ -30,7 +30,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
   return (
     <>
     <style>{`
-      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; gap: 12px; padding: 8px; background: rgba(173,198,255,0.08); }
+      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; gap: 8px; padding: 8px; background: #03080f; }
       .demo-split-phone { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
       .demo-split-map { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
       .demo-split-units { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
