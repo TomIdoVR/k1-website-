@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.91] 2026-04-13 — Demo: DECIDE camera panel fills height, no black gap
+
+**Fixed**
+- `ProtocolPanel.tsx` — camera thumbnails had a fixed `height: 104px`, leaving a large black gap below when only 2 cameras were present. Changed `.pp-camera-pip` to `flex: 1; display: flex; flex-direction: column` and `.pp-camera-img` to `flex: 1; min-height: 0` so each pip stretches to share the full panel height equally. Camera list wrapper also set to `flex: 1` to fill the space below the header.
+
 ## [1.90] 2026-04-13 — Demo: access-control DECIDE stage map panel populated
 
 **Fixed**

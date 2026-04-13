@@ -29,9 +29,9 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
       .pp-main-row { flex-direction: row; }
       .pp-left-panel { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.1) !important; }
       .pp-center-panel { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.1); }
-      .pp-camera-panel { flex: 1; min-width: 0; display: flex; }
-      .pp-camera-pip { width: 100%; }
-      .pp-camera-img { width: 100%; height: 104px; }
+      .pp-camera-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+      .pp-camera-pip { width: 100%; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+      .pp-camera-img { width: 100%; flex: 1; min-height: 0; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .pp-outer-wrap { height: auto !important; overflow-y: visible !important; }
@@ -296,7 +296,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
               <span style={{ fontFamily: 'monospace', fontSize: 8, fontWeight: 700, letterSpacing: '0.14em', color: 'rgba(255,140,140,0.8)', textTransform: 'uppercase' }}>Live Cameras</span>
             </div>
             {/* Camera PiPs */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: '8px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: '8px', flex: 1, minHeight: 0 }}>
               {stage.decideMap!.cameras.map((cam, i) => (
                 <div key={i} className="pp-camera-pip" style={{ borderRadius: 5, overflow: 'hidden', border: cam.alert ? '1.5px solid rgba(255,95,95,0.7)' : '1px solid rgba(59,158,255,0.35)', boxShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '3px 8px', background: 'rgba(6,12,22,0.95)', borderBottom: cam.alert ? '1px solid rgba(255,95,95,0.3)' : '1px solid rgba(59,158,255,0.2)' }}>
