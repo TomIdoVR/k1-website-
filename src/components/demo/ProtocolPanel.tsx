@@ -350,7 +350,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
               </div>
               <div style={{ textAlign: 'left' }}>
                 <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 2 }}>Go back</span>
-                <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>‹ PREVIOUS: {prevStage.label}</span>
+                <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>‹ PREVIOUS: {prevStage?.label}</span>
               </div>
             </button>
           )}
@@ -369,7 +369,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
             >
               <div style={{ textAlign: 'left' }}>
                 <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.65, marginBottom: 2 }}>Proceed to next step</span>
-                <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>NEXT: {nextStage.label}</span>
+                <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>NEXT: {nextStage?.label}</span>
               </div>
               <div className="demo-stage-nav-icon" style={{ width: 28, height: 28, borderRadius: 8, border: '1px solid rgba(173,198,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <span className="material-symbols-outlined" style={{ fontSize: 15 }}>arrow_forward</span>
@@ -407,7 +407,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
             </div>
             <div style={{ textAlign: 'left' }}>
               <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 2 }}>Go back</span>
-              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.05rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>‹ PREVIOUS: {prevStage.label}</span>
+              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.05rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>‹ PREVIOUS: {prevStage?.label}</span>
             </div>
           </button>
         )}
@@ -427,7 +427,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           >
             <div style={{ textAlign: 'left' }}>
               <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.65, marginBottom: 2 }}>Proceed to next step</span>
-              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>NEXT: {nextStage.label}</span>
+              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>NEXT: {nextStage?.label}</span>
             </div>
             <div className="demo-stage-nav-icon" style={{ width: 32, height: 32, borderRadius: 8, border: '1px solid rgba(173,198,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <span className="material-symbols-outlined" style={{ fontSize: 16 }}>arrow_forward</span>
