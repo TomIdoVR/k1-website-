@@ -68,6 +68,8 @@ const pages = [
   { path: '/vs/verkada', priority: 0.7 },
   { path: '/vs/verint', priority: 0.7 },
   { path: '/vs/nice-systems', priority: 0.7 },
+  { path: '/vs/tyler-technologies', priority: 0.7 },
+  { path: '/vs/centralsquare', priority: 0.7 },
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
   { path: '/privacy', priority: 0.3 },

@@ -356,62 +356,6 @@
 
     <div class="timeline">
 
-      <!-- v2.00 -->
-      <div class="tl-entry fix">
-        <div class="tl-meta"><span class="tl-ver">v2.00</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Demo: fix panel separator contrast</h3>
-        <ul class="tl-list">
-          <li>Gap background changed from <code>#03080f</code> to <code>#162235</code> (stage container colour) in ProtocolPanel + SplitLayout</li>
-          <li>Darker panels now contrast visibly against the lighter gap — same technique as the working UNDERSTAND stage</li>
-        </ul>
-      </div>
-
-      <!-- v1.99 -->
-      <div class="tl-entry fix">
-        <div class="tl-meta"><span class="tl-ver">v1.99</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Demo: make panel separators clearly visible</h3>
-        <ul class="tl-list">
-          <li>Changed gap background from near-invisible <code>rgba(173,198,255,0.08)</code> to solid <code>#03080f</code> in SplitLayout and ProtocolPanel</li>
-          <li>Panel separators now show as clear dark lines between modules, matching UNDERSTAND stage treatment</li>
-        </ul>
-      </div>
-
-      <!-- v1.98 -->
-      <div class="tl-entry changed">
-        <div class="tl-meta"><span class="tl-ver">v1.98</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Demo: vertical gaps between panels on all stage layouts</h3>
-        <ul class="tl-list">
-          <li><strong>Improved</strong> <code>ProtocolPanel.tsx</code> and <code>SplitLayout.tsx</code> — panel columns updated to <code>border-radius: 12px</code> + <code>gap: 12px</code>, replacing the old <code>border-right</code> dividers. All layouts now share the same visual gap treatment as the UNDERSTAND stage.</li>
-        </ul>
-      </div>
-
-      <!-- v1.97 -->
-      <div class="tl-entry fixed">
-        <div class="tl-meta"><span class="tl-ver">v1.97</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Fix: sync all demo components and data files to branch</h3>
-        <ul class="tl-list">
-          <li><strong>Fixed</strong> 11 files (6 components + 5 data) were out of sync between local and <code>demo-light-redesign</code>, causing cascading TS build errors on Vercel. All files committed in one sync.</li>
-        </ul>
-      </div>
-
-      <!-- v1.96 -->
-      <div class="tl-entry fixed">
-        <div class="tl-meta"><span class="tl-ver">v1.96</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Fix: ProtocolPanel TypeScript error on prevStage</h3>
-        <ul class="tl-list">
-          <li><strong>Fixed</strong> <code>ProtocolPanel.tsx</code> — <code>prevStage.label</code> without optional chaining caused a TS build failure. Updated to <code>prevStage?.label</code> at lines 353 and 410.</li>
-        </ul>
-      </div>
-
-      <!-- v1.95 -->
-      <div class="tl-entry fixed">
-        <div class="tl-meta"><span class="tl-ver">v1.95</span><span class="tl-date">2026-04-13</span></div>
-        <h3 class="tl-title">Fix: missing map components added to branch</h3>
-        <ul class="tl-list">
-          <li><strong>Fixed</strong> <code>UnderstandMapPanel.tsx</code> and <code>StaticMapPanel.tsx</code> were missing from the <code>demo-light-redesign</code> branch, causing a Vercel build failure. Both files committed to the branch.</li>
-        </ul>
-      </div>
-
       <!-- v1.94 -->
       <div class="tl-entry fixed">
         <div class="tl-meta"><span class="tl-ver">v1.94</span><span class="tl-date">2026-04-13</span></div>

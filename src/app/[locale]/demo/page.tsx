@@ -135,9 +135,12 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
             >
               Scenarios
             </span>
-            <span style={{ color: '#64748b' }}>Operations</span>
-            <span style={{ color: '#64748b' }}>Intelligence</span>
-            <span style={{ color: '#64748b' }}>Archive</span>
+            <span style={{ color: '#64748b', cursor: 'default', position: 'relative' }}
+              title="Coming soon">Operations</span>
+            <span style={{ color: '#64748b', cursor: 'default' }}
+              title="Coming soon">Intelligence</span>
+            <span style={{ color: '#64748b', cursor: 'default' }}
+              title="Coming soon">Archive</span>
           </nav>
 
           {/* Right icons */}
@@ -176,20 +179,20 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
         style={{
           maxWidth: 1920,
           margin: '0 auto',
-          padding: '64px 40px 48px',
+          padding: '32px 40px 48px',
         }}
       >
         {/* Hero */}
-        <section style={{ marginBottom: 56 }}>
+        <section style={{ marginBottom: 28 }}>
           <h1
             style={{
-              fontSize: 'clamp(2.75rem, 6.5vw, 6rem)',
+              fontSize: 'clamp(2rem, 4vw, 3.75rem)',
               fontWeight: 900,
               fontStyle: 'italic',
-              lineHeight: 0.92,
+              lineHeight: 0.95,
               letterSpacing: '-0.03em',
               textTransform: 'uppercase',
-              marginBottom: 20,
+              marginBottom: 16,
             }}
           >
             THE UNIFIED OPERATING SYSTEM{' '}
@@ -204,62 +207,20 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           </h1>
           <p
             style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
-              fontWeight: 300,
+              fontSize: 'clamp(0.9rem, 1.4vw, 1.1rem)',
+              fontWeight: 400,
               color: '#c1c6d7',
-              letterSpacing: '0.02em',
-              maxWidth: 720,
+              letterSpacing: '0.01em',
+              maxWidth: 640,
               lineHeight: 1.6,
             }}
           >
-            One platform. Every scenario.
+            Detect, understand, decide, act, and learn — all from a single command centre. No vendor fragmentation. No delayed response.
           </p>
-        </section>
-
-        {/* Platform Modules */}
-        <section className="scrollbar-hide" style={{ marginBottom: 40, overflowX: 'auto', paddingBottom: 8 }}>
-          <p
-            style={{
-              fontSize: '0.8125rem',
-              fontWeight: 500,
-              color: '#b0b8c9',
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-              marginBottom: 12,
-            }}
-          >
-            Platform Modules — the building blocks powering every scenario
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 'max-content' }}>
-            {MODULES.map((m) => (
-              <div
-                key={m.icon}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '10px 18px',
-                  borderRadius: 9999,
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  background: '#262a32',
-                  border: '1px solid rgba(65,71,85,0.15)',
-                  whiteSpace: 'nowrap',
-                  cursor: 'default',
-                  transition: 'background 0.2s',
-                }}
-              >
-                <span className="material-symbols-outlined" style={{ color: '#adc6ff', fontSize: 20 }}>
-                  {m.icon}
-                </span>
-                {m.label}
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* Incident Lifecycle */}
-        <section style={{ marginBottom: 48 }}>
+        <section style={{ marginBottom: 20 }}>
           <p
             style={{
               fontSize: '0.8125rem',
@@ -293,12 +254,8 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
                     gap: 10,
                     padding: '12px 20px',
                     borderRadius: 10,
-                    border: i === 0
-                      ? '1.5px solid #4b8eff'
-                      : '1px solid #2a2f3a',
-                    background: i === 0
-                      ? 'rgba(75,142,255,0.1)'
-                      : 'rgba(28,32,39,0.6)',
+                    border: '1px solid #2a2f3a',
+                    background: 'rgba(28,32,39,0.6)',
                   }}
                 >
                   {/* Step number */}
@@ -312,8 +269,8 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
                       justifyContent: 'center',
                       fontSize: '0.6875rem',
                       fontWeight: 800,
-                      background: i === 0 ? '#4b8eff' : '#2a2f3a',
-                      color: i === 0 ? '#fff' : '#8a93a8',
+                      background: '#2a2f3a',
+                      color: '#8a93a8',
                     }}
                   >
                     {i + 1}
@@ -323,7 +280,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
                       fontSize: '0.75rem',
                       fontWeight: 700,
                       letterSpacing: '0.1em',
-                      color: i === 0 ? '#adc6ff' : '#c1c6d7',
+                      color: '#c1c6d7',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -347,25 +304,13 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           </div>
         </section>
 
-        {/* Scenario CTA */}
-        <p
-          style={{
-            fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-            fontWeight: 600,
-            color: '#adc6ff',
-            marginBottom: 20,
-            letterSpacing: '0.01em',
-          }}
-        >
-          Pick a scenario and see it in action &darr;
-        </p>
-
         {/* Scenario Cards */}
         <section
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(5, 1fr)',
             gap: 20,
+            marginBottom: 24,
           }}
           className="demo-card-grid"
         >
@@ -505,6 +450,48 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
               </div>
             )
           })}
+        </section>
+
+        {/* Platform Modules */}
+        <section className="scrollbar-hide" style={{ marginBottom: 40, overflowX: 'auto', paddingBottom: 8, marginTop: 24 }}>
+          <p
+            style={{
+              fontSize: '0.8125rem',
+              fontWeight: 500,
+              color: '#b0b8c9',
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+              marginBottom: 12,
+            }}
+          >
+            Platform Modules — the building blocks powering every scenario
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 'max-content' }}>
+            {MODULES.map((m) => (
+              <div
+                key={m.icon}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '10px 18px',
+                  borderRadius: 9999,
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  background: '#262a32',
+                  border: '1px solid rgba(65,71,85,0.15)',
+                  whiteSpace: 'nowrap',
+                  cursor: 'default',
+                  transition: 'background 0.2s',
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ color: '#adc6ff', fontSize: 20 }}>
+                  {m.icon}
+                </span>
+                {m.label}
+              </div>
+            ))}
+          </div>
         </section>
       </main>
 

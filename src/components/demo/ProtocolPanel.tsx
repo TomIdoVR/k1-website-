@@ -164,9 +164,6 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         overflow: 'hidden',
         minHeight: 0,
         flex: 1,
-        padding: '8px',
-        gap: '8px',
-        background: '#162235',
       }}>
 
         {/* ── LEFT: Protocol steps (dark) ── */}
@@ -174,6 +171,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#0B1622',
+          borderRight: '3px solid rgba(173,198,255,0.12)',
         }}>
           {/* Steps list */}
           <div style={{ flex: 1, overflowY: 'auto', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -261,6 +259,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           flex: 1, display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#060e18',
+          borderRight: '3px solid rgba(173,198,255,0.12)',
         }}>
           {hasMap && (
             <div style={{ flex: 1, position: 'relative', overflow: 'hidden', contain: 'strict' }}>
