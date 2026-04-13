@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.96] 2026-04-13 — Fix: ProtocolPanel TypeScript error on prevStage
+
+**Fixed**
+- `ProtocolPanel.tsx` — lines 353 and 410 had `prevStage.label` without optional chaining, causing a TypeScript build error (`'prevStage' is possibly 'undefined'`). Updated to `prevStage?.label`. The local file already had the fix but an older version was committed to the branch.
+
 ## [1.95] 2026-04-13 — Fix: missing map components added to branch
 
 **Fixed**
