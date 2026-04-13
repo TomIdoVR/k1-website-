@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.92] 2026-04-13 — Demo: BottomNav — clearer prev/next for first-time users
+
+**Improved**
+- `BottomNav.tsx` — PREV button was a tiny ghost `‹` icon at 40% opacity with no label. Replaced with a full labeled pill button (`← DETECT`) matching the NEXT button style but dimmer, so the navigation pattern is immediately obvious. Added 5-dot step progress indicator between the two buttons (active dot stretches to a pill, completed dots tint blue). Added a 2-cycle pulse ring animation on the NEXT button at first stage load to draw attention for new visitors.
+
 ## [1.91] 2026-04-13 — Demo: DECIDE camera panel fills height, no black gap
 
 **Fixed**
