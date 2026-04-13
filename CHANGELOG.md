@@ -7,6 +7,11 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.93] 2026-04-13 — Demo: BottomNav moved to bottom-center
+
+**Changed**
+- `BottomNav.tsx` — nav strip repositioned from bottom-right to bottom-center (`left: 50%` + `translateX(-50%)`). More natural placement for a centered demo flow.
+
 ## [1.92] 2026-04-13 — Demo: BottomNav — clearer prev/next for first-time users
 
 **Improved**

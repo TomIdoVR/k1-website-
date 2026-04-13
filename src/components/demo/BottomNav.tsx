@@ -48,7 +48,8 @@ export default function BottomNav({
       .demo-float-nav {
         position: fixed;
         bottom: 24px;
-        right: 28px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 9999;
         display: flex;
         align-items: center;
@@ -167,7 +168,7 @@ export default function BottomNav({
       }
 
       @media (max-width: 600px) {
-        .demo-float-nav { bottom: 16px; right: 16px; gap: 8px; }
+        .demo-float-nav { bottom: 16px; gap: 8px; }
         .demo-float-next-label { display: none; }
         .demo-float-prev-label { display: none; }
         .demo-float-next { padding: 10px 14px; }
