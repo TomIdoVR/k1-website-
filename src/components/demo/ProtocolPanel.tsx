@@ -26,10 +26,10 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
     <style>{`
       @keyframes pp-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
       @keyframes pp-ring  { 0%{transform:scale(1);opacity:0.8} 100%{transform:scale(2.4);opacity:0} }
-      .pp-main-row { flex-direction: row; gap: 12px; }
-      .pp-left-panel { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
-      .pp-center-panel { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
-      .pp-camera-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
+      .pp-main-row { flex-direction: row; }
+      .pp-left-panel { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
+      .pp-center-panel { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
+      .pp-camera-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
       .pp-camera-pip { width: 100%; flex: 1; display: flex; flex-direction: column; min-height: 0; }
       .pp-camera-img { width: 100%; flex: 1; min-height: 0; }
       .demo-stage-nav-sublabel { display: block; }
@@ -171,7 +171,6 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#0B1622',
-          borderRight: '3px solid rgba(173,198,255,0.12)',
         }}>
           {/* Steps list */}
           <div style={{ flex: 1, overflowY: 'auto', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -259,7 +258,6 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           flex: 1, display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#060e18',
-          borderRight: '3px solid rgba(173,198,255,0.12)',
         }}>
           {hasMap && (
             <div style={{ flex: 1, position: 'relative', overflow: 'hidden', contain: 'strict' }}>

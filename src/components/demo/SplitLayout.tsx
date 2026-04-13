@@ -30,10 +30,10 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
   return (
     <>
     <style>{`
-      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; gap: 8px; padding: 8px; background: #162235; }
-      .demo-split-phone { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
-      .demo-split-map { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
-      .demo-split-units { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
+      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; }
+      .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
+      .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
+      .demo-split-units { flex: 1; min-width: 0; overflow: hidden; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .demo-split-root { height: auto !important; overflow-y: auto !important; }
@@ -196,7 +196,6 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             padding: '12px 24px 0',
             overflowY: 'auto',
             background: 'radial-gradient(ellipse at 50% 44%, #2a5280 0%, #111e2f 70%)',
-            borderRight: '3px solid rgba(173,198,255,0.12)',
           }}
         >
           {/* Panel title */}
@@ -417,7 +416,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
         </div>
 
         {/* ── PANEL 2 — Operational map ── */}
-        <div className="demo-split-map" style={{ position: 'relative', background: '#0a1520', overflow: 'hidden', minHeight: 300, borderRight: '3px solid rgba(173,198,255,0.12)' }}>
+        <div className="demo-split-map" style={{ position: 'relative', background: '#0a1520', overflow: 'hidden', minHeight: 300 }}>
           {/* Map panel title */}
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 2, display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px 8px', background: 'linear-gradient(to bottom, rgba(10,21,32,0.9) 0%, rgba(10,21,32,0) 100%)', pointerEvents: 'none' }}>
             <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>map</span>

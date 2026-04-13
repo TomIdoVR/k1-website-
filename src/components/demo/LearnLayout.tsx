@@ -13,8 +13,8 @@ const learnStyles = `
   @media (max-width: 768px) {
     .learn-outer { overflow-y: auto !important; }
     .learn-cards-row { flex-direction: column !important; overflow-y: auto; }
-    .learn-card-1 { width: 100% !important; flex-shrink: 0; border-radius: 8px !important; min-height: 200px; border-right: none !important; border-bottom: 3px solid rgba(173,198,255,0.12) !important; }
-    .learn-card-2 { width: 100% !important; flex: 0 0 auto; border-radius: 8px !important; min-height: 260px; border-right: none !important; border-bottom: 3px solid rgba(173,198,255,0.12) !important; }
+    .learn-card-1 { width: 100% !important; flex-shrink: 0; border-radius: 8px !important; min-height: 200px; border-right: none !important; border-bottom: 6px solid rgba(173,198,255,0.25) !important; }
+    .learn-card-2 { width: 100% !important; flex: 0 0 auto; border-radius: 8px !important; min-height: 260px; border-right: none !important; border-bottom: 6px solid rgba(173,198,255,0.25) !important; }
     .learn-card-3 { width: 100% !important; flex: 0 0 auto !important; min-height: 300px; }
   }
 `
@@ -170,7 +170,7 @@ export default function LearnLayout({
             display: 'flex', flexDirection: 'column',
             padding: '20px 20px',
             overflowY: 'auto',
-            borderRight: '3px solid rgba(173,198,255,0.12)',
+            borderRight: '6px solid rgba(173,198,255,0.25)',
           }}>
             {/* Card header bar */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid rgba(0,201,138,0.15)' }}>
@@ -221,7 +221,7 @@ export default function LearnLayout({
             display: 'flex', flexDirection: 'column', alignItems: 'center',
             padding: '20px 18px',
             overflowY: 'auto',
-            borderRight: '3px solid rgba(173,198,255,0.12)',
+            borderRight: '6px solid rgba(173,198,255,0.25)',
           }}>
             {/* Card header bar */}
             <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, marginBottom: 18, paddingBottom: 12, borderBottom: '1px solid rgba(59,158,255,0.12)' }}>
