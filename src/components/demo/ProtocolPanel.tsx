@@ -26,23 +26,22 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
     <style>{`
       @keyframes pp-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
       @keyframes pp-ring  { 0%{transform:scale(1);opacity:0.8} 100%{transform:scale(2.4);opacity:0} }
-      .pp-main-row { flex-direction: row; }
-      .pp-left-panel { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.1) !important; }
-      .pp-center-panel { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.1); }
-      .pp-camera-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+      .pp-main-row { flex-direction: row; gap: 12px; }
+      .pp-left-panel { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
+      .pp-center-panel { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
+      .pp-camera-panel { flex: 1; min-width: 0; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
       .pp-camera-pip { width: 100%; flex: 1; display: flex; flex-direction: column; min-height: 0; }
       .pp-camera-img { width: 100%; flex: 1; min-height: 0; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .pp-outer-wrap { height: auto !important; overflow-y: visible !important; }
         .pp-main-row { flex: none !important; overflow: visible !important; }
-        .pp-center-panel { border-right: none !important; }
       }
       @media (max-width: 768px) {
-        .pp-main-row { flex-direction: column !important; }
-        .pp-left-panel { flex: none !important; overflow-y: visible !important; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.1) !important; }
-        .pp-center-panel { flex: none !important; min-height: 360px; border-right: none !important; }
-        .pp-camera-panel { flex: none !important; border-right: none !important; border-top: 1px solid rgba(173,198,255,0.1) !important; }
+        .pp-main-row { flex-direction: column !important; gap: 8px !important; }
+        .pp-left-panel { flex: none !important; overflow-y: visible !important; }
+        .pp-center-panel { flex: none !important; min-height: 360px; }
+        .pp-camera-panel { flex: none !important; }
         .pp-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
       }
     `}</style>
@@ -50,7 +49,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
     {/* Light treatment outer wrapper — mirrors StageScreen's white area */}
     <div className={isLightBg ? 'pp-outer-wrap' : ''} style={isLightBg ? {
       display: 'flex', flexDirection: 'column', alignItems: 'stretch',
-      height: 'calc(100vh - 120px)', padding: '20px 28px 14px',
+      height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
     } : {
       display: 'contents',
     }}>
@@ -105,7 +104,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         ? { flex: 1, minHeight: 0, borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(0,20,60,0.1)', boxShadow: '0 2px 8px rgba(0,20,60,0.07), 0 12px 40px rgba(0,20,60,0.12), 0 40px 80px rgba(0,20,60,0.1)' }
         : { height: 'calc(100vh - 120px)', overflow: 'hidden' }),
       fontFamily: 'var(--font-manrope), Manrope, sans-serif',
-      background: '#0D1825',
+      background: isLightBg ? '#0D1825' : '#0D1825',
     }}>
 
       {/* ── Stage info bar ── */}
@@ -165,6 +164,9 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         overflow: 'hidden',
         minHeight: 0,
         flex: 1,
+        padding: '8px',
+        gap: '12px',
+        background: 'rgba(173,198,255,0.08)',
       }}>
 
         {/* ── LEFT: Protocol steps (dark) ── */}

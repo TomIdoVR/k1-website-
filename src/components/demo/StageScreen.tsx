@@ -66,7 +66,7 @@ export default function StageScreen({
       `}</style>
       <div className="understand-outer" style={{
         display: 'flex', flexDirection: 'column', alignItems: 'stretch',
-        height: 'calc(100vh - 120px)', padding: '20px 16px 14px',
+        height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
       }}>
         {/* Title block */}
@@ -336,9 +336,10 @@ export default function StageScreen({
     `}</style>
     <div style={isLightBg ? {
       display: 'flex', flexDirection: 'column', alignItems: 'stretch',
-      height: 'calc(100vh - 120px)', padding: '20px 16px 14px',
+      height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
     } : {
-      display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: 40,
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      padding: '0 24px 90px',
     }}>
 
       {/* ── Light-bg title block — sits above the panel on white background ── */}
@@ -391,7 +392,7 @@ export default function StageScreen({
         className="demo-stage-panel"
         style={{
           position: 'relative',
-          ...(isLightBg ? { flex: 1, minHeight: 0, width: '100%' } : { width: '90vw', height: '58vh' }),
+          ...(isLightBg ? { flex: 1, minHeight: 0, width: '100%' } : { width: '100%', height: 'calc(100vh - 210px)' }),
           borderRadius: 16,
           overflow: 'hidden',
           // Always give the panel a dark base so contain-fit images don't show the light parent bg

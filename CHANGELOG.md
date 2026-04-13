@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [1.98] 2026-04-13 — Demo: vertical gaps between panels on all stage layouts
+
+**Improved**
+- `ProtocolPanel.tsx` — panel columns (steps, map, cameras) updated to `border-radius: 12px` and `gap: 12px`, replacing the old `border-right` dividers. Matches the gap treatment on the UNDERSTAND stage.
+- `SplitLayout.tsx` — same update: phone, map, and units panels now use `border-radius: 12px` and `gap: 12px`.
+- Also synced `LearnLayout.tsx`, `StageScreen.tsx`, and `lpr.ts` to branch.
+
 ## [1.97] 2026-04-13 — Fix: sync all demo components and data files to branch
 
 **Fixed**

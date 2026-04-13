@@ -13,8 +13,8 @@ const learnStyles = `
   @media (max-width: 768px) {
     .learn-outer { overflow-y: auto !important; }
     .learn-cards-row { flex-direction: column !important; overflow-y: auto; }
-    .learn-card-1 { width: 100% !important; flex-shrink: 0; border-right: none !important; border-bottom: 1px solid rgba(0,201,138,0.12) !important; min-height: 200px; }
-    .learn-card-2 { width: 100% !important; flex: 0 0 auto; border-right: none !important; border-bottom: 1px solid rgba(59,158,255,0.1) !important; min-height: 260px; }
+    .learn-card-1 { width: 100% !important; flex-shrink: 0; border-radius: 8px !important; min-height: 200px; }
+    .learn-card-2 { width: 100% !important; flex: 0 0 auto; border-radius: 8px !important; min-height: 260px; }
     .learn-card-3 { width: 100% !important; flex: 0 0 auto !important; min-height: 300px; }
   }
 `
@@ -94,8 +94,9 @@ export default function LearnLayout({
       <style>{learnStyles}</style>
       <div className="learn-outer" style={{
         display: 'flex', flexDirection: 'column',
-        height: 'calc(100vh - 120px)',
-        padding: '20px 16px 14px',
+        height: 'calc(100vh - 196px)',
+        padding: '20px 28px 20px',
+        margin: '0 20px',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
       }}>
 
@@ -151,20 +152,21 @@ export default function LearnLayout({
         {/* ── Dark panel — three cards inside ── */}
         <div className="learn-cards-row" style={{
           flex: 1, minHeight: 0,
-          background: '#0c1a2e',
+          background: 'rgba(173,198,255,0.08)',
           borderRadius: 12,
           border: '1px solid rgba(255,255,255,0.07)',
           boxShadow: '0 8px 40px rgba(10,20,50,0.22)',
           overflow: 'hidden',
           display: 'flex',
-          gap: 0,
+          gap: 8,
+          padding: 8,
         }}>
 
           {/* ── CARD 1: Critical Events ── */}
           <div className="learn-card-1" style={{
             flexShrink: 0,
             background: 'rgba(0,201,138,0.035)',
-            borderRight: '1px solid rgba(0,201,138,0.12)',
+            borderRadius: 8,
             display: 'flex', flexDirection: 'column',
             padding: '20px 20px',
             overflowY: 'auto',
@@ -214,7 +216,7 @@ export default function LearnLayout({
           <div className="learn-card-2" style={{
             flexShrink: 0,
             background: 'rgba(59,158,255,0.03)',
-            borderRight: '1px solid rgba(59,158,255,0.1)',
+            borderRadius: 8,
             display: 'flex', flexDirection: 'column', alignItems: 'center',
             padding: '20px 18px',
             overflowY: 'auto',
@@ -269,6 +271,7 @@ export default function LearnLayout({
           <div className="learn-card-3" style={{
             flex: 1, minWidth: 0,
             background: 'rgba(255,176,32,0.02)',
+            borderRadius: 8,
             display: 'flex', flexDirection: 'column',
             padding: '20px 22px',
             overflowY: 'auto',

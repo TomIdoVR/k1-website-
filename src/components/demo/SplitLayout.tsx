@@ -30,22 +30,20 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
   return (
     <>
     <style>{`
-      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; }
-      .demo-split-phone { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.12) !important; }
-      .demo-split-map { flex: 1; min-width: 0; border-right: 1px solid rgba(173,198,255,0.12); }
-      .demo-split-units { flex: 1; min-width: 0; }
+      .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; gap: 12px; padding: 8px; background: rgba(173,198,255,0.08); }
+      .demo-split-phone { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
+      .demo-split-map { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
+      .demo-split-units { flex: 1; min-width: 0; border-radius: 12px; overflow: hidden; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .demo-split-root { height: auto !important; overflow-y: auto !important; }
         .demo-split-body { flex: none !important; overflow: visible !important; }
-        .demo-split-units { border-left: 1px solid rgba(173,198,255,0.12); }
-        .demo-split-map { border-right: none !important; }
       }
       @media (max-width: 768px) {
         .demo-split-body { flex-direction: column !important; }
-        .demo-split-phone { flex: 0 0 auto !important; max-width: 100% !important; width: 100% !important; max-height: 52%; overflow-y: auto; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.12) !important; }
-        .demo-split-map { flex: 1 !important; min-height: 200px; border-right: none !important; border-bottom: 1px solid rgba(173,198,255,0.12); }
-        .demo-split-units { flex: none !important; min-height: 220px; border-left: none !important; border-top: 1px solid rgba(173,198,255,0.12); }
+        .demo-split-phone { flex: 0 0 auto !important; max-width: 100% !important; width: 100% !important; max-height: 52%; overflow-y: auto; }
+        .demo-split-map { flex: 1 !important; min-height: 200px; }
+        .demo-split-units { flex: none !important; min-height: 220px; }
         .demo-stage-nav-btn { padding: 8px 16px !important; gap: 10px !important; }
         .demo-stage-nav-sublabel { display: none !important; }
         .demo-stage-nav-mainlabel { font-size: 0.78rem !important; }
@@ -61,9 +59,10 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
     <div
       className="demo-split-root"
       style={isLightBg ? {
-        height: 'calc(100vh - 120px)',
+        height: 'calc(100vh - 196px)',
         display: 'flex', flexDirection: 'column', alignItems: 'stretch',
-        padding: '20px 28px 14px',
+        padding: '20px 28px 20px',
+        margin: '0 20px',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
       } : {
         height: 'calc(100vh - 120px)',
