@@ -94,8 +94,8 @@ export const lprScenario: ScenarioConfig = {
           { id: '05-ALPHA',   status: 'AVAILABLE', active: false, coords: [29.7400, -95.3700] },
         ],
         cameras: [
-          { label: 'CAM 402 · HIGHWAY 45',  image: '/images/integrations/lpr-flow.jpeg', alert: true },
-          { label: 'GIS TRACK · ACTIVE',    image: '/demo/lpr/stage-3-decide.jpg' },
+          { label: 'CAM 402 · HIGHWAY 45',  image: '/images/integrations/lpr-hero.jpeg', alert: true },
+          { label: 'CAM 118 · INTERCHANGE', image: '/demo/lpr/cam-intercept.svg', alert: true },
         ],
       },
       protocolSteps: [

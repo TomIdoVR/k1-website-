@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.02] 2026-04-14 — Demo LPR: replace flowchart camera images with real LPR detection images
+
+**Fixed**
+- Replaced `lpr-flow.jpeg` (process flowchart — unrelated) used as camera feed in DECIDE stage with `lpr-hero.jpeg` (real overhead highway LPR detection image)
+- Added new `cam-intercept.svg` — a front-facing LPR camera capture from interchange angle (angle 2), replacing the blurry UI-mockup `stage-3-decide.jpg`
+- Relabeled second camera to `CAM 118 · INTERCHANGE` to match the new image content
+- Both cameras now marked as `alert: true` for visual consistency
+
 ## [2.01] 2026-04-14 — Demo: add 6px panel separator to UNDERSTAND stage
 
 **Fixed**
