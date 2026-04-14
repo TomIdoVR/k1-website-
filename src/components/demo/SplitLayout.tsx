@@ -31,8 +31,8 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
     <>
     <style>{`
       .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; }
-      .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
-      .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(173,198,255,0.25) !important; }
+      .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
+      .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-units { flex: 1; min-width: 0; overflow: hidden; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {

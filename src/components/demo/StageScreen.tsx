@@ -41,8 +41,8 @@ export default function StageScreen({
       <>
       <style>{`
         .understand-row { flex-direction: row; align-items: stretch; }
-        .understand-left { flex: 1; min-width: 0; }
-        .understand-center { flex: 1; min-width: 0; }
+        .understand-left { flex: 1; min-width: 0; border-right: 6px solid rgba(255,255,255,0.6) !important; }
+        .understand-center { flex: 1; min-width: 0; border-right: 6px solid rgba(255,255,255,0.6) !important; }
         .understand-right { flex: 1; min-width: 0; }
         @media (max-width: 1100px) {
           .understand-outer {
@@ -52,14 +52,14 @@ export default function StageScreen({
           }
         }
         @media (max-width: 768px) {
-          .understand-row { flex-wrap: wrap !important; overflow: visible !important; flex: none !important; }
-          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 260px !important; min-height: 220px; }
-          .understand-left { flex: 1 !important; min-height: 260px; }
-          .understand-right { flex: 1 !important; min-height: 300px; }
+          .understand-row { flex-wrap: wrap !important; overflow: visible !important; flex: none !important; border-radius: 0 !important; border: none !important; box-shadow: none !important; gap: 8px !important; }
+          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 260px !important; min-height: 220px; border-radius: 10px !important; }
+          .understand-left { flex: 1 !important; min-height: 260px; border-right: none !important; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
+          .understand-right { flex: 1 !important; min-height: 300px; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
         }
         @media (max-width: 540px) {
-          .understand-center { height: 240px !important; min-height: 200px !important; }
-          .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; }
+          .understand-center { height: 240px !important; min-height: 200px !important; border-right: none !important; }
+          .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; border-right: none !important; }
           .understand-right { flex: 0 0 100% !important; min-height: 320px; }
           .understand-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
         }
@@ -105,13 +105,12 @@ export default function StageScreen({
         </div>
 
         {/* 3-panel row */}
-        <div className="understand-row" style={{ flex: 1, display: 'flex', gap: 8, minHeight: 0 }}>
+        <div className="understand-row" style={{ flex: 1, display: 'flex', gap: 0, minHeight: 0, borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(59,158,255,0.18)', boxShadow: '0 4px 32px rgba(0,0,0,0.5)' }}>
 
           {/* ── Panel 1: Tracking / intelligence data ── */}
           <div className="understand-left" style={{
-            background: '#07101c', borderRadius: 12, padding: '18px 16px',
+            background: '#07101c', padding: '18px 16px',
             display: 'flex', flexDirection: 'column', gap: 0, overflowY: 'auto',
-            border: '1px solid rgba(59,158,255,0.12)',
             fontFamily: 'var(--font-space-mono), monospace',
           }}>
             {/* Header */}
@@ -196,8 +195,7 @@ export default function StageScreen({
 
           {/* ── Panel 2: GIS scene (static background + direction overlay) ── */}
           <div className="understand-center" style={{
-            position: 'relative', borderRadius: 12, overflow: 'hidden', background: '#0c1520',
-            border: '1px solid rgba(59,158,255,0.12)', minHeight: 200,
+            position: 'relative', overflow: 'hidden', background: '#0c1520', minHeight: 200,
           }}>
             {stage.backgroundImage && (
               <Image src={stage.backgroundImage} alt={stage.stageLabel} fill style={{ objectFit: 'cover' }} sizes="60vw" />
@@ -226,8 +224,7 @@ export default function StageScreen({
 
           {/* ── Panel 3: GIS TRACK LIVE (Leaflet map + camera + data pills) ── */}
           <div className="understand-right" style={{
-            position: 'relative', borderRadius: 12, overflow: 'hidden', background: '#0a131d',
-            border: '1px solid rgba(59,158,255,0.3)', boxShadow: '0 4px 32px rgba(0,0,0,0.6)',
+            position: 'relative', overflow: 'hidden', background: '#0a131d',
             isolation: 'isolate',
           }}>
             {/* Header */}

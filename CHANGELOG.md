@@ -7,6 +7,49 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.01] 2026-04-14 — Demo: add 6px panel separator to UNDERSTAND stage
+
+**Fixed**
+- UNDERSTAND 3-panel layout in `StageScreen.tsx` now uses the same `border-right: 6px solid rgba(173,198,255,0.25)` separator as ProtocolPanel, SplitLayout, and LearnLayout
+- Panels wrapped in a single container with `borderRadius: 12` and `overflow: hidden` (instead of individual rounded panels with gap)
+- Mobile: separator removed on stacked layout, individual panel borders restored for mobile
+
+## [2.00] 2026-04-13 — Demo: fix panel separator contrast (gap bg matches container)
+
+**Fixed**
+- Gap background in ProtocolPanel and SplitLayout changed from `#03080f` to `#162235` (matches stage container)
+- Darker panel backgrounds (`#0b1622`, `#060e18`, `#07101c`) now contrast against the lighter gap, creating clearly visible separators
+- Mirrors the same technique already used by the UNDERSTAND stage
+
+## [1.99] 2026-04-13 — Demo: make panel separators clearly visible
+
+**Fixed**
+- Changed gap background from near-invisible `rgba(173,198,255,0.08)` to solid `#03080f` (deep near-black) in `SplitLayout.tsx` and `ProtocolPanel.tsx`
+- Panel gaps now create a clear dark separator between modules, matching the UNDERSTAND stage treatment
+- Standardised gap/padding to 8px to align with all stage layouts
+
+## [1.98] 2026-04-13 — Demo: vertical gaps between panels on all stage layouts
+
+**Improved**
+- `ProtocolPanel.tsx` — panel columns (steps, map, cameras) updated to `border-radius: 12px` and `gap: 12px`, replacing the old `border-right` dividers. Matches the gap treatment on the UNDERSTAND stage.
+- `SplitLayout.tsx` — same update: phone, map, and units panels now use `border-radius: 12px` and `gap: 12px`.
+- Also synced `LearnLayout.tsx`, `StageScreen.tsx`, and `lpr.ts` to branch.
+
+## [1.97] 2026-04-13 — Fix: sync all demo components and data files to branch
+
+**Fixed**
+- 6 component files (`DispatchMap`, `GeoPanel`, `ScenarioPlayer`, `SplitLayout`, `StageScreen`, `TopBar`) and 5 data files (`lpr`, `medical`, `school`, `types`, `violence`) were out of sync between the local working copy and the `demo-light-redesign` branch, causing cascading TypeScript build errors on Vercel. All files synced in one commit.
+
+## [1.96] 2026-04-13 — Fix: ProtocolPanel TypeScript error on prevStage
+
+**Fixed**
+- `ProtocolPanel.tsx` — lines 353 and 410 had `prevStage.label` without optional chaining, causing a TypeScript build error (`'prevStage' is possibly 'undefined'`). Updated to `prevStage?.label`. The local file already had the fix but an older version was committed to the branch.
+
+## [1.95] 2026-04-13 — Fix: missing map components added to branch
+
+**Fixed**
+- `UnderstandMapPanel.tsx` and `StaticMapPanel.tsx` were never committed to `demo-light-redesign`, causing a Vercel build failure ("Module not found"). Both files added to the branch.
+
 ## [1.94] 2026-04-13 — Demo: LearnLayout nav centered + prev button updated
 
 **Fixed**
