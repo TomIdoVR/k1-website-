@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import type { Stage } from '@/data/demo/types'
+import { ALL_MODULES } from './TopBar'
 
 const GeoPanel = dynamic(() => import('./GeoPanel'), { ssr: false })
 const DecideMapPanel = dynamic(() => import('./DecideMapPanel'), { ssr: false })
+const UnderstandMapPanel = dynamic(() => import('./UnderstandMapPanel'), { ssr: false })
 
 interface StageScreenProps {
   stage: Stage
@@ -24,21 +26,378 @@ export default function StageScreen({
 }: StageScreenProps) {
   const hasPip = !!stage.pipImage || !!stage.pip2Image
   const pipCount = (stage.pipImage ? 1 : 0) + (stage.pip2Image ? 1 : 0)
+  // Light-background layout: title lives above the panel, panel fills remaining height.
+  // Applies to all stages without a full-panel detectCard overlay (detect, understand, etc.)
+  const isLightBg = !stage.detectCard
+
+  // True for LPR scenario only — drives conditional left-panel and map-overlay content
+  const isLprTrack = !!stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')
+  // Sub-label from "STAGE 02: UNDERSTAND — MULTI-CAM TRACK" → "MULTI-CAM TRACK"
+  const trackSubLabel = stage.stageLabel.split(' — ')[1] ?? stage.label
+
+  // ── UNDERSTAND stage: 3-panel flex layout ──────────────────────────────────
+  if (!isFirst && stage.understandMap) {
+    return (
+      <>
+      <style>{`
+        .understand-row { flex-direction: row; align-items: stretch; }
+        .understand-left { flex: 1; min-width: 0; border-right: 6px solid rgba(255,255,255,0.6) !important; }
+        .understand-center { flex: 1; min-width: 0; border-right: 6px solid rgba(255,255,255,0.6) !important; }
+        .understand-right { flex: 1; min-width: 0; }
+        @media (max-width: 1100px) {
+          .understand-outer {
+            height: auto !important;
+            min-height: calc(100vh - 200px) !important;
+            overflow-y: auto !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .understand-row { flex-wrap: wrap !important; overflow: visible !important; flex: none !important; border-radius: 0 !important; border: none !important; box-shadow: none !important; gap: 8px !important; }
+          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 260px !important; min-height: 220px; border-radius: 10px !important; }
+          .understand-left { flex: 1 !important; min-height: 260px; border-right: none !important; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
+          .understand-right { flex: 1 !important; min-height: 300px; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
+        }
+        @media (max-width: 540px) {
+          .understand-center { height: 240px !important; min-height: 200px !important; border-right: none !important; }
+          .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; border-right: none !important; }
+          .understand-right { flex: 0 0 100% !important; min-height: 320px; }
+          .understand-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
+        }
+      `}</style>
+      <div className="understand-outer" style={{
+        display: 'flex', flexDirection: 'column', alignItems: 'stretch',
+        height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
+        fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+      }}>
+        {/* Title block */}
+        <div style={{ flexShrink: 0, paddingBottom: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <div style={{ width: 3, height: 14, borderRadius: 2, background: '#1755c2', flexShrink: 0 }} />
+            <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.32em', textTransform: 'uppercase', color: 'rgba(20,50,100,0.58)' }}>
+              {stage.stageLabel.split(' — ')[0]}
+            </span>
+          </div>
+          <h2 style={{ fontSize: 'clamp(1.9rem, 2.6vw, 2.8rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.025em', textTransform: 'uppercase', lineHeight: 1.0, color: '#0b1c36', marginBottom: 6 }}>
+            {stage.headline}
+          </h2>
+          <p style={{ color: 'rgba(15,35,75,0.62)', fontSize: '0.82rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480, marginBottom: 10 }}>
+            {stage.description}
+          </p>
+          <div className="understand-modules-row" style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+            {ALL_MODULES.map(m => {
+              const active = stage.modules.includes(m.key)
+              return (
+                <div key={m.key} style={{
+                  display: 'flex', alignItems: 'center', gap: 4,
+                  padding: '4px 10px', borderRadius: 5,
+                  fontSize: '8px', fontWeight: active ? 800 : 600,
+                  letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+                  background: active ? 'rgba(0,122,255,0.1)' : 'rgba(0,0,0,0.03)',
+                  border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
+                  color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
+                }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
+                  {m.label}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* 3-panel row */}
+        <div className="understand-row" style={{ flex: 1, display: 'flex', gap: 0, minHeight: 0, borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(59,158,255,0.18)', boxShadow: '0 4px 32px rgba(0,0,0,0.5)' }}>
+
+          {/* ── Panel 1: Tracking / intelligence data ── */}
+          <div className="understand-left" style={{
+            background: '#07101c', padding: '18px 16px',
+            display: 'flex', flexDirection: 'column', gap: 0, overflowY: 'auto',
+            fontFamily: 'var(--font-space-mono), monospace',
+          }}>
+            {/* Header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 16 }}>
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#FF4560', display: 'inline-block', flexShrink: 0 }} className="animate-pulse" />
+              <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.8)' }}>
+                {isLprTrack ? 'ACTIVE TRACK' : trackSubLabel}
+              </span>
+            </div>
+
+            {isLprTrack ? (
+              <>
+                {/* LPR: Plate hero */}
+                <div style={{ marginBottom: 16 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 4 }}>License Plate</div>
+                  <div style={{ fontSize: '26px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 24px rgba(59,158,255,0.4)' }}>7JKY442</div>
+                  <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.8)', marginTop: 4, letterSpacing: '0.1em' }}>STOLEN · NCIC CONFIRMED</div>
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 14 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 16 }}>
+                  {[
+                    { label: 'Direction', value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
+                    { label: 'Speed', value: '72 MPH' },
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Confidence', value: '98.4%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ padding: '10px 12px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 10 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 3 }}>Intercept Window</div>
+                  <div style={{ fontSize: '22px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</div>
+                  <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
+                </div>
+                <div style={{ padding: '8px 10px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 4 }}>Nearest Unit</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
+                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
+                  </div>
+                  <div style={{ fontSize: '8px', color: 'rgba(173,198,255,0.4)', marginTop: 2 }}>J. Reyes · SHIFT ACTIVE</div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Generic: dataPoints as hero rows */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 16 }}>
+                  {stage.dataPoints.map((dp) => (
+                    <div key={dp.key}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3 }}>{dp.key}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '0.03em', lineHeight: 1.2 }}>{dp.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.07)', marginBottom: 14 }} />
+                {/* GIS status */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
+                  {[
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Confidence', value: '94.7%' },
+                    { label: 'Track Type', value: trackSubLabel },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                {/* Unit card */}
+                {stage.understandMap.unitLabel && (
+                  <div style={{ padding: '8px 10px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                    <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 4 }}>Nearest Unit</div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#adc6ff' }}>{stage.understandMap.unitLabel}</div>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* ── Panel 2: GIS scene (static background + direction overlay) ── */}
+          <div className="understand-center" style={{
+            position: 'relative', overflow: 'hidden', background: '#0c1520', minHeight: 200,
+          }}>
+            {stage.backgroundImage && (
+              <Image src={stage.backgroundImage} alt={stage.stageLabel} fill style={{ objectFit: 'cover' }} sizes="60vw" />
+            )}
+            {/* Gradient overlay for text legibility */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,12,24,0.85) 0%, transparent 50%)' }} />
+            {/* Direction text overlay */}
+            {stage.dataPoints && stage.dataPoints.length > 0 && (
+              <div style={{ position: 'absolute', bottom: 28, left: 28, zIndex: 10 }}>
+                <div style={{ display: 'flex', gap: 36, flexWrap: 'wrap' }}>
+                  {stage.dataPoints.map((dp) => (
+                    <div key={dp.key}>
+                      <span style={{ display: 'block', fontSize: '8px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.6)', marginBottom: 5, fontFamily: 'var(--font-space-mono), monospace' }}>{dp.key}</span>
+                      <span style={{ display: 'block', fontSize: 'clamp(1rem, 2vw, 1.3rem)', fontWeight: 700, letterSpacing: '-0.01em', color: '#fff', fontStyle: 'italic', textTransform: 'uppercase', fontFamily: 'var(--font-manrope), Manrope, sans-serif', textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>{dp.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Live monitoring badge top-left */}
+            <div style={{ position: 'absolute', top: 14, left: 14, display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 12px', borderRadius: 9999, background: 'rgba(16,19,27,0.55)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#adc6ff' }} />
+              <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-space-mono), monospace' }}>Live Monitoring</span>
+            </div>
+          </div>
+
+          {/* ── Panel 3: GIS TRACK LIVE (Leaflet map + camera + data pills) ── */}
+          <div className="understand-right" style={{
+            position: 'relative', overflow: 'hidden', background: '#0a131d',
+            isolation: 'isolate',
+          }}>
+            {/* Header */}
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 30, zIndex: 30, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 12px', background: 'rgba(5,12,22,0.92)', borderBottom: '1px solid rgba(59,158,255,0.15)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00C98A', display: 'inline-block' }} className="animate-pulse" />
+                <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 8, fontWeight: 700, letterSpacing: '0.15em', color: 'rgba(173,198,255,0.75)', textTransform: 'uppercase' }}>GIS TRACK · LIVE</span>
+              </div>
+              <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 8, fontWeight: 700, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>{stage.timestamp}</span>
+            </div>
+            {/* Map fills container */}
+            <div style={{ position: 'absolute', inset: 0, zIndex: 0, isolation: 'isolate' }}>
+              <UnderstandMapPanel
+                incidentCoords={stage.understandMap.incidentCoords}
+                label={stage.understandMap.label}
+                unitCoords={stage.understandMap.unitCoords}
+                unitLabel={stage.understandMap.unitLabel}
+                route={stage.understandMap.route}
+              />
+            </div>
+            {/* Camera feed inset */}
+            {stage.pipImage && (
+              <div style={{ position: 'absolute', top: 40, right: 10, zIndex: 40, width: 160, aspectRatio: '16/9', borderRadius: 5, overflow: 'hidden', border: '1px solid rgba(173,198,255,0.35)', boxShadow: '0 4px 16px rgba(0,0,0,0.8)', background: '#000' }}>
+                <img src={stage.pipImage} alt={stage.pipLabel ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.75)' }} />
+                <div style={{ position: 'absolute', top: 3, left: 3, display: 'flex', alignItems: 'center', gap: 3, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', padding: '2px 5px', borderRadius: 3 }}>
+                  <span className="animate-pulse" style={{ color: '#ffb4ab', fontSize: 7 }}>●</span>
+                  <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>LIVE</span>
+                </div>
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2px 5px', background: 'rgba(0,0,0,0.6)', fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.pipLabel}</div>
+              </div>
+            )}
+            {/* Incident data at bottom */}
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 40, background: 'linear-gradient(to top, rgba(5,12,22,0.97) 0%, rgba(5,12,22,0.85) 70%, transparent 100%)', padding: '20px 14px 12px' }}>
+              {isLprTrack ? (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <div>
+                      <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 16px rgba(59,158,255,0.5)' }}>7JKY442</div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 2, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
+                    </div>
+                    <div style={{ padding: '4px 8px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                      <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</span>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {[{ label: 'Direction', value: 'Westbound I-10' }, { label: 'Speed', value: '72 MPH' }, { label: 'Unit', value: '12-CHARLIE' }].map(item => (
+                      <div key={item.label} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 1, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
+                        <div style={{ fontSize: '9px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <div>
+                      <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.label ?? 'GIS TRACK'}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '0.04em', lineHeight: 1.2, fontFamily: 'var(--font-space-mono), monospace' }}>
+                        {stage.understandMap.unitLabel ?? ''}
+                      </div>
+                    </div>
+                    <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.06em', textAlign: 'right' }}>
+                      {stage.understandMap.incidentCoords[0].toFixed(4)}°N<br />{Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {stage.dataPoints.slice(0, 3).map(dp => (
+                      <div key={dp.key} style={{ padding: '4px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 1, fontFamily: 'var(--font-space-mono), monospace' }}>{dp.key}</div>
+                        <div style={{ fontSize: '9px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{dp.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+        </div>{/* end 3-panel row */}
+      </div>
+      </>
+    )
+  }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: 40 }}>
+    <>
+    <style>{`
+      .understand-map-panel { width: 480px; }
+      @media (max-width: 900px) { .understand-map-panel { width: 340px !important; } }
+      @media (max-width: 680px) { .understand-map-panel { display: none !important; } }
+      .demo-stage-nav-btn { }
+      .demo-stage-nav-sublabel { display: block; }
+      @media (max-width: 768px) {
+        .demo-stage-nav-btn { padding: 8px 16px !important; gap: 10px !important; }
+        .demo-stage-nav-sublabel { display: none !important; }
+        .demo-stage-nav-mainlabel { font-size: 0.78rem !important; }
+        .demo-stage-nav-icon { width: 24px !important; height: 24px !important; }
+      }
+      @media (max-width: 480px) {
+        .demo-stage-nav-btn { padding: 6px 12px !important; gap: 8px !important; }
+        .demo-stage-nav-mainlabel { font-size: 0.68rem !important; }
+      }
+    `}</style>
+    <div style={isLightBg ? {
+      display: 'flex', flexDirection: 'column', alignItems: 'stretch',
+      height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
+    } : {
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      padding: '0 24px 90px',
+    }}>
+
+      {/* ── Light-bg title block — sits above the panel on white background ── */}
+      {isLightBg && (
+        <div style={{ flexShrink: 0, paddingBottom: 12 }}>
+          {/* Title + description */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, marginBottom: 10 }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 5 }}>
+                <span style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.42em', textTransform: 'uppercase', color: 'rgba(20,50,100,0.38)' }}>
+                  {stage.stageLabel.split(' — ')[0]}
+                </span>
+                <div style={{ height: 1, width: 28, background: 'rgba(20,50,100,0.14)' }} />
+              </div>
+              <h2 style={{ fontSize: 'clamp(1.35rem, 1.9vw, 1.85rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.02em', textTransform: 'uppercase', lineHeight: 1.05, color: '#0b1c36', marginBottom: 5 }}>
+                {stage.headline}
+              </h2>
+              <p style={{ color: 'rgba(15,35,75,0.48)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
+                {stage.description}
+              </p>
+            </div>
+          </div>
+          {/* All-platform module strip */}
+          <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+            {ALL_MODULES.map(m => {
+              const active = stage.modules.includes(m.key)
+              return (
+                <div key={m.key} style={{
+                  display: 'flex', alignItems: 'center', gap: 4,
+                  padding: '4px 10px', borderRadius: 5,
+                  fontSize: '8px', fontWeight: active ? 800 : 600,
+                  letterSpacing: '0.08em', textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.2s',
+                  background: active ? 'rgba(0,122,255,0.1)' : 'rgba(0,0,0,0.03)',
+                  border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
+                  color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
+                }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
+                  {m.label}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
 
       {/* ── Cinematic panel ── */}
       <div
         className="demo-stage-panel"
         style={{
           position: 'relative',
-          width: '90vw',
-          height: '58vh',
+          ...(isLightBg ? { flex: 1, minHeight: 0, width: '100%' } : { width: '100%', height: 'calc(100vh - 210px)' }),
           borderRadius: 16,
           overflow: 'hidden',
-          border: '1px solid rgba(173,198,255,0.2)',
-          boxShadow: '0 0 100px -20px rgba(75,142,255,0.15), 0 40px 100px rgba(0,0,0,0.8)',
+          // Always give the panel a dark base so contain-fit images don't show the light parent bg
+          background: '#0c1520',
+          border: isLightBg ? '1px solid rgba(0,20,60,0.1)' : '1px solid rgba(173,198,255,0.2)',
+          boxShadow: isLightBg
+            ? '0 2px 8px rgba(0,20,60,0.07), 0 12px 40px rgba(0,20,60,0.12), 0 40px 80px rgba(0,20,60,0.1)'
+            : '0 0 100px -20px rgba(75,142,255,0.15), 0 40px 100px rgba(0,0,0,0.8)',
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
@@ -958,8 +1317,8 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Top-right: live monitoring + timestamp ── */}
-        <div
+        {/* ── Top-right: live monitoring + timestamp — hidden when decideCard present ── */}
+        {!stage.decideCard && <div
           style={{
             position: 'absolute',
             top: 40,
@@ -1016,11 +1375,227 @@ export default function StageScreen({
           >
             {stage.timestamp}
           </div>
-        </div>
+        </div>}
 
-        {/* ── PiP widgets — stacked bottom-right ── */}
+        {/* ── Understand map panel — full-height right side ── */}
+        {!isFirst && stage.understandMap && (
+          <div className="understand-map-panel" style={{
+            position: 'absolute',
+            top: 16, right: 16, bottom: 16,
+            width: 480,
+            zIndex: 20,
+            borderRadius: 12,
+            overflow: 'hidden',
+            border: '1px solid rgba(59,158,255,0.3)',
+            boxShadow: '0 8px 48px rgba(0,0,0,0.9)',
+            background: '#0a131d',
+            isolation: 'isolate',
+          }}>
+            {/* Header bar */}
+            <div style={{
+              position: 'absolute', top: 0, left: 0, right: 0, height: 28, zIndex: 30,
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '0 12px',
+              background: 'rgba(5,12,22,0.92)',
+              borderBottom: '1px solid rgba(59,158,255,0.15)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00C98A', display: 'inline-block' }} className="animate-pulse" />
+                <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 8, fontWeight: 700, letterSpacing: '0.15em', color: 'rgba(173,198,255,0.75)', textTransform: 'uppercase' }}>
+                  GIS TRACK · LIVE
+                </span>
+              </div>
+              <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 8, fontWeight: 700, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.1em' }}>
+                {stage.timestamp}
+              </span>
+            </div>
+
+            {/* Map — fills full container; isolation:isolate contains Leaflet's internal z-indexes */}
+            <div style={{ position: 'absolute', inset: 0, isolation: 'isolate', zIndex: 0 }}>
+              <UnderstandMapPanel
+                incidentCoords={stage.understandMap.incidentCoords}
+                label={stage.understandMap.label}
+                unitCoords={stage.understandMap.unitCoords}
+                unitLabel={stage.understandMap.unitLabel}
+                route={stage.understandMap.route}
+              />
+            </div>
+
+            {/* Camera feed inset — top-right corner of map */}
+            {stage.pipImage && (
+              <div style={{
+                position: 'absolute', top: 40, right: 10, zIndex: 40,
+                width: 220, aspectRatio: '16/9',
+                borderRadius: 6, overflow: 'hidden',
+                border: '1px solid rgba(173,198,255,0.35)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.8)',
+                background: '#000',
+              }}>
+                <img src={stage.pipImage} alt={stage.pipLabel ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.75)' }} />
+                <div style={{ position: 'absolute', top: 4, left: 4, display: 'flex', alignItems: 'center', gap: 3, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', padding: '2px 6px', borderRadius: 3 }}>
+                  <span className="animate-pulse" style={{ color: '#ffb4ab', fontSize: 8 }}>●</span>
+                  <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>LIVE</span>
+                </div>
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '3px 6px', background: 'rgba(0,0,0,0.6)', fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>
+                  {stage.pipLabel}
+                </div>
+              </div>
+            )}
+
+            {/* Incident overlay card — bottom of map */}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 40,
+              background: 'linear-gradient(to top, rgba(5,12,22,0.97) 0%, rgba(5,12,22,0.85) 70%, transparent 100%)',
+              padding: '24px 16px 14px',
+            }}>
+              {isLprTrack ? (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 10 }}>
+                    <div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
+                      <div style={{ fontSize: '22px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 20px rgba(59,158,255,0.5)' }}>7JKY442</div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 3, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
+                      <div style={{ padding: '4px 10px', borderRadius: 5, background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                        <span style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(0,201,138,0.7)', letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>ETA · </span>
+                        <span style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</span>
+                      </div>
+                      <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.05em' }}>
+                        {stage.understandMap.incidentCoords[0].toFixed(4)}°N {Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {[{ label: 'Direction', value: 'Westbound I-10' }, { label: 'Speed', value: '72 MPH' }, { label: 'Unit', value: '12-CHARLIE' }].map(item => (
+                      <div key={item.label} style={{ padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{item.label}</div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 10 }}>
+                    <div>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 3, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.label ?? trackSubLabel}</div>
+                      <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff', letterSpacing: '0.06em', lineHeight: 1.2, fontFamily: 'var(--font-space-mono), monospace' }}>{stage.understandMap.unitLabel ?? ''}</div>
+                    </div>
+                    <div style={{ fontSize: '8px', color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.05em', textAlign: 'right' }}>
+                      {stage.understandMap.incidentCoords[0].toFixed(4)}°N<br />{Math.abs(stage.understandMap.incidentCoords[1]).toFixed(4)}°W
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {stage.dataPoints.slice(0, 3).map(dp => (
+                      <div key={dp.key} style={{ padding: '5px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', flex: 1 }}>
+                        <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>{dp.key}</div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#c8dff0', fontFamily: 'var(--font-space-mono), monospace' }}>{dp.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* ── Understand stage: left-side tracking panel ── */}
+        {!isFirst && stage.understandMap && isLightBg && (
+          <div style={{
+            position: 'absolute',
+            left: 0, top: 0, bottom: 0,
+            width: 260,
+            zIndex: 25,
+            background: 'linear-gradient(to right, rgba(5,11,22,0.96) 0%, rgba(5,11,22,0.88) 60%, transparent 100%)',
+            display: 'flex', flexDirection: 'column',
+            padding: '22px 28px 22px 22px',
+            gap: 0,
+            fontFamily: 'var(--font-space-mono), monospace',
+          }}>
+            {/* Panel header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 18 }}>
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#FF4560', display: 'inline-block', flexShrink: 0 }} className="animate-pulse" />
+              <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.8)' }}>
+                {isLprTrack ? 'ACTIVE TRACK' : trackSubLabel}
+              </span>
+            </div>
+
+            {isLprTrack ? (
+              <>
+                {/* Plate number — hero */}
+                <div style={{ marginBottom: 18 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 5 }}>License Plate</div>
+                  <div style={{ fontSize: '28px', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', lineHeight: 1, textShadow: '0 0 30px rgba(59,158,255,0.4)' }}>7JKY442</div>
+                  <div style={{ fontSize: '9px', fontWeight: 600, color: 'rgba(255,100,100,0.75)', marginTop: 4, letterSpacing: '0.1em' }}>STOLEN · NCIC CONFIRMED</div>
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 18 }}>
+                  {[
+                    { label: 'Direction',  value: stage.dataPoints.find(d => d.key === 'DIRECTION')?.value ?? 'Westbound I-10' },
+                    { label: 'Speed',      value: '72 MPH' },
+                    { label: 'GIS Lock',   value: 'ACTIVE' },
+                    { label: 'Confidence', value: '98.4%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ padding: '12px 14px', borderRadius: 8, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.2)', marginBottom: 14 }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(0,201,138,0.65)', marginBottom: 4 }}>Intercept Window</div>
+                  <div style={{ fontSize: '26px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.dataPoints.find(d => d.key === 'INTERCEPT ETA')?.value ?? '3 MIN'}</div>
+                  <div style={{ fontSize: '8px', color: 'rgba(0,201,138,0.5)', marginTop: 3, letterSpacing: '0.08em' }}>before Hwy 45 exit</div>
+                </div>
+                <div style={{ padding: '10px 12px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 5 }}>Nearest Unit</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: '#adc6ff' }}>12-CHARLIE</span>
+                    <span style={{ fontSize: '9px', fontWeight: 700, color: '#00C98A', letterSpacing: '0.08em' }}>1.2 MI</span>
+                  </div>
+                  <div style={{ fontSize: '9px', color: 'rgba(173,198,255,0.4)', marginTop: 2, letterSpacing: '0.05em' }}>J. Reyes · SHIFT ACTIVE</div>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Generic: headline dataPoints */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 18 }}>
+                  {stage.dataPoints.map((dp) => (
+                    <div key={dp.key}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 4 }}>{dp.key}</div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#fff', letterSpacing: '0.02em', lineHeight: 1.2 }}>{dp.value}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', marginBottom: 16 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 11, marginBottom: 18 }}>
+                  {[
+                    { label: 'GIS Lock', value: 'ACTIVE' },
+                    { label: 'Track Type', value: trackSubLabel },
+                    { label: 'Confidence', value: stage.dataPoints.find(d => d.key === 'CONFIDENCE')?.value ?? '94.7%' },
+                  ].map((row) => (
+                    <div key={row.label}>
+                      <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#c8dff0', letterSpacing: '0.03em' }}>{row.value}</div>
+                    </div>
+                  ))}
+                </div>
+                {stage.understandMap.unitLabel && (
+                  <div style={{ padding: '10px 12px', borderRadius: 7, background: 'rgba(59,158,255,0.06)', border: '1px solid rgba(59,158,255,0.15)' }}>
+                    <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.5)', marginBottom: 5 }}>Nearest Unit</div>
+                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#adc6ff' }}>{stage.understandMap.unitLabel}</div>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
+
+        {/* ── PiP widgets — stacked bottom-right (skipped when understandMap absorbs them) ── */}
         {[
-          { img: stage.pipImage, label: stage.pipLabel },
+          { img: stage.understandMap ? null : stage.pipImage, label: stage.pipLabel },
           { img: stage.pip2Image, label: stage.pip2Label },
         ].map((pip, idx) =>
           pip.img ? (
@@ -1029,15 +1604,15 @@ export default function StageScreen({
               className={`demo-pip demo-pip-${idx}`}
               style={{
                 position: 'absolute',
-                bottom: idx === 0 ? 36 : 36 + 116 + 10,
-                right: 36,
-                width: 200,
+                bottom: idx === 0 ? 24 : 24 + 236 + 12,
+                right: 24,
+                width: 420,
                 aspectRatio: '16/9',
                 zIndex: 30,
-                borderRadius: 8,
+                borderRadius: 10,
                 overflow: 'hidden',
                 border: '1px solid rgba(173,198,255,0.4)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.8)',
+                boxShadow: '0 8px 40px rgba(0,0,0,0.9)',
                 background: '#000',
               }}
             >
@@ -1046,7 +1621,7 @@ export default function StageScreen({
                 alt={pip.label ?? ''}
                 fill
                 style={{ objectFit: 'cover', filter: 'brightness(0.72)' }}
-                sizes="200px"
+                sizes="420px"
               />
               {/* LIVE badge */}
               <div
@@ -1184,32 +1759,9 @@ export default function StageScreen({
           <div style={{
             position: 'absolute', inset: 0,
             display: 'flex', flexDirection: 'column',
-            padding: '20px 32px 16px',
+            padding: '12px 16px',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
           }}>
-            {/* Title row */}
-            <div style={{ marginBottom: 12, display: 'flex', alignItems: 'baseline', gap: 20 }}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
-                  <span style={{ fontSize: '10px', fontWeight: 900, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#adc6ff' }}>
-                    {stage.stageLabel.split(' — ')[0]}
-                  </span>
-                  <div style={{ height: 1, width: 28, background: 'rgba(173,198,255,0.3)' }} />
-                </div>
-                <h2 style={{
-                  fontSize: 'clamp(1.2rem, 1.8vw, 2rem)', fontWeight: 900, fontStyle: 'italic',
-                  letterSpacing: '-0.02em', textTransform: 'uppercase', lineHeight: 1.05,
-                  color: '#fff', margin: 0, textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-                }}>
-                  {stage.headline}
-                </h2>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
-                <span className="animate-pulse" style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#00C98A' }} />
-                <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#00C98A' }}>LIVE MONITORING</span>
-              </div>
-            </div>
-
             {/* Main 2-column layout: map | sidebar */}
             <div style={{
               flex: 1, minHeight: 0, display: 'flex', gap: 0,
@@ -1225,6 +1777,11 @@ export default function StageScreen({
                   incidentCoords={stage.decideCard.incidentCoords}
                   units={stage.decideCard.units}
                 />
+                {/* Live monitoring pill */}
+                <div style={{ position: 'absolute', top: 10, right: 10, zIndex: 1000, display: 'flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 20, background: 'rgba(8,14,24,0.88)', border: '1px solid rgba(0,201,138,0.3)' }}>
+                  <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A' }} />
+                  <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>LIVE</span>
+                </div>
                 {/* Map legend overlay */}
                 <div style={{
                   position: 'absolute', bottom: 10, left: 10, zIndex: 1000,
@@ -1251,76 +1808,107 @@ export default function StageScreen({
                 </div>
               </div>
 
-              {/* RIGHT — unit list + AI score + brief */}
-              <div style={{ flex: 1, background: 'rgba(6,12,22,0.98)', display: 'flex', flexDirection: 'column', borderLeft: '1px solid rgba(59,158,255,0.1)' }}>
+              {/* RIGHT — 3 equal modules stacked */}
+              <div style={{ flex: 1, minWidth: 0, background: 'rgba(6,12,22,0.98)', display: 'grid', gridTemplateRows: '1fr 1fr 1fr', borderLeft: '1px solid rgba(59,158,255,0.1)' }}>
 
-                {/* Unit roster */}
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div style={{ padding: '10px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)' }}>AVAILABLE EMS UNITS</span>
+                {/* MODULE 1 — Unit roster */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(59,158,255,0.06)', borderBottom: '2px solid rgba(59,158,255,0.2)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#3B9EFF', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#3B9EFF' }}>AVAILABLE UNITS</span>
                   </div>
-                  {stage.decideCard.units.map((u) => {
-                    const statusBg = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.15)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.15)' : 'rgba(255,255,255,0.04)'
-                    const statusColor = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : '#48647A'
-                    const statusBorder = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.3)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.3)' : 'rgba(255,255,255,0.06)'
-                    const leftBorder = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : 'transparent'
-                    return (
-                      <div key={u.id} style={{
-                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                        padding: '8px 16px',
-                        borderBottom: '1px solid rgba(255,255,255,0.04)',
-                        borderLeft: `3px solid ${leftBorder}`,
-                        background: u.active ? 'rgba(59,158,255,0.04)' : 'transparent',
-                      }}>
-                        <div>
-                          <div style={{ fontSize: '12px', fontWeight: 700, color: u.active ? '#E0ECF8' : '#48647A', letterSpacing: '0.05em' }}>{u.id}</div>
-                          <div style={{ fontSize: '8px', color: '#48647A', marginTop: 1, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{u.role} · {u.distance} · {u.eta}</div>
+                  <div style={{ flex: 1, overflowY: 'auto' }}>
+                    {stage.decideCard.units.map((u) => {
+                      const statusBg = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.15)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.15)' : 'rgba(255,255,255,0.04)'
+                      const statusColor = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : '#48647A'
+                      const statusBorder = u.status === 'ASSIGNED' ? 'rgba(0,201,138,0.3)' : u.status === 'EN ROUTE' ? 'rgba(59,158,255,0.3)' : 'rgba(255,255,255,0.06)'
+                      const leftBorder = u.status === 'ASSIGNED' ? '#00C98A' : u.status === 'EN ROUTE' ? '#3B9EFF' : 'transparent'
+                      return (
+                        <div key={u.id} style={{
+                          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                          padding: '6px 16px',
+                          borderBottom: '1px solid rgba(255,255,255,0.04)',
+                          borderLeft: `3px solid ${leftBorder}`,
+                          background: u.active ? 'rgba(59,158,255,0.04)' : 'transparent',
+                        }}>
+                          <div>
+                            <div style={{ fontSize: '11px', fontWeight: 700, color: u.active ? '#E0ECF8' : '#48647A', letterSpacing: '0.05em' }}>{u.id}</div>
+                            <div style={{ fontSize: '7.5px', color: '#48647A', marginTop: 1, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{u.role} · {u.distance} · {u.eta}</div>
+                          </div>
+                          <div style={{
+                            fontSize: '7px', fontWeight: 800, letterSpacing: '0.12em', padding: '2px 7px', borderRadius: 3,
+                            background: statusBg, color: statusColor, border: `1px solid ${statusBorder}`,
+                          }}>{u.status}</div>
                         </div>
-                        <div style={{
-                          fontSize: '7px', fontWeight: 800, letterSpacing: '0.12em', padding: '2px 7px', borderRadius: 3,
-                          background: statusBg, color: statusColor, border: `1px solid ${statusBorder}`,
-                        }}>{u.status}</div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* MODULE 2 — Protocol steps OR dispatch brief */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderTop: '2px solid rgba(173,198,255,0.08)' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(173,198,255,0.04)', borderBottom: '2px solid rgba(173,198,255,0.12)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#adc6ff', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.7)' }}>
+                      {stage.protocolSteps ? 'RESPONSE PROTOCOL' : 'DISPATCH BRIEF SENT'}
+                    </span>
+                  </div>
+                  <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 4, padding: '8px 16px' }}>
+                    {stage.protocolSteps ? stage.protocolSteps.map((step) => {
+                      const isDone   = step.status === 'complete'
+                      const isActive = step.status === 'active'
+                      const dotColor  = isDone ? '#00C98A' : isActive ? '#3B9EFF' : 'rgba(173,198,255,0.2)'
+                      const textColor = isDone ? 'rgba(200,255,230,0.75)' : isActive ? '#c8dff0' : 'rgba(173,198,255,0.35)'
+                      const borderCol = isDone ? 'rgba(0,201,138,0.18)' : isActive ? 'rgba(59,158,255,0.18)' : 'rgba(255,255,255,0.04)'
+                      const bg        = isDone ? 'rgba(0,201,138,0.05)' : isActive ? 'rgba(59,158,255,0.06)' : 'transparent'
+                      return (
+                        <div key={step.id} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '5px 8px', borderRadius: 4, background: bg, border: `1px solid ${borderCol}` }}>
+                          <div style={{ flexShrink: 0, marginTop: 4, width: 6, height: 6, borderRadius: '50%', background: dotColor, boxShadow: isActive ? '0 0 6px rgba(59,158,255,0.6)' : 'none' }} />
+                          <div style={{ flex: 1, display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 6 }}>
+                            <span style={{ fontSize: '9.5px', color: textColor, lineHeight: 1.45, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: isActive ? 600 : 500 }}>{step.text}</span>
+                            {isDone && <span style={{ flexShrink: 0, fontSize: '6.5px', fontWeight: 800, letterSpacing: '0.1em', color: '#00C98A', background: 'rgba(0,201,138,0.12)', border: '1px solid rgba(0,201,138,0.25)', borderRadius: 3, padding: '1px 5px', marginTop: 2 }}>DONE</span>}
+                            {isActive && <span style={{ flexShrink: 0, fontSize: '6.5px', fontWeight: 800, letterSpacing: '0.1em', color: '#3B9EFF', background: 'rgba(59,158,255,0.12)', border: '1px solid rgba(59,158,255,0.3)', borderRadius: 3, padding: '1px 5px', marginTop: 2 }}>ACTIVE</span>}
+                          </div>
+                        </div>
+                      )
+                    }) : stage.decideCard.briefItems.map((item, i) => (
+                      <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '5px 8px', borderRadius: 4, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#3B9EFF', flexShrink: 0, marginTop: 1 }}>check_circle</span>
+                        <span style={{ fontSize: '9.5px', color: '#c8dff0', lineHeight: 1.45, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 500 }}>{item}</span>
                       </div>
-                    )
-                  })}
-                </div>
-
-                {/* AI score + dispatched */}
-                <div style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <svg width="72" height="72" viewBox="0 0 72 72">
-                      <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
-                      <circle cx="36" cy="36" r="30" fill="none" stroke="#00C98A" strokeWidth="6"
-                        strokeDasharray={`${2 * Math.PI * 30 * (stage.decideCard.aiScore / 100)} ${2 * Math.PI * 30}`}
-                        strokeLinecap="round" transform="rotate(-90 36 36)"
-                      />
-                    </svg>
-                    <div style={{ position: 'absolute', textAlign: 'center' }}>
-                      <div style={{ fontSize: '15px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.decideCard.aiScore}%</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '7px', color: 'rgba(173,198,215,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>AI SELECTION SCORE</div>
-                    <div style={{ fontSize: '7px', color: 'rgba(0,201,138,0.7)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 2 }}>DISPATCHED TO</div>
-                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#00C98A' }}>{stage.decideCard.dispatchedTo}</div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Dispatch brief */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '10px 16px', gap: 6, overflow: 'hidden' }}>
-                  <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 4 }}>DISPATCH BRIEF SENT</div>
-                  {stage.decideCard.briefItems.map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', padding: '6px 10px', borderRadius: 5, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                      <span className="material-symbols-outlined" style={{ fontSize: 12, color: '#3B9EFF', flexShrink: 0, marginTop: 1 }}>check_circle</span>
-                      <span style={{ fontSize: '10px', color: '#c8dff0', lineHeight: 1.5, fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 500 }}>{item}</span>
+                {/* MODULE 3 — AI score + dispatched + banner */}
+                <div style={{ minHeight: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderTop: '2px solid rgba(0,201,138,0.1)' }}>
+                  <div style={{ padding: '8px 16px 6px', background: 'rgba(0,201,138,0.05)', borderBottom: '2px solid rgba(0,201,138,0.2)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 3, height: 12, borderRadius: 2, background: '#00C98A', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#00C98A' }}>AI RECOMMENDATION</span>
+                  </div>
+                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 14, padding: '10px 16px' }}>
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <svg width="64" height="64" viewBox="0 0 72 72">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#00C98A" strokeWidth="6"
+                          strokeDasharray={`${2 * Math.PI * 30 * (stage.decideCard.aiScore / 100)} ${2 * Math.PI * 30}`}
+                          strokeLinecap="round" transform="rotate(-90 36 36)"
+                        />
+                      </svg>
+                      <div style={{ position: 'absolute', textAlign: 'center' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#00C98A', lineHeight: 1 }}>{stage.decideCard.aiScore}%</div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-
-                {/* Dispatch confirmed banner */}
-                <div style={{ margin: '0 12px 12px', padding: '8px 12px', borderRadius: 6, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.25)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A', flexShrink: 0 }} />
-                  <span style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>DISPATCH CONFIRMED · UNITS EN ROUTE</span>
+                    <div>
+                      <div style={{ fontSize: '7px', color: 'rgba(173,198,215,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 4 }}>AI SELECTION SCORE</div>
+                      <div style={{ fontSize: '7px', color: 'rgba(0,201,138,0.7)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 2 }}>DISPATCHED TO</div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#00C98A' }}>{stage.decideCard.dispatchedTo}</div>
+                    </div>
+                  </div>
+                  <div style={{ margin: '0 12px 10px', padding: '7px 12px', borderRadius: 6, background: 'rgba(0,201,138,0.08)', border: '1px solid rgba(0,201,138,0.25)', display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+                    <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#00C98A', flexShrink: 0 }} />
+                    <span style={{ fontSize: '8.5px', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#00C98A' }}>DISPATCH CONFIRMED · UNITS EN ROUTE</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1651,6 +2239,29 @@ export default function StageScreen({
                     </div>
                   ))}
                 </div>
+                {/* 911 Transcript */}
+                {stage.geoPanel.transcript && stage.geoPanel.transcript.length > 0 && (
+                  <div style={{ marginTop: 12, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 10 }}>
+                    <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(255,120,120,0.7)', marginBottom: 7, display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#FF4560', display: 'inline-block' }} />
+                      911 TRANSCRIPT
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+                      {stage.geoPanel.transcript.map((line, i) => (
+                        <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                          <span style={{
+                            fontSize: '6.5px', fontWeight: 800, letterSpacing: '0.18em',
+                            color: line.speaker === 'DISPATCH' ? 'rgba(173,198,255,0.5)' : 'rgba(255,140,140,0.6)',
+                          }}>{line.speaker}</span>
+                          <span style={{ fontSize: '9px', color: line.speaker === 'DISPATCH' ? 'rgba(200,220,255,0.75)' : 'rgba(255,200,200,0.85)', lineHeight: 1.4 }}>
+                            {line.text}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* AI tags */}
                 <div style={{ marginTop: 12, display: 'flex', flexWrap: 'wrap', gap: 5 }}>
                   {stage.geoPanel.tags.map(tag => (
@@ -1666,8 +2277,26 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Stage 2+: all content at bottom-left ── */}
-        {!isFirst && !stage.geoPanel && (
+        {/* ── Stage 2+ light-bg: dataPoints only, white overlay on image (headline is above panel) ── */}
+        {!isFirst && !stage.geoPanel && isLightBg && stage.dataPoints && stage.dataPoints.length > 0 && (
+          <div style={{ position: 'absolute', left: stage.understandMap ? 280 : 44, bottom: 36, zIndex: 20 }}>
+            <div style={{ display: 'flex', gap: 48 }}>
+              {stage.dataPoints.map((dp) => (
+                <div key={dp.key}>
+                  <span style={{ display: 'block', fontSize: '8px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.6)', marginBottom: 6 }}>
+                    {dp.key}
+                  </span>
+                  <span style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.01em', color: '#fff', fontStyle: 'italic', textTransform: 'uppercase' }}>
+                    {dp.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── Stage 2+: all content at bottom-left (dark-bg only — light-bg moves this above panel) ── */}
+        {!isFirst && !stage.geoPanel && !isLightBg && (
           <div
             style={{
               position: 'absolute',
@@ -1756,12 +2385,12 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Stage 2+: system modules above PiP (or bottom-right if no PiP) ── */}
-        {!isFirst && !stage.geoPanel && (
+        {/* ── Stage 2+: system modules above PiP — dark-bg only (light-bg shows modules in title block) ── */}
+        {!isFirst && !stage.geoPanel && !stage.decideCard && !isLightBg && (
           <div
             style={{
               position: 'absolute',
-              bottom: pipCount >= 2 ? 310 : hasPip ? 196 : 36,
+              bottom: pipCount >= 2 ? 410 : hasPip ? 222 : 36,
               right: 44,
               zIndex: 20,
               display: 'flex',
@@ -1810,70 +2439,19 @@ export default function StageScreen({
           </div>
         )}
 
-        {/* ── Detect stage: headline top-left ── */}
-        {isFirst && !stage.detectCard && (
-          <div
-            style={{
-              position: 'absolute',
-              top: 40,
-              left: 44,
-              zIndex: 20,
-              maxWidth: '55%',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-              <span
-                style={{
-                  fontSize: '10px',
-                  fontWeight: 900,
-                  letterSpacing: '0.4em',
-                  textTransform: 'uppercase',
-                  color: '#adc6ff',
-                }}
-              >
-                {stage.stageLabel.split(' — ')[0]}
-              </span>
-              <div style={{ height: 1, width: 28, background: 'rgba(173,198,255,0.3)' }} />
-            </div>
-            <h2
-              style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.75rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.02em',
-                textTransform: 'uppercase',
-                fontStyle: 'italic',
-                lineHeight: 1.05,
-                color: '#fff',
-                marginBottom: 10,
-                textShadow: '0 2px 12px rgba(0,0,0,0.6)',
-              }}
-            >
-              {stage.headline}
-            </h2>
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.78)',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                lineHeight: 1.6,
-                maxWidth: 440,
-              }}
-            >
-              {stage.description}
-            </p>
-          </div>
-        )}
+        {/* ── Detect stage: title moved to light-bg block above panel (isLightBg) ── */}
       </div>
 
-      {/* ── Navigation below panel — always centered ── */}
-      <div
+      {/* ── Navigation handled by floating BottomNav in ScenarioPlayer ── */}
+      {false && <div
         className="demo-stage-nav"
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: 12,
-          marginTop: 24,
+          flexShrink: 0,
+          marginTop: isLightBg ? 12 : 24,
           fontFamily: 'var(--font-manrope), Manrope, sans-serif',
         }}
       >
@@ -1881,34 +2459,36 @@ export default function StageScreen({
         {prevStage && (
           <button
             onClick={onPrev}
+            className="demo-stage-nav-btn"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 14,
               padding: '12px 28px',
               borderRadius: 12,
-              background: 'rgba(16,19,27,0.4)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: 'rgba(255,255,255,0.45)',
+              background: isLightBg ? 'rgba(0,0,0,0.06)' : 'rgba(16,19,27,0.4)',
+              backdropFilter: isLightBg ? undefined : 'blur(20px)',
+              border: isLightBg ? '1px solid rgba(0,0,0,0.1)' : '1px solid rgba(255,255,255,0.1)',
+              color: isLightBg ? 'rgba(15,35,75,0.5)' : 'rgba(255,255,255,0.45)',
               cursor: 'pointer',
               transition: 'all 0.25s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#fff'
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'
+              e.currentTarget.style.color = isLightBg ? '#0b1c36' : '#fff'
+              e.currentTarget.style.borderColor = isLightBg ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.22)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = 'rgba(255,255,255,0.45)'
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+              e.currentTarget.style.color = isLightBg ? 'rgba(15,35,75,0.5)' : 'rgba(255,255,255,0.45)'
+              e.currentTarget.style.borderColor = isLightBg ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
             }}
           >
             <div
+              className="demo-stage-nav-icon"
               style={{
                 width: 32,
                 height: 32,
                 borderRadius: 8,
-                border: '1px solid rgba(255,255,255,0.12)',
+                border: isLightBg ? '1px solid rgba(0,0,0,0.1)' : '1px solid rgba(255,255,255,0.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1917,11 +2497,11 @@ export default function StageScreen({
               <span className="material-symbols-outlined" style={{ fontSize: 16 }}>arrow_back</span>
             </div>
             <div style={{ textAlign: 'left' }}>
-              <span style={{ display: 'block', fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 2 }}>
+              <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 2 }}>
                 Go back
               </span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
-                ‹ PREVIOUS: {prevStage.label}
+              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.05rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
+                ‹ PREVIOUS: {prevStage?.label}
               </span>
             </div>
           </button>
@@ -1931,41 +2511,45 @@ export default function StageScreen({
         {nextStage && (
           <button
             onClick={onNext}
+            className="demo-stage-nav-btn"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 16,
               padding: '12px 32px',
               borderRadius: 12,
-              background: 'rgba(173,198,255,0.08)',
-              border: '1px solid rgba(173,198,255,0.2)',
-              color: '#adc6ff',
+              background: isLightBg ? '#0b1a30' : 'rgba(173,198,255,0.08)',
+              border: isLightBg ? '1px solid rgba(75,142,255,0.22)' : '1px solid rgba(173,198,255,0.2)',
+              color: isLightBg ? '#fff' : '#adc6ff',
               cursor: 'pointer',
               transition: 'all 0.25s',
+              boxShadow: isLightBg ? '0 4px 20px rgba(0,0,0,0.12)' : 'none',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(173,198,255,0.18)'
-              e.currentTarget.style.boxShadow = '0 4px 24px rgba(173,198,255,0.14)'
+              e.currentTarget.style.background = isLightBg ? '#142840' : 'rgba(173,198,255,0.18)'
+              e.currentTarget.style.boxShadow = isLightBg ? '0 6px 28px rgba(0,0,0,0.18)' : '0 4px 24px rgba(173,198,255,0.14)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(173,198,255,0.08)'
-              e.currentTarget.style.boxShadow = 'none'
+              e.currentTarget.style.background = isLightBg ? '#0b1a30' : 'rgba(173,198,255,0.08)'
+              e.currentTarget.style.boxShadow = isLightBg ? '0 4px 20px rgba(0,0,0,0.12)' : 'none'
             }}
           >
             <div style={{ textAlign: 'left' }}>
-              <span style={{ display: 'block', fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.65, marginBottom: 2 }}>
+              <span className="demo-stage-nav-sublabel" style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.65, marginBottom: 2 }}>
                 Proceed to next step
               </span>
-              <span style={{ fontSize: '1.1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
-                NEXT: {nextStage.label}
+              <span className="demo-stage-nav-mainlabel" style={{ display: 'block', fontSize: '1.1rem', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
+                NEXT: {nextStage?.label}
               </span>
             </div>
             <div
+              className="demo-stage-nav-icon"
               style={{
                 width: 32,
                 height: 32,
                 borderRadius: 8,
-                border: '1px solid rgba(173,198,255,0.25)',
+                border: isLightBg ? '1px solid rgba(75,142,255,0.3)' : '1px solid rgba(173,198,255,0.25)',
+                background: isLightBg ? 'rgba(75,142,255,0.12)' : 'transparent',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1975,7 +2559,8 @@ export default function StageScreen({
             </div>
           </button>
         )}
-      </div>
+      </div>}
     </div>
+    </>
   )
 }

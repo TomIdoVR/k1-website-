@@ -42,15 +42,18 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
       .cam-thumb-icon { background: none!important; border: none!important; }
       .cam-thumb { display:flex;flex-direction:column;align-items:center;cursor:default; }
       .cam-thumb-img { position:relative;border-radius:3px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.9); }
-      .cam-thumb-img img { width:100%;height:100%;object-fit:cover;display:block; }
-      .cam-thumb-scanlines { position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);pointer-events:none; }
-      .cam-thumb-rec { position:absolute;top:3px;right:4px;display:flex;align-items:center;gap:2px;background:rgba(0,0,0,0.68);padding:1px 5px;border-radius:2px; }
-      .cam-thumb-rec-dot { width:4px;height:4px;border-radius:50%;background:#FF4444; }
-      .cam-thumb-rec-text { color:white;font-size:7px;font-family:monospace;letter-spacing:0.05em; }
-      .cam-thumb-bar { position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.8);padding:2px 5px; }
-      .cam-thumb-label { font-size:7.5px;font-weight:700;font-family:monospace;letter-spacing:0.06em; }
-      .cam-thumb-line { width:1px;height:7px; }
-      .cam-thumb-dot { width:8px;height:8px;border-radius:50%;border:2px solid rgba(255,255,255,0.85); }
+      .cam-thumb-img img { width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.82) contrast(1.1) saturate(0.85); }
+      .cam-thumb-scanlines { position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px);pointer-events:none; }
+      .cam-thumb-header { position:absolute;top:0;left:0;right:0;background:linear-gradient(to bottom,rgba(0,0,0,0.75),transparent);padding:3px 5px;display:flex;align-items:center;justify-content:space-between; }
+      .cam-thumb-live { display:flex;align-items:center;gap:2px; }
+      .cam-thumb-live-dot { width:4px;height:4px;border-radius:50%;background:#FF3333;animation:cam-blink 1s ease-in-out infinite; }
+      .cam-thumb-live-text { color:white;font-size:6px;font-family:monospace;letter-spacing:0.1em;font-weight:700; }
+      .cam-thumb-ts { color:rgba(255,255,255,0.55);font-size:6px;font-family:monospace; }
+      .cam-thumb-bar { position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.82),transparent);padding:4px 5px 3px; }
+      .cam-thumb-label { font-size:7px;font-weight:700;font-family:monospace;letter-spacing:0.06em; }
+      .cam-thumb-line { width:1px;height:6px; }
+      .cam-thumb-dot { width:7px;height:7px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.85); }
+      @keyframes cam-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
       .sos-icon { background:none!important;border:none!important;z-index:9999!important; }
       .sos-card { display:flex;flex-direction:column;align-items:center;position:relative;z-index:9999; }
       .sos-card-box { background:rgba(16,2,2,0.96);border:2px solid rgba(255,60,60,0.85);border-radius:5px;padding:7px 14px 5px;text-align:center;box-shadow:0 0 20px rgba(255,40,40,0.5),0 4px 16px rgba(0,0,0,0.9);white-space:nowrap; }
@@ -61,8 +64,14 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
     `
     document.head.appendChild(style)
 
-    import('leaflet').then((L) => {
-      const map = L.map(ref.current!, {
+    let cancelled = false
+    let mapInstance: import('leaflet').Map | null = null
+    let observer: ResizeObserver | null = null
+
+    const buildMap = (L: typeof import('leaflet'), el: HTMLDivElement) => {
+      if (cancelled || (el as any)._leaflet_id) return
+
+      const map = L.map(el, {
         zoomControl: false,
         attributionControl: false,
         dragging: false,
@@ -70,9 +79,10 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
         doubleClickZoom: false,
         keyboard: false,
       })
+      mapInstance = map
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19,
+        subdomains: 'abcd', maxZoom: 19,
       }).addTo(map)
 
       // Caller — red pulsing ring
@@ -92,7 +102,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           radius: 7, color: '#00C98A', fillColor: '#00C98A',
           fillOpacity: 0.85, weight: 2,
         }).addTo(map).bindTooltip(`⊕ ${label}`, {
-          permanent: true, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
+          permanent: false, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
         })
       })
 
@@ -105,16 +115,18 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           const labelColor  = alert ? '#FF8C9E' : '#adc6ff'
           const lineColor   = alert ? 'rgba(255,95,95,0.45)' : 'rgba(59,158,255,0.45)'
 
-          // Width 144, thumbnail height 91, line 7, dot 8 → total icon height 106
-          const W = 144, TH = 91
+          const W = 160, TH = 100
           const html = `
             <div class="cam-thumb">
-              <div class="cam-thumb-img" style="width:${W}px;height:${TH}px;border:1.5px solid ${borderColor};filter:grayscale(22%) contrast(1.08) brightness(0.86);">
+              <div class="cam-thumb-img" style="width:${W}px;height:${TH}px;border:1.5px solid ${borderColor};">
                 <img src="${image}" />
                 <div class="cam-thumb-scanlines"></div>
-                <div class="cam-thumb-rec">
-                  <div class="cam-thumb-rec-dot" style="background:${alert ? '#FF4444' : '#FF4444'};"></div>
-                  <span class="cam-thumb-rec-text">REC</span>
+                <div class="cam-thumb-header">
+                  <div class="cam-thumb-live">
+                    <div class="cam-thumb-live-dot"></div>
+                    <span class="cam-thumb-live-text">LIVE</span>
+                  </div>
+                  <span class="cam-thumb-ts">09:14</span>
                 </div>
                 <div class="cam-thumb-bar">
                   <span class="cam-thumb-label" style="color:${labelColor};">${label}</span>
@@ -127,8 +139,8 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           const icon = L.divIcon({
             className: 'cam-thumb-icon',
             html,
-            iconSize:   [W, TH + 7 + 8],
-            iconAnchor: [W / 2, TH + 7 + 8],
+            iconSize:   [W, TH + 6 + 7],
+            iconAnchor: [W / 2, TH + 6 + 7],
           })
           L.marker(coords, { icon }).addTo(map)
         } else {
@@ -136,7 +148,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
             radius: 6, color: '#adc6ff', fillColor: '#3B9EFF',
             fillOpacity: 0.75, weight: 2,
           }).addTo(map).bindTooltip(`▣ ${label}`, {
-            permanent: true, direction: 'top', className: 'geo-tooltip geo-tooltip-camera',
+            permanent: false, direction: 'top', className: 'geo-tooltip geo-tooltip-camera',
           })
         }
       })
@@ -163,8 +175,35 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
 
       // Fit bounds
       const allCoords = [caller.coords, ...aeds.map(a => a.coords), ...cameras.map(c => c.coords), ...(sosEvent ? [sosEvent.coords] : [])]
-      map.fitBounds(L.latLngBounds(allCoords), { padding: [50, 50] })
+      map.fitBounds(L.latLngBounds(allCoords), { padding: [60, 60], maxZoom: 15 })
+
+      // Keep map sized correctly as container resizes
+      observer = new ResizeObserver(() => map.invalidateSize())
+      observer.observe(el)
+    }
+
+    import('leaflet').then((L) => {
+      const el = ref.current
+      if (!el) return
+
+      const waitForSize = () => {
+        if (cancelled) return
+        const { width, height } = el.getBoundingClientRect()
+        if (width > 0 && height > 0) {
+          buildMap(L, el)
+        } else {
+          requestAnimationFrame(waitForSize)
+        }
+      }
+      requestAnimationFrame(waitForSize)
     })
+
+    return () => {
+      cancelled = true
+      observer?.disconnect()
+      mapInstance?.remove()
+      mapInstance = null
+    }
   }, [caller, aeds, cameras, sosEvent])
 
   return <div ref={ref} style={{ width: '100%', height: '100%' }} />

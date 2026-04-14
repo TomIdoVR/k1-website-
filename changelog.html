@@ -356,6 +356,351 @@
 
     <div class="timeline">
 
+      <!-- v2.01 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.01</span><span class="tl-date">2026-04-14</span></div>
+        <h3 class="tl-title">Demo: add 6px panel separator to UNDERSTAND stage</h3>
+        <ul class="tl-list">
+          <li>UNDERSTAND 3-panel layout now uses <code>border-right: 6px solid rgba(173,198,255,0.25)</code> — same as ProtocolPanel, SplitLayout, LearnLayout</li>
+          <li>Panels moved into a shared container with <code>borderRadius: 12 / overflow: hidden</code> for clean edges</li>
+          <li>Separator hidden on mobile stacked layout; individual panel borders restored for mobile</li>
+        </ul>
+      </div>
+
+      <!-- v2.00 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.00</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: fix panel separator contrast</h3>
+        <ul class="tl-list">
+          <li>Gap background changed from <code>#03080f</code> to <code>#162235</code> (stage container colour) in ProtocolPanel + SplitLayout</li>
+          <li>Darker panels now contrast visibly against the lighter gap — same technique as the working UNDERSTAND stage</li>
+        </ul>
+      </div>
+
+      <!-- v1.99 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v1.99</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: make panel separators clearly visible</h3>
+        <ul class="tl-list">
+          <li>Changed gap background from near-invisible <code>rgba(173,198,255,0.08)</code> to solid <code>#03080f</code> in SplitLayout and ProtocolPanel</li>
+          <li>Panel separators now show as clear dark lines between modules, matching UNDERSTAND stage treatment</li>
+        </ul>
+      </div>
+
+      <!-- v1.98 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.98</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: vertical gaps between panels on all stage layouts</h3>
+        <ul class="tl-list">
+          <li><strong>Improved</strong> <code>ProtocolPanel.tsx</code> and <code>SplitLayout.tsx</code> — panel columns updated to <code>border-radius: 12px</code> + <code>gap: 12px</code>, replacing the old <code>border-right</code> dividers. All layouts now share the same visual gap treatment as the UNDERSTAND stage.</li>
+        </ul>
+      </div>
+
+      <!-- v1.97 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.97</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Fix: sync all demo components and data files to branch</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> 11 files (6 components + 5 data) were out of sync between local and <code>demo-light-redesign</code>, causing cascading TS build errors on Vercel. All files committed in one sync.</li>
+        </ul>
+      </div>
+
+      <!-- v1.96 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.96</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Fix: ProtocolPanel TypeScript error on prevStage</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>ProtocolPanel.tsx</code> — <code>prevStage.label</code> without optional chaining caused a TS build failure. Updated to <code>prevStage?.label</code> at lines 353 and 410.</li>
+        </ul>
+      </div>
+
+      <!-- v1.95 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.95</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Fix: missing map components added to branch</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>UnderstandMapPanel.tsx</code> and <code>StaticMapPanel.tsx</code> were missing from the <code>demo-light-redesign</code> branch, causing a Vercel build failure. Both files committed to the branch.</li>
+        </ul>
+      </div>
+
+      <!-- v1.94 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.94</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: LearnLayout nav centered + prev button updated</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>LearnLayout.tsx</code> — CHOOSE SCENARIO nav strip was still bottom-right. Repositioned to bottom-center to match BottomNav. Prev button updated from ghost <code>‹</code> icon to labeled pill style.</li>
+        </ul>
+      </div>
+
+      <!-- v1.93 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.93</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: BottomNav moved to bottom-center</h3>
+        <ul class="tl-list">
+          <li><strong>Changed</strong> <code>BottomNav.tsx</code> — nav strip repositioned from bottom-right to bottom-center for a more natural, symmetrical placement in the demo flow.</li>
+        </ul>
+      </div>
+
+      <!-- v1.92 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.92</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: BottomNav — clearer prev/next for first-time users</h3>
+        <ul class="tl-list">
+          <li><strong>Improved</strong> PREV button — replaced the tiny ghost <code>‹</code> icon with a full labeled pill button (e.g. "← DETECT") matching NEXT's shape but dimmer, making the two-button navigation pattern immediately obvious.</li>
+          <li><strong>Added</strong> 5-dot step progress indicator between the buttons — active step stretches to a pill, completed steps tint blue — so users know exactly where they are in the flow.</li>
+          <li><strong>Added</strong> subtle pulse-ring animation on NEXT at the first stage (2 cycles, 800ms delay) to draw first-time visitor attention to the primary action.</li>
+        </ul>
+      </div>
+
+      <!-- v1.91 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.91</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: DECIDE camera panel fills height, no black gap</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>ProtocolPanel.tsx</code> — camera PIPs had a fixed <code>height: 104px</code>, leaving a large empty area below when only 2 feeds were shown. Changed to <code>flex: 1</code> layout so each camera card stretches equally to fill the full panel height.</li>
+        </ul>
+      </div>
+
+      <!-- v1.90 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.90</span><span class="tl-date">2026-04-13</span></div>
+        <h3 class="tl-title">Demo: access-control DECIDE stage map panel populated</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>access-control.ts</code> — DECIDE stage had no <code>decideMap</code>, causing <code>ProtocolPanel</code> to show "NO MAP DATA" on the right panel. Added <code>decideMap</code> with incident coords, five units (SEC-1 ASSIGNED, SEC-2 + UNIT-9 EN ROUTE, UNIT-3 STANDBY, K9-2 AVAILABLE), and two camera thumbnails (cam03 alert + cam07). Now renders the same <code>DecideMapPanel</code> as violence and medical scenarios.</li>
+        </ul>
+      </div>
+
+      <!-- v1.89 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.89</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UNDERSTAND left panel now scenario-specific</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>StageScreen.tsx</code> — left tracking panel and GIS overlay were hardcoded with LPR data (plate <code>7JKY442</code>, "ACTIVE TRACK") and appeared on every scenario with an <code>understandMap</code>, including violence. Added <code>isLprTrack</code> flag derived from <code>dataPoints</code> to branch rendering. LPR shows the existing vehicle card; all other scenarios show a generic card with their actual <code>dataPoints</code>, GIS status, and nearest unit label.</li>
+        </ul>
+      </div>
+
+      <!-- v1.88 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.88</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: Leaflet init fix + dark tiles across all scenario maps</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>GeoPanel.tsx</code> — replaced direct <code>L.map()</code> call with <code>requestAnimationFrame</code> polling loop + <code>ResizeObserver</code>. Fixes blank map on school, medical, and access-control UNDERSTAND stages.</li>
+          <li><strong>Fixed</strong> <code>DecideMapPanel.tsx</code> — replaced <code>setTimeout(invalidateSize)</code> + voyager tiles + CSS filter hack with RAF polling + <code>dark_all</code> CartoCDN tiles. Fixes blank/wrong-color map on violence and medical DECIDE stages. All maps now share the same init pattern and dark tile style.</li>
+        </ul>
+      </div>
+
+      <!-- v1.87 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.87</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: title emphasis across all stages</h3>
+        <ul class="tl-list">
+          <li><strong>Improved</strong> Stage label — replaced thin low-contrast text with a 3×14px <code>#1755c2</code> left accent bar + <code>font-weight: 800</code> and wider letter-spacing. Applied identically to DETECT/UNDERSTAND, DECIDE, ACT, and LEARN.</li>
+          <li>Headline <code>font-size</code> raised from <code>clamp(1.35rem, 1.9vw, 1.85rem)</code> to <code>clamp(1.9rem, 2.6vw, 2.8rem)</code>, <code>line-height</code> tightened to 1.0 for a punchier display treatment.</li>
+          <li>Description text opacity increased from 0.48 → 0.62 for improved readability.</li>
+        </ul>
+      </div>
+
+      <!-- v1.86 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.86</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> Leaflet init — replaced <code>setTimeout(invalidateSize)</code> with <code>requestAnimationFrame</code> loop + <code>ResizeObserver</code>; map now fills the full panel without dark margins.</li>
+          <li>Switched to <code>dark_all</code> CartoCDN tiles. Route: green glow (10px) + solid line (3px). Stolen car marker enlarged with solid red plate badge. Intercept marker redesigned as blue crosshair with unit label.</li>
+          <li><strong>Added</strong> amber CCTV camera marker (CAM 402) at the Highway 45 detection point. <code>fitBounds</code> updated to include camera positions.</li>
+        </ul>
+      </div>
+
+      <!-- v1.85 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.85</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: LEARN nav buttons — floating fixed overlay</h3>
+        <ul class="tl-list">
+          <li><strong>Changed</strong> <code>LearnLayout.tsx</code> — nav buttons moved from inline document flow to <code>position: fixed; bottom: 24px; right: 28px</code>, matching the <code>BottomNav</code> pattern used by all other stages. Back button uses the ghost pill style; "Choose Scenario" button uses the green restart palette with a replay icon.</li>
+        </ul>
+      </div>
+
+      <!-- v1.84 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.84</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: DispatchMap — fix white tile background</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>DispatchMap.tsx</code> — <code>dark_matter_no_labels</code> is not a valid CartoCDN style; map rendered white with gray road labels. Reverted to the single <code>dark_all</code> layer (black background, roads, and labels combined).</li>
+        </ul>
+      </div>
+
+      <!-- v1.83 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.83</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UNDERSTAND — restore 3-column layout at all desktop widths</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>StageScreen.tsx</code> — the ≤1100px breakpoint was wrapping the center panel to full-width, breaking the three-even-column layout on desktop. The outer now uses <code>min-height: calc(100vh - 200px)</code> so the three columns fill the screen. Stacking is deferred to ≤768px (center full-width, left+right side-by-side) and ≤540px (all three stacked vertically).</li>
+        </ul>
+      </div>
+
+      <!-- v1.82 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.82</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: DispatchMap Leaflet init fix + visual improvements</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>DispatchMap.tsx</code> — replaced one-shot <code>setTimeout(invalidateSize, 0)</code> with a <code>requestAnimationFrame</code> loop that waits for the container to have real pixel dimensions before initialising Leaflet, plus a <code>ResizeObserver</code> to keep the map in sync. Previously Leaflet could initialise with a zero-height container, causing blank tiles and invisible route markers.</li>
+          <li>Tile layers split into <code>dark_matter_no_labels</code> base + <code>dark_only_labels</code> overlay for sharper street labels. Route now rendered as glow (8px/22% opacity) + solid line (3.5px/95%) for visibility on dark background.</li>
+          <li><strong>Fixed</strong> <code>SplitLayout.tsx</code> — added <code>minHeight: 300</code> to <code>demo-split-map</code> panel to guarantee Leaflet always has a visible render target.</li>
+        </ul>
+      </div>
+
+      <!-- v1.81 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.81</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: full responsiveness applied to ACT and LEARN stages</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>SplitLayout.tsx</code> (ACT) — removed <code>display: none !important</code> from <code>demo-split-units</code> at ≤1100px and <code>demo-split-map</code> at ≤480px. Outer wrapper now scrollable at ≤1100px. Units panel stacks below map at ≤768px with <code>min-height: 220px</code>; map gets <code>min-height: 180px</code> at ≤480px instead of vanishing.</li>
+          <li><strong>Fixed</strong> <code>LearnLayout.tsx</code> (LEARN) — added <code>learn-outer</code> class; new ≤1100px rule makes outer scrollable. Replaced <code>max-height: 35%</code> on card-1 (which clipped against the fixed parent) with <code>min-height: 200px</code>; cards 2 and 3 get <code>min-height</code> values so all content is reachable by scrolling.</li>
+        </ul>
+      </div>
+
+      <!-- v1.80 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.80</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: DECIDE camera panel no longer disappears at narrow widths</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>ProtocolPanel.tsx</code> — removed <code>display: none !important</code> from <code>pp-camera-panel</code> at ≤1100px. Camera panel now stays visible at all widths, stacking at the bottom at ≤768px with a top separator.</li>
+          <li>Moved <code>height: auto</code> scrollable rule to ≤1100px (was only ≤768px) so the outer wrapper never clips content on medium screens.</li>
+        </ul>
+      </div>
+
+      <!-- v1.79 -->
+      <div class="tl-entry fixed">
+        <div class="tl-meta"><span class="tl-ver">v1.79</span><span class="tl-date">2026-04-10</span></div>
+        <h3 class="tl-title">Demo: UNDERSTAND narrow-screen fix — panels scroll instead of clipping</h3>
+        <ul class="tl-list">
+          <li><strong>Fixed</strong> <code>StageScreen.tsx</code> — at ≤1100px, <code>understand-outer</code> no longer has a fixed <code>calc(100vh - 120px)</code> height. Previously the center panel consumed 38vh and left only ~160px for the GIS TRACK right panel, which was clipped by <code>overflow: hidden</code> and appeared to vanish on medium screens.</li>
+          <li>Center panel reduced to 300px height at ≤1100px; left/right panels get <code>min-height: 260px</code> / <code>300px</code> so all content is accessible by scrolling</li>
+        </ul>
+      </div>
+
+      <!-- v1.77 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.77</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: equal-width 3-panel layout across all scenario stages</div>
+        <ul class="tl-list">
+          <li>UNDERSTAND (StageScreen): panels changed from fixed 200px/flex:1/320px to equal flex:1 each</li>
+          <li>DECIDE (ProtocolPanel): steps, map, cameras changed from 36%/flex:1/200px to equal flex:1; separator via CSS class; camera PiPs use 100% width</li>
+          <li>All three layouts now share the same equal-column structure with consistent 1px rgba(173,198,255,0.1) separators</li>
+        </ul>
+      </div>
+
+      <!-- v1.76 -->
+      <div class="tl-entry changed">
+        <div class="tl-meta"><span class="tl-ver">v1.76</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: floating BottomNav + 3-panel layout for all stages</div>
+        <ul class="tl-list">
+          <li>ScenarioPlayer: enabled floating BottomNav for all non-LEARN stages; paddingBottom added to clear it</li>
+          <li>StageScreen (UNDERSTAND): replaced overlapping absolute panels with proper 3-panel flex row — vehicle data | map | protocol/cameras; map has order:-1 so it comes first when wrapping</li>
+          <li>ProtocolPanel (DECIDE): refactored to 3 panels — steps (36%) | map (flex:1) | camera PiPs (200px, hidden ≤1100px)</li>
+          <li>SplitLayout (ACT): refactored to flat 3 panels — phone (260px) | map (flex:1) | units list (220px, hidden ≤1100px); stacks vertically ≤768px</li>
+          <li>All internal per-component navs disabled — floating BottomNav is now the single navigation control</li>
+          <li>Fixed: UNDERSTAND panels overlapping on narrow screens; fixed: double nav buttons showing simultaneously</li>
+        </ul>
+      </div>
+
+      <!-- v1.75 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v1.75</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: responsive nav buttons across all stage layouts</div>
+        <ul class="tl-list">
+          <li>Added CSS class system to PREV/NEXT buttons in StageScreen, ProtocolPanel, SplitLayout</li>
+          <li>≤768px: padding reduced, sub-labels hidden, font and icon box shrink</li>
+          <li>≤480px: further compacted — buttons stay proportional on all screen sizes</li>
+        </ul>
+      </div>
+
+      <!-- v1.73 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.73</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: TopBar stage pills — hover &amp; active states</div>
+        <ul class="tl-list">
+          <li>Inactive pills: darken background + deepen border on hover; flash blue accent on press</li>
+          <li>Active pill: deepens to #0066dd + stronger shadow on hover</li>
+        </ul>
+      </div>
+
+      <!-- v1.72 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.72</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: ACT stage phone panel — brighter radial spotlight background</div>
+        <ul class="tl-list">
+          <li>SplitLayout left panel: radial gradient (#1f3e62 → #0f1e2e) replaces flat dark navy — subtle spotlight behind phone makes the device frame stand out</li>
+        </ul>
+      </div>
+
+      <!-- v1.71 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.71</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: all platform modules shown in title area, active ones highlighted</div>
+        <ul class="tl-list">
+          <li>All 4 layout components now render all 9 modules every stage; active = solid blue pill with icon; inactive = muted gray</li>
+          <li>ALL_MODULES imported from TopBar so labels, icons, and keys stay in sync with one source of truth</li>
+        </ul>
+      </div>
+
+      <!-- v1.70 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.70</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: module tags moved from header to stage title area</div>
+        <ul class="tl-list">
+          <li>TopBar: removed Row 3 (platform modules strip) — modules now live inline with the stage title in each layout, keeping context local to the content</li>
+          <li>All layout components: updated calc(100vh - 168px) → 120px to match shorter two-row header</li>
+        </ul>
+      </div>
+
+      <!-- v1.69 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.69</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: TopBar nav blended into white content area</div>
+        <ul class="tl-list">
+          <li>TopBar: stage pills (row 2) and module tags (row 3) now render on #f1f4f8 light background — eliminates harsh dark-to-white break; row 1 (logo/badge) stays dark</li>
+          <li>Pills restyled dark-on-light with blue active state; module tags restyled with blue active accent</li>
+          <li>StageScreen: map container changed from top:28 offset to inset:0 — Leaflet tiles now fill the full UNDERSTAND panel rectangle</li>
+        </ul>
+      </div>
+
+      <!-- v1.68 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.68</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">Demo: white background treatment for LEARN stage + street routing on all maps</div>
+        <ul class="tl-list">
+          <li>LearnLayout: white bg treatment — title/description above dark rounded panel, resolved badge + module tags in header, light nav buttons outside panel</li>
+          <li>ScenarioPlayer: extended isLightBg to include learn layout</li>
+          <li>All three Leaflet maps (UNDERSTAND, DECIDE, ACT): removed OSRM dependency; pre-computed Houston street waypoints via route prop (Memorial Dr / Westheimer / Montrose corridors)</li>
+          <li>ProtocolPanel: DECIDE stage white bg treatment + camera PiP overlays on map</li>
+          <li>SplitLayout: ACT stage white bg treatment</li>
+        </ul>
+      </div>
+
+      <!-- v1.67 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.67</span><span class="tl-date">2026-04-10</span></div>
+        <div class="tl-title">SEO: /vs/tyler-technologies + /vs/centralsquare comparison pages</div>
+        <ul class="tl-list">
+          <li>/vs/tyler-technologies/ — full EN+ES bilingual page: Tyler Technologies as largest US gov-tech CAD/RMS vendor vs KabatOne's unified operational depth; 9-row comparison table; 6 FAQ; breadcrumb + FAQ schema</li>
+          <li>/vs/centralsquare/ — full EN+ES bilingual page: CentralSquare (Superion + TriTech + Aptean + Zuercher merger) vs KabatOne's single cloud-native architecture; 8-row comparison table; 6 FAQ; breadcrumb + FAQ schema</li>
+          <li>EN + ES metadata keys: vsTylerTechnologies, vsCentralsquare</li>
+          <li>Sitemap: 2 new paths (priority 0.7 each) — site now 85 routes × 2 locales = 170 URLs</li>
+        </ul>
+      </div>
+
+      <!-- v1.66 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v1.66</span><span class="tl-date">2026-04-09</span></div>
+        <div class="tl-title">SEO: add 4 demo scenario pages to sitemap + metadata</div>
+        <ul class="tl-list">
+          <li>Sitemap: added /demo/school, /demo/violence, /demo/medical, /demo/access-control</li>
+          <li>Metadata: added full title, description, OG tags for demo/school and demo/access-control</li>
+          <li>TypeScript fix: added decideMap to Stage interface</li>
+        </ul>
+      </div>
+
       <!-- v1.65 -->
       <div class="tl-entry">
         <div class="tl-meta"><span class="tl-ver">v1.65</span><span class="tl-date">2026-04-08</span></div>

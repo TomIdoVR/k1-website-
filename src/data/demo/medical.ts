@@ -64,9 +64,16 @@ export const medicalScenario: ScenarioConfig = {
           { coords: [29.7345, -95.4680], label: 'AED · CVS Pharmacy' },
         ],
         cameras: [
-          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner' },
-          { coords: [29.7351, -95.4690], label: 'CAM-22 · Westheimer/Wilcrest' },
-          { coords: [29.7372, -95.4682], label: 'CAM-08 · Intersection' },
+          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner', image: '/demo/medical/stage-2-understand.jpg', alert: true },
+          { coords: [29.7340, -95.4660], label: 'CAM-22 · Westheimer/Wilcrest' },
+          { coords: [29.7385, -95.4650], label: 'CAM-08 · Intersection' },
+        ],
+        transcript: [
+          { speaker: 'CALLER',   text: 'He is not breathing — please hurry!' },
+          { speaker: 'DISPATCH', text: 'Is he responsive? Can you feel a pulse?' },
+          { speaker: 'CALLER',   text: 'No pulse. He just collapsed. 4817 Westheimer.' },
+          { speaker: 'DISPATCH', text: 'Unit dispatched. Start CPR — I will guide you.' },
+          { speaker: 'CALLER',   text: 'Okay — starting now.' },
         ],
         tags: ['CARDIAC', 'UNCONSCIOUS', 'ADULT MALE', 'GEO-LOCKED', '2 AED NEARBY'],
         analysisRows: [
@@ -84,7 +91,7 @@ export const medicalScenario: ScenarioConfig = {
       label: 'DECIDE',
       stageLabel: 'STAGE 03: DECIDE — UNIT ASSIGNMENT',
       timestamp: '09:15:09',
-      headline: 'UNIT ASSIGNED: AMB-7',
+      headline: 'EMS DISPATCH PROTOCOL',
       description:
         'AI scored all available EMS units by proximity, traffic, and load. AMB-7 selected as primary — paramedic-equipped, 0.6 miles out. Brief pushed to crew in under 3 seconds.',
       dataPoints: [
@@ -99,7 +106,28 @@ export const medicalScenario: ScenarioConfig = {
       pipLabel: 'CALL ANALYSIS · LIVE',
       pip2Image: '/demo/medical/stage-1-detect.jpg',
       pip2Label: 'CALL INTAKE · ME-0847',
-      layout: 'default',
+      layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7358, -95.4697],
+        units: [
+          { id: 'AMB-7',  status: 'ASSIGNED',  active: true,  coords: [29.7430, -95.4580] },
+          { id: 'AMB-12', status: 'EN ROUTE',  active: true,  coords: [29.7280, -95.4800] },
+          { id: 'AMB-3',  status: 'STANDBY',   active: false, coords: [29.7200, -95.4900] },
+          { id: 'AMB-9',  status: 'AVAILABLE', active: false, coords: [29.7500, -95.4400] },
+        ],
+        cameras: [
+          { label: 'CALL INTAKE · 09:14:22', image: '/demo/medical/stage-1-detect.jpg', alert: true },
+          { label: 'CAM-14 · WESTHEIMER', image: '/demo/medical/stage-3-decide.jpg' },
+        ],
+      },
+      protocolSteps: [
+        { id: 1, text: 'CALL CLASSIFIED — Cardiac arrest · adult male · unconscious · P1 Life Threatening', status: 'complete' },
+        { id: 2, text: 'GEO-LOCK CONFIRMED — 4817 Westheimer Rd, Houston TX · 98.4% confidence', status: 'complete' },
+        { id: 3, text: 'AED LOCATED — Shell Station 42m NW of incident · bystander CPR in progress', status: 'complete' },
+        { id: 4, text: 'UNIT SCORED — AMB-7 selected · 0.6 mi · paramedic-equipped · AI score 97%', status: 'complete' },
+        { id: 5, text: 'DISPATCH BRIEF SENT — Address · patient condition · AED coords · route pushed to crew', status: 'active' },
+        { id: 6, text: 'HOSPITAL PRE-ALERT — Memorial Hermann notified · cardiac team on standby', status: 'pending' },
+      ],
     },
     {
       id: 'act',

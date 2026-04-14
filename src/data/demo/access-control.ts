@@ -63,16 +63,15 @@ export const accessControlScenario: ScenarioConfig = {
       layout: 'default',
       geoPanel: {
         caller: { coords: [29.7362, -95.4625], label: '1800 WEST LOOP S' },
-        sosEvent: { coords: [29.7369, -95.4609], label: '⚠ FORCED ENTRY EVENT', sublabel: 'SERVER ROOM B · LEVEL 3' },
         aeds: [
-          { coords: [29.7355, -95.4618], label: 'SEC-1 · Lobby' },
-          { coords: [29.7375, -95.4640], label: 'SEC-2 · Parking' },
+          { coords: [29.7320, -95.4660], label: 'SEC-1 · Lobby' },
+          { coords: [29.7410, -95.4680], label: 'SEC-2 · Parking' },
         ],
         cameras: [
-          { coords: [29.7362, -95.4630], label: 'CAM-03 · Server Corridor', image: '/demo/access-control/cam03-server-corridor.jpg', alert: true },
-          { coords: [29.7368, -95.4618], label: 'CAM-07 · East Wing L3',    image: '/demo/access-control/cam07-east-wing.jpg' },
-          { coords: [29.7356, -95.4610], label: 'CAM-11 · Main Entrance',   image: '/demo/access-control/cam11-entrance.jpg' },
-          { coords: [29.7378, -95.4622], label: 'CAM-15 · Stairwell B',     image: '/demo/access-control/cam15-stairwell.jpg' },
+          { coords: [29.7400, -95.4660], label: 'CAM-03 · Server Corridor', image: '/demo/access-control/cam03-server-corridor.jpg', alert: true },
+          { coords: [29.7320, -95.4590], label: 'CAM-07 · East Wing L3' },
+          { coords: [29.7405, -95.4585], label: 'CAM-11 · Main Entrance' },
+          { coords: [29.7315, -95.4660], label: 'CAM-15 · Stairwell B' },
         ],
         blueprintPanel: 'office',
         tags: ['FORCED ENTRY', 'SERVER ROOM B', 'BADGE MISMATCH', 'P1 INTRUSION', 'DOORS LOCKED'],
@@ -101,6 +100,20 @@ export const accessControlScenario: ScenarioConfig = {
       modules: ['AI ENGINE', 'EVENT MANAGEMENT', 'INTEGRATIONS'],
       nextStageTeaser: 'Officers converging. Building secured.',
       layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7362, -95.4625],
+        units: [
+          { id: 'SEC-1',  status: 'ASSIGNED',  active: true,  coords: [29.7320, -95.4660] },
+          { id: 'SEC-2',  status: 'EN ROUTE',  active: true,  coords: [29.7410, -95.4680] },
+          { id: 'UNIT-9', status: 'EN ROUTE',  active: true,  coords: [29.7400, -95.4580] },
+          { id: 'UNIT-3', status: 'STANDBY',   active: false, coords: [29.7280, -95.4550] },
+          { id: 'K9-2',   status: 'AVAILABLE', active: false, coords: [29.7440, -95.4700] },
+        ],
+        cameras: [
+          { label: 'CAM-03 · SERVER CORRIDOR', image: '/demo/access-control/cam03-server-corridor.jpg', alert: true },
+          { label: 'CAM-07 · EAST WING L3',    image: '/demo/access-control/cam07-east-wing.jpg' },
+        ],
+      },
       protocolSteps: [
         { id: 1, text: 'BADGE DENIAL LOGGED — #4491 · J. Morales · 3 failed attempts recorded',       status: 'complete' },
         { id: 2, text: 'FACE RECOGNITION MATCH — Watchlist confirmed · Confidence 98.4%',              status: 'complete' },

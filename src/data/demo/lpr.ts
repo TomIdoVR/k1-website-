@@ -49,6 +49,14 @@ export const lprScenario: ScenarioConfig = {
       backgroundFit: 'contain',
       pipImage: '/images/integrations/lpr-hero.jpeg',
       pipLabel: 'CAM 402 · HIGHWAY 45',
+      understandMap: {
+        incidentCoords: [29.7540, -95.3910],
+        label: 'VEHICLE TRACKED',
+        unitCoords: [29.7480, -95.4050],
+        unitLabel: 'INTERCEPT POINT',
+        // Westheimer Rd / Montrose corridor
+        route: [[29.7540,-95.3910],[29.7530,-95.3913],[29.7518,-95.3918],[29.7505,-95.3925],[29.7492,-95.3935],[29.7488,-95.3950],[29.7485,-95.3975],[29.7482,-95.4010],[29.7480,-95.4050]],
+      },
       layout: 'default',
     },
     {
@@ -57,7 +65,7 @@ export const lprScenario: ScenarioConfig = {
       label: 'DECIDE',
       stageLabel: 'STAGE 03: DECIDE — UNIT ASSIGNMENT',
       timestamp: '12:05:12',
-      headline: 'UNIT ASSIGNED: 12-CHARLIE',
+      headline: 'INTERCEPT PROTOCOL',
       description:
         'AI evaluated all available units by proximity and shift status. Assignment confirmed in under 4 seconds.',
       dataPoints: [
@@ -72,7 +80,32 @@ export const lprScenario: ScenarioConfig = {
       pipLabel: 'GIS TRACK · ACTIVE',
       pip2Image: '/images/integrations/lpr-hero.jpeg',
       pip2Label: 'CAM 402 · HIGHWAY 45',
-      layout: 'default',
+      layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7540, -95.3910],
+        units: [
+          { id: '12-CHARLIE', status: 'ASSIGNED',  active: true,  coords: [29.7620, -95.3660],
+            // Memorial Dr westbound → Montrose Blvd southbound
+            route: [[29.7620,-95.3660],[29.7622,-95.3700],[29.7621,-95.3740],[29.7618,-95.3780],[29.7614,-95.3820],[29.7610,-95.3860],[29.7608,-95.3880],[29.7600,-95.3900],[29.7575,-95.3908],[29.7555,-95.3910],[29.7540,-95.3910]] },
+          { id: '08-BRAVO',   status: 'EN ROUTE',  active: true,  coords: [29.7480, -95.4050],
+            // Westheimer Rd eastbound → Montrose Blvd northbound
+            route: [[29.7480,-95.4050],[29.7482,-95.4010],[29.7485,-95.3975],[29.7488,-95.3950],[29.7492,-95.3935],[29.7505,-95.3925],[29.7518,-95.3918],[29.7530,-95.3913],[29.7540,-95.3910]] },
+          { id: '04-ALPHA',   status: 'STANDBY',   active: false, coords: [29.7700, -95.3800] },
+          { id: '05-ALPHA',   status: 'AVAILABLE', active: false, coords: [29.7400, -95.3700] },
+        ],
+        cameras: [
+          { label: 'CAM 402 · HIGHWAY 45',  image: '/images/integrations/lpr-flow.jpeg', alert: true },
+          { label: 'GIS TRACK · ACTIVE',    image: '/demo/lpr/stage-3-decide.jpg' },
+        ],
+      },
+      protocolSteps: [
+        { id: 1, text: 'LPR HIT CONFIRMED — Plate 7JKY442 matched regional hotlist · AI confidence 98.4%', status: 'complete' },
+        { id: 2, text: 'VEHICLE TRACKED — Westbound I-10 · 72 mph · GIS lock active', status: 'complete' },
+        { id: 3, text: 'INTERCEPT WINDOW CALCULATED — 3 min before freeway exit · optimal intercept point flagged', status: 'complete' },
+        { id: 4, text: 'UNIT SCORED — 12-Charlie selected · 1.2 mi · closest available · shift active', status: 'complete' },
+        { id: 5, text: 'TACTICAL BRIEF SENT — Plate · vehicle description · route · case # pushed to unit', status: 'active' },
+        { id: 6, text: 'BACKUP ASSIGNED — 08-Bravo · 2.1 mi · en route for secondary intercept position', status: 'pending' },
+      ],
     },
     {
       id: 'act',
@@ -112,6 +145,8 @@ export const lprScenario: ScenarioConfig = {
       splitMapCoords: {
         incident: [29.7540, -95.3910],
         unit: [29.7620, -95.3660],
+        // Memorial Dr westbound → Montrose Blvd southbound
+        route: [[29.7620,-95.3660],[29.7622,-95.3700],[29.7621,-95.3740],[29.7618,-95.3780],[29.7614,-95.3820],[29.7610,-95.3860],[29.7608,-95.3880],[29.7600,-95.3900],[29.7575,-95.3908],[29.7555,-95.3910],[29.7540,-95.3910]],
       },
     },
     {

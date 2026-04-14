@@ -7,6 +7,247 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.01] 2026-04-14 — Demo: add 6px panel separator to UNDERSTAND stage
+
+**Fixed**
+- UNDERSTAND 3-panel layout in `StageScreen.tsx` now uses the same `border-right: 6px solid rgba(173,198,255,0.25)` separator as ProtocolPanel, SplitLayout, and LearnLayout
+- Panels wrapped in a single container with `borderRadius: 12` and `overflow: hidden` (instead of individual rounded panels with gap)
+- Mobile: separator removed on stacked layout, individual panel borders restored for mobile
+
+## [2.00] 2026-04-13 — Demo: fix panel separator contrast (gap bg matches container)
+
+**Fixed**
+- Gap background in ProtocolPanel and SplitLayout changed from `#03080f` to `#162235` (matches stage container)
+- Darker panel backgrounds (`#0b1622`, `#060e18`, `#07101c`) now contrast against the lighter gap, creating clearly visible separators
+- Mirrors the same technique already used by the UNDERSTAND stage
+
+## [1.99] 2026-04-13 — Demo: make panel separators clearly visible
+
+**Fixed**
+- Changed gap background from near-invisible `rgba(173,198,255,0.08)` to solid `#03080f` (deep near-black) in `SplitLayout.tsx` and `ProtocolPanel.tsx`
+- Panel gaps now create a clear dark separator between modules, matching the UNDERSTAND stage treatment
+- Standardised gap/padding to 8px to align with all stage layouts
+
+## [1.98] 2026-04-13 — Demo: vertical gaps between panels on all stage layouts
+
+**Improved**
+- `ProtocolPanel.tsx` — panel columns (steps, map, cameras) updated to `border-radius: 12px` and `gap: 12px`, replacing the old `border-right` dividers. Matches the gap treatment on the UNDERSTAND stage.
+- `SplitLayout.tsx` — same update: phone, map, and units panels now use `border-radius: 12px` and `gap: 12px`.
+- Also synced `LearnLayout.tsx`, `StageScreen.tsx`, and `lpr.ts` to branch.
+
+## [1.97] 2026-04-13 — Fix: sync all demo components and data files to branch
+
+**Fixed**
+- 6 component files (`DispatchMap`, `GeoPanel`, `ScenarioPlayer`, `SplitLayout`, `StageScreen`, `TopBar`) and 5 data files (`lpr`, `medical`, `school`, `types`, `violence`) were out of sync between the local working copy and the `demo-light-redesign` branch, causing cascading TypeScript build errors on Vercel. All files synced in one commit.
+
+## [1.96] 2026-04-13 — Fix: ProtocolPanel TypeScript error on prevStage
+
+**Fixed**
+- `ProtocolPanel.tsx` — lines 353 and 410 had `prevStage.label` without optional chaining, causing a TypeScript build error (`'prevStage' is possibly 'undefined'`). Updated to `prevStage?.label`. The local file already had the fix but an older version was committed to the branch.
+
+## [1.95] 2026-04-13 — Fix: missing map components added to branch
+
+**Fixed**
+- `UnderstandMapPanel.tsx` and `StaticMapPanel.tsx` were never committed to `demo-light-redesign`, causing a Vercel build failure ("Module not found"). Both files added to the branch.
+
+## [1.94] 2026-04-13 — Demo: LearnLayout nav centered + prev button updated
+
+**Fixed**
+- `LearnLayout.tsx` — floating nav strip (CHOOSE SCENARIO + prev arrow) was still bottom-right. Repositioned to bottom-center to match BottomNav. Also updated the old ghost `‹` prev button to the labeled pill style introduced in v1.92.
+
+## [1.93] 2026-04-13 — Demo: BottomNav moved to bottom-center
+
+**Changed**
+- `BottomNav.tsx` — nav strip repositioned from bottom-right to bottom-center (`left: 50%` + `translateX(-50%)`). More natural placement for a centered demo flow.
+
+## [1.92] 2026-04-13 — Demo: BottomNav — clearer prev/next for first-time users
+
+**Improved**
+- `BottomNav.tsx` — PREV button was a tiny ghost `‹` icon at 40% opacity with no label. Replaced with a full labeled pill button (`← DETECT`) matching the NEXT button style but dimmer, so the navigation pattern is immediately obvious. Added 5-dot step progress indicator between the two buttons (active dot stretches to a pill, completed dots tint blue). Added a 2-cycle pulse ring animation on the NEXT button at first stage load to draw attention for new visitors.
+
+## [1.91] 2026-04-13 — Demo: DECIDE camera panel fills height, no black gap
+
+**Fixed**
+- `ProtocolPanel.tsx` — camera thumbnails had a fixed `height: 104px`, leaving a large black gap below when only 2 cameras were present. Changed `.pp-camera-pip` to `flex: 1; display: flex; flex-direction: column` and `.pp-camera-img` to `flex: 1; min-height: 0` so each pip stretches to share the full panel height equally. Camera list wrapper also set to `flex: 1` to fill the space below the header.
+
+## [1.90] 2026-04-13 — Demo: access-control DECIDE stage map panel populated
+
+**Fixed**
+- `access-control.ts` — the DECIDE stage had `layout: 'protocol'` and `protocolSteps` but no `decideMap`, causing `ProtocolPanel` to render "NO MAP DATA" on the right panel. Added `decideMap` with incident coords `[29.7362, -95.4625]`, five units (SEC-1 ASSIGNED, SEC-2 EN ROUTE, UNIT-9 EN ROUTE, UNIT-3 STANDBY, K9-2 AVAILABLE), and two camera thumbnails (cam03-server-corridor alert + cam07-east-wing). Now renders the same `DecideMapPanel` as violence and medical scenarios.
+
+## [1.89] 2026-04-10 — Demo: UNDERSTAND left panel now scenario-specific
+
+**Fixed**
+- `StageScreen.tsx` — the left tracking panel and GIS map overlay in the UNDERSTAND stage were hardcoded with LPR scenario data (plate `7JKY442`, "ACTIVE TRACK", "Westbound I-10", etc.) and appeared on every scenario that had an `understandMap` — including violence. Added `isLprTrack` boolean (true when `dataPoints` contains `INTERCEPT ETA`) and `trackSubLabel` (derived from `stage.stageLabel`). LPR renders the existing vehicle tracking card unchanged. All other scenarios (violence) render a generic card showing the stage's actual `dataPoints`, GIS status, and unit info. Fixed in four locations: the 3-panel left panel, the right GIS panel bottom overlay (3-panel layout), the dark-bg GIS panel bottom overlay, and the dark-bg left tracking panel.
+
+## [1.88] 2026-04-10 — Demo: Leaflet init fix + dark tiles across all scenario maps
+
+**Fixed**
+- `GeoPanel.tsx` — replaced direct `L.map()` call (which fires before flex container has real pixel dimensions) with the same `requestAnimationFrame` polling loop + `ResizeObserver` pattern used in DispatchMap and UnderstandMapPanel. Affects UNDERSTAND stage maps for school, medical, and access-control scenarios.
+- `DecideMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` + voyager tiles + CSS filter hack with RAF polling + `dark_all` CartoCDN tiles. Affects DECIDE stage maps for violence and medical scenarios. Map now renders immediately with the correct dark tactical appearance, consistent with all other maps in the demo.
+
+## [1.87] 2026-04-10 — Demo: title emphasis across all stages
+
+**Improved**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx`, `LearnLayout.tsx` — replaced the thin, low-contrast stage label with a left accent bar (3×14px `#1755c2`) + bolder tracking. Increased headline `font-size` from `clamp(1.35rem, 1.9vw, 1.85rem)` to `clamp(1.9rem, 2.6vw, 2.8rem)` and tightened `line-height` to 1.0. Description text opacity raised from 0.48 to 0.62. Changes are identical across DETECT/UNDERSTAND (StageScreen), DECIDE (ProtocolPanel), ACT (SplitLayout), and LEARN (LearnLayout).
+
+## [1.86] 2026-04-10 — Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays
+
+**Fixed / Improved**
+- `UnderstandMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` with `requestAnimationFrame` loop (same pattern as DispatchMap fix in v1.82) that waits for real container dimensions before calling `L.map()`, then attaches `ResizeObserver`. Previously the voyager tiles loaded into a collapsed height leaving large dark margins.
+- Switched to `dark_all` CartoCDN tiles (matches ACT stage). Removed the `hue-rotate` brightness filter hack.
+- Route now rendered as glow (10px/18% opacity) + solid line (3px/95%) in green (`#00C98A`).
+- Stolen vehicle marker enlarged (36px circle, 2.5px border, larger pulse rings), plate badge background changed from semi-transparent to solid `#FF4560`.
+- Intercept/unit marker redesigned as blue `#3B9EFF` crosshair with "12-CHARLIE" label.
+- Added CCTV camera marker (amber `#FFB020`, video camera SVG icon, CAM 402 label) placed just east of the incident coords where the vehicle was first detected. Accepts optional `cameraCoords` prop for overrides.
+- `fitBounds` now includes camera positions in the bounding box so all overlay elements are visible.
+
+## [1.85] 2026-04-10 — Demo: LEARN nav buttons — floating fixed overlay
+
+**Changed**
+- `LearnLayout.tsx` — replaced the inline centered nav buttons (which sat below the dark panel in document flow) with a `position: fixed; bottom: 24px; right: 28px` floating overlay matching the `BottomNav` pattern used by all other stages. The "← ACT" prev button uses the same ghost pill style as `demo-float-prev`; the "Choose Scenario" button uses the green restart palette from `demo-float-restart`.
+
+## [1.84] 2026-04-10 — Demo: DispatchMap — fix white tile background
+
+**Fixed**
+- `DispatchMap.tsx` — the v1.82 tile layer split used `dark_matter_no_labels` which is not a valid CartoCDN style name; the map rendered as white/gray with only road labels visible. Reverted to the single correct `dark_all` style which renders black background + roads + labels in one layer.
+
+## [1.83] 2026-04-10 — Demo: UNDERSTAND — restore 3-column layout at all desktop widths
+
+**Fixed**
+- `StageScreen.tsx` — the UNDERSTAND stage was wrapping its center panel to full-width at ≤1100px (matching the old fixed-height overflow fix), which broke the three-equal-column layout on common desktop viewports. Fix: removed `flex-wrap` and `order: -1` from the ≤1100px rule; the outer now uses `min-height: calc(100vh - 200px)` instead so the columns fill the screen without a fixed height. Wrapping to the stacked layout is deferred to ≤768px (center full-width top, left+right split) and ≤540px (all three stack vertically).
+
+## [1.82] 2026-04-10 — Demo: DispatchMap Leaflet init fix + visual improvements
+
+**Fixed**
+- `DispatchMap.tsx` — replaced `setTimeout(invalidateSize, 0)` with a `requestAnimationFrame` loop that waits for the container to have real pixel dimensions before calling `L.map()`, then attaches a `ResizeObserver` to keep Leaflet in sync with CSS layout. Previously Leaflet could initialise when the flex container still had zero height, causing blank tiles and missing markers.
+- Switched base tile layer to `dark_matter_no_labels` + separate `dark_only_labels` pane so street labels render crisply on top. Added route glow (8px, 22% opacity) under the solid route line (3.5px, 95% opacity) for better visibility. Increased circle marker radius from 8→9 and added `minHeight: 280px` to the Leaflet container div.
+- `SplitLayout.tsx` — added `minHeight: 300` to `demo-split-map` panel to guarantee Leaflet always has a visible container.
+
+## [1.81] 2026-04-10 — Demo: full responsiveness applied to ACT and LEARN stages
+
+**Fixed**
+- `SplitLayout.tsx` (ACT) — removed `display: none !important` from `demo-split-units` at ≤1100px and `demo-split-map` at ≤480px; outer wrapper now scrollable at ≤1100px; units panel stacks below map at ≤768px with `min-height: 220px`; map gets `min-height: 180px` at ≤480px instead of vanishing
+- `LearnLayout.tsx` (LEARN) — added `learn-outer` class to root div; new `@media (max-width: 1100px)` rule makes outer scrollable (`height: auto`); at ≤768px replaced `max-height: 35%` on card-1 (which clipped content against the fixed parent height) with `min-height: 200px`; cards 2 and 3 get `min-height: 260px` / `300px` so all content is reachable by scrolling
+
+## [1.80] 2026-04-10 — Demo: DECIDE camera panel no longer disappears at narrow widths
+
+**Fixed**
+- `ProtocolPanel.tsx` — removed `display: none !important` from `pp-camera-panel` at ≤1100px; camera panel now stays visible at all widths and stacks at the bottom at ≤768px. Also moved `height: auto` scrollable rule to ≤1100px (was only at ≤768px) so the outer wrapper never clips content.
+
+## [1.79] 2026-04-10 — Demo: UNDERSTAND narrow-screen fix — panels scroll instead of clipping
+
+**Fixed**
+- `StageScreen.tsx` — at ≤1100px, `understand-outer` no longer has fixed `calc(100vh - 120px)` height; switched to `height: auto` + scrollable, same as the ≤680px rule. Previously, the center panel consumed 38vh and left only ~160px for the left/right panels — the GIS TRACK right panel was clipped by `overflow: hidden` and appeared to "disappear" at medium screen widths.
+- Center panel height reduced from `38vh` to `300px` at ≤1100px; left/right panels get `min-height: 260px` / `300px` respectively so all content is accessible by scrolling
+
+## [1.77] 2026-04-10 — Demo: equal-width 3-panel layout across all scenario stages
+
+**Changed**
+- `StageScreen.tsx` (UNDERSTAND) — panels now `flex: 1` each instead of fixed 200px / flex:1 / 320px; at ≤1100px center wraps full-width, left+right share space equally
+- `ProtocolPanel.tsx` (DECIDE) — steps, map, and cameras panels now `flex: 1` each instead of 36% / flex:1 / 200px; separator lines via CSS class, camera pip image uses 100% width
+- `SplitLayout.tsx` (ACT) — already equalized in v1.76
+- Consistent 1px `rgba(173,198,255,0.1)` separator between all panels across all three layouts
+
+## [1.76] 2026-04-10 — Demo: floating BottomNav + 3-panel layout for all stages
+
+**Changed**
+- `ScenarioPlayer.tsx` — enabled floating `BottomNav` for all non-LEARN stages; added `paddingBottom: 80px` to main content to clear it
+- `StageScreen.tsx` — UNDERSTAND stage now uses an early-return 3-panel flex layout (vehicle data | map | protocol/cameras) instead of overlapping absolute panels; map is center with `order: -1` so it appears first when wrapping; disabled internal nav (replaced by floating BottomNav)
+- `ProtocolPanel.tsx` — refactored from 2 panels to 3: steps panel (36%) | map panel (flex: 1) | camera PiPs panel (200px, hidden at ≤1100px); disabled internal nav
+- `SplitLayout.tsx` — refactored from nested 2-panel to flat 3-panel: phone mockup (260px) | operational map (flex: 1) | tactical units list (220px, hidden at ≤1100px); at ≤768px panels stack vertically; disabled internal nav
+- `BottomNav.tsx` — cleaned up styling: `backdrop-filter: blur(20px)`, compact sizing on tablet/mobile, center teaser hidden at ≤480px
+
+**Fixed**
+- UNDERSTAND stage panels overlapping on narrow screens (was caused by 3 absolutely-positioned panels in a shared container)
+- Navigation buttons appearing twice (both internal per-component nav and floating BottomNav)
+
+## [1.75] 2026-04-10 — Demo: responsive nav buttons across all stage layouts
+
+**Fixed**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx` — added `demo-stage-nav-btn`, `demo-stage-nav-sublabel`, `demo-stage-nav-mainlabel`, `demo-stage-nav-icon` CSS classes to all PREV/NEXT nav buttons
+- At ≤768px: button padding reduced to `8px 16px`, sub-labels ("Proceed to next step" / "Go back") hidden, main label font shrinks to 0.78rem, icon box shrinks to 24×24
+- At ≤480px: padding further reduced to `6px 12px`, main label font shrinks to 0.68rem
+- Buttons now stay compact and proportional on tablet and mobile screens
+
+## [1.74] 2026-04-10 — Demo: full responsive pass across all stage components
+
+**Changed**
+- `TopBar.tsx` — pills shrink + scroll on tablet (≤768px); entire row 2 hidden on mobile (≤480px); header row 1 shorter on mobile
+- `BottomNav.tsx` — compact height on tablet/mobile; center teaser hidden on tablet; prev/next labels hidden on mobile; simplified to icon+short text only
+- `ProtocolPanel.tsx` — camera PiPs shrink to 160px at 900px, 130px at 768px; layout stacks vertically at 768px; map panel hidden at 480px
+- `StageScreen.tsx` — understand map panel shrinks to 340px at 900px, hidden at 680px; outer padding reduced
+- `SplitLayout.tsx` — phone+map panels stack vertically at 768px; map hidden at 480px; padding reduced on mobile
+- `LearnLayout.tsx` — three dashboard cards stack vertically at 768px with scroll
+- `ScenarioPlayer.tsx` — `paddingTop` responsive: 120px → 88px (tablet) → 48px (mobile) matching header collapse
+
+---
+
+## [1.73] 2026-04-10 — Demo: TopBar stage pills — hover & active states
+
+**Changed**
+- `TopBar.tsx` — added CSS hover/active states for stage pills: inactive pills darken on hover and flash blue on press; active pill deepens blue on hover; `data-active` attribute wired for CSS targeting
+
+---
+
+## [1.72] 2026-04-10 — Demo: ACT stage phone panel — brighter radial background
+
+**Changed**
+- `SplitLayout.tsx` — left panel (smartphone mockup) now has a radial gradient background (`#1f3e62` center → `#0f1e2e` edges) instead of flat `#162235`, creating a subtle spotlight that makes the phone frame pop
+
+---
+
+## [1.71] 2026-04-10 — Demo: show all platform modules in title area, highlight active ones
+
+**Changed**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx`, `LearnLayout.tsx` — module strip now renders all 9 platform modules every time; active modules for the current stage get a solid blue pill (`#1755c2` text, `rgba(0,122,255,0.1)` bg, blue border + bold weight); inactive modules are muted gray; each pill includes its Material icon
+- `ALL_MODULES` imported from `TopBar` in all four layout components
+
+---
+
+## [1.70] 2026-04-10 — Demo: move module tags from header to stage title area
+
+**Changed**
+- `TopBar.tsx` — removed Row 3 (platform modules strip) from the fixed header; modules are already rendered inline with the stage title in each layout component (StageScreen, ProtocolPanel, SplitLayout, LearnLayout)
+- All demo layout components — updated `calc(100vh - 168px)` → `calc(100vh - 120px)` to account for the shorter two-row header
+- `ScenarioPlayer.tsx` — updated `paddingTop` from 168px to 120px
+
+---
+
+## [1.69] 2026-04-10 — Demo: TopBar nav blended into white content area
+
+**Changed**
+- `TopBar.tsx` — stage lifecycle pills (row 2) and module tags (row 3) now render on `#f1f4f8` light background matching the content area, eliminating the jarring dark-to-white transition; row 1 (logo/badge) retains dark brand chrome; pills/tags restyled with dark-on-light colors and blue active states; outer header border and shadow updated to suit light bottom edge
+
+**Fixed**
+- Map fill in UNDERSTAND stage: removed `top: 28` offset from map container in `StageScreen.tsx` so Leaflet tiles now cover the full panel rectangle; header bar, camera inset, and incident overlay float above via z-index
+
+---
+
+## [1.68] 2026-04-10 — Demo: white background treatment for LEARN stage + street routing on all maps
+
+**Changed**
+- `LearnLayout.tsx` — applied the same white `#f1f4f8` background treatment as DETECT/UNDERSTAND/DECIDE/ACT: stage title/description above a dark rounded panel (`#0f1e33`), resolved badge + module tags in the header row, light nav buttons (ghost PREV, dark navy "Choose Another Scenario") outside the panel
+- `ScenarioPlayer.tsx` — extended `isLightBg` to include `learn` layout; passes `isLightBg` to `LearnLayout`
+- `DispatchMap.tsx`, `DecideMapPanel.tsx`, `UnderstandMapPanel.tsx` — removed OSRM dependency; all three maps now use pre-computed Houston street waypoints passed via `route` prop instead of fetching external routing API (which was blocked in sandbox and causing straight-line fallback)
+- `lpr.ts` — added pre-computed `route` waypoint arrays to `understandMap`, `decideMap.units` (12-Charlie + 08-Bravo), and `splitMapCoords` following Memorial Dr / Westheimer Rd / Montrose Blvd corridors
+- `types.ts` — added `route?: [number, number][]` to `splitMapCoords`, `understandMap`, and `decideMap.units`
+- `SplitLayout.tsx` — passes `route` prop to `DispatchMap`; `isLightBg` treatment for ACT stage (title above dark panel, light nav)
+- `StageScreen.tsx` — passes `route` prop to `UnderstandMapPanel`
+- `ProtocolPanel.tsx` — `isLightBg` treatment for DECIDE stage; camera PiP overlays on map (CAM 402 highway feed + GIS track)
+
+---
+
+## [1.67] 2026-04-10 — SEO: /vs/tyler-technologies + /vs/centralsquare comparison pages
+
+**Added**
+- `/vs/tyler-technologies/` — full EN+ES bilingual page: Tyler Technologies (largest US gov-tech vendor, Enterprise CAD/RMS) vs KabatOne unified operational depth; 9-row comparison table; 6 FAQ with breadcrumb + FAQPage schema; related resources + integration links
+- `/vs/centralsquare/` — full EN+ES bilingual page: CentralSquare (Superion + TriTech + Aptean + Zuercher merger, 8,000+ agencies) vs KabatOne single cloud-native architecture; 8-row comparison table; 6 FAQ with breadcrumb + FAQPage schema; related resources + integration links
+- `vsTylerTechnologies` + `vsCentralsquare` metadata keys added to EN + ES metadata files
+- `sitemap.ts` — 2 new /vs/ paths (priority 0.7 each) — site now 85 unique routes × 2 locales = 170 sitemap URLs
+
+---
+
 ## [1.66] 2026-04-09 — SEO: add 4 demo scenario pages to sitemap + metadata
 
 **Added**

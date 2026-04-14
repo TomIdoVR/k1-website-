@@ -44,7 +44,7 @@ export interface Stage {
   // Optional decide map (unit positions + cameras on protocol-layout decide stage)
   decideMap?: {
     incidentCoords: [number, number]
-    units: Array<{ id: string; status: string; active: boolean; coords: [number, number] }>
+    units: Array<{ id: string; status: string; active: boolean; coords: [number, number]; route?: [number, number][] }>
     cameras?: Array<{ label: string; image?: string; alert?: boolean }>
   }
   // Optional decide panel (unit assignment + AI scoring + map)
@@ -55,6 +55,14 @@ export interface Stage {
     briefItems: string[]
     dispatchedTo: string
   }
+  // Optional mini map for understand stages showing incident/vehicle location
+  understandMap?: {
+    incidentCoords: [number, number]
+    label?: string
+    unitCoords?: [number, number]
+    unitLabel?: string
+    route?: [number, number][]   // pre-computed street waypoints [lat, lng]
+  }
   // Optional geo-analysis panel (replaces background image for understand-type stages)
   geoPanel?: {
     caller: { coords: [number, number]; label: string }
@@ -62,6 +70,8 @@ export interface Stage {
     cameras: Array<{ coords: [number, number]; label: string; image?: string; alert?: boolean }>
     tags: string[]
     analysisRows: Array<{ key: string; value: string; color?: string }>
+    // Optional 911 call transcript lines shown in the sidebar
+    transcript?: Array<{ speaker: 'CALLER' | 'DISPATCH'; text: string }>
     // Optional SOS / panic event card shown at the incident coords
     sosEvent?: { coords: [number, number]; label: string; sublabel?: string }
     // When set, shows a building blueprint panel to the right of the street map
@@ -84,6 +94,7 @@ export interface Stage {
   splitMapCoords?: {
     incident: [number, number]
     unit: [number, number]
+    route?: [number, number][]   // pre-computed street waypoints [lat, lng]
   }
 }
 
