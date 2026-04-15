@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.03] 2026-04-14 — Demo LPR: new SVG camera captures from two distinct angles
+
+**Fixed / Added**
+- Created cam-highway.svg — rear-view highway LPR capture (gantry camera, red tail lights, plate 7JKY442 in green box)
+- Created cam-intercept-v2.svg — front-right quarter-view at interchange (headlights, front plate detection, different angle)
+- Fixed ProtocolPanel to use plain <img> instead of next/image for camera feeds (SVGs blocked by Next.js optimizer)
+- Both cameras unique: not reused from any other demo stage
+
 ## [2.02] 2026-04-14 — Demo LPR: replace flowchart camera images with real LPR detection images
 
 **Fixed**

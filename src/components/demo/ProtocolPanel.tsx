@@ -305,7 +305,8 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
                   </div>
                   {cam.image && (
                     <div className="pp-camera-img" style={{ position: 'relative', background: '#060e18' }}>
-                      <Image src={cam.image} alt={cam.label} fill style={{ objectFit: 'cover', filter: 'brightness(0.85) saturate(0.9)' }} sizes="200px" />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={cam.image} alt={cam.label} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.9) saturate(0.95)' }} />
                       <div style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px)', pointerEvents: 'none' }} />
                       <div style={{ position: 'absolute', bottom: 4, left: 6, fontFamily: 'monospace', fontSize: 7, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em' }}>12:05:12</div>
                       {cam.alert && (
