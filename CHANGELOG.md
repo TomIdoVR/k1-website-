@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.04] 2026-04-14 — Demo LPR: AI-generated photorealistic LPR camera images
+
+**Fixed**
+- Generated two photorealistic LPR camera images using Gemini 3.1 Flash (nano-banana CLI)
+- cam-highway-lpr.jpeg: rear-view of BMW on rainy highway at night, green detection box on plate 7JKY442
+- cam-intercept-lpr.jpeg: front-left angle SUV approaching intersection, headlights, green LPR box
+- Replaced SVG placeholder drawings with actual AI-generated surveillance-style photos
+- Reverted ProtocolPanel back to next/image (JPEGs work fine, SVG restriction resolved)
+
 ## [2.03] 2026-04-14 — Demo LPR: new SVG camera captures from two distinct angles
 
 **Fixed / Added**
