@@ -73,28 +73,33 @@ export interface Stage {
     cameras?: Array<{ label: string; image?: string; alert?: boolean }>
   }
   // Optional AI decision tree panel (replaces the center map on the DECIDE stage).
-  // Renders: horizontal filter flow → ranked candidate cards → recommendation strip.
+  // Simple shape: a tiny 2-3 node tree at the top, then a set of action options
+  // the dispatcher can pick from (one marked as AI-recommended).
   decisionTree?: {
-    candidates: number              // total eligible units at the start (e.g. 6)
-    filters: Array<{                // sequential AI filters narrowing the pool
-      label: string                 // e.g. "Within 3 mi"
-      criterion?: string            // short explainer under the label (optional)
-      passed: number                // count that passed this filter
-      rejected: number              // count dropped by this filter
+    // Tree nodes, rendered top-to-bottom. Keep it SHORT (2-3 nodes).
+    tree: Array<{
+      label: string                 // e.g. "STOLEN VEHICLE"
+      detail?: string               // e.g. "Plate 7JKY442"
+      icon?: string                 // material symbol name
     }>
-    ranked: Array<{                 // final ranked candidates (typically 3)
-      id: string                    // unit ID, e.g. "12-CHARLIE"
-      type?: 'police' | 'security' | 'k9' | 'ems' | 'fire'
-      score: number                 // 0–100 weighted AI score
-      distance?: string             // e.g. "1.2 mi"
-      eta?: string                  // e.g. "2:48"
-      reason?: string               // short rank rationale
-      winner?: boolean              // true for the AI-selected unit
+    // Action cards — the different options the user can take. Keep it to 3-4.
+    options: Array<{
+      id: string                    // short id, e.g. "intercept"
+      title: string                 // e.g. "INTERCEPT"
+      description: string           // one-line, plain language
+      icon: string                  // material symbol name
+      recommended?: boolean         // highlight with glow + "AI RECOMMENDED" badge
     }>
-    recommendation: {               // bottom strip — the decision pushed forward
-      action: string                // e.g. "DISPATCH 12-CHARLIE"
-      detail: string                // e.g. "Lights & siren · Code 3 · ETA 2:48"
-    }
+  }
+  // Optional 3x3 video wall shown on the right column of the DECIDE stage.
+  videoWall?: {
+    title?: string                  // e.g. "CITY CAMERA NETWORK"
+    tiles: Array<{
+      id: string                    // e.g. "CAM-402"
+      label: string                 // e.g. "HIGHWAY 45"
+      image?: string                // /public/ path — if omitted, renders a placeholder
+      status: 'tracking' | 'monitoring' | 'idle'
+    }>
   }
   // Optional decide panel (unit assignment + AI scoring + map)
   decideCard?: {

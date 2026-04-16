@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.11] 2026-04-16 — Demo DECIDE: simpler tree + visual options + 9-tile video wall
+
+**Changed**
+- DECIDE stage decision tree was too dense for non-technical viewers (horizontal funnel + score bars + weighted rankings). Replaced with a **simple 3-node vertical tree** (STOLEN VEHICLE → IN MOTION → INTERCEPT NEEDED) showing the situation at a glance, followed by **4 visual option cards** (Intercept, Roadblock, Track Only, Air Support) the dispatcher can choose from. The AI-recommended option (Intercept) has a green glow + "AI PICK" badge — no scores, no filter math, just clear choices
+- Simplified `Stage.decisionTree` type: `tree[]` (2-3 nodes, each with label/detail/icon) + `options[]` (3-4 action cards with one `recommended`). Removed `candidates`, `filters[]`, `ranked[]`, and `recommendation` fields
+
+**Added**
+- New `VideoWall` component — 3x3 grid of 9 city-camera tiles restores the right column on the DECIDE stage. Two tiles show live LPR tracking (CAM-402 HIGHWAY 45 and CAM-118 INTERCHANGE) with green "TRACKING" chip + scan beam animation; the other 7 are monitoring/idle neighborhood cams (Montrose, Memorial, Westheimer, Allen, Kirby, Shepherd, Waugh) rendered as dimmed placeholder tiles with camera labels
+- Rationale from user feedback: *"too much information and text… maybe a simple decision tree and then a visual representation of the different options the user can take. I would also like to return the right module — maybe nine video tiles with relevant videos inside."*
+- Extended `Stage` type with optional `videoWall` (tiles with `status: 'tracking' | 'monitoring' | 'idle'`)
+
 ## [2.10] 2026-04-16 — Demo DECIDE: readable protocol + AI decision tree (LPR)
 
 **Improved**

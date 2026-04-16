@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.11 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.11</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo DECIDE: simpler tree + visual options + 9-tile video wall</div>
+        <ul class="tl-body">
+          <li>User feedback on v2.10: "too much information and text… maybe a simple decision tree and then a visual representation of the different options the user can take. I would also like to return the right module — maybe nine video tiles with relevant videos inside."</li>
+          <li>Replaced the dense horizontal funnel with a <strong>3-node vertical tree</strong> (STOLEN VEHICLE → IN MOTION → INTERCEPT NEEDED) that tells the situation at a glance — no scores, no filter math</li>
+          <li>Added <strong>4 visual option cards</strong> (Intercept / Roadblock / Track Only / Air Support), each a large icon + title + plain-language line. The AI-recommended option (Intercept) glows green with an "AI PICK" badge</li>
+          <li>New <code>VideoWall</code> component restores the right column as a <strong>3×3 grid of 9 city cameras</strong>. Two tiles (CAM-402 HIGHWAY 45, CAM-118 INTERCHANGE) show live LPR tracking with green "TRACKING" chip + scan beam; the other 7 are dimmed monitoring/idle neighborhood cams</li>
+          <li>Simplified <code>Stage.decisionTree</code> — removed <code>candidates</code>, <code>filters[]</code>, <code>ranked[]</code>, <code>recommendation</code>; added <code>tree[]</code> + <code>options[]</code>. New optional <code>videoWall</code> with <code>status: 'tracking' | 'monitoring' | 'idle'</code> per tile</li>
+        </ul>
+      </div>
       <!-- v2.10 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.10</span><span class="tl-date">2026-04-16</span></div>

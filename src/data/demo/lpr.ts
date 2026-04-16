@@ -121,21 +121,31 @@ export const lprScenario: ScenarioConfig = {
         { id: 6, text: 'BACKUP ASSIGNED — 08-Bravo · 2.1 mi · en route for secondary intercept position', status: 'pending' },
       ],
       decisionTree: {
-        candidates: 6,
-        filters: [
-          { label: 'Within 3 mi',    criterion: 'proximity gate', passed: 4, rejected: 2 },
-          { label: 'Shift active',   criterion: 'on-duty check',  passed: 3, rejected: 1 },
-          { label: 'Skill: intercept', criterion: 'vehicle pursuit cert', passed: 3, rejected: 0 },
+        tree: [
+          { label: 'Stolen Vehicle', detail: 'Plate 7JKY442 · confirmed hotlist match', icon: 'directions_car' },
+          { label: 'In Motion', detail: 'Westbound I-10 · 72 mph', icon: 'speed' },
+          { label: 'Intercept Needed', detail: '3 min to freeway exit', icon: 'crisis_alert' },
         ],
-        ranked: [
-          { id: '12-CHARLIE', type: 'police', score: 94, distance: '1.2 mi', eta: '2:48', reason: 'Closest available · intercept-certified · shift active', winner: true },
-          { id: '08-BRAVO',   type: 'police', score: 78, distance: '2.1 mi', eta: '3:42', reason: 'Flanking route available · assigned as secondary' },
-          { id: '04-ALPHA',   type: 'police', score: 62, distance: '2.8 mi', eta: '4:20', reason: 'On holding position · can be released if needed' },
+        options: [
+          { id: 'intercept', title: 'Intercept', description: 'Dispatch 12-Charlie · Code 3 · ETA 2:48', icon: 'local_police', recommended: true },
+          { id: 'roadblock', title: 'Roadblock', description: 'Coordinate with TxDOT at next exit', icon: 'block' },
+          { id: 'track',     title: 'Track Only', description: 'Monitor movement · watch for patterns', icon: 'gps_fixed' },
+          { id: 'air',       title: 'Air Support', description: 'Request helicopter overwatch', icon: 'flight' },
         ],
-        recommendation: {
-          action: 'DISPATCH 12-CHARLIE',
-          detail: 'Primary intercept · Lights & siren · Code 3 · ETA 2:48',
-        },
+      },
+      videoWall: {
+        title: 'City Camera Network',
+        tiles: [
+          { id: 'CAM-402', label: 'Highway 45',      image: '/demo/lpr/cam-highway-lpr.jpeg',   status: 'tracking' },
+          { id: 'CAM-118', label: 'I-10 Interchange', image: '/demo/lpr/cam-intercept-lpr.jpeg', status: 'tracking' },
+          { id: 'CAM-305', label: 'Montrose Blvd',   status: 'monitoring' },
+          { id: 'CAM-411', label: 'Memorial Dr',     status: 'monitoring' },
+          { id: 'CAM-227', label: 'Westheimer Rd',   status: 'monitoring' },
+          { id: 'CAM-198', label: 'Allen Pkwy',      status: 'monitoring' },
+          { id: 'CAM-562', label: 'Kirby Dr',        status: 'idle' },
+          { id: 'CAM-340', label: 'Shepherd Dr',     status: 'idle' },
+          { id: 'CAM-715', label: 'Waugh Dr',        status: 'idle' },
+        ],
       },
     },
     {

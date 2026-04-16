@@ -7,6 +7,7 @@ import { ALL_MODULES } from './TopBar'
 
 const DecideMapPanel = dynamic(() => import('./DecideMapPanel'), { ssr: false })
 const DecisionTreePanel = dynamic(() => import('./DecisionTreePanel'), { ssr: false })
+const VideoWall = dynamic(() => import('./VideoWall'), { ssr: false })
 
 interface ProtocolPanelProps {
   stage: Stage
@@ -21,6 +22,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
   const steps = stage.protocolSteps ?? []
   const hasTree = !!stage.decisionTree
   const hasMap = !hasTree && !!(stage.decideMap?.incidentCoords)
+  const hasWall = !!stage.videoWall
   const incidentLabel = stage.dataPoints[0]?.value ?? 'ACTIVE · P1'
 
   return (
@@ -290,7 +292,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
 
         {/* ── CENTER: Decision tree OR Map ── */}
         <div className="pp-center-panel" style={{
-          flex: hasTree ? 2 : 1, display: 'flex', flexDirection: 'column',
+          flex: 1, display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#060e18',
         }}>
@@ -321,8 +323,18 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           )}
         </div>{/* end center */}
 
-        {/* ── RIGHT: Camera feeds (3rd column — hides when decision tree is on, or at ≤1100px) ── */}
-        {hasMap && stage.decideMap!.cameras && stage.decideMap!.cameras.length > 0 && (
+        {/* ── RIGHT: 3x3 Video Wall (when set) ── */}
+        {hasWall && (
+          <div className="pp-camera-panel" style={{
+            flexDirection: 'column',
+            background: '#07101c',
+          }}>
+            <VideoWall wall={stage.videoWall!} />
+          </div>
+        )}
+
+        {/* ── RIGHT: Camera feeds (legacy — used with decideMap) ── */}
+        {!hasWall && hasMap && stage.decideMap!.cameras && stage.decideMap!.cameras.length > 0 && (
           <div className="pp-camera-panel" style={{
             flexDirection: 'column', gap: 0, overflowY: 'auto',
             background: '#07101c',
