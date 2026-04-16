@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.14] 2026-04-16 — Demo LEARN: dark backgrounds + much larger, readable text
+
+**Changed**
+- LEARN stage (Case Closed) was rendering three pale, nearly-transparent cards on a white page — hard to read at any size
+- Gave all three cards solid dark backgrounds: Critical Events → `#0a1a18`, Performance → `#060e18`, Incident Analysis → `#07101c`. Outer panel → `#0B1420` with full opacity
+- **Critical Events:** timestamp `9px → 12px`, event text `11.5px → 15px`, checkmark circle `15px → 22px`, connector line thicker, event padding increased
+- **Incident Summary:** key labels `10px → 12px`, values `10px → 13px` bold
+- **Performance:** section header `9px → 11px`, timer ring numeral `26px → 32px`, metric labels `9px → 12px`, metric values `12px → 15px`, row padding increased
+- **Incident Analysis:** section header `9px → 11px`, stage label/time `11px → 14px`, progress bars `5px → 7px` tall, recs title `11.5px → 14px`, recs body `11.5px → 12px`, all icon sizes bumped, left accent border solid (not translucent)
+
 ## [2.13] 2026-04-16 — Demo DECIDE: real CCTV imagery for all 7 video wall tiles
 
 **Added**
