@@ -72,6 +72,30 @@ export interface Stage {
     units: Array<{ id: string; status: string; active: boolean; coords: [number, number]; route?: [number, number][] }>
     cameras?: Array<{ label: string; image?: string; alert?: boolean }>
   }
+  // Optional AI decision tree panel (replaces the center map on the DECIDE stage).
+  // Renders: horizontal filter flow → ranked candidate cards → recommendation strip.
+  decisionTree?: {
+    candidates: number              // total eligible units at the start (e.g. 6)
+    filters: Array<{                // sequential AI filters narrowing the pool
+      label: string                 // e.g. "Within 3 mi"
+      criterion?: string            // short explainer under the label (optional)
+      passed: number                // count that passed this filter
+      rejected: number              // count dropped by this filter
+    }>
+    ranked: Array<{                 // final ranked candidates (typically 3)
+      id: string                    // unit ID, e.g. "12-CHARLIE"
+      type?: 'police' | 'security' | 'k9' | 'ems' | 'fire'
+      score: number                 // 0–100 weighted AI score
+      distance?: string             // e.g. "1.2 mi"
+      eta?: string                  // e.g. "2:48"
+      reason?: string               // short rank rationale
+      winner?: boolean              // true for the AI-selected unit
+    }>
+    recommendation: {               // bottom strip — the decision pushed forward
+      action: string                // e.g. "DISPATCH 12-CHARLIE"
+      detail: string                // e.g. "Lights & siren · Code 3 · ETA 2:48"
+    }
+  }
   // Optional decide panel (unit assignment + AI scoring + map)
   decideCard?: {
     incidentCoords: [number, number]

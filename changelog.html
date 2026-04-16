@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.10 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.10</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo DECIDE: readable protocol + AI decision tree (LPR)</div>
+        <ul class="tl-body">
+          <li>Protocol steps rewritten — split each step on em-dash into a clear title (14px, bold, white) + detail line (dimmer). Strike-through removed, numbered circle replaces tiny monospace ID, status now a subtle colored left accent bar</li>
+          <li>New <code>DecisionTreePanel</code> replaces the DECIDE center map with an AI decision-logic view: horizontal filter funnel (6 → 4 → 3 → 3 → winner with PASS/reject counts) + ranked candidate cards (weighted score 0–100, distance, ETA, rationale) + recommendation strip ("DISPATCH 12-CHARLIE · Code 3 · ETA 2:48")</li>
+          <li>Rationale: demo uses maps on Stages 02/03/04 — swapping Stage 03 for decision logic makes it distinct and directly shows the AI reasoning instead of a third map of the same dots</li>
+          <li>Extended <code>Stage</code> type with optional <code>decisionTree</code> — backward compatible, scenarios without it fall back to the legacy map</li>
+          <li>Rollout: LPR Stage 03 first. Other scenarios (access-control / violence / school / medical) still render the map until their trees are authored</li>
+        </ul>
+      </div>
       <!-- v2.09 -->
       <div class="tl-entry fix">
         <div class="tl-meta"><span class="tl-ver">v2.09</span><span class="tl-date">2026-04-16</span></div>

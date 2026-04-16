@@ -120,6 +120,23 @@ export const lprScenario: ScenarioConfig = {
         { id: 5, text: 'TACTICAL BRIEF SENT — Plate · vehicle description · route · case # pushed to unit', status: 'active' },
         { id: 6, text: 'BACKUP ASSIGNED — 08-Bravo · 2.1 mi · en route for secondary intercept position', status: 'pending' },
       ],
+      decisionTree: {
+        candidates: 6,
+        filters: [
+          { label: 'Within 3 mi',    criterion: 'proximity gate', passed: 4, rejected: 2 },
+          { label: 'Shift active',   criterion: 'on-duty check',  passed: 3, rejected: 1 },
+          { label: 'Skill: intercept', criterion: 'vehicle pursuit cert', passed: 3, rejected: 0 },
+        ],
+        ranked: [
+          { id: '12-CHARLIE', type: 'police', score: 94, distance: '1.2 mi', eta: '2:48', reason: 'Closest available · intercept-certified · shift active', winner: true },
+          { id: '08-BRAVO',   type: 'police', score: 78, distance: '2.1 mi', eta: '3:42', reason: 'Flanking route available · assigned as secondary' },
+          { id: '04-ALPHA',   type: 'police', score: 62, distance: '2.8 mi', eta: '4:20', reason: 'On holding position · can be released if needed' },
+        ],
+        recommendation: {
+          action: 'DISPATCH 12-CHARLIE',
+          detail: 'Primary intercept · Lights & siren · Code 3 · ETA 2:48',
+        },
+      },
     },
     {
       id: 'act',

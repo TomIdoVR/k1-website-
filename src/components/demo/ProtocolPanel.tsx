@@ -6,6 +6,7 @@ import type { Stage } from '@/data/demo/types'
 import { ALL_MODULES } from './TopBar'
 
 const DecideMapPanel = dynamic(() => import('./DecideMapPanel'), { ssr: false })
+const DecisionTreePanel = dynamic(() => import('./DecisionTreePanel'), { ssr: false })
 
 interface ProtocolPanelProps {
   stage: Stage
@@ -18,7 +19,8 @@ interface ProtocolPanelProps {
 
 export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onPrev, isLightBg = false }: ProtocolPanelProps) {
   const steps = stage.protocolSteps ?? []
-  const hasMap = !!(stage.decideMap?.incidentCoords)
+  const hasTree = !!stage.decisionTree
+  const hasMap = !hasTree && !!(stage.decideMap?.incidentCoords)
   const incidentLabel = stage.dataPoints[0]?.value ?? 'ACTIVE · P1'
 
   return (
@@ -173,54 +175,87 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           background: '#0B1622',
         }}>
           {/* Steps list */}
-          <div style={{ flex: 1, overflowY: 'auto', padding: '10px 16px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {steps.map((step) => (
-              <div key={step.id} style={{
-                display: 'flex', alignItems: 'center', gap: 12,
-                padding: '10px 14px', borderRadius: 8, flexShrink: 0,
-                background: step.status === 'active'
-                  ? 'rgba(59,130,246,0.08)'
-                  : step.status === 'complete'
-                  ? 'rgba(16,185,129,0.04)'
-                  : 'rgba(255,255,255,0.02)',
-                border: `1px solid ${step.status === 'active' ? 'rgba(59,130,246,0.3)' : step.status === 'complete' ? 'rgba(16,185,129,0.15)' : 'rgba(255,255,255,0.05)'}`,
-              }}>
-                {/* Status icon */}
-                <div style={{ flexShrink: 0, width: 18, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {step.status === 'complete' && (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <circle cx="9" cy="9" r="8.25" fill="rgba(16,185,129,0.15)" stroke="#10B981" strokeWidth="1.5"/>
-                      <path d="M5.5 9l2.5 2.5 4.5-4.5" stroke="#10B981" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )}
-                  {step.status === 'active' && (
-                    <span style={{ position: 'relative', width: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span style={{ position: 'absolute', width: 26, height: 26, borderRadius: '50%', background: 'rgba(59,130,246,0.15)', animation: 'pp-ring 1.5s ease-out infinite' }} />
-                      <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#3B82F6', display: 'inline-block' }} />
-                    </span>
-                  )}
-                  {step.status === 'pending' && (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <circle cx="9" cy="9" r="8.25" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5"/>
-                    </svg>
+          <div style={{ flex: 1, overflowY: 'auto', padding: '14px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {steps.map((step) => {
+              // Split title from detail on em-dash — fallback to whole string as title
+              const parts = step.text.split(/\s+—\s+/)
+              const title = parts[0]
+              const detail = parts.slice(1).join(' — ')
+
+              const isComplete = step.status === 'complete'
+              const isActive = step.status === 'active'
+              const isPending = step.status === 'pending'
+
+              const accent = isActive ? '#3B9EFF' : isComplete ? '#10B981' : 'rgba(255,255,255,0.12)'
+              const titleColor = isPending ? 'rgba(255,255,255,0.35)' : '#FFFFFF'
+              const detailColor = isPending ? 'rgba(255,255,255,0.22)' : isComplete ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.7)'
+              const bg = isActive ? 'rgba(59,158,255,0.08)' : 'transparent'
+
+              return (
+                <div key={step.id} style={{
+                  position: 'relative',
+                  display: 'flex', alignItems: 'flex-start', gap: 14,
+                  padding: '12px 14px 12px 16px', borderRadius: 8, flexShrink: 0,
+                  background: bg,
+                  borderLeft: `3px solid ${accent}`,
+                  transition: 'background 0.2s',
+                }}>
+                  {/* Numbered circle / status icon */}
+                  <div style={{ flexShrink: 0, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                    {isComplete && (
+                      <div style={{
+                        width: 28, height: 28, borderRadius: '50%',
+                        background: 'rgba(16,185,129,0.18)', border: '1.5px solid #10B981',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M3 7.2l2.6 2.6L11 4.4" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )}
+                    {isActive && (
+                      <>
+                        <span style={{ position: 'absolute', width: 36, height: 36, borderRadius: '50%', background: 'rgba(59,130,246,0.22)', animation: 'pp-ring 1.5s ease-out infinite' }} />
+                        <div style={{
+                          width: 28, height: 28, borderRadius: '50%',
+                          background: '#3B82F6', border: '1.5px solid #60A5FA',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: 13, fontWeight: 800, color: '#fff',
+                        }}>{step.id}</div>
+                      </>
+                    )}
+                    {isPending && (
+                      <div style={{
+                        width: 28, height: 28, borderRadius: '50%',
+                        background: 'transparent', border: '1.5px solid rgba(255,255,255,0.14)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.35)',
+                      }}>{step.id}</div>
+                    )}
+                  </div>
+                  {/* Title + detail */}
+                  <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3, paddingTop: 2 }}>
+                    <div style={{
+                      fontSize: 14, fontWeight: 700, lineHeight: 1.3,
+                      color: titleColor, letterSpacing: '0.02em',
+                    }}>{title}</div>
+                    {detail && (
+                      <div style={{
+                        fontSize: 12, lineHeight: 1.45, fontWeight: 400,
+                        color: detailColor,
+                      }}>{detail}</div>
+                    )}
+                  </div>
+                  {isActive && (
+                    <span style={{
+                      fontSize: 9, fontWeight: 800, letterSpacing: '0.16em',
+                      color: '#3B9EFF', background: 'rgba(59,158,255,0.15)', border: '1px solid rgba(59,158,255,0.4)',
+                      borderRadius: 4, padding: '3px 8px', flexShrink: 0, alignSelf: 'center',
+                    }}>IN PROGRESS</span>
                   )}
                 </div>
-                <span style={{ fontFamily: 'monospace', fontSize: 10, color: step.status === 'pending' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.3)', width: 14, flexShrink: 0 }}>{step.id}</span>
-                <span style={{
-                  fontSize: 11, flex: 1, lineHeight: 1.4,
-                  color: step.status === 'pending' ? 'rgba(255,255,255,0.2)' : step.status === 'complete' ? 'rgba(255,255,255,0.5)' : '#E0ECF8',
-                  textDecoration: step.status === 'complete' ? 'line-through' : 'none',
-                  textDecorationColor: 'rgba(255,255,255,0.15)',
-                }}>{step.text}</span>
-                {step.status === 'active' && (
-                  <span style={{
-                    fontFamily: 'monospace', fontSize: 8, fontWeight: 700, letterSpacing: '0.12em',
-                    color: '#3B9EFF', background: 'rgba(59,158,255,0.12)', border: '1px solid rgba(59,158,255,0.3)',
-                    borderRadius: 4, padding: '2px 7px', flexShrink: 0,
-                  }}>ACTIVE</span>
-                )}
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Data points strip */}
@@ -253,12 +288,15 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           </div>
         </div>
 
-        {/* ── CENTER: Map ── */}
+        {/* ── CENTER: Decision tree OR Map ── */}
         <div className="pp-center-panel" style={{
-          flex: 1, display: 'flex', flexDirection: 'column',
+          flex: hasTree ? 2 : 1, display: 'flex', flexDirection: 'column',
           overflow: 'hidden',
           background: '#060e18',
         }}>
+          {hasTree && (
+            <DecisionTreePanel tree={stage.decisionTree!} />
+          )}
           {hasMap && (
             <div style={{ flex: 1, position: 'relative', overflow: 'hidden', contain: 'strict' }}>
               <DecideMapPanel
@@ -276,14 +314,14 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
               </div>
             </div>
           )}
-          {!hasMap && (
+          {!hasTree && !hasMap && (
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <span style={{ fontFamily: 'monospace', fontSize: 11, color: '#1A3050' }}>NO MAP DATA</span>
             </div>
           )}
         </div>{/* end center */}
 
-        {/* ── RIGHT: Camera feeds (3rd column — hides at ≤1100px) ── */}
+        {/* ── RIGHT: Camera feeds (3rd column — hides when decision tree is on, or at ≤1100px) ── */}
         {hasMap && stage.decideMap!.cameras && stage.decideMap!.cameras.length > 0 && (
           <div className="pp-camera-panel" style={{
             flexDirection: 'column', gap: 0, overflowY: 'auto',

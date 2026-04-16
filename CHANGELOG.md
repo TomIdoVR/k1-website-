@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.10] 2026-04-16 — Demo DECIDE: readable protocol + AI decision tree (LPR)
+
+**Improved**
+- Protocol steps (left column of DECIDE stage) were near-unreadable: 11px monospace body with `line-through` on completed items at 0.5 opacity. Rewrote to split each step on `—` into a **clear title** (14px, 700 weight, full white) + **detail line** (12px, dimmer). Removed strike-through. Replaced tiny monospace ID with a numbered circle / checkmark / spinner. Status shown as a colored left accent bar instead of a giant border around the whole row. `ACTIVE` pill renamed to `IN PROGRESS` for clarity.
+
+**Added**
+- New `DecisionTreePanel` component replaces the center map on the DECIDE stage when a `decisionTree` is provided. Three sections:
+  1. **Horizontal filter funnel** — shows how the AI narrowed candidates (e.g. 6 available → [≤3 mi] 4 → [shift active] 3 → [skill: intercept] 3 → WINNER), with per-filter PASS / reject counts
+  2. **Ranked candidate cards** — top 3 finalists with weighted AI score (0–100) as a progress bar, distance + ETA, and a one-line rationale. Winner card has a green glow + "AI PICK" trophy badge
+  3. **Recommendation strip** — bolt icon + "→ DISPATCH 12-CHARLIE · Primary intercept · Lights & siren · Code 3 · ETA 2:48"
+- Rationale: the demo uses maps on Stages 02/03/04 — swapping Stage 03's map for a decision-logic view makes the DECIDE stage distinct and directly visualizes the AI reasoning instead of showing a third map of the same dots
+- Extended `Stage` type with optional `decisionTree` (backward compatible — if unset, the stage falls back to the old map view)
+- LPR Stage 03 now ships decision tree data; other scenarios still render the legacy map until their trees are authored
+
 ## [2.09] 2026-04-16 — Demo ACT fixes: smaller camera overlay + responsive units panel
 
 **Fixed**
