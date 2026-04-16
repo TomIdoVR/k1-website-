@@ -42,10 +42,10 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         .pp-main-row { flex: none !important; overflow: visible !important; }
       }
       @media (max-width: 768px) {
-        .pp-main-row { flex-direction: column !important; gap: 8px !important; }
-        .pp-left-panel { flex: none !important; overflow-y: visible !important; }
-        .pp-center-panel { flex: none !important; min-height: 360px; }
-        .pp-camera-panel { flex: none !important; }
+        .pp-main-row { flex-direction: column !important; gap: 0 !important; }
+        .pp-left-panel { flex: none !important; overflow-y: visible !important; min-height: 280px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
+        .pp-center-panel { flex: none !important; min-height: 400px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
+        .pp-camera-panel { flex: none !important; min-height: 360px; }
         .pp-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
       }
     `}</style>

@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.17 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.17</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo: full mobile responsiveness pass — all stages</div>
+        <ul class="tl-body">
+          <li><strong>Stage 01 DETECT</strong>: added CSS class system to the 50/50 detect-split panel; on mobile (≤768px) the left half (camera/card) becomes the top 50% and the flow panel becomes the bottom 50% — separator becomes a horizontal <code>border-top</code></li>
+          <li><strong>Stage 01 outer wrapper</strong>: was fixed-height at all screen sizes; now switches to <code>height: auto; overflow-y: auto</code> at ≤1100px</li>
+          <li><strong>Stage 03 DECIDE</strong>: stacked panels on mobile now have explicit <code>min-height</code>s; left panel separator switches from <code>border-right</code> to <code>border-bottom</code> when stacked</li>
+        </ul>
+      </div>
+
       <!-- v2.16 -->
       <div class="tl-entry fix">
         <div class="tl-meta"><span class="tl-ver">v2.16</span><span class="tl-date">2026-04-16</span></div>

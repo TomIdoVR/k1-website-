@@ -334,8 +334,20 @@ export default function StageScreen({
         .demo-stage-nav-btn { padding: 6px 12px !important; gap: 8px !important; }
         .demo-stage-nav-mainlabel { font-size: 0.68rem !important; }
       }
+      /* ── Detect-split responsive: stack left/right halves vertically on mobile ── */
+      @media (max-width: 1100px) {
+        .stage-outer-lbg { height: auto !important; overflow-y: auto !important; padding-bottom: 80px; }
+        .demo-stage-panel.detect-split { flex: 0 0 540px !important; height: 540px !important; min-height: 540px !important; }
+      }
+      @media (max-width: 768px) {
+        .detect-bg-half   { width: 100% !important; bottom: 50% !important; }
+        .detect-left-area { right: 0 !important; width: 100% !important; bottom: 50% !important; }
+        .detect-dp-row    { display: none !important; }
+        .detect-v-sep     { display: none !important; }
+        .detect-flow-half { left: 0 !important; top: 50% !important; width: 100% !important; border-top: 6px solid rgba(255,255,255,0.6); }
+      }
     `}</style>
-    <div style={isLightBg ? {
+    <div className={isLightBg ? 'stage-outer-lbg' : ''} style={isLightBg ? {
       display: 'flex', flexDirection: 'column', alignItems: 'stretch',
       height: 'calc(100vh - 196px)', margin: '0 20px', padding: '20px 28px 20px',
     } : {
@@ -390,7 +402,7 @@ export default function StageScreen({
 
       {/* ── Cinematic panel ── */}
       <div
-        className="demo-stage-panel"
+        className={`demo-stage-panel${hasDetectFlow ? ' detect-split' : ''}`}
         style={{
           position: 'relative',
           ...(isLightBg ? { flex: 1, minHeight: 0, width: '100%' } : { width: '100%', height: 'calc(100vh - 210px)' }),
@@ -413,6 +425,7 @@ export default function StageScreen({
         {stage.backgroundImage ? (
           hasDetectFlow ? (
             <div
+              className="detect-bg-half"
               style={{
                 position: 'absolute',
                 top: 0, left: 0, bottom: 0,
@@ -440,6 +453,7 @@ export default function StageScreen({
           )
         ) : (
           <div
+            className={hasDetectFlow ? 'detect-bg-half' : undefined}
             style={{
               position: 'absolute',
               top: 0, left: 0, bottom: 0,
@@ -451,7 +465,7 @@ export default function StageScreen({
 
         {/* ── Inline call-intake admin panel ── */}
         {isFirst && stage.detectCard?.type === 'call-intake' && (
-          <div style={{
+          <div className="detect-left-area" style={{
             position: 'absolute',
             top: 0, left: 0, bottom: 0,
             right: hasDetectFlow ? '50%' : 0,
@@ -626,7 +640,7 @@ export default function StageScreen({
 
         {/* ── Panic-alert panel: CCTV image left + floor plan right ── */}
         {isFirst && stage.detectCard?.type === 'panic-alert' && (
-          <div style={{
+          <div className="detect-left-area" style={{
             position: 'absolute',
             top: 0, left: 0, bottom: 0,
             right: hasDetectFlow ? '50%' : 0,
@@ -958,7 +972,7 @@ export default function StageScreen({
 
         {/* ── Access-breach panel: CCTV left + corporate floor plan right ── */}
         {isFirst && stage.detectCard?.type === 'access-breach' && (
-          <div style={{
+          <div className="detect-left-area" style={{
             position: 'absolute',
             top: 0, left: 0, bottom: 0,
             right: hasDetectFlow ? '50%' : 0,
@@ -1248,6 +1262,7 @@ export default function StageScreen({
 
         {/* Gradient overlay */}
         <div
+          className={hasDetectFlow ? 'detect-left-area' : undefined}
           style={{
             position: 'absolute',
             top: 0, left: 0, bottom: 0,
@@ -1261,6 +1276,7 @@ export default function StageScreen({
         {/* ── Scanning grid overlay — detect stage only, not when detectCard is present ── */}
         {isFirst && !stage.detectCard && (
           <div
+            className={hasDetectFlow ? 'detect-left-area' : undefined}
             style={{
               position: 'absolute',
               top: 0, left: 0, bottom: 0,
@@ -1714,6 +1730,7 @@ export default function StageScreen({
         {/* ── Detect stage: data points at bottom-left, modules at bottom-right ── */}
         {isFirst && !stage.detectCard && (
           <div
+            className={hasDetectFlow ? 'detect-dp-row' : undefined}
             style={{
               position: 'absolute',
               bottom: 28,
@@ -2493,6 +2510,7 @@ export default function StageScreen({
             {/* Thick white separator — same language as other split screens */}
             <div
               aria-hidden
+              className="detect-v-sep"
               style={{
                 position: 'absolute',
                 top: 0, bottom: 0,
@@ -2504,6 +2522,7 @@ export default function StageScreen({
               }}
             />
             <div
+              className="detect-flow-half"
               style={{
                 position: 'absolute',
                 top: 0, right: 0, bottom: 0,

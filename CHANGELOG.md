@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.17] 2026-04-16 — Demo: full mobile responsiveness pass across all stages
+
+**Fixed**
+- **Stage 01 DETECT** (all 5 scenarios): the 50/50 `hasDetectFlow` split had zero mobile CSS — on narrow screens both halves were cramped side-by-side. Added CSS class system (`detect-bg-half`, `detect-left-area`, `detect-flow-half`, `detect-v-sep`, `detect-dp-row`) and mobile rules to stack them vertically: top 50% = camera/detect card, bottom 50% = flow panel. Separator becomes a horizontal `border-top`.
+- **Stage 01 light-bg outer wrapper** (`stage-outer-lbg`): was fixed-height with no overflow — now `height: auto; overflow-y: auto` at ≤1100px so content isn't clipped on tablets.
+- **Stage 03 DECIDE** (`ProtocolPanel`): stacked panels on mobile (≤768px) now have explicit `min-height` values, the left panel switches its separator from `border-right` → `border-bottom`, and `gap: 0` keeps the separators flush.
+
 ## [2.16] 2026-04-16 — Demo LEARN: thick white separators between cards, responsive stacking
 
 **Changed**
