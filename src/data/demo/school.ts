@@ -141,6 +141,33 @@ export const schoolScenario: ScenarioConfig = {
         { id: 5, text: 'UNIT-7 ASSIGNED — Backup patrol unit · 0.9 mi · ETA 3.2 min · staging nearby', status: 'active' },
         { id: 6, text: 'PARENT NOTIFICATION — Alert system triggered · District command notified · DA office informed', status: 'pending' },
       ],
+      decisionTree: {
+        tree: [
+          { label: 'Panic Button Triggered', detail: 'Teacher M. Chen · Room 214 · Bldg A',      icon: 'emergency' },
+          { label: 'Lockdown Activated',     detail: '847 students sheltering in place',          icon: 'lock' },
+          { label: 'Threat Confirmed',       detail: 'Active incident · P1 response required',   icon: 'crisis_alert' },
+        ],
+        options: [
+          { id: 'sro',      title: 'Dispatch SRO',   description: 'School Resource Officer · Room 214 · ETA 0:30', icon: 'local_police', recommended: true },
+          { id: 'lockdown', title: 'Full Lockdown',  description: 'Secure all wings · prevent movement',           icon: 'lock' },
+          { id: 'evacuate', title: 'Evacuate Wing',  description: 'Emergency exits · safe zone assembly',          icon: 'exit_to_app' },
+          { id: 'backup',   title: 'Call for Backup', description: 'UNIT-14 + UNIT-7 en route · perimeter',        icon: 'add_call' },
+        ],
+      },
+      videoWall: {
+        title: 'Campus Camera Network',
+        tiles: [
+          { id: 'CAM-07', label: 'Bldg A Hallway',  image: '/demo/school/cam07-hallway.jpg',    status: 'tracking' },
+          { id: 'CAM-01', label: 'Main Entrance',   image: '/demo/school/cam01-entrance.jpg',   status: 'tracking' },
+          { id: 'CAM-12', label: 'Parking Lot',     image: '/demo/school/cam12-parking.jpg',    status: 'monitoring' },
+          { id: 'CAM-15', label: 'Hallway 2F East', image: '/demo/school/cam15-hallway2f.jpg',  status: 'monitoring' },
+          { id: 'CAM-22', label: 'Gym Entrance',    status: 'monitoring' },
+          { id: 'CAM-04', label: 'Cafeteria',       status: 'monitoring' },
+          { id: 'CAM-08', label: 'Library',         status: 'idle' },
+          { id: 'CAM-17', label: 'Science Wing',    status: 'idle' },
+          { id: 'CAM-23', label: 'Bus Loop',        status: 'idle' },
+        ],
+      },
     },
     {
       id: 'act',

@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.15] 2026-04-16 — Demo: roll out decision tree + video wall to all 4 remaining scenarios
+
+**Added**
+- Propagated the DECIDE-stage improvements from LPR to all remaining scenarios: access-control, violence, school, medical
+- Each scenario's Stage 03 now has a tailored `decisionTree` (3-node situation tree + 4 action options with one AI-recommended) and a `videoWall` (9-tile 3×3 camera grid)
+- **Access Control**: tree = Unauthorized Access → Identity Confirmed → Server Room at Risk. Options: Lock Down Facility (rec), Dispatch Security, Escort & Detain, Alert Police. Camera wall: 4 real building cams (server corridor, east wing, main entrance, stairwell) + 5 monitoring/idle
+- **Violence**: tree = Violence Detected → Armed Subject → Civilians at Risk. Options: Tactical Response (rec), Establish Perimeter, Evacuate Zone, Request Backup. Camera wall: 2 active incident cams + 7 city road cams
+- **School**: tree = Panic Button Triggered → Lockdown Activated → Threat Confirmed. Options: Dispatch SRO (rec), Full Lockdown, Evacuate Wing, Call for Backup. Camera wall: 4 real campus cams (hallway, entrance, parking, hallway 2F) + 5 monitoring/idle
+- **Medical**: tree = Cardiac Arrest → Location Confirmed → Critical Response. Options: Dispatch AMB-7 (rec), Fire Rescue, Dispatch AMB-12, First Responder. Camera wall: 2 incident area cams + 7 city road cams
+
 ## [2.14] 2026-04-16 — Demo LEARN: dark backgrounds + much larger, readable text
 
 **Changed**

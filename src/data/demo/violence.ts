@@ -110,6 +110,33 @@ export const violenceScenario: ScenarioConfig = {
         { id: 5, text: 'TACTICAL BRIEF SENT — Live cam feed · subject count · risk zone coords pushed to officer', status: 'active' },
         { id: 6, text: 'BACKUP UNIT ASSIGNED — 09-Echo · 1.2 mi · en route for perimeter control', status: 'pending' },
       ],
+      decisionTree: {
+        tree: [
+          { label: 'Violence Detected',  detail: 'CAM 7 · Central Plaza · AI confidence 94.7%', icon: 'warning' },
+          { label: 'Armed Subject',      detail: 'Weapon confirmed · 3 suspects tracked',        icon: 'gps_fixed' },
+          { label: 'Civilians at Risk',  detail: '40+ people in 12m radius zone',                icon: 'groups' },
+        ],
+        options: [
+          { id: 'tactical',  title: 'Tactical Response',   description: 'Dispatch 04-Delta · Code 3 · ETA 1:12',  icon: 'local_police', recommended: true },
+          { id: 'perimeter', title: 'Establish Perimeter', description: 'Block access routes · contain the area', icon: 'block' },
+          { id: 'evacuate',  title: 'Evacuate Zone',       description: 'Issue advisory · clear 12m radius',      icon: 'exit_to_app' },
+          { id: 'backup',    title: 'Request Backup',      description: 'Escalate to tactical · more units',      icon: 'add_call' },
+        ],
+      },
+      videoWall: {
+        title: 'Area Camera Network',
+        tiles: [
+          { id: 'CAM-07',  label: 'Central Plaza',  image: '/demo/violence/stage-1-detect.jpg',     status: 'tracking' },
+          { id: 'CAM-12',  label: 'South Entrance', image: '/demo/violence/stage-2-understand.jpg',  status: 'tracking' },
+          { id: 'CAM-305', label: 'Montrose Blvd',  image: '/demo/lpr/cctv-montrose.jpeg',           status: 'monitoring' },
+          { id: 'CAM-411', label: 'Memorial Dr',    image: '/demo/lpr/cctv-memorial.jpeg',           status: 'monitoring' },
+          { id: 'CAM-227', label: 'Westheimer Rd',  image: '/demo/lpr/cctv-westheimer.jpeg',         status: 'monitoring' },
+          { id: 'CAM-198', label: 'Allen Pkwy',     image: '/demo/lpr/cctv-allen.jpeg',              status: 'monitoring' },
+          { id: 'CAM-562', label: 'Kirby Dr',       image: '/demo/lpr/cctv-kirby.jpeg',              status: 'idle' },
+          { id: 'CAM-340', label: 'Shepherd Dr',    image: '/demo/lpr/cctv-shepherd.jpeg',           status: 'idle' },
+          { id: 'CAM-715', label: 'Waugh Dr',       image: '/demo/lpr/cctv-waugh.jpeg',              status: 'idle' },
+        ],
+      },
     },
     {
       id: 'act',

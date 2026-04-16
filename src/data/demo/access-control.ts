@@ -136,6 +136,33 @@ export const accessControlScenario: ScenarioConfig = {
         { id: 5, text: 'SECURITY OFFICERS DISPATCHED — SEC-1 (lobby) + SEC-2 (parking) en route',     status: 'active' },
         { id: 6, text: 'LAW ENFORCEMENT ASSIGNED — UNIT-9 · 0.3 mi · ETA 1.4 min',                   status: 'pending' },
       ],
+      decisionTree: {
+        tree: [
+          { label: 'Unauthorized Access', detail: 'Badge #4491 · J. Morales · 3 failed attempts', icon: 'badge' },
+          { label: 'Identity Confirmed',  detail: 'Watchlist match · Confidence 98.4%',            icon: 'face_retouching_off' },
+          { label: 'Server Room at Risk', detail: 'Active breach · Level 4 access zone',           icon: 'security' },
+        ],
+        options: [
+          { id: 'lockdown', title: 'Lock Down Facility', description: 'Remote lockdown · All L3–L4 doors · Immediate',    icon: 'lock',        recommended: true },
+          { id: 'security', title: 'Dispatch Security',  description: 'SEC-1 + SEC-2 · Intercept at building entry',      icon: 'shield' },
+          { id: 'escort',   title: 'Escort & Detain',    description: 'Contain suspect · Await law enforcement',          icon: 'person_off' },
+          { id: 'police',   title: 'Alert Police',       description: 'Escalate to UNIT-9 · Arrest protocol',             icon: 'local_police' },
+        ],
+      },
+      videoWall: {
+        title: 'Building Camera Network',
+        tiles: [
+          { id: 'CAM-03', label: 'Server Corridor', image: '/demo/access-control/cam03-server-corridor.jpg', status: 'tracking' },
+          { id: 'CAM-07', label: 'East Wing L3',    image: '/demo/access-control/cam07-east-wing.jpg',       status: 'tracking' },
+          { id: 'CAM-11', label: 'Main Entrance',   image: '/demo/access-control/cam11-entrance.jpg',        status: 'monitoring' },
+          { id: 'CAM-15', label: 'Stairwell B',     image: '/demo/access-control/cam15-stairwell.jpg',       status: 'monitoring' },
+          { id: 'CAM-22', label: 'Parking Level 1', status: 'monitoring' },
+          { id: 'CAM-08', label: 'Lobby',           status: 'monitoring' },
+          { id: 'CAM-31', label: 'Exit B',          status: 'idle' },
+          { id: 'CAM-44', label: 'Loading Bay',     status: 'idle' },
+          { id: 'CAM-56', label: 'Roof Access',     status: 'idle' },
+        ],
+      },
     },
     {
       id: 'act',
