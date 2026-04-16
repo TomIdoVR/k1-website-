@@ -168,7 +168,7 @@ export default function LearnLayout({
             display: 'flex', flexDirection: 'column',
             padding: '22px 20px',
             overflowY: 'auto',
-            borderRight: '1px solid rgba(0,201,138,0.15)',
+            borderRight: '6px solid rgba(255,255,255,0.6)',
           }}>
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, paddingBottom: 14, borderBottom: '1px solid rgba(0,201,138,0.15)' }}>
@@ -218,7 +218,7 @@ export default function LearnLayout({
             display: 'flex', flexDirection: 'column', alignItems: 'center',
             padding: '22px 18px',
             overflowY: 'auto',
-            borderRight: '1px solid rgba(59,158,255,0.12)',
+            borderRight: '6px solid rgba(255,255,255,0.6)',
           }}>
             {/* Header */}
             <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, paddingBottom: 14, borderBottom: '1px solid rgba(59,158,255,0.15)' }}>

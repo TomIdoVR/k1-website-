@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.16] 2026-04-16 — Demo LEARN: thick white separators between cards, responsive stacking
+
+**Changed**
+- `LearnLayout.tsx`: replaced thin colored `borderRight` (1px green/blue tints) on Card 1 and Card 2 with thick white separator `6px solid rgba(255,255,255,0.6)` — matching the ProtocolPanel and SplitLayout separator pattern
+- Responsive behavior already handled: at ≤768px the borders switch to `border-bottom: 6px solid rgba(255,255,255,0.6)` and cards stack vertically (flex-direction: column)
+
 ## [2.15] 2026-04-16 — Demo: roll out decision tree + video wall to all 4 remaining scenarios
 
 **Added**
