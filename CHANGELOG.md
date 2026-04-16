@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.13] 2026-04-16 — Demo DECIDE: real CCTV imagery for all 7 video wall tiles
+
+**Added**
+- Generated 7 realistic road CCTV photos (via Gemini 3.1 Flash Image) for the monitoring/idle tiles in the DECIDE video wall: Montrose Blvd, Memorial Dr, Westheimer Rd, Allen Pkwy, Kirby Dr, Shepherd Dr, Waugh Dr — saved to `/public/demo/lpr/cctv-*.jpeg` (~230–315 KB each, 16:9)
+- Updated `lpr.ts` tiles 3–9 with `image` paths; VideoWall component already applies `brightness(0.55) saturate(0.5)` filter to monitoring/idle tiles so they look like inactive feeds versus the two bright LPR tracking cams
+
+**Fixed**
+- Claude Desktop MCP `nano-banana` was pinned to `gemini-2.0-flash-preview-image-generation` (deprecated, returning text-only). Updated `claude_desktop_config.json` to `gemini-2.5-flash-image` (GA stable). Restart Claude Desktop to take effect.
+
 ## [2.12] 2026-04-16 — Demo ACT: Tactical Units panel — grid of cards (not a table)
 
 **Changed**
