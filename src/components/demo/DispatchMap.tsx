@@ -253,7 +253,7 @@ export default function DispatchMap({
             right:  camPos.right,
             top:    camPos.top,
             bottom: camPos.bottom,
-            width: 'clamp(240px, 28vw, 360px)',
+            width: 'clamp(170px, 16vw, 240px)',
             borderRadius: 10,
             overflow: 'hidden',
             border: '2px solid rgba(255,69,96,0.85)',
@@ -269,7 +269,8 @@ export default function DispatchMap({
               src={camera.image}
               alt={camera.label}
               fill
-              sizes="360px"
+              sizes="240px"
+              unoptimized
               style={{ objectFit: 'cover' }}
             />
             {/* label strip (top) */}

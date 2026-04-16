@@ -139,7 +139,7 @@ export const lprScenario: ScenarioConfig = {
       pipImage: '/demo/lpr/stage-2-understand.jpg',
       pipLabel: 'GIS TRACK · ACTIVE',
       layout: 'split',
-      splitCameraImage: '/demo/lpr/LPR.png',
+      splitCameraImage: '/demo/lpr/cam-intercept-lpr.jpeg',
       splitCameraLabel: 'CAM-118 · INTERCHANGE',
       splitIncidentBadge: 'STOLEN · 7JKY442',
       splitIncidentDot: '7JKY442',
@@ -219,7 +219,7 @@ export const lprScenario: ScenarioConfig = {
         ],
         // Floating LPR camera overlay showing the hit
         camera: {
-          image: '/demo/lpr/LPR.png',
+          image: '/demo/lpr/cam-intercept-lpr.jpeg',
           label: 'CAM-118 · INTERCHANGE',
           sublabel: 'LPR · 98.4%',
           alertText: 'LPR HIT · STOLEN VEHICLE CONFIRMED',

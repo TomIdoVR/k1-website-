@@ -34,24 +34,27 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
       .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-units { flex: 1; min-width: 0; overflow: hidden; }
+      .demo-split-units-scroll { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
-        .demo-split-root { height: auto !important; overflow-y: auto !important; }
-        .demo-split-body { flex: none !important; overflow: visible !important; }
+        .demo-split-root { height: auto !important; min-height: 100vh; overflow-y: auto !important; }
+        .demo-split-body { flex: none !important; overflow: visible !important; flex-direction: column !important; }
+        .demo-split-phone { flex: 0 0 auto !important; width: 100% !important; max-height: none !important; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
+        .demo-split-map { flex: 0 0 auto !important; width: 100% !important; min-height: 360px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
+        .demo-split-units { flex: 0 0 auto !important; width: 100% !important; overflow: visible !important; }
+        .demo-split-units-scroll { flex: 0 0 auto !important; overflow-y: visible !important; }
       }
       @media (max-width: 768px) {
-        .demo-split-body { flex-direction: column !important; }
-        .demo-split-phone { flex: 0 0 auto !important; max-width: 100% !important; width: 100% !important; max-height: 52%; overflow-y: auto; }
-        .demo-split-map { flex: 1 !important; min-height: 200px; }
-        .demo-split-units { flex: none !important; min-height: 220px; }
+        .demo-split-phone { padding: 10px 14px 0 !important; }
+        .demo-split-map { min-height: 280px; }
         .demo-stage-nav-btn { padding: 8px 16px !important; gap: 10px !important; }
         .demo-stage-nav-sublabel { display: none !important; }
         .demo-stage-nav-mainlabel { font-size: 0.78rem !important; }
         .demo-stage-nav-icon { width: 24px !important; height: 24px !important; }
       }
       @media (max-width: 480px) {
-        .demo-split-phone { max-height: 58% !important; padding: 8px 12px 0 !important; }
-        .demo-split-map { min-height: 180px; }
+        .demo-split-phone { padding: 8px 12px 0 !important; }
+        .demo-split-map { min-height: 220px; }
         .demo-stage-nav-btn { padding: 6px 12px !important; gap: 8px !important; }
         .demo-stage-nav-mainlabel { font-size: 0.68rem !important; }
       }
@@ -468,7 +471,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
           </div>
 
           {/* Unit cards */}
-          <div style={{ flex: 1, overflowY: 'auto', padding: 10, display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div className="demo-split-units-scroll">
             {units.map((unit) => <UnitCard key={unit.id} unit={unit} />)}
           </div>
 

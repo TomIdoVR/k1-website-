@@ -44,6 +44,20 @@ export const schoolScenario: ScenarioConfig = {
           { time: '14:23:15', event: 'UNITS BEING ASSIGNED...',            done: false },
         ],
       },
+      detectFlow: {
+        nodes: [
+          { id: 'trigger',  title: 'PANIC TRIGGER',      subtitle: 'Staff button · Room 214',   icon: 'emergency',    type: 'sensor' },
+          { id: 'locate',   title: 'LOCATION LOOKUP',    subtitle: 'Bldg A · 2F · M. Chen',     icon: 'pin_drop',     type: 'ai' },
+          { id: 'protocol', title: 'PROTOCOL MATCH',     subtitle: 'P1 · Immediate threat',     icon: 'shield',       type: 'rule' },
+          { id: 'lockdown', title: 'LOCKDOWN SEQUENCE',  subtitle: 'All doors · 847 students',  icon: 'lock',         type: 'ai' },
+          { id: 'event',    title: 'EVENT TRIGGERED',    subtitle: '911 dispatched · P1',       icon: 'bolt',         type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'protocol',
+          node: { id: 'retro', title: 'TEST PRESS LOG', subtitle: 'Drill / false trigger', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',

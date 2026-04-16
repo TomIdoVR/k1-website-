@@ -452,9 +452,11 @@ export default function StageScreen({
         {/* ── Inline call-intake admin panel ── */}
         {isFirst && stage.detectCard?.type === 'call-intake' && (
           <div style={{
-            position: 'absolute', inset: 0,
+            position: 'absolute',
+            top: 0, left: 0, bottom: 0,
+            right: hasDetectFlow ? '50%' : 0,
             display: 'flex', flexDirection: 'column',
-            padding: '28px 40px 24px',
+            padding: hasDetectFlow ? '28px 24px 24px' : '28px 40px 24px',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
           }}>
             {/* Title row */}
@@ -625,9 +627,11 @@ export default function StageScreen({
         {/* ── Panic-alert panel: CCTV image left + floor plan right ── */}
         {isFirst && stage.detectCard?.type === 'panic-alert' && (
           <div style={{
-            position: 'absolute', inset: 0,
+            position: 'absolute',
+            top: 0, left: 0, bottom: 0,
+            right: hasDetectFlow ? '50%' : 0,
             display: 'flex', flexDirection: 'column',
-            padding: '20px 32px 16px',
+            padding: hasDetectFlow ? '20px 18px 16px' : '20px 32px 16px',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
             background: 'rgba(6,10,20,0.97)',
           }}>
@@ -955,7 +959,9 @@ export default function StageScreen({
         {/* ── Access-breach panel: CCTV left + corporate floor plan right ── */}
         {isFirst && stage.detectCard?.type === 'access-breach' && (
           <div style={{
-            position: 'absolute', inset: 0,
+            position: 'absolute',
+            top: 0, left: 0, bottom: 0,
+            right: hasDetectFlow ? '50%' : 0,
             display: 'flex', flexDirection: 'row',
             background: 'rgba(6,10,20,0.98)',
           }}>

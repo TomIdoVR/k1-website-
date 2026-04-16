@@ -356,6 +356,29 @@
 
     <div class="timeline">
 
+      <!-- v2.09 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.09</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo ACT fixes: smaller camera overlay + responsive units panel</div>
+        <ul class="tl-body">
+          <li>Camera overlay on the dispatch map shrunk from <code>clamp(240px, 28vw, 360px)</code> to <code>clamp(170px, 16vw, 240px)</code> — no longer consumes most of the map in split layout</li>
+          <li>Camera image switched from the 8.5 MB <code>LPR.png</code> to the purpose-built 917 KB <code>cam-intercept-lpr.jpeg</code> — loads faster and matches the "CAM-118 · INTERCHANGE" label</li>
+          <li>Camera <code>Image</code> now uses <code>unoptimized</code> to stay consistent with the rest of the demo's image pipeline</li>
+          <li>Units panel was collapsing on viewports ≤1100 px — cards no longer rendered correctly when parent flex lost its height</li>
+          <li>Rewrote the ≤1100 px breakpoint: phone / map / units now stack vertically with horizontal separators, and the units scroll container switches to natural flow so all 6 cards render</li>
+        </ul>
+      </div>
+      <!-- v2.08 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.08</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo DETECT: flow panel rolled out to all scenarios</div>
+        <ul class="tl-body">
+          <li>Scenario-specific 5-node detection flows added to access-control, violence, school, medical (plus LPR from v2.07)</li>
+          <li>Each flow has its own nodes + subtitle payload + dashed "no-match" retrospective branch</li>
+          <li>StageScreen now clamps all 3 detectCard types (call-intake, panic-alert, access-breach) to the left 50% when a detectFlow is set — admin panel + flow render side-by-side</li>
+          <li>All 5 scenarios now show what was detected (left) + how it was detected (right)</li>
+        </ul>
+      </div>
       <!-- v2.07 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.07</span><span class="tl-date">2026-04-16</span></div>

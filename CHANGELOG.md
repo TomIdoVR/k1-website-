@@ -7,6 +7,26 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.09] 2026-04-16 — Demo ACT fixes: smaller camera overlay + responsive units panel
+
+**Fixed**
+- ACT stage camera overlay on the dispatch map was too large (was `clamp(240px, 28vw, 360px)` — consumed most of the map in split layout). Reduced to `clamp(170px, 16vw, 240px)` so it sits as a compact picture-in-picture without blocking the scene
+- ACT stage camera image now uses `/demo/lpr/cam-intercept-lpr.jpeg` (purpose-built INTERCHANGE photo, 917KB) instead of the 8.5MB `LPR.png` — loads faster and matches the "CAM-118 · INTERCHANGE" label
+- Camera overlay `<Image>` now uses `unoptimized` flag to match the rest of the demo's unoptimized image pipeline (avoids Turbopack optimizer edge cases)
+- Units panel (right side of ACT split layout) was collapsing on viewports ≤1100px — parent flex lost sizing but inner `flex:1; overflow:auto` still expected a definite height, so cards didn't render as cards
+- Rewrote the ≤1100px breakpoint: split-body now stacks vertically (phone → map → units) with each panel at natural height, horizontal separators replacing vertical ones, and the units scroll container becomes natural-flow so all 6 cards render fully
+
+## [2.08] 2026-04-16 — Demo DETECT: flow panel rolled out to all scenarios
+
+**Added**
+- `detectFlow` data added to Stage 01 of all remaining scenarios — each with a scenario-specific 5-node pipeline + "no-match" retrospective branch:
+  - **access-control**: Badge Scan → Identity Lookup → Access Policy Check → Anomaly Scoring → Event Triggered (branch: Access Granted Log)
+  - **violence**: Capture → Behavior Analysis (YOLO) → Threat Rules → AI Prioritization → Event Triggered (branch: Normal Behavior)
+  - **school**: Panic Trigger → Location Lookup → Protocol Match → Lockdown Sequence → Event Triggered (branch: Test Press / Drill)
+  - **medical**: 911 Call → Live Transcription → Keyword Extraction → Priority Classify → Event Triggered (branch: Non-urgent Queue)
+- StageScreen now clamps all three detectCard types (call-intake, panic-alert, access-breach) to the left 50% when a `detectFlow` is present, so the admin panel and the flow render side-by-side cleanly
+- All 5 scenarios now tell the same story: *what* was detected (left) + *how* it was detected (right)
+
 ## [2.07] 2026-04-16 — Demo DETECT: n8n-style detection-logic flow panel (LPR stage 01)
 
 **Added**

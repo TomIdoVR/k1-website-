@@ -44,6 +44,20 @@ export const accessControlScenario: ScenarioConfig = {
           { time: '02:14:36', event: 'SECURITY UNITS BEING DISPATCHED...',   done: false },
         ],
       },
+      detectFlow: {
+        nodes: [
+          { id: 'scan',     title: 'BADGE SCAN',           subtitle: 'Reader · Door 3-East · L3',  icon: 'contactless',      type: 'sensor' },
+          { id: 'identity', title: 'IDENTITY LOOKUP',      subtitle: 'Badge #4491 · J. Morales',   icon: 'badge',            type: 'ai' },
+          { id: 'policy',   title: 'ACCESS POLICY CHECK',  subtitle: 'Contractor L1 vs required L4', icon: 'rule',           type: 'rule' },
+          { id: 'anomaly',  title: 'ANOMALY SCORING',      subtitle: '3× denial + forced entry',   icon: 'auto_awesome',     type: 'ai' },
+          { id: 'event',    title: 'EVENT TRIGGERED',      subtitle: 'Unauthorized access · P1',   icon: 'bolt',             type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'policy',
+          node: { id: 'retro', title: 'ACCESS GRANTED LOG', subtitle: 'Normal entry · stored', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',

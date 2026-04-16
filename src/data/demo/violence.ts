@@ -25,6 +25,20 @@ export const violenceScenario: ScenarioConfig = {
       backgroundImage: '/demo/violence/stage-1-detect.jpg',
       backgroundFit: 'cover',
       layout: 'default',
+      detectFlow: {
+        nodes: [
+          { id: 'capture',  title: 'CAPTURE',           subtitle: 'CAM 7 · Central Plaza',    icon: 'videocam',    type: 'sensor' },
+          { id: 'behavior', title: 'BEHAVIOR ANALYSIS', subtitle: 'YOLO · confidence 94.7%',  icon: 'visibility',  type: 'ai' },
+          { id: 'threat',   title: 'THREAT RULES',      subtitle: 'Aggression + weapon hint', icon: 'gavel',       type: 'rule' },
+          { id: 'score',    title: 'AI PRIORITIZATION', subtitle: '3 subjects · 40+ civs',    icon: 'auto_awesome',type: 'ai' },
+          { id: 'event',    title: 'EVENT TRIGGERED',   subtitle: 'Violence detected · HIGH', icon: 'bolt',        type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'threat',
+          node: { id: 'retro', title: 'RETROSPECTIVE LOG', subtitle: 'Normal behavior · stored', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',

@@ -40,6 +40,20 @@ export const medicalScenario: ScenarioConfig = {
           'DISPATCH: Units are being dispatched now.',
         ],
       },
+      detectFlow: {
+        nodes: [
+          { id: 'call',     title: '911 CALL',             subtitle: 'M. Rivera · inbound',          icon: 'call',           type: 'sensor' },
+          { id: 'nlp',      title: 'LIVE TRANSCRIPTION',   subtitle: 'Speech-to-text · real time',   icon: 'record_voice_over', type: 'ai' },
+          { id: 'extract',  title: 'KEYWORD EXTRACTION',   subtitle: 'cardiac · unresponsive · male',icon: 'psychology',     type: 'ai' },
+          { id: 'priority', title: 'PRIORITY CLASSIFY',    subtitle: 'P1 · Life threatening',        icon: 'rule',           type: 'rule' },
+          { id: 'event',    title: 'EVENT TRIGGERED',      subtitle: 'EMS dispatch · cardiac',       icon: 'bolt',           type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'priority',
+          node: { id: 'retro', title: 'NON-URGENT QUEUE', subtitle: 'Routine routing', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',
