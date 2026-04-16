@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.12] 2026-04-16 — Demo ACT: Tactical Units panel — grid of cards (not a table)
+
+**Changed**
+- The ACT stage right-side "Tactical Units" panel was rendering each unit as a full-width row (flex-column layout with `gap: 10px`). On wide screens the rows stretched ~900 px across and read like a table instead of cards. Switched the scroll container to `display: grid` with `grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))` so each unit is a tile that adapts 1 → 2 → 3 columns depending on panel width
+- Breakpoint adjustments: at ≤1100 px the grid keeps the `minmax(260px, 1fr)` auto-fill behavior; at ≤768 px the grid collapses to a single column so narrow viewports still see one card per row
+- No changes to the card internals — header banner, metrics grid, footer all preserved
+
 ## [2.11] 2026-04-16 — Demo DECIDE: simpler tree + visual options + 9-tile video wall
 
 **Changed**

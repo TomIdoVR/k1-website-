@@ -34,7 +34,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
       .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-units { flex: 1; min-width: 0; overflow: hidden; }
-      .demo-split-units-scroll { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+      .demo-split-units-scroll { flex: 1; overflow-y: auto; padding: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; align-content: start; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .demo-split-root { height: auto !important; min-height: 100vh; overflow-y: auto !important; }
@@ -42,11 +42,12 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
         .demo-split-phone { flex: 0 0 auto !important; width: 100% !important; max-height: none !important; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
         .demo-split-map { flex: 0 0 auto !important; width: 100% !important; min-height: 360px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
         .demo-split-units { flex: 0 0 auto !important; width: 100% !important; overflow: visible !important; }
-        .demo-split-units-scroll { flex: 0 0 auto !important; overflow-y: visible !important; }
+        .demo-split-units-scroll { flex: 0 0 auto !important; overflow-y: visible !important; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important; }
       }
       @media (max-width: 768px) {
         .demo-split-phone { padding: 10px 14px 0 !important; }
         .demo-split-map { min-height: 280px; }
+        .demo-split-units-scroll { grid-template-columns: 1fr !important; }
         .demo-stage-nav-btn { padding: 8px 16px !important; gap: 10px !important; }
         .demo-stage-nav-sublabel { display: none !important; }
         .demo-stage-nav-mainlabel { font-size: 0.78rem !important; }

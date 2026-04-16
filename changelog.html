@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.12 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.12</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo ACT: Tactical Units — grid of cards (not a table)</div>
+        <ul class="tl-body">
+          <li>ACT stage "Tactical Units" panel was rendering each unit as a full-width row — at ~900 px wide the rows stretched and read like a table rather than cards</li>
+          <li>Switched the scroll container from <code>display: flex; flex-direction: column</code> to <code>display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))</code> — cards now tile 1 → 2 → 3 columns depending on panel width</li>
+          <li>≤1100 px: grid keeps auto-fill behavior. ≤768 px: grid collapses to a single column so narrow viewports still get one card per row</li>
+          <li>No changes to card internals — header banner, metrics grid, and footer preserved</li>
+        </ul>
+      </div>
       <!-- v2.11 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.11</span><span class="tl-date">2026-04-16</span></div>
