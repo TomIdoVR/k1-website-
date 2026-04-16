@@ -29,6 +29,20 @@ export const lprScenario: ScenarioConfig = {
         tagKey: 'License Plate',
         tagValue: '7JKY442',
       },
+      detectFlow: {
+        nodes: [
+          { id: 'capture', title: 'CAPTURE',           subtitle: 'CAM 402 · live 30 fps',     icon: 'videocam',          type: 'sensor' },
+          { id: 'ocr',     title: 'PLATE EXTRACTION',  subtitle: 'OCR · plate 7JKY442',       icon: 'document_scanner',  type: 'ai' },
+          { id: 'match',   title: 'HOTLIST MATCH',     subtitle: 'Regional stolen DB · 4.2M', icon: 'database',          type: 'rule' },
+          { id: 'score',   title: 'AI PRIORITIZATION', subtitle: 'Threat HIGH · TX-2024-8821', icon: 'auto_awesome',     type: 'ai' },
+          { id: 'event',   title: 'EVENT TRIGGERED',   subtitle: 'Stolen vehicle · 98.4%',    icon: 'bolt',              type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'match',
+          node: { id: 'retro', title: 'RETROSPECTIVE LOG', subtitle: 'Stored · no live action', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',
@@ -125,8 +139,8 @@ export const lprScenario: ScenarioConfig = {
       pipImage: '/demo/lpr/stage-2-understand.jpg',
       pipLabel: 'GIS TRACK · ACTIVE',
       layout: 'split',
-      splitCameraImage: '/images/integrations/lpr-hero.jpeg',
-      splitCameraLabel: 'CAM 402 · HIGHWAY 45',
+      splitCameraImage: '/demo/lpr/LPR.png',
+      splitCameraLabel: 'CAM-118 · INTERCHANGE',
       splitIncidentBadge: 'STOLEN · 7JKY442',
       splitIncidentDot: '7JKY442',
       splitUnitDot: '12-C',
@@ -136,17 +150,81 @@ export const lprScenario: ScenarioConfig = {
         { key: 'THREAT LEVEL', value: 'HIGH' },
       ],
       splitUnits: [
-        { id: '12-CHARLIE', role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
-        { id: '08-BRAVO',   role: 'BACKUP EN ROUTE',   status: 'EN ROUTE',  active: true },
-        { id: '04-ALPHA',   role: 'STATIONARY',         status: 'STANDBY',   active: false },
-        { id: '05-ALPHA',   role: 'K.CHEN · 4.1 MI',   status: 'AVAILABLE', active: false },
-        { id: '11-ECHO',    role: 'P.GOMEZ · 6.2 MI',  status: 'AVAILABLE', active: false },
+        {
+          id: '12-CHARLIE', role: 'Primary intercept · Lights & siren', status: 'ASSIGNED', active: true,
+          type: 'police', typeLabel: 'Police Cruiser',
+          officer: 'J. Reyes', badge: 'Badge #12-C',
+          eta: '2:48', etaLabel: 'ETA to intercept', etaSub: 'closest available',
+          distance: '1.2 mi', distanceSub: 'from target vehicle',
+          channel: 'CH-1', equipment: 'Dash Cam', equipmentIcon: 'videocam',
+        },
+        {
+          id: '08-BRAVO', role: 'Backup · Secondary intercept', status: 'EN ROUTE', active: true,
+          type: 'police', typeLabel: 'Police Cruiser',
+          officer: 'M. Torres', badge: 'Badge #08-B',
+          eta: '3:42', etaLabel: 'ETA to intercept', etaSub: 'flanking route',
+          distance: '2.1 mi', distanceSub: 'from target vehicle',
+          channel: 'CH-1', equipment: 'Dash Cam', equipmentIcon: 'videocam',
+        },
+        {
+          id: '04-ALPHA', role: 'Stationary post · Holding position', status: 'STANDBY', active: false,
+          type: 'police', typeLabel: 'Police Cruiser',
+          officer: 'D. Alvarez', badge: 'Badge #04-A',
+          eta: '4:20', etaLabel: 'ETA if dispatched', etaSub: 'on hold',
+          distance: '2.8 mi', distanceSub: 'from target vehicle',
+          channel: 'CH-2', equipment: 'Cruiser', equipmentIcon: 'directions_car',
+        },
+        {
+          id: 'K9-2', role: 'K9 unit · Containment support', status: 'AVAILABLE', active: false,
+          type: 'k9', typeLabel: 'K9 Unit',
+          officer: 'M. Chen & Rex', badge: 'Badge #K9-2',
+          eta: '4:10', etaLabel: 'ETA if dispatched', etaSub: 'estimated',
+          distance: '3.2 mi', distanceSub: 'from target vehicle',
+          channel: 'CH-2', equipment: 'K9 SUV', equipmentIcon: 'pets',
+        },
+        {
+          id: 'EMS-7', role: 'Medical standby · Pre-stage only', status: 'STANDBY', active: false,
+          type: 'ems', typeLabel: 'Ambulance',
+          officer: 'S. Patel', badge: 'Medic-7',
+          eta: '5:05', etaLabel: 'ETA if staged', etaSub: 'pre-position',
+          distance: '3.8 mi', distanceSub: 'from intercept',
+          channel: 'CH-4', equipment: 'Medic Unit', equipmentIcon: 'local_hospital',
+        },
+        {
+          id: '11-ECHO', role: 'Highway patrol · Ready to engage', status: 'AVAILABLE', active: false,
+          type: 'police', typeLabel: 'Police Cruiser',
+          officer: 'P. Gomez', badge: 'Badge #11-E',
+          eta: '7:15', etaLabel: 'ETA if dispatched', etaSub: 'estimated',
+          distance: '6.2 mi', distanceSub: 'from target vehicle',
+          channel: 'CH-3', equipment: 'Cruiser', equipmentIcon: 'directions_car',
+        },
       ],
       splitMapCoords: {
         incident: [29.7540, -95.3910],
         unit: [29.7620, -95.3660],
         // Memorial Dr westbound → Montrose Blvd southbound
         route: [[29.7620,-95.3660],[29.7622,-95.3700],[29.7621,-95.3740],[29.7618,-95.3780],[29.7614,-95.3820],[29.7610,-95.3860],[29.7608,-95.3880],[29.7600,-95.3900],[29.7575,-95.3908],[29.7555,-95.3910],[29.7540,-95.3910]],
+        // Multi-unit scene — police cruisers, K9 support, EMS standby, highway patrol
+        units: [
+          { id: '12-CHARLIE', type: 'police', status: 'ASSIGNED', coords: [29.7620, -95.3660],
+            // Memorial Dr → Montrose Blvd southbound (primary intercept)
+            route: [[29.7620,-95.3660],[29.7622,-95.3700],[29.7621,-95.3740],[29.7618,-95.3780],[29.7614,-95.3820],[29.7610,-95.3860],[29.7608,-95.3880],[29.7600,-95.3900],[29.7575,-95.3908],[29.7555,-95.3910],[29.7540,-95.3910]] },
+          { id: '08-BRAVO', type: 'police', status: 'EN ROUTE', coords: [29.7480, -95.4050],
+            // Westheimer Rd → Montrose Blvd northbound (flanking)
+            route: [[29.7480,-95.4050],[29.7482,-95.4010],[29.7485,-95.3975],[29.7488,-95.3950],[29.7492,-95.3935],[29.7505,-95.3925],[29.7518,-95.3918],[29.7530,-95.3913],[29.7540,-95.3910]] },
+          { id: '04-ALPHA', type: 'police', status: 'STANDBY',   coords: [29.7700, -95.3800] },
+          { id: 'K9-2',     type: 'k9',     status: 'AVAILABLE', coords: [29.7460, -95.3780] },
+          { id: 'EMS-7',    type: 'ems',    status: 'STANDBY',   coords: [29.7580, -95.4000] },
+          { id: '11-ECHO',  type: 'police', status: 'AVAILABLE', coords: [29.7400, -95.3700] },
+        ],
+        // Floating LPR camera overlay showing the hit
+        camera: {
+          image: '/demo/lpr/LPR.png',
+          label: 'CAM-118 · INTERCHANGE',
+          sublabel: 'LPR · 98.4%',
+          alertText: 'LPR HIT · STOLEN VEHICLE CONFIRMED',
+          pos: { left: '4%', top: '10%' },
+        },
       },
     },
     {

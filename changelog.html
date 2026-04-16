@@ -356,6 +356,41 @@
 
     <div class="timeline">
 
+      <!-- v2.07 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.07</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo DETECT: n8n-style detection-logic flow panel (LPR stage 01)</div>
+        <ul class="tl-body">
+          <li>New DetectFlowPanel component — n8n-inspired vertical flowchart with typed nodes, curved bezier connectors, and a one-shot "data packet" traversal animation on stage enter</li>
+          <li>DETECT cinematic panel now splits 50/50 when a detectFlow is provided — left half keeps the bg image + detect overlay, right half renders the flow</li>
+          <li>LPR Stage 01 ships 5 nodes (CAPTURE → PLATE EXTRACTION → HOTLIST MATCH → AI PRIORITIZATION → EVENT TRIGGERED) + a dashed "NO MATCH" branch to a dimmed RETROSPECTIVE LOG node</li>
+          <li>Extended Stage type with optional detectFlow (backward compatible — other scenarios render unchanged)</li>
+          <li>Rollout: LPR first, other scenarios get their own scenario-specific flows as a follow-up</li>
+        </ul>
+      </div>
+      <!-- v2.06 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.06</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo ACT: operational dispatch map with multi-unit markers &amp; LPR camera overlay</div>
+        <ul class="tl-body">
+          <li>DispatchMap now renders multiple colour-coded unit markers (police / K9 / EMS / security / fire) with per-unit routes and status-aware line styling</li>
+          <li>Added a floating LPR camera overlay on top of the map — photo card with red alert border and "LPR HIT · STOLEN VEHICLE CONFIRMED" footer</li>
+          <li>Extended splitMapCoords type with optional units[] and camera fields (backward compatible)</li>
+          <li>Stage 04 ACT (LPR) now uses the new LPR.png image with CAM-118 · INTERCHANGE label</li>
+          <li>Swapped roster: 05-ALPHA replaced with K9-2 (M. Chen &amp; Rex) and EMS-7 (Medic standby) added for a richer multi-agency scene</li>
+        </ul>
+      </div>
+      <!-- v2.05 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.05</span><span class="tl-date">2026-04-16</span></div>
+        <div class="tl-title">Demo ACT: rich tactical unit cards with type, status &amp; ETA</div>
+        <ul class="tl-body">
+          <li>Replaced simple unit-row list with detailed cards in the ACT-stage right panel</li>
+          <li>Each card emphasizes type (Police / Security / K9 / Ambulance / Fire) with color-coded icon, large unit number, status pill, ETA + distance metrics, and a "View on Map" button</li>
+          <li>Extended splitUnits type with optional rich metadata (officer, badge, eta, distance, channel, equipment) — backward compatible</li>
+          <li>Updated access-control and LPR scenarios with full card data for all units</li>
+        </ul>
+      </div>
       <!-- v2.04 -->
       <div class="tl-entry fix">
         <div class="tl-meta"><span class="tl-ver">v2.04</span><span class="tl-date">2026-04-14</span></div>

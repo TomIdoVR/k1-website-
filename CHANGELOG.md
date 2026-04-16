@@ -7,6 +7,35 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.07] 2026-04-16 — Demo DETECT: n8n-style detection-logic flow panel (LPR stage 01)
+
+**Added**
+- New `DetectFlowPanel` component renders an n8n-inspired vertical flowchart that visualizes the system's detection logic: dark canvas with a faint dot-grid, rounded nodes with typed icon tiles (sensor / AI / rule / event / retro), curved bezier connectors, and a one-shot "data packet" dot that traverses the chain on stage enter
+- When a detect stage carries a `detectFlow`, the cinematic panel splits 50/50 — left half keeps the existing bg image + detect-overlay + data-point/modules strip (clamped to the left half), right half renders the flow
+- LPR scenario (Stage 01) now ships 5 nodes: CAPTURE → PLATE EXTRACTION → HOTLIST MATCH → AI PRIORITIZATION → EVENT TRIGGERED, plus a dashed "NO MATCH" branch to a dimmed RETROSPECTIVE LOG node
+- Extended `Stage` type with optional `detectFlow` (backward compatible — other scenarios render unchanged)
+- Design spec committed to `docs/2026-04-16-detect-flow-panel-design.md`
+- Rollout: LPR first. Other scenarios (access-control / violence / school / medical) will get their own scenario-specific flows in a follow-up once this is approved
+
+## [2.06] 2026-04-16 — Demo ACT: operational dispatch map with multi-unit markers + LPR camera overlay
+
+**Added / Changed**
+- Extended `DispatchMap` to render multiple colour-coded unit markers (police blue, K9 amber, EMS red, security purple, fire orange) with per-unit routes and status-aware line styling (solid for ASSIGNED/EN ROUTE, dashed for STANDBY/AVAILABLE)
+- Added a floating LPR camera overlay layer on top of the map — 16:10 photo card with red alert border, camera label strip, and "LPR HIT · STOLEN VEHICLE CONFIRMED" footer
+- Extended `splitMapCoords` type with optional `units[]` and `camera` fields (backward compatible — existing scenarios untouched)
+- Stage 04 ACT (LPR scenario) now uses the new `LPR.png` (baked-in LPR DETECTION header) instead of the reused `lpr-hero.jpeg`, with camera label updated to `CAM-118 · INTERCHANGE`
+- Swapped `splitUnits` roster: `05-ALPHA` replaced with `K9-2` (K9 unit, M. Chen & Rex) and `EMS-7` (Medic standby) added — richer multi-agency scene for the ACT map
+- Six tactical units now appear on the map with coordinates: 12-CHARLIE (primary), 08-BRAVO (flanking), 04-ALPHA, K9-2, EMS-7, 11-ECHO
+
+## [2.05] 2026-04-16 — Demo ACT: rich tactical unit cards with type, status & ETA
+
+**Changed / Added**
+- Replaced the simple unit-row list in the ACT-stage right panel with detailed unit cards
+- Each card emphasizes: unit type (Police Car / Security Officer / K9 Unit / Ambulance / Fire Truck) with color-coded icon, large unit number, officer name, status pill (On Scene / Assigned / En Route / Available / Standby), ETA + distance metrics, "View on Map" action, radio channel & equipment
+- Extended `splitUnits` type with optional `type`, `typeLabel`, `officer`, `badge`, `eta`, `etaLabel`, `etaSub`, `distance`, `distanceSub`, `channel`, `equipment`, `equipmentIcon` fields (backward compatible)
+- Updated access-control and LPR scenarios with full card metadata for all units
+- "View on Map" button dispatches a `demo:view-unit-on-map` window event for future map-panel integration
+
 ## [2.04] 2026-04-14 — Demo LPR: AI-generated photorealistic LPR camera images
 
 **Fixed**

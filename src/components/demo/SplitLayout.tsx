@@ -431,6 +431,8 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
               incidentLabel={incidentDot}
               unitLabel={unitDot}
               route={stage.splitMapCoords.route}
+              units={stage.splitMapCoords.units}
+              camera={stage.splitMapCoords.camera}
             />
           ) : mapImage ? (
             <Image
@@ -443,7 +445,7 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
           ) : null}
         </div>
 
-        {/* ── PANEL 3 — Unit list / Dispatcher console ── */}
+        {/* ── PANEL 3 — Unit cards / Dispatcher console ── */}
         <div
           className="demo-split-units"
           style={{
@@ -453,51 +455,21 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
             }}
         >
           {/* Header */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
-            <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>monitor</span>
-            <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#adc6ff' }}>
-              Tactical Units
-            </span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, padding: '12px 16px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>groups</span>
+              <span style={{ fontSize: '10px', fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#adc6ff' }}>
+                Tactical Units
+              </span>
+            </div>
+            <div style={{ fontSize: '9px', fontWeight: 700, fontFamily: 'monospace', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.08em' }}>
+              {units.length} DEPLOYED · <span style={{ color: '#00C98A', fontWeight: 800 }}>{units.filter(u => u.active).length} ACTIVE</span>
+            </div>
           </div>
 
-          {/* Unit rows */}
-          <div style={{ flex: 1, overflowY: 'auto' }}>
-            {units.map((unit) => (
-              <div
-                key={unit.id}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '10px 16px',
-                  borderBottom: '1px solid rgba(255,255,255,0.04)',
-                  borderLeft: unit.active ? '3px solid #3B9EFF' : '3px solid transparent',
-                  background: unit.active ? 'rgba(59,158,255,0.05)' : 'transparent',
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: unit.active ? '#E0ECF8' : '#48647A', letterSpacing: '0.03em', fontFamily: 'monospace' }}>
-                    {unit.id}
-                  </div>
-                  <div style={{ fontSize: '8px', color: '#48647A', marginTop: 2, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                    {unit.role}
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  {unit.status === 'AVAILABLE' && (
-                    <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#00C98A', display: 'inline-block' }} />
-                  )}
-                  {unit.status === 'STANDBY' && (
-                    <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#48647A', display: 'inline-block' }} />
-                  )}
-                  {unit.active && (
-                    <span className="material-symbols-outlined" style={{ fontSize: 13, color: '#3B9EFF' }}>
-                      local_shipping
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
+          {/* Unit cards */}
+          <div style={{ flex: 1, overflowY: 'auto', padding: 10, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {units.map((unit) => <UnitCard key={unit.id} unit={unit} />)}
           </div>
 
           {/* Module tags */}
@@ -578,5 +550,236 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
 
     </div>
     </>
+  )
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// UnitCard — rich tactical card (right panel of split layout)
+// ────────────────────────────────────────────────────────────────────────────
+
+type Unit = NonNullable<Stage['splitUnits']>[number]
+
+const TYPE_STYLES: Record<string, { icon: string; bg: string; border: string; color: string; label: string }> = {
+  police:   { icon: 'local_police', bg: 'rgba(59,158,255,0.18)',  border: 'rgba(59,158,255,0.5)',  color: '#7fbcff', label: 'Police Car' },
+  security: { icon: 'security',     bg: 'rgba(167,139,250,0.18)', border: 'rgba(167,139,250,0.45)', color: '#cbbaff', label: 'Security Officer' },
+  k9:       { icon: 'pets',         bg: 'rgba(255,181,71,0.18)',  border: 'rgba(255,181,71,0.45)',  color: '#ffcf80', label: 'K9 Unit' },
+  ems:      { icon: 'ambulance',    bg: 'rgba(239,68,68,0.18)',   border: 'rgba(239,68,68,0.45)',   color: '#ff8a8a', label: 'Ambulance' },
+  fire:     { icon: 'fire_truck',   bg: 'rgba(255,114,44,0.2)',   border: 'rgba(255,114,44,0.5)',   color: '#ffa76b', label: 'Fire Truck' },
+  default:  { icon: 'shield',       bg: 'rgba(173,198,255,0.15)', border: 'rgba(173,198,255,0.35)', color: '#adc6ff', label: 'Unit' },
+}
+
+const STATUS_STYLES: Record<string, { bg: string; color: string; border: string; dot: string; label: string; pulse?: boolean }> = {
+  'ON SCENE':  { bg: 'rgba(255,69,96,0.15)',  color: '#ff8c9e', border: 'rgba(255,69,96,0.4)',  dot: '#FF4560', label: 'On Scene', pulse: true },
+  'ASSIGNED':  { bg: 'rgba(59,158,255,0.15)', color: '#7fbcff', border: 'rgba(59,158,255,0.4)', dot: '#3B9EFF', label: 'Assigned' },
+  'EN ROUTE':  { bg: 'rgba(0,201,138,0.15)',  color: '#00C98A', border: 'rgba(0,201,138,0.4)',  dot: '#00C98A', label: 'En Route', pulse: true },
+  'AVAILABLE': { bg: 'rgba(255,181,71,0.15)', color: '#FFB547', border: 'rgba(255,181,71,0.4)', dot: '#FFB547', label: 'Available' },
+  'STANDBY':   { bg: 'rgba(72,100,122,0.22)', color: '#95afc2', border: 'rgba(72,100,122,0.4)', dot: '#48647A', label: 'Standby' },
+}
+
+function UnitCard({ unit }: { unit: Unit }) {
+  const t = TYPE_STYLES[unit.type ?? 'default'] ?? TYPE_STYLES.default
+  const typeLabel = unit.typeLabel ?? t.label
+  const s = STATUS_STYLES[unit.status] ?? STATUS_STYLES.STANDBY
+
+  // Highlight treatment
+  const isOnScene = unit.status === 'ON SCENE'
+  const isEnRoute = unit.status === 'EN ROUTE' || unit.status === 'ASSIGNED'
+  const bg = isOnScene
+    ? 'linear-gradient(160deg, rgba(255,69,96,0.08) 0%, rgba(255,255,255,0.01) 60%)'
+    : isEnRoute
+      ? 'linear-gradient(160deg, rgba(0,201,138,0.06) 0%, rgba(255,255,255,0.01) 60%)'
+      : 'linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 60%)'
+  const borderCol = isOnScene
+    ? 'rgba(255,69,96,0.5)'
+    : isEnRoute
+      ? 'rgba(0,201,138,0.35)'
+      : 'rgba(255,255,255,0.08)'
+  const cardShadow = isOnScene ? '0 0 0 1px rgba(255,69,96,0.2), 0 8px 24px rgba(255,69,96,0.08)' : 'none'
+  const opacity = (unit.status === 'STANDBY' || unit.status === 'AVAILABLE') ? 0.88 : 1
+
+  const viewOnMap = () => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('demo:view-unit-on-map', { detail: { unitId: unit.id } }))
+    }
+  }
+
+  return (
+    <div style={{
+      position: 'relative',
+      background: bg,
+      border: `1px solid ${borderCol}`,
+      borderRadius: 10,
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      boxShadow: cardShadow,
+      opacity,
+    }}>
+      {/* Type banner */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '8px 12px', background: 'rgba(0,0,0,0.3)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
+          <div style={{
+            width: 30, height: 30, borderRadius: 7,
+            background: t.bg, border: `1px solid ${t.border}`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: t.color, flexShrink: 0,
+          }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 19 }}>{t.icon}</span>
+          </div>
+          <div style={{
+            fontSize: 12, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase',
+            color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+          }}>
+            {typeLabel}
+          </div>
+        </div>
+        {unit.badge && (
+          <div style={{
+            fontSize: 9, fontWeight: 800, letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.55)', fontFamily: 'monospace',
+            padding: '3px 7px', background: 'rgba(0,0,0,0.3)', borderRadius: 4, flexShrink: 0,
+          }}>
+            {unit.badge}
+          </div>
+        )}
+      </div>
+
+      {/* Body */}
+      <div style={{ padding: '12px 14px 10px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
+          <div style={{ minWidth: 0 }}>
+            <div style={{
+              fontSize: 26, fontWeight: 900, fontStyle: 'italic',
+              fontFamily: 'var(--font-space-mono), monospace',
+              color: '#fff', letterSpacing: '-0.01em', lineHeight: 1,
+            }}>
+              {unit.id}
+            </div>
+            {unit.officer && (
+              <div style={{
+                marginTop: 5, display: 'flex', alignItems: 'center', gap: 5,
+                fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.85)',
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>person</span>
+                {unit.officer}
+              </div>
+            )}
+            <div style={{
+              marginTop: 2, fontSize: 10, fontWeight: 500,
+              color: 'rgba(255,255,255,0.5)', letterSpacing: '0.03em',
+            }}>
+              {unit.role}
+            </div>
+          </div>
+          <div style={{ flexShrink: 0 }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 5,
+              fontSize: 10, fontWeight: 900, letterSpacing: '0.12em', textTransform: 'uppercase',
+              padding: '5px 10px', borderRadius: 18,
+              background: s.bg, color: s.color, border: `1px solid ${s.border}`,
+            }}>
+              <span
+                className={s.pulse ? 'animate-pulse' : ''}
+                style={{ width: 7, height: 7, borderRadius: '50%', background: s.dot }}
+              />
+              {s.label}
+            </div>
+          </div>
+        </div>
+
+        {/* Metrics */}
+        {(unit.eta || unit.distance) && (
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr',
+            gap: 1, background: 'rgba(255,255,255,0.08)',
+            borderRadius: 7, overflow: 'hidden',
+          }}>
+            <div style={{ padding: '8px 10px', background: 'rgba(0,0,0,0.25)', display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#48647A', display: 'flex', alignItems: 'center', gap: 3 }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 11 }}>schedule</span>
+                {unit.etaLabel ?? 'ETA to event'}
+              </div>
+              <div style={{
+                fontSize: 17, fontWeight: 900, fontStyle: 'italic',
+                fontFamily: 'var(--font-space-mono), monospace',
+                color: isOnScene ? '#ff8c9e' : (isEnRoute ? '#00C98A' : '#fff'), lineHeight: 1.1,
+              }}>
+                {unit.eta ?? '—'}
+              </div>
+              {unit.etaSub && (
+                <div style={{ fontSize: 8, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.06em' }}>
+                  {unit.etaSub}
+                </div>
+              )}
+            </div>
+            <div style={{ padding: '8px 10px', background: 'rgba(0,0,0,0.25)', display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <div style={{ fontSize: 8, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#48647A', display: 'flex', alignItems: 'center', gap: 3 }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 11 }}>straighten</span>
+                Distance
+              </div>
+              <div style={{
+                fontSize: 17, fontWeight: 900, fontStyle: 'italic',
+                fontFamily: 'var(--font-space-mono), monospace',
+                color: '#fff', lineHeight: 1.1,
+              }}>
+                {unit.distance ?? '—'}
+              </div>
+              {unit.distanceSub && (
+                <div style={{ fontSize: 8, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.06em' }}>
+                  {unit.distanceSub}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '8px 12px', background: 'rgba(0,0,0,0.3)',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <button
+          onClick={viewOnMap}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 5,
+            fontSize: 10, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase',
+            color: '#3B9EFF', cursor: 'pointer',
+            padding: '5px 10px', borderRadius: 5,
+            background: 'rgba(59,158,255,0.1)', border: '1px solid rgba(59,158,255,0.3)',
+            fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+            transition: 'all 0.15s',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(59,158,255,0.22)'; e.currentTarget.style.color = '#fff' }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(59,158,255,0.1)'; e.currentTarget.style.color = '#3B9EFF' }}
+        >
+          <span className="material-symbols-outlined" style={{ fontSize: 13 }}>map</span>
+          View on Map
+        </button>
+        <div style={{
+          display: 'flex', gap: 10, alignItems: 'center',
+          fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+          color: 'rgba(255,255,255,0.55)', fontFamily: 'monospace',
+        }}>
+          {unit.channel && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 12, color: '#adc6ff' }}>radio</span>
+              <b style={{ color: '#fff', fontWeight: 800 }}>{unit.channel}</b>
+            </span>
+          )}
+          {unit.equipment && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 12, color: '#adc6ff' }}>{unit.equipmentIcon ?? 'inventory_2'}</span>
+              {unit.equipment}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }

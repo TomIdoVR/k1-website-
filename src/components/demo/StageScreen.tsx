@@ -6,6 +6,7 @@ import { ALL_MODULES } from './TopBar'
 const GeoPanel = dynamic(() => import('./GeoPanel'), { ssr: false })
 const DecideMapPanel = dynamic(() => import('./DecideMapPanel'), { ssr: false })
 const UnderstandMapPanel = dynamic(() => import('./UnderstandMapPanel'), { ssr: false })
+const DetectFlowPanel = dynamic(() => import('./DetectFlowPanel'), { ssr: false })
 
 interface StageScreenProps {
   stage: Stage
@@ -26,6 +27,9 @@ export default function StageScreen({
 }: StageScreenProps) {
   const hasPip = !!stage.pipImage || !!stage.pip2Image
   const pipCount = (stage.pipImage ? 1 : 0) + (stage.pip2Image ? 1 : 0)
+  // When the detect stage carries a detectFlow, we split the cinematic panel 50/50:
+  // left half keeps the bg image + overlays, right half renders the flow panel.
+  const hasDetectFlow = isFirst && !!stage.detectFlow
   // Light-background layout: title lives above the panel, panel fills remaining height.
   // Applies to all stages without a full-panel detectCard overlay (detect, understand, etc.)
   const isLightBg = !stage.detectCard
@@ -401,20 +405,48 @@ export default function StageScreen({
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        {/* Background image */}
+        {/* Background image
+            Use next/image for full-bleed detect stages, but when the panel is split
+            fall back to a plain CSS background-image on a half-width wrapper. The
+            CSS approach sidesteps a Next 16 Turbopack issue where _next/image?w=1920
+            returns 400 for this asset with sizes="50vw" srcset widths. */}
         {stage.backgroundImage ? (
-          <div style={{ position: 'absolute', inset: 0 }}>
-            <Image
-              src={stage.backgroundImage}
-              alt={stage.stageLabel}
-              fill
-              style={{ objectFit: stage.backgroundFit ?? 'cover' }}
-              priority={isFirst}
-              sizes="90vw"
+          hasDetectFlow ? (
+            <div
+              style={{
+                position: 'absolute',
+                top: 0, left: 0, bottom: 0,
+                width: '50%',
+                backgroundImage: `url(${stage.backgroundImage})`,
+                backgroundSize: stage.backgroundFit ?? 'cover',
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat',
+                overflow: 'hidden',
+              }}
+              aria-label={stage.stageLabel}
+              role="img"
             />
-          </div>
+          ) : (
+            <div style={{ position: 'absolute', inset: 0 }}>
+              <Image
+                src={stage.backgroundImage}
+                alt={stage.stageLabel}
+                fill
+                style={{ objectFit: stage.backgroundFit ?? 'cover' }}
+                priority={isFirst}
+                sizes="90vw"
+              />
+            </div>
+          )
         ) : (
-          <div style={{ position: 'absolute', inset: 0, background: '#08101A' }} />
+          <div
+            style={{
+              position: 'absolute',
+              top: 0, left: 0, bottom: 0,
+              width: hasDetectFlow ? '50%' : '100%',
+              background: '#08101A',
+            }}
+          />
         )}
 
         {/* ── Inline call-intake admin panel ── */}
@@ -1212,7 +1244,8 @@ export default function StageScreen({
         <div
           style={{
             position: 'absolute',
-            inset: 0,
+            top: 0, left: 0, bottom: 0,
+            width: hasDetectFlow ? '50%' : '100%',
             background: stage.detectCard
               ? 'linear-gradient(to top, rgba(8,16,26,0.95) 0%, transparent 40%)'
               : 'linear-gradient(to top, rgba(16,19,27,0.92) 0%, transparent 55%, rgba(16,19,27,0.2) 100%)',
@@ -1224,7 +1257,8 @@ export default function StageScreen({
           <div
             style={{
               position: 'absolute',
-              inset: 0,
+              top: 0, left: 0, bottom: 0,
+              width: hasDetectFlow ? '50%' : '100%',
               opacity: 0.05,
               pointerEvents: 'none',
               backgroundImage: [
@@ -1242,7 +1276,10 @@ export default function StageScreen({
             style={{
               position: 'absolute',
               top: '40%',
-              left: '35%',
+              // With detectFlow, the bg image is zoom-cropped to the left 50%; the plate
+              // ends up centred at ~25% of the panel. Keep the box at original 30% width,
+              // just re-centred so it still wraps the plate.
+              left: hasDetectFlow ? '10%' : '35%',
               width: '30%',
               height: '25%',
               border: '2px solid rgba(173,198,255,0.6)',
@@ -1675,11 +1712,14 @@ export default function StageScreen({
               position: 'absolute',
               bottom: 28,
               left: 44,
-              right: 44,
+              // When the panel is split, keep this row inside the left half.
+              right: hasDetectFlow ? 'calc(50% + 20px)' : 44,
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
+              flexDirection: hasDetectFlow ? 'column' : 'row',
+              justifyContent: hasDetectFlow ? 'flex-end' : 'space-between',
+              alignItems: hasDetectFlow ? 'flex-start' : 'flex-end',
               zIndex: 20,
+              gap: hasDetectFlow ? 18 : 16,
             }}
           >
             {/* Data points */}
@@ -1713,7 +1753,7 @@ export default function StageScreen({
               ))}
             </div>
             {/* System modules */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: hasDetectFlow ? 'flex-start' : 'flex-end', gap: 6 }}>
               <span
                 style={{
                   fontSize: '8px',
@@ -1725,7 +1765,7 @@ export default function StageScreen({
               >
                 System Modules
               </span>
-              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: hasDetectFlow ? 'flex-start' : 'flex-end' }}>
                 {stage.modules.map((m) => (
                   <div
                     key={m}
@@ -2440,6 +2480,35 @@ export default function StageScreen({
         )}
 
         {/* ── Detect stage: title moved to light-bg block above panel (isLightBg) ── */}
+
+        {/* ── Detection-logic flow panel (right half of the detect cinematic panel) ── */}
+        {hasDetectFlow && stage.detectFlow && (
+          <>
+            {/* Thick white separator — same language as other split screens */}
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                top: 0, bottom: 0,
+                left: 'calc(50% - 3px)',
+                width: 6,
+                background: 'rgba(255,255,255,0.6)',
+                zIndex: 30,
+                pointerEvents: 'none',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                top: 0, right: 0, bottom: 0,
+                width: '50%',
+                zIndex: 25,
+              }}
+            >
+              <DetectFlowPanel flow={stage.detectFlow} />
+            </div>
+          </>
+        )}
       </div>
 
       {/* ── Navigation handled by floating BottomNav in ScenarioPlayer ── */}
