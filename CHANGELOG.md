@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.18] 2026-04-16 — Demo: scenario-specific video wall images for all 5 scenarios
+
+**Added / Fixed**
+- **School** (5 new images): generated CCTV-style images for Gym Entrance, Cafeteria, Library, Science Wing, Bus Loop — campus camera network now fully populated
+- **Access Control** (5 new images): generated Parking Level 1, Lobby, Exit B, Loading Bay, Roof Access — building camera network fully populated
+- **Medical + Violence**: de-duplicated camera IDs — both shared CAM-305/411/227/198/562/340/715; now each has unique IDs (Medical: CAM-81→159, Violence: CAM-21→89)
+
 ## [2.17] 2026-04-16 — Demo: full mobile responsiveness pass across all stages
 
 **Fixed**
