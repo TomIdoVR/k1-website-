@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.19] 2026-04-16 — Demo Violence: replace highway images with urban plaza-area cameras
+
+**Fixed**
+- The 7 monitoring/idle tiles in the Violence video wall were showing suburban highway footage (reused from LPR) — wrong context for a downtown plaza incident
+- Generated 7 new urban CCTV images: Plaza North (busy intersection), Main St (city traffic), Commerce St (storefronts + pedestrians), Parking Garage (urban structure), Plaza East (plaza perimeter), Boulevard (city boulevard), Alley West (service alley)
+- Updated camera labels to match plaza surroundings instead of Houston road names
+
 ## [2.18] 2026-04-16 — Demo: scenario-specific video wall images for all 5 scenarios
 
 **Added / Fixed**
