@@ -44,7 +44,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
       @media (max-width: 768px) {
         .pp-main-row { flex-direction: column !important; gap: 0 !important; }
         .pp-left-panel { flex: none !important; overflow-y: visible !important; min-height: 280px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
-        .pp-center-panel { flex: none !important; min-height: 620px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
+        .pp-center-panel { flex: none !important; min-height: 520px; height: auto !important; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; overflow: visible !important; }
         .pp-camera-panel { flex: none !important; min-height: 360px; }
         .pp-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
         .pp-step-row { flex-wrap: wrap !important; padding: 10px 12px !important; gap: 10px !important; }

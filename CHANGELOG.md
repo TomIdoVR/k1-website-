@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.23] 2026-04-17 — Demo: auto-fit flow charts — no more scroll
+
+**Fixed**
+- **DETECT** — DetectFlowPanel now uses ResizeObserver + CSS transform to auto-scale the entire flow chart to fit its container. Whole flow (5 nodes + branch) visible at once on any viewport, no internal scrolling
+- **DECIDE** — DecisionTreePanel tree nodes and option cards get compact styling on ≤768px (smaller paddings, icons, and type). Tree nodes stretch full-width; options grid fits without clipping
+- ProtocolPanel center panel grows to natural content height on mobile (no fixed min-height cap forcing internal scroll)
+
 ## [2.22] 2026-04-17 — Demo DECIDE: action cards no longer clipped on mobile
 
 **Fixed**

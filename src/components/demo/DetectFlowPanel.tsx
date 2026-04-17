@@ -13,7 +13,7 @@
  *  - an optional dimmed "retrospective" branch off a rule-type node
  */
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { DetectFlow, DetectFlowNode, DetectFlowNodeType } from '@/data/demo/types'
 
 interface DetectFlowPanelProps {
@@ -74,6 +74,25 @@ export default function DetectFlowPanel({ flow }: DetectFlowPanelProps) {
     return () => { timers.forEach(t => clearTimeout(t)) }
   }, [mainNodes.length])
 
+  // Auto-fit: scale the canvas so the whole flow fits the container without scrolling
+  const fitRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(1)
+  useEffect(() => {
+    const el = fitRef.current
+    if (!el) return
+    const measure = () => {
+      const availW = el.clientWidth - 16
+      const availH = el.clientHeight - 16
+      if (availW <= 0 || availH <= 0) return
+      const s = Math.min(availW / width, availH / height, 1)
+      setScale(s > 0.25 ? s : 0.25)
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [width, height])
+
   // Path helpers — all paths use a soft S-curve between two points
   const curve = (x1: number, y1: number, x2: number, y2: number) => {
     const midY = (y1 + y2) / 2
@@ -113,18 +132,25 @@ export default function DetectFlowPanel({ flow }: DetectFlowPanelProps) {
         <span style={{ flex: 1, height: 1, background: 'linear-gradient(to right, rgba(173,198,255,0.22), transparent)' }} />
       </div>
 
-      {/* Scrollable flow canvas */}
+      {/* Auto-fit flow canvas — scales to container, no scroll */}
       <div
+        ref={fitRef}
         style={{
           position: 'absolute', inset: 0,
           paddingTop: 40,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'flex-start',
-          overflowY: 'auto',
+          overflow: 'hidden',
         }}
       >
-        <div style={{ position: 'relative', width, height, minHeight: '100%' }}>
+        <div style={{
+          position: 'relative',
+          width, height,
+          transform: `scale(${scale})`,
+          transformOrigin: 'top center',
+          flexShrink: 0,
+        }}>
           {/* Connector layer */}
           <svg
             viewBox={`0 0 ${width} ${height}`}

@@ -17,7 +17,17 @@ export default function DecisionTreePanel({ tree }: Props) {
         @keyframes dt-arrow { 0%,100%{opacity:0.35} 50%{opacity:0.9} }
         @media (max-width: 768px) {
           .dt-root { overflow: visible !important; }
-          .dt-options-scroll { overflow-y: visible !important; flex: none !important; }
+          .dt-tree-section { padding: 12px 14px 4px !important; gap: 4px !important; }
+          .dt-tree-node { min-width: 0 !important; width: 100% !important; max-width: none !important; padding: 8px 12px !important; gap: 10px !important; }
+          .dt-tree-node-icon { width: 28px !important; height: 28px !important; }
+          .dt-tree-node-label { font-size: 12px !important; }
+          .dt-tree-node-detail { font-size: 10px !important; }
+          .dt-options-scroll { overflow-y: visible !important; flex: none !important; padding: 10px 14px 16px !important; }
+          .dt-option-card { padding: 10px 10px 10px !important; gap: 6px !important; }
+          .dt-option-icon { width: 36px !important; height: 36px !important; }
+          .dt-option-icon span { font-size: 20px !important; }
+          .dt-option-title { font-size: 11px !important; margin-bottom: 2px !important; }
+          .dt-option-desc { font-size: 10px !important; }
         }
       `}</style>
 
@@ -42,7 +52,7 @@ export default function DecisionTreePanel({ tree }: Props) {
         </div>
 
         {/* ── Section 1 — Tiny decision tree (2-3 nodes) ── */}
-        <div style={{ flexShrink: 0, padding: '18px 18px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+        <div className="dt-tree-section" style={{ flexShrink: 0, padding: '18px 18px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
           {tree.tree.map((node, i) => (
             <span key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
               <TreeNode node={node} isLast={i === tree.tree.length - 1} />
@@ -83,7 +93,7 @@ function TreeNode({ node, isLast }: { node: DecisionTree['tree'][number]; isLast
     ? 'linear-gradient(160deg, rgba(255,140,90,0.22) 0%, rgba(255,140,90,0.06) 100%)'
     : 'linear-gradient(160deg, rgba(59,158,255,0.18) 0%, rgba(59,158,255,0.04) 100%)'
   return (
-    <div style={{
+    <div className="dt-tree-node" style={{
       display: 'flex', alignItems: 'center', gap: 12,
       padding: '10px 16px', borderRadius: 10,
       background: bg,
@@ -92,7 +102,7 @@ function TreeNode({ node, isLast }: { node: DecisionTree['tree'][number]; isLast
       animation: !isLast ? 'dt-node-pulse 2.8s ease-in-out infinite' : undefined,
     }}>
       {node.icon && (
-        <div style={{
+        <div className="dt-tree-node-icon" style={{
           width: 32, height: 32, borderRadius: 8,
           background: 'rgba(0,0,0,0.25)',
           border: `1px solid ${accent}55`,
@@ -102,14 +112,14 @@ function TreeNode({ node, isLast }: { node: DecisionTree['tree'][number]; isLast
         </div>
       )}
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{
+        <div className="dt-tree-node-label" style={{
           fontSize: 13, fontWeight: 900, color: '#fff',
           letterSpacing: '0.02em', textTransform: 'uppercase', lineHeight: 1.2,
         }}>
           {node.label}
         </div>
         {node.detail && (
-          <div style={{
+          <div className="dt-tree-node-detail" style={{
             fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.7)',
             marginTop: 2,
           }}>
@@ -137,7 +147,7 @@ function TreeArrow() {
 function OptionCard({ opt }: { opt: DecisionTree['options'][number] }) {
   const rec = !!opt.recommended
   return (
-    <div style={{
+    <div className="dt-option-card" style={{
       position: 'relative',
       display: 'flex', flexDirection: 'column', gap: 8,
       padding: '14px 14px 13px',
@@ -161,7 +171,7 @@ function OptionCard({ opt }: { opt: DecisionTree['options'][number] }) {
           AI PICK
         </span>
       )}
-      <div style={{
+      <div className="dt-option-icon" style={{
         width: 44, height: 44, borderRadius: 10,
         background: rec ? 'rgba(16,185,129,0.2)' : 'rgba(59,158,255,0.12)',
         border: `1px solid ${rec ? 'rgba(16,185,129,0.55)' : 'rgba(59,158,255,0.35)'}`,
@@ -172,14 +182,14 @@ function OptionCard({ opt }: { opt: DecisionTree['options'][number] }) {
         </span>
       </div>
       <div>
-        <div style={{
+        <div className="dt-option-title" style={{
           fontSize: 13, fontWeight: 900, color: '#fff',
           letterSpacing: '0.02em', textTransform: 'uppercase',
           marginBottom: 4,
         }}>
           {opt.title}
         </div>
-        <div style={{
+        <div className="dt-option-desc" style={{
           fontSize: 11, fontWeight: 500, color: 'rgba(255,255,255,0.65)',
           lineHeight: 1.4,
         }}>
