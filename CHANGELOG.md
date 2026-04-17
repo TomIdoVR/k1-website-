@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.22] 2026-04-17 — Demo DECIDE: action cards no longer clipped on mobile
+
+**Fixed**
+- DecisionTreePanel "Choose an Action" cards were clipped at the bottom on mobile because the inner scroll area was squeezed into ~200px
+- Decision tree panel now flows naturally on mobile (no internal scroll)
+- ProtocolPanel center panel `min-height` on ≤768px bumped 400 → 620 so tree + option cards render fully
+
 ## [2.21] 2026-04-17 — Demo DETECT: flow nodes no longer clip subtitles
 
 **Fixed**

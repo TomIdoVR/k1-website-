@@ -15,9 +15,13 @@ export default function DecisionTreePanel({ tree }: Props) {
         @keyframes dt-node-pulse { 0%,100%{ box-shadow: 0 0 0 1px rgba(59,158,255,0.35), 0 0 18px rgba(59,158,255,0.14);} 50%{ box-shadow: 0 0 0 1px rgba(59,158,255,0.55), 0 0 28px rgba(59,158,255,0.25);} }
         @keyframes dt-rec-glow { 0%,100%{ box-shadow: 0 0 0 1px rgba(16,185,129,0.45), 0 0 28px rgba(16,185,129,0.22);} 50%{ box-shadow: 0 0 0 1px rgba(16,185,129,0.7), 0 0 44px rgba(16,185,129,0.4);} }
         @keyframes dt-arrow { 0%,100%{opacity:0.35} 50%{opacity:0.9} }
+        @media (max-width: 768px) {
+          .dt-root { overflow: visible !important; }
+          .dt-options-scroll { overflow-y: visible !important; flex: none !important; }
+        }
       `}</style>
 
-      <div style={{
+      <div className="dt-root" style={{
         flex: 1, display: 'flex', flexDirection: 'column',
         overflow: 'hidden', background: '#060e18',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
@@ -48,7 +52,7 @@ export default function DecisionTreePanel({ tree }: Props) {
         </div>
 
         {/* ── Section 2 — Visual option cards ── */}
-        <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 18px' }}>
+        <div className="dt-options-scroll" style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 18px' }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10,
             fontSize: 9, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.7)',
