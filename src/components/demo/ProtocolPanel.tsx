@@ -47,6 +47,12 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         .pp-center-panel { flex: none !important; min-height: 400px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
         .pp-camera-panel { flex: none !important; min-height: 360px; }
         .pp-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
+        .pp-step-row { flex-wrap: wrap !important; padding: 10px 12px !important; gap: 10px !important; }
+        .pp-step-title { font-size: 13px !important; word-break: break-word; }
+        .pp-step-detail { font-size: 11px !important; word-break: break-word; }
+        .pp-step-badge { order: 3; flex: 0 0 auto; margin-left: 40px; font-size: 8px !important; padding: 2px 6px !important; }
+        .pp-footer-strip { overflow-x: auto !important; overflow-y: hidden !important; -webkit-overflow-scrolling: touch; }
+        .pp-footer-modules { display: none !important; }
       }
     `}</style>
 
@@ -194,7 +200,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
               const bg = isActive ? 'rgba(59,158,255,0.08)' : 'transparent'
 
               return (
-                <div key={step.id} style={{
+                <div key={step.id} className="pp-step-row" style={{
                   position: 'relative',
                   display: 'flex', alignItems: 'flex-start', gap: 14,
                   padding: '12px 14px 12px 16px', borderRadius: 8, flexShrink: 0,
@@ -237,19 +243,19 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
                   </div>
                   {/* Title + detail */}
                   <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 3, paddingTop: 2 }}>
-                    <div style={{
+                    <div className="pp-step-title" style={{
                       fontSize: 14, fontWeight: 700, lineHeight: 1.3,
                       color: titleColor, letterSpacing: '0.02em',
                     }}>{title}</div>
                     {detail && (
-                      <div style={{
+                      <div className="pp-step-detail" style={{
                         fontSize: 12, lineHeight: 1.45, fontWeight: 400,
                         color: detailColor,
                       }}>{detail}</div>
                     )}
                   </div>
                   {isActive && (
-                    <span style={{
+                    <span className="pp-step-badge" style={{
                       fontSize: 9, fontWeight: 800, letterSpacing: '0.16em',
                       color: '#3B9EFF', background: 'rgba(59,158,255,0.15)', border: '1px solid rgba(59,158,255,0.4)',
                       borderRadius: 4, padding: '3px 8px', flexShrink: 0, alignSelf: 'center',
@@ -261,7 +267,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
           </div>
 
           {/* Data points strip */}
-          <div style={{
+          <div className="pp-footer-strip" style={{
             flexShrink: 0, height: 32,
             display: 'flex', alignItems: 'center',
             background: 'rgba(6,12,22,0.9)',
@@ -279,7 +285,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
                 <span style={{ fontFamily: 'monospace', fontSize: 9, color: '#ADC6FF', fontWeight: 700 }}>{dp.value}</span>
               </div>
             ))}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '0 10px', marginLeft: 'auto', flexShrink: 0 }}>
+            <div className="pp-footer-modules" style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '0 10px', marginLeft: 'auto', flexShrink: 0 }}>
               {stage.modules.map((m) => (
                 <span key={m} style={{
                   fontFamily: 'monospace', fontSize: 7, color: '#48647A', letterSpacing: '0.08em', whiteSpace: 'nowrap',

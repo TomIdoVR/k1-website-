@@ -56,15 +56,10 @@ export default function StageScreen({
           }
         }
         @media (max-width: 768px) {
-          .understand-row { flex-wrap: wrap !important; overflow: visible !important; flex: none !important; border-radius: 0 !important; border: none !important; box-shadow: none !important; gap: 8px !important; }
-          .understand-center { order: -1; flex: 0 0 100% !important; width: 100% !important; height: 260px !important; min-height: 220px; border-radius: 10px !important; }
-          .understand-left { flex: 1 !important; min-height: 260px; border-right: none !important; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
-          .understand-right { flex: 1 !important; min-height: 300px; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
-        }
-        @media (max-width: 540px) {
-          .understand-center { height: 240px !important; min-height: 200px !important; border-right: none !important; }
-          .understand-left { flex: 0 0 100% !important; overflow-y: visible !important; border-right: none !important; }
-          .understand-right { flex: 0 0 100% !important; min-height: 320px; }
+          .understand-row { flex-direction: column !important; flex-wrap: nowrap !important; overflow: visible !important; flex: none !important; border-radius: 0 !important; border: none !important; box-shadow: none !important; gap: 10px !important; }
+          .understand-center { order: -1; flex: 0 0 auto !important; width: 100% !important; height: 280px !important; min-height: 240px; border-right: none !important; border-radius: 10px !important; }
+          .understand-left { flex: 0 0 auto !important; width: 100% !important; min-height: 280px; overflow-y: visible !important; border-right: none !important; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
+          .understand-right { flex: 0 0 auto !important; width: 100% !important; min-height: 320px; border-radius: 10px !important; border: 1px solid rgba(59,158,255,0.15) !important; }
           .understand-modules-row { display: grid !important; grid-template-columns: 1fr 1fr; }
         }
       `}</style>

@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.20] 2026-04-16 — Demo: mobile responsiveness fixes for Stage 02 & 03
+
+**Fixed**
+- Stage 02 UNDERSTAND: three-panel cinematic row now stacks fully vertically at ≤768px instead of showing cramped 2-column layout with center panel on top
+- Stage 03 DECIDE: protocol step rows now wrap on mobile — long detail text no longer clips on the right edge
+- Stage 03 DECIDE: "IN PROGRESS" badge drops below step text on mobile and uses smaller type so it no longer squeezes the title/detail column
+- Stage 03 DECIDE: footer data-points strip scrolls horizontally on mobile; active modules row hidden on narrow screens to stop overflow
+- Left-panel step title/detail use `word-break: break-word` so long compound values ("PANIC BUTTON TRIGGERED · ...") wrap cleanly
+
 ## [2.19] 2026-04-16 — Demo Violence: replace highway images with urban plaza-area cameras
 
 **Fixed**
