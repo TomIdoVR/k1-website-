@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.21] 2026-04-17 — Demo DETECT: flow nodes no longer clip subtitles
+
+**Fixed**
+- Detection Logic nodes (CAPTURE, BEHAVIOR ANALYSIS, THREAT RULES, AI PRIORITIZATION, RETROSPECTIVE LOG) were clipping subtitle text with ellipsis — "Aggression + weapon hi…", "Normal behavior · stor…", "3 subjects · 40+ civs" were all cut
+- Node width bumped 220 → 240, height 72 → 82
+- Titles and subtitles now wrap to 2 lines (line-clamp) instead of single-line ellipsis; `word-break: break-word` so long compound values wrap cleanly
+
 ## [2.20] 2026-04-16 — Demo: mobile responsiveness fixes for Stage 02 & 03
 
 **Fixed**

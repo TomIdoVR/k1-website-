@@ -31,8 +31,8 @@ const TYPE_STYLE: Record<DetectFlowNodeType, { tile: string; tileBorder: string;
 
 // Fixed node dimensions — the layout is absolute-positioned inside a viewBox
 // so the whole flow scales cleanly with the container.
-const NODE_W = 220
-const NODE_H = 72
+const NODE_W = 240
+const NODE_H = 82
 const V_GAP  = 46     // vertical gap between nodes
 const H_GAP  = 38     // horizontal gap used for the branch offset
 
@@ -280,12 +280,15 @@ function NodeCard({
           style={{
             fontSize: 10,
             fontWeight: 800,
-            letterSpacing: '0.12em',
+            letterSpacing: '0.1em',
             textTransform: 'uppercase',
             color: '#e7eefc',
-            whiteSpace: 'nowrap',
             overflow: 'hidden',
-            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            lineHeight: 1.25,
+            wordBreak: 'break-word',
           }}
         >
           {node.title}
@@ -295,10 +298,13 @@ function NodeCard({
             fontSize: 9,
             fontFamily: 'var(--font-space-mono), monospace',
             color: 'rgba(173,198,255,0.7)',
-            whiteSpace: 'nowrap',
             overflow: 'hidden',
-            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            lineHeight: 1.3,
             marginTop: 2,
+            wordBreak: 'break-word',
           }}
         >
           {node.subtitle}
