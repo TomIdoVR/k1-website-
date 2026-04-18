@@ -78,7 +78,7 @@ export const medicalScenario: ScenarioConfig = {
           { coords: [29.7345, -95.4680], label: 'AED · CVS Pharmacy' },
         ],
         cameras: [
-          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner', image: '/demo/medical/stage-2-understand.jpg', alert: true },
+          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner', image: '/demo/access-control/cam08-lobby.jpeg', alert: true },
           { coords: [29.7340, -95.4660], label: 'CAM-22 · Westheimer/Wilcrest' },
           { coords: [29.7385, -95.4650], label: 'CAM-08 · Intersection' },
         ],
@@ -131,7 +131,7 @@ export const medicalScenario: ScenarioConfig = {
         ],
         cameras: [
           { label: 'CALL INTAKE · 09:14:22', image: '/demo/medical/stage-1-detect.jpg', alert: true },
-          { label: 'CAM-14 · WESTHEIMER', image: '/demo/medical/stage-3-decide.jpg' },
+          { label: 'CAM-14 · WESTHEIMER', image: '/demo/access-control/cam08-lobby.jpeg' },
         ],
       },
       protocolSteps: [

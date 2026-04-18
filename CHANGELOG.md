@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.36] 2026-04-18 — Medical UNDERSTAND: replace UI-screenshot camera thumbnail with indoor CCTV
+
+**Fixed**
+- The CAM-14 thumbnail on the Medical UNDERSTAND map was showing a UI screenshot of the 911 call interface (`stage-2-understand.jpg`) instead of actual camera footage. Swapped to an indoor lobby CCTV (`cam08-lobby.jpeg`) for a more relevant "camera inside the building" look matching the cardiac-event-at-a-location scenario. Same swap applied to the DECIDE stage CAM-14 thumbnail (was `stage-3-decide.jpg`).
+
+---
+
 ## [2.35] 2026-04-18 — Medical: diversify tactical unit types
 
 **Changed**
