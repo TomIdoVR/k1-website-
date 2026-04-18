@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.24] 2026-04-17 — Medical UNDERSTAND: clearer map markers + bigger camera thumb
+
+**Improved**
+- **Medical Stage 02 UNDERSTAND** — Map now clearly distinguishes caller / AED / camera locations:
+  - Caller marker enlarged with double pulsing ring (radius 11 + 22 + 34) for immediate visibility
+  - AEDs replaced with green medical-services icon badges + permanent always-on labels (was small green dot w/ hover tooltip)
+  - Non-image cameras replaced with blue videocam icon badges + permanent labels (was tiny circle)
+  - Camera thumbnail "skin" enlarged from 160×100 → 220×140 (+38%) for readable live-feed preview on the map
+
+---
+
 ## [2.23] 2026-04-17 — Demo: auto-fit flow charts — no more scroll
 
 **Fixed**

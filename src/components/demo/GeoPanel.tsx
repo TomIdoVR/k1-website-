@@ -54,6 +54,14 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
       .cam-thumb-line { width:1px;height:6px; }
       .cam-thumb-dot { width:7px;height:7px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.85); }
       @keyframes cam-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+      .aed-icon, .cam-icon { background:none!important;border:none!important; }
+      .aed-marker { width:28px;height:28px;display:flex;align-items:center;justify-content:center; }
+      .aed-cross { width:26px;height:26px;border-radius:6px;background:rgba(0,201,138,0.95);border:2px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 0 10px rgba(0,201,138,0.7),0 2px 6px rgba(0,0,0,0.6);animation:aed-pulse 2.4s ease-in-out infinite; }
+      .aed-cross .material-symbols-outlined { font-size:16px;color:#04110c;font-variation-settings:'FILL' 1,'wght' 700; }
+      @keyframes aed-pulse { 0%,100%{box-shadow:0 0 10px rgba(0,201,138,0.7),0 2px 6px rgba(0,0,0,0.6);} 50%{box-shadow:0 0 18px rgba(0,201,138,1),0 2px 6px rgba(0,0,0,0.6);} }
+      .cam-marker { width:26px;height:26px;display:flex;align-items:center;justify-content:center; }
+      .cam-marker-box { width:24px;height:24px;border-radius:5px;background:rgba(59,158,255,0.95);border:2px solid rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;box-shadow:0 0 8px rgba(59,158,255,0.6),0 2px 6px rgba(0,0,0,0.6); }
+      .cam-marker-box .material-symbols-outlined { font-size:14px;color:#04101a;font-variation-settings:'FILL' 1,'wght' 700; }
       .sos-icon { background:none!important;border:none!important;z-index:9999!important; }
       .sos-card { display:flex;flex-direction:column;align-items:center;position:relative;z-index:9999; }
       .sos-card-box { background:rgba(16,2,2,0.96);border:2px solid rgba(255,60,60,0.85);border-radius:5px;padding:7px 14px 5px;text-align:center;box-shadow:0 0 20px rgba(255,40,40,0.5),0 4px 16px rgba(0,0,0,0.9);white-space:nowrap; }
@@ -85,24 +93,36 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
         subdomains: 'abcd', maxZoom: 19,
       }).addTo(map)
 
-      // Caller — red pulsing ring
+      // Caller — red pulsing ring (bigger + pulsing outer ring)
       L.circleMarker(caller.coords, {
-        radius: 9, color: '#FF4560', fillColor: '#FF4560',
-        fillOpacity: 0.9, weight: 2,
-      }).addTo(map).bindTooltip(caller.label, {
+        radius: 11, color: '#FF4560', fillColor: '#FF4560',
+        fillOpacity: 0.95, weight: 3,
+      }).addTo(map).bindTooltip(`● ${caller.label}`, {
         permanent: true, direction: 'right', className: 'geo-tooltip geo-tooltip-caller',
       })
       L.circleMarker(caller.coords, {
-        radius: 18, color: '#FF4560', fillOpacity: 0, weight: 1, opacity: 0.35,
+        radius: 22, color: '#FF4560', fillOpacity: 0, weight: 1.5, opacity: 0.4,
+      }).addTo(map)
+      L.circleMarker(caller.coords, {
+        radius: 34, color: '#FF4560', fillOpacity: 0, weight: 1, opacity: 0.22,
       }).addTo(map)
 
-      // AEDs / units — green dot
+      // AEDs / units — green cross icon with permanent label
       aeds.forEach(({ coords, label }) => {
-        L.circleMarker(coords, {
-          radius: 7, color: '#00C98A', fillColor: '#00C98A',
-          fillOpacity: 0.85, weight: 2,
-        }).addTo(map).bindTooltip(`⊕ ${label}`, {
-          permanent: false, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
+        const aedHtml = `
+          <div class="aed-marker">
+            <div class="aed-cross">
+              <span class="material-symbols-outlined">medical_services</span>
+            </div>
+          </div>`
+        const aedIcon = L.divIcon({
+          className: 'aed-icon',
+          html: aedHtml,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+        })
+        L.marker(coords, { icon: aedIcon }).addTo(map).bindTooltip(label, {
+          permanent: true, direction: 'right', className: 'geo-tooltip geo-tooltip-aed',
         })
       })
 
@@ -115,7 +135,7 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           const labelColor  = alert ? '#FF8C9E' : '#adc6ff'
           const lineColor   = alert ? 'rgba(255,95,95,0.45)' : 'rgba(59,158,255,0.45)'
 
-          const W = 160, TH = 100
+          const W = 220, TH = 140
           const html = `
             <div class="cam-thumb">
               <div class="cam-thumb-img" style="width:${W}px;height:${TH}px;border:1.5px solid ${borderColor};">
@@ -144,11 +164,20 @@ export default function GeoPanel({ caller, aeds, cameras, sosEvent }: GeoPanelPr
           })
           L.marker(coords, { icon }).addTo(map)
         } else {
-          L.circleMarker(coords, {
-            radius: 6, color: '#adc6ff', fillColor: '#3B9EFF',
-            fillOpacity: 0.75, weight: 2,
-          }).addTo(map).bindTooltip(`▣ ${label}`, {
-            permanent: false, direction: 'top', className: 'geo-tooltip geo-tooltip-camera',
+          const camHtml = `
+            <div class="cam-marker">
+              <div class="cam-marker-box">
+                <span class="material-symbols-outlined">videocam</span>
+              </div>
+            </div>`
+          const camIcon = L.divIcon({
+            className: 'cam-icon',
+            html: camHtml,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13],
+          })
+          L.marker(coords, { icon: camIcon }).addTo(map).bindTooltip(label, {
+            permanent: true, direction: 'right', className: 'geo-tooltip geo-tooltip-camera',
           })
         }
       })
