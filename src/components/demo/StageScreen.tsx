@@ -487,169 +487,159 @@ export default function StageScreen({
               </h2>
             </div>
 
-            {/* Admin card — left + right panels */}
+            {/* Admin card — single full-width column: header → transcript → field chips → actions */}
             <div style={{
               flex: 1, minHeight: 0,
-              display: 'flex',
-              flexDirection: 'row-reverse',
+              display: 'flex', flexDirection: 'column',
               borderRadius: 10,
               overflow: 'hidden',
               border: '1px solid rgba(59,158,255,0.15)',
               boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
+              background: 'linear-gradient(180deg, rgba(10,18,32,0.98) 0%, rgba(6,12,22,0.98) 100%)',
               fontFamily: 'var(--font-space-mono), monospace',
             }}>
-              {/* RIGHT — incident form */}
+              {/* ── Top bar: ACTIVE 911 CALL + timer + call controls + waveform ── */}
               <div style={{
-                width: '40%', padding: '20px 24px',
-                borderRight: '1px solid rgba(59,158,255,0.1)',
-                display: 'flex', flexDirection: 'column',
-                background: 'rgba(10,20,36,0.96)',
+                display: 'flex', alignItems: 'center', gap: 14,
+                padding: '14px 24px',
+                borderBottom: '1px solid rgba(255,69,96,0.18)',
+                background: 'rgba(6,12,22,0.6)',
+                flexWrap: 'wrap',
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#FF4560' }} className="animate-pulse" />
-                    <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.85)' }}>
-                      ACTIVE 911 CALL — ME-0847
-                    </span>
-                  </div>
-                  {/* Call timer */}
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em' }}>
-                    00:00:03
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span className="animate-pulse" style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#FF4560', boxShadow: '0 0 12px rgba(255,69,96,0.8)' }} />
+                  <span style={{ fontSize: '12px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#FF8C9E' }}>
+                    LIVE CALL
+                  </span>
+                  <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,140,158,0.65)', paddingLeft: 6, borderLeft: '1px solid rgba(255,140,158,0.25)', marginLeft: 6 }}>
+                    ME-0847
                   </span>
                 </div>
-                {/* Call controls strip */}
-                <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
+
+                {/* Waveform */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 3, height: 28, flex: 1, justifyContent: 'center', minWidth: 140 }}>
+                  {[0.4,0.7,1,0.6,0.9,0.5,0.8,1,0.6,0.75,0.45,0.9,0.7,0.5,1,0.65,0.8,0.4,0.95,0.6,0.55,0.85,0.7].map((h, i) => (
+                    <div
+                      key={i}
+                      className="animate-pulse"
+                      style={{
+                        width: 3,
+                        borderRadius: 2,
+                        background: '#FF4560',
+                        opacity: 0.85,
+                        height: `${h * 28}px`,
+                        animationDelay: `${(i * 0.07).toFixed(2)}s`,
+                        animationDuration: `${0.6 + (i % 4) * 0.15}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Call controls */}
+                <div style={{ display: 'flex', gap: 6 }}>
                   {[
                     { icon: 'mic', label: 'MUTE', active: false },
                     { icon: 'pause', label: 'HOLD', active: false },
-                    { icon: 'record_voice_over', label: 'RECORD', active: true },
+                    { icon: 'record_voice_over', label: 'REC', active: true },
                   ].map(ctrl => (
                     <div key={ctrl.label} style={{
                       display: 'flex', alignItems: 'center', gap: 5,
-                      padding: '5px 10px', borderRadius: 5,
-                      background: ctrl.active ? 'rgba(255,69,96,0.12)' : 'rgba(255,255,255,0.04)',
-                      border: ctrl.active ? '1px solid rgba(255,69,96,0.3)' : '1px solid rgba(255,255,255,0.07)',
+                      padding: '5px 9px', borderRadius: 5,
+                      background: ctrl.active ? 'rgba(255,69,96,0.14)' : 'rgba(255,255,255,0.04)',
+                      border: ctrl.active ? '1px solid rgba(255,69,96,0.35)' : '1px solid rgba(255,255,255,0.07)',
                     }}>
-                      <span className="material-symbols-outlined" style={{ fontSize: 11, color: ctrl.active ? '#FF8C9E' : 'rgba(255,255,255,0.3)' }}>{ctrl.icon}</span>
-                      <span style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.15em', color: ctrl.active ? '#FF8C9E' : 'rgba(255,255,255,0.3)' }}>{ctrl.label}</span>
+                      <span className="material-symbols-outlined" style={{ fontSize: 12, color: ctrl.active ? '#FF8C9E' : 'rgba(255,255,255,0.35)' }}>{ctrl.icon}</span>
+                      <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.16em', color: ctrl.active ? '#FF8C9E' : 'rgba(255,255,255,0.4)' }}>{ctrl.label}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-                  {stage.detectCard.fields.map((f) => (
-                    <div key={f.key} style={{
-                      display: 'flex', alignItems: 'baseline',
-                      padding: '7px 12px', borderRadius: 5,
-                      background: f.highlight ? 'rgba(255,69,96,0.06)' : 'rgba(255,255,255,0.03)',
-                      border: f.highlight ? '1px solid rgba(255,69,96,0.2)' : '1px solid rgba(255,255,255,0.05)',
-                    }}>
-                      <span style={{ width: 120, flexShrink: 0, fontSize: '8px', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)' }}>
-                        {f.key}
-                      </span>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: f.highlight ? '#FF8C9E' : '#c8dff0', letterSpacing: '0.03em' }}>
-                        {f.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: 'flex', gap: 8, marginTop: 'auto', paddingTop: 14 }}>
-                  <button style={{ flex: 1, padding: '7px 0', borderRadius: 5, border: 'none', background: '#00C98A', color: '#fff', fontSize: '8px', fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', cursor: 'default' }}>
-                    ACCEPT &amp; DISPATCH
-                  </button>
-                  <button style={{ padding: '7px 14px', borderRadius: 5, border: '1px solid rgba(255,255,255,0.08)', background: 'transparent', color: 'rgba(255,255,255,0.3)', fontSize: '8px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'default' }}>
-                    TRANSFER
-                  </button>
-                </div>
+
+                {/* Timer */}
+                <span style={{ fontSize: '14px', fontWeight: 800, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em', tabularNums: 'tabular-nums' as any }}>
+                  00:00:03
+                </span>
               </div>
 
-              {/* RIGHT — live transcript (DOMINANT) */}
+              {/* ── AI TRANSCRIPT heading ── */}
               <div style={{
-                flex: 1, padding: '22px 28px 20px',
-                background: 'linear-gradient(180deg, rgba(10,18,32,0.98) 0%, rgba(6,12,22,0.98) 100%)',
-                display: 'flex', flexDirection: 'column',
+                display: 'flex', alignItems: 'center', gap: 8,
+                padding: '14px 28px 10px',
               }}>
-                {/* Live call header + waveform — bigger + bolder */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span className="animate-pulse" style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#FF4560', boxShadow: '0 0 12px rgba(255,69,96,0.8)' }} />
-                    <span style={{ fontSize: '12px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#FF8C9E' }}>
-                      LIVE CALL
-                    </span>
-                  </div>
-                  {/* Animated waveform bars — taller */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 3, height: 32 }}>
-                    {[0.4,0.7,1,0.6,0.9,0.5,0.8,1,0.6,0.75,0.45,0.9,0.7,0.5,1,0.65,0.8,0.4,0.95,0.6].map((h, i) => (
-                      <div
-                        key={i}
-                        className="animate-pulse"
-                        style={{
-                          width: 3,
-                          borderRadius: 2,
-                          background: '#FF4560',
-                          opacity: 0.85,
-                          height: `${h * 32}px`,
-                          animationDelay: `${(i * 0.07).toFixed(2)}s`,
-                          animationDuration: `${0.6 + (i % 4) * 0.15}s`,
-                        }}
-                      />
+                <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#FF8C9E' }}>graphic_eq</span>
+                <span style={{ fontSize: '11px', fontWeight: 900, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#FF8C9E' }}>
+                  AI TRANSCRIPT
+                </span>
+                <span style={{ marginLeft: 'auto', fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>
+                  REAL-TIME · EN
+                </span>
+              </div>
+
+              {/* ── Transcript — full width, dominant ── */}
+              <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '0 28px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {(stage.detectCard.transcript ?? []).map((line, i) => {
+                  const isCaller = line.startsWith('CALLER')
+                  return (
+                    <div key={i} style={{
+                      display: 'flex', gap: 16, alignItems: 'flex-start',
+                      padding: '12px 16px',
+                      borderRadius: 6,
+                      background: isCaller ? 'rgba(255,69,96,0.07)' : 'rgba(59,158,255,0.05)',
+                      borderLeft: `3px solid ${isCaller ? '#FF4560' : '#3B9EFF'}`,
+                    }}>
+                      <span style={{ flexShrink: 0, fontSize: '11px', fontWeight: 900, letterSpacing: '0.2em', color: isCaller ? '#FF8C9E' : '#adc6ff', paddingTop: 4, width: 84 }}>
+                        {isCaller ? 'CALLER' : 'DISPATCH'}
+                      </span>
+                      <span style={{ fontSize: '18px', color: isCaller ? '#FFD4D4' : '#D4E4FF', lineHeight: 1.45, fontWeight: 600, letterSpacing: '0.005em' }}>
+                        {line.replace(/^(CALLER|DISPATCH): /, '')}
+                      </span>
+                    </div>
+                  )
+                })}
+                <div style={{ display: 'flex', gap: 16, alignItems: 'center', padding: '12px 16px', opacity: 0.55 }}>
+                  <span style={{ flexShrink: 0, fontSize: '11px', fontWeight: 900, letterSpacing: '0.2em', color: '#FF8C9E', width: 84 }}>CALLER</span>
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {[0,1,2].map(j => (
+                      <span key={j} className="animate-pulse" style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: '#FF8C9E', animationDelay: `${j * 0.2}s` }} />
                     ))}
                   </div>
                 </div>
+              </div>
 
-                {/* AI TRANSCRIPT heading — prominent */}
-                <div style={{
-                  display: 'flex', alignItems: 'center', gap: 8,
-                  padding: '8px 0 10px', marginBottom: 14,
-                  borderBottom: '1px solid rgba(255,69,96,0.2)',
-                }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#FF8C9E' }}>graphic_eq</span>
-                  <span style={{ fontSize: '11px', fontWeight: 900, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#FF8C9E' }}>
-                    AI TRANSCRIPT
-                  </span>
-                  <span style={{ marginLeft: 'auto', fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>
-                    REAL-TIME · EN
-                  </span>
-                </div>
-
-                {/* Transcript lines — BIG, DOMINANT */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
-                  {(stage.detectCard.transcript ?? []).map((line, i) => {
-                    const isCaller = line.startsWith('CALLER')
-                    return (
-                      <div key={i} style={{
-                        display: 'flex', gap: 14, alignItems: 'flex-start',
-                        padding: '10px 12px',
-                        borderRadius: 6,
-                        background: isCaller ? 'rgba(255,69,96,0.07)' : 'rgba(59,158,255,0.05)',
-                        borderLeft: `3px solid ${isCaller ? '#FF4560' : '#3B9EFF'}`,
-                      }}>
-                        <span style={{ flexShrink: 0, fontSize: '10px', fontWeight: 900, letterSpacing: '0.18em', color: isCaller ? '#FF8C9E' : '#adc6ff', paddingTop: 3, width: 72 }}>
-                          {isCaller ? 'CALLER' : 'DISPATCH'}
-                        </span>
-                        <span style={{ fontSize: '16px', color: isCaller ? '#FFD4D4' : '#D4E4FF', lineHeight: 1.45, fontWeight: 600, letterSpacing: '0.005em' }}>
-                          {line.replace(/^(CALLER|DISPATCH): /, '')}
-                        </span>
-                      </div>
-                    )
-                  })}
-                  <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '10px 12px', opacity: 0.55 }}>
-                    <span style={{ flexShrink: 0, fontSize: '10px', fontWeight: 900, letterSpacing: '0.18em', color: '#FF8C9E', width: 72 }}>CALLER</span>
-                    <div style={{ display: 'flex', gap: 5 }}>
-                      {[0,1,2].map(j => (
-                        <span key={j} className="animate-pulse" style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#FF8C9E', animationDelay: `${j * 0.2}s` }} />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div style={{ marginTop: 14, display: 'flex', gap: 7, flexWrap: 'wrap' }}>
-                  {['CARDIAC', 'UNCONSCIOUS', 'ADULT MALE', 'P1 PRIORITY'].map(tag => (
-                    <span key={tag} style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.14em', padding: '4px 11px', borderRadius: 4, background: 'rgba(255,69,96,0.12)', border: '1px solid rgba(255,69,96,0.35)', color: '#FF8C9E' }}>
-                      {tag}
+              {/* ── Field chips row — Incident / Priority / Caller / Location / ... ── */}
+              <div style={{
+                padding: '14px 24px 12px',
+                borderTop: '1px solid rgba(59,158,255,0.12)',
+                background: 'rgba(6,12,22,0.6)',
+                display: 'flex', flexWrap: 'wrap', gap: 8,
+              }}>
+                {stage.detectCard.fields.map((f) => {
+                  const hi = !!f.highlight
+                  return (
+                    <span key={f.key} style={{
+                      display: 'inline-flex', alignItems: 'baseline', gap: 8,
+                      padding: '7px 12px', borderRadius: 999,
+                      background: hi ? 'rgba(255,69,96,0.1)' : 'rgba(173,198,255,0.06)',
+                      border: hi ? '1px solid rgba(255,69,96,0.35)' : '1px solid rgba(173,198,255,0.18)',
+                    }}>
+                      <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: hi ? 'rgba(255,140,158,0.75)' : 'rgba(173,198,255,0.55)' }}>
+                        {f.key}
+                      </span>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: hi ? '#FF8C9E' : '#d4e4ff', letterSpacing: '0.03em' }}>
+                        {f.value}
+                      </span>
                     </span>
-                  ))}
-                </div>
+                  )
+                })}
+              </div>
+
+              {/* ── Action strip ── */}
+              <div style={{ display: 'flex', gap: 8, padding: '10px 24px 14px' }}>
+                <button style={{ flex: 1, padding: '9px 0', borderRadius: 5, border: 'none', background: '#00C98A', color: '#04110c', fontSize: '10px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', cursor: 'default' }}>
+                  ACCEPT &amp; DISPATCH
+                </button>
+                <button style={{ padding: '9px 18px', borderRadius: 5, border: '1px solid rgba(255,255,255,0.1)', background: 'transparent', color: 'rgba(255,255,255,0.5)', fontSize: '10px', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', cursor: 'default' }}>
+                  TRANSFER
+                </button>
               </div>
             </div>
           </div>

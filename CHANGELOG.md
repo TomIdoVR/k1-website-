@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.26] 2026-04-18 — Medical DETECT: full-width transcript + field chips
+
+**Changed**
+- **Medical Stage 01 DETECT** — Removed the confusing two-column splitter. Now a single full-width card:
+  1. Top bar: LIVE CALL + ME-0847 + waveform + call controls (MUTE/HOLD/REC) + timer
+  2. AI TRANSCRIPT heading row
+  3. **Full-width transcript** — lines now span the entire width at 18px body text for maximum readability
+  4. Field chips row — Incident type, Caller, Address, Priority, Call duration, Unit assigned rendered as inline pills instead of stacked form rows
+  5. ACCEPT & DISPATCH / TRANSFER action strip
+- Highlighted fields (CARDIAC EVENT, P1 · LIFE THREATENING) use red-tinted pill; others use neutral blue
+
+---
+
 ## [2.25] 2026-04-18 — Medical DETECT: dominant live-call transcript
 
 **Improved**
