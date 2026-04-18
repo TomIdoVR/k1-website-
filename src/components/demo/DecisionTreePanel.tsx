@@ -20,20 +20,26 @@ export default function DecisionTreePanel({ tree }: Props) {
         .dt-option-card { min-width: 0 !important; box-sizing: border-box; }
         .dt-options-scroll > div { min-width: 0 !important; }
 
-        /* Mid viewports (tablet / narrow desktop) — compact + let panel grow */
+        /* Mid viewports (tablet / narrow desktop) — everything fits in one view, no scroll */
         @media (max-width: 1100px) {
-          .dt-root { overflow: visible !important; }
-          .dt-tree-section { padding: 12px 14px 6px !important; gap: 5px !important; }
-          .dt-tree-node { padding: 9px 12px !important; gap: 10px !important; }
-          .dt-tree-node-icon { width: 30px !important; height: 30px !important; }
-          .dt-tree-node-label { font-size: 12px !important; letter-spacing: 0.01em !important; }
-          .dt-tree-node-detail { font-size: 10px !important; }
-          .dt-options-scroll { overflow-y: visible !important; flex: none !important; padding: 12px 14px 18px !important; }
-          .dt-option-card { padding: 10px !important; gap: 6px !important; }
-          .dt-option-icon { width: 38px !important; height: 38px !important; }
-          .dt-option-icon span { font-size: 20px !important; }
-          .dt-option-title { font-size: 11px !important; margin-bottom: 2px !important; }
-          .dt-option-desc { font-size: 10px !important; line-height: 1.35 !important; }
+          .dt-root { overflow: hidden !important; }
+          .dt-tree-section { padding: 8px 12px 2px !important; gap: 2px !important; }
+          .dt-tree-node { padding: 6px 10px !important; gap: 8px !important; }
+          .dt-tree-node-icon { width: 24px !important; height: 24px !important; }
+          .dt-tree-node-icon span { font-size: 14px !important; }
+          .dt-tree-node-label { font-size: 10px !important; letter-spacing: 0.01em !important; }
+          .dt-tree-node-detail { font-size: 9px !important; margin-top: 1px !important; }
+          .dt-tree-arrow-svg { height: 10px !important; }
+          .dt-options-scroll { overflow: hidden !important; flex: 1 !important; min-height: 0 !important; padding: 8px 12px 12px !important; }
+          .dt-options-header { margin-bottom: 6px !important; font-size: 8px !important; }
+          .dt-options-grid { gap: 6px !important; }
+          .dt-option-card { padding: 8px !important; gap: 4px !important; }
+          .dt-option-icon { width: 28px !important; height: 28px !important; border-radius: 6px !important; }
+          .dt-option-icon span { font-size: 16px !important; }
+          .dt-option-title { font-size: 10px !important; margin-bottom: 0 !important; }
+          .dt-option-desc { display: none !important; }
+          .dt-option-rec-pill { font-size: 6px !important; padding: 1px 5px !important; top: 5px !important; right: 5px !important; }
+          .dt-option-rec-pill span { font-size: 8px !important; }
         }
 
         /* True mobile — stack + shrink, no scroll */
@@ -84,18 +90,19 @@ export default function DecisionTreePanel({ tree }: Props) {
         </div>
 
         {/* ── Section 2 — Visual option cards ── */}
-        <div className="dt-options-scroll" style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 18px' }}>
-          <div style={{
+        <div className="dt-options-scroll" style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 18px', display: 'flex', flexDirection: 'column' }}>
+          <div className="dt-options-header" style={{
             display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10,
             fontSize: 9, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.7)',
           }}>
             <span style={{ width: 3, height: 11, borderRadius: 2, background: '#3B9EFF' }} />
             Choose an Action
           </div>
-          <div style={{
+          <div className="dt-options-grid" style={{
             display: 'grid',
             gridTemplateColumns: tree.options.length === 4 ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(150px, 1fr))',
             gap: 10,
+            flex: 1,
           }}>
             {tree.options.map((opt) => <OptionCard key={opt.id} opt={opt} />)}
           </div>
@@ -155,7 +162,7 @@ function TreeNode({ node, isLast }: { node: DecisionTree['tree'][number]; isLast
 
 function TreeArrow() {
   return (
-    <svg width="18" height="16" viewBox="0 0 18 16" fill="none" style={{ animation: 'dt-arrow 1.6s ease-in-out infinite' }}>
+    <svg className="dt-tree-arrow-svg" width="18" height="16" viewBox="0 0 18 16" fill="none" style={{ animation: 'dt-arrow 1.6s ease-in-out infinite' }}>
       <path d="M9 1 L9 12" stroke="rgba(173,198,255,0.5)" strokeWidth="1.5" strokeLinecap="round" />
       <path d="M5 10 L9 14 L13 10" stroke="rgba(173,198,255,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </svg>
@@ -182,7 +189,7 @@ function OptionCard({ opt }: { opt: DecisionTree['options'][number] }) {
       overflow: 'hidden',
     }}>
       {rec && (
-        <span style={{
+        <span className="dt-option-rec-pill" style={{
           position: 'absolute', top: 8, right: 8,
           display: 'inline-flex', alignItems: 'center', gap: 4,
           padding: '2px 7px', borderRadius: 9999,

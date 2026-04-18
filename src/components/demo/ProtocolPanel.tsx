@@ -41,7 +41,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
         .pp-outer-wrap { height: auto !important; overflow-y: visible !important; }
         .pp-main-row { flex: none !important; overflow: visible !important; flex-direction: column !important; gap: 0 !important; }
         .pp-left-panel { flex: none !important; overflow-y: visible !important; min-height: 260px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
-        .pp-center-panel { flex: none !important; min-height: 620px; height: auto !important; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; overflow: visible !important; }
+        .pp-center-panel { flex: none !important; min-height: 540px; height: auto !important; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; overflow: hidden !important; }
         .pp-camera-panel { flex: none !important; min-height: 320px; }
       }
       @media (max-width: 768px) {

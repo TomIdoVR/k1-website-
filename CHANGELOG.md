@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.31] 2026-04-18 — DECIDE: fit everything in one view, no scroll
+
+**Changed**
+- DecisionTreePanel at ≤1100px now fits all content in one viewport (tree + 4 option cards) without internal scroll — per user requirement "all the information should appear in one view"
+- Tree nodes aggressively compacted: 24px icon (was 30), 10px label (was 12), 9px detail, 6×10 padding
+- Option card descriptions **hidden** at ≤1100px — just title + icon (info sits in the fuller tree above)
+- Option icon shrunk to 28px (was 38), title to 10px
+- AI PICK recommendation pill miniaturized (6px text, 1×5 padding)
+- Panel overflow re-locked to `hidden` with a 540px min-height floor — no internal scrollbar
+
+---
+
 ## [2.30] 2026-04-18 — Fix: DECIDE option cards cut at tablet bottom
 
 **Fixed**
