@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.38] 2026-04-18 — School: drop extra cameras, keep only alerting CAM-07
+
+**Changed**
+- UNDERSTAND map now shows a single camera (the alerting CAM-07 · Bldg A Hallway) positioned well clear of the SOS / SRO / Lincoln Middle School cluster. Removed CAM-01, CAM-12, CAM-15 from the UNDERSTAND map entirely. DECIDE stage also trimmed from two cameras to one to avoid any overlap.
+
+---
+
 ## [2.37] 2026-04-18 — Fix: School UNDERSTAND map camera thumbnails overlapping
 
 **Fixed**

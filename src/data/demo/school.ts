@@ -82,10 +82,7 @@ export const schoolScenario: ScenarioConfig = {
           { coords: [29.7562, -95.3700], label: 'UNIT-14 · 0.4 mi' },
         ],
         cameras: [
-          { coords: [29.7540, -95.3710], label: 'CAM-07 · Bldg A Hallway', image: '/demo/school/cam07-hallway.jpg', alert: true },
-          { coords: [29.7572, -95.3650], label: 'CAM-01 · Main Entrance' },
-          { coords: [29.7528, -95.3655], label: 'CAM-12 · Parking Lot' },
-          { coords: [29.7570, -95.3698], label: 'CAM-15 · Bldg A 2F' },
+          { coords: [29.7525, -95.3735], label: 'CAM-07 · Bldg A Hallway', image: '/demo/school/cam07-hallway.jpg', alert: true },
         ],
         sosEvent: { coords: [29.7553, -95.3643], label: '⚠ SOS BUTTON EVENT', sublabel: 'ROOM 214 · BLDG A 2F' },
         blueprintPanel: 'school',
@@ -130,7 +127,6 @@ export const schoolScenario: ScenarioConfig = {
         ],
         cameras: [
           { label: 'CAM-07 · BLDG A HALLWAY', image: '/demo/school/cam07-hallway.jpg',  alert: true },
-          { label: 'CAM-01 · MAIN ENTRANCE',  image: '/demo/school/cam01-entrance.jpg' },
         ],
       },
       protocolSteps: [
