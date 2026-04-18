@@ -7,6 +7,21 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.28] 2026-04-18 — Medical DETECT: compact, color-coded field chips
+
+**Changed**
+- Field chips on the 911 Call card are now **much smaller** (3×8px padding, 7px label + 9px value, 4px radius flat tags instead of full pills)
+- Each chip gets a **distinct color** per category so they visually separate from the red transcript:
+  - INCIDENT TYPE → amber
+  - CALLER → blue
+  - ADDRESS → teal
+  - PRIORITY → red (alert)
+  - CALL DURATION → neutral gray
+  - UNIT ASSIGNED → purple
+- Chips now fit in 1–2 rows, freeing vertical space for the transcript
+
+---
+
 ## [2.27] 2026-04-18 — Fix: TS build error (invalid `tabularNums` CSS prop)
 
 **Fixed**

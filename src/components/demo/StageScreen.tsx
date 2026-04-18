@@ -606,31 +606,47 @@ export default function StageScreen({
               </div>
 
               {/* ── Field chips row — Incident / Priority / Caller / Location / ... ── */}
-              <div style={{
-                padding: '14px 24px 12px',
-                borderTop: '1px solid rgba(59,158,255,0.12)',
-                background: 'rgba(6,12,22,0.6)',
-                display: 'flex', flexWrap: 'wrap', gap: 8,
-              }}>
-                {stage.detectCard.fields.map((f) => {
-                  const hi = !!f.highlight
-                  return (
-                    <span key={f.key} style={{
-                      display: 'inline-flex', alignItems: 'baseline', gap: 8,
-                      padding: '7px 12px', borderRadius: 999,
-                      background: hi ? 'rgba(255,69,96,0.1)' : 'rgba(173,198,255,0.06)',
-                      border: hi ? '1px solid rgba(255,69,96,0.35)' : '1px solid rgba(173,198,255,0.18)',
-                    }}>
-                      <span style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase', color: hi ? 'rgba(255,140,158,0.75)' : 'rgba(173,198,255,0.55)' }}>
-                        {f.key}
-                      </span>
-                      <span style={{ fontSize: '11px', fontWeight: 800, color: hi ? '#FF8C9E' : '#d4e4ff', letterSpacing: '0.03em' }}>
-                        {f.value}
-                      </span>
-                    </span>
-                  )
-                })}
-              </div>
+              {(() => {
+                // Distinct color per field category — much smaller + clearly different from transcript
+                const palette: Record<string, { border: string; bg: string; key: string; val: string }> = {
+                  'INCIDENT TYPE': { border: 'rgba(255,170,80,0.4)',  bg: 'rgba(255,170,80,0.08)', key: 'rgba(255,200,140,0.7)', val: '#FFC88C' },
+                  'CALLER':        { border: 'rgba(120,200,255,0.35)', bg: 'rgba(120,200,255,0.06)', key: 'rgba(180,220,255,0.6)', val: '#BCE0FF' },
+                  'ADDRESS':       { border: 'rgba(120,220,200,0.35)', bg: 'rgba(120,220,200,0.06)', key: 'rgba(170,230,210,0.6)', val: '#B0E8D4' },
+                  'PRIORITY':      { border: 'rgba(255,69,96,0.5)',    bg: 'rgba(255,69,96,0.1)',   key: 'rgba(255,160,175,0.8)', val: '#FF8C9E' },
+                  'CALL DURATION': { border: 'rgba(200,200,220,0.25)', bg: 'rgba(200,200,220,0.04)', key: 'rgba(200,210,230,0.55)', val: '#D8DEF0' },
+                  'UNIT ASSIGNED': { border: 'rgba(190,140,240,0.35)', bg: 'rgba(190,140,240,0.06)', key: 'rgba(210,180,250,0.6)', val: '#D6BFF5' },
+                }
+                const defaultStyle = { border: 'rgba(173,198,255,0.2)', bg: 'rgba(173,198,255,0.04)', key: 'rgba(173,198,255,0.5)', val: '#d4e4ff' }
+
+                return (
+                  <div style={{
+                    padding: '10px 24px 8px',
+                    borderTop: '1px solid rgba(59,158,255,0.12)',
+                    background: 'rgba(6,12,22,0.6)',
+                    display: 'flex', flexWrap: 'wrap', gap: 5,
+                  }}>
+                    {stage.detectCard.fields.map((f) => {
+                      const c = palette[f.key.toUpperCase()] ?? defaultStyle
+                      return (
+                        <span key={f.key} style={{
+                          display: 'inline-flex', alignItems: 'center', gap: 5,
+                          padding: '3px 8px', borderRadius: 4,
+                          background: c.bg,
+                          border: `1px solid ${c.border}`,
+                          lineHeight: 1.2,
+                        }}>
+                          <span style={{ fontSize: '7px', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: c.key }}>
+                            {f.key}
+                          </span>
+                          <span style={{ fontSize: '9px', fontWeight: 800, color: c.val, letterSpacing: '0.02em' }}>
+                            {f.value}
+                          </span>
+                        </span>
+                      )
+                    })}
+                  </div>
+                )
+              })()}
 
               {/* ── Action strip ── */}
               <div style={{ display: 'flex', gap: 8, padding: '10px 24px 14px' }}>
