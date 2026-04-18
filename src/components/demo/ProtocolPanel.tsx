@@ -37,7 +37,7 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
       .pp-camera-pip { width: 100%; flex: 1; display: flex; flex-direction: column; min-height: 0; }
       .pp-camera-img { width: 100%; flex: 1; min-height: 0; }
       .demo-stage-nav-sublabel { display: block; }
-      @media (max-width: 1100px) {
+      @media (max-width: 1280px) {
         .pp-outer-wrap { height: auto !important; overflow-y: visible !important; }
         .pp-main-row { flex: none !important; overflow: visible !important; flex-direction: column !important; gap: 0 !important; }
         .pp-left-panel { flex: none !important; overflow-y: visible !important; min-height: 260px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }

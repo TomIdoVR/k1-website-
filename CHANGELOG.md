@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.32] 2026-04-18 — Raise compact breakpoint to ≤1280px
+
+**Changed**
+- ProtocolPanel and DecisionTreePanel compact tier now triggers at **≤1280px** (was 1100px) — covers typical laptop browser windows that were previously showing the full desktop layout but didn't have enough height for all content
+
+---
+
 ## [2.31] 2026-04-18 — DECIDE: fit everything in one view, no scroll
 
 **Changed**

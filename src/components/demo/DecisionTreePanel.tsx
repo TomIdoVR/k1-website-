@@ -21,7 +21,7 @@ export default function DecisionTreePanel({ tree }: Props) {
         .dt-options-scroll > div { min-width: 0 !important; }
 
         /* Mid viewports (tablet / narrow desktop) — everything fits in one view, no scroll */
-        @media (max-width: 1100px) {
+        @media (max-width: 1280px) {
           .dt-root { overflow: hidden !important; }
           .dt-tree-section { padding: 8px 12px 2px !important; gap: 2px !important; }
           .dt-tree-node { padding: 6px 10px !important; gap: 8px !important; }
