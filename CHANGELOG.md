@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.34] 2026-04-18 — Fix: Medical incident-area cameras show UI screenshots
+
+**Fixed**
+- CAM-14 and CAM-22 on the Medical "Incident Area Cameras" video wall were pointing to UI screenshots (`stage-2-understand.jpg`, `stage-3-decide.jpg`) instead of actual camera footage. Swapped to real CCTV images (`cctv-westheimer.jpeg`, `cctv-allen.jpeg`). CAM-81 also rotated to a different CCTV to avoid duplication with CAM-14.
+
+---
+
 ## [2.33] 2026-04-18 — DecisionTreePanel: rewrite with auto-scale canvas
 
 **Changed**

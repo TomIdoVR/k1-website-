@@ -158,9 +158,9 @@ export const medicalScenario: ScenarioConfig = {
       videoWall: {
         title: 'Incident Area Cameras',
         tiles: [
-          { id: 'CAM-14',  label: 'Westheimer/Gessner',  image: '/demo/medical/stage-2-understand.jpg',  status: 'tracking' },
-          { id: 'CAM-22',  label: 'Westheimer/Wilcrest', image: '/demo/medical/stage-3-decide.jpg',      status: 'tracking' },
-          { id: 'CAM-81',  label: 'Westheimer Rd',       image: '/demo/lpr/cctv-westheimer.jpeg',         status: 'monitoring' },
+          { id: 'CAM-14',  label: 'Westheimer/Gessner',  image: '/demo/lpr/cctv-westheimer.jpeg',         status: 'tracking' },
+          { id: 'CAM-22',  label: 'Westheimer/Wilcrest', image: '/demo/lpr/cctv-allen.jpeg',              status: 'tracking' },
+          { id: 'CAM-81',  label: 'Westheimer Rd',       image: '/demo/lpr/cctv-memorial.jpeg',           status: 'monitoring' },
           { id: 'CAM-94',  label: 'Kirby Dr',            image: '/demo/lpr/cctv-kirby.jpeg',              status: 'monitoring' },
           { id: 'CAM-106', label: 'Shepherd Dr',         image: '/demo/lpr/cctv-shepherd.jpeg',           status: 'monitoring' },
           { id: 'CAM-118', label: 'Allen Pkwy',          image: '/demo/lpr/cctv-allen.jpeg',              status: 'monitoring' },
