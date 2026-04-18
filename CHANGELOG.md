@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.37] 2026-04-18 — Fix: School UNDERSTAND map camera thumbnails overlapping
+
+**Fixed**
+- The SOS-button scenario's UNDERSTAND map was rendering four 220×140 camera thumbnails stacked on top of each other. Now only the alerting camera (CAM-07 · Bldg A Hallway) shows a live thumbnail; the other three (CAM-01, CAM-12, CAM-15) fall back to small video-icon markers with permanent labels. Also spread the coordinates wider so the icon markers don't collide.
+
+---
+
 ## [2.36] 2026-04-18 — Medical UNDERSTAND: replace UI-screenshot camera thumbnail with indoor CCTV
 
 **Fixed**
