@@ -15,19 +15,40 @@ export default function DecisionTreePanel({ tree }: Props) {
         @keyframes dt-node-pulse { 0%,100%{ box-shadow: 0 0 0 1px rgba(59,158,255,0.35), 0 0 18px rgba(59,158,255,0.14);} 50%{ box-shadow: 0 0 0 1px rgba(59,158,255,0.55), 0 0 28px rgba(59,158,255,0.25);} }
         @keyframes dt-rec-glow { 0%,100%{ box-shadow: 0 0 0 1px rgba(16,185,129,0.45), 0 0 28px rgba(16,185,129,0.22);} 50%{ box-shadow: 0 0 0 1px rgba(16,185,129,0.7), 0 0 44px rgba(16,185,129,0.4);} }
         @keyframes dt-arrow { 0%,100%{opacity:0.35} 50%{opacity:0.9} }
-        @media (max-width: 768px) {
-          .dt-root { overflow: visible !important; }
-          .dt-tree-section { padding: 12px 14px 4px !important; gap: 4px !important; }
-          .dt-tree-node { min-width: 0 !important; width: 100% !important; max-width: none !important; padding: 8px 12px !important; gap: 10px !important; }
-          .dt-tree-node-icon { width: 28px !important; height: 28px !important; }
-          .dt-tree-node-label { font-size: 12px !important; }
+        /* Always fluid — tree nodes never wider than container */
+        .dt-tree-node { width: 100% !important; max-width: 100% !important; min-width: 0 !important; box-sizing: border-box; }
+        .dt-option-card { min-width: 0 !important; box-sizing: border-box; }
+        .dt-options-scroll > div { min-width: 0 !important; }
+
+        /* Mid viewports (tablet / narrow desktop) — compact */
+        @media (max-width: 1100px) {
+          .dt-tree-section { padding: 12px 14px 6px !important; gap: 5px !important; }
+          .dt-tree-node { padding: 9px 12px !important; gap: 10px !important; }
+          .dt-tree-node-icon { width: 30px !important; height: 30px !important; }
+          .dt-tree-node-label { font-size: 12px !important; letter-spacing: 0.01em !important; }
           .dt-tree-node-detail { font-size: 10px !important; }
-          .dt-options-scroll { overflow-y: visible !important; flex: none !important; padding: 10px 14px 16px !important; }
-          .dt-option-card { padding: 10px 10px 10px !important; gap: 6px !important; }
-          .dt-option-icon { width: 36px !important; height: 36px !important; }
+          .dt-options-scroll { padding: 12px 14px 16px !important; }
+          .dt-option-card { padding: 10px !important; gap: 6px !important; }
+          .dt-option-icon { width: 38px !important; height: 38px !important; }
           .dt-option-icon span { font-size: 20px !important; }
           .dt-option-title { font-size: 11px !important; margin-bottom: 2px !important; }
-          .dt-option-desc { font-size: 10px !important; }
+          .dt-option-desc { font-size: 10px !important; line-height: 1.35 !important; }
+        }
+
+        /* True mobile — stack + shrink, no scroll */
+        @media (max-width: 768px) {
+          .dt-root { overflow: visible !important; }
+          .dt-tree-section { padding: 10px 12px 4px !important; gap: 4px !important; }
+          .dt-tree-node { padding: 7px 10px !important; gap: 9px !important; }
+          .dt-tree-node-icon { width: 26px !important; height: 26px !important; }
+          .dt-tree-node-label { font-size: 11px !important; }
+          .dt-tree-node-detail { font-size: 9px !important; }
+          .dt-options-scroll { overflow-y: visible !important; flex: none !important; padding: 8px 12px 14px !important; }
+          .dt-option-card { padding: 9px !important; gap: 5px !important; }
+          .dt-option-icon { width: 32px !important; height: 32px !important; }
+          .dt-option-icon span { font-size: 18px !important; }
+          .dt-option-title { font-size: 10px !important; }
+          .dt-option-desc { font-size: 9px !important; }
         }
       `}</style>
 

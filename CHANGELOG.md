@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.29] 2026-04-18 — Fix: demo panels cut off at tablet viewports (≤1100px)
+
+**Fixed**
+- **ProtocolPanel** — Left/center/camera panels now stack vertically at ≤1100px (was ≤768px). Tablet viewports no longer force 3 columns into a cramped row that bleeds off-screen.
+- **DecisionTreePanel** — Tree nodes now always fluid (width:100% / min-width:0) so they can never exceed container width. New compact styling at ≤1100px (was ≤768px) with tighter paddings/type scale. True mobile (≤768px) gets an even tighter tier.
+
+---
+
 ## [2.28] 2026-04-18 — Medical DETECT: compact, color-coded field chips
 
 **Changed**
