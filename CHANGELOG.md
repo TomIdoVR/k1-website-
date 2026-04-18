@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.33] 2026-04-18 — DecisionTreePanel: rewrite with auto-scale canvas
+
+**Changed**
+- **Full rewrite** of DecisionTreePanel. Now uses a fixed 460×620 design canvas wrapped in a ResizeObserver + CSS `transform: scale()` — the exact same approach as DetectFlowPanel.
+- Result: **all content (header + 3 tree nodes + "Choose an Action" + 4 option cards) always fits in one view**, regardless of viewport size. No scrollbar anywhere.
+- Option cards now use `grid-template-rows: repeat(2, 1fr)` so they evenly divide the available cell height, with descriptions line-clamped to 2 lines.
+- Removed the jungle of media-query overrides — the canvas scales uniformly, keeping visual proportions identical at any size.
+- ProtocolPanel center-panel min-height tuned to 460px at ≤1280px (was 540) since the canvas auto-scales to fit.
+
+---
+
 ## [2.32] 2026-04-18 — Raise compact breakpoint to ≤1280px
 
 **Changed**

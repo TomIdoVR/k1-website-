@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.33 -->
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-ver">v2.33</span><span class="tl-date">2026-04-18</span></div>
+        <div class="tl-title">DecisionTreePanel: rewrite with auto-scale canvas</div>
+        <ul class="tl-body">
+          <li>Full rewrite — fixed 460×620 canvas wrapped in ResizeObserver + CSS transform:scale, same as DetectFlowPanel</li>
+          <li>All content (header, 3 tree nodes, 4 option cards) always fits in one view at any viewport — no scrollbar</li>
+          <li>Option cards grid uses repeat(2,1fr) rows so they evenly divide available height; descriptions line-clamped to 2 lines</li>
+          <li>Removed the media-query jungle — canvas scales uniformly and proportions stay identical</li>
+        </ul>
+      </div>
+
       <!-- v2.32 -->
       <div class="tl-entry">
         <div class="tl-meta"><span class="tl-ver">v2.32</span><span class="tl-date">2026-04-18</span></div>
