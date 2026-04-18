@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.27] 2026-04-18 — Fix: TS build error (invalid `tabularNums` CSS prop)
+
+**Fixed**
+- StageScreen.tsx line 558 — replaced invalid `tabularNums: 'tabular-nums'` with `fontVariantNumeric: 'tabular-nums'` (proper React CSSProperties key). Restores Vercel build.
+
+---
+
 ## [2.26] 2026-04-18 — Medical DETECT: full-width transcript + field chips
 
 **Changed**

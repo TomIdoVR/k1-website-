@@ -555,7 +555,7 @@ export default function StageScreen({
                 </div>
 
                 {/* Timer */}
-                <span style={{ fontSize: '14px', fontWeight: 800, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em', tabularNums: 'tabular-nums' as any }}>
+                <span style={{ fontSize: '14px', fontWeight: 800, color: '#FF8C9E', fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '0.08em', fontVariantNumeric: 'tabular-nums' }}>
                   00:00:03
                 </span>
               </div>
