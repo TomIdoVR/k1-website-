@@ -20,14 +20,15 @@ export default function DecisionTreePanel({ tree }: Props) {
         .dt-option-card { min-width: 0 !important; box-sizing: border-box; }
         .dt-options-scroll > div { min-width: 0 !important; }
 
-        /* Mid viewports (tablet / narrow desktop) — compact */
+        /* Mid viewports (tablet / narrow desktop) — compact + let panel grow */
         @media (max-width: 1100px) {
+          .dt-root { overflow: visible !important; }
           .dt-tree-section { padding: 12px 14px 6px !important; gap: 5px !important; }
           .dt-tree-node { padding: 9px 12px !important; gap: 10px !important; }
           .dt-tree-node-icon { width: 30px !important; height: 30px !important; }
           .dt-tree-node-label { font-size: 12px !important; letter-spacing: 0.01em !important; }
           .dt-tree-node-detail { font-size: 10px !important; }
-          .dt-options-scroll { padding: 12px 14px 16px !important; }
+          .dt-options-scroll { overflow-y: visible !important; flex: none !important; padding: 12px 14px 18px !important; }
           .dt-option-card { padding: 10px !important; gap: 6px !important; }
           .dt-option-icon { width: 38px !important; height: 38px !important; }
           .dt-option-icon span { font-size: 20px !important; }

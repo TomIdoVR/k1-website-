@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.30] 2026-04-18 — Fix: DECIDE option cards cut at tablet bottom
+
+**Fixed**
+- DecisionTreePanel at ≤1100px now releases `overflow: hidden` on `.dt-root` and `.dt-options-scroll` (was only at ≤768px). Option cards no longer trapped inside a fixed-height viewport — panel grows to fit all 4 cards.
+- ProtocolPanel center panel min-height raised 480→620px at ≤1100px so there's always enough baseline room for tree + options before overflow kicks in.
+
+---
+
 ## [2.29] 2026-04-18 — Fix: demo panels cut off at tablet viewports (≤1100px)
 
 **Fixed**
