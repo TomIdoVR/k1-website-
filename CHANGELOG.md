@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.35] 2026-04-18 — Medical: diversify tactical unit types
+
+**Changed**
+- Medical scenario `splitUnits` now uses varied dispatch unit types instead of five generic "UNIT" cards. For the cardiac-event response you now see an ALS ambulance (AMB-7), a fire-engine first responder with AED (ENG-3), a police traffic-control escort (UNIT-14), a BLS backup ambulance (AMB-12), and a K9 search unit (K9-2) — each rendered with its correct icon and color via `TYPE_STYLES`. Matches the unit-type diversity already present in LPR and Access Control scenarios.
+
+---
+
 ## [2.34] 2026-04-18 — Fix: Medical incident-area cameras show UI screenshots
 
 **Fixed**

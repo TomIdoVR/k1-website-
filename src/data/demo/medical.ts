@@ -199,11 +199,11 @@ export const medicalScenario: ScenarioConfig = {
         { key: 'CONDITION', value: 'UNCONSCIOUS' },
       ],
       splitUnits: [
-        { id: 'AMB-7',    role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
-        { id: 'AMB-12',   role: 'BACKUP EN ROUTE',   status: 'EN ROUTE',  active: true },
-        { id: 'AMB-3',    role: 'STATIONARY',         status: 'STANDBY',   active: false },
-        { id: 'AMB-9',    role: 'P.SANTOS · 3.2 MI', status: 'AVAILABLE', active: false },
-        { id: 'AMB-15',   role: 'K.PATEL · 4.8 MI',  status: 'AVAILABLE', active: false },
+        { id: 'AMB-7',   type: 'ems',    role: 'RESPONSE PRIMARY · ALS',   status: 'ASSIGNED',  active: true },
+        { id: 'ENG-3',   type: 'fire',   role: 'FIRST RESPONDER · AED',    status: 'EN ROUTE',  active: true },
+        { id: 'UNIT-14', type: 'police', role: 'TRAFFIC CONTROL · ESCORT', status: 'EN ROUTE',  active: true },
+        { id: 'AMB-12',  type: 'ems',    role: 'BACKUP · BLS',             status: 'STANDBY',   active: false },
+        { id: 'K9-2',    type: 'k9',     role: 'SEARCH · NEARBY',          status: 'AVAILABLE', active: false },
       ],
       splitMapCoords: {
         incident: [29.7358, -95.4697],
