@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.25] 2026-04-18 — Medical DETECT: dominant live-call transcript
+
+**Improved**
+- **Medical Stage 01 DETECT (911 Call)** — Transcript now the clear focal point of the stage:
+  - Transcript panel widened from 48% → 60% (incident form 52% → 40%)
+  - Each line is a proper card: colored left-border rail (red=CALLER, blue=DISPATCH), tinted background, 10–12px padding
+  - Transcript body text enlarged 11px → **16px**, line-height 1.45, brighter colors (#FFD4D4 / #D4E4FF)
+  - CALLER/DISPATCH labels enlarged 8px → 10px, bolder, wider column
+  - LIVE CALL header enlarged (12px + 10px glowing dot), waveform bars taller (18px → 32px)
+  - New AI TRANSCRIPT heading with icon + "REAL-TIME · EN" meta, bottom border separator
+
+---
+
 ## [2.24] 2026-04-17 — Medical UNDERSTAND: clearer map markers + bigger camera thumb
 
 **Improved**

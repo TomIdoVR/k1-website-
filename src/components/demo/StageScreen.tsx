@@ -500,7 +500,7 @@ export default function StageScreen({
             }}>
               {/* RIGHT — incident form */}
               <div style={{
-                width: '52%', padding: '20px 24px',
+                width: '40%', padding: '20px 24px',
                 borderRight: '1px solid rgba(59,158,255,0.1)',
                 display: 'flex', flexDirection: 'column',
                 background: 'rgba(10,20,36,0.96)',
@@ -562,32 +562,32 @@ export default function StageScreen({
                 </div>
               </div>
 
-              {/* RIGHT — live transcript */}
+              {/* RIGHT — live transcript (DOMINANT) */}
               <div style={{
-                flex: 1, padding: '20px 22px',
-                background: 'rgba(6,12,22,0.97)',
+                flex: 1, padding: '22px 28px 20px',
+                background: 'linear-gradient(180deg, rgba(10,18,32,0.98) 0%, rgba(6,12,22,0.98) 100%)',
                 display: 'flex', flexDirection: 'column',
               }}>
-                {/* Live call header + waveform */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-                    <span className="animate-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#FF4560' }} />
-                    <span style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(255,69,96,0.75)' }}>
+                {/* Live call header + waveform — bigger + bolder */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span className="animate-pulse" style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#FF4560', boxShadow: '0 0 12px rgba(255,69,96,0.8)' }} />
+                    <span style={{ fontSize: '12px', fontWeight: 900, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#FF8C9E' }}>
                       LIVE CALL
                     </span>
                   </div>
-                  {/* Animated waveform bars */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 2, height: 18 }}>
+                  {/* Animated waveform bars — taller */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 3, height: 32 }}>
                     {[0.4,0.7,1,0.6,0.9,0.5,0.8,1,0.6,0.75,0.45,0.9,0.7,0.5,1,0.65,0.8,0.4,0.95,0.6].map((h, i) => (
                       <div
                         key={i}
                         className="animate-pulse"
                         style={{
-                          width: 2,
+                          width: 3,
                           borderRadius: 2,
                           background: '#FF4560',
-                          opacity: 0.7,
-                          height: `${h * 18}px`,
+                          opacity: 0.85,
+                          height: `${h * 32}px`,
                           animationDelay: `${(i * 0.07).toFixed(2)}s`,
                           animationDuration: `${0.6 + (i % 4) * 0.15}s`,
                         }}
@@ -595,35 +595,57 @@ export default function StageScreen({
                     ))}
                   </div>
                 </div>
-                <div style={{ fontSize: '8px', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.4)', marginBottom: 12 }}>
-                  AI TRANSCRIPT
+
+                {/* AI TRANSCRIPT heading — prominent */}
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: 8,
+                  padding: '8px 0 10px', marginBottom: 14,
+                  borderBottom: '1px solid rgba(255,69,96,0.2)',
+                }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#FF8C9E' }}>graphic_eq</span>
+                  <span style={{ fontSize: '11px', fontWeight: 900, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#FF8C9E' }}>
+                    AI TRANSCRIPT
+                  </span>
+                  <span style={{ marginLeft: 'auto', fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(173,198,255,0.5)', fontFamily: 'var(--font-space-mono), monospace' }}>
+                    REAL-TIME · EN
+                  </span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
+
+                {/* Transcript lines — BIG, DOMINANT */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 14, flex: 1 }}>
                   {(stage.detectCard.transcript ?? []).map((line, i) => {
                     const isCaller = line.startsWith('CALLER')
                     return (
-                      <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                        <span style={{ flexShrink: 0, fontSize: '8px', fontWeight: 700, letterSpacing: '0.1em', color: isCaller ? '#FF8C9E' : '#adc6ff', paddingTop: 2, width: 58 }}>
+                      <div key={i} style={{
+                        display: 'flex', gap: 14, alignItems: 'flex-start',
+                        padding: '10px 12px',
+                        borderRadius: 6,
+                        background: isCaller ? 'rgba(255,69,96,0.07)' : 'rgba(59,158,255,0.05)',
+                        borderLeft: `3px solid ${isCaller ? '#FF4560' : '#3B9EFF'}`,
+                      }}>
+                        <span style={{ flexShrink: 0, fontSize: '10px', fontWeight: 900, letterSpacing: '0.18em', color: isCaller ? '#FF8C9E' : '#adc6ff', paddingTop: 3, width: 72 }}>
                           {isCaller ? 'CALLER' : 'DISPATCH'}
                         </span>
-                        <span style={{ fontSize: '11px', color: isCaller ? 'rgba(255,180,171,0.8)' : 'rgba(173,198,255,0.7)', lineHeight: 1.5, fontWeight: 500 }}>
+                        <span style={{ fontSize: '16px', color: isCaller ? '#FFD4D4' : '#D4E4FF', lineHeight: 1.45, fontWeight: 600, letterSpacing: '0.005em' }}>
                           {line.replace(/^(CALLER|DISPATCH): /, '')}
                         </span>
                       </div>
                     )
                   })}
-                  <div style={{ display: 'flex', gap: 10, alignItems: 'center', opacity: 0.4 }}>
-                    <span style={{ flexShrink: 0, fontSize: '8px', fontWeight: 700, color: '#FF8C9E', width: 58 }}>CALLER</span>
-                    <div style={{ display: 'flex', gap: 4 }}>
+                  <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '10px 12px', opacity: 0.55 }}>
+                    <span style={{ flexShrink: 0, fontSize: '10px', fontWeight: 900, letterSpacing: '0.18em', color: '#FF8C9E', width: 72 }}>CALLER</span>
+                    <div style={{ display: 'flex', gap: 5 }}>
                       {[0,1,2].map(j => (
-                        <span key={j} className="animate-pulse" style={{ display: 'inline-block', width: 4, height: 4, borderRadius: '50%', background: '#FF8C9E', animationDelay: `${j * 0.2}s` }} />
+                        <span key={j} className="animate-pulse" style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: '#FF8C9E', animationDelay: `${j * 0.2}s` }} />
                       ))}
                     </div>
                   </div>
                 </div>
-                <div style={{ marginTop: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+
+                {/* Tags */}
+                <div style={{ marginTop: 14, display: 'flex', gap: 7, flexWrap: 'wrap' }}>
                   {['CARDIAC', 'UNCONSCIOUS', 'ADULT MALE', 'P1 PRIORITY'].map(tag => (
-                    <span key={tag} style={{ fontSize: '8px', fontWeight: 800, letterSpacing: '0.12em', padding: '3px 9px', borderRadius: 4, background: 'rgba(255,69,96,0.1)', border: '1px solid rgba(255,69,96,0.28)', color: '#FF8C9E' }}>
+                    <span key={tag} style={{ fontSize: '9px', fontWeight: 800, letterSpacing: '0.14em', padding: '4px 11px', borderRadius: 4, background: 'rgba(255,69,96,0.12)', border: '1px solid rgba(255,69,96,0.35)', color: '#FF8C9E' }}>
                       {tag}
                     </span>
                   ))}
