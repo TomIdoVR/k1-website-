@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.39] 2026-04-18 — School & Violence: diversify tactical unit types
+
+**Changed**
+- School (SOS scenario) Tactical Units panel now shows varied unit types instead of five generic shield/"UNIT" cards: security (SRO-1), police (UNIT-14 + UNIT-7), ems (EMS-5 medical staging), k9 (K9-3 sweep team).
+- Violence scenario likewise diversified: police (04-DELTA + 09-ECHO + 11-CHARLIE), k9 (K9-4 suspect track), ems (EMS-9 medical standby).
+- Every scenario (access-control, lpr, medical, school, violence) now has `type` fields on all splitUnits so TYPE_STYLES renders the right icon and color for each unit.
+
+---
+
 ## [2.38] 2026-04-18 — School: drop extra cameras, keep only alerting CAM-07
 
 **Changed**

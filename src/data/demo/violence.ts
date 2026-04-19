@@ -167,11 +167,11 @@ export const violenceScenario: ScenarioConfig = {
         { key: 'THREAT LEVEL', value: 'HIGH' },
       ],
       splitUnits: [
-        { id: '04-DELTA',   role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
-        { id: '09-ECHO',    role: 'BACKUP EN ROUTE',    status: 'EN ROUTE',  active: true },
-        { id: '02-BRAVO',   role: 'STATIONARY',          status: 'STANDBY',   active: false },
-        { id: '07-ALPHA',   role: 'R.VEGA · 2.1 MI',    status: 'AVAILABLE', active: false },
-        { id: '11-CHARLIE', role: 'S.KIM · 3.8 MI',     status: 'AVAILABLE', active: false },
+        { id: '04-DELTA',   type: 'police', role: 'RESPONSE PRIMARY · PATROL', status: 'ASSIGNED',  active: true },
+        { id: '09-ECHO',    type: 'police', role: 'BACKUP PATROL · EN ROUTE',  status: 'EN ROUTE',  active: true },
+        { id: 'K9-4',       type: 'k9',     role: 'K9 · SUSPECT TRACK',        status: 'EN ROUTE',  active: true },
+        { id: 'EMS-9',      type: 'ems',    role: 'MEDICAL STANDBY',           status: 'STANDBY',   active: false },
+        { id: '11-CHARLIE', type: 'police', role: 'S.KIM · 3.8 MI',            status: 'AVAILABLE', active: false },
       ],
       splitMapCoords: {
         incident: [29.7604, -95.3698],

@@ -192,11 +192,11 @@ export const schoolScenario: ScenarioConfig = {
         { key: 'STATUS',   value: 'LOCKDOWN ACTIVE' },
       ],
       splitUnits: [
-        { id: 'SRO-1',   role: 'ON-SITE · BLDG A',     status: 'ASSIGNED',  active: true },
-        { id: 'UNIT-14', role: 'PRIMARY RESPONSE',       status: 'EN ROUTE',  active: true },
-        { id: 'UNIT-7',  role: 'BACKUP UNIT',            status: 'EN ROUTE',  active: true },
-        { id: 'UNIT-22', role: 'STAGING NEARBY',         status: 'STANDBY',   active: false },
-        { id: 'K9-3',    role: 'K9 · ON STANDBY',        status: 'AVAILABLE', active: false },
+        { id: 'SRO-1',   type: 'security', role: 'SCHOOL RESOURCE · BLDG A', status: 'ASSIGNED',  active: true },
+        { id: 'UNIT-14', type: 'police',   role: 'PRIMARY RESPONSE · PD',    status: 'EN ROUTE',  active: true },
+        { id: 'UNIT-7',  type: 'police',   role: 'BACKUP PATROL',            status: 'EN ROUTE',  active: true },
+        { id: 'EMS-5',   type: 'ems',      role: 'MEDICAL STAGING',          status: 'STANDBY',   active: false },
+        { id: 'K9-3',    type: 'k9',       role: 'K9 · SWEEP TEAM',          status: 'AVAILABLE', active: false },
       ],
       splitMapCoords: {
         incident: [29.7550, -95.3680],
