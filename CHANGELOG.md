@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.42] 2026-04-20 — Fix: LPR DETECT stage dashboard image cropped on right
+
+**Fixed**
+- LPR scenario DETECT stage: `lpr-hero.jpeg` was rendered with `backgroundSize: cover` inside the left 50% panel, which cropped the right portion of the dashboard screenshot.
+- Added `backgroundFit: 'contain'` to the LPR DETECT stage so the full dashboard is visible without cropping.
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
 ## [2.40] 2026-04-20 — Fix: Tactical Unit cards clipped on some Mac Chrome viewports
 
 **Fixed**
