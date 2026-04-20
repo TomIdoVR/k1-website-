@@ -33,8 +33,8 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
       .demo-split-body { display: flex; overflow: hidden; flex: 1; min-height: 0; }
       .demo-split-phone { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
       .demo-split-map { flex: 1; min-width: 0; overflow: hidden; border-right: 6px solid rgba(255,255,255,0.6) !important; }
-      .demo-split-units { flex: 1; min-width: 0; overflow: hidden; }
-      .demo-split-units-scroll { flex: 1; overflow-y: auto; padding: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; align-content: start; }
+      .demo-split-units { flex: 1; min-width: 0; min-height: 0; overflow: hidden; }
+      .demo-split-units-scroll { flex: 1; min-height: 0; overflow-y: auto; padding: 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); grid-auto-rows: max-content; gap: 10px; align-content: start; }
       .demo-stage-nav-sublabel { display: block; }
       @media (max-width: 1100px) {
         .demo-split-root { height: auto !important; min-height: 100vh; overflow-y: auto !important; }

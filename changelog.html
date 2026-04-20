@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.40 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.40</span><span class="tl-date">2026-04-20</span></div>
+        <div class="tl-title">Fix: Tactical Unit cards clipped on some Mac Chrome viewports</div>
+        <ul class="tl-body">
+          <li>Unit IDs (12-CHARLIE, K9-2, etc.) were chopped in half on certain viewport heights — designer could repro on Mac Chrome, we couldn't</li>
+          <li>Root cause: column flex parent with overflow:hidden but no min-height:0 — the inner scroll grid got compressed instead of scrolling</li>
+          <li>Added min-height:0 to panel + scroll container, plus grid-auto-rows:max-content so each card row stays at natural content height</li>
+        </ul>
+      </div>
+
       <!-- v2.39 -->
       <div class="tl-entry">
         <div class="tl-meta"><span class="tl-ver">v2.39</span><span class="tl-date">2026-04-18</span></div>

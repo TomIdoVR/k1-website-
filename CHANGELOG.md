@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.40] 2026-04-20 — Fix: Tactical Unit cards clipped on some Mac Chrome viewports
+
+**Fixed**
+- Unit ID text (e.g. "12-CHARLIE", "K9-2") was being chopped in half on certain Chrome + macOS viewport heights — the column flex parent `.demo-split-units` had `overflow: hidden` but no `min-height: 0`, which let the inner scroll grid get compressed instead of scrolling. Added `min-height: 0` to both the panel and the scroll container, plus `grid-auto-rows: max-content` so each card row stays at its natural content height regardless of viewport.
+
+---
+
 ## [2.39] 2026-04-18 — School & Violence: diversify tactical unit types
 
 **Changed**
