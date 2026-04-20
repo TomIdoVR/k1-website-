@@ -102,16 +102,26 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           }}
         >
           {/* Logo */}
-          <div
-            style={{
-              fontSize: '1.5rem',
-              fontWeight: 900,
-              letterSpacing: '-0.04em',
-              color: '#adc6ff',
-              textShadow: '0 0 12px rgba(75,142,255,0.45)',
-            }}
-          >
-            KABATONE
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span
+              style={{
+                fontSize: '1.5rem',
+                fontWeight: 900,
+                letterSpacing: '-0.04em',
+                color: '#adc6ff',
+                textShadow: '0 0 12px rgba(75,142,255,0.45)',
+              }}
+            >
+              KABATONE
+            </span>
+            <span style={{ color: 'rgba(173,198,255,0.35)', fontSize: '1.3rem', fontWeight: 200, lineHeight: 1 }}>×</span>
+            <Image
+              src="/images/partners/ipro.svg"
+              alt="iPRO"
+              width={60}
+              height={22}
+              style={{ filter: 'brightness(0) invert(1)', opacity: 0.8 }}
+            />
           </div>
 
           {/* Nav links */}
