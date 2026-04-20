@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.43] 2026-04-20 — Improve: Larger module pills in demo stage screens
+
+**Improved**
+- Module chips in the demo stage header strip are now larger and easier to read: font `8px → 11px`, padding `4px 10px → 7px 16px`, icon `11px → 14px`.
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
 ## [2.42] 2026-04-20 — Fix: LPR DETECT stage dashboard image cropped on right
 
 **Fixed**
