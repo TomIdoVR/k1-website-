@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.41] 2026-04-20 — Branch: KabatOne × iPRO co-branded demo (ipro-partnership)
+
+**Added**
+- New `ipro-partnership` git branch: demo section co-branded for the KabatOne × iPRO partnership presentation.
+- TopBar logo lockup updated to "KabatOne × iPRO" — both brands side by side with a subtle × separator and the existing iPRO SVG asset (white-filtered for the dark UI).
+- Demo hub page title updated to "Scenario Explorer | KabatOne × iPRO" and footer updated to "KabatOne × iPRO Partnership".
+- All marketing pages and scenario data unchanged — purely cosmetic co-brand on the demo layer.
+
+---
+
 ## [2.40] 2026-04-20 — Fix: Tactical Unit cards clipped on some Mac Chrome viewports
 
 **Fixed**

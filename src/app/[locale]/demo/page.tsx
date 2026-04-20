@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Scenario Explorer | KabatOne Platform',
+  title: 'Scenario Explorer | KabatOne × iPRO',
   description:
-    "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
+    "Walk through real public safety scenarios and see how KabatOne's unified platform — in partnership with iPRO — handles incidents end-to-end.",
   alternates: { canonical: 'https://kabatone.com/demo' },
 }
 
@@ -520,7 +520,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           }}
         >
           <span style={{ color: '#475569' }}>
-            © 2025 KabatOne Command &amp; Control. All Systems Operational.
+            © 2025 KabatOne × iPRO Partnership &middot; All Systems Operational.
           </span>
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             <Link

@@ -62,16 +62,25 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
         <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
           <Link
             href="/demo"
-            style={{
+            style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
+          >
+            <span style={{
               fontSize: '1.2rem',
               fontWeight: 900,
               letterSpacing: '-0.04em',
               color: '#adc6ff',
-              textDecoration: 'none',
               textShadow: '0 0 12px rgba(75,142,255,0.45)',
-            }}
-          >
-            KabatOne
+            }}>
+              KabatOne
+            </span>
+            <span style={{ color: 'rgba(173,198,255,0.35)', fontSize: '1.1rem', fontWeight: 200, lineHeight: 1 }}>×</span>
+            <Image
+              src="/images/partners/ipro.svg"
+              alt="iPRO"
+              width={54}
+              height={20}
+              style={{ filter: 'brightness(0) invert(1)', opacity: 0.8 }}
+            />
           </Link>
 
           <div
