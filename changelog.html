@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.42 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.42</span><span class="tl-date">2026-04-20</span></div>
+        <div class="tl-title">Fix: LPR DETECT stage dashboard image cropped on right</div>
+        <ul class="tl-body">
+          <li>LPR DETECT stage was rendering <code>lpr-hero.jpeg</code> with <code>background-size: cover</code>, cropping the right portion of the dashboard.</li>
+          <li>Added <code>backgroundFit: 'contain'</code> to show the full dashboard image without cropping.</li>
+          <li>Applied in both <code>nextjs</code> (staging) and <code>ipro-partnership</code> branches.</li>
+        </ul>
+      </div>
+
       <!-- v2.41 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.41</span><span class="tl-date">2026-04-20</span></div>

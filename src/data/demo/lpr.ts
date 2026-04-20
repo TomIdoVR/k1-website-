@@ -23,6 +23,7 @@ export const lprScenario: ScenarioConfig = {
       modules: ['VIDEO & ANALYTICS', 'INTEGRATIONS', 'AI ENGINE'],
       nextStageTeaser: 'Live map. Nearest units. Intercept window.',
       backgroundImage: '/images/integrations/lpr-hero.jpeg',
+      backgroundFit: 'contain',
       layout: 'default',
       detectOverlay: {
         label: 'Stolen Vehicle Alert',
