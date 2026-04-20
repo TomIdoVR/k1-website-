@@ -371,14 +371,14 @@ export default function StageScreen({
             </div>
           </div>
           {/* All-platform module strip */}
-          <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap' }}>
             {ALL_MODULES.map(m => {
               const active = stage.modules.includes(m.key)
               return (
                 <div key={m.key} style={{
-                  display: 'flex', alignItems: 'center', gap: 4,
-                  padding: '4px 10px', borderRadius: 5,
-                  fontSize: '8px', fontWeight: active ? 800 : 600,
+                  display: 'flex', alignItems: 'center', gap: 6,
+                  padding: '7px 16px', borderRadius: 7,
+                  fontSize: '11px', fontWeight: active ? 800 : 600,
                   letterSpacing: '0.08em', textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
                   transition: 'all 0.2s',
@@ -386,7 +386,7 @@ export default function StageScreen({
                   border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
                   color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
                 }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
+                  <span className="material-symbols-outlined" style={{ fontSize: 14, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
                   {m.label}
                 </div>
               )
