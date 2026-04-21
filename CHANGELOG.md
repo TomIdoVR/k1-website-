@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.45] 2026-04-21 — Remove: Placeholder nav items and icons from demo hub
+
+**Removed**
+- "Operations", "Intelligence", "Archive" nav items (were non-functional stubs).
+- Bell, gear, and avatar icons from the hub header right side (non-functional).
+- Applied in both `nextjs` and `ipro-partnership` branches.
+
+---
+
 ## [2.44] 2026-04-21 — Fix: Demo stage title block not responsive on mobile
 
 **Fixed**
