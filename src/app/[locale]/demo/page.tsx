@@ -135,41 +135,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
             >
               Scenarios
             </span>
-            <span style={{ color: '#64748b', cursor: 'default', position: 'relative' }}
-              title="Coming soon">Operations</span>
-            <span style={{ color: '#64748b', cursor: 'default' }}
-              title="Coming soon">Intelligence</span>
-            <span style={{ color: '#64748b', cursor: 'default' }}
-              title="Coming soon">Archive</span>
           </nav>
-
-          {/* Right icons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <span className="material-symbols-outlined" style={{ color: '#64748b', fontSize: 22 }}>
-              notifications
-            </span>
-            <span className="material-symbols-outlined" style={{ color: '#64748b', fontSize: 22 }}>
-              settings
-            </span>
-            <div
-              style={{
-                width: 36,
-                height: 36,
-                borderRadius: '50%',
-                overflow: 'hidden',
-                border: '1px solid #414755',
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src="/demo/hub/avatar.jpg"
-                alt="Operator"
-                width={36}
-                height={36}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-          </div>
         </div>
       </header>
 
