@@ -6,16 +6,24 @@ const learnStyles = `
   .learn-card-1 { width: 26%; }
   .learn-card-2 { flex: 1; }
   .learn-card-3 { width: 32%; }
+  .learn-title-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 10px; }
   @media (max-width: 1100px) {
     .learn-outer { height: auto !important; overflow-y: visible !important; }
     .learn-cards-row { overflow: visible !important; }
   }
   @media (max-width: 768px) {
-    .learn-outer { overflow-y: auto !important; }
+    .learn-outer { overflow-y: auto !important; padding: 14px 16px 14px !important; margin: 0 8px !important; }
+    .learn-title-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+    .learn-headline { font-size: 1.35rem !important; }
+    .learn-title-desc { max-width: 100% !important; }
     .learn-cards-row { flex-direction: column !important; overflow-y: auto; }
     .learn-card-1 { width: 100% !important; flex-shrink: 0; border-radius: 8px !important; min-height: 200px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
     .learn-card-2 { width: 100% !important; flex: 0 0 auto; border-radius: 8px !important; min-height: 260px; border-right: none !important; border-bottom: 6px solid rgba(255,255,255,0.6) !important; }
     .learn-card-3 { width: 100% !important; flex: 0 0 auto !important; min-height: 300px; }
+  }
+  @media (max-width: 480px) {
+    .learn-outer { padding: 10px 12px 10px !important; margin: 0 4px !important; }
+    .learn-headline { font-size: 1.15rem !important; }
   }
 `
 
@@ -102,7 +110,7 @@ export default function LearnLayout({
 
         {/* ── Top title row ── */}
         <div style={{ flexShrink: 0, paddingBottom: 12 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, marginBottom: 10 }}>
+          <div className="learn-title-row">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                 <div style={{ width: 3, height: 14, borderRadius: 2, background: '#1755c2', flexShrink: 0 }} />
@@ -110,10 +118,10 @@ export default function LearnLayout({
                   {stage.stageLabel.split(' — ')[0]}
                 </span>
               </div>
-              <h2 style={{ fontSize: 'clamp(1.9rem, 2.6vw, 2.8rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.025em', textTransform: 'uppercase', lineHeight: 1.0, color: '#0b1c36', marginBottom: 6 }}>
+              <h2 className="learn-headline" style={{ fontSize: 'clamp(1.35rem, 2.6vw, 2.8rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.025em', textTransform: 'uppercase', lineHeight: 1.0, color: '#0b1c36', marginBottom: 6 }}>
                 {stage.headline}
               </h2>
-              <p style={{ color: 'rgba(15,35,75,0.62)', fontSize: '0.82rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
+              <p className="learn-title-desc" style={{ color: 'rgba(15,35,75,0.62)', fontSize: '0.82rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
                 {stage.description}
               </p>
             </div>
@@ -126,14 +134,14 @@ export default function LearnLayout({
             </div>
           </div>
           {/* All-platform module strip */}
-          <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap' }}>
             {ALL_MODULES.map(m => {
               const active = stage.modules.includes(m.key)
               return (
                 <div key={m.key} style={{
-                  display: 'flex', alignItems: 'center', gap: 4,
-                  padding: '4px 10px', borderRadius: 5,
-                  fontSize: '8px', fontWeight: active ? 800 : 600,
+                  display: 'flex', alignItems: 'center', gap: 6,
+                  padding: '7px 16px', borderRadius: 7,
+                  fontSize: '11px', fontWeight: active ? 800 : 600,
                   letterSpacing: '0.08em', textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
                   transition: 'all 0.2s',
@@ -141,7 +149,7 @@ export default function LearnLayout({
                   border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
                   color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
                 }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
+                  <span className="material-symbols-outlined" style={{ fontSize: 14, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
                   {m.label}
                 </div>
               )

@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.44] 2026-04-21 — Fix: Demo stage title block not responsive on mobile
+
+**Fixed**
+- Title block in all light-bg stage screens and the LEARN stage was not responsive on mobile — layout overflowed and badge/title competed for space.
+- Added responsive CSS: at ≤768px the title row stacks vertically, headline scales down, outer container reduces padding; at ≤480px further reduction.
+- LEARN stage: updated module strip to match the larger sizes from v2.43 (was missed in that pass).
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
 ## [2.43] 2026-04-20 — Improve: Larger module pills in demo stage screens
 
 **Improved**
