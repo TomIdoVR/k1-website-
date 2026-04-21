@@ -335,11 +335,19 @@ export default function StageScreen({
         .demo-stage-panel.detect-split { flex: 0 0 540px !important; height: 540px !important; min-height: 540px !important; }
       }
       @media (max-width: 768px) {
+        .stage-outer-lbg { margin: 0 8px !important; padding: 14px 16px 14px !important; }
+        .stage-lbg-title-row { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+        .stage-lbg-headline { font-size: 1.2rem !important; }
+        .stage-lbg-desc { max-width: 100% !important; }
         .detect-bg-half   { width: 100% !important; bottom: 50% !important; }
         .detect-left-area { right: 0 !important; width: 100% !important; bottom: 50% !important; }
         .detect-dp-row    { display: none !important; }
         .detect-v-sep     { display: none !important; }
         .detect-flow-half { left: 0 !important; top: 50% !important; width: 100% !important; border-top: 6px solid rgba(255,255,255,0.6); }
+      }
+      @media (max-width: 480px) {
+        .stage-outer-lbg { margin: 0 4px !important; padding: 10px 12px 10px !important; }
+        .stage-lbg-headline { font-size: 1.05rem !important; }
       }
     `}</style>
     <div className={isLightBg ? 'stage-outer-lbg' : ''} style={isLightBg ? {
@@ -354,7 +362,7 @@ export default function StageScreen({
       {isLightBg && (
         <div style={{ flexShrink: 0, paddingBottom: 12 }}>
           {/* Title + description */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, marginBottom: 10 }}>
+          <div className="stage-lbg-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 24, marginBottom: 10 }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 5 }}>
                 <span style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.42em', textTransform: 'uppercase', color: 'rgba(20,50,100,0.38)' }}>
@@ -362,10 +370,10 @@ export default function StageScreen({
                 </span>
                 <div style={{ height: 1, width: 28, background: 'rgba(20,50,100,0.14)' }} />
               </div>
-              <h2 style={{ fontSize: 'clamp(1.35rem, 1.9vw, 1.85rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.02em', textTransform: 'uppercase', lineHeight: 1.05, color: '#0b1c36', marginBottom: 5 }}>
+              <h2 className="stage-lbg-headline" style={{ fontSize: 'clamp(1.35rem, 1.9vw, 1.85rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.02em', textTransform: 'uppercase', lineHeight: 1.05, color: '#0b1c36', marginBottom: 5 }}>
                 {stage.headline}
               </h2>
-              <p style={{ color: 'rgba(15,35,75,0.48)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
+              <p className="stage-lbg-desc" style={{ color: 'rgba(15,35,75,0.48)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
                 {stage.description}
               </p>
             </div>
