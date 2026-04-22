@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.46] 2026-04-22 — Improve: Demo cognitive load reduction — remove noise, active-only modules, smarter Decide
+
+**Improved**
+- Removed all descriptive `<p>` paragraphs from every demo stage layout (StageContent, StageScreen, SplitLayout, ProtocolPanel, LearnLayout) — UI now shows only what the system did, not explanations
+- Module strip now shows **only active modules** per stage (filtered, not dimmed) across all layouts
+- DecisionTreePanel: "AI PICK" badge renamed to "Recommended"; header relabeled "Situation Assessment / AI ANALYSIS"; action section relabeled "AI Recommended Action"
+- LPR Decide: recommended dispatch option title updated to "Dispatch Recommended Units"
+
+---
+
 ## [2.45] 2026-04-21 — Remove: Placeholder nav items and icons from demo hub
 
 **Removed**

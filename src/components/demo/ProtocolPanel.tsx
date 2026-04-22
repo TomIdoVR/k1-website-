@@ -81,31 +81,24 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
               <h2 style={{ fontSize: 'clamp(1.9rem, 2.6vw, 2.8rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.025em', textTransform: 'uppercase', lineHeight: 1.0, color: '#0b1c36', marginBottom: 6 }}>
                 {stage.headline}
               </h2>
-              <p style={{ color: 'rgba(15,35,75,0.62)', fontSize: '0.82rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
-                {stage.description}
-              </p>
             </div>
           </div>
           <div className="pp-modules-row" style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-            {ALL_MODULES.map(m => {
-              const active = stage.modules.includes(m.key)
-              return (
-                <div key={m.key} style={{
-                  display: 'flex', alignItems: 'center', gap: 4,
-                  padding: '4px 10px', borderRadius: 5,
-                  fontSize: '8px', fontWeight: active ? 800 : 600,
-                  letterSpacing: '0.08em', textTransform: 'uppercase',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.2s',
-                  background: active ? 'rgba(0,122,255,0.1)' : 'rgba(0,0,0,0.03)',
-                  border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
-                  color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
-                }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
-                  {m.label}
-                </div>
-              )
-            })}
+            {ALL_MODULES.filter(m => stage.modules.includes(m.key)).map(m => (
+              <div key={m.key} style={{
+                display: 'flex', alignItems: 'center', gap: 4,
+                padding: '4px 10px', borderRadius: 5,
+                fontSize: '8px', fontWeight: 800,
+                letterSpacing: '0.08em', textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
+                background: 'rgba(0,122,255,0.1)',
+                border: '1px solid rgba(0,122,255,0.28)',
+                color: '#1755c2',
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#1755c2' }}>{m.icon}</span>
+                {m.label}
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -155,9 +148,6 @@ export default function ProtocolPanel({ stage, nextStage, prevStage, onNext, onP
             }}>
               {stage.headline}
             </h2>
-            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', marginTop: 5, fontWeight: 500 }}>
-              {stage.description}
-            </p>
           </div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 12px', borderRadius: 9999, background: 'rgba(16,19,27,0.6)', border: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
             <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#FF4560', animation: 'pp-pulse 1.2s ease-in-out infinite' }} />

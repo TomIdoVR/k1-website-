@@ -71,10 +71,10 @@ export default function DecisionTreePanel({ tree }: Props) {
           }}>
             <span className="material-symbols-outlined" style={{ fontSize: 14, color: '#adc6ff' }}>psychology</span>
             <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#adc6ff' }}>
-              What's happening
+              Situation Assessment
             </span>
             <span style={{ marginLeft: 'auto', fontSize: 9, fontFamily: 'monospace', color: 'rgba(173,198,255,0.45)', letterSpacing: '0.12em' }}>
-              AI ASSIST
+              AI ANALYSIS
             </span>
           </div>
 
@@ -103,8 +103,8 @@ export default function DecisionTreePanel({ tree }: Props) {
               display: 'flex', alignItems: 'center', gap: 7, marginBottom: 8,
               fontSize: 9, fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.7)',
             }}>
-              <span style={{ width: 3, height: 11, borderRadius: 2, background: '#3B9EFF' }} />
-              Choose an Action
+              <span style={{ width: 3, height: 11, borderRadius: 2, background: '#10B981' }} />
+              AI Recommended Action
             </div>
             <div style={{
               flex: 1, minHeight: 0,
@@ -209,7 +209,7 @@ function OptionCard({ opt }: { opt: DecisionTree['options'][number] }) {
           fontSize: 7, fontWeight: 900, letterSpacing: '0.14em', color: '#10B981',
         }}>
           <span className="material-symbols-outlined" style={{ fontSize: 9 }}>auto_awesome</span>
-          AI PICK
+          Recommended
         </span>
       )}
       <div style={{

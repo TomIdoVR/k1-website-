@@ -90,9 +90,6 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
               <h2 style={{ fontSize: 'clamp(1.9rem, 2.6vw, 2.8rem)', fontWeight: 900, fontStyle: 'italic', letterSpacing: '-0.025em', textTransform: 'uppercase', lineHeight: 1.0, color: '#0b1c36', marginBottom: 6 }}>
                 {stage.headline}
               </h2>
-              <p style={{ color: 'rgba(15,35,75,0.62)', fontSize: '0.82rem', fontWeight: 500, lineHeight: 1.55, maxWidth: 480 }}>
-                {stage.description}
-              </p>
             </div>
             {/* ETA counter — keeps its position top-right */}
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, flexShrink: 0, paddingBottom: 4 }}>
@@ -100,27 +97,23 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
               <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(20,50,100,0.45)', textTransform: 'uppercase' }}>MIN ETA</span>
             </div>
           </div>
-          {/* All-platform module strip */}
+          {/* Active module strip */}
           <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-            {ALL_MODULES.map(m => {
-              const active = stage.modules.includes(m.key)
-              return (
-                <div key={m.key} style={{
-                  display: 'flex', alignItems: 'center', gap: 4,
-                  padding: '4px 10px', borderRadius: 5,
-                  fontSize: '8px', fontWeight: active ? 800 : 600,
-                  letterSpacing: '0.08em', textTransform: 'uppercase',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.2s',
-                  background: active ? 'rgba(0,122,255,0.1)' : 'rgba(0,0,0,0.03)',
-                  border: active ? '1px solid rgba(0,122,255,0.28)' : '1px solid rgba(0,0,0,0.08)',
-                  color: active ? '#1755c2' : 'rgba(0,0,0,0.28)',
-                }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: 11, color: active ? '#1755c2' : 'rgba(0,0,0,0.2)' }}>{m.icon}</span>
-                  {m.label}
-                </div>
-              )
-            })}
+            {ALL_MODULES.filter(m => stage.modules.includes(m.key)).map(m => (
+              <div key={m.key} style={{
+                display: 'flex', alignItems: 'center', gap: 4,
+                padding: '4px 10px', borderRadius: 5,
+                fontSize: '8px', fontWeight: 800,
+                letterSpacing: '0.08em', textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
+                background: 'rgba(0,122,255,0.1)',
+                border: '1px solid rgba(0,122,255,0.28)',
+                color: '#1755c2',
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 11, color: '#1755c2' }}>{m.icon}</span>
+                {m.label}
+              </div>
+            ))}
           </div>
         </div>
       )}

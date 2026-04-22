@@ -128,7 +128,7 @@ export const lprScenario: ScenarioConfig = {
           { label: 'Intercept Needed', detail: '3 min to freeway exit', icon: 'crisis_alert' },
         ],
         options: [
-          { id: 'intercept', title: 'Intercept', description: 'Dispatch 12-Charlie · Code 3 · ETA 2:48', icon: 'local_police', recommended: true },
+          { id: 'intercept', title: 'Dispatch Recommended Units', description: '12-Charlie · Code 3 · ETA 2:48', icon: 'local_police', recommended: true },
           { id: 'roadblock', title: 'Roadblock', description: 'Coordinate with TxDOT at next exit', icon: 'block' },
           { id: 'track',     title: 'Track Only', description: 'Monitor movement · watch for patterns', icon: 'gps_fixed' },
           { id: 'air',       title: 'Air Support', description: 'Request helicopter overwatch', icon: 'flight' },
