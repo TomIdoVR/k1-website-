@@ -267,9 +267,15 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
                   Dispatch Alert
                 </span>
               </div>
-              <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)' }}>
-                Priority 1
-              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                {/* Sent badge */}
+                <span style={{ fontSize: '8px', fontWeight: 900, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1px 6px', borderRadius: 3, background: 'rgba(255,255,255,0.25)', color: '#fff' }}>
+                  ✓ Sent
+                </span>
+                <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)' }}>
+                  Priority 1
+                </span>
+              </div>
             </div>
 
             {/* Camera feed */}
@@ -283,8 +289,13 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
                   sizes="260px"
                 />
               )}
-              <div style={{ position: 'absolute', top: 6, left: 8, fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace' }}>
-                {cameraLabel}
+              {/* Live badge on camera */}
+              <div style={{ position: 'absolute', top: 6, left: 8, display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3, fontSize: 7, fontWeight: 900, letterSpacing: '0.12em', padding: '2px 6px', borderRadius: 3, background: 'rgba(255,69,96,0.3)', border: '1px solid rgba(255,69,96,0.6)', color: '#ff8c9e' }}>
+                  <span className="animate-pulse" style={{ display: 'inline-block', width: 4, height: 4, borderRadius: '50%', background: '#FF4560' }} />
+                  LIVE
+                </span>
+                <span style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.4)', fontFamily: 'monospace' }}>{cameraLabel}</span>
               </div>
               {incidentBadge && (
                 <div style={{ position: 'absolute', bottom: 8, left: '50%', transform: 'translateX(-50%)',
@@ -322,11 +333,11 @@ export default function SplitLayout({ stage, nextStage, prevStage, onNext, onPre
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#00C98A', display: 'inline-block' }} />
-                  <span style={{ fontSize: 8, color: '#00C98A', fontWeight: 700, letterSpacing: '0.08em' }}>EN ROUTE</span>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '3px 8px', borderRadius: 99, background: 'rgba(0,201,138,0.15)', border: '1px solid rgba(0,201,138,0.4)' }}>
+                  <span className="animate-pulse" style={{ width: 5, height: 5, borderRadius: '50%', background: '#00C98A', display: 'inline-block' }} />
+                  <span style={{ fontSize: 8, color: '#00C98A', fontWeight: 900, letterSpacing: '0.1em', textTransform: 'uppercase' }}>En Route</span>
                 </div>
-                <div style={{ fontSize: 7, color: '#48647A', letterSpacing: '0.05em', fontFamily: 'monospace', marginTop: 1 }}>ETA 2.8 MIN</div>
+                <div style={{ fontSize: 7, color: '#48647A', letterSpacing: '0.05em', fontFamily: 'monospace', marginTop: 3 }}>ETA 2.8 MIN</div>
               </div>
             </div>
 
@@ -577,6 +588,7 @@ function UnitCard({ unit }: { unit: Unit }) {
   const t = TYPE_STYLES[unit.type ?? 'default'] ?? TYPE_STYLES.default
   const typeLabel = unit.typeLabel ?? t.label
   const s = STATUS_STYLES[unit.status] ?? STATUS_STYLES.STANDBY
+  const isRecommended = !!unit.recommended
 
   // Highlight treatment
   const isOnScene = unit.status === 'ON SCENE'
@@ -615,8 +627,8 @@ function UnitCard({ unit }: { unit: Unit }) {
       {/* Type banner */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '8px 12px', background: 'rgba(0,0,0,0.3)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: '8px 12px', background: isRecommended ? 'rgba(16,185,129,0.12)' : 'rgba(0,0,0,0.3)',
+        borderBottom: `1px solid ${isRecommended ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.06)'}`,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
           <div style={{
@@ -634,15 +646,29 @@ function UnitCard({ unit }: { unit: Unit }) {
             {typeLabel}
           </div>
         </div>
-        {unit.badge && (
-          <div style={{
-            fontSize: 9, fontWeight: 800, letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.55)', fontFamily: 'monospace',
-            padding: '3px 7px', background: 'rgba(0,0,0,0.3)', borderRadius: 4, flexShrink: 0,
-          }}>
-            {unit.badge}
-          </div>
-        )}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+          {isRecommended && (
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 3,
+              fontSize: 8, fontWeight: 900, letterSpacing: '0.12em',
+              padding: '3px 8px', borderRadius: 99,
+              background: 'rgba(16,185,129,0.25)', border: '1px solid rgba(16,185,129,0.6)',
+              color: '#10B981',
+            }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 10 }}>auto_awesome</span>
+              Best Option
+            </div>
+          )}
+          {unit.badge && (
+            <div style={{
+              fontSize: 9, fontWeight: 800, letterSpacing: '0.1em',
+              color: 'rgba(255,255,255,0.55)', fontFamily: 'monospace',
+              padding: '3px 7px', background: 'rgba(0,0,0,0.3)', borderRadius: 4,
+            }}>
+              {unit.badge}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Body */}

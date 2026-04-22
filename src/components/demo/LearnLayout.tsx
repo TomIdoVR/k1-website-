@@ -247,20 +247,25 @@ export default function LearnLayout({
             {/* Metric rows */}
             <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 6 }}>
               {[
-                { label: 'Performance',    value: stage.dataPoints.find(d => d.key === 'PERFORMANCE')?.value ?? '+18% vs Avg', color: '#00C98A' },
-                { label: 'SLA Variance',   value: '−1:46 vs 10m',    color: '#00C98A' },
-                { label: 'Units Deployed', value: '2 units',          color: '#adc6ff' },
-                { label: 'AI Actions',     value: '7 automated',      color: '#adc6ff' },
-                { label: 'Civilian Risk',  value: 'Contained',        color: '#FFB020' },
-                { label: 'Case Status',    value: 'CLOSED',           color: '#00C98A' },
+                { label: 'Performance',    value: stage.dataPoints.find(d => d.key === 'PERFORMANCE')?.value ?? '+18% vs Avg', color: '#00C98A', auto: false },
+                { label: 'SLA Variance',   value: '−1:46 vs 10m',    color: '#00C98A', auto: false },
+                { label: 'Units Deployed', value: '2 units',          color: '#adc6ff', auto: false },
+                { label: 'AI Actions',     value: '7 automated',      color: '#adc6ff', auto: true },
+                { label: 'Report Filed',   value: 'Auto-generated',   color: '#00C98A', auto: true },
+                { label: 'Case Status',    value: 'CLOSED',           color: '#00C98A', auto: false },
               ].map((m) => (
                 <div key={m.label} style={{
                   padding: '11px 14px', borderRadius: 8,
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: m.auto ? 'rgba(163,113,247,0.06)' : 'rgba(255,255,255,0.04)',
+                  border: m.auto ? '1px solid rgba(163,113,247,0.2)' : '1px solid rgba(255,255,255,0.08)',
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 }}>
-                  <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#7fa8bc' }}>{m.label}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#7fa8bc' }}>{m.label}</span>
+                    {m.auto && (
+                      <span style={{ fontSize: 7, fontWeight: 900, letterSpacing: '0.14em', padding: '1px 5px', borderRadius: 99, background: 'rgba(163,113,247,0.2)', border: '1px solid rgba(163,113,247,0.45)', color: '#c9adff' }}>Auto</span>
+                    )}
+                  </div>
                   <span style={{ fontSize: '15px', fontWeight: 800, color: m.color, fontFamily: 'var(--font-space-mono), monospace' }}>{m.value}</span>
                 </div>
               ))}

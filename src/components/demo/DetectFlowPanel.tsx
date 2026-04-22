@@ -337,6 +337,28 @@ function NodeCard({
         </div>
       </div>
 
+      {/* Micro-label badge */}
+      {node.microLabel && !dim && (
+        <div style={{
+          position: 'absolute', top: 6, right: 10,
+          fontSize: 7, fontWeight: 900, letterSpacing: '0.14em', textTransform: 'uppercase',
+          padding: '1px 5px', borderRadius: 99,
+          background: node.type === 'rule'
+            ? 'rgba(0,201,138,0.2)'
+            : node.type === 'event'
+              ? 'rgba(255,69,96,0.18)'
+              : 'rgba(163,113,247,0.2)',
+          border: node.type === 'rule'
+            ? '1px solid rgba(0,201,138,0.5)'
+            : node.type === 'event'
+              ? '1px solid rgba(255,69,96,0.4)'
+              : '1px solid rgba(163,113,247,0.5)',
+          color: node.type === 'rule' ? '#00C98A' : node.type === 'event' ? '#ff8c9e' : '#c9adff',
+        }}>
+          {node.microLabel}
+        </div>
+      )}
+
       {/* Right accent bar */}
       <div
         style={{

@@ -32,11 +32,11 @@ export const lprScenario: ScenarioConfig = {
       },
       detectFlow: {
         nodes: [
-          { id: 'capture', title: 'CAPTURE',           subtitle: 'CAM 402 · live 30 fps',     icon: 'videocam',          type: 'sensor' },
-          { id: 'ocr',     title: 'PLATE EXTRACTION',  subtitle: 'OCR · plate 7JKY442',       icon: 'document_scanner',  type: 'ai' },
-          { id: 'match',   title: 'HOTLIST MATCH',     subtitle: 'Regional stolen DB · 4.2M', icon: 'database',          type: 'rule' },
-          { id: 'score',   title: 'AI PRIORITIZATION', subtitle: 'Threat HIGH · TX-2024-8821', icon: 'auto_awesome',     type: 'ai' },
-          { id: 'event',   title: 'EVENT TRIGGERED',   subtitle: 'Stolen vehicle · 98.4%',    icon: 'bolt',              type: 'event' },
+          { id: 'capture', title: 'CAPTURE',           subtitle: 'CAM 402 · live 30 fps',      icon: 'videocam',          type: 'sensor' },
+          { id: 'ocr',     title: 'PLATE EXTRACTION',  subtitle: 'OCR · plate 7JKY442',        icon: 'document_scanner',  type: 'ai',    microLabel: 'Auto' },
+          { id: 'match',   title: 'HOTLIST MATCH',     subtitle: 'Regional stolen DB · 4.2M',  icon: 'database',          type: 'rule',  microLabel: 'Match' },
+          { id: 'score',   title: 'AI PRIORITIZATION', subtitle: 'Threat HIGH · TX-2024-8821', icon: 'auto_awesome',      type: 'ai',    microLabel: 'Auto' },
+          { id: 'event',   title: 'EVENT TRIGGERED',   subtitle: 'Stolen vehicle · 98.4%',     icon: 'bolt',              type: 'event', microLabel: 'Auto' },
         ],
         branch: {
           fromNodeId: 'match',
@@ -185,6 +185,7 @@ export const lprScenario: ScenarioConfig = {
           eta: '2:48', etaLabel: 'ETA to intercept', etaSub: 'closest available',
           distance: '1.2 mi', distanceSub: 'from target vehicle',
           channel: 'CH-1', equipment: 'Dash Cam', equipmentIcon: 'videocam',
+          recommended: true,
         },
         {
           id: '08-BRAVO', role: 'Backup · Secondary intercept', status: 'EN ROUTE', active: true,

@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.47] 2026-04-22 — Improve: Demo micro-labels — Auto/Match/Live/Linked/Best Option/Sent per stage
+
+**Improved**
+- DETECT: nodes now show "Auto" (OCR, AI prioritization, event trigger) and "Match" (hotlist match) micro-badges — system intelligence is visually labelled at each step
+- UNDERSTAND: camera pip gets "LIVE" + "Linked" badges; tracked vehicle section adds "● Live" pill next to label
+- DECIDE: top recommended unit card shows "Best Option" badge with green glow treatment; `recommended: true` added to 12-CHARLIE in LPR data; `splitUnits` type extended with optional `recommended` field
+- ACT: dispatch alert header shows "✓ Sent" badge; camera feed gets red "LIVE" badge; "EN ROUTE" status rendered as a pill with pulse dot
+- LEARN: "AI Actions" and new "Report Filed" metric rows show "Auto" badge; report row added to metrics
+
+---
+
 ## [2.46] 2026-04-22 — Improve: Demo cognitive load reduction — remove noise, active-only modules, smarter Decide
 
 **Improved**

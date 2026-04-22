@@ -240,11 +240,16 @@ export default function StageScreen({
             </div>
             {/* Camera feed inset */}
             {stage.pipImage && (
-              <div style={{ position: 'absolute', top: 40, right: 10, zIndex: 40, width: 160, aspectRatio: '16/9', borderRadius: 5, overflow: 'hidden', border: '1px solid rgba(173,198,255,0.35)', boxShadow: '0 4px 16px rgba(0,0,0,0.8)', background: '#000' }}>
+              <div style={{ position: 'absolute', top: 40, right: 10, zIndex: 40, width: 160, aspectRatio: '16/9', borderRadius: 5, overflow: 'hidden', border: '1px solid rgba(255,69,96,0.5)', boxShadow: '0 4px 16px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,69,96,0.2)', background: '#000' }}>
                 <img src={stage.pipImage} alt={stage.pipLabel ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.75)' }} />
-                <div style={{ position: 'absolute', top: 3, left: 3, display: 'flex', alignItems: 'center', gap: 3, background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)', padding: '2px 5px', borderRadius: 3 }}>
-                  <span className="animate-pulse" style={{ color: '#ffb4ab', fontSize: 7 }}>●</span>
-                  <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>LIVE</span>
+                <div style={{ position: 'absolute', top: 3, left: 3, display: 'flex', alignItems: 'center', gap: 3, background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(6px)', padding: '2px 5px', borderRadius: 3 }}>
+                  <span className="animate-pulse" style={{ color: '#FF4560', fontSize: 7 }}>●</span>
+                  <span style={{ fontSize: '7px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>LIVE</span>
+                </div>
+                {/* Linked badge */}
+                <div style={{ position: 'absolute', top: 3, right: 3, display: 'inline-flex', alignItems: 'center', gap: 2, background: 'rgba(59,158,255,0.25)', border: '1px solid rgba(59,158,255,0.55)', padding: '1px 5px', borderRadius: 3 }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 8, color: '#7ec1ff' }}>link</span>
+                  <span style={{ fontSize: '7px', fontWeight: 800, color: '#7ec1ff', letterSpacing: '0.1em' }}>Linked</span>
                 </div>
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2px 5px', background: 'rgba(0,0,0,0.6)', fontSize: '7px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-space-mono), monospace' }}>{stage.pipLabel}</div>
               </div>
@@ -255,7 +260,14 @@ export default function StageScreen({
                 <>
                   <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 8 }}>
                     <div>
-                      <div style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', marginBottom: 2, fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
+                        <span style={{ fontSize: '7px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(173,198,255,0.45)', fontFamily: 'var(--font-space-mono), monospace' }}>Tracked Vehicle</span>
+                        {/* Live badge */}
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3, fontSize: 7, fontWeight: 900, letterSpacing: '0.12em', padding: '1px 5px', borderRadius: 99, background: 'rgba(0,201,138,0.18)', border: '1px solid rgba(0,201,138,0.45)', color: '#00C98A' }}>
+                          <span className="animate-pulse" style={{ display: 'inline-block', width: 4, height: 4, borderRadius: '50%', background: '#00C98A' }} />
+                          Live
+                        </span>
+                      </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', lineHeight: 1, fontFamily: 'var(--font-space-mono), monospace', textShadow: '0 0 16px rgba(59,158,255,0.5)' }}>7JKY442</div>
                       <div style={{ fontSize: '8px', fontWeight: 700, color: 'rgba(255,80,80,0.85)', marginTop: 2, letterSpacing: '0.1em', fontFamily: 'var(--font-space-mono), monospace' }}>STOLEN · NCIC CONFIRMED</div>
                     </div>

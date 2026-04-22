@@ -24,6 +24,7 @@ export interface DetectFlowNode {
   subtitle: string       // e.g. "Regional Stolen DB · 4.2M rec"
   icon: string           // Material Symbols Outlined name
   type: DetectFlowNodeType
+  microLabel?: string    // e.g. "Auto", "Match" — small badge top-right of node
 }
 
 export interface DetectFlow {
@@ -162,6 +163,7 @@ export interface Stage {
     channel?: string        // e.g. "CH-1"
     equipment?: string      // e.g. "Body Cam", "Cruiser"
     equipmentIcon?: string  // material symbol, e.g. "videocam", "directions_car"
+    recommended?: boolean   // true = show "Best Option" badge (AI-recommended unit)
   }>
   splitMapCoords?: {
     incident: [number, number]
