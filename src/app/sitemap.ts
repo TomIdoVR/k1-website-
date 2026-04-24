@@ -73,7 +73,6 @@ const pages = [
   { path: '/about', priority: 0.5 },
   { path: '/contact', priority: 0.5 },
   { path: '/privacy', priority: 0.3 },
-  { path: '/privacy-policy-tamaulipas', priority: 0.2 },
   { path: '/simulator', priority: 0.8 },
   { path: '/demo', priority: 0.7 },
   { path: '/demo/lpr', priority: 0.7 },
@@ -81,7 +80,7 @@ const pages = [
   { path: '/demo/violence', priority: 0.7 },
   { path: '/demo/medical', priority: 0.7 },
   { path: '/demo/access-control', priority: 0.7 },
-  { path: '/lp', priority: 0.4 },
+  // /lp and /privacy-policy-tamaulipas excluded: pages have noindex — sitemap + noindex is contradictory
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

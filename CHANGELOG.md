@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.48] 2026-04-24 — Fix: Remove noindex pages from sitemap + SEO master plan sync
+
+**Fixed**
+- Removed `/lp` and `/privacy-policy-tamaulipas` from `sitemap.ts` — both pages have `robots: noindex` tags; including noindex pages in the sitemap sends contradictory signals to Google and was causing the "Excluded by noindex" GSC report
+- Sitemap is now 166 URLs (83 routes × 2 locales), down from 170
+
+**Updated**
+- Master plan synced: Phase 2 → Done (95%), GSC status block added with 2026-04-23 data, agent run log synced through v2.47
+- GEO-008 complete: No KabatOne Wikipedia article exists. Target article for GEO-009: `en.wikipedia.org/wiki/Physical_security_information_management`
+- GEO-013 first monthly run: KabatOne ranking for branded terms + C5 Mexico queries ✅. Not appearing for PSIM alternative or best public safety software ❌ — requires more backlinks and third-party mentions
+
+---
+
 ## [2.47] 2026-04-22 — Improve: Demo micro-labels — Auto/Match/Live/Linked/Best Option/Sent per stage
 
 **Improved**

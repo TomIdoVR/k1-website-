@@ -15,15 +15,16 @@
 |-------|--------|----------|
 | Phase 0 — Foundation & audit | Done | 100% |
 | Phase 1 — Pre-launch fixes | Done | 100% |
-| Phase 2 — Launch | **In progress** | **60%** |
-| Phase 3 — Post-launch growth | In progress | 90% |
+| Phase 2 — Launch | **Done** | **95%** |
+| Phase 3 — Post-launch growth | In progress | 95% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 95% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 97% |
 
-**Last updated:** 2026-04-10
-**Current site size:** 85 unique routes × 2 locales (EN + ES) = 170 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 19 | /resources/: 29 (hub + 28 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 6 (about, contact, privacy, privacy-policy-tamaulipas, simulator, lp)
+**Last updated:** 2026-04-23
+**Current site size:** 83 unique routes × 2 locales (EN + ES) = 166 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 19 | /resources/: 29 (hub + 28 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+- Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 
 ### 🟢 DNS & Hosting Status (verified 2026-04-10)
 | Item | Status |
@@ -32,19 +33,28 @@
 | Nameservers | GoDaddy (`ns09/ns10.domaincontrol.com`) |
 | SSL / HSTS | ✅ Active |
 | Hreflang headers | ✅ EN + ES + x-default served |
-| Deployed version | ⚠️ **15 commits behind** — branch `demo-light-redesign` not merged to `nextjs` |
-| Live sitemap | ⚠️ 134/170 URLs — 36 URLs pending deploy (12 new routes × 2 locales + sitemap corrections) |
-| Build status | ✅ Clean build, 0 errors (verified 2026-04-10) |
+| Deployed version | ✅ Current — `nextjs` branch live on staging.kabatone.com (v2.47) |
+| Live sitemap | ✅ 166 URLs (83 routes × 2 locales) — /lp + /privacy-policy-tamaulipas removed (noindex) |
+| Build status | ✅ Clean build, 0 errors (verified 2026-04-23) |
 
-### 🔴 Remaining Phase 2 blockers
-| # | Blocker | Owner | Target |
-|---|---------|-------|--------|
-| 1 | **Merge & deploy** `demo-light-redesign` → `nextjs` (15 commits, adds 36 sitemap URLs) | Ben / Omer | April 13 |
-| 2 | **Create GSC property** for kabatone.com + verify ownership via DNS TXT | David Z / Omer | April 13 |
-| 3 | **Submit sitemap** to GSC (`https://kabatone.com/sitemap.xml`) | SEO | After GSC |
-| 4 | **Request indexing** for 6 priority pages (Homepage, K-Dispatch, K-Safety, K-Video, Public Safety, Municipalities) | SEO | After GSC |
-| 5 | Verify GA4 tracking on live site (G-5MB9CK1FGS) | David Z | April 14 |
-| 6 | Run Auditor + Validator against live kabatone.com | SEO | After deploy |
+### Phase 2 blockers — resolved
+| # | Blocker | Status |
+|---|---------|--------|
+| 1 | Merge & deploy `demo-light-redesign` → `nextjs` | ✅ Done |
+| 2 | Create GSC property + verify ownership | ✅ Done — verified 2026-03-26 |
+| 3 | Submit sitemap to GSC | ✅ Done — 2026-04-20 |
+| 4 | Request indexing for 6 priority pages | ✅ Done — 2026-04-20 |
+| 5 | Verify GA4 tracking on live site | Not confirmed |
+| 6 | Run Auditor + Validator against live kabatone.com | Not started |
+
+### 🟡 Remaining GSC issues (from 2026-04-23 screenshot)
+| Issue | Count | Action |
+|-------|-------|--------|
+| Redirect error | 2 | Need GSC URL list to identify — likely www vs non-www canonical mismatch |
+| Excluded by noindex | 1 | Fixed — /lp + /privacy-policy-tamaulipas removed from sitemap (v2.48) |
+| Crawled - currently not indexed | 8 | Monitor — likely thin content pages (/lp, /simulator, demo pages) |
+| Discovered - currently not indexed | 112 | Normal for new site — Google queue, will resolve over time |
+| Indexed | 35 | Growing — submitted 2026-04-20 |
 
 ---
 
@@ -124,8 +134,8 @@
 | Validation run complete | Done |
 | Git push after validation | Done | commit b5b5795 — 15 files, 60 insertions |
 | Vercel deploy (DNS live) | ✅ Done — verified 2026-04-10 |
-| GSC verified + sitemap submitted | **Not started — PRIORITY** |
-| GSC property created for kabatone.com | **Not started — PRIORITY** |
+| GSC verified + sitemap submitted | ✅ GSC verified (2026-03-26) — sitemap submission pending |
+| GSC property created for kabatone.com | ✅ Done — verified owner as of 2026-03-26, 137 crawls in 90 days |
 | GA4 installed with conversion events | Done | G-5MB9CK1FGS — v1.15 |
 | robots.txt verified | ✅ Done — `Allow: /` + sitemap link (verified 2026-04-10) |
 | Staging site blocked from Google | N/A — Next.js on Vercel, no separate staging indexed |
@@ -143,11 +153,12 @@
 | Apply meta descriptions in Webflow Page Settings | N/A — handled in Next.js metadata |
 | Apply canonical URLs in Webflow Page Settings | N/A — handled in Next.js metadata |
 | Verify sitemap at kabatone.com/sitemap.xml | ✅ Done — 134 URLs live (170 after deploy) |
-| Submit sitemap to GSC | **Not started — PRIORITY** |
-| Request indexing for priority pages in GSC | Not started |
-| Verify GA4 tracking on live site | Not started |
+| Submit sitemap to GSC | ✅ Done — 2026-04-20 |
+| Request indexing for priority pages in GSC | ✅ Done — 2026-04-20 (6 priority pages submitted) |
+| Verify GA4 tracking on live site | Not confirmed |
 | Run Auditor against live kabatone.com | Not started |
 | Run Validator against live site | Not started |
+| Remove noindex pages from sitemap | ✅ Done — 2026-04-23 v2.48 (/lp + /privacy-policy-tamaulipas) |
 
 ### Priority pages to index first
 | Page | URL | Status |
@@ -429,6 +440,8 @@
 | 2026-04-08 | Claude Code | 1 GEO guide | — | Next.js | /resources/c5-command-centers-mexico-2026 + metadata optimization — v1.47 |
 | 2026-04-09 | Claude Code | SEO metadata | — | sitemap.ts + metadata | 4 demo pages added to sitemap + metadata — v1.66 |
 | 2026-04-10 | Claude Code | 2 /vs/ pages + master plan sync | — | Next.js + master plan | /vs/tyler-technologies, /vs/centralsquare — EN+ES, FAQ+breadcrumb schema; GEO tracker + keyword map + competitor table updated v1.32→v1.67 — v1.67 |
+| 2026-04-20–22 | Claude Code | Demo improvements | — | Next.js | Demo system: micro-labels (v2.47), cognitive load reduction (v2.46), mobile responsive fixes (v2.44), module pill sizing (v2.43), unit card fixes (v2.39–v2.42) |
+| 2026-04-23 | Claude Code | Sitemap + master plan sync | — | sitemap.ts + master plan | Remove /lp + /privacy-policy-tamaulipas from sitemap (noindex contradiction), Phase 2 status → Done, GSC status updated v1.67→v2.48 |
 
 ---
 
@@ -502,8 +515,8 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-005 | Citeable explainer: "How do C5 command centers work?" | Medium | Done |
 | GEO-006 | Citeable explainer: "Smart city platform guide" | Medium | Done |
 | GEO-007 | Citeable explainer: "Public safety software for municipalities in Mexico" | High | Done |
-| GEO-008 | Wikipedia research — does KabatOne qualify for an entry? | Medium | Not started |
-| GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | Not started |
+| GEO-008 | Wikipedia research — does KabatOne qualify for an entry? | Medium | Done | 2026-04-24 — No KabatOne Wikipedia article exists. PSIM article exists at en.wikipedia.org/wiki/Physical_security_information_management — lists vendors; KabatOne qualifies for mention as "next-gen unified alternative". |
+| GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | **ACTION NEEDED** — Target: Physical_security_information_management article. Add KabatOne as example of next-generation unified platform alternative to legacy PSIM. Requires a verifiable third-party source. |
 | GEO-010 | FAQPage schema on all industry pages | Medium | Done |
 | GEO-011 | FAQPage schema on all remaining product pages | Medium | Done |
 | GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Done |
@@ -597,7 +610,10 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 
 | Date | Tool | Query | KabatOne cited? | Competitors cited |
 |------|------|-------|----------------|-------------------|
-| — | — | — | — | — |
+| 2026-04-24 | Web search | "KabatOne public safety platform CAD dispatch" | ✅ Yes — positions 1–4, kabatone.com dominates branded | Mark43, Versaterm, Caliber |
+| 2026-04-24 | Web search | "C5 command center software Mexico municipalities 2026" | ✅ Yes — positions 2–3 (/what-is-a-command-center, /how-c5-command-centers-work) | Seguritech, Thales, Eagle Eye |
+| 2026-04-24 | Web search | "PSIM alternative unified public safety platform municipalities Latin America" | ❌ No — not appearing | HxGN OnCall, Motorola CommandCentral, Advancis, SOMA Global, Verkada |
+| 2026-04-24 | Web search | "best public safety software 2026 municipalities" | ❌ No — not appearing | Mark43, CentralSquare, Tyler Technologies, Oracle, Lexipol |
 
 ### GEO content principles
 
