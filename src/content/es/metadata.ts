@@ -359,4 +359,14 @@ export const metadata = {
     description: "CentralSquare opera CAD, RMS y ERP municipal legacy en miles de agencias estadounidenses. KabatOne entrega video, CAD, GIS y tráfico cloud-native en una sola plataforma operativa — con 40+ despliegues LATAM y localización completa en español.",
     canonical: "https://kabatone.com/es/vs/centralsquare/",
   },
+  vsShotSpotter: {
+    title: "KabatOne vs ShotSpotter (SoundThinking) — Detección de Disparos vs Plataforma Unificada",
+    description: "ShotSpotter detecta disparos. KabatOne integra detección de disparos más video, despacho CAD, GIS y tráfico en una sola plataforma unificada de seguridad pública — la alerta activa automáticamente el flujo completo de respuesta.",
+    canonical: "https://kabatone.com/es/vs/shotspotter/",
+  },
+  vsPalantir: {
+    title: "KabatOne vs Palantir Gotham — Operaciones en Tiempo Real vs Plataforma de Análisis",
+    description: "Palantir Gotham es una capa de inteligencia y análisis. KabatOne es la capa de operaciones en tiempo real — conectando cámaras, sensores, despacho CAD y unidades de campo en una sola plataforma de comando unificado para ciudades y municipios.",
+    canonical: "https://kabatone.com/es/vs/palantir/",
+  },
 } as const
