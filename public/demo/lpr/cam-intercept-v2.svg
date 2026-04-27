@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#040810"/>
+      <stop offset="100%" stop-color="#08111e"/>
+    </linearGradient>
+    <linearGradient id="road2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1520"/>
+      <stop offset="100%" stop-color="#07101a"/>
+    </linearGradient>
+    <linearGradient id="body2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c2d40"/>
+      <stop offset="40%" stop-color="#101e2d"/>
+      <stop offset="100%" stop-color="#06101a"/>
+    </linearGradient>
+    <linearGradient id="hood2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2c3e"/>
+      <stop offset="100%" stop-color="#0a1824"/>
+    </linearGradient>
+    <radialGradient id="hl2L" cx="40%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ffffee" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ffee88" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffcc22" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hlBeam" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffcc" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffffaa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gG2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feFlood flood-color="#00ff66" flood-opacity="0.6" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feComposite in="SourceGraphic" in2="g" operator="over"/>
+    </filter>
+    <filter id="hlGlow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <pattern id="scan2" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="rgba(0,0,0,0.12)"/>
+    </pattern>
+    <clipPath id="clip2"><rect width="960" height="600"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip2)">
+  <!-- Background -->
+  <rect width="960" height="600" fill="url(#bg2)"/>
+
+  <!-- Distant urban sky glow -->
+  <ellipse cx="350" cy="170" rx="400" ry="100" fill="#0d2240" opacity="0.35"/>
+  <ellipse cx="750" cy="200" rx="200" ry="60" fill="#0d2030" opacity="0.2"/>
+
+  <!-- Streetlight poles (background) -->
+  <line x1="120" y1="120" x2="120" y2="310" stroke="#0e1a28" stroke-width="4"/>
+  <ellipse cx="120" cy="115" rx="18" ry="8" fill="#1a3050" opacity="0.6"/>
+  <ellipse cx="120" cy="113" rx="8" ry="4" fill="#ffee88" opacity="0.4"/>
+  <line x1="820" y1="100" x2="820" y2="310" stroke="#0e1a28" stroke-width="4"/>
+  <ellipse cx="820" cy="95" rx="18" ry="8" fill="#1a3050" opacity="0.6"/>
+  <ellipse cx="820" cy="93" rx="8" ry="4" fill="#ffee88" opacity="0.35"/>
+
+  <!-- Road -->
+  <path d="M0 310 L960 310 L960 600 L0 600 Z" fill="url(#road2)"/>
+  <!-- Road markings (intersection area) -->
+  <line x1="0" y1="340" x2="960" y2="340" stroke="#152234" stroke-width="2" stroke-dasharray="40,30"/>
+  <line x1="0" y1="370" x2="960" y2="370" stroke="#101c2c" stroke-width="1.5"/>
+  <!-- Curb line -->
+  <line x1="0" y1="312" x2="960" y2="312" stroke="#1a2c3e" stroke-width="3"/>
+
+  <!-- Headlight beam cones (projected on road) -->
+  <ellipse cx="420" cy="440" rx="320" ry="100" fill="url(#hlBeam)" opacity="0.8"/>
+  <ellipse cx="350" cy="380" rx="180" ry="60" fill="#ffffcc" opacity="0.04"/>
+
+  <!-- Shadow under car -->
+  <ellipse cx="520" cy="490" rx="230" ry="20" fill="#000000" opacity="0.55"/>
+
+  <!-- === CAR BODY (front-right 3/4 view) === -->
+
+  <!-- Right side door / body -->
+  <path d="M660 240 L850 260 L870 480 L660 490 Z" fill="#0d1c2c"/>
+  <path d="M662 242 L848 262 L866 478 L662 488 Z" fill="none" stroke="#18283a" stroke-width="1"/>
+
+  <!-- Right front quarter panel -->
+  <path d="M480 270 L660 240 L660 490 L480 490 Z" fill="url(#body2)"/>
+
+  <!-- Hood (seen from slight above-front-right) -->
+  <path d="M230 250 Q290 200 480 200 L480 270 L230 310 Z" fill="url(#hood2)"/>
+  <path d="M232 252 Q292 203 478 202 L478 268 L232 308 Z" fill="none" stroke="#1e3248" stroke-width="1" opacity="0.6"/>
+  <!-- Hood reflection line -->
+  <path d="M280 225 Q380 210 460 210 L460 225 Q370 225 280 240 Z" fill="#ffffff" opacity="0.025"/>
+
+  <!-- Windshield (front view, angled) -->
+  <path d="M290 185 Q350 165 480 160 L480 270 L230 310 L240 220 Z" fill="#0c1e30" opacity="0.92"/>
+  <path d="M292 188 Q352 168 478 162 L478 268 L232 308 L242 222 Z" fill="none" stroke="#1e3650" stroke-width="1.5"/>
+  <!-- Windshield reflection -->
+  <path d="M300 190 Q340 175 390 172 L390 200 Q350 200 300 215 Z" fill="#ffffff" opacity="0.03"/>
+
+  <!-- A-pillar left -->
+  <path d="M230 250 L240 220 L290 185 L260 230 Z" fill="#0b1828"/>
+  <!-- A-pillar right (far) -->
+  <path d="M480 160 L480 200 L480 270 L480 270 Z" fill="#0d1e2e"/>
+
+  <!-- Roof -->
+  <path d="M290 185 Q480 160 660 180 L660 240 L480 270 L230 250 L240 220 Z" fill="#0e1e2e"/>
+  <path d="M292 187 Q480 162 658 182 L658 238 L480 268 L232 248 L242 222 Z" fill="none" stroke="#1a2e42" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Front bumper / grille area -->
+  <path d="M180 310 Q195 320 230 325 L480 340 L480 380 L230 370 Q185 365 170 355 Z" fill="#0a1724"/>
+  <path d="M182 312 Q196 322 231 327 L478 342 L478 378 L231 368 Q186 364 172 354 Z" fill="none" stroke="#152535" stroke-width="1"/>
+  <!-- Grille slats -->
+  <line x1="200" y1="325" x2="470" y2="345" stroke="#0f2030" stroke-width="2"/>
+  <line x1="200" y1="337" x2="470" y2="358" stroke="#0f2030" stroke-width="2"/>
+  <line x1="200" y1="349" x2="470" y2="369" stroke="#0f2030" stroke-width="2"/>
+  <!-- Brand emblem -->
+  <circle cx="340" cy="348" r="12" fill="#0f1e2e" stroke="#1a2e42" stroke-width="1.5"/>
+  <circle cx="340" cy="348" r="6" fill="#1e3254" opacity="0.7"/>
+
+  <!-- LEFT HEADLIGHT (visible from front-right angle) -->
+  <!-- Beam glow projected -->
+  <ellipse cx="180" cy="330" rx="200" ry="120" fill="url(#hl2L)" filter="url(#hlGlow)" opacity="0.7"/>
+  <!-- Headlight housing -->
+  <path d="M170 270 Q175 260 215 258 L290 262 L285 320 L165 318 Z" fill="#070f1a"/>
+  <path d="M173 272 Q178 263 215 261 L287 265 L282 317 L168 315 Z" fill="none" stroke="#1a3050" stroke-width="1.5"/>
+  <!-- Headlight DRL ring -->
+  <path d="M178 276 Q182 268 215 266 L282 270 L278 312 L174 310 Z" fill="#111e30"/>
+  <!-- Headlight inner bright -->
+  <ellipse cx="228" cy="288" rx="35" ry="20" fill="#ddeeff" opacity="0.8"/>
+  <ellipse cx="228" cy="287" rx="20" ry="11" fill="#ffffff" opacity="0.95"/>
+  <!-- Headlight beam strips (LED) -->
+  <path d="M182 278 L275 282" stroke="#ffffff" stroke-width="2.5" opacity="0.7"/>
+  <path d="M182 286 L275 290" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+
+  <!-- Fog light -->
+  <ellipse cx="210" cy="355" rx="22" ry="12" fill="#ffee66" opacity="0.4"/>
+  <ellipse cx="210" cy="355" rx="14" ry="7" fill="#ffff99" opacity="0.6"/>
+
+  <!-- LEFT FRONT WHEEL ARCH -->
+  <path d="M165 380 Q160 460 175 490 L290 490 Q310 460 310 380 Z" fill="#090f18"/>
+  <!-- Wheel -->
+  <ellipse cx="235" cy="490" rx="72" ry="20" fill="#060c14"/>
+  <ellipse cx="235" cy="480" rx="66" ry="16" fill="#080e18"/>
+  <!-- Tire -->
+  <ellipse cx="235" cy="480" rx="60" ry="14" fill="#0e0e0e"/>
+  <ellipse cx="235" cy="480" rx="42" ry="10" fill="#0c1620"/>
+  <!-- Rim spokes -->
+  <line x1="235" y1="470" x2="235" y2="490" stroke="#1a2a3a" stroke-width="2"/>
+  <line x1="223" y1="472" x2="247" y2="488" stroke="#1a2a3a" stroke-width="2"/>
+  <line x1="225" y1="488" x2="245" y2="472" stroke="#1a2a3a" stroke-width="2"/>
+
+  <!-- RIGHT FRONT WHEEL ARCH -->
+  <path d="M540 380 Q535 460 550 490 L660 490 Q675 460 675 380 Z" fill="#080e16"/>
+  <ellipse cx="610" cy="490" rx="68" ry="18" fill="#050b12"/>
+  <ellipse cx="610" cy="480" rx="62" ry="15" fill="#070d16"/>
+  <ellipse cx="610" cy="480" rx="56" ry="12" fill="#0c0c0c"/>
+  <ellipse cx="610" cy="480" rx="40" ry="9" fill="#0c1520"/>
+  <line x1="610" y1="471" x2="610" y2="489" stroke="#1a2a3a" stroke-width="2"/>
+  <line x1="598" y1="473" x2="622" y2="487" stroke="#1a2a3a" stroke-width="2"/>
+  <line x1="600" y1="487" x2="620" y2="473" stroke="#1a2a3a" stroke-width="2"/>
+
+  <!-- FRONT LICENSE PLATE -->
+  <rect x="285" y="340" width="158" height="42" rx="3" fill="#f0ede5"/>
+  <rect x="287" y="342" width="154" height="38" rx="2.5" fill="#eeebe3" stroke="#ccc9b8" stroke-width="0.5"/>
+  <rect x="291" y="345" width="146" height="32" rx="1.5" fill="none" stroke="#c0bdb0" stroke-width="0.5"/>
+  <text x="364" y="366" font-family="'Arial Black', Arial, sans-serif" font-size="18" font-weight="900" fill="#080808" text-anchor="middle" letter-spacing="2">7JKY442</text>
+  <text x="364" y="376" font-family="Arial, sans-serif" font-size="5" fill="#666" text-anchor="middle" letter-spacing="2">TEXAS</text>
+
+  <!-- === LPR DETECTION OVERLAY === -->
+  <rect x="268" y="327" width="192" height="68" rx="2"
+    fill="rgba(0,255,100,0.04)" stroke="#00ff66" stroke-width="2.5"
+    filter="url(#gG2)"/>
+  <!-- Corners -->
+  <path d="M268 345 L268 327 L286 327" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M460 345 L460 327 L442 327" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M268 377 L268 395 L286 395" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M460 377 L460 395 L442 395" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+
+  <!-- Detection tag above box -->
+  <rect x="268" y="309" width="132" height="18" rx="2" fill="#00cc55"/>
+  <text x="273" y="322" font-family="'Courier New', monospace" font-size="10" font-weight="800" fill="#000" letter-spacing="0.8">LPR HIT · 98.4%</text>
+
+  <!-- Plate readout below box -->
+  <rect x="268" y="397" width="122" height="16" rx="2" fill="rgba(0,0,0,0.82)"/>
+  <text x="273" y="408.5" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#00ff66" letter-spacing="1.5">7JKY442</text>
+
+  <!-- === HUD === -->
+  <!-- STOLEN ALERT -->
+  <rect x="280" y="155" width="264" height="34" rx="4" fill="#cc1122" opacity="0.95"/>
+  <rect x="281" y="156" width="262" height="32" rx="3.5" fill="none" stroke="#ff4455" stroke-width="1" opacity="0.8"/>
+  <text x="412" y="178" font-family="'Courier New', monospace" font-size="13" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="2">⚠ STOLEN VEHICLE</text>
+
+  <!-- Timestamp top-left -->
+  <rect x="8" y="8" width="190" height="20" rx="2" fill="rgba(0,0,0,0.7)"/>
+  <text x="14" y="22" font-family="'Courier New', monospace" font-size="10" fill="#6ab4ff" letter-spacing="0.5">12:04:01  CAM-118</text>
+
+  <!-- Camera label top-right -->
+  <rect x="700" y="8" width="252" height="20" rx="2" fill="rgba(0,0,0,0.7)"/>
+  <text x="706" y="22" font-family="'Courier New', monospace" font-size="9.5" fill="#6ab4ff" letter-spacing="0.5">INTERCHANGE · SECTOR 4</text>
+
+  <!-- LIVE badge -->
+  <rect x="8" y="34" width="58" height="17" rx="2" fill="rgba(200,15,15,0.85)"/>
+  <circle cx="19" cy="42.5" r="3.5" fill="#ff5555"/>
+  <text x="28" y="45.5" font-family="'Courier New', monospace" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">LIVE</text>
+
+  <!-- GPS data bottom-left -->
+  <rect x="8" y="562" width="205" height="32" rx="2" fill="rgba(0,0,0,0.75)"/>
+  <text x="14" y="575" font-family="'Courier New', monospace" font-size="8.5" fill="#88aacc" letter-spacing="0.3">29.7542°N  95.3914°W</text>
+  <text x="14" y="587" font-family="'Courier New', monospace" font-size="8.5" fill="#88aacc" letter-spacing="0.3">SPD: 72 MPH  DIR: W</text>
+
+  <!-- Alert bottom-right -->
+  <rect x="680" y="570" width="272" height="22" rx="2" fill="rgba(180,10,10,0.85)"/>
+  <text x="816" y="585" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">REGIONAL HOTLIST MATCH</text>
+
+  <!-- Scanlines -->
+  <rect width="960" height="600" fill="url(#scan2)" opacity="0.55"/>
+
+  <!-- Vignette -->
+  <radialGradient id="vig2" cx="50%" cy="50%" r="70%">
+    <stop offset="0%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+  </radialGradient>
+  <rect width="960" height="600" fill="url(#vig2)"/>
+  </g>
+</svg>

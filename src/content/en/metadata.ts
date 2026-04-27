@@ -319,4 +319,54 @@ export const metadata = {
     description: "C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.",
     canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026/",
   },
+  callCenterSoftwareGuide: {
+    title: "911 Call Center Software Guide: Features, Types & How to Choose | KabatOne",
+    description: "Complete guide to 911 call center software — call intake, CAD integration, NG911 compliance, and AI-assisted dispatch. How modern PSAPs select and deploy emergency call center technology.",
+    canonical: "https://kabatone.com/resources/911-call-center-software-guide/",
+  },
+  bestPublicSafetySoftware: {
+    title: "Best Public Safety Software Platforms in 2026 | KabatOne",
+    description: "Comprehensive comparison of the best public safety software platforms for municipalities and government agencies — covering CAD dispatch, video management, GIS, and unified command center solutions.",
+    canonical: "https://kabatone.com/resources/best-public-safety-software/",
+  },
+  buildRtccImplementationGuide: {
+    title: "How to Build a Real-Time Crime Center: Implementation Guide | KabatOne",
+    description: "Step-by-step guide to building a Real-Time Crime Center (RTCC) — technology requirements, camera network design, data integration, staffing, and operational best practices for municipalities.",
+    canonical: "https://kabatone.com/resources/build-rtcc-implementation-guide/",
+  },
+  publicSafetySoftwareColombia: {
+    title: "Public Safety Software for Colombia: C5 & Municipal Platforms | KabatOne",
+    description: "Public safety technology for Colombian cities and municipalities — C5 command centers, unified dispatch, video surveillance, and GIS. How KabatOne supports public security operations in Colombia.",
+    canonical: "https://kabatone.com/resources/public-safety-software-colombia/",
+  },
+  publicSafetySoftwarePeru: {
+    title: "Public Safety Software for Peru: C5 & Municipal Platforms | KabatOne",
+    description: "Public safety technology for Peruvian cities and municipalities — C5 command centers, unified dispatch, video surveillance, and GIS. How KabatOne supports public security operations in Peru.",
+    canonical: "https://kabatone.com/resources/public-safety-software-peru/",
+  },
+  publicSafetySoftwareSmallCities: {
+    title: "Public Safety Software for Small Cities & Municipalities | KabatOne",
+    description: "Affordable, scalable public safety platforms designed for small cities and municipalities. Unified video, dispatch, and GIS without enterprise price tags — how smaller governments can build C5-level capabilities.",
+    canonical: "https://kabatone.com/resources/public-safety-software-small-cities/",
+  },
+  vsTylerTechnologies: {
+    title: "KabatOne vs Tyler Technologies — Public Safety Platform Comparison",
+    description: "Tyler Technologies offers broad government software including Enterprise CAD and RMS. KabatOne delivers operational depth: video, CAD, GIS, and traffic in one cloud-native platform built for C4/C5 command centers in LATAM.",
+    canonical: "https://kabatone.com/vs/tyler-technologies/",
+  },
+  vsCentralsquare: {
+    title: "KabatOne vs CentralSquare — Unified Public Safety Platform Comparison",
+    description: "CentralSquare runs legacy CAD, RMS, and municipal ERP across thousands of US agencies. KabatOne delivers cloud-native video, CAD, GIS, and traffic in one operational platform — with 40+ LATAM deployments and full Spanish localization.",
+    canonical: "https://kabatone.com/vs/centralsquare/",
+  },
+  vsShotSpotter: {
+    title: "KabatOne vs ShotSpotter (SoundThinking) — Gunshot Detection vs Unified Platform",
+    description: "ShotSpotter detects gunshots. KabatOne integrates gunshot detection plus video, CAD dispatch, GIS, and traffic into one unified public safety platform — so the alert triggers the full response workflow automatically.",
+    canonical: "https://kabatone.com/vs/shotspotter/",
+  },
+  vsPalantir: {
+    title: "KabatOne vs Palantir Gotham — Real-Time Operations vs Analytics Platform",
+    description: "Palantir Gotham is an intelligence and analytics layer. KabatOne is the real-time operations layer — connecting cameras, sensors, CAD dispatch, and field units in one unified command platform for cities and municipalities.",
+    canonical: "https://kabatone.com/vs/palantir/",
+  },
 } as const

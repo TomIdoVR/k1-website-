@@ -40,6 +40,20 @@ export const medicalScenario: ScenarioConfig = {
           'DISPATCH: Units are being dispatched now.',
         ],
       },
+      detectFlow: {
+        nodes: [
+          { id: 'call',     title: '911 CALL',             subtitle: 'M. Rivera · inbound',          icon: 'call',           type: 'sensor' },
+          { id: 'nlp',      title: 'LIVE TRANSCRIPTION',   subtitle: 'Speech-to-text · real time',   icon: 'record_voice_over', type: 'ai' },
+          { id: 'extract',  title: 'KEYWORD EXTRACTION',   subtitle: 'cardiac · unresponsive · male',icon: 'psychology',     type: 'ai' },
+          { id: 'priority', title: 'PRIORITY CLASSIFY',    subtitle: 'P1 · Life threatening',        icon: 'rule',           type: 'rule' },
+          { id: 'event',    title: 'EVENT TRIGGERED',      subtitle: 'EMS dispatch · cardiac',       icon: 'bolt',           type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'priority',
+          node: { id: 'retro', title: 'NON-URGENT QUEUE', subtitle: 'Routine routing', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',
@@ -64,9 +78,16 @@ export const medicalScenario: ScenarioConfig = {
           { coords: [29.7345, -95.4680], label: 'AED · CVS Pharmacy' },
         ],
         cameras: [
-          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner' },
-          { coords: [29.7351, -95.4690], label: 'CAM-22 · Westheimer/Wilcrest' },
-          { coords: [29.7372, -95.4682], label: 'CAM-08 · Intersection' },
+          { coords: [29.7362, -95.4705], label: 'CAM-14 · Westheimer/Gessner', image: '/demo/access-control/cam08-lobby.jpeg', alert: true },
+          { coords: [29.7340, -95.4660], label: 'CAM-22 · Westheimer/Wilcrest' },
+          { coords: [29.7385, -95.4650], label: 'CAM-08 · Intersection' },
+        ],
+        transcript: [
+          { speaker: 'CALLER',   text: 'He is not breathing — please hurry!' },
+          { speaker: 'DISPATCH', text: 'Is he responsive? Can you feel a pulse?' },
+          { speaker: 'CALLER',   text: 'No pulse. He just collapsed. 4817 Westheimer.' },
+          { speaker: 'DISPATCH', text: 'Unit dispatched. Start CPR — I will guide you.' },
+          { speaker: 'CALLER',   text: 'Okay — starting now.' },
         ],
         tags: ['CARDIAC', 'UNCONSCIOUS', 'ADULT MALE', 'GEO-LOCKED', '2 AED NEARBY'],
         analysisRows: [
@@ -84,7 +105,7 @@ export const medicalScenario: ScenarioConfig = {
       label: 'DECIDE',
       stageLabel: 'STAGE 03: DECIDE — UNIT ASSIGNMENT',
       timestamp: '09:15:09',
-      headline: 'UNIT ASSIGNED: AMB-7',
+      headline: 'EMS DISPATCH PROTOCOL',
       description:
         'AI scored all available EMS units by proximity, traffic, and load. AMB-7 selected as primary — paramedic-equipped, 0.6 miles out. Brief pushed to crew in under 3 seconds.',
       dataPoints: [
@@ -99,7 +120,55 @@ export const medicalScenario: ScenarioConfig = {
       pipLabel: 'CALL ANALYSIS · LIVE',
       pip2Image: '/demo/medical/stage-1-detect.jpg',
       pip2Label: 'CALL INTAKE · ME-0847',
-      layout: 'default',
+      layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7358, -95.4697],
+        units: [
+          { id: 'AMB-7',  status: 'ASSIGNED',  active: true,  coords: [29.7430, -95.4580] },
+          { id: 'AMB-12', status: 'EN ROUTE',  active: true,  coords: [29.7280, -95.4800] },
+          { id: 'AMB-3',  status: 'STANDBY',   active: false, coords: [29.7200, -95.4900] },
+          { id: 'AMB-9',  status: 'AVAILABLE', active: false, coords: [29.7500, -95.4400] },
+        ],
+        cameras: [
+          { label: 'CALL INTAKE · 09:14:22', image: '/demo/medical/stage-1-detect.jpg', alert: true },
+          { label: 'CAM-14 · WESTHEIMER', image: '/demo/access-control/cam08-lobby.jpeg' },
+        ],
+      },
+      protocolSteps: [
+        { id: 1, text: 'CALL CLASSIFIED — Cardiac arrest · adult male · unconscious · P1 Life Threatening', status: 'complete' },
+        { id: 2, text: 'GEO-LOCK CONFIRMED — 4817 Westheimer Rd, Houston TX · 98.4% confidence', status: 'complete' },
+        { id: 3, text: 'AED LOCATED — Shell Station 42m NW of incident · bystander CPR in progress', status: 'complete' },
+        { id: 4, text: 'UNIT SCORED — AMB-7 selected · 0.6 mi · paramedic-equipped · AI score 97%', status: 'complete' },
+        { id: 5, text: 'DISPATCH BRIEF SENT — Address · patient condition · AED coords · route pushed to crew', status: 'active' },
+        { id: 6, text: 'HOSPITAL PRE-ALERT — Memorial Hermann notified · cardiac team on standby', status: 'pending' },
+      ],
+      decisionTree: {
+        tree: [
+          { label: 'Cardiac Arrest',      detail: 'Adult male · unconscious · 4817 Westheimer',  icon: 'monitor_heart' },
+          { label: 'Location Confirmed',  detail: '98.4% geo-lock · AED located 42m away',       icon: 'pin_drop' },
+          { label: 'Critical Response',   detail: 'P1 Life Threatening · every second counts',   icon: 'emergency' },
+        ],
+        options: [
+          { id: 'amb7',  title: 'Dispatch AMB-7',      description: 'Paramedic-equipped · 0.6 mi · ETA 1:55', icon: 'ambulance',   recommended: true },
+          { id: 'fire',  title: 'Fire Rescue',         description: 'Station 42 · 0.9 mi · AED + BLS',        icon: 'fire_truck' },
+          { id: 'amb12', title: 'Dispatch AMB-12',     description: 'Secondary unit · 1.1 mi · backup crew',  icon: 'ambulance' },
+          { id: 'first', title: 'First Responder',     description: 'Officer M. Carter · 0.3 mi · CPR cert',  icon: 'local_police' },
+        ],
+      },
+      videoWall: {
+        title: 'Incident Area Cameras',
+        tiles: [
+          { id: 'CAM-14',  label: 'Westheimer/Gessner',  image: '/demo/lpr/cctv-westheimer.jpeg',         status: 'tracking' },
+          { id: 'CAM-22',  label: 'Westheimer/Wilcrest', image: '/demo/lpr/cctv-allen.jpeg',              status: 'tracking' },
+          { id: 'CAM-81',  label: 'Westheimer Rd',       image: '/demo/lpr/cctv-memorial.jpeg',           status: 'monitoring' },
+          { id: 'CAM-94',  label: 'Kirby Dr',            image: '/demo/lpr/cctv-kirby.jpeg',              status: 'monitoring' },
+          { id: 'CAM-106', label: 'Shepherd Dr',         image: '/demo/lpr/cctv-shepherd.jpeg',           status: 'monitoring' },
+          { id: 'CAM-118', label: 'Allen Pkwy',          image: '/demo/lpr/cctv-allen.jpeg',              status: 'monitoring' },
+          { id: 'CAM-132', label: 'Montrose Blvd',       image: '/demo/lpr/cctv-montrose.jpeg',           status: 'idle' },
+          { id: 'CAM-147', label: 'Waugh Dr',            image: '/demo/lpr/cctv-waugh.jpeg',              status: 'idle' },
+          { id: 'CAM-159', label: 'Memorial Dr',         image: '/demo/lpr/cctv-memorial.jpeg',           status: 'idle' },
+        ],
+      },
     },
     {
       id: 'act',
@@ -130,11 +199,11 @@ export const medicalScenario: ScenarioConfig = {
         { key: 'CONDITION', value: 'UNCONSCIOUS' },
       ],
       splitUnits: [
-        { id: 'AMB-7',    role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
-        { id: 'AMB-12',   role: 'BACKUP EN ROUTE',   status: 'EN ROUTE',  active: true },
-        { id: 'AMB-3',    role: 'STATIONARY',         status: 'STANDBY',   active: false },
-        { id: 'AMB-9',    role: 'P.SANTOS · 3.2 MI', status: 'AVAILABLE', active: false },
-        { id: 'AMB-15',   role: 'K.PATEL · 4.8 MI',  status: 'AVAILABLE', active: false },
+        { id: 'AMB-7',   type: 'ems',    role: 'RESPONSE PRIMARY · ALS',   status: 'ASSIGNED',  active: true },
+        { id: 'ENG-3',   type: 'fire',   role: 'FIRST RESPONDER · AED',    status: 'EN ROUTE',  active: true },
+        { id: 'UNIT-14', type: 'police', role: 'TRAFFIC CONTROL · ESCORT', status: 'EN ROUTE',  active: true },
+        { id: 'AMB-12',  type: 'ems',    role: 'BACKUP · BLS',             status: 'STANDBY',   active: false },
+        { id: 'K9-2',    type: 'k9',     role: 'SEARCH · NEARBY',          status: 'AVAILABLE', active: false },
       ],
       splitMapCoords: {
         incident: [29.7358, -95.4697],
