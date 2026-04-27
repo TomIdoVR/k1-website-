@@ -344,6 +344,11 @@ export const metadata = {
     description: "Public safety technology for Peruvian cities and municipalities — C5 command centers, unified dispatch, video surveillance, and GIS. How KabatOne supports public security operations in Peru.",
     canonical: "https://kabatone.com/resources/public-safety-software-peru/",
   },
+  publicSafetySoftwareChile: {
+    title: "Public Safety Software for Chile: Carabineros & Municipal Platforms | KabatOne",
+    description: "Public safety technology for Chilean municipalities and regional governments — unified dispatch (133/131/132), FNDR-funded CCTV integration, GIS, and incident management on one platform.",
+    canonical: "https://kabatone.com/resources/public-safety-software-chile/",
+  },
   publicSafetySoftwareSmallCities: {
     title: "Public Safety Software for Small Cities & Municipalities | KabatOne",
     description: "Affordable, scalable public safety platforms designed for small cities and municipalities. Unified video, dispatch, and GIS without enterprise price tags — how smaller governments can build C5-level capabilities.",

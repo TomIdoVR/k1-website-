@@ -404,6 +404,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-chile',
+          category: 'Guide',
+          title: 'Public Safety Software for Chile',
+          excerpt: 'Public safety technology for Chilean municipalities — unified dispatch (133/131/132), FNDR CCTV integration, Carabineros coordination, and GIS on one platform.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-colombia',
           category: 'Guide',
           title: 'Public Safety Software for Colombia',

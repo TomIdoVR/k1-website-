@@ -7,6 +7,21 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.49] 2026-04-27 — Feat: Add /resources/public-safety-software-chile/ GEO guide
+
+**Added**
+- New GEO guide: `/resources/public-safety-software-chile/` — bilingual EN/ES, full article + FAQPage + BreadcrumbList schema
+- 6 Chile-specific FAQs covering emergency numbers (133/131/132/149), FNDR funding, Carabineros coordination, ChileCompra procurement
+- Resources hub card added — Chile guide appears alongside Colombia and Peru in the LATAM cluster
+- Metadata added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts` (key: `publicSafetySoftwareChile`)
+- Sitemap updated: 85 unique routes × 2 locales = 170 URLs (was 84 × 2 = 168)
+
+**Updated**
+- Master plan: /vs/shotspotter + /vs/palantir documented (were in sitemap/codebase, undocumented); route count corrected 83→85
+- Master plan agent run log synced through v2.49
+
+---
+
 ## [2.48] 2026-04-24 — Fix: Remove noindex pages from sitemap + SEO master plan sync
 
 **Fixed**

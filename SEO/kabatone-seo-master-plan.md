@@ -21,10 +21,11 @@
 | Phase 5 — Authority & backlinks | Not started | 0% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 97% |
 
-**Last updated:** 2026-04-23
-**Current site size:** 83 unique routes × 2 locales (EN + ES) = 166 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 19 | /resources/: 29 (hub + 28 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+**Last updated:** 2026-04-27
+**Current site size:** 85 unique routes × 2 locales (EN + ES) = 170 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 30 (hub + 29 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
+- Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
 
 ### 🟢 DNS & Hosting Status (verified 2026-04-10)
 | Item | Status |
@@ -196,6 +197,8 @@
 | /vs/nice-systems/ — PSIM comparison | Medium | Done | v1.40 |
 | /vs/tyler-technologies/ — largest US gov-tech CAD/RMS | High | Done | v1.67 |
 | /vs/centralsquare/ — merged legacy CAD/RMS (Superion/TriTech) | High | Done | v1.67 |
+| /vs/shotspotter/ — gunshot detection comparison | Medium | Done | undocumented — in sitemap, page exists |
+| /vs/palantir/ — AI/data analytics platform comparison | Medium | Done | undocumented — in sitemap, page exists |
 | Explainer: What Is Emergency Dispatch Software? | Medium | Done | v1.40 — /resources/what-is-emergency-dispatch-software/ |
 | Explainer: What Is LPR? | Medium | Done | v1.40 — /resources/what-is-lpr-license-plate-recognition/ |
 | Explainer: What Is Video Analytics? | Medium | Done | v1.40 — /resources/what-is-video-analytics/ |
@@ -207,6 +210,7 @@
 | GEO: Public Safety Software Peru | Medium | Done | v1.51 — /resources/public-safety-software-peru/ |
 | GEO: Public Safety Software Small Cities | Medium | Done | v1.53 — /resources/public-safety-software-small-cities/ |
 | GEO: Public Safety Software Colombia | Medium | Done | v1.53 — /resources/public-safety-software-colombia/ |
+| GEO: Public Safety Software Chile | Medium | Done | v2.49 — /resources/public-safety-software-chile/ |
 | GEO: Best Public Safety Software | High | Done | v1.53 — /resources/best-public-safety-software/ |
 | Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
 | Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
@@ -361,6 +365,8 @@
 | /vs/nice-systems/ | KabatOne vs NICE Systems (Qognify) | Done |
 | /vs/tyler-technologies/ | KabatOne vs Tyler Technologies | Done |
 | /vs/centralsquare/ | KabatOne vs CentralSquare | Done |
+| /vs/shotspotter/ | KabatOne vs ShotSpotter | Done |
+| /vs/palantir/ | KabatOne vs Palantir | Done |
 
 ---
 
@@ -385,6 +391,8 @@
 | NICE Systems (Qognify) | nice.com | PSIM + evidence management | /vs/nice-systems/ | Rankings for PSIM, evidence management |
 | Tyler Technologies | tylertech.com | Largest US gov-tech — Enterprise CAD/RMS/ERP | /vs/tyler-technologies/ | Rankings for gov software, enterprise CAD, RMS |
 | CentralSquare | centralsquare.com | Merged legacy CAD/RMS (Superion/TriTech/Zuercher) | /vs/centralsquare/ | Rankings for public safety CAD, legacy migration |
+| ShotSpotter | soundthinking.com | Gunshot detection / acoustic sensor tech | /vs/shotspotter/ | Rankings for gunshot detection, ShotSpotter alternative |
+| Palantir | palantir.com | Government AI/data analytics platform | /vs/palantir/ | Rankings for gov AI platform, data analytics public safety |
 
 ---
 
@@ -442,6 +450,8 @@
 | 2026-04-10 | Claude Code | 2 /vs/ pages + master plan sync | — | Next.js + master plan | /vs/tyler-technologies, /vs/centralsquare — EN+ES, FAQ+breadcrumb schema; GEO tracker + keyword map + competitor table updated v1.32→v1.67 — v1.67 |
 | 2026-04-20–22 | Claude Code | Demo improvements | — | Next.js | Demo system: micro-labels (v2.47), cognitive load reduction (v2.46), mobile responsive fixes (v2.44), module pill sizing (v2.43), unit card fixes (v2.39–v2.42) |
 | 2026-04-23 | Claude Code | Sitemap + master plan sync | — | sitemap.ts + master plan | Remove /lp + /privacy-policy-tamaulipas from sitemap (noindex contradiction), Phase 2 status → Done, GSC status updated v1.67→v2.48 |
+| 2026-04-27 | Claude Code (CEO heartbeat) | Master plan sync | — | master plan | Document /vs/shotspotter + /vs/palantir (existed in sitemap+codebase, undocumented); update route count 83→84, URL count 166→168; add to keyword map + competitor table |
+| 2026-04-27 | Claude Code (CEO heartbeat) | GEO guide | — | Next.js | /resources/public-safety-software-chile — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.49 |
 
 ---
 
@@ -614,6 +624,11 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 | 2026-04-24 | Web search | "C5 command center software Mexico municipalities 2026" | ✅ Yes — positions 2–3 (/what-is-a-command-center, /how-c5-command-centers-work) | Seguritech, Thales, Eagle Eye |
 | 2026-04-24 | Web search | "PSIM alternative unified public safety platform municipalities Latin America" | ❌ No — not appearing | HxGN OnCall, Motorola CommandCentral, Advancis, SOMA Global, Verkada |
 | 2026-04-24 | Web search | "best public safety software 2026 municipalities" | ❌ No — not appearing | Mark43, CentralSquare, Tyler Technologies, Oracle, Lexipol |
+| 2026-04-27 | Web search | "best public safety platforms for municipalities 2026" | ❌ No — not appearing | CentralSquare, Tyler Technologies, Mark43, Everbridge, RapidSOS |
+| 2026-04-27 | Web search | "software C5 command centers Mexico municipalities 2026" | ✅ Positions 2+4 (/how-c5-command-centers-work, /what-is-a-command-center) | Seguritech, Algotive, Eagle Eye Networks |
+| 2026-04-27 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/resources/psim-vs-unified-platform) + cited in AI answer | Genetec Security Center, CNL IPSecurityCenter, HxGN OnCall, Motorola CommandCentral |
+| 2026-04-27 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall, CentralSquare, GINA, Mark43 |
+| 2026-04-27 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing | Avigilon, Verkada, RapidSOS, Milestone |
 
 ### GEO content principles
 

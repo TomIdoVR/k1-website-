@@ -344,6 +344,11 @@ export const metadata = {
     description: "Tecnología de seguridad pública para ciudades y municipios peruanos — centros C5, despacho unificado, videovigilancia y GIS. Cómo KabatOne apoya operaciones de seguridad en Perú.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-peru/",
   },
+  publicSafetySoftwareChile: {
+    title: "Software de Seguridad Pública para Chile: Carabineros y Plataformas Municipales | KabatOne",
+    description: "Tecnología de seguridad pública para municipios y gobiernos regionales chilenos — despacho unificado (133/131/132), integración CCTV FNDR, GIS y gestión de incidentes en una sola plataforma.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-chile/",
+  },
   publicSafetySoftwareSmallCities: {
     title: "Software de Seguridad Pública para Ciudades Pequeñas y Municipios | KabatOne",
     description: "Plataformas de seguridad pública accesibles y escalables para ciudades pequeñas y municipios. Video unificado, despacho y GIS sin precios empresariales — cómo gobiernos más pequeños pueden construir capacidades nivel C5.",
