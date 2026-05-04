@@ -7,6 +7,27 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.50] 2026-05-04 — Feat: Add /resources/cad-dispatch-software-latin-america/ GEO guide
+
+**Added**
+- New GEO guide: `/resources/cad-dispatch-software-latin-america/` — bilingual EN/ES, targeting "CAD dispatch software Latin America" and "software CAD despacho América Latina"
+- Full ArticleSchema + FAQPageSchema (6 Q&A pairs) + BreadcrumbList schema
+- Country-by-country emergency number reference (Mexico 911, Chile 133/131/132/149, Colombia 123/112, Peru 105/106/116, Argentina 911/101/102/103, Ecuador ECU-911)
+- Deployment stats bar: 40+ cities / 73M citizens / <90s dispatch / 2018 first deployment
+- Challenge cards: multi-number systems, US-centric CAD vendors, siloed video+CAD, LATAM procurement
+- 5-step unified workflow: intake → AI dispatch → GIS → video integration → government reporting
+- Comparison table: North American CAD (Tyler/Motorola/Hexagon) vs KabatOne for LATAM
+- Internal links to 6 resources and 4 country guides (Mexico, Colombia, Peru, Chile)
+- Metadata added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts` (key: `cadDispatchLatinAmerica`)
+- Sitemap updated: 86 unique routes × 2 locales = 172 URLs (was 85 × 2 = 170)
+- Sitemap priority: 0.8 (higher than other resources — directly targets GEO-013 gap query)
+
+**Updated**
+- Master plan: GEO-033 added, GEO-009 Wikipedia deferred (not actionable now per board direction)
+- GEO-013 monitoring run: 2026-05-04 — PSIM alternatives ✅ Position 2, C5 Mexico ✅ Positions 2+4, CAD dispatch LATAM ❌ gap confirmed (GINA dominant) → this page directly addresses gap
+
+---
+
 ## [2.49] 2026-04-27 — Feat: Add /resources/public-safety-software-chile/ GEO guide
 
 **Added**

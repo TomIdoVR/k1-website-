@@ -349,6 +349,16 @@ export const metadata = {
     description: "Tecnología de seguridad pública para municipios y gobiernos regionales chilenos — despacho unificado (133/131/132), integración CCTV FNDR, GIS y gestión de incidentes en una sola plataforma.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-chile/",
   },
+  cadDispatchLatinAmerica: {
+    title: "Software CAD de Despacho para América Latina: Guía de Centros de Emergencia | KabatOne",
+    description: "Software CAD de despacho para centros C5/C4 latinoamericanos — soporte nativo 911/133/123/105, interfaz en español, experiencia en licitaciones LATAM. Desplegado en más de 40 ciudades que protegen 73M de ciudadanos.",
+    canonical: "https://kabatone.com/es/resources/cad-dispatch-software-latin-america/",
+    og: {
+      title: "Software CAD de Despacho para América Latina | KabatOne",
+      description: "Software CAD de despacho para centros C5/C4 latinoamericanos — soporte nativo 911/133/123/105, interfaz en español, experiencia en licitaciones LATAM. Desplegado en más de 40 ciudades que protegen 73M de ciudadanos.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   publicSafetySoftwareSmallCities: {
     title: "Software de Seguridad Pública para Ciudades Pequeñas y Municipios | KabatOne",
     description: "Plataformas de seguridad pública accesibles y escalables para ciudades pequeñas y municipios. Video unificado, despacho y GIS sin precios empresariales — cómo gobiernos más pequeños pueden construir capacidades nivel C5.",
