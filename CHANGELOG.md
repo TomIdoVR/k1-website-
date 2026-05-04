@@ -7,6 +7,827 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.50] 2026-05-04 — Feat: Add /resources/cad-dispatch-software-latin-america/ GEO guide
+
+**Added**
+- New GEO guide: `/resources/cad-dispatch-software-latin-america/` — bilingual EN/ES, targeting "CAD dispatch software Latin America" and "software CAD despacho América Latina"
+- Full ArticleSchema + FAQPageSchema (6 Q&A pairs) + BreadcrumbList schema
+- Country-by-country emergency number reference (Mexico 911, Chile 133/131/132/149, Colombia 123/112, Peru 105/106/116, Argentina 911/101/102/103, Ecuador ECU-911)
+- Deployment stats bar: 40+ cities / 73M citizens / <90s dispatch / 2018 first deployment
+- Challenge cards: multi-number systems, US-centric CAD vendors, siloed video+CAD, LATAM procurement
+- 5-step unified workflow: intake → AI dispatch → GIS → video integration → government reporting
+- Comparison table: North American CAD (Tyler/Motorola/Hexagon) vs KabatOne for LATAM
+- Internal links to 6 resources and 4 country guides (Mexico, Colombia, Peru, Chile)
+- Metadata added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts` (key: `cadDispatchLatinAmerica`)
+- Sitemap updated: 86 unique routes × 2 locales = 172 URLs (was 85 × 2 = 170)
+- Sitemap priority: 0.8 (higher than other resources — directly targets GEO-013 gap query)
+
+**Updated**
+- Master plan: GEO-033 added, GEO-009 Wikipedia deferred (not actionable now per board direction)
+- GEO-013 monitoring run: 2026-05-04 — PSIM alternatives ✅ Position 2, C5 Mexico ✅ Positions 2+4, CAD dispatch LATAM ❌ gap confirmed (GINA dominant) → this page directly addresses gap
+
+---
+
+## [2.49] 2026-04-27 — Feat: Add /resources/public-safety-software-chile/ GEO guide
+
+**Added**
+- New GEO guide: `/resources/public-safety-software-chile/` — bilingual EN/ES, full article + FAQPage + BreadcrumbList schema
+- 6 Chile-specific FAQs covering emergency numbers (133/131/132/149), FNDR funding, Carabineros coordination, ChileCompra procurement
+- Resources hub card added — Chile guide appears alongside Colombia and Peru in the LATAM cluster
+- Metadata added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts` (key: `publicSafetySoftwareChile`)
+- Sitemap updated: 85 unique routes × 2 locales = 170 URLs (was 84 × 2 = 168)
+
+**Updated**
+- Master plan: /vs/shotspotter + /vs/palantir documented (were in sitemap/codebase, undocumented); route count corrected 83→85
+- Master plan agent run log synced through v2.49
+
+---
+
+## [2.48] 2026-04-24 — Fix: Remove noindex pages from sitemap + SEO master plan sync
+
+**Fixed**
+- Removed `/lp` and `/privacy-policy-tamaulipas` from `sitemap.ts` — both pages have `robots: noindex` tags; including noindex pages in the sitemap sends contradictory signals to Google and was causing the "Excluded by noindex" GSC report
+- Sitemap is now 166 URLs (83 routes × 2 locales), down from 170
+
+**Updated**
+- Master plan synced: Phase 2 → Done (95%), GSC status block added with 2026-04-23 data, agent run log synced through v2.47
+- GEO-008 complete: No KabatOne Wikipedia article exists. Target article for GEO-009: `en.wikipedia.org/wiki/Physical_security_information_management`
+- GEO-013 first monthly run: KabatOne ranking for branded terms + C5 Mexico queries ✅. Not appearing for PSIM alternative or best public safety software ❌ — requires more backlinks and third-party mentions
+
+---
+
+## [2.47] 2026-04-22 — Improve: Demo micro-labels — Auto/Match/Live/Linked/Best Option/Sent per stage
+
+**Improved**
+- DETECT: nodes now show "Auto" (OCR, AI prioritization, event trigger) and "Match" (hotlist match) micro-badges — system intelligence is visually labelled at each step
+- UNDERSTAND: camera pip gets "LIVE" + "Linked" badges; tracked vehicle section adds "● Live" pill next to label
+- DECIDE: top recommended unit card shows "Best Option" badge with green glow treatment; `recommended: true` added to 12-CHARLIE in LPR data; `splitUnits` type extended with optional `recommended` field
+- ACT: dispatch alert header shows "✓ Sent" badge; camera feed gets red "LIVE" badge; "EN ROUTE" status rendered as a pill with pulse dot
+- LEARN: "AI Actions" and new "Report Filed" metric rows show "Auto" badge; report row added to metrics
+
+---
+
+## [2.46] 2026-04-22 — Improve: Demo cognitive load reduction — remove noise, active-only modules, smarter Decide
+
+**Improved**
+- Removed all descriptive `<p>` paragraphs from every demo stage layout (StageContent, StageScreen, SplitLayout, ProtocolPanel, LearnLayout) — UI now shows only what the system did, not explanations
+- Module strip now shows **only active modules** per stage (filtered, not dimmed) across all layouts
+- DecisionTreePanel: "AI PICK" badge renamed to "Recommended"; header relabeled "Situation Assessment / AI ANALYSIS"; action section relabeled "AI Recommended Action"
+- LPR Decide: recommended dispatch option title updated to "Dispatch Recommended Units"
+
+---
+
+## [2.45] 2026-04-21 — Remove: Placeholder nav items and icons from demo hub
+
+**Removed**
+- "Operations", "Intelligence", "Archive" nav items (were non-functional stubs).
+- Bell, gear, and avatar icons from the hub header right side (non-functional).
+- Applied in both `nextjs` and `ipro-partnership` branches.
+
+---
+
+## [2.44] 2026-04-21 — Fix: Demo stage title block not responsive on mobile
+
+**Fixed**
+- Title block (headline + description + module strip) in all light-bg stage screens and the LEARN stage was not responsive on mobile — layout overflowed and badge/title competed for space.
+- Added responsive CSS: at ≤768px the title row stacks vertically, headline scales down, outer container reduces padding; at ≤480px further reduction.
+- LEARN stage: updated module strip to match the larger sizes from v2.43 (was missed in that pass).
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
+## [2.43] 2026-04-20 — Improve: Larger module pills in demo stage screens
+
+**Improved**
+- Module chips in the demo stage header strip are now larger and easier to read: font `8px → 11px`, padding `4px 10px → 7px 16px`, icon `11px → 14px`.
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
+## [2.42] 2026-04-20 — Fix: LPR DETECT stage dashboard image cropped on right
+
+**Fixed**
+- LPR scenario DETECT stage: `lpr-hero.jpeg` was rendered with `backgroundSize: cover` inside the left 50% panel, which cropped the right portion of the dashboard screenshot.
+- Added `backgroundFit: 'contain'` to the LPR DETECT stage so the full dashboard is visible without cropping.
+- Applied in both `nextjs` (staging) and `ipro-partnership` branches.
+
+---
+
+## [2.40] 2026-04-20 — Fix: Tactical Unit cards clipped on some Mac Chrome viewports
+
+**Fixed**
+- Unit ID text (e.g. "12-CHARLIE", "K9-2") was being chopped in half on certain Chrome + macOS viewport heights — the column flex parent `.demo-split-units` had `overflow: hidden` but no `min-height: 0`, which let the inner scroll grid get compressed instead of scrolling. Added `min-height: 0` to both the panel and the scroll container, plus `grid-auto-rows: max-content` so each card row stays at its natural content height regardless of viewport.
+
+---
+
+## [2.39] 2026-04-18 — School & Violence: diversify tactical unit types
+
+**Changed**
+- School (SOS scenario) Tactical Units panel now shows varied unit types instead of five generic shield/"UNIT" cards: security (SRO-1), police (UNIT-14 + UNIT-7), ems (EMS-5 medical staging), k9 (K9-3 sweep team).
+- Violence scenario likewise diversified: police (04-DELTA + 09-ECHO + 11-CHARLIE), k9 (K9-4 suspect track), ems (EMS-9 medical standby).
+- Every scenario (access-control, lpr, medical, school, violence) now has `type` fields on all splitUnits so TYPE_STYLES renders the right icon and color for each unit.
+
+---
+
+## [2.38] 2026-04-18 — School: drop extra cameras, keep only alerting CAM-07
+
+**Changed**
+- UNDERSTAND map now shows a single camera (the alerting CAM-07 · Bldg A Hallway) positioned well clear of the SOS / SRO / Lincoln Middle School cluster. Removed CAM-01, CAM-12, CAM-15 from the UNDERSTAND map entirely. DECIDE stage also trimmed from two cameras to one to avoid any overlap.
+
+---
+
+## [2.37] 2026-04-18 — Fix: School UNDERSTAND map camera thumbnails overlapping
+
+**Fixed**
+- The SOS-button scenario's UNDERSTAND map was rendering four 220×140 camera thumbnails stacked on top of each other. Now only the alerting camera (CAM-07 · Bldg A Hallway) shows a live thumbnail; the other three (CAM-01, CAM-12, CAM-15) fall back to small video-icon markers with permanent labels. Also spread the coordinates wider so the icon markers don't collide.
+
+---
+
+## [2.36] 2026-04-18 — Medical UNDERSTAND: replace UI-screenshot camera thumbnail with indoor CCTV
+
+**Fixed**
+- The CAM-14 thumbnail on the Medical UNDERSTAND map was showing a UI screenshot of the 911 call interface (`stage-2-understand.jpg`) instead of actual camera footage. Swapped to an indoor lobby CCTV (`cam08-lobby.jpeg`) for a more relevant "camera inside the building" look matching the cardiac-event-at-a-location scenario. Same swap applied to the DECIDE stage CAM-14 thumbnail (was `stage-3-decide.jpg`).
+
+---
+
+## [2.35] 2026-04-18 — Medical: diversify tactical unit types
+
+**Changed**
+- Medical scenario `splitUnits` now uses varied dispatch unit types instead of five generic "UNIT" cards. For the cardiac-event response you now see an ALS ambulance (AMB-7), a fire-engine first responder with AED (ENG-3), a police traffic-control escort (UNIT-14), a BLS backup ambulance (AMB-12), and a K9 search unit (K9-2) — each rendered with its correct icon and color via `TYPE_STYLES`. Matches the unit-type diversity already present in LPR and Access Control scenarios.
+
+---
+
+## [2.34] 2026-04-18 — Fix: Medical incident-area cameras show UI screenshots
+
+**Fixed**
+- CAM-14 and CAM-22 on the Medical "Incident Area Cameras" video wall were pointing to UI screenshots (`stage-2-understand.jpg`, `stage-3-decide.jpg`) instead of actual camera footage. Swapped to real CCTV images (`cctv-westheimer.jpeg`, `cctv-allen.jpeg`). CAM-81 also rotated to a different CCTV to avoid duplication with CAM-14.
+
+---
+
+## [2.33] 2026-04-18 — DecisionTreePanel: rewrite with auto-scale canvas
+
+**Changed**
+- **Full rewrite** of DecisionTreePanel. Now uses a fixed 460×620 design canvas wrapped in a ResizeObserver + CSS `transform: scale()` — the exact same approach as DetectFlowPanel.
+- Result: **all content (header + 3 tree nodes + "Choose an Action" + 4 option cards) always fits in one view**, regardless of viewport size. No scrollbar anywhere.
+- Option cards now use `grid-template-rows: repeat(2, 1fr)` so they evenly divide the available cell height, with descriptions line-clamped to 2 lines.
+- Removed the jungle of media-query overrides — the canvas scales uniformly, keeping visual proportions identical at any size.
+- ProtocolPanel center-panel min-height tuned to 460px at ≤1280px (was 540) since the canvas auto-scales to fit.
+
+---
+
+## [2.32] 2026-04-18 — Raise compact breakpoint to ≤1280px
+
+**Changed**
+- ProtocolPanel and DecisionTreePanel compact tier now triggers at **≤1280px** (was 1100px) — covers typical laptop browser windows that were previously showing the full desktop layout but didn't have enough height for all content
+
+---
+
+## [2.31] 2026-04-18 — DECIDE: fit everything in one view, no scroll
+
+**Changed**
+- DecisionTreePanel at ≤1100px now fits all content in one viewport (tree + 4 option cards) without internal scroll — per user requirement "all the information should appear in one view"
+- Tree nodes aggressively compacted: 24px icon (was 30), 10px label (was 12), 9px detail, 6×10 padding
+- Option card descriptions **hidden** at ≤1100px — just title + icon (info sits in the fuller tree above)
+- Option icon shrunk to 28px (was 38), title to 10px
+- AI PICK recommendation pill miniaturized (6px text, 1×5 padding)
+- Panel overflow re-locked to `hidden` with a 540px min-height floor — no internal scrollbar
+
+---
+
+## [2.30] 2026-04-18 — Fix: DECIDE option cards cut at tablet bottom
+
+**Fixed**
+- DecisionTreePanel at ≤1100px now releases `overflow: hidden` on `.dt-root` and `.dt-options-scroll` (was only at ≤768px). Option cards no longer trapped inside a fixed-height viewport — panel grows to fit all 4 cards.
+- ProtocolPanel center panel min-height raised 480→620px at ≤1100px so there's always enough baseline room for tree + options before overflow kicks in.
+
+---
+
+## [2.29] 2026-04-18 — Fix: demo panels cut off at tablet viewports (≤1100px)
+
+**Fixed**
+- **ProtocolPanel** — Left/center/camera panels now stack vertically at ≤1100px (was ≤768px). Tablet viewports no longer force 3 columns into a cramped row that bleeds off-screen.
+- **DecisionTreePanel** — Tree nodes now always fluid (width:100% / min-width:0) so they can never exceed container width. New compact styling at ≤1100px (was ≤768px) with tighter paddings/type scale. True mobile (≤768px) gets an even tighter tier.
+
+---
+
+## [2.28] 2026-04-18 — Medical DETECT: compact, color-coded field chips
+
+**Changed**
+- Field chips on the 911 Call card are now **much smaller** (3×8px padding, 7px label + 9px value, 4px radius flat tags instead of full pills)
+- Each chip gets a **distinct color** per category so they visually separate from the red transcript:
+  - INCIDENT TYPE → amber
+  - CALLER → blue
+  - ADDRESS → teal
+  - PRIORITY → red (alert)
+  - CALL DURATION → neutral gray
+  - UNIT ASSIGNED → purple
+- Chips now fit in 1–2 rows, freeing vertical space for the transcript
+
+---
+
+## [2.27] 2026-04-18 — Fix: TS build error (invalid `tabularNums` CSS prop)
+
+**Fixed**
+- StageScreen.tsx line 558 — replaced invalid `tabularNums: 'tabular-nums'` with `fontVariantNumeric: 'tabular-nums'` (proper React CSSProperties key). Restores Vercel build.
+
+---
+
+## [2.26] 2026-04-18 — Medical DETECT: full-width transcript + field chips
+
+**Changed**
+- **Medical Stage 01 DETECT** — Removed the confusing two-column splitter. Now a single full-width card:
+  1. Top bar: LIVE CALL + ME-0847 + waveform + call controls (MUTE/HOLD/REC) + timer
+  2. AI TRANSCRIPT heading row
+  3. **Full-width transcript** — lines now span the entire width at 18px body text for maximum readability
+  4. Field chips row — Incident type, Caller, Address, Priority, Call duration, Unit assigned rendered as inline pills instead of stacked form rows
+  5. ACCEPT & DISPATCH / TRANSFER action strip
+- Highlighted fields (CARDIAC EVENT, P1 · LIFE THREATENING) use red-tinted pill; others use neutral blue
+
+---
+
+## [2.25] 2026-04-18 — Medical DETECT: dominant live-call transcript
+
+**Improved**
+- **Medical Stage 01 DETECT (911 Call)** — Transcript now the clear focal point of the stage:
+  - Transcript panel widened from 48% → 60% (incident form 52% → 40%)
+  - Each line is a proper card: colored left-border rail (red=CALLER, blue=DISPATCH), tinted background, 10–12px padding
+  - Transcript body text enlarged 11px → **16px**, line-height 1.45, brighter colors (#FFD4D4 / #D4E4FF)
+  - CALLER/DISPATCH labels enlarged 8px → 10px, bolder, wider column
+  - LIVE CALL header enlarged (12px + 10px glowing dot), waveform bars taller (18px → 32px)
+  - New AI TRANSCRIPT heading with icon + "REAL-TIME · EN" meta, bottom border separator
+
+---
+
+## [2.24] 2026-04-17 — Medical UNDERSTAND: clearer map markers + bigger camera thumb
+
+**Improved**
+- **Medical Stage 02 UNDERSTAND** — Map now clearly distinguishes caller / AED / camera locations:
+  - Caller marker enlarged with double pulsing ring (radius 11 + 22 + 34) for immediate visibility
+  - AEDs replaced with green medical-services icon badges + permanent always-on labels (was small green dot w/ hover tooltip)
+  - Non-image cameras replaced with blue videocam icon badges + permanent labels (was tiny circle)
+  - Camera thumbnail "skin" enlarged from 160×100 → 220×140 (+38%) for readable live-feed preview on the map
+
+---
+
+## [2.23] 2026-04-17 — Demo: auto-fit flow charts — no more scroll
+
+**Fixed**
+- **DETECT** — DetectFlowPanel now uses ResizeObserver + CSS transform to auto-scale the entire flow chart to fit its container. Whole flow (5 nodes + branch) visible at once on any viewport, no internal scrolling
+- **DECIDE** — DecisionTreePanel tree nodes and option cards get compact styling on ≤768px (smaller paddings, icons, and type). Tree nodes stretch full-width; options grid fits without clipping
+- ProtocolPanel center panel grows to natural content height on mobile (no fixed min-height cap forcing internal scroll)
+
+## [2.22] 2026-04-17 — Demo DECIDE: action cards no longer clipped on mobile
+
+**Fixed**
+- DecisionTreePanel "Choose an Action" cards were clipped at the bottom on mobile because the inner scroll area was squeezed into ~200px
+- Decision tree panel now flows naturally on mobile (no internal scroll)
+- ProtocolPanel center panel `min-height` on ≤768px bumped 400 → 620 so tree + option cards render fully
+
+## [2.21] 2026-04-17 — Demo DETECT: flow nodes no longer clip subtitles
+
+**Fixed**
+- Detection Logic nodes (CAPTURE, BEHAVIOR ANALYSIS, THREAT RULES, AI PRIORITIZATION, RETROSPECTIVE LOG) were clipping subtitle text with ellipsis — "Aggression + weapon hi…", "Normal behavior · stor…", "3 subjects · 40+ civs" were all cut
+- Node width bumped 220 → 240, height 72 → 82
+- Titles and subtitles now wrap to 2 lines (line-clamp) instead of single-line ellipsis; `word-break: break-word` so long compound values wrap cleanly
+
+## [2.20] 2026-04-16 — Demo: mobile responsiveness fixes for Stage 02 & 03
+
+**Fixed**
+- Stage 02 UNDERSTAND: three-panel cinematic row now stacks fully vertically at ≤768px instead of showing cramped 2-column layout with center panel on top
+- Stage 03 DECIDE: protocol step rows now wrap on mobile — long detail text no longer clips on the right edge
+- Stage 03 DECIDE: "IN PROGRESS" badge drops below step text on mobile and uses smaller type so it no longer squeezes the title/detail column
+- Stage 03 DECIDE: footer data-points strip scrolls horizontally on mobile; active modules row hidden on narrow screens to stop overflow
+- Left-panel step title/detail use `word-break: break-word` so long compound values ("PANIC BUTTON TRIGGERED · ...") wrap cleanly
+
+## [2.19] 2026-04-16 — Demo Violence: replace highway images with urban plaza-area cameras
+
+**Fixed**
+- The 7 monitoring/idle tiles in the Violence video wall were showing suburban highway footage (reused from LPR) — wrong context for a downtown plaza incident
+- Generated 7 new urban CCTV images: Plaza North (busy intersection), Main St (city traffic), Commerce St (storefronts + pedestrians), Parking Garage (urban structure), Plaza East (plaza perimeter), Boulevard (city boulevard), Alley West (service alley)
+- Updated camera labels to match plaza surroundings instead of Houston road names
+
+## [2.18] 2026-04-16 — Demo: scenario-specific video wall images for all 5 scenarios
+
+**Added / Fixed**
+- **School** (5 new images): generated CCTV-style images for Gym Entrance, Cafeteria, Library, Science Wing, Bus Loop — campus camera network now fully populated
+- **Access Control** (5 new images): generated Parking Level 1, Lobby, Exit B, Loading Bay, Roof Access — building camera network fully populated
+- **Medical + Violence**: de-duplicated camera IDs — both shared CAM-305/411/227/198/562/340/715; now each has unique IDs (Medical: CAM-81→159, Violence: CAM-21→89)
+
+## [2.17] 2026-04-16 — Demo: full mobile responsiveness pass across all stages
+
+**Fixed**
+- **Stage 01 DETECT** (all 5 scenarios): the 50/50 `hasDetectFlow` split had zero mobile CSS — on narrow screens both halves were cramped side-by-side. Added CSS class system (`detect-bg-half`, `detect-left-area`, `detect-flow-half`, `detect-v-sep`, `detect-dp-row`) and mobile rules to stack them vertically: top 50% = camera/detect card, bottom 50% = flow panel. Separator becomes a horizontal `border-top`.
+- **Stage 01 light-bg outer wrapper** (`stage-outer-lbg`): was fixed-height with no overflow — now `height: auto; overflow-y: auto` at ≤1100px so content isn't clipped on tablets.
+- **Stage 03 DECIDE** (`ProtocolPanel`): stacked panels on mobile (≤768px) now have explicit `min-height` values, the left panel switches its separator from `border-right` → `border-bottom`, and `gap: 0` keeps the separators flush.
+
+## [2.16] 2026-04-16 — Demo LEARN: thick white separators between cards, responsive stacking
+
+**Changed**
+- `LearnLayout.tsx`: replaced thin colored `borderRight` (1px green/blue tints) on Card 1 and Card 2 with thick white separator `6px solid rgba(255,255,255,0.6)` — matching the ProtocolPanel and SplitLayout separator pattern
+- Responsive behavior already handled: at ≤768px the borders switch to `border-bottom: 6px solid rgba(255,255,255,0.6)` and cards stack vertically (flex-direction: column)
+
+## [2.15] 2026-04-16 — Demo: roll out decision tree + video wall to all 4 remaining scenarios
+
+**Added**
+- Propagated the DECIDE-stage improvements from LPR to all remaining scenarios: access-control, violence, school, medical
+- Each scenario's Stage 03 now has a tailored `decisionTree` (3-node situation tree + 4 action options with one AI-recommended) and a `videoWall` (9-tile 3×3 camera grid)
+- **Access Control**: tree = Unauthorized Access → Identity Confirmed → Server Room at Risk. Options: Lock Down Facility (rec), Dispatch Security, Escort & Detain, Alert Police. Camera wall: 4 real building cams (server corridor, east wing, main entrance, stairwell) + 5 monitoring/idle
+- **Violence**: tree = Violence Detected → Armed Subject → Civilians at Risk. Options: Tactical Response (rec), Establish Perimeter, Evacuate Zone, Request Backup. Camera wall: 2 active incident cams + 7 city road cams
+- **School**: tree = Panic Button Triggered → Lockdown Activated → Threat Confirmed. Options: Dispatch SRO (rec), Full Lockdown, Evacuate Wing, Call for Backup. Camera wall: 4 real campus cams (hallway, entrance, parking, hallway 2F) + 5 monitoring/idle
+- **Medical**: tree = Cardiac Arrest → Location Confirmed → Critical Response. Options: Dispatch AMB-7 (rec), Fire Rescue, Dispatch AMB-12, First Responder. Camera wall: 2 incident area cams + 7 city road cams
+
+## [2.14] 2026-04-16 — Demo LEARN: dark backgrounds + much larger, readable text
+
+**Changed**
+- LEARN stage (Case Closed) was rendering three pale, nearly-transparent cards on a white page — hard to read at any size
+- Gave all three cards solid dark backgrounds: Critical Events → `#0a1a18`, Performance → `#060e18`, Incident Analysis → `#07101c`. Outer panel → `#0B1420` with full opacity
+- **Critical Events:** timestamp `9px → 12px`, event text `11.5px → 15px`, checkmark circle `15px → 22px`, connector line thicker, event padding increased
+- **Incident Summary:** key labels `10px → 12px`, values `10px → 13px` bold
+- **Performance:** section header `9px → 11px`, timer ring numeral `26px → 32px`, metric labels `9px → 12px`, metric values `12px → 15px`, row padding increased
+- **Incident Analysis:** section header `9px → 11px`, stage label/time `11px → 14px`, progress bars `5px → 7px` tall, recs title `11.5px → 14px`, recs body `11.5px → 12px`, all icon sizes bumped, left accent border solid (not translucent)
+
+## [2.13] 2026-04-16 — Demo DECIDE: real CCTV imagery for all 7 video wall tiles
+
+**Added**
+- Generated 7 realistic road CCTV photos (via Gemini 3.1 Flash Image) for the monitoring/idle tiles in the DECIDE video wall: Montrose Blvd, Memorial Dr, Westheimer Rd, Allen Pkwy, Kirby Dr, Shepherd Dr, Waugh Dr — saved to `/public/demo/lpr/cctv-*.jpeg` (~230–315 KB each, 16:9)
+- Updated `lpr.ts` tiles 3–9 with `image` paths; VideoWall component already applies `brightness(0.55) saturate(0.5)` filter to monitoring/idle tiles so they look like inactive feeds versus the two bright LPR tracking cams
+
+**Fixed**
+- Claude Desktop MCP `nano-banana` was pinned to `gemini-2.0-flash-preview-image-generation` (deprecated, returning text-only). Updated `claude_desktop_config.json` to `gemini-2.5-flash-image` (GA stable). Restart Claude Desktop to take effect.
+
+## [2.12] 2026-04-16 — Demo ACT: Tactical Units panel — grid of cards (not a table)
+
+**Changed**
+- The ACT stage right-side "Tactical Units" panel was rendering each unit as a full-width row (flex-column layout with `gap: 10px`). On wide screens the rows stretched ~900 px across and read like a table instead of cards. Switched the scroll container to `display: grid` with `grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))` so each unit is a tile that adapts 1 → 2 → 3 columns depending on panel width
+- Breakpoint adjustments: at ≤1100 px the grid keeps the `minmax(260px, 1fr)` auto-fill behavior; at ≤768 px the grid collapses to a single column so narrow viewports still see one card per row
+- No changes to the card internals — header banner, metrics grid, footer all preserved
+
+## [2.11] 2026-04-16 — Demo DECIDE: simpler tree + visual options + 9-tile video wall
+
+**Changed**
+- DECIDE stage decision tree was too dense for non-technical viewers (horizontal funnel + score bars + weighted rankings). Replaced with a **simple 3-node vertical tree** (STOLEN VEHICLE → IN MOTION → INTERCEPT NEEDED) showing the situation at a glance, followed by **4 visual option cards** (Intercept, Roadblock, Track Only, Air Support) the dispatcher can choose from. The AI-recommended option (Intercept) has a green glow + "AI PICK" badge — no scores, no filter math, just clear choices
+- Simplified `Stage.decisionTree` type: `tree[]` (2-3 nodes, each with label/detail/icon) + `options[]` (3-4 action cards with one `recommended`). Removed `candidates`, `filters[]`, `ranked[]`, and `recommendation` fields
+
+**Added**
+- New `VideoWall` component — 3x3 grid of 9 city-camera tiles restores the right column on the DECIDE stage. Two tiles show live LPR tracking (CAM-402 HIGHWAY 45 and CAM-118 INTERCHANGE) with green "TRACKING" chip + scan beam animation; the other 7 are monitoring/idle neighborhood cams (Montrose, Memorial, Westheimer, Allen, Kirby, Shepherd, Waugh) rendered as dimmed placeholder tiles with camera labels
+- Rationale from user feedback: *"too much information and text… maybe a simple decision tree and then a visual representation of the different options the user can take. I would also like to return the right module — maybe nine video tiles with relevant videos inside."*
+- Extended `Stage` type with optional `videoWall` (tiles with `status: 'tracking' | 'monitoring' | 'idle'`)
+
+## [2.10] 2026-04-16 — Demo DECIDE: readable protocol + AI decision tree (LPR)
+
+**Improved**
+- Protocol steps (left column of DECIDE stage) were near-unreadable: 11px monospace body with `line-through` on completed items at 0.5 opacity. Rewrote to split each step on `—` into a **clear title** (14px, 700 weight, full white) + **detail line** (12px, dimmer). Removed strike-through. Replaced tiny monospace ID with a numbered circle / checkmark / spinner. Status shown as a colored left accent bar instead of a giant border around the whole row. `ACTIVE` pill renamed to `IN PROGRESS` for clarity.
+
+**Added**
+- New `DecisionTreePanel` component replaces the center map on the DECIDE stage when a `decisionTree` is provided. Three sections:
+  1. **Horizontal filter funnel** — shows how the AI narrowed candidates (e.g. 6 available → [≤3 mi] 4 → [shift active] 3 → [skill: intercept] 3 → WINNER), with per-filter PASS / reject counts
+  2. **Ranked candidate cards** — top 3 finalists with weighted AI score (0–100) as a progress bar, distance + ETA, and a one-line rationale. Winner card has a green glow + "AI PICK" trophy badge
+  3. **Recommendation strip** — bolt icon + "→ DISPATCH 12-CHARLIE · Primary intercept · Lights & siren · Code 3 · ETA 2:48"
+- Rationale: the demo uses maps on Stages 02/03/04 — swapping Stage 03's map for a decision-logic view makes the DECIDE stage distinct and directly visualizes the AI reasoning instead of showing a third map of the same dots
+- Extended `Stage` type with optional `decisionTree` (backward compatible — if unset, the stage falls back to the old map view)
+- LPR Stage 03 now ships decision tree data; other scenarios still render the legacy map until their trees are authored
+
+## [2.09] 2026-04-16 — Demo ACT fixes: smaller camera overlay + responsive units panel
+
+**Fixed**
+- ACT stage camera overlay on the dispatch map was too large (was `clamp(240px, 28vw, 360px)` — consumed most of the map in split layout). Reduced to `clamp(170px, 16vw, 240px)` so it sits as a compact picture-in-picture without blocking the scene
+- ACT stage camera image now uses `/demo/lpr/cam-intercept-lpr.jpeg` (purpose-built INTERCHANGE photo, 917KB) instead of the 8.5MB `LPR.png` — loads faster and matches the "CAM-118 · INTERCHANGE" label
+- Camera overlay `<Image>` now uses `unoptimized` flag to match the rest of the demo's unoptimized image pipeline (avoids Turbopack optimizer edge cases)
+- Units panel (right side of ACT split layout) was collapsing on viewports ≤1100px — parent flex lost sizing but inner `flex:1; overflow:auto` still expected a definite height, so cards didn't render as cards
+- Rewrote the ≤1100px breakpoint: split-body now stacks vertically (phone → map → units) with each panel at natural height, horizontal separators replacing vertical ones, and the units scroll container becomes natural-flow so all 6 cards render fully
+
+## [2.08] 2026-04-16 — Demo DETECT: flow panel rolled out to all scenarios
+
+**Added**
+- `detectFlow` data added to Stage 01 of all remaining scenarios — each with a scenario-specific 5-node pipeline + "no-match" retrospective branch:
+  - **access-control**: Badge Scan → Identity Lookup → Access Policy Check → Anomaly Scoring → Event Triggered (branch: Access Granted Log)
+  - **violence**: Capture → Behavior Analysis (YOLO) → Threat Rules → AI Prioritization → Event Triggered (branch: Normal Behavior)
+  - **school**: Panic Trigger → Location Lookup → Protocol Match → Lockdown Sequence → Event Triggered (branch: Test Press / Drill)
+  - **medical**: 911 Call → Live Transcription → Keyword Extraction → Priority Classify → Event Triggered (branch: Non-urgent Queue)
+- StageScreen now clamps all three detectCard types (call-intake, panic-alert, access-breach) to the left 50% when a `detectFlow` is present, so the admin panel and the flow render side-by-side cleanly
+- All 5 scenarios now tell the same story: *what* was detected (left) + *how* it was detected (right)
+
+## [2.07] 2026-04-16 — Demo DETECT: n8n-style detection-logic flow panel (LPR stage 01)
+
+**Added**
+- New `DetectFlowPanel` component renders an n8n-inspired vertical flowchart that visualizes the system's detection logic: dark canvas with a faint dot-grid, rounded nodes with typed icon tiles (sensor / AI / rule / event / retro), curved bezier connectors, and a one-shot "data packet" dot that traverses the chain on stage enter
+- When a detect stage carries a `detectFlow`, the cinematic panel splits 50/50 — left half keeps the existing bg image + detect-overlay + data-point/modules strip (clamped to the left half), right half renders the flow
+- LPR scenario (Stage 01) now ships 5 nodes: CAPTURE → PLATE EXTRACTION → HOTLIST MATCH → AI PRIORITIZATION → EVENT TRIGGERED, plus a dashed "NO MATCH" branch to a dimmed RETROSPECTIVE LOG node
+- Extended `Stage` type with optional `detectFlow` (backward compatible — other scenarios render unchanged)
+- Design spec committed to `docs/2026-04-16-detect-flow-panel-design.md`
+- Rollout: LPR first. Other scenarios (access-control / violence / school / medical) will get their own scenario-specific flows in a follow-up once this is approved
+
+## [2.06] 2026-04-16 — Demo ACT: operational dispatch map with multi-unit markers + LPR camera overlay
+
+**Added / Changed**
+- Extended `DispatchMap` to render multiple colour-coded unit markers (police blue, K9 amber, EMS red, security purple, fire orange) with per-unit routes and status-aware line styling (solid for ASSIGNED/EN ROUTE, dashed for STANDBY/AVAILABLE)
+- Added a floating LPR camera overlay layer on top of the map — 16:10 photo card with red alert border, camera label strip, and "LPR HIT · STOLEN VEHICLE CONFIRMED" footer
+- Extended `splitMapCoords` type with optional `units[]` and `camera` fields (backward compatible — existing scenarios untouched)
+- Stage 04 ACT (LPR scenario) now uses the new `LPR.png` (baked-in LPR DETECTION header) instead of the reused `lpr-hero.jpeg`, with camera label updated to `CAM-118 · INTERCHANGE`
+- Swapped `splitUnits` roster: `05-ALPHA` replaced with `K9-2` (K9 unit, M. Chen & Rex) and `EMS-7` (Medic standby) added — richer multi-agency scene for the ACT map
+- Six tactical units now appear on the map with coordinates: 12-CHARLIE (primary), 08-BRAVO (flanking), 04-ALPHA, K9-2, EMS-7, 11-ECHO
+
+## [2.05] 2026-04-16 — Demo ACT: rich tactical unit cards with type, status & ETA
+
+**Changed / Added**
+- Replaced the simple unit-row list in the ACT-stage right panel with detailed unit cards
+- Each card emphasizes: unit type (Police Car / Security Officer / K9 Unit / Ambulance / Fire Truck) with color-coded icon, large unit number, officer name, status pill (On Scene / Assigned / En Route / Available / Standby), ETA + distance metrics, "View on Map" action, radio channel & equipment
+- Extended `splitUnits` type with optional `type`, `typeLabel`, `officer`, `badge`, `eta`, `etaLabel`, `etaSub`, `distance`, `distanceSub`, `channel`, `equipment`, `equipmentIcon` fields (backward compatible)
+- Updated access-control and LPR scenarios with full card metadata for all units
+- "View on Map" button dispatches a `demo:view-unit-on-map` window event for future map-panel integration
+
+## [2.04] 2026-04-14 — Demo LPR: AI-generated photorealistic LPR camera images
+
+**Fixed**
+- Generated two photorealistic LPR camera images using Gemini 3.1 Flash (nano-banana CLI)
+- cam-highway-lpr.jpeg: rear-view of BMW on rainy highway at night, green detection box on plate 7JKY442
+- cam-intercept-lpr.jpeg: front-left angle SUV approaching intersection, headlights, green LPR box
+- Replaced SVG placeholder drawings with actual AI-generated surveillance-style photos
+- Reverted ProtocolPanel back to next/image (JPEGs work fine, SVG restriction resolved)
+
+## [2.03] 2026-04-14 — Demo LPR: new SVG camera captures from two distinct angles
+
+**Fixed / Added**
+- Created cam-highway.svg — rear-view highway LPR capture (gantry camera, red tail lights, plate 7JKY442 in green box)
+- Created cam-intercept-v2.svg — front-right quarter-view at interchange (headlights, front plate detection, different angle)
+- Fixed ProtocolPanel to use plain <img> instead of next/image for camera feeds (SVGs blocked by Next.js optimizer)
+- Both cameras unique: not reused from any other demo stage
+
+## [2.02] 2026-04-14 — Demo LPR: replace flowchart camera images with real LPR detection images
+
+**Fixed**
+- Replaced `lpr-flow.jpeg` (process flowchart — unrelated) used as camera feed in DECIDE stage with `lpr-hero.jpeg` (real overhead highway LPR detection image)
+- Added new `cam-intercept.svg` — a front-facing LPR camera capture from interchange angle (angle 2), replacing the blurry UI-mockup `stage-3-decide.jpg`
+- Relabeled second camera to `CAM 118 · INTERCHANGE` to match the new image content
+- Both cameras now marked as `alert: true` for visual consistency
+
+## [2.01] 2026-04-14 — Demo: add 6px panel separator to UNDERSTAND stage
+
+**Fixed**
+- UNDERSTAND 3-panel layout in `StageScreen.tsx` now uses the same `border-right: 6px solid rgba(173,198,255,0.25)` separator as ProtocolPanel, SplitLayout, and LearnLayout
+- Panels wrapped in a single container with `borderRadius: 12` and `overflow: hidden` (instead of individual rounded panels with gap)
+- Mobile: separator removed on stacked layout, individual panel borders restored for mobile
+
+## [2.00] 2026-04-13 — Demo: fix panel separator contrast (gap bg matches container)
+
+**Fixed**
+- Gap background in ProtocolPanel and SplitLayout changed from `#03080f` to `#162235` (matches stage container)
+- Darker panel backgrounds (`#0b1622`, `#060e18`, `#07101c`) now contrast against the lighter gap, creating clearly visible separators
+- Mirrors the same technique already used by the UNDERSTAND stage
+
+## [1.99] 2026-04-13 — Demo: make panel separators clearly visible
+
+**Fixed**
+- Changed gap background from near-invisible `rgba(173,198,255,0.08)` to solid `#03080f` (deep near-black) in `SplitLayout.tsx` and `ProtocolPanel.tsx`
+- Panel gaps now create a clear dark separator between modules, matching the UNDERSTAND stage treatment
+- Standardised gap/padding to 8px to align with all stage layouts
+
+## [1.98] 2026-04-13 — Demo: vertical gaps between panels on all stage layouts
+
+**Improved**
+- `ProtocolPanel.tsx` — panel columns (steps, map, cameras) updated to `border-radius: 12px` and `gap: 12px`, replacing the old `border-right` dividers. Matches the gap treatment on the UNDERSTAND stage.
+- `SplitLayout.tsx` — same update: phone, map, and units panels now use `border-radius: 12px` and `gap: 12px`.
+- Also synced `LearnLayout.tsx`, `StageScreen.tsx`, and `lpr.ts` to branch.
+
+## [1.97] 2026-04-13 — Fix: sync all demo components and data files to branch
+
+**Fixed**
+- 6 component files (`DispatchMap`, `GeoPanel`, `ScenarioPlayer`, `SplitLayout`, `StageScreen`, `TopBar`) and 5 data files (`lpr`, `medical`, `school`, `types`, `violence`) were out of sync between the local working copy and the `demo-light-redesign` branch, causing cascading TypeScript build errors on Vercel. All files synced in one commit.
+
+## [1.96] 2026-04-13 — Fix: ProtocolPanel TypeScript error on prevStage
+
+**Fixed**
+- `ProtocolPanel.tsx` — lines 353 and 410 had `prevStage.label` without optional chaining, causing a TypeScript build error (`'prevStage' is possibly 'undefined'`). Updated to `prevStage?.label`. The local file already had the fix but an older version was committed to the branch.
+
+## [1.95] 2026-04-13 — Fix: missing map components added to branch
+
+**Fixed**
+- `UnderstandMapPanel.tsx` and `StaticMapPanel.tsx` were never committed to `demo-light-redesign`, causing a Vercel build failure ("Module not found"). Both files added to the branch.
+
+## [1.94] 2026-04-13 — Demo: LearnLayout nav centered + prev button updated
+
+**Fixed**
+- `LearnLayout.tsx` — floating nav strip (CHOOSE SCENARIO + prev arrow) was still bottom-right. Repositioned to bottom-center to match BottomNav. Also updated the old ghost `‹` prev button to the labeled pill style introduced in v1.92.
+
+## [1.93] 2026-04-13 — Demo: BottomNav moved to bottom-center
+
+**Changed**
+- `BottomNav.tsx` — nav strip repositioned from bottom-right to bottom-center (`left: 50%` + `translateX(-50%)`). More natural placement for a centered demo flow.
+
+## [1.92] 2026-04-13 — Demo: BottomNav — clearer prev/next for first-time users
+
+**Improved**
+- `BottomNav.tsx` — PREV button was a tiny ghost `‹` icon at 40% opacity with no label. Replaced with a full labeled pill button (`← DETECT`) matching the NEXT button style but dimmer, so the navigation pattern is immediately obvious. Added 5-dot step progress indicator between the two buttons (active dot stretches to a pill, completed dots tint blue). Added a 2-cycle pulse ring animation on the NEXT button at first stage load to draw attention for new visitors.
+
+## [1.91] 2026-04-13 — Demo: DECIDE camera panel fills height, no black gap
+
+**Fixed**
+- `ProtocolPanel.tsx` — camera thumbnails had a fixed `height: 104px`, leaving a large black gap below when only 2 cameras were present. Changed `.pp-camera-pip` to `flex: 1; display: flex; flex-direction: column` and `.pp-camera-img` to `flex: 1; min-height: 0` so each pip stretches to share the full panel height equally. Camera list wrapper also set to `flex: 1` to fill the space below the header.
+
+## [1.90] 2026-04-13 — Demo: access-control DECIDE stage map panel populated
+
+**Fixed**
+- `access-control.ts` — the DECIDE stage had `layout: 'protocol'` and `protocolSteps` but no `decideMap`, causing `ProtocolPanel` to render "NO MAP DATA" on the right panel. Added `decideMap` with incident coords `[29.7362, -95.4625]`, five units (SEC-1 ASSIGNED, SEC-2 EN ROUTE, UNIT-9 EN ROUTE, UNIT-3 STANDBY, K9-2 AVAILABLE), and two camera thumbnails (cam03-server-corridor alert + cam07-east-wing). Now renders the same `DecideMapPanel` as violence and medical scenarios.
+
+## [1.89] 2026-04-10 — Demo: UNDERSTAND left panel now scenario-specific
+
+**Fixed**
+- `StageScreen.tsx` — the left tracking panel and GIS map overlay in the UNDERSTAND stage were hardcoded with LPR scenario data (plate `7JKY442`, "ACTIVE TRACK", "Westbound I-10", etc.) and appeared on every scenario that had an `understandMap` — including violence. Added `isLprTrack` boolean (true when `dataPoints` contains `INTERCEPT ETA`) and `trackSubLabel` (derived from `stage.stageLabel`). LPR renders the existing vehicle tracking card unchanged. All other scenarios (violence) render a generic card showing the stage's actual `dataPoints`, GIS status, and unit info. Fixed in four locations: the 3-panel left panel, the right GIS panel bottom overlay (3-panel layout), the dark-bg GIS panel bottom overlay, and the dark-bg left tracking panel.
+
+## [1.88] 2026-04-10 — Demo: Leaflet init fix + dark tiles across all scenario maps
+
+**Fixed**
+- `GeoPanel.tsx` — replaced direct `L.map()` call (which fires before flex container has real pixel dimensions) with the same `requestAnimationFrame` polling loop + `ResizeObserver` pattern used in DispatchMap and UnderstandMapPanel. Affects UNDERSTAND stage maps for school, medical, and access-control scenarios.
+- `DecideMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` + voyager tiles + CSS filter hack with RAF polling + `dark_all` CartoCDN tiles. Affects DECIDE stage maps for violence and medical scenarios. Map now renders immediately with the correct dark tactical appearance, consistent with all other maps in the demo.
+
+## [1.87] 2026-04-10 — Demo: title emphasis across all stages
+
+**Improved**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx`, `LearnLayout.tsx` — replaced the thin, low-contrast stage label with a left accent bar (3×14px `#1755c2`) + bolder tracking. Increased headline `font-size` from `clamp(1.35rem, 1.9vw, 1.85rem)` to `clamp(1.9rem, 2.6vw, 2.8rem)` and tightened `line-height` to 1.0. Description text opacity raised from 0.48 to 0.62. Changes are identical across DETECT/UNDERSTAND (StageScreen), DECIDE (ProtocolPanel), ACT (SplitLayout), and LEARN (LearnLayout).
+
+## [1.86] 2026-04-10 — Demo: UnderstandMapPanel — fills panel, dark tiles, camera + route overlays
+
+**Fixed / Improved**
+- `UnderstandMapPanel.tsx` — replaced `setTimeout(invalidateSize, 0)` with `requestAnimationFrame` loop (same pattern as DispatchMap fix in v1.82) that waits for real container dimensions before calling `L.map()`, then attaches `ResizeObserver`. Previously the voyager tiles loaded into a collapsed height leaving large dark margins.
+- Switched to `dark_all` CartoCDN tiles (matches ACT stage). Removed the `hue-rotate` brightness filter hack.
+- Route now rendered as glow (10px/18% opacity) + solid line (3px/95%) in green (`#00C98A`).
+- Stolen vehicle marker enlarged (36px circle, 2.5px border, larger pulse rings), plate badge background changed from semi-transparent to solid `#FF4560`.
+- Intercept/unit marker redesigned as blue `#3B9EFF` crosshair with "12-CHARLIE" label.
+- Added CCTV camera marker (amber `#FFB020`, video camera SVG icon, CAM 402 label) placed just east of the incident coords where the vehicle was first detected. Accepts optional `cameraCoords` prop for overrides.
+- `fitBounds` now includes camera positions in the bounding box so all overlay elements are visible.
+
+## [1.85] 2026-04-10 — Demo: LEARN nav buttons — floating fixed overlay
+
+**Changed**
+- `LearnLayout.tsx` — replaced the inline centered nav buttons (which sat below the dark panel in document flow) with a `position: fixed; bottom: 24px; right: 28px` floating overlay matching the `BottomNav` pattern used by all other stages. The "← ACT" prev button uses the same ghost pill style as `demo-float-prev`; the "Choose Scenario" button uses the green restart palette from `demo-float-restart`.
+
+## [1.84] 2026-04-10 — Demo: DispatchMap — fix white tile background
+
+**Fixed**
+- `DispatchMap.tsx` — the v1.82 tile layer split used `dark_matter_no_labels` which is not a valid CartoCDN style name; the map rendered as white/gray with only road labels visible. Reverted to the single correct `dark_all` style which renders black background + roads + labels in one layer.
+
+## [1.83] 2026-04-10 — Demo: UNDERSTAND — restore 3-column layout at all desktop widths
+
+**Fixed**
+- `StageScreen.tsx` — the UNDERSTAND stage was wrapping its center panel to full-width at ≤1100px (matching the old fixed-height overflow fix), which broke the three-equal-column layout on common desktop viewports. Fix: removed `flex-wrap` and `order: -1` from the ≤1100px rule; the outer now uses `min-height: calc(100vh - 200px)` instead so the columns fill the screen without a fixed height. Wrapping to the stacked layout is deferred to ≤768px (center full-width top, left+right split) and ≤540px (all three stack vertically).
+
+## [1.82] 2026-04-10 — Demo: DispatchMap Leaflet init fix + visual improvements
+
+**Fixed**
+- `DispatchMap.tsx` — replaced `setTimeout(invalidateSize, 0)` with a `requestAnimationFrame` loop that waits for the container to have real pixel dimensions before calling `L.map()`, then attaches a `ResizeObserver` to keep Leaflet in sync with CSS layout. Previously Leaflet could initialise when the flex container still had zero height, causing blank tiles and missing markers.
+- Switched base tile layer to `dark_matter_no_labels` + separate `dark_only_labels` pane so street labels render crisply on top. Added route glow (8px, 22% opacity) under the solid route line (3.5px, 95% opacity) for better visibility. Increased circle marker radius from 8→9 and added `minHeight: 280px` to the Leaflet container div.
+- `SplitLayout.tsx` — added `minHeight: 300` to `demo-split-map` panel to guarantee Leaflet always has a visible container.
+
+## [1.81] 2026-04-10 — Demo: full responsiveness applied to ACT and LEARN stages
+
+**Fixed**
+- `SplitLayout.tsx` (ACT) — removed `display: none !important` from `demo-split-units` at ≤1100px and `demo-split-map` at ≤480px; outer wrapper now scrollable at ≤1100px; units panel stacks below map at ≤768px with `min-height: 220px`; map gets `min-height: 180px` at ≤480px instead of vanishing
+- `LearnLayout.tsx` (LEARN) — added `learn-outer` class to root div; new `@media (max-width: 1100px)` rule makes outer scrollable (`height: auto`); at ≤768px replaced `max-height: 35%` on card-1 (which clipped content against the fixed parent height) with `min-height: 200px`; cards 2 and 3 get `min-height: 260px` / `300px` so all content is reachable by scrolling
+
+## [1.80] 2026-04-10 — Demo: DECIDE camera panel no longer disappears at narrow widths
+
+**Fixed**
+- `ProtocolPanel.tsx` — removed `display: none !important` from `pp-camera-panel` at ≤1100px; camera panel now stays visible at all widths and stacks at the bottom at ≤768px. Also moved `height: auto` scrollable rule to ≤1100px (was only at ≤768px) so the outer wrapper never clips content.
+
+## [1.79] 2026-04-10 — Demo: UNDERSTAND narrow-screen fix — panels scroll instead of clipping
+
+**Fixed**
+- `StageScreen.tsx` — at ≤1100px, `understand-outer` no longer has fixed `calc(100vh - 120px)` height; switched to `height: auto` + scrollable, same as the ≤680px rule. Previously, the center panel consumed 38vh and left only ~160px for the left/right panels — the GIS TRACK right panel was clipped by `overflow: hidden` and appeared to "disappear" at medium screen widths.
+- Center panel height reduced from `38vh` to `300px` at ≤1100px; left/right panels get `min-height: 260px` / `300px` respectively so all content is accessible by scrolling
+
+## [1.77] 2026-04-10 — Demo: equal-width 3-panel layout across all scenario stages
+
+**Changed**
+- `StageScreen.tsx` (UNDERSTAND) — panels now `flex: 1` each instead of fixed 200px / flex:1 / 320px; at ≤1100px center wraps full-width, left+right share space equally
+- `ProtocolPanel.tsx` (DECIDE) — steps, map, and cameras panels now `flex: 1` each instead of 36% / flex:1 / 200px; separator lines via CSS class, camera pip image uses 100% width
+- `SplitLayout.tsx` (ACT) — already equalized in v1.76
+- Consistent 1px `rgba(173,198,255,0.1)` separator between all panels across all three layouts
+
+## [1.76] 2026-04-10 — Demo: floating BottomNav + 3-panel layout for all stages
+
+**Changed**
+- `ScenarioPlayer.tsx` — enabled floating `BottomNav` for all non-LEARN stages; added `paddingBottom: 80px` to main content to clear it
+- `StageScreen.tsx` — UNDERSTAND stage now uses an early-return 3-panel flex layout (vehicle data | map | protocol/cameras) instead of overlapping absolute panels; map is center with `order: -1` so it appears first when wrapping; disabled internal nav (replaced by floating BottomNav)
+- `ProtocolPanel.tsx` — refactored from 2 panels to 3: steps panel (36%) | map panel (flex: 1) | camera PiPs panel (200px, hidden at ≤1100px); disabled internal nav
+- `SplitLayout.tsx` — refactored from nested 2-panel to flat 3-panel: phone mockup (260px) | operational map (flex: 1) | tactical units list (220px, hidden at ≤1100px); at ≤768px panels stack vertically; disabled internal nav
+- `BottomNav.tsx` — cleaned up styling: `backdrop-filter: blur(20px)`, compact sizing on tablet/mobile, center teaser hidden at ≤480px
+
+**Fixed**
+- UNDERSTAND stage panels overlapping on narrow screens (was caused by 3 absolutely-positioned panels in a shared container)
+- Navigation buttons appearing twice (both internal per-component nav and floating BottomNav)
+
+## [1.75] 2026-04-10 — Demo: responsive nav buttons across all stage layouts
+
+**Fixed**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx` — added `demo-stage-nav-btn`, `demo-stage-nav-sublabel`, `demo-stage-nav-mainlabel`, `demo-stage-nav-icon` CSS classes to all PREV/NEXT nav buttons
+- At ≤768px: button padding reduced to `8px 16px`, sub-labels ("Proceed to next step" / "Go back") hidden, main label font shrinks to 0.78rem, icon box shrinks to 24×24
+- At ≤480px: padding further reduced to `6px 12px`, main label font shrinks to 0.68rem
+- Buttons now stay compact and proportional on tablet and mobile screens
+
+## [1.74] 2026-04-10 — Demo: full responsive pass across all stage components
+
+**Changed**
+- `TopBar.tsx` — pills shrink + scroll on tablet (≤768px); entire row 2 hidden on mobile (≤480px); header row 1 shorter on mobile
+- `BottomNav.tsx` — compact height on tablet/mobile; center teaser hidden on tablet; prev/next labels hidden on mobile; simplified to icon+short text only
+- `ProtocolPanel.tsx` — camera PiPs shrink to 160px at 900px, 130px at 768px; layout stacks vertically at 768px; map panel hidden at 480px
+- `StageScreen.tsx` — understand map panel shrinks to 340px at 900px, hidden at 680px; outer padding reduced
+- `SplitLayout.tsx` — phone+map panels stack vertically at 768px; map hidden at 480px; padding reduced on mobile
+- `LearnLayout.tsx` — three dashboard cards stack vertically at 768px with scroll
+- `ScenarioPlayer.tsx` — `paddingTop` responsive: 120px → 88px (tablet) → 48px (mobile) matching header collapse
+
+---
+
+## [1.73] 2026-04-10 — Demo: TopBar stage pills — hover & active states
+
+**Changed**
+- `TopBar.tsx` — added CSS hover/active states for stage pills: inactive pills darken on hover and flash blue on press; active pill deepens blue on hover; `data-active` attribute wired for CSS targeting
+
+---
+
+## [1.72] 2026-04-10 — Demo: ACT stage phone panel — brighter radial background
+
+**Changed**
+- `SplitLayout.tsx` — left panel (smartphone mockup) now has a radial gradient background (`#1f3e62` center → `#0f1e2e` edges) instead of flat `#162235`, creating a subtle spotlight that makes the phone frame pop
+
+---
+
+## [1.71] 2026-04-10 — Demo: show all platform modules in title area, highlight active ones
+
+**Changed**
+- `StageScreen.tsx`, `ProtocolPanel.tsx`, `SplitLayout.tsx`, `LearnLayout.tsx` — module strip now renders all 9 platform modules every time; active modules for the current stage get a solid blue pill (`#1755c2` text, `rgba(0,122,255,0.1)` bg, blue border + bold weight); inactive modules are muted gray; each pill includes its Material icon
+- `ALL_MODULES` imported from `TopBar` in all four layout components
+
+---
+
+## [1.70] 2026-04-10 — Demo: move module tags from header to stage title area
+
+**Changed**
+- `TopBar.tsx` — removed Row 3 (platform modules strip) from the fixed header; modules are already rendered inline with the stage title in each layout component (StageScreen, ProtocolPanel, SplitLayout, LearnLayout)
+- All demo layout components — updated `calc(100vh - 168px)` → `calc(100vh - 120px)` to account for the shorter two-row header
+- `ScenarioPlayer.tsx` — updated `paddingTop` from 168px to 120px
+
+---
+
+## [1.69] 2026-04-10 — Demo: TopBar nav blended into white content area
+
+**Changed**
+- `TopBar.tsx` — stage lifecycle pills (row 2) and module tags (row 3) now render on `#f1f4f8` light background matching the content area, eliminating the jarring dark-to-white transition; row 1 (logo/badge) retains dark brand chrome; pills/tags restyled with dark-on-light colors and blue active states; outer header border and shadow updated to suit light bottom edge
+
+**Fixed**
+- Map fill in UNDERSTAND stage: removed `top: 28` offset from map container in `StageScreen.tsx` so Leaflet tiles now cover the full panel rectangle; header bar, camera inset, and incident overlay float above via z-index
+
+---
+
+## [1.68] 2026-04-10 — Demo: white background treatment for LEARN stage + street routing on all maps
+
+**Changed**
+- `LearnLayout.tsx` — applied the same white `#f1f4f8` background treatment as DETECT/UNDERSTAND/DECIDE/ACT: stage title/description above a dark rounded panel (`#0f1e33`), resolved badge + module tags in the header row, light nav buttons (ghost PREV, dark navy "Choose Another Scenario") outside the panel
+- `ScenarioPlayer.tsx` — extended `isLightBg` to include `learn` layout; passes `isLightBg` to `LearnLayout`
+- `DispatchMap.tsx`, `DecideMapPanel.tsx`, `UnderstandMapPanel.tsx` — removed OSRM dependency; all three maps now use pre-computed Houston street waypoints passed via `route` prop instead of fetching external routing API (which was blocked in sandbox and causing straight-line fallback)
+- `lpr.ts` — added pre-computed `route` waypoint arrays to `understandMap`, `decideMap.units` (12-Charlie + 08-Bravo), and `splitMapCoords` following Memorial Dr / Westheimer Rd / Montrose Blvd corridors
+- `types.ts` — added `route?: [number, number][]` to `splitMapCoords`, `understandMap`, and `decideMap.units`
+- `SplitLayout.tsx` — passes `route` prop to `DispatchMap`; `isLightBg` treatment for ACT stage (title above dark panel, light nav)
+- `StageScreen.tsx` — passes `route` prop to `UnderstandMapPanel`
+- `ProtocolPanel.tsx` — `isLightBg` treatment for DECIDE stage; camera PiP overlays on map (CAM 402 highway feed + GIS track)
+
+---
+
+## [1.67] 2026-04-10 — SEO: /vs/tyler-technologies + /vs/centralsquare comparison pages
+
+**Added**
+- `/vs/tyler-technologies/` — full EN+ES bilingual page: Tyler Technologies (largest US gov-tech vendor, Enterprise CAD/RMS) vs KabatOne unified operational depth; 9-row comparison table; 6 FAQ with breadcrumb + FAQPage schema; related resources + integration links
+- `/vs/centralsquare/` — full EN+ES bilingual page: CentralSquare (Superion + TriTech + Aptean + Zuercher merger, 8,000+ agencies) vs KabatOne single cloud-native architecture; 8-row comparison table; 6 FAQ with breadcrumb + FAQPage schema; related resources + integration links
+- `vsTylerTechnologies` + `vsCentralsquare` metadata keys added to EN + ES metadata files
+- `sitemap.ts` — 2 new /vs/ paths (priority 0.7 each) — site now 85 unique routes × 2 locales = 170 sitemap URLs
+
+---
+
+## [1.66] 2026-04-09 — SEO: add 4 demo scenario pages to sitemap + metadata
+
+**Added**
+- `sitemap.ts` — added `/demo/school`, `/demo/violence`, `/demo/medical`, `/demo/access-control` (were live pages not indexed by Google)
+- `demo/school/page.tsx` — added full metadata: title, description, OG tags, canonical
+- `demo/access-control/page.tsx` — added full metadata: title, description, OG tags, canonical
+- `data/demo/types.ts` — added `decideMap` to `Stage` interface (was used in lpr.ts + violence.ts but missing from type — pre-existing TypeScript error)
+
+---
+
+## [1.65] 2026-04-08 — Fix: Scenario 05 stage order — map+blueprint on understand, protocol on decide
+
+**Changed**
+- `access-control.ts` — understand stage: changed from protocol to geoPanel layout with 4 CCTV camera thumbnails + office blueprint panel
+- `access-control.ts` — decide stage: now shows the unauthorized access protocol (6 steps); removed the stray duplicate decideCard placeholder stage
+- `StageScreen.tsx` — added `blueprintPanel='office'` SVG: East Wing corporate floor plan — IT Ops, Conference, Security Desk (top), Server Room B ALERT + Storage + Network Hub (bottom)
+- Generated 4 access-control camera images: server corridor, east wing, main entrance, stairwell B
+
+## [1.64] 2026-04-08 — Feat: split map + blueprint on School understand stage + face card cleanup
+
+**Changed**
+- `types.ts` — added `blueprintPanel?: 'school' | 'office'` to geoPanel type
+- `school.ts` — set `blueprintPanel: 'school'` on understand stage geoPanel
+- `StageScreen.tsx` — geoPanel now splits into 55% street map + 45% building blueprint when `blueprintPanel` is set; school blueprint shows full floor plan with animated Room 214 alert; "STREET MAP" label on map pane
+- `StageScreen.tsx` — face recognition card simplified: removed verbose sub-labels, kept "⚠ WATCHLIST MATCH" + "98.4%" only
+
+## [1.63] 2026-04-08 — Feat: Scenario 05 — face recognition card on detect + protocol on understand
+
+**Added**
+- `StageScreen.tsx` — face recognition overlay card on access-breach CCTV panel: face image with corner detection brackets, scan-line animation, WATCHLIST MATCH label, confidence 98.4%
+- `access-control.ts` — understand stage changed from geoPanel to `protocol` layout with 6 steps: badge denial logged, face recognition match, server room lockdown, badge deactivated, officers alerted, PD requested
+- Generated `face-match.jpg` — AI portrait for watchlist match display
+
+## [1.62] 2026-04-08 — Feat: Scenario 05 detect stage — new CCTV image + corporate floor plan
+
+**Changed**
+- `access-control.ts` — detect image changed to `stage-1-detect-v2.jpg` (overhead view of turnstile access gate with queuing employees), detectCard type changed to `'access-breach'`
+- `types.ts` — added `'access-breach'` to detectCard type union
+- `StageScreen.tsx` — new `access-breach` panel: CCTV left with ACCESS DENIED bounding box + badge reader label; right side shows architectural blueprint of East Wing Level 3 with IT Operations, Conference Room, Security Desk (top), Server Room B ALERT + Storage + Network Hub (bottom), animated pulsing badge reader at main entrance door, forced-entry door gap on Server Room B
+
+## [1.61] 2026-04-08 — Feat: Scenario 05 — Unauthorized Access Control (v1.61)
+
+**Added**
+- `src/data/demo/access-control.ts` — full 5-stage scenario: badge denied ×3 → forced entry → Server Room B
+  - detect: panic-alert card with CCTV overhead of server corridor, badge mismatch fields, 5-item alert timeline
+  - understand: geoPanel with building coords, SEC-1/SEC-2 units, 4 cameras, SOS forced-entry card
+  - decide: decideCard — SEC-1/SEC-2 + UNIT-9/UNIT-3/K9-2, AI score 97, full dispatch brief
+  - act: splitLayout — server room CCTV, unit roster, map routing
+  - learn: incident closed, intruder detained, badge deactivated
+- `src/app/[locale]/demo/access-control/page.tsx` — new route
+- Generated 2 Imagen 4 images: server corridor CAM-03 (detect), server room interior (act)
+- `src/app/[locale]/demo/page.tsx` — scenario 05 set live, href → /demo/access-control
+
+## [1.60] 2026-04-08 — Fix: SOS event card fully visible — moved coords + explicit z-index
+
+**Fixed**
+- `school.ts` — moved SOS coords northeast, clear of school marker and CAM-15
+- `GeoPanel.tsx` — added `z-index:9999` to .sos-icon and .sos-card; larger card (12px label, wider box, bigger dot)
+- `GeoPanel.tsx` — increased iconSize to 190×68 to match
+
+## [1.59] 2026-04-08 — Fix: SOS button event card visible on map (offset coords + zIndex)
+
+**Fixed**
+- `school.ts` — moved sosEvent coords away from caller marker (were overlapping)
+- `GeoPanel.tsx` — added `zIndexOffset: 2000` so SOS card renders above camera thumbnails
+- `GeoPanel.tsx` — added `sosEvent` to useEffect dependency array
+
+## [1.58] 2026-04-08 — Feat: SOS button event card marker on Understand stage map
+
+**Added**
+- `GeoPanel.tsx` — new `sosEvent` prop renders a labeled card marker (dark red card + connector line + pulsing dot) anchored to the panic button location
+- `types.ts` — added `sosEvent?: { coords, label, sublabel }` to geoPanel type
+- `school.ts` — wired SOS event at Room 214 coords: "⚠ SOS BUTTON EVENT · ROOM 214 · BLDG A 2F"
+
+## [1.57] 2026-04-08 — Fix: larger CCTV thumbnails on map + rename legend label to SOS BUTTON
+
+**Changed**
+- `GeoPanel.tsx` — camera thumbnail size increased from 116×73 to 144×91px
+- `StageScreen.tsx` — floor plan legend label changed from "PANIC BTN" to "SOS BUTTON"
+
+## [1.56] 2026-04-08 — Feat: Live camera thumbnails on Understand stage map (School scenario)
+
+**Added**
+- `GeoPanel.tsx` — camera markers now render as CCTV thumbnail cards when an `image` is provided; card shows grayscale-filtered feed image, scanlines overlay, REC badge, label bar, connector line + dot anchor
+- Alert camera (CAM-07) styled in red tones; normal cameras in blue
+- `types.ts` — added `image?: string` and `alert?: boolean` to `geoPanel.cameras` items
+- `school.ts` — wired 4 Imagen 4-generated camera images: CAM-01 entrance, CAM-07 hallway, CAM-12 parking lot, CAM-15 2F hallway
+- Generated 4 CCTV-style school interior/exterior images in `public/demo/school/`
+
+## [1.55] 2026-04-08 — Feat: School Panic Button detect stage — architectural blueprint floor plan
+
+**Changed**
+- `StageScreen.tsx` — replaced SVG floor plan on School scenario detect stage with a true architectural blueprint
+- Blueprint style: dark navy background, wall hatching pattern (diagonal lines inside thick filled wall rects), proper door swing quarter-circle arcs
+- Realistic school layout: Assembly Hall, Principal's Office, Registrar's Office (top); Classroom 1, Classroom 2, Teacher's Faculty Room, Classroom 214 ALERT (bottom)
+- Corridor with stairwell symbols (parallel lines + diagonal cross), two camera markers
+- Entrance indicator cut into bottom outer wall
+- Alert room 214: pulsing red fill, red-tinted divider wall with alert hatching, animated panic button with expanding ring, ⚠ ALERT ACTIVE badge
+
+## [1.54] 2026-04-08 — Design: K-Safety hero map restyled to blueprint aesthetic
+
+**Changed**
+- `KSafetyCommandHero.tsx` — map visualization redesigned from dark tactical to architectural blueprint style
+- Deep navy blueprint background (`#071630 → #0a1e3c`)
+- SVG grid rebuilt: fine `5×5` + major `20×20` pattern, major roads (`1.8px`), secondary roads (`0.8px`)
+- Building footprints added as outlined SVG rectangles across all city blocks
+- Grid coordinate labels (A–D / 1–4) added on top and left edges
+- North arrow and 500 m scale bar added to blueprint corners
+- Animated scan-line overlay for live-data feel
+- Incident markers: pulsing crosshair with ring instead of plain dot
+- Pending incidents: rotated diamond outline
+- Unit markers: hollow triangle (SVG polygon)
+- Camera markers: square bracket with translucent fill
+- Legend icons updated to match new blueprint marker shapes
+- Coordinate watermark added (`GRID REF: 19°26′N 99°08′W`)
+
+## [1.53] 2026-04-08 — SEO: 3 new GEO resource pages (small cities, Colombia, best public safety)
+
+**Added**
+- `/resources/public-safety-software-small-cities/` — bilingual EN+ES guide for municipalities under 100K residents; ACCENT #16a34a; FORTASEG/SUBSEMUN LATAM context; 4 need cards, 6 eval criteria, comparison table, FAQ (GEO-022)
+- `/resources/public-safety-software-colombia/` — bilingual EN+ES guide for Colombian governments; PNC/FONSET/PISCC/CRUM framework; 4 challenge cards, 5-step workflow, comparison table, FAQ (GEO-023)
+- `/resources/best-public-safety-software/` — bilingual EN+ES synthesized comparison; 6 software categories, unified vs specialized editorial, 7-row comparison table, best-by-use-case cards, FAQ (GEO-024)
+- Hub cards added to `/resources/page.tsx` for all 3 new pages (EN + ES sections)
+- `publicSafetySoftwareSmallCities`, `publicSafetySoftwareColombia`, `bestPublicSafetySoftware` keys added to EN + ES metadata
+- 3 new sitemap entries (priority 0.7 each)
+
 ## [1.52] 2026-04-07 — Fix: QA fixes — nav aria-label, remove off-brand industries, mobile hero overflow
 
 **Fixed**

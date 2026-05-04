@@ -15,14 +15,47 @@
 |-------|--------|----------|
 | Phase 0 — Foundation & audit | Done | 100% |
 | Phase 1 — Pre-launch fixes | Done | 100% |
-| Phase 2 — Launch | In progress | 10% |
-| Phase 3 — Post-launch growth | In progress | 75% |
+| Phase 2 — Launch | **Done** | **95%** |
+| Phase 3 — Post-launch growth | In progress | 95% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | Not started | 0% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 95% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 97% |
 
-**Current site size:** 63 unique routes × 2 locales (EN + ES) = 126 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 13 | /resources/: 16 (hub + 14 articles + 1 ebook) | /integrations/: 6 | /demo/: 2 | Other: 7 (about, contact, privacy, privacy-policy-tamaulipas, simulator, lp) | Interactive: 5 (simulator, demo hub, demo/lpr, lp)
+**Last updated:** 2026-04-27
+**Current site size:** 85 unique routes × 2 locales (EN + ES) = 170 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 30 (hub + 29 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+- Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
+- Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
+
+### 🟢 DNS & Hosting Status (verified 2026-04-10)
+| Item | Status |
+|------|--------|
+| DNS → Vercel | ✅ Live — `kabatone.com` → 307 → `www.kabatone.com` (200 OK, Vercel) |
+| Nameservers | GoDaddy (`ns09/ns10.domaincontrol.com`) |
+| SSL / HSTS | ✅ Active |
+| Hreflang headers | ✅ EN + ES + x-default served |
+| Deployed version | ✅ Current — `nextjs` branch live on staging.kabatone.com (v2.47) |
+| Live sitemap | ✅ 166 URLs (83 routes × 2 locales) — /lp + /privacy-policy-tamaulipas removed (noindex) |
+| Build status | ✅ Clean build, 0 errors (verified 2026-04-23) |
+
+### Phase 2 blockers — resolved
+| # | Blocker | Status |
+|---|---------|--------|
+| 1 | Merge & deploy `demo-light-redesign` → `nextjs` | ✅ Done |
+| 2 | Create GSC property + verify ownership | ✅ Done — verified 2026-03-26 |
+| 3 | Submit sitemap to GSC | ✅ Done — 2026-04-20 |
+| 4 | Request indexing for 6 priority pages | ✅ Done — 2026-04-20 |
+| 5 | Verify GA4 tracking on live site | Not confirmed |
+| 6 | Run Auditor + Validator against live kabatone.com | Not started |
+
+### 🟡 Remaining GSC issues (from 2026-04-23 screenshot)
+| Issue | Count | Action |
+|-------|-------|--------|
+| Redirect error | 2 | Need GSC URL list to identify — likely www vs non-www canonical mismatch |
+| Excluded by noindex | 1 | Fixed — /lp + /privacy-policy-tamaulipas removed from sitemap (v2.48) |
+| Crawled - currently not indexed | 8 | Monitor — likely thin content pages (/lp, /simulator, demo pages) |
+| Discovered - currently not indexed | 112 | Normal for new site — Google queue, will resolve over time |
+| Indexed | 35 | Growing — submitted 2026-04-20 |
 
 ---
 
@@ -101,12 +134,12 @@
 | html lang verified on all pages | Done |
 | Validation run complete | Done |
 | Git push after validation | Done | commit b5b5795 — 15 files, 60 insertions |
-| Webflow publish | Not started |
-| GSC verified + sitemap submitted | Not started |
-| GSC property created for kabatone.com | Not started |
+| Vercel deploy (DNS live) | ✅ Done — verified 2026-04-10 |
+| GSC verified + sitemap submitted | ✅ GSC verified (2026-03-26) — sitemap submission pending |
+| GSC property created for kabatone.com | ✅ Done — verified owner as of 2026-03-26, 137 crawls in 90 days |
 | GA4 installed with conversion events | Done | G-5MB9CK1FGS — v1.15 |
-| robots.txt verified in Webflow | Not started |
-| Staging site blocked from Google | Not started |
+| robots.txt verified | ✅ Done — `Allow: /` + sitemap link (verified 2026-04-10) |
+| Staging site blocked from Google | N/A — Next.js on Vercel, no separate staging indexed |
 
 ---
 
@@ -115,17 +148,18 @@
 ### Launch day tasks
 | Item | Status |
 |------|--------|
-| Publish Webflow site to kabatone.com | Not started |
-| Apply Webflow SEO instructions (webflow-instructions.md) | Not started |
-| Apply title tags in Webflow Page Settings | Not started |
-| Apply meta descriptions in Webflow Page Settings | Not started |
-| Apply canonical URLs in Webflow Page Settings | Not started |
-| Verify sitemap at kabatone.com/sitemap.xml | Not started |
-| Submit sitemap to GSC | Not started |
-| Request indexing for priority pages in GSC | Not started |
-| Verify GA4 tracking on live site | Not started |
+| Publish site to kabatone.com (Vercel) | ✅ Done — DNS live, site serving from Vercel |
+| Apply Webflow SEO instructions (webflow-instructions.md) | N/A — migrated to Next.js on Vercel |
+| Apply title tags in Webflow Page Settings | N/A — handled in Next.js metadata |
+| Apply meta descriptions in Webflow Page Settings | N/A — handled in Next.js metadata |
+| Apply canonical URLs in Webflow Page Settings | N/A — handled in Next.js metadata |
+| Verify sitemap at kabatone.com/sitemap.xml | ✅ Done — 134 URLs live (170 after deploy) |
+| Submit sitemap to GSC | ✅ Done — 2026-04-20 |
+| Request indexing for priority pages in GSC | ✅ Done — 2026-04-20 (6 priority pages submitted) |
+| Verify GA4 tracking on live site | Not confirmed |
 | Run Auditor against live kabatone.com | Not started |
 | Run Validator against live site | Not started |
+| Remove noindex pages from sitemap | ✅ Done — 2026-04-23 v2.48 (/lp + /privacy-policy-tamaulipas) |
 
 ### Priority pages to index first
 | Page | URL | Status |
@@ -157,6 +191,27 @@
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
 | /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
 | /vs/rapidssos/ — RapidSOS comparison | Medium | Done | v1.14 |
+| /vs/avigilon/ — premium VMS comparison | Medium | Done | v1.40 |
+| /vs/verkada/ — cloud physical security comparison | Medium | Done | v1.40 |
+| /vs/verint/ — video intelligence comparison | Medium | Done | v1.40 |
+| /vs/nice-systems/ — PSIM comparison | Medium | Done | v1.40 |
+| /vs/tyler-technologies/ — largest US gov-tech CAD/RMS | High | Done | v1.67 |
+| /vs/centralsquare/ — merged legacy CAD/RMS (Superion/TriTech) | High | Done | v1.67 |
+| /vs/shotspotter/ — gunshot detection comparison | Medium | Done | undocumented — in sitemap, page exists |
+| /vs/palantir/ — AI/data analytics platform comparison | Medium | Done | undocumented — in sitemap, page exists |
+| Explainer: What Is Emergency Dispatch Software? | Medium | Done | v1.40 — /resources/what-is-emergency-dispatch-software/ |
+| Explainer: What Is LPR? | Medium | Done | v1.40 — /resources/what-is-lpr-license-plate-recognition/ |
+| Explainer: What Is Video Analytics? | Medium | Done | v1.40 — /resources/what-is-video-analytics/ |
+| Explainer: What Is Sensor Fusion? | Medium | Done | v1.40 — /resources/what-is-sensor-fusion/ |
+| Explainer: What Is Incident Management Software? | Medium | Done | v1.40 — /resources/what-is-incident-management-software/ |
+| GEO: C5 Command Centers Mexico 2026 Guide | High | Done | v1.47 — /resources/c5-command-centers-mexico-2026/ |
+| GEO: 911 Call Center Software Guide | High | Done | v1.51 — /resources/911-call-center-software-guide/ |
+| GEO: Build RTCC Implementation Guide | High | Done | v1.51 — /resources/build-rtcc-implementation-guide/ |
+| GEO: Public Safety Software Peru | Medium | Done | v1.51 — /resources/public-safety-software-peru/ |
+| GEO: Public Safety Software Small Cities | Medium | Done | v1.53 — /resources/public-safety-software-small-cities/ |
+| GEO: Public Safety Software Colombia | Medium | Done | v1.53 — /resources/public-safety-software-colombia/ |
+| GEO: Public Safety Software Chile | Medium | Done | v2.49 — /resources/public-safety-software-chile/ |
+| GEO: Best Public Safety Software | High | Done | v1.53 — /resources/best-public-safety-software/ |
 | Industry brief: The End of Siloed Response | High | Done | v0.81 — /resources/end-of-siloed-response/ |
 | Explainer: What Is CAD Dispatch Software? | High | Done | v0.85 — /resources/what-is-cad-dispatch-software/ |
 | Explainer: What Is a Real-Time Crime Center? | High | Done | v0.92 — /resources/what-is-a-real-time-crime-center/ |
@@ -304,6 +359,14 @@
 | /vs/prepared911/ | KabatOne vs Prepared 911 | Done |
 | /vs/peregrine/ | KabatOne vs Peregrine | Done |
 | /vs/rapidssos/ | KabatOne vs RapidSOS | Done |
+| /vs/avigilon/ | KabatOne vs Avigilon | Done |
+| /vs/verkada/ | KabatOne vs Verkada | Done |
+| /vs/verint/ | KabatOne vs Verint | Done |
+| /vs/nice-systems/ | KabatOne vs NICE Systems (Qognify) | Done |
+| /vs/tyler-technologies/ | KabatOne vs Tyler Technologies | Done |
+| /vs/centralsquare/ | KabatOne vs CentralSquare | Done |
+| /vs/shotspotter/ | KabatOne vs ShotSpotter | Done |
+| /vs/palantir/ | KabatOne vs Palantir | Done |
 
 ---
 
@@ -322,6 +385,14 @@
 | Prepared 911 | prepared.com | NG911 PSAP modernization | /vs/prepared911/ | Rankings for NG911, 911 software, PSAP |
 | Peregrine | peregrine.ai | RTCC, predictive policing | /vs/peregrine/ | Rankings for real-time crime center |
 | RapidSOS | rapidsos.com | Call data enrichment, NG911 data | /vs/rapidssos/ | Rankings for 911 data, call enrichment |
+| Avigilon (Motorola) | avigilon.com | Premium VMS + AI analytics | /vs/avigilon/ | Rankings for VMS, video analytics |
+| Verkada | verkada.com | Cloud-managed cameras + access control | /vs/verkada/ | Rankings for cloud cameras, physical security |
+| Verint | verint.com | Video intelligence + analytics | /vs/verint/ | Rankings for video intelligence, gov surveillance |
+| NICE Systems (Qognify) | nice.com | PSIM + evidence management | /vs/nice-systems/ | Rankings for PSIM, evidence management |
+| Tyler Technologies | tylertech.com | Largest US gov-tech — Enterprise CAD/RMS/ERP | /vs/tyler-technologies/ | Rankings for gov software, enterprise CAD, RMS |
+| CentralSquare | centralsquare.com | Merged legacy CAD/RMS (Superion/TriTech/Zuercher) | /vs/centralsquare/ | Rankings for public safety CAD, legacy migration |
+| ShotSpotter | soundthinking.com | Gunshot detection / acoustic sensor tech | /vs/shotspotter/ | Rankings for gunshot detection, ShotSpotter alternative |
+| Palantir | palantir.com | Government AI/data analytics platform | /vs/palantir/ | Rankings for gov AI platform, data analytics public safety |
 
 ---
 
@@ -372,6 +443,15 @@
 | 2026-03-28 | Claude Code | Demo system | — | Next.js | /demo hub + /demo/lpr interactive LPR scenario — 14 components, 5 stages — v1.30 |
 | 2026-03-30 | Claude Code | SEO sync | — | sitemap.ts + master plan | Fix 4 sitemap orphans, full master plan sync v0.85→v1.30 |
 | 2026-03-30 | Claude Code | 2 resources pages | — | Next.js | /resources/what-is-emergency-management-software v1.31, /resources/what-is-a-psap v1.32 — EN+ES, FAQ+breadcrumb+article schema, resources hub, sitemap |
+| 2026-04-08 | Claude Code | 3 GEO guides | — | Next.js | /resources/public-safety-software-peru, /build-rtcc-implementation-guide, /911-call-center-software-guide — v1.51 |
+| 2026-04-08 | Claude Code | 3 GEO guides | — | Next.js | /resources/public-safety-software-small-cities, /public-safety-software-colombia, /best-public-safety-software — v1.53 |
+| 2026-04-08 | Claude Code | 1 GEO guide | — | Next.js | /resources/c5-command-centers-mexico-2026 + metadata optimization — v1.47 |
+| 2026-04-09 | Claude Code | SEO metadata | — | sitemap.ts + metadata | 4 demo pages added to sitemap + metadata — v1.66 |
+| 2026-04-10 | Claude Code | 2 /vs/ pages + master plan sync | — | Next.js + master plan | /vs/tyler-technologies, /vs/centralsquare — EN+ES, FAQ+breadcrumb schema; GEO tracker + keyword map + competitor table updated v1.32→v1.67 — v1.67 |
+| 2026-04-20–22 | Claude Code | Demo improvements | — | Next.js | Demo system: micro-labels (v2.47), cognitive load reduction (v2.46), mobile responsive fixes (v2.44), module pill sizing (v2.43), unit card fixes (v2.39–v2.42) |
+| 2026-04-23 | Claude Code | Sitemap + master plan sync | — | sitemap.ts + master plan | Remove /lp + /privacy-policy-tamaulipas from sitemap (noindex contradiction), Phase 2 status → Done, GSC status updated v1.67→v2.48 |
+| 2026-04-27 | Claude Code (CEO heartbeat) | Master plan sync | — | master plan | Document /vs/shotspotter + /vs/palantir (existed in sitemap+codebase, undocumented); update route count 83→84, URL count 166→168; add to keyword map + competitor table |
+| 2026-04-27 | Claude Code (CEO heartbeat) | GEO guide | — | Next.js | /resources/public-safety-software-chile — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.49 |
 
 ---
 
@@ -445,8 +525,8 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-005 | Citeable explainer: "How do C5 command centers work?" | Medium | Done |
 | GEO-006 | Citeable explainer: "Smart city platform guide" | Medium | Done |
 | GEO-007 | Citeable explainer: "Public safety software for municipalities in Mexico" | High | Done |
-| GEO-008 | Wikipedia research — does KabatOne qualify for an entry? | Medium | Not started |
-| GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | Not started |
+| GEO-008 | Wikipedia research — does KabatOne qualify for an entry? | Medium | Done | 2026-04-24 — No KabatOne Wikipedia article exists. PSIM article exists at en.wikipedia.org/wiki/Physical_security_information_management — lists vendors; KabatOne qualifies for mention as "next-gen unified alternative". |
+| GEO-009 | Wikipedia edit — add factual mention to public safety software / PSIM / smart city articles | Medium | **ACTION NEEDED** — Target: Physical_security_information_management article. Add KabatOne as example of next-generation unified platform alternative to legacy PSIM. Requires a verifiable third-party source. |
 | GEO-010 | FAQPage schema on all industry pages | Medium | Done |
 | GEO-011 | FAQPage schema on all remaining product pages | Medium | Done |
 | GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Done |
@@ -458,6 +538,18 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-018 | WebSite schema — brand identity JSON-LD in root layout | Medium | Done | v1.22 |
 | GEO-019 | Citeable explainer: "What is emergency management software?" | High | Done | v1.31 |
 | GEO-020 | Citeable explainer: "What is a PSAP?" | High | Done | v1.32 |
+| GEO-021 | Citeable explainer: "What is emergency dispatch software?" | Medium | Done | v1.40 |
+| GEO-022 | Citeable explainer: "What is LPR (license plate recognition)?" | Medium | Done | v1.40 |
+| GEO-023 | Citeable explainer: "What is video analytics?" | Medium | Done | v1.40 |
+| GEO-024 | Citeable explainer: "What is sensor fusion?" | Medium | Done | v1.40 |
+| GEO-025 | Citeable explainer: "What is incident management software?" | Medium | Done | v1.40 |
+| GEO-026 | GEO guide: "C5 command centers in Mexico 2026" | High | Done | v1.47 |
+| GEO-027 | GEO guide: "911 call center software guide" | High | Done | v1.51 |
+| GEO-028 | GEO guide: "How to build an RTCC — implementation guide" | High | Done | v1.51 |
+| GEO-029 | GEO guide: "Public safety software for Peru" | Medium | Done | v1.51 |
+| GEO-030 | GEO guide: "Public safety software for small cities" | Medium | Done | v1.53 |
+| GEO-031 | GEO guide: "Public safety software for Colombia" | Medium | Done | v1.53 |
+| GEO-032 | GEO guide: "Best public safety software platforms" | High | Done | v1.53 |
 
 ### GEO-001 — Entity definition page
 
@@ -528,7 +620,15 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 
 | Date | Tool | Query | KabatOne cited? | Competitors cited |
 |------|------|-------|----------------|-------------------|
-| — | — | — | — | — |
+| 2026-04-24 | Web search | "KabatOne public safety platform CAD dispatch" | ✅ Yes — positions 1–4, kabatone.com dominates branded | Mark43, Versaterm, Caliber |
+| 2026-04-24 | Web search | "C5 command center software Mexico municipalities 2026" | ✅ Yes — positions 2–3 (/what-is-a-command-center, /how-c5-command-centers-work) | Seguritech, Thales, Eagle Eye |
+| 2026-04-24 | Web search | "PSIM alternative unified public safety platform municipalities Latin America" | ❌ No — not appearing | HxGN OnCall, Motorola CommandCentral, Advancis, SOMA Global, Verkada |
+| 2026-04-24 | Web search | "best public safety software 2026 municipalities" | ❌ No — not appearing | Mark43, CentralSquare, Tyler Technologies, Oracle, Lexipol |
+| 2026-04-27 | Web search | "best public safety platforms for municipalities 2026" | ❌ No — not appearing | CentralSquare, Tyler Technologies, Mark43, Everbridge, RapidSOS |
+| 2026-04-27 | Web search | "software C5 command centers Mexico municipalities 2026" | ✅ Positions 2+4 (/how-c5-command-centers-work, /what-is-a-command-center) | Seguritech, Algotive, Eagle Eye Networks |
+| 2026-04-27 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/resources/psim-vs-unified-platform) + cited in AI answer | Genetec Security Center, CNL IPSecurityCenter, HxGN OnCall, Motorola CommandCentral |
+| 2026-04-27 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall, CentralSquare, GINA, Mark43 |
+| 2026-04-27 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing | Avigilon, Verkada, RapidSOS, Milestone |
 
 ### GEO content principles
 

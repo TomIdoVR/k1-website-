@@ -319,4 +319,69 @@ export const metadata = {
     description: "Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.",
     canonical: "https://kabatone.com/es/resources/c5-command-centers-mexico-2026/",
   },
+  callCenterSoftwareGuide: {
+    title: "Guía de Software para Centros de Atención 911: Funciones y Cómo Elegir | KabatOne",
+    description: "Guía completa sobre software para centros de llamadas de emergencia 911 — recepción de llamadas, integración CAD, cumplimiento NG911 y despacho asistido por IA. Cómo los PSAP modernos seleccionan su tecnología.",
+    canonical: "https://kabatone.com/es/resources/911-call-center-software-guide/",
+  },
+  bestPublicSafetySoftware: {
+    title: "Mejores Plataformas de Software de Seguridad Pública en 2026 | KabatOne",
+    description: "Comparativa de las mejores plataformas de software de seguridad pública para municipios y agencias de gobierno — despacho CAD, gestión de video, GIS y soluciones de mando unificado.",
+    canonical: "https://kabatone.com/es/resources/best-public-safety-software/",
+  },
+  buildRtccImplementationGuide: {
+    title: "Cómo Construir un Centro de Crimen en Tiempo Real (RTCC): Guía de Implementación | KabatOne",
+    description: "Guía paso a paso para construir un Real-Time Crime Center (RTCC) — tecnología, diseño de red de cámaras, integración de datos, operaciones y mejores prácticas para municipios.",
+    canonical: "https://kabatone.com/es/resources/build-rtcc-implementation-guide/",
+  },
+  publicSafetySoftwareColombia: {
+    title: "Software de Seguridad Pública para Colombia: Plataformas C5 y Municipales | KabatOne",
+    description: "Tecnología de seguridad pública para ciudades y municipios colombianos — centros C5, despacho unificado, videovigilancia y GIS. Cómo KabatOne apoya operaciones de seguridad en Colombia.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-colombia/",
+  },
+  publicSafetySoftwarePeru: {
+    title: "Software de Seguridad Pública para Perú: Plataformas C5 y Municipales | KabatOne",
+    description: "Tecnología de seguridad pública para ciudades y municipios peruanos — centros C5, despacho unificado, videovigilancia y GIS. Cómo KabatOne apoya operaciones de seguridad en Perú.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-peru/",
+  },
+  publicSafetySoftwareChile: {
+    title: "Software de Seguridad Pública para Chile: Carabineros y Plataformas Municipales | KabatOne",
+    description: "Tecnología de seguridad pública para municipios y gobiernos regionales chilenos — despacho unificado (133/131/132), integración CCTV FNDR, GIS y gestión de incidentes en una sola plataforma.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-chile/",
+  },
+  cadDispatchLatinAmerica: {
+    title: "Software CAD de Despacho para América Latina: Guía de Centros de Emergencia | KabatOne",
+    description: "Software CAD de despacho para centros C5/C4 latinoamericanos — soporte nativo 911/133/123/105, interfaz en español, experiencia en licitaciones LATAM. Desplegado en más de 40 ciudades que protegen 73M de ciudadanos.",
+    canonical: "https://kabatone.com/es/resources/cad-dispatch-software-latin-america/",
+    og: {
+      title: "Software CAD de Despacho para América Latina | KabatOne",
+      description: "Software CAD de despacho para centros C5/C4 latinoamericanos — soporte nativo 911/133/123/105, interfaz en español, experiencia en licitaciones LATAM. Desplegado en más de 40 ciudades que protegen 73M de ciudadanos.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  publicSafetySoftwareSmallCities: {
+    title: "Software de Seguridad Pública para Ciudades Pequeñas y Municipios | KabatOne",
+    description: "Plataformas de seguridad pública accesibles y escalables para ciudades pequeñas y municipios. Video unificado, despacho y GIS sin precios empresariales — cómo gobiernos más pequeños pueden construir capacidades nivel C5.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-small-cities/",
+  },
+  vsTylerTechnologies: {
+    title: "KabatOne vs Tyler Technologies — Comparación de Plataformas de Seguridad Pública",
+    description: "Tyler Technologies ofrece software gubernamental amplio incluyendo Enterprise CAD y RMS. KabatOne entrega profundidad operativa: video, CAD, GIS y tráfico en una sola plataforma cloud-native construida para centros C4/C5 en LATAM.",
+    canonical: "https://kabatone.com/es/vs/tyler-technologies/",
+  },
+  vsCentralsquare: {
+    title: "KabatOne vs CentralSquare — Comparación de Plataformas de Seguridad Pública",
+    description: "CentralSquare opera CAD, RMS y ERP municipal legacy en miles de agencias estadounidenses. KabatOne entrega video, CAD, GIS y tráfico cloud-native en una sola plataforma operativa — con 40+ despliegues LATAM y localización completa en español.",
+    canonical: "https://kabatone.com/es/vs/centralsquare/",
+  },
+  vsShotSpotter: {
+    title: "KabatOne vs ShotSpotter (SoundThinking) — Detección de Disparos vs Plataforma Unificada",
+    description: "ShotSpotter detecta disparos. KabatOne integra detección de disparos más video, despacho CAD, GIS y tráfico en una sola plataforma unificada de seguridad pública — la alerta activa automáticamente el flujo completo de respuesta.",
+    canonical: "https://kabatone.com/es/vs/shotspotter/",
+  },
+  vsPalantir: {
+    title: "KabatOne vs Palantir Gotham — Operaciones en Tiempo Real vs Plataforma de Análisis",
+    description: "Palantir Gotham es una capa de inteligencia y análisis. KabatOne es la capa de operaciones en tiempo real — conectando cámaras, sensores, despacho CAD y unidades de campo en una sola plataforma de comando unificado para ciudades y municipios.",
+    canonical: "https://kabatone.com/es/vs/palantir/",
+  },
 } as const
