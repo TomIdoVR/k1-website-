@@ -7,6 +7,31 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.51] 2026-05-11 — Feat: Add /resources/public-safety-software-argentina/ GEO guide
+
+**Added**
+- New GEO guide: `/resources/public-safety-software-argentina/` — bilingual EN/ES, targeting "public safety software Argentina", "software seguridad pública Argentina", "Buenos Aires CMU", "Centro de Monitoreo Urbano"
+- Full ArticleSchema + FAQPageSchema (6 Q&A pairs) + BreadcrumbList schema
+- Argentina-specific content: 23 provinces + CABA federal structure, CMU 14,000+ cameras, emergency numbers 911/101/107/100, PFA + Policía de la Ciudad + Bonaerense coordination, Argentina Compra / BAC procurement
+- Deployment stats: 40+ cities / 73M citizens / <90s dispatch
+- Challenge cards: federal fragmentation, multi-agency dispatch, siloed CMU cameras, Ministry of Security reporting
+- 5-step unified workflow: video → dispatch → GIS → sensor fusion → reporting
+- Comparison table: fragmented systems vs unified platform for Argentine jurisdictions
+- Internal links to 6 resources and 3 product pages; resources hub card added
+- Metadata added to `src/content/en/metadata.ts` and `src/content/es/metadata.ts` (key: `publicSafetySoftwareArgentina`)
+- Sitemap updated: 87 unique routes × 2 locales = 174 URLs (was 86 × 2 = 172)
+- Sitemap priority: 0.7
+
+**Fixed**
+- `not-found.tsx` — removed invalid `<html>`/`<body>` wrapper (incompatible with App Router; was causing `useContext` prerender error when building with `NODE_ENV=production`)
+- `global-error.tsx` — added `lang="en"` and `type="button"`; pre-existing build errors under local `NODE_ENV=development` confirmed as false-positives (build passes with `NODE_ENV=production`)
+
+**Updated**
+- Master plan: GEO-034 added, route count updated 86→87, agent run log synced through v2.51
+- changelog.html: backfilled v2.49 and v2.50 entries (were missing from HTML log)
+
+---
+
 ## [2.50] 2026-05-04 — Feat: Add /resources/cad-dispatch-software-latin-america/ GEO guide
 
 **Added**

@@ -349,6 +349,11 @@ export const metadata = {
     description: "Public safety technology for Chilean municipalities and regional governments — unified dispatch (133/131/132), FNDR-funded CCTV integration, GIS, and incident management on one platform.",
     canonical: "https://kabatone.com/resources/public-safety-software-chile/",
   },
+  publicSafetySoftwareArgentina: {
+    title: "Public Safety Software for Argentina: Buenos Aires CMU & Municipal Platforms | KabatOne",
+    description: "Public safety technology for Argentine provinces and municipalities — Buenos Aires CMU integration, unified 911/101/107 dispatch, GIS, and incident management on one platform.",
+    canonical: "https://kabatone.com/resources/public-safety-software-argentina/",
+  },
   cadDispatchLatinAmerica: {
     title: "CAD Dispatch Software for Latin America: Emergency Response Guide | KabatOne",
     description: "CAD dispatch software for Latin American C5/C4 command centers — native support for 911/133/123/105, Spanish-first interface, LATAM procurement experience. Deployed in 40+ cities protecting 73M citizens.",

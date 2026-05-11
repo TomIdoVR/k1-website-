@@ -356,6 +356,56 @@
 
     <div class="timeline">
 
+      <!-- v2.51 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.51</span><span class="tl-date">2026-05-11</span></div>
+        <div class="tl-title">Feat: Add /resources/public-safety-software-argentina/ GEO guide</div>
+        <ul class="tl-body">
+          <li>New GEO guide: /resources/public-safety-software-argentina/ — bilingual EN/ES, targeting "public safety software Argentina", "software seguridad pública Argentina", "Buenos Aires CMU", "Centro Monitoreo Urbano".</li>
+          <li>Full ArticleSchema + FAQPageSchema (6 Q&A pairs) + BreadcrumbList schema.</li>
+          <li>Argentina-specific content: 23 provinces + CABA federal structure, CMU 14,000+ cameras, emergency numbers 911/101/107/100, PFA + Policía de la Ciudad + Bonaerense coordination, Argentina Compra / BAC procurement.</li>
+          <li>Deployment stats: 40+ cities / 73M citizens / &lt;90s dispatch.</li>
+          <li>Challenge cards: federal fragmentation, multi-agency dispatch, siloed CMU cameras, Ministry of Security reporting.</li>
+          <li>5-step unified workflow: video → dispatch → GIS → sensor fusion → reporting.</li>
+          <li>Comparison table: fragmented systems vs unified platform for Argentine jurisdictions.</li>
+          <li>Internal links to 6 resources and 3 product pages.</li>
+          <li>Resources hub card added for Argentina guide.</li>
+          <li>Metadata added to en/metadata.ts and es/metadata.ts (key: publicSafetySoftwareArgentina).</li>
+          <li>Sitemap updated: 87 unique routes × 2 locales = 174 URLs (was 86 × 2 = 172).</li>
+          <li>Fix: not-found.tsx — removed invalid &lt;html&gt;/&lt;body&gt; wrapper (App Router incompatible).</li>
+          <li>Fix: global-error.tsx — added lang="en" and type="button"; restored after local NODE_ENV=development false-positive.</li>
+          <li>Fix: Build confirmed passing with NODE_ENV=production (local Paperclip env has non-standard NODE_ENV=development).</li>
+          <li>Master plan: GEO-034 added, route count updated 86→87, agent run log synced to v2.51.</li>
+        </ul>
+      </div>
+
+      <!-- v2.50 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.50</span><span class="tl-date">2026-05-04</span></div>
+        <div class="tl-title">Feat: Add /resources/cad-dispatch-software-latin-america/ GEO guide</div>
+        <ul class="tl-body">
+          <li>New GEO guide: /resources/cad-dispatch-software-latin-america/ — bilingual EN/ES, targeting "CAD dispatch software Latin America" / "software CAD despacho América Latina".</li>
+          <li>Full ArticleSchema + FAQPageSchema (6 Q&A pairs) + BreadcrumbList schema.</li>
+          <li>Country-by-country emergency number reference (Mexico 911, Chile 133/131/132/149, Colombia 123/112, Peru 105/106/116, Argentina 911/101/102/103, Ecuador ECU-911).</li>
+          <li>Sitemap updated: 86 unique routes × 2 locales = 172 URLs (was 85 × 2 = 170).</li>
+          <li>GEO-033 added to master plan; GEO-013 monitoring run 2026-05-04.</li>
+        </ul>
+      </div>
+
+      <!-- v2.49 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.49</span><span class="tl-date">2026-04-27</span></div>
+        <div class="tl-title">Feat: Add /resources/public-safety-software-chile/ GEO guide</div>
+        <ul class="tl-body">
+          <li>New GEO guide: /resources/public-safety-software-chile/ — bilingual EN/ES, full ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList.</li>
+          <li>Chile-specific FAQs covering 133/131/132/149 emergency numbers, FNDR funding, Carabineros coordination, ChileCompra procurement.</li>
+          <li>Resources hub card added — Chile guide alongside Colombia and Peru in the LATAM cluster.</li>
+          <li>Metadata added to en/metadata.ts and es/metadata.ts (key: publicSafetySoftwareChile).</li>
+          <li>Sitemap updated: 85 unique routes × 2 locales = 170 URLs (was 84 × 2 = 168).</li>
+          <li>/vs/shotspotter + /vs/palantir documented in master plan (were in sitemap/codebase, undocumented); route count corrected 83→85.</li>
+        </ul>
+      </div>
+
       <!-- v2.48 -->
       <div class="tl-entry fix">
         <div class="tl-meta"><span class="tl-ver">v2.48</span><span class="tl-date">2026-04-24</span></div>

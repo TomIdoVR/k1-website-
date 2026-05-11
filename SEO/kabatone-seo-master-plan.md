@@ -18,14 +18,15 @@
 | Phase 2 — Launch | **Done** | **95%** |
 | Phase 3 — Post-launch growth | In progress | 95% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
-| Phase 5 — Authority & backlinks | Not started | 0% |
+| Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 97% |
 
-**Last updated:** 2026-04-27
-**Current site size:** 85 unique routes × 2 locales (EN + ES) = 170 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 30 (hub + 29 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+**Last updated:** 2026-05-11
+**Current site size:** 87 unique routes × 2 locales (EN + ES) = 174 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 32 (hub + 31 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
+- Note: /resources/cad-dispatch-software-latin-america added v2.50; /resources/public-safety-software-argentina added v2.51
 
 ### 🟢 DNS & Hosting Status (verified 2026-04-10)
 | Item | Status |
@@ -309,14 +310,57 @@
 
 | Item | Priority | Status |
 |------|----------|--------|
-| Identify industry publications (EN + ES) | High | Not started |
-| Identify gov-tech media targets | High | Not started |
-| Identify LATAM smart city publications | High | Not started |
+| Identify industry publications (EN + ES) | High | **Done — 2026-04-27** |
+| Identify gov-tech media targets | High | **Done — 2026-04-27** |
+| Identify LATAM smart city publications | High | **Done — 2026-04-27** |
 | Produce linkable asset: public safety platform guide | Medium | Not started |
 | Produce linkable asset: smart city technology report | Medium | Not started |
 | Partner page / integrations backlink strategy | Medium | Not started |
 | HARO / journalist outreach for public safety stories | Low | Not started |
 | Conference and event listings | Low | Not started |
+
+### Phase 5 — Backlink target list (20 publications)
+
+**Priority 1 — English GovTech / Public Safety (highest DA, most citable)**
+
+| # | Publication | URL | DA (est.) | Submission path | Angle |
+|---|-------------|-----|-----------|-----------------|-------|
+| 1 | Government Technology (GovTech) | govtech.com | 75 | Guest commentary — email lkinkade@govtech.com with pitch first | "How C4/C5 command centers in LATAM are redefining the smart city" |
+| 2 | Police1 | police1.com | 72 | Article submission — police1.com/info/submit-article-to-police1/ | "Why unified platforms beat PSIM for modern police dispatch" |
+| 3 | Security Info Watch | securityinfowatch.com | 68 | Editorial contributors — about-us page has editor contact | "Video + CAD + GIS in one platform: the end of the multi-vendor trap" |
+| 4 | Emergency Management Magazine | emergencymgmt.com | 65 | Guest contributors — editorial team | "Reducing emergency response time with unified command platforms" |
+| 5 | APCO International (PSConnect blog) | apcointl.org | 63 | Member contribution + editorial — public safety communications focus | "Integrated CAD dispatch and video for next-gen 911 centers" |
+| 6 | Urgent Communications | urgentcomm.com | 60 | Editorial — LMR + broadband + CAD integration focus | "The convergence of radio, broadband and AI in public safety command" |
+| 7 | Security Today | securitytoday.net | 58 | Guest contributors — security technology publication | "AI video analytics for public safety: from perimeter to command center" |
+| 8 | StateTech Magazine | statetechmagazine.com | 62 | CDW Government publication — pitch editorial team | "Cloud-native CAD: how municipalities are modernizing 911 centers" |
+
+**Priority 2 — English Smart City / International**
+
+| # | Publication | URL | DA (est.) | Submission path | Angle |
+|---|-------------|-----|-----------|-----------------|-------|
+| 9 | Smart Cities World | smartcitiesworld.net | 55 | Editorial — news and features | "Latin America's C5 command centers: the smart city use case the world isn't watching" |
+| 10 | Cities Today | cities-today.com | 52 | Editorial pitches — urban mobility and public safety | "40+ cities, 73M citizens: what unified public safety platforms look like at scale" |
+| 11 | Geospatial World | geospatialworld.net | 58 | Guest articles — GIS + public safety angle | "Operational GIS in emergency response: from static maps to live command" |
+| 12 | Government Technology Insider | governmenttechnologyinsider.com | 45 | Contributor articles — government technology | "The operational layer missing from most smart city deployments" |
+
+**Priority 3 — Spanish LATAM**
+
+| # | Publication | URL | DA (est.) | Submission path | Angle |
+|---|-------------|-----|-----------|-----------------|-------|
+| 13 | Mexico Business News | mexicobusiness.news | 50 | Editorial — English/Spanish, tech section | "KabatOne: la plataforma mexicana que protege a 73 millones de ciudadanos" |
+| 14 | Telesemana | telesemana.com | 52 | News + contributed articles — telecom + tech LATAM | "Plataformas unificadas vs PSIM: el debate que está cambiando los centros C5" |
+| 15 | A21 (antes IDG Mexico) | a21.com.mx | 48 | Artículos de colaboradores — IT y tecnología empresarial México | "Seguridad pública inteligente: cómo los municipios están modernizando sus centros de mando" |
+| 16 | Smart City Expo LATAM | smartcityexpolatam.com | 50 | Blog / press releases — congreso Puebla | Case study submission for LATAM Smart City Awards 2026 |
+| 17 | Revista Movilidad3 | movilidad3.com.mx | 38 | Noticias y artículos — movilidad urbana e infraestructura México | "K-Traffic: gestión inteligente de tráfico integrada al centro de mando" |
+| 18 | Seguridad en América | seguridadenamerica.com.mx | 42 | Editorial — seguridad física México y LATAM | "Del VMS al comando unificado: la evolución del video en seguridad pública" |
+| 19 | Expansión (Forbes México) | expansion.mx | 68 | Columnas de opinión + comunicados de prensa | Perfil de empresa: "KabatOne, la startup que conecta el 911 con la cámara más cercana" |
+| 20 | Revista Construye | revistaconstruye.com.mx | 40 | Noticias de industria — infraestructura y tecnología México | Nota sobre despliegues KabatOne en ciudades mexicanas |
+
+### Phase 5 — First 3 outreach actions (highest ROI)
+
+1. **GovTech guest commentary** — email lkinkade@govtech.com with pitch: "How Latin America's C4/C5 command centers are redefining the smart city." 800–1000 words, no promotional links, author bio only. This single link from DA 75 is worth more than 20 DA 40 links.
+2. **Mexico Business News** — submit company profile + news note about 73M citizens deployment. English/Spanish bilingual, tech section editor. Direct news angle.
+3. **Smart City Expo LATAM Awards 2026** — submit KabatOne case study as a city deployment for the LATAM Smart City Awards. Free entry, editorial coverage if shortlisted.
 
 ---
 
@@ -452,6 +496,8 @@
 | 2026-04-23 | Claude Code | Sitemap + master plan sync | — | sitemap.ts + master plan | Remove /lp + /privacy-policy-tamaulipas from sitemap (noindex contradiction), Phase 2 status → Done, GSC status updated v1.67→v2.48 |
 | 2026-04-27 | Claude Code (CEO heartbeat) | Master plan sync | — | master plan | Document /vs/shotspotter + /vs/palantir (existed in sitemap+codebase, undocumented); update route count 83→84, URL count 166→168; add to keyword map + competitor table |
 | 2026-04-27 | Claude Code (CEO heartbeat) | GEO guide | — | Next.js | /resources/public-safety-software-chile — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.49 |
+| 2026-05-04 | Claude Code (SEO Director heartbeat) | GEO guide | — | Next.js | /resources/cad-dispatch-software-latin-america — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.50 |
+| 2026-05-11 | Claude Code (SEO Director heartbeat) | GEO guide + build fix | — | Next.js | /resources/public-safety-software-argentina — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap; not-found.tsx html/body fix — v2.51 |
 
 ---
 
@@ -530,7 +576,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-010 | FAQPage schema on all industry pages | Medium | Done |
 | GEO-011 | FAQPage schema on all remaining product pages | Medium | Done |
 | GEO-012 | Structured data audit — verify AI crawlability of all schema | Medium | Done |
-| GEO-013 | Monitor AI citation — test KabatOne mentions in ChatGPT, Perplexity, Gemini monthly | Low | Not started |
+| GEO-013 | Monitor AI citation — test KabatOne mentions in ChatGPT, Perplexity, Gemini monthly | Low | In progress — first web search run 2026-04-27 |
 | GEO-014 | Citeable explainer: "What is video management software?" | Medium | Done | v1.12 |
 | GEO-015 | Citeable explainer: "What is situational awareness software?" | Medium | Done | v1.16 |
 | GEO-016 | Citeable explainer: "What is gunshot detection software?" | Medium | Done | v1.22 |
@@ -550,6 +596,8 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-030 | GEO guide: "Public safety software for small cities" | Medium | Done | v1.53 |
 | GEO-031 | GEO guide: "Public safety software for Colombia" | Medium | Done | v1.53 |
 | GEO-032 | GEO guide: "Best public safety software platforms" | High | Done | v1.53 |
+| GEO-033 | GEO guide: "CAD dispatch software for Latin America" | High | Done | v2.50 |
+| GEO-034 | GEO guide: "Public safety software for Argentina" | Medium | Done | v2.51 |
 
 ### GEO-001 — Entity definition page
 

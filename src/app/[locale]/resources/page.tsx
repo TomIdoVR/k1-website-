@@ -404,6 +404,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-argentina',
+          category: 'Guide',
+          title: 'Public Safety Software for Argentina',
+          excerpt: 'Public safety technology for Argentine provinces and municipalities — Buenos Aires CMU integration, unified 911/101/107 dispatch, PFA/provincial coordination, and GIS on one platform.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-chile',
           category: 'Guide',
           title: 'Public Safety Software for Chile',
