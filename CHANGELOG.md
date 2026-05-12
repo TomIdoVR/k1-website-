@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.52] 2026-05-12 — Feat: Add weekly SEO agent script
+
+**Added**
+- `scripts/seo_weekly.py` — Python script for the weekly SEO remote agent. Authenticates with Google Search Console API via OAuth refresh token, fetches top queries, top pages, and content opportunities (last 7 days), outputs structured JSON.
+- `.gitignore` — added `.secrets/` to exclude local OAuth credential files from git.
+
 ## [2.51] 2026-05-11 — Feat: Add /resources/public-safety-software-argentina/ GEO guide
 
 **Added**
