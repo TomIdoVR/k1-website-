@@ -217,6 +217,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-canada',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Canadá: PSAP, NG911 y Coordinación Multiagencia',
+          excerpt: 'Plataforma para PSAPs canadienses, RCMP, policía provincial y municipal — despacho CAD con soporte NG911/CRTC, video analytics para RTCC e interfaz bilingüe EN/FR.',
+          readTime: '6 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -481,6 +489,14 @@ export default async function ResourcesPage({
           title: 'Public Safety Software for US Cities and Agencies',
           excerpt: 'Unified platform for US PSAPs, law enforcement, and command centers — NG911-compatible CAD dispatch, RTCC video analytics, and multi-agency GIS coordination under NIMS.',
           readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-canada',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Canada',
+          excerpt: 'Platform for Canadian PSAPs, RCMP, provincial, and municipal police — NG911/CRTC-compatible CAD dispatch, video analytics for RTCCs, and bilingual EN/FR interface.',
+          readTime: '6 min',
           isNew: true,
         },
       ]

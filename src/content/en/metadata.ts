@@ -369,6 +369,11 @@ export const metadata = {
     description: "Buyer's guide to the best CAD dispatch software for 911 centers — comparing features, integrations, and deployment models for public safety agencies.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
   },
+  publicSafetySoftwareCanada: {
+    title: "Public Safety Software for Canada: 911, NG911 & PSAP Technology | KabatOne",
+    description: "Unified public safety platform for Canadian PSAPs, municipal police, and emergency agencies — CAD dispatch with NG911/CRTC support, video analytics, and bilingual EN/FR interface.",
+    canonical: "https://kabatone.com/resources/public-safety-software-canada/",
+  },
   publicSafetySoftwareUnitedStates: {
     title: "Public Safety Software for US Cities: 911, RTCC & CAD | KabatOne",
     description: "Public safety platform for US PSAPs and municipal command centers — CAD dispatch with NG911 support, video analytics for RTCCs, and GIS coordination under NIMS.",

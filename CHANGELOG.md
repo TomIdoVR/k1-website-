@@ -22,6 +22,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 **Added**
 - `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
 
+## [2.80] 2026-05-18 — Feat: new Canada market guide + "general VMS" FAQ to VMS guide
+
+**Added**
+- New page: /resources/public-safety-software-canada/ — Canadian PSAPs, NG911/CRTC, RCMP/provincial/municipal coordination, bilingual EN/FR, PIPEDA data sovereignty
+- 4 challenge cards: NG911/CRTC transition, RCMP/provincial/municipal COP, bilingual requirements, PIPEDA
+- 6 Canada-specific FAQs: police structure, NG911 CRTC timeline, funding, PIPEDA, bilingual, procurement
+- Metadata added EN + ES; sitemap at priority 0.75; hub cards in EN + ES
+- Also in this commit: "general VMS" FAQ added to VMS guide (targeted GSC query pos 8.8, 31 impressions)
+
+---
+
 ## [2.79] 2026-05-18 — SEO: add "general VMS" FAQ to VMS guide (GSC query pos 8.8)
 
 **Improved**
