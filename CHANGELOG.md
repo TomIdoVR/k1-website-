@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.57] 2026-05-18 — SEO: Fix video analytics meta (1,640 impressions, 0.1% CTR)
+
+**Fixed**
+- `whatIsVideoAnalytics` EN title: stronger "AI Video Analytics" framing, targets top GSC opportunity
+- `whatIsVideoAnalytics` EN description: trimmed from 190 → 159 chars (was getting cut off in SERPs)
+- `whatIsVideoAnalytics` ES title + description: tightened to match EN improvements
+
+---
+
 ## [2.56] 2026-05-18 — SEO Slack Agent — complete implementation
 
 **Added**
