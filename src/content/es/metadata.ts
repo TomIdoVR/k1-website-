@@ -240,8 +240,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "¿Qué Es un Software de Conciencia Situacional? Guía para Seguridad Pública | KabatOne",
-    description: "Un software de conciencia situacional agrega cámaras, sensores, despacho y GIS en un mapa operativo unificado. Cómo los centros de mando lo usan para coordinar respuestas más rápido.",
+    title: "Software de Conciencia Situacional para Seguridad Pública | KabatOne",
+    description: "El software de conciencia situacional unifica cámaras, sensores, despacho y GIS en un mapa operativo único — para que los centros de mando coordinen respuestas más rápido.",
     canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
   },
   whatIsACommandCenter: {

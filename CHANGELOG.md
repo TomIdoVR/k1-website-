@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.58] 2026-05-18 — SEO: internal links + meta fixes for top GSC opportunities
+
+**Fixed**
+- Situational awareness EN title: shortened from 71 → 59 chars (was getting cut in SERPs)
+- Situational awareness EN/ES description: tightened to <160 chars
+- k-safety page: added internal links to /resources/what-is-situational-awareness-software/ and /resources/what-is-video-analytics/
+- k-dispatch page: added internal link to /resources/how-c5-command-centers-work/ (already present in Related Resources)
+
+---
+
 ## [2.57] 2026-05-18 — SEO: Fix video analytics meta (1,640 impressions, 0.1% CTR)
 
 **Fixed**

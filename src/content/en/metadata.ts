@@ -240,8 +240,8 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "What Is Situational Awareness Software? Public Safety Guide | KabatOne",
-    description: "Situational awareness software aggregates cameras, sensors, dispatch, and GIS into a unified operational map. Learn how command centers use it to coordinate response faster.",
+    title: "Situational Awareness Software for Public Safety | KabatOne",
+    description: "Situational awareness software unifies cameras, sensors, dispatch, and GIS into one operational map — helping command centers coordinate faster response.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
   },
   whatIsACommandCenter: {
