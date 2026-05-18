@@ -7,6 +7,26 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.55] 2026-05-18 — SEO Slack Agent dependencies
+
+**Added**
+- Added @anthropic-ai/sdk and @slack/web-api dependencies for the SEO Slack Agent
+
+---
+
+## [2.54] 2026-05-18 — SEO Slack Agent — interactive @SEO bot
+
+**Added**
+- `src/app/api/slack/events/route.ts` — Slack Events API webhook: HMAC-SHA256 verification, 200 ACK within 3s via `next/server after`, event_id deduplication, dispatches `app_mention` async
+- `src/app/api/slack/interactive/route.ts` — handles ✅/❌ button clicks from big-change previews; triggers CCR agent on approval
+- `src/lib/seo-agent/context.ts` — assembles system prompt from SEO master plan, live GSC data (1h cache), last 20 GitHub commits, and Slack thread history
+- `src/lib/seo-agent/intent.ts` — calls `claude-sonnet-4-6` to classify intent (question/small_fix/big_change) and generate a response plan
+- `src/lib/seo-agent/github.ts` — GitHub Contents API: read files, patch single files to the `nextjs` branch (never `main`), fetch recent commits
+- `src/lib/seo-agent/slack.ts` — Slack Web API helpers: thread replies, interactive preview blocks, thread history fetch
+- `src/lib/seo-agent/ccr.ts` — creates a Paperclip issue to dispatch the CCR build agent for big structural changes
+
+---
+
 ## [2.53] 2026-05-18 — SEO: Verge system — audit script + bulk title/desc fixes
 
 **Added**

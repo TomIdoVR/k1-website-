@@ -356,6 +356,29 @@
 
     <div class="timeline">
 
+      <!-- v2.55 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.55</span><span class="tl-date">2026-05-18</span></div>
+        <div class="tl-title">Chore: add @anthropic-ai/sdk and @slack/web-api dependencies</div>
+        <ul class="tl-body">
+          <li>Installed <code>@anthropic-ai/sdk</code> and <code>@slack/web-api</code> npm packages required by the SEO Slack Agent.</li>
+        </ul>
+      </div>
+
+      <!-- v2.54 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.54</span><span class="tl-date">2026-05-18</span></div>
+        <div class="tl-title">Feat: SEO Slack Agent — interactive @SEO bot</div>
+        <ul class="tl-body">
+          <li>Slack Events webhook (<code>api/slack/events</code>): HMAC-SHA256 verification, ACKs within 3s via <code>after()</code>, deduplicates by event_id.</li>
+          <li>Interactive handler (<code>api/slack/interactive</code>): handles ✅/❌ buttons for big-change previews; fires CCR build agent on approval.</li>
+          <li>Context assembler: pulls SEO master plan, live GSC data (1h cached), last 20 GitHub commits, and Slack thread history into Claude's system prompt.</li>
+          <li>Intent classifier: <code>claude-sonnet-4-6</code> classifies each @mention as question / small_fix / big_change and plans the response.</li>
+          <li>GitHub patcher: reads + writes single files to the <code>nextjs</code> branch via GitHub Contents API — never touches <code>main</code>.</li>
+          <li>CCR dispatcher: creates a Paperclip issue to queue the build agent for structural/multi-file changes.</li>
+        </ul>
+      </div>
+
       <!-- v2.53 -->
       <div class="tl-entry fix">
         <div class="tl-meta"><span class="tl-ver">v2.53</span><span class="tl-date">2026-05-18</span></div>
