@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.70] 2026-05-18 — SEO: VMS + video analytics internal links from /vs/ comparison pages
+
+**Improved**
+- /vs/vms/: added links to /resources/what-is-video-management-software/ and /resources/what-is-video-analytics/ — the most on-topic comparison page now links directly to both high-impression resource pages
+- /vs/milestone/: added link to /resources/what-is-video-management-software/ — Milestone is a VMS-focused competitor, anchor text matches "VMS Software Guide"
+- /vs/genetec/: added link to /resources/what-is-video-management-software/ — Genetec is a VMS leader, internal link boosts resource page authority
+- /vs/avigilon/: added links to both what-is-video-management-software + what-is-video-analytics — Avigilon is a premium VMS brand, both resource pages are directly relevant
+- Goal: build authority for "vms software" (477 impressions, pos 34.2) and "video analytics system" (64 impressions, pos 24.3)
+
+---
+
 ## [2.69] 2026-05-18 — Feat: new Brazil public safety GEO page + build fix
 
 **Added**
