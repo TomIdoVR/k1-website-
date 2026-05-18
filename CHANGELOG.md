@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.68] 2026-05-18 — SEO: K-Traffic + K-Connect meta optimization
+
+**Improved**
+- K-Traffic EN title: "Traffic Management Software for Municipalities" → "Intelligent Traffic Management System for Smart Cities" — targets "intelligent traffic management system" and "ATMS" keyword clusters
+- K-Traffic EN description: added "adaptive signal control" and "ATMS" to match commercial-intent queries
+- K-Traffic EN + ES H1: updated to "Intelligent Traffic Management System with Adaptive Signal Control" — aligns with title keyword
+- K-Connect EN title: "Community Video Sharing for Command Centers" → "Public-Private Camera Integration for Command Centers" — targets "public-private camera" and "camera integration" terms
+- K-Connect EN description: added "public-private video sharing" and "secure" framing for differentiation
+- ES equivalents updated for both pages
+
+---
+
 ## [2.67] 2026-05-18 — SEO: K-Video internal links to VMS + video analytics resource pages
 
 **Improved**

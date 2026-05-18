@@ -20,13 +20,13 @@ export const metadata = {
     canonical: "https://kabatone.com/es/k-safety/",
   },
   kTraffic: {
-    title: "Software de Gestión de Tráfico para Municipios | KabatOne",
-    description: "Optimiza el flujo vehicular, detecta infracciones y responde antes de que colapsen. K-Traffic conecta semáforos, sensores y enforcement en un sistema unificado.",
+    title: "Sistema de Gestión de Tráfico Inteligente para Ciudades | KabatOne",
+    description: "Control adaptativo de semáforos, detección de congestión y respuesta a incidentes en una plataforma ATMS. K-Traffic conecta cámaras, sensores y señales para una movilidad urbana más eficiente.",
     canonical: "https://kabatone.com/es/k-traffic/",
   },
   kConnect: {
-    title: "Plataforma de Videovigilancia Comunitaria | KabatOne",
-    description: "Conecta cámaras de negocios y ciudadanos al centro de mando municipal. K-Connect amplía la cobertura sin infraestructura adicional.",
+    title: "Integración de Cámaras Ciudadanas al Centro de Mando | KabatOne",
+    description: "Conecta cámaras de negocios y ciudadanos directamente al centro de mando municipal. K-Connect amplía la cobertura mediante videovigilancia comunitaria segura, sin infraestructura adicional.",
     canonical: "https://kabatone.com/es/k-connect/",
   },
   publicSafety: {
