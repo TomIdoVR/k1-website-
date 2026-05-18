@@ -57,6 +57,16 @@ export default async function WhatIsCadDispatchSoftwarePage({
           answer:
             'El software CAD es utilizado por centros de comunicaciones policiales (C2, C3, C4, C5), servicios de emergencias médicas (EMS), departamentos de bomberos, guardias costeras y organizaciones de gestión de emergencias municipales. En México, los centros de mando C5 (Comando, Control, Comunicaciones, Cómputo y Contacto Ciudadano) representan la implementación más completa, integrando CAD con videovigilancia, GIS y tráfico en un solo centro de operaciones.',
         },
+        {
+          question: '¿Cuál es la diferencia entre software CAD y sistema RMS (Records Management System)?',
+          answer:
+            'El software CAD (Computer-Aided Dispatch) gestiona el ciclo de vida de un incidente en tiempo real: recepción de llamada, clasificación, despacho de unidades y registro de tiempos de respuesta. El RMS (Records Management System) gestiona los datos históricos y administrativos post-incidente: informes policiales, registros de arrestos, gestión de evidencias y estadísticas. En la práctica, CAD y RMS son complementarios: el CAD captura el incidente en curso y el RMS archiva los datos para investigación, cumplimiento y análisis. Las plataformas modernas como KabatOne integran el ciclo completo de incidente sin necesidad de un RMS separado para las operaciones de despacho.',
+        },
+        {
+          question: '¿Qué es el software CAD compatible con NG911?',
+          answer:
+            'El software CAD compatible con NG911 (Next Generation 911) puede recibir llamadas de voz en banda ancha, mensajes de texto de emergencia, datos de video y localización mejorada a través de una red IP ESInet, en lugar de depender de la infraestructura analógica tradicional. Para los PSAPs en transición a NG911, el software CAD debe soportar protocolos NENA i3, integración con sistemas de enrutamiento de emergencias IP y datos adicionales de llamada (como la ubicación precisa del dispositivo móvil). KabatOne K-Dispatch está diseñado para operar con datos de emergencias multicanal, preparando a los centros 911 para la infraestructura NG911.',
+        },
       ]
     : [
         {
@@ -88,6 +98,16 @@ export default async function WhatIsCadDispatchSoftwarePage({
           question: 'What agencies use CAD software?',
           answer:
             'CAD software is used by police communications centers (C2, C3, C4, C5), emergency medical services (EMS), fire departments, coast guards, and municipal emergency management organizations. In Mexico, C5 command centers (Comando, Control, Comunicaciones, Cómputo y Contacto Ciudadano) represent the most complete implementation, integrating CAD with video surveillance, GIS, and traffic in a single operations center.',
+        },
+        {
+          question: 'What is the difference between CAD software and an RMS (Records Management System)?',
+          answer:
+            'CAD (Computer-Aided Dispatch) software manages the real-time incident lifecycle: call receipt, classification, unit dispatch, and response time logging. RMS (Records Management System) manages post-incident historical and administrative data: police reports, arrest records, evidence management, and statistics. In practice, CAD and RMS are complementary: CAD captures the ongoing incident, RMS archives data for investigation, compliance, and analysis. Modern platforms like KabatOne integrate the complete incident lifecycle without requiring a separate RMS for dispatch operations.',
+        },
+        {
+          question: 'What is NG911-compatible CAD dispatch software?',
+          answer:
+            'NG911-compatible CAD software (Next Generation 911) can receive broadband voice calls, emergency text messages, video data, and enhanced location information over an IP ESInet network, rather than depending on traditional analogue infrastructure. For PSAPs transitioning to NG911, CAD software must support NENA i3 protocols, integration with IP emergency routing systems, and additional call data such as precise mobile device location. KabatOne K-Dispatch is designed to operate with multichannel emergency data, preparing 911 centres for NG911 infrastructure.',
         },
       ]
 
@@ -162,7 +182,7 @@ export default async function WhatIsCadDispatchSoftwarePage({
                 ? 'El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y qué buscar en un sistema moderno.'
                 : 'CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how to choose the right platform.',
               es ? 'https://kabatone.com/es/resources/what-is-cad-dispatch-software/' : 'https://kabatone.com/resources/what-is-cad-dispatch-software/',
-              '2026-03-23'
+              '2026-05-18'
             )
           ),
         }}

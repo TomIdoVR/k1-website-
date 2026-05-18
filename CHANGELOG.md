@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.89] 2026-05-18 — SEO: add CAD vs RMS + NG911 FAQs to what-is-cad-dispatch-software
+
+**Improved**
+- `what-is-cad-dispatch-software`: 2 new FAQs (EN + ES):
+  - "What is the difference between CAD and RMS?" — targets "cad rms software" buyer queries
+  - "What is NG911-compatible CAD dispatch software?" — targets NG911 CAD upgrade queries (high-value US/Canada market)
+- Schema dateModified → 2026-05-18; page now has 8 FAQs total
+
+---
+
 ## [2.88] 2026-05-18 — SEO: cross-link UK guide from US and Canada market guides
 
 **Improved**
