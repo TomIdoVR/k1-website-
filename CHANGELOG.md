@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.86] 2026-05-18 — Feat: new UK market guide (public-safety-software-united-kingdom)
+
+**Added**
+- New page: /resources/public-safety-software-united-kingdom/ — UK police forces, 999 control rooms, and Safe City market guide
+- Coverage: Metropolitan Police / BTP, West Midlands Safe City, Greater Manchester Police, National Counter Terrorism Policing Network
+- 4 challenge cards: 43+ fragmented forces, NG999/ESN transition, UK GDPR + Surveillance Camera Commissioner, major events / CONTEST strategy
+- 6 UK-specific FAQs: police force structure, NG112/NG999, G-Cloud procurement, UK GDPR + DPIA, Gold/Silver/Bronze event security, KabatOne UK fit
+- Metadata keys added (EN + ES)
+- Sitemap entry (priority 0.75), hub cards (EN + ES) in /resources/ index
+
+---
+
 ## [2.85] 2026-05-18 — SEO: add buyer-intent FAQs to VMS page (best VMS + PSIM comparison)
 
 **Improved**

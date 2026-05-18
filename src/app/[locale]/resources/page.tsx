@@ -233,6 +233,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-united-kingdom',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para el Reino Unido: Salas de Control 999 y Safe City',
+          excerpt: 'Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, CCTV con analítica de IA y cumplimiento UK GDPR.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -512,6 +520,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for the Middle East',
           excerpt: 'Unified platform for Smart City and Safe City projects in UAE, Saudi Arabia, and Qatar — large-scale CCTV integration, AI analytics for mass events including Hajj.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-united-kingdom',
+          category: 'Market Guide',
+          title: 'Public Safety Software for the United Kingdom',
+          excerpt: 'Unified platform for UK police forces, 999 control rooms, and Safe City programmes — CAD dispatch with NG999 support, CCTV with AI analytics, and UK GDPR compliance.',
           readTime: '7 min',
           isNew: true,
         },
