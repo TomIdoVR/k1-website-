@@ -381,6 +381,17 @@ export default async function KDispatchPage({
                   {es ? 'Guía de referencia →' : 'Reference guide →'}
                 </span>
               </Link>
+              <Link href="/resources/911-call-center-software-guide" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Guía de software para centros 911' : '911 call center software guide'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
             </div>
             <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '13px', color: 'var(--muted)' }}>

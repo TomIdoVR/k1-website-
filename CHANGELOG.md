@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.61] 2026-05-18 — SEO: 911 call center page meta fix + internal links
+
+**Fixed**
+- 911 call center guide EN title tightened to 59 chars — "911 Call Center Software: Complete Buyer's Guide | KabatOne"
+- 911 call center guide EN description replaced with 146-char version mentioning CAD dispatch, call intake, and unit coordination
+- 911 call center guide ES title tightened to 57 chars — "Software Centro 911: Guía Completa para PSAP | KabatOne"
+- 911 call center guide ES description updated to match keyword intent (centro de atención 911, despacho CAD)
+- k-dispatch page: added internal link to /resources/911-call-center-software-guide/ in Related Resources section
+- what-is-cad-dispatch-software: added internal link to /resources/911-call-center-software-guide/ in Resources inline link row
+
+---
+
 ## [2.60] 2026-05-18 — SEO: add internal links to video analytics page from 3 resource pages
 
 **Improved**

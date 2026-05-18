@@ -221,12 +221,12 @@ export const metadata = {
   },
   whatIsCadDispatchSoftware: {
     title: "What Is CAD Dispatch Software? Guide for Public Safety | KabatOne",
-    description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS.",
+    description: "CAD dispatch software manages 911 call intake, incident classification, and unit dispatch. Learn how it works and how modern CAD integrates with video and GIS.",
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "What Is Video Management Software? Public Safety VMS Guide | KabatOne",
-    description: "VMS software aggregates cameras from any manufacturer, adds AI analytics like LPR and facial recognition, and integrates with CAD dispatch and GIS. Complete guide for public safety agencies.",
+    title: "What Is VMS Software? Video Management for Public Safety | KabatOne",
+    description: "VMS software aggregates cameras from any manufacturer, adds AI analytics (LPR, facial recognition, behavioral detection), and integrates with CAD dispatch and GIS. Complete guide for public safety agencies.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -240,8 +240,8 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "Situational Awareness Software for Public Safety | KabatOne",
-    description: "Situational awareness software unifies cameras, sensors, dispatch, and GIS into one operational map — helping command centers coordinate faster response.",
+    title: "What Is Situational Awareness Software? Guide for Command Centers | KabatOne",
+    description: "Situational awareness software unifies cameras, IoT sensors, CAD dispatch, and GIS into one operational map — reducing response times 30–40% for command centers.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
   },
   whatIsACommandCenter: {
@@ -320,8 +320,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026/",
   },
   callCenterSoftwareGuide: {
-    title: "911 Call Center Software Guide: Features & How to Choose | KabatOne",
-    description: "Complete guide to 911 call center software — call intake, CAD integration, NG911 compliance, and AI-assisted dispatch. How modern PSAPs select and deploy emergency call center technology.",
+    title: "911 Call Center Software: Complete Buyer's Guide | KabatOne",
+    description: "911 call center software manages call intake, CAD dispatch, and unit coordination. Learn what modern 911 systems include and how to evaluate them.",
     canonical: "https://kabatone.com/resources/911-call-center-software-guide/",
   },
   bestPublicSafetySoftware: {

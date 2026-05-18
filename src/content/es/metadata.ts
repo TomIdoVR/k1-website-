@@ -220,8 +220,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/end-of-siloed-response/",
   },
   whatIsCadDispatchSoftware: {
-    title: "¿Qué Es el Software CAD de Despacho? Guía para Agencias de Seguridad Pública | KabatOne",
-    description: "El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y cómo el CAD se integra con video y GIS en una plataforma unificada.",
+    title: "¿Qué Es el Software CAD de Despacho? | KabatOne",
+    description: "Software CAD de despacho: gestión del 911, clasificación de incidentes y despacho de unidades. Cómo funciona e integración con video y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
@@ -240,8 +240,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "Software de Conciencia Situacional para Seguridad Pública | KabatOne",
-    description: "El software de conciencia situacional unifica cámaras, sensores, despacho y GIS en un mapa operativo único — para que los centros de mando coordinen respuestas más rápido.",
+    title: "¿Qué Es el Software de Conciencia Situacional? Guía para Centros de Mando | KabatOne",
+    description: "El software de conciencia situacional unifica cámaras, sensores IoT, despacho CAD y GIS en un mapa operativo único — reduciendo tiempos de respuesta 30–40% en centros de mando.",
     canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
   },
   whatIsACommandCenter: {
@@ -320,8 +320,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/c5-command-centers-mexico-2026/",
   },
   callCenterSoftwareGuide: {
-    title: "Guía de Software para Centros de Atención 911: Funciones y Cómo Elegir | KabatOne",
-    description: "Guía completa sobre software para centros de llamadas de emergencia 911 — recepción de llamadas, integración CAD, cumplimiento NG911 y despacho asistido por IA. Cómo los PSAP modernos seleccionan su tecnología.",
+    title: "Software Centro 911: Guía Completa para PSAP | KabatOne",
+    description: "El software de centro de atención 911 gestiona recepción de llamadas, despacho CAD y coordinación de unidades. Qué incluyen los sistemas modernos y cómo evaluarlos.",
     canonical: "https://kabatone.com/es/resources/911-call-center-software-guide/",
   },
   bestPublicSafetySoftware: {
