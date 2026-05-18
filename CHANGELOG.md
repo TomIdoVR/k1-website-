@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.81] 2026-05-18 — Feat: new Middle East market guide
+
+**Added**
+- New page: /resources/public-safety-software-middle-east/ — GCC Safe City & Smart City market guide
+- Coverage: UAE (Abu Dhabi Safe City, Dubai Police Smart, NEOM), Saudi Arabia (Vision 2030, Hajj), Qatar (ICCC)
+- 4 challenge cards: Smart City scale, mass event/Hajj security, data sovereignty (UAE FDPL + Saudi PDPL), GCC procurement (Saudization/Emiratization)
+- 6 Middle East-specific FAQs targeting GCC procurement, Hajj crowd management, Hikvision/Dahua/Axis CCTV integration, privacy compliance
+- Sitemap entry for /resources/public-safety-software-middle-east/ (priority 0.75)
+- Hub cards added (EN + ES) in /resources/ index
+- Metadata keys added to EN + ES metadata.ts
+
+---
+
 ## [2.77] 2026-05-18 — Fix: trim 45 ES page titles over 70 chars
 
 **Fixed**

@@ -374,6 +374,11 @@ export const metadata = {
     description: "Unified public safety platform for Canadian PSAPs, municipal police, and emergency agencies — CAD dispatch with NG911/CRTC support, video analytics, and bilingual EN/FR interface.",
     canonical: "https://kabatone.com/resources/public-safety-software-canada/",
   },
+  publicSafetySoftwareMiddleEast: {
+    title: "Public Safety Software for the Middle East: Smart City & Safe City | KabatOne",
+    description: "Unified platform for Smart City and Safe City projects in UAE, Saudi Arabia, and Qatar — large-scale CCTV integration, AI analytics for mass events, and GCC data sovereignty compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-middle-east/",
+  },
   publicSafetySoftwareUnitedStates: {
     title: "Public Safety Software for US Cities: 911, RTCC & CAD | KabatOne",
     description: "Public safety platform for US PSAPs and municipal command centers — CAD dispatch with NG911 support, video analytics for RTCCs, and GIS coordination under NIMS.",

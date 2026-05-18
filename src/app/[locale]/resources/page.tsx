@@ -225,6 +225,14 @@ export default async function ResourcesPage({
           readTime: '6 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-middle-east',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Medio Oriente: Smart City y Safe City',
+          excerpt: 'Plataforma unificada para proyectos Smart City y Safe City en EAU, Arabia Saudita y Qatar — integración masiva de CCTV, analítica de IA para eventos masivos como el Hajj.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -497,6 +505,14 @@ export default async function ResourcesPage({
           title: 'Public Safety Software for Canada',
           excerpt: 'Platform for Canadian PSAPs, RCMP, provincial, and municipal police — NG911/CRTC-compatible CAD dispatch, video analytics for RTCCs, and bilingual EN/FR interface.',
           readTime: '6 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-middle-east',
+          category: 'Market Guide',
+          title: 'Public Safety Software for the Middle East',
+          excerpt: 'Unified platform for Smart City and Safe City projects in UAE, Saudi Arabia, and Qatar — large-scale CCTV integration, AI analytics for mass events including Hajj.',
+          readTime: '7 min',
           isNew: true,
         },
       ]
