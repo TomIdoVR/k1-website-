@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.94] 2026-05-18 — Feat: new France market guide (Police Nationale, Gendarmerie, RGPD, VIGPIRATE)
+
+**Added**
+- New page: /resources/public-safety-software-france/ — Police Nationale vs Gendarmerie dual structure, 101 departments, 250K+ officers, 1.9M Vidéoprotection cameras, NexSIS 18-112 dispatch project, CNIL/RGPD, ANSSI, VIGPIRATE threat levels, Paris 2024 Olympics AI video analytics legacy
+- 4 challenge cards: dual Police/Gendarmerie IT systems, 15/17/18 dispatch fragmentation → NexSIS, RGPD/CNIL AI video regulation, VIGPIRATE + mass events
+- 7 France-specific FAQs: Police Nationale vs Gendarmerie structure, 15/17/18/NexSIS dispatch, Vidéoprotection/CSU regulation, public procurement (BOAMP/UGAP/DAE), RGPD/CNIL data protection, VIGPIRATE system, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+- France link added to Germany guide Related Resources (cross-linking European cluster)
+
+---
+
 ## [2.93] 2026-05-18 — Feat: new Germany market guide (Leitstellen, BOS Digital, DSGVO, BSI)
 
 **Added**

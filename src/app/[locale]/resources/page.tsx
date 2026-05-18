@@ -265,6 +265,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-france',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Francia: Police Nationale, Gendarmerie y RGPD',
+          excerpt: 'Plataforma unificada para la Police Nationale, Gendarmerie y CSU franceses — despacho CAD 15/17/18 con soporte NexSIS, analítica de Vidéoprotection con IA y cumplimiento RGPD/CNIL.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -576,6 +584,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for Germany: Leitstellen, BOS Digital & DSGVO',
           excerpt: 'Unified platform for German Integrated Leitstellen and police forces — 110/112 CAD dispatch with BOS Digital TETRA support, AI video analytics, and BSI IT-Grundschutz compliance.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-france',
+          category: 'Market Guide',
+          title: 'Public Safety Software for France: Police Nationale, Gendarmerie & RGPD',
+          excerpt: 'Unified platform for Police Nationale, Gendarmerie, and French CSU centres — 15/17/18 CAD dispatch with NexSIS support, AI Vidéoprotection analytics, and RGPD/CNIL compliance.',
           readTime: '7 min',
           isNew: true,
         },

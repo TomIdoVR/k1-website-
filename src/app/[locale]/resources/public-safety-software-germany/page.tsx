@@ -320,6 +320,7 @@ export default async function PublicSafetySoftwareGermanyPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-france', en: 'Public Safety Software for France: Police Nationale, Gendarmerie & RGPD', es: 'Software de Seguridad Pública para Francia: Police Nationale, Gendarmerie y RGPD' },
                 { href: '/resources/public-safety-software-united-kingdom', en: 'Public Safety Software for the United Kingdom', es: 'Software de Seguridad Pública para el Reino Unido' },
                 { href: '/resources/public-safety-software-united-states', en: 'Public Safety Software for the United States', es: 'Software de Seguridad Pública para EE.UU.' },
                 { href: '/resources/public-safety-software-india', en: 'Public Safety Software for India: Smart Cities & ICCC', es: 'Software de Seguridad Pública para India: Smart Cities e ICCC' },

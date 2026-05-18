@@ -424,6 +424,11 @@ export const metadata = {
     description: "Plataforma unificada para Leitstellen integrados y fuerzas policiales alemanas — despacho CAD 110/112 con soporte BOS Digital TETRA, analítica de video con IA y cumplimiento BSI IT-Grundschutz.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-germany/",
   },
+  publicSafetySoftwareFrance: {
+    title: "Software de Seguridad Pública para Francia: Police Nationale, Gendarmerie y RGPD | KabatOne",
+    description: "Plataforma unificada para la Police Nationale, Gendarmerie y Centres de Supervision Urbaine — despacho CAD 15/17/18 con soporte NexSIS, analítica de Vidéoprotection con IA y cumplimiento RGPD/CNIL.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-france/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",
