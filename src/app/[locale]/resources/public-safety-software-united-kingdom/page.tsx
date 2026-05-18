@@ -349,6 +349,7 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
                 { href: '/resources/public-safety-software-united-states', en: 'Public Safety Software for the United States', es: 'Software de Seguridad Pública para EE.UU.' },
                 { href: '/resources/public-safety-software-canada', en: 'Public Safety Software for Canada', es: 'Software de Seguridad Pública para Canadá' },
                 { href: '/resources/public-safety-software-middle-east', en: 'Public Safety Software for the Middle East', es: 'Software de Seguridad Pública para Medio Oriente' },
+                { href: '/resources/public-safety-software-australia', en: 'Public Safety Software for Australia', es: 'Software de Seguridad Pública para Australia' },
                 { href: '/resources/what-is-video-management-software', en: 'What Is VMS Software? Video Management Guide', es: '¿Qué Es el Software VMS? Guía de Gestión de Video' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué Es un Centro de Crimen en Tiempo Real (RTCC)?' },
                 { href: '/resources/what-is-situational-awareness-software', en: 'What Is Situational Awareness Software?', es: '¿Qué Es el Software de Conciencia Situacional?' },

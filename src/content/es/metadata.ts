@@ -414,6 +414,11 @@ export const metadata = {
     description: "Plataforma unificada para fuerzas policiales australianas, centros Triple Zero y gestión de emergencias — despacho CAD con soporte NGEC, analítica de video con IA y cumplimiento ISM del ACSC.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-australia/",
   },
+  publicSafetySoftwareIndia: {
+    title: "Software de Seguridad Pública para India: Smart Cities, ICCC y Emergencias 112 | KabatOne",
+    description: "Plataforma unificada para más de 100 ICCC de Smart Cities de India y proyectos Safe City — despacho 112, analítica de video con IA, conciencia situacional GIS y localización de datos on-premises.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-india/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",

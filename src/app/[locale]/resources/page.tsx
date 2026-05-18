@@ -249,6 +249,14 @@ export default async function ResourcesPage({
           readTime: '6 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-india',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para India: Smart Cities, ICCC y Emergencias 112',
+          excerpt: 'Plataforma unificada para más de 100 ICCC de la Misión Smart Cities de India y proyectos Safe City — despacho 112, analítica de video con IA, conciencia situacional GIS y localización de datos on-premises.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -545,6 +553,14 @@ export default async function ResourcesPage({
           title: 'Public Safety Software for Australia',
           excerpt: 'Platform for Australian state police forces, Triple Zero ECCs, and natural disaster management — CAD dispatch with NGEC support, AI video analytics, and ACSC ISM compliance.',
           readTime: '6 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-india',
+          category: 'Market Guide',
+          title: 'Public Safety Software for India: Smart Cities, ICCC & 112 Emergency',
+          excerpt: 'Unified platform for India\'s 100+ Smart City ICCCs and Safe City projects — 112 dispatch, AI video analytics, GIS situational awareness, and on-premises data localisation.',
+          readTime: '7 min',
           isNew: true,
         },
       ]

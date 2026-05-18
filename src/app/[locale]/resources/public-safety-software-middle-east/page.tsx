@@ -163,17 +163,12 @@ export default async function PublicSafetySoftwareMiddleEastPage({
     },
   ]
 
-  const articleData = {
-    headline: es
-      ? 'Software de Seguridad Pública para el Medio Oriente: Smart City, Safe City y Eventos Masivos'
-      : 'Public Safety Software for the Middle East: Smart City, Safe City, and Mass Event Security',
-    description: es
-      ? 'Plataforma unificada para proyectos Smart City en UAE, Arabia Saudita y Qatar — integración CCTV a gran escala, analítica IA para eventos masivos y cumplimiento de soberanía de datos bajo regulaciones GCC.'
-      : 'Unified platform for Smart City projects in UAE, Saudi Arabia, and Qatar — large-scale CCTV integration, AI analytics for mass events, and data sovereignty compliance under GCC regulations.',
-    url: pageUrl,
-    datePublished: '2026-05-18',
-    dateModified: '2026-05-18',
-  }
+  const articleHeadline = es
+    ? 'Software de Seguridad Pública para el Medio Oriente: Smart City, Safe City y Eventos Masivos'
+    : 'Public Safety Software for the Middle East: Smart City, Safe City, and Mass Event Security'
+  const articleDescription = es
+    ? 'Plataforma unificada para proyectos Smart City en UAE, Arabia Saudita y Qatar — integración CCTV a gran escala, analítica IA para eventos masivos y cumplimiento de soberanía de datos bajo regulaciones GCC.'
+    : 'Unified platform for Smart City projects in UAE, Saudi Arabia, and Qatar — large-scale CCTV integration, AI analytics for mass events, and data sovereignty compliance under GCC regulations.'
 
   return (
     <>
@@ -185,7 +180,7 @@ export default async function PublicSafetySoftwareMiddleEastPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(articleData)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(articleHeadline, articleDescription, pageUrl, '2026-05-18')) }}
       />
       <script
         type="application/ld+json"
@@ -349,6 +344,8 @@ export default async function PublicSafetySoftwareMiddleEastPage({
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {[
                 { href: '/resources/public-safety-software-united-states', label: es ? 'Software Seguridad Pública EE.UU.' : 'Public Safety Software — US' },
+                { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Software de Seguridad Pública — Reino Unido' : 'Public Safety Software — UK' },
+                { href: '/resources/public-safety-software-australia', label: es ? 'Software de Seguridad Pública — Australia' : 'Public Safety Software — Australia' },
                 { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
                 { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
                 { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'Video Management Software' },

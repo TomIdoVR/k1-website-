@@ -163,17 +163,12 @@ export default async function PublicSafetySoftwareUSAPage({
     },
   ]
 
-  const articleData = {
-    headline: es
-      ? 'Software de Seguridad Pública para Ciudades de EE.UU.: Guía de Centros de Mando y 911'
-      : 'Public Safety Software for US Cities: Command Centers, 911 & RTCC Guide',
-    description: es
-      ? 'Guía de tecnología de seguridad pública para agencias en EE.UU.: NG911, CAD, RTCC y plataformas unificadas para PSAPs, departamentos de policía y centros de mando municipales.'
-      : 'Technology guide for US public safety agencies: NG911, CAD dispatch, RTCC, and unified platforms for PSAPs, law enforcement, and municipal command centers.',
-    url: pageUrl,
-    datePublished: '2026-05-18',
-    dateModified: '2026-05-18',
-  }
+  const articleHeadline = es
+    ? 'Software de Seguridad Pública para Ciudades de EE.UU.: Guía de Centros de Mando y 911'
+    : 'Public Safety Software for US Cities: Command Centers, 911 & RTCC Guide'
+  const articleDescription = es
+    ? 'Guía de tecnología de seguridad pública para agencias en EE.UU.: NG911, CAD, RTCC y plataformas unificadas para PSAPs, departamentos de policía y centros de mando municipales.'
+    : 'Technology guide for US public safety agencies: NG911, CAD dispatch, RTCC, and unified platforms for PSAPs, law enforcement, and municipal command centers.'
 
   return (
     <>
@@ -185,7 +180,7 @@ export default async function PublicSafetySoftwareUSAPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(articleData)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(articleHeadline, articleDescription, pageUrl, '2026-05-18')) }}
       />
       <script
         type="application/ld+json"
@@ -386,6 +381,8 @@ export default async function PublicSafetySoftwareUSAPage({
               {[
                 { href: '/resources/public-safety-software-canada', label: es ? 'Software Seguridad Pública Canadá' : 'Public Safety Software — Canada' },
                 { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Software Seguridad Pública Reino Unido' : 'Public Safety Software — United Kingdom' },
+                { href: '/resources/public-safety-software-australia', label: es ? 'Software Seguridad Pública Australia' : 'Public Safety Software — Australia' },
+                { href: '/resources/public-safety-software-middle-east', label: es ? 'Software Seguridad Pública Medio Oriente' : 'Public Safety Software — Middle East' },
                 { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD 2026' : 'Best CAD Dispatch Software 2026' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
                 { href: '/resources/what-is-a-psap', label: es ? '¿Qué es un PSAP?' : 'What Is a PSAP?' },

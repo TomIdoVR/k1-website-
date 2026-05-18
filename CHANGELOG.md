@@ -7,6 +7,29 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.92] 2026-05-18 — Feat: new India market guide (Smart Cities, ICCC, 112, DPDP Act 2023)
+
+**Added**
+- New page: /resources/public-safety-software-india/ — 100+ Smart City ICCCs, 28 state police forces, 112 India ERSS, Safe City projects (Delhi, Mumbai, Lucknow), DPDP Act 2023 compliance
+- 4 challenge cards: fragmented policing (28 states + central forces), ICCC rollout, DPDP Act 2023 + data localisation, urban-rural divide + natural disasters
+- 7 India-specific FAQs: police structure (IPS/MHA), 112 ERSS, ICCC/Smart Cities mandate, GEM procurement, DPDP Act, Safe City (Nirbhaya Fund), KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+- India link added to Australia guide Related Resources (bidirectional geo cluster)
+
+---
+
+## [2.91] 2026-05-18 — SEO: complete geo cluster cross-linking (US/Canada/UK/Australia/Middle East)
+
+**Changed**
+- UK guide: added Australia link to Related Resources (bidirectional UK ↔ Australia)
+- Middle East guide: added UK + Australia links to Related Resources
+- Canada guide: added Australia + Middle East links to Related Resources
+- US guide: added Australia + Middle East links to Related Resources
+- Australia guide: added Middle East link to Related Resources
+- All 5 geographic market guides now fully cross-link to each other (complete internal link cluster)
+
+---
+
 ## [2.90] 2026-05-18 — Feat: new Australia market guide + CAD dispatch FAQs bundle
 
 **Added**
