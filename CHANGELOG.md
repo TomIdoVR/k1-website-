@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.67] 2026-05-18 — SEO: K-Video internal links to VMS + video analytics resource pages
+
+**Improved**
+- K-Video product page: added internal links to /resources/what-is-video-management-software/ and /resources/what-is-video-analytics/ in Related Resources section
+- Boosts authority flow from product page to the two highest-impression resource pages (5,013 + 4,130 impressions at pos 32.6 + 29.7)
+
+---
+
 ## [2.66] 2026-05-18 — SEO: Panic buttons CTR + K-Safety situational awareness targeting
 
 **Improved**
