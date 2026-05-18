@@ -7,6 +7,12 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.77] 2026-05-18 — Fix: trim 45 ES page titles over 70 chars
+
+**Fixed**
+- Trimmed all 45 ES page titles exceeding 70 chars to ≤65 chars, preserving primary keywords
+- Pages fixed include: whatIsPublicSafetyPlatform, c5CommandCenters, smartCityPlatformGuide, vsMilestone, vsVms, vsMotorola, vsMark43, vsCad, vsFusus, vsPrepared911, vsPeregrine, rtccSetupGuide, aiInPublicSafety, whatIsVideoManagementSoftware, whatIsARealTimeCrimeCenter, vsRapidsos, whatIsSituationalAwarenessSoftware, whatIsACommandCenter, whatIsEmergencyManagementSoftware, whatIsAPsap, whatIsVideoAnalytics, whatIsLprLicensePlateRecognition, whatIsEmergencyDispatchSoftware, simulator, vsAvigilon, whatIsSensorFusion, vsVerint, vsNiceSystems, whatIsIncidentManagementSoftware, vsVerkada, cadSoftwareMunicipiosMexico, bestPublicSafetySoftware, buildRtccImplementationGuide, publicSafetySoftwareColombia, publicSafetySoftwarePeru, publicSafetySoftwareChile, publicSafetySoftwareArgentina, publicSafetySoftwareBrazil, cadDispatchLatinAmerica, publicSafetySoftwareSmallCities, vsTylerTechnologies, vsCentralsquare, vsShotSpotter, vsPalantir, publicSafetySoftwareUnitedStates
+
 ## [2.76] 2026-05-18 — SEO: fix titles over 70 chars + add best-cad-dispatch-software page
 
 **Fixed**
