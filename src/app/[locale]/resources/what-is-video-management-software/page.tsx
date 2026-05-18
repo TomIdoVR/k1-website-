@@ -67,6 +67,16 @@ export default async function WhatIsVideoManagementSoftwarePage({
           answer:
             'Un VMS general (software de gestión de video de propósito general) está diseñado para aplicaciones comerciales amplias — retail, campus corporativos, almacenes — con énfasis en grabación y reproducción básica. Un VMS para seguridad pública está construido específicamente para fuerzas del orden, centros de mando y operaciones municipales. Agrega capacidades que un VMS general típicamente no tiene: integración nativa con despacho CAD, mapeo GIS en tiempo real de ubicaciones de cámaras, control de acceso multiagencia, búsqueda forense simultánea en miles de cámaras y registro de cadena de custodia de evidencias. KabatOne K-Video está diseñado específicamente para seguridad pública, no adaptado de un VMS de propósito general.',
         },
+        {
+          question: '¿Cuál es el mejor software VMS para seguridad pública?',
+          answer:
+            'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, KabatOne integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
+        },
+        {
+          question: '¿Cuál es la diferencia entre un VMS y un PSIM?',
+          answer:
+            'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como KabatOne van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
+        },
       ]
     : [
         {
@@ -108,6 +118,16 @@ export default async function WhatIsVideoManagementSoftwarePage({
           question: 'What is a general VMS and how does it differ from a public safety VMS?',
           answer:
             'A general VMS (general-purpose video management software) is designed for broad commercial applications — retail, corporate campuses, warehouses — with emphasis on recording and basic playback. A public safety VMS is built specifically for law enforcement, command centers, and municipal operations. It adds capabilities a general VMS typically lacks: native CAD dispatch integration so camera alerts trigger incident creation automatically, real-time GIS mapping of camera locations, multi-agency access control, forensic search across thousands of cameras simultaneously, and compliance logging for evidence chain-of-custody. KabatOne K-Video is purpose-built for public safety, not adapted from a general-purpose VMS.',
+        },
+        {
+          question: 'What is the best VMS software for public safety?',
+          answer:
+            'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, KabatOne integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
+        },
+        {
+          question: 'What is the difference between VMS software and PSIM?',
+          answer:
+            'VMS (Video Management Software) specifically manages video surveillance cameras: recording, playback, video analytics, and forensic search. PSIM (Physical Security Information Management) is an integration layer that connects multiple security systems — VMS, access control, intrusion detection, alarms — into a single interface, without replacing them. The key difference: VMS is a functional video platform; PSIM is a system aggregator. Unified public safety platforms like KabatOne go beyond both: they integrate video, CAD dispatch, GIS, and field operations into a single database and single alert engine — eliminating the need for a separate PSIM layer.',
         },
       ]
 

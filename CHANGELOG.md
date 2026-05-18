@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.85] 2026-05-18 — SEO: add buyer-intent FAQs to VMS page (best VMS + PSIM comparison)
+
+**Improved**
+- `what-is-video-management-software`: 2 new FAQs (EN + ES):
+  - "What is the best VMS software for public safety?" — targets commercial buyer queries, mentions Genetec/Milestone/Avigilon to capture comparative searches
+  - "What is the difference between VMS software and PSIM?" — targets PSIM-related queries and positions unified platform advantage
+- Page now has 10 FAQs total; targets 477-impression "vms software" query at pos 34.2
+
+---
+
 ## [2.84] 2026-05-18 — SEO: panic-buttons FAQs + schema date updates
 
 **Improved**
