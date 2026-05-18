@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.72] 2026-05-18 — Feat: new video analytics use cases guide (8 use cases + CAD integration)
+
+**Added**
+- New page: `/resources/video-analytics-use-cases/` — 8 video analytics use cases for public safety command centers: perimeter intrusion, LPR, crowd counting, behavioral anomaly, forensic analysis, traffic incident, smoke/fire detection, CAD dispatch correlation
+- Each use case includes icon, title, description, and metric badge (quantified ROI)
+- 3-step integration flow (Camera → Analytics Engine → Command Center), product links (K-Video/K-Safety/K-Dispatch), 6 FAQs, related resources
+- Added metadata key `videoAnalyticsUseCases` to EN + ES metadata files
+- Added to sitemap.ts at priority 0.75
+- Added hub cards to resources index (EN + ES)
+- Target query: "video analytics system" (64 impressions, pos 24.3 in GSC audit)
+
+---
+
 ## [2.71] 2026-05-18 — SEO: fix all meta descriptions over 160 chars (EN + ES)
 
 **Fixed**

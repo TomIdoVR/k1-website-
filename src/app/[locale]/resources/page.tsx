@@ -201,6 +201,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: false,
         },
+        {
+          href: '/resources/video-analytics-use-cases',
+          category: 'Guía',
+          title: 'Casos de Uso de Analítica de Video para Centros de Mando',
+          excerpt: '8 casos de uso de analítica de video para centros de mando: detección de intrusión, LPR, conteo de multitudes, anomalías conductuales, búsqueda forense e integración con despacho CAD.',
+          readTime: '8 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -449,6 +457,14 @@ export default async function ResourcesPage({
           title: 'Public Safety Software for Small Cities & Municipalities',
           excerpt: 'Affordable, scalable public safety platforms designed for small cities — unified video, dispatch, and GIS without enterprise price tags.',
           readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/video-analytics-use-cases',
+          category: 'Guide',
+          title: 'Video Analytics Use Cases for Public Safety Command Centers',
+          excerpt: '8 video analytics use cases for command centers: perimeter intrusion, LPR, crowd counting, behavioral anomalies, forensic search, and CAD dispatch integration.',
+          readTime: '8 min',
           isNew: true,
         },
       ]

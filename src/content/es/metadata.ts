@@ -404,4 +404,9 @@ export const metadata = {
     description: "Palantir Gotham es una capa de análisis. KabatOne es la capa de operaciones en tiempo real — conectando cámaras, CAD y unidades de campo en una sola plataforma.",
     canonical: "https://kabatone.com/es/vs/palantir/",
   },
+  videoAnalyticsUseCases: {
+    title: "Casos de Uso de Analítica de Video para Centros de Mando | KabatOne",
+    description: "8 casos de uso de analítica de video para centros de mando: detección de intrusión, LPR, conteo de multitudes, anomalías conductuales, búsqueda forense e integración con despacho CAD.",
+    canonical: "https://kabatone.com/es/resources/video-analytics-use-cases/",
+  },
 } as const

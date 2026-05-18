@@ -369,6 +369,11 @@ export const metadata = {
     description: "Buyer's guide to the best CAD dispatch software for 911 centers — comparing features, integrations, and deployment models for public safety agencies.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
   },
+  videoAnalyticsUseCases: {
+    title: "Video Analytics Use Cases for Public Safety Command Centers | KabatOne",
+    description: "8 video analytics use cases for command centers: intrusion detection, LPR, crowd counting, behavioral anomalies, forensic search, and CAD dispatch integration.",
+    canonical: "https://kabatone.com/resources/video-analytics-use-cases/",
+  },
   cadDispatchLatinAmerica: {
     title: "CAD Dispatch Software for Latin America: Response Guide | KabatOne",
     description: "CAD dispatch for Latin American C5/C4 command centers — native 911/133/123/105 support, Spanish-first interface. Deployed in 40+ cities protecting 73M citizens.",

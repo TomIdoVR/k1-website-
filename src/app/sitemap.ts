@@ -50,6 +50,7 @@ const pages = [
   { path: '/resources/public-safety-software-argentina', priority: 0.7 },
   { path: '/resources/public-safety-software-brazil', priority: 0.7 },
   { path: '/resources/best-cad-dispatch-software', priority: 0.7 },
+  { path: '/resources/video-analytics-use-cases', priority: 0.75 },
   { path: '/resources/cad-dispatch-software-latin-america', priority: 0.8 },
   { path: '/integrations/lpr', priority: 0.6 },
   { path: '/integrations/face-recognition', priority: 0.6 },
