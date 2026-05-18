@@ -16,6 +16,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 **Added**
 - `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
 
+## [2.78] 2026-05-18 — SEO: add "911 dispatch department software" FAQ to 911 guide (GSC pos 16.7)
+
+**Improved**
+- 911-call-center-software-guide: added new FAQ "What software do 911 dispatch departments use?" (EN + ES)
+- Answer mentions Motorola, Tyler, CentralSquare, Hexagon, Carbyne as context + K-Dispatch as solution
+- Targets GSC opportunity: "911 dispatch department software" (11 impressions, pos 16.7)
+
+---
+
 ## [2.77] 2026-05-18 — SEO: add "audio video management system" FAQ to VMS guide (GSC query pos 11.5)
 
 **Improved**

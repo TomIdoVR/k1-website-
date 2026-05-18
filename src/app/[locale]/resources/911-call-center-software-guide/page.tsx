@@ -57,6 +57,11 @@ export default async function CallCenterSoftwareGuidePage({
           answer:
             'K-Dispatch integra la recepción de llamadas 911, el despacho CAD y GIS en una sola plataforma — eliminando el traspaso entre el receptor de llamadas y el despachador, y reduciendo significativamente el tiempo hasta el despacho.',
         },
+        {
+          question: '¿Qué software usa un departamento de despacho 911?',
+          answer:
+            'Los departamentos de despacho 911 generalmente operan dos sistemas principales: un sistema de manejo de llamadas (CHS) para recibir y enrutar llamadas 911, y un sistema CAD (Computer-Aided Dispatch) para crear incidentes, asignar unidades y monitorear la respuesta en campo. Los principales proveedores de software para departamentos de despacho 911 incluyen Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety y Carbyne para recepción NG911. Plataformas modernas como KabatOne K-Dispatch unifican ambas funciones — recepción de llamadas y despacho CAD — en una sola interfaz, eliminando demoras en el traspaso de datos entre receptor y despachador.',
+        },
       ]
     : [
         {
@@ -88,6 +93,11 @@ export default async function CallCenterSoftwareGuidePage({
           question: "How does KabatOne's platform handle 911 call center operations?",
           answer:
             'K-Dispatch integrates 911 call intake, CAD dispatch, and GIS in one platform — eliminating the handoff between call-taker and dispatcher and cutting time-to-dispatch significantly.',
+        },
+        {
+          question: 'What software do 911 dispatch departments use?',
+          answer:
+            '911 dispatch departments typically run two core software systems: a call handling system (CHs) for answering and routing 911 calls, and a CAD (Computer-Aided Dispatch) system for creating incidents, assigning units, and tracking field response. Leading 911 dispatch department software vendors include Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety, and Carbyne for NG911 intake. Modern platforms like KabatOne K-Dispatch unify both functions — call intake and CAD dispatch — in one interface, eliminating data handoff delays between call-taker and dispatcher.',
         },
       ]
 
