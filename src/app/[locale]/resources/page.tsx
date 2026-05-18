@@ -209,6 +209,14 @@ export default async function ResourcesPage({
           readTime: '8 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-united-states',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para EE.UU.: PSAP, RTCC y Centros de Mando',
+          excerpt: 'Plataforma unificada para PSAPs, agencias de policía y centros de mando municipales en EE.UU. — CAD con soporte NG911, video analytics para RTCC y GIS bajo NIMS.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -465,6 +473,14 @@ export default async function ResourcesPage({
           title: 'Video Analytics Use Cases for Public Safety Command Centers',
           excerpt: '8 video analytics use cases for command centers: perimeter intrusion, LPR, crowd counting, behavioral anomalies, forensic search, and CAD dispatch integration.',
           readTime: '8 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-united-states',
+          category: 'Market Guide',
+          title: 'Public Safety Software for US Cities and Agencies',
+          excerpt: 'Unified platform for US PSAPs, law enforcement, and command centers — NG911-compatible CAD dispatch, RTCC video analytics, and multi-agency GIS coordination under NIMS.',
+          readTime: '7 min',
           isNew: true,
         },
       ]

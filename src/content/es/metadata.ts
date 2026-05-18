@@ -404,6 +404,11 @@ export const metadata = {
     description: "Palantir Gotham es una capa de análisis. KabatOne es la capa de operaciones en tiempo real — conectando cámaras, CAD y unidades de campo en una sola plataforma.",
     canonical: "https://kabatone.com/es/vs/palantir/",
   },
+  publicSafetySoftwareUnitedStates: {
+    title: "Software de Seguridad Pública para EE.UU.: 911, RTCC y Centros de Mando | KabatOne",
+    description: "Plataforma unificada para PSAPs, agencias de seguridad pública y centros de mando municipales en EE.UU. — despacho CAD con soporte NG911, video analytics para RTCC y GIS bajo NIMS.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-united-states/",
+  },
   videoAnalyticsUseCases: {
     title: "Casos de Uso de Analítica de Video para Centros de Mando | KabatOne",
     description: "8 casos de uso de analítica de video para centros de mando: detección de intrusión, LPR, conteo de multitudes, anomalías conductuales, búsqueda forense e integración con despacho CAD.",

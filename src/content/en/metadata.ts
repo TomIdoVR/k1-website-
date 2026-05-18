@@ -145,12 +145,12 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/cad/",
   },
   vsFusus: {
-    title: "KabatOne vs Fusus — Real-Time Crime Center vs Full Operations Platform",
+    title: "KabatOne vs Fusus — RTCC vs Full Operations Platform",
     description: "Fusus aggregates cameras for real-time awareness. KabatOne adds CAD dispatch, GIS, and traffic — a unified platform that goes beyond video intelligence.",
     canonical: "https://kabatone.com/vs/fusus/",
   },
   vsPrepared911: {
-    title: "KabatOne vs Prepared 911 — NG911 Call Taking vs Full Response Platform",
+    title: "KabatOne vs Prepared 911 — NG911 vs Full Response Platform",
     description: "Prepared 911 modernizes call receipt with NG911 and caller video. KabatOne manages everything after: CAD dispatch, city cameras, GIS, and traffic.",
     canonical: "https://kabatone.com/vs/prepared911/",
   },
@@ -210,7 +210,7 @@ export const metadata = {
     canonical: "https://kabatone.com/integrations/drones/",
   },
   integrationPanicButtons: {
-    title: "Panic Button Integration — Alert to Dispatch in Under 4 Seconds | KabatOne",
+    title: "Panic Button Integration for Emergency Dispatch | KabatOne",
     description: "KabatOne integrates panic buttons with CAD, video, and GIS. A silent alert triggers unit dispatch, camera activation, and notification — under 4 seconds.",
     canonical: "https://kabatone.com/integrations/panic-buttons/",
   },
@@ -240,7 +240,7 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "What Is Situational Awareness Software? Guide for Command Centers | KabatOne",
+    title: "Situational Awareness Software for Command Centers | KabatOne",
     description: "Situational awareness software unifies cameras, IoT sensors, CAD, and GIS into one operational map — cutting response times 30–40% for command centers.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
   },
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Artificial Intelligence Video Analytics: Guide for Command Centers | KabatOne",
-    description: "Artificial intelligence video analytics detects intrusions, LPR matches, crowds, and weapons in real time — without continuous human monitoring. How it works and integrates with CAD dispatch.",
+    title: "AI Video Analytics Guide for Command Centers | KabatOne",
+    description: "AI video analytics detects intrusions, LPR matches, crowds, and weapons in real time. How it works and integrates with CAD dispatch.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
@@ -295,7 +295,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-sensor-fusion/",
   },
   vsVerint: {
-    title: "KabatOne vs Verint — Video Intelligence vs Unified Operations Platform",
+    title: "KabatOne vs Verint — Video Intelligence vs Unified Platform",
     description: "Verint manages video surveillance and AI analytics. KabatOne adds full CAD dispatch, GIS, and traffic — the complete C5 platform with 40+ LATAM deployments.",
     canonical: "https://kabatone.com/vs/verint/",
   },
@@ -335,7 +335,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/best-public-safety-software/",
   },
   buildRtccImplementationGuide: {
-    title: "How to Build a Real-Time Crime Center: Implementation Guide | KabatOne",
+    title: "How to Build an RTCC: Implementation Guide | KabatOne",
     description: "Step-by-step guide to building an RTCC — technology requirements, camera network design, data integration, staffing, and best practices for municipalities.",
     canonical: "https://kabatone.com/resources/build-rtcc-implementation-guide/",
   },
@@ -369,8 +369,13 @@ export const metadata = {
     description: "Buyer's guide to the best CAD dispatch software for 911 centers — comparing features, integrations, and deployment models for public safety agencies.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
   },
+  publicSafetySoftwareUnitedStates: {
+    title: "Public Safety Software for US Cities: 911, RTCC & CAD | KabatOne",
+    description: "Public safety platform for US PSAPs and municipal command centers — CAD dispatch with NG911 support, video analytics for RTCCs, and GIS coordination under NIMS.",
+    canonical: "https://kabatone.com/resources/public-safety-software-united-states/",
+  },
   videoAnalyticsUseCases: {
-    title: "Video Analytics Use Cases for Public Safety Command Centers | KabatOne",
+    title: "Video Analytics Use Cases for Public Safety | KabatOne",
     description: "8 video analytics use cases for command centers: intrusion detection, LPR, crowd counting, behavioral anomalies, forensic search, and CAD dispatch integration.",
     canonical: "https://kabatone.com/resources/video-analytics-use-cases/",
   },

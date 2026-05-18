@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.75] 2026-05-18 — Feat: new US market guide — public safety software for US cities
+
+**Added**
+- New page: `/resources/public-safety-software-united-states/` — US market guide covering PSAPs, NG911, RTCC, NIMS/ICS interoperability, CJIS compliance, and federal funding (COPS, Byrne JAG, UASI/BRIC)
+- 4 challenge cards: PSAP modernization/NG911, multi-agency COP, RTCC video integration, CJIS compliance
+- 3 federal funding cards: COPS Technology ($750K/agency), Byrne JAG ($350M+/year), UASI/BRIC
+- 6 US-specific FAQs: NG911 transition, CAD integration (PremierOne/Tyler/CentralSquare), CJIS, GSA procurement
+- US ecosystem comparison table: CAD providers, NG911/ESInet, RTCC/video, GIS, body cameras
+- Stats: 5,800+ PSAPs, 240M+ 911 calls/year, 18,000+ law enforcement agencies, $2.5B+ federal investment
+- Metadata added to EN + ES; sitemap at priority 0.8; hub cards added in EN + ES
+- Fills US market gap (LATAM country guides existed; no US equivalent)
+
+---
+
 ## [2.74] 2026-05-18 — SEO: optimize video analytics pages for GSC query "artificial intelligence video analytics"
 
 **Improved**
