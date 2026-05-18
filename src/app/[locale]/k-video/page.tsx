@@ -29,8 +29,8 @@ export default async function KVideoPage({
   const content = {
     eyebrow: es ? 'Video Inteligente · K-Video' : 'Video Intelligence · K-Video',
     h1: es
-      ? 'Gestión de Video Unificada e Inteligencia Analítica'
-      : 'Unified Video Management and AI Analytics Platform',
+      ? 'Software VMS y Analítica de Video con IA para Seguridad Pública'
+      : 'AI Video Analytics and VMS Software for Public Safety',
     subtitle: es
       ? 'Agrega todas las cámaras en una vista unificada y con capacidad de búsqueda. K-Video añade analítica con IA para que encuentres lo que importa en segundos, no horas.'
       : 'Scalable cloud and on-premises video management system powered by AI-driven analytics — enabling real-time monitoring, forensic search, and automated threat detection across thousands of cameras.',

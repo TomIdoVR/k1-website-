@@ -10,8 +10,8 @@ export const metadata = {
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
-    title: "Video Management Software for Public Safety | KabatOne",
-    description: "Aggregate every camera into one searchable view. K-Video adds AI analytics so you find what matters in seconds, not hours. Any brand, any protocol.",
+    title: "AI Video Analytics & VMS Software for Public Safety | KabatOne",
+    description: "Aggregate every camera into one searchable view. K-Video adds AI video analytics so you find what matters in seconds — LPR, behavioral detection, object classification. Any brand, any protocol.",
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
@@ -285,7 +285,7 @@ export const metadata = {
     canonical: "https://kabatone.com/simulator/",
   },
   vsAvigilon: {
-    title: "KabatOne vs Avigilon — Premium VMS vs Unified Public Safety Platform",
+    title: "Avigilon Alternative for Public Safety | KabatOne vs Avigilon",
     description: "Avigilon manages cameras and video analytics. KabatOne adds CAD dispatch, GIS, traffic management, and multi-agency coordination — the complete response workflow without proprietary hardware.",
     canonical: "https://kabatone.com/vs/avigilon/",
   },

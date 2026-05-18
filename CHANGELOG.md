@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.64] 2026-05-18 — SEO: K-Video + Avigilon keyword targeting
+
+**Improved**
+- K-Video EN title: "Video Management Software" → "AI Video Analytics & VMS Software for Public Safety" — targets 41-impression "artificial intelligence video analytics" cluster (pos 18.1) and "vms software"
+- K-Video EN description: added LPR, behavioral detection, object classification keywords
+- K-Video H1 (EN + ES): "Unified Video Management and AI Analytics Platform" → "AI Video Analytics and VMS Software for Public Safety"
+- Avigilon vs page EN title: added "Avigilon Alternative" framing to capture branded "avigilon" query (25 impressions, pos 17.4)
+
+---
+
 ## [2.63] 2026-05-18 — SEO: VMS + situational awareness + k-dispatch keyword targeting
 
 **Improved**
