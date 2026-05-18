@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.76] 2026-05-18 — SEO: fix titles over 70 chars + add best-cad-dispatch-software page
+
+**Fixed**
+- Trimmed 9 EN page titles exceeding 70 chars: whatIsVideoAnalytics, whatIsSituationalAwarenessSoftware, integrationPanicButtons, vsFusus, vsPrepared911, buildRtccImplementationGuide, videoAnalyticsUseCases, vsVerint, publicSafetySoftwareUnitedStates
+- Re-fixed whatIsVideoAnalytics description (re-introduced over limit in v2.74)
+
+**Added**
+- `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
+
 ## [2.75] 2026-05-18 — Feat: new US market guide — public safety software for US cities
 
 **Added**
