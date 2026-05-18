@@ -374,6 +374,11 @@ export const metadata = {
     description: "Unified public safety platform for Canadian PSAPs, municipal police, and emergency agencies — CAD dispatch with NG911/CRTC support, video analytics, and bilingual EN/FR interface.",
     canonical: "https://kabatone.com/resources/public-safety-software-canada/",
   },
+  publicSafetySoftwareAustralia: {
+    title: "Public Safety Software for Australia: Triple Zero, CAD & Safe City | KabatOne",
+    description: "Unified platform for Australian police forces, Triple Zero ECCs, and emergency management — CAD dispatch with NGEC support, AI video analytics, and ACSC ISM compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-australia/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Public Safety Software for the UK: 999, Control Rooms & Safe City | KabatOne",
     description: "Unified platform for UK police forces, 999 control rooms, and Safe City programmes — CAD dispatch with NG999 support, AI video analytics, and UK GDPR compliance.",

@@ -241,6 +241,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-australia',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Australia: Triple Zero, Policía Estatal y Desastres',
+          excerpt: 'Plataforma para fuerzas policiales estatales australianas, centros de comunicaciones Triple Zero y gestión de desastres naturales — despacho CAD con soporte NGEC, analítica de IA y cumplimiento ISM/ACSC.',
+          readTime: '6 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -529,6 +537,14 @@ export default async function ResourcesPage({
           title: 'Public Safety Software for the United Kingdom',
           excerpt: 'Unified platform for UK police forces, 999 control rooms, and Safe City programmes — CAD dispatch with NG999 support, CCTV with AI analytics, and UK GDPR compliance.',
           readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-australia',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Australia',
+          excerpt: 'Platform for Australian state police forces, Triple Zero ECCs, and natural disaster management — CAD dispatch with NGEC support, AI video analytics, and ACSC ISM compliance.',
+          readTime: '6 min',
           isNew: true,
         },
       ]

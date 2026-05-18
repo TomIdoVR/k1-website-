@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.90] 2026-05-18 — Feat: new Australia market guide + CAD dispatch FAQs bundle
+
+**Added**
+- New page: /resources/public-safety-software-australia/ — Australian state police, Triple Zero ECCs, and disaster management guide
+- Coverage: AFP, NSW/Victoria/QLD/WA Police, AFAC, NEMA; Triple Zero (000), NGEC modernisation, Black Summer coordination
+- 4 challenge cards: federated 8-jurisdiction structure, NGEC/Triple Zero modernisation, ISM/ACSC + Privacy Act, remote area/disaster management
+- 6 Australia-specific FAQs: police structure, Triple Zero/NGEC, Digital Marketplace procurement, Privacy Act/APPs, disaster management, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES)
+
+**Also included from v2.89 (bundled):**
+- `what-is-cad-dispatch-software`: CAD vs RMS + NG911-compatible CAD FAQs (EN+ES); schema dateModified → 2026-05-18
+
+---
+
 ## [2.89] 2026-05-18 — SEO: add CAD vs RMS + NG911 FAQs to what-is-cad-dispatch-software
 
 **Improved**
