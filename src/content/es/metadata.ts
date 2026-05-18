@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Analítica de Video con IA: Guía para Seguridad Pública | KabatOne",
-    description: "La analítica de video con IA detecta intrusiones, vehículos, aglomeraciones y armas en tiempo real. Aprende cómo funciona e integración con el despacho.",
+    title: "Analítica de Video con Inteligencia Artificial: Guía para Centros de Mando | KabatOne",
+    description: "La analítica de video con IA detecta intrusiones, LPR, aglomeraciones y armas en tiempo real sin monitoreo humano continuo. Cómo funciona e integración con despacho CAD.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {

@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.74] 2026-05-18 — SEO: optimize video analytics pages for GSC query "artificial intelligence video analytics"
+
+**Improved**
+- what-is-video-analytics page: H1 updated from "AI Video Analytics" → "Artificial Intelligence Video Analytics" (exact match to GSC query at pos 18.1, 41 impressions)
+- what-is-video-analytics metadata (EN + ES): title tag updated to include full phrase "Artificial Intelligence Video Analytics"
+- Added internal link from what-is-video-analytics → video-analytics-use-cases in Related Resources (content cluster bidirectional link)
+- Goal: boost /resources/what-is-video-analytics/ from pos 18 to top 10 for "artificial intelligence video analytics"
+
+---
+
 ## [2.73] 2026-05-18 — SEO: CAD dispatch internal links from 3 dispatch-focused /vs/ pages
 
 **Improved**

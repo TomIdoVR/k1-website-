@@ -178,7 +178,7 @@ export default async function WhatIsVideoAnalyticsPage({
               </span>
             </div>
             <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '.01em', color: '#f0f4f8', marginBottom: '20px' }}>
-              {es ? 'Analítica de Video con IA: Cómo Funciona para Seguridad Pública' : 'AI Video Analytics: How It Works for Public Safety'}
+              {es ? 'Analítica de Video con Inteligencia Artificial: Cómo Funciona para Centros de Mando' : 'Artificial Intelligence Video Analytics: How It Works for Command Centers'}
             </h1>
             <p style={{ fontSize: '17px', color: '#94a3b8', lineHeight: 1.7, maxWidth: '720px', marginBottom: '32px' }}>
               {es
@@ -326,6 +326,7 @@ export default async function WhatIsVideoAnalyticsPage({
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
+              { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'Video Management Software' },
               { href: '/resources/what-is-lpr-license-plate-recognition', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
               { href: '/resources/what-is-gunshot-detection-software', label: es ? 'Detección de Disparos' : 'Gunshot Detection' },
