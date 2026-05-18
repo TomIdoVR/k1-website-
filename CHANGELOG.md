@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.88] 2026-05-18 — SEO: cross-link UK guide from US and Canada market guides
+
+**Improved**
+- `public-safety-software-united-states`: added Canada + UK guide links to Related Resources (geo cluster linking)
+- `public-safety-software-canada`: added UK guide link to Related Resources (geo cluster linking)
+- Completes bidirectional cross-linking across the EN-speaking market guide cluster (US ↔ Canada ↔ UK)
+
+---
+
 ## [2.87] 2026-05-18 — SEO: update schema dateModified on 3 changed pages
 
 **Improved**

@@ -384,6 +384,8 @@ export default async function PublicSafetySoftwareUSAPage({
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-canada', label: es ? 'Software Seguridad Pública Canadá' : 'Public Safety Software — Canada' },
+                { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Software Seguridad Pública Reino Unido' : 'Public Safety Software — United Kingdom' },
                 { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD 2026' : 'Best CAD Dispatch Software 2026' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
                 { href: '/resources/what-is-a-psap', label: es ? '¿Qué es un PSAP?' : 'What Is a PSAP?' },
