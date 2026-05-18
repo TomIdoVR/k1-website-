@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.65] 2026-05-18 — Feat: new CAD software Mexico municipalities page
+
+**Added**
+- New GEO page: `/resources/cad-software-municipios-mexico/` — bilingual EN/ES
+- Targets: "CAD software Mexico", "sistema de despacho 911 Mexico", "software CAD municipios Mexico"
+- 6 FAQs covering C5 integration, 911 system, multi-agency dispatch, FORTASEG compliance, pricing
+- 6 requirement cards: 911 integration, C5 compatibility, VMS, GIS, multi-agency, FORTASEG
+- Metadata added to EN + ES metadata.ts
+- Added to sitemap.ts
+
 ## [2.64] 2026-05-18 — SEO: K-Video + Avigilon keyword targeting
 
 **Improved**

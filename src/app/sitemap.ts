@@ -38,6 +38,7 @@ const pages = [
   { path: '/resources/what-is-video-analytics', priority: 0.6 },
   { path: '/resources/what-is-sensor-fusion', priority: 0.6 },
   { path: '/resources/c5-command-centers-mexico-2026', priority: 0.7 },
+  { path: '/resources/cad-software-municipios-mexico', priority: 0.7 },
   { path: '/resources/what-is-incident-management-software', priority: 0.6 },
   { path: '/resources/911-call-center-software-guide', priority: 0.7 },
   { path: '/resources/best-public-safety-software', priority: 0.7 },
