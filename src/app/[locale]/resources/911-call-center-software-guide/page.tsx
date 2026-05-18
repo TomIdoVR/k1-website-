@@ -513,6 +513,7 @@ export default async function CallCenterSoftwareGuidePage({
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
+              { href: '/resources/public-safety-software-united-states', label: es ? 'Seguridad Pública EE.UU.: PSAP y NG911' : 'Public Safety Software — United States' },
               { href: '/resources/what-is-emergency-dispatch-software', label: es ? 'Software de Despacho de Emergencias' : 'Emergency Dispatch Software' },
               { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué Es un Software CAD?' : 'What Is CAD Software?' },
               { href: '/resources/what-is-a-psap', label: es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?' },

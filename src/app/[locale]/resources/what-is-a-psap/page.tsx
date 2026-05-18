@@ -567,6 +567,7 @@ export default async function WhatIsAPsapPage({
                   {es ? 'Recursos:' : 'Resources:'}
                 </span>
                 {[
+                  { href: '/resources/public-safety-software-united-states', label: es ? 'Seguridad Pública en EE.UU.' : 'Public Safety Software — US' },
                   { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Qué Es un Software CAD' : 'What Is CAD Dispatch Software' },
                   { href: '/resources/what-is-emergency-management-software', label: es ? 'Qué Es un Software de Gestión de Emergencias' : 'What Is Emergency Management Software' },
                   { href: '/resources/what-is-a-command-center', label: es ? 'Qué Es un Centro de Mando' : 'What Is a Command Center' },

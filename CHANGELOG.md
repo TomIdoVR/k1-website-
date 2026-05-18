@@ -16,6 +16,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 **Added**
 - `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
 
+## [2.76] 2026-05-18 — SEO: internal links to US market guide from 911 and PSAP pages
+
+**Improved**
+- /resources/911-call-center-software-guide/: added link to US market guide in Related Resources
+- /resources/what-is-a-psap/: added link to US market guide in Resources inline list
+- Goal: build authority for the new US market page via topically aligned pages
+
+---
+
 ## [2.75] 2026-05-18 — Feat: new US market guide — public safety software for US cities
 
 **Added**
