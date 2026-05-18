@@ -444,6 +444,11 @@ export const metadata = {
     description: "Plataforma unificada para la Politie, Brandweer y Meldkamers neerlandeses — despacho CAD compatible con GMK/CAD 2.0, analítica de cameratoezicht con IA y cumplimiento AVG/WPG/BIO.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-netherlands/",
   },
+  publicSafetySoftwareSingapore: {
+    title: "Software de Seguridad Pública para Singapur: SPF, SCDF, Smart Nation y PDPA | KabatOne",
+    description: "Plataforma unificada para la Singapore Police Force, SCDF y el ecosistema Smart Nation — despacho CAD 999/995, gestión de 90,000+ cámaras con IA y cumplimiento PDPA/CSA.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-singapore/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",

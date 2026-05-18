@@ -298,6 +298,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-singapore',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Singapur: SPF, SCDF, Smart Nation y PDPA',
+          excerpt: 'Plataforma unificada para la Singapore Police Force, SCDF y el ecosistema Smart Nation — despacho CAD 999/995, gestión de 90,000+ cámaras con IA y cumplimiento PDPA/CSA.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -641,6 +649,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for the Netherlands: Politie, Meldkamer NL, C2000 & AVG',
           excerpt: 'Unified platform for Dutch Politie, Brandweer, and Meldkamers — CAD dispatch compatible with GMK/CAD 2.0, AI cameratoezicht analytics, and AVG/WPG/BIO compliance.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-singapore',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Singapore: SPF, SCDF, Smart Nation & PDPA',
+          excerpt: 'Unified platform for Singapore Police Force, SCDF, and the Smart Nation ecosystem — 999/995 CAD dispatch, 90,000+ AI camera management, and PDPA/CSA compliance.',
           readTime: '7 min',
           isNew: true,
         },

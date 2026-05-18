@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.98] 2026-05-18 — Feat: Singapore market guide (SPF, SCDF, Smart Nation, PDPA, CSA)
+
+**Added**
+- New page: /resources/public-safety-software-singapore/ — Singapore Police Force (SPF, 999, 55 NPCs, 7 land divisions), SCDF (995, fire/EMS/hazmat), Home Team MHA integration, Safe City Test Bed, 90,000+ AI police cameras plan by 2030, GovTech/CODEX ecosystem, GeBIZ procurement, PDPA (amended 2021)/PDPC, CSA/Cybersecurity Act 2018/IM on IT, Government Managed Cloud (GMC)
+- 4 challenge cards: Smart Nation/GovTech/CODEX integration standards, 999/995 multi-agency dispatch integration, PDPA/CSA/data residency, 90K+ AI cameras at scale
+- 7 Singapore-specific FAQs: SPF/SCDF/Home Team structure, 999/995/POCC dispatch, Safe City Test Bed, GeBIZ/GovTech procurement, PDPA/CSA requirements, police camera/ANPR/LTA network, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.97] 2026-05-18 — Feat: Netherlands market guide (Politie, Meldkamer NL, C2000, AVG/WPG/BIO)
 
 **Added**
