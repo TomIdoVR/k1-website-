@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.59] 2026-05-18 — SEO: strengthen AI video analytics page (1,640 impressions, pos 28)
+
+**Improved**
+- H1 updated to "AI Video Analytics: How It Works for Public Safety" — targets ai video analytics query cluster
+- Hero paragraph updated to use "AI video analytics" explicitly
+- Added "AI-Powered Detection Capabilities" section with 6 detection cards (LPR, crowd, weapon, perimeter, abandoned objects, forensic)
+
+---
+
 ## [2.58] 2026-05-18 — SEO: internal links + meta fixes for top GSC opportunities
 
 **Fixed**
