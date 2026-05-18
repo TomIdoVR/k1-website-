@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.66] 2026-05-18 — SEO: Panic buttons CTR + K-Safety situational awareness targeting
+
+**Improved**
+- Panic buttons integration EN title: added "Alert to Dispatch in Under 4 Seconds" hook — CTR improvement for 111-impression page at pos 9.1 (0.9% CTR)
+- Panic buttons EN description: rewritten for specificity (unit dispatch + camera activation + supervisor notification)
+- K-Safety EN title: "Real-Time Public Safety Command Platform" → "Situational Awareness & Command Center Software | KabatOne K-Safety"
+- K-Safety EN description: added "situational awareness", "GIS map", "IoT alerts" to match query intent
+
+---
+
 ## [2.65] 2026-05-18 — Feat: new CAD software Mexico municipalities page
 
 **Added**

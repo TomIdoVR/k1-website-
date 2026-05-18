@@ -15,8 +15,8 @@ export const metadata = {
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
-    title: "Real-Time Public Safety Command Platform | KabatOne",
-    description: "Turn raw location data into actionable intelligence. K-Safety overlays incidents, units, and live feeds on a unified operational map. Book a demo.",
+    title: "Situational Awareness & Command Center Software | KabatOne K-Safety",
+    description: "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one operational GIS map — giving command centers complete situational awareness in real time. Book a demo.",
     canonical: "https://kabatone.com/k-safety/",
   },
   kTraffic: {
@@ -210,8 +210,8 @@ export const metadata = {
     canonical: "https://kabatone.com/integrations/drones/",
   },
   integrationPanicButtons: {
-    title: "Panic Button Integration for Public Safety | KabatOne",
-    description: "How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS. Silent alert triggers dispatch, camera activation, and unit notification in under 4 seconds.",
+    title: "Panic Button Integration — Alert to Dispatch in Under 4 Seconds | KabatOne",
+    description: "KabatOne integrates panic buttons with CAD dispatch, video, and GIS. A silent alert triggers unit dispatch, nearest camera activation, and supervisor notification in under 4 seconds.",
     canonical: "https://kabatone.com/integrations/panic-buttons/",
   },
   endOfSiloedResponse: {
