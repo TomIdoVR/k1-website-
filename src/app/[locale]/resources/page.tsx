@@ -412,6 +412,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-brazil',
+          category: 'Guide',
+          title: 'Public Safety Software for Brazil',
+          excerpt: 'Unified public safety platform for Brazilian states and CIOPS centers — video, 190/192/193 dispatch, GIS, and incident management across 214 million citizens.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-chile',
           category: 'Guide',
           title: 'Public Safety Software for Chile',

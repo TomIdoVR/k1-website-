@@ -359,6 +359,16 @@ export const metadata = {
     description: "Tecnología de seguridad pública para provincias y municipios argentinos — integración CMU Buenos Aires, despacho unificado 911/101/107, GIS y gestión de incidentes en una sola plataforma.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-argentina/",
   },
+  publicSafetySoftwareBrazil: {
+    title: "Software de Seguridad Pública para Brasil: CIOPS y Plataformas Estaduales | KabatOne",
+    description: "Plataforma unificada de seguridad pública para estados y CIOPS de Brasil — video, despacho 190/192/193, GIS y gestión de incidentes en más de 214 millones de ciudadanos.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-brazil/",
+  },
+  bestCadDispatchSoftware: {
+    title: "Mejor Software CAD de Despacho para Centros 911 en 2026 | KabatOne",
+    description: "Guía de compra del mejor software CAD de despacho para centros 911 y emergencias — comparativa de funciones, integraciones y modelos de despliegue para agencias de seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/best-cad-dispatch-software/",
+  },
   cadDispatchLatinAmerica: {
     title: "Software CAD de Despacho para América Latina: Guía de Centros de Emergencia | KabatOne",
     description: "Software CAD de despacho para centros C5/C4 latinoamericanos — soporte nativo 911/133/123/105, interfaz en español, experiencia en licitaciones LATAM. Desplegado en más de 40 ciudades que protegen 73M de ciudadanos.",

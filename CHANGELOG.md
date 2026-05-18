@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.69] 2026-05-18 — Feat: new Brazil public safety GEO page + build fix
+
+**Added**
+- New GEO page: `/resources/public-safety-software-brazil/` — bilingual EN/ES
+- Targets: "public safety software Brazil", "CIOPS software", "segurança pública software Brasil", "sistema de gestão de emergências Brasil"
+- 6 FAQs covering CIOPS centers, 190/192/193 dispatch, PM/Bombeiros/SAMU coordination, FNSP procurement (Lei 14.133/2021), São Paulo Detecta and Rio COR integration
+- Fragmented vs unified comparison table (6 rows) covering video, dispatch, inter-agency coordination, state structure, SENASP reporting
+- 5-step unified workflow covering São Paulo Detecta, COR, CIOPS, sensor fusion, and SSP reporting
+- Metadata added to EN + ES metadata.ts; added to sitemap.ts
+- Resources hub card added
+- Also added missing `bestCadDispatchSoftware` metadata key (EN + ES) to fix pre-existing TypeScript build error from untracked page
+
+---
+
 ## [2.68] 2026-05-18 — SEO: K-Traffic + K-Connect meta optimization
 
 **Improved**
