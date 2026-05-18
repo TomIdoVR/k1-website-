@@ -257,6 +257,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-germany',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Alemania: Leitstellen, BOS Digital y DSGVO',
+          excerpt: 'Plataforma unificada para Leitstellen integrados y fuerzas policiales alemanas — despacho CAD 110/112 con soporte BOS Digital TETRA, analítica de video con IA y cumplimiento BSI IT-Grundschutz.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -560,6 +568,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for India: Smart Cities, ICCC & 112 Emergency',
           excerpt: 'Unified platform for India\'s 100+ Smart City ICCCs and Safe City projects — 112 dispatch, AI video analytics, GIS situational awareness, and on-premises data localisation.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-germany',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Germany: Leitstellen, BOS Digital & DSGVO',
+          excerpt: 'Unified platform for German Integrated Leitstellen and police forces — 110/112 CAD dispatch with BOS Digital TETRA support, AI video analytics, and BSI IT-Grundschutz compliance.',
           readTime: '7 min',
           isNew: true,
         },

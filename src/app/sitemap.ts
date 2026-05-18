@@ -57,6 +57,7 @@ const pages = [
   { path: '/resources/public-safety-software-united-kingdom', priority: 0.75 },
   { path: '/resources/public-safety-software-australia', priority: 0.75 },
   { path: '/resources/public-safety-software-india', priority: 0.75 },
+  { path: '/resources/public-safety-software-germany', priority: 0.75 },
   { path: '/resources/cad-dispatch-software-latin-america', priority: 0.8 },
   { path: '/integrations/lpr', priority: 0.6 },
   { path: '/integrations/face-recognition', priority: 0.6 },

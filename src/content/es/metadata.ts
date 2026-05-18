@@ -419,6 +419,11 @@ export const metadata = {
     description: "Plataforma unificada para más de 100 ICCC de Smart Cities de India y proyectos Safe City — despacho 112, analítica de video con IA, conciencia situacional GIS y localización de datos on-premises.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-india/",
   },
+  publicSafetySoftwareGermany: {
+    title: "Software de Seguridad Pública para Alemania: Leitstellen, BOS Digital y DSGVO | KabatOne",
+    description: "Plataforma unificada para Leitstellen integrados y fuerzas policiales alemanas — despacho CAD 110/112 con soporte BOS Digital TETRA, analítica de video con IA y cumplimiento BSI IT-Grundschutz.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-germany/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",

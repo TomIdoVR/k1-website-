@@ -384,6 +384,11 @@ export const metadata = {
     description: "Unified platform for India's 100+ Smart City ICCCs and Safe City projects — 112 dispatch, AI video analytics, GIS situational awareness, and on-premises data localisation.",
     canonical: "https://kabatone.com/resources/public-safety-software-india/",
   },
+  publicSafetySoftwareGermany: {
+    title: "Public Safety Software for Germany: Leitstellen, BOS Digital & DSGVO | KabatOne",
+    description: "Unified platform for German Integrated Leitstellen and police forces — 110/112 CAD dispatch with BOS Digital TETRA support, AI video analytics, and BSI IT-Grundschutz compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-germany/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Public Safety Software for the UK: 999, Control Rooms & Safe City | KabatOne",
     description: "Unified platform for UK police forces, 999 control rooms, and Safe City programmes — CAD dispatch with NG999 support, AI video analytics, and UK GDPR compliance.",

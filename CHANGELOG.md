@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.93] 2026-05-18 — Feat: new Germany market guide (Leitstellen, BOS Digital, DSGVO, BSI)
+
+**Added**
+- New page: /resources/public-safety-software-germany/ — 16 Landespolizei forces, 300+ Integrierte Leitstellen, BOS Digital TETRA (750K+ terminals), DSGVO/BSI IT-Grundschutz, KRITIS protection, large events (Oktoberfest, Bundesliga)
+- 4 challenge cards: federal 16-Länder structure, Leitstellen modernisation, DSGVO/BSI data protection, mass events + KRITIS
+- 7 Germany-specific FAQs: police structure (Landespolizei/Bundespolizei/BKA), 110/112 Leitstellen, BOS Digital TETRA, VgV procurement, BSI/DSGVO, CCTV/facial recognition regulation, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.92] 2026-05-18 — Feat: new India market guide (Smart Cities, ICCC, 112, DPDP Act 2023)
 
 **Added**
