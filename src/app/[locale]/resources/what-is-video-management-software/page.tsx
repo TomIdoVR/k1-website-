@@ -62,6 +62,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           answer:
             'Un sistema de gestión de audio y video (AVMS) es una plataforma VMS que integra tanto feeds de videovigilancia como flujos de audio — sensores de detección de disparos, intercomunicadores y micrófonos ambientales — en una sola interfaz unificada. Para centros de mando de seguridad pública, un sistema de gestión de audio-video permite correlacionar automáticamente una alerta de disparo de un sensor acústico con la cámara más cercana, acelerando la verificación del incidente y el despacho. KabatOne K-Video integra video, LPR y fuentes de eventos de audio en una sola vista operativa.',
         },
+        {
+          question: '¿Qué es un VMS general y en qué difiere de un VMS para seguridad pública?',
+          answer:
+            'Un VMS general (software de gestión de video de propósito general) está diseñado para aplicaciones comerciales amplias — retail, campus corporativos, almacenes — con énfasis en grabación y reproducción básica. Un VMS para seguridad pública está construido específicamente para fuerzas del orden, centros de mando y operaciones municipales. Agrega capacidades que un VMS general típicamente no tiene: integración nativa con despacho CAD, mapeo GIS en tiempo real de ubicaciones de cámaras, control de acceso multiagencia, búsqueda forense simultánea en miles de cámaras y registro de cadena de custodia de evidencias. KabatOne K-Video está diseñado específicamente para seguridad pública, no adaptado de un VMS de propósito general.',
+        },
       ]
     : [
         {
@@ -98,6 +103,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           question: 'What is an audio video management system?',
           answer:
             'An audio video management system (AVMS) is a VMS platform that handles both video surveillance feeds and audio streams — including gunshot detection sensors, intercom systems, and ambient microphones — in a single unified interface. For public safety command centers, an audio video management system allows operators to correlate a gunshot alert from an acoustic sensor with the nearest camera feed automatically, speeding incident verification and dispatch. KabatOne K-Video integrates video, LPR, and audio event sources into one operational view.',
+        },
+        {
+          question: 'What is a general VMS and how does it differ from a public safety VMS?',
+          answer:
+            'A general VMS (general-purpose video management software) is designed for broad commercial applications — retail, corporate campuses, warehouses — with emphasis on recording and basic playback. A public safety VMS is built specifically for law enforcement, command centers, and municipal operations. It adds capabilities a general VMS typically lacks: native CAD dispatch integration so camera alerts trigger incident creation automatically, real-time GIS mapping of camera locations, multi-agency access control, forensic search across thousands of cameras simultaneously, and compliance logging for evidence chain-of-custody. KabatOne K-Video is purpose-built for public safety, not adapted from a general-purpose VMS.',
         },
       ]
 

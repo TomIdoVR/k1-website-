@@ -16,6 +16,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 **Added**
 - `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
 
+## [2.79] 2026-05-18 — SEO: add "general VMS" FAQ to VMS guide (GSC query pos 8.8)
+
+**Improved**
+- what-is-video-management-software: added new FAQ "What is a general VMS and how does it differ from a public safety VMS?" (EN + ES)
+- Targets GSC opportunity: "general vms" (31 impressions, pos 8.8) — already on page 1, needs CTR boost
+- Answer differentiates general-purpose VMS from public safety VMS; positions K-Video as purpose-built
+
+---
+
 ## [2.78] 2026-05-18 — SEO: add "911 dispatch department software" FAQ to 911 guide (GSC pos 16.7)
 
 **Improved**
