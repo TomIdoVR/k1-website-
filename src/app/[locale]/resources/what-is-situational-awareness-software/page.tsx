@@ -580,6 +580,7 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
                 {[
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Qué es una Plataforma de Seguridad Pública' : 'What Is a Public Safety Platform' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué es un RTCC' : 'What Is an RTCC' },
+                  { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS de Gestión de Video' : 'VMS Software Guide' },
                   { href: '/resources/rtcc-setup-guide', label: es ? 'Guía de RTCC' : 'RTCC Setup Guide' },
                   { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
                 ].map((link) => (

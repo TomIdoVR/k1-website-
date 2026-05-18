@@ -139,7 +139,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
           es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety',
           es ? 'El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA y se integra con despacho y GIS. Guía completa para agencias de seguridad pública.' : 'VMS software aggregates cameras from any manufacturer, adds AI analytics, and integrates with dispatch and GIS. Complete guide for public safety agencies.',
           es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
-          '2026-03-26'
+          '2026-05-18'
         )
       ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }} />
@@ -436,6 +436,8 @@ export default async function WhatIsVideoManagementSoftwarePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
+                { href: '/resources/what-is-video-analytics', en: 'What Is Video Analytics?', es: '¿Qué es la Analítica de Video?' },
+                { href: '/resources/video-analytics-use-cases', en: 'Video Analytics Use Cases for Command Centers', es: 'Casos de Uso de Analítica de Video para Centros de Mando' },
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un centro de crimen en tiempo real (RTCC)?' },

@@ -56,6 +56,11 @@ export default async function WhatIsVideoAnalyticsPage({
           answer:
             'Para un despliegue municipal de 200-500 cámaras con analítica de video en tiempo real, se necesita: servidores con GPUs para procesamiento (o infraestructura cloud con latencia controlada), red de transmisión con ancho de banda suficiente (mínimo 2-4 Mbps por cámara a 1080p), almacenamiento para retención de video (30-90 días según normativa), y una plataforma de gestión como KabatOne que unifique las alertas de analítica con el mapa operativo. El dimensionamiento depende de si se usa edge analytics en las cámaras o procesamiento centralizado.',
         },
+        {
+          question: '¿Qué es un sistema de analítica de video (VAS)?',
+          answer:
+            'Un sistema de analítica de video (VAS, por sus siglas en inglés) es una plataforma que combina grabación de video con procesamiento de inteligencia artificial para detectar eventos automáticamente — sin que un operador tenga que monitorear cada cámara en forma continua. A diferencia de un sistema VMS básico que solo graba y reproduce, un sistema de analítica de video ejecuta modelos de IA sobre el flujo en vivo: detección de intrusión, reconocimiento de placas (LPR), análisis de comportamiento y alertas en tiempo real. Para centros de mando de seguridad pública, un sistema de analítica de video reduce el tiempo de detección de incidentes de minutos a segundos.',
+        },
       ]
     : [
         {
@@ -87,6 +92,11 @@ export default async function WhatIsVideoAnalyticsPage({
           question: 'What infrastructure does video analytics require at municipal scale?',
           answer:
             'For a municipal deployment of 200–500 cameras with real-time video analytics, you need: GPU-equipped servers for processing (or cloud infrastructure with controlled latency), a transmission network with sufficient bandwidth (minimum 2–4 Mbps per camera at 1080p), storage for video retention (30–90 days per regulation), and a management platform like KabatOne that unifies analytics alerts with the operational map. Sizing depends on whether edge analytics is used at the cameras or centralized processing.',
+        },
+        {
+          question: 'What is a video analytics system?',
+          answer:
+            'A video analytics system is a platform that combines video recording with artificial intelligence processing to automatically detect events — without an operator monitoring every camera continuously. Unlike a basic VMS that only records and plays back, a video analytics system runs AI models on the live stream: intrusion detection, license plate recognition (LPR), behavioral analysis, and real-time alerts. For public safety command centers, a video analytics system reduces incident detection time from minutes to seconds by surfacing only relevant events rather than requiring manual camera review.',
         },
       ]
 

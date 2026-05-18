@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.82] 2026-05-18 — SEO: internal link cluster + new FAQs for VMS and video analytics
+
+**Improved**
+- `what-is-video-management-software`: added `video-analytics-use-cases` + `what-is-video-analytics` to Related Articles; updated article schema dateModified to 2026-05-18
+- `what-is-video-analytics`: added new FAQ "What is a video analytics system?" (EN + ES) targeting query "video analytics system" (64 imp, pos 24.3)
+- `what-is-situational-awareness-software`: added link to VMS software guide in Related Resources
+- All three changes strengthen the video/VMS internal link cluster around the top high-impression pages (5,013 imp VMS, 4,130 imp video analytics)
+
+---
+
 ## [2.81] 2026-05-18 — Feat: new Middle East market guide
 
 **Added**
