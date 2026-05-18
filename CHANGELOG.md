@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.73] 2026-05-18 — SEO: CAD dispatch internal links from 3 dispatch-focused /vs/ pages
+
+**Improved**
+- /vs/motorola/: added links to /resources/what-is-cad-dispatch-software/ and /resources/best-cad-dispatch-software/ — Motorola PremierOne CAD is their flagship CAD product, highest relevance
+- /vs/mark43/: added links to same two CAD dispatch resources — Mark43 is a cloud-native CAD vendor, direct buyer-intent overlap
+- /vs/axon/: added links to same two CAD dispatch resources — Axon CAD is their newer product line, capture CAD research intent
+- Goal: build authority for CAD dispatch resource pages via topically aligned comparison pages
+
+---
+
 ## [2.72] 2026-05-18 — Feat: new video analytics use cases guide (8 use cases + CAD integration)
 
 **Added**
