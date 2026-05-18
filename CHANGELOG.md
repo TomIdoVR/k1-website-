@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.71] 2026-05-18 — SEO: fix all meta descriptions over 160 chars (EN + ES)
+
+**Fixed**
+- Trimmed all descriptions exceeding Google's 160-char display limit in `src/content/en/metadata.ts` (was 41 over, now 0)
+- Trimmed all descriptions exceeding 160 chars in `src/content/es/metadata.ts` (was 63 over, now 0)
+- All edits preserve primary keyword, value proposition, and sentence clarity
+
 ## [2.70] 2026-05-18 — SEO: VMS + video analytics internal links from /vs/ comparison pages
 
 **Improved**
