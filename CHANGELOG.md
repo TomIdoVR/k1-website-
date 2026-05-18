@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.97] 2026-05-18 — Feat: Netherlands market guide (Politie, Meldkamer NL, C2000, AVG/WPG/BIO)
+
+**Added**
+- New page: /resources/public-safety-software-netherlands/ — één Politie (10 Eenheden + Landelijke Eenheid, 65K+ officers), Meldkamer NL project (GMK/CAD 2.0 replacing BVH), C2000 TETRA digital radio (50K+ terminals), P2000 pager complementary system, cameratoezicht + ANPR kentekenherkenning, 25 veiligheidsregio, GRIP incident management
+- 4 challenge cards: één Politie national IT vs regional Eenheden, Meldkamer NL/CAD 2.0 modernisation, AVG/WPG/BIO triple compliance, cameratoezicht + AI in strict AVG environment
+- 7 Netherlands-specific FAQs: Politie/Brandweer/GHOR/veiligheidsregio structure, 112/Meldkamer NL/GMK, C2000/P2000, Aanbestedingswet/TenderNed/PIANOo, AVG/WPG/BIO, cameratoezicht/ANPR, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.96] 2026-05-18 — Feat: new Spain market guide (CNP, Guardia Civil, Mossos, ENS, SIVE)
 
 **Added**

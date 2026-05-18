@@ -439,6 +439,11 @@ export const metadata = {
     description: "Plataforma unificada para CNP, Guardia Civil, Mossos d'Esquadra y Policías Locales — despacho CAD 112/SUE, videovigilancia con IA conforme a la AEPD y cumplimiento ENS categoría ALTA/CCN-STIC.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-spain/",
   },
+  publicSafetySoftwareNetherlands: {
+    title: "Software de Seguridad Pública para los Países Bajos: Politie, Meldkamer NL, C2000 y AVG | KabatOne",
+    description: "Plataforma unificada para la Politie, Brandweer y Meldkamers neerlandeses — despacho CAD compatible con GMK/CAD 2.0, analítica de cameratoezicht con IA y cumplimiento AVG/WPG/BIO.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-netherlands/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",

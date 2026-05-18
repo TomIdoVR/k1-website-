@@ -290,6 +290,15 @@ export default async function ResourcesPage({
           isNew: true,
         },
       ]
+        {
+          href: '/resources/public-safety-software-netherlands',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para los Países Bajos: Politie, Meldkamer NL, C2000 y AVG',
+          excerpt: 'Plataforma unificada para la Politie, Brandweer y Meldkamers — despacho CAD compatible con GMK/CAD 2.0, analítica de cameratoezicht con IA y cumplimiento AVG/WPG/BIO.',
+          readTime: '7 min',
+          isNew: true,
+        },
+      ]
     : [
         {
           href: '/resources/end-of-siloed-response',
@@ -624,6 +633,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for Spain: CNP, Guardia Civil, Mossos & ENS',
           excerpt: "Unified platform for CNP, Guardia Civil, Mossos d'Esquadra, and Policías Locales — 112/SUE CAD dispatch, AI video surveillance with AEPD compliance, and HIGH-category ENS/CCN-STIC certification.",
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-netherlands',
+          category: 'Market Guide',
+          title: 'Public Safety Software for the Netherlands: Politie, Meldkamer NL, C2000 & AVG',
+          excerpt: 'Unified platform for Dutch Politie, Brandweer, and Meldkamers — CAD dispatch compatible with GMK/CAD 2.0, AI cameratoezicht analytics, and AVG/WPG/BIO compliance.',
           readTime: '7 min',
           isNew: true,
         },
