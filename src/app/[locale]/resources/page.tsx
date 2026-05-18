@@ -281,6 +281,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-spain',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para España: CNP, Guardia Civil, Mossos y ENS',
+          excerpt: 'Plataforma unificada para CNP, Guardia Civil, Mossos d'Esquadra y Policías Locales — despacho CAD 112/SUE, videovigilancia con analítica de IA conforme a la AEPD y cumplimiento ENS categoría ALTA.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -608,6 +616,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for Italy: Polizia, Carabinieri, NUE 112 & GDPR',
           excerpt: 'Unified platform for Polizia di Stato, Carabinieri, and Polizia Locale — CAD dispatch with NUE 112/SOREU support, AI CCTV analytics compliant with Garante Privacy, and ACN cybersecurity requirements.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-spain',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Spain: CNP, Guardia Civil, Mossos & ENS',
+          excerpt: "Unified platform for CNP, Guardia Civil, Mossos d'Esquadra, and Policías Locales — 112/SUE CAD dispatch, AI video surveillance with AEPD compliance, and HIGH-category ENS/CCN-STIC certification.",
           readTime: '7 min',
           isNew: true,
         },

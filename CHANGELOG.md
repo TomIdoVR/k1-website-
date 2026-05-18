@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.96] 2026-05-18 — Feat: new Spain market guide (CNP, Guardia Civil, Mossos, ENS, SIVE)
+
+**Added**
+- New page: /resources/public-safety-software-spain/ — four-tier security structure (CNP, Guardia Civil, Mossos d'Esquadra/Ertzaintza/Policía Foral, 8,000+ Policías Locales), 17 autonomous 112/SUE centres, SIVE coastal surveillance, ENS mandatory framework, LOPDGDD/AEPD, CCN-STIC/PILAR, PLACSP procurement
+- 4 challenge cards: multi-tier CNP/GC/Mossos/Local siloed IT, 17 autonomous community 112 systems, ENS/LOPDGDD/AEPD compliance, SIVE + Frontex border/maritime security
+- 7 Spain-specific FAQs: force structure (CNP/GC/Mossos/Ertzaintza/Policías Locales), 112/SUE/CECOP dispatch, SIVE surveillance, LCSP/PLACSP procurement, ENS categories/CCN-STIC, SIVE/Frontex maritime, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.95] 2026-05-18 — Feat: new Italy market guide (Polizia, Carabinieri, NUE 112, GDPR, ACN)
 
 **Added**

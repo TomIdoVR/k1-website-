@@ -434,6 +434,11 @@ export const metadata = {
     description: "Plataforma unificada para Polizia di Stato, Carabinieri y Polizia Locale — despacho CAD con soporte NUE 112/SOREU, analítica de CCTV con IA conforme al Garante Privacy y requisitos ACN.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-italy/",
   },
+  publicSafetySoftwareSpain: {
+    title: "Software de Seguridad Pública para España: CNP, Guardia Civil, Mossos y ENS | KabatOne",
+    description: "Plataforma unificada para CNP, Guardia Civil, Mossos d'Esquadra y Policías Locales — despacho CAD 112/SUE, videovigilancia con IA conforme a la AEPD y cumplimiento ENS categoría ALTA/CCN-STIC.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-spain/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",
