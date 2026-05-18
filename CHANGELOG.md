@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.87] 2026-05-18 — SEO: update schema dateModified on 3 changed pages
+
+**Improved**
+- Updated `dateModified` to 2026-05-18 on pages that had content added this session:
+  - `what-is-video-analytics` (new "video analytics system" FAQ added in v2.82)
+  - `911-call-center-software-guide` (new FAQ + US guide link added in previous session)
+  - `what-is-a-psap` (new US guide internal link added in previous session)
+
+---
+
 ## [2.86] 2026-05-18 — Feat: new UK market guide (public-safety-software-united-kingdom)
 
 **Added**

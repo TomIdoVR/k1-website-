@@ -109,7 +109,7 @@ export default async function WhatIsVideoAnalyticsPage({
     es
       ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
       : 'https://kabatone.com/resources/what-is-video-analytics/',
-    '2026-04-07'
+    '2026-05-18'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },

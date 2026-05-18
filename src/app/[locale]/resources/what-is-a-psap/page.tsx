@@ -150,7 +150,7 @@ export default async function WhatIsAPsapPage({
               es
                 ? 'https://kabatone.com/es/resources/what-is-a-psap/'
                 : 'https://kabatone.com/resources/what-is-a-psap/',
-              '2026-03-30'
+              '2026-05-18'
             )
           ),
         }}

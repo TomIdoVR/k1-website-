@@ -113,7 +113,7 @@ export default async function CallCenterSoftwareGuidePage({
     es
       ? 'https://kabatone.com/es/resources/911-call-center-software-guide/'
       : 'https://kabatone.com/resources/911-call-center-software-guide/',
-    '2026-04-08'
+    '2026-05-18'
   )
 
   const bcSchema = breadcrumbSchema([
