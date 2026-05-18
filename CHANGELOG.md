@@ -7,6 +7,13 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.84] 2026-05-18 — SEO: panic-buttons FAQs + schema date updates
+
+**Improved**
+- `integrations/panic-buttons`: added 2 new FAQs (EN + ES) — "What is a duress alarm system?" and "How do panic buttons connect to 911 dispatch?" — targeting related queries; schema dateModified → 2026-05-18. Page has 111 imp at pos 9.1.
+
+---
+
 ## [2.83] 2026-05-18 — SEO: situational awareness FAQs + k-dispatch CAD link cluster
 
 **Improved**
