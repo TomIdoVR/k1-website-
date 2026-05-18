@@ -7,6 +7,14 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.83] 2026-05-18 — SEO: situational awareness FAQs + k-dispatch CAD link cluster
+
+**Improved**
+- `what-is-situational-awareness-software`: added 2 new FAQs (EN + ES) targeting "common operating picture (COP)" and "situational awareness in law enforcement"; updated schema dateModified to 2026-05-18
+- `k-dispatch`: added `what-is-cad-dispatch-software` and `best-cad-dispatch-software` to Related Resources to strengthen CAD dispatch content cluster
+
+---
+
 ## [2.82] 2026-05-18 — SEO: internal link cluster + new FAQs for VMS and video analytics
 
 **Improved**

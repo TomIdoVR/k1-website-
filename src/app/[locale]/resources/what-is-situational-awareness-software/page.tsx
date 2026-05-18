@@ -57,6 +57,16 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           answer:
             'KabatOne provee la plataforma unificada de conciencia situacional: K-Safety es el mapa operativo GIS que muestra incidentes, unidades de campo y alertas en tiempo real. K-Video agrega video en vivo con analítica de IA. K-Dispatch maneja el despacho CAD integrado. K-Traffic monitorea señalización y flujo vehicular. Todo en una sola interfaz. Los operadores del centro de mando ven el video, las posiciones de unidades y el estado del incidente en una pantalla — sin cambiar entre sistemas de diferentes proveedores.',
         },
+        {
+          question: '¿Qué es un Cuadro Operativo Común (COP) en conciencia situacional?',
+          answer:
+            'Un Cuadro Operativo Común (COP, del inglés Common Operating Picture) es una vista de datos compartida en tiempo real que muestra el estado operativo de todos los recursos, incidentes y amenazas en un área. En seguridad pública, el COP unifica las posiciones de unidades de patrulla, incidentes activos, video en vivo y alertas de sensores en un mapa que todos los mandos y operadores ven simultáneamente — sin importar si están en el centro de mando o en terreno. El software de conciencia situacional es la plataforma que construye y mantiene el COP, actualizándolo en tiempo real conforme llegan datos de campo.',
+        },
+        {
+          question: '¿Cómo se usa la conciencia situacional en seguridad pública y fuerzas del orden?',
+          answer:
+            'En fuerzas del orden y seguridad pública, la conciencia situacional se usa para: (1) monitorear en tiempo real la posición y estado de todas las unidades de patrulla, (2) correlacionar alertas de cámaras, sensores de disparos y botones de pánico con el mapa operativo, (3) coordinar respuesta multiagencia durante incidentes de gran escala — movilizaciones, eventos masivos, emergencias, (4) proporcionar al comandante una vista consolidada del incidente para tomar decisiones de despacho, y (5) alimentar el centro de despacho CAD con datos en tiempo real. Sin conciencia situacional, los operadores trabajan con información fragmentada que llega por radio, teléfono y sistemas separados.',
+        },
       ]
     : [
         {
@@ -88,6 +98,16 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           question: 'How does KabatOne support situational awareness?',
           answer:
             'KabatOne provides the unified situational awareness platform: K-Safety is the GIS operational map showing incidents, field units, and alerts in real time. K-Video aggregates live video with AI analytics. K-Dispatch handles integrated CAD dispatch. K-Traffic monitors signalization and vehicle flow. All in one interface. Command center operators see video, unit positions, and incident status on one screen — without switching between systems from different vendors.',
+        },
+        {
+          question: 'What is a Common Operating Picture (COP) in situational awareness?',
+          answer:
+            'A Common Operating Picture (COP) is a shared real-time data view that shows the operational status of all resources, incidents, and threats in an area. In public safety, the COP unifies patrol unit positions, active incidents, live video, and sensor alerts on a single map that all commanders and operators see simultaneously — whether they are at the command center or in the field. Situational awareness software is the platform that builds and maintains the COP, updating it in real time as field data arrives.',
+        },
+        {
+          question: 'How is situational awareness software used in law enforcement?',
+          answer:
+            'In law enforcement, situational awareness software is used to: (1) monitor the real-time position and status of all patrol units, (2) correlate camera alerts, gunshot sensor events, and panic button activations with the operational map, (3) coordinate multi-agency response during large-scale incidents — mobilizations, mass events, emergencies, (4) give the incident commander a consolidated view to make dispatch decisions, and (5) feed the CAD dispatch center with live data. Without situational awareness software, operators work with fragmented information arriving via radio, phone, and disconnected systems.',
         },
       ]
 
@@ -162,7 +182,7 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
               es
                 ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software/'
                 : 'https://kabatone.com/resources/what-is-situational-awareness-software/',
-              '2026-03-26'
+              '2026-05-18'
             )
           ),
         }}

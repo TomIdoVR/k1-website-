@@ -392,6 +392,28 @@ export default async function KDispatchPage({
                   {es ? 'Guía de referencia →' : 'Reference guide →'}
                 </span>
               </Link>
+              <Link href="/resources/what-is-cad-dispatch-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es el software CAD de despacho?' : 'What Is CAD Dispatch Software?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Mejor software CAD en 2026' : 'Best CAD Dispatch Software in 2026'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía del comprador →' : 'Buyer\'s guide →'}
+                </span>
+              </Link>
             </div>
             <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '13px', color: 'var(--muted)' }}>
