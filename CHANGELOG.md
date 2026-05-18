@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.60] 2026-05-18 — SEO: add internal links to video analytics page from 3 resource pages
+
+**Improved**
+- what-is-video-management-software: added "Video Analytics" to Resources inline link row → /resources/what-is-video-analytics
+- what-is-lpr-license-plate-recognition: added "AI video analytics" link in Definition section → /resources/what-is-video-analytics
+- what-is-situational-awareness-software: added "AI video analytics" link in Contextual Video Integration paragraph → /resources/what-is-video-analytics
+
+---
+
 ## [2.59] 2026-05-18 — SEO: strengthen AI video analytics page (1,640 impressions, pos 28)
 
 **Improved**

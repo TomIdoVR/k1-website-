@@ -352,6 +352,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas' : 'Platforms' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: 'RTCC' },
                   { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
+                  { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}

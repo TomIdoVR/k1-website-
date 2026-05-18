@@ -236,8 +236,8 @@ export default async function WhatIsLprPage({
           </p>
           <p style={{ fontSize: '15px', color: '#94a3b8', lineHeight: 1.8 }}>
             {es
-              ? 'En el contexto de seguridad pública y comando unificado, el LPR no opera como sistema aislado. Su valor real está en la integración con mapas GIS, videovigilancia y sistemas de despacho — permitiendo al operador detectar, localizar y responder a un vehículo de interés desde una sola interfaz operativa.'
-              : 'In the context of public safety and unified command, LPR does not operate as an isolated system. Its real value is in integration with GIS maps, video surveillance, and dispatch systems — allowing the operator to detect, locate, and respond to a vehicle of interest from a single operational interface.'}
+              ? <>En el contexto de seguridad pública y comando unificado, el LPR no opera como sistema aislado. Su valor real está en la integración con mapas GIS, <Link href="/resources/what-is-video-analytics" style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>analítica de video</Link> y sistemas de despacho — permitiendo al operador detectar, localizar y responder a un vehículo de interés desde una sola interfaz operativa.</>
+              : <>In the context of public safety and unified command, LPR does not operate as an isolated system. Its real value is in integration with GIS maps, <Link href="/resources/what-is-video-analytics" style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>AI video analytics</Link>, and dispatch systems — allowing the operator to detect, locate, and respond to a vehicle of interest from a single operational interface.</>}
           </p>
         </section>
 
