@@ -7,6 +7,22 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.63] 2026-05-18 — SEO: VMS + situational awareness + k-dispatch keyword targeting
+
+**Improved**
+- VMS page H1: "What Is Video Management Software?" → "What Is VMS Software? A Video Management Guide for Public Safety" — targets 477-impression "vms software" query cluster (pos 34.2)
+- VMS page EN title: updated to "What Is VMS Software? Video Management for Public Safety | KabatOne"
+- VMS page EN description: added "behavioral detection" to keyword list
+- VMS page: added 4-stat bar (10,000+ cameras, <2s latency, 30-40% response time, 99.9% uptime) to boost E-E-A-T
+- Situational awareness EN title: "Situational Awareness Software for Public Safety" → "What Is Situational Awareness Software? Guide for Command Centers | KabatOne" — matches informational intent for 603-impression page at pos 16.0
+- Situational awareness ES title: updated to match informational intent
+- Situational awareness article schema title updated to match new title
+- K-Dispatch EN title: "CAD and Emergency Dispatch Software for 911 Centers" → "911 CAD Dispatch Software for Emergency Centers" — targets "911 cad software" cluster
+- K-Dispatch EN description: added "911 call handling" to target pos 8.5 query
+- K-Dispatch H1 (EN + ES): added "911" explicitly — EN: "AI-Powered 911 CAD Dispatch Software for Emergency Centers"
+
+---
+
 ## [2.62] 2026-05-18 — SEO: CAD meta fixes + C5 internal link from homepage
 
 **Fixed**

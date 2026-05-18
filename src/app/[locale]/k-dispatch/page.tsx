@@ -28,8 +28,8 @@ export default async function KDispatchPage({
   const content = {
     eyebrow: es ? 'Despacho de Emergencias · K-Dispatch' : 'Emergency Dispatch · K-Dispatch',
     h1: es
-      ? 'Sistema CAD y Despacho de Emergencias de Nueva Generación'
-      : 'AI-Powered Emergency Dispatch and CAD System',
+      ? 'Software de Despacho 911 y Sistema CAD para Centros de Emergencias'
+      : 'AI-Powered 911 CAD Dispatch Software for Emergency Centers',
     subtitle: es
       ? 'Plataforma de Despacho Asistida por Computadora (CAD) que optimiza la respuesta a emergencias, mejora la comunicación multiagencia y se integra con todas las tecnologías de seguridad pública.'
       : 'AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.',

@@ -144,13 +144,38 @@ export default async function WhatIsVideoManagementSoftwarePage({
               {es ? 'Guía de Referencia' : 'Reference Guide'}
             </p>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '24px' }}>
-              {es ? '¿Qué Es el Software de Gestión de Video?' : 'What Is Video Management Software?'}
+              {es ? '¿Qué Es un Software VMS? Guía de Gestión de Video para Seguridad Pública' : 'What Is VMS Software? A Video Management Guide for Public Safety'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
                 ? 'El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante y protocolo en una sola interfaz unificada. Graba, organiza, reproduce y analiza video de forma centralizada. Los sistemas VMS modernos para seguridad pública van más allá de la simple grabación: agregan analítica de inteligencia artificial — detección de objetos, reconocimiento de placas vehiculares (LPR), análisis de comportamiento — directamente al flujo de video. Esto transforma las cámaras de dispositivos pasivos de registro a sensores activos de detección que alertan a los operadores en tiempo real cuando ocurre un evento relevante.'
                 : 'Video management software (VMS) is a platform that aggregates video surveillance camera feeds from any manufacturer and protocol into a single unified interface. It records, organizes, plays back, and analyzes video centrally. Modern VMS systems for public safety go beyond simple recording: they add artificial intelligence analytics — object detection, license plate recognition (LPR), behavioral analysis — directly to the video pipeline. This transforms cameras from passive recording devices into active detection sensors that alert operators in real time when a relevant event occurs.'}
             </p>
+          </div>
+        </section>
+
+        {/* ── STATS BAR ── */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '40px 32px', background: 'rgba(59,130,246,0.04)' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
+            {(es
+              ? [
+                  { value: '10,000+', label: 'Cámaras por instancia VMS' },
+                  { value: '< 2 seg', label: 'Latencia de alerta de IA' },
+                  { value: '30–40%', label: 'Reducción en tiempo de respuesta' },
+                  { value: '99.9%', label: 'Uptime en despliegues de ciudad' },
+                ]
+              : [
+                  { value: '10,000+', label: 'Cameras per VMS instance' },
+                  { value: '< 2 sec', label: 'AI alert latency' },
+                  { value: '30–40%', label: 'Reduction in response time' },
+                  { value: '99.9%', label: 'Uptime in city deployments' },
+                ]
+            ).map((stat, i) => (
+              <div key={i}>
+                <p style={{ fontFamily: 'DM Mono, monospace', fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#3b82f6', marginBottom: '6px', marginTop: 0 }}>{stat.value}</p>
+                <p style={{ fontSize: '12px', fontWeight: 400, color: 'var(--muted)', lineHeight: 1.4, marginBottom: 0 }}>{stat.label}</p>
+              </div>
+            ))}
           </div>
         </section>
 

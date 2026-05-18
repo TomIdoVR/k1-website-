@@ -319,6 +319,11 @@ export const metadata = {
     description: "C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.",
     canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026/",
   },
+  cadSoftwareMunicipiosMexico: {
+    title: "CAD Software for Mexico Municipalities: 911 Dispatch Guide | KabatOne",
+    description: "CAD dispatch software for Mexican municipalities must integrate with 911, C5 command centers, and city cameras. Learn what to evaluate and how KabatOne deploys across 40+ Mexican cities.",
+    canonical: "https://kabatone.com/resources/cad-software-municipios-mexico/",
+  },
   callCenterSoftwareGuide: {
     title: "911 Call Center Software: Complete Buyer's Guide | KabatOne",
     description: "911 call center software manages call intake, CAD dispatch, and unit coordination. Learn what modern 911 systems include and how to evaluate them.",

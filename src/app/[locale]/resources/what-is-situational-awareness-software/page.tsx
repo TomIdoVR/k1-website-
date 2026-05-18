@@ -154,8 +154,8 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? '¿Qué Es un Software de Conciencia Situacional? Guía Completa'
-                : 'What Is Situational Awareness Software? Complete Guide',
+                ? '¿Qué Es el Software de Conciencia Situacional? Guía para Centros de Mando'
+                : 'What Is Situational Awareness Software? Guide for Command Centers',
               es
                 ? 'Un software de conciencia situacional agrega cámaras, sensores, despacho y datos GIS en un mapa operativo unificado para mejorar los tiempos de respuesta y la coordinación.'
                 : 'Situational awareness software aggregates cameras, sensors, dispatch, and GIS data into a unified operational map to improve response times and coordination.',

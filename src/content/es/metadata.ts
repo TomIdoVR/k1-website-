@@ -319,6 +319,11 @@ export const metadata = {
     description: "Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.",
     canonical: "https://kabatone.com/es/resources/c5-command-centers-mexico-2026/",
   },
+  cadSoftwareMunicipiosMexico: {
+    title: "Software CAD para Municipios de México: Guía de Despacho 911 | KabatOne",
+    description: "El software CAD para municipios mexicanos debe integrarse con el 911, los centros C5 y las cámaras de la ciudad. Conoce qué evaluar y cómo KabatOne opera en más de 40 ciudades.",
+    canonical: "https://kabatone.com/es/resources/cad-software-municipios-mexico/",
+  },
   callCenterSoftwareGuide: {
     title: "Software Centro 911: Guía Completa para PSAP | KabatOne",
     description: "El software de centro de atención 911 gestiona recepción de llamadas, despacho CAD y coordinación de unidades. Qué incluyen los sistemas modernos y cómo evaluarlos.",
