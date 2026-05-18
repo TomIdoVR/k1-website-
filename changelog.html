@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.56 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.56</span><span class="tl-date">2026-05-18</span></div>
+        <div class="tl-title">SEO Slack Agent — complete implementation</div>
+        <ul class="tl-body">
+          <li>Added <code>src/lib/seo-agent/types.ts</code> — shared TypeScript types (IntentType, AgentContext, SmallFix, BigChange, IntentResult).</li>
+          <li>Added <code>slack-verify.ts</code> — HMAC-SHA256 signature verification with 5-minute replay attack prevention.</li>
+          <li>Added <code>slack.ts</code> — Slack Web API helpers: thread replies and interactive ✅/❌ approval blocks.</li>
+          <li>Added <code>context.ts</code> — assembles GSC data (via seo_weekly.py), SEO master plan, and last 20 GitHub commits.</li>
+          <li>Added <code>intent.ts</code> — Claude API intent classifier routing to question / small_fix / big_change.</li>
+          <li>Added <code>github.ts</code> — single-file patch (Contents API) + atomic multi-file commit (Git Data API tree).</li>
+          <li>Added <code>pending-store.ts</code> — in-memory store for big-change approval state between Slack interactions.</li>
+          <li>Updated webhook routes to use new lib API (verifySlackSignature, commitFiles, savePending/getPending).</li>
+        </ul>
+      </div>
+
       <!-- v2.55 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.55</span><span class="tl-date">2026-05-18</span></div>

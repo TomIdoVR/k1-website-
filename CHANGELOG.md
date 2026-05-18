@@ -7,6 +7,20 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.56] 2026-05-18 — SEO Slack Agent — complete implementation
+
+**Added**
+- `src/lib/seo-agent/types.ts` — shared TypeScript types (IntentType, AgentContext, SmallFix, BigChange, IntentResult)
+- `src/lib/seo-agent/slack-verify.ts` — HMAC-SHA256 signature verification with replay attack prevention
+- `src/lib/seo-agent/slack.ts` — Slack Web API helpers: thread replies and interactive approval blocks
+- `src/lib/seo-agent/context.ts` — assembles GSC data (via seo_weekly.py), SEO master plan, and recent GitHub commits
+- `src/lib/seo-agent/intent.ts` — Claude API intent classifier (question / small_fix / big_change)
+- `src/lib/seo-agent/github.ts` — single-file patch (Contents API) + atomic multi-file commit (Git Data API)
+- `src/lib/seo-agent/pending-store.ts` — in-memory store for pending big-change approvals
+- Updated routes to use new lib API (verifySlackSignature, commitFiles, savePending/getPending)
+
+---
+
 ## [2.55] 2026-05-18 — SEO Slack Agent dependencies
 
 **Added**
