@@ -397,6 +397,14 @@ export default async function HomePage({
             </Link>
           </div>
 
+          {/* C5 internal link */}
+          <p className="hp-c5-link">
+            {es
+              ? <>Conoce cómo funcionan los <Link href="/resources/how-c5-command-centers-work" style={{color:'#60a5fa',textDecoration:'none'}}>centros de mando C5 →</Link></>
+              : <>Learn how <Link href="/resources/how-c5-command-centers-work" style={{color:'#60a5fa',textDecoration:'none'}}>C5 command centers work →</Link></>
+            }
+          </p>
+
         </section>
         </div>
 
@@ -799,9 +807,18 @@ export default async function HomePage({
           align-items: center;
           justify-content: center;
           gap: 14px;
-          margin-bottom: 52px;
+          margin-bottom: 24px;
           animation: hp-reveal 0.8s cubic-bezier(0.2,0.8,0.4,1) both;
           animation-delay: 0.5s;
+        }
+        .hp-c5-link {
+          text-align: center;
+          font-family: 'DM Mono', monospace;
+          font-size: 12px;
+          color: var(--muted);
+          margin-bottom: 52px;
+          animation: hp-reveal 0.8s cubic-bezier(0.2,0.8,0.4,1) both;
+          animation-delay: 0.6s;
         }
         .hp-btn-primary {
           display: inline-flex;

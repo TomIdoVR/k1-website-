@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/",
   },
   kDispatch: {
-    title: "CAD and Emergency Dispatch Software for 911 Centers | KabatOne",
-    description: "From call intake to unit dispatch in seconds. K-Dispatch centralizes 911 intake, recommends units automatically, and logs every action for public safety teams.",
+    title: "911 CAD Dispatch Software for Emergency Centers | KabatOne",
+    description: "From 911 call handling to unit dispatch in seconds. K-Dispatch centralizes call intake, recommends units automatically, and integrates with video and GIS for public safety teams.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {

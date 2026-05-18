@@ -7,6 +7,15 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.62] 2026-05-18 — SEO: CAD meta fixes + C5 internal link from homepage
+
+**Fixed**
+- CAD dispatch EN description: 189 → 158 chars (was getting cut in SERPs)
+- CAD dispatch ES description tightened (230 → 143 chars) and title shortened (91 → 49 chars)
+- Homepage: added internal link to /resources/how-c5-command-centers-work/ (ES C5 page at position 9.7 needs authority)
+
+---
+
 ## [2.61] 2026-05-18 — SEO: 911 call center page meta fix + internal links
 
 **Fixed**
