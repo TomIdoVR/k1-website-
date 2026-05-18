@@ -57,6 +57,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           answer:
             'Los VMS de última generación incluyen detección y clasificación de objetos (personas, vehículos, armas), reconocimiento de placas vehiculares (LPR/ALPR), reconocimiento facial, análisis de comportamiento (merodeo, intrusión perimetral, abandono de objeto), conteo de personas, mapas de calor y detección de audio (disparos, gritos). Estas capacidades transforman el video de registro pasivo a detección activa en tiempo real.',
         },
+        {
+          question: '¿Qué es un sistema de gestión de audio y video (AVMS)?',
+          answer:
+            'Un sistema de gestión de audio y video (AVMS) es una plataforma VMS que integra tanto feeds de videovigilancia como flujos de audio — sensores de detección de disparos, intercomunicadores y micrófonos ambientales — en una sola interfaz unificada. Para centros de mando de seguridad pública, un sistema de gestión de audio-video permite correlacionar automáticamente una alerta de disparo de un sensor acústico con la cámara más cercana, acelerando la verificación del incidente y el despacho. KabatOne K-Video integra video, LPR y fuentes de eventos de audio en una sola vista operativa.',
+        },
       ]
     : [
         {
@@ -88,6 +93,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           question: 'What AI analytics does a modern VMS include?',
           answer:
             'State-of-the-art VMS systems include object detection and classification (people, vehicles, weapons), license plate recognition (LPR/ALPR), facial recognition, behavioral analysis (loitering, perimeter intrusion, abandoned object), people counting, heat maps, and audio detection (gunshots, screaming). These capabilities transform video from passive recording to active real-time detection.',
+        },
+        {
+          question: 'What is an audio video management system?',
+          answer:
+            'An audio video management system (AVMS) is a VMS platform that handles both video surveillance feeds and audio streams — including gunshot detection sensors, intercom systems, and ambient microphones — in a single unified interface. For public safety command centers, an audio video management system allows operators to correlate a gunshot alert from an acoustic sensor with the nearest camera feed automatically, speeding incident verification and dispatch. KabatOne K-Video integrates video, LPR, and audio event sources into one operational view.',
         },
       ]
 

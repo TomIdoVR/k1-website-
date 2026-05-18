@@ -16,6 +16,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 **Added**
 - `/resources/best-cad-dispatch-software/` — buyer's guide page for 911 CAD dispatch software (was created but not committed)
 
+## [2.77] 2026-05-18 — SEO: add "audio video management system" FAQ to VMS guide (GSC query pos 11.5)
+
+**Improved**
+- what-is-video-management-software: added new FAQ "What is an audio video management system?" (EN + ES)
+- FAQ answer defines AVMS, explains audio+video correlation for command centers, links to K-Video
+- Targets GSC ranking opportunity: "audio video management system" (17 impressions, pos 11.5)
+- Added to both EN and ES FAQ arrays to apply to both locales
+
+---
+
 ## [2.76] 2026-05-18 — SEO: internal links to US market guide from 911 and PSAP pages
 
 **Improved**
