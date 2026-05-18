@@ -90,7 +90,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/how-c5-command-centers-work/",
   },
   smartCityPlatformGuide: {
-    title: "Smart City Platform Guide — Technology, Use Cases & Selection | KabatOne",
+    title: "Smart City Platform Guide — Use Cases & Technology | KabatOne",
     description: "A smart city platform connects IoT sensors, video, traffic systems, and emergency services into one operational view. Guide to selecting and deploying the right platform.",
     canonical: "https://kabatone.com/resources/smart-city-platform-guide/",
   },
@@ -106,22 +106,22 @@ export const metadata = {
   },
   vsMilestone: {
     title: "KabatOne vs Milestone XProtect — Public Safety Platform Comparison",
-    description: "Milestone XProtect manages video. KabatOne adds CAD dispatch, GIS situational awareness, traffic management, and field operations — connecting the full response workflow without stitching together third-party systems.",
+    description: "Milestone XProtect manages video. KabatOne adds CAD dispatch, GIS, traffic management, and field operations — connecting the full response workflow without stitching together third-party systems.",
     canonical: "https://kabatone.com/vs/milestone/",
   },
   vsVms: {
-    title: "KabatOne vs Traditional VMS — Beyond Video Monitoring for Public Safety",
+    title: "KabatOne vs Traditional VMS — Beyond Video for Public Safety",
     description: "A standard VMS manages cameras. KabatOne adds CAD dispatch, GIS, traffic management, and field operations natively — replacing fragmented multi-vendor stacks with one unified public safety platform.",
     canonical: "https://kabatone.com/vs/vms/",
   },
   vsMotorola: {
-    title: "KabatOne vs Motorola Solutions — Unified Public Safety Platform Comparison",
-    description: "Motorola Solutions offers PremierOne CAD, Avigilon video, and CommandCentral Aware as separate products. KabatOne integrates video, CAD, GIS, and traffic in one native platform — no cross-system integration projects required.",
+    title: "KabatOne vs Motorola Solutions — Unified Platform Comparison",
+    description: "Motorola Solutions offers PremierOne CAD, Avigilon video, and CommandCentral Aware as separate products. KabatOne integrates video, CAD, GIS, and traffic in one platform — no integration projects.",
     canonical: "https://kabatone.com/vs/motorola/",
   },
   vsHexagon: {
     title: "KabatOne vs Hexagon Safety — CAD, GIS, and Beyond",
-    description: "Hexagon HxGN OnCall delivers mature CAD and world-class GIS. KabatOne matches that and adds native video management and traffic management — connecting the full response workflow without additional integrations.",
+    description: "Hexagon HxGN OnCall delivers mature CAD and world-class GIS. KabatOne matches that and adds native video and traffic management — connecting the full response workflow without additional integrations.",
     canonical: "https://kabatone.com/vs/hexagon/",
   },
   vsMark43: {
@@ -131,36 +131,36 @@ export const metadata = {
   },
   vsAxon: {
     title: "KabatOne vs Axon — Command Center Platform Comparison",
-    description: "Axon built a powerful body camera and evidence ecosystem. KabatOne is software-native: fixed camera video, full CAD dispatch, GIS situational awareness, and traffic management — no proprietary hardware required.",
+    description: "Axon built a powerful body camera and evidence ecosystem. KabatOne is software-native: fixed camera video, full CAD dispatch, GIS, and traffic management — no proprietary hardware required.",
     canonical: "https://kabatone.com/vs/axon/",
   },
   vsCarbyne: {
     title: "KabatOne vs Carbyne — Next-Gen 911 vs Full Response Platform",
-    description: "Carbyne reinvented 911 call intake with real-time caller location and phone video. KabatOne manages everything after the call: CAD dispatch, city camera video, GIS situational awareness, and traffic management.",
+    description: "Carbyne reinvented 911 call intake with real-time caller location and phone video. KabatOne manages everything after the call: CAD dispatch, city cameras, GIS, and traffic management.",
     canonical: "https://kabatone.com/vs/carbyne/",
   },
   vsCad: {
-    title: "KabatOne vs Traditional CAD Systems — Beyond Dispatch for Public Safety",
-    description: "Traditional CAD dispatches units and logs calls. KabatOne adds native video management, GIS situational awareness, traffic management, and field operations — replacing fragmented stacks with one unified platform.",
+    title: "KabatOne vs Traditional CAD — Beyond Dispatch for Public Safety",
+    description: "Traditional CAD dispatches units and logs calls. KabatOne adds native video management, GIS, traffic management, and field operations — replacing fragmented stacks with one unified platform.",
     canonical: "https://kabatone.com/vs/cad/",
   },
   vsFusus: {
     title: "KabatOne vs Fusus — Real-Time Crime Center vs Full Operations Platform",
-    description: "Fusus aggregates video from public and private cameras for real-time situational awareness. KabatOne adds full CAD dispatch, GIS, and traffic management — a unified operations platform that goes beyond video intelligence.",
+    description: "Fusus aggregates video from public and private cameras for real-time awareness. KabatOne adds full CAD dispatch, GIS, and traffic management — a unified platform that goes beyond video intelligence.",
     canonical: "https://kabatone.com/vs/fusus/",
   },
   vsPrepared911: {
     title: "KabatOne vs Prepared 911 — NG911 Call Taking vs Full Response Platform",
-    description: "Prepared 911 modernizes 911 call receipt with NG911, caller video, and text-to-911. KabatOne manages everything after the call: full CAD dispatch, city camera video, GIS situational awareness, and traffic management.",
+    description: "Prepared 911 modernizes 911 call receipt with NG911, caller video, and text-to-911. KabatOne manages everything after the call: full CAD dispatch, city cameras, GIS, and traffic management.",
     canonical: "https://kabatone.com/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "KabatOne vs Peregrine — Predictive Analytics vs Unified Operations Platform",
-    description: "Peregrine delivers predictive crime analytics and resource deployment intelligence. KabatOne is the operational platform where response happens: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
+    title: "KabatOne vs Peregrine — Predictive Analytics vs Unified Platform",
+    description: "Peregrine delivers predictive crime analytics and resource intelligence. KabatOne is the operational platform: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
       title: "KabatOne vs Peregrine — Predictive Analytics vs Unified Operations",
-      description: "Peregrine delivers predictive crime analytics and resource deployment intelligence. KabatOne is the operational platform where response happens: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
+      description: "Peregrine delivers predictive crime analytics and resource intelligence. KabatOne is the operational platform: full CAD dispatch, AI video, GIS, and traffic — all native in one system.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -201,7 +201,7 @@ export const metadata = {
   },
   integrationAccessControl: {
     title: "Access Control Integration for Public Safety | KabatOne",
-    description: "How KabatOne integrates physical access control systems with video, CAD dispatch, and GIS. Automatic response to access violations at government buildings, hospitals, critical infrastructure, and campuses.",
+    description: "How KabatOne integrates physical access control with video, CAD dispatch, and GIS. Automatic response to access violations at government buildings, hospitals, and critical infrastructure.",
     canonical: "https://kabatone.com/integrations/access-control/",
   },
   integrationDrones: {
@@ -216,31 +216,31 @@ export const metadata = {
   },
   endOfSiloedResponse: {
     title: "The End of Siloed Response — Industry Brief 2026 | KabatOne",
-    description: "Free industry brief: how public safety leaders can move from fragmented systems to unified operations. Covers market signals, standards, LATAM deployments, and KabatOne's architecture. Download the 20-page PDF.",
+    description: "Industry brief: how public safety leaders can move from fragmented systems to unified operations. Covers market signals, standards, LATAM deployments, and KabatOne's architecture.",
     canonical: "https://kabatone.com/resources/end-of-siloed-response/",
   },
   whatIsCadDispatchSoftware: {
-    title: "What Is CAD Dispatch Software? A Guide for Public Safety Agencies | KabatOne",
-    description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS in a unified platform.",
+    title: "What Is CAD Dispatch Software? Guide for Public Safety | KabatOne",
+    description: "CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how CAD integrates with video and GIS.",
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "What Is Video Management Software (VMS)? A Guide for Public Safety | KabatOne",
+    title: "What Is Video Management Software? Public Safety VMS Guide | KabatOne",
     description: "VMS software aggregates cameras from any manufacturer, adds AI analytics like LPR and facial recognition, and integrates with CAD dispatch and GIS. Complete guide for public safety agencies.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
     title: "What Is a Real-Time Crime Center (RTCC)? Complete Guide | KabatOne",
-    description: "A Real-Time Crime Center (RTCC) integrates live video, AI analytics, LPR, gunshot detection, and dispatch into a unified command environment. Learn how RTCCs work, what technologies they use, and how to build one.",
+    description: "A Real-Time Crime Center (RTCC) integrates live video, AI analytics, LPR, gunshot detection, and dispatch into a unified command environment. Learn how RTCCs work and how to build one.",
     canonical: "https://kabatone.com/resources/what-is-a-real-time-crime-center/",
   },
   vsRapidsos: {
-    title: "KabatOne vs RapidSOS — Call Data Enrichment vs Full Operations Platform",
-    description: "RapidSOS enriches 911 call intake with precise caller location, health data, and device context. KabatOne manages the full response: CAD dispatch, city camera video, GIS, and traffic management. See how they compare and work together.",
+    title: "KabatOne vs RapidSOS — Call Data Enrichment vs Full Platform",
+    description: "RapidSOS enriches 911 call intake with precise caller location, health data, and device context. KabatOne manages the full response: CAD dispatch, city cameras, GIS, and traffic management.",
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "What Is Situational Awareness Software? A Guide for Public Safety | KabatOne",
+    title: "What Is Situational Awareness Software? Public Safety Guide | KabatOne",
     description: "Situational awareness software aggregates cameras, sensors, dispatch, and GIS into a unified operational map. Learn how command centers use it to coordinate response faster.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
   },
@@ -271,7 +271,7 @@ export const metadata = {
   },
   whatIsLprLicensePlateRecognition: {
     title: "What Is LPR / ALPR? License Plate Recognition Guide | KabatOne",
-    description: "License Plate Recognition (LPR/ALPR) captures and cross-references vehicle plates against alert databases in real time. Learn how it works, fixed vs mobile types, accuracy, and public safety integration.",
+    description: "License Plate Recognition (LPR/ALPR) captures and cross-references vehicle plates against alert databases in real time. Learn how it works, types, accuracy, and public safety integration.",
     canonical: "https://kabatone.com/resources/what-is-lpr-license-plate-recognition/",
   },
   whatIsEmergencyDispatchSoftware: {
@@ -286,22 +286,22 @@ export const metadata = {
   },
   vsAvigilon: {
     title: "KabatOne vs Avigilon — Premium VMS vs Unified Public Safety Platform",
-    description: "Avigilon manages cameras and video analytics. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — connecting the complete response workflow in one platform without proprietary hardware.",
+    description: "Avigilon manages cameras and video analytics. KabatOne adds CAD dispatch, GIS, traffic management, and multi-agency coordination — the complete response workflow without proprietary hardware.",
     canonical: "https://kabatone.com/vs/avigilon/",
   },
   whatIsSensorFusion: {
-    title: "What Is Sensor Fusion? AI Data Integration for Public Safety | KabatOne",
-    description: "Sensor fusion combines video, acoustic, LPR, IoT, GPS, and citizen signals into a single real-time intelligence layer for command centers. Learn how it works and why unified detection outperforms isolated sensors.",
+    title: "What Is Sensor Fusion? AI Integration for Public Safety | KabatOne",
+    description: "Sensor fusion combines video, acoustic, LPR, IoT, GPS, and citizen signals into a single real-time intelligence layer for command centers. Learn how unified detection outperforms isolated sensors.",
     canonical: "https://kabatone.com/resources/what-is-sensor-fusion/",
   },
   vsVerint: {
     title: "KabatOne vs Verint — Video Intelligence vs Unified Operations Platform",
-    description: "Verint manages video surveillance and AI analytics for governments and airports. KabatOne adds full CAD dispatch, operational GIS, and traffic management — the complete C5 command center platform with no proprietary hardware and 40+ LATAM deployments.",
+    description: "Verint manages video surveillance and AI analytics for governments and airports. KabatOne adds full CAD dispatch, GIS, and traffic management — the complete C5 platform with 40+ LATAM deployments.",
     canonical: "https://kabatone.com/vs/verint/",
   },
   vsNiceSystems: {
-    title: "KabatOne vs NICE Systems (Qognify) — PSIM vs Unified Operations Platform",
-    description: "NICE Systems/Qognify provides video evidence management and PSIM. KabatOne adds native CAD dispatch, operational GIS, and traffic management — a unified public safety platform built for C5 command centers and municipalities without proprietary hardware.",
+    title: "KabatOne vs NICE Systems — PSIM vs Unified Operations Platform",
+    description: "NICE Qognify provides video evidence management and PSIM. KabatOne adds native CAD dispatch, GIS, and traffic — a unified public safety platform for C5 command centers without proprietary hardware.",
     canonical: "https://kabatone.com/vs/nice-systems/",
   },
   whatIsIncidentManagementSoftware: {
@@ -310,8 +310,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-incident-management-software/",
   },
   vsVerkada: {
-    title: "KabatOne vs Verkada — Cloud Physical Security vs Unified Public Safety Platform",
-    description: "Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — the complete workflow from detection to response.",
+    title: "KabatOne vs Verkada — Physical Security vs Unified Public Safety",
+    description: "Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds CAD dispatch, GIS, traffic management, and coordination — the complete workflow from detection to response.",
     canonical: "https://kabatone.com/vs/verkada/",
   },
   c5CommandCentersMexico2026: {
@@ -320,7 +320,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026/",
   },
   callCenterSoftwareGuide: {
-    title: "911 Call Center Software Guide: Features, Types & How to Choose | KabatOne",
+    title: "911 Call Center Software Guide: Features & How to Choose | KabatOne",
     description: "Complete guide to 911 call center software — call intake, CAD integration, NG911 compliance, and AI-assisted dispatch. How modern PSAPs select and deploy emergency call center technology.",
     canonical: "https://kabatone.com/resources/911-call-center-software-guide/",
   },
@@ -335,7 +335,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/build-rtcc-implementation-guide/",
   },
   publicSafetySoftwareColombia: {
-    title: "Public Safety Software for Colombia: C5 & Municipal Platforms | KabatOne",
+    title: "Colombia Public Safety Software: C5 & Municipal Platforms | KabatOne",
     description: "Public safety technology for Colombian cities and municipalities — C5 command centers, unified dispatch, video surveillance, and GIS. How KabatOne supports public security operations in Colombia.",
     canonical: "https://kabatone.com/resources/public-safety-software-colombia/",
   },
@@ -345,48 +345,48 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/public-safety-software-peru/",
   },
   publicSafetySoftwareChile: {
-    title: "Public Safety Software for Chile: Carabineros & Municipal Platforms | KabatOne",
+    title: "Chile Public Safety Software: Dispatch & Municipal | KabatOne",
     description: "Public safety technology for Chilean municipalities and regional governments — unified dispatch (133/131/132), FNDR-funded CCTV integration, GIS, and incident management on one platform.",
     canonical: "https://kabatone.com/resources/public-safety-software-chile/",
   },
   publicSafetySoftwareArgentina: {
-    title: "Public Safety Software for Argentina: Buenos Aires CMU & Municipal Platforms | KabatOne",
+    title: "Argentina Public Safety Software: C5 & Municipal Platforms | KabatOne",
     description: "Public safety technology for Argentine provinces and municipalities — Buenos Aires CMU integration, unified 911/101/107 dispatch, GIS, and incident management on one platform.",
     canonical: "https://kabatone.com/resources/public-safety-software-argentina/",
   },
   cadDispatchLatinAmerica: {
-    title: "CAD Dispatch Software for Latin America: Emergency Response Guide | KabatOne",
-    description: "CAD dispatch software for Latin American C5/C4 command centers — native support for 911/133/123/105, Spanish-first interface, LATAM procurement experience. Deployed in 40+ cities protecting 73M citizens.",
+    title: "CAD Dispatch Software for Latin America: Response Guide | KabatOne",
+    description: "CAD dispatch software for Latin American C5/C4 command centers — native support for 911/133/123/105, Spanish-first interface. Deployed in 40+ cities protecting 73M citizens.",
     canonical: "https://kabatone.com/resources/cad-dispatch-software-latin-america/",
     og: {
       title: "CAD Dispatch Software for Latin America | KabatOne",
-      description: "CAD dispatch software for Latin American C5/C4 command centers — native support for 911/133/123/105, Spanish-first interface, LATAM procurement experience. Deployed in 40+ cities protecting 73M citizens.",
+      description: "CAD dispatch software for Latin American C5/C4 command centers — native support for 911/133/123/105, Spanish-first interface. Deployed in 40+ cities protecting 73M citizens.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
   publicSafetySoftwareSmallCities: {
     title: "Public Safety Software for Small Cities & Municipalities | KabatOne",
-    description: "Affordable, scalable public safety platforms designed for small cities and municipalities. Unified video, dispatch, and GIS without enterprise price tags — how smaller governments can build C5-level capabilities.",
+    description: "Affordable public safety platforms for small cities and municipalities. Unified video, dispatch, and GIS without enterprise price tags — how smaller governments can build C5-level capabilities.",
     canonical: "https://kabatone.com/resources/public-safety-software-small-cities/",
   },
   vsTylerTechnologies: {
     title: "KabatOne vs Tyler Technologies — Public Safety Platform Comparison",
-    description: "Tyler Technologies offers broad government software including Enterprise CAD and RMS. KabatOne delivers operational depth: video, CAD, GIS, and traffic in one cloud-native platform built for C4/C5 command centers in LATAM.",
+    description: "Tyler Technologies offers broad government software including Enterprise CAD and RMS. KabatOne delivers video, CAD, GIS, and traffic in one cloud-native platform built for C4/C5 command centers.",
     canonical: "https://kabatone.com/vs/tyler-technologies/",
   },
   vsCentralsquare: {
     title: "KabatOne vs CentralSquare — Unified Public Safety Platform Comparison",
-    description: "CentralSquare runs legacy CAD, RMS, and municipal ERP across thousands of US agencies. KabatOne delivers cloud-native video, CAD, GIS, and traffic in one operational platform — with 40+ LATAM deployments and full Spanish localization.",
+    description: "CentralSquare runs legacy CAD, RMS, and municipal ERP across US agencies. KabatOne delivers video, CAD, GIS, and traffic in one cloud-native platform — 40+ LATAM deployments, Spanish localization.",
     canonical: "https://kabatone.com/vs/centralsquare/",
   },
   vsShotSpotter: {
-    title: "KabatOne vs ShotSpotter (SoundThinking) — Gunshot Detection vs Unified Platform",
-    description: "ShotSpotter detects gunshots. KabatOne integrates gunshot detection plus video, CAD dispatch, GIS, and traffic into one unified public safety platform — so the alert triggers the full response workflow automatically.",
+    title: "KabatOne vs ShotSpotter — Gunshot Detection vs Unified Platform",
+    description: "ShotSpotter detects gunshots. KabatOne integrates gunshot detection plus video, CAD dispatch, GIS, and traffic into one platform — so the alert triggers the full response workflow automatically.",
     canonical: "https://kabatone.com/vs/shotspotter/",
   },
   vsPalantir: {
-    title: "KabatOne vs Palantir Gotham — Real-Time Operations vs Analytics Platform",
-    description: "Palantir Gotham is an intelligence and analytics layer. KabatOne is the real-time operations layer — connecting cameras, sensors, CAD dispatch, and field units in one unified command platform for cities and municipalities.",
+    title: "KabatOne vs Palantir — Real-Time Operations vs Analytics Platform",
+    description: "Palantir Gotham is an intelligence and analytics layer. KabatOne is the real-time operations layer — connecting cameras, CAD dispatch, and field units in one unified command platform for cities.",
     canonical: "https://kabatone.com/vs/palantir/",
   },
 } as const

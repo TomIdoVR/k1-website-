@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.53] 2026-05-18 — SEO: Verge system — audit script + bulk title/desc fixes
+
+**Added**
+- `scripts/seo-audit.mjs` — Verge daily SEO audit script. Crawls all 71 EN routes, checks title/desc length, OG tags, canonical, H1, JSON-LD validity, and image alt text. Outputs JSON report + baseline for diff runs.
+
+**Fixed**
+- 18 page titles trimmed to ≤70 chars (VS pages, LATAM guides, resource pages)
+- 25 meta descriptions trimmed to ≤200 chars (VS comparison pages and resource pages)
+- All fixes preserve SEO meaning — no truncation, rewritten for clarity
+
+---
+
 ## [2.52] 2026-05-12 — Feat: Add weekly SEO agent script
 
 **Added**

@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.53 -->
+      <div class="tl-entry fix">
+        <div class="tl-meta"><span class="tl-ver">v2.53</span><span class="tl-date">2026-05-18</span></div>
+        <div class="tl-title">SEO: Verge system — audit script + bulk title/desc fixes</div>
+        <ul class="tl-body">
+          <li>Added scripts/seo-audit.mjs — Verge daily SEO audit. Crawls all 71 EN routes, checks title/desc length, OG tags, canonical, H1, JSON-LD, and image alt text. Outputs JSON report + baseline for diff runs.</li>
+          <li>Fixed 18 page titles trimmed to ≤70 chars (VS comparison pages, LATAM guides, resource pages).</li>
+          <li>Fixed 25 meta descriptions trimmed to ≤200 chars (VS and resource pages). Rewrites preserve full SEO meaning.</li>
+        </ul>
+      </div>
+
       <!-- v2.52 -->
       <div class="tl-entry feat">
         <div class="tl-meta"><span class="tl-ver">v2.52</span><span class="tl-date">2026-05-12</span></div>
