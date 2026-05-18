@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.95] 2026-05-18 — Feat: new Italy market guide (Polizia, Carabinieri, NUE 112, GDPR, ACN)
+
+**Added**
+- New page: /resources/public-safety-software-italy/ — multi-force structure (Polizia di Stato, Carabinieri, Guardia di Finanza, 7,000+ Polizie Locali), NUE 112/SOREU dispatch reform, lettori automatici di targhe (LPR/ANPR), CONSIP/MEPA procurement, GDPR/Garante Privacy enforcement, ACN cybersecurity
+- 4 challenge cards: multi-force siloed IT, NUE 112 dispatch reform, GDPR/Garante Privacy, organised crime + mass tourism events
+- 7 Italy-specific FAQs: Polizia/Carabinieri/GdF/Polizia Locale structure, NUE 112/SOREU, CCTV/lettori di targhe, CONSIP/MEPA procurement, GDPR/Garante, NUE 112 project, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+- Italy cross-link added to France guide Related Resources (European cluster)
+
+---
+
 ## [2.94] 2026-05-18 — Feat: new France market guide (Police Nationale, Gendarmerie, RGPD, VIGPIRATE)
 
 **Added**

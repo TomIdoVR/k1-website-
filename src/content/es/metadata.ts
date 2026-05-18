@@ -429,6 +429,11 @@ export const metadata = {
     description: "Plataforma unificada para la Police Nationale, Gendarmerie y Centres de Supervision Urbaine — despacho CAD 15/17/18 con soporte NexSIS, analítica de Vidéoprotection con IA y cumplimiento RGPD/CNIL.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-france/",
   },
+  publicSafetySoftwareItaly: {
+    title: "Software de Seguridad Pública para Italia: Polizia, Carabinieri, NUE 112 y GDPR | KabatOne",
+    description: "Plataforma unificada para Polizia di Stato, Carabinieri y Polizia Locale — despacho CAD con soporte NUE 112/SOREU, analítica de CCTV con IA conforme al Garante Privacy y requisitos ACN.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-italy/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Software de Seguridad Pública para el Reino Unido: 999 y Safe City | KabatOne",
     description: "Plataforma unificada para fuerzas policiales del Reino Unido, salas de control 999 y programas Safe City — despacho CAD con soporte NG999, analítica de video con IA y cumplimiento UK GDPR.",

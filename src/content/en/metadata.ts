@@ -394,6 +394,11 @@ export const metadata = {
     description: "Unified platform for Police Nationale, Gendarmerie, and French CSU centres — 15/17/18 CAD dispatch with NexSIS support, AI Vidéoprotection analytics, and RGPD/CNIL compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-france/",
   },
+  publicSafetySoftwareItaly: {
+    title: "Public Safety Software for Italy: Polizia, Carabinieri, NUE 112 & GDPR | KabatOne",
+    description: "Unified platform for Polizia di Stato, Carabinieri, and Polizia Locale — CAD dispatch with NUE 112/SOREU support, AI CCTV analytics compliant with Garante Privacy, and ACN cybersecurity requirements.",
+    canonical: "https://kabatone.com/resources/public-safety-software-italy/",
+  },
   publicSafetySoftwareUnitedKingdom: {
     title: "Public Safety Software for the UK: 999, Control Rooms & Safe City | KabatOne",
     description: "Unified platform for UK police forces, 999 control rooms, and Safe City programmes — CAD dispatch with NG999 support, AI video analytics, and UK GDPR compliance.",

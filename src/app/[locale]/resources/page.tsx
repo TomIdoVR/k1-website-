@@ -273,6 +273,14 @@ export default async function ResourcesPage({
           readTime: '7 min',
           isNew: true,
         },
+        {
+          href: '/resources/public-safety-software-italy',
+          category: 'Guía de Mercado',
+          title: 'Software de Seguridad Pública para Italia: Polizia, Carabinieri, NUE 112 y GDPR',
+          excerpt: 'Plataforma unificada para Polizia di Stato, Carabinieri y Polizia Locale — despacho CAD con soporte NUE 112/SOREU, analítica de CCTV con IA conforme al Garante Privacy y requisitos ACN.',
+          readTime: '7 min',
+          isNew: true,
+        },
       ]
     : [
         {
@@ -592,6 +600,14 @@ export default async function ResourcesPage({
           category: 'Market Guide',
           title: 'Public Safety Software for France: Police Nationale, Gendarmerie & RGPD',
           excerpt: 'Unified platform for Police Nationale, Gendarmerie, and French CSU centres — 15/17/18 CAD dispatch with NexSIS support, AI Vidéoprotection analytics, and RGPD/CNIL compliance.',
+          readTime: '7 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-italy',
+          category: 'Market Guide',
+          title: 'Public Safety Software for Italy: Polizia, Carabinieri, NUE 112 & GDPR',
+          excerpt: 'Unified platform for Polizia di Stato, Carabinieri, and Polizia Locale — CAD dispatch with NUE 112/SOREU support, AI CCTV analytics compliant with Garante Privacy, and ACN cybersecurity requirements.',
           readTime: '7 min',
           isNew: true,
         },

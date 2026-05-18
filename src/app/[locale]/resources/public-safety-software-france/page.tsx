@@ -320,6 +320,7 @@ export default async function PublicSafetySoftwareFrancePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-italy', en: 'Public Safety Software for Italy: Polizia, Carabinieri, NUE 112 & GDPR', es: 'Software de Seguridad Pública para Italia: Polizia, Carabinieri, NUE 112 y GDPR' },
                 { href: '/resources/public-safety-software-germany', en: 'Public Safety Software for Germany: Leitstellen, BOS Digital & DSGVO', es: 'Software de Seguridad Pública para Alemania: Leitstellen, BOS Digital y DSGVO' },
                 { href: '/resources/public-safety-software-united-kingdom', en: 'Public Safety Software for the United Kingdom', es: 'Software de Seguridad Pública para el Reino Unido' },
                 { href: '/resources/public-safety-software-united-states', en: 'Public Safety Software for the United States', es: 'Software de Seguridad Pública para EE.UU.' },
