@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.125] - 2026-05-19
+### Added
+- Geographic market guide: **South Africa** — SAPS (9 provinces/145 districts/1,150+ stations/CIMAC/Hawks/DPCI), JMPD/TMPD/CTMPD/eThekwini Metro Police, NDMC/COGTA, 9 PDMCs, SAWS, EMS, SANDF, FPA/Working on Fire, Joburg JOC 5,000+ cameras, Cape Town CCTV 3,000+, SANRAL ANPR, POPIA 2013/Information Regulator (July 2021), PAIA, Cybercrimes Act 2020, SITA/DPSA/CSIRT-vGov, CSD/PFMA/MFMA, DBSA/AfDB, 7 bilingual FAQs (EN + ES)
+
 ## [2.124] - 2026-05-19
 ### Added
 - Geographic market guide: **Kenya** — NPS (47 county commands/KPS/APS/DCI/GSU/FRG/Air Wing), KFRS, NYS, KFS, NDOC, NDMA/ASAL early warning, KMD, 999/112, Nairobi Huawei Safe City 1,800+ cameras/NCC/NTMC, KeNHA ANPR, DPA 2019/ODPC + Regulations 2021, Computer Misuse & Cybercrimes Act 2018, KE-CIRT/CC, ICT Authority, GPP/PPADA 2015, AfDB/WB/JICA, 7 bilingual FAQs (EN + ES)
