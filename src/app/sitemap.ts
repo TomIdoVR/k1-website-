@@ -69,6 +69,7 @@ const pages = [
   { path: '/resources/public-safety-software-denmark', priority: 0.75 },
   { path: '/resources/public-safety-software-finland', priority: 0.75 },
   { path: '/resources/public-safety-software-portugal', priority: 0.75 },
+  { path: '/resources/public-safety-software-turkey', priority: 0.75 },
   { path: '/resources/public-safety-software-uae', priority: 0.75 },
   { path: '/resources/public-safety-software-sweden', priority: 0.75 },
   { path: '/resources/public-safety-software-south-korea', priority: 0.75 },

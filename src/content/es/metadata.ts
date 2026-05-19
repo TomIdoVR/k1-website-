@@ -479,6 +479,11 @@ export const metadata = {
     description: "Plataforma unificada para la PSP y la GNR de Portugal, los centros CODU del INEM y la ANEPC/SIOPS — despacho CAD dual con SIRESP TETRA, videovigilância y ANPR conforme al RGPD/CNPD, y cumplimiento NIS2/CNCS con apoyo PRR/Portugal 2030.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-portugal/",
   },
+  publicSafetySoftwareTurkey: {
+    title: "Software de Seguridad Pública para Türkiye: EGM/Jandarma, AFAD 112, MOBESE/KGYS, KVKK y BTK/USOM | KabatOne",
+    description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
+  },
   publicSafetySoftwareUAE: {
     title: "Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City 50K+ Cámaras, PDPL y NESA | KabatOne",
     description: "Plataforma unificada para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU — despacho CAD IPOC-integrado, 50,000+ cámaras IA y cumplimiento PDPL/NESA con data residency en EAU.",

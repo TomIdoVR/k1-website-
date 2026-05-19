@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.110] 2026-05-19 — Feat: Türkiye market guide (EGM/Jandarma, AFAD 112, MOBESE/KGYS, KVKK, BTK/USOM)
+
+**Added**
+- New page: /resources/public-safety-software-turkey/ — EGM (~250K urban officers), Jandarma (rural gendarmerie), AFAD (81 provincial 112 centres, earthquake management, Kahramanmaraş 2023), MOBESE/KGYS (urban surveillance), AKOM (İstanbul disaster mgmt), POLNET, KOM, MİT/TEM, KVKK (Law 6698), BTK/USOM (national CERT), ISO 27001/BGYS, EKAP/KİK/Kamu İhale Kanunu procurement, plaka tanıma ANPR, TEDES/KGYS, data sovereignty in Turkey
+- 4 challenge cards: dual EGM/Jandarma + 81 × 112, earthquake management/AFAD/AKOM İstanbul, MOBESE/KGYS/KVKK, KVKK/BTK/USOM/data sovereignty
+- 7 bilingual FAQs: EGM/Jandarma/İçişleri structure, 112 unified dispatch/MOBESE, earthquake management/AFAD 2023, EKAP/KİK procurement, KVKK/BTK/USOM, MOBESE/KGYS surveillance, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.109] 2026-05-19 — Feat: Portugal market guide (PSP/GNR dual, INEM/CODU 112, SIRESP TETRA, ANEPC/SIOPS, CNPD, CNCS/NIS2)
 
 **Added**
