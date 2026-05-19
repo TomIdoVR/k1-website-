@@ -495,6 +495,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareChad: {
+    title: "Software de Seguridad Pública para Chad: ANT/MNJTF, ISWAP/Boko Haram, Petróleo Doba/Oleoducto Chad-Camerún, Lago Chad CBLT, Fronteras 6 Países y ARCEP | KabatOne",
+    description: "Plataforma modular para seguridad pública y estabilización del Sahel en Chad — CAD para 23 regiones/61 departamentos, coordinación ANT/MNJTF anti-ISWAP/Boko Haram, seguridad petróleo Doba CNPC/Exxon ~130K bpd, oleoducto COTCO/TOTCO 1,070 km, gestión crisis Lago Chad CBLT, coordinación OCHA/UNHCR 600K+ PDI y cumplimiento ARCEP/Banco Mundial/AfDB.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-chad/",
+  },
   publicSafetySoftwareNiger: {
     title: "Software de Seguridad Pública para Níger: FAN/AES/CNSP, Contraterrorismo JNIM/ISWAP, Uranio Arlit/ORANO, Petróleo Agadem/Oleoducto WAPCO, Fronteras 7 Países y ARTP | KabatOne",
     description: "Plataforma modular para seguridad pública y estabilización del Sahel en Níger — CAD para 8 regiones/63 departamentos, coordinación antiterrorista FAN, seguridad minas uranio Arlit/Akouta (7mo productor mundial), petróleo Agadem CNPC/oleoducto WAPCO 2,000+ km, gestión OCHA/UNHCR 300K+ PDI, coordinación triple frontera y cumplimiento ARTP/Banco Mundial/AES.",
