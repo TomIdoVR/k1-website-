@@ -485,6 +485,12 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
 
+
+  publicSafetySoftwareRwanda: {
+    title: "Software de Seguridad Pública para Rwanda: RNP/RDF, MIDIMAR, Kigali Safe City, REG/RECO, Aeropuerto Bugesera, Fronteras EAC y Ley 058/2021 | KabatOne",
+    description: "Plataforma unificada para la Policía Nacional de Rwanda (RNP) y RDF — CAD integrado en 5 provincias/30 distritos, CCTV Kigali Safe City, gestión de desastres MIDIMAR, monitoreo volcanes Virunga, red eléctrica REG/RECO, Aeropuerto Bugesera (BK), corredores fronterizos EAC y cumplimiento Ley 058/2021.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-rwanda/",
+  },
   publicSafetySoftwareUganda: {
     title: "Software de Seguridad Pública Uganda | UPF, UPDF y Ciudades Inteligentes – KabatOne",
     description: "KabatOne ofrece software unificado de mando y control, despacho IA y conciencia situacional para la Policía de Uganda, UPDF, infraestructura crítica y programas de ciudad inteligente.",
