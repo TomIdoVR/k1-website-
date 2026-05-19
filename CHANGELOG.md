@@ -1,3 +1,13 @@
+## [v2.180] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Lesotho**
+  - LDF ~2,000-2,500, LMPS ~5,000 Mounted Police (10 districts), LNSS; King Letsie III constitutional monarchy; multiple coups/crises (1986/94/98/2014/17/22); recurring SADC mediation
+  - LHWP — one of Africa's largest engineering projects: Katse/Mohale/Polihali dams, ~790M m³/yr water exports to Gauteng; Water Treaty 1986/2021; royalties ~10-15% govt revenues
+  - Letseng diamonds (Gem Diamonds/govt 30%) — world's highest altitude diamond mine (3,100 m): Star of Lesotho 601 ct (2018), Spirit of Great Elephant 910 ct, Lesotho Legend 910 ct; diamonds ~60-70% exports
+  - Only country entirely enclosed by another (South Africa); AGOA textile — Africa's largest US exporter; mohair/angora premium; Afriski mountain tourism
+  - Moshoeshoe I Airport (MSU); LEC electricity; Econet Telecom/Vodacom; LCA; no own railway (uses SA Transnet)
+  - PPU/Public Procurement Act Order 10/2006; Data Protection Act 2012; LSL/ZAR peg/CBL; SACU ~60-65% revenues; SADC/COMESA; WB(IDA)/AfDB/USAID/MCC
+
 ## [v2.179] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Eswatini**

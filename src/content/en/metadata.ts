@@ -536,6 +536,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for UMBUTFO Eswatini Defence Force, Royal Eswatini Police Service, sugar/timber industrial protection, and border management with South Africa and Mozambique — Africa's last absolute monarchy.",
     canonical: "https://kabatone.com/resources/public-safety-software-eswatini/",
   },
+  publicSafetySoftwareLesotho: {
+    title: "Public Safety Software for Lesotho | LDF/LMPS, LHWP Water, Letseng Diamonds & Mountain Security – KabatOne",
+    description: "KabatOne delivers public safety platform for Lesotho Defence Force (LDF), Mounted Police Service, LHWP water infrastructure protection, Letseng diamond mine, and mountain security — only country entirely enclosed within South Africa.",
+    canonical: "https://kabatone.com/resources/public-safety-software-lesotho/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",

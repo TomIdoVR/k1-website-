@@ -646,6 +646,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-lesotho',
+          title: 'Public Safety Software for Lesotho',
+          description: "KabatOne supports Lesotho's LDF, Mounted Police, LHWP dam infrastructure protection, Letseng diamond mine security, AGOA textile factories, and all South Africa border crossings.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
