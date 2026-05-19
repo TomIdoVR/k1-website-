@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.123] - 2026-05-18
+### Added
+- Geographic market guide: **Nigeria** — NPF (36 state commands/320K+ personnel), NSCDC/DSS/NIA, FFS, NEMA (8 zonal/NECC)/SEMA, NiMet, NIHSA, 112, Lagos LC3/Eko Safe City 2,000+ cameras/LSSTF, Abuja AISS/FCTA, NDPA 2023/NDPC, Cybercrime Act 2015 + 2024 Amendment, NITDA/NCC, BPP/PPA 2007, 7 bilingual FAQs (EN + ES)
+
 ## [2.122] - 2026-05-18
 ### Added
 - Geographic market guide: **Malaysia** — PDRM (14 contingents/Bukit Aman/UTK/VAT 69), JBPM (200+ stations/PKBM), APMM, NADMA/DID Infobanjir 2,800+ stations, 999/SAMM, DBKL 3,000+ cameras/Safe City, PLUS ANPR, PDPA 2010/JPDP + 2024 Amendment, NACSA CIIP/RiSQ, CyberSecurity Malaysia/MyCERT, ePerolehan/MyGPR/MAMPU, MyDIGITAL/MDEC, 7 bilingual FAQs (EN + ES)

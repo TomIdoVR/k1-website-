@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareNigeria: {
+    title: "Public Safety Software for Nigeria: NPF, NSCDC/NEMA, NDPA 2023 & Cybersecurity Act 2024 | KabatOne",
+    description: "Unified platform for Nigerian NPF, NSCDC, and FFS — integrated CAD dispatch for 36 state commands and NEMA/NiMet disaster coordination, NDPA 2023/NDPC-compliant Safe City camera management, and Cybersecurity Act compliance with BPP/PPA 2007 procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-nigeria/",
+  },
   publicSafetySoftwareMalaysia: {
     title: "Public Safety Software for Malaysia: PDRM, JBPM, NADMA/DID, PDPA 2010 & NACSA Cybersecurity | KabatOne",
     description: "Unified platform for Malaysian PDRM, JBPM, and SAMM — integrated CAD dispatch for 14 state contingents and NADMA/DID flood coordination, Safe City camera management compliant with PDPA 2010, and NACSA cybersecurity compliance with ePerolehan/MyGPR procurement.",
