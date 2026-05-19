@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.132] 2026-05-19 — Oman market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-oman` (EN + ES)
+- Coverage: Royal Oman Police (ROP) 11 governorates, Civil Defence and Ambulance Authority (CDAA), National Emergency Management Committee (NEMC), Muscat ISOC
+- Port security: Salalah (4M+ TEU), Sultan Qaboos Port, Duqm SEZ, Sohar Freezone
+- Oil infrastructure: PDO (600K+ bpd), OQ Group, Qalhat LNG (10.4 Mtpa), Mina Al-Fahal
+- Compliance: Royal Decree 6/2022 PDPPL/ITA, OCERT, RD 36/2008 procurement
+- Metadata (EN + ES), sitemap entry, hub cards (EN + ES), 7 FAQs each locale
+- Vision Oman 2040 / Digital Oman alignment
+
 ## [2.131] - 2026-05-19
 ### Added
 - Geographic market guide: **Kuwait** — KNP 6 security districts (Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer), MOI DGFD 50+ stations, Kuwait National Guard (KNG), Coast Guard/Border Patrol, NCECC, KMA/112, Kuwait Safe City Project (KSCP) 70,000+ CCTV cameras, GDT ANPR/ALPR MOW highways/JKIA, Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah ports, KOC Greater Burgan oilfields, KNPC/KIPIC critical infrastructure, Personal Data Protection Law 22/2023/CITRA, State Cybersecurity Law/KU-CERT, CAPT/MoF Decree 37bis/1964/CSSP, KFAED/KIA financing, Kuwait Vision 2035 "New Kuwait" Digital Transformation, 7 bilingual FAQs (EN + ES)
