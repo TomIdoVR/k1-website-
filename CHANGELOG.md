@@ -1,3 +1,12 @@
+## [v2.176] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Malawi**
+  - MDF ~10,000-12,000 (army/lake navy/air wing), MPS ~14,000 Police (28 districts/3 regions), NIA intelligence; UN missions MINUSMA/MONUSCO; President Chakwera (2020)
+  - Lake Malawi — world's 9th largest, Africa's 3rd deepest (706 m); chambo tilapia main protein; sovereignty dispute with Tanzania; MV Ilala lake transport
+  - Tobacco — world 5th exporter (~150K ton/yr, ~55% forex); tea Thyolo/Mulanje ~50K ton/yr; Kayelekera uranium/Paladin (+100M lb U3O8); macadamia world 3rd; Illovo sugar
+  - Port Chipoka/Nkhata Bay; Kamuzu Airport (LLW); CEAR railway; ESCOM electricity; Airtel/TNM mobile; MACRA regulator
+  - PPDA Act 2017; Electronic Transactions/Cyber Security Act 2016; MWK/Reserve Bank Malawi; SADC/COMESA; WB/AfDB/USAID/FCDO UK/EU
+
 ## [v2.175] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Burundi**
