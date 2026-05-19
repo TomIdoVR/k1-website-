@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareCzechRepublic: {
+    title: "Public Safety Software for Czech Republic: Policie ČR, PEGAS TETRA, IZS, GDPR/ÚOOÚ & NÚKIB/NIS2 | KabatOne",
+    description: "Unified platform for Czech Policie ČR and IZS — integrated CAD dispatch with PEGAS TETRA and 14 Krajská operační střediska, camera and ANPR management compliant with GDPR/ÚOOÚ, and NÚKIB/NIS2 compliance with NEN procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-czech-republic/",
+  },
   publicSafetySoftwareSwitzerland: {
     title: "Public Safety Software for Switzerland: Kantonspolizei, POLYCOM TETRA, 26 Cantons, nFADP/FDPIC & IKT-Minimalstandard | KabatOne",
     description: "Unified platform for Swiss Kantonspolizei and 26 cantons — integrated CAD dispatch with POLYCOM TETRA (POLYCOM successor ready), camera and ANPR management compliant with nFADP/revDSG, and IKT-Minimalstandard/ISA compliance with SIMAP/FAPP procurement.",

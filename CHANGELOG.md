@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.113] - 2026-05-18
+### Added
+- **Czech Republic market guide** (EN + ES): `/resources/public-safety-software-czech-republic/`
+  - Policie ČR (14 Krajská ředitelství, Policejní prezidium), MV ČR, BIS, ÚOOZ, ÚZSI
+  - Hasičský záchranný sbor ČR (HZS ČR, 14 krajských HZS, Generální ředitelství HZS ČR)
+  - Zdravotnická záchranná služba (ZZS, 14 krajských ZZS); IZS coordination; 112/150/155/158
+  - PEGAS TETRA (Ministerstvo vnitra mandate); Krajská operační střediska (KOS) for IZS dispatch
+  - RGPD/zákon č. 110/2019 Sb., ÚOOÚ, Directiva 2016/680; NÚKIB/zákon č. 60/2024 Sb. (NIS2); GovCERT.cz
+  - NEN/zákon č. 134/2016 Sb. procurement; Smart Prague/TRAFIS; Digitální Česko; EU Structural Funds IZS
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.112] - 2026-05-18
 ### Added
 - **Switzerland market guide** (EN + ES): `/resources/public-safety-software-switzerland/`
