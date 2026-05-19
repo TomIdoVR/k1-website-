@@ -1,3 +1,12 @@
+## [v2.167] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Equatorial Guinea**
+  - FAR ~1,100 (army/coast guard/air force), National Police, Presidential Guard/Light Battalion, EEZ coast guard (Spanish FNGE training)
+  - Block G/Zafiro ~100,000 bbl/day; ExxonMobil/Marathon Oil/Hess/Chevron; GEPetrol national company; EGLNG/Atlantic LNG Bioko Island; Punta Europa refinery
+  - Malabo Port, Bata Port, SSG/Malabo Airport, Bata Airport (BSG); Ciudad de la Paz/Oyala new capital in development
+  - Mbanié/Conga islands dispute with Gabon; discontinuous territory (Bioko/Rio Muni/Annobon/Corisco); CEMAC/CEEAC; President Obiang since 1979
+  - Hydrocarbons Law; Data Protection Law (CEMAC model); SONAGEF; Public Procurement Law; Spain/China EXIM Bank/AfDB/World Bank
+
 ## [v2.166] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Gabon**
