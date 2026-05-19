@@ -1,3 +1,7 @@
+## [v2.185] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Seychelles**
+
 ## [v2.184] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for São Tomé and Príncipe**

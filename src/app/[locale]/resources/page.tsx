@@ -676,6 +676,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-seychelles',
+          title: 'Public Safety Software for Seychelles',
+          description: "KabatOne supports the SPDF, National Police, and Coast Guard of Seychelles — Indian Ocean EEZ surveillance across 115 islands, EUNAVFOR Atalanta anti-piracy coordination, and luxury tourism protection.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

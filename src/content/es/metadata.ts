@@ -896,6 +896,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para la FNDF de Comoras, Gendarmería Nacional y Guardia Costera — coordinación interisleña entre Grande Comore, Anjouan y Mohéli, vigilancia marítima del Canal de Mozambique y gestión del riesgo volcánico del Karthala.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-comoros/",
   },
+  publicSafetySoftwareSeychelles: {
+    title: "Software de Seguridad Pública para Seychelles | SPDF/NPA, Seguridad Marítima Océano Índico, Antipiratería y Protección del Turismo – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Fuerza de Defensa del Pueblo de Seychelles (SPDF), Policía Nacional y Guardia Costera — vigilancia de la mayor ZEE per cápita del mundo, coordinación con EUNAVFOR Atalanta, protección del turismo de lujo y antipiratería en el Océano Índico.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-seychelles/",
+  },
   publicSafetySoftwareSaoTomeAndPrincipe: {
     title: "Software de Seguridad Pública para Santo Tomé y Príncipe | FASTP/PNSTP, Antipiratería Golfo de Guinea y Seguridad ZDC Petrolífera – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas de Santo Tomé y Príncipe (FASTP), Policía Nacional y Guardia Costera — antipiratería en el Golfo de Guinea, seguridad en la Zona de Desarrollo Conjunto con Nigeria, protección del cacao y coordinación marítima insular.",
