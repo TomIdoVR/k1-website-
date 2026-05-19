@@ -748,6 +748,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-albania',
+          title: 'Public Safety Software for Albania',
+          description: "KabatOne supports Albanian State Police, SHISH, and Border Guard — Corridor 8 E80 management, Port of Durrës security, TAP pipeline protection, EU candidacy 2014, and NATO/FRONTEX coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
