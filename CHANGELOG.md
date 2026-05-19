@@ -1,3 +1,13 @@
+## [v2.179] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Eswatini**
+  - UEDF (UMBUTFO) ~3,000, REPS ~4,000 Police (4 districts/tinkhundla), NSA; King Mswati III absolute monarch since 1986 (Africa's last absolute monarchy); political parties banned
+  - 2021 pro-democracy protests 80+ deaths (critical public order challenge); HIV/AIDS ~27% adults world's highest prevalence
+  - Sugar: RSSC/Ubombo Sugar/Illovo — world's 4th exporter per capita; textile manufacturing AGOA US access; timber Sappi/SWADE; coal Maloma; iron unexploited
+  - Surrounded by South Africa (260 km) and Mozambique (105 km); SACU ~50% tax revenues; GDP per capita ~$4,200
+  - King Mswati III Airport (SHO); Swaziland Railway; SEC electricity; MTN/Eswatini Mobile; ESCOM regulator
+  - PPRA/Public Procurement Act 2011; Data Protection Act 2022; SZL/ZAR peg/CBE; SACU/SADC/COMESA; EDB/AfDB
+
 ## [v2.178] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Namibia**

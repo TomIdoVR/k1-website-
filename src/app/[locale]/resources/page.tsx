@@ -640,6 +640,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-eswatini',
+          title: 'Public Safety Software for Eswatini',
+          description: "KabatOne supports Eswatini's UMBUTFO Defence Force, Royal Police, RSSC/Ubombo sugar industrial protection, Sappi/SWADE timber, Maloma coal, and South Africa/Mozambique border management.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

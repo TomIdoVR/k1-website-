@@ -566,6 +566,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Namibia (NDF), Policía Nacional, protección de minas de uranio Rossing/Husab, seguridad del Puerto de Walvis Bay y operaciones offshore de gas en la Cuenca Orange — 4to productor mundial de uranio.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-namibia/",
   },
+  publicSafetySoftwareEswatini: {
+    title: "Software de Seguridad Pública para Eswatini | UMBUTFO/REPS, SACU, Azúcar y Manufactura – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para el UMBUTFO Fuerza de Defensa de Eswatini, Servicio de Policía Real, protección industrial azucarera/maderera y gestión de fronteras con Sudáfrica y Mozambique — la última monarquía absoluta de Africa.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-eswatini/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",
