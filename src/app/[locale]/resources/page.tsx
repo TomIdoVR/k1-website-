@@ -574,10 +574,22 @@ export default async function ResourcesPage({
           region: 'East Africa',
         },
         {
+          href: '/resources/public-safety-software-eritrea',
+          title: 'Software de Seguridad Pública para Eritrea',
+          description: 'EDF/EPS en 6 zonas, puertos Massawa/Assab, Guardia Costera Archipiélago Dahlak, seguridad marítima Mar Rojo y frontera de paz Etiopía-Jeddah 2018.',
+          region: 'África Oriental',
+        },
+        {
           href: '/resources/public-safety-software-djibouti',
           title: 'Software de Seguridad Pública para Yibuti',
           description: 'PNJ/FAD, Camp Lemonnier AFRICOM, FFDJ, Base Naval PLA, Puerto Doraleh +1M TEUs, QG EUNAVFOR Atalanta y seguridad Bab-el-Mandeb.',
           region: 'África Oriental',
+        },
+        {
+          href: '/resources/public-safety-software-eritrea',
+          title: 'Public Safety Software for Eritrea',
+          description: 'EDF/EPS across 6 zones, Massawa/Assab ports, Coast Guard Dahlak Archipelago, Red Sea maritime security and Jeddah 2018 Ethiopia peace border.',
+          region: 'East Africa',
         },
         {
           href: '/resources/public-safety-software-djibouti',

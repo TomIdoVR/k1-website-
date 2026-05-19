@@ -496,6 +496,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareEritrea: {
+    title: "Software de Seguridad Pública para Eritrea | EDF/EPS, Puerto de Massawa y Seguridad Marítima en el Mar Rojo – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Eritrea, la Policía del Estado, gestión portuaria en Massawa/Assab y seguridad marítima en el Estrecho de Bab-el-Mandeb.",
+    canonical: "https://kabatone.com/resources/public-safety-software-eritrea/",
+  },
   publicSafetySoftwareDjibouti: {
     title: "Software de Seguridad Pública para Yibuti | Gestión Portuaria, Bases Militares y Seguridad Marítima – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Yibuti, gestión del Puerto de Yibuti, coordinación con Camp Lemonnier (AFRICOM) y seguridad marítima en el Estrecho de Bab-el-Mandeb.",
