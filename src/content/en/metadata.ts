@@ -414,6 +414,11 @@ export const metadata = {
     description: "Unified platform for Saudi MOI, 911 system, and Vision 2030 megaprojects — multi-agency CAD dispatch, 2.5M Hajj crowd management, NEOM safe city, and PDPL/NCA ECC compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-saudi-arabia/",
   },
+  publicSafetySoftwarePoland: {
+    title: "Public Safety Software for Poland: Policja, 112/CPR, PSP, RODO & KSC | KabatOne",
+    description: "Unified platform for Policja, 16 CPR dispatch centres, PSP fire brigades, and municipal CCTV networks — multi-agency CAD, RODO/UODO compliance, KSC/NIS2 cybersecurity, and KPO-funded smart city integration.",
+    canonical: "https://kabatone.com/resources/public-safety-software-poland/",
+  },
   publicSafetySoftwareUAE: {
     title: "Public Safety Software for the UAE: Dubai Police IPOC, Safe City 50K+ Cameras, PDPL & NESA | KabatOne",
     description: "Unified platform for Dubai Police, Abu Dhabi Police, and UAE Safe City projects — IPOC-integrated CAD dispatch, 50,000+ AI cameras, and PDPL/NESA compliance with UAE data residency.",

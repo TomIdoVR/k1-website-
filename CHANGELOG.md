@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.104] 2026-05-19 — Feat: Poland market guide (Policja, 112/CPR, PSP, RODO, KSC/NIS2)
+
+**Added**
+- New page: /resources/public-safety-software-poland/ — Policja (~100K officers, 16 Komendy Wojewódzkie), MSWiA, 16 CPR voivodeship 112 centres (coordinating 997/998/999), PSP (State Fire Service), Pogotowie Ratunkowe, RODO/UODO data protection, KSC/NIS2 cybersecurity, ABW/CERT Polska, SESPOL, KSIP, CPR 2.0 digitalisation, miejski monitoring (municipal CCTV), KPO/POPC EU funding, BZP/TED/PZP procurement
+- 4 challenge cards: 16-region 112 unified dispatch, miejski monitoring CCTV integration, RODO/KSC compliance, KPO/EU funding digital transition
+- 7 bilingual FAQs: Policja/MSWiA structure, 112/CPR dispatch, PSP/Pogotowie coordination, RODO/UODO, KSC/NIS2, KPO/POPC funding, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.103] 2026-05-19 — Feat: Saudi Arabia market guide (MOI, 911 Unified, NEOM, Hajj, PDPL, NCA)
 
 **Added**
