@@ -496,6 +496,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareDjibouti: {
+    title: "Software de Seguridad Pública para Yibuti | Gestión Portuaria, Bases Militares y Seguridad Marítima – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Yibuti, gestión del Puerto de Yibuti, coordinación con Camp Lemonnier (AFRICOM) y seguridad marítima en el Estrecho de Bab-el-Mandeb.",
+    canonical: "https://kabatone.com/resources/public-safety-software-djibouti/",
+  },
   publicSafetySoftwareSomalia: {
     title: "Software de Seguridad Pública para Somalia | SPF, SNA y Gestión Post-Conflicto – KabatOne",
     description: "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones anti-Al-Shabaab y conciencia situacional para la Policía Federal de Somalia, SNA y programas de reconstrucción de la seguridad pública.",

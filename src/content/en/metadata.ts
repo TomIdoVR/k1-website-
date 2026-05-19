@@ -461,6 +461,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareDjibouti: {
+    title: "Public Safety Software for Djibouti | Port Management, Military Bases & Maritime Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Djibouti National Police, Port of Djibouti management, coordination with Camp Lemonnier (AFRICOM), and maritime security across the Bab-el-Mandeb strait.",
+    canonical: "https://kabatone.com/resources/public-safety-software-djibouti/",
+  },
   publicSafetySoftwareSomalia: {
     title: "Public Safety Software for Somalia | SPF, SNA & Post-Conflict Management – KabatOne",
     description: "KabatOne delivers modular command-and-control, anti-Al-Shabaab operations coordination, and situational awareness for the Somali Federal Police, SNA, and public safety reconstruction programs.",
