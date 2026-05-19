@@ -453,6 +453,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareIvoryCoast: {
+    title: "Public Safety Software for Ivory Coast: DGPN/FRCI, Abidjan Safe City, Port of Abidjan, PETROCI/SIR, CI-Energies, ECOWAS Borders & Law 2013-450 | KabatOne",
+    description: "Unified platform for Police Nationale and FRCI — integrated CAD dispatch across 31 districts/14 regions, Abidjan Safe City CCTV, cocoa supply chain security, PETROCI/SIR oil protection, CI-Energies power grid, Port of Abidjan, 5-country border management, and ARTCI/Law 2013-450 compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-ivory-coast/",
+  },
   publicSafetySoftwareCameroon: {
     title: "Public Safety Software for Cameroon: SNP/BIR, MNJTF, Douala Safe City, Chad-Cameroon Pipeline/SNH, Port of Douala, ANTIC & Vision 2035 | KabatOne",
     description: "Unified platform for Sûreté Nationale and BIR — integrated CAD dispatch across 10 regions/58 departments, Yaounde/Douala CCTV, Anglophone NW/SW crisis management, Chad-Cameroon pipeline/SNH protection, ENEO power grid, Port of Douala, MNJTF/Boko Haram coordination, and ANTIC/Law 2010/012 compliance.",
