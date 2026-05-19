@@ -451,6 +451,12 @@ export const metadata = {
   },
 
 
+
+  publicSafetySoftwareDRC: {
+    title: "Public Safety Software for DRC: PNC/FARDC, MONUSCO, Kinshasa Safe City, Kamoa-Kakula/Inga Dam, Lobito Corridor, DGM Borders & Law 20/017 | KabatOne",
+    description: "Unified platform for Congolese National Police (PNC) and FARDC — integrated CAD across 26 provinces, Kinshasa/Lubumbashi CCTV, OCHA/MONUSCO disaster coordination, Kamoa-Kakula/Tenke Fungurume mining security, Grand Inga Dam/SNEL, Lobito Corridor, 9-country border management, and ARPTC/ANSSI-DRC compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo/",
+  },
   publicSafetySoftwareRwanda: {
     title: "Public Safety Software for Rwanda: RNP/RDF, MIDIMAR, Kigali Safe City, REG/RECO, Bugesera Airport, EAC Borders & Data Protection Law 058/2021 | KabatOne",
     description: "Unified platform for Rwanda National Police (RNP) and RDF — integrated CAD dispatch across 5 provinces/30 districts, Kigali Safe City CCTV, MIDIMAR disaster management, Virunga volcano monitoring, REG/RECO power grid, Bugesera Airport (BK), EAC border corridors, and Law 058/2021 data protection compliance.",
