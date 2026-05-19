@@ -458,6 +458,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareMali: {
+    title: "Public Safety Software for Mali: FAMa/AES, JNIM Counter-Terrorism, Loulo-Gounkoto/Fekola Gold Mines, Manantali Dam, Niger River Delta, 7-Country Borders & AMRTP | KabatOne",
+    description: "Modular platform for Mali public safety and Sahel stabilisation — CAD for 10 regions/cercles, FAMa counter-terrorism coordination, Loulo-Gounkoto ~700K oz/Fekola ~600K oz gold mine security, Manantali 200 MW/Selingue dam, OCHA/UNHCR 400K+ IDP management, Dakar-Bamako corridor, and AMRTP/World Bank/AES compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-mali/",
+  },
   publicSafetySoftwareBurkinaFaso: {
     title: "Public Safety Software for Burkina Faso: FAN/VDP, JNIM/GSIM Counter-Terrorism, Essakane/Hounde Gold Mines, 2M+ IDPs, G5 Sahel/AES & ARCEP | KabatOne",
     description: "Modular platform for Burkina Faso public safety and Sahel stabilisation — CAD for 13 regions/45 provinces, FAN/VDP counter-terrorism coordination, Essakane/Hounde/Mana gold mine security, OCHA/CONASUR 2M+ IDP management, Abidjan-Ouagadougou corridor, 6-country border management, and ARCEP/World Bank/G5 Sahel compliance.",
