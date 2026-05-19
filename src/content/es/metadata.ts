@@ -489,6 +489,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareSudan: {
+    title: "Software de Seguridad Pública para Sudán: SAF, Coordinación Humanitaria OCHA, Port Sudan, Presa Merowe/Nilo, Oleoducto GNPOC, Mar Rojo y Reconstrucción Post-Conflicto | KabatOne",
+    description: "Plataforma modular para reconstrucción de seguridad pública en Sudán — CAD para 18 estados, integración OCHA/UNHCR para 10M+ PDI, infraestructura crítica Port Sudan, Presa Merowe 1,250 MW/oleoducto GNPOC, seguridad marítima Mar Rojo, gestión fronteriza con 7 países y cumplimiento adquisiciones Banco Mundial/ONU.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-sudan/",
+  },
   publicSafetySoftwareIvoryCoast: {
     title: "Software de Seguridad Pública para Costa de Marfil: DGPN/FRCI, Abidjan Safe City, Puerto de Abidjan, PETROCI/SIR, CI-Energies, Fronteras CEDEAO y Ley 2013-450 | KabatOne",
     description: "Plataforma unificada para Police Nationale y FRCI — CAD integrado en 31 distritos/14 regiones, CCTV Abidjan Safe City, seguridad cadena cacao, protección PETROCI/SIR, red eléctrica CI-Energies, Puerto de Abidjan, gestión fronteriza con 5 países y cumplimiento ARTCI/Ley 2013-450.",
