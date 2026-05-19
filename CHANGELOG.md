@@ -7,6 +7,25 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.136] 2026-05-19 — SEO fix: k-safety title length
+
+**Fixed**
+- K-Safety page title: replaced `&` with `and` (71→69 chars raw HTML, within 70-char limit)
+- Daily SEO audit (Verge): 71 pages audited, 0 critical, 5 pre-existing warnings, 0 new actionable issues
+
+## [2.135] 2026-05-19 — Algeria market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-algeria` (EN + ES)
+- Coverage: DGSN 58 wilayas, Gendarmerie Nationale (GN/MDN), DGPC, CNCLAT, DSS
+- Energy infrastructure: SONATRACH Hassi Messaoud, Hassi R'Mel, In Amenas/Tiguentourine (post-2013 upgraded), Arzew/Bethioua LNG, Skikda LNG/refinery, Transmed/Medgaz pipelines
+- Ports: Algiers/Oran/Béjaïa/Skikda + airports ALG/Es-Sénia/Mohamed Boudiaf
+- Sahel borders: 6,343 km across Libya/Niger/Mali/Mauritania/Morocco/Tunisia with GN/ANP radar/CCTV
+- Compliance: Law 18-07/ANPDP, SGSI/CERT-DZ, DSS guidelines
+- Procurement: Decree 15-247/ARMP/SIGMAP, SONATRACH direct procurement
+- Metadata (EN + ES), sitemap entry, hub cards (EN + ES), 7 FAQs each locale
+- Algeria Vision 2035 / e-Algérie alignment
+
 ## [2.134] 2026-05-19 — Iraq market guide
 
 **Added**

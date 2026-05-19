@@ -15,7 +15,7 @@ export const metadata = {
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
-    title: "Situational Awareness & Command Center Software | KabatOne K-Safety",
+    title: "Situational Awareness and Command Center Software | KabatOne K-Safety",
     description: "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
     canonical: "https://kabatone.com/k-safety/",
   },
@@ -448,6 +448,11 @@ export const metadata = {
     title: "Public Safety Software for Türkiye: EGM/Jandarma, AFAD 112, MOBESE/KGYS, KVKK & BTK/USOM | KabatOne",
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
+  },
+  publicSafetySoftwareAlgeria: {
+    title: "Public Safety Software for Algeria: DGSN/Gendarmerie Nationale, DGPC, SONATRACH, Law 18-07/ANPDP & Vision 2035 | KabatOne",
+    description: "Unified platform for Algeria DGSN and DGPC — integrated CAD dispatch across 58 wilayas, Algiers Safe City, SONATRACH infrastructure security (Hassi Messaoud/Hassi R'Mel/In Amenas/Arzew), Sahel border monitoring, Law 18-07/ANPDP/CERT-DZ compliance, and Décret 15-247 procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-algeria/",
   },
   publicSafetySoftwareIraq: {
     title: "Public Safety Software for Iraq: IFP/CTS, KRSC/Peshmerga, NOC, Oil Infrastructure & Mosul Reconstruction | KabatOne",
