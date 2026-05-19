@@ -772,6 +772,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-malta',
+          title: 'Public Safety Software for Malta',
+          description: "KabatOne supports Malta Police, AFM, and Coast Guard — Grand Harbour Valletta, Marsaxlokk >3M TEU, Mediterranean SAR 250,000 km², Schengen 2007, and FRONTEX/EUNAVFOR coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

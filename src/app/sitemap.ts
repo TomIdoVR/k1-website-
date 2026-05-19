@@ -142,6 +142,7 @@ const pages = [
   { path: '/resources/public-safety-software-north-macedonia', priority: 0.75 },
   { path: '/resources/public-safety-software-montenegro', priority: 0.75 },
   { path: '/resources/public-safety-software-cyprus', priority: 0.75 },
+  { path: '/resources/public-safety-software-malta', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

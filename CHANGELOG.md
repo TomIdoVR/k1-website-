@@ -1,3 +1,7 @@
+## [v2.201] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Malta**
+
 ## [v2.200] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Cyprus**

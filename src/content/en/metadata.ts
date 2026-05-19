@@ -611,6 +611,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Cyprus Police ~5K officers, KYP intelligence, and National Guard — UN Green Line 180 km management, Aphrodite/ENI gas EEZ protection, Port of Limassol, British Sovereign Bases coordination, and Frontex/EUNAVFOR integration.",
     canonical: "https://kabatone.com/resources/public-safety-software-cyprus/",
   },
+  publicSafetySoftwareMalta: {
+    title: "Public Safety Software for Malta | Police/AFM, Grand Harbour, Marsaxlokk Port & Mediterranean SAR – KabatOne",
+    description: "KabatOne delivers public safety platform for Malta Police ~1.7K officers, AFM Armed Forces, and Coast Guard — Grand Harbour Valletta, Marsaxlokk >3M TEU transhipment hub, Mediterranean SAR 250,000 km², Schengen 2007, and FRONTEX/EUNAVFOR coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-malta/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",
