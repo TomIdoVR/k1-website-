@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-mozambique',
+          title: 'Software de Seguridad Pública para Mozambique',
+          description: 'PRM/FADM en 11 provincias, INGC ciclones/inundaciones, TotalEnergies LNG Cabo Delgado, CFM Maputo/Beira/Nacala y Lei 3/2022.',
+          region: 'África Austral',
+        },
+        {
+          href: '/resources/public-safety-software-mozambique',
+          title: 'Public Safety Software for Mozambique',
+          description: 'PRM/FADM across 11 provinces, INGC cyclone/flood management, TotalEnergies LNG Cabo Delgado, CFM Maputo/Beira/Nacala and Law 3/2022.',
+          region: 'Southern Africa',
+        },
+        {
           href: '/resources/public-safety-software-angola',
           title: 'Software de Seguridad Pública para Angola',
           description: 'PNA/FAA en 18 provincias, Luanda Safe City, SINSE, Sonangol offshore Bloco 0/15/17/31, Puerto de Lobito y Lei 22/2011/ANPD.',

@@ -1,3 +1,17 @@
+## [v2.145] — 2026-05-19
+### Added
+- **Mozambique national market guide** (`/resources/public-safety-software-mozambique/`)
+  - PRM (Mozambique Republic Police) — 11 provinces, SERNIC criminal investigation, Border Police
+  - FADM/FAM — Cabo Delgado counter-insurgency (Al-Shabaab/ASWJ since 2017), border security
+  - INGC/CENOE — cyclones (Idai/Kenneth 2019), Limpopo-Zambezi floods, INAM integration
+  - SISE national intelligence
+  - TotalEnergies/ENH Mozambique LNG Afungi Peninsula (127 tcf, 13 Mtpa); Coral Sul FLNG (Eni/ENH)
+  - CFM port corridor: Maputo/Matola (SA corridor), Beira (Zimbabwe), Nacala (Malawi)
+  - Cahora Bassa Dam 2,075 MW; Mozal aluminium; MPM Airport
+  - Borders: Negomano/Namuno (Tanzania), Forbes/Nyamapanda (Zimbabwe), Cassacatiza (Zambia), Milange/Zobue (Malawi), Lomahasha/Namaacha (Eswatini)
+  - Compliance: ANPDP/Lei 3/2022, Lei 4/2021 Cybersecurity/CERT-Moçambique/INTIC
+  - Procurement: UGEA/CCP; SADC/SIPO II; Agenda 2025/ICSSI
+
 ## [v2.144] — 2026-05-19
 ### Added
 - **Angola national market guide** (`/resources/public-safety-software-angola/`)

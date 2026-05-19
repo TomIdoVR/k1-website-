@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareMozambique: {
+    title: "Software de Seguridad Pública para Mozambique: PRM/FADM, INGC, Maputo Safe City, TotalEnergies/ENH LNG, Lei 3/2022/ANPDP y SADC | KabatOne",
+    description: "Plataforma unificada para la PRM y FADM de Mozambique — despacho CAD integrado en 11 provincias, INGC gestión de ciclones/inundaciones, TotalEnergies/ENH Mozambique LNG Cabo Delgado, corredor portuario CFM Maputo/Beira/Nacala, Barragem Cahora Bassa, Lei 3/2022/ANPDP y adquisición UGEA/CCP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-mozambique/",
+  },
   publicSafetySoftwareAngola: {
     title: "Software de Seguridad Pública para Angola: PNA/FAA, SINSE, Luanda Safe City, Sonangol/ANPG, Lei 22/2011/ANPD y SADC | KabatOne",
     description: "Plataforma unificada para la Policía Nacional de Angola (PNA) y FAA — despacho CAD integrado en 18 provincias, Luanda Safe City, SINSE inteligencia, Sonangol offshore Bloco 0/15/17/31, Puerto de Luanda/Lobito, fronteras RDC/Namibia/Zambia, Lei 22/2011/ANPD y adquisición UTCE/Lei 20/2010.",
