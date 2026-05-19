@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.114] - 2026-05-18
+### Added
+- **Greece market guide** (EN + ES): `/resources/public-safety-software-greece/`
+  - ΕΛΑΣ/Hellenic Police (13 regions + Attica), Ministerio Protección Ciudadana, ΕΥΠ intelligence
+  - Πυροσβεστικό Σώμα (99 stations); ΕΚΑΒ (national 112/ambulance); Λιμενικό Σώμα (Coast Guard)
+  - ΕΣΑΚΤ TETRA national network; 100/199/166/112 emergency numbers; ΓΓΠΠ Civil Protection
+  - Wildfire management context: Mati 2018, Evros 2023; Copernicus/Wildfirecat; seismic/tsunami alerts
+  - RGPD/ν. 4624/2019, ν. 4921/2022, ΑΠΔΠΧ; NIS2/ΕΨΑΠΑ; ENISA HQ Athens
+  - ΕΣΗΔΗΣ/ν. 4412/2016 procurement; ΕΣΠΑ/ΤΑΑ funding; Smart Attica/Athens; island scalability
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.113] - 2026-05-18
 ### Added
 - **Czech Republic market guide** (EN + ES): `/resources/public-safety-software-czech-republic/`
