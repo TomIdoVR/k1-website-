@@ -469,6 +469,11 @@ export const metadata = {
     description: "Plataforma unificada para los 12 distritos de la Politiet danesa, las Alarmcentraler y el Beredskabsstyrelsen — despacho CAD integrado con la red SINE TETRA, gestión de cámaras y ANPR conforme a Databeskyttelsesloven/Datatilsynet, y cumplimiento NIS2/CFCS.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-denmark/",
   },
+  publicSafetySoftwareFinland: {
+    title: "Software de Seguridad Pública para Finlandia: Poliisi 11 Distritos, Hätäkeskuslaitos 112, VIRVE TETRA, Pelastustoimi y Tietosuojalaki | KabatOne",
+    description: "Plataforma unificada para los 11 distritos de la Poliisi finlandesa, los 6 centros hätäkeskus del Hätäkeskuslaitos y el Pelastustoimi — despacho CAD integrado con VIRVE TETRA/VIRVE 2.0, gestión de cámaras conforme a Tietosuojalaki/Tietosuojavaltuutettu, y cumplimiento NIS2/Kyberturvallisuuskeskus.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-finland/",
+  },
   publicSafetySoftwareUAE: {
     title: "Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City 50K+ Cámaras, PDPL y NESA | KabatOne",
     description: "Plataforma unificada para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU — despacho CAD IPOC-integrado, 50,000+ cámaras IA y cumplimiento PDPL/NESA con data residency en EAU.",

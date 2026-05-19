@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.108] 2026-05-19 — Feat: Finland market guide (Poliisi, Hätäkeskuslaitos, VIRVE TETRA, Pelastustoimi, Tietosuojalaki)
+
+**Added**
+- New page: /resources/public-safety-software-finland/ — Poliisi (11 poliisilaitos, Poliisihallitus/POHA), Hätäkeskuslaitos (6 hätäkeskus, 112 integrated dispatch), VIRVE TETRA/VIRVE 2.0 (TETRA+4G/5G), Pelastustoimi (22 departments), Supo counter-terrorism, Tietosuojalaki/Tietosuojavaltuutettu (GDPR), Laki henkilötietojen käsittelystä poliisitoimessa, Kyberturvallisuuslaki/NIS2/Kyberturvallisuuskeskus/Traficom, Laki julkisen hallinnon tiedonhallinnasta, KEJO field command, PATJA, HILMA/Hansel Oy procurement, Aurora AI, Helsinki Smart City
+- 4 challenge cards: VIRVE TETRA/VIRVE 2.0/Hätäkeskuslaitos, Helsinki Smart City/Aurora AI/KEJO, ANPR/Tietosuojavaltuutettu, NIS2/Kyberturvallisuuslaki/VIRVE homologation
+- 7 bilingual FAQs: Poliisi/POHA/11 districts, Hätäkeskuslaitos/VIRVE dispatch, digitalisation/KEJO/Aurora AI, HILMA/Hansel procurement, Tietosuojalaki/Tietosuojavaltuutettu/politiregisterloven, ANPR/Helsinki Smart City, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.107] 2026-05-19 — Feat: Denmark market guide (Politiet, SINE TETRA, Alarmcentralen, Beredskabsstyrelsen, Datatilsynet)
 
 **Added**
