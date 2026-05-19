@@ -7,6 +7,21 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.138] 2026-05-19 — Mexico national market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-mexico` (EN + ES)
+- Coverage: SSPC, Guardia Nacional (150K+ elements), CNPC/SINAPROC, CENAPRED, SESNSP/PLATAFORMA MEXICO
+- 911 System + C5/C4/C2 command centres: CDMX, Jalisco, Nuevo León, Estado de México, Chihuahua
+- SEMAR port security: Manzanillo/Lázaro Cárdenas/Veracruz/Altamira
+- SEDENA Plan DN-III-E + Plan Marina disaster response
+- Borders: 3,145 km US (Tijuana/Mexicali/Nogales/Cd. Juárez/Nuevo Laredo/Matamoros)
+- PLATAFORMA MEXICO: REPUVE/RENAPO/AFIS/SNSP databases
+- Compliance: LFPDPPP (2010), LGPDPPSO (2017), INAI, ARCO rights
+- Procurement: LAASSP/LOPSRM, CompraNet/MercadoPúblico.mx, SHCP, World Bank/IDB
+- Metadata (EN + ES), sitemap entry (priority 0.8), hub cards (EN + ES), 7 FAQs each locale
+- Digital Mexico 2025 / Mexico Digital strategy alignment
+
 ## [2.137] 2026-05-19 — Ethiopia market guide
 
 **Added**
