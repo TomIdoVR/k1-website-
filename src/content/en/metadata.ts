@@ -461,6 +461,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareMauritania: {
+    title: "Public Safety Software for Mauritania | PN/GSN, Saharan Borders & Maritime Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Mauritania National Police, National Gendarmerie (GSN), Port of Nouakchott management, Saharan border control, and coordination against GSIM/Al-Qaeda in the Sahel.",
+    canonical: "https://kabatone.com/resources/public-safety-software-mauritania/",
+  },
   publicSafetySoftwareEritrea: {
     title: "Public Safety Software for Eritrea | EDF/EPS, Port of Massawa & Red Sea Maritime Security – KabatOne",
     description: "KabatOne delivers public safety platform for the Eritrea Defence Forces, State Police, port management at Massawa/Assab, and maritime security across the Red Sea and Bab-el-Mandeb corridor.",

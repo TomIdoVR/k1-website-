@@ -1,3 +1,14 @@
+## [v2.163] – 2026-05-19
+### Added
+- Public safety software for Mauritania geographic market guide (EN + ES)
+  - DGSN/GSN/ANM ~20,000 (GSIGN contraterrorismo)/Guardia Nacional/DGED inteligencia; 15 wilayas
+  - G5 Sahel FC-G5S/CEMOC; GSIM/Al-Qaeda Sahel frontera Mali 2,237 km; Nara/Néma/Timbedra
+  - PAN Puerto Nouakchott (CHEC/CRBC expansión); Puerto Nouadhibou/SNIM 10M+ toneladas mineral hierro; ZFN
+  - Greater Tortue Ahmeyim LNG (BP/Kosmos/SMHPM); Tasiast oro (Kinross); Chinguetti/Tiof petróleo offshore
+  - Fronteras: Senegal (Rosso/Diama OMVS), Argelia (Tin Zaouatine), Sahara Occidental berm marroquí
+  - Ruta Atlántica tráfico personas Canarias 40,000+ (2023); sequías Sahel 90% territorio desértico
+  - Code des Marchés Publics Décret 2011-242/ARMP; Loi 2013-025 antiterrorismo; ARE/APAUS/Mauritel
+
 ## [v2.162] – 2026-05-19
 ### Added
 - Public safety software for Eritrea geographic market guide (EN + ES)

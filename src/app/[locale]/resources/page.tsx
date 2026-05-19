@@ -574,6 +574,12 @@ export default async function ResourcesPage({
           region: 'East Africa',
         },
         {
+          href: '/resources/public-safety-software-mauritania',
+          title: 'Software de Seguridad Pública para Mauritania',
+          description: 'DGSN/GSN en 15 wilayas, puertos Nouakchott/Nouadhibou, coordinación G5 Sahel GSIM, ferrocarril mineral SNIM y seguridad GNL Greater Tortue Ahmeyim.',
+          region: 'África Occidental',
+        },
+        {
           href: '/resources/public-safety-software-eritrea',
           title: 'Software de Seguridad Pública para Eritrea',
           description: 'EDF/EPS en 6 zonas, puertos Massawa/Assab, Guardia Costera Archipiélago Dahlak, seguridad marítima Mar Rojo y frontera de paz Etiopía-Jeddah 2018.',
@@ -584,6 +590,12 @@ export default async function ResourcesPage({
           title: 'Software de Seguridad Pública para Yibuti',
           description: 'PNJ/FAD, Camp Lemonnier AFRICOM, FFDJ, Base Naval PLA, Puerto Doraleh +1M TEUs, QG EUNAVFOR Atalanta y seguridad Bab-el-Mandeb.',
           region: 'África Oriental',
+        },
+        {
+          href: '/resources/public-safety-software-mauritania',
+          title: 'Public Safety Software for Mauritania',
+          description: 'DGSN/GSN across 15 wilayas, Nouakchott/Nouadhibou ports, G5 Sahel GSIM coordination, SNIM iron ore railway and Greater Tortue Ahmeyim LNG security.',
+          region: 'West Africa',
         },
         {
           href: '/resources/public-safety-software-eritrea',
