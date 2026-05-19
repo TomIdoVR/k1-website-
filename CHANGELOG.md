@@ -1,3 +1,12 @@
+## [v2.173] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Guinea-Bissau**
+  - FARP ~4,000-5,000 (army/navy/national guard), POP 8 regions, SISE intelligence, Coast Guard Bijagos 88 islands
+  - 9 coups/attempts since 1974; DEA/UNODC: Africa's first narco-state; Bijagos = cocaine transshipment hub Colombia/Venezuela → Europe
+  - INTERPOL + EUBAM Bissau (EU); cashew 5th world exporter (~250K tons/yr); Farim phosphate; fishing ZEE 200 nm
+  - Port of Bissau, OXB Airport; BCEAO CFA franc (XOF); UEMOA; IMF/World Bank/AfDB/EU/Portugal cooperation
+  - ARMP/Code des Marchés Publics; ECOWAS/UEMOA data framework
+
 ## [v2.172] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Liberia**

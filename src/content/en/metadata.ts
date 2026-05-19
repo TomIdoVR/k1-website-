@@ -501,6 +501,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Armed Forces of Liberia (AFL), National Police (LNP), Port of Monrovia, and security for iron ore, rubber, and mineral resources.",
     canonical: "https://kabatone.com/resources/public-safety-software-liberia/",
   },
+  publicSafetySoftwareGuineaBissau: {
+    title: "Public Safety Software for Guinea-Bissau | FARP/POP, Port of Bissau & Atlantic Drug Trafficking – KabatOne",
+    description: "KabatOne delivers public safety platform for the Guinea-Bissau Armed Forces (FARP), Public Order Police, Port of Bissau, and maritime control of the Bijagos Archipelago drug transshipment routes.",
+    canonical: "https://kabatone.com/resources/public-safety-software-guinea-bissau/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",

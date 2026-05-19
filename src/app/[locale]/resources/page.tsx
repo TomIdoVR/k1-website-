@@ -604,6 +604,12 @@ export default async function ResourcesPage({
           region: 'África Oriental',
         },
         {
+          href: '/resources/public-safety-software-guinea-bissau',
+          title: 'Public Safety Software for Guinea-Bissau',
+          description: "KabatOne supports Guinea-Bissau's FARP, POP Police, Port of Bissau, Bijagos Archipelago maritime monitoring, and INTERPOL/UNODC anti-drug trafficking coordination.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
