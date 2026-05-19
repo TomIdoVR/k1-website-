@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.134] 2026-05-19 — Iraq market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-iraq` (EN + ES)
+- Coverage: Iraqi Federal Police (IFP) 18 governorates, CTS, Civil Defence, NOC/BOC, KRSC/Asayish/Peshmerga (Kurdistan Region)
+- Oil infrastructure: Rumaila (1.4M+ bpd), West Qurna 1&2, Majnoon, Kirkuk, ABOT/KAAOT, Umm Qasr Port
+- Reconstruction: Nineveh/Mosul (UNDP/UNOPS), Anbar (EU/World Bank)
+- Compliance: CMC/NITA-Iraq, MOC encryption, air-gapped deployment for CTS/MOI classified networks
+- Procurement: GCB/PMO, World Bank/UNDP, US DoS/DoD ITACSS, KRG separate rules
+- Metadata (EN + ES), sitemap entry, hub cards (EN + ES), 7 FAQs each locale
+
 ## [2.133] 2026-05-19 — Jordan market guide
 
 **Added**
