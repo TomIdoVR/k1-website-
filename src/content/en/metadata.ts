@@ -424,6 +424,11 @@ export const metadata = {
     description: "Unified platform for Belgian Federal Police, 188 local police zones, and COS/OHC dispatch centres — integrated 112/101 CAD dispatch, Camerawet-compliant ANPR and urban surveillance, and GDPR/GBA and NIS2/CCB compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-belgium/",
   },
+  publicSafetySoftwareNorway: {
+    title: "Public Safety Software for Norway: Politiet 12 Districts, Nødnett TETRA, AMK/110, DSB/NSM & Datatilsynet | KabatOne",
+    description: "Unified platform for Norway's 12 police districts, AMK/110/112 centres, and DSB — integrated CAD dispatch with Nødnett TETRA, urban camera and ANPR management compliant with personopplysningsloven/Datatilsynet, and NIS2/NSM compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-norway/",
+  },
   publicSafetySoftwareUAE: {
     title: "Public Safety Software for the UAE: Dubai Police IPOC, Safe City 50K+ Cameras, PDPL & NESA | KabatOne",
     description: "Unified platform for Dubai Police, Abu Dhabi Police, and UAE Safe City projects — IPOC-integrated CAD dispatch, 50,000+ AI cameras, and PDPL/NESA compliance with UAE data residency.",

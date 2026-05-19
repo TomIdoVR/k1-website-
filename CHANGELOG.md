@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.106] 2026-05-19 — Feat: Norway market guide (Politiet, Nødnett, AMK/110, DSB/NSM, Datatilsynet)
+
+**Added**
+- New page: /resources/public-safety-software-norway/ — Politiet (12 districts, Politidirektoratet/POD), Nødnett TETRA (67K+ users), AMK medical dispatch (20 centres), fire 110 centres (19), DSB (civil protection/natural disasters), NSM (cybersecurity/NIS2), Datatilsynet/personopplysningsloven, politiregisterloven, Doffin/DFØ procurement, PST counter-terrorism
+- 4 challenge cards: Nødnett TETRA/multi-centre dispatch, remote geography/DSB resilience, ANPR/Smart City/Datatilsynet, NSM/NIS2/politiregisterloven/Nødnett homologation
+- 7 bilingual FAQs: Politiet/POD/12-district structure, AMK/110/112/Nødnett dispatch, DSB role, Doffin/DFØ procurement, personopplysningsloven/Datatilsynet/politiregisterloven, ANPR/urban surveillance, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/), cross-link from Sweden/Belgium pages
+
+---
+
 ## [2.105] 2026-05-19 — Feat: Belgium market guide (Federal Police, ASTRID 112, Camerawet, GDPR/GBA, NIS2/CCB)
 
 **Added**
