@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.117] - 2026-05-18
+### Added
+- **Romania market guide** (EN + ES): `/resources/public-safety-software-romania/`
+  - Poliția Română (41 județe + București, IGPR), MAI, Jandarmeria Română, SRI intelligence
+  - ISU/BM OKF-equivalent (fire + civil protection); SMURD (HEMS/paramedic); SAJ (41 county ambulances) + SABIF
+  - STS (Special Telecommunications Service) — TETRA/ROIIS network; 112 single emergency number; DIU dispatch centres
+  - RO-ALERT Cell Broadcast system; NG112/eCall modernisation; PNRR emergency comms funding
+  - Vrancea seismic zone risk; INFP seismic data; Danube/Siret/Prut flood management
+  - GDPR/ANSPDCP, Law 190/2018, Law 218/2002, Law 333/2003, Directive 2016/680; DNSC/CERT-RO/NIS2
+  - SICAP/Law 98/2016 procurement; PNRR/EU Structural Funds; Smart Cluj/Timișoara/București
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.116] - 2026-05-18
 ### Added
 - **Hungary market guide** (EN + ES): `/resources/public-safety-software-hungary/`

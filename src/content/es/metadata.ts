@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareRomania: {
+    title: "Software de Seguridad Pública para Rumanía: Poliția Română, ISU/SMURD, TETRA/ROIIS, RGPD/ANSPDCP y DNSC/NIS2 | KabatOne",
+    description: "Plataforma unificada para la Poliția Română, el ISU/SMURD y los SAJ — despacho CAD integrado con TETRA/ROIIS del STS y DIU en 41 condados, gestión de cámaras conforme a RGPD/ANSPDCP, y cumplimiento DNSC/NIS2 con fondos PNRR/SICAP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-romania/",
+  },
   publicSafetySoftwareHungary: {
     title: "Software de Seguridad Pública para Hungría: Rendőrség, VIRTAL TETRA, BM OKF/Katasztrófavédelem, RGPD/NAIH y NIS2/SZTFH | KabatOne",
     description: "Plataforma unificada para la Rendőrség húngara y el BM OKF — despacho CAD integrado con VIRTAL TETRA y 19 condados policiales, gestión de cámaras y ANPR conforme a RGPD/NAIH, y cumplimiento NIS2/SZTFH con procurement EKR/Kbt.",
