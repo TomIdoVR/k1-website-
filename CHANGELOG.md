@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.127] - 2026-05-19
+### Added
+- Geographic market guide: **Bangladesh** — Bangladesh Police (8 Ranges/64 districts/DMP/CMP/KMP/RMP/SMP/BMP/NRMP/RAB/SWADS), FSCD, DDM, CPP (55,000+ volunteers/2,000+ cyclone shelters), BMD/BFFWC/FFWC, Dhaka DMP C3 Safe City, BRTA/DTCA cameras, Digital Security Act 2018, ICT Act 2006, BGD e-GOV CIRT/BCC, National Cybersecurity Strategy, e-GP/CPTU/PPA 2006/PPR 2008, ADB/WB/JICA, 7 bilingual FAQs (EN + ES)
+
 ## [2.126] - 2026-05-19
 ### Added
 - Geographic market guide: **Pakistan** — Punjab/Sindh/KPK/Balochistan/ICTP Police, Rangers, FC, Rescue 1122 PES+KPK, NDMA/PDMA, PMD/GLOF/2022 floods (33M affected), PSCA Lahore 8,000+ cameras, ISC Islamabad 1,900+, Karachi Safe City 3,000+, PDPA 2023/NCPDP, PECA 2016, National Cybersecurity Policy 2021/IGNITE/CERT-PK, PPRA 2004/SPRRA/KPPRA/BPPRA, ADB/IDB/WB, 7 bilingual FAQs (EN + ES)
