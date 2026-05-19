@@ -496,6 +496,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareSomalia: {
+    title: "Software de Seguridad Pública para Somalia | SPF, SNA y Gestión Post-Conflicto – KabatOne",
+    description: "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones anti-Al-Shabaab y conciencia situacional para la Policía Federal de Somalia, SNA y programas de reconstrucción de la seguridad pública.",
+    canonical: "https://kabatone.com/resources/public-safety-software-somalia/",
+  },
   publicSafetySoftwareChad: {
     title: "Software de Seguridad Pública para Chad: ANT/MNJTF, ISWAP/Boko Haram, Petróleo Doba/Oleoducto Chad-Camerún, Lago Chad CBLT, Fronteras 6 Países y ARCEP | KabatOne",
     description: "Plataforma modular para seguridad pública y estabilización del Sahel en Chad — CAD para 23 regiones/61 departamentos, coordinación ANT/MNJTF anti-ISWAP/Boko Haram, seguridad petróleo Doba CNPC/Exxon ~130K bpd, oleoducto COTCO/TOTCO 1,070 km, gestión crisis Lago Chad CBLT, coordinación OCHA/UNHCR 600K+ PDI y cumplimiento ARCEP/Banco Mundial/AfDB.",
