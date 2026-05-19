@@ -1,3 +1,13 @@
+## [v2.181] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Gambia**
+  - GAF ~800-1,000 (Army/River Navy/National Guard), GPS ~6,000 Police (5 divisions), SIA (restructured post-Jammeh); President Barrow (2016/2021) ended 22-year Jammeh dictatorship; TRRC 2019-2021
+  - Smallest mainland country in Africa (11,295 km²); virtually enclosed within Senegal (740 km border); Atlantic coast ~80 km
+  - Gambia River ~470 km divides country north/south; Port of Banjul (GPA) — Senegal alternative trade route; Banjul-Barra Ferry
+  - Tourism ~15-20% GDP (Smiling Coast — UK/Scandinavia/Germany); groundnuts ~80K ton/yr; fishing ~65K ton/yr; diaspora remittances ~30% GDP
+  - Banjul International Airport (BJL); NAWEC electricity; Africell/QCell mobile; PURA/GRA regulator
+  - PPA/Public Procurement Act 2014; Data Protection Act 2013; GMD/CBG; ECOWAS/OMVG/SENEGAMBIA; WB(IDA)/IsDB/USAID/EU/China
+
 ## [v2.180] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Lesotho**

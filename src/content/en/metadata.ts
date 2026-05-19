@@ -541,6 +541,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Lesotho Defence Force (LDF), Mounted Police Service, LHWP water infrastructure protection, Letseng diamond mine, and mountain security — only country entirely enclosed within South Africa.",
     canonical: "https://kabatone.com/resources/public-safety-software-lesotho/",
   },
+  publicSafetySoftwareGambia: {
+    title: "Public Safety Software for Gambia | GAF/GPS, Gambia River, Tourism & Post-Dictatorship Transition – KabatOne",
+    description: "KabatOne delivers public safety platform for Gambia Armed Forces (GAF), Police Service, Gambia River security, coastal tourist protection, and post-TRRC justice reforms — smallest mainland country in Africa.",
+    canonical: "https://kabatone.com/resources/public-safety-software-gambia/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",

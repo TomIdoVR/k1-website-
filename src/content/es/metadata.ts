@@ -576,6 +576,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Lesoto (LDF), Servicio de Policía Montada, protección de infraestructura hídrica LHWP, mina de diamantes Letseng y seguridad montañosa — único país completamente enclavado dentro de Sudáfrica.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-lesotho/",
   },
+  publicSafetySoftwareGambia: {
+    title: "Software de Seguridad Pública para Gambia | GAF/GPS, Río Gambia, Turismo y Transición Post-Dictadura – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Gambia (GAF), Servicio de Policía, seguridad del Río Gambia, protección turística costera y reformas de justicia post-TRRC — el país continental más pequeño de Africa.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-gambia/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

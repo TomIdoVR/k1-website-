@@ -652,6 +652,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-gambia',
+          title: 'Public Safety Software for Gambia',
+          description: "KabatOne supports Gambia's GAF, Police Service, Gambia River security, Port of Banjul, coastal tourist protection, and post-TRRC justice system reforms.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
