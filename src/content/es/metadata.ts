@@ -492,6 +492,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareBurkinaFaso: {
+    title: "Software de Seguridad Pública para Burkina Faso: FAN/VDP, Contraterrorismo JNIM/GSIM, Minas Oro Essakane/Houndé, 2M+ PDI, G5 Sahel/AES y ARCEP | KabatOne",
+    description: "Plataforma modular para seguridad pública y estabilización del Sahel en Burkina Faso — CAD para 13 regiones/45 provincias, coordinación antiterrorista FAN/VDP, seguridad minas oro Essakane/Houndé/Mana, gestión OCHA/CONASUR 2M+ PDI, corredor Abidjan-Ouagadougou, gestión fronteriza 6 países y cumplimiento ARCEP/Banco Mundial/G5 Sahel.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-burkina-faso/",
+  },
   publicSafetySoftwareLibya: {
     title: "Software de Seguridad Pública para Libia: GNU, NOC/Sharara Petróleo, Oleoducto Greenstream, Terminal Es Sider, UNSMIL, Migración Mediterránea y Fronteras 6 Países | KabatOne",
     description: "Plataforma modular para reconstrucción de seguridad pública en Libia — CAD para 22 municipios, integración GNU/UNSMIL, seguridad NOC Sharara 300K bpd/El Feel/Waha, oleoducto Greenstream, terminales Es Sider/Ras Lanuf, gestión migración mediterránea, coordinación FRONTEX y cumplimiento adquisiciones ONU/UE/USAID.",
