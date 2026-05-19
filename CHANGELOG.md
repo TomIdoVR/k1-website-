@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.120] - 2026-05-18
+### Added
+- Geographic market guide: **Philippines** — PNP (17 RPOs/NCRPO/1,400+ stations/SAF/HPG), BFP, PCG (17 Districts), NDRRMC/RA 10121, PAGASA PSWS, PHIVOLCS (23 volcanoes), OCD READY Project, Metro Manila/Quezon City/Manila 911, RA 10173/NPC CCTV guidelines, RA 10175/CICC, DICT National Cybersecurity Plan 2023–2028/CERT-PH, PhilGEPS/RA 9184, 7 bilingual FAQs (EN + ES)
+
 ## [2.119] - 2026-05-18
 ### Added
 - Geographic market guide: **Indonesia** — Polri (34 Polda + 500+ Polres), BNPB/BPBD/PUSDALOPS, BASARNAS, Damkar, PSC 119/SPGDT, BMKG/InaTEWS (tsunamis), 147 volcanoes/PVMBG, Ring of Fire, 17,000+ islands, UU PDP No. 27/2022 (in force Oct 2024), KOMDP/Komdigi, BSSN/IDCERT, LKPP/SPSE/e-Katalog, 100 Kota Cerdas, Satu Data Indonesia, Jakarta JGIS, 7 bilingual FAQs (EN + ES)
