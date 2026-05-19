@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.124] - 2026-05-19
+### Added
+- Geographic market guide: **Kenya** — NPS (47 county commands/KPS/APS/DCI/GSU/FRG/Air Wing), KFRS, NYS, KFS, NDOC, NDMA/ASAL early warning, KMD, 999/112, Nairobi Huawei Safe City 1,800+ cameras/NCC/NTMC, KeNHA ANPR, DPA 2019/ODPC + Regulations 2021, Computer Misuse & Cybercrimes Act 2018, KE-CIRT/CC, ICT Authority, GPP/PPADA 2015, AfDB/WB/JICA, 7 bilingual FAQs (EN + ES)
+
 ## [2.123] - 2026-05-18
 ### Added
 - Geographic market guide: **Nigeria** — NPF (36 state commands/320K+ personnel), NSCDC/DSS/NIA, FFS, NEMA (8 zonal/NECC)/SEMA, NiMet, NIHSA, 112, Lagos LC3/Eko Safe City 2,000+ cameras/LSSTF, Abuja AISS/FCTA, NDPA 2023/NDPC, Cybercrime Act 2015 + 2024 Amendment, NITDA/NCC, BPP/PPA 2007, 7 bilingual FAQs (EN + ES)
