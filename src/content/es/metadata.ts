@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareTunisia: {
+    title: "Software de Seguridad Pública para Túnez: DGPN/Garde Nationale, ONPC, INPDP/Loi 63-2004 y Visión 2035 | KabatOne",
+    description: "Plataforma unificada para la DGPN y Garde Nationale de Túnez — despacho CAD integrado en 24 gobernaciones, Túnez Safe City, ONPC protección civil, Puerto de Túnez Radès/Sfax, INPDP/Loi 63-2004 y adquisición HAICOP/Code des marchés publics.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-tunisia/",
+  },
   publicSafetySoftwareMexicoNational: {
     title: "Software de Seguridad Pública para México: SSPC/Guardia Nacional, SINAPROC/CENAPRED, Sistema 911/PLATAFORMA MÉXICO y Digital México 2025 | KabatOne",
     description: "Plataforma unificada para la SSPC y Guardia Nacional de México — despacho CAD integrado con los 31 estados y CDMX a través del Sistema 911, centros C5/C4, SINAPROC multi-riesgo, SEMAR/SEDENA coordinación, LFPDPPP/LGPDPPSO/INAI y adquisición LAASSP/CompraNet.",

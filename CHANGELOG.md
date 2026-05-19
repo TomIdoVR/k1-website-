@@ -1,3 +1,17 @@
+## [v2.140] — 2026-05-19
+### Added
+- **Tunisia national market guide** (`/resources/public-safety-software-tunisia/`)
+  - DGPN/Ministry of Interior — 24 governorates, Brigades de recherche, Judicial Police, Border Police
+  - Garde Nationale — 7 military regions, border/rural/coastal security
+  - ONPC civil protection — 198 emergency coordination, COC Tunis
+  - ANS/DGSE national security; BAT/BIR anti-terrorism units
+  - Infrastructure: Port of Tunis Radès (main container), Sfax/Bizerta/Sousse ports, TUN Airport 6M+ pax, Transmed pipeline, STEG/SONEDE
+  - Border crossings: Ras Jedir/Dhehiba (Libya), Bouchebka/Haïdra/Sakiet Sidi Youssef (Algeria)
+  - Compliance: INPDP/Law 63-2004, Décret-loi 54-2022/ANSI/CERT-TN, Law 2015-26/GRC
+  - Procurement: HAICOP/Code des marchés publics/Tuneps portal
+  - Tunisia Digital 2025 / Vision 2035 modernisation context
+- Fix: duplicate `publicSafetySoftwareMexico` TS1117 error (v2.139) — renamed national Mexico key to `publicSafetySoftwareMexicoNational`
+
 # KabatOne Website — Changelog
 
 All notable changes to the website are logged here.

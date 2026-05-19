@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-tunisia',
+          title: 'Software de Seguridad Pública para Túnez',
+          description: 'DGPN/Garde Nationale en 24 gobernaciones, Túnez Safe City, ONPC, INPDP/Loi 63-2004 y adquisición HAICOP.',
+          region: 'África del Norte',
+        },
+        {
+          href: '/resources/public-safety-software-tunisia',
+          title: 'Public Safety Software for Tunisia',
+          description: 'DGPN/Garde Nationale across 24 governorates, Tunis Safe City, ONPC, INPDP/Law 63-2004 and HAICOP procurement.',
+          region: 'North Africa',
+        },
+        {
           href: '/resources/public-safety-software-mexico',
           category: 'Guía de Mercado',
           title: 'Software de Seguridad Pública para México: SSPC/Guardia Nacional, SINAPROC/CENAPRED y Sistema 911',
