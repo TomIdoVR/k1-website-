@@ -456,6 +456,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareLibya: {
+    title: "Public Safety Software for Libya: GNU, NOC/Sharara Oil, Greenstream Pipeline, Es Sider Terminal, UNSMIL, Mediterranean Migration & 6-Country Borders | KabatOne",
+    description: "Modular platform for Libya public safety reconstruction — CAD for 22 municipalities, GNU/UNSMIL integration, NOC Sharara 300K bpd/El Feel/Waha oil security, Greenstream pipeline, Es Sider/Ras Lanuf terminals, Mediterranean migration management, FRONTEX coordination, and UN/EU/USAID donor procurement compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-libya/",
+  },
   publicSafetySoftwareSouthSudan: {
     title: "Public Safety Software for South Sudan: SSPS/SSPDF, UNMISS, Greater Unity Oil Fields, GNPOC Pipeline, Sudd Wetlands, 6-Country Borders & World Bank Donor Frameworks | KabatOne",
     description: "Modular platform for South Sudan public safety and peacebuilding — CAD for 10 states, OCHA/UNMISS integration for 2M+ IDPs, Greater Unity/Adar Yale oil field security, GNPOC pipeline 1,610 km, Nile/Sudd flood management, Nimule/Nadapal border corridors, and World Bank/USAID/UNDP donor compliance.",
