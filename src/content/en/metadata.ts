@@ -506,6 +506,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Guinea-Bissau Armed Forces (FARP), Public Order Police, Port of Bissau, and maritime control of the Bijagos Archipelago drug transshipment routes.",
     canonical: "https://kabatone.com/resources/public-safety-software-guinea-bissau/",
   },
+  publicSafetySoftwareMadagascar: {
+    title: "Public Safety Software for Madagascar | FAM/GN, Toamasina Port, Indian Ocean Security & Mining – KabatOne",
+    description: "KabatOne delivers public safety platform for the Madagascar Armed Forces (FAM), Gendarmerie Nationale, Port of Toamasina, cyclone disaster management, and protection of vanilla/ilmenite/cobalt strategic resources.",
+    canonical: "https://kabatone.com/resources/public-safety-software-madagascar/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",

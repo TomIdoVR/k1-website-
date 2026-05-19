@@ -1,3 +1,13 @@
+## [v2.174] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Madagascar**
+  - FAM ~13,500 (army/navy/air force) across 6 military regions; Gendarmerie Nationale ~9,000 across 25 regions/119 districts; FIGN (elite); National Police
+  - World's 4th largest island (587,041 km²) ~35M pop.; Mozambique Channel critical maritime transit; ZEE 1.2M km²; 12-15 cyclones/year
+  - Vanilla ~80% world production (leading global exporter); ilmenite/titanium QMM/Rio Tinto (Fort Dauphin); cobalt/nickel Ambatovy/Sherritt (world 2nd largest deposit); chromite Kraomita Malagasy; sapphires world leading producer
+  - Port of Toamasina (MICTSL) ~5M t/year; Port Mahajanga; Port Toliara; Ivato Airport (TNR); MADARAIL; Telma/Airtel/Orange mobile
+  - BNGRC disaster management; IOC/COI regional maritime coordination; SADC/COMESA member; ARTEC telecoms; CSBF banking
+  - ARMP/Code des marchés publics; Law n°2014-006 data protection; IMF/World Bank/AfDB/EU/France AFD financing; Malagasy Ariary (MGA)
+
 ## [v2.173] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Guinea-Bissau**

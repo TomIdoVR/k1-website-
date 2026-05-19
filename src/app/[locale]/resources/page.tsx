@@ -610,6 +610,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-madagascar',
+          title: 'Public Safety Software for Madagascar',
+          description: "KabatOne supports Madagascar's FAM, Gendarmerie Nationale, Port of Toamasina, cyclone disaster management, QMM/Ambatovy mining security, and Indian Ocean maritime monitoring.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

@@ -541,6 +541,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea-Bisáu (FARP), Policía de Orden Público, Puerto de Bissau y control marítimo de rutas de narcotráfico del archipiélago Bijagós.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-guinea-bissau/",
   },
+  publicSafetySoftwareMadagascar: {
+    title: "Software de Seguridad Pública para Madagascar | FAM/GN, Puerto de Toamasina, Seguridad Océano Índico y Minería – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Madagascar (FAM), Gendarmerie Nationale, Puerto de Toamasina, gestión de desastres por ciclones y protección de recursos estratégicos de vainilla/ilmenita/cobalto.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-madagascar/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",
