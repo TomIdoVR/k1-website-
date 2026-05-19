@@ -1,3 +1,12 @@
+## [v2.172] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Liberia**
+  - AFL ~2,000 (rebuilt post-UNMIL), LNP 15 counties, NSA intelligence, Coast Guard; President Boakai 2023; post-civil wars (1989-96, 1999-2003)
+  - ArcelorMittal/Nimba iron ore (4+ M tons/yr); Firestone/Bridgestone (2nd Africa rubber); New Liberty Gold; FSC timber; ExxonMobil/Anadarko offshore
+  - Port of Monrovia, Buchanan Port (iron ore), Nimba-Buchanan railway, Roberts Airport (ROB)
+  - Institutional fragility; drug trafficking Atlantic route; land conflicts; porous borders Guinea/Sierra Leone/Ivory Coast
+  - PPCC Act 2010; Personal Data Protection Act 2021; LTA telecom; USAID/World Bank/AfDB/EU/IMF; USD+LRD legal tender
+
 ## [v2.171] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Guinea**
