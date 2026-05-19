@@ -616,6 +616,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Malta Police ~1.7K officers, AFM Armed Forces, and Coast Guard — Grand Harbour Valletta, Marsaxlokk >3M TEU transhipment hub, Mediterranean SAR 250,000 km², Schengen 2007, and FRONTEX/EUNAVFOR coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-malta/",
   },
+  publicSafetySoftwareLuxembourg: {
+    title: "Public Safety Software for Luxembourg | Grand-Ducal Police/SREL, EU Institutions, Financial Center & Cargolux – KabatOne",
+    description: "KabatOne delivers public safety platform for Luxembourg Grand-Ducal Police ~1.7K officers, SREL intelligence, and Army — EU/NATO institution protection, €5T+ investment fund center security, Cargolux hub, AWS/Google data centers, and GDPR/NIS2 compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-luxembourg/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",

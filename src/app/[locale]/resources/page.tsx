@@ -778,6 +778,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-luxembourg',
+          title: 'Public Safety Software for Luxembourg',
+          description: "KabatOne supports Grand-Ducal Police, SREL, and Army — EU/NATO institutions, €5T+ financial center security, Cargolux logistics hub, AWS/Google data centers, and GDPR/NIS2 compliance.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
