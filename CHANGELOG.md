@@ -1,3 +1,13 @@
+## [v2.178] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Namibia**
+  - NDF ~9,000-10,000 (army/navy/air force), NPF 14 regions, NIS intelligence, NAMRA customs; President Nandi-Ndaitwah (2024 — first female president SADC)
+  - World's 4th uranium producer (~5,000-6,000 ton U3O8/yr): Rossing (Rio Tinto — oldest open-pit uranium mine), Husab (Swakop Uranium/CGNPC — world 2nd largest by capacity), Langer Heinrich (Paladin)
+  - Port of Walvis Bay — SADC transport hub for landlocked states (Zambia/Zimbabwe/Botswana/DRC); Trans-Kalahari Corridor; TransNamib Railway
+  - Marine diamonds Namdeb/Debmarine (govt/De Beers); Orange Basin offshore ~11B bbl eq. (TotalEnergies/Shell 2022); fishing ZEE 200nm ~1.5M t/yr; black rhinos world largest wild population
+  - NamPower/SAPP electricity; MTC/Telecom Namibia; CRAN; Hosea Kutako Airport (WDH)
+  - Public Procurement Act 15/2015; NNRA nuclear regulation; NAD/ZAR peg/Bank of Namibia; SADC/CMA; WB/AfDB/USAID/EU
+
 ## [v2.177] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Botswana**

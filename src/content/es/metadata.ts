@@ -561,6 +561,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Botsuana (BDF), Servicio de Policía, protección de minas de diamantes Debswana, anti-caza furtiva en el Delta del Okavango y gestión de fronteras SADC — mayor productor mundial de diamantes por valor.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-botswana/",
   },
+  publicSafetySoftwareNamibia: {
+    title: "Software de Seguridad Pública para Namibia | NDF/NPF, Uranio Rossing/Husab, Walvis Bay y SADC – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Namibia (NDF), Policía Nacional, protección de minas de uranio Rossing/Husab, seguridad del Puerto de Walvis Bay y operaciones offshore de gas en la Cuenca Orange — 4to productor mundial de uranio.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-namibia/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

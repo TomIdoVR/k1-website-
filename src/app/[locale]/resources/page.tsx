@@ -634,6 +634,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-namibia',
+          title: 'Public Safety Software for Namibia',
+          description: "KabatOne supports Namibia's NDF, National Police, Rossing/Husab uranium mine protection, Port of Walvis Bay security, Orange Basin offshore gas, and SADC border management.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
