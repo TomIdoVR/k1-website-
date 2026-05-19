@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareIndonesia: {
+    title: "Software de Seguridad Pública para Indonesia: Polri, BNPB/InaTEWS, UU PDP y BSSN/Ciberseguridad | KabatOne",
+    description: "Plataforma unificada para Polri, BNPB y PSC 119 de Indonesia — despacho CAD integrado para 34 Polda y gestión de desastres del Anillo de Fuego, gestión de cámaras conforme a UU PDP, y cumplimiento BSSN con contratación LKPP/e-Katalog.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-indonesia/",
+  },
   publicSafetySoftwareThailand: {
     title: "Software de Seguridad Pública para Tailandia: Royal Thai Police, DDPM/ERAWAN, PDPA y NCSA/Ciberseguridad | KabatOne",
     description: "Plataforma unificada para la Royal Thai Police, el DDPM y el NIEMS/ERAWAN — despacho CAD integrado para 77 provincias, gestión de inundaciones Chao Phraya, gestión de cámaras CCTV conforme a PDPA, y cumplimiento NCSA con procurement GPP/DGA.",

@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.119] - 2026-05-18
+### Added
+- Geographic market guide: **Indonesia** — Polri (34 Polda + 500+ Polres), BNPB/BPBD/PUSDALOPS, BASARNAS, Damkar, PSC 119/SPGDT, BMKG/InaTEWS (tsunamis), 147 volcanoes/PVMBG, Ring of Fire, 17,000+ islands, UU PDP No. 27/2022 (in force Oct 2024), KOMDP/Komdigi, BSSN/IDCERT, LKPP/SPSE/e-Katalog, 100 Kota Cerdas, Satu Data Indonesia, Jakarta JGIS, 7 bilingual FAQs (EN + ES)
+
 ## [2.118] - 2026-05-18
 ### Added
 - **Thailand market guide** (EN + ES): `/resources/public-safety-software-thailand/`
