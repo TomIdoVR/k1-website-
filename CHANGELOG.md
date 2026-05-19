@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.130] - 2026-05-19
+### Added
+- Geographic market guide: **Qatar** — Qatar Police (GDPS)/Border Security Force/Lekhwiya/National Guard/Coast Guard, MOI National Command Centre (NCC), QFRS, QAWS/HMC A&E, QRCS, Civil Defence Qatar, 999 unified emergency, Doha Safe City 30,000+ cameras (FIFA 2022 legacy), 8 smart stadiums, Lusail Smart City IOC (300K+ planned residents), QTIC/Ashghal ANPR, PDPL Law 13/2016/MOTC regulations, NCSA/NCSS 2021/Q-CERT/QGCLOUD, Etimad/MOF/Law 24/2015 procurement, QNV 2030 Digital Transformation, 7 bilingual FAQs (EN + ES)
+
 ## [2.129] - 2026-05-19
 ### Added
 - Geographic market guide: **Morocco** — DGSN 60,000+/Gendarmerie Royale 50,000+, BNPJ/DGST/BCIJ, Forces Auxiliaires, Marine Royale, DGPC 120+ centres, SAMU/SMUR, DGM/ABH/CENAD, Casablanca Safe City 15,000+ cameras, Gendarmerie ANPR 1,800+ km highways, Loi 09-08/CNDP, Loi 05-20/DGSSI/maCERT/DNSSI 2014, marchespublics/Décret 2-12-349, AFD/EIB/AfDB, FIFA 2030 (6 host cities), Al Haouz earthquake 2023, 7 bilingual FAQs (EN + ES)
