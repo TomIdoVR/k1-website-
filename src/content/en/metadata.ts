@@ -466,6 +466,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Congolese Armed Forces (FAC), National Republican Police (PNR), Port of Pointe-Noire management, and oil infrastructure security in the Republic of Congo.",
     canonical: "https://kabatone.com/resources/public-safety-software-republic-of-congo/",
   },
+  publicSafetySoftwareGabon: {
+    title: "Public Safety Software for Gabon | FDG/PNR, Port of Owendo & Resource Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Gabonese Defence Forces (FDG), National Republican Police (PNR), Port of Owendo management, and security for oil and manganese resources in Gabon.",
+    canonical: "https://kabatone.com/resources/public-safety-software-gabon/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",

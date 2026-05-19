@@ -107,6 +107,7 @@ const pages = [
   { path: '/resources/public-safety-software-chad', priority: 0.75 },
   { path: '/resources/public-safety-software-somalia', priority: 0.75 },
   { path: '/resources/public-safety-software-republic-of-congo', priority: 0.75 },
+  { path: '/resources/public-safety-software-gabon', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

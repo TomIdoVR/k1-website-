@@ -604,6 +604,12 @@ export default async function ResourcesPage({
           region: 'África Oriental',
         },
         {
+          href: '/resources/public-safety-software-gabon',
+          title: 'Public Safety Software for Gabon',
+          description: "KabatOne supports Gabon's FDG forces, PNR, CTRI post-coup transition, ECCAS/CEEAC HQ, Port of Owendo, Moanda manganese, and offshore oil security.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-republic-of-congo',
           title: 'Public Safety Software for Republic of Congo',
           description: 'FAC/PNR across 12 departments, Port of Pointe-Noire (+5M tonnes), offshore oil TotalEnergies/ENI/Perenco, CFCO railway and BEAC headquarters.',

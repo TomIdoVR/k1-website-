@@ -1,3 +1,12 @@
+## [v2.166] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Gabon**
+  - FDG ~10,000 (army/navy/air force), PNR 9 provinces, Gendarmerie, CTRI post-coup Aug 2023 (Gen. Brice Oligui Nguema), Republican Guard, EFG ~350 French military
+  - Port of Owendo (Libreville), Port-Gentil oil hub, Comilog/Eramet Moanda manganese (world 4th), Trans-Gabon Railway Setrag 649 km, LBV airport
+  - Offshore oil ~200-220K bbl/day: TotalEnergies (Anguille/Torpille/Rabi), Assala Energy, Shell Gabon, GOC/GabonOil
+  - ECCAS/CEEAC HQ Libreville; 13 National Parks (Lopé UNESCO Heritage); Mbanié/Conga islands dispute with Equatorial Guinea
+  - Law 001/2011 data protection; ARCEP; Petroleum Code Law 14/82; DGB/Code des Marchés Publics Decree 001/PR/2012; AFD/China EXIM Bank/World Bank/AfDB
+
 ## [v2.165] – 2026-05-19
 ### Added
 - Public safety software for Republic of Congo geographic market guide (EN + ES)
