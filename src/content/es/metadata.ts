@@ -511,6 +511,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de la República (FAR), Policía Nacional, Puerto de Malabo, y seguridad de infraestructura petrolera offshore en Guinea Ecuatorial.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-equatorial-guinea/",
   },
+  publicSafetySoftwareTogo: {
+    title: "Software de Seguridad Pública para Togo | FAT/PNT, Puerto de Lomé y Seguridad Marítima – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Togo (FAT), Policía Nacional, gestión del Puerto de Lomé y seguridad marítima en el Golfo de Guinea.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-togo/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

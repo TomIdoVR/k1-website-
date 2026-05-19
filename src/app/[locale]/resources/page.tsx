@@ -604,6 +604,12 @@ export default async function ResourcesPage({
           region: 'África Oriental',
         },
         {
+          href: '/resources/public-safety-software-togo',
+          title: 'Public Safety Software for Togo',
+          description: "KabatOne supports Togo's FAT forces, PNT, Port of Lomé (Post-Panamax hub), Gulf of Guinea maritime security, and northern Savanes counter-terrorism.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-equatorial-guinea',
           title: 'Public Safety Software for Equatorial Guinea',
           description: "KabatOne supports Equatorial Guinea's FAR forces, National Police, coast guard, EGLNG offshore oil security, and Malabo/Bata port operations.",

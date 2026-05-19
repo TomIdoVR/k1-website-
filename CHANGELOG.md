@@ -1,3 +1,12 @@
+## [v2.168] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Togo**
+  - FAT ~8,550 (army/navy/air force/gendarmerie), PNT 5 regions, GRIT counterterrorism unit, DGDN intelligence
+  - Port of Lomé — only Post-Panamax deep-water port in West Africa, +1.5M TEU/yr, hub for Burkina Faso/Mali/Niger; LCT/MSC/Bolloré
+  - GSIM/JNIM attacks in Savanes region (north) since 2021; Gulf of Guinea piracy; triple border Burkina/Ghana/Togo
+  - Phosphate (3rd Africa producer); SAZOF free zone; BCEAO/UEMOA zone; LFW Lomé Airport
+  - ARMP/Loi 2009-013 procurement; Loi 2019-014 data protection/HAAC; ECOWAS/CRESMAO; AFD/World Bank/AfDB/EU Peace Fund
+
 ## [v2.167] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Equatorial Guinea**

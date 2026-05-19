@@ -476,6 +476,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Armed Forces of the Republic (FAR), National Police, Port of Malabo, and offshore oil infrastructure security in Equatorial Guinea.",
     canonical: "https://kabatone.com/resources/public-safety-software-equatorial-guinea/",
   },
+  publicSafetySoftwareTogo: {
+    title: "Public Safety Software for Togo | FAT/PNT, Port of Lomé & Gulf of Guinea Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Togolese Armed Forces (FAT), National Police, Port of Lomé management, and maritime security in the Gulf of Guinea.",
+    canonical: "https://kabatone.com/resources/public-safety-software-togo/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
