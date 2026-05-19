@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.115] - 2026-05-18
+### Added
+- **Israel market guide** (EN + ES): `/resources/public-safety-software-israel/`
+  - Israel Police (6 districts, Magav, YAMAM/YAMAS), Ministry of Public Security, Shin Bet
+  - Magen David Adom (MDA sole national ambulance, 101); Fire & Rescue; 100/101/102/112
+  - MCEI coordination protocols; digital TETRA network; command and control centres
+  - Privacy Protection Law 1981 + Amendment 13 (2023-2024), PPA, EU adequacy decision
+  - INCD, ISA/Shin Bet, Directive 3.2 (government cybersecurity); IL-CERT
+  - Government tender portal (gov.il), ITTA/ICT Authority framework; TAMAS/ANPR national system
+  - Smart City: Tel Aviv Digital Twin, Smart Haifa, CyberSpark Be'er Sheva, national GIS
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.114] - 2026-05-18
 ### Added
 - **Greece market guide** (EN + ES): `/resources/public-safety-software-greece/`

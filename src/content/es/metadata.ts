@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareIsrael: {
+    title: "Software de Seguridad Pública para Israel: Policía de Israel, MDA, TETRA, Ley de Privacidad/תיקון 13 y Ciberseguridad INCD | KabatOne",
+    description: "Plataforma unificada para la Policía de Israel, el Magen David Adom y los bomberos — despacho CAD integrado con TETRA digital y gestión de MCEI, conforme a la Ley de Privacidad/תיקון 13/PPA y estándares INCD/ISA.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-israel/",
+  },
   publicSafetySoftwareGreece: {
     title: "Software de Seguridad Pública para Grecia: ΕΛΑΣ, Πυροσβεστικό Σώμα, ΕΚΑΒ, ΕΣΑΚΤ TETRA, RGPD/ΑΠΔΠΧ y NIS2/ΕΨΑΠΑ | KabatOne",
     description: "Plataforma unificada para la Policía Helénica, Πυροσβεστικό Σώμα, ΕΚΑΒ y la Guardia Costera — despacho CAD integrado con ΕΣΑΚΤ TETRA y gestión de incendios forestales con Copernicus, conforme a RGPD/ΑΠΔΠΧ y NIS2/ΕΨΑΠΑ con fondos ΕΣΠΑ/ΤΑΑ.",
