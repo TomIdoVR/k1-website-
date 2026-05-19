@@ -484,6 +484,12 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+
+  publicSafetySoftwareUganda: {
+    title: "Software de Seguridad Pública Uganda | UPF, UPDF y Ciudades Inteligentes – KabatOne",
+    description: "KabatOne ofrece software unificado de mando y control, despacho IA y conciencia situacional para la Policía de Uganda, UPDF, infraestructura crítica y programas de ciudad inteligente.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-uganda/",
+  },
   publicSafetySoftwareZambia: {
     title: "Software de Seguridad Pública para Zambia: ZP/ZAF, DMMU, Lusaka Safe City, ZESCO/Kariba Dam, Copperbelt Cobre/Cobalto, Data Protection Act 2021/ZICTA y SADC | KabatOne",
     description: "Plataforma unificada para la Policía de Zambia (ZP) y ZAF — despacho CAD integrado en 10 provincias, Lusaka Safe City, DMMU gestión de desastres, ZESCO/Kariba Dam 1.626 MW, minas Copperbelt CNMC/Mopani/Konkola, fronteras SADC Tunduma/Chirundu/Kazungula, Data Protection Act 2021/ZICTA y adquisición ZPPA/PPA 2020.",
