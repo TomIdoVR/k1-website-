@@ -490,6 +490,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareSouthSudan: {
+    title: "Software de Seguridad Pública para Sudán del Sur: SSPS/SSPDF, UNMISS, Campos de Petróleo Greater Unity, Oleoducto GNPOC, Humedales Sudd, Fronteras con 6 Países y Marcos Banco Mundial | KabatOne",
+    description: "Plataforma modular para seguridad pública y construcción de paz en Sudán del Sur — CAD para 10 estados, integración OCHA/UNMISS para 2M+ PDI, seguridad campos Greater Unity/Adar Yale, oleoducto GNPOC 1,610 km, gestión inundaciones Nilo/Sudd, corredores fronterizos Nimule/Nadapal y cumplimiento Banco Mundial/USAID/PNUD.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-south-sudan/",
+  },
   publicSafetySoftwareSudan: {
     title: "Software de Seguridad Pública para Sudán: SAF, Coordinación Humanitaria OCHA, Port Sudan, Presa Merowe/Nilo, Oleoducto GNPOC, Mar Rojo y Reconstrucción Post-Conflicto | KabatOne",
     description: "Plataforma modular para reconstrucción de seguridad pública en Sudán — CAD para 18 estados, integración OCHA/UNHCR para 10M+ PDI, infraestructura crítica Port Sudan, Presa Merowe 1,250 MW/oleoducto GNPOC, seguridad marítima Mar Rojo, gestión fronteriza con 7 países y cumplimiento adquisiciones Banco Mundial/ONU.",
