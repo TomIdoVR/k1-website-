@@ -7,7 +7,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  return generatePageMetadata('publicSafetySoftwareMexico', locale)
+  return generatePageMetadata('publicSafetySoftwareMexicoNational', locale)
 }
 
 const faqs = [

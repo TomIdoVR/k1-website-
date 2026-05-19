@@ -449,7 +449,7 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
-  publicSafetySoftwareMexico: {
+  publicSafetySoftwareMexicoNational: {
     title: "Public Safety Software for Mexico: SSPC/Guardia Nacional, SINAPROC/CENAPRED, 911 System/PLATAFORMA MEXICO & Digital Mexico 2025 | KabatOne",
     description: "Unified platform for Mexico SSPC and Guardia Nacional — integrated CAD dispatch across 31 states and CDMX via 911 System, C5/C4 command centres, SINAPROC multi-hazard, SEMAR/SEDENA coordination, LFPDPPP/LGPDPPSO/INAI compliance, and LAASSP/CompraNet procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-mexico/",
