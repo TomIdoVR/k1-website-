@@ -1,3 +1,17 @@
+## [v2.143] — 2026-05-19
+### Added
+- **Senegal national market guide** (`/resources/public-safety-software-senegal/`)
+  - Police Nationale — 14 regions, DPJ judicial police, UAT anti-terrorism, border police
+  - Gendarmerie Nationale (Armée) — rural/border zones, Groupements Régionaux
+  - DGPC/SDIS Dakar — emergency 18, seasonal flooding Pikine/Guédiawaye, ONAS/PDLI
+  - DER/Sécurité Présidentielle — national intelligence integration
+  - PAD Port Autonome de Dakar (West Africa's largest west coast port)
+  - PETROSEN/Woodside Sangomar offshore — first oil/gas exports 2024
+  - AIBD Airport (Blaise Diagne), SENELEC power, TER Dakar-Thiès railway
+  - Borders: Rosso/Diama (Mauritania), Kidira/Diboli (Mali), São Domingos (Guinea-Bissau), Farafenni/Sénoba (Gambia enclave)
+  - Compliance: CDP/Loi 2008-12, Loi 2008-11 Cybercriminalité/ADIE
+  - Procurement: DCMP/Code des marchés/SIGMAP; Plan Sénégal Émergent/Vision 2050
+
 ## [v2.142] — 2026-05-19
 ### Added
 - **Ghana national market guide** (`/resources/public-safety-software-ghana/`)

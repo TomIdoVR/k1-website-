@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-senegal',
+          title: 'Software de Seguridad Pública para Senegal',
+          description: 'Police Nationale/Gendarmerie en 14 regiones, Dakar Safe City, DGPC, PAD Puerto de Dakar, PETROSEN Sangomar y CDP/Loi 2008-12.',
+          region: 'África Occidental',
+        },
+        {
+          href: '/resources/public-safety-software-senegal',
+          title: 'Public Safety Software for Senegal',
+          description: 'Police Nationale/Gendarmerie across 14 regions, Dakar Safe City, DGPC, PAD Port of Dakar, PETROSEN Sangomar and CDP/Law 2008-12.',
+          region: 'West Africa',
+        },
+        {
           href: '/resources/public-safety-software-ghana',
           title: 'Software de Seguridad Pública para Ghana',
           description: 'GPS/GNFS en 16 regiones, Accra Safe City, NADMO, Puerto de Tema, ECOWAS/ECOMOG y Data Protection Act 2012.',

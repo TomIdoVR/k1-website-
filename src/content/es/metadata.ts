@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareSenegal: {
+    title: "Software de Seguridad Pública para Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/PAD y CDP Loi 2008-12 | KabatOne",
+    description: "Plataforma unificada para la Police Nationale y Gendarmerie de Senegal — despacho CAD integrado en 14 regiones, Dakar Safe City, DGPC protección civil, Puerto Autónomo de Dakar, PETROSEN Sangomar offshore, fronteras con Gambia enclavada, CDP/Loi 2008-12 y adquisición DCMP/SIGMAP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-senegal/",
+  },
   publicSafetySoftwareGhana: {
     title: "Software de Seguridad Pública para Ghana: GPS/GNFS, NADMO, Accra Safe City, ECOWAS/ECOMOG y Data Protection Act 2012 | KabatOne",
     description: "Plataforma unificada para el Servicio de Policía de Ghana y GNFS — despacho CAD integrado en 16 regiones, Accra Safe City, NADMO gestión de desastres, GPHA Puerto de Tema, GNPC gas offshore, hub ECOWAS/ECOMOG, Data Protection Act 2012/DPC y adquisición GPPA/GEP.",

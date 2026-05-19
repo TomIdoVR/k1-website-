@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareSenegal: {
+    title: "Public Safety Software for Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/PAD & CDP Law 2008-12 | KabatOne",
+    description: "Unified platform for Senegal Police Nationale and Gendarmerie — integrated CAD dispatch across 14 regions, Dakar Safe City, DGPC civil protection, Port Autonome de Dakar, PETROSEN Sangomar offshore, Gambia enclave borders, CDP/Law 2008-12 compliance, and DCMP/SIGMAP procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-senegal/",
+  },
   publicSafetySoftwareGhana: {
     title: "Public Safety Software for Ghana: GPS/GNFS, NADMO, Accra Safe City, ECOWAS/ECOMOG & Data Protection Act 2012 | KabatOne",
     description: "Unified platform for Ghana Police Service and GNFS — integrated CAD dispatch across 16 regions, Accra Safe City, NADMO disaster management, GPHA Port of Tema, GNPC offshore gas, ECOWAS/ECOMOG hub, Data Protection Act 2012/DPC compliance, and GPPA/GEP procurement.",
