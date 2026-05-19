@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-zambia',
+          title: 'Software de Seguridad Pública para Zambia',
+          description: 'ZP/ZAF en 10 provincias, Lusaka Safe City, DMMU, ZESCO/Kariba Dam, Copperbelt cobre/cobalto, fronteras SADC y Data Protection Act 2021.',
+          region: 'África Austral',
+        },
+        {
+          href: '/resources/public-safety-software-zambia',
+          title: 'Public Safety Software for Zambia',
+          description: 'ZP/ZAF across 10 provinces, Lusaka Safe City, DMMU, ZESCO/Kariba Dam, Copperbelt copper/cobalt, SADC borders and Data Protection Act 2021.',
+          region: 'Southern Africa',
+        },
+        {
           href: '/resources/public-safety-software-zimbabwe',
           title: 'Software de Seguridad Pública para Zimbabue',
           description: 'ZRP/ZNA en 10 provincias, Harare Safe City, Kariba Dam, minas Chiadzwa/Zimplats, Beitbridge y PDA 2021/POTRAZ.',

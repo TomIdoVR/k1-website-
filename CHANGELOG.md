@@ -1,3 +1,17 @@
+## [v2.147] — 2026-05-19
+### Added
+- **Zambia national market guide** (`/resources/public-safety-software-zambia/`)
+  - ZP — 10 provinces, 20,000+ officers, SICS Criminal Investigation, Tactical Unit, Border Police
+  - ZAF / Zambia Army — Copperbelt and border security; ZIS national intelligence
+  - DMMU — Zambezi/Luangwa Valley flooding, Victoria Falls, southern droughts, ZMD integration
+  - ZESCO/Kariba Dam 1,626 MW (shared with Zimbabwe)
+  - Copperbelt: CNMC Luanshya/Chambishi, Mopani Copper Mines, KCM/Vedanta Konkola, Chambishi 800,000+ tonnes/year
+  - Ndola/Mufulira refineries; Great North Road corridor; TAZARA (Tanzania-Zambia Railway)
+  - Kenneth Kaunda International Airport LUN
+  - Borders: Tunduma (Tanzania/TAZARA), Chirundu/Kariba (Zimbabwe), Kazungula (quadruple border), Kasumulu (Malawi), Cassacatiza (Mozambique), Nakonde (Tanzania)
+  - Compliance: ZICTA/Data Protection Act 2021, Computer Crimes Act 2021, National Cybersecurity Policy
+  - Procurement: ZPPA/PPA 2020/e-GP; SADC/COMESA/AfCFTA; 8NDP 2022-2026
+
 ## [v2.146] — 2026-05-19
 ### Added
 - **Zimbabwe national market guide** (`/resources/public-safety-software-zimbabwe/`)
