@@ -730,6 +730,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-croatia',
+          title: 'Public Safety Software for Croatia',
+          description: "KabatOne supports Croatian MUP, SOA, and Border Police — Adriatic coast and island security, Port of Rijeka protection, Krk LNG Terminal security, Schengen border management, and NATO Naval Base Split coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

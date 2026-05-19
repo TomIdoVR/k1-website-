@@ -576,6 +576,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Slovenian National Police, URSZR civil protection, and Border Guard — Balkan migration route management, Port of Koper protection, Krško Nuclear Plant security, Alpine disaster response, and Frontex/NATO coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-slovenia/",
   },
+  publicSafetySoftwareCroatia: {
+    title: "Public Safety Software for Croatia | MUP/SOA, Adriatic Coastline, Port of Rijeka & Schengen Border – KabatOne",
+    description: "KabatOne delivers public safety platform for Croatian MUP ~20K officers, SOA, and Border Police — Adriatic coast 6,000 km with 1,246 islands, Port of Rijeka, Krk LNG Terminal, Schengen external border management, Frontex NCC, and NATO Naval Base Split coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-croatia/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",
