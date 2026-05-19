@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareAustria: {
+    title: "Public Safety Software for Austria: Bundespolizei, BOS-Funk/Tetron TETRA, 9 Landespolizeidirektionen, DSGVO/DSB & NIS2/NISG | KabatOne",
+    description: "Unified platform for Austrian Bundespolizei and 9 Landespolizeidirektionen — integrated CAD dispatch with BOS-Funk TETRA/Tetron (BOS-Funk 2.0 ready), camera and ANPR management compliant with DSGVO/DSB, and NIS2/NISG compliance with BBG/BVergG procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-austria/",
+  },
   publicSafetySoftwareUAE: {
     title: "Public Safety Software for the UAE: Dubai Police IPOC, Safe City 50K+ Cameras, PDPL & NESA | KabatOne",
     description: "Unified platform for Dubai Police, Abu Dhabi Police, and UAE Safe City projects — IPOC-integrated CAD dispatch, 50,000+ AI cameras, and PDPL/NESA compliance with UAE data residency.",

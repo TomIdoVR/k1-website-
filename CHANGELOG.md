@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.111] - 2026-05-18
+### Added
+- **Austria market guide** (EN + ES): `/resources/public-safety-software-austria/`
+  - Bundespolizei (unified 2005, 9 Landespolizeidirektionen), BMI, BK/Bundeskriminalamt, DSN counter-terrorism
+  - BOS-Funk TETRA/Tetron network; transition to BOS-Funk 2.0 (4G/5G broadband); Landeswarnzentralen; ILS (Integrierte Leitstellen)
+  - Feuerwehr (municipal/Länder); Rettungsdienst (Red Cross, Samariterbund, Johanniter); 122/133/144/112
+  - DSGVO/DSG 2018, Datenschutzbehörde (DSB), §54 SPG, PolDVG; CERT.at/GovCERT.at; NIS2/NISG; RTR-GmbH
+  - BBG/BVergG/ANKÖ procurement; Smart City Wien; ASFINAG ANPR/KFZ-Kennzeichenerfassung; ZAMG; CÜPLA
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.110] 2026-05-19 — Feat: Türkiye market guide (EGM/Jandarma, AFAD 112, MOBESE/KGYS, KVKK, BTK/USOM)
 
 **Added**
