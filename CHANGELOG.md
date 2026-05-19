@@ -7,6 +7,18 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.133] 2026-05-19 — Jordan market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-jordan` (EN + ES)
+- Coverage: Public Security Directorate (PSD) 12 governorates, Civil Defence Directorate (CDD), NCSCM, Amman Safe City/GAM
+- Border crossings: King Hussein Bridge/Allenby, Sheikh Hussein, Wadi Araba, Jaber/Nassib, Al-Karama/Al-Omari, Aqaba/Durra
+- Port security: Aqaba Port (26M+ tonnes/year), ASEZA industrial zones, ACT container terminal
+- Infrastructure: JPRC Zarqa refinery, NEPCO/JEPCO, Queen Alia International Airport (AMM)
+- Compliance: Law 24/2023 PDPL/MODEE, NITC/CERT.jo, Regulation 32/1994 procurement, ASEZA rules
+- Metadata (EN + ES), sitemap entry, hub cards (EN + ES), 7 FAQs each locale
+- Jordan Economic Modernisation Vision 2033 / Digital Jordan alignment
+
 ## [2.132] 2026-05-19 — Oman market guide
 
 **Added**

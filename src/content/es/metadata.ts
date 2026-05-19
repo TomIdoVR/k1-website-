@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareJordan: {
+    title: "Software de Seguridad Pública para Jordania: PSD/CDD, NCSCM, Ley 24/2023/NITC y Visión de Modernización Económica 2033 | KabatOne",
+    description: "Plataforma unificada para la PSD y CDD de Jordania — despacho CAD integrado en 12 gobernados, Amman Safe City/GAM, seguridad portuaria Aqaba/ASEZA, fronteras King Hussein/Sheikh Hussein/Jaber, Ley 24/2023/NITC/CERT.jo y adquisición Reglamento 32/1994.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-jordan/",
+  },
   publicSafetySoftwareOman: {
     title: "Software de Seguridad Pública para Omán: ROP/CDAA, NEMC, Decreto Real 6/2022/ITA y Visión 2040 | KabatOne",
     description: "Plataforma unificada para la Policía Real de Omán (ROP) y CDAA — despacho CAD integrado en 11 gobernados, ISOC de Mascate, seguridad portuaria Salalah/Duqm/Sohar, infraestructura PDO/OQ, Decreto Real 6/2022/ITA/OCERT y adquisición mediante Decreto Real 36/2008.",
