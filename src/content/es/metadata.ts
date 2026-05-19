@@ -487,6 +487,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareCameroon: {
+    title: "Software de Seguridad Pública para Camerún: SNP/BIR, MNJTF, Douala Safe City, Oleoducto Chad-Camerún/SNH, Puerto de Douala, ANTIC y Vision 2035 | KabatOne",
+    description: "Plataforma unificada para la Sûreté Nationale y BIR — CAD integrado en 10 regiones/58 departamentos, CCTV Yaoundé/Douala, gestión crisis anglófona NW/SW, protección oleoducto Chad-Camerún/SNH, red eléctrica ENEO, Puerto de Douala, coordinación MNJTF/Boko Haram y cumplimiento ANTIC/Ley 2010/012.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-cameroon/",
+  },
   publicSafetySoftwareDRC: {
     title: "Software de Seguridad Pública para RDC: PNC/FARDC, MONUSCO, Kinshasa Safe City, Kamoa-Kakula/Presa Inga, Corredor Lobito, Fronteras DGM y Ley 20/017 | KabatOne",
     description: "Plataforma unificada para la Policía Nacional Congolesa (PNC) y FARDC — CAD integrado en 26 provincias, CCTV Kinshasa/Lubumbashi, coordinación de desastres OCHA/MONUSCO, seguridad minera Kamoa-Kakula/Tenke Fungurume, Presa Inga/SNEL, Corredor Lobito, gestión fronteriza con 9 países y cumplimiento ARPTC/ANSSI-RDC.",
