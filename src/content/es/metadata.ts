@@ -896,6 +896,21 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para la FNDF de Comoras, Gendarmería Nacional y Guardia Costera — coordinación interisleña entre Grande Comore, Anjouan y Mohéli, vigilancia marítima del Canal de Mozambique y gestión del riesgo volcánico del Karthala.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-comoros/",
   },
+  publicSafetySoftwareEstonia: {
+    title: "Software de Seguridad Pública para Estonia | PPA/KAPO, X-Road e-Estonia, CCDCOE OTAN y Normas ISKE – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Junta de Policía y Guardia de Fronteras de Estonia (PPA), Junta de Rescate y KAPO — interoperabilidad X-Road, cumplimiento ISKE, integración 112 Häirekeskus, coordinación CCDCOE OTAN y seguridad fronteriza flanco oriental.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-estonia/",
+  },
+  publicSafetySoftwareLatvia: {
+    title: "Software de Seguridad Pública para Letonia | Policía Estatal/VRS, Puerto de Riga, Flanco Oriental OTAN y RGPD – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Estatal de Letonia (VP), Guardia de Fronteras y VUGD — protección Puerto/Aeropuerto de Riga, gestión frontera Bielorrusia, coordinación Frontex, seguridad Rail Baltica e integración División Multinacional Norte OTAN.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-latvia/",
+  },
+  publicSafetySoftwareLithuania: {
+    title: "Software de Seguridad Pública para Lituania | Policía/VSAT, Corredor de Suwałki, GNL Klaipėda y OTAN Nordeste – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Lituania, VSAT Guardia de Fronteras y Bomberos — gestión Corredor de Suwałki, valla fronteriza inteligente Bielorrusia 679 km, protección Puerto/Terminal GNL Klaipėda y coordinación División Multinacional Nordeste OTAN.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-lithuania/",
+  },
   publicSafetySoftwareMauritius: {
     title: "Software de Seguridad Pública para Mauricio | MPF/PMF, ZEE Océano Índico, Seguridad Hub Financiero y Smart City – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Mauricio (MPF), Fuerza Paramilitar y Guardia Costera — vigilancia ZEE 2.3M km², protección hub financiero africano, integración Smart City, coordinación MRCC y gestión de desastres ciclónicos.",

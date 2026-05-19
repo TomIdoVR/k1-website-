@@ -556,6 +556,21 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security against drug trafficking, tourist protection across 9 islands, and ECOWAS/MAOC-N coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-cape-verde/",
   },
+  publicSafetySoftwareEstonia: {
+    title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
+    description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",
+    canonical: "https://kabatone.com/resources/public-safety-software-estonia/",
+  },
+  publicSafetySoftwareLatvia: {
+    title: "Public Safety Software for Latvia | State Police/VRS, Port of Riga, NATO Eastern Flank & GDPR – KabatOne",
+    description: "KabatOne delivers public safety platform for Latvia State Police (VP), Border Guard, and VUGD — Riga Port/Airport protection, Belarus border management, Frontex coordination, Rail Baltica security, and NATO Multinational Division North integration.",
+    canonical: "https://kabatone.com/resources/public-safety-software-latvia/",
+  },
+  publicSafetySoftwareLithuania: {
+    title: "Public Safety Software for Lithuania | Police/VSAT, Suwalki Corridor, Klaipeda LNG & NATO Northeast – KabatOne",
+    description: "KabatOne delivers public safety platform for Lithuanian Police, VSAT Border Guard, and Fire Services — Suwalki Corridor management, 679 km Belarus smart border fence, Klaipeda Port/LNG Terminal protection, and NATO Multinational Division Northeast coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-lithuania/",
+  },
   publicSafetySoftwareMauritius: {
     title: "Public Safety Software for Mauritius | MPF/PMF, Indian Ocean EEZ, Financial Hub Security & Smart City – KabatOne",
     description: "KabatOne delivers public safety platform for Mauritius Police Force (MPF), Paramilitary Force, and Coast Guard — 2.3M km² EEZ surveillance, African financial hub protection, Smart City integration, MRCC coordination, and cyclone disaster management.",

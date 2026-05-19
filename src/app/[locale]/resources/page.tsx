@@ -688,6 +688,24 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-estonia',
+          title: 'Public Safety Software for Estonia',
+          description: "KabatOne supports Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road e-Estonia interoperability, ISKE compliance, NATO CCDCOE coordination, and Eastern Flank border security.",
+          region: 'Europe',
+        },
+        {
+          href: '/resources/public-safety-software-latvia',
+          title: 'Public Safety Software for Latvia',
+          description: "KabatOne supports Latvia State Police, Border Guard, and VUGD — Port of Riga protection, Belarus border management, Frontex coordination, and NATO Multinational Division North integration.",
+          region: 'Europe',
+        },
+        {
+          href: '/resources/public-safety-software-lithuania',
+          title: 'Public Safety Software for Lithuania',
+          description: "KabatOne supports Lithuanian Police, VSAT Border Guard, and Fire Services — Suwalki Corridor management, Belarus smart border fence, Klaipeda Port/LNG protection, and NATO Northeast coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
