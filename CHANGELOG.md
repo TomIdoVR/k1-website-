@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.103] 2026-05-19 — Feat: Saudi Arabia market guide (MOI, 911 Unified, NEOM, Hajj, PDPL, NCA)
+
+**Added**
+- New page: /resources/public-safety-software-saudi-arabia/ — Saudi MOI/Police (13 regions), National 911 (unified police/fire/SRCA/traffic since 2017), Civil Defence, SRCA, NEOM ($500B+)/The Line/Diriyah megaprojects, Hajj/Umrah 2.5M pilgrims crowd management, PDPL (Royal Decree M/19 of 1443H), NCA/ECC controls, CITC/CCRF cloud, Etimad procurement, Saudization/Nitaqat, LEAP, Vision 2030
+- 4 challenge cards: Hajj/Umrah 2.5M crowd management, NEOM/The Line autonomous safety, 911 unified dispatch 13 regions, PDPL/NCA data residency
+- 7 Saudi-specific FAQs: MOI/police/SANG structure, 911 unified dispatch, NEOM/Vision 2030, Etimad/offset procurement, PDPL/NCA/ECC, video surveillance/Hajj tracking, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/), cross-link from UAE page
+
+---
+
 ## [2.102] 2026-05-19 — Feat: UAE market guide (Dubai Police IPOC, Abu Dhabi ADPOC, Safe City, PDPL, NESA)
 
 **Added**

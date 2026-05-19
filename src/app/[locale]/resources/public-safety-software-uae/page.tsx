@@ -285,6 +285,7 @@ export default async function PublicSafetySoftwareUAEPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-saudi-arabia', en: 'Public Safety Software for Saudi Arabia: MOI, Unified 911, NEOM & Hajj', es: 'Software de Seguridad Pública para Arabia Saudita: MOI, 911 Unificado, NEOM y Hajj' },
                 { href: '/resources/public-safety-software-middle-east', en: 'Public Safety Software for the Middle East: Smart City & Safe City', es: 'Software de Seguridad Pública para Medio Oriente: Smart City y Safe City' },
                 { href: '/resources/public-safety-software-singapore', en: 'Public Safety Software for Singapore: SPF, SCDF, Smart Nation & PDPA', es: 'Software de Seguridad Pública para Singapur: SPF, SCDF, Smart Nation y PDPA' },
                 { href: '/resources/public-safety-software-india', en: 'Public Safety Software for India: Smart Cities & ICCC', es: 'Software de Seguridad Pública para India: Smart Cities e ICCC' },
