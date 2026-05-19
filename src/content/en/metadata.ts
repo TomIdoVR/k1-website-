@@ -409,6 +409,11 @@ export const metadata = {
     description: "Unified platform for Dutch Politie, Brandweer, and Meldkamers — CAD dispatch compatible with GMK/CAD 2.0, AI cameratoezicht analytics, and AVG/WPG/BIO compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-netherlands/",
   },
+  publicSafetySoftwareUAE: {
+    title: "Public Safety Software for the UAE: Dubai Police IPOC, Safe City 50K+ Cameras, PDPL & NESA | KabatOne",
+    description: "Unified platform for Dubai Police, Abu Dhabi Police, and UAE Safe City projects — IPOC-integrated CAD dispatch, 50,000+ AI cameras, and PDPL/NESA compliance with UAE data residency.",
+    canonical: "https://kabatone.com/resources/public-safety-software-uae/",
+  },
   publicSafetySoftwareSweden: {
     title: "Public Safety Software for Sweden: Polisen, SOS Alarm 112, MSB, RAKEL, GDPR & NIS2 | KabatOne",
     description: "Unified platform for Polisen, SOS Alarm, and Swedish räddningstjänst — ZENIT-compatible 112 CAD dispatch, RAKEL-integrated camera management, and GDPR/IMY/NIS2 compliance.",

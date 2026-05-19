@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.102] 2026-05-19 — Feat: UAE market guide (Dubai Police IPOC, Abu Dhabi ADPOC, Safe City, PDPL, NESA)
+
+**Added**
+- New page: /resources/public-safety-software-uae/ — Dubai Police (IPOC, 50K+ cameras, Zero Crime, Smart Palm AI/facial recognition), Abu Dhabi Police (ADPOC, AAD), 7 autonomous emirate forces, MOI federal coordination, Dubai Safe City, Abu Dhabi Safe City, UAE PDPL (Federal Decree-Law No. 45 of 2021), NESA IAS / UAE Cybersecurity Council, Expo City Dubai, GITEX, DubaiTenders, ADPROCURE, UAE 2031 Vision
+- 4 challenge cards: 7-emirate federation coordination, 50K+ Safe City cameras AI management, mass events (Expo City/F1/global), UAE data residency/NESA/PDPL
+- 7 UAE-specific FAQs: UAE police structure/7 emirates, Dubai IPOC/Safe City, Safe City initiative, DubaiTenders/ADPROCURE procurement, PDPL/NESA/UAE Cybersecurity Council, video surveillance, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/), cross-link from Middle East page
+
+---
+
 ## [2.101] 2026-05-19 — Feat: Sweden market guide (Polisen, SOS Alarm, MSB, RAKEL, GDPR, NIS2)
 
 **Added**

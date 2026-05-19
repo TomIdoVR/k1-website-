@@ -343,6 +343,7 @@ export default async function PublicSafetySoftwareMiddleEastPage({
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-uae', en: 'Public Safety Software for the UAE: Dubai Police IPOC, Safe City & NESA', es: 'Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City y NESA' },
                 { href: '/resources/public-safety-software-united-states', label: es ? 'Software Seguridad Pública EE.UU.' : 'Public Safety Software — US' },
                 { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Software de Seguridad Pública — Reino Unido' : 'Public Safety Software — UK' },
                 { href: '/resources/public-safety-software-australia', label: es ? 'Software de Seguridad Pública — Australia' : 'Public Safety Software — Australia' },

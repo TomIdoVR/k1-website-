@@ -444,6 +444,11 @@ export const metadata = {
     description: "Plataforma unificada para la Politie, Brandweer y Meldkamers neerlandeses — despacho CAD compatible con GMK/CAD 2.0, analítica de cameratoezicht con IA y cumplimiento AVG/WPG/BIO.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-netherlands/",
   },
+  publicSafetySoftwareUAE: {
+    title: "Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City 50K+ Cámaras, PDPL y NESA | KabatOne",
+    description: "Plataforma unificada para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU — despacho CAD IPOC-integrado, 50,000+ cámaras IA y cumplimiento PDPL/NESA con data residency en EAU.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-uae/",
+  },
   publicSafetySoftwareSweden: {
     title: "Software de Seguridad Pública para Suecia: Polisen, SOS Alarm 112, MSB, RAKEL, RGPD y NIS2 | KabatOne",
     description: "Plataforma unificada para Polisen, SOS Alarm y los räddningstjänst suecos — despacho CAD 112 compatible con ZENIT, gestión de cámaras integrada con RAKEL y cumplimiento RGPD/IMY/NIS2.",
