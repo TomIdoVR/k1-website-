@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.122] - 2026-05-18
+### Added
+- Geographic market guide: **Malaysia** — PDRM (14 contingents/Bukit Aman/UTK/VAT 69), JBPM (200+ stations/PKBM), APMM, NADMA/DID Infobanjir 2,800+ stations, 999/SAMM, DBKL 3,000+ cameras/Safe City, PLUS ANPR, PDPA 2010/JPDP + 2024 Amendment, NACSA CIIP/RiSQ, CyberSecurity Malaysia/MyCERT, ePerolehan/MyGPR/MAMPU, MyDIGITAL/MDEC, 7 bilingual FAQs (EN + ES)
+
 ## [2.121] - 2026-05-18
 ### Added
 - Geographic market guide: **Vietnam** — MPS/Bộ Công an (63 Công an tỉnh, C05/C06), PCCC/Cảnh sát PCCC, 113/114/115, VNMHA/NCHMF typhoons, Mekong Delta floods, Ban Chỉ đạo TW về PCTT, Hanoi IOC/HCMC TTGS, Nghị định 13/2023 (PDPD), Luật An ninh mạng 2018/VNCERT, muasamcong/Luật Đấu thầu, 7 bilingual FAQs (EN + ES)
