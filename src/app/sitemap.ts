@@ -110,6 +110,7 @@ const pages = [
   { path: '/resources/public-safety-software-gabon', priority: 0.75 },
   { path: '/resources/public-safety-software-equatorial-guinea', priority: 0.75 },
   { path: '/resources/public-safety-software-togo', priority: 0.75 },
+  { path: '/resources/public-safety-software-benin', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

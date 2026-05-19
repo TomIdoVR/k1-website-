@@ -1,3 +1,12 @@
+## [v2.169] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Benin**
+  - FAB ~7,250 (army/navy/air force), PNB + Gendarmerie 12 departments, FSI (2022) northern ops, UISP counterterrorism
+  - Port of Cotonou (PAC) ~12M tonnes/yr — main francophone West Africa port; hub Niger/Burkina/Mali; Bolloré/MSC Benin Terminal
+  - GSIM/JNIM + EIGS attacks Atacora/Alibori since 2021; Benin/Burkina/Niger triple border; Gulf of Guinea piracy
+  - Cotton/cashew exports; BCEAO/UEMOA; COO Cotonou Airport; Bénin Révélé digital transformation
+  - DNCMP/Loi 2009-02 procurement; Loi 2017-20 Digital Code/CRIET; ECOWAS/CRESMAO; AFD/World Bank/AfDB/EU
+
 ## [v2.168] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Togo**

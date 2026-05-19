@@ -481,6 +481,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Togolese Armed Forces (FAT), National Police, Port of Lomé management, and maritime security in the Gulf of Guinea.",
     canonical: "https://kabatone.com/resources/public-safety-software-togo/",
   },
+  publicSafetySoftwareBenin: {
+    title: "Public Safety Software for Benin | FAB/PNB, Port of Cotonou & Sahel Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Beninese Armed Forces (FAB), National Police, Port of Cotonou, and security against jihadist threats in northern Benin.",
+    canonical: "https://kabatone.com/resources/public-safety-software-benin/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
