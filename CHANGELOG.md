@@ -7,6 +7,19 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.137] 2026-05-19 — Ethiopia market guide
+
+**Added**
+- New market guide: `/resources/public-safety-software-ethiopia` (EN + ES)
+- Coverage: EFPC 12 regional states + 2 city admins, NDRMC, NISS, INSA, Addis Ababa Safe City/LRT
+- Border security: Somalia (Moyale/Tog Wajale), Kenya, South Sudan, Sudan (Metema/Humera), Djibouti (Galafi)
+- Critical infrastructure: GERD (6,450 MW), Ethiopian Airlines/Bole (ADD), Ethio Telecom, EEP/EEU
+- IGAD/CEWARN multi-hazard coordination (drought/flood/conflict/displacement)
+- Compliance: Proclamation 1321/2024, Computer Crime Proc. 958/2016, INSA/CERT-ET
+- Procurement: PPAA Proc. 649/2009, World Bank/AfDB/EU/USAID/AU
+- Metadata (EN + ES), sitemap entry, hub cards (EN + ES), 7 FAQs each locale
+- Digital Ethiopia 2025 / 10-Year Development Plan alignment
+
 ## [2.136] 2026-05-19 — SEO fix: k-safety title length
 
 **Fixed**

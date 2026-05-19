@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareEthiopia: {
+    title: "Public Safety Software for Ethiopia: EFPC/NDRMC, Addis Ababa Safe City, INSA/Proc. 1321/2024 & Digital Ethiopia 2025 | KabatOne",
+    description: "Unified platform for Ethiopia EFPC and NDRMC — integrated CAD dispatch across 12 regional states, Addis Ababa Safe City/LRT, Moyale/Tog Wajale/Galafi border crossings, IGAD/CEWARN crisis management, Proclamation 1321/2024/INSA compliance, and PPAA/World Bank procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-ethiopia/",
+  },
   publicSafetySoftwareAlgeria: {
     title: "Public Safety Software for Algeria: DGSN/Gendarmerie Nationale, DGPC, SONATRACH, Law 18-07/ANPDP & Vision 2035 | KabatOne",
     description: "Unified platform for Algeria DGSN and DGPC — integrated CAD dispatch across 58 wilayas, Algiers Safe City, SONATRACH infrastructure security (Hassi Messaoud/Hassi R'Mel/In Amenas/Arzew), Sahel border monitoring, Law 18-07/ANPDP/CERT-DZ compliance, and Décret 15-247 procurement.",
