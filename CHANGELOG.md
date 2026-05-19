@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.112] - 2026-05-18
+### Added
+- **Switzerland market guide** (EN + ES): `/resources/public-safety-software-switzerland/`
+  - Kantonspolizei (26 cantons), Stadtpolizei (Zürich, Bern, Genève, Basel, Lausanne), fedpol, NDB/SRC
+  - POLYCOM TETRA (FOITT/UFIT mandate); POLYCOM Nachfolger (4G/5G evaluation); Schutz & Rettung Zürich; Sanitätsnotrufzentralen 144
+  - 112/117/118/144 emergency numbers; AlertSwiss; ASTRA motorway surveillance; Schengen-SIS / Prüm
+  - nFADP/revDSG (Sept. 2023), FDPIC/EDÖB, FSIPA; ISA/ISG, NCSC/GovCERT.ch, IKT-Minimalstandard
+  - SIMAP/BöB/FAPP procurement (2021 revision); DFJP/DDPS; cantonal autonomy
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.111] - 2026-05-18
 ### Added
 - **Austria market guide** (EN + ES): `/resources/public-safety-software-austria/`
