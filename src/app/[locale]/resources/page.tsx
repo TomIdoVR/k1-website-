@@ -604,6 +604,12 @@ export default async function ResourcesPage({
           region: 'África Oriental',
         },
         {
+          href: '/resources/public-safety-software-guinea',
+          title: 'Public Safety Software for Guinea',
+          description: "KabatOne supports Guinea's FAG/CNRD forces, PNF Police, Port of Conakry, world-largest bauxite (CBG/GAC/SMB-Winning), and Simandou iron ore security.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-sierra-leone',
           title: 'Public Safety Software for Sierra Leone',
           description: "KabatOne supports Sierra Leone's RSLAF, SLP Police, Freetown Port, diamond/rutile/iron ore mining security, and flood emergency response.",

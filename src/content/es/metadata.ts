@@ -526,6 +526,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Sierra Leona (RSLAF), Policía (SLP), Puerto de Freetown y seguridad de recursos minerales estratégicos.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-sierra-leone/",
   },
+  publicSafetySoftwareGuinea: {
+    title: "Software de Seguridad Pública para Guinea | FAG/PNF, Puerto de Conakry y Seguridad Minera – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea (FAG), Policía Nacional, Puerto de Conakry y seguridad de la mayor reserva mundial de bauxita y proyecto Simandou.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-guinea/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

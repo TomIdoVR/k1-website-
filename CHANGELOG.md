@@ -1,3 +1,12 @@
+## [v2.171] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Guinea**
+  - FAG ~12,000-15,000 (army/navy/air force), PNF+Gendarmerie 7 regions/33 prefectures, BAFS special forces; CNRD junta since Sept. 2021
+  - World's largest bauxite reserves (>25% global): CBG (Alcoa/Rio Tinto), GAC (Emirates Global), SMB-Winning, CBK
+  - Simandou Project (Rio Tinto/SMB-Winning) — largest untapped iron ore deposit ~2,000 Mt; 650 km railway + Morebaya port
+  - Siguiri gold (AngloGold Ashanti); diamonds; Kaleta+Souapiti hydropower; Port of Conakry; CKY Airport
+  - DNMP/Décret D/2012/050; Mining Code 2011/2019 (15% state); Loi L/2016/037 cybersecurity; China EXIM Bank/AfDB/WB/IMF/ECOWAS
+
 ## [v2.170] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Sierra Leone**
