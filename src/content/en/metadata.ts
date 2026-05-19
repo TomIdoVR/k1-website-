@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareHungary: {
+    title: "Public Safety Software for Hungary: Rendőrség, VIRTAL TETRA, BM OKF/Katasztrófavédelem, GDPR/NAIH & NIS2/SZTFH | KabatOne",
+    description: "Unified platform for Hungarian Rendőrség and BM OKF — integrated CAD dispatch with VIRTAL TETRA and 19 police counties, camera and ANPR management compliant with GDPR/NAIH, and NIS2/SZTFH compliance with EKR/Kbt procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-hungary/",
+  },
   publicSafetySoftwareIsrael: {
     title: "Public Safety Software for Israel: Israel Police, MDA, TETRA, Privacy Law/Amendment 13 & INCD Cybersecurity | KabatOne",
     description: "Unified platform for Israel Police, Magen David Adom, and fire services — integrated CAD dispatch with digital TETRA and MCEI management, compliant with Privacy Protection Law/Amendment 13/PPA and INCD/ISA standards.",

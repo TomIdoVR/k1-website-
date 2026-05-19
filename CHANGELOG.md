@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.116] - 2026-05-18
+### Added
+- **Hungary market guide** (EN + ES): `/resources/public-safety-software-hungary/`
+  - Rendőrség (19 county HQs + Budapest Metropolitan, ORFK), BM/Ministry of Interior, TEK (counter-terrorism), ABI
+  - BM OKF/Katasztrófavédelem (fire + civil protection); OMSZ (national ambulance); 107/105/104/112
+  - VIRTAL TETRA network (Virtual National Radio Telephone Subsystem); broadband 4G/5G evaluation
+  - Danube/Tisza flood risk management; KEHOP environmental sensors; ROBOTZSARU police info system; ANPR/FRR
+  - GDPR/NAIH/Infotv., Rtv., Directive 2016/680; NIS2/SZTFH, NBSZ, KIBEV, GovCERT Hungary
+  - EKR/Kbt. procurement; Digitális Magyarország; KEHOP/EU structural funds; Smart Budapest
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.115] - 2026-05-18
 ### Added
 - **Israel market guide** (EN + ES): `/resources/public-safety-software-israel/`
