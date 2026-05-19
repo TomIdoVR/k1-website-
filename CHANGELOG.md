@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.131] - 2026-05-19
+### Added
+- Geographic market guide: **Kuwait** — KNP 6 security districts (Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer), MOI DGFD 50+ stations, Kuwait National Guard (KNG), Coast Guard/Border Patrol, NCECC, KMA/112, Kuwait Safe City Project (KSCP) 70,000+ CCTV cameras, GDT ANPR/ALPR MOW highways/JKIA, Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah ports, KOC Greater Burgan oilfields, KNPC/KIPIC critical infrastructure, Personal Data Protection Law 22/2023/CITRA, State Cybersecurity Law/KU-CERT, CAPT/MoF Decree 37bis/1964/CSSP, KFAED/KIA financing, Kuwait Vision 2035 "New Kuwait" Digital Transformation, 7 bilingual FAQs (EN + ES)
+
 ## [2.130] - 2026-05-19
 ### Added
 - Geographic market guide: **Qatar** — Qatar Police (GDPS)/Border Security Force/Lekhwiya/National Guard/Coast Guard, MOI National Command Centre (NCC), QFRS, QAWS/HMC A&E, QRCS, Civil Defence Qatar, 999 unified emergency, Doha Safe City 30,000+ cameras (FIFA 2022 legacy), 8 smart stadiums, Lusail Smart City IOC (300K+ planned residents), QTIC/Ashghal ANPR, PDPL Law 13/2016/MOTC regulations, NCSA/NCSS 2021/Q-CERT/QGCLOUD, Etimad/MOF/Law 24/2015 procurement, QNV 2030 Digital Transformation, 7 bilingual FAQs (EN + ES)
