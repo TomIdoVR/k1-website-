@@ -444,6 +444,11 @@ export const metadata = {
     description: "Plataforma unificada para la Politie, Brandweer y Meldkamers neerlandeses — despacho CAD compatible con GMK/CAD 2.0, analítica de cameratoezicht con IA y cumplimiento AVG/WPG/BIO.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-netherlands/",
   },
+  publicSafetySoftwareSweden: {
+    title: "Software de Seguridad Pública para Suecia: Polisen, SOS Alarm 112, MSB, RAKEL, RGPD y NIS2 | KabatOne",
+    description: "Plataforma unificada para Polisen, SOS Alarm y los räddningstjänst suecos — despacho CAD 112 compatible con ZENIT, gestión de cámaras integrada con RAKEL y cumplimiento RGPD/IMY/NIS2.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-sweden/",
+  },
   publicSafetySoftwareSouthKorea: {
     title: "Software de Seguridad Pública para Corea del Sur: KNP, 112 Unificado, Smart Safety City, PIPA y CSAP | KabatOne",
     description: "Plataforma unificada para la KNP, el NFS y los Centros de Control Integrado de Corea del Sur — despacho CAD 112 unificado, 60,000+ CCTV con analítica IA y cumplimiento PIPA/CSAP.",

@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.101] 2026-05-19 — Feat: Sweden market guide (Polisen, SOS Alarm, MSB, RAKEL, GDPR, NIS2)
+
+**Added**
+- New page: /resources/public-safety-software-sweden/ — Polisen (unified national force, 7 regions, ~33K officers), SOS Alarm AB (112 operator, 18 centres, ZENIT CAD platform), MSB civil preparedness, RAKEL TETRA national network, NIS2 implementation, Kameraövervakningslag, GDPR/IMY (Dataskyddslagen), Polisdatalagen, Säkerhetsskyddslagen, Statens inköpscentral/Tendsign procurement
+- 4 challenge cards: 7 regional coordination post-2015 reform, SOS Alarm ZENIT modernisation, RAKEL multi-agency integration, NIS2 cybersecurity
+- 7 Sweden-specific FAQs: Polisen/SOS Alarm/MSB structure, SOS Alarm/ZENIT dispatch, MSB/RAKEL framework, Tendsign/LOU procurement, GDPR/IMY/NIS2/Säkerhetsskyddslagen, camera surveillance/Kameraövervakningslag, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.100] 2026-05-19 — Feat: South Korea market guide (KNP, 112 Unified, Smart Safety City, PIPA, CSAP)
 
 **Added**
