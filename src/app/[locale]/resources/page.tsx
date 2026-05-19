@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-angola',
+          title: 'Software de Seguridad Pública para Angola',
+          description: 'PNA/FAA en 18 provincias, Luanda Safe City, SINSE, Sonangol offshore Bloco 0/15/17/31, Puerto de Lobito y Lei 22/2011/ANPD.',
+          region: 'África Austral',
+        },
+        {
+          href: '/resources/public-safety-software-angola',
+          title: 'Public Safety Software for Angola',
+          description: 'PNA/FAA across 18 provinces, Luanda Safe City, SINSE, Sonangol offshore Bloco 0/15/17/31, Porto de Lobito and Law 22/2011/ANPD.',
+          region: 'Southern Africa',
+        },
+        {
           href: '/resources/public-safety-software-senegal',
           title: 'Software de Seguridad Pública para Senegal',
           description: 'Police Nationale/Gendarmerie en 14 regiones, Dakar Safe City, DGPC, PAD Puerto de Dakar, PETROSEN Sangomar y CDP/Loi 2008-12.',

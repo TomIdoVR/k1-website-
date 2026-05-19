@@ -1,3 +1,16 @@
+## [v2.144] — 2026-05-19
+### Added
+- **Angola national market guide** (`/resources/public-safety-software-angola/`)
+  - PNA (Angola National Police) — 18 provinces, 100,000+ officers, PIC Criminal Investigation, Polícia de Ordem Pública
+  - FAA (Armed Forces) — Army/Air Force/Navy, Cabinda enclave security
+  - SINSE national intelligence; Protección Civil e Incêndios emergency 113/118
+  - Sonangol: Bloco 0 Cabinda, Bloco 15/17/31 offshore 1.1M+ bpd; ANPG
+  - Port of Luanda; Porto de Lobito (TAZARA corridor to Zambia/DRC); Port of Namibe
+  - Soyo LNG; SONANGALP refinery; Laúca Dam hydroelectric; REDE power grid; LAD Airport
+  - Borders: Luvo/Malongo (DRC), Yema (Congo-Brazzaville), Santa Clara/Oshikango (Namibia), Luacano/Jimbe (Zambia)
+  - Compliance: ANPD/Lei 22/2011, Lei 7/2017 Computer Crimes, Decreto 270/2019 Ciberseguridad
+  - Procurement: UTCE/Lei 20/2010/MINFIN; SADC/ECCAS frameworks; PND 2023-2027/PRODESI
+
 ## [v2.143] — 2026-05-19
 ### Added
 - **Senegal national market guide** (`/resources/public-safety-software-senegal/`)
