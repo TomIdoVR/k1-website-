@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.129] - 2026-05-19
+### Added
+- Geographic market guide: **Morocco** — DGSN 60,000+/Gendarmerie Royale 50,000+, BNPJ/DGST/BCIJ, Forces Auxiliaires, Marine Royale, DGPC 120+ centres, SAMU/SMUR, DGM/ABH/CENAD, Casablanca Safe City 15,000+ cameras, Gendarmerie ANPR 1,800+ km highways, Loi 09-08/CNDP, Loi 05-20/DGSSI/maCERT/DNSSI 2014, marchespublics/Décret 2-12-349, AFD/EIB/AfDB, FIFA 2030 (6 host cities), Al Haouz earthquake 2023, 7 bilingual FAQs (EN + ES)
+
 ## [2.128] - 2026-05-19
 ### Added
 - Geographic market guide: **Egypt** — MOI/Egyptian Police (27 governorate directorates/GDO/Central Security/Traffic Police/NSSA), CPS/Ḥimāya Madaniyya, SCM ambulance, EMA/NARSS, Cairo Safe City 100,000+ cameras (Huawei), NAC IOC 6,000+ cameras, Smart Police Stations 150+, PDPL Law 151/2020/PDPC, Cybersecurity Law 175/2018/NCSA/EG-CERT, NTRA, GAGS/Law 182/2018, WB/ADB/AIIB/EU, Egypt Vision 2030, 7 bilingual FAQs (EN + ES)

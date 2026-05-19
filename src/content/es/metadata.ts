@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareMorocco: {
+    title: "Software de Seguridad Pública para Marruecos: DGSN/Gendarmería Real, DGPC, Ley 09-08/CNDP y Ley de Ciberseguridad 05-20 | KabatOne",
+    description: "Plataforma unificada para DGSN, Gendarmería Real y DGPC de Marruecos — despacho CAD integrado para 12 regiones y coordinación de emergencias DGM/ABH, gestión de cámaras Casablanca Safe City conforme a Ley 09-08/CNDP y cumplimiento DGSSI/maCERT con contratación marchespublics/Decreto 2-12-349.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-morocco/",
+  },
   publicSafetySoftwareEgypt: {
     title: "Software de Seguridad Pública para Egipto: MOI/Policía Egipcia, CPS, PDPL 2020/PDPC y Ley de Ciberseguridad 2018 | KabatOne",
     description: "Plataforma unificada para MOI, Policía Egipcia y CPS — despacho CAD integrado para 27 gobernaciones y coordinación de emergencias EMA/NARSS, gestión de cámaras Cairo Safe City conforme a PDPL 2020 y cumplimiento NCSA/EG-CERT con contratación GAGS/Ley 182/2018.",
