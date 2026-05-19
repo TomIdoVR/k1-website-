@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.126] - 2026-05-19
+### Added
+- Geographic market guide: **Pakistan** — Punjab/Sindh/KPK/Balochistan/ICTP Police, Rangers, FC, Rescue 1122 PES+KPK, NDMA/PDMA, PMD/GLOF/2022 floods (33M affected), PSCA Lahore 8,000+ cameras, ISC Islamabad 1,900+, Karachi Safe City 3,000+, PDPA 2023/NCPDP, PECA 2016, National Cybersecurity Policy 2021/IGNITE/CERT-PK, PPRA 2004/SPRRA/KPPRA/BPPRA, ADB/IDB/WB, 7 bilingual FAQs (EN + ES)
+
 ## [2.125] - 2026-05-19
 ### Added
 - Geographic market guide: **South Africa** — SAPS (9 provinces/145 districts/1,150+ stations/CIMAC/Hawks/DPCI), JMPD/TMPD/CTMPD/eThekwini Metro Police, NDMC/COGTA, 9 PDMCs, SAWS, EMS, SANDF, FPA/Working on Fire, Joburg JOC 5,000+ cameras, Cape Town CCTV 3,000+, SANRAL ANPR, POPIA 2013/Information Regulator (July 2021), PAIA, Cybercrimes Act 2020, SITA/DPSA/CSIRT-vGov, CSD/PFMA/MFMA, DBSA/AfDB, 7 bilingual FAQs (EN + ES)

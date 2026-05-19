@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwarePakistan: {
+    title: "Software de Seguridad Pública para Pakistán: Policía Provincial, Rescue 1122, NDMA, PDPA 2023 y PECA/PTA | KabatOne",
+    description: "Plataforma unificada para policía provincial, Rescue 1122 y NDMA de Pakistán — despacho CAD integrado para 4 provincias y coordinación de desastres NDMA/PMD, gestión de cámaras Safe City conforme a PDPA 2023 y cumplimiento PECA/PTA con contratación PPRA 2004.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-pakistan/",
+  },
   publicSafetySoftwareSouthAfrica: {
     title: "Software de Seguridad Pública para Sudáfrica: SAPS, NDMC/SAWS, POPIA/Regulador de Información y Ley de Ciberdelitos 2020 | KabatOne",
     description: "Plataforma unificada para SAPS, Metro Police y NDMC de Sudáfrica — despacho CAD integrado para 9 provincias y coordinación de desastres NDMC/SAWS, gestión de cámaras Safe City conforme a POPIA y cumplimiento Ley de Ciberdelitos con contratación CSD/PFMA.",
