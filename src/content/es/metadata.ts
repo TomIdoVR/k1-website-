@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareAlgeria: {
+    title: "Software de Seguridad Pública para Argelia: DGSN/Gendarmería Nacional, DGPC, SONATRACH, Ley 18-07/ANPDP y Visión 2035 | KabatOne",
+    description: "Plataforma unificada para la DGSN y DGPC de Argelia — despacho CAD integrado en 58 wilayas, Argel Safe City, seguridad de infraestructura SONATRACH (Hassi Messaoud/Hassi R'Mel/In Amenas/Arzew), fronteras del Sahel, Ley 18-07/ANPDP/CERT-DZ y adquisición bajo el Decreto 15-247.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-algeria/",
+  },
   publicSafetySoftwareIraq: {
     title: "Software de Seguridad Pública para Iraq: IFP/CTS, KRSC/Peshmerga, NOC, Infraestructura Petrolera y Reconstrucción de Mosul | KabatOne",
     description: "Plataforma unificada para la Policía Federal de Iraq (IFP) y el MOI — despacho CAD integrado en 18 gobernados, Baghdad Safe City/NOC, KRSC/Asayish Región del Kurdistán, seguridad de campos Rumaila/West Qurna/Kirkuk, Puerto Umm Qasr/ABOT, CMC/NITA-Iraq y adquisición GCB/PMO.",
