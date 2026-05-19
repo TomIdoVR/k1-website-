@@ -556,6 +556,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security against drug trafficking, tourist protection across 9 islands, and ECOWAS/MAOC-N coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-cape-verde/",
   },
+  publicSafetySoftwareMauritius: {
+    title: "Public Safety Software for Mauritius | MPF/PMF, Indian Ocean EEZ, Financial Hub Security & Smart City – KabatOne",
+    description: "KabatOne delivers public safety platform for Mauritius Police Force (MPF), Paramilitary Force, and Coast Guard — 2.3M km² EEZ surveillance, African financial hub protection, Smart City integration, MRCC coordination, and cyclone disaster management.",
+    canonical: "https://kabatone.com/resources/public-safety-software-mauritius/",
+  },
   publicSafetySoftwareSeychelles: {
     title: "Public Safety Software for Seychelles | SPDF/NPA, Indian Ocean Maritime Security, Anti-Piracy & Tourism Protection – KabatOne",
     description: "KabatOne delivers public safety platform for Seychelles People's Defence Forces (SPDF), National Police, and Coast Guard — world's largest per capita EEZ surveillance, EUNAVFOR Atalanta coordination, luxury tourism protection, and Indian Ocean anti-piracy.",

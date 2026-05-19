@@ -682,6 +682,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-mauritius',
+          title: 'Public Safety Software for Mauritius',
+          description: "KabatOne supports the Mauritius Police Force, Paramilitary Force, and Coast Guard — 2.3M km² EEZ surveillance, Smart City integration, African financial hub protection, and cyclone disaster management.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

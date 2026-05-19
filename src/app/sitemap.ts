@@ -127,6 +127,7 @@ const pages = [
   { path: '/resources/public-safety-software-comoros', priority: 0.75 },
   { path: '/resources/public-safety-software-sao-tome-and-principe', priority: 0.75 },
   { path: '/resources/public-safety-software-seychelles', priority: 0.75 },
+  { path: '/resources/public-safety-software-mauritius', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

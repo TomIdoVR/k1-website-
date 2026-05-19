@@ -1,3 +1,7 @@
+## [v2.186] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Mauritius**
+
 ## [v2.185] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Seychelles**
