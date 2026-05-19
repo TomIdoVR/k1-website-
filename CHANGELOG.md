@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.99] 2026-05-19 — Feat: Japan market guide (NPA, MPD, 47 prefectural forces, J-Alert, APPI, ISMAP)
+
+**Added**
+- New page: /resources/public-safety-software-japan/ — National Police Agency (NPA/警察庁), 47 prefectural police forces (都道府県警察), Tokyo MPD (警視庁, ~47,000 officers), 6,000+ Koban system, Fire and Disaster Management Agency (FDMA/消防庁), 759 local fire departments, 110/119 emergency dispatch, J-Alert national warning system, Digital Agency DX reform, ISMAP cloud certification, APPI 2022, PPC, NISC/cybersecurity strategy, Society 5.0
+- 4 challenge cards: 47 autonomous prefectural forces inter-agency coordination, natural disaster multi-agency response, dispatch system modernisation (DX/ISMAP), surveillance cameras APPI compliance
+- 7 Japan-specific FAQs: NPA/MPD/prefectural structure, 110/119/Command Centres, J-Alert, procurement (調達ポータル/ISMAP), APPI/PPC/NISC, video surveillance/facial recognition, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/), cross-link from Singapore page
+
+---
+
 ## [2.98] 2026-05-18 — Feat: Singapore market guide (SPF, SCDF, Smart Nation, PDPA, CSA)
 
 **Added**

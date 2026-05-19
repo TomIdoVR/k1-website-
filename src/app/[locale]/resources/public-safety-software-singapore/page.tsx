@@ -320,6 +320,7 @@ export default async function PublicSafetySoftwareSingaporePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-japan', en: 'Public Safety Software for Japan: NPA, MPD, J-Alert, APPI & Society 5.0', es: 'Software de Seguridad Pública para Japón: NPA, MPD, J-Alert, APPI y Society 5.0' },
                 { href: '/resources/public-safety-software-australia', en: 'Public Safety Software for Australia: Triple Zero, NGEC & ACSC ISM', es: 'Software de Seguridad Pública para Australia: Triple Zero, NGEC y ACSC ISM' },
                 { href: '/resources/public-safety-software-india', en: 'Public Safety Software for India: Smart Cities & ICCC', es: 'Software de Seguridad Pública para India: Smart Cities e ICCC' },
                 { href: '/resources/public-safety-software-middle-east', en: 'Public Safety Software for the Middle East', es: 'Software de Seguridad Pública para Medio Oriente' },
