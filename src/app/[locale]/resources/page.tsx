@@ -742,6 +742,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-bosnia-herzegovina',
+          title: 'Public Safety Software for Bosnia and Herzegovina',
+          description: "KabatOne supports SIPA, MoI FBiH, MUP RS, and Brčko Police — Corridor Vc E73 management, multi-entity interoperability, EU candidacy 2022, EUFOR Althea coordination, and AZLP/GDPR compliance.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

@@ -586,6 +586,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Serbian MUP ~35K officers, BIA intelligence, and Border Police — Corridor X/VII management, Danube 588 km river security, Port of Belgrade protection, EU/Schengen candidacy compliance, and FRONTEX/SELEC coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-serbia/",
   },
+  publicSafetySoftwareBosniaHerzegovina: {
+    title: "Public Safety Software for Bosnia and Herzegovina | SIPA/OSA-OBA, Corridor Vc, Port of Ploče & EU Candidate – KabatOne",
+    description: "KabatOne delivers public safety platform for Bosnia and Herzegovina SIPA, OSA-OBA intelligence, MoI FBiH, and MUP RS — Corridor Vc E73 Budapest-Ploče, multi-entity interoperability, EU candidacy 2022, EUFOR Althea coordination, and AZLP/GDPR compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",
