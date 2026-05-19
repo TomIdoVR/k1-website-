@@ -1,3 +1,16 @@
+## [v2.141] — 2026-05-19
+### Added
+- **Tanzania national market guide** (`/resources/public-safety-software-tanzania/`)
+  - Tanzania Police Force (TPF) — 31 mainland regions, 65,000+ officers, ATU, BPU
+  - Zanzibar Police Force (ZPF) — Unguja and Pemba islands
+  - NFRS (National Fire and Rescue Service) — Dar es Salaam, Arusha, Mwanza
+  - NEMC/DMS disaster management — floods, Rift Valley, Kilimanjaro, Indian Ocean cyclones
+  - TPA Port of Dar es Salaam 20M+ TEU; Tanga/Mtwara/Zanzibar Ferry
+  - TPDC offshore gas security; TAZARA/TAZAMA corridor; JRO/DAR airports
+  - EAC borders: Namanga/Holili/Sirari (Kenya), Tunduma/Kasumulu (Zambia/Malawi), Mutukula/Rusumo/Kabanga
+  - Compliance: PDPA 2022/TCRA/PDPC, Cybercrimes Act 2015/eGA/CERT-TZ
+  - Procurement: PPRA/GPSA/Tendas portal; Tanzania Vision 2025/LTPP 2050
+
 ## [v2.140] — 2026-05-19
 ### Added
 - **Tunisia national market guide** (`/resources/public-safety-software-tunisia/`)

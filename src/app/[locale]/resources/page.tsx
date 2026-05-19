@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-tanzania',
+          title: 'Software de Seguridad Pública para Tanzania',
+          description: 'TPF/ZPF en 31 regiones, Dar es Salaam Safe City, NFRS, Puerto TPA 20M+ TEU, EAC y PDPA 2022/TCRA.',
+          region: 'África Oriental',
+        },
+        {
+          href: '/resources/public-safety-software-tanzania',
+          title: 'Public Safety Software for Tanzania',
+          description: 'TPF/ZPF across 31 regions, Dar es Salaam Safe City, NFRS, TPA Port 20M+ TEU, EAC borders and PDPA 2022/TCRA.',
+          region: 'East Africa',
+        },
+        {
           href: '/resources/public-safety-software-tunisia',
           title: 'Software de Seguridad Pública para Túnez',
           description: 'DGPN/Garde Nationale en 24 gobernaciones, Túnez Safe City, ONPC, INPDP/Loi 63-2004 y adquisición HAICOP.',

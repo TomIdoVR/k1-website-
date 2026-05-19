@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareTanzania: {
+    title: "Public Safety Software for Tanzania: TPF/JPF, NFRS, TPA Port of Dar es Salaam, PDPA 2022/TCRA & EAC | KabatOne",
+    description: "Unified platform for Tanzania Police Force and JPF — integrated CAD dispatch across 31 regions, Dar es Salaam Safe City, NFRS fire protection, TPA Port 20M+ TEU, EAC border crossings, PDPA 2022/TCRA compliance, and PPRA/Tendas procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-tanzania/",
+  },
   publicSafetySoftwareTunisia: {
     title: "Public Safety Software for Tunisia: DGPN/Garde Nationale, ONPC, INPDP/Law 63-2004 & Vision 2035 | KabatOne",
     description: "Unified platform for Tunisia DGPN and Garde Nationale — integrated CAD dispatch across 24 governorates, Tunis Safe City, ONPC civil protection, Port of Tunis Radès/Sfax, INPDP/Law 63-2004 compliance, and HAICOP/Code des marchés publics procurement.",

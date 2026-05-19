@@ -70,6 +70,7 @@ const pages = [
   { path: '/resources/public-safety-software-finland', priority: 0.75 },
   { path: '/resources/public-safety-software-portugal', priority: 0.75 },
   { path: '/resources/public-safety-software-turkey', priority: 0.75 },
+  { path: '/resources/public-safety-software-tanzania', priority: 0.75 },
   { path: '/resources/public-safety-software-tunisia', priority: 0.75 },
   { path: '/resources/public-safety-software-mexico', priority: 0.8 },
   { path: '/resources/public-safety-software-ethiopia', priority: 0.75 },
