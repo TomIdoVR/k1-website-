@@ -474,6 +474,11 @@ export const metadata = {
     description: "Plataforma unificada para los 11 distritos de la Poliisi finlandesa, los 6 centros hätäkeskus del Hätäkeskuslaitos y el Pelastustoimi — despacho CAD integrado con VIRVE TETRA/VIRVE 2.0, gestión de cámaras conforme a Tietosuojalaki/Tietosuojavaltuutettu, y cumplimiento NIS2/Kyberturvallisuuskeskus.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-finland/",
   },
+  publicSafetySoftwarePortugal: {
+    title: "Software de Seguridad Pública para Portugal: PSP/GNR Modelo Dual, INEM/CODU 112, SIRESP TETRA, ANEPC/SIOPS, RGPD/CNPD y NIS2/CNCS | KabatOne",
+    description: "Plataforma unificada para la PSP y la GNR de Portugal, los centros CODU del INEM y la ANEPC/SIOPS — despacho CAD dual con SIRESP TETRA, videovigilância y ANPR conforme al RGPD/CNPD, y cumplimiento NIS2/CNCS con apoyo PRR/Portugal 2030.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-portugal/",
+  },
   publicSafetySoftwareUAE: {
     title: "Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City 50K+ Cámaras, PDPL y NESA | KabatOne",
     description: "Plataforma unificada para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU — despacho CAD IPOC-integrado, 50,000+ cámaras IA y cumplimiento PDPL/NESA con data residency en EAU.",

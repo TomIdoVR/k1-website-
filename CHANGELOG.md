@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.109] 2026-05-19 — Feat: Portugal market guide (PSP/GNR dual, INEM/CODU 112, SIRESP TETRA, ANEPC/SIOPS, CNPD, CNCS/NIS2)
+
+**Added**
+- New page: /resources/public-safety-software-portugal/ — PSP (21K officers, urban), GNR (~25K, rural/gendarmerie), MAI, INEM (4 CODU centres, 112 dispatch), SIRESP TETRA (modernised 2017), ANEPC (civil protection), SIOPS/SGIFR (forest fire management), Bombeiros voluntários (~25K), ICNF, VIGIFOR, CNPD/RGPD (Lei 58/2019), Lei 1/2005 (video surveillance), CNCS/NIS2 (Lei 46/2018), BASE.gov/CCP/eSPap procurement, PRR/Portugal 2030 EU funding
+- 4 challenge cards: dual PSP/GNR + CODU/112 integration, forest fires/SIOPS/SGIFR, urban surveillance/ANPR/CNPD, NIS2/CNCS/PRR funding
+- 7 bilingual FAQs: PSP/GNR/MAI structure, CODU/SIRESP dispatch, forest fire role/VIGIFOR/ANEPC, BASE.gov/eSPap/PRR procurement, RGPD/CNPD/Lei 1/2005, urban surveillance/ANPR, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.108] 2026-05-19 — Feat: Finland market guide (Poliisi, Hätäkeskuslaitos, VIRVE TETRA, Pelastustoimi, Tietosuojalaki)
 
 **Added**
