@@ -784,6 +784,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-iceland',
+          title: 'Public Safety Software for Iceland',
+          description: "KabatOne supports Iceland National Police, KÍB, and Coast Guard — 33 active volcanoes with IMO/Almannavarnir, 830,000 km² EEZ protection, NATO Keflavík GIUK, and GDPR-EEA compliance.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

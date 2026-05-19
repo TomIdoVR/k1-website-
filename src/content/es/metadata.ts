@@ -961,6 +961,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para la Policía Grand-Ducal luxemburguesa ~1.700 agentes, SREL inteligencia y Ejército — protección instituciones UE/NATO, seguridad centro fondos €5T+, hub Cargolux, centros de datos AWS/Google y cumplimiento GDPR/NIS2.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-luxembourg/",
   },
+  publicSafetySoftwareIceland: {
+    title: "Software de Seguridad Pública para Islandia | Policía Nacional/KÍB, 33 Volcanes, ZEE Guardia Costera y NATO Keflavík – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional islandesa ~1.500 agentes, KÍB inteligencia y Guardia Costera — gestión 33 volcanes activos con IMO/Almannavarnir, protección ZEE pesquera 830.000 km², control GIUK NATO Keflavík y cumplimiento GDPR-EEE.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-iceland/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Software de Seguridad Pública para Estonia | PPA/KAPO, X-Road e-Estonia, CCDCOE OTAN y Normas ISKE – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Junta de Policía y Guardia de Fronteras de Estonia (PPA), Junta de Rescate y KAPO — interoperabilidad X-Road, cumplimiento ISKE, integración 112 Häirekeskus, coordinación CCDCOE OTAN y seguridad fronteriza flanco oriental.",

@@ -1,3 +1,7 @@
+## [v2.203] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Iceland**
+
 ## [v2.202] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Luxembourg**
