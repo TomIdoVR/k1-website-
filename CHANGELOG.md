@@ -1,3 +1,13 @@
+## [v2.175] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Burundi**
+  - FDN ~20,000-25,000, PNB 18 provinces, SNR intelligence, Imbonerakure paramilitary; AMISOM/ATMIS major contributor (Somalia)
+  - 2015 political crisis (3rd term) ~400,000 displaced; 900 km DRC border (ADF/FDLR militias); EAC + CEPGL member
+  - Lake Tanganyika — 2nd deepest lake worldwide (1,470 m); Port of Bujumbura; cross-border militia movements
+  - Coffee ~70% export earnings; tea ~5,000 t/yr; Musongati nickel >300 Mt (world's largest unexploited); gold/cassiterite; Lake Tanganyika fishing
+  - BJM Airport; REGIDESO electricity ~12% coverage; Econet Leo/Lumitel/Onatel mobile; BIF franc/BRB
+  - ARMP/Decree n°100/203; Law n°1/13 2021 data protection; ARCT telecoms; WB/AfDB/AFESD/China EXIM/EU
+
 ## [v2.174] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Madagascar**

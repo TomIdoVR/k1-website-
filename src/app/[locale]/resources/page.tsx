@@ -616,6 +616,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-burundi',
+          title: 'Public Safety Software for Burundi',
+          description: "KabatOne supports Burundi's FDN, National Police, Lake Tanganyika maritime security, DRC border management, Musongati nickel mining, and Great Lakes humanitarian crisis coordination.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

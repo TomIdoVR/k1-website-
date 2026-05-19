@@ -546,6 +546,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Madagascar (FAM), Gendarmerie Nationale, Puerto de Toamasina, gestión de desastres por ciclones y protección de recursos estratégicos de vainilla/ilmenita/cobalto.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-madagascar/",
   },
+  publicSafetySoftwareBurundi: {
+    title: "Software de Seguridad Pública para Burundi | FDN/PNB, Lago Tanganica, AMISOM/ATMIS y Crisis de los Grandes Lagos – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa Nacional de Burundi (FDN), Policía Nacional, seguridad marítima del Lago Tanganica, gestión de la frontera con DRC y coordinación humanitaria en la región de los Grandes Lagos.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-burundi/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",
