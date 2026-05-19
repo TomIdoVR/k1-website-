@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.100] 2026-05-19 — Feat: South Korea market guide (KNP, 112 Unified, Smart Safety City, PIPA, CSAP)
+
+**Added**
+- New page: /resources/public-safety-software-south-korea/ — Korean National Police Agency (경찰청, KNP), 18 Sido police agencies, unified 112 dispatch (integrated police/fire/EMS since 2014), National Fire Service (소방청, NFS), Seoul 60,000+ CCTV network, Smart Safety City (MOIS), Policing 4.0, KONEPS procurement, PIPA/PIPC, CSAP/KISA, NCSC, K-City Network
+- 4 challenge cards: unified 112 system integration, 60K+ CCTV AI management PIPA-compliant, Smart Safety City interoperability, Policing 4.0 AI modernisation
+- 7 South Korea-specific FAQs: KNP/NFS/18 Sido structure, 112 unified dispatch, Smart Safety City, KONEPS/CSAP procurement, PIPA/PIPC/NCSC requirements, CCTV infrastructure, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/), cross-link from Japan page
+
+---
+
 ## [2.99] 2026-05-19 — Feat: Japan market guide (NPA, MPD, 47 prefectural forces, J-Alert, APPI, ISMAP)
 
 **Added**

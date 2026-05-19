@@ -409,6 +409,11 @@ export const metadata = {
     description: "Unified platform for Dutch Politie, Brandweer, and Meldkamers — CAD dispatch compatible with GMK/CAD 2.0, AI cameratoezicht analytics, and AVG/WPG/BIO compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-netherlands/",
   },
+  publicSafetySoftwareSouthKorea: {
+    title: "Public Safety Software for South Korea: KNP, Unified 112, Smart Safety City, PIPA & CSAP | KabatOne",
+    description: "Unified platform for South Korea's KNP, NFS, and Integrated Control Centres — 112 CAD dispatch, 60,000+ CCTV AI analytics, and PIPA/CSAP compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-south-korea/",
+  },
   publicSafetySoftwareJapan: {
     title: "Public Safety Software for Japan: NPA, MPD, J-Alert, APPI & Society 5.0 | KabatOne",
     description: "Unified platform for Japan's NPA, MPD, and 47 prefectural police forces — 110/119 CAD dispatch, J-Alert integration, AI camera management, and APPI/ISMAP compliance.",

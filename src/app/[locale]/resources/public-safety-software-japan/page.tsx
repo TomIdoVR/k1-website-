@@ -285,6 +285,7 @@ export default async function PublicSafetySoftwareJapanPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
+                { href: '/resources/public-safety-software-south-korea', en: 'Public Safety Software for South Korea: KNP, Unified 112, Smart Safety City, PIPA & CSAP', es: 'Software de Seguridad Pública para Corea del Sur: KNP, 112 Unificado, Smart Safety City, PIPA y CSAP' },
                 { href: '/resources/public-safety-software-singapore', en: 'Public Safety Software for Singapore: SPF, SCDF, Smart Nation & PDPA', es: 'Software de Seguridad Pública para Singapur: SPF, SCDF, Smart Nation y PDPA' },
                 { href: '/resources/public-safety-software-australia', en: 'Public Safety Software for Australia: Triple Zero, NGEC & ACSC ISM', es: 'Software de Seguridad Pública para Australia: Triple Zero, NGEC y ACSC ISM' },
                 { href: '/resources/public-safety-software-india', en: 'Public Safety Software for India: Smart Cities & ICCC', es: 'Software de Seguridad Pública para India: Smart Cities e ICCC' },

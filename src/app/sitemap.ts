@@ -62,6 +62,7 @@ const pages = [
   { path: '/resources/public-safety-software-italy', priority: 0.75 },
   { path: '/resources/public-safety-software-spain', priority: 0.75 },
   { path: '/resources/public-safety-software-netherlands', priority: 0.75 },
+  { path: '/resources/public-safety-software-south-korea', priority: 0.75 },
   { path: '/resources/public-safety-software-japan', priority: 0.75 },
   { path: '/resources/public-safety-software-singapore', priority: 0.75 },
   { path: '/resources/cad-dispatch-software-latin-america', priority: 0.8 },
