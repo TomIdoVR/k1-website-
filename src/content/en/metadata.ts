@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareThailand: {
+    title: "Public Safety Software for Thailand: Royal Thai Police, DDPM/ERAWAN, PDPA & NCSA Cybersecurity | KabatOne",
+    description: "Unified platform for Royal Thai Police, DDPM, and NIEMS/ERAWAN — integrated CAD dispatch for 77 provinces, Chao Phraya flood management, PDPA-compliant CCTV camera management, and NCSA compliance with GPP/DGA procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-thailand/",
+  },
   publicSafetySoftwareRomania: {
     title: "Public Safety Software for Romania: Poliția Română, ISU/SMURD, TETRA/ROIIS, GDPR/ANSPDCP & DNSC/NIS2 | KabatOne",
     description: "Unified platform for Romanian Poliția Română, ISU/SMURD, and SAJ — integrated CAD dispatch with STS TETRA/ROIIS and DIU in 41 counties, camera management compliant with GDPR/ANSPDCP, and DNSC/NIS2 compliance with PNRR/SICAP funding.",

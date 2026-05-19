@@ -7,6 +7,17 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.118] - 2026-05-18
+### Added
+- **Thailand market guide** (EN + ES): `/resources/public-safety-software-thailand/`
+  - Royal Thai Police/RTP (77 provinces), Ministry of Interior, Tourist Police, NSC/NARESUAN Command Centre
+  - DDPM (Department of Disaster Prevention and Mitigation); NIEMS/ERAWAN system; SAJ/provincial 1669 EOCs
+  - Bangkok Metropolitan Police (BMP) 64,000+ CCTV cameras; RTP ANPR; Safe City Phuket; 191/199/1669/112
+  - Chao Phraya/2011/2021 flood management; NDWC tsunami alerts (Andaman Sea); monsoon emergency response
+  - PDPA B.E. 2562 (2019, enforced June 2022), PDPC; Cybersecurity Act B.E. 2562, NCSA, ThaiCERT/ETDA
+  - GPP/DGA procurement (B.E. 2560/2017); Digital Government Agency; Thailand 4.0; Smart Bangkok/Phuket/Chiang Mai
+  - 7 bilingual FAQs; articleSchema, faqPageSchema, breadcrumbSchema; hub cards EN+ES; sitemap entry
+
 ## [2.117] - 2026-05-18
 ### Added
 - **Romania market guide** (EN + ES): `/resources/public-safety-software-romania/`
