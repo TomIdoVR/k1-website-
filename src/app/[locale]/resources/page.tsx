@@ -574,6 +574,12 @@ export default async function ResourcesPage({
           region: 'East Africa',
         },
         {
+          href: '/resources/public-safety-software-republic-of-congo',
+          title: 'Software de Seguridad Pública para República del Congo',
+          description: 'FAC/PNR en 12 departamentos, Puerto de Pointe-Noire (+5M toneladas), petróleo offshore TotalEnergies/ENI/Perenco, ferrocarril CFCO y sede del BEAC.',
+          region: 'África Central',
+        },
+        {
           href: '/resources/public-safety-software-central-african-republic',
           title: 'Software de Seguridad Pública para República Centroafricana',
           description: 'Coordinación FACA/DPSR con MINUSCA 14,000 cascos azules, seguridad de recursos diamantes/oro/uranio, gestión fronteriza 6 países y marco de paz APPR 2019.',
@@ -596,6 +602,12 @@ export default async function ResourcesPage({
           title: 'Software de Seguridad Pública para Yibuti',
           description: 'PNJ/FAD, Camp Lemonnier AFRICOM, FFDJ, Base Naval PLA, Puerto Doraleh +1M TEUs, QG EUNAVFOR Atalanta y seguridad Bab-el-Mandeb.',
           region: 'África Oriental',
+        },
+        {
+          href: '/resources/public-safety-software-republic-of-congo',
+          title: 'Public Safety Software for Republic of Congo',
+          description: 'FAC/PNR across 12 departments, Port of Pointe-Noire (+5M tonnes), offshore oil TotalEnergies/ENI/Perenco, CFCO railway and BEAC headquarters.',
+          region: 'Central Africa',
         },
         {
           href: '/resources/public-safety-software-central-african-republic',

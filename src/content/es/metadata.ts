@@ -496,6 +496,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareRepublicOfCongo: {
+    title: "Software de Seguridad Pública para República del Congo | FAC/PNR, Puerto de Pointe-Noire y Seguridad Petrolera – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Congolesas (FAC), la Policía Nacional Republicana (PNR), gestión del Puerto de Pointe-Noire y seguridad de la infraestructura petrolera del Congo.",
+    canonical: "https://kabatone.com/resources/public-safety-software-republic-of-congo/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

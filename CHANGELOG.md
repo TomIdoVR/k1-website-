@@ -1,3 +1,14 @@
+## [v2.165] – 2026-05-19
+### Added
+- Public safety software for Republic of Congo geographic market guide (EN + ES)
+  - FAC ~10,000 (army/navy/FAL), PNR 12 departments, Gendarmerie, DVT, Presidential/Republican Guard
+  - Port of Pointe-Noire (Bolloré/DP World +5M tonnes/year); FAC naval base Pointe-Noire
+  - Offshore oil ~300,000 bbl/day: TotalEnergies (Moho-Bilondo/Likouf), ENI (Marine XII), Perenco (Kitina/Tchibeli), SNPC
+  - CFCO railway Brazzaville–Pointe-Noire 510 km; BZV/PNR airports; BEAC HQ Brazzaville
+  - Borders: DRC 2,410 km (Congo/Ubangi River/Brazzaville-Kinshasa ferry), CAR 467 km (Sangha), Cameroon 523 km, Gabon 2,567 km, Angola (Cabinda) 231 km
+  - Pool region insurgency Ninjas 2016–2017; peace 2019; Congo-Kinshasa river smuggling
+  - Code des Marchés Publics Loi 11-2009/ARMP; Loi 9-2009 data protection; ARPCE; World Bank/AFD/China EXIM/IMF
+
 ## [v2.164] – 2026-05-19
 ### Added
 - Public safety software for Central African Republic geographic market guide (EN + ES)
