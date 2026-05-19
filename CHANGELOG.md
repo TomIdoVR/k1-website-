@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.107] 2026-05-19 — Feat: Denmark market guide (Politiet, SINE TETRA, Alarmcentralen, Beredskabsstyrelsen, Datatilsynet)
+
+**Added**
+- New page: /resources/public-safety-software-denmark/ — Politiet (12 politikredse, Rigspolitiet), SINE TETRA network (SINE Next modernisation), 12 Alarmcentraler (112 dispatch), POLSAG CAD, Beredskabsstyrelsen (5 national rescue centres, beredskabsloven), PET counter-terrorism, CFCS/NIS2, Datatilsynet/Databeskyttelsesloven, politiregisterloven, Udbud.dk/SKI/udbudsloven procurement, Smart City Copenhagen
+- 4 challenge cards: SINE TETRA/Alarmcentralen dispatch, Copenhagen Smart City/Digitaliseringsstyrelsen, ANPR/Datatilsynet, Databeskyttelsesloven/NIS2/CFCS/SINE homologation
+- 7 bilingual FAQs: Politiet/Rigspolitiet/12 districts, Alarmcentralen/SINE dispatch, Beredskabsstyrelsen/CFCS roles, Udbud.dk/SKI procurement, Databeskyttelsesloven/Datatilsynet/politiregisterloven, ANPR/Smart City surveillance, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.106] 2026-05-19 — Feat: Norway market guide (Politiet, Nødnett, AMK/110, DSB/NSM, Datatilsynet)
 
 **Added**
