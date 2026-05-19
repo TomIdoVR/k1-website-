@@ -1,3 +1,18 @@
+## [v2.142] — 2026-05-19
+### Added
+- **Ghana national market guide** (`/resources/public-safety-software-ghana/`)
+  - GPS (Ghana Police Service) — 16 regions, 30,000+ officers, DCOP/Crime Combat Unit, Border Police
+  - GNFS (Ghana National Fire Service) — Accra, Kumasi, Takoradi, Obuasi/Tarkwa mining zones
+  - NADMO — seasonal floods Northern Ghana, landslides, industrial incidents, GMet integration
+  - NISS/Presidential Guard — national security and intelligence integration
+  - GPHA: Port of Tema (West Africa's largest, 20M+ containers), Port of Takoradi
+  - GNPC offshore Jubilee/TEN/Sankofa gas fields; AngloGold Ashanti Obuasi/Tarkwa gold mines
+  - GRIDCO/ECG power grid; GWCL water; Kotoka International Airport (ACC)
+  - ECOWAS/ECOMOG borders: Aflao (Togo), Elubo/Dormaa Ahenkro (Ivory Coast), Paga/Hamile (Burkina Faso)
+  - INTERPOL Regional Coordination Centre Accra
+  - Compliance: Data Protection Act 2012 (Act 843)/DPC, Electronic Transactions Act 2008/NCSA/CERT-GH
+  - Procurement: GPPA/PPA 2003/Ghana Electronic Procurement (GEP); Digital Transformation Agenda 2019/Vision 2057
+
 ## [v2.141] — 2026-05-19
 ### Added
 - **Tanzania national market guide** (`/resources/public-safety-software-tanzania/`)

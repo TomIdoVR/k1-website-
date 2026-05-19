@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-ghana',
+          title: 'Software de Seguridad Pública para Ghana',
+          description: 'GPS/GNFS en 16 regiones, Accra Safe City, NADMO, Puerto de Tema, ECOWAS/ECOMOG y Data Protection Act 2012.',
+          region: 'África Occidental',
+        },
+        {
+          href: '/resources/public-safety-software-ghana',
+          title: 'Public Safety Software for Ghana',
+          description: 'GPS/GNFS across 16 regions, Accra Safe City, NADMO, Port of Tema, ECOWAS/ECOMOG hub and Data Protection Act 2012.',
+          region: 'West Africa',
+        },
+        {
           href: '/resources/public-safety-software-tanzania',
           title: 'Software de Seguridad Pública para Tanzania',
           description: 'TPF/ZPF en 31 regiones, Dar es Salaam Safe City, NFRS, Puerto TPA 20M+ TEU, EAC y PDPA 2022/TCRA.',
