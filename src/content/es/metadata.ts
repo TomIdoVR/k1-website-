@@ -556,6 +556,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas de Defensa de Malaui (MDF), Servicio de Policía, seguridad del Lago Malaui, gestión de fronteras SADC y protección de recursos estratégicos de uranio (Kayelekera), tabaco y té.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-malawi/",
   },
+  publicSafetySoftwareBotswana: {
+    title: "Software de Seguridad Pública para Botsuana | BDF/BPPS, Diamantes Debswana, Okavango y SADC – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Botsuana (BDF), Servicio de Policía, protección de minas de diamantes Debswana, anti-caza furtiva en el Delta del Okavango y gestión de fronteras SADC — mayor productor mundial de diamantes por valor.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-botswana/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",

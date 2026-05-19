@@ -1,3 +1,13 @@
+## [v2.177] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Botswana**
+  - BDF ~9,000-10,000 (one of Africa's most professional forces), BPPS 16 districts, DISS intelligence, BURS customs; President Duma Boko (2024)
+  - Debswana (50/50 govt/De Beers) — world's largest diamond producer by value (~70-80% exports); Jwaneng (world's most valuable mine), Orapa, Letlhakane, Damtshaa
+  - ~130,000 elephants (world's largest population) — anti-poaching critical; Okavango Delta UNESCO Heritage + Chobe; tourism ~10% GDP
+  - Copper-nickel Selebi Phikwe (BCL); coal Morupule/Mmamabula; beef exports UE/BAMB; Moody's Baa3 (Africa's best credit rating)
+  - Sir Seretse Khama Airport (GBE); Botswana Railways; BPC/SAPP electricity; Mascom/Orange/BTC mobile; BOCRA
+  - PPADB/PPADA procurement; Data Protection Act 2018; BWP/Bank of Botswana; SADC member; WB (IBRD)/AfDB
+
 ## [v2.176] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Malawi**

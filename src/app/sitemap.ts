@@ -118,6 +118,7 @@ const pages = [
   { path: '/resources/public-safety-software-madagascar', priority: 0.75 },
   { path: '/resources/public-safety-software-burundi', priority: 0.75 },
   { path: '/resources/public-safety-software-malawi', priority: 0.75 },
+  { path: '/resources/public-safety-software-botswana', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },
