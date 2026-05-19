@@ -123,6 +123,7 @@ const pages = [
   { path: '/resources/public-safety-software-eswatini', priority: 0.75 },
   { path: '/resources/public-safety-software-lesotho', priority: 0.75 },
   { path: '/resources/public-safety-software-gambia', priority: 0.75 },
+  { path: '/resources/public-safety-software-cape-verde', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

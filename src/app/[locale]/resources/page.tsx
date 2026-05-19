@@ -658,6 +658,12 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-cape-verde',
+          title: 'Public Safety Software for Cape Verde',
+          description: "KabatOne supports Cape Verde's GN, PN Police, Guardia Costeira, 10-island Atlantic archipelago maritime monitoring, TACV/Nelson Mandela Airport hub, and anti-drug trafficking coordination.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

@@ -1,3 +1,13 @@
+## [v2.182] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Cape Verde**
+  - GN ~1,200 (Guarda Nacional: Army/Air/Sea branches), PN ~1,000 Police (22 councils/9 islands), GCM Guardia Costeira; President Jose Maria Neves; democratic model since 1990 multiparty transition
+  - 10-island Atlantic archipelago ~600 km west of Senegal; Sotavento (Santiago/Fogo/Brava/Maio) + Barlavento (Sao Vicente/Santo Antao/Sal/Boa Vista/Sao Nicolau/Santa Luzia uninhabited); 4,033 km² total land
+  - Nelson Mandela International Airport (RAI/Praia) + Cesaria Evora Airport (VXE/Sao Vicente); Port of Praia + Port of Mindelo; TACV Cabo Verde Airlines; ECV/ANAC/ANMCV
+  - Tourism ~20-25% GDP (Sal/Boa Vista beach resorts TUI/Thomas Cook/Neos); blue economy fishing ZEE; diaspora remittances ~15% GDP; PESI/CV Telecom/CVMovel; offshore IT hub
+  - Salt/minerals (Pedra de Lume natural saline lake); Cabeolica wind energy; MHI Vestas; ECREEE renewable target 50% by 2030; frequent volcanic activity Fogo (2014-15 eruption)
+  - LGCP/Lei de Gestao e Contratacao Publica; UGAC/ANRE; ANSA-CV food safety; CVEscudo/BCV; CEDEAO/ECOWAS; Lusophone PALOP/CPLP; MCA/WB/AfDB/Portugal/EU/USAID
+
 ## [v2.181] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Gambia**

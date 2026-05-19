@@ -581,6 +581,11 @@ export const metadata = {
     description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Gambia (GAF), Servicio de Policía, seguridad del Río Gambia, protección turística costera y reformas de justicia post-TRRC — el país continental más pequeño de Africa.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-gambia/",
   },
+  publicSafetySoftwareCapeVerde: {
+    title: "Software de Seguridad Pública para Cabo Verde | FACV/PNR, Seguridad Marítima Atlántica, Turismo y ECOWAS – KabatOne",
+    description: "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Cabo Verde (FACV), Policía Nacional, seguridad marítima atlántica contra el narcotráfico, protección turística en las 9 islas y coordinación ECOWAS/MAOC-N.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-cape-verde/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA.",
