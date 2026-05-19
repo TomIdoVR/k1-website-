@@ -604,6 +604,12 @@ export default async function ResourcesPage({
           region: 'África Oriental',
         },
         {
+          href: '/resources/public-safety-software-sierra-leone',
+          title: 'Public Safety Software for Sierra Leone',
+          description: "KabatOne supports Sierra Leone's RSLAF, SLP Police, Freetown Port, diamond/rutile/iron ore mining security, and flood emergency response.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-benin',
           title: 'Public Safety Software for Benin',
           description: "KabatOne supports Benin's FAB forces, PNB, FSI northern operations, Port of Cotonou, and Gulf of Guinea maritime security.",

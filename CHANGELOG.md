@@ -1,3 +1,12 @@
+## [v2.170] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Sierra Leone**
+  - RSLAF ~13,000 (army/navy/air force), SLP 5 regions/150+ districts, SSIS intelligence, Coast Guard; post-civil war (1991-2002) reconstruction
+  - Diamonds (DACPA/Kimberley), rutile/ilmenite (Sierra Rutile/Iluka — world's largest natural rutile producer), iron ore (Tonkolili/Marampa), bauxite/gold
+  - Freetown Port (Queen Elizabeth II Quay), Pepel Port (iron ore), Lungi Airport (FNA); Freetown 2017 mudslide 1,000+ killed
+  - Illegal mining/diamond trafficking; Gulf of Guinea piracy; youth gangs Freetown; political tensions SLPP vs APC
+  - NPPA Act 2016; Data Protection Act 2022; ACC; UK FCDO/World Bank/AfDB/USAID; ECOWAS
+
 ## [v2.169] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Benin**

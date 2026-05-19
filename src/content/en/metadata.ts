@@ -486,6 +486,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for the Beninese Armed Forces (FAB), National Police, Port of Cotonou, and security against jihadist threats in northern Benin.",
     canonical: "https://kabatone.com/resources/public-safety-software-benin/",
   },
+  publicSafetySoftwareSierraLeone: {
+    title: "Public Safety Software for Sierra Leone | RSLAF/SLP, Freetown Port & Mining Security – KabatOne",
+    description: "KabatOne delivers public safety platform for the Republic of Sierra Leone Armed Forces (RSLAF), Police (SLP), Port of Freetown, and security for strategic mineral resources.",
+    canonical: "https://kabatone.com/resources/public-safety-software-sierra-leone/",
+  },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
     description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
