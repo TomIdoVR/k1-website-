@@ -760,6 +760,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-montenegro',
+          title: 'Public Safety Software for Montenegro',
+          description: "KabatOne supports Montenegrin Police, ANB, and Border Guard — Port of Bar deep-water hub, Bar-Boljare highway, Adriatic coast security, EU most advanced Balkans candidacy, and NATO/FRONTEX coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

@@ -1,3 +1,7 @@
+## [v2.199] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Montenegro**
+
 ## [v2.198] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for North Macedonia**

@@ -941,6 +941,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para el MUP macedonio ~8.500 agentes, UBK inteligencia y Policía de Fronteras — intersección Corredores 8/10 en Veles, candidatura UE 2005/negociaciones 2022, NATO desde 2020 y coordinación FRONTEX/SELEC.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-north-macedonia/",
   },
+  publicSafetySoftwareMontenegro: {
+    title: "Software de Seguridad Pública para Montenegro | Policía/ANB, Puerto de Bar, Autopista Bar-Boljare y NATO – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía montenegrina ~5K agentes, ANB inteligencia y Guardia de Fronteras — Puerto de Bar aguas profundas Adriático, autopista Bar-Boljare EXIM China, candidatura UE más avanzada Balcanes y coordinación NATO/FRONTEX.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-montenegro/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Software de Seguridad Pública para Estonia | PPA/KAPO, X-Road e-Estonia, CCDCOE OTAN y Normas ISKE – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Junta de Policía y Guardia de Fronteras de Estonia (PPA), Junta de Rescate y KAPO — interoperabilidad X-Road, cumplimiento ISKE, integración 112 Häirekeskus, coordinación CCDCOE OTAN y seguridad fronteriza flanco oriental.",
