@@ -946,6 +946,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para la Policía montenegrina ~5K agentes, ANB inteligencia y Guardia de Fronteras — Puerto de Bar aguas profundas Adriático, autopista Bar-Boljare EXIM China, candidatura UE más avanzada Balcanes y coordinación NATO/FRONTEX.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-montenegro/",
   },
+  publicSafetySoftwareCyprus: {
+    title: "Software de Seguridad Pública para Chipre | Policía/KYP, Puerto Limassol, Línea Verde ONU y ZEE Gasífera – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía de Chipre ~5K agentes, KYP inteligencia y Guardia Nacional — gestión Línea Verde ONU 180 km, protección ZEE Afrodita/ENI, Puerto Limassol, coordinación Bases Soberanía Británica e integración Frontex/EUNAVFOR.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-cyprus/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Software de Seguridad Pública para Estonia | PPA/KAPO, X-Road e-Estonia, CCDCOE OTAN y Normas ISKE – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Junta de Policía y Guardia de Fronteras de Estonia (PPA), Junta de Rescate y KAPO — interoperabilidad X-Road, cumplimiento ISKE, integración 112 Häirekeskus, coordinación CCDCOE OTAN y seguridad fronteriza flanco oriental.",

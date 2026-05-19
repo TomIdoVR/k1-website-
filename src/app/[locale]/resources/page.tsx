@@ -766,6 +766,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-cyprus',
+          title: 'Public Safety Software for Cyprus',
+          description: "KabatOne supports Cyprus Police, KYP, and National Guard — UN Green Line 180 km, Aphrodite/ENI gas EEZ, Port of Limassol, British Sovereign Bases, and Frontex/EUNAVFOR coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
