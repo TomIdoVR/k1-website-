@@ -706,6 +706,30 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-ireland',
+          title: 'Public Safety Software for Ireland',
+          description: "KabatOne supports An Garda Síochána, Irish Coast Guard, and Fire Brigades — post-Brexit Northern Ireland border coordination, 70+ hyperscale data centre protection, and GDPR/DPC compliance.",
+          region: 'Europe',
+        },
+        {
+          href: '/resources/public-safety-software-bulgaria',
+          title: 'Public Safety Software for Bulgaria',
+          description: "KabatOne supports Bulgaria National Police, Border Police, and GDBZN — Balkan migration route management, Kozloduy Nuclear Plant protection, and NATO Black Sea coordination.",
+          region: 'Europe',
+        },
+        {
+          href: '/resources/public-safety-software-slovakia',
+          title: 'Public Safety Software for Slovakia',
+          description: "KabatOne supports Slovakia Police, Border Guard, and HaZZ — Ukraine border refugee management, Mochovce Nuclear Plant protection, and Eustream gas corridor security.",
+          region: 'Europe',
+        },
+        {
+          href: '/resources/public-safety-software-slovenia',
+          title: 'Public Safety Software for Slovenia',
+          description: "KabatOne supports Slovenian National Police, URSZR, and Border Guard — Port of Koper protection, Krško Nuclear Plant security, Alpine disaster response, and Balkan migration route management.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

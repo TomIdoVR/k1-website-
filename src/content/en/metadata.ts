@@ -556,6 +556,26 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security against drug trafficking, tourist protection across 9 islands, and ECOWAS/MAOC-N coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-cape-verde/",
   },
+  publicSafetySoftwareIreland: {
+    title: "Public Safety Software for Ireland | Garda Síochána, IRCG, 999/112, Data Centres & GDPR/DPC – KabatOne",
+    description: "KabatOne delivers public safety platform for An Garda Síochána, National Ambulance Service, Irish Coast Guard, and Fire Brigades — post-Brexit Northern Ireland border coordination, 70+ hyperscale data centre protection, transatlantic cable security, and GDPR/DPC compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-ireland/",
+  },
+  publicSafetySoftwareBulgaria: {
+    title: "Public Safety Software for Bulgaria | MVR/GDNP/GDGP, Balkan Migration Route, Black Sea & NATO – KabatOne",
+    description: "KabatOne delivers public safety platform for Bulgaria National Police (GDNP), Border Police (GDGP), and GDBZN — Balkan migration route management on the Turkish border, Kozloduy Nuclear Plant protection, Black Sea port surveillance, and NATO/Frontex coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-bulgaria/",
+  },
+  publicSafetySoftwareSlovakia: {
+    title: "Public Safety Software for Slovakia | Police/ÚHCP/HaZZ, Ukraine Border, Eustream & Mochovce – KabatOne",
+    description: "KabatOne delivers public safety platform for Slovakia Police (PZ), Border Guard (ÚHCP), and HaZZ — Ukraine border refugee management, Mochovce Nuclear Plant protection, Eustream gas corridor security, and NATO Eastern Flank coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-slovakia/",
+  },
+  publicSafetySoftwareSlovenia: {
+    title: "Public Safety Software for Slovenia | National Police/URSZR, Port of Koper, Krško Nuclear & Balkan Route – KabatOne",
+    description: "KabatOne delivers public safety platform for Slovenian National Police, URSZR civil protection, and Border Guard — Balkan migration route management, Port of Koper protection, Krško Nuclear Plant security, Alpine disaster response, and Frontex/NATO coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-slovenia/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",

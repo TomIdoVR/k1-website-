@@ -896,6 +896,26 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para la FNDF de Comoras, Gendarmería Nacional y Guardia Costera — coordinación interisleña entre Grande Comore, Anjouan y Mohéli, vigilancia marítima del Canal de Mozambique y gestión del riesgo volcánico del Karthala.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-comoros/",
   },
+  publicSafetySoftwareIreland: {
+    title: "Software de Seguridad Pública para Irlanda | Garda Síochána, IRCG, 999/112, Centros de Datos y RGPD/DPC – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para An Garda Síochána, Servicio de Ambulancias Nacional, Guardia Costera de Irlanda y Brigadas de Bomberos — coordinación fronteriza post-Brexit con Irlanda del Norte, protección 70+ centros datos hiperescala, seguridad cables transatlánticos y cumplimiento RGPD/DPC.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-ireland/",
+  },
+  publicSafetySoftwareBulgaria: {
+    title: "Software de Seguridad Pública para Bulgaria | MVR/GDNP/GDGP, Ruta Migratoria Balcánica, Mar Negro y OTAN – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Bulgaria (GDNP), Guardia de Fronteras (GDGP) y GDBZN — gestión ruta migratoria balcánica frontera turca, protección Central Nuclear Kozloduy, vigilancia puertos Mar Negro y coordinación OTAN/Frontex.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-bulgaria/",
+  },
+  publicSafetySoftwareSlovakia: {
+    title: "Software de Seguridad Pública para Eslovaquia | Policía/ÚHCP/HaZZ, Frontera Ucrania, Eustream y Mochovce – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía de Eslovaquia (PZ), Guardia de Fronteras (ÚHCP) y HaZZ — gestión frontera Ucrania y refugiados, protección Central Nuclear Mochovce, seguridad corredor gas Eustream y coordinación flanco oriental OTAN.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-slovakia/",
+  },
+  publicSafetySoftwareSlovenia: {
+    title: "Software de Seguridad Pública para Eslovenia | Policía Nacional/URSZR, Puerto Koper, CNE Krško y Ruta Balcánica – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Eslovenia, protección civil URSZR y Guardia de Fronteras — gestión ruta migratoria balcánica, protección Puerto de Koper, seguridad CNE Krško, respuesta desastres alpinos y coordinación Frontex/OTAN.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-slovenia/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Software de Seguridad Pública para Estonia | PPA/KAPO, X-Road e-Estonia, CCDCOE OTAN y Normas ISKE – KabatOne",
     description: "KabatOne ofrece plataforma de seguridad pública para la Junta de Policía y Guardia de Fronteras de Estonia (PPA), Junta de Rescate y KAPO — interoperabilidad X-Road, cumplimiento ISKE, integración 112 Häirekeskus, coordinación CCDCOE OTAN y seguridad fronteriza flanco oriental.",
