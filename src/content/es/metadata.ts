@@ -484,6 +484,11 @@ export const metadata = {
     description: "Plataforma unificada para la EGM y la Jandarma turcas, los 81 centros 112 del AFAD y las redes MOBESE municipales — despacho CAD integrado con coordinación sísmica/AFAD, gestión MOBESE y ANPR conforme a KVKK, y cumplimiento de ciberseguridad BTK/USOM.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareZimbabwe: {
+    title: "Software de Seguridad Pública para Zimbabue: ZRP/ZNA/CIO, INGC, Harare Safe City, Kariba Dam/ZPC, Beitbridge, PDA 2021/POTRAZ y SADC | KabatOne",
+    description: "Plataforma unificada para la ZRP y ZNA de Zimbabue — despacho CAD integrado en 10 provincias, Harare Safe City, CPU/DMA gestión de desastres, ZPC/ZETDC/Kariba Dam 1.626 MW, minas Chiadzwa/Zimplats, fronteras Beitbridge/Kazungula, PDA 2021/POTRAZ y adquisición PRAZ/PFMA.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-zimbabwe/",
+  },
   publicSafetySoftwareMozambique: {
     title: "Software de Seguridad Pública para Mozambique: PRM/FADM, INGC, Maputo Safe City, TotalEnergies/ENH LNG, Lei 3/2022/ANPDP y SADC | KabatOne",
     description: "Plataforma unificada para la PRM y FADM de Mozambique — despacho CAD integrado en 11 provincias, INGC gestión de ciclones/inundaciones, TotalEnergies/ENH Mozambique LNG Cabo Delgado, corredor portuario CFM Maputo/Beira/Nacala, Barragem Cahora Bassa, Lei 3/2022/ANPDP y adquisición UGEA/CCP.",

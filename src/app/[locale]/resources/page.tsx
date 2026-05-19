@@ -322,6 +322,18 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-zimbabwe',
+          title: 'Software de Seguridad Pública para Zimbabue',
+          description: 'ZRP/ZNA en 10 provincias, Harare Safe City, Kariba Dam, minas Chiadzwa/Zimplats, Beitbridge y PDA 2021/POTRAZ.',
+          region: 'África Austral',
+        },
+        {
+          href: '/resources/public-safety-software-zimbabwe',
+          title: 'Public Safety Software for Zimbabwe',
+          description: 'ZRP/ZNA across 10 provinces, Harare Safe City, Kariba Dam, Chiadzwa/Zimplats mining, Beitbridge border and PDA 2021/POTRAZ.',
+          region: 'Southern Africa',
+        },
+        {
           href: '/resources/public-safety-software-mozambique',
           title: 'Software de Seguridad Pública para Mozambique',
           description: 'PRM/FADM en 11 provincias, INGC ciclones/inundaciones, TotalEnergies LNG Cabo Delgado, CFM Maputo/Beira/Nacala y Lei 3/2022.',

@@ -1,3 +1,16 @@
+## [v2.146] — 2026-05-19
+### Added
+- **Zimbabwe national market guide** (`/resources/public-safety-software-zimbabwe/`)
+  - ZRP — 10 provinces, 35,000+ officers, CID, Support Unit Tactical, Border Police
+  - ZNA — internal/border security; CIO national intelligence
+  - CPU/DMA — Cyclone Idai Chimanimani 2019, Limpopo flooding, southern droughts
+  - ZPC/ZETDC/Kariba Dam 1,626 MW (shared with Zambia); ZINWA water
+  - Chiadzwa/Marange diamond mines (ZCDC); Zimplats Ngezi/Mhondoro platinum (Great Dyke)
+  - NRZ railway corridor to Beira/Maputo; Harare International Airport HRE
+  - Borders: Beitbridge (South Africa 5M+ crossings/year), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (quadruple border), Victoria Falls/Plumtree (Botswana)
+  - Compliance: PDA 2021/POTRAZ, Cybercrime Act 2017/Min. ICT Cybersecurity Policy 2021-2025
+  - Procurement: PRAZ/PFMA; SADC/COMESA; Vision 2030
+
 ## [v2.145] — 2026-05-19
 ### Added
 - **Mozambique national market guide** (`/resources/public-safety-software-mozambique/`)
