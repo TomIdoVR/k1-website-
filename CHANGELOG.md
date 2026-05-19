@@ -1,3 +1,7 @@
+## [v2.195] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Serbia**
+
 ## [v2.194] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Croatia**

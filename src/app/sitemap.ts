@@ -136,6 +136,7 @@ const pages = [
   { path: '/resources/public-safety-software-slovakia', priority: 0.75 },
   { path: '/resources/public-safety-software-slovenia', priority: 0.75 },
   { path: '/resources/public-safety-software-croatia', priority: 0.75 },
+  { path: '/resources/public-safety-software-serbia', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

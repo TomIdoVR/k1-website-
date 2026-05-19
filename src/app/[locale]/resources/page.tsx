@@ -736,6 +736,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-serbia',
+          title: 'Public Safety Software for Serbia',
+          description: "KabatOne supports Serbian MUP, BIA, and Border Police — Corridor X/VII management, Danube river security, Port of Belgrade protection, EU candidacy compliance, and FRONTEX/SELEC coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",
