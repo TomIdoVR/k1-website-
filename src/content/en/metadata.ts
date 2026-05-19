@@ -461,6 +461,11 @@ export const metadata = {
 
 
 
+  publicSafetySoftwareCentralAfricanRepublic: {
+    title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
+    description: "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
+    canonical: "https://kabatone.com/resources/public-safety-software-central-african-republic/",
+  },
   publicSafetySoftwareMauritania: {
     title: "Public Safety Software for Mauritania | PN/GSN, Saharan Borders & Maritime Security – KabatOne",
     description: "KabatOne delivers public safety platform for the Mauritania National Police, National Gendarmerie (GSN), Port of Nouakchott management, Saharan border control, and coordination against GSIM/Al-Qaeda in the Sahel.",

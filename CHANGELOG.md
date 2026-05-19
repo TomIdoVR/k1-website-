@@ -1,3 +1,14 @@
+## [v2.164] – 2026-05-19
+### Added
+- Public safety software for Central African Republic geographic market guide (EN + ES)
+  - FACA 10,000–15,000 (Wagner/AFRIK/RF instructors), DPSR, Gendarmerie; MINUSCA ~14,000 UN peacekeepers; EUMAM RCA
+  - CPC Coalition (FPRC/UPC/MPC) north/east; Anti-Balaka west; APPR 2019 peace agreement
+  - Diamonds (MBAIKI/Kimberley), gold (Ndassima), uranium (Bakouma/Orano), coltan/cassiterite; ANDPC
+  - BGF airport; Ubangi/Sangha river corridors; Bangui-Douala 1,400 km; Bangui-N'Djamena road
+  - 730,000+ IDPs + 625,000+ refugees (UNHCR); WFP/OCHA/UNICEF/MSF active
+  - Borders 6 countries: Cameroon/DRC/South Sudan/Sudan/Chad/Congo (Brazzaville)
+  - Code des Marchés Publics Loi 09-004/UCGP; Mining Code Loi 09-005; ARCT; World Bank/UNDP/EU/USAID
+
 ## [v2.163] – 2026-05-19
 ### Added
 - Public safety software for Mauritania geographic market guide (EN + ES)

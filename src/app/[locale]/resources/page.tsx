@@ -574,6 +574,12 @@ export default async function ResourcesPage({
           region: 'East Africa',
         },
         {
+          href: '/resources/public-safety-software-central-african-republic',
+          title: 'Software de Seguridad Pública para República Centroafricana',
+          description: 'Coordinación FACA/DPSR con MINUSCA 14,000 cascos azules, seguridad de recursos diamantes/oro/uranio, gestión fronteriza 6 países y marco de paz APPR 2019.',
+          region: 'África Central',
+        },
+        {
           href: '/resources/public-safety-software-mauritania',
           title: 'Software de Seguridad Pública para Mauritania',
           description: 'DGSN/GSN en 15 wilayas, puertos Nouakchott/Nouadhibou, coordinación G5 Sahel GSIM, ferrocarril mineral SNIM y seguridad GNL Greater Tortue Ahmeyim.',
@@ -590,6 +596,12 @@ export default async function ResourcesPage({
           title: 'Software de Seguridad Pública para Yibuti',
           description: 'PNJ/FAD, Camp Lemonnier AFRICOM, FFDJ, Base Naval PLA, Puerto Doraleh +1M TEUs, QG EUNAVFOR Atalanta y seguridad Bab-el-Mandeb.',
           region: 'África Oriental',
+        },
+        {
+          href: '/resources/public-safety-software-central-african-republic',
+          title: 'Public Safety Software for Central African Republic',
+          description: 'FACA/DPSR coordination with MINUSCA 14,000 peacekeepers, diamond/gold/uranium resource security, 6-country border management and APPR 2019 peace framework.',
+          region: 'Central Africa',
         },
         {
           href: '/resources/public-safety-software-mauritania',
