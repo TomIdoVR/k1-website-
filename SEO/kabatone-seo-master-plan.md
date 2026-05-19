@@ -19,11 +19,12 @@
 | Phase 3 — Post-launch growth | In progress | 95% |
 | Phase 4 — Spanish (es-MX) | In progress | 30% |
 | Phase 5 — Authority & backlinks | In progress | 15% |
-| Phase 6 — Generative Engine Optimization (GEO) | In progress | 97% |
+| Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-05-11
-**Current site size:** 87 unique routes × 2 locales (EN + ES) = 174 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 32 (hub + 31 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+**Last updated:** 2026-05-19
+**Current site size:** 199 unique routes × 2 locales (EN + ES) = 398 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 153 (hub + 152 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+- Geographic market guides: 54 Africa + 35+ Europe + 15 Asia-Pacific + 8 Middle East + 7 LATAM + 3 South Asia + Turkey = 123+ country guides published
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
 - Note: /resources/cad-dispatch-software-latin-america added v2.50; /resources/public-safety-software-argentina added v2.51
@@ -498,6 +499,7 @@
 | 2026-04-27 | Claude Code (CEO heartbeat) | GEO guide | — | Next.js | /resources/public-safety-software-chile — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.49 |
 | 2026-05-04 | Claude Code (SEO Director heartbeat) | GEO guide | — | Next.js | /resources/cad-dispatch-software-latin-america — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.50 |
 | 2026-05-11 | Claude Code (SEO Director heartbeat) | GEO guide + build fix | — | Next.js | /resources/public-safety-software-argentina — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap; not-found.tsx html/body fix — v2.51 |
+| 2026-05-19 | Claude Code (SEO Director heartbeat) | GEO monitoring + 17 EU/island guides + GEO guide | — | Next.js | v2.187–v2.203: Estonia→Iceland (Baltics, Ireland, Balkans, small states); v2.204: /resources/public-safety-software-guatemala — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 
 ---
 
@@ -598,6 +600,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-032 | GEO guide: "Best public safety software platforms" | High | Done | v1.53 |
 | GEO-033 | GEO guide: "CAD dispatch software for Latin America" | High | Done | v2.50 |
 | GEO-034 | GEO guide: "Public safety software for Argentina" | Medium | Done | v2.51 |
+| GEO-035 | GEO guide: "Public safety software for Guatemala" | Medium | Done | v2.204 |
 
 ### GEO-001 — Entity definition page
 

@@ -1359,6 +1359,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-guatemala',
+          category: 'Guide',
+          title: 'Public Safety Software for Guatemala',
+          excerpt: 'Public safety technology for Guatemalan municipalities and departments — PNC/Ejército coordination, CCS Guatemala City integration, CONRED disaster response, and GUATECOMPRAS-compliant procurement.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-argentina',
           category: 'Guide',
           title: 'Public Safety Software for Argentina',

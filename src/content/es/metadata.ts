@@ -996,4 +996,9 @@ export const metadata = {
     description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas de Santo Tomé y Príncipe (FASTP), Policía Nacional y Guardia Costera — antipiratería en el Golfo de Guinea, seguridad en la Zona de Desarrollo Conjunto con Nigeria, protección del cacao y coordinación marítima insular.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-sao-tome-and-principe/",
   },
+  publicSafetySoftwareGuatemala: {
+    title: "Software de Seguridad Publica para Guatemala | PNC/Ejercito, CCS Guatemala City, CONRED Volcanes y GUATECOMPRAS – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~32K agentes, Ejercito de Guatemala y municipios — integracion CCS centro de mando, respuesta a desastres CONRED, seguridad portuaria Puerto Quetzal/Santo Tomas de Castilla y contratacion via GUATECOMPRAS.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-guatemala/",
+  },
 } as const
