@@ -459,6 +459,12 @@ export const metadata = {
 
 
 
+
+  publicSafetySoftwareNiger: {
+    title: "Public Safety Software for Niger: FAN/AES/CNSP, JNIM/ISWAP Counter-Terrorism, Arlit Uranium/ORANO, Agadem Oil/WAPCO Pipeline, 7-Country Borders & ARTP | KabatOne",
+    description: "Modular platform for Niger public safety and Sahel stabilisation — CAD for 8 regions/63 departments, FAN counter-terrorism coordination, Arlit/Akouta uranium mine security (world 7th producer), Agadem CNPC oil/WAPCO 2,000+ km pipeline, OCHA/UNHCR 300K+ IDP management, triple frontier coordination, and ARTP/World Bank/AES compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-niger/",
+  },
   publicSafetySoftwareMali: {
     title: "Public Safety Software for Mali: FAMa/AES, JNIM Counter-Terrorism, Loulo-Gounkoto/Fekola Gold Mines, Manantali Dam, Niger River Delta, 7-Country Borders & AMRTP | KabatOne",
     description: "Modular platform for Mali public safety and Sahel stabilisation — CAD for 10 regions/cercles, FAMa counter-terrorism coordination, Loulo-Gounkoto ~700K oz/Fekola ~600K oz gold mine security, Manantali 200 MW/Selingue dam, OCHA/UNHCR 400K+ IDP management, Dakar-Bamako corridor, and AMRTP/World Bank/AES compliance.",
