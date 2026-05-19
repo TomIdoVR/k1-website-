@@ -449,6 +449,11 @@ export const metadata = {
     description: "Unified platform for Turkish EGM and Jandarma, 81 AFAD 112 centres, and municipal MOBESE networks — integrated CAD dispatch with seismic/AFAD coordination, KVKK-compliant MOBESE and ANPR management, and BTK/USOM cybersecurity compliance.",
     canonical: "https://kabatone.com/resources/public-safety-software-turkey/",
   },
+  publicSafetySoftwareEgypt: {
+    title: "Public Safety Software for Egypt: MOI/Egyptian Police, CPS, PDPL 2020/PDPC & Cybersecurity Law 2018 | KabatOne",
+    description: "Unified platform for Egyptian MOI, Police, and CPS — integrated CAD dispatch for 27 governorates and EMA/NARSS emergency coordination, Cairo Safe City camera management compliant with PDPL 2020, and NCSA/EG-CERT compliance with GAGS/Law 182/2018 procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-egypt/",
+  },
   publicSafetySoftwareBangladesh: {
     title: "Public Safety Software for Bangladesh: Bangladesh Police/DMP, FSCD, DDM/BMD, Digital Security Act 2018 & e-GP | KabatOne",
     description: "Unified platform for Bangladesh Police, FSCD, and DDM — integrated CAD dispatch for 64 districts and DDM/BMD cyclone/flood coordination, Dhaka Safe City camera management compliant with Digital Security Act, and BGD e-GOV CIRT compliance with e-GP/PPA 2006 procurement.",

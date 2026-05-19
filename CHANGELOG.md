@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.128] - 2026-05-19
+### Added
+- Geographic market guide: **Egypt** — MOI/Egyptian Police (27 governorate directorates/GDO/Central Security/Traffic Police/NSSA), CPS/Ḥimāya Madaniyya, SCM ambulance, EMA/NARSS, Cairo Safe City 100,000+ cameras (Huawei), NAC IOC 6,000+ cameras, Smart Police Stations 150+, PDPL Law 151/2020/PDPC, Cybersecurity Law 175/2018/NCSA/EG-CERT, NTRA, GAGS/Law 182/2018, WB/ADB/AIIB/EU, Egypt Vision 2030, 7 bilingual FAQs (EN + ES)
+
 ## [2.127] - 2026-05-19
 ### Added
 - Geographic market guide: **Bangladesh** — Bangladesh Police (8 Ranges/64 districts/DMP/CMP/KMP/RMP/SMP/BMP/NRMP/RAB/SWADS), FSCD, DDM, CPP (55,000+ volunteers/2,000+ cyclone shelters), BMD/BFFWC/FFWC, Dhaka DMP C3 Safe City, BRTA/DTCA cameras, Digital Security Act 2018, ICT Act 2006, BGD e-GOV CIRT/BCC, National Cybersecurity Strategy, e-GP/CPTU/PPA 2006/PPR 2008, ADB/WB/JICA, 7 bilingual FAQs (EN + ES)
