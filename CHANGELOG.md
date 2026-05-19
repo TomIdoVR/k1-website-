@@ -1,3 +1,102 @@
+## [v2.148] – 2026-05-19
+### Added
+- Public safety software for Uganda geographic market guide (EN + ES)
+  - UPF 10 subregions 45,000+ officers, UPDF LRA/ADF counter-ops, Kampala Safe City
+  - UETCL Karuma 600MW/Isimba/Bujagali; UNOC/TotalEnergies Tilenga 600Mb; EACOP 1,443km
+  - Data Protection Act 2019/PDPO/NITA-U; PPDA Act 85/2003/GEPS; Vision 2040/NDPIII
+
+## [v2.149] – 2026-05-19
+### Added
+- Public safety software for Rwanda geographic market guide (EN + ES)
+  - RNP 30 districts/CIAF/IRST, RNFS, RDF FDLR counter-ops, Kigali Safe City
+  - Rusizi/Rusumo/Cyanika/Kagitumba/Nemba border crossings; RwandAir/Kigali Airport
+  - Cyber Law 2021/NCSA/RISA; RPPA/OAG/AfDB/World Bank procurement
+
+## [v2.150] – 2026-05-19
+### Added
+- Public safety software for Democratic Republic of Congo geographic market guide (EN + ES)
+  - PNC 26 provinces/FARDC/ANR/DGM; Goma/Bukavu/Bunia/Lubumbashi conflict zones
+  - Cobalt Belt/Katanga mining (Glencore/Ivanhoe/CMOC); Congo River corridor
+  - Loi 20-017 ANPD 2023; CPMP/ARMP; UN MONUSCO/OCHA/WFP humanitarian
+
+## [v2.151] – 2026-05-19
+### Added
+- Public safety software for Cameroon geographic market guide (EN + ES)
+  - DGSN/BIR/RAPID 10 regions; Anglophone NW/SW crisis coordination; Boko Haram Lac Chad
+  - Port of Douala/Kribi Deep Water Port; SNH oil; Douala/Yaoundé airports
+  - Loi 2010-012 data protection; ARMP/Code des Marchés; BEAC/AfDB/World Bank
+
+## [v2.152] – 2026-05-19
+### Added
+- Public safety software for Ivory Coast geographic market guide (EN + ES)
+  - DGPN/FRCI/CCDO 14 districts; Abidjan 5.5M+ population Safe City; CRS/ONSP
+  - Port of Abidjan 25M+ tonnes/Port de San-Pedro; cocoa 40%+ world production
+  - Loi 2019-1070/ARTCI/CNPDCP; Code des Marchés/ANRMP; ECOWAS/INTERPOL
+
+## [v2.153] – 2026-05-19
+### Added
+- Public safety software for Sudan geographic market guide (EN + ES)
+  - SAF/RSF/CPS post-2023 civil war; Port Sudan humanitarian hub; UNOCHA 7M+ IDPs
+  - Nile/Atbara basin; GERD impact; Halfa/Wadi Halfa border Egypt; Chad/Ethiopia borders
+  - NTRA/Cybercrime Act 2020; AU-led ceasefire/IGAD; World Bank/USAID/EU humanitarian
+
+## [v2.154] – 2026-05-19
+### Added
+- Public safety software for South Sudan geographic market guide (EN + ES)
+  - SSPDF/NPS/SPLA-IO 10 states; Juba 400,000+ displaced; UNMISS 15,000+ peacekeepers
+  - Greater Nile Oil fields (GNPOC/Dar blend); White Nile/Sudd basin flooding
+  - NCA/Electronic Transactions Act; WFP/OCHA/UNHCR; Petroleum Revenue Management Act
+
+## [v2.155] – 2026-05-19
+### Added
+- Public safety software for Libya geographic market guide (EN + ES)
+  - GNU/LNA 22 districts; Tripoli/Benghazi Safe City; JSO/RADA Special Deterrence
+  - NOC 1.2M+ bpd; Mellitah/Zawiya/Ras Lanuf/Brega terminals; Misrata/Benghazi ports
+  - ICTAAC/GDPD Decree 5/2022; CPMPSS; INTERPOL/UNODC southern border coordination
+
+## [v2.156] – 2026-05-19
+### Added
+- Public safety software for Burkina Faso geographic market guide (EN + ES)
+  - ANS/FAN/VDP 13 regions; JNIM/GSIM Sahel insurgency 40%+ territory
+  - Gold mining Essakane/Bissa/Karma (IAMGOLD/Endeavour); SONABEL; Ouagadougou Airport
+  - Loi 052-2021/CIL/ARCEP; Code des Marchés/DGMP; AES Alliance/Wagner Group presence
+
+## [v2.157] – 2026-05-19
+### Added
+- Public safety software for Mali geographic market guide (EN + ES)
+  - FAMa/GFCN/GNIM 10 regions; JNIM/GSIM Sahel; AES Alliance/Wagner Group presence
+  - Gold mining Loulo-Gounkoto/Fekola (Barrick/B2Gold); Niger River; Bamako Airport
+  - Loi 2023-022 data/AMRTP; Code des Marchés; MINUSMA/UN withdrawal 2023
+
+## [v2.158] – 2026-05-19
+### Added
+- Public safety software for Niger geographic market guide (EN + ES)
+  - GNN/FAN/NAG 8 regions; JNIM+Boko Haram/ISWAP Sahel; post-coup 2023 ECOWAS sanctions
+  - Uranium Arlit/Akokan (Orano); oil Agadem (China CNPC/SEPN); Diffa/Agadez corridors
+  - Loi 2017-28/ANSI/ARCEP; Code des Marchés/ARMP; UN MINUSMA/EUCAP Sahel
+
+## [v2.159] – 2026-05-19
+### Added
+- Public safety software for Chad geographic market guide (EN + ES)
+  - PNC/ANT/GNNT 23 provinces; Lac Chad Basin MNJTF/ISWAP/Boko Haram
+  - Oil fields Doba/Bongor/Doseo; Chad-Cameroon pipeline (ExxonMobil/ESSO/COTCO)
+  - CNPDCP/Loi 007/PR/2015/ARCEP; Code des Marchés/ARMP; AU/ECCAS/World Bank
+
+## [v2.160] – 2026-05-19
+### Added
+- Public safety software for Somalia geographic market guide (EN + ES)
+  - SPF/SNA/ATMIS anti-Al-Shabaab, EUNAVFOR Atalanta anti-piracy, 3,330 km coastline
+  - Mogadishu Port (Turkish/DP World), Bosaso, Kismayo ports; MGQ Airport Aden Adde
+  - 3M+ IDPs; FEWS NET/FAO/FSNAU famine alerts; offshore oil; NCA/World Bank/USAID/AU
+
+## [v2.161] – 2026-05-19
+### Added
+- Public safety software for Djibouti geographic market guide (EN + ES)
+  - PNJ/Gendarmerie/FAD/SEMSE; Camp Lemonnier AFRICOM ~4,000; FFDJ ~1,450; PLA Navy Base; JGSDF
+  - Doraleh Container Terminal +1M TEUs; EUNAVFOR Atalanta HQ; CTF-151; Bab-el-Mandeb 12% global trade
+  - Borders: Ethiopia (Galafi/Dewele), Somalia (Loyada), Eritrea (Ras Doumeira)
+  - Code des Marchés Publics Décret 2009-0224/ARMP; World Bank/USAID/EUCAP/IGAD/AFD
+
 ## [v2.147] — 2026-05-19
 ### Added
 - **Zambia national market guide** (`/resources/public-safety-software-zambia/`)
