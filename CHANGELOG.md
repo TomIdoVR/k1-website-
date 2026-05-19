@@ -1,3 +1,8 @@
+## [v2.184] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for São Tomé and Príncipe**
+- Fixed: Comoros metadata keys added to en/es metadata.ts (sitemap + hub entries also added)
+
 ## [v2.183] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Comoros**

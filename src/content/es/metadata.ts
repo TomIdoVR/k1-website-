@@ -891,4 +891,14 @@ export const metadata = {
     description: "8 casos de uso de analítica de video para centros de mando: detección de intrusión, LPR, conteo de multitudes, anomalías conductuales, búsqueda forense e integración con despacho CAD.",
     canonical: "https://kabatone.com/es/resources/video-analytics-use-cases/",
   },
+  publicSafetySoftwareComoros: {
+    title: "Software de Seguridad Pública para Comoras | FNDF/Gendarmería, Seguridad Marítima Océano Índico y Riesgo Volcánico – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para la FNDF de Comoras, Gendarmería Nacional y Guardia Costera — coordinación interisleña entre Grande Comore, Anjouan y Mohéli, vigilancia marítima del Canal de Mozambique y gestión del riesgo volcánico del Karthala.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-comoros/",
+  },
+  publicSafetySoftwareSaoTomeAndPrincipe: {
+    title: "Software de Seguridad Pública para Santo Tomé y Príncipe | FASTP/PNSTP, Antipiratería Golfo de Guinea y Seguridad ZDC Petrolífera – KabatOne",
+    description: "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas de Santo Tomé y Príncipe (FASTP), Policía Nacional y Guardia Costera — antipiratería en el Golfo de Guinea, seguridad en la Zona de Desarrollo Conjunto con Nigeria, protección del cacao y coordinación marítima insular.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-sao-tome-and-principe/",
+  },
 } as const

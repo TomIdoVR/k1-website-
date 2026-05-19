@@ -664,6 +664,18 @@ export default async function ResourcesPage({
           region: 'Africa',
         },
         {
+          href: '/resources/public-safety-software-comoros',
+          title: 'Public Safety Software for Comoros',
+          description: "KabatOne supports the Comoros FNDF, National Gendarmerie, and Coast Guard — inter-island coordination across Grande Comore, Anjouan, and Moheli, Mozambique Channel maritime surveillance, and Karthala volcanic risk management.",
+          region: 'Africa',
+        },
+        {
+          href: '/resources/public-safety-software-sao-tome-and-principe',
+          title: 'Public Safety Software for São Tomé and Príncipe',
+          description: "KabatOne supports the FASTP, National Police, and Coast Guard of São Tomé and Príncipe — Gulf of Guinea anti-piracy, Nigeria Joint Development Zone oil security, and island maritime coordination.",
+          region: 'Africa',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

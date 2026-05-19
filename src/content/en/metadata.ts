@@ -546,10 +546,20 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Gambia Armed Forces (GAF), Police Service, Gambia River security, coastal tourist protection, and post-TRRC justice reforms — smallest mainland country in Africa.",
     canonical: "https://kabatone.com/resources/public-safety-software-gambia/",
   },
+  publicSafetySoftwareComoros: {
+    title: "Public Safety Software for Comoros | FNDF/Gendarmerie, Indian Ocean Maritime Security & Volcanic Risk – KabatOne",
+    description: "KabatOne delivers public safety platform for Comoros FNDF, National Gendarmerie, and Coast Guard — inter-island coordination across Grande Comore, Anjouan, and Moheli, Mozambique Channel maritime surveillance, and volcanic risk management near Karthala.",
+    canonical: "https://kabatone.com/resources/public-safety-software-comoros/",
+  },
   publicSafetySoftwareCapeVerde: {
     title: "Public Safety Software for Cape Verde | FACV/PNR, Atlantic Maritime Security, Tourism & ECOWAS – KabatOne",
     description: "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security against drug trafficking, tourist protection across 9 islands, and ECOWAS/MAOC-N coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-cape-verde/",
+  },
+  publicSafetySoftwareSaoTomeAndPrincipe: {
+    title: "Public Safety Software for São Tomé and Príncipe | FASTP/PNSTP, Gulf of Guinea Anti-Piracy & Oil JDZ Security – KabatOne",
+    description: "KabatOne delivers public safety platform for São Tomé and Príncipe Armed Forces (FASTP), National Police, and Coast Guard — Gulf of Guinea anti-piracy, Nigeria JDZ oil security, cocoa export protection, and island maritime coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-sao-tome-and-principe/",
   },
   publicSafetySoftwareCentralAfricanRepublic: {
     title: "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
