@@ -1,3 +1,8 @@
+## [v2.183] – 2026-05-19
+### Added
+- Geographic market guide: **Public Safety Software for Comoros**
+- `src/lib/seo-agent/ccr.ts` — CCR/Paperclip dispatcher utility for SEO agent
+
 ## [v2.182] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Cape Verde**
