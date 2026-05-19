@@ -454,6 +454,11 @@ export const metadata = {
     description: "Plataforma unificada para Policja, 16 centros CPR de despacho 112, brigadas PSP y redes CCTV municipales — CAD multiagencia, cumplimiento RODO/UODO, ciberseguridad KSC/NIS2 e integración Smart City con fondos KPO.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-poland/",
   },
+  publicSafetySoftwareBelgium: {
+    title: "Software de Seguridad Pública para Bélgica: Policía Federal, 188 Zones de Police, ASTRID 112, Camerawet y CCB/NIS2 | KabatOne",
+    description: "Plataforma unificada para la Policía Federal belga, 188 zonas de policía local y centros COS/OHC — despacho CAD integrado 112/101, videovigilancia urbana y ANPR conforme a la Camerawet, y cumplimiento RGPD/GBA y NIS2/CCB.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-belgium/",
+  },
   publicSafetySoftwareUAE: {
     title: "Software de Seguridad Pública para los EAU: Dubai Police IPOC, Safe City 50K+ Cámaras, PDPL y NESA | KabatOne",
     description: "Plataforma unificada para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU — despacho CAD IPOC-integrado, 50,000+ cámaras IA y cumplimiento PDPL/NESA con data residency en EAU.",

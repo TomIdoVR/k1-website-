@@ -7,6 +7,16 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.105] 2026-05-19 — Feat: Belgium market guide (Federal Police, ASTRID 112, Camerawet, GDPR/GBA, NIS2/CCB)
+
+**Added**
+- New page: /resources/public-safety-software-belgium/ — Federal Police (Federale Politie / Police Fédérale), 188 local police zones (politiezones / zones de police), ASTRID TETRA network (90K+ users), provincial COS/OHC dispatch centres (112/100/101 unified), CGCCR crisis centre, NATO/EU HQ in Brussels, Camerawet video surveillance regulation, GDPR/GBA (Gegevensbeschermingsautoriteit), NIS2/CCB (Centre voor Cybersecurity België), BOSA/e-Procurement
+- 4 challenge cards: NATO/EU HQ and two-tier police model, ASTRID integration and COS/OHC dispatch, urban surveillance/ANPR/Camerawet, GDPR/GBA NIS2/CCB compliance
+- 7 bilingual FAQs: Federal/local police structure, 112/101 dispatch/COS/OHC/ASTRID, NATO/EU role, procurement/e-Procurement/BOSA, GDPR/GBA/Camerawet, ANPR/urban surveillance, KabatOne fit
+- Metadata keys (EN + ES), sitemap entry (priority 0.75), hub cards (EN + ES in /resources/)
+
+---
+
 ## [2.104] 2026-05-19 — Feat: Poland market guide (Policja, 112/CPR, PSP, RODO, KSC/NIS2)
 
 **Added**
