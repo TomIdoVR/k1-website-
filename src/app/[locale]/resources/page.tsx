@@ -754,6 +754,12 @@ export default async function ResourcesPage({
           region: 'Europe',
         },
         {
+          href: '/resources/public-safety-software-north-macedonia',
+          title: 'Public Safety Software for North Macedonia',
+          description: "KabatOne supports North Macedonia MUP, UBK, and Border Police — Corridors 8/10 Veles node, EU candidacy 2005, NATO since 2020, Ohrid UNESCO heritage, and FRONTEX/SELEC coordination.",
+          region: 'Europe',
+        },
+        {
           href: '/resources/public-safety-software-liberia',
           title: 'Public Safety Software for Liberia',
           description: "KabatOne supports Liberia's AFL, LNP Police, Port of Monrovia, ArcelorMittal/Nimba iron ore, Firestone rubber, and post-civil war security reconstruction.",

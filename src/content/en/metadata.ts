@@ -596,6 +596,11 @@ export const metadata = {
     description: "KabatOne delivers public safety platform for Albanian State Police ~12K officers, SHISH intelligence, and Border Guard — Corridor 8 E80 management, Port of Durrës security, TAP pipeline protection, EU candidacy 2014, and NATO/FRONTEX coordination.",
     canonical: "https://kabatone.com/resources/public-safety-software-albania/",
   },
+  publicSafetySoftwareNorthMacedonia: {
+    title: "Public Safety Software for North Macedonia | MUP/UBK, Corridor 8/10 Veles Node, Ohrid & NATO – KabatOne",
+    description: "KabatOne delivers public safety platform for North Macedonia MUP ~8.5K officers, UBK intelligence, and Border Police — Corridors 8/10 Veles intersection, EU candidacy 2005/negotiations 2022, NATO since 2020, and FRONTEX/SELEC coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-north-macedonia/",
+  },
   publicSafetySoftwareEstonia: {
     title: "Public Safety Software for Estonia | PPA/KAPO, e-Estonia X-Road, NATO CCDCOE & ISKE Cyber Standards – KabatOne",
     description: "KabatOne delivers public safety platform for Estonia Police and Border Guard Board (PPA), Rescue Board, and KAPO — X-Road interoperability, ISKE compliance, Häirekeskus 112 integration, NATO CCDCOE coordination, and Eastern Flank border security.",
