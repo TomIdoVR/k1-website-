@@ -7,6 +7,10 @@ Format: `## [version] YYYY-MM-DD — Short title`
 
 ---
 
+## [2.121] - 2026-05-18
+### Added
+- Geographic market guide: **Vietnam** — MPS/Bộ Công an (63 Công an tỉnh, C05/C06), PCCC/Cảnh sát PCCC, 113/114/115, VNMHA/NCHMF typhoons, Mekong Delta floods, Ban Chỉ đạo TW về PCTT, Hanoi IOC/HCMC TTGS, Nghị định 13/2023 (PDPD), Luật An ninh mạng 2018/VNCERT, muasamcong/Luật Đấu thầu, 7 bilingual FAQs (EN + ES)
+
 ## [2.120] - 2026-05-18
 ### Added
 - Geographic market guide: **Philippines** — PNP (17 RPOs/NCRPO/1,400+ stations/SAF/HPG), BFP, PCG (17 Districts), NDRRMC/RA 10121, PAGASA PSWS, PHIVOLCS (23 volcanoes), OCD READY Project, Metro Manila/Quezon City/Manila 911, RA 10173/NPC CCTV guidelines, RA 10175/CICC, DICT National Cybersecurity Plan 2023–2028/CERT-PH, PhilGEPS/RA 9184, 7 bilingual FAQs (EN + ES)
