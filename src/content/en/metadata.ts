@@ -85,7 +85,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "How Do C5 Command Centers Work? Architecture & Technology | KabatOne",
+    title: "How C5 Command Centers Work: Architecture & Tech | KabatOne",
     description: "C5 command centers coordinate emergency response, video, and traffic across Mexican cities. Learn the architecture, technology stack, and operational model.",
     canonical: "https://kabatone.com/resources/how-c5-command-centers-work/",
   },
@@ -165,7 +165,7 @@ export const metadata = {
     },
   },
   privacy: {
-    title: "Privacy Policy | KabatOne",
+    title: "Privacy Policy & Data Protection | KabatOne",
     description: "KabatOne's privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
     canonical: "https://kabatone.com/privacy/",
   },
@@ -216,7 +216,7 @@ export const metadata = {
   },
   endOfSiloedResponse: {
     title: "The End of Siloed Response — Industry Brief 2026 | KabatOne",
-    description: "How public safety leaders move from fragmented systems to unified operations. Covers market signals, standards, LATAM deployments, and KabatOne's architecture.",
+    description: "How public safety leaders move from fragmented systems to unified operations. Covers market signals, standards, LATAM deployments, and architecture.",
     canonical: "https://kabatone.com/resources/end-of-siloed-response/",
   },
   whatIsCadDispatchSoftware: {
@@ -340,12 +340,12 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/build-rtcc-implementation-guide/",
   },
   publicSafetySoftwareColombia: {
-    title: "Colombia Public Safety Software: C5 & Municipal Platforms | KabatOne",
+    title: "Colombia Public Safety Software: C5 Platforms | KabatOne",
     description: "Public safety technology for Colombian cities — C5 command centers, unified dispatch, video, and GIS. How KabatOne supports security operations in Colombia.",
     canonical: "https://kabatone.com/resources/public-safety-software-colombia/",
   },
   publicSafetySoftwarePeru: {
-    title: "Public Safety Software for Peru: C5 & Municipal Platforms | KabatOne",
+    title: "Peru Public Safety Software: C5 & Platforms | KabatOne",
     description: "Public safety technology for Peruvian cities — C5 command centers, unified dispatch, video, and GIS. How KabatOne supports security operations in Peru.",
     canonical: "https://kabatone.com/resources/public-safety-software-peru/",
   },
@@ -355,7 +355,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/public-safety-software-chile/",
   },
   publicSafetySoftwareArgentina: {
-    title: "Argentina Public Safety Software: C5 & Municipal Platforms | KabatOne",
+    title: "Argentina Public Safety Software: C5 & Platforms | KabatOne",
     description: "Public safety platform for Argentine provinces — Buenos Aires CMU integration, unified 911/101/107 dispatch, GIS, and incident management on one platform.",
     canonical: "https://kabatone.com/resources/public-safety-software-argentina/",
   },
@@ -972,7 +972,7 @@ export const metadata = {
     },
   },
   publicSafetySoftwareSmallCities: {
-    title: "Public Safety Software for Small Cities & Municipalities | KabatOne",
+    title: "Public Safety Software for Small Cities & Towns | KabatOne",
     description: "Affordable public safety software for small cities. Unified video, dispatch, and GIS without enterprise price tags — C5-level capabilities for any budget.",
     canonical: "https://kabatone.com/resources/public-safety-software-small-cities/",
   },
