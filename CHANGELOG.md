@@ -1,3 +1,8 @@
+## [v2.205] – 2026-05-25
+### Fixed
+- Updated Next.js from 16.2.0 to 16.2.6 — fixes Vercel CLI 54.x build failure (TypeError: path argument undefined)
+- Unblocks staging deployments (builds broken since v2.183)
+
 ## [v2.204] – 2026-05-19
 ### Added
 - Geographic market guide: **Public Safety Software for Guatemala**
