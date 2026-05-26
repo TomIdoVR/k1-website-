@@ -1,3 +1,8 @@
+## [v2.206] – 2026-05-26
+### Added
+- Geographic market guide: **Public Safety Software for Honduras**
+  - HNP ~15K officers, PMOP ~5K troops, FUSINA 4,400 interinstitutional, TIGRES; SNE 911 (250 operators, RADWIN CCTV Choluteca/Nacaome/San Lorenzo); Puerto Cortes (1st Western Hemisphere Container Security + Megaports); COPECO disaster (Eta/Iota 4M affected); mara MS-13/Barrio 18; narco-transit; CAFTA-DR maquila corridor; Decree 148.5 procurement; HNL Lempira; SICA/CAFTA-DR
+
 ## [v2.205] – 2026-05-25
 ### Fixed
 - Updated Next.js from 16.2.0 to 16.2.6 — fixes Vercel CLI 54.x build failure (TypeError: path argument undefined)

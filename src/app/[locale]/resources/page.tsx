@@ -1359,6 +1359,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-honduras',
+          category: 'Guide',
+          title: 'Public Safety Software for Honduras',
+          excerpt: "Public safety technology for Honduran municipalities — HNP/PMOP/FUSINA coordination, SNE 911 integration, COPECO disaster response, Puerto Cortes port security, and Decree 148.5 procurement.",
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

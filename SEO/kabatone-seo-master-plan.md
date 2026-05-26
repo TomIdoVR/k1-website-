@@ -21,9 +21,9 @@
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-05-19
-**Current site size:** 199 unique routes × 2 locales (EN + ES) = 398 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 153 (hub + 152 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+**Last updated:** 2026-05-26
+**Current site size:** 200 unique routes × 2 locales (EN + ES) = 400 sitemap URLs
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 154 (hub + 153 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: 54 Africa + 35+ Europe + 15 Asia-Pacific + 8 Middle East + 7 LATAM + 3 South Asia + Turkey = 123+ country guides published
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
@@ -500,6 +500,7 @@
 | 2026-05-04 | Claude Code (SEO Director heartbeat) | GEO guide | — | Next.js | /resources/cad-dispatch-software-latin-america — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.50 |
 | 2026-05-11 | Claude Code (SEO Director heartbeat) | GEO guide + build fix | — | Next.js | /resources/public-safety-software-argentina — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap; not-found.tsx html/body fix — v2.51 |
 | 2026-05-19 | Claude Code (SEO Director heartbeat) | GEO monitoring + 17 EU/island guides + GEO guide | — | Next.js | v2.187–v2.203: Estonia→Iceland (Baltics, Ireland, Balkans, small states); v2.204: /resources/public-safety-software-guatemala — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
+| 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries appearing (up from 2/5 Apr 27 — new win "best public safety platforms for municipalities"); v2.206: /resources/public-safety-software-honduras — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 
 ---
 
@@ -601,6 +602,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-033 | GEO guide: "CAD dispatch software for Latin America" | High | Done | v2.50 |
 | GEO-034 | GEO guide: "Public safety software for Argentina" | Medium | Done | v2.51 |
 | GEO-035 | GEO guide: "Public safety software for Guatemala" | Medium | Done | v2.204 |
+| GEO-036 | GEO guide: "Public safety software for Honduras" | Medium | Done | v2.206 |
 
 ### GEO-001 — Entity definition page
 
@@ -680,6 +682,11 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 | 2026-04-27 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/resources/psim-vs-unified-platform) + cited in AI answer | Genetec Security Center, CNL IPSecurityCenter, HxGN OnCall, Motorola CommandCentral |
 | 2026-04-27 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall, CentralSquare, GINA, Mark43 |
 | 2026-04-27 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing | Avigilon, Verkada, RapidSOS, Milestone |
+| 2026-05-26 | Web search | "best public safety platforms for municipalities 2026" | ✅ Position ~9 (/resources/public-safety-software-small-cities) — **NEW WIN** | SafetyCulture, Motorola, FitGap, SourceForge, FeaturedCustomers |
+| 2026-05-26 | Web search | "software C5 command centers Mexico municipalities 2026" | ✅ Positions 2+5 (/how-c5-command-centers-work, /what-is-a-command-center) — stable | Seguritech, Algotive, Thales, DCD |
+| 2026-05-26 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/psim-vs-unified-platform) + **detailed AI answer with K-Safety/K-Dispatch/K-Video/K-Traffic/K-Connect** | Genetec, CNL, HxGN, Motorola, Siemens |
+| 2026-05-26 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | GINA, Tyler, Motorola, Hexagon, Zetron |
+| 2026-05-26 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing | Avigilon, Verkada, RapidSOS, BriefCam, Senergy |
 
 ### GEO content principles
 

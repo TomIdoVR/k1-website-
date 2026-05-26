@@ -1001,4 +1001,9 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~32K agentes, Ejercito de Guatemala y municipios — integracion CCS centro de mando, respuesta a desastres CONRED, seguridad portuaria Puerto Quetzal/Santo Tomas de Castilla y contratacion via GUATECOMPRAS.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-guatemala/",
   },
+  publicSafetySoftwareHonduras: {
+    title: "Software de Seguridad Publica para Honduras | PNH/PMOP/FUSINA, SNE 911, Puerto Cortes y Decreto 148.5 – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNH ~15K agentes, PMOP, FUSINA y municipios hondurenos — integracion SNE 911, respuesta a desastres COPECO, seguridad portuaria Puerto Cortes y contratacion conforme al Decreto 148.5.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-honduras/",
+  },
 } as const
