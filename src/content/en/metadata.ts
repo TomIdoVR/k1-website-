@@ -996,6 +996,11 @@ export const metadata = {
     description: "Palantir Gotham is an intelligence and analytics layer. KabatOne is the operations layer — connecting cameras, CAD, and field units in one unified platform.",
     canonical: "https://kabatone.com/vs/palantir/",
   },
+  videoManagementPublicSafetyGuide: {
+    title: "Video Management for Public Safety: Complete VMS Guide for Municipalities | KabatOne",
+    description: "Unified VMS platform for public safety — integrate thousands of cameras from any manufacturer with CAD dispatch, GIS, and AI analytics in one command center interface. Deployed in 40+ cities.",
+    canonical: "https://kabatone.com/resources/video-management-public-safety-guide/",
+  },
   publicSafetySoftwareGuatemala: {
     title: "Public Safety Software for Guatemala | PNC/Ejército, CCS Guatemala City, CONRED Volcanoes & GUATECOMPRAS – KabatOne",
     description: "KabatOne delivers unified public safety platform for Guatemala's PNC ~32K officers, Ejército de Guatemala, and municipalities — CCS command center integration, CONRED disaster response, Puerto Quetzal/Santo Tomás port security, and GUATECOMPRAS-compliant procurement.",

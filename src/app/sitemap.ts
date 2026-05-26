@@ -26,6 +26,7 @@ const pages = [
   { path: '/resources/public-safety-software-municipalities-mexico', priority: 0.6 },
   { path: '/resources/end-of-siloed-response', priority: 0.7 },
   { path: '/resources/what-is-cad-dispatch-software', priority: 0.6 },
+  { path: '/resources/video-management-public-safety-guide', priority: 0.8 },
   { path: '/resources/what-is-video-management-software', priority: 0.6 },
   { path: '/resources/what-is-a-real-time-crime-center', priority: 0.7 },
   { path: '/resources/what-is-situational-awareness-software', priority: 0.6 },

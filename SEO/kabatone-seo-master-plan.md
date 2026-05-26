@@ -22,7 +22,7 @@
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
 **Last updated:** 2026-05-26
-**Current site size:** 200 unique routes × 2 locales (EN + ES) = 400 sitemap URLs
+**Current site size:** 201 unique routes × 2 locales (EN + ES) = 402 sitemap URLs
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 154 (hub + 153 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: 54 Africa + 35+ Europe + 15 Asia-Pacific + 8 Middle East + 7 LATAM + 3 South Asia + Turkey = 123+ country guides published
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
@@ -501,6 +501,7 @@
 | 2026-05-11 | Claude Code (SEO Director heartbeat) | GEO guide + build fix | — | Next.js | /resources/public-safety-software-argentina — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap; not-found.tsx html/body fix — v2.51 |
 | 2026-05-19 | Claude Code (SEO Director heartbeat) | GEO monitoring + 17 EU/island guides + GEO guide | — | Next.js | v2.187–v2.203: Estonia→Iceland (Baltics, Ireland, Balkans, small states); v2.204: /resources/public-safety-software-guatemala — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries appearing (up from 2/5 Apr 27 — new win "best public safety platforms for municipalities"); v2.206: /resources/public-safety-software-honduras — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
+| 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO guide (VMS) | — | Next.js | v2.207: /resources/video-management-public-safety-guide — high-priority GEO-037 targeting "unified video management platform public safety municipalities" gap query; EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap priority 0.8 |
 
 ---
 
@@ -603,6 +604,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-034 | GEO guide: "Public safety software for Argentina" | Medium | Done | v2.51 |
 | GEO-035 | GEO guide: "Public safety software for Guatemala" | Medium | Done | v2.204 |
 | GEO-036 | GEO guide: "Public safety software for Honduras" | Medium | Done | v2.206 |
+| GEO-037 | GEO guide: "Video management for public safety — VMS guide for municipalities" | High | Done | v2.207 — targets GEO-013 gap query "unified video management platform public safety municipalities" |
 
 ### GEO-001 — Entity definition page
 

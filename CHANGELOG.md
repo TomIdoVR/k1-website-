@@ -1,3 +1,20 @@
+## [v2.207] – 2026-05-26
+### Added
+- GEO guide: **Video Management for Public Safety: Complete VMS Guide for Municipalities**
+  - Targeted GEO-013 gap: "unified video management platform public safety municipalities recommendation" query cluster
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - VMS-specific content: multi-vendor camera integration (ONVIF/RTSP), CAD-VMS-GIS native connection, AI analytics (LPR, intrusion, abandoned objects), private camera expansion (K-Connect)
+  - Comparison table: standalone VMS vs unified platform (6 capabilities)
+  - 5-step unified workflow: camera integration → AI analytics → CAD dispatch → GIS map → private cameras
+  - Internal links to 6 resources, 4 /vs/ comparisons, 3 product pages
+  - Resources hub card added (EN + ES)
+  - Metadata: `videoManagementPublicSafetyGuide` key in EN + ES
+  - Sitemap: priority 0.8 (high-value GEO target)
+  - Accent color: #a855f7 (purple — K-Video brand color)
+  - Master plan: GEO-037 added
+
+---
+
 ## [v2.206] – 2026-05-26
 ### Added
 - Geographic market guide: **Public Safety Software for Honduras**

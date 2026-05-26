@@ -58,6 +58,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/video-management-public-safety-guide',
+          category: 'Guía de Referencia',
+          title: 'Gestión de Video para Seguridad Pública: Guía VMS',
+          excerpt: 'Guía completa sobre plataformas VMS para centros de mando municipales — integración de cámaras multi-fabricante, conexión con CAD y GIS, analítica AI, y expansión con cámaras privadas.',
+          readTime: '10 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-video-management-software',
           category: 'Guía de Referencia',
           title: '¿Qué Es el Software de Gestión de Video (VMS)?',
@@ -1188,6 +1196,14 @@ export default async function ResourcesPage({
           title: 'What Is CAD Dispatch Software?',
           excerpt: 'CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. How it works step by step and what to look for in a modern system.',
           readTime: '9 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/video-management-public-safety-guide',
+          category: 'Reference Guide',
+          title: 'Video Management for Public Safety: VMS Guide',
+          excerpt: 'Complete guide to VMS platforms for municipal command centers — multi-vendor camera integration, CAD and GIS connection, AI analytics, and expansion with private cameras.',
+          readTime: '10 min',
           isNew: true,
         },
         {
