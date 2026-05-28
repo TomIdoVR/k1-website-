@@ -1,3 +1,9 @@
+## [v2.210] – 2026-05-28
+### Added
+- **Traffic analysis report** `SEO/audits/traffic-2026-05-28.html` — standalone GA4+GSC traffic intelligence dashboard with Chart.js: weekly sessions trend (10 weeks), traffic source mix (current vs prior 28d), keyword opportunity stack (15 queries, ~79 extra clicks/month), cluster momentum (8 groups, 723 total queries).
+- **seo-traffic skill** `~/.claude/skills/seo-traffic/SKILL.md` — new standalone skill for unified GA4+GSC traffic analysis. Invokable as `/seo-traffic`. Integrates into `kabatone-seo-audit` as Section 6.
+- **GA4 integration** — configured `properties/530090453` in `~/.config/claude-seo/google-api.json`; enabled Google Analytics Data API in GCP project 395364110222.
+
 ## [v2.209] – 2026-05-28
 ### Added / Fixed
 - **SEO visual dashboard** `SEO/audits/2026-05-28-1632-audit.html` — dark KabatOne-branded HTML report with Chart.js health gauge, branch divergence chart, GSC performance charts, and color-coded P0/P1/P2 findings.
