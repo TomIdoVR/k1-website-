@@ -1,3 +1,14 @@
+## [v2.208] – 2026-05-28
+### Added
+- **First professional SEO audit run** — `kabatone-seo-audit` skill (wraps open-source claude-seo v2.0.0)
+  - Output: `SEO/audits/2026-05-28-1446-audit.md` + `SEO/audits/latest.html` dashboard
+  - Health score: **42/100**. P0: 3, P1: 4, P2: 2.
+  - **Headline P0:** production frozen 50 days — `main` at v1.53, `nextjs` at v2.205, 259 commits behind. 121 of 125 country pages return 404 on `kabatone.com`. 24 dead URLs in production sitemap.
+  - GSC pulls blocked (service account not yet shared on the property).
+  - Single 5-min action (merge nextjs → main) clears all 3 P0s.
+- Documentation: `SEO/docs/gsc-setup.md` — Google Search Console service-account setup walkthrough.
+- Master plan: appended audit log row.
+
 ## [v2.207] – 2026-05-26
 ### Added
 - GEO guide: **Video Management for Public Safety: Complete VMS Guide for Municipalities**

@@ -1,5 +1,5 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-03-30
+**Last updated:** 2026-05-27
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
@@ -21,13 +21,14 @@
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-05-26
-**Current site size:** 201 unique routes × 2 locales (EN + ES) = 402 sitemap URLs
+**Last updated:** 2026-05-27
+**Current site size:** 204 unique routes × 2 locales (EN + ES) = 408 sitemap URLs
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 154 (hub + 153 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
-- Geographic market guides: 54 Africa + 35+ Europe + 15 Asia-Pacific + 8 Middle East + 7 LATAM + 3 South Asia + Turkey = 123+ country guides published
+- Geographic market guides: **121 country-specific guides** live (Africa, Europe, Americas, Middle East, Asia-Pacific) + 3 regional/cohort guides (Middle East, LATAM, small cities, Mexico municipalities)
+- Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to Paperclip — strategic risk flagged 2026-05-19, see Phase 6 notes below
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
-- Note: /resources/cad-dispatch-software-latin-america added v2.50; /resources/public-safety-software-argentina added v2.51
+- Note: Empty `src/app/[locale]/resources/public-safety-software-bahrain/` directory exists (no page.tsx, untracked) — leftover from aborted generation, safe to delete
 
 ### 🟢 DNS & Hosting Status (verified 2026-04-10)
 | Item | Status |
@@ -236,6 +237,10 @@
 | Integration page: Access Control | Medium | Done | v0.78 — /integrations/access-control/ |
 | Integration page: Drones (UAV/UAS) | Medium | Done | v0.78 — /integrations/drones/ |
 | Integration page: Panic Buttons | Medium | Done | v0.78 — /integrations/panic-buttons/ |
+| GEO: CAD Software for Municipios in Mexico | Medium | Done | v2.65 — /resources/cad-software-municipios-mexico/ |
+| GEO: Video Analytics Use Cases Guide | Medium | Done | v2.72 — /resources/video-analytics-use-cases/ |
+| GEO: Best CAD Dispatch Software | High | Done | v2.76 — /resources/best-cad-dispatch-software/ |
+| GEO: Video Management for Public Safety | High | Done | v2.207 — /resources/video-management-public-safety-guide/ |
 | solutions.html audit + SEO fix | High | N/A | solutions.html deleted — static files removed from nextjs branch v0.72 |
 
 ### Technical post-launch
@@ -500,6 +505,7 @@
 | 2026-05-04 | Claude Code (SEO Director heartbeat) | GEO guide | — | Next.js | /resources/cad-dispatch-software-latin-america — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap — v2.50 |
 | 2026-05-11 | Claude Code (SEO Director heartbeat) | GEO guide + build fix | — | Next.js | /resources/public-safety-software-argentina — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap; not-found.tsx html/body fix — v2.51 |
 | 2026-05-19 | Claude Code (SEO Director heartbeat) | GEO monitoring + 17 EU/island guides + GEO guide | — | Next.js | v2.187–v2.203: Estonia→Iceland (Baltics, Ireland, Balkans, small states); v2.204: /resources/public-safety-software-guatemala — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
+| 2026-05-28 14:46 | kabatone-seo-audit (first run) | full coverage map (production probe + auth check + GEO spot check) | https://kabatone.com/ | SEO/audits/2026-05-28-1446-audit.md + .html | **Health: 42/100. P0: 3, P1: 4, P2: 2.** Headline P0: production frozen 50 days — main at v1.53 (2026-04-08), nextjs at v2.205, 259 commits behind. 121 of 125 country pages 404 on prod; 24 dead URLs in prod sitemap. GSC pulls blocked (service account not yet shared). Single 5-min action (merge nextjs→main) clears all 3 P0s. |
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries appearing (up from 2/5 Apr 27 — new win "best public safety platforms for municipalities"); v2.206: /resources/public-safety-software-honduras — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO guide (VMS) | — | Next.js | v2.207: /resources/video-management-public-safety-guide — high-priority GEO-037 targeting "unified video management platform public safety municipalities" gap query; EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap priority 0.8 |
 
@@ -605,6 +611,10 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-035 | GEO guide: "Public safety software for Guatemala" | Medium | Done | v2.204 |
 | GEO-036 | GEO guide: "Public safety software for Honduras" | Medium | Done | v2.206 |
 | GEO-037 | GEO guide: "Video management for public safety — VMS guide for municipalities" | High | Done | v2.207 — targets GEO-013 gap query "unified video management platform public safety municipalities" |
+| GEO-038 | GEO guide: "CAD software for municipios in Mexico" (Spanish-intent keyword) | Medium | Done | v2.65 — /resources/cad-software-municipios-mexico/ |
+| GEO-039 | GEO guide: "Video analytics use cases for public safety" | Medium | Done | v2.72 — /resources/video-analytics-use-cases/ |
+| GEO-040 | GEO guide: "Best CAD dispatch software" (comparison/listicle) | High | Done | v2.76 — /resources/best-cad-dispatch-software/ |
+| GEO-BULK | **Bulk geographic market guides (autopilot)** — 121 country-specific public-safety-software-* pages generated via `src/lib/seo-agent/ccr.ts` Paperclip dispatcher | — | Live | Live count as of 2026-05-19. Covers all of LATAM, most of Europe (incl. Baltics/Balkans/Iceland/Malta/Luxembourg/Cyprus), GCC + ME, large APAC (India, Japan, Australia, S. Korea, Indonesia, Vietnam, etc.), large Africa block (Nigeria, Kenya, SA, Egypt, Morocco, Ethiopia + ~40 more). **STRATEGIC RISK:** many micro-market pages (São Tomé pop 220k, Seychelles 100k, Comoros, Lesotho, Eswatini) have effectively zero B2G TAM. Identical ~310-line template per page. This pattern matches Google's March 2024 "scaled content abuse" policy — risk is site-wide quality demotion that drags down genuinely valuable pages (Mexico, US, LATAM, products, /vs/). **Action needed:** define a TAM/quality stop-line, prune micro-market pages or substantially differentiate them. |
 
 ### GEO-001 — Entity definition page
 
