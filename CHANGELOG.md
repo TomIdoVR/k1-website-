@@ -1,3 +1,9 @@
+## [v2.211] – 2026-05-28
+### SEO — Keyword opportunity optimizations
+- **Peregrine page** — added "What Are Peregrine's Analytics Reporting Dashboards?" section (EN+ES) with 6 dashboard-type cards + "what dashboards don't show" callout. Targets "peregrine.ai analytics reporting dashboards" (1,406 impr, pos 9.8, 0 CTR).
+- **Video analytics** — updated title/meta/H1 (EN+ES) to target "AI video analytics surveillance" cluster (pos 16–25) instead of generic "video analytics" (pos 41, too competitive).
+- **Video management software** — updated title/meta/H1 (EN+ES) to lead with exact query "video management software (VMS)" (183 impr, pos 34).
+
 ## [v2.210] – 2026-05-28
 ### Added
 - **Traffic analysis report** `SEO/audits/traffic-2026-05-28.html` — standalone GA4+GSC traffic intelligence dashboard with Chart.js: weekly sessions trend (10 weeks), traffic source mix (current vs prior 28d), keyword opportunity stack (15 queries, ~79 extra clicks/month), cluster momentum (8 groups, 723 total queries).

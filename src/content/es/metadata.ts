@@ -225,8 +225,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "Software VMS para Seguridad Pública: Guía Completa | KabatOne",
-    description: "El software VMS agrega cámaras de cualquier fabricante, añade analítica IA como LPR y reconocimiento facial, y conecta con despacho CAD y GIS.",
+    title: "¿Qué Es un Software de Gestión de Video (VMS)? Guía | KabatOne",
+    description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA como LPR y detección de comportamientos, y conecta con despacho CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Analítica de Video con IA: Guía para Centros de Mando | KabatOne",
-    description: "La analítica de video con IA detecta intrusiones, LPR, aglomeraciones y armas en tiempo real sin monitoreo humano continuo. Cómo funciona e integración con despacho CAD.",
+    title: "Analítica de Video IA para Videovigilancia y Seguridad Pública | KabatOne",
+    description: "La analítica de video con IA detecta intrusiones, aglomeraciones, armas y LPR en cámaras de videovigilancia en tiempo real — integrada con despacho CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
