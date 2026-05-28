@@ -38,9 +38,9 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
         top: 0,
         width: '100%',
         zIndex: 50,
-        background: 'rgba(16,19,27,0.88)',
-        backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        background: 'transparent',
+        borderBottom: '1px solid rgba(0,0,0,0.08)',
+        boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
         fontFamily: 'var(--font-manrope), Manrope, sans-serif',
       }}
     >
@@ -53,6 +53,9 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
           alignItems: 'center',
           padding: '0 32px',
           height: 72,
+          background: 'rgba(16,19,27,0.96)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(255,255,255,0.05)',
         }}
       >
         {/* Left: logo + incident badge */}
@@ -72,7 +75,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
           </Link>
 
           <div
-            className="demo-incident-badge"
+            className="demo-incident-badge demo-incident-badge-hide"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -144,7 +147,9 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
           alignItems: 'center',
           justifyContent: 'center',
           gap: 12,
-          paddingBottom: 10,
+          padding: '8px 0 8px',
+          background: '#f1f4f8',
+          borderBottom: '1px solid rgba(0,0,0,0.06)',
         }}
       >
         {STAGES.map((stage, i) => {
@@ -153,9 +158,10 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
             <div key={stage.id} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <button
                 className="demo-stage-pill"
+                data-active={isActive ? 'true' : undefined}
                 onClick={() => onNavigate(stage.id)}
                 style={{
-                  padding: '7px 22px',
+                  padding: '6px 20px',
                   borderRadius: 9999,
                   fontSize: '10px',
                   fontWeight: isActive ? 900 : 700,
@@ -163,10 +169,10 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'all 0.25s',
-                  border: isActive ? 'none' : '1px solid rgba(255,255,255,0.1)',
-                  background: isActive ? '#007AFF' : 'rgba(255,255,255,0.05)',
-                  color: isActive ? '#fff' : 'rgba(255,255,255,0.4)',
-                  boxShadow: isActive ? '0 0 20px rgba(0,122,255,0.4)' : 'none',
+                  border: isActive ? 'none' : '1px solid rgba(0,0,0,0.12)',
+                  background: isActive ? '#007AFF' : 'rgba(0,0,0,0.04)',
+                  color: isActive ? '#fff' : 'rgba(0,0,0,0.38)',
+                  boxShadow: isActive ? '0 2px 12px rgba(0,122,255,0.3)' : 'none',
                 }}
               >
                 {stage.label}
@@ -174,7 +180,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
               {i < STAGES.length - 1 && (
                 <span
                   className="material-symbols-outlined demo-stage-chevron"
-                  style={{ color: 'rgba(255,255,255,0.18)', fontSize: 14 }}
+                  style={{ color: 'rgba(0,0,0,0.18)', fontSize: 14 }}
                 >
                   chevron_right
                 </span>
@@ -184,57 +190,33 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
         })}
       </div>
 
-      {/* ── Row 3: Platform modules strip ── */}
-      <div
-        className="scrollbar-hide demo-header-row3"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 6,
-          paddingBottom: 10,
-          paddingLeft: 24,
-          paddingRight: 24,
-          overflowX: 'auto',
-        }}
-      >
-        {ALL_MODULES.map((m) => {
-          const isActive = activeModules.includes(m.key)
-          return (
-            <div
-              key={m.key}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 5,
-                padding: '4px 11px',
-                borderRadius: 9999,
-                fontSize: '11px',
-                fontWeight: 500,
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-                transition: 'all 0.3s',
-                background: isActive ? 'rgba(173,198,255,0.12)' : 'rgba(255,255,255,0.025)',
-                border: isActive
-                  ? '1px solid rgba(173,198,255,0.3)'
-                  : '1px solid rgba(255,255,255,0.05)',
-                color: isActive ? '#adc6ff' : 'rgba(193,198,215,0.3)',
-              }}
-            >
-              <span
-                className="material-symbols-outlined"
-                style={{
-                  fontSize: 13,
-                  color: isActive ? '#adc6ff' : 'rgba(193,198,215,0.22)',
-                }}
-              >
-                {m.icon}
-              </span>
-              {m.label}
-            </div>
-          )
-        })}
-      </div>
+      <style>{`
+        .demo-stage-pill:not([data-active="true"]):hover {
+          background: rgba(0,0,0,0.09) !important;
+          border-color: rgba(0,0,0,0.22) !important;
+          color: rgba(0,0,0,0.65) !important;
+        }
+        .demo-stage-pill:not([data-active="true"]):active {
+          background: rgba(0,122,255,0.08) !important;
+          border-color: rgba(0,122,255,0.3) !important;
+          color: #007AFF !important;
+        }
+        .demo-stage-pill[data-active="true"]:hover {
+          background: #0066dd !important;
+          box-shadow: 0 4px 16px rgba(0,122,255,0.45) !important;
+        }
+        @media (max-width: 768px) {
+          .demo-header-row1 { height: 52px !important; padding: 0 16px !important; }
+          .demo-incident-badge { padding: 4px 10px !important; }
+          .demo-header-row2 { gap: 6px !important; padding: 6px 8px !important; overflow-x: auto; flex-wrap: nowrap; justify-content: flex-start !important; }
+          .demo-stage-pill { padding: 4px 12px !important; font-size: 9px !important; }
+          .demo-stage-chevron { font-size: 11px !important; }
+        }
+        @media (max-width: 480px) {
+          .demo-header-row2 { display: none !important; }
+          .demo-header-row1 { height: 48px !important; }
+        }
+      `}</style>
     </header>
   )
 }

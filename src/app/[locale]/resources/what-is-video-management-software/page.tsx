@@ -57,6 +57,26 @@ export default async function WhatIsVideoManagementSoftwarePage({
           answer:
             'Los VMS de última generación incluyen detección y clasificación de objetos (personas, vehículos, armas), reconocimiento de placas vehiculares (LPR/ALPR), reconocimiento facial, análisis de comportamiento (merodeo, intrusión perimetral, abandono de objeto), conteo de personas, mapas de calor y detección de audio (disparos, gritos). Estas capacidades transforman el video de registro pasivo a detección activa en tiempo real.',
         },
+        {
+          question: '¿Qué es un sistema de gestión de audio y video (AVMS)?',
+          answer:
+            'Un sistema de gestión de audio y video (AVMS) es una plataforma VMS que integra tanto feeds de videovigilancia como flujos de audio — sensores de detección de disparos, intercomunicadores y micrófonos ambientales — en una sola interfaz unificada. Para centros de mando de seguridad pública, un sistema de gestión de audio-video permite correlacionar automáticamente una alerta de disparo de un sensor acústico con la cámara más cercana, acelerando la verificación del incidente y el despacho. KabatOne K-Video integra video, LPR y fuentes de eventos de audio en una sola vista operativa.',
+        },
+        {
+          question: '¿Qué es un VMS general y en qué difiere de un VMS para seguridad pública?',
+          answer:
+            'Un VMS general (software de gestión de video de propósito general) está diseñado para aplicaciones comerciales amplias — retail, campus corporativos, almacenes — con énfasis en grabación y reproducción básica. Un VMS para seguridad pública está construido específicamente para fuerzas del orden, centros de mando y operaciones municipales. Agrega capacidades que un VMS general típicamente no tiene: integración nativa con despacho CAD, mapeo GIS en tiempo real de ubicaciones de cámaras, control de acceso multiagencia, búsqueda forense simultánea en miles de cámaras y registro de cadena de custodia de evidencias. KabatOne K-Video está diseñado específicamente para seguridad pública, no adaptado de un VMS de propósito general.',
+        },
+        {
+          question: '¿Cuál es el mejor software VMS para seguridad pública?',
+          answer:
+            'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, KabatOne integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
+        },
+        {
+          question: '¿Cuál es la diferencia entre un VMS y un PSIM?',
+          answer:
+            'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como KabatOne van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
+        },
       ]
     : [
         {
@@ -89,6 +109,26 @@ export default async function WhatIsVideoManagementSoftwarePage({
           answer:
             'State-of-the-art VMS systems include object detection and classification (people, vehicles, weapons), license plate recognition (LPR/ALPR), facial recognition, behavioral analysis (loitering, perimeter intrusion, abandoned object), people counting, heat maps, and audio detection (gunshots, screaming). These capabilities transform video from passive recording to active real-time detection.',
         },
+        {
+          question: 'What is an audio video management system?',
+          answer:
+            'An audio video management system (AVMS) is a VMS platform that handles both video surveillance feeds and audio streams — including gunshot detection sensors, intercom systems, and ambient microphones — in a single unified interface. For public safety command centers, an audio video management system allows operators to correlate a gunshot alert from an acoustic sensor with the nearest camera feed automatically, speeding incident verification and dispatch. KabatOne K-Video integrates video, LPR, and audio event sources into one operational view.',
+        },
+        {
+          question: 'What is a general VMS and how does it differ from a public safety VMS?',
+          answer:
+            'A general VMS (general-purpose video management software) is designed for broad commercial applications — retail, corporate campuses, warehouses — with emphasis on recording and basic playback. A public safety VMS is built specifically for law enforcement, command centers, and municipal operations. It adds capabilities a general VMS typically lacks: native CAD dispatch integration so camera alerts trigger incident creation automatically, real-time GIS mapping of camera locations, multi-agency access control, forensic search across thousands of cameras simultaneously, and compliance logging for evidence chain-of-custody. KabatOne K-Video is purpose-built for public safety, not adapted from a general-purpose VMS.',
+        },
+        {
+          question: 'What is the best VMS software for public safety?',
+          answer:
+            'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, KabatOne integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
+        },
+        {
+          question: 'What is the difference between VMS software and PSIM?',
+          answer:
+            'VMS (Video Management Software) specifically manages video surveillance cameras: recording, playback, video analytics, and forensic search. PSIM (Physical Security Information Management) is an integration layer that connects multiple security systems — VMS, access control, intrusion detection, alarms — into a single interface, without replacing them. The key difference: VMS is a functional video platform; PSIM is a system aggregator. Unified public safety platforms like KabatOne go beyond both: they integrate video, CAD dispatch, GIS, and field operations into a single database and single alert engine — eliminating the need for a separate PSIM layer.',
+        },
       ]
 
   /* ── Breadcrumb items ── */
@@ -119,7 +159,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
           es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety',
           es ? 'El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA y se integra con despacho y GIS. Guía completa para agencias de seguridad pública.' : 'VMS software aggregates cameras from any manufacturer, adds AI analytics, and integrates with dispatch and GIS. Complete guide for public safety agencies.',
           es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
-          '2026-03-26'
+          '2026-05-18'
         )
       ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }} />
@@ -144,13 +184,38 @@ export default async function WhatIsVideoManagementSoftwarePage({
               {es ? 'Guía de Referencia' : 'Reference Guide'}
             </p>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '24px' }}>
-              {es ? '¿Qué Es el Software de Gestión de Video?' : 'What Is Video Management Software?'}
+              {es ? '¿Qué Es un Software VMS? Guía de Gestión de Video para Seguridad Pública' : 'What Is VMS Software? A Video Management Guide for Public Safety'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
                 ? 'El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante y protocolo en una sola interfaz unificada. Graba, organiza, reproduce y analiza video de forma centralizada. Los sistemas VMS modernos para seguridad pública van más allá de la simple grabación: agregan analítica de inteligencia artificial — detección de objetos, reconocimiento de placas vehiculares (LPR), análisis de comportamiento — directamente al flujo de video. Esto transforma las cámaras de dispositivos pasivos de registro a sensores activos de detección que alertan a los operadores en tiempo real cuando ocurre un evento relevante.'
                 : 'Video management software (VMS) is a platform that aggregates video surveillance camera feeds from any manufacturer and protocol into a single unified interface. It records, organizes, plays back, and analyzes video centrally. Modern VMS systems for public safety go beyond simple recording: they add artificial intelligence analytics — object detection, license plate recognition (LPR), behavioral analysis — directly to the video pipeline. This transforms cameras from passive recording devices into active detection sensors that alert operators in real time when a relevant event occurs.'}
             </p>
+          </div>
+        </section>
+
+        {/* ── STATS BAR ── */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '40px 32px', background: 'rgba(59,130,246,0.04)' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
+            {(es
+              ? [
+                  { value: '10,000+', label: 'Cámaras por instancia VMS' },
+                  { value: '< 2 seg', label: 'Latencia de alerta de IA' },
+                  { value: '30–40%', label: 'Reducción en tiempo de respuesta' },
+                  { value: '99.9%', label: 'Uptime en despliegues de ciudad' },
+                ]
+              : [
+                  { value: '10,000+', label: 'Cameras per VMS instance' },
+                  { value: '< 2 sec', label: 'AI alert latency' },
+                  { value: '30–40%', label: 'Reduction in response time' },
+                  { value: '99.9%', label: 'Uptime in city deployments' },
+                ]
+            ).map((stat, i) => (
+              <div key={i}>
+                <p style={{ fontFamily: 'DM Mono, monospace', fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#3b82f6', marginBottom: '6px', marginTop: 0 }}>{stat.value}</p>
+                <p style={{ fontSize: '12px', fontWeight: 400, color: 'var(--muted)', lineHeight: 1.4, marginBottom: 0 }}>{stat.label}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -352,6 +417,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas' : 'Platforms' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: 'RTCC' },
                   { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
+                  { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}
@@ -390,6 +456,8 @@ export default async function WhatIsVideoManagementSoftwarePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
+                { href: '/resources/what-is-video-analytics', en: 'What Is Video Analytics?', es: '¿Qué es la Analítica de Video?' },
+                { href: '/resources/video-analytics-use-cases', en: 'Video Analytics Use Cases for Command Centers', es: 'Casos de Uso de Analítica de Video para Centros de Mando' },
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un centro de crimen en tiempo real (RTCC)?' },

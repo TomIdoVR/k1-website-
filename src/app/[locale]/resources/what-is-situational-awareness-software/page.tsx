@@ -57,6 +57,16 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           answer:
             'KabatOne provee la plataforma unificada de conciencia situacional: K-Safety es el mapa operativo GIS que muestra incidentes, unidades de campo y alertas en tiempo real. K-Video agrega video en vivo con analítica de IA. K-Dispatch maneja el despacho CAD integrado. K-Traffic monitorea señalización y flujo vehicular. Todo en una sola interfaz. Los operadores del centro de mando ven el video, las posiciones de unidades y el estado del incidente en una pantalla — sin cambiar entre sistemas de diferentes proveedores.',
         },
+        {
+          question: '¿Qué es un Cuadro Operativo Común (COP) en conciencia situacional?',
+          answer:
+            'Un Cuadro Operativo Común (COP, del inglés Common Operating Picture) es una vista de datos compartida en tiempo real que muestra el estado operativo de todos los recursos, incidentes y amenazas en un área. En seguridad pública, el COP unifica las posiciones de unidades de patrulla, incidentes activos, video en vivo y alertas de sensores en un mapa que todos los mandos y operadores ven simultáneamente — sin importar si están en el centro de mando o en terreno. El software de conciencia situacional es la plataforma que construye y mantiene el COP, actualizándolo en tiempo real conforme llegan datos de campo.',
+        },
+        {
+          question: '¿Cómo se usa la conciencia situacional en seguridad pública y fuerzas del orden?',
+          answer:
+            'En fuerzas del orden y seguridad pública, la conciencia situacional se usa para: (1) monitorear en tiempo real la posición y estado de todas las unidades de patrulla, (2) correlacionar alertas de cámaras, sensores de disparos y botones de pánico con el mapa operativo, (3) coordinar respuesta multiagencia durante incidentes de gran escala — movilizaciones, eventos masivos, emergencias, (4) proporcionar al comandante una vista consolidada del incidente para tomar decisiones de despacho, y (5) alimentar el centro de despacho CAD con datos en tiempo real. Sin conciencia situacional, los operadores trabajan con información fragmentada que llega por radio, teléfono y sistemas separados.',
+        },
       ]
     : [
         {
@@ -88,6 +98,16 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           question: 'How does KabatOne support situational awareness?',
           answer:
             'KabatOne provides the unified situational awareness platform: K-Safety is the GIS operational map showing incidents, field units, and alerts in real time. K-Video aggregates live video with AI analytics. K-Dispatch handles integrated CAD dispatch. K-Traffic monitors signalization and vehicle flow. All in one interface. Command center operators see video, unit positions, and incident status on one screen — without switching between systems from different vendors.',
+        },
+        {
+          question: 'What is a Common Operating Picture (COP) in situational awareness?',
+          answer:
+            'A Common Operating Picture (COP) is a shared real-time data view that shows the operational status of all resources, incidents, and threats in an area. In public safety, the COP unifies patrol unit positions, active incidents, live video, and sensor alerts on a single map that all commanders and operators see simultaneously — whether they are at the command center or in the field. Situational awareness software is the platform that builds and maintains the COP, updating it in real time as field data arrives.',
+        },
+        {
+          question: 'How is situational awareness software used in law enforcement?',
+          answer:
+            'In law enforcement, situational awareness software is used to: (1) monitor the real-time position and status of all patrol units, (2) correlate camera alerts, gunshot sensor events, and panic button activations with the operational map, (3) coordinate multi-agency response during large-scale incidents — mobilizations, mass events, emergencies, (4) give the incident commander a consolidated view to make dispatch decisions, and (5) feed the CAD dispatch center with live data. Without situational awareness software, operators work with fragmented information arriving via radio, phone, and disconnected systems.',
         },
       ]
 
@@ -154,15 +174,15 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? '¿Qué Es un Software de Conciencia Situacional? Guía Completa'
-                : 'What Is Situational Awareness Software? Complete Guide',
+                ? '¿Qué Es el Software de Conciencia Situacional? Guía para Centros de Mando'
+                : 'What Is Situational Awareness Software? Guide for Command Centers',
               es
                 ? 'Un software de conciencia situacional agrega cámaras, sensores, despacho y datos GIS en un mapa operativo unificado para mejorar los tiempos de respuesta y la coordinación.'
                 : 'Situational awareness software aggregates cameras, sensors, dispatch, and GIS data into a unified operational map to improve response times and coordination.',
               es
                 ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software/'
                 : 'https://kabatone.com/resources/what-is-situational-awareness-software/',
-              '2026-03-26'
+              '2026-05-18'
             )
           ),
         }}
@@ -252,8 +272,8 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
             </h3>
             <p style={pStyle}>
               {es
-                ? 'La conciencia situacional efectiva requiere video, no solo datos de texto y coordenadas. Cuando un analista selecciona un incidente en el mapa, la plataforma muestra automáticamente las cámaras más cercanas al punto del evento. El analista no necesita buscar manualmente entre cientos o miles de cámaras — el sistema presenta las que son relevantes para la situación actual. En plataformas avanzadas, el video incluye analítica de IA superpuesta: detección de comportamiento, conteo de personas y reconocimiento de placas en tiempo real.'
-                : 'Effective situational awareness requires video, not just text data and coordinates. When an analyst selects an incident on the map, the platform automatically displays the cameras closest to the event point. The analyst does not need to manually search through hundreds or thousands of cameras — the system surfaces the ones relevant to the current situation. In advanced platforms, the video includes overlaid AI analytics: behavior detection, people counting, and real-time license plate recognition.'}
+                ? <>La conciencia situacional efectiva requiere video, no solo datos de texto y coordenadas. Cuando un analista selecciona un incidente en el mapa, la plataforma muestra automáticamente las cámaras más cercanas al punto del evento. El analista no necesita buscar manualmente entre cientos o miles de cámaras — el sistema presenta las que son relevantes para la situación actual. En plataformas avanzadas, el video incluye <Link href="/resources/what-is-video-analytics" style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>analítica de video con IA</Link> superpuesta: detección de comportamiento, conteo de personas y reconocimiento de placas en tiempo real.</>
+                : <>Effective situational awareness requires video, not just text data and coordinates. When an analyst selects an incident on the map, the platform automatically displays the cameras closest to the event point. The analyst does not need to manually search through hundreds or thousands of cameras — the system surfaces the ones relevant to the current situation. In advanced platforms, the video includes overlaid <Link href="/resources/what-is-video-analytics" style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>AI video analytics</Link>: behavior detection, people counting, and real-time license plate recognition.</>}
             </p>
 
             <h3 style={h3Style}>
@@ -580,6 +600,7 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
                 {[
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Qué es una Plataforma de Seguridad Pública' : 'What Is a Public Safety Platform' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué es un RTCC' : 'What Is an RTCC' },
+                  { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS de Gestión de Video' : 'VMS Software Guide' },
                   { href: '/resources/rtcc-setup-guide', label: es ? 'Guía de RTCC' : 'RTCC Setup Guide' },
                   { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
                 ].map((link) => (

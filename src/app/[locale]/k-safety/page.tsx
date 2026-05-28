@@ -323,6 +323,28 @@ export default async function KSafetyPage({
                   {es ? 'Guía de referencia →' : 'Reference guide →'}
                 </span>
               </Link>
+              <Link href="/resources/what-is-situational-awareness-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es el software de conciencia situacional?' : 'What Is Situational Awareness Software?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/what-is-video-analytics" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es la analítica de video con IA?' : 'What Is AI Video Analytics?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
             </div>
             <div style={{ display: 'flex', gap: '16px', marginTop: '24px', flexWrap: 'wrap' }}>
               <span style={{ fontSize: '13px', color: 'var(--muted)' }}>

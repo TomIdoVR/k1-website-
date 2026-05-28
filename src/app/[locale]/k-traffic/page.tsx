@@ -32,8 +32,8 @@ export default async function KTrafficPage({
   const content = {
     eyebrow: es ? 'Tráfico Inteligente · K-Traffic' : 'Smart Traffic · K-Traffic',
     h1: es
-      ? 'Gestión de Tráfico Inteligente y Optimización con IA'
-      : 'AI-Powered Traffic Management and Optimization',
+      ? 'Sistema de Gestión de Tráfico Inteligente con Control Adaptativo'
+      : 'Intelligent Traffic Management System with Adaptive Signal Control',
     subtitle: es
       ? 'Optimiza el flujo, detecta infracciones y responde a incidentes antes de que se conviertan en colapsos. K-Traffic conecta semáforos, sensores y aplicación de normas en un sistema adaptativo.'
       : 'Connects traffic signals, cameras, sensors, and control centers into one intelligent platform — reducing congestion, detecting incidents, and optimizing city mobility in real time.',

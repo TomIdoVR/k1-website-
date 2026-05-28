@@ -200,13 +200,13 @@ export default async function VsPeregrinePage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Peregrine — Analítica Predictiva vs Operaciones Unificadas'
-              : 'KabatOne vs Peregrine — Predictive Analytics vs Unified Operations'}
+              ? 'Dashboards de Analítica Peregrine vs KabatOne — Inteligencia Estratégica vs Operaciones Unificadas'
+              : 'Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Peregrine ofrece analítica predictiva de seguridad pública — inteligencia basada en datos para que los líderes policiales optimicen el despliegue de recursos y anticipen patrones de crimen. KabatOne construye la plataforma operacional donde esa respuesta ocurre: despacho CAD completo, video con IA, GIS operacional y gestión de tráfico — todo nativo en un solo sistema.'
-              : 'Peregrine offers predictive public safety analytics — data-driven intelligence for police leaders to optimize resource deployment and anticipate crime patterns. KabatOne builds the operational platform where that response actually happens: full CAD dispatch, AI video, operational GIS, and traffic management — all native in one system.'}
+              ? 'Peregrine ofrece analítica predictiva y dashboards de reporting para líderes de seguridad pública — agregando datos de CAD, RMS y sensores en análisis de patrones de crimen, mapas de calor e inteligencia de despliegue. KabatOne construye la plataforma operacional donde esa respuesta ocurre: despacho CAD completo, video con IA, GIS operacional y gestión de tráfico — todo nativo en un solo sistema.'
+              : 'Peregrine offers predictive analytics and reporting dashboards for public safety leaders — aggregating CAD, RMS, and sensor data into crime pattern analysis, heat maps, and deployment intelligence. KabatOne builds the operational platform where that response actually happens: full CAD dispatch, AI video, operational GIS, and traffic management — all native in one system.'}
           </p>
         </section>
 

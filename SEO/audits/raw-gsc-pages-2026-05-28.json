@@ -1,0 +1,718 @@
+{
+  "property": "https://kabatone.com/",
+  "rows": [
+    {
+      "keys": [
+        "https://kabatone.com/"
+      ],
+      "clicks": 56,
+      "impressions": 394,
+      "ctr": 14.21,
+      "position": 3.5,
+      "page": "https://kabatone.com/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/"
+      ],
+      "clicks": 47,
+      "impressions": 214,
+      "ctr": 21.96,
+      "position": 4.5,
+      "page": "https://kabatone.com/es/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-video-management-software/"
+      ],
+      "clicks": 4,
+      "impressions": 3471,
+      "ctr": 0.12,
+      "position": 35.0,
+      "page": "https://kabatone.com/resources/what-is-video-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/public-safety-software-peru/"
+      ],
+      "clicks": 3,
+      "impressions": 30,
+      "ctr": 10.0,
+      "position": 8.1,
+      "page": "https://kabatone.com/es/resources/public-safety-software-peru/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-video-analytics/"
+      ],
+      "clicks": 3,
+      "impressions": 6120,
+      "ctr": 0.05,
+      "position": 27.2,
+      "page": "https://kabatone.com/resources/what-is-video-analytics/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-a-command-center/"
+      ],
+      "clicks": 2,
+      "impressions": 152,
+      "ctr": 1.32,
+      "position": 7.9,
+      "page": "https://kabatone.com/es/resources/what-is-a-command-center/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/integrations/lpr/"
+      ],
+      "clicks": 1,
+      "impressions": 33,
+      "ctr": 3.03,
+      "position": 13.7,
+      "page": "https://kabatone.com/es/integrations/lpr/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/k-safety/"
+      ],
+      "clicks": 1,
+      "impressions": 35,
+      "ctr": 2.86,
+      "position": 5.9,
+      "page": "https://kabatone.com/es/k-safety/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-emergency-dispatch-software/"
+      ],
+      "clicks": 1,
+      "impressions": 30,
+      "ctr": 3.33,
+      "position": 6.2,
+      "page": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-emergency-management-software/"
+      ],
+      "clicks": 1,
+      "impressions": 68,
+      "ctr": 1.47,
+      "position": 11.3,
+      "page": "https://kabatone.com/es/resources/what-is-emergency-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-video-analytics/"
+      ],
+      "clicks": 1,
+      "impressions": 43,
+      "ctr": 2.33,
+      "position": 11.5,
+      "page": "https://kabatone.com/es/resources/what-is-video-analytics/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/integrations/panic-buttons/"
+      ],
+      "clicks": 1,
+      "impressions": 147,
+      "ctr": 0.68,
+      "position": 10.6,
+      "page": "https://kabatone.com/integrations/panic-buttons/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/how-c5-command-centers-work/"
+      ],
+      "clicks": 1,
+      "impressions": 275,
+      "ctr": 0.36,
+      "position": 9.4,
+      "page": "https://kabatone.com/resources/how-c5-command-centers-work/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/psim-vs-unified-platform/"
+      ],
+      "clicks": 1,
+      "impressions": 78,
+      "ctr": 1.28,
+      "position": 7.1,
+      "page": "https://kabatone.com/resources/psim-vs-unified-platform/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-emergency-management-software/"
+      ],
+      "clicks": 1,
+      "impressions": 434,
+      "ctr": 0.23,
+      "position": 23.3,
+      "page": "https://kabatone.com/resources/what-is-emergency-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-sensor-fusion/"
+      ],
+      "clicks": 1,
+      "impressions": 97,
+      "ctr": 1.03,
+      "position": 8.2,
+      "page": "https://kabatone.com/resources/what-is-sensor-fusion/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-situational-awareness-software/"
+      ],
+      "clicks": 1,
+      "impressions": 336,
+      "ctr": 0.3,
+      "position": 11.4,
+      "page": "https://kabatone.com/resources/what-is-situational-awareness-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/fusus/"
+      ],
+      "clicks": 1,
+      "impressions": 72,
+      "ctr": 1.39,
+      "position": 7.3,
+      "page": "https://kabatone.com/vs/fusus/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/about/"
+      ],
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 5.5,
+      "page": "https://kabatone.com/about/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/contact/"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 79,
+      "page": "https://kabatone.com/contact/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/demo/violence"
+      ],
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 8,
+      "page": "https://kabatone.com/demo/violence"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/contact/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
+      "page": "https://kabatone.com/es/contact/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/k-dispatch/"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.2,
+      "page": "https://kabatone.com/es/k-dispatch/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/k-traffic/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5.5,
+      "page": "https://kabatone.com/es/k-traffic/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/911-call-center-software-guide/"
+      ],
+      "clicks": 0,
+      "impressions": 63,
+      "ctr": 0,
+      "position": 5.8,
+      "page": "https://kabatone.com/es/resources/911-call-center-software-guide/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/how-c5-command-centers-work/"
+      ],
+      "clicks": 0,
+      "impressions": 1118,
+      "ctr": 0,
+      "position": 9.7,
+      "page": "https://kabatone.com/es/resources/how-c5-command-centers-work/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/public-safety-software-colombia/"
+      ],
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 11.0,
+      "page": "https://kabatone.com/es/resources/public-safety-software-colombia/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/public-safety-software-small-cities/"
+      ],
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 8.6,
+      "page": "https://kabatone.com/es/resources/public-safety-software-small-cities/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/smart-city-platform-guide/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "page": "https://kabatone.com/es/resources/smart-city-platform-guide/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-incident-management-software/"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6.8,
+      "page": "https://kabatone.com/es/resources/what-is-incident-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-situational-awareness-software/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3,
+      "page": "https://kabatone.com/es/resources/what-is-situational-awareness-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/resources/what-is-video-management-software/"
+      ],
+      "clicks": 0,
+      "impressions": 107,
+      "ctr": 0,
+      "position": 9.6,
+      "page": "https://kabatone.com/es/resources/what-is-video-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/avigilon/"
+      ],
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 9.6,
+      "page": "https://kabatone.com/es/vs/avigilon/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/fusus/"
+      ],
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 7.4,
+      "page": "https://kabatone.com/es/vs/fusus/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/genetec/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "page": "https://kabatone.com/es/vs/genetec/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/mark43/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "page": "https://kabatone.com/es/vs/mark43/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/nice-systems/"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8,
+      "page": "https://kabatone.com/es/vs/nice-systems/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/prepared911"
+      ],
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 8,
+      "page": "https://kabatone.com/es/vs/prepared911"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/rapidssos/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5,
+      "page": "https://kabatone.com/es/vs/rapidssos/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/es/vs/verkada/"
+      ],
+      "clicks": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "position": 7.0,
+      "page": "https://kabatone.com/es/vs/verkada/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/industries/logistics/"
+      ],
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 17.4,
+      "page": "https://kabatone.com/industries/logistics/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/industries/ports/"
+      ],
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 10.9,
+      "page": "https://kabatone.com/industries/ports/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/integrations/drones/"
+      ],
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 11.4,
+      "page": "https://kabatone.com/integrations/drones/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/integrations/lpr/"
+      ],
+      "clicks": 0,
+      "impressions": 58,
+      "ctr": 0,
+      "position": 18,
+      "page": "https://kabatone.com/integrations/lpr/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/integrations/sensor-fusion/"
+      ],
+      "clicks": 0,
+      "impressions": 34,
+      "ctr": 0,
+      "position": 6.4,
+      "page": "https://kabatone.com/integrations/sensor-fusion/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/k-connect/"
+      ],
+      "clicks": 0,
+      "impressions": 124,
+      "ctr": 0,
+      "position": 11.0,
+      "page": "https://kabatone.com/k-connect/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/k-dispatch/"
+      ],
+      "clicks": 0,
+      "impressions": 302,
+      "ctr": 0,
+      "position": 28.2,
+      "page": "https://kabatone.com/k-dispatch/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/k-safety/"
+      ],
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 6,
+      "page": "https://kabatone.com/k-safety/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/k-traffic/"
+      ],
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 7.1,
+      "page": "https://kabatone.com/k-traffic/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/k-video/"
+      ],
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 6.6,
+      "page": "https://kabatone.com/k-video/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/911-call-center-software-guide/"
+      ],
+      "clicks": 0,
+      "impressions": 90,
+      "ctr": 0,
+      "position": 18.2,
+      "page": "https://kabatone.com/resources/911-call-center-software-guide/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/ai-in-public-safety/"
+      ],
+      "clicks": 0,
+      "impressions": 86,
+      "ctr": 0,
+      "position": 9.8,
+      "page": "https://kabatone.com/resources/ai-in-public-safety/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/build-rtcc-implementation-guide/"
+      ],
+      "clicks": 0,
+      "impressions": 60,
+      "ctr": 0,
+      "position": 9.9,
+      "page": "https://kabatone.com/resources/build-rtcc-implementation-guide/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/c5-command-centers-mexico-2026/"
+      ],
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 8.2,
+      "page": "https://kabatone.com/resources/c5-command-centers-mexico-2026/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/public-safety-software-colombia/"
+      ],
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 5.5,
+      "page": "https://kabatone.com/resources/public-safety-software-colombia/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/public-safety-software-peru/"
+      ],
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 10.6,
+      "page": "https://kabatone.com/resources/public-safety-software-peru/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/public-safety-software-small-cities/"
+      ],
+      "clicks": 0,
+      "impressions": 145,
+      "ctr": 0,
+      "position": 5.9,
+      "page": "https://kabatone.com/resources/public-safety-software-small-cities/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-a-command-center/"
+      ],
+      "clicks": 0,
+      "impressions": 65,
+      "ctr": 0,
+      "position": 16.2,
+      "page": "https://kabatone.com/resources/what-is-a-command-center/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-a-psap/"
+      ],
+      "clicks": 0,
+      "impressions": 61,
+      "ctr": 0,
+      "position": 14.9,
+      "page": "https://kabatone.com/resources/what-is-a-psap/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-emergency-dispatch-software/"
+      ],
+      "clicks": 0,
+      "impressions": 224,
+      "ctr": 0,
+      "position": 15.0,
+      "page": "https://kabatone.com/resources/what-is-emergency-dispatch-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/resources/what-is-incident-management-software/"
+      ],
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 15.8,
+      "page": "https://kabatone.com/resources/what-is-incident-management-software/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/avigilon/"
+      ],
+      "clicks": 0,
+      "impressions": 168,
+      "ctr": 0,
+      "position": 10.0,
+      "page": "https://kabatone.com/vs/avigilon/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/cad/"
+      ],
+      "clicks": 0,
+      "impressions": 143,
+      "ctr": 0,
+      "position": 8.2,
+      "page": "https://kabatone.com/vs/cad/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/centralsquare/"
+      ],
+      "clicks": 0,
+      "impressions": 43,
+      "ctr": 0,
+      "position": 8.0,
+      "page": "https://kabatone.com/vs/centralsquare/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/mark43/"
+      ],
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 14.1,
+      "page": "https://kabatone.com/vs/mark43/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/nice-systems/"
+      ],
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 6.9,
+      "page": "https://kabatone.com/vs/nice-systems/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/peregrine/"
+      ],
+      "clicks": 0,
+      "impressions": 1632,
+      "ctr": 0,
+      "position": 9.5,
+      "page": "https://kabatone.com/vs/peregrine/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/rapidssos/"
+      ],
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 8.1,
+      "page": "https://kabatone.com/vs/rapidssos/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/tyler-technologies/"
+      ],
+      "clicks": 0,
+      "impressions": 78,
+      "ctr": 0,
+      "position": 5.9,
+      "page": "https://kabatone.com/vs/tyler-technologies/"
+    },
+    {
+      "keys": [
+        "https://kabatone.com/vs/verkada/"
+      ],
+      "clicks": 0,
+      "impressions": 294,
+      "ctr": 0,
+      "position": 9.4,
+      "page": "https://kabatone.com/vs/verkada/"
+    }
+  ],
+  "totals": {
+    "clicks": 127,
+    "impressions": 17441,
+    "ctr": 0.73,
+    "position": 0
+  },
+  "quick_wins": [],
+  "row_count": 70,
+  "error": null,
+  "date_range": {
+    "start": "2026-04-30",
+    "end": "2026-05-25"
+  }
+}

@@ -25,6 +25,20 @@ export const violenceScenario: ScenarioConfig = {
       backgroundImage: '/demo/violence/stage-1-detect.jpg',
       backgroundFit: 'cover',
       layout: 'default',
+      detectFlow: {
+        nodes: [
+          { id: 'capture',  title: 'CAPTURE',           subtitle: 'CAM 7 · Central Plaza',    icon: 'videocam',    type: 'sensor' },
+          { id: 'behavior', title: 'BEHAVIOR ANALYSIS', subtitle: 'YOLO · confidence 94.7%',  icon: 'visibility',  type: 'ai' },
+          { id: 'threat',   title: 'THREAT RULES',      subtitle: 'Aggression + weapon hint', icon: 'gavel',       type: 'rule' },
+          { id: 'score',    title: 'AI PRIORITIZATION', subtitle: '3 subjects · 40+ civs',    icon: 'auto_awesome',type: 'ai' },
+          { id: 'event',    title: 'EVENT TRIGGERED',   subtitle: 'Violence detected · HIGH', icon: 'bolt',        type: 'event' },
+        ],
+        branch: {
+          fromNodeId: 'threat',
+          node: { id: 'retro', title: 'RETROSPECTIVE LOG', subtitle: 'Normal behavior · stored', icon: 'inventory_2', type: 'retro' },
+        },
+        terminalLabel: '→ STAGE 02: UNDERSTAND',
+      },
     },
     {
       id: 'understand',
@@ -45,6 +59,12 @@ export const violenceScenario: ScenarioConfig = {
       backgroundFit: 'contain',
       pipImage: '/demo/violence/stage-1-detect.jpg',
       pipLabel: 'CAM 7 · CENTRAL PLAZA',
+      understandMap: {
+        incidentCoords: [29.7604, -95.3698],
+        label: 'THREAT ZONE',
+        unitCoords: [29.7680, -95.3800],
+        unitLabel: '04-DELTA NEARBY',
+      },
       layout: 'default',
     },
     {
@@ -53,7 +73,7 @@ export const violenceScenario: ScenarioConfig = {
       label: 'DECIDE',
       stageLabel: 'STAGE 03: DECIDE — RESPONSE ASSIGNED',
       timestamp: '15:23:05',
-      headline: 'UNIT ASSIGNED: 04-DELTA',
+      headline: 'THREAT RESPONSE PROTOCOL',
       description:
         'AI evaluated threat level, unit proximity, and civilian density. Tactical brief auto-generated and pushed to field officer in 3 seconds.',
       dataPoints: [
@@ -68,7 +88,55 @@ export const violenceScenario: ScenarioConfig = {
       pipLabel: 'MULTI-CAM TRACK · ACTIVE',
       pip2Image: '/demo/violence/stage-1-detect.jpg',
       pip2Label: 'CAM 7 · CENTRAL PLAZA',
-      layout: 'default',
+      layout: 'protocol',
+      decideMap: {
+        incidentCoords: [29.7604, -95.3698],
+        units: [
+          { id: '04-DELTA',   status: 'ASSIGNED',  active: true,  coords: [29.7680, -95.3800] },
+          { id: '09-ECHO',    status: 'EN ROUTE',  active: true,  coords: [29.7520, -95.3600] },
+          { id: '02-BRAVO',   status: 'STANDBY',   active: false, coords: [29.7700, -95.3500] },
+          { id: '07-ALPHA',   status: 'AVAILABLE', active: false, coords: [29.7450, -95.3900] },
+        ],
+        cameras: [
+          { label: 'CAM 7 · CENTRAL PLAZA',   image: '/demo/violence/stage-1-detect.jpg',   alert: true },
+          { label: 'MULTI-CAM TRACK · ACTIVE', image: '/demo/violence/stage-2-understand.jpg' },
+        ],
+      },
+      protocolSteps: [
+        { id: 1, text: 'VIOLENCE DETECTED — CAM 7 · Central Plaza · AI confidence 94.7% · weapon indicator elevated', status: 'complete' },
+        { id: 2, text: 'MULTI-CAM LOCK — 3 subjects tracked simultaneously · 1 armed confirmed', status: 'complete' },
+        { id: 3, text: 'CIVILIAN RISK MAPPED — 12m radius · 40+ civilians in zone · evacuation advisory issued', status: 'complete' },
+        { id: 4, text: 'UNIT SCORED — 04-Delta selected · 0.8 mi · tactical unit · closest available', status: 'complete' },
+        { id: 5, text: 'TACTICAL BRIEF SENT — Live cam feed · subject count · risk zone coords pushed to officer', status: 'active' },
+        { id: 6, text: 'BACKUP UNIT ASSIGNED — 09-Echo · 1.2 mi · en route for perimeter control', status: 'pending' },
+      ],
+      decisionTree: {
+        tree: [
+          { label: 'Violence Detected',  detail: 'CAM 7 · Central Plaza · AI confidence 94.7%', icon: 'warning' },
+          { label: 'Armed Subject',      detail: 'Weapon confirmed · 3 suspects tracked',        icon: 'gps_fixed' },
+          { label: 'Civilians at Risk',  detail: '40+ people in 12m radius zone',                icon: 'groups' },
+        ],
+        options: [
+          { id: 'tactical',  title: 'Tactical Response',   description: 'Dispatch 04-Delta · Code 3 · ETA 1:12',  icon: 'local_police', recommended: true },
+          { id: 'perimeter', title: 'Establish Perimeter', description: 'Block access routes · contain the area', icon: 'block' },
+          { id: 'evacuate',  title: 'Evacuate Zone',       description: 'Issue advisory · clear 12m radius',      icon: 'exit_to_app' },
+          { id: 'backup',    title: 'Request Backup',      description: 'Escalate to tactical · more units',      icon: 'add_call' },
+        ],
+      },
+      videoWall: {
+        title: 'Area Camera Network',
+        tiles: [
+          { id: 'CAM-07',  label: 'Central Plaza',  image: '/demo/violence/stage-1-detect.jpg',     status: 'tracking' },
+          { id: 'CAM-12',  label: 'South Entrance', image: '/demo/violence/stage-2-understand.jpg',  status: 'tracking' },
+          { id: 'CAM-21',  label: 'Plaza North',      image: '/demo/violence/cctv-plaza-north.jpeg',    status: 'monitoring' },
+          { id: 'CAM-33',  label: 'Main St',         image: '/demo/violence/cctv-main-st.jpeg',        status: 'monitoring' },
+          { id: 'CAM-48',  label: 'Commerce St',     image: '/demo/violence/cctv-commerce-st.jpeg',    status: 'monitoring' },
+          { id: 'CAM-57',  label: 'Parking Garage',  image: '/demo/violence/cctv-parking-garage.jpeg', status: 'monitoring' },
+          { id: 'CAM-63',  label: 'Plaza East',      image: '/demo/violence/cctv-plaza-east.jpeg',     status: 'idle' },
+          { id: 'CAM-74',  label: 'Boulevard',       image: '/demo/violence/cctv-boulevard.jpeg',      status: 'idle' },
+          { id: 'CAM-89',  label: 'Alley West',      image: '/demo/violence/cctv-alley-west.jpeg',     status: 'idle' },
+        ],
+      },
     },
     {
       id: 'act',
@@ -99,11 +167,11 @@ export const violenceScenario: ScenarioConfig = {
         { key: 'THREAT LEVEL', value: 'HIGH' },
       ],
       splitUnits: [
-        { id: '04-DELTA',   role: 'RESPONSE PRIMARY',  status: 'ASSIGNED',  active: true },
-        { id: '09-ECHO',    role: 'BACKUP EN ROUTE',    status: 'EN ROUTE',  active: true },
-        { id: '02-BRAVO',   role: 'STATIONARY',          status: 'STANDBY',   active: false },
-        { id: '07-ALPHA',   role: 'R.VEGA · 2.1 MI',    status: 'AVAILABLE', active: false },
-        { id: '11-CHARLIE', role: 'S.KIM · 3.8 MI',     status: 'AVAILABLE', active: false },
+        { id: '04-DELTA',   type: 'police', role: 'RESPONSE PRIMARY · PATROL', status: 'ASSIGNED',  active: true },
+        { id: '09-ECHO',    type: 'police', role: 'BACKUP PATROL · EN ROUTE',  status: 'EN ROUTE',  active: true },
+        { id: 'K9-4',       type: 'k9',     role: 'K9 · SUSPECT TRACK',        status: 'EN ROUTE',  active: true },
+        { id: 'EMS-9',      type: 'ems',    role: 'MEDICAL STANDBY',           status: 'STANDBY',   active: false },
+        { id: '11-CHARLIE', type: 'police', role: 'S.KIM · 3.8 MI',            status: 'AVAILABLE', active: false },
       ],
       splitMapCoords: {
         incident: [29.7604, -95.3698],

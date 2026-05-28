@@ -214,6 +214,24 @@ export default async function WhatIsACommandCenterPage({
                 ? 'Un centro de mando (C2/C3/C4/C5) es una instalación centralizada donde operadores coordinan la respuesta a emergencias, videovigilancia, despacho y operaciones de campo en una ciudad o región. Integra múltiples sistemas — cámaras, sensores, CAD, GIS, comunicaciones de radio y aplicaciones móviles — en un solo entorno operativo que permite detectar, evaluar y responder a incidentes de forma coordinada.'
                 : 'A command center (C2/C3/C4/C5) is a centralized facility where operators coordinate emergency response, video surveillance, dispatch, and field operations across a city or region. It integrates multiple systems — cameras, sensors, CAD, GIS, radio communications, and mobile apps — into a single operational environment that enables coordinated incident detection, assessment, and response.'}
             </p>
+
+            {es && (
+              <div style={{
+                marginTop: '8px',
+                padding: '20px 24px',
+                borderLeft: `3px solid ${ACCENT}`,
+                background: 'rgba(6,182,212,0.05)',
+                borderRadius: '0 8px 8px 0',
+                maxWidth: '720px',
+              }}>
+                <p style={{ fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.18em', color: ACCENT, marginBottom: '8px' }}>
+                  ¿Qué significa C5?
+                </p>
+                <p style={{ fontSize: '15px', color: 'var(--dim)', lineHeight: 1.7, marginBottom: '0' }}>
+                  <strong style={{ color: 'var(--white)' }}>C5</strong> es la sigla de <strong style={{ color: 'var(--white)' }}>Centro de Comando, Control, Comunicaciones, Cómputo y Contacto Ciudadano</strong> — el nivel más alto de integración tecnológica en centros de mando de seguridad pública en México y Latinoamérica. Un C5 unifica videovigilancia con analítica de IA, despacho CAD multi-agencia, GIS operativo, gestión de tráfico y atención ciudadana (911) en una sola plataforma operativa.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
