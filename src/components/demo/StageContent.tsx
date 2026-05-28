@@ -44,11 +44,6 @@ export default function StageContent({
         {headline}
       </h1>
 
-      {/* Description */}
-      <p className="mb-4 text-sm leading-relaxed" style={{ color: '#7A9DB8', maxWidth: '480px' }}>
-        {description}
-      </p>
-
       {/* Data points */}
       <div className="flex gap-6">
         {dataPoints.map((dp) => (

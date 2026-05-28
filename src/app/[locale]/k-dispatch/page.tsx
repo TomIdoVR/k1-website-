@@ -28,8 +28,8 @@ export default async function KDispatchPage({
   const content = {
     eyebrow: es ? 'Despacho de Emergencias · K-Dispatch' : 'Emergency Dispatch · K-Dispatch',
     h1: es
-      ? 'Sistema CAD y Despacho de Emergencias de Nueva Generación'
-      : 'AI-Powered Emergency Dispatch and CAD System',
+      ? 'Software de Despacho 911 y Sistema CAD para Centros de Emergencias'
+      : 'AI-Powered 911 CAD Dispatch Software for Emergency Centers',
     subtitle: es
       ? 'Plataforma de Despacho Asistida por Computadora (CAD) que optimiza la respuesta a emergencias, mejora la comunicación multiagencia y se integra con todas las tecnologías de seguridad pública.'
       : 'AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.',
@@ -379,6 +379,39 @@ export default async function KDispatchPage({
                 {es ? 'Software de seguridad pública para México' : 'Public Safety Software for Mexico'}
                 <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
                   {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/911-call-center-software-guide" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Guía de software para centros 911' : '911 call center software guide'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/what-is-cad-dispatch-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es el software CAD de despacho?' : 'What Is CAD Dispatch Software?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía de referencia →' : 'Reference guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Mejor software CAD en 2026' : 'Best CAD Dispatch Software in 2026'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía del comprador →' : 'Buyer\'s guide →'}
                 </span>
               </Link>
             </div>

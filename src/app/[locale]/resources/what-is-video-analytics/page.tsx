@@ -56,6 +56,11 @@ export default async function WhatIsVideoAnalyticsPage({
           answer:
             'Para un despliegue municipal de 200-500 cámaras con analítica de video en tiempo real, se necesita: servidores con GPUs para procesamiento (o infraestructura cloud con latencia controlada), red de transmisión con ancho de banda suficiente (mínimo 2-4 Mbps por cámara a 1080p), almacenamiento para retención de video (30-90 días según normativa), y una plataforma de gestión como KabatOne que unifique las alertas de analítica con el mapa operativo. El dimensionamiento depende de si se usa edge analytics en las cámaras o procesamiento centralizado.',
         },
+        {
+          question: '¿Qué es un sistema de analítica de video (VAS)?',
+          answer:
+            'Un sistema de analítica de video (VAS, por sus siglas en inglés) es una plataforma que combina grabación de video con procesamiento de inteligencia artificial para detectar eventos automáticamente — sin que un operador tenga que monitorear cada cámara en forma continua. A diferencia de un sistema VMS básico que solo graba y reproduce, un sistema de analítica de video ejecuta modelos de IA sobre el flujo en vivo: detección de intrusión, reconocimiento de placas (LPR), análisis de comportamiento y alertas en tiempo real. Para centros de mando de seguridad pública, un sistema de analítica de video reduce el tiempo de detección de incidentes de minutos a segundos.',
+        },
       ]
     : [
         {
@@ -88,6 +93,11 @@ export default async function WhatIsVideoAnalyticsPage({
           answer:
             'For a municipal deployment of 200–500 cameras with real-time video analytics, you need: GPU-equipped servers for processing (or cloud infrastructure with controlled latency), a transmission network with sufficient bandwidth (minimum 2–4 Mbps per camera at 1080p), storage for video retention (30–90 days per regulation), and a management platform like KabatOne that unifies analytics alerts with the operational map. Sizing depends on whether edge analytics is used at the cameras or centralized processing.',
         },
+        {
+          question: 'What is a video analytics system?',
+          answer:
+            'A video analytics system is a platform that combines video recording with artificial intelligence processing to automatically detect events — without an operator monitoring every camera continuously. Unlike a basic VMS that only records and plays back, a video analytics system runs AI models on the live stream: intrusion detection, license plate recognition (LPR), behavioral analysis, and real-time alerts. For public safety command centers, a video analytics system reduces incident detection time from minutes to seconds by surfacing only relevant events rather than requiring manual camera review.',
+        },
       ]
 
   const faqSchema = faqPageSchema(faqs)
@@ -99,7 +109,7 @@ export default async function WhatIsVideoAnalyticsPage({
     es
       ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
       : 'https://kabatone.com/resources/what-is-video-analytics/',
-    '2026-04-07'
+    '2026-05-18'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
@@ -178,12 +188,12 @@ export default async function WhatIsVideoAnalyticsPage({
               </span>
             </div>
             <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '.01em', color: '#f0f4f8', marginBottom: '20px' }}>
-              {es ? '¿Qué Es la Analítica de Video con IA?' : 'What Is Video Analytics?'}
+              {es ? 'Analítica de Video con Inteligencia Artificial: Cómo Funciona para Centros de Mando' : 'Artificial Intelligence Video Analytics: How It Works for Command Centers'}
             </h1>
             <p style={{ fontSize: '17px', color: '#94a3b8', lineHeight: 1.7, maxWidth: '720px', marginBottom: '32px' }}>
               {es
-                ? 'La analítica de video usa inteligencia artificial para detectar automáticamente eventos, comportamientos y objetos en las imágenes de cámaras de vigilancia, sin monitoreo humano continuo. Esta guía explica cómo funciona, qué detecta, edge vs servidor, y su integración en centros de mando.'
-                : 'Video analytics uses artificial intelligence to automatically detect events, behaviors, and objects in surveillance camera footage — without continuous human monitoring. This guide explains how it works, what it detects, edge vs server processing, and integration into command centers.'}
+                ? 'La analítica de video con IA usa aprendizaje automático para detectar eventos, objetos y comportamientos en imágenes de vigilancia de forma automática. Esta guía explica cómo funciona la analítica de video con IA, qué detecta, procesamiento edge vs servidor, e integración en centros de mando.'
+                : 'AI video analytics uses machine learning to automatically detect events, objects, and behaviors in surveillance footage — without continuous human monitoring. This guide covers how AI video analytics works, what it detects, edge vs server processing, and integration into public safety command centers.'}
             </p>
             <div style={{ fontSize: '12px', color: '#475569', lineHeight: 2 }}>
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Integraciones:' : 'Integrations:'}</span>
@@ -219,6 +229,34 @@ export default async function WhatIsVideoAnalyticsPage({
               ? 'En el contexto de seguridad pública, la analítica de video es más valiosa cuando está integrada en una plataforma unificada que correlaciona sus alertas con datos de LPR, sensores, despacho y GIS — no cuando opera como sistema aislado.'
               : 'In the context of public safety, video analytics is most valuable when integrated into a unified platform that correlates its alerts with LPR data, sensors, dispatch, and GIS — not when operating as an isolated system.'}
           </p>
+        </section>
+
+        {/* ── AI Detection Capabilities ── */}
+        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 24px 0' }}>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '28px', fontWeight: 700, color: '#f0f4f8', marginBottom: '16px' }}>
+            {es ? 'Capacidades de Detección con IA' : 'AI-Powered Detection Capabilities'}
+          </h2>
+          <p style={{ fontSize: '15px', color: '#94a3b8', lineHeight: 1.8, marginBottom: '24px' }}>
+            {es
+              ? 'Los sistemas modernos de analítica de video con IA van más allá de la detección de movimiento básica. Los modelos de aprendizaje profundo entrenados en millones de imágenes reales detectan con precisión en condiciones variables de iluminación, clima y densidad de escena.'
+              : 'Modern AI video analytics systems go far beyond basic motion detection. Deep learning models trained on millions of real-world images detect accurately across variable lighting, weather, and scene density conditions.'}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px', marginBottom: '16px' }}>
+            {[
+              { icon: '🚗', title: es ? 'LPR / Reconocimiento de Placas' : 'LPR / License Plate Recognition', desc: es ? 'Captura y cruza placas contra listas de alerta en tiempo real, incluso a alta velocidad.' : 'Captures and cross-references plates against alert lists in real time, even at high speed.' },
+              { icon: '👥', title: es ? 'Detección de Aglomeraciones' : 'Crowd Detection', desc: es ? 'Monitorea densidad y comportamiento de multitudes para alertas tempranas de disturbios.' : 'Monitors crowd density and behavior for early warning of disturbances or panic.' },
+              { icon: '🔫', title: es ? 'Detección de Armas' : 'Weapon Detection', desc: es ? 'Identifica armas de fuego y objetos peligrosos en el encuadre de la cámara.' : 'Identifies firearms and dangerous objects in the camera frame before an incident escalates.' },
+              { icon: '🚧', title: es ? 'Intrusión Perimetral' : 'Perimeter Intrusion', desc: es ? 'Detecta cruce de líneas virtuales y entrada a zonas restringidas con < 500ms de latencia.' : 'Detects virtual line crossing and restricted zone entry with sub-500ms latency.' },
+              { icon: '📦', title: es ? 'Objetos Abandonados' : 'Abandoned Objects', desc: es ? 'Alerta cuando un objeto permanece sin dueño visible por un tiempo configurable.' : 'Alerts when an object remains unattended for a configurable time threshold.' },
+              { icon: '🔍', title: es ? 'Búsqueda Forense' : 'Forensic Search', desc: es ? 'Búsqueda retroactiva por color de ropa, tipo de vehículo u otros atributos visuales.' : 'Retroactive search across hours of footage by clothing color, vehicle type, or other visual attributes.' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} style={{ background: 'rgba(168,85,247,0.06)', border: '1px solid rgba(168,85,247,0.15)', borderRadius: '8px', padding: '20px' }}>
+                <div style={{ fontSize: '24px', marginBottom: '8px' }}>{icon}</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#f0f4f8', marginBottom: '6px' }}>{title}</div>
+                <div style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.6 }}>{desc}</div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* ── Detection types ── */}
@@ -298,6 +336,7 @@ export default async function WhatIsVideoAnalyticsPage({
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
+              { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'Video Management Software' },
               { href: '/resources/what-is-lpr-license-plate-recognition', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
               { href: '/resources/what-is-gunshot-detection-software', label: es ? 'Detección de Disparos' : 'Gunshot Detection' },

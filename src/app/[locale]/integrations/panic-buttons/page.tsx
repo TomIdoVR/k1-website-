@@ -56,6 +56,16 @@ export default async function PanicButtonsIntegrationPage({
           answer:
             'En protocolos de seguridad escolar, KabatOne integra los botones de pánico de los maestros y personal administrativo con el sistema de despacho municipal. Cuando un maestro activa su botón, el centro de despacho 911 recibe automáticamente: nombre del maestro, aula exacta, plano del edificio con la ubicación marcada, feed de video de la cámara del pasillo más cercano, y protocolo de respuesta preconfigurado (lockdown, evacuación, respuesta médica). Las unidades de policía y EMS reciben la notificación simultáneamente con el despachador.',
         },
+        {
+          question: '¿Qué es una alarma de coacción (duress alarm)?',
+          answer:
+            'Una alarma de coacción o duress alarm es un mecanismo de alerta silenciosa que el personal activa discretamente cuando está bajo amenaza sin que el agresor pueda saberlo. A diferencia de una alarma audible, envía una señal silenciosa al centro de despacho con la identidad del activador, su ubicación y el feed de cámaras cercanas. Los botones de pánico integrados con KabatOne funcionan como sistemas de alarma de coacción en bancos, juzgados y hospitales donde el personal debe alertar sin generar pánico visible.',
+        },
+        {
+          question: '¿Cómo se conectan los botones de pánico con el despacho 911?',
+          answer:
+            'En KabatOne, los botones de pánico se conectan con K-Dispatch (despacho CAD) mediante protocolo IP o middleware de integración. Al activarse, el sistema crea automáticamente un incidente en el CAD con la geolocalización del activador, categoriza la respuesta según el tipo de instalación y asigna el protocolo de despacho correspondiente. El despachador ve la alerta en el mapa operativo con el video de las cámaras del área ya cargado — sin que nadie necesite llamar al 911 manualmente.',
+        },
       ]
     : [
         {
@@ -87,6 +97,16 @@ export default async function PanicButtonsIntegrationPage({
           question: 'How are panic buttons used in schools?',
           answer:
             'In school safety protocols, KabatOne integrates teacher and administrative staff panic buttons with the municipal dispatch system. When a teacher activates their button, the 911 dispatch center automatically receives: teacher name, exact classroom, building floor plan with location marked, video feed from the nearest hallway camera, and a pre-configured response protocol (lockdown, evacuation, medical response). Police and EMS units receive notification simultaneously with the dispatcher.',
+        },
+        {
+          question: 'What is a duress alarm system?',
+          answer:
+            'A duress alarm system is a silent alert mechanism that staff activate discreetly when under threat — without the aggressor knowing help was called. Unlike an audible alarm, a duress alarm sends a silent signal to the dispatch center with the activator\'s identity, exact location, and nearby camera feeds. Panic buttons integrated with KabatOne function as duress alarm systems in banks, courthouses, hospitals, and any environment where staff must alert without triggering visible panic.',
+        },
+        {
+          question: 'How do panic buttons connect to 911 dispatch?',
+          answer:
+            'On the KabatOne platform, panic buttons connect to K-Dispatch (CAD dispatch) via direct IP protocol or integration middleware. When a device activates, the system automatically creates an incident in the CAD with the activator\'s geolocation, categorizes the response based on facility type (school, hospital, bank), and assigns the corresponding dispatch protocol. The dispatcher sees the alert on the operational map with the area camera feeds already loaded — without anyone needing to call 911 manually.',
         },
       ]
 
@@ -150,7 +170,7 @@ export default async function PanicButtonsIntegrationPage({
           es ? 'Integración de Botones de Pánico para Seguridad Pública' : 'Panic Button Integration for Public Safety',
           es ? 'Cómo KabatOne integra botones de pánico físicos y wearables con despacho CAD, video y GIS para respuesta de emergencia en segundos.' : 'How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS for emergency response in seconds.',
           es ? 'https://kabatone.com/es/integrations/panic-buttons/' : 'https://kabatone.com/integrations/panic-buttons/',
-          '2026-03-21'
+          '2026-05-18'
         ))
       }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }} />

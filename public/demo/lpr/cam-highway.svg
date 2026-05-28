@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020609"/>
+      <stop offset="100%" stop-color="#071220"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1620"/>
+      <stop offset="100%" stop-color="#060e16"/>
+    </linearGradient>
+    <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2535"/>
+      <stop offset="60%" stop-color="#0f1b28"/>
+      <stop offset="100%" stop-color="#060d16"/>
+    </linearGradient>
+    <linearGradient id="rearWindow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3050" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0a1828" stop-opacity="0.95"/>
+    </linearGradient>
+    <radialGradient id="tailLeft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2200" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#cc1100" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#880000" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="tailRight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2200" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#cc1100" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#880000" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="tailGlowLeft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3300" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tailGlowRight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3300" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="groundRed" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#550000" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#00ff66" flood-opacity="0.7" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="scan" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="rgba(0,0,0,0.15)"/>
+    </pattern>
+    <clipPath id="clip"><rect width="960" height="600"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+  <!-- Sky / background -->
+  <rect width="960" height="600" fill="url(#sky)"/>
+
+  <!-- Distant road/horizon glow -->
+  <ellipse cx="480" cy="210" rx="500" ry="80" fill="#0a1f35" opacity="0.4"/>
+
+  <!-- Road surface -->
+  <path d="M0 270 L960 270 L960 600 L0 600 Z" fill="url(#road)"/>
+
+  <!-- Road lane markings (perspective) -->
+  <!-- Center divide -->
+  <line x1="480" y1="270" x2="480" y2="600" stroke="#182a3a" stroke-width="2"/>
+  <!-- Left dashes -->
+  <line x1="260" y1="290" x2="240" y2="600" stroke="#1a2e40" stroke-width="1.5" stroke-dasharray="30,25"/>
+  <!-- Right dashes -->
+  <line x1="700" y1="290" x2="720" y2="600" stroke="#1a2e40" stroke-width="1.5" stroke-dasharray="30,25"/>
+  <!-- Far edges -->
+  <line x1="80" y1="270" x2="0" y2="600" stroke="#111e2c" stroke-width="1.5"/>
+  <line x1="880" y1="270" x2="960" y2="600" stroke="#111e2c" stroke-width="1.5"/>
+
+  <!-- Red glow on ground from tail lights -->
+  <ellipse cx="480" cy="430" rx="260" ry="80" fill="url(#groundRed)"/>
+
+  <!-- === VEHICLE (rear view) === -->
+
+  <!-- Car shadow on road -->
+  <ellipse cx="480" cy="492" rx="210" ry="18" fill="#000000" opacity="0.6"/>
+
+  <!-- === BODY LOWER (bumper area) === -->
+  <path d="M260 435 Q265 480 272 490 L688 490 Q695 480 700 435 Z" fill="#0b1724"/>
+
+  <!-- Bumper bar -->
+  <rect x="268" y="455" width="424" height="38" rx="8" fill="#111e2e"/>
+  <rect x="272" y="458" width="416" height="30" rx="6" fill="#0f1a28" stroke="#1c2e40" stroke-width="1"/>
+  <!-- Bumper reflector strips -->
+  <rect x="278" y="462" width="80" height="7" rx="3" fill="#cc3300" opacity="0.7"/>
+  <rect x="602" y="462" width="80" height="7" rx="3" fill="#cc3300" opacity="0.7"/>
+  <!-- Bumper center diffuser -->
+  <rect x="380" y="462" width="200" height="20" rx="3" fill="#0a1520"/>
+  <line x1="395" y1="462" x2="395" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="415" y1="462" x2="415" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="435" y1="462" x2="435" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="455" y1="462" x2="455" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="475" y1="462" x2="475" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="495" y1="462" x2="495" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="515" y1="462" x2="515" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="535" y1="462" x2="535" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="555" y1="462" x2="555" y2="482" stroke="#162233" stroke-width="1"/>
+  <line x1="575" y1="462" x2="575" y2="482" stroke="#162233" stroke-width="1"/>
+
+  <!-- TRUNK LID -->
+  <path d="M290 380 Q290 434 292 435 L668 435 Q670 434 670 380 Z" fill="url(#carBody)"/>
+  <path d="M298 382 L662 382 Q668 383 668 388 L668 432 L292 432 Q290 428 290 388 Z" fill="none" stroke="#1e3045" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- REAR WINDOW (glass) -->
+  <path d="M330 280 Q332 250 340 245 L620 245 Q628 250 630 280 L665 378 L295 378 Z" fill="url(#rearWindow)"/>
+  <!-- Window frame -->
+  <path d="M335 280 Q337 255 342 250 L618 250 Q623 255 625 280 L658 375 L302 375 Z" fill="none" stroke="#243a52" stroke-width="2"/>
+  <!-- Reflection on glass -->
+  <path d="M345 275 Q350 258 358 254 L420 254 L405 372 L310 372 Z" fill="#ffffff" opacity="0.02"/>
+  <!-- Rear wiper -->
+  <line x1="480" y1="260" x2="445" y2="370" stroke="#0d1c2c" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- ROOF / C-PILLAR -->
+  <path d="M330 245 L295 378 L290 380 L270 380 L265 355 L305 245 Z" fill="#0c1824"/>
+  <path d="M630 245 L665 378 L670 380 L690 380 L695 355 L655 245 Z" fill="#0c1824"/>
+  <path d="M330 245 L630 245 L655 245 L640 230 L320 230 L305 245 Z" fill="#0e1e2e"/>
+
+  <!-- TAIL LIGHTS -->
+  <!-- Left tail light glow spread -->
+  <ellipse cx="310" cy="440" rx="80" ry="45" fill="url(#tailGlowLeft)" opacity="0.8"/>
+  <!-- Left tail light assembly -->
+  <path d="M268 405 Q268 460 272 462 L340 462 Q345 460 345 405 Q340 400 272 400 Z" fill="#0a0e14"/>
+  <!-- Left tail light inner -->
+  <path d="M272 408 Q272 458 275 459 L336 459 Q340 457 340 408 Q336 404 275 404 Z" fill="url(#tailLeft)" opacity="0.9"/>
+  <!-- Left tail light housing lines -->
+  <line x1="305" y1="404" x2="305" y2="459" stroke="#220000" stroke-width="1.5"/>
+  <line x1="272" y1="432" x2="340" y2="432" stroke="#220000" stroke-width="1.5"/>
+
+  <!-- Right tail light glow spread -->
+  <ellipse cx="650" cy="440" rx="80" ry="45" fill="url(#tailGlowRight)" opacity="0.8"/>
+  <!-- Right tail light assembly -->
+  <path d="M615 405 Q615 460 620 462 L692 462 Q692 460 692 405 Q688 400 620 400 Z" fill="#0a0e14"/>
+  <!-- Right tail light inner -->
+  <path d="M620 408 Q620 458 623 459 L688 459 Q688 457 688 408 Q684 404 623 404 Z" fill="url(#tailRight)" opacity="0.9"/>
+  <!-- Right tail light housing lines -->
+  <line x1="655" y1="404" x2="655" y2="459" stroke="#220000" stroke-width="1.5"/>
+  <line x1="620" y1="432" x2="688" y2="432" stroke="#220000" stroke-width="1.5"/>
+
+  <!-- LICENSE PLATE -->
+  <rect x="395" y="463" width="170" height="44" rx="3" fill="#eeece4"/>
+  <rect x="397" y="465" width="166" height="40" rx="2" fill="#f0ede5" stroke="#cccab8" stroke-width="0.5"/>
+  <rect x="401" y="468" width="158" height="34" rx="1.5" fill="none" stroke="#c0bdb0" stroke-width="0.5"/>
+  <text x="480" y="491" font-family="'Arial Black', Arial, sans-serif" font-size="20" font-weight="900" fill="#0a0a0a" text-anchor="middle" letter-spacing="2.5">7JKY442</text>
+  <text x="480" y="501" font-family="Arial, sans-serif" font-size="5.5" fill="#666" text-anchor="middle" letter-spacing="2">TEXAS</text>
+
+  <!-- === LPR DETECTION OVERLAY === -->
+  <!-- Outer animated detection box -->
+  <rect x="378" y="452" width="204" height="68" rx="2"
+    fill="rgba(0,255,100,0.04)" stroke="#00ff66" stroke-width="2.5"
+    filter="url(#glowGreen)"/>
+  <!-- Corner L-brackets - extra thick -->
+  <path d="M378 470 L378 452 L396 452" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M564 470 L564 452 L546 452" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M378 502 L378 520 L396 520" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+  <path d="M564 502 L564 520 L546 520" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="square"/>
+
+  <!-- Detection label above box -->
+  <rect x="378" y="434" width="132" height="18" rx="2" fill="#00cc55"/>
+  <text x="383" y="447" font-family="'Courier New', monospace" font-size="10" font-weight="800" fill="#000" letter-spacing="0.8">LPR HIT · 98.4%</text>
+
+  <!-- Plate readout below box -->
+  <rect x="378" y="522" width="122" height="16" rx="2" fill="rgba(0,0,0,0.8)"/>
+  <text x="383" y="533.5" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#00ff66" letter-spacing="1.5">7JKY442</text>
+
+  <!-- === HUD OVERLAYS === -->
+  <!-- STOLEN ALERT - prominent center -->
+  <rect x="348" y="195" width="264" height="34" rx="4" fill="#cc1122" opacity="0.95"/>
+  <rect x="349" y="196" width="262" height="32" rx="3.5" fill="none" stroke="#ff4455" stroke-width="1" opacity="0.8"/>
+  <text x="480" y="218" font-family="'Courier New', monospace" font-size="13" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="2">⚠ STOLEN VEHICLE</text>
+
+  <!-- Timestamp top-left -->
+  <rect x="8" y="8" width="190" height="20" rx="2" fill="rgba(0,0,0,0.7)"/>
+  <text x="14" y="22" font-family="'Courier New', monospace" font-size="10" fill="#6ab4ff" letter-spacing="0.5">12:04:01  CAM-402</text>
+
+  <!-- Camera label top-right -->
+  <rect x="720" y="8" width="232" height="20" rx="2" fill="rgba(0,0,0,0.7)"/>
+  <text x="726" y="22" font-family="'Courier New', monospace" font-size="9.5" fill="#6ab4ff" letter-spacing="0.5">HIGHWAY 45 · LANE 2</text>
+
+  <!-- LIVE badge -->
+  <rect x="8" y="34" width="58" height="17" rx="2" fill="rgba(200,15,15,0.85)"/>
+  <circle cx="19" cy="42.5" r="3.5" fill="#ff5555"/>
+  <text x="28" y="45.5" font-family="'Courier New', monospace" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">LIVE</text>
+
+  <!-- GPS data bottom-left -->
+  <rect x="8" y="562" width="205" height="32" rx="2" fill="rgba(0,0,0,0.75)"/>
+  <text x="14" y="575" font-family="'Courier New', monospace" font-size="8.5" fill="#88aacc" letter-spacing="0.3">29.7540°N  95.3910°W</text>
+  <text x="14" y="587" font-family="'Courier New', monospace" font-size="8.5" fill="#88aacc" letter-spacing="0.3">VEL: 72 MPH  HDG: 270°W</text>
+
+  <!-- Regional hotlist match bottom-right -->
+  <rect x="680" y="570" width="272" height="22" rx="2" fill="rgba(180,10,10,0.85)"/>
+  <text x="816" y="585" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">REGIONAL HOTLIST MATCH</text>
+
+  <!-- Scanlines -->
+  <rect width="960" height="600" fill="url(#scan)" opacity="0.6"/>
+
+  <!-- Vignette -->
+  <radialGradient id="vig" cx="50%" cy="50%" r="65%">
+    <stop offset="0%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="rgba(0,0,0,0.6)"/>
+  </radialGradient>
+  <rect width="960" height="600" fill="url(#vig)"/>
+  </g>
+</svg>

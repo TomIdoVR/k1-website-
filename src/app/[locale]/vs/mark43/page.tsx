@@ -477,6 +477,24 @@ export default async function VsMark43Page({
                 <span>{es ? '¿Qué Es una Plataforma de Seguridad Pública?' : 'What Is a Public Safety Platform?'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
+              <Link href="/resources/what-is-cad-dispatch-software" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Mejor Software CAD para Centros 911 en 2026' : 'Best CAD Dispatch Software for 911 Centers in 2026'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
               <Link href="/k-dispatch" style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 padding: '16px 20px', borderRadius: '8px',
