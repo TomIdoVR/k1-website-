@@ -1,3 +1,10 @@
+## [v2.209] – 2026-05-28
+### Added / Fixed
+- **SEO visual dashboard** `SEO/audits/2026-05-28-1632-audit.html` — dark KabatOne-branded HTML report with Chart.js health gauge, branch divergence chart, GSC performance charts, and color-coded P0/P1/P2 findings.
+- **Peregrine page SEO fix** — new title/meta targeting "peregrine.ai analytics reporting dashboards" (1,406 impressions, pos 9.8, 0 clicks). Updated H1 and intro para to match query intent.
+- **ES command center C5 snippet** — added definitional callout block after H1 for ES locale answering "¿qué significa C5?". Updated title/meta to include "¿Qué Es un C5?" for ~230 impressions at pos 10–11.
+- **Bahrain directory cleanup** — deleted empty `src/app/[locale]/resources/public-safety-software-bahrain/` ghost directory.
+
 ## [v2.208] – 2026-05-28
 ### Added
 - **First professional SEO audit run** — `kabatone-seo-audit` skill (wraps open-source claude-seo v2.0.0)

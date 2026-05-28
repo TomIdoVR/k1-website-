@@ -245,8 +245,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
   },
   whatIsACommandCenter: {
-    title: "Centro de Mando C2–C5: Guía para Seguridad Pública | KabatOne",
-    description: "Un centro de mando (C2/C5) coordina video, despacho, GIS y campo. Conoce cómo funcionan los centros unificados y cómo KabatOne los potencia.",
+    title: "¿Qué Es un C5? Centro de Mando C2–C5: Guía Completa | KabatOne",
+    description: "C5 = Centro de Comando, Control, Comunicaciones, Cómputo y Contacto Ciudadano. Guía completa C1–C5 sobre centros de mando para seguridad pública.",
     canonical: "https://kabatone.com/es/resources/what-is-a-command-center/",
   },
   whatIsGunshotDetectionSoftware: {

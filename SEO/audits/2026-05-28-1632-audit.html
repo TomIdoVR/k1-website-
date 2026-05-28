@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KabatOne SEO Audit — May 28, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0a1020; --bg-2: #0f1724; --panel: #131c2e; --panel-2: #182338;
+    --cyan: #06b6d4; --cyan-soft: rgba(6,182,212,0.12);
+    --blue: #3b82f6; --purple: #a855f7;
+    --red: #ef4444; --red-soft: rgba(239,68,68,0.12);
+    --amber: #f59e0b; --amber-soft: rgba(245,158,11,0.12);
+    --green: #10b981; --green-soft: rgba(16,185,129,0.12);
+    --white: #e6eef8; --muted: #8aa1b8; --dim: #c0d0e0;
+    --border: rgba(255,255,255,0.07);
+    --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  }
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html,body { min-height: 100%; background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  body {
+    background:
+      radial-gradient(900px 500px at 10% -10%, rgba(6,182,212,0.10), transparent 50%),
+      radial-gradient(800px 400px at 95% 10%, rgba(59,130,246,0.08), transparent 50%),
+      var(--bg);
+    padding: 40px 28px 100px;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  code, .mono { font-family: 'DM Mono', monospace; }
+
+  /* Header */
+  .hero { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; margin-bottom: 36px; flex-wrap: wrap; }
+  .hero-left h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .hero-left .accent { color: var(--cyan); }
+  .hero-left .sub { color: var(--muted); font-size: 14px; font-family: 'DM Mono', monospace; }
+  .hero-left .tag { display: inline-block; background: var(--cyan-soft); color: var(--cyan); padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; }
+
+  /* Score gauge */
+  .score-card { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 28px 32px; display: flex; align-items: center; gap: 28px; box-shadow: var(--shadow); }
+  .gauge-wrap { position: relative; width: 156px; height: 156px; flex-shrink: 0; }
+  .gauge-wrap canvas { width: 156px !important; height: 156px !important; }
+  .gauge-num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .gauge-num .n { font-size: 44px; font-weight: 700; line-height: 1; color: var(--white); }
+  .gauge-num .d { font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: 0.08em; }
+  .score-meta .label { font-size: 11px; color: var(--amber); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+  .score-meta .head { font-size: 18px; color: var(--white); max-width: 360px; line-height: 1.45; }
+  .score-meta .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+  /* Section headers */
+  h2.section { display: flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 700; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; margin: 44px 0 18px; }
+  h2.section::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* KPI grid */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; position: relative; overflow: hidden; }
+  .kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cyan); }
+  .kpi.danger::before { background: var(--red); }
+  .kpi.warn::before { background: var(--amber); }
+  .kpi.good::before { background: var(--green); }
+  .kpi .icon { font-size: 18px; opacity: 0.8; margin-bottom: 8px; }
+  .kpi .v { font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.1; }
+  .kpi .l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; font-weight: 500; }
+  .kpi.danger .v { color: var(--red); }
+  .kpi.warn .v { color: var(--amber); }
+  .kpi.good .v { color: var(--green); }
+  .kpi .sub { font-size: 12px; color: var(--dim); margin-top: 6px; }
+
+  /* Two-col layout */
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .row.thirds { grid-template-columns: 1fr 1fr 1fr; }
+  .row-1-2 { grid-template-columns: 1fr 2fr; }
+  .row-2-1 { grid-template-columns: 2fr 1fr; }
+
+  /* Card */
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; }
+  .card h3 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .card .h3-sub { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+
+  /* Quick wins — big colorful callouts */
+  .qw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .qw { position: relative; border-radius: 18px; padding: 26px 28px; overflow: hidden; border: 1px solid; }
+  .qw.gold { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.04)); border-color: rgba(245,158,11,0.3); }
+  .qw.cyan { background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(6,182,212,0.04)); border-color: rgba(6,182,212,0.3); }
+  .qw .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 14px; }
+  .qw.gold .badge { background: rgba(245,158,11,0.2); color: var(--amber); }
+  .qw.cyan .badge { background: rgba(6,182,212,0.2); color: var(--cyan); }
+  .qw h3 { font-size: 19px; font-weight: 600; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
+  .qw .metrics { display: flex; gap: 24px; margin: 16px 0; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .qw .metric .v { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1; }
+  .qw .metric .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; font-weight: 600; }
+  .qw .why { font-size: 13.5px; color: var(--dim); }
+  .qw .action { font-size: 13px; color: var(--white); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .qw .action strong { color: var(--cyan); }
+
+  /* Findings */
+  .findings-grid { display: grid; gap: 12px; }
+  .finding { background: var(--panel); border-left: 4px solid var(--red); border-radius: 8px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: start; }
+  .finding.p1 { border-left-color: var(--amber); }
+  .finding.p2 { border-left-color: var(--green); }
+  .finding.resolved { border-left-color: var(--green); background: var(--green-soft); }
+  .finding .id-pill { background: var(--red-soft); color: var(--red); font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; letter-spacing: 0.05em; white-space: nowrap; }
+  .finding.p1 .id-pill { background: var(--amber-soft); color: var(--amber); }
+  .finding.p2 .id-pill, .finding.resolved .id-pill { background: var(--green-soft); color: var(--green); }
+  .finding .body h3 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .finding .body p { font-size: 13px; color: var(--dim); }
+  .finding .body p strong { color: var(--white); }
+  .finding .body p code { background: rgba(255,255,255,0.05); padding: 1px 6px; border-radius: 4px; font-size: 12px; color: var(--cyan); }
+  .finding .effort { font-size: 11px; color: var(--muted); white-space: nowrap; text-align: right; }
+  .finding .effort .e-val { color: var(--white); font-weight: 600; font-size: 13px; }
+
+  /* Table */
+  table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.data th { text-align: left; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 12px 12px; border-bottom: 1px solid var(--border); }
+  table.data td { padding: 11px 12px; border-bottom: 1px solid var(--border); color: var(--dim); }
+  table.data td.num { text-align: right; font-family: 'DM Mono', monospace; font-feature-settings: "tnum"; color: var(--white); }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data tr:hover td { background: rgba(255,255,255,0.02); }
+  .pos-good { color: var(--green); font-weight: 600; }
+  .pos-warn { color: var(--amber); font-weight: 600; }
+  .pos-bad { color: var(--red); font-weight: 600; }
+
+  /* Action checklist */
+  .checklist { display: grid; gap: 12px; }
+  .check-item { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; display: grid; grid-template-columns: 36px 1fr auto; gap: 16px; align-items: center; }
+  .check-num { width: 32px; height: 32px; background: var(--cyan); color: var(--bg); font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .check-item.done .check-num { background: var(--green); }
+  .check-item .body h4 { font-size: 14px; font-weight: 600; color: var(--white); }
+  .check-item .body p { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .check-item .body code { background: rgba(255,255,255,0.05); padding: 1px 6px; border-radius: 4px; font-size: 11.5px; color: var(--cyan); }
+  .check-item.done .body h4 { text-decoration: line-through; color: var(--muted); }
+  .check-item .t { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+  /* Footer */
+  .footer { color: var(--muted); font-size: 11.5px; margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); font-family: 'DM Mono', monospace; text-align: center; line-height: 1.7; }
+
+  /* Charts wrappers */
+  .chart-wrap { position: relative; height: 240px; }
+  .chart-wrap.tall { height: 320px; }
+
+  @media (max-width: 900px) {
+    .row, .row.thirds, .row-1-2, .row-2-1, .qw-grid, .kpi-grid { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>SEO Audit <span class="accent">·</span> KabatOne</h1>
+    <div class="sub">2026-05-28 · kabatone.com · kabatone-seo-audit skill v1</div>
+    <div class="tag">First professional audit run</div>
+  </div>
+  <div class="score-card">
+    <div class="gauge-wrap">
+      <canvas id="scoreGauge"></canvas>
+      <div class="gauge-num"><div class="n">58</div><div class="d">/ 100</div></div>
+    </div>
+    <div class="score-meta">
+      <div class="label">Health · Needs intervention</div>
+      <div class="head">One 5-minute action (merge nextjs → main) jumps the score to ~82.</div>
+      <div class="note">Site is generating real organic signal — 11.5k impressions in 28d — but 95% of clicks come from brand. Non-brand traffic is bottled up behind the deploy gap.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADLINE KPIs -->
+<h2 class="section">⬢ The numbers at a glance</h2>
+<div class="kpi-grid">
+  <div class="kpi danger">
+    <div class="icon">⚠️</div>
+    <div class="v">50</div>
+    <div class="l">days production is behind</div>
+    <div class="sub">main @ v1.53 (Apr 8) · nextjs @ v2.208</div>
+  </div>
+  <div class="kpi danger">
+    <div class="icon">🌐</div>
+    <div class="v">4 / 125</div>
+    <div class="l">country pages live on prod</div>
+    <div class="sub">121 return 404 (built, not deployed)</div>
+  </div>
+  <div class="kpi warn">
+    <div class="icon">🔗</div>
+    <div class="v">24</div>
+    <div class="l">dead URLs in prod sitemap</div>
+    <div class="sub">wastes crawl budget, signals neglect</div>
+  </div>
+  <div class="kpi good">
+    <div class="icon">📊</div>
+    <div class="v">11,564</div>
+    <div class="l">28-day impressions</div>
+    <div class="sub">723 unique queries, 70 pages</div>
+  </div>
+</div>
+
+<!-- QUICK WINS -->
+<h2 class="section">⚡ Two quick wins surfaced by GSC</h2>
+<div class="qw-grid">
+
+  <div class="qw gold">
+    <div class="badge">🏆 Highest-leverage move on the site</div>
+    <h3>/vs/peregrine/ is sitting on page 1 with zero clicks</h3>
+    <div class="metrics">
+      <div class="metric"><div class="v">1,406</div><div class="l">impressions (28d)</div></div>
+      <div class="metric"><div class="v">9.8</div><div class="l">avg position</div></div>
+      <div class="metric"><div class="v">0</div><div class="l">clicks</div></div>
+    </div>
+    <div class="why">Ranking position 10 on "peregrine.ai analytics reporting dashboards" — highest-volume non-brand keyword KabatOne ranks for. Title/snippet doesn't convert. GSC also flagged this page with <strong>−82% impressions</strong> (slipping right now).</div>
+    <div class="action"><strong>Action:</strong> Protect first (recent drop), then optimize title + meta description + opening paragraph. Push from #10 → #5 = ~hundreds of clicks/month.</div>
+  </div>
+
+  <div class="qw cyan">
+    <div class="badge">🇪🇸 Spanish cluster on page 1/2 border</div>
+    <h3>"C5" definitional queries · 230 impressions, zero clicks</h3>
+    <div class="metrics">
+      <div class="metric"><div class="v">230</div><div class="l">combined impressions</div></div>
+      <div class="metric"><div class="v">10.5</div><div class="l">avg position</div></div>
+      <div class="metric"><div class="v">4</div><div class="l">query variants</div></div>
+    </div>
+    <div class="why">"que significa c5", "c5 que es", "c5 significado", "c5 que significa" — all on the page 1/2 boundary. Currently ranking via EN page; Spanish target page exists but isn't winning the cluster.</div>
+    <div class="action"><strong>Action:</strong> Add a definitional snippet block at the top of <code>/es/resources/what-is-a-command-center/</code>. Featured-snippet style. Likely captures the cluster to top 5.</div>
+  </div>
+
+</div>
+
+<!-- BRANCH GAP -->
+<h2 class="section">🚨 The deploy gap (one chart, one finding)</h2>
+<div class="row row-2-1">
+  <div class="card">
+    <h3>main branch is 259 commits behind nextjs</h3>
+    <div class="h3-sub">Every SEO improvement since v1.53 exists only on staging</div>
+    <div class="chart-wrap"><canvas id="branchChart"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>What's stuck on staging</h3>
+    <div class="h3-sub">Built but not on kabatone.com</div>
+    <table class="data" style="margin-top:6px">
+      <tr><td>Country market guides</td><td class="num" style="color:var(--red)">121</td></tr>
+      <tr><td>Resource pages built</td><td class="num">66</td></tr>
+      <tr><td>Metadata fixes</td><td class="num">100+</td></tr>
+      <tr><td>Schema additions</td><td class="num">20+</td></tr>
+      <tr><td>GEO citation guides</td><td class="num">9</td></tr>
+      <tr><td>Versions queued</td><td class="num">v1.53 → v2.208</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- GSC PERFORMANCE -->
+<h2 class="section">📈 GSC performance · 28 days</h2>
+<div class="kpi-grid">
+  <div class="kpi"><div class="v">11,564</div><div class="l">impressions</div></div>
+  <div class="kpi"><div class="v">84</div><div class="l">clicks</div></div>
+  <div class="kpi warn"><div class="v">0.73%</div><div class="l">CTR (low — target 2%+)</div></div>
+  <div class="kpi"><div class="v">723</div><div class="l">unique queries</div></div>
+</div>
+
+<div class="row" style="margin-top:20px">
+  <div class="card">
+    <h3>Top 10 queries by impressions</h3>
+    <div class="h3-sub">Where Google is showing the site (volume opportunity)</div>
+    <div class="chart-wrap tall"><canvas id="qImprChart"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>Where the clicks come from</h3>
+    <div class="h3-sub">95% of clicks are branded · non-brand near zero</div>
+    <div class="chart-wrap tall"><canvas id="clicksMixChart"></canvas></div>
+  </div>
+</div>
+
+<div class="row" style="margin-top:20px">
+  <div class="card">
+    <h3>Striking-distance keywords</h3>
+    <div class="h3-sub">Position 5–20, ≥10 impressions · quick wins live here</div>
+    <table class="data">
+      <thead><tr><th>Query</th><th style="text-align:right">Impr</th><th style="text-align:right">Position</th></tr></thead>
+      <tbody>
+        <tr><td>peregrine.ai analytics reporting dashboards</td><td class="num">1,406</td><td class="num pos-good">9.8</td></tr>
+        <tr><td>video analytics surveillance</td><td class="num">252</td><td class="num pos-warn">16.9</td></tr>
+        <tr><td>video analytics camera</td><td class="num">144</td><td class="num pos-warn">15.3</td></tr>
+        <tr><td>vms cctv</td><td class="num">76</td><td class="num pos-warn">18.6</td></tr>
+        <tr><td>que significa c5</td><td class="num">75</td><td class="num pos-good">11.0</td></tr>
+        <tr><td>c5 que es</td><td class="num">59</td><td class="num pos-good">10.5</td></tr>
+        <tr><td>c5 significado</td><td class="num">56</td><td class="num pos-good">10.2</td></tr>
+        <tr><td>artificial intelligence video analytics</td><td class="num">55</td><td class="num pos-warn">16.4</td></tr>
+        <tr><td>what is video analytics?</td><td class="num">48</td><td class="num pos-good">6.1</td></tr>
+        <tr><td>what is vms software</td><td class="num">40</td><td class="num pos-warn">18.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Top pages by clicks</h3>
+    <div class="h3-sub">Only 70 pages are getting any impressions at all</div>
+    <table class="data">
+      <thead><tr><th>Page</th><th style="text-align:right">Clicks</th><th style="text-align:right">Impr</th><th style="text-align:right">Pos</th></tr></thead>
+      <tbody>
+        <tr><td>/</td><td class="num">56</td><td class="num">394</td><td class="num pos-good">3.5</td></tr>
+        <tr><td>/es/</td><td class="num">47</td><td class="num">214</td><td class="num pos-good">4.5</td></tr>
+        <tr><td>/resources/what-is-video-management-software/</td><td class="num">4</td><td class="num">3,471</td><td class="num pos-bad">35.0</td></tr>
+        <tr><td>/es/resources/public-safety-software-peru/</td><td class="num">3</td><td class="num">30</td><td class="num pos-good">8.1</td></tr>
+        <tr><td>/resources/what-is-video-analytics/</td><td class="num">3</td><td class="num">6,120</td><td class="num pos-bad">27.2</td></tr>
+        <tr><td>/es/resources/what-is-a-command-center/</td><td class="num">2</td><td class="num">152</td><td class="num pos-good">7.9</td></tr>
+        <tr><td>/integrations/panic-buttons/</td><td class="num">1</td><td class="num">147</td><td class="num pos-good">10.6</td></tr>
+        <tr><td>/resources/how-c5-command-centers-work/</td><td class="num">1</td><td class="num">275</td><td class="num pos-good">9.4</td></tr>
+        <tr><td>/resources/psim-vs-unified-platform/</td><td class="num">1</td><td class="num">78</td><td class="num pos-good">7.1</td></tr>
+        <tr><td>/es/integrations/lpr/</td><td class="num">1</td><td class="num">33</td><td class="num pos-warn">13.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FINDINGS -->
+<h2 class="section">🔎 Findings · 3 P0, 3 P1, 2 P2</h2>
+<div class="findings-grid">
+
+  <div class="finding">
+    <div class="id-pill">P0-1</div>
+    <div class="body">
+      <h3>Production frozen for 50 days</h3>
+      <p><strong>What:</strong> main HEAD <code>950b5f2</code> from 2026-04-08 (v1.53). nextjs is 259 commits ahead at v2.208. &nbsp;<strong>Fix:</strong> <code>git checkout main && git merge --ff-only nextjs && git push origin main</code></p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">5 min</div></div>
+  </div>
+
+  <div class="finding">
+    <div class="id-pill">P0-2</div>
+    <div class="body">
+      <h3>121 of 125 country pages return 404 on production</h3>
+      <p>Only Colombia, Mexico-municipalities, Peru, Small-cities are live. Resolved by P0-1.</p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">— (subsumed)</div></div>
+  </div>
+
+  <div class="finding">
+    <div class="id-pill">P0-3</div>
+    <div class="body">
+      <h3>24 dead URLs in production sitemap</h3>
+      <p>Production sitemap advertises 32 country-page URLs; 24 of those 404. Resolved by P0-1 (nextjs sitemap.ts is correct).</p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">— (subsumed)</div></div>
+  </div>
+
+  <div class="finding p1">
+    <div class="id-pill">P1-1</div>
+    <div class="body">
+      <h3>NEW: /vs/peregrine/ — 1,406 impressions, 0 clicks (-82% trend)</h3>
+      <p>Page is on page 1 (pos 9.8) for the highest-volume non-brand keyword. CTR collapsing. Title/meta/intro paragraph rewrite is highest-leverage action.</p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">~1 hr</div></div>
+  </div>
+
+  <div class="finding p1">
+    <div class="id-pill">P1-2</div>
+    <div class="body">
+      <h3>NEW: Spanish "C5" cluster on page 1/2 border</h3>
+      <p>~230 combined impressions at positions 10–11. Add definitional snippet block to <code>/es/resources/what-is-a-command-center/</code>.</p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">~30 min</div></div>
+  </div>
+
+  <div class="finding p1">
+    <div class="id-pill">P1-3</div>
+    <div class="body">
+      <h3>Empty public-safety-software-bahrain/ directory</h3>
+      <p>Leftover from aborted generation. <code>rmdir "src/app/[locale]/resources/public-safety-software-bahrain"</code></p>
+    </div>
+    <div class="effort"><div>Effort</div><div class="e-val">10 sec</div></div>
+  </div>
+
+  <div class="finding resolved">
+    <div class="id-pill">✓ Resolved</div>
+    <div class="body">
+      <h3>P1-prev: GSC auth (via OAuth flow) · P1-prev: unpushed commits (pushed in v2.208)</h3>
+      <p>Two P1s closed during this audit session.</p>
+    </div>
+    <div class="effort"><div></div><div class="e-val">done</div></div>
+  </div>
+
+  <div class="finding p2">
+    <div class="id-pill">P2-1</div>
+    <div class="body">
+      <h3>Hreflang served via HTTP Link headers — valid</h3>
+      <p>en, es, x-default all present. No action.</p>
+    </div>
+    <div class="effort"><div></div><div class="e-val">no action</div></div>
+  </div>
+
+  <div class="finding p2">
+    <div class="id-pill">P2-2</div>
+    <div class="body">
+      <h3>Homepage signals clean</h3>
+      <p>Title 73 chars, desc 158 chars, canonical present, 4 JSON-LD blocks, 222 KB. No on-page fixes needed.</p>
+    </div>
+    <div class="effort"><div></div><div class="e-val">no action</div></div>
+  </div>
+
+</div>
+
+<!-- NEXT ACTIONS -->
+<h2 class="section">✅ Next 5 actions · ~25 min of your time</h2>
+<div class="checklist">
+
+  <div class="check-item">
+    <div class="check-num">1</div>
+    <div class="body">
+      <h4>Merge nextjs → main · the single biggest move</h4>
+      <p>Run <code>git checkout main && git merge --ff-only nextjs && git push origin main</code> · Vercel auto-deploys · this single move clears P0-1, P0-2, P0-3 simultaneously and gets 121 country pages live.</p>
+    </div>
+    <div class="t">5 min</div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-num">2</div>
+    <div class="body">
+      <h4>Rewrite /vs/peregrine/ title + meta + intro</h4>
+      <p>Page is at pos 10 with 1,406 impressions / 0 clicks. Highest-leverage SEO action on the entire site. Improve CTR + push toward top 5.</p>
+    </div>
+    <div class="t">~1 hr</div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-num">3</div>
+    <div class="body">
+      <h4>Add C5 definitional snippet to /es/resources/what-is-a-command-center/</h4>
+      <p>Captures 4 Spanish queries currently at pos 10–11 (~230 impressions). Featured-snippet style block. Cluster of low-hanging fruit.</p>
+    </div>
+    <div class="t">~30 min</div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-num">4</div>
+    <div class="body">
+      <h4>Wait 2–3 weeks · re-run this audit</h4>
+      <p>Next run gets GSC week-over-week deltas, validates Peregrine recovery, measures C5 cluster movement, re-checks GEO citations on now-live country pages.</p>
+    </div>
+    <div class="t">passive</div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-num">5</div>
+    <div class="body">
+      <h4>Delete empty Bahrain directory</h4>
+      <p><code>rmdir "src/app/[locale]/resources/public-safety-software-bahrain"</code></p>
+    </div>
+    <div class="t">10 sec</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Source markdown: SEO/audits/2026-05-28-1446-audit.md · Raw data: raw-gsc-queries-2026-05-28.json + raw-gsc-pages-2026-05-28.json + raw-country-coverage-2026-05-28-1445.json<br>
+  Generated by the kabatone-seo-audit skill · wraps claude-seo v2.0.0 (MIT) · GSC pull via OAuth (omercnaani@gmail.com / siteOwner permission)
+</div>
+
+</div>
+
+<script>
+const ACCENT = '#06b6d4';
+const AMBER = '#f59e0b';
+const RED = '#ef4444';
+const GREEN = '#10b981';
+const TEXT = '#c0d0e0';
+const MUTED = '#8aa1b8';
+const GRID = 'rgba(255,255,255,0.05)';
+
+// Health gauge
+new Chart(document.getElementById('scoreGauge'), {
+  type: 'doughnut',
+  data: { datasets: [{
+    data: [58, 42],
+    backgroundColor: [AMBER, 'rgba(255,255,255,0.06)'],
+    borderWidth: 0, cutout: '78%', circumference: 360, rotation: 270
+  }]},
+  options: { plugins: { legend:{display:false}, tooltip:{enabled:false} }, animation:{ duration: 900 } }
+});
+
+// Branch divergence — number-line style
+new Chart(document.getElementById('branchChart'), {
+  type: 'bar',
+  data: {
+    labels: ['main (production)', 'origin/nextjs (staging)', 'local HEAD'],
+    datasets: [{
+      data: [1.53, 2.205, 2.208],
+      backgroundColor: [RED, AMBER, ACCENT],
+      borderRadius: 8, barThickness: 28,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend:{display:false}, tooltip: { callbacks:{ label: c => 'v' + c.parsed.x.toFixed(3) } } },
+    scales: {
+      x: { ticks:{ color:MUTED, callback: v => 'v' + v.toFixed(2) }, grid:{ color: GRID }, min: 1.4, max: 2.3 },
+      y: { ticks:{ color: '#e6eef8', font: { family: "'DM Mono', monospace", size: 12 } }, grid:{ display:false } }
+    }
+  }
+});
+
+// Top queries by impressions
+new Chart(document.getElementById('qImprChart'), {
+  type: 'bar',
+  data: {
+    labels: [
+      'peregrine.ai analytics dashboards',
+      'video analytics',
+      'ai video analytics',
+      'video management system',
+      'video analytics ai',
+      'video analytics surveillance',
+      'vms software',
+      'ai based video analytics',
+      'cctv video analytics',
+      'video content analytics'
+    ],
+    datasets: [{
+      label: 'Impressions',
+      data: [1406, 512, 441, 275, 265, 252, 246, 243, 237, 207],
+      backgroundColor: [
+        AMBER, '#3b82f6', '#3b82f6', '#3b82f6', '#3b82f6',
+        '#3b82f6', '#3b82f6', '#3b82f6', '#3b82f6', '#3b82f6'
+      ],
+      borderRadius: 4, barThickness: 16,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend:{display:false}, tooltip:{ callbacks:{ label: c => c.parsed.x.toLocaleString() + ' impressions' } } },
+    scales: {
+      x: { ticks:{ color: MUTED }, grid:{ color: GRID } },
+      y: { ticks:{ color: TEXT, font:{ size: 11 } }, grid:{ display: false } }
+    }
+  }
+});
+
+// Click mix
+new Chart(document.getElementById('clicksMixChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Branded ("kabat one" + "kabatone")', 'Non-branded'],
+    datasets: [{
+      data: [80, 4],
+      backgroundColor: [ACCENT, RED],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '60%',
+    plugins: {
+      legend: { position: 'bottom', labels: { color: TEXT, font: { size: 11 }, padding: 18, boxWidth: 12 } },
+      tooltip: { callbacks: { label: c => `${c.label}: ${c.parsed} clicks (${(c.parsed/84*100).toFixed(0)}%)` } }
+    }
+  }
+});
+</script>
+</body>
+</html>
