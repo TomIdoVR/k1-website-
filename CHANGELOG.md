@@ -1,3 +1,7 @@
+## [v2.213] – 2026-05-29
+### Added
+- **Weekly SEO agent** `scripts/seo_weekly_agent.py` — self-contained script: pulls GA4+GSC, scores keyword opportunities, generates HTML dashboard + raw JSON snapshot, commits to git. Registered as macOS LaunchAgent `com.kabatone.seo-weekly` (every Monday 08:07).
+
 ## [v2.212] – 2026-05-29
 ### SEO — Daily audit fix
 - **vs/peregrine** — shortened meta description from 181 to 151 chars (was triggering `desc_near_max` info flag in daily audit). EN only; ES was already within limits.
