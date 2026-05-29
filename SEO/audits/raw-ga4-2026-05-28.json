@@ -1,0 +1,318 @@
+{
+  "generated": "2026-05-28T17:52:48.597512",
+  "period": "Apr 30 \u2013 May 27, 2026",
+  "ga4_property": "properties/530090453",
+  "sources_current_28d": [
+    {
+      "channel": "Direct",
+      "sessions": 662,
+      "users": 585,
+      "bounce": 73.3,
+      "share": 60.3,
+      "prior_sessions": 932,
+      "delta_pct": -29.0,
+      "arrow": "\u2193"
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 347,
+      "users": 199,
+      "bounce": 51.9,
+      "share": 31.6,
+      "prior_sessions": 232,
+      "delta_pct": 49.6,
+      "arrow": "\u2191"
+    },
+    {
+      "channel": "Referral",
+      "sessions": 59,
+      "users": 35,
+      "bounce": 61.0,
+      "share": 5.4,
+      "prior_sessions": 119,
+      "delta_pct": -50.4,
+      "arrow": "\u2193"
+    },
+    {
+      "channel": "Organic Social",
+      "sessions": 19,
+      "users": 16,
+      "bounce": 73.7,
+      "share": 1.7,
+      "prior_sessions": 11,
+      "delta_pct": 72.7,
+      "arrow": "\u2191"
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": 10,
+      "users": 9,
+      "bounce": 70.0,
+      "share": 0.9,
+      "prior_sessions": 11,
+      "delta_pct": -9.1,
+      "arrow": "\u2192"
+    }
+  ],
+  "sources_prior_28d": {
+    "Direct": 932,
+    "Organic Search": 232,
+    "Referral": 119,
+    "Organic Social": 11,
+    "Unassigned": 11
+  },
+  "total_sessions_current": 1097,
+  "total_sessions_prior": 1305,
+  "weekly_trend": [
+    {
+      "week": "13",
+      "year": "2026",
+      "sessions": 92,
+      "users": 67
+    },
+    {
+      "week": "14",
+      "year": "2026",
+      "sessions": 280,
+      "users": 230
+    },
+    {
+      "week": "15",
+      "year": "2026",
+      "sessions": 274,
+      "users": 199
+    },
+    {
+      "week": "16",
+      "year": "2026",
+      "sessions": 350,
+      "users": 252
+    },
+    {
+      "week": "17",
+      "year": "2026",
+      "sessions": 304,
+      "users": 229
+    },
+    {
+      "week": "18",
+      "year": "2026",
+      "sessions": 393,
+      "users": 321
+    },
+    {
+      "week": "19",
+      "year": "2026",
+      "sessions": 293,
+      "users": 239
+    },
+    {
+      "week": "20",
+      "year": "2026",
+      "sessions": 232,
+      "users": 195
+    },
+    {
+      "week": "21",
+      "year": "2026",
+      "sessions": 264,
+      "users": 213
+    },
+    {
+      "week": "22",
+      "year": "2026",
+      "sessions": 197,
+      "users": 157
+    }
+  ],
+  "organic_pages_current": {
+    "/es": {
+      "sessions": 106,
+      "users": 72,
+      "duration": 201,
+      "bounce": 35.8
+    },
+    "/": {
+      "sessions": 88,
+      "users": 65,
+      "duration": 204,
+      "bounce": 47.7
+    },
+    "(not set)": {
+      "sessions": 48,
+      "users": 41,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/industries/ports": {
+      "sessions": 14,
+      "users": 2,
+      "duration": 441,
+      "bounce": 42.9
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 8,
+      "users": 8,
+      "duration": 129,
+      "bounce": 37.5
+    },
+    "/es/k-dispatch": {
+      "sessions": 6,
+      "users": 4,
+      "duration": 5,
+      "bounce": 66.7
+    },
+    "/es/k-safety": {
+      "sessions": 5,
+      "users": 4,
+      "duration": 9,
+      "bounce": 80.0
+    },
+    "/es/resources": {
+      "sessions": 5,
+      "users": 3,
+      "duration": 156,
+      "bounce": 80.0
+    },
+    "/resources/smart-city-platform-guide": {
+      "sessions": 5,
+      "users": 5,
+      "duration": 85,
+      "bounce": 20.0
+    },
+    "/about": {
+      "sessions": 4,
+      "users": 4,
+      "duration": 443,
+      "bounce": 25.0
+    },
+    "/es/k-video": {
+      "sessions": 4,
+      "users": 3,
+      "duration": 20,
+      "bounce": 50.0
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 4,
+      "users": 4,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 4,
+      "users": 3,
+      "duration": 7,
+      "bounce": 75.0
+    },
+    "/es/k-traffic": {
+      "sessions": 3,
+      "users": 1,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/resources/ai-in-public-safety": {
+      "sessions": 3,
+      "users": 3,
+      "duration": 34,
+      "bounce": 33.3
+    },
+    "/es/resources/public-safety-software-peru": {
+      "sessions": 3,
+      "users": 3,
+      "duration": 140,
+      "bounce": 0.0
+    },
+    "/es/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "users": 3,
+      "duration": 296,
+      "bounce": 66.7
+    },
+    "/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "users": 3,
+      "duration": 106,
+      "bounce": 33.3
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 70,
+      "bounce": 0.0
+    },
+    "/es/vs/motorola": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/k-dispatch": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 28,
+      "bounce": 50.0
+    },
+    "/k-safety": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 18,
+      "bounce": 50.0
+    },
+    "/k-video": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 91,
+      "bounce": 50.0
+    },
+    "/resources/psim-vs-unified-platform": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 88,
+      "bounce": 50.0
+    },
+    "/resources/rtcc-setup-guide": {
+      "sessions": 2,
+      "users": 2,
+      "duration": 11,
+      "bounce": 50.0
+    }
+  },
+  "organic_pages_prior": {
+    "/es": 74,
+    "/": 55,
+    "(not set)": 27,
+    "/es/k-dispatch": 13,
+    "/resources/how-c5-command-centers-work": 7,
+    "/about": 4,
+    "/resources/what-is-video-management-software": 4,
+    "/es/about": 3,
+    "/es/contact": 3,
+    "/es/k-safety": 3,
+    "/es/resources/what-is-emergency-dispatch-software": 3,
+    "/k-dispatch": 3,
+    "/resources/smart-city-platform-guide": 3,
+    "/es/resources/what-is-a-command-center": 2,
+    "/es/resources/what-is-video-analytics": 2,
+    "/integrations/access-control": 2,
+    "/k-safety": 2,
+    "/resources": 2,
+    "/resources/c5-command-centers-mexico-2026": 2,
+    "/vs/fusus": 2,
+    "/blog/trends-in-urban-security-how-smart-cities-are-enhancing-surveillance-and-control": 1,
+    "/contact": 1,
+    "/demo": 1,
+    "/demo/school?stage=learn": 1,
+    "/es/industries/municipalities": 1,
+    "/es/resources": 1,
+    "/es/resources/public-safety-software-peru": 1,
+    "/es/resources/what-is-cad-dispatch-software": 1,
+    "/integrations/lpr": 1,
+    "/k-video": 1,
+    "/resources/build-rtcc-implementation-guide": 1,
+    "/resources/rtcc-setup-guide": 1,
+    "/resources/what-is-cad-dispatch-software": 1,
+    "/resources/what-is-situational-awareness-software": 1,
+    "/resources/what-is-video-analytics": 1,
+    "/vs/hexagon": 1
+  }
+}

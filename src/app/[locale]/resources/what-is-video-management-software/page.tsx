@@ -184,7 +184,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
               {es ? 'Guía de Referencia' : 'Reference Guide'}
             </p>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '24px' }}>
-              {es ? '¿Qué Es un Software VMS? Guía de Gestión de Video para Seguridad Pública' : 'What Is VMS Software? A Video Management Guide for Public Safety'}
+              {es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es

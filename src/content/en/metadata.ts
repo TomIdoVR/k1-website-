@@ -156,11 +156,11 @@ export const metadata = {
   },
   vsPeregrine: {
     title: "Peregrine Analytics & Reporting Dashboards vs KabatOne",
-    description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+    description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
       title: "Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations",
-      description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+      description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -225,8 +225,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "What Is VMS Software? Video Management for Public Safety | KabatOne",
-    description: "VMS software aggregates cameras from any manufacturer, adds AI analytics — LPR, facial recognition, behavioral detection — and connects with CAD and GIS.",
+    title: "What Is Video Management Software (VMS)? Public Safety Guide | KabatOne",
+    description: "Video management software aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection — and connects with CAD dispatch and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "AI Video Analytics Guide for Command Centers | KabatOne",
-    description: "AI video analytics detects intrusions, LPR matches, crowds, and weapons in real time. How it works and integrates with CAD dispatch.",
+    title: "AI Video Analytics for Surveillance & Public Safety | KabatOne",
+    description: "AI video analytics detects intrusions, crowds, weapons, and LPR matches in surveillance cameras — in real time, integrated with CAD dispatch and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {

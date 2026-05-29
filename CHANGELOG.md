@@ -1,3 +1,19 @@
+## [v2.212] – 2026-05-29
+### SEO — Daily audit fix
+- **vs/peregrine** — shortened meta description from 181 to 151 chars (was triggering `desc_near_max` info flag in daily audit). EN only; ES was already within limits.
+
+## [v2.211] – 2026-05-28
+### SEO — Keyword opportunity optimizations
+- **Peregrine page** — added "What Are Peregrine's Analytics Reporting Dashboards?" section (EN+ES) with 6 dashboard-type cards + "what dashboards don't show" callout. Targets "peregrine.ai analytics reporting dashboards" (1,406 impr, pos 9.8, 0 CTR).
+- **Video analytics** — updated title/meta/H1 (EN+ES) to target "AI video analytics surveillance" cluster (pos 16–25) instead of generic "video analytics" (pos 41, too competitive).
+- **Video management software** — updated title/meta/H1 (EN+ES) to lead with exact query "video management software (VMS)" (183 impr, pos 34).
+
+## [v2.210] – 2026-05-28
+### Added
+- **Traffic analysis report** `SEO/audits/traffic-2026-05-28.html` — standalone GA4+GSC traffic intelligence dashboard with Chart.js: weekly sessions trend (10 weeks), traffic source mix (current vs prior 28d), keyword opportunity stack (15 queries, ~79 extra clicks/month), cluster momentum (8 groups, 723 total queries).
+- **seo-traffic skill** `~/.claude/skills/seo-traffic/SKILL.md` — new standalone skill for unified GA4+GSC traffic analysis. Invokable as `/seo-traffic`. Integrates into `kabatone-seo-audit` as Section 6.
+- **GA4 integration** — configured `properties/530090453` in `~/.config/claude-seo/google-api.json`; enabled Google Analytics Data API in GCP project 395364110222.
+
 ## [v2.209] – 2026-05-28
 ### Added / Fixed
 - **SEO visual dashboard** `SEO/audits/2026-05-28-1632-audit.html` — dark KabatOne-branded HTML report with Chart.js health gauge, branch divergence chart, GSC performance charts, and color-coded P0/P1/P2 findings.

@@ -210,6 +210,70 @@ export default async function VsPeregrinePage({
           </p>
         </section>
 
+        {/* ── PEREGRINE DASHBOARDS DEFINITION ── */}
+        <section style={{ padding: '80px 40px', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800,
+              fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
+              color: 'var(--white)', marginBottom: '24px',
+            }}>
+              {es
+                ? '¿Qué Son los Dashboards de Analítica y Reporting de Peregrine?'
+                : "What Are Peregrine's Analytics and Reporting Dashboards?"}
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
+              {es
+                ? 'Los dashboards de analítica y reporting de Peregrine son interfaces de inteligencia estratégica diseñadas para directores de policía y líderes de agencias de seguridad pública. No son pantallas operacionales de tiempo real — son paneles de análisis que agregan datos históricos y recientes de múltiples fuentes (CAD, RMS, bases de datos de crimen, sensores) para producir reportes de desempeño, mapas de calor de criminalidad, análisis de patrones de incidentes y proyecciones de despliegue de recursos.'
+                : "Peregrine's analytics and reporting dashboards are strategic intelligence interfaces built for police chiefs and public safety agency leaders. They are not real-time operational screens — they are analysis panels that aggregate historical and recent data from multiple sources (CAD, RMS, crime databases, sensors) to produce performance reports, crime heat maps, incident pattern analysis, and resource deployment projections."}
+            </p>
+            <div style={{
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px',
+              marginBottom: '24px',
+            }}>
+              {(es ? [
+                { label: 'Crime Heat Maps', desc: 'Zonas de calor de criminalidad por tipo de incidente, hora y zona geográfica' },
+                { label: 'Patrol Deployment Reports', desc: 'Análisis de cobertura de patrullas y recomendaciones de despliegue' },
+                { label: 'Predictive Risk Zones', desc: 'Predicción de zonas de alto riesgo basada en patrones históricos con ML' },
+                { label: 'Officer Performance Dashboards', desc: 'Métricas de respuesta, tiempos de atención y estadísticas por unidad' },
+                { label: 'Incident Trend Reports', desc: 'Tendencias de tipos de incidentes a lo largo del tiempo por zona' },
+                { label: 'Resource Allocation Analysis', desc: 'Análisis de si los recursos están asignados donde más se necesitan' },
+              ] : [
+                { label: 'Crime Heat Maps', desc: 'Incident density by type, time of day, and geographic zone' },
+                { label: 'Patrol Deployment Reports', desc: 'Coverage analysis and patrol deployment recommendations' },
+                { label: 'Predictive Risk Zones', desc: 'ML-driven prediction of high-risk zones based on historical patterns' },
+                { label: 'Officer Performance Dashboards', desc: 'Response metrics, call-to-arrival times, and per-unit statistics' },
+                { label: 'Incident Trend Reports', desc: 'Incident type trends over time broken down by zone and shift' },
+                { label: 'Resource Allocation Analysis', desc: 'Whether resources are allocated where incidents are actually occurring' },
+              ]).map((item, i) => (
+                <div key={i} style={{
+                  padding: '16px 18px',
+                  background: `${ACCENT}08`,
+                  border: `1px solid ${ACCENT}20`,
+                  borderRadius: '8px',
+                }}>
+                  <p style={{ fontSize: '13px', fontWeight: 700, color: 'var(--white)', marginBottom: '4px' }}>{item.label}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.5 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div style={{
+              padding: '18px 22px',
+              background: 'rgba(6,182,212,0.05)',
+              border: '1px solid rgba(6,182,212,0.2)',
+              borderLeft: '3px solid #06b6d4',
+              borderRadius: '0 8px 8px 0',
+            }}>
+              <p style={{ fontSize: '14px', color: 'var(--dim)', lineHeight: 1.7 }}>
+                {es
+                  ? <><strong style={{ color: 'var(--white)' }}>Lo que los dashboards de Peregrine no muestran:</strong> la posición en tiempo real de las unidades, el estado de las cámaras de la ciudad, el flujo de tráfico actual, las llamadas activas al 911 ni el despacho de unidades en curso. Esas son las preguntas que responde KabatOne — no en reportes, sino en la pantalla operacional en tiempo real del operador de mando.</>
+                  : <><strong style={{ color: 'var(--white)' }}>What Peregrine dashboards don&apos;t show:</strong> real-time unit positions, live city camera feeds, current traffic flow, active 911 calls, or in-progress unit dispatch. Those are the questions KabatOne answers — not in reports, but in the command operator&apos;s real-time operational screen.</>
+                }
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── WHAT IS PEREGRINE? ── */}
         <section style={{ background: 'var(--bg-2)', padding: '80px 40px', borderTop: '1px solid var(--border)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
