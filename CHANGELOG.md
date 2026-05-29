@@ -1,3 +1,7 @@
+## [v2.212] – 2026-05-29
+### SEO — Daily audit fix
+- **vs/peregrine** — shortened meta description from 181 to 151 chars (was triggering `desc_near_max` info flag in daily audit). EN only; ES was already within limits.
+
 ## [v2.211] – 2026-05-28
 ### SEO — Keyword opportunity optimizations
 - **Peregrine page** — added "What Are Peregrine's Analytics Reporting Dashboards?" section (EN+ES) with 6 dashboard-type cards + "what dashboards don't show" callout. Targets "peregrine.ai analytics reporting dashboards" (1,406 impr, pos 9.8, 0 CTR).

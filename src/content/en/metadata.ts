@@ -156,11 +156,11 @@ export const metadata = {
   },
   vsPeregrine: {
     title: "Peregrine Analytics & Reporting Dashboards vs KabatOne",
-    description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+    description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
       title: "Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations",
-      description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+      description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
