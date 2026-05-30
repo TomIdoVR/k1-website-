@@ -1,3 +1,7 @@
+## [v2.214] – 2026-05-30
+### Fixed
+- **Daily SEO audit** (KAB-1039): shortened VMS page title from 71→70 chars (`/resources/what-is-video-management-software/`) — removed trailing `?` after `(VMS)` to stay within 70-char limit.
+
 ## [v2.213] – 2026-05-29
 ### Added
 - **Weekly SEO agent** `scripts/seo_weekly_agent.py` — self-contained script: pulls GA4+GSC, scores keyword opportunities, generates HTML dashboard + raw JSON snapshot, commits to git. Registered as macOS LaunchAgent `com.kabatone.seo-weekly` (every Monday 08:07).

@@ -225,7 +225,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "What Is Video Management Software (VMS)? Public Safety Guide | KabatOne",
+    title: "What Is Video Management Software (VMS) Public Safety Guide | KabatOne",
     description: "Video management software aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection — and connects with CAD dispatch and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
   },
