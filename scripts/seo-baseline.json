@@ -1,14 +1,14 @@
 {
-  "runAt": "2026-05-30T07:01:15.306Z",
+  "runAt": "2026-05-31T07:00:29.735Z",
   "baseUrl": "https://staging.kabatone.com",
   "pagesAudited": 71,
   "summary": {
     "critical": 0,
-    "warnings": 1,
+    "warnings": 0,
     "info": 0,
-    "pagesWithIssues": 1,
-    "pagesClean": 70,
-    "newIssues": 1,
+    "pagesWithIssues": 0,
+    "pagesClean": 71,
+    "newIssues": 0,
     "resolvedIssues": 1
   },
   "pages": [
@@ -398,18 +398,12 @@
     },
     {
       "url": "https://staging.kabatone.com/en/resources/what-is-video-management-software/",
-      "issues": [
-        {
-          "severity": "warning",
-          "check": "title_long",
-          "msg": "Title too long (71 chars, max 70)"
-        }
-      ],
+      "issues": [],
       "info": {
-        "title": "What Is Video Management Software (VMS)? Public Safety Guide | KabatOne",
+        "title": "What Is Video Management Software (VMS) Public Safety Guide | KabatOne",
         "description": "Video management software aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection — and connects with CAD dispatch and GIS.",
         "canonical": "https://kabatone.com/resources/what-is-video-management-software/",
-        "ogTitle": "What Is Video Management Software (VMS)? Public Safety Guide | KabatOne",
+        "ogTitle": "What Is Video Management Software (VMS) Public Safety Guide | KabatOne",
         "ogDesc": "Video management software aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection — and connects with CAD dispatch and GIS.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -1155,20 +1149,13 @@
       }
     }
   ],
-  "newIssues": [
+  "newIssues": [],
+  "resolvedIssues": [
     {
       "severity": "warning",
       "check": "title_long",
       "msg": "Title too long (71 chars, max 70)",
       "page": "https://staging.kabatone.com/en/resources/what-is-video-management-software/"
-    }
-  ],
-  "resolvedIssues": [
-    {
-      "severity": "info",
-      "check": "desc_near_max",
-      "msg": "Description near limit (181/160 ideal)",
-      "page": "https://staging.kabatone.com/en/vs/peregrine/"
     }
   ]
 }
