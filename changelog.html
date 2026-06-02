@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.216 -->
+      <div class="tl-entry feat">
+        <div class="tl-meta"><span class="tl-ver">v2.216</span><span class="tl-date">2026-06-02</span></div>
+        <div class="tl-title">Weekly SEO agent — AI-powered traffic analysis</div>
+        <ul class="tl-body">
+          <li>New <code>scripts/seo_weekly_agent.py</code> — runs every Monday 08:07 via macOS LaunchAgent. Pulls GA4 + GSC, scores keyword opportunities, calls Claude Haiku for AI conclusions (~$0.02/run), generates branded HTML dashboard, auto-commits.</li>
+          <li>AI "Weekly Intelligence" section: what changed, what's surprising, top 3 ranked actions — written by Claude Haiku from live data.</li>
+          <li>Flags: <code>--dry-run</code> (test without committing), <code>--no-ai</code> (skip Claude step), <code>--days N</code> (analysis window).</li>
+        </ul>
+      </div>
+
       <!-- v2.215 -->
       <div class="tl-entry" id="v2.215">
         <div class="version-header">

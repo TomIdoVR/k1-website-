@@ -1,3 +1,7 @@
+## [v2.216] – 2026-06-02
+### Added
+- **Weekly SEO agent** `scripts/seo_weekly_agent.py` — automated Monday traffic analysis. Pulls GA4 + GSC, scores opportunities, calls Claude Haiku (~$0.02/run) for AI conclusions (what changed, what's surprising, top 3 actions), generates branded HTML dashboard, commits to git. Runs every Monday 08:07 via macOS LaunchAgent. Use `--dry-run` to test, `--no-ai` to skip AI step.
+
 ## [v2.215] – 2026-06-02
 ### Added
 - **GEO guide: Public Safety Software for Nicaragua** (KAB-1048)

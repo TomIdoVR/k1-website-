@@ -1,11 +1,11 @@
 #!/usr/bin/env python3.11
 """
 KabatOne Weekly SEO Traffic Agent
-Runs every Monday. Pulls GA4 + GSC, scores opportunities, generates HTML dashboard,
-commits to git. Uses OAuth credentials from ~/.config/claude-seo/
+Runs every Monday. Pulls GA4 + GSC, scores opportunities, calls Claude for
+AI-powered conclusions, generates HTML dashboard, commits to git.
 
 Usage:
-    python3.11 scripts/seo_weekly_agent.py [--dry-run] [--days 28]
+    python3.11 scripts/seo_weekly_agent.py [--dry-run] [--days 28] [--no-ai]
 
 Scheduled via macOS LaunchAgent: com.kabatone.seo-weekly.plist
 """
@@ -265,7 +265,7 @@ def analyse(gsc_rows, ga4):
 
 # ── HTML Report ───────────────────────────────────────────────────────────────
 
-def build_html(a, today_str, period_str):
+def build_html(a, today_str, period_str, intelligence_html=None):
     def dc(delta):
         if delta is None: return '#06b6d4'
         return '#22c55e' if delta >= 0 else '#ef4444'
@@ -332,6 +332,18 @@ def build_html(a, today_str, period_str):
     cl_names = json.dumps(list(a['clusters'].keys()))
     cl_impr = json.dumps([v['impressions'] for v in a['clusters'].values()])
     cl_pos  = json.dumps([v['avg_pos'] for v in a['clusters'].values()])
+
+    if intelligence_html:
+        intelligence_block = f'''<div style="background:#0f1724;border:1px solid #1e3a5f;border-radius:12px;padding:24px 28px;margin-bottom:28px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e3a5f">
+    <span style="font-size:18px">&#x1F9E0;</span>
+    <span style="font-size:13px;font-weight:700;color:#f8fafc">Weekly Intelligence</span>
+    <span style="margin-left:auto;font-size:11px;color:#475569">claude-haiku-4-5 &middot; {today_str}</span>
+  </div>
+  {intelligence_html}
+</div>'''
+    else:
+        intelligence_block = f'<div class="insight"><strong>Weekly pulse — {a["trend_dir"]}:</strong> 4-week avg <strong>{a["avg_last4"]:.0f}</strong> vs prior <strong>{a["avg_prev4"]:.0f}</strong> ({a["trend_delta"]:+.1f}%). Organic {("+" if org_d and org_d >= 0 else "")}{org_d:.0f}%, total sessions {"up" if td and td > 0 else "down"} {abs(td):.0f}%.</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -414,11 +426,7 @@ tfoot td{{padding:9px 13px;background:#0f1724;border-top:1px solid #334155;font-
   </div>
 </div>
 
-<div class="insight">
-  <strong>Weekly pulse — {a['trend_dir']}:</strong> 4-week avg <strong>{a['avg_last4']:.0f}</strong> vs prior <strong>{a['avg_prev4']:.0f}</strong> ({a['trend_delta']:+.1f}%).
-  Organic is <strong>{"growing" if org_d and org_d > 10 else ("flat" if org_d and abs(org_d) <= 10 else "declining")}</strong> ({('+' if org_d and org_d >= 0 else '')}{org_d:.0f}%),
-  total sessions are <strong>{"up" if td and td > 0 else "down"}</strong> {abs(td):.0f}% overall.
-</div>
+{intelligence_block}
 
 <div class="chart-grid">
   <div class="chart-card">
@@ -490,6 +498,164 @@ new Chart(document.getElementById('clusterPosChart'),{{type:'bar',data:{{labels:
 </body>
 </html>"""
 
+# ── AI Intelligence Layer ─────────────────────────────────────────────────────
+
+INTELLIGENCE_PROMPT = """You are the SEO strategist for KabatOne — a B2G SaaS public safety platform
+targeting LATAM municipalities (primary market: Mexico). You're reading the weekly traffic data and
+your job is to write the "Weekly Intelligence" digest that goes at the top of the report.
+
+Write in English. Be sharp, concrete, and direct. No fluff.
+
+Context about KabatOne:
+- Core products: K-Dispatch (CAD/911), K-Video (AI video management), K-Safety (GIS), K-Traffic
+- Primary market: Mexico municipalities, then broader LATAM
+- Key competitors: Peregrine (analytics), Motorola (CAD), generic VMS vendors
+- SEO goal: rank for public safety platform, C5 command center, CAD dispatch, video analytics terms
+- Organic share ≥30% is healthy for B2G SaaS
+
+Here is this week's data:
+{data_json}
+
+Write a "Weekly Intelligence" digest with exactly this structure (use these headers verbatim):
+
+## What changed this week
+3 bullet points. Each bullet: one specific, quantified observation. Compare current vs prior.
+Examples of good bullets: "Organic +48% — only growing channel while Direct dropped 29%"
+Bad bullets: "Traffic is up" or vague generalities.
+
+## What's surprising or worth watching
+2 bullet points. Flag anything anomalous, unexpected, or that breaks from the pattern.
+Could be a page suddenly appearing, a cluster losing ground, a query spiking.
+
+## Top 3 actions this week
+Ranked by estimated SEO impact. Each action: one sentence max, specific and actionable.
+Reference exact query names, page paths, or cluster names from the data. No generic advice.
+
+Keep the whole digest under 250 words. No intro, no conclusion — just the three sections."""
+
+
+def _get_anthropic_api_key():
+    """Load Anthropic API key from file or env var."""
+    import os
+    # 1. env var (standard)
+    key = os.environ.get('ANTHROPIC_API_KEY')
+    if key:
+        return key
+    # 2. credential file (consistent with other claude-seo creds)
+    key_file = Path.home() / '.config' / 'claude-seo' / 'anthropic-api-key'
+    if key_file.exists():
+        return key_file.read_text().strip()
+    return None
+
+
+def call_claude_intelligence(analysis, period_str):
+    """Call Claude Haiku to generate the AI intelligence digest."""
+    try:
+        import anthropic
+
+        api_key = _get_anthropic_api_key()
+        if not api_key:
+            raise ValueError(
+                'No Anthropic API key found. Add it to '
+                '~/.config/claude-seo/anthropic-api-key or set ANTHROPIC_API_KEY env var. '
+                'Get a key at console.anthropic.com → API Keys.'
+            )
+
+        # Prepare a compact data summary for the prompt
+        org = analysis['organic']
+        top_opps = analysis['opportunities'][:5]
+        top_pages = analysis['pages'][:5]
+        clusters_summary = {k: {'impressions': v['impressions'], 'avg_pos': v['avg_pos']}
+                            for k, v in analysis['clusters'].items()}
+
+        data = {
+            'period': period_str,
+            'total_sessions': {'current': analysis['total_cur'], 'prior': analysis['total_prior'],
+                               'delta_pct': analysis['total_delta']},
+            'organic': {'sessions': org['sessions'], 'share_pct': org['share'],
+                        'delta_pct': org['delta']},
+            'trend': {'direction': analysis['trend_dir'], 'delta_4w_pct': analysis['trend_delta'],
+                      'avg_last4w': analysis['avg_last4'], 'avg_prev4w': analysis['avg_prev4']},
+            'sources': [{'channel': s['channel'], 'sessions': s['sessions'],
+                         'share': s['share'], 'delta_pct': s['delta']}
+                        for s in analysis['sources']],
+            'top_opportunities': [{'query': o['query'], 'impressions': o['impressions'],
+                                   'position': o['position'], 'score': o['score'],
+                                   'business_value': o['biz_value']}
+                                  for o in top_opps],
+            'top_organic_pages': [{'page': p['page'], 'sessions': p['sessions'],
+                                   'delta_pct': p['delta'], 'status': p['status']}
+                                  for p in top_pages],
+            'keyword_clusters': clusters_summary,
+            'total_gsc_queries': analysis['total_gsc_queries'],
+            'unlockable_clicks_per_month': analysis['unlockable'],
+        }
+
+        client = anthropic.Anthropic(api_key=api_key)
+        response = client.messages.create(
+            model='claude-haiku-4-5-20251001',
+            max_tokens=600,
+            messages=[{
+                'role': 'user',
+                'content': INTELLIGENCE_PROMPT.format(data_json=json.dumps(data, indent=2))
+            }]
+        )
+        return response.content[0].text.strip()
+
+    except Exception as e:
+        print(f'      [AI] Warning: could not generate intelligence digest: {e}')
+        return None
+
+
+def format_intelligence_html(digest_md):
+    """Convert the markdown digest to styled HTML for the report."""
+    lines = digest_md.split('\n')
+    html_parts = []
+    in_list = False
+
+    for line in lines:
+        line = line.rstrip()
+        if not line:
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
+            continue
+        if line.startswith('## '):
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
+            html_parts.append(
+                f'<p style="font-size:11px;font-weight:700;text-transform:uppercase;'
+                f'letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">'
+                f'{line[3:]}</p>'
+            )
+        elif line.startswith('- ') or line.startswith('* '):
+            if not in_list:
+                html_parts.append('<ul style="list-style:none;padding:0;margin:0">')
+                in_list = True
+            text = line[2:]
+            # Bold anything in **...**
+            import re
+            text = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', text)
+            html_parts.append(
+                f'<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;'
+                f'margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">'
+                f'{text}</li>'
+            )
+        else:
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
+            import re
+            text = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', line)
+            html_parts.append(f'<p style="color:#94a3b8;font-size:13px;line-height:1.6">{text}</p>')
+
+    if in_list:
+        html_parts.append('</ul>')
+
+    return '\n'.join(html_parts)
+
+
 # ── Git commit ────────────────────────────────────────────────────────────────
 
 def git_commit(files, today_str, summary):
@@ -503,6 +669,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dry-run', action='store_true', help='Skip git commit and push')
     parser.add_argument('--days', type=int, default=28)
+    parser.add_argument('--no-ai', action='store_true', help='Skip Claude intelligence step')
     args = parser.parse_args()
 
     today = datetime.now()
@@ -529,11 +696,21 @@ def main():
     print(f'      Top opportunity: {analysis["opportunities"][0]["query"] if analysis["opportunities"] else "n/a"}')
     print(f'      Unlockable clicks: ~{analysis["unlockable"]}/month')
 
+    intelligence_html = None
+    if not args.no_ai:
+        print('[3b] Calling Claude for intelligence digest...')
+        digest_md = call_claude_intelligence(analysis, period_str)
+        if digest_md:
+            intelligence_html = format_intelligence_html(digest_md)
+            print(f'      ✓ Digest generated ({len(digest_md)} chars)')
+        else:
+            print('      ⚠ Skipped (no API key or error)')
+
     print('[4/4] Generating outputs...')
     AUDITS_DIR.mkdir(parents=True, exist_ok=True)
 
     html_path = AUDITS_DIR / f'traffic-{today_str}.html'
-    html_path.write_text(build_html(analysis, today_str, period_str), encoding='utf-8')
+    html_path.write_text(build_html(analysis, today_str, period_str, intelligence_html), encoding='utf-8')
     print(f'      Written: {html_path}')
 
     raw_path = AUDITS_DIR / f'raw-ga4-{today_str}.json'
