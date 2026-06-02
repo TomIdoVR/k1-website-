@@ -1,5 +1,5 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-05-27
+**Last updated:** 2026-06-02
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
@@ -507,7 +507,8 @@
 | 2026-05-19 | Claude Code (SEO Director heartbeat) | GEO monitoring + 17 EU/island guides + GEO guide | — | Next.js | v2.187–v2.203: Estonia→Iceland (Baltics, Ireland, Balkans, small states); v2.204: /resources/public-safety-software-guatemala — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 | 2026-05-28 14:46 | kabatone-seo-audit (first run) | full coverage map (production probe + auth check + GEO spot check) | https://kabatone.com/ | SEO/audits/2026-05-28-1446-audit.md + .html | **Health: 42/100. P0: 3, P1: 4, P2: 2.** Headline P0: production frozen 50 days — main at v1.53 (2026-04-08), nextjs at v2.205, 259 commits behind. 121 of 125 country pages 404 on prod; 24 dead URLs in prod sitemap. GSC pulls blocked (service account not yet shared). Single 5-min action (merge nextjs→main) clears all 3 P0s. |
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries appearing (up from 2/5 Apr 27 — new win "best public safety platforms for municipalities"); v2.206: /resources/public-safety-software-honduras — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
-| 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO guide (VMS) | — | Next.js | v2.207: /resources/video-management-public-safety-guide — high-priority GEO-037 targeting "unified video management platform public safety municipalities" gap query; EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap priority 0.8 |
+| 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO guide (VMS) | — | Next.js | v2.207: /resources/video-management-public-safety-guide
+| 2026-06-02 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries (stable); PSIM AI answer quality improved; v2.215: /resources/public-safety-software-nicaragua — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap | — high-priority GEO-037 targeting "unified video management platform public safety municipalities" gap query; EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap priority 0.8 |
 
 ---
 
@@ -614,6 +615,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-038 | GEO guide: "CAD software for municipios in Mexico" (Spanish-intent keyword) | Medium | Done | v2.65 — /resources/cad-software-municipios-mexico/ |
 | GEO-039 | GEO guide: "Video analytics use cases for public safety" | Medium | Done | v2.72 — /resources/video-analytics-use-cases/ |
 | GEO-040 | GEO guide: "Best CAD dispatch software" (comparison/listicle) | High | Done | v2.76 — /resources/best-cad-dispatch-software/ |
+| GEO-041 | GEO guide: "Public safety software for Nicaragua" | Medium | Done | v2.215 — /resources/public-safety-software-nicaragua/ — PN ~16K/Ejercito 7 regions/SINAPRED 19 volcanoes; Caribbean narco-transit corridor; Puerto Corinto; Ley 323/831 |
 | GEO-BULK | **Bulk geographic market guides (autopilot)** — 121 country-specific public-safety-software-* pages generated via `src/lib/seo-agent/ccr.ts` Paperclip dispatcher | — | Live | Live count as of 2026-05-19. Covers all of LATAM, most of Europe (incl. Baltics/Balkans/Iceland/Malta/Luxembourg/Cyprus), GCC + ME, large APAC (India, Japan, Australia, S. Korea, Indonesia, Vietnam, etc.), large Africa block (Nigeria, Kenya, SA, Egypt, Morocco, Ethiopia + ~40 more). **STRATEGIC RISK:** many micro-market pages (São Tomé pop 220k, Seychelles 100k, Comoros, Lesotho, Eswatini) have effectively zero B2G TAM. Identical ~310-line template per page. This pattern matches Google's March 2024 "scaled content abuse" policy — risk is site-wide quality demotion that drags down genuinely valuable pages (Mexico, US, LATAM, products, /vs/). **Action needed:** define a TAM/quality stop-line, prune micro-market pages or substantially differentiate them. |
 
 ### GEO-001 — Entity definition page
@@ -699,6 +701,11 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 | 2026-05-26 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/psim-vs-unified-platform) + **detailed AI answer with K-Safety/K-Dispatch/K-Video/K-Traffic/K-Connect** | Genetec, CNL, HxGN, Motorola, Siemens |
 | 2026-05-26 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | GINA, Tyler, Motorola, Hexagon, Zetron |
 | 2026-05-26 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing | Avigilon, Verkada, RapidSOS, BriefCam, Senergy |
+| 2026-06-02 | Web search | "best public safety platforms for municipalities 2026" | ✅ Position ~10 (/resources/public-safety-software-small-cities) — stable | SafetyCulture, Motorola, FitGap, SourceForge, FeaturedCustomers |
+| 2026-06-02 | Web search | "software C5 command centers Mexico municipalities 2026" | ✅ Positions 2+5 (/how-c5-command-centers-work, /what-is-a-command-center) — stable | Seguritech, Algotive, Thales, DCD |
+| 2026-06-02 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/psim-vs-unified-platform) + **AI answer names all 5 K-products with architecture description** — quality improved | Genetec, CNL, HxGN, Motorola, Siemens |
+| 2026-06-02 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | GINA Software, Tyler Technologies, Motorola, Hexagon, CentralSquare |
+| 2026-06-02 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing (VMS guide v2.207 published 2026-05-26 — needs indexing time) | Avigilon, Milestone, Verkada, RapidSOS, Senergy |
 
 ### GEO content principles
 

@@ -1,3 +1,14 @@
+## [v2.215] – 2026-06-02
+### Added
+- **GEO guide: Public Safety Software for Nicaragua** (KAB-1048)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: Policia Nacional ~16K/Ejercito 7 military regions/SINAPRED 19 active volcanoes; Puerto Corinto 2M+ t/yr; 118/115/128 dispatch; Ley 323/801 procurement; Ley 831 data protection 2021; RACCN/RACCS autonomous regions; narco-transit Caribbean corridor
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareNicaragua` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to Guatemala, Honduras, Mexico, LATAM CAD, product pages
+  - GEO monitoring 2026-06-02: 3/5 queries appearing (stable); PSIM query AI answer quality improved — now names all 5 K-products with architecture description
+
 ## [v2.214] – 2026-05-30
 ### Fixed
 - **Daily SEO audit** (KAB-1039): shortened VMS page title from 71→70 chars (`/resources/what-is-video-management-software/`) — removed trailing `?` after `(VMS)` to stay within 70-char limit.

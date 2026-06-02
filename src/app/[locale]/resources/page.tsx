@@ -1383,6 +1383,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-nicaragua',
+          category: 'Guide',
+          title: 'Public Safety Software for Nicaragua',
+          excerpt: "Public safety technology for Nicaraguan municipalities — National Police/Army coordination, 118/115/128 dispatch integration, SINAPRED/INETER disaster response (19 active volcanoes), Puerto Corinto port security, and Law 323 procurement.",
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

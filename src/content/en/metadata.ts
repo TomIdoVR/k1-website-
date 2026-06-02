@@ -1011,4 +1011,9 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Honduras' HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security, and Decree 148.5-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-honduras/",
   },
+  publicSafetySoftwareNicaragua: {
+    title: "Public Safety Software for Nicaragua | National Police/Army, SINAPRED Volcanoes, Puerto Corinto & Law 323 – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Nicaragua's National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration, SINAPRED/INETER disaster response, Puerto Corinto port security, and Law 323-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-nicaragua/",
+  },
 } as const
