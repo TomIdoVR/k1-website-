@@ -1,3 +1,10 @@
+## [v2.221] – 2026-06-03
+### SEO — P1 metadata optimization (Video/VMS cluster + Ports)
+- **`whatIsVideoManagementSoftware` EN title** → "What Is a Video Management System (VMS)? Software Guide | KabatOne" — adds "system" variant targeting `video management system` (275 imp @ pos 57) and `vms software` (246 imp @ pos 41)
+- **`whatIsVideoManagementSoftware` ES title** → "Sistema de Gestión de Video (VMS): Qué Es y Cómo Funciona | KabatOne" — parallel "system" variant for Spanish
+- **`whatIsVideoAnalytics` EN/ES title** — added "CCTV" keyword; description updated to include "intelligent" signal targeting `intelligent video analytics` (121 imp), `cctv video analytics` (237 imp)
+- **Ports ES title** → "Seguridad Portuaria ISPS — Radar Costero y Videovigilancia | KabatOne" with more specific description including radar costero + control de acceso
+
 ## [v2.220] – 2026-06-03
 ### New Page
 - **El Salvador** — `/resources/public-safety-software-el-salvador/` (EN + ES)

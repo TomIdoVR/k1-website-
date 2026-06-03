@@ -55,8 +55,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/industries/logistics/",
   },
   ports: {
-    title: "Seguridad Portuaria Inteligente | KabatOne",
-    description: "Plataforma de seguridad portuaria compatible con ISPS/IMO. Radar costero, seguimiento de embarcaciones y videovigilancia integrada.",
+    title: "Seguridad Portuaria ISPS — Radar Costero y Videovigilancia | KabatOne",
+    description: "Plataforma ISPS/IMO para puertos: radar costero, seguimiento de embarcaciones, control de acceso y videovigilancia integrados en un solo sistema de mando.",
     canonical: "https://kabatone.com/es/industries/ports/",
   },
   stadiums: {
@@ -225,8 +225,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "¿Qué Es un Software de Gestión de Video (VMS)? Guía | KabatOne",
-    description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA como LPR y detección de comportamientos, y conecta con despacho CAD y GIS.",
+    title: "Sistema de Gestión de Video (VMS): Qué Es y Cómo Funciona | KabatOne",
+    description: "Un sistema de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — y conecta con CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Analítica de Video IA para Videovigilancia y Seguridad Pública | KabatOne",
-    description: "La analítica de video con IA detecta intrusiones, aglomeraciones, armas y LPR en cámaras de videovigilancia en tiempo real — integrada con despacho CAD y GIS.",
+    title: "Analítica de Video IA para CCTV y Seguridad Pública | KabatOne",
+    description: "Analítica inteligente de video detecta intrusiones, aglomeraciones, armas y LPR en cámaras CCTV e IP en tiempo real — integrada con despacho CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
