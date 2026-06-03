@@ -149,6 +149,7 @@ const pages = [
   { path: '/resources/public-safety-software-guatemala', priority: 0.75 },
   { path: '/resources/public-safety-software-honduras', priority: 0.75 },
   { path: '/resources/public-safety-software-nicaragua', priority: 0.75 },
+  { path: '/resources/public-safety-software-el-salvador', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

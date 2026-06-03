@@ -1,3 +1,13 @@
+## [v2.220] – 2026-06-03
+### New Page
+- **El Salvador** — `/resources/public-safety-software-el-salvador/` (EN + ES)
+  - PNC ~28K/FAES ~25K/GRP/CAT/UEA/GOES; Estado de Excepcion Mar 2022; CECOT 40K+ capacity Feb 2023
+  - 911/COEN national emergency; DGPC civil protection; SNET seismic+volcanic 5 active volcanoes (Santa Ana/Ilamatepec 2,381m; San Miguel/Chaparrastique)
+  - Puerto Acajutla Pacific main cargo; Puerto La Union (Cutuco) Gulf of Fonseca; SAL Airport regional hub; CEPA
+  - 14 departments/262 municipalities; 6.3M citizens; 2M+ diaspora USA; dollarized USD 2001
+  - LACAP (Decreto 868)/Comprasal e-procurement; LAIP/IAIP data access; SICA/CAFTA-DR
+  - Metadata: `publicSafetySoftwareElSalvador` (EN + ES); added to sitemap.ts; hub card on resources/page.tsx
+
 ## [v2.219] – 2026-06-03
 ### Fixed / SEO
 - **Peregrine page title** — updated to "Peregrine.ai Analytics Reporting Dashboards vs KabatOne" (includes brand URL variant matching `peregrine.ai analytics reporting dashboards` query at 769 impr/pos 9.4); description updated to include "alternative" signal for comparison intent

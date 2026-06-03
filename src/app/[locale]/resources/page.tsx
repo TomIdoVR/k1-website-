@@ -1391,6 +1391,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-el-salvador',
+          category: 'Guide',
+          title: 'Public Safety Software for El Salvador',
+          excerpt: "Public safety technology for Salvadoran municipalities — PNC/FAES coordination under the State of Exception, 911/COEN integration, DGPC/SNET volcanic and seismic alerts, Puerto Acajutla/SAL airport security, and LACAP procurement.",
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

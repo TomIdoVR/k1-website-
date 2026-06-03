@@ -1016,4 +1016,9 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~16K agentes, Ejercito de Nicaragua 7 regiones militares y municipios — integracion 118/115/128, respuesta SINAPRED/INETER a desastres, seguridad portuaria Puerto Corinto y contratacion conforme a la Ley 323.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-nicaragua/",
   },
+  publicSafetySoftwareElSalvador: {
+    title: "Software de Seguridad Publica para El Salvador | PNC/FAES, Estado de Excepcion, Puerto Acajutla, DGPC/SNET y LACAP – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~28K agentes, FAES ~25K efectivos y municipios salvadorenos — integracion 911/COEN, alertas volcanicas y sismicas DGPC/SNET, seguridad Puerto Acajutla/Aeropuerto SAL y contratacion conforme a la LACAP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-el-salvador/",
+  },
 } as const
