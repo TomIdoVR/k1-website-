@@ -542,6 +542,15 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 <span>{es ? 'Software de seguridad pública para México' : 'Public Safety Software for Mexico'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
+              <Link href="/resources/c5-command-centers-mexico-2026" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
             </div>
           </div>
         </section>

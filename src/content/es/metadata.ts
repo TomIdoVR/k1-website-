@@ -86,7 +86,7 @@ export const metadata = {
   },
   c5CommandCenters: {
     title: "¿Qué es un Centro C5? Arquitectura y Tecnología | KabatOne",
-    description: "Un C5 es un centro de mando que integra despacho CAD, video, GIS y tráfico en una sola instalación. Conoce la arquitectura y tecnología de los centros C5 en México.",
+    description: "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — un centro de mando integrado para seguridad pública. Arquitectura, tecnología y diferencia con el C4.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
   },
   smartCityPlatformGuide: {

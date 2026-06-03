@@ -1,3 +1,8 @@
+## [v2.222] – 2026-06-03
+### SEO — C5 featured snippet + LATAM cluster internal link
+- **C5 ES meta description** → starts with direct definition "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad…" targeting featured snippet for `que significa c5` (75 imp @ pos 11) and `c5 significado` (56 imp) cluster; adds "diferencia con el C4" to capture comparison queries
+- **C5 page Related Articles** → added cross-link to `/resources/c5-command-centers-mexico-2026/` (EN + ES); strengthens LATAM C5 cluster internal linking
+
 ## [v2.221] – 2026-06-03
 ### SEO — P1 metadata optimization (Video/VMS cluster + Ports)
 - **`whatIsVideoManagementSoftware` EN title** → "What Is a Video Management System (VMS)? Software Guide | KabatOne" — adds "system" variant targeting `video management system` (275 imp @ pos 57) and `vms software` (246 imp @ pos 41)
