@@ -155,8 +155,8 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "Peregrine Analytics & Reporting Dashboards vs KabatOne",
-    description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+    title: "Peregrine.ai Analytics Reporting Dashboards vs KabatOne",
+    description: "What Peregrine.ai analytics reporting dashboards cover — and what they don't. KabatOne alternative: full CAD dispatch, AI video, GIS, and traffic in one platform.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
       title: "Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations",

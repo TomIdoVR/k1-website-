@@ -1,3 +1,9 @@
+## [v2.219] – 2026-06-03
+### Fixed / SEO
+- **Peregrine page title** — updated to "Peregrine.ai Analytics Reporting Dashboards vs KabatOne" (includes brand URL variant matching `peregrine.ai analytics reporting dashboards` query at 769 impr/pos 9.4); description updated to include "alternative" signal for comparison intent
+- **C5 page: add `¿Qué es un C5?` FAQ** — inserted as first FAQ in both ES and EN; directly targets `que es un c5` / `que es un centro c5` queries (combined C5 cluster at ~463 impressions, pos 9–11, 0 clicks); ES title also updated to `¿Qué es un Centro C5?` to match query intent
+- Note: CAD page and k-dispatch bounces are low-traffic noise (4 and 8 sessions respectively) — left as-is per user guidance that average times are misleading at current traffic levels
+
 ## [v2.218] – 2026-06-03
 ### Added
 - **Weekly agent: Full Action Plan output** — orchestrator now produces a prioritized P0/P1/P2 action plan alongside the Weekly Intelligence digest. Each action includes exact page path, target query, estimated click uplift, and a specific one-line instruction. Rendered as a styled card in the HTML report with color-coded priority badges.

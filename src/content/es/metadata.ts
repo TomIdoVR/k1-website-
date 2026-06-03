@@ -85,8 +85,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "Centros de Mando C5: Arquitectura y Tecnología | KabatOne",
-    description: "Los centros C5 coordinan respuesta a emergencias, videovigilancia y tráfico en ciudades mexicanas. Conoce su arquitectura, tecnología y modelo operativo.",
+    title: "¿Qué es un Centro C5? Arquitectura y Tecnología | KabatOne",
+    description: "Un C5 es un centro de mando que integra despacho CAD, video, GIS y tráfico en una sola instalación. Conoce la arquitectura y tecnología de los centros C5 en México.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
   },
   smartCityPlatformGuide: {
