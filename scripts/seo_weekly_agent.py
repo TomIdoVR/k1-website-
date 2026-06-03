@@ -265,7 +265,7 @@ def analyse(gsc_rows, ga4):
 
 # ── HTML Report ───────────────────────────────────────────────────────────────
 
-def build_html(a, today_str, period_str, intelligence_html=None):
+def build_html(a, today_str, period_str, intelligence_html=None, ai_model='AI'):
     def dc(delta):
         if delta is None: return '#06b6d4'
         return '#22c55e' if delta >= 0 else '#ef4444'
@@ -338,7 +338,7 @@ def build_html(a, today_str, period_str, intelligence_html=None):
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e3a5f">
     <span style="font-size:18px">&#x1F9E0;</span>
     <span style="font-size:13px;font-weight:700;color:#f8fafc">Weekly Intelligence</span>
-    <span style="margin-left:auto;font-size:11px;color:#475569">claude-haiku-4-5 &middot; {today_str}</span>
+    <span style="margin-left:auto;font-size:11px;color:#475569">{ai_model} &middot; {today_str}</span>
   </div>
   {intelligence_html}
 </div>'''
@@ -498,113 +498,354 @@ new Chart(document.getElementById('clusterPosChart'),{{type:'bar',data:{{labels:
 </body>
 </html>"""
 
-# ── AI Intelligence Layer ─────────────────────────────────────────────────────
+# ── Orchestrator Agent ────────────────────────────────────────────────────────
 
-INTELLIGENCE_PROMPT = """You are the SEO strategist for KabatOne — a B2G SaaS public safety platform
-targeting LATAM municipalities (primary market: Mexico). You're reading the weekly traffic data and
-your job is to write the "Weekly Intelligence" digest that goes at the top of the report.
+ORCHESTRATOR_SYSTEM = """You are the weekly SEO analyst for KabatOne — a B2G SaaS public safety \
+platform targeting Mexico municipalities and broader LATAM.
 
-Write in English. Be sharp, concrete, and direct. No fluff.
+## Your workflow
 
-Context about KabatOne:
-- Core products: K-Dispatch (CAD/911), K-Video (AI video management), K-Safety (GIS), K-Traffic
-- Primary market: Mexico municipalities, then broader LATAM
-- Key competitors: Peregrine (analytics), Motorola (CAD), generic VMS vendors
-- SEO goal: rank for public safety platform, C5 command center, CAD dispatch, video analytics terms
-- Organic share ≥30% is healthy for B2G SaaS
+1. Call `pull_and_analyze` to get this week's traffic and keyword data
+2. Analyze the results using the methodology below and write the Weekly Intelligence section
+3. Call `generate_html_report` with your intelligence text and the analysis JSON
+4. Call `commit_report` unless dry_run was specified — if dry_run, skip it
+5. Output a one-line completion status
 
-Here is this week's data:
-{data_json}
+## Analysis methodology
 
-Write a "Weekly Intelligence" digest with exactly this structure (use these headers verbatim):
+### Opportunity scoring
+score = impressions × ctr_gap × business_value
+ctr_gap = expected_ctr(position) - actual_ctr
 
-## What changed this week
-3 bullet points. Each bullet: one specific, quantified observation. Compare current vs prior.
-Examples of good bullets: "Organic +48% — only growing channel while Direct dropped 29%"
-Bad bullets: "Traffic is up" or vague generalities.
+Expected CTR by position:
+pos 1-2→28% | 2-3→16% | 3-4→11% | 4-5→8% | 5-7→6% | 7-10→4% | 10-13→2.5% | 13-20→1.5% | >20→0.8%
 
-## What's surprising or worth watching
-2 bullet points. Flag anything anomalous, unexpected, or that breaks from the pattern.
-Could be a page suddenly appearing, a cluster losing ground, a query spiking.
+Business value multipliers:
+- dispatch / cad / 911 / k-dispatch → 3x (core product, highest priority)
+- c5 / command center / centro de mando → 2.5x
+- video management / vms / video analytics → 2x
+- vs / alternative / compare / peregrine / motorola → 2x
+- mexico / latam / municipal → 1.8x
+- everything else → 1x
 
-## Top 3 actions this week
-Ranked by estimated SEO impact. Each action: one sentence max, specific and actionable.
-Reference exact query names, page paths, or cluster names from the data. No generic advice.
+### Keyword clusters
+Brand | C5/Command Ctr | Video/VMS | CAD/Dispatch | Comparisons | Country/LATAM | Emergency Mgmt | AI/Analytics
 
-Keep the whole digest under 250 words. No intro, no conclusion — just the three sections."""
+### Health benchmarks
+- Organic share ≥30% = healthy for B2G SaaS; <25% = flag as critical
+- Trend: growing (+5%+ 4w avg), flat (±5%), declining (-5%-)
+- Position ≤3 = top of funnel; 4-10 = striking distance; >10 = develop
+
+## KabatOne product & competitive context
+
+Core products:
+- K-Dispatch: CAD / 911 dispatch — compete Motorola Solutions CAD (highest BV queries)
+- K-Video: AI video analytics + VMS — compete Milestone, Genetec, generic VMS vendors
+- K-Safety: GIS situational awareness for Seguridad Pública
+- K-Traffic: Intelligent traffic management
+
+Primary market: Mexico municipalities (C5 command centers, Seguridad Pública, SAP)
+Secondary: Colombia, Peru, LATAM
+Primary SEO competitor: Peregrine (analytics dashboards) — actively appearing alongside KabatOne queries
+
+## Weekly Intelligence format
+
+Write exactly these three sections (use exactly these headers, with ### prefix):
+
+### What changed this week
+3 bullets. Each: one specific, quantified observation comparing current vs prior period.
+✓ Good: "Organic Search +48% (312→462 sessions) — only growing channel while Direct -29%"
+✗ Bad: "Traffic is up" or any vague generality without numbers.
+
+### What's surprising or worth watching
+2 bullets. Flag anomalies, unexpected patterns, or anything breaking from the trend.
+Can reference cluster-level observations, new pages appearing, queries spiking or dying.
+
+### Top 3 actions this week
+Ranked by estimated SEO impact. Each: ≤1 sentence, specific and actionable.
+Must name exact query strings, page paths, or cluster names from the data.
+Example: "Add FAQ schema to /vs/peregrine/ — 'peregrine analytics dashboards' shows 1,406 impr at pos 9.8 with 0% CTR"
+
+Keep total digest under 250 words. No intro, no preamble, no conclusion — just the three sections."""
+
+
+TOOLS = [
+    {
+        "name": "pull_and_analyze",
+        "description": (
+            "Pull GA4 and GSC traffic data for the specified period window, apply KabatOne "
+            "opportunity scoring and cluster analysis, compute organic page performance. "
+            "Returns the complete analysis dict including: traffic sources, organic metrics, "
+            "weekly trend, top organic pages, scored keyword opportunity stack (top 20), "
+            "cluster momentum (8 clusters), and page winners/losers."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "days": {
+                    "type": "integer",
+                    "description": "Analysis window in days (default 28)",
+                    "default": 28,
+                }
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "generate_html_report",
+        "description": (
+            "Build the HTML traffic dashboard from the analysis data and your intelligence text. "
+            "Saves to SEO/audits/traffic-YYYY-MM-DD.html and updates the traffic-latest.html symlink. "
+            "Returns {html_path, json_path}."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "analysis_json": {
+                    "type": "string",
+                    "description": "JSON string of the full analysis dict returned by pull_and_analyze",
+                },
+                "intelligence_text": {
+                    "type": "string",
+                    "description": (
+                        "Your Weekly Intelligence markdown — exactly three sections: "
+                        "### What changed this week, ### What's surprising or worth watching, "
+                        "### Top 3 actions this week"
+                    ),
+                },
+                "today_str": {
+                    "type": "string",
+                    "description": "Today's date as YYYY-MM-DD",
+                },
+                "period_str": {
+                    "type": "string",
+                    "description": "Human-readable period like 'May 13 – Jun 09, 2026'",
+                },
+            },
+            "required": ["analysis_json", "intelligence_text", "today_str", "period_str"],
+        },
+    },
+    {
+        "name": "commit_report",
+        "description": (
+            "Git commit the generated HTML and JSON report files. "
+            "Call this after generate_html_report unless running in dry-run mode."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "html_path": {"type": "string", "description": "Full path to the HTML report file"},
+                "json_path": {"type": "string", "description": "Full path to the raw GA4 JSON file"},
+                "today_str": {"type": "string", "description": "Date string YYYY-MM-DD"},
+                "summary": {
+                    "type": "string",
+                    "description": "One-line summary of the week's findings for the commit message",
+                },
+            },
+            "required": ["html_path", "json_path", "today_str", "summary"],
+        },
+    },
+]
+
+
+_session_state: dict = {}
 
 
 def _get_anthropic_api_key():
-    """Load Anthropic API key from file or env var."""
     import os
-    # 1. env var (standard)
     key = os.environ.get('ANTHROPIC_API_KEY')
     if key:
         return key
-    # 2. credential file (consistent with other claude-seo creds)
     key_file = Path.home() / '.config' / 'claude-seo' / 'anthropic-api-key'
     if key_file.exists():
         return key_file.read_text().strip()
     return None
 
 
-def call_claude_intelligence(analysis, period_str):
-    """Call Claude Haiku to generate the AI intelligence digest."""
-    try:
-        import anthropic
+def _tool_pull_and_analyze(days: int = 28) -> dict:
+    print('    [1/2] Pulling GA4...')
+    ga4 = pull_ga4(days)
+    print('    [2/2] Pulling GSC...')
+    gsc_rows = pull_gsc(days)
+    print(f'          {len(gsc_rows)} queries')
+    analysis = analyse(gsc_rows, ga4)
+    _session_state['ga4'] = ga4
+    org = analysis['organic']
+    print(f'    Sessions: {analysis["total_cur"]:,} ({analysis["total_delta"]:+.1f}%)')
+    print(f'    Organic:  {org["sessions"]:,} ({org["share"]}%, {org["delta"]:+.1f}%)')
+    print(f'    Trend:    {analysis["trend_dir"]} ({analysis["trend_delta"]:+.1f}%)')
+    return analysis
 
-        api_key = _get_anthropic_api_key()
-        if not api_key:
-            raise ValueError(
-                'No Anthropic API key found. Add it to '
-                '~/.config/claude-seo/anthropic-api-key or set ANTHROPIC_API_KEY env var. '
-                'Get a key at console.anthropic.com → API Keys.'
-            )
 
-        # Prepare a compact data summary for the prompt
-        org = analysis['organic']
-        top_opps = analysis['opportunities'][:5]
-        top_pages = analysis['pages'][:5]
-        clusters_summary = {k: {'impressions': v['impressions'], 'avg_pos': v['avg_pos']}
-                            for k, v in analysis['clusters'].items()}
+def _tool_generate_html_report(
+    analysis_json: str, intelligence_text: str, today_str: str, period_str: str
+) -> dict:
+    analysis = json.loads(analysis_json)
+    intelligence_html = format_intelligence_html(intelligence_text)
+    html = build_html(analysis, today_str, period_str, intelligence_html, ai_model='claude-sonnet-4-6')
+    AUDITS_DIR.mkdir(parents=True, exist_ok=True)
+    html_path = AUDITS_DIR / f'traffic-{today_str}.html'
+    html_path.write_text(html, encoding='utf-8')
+    print(f'    Written: {html_path}')
 
-        data = {
-            'period': period_str,
-            'total_sessions': {'current': analysis['total_cur'], 'prior': analysis['total_prior'],
-                               'delta_pct': analysis['total_delta']},
-            'organic': {'sessions': org['sessions'], 'share_pct': org['share'],
-                        'delta_pct': org['delta']},
-            'trend': {'direction': analysis['trend_dir'], 'delta_4w_pct': analysis['trend_delta'],
-                      'avg_last4w': analysis['avg_last4'], 'avg_prev4w': analysis['avg_prev4']},
-            'sources': [{'channel': s['channel'], 'sessions': s['sessions'],
-                         'share': s['share'], 'delta_pct': s['delta']}
-                        for s in analysis['sources']],
-            'top_opportunities': [{'query': o['query'], 'impressions': o['impressions'],
-                                   'position': o['position'], 'score': o['score'],
-                                   'business_value': o['biz_value']}
-                                  for o in top_opps],
-            'top_organic_pages': [{'page': p['page'], 'sessions': p['sessions'],
-                                   'delta_pct': p['delta'], 'status': p['status']}
-                                  for p in top_pages],
-            'keyword_clusters': clusters_summary,
-            'total_gsc_queries': analysis['total_gsc_queries'],
-            'unlockable_clicks_per_month': analysis['unlockable'],
-        }
+    ga4 = _session_state.get('ga4', {})
+    today_dt = datetime.strptime(today_str, '%Y-%m-%d')
+    raw_path = AUDITS_DIR / f'raw-ga4-{today_str}.json'
+    raw_path.write_text(json.dumps({
+        'generated': today_dt.isoformat(), 'period': period_str,
+        'ga4_property': GA4_PROPERTY, 'gsc_property': GSC_PROPERTY,
+        'sources_cur': ga4.get('sources_cur', {}),
+        'sources_prior': ga4.get('sources_prior', {}),
+        'weekly': ga4.get('weekly', []),
+        'pages_cur': ga4.get('pages_cur', {}),
+    }, indent=2), encoding='utf-8')
+    print(f'    Written: {raw_path}')
 
-        client = anthropic.Anthropic(api_key=api_key)
-        response = client.messages.create(
-            model='claude-haiku-4-5-20251001',
-            max_tokens=600,
-            messages=[{
-                'role': 'user',
-                'content': INTELLIGENCE_PROMPT.format(data_json=json.dumps(data, indent=2))
-            }]
+    latest = AUDITS_DIR / 'traffic-latest.html'
+    if latest.exists() or latest.is_symlink():
+        latest.unlink()
+    latest.symlink_to(html_path.name)
+
+    return {'html_path': str(html_path), 'json_path': str(raw_path)}
+
+
+def _tool_commit_report(html_path: str, json_path: str, today_str: str, summary: str) -> str:
+    git_commit([html_path, json_path], today_str, summary)
+    return f'Committed: {Path(html_path).name}, {Path(json_path).name}'
+
+
+def _run_tool(name: str, args: dict):
+    if name == 'pull_and_analyze':
+        return _tool_pull_and_analyze(args.get('days', 28))
+    if name == 'generate_html_report':
+        return _tool_generate_html_report(
+            args['analysis_json'], args['intelligence_text'],
+            args['today_str'], args['period_str']
         )
-        return response.content[0].text.strip()
+    if name == 'commit_report':
+        return _tool_commit_report(
+            args['html_path'], args['json_path'], args['today_str'], args['summary']
+        )
+    raise ValueError(f'Unknown tool: {name}')
 
-    except Exception as e:
-        print(f'      [AI] Warning: could not generate intelligence digest: {e}')
-        return None
+
+def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
+    import anthropic
+
+    api_key = _get_anthropic_api_key()
+    if not api_key:
+        print(
+            'ERROR: No Anthropic API key.\n'
+            'Add to ~/.config/claude-seo/anthropic-api-key or set ANTHROPIC_API_KEY.\n'
+            'Get a key at console.anthropic.com → API Keys.'
+        )
+        return 1
+
+    today = datetime.now()
+    today_str = today.strftime('%Y-%m-%d')
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=days - 1)
+    period_str = f"{start.strftime('%b %d')} – {end.strftime('%b %d, %Y')}"
+
+    print(f'[seo-weekly-orchestrator] {today_str} — {period_str}')
+    print(f'Mode: {"dry-run" if dry_run else "live"} | model: claude-sonnet-4-6')
+
+    client = anthropic.Anthropic(api_key=api_key)
+    messages = [{
+        'role': 'user',
+        'content': (
+            f'Run the weekly SEO analysis for kabatone.com. '
+            f'Today: {today_str}. Period: {period_str} ({days} days). '
+            + ('DRY RUN — generate the report but do NOT call commit_report.'
+               if dry_run else 'Commit the report after generating it.')
+        ),
+    }]
+
+    while True:
+        response = client.messages.create(
+            model='claude-sonnet-4-6',
+            max_tokens=4096,
+            system=ORCHESTRATOR_SYSTEM,
+            tools=TOOLS,
+            messages=messages,
+        )
+        messages.append({'role': 'assistant', 'content': response.content})
+
+        if response.stop_reason == 'end_turn':
+            for block in response.content:
+                if hasattr(block, 'text'):
+                    print(f'\n[✓] {block.text}')
+            break
+
+        tool_results = []
+        for block in response.content:
+            if block.type == 'tool_use':
+                safe_args = {k: v for k, v in block.input.items() if k != 'analysis_json'}
+                print(f'  [tool] {block.name}({safe_args})')
+                try:
+                    result = _run_tool(block.name, block.input)
+                    tool_results.append({
+                        'type': 'tool_result',
+                        'tool_use_id': block.id,
+                        'content': json.dumps(result) if not isinstance(result, str) else result,
+                    })
+                except Exception as e:
+                    import traceback
+                    err = f'ERROR in {block.name}: {e}\n{traceback.format_exc()}'
+                    print(f'  [error] {err}')
+                    tool_results.append({
+                        'type': 'tool_result',
+                        'tool_use_id': block.id,
+                        'content': err,
+                        'is_error': True,
+                    })
+
+        if tool_results:
+            messages.append({'role': 'user', 'content': tool_results})
+
+    return 0
+
+
+def run_no_ai(dry_run: bool = False, days: int = 28):
+    """Generate report from raw data only — no LLM call."""
+    today = datetime.now()
+    today_str = today.strftime('%Y-%m-%d')
+    end = today - timedelta(days=1)
+    start = end - timedelta(days=days - 1)
+    period_str = f"{start.strftime('%b %d')} – {end.strftime('%b %d, %Y')}"
+
+    print(f'[seo-weekly-agent] {today_str} (no-ai)')
+    print('[1/3] GA4...')
+    ga4 = pull_ga4(days)
+    print('[2/3] GSC...')
+    gsc_rows = pull_gsc(days)
+    print(f'      {len(gsc_rows)} queries')
+    print('[3/3] Generating...')
+    analysis = analyse(gsc_rows, ga4)
+    org = analysis['organic']
+
+    AUDITS_DIR.mkdir(parents=True, exist_ok=True)
+    html_path = AUDITS_DIR / f'traffic-{today_str}.html'
+    html_path.write_text(build_html(analysis, today_str, period_str), encoding='utf-8')
+    raw_path = AUDITS_DIR / f'raw-ga4-{today_str}.json'
+    raw_path.write_text(json.dumps({
+        'generated': today.isoformat(), 'period': period_str,
+        'ga4_property': GA4_PROPERTY, 'gsc_property': GSC_PROPERTY,
+        'sources_cur': ga4['sources_cur'], 'sources_prior': ga4['sources_prior'],
+        'weekly': ga4['weekly'], 'pages_cur': ga4['pages_cur'],
+    }, indent=2), encoding='utf-8')
+    latest = AUDITS_DIR / 'traffic-latest.html'
+    if latest.exists() or latest.is_symlink():
+        latest.unlink()
+    latest.symlink_to(html_path.name)
+
+    summary = (f'organic {org["sessions"]} sess ({org["delta"]:+.0f}%), '
+               f'{analysis["trend_dir"]}, unlockable ~{analysis["unlockable"]} clicks')
+    if dry_run:
+        print(f'[dry-run] Would commit: {html_path.name}')
+    else:
+        git_commit([str(html_path), str(raw_path)], today_str, summary)
+        print('[✓] Committed.')
 
 
 def format_intelligence_html(digest_md):
@@ -620,14 +861,15 @@ def format_intelligence_html(digest_md):
                 html_parts.append('</ul>')
                 in_list = False
             continue
-        if line.startswith('## '):
+        if line.startswith('### ') or line.startswith('## '):
             if in_list:
                 html_parts.append('</ul>')
                 in_list = False
+            text = line.lstrip('#').strip()
             html_parts.append(
                 f'<p style="font-size:11px;font-weight:700;text-transform:uppercase;'
                 f'letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">'
-                f'{line[3:]}</p>'
+                f'{text}</p>'
             )
         elif line.startswith('- ') or line.startswith('* '):
             if not in_list:
@@ -666,79 +908,17 @@ def git_commit(files, today_str, summary):
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--dry-run', action='store_true', help='Skip git commit and push')
+    parser = argparse.ArgumentParser(description='KabatOne weekly SEO orchestrator agent')
+    parser.add_argument('--dry-run', action='store_true', help='Skip git commit')
     parser.add_argument('--days', type=int, default=28)
-    parser.add_argument('--no-ai', action='store_true', help='Skip Claude intelligence step')
+    parser.add_argument('--no-ai', action='store_true', help='Skip LLM — raw analysis only')
     args = parser.parse_args()
 
-    today = datetime.now()
-    today_str = today.strftime('%Y-%m-%d')
-    end = today - timedelta(days=1)
-    start = end - timedelta(days=args.days - 1)
-    period_str = f"{start.strftime('%b %d')} – {end.strftime('%b %d, %Y')}"
+    if args.no_ai:
+        run_no_ai(dry_run=args.dry_run, days=args.days)
+        return 0
+    return run_orchestrator(dry_run=args.dry_run, days=args.days)
 
-    print(f'[seo-weekly-agent] {today_str} — period: {period_str}')
-
-    print('[1/4] Pulling GA4 data...')
-    ga4 = pull_ga4(args.days)
-
-    print('[2/4] Pulling GSC data...')
-    gsc_rows = pull_gsc(args.days)
-    print(f'      {len(gsc_rows)} queries')
-
-    print('[3/4] Running analysis...')
-    analysis = analyse(gsc_rows, ga4)
-    org = analysis['organic']
-    print(f'      Total sessions: {analysis["total_cur"]:,} ({analysis["total_delta"]:+.1f}%)')
-    print(f'      Organic: {org["sessions"]:,} ({org["share"]}%, {org["delta"]:+.1f}%)')
-    print(f'      Trend: {analysis["trend_dir"]} ({analysis["trend_delta"]:+.1f}%)')
-    print(f'      Top opportunity: {analysis["opportunities"][0]["query"] if analysis["opportunities"] else "n/a"}')
-    print(f'      Unlockable clicks: ~{analysis["unlockable"]}/month')
-
-    intelligence_html = None
-    if not args.no_ai:
-        print('[3b] Calling Claude for intelligence digest...')
-        digest_md = call_claude_intelligence(analysis, period_str)
-        if digest_md:
-            intelligence_html = format_intelligence_html(digest_md)
-            print(f'      ✓ Digest generated ({len(digest_md)} chars)')
-        else:
-            print('      ⚠ Skipped (no API key or error)')
-
-    print('[4/4] Generating outputs...')
-    AUDITS_DIR.mkdir(parents=True, exist_ok=True)
-
-    html_path = AUDITS_DIR / f'traffic-{today_str}.html'
-    html_path.write_text(build_html(analysis, today_str, period_str, intelligence_html), encoding='utf-8')
-    print(f'      Written: {html_path}')
-
-    raw_path = AUDITS_DIR / f'raw-ga4-{today_str}.json'
-    raw_path.write_text(json.dumps({
-        'generated': today.isoformat(), 'period': period_str,
-        'ga4_property': GA4_PROPERTY, 'gsc_property': GSC_PROPERTY,
-        'sources_cur': ga4['sources_cur'], 'sources_prior': ga4['sources_prior'],
-        'weekly': ga4['weekly'], 'pages_cur': ga4['pages_cur'],
-    }, indent=2), encoding='utf-8')
-    print(f'      Written: {raw_path}')
-
-    # Update latest symlink
-    latest = AUDITS_DIR / 'traffic-latest.html'
-    if latest.exists() or latest.is_symlink(): latest.unlink()
-    latest.symlink_to(html_path.name)
-
-    summary = f'organic {org["sessions"]} sess ({org["delta"]:+.0f}%), {analysis["trend_dir"]}, unlockable ~{analysis["unlockable"]} clicks'
-
-    if args.dry_run:
-        print(f'\n[dry-run] Would commit: {html_path.name}, {raw_path.name}')
-        print(f'[dry-run] Summary: {summary}')
-    else:
-        git_commit([str(html_path), str(raw_path)],
-                   today_str, summary)
-        print(f'\n[✓] Committed. Summary: {summary}')
-
-    print('\n[seo-weekly-agent] Done.')
-    return 0
 
 if __name__ == '__main__':
     sys.exit(main())

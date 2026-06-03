@@ -1,3 +1,7 @@
+## [v2.217] – 2026-06-03
+### Changed
+- **SEO weekly agent → orchestrator pattern** — replaced bolt-on Haiku call with Claude Sonnet 4.6 as a proper tool-use orchestrator. Sonnet drives the full analysis loop (pull_and_analyze → write intelligence → generate_html_report → commit_report), with the complete skill methodology (scoring formula, cluster definitions, business value multipliers, KabatOne context) embedded in the system prompt. Eliminates skill drift; intelligence quality upgrade from Haiku to Sonnet.
+
 ## [v2.216] – 2026-06-02
 ### Added
 - **Weekly SEO agent** `scripts/seo_weekly_agent.py` — automated Monday traffic analysis. Pulls GA4 + GSC, scores opportunities, calls Claude Haiku (~$0.02/run) for AI conclusions (what changed, what's surprising, top 3 actions), generates branded HTML dashboard, commits to git. Runs every Monday 08:07 via macOS LaunchAgent. Use `--dry-run` to test, `--no-ai` to skip AI step.
