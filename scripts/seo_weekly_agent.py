@@ -265,7 +265,7 @@ def analyse(gsc_rows, ga4):
 
 # ── HTML Report ───────────────────────────────────────────────────────────────
 
-def build_html(a, today_str, period_str, intelligence_html=None, ai_model='AI'):
+def build_html(a, today_str, period_str, intelligence_html=None, ai_model='AI', action_plan_html=None):
     def dc(delta):
         if delta is None: return '#06b6d4'
         return '#22c55e' if delta >= 0 else '#ef4444'
@@ -344,6 +344,18 @@ def build_html(a, today_str, period_str, intelligence_html=None, ai_model='AI'):
 </div>'''
     else:
         intelligence_block = f'<div class="insight"><strong>Weekly pulse — {a["trend_dir"]}:</strong> 4-week avg <strong>{a["avg_last4"]:.0f}</strong> vs prior <strong>{a["avg_prev4"]:.0f}</strong> ({a["trend_delta"]:+.1f}%). Organic {("+" if org_d and org_d >= 0 else "")}{org_d:.0f}%, total sessions {"up" if td and td > 0 else "down"} {abs(td):.0f}%.</div>'
+
+    if action_plan_html:
+        action_plan_section = f'''<div style="background:#0f1724;border:1px solid #1e3a5f;border-radius:12px;padding:24px 28px;margin-bottom:28px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e3a5f">
+    <span style="font-size:18px">&#x1F4CB;</span>
+    <span style="font-size:13px;font-weight:700;color:#f8fafc">Full Action Plan</span>
+    <span style="margin-left:auto;font-size:11px;color:#475569">{ai_model} &middot; {today_str}</span>
+  </div>
+  {action_plan_html}
+</div>'''
+    else:
+        action_plan_section = ''
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -483,6 +495,7 @@ tfoot td{{padding:9px 13px;background:#0f1724;border-top:1px solid #334155;font-
   </table></div>
 </div>
 
+{action_plan_section}
 </div>
 <div class="footer">
   Auto-generated {today_str} &middot; <a href="https://kabatone.com">kabatone.com</a> &middot; seo-weekly-agent
@@ -506,8 +519,8 @@ platform targeting Mexico municipalities and broader LATAM.
 ## Your workflow
 
 1. Call `pull_and_analyze` to get this week's traffic and keyword data
-2. Analyze the results using the methodology below and write the Weekly Intelligence section
-3. Call `generate_html_report` with your intelligence text and the analysis JSON
+2. Analyze the results and write both the Weekly Intelligence section AND the Full Action Plan
+3. Call `generate_html_report` with your intelligence text, action plan, and the analysis JSON
 4. Call `commit_report` unless dry_run was specified — if dry_run, skip it
 5. Output a one-line completion status
 
@@ -566,7 +579,29 @@ Ranked by estimated SEO impact. Each: ≤1 sentence, specific and actionable.
 Must name exact query strings, page paths, or cluster names from the data.
 Example: "Add FAQ schema to /vs/peregrine/ — 'peregrine analytics dashboards' shows 1,406 impr at pos 9.8 with 0% CTR"
 
-Keep total digest under 250 words. No intro, no preamble, no conclusion — just the three sections."""
+Keep total digest under 250 words. No intro, no preamble, no conclusion — just the three sections.
+
+## Full Action Plan format
+
+After writing the intelligence digest, produce a `action_plan_text` with prioritized actions.
+Use exactly these priority headers (### prefix):
+
+### P0 — This Week
+Up to 5 actions. These are high-score opportunities + critical fixes. Each action on one line:
+`- **[Action title]** | Page: \`/path/\` | Query: \`exact query or cluster\` | ~NNN clicks`
+  Then one indented line: `  → What: [specific instruction — what to add, change, create]`
+
+### P1 — This Month
+Up to 5 actions. Lower-score opportunities, content gaps, cluster development. Same format.
+
+### P2 — Backlog
+Up to 5 actions. Long-term, structural, or speculative. Same format.
+
+Rules for action plan:
+- Every action must reference exact data from the analysis (real query strings, real page paths, real positions)
+- Every "~NNN clicks" estimate must be calculated from the opportunity scores (impressions × ctr_gap)
+- P0 actions must be executable by one person in 1-2 hours
+- No generic advice ("improve content quality") — only specific instructions ("add FAQ schema with 3 Q&As targeting 'what is C5 command center'")"""
 
 
 TOOLS = [
@@ -613,6 +648,15 @@ TOOLS = [
                         "### Top 3 actions this week"
                     ),
                 },
+                "action_plan_text": {
+                    "type": "string",
+                    "description": (
+                        "Your Full Action Plan markdown — exactly three priority sections: "
+                        "### P0 — This Week, ### P1 — This Month, ### P2 — Backlog. "
+                        "Each action: bullet with title | Page | Query | ~NNN clicks, "
+                        "then indented → What: instruction line."
+                    ),
+                },
                 "today_str": {
                     "type": "string",
                     "description": "Today's date as YYYY-MM-DD",
@@ -622,7 +666,7 @@ TOOLS = [
                     "description": "Human-readable period like 'May 13 – Jun 09, 2026'",
                 },
             },
-            "required": ["analysis_json", "intelligence_text", "today_str", "period_str"],
+            "required": ["analysis_json", "intelligence_text", "action_plan_text", "today_str", "period_str"],
         },
     },
     {
@@ -678,11 +722,14 @@ def _tool_pull_and_analyze(days: int = 28) -> dict:
 
 
 def _tool_generate_html_report(
-    analysis_json: str, intelligence_text: str, today_str: str, period_str: str
+    analysis_json: str, intelligence_text: str, action_plan_text: str,
+    today_str: str, period_str: str
 ) -> dict:
     analysis = json.loads(analysis_json)
     intelligence_html = format_intelligence_html(intelligence_text)
-    html = build_html(analysis, today_str, period_str, intelligence_html, ai_model='claude-sonnet-4-6')
+    action_plan_html = format_action_plan_html(action_plan_text)
+    html = build_html(analysis, today_str, period_str, intelligence_html,
+                      ai_model='claude-sonnet-4-6', action_plan_html=action_plan_html)
     AUDITS_DIR.mkdir(parents=True, exist_ok=True)
     html_path = AUDITS_DIR / f'traffic-{today_str}.html'
     html_path.write_text(html, encoding='utf-8')
@@ -720,6 +767,7 @@ def _run_tool(name: str, args: dict):
     if name == 'generate_html_report':
         return _tool_generate_html_report(
             args['analysis_json'], args['intelligence_text'],
+            args.get('action_plan_text', ''),
             args['today_str'], args['period_str']
         )
     if name == 'commit_report':
@@ -780,7 +828,8 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
         tool_results = []
         for block in response.content:
             if block.type == 'tool_use':
-                safe_args = {k: v for k, v in block.input.items() if k != 'analysis_json'}
+                safe_args = {k: v for k, v in block.input.items()
+                             if k not in ('analysis_json', 'intelligence_text', 'action_plan_text')}
                 print(f'  [tool] {block.name}({safe_args})')
                 try:
                     result = _run_tool(block.name, block.input)
@@ -889,6 +938,107 @@ def format_intelligence_html(digest_md):
                 html_parts.append('</ul>')
                 in_list = False
             import re
+            text = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', line)
+            html_parts.append(f'<p style="color:#94a3b8;font-size:13px;line-height:1.6">{text}</p>')
+
+    if in_list:
+        html_parts.append('</ul>')
+
+    return '\n'.join(html_parts)
+
+
+def format_action_plan_html(plan_md: str) -> str:
+    """Convert action plan markdown to styled HTML with P0/P1/P2 priority badges."""
+    import re
+    PRIORITY_COLORS = {
+        'P0': ('#ef4444', 'rgba(239,68,68,0.12)'),
+        'P1': ('#f59e0b', 'rgba(245,158,11,0.12)'),
+        'P2': ('#06b6d4', 'rgba(6,182,212,0.12)'),
+    }
+    lines = plan_md.split('\n')
+    html_parts = []
+    in_list = False
+    current_priority = None
+
+    for line in lines:
+        line = line.rstrip()
+        if not line:
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
+            continue
+
+        if line.startswith('### ') or line.startswith('## '):
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
+            text = line.lstrip('#').strip()
+            # Detect P0/P1/P2
+            priority = None
+            for p in ('P0', 'P1', 'P2'):
+                if text.startswith(p):
+                    priority = p
+                    break
+            current_priority = priority
+            if priority and priority in PRIORITY_COLORS:
+                fg, bg = PRIORITY_COLORS[priority]
+                badge = (f'<span style="background:{bg};color:{fg};border:1px solid {fg};'
+                         f'padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;'
+                         f'margin-right:8px">{priority}</span>')
+                label = text[len(priority):].lstrip(' —–').strip()
+                html_parts.append(
+                    f'<p style="font-size:12px;font-weight:700;color:#f8fafc;margin:20px 0 10px;'
+                    f'display:flex;align-items:center">{badge}{label}</p>'
+                )
+            else:
+                html_parts.append(
+                    f'<p style="font-size:11px;font-weight:700;text-transform:uppercase;'
+                    f'letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">{text}</p>'
+                )
+
+        elif line.startswith('  →') or line.startswith('  - '):
+            # Indented instruction line
+            text = line.strip().lstrip('→').lstrip('- ').strip()
+            text = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', text)
+            text = re.sub(r'`(.+?)`', r'<code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">\1</code>', text)
+            html_parts.append(
+                f'<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;'
+                f'border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">{text}</div>'
+            )
+
+        elif line.startswith('- ') or line.startswith('* '):
+            if not in_list:
+                html_parts.append('<ul style="list-style:none;padding:0;margin:0">')
+                in_list = True
+            text = line[2:]
+            # Style | separators as meta info
+            parts = text.split(' | ')
+            if len(parts) > 1:
+                title_part = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', parts[0])
+                title_part = re.sub(r'`(.+?)`', r'<code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">\1</code>', title_part)
+                meta_parts = []
+                for meta in parts[1:]:
+                    meta = re.sub(r'`(.+?)`', r'<code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">\1</code>', meta)
+                    meta_parts.append(f'<span style="color:#64748b;font-size:11px">{meta}</span>')
+                meta_html = ' <span style="color:#334155">·</span> '.join(meta_parts)
+                cell_html = f'{title_part} <span style="color:#334155;margin:0 4px">|</span> {meta_html}'
+            else:
+                cell_html = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', text)
+                cell_html = re.sub(r'`(.+?)`', r'<code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">\1</code>', cell_html)
+
+            if current_priority and current_priority in PRIORITY_COLORS:
+                border_color = PRIORITY_COLORS[current_priority][0]
+            else:
+                border_color = '#334155'
+            html_parts.append(
+                f'<li style="padding:8px 0 4px 14px;border-left:2px solid {border_color};'
+                f'margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5">'
+                f'{cell_html}</li>'
+            )
+        else:
+            if in_list:
+                html_parts.append('</ul>')
+                in_list = False
             text = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#f8fafc">\1</strong>', line)
             html_parts.append(f'<p style="color:#94a3b8;font-size:13px;line-height:1.6">{text}</p>')
 

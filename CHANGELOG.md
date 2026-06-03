@@ -1,3 +1,7 @@
+## [v2.218] – 2026-06-03
+### Added
+- **Weekly agent: Full Action Plan output** — orchestrator now produces a prioritized P0/P1/P2 action plan alongside the Weekly Intelligence digest. Each action includes exact page path, target query, estimated click uplift, and a specific one-line instruction. Rendered as a styled card in the HTML report with color-coded priority badges.
+
 ## [v2.217] – 2026-06-03
 ### Changed
 - **SEO weekly agent → orchestrator pattern** — replaced bolt-on Haiku call with Claude Sonnet 4.6 as a proper tool-use orchestrator. Sonnet drives the full analysis loop (pull_and_analyze → write intelligence → generate_html_report → commit_report), with the complete skill methodology (scoring formula, cluster definitions, business value multipliers, KabatOne context) embedded in the system prompt. Eliminates skill drift; intelligence quality upgrade from Haiku to Sonnet.
