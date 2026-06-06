@@ -1,3 +1,7 @@
+## [v2.223] – 2026-06-06
+### SEO — Fix title length on video analytics page
+- **what-is-video-analytics EN title** → replaced `&` with `, ... and` to avoid HTML-entity inflation (was 71 chars as `&amp;`); now exactly 70 chars and audit-clean
+
 ## [v2.222] – 2026-06-03
 ### SEO — C5 featured snippet + LATAM cluster internal link
 - **C5 ES meta description** → starts with direct definition "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad…" targeting featured snippet for `que significa c5` (75 imp @ pos 11) and `c5 significado` (56 imp) cluster; adds "diferencia con el C4" to capture comparison queries
