@@ -1,3 +1,10 @@
+## [v2.224] – 2026-06-08
+### SEO — VMS "vms" keyword optimization + sitemap priority bumps
+- **VMS page H1** → now leads with "VMS:" in both EN (`"VMS: What Is a Video Management System for Public Safety?"`) and ES (`"VMS: ¿Qué Es un Sistema de Gestión de Video para Seguridad Pública?"`) — targets `"vms"` query (1,795 impr @ pos 10.9, score 89.8, top opportunity in stack)
+- **VMS metadata title EN** → `"VMS: What Is a Video Management System? Public Safety Guide | KabatOne"` — leads with "VMS" keyword
+- **VMS metadata title ES** → `"VMS: Sistema de Gestión de Video para Seguridad Pública | KabatOne"` — parallel Spanish lead
+- **Sitemap priorities** → bumped `/resources/how-c5-command-centers-work` 0.6→0.8 and `/resources/what-is-video-management-software` 0.6→0.8 (both are highest-opportunity pages per weekly analysis)
+
 ## [v2.223] – 2026-06-06
 ### SEO — Fix title length on video analytics page
 - **what-is-video-analytics EN title** → replaced `&` with `, ... and` to avoid HTML-entity inflation (was 71 chars as `&amp;`); now exactly 70 chars and audit-clean
