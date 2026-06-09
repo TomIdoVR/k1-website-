@@ -1407,6 +1407,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-ecuador',
+          category: 'Guide',
+          title: 'Public Safety Software for Ecuador',
+          excerpt: 'Public safety technology for Ecuadorian municipalities — ECU-911 integration, Quito/Guayaquil metro coordination, anti-narcotics port and airport LPR, police-military joint operations, and SERCOP-compliant procurement.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

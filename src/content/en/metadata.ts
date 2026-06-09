@@ -1026,4 +1026,9 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Costa Rica's Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic and seismic alerts, SJO/Puerto Limon security, and Law 9986 SICOP-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-costa-rica/",
   },
+  publicSafetySoftwareEcuador: {
+    title: "Public Safety Software for Ecuador | ECU-911 Integration, Guayaquil Port Security & SERCOP Procurement – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port and airport LPR, police-military joint operations, and SERCOP-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-ecuador/",
+  },
 } as const

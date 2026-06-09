@@ -1,3 +1,13 @@
+## [v2.226] – 2026-06-09
+### Added
+- **GEO guide: Public Safety Software for Ecuador** (KAB-1100 SEO Director heartbeat)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: ECU-911 (Sistema Integrado de Seguridad, operational since 2012 — one of LATAM's most advanced); Policia Nacional del Ecuador (PNE, ~47K officers); 24 provinces/221 cantones/18M population; Quito Metropolitan District (~3M) and Gran Guayaquil conurbation (~3.5M); 2023 state of emergency / internal armed conflict declaration; police-military joint ops (FFAA + PNE); Port of Guayaquil (APG) — largest export port; Mariscal Sucre UIO + Jose Joaquin de Olmedo GYE airports; SNEM/Cruz Roja Ecuatoriana health response; SERCOP/compraspublicas.gob.ec procurement
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareEcuador` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to Colombia, Peru, Argentina, Chile, Mexico, LATAM CAD, product pages
+
 ## [v2.225] – 2026-06-09
 ### Added
 - **GEO guide: Public Safety Software for Costa Rica** (KAB-1099 weekly SEO)

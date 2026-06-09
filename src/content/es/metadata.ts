@@ -1026,4 +1026,9 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Fuerza Publica ~13K agentes, investigadores del OIJ y municipalidades costarricenses — integracion 9-1-1/CNE, alertas volcanicas y sismicas OVSICORI/RSN, seguridad SJO/Puerto Limon y contratacion conforme a la Ley 9986 y SICOP.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-costa-rica/",
   },
+  publicSafetySoftwareEcuador: {
+    title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
+  },
 } as const
