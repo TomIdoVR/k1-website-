@@ -8,6 +8,7 @@
 - Added `queEsUnC5` metadata key to EN + ES metadata.ts
 - Added `/resources/que-es-un-c5` to sitemap.ts (priority 0.8)
 - Added hub cards to resources page (EN + ES sections)
+- **VMS metadata optimization** (`/resources/what-is-video-management-software/`, EN + ES) — title/description now also target "video management software" (not just "system"); added OG tags. Closes SEO Priority #1; shipped in this commit alongside the C5 page.
 
 ## [v2.227] – 2026-06-09
 ### Changed
