@@ -1,3 +1,11 @@
+## [v2.227] – 2026-06-09
+### Changed
+- **Privacy Policy** (EN + ES): updated content per legal document
+  - Scope: added "formerly known as CityShob Software LTD." and references to Wang\Ica, C-Share, C-React platforms
+  - Device data: added device identifiers, application version, and usage analytics
+  - Purposes: added account management / authentication / security monitoring bullet; updated personalization to name all platforms
+  - Modifications: updated to reference all official KabatOne websites and services
+
 ## [v2.226] – 2026-06-09
 ### Added
 - **GEO guide: Public Safety Software for Ecuador** (KAB-1100 SEO Director heartbeat)
