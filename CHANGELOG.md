@@ -1,3 +1,14 @@
+## [v2.228] – 2026-06-09
+### Added
+- **New page: `/resources/que-es-un-c5/`** (EN + ES) — Spanish C5 hub targeting P1 SEO opportunity (1,296 impressions, 0 clicks)
+  - 8 FAQs in Spanish targeting: ¿qué es un C5?, C5 significado, c5 comando control, centro de mando c5, cuántos C5 en México
+  - 5-C breakdown (Comando, Control, Comunicaciones, Cómputo, Calidad), operational flow, Mexico stats, K1 platform integration
+  - Bilingual page with full EN version for international markets
+  - Article + FAQ + breadcrumb JSON-LD schema
+- Added `queEsUnC5` metadata key to EN + ES metadata.ts
+- Added `/resources/que-es-un-c5` to sitemap.ts (priority 0.8)
+- Added hub cards to resources page (EN + ES sections)
+
 ## [v2.227] – 2026-06-09
 ### Changed
 - **Privacy Policy** (EN + ES): updated content per legal document

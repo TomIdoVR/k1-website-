@@ -225,9 +225,14 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS: What Is a Video Management System? Public Safety Guide | KabatOne",
-    description: "A video management system (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, event search — and connects with CAD and GIS.",
+    title: "VMS — Video Management System & Software for Public Safety | KabatOne",
+    description: "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
+    og: {
+      title: "VMS: Video Management System Software for Public Safety",
+      description: "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsARealTimeCrimeCenter: {
     title: "What Is a Real-Time Crime Center (RTCC)? Complete Guide | KabatOne",
@@ -1030,5 +1035,10 @@ export const metadata = {
     title: "Public Safety Software for Ecuador | ECU-911 Integration, Guayaquil Port Security & SERCOP Procurement – KabatOne",
     description: "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port and airport LPR, police-military joint operations, and SERCOP-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-ecuador/",
+  },
+  queEsUnC5: {
+    title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
+    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    canonical: "https://kabatone.com/resources/que-es-un-c5/",
   },
 } as const

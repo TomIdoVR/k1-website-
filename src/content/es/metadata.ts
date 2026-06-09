@@ -225,9 +225,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS: Sistema de Gestión de Video para Seguridad Pública | KabatOne",
-    description: "Un sistema de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — y conecta con CAD y GIS.",
+    title: "VMS — Sistema y Software de Gestión de Video para Seguridad Pública | KabatOne",
+    description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
+    og: {
+      title: "VMS: Sistema y Software de Gestión de Video para Seguridad Pública",
+      description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsARealTimeCrimeCenter: {
     title: "Centro de Crimen en Tiempo Real (RTCC): Guía | KabatOne",
@@ -1030,5 +1035,10 @@ export const metadata = {
     title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
+  },
+  queEsUnC5: {
+    title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",
+    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
 } as const
