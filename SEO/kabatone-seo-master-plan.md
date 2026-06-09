@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-05-27
-**Current site size:** 204 unique routes × 2 locales (EN + ES) = 408 sitemap URLs
+**Last updated:** 2026-06-09
+**Current site size:** 205 unique routes × 2 locales (EN + ES) = 410 sitemap URLs
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 154 (hub + 153 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: **121 country-specific guides** live (Africa, Europe, Americas, Middle East, Asia-Pacific) + 3 regional/cohort guides (Middle East, LATAM, small cities, Mexico municipalities)
 - Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to Paperclip — strategic risk flagged 2026-05-19, see Phase 6 notes below
@@ -509,6 +509,7 @@
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries appearing (up from 2/5 Apr 27 — new win "best public safety platforms for municipalities"); v2.206: /resources/public-safety-software-honduras — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap |
 | 2026-05-26 | Claude Code (SEO Director heartbeat) | GEO guide (VMS) | — | Next.js | v2.207: /resources/video-management-public-safety-guide
 | 2026-06-02 | Claude Code (SEO Director heartbeat) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: 3/5 queries (stable); PSIM AI answer quality improved; v2.215: /resources/public-safety-software-nicaragua — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap | — high-priority GEO-037 targeting "unified video management platform public safety municipalities" gap query; EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap priority 0.8 |
+| 2026-06-09 | Claude Code (SEO Director heartbeat — KAB-1099) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: **5/5 queries** (up from 3/5 — NEW: CAD LATAM pos 1, VMS unified pos 3); v2.225: /resources/public-safety-software-costa-rica — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap, metadata EN+ES |
 
 ---
 
@@ -616,6 +617,7 @@ B2G procurement teams increasingly use AI tools to shortlist vendors before visi
 | GEO-039 | GEO guide: "Video analytics use cases for public safety" | Medium | Done | v2.72 — /resources/video-analytics-use-cases/ |
 | GEO-040 | GEO guide: "Best CAD dispatch software" (comparison/listicle) | High | Done | v2.76 — /resources/best-cad-dispatch-software/ |
 | GEO-041 | GEO guide: "Public safety software for Nicaragua" | Medium | Done | v2.215 — /resources/public-safety-software-nicaragua/ — PN ~16K/Ejercito 7 regions/SINAPRED 19 volcanoes; Caribbean narco-transit corridor; Puerto Corinto; Ley 323/831 |
+| GEO-042 | GEO guide: "Public safety software for Costa Rica" | Medium | Done | v2.225 — /resources/public-safety-software-costa-rica/ — Fuerza Publica ~13K/OIJ ~2.5K/DIS; constitutional army abolition 1948 (Art.12); 9-1-1 system since 2013; CNE/OVSICORI-UNA/RSN (6+ active volcanoes); SJO Airport 10M+; Puerto Limon JAPDEVA; Ley 9986 + SICOP; SICA/CAFTA-DR |
 | GEO-BULK | **Bulk geographic market guides (autopilot)** — 121 country-specific public-safety-software-* pages generated via `src/lib/seo-agent/ccr.ts` Paperclip dispatcher | — | Live | Live count as of 2026-05-19. Covers all of LATAM, most of Europe (incl. Baltics/Balkans/Iceland/Malta/Luxembourg/Cyprus), GCC + ME, large APAC (India, Japan, Australia, S. Korea, Indonesia, Vietnam, etc.), large Africa block (Nigeria, Kenya, SA, Egypt, Morocco, Ethiopia + ~40 more). **STRATEGIC RISK:** many micro-market pages (São Tomé pop 220k, Seychelles 100k, Comoros, Lesotho, Eswatini) have effectively zero B2G TAM. Identical ~310-line template per page. This pattern matches Google's March 2024 "scaled content abuse" policy — risk is site-wide quality demotion that drags down genuinely valuable pages (Mexico, US, LATAM, products, /vs/). **Action needed:** define a TAM/quality stop-line, prune micro-market pages or substantially differentiate them. |
 
 ### GEO-001 — Entity definition page
@@ -706,6 +708,11 @@ Track: Is KabatOne mentioned? Is it cited as a source? What competitors are cite
 | 2026-06-02 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/psim-vs-unified-platform) + **AI answer names all 5 K-products with architecture description** — quality improved | Genetec, CNL, HxGN, Motorola, Siemens |
 | 2026-06-02 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ❌ No — not appearing | GINA Software, Tyler Technologies, Motorola, Hexagon, CentralSquare |
 | 2026-06-02 | Web search | "unified video management platform public safety municipalities recommendation" | ❌ No — not appearing (VMS guide v2.207 published 2026-05-26 — needs indexing time) | Avigilon, Milestone, Verkada, RapidSOS, Senergy |
+| 2026-06-09 | Web search | "best public safety platforms for municipalities 2026" | ✅ Position 8 (/resources/public-safety-software-small-cities) — stable | SafetyCulture, Motorola, CentralSquare, Tyler, FitGap |
+| 2026-06-09 | Web search | "software C5 command centers Mexico municipalities 2026" | ✅ Position 2 (/how-c5-command-centers-work) + Position 6 (/what-is-a-command-center) — stable | Seguritech, Algotive, Thales, DCD |
+| 2026-06-09 | Web search | "PSIM alternatives unified public safety platform smart cities" | ✅ Position 1 (/psim-vs-unified-platform) + AI answer names all 5 K-products — stable | Genetec, CNL, HxGN, Motorola, Verizon |
+| 2026-06-09 | Web search | "best CAD dispatch software emergency response Latin America 2026" | ✅ **Position 1** (/resources/best-cad-dispatch-software) — **NEW WIN** (was ❌ on 2026-06-02) | GINA Software, Tyler Technologies, Motorola, Hexagon |
+| 2026-06-09 | Web search | "unified video management platform public safety municipalities recommendation" | ✅ **Position 3** (/resources/what-is-video-management-software) + Homepage pos ~7 — **NEW WIN** (was ❌ on 2026-06-02) | Avigilon, Milestone, Verkada, RapidSOS |
 
 ### GEO content principles
 

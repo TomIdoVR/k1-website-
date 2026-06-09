@@ -1021,4 +1021,9 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for El Salvador's PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic and seismic alerts, Puerto Acajutla/SAL airport security, and LACAP-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-el-salvador/",
   },
+  publicSafetySoftwareCostaRica: {
+    title: "Public Safety Software for Costa Rica | Fuerza Publica/OIJ, 9-1-1 System, CNE/OVSICORI, SJO Airport & Law 9986 – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Costa Rica's Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic and seismic alerts, SJO/Puerto Limon security, and Law 9986 SICOP-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-costa-rica/",
+  },
 } as const

@@ -1,3 +1,14 @@
+## [v2.225] – 2026-06-09
+### Added
+- **GEO guide: Public Safety Software for Costa Rica** (KAB-1099 weekly SEO)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: Fuerza Publica ~13K/OIJ ~2,500 investigators/DIS; constitutional army abolition 1948 (Art.12); Sistema de Emergencias 9-1-1 (unified since 2013) coordinating Bomberos/Cruz Roja/SAMU; CNE risk management/OVSICORI-UNA/RSN (6+ active volcanoes: Arenal, Poas, Turrialba, Rincon de la Vieja); Juan Santamaria SJO Airport 10M+ pax; Puerto Limon JAPDEVA Caribbean (main drug seizure point CA); Puerto Caldera INCOP Pacific; 7 provinces/82 cantones/5.2M citizens/3.3M tourists; Ley 9986 + SICOP e-procurement; SICA/CAFTA-DR
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareCostaRica` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to El Salvador, Nicaragua, Honduras, Guatemala, Mexico, LATAM CAD, product pages
+  - GEO monitoring 2026-06-09: **5/5 queries now showing KabatOne** (up from 3/5 on 2026-06-02) — NEW WINS: "best CAD dispatch software emergency response Latin America" now pos 1; "unified video management platform public safety municipalities" now pos 3
+
 ## [v2.224] – 2026-06-08
 ### SEO — VMS "vms" keyword optimization + sitemap priority bumps
 - **VMS page H1** → now leads with "VMS:" in both EN (`"VMS: What Is a Video Management System for Public Safety?"`) and ES (`"VMS: ¿Qué Es un Sistema de Gestión de Video para Seguridad Pública?"`) — targets `"vms"` query (1,795 impr @ pos 10.9, score 89.8, top opportunity in stack)

@@ -1399,6 +1399,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-costa-rica',
+          category: 'Guide',
+          title: 'Public Safety Software for Costa Rica',
+          excerpt: "Public safety technology for Costa Rican municipalities — Fuerza Publica/OIJ coordination, 9-1-1/CNE integration, OVSICORI/RSN volcanic and seismic alerts, SJO airport and Puerto Limon port security, and Law 9986 SICOP procurement.",
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',
