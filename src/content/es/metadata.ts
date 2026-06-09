@@ -55,8 +55,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/industries/logistics/",
   },
   ports: {
-    title: "Seguridad Portuaria Inteligente | KabatOne",
-    description: "Plataforma de seguridad portuaria compatible con ISPS/IMO. Radar costero, seguimiento de embarcaciones y videovigilancia integrada.",
+    title: "Seguridad Portuaria ISPS — Radar Costero y Videovigilancia | KabatOne",
+    description: "Plataforma ISPS/IMO para puertos: radar costero, seguimiento de embarcaciones, control de acceso y videovigilancia integrados en un solo sistema de mando.",
     canonical: "https://kabatone.com/es/industries/ports/",
   },
   stadiums: {
@@ -85,8 +85,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "Centros de Mando C5: Arquitectura y Tecnología | KabatOne",
-    description: "Los centros C5 coordinan respuesta a emergencias, videovigilancia y tráfico en ciudades mexicanas. Conoce su arquitectura, tecnología y modelo operativo.",
+    title: "¿Qué es un Centro C5? Arquitectura y Tecnología | KabatOne",
+    description: "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — un centro de mando integrado para seguridad pública. Arquitectura, tecnología y diferencia con el C4.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
   },
   smartCityPlatformGuide: {
@@ -225,8 +225,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "Software VMS para Seguridad Pública: Guía Completa | KabatOne",
-    description: "El software VMS agrega cámaras de cualquier fabricante, añade analítica IA como LPR y reconocimiento facial, y conecta con despacho CAD y GIS.",
+    title: "VMS: Sistema de Gestión de Video para Seguridad Pública | KabatOne",
+    description: "Un sistema de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — y conecta con CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Analítica de Video con IA: Guía para Centros de Mando | KabatOne",
-    description: "La analítica de video con IA detecta intrusiones, LPR, aglomeraciones y armas en tiempo real sin monitoreo humano continuo. Cómo funciona e integración con despacho CAD.",
+    title: "Analítica de Video IA para CCTV y Seguridad Pública | KabatOne",
+    description: "Analítica inteligente de video detecta intrusiones, aglomeraciones, armas y LPR en cámaras CCTV e IP en tiempo real — integrada con despacho CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
@@ -1010,5 +1010,25 @@ export const metadata = {
     title: "Software de Seguridad Publica para Honduras | PNH/PMOP/FUSINA, SNE 911, Puerto Cortes y Decreto 148.5 – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNH ~15K agentes, PMOP, FUSINA y municipios hondurenos — integracion SNE 911, respuesta a desastres COPECO, seguridad portuaria Puerto Cortes y contratacion conforme al Decreto 148.5.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-honduras/",
+  },
+  publicSafetySoftwareNicaragua: {
+    title: "Software de Seguridad Publica para Nicaragua | Policia Nacional/Ejercito, SINAPRED Volcanes, Puerto Corinto y Ley 323 – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~16K agentes, Ejercito de Nicaragua 7 regiones militares y municipios — integracion 118/115/128, respuesta SINAPRED/INETER a desastres, seguridad portuaria Puerto Corinto y contratacion conforme a la Ley 323.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-nicaragua/",
+  },
+  publicSafetySoftwareElSalvador: {
+    title: "Software de Seguridad Publica para El Salvador | PNC/FAES, Estado de Excepcion, Puerto Acajutla, DGPC/SNET y LACAP – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~28K agentes, FAES ~25K efectivos y municipios salvadorenos — integracion 911/COEN, alertas volcanicas y sismicas DGPC/SNET, seguridad Puerto Acajutla/Aeropuerto SAL y contratacion conforme a la LACAP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-el-salvador/",
+  },
+  publicSafetySoftwareCostaRica: {
+    title: "Software de Seguridad Publica para Costa Rica | Fuerza Publica/OIJ, Sistema 9-1-1, CNE/OVSICORI, Aeropuerto SJO y Ley 9986 – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Fuerza Publica ~13K agentes, investigadores del OIJ y municipalidades costarricenses — integracion 9-1-1/CNE, alertas volcanicas y sismicas OVSICORI/RSN, seguridad SJO/Puerto Limon y contratacion conforme a la Ley 9986 y SICOP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-costa-rica/",
+  },
+  publicSafetySoftwareEcuador: {
+    title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
   },
 } as const

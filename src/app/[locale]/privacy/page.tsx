@@ -26,7 +26,7 @@ export default async function PrivacyPage({
     {
       id: 'scope',
       heading: 'Alcance de este Aviso',
-      body: 'Kabat One, S.A. de C.V. (en adelante "KabatOne"), con domicilio en Av. Ejército Nacional Mexicano 57, Piso 4, Ciudad de México, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.',
+      body: 'Kabat One, S.A. de C.V. (en adelante "KabatOne"), antes conocida como CityShob Software LTD., con domicilio en Av. Ejército Nacional Mexicano 57, Piso 4, Ciudad de México, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, la aplicación Wang\\Ica, las plataformas C-Share y C-React, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, aplicaciones, plataformas, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.',
     },
     {
       id: 'data-collected',
@@ -38,7 +38,7 @@ export default async function PrivacyPage({
         'Datos financieros: información de tarjeta de pago para transacciones.',
         'Contenido generado por el usuario: fotos, videos, historias y comentarios.',
         'Investigación de mercado: retroalimentación voluntaria sobre nuestros servicios.',
-        'Datos del dispositivo: dirección IP, sistema operativo y tipo de navegador.',
+        'Datos del dispositivo: dirección IP, sistema operativo, tipo de navegador, identificadores de dispositivo, versión de aplicación y análisis de uso.',
         'Grabaciones de llamadas: con fines informativos y de control de calidad.',
       ],
     },
@@ -46,11 +46,12 @@ export default async function PrivacyPage({
       id: 'purposes',
       heading: 'Finalidades del Tratamiento',
       bullets: [
-        'Personalización de los servicios ofrecidos.',
-        'Optimización del sitio web en función de la retroalimentación recibida.',
+        'Personalización de los servicios ofrecidos a través de KabatOne, Wang\\Ica, C-Share y C-React.',
+        'Optimización del sitio web y aplicaciones en función de la retroalimentación recibida.',
         'Procesamiento de pedidos y detección de fraudes.',
         'Administración de concursos y promociones.',
         'Envío de comunicaciones periódicas por correo electrónico (con opción de cancelar suscripción).',
+        'Gestión de cuentas, autenticación, monitoreo de seguridad y cumplimiento de obligaciones legales.',
       ],
     },
     {
@@ -91,7 +92,7 @@ export default async function PrivacyPage({
     {
       id: 'updates',
       heading: 'Modificaciones',
-      body: 'KabatOne se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en kabatone.com. Te recomendamos revisar esta página periódicamente.',
+      body: 'KabatOne se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en los sitios web y servicios oficiales de KabatOne, incluyendo Wang\\Ica, C-Share y C-React. Te recomendamos revisar esta página periódicamente.',
     },
     {
       id: 'contact',
@@ -106,7 +107,7 @@ export default async function PrivacyPage({
     {
       id: 'scope',
       heading: 'Scope of This Notice',
-      body: 'Kabat One, S.A. de C.V. ("KabatOne"), located at Av. Ejército Nacional Mexicano 57, Floor 4, Mexico City, is responsible for the processing of your personal data. This notice applies to information gathered through our website, emails, text messages, forms, and services. By using the website, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.',
+      body: 'Kabat One, S.A. de C.V. ("KabatOne"), formerly known as CityShob Software LTD., located at Av. Ejército Nacional Mexicano 57, Floor 4, Mexico City, is responsible for the processing of your personal data. This notice applies to information gathered through our website, the Wang\\Ica application, the C-Share and C-React platforms, emails, text messages, forms, and services. By using the website, applications, platforms, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.',
     },
     {
       id: 'data-collected',
@@ -118,7 +119,7 @@ export default async function PrivacyPage({
         'Financial data: payment card information for transactions.',
         'User-generated content: photos, videos, stories, and comments.',
         'Market research: voluntary feedback about our services.',
-        'Device data: IP address, operating system, and browser type.',
+        'Device data: IP address, operating system, browser type, device identifiers, application version, and usage analytics.',
         'Call recordings: for informational and quality assurance purposes.',
       ],
     },
@@ -126,11 +127,12 @@ export default async function PrivacyPage({
       id: 'purposes',
       heading: 'Purposes of Processing',
       bullets: [
-        'Personalization of services offered.',
-        'Website optimization based on feedback received.',
+        'Personalization of services offered through KabatOne, Wang\\Ica, C-Share, and C-React.',
+        'Website and application optimization based on feedback received.',
         'Order processing and fraud detection.',
         'Contest and promotion management.',
         'Periodic email communications (with unsubscribe options).',
+        'Account management, authentication, security monitoring, and compliance with legal obligations.',
       ],
     },
     {
@@ -171,7 +173,7 @@ export default async function PrivacyPage({
     {
       id: 'updates',
       heading: 'Modifications',
-      body: 'KabatOne reserves the right to update this privacy notice at any time. Changes will be posted at kabatone.com. We recommend reviewing this page periodically.',
+      body: 'KabatOne reserves the right to update this privacy notice at any time. Changes will be posted on KabatOne\'s official websites and services, including Wang\\Ica, C-Share, and C-React. We recommend reviewing this page periodically.',
     },
     {
       id: 'contact',

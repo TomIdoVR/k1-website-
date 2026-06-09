@@ -1,0 +1,229 @@
+{
+  "generated": "2026-06-08T00:00:00",
+  "period": "May 11 \u2013 Jun 07, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 626,
+      "users": 570,
+      "bounce": 75.2
+    },
+    "Organic Search": {
+      "sessions": 437,
+      "users": 266,
+      "bounce": 52.2
+    },
+    "Referral": {
+      "sessions": 90,
+      "users": 49,
+      "bounce": 56.7
+    },
+    "Organic Social": {
+      "sessions": 21,
+      "users": 19,
+      "bounce": 81.0
+    },
+    "Unassigned": {
+      "sessions": 17,
+      "users": 16,
+      "bounce": 88.2
+    }
+  },
+  "sources_prior": {
+    "Direct": 921,
+    "Organic Search": 249,
+    "Referral": 127,
+    "Organic Social": 16,
+    "Unassigned": 11
+  },
+  "weekly": [
+    {
+      "week": "13",
+      "year": "2026",
+      "sessions": 92
+    },
+    {
+      "week": "14",
+      "year": "2026",
+      "sessions": 280
+    },
+    {
+      "week": "15",
+      "year": "2026",
+      "sessions": 274
+    },
+    {
+      "week": "16",
+      "year": "2026",
+      "sessions": 350
+    },
+    {
+      "week": "17",
+      "year": "2026",
+      "sessions": 304
+    },
+    {
+      "week": "18",
+      "year": "2026",
+      "sessions": 393
+    },
+    {
+      "week": "19",
+      "year": "2026",
+      "sessions": 293
+    },
+    {
+      "week": "20",
+      "year": "2026",
+      "sessions": 232
+    },
+    {
+      "week": "21",
+      "year": "2026",
+      "sessions": 264
+    },
+    {
+      "week": "22",
+      "year": "2026",
+      "sessions": 332
+    },
+    {
+      "week": "23",
+      "year": "2026",
+      "sessions": 331
+    },
+    {
+      "week": "24",
+      "year": "2026",
+      "sessions": 39
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 137,
+      "duration": 225,
+      "bounce": 34.3
+    },
+    "/": {
+      "sessions": 96,
+      "duration": 195,
+      "bounce": 44.8
+    },
+    "(not set)": {
+      "sessions": 58,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/industries/ports": {
+      "sessions": 21,
+      "duration": 293,
+      "bounce": 61.9
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 12,
+      "duration": 86,
+      "bounce": 58.3
+    },
+    "/es/k-dispatch": {
+      "sessions": 10,
+      "duration": 314,
+      "bounce": 50.0
+    },
+    "/es/resources": {
+      "sessions": 7,
+      "duration": 115,
+      "bounce": 71.4
+    },
+    "/about": {
+      "sessions": 6,
+      "duration": 286,
+      "bounce": 66.7
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 6,
+      "duration": 29,
+      "bounce": 50.0
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 5,
+      "duration": 508,
+      "bounce": 20.0
+    },
+    "/es/k-safety": {
+      "sessions": 4,
+      "duration": 10,
+      "bounce": 75.0
+    },
+    "/es/k-video": {
+      "sessions": 4,
+      "duration": 40,
+      "bounce": 100.0
+    },
+    "/k-dispatch": {
+      "sessions": 4,
+      "duration": 178,
+      "bounce": 50.0
+    },
+    "/resources/smart-city-platform-guide": {
+      "sessions": 4,
+      "duration": 116,
+      "bounce": 0.0
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 4,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/k-traffic": {
+      "sessions": 3,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/resources/ai-in-public-safety": {
+      "sessions": 3,
+      "duration": 161,
+      "bounce": 33.3
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 3,
+      "duration": 84,
+      "bounce": 0.0
+    },
+    "/es/resources/what-is-emergency-dispatch-software": {
+      "sessions": 3,
+      "duration": 590,
+      "bounce": 0.0
+    },
+    "/es/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "duration": 296,
+      "bounce": 66.7
+    },
+    "/resources/rtcc-setup-guide": {
+      "sessions": 3,
+      "duration": 22,
+      "bounce": 33.3
+    },
+    "/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "duration": 66,
+      "bounce": 33.3
+    },
+    "": {
+      "sessions": 2,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/about": {
+      "sessions": 2,
+      "duration": 27,
+      "bounce": 50.0
+    },
+    "/es/contact": {
+      "sessions": 2,
+      "duration": 0,
+      "bounce": 100.0
+    }
+  }
+}

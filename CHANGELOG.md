@@ -1,3 +1,118 @@
+## [v2.227] – 2026-06-09
+### Changed
+- **Privacy Policy** (EN + ES): updated content per legal document
+  - Scope: added "formerly known as CityShob Software LTD." and references to Wang\Ica, C-Share, C-React platforms
+  - Device data: added device identifiers, application version, and usage analytics
+  - Purposes: added account management / authentication / security monitoring bullet; updated personalization to name all platforms
+  - Modifications: updated to reference all official KabatOne websites and services
+
+## [v2.226] – 2026-06-09
+### Added
+- **GEO guide: Public Safety Software for Ecuador** (KAB-1100 SEO Director heartbeat)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: ECU-911 (Sistema Integrado de Seguridad, operational since 2012 — one of LATAM's most advanced); Policia Nacional del Ecuador (PNE, ~47K officers); 24 provinces/221 cantones/18M population; Quito Metropolitan District (~3M) and Gran Guayaquil conurbation (~3.5M); 2023 state of emergency / internal armed conflict declaration; police-military joint ops (FFAA + PNE); Port of Guayaquil (APG) — largest export port; Mariscal Sucre UIO + Jose Joaquin de Olmedo GYE airports; SNEM/Cruz Roja Ecuatoriana health response; SERCOP/compraspublicas.gob.ec procurement
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareEcuador` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to Colombia, Peru, Argentina, Chile, Mexico, LATAM CAD, product pages
+
+## [v2.225] – 2026-06-09
+### Added
+- **GEO guide: Public Safety Software for Costa Rica** (KAB-1099 weekly SEO)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: Fuerza Publica ~13K/OIJ ~2,500 investigators/DIS; constitutional army abolition 1948 (Art.12); Sistema de Emergencias 9-1-1 (unified since 2013) coordinating Bomberos/Cruz Roja/SAMU; CNE risk management/OVSICORI-UNA/RSN (6+ active volcanoes: Arenal, Poas, Turrialba, Rincon de la Vieja); Juan Santamaria SJO Airport 10M+ pax; Puerto Limon JAPDEVA Caribbean (main drug seizure point CA); Puerto Caldera INCOP Pacific; 7 provinces/82 cantones/5.2M citizens/3.3M tourists; Ley 9986 + SICOP e-procurement; SICA/CAFTA-DR
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareCostaRica` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to El Salvador, Nicaragua, Honduras, Guatemala, Mexico, LATAM CAD, product pages
+  - GEO monitoring 2026-06-09: **5/5 queries now showing KabatOne** (up from 3/5 on 2026-06-02) — NEW WINS: "best CAD dispatch software emergency response Latin America" now pos 1; "unified video management platform public safety municipalities" now pos 3
+
+## [v2.224] – 2026-06-08
+### SEO — VMS "vms" keyword optimization + sitemap priority bumps
+- **VMS page H1** → now leads with "VMS:" in both EN (`"VMS: What Is a Video Management System for Public Safety?"`) and ES (`"VMS: ¿Qué Es un Sistema de Gestión de Video para Seguridad Pública?"`) — targets `"vms"` query (1,795 impr @ pos 10.9, score 89.8, top opportunity in stack)
+- **VMS metadata title EN** → `"VMS: What Is a Video Management System? Public Safety Guide | KabatOne"` — leads with "VMS" keyword
+- **VMS metadata title ES** → `"VMS: Sistema de Gestión de Video para Seguridad Pública | KabatOne"` — parallel Spanish lead
+- **Sitemap priorities** → bumped `/resources/how-c5-command-centers-work` 0.6→0.8 and `/resources/what-is-video-management-software` 0.6→0.8 (both are highest-opportunity pages per weekly analysis)
+
+## [v2.223] – 2026-06-06
+### SEO — Fix title length on video analytics page
+- **what-is-video-analytics EN title** → replaced `&` with `, ... and` to avoid HTML-entity inflation (was 71 chars as `&amp;`); now exactly 70 chars and audit-clean
+
+## [v2.222] – 2026-06-03
+### SEO — C5 featured snippet + LATAM cluster internal link
+- **C5 ES meta description** → starts with direct definition "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad…" targeting featured snippet for `que significa c5` (75 imp @ pos 11) and `c5 significado` (56 imp) cluster; adds "diferencia con el C4" to capture comparison queries
+- **C5 page Related Articles** → added cross-link to `/resources/c5-command-centers-mexico-2026/` (EN + ES); strengthens LATAM C5 cluster internal linking
+
+## [v2.221] – 2026-06-03
+### SEO — P1 metadata optimization (Video/VMS cluster + Ports)
+- **`whatIsVideoManagementSoftware` EN title** → "What Is a Video Management System (VMS)? Software Guide | KabatOne" — adds "system" variant targeting `video management system` (275 imp @ pos 57) and `vms software` (246 imp @ pos 41)
+- **`whatIsVideoManagementSoftware` ES title** → "Sistema de Gestión de Video (VMS): Qué Es y Cómo Funciona | KabatOne" — parallel "system" variant for Spanish
+- **`whatIsVideoAnalytics` EN/ES title** — added "CCTV" keyword; description updated to include "intelligent" signal targeting `intelligent video analytics` (121 imp), `cctv video analytics` (237 imp)
+- **Ports ES title** → "Seguridad Portuaria ISPS — Radar Costero y Videovigilancia | KabatOne" with more specific description including radar costero + control de acceso
+
+## [v2.220] – 2026-06-03
+### New Page
+- **El Salvador** — `/resources/public-safety-software-el-salvador/` (EN + ES)
+  - PNC ~28K/FAES ~25K/GRP/CAT/UEA/GOES; Estado de Excepcion Mar 2022; CECOT 40K+ capacity Feb 2023
+  - 911/COEN national emergency; DGPC civil protection; SNET seismic+volcanic 5 active volcanoes (Santa Ana/Ilamatepec 2,381m; San Miguel/Chaparrastique)
+  - Puerto Acajutla Pacific main cargo; Puerto La Union (Cutuco) Gulf of Fonseca; SAL Airport regional hub; CEPA
+  - 14 departments/262 municipalities; 6.3M citizens; 2M+ diaspora USA; dollarized USD 2001
+  - LACAP (Decreto 868)/Comprasal e-procurement; LAIP/IAIP data access; SICA/CAFTA-DR
+  - Metadata: `publicSafetySoftwareElSalvador` (EN + ES); added to sitemap.ts; hub card on resources/page.tsx
+
+## [v2.219] – 2026-06-03
+### Fixed / SEO
+- **Peregrine page title** — updated to "Peregrine.ai Analytics Reporting Dashboards vs KabatOne" (includes brand URL variant matching `peregrine.ai analytics reporting dashboards` query at 769 impr/pos 9.4); description updated to include "alternative" signal for comparison intent
+- **C5 page: add `¿Qué es un C5?` FAQ** — inserted as first FAQ in both ES and EN; directly targets `que es un c5` / `que es un centro c5` queries (combined C5 cluster at ~463 impressions, pos 9–11, 0 clicks); ES title also updated to `¿Qué es un Centro C5?` to match query intent
+- Note: CAD page and k-dispatch bounces are low-traffic noise (4 and 8 sessions respectively) — left as-is per user guidance that average times are misleading at current traffic levels
+
+## [v2.218] – 2026-06-03
+### Added
+- **Weekly agent: Full Action Plan output** — orchestrator now produces a prioritized P0/P1/P2 action plan alongside the Weekly Intelligence digest. Each action includes exact page path, target query, estimated click uplift, and a specific one-line instruction. Rendered as a styled card in the HTML report with color-coded priority badges.
+
+## [v2.217] – 2026-06-03
+### Changed
+- **SEO weekly agent → orchestrator pattern** — replaced bolt-on Haiku call with Claude Sonnet 4.6 as a proper tool-use orchestrator. Sonnet drives the full analysis loop (pull_and_analyze → write intelligence → generate_html_report → commit_report), with the complete skill methodology (scoring formula, cluster definitions, business value multipliers, KabatOne context) embedded in the system prompt. Eliminates skill drift; intelligence quality upgrade from Haiku to Sonnet.
+
+## [v2.216] – 2026-06-02
+### Added
+- **Weekly SEO agent** `scripts/seo_weekly_agent.py` — automated Monday traffic analysis. Pulls GA4 + GSC, scores opportunities, calls Claude Haiku (~$0.02/run) for AI conclusions (what changed, what's surprising, top 3 actions), generates branded HTML dashboard, commits to git. Runs every Monday 08:07 via macOS LaunchAgent. Use `--dry-run` to test, `--no-ai` to skip AI step.
+
+## [v2.215] – 2026-06-02
+### Added
+- **GEO guide: Public Safety Software for Nicaragua** (KAB-1048)
+  - EN + ES bilingual; ArticleSchema + FAQPageSchema (6 Q&A) + BreadcrumbList
+  - Coverage: Policia Nacional ~16K/Ejercito 7 military regions/SINAPRED 19 active volcanoes; Puerto Corinto 2M+ t/yr; 118/115/128 dispatch; Ley 323/801 procurement; Ley 831 data protection 2021; RACCN/RACCS autonomous regions; narco-transit Caribbean corridor
+  - Resources hub card added (EN)
+  - Metadata: `publicSafetySoftwareNicaragua` key in EN + ES
+  - Sitemap: priority 0.75
+  - Internal links to Guatemala, Honduras, Mexico, LATAM CAD, product pages
+  - GEO monitoring 2026-06-02: 3/5 queries appearing (stable); PSIM query AI answer quality improved — now names all 5 K-products with architecture description
+
+## [v2.214] – 2026-05-30
+### Fixed
+- **Daily SEO audit** (KAB-1039): shortened VMS page title from 71→70 chars (`/resources/what-is-video-management-software/`) — removed trailing `?` after `(VMS)` to stay within 70-char limit.
+
+## [v2.213] – 2026-05-29
+### Added
+- **Weekly SEO agent** `scripts/seo_weekly_agent.py` — self-contained script: pulls GA4+GSC, scores keyword opportunities, generates HTML dashboard + raw JSON snapshot, commits to git. Registered as macOS LaunchAgent `com.kabatone.seo-weekly` (every Monday 08:07).
+
+## [v2.212] – 2026-05-29
+### SEO — Daily audit fix
+- **vs/peregrine** — shortened meta description from 181 to 151 chars (was triggering `desc_near_max` info flag in daily audit). EN only; ES was already within limits.
+
+## [v2.211] – 2026-05-28
+### SEO — Keyword opportunity optimizations
+- **Peregrine page** — added "What Are Peregrine's Analytics Reporting Dashboards?" section (EN+ES) with 6 dashboard-type cards + "what dashboards don't show" callout. Targets "peregrine.ai analytics reporting dashboards" (1,406 impr, pos 9.8, 0 CTR).
+- **Video analytics** — updated title/meta/H1 (EN+ES) to target "AI video analytics surveillance" cluster (pos 16–25) instead of generic "video analytics" (pos 41, too competitive).
+- **Video management software** — updated title/meta/H1 (EN+ES) to lead with exact query "video management software (VMS)" (183 impr, pos 34).
+
+## [v2.210] – 2026-05-28
+### Added
+- **Traffic analysis report** `SEO/audits/traffic-2026-05-28.html` — standalone GA4+GSC traffic intelligence dashboard with Chart.js: weekly sessions trend (10 weeks), traffic source mix (current vs prior 28d), keyword opportunity stack (15 queries, ~79 extra clicks/month), cluster momentum (8 groups, 723 total queries).
+- **seo-traffic skill** `~/.claude/skills/seo-traffic/SKILL.md` — new standalone skill for unified GA4+GSC traffic analysis. Invokable as `/seo-traffic`. Integrates into `kabatone-seo-audit` as Section 6.
+- **GA4 integration** — configured `properties/530090453` in `~/.config/claude-seo/google-api.json`; enabled Google Analytics Data API in GCP project 395364110222.
+
 ## [v2.209] – 2026-05-28
 ### Added / Fixed
 - **SEO visual dashboard** `SEO/audits/2026-05-28-1632-audit.html` — dark KabatOne-branded HTML report with Chart.js health gauge, branch divergence chart, GSC performance charts, and color-coded P0/P1/P2 findings.

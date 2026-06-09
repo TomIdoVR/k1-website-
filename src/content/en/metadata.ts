@@ -155,12 +155,12 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "Peregrine Analytics & Reporting Dashboards vs KabatOne",
-    description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+    title: "Peregrine.ai Analytics Reporting Dashboards vs KabatOne",
+    description: "What Peregrine.ai analytics reporting dashboards cover — and what they don't. KabatOne alternative: full CAD dispatch, AI video, GIS, and traffic in one platform.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
       title: "Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations",
-      description: "Peregrine provides predictive analytics reporting dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
+      description: "Peregrine analytics dashboards for law enforcement leaders. KabatOne adds the operational layer: CAD dispatch, AI video, GIS, and traffic — all native.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -225,8 +225,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "What Is VMS Software? Video Management for Public Safety | KabatOne",
-    description: "VMS software aggregates cameras from any manufacturer, adds AI analytics — LPR, facial recognition, behavioral detection — and connects with CAD and GIS.",
+    title: "VMS: What Is a Video Management System? Public Safety Guide | KabatOne",
+    description: "A video management system (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, event search — and connects with CAD and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
   },
   whatIsARealTimeCrimeCenter: {
@@ -265,8 +265,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "AI Video Analytics Guide for Command Centers | KabatOne",
-    description: "AI video analytics detects intrusions, LPR matches, crowds, and weapons in real time. How it works and integrates with CAD dispatch.",
+    title: "AI Video Analytics for CCTV, Surveillance and Public Safety | KabatOne",
+    description: "Intelligent AI video analytics detects intrusions, crowds, weapons, and LPR in CCTV and IP cameras — real time, integrated with CAD dispatch and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
@@ -1010,5 +1010,25 @@ export const metadata = {
     title: "Public Safety Software for Honduras | HNP/PMOP/FUSINA, SNE 911, Puerto Cortes & Decree 148.5 – KabatOne",
     description: "KabatOne delivers unified public safety platform for Honduras' HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security, and Decree 148.5-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-honduras/",
+  },
+  publicSafetySoftwareNicaragua: {
+    title: "Public Safety Software for Nicaragua | National Police/Army, SINAPRED Volcanoes, Puerto Corinto & Law 323 – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Nicaragua's National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration, SINAPRED/INETER disaster response, Puerto Corinto port security, and Law 323-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-nicaragua/",
+  },
+  publicSafetySoftwareElSalvador: {
+    title: "Public Safety Software for El Salvador | PNC/FAES, State of Exception, Puerto Acajutla, DGPC/SNET & LACAP – KabatOne",
+    description: "KabatOne delivers unified public safety platform for El Salvador's PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic and seismic alerts, Puerto Acajutla/SAL airport security, and LACAP-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-el-salvador/",
+  },
+  publicSafetySoftwareCostaRica: {
+    title: "Public Safety Software for Costa Rica | Fuerza Publica/OIJ, 9-1-1 System, CNE/OVSICORI, SJO Airport & Law 9986 – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Costa Rica's Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic and seismic alerts, SJO/Puerto Limon security, and Law 9986 SICOP-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-costa-rica/",
+  },
+  publicSafetySoftwareEcuador: {
+    title: "Public Safety Software for Ecuador | ECU-911 Integration, Guayaquil Port Security & SERCOP Procurement – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port and airport LPR, police-military joint operations, and SERCOP-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-ecuador/",
   },
 } as const

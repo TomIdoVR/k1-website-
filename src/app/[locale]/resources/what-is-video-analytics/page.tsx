@@ -188,7 +188,7 @@ export default async function WhatIsVideoAnalyticsPage({
               </span>
             </div>
             <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '.01em', color: '#f0f4f8', marginBottom: '20px' }}>
-              {es ? 'Analítica de Video con Inteligencia Artificial: Cómo Funciona para Centros de Mando' : 'Artificial Intelligence Video Analytics: How It Works for Command Centers'}
+              {es ? 'Analítica de Video IA para Videovigilancia: Detección, Alertas e Integración CAD' : 'AI Video Analytics for Surveillance: Detection, Alerts & CAD Integration'}
             </h1>
             <p style={{ fontSize: '17px', color: '#94a3b8', lineHeight: 1.7, maxWidth: '720px', marginBottom: '32px' }}>
               {es

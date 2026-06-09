@@ -25,6 +25,10 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
 
   const faqs = es ? [
     {
+      question: '¿Qué es un C5?',
+      answer: 'Un C5 es un centro de mando integrado de seguridad pública que concentra Comando, Control, Comunicaciones, Cómputo y Calidad en una sola instalación. Los centros C5 operan en las principales ciudades de México y América Latina para coordinar la respuesta policial, bomberos, emergencias médicas, videovigilancia urbana, tráfico y protección civil desde un único punto de control con video walls y estaciones de operadores conectadas en tiempo real.',
+    },
+    {
       question: '¿Qué significa C5?',
       answer: 'C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Es el modelo de centro de mando utilizado en México y América Latina para coordinar respuesta a emergencias, videovigilancia, tráfico y protección civil desde una sola instalación.',
     },
@@ -49,6 +53,10 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
       answer: 'Los centros C5 integran videovigilancia mediante sistemas de gestión de video (VMS) que agregan miles de cámaras urbanas en una sola interfaz. Los operadores pueden visualizar feeds en vivo en video walls, aplicar analítica de IA para detección automática de incidentes, y correlacionar eventos de video con llamadas 911 y unidades en campo.',
     },
   ] : [
+    {
+      question: 'What is a C5 command center?',
+      answer: 'A C5 command center is an integrated public safety facility that consolidates Command, Control, Communications, Computing, and Quality (C5) into a single operational hub. C5 centers are widely deployed across major Mexican cities — including Mexico City, Guadalajara, Monterrey, and Puebla — to coordinate police, fire, EMS, surveillance, traffic, and civil protection from a unified environment with video walls and real-time operator workstations.',
+    },
     {
       question: 'What does C5 stand for?',
       answer: 'C5 stands for Centro de Comando, Control, Comunicaciones, Cómputo y Calidad (Command, Control, Communications, Computing, and Quality). C5 centers are integrated emergency response and public safety command centers used across Mexico and Latin America to coordinate police, fire, EMS, traffic, and civil protection from a single facility.',
@@ -532,6 +540,15 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 color: 'var(--dim)', fontSize: '15px',
               }}>
                 <span>{es ? 'Software de seguridad pública para México' : 'Public Safety Software for Mexico'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/c5-command-centers-mexico-2026" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
