@@ -1,3 +1,11 @@
+## [v2.230] – 2026-06-10 — Homepage v2: full redesign from Claude Design handoff
+### Changed
+- **Homepage rebuilt** (EN + ES) from the approved Claude Design prototype (`Homepage v2.html`). New section order: Hero (5 operational pillars) → Operational Loop → Solutions (tabbed showcase) → Platform architecture diagram → Modules grid (10 building blocks) → Proof (integrations + stats + C5 quote + customer carousel) → Industries (photographic tiles) → Final CTA.
+- New components under `src/components/home2/`; ported design stylesheet at `src/app/[locale]/home2.css` (design-tool chrome stripped, stray-brace bug in prototype CSS fixed, mobile collapse rules added for the solutions tabs).
+- Architecture correction from design chat applied: Modules (neutral building blocks) split from Solutions (K-products); K-Dispatch recolored red → blue, K-Traffic cyan → amber.
+- Added DM Mono font + Barlow Condensed 800 weight to root layout (design system requirement).
+- Kept existing Nav, Footer, and all SEO metadata. Industry tiles use gradient placeholders until real photography is supplied; customer carousel uses placeholder monograms.
+
 ## [v2.229] – 2026-06-10 — Peregrine comparison page: CTR refresh
 ### Changed
 - **`/vs/peregrine/` metadata (EN + ES)** — rewrote title to lead with "Peregrine.ai Alternative" + concrete differentiator (CAD, AI Video, GIS); description now opens with a question hook. Targets the 612-impression / position-9 / 0-CTR gap by making the SERP snippet click-worthy. OG tags updated to match. (SEO Priority #2)
