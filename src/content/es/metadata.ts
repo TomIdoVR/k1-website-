@@ -155,12 +155,12 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "KabatOne vs Peregrine — Analítica Predictiva vs Operaciones | KabatOne",
-    description: "Peregrine ofrece analítica predictiva de crimen. KabatOne es la plataforma operacional: CAD, video IA, GIS y tráfico — todo nativo en un solo sistema.",
+    title: "Alternativa a Peregrine.ai: CAD, Video IA y GIS | KabatOne",
+    description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
     canonical: "https://kabatone.com/es/vs/peregrine/",
     og: {
-      title: "KabatOne vs Peregrine — Analítica Predictiva vs Operaciones Unificadas",
-      description: "Peregrine ofrece analítica predictiva de crimen. KabatOne es la plataforma operacional: CAD, video IA, GIS y tráfico — todo nativo en un solo sistema.",
+      title: "Alternativa a Peregrine.ai — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },

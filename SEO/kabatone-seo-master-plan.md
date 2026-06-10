@@ -192,7 +192,7 @@
 | /vs/cad/ — traditional CAD alternative | Medium | Done | v0.61 |
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
-| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
+| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 · CTR refresh v2.229 (2026-06-10) — "alternative"-led title + question-hook meta for the 612-impr/pos-9/0-CTR gap |
 | /vs/rapidssos/ — RapidSOS comparison | Medium | Done | v1.14 |
 | /vs/avigilon/ — premium VMS comparison | Medium | Done | v1.40 |
 | /vs/verkada/ — cloud physical security comparison | Medium | Done | v1.40 |

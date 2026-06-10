@@ -1,3 +1,7 @@
+## [v2.229] – 2026-06-10 — Peregrine comparison page: CTR refresh
+### Changed
+- **`/vs/peregrine/` metadata (EN + ES)** — rewrote title to lead with "Peregrine.ai Alternative" + concrete differentiator (CAD, AI Video, GIS); description now opens with a question hook. Targets the 612-impression / position-9 / 0-CTR gap by making the SERP snippet click-worthy. OG tags updated to match. (SEO Priority #2)
+
 ## [v2.228] – 2026-06-09
 ### Added
 - **New page: `/resources/que-es-un-c5/`** (EN + ES) — Spanish C5 hub targeting P1 SEO opportunity (1,296 impressions, 0 clicks)
