@@ -1,3 +1,8 @@
+## [v2.232] – 2026-06-11 — Video Analytics hub: query-variant depth + cluster interlink
+### Added
+- **`/resources/what-is-video-analytics/` (EN + ES)** — two new FAQs targeting the biggest untapped query clusters from the GSC audit: **"AI video analytics"** (~1,070 combined impressions, pos 20–25) and **"CCTV video analytics"** (~500 impressions, pos 15–32). Exact-match phrasing also expands the FAQPage schema for AI-answer citation.
+- Added a **K-Video product link** to the page's related links — the one genuine internal-linking gap (the site's #1 page by impressions, 6,120 at pos 27, had no path to the K-Video product). Completes the video ↔ VMS ↔ K-Video cluster (the VMS hub already links back). Build verified 0 errors.
+
 ## [v2.231] – 2026-06-11 — C5 + Verkada: page-1 CTR refresh (data-driven)
 ### Changed
 - **`/resources/how-c5-command-centers-work/` (EN + ES)** — ES title now leads with "¿Qué es un C5? Significado…" to match "c5 significado" intent; both locales add a 911/video/dispatch + "5 C vs C4" hook and OG tags. Target: GSC shows the ES page at **1,118 impressions, position 9.7, 0 clicks** — a page-1 snippet that wasn't earning the click.
