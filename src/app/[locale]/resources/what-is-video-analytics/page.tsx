@@ -61,6 +61,16 @@ export default async function WhatIsVideoAnalyticsPage({
           answer:
             'Un sistema de analítica de video (VAS, por sus siglas en inglés) es una plataforma que combina grabación de video con procesamiento de inteligencia artificial para detectar eventos automáticamente — sin que un operador tenga que monitorear cada cámara en forma continua. A diferencia de un sistema VMS básico que solo graba y reproduce, un sistema de analítica de video ejecuta modelos de IA sobre el flujo en vivo: detección de intrusión, reconocimiento de placas (LPR), análisis de comportamiento y alertas en tiempo real. Para centros de mando de seguridad pública, un sistema de analítica de video reduce el tiempo de detección de incidentes de minutos a segundos.',
         },
+        {
+          question: '¿Qué es la analítica de video con IA?',
+          answer:
+            'La analítica de video con IA (también llamada analítica de video inteligente) usa redes neuronales y aprendizaje profundo para interpretar las imágenes de las cámaras en lugar de reglas fijas de movimiento. Esto le permite distinguir una persona de un animal, clasificar tipos de vehículo, leer placas (LPR), reconocer rostros y detectar comportamientos como merodeo o aglomeraciones — con tasas de falsos positivos mucho menores que la analítica tradicional. En KabatOne, la analítica de video con IA corre sobre cámaras de cualquier fabricante y envía solo los eventos relevantes al mapa operativo del centro de mando.',
+        },
+        {
+          question: '¿Qué es la analítica de video CCTV y en qué se diferencia de la analítica en cámara?',
+          answer:
+            'La analítica de video CCTV aplica procesamiento inteligente a las cámaras de circuito cerrado existentes de una ciudad o instalación — sin reemplazar la infraestructura. Puede ejecutarse en la propia cámara (analítica en cámara o edge) o en un servidor central que procesa varias cámaras a la vez. La ventaja de una plataforma como KabatOne es que agrega la analítica CCTV de cámaras Hikvision, Axis, Dahua, Bosch y otras en una sola interfaz, correlacionando las alertas de todas las cámaras con LPR, sensores y despacho.',
+        },
       ]
     : [
         {
@@ -97,6 +107,16 @@ export default async function WhatIsVideoAnalyticsPage({
           question: 'What is a video analytics system?',
           answer:
             'A video analytics system is a platform that combines video recording with artificial intelligence processing to automatically detect events — without an operator monitoring every camera continuously. Unlike a basic VMS that only records and plays back, a video analytics system runs AI models on the live stream: intrusion detection, license plate recognition (LPR), behavioral analysis, and real-time alerts. For public safety command centers, a video analytics system reduces incident detection time from minutes to seconds by surfacing only relevant events rather than requiring manual camera review.',
+        },
+        {
+          question: 'What is AI video analytics?',
+          answer:
+            'AI video analytics (also called intelligent video analytics) uses neural networks and deep learning to interpret camera footage rather than fixed motion rules. This lets it tell a person from an animal, classify vehicle types, read license plates (LPR), recognize faces, and detect behaviors like loitering or crowding — with far lower false-positive rates than traditional motion-based analytics. In KabatOne, AI video analytics runs on cameras from any manufacturer and pushes only the relevant events to the command center operational map.',
+        },
+        {
+          question: 'What is CCTV video analytics, and how is it different from camera-based analytics?',
+          answer:
+            'CCTV video analytics applies intelligent processing to a city or facility existing closed-circuit cameras — without replacing the infrastructure. It can run on the camera itself (camera-based or edge analytics) or on a central server that processes many camera feeds at once. The advantage of a platform like KabatOne is that it aggregates CCTV analytics from Hikvision, Axis, Dahua, Bosch, and other cameras into a single interface, correlating alerts from every camera with LPR, sensors, and dispatch.',
         },
       ]
 
@@ -336,6 +356,7 @@ export default async function WhatIsVideoAnalyticsPage({
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
+              { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
               { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'Video Management Software' },
               { href: '/resources/what-is-lpr-license-plate-recognition', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },

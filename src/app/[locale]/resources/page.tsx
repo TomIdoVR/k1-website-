@@ -194,6 +194,14 @@ export default async function ResourcesPage({
           isNew: false,
         },
         {
+          href: '/resources/que-es-un-c5',
+          category: 'Guía',
+          title: '¿Qué es un C5? Centro de Comando, Control y Videovigilancia',
+          excerpt: 'Un C5 es un Centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Significado, tecnología y operación en México y América Latina.',
+          readTime: '8 min',
+          isNew: true,
+        },
+        {
           href: '/resources/smart-city-platform-guide',
           category: 'Guía',
           title: 'Guía de Plataformas de Ciudad Inteligente',
@@ -1333,6 +1341,14 @@ export default async function ResourcesPage({
           excerpt: 'C5 command centers coordinate emergency response, video surveillance, and traffic across Mexican cities. Architecture, technology stack, and operational model.',
           readTime: '7 min',
           isNew: false,
+        },
+        {
+          href: '/resources/que-es-un-c5',
+          category: 'Guide',
+          title: 'What Is a C5 Command Center? Command, Control & Surveillance',
+          excerpt: 'A C5 is a Command, Control, Communications, Computing, and Quality center for public safety. How C5 centers work in Mexico and Latin America.',
+          readTime: '8 min',
+          isNew: true,
         },
         {
           href: '/resources/smart-city-platform-guide',

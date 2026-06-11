@@ -48,7 +48,7 @@
 | 2 | Create GSC property + verify ownership | ✅ Done — verified 2026-03-26 |
 | 3 | Submit sitemap to GSC | ✅ Done — 2026-04-20 |
 | 4 | Request indexing for 6 priority pages | ✅ Done — 2026-04-20 |
-| 5 | Verify GA4 tracking on live site | Not confirmed |
+| 5 | Verify GA4 tracking on live site | ✅ Done — confirmed active (G-5MB9CK1FGS / properties/530090453), 2026-06-09 |
 | 6 | Run Auditor + Validator against live kabatone.com | Not started |
 
 ### 🟡 Remaining GSC issues (from 2026-04-23 screenshot)
@@ -192,7 +192,7 @@
 | /vs/cad/ — traditional CAD alternative | Medium | Done | v0.61 |
 | /vs/fusus/ — RTCC comparison | Medium | Done | v0.69 |
 | /vs/prepared911/ — NG911 comparison | Medium | Done | v0.69 |
-| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 |
+| /vs/peregrine/ — predictive analytics comparison | Medium | Done | v0.80 · CTR refresh v2.229 (2026-06-10) — "alternative"-led title + question-hook meta for the 612-impr/pos-9/0-CTR gap |
 | /vs/rapidssos/ — RapidSOS comparison | Medium | Done | v1.14 |
 | /vs/avigilon/ — premium VMS comparison | Medium | Done | v1.40 |
 | /vs/verkada/ — cloud physical security comparison | Medium | Done | v1.40 |

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
+import { Space_Grotesk, Barlow_Condensed, DM_Mono } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -16,14 +16,21 @@ const spaceGrotesk = Space_Grotesk({
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-barlow-condensed',
+  display: 'swap',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-dm-mono',
   display: 'swap',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html suppressHydrationWarning className={`${spaceGrotesk.variable} ${barlowCondensed.variable}`}>
+    <html suppressHydrationWarning className={`${spaceGrotesk.variable} ${barlowCondensed.variable} ${dmMono.variable}`}>
       <body suppressHydrationWarning>
         {children}
       </body>

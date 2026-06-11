@@ -1,3 +1,38 @@
+## [v2.232] – 2026-06-11 — Video Analytics hub: query-variant depth + cluster interlink
+### Added
+- **`/resources/what-is-video-analytics/` (EN + ES)** — two new FAQs targeting the biggest untapped query clusters from the GSC audit: **"AI video analytics"** (~1,070 combined impressions, pos 20–25) and **"CCTV video analytics"** (~500 impressions, pos 15–32). Exact-match phrasing also expands the FAQPage schema for AI-answer citation.
+- Added a **K-Video product link** to the page's related links — the one genuine internal-linking gap (the site's #1 page by impressions, 6,120 at pos 27, had no path to the K-Video product). Completes the video ↔ VMS ↔ K-Video cluster (the VMS hub already links back). Build verified 0 errors.
+
+## [v2.231] – 2026-06-11 — C5 + Verkada: page-1 CTR refresh (data-driven)
+### Changed
+- **`/resources/how-c5-command-centers-work/` (EN + ES)** — ES title now leads with "¿Qué es un C5? Significado…" to match "c5 significado" intent; both locales add a 911/video/dispatch + "5 C vs C4" hook and OG tags. Target: GSC shows the ES page at **1,118 impressions, position 9.7, 0 clicks** — a page-1 snippet that wasn't earning the click.
+- **`/vs/verkada/` (EN + ES)** — "Verkada Alternative"-led title + question-hook description + OG tags. Target: **294 impressions, position 9.4, 0 clicks**.
+- Both are pure metadata/CTR plays identified by the fresh GSC/GA4 audit (2026-06-11). Build verified 0 errors.
+
+## [v2.230] – 2026-06-10 — Homepage v2: full redesign from Claude Design handoff
+### Changed
+- **Homepage rebuilt** (EN + ES) from the approved Claude Design prototype (`Homepage v2.html`). New section order: Hero (5 operational pillars) → Operational Loop → Solutions (tabbed showcase) → Platform architecture diagram → Modules grid (10 building blocks) → Proof (integrations + stats + C5 quote + customer carousel) → Industries (photographic tiles) → Final CTA.
+- New components under `src/components/home2/`; ported design stylesheet at `src/app/[locale]/home2.css` (design-tool chrome stripped, stray-brace bug in prototype CSS fixed, mobile collapse rules added for the solutions tabs).
+- Architecture correction from design chat applied: Modules (neutral building blocks) split from Solutions (K-products); K-Dispatch recolored red → blue, K-Traffic cyan → amber.
+- Added DM Mono font + Barlow Condensed 800 weight to root layout (design system requirement).
+- Kept existing Nav, Footer, and all SEO metadata. Industry tiles use gradient placeholders until real photography is supplied; customer carousel uses placeholder monograms.
+
+## [v2.229] – 2026-06-10 — Peregrine comparison page: CTR refresh
+### Changed
+- **`/vs/peregrine/` metadata (EN + ES)** — rewrote title to lead with "Peregrine.ai Alternative" + concrete differentiator (CAD, AI Video, GIS); description now opens with a question hook. Targets the 612-impression / position-9 / 0-CTR gap by making the SERP snippet click-worthy. OG tags updated to match. (SEO Priority #2)
+
+## [v2.228] – 2026-06-09
+### Added
+- **New page: `/resources/que-es-un-c5/`** (EN + ES) — Spanish C5 hub targeting P1 SEO opportunity (1,296 impressions, 0 clicks)
+  - 8 FAQs in Spanish targeting: ¿qué es un C5?, C5 significado, c5 comando control, centro de mando c5, cuántos C5 en México
+  - 5-C breakdown (Comando, Control, Comunicaciones, Cómputo, Calidad), operational flow, Mexico stats, K1 platform integration
+  - Bilingual page with full EN version for international markets
+  - Article + FAQ + breadcrumb JSON-LD schema
+- Added `queEsUnC5` metadata key to EN + ES metadata.ts
+- Added `/resources/que-es-un-c5` to sitemap.ts (priority 0.8)
+- Added hub cards to resources page (EN + ES sections)
+- **VMS metadata optimization** (`/resources/what-is-video-management-software/`, EN + ES) — title/description now also target "video management software" (not just "system"); added OG tags. Closes SEO Priority #1; shipped in this commit alongside the C5 page.
+
 ## [v2.227] – 2026-06-09
 ### Changed
 - **Privacy Policy** (EN + ES): updated content per legal document

@@ -85,9 +85,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "¿Qué es un Centro C5? Arquitectura y Tecnología | KabatOne",
-    description: "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — un centro de mando integrado para seguridad pública. Arquitectura, tecnología y diferencia con el C4.",
+    title: "¿Qué es un C5? Significado, Arquitectura y Tecnología 2026 | KabatOne",
+    description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
+    og: {
+      title: "¿Qué es un C5? Significado y Arquitectura — Guía 2026",
+      description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   smartCityPlatformGuide: {
     title: "Plataformas de Ciudad Inteligente: Guía y Casos de Uso | KabatOne",
@@ -155,12 +160,12 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "KabatOne vs Peregrine — Analítica Predictiva vs Operaciones | KabatOne",
-    description: "Peregrine ofrece analítica predictiva de crimen. KabatOne es la plataforma operacional: CAD, video IA, GIS y tráfico — todo nativo en un solo sistema.",
+    title: "Alternativa a Peregrine.ai: CAD, Video IA y GIS | KabatOne",
+    description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
     canonical: "https://kabatone.com/es/vs/peregrine/",
     og: {
-      title: "KabatOne vs Peregrine — Analítica Predictiva vs Operaciones Unificadas",
-      description: "Peregrine ofrece analítica predictiva de crimen. KabatOne es la plataforma operacional: CAD, video IA, GIS y tráfico — todo nativo en un solo sistema.",
+      title: "Alternativa a Peregrine.ai — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -225,9 +230,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS: Sistema de Gestión de Video para Seguridad Pública | KabatOne",
-    description: "Un sistema de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — y conecta con CAD y GIS.",
+    title: "VMS — Sistema y Software de Gestión de Video para Seguridad Pública | KabatOne",
+    description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
+    og: {
+      title: "VMS: Sistema y Software de Gestión de Video para Seguridad Pública",
+      description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsARealTimeCrimeCenter: {
     title: "Centro de Crimen en Tiempo Real (RTCC): Guía | KabatOne",
@@ -310,9 +320,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-incident-management-software/",
   },
   vsVerkada: {
-    title: "KabatOne vs Verkada — Nube vs Seguridad Pública Unificada | KabatOne",
-    description: "Verkada ofrece cámaras, control de acceso y alarmas en la nube. KabatOne agrega CAD, GIS y tráfico — el flujo completo desde detección hasta respuesta.",
+    title: "Alternativa a Verkada: CAD, GIS y Tráfico Unificados | KabatOne",
+    description: "¿Buscas una alternativa a Verkada? Verkada ofrece cámaras y control de acceso en la nube — KabatOne suma CAD, GIS y tráfico para el flujo completo de detección a respuesta.",
     canonical: "https://kabatone.com/es/vs/verkada/",
+    og: {
+      title: "Alternativa a Verkada — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Verkada? Verkada ofrece cámaras y control de acceso en la nube — KabatOne suma CAD, GIS y tráfico para el flujo completo de detección a respuesta.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   c5CommandCentersMexico2026: {
     title: "Centros C5 en México: Guía de Tecnología 2026 | KabatOne",
@@ -1030,5 +1045,10 @@ export const metadata = {
     title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
+  },
+  queEsUnC5: {
+    title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",
+    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
 } as const
