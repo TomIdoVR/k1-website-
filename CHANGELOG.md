@@ -1,3 +1,9 @@
+## [v2.231] – 2026-06-11 — C5 + Verkada: page-1 CTR refresh (data-driven)
+### Changed
+- **`/resources/how-c5-command-centers-work/` (EN + ES)** — ES title now leads with "¿Qué es un C5? Significado…" to match "c5 significado" intent; both locales add a 911/video/dispatch + "5 C vs C4" hook and OG tags. Target: GSC shows the ES page at **1,118 impressions, position 9.7, 0 clicks** — a page-1 snippet that wasn't earning the click.
+- **`/vs/verkada/` (EN + ES)** — "Verkada Alternative"-led title + question-hook description + OG tags. Target: **294 impressions, position 9.4, 0 clicks**.
+- Both are pure metadata/CTR plays identified by the fresh GSC/GA4 audit (2026-06-11). Build verified 0 errors.
+
 ## [v2.230] – 2026-06-10 — Homepage v2: full redesign from Claude Design handoff
 ### Changed
 - **Homepage rebuilt** (EN + ES) from the approved Claude Design prototype (`Homepage v2.html`). New section order: Hero (5 operational pillars) → Operational Loop → Solutions (tabbed showcase) → Platform architecture diagram → Modules grid (10 building blocks) → Proof (integrations + stats + C5 quote + customer carousel) → Industries (photographic tiles) → Final CTA.

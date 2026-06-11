@@ -85,9 +85,14 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "How C5 Command Centers Work: Architecture & Tech | KabatOne",
-    description: "C5 command centers coordinate emergency response, video, and traffic across Mexican cities. Learn the architecture, technology stack, and operational model.",
+    title: "What Is a C5 Command Center? Architecture & Tech (2026) | KabatOne",
+    description: "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
     canonical: "https://kabatone.com/resources/how-c5-command-centers-work/",
+    og: {
+      title: "What Is a C5 Command Center? Architecture & Tech (2026)",
+      description: "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   smartCityPlatformGuide: {
     title: "Smart City Platform Guide — Use Cases & Technology | KabatOne",
@@ -315,9 +320,14 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-incident-management-software/",
   },
   vsVerkada: {
-    title: "KabatOne vs Verkada — Physical Security vs Unified Public Safety",
-    description: "Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds CAD, GIS, and traffic — completing the workflow from detection to response.",
+    title: "Verkada Alternative: KabatOne — CAD, GIS & Traffic Beyond Cameras",
+    description: "Looking for a Verkada alternative? Verkada covers cloud cameras and access control — KabatOne adds CAD dispatch, GIS and traffic for the full detection-to-response workflow.",
     canonical: "https://kabatone.com/vs/verkada/",
+    og: {
+      title: "Verkada Alternative — KabatOne Unified Public Safety Platform",
+      description: "Looking for a Verkada alternative? Verkada covers cloud cameras and access control — KabatOne adds CAD dispatch, GIS and traffic for the full detection-to-response workflow.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   c5CommandCentersMexico2026: {
     title: "C5 Command Centers in Mexico: 2026 Technology Guide | KabatOne",

@@ -85,9 +85,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "¿Qué es un Centro C5? Arquitectura y Tecnología | KabatOne",
-    description: "C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — un centro de mando integrado para seguridad pública. Arquitectura, tecnología y diferencia con el C4.",
+    title: "¿Qué es un C5? Significado, Arquitectura y Tecnología 2026 | KabatOne",
+    description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
+    og: {
+      title: "¿Qué es un C5? Significado y Arquitectura — Guía 2026",
+      description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   smartCityPlatformGuide: {
     title: "Plataformas de Ciudad Inteligente: Guía y Casos de Uso | KabatOne",
@@ -315,9 +320,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-incident-management-software/",
   },
   vsVerkada: {
-    title: "KabatOne vs Verkada — Nube vs Seguridad Pública Unificada | KabatOne",
-    description: "Verkada ofrece cámaras, control de acceso y alarmas en la nube. KabatOne agrega CAD, GIS y tráfico — el flujo completo desde detección hasta respuesta.",
+    title: "Alternativa a Verkada: CAD, GIS y Tráfico Unificados | KabatOne",
+    description: "¿Buscas una alternativa a Verkada? Verkada ofrece cámaras y control de acceso en la nube — KabatOne suma CAD, GIS y tráfico para el flujo completo de detección a respuesta.",
     canonical: "https://kabatone.com/es/vs/verkada/",
+    og: {
+      title: "Alternativa a Verkada — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Verkada? Verkada ofrece cámaras y control de acceso en la nube — KabatOne suma CAD, GIS y tráfico para el flujo completo de detección a respuesta.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   c5CommandCentersMexico2026: {
     title: "Centros C5 en México: Guía de Tecnología 2026 | KabatOne",
