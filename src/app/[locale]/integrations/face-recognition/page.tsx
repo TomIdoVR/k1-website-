@@ -441,6 +441,8 @@ export default async function FaceRecognitionIntegrationPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
+                { href: '/resources/what-is-video-analytics', label: es ? '¿Qué Es la Analítica de Video?' : 'What Is Video Analytics?' },
+                { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS?' : 'What Is Video Management Software (VMS)?' },
                 { href: '/integrations/lpr', label: es ? 'Integración de Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR) Integration' },
                 { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública: Guía para Ciudades' : 'AI in Public Safety: A Guide for Cities' },
                 { href: '/resources/rtcc-setup-guide', label: es ? 'Guía de Implementación RTCC' : 'RTCC Setup Guide' },

@@ -1,3 +1,9 @@
+## [v2.235] – 2026-06-12 — Internal links to lift the video-analytics hub
+### Changed
+- Added contextual internal links **to `/resources/what-is-video-analytics/`** (the site's #1 page by impressions, stuck at pos 27) from four high-relevance pages that previously skipped it: `/integrations/lpr/`, `/integrations/face-recognition/`, `/resources/ai-in-public-safety/`, `/resources/what-is-a-public-safety-platform/`.
+- The two integration pages also gained links to the **VMS hub** (`/resources/what-is-video-management-software/`, pos 35).
+- Rationale: both hubs are content-complete; internal PageRank from authority/topical pages is the one on-site lever left to move them off page 3–4. EN + ES. Build verified 0 errors.
+
 ## [v2.234] – 2026-06-12 — Page-1 CTR refresh, batch 2 (5 pages, EN + ES)
 ### Changed
 - Metadata CTR refresh + OG tags for five pages the GSC audit shows ranking on/near page 1 with ~0 clicks:
