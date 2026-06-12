@@ -1,3 +1,7 @@
+## [v2.233] – 2026-06-12 — SEO audit fix: VMS title length
+### Fixed
+- **`/resources/what-is-video-management-software/` (EN)** — shortened title from 73 to 60 chars (removed redundant "System &" from "Video Management System & Software") to stay within the 70-char SEO limit. Daily Verge audit found 71 pages clean, 1 warning (this title), 0 critical.
+
 ## [v2.232] – 2026-06-11 — Video Analytics hub: query-variant depth + cluster interlink
 ### Added
 - **`/resources/what-is-video-analytics/` (EN + ES)** — two new FAQs targeting the biggest untapped query clusters from the GSC audit: **"AI video analytics"** (~1,070 combined impressions, pos 20–25) and **"CCTV video analytics"** (~500 impressions, pos 15–32). Exact-match phrasing also expands the FAQPage schema for AI-answer citation.
