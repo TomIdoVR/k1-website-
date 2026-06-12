@@ -1,3 +1,13 @@
+## [v2.234] – 2026-06-12 — Page-1 CTR refresh, batch 2 (5 pages, EN + ES)
+### Changed
+- Metadata CTR refresh + OG tags for five pages the GSC audit shows ranking on/near page 1 with ~0 clicks:
+  - **`/resources/public-safety-software-small-cities/`** — pos **5.9**, 0 clicks (most egregious): benefit-led title + "affordable C5 capability" hook.
+  - **`/resources/what-is-situational-awareness-software/`** — pos 11.4, 336 impr: question-led title ("What Is…?") + 30–40% stat hook.
+  - **`/vs/avigilon/`** — pos 10.0, 0 clicks: question-hook description on the existing "Avigilon Alternative" title.
+  - **`/vs/cad/`** — pos 8.2, 0 clicks: "CAD Alternative"-led title + question hook.
+  - **`/k-connect/`** — pos 11.0, 0 clicks: sharpened description + OG.
+- All EN + ES; pure metadata plays from the 2026-06-11 audit. Build verified 0 errors.
+
 ## [v2.233] – 2026-06-12 — SEO audit fix: VMS title length
 ### Fixed
 - **`/resources/what-is-video-management-software/` (EN)** — shortened title from 73 to 60 chars (removed redundant "System &" from "Video Management System & Software") to stay within the 70-char SEO limit. Daily Verge audit found 71 pages clean, 1 warning (this title), 0 critical.
