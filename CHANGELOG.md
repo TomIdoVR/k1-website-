@@ -1,3 +1,9 @@
+## [v2.236] – 2026-06-14 — Fix title-length warnings (Verge audit)
+### Fixed
+- Shortened title for `/resources/what-is-situational-awareness-software/` from 71→67 chars ("Command Center Guide" → "A Complete Guide").
+- Shortened title for `/resources/public-safety-software-small-cities/` from 77→67 chars ("Affordable C5 Capability" → "C5 on a Budget").
+- Both titles now under the 70-char SEO threshold. EN only (ES was already compliant).
+
 ## [v2.235] – 2026-06-12 — Internal links to lift the video-analytics hub
 ### Changed
 - Added contextual internal links **to `/resources/what-is-video-analytics/`** (the site's #1 page by impressions, stuck at pos 27) from four high-relevance pages that previously skipped it: `/integrations/lpr/`, `/integrations/face-recognition/`, `/resources/ai-in-public-safety/`, `/resources/what-is-a-public-safety-platform/`.

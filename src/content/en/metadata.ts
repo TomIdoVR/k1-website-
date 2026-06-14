@@ -260,7 +260,7 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "What Is Situational Awareness Software? Command Center Guide | KabatOne",
+    title: "What Is Situational Awareness Software? A Complete Guide | KabatOne",
     description: "Situational awareness software unifies cameras, IoT sensors, CAD and GIS into one live operational map — cutting command-center response times 30–40%. See how it works.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
     og: {
@@ -1007,7 +1007,7 @@ export const metadata = {
     },
   },
   publicSafetySoftwareSmallCities: {
-    title: "Public Safety Software for Small Cities — Affordable C5 Capability | KabatOne",
+    title: "Public Safety Software for Small Cities — C5 on a Budget | KabatOne",
     description: "Public safety software built for small-city budgets: unified video, dispatch and GIS with C5-level capability — without the enterprise price tag. See how small towns deploy it.",
     canonical: "https://kabatone.com/resources/public-safety-software-small-cities/",
     og: {
