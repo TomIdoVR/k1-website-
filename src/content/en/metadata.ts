@@ -10,8 +10,8 @@ export const metadata = {
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
-    title: "AI Video Analytics & VMS Software for Public Safety | KabatOne",
-    description: "Aggregate every camera into one searchable view. K-Video adds AI analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
+    title: "VMS Software — Video Management System with AI Analytics | KabatOne",
+    description: "Enterprise VMS software unifying thousands of cameras into one searchable platform. AI video analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
@@ -401,8 +401,13 @@ export const metadata = {
   },
   bestCadDispatchSoftware: {
     title: "Best CAD Dispatch Software for 911 Centers in 2026 | KabatOne",
-    description: "Buyer's guide to the best CAD dispatch software for 911 centers — comparing features, integrations, and deployment models for public safety agencies.",
+    description: "The best CAD dispatch software for 911 centers — compared for NG911 readiness, multi-agency interoperability, and MDT, GPS and video integration. A public-safety buyer's guide.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
+    og: {
+      title: "Best CAD Dispatch Software for 911 Centers (2026 Buyer's Guide)",
+      description: "Compared for NG911 readiness, multi-agency interoperability, and MDT, GPS and video integration — how to choose CAD dispatch software for 911 and multi-agency centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   publicSafetySoftwareCanada: {
     title: "Public Safety Software for Canada: 911, NG911 & PSAP Technology | KabatOne",
@@ -1070,6 +1075,11 @@ export const metadata = {
     title: "Public Safety Software for Ecuador | ECU-911 Integration, Guayaquil Port Security & SERCOP Procurement – KabatOne",
     description: "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port and airport LPR, police-military joint operations, and SERCOP-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-ecuador/",
+  },
+  publicSafetySoftwarePanama: {
+    title: "Public Safety Software for Panama | Canal Zone Security, SENAFRONT Border & PanamaCompra Procurement – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, and PanamaCompra-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-panama/",
   },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",

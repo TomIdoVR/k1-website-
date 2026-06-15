@@ -401,8 +401,13 @@ export const metadata = {
   },
   bestCadDispatchSoftware: {
     title: "Mejor Software CAD de Despacho para Centros 911 en 2026 | KabatOne",
-    description: "Guía de compra del mejor software CAD para centros 911 — comparativa de funciones, integraciones y modelos de despliegue para agencias de seguridad pública.",
+    description: "El mejor software CAD para centros 911 — comparado por compatibilidad NG911, interoperabilidad multi-agencia e integración con MDT, GPS y video. Guía de compra para seguridad pública.",
     canonical: "https://kabatone.com/es/resources/best-cad-dispatch-software/",
+    og: {
+      title: "Mejor Software CAD para Centros 911 (Guía de Compra 2026)",
+      description: "Comparado por compatibilidad NG911, interoperabilidad multi-agencia e integración con MDT, GPS y video — cómo elegir software CAD para centros 911 y multi-agencia.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   cadDispatchLatinAmerica: {
     title: "Software CAD de Despacho para América Latina | KabatOne",
@@ -1070,6 +1075,11 @@ export const metadata = {
     title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
+  },
+  publicSafetySoftwarePanama: {
+    title: "Software de Seguridad Publica para Panama | Seguridad Zona del Canal, Frontera SENAFRONT y Contratacion PanamaCompra – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-panama/",
   },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",

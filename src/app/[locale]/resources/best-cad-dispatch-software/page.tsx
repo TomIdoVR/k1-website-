@@ -54,6 +54,14 @@ export default async function BestCadDispatchSoftwarePage({
       question: '¿Qué es el despacho asistido por computadora (CAD)?',
       answer: 'El despacho asistido por computadora (CAD, Computer-Aided Dispatch) es un sistema de software que gestiona el ciclo completo de un incidente de emergencia: recepción de la llamada, clasificación del incidente, asignación de la unidad más cercana y adecuada, seguimiento del incidente hasta su cierre y registro del expediente completo. Los sistemas CAD modernos para centros 911 añaden recomendaciones de despacho basadas en IA, integración con video y datos GIS.',
     },
+    {
+      question: '¿Cuál es el mejor software CAD para centros 911 multi-agencia?',
+      answer: 'Para centros de despacho multi-agencia, el factor decisivo es la interoperabilidad: un solo CAD debe coordinar policía, bomberos y servicios médicos sobre un mapa operativo compartido, con enrutamiento de llamadas y seguimiento de unidades en tiempo real entre agencias. KabatOne K-Dispatch fue diseñado para operación unificada multi-agencia — comando, control y comunicaciones compartidos (modelo C5) — en lugar de silos por agencia que requieren integraciones frágiles entre sistemas CAD separados.',
+    },
+    {
+      question: '¿El software CAD es compatible con NG911 e integra MDT y GPS?',
+      answer: 'Un CAD moderno debe estar listo para NG911 (Next Generation 911): recibir voz, texto, datos y multimedia de los nuevos sistemas de llamadas de emergencia. KabatOne K-Dispatch integra de forma nativa las terminales móviles de datos (MDT) y el GPS de las unidades de campo, mostrando la ubicación en tiempo real en el mapa operativo y enviando los detalles del incidente directamente al dispositivo del oficial — sin middleware de terceros entre el CAD, el MDT y el seguimiento GPS.',
+    },
   ] : [
     {
       question: 'What is the best CAD dispatch software for 911 centers?',
@@ -74,6 +82,14 @@ export default async function BestCadDispatchSoftwarePage({
     {
       question: 'What is computer-aided dispatch (CAD)?',
       answer: 'Computer-aided dispatch (CAD) is software that manages the complete emergency incident lifecycle: call intake, incident classification, nearest and most appropriate unit assignment, incident tracking through closure, and full record logging. Modern CAD systems for 911 centers add AI-driven dispatch recommendations, video integration, and GIS data to give dispatchers complete situational context at the moment of call intake.',
+    },
+    {
+      question: 'What is the best CAD software for multi-agency 9-1-1 centers?',
+      answer: 'For multi-agency 9-1-1 centers, the deciding factor is interoperability: a single CAD must coordinate police, fire, and EMS on one shared operational map, with real-time call routing and unit tracking across agencies. KabatOne K-Dispatch is built for unified multi-agency operation — shared command, control, and communications (the C5 model) — rather than per-agency silos that require fragile integrations between separate CAD systems.',
+    },
+    {
+      question: 'Is the CAD NG911-ready, and does it integrate MDT and GPS?',
+      answer: 'A modern CAD should be NG911-ready (Next Generation 911): able to receive voice, text, data, and multimedia from new emergency call systems. KabatOne K-Dispatch natively integrates field mobile data terminals (MDT) and unit GPS, showing real-time unit location on the operational map and pushing incident details straight to the officer\'s device — with no third-party middleware between CAD, MDT, and GPS tracking.',
     },
   ]
 

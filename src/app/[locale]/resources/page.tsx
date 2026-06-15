@@ -1431,6 +1431,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-panama',
+          category: 'Guide',
+          title: 'Public Safety Software for Panama',
+          excerpt: 'Public safety technology for Panamanian institutions — Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, National Police coordination, and PanamaCompra-compliant procurement.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

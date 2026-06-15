@@ -112,12 +112,18 @@ export default async function KDispatchPage({
     { question: '¿Con qué sistemas se integra K-Dispatch?', answer: 'K-Dispatch se conecta con las principales tecnologías de seguridad pública incluyendo sistemas de radio, GIS, VMS, aplicaciones móviles de respondedores, reconocimiento facial, LPR, detección de disparos y feeds de drones.' },
     { question: '¿Es K-Dispatch adecuado para despacho multiagencia?', answer: 'Sí. K-Dispatch está diseñado para coordinación multiagencia, conectando policía, bomberos, servicios médicos y tránsito en una sola plataforma. Actualmente impulsa el centro 911 más grande de México con más de 100 agencias conectadas.' },
     { question: '¿Qué diferencia a K-Dispatch de los sistemas CAD tradicionales?', answer: 'K-Dispatch utiliza IA para clasificar incidentes automáticamente, predecir escalaciones y optimizar el enrutamiento de despacho. Gestiona más de 25,000 llamadas diarias con un tiempo promedio de respuesta de 5 minutos, superando significativamente a los sistemas CAD heredados.' },
+    { question: '¿K-Dispatch funciona con nuestros sistemas de radio y RMS existentes?', answer: 'Si. K-Dispatch se integra con todos los principales sistemas de radio (P25, TETRA, DMR) y Sistemas de Gestion de Registros. La plataforma usa APIs abiertas y protocolos estandar (CAP, NIEM, NENA i3) para conectarse con su infraestructura existente sin requerir un reemplazo completo.' },
+    { question: '¿Cuanto tiempo toma implementar K-Dispatch?', answer: 'Una implementacion tipica toma de 8 a 16 semanas dependiendo del numero de agencias, complejidad de integraciones y requisitos de capacitacion. KabatOne ofrece un despliegue por fases con operacion en paralelo para que su CAD existente continue funcionando hasta completar la transicion.' },
+    { question: '¿K-Dispatch soporta despliegue en la nube?', answer: 'K-Dispatch soporta modelos de despliegue en la nube, en sitio e hibrido. Los despliegues en la nube usan centros de datos redundantes con SLA de 99.99% de disponibilidad. Los despliegues en sitio estan disponibles para agencias con requisitos estrictos de soberania de datos, comun en entornos gubernamentales y militares.' },
   ] : [
     { question: 'What is K-Dispatch?', answer: 'K-Dispatch is an AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.' },
     { question: 'How does K-Dispatch handle 911 calls?', answer: 'K-Dispatch integrates voice 911, text-to-911, and multimedia emergency messaging. The system automatically triages incidents, assigns priority, and recommends optimal response using artificial intelligence.' },
     { question: 'What systems does K-Dispatch integrate with?', answer: 'K-Dispatch connects with leading public safety technologies including radio systems, GIS, VMS, mobile responder apps, facial recognition, LPR, gunshot detection, and drone feeds.' },
     { question: 'Is K-Dispatch suitable for multi-agency dispatch?', answer: 'Yes. K-Dispatch is built for multi-agency coordination, connecting police, fire, medical, and traffic departments on a single platform. It currently powers Mexico\'s largest 911 center with 100+ connected agencies.' },
     { question: 'What makes K-Dispatch different from legacy CAD systems?', answer: 'K-Dispatch uses AI to automatically triage incidents, predict escalations, and optimize dispatch routing. It handles 25,000+ daily calls with a 5-minute average response time, significantly outperforming legacy CAD systems.' },
+    { question: 'Can K-Dispatch work with our existing radio and RMS systems?', answer: 'Yes. K-Dispatch integrates with all major radio systems (P25, TETRA, DMR) and Records Management Systems. The platform uses open APIs and standard protocols (CAP, NIEM, NENA i3) to connect with your existing infrastructure without requiring a full replacement.' },
+    { question: 'How long does it take to deploy K-Dispatch?', answer: 'A typical deployment takes 8 to 16 weeks depending on the number of agencies, integration complexity, and training requirements. KabatOne provides a phased rollout with parallel operation so your existing CAD continues running until the transition is complete.' },
+    { question: 'Does K-Dispatch support cloud deployment?', answer: 'K-Dispatch supports cloud, on-premises, and hybrid deployment models. Cloud deployments use redundant data centers with 99.99% uptime SLA. On-premises deployments are available for agencies with strict data sovereignty requirements, common in government and military environments.' },
   ]
 
   const breadcrumbs = [
@@ -315,6 +321,67 @@ export default async function KDispatchPage({
           </div>
         </section>
 
+        {/* ── HOW IT WORKS ── */}
+        <section style={{ padding: '100px 40px' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--cyan)', boxShadow: '0 0 8px var(--cyan)', display: 'inline-block' }}/>
+              {es ? 'Cómo Funciona' : 'How It Works'}
+            </p>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '32px' }}>
+              {es ? 'Del Primer Tono al Despacho: El Flujo Completo' : 'From First Ring to Dispatch: The Complete Workflow'}
+            </h2>
+            <div style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.85, display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <p>
+                {es
+                  ? 'Cuando una llamada 911 ingresa al centro de comando, K-Dispatch la captura inmediatamente — ya sea voz, texto-a-911 o alerta automatizada de sensores IoT. El sistema extrae la ubicación del llamante mediante Enhanced 911 (E911) y la posiciona en el mapa GIS en tiempo real. Simultáneamente, el motor de IA clasifica el tipo de incidente (incendio, emergencia médica, delito en progreso, accidente vial) y asigna un nivel de prioridad basado en protocolos configurables por la agencia.'
+                  : 'When a 911 call enters the command center, K-Dispatch captures it immediately — whether voice, text-to-911, or an automated IoT sensor alert. The system extracts the caller\'s location via Enhanced 911 (E911) and plots it on the live GIS map. Simultaneously, the AI engine classifies the incident type (fire, medical emergency, crime in progress, traffic collision) and assigns a priority level based on agency-configurable protocols.'}
+              </p>
+              <p>
+                {es
+                  ? 'El despachador ve una recomendación de unidades en pantalla: qué patrullas, ambulancias o unidades de bomberos están más cerca, cuáles están disponibles y cuál es la ruta óptima considerando tráfico en tiempo real. Con un clic, el despacho se ejecuta — la unidad recibe la notificación en su app móvil con toda la información del incidente, video de cámaras cercanas (vía K-Video) y el historial de la dirección.'
+                  : 'The dispatcher sees an on-screen unit recommendation: which patrol cars, ambulances, or fire units are closest, which are available, and what the optimal route is given real-time traffic. One click executes the dispatch — the unit receives a mobile app notification with full incident details, nearby camera feeds (via K-Video), and address history.'}
+              </p>
+              <p>
+                {es
+                  ? 'Durante todo el incidente, K-Dispatch mantiene una línea de tiempo auditable: cada cambio de estado, cada comunicación, cada decisión. Cuando participan múltiples agencias — policía, bomberos, paramédicos, tránsito — el sistema coordina automáticamente las frecuencias de radio y los canales de comunicación. Al cerrar el incidente, se genera un informe de acción posterior que alimenta el modelo predictivo para mejorar tiempos de respuesta futuros.'
+                  : 'Throughout the incident, K-Dispatch maintains an auditable timeline: every status change, every communication, every decision. When multiple agencies are involved — police, fire, EMS, traffic — the system automatically coordinates radio frequencies and communication channels. Upon incident closure, an after-action report is generated that feeds the predictive model to improve future response times.'}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── DEPLOYMENT SCENARIOS ── */}
+        <section style={{ background: 'var(--bg-2)', padding: '100px 40px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: ACCENT, marginBottom: '18px' }}>
+              {es ? 'Escenarios de Implementación' : 'Deployment Scenarios'}
+            </p>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '48px' }}>
+              {es ? 'Configurado para Tu Operación' : 'Configured for Your Operation'}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+              {(es ? [
+                { title: 'Centro 911 Centralizado', desc: 'Un solo centro atiende todas las llamadas de emergencia de una ciudad o región. K-Dispatch unifica la toma de llamadas, despacho, y coordinación multiagencia en una interfaz. Ideal para municipios de 100K a 25M de habitantes.' },
+                { title: 'Centro de Comando C4/C5', desc: 'Los centros de Comando, Control, Comunicaciones, Cómputo y Calidad requieren integración profunda con video, GIS, radio y analítica. K-Dispatch es el módulo de despacho dentro de la plataforma K-Safety, conectando todos los subsistemas del C5.' },
+                { title: 'Despacho Multijurisdiccional', desc: 'Cuando múltiples municipios o condados comparten un centro de despacho, K-Dispatch gestiona jurisdicciones separadas con protocolos distintos, unidades independientes y reportería por agencia — todo desde una sola instalación.' },
+                { title: 'Campus y Aeropuertos', desc: 'Universidades, aeropuertos e instalaciones críticas requieren despacho interno coordinado con servicios externos. K-Dispatch maneja zonas geofenceadas, protocolos de escalación personalizados y comunicación directa con el 911 municipal.' },
+              ] : [
+                { title: 'Centralized 911 Center', desc: 'A single center handles all emergency calls for a city or region. K-Dispatch unifies call-taking, dispatch, and multi-agency coordination in one interface. Ideal for municipalities from 100K to 25M residents.' },
+                { title: 'C4/C5 Command Center', desc: 'Command, Control, Communications, Computing, and Quality centers require deep integration with video, GIS, radio, and analytics. K-Dispatch is the dispatch module within the K-Safety platform, connecting all C5 subsystems.' },
+                { title: 'Multi-Jurisdiction Dispatch', desc: 'When multiple municipalities or counties share a dispatch center, K-Dispatch manages separate jurisdictions with distinct protocols, independent units, and per-agency reporting — all from a single installation.' },
+                { title: 'Campus & Airport Security', desc: 'Universities, airports, and critical facilities need internal dispatch coordinated with external services. K-Dispatch handles geofenced zones, custom escalation protocols, and direct communication with municipal 911.' },
+              ]).map((scenario, i) => (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }}>
+                  <div style={{ fontSize: '13px', fontFamily: 'DM Mono, monospace', color: ACCENT, letterSpacing: '0.15em', marginBottom: '12px' }}>{String(i + 1).padStart(2, '0')}</div>
+                  <h3 style={{ fontSize: '18px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', letterSpacing: '0.02em', color: 'var(--white)', marginBottom: '12px' }}>{scenario.title}</h3>
+                  <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7 }}>{scenario.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── CASE STUDY ── */}
         <section style={{ background: 'var(--bg-2)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
@@ -412,6 +479,28 @@ export default async function KDispatchPage({
                 {es ? 'Mejor software CAD en 2026' : 'Best CAD Dispatch Software in 2026'}
                 <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
                   {es ? 'Guía del comprador →' : 'Buyer\'s guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/cad-dispatch-software-latin-america" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Guía regional →' : 'Regional guide →'}
+                </span>
+              </Link>
+              <Link href="/resources/what-is-emergency-dispatch-software" style={{
+                display: 'block', padding: '20px 24px', borderRadius: '10px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px', fontWeight: 400,
+                transition: 'border-color 0.2s',
+              }}>
+                {es ? '¿Qué es el software de despacho de emergencias?' : 'What Is Emergency Dispatch Software?'}
+                <span style={{ display: 'block', fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>
+                  {es ? 'Artículo educativo →' : 'Explainer article →'}
                 </span>
               </Link>
             </div>

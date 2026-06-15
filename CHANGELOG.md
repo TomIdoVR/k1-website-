@@ -1,3 +1,40 @@
+## [v2.240] – 2026-06-15 — CAD anomaly fix: own the multi-agency / NG911 query cluster
+### Changed
+- **`/resources/best-cad-dispatch-software/` (EN + ES)** — the weekly report flagged CAD queries ranking pos 1.9–4 with **0 clicks**; root cause is a content/intent mismatch (the page ranked for "multi-agency 9-1-1", "NG911-ready", "cad + MDT + GPS" while the body had **0 mentions** of 911, NG911, MDT, or interoperability).
+  - Added **2 FAQs per locale**: best CAD for **multi-agency 9-1-1 centers** (interoperability / C5 model) and **NG911-ready + MDT/GPS integration** — exact-match phrasing for the ranking queries, expands FAQPage schema for AI Overviews.
+  - Enriched meta description + OG (EN+ES) to surface NG911 / multi-agency / MDT-GPS intent.
+- Real target: this page carries **1,972 impressions at pos 16.3 with 6 clicks** — the cluster fix aims to lift it off page 2. Build verified 0 errors.
+
+## [v2.239] – 2026-06-15 — SEO: K-Video title rewrite targeting "vms" cluster
+### Changed
+- **Rewrote `/k-video/` EN title**: "AI Video Analytics & VMS Software…" → "VMS Software — Video Management System with AI Analytics | KabatOne"
+- **Rewrote `/k-video/` EN description**: front-loaded "Enterprise VMS software" for 3,344-impression "vms" query (pos 8.8, opportunity score 263.5)
+- ES metadata unchanged — already VMS-forward ("VMS Inteligente para Seguridad Pública")
+
+## [v2.238] – 2026-06-15 — GEO guide: Public Safety Software for Panama
+### Added
+- **New page: `/resources/public-safety-software-panama/`** (EN + ES) — completes Central America coverage
+  - Panama Canal (ACP) security: 6% global maritime trade, 14,000+ annual transits, $4.4B tolls, Neopanamax locks (Agua Clara/Cocoli 2016), ACP Security Division
+  - Policia Nacional ~26K officers / SENAFRONT ~4K border service / SENAN aeronaval / DIJ judicial / SINAPROC civil protection
+  - Darien Gap migration crisis: 500K+ irregular migrants/yr, ERM stations (Bajo Chiquito/Lajas Blancas/San Vicente), SNM coordination
+  - Tocumen Airport (PTY) 16M+ pax (Copa Airlines hub) / Colon Free Zone (2nd largest globally after Hong Kong)
+  - 10 provinces + 5 indigenous comarcas / 81 districts / 4.4M citizens
+  - Ley 22 Contratacion Publica / PanamaCompra portal / DGCP
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwarePanama` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-panama` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+- Internal links to Costa Rica, Colombia, Ecuador, Guatemala, Mexico, LATAM CAD, product pages
+
+## [v2.237] – 2026-06-15 — K-Dispatch content depth expansion
+### Added
+- **K-Dispatch product page** — two new content-rich sections (EN + ES):
+  - **"How It Works"** — ~300-word narrative walkthrough of the complete dispatch workflow (E911 intake → AI triage → unit recommendation → multi-agency coordination → after-action report). Adds the text depth Google needs to rank this page higher.
+  - **"Deployment Scenarios"** — four use-case cards: Centralized 911 Center, C4/C5 Command Center, Multi-Jurisdiction Dispatch, Campus & Airport Security. Each with ~50 words of context.
+- **3 additional FAQs** (EN + ES, total now 8): radio/RMS integration, deployment timeline (8–16 weeks), cloud/on-prem/hybrid options. Targets GSC long-tail queries: "911 CAD software", "CAD system demo", "emergency dispatch software".
+- **2 additional Related Resources links**: CAD Dispatch Software for Latin America + What Is Emergency Dispatch Software — strengthens the dispatch topic cluster internal linking.
+- Build verified: TypeScript 0 errors.
+
 ## [v2.236] – 2026-06-14 — Fix title-length warnings (Verge audit)
 ### Fixed
 - Shortened title for `/resources/what-is-situational-awareness-software/` from 71→67 chars ("Command Center Guide" → "A Complete Guide").
