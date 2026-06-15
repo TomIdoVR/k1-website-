@@ -1,0 +1,239 @@
+{
+  "generated": "2026-06-15T00:00:00",
+  "period": "May 18 \u2013 Jun 14, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 704,
+      "users": 643,
+      "bounce": 77.8
+    },
+    "Organic Search": {
+      "sessions": 493,
+      "users": 307,
+      "bounce": 51.9
+    },
+    "Referral": {
+      "sessions": 107,
+      "users": 58,
+      "bounce": 52.3
+    },
+    "Organic Social": {
+      "sessions": 14,
+      "users": 13,
+      "bounce": 78.6
+    },
+    "Unassigned": {
+      "sessions": 9,
+      "users": 8,
+      "bounce": 88.9
+    },
+    "AI Assistant": {
+      "sessions": 3,
+      "users": 3,
+      "bounce": 33.3
+    }
+  },
+  "sources_prior": {
+    "Direct": 806,
+    "Organic Search": 291,
+    "Referral": 82,
+    "Organic Social": 17,
+    "Unassigned": 16
+  },
+  "weekly": [
+    {
+      "week": "13",
+      "year": "2026",
+      "sessions": 92
+    },
+    {
+      "week": "14",
+      "year": "2026",
+      "sessions": 280
+    },
+    {
+      "week": "15",
+      "year": "2026",
+      "sessions": 274
+    },
+    {
+      "week": "16",
+      "year": "2026",
+      "sessions": 350
+    },
+    {
+      "week": "17",
+      "year": "2026",
+      "sessions": 304
+    },
+    {
+      "week": "18",
+      "year": "2026",
+      "sessions": 393
+    },
+    {
+      "week": "19",
+      "year": "2026",
+      "sessions": 293
+    },
+    {
+      "week": "20",
+      "year": "2026",
+      "sessions": 232
+    },
+    {
+      "week": "21",
+      "year": "2026",
+      "sessions": 264
+    },
+    {
+      "week": "22",
+      "year": "2026",
+      "sessions": 332
+    },
+    {
+      "week": "23",
+      "year": "2026",
+      "sessions": 331
+    },
+    {
+      "week": "24",
+      "year": "2026",
+      "sessions": 393
+    },
+    {
+      "week": "25",
+      "year": "2026",
+      "sessions": 32
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 139,
+      "duration": 177,
+      "bounce": 35.3
+    },
+    "/": {
+      "sessions": 88,
+      "duration": 147,
+      "bounce": 42.0
+    },
+    "(not set)": {
+      "sessions": 63,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/industries/ports": {
+      "sessions": 23,
+      "duration": 300,
+      "bounce": 60.9
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 14,
+      "duration": 232,
+      "bounce": 50.0
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 12,
+      "duration": 21,
+      "bounce": 66.7
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 11,
+      "duration": 20,
+      "bounce": 63.6
+    },
+    "/es/k-dispatch": {
+      "sessions": 10,
+      "duration": 532,
+      "bounce": 30.0
+    },
+    "/es/resources": {
+      "sessions": 9,
+      "duration": 89,
+      "bounce": 77.8
+    },
+    "/about": {
+      "sessions": 7,
+      "duration": 246,
+      "bounce": 71.4
+    },
+    "/es/resources/what-is-emergency-dispatch-software": {
+      "sessions": 7,
+      "duration": 369,
+      "bounce": 28.6
+    },
+    "/resources/best-cad-dispatch-software": {
+      "sessions": 7,
+      "duration": 278,
+      "bounce": 57.1
+    },
+    "/resources/public-safety-software-singapore": {
+      "sessions": 6,
+      "duration": 82,
+      "bounce": 50.0
+    },
+    "/k-dispatch": {
+      "sessions": 5,
+      "duration": 148,
+      "bounce": 20.0
+    },
+    "/resources": {
+      "sessions": 5,
+      "duration": 57,
+      "bounce": 60.0
+    },
+    "/contact": {
+      "sessions": 4,
+      "duration": 90,
+      "bounce": 50.0
+    },
+    "/es/integrations/lpr": {
+      "sessions": 4,
+      "duration": 856,
+      "bounce": 25.0
+    },
+    "/es/k-safety": {
+      "sessions": 4,
+      "duration": 13,
+      "bounce": 50.0
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 4,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/resources/what-is-video-analytics": {
+      "sessions": 4,
+      "duration": 54,
+      "bounce": 25.0
+    },
+    "/es/contact": {
+      "sessions": 3,
+      "duration": 5,
+      "bounce": 66.7
+    },
+    "/es/integrations/panic-buttons": {
+      "sessions": 3,
+      "duration": 7,
+      "bounce": 66.7
+    },
+    "/es/resources/what-is-a-public-safety-platform": {
+      "sessions": 3,
+      "duration": 2,
+      "bounce": 100.0
+    },
+    "/integrations/access-control": {
+      "sessions": 3,
+      "duration": 11,
+      "bounce": 66.7
+    },
+    "/resources/rtcc-setup-guide": {
+      "sessions": 3,
+      "duration": 25,
+      "bounce": 0.0
+    }
+  }
+}
