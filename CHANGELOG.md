@@ -1,3 +1,9 @@
+## [v2.239] – 2026-06-15 — SEO: K-Video title rewrite targeting "vms" cluster
+### Changed
+- **Rewrote `/k-video/` EN title**: "AI Video Analytics & VMS Software…" → "VMS Software — Video Management System with AI Analytics | KabatOne"
+- **Rewrote `/k-video/` EN description**: front-loaded "Enterprise VMS software" for 3,344-impression "vms" query (pos 8.8, opportunity score 263.5)
+- ES metadata unchanged — already VMS-forward ("VMS Inteligente para Seguridad Pública")
+
 ## [v2.238] – 2026-06-15 — GEO guide: Public Safety Software for Panama
 ### Added
 - **New page: `/resources/public-safety-software-panama/`** (EN + ES) — completes Central America coverage

@@ -10,8 +10,8 @@ export const metadata = {
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
-    title: "AI Video Analytics & VMS Software for Public Safety | KabatOne",
-    description: "Aggregate every camera into one searchable view. K-Video adds AI analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
+    title: "VMS Software — Video Management System with AI Analytics | KabatOne",
+    description: "Enterprise VMS software unifying thousands of cameras into one searchable platform. AI video analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
