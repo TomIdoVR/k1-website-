@@ -1,3 +1,12 @@
+## [v2.237] – 2026-06-15 — K-Dispatch content depth expansion
+### Added
+- **K-Dispatch product page** — two new content-rich sections (EN + ES):
+  - **"How It Works"** — ~300-word narrative walkthrough of the complete dispatch workflow (E911 intake → AI triage → unit recommendation → multi-agency coordination → after-action report). Adds the text depth Google needs to rank this page higher.
+  - **"Deployment Scenarios"** — four use-case cards: Centralized 911 Center, C4/C5 Command Center, Multi-Jurisdiction Dispatch, Campus & Airport Security. Each with ~50 words of context.
+- **3 additional FAQs** (EN + ES, total now 8): radio/RMS integration, deployment timeline (8–16 weeks), cloud/on-prem/hybrid options. Targets GSC long-tail queries: "911 CAD software", "CAD system demo", "emergency dispatch software".
+- **2 additional Related Resources links**: CAD Dispatch Software for Latin America + What Is Emergency Dispatch Software — strengthens the dispatch topic cluster internal linking.
+- Build verified: TypeScript 0 errors.
+
 ## [v2.236] – 2026-06-14 — Fix title-length warnings (Verge audit)
 ### Fixed
 - Shortened title for `/resources/what-is-situational-awareness-software/` from 71→67 chars ("Command Center Guide" → "A Complete Guide").
