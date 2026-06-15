@@ -1,3 +1,18 @@
+## [v2.238] – 2026-06-15 — GEO guide: Public Safety Software for Panama
+### Added
+- **New page: `/resources/public-safety-software-panama/`** (EN + ES) — completes Central America coverage
+  - Panama Canal (ACP) security: 6% global maritime trade, 14,000+ annual transits, $4.4B tolls, Neopanamax locks (Agua Clara/Cocoli 2016), ACP Security Division
+  - Policia Nacional ~26K officers / SENAFRONT ~4K border service / SENAN aeronaval / DIJ judicial / SINAPROC civil protection
+  - Darien Gap migration crisis: 500K+ irregular migrants/yr, ERM stations (Bajo Chiquito/Lajas Blancas/San Vicente), SNM coordination
+  - Tocumen Airport (PTY) 16M+ pax (Copa Airlines hub) / Colon Free Zone (2nd largest globally after Hong Kong)
+  - 10 provinces + 5 indigenous comarcas / 81 districts / 4.4M citizens
+  - Ley 22 Contratacion Publica / PanamaCompra portal / DGCP
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwarePanama` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-panama` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+- Internal links to Costa Rica, Colombia, Ecuador, Guatemala, Mexico, LATAM CAD, product pages
+
 ## [v2.237] – 2026-06-15 — K-Dispatch content depth expansion
 ### Added
 - **K-Dispatch product page** — two new content-rich sections (EN + ES):

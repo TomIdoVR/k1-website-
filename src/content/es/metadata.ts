@@ -1071,6 +1071,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador/",
   },
+  publicSafetySoftwarePanama: {
+    title: "Software de Seguridad Publica para Panama | Seguridad Zona del Canal, Frontera SENAFRONT y Contratacion PanamaCompra – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-panama/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
