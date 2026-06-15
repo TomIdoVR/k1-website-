@@ -26,8 +26,13 @@ export const metadata = {
   },
   kConnect: {
     title: "Integración de Cámaras Ciudadanas al Centro de Mando | KabatOne",
-    description: "Conecta cámaras de negocios y ciudadanos al centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura.",
+    description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura — sin nueva infraestructura.",
     canonical: "https://kabatone.com/es/k-connect/",
+    og: {
+      title: "K-Connect — Integración de Cámaras Ciudadanas al Centro de Mando",
+      description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura — sin nueva infraestructura.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   publicSafety: {
     title: "Soluciones de Seguridad Pública para Municipios | KabatOne",
@@ -145,9 +150,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/carbyne/",
   },
   vsCad: {
-    title: "KabatOne vs CAD Tradicional — Más Allá del Despacho | KabatOne",
-    description: "Los CAD tradicionales despachan unidades y registran llamadas. KabatOne agrega video, GIS y tráfico — unificado en una sola plataforma de seguridad pública.",
+    title: "Alternativa al CAD Tradicional: KabatOne — Más que Despacho",
+    description: "¿Buscas más que un CAD tradicional? El CAD clásico despacha unidades y registra llamadas — KabatOne suma video, GIS y tráfico en una sola plataforma de seguridad pública.",
     canonical: "https://kabatone.com/es/vs/cad/",
+    og: {
+      title: "Alternativa al CAD Tradicional — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas más que un CAD tradicional? El CAD clásico despacha unidades y registra llamadas — KabatOne suma video, GIS y tráfico en una sola plataforma de seguridad pública.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsFusus: {
     title: "KabatOne vs Fusus — RTCC vs Plataforma Completa | KabatOne",
@@ -250,9 +260,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "Software de Conciencia Situacional para Centros de Mando | KabatOne",
-    description: "El software de conciencia situacional unifica cámaras, sensores IoT, CAD y GIS en un mapa operativo único — reduciendo tiempos de respuesta 30–40%.",
+    title: "¿Qué es el Software de Conciencia Situacional? Guía | KabatOne",
+    description: "El software de conciencia situacional unifica cámaras, sensores IoT, CAD y GIS en un mapa operativo único en vivo — reduciendo los tiempos de respuesta 30–40%. Cómo funciona.",
     canonical: "https://kabatone.com/es/resources/what-is-situational-awareness-software/",
+    og: {
+      title: "¿Qué es el Software de Conciencia Situacional? Guía para Centros de Mando",
+      description: "El software de conciencia situacional unifica cámaras, sensores IoT, CAD y GIS en un mapa operativo único en vivo — reduciendo los tiempos de respuesta 30–40%.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsACommandCenter: {
     title: "¿Qué Es un C5? Centro de Mando C2–C5: Guía Completa | KabatOne",
@@ -295,9 +310,14 @@ export const metadata = {
     canonical: "https://kabatone.com/es/simulator/",
   },
   vsAvigilon: {
-    title: "KabatOne vs Avigilon — VMS Premium vs Plataforma Unificada | KabatOne",
-    description: "Avigilon gestiona cámaras y analítica de video. KabatOne agrega despacho CAD, GIS y tráfico — el flujo completo de respuesta sin hardware propietario.",
+    title: "Alternativa a Avigilon: CAD, GIS y Tráfico Unificados | KabatOne",
+    description: "¿Buscas una alternativa a Avigilon? Avigilon gestiona cámaras y analítica de video — KabatOne suma CAD, GIS y tráfico para el flujo completo de respuesta, sin hardware propietario.",
     canonical: "https://kabatone.com/es/vs/avigilon/",
+    og: {
+      title: "Alternativa a Avigilon — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Avigilon? Avigilon gestiona cámaras y analítica de video — KabatOne suma CAD, GIS y tráfico para el flujo completo de respuesta, sin hardware propietario.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsSensorFusion: {
     title: "Fusión de Sensores para Seguridad Pública: Guía con IA | KabatOne",
@@ -395,9 +415,14 @@ export const metadata = {
     },
   },
   publicSafetySoftwareSmallCities: {
-    title: "Software de Seguridad Pública para Ciudades Pequeñas | KabatOne",
-    description: "Seguridad pública accesible para ciudades pequeñas. Video, despacho y GIS sin precios empresariales — cómo gobiernos pequeños construyen capacidades nivel C5.",
+    title: "Seguridad Pública para Ciudades Pequeñas — Capacidad C5 Accesible | KabatOne",
+    description: "Seguridad pública al alcance de presupuestos pequeños: video, despacho y GIS con capacidad nivel C5 — sin precios empresariales. Cómo lo implementan los municipios pequeños.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-small-cities/",
+    og: {
+      title: "Seguridad Pública para Ciudades Pequeñas — Capacidad C5 Accesible",
+      description: "Seguridad pública al alcance de presupuestos pequeños: video, despacho y GIS con capacidad nivel C5 — sin precios empresariales.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsTylerTechnologies: {
     title: "KabatOne vs Tyler Technologies — Plataforma Unificada | KabatOne",

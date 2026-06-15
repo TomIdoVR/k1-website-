@@ -26,8 +26,13 @@ export const metadata = {
   },
   kConnect: {
     title: "Public-Private Camera Integration for Command Centers | KabatOne",
-    description: "Connect business and citizen cameras to your command center. K-Connect expands coverage via secure public-private video sharing — no infrastructure needed.",
+    description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
     canonical: "https://kabatone.com/k-connect/",
+    og: {
+      title: "K-Connect — Public-Private Camera Integration for Command Centers",
+      description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   publicSafety: {
     title: "Public Safety Solutions for Cities and Municipalities | KabatOne",
@@ -145,9 +150,14 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/carbyne/",
   },
   vsCad: {
-    title: "KabatOne vs Traditional CAD — Beyond Dispatch for Public Safety",
-    description: "Traditional CAD dispatches units and logs calls. KabatOne adds video, GIS, and traffic — replacing fragmented stacks with one unified public safety platform.",
+    title: "CAD Alternative for Public Safety: KabatOne vs Traditional CAD",
+    description: "Looking beyond traditional CAD? Legacy CAD dispatches units and logs calls — KabatOne adds video, GIS and traffic in one unified public safety platform.",
     canonical: "https://kabatone.com/vs/cad/",
+    og: {
+      title: "CAD Alternative — KabatOne Unified Public Safety Platform",
+      description: "Looking beyond traditional CAD? Legacy CAD dispatches units and logs calls — KabatOne adds video, GIS and traffic in one unified public safety platform.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsFusus: {
     title: "KabatOne vs Fusus — RTCC vs Full Operations Platform",
@@ -230,7 +240,7 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS — Video Management System & Software for Public Safety | KabatOne",
+    title: "VMS — Video Management Software for Public Safety | KabatOne",
     description: "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
     og: {
@@ -250,9 +260,14 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/rapidssos/",
   },
   whatIsSituationalAwarenessSoftware: {
-    title: "Situational Awareness Software for Command Centers | KabatOne",
-    description: "Situational awareness software unifies cameras, IoT sensors, CAD, and GIS into one operational map — cutting response times 30–40% for command centers.",
+    title: "What Is Situational Awareness Software? A Complete Guide | KabatOne",
+    description: "Situational awareness software unifies cameras, IoT sensors, CAD and GIS into one live operational map — cutting command-center response times 30–40%. See how it works.",
     canonical: "https://kabatone.com/resources/what-is-situational-awareness-software/",
+    og: {
+      title: "What Is Situational Awareness Software? Command Center Guide",
+      description: "Situational awareness software unifies cameras, IoT sensors, CAD and GIS into one live operational map — cutting command-center response times 30–40%.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsACommandCenter: {
     title: "What Is a Command Center? C2–C5 Guide for Public Safety | KabatOne",
@@ -296,8 +311,13 @@ export const metadata = {
   },
   vsAvigilon: {
     title: "Avigilon Alternative for Public Safety | KabatOne vs Avigilon",
-    description: "Avigilon manages cameras and video analytics. KabatOne adds CAD dispatch, GIS, and traffic — the complete response workflow without proprietary hardware.",
+    description: "Looking for an Avigilon alternative? Avigilon covers cameras and video analytics — KabatOne adds CAD dispatch, GIS and traffic for the full response workflow, no proprietary hardware.",
     canonical: "https://kabatone.com/vs/avigilon/",
+    og: {
+      title: "Avigilon Alternative — KabatOne Unified Public Safety Platform",
+      description: "Looking for an Avigilon alternative? Avigilon covers cameras and video analytics — KabatOne adds CAD dispatch, GIS and traffic for the full response workflow, no proprietary hardware.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsSensorFusion: {
     title: "What Is Sensor Fusion? AI Integration for Public Safety | KabatOne",
@@ -987,9 +1007,14 @@ export const metadata = {
     },
   },
   publicSafetySoftwareSmallCities: {
-    title: "Public Safety Software for Small Cities & Towns | KabatOne",
-    description: "Affordable public safety software for small cities. Unified video, dispatch, and GIS without enterprise price tags — C5-level capabilities for any budget.",
+    title: "Public Safety Software for Small Cities — C5 on a Budget | KabatOne",
+    description: "Public safety software built for small-city budgets: unified video, dispatch and GIS with C5-level capability — without the enterprise price tag. See how small towns deploy it.",
     canonical: "https://kabatone.com/resources/public-safety-software-small-cities/",
+    og: {
+      title: "Public Safety Software for Small Cities — Affordable C5 Capability",
+      description: "Public safety software built for small-city budgets: unified video, dispatch and GIS with C5-level capability — without the enterprise price tag.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsTylerTechnologies: {
     title: "KabatOne vs Tyler Technologies — Public Safety Platform Comparison",

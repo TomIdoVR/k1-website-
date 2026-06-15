@@ -1,3 +1,29 @@
+## [v2.236] – 2026-06-14 — Fix title-length warnings (Verge audit)
+### Fixed
+- Shortened title for `/resources/what-is-situational-awareness-software/` from 71→67 chars ("Command Center Guide" → "A Complete Guide").
+- Shortened title for `/resources/public-safety-software-small-cities/` from 77→67 chars ("Affordable C5 Capability" → "C5 on a Budget").
+- Both titles now under the 70-char SEO threshold. EN only (ES was already compliant).
+
+## [v2.235] – 2026-06-12 — Internal links to lift the video-analytics hub
+### Changed
+- Added contextual internal links **to `/resources/what-is-video-analytics/`** (the site's #1 page by impressions, stuck at pos 27) from four high-relevance pages that previously skipped it: `/integrations/lpr/`, `/integrations/face-recognition/`, `/resources/ai-in-public-safety/`, `/resources/what-is-a-public-safety-platform/`.
+- The two integration pages also gained links to the **VMS hub** (`/resources/what-is-video-management-software/`, pos 35).
+- Rationale: both hubs are content-complete; internal PageRank from authority/topical pages is the one on-site lever left to move them off page 3–4. EN + ES. Build verified 0 errors.
+
+## [v2.234] – 2026-06-12 — Page-1 CTR refresh, batch 2 (5 pages, EN + ES)
+### Changed
+- Metadata CTR refresh + OG tags for five pages the GSC audit shows ranking on/near page 1 with ~0 clicks:
+  - **`/resources/public-safety-software-small-cities/`** — pos **5.9**, 0 clicks (most egregious): benefit-led title + "affordable C5 capability" hook.
+  - **`/resources/what-is-situational-awareness-software/`** — pos 11.4, 336 impr: question-led title ("What Is…?") + 30–40% stat hook.
+  - **`/vs/avigilon/`** — pos 10.0, 0 clicks: question-hook description on the existing "Avigilon Alternative" title.
+  - **`/vs/cad/`** — pos 8.2, 0 clicks: "CAD Alternative"-led title + question hook.
+  - **`/k-connect/`** — pos 11.0, 0 clicks: sharpened description + OG.
+- All EN + ES; pure metadata plays from the 2026-06-11 audit. Build verified 0 errors.
+
+## [v2.233] – 2026-06-12 — SEO audit fix: VMS title length
+### Fixed
+- **`/resources/what-is-video-management-software/` (EN)** — shortened title from 73 to 60 chars (removed redundant "System &" from "Video Management System & Software") to stay within the 70-char SEO limit. Daily Verge audit found 71 pages clean, 1 warning (this title), 0 critical.
+
 ## [v2.232] – 2026-06-11 — Video Analytics hub: query-variant depth + cluster interlink
 ### Added
 - **`/resources/what-is-video-analytics/` (EN + ES)** — two new FAQs targeting the biggest untapped query clusters from the GSC audit: **"AI video analytics"** (~1,070 combined impressions, pos 20–25) and **"CCTV video analytics"** (~500 impressions, pos 15–32). Exact-match phrasing also expands the FAQPage schema for AI-answer citation.

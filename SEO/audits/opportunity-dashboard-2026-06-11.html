@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne — SEO Opportunity Dashboard · 2026-06-11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0f1724; --bg-2:#0b1220; --card:#121c2e; --card-2:#0e1828;
+    --blue:#3b82f6; --blue-l:#60a5fa; --cyan:#06b6d4;
+    --green:#22c55e; --amber:#f59e0b; --red:#ef4444;
+    --white:#e6eef8; --muted:#9dbdd0; --dim:#b4c4d4;
+    --border:rgba(255,255,255,0.08); --border-b:rgba(59,130,246,0.28);
+  }
+  html,body{min-height:100%;background:var(--bg);color:var(--white);
+    font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(6,182,212,0.10), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, rgba(59,130,246,0.10), transparent 55%),
+    var(--bg);}
+  .wrap{max-width:1180px;margin:0 auto;padding:40px 28px 80px}
+  .eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.28em;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+  h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:14px}
+  h1 span{color:var(--cyan)}
+  .sub{color:var(--dim);font-weight:300;font-size:16px;max-width:760px;line-height:1.6}
+  .windows{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-family:'DM Mono',monospace;font-size:12px;color:var(--muted)}
+  .windows b{color:var(--white);font-weight:500}
+  h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.22em;color:var(--blue-l);margin:46px 0 18px;display:flex;align-items:center;gap:10px}
+  h2::after{content:'';flex:1;height:1px;background:var(--border)}
+
+  /* KPI row */
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .kpi{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--border);border-radius:12px;padding:18px 16px}
+  .kpi .l{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:600}
+  .kpi .v{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:34px;line-height:1;margin:10px 0 6px}
+  .kpi .d{font-size:11px;font-family:'DM Mono',monospace;color:var(--muted)}
+  .kpi .up{color:var(--green)} .kpi .down{color:var(--red)}
+  .kpi.hl{border-color:var(--border-b);box-shadow:0 0 0 1px rgba(59,130,246,.15),0 12px 30px -18px rgba(6,182,212,.6)}
+
+  /* Big insight banner */
+  .insight{margin-top:18px;background:linear-gradient(110deg,rgba(245,158,11,.10),rgba(6,182,212,.07));border:1px solid rgba(245,158,11,.32);border-radius:14px;padding:22px 24px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .insight .big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:54px;line-height:.9;color:var(--amber)}
+  .insight .txt{flex:1;min-width:280px}
+  .insight .txt b{color:var(--white)}
+  .insight .txt p{color:var(--dim);font-weight:300;font-size:14.5px;line-height:1.6}
+
+  /* Scatter */
+  .scatter-card{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--border);border-radius:14px;padding:24px 26px 18px}
+  .plot{position:relative;height:440px;margin:30px 0 8px 8px;border-left:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .gridline{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,.045)}
+  .gridline span{position:absolute;left:-6px;top:-7px;transform:translateX(-100%);font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)}
+  .vline{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.045)}
+  .vline span{position:absolute;bottom:-20px;left:0;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)}
+  .axis-x{position:absolute;bottom:-42px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .axis-y{position:absolute;left:-64px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left;white-space:nowrap;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .quad{position:absolute;border-radius:10px;background:rgba(34,197,94,.05);border:1px dashed rgba(34,197,94,.28)}
+  .quad span{position:absolute;top:8px;left:10px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}
+  .bub{position:absolute;border-radius:50%;transform:translate(-50%,50%);display:flex;align-items:center;justify-content:center;cursor:default;transition:filter .15s}
+  .bub:hover{filter:brightness(1.25)}
+  .bub b{font-family:'DM Mono',monospace;font-size:10px;color:#04121f;font-weight:500}
+  .bub.cy{background:radial-gradient(circle at 35% 30%, #5fe6ff, var(--cyan));box-shadow:0 0 24px -2px rgba(6,182,212,.7)}
+  .bub.gr{background:radial-gradient(circle at 35% 30%, #6ee7a0, var(--green));box-shadow:0 0 18px -2px rgba(34,197,94,.6)}
+  .bub.am{background:radial-gradient(circle at 35% 30%, #fbd27a, var(--amber));box-shadow:0 0 16px -2px rgba(245,158,11,.55)}
+  .bub .lab{position:absolute;white-space:nowrap;font-family:'Space Grotesk';font-size:11px;font-weight:500;color:var(--white);left:50%;transform:translateX(-50%);bottom:-18px;text-shadow:0 1px 4px #000}
+  .legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:var(--dim)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+
+  /* Bars */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .panel{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--border);border-radius:14px;padding:22px 24px}
+  .panel h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.01em;margin-bottom:4px}
+  .panel .note{font-size:12px;color:var(--muted);margin-bottom:18px}
+  .bar{margin-bottom:14px}
+  .bar .top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+  .bar .top .n{color:var(--white);font-weight:500}
+  .bar .top .x{font-family:'DM Mono',monospace;color:var(--muted);font-size:12px}
+  .track{height:9px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden}
+  .fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+  .fill.am{background:linear-gradient(90deg,#b45309,var(--amber))}
+  .fill.gr{background:linear-gradient(90deg,#15803d,var(--green))}
+
+  /* Action scorecard */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ac{background:linear-gradient(180deg,var(--card),var(--card-2));border:1px solid var(--border);border-radius:12px;padding:18px;position:relative;overflow:hidden}
+  .ac::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--green)}
+  .ac.todo::before{background:var(--amber)}
+  .ac .badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:5px;margin-bottom:10px}
+  .ac .badge.done{background:rgba(34,197,94,.16);color:#7ee8a8}
+  .ac .badge.todo{background:rgba(245,158,11,.16);color:#fbd27a}
+  .ac h4{font-size:14.5px;font-weight:600;margin-bottom:8px;line-height:1.3}
+  .ac .m{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--muted);line-height:1.7}
+  .ac .v{font-family:'DM Mono',monospace;font-size:11px;color:var(--cyan);margin-top:8px}
+
+  .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.8}
+  @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.plot{height:380px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow"><span class="dot"></span> SEO Intelligence · Generated 2026-06-11</div>
+  <h1>Opportunity <span>Dashboard</span></h1>
+  <p class="sub">Where KabatOne's organic demand is — and where it's leaking. Every page below is ranking and being seen; the question is which ones convert impressions into clicks. The prizes are the big bubbles that aren't yet green.</p>
+  <div class="windows">
+    <div>GSC window: <b>Apr 30 – May 25, 2026</b></div>
+    <div>GA4 window: <b>May 11 – Jun 7, 2026</b></div>
+    <div>Property: <b>kabatone.com</b></div>
+  </div>
+
+  <!-- KPIs -->
+  <h2>Headline metrics</h2>
+  <div class="kpis">
+    <div class="kpi hl">
+      <div class="l">Organic sessions</div>
+      <div class="v">437</div>
+      <div class="d"><span class="up">▲ +75.5%</span> vs 249 prior</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Impressions</div>
+      <div class="v">11,564</div>
+      <div class="d">723 ranking queries</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Clicks</div>
+      <div class="v">84</div>
+      <div class="d">organic search</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Avg CTR</div>
+      <div class="v">0.73<span style="font-size:18px">%</span></div>
+      <div class="d">site-wide</div>
+    </div>
+    <div class="kpi">
+      <div class="l">Organic bounce</div>
+      <div class="v">52<span style="font-size:18px">%</span></div>
+      <div class="d">healthy for content</div>
+    </div>
+  </div>
+
+  <!-- Insight -->
+  <div class="insight">
+    <div class="big">~9,500</div>
+    <div class="txt">
+      <p><b>video + VMS impressions, earning ~10 clicks.</b> The two hub pages that should capture this demand rank on page 3–4 (positions 27 & 35), while three pages already on page 1 convert at <b>0% CTR</b>. Organic is up 75.5% — the ceiling is these specific pages, not traffic generation.</p>
+    </div>
+  </div>
+
+  <!-- Scatter -->
+  <h2>Opportunity map — impressions × position</h2>
+  <div class="scatter-card">
+    <div class="plot">
+      <!-- horizontal gridlines: impressions -->
+      <div class="gridline" style="bottom:100%"><span>6.5k</span></div>
+      <div class="gridline" style="bottom:75%"><span>4.9k</span></div>
+      <div class="gridline" style="bottom:50%"><span>3.3k</span></div>
+      <div class="gridline" style="bottom:25%"><span>1.6k</span></div>
+      <div class="gridline" style="bottom:0%"><span>0</span></div>
+      <!-- vertical gridlines: position (left=better) -->
+      <div class="vline" style="left:2%"><span>1</span></div>
+      <div class="vline" style="left:20%"><span>10</span></div>
+      <div class="vline" style="left:40%"><span>20</span></div>
+      <div class="vline" style="left:60%"><span>30</span></div>
+      <div class="vline" style="left:80%"><span>40</span></div>
+
+      <!-- quick-win quadrant: pos<=12 (left ~24%), impr>=900 (bottom>=14%) -->
+      <div class="quad" style="left:0;width:24%;bottom:14%;top:0"><span>Page-1 CTR wins</span></div>
+
+      <div class="axis-x">Avg position  →  worse</div>
+      <div class="axis-y">Impressions →</div>
+
+      <!-- Bubbles. left% = pos/50*100 ; bottom% = impr/6500*100 ; size ~ sqrt(impr) -->
+      <!-- video-analytics: pos27 impr6120 -->
+      <div class="bub cy" style="left:54%;bottom:94%;width:86px;height:86px"><b>6,120</b><span class="lab">what-is-video-analytics · pos 27</span></div>
+      <!-- VMS: pos35 impr3471 -->
+      <div class="bub cy" style="left:70%;bottom:53%;width:66px;height:66px"><b>3,471</b><span class="lab">VMS hub · pos 35</span></div>
+      <!-- peregrine: pos9.5 impr1632 DONE -->
+      <div class="bub gr" style="left:19%;bottom:25%;width:50px;height:50px"><b>1,632</b><span class="lab">Peregrine · pos 9.5 ✓</span></div>
+      <!-- es C5: pos9.7 impr1118 DONE -->
+      <div class="bub gr" style="left:19.4%;bottom:17%;width:44px;height:44px"><b>1,118</b><span class="lab">ES C5 · pos 9.7 ✓</span></div>
+      <!-- emergency mgmt: pos23 impr434 -->
+      <div class="bub am" style="left:46%;bottom:6.7%;width:30px;height:30px"><span class="lab" style="color:var(--amber)">Emergency mgmt · pos 23</span></div>
+      <!-- k-dispatch: pos28 impr302 -->
+      <div class="bub am" style="left:56%;bottom:4.6%;width:26px;height:26px"><span class="lab" style="color:var(--amber)">K-Dispatch · pos 28</span></div>
+      <!-- verkada: pos9.4 impr294 DONE -->
+      <div class="bub gr" style="left:18.8%;bottom:4.5%;width:26px;height:26px"><span class="lab">Verkada · pos 9.4 ✓</span></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i> Ranking play (page 3–4, high demand — the prize)</span>
+      <span><i style="background:var(--green)"></i> Page-1 CTR win (shipped 2026-06-11)</span>
+      <span><i style="background:var(--amber)"></i> Secondary opportunity</span>
+      <span style="color:var(--muted)">Bubble size ∝ impressions</span>
+    </div>
+  </div>
+
+  <!-- Clusters + sources -->
+  <h2>Demand clusters & traffic mix</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Query clusters by impressions</h3>
+      <div class="note">Where search demand concentrates — video dominates.</div>
+      <div class="bar"><div class="top"><span class="n">Video analytics cluster</span><span class="x">~3,000 · pos 15–45</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">VMS cluster</span><span class="x">2,793 · pos 29–57</span></div><div class="track"><div class="fill" style="width:93%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Peregrine (comparison)</span><span class="x">1,406 · pos 9.8</span></div><div class="track"><div class="fill gr" style="width:47%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">C5 command center (ES)</span><span class="x">1,118 · pos 9.7</span></div><div class="track"><div class="fill gr" style="width:37%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Verkada (comparison)</span><span class="x">294 · pos 9.4</span></div><div class="track"><div class="fill gr" style="width:10%"></div></div></div>
+    </div>
+    <div class="panel">
+      <h3>Traffic sources — GA4</h3>
+      <div class="note">May 11 – Jun 7 · sessions (bounce %).</div>
+      <div class="bar"><div class="top"><span class="n">Direct</span><span class="x">626 · 75% bounce</span></div><div class="track"><div class="fill am" style="width:100%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Organic Search <span style="color:var(--green);font-size:11px">▲+75.5%</span></span><span class="x">437 · 52% bounce</span></div><div class="track"><div class="fill gr" style="width:70%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Referral</span><span class="x">90 · 57% bounce</span></div><div class="track"><div class="fill" style="width:14%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Organic Social</span><span class="x">21 · 81% bounce</span></div><div class="track"><div class="fill" style="width:4%"></div></div></div>
+      <div class="bar"><div class="top"><span class="n">Unassigned</span><span class="x">17 · 88% bounce</span></div><div class="track"><div class="fill" style="width:3%"></div></div></div>
+      <div style="margin-top:16px;font-size:12px;color:var(--dim);line-height:1.6;border-top:1px solid var(--border);padding-top:14px">Organic is the only growing channel (+188 sessions) while Direct fell −295. Organic now drives <b style="color:var(--white)">37%</b> of sessions, up from 18%.</div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <h2>Action scorecard — shipped to production 2026-06-11</h2>
+  <div class="cards">
+    <div class="ac"><span class="badge done">Shipped · v2.232</span><h4>Video-analytics hub — depth + cluster link</h4><div class="m">6,120 impr · pos 27 · 3 clk<br>+2 variant FAQs ("AI / CCTV video analytics") + K-Video product link</div><div class="v">the whale — biggest ceiling</div></div>
+    <div class="ac"><span class="badge done">Shipped · v2.229</span><h4>Peregrine comparison — CTR refresh</h4><div class="m">1,632 impr · pos 9.5 · 0 clk<br>"Alternative"-led title + question-hook meta</div><div class="v">page-1, instant lever</div></div>
+    <div class="ac"><span class="badge done">Shipped · v2.231</span><h4>ES C5 page — CTR refresh</h4><div class="m">1,118 impr · pos 9.7 · 0 clk<br>"¿Qué es un C5? Significado…" intent match + OG</div><div class="v">page-1, instant lever</div></div>
+    <div class="ac"><span class="badge done">Shipped · v2.231</span><h4>Verkada comparison — CTR refresh</h4><div class="m">294 impr · pos 9.4 · 0 clk<br>"Verkada Alternative" title + question hook + OG</div><div class="v">page-1, instant lever</div></div>
+    <div class="ac"><span class="badge done">Verified · v2.228</span><h4>VMS hub — content complete</h4><div class="m">3,471 impr · pos 35 · 4 clk<br>10 FAQs/locale, metadata optimized, cluster-linked</div><div class="v">ranking ceiling = authority</div></div>
+    <div class="ac todo"><span class="badge todo">Next lever</span><h4>Authority &amp; indexing for the two hubs</h4><div class="m">video-analytics (pos 27) + VMS (pos 35) are content-complete — moving them off page 3–4 needs backlinks + crawl time, not edits</div><div class="v">the real remaining ceiling</div></div>
+  </div>
+
+  <div class="foot">
+    Data: Google Search Console (raw-gsc-queries-2026-05-28) + GA4 property 530090453 (raw-ga4-2026-06-08).<br>
+    Green = page-1 CTR wins shipped this session (v2.229 / v2.231) · Cyan = high-demand ranking plays · Amber = secondary.<br>
+    All changes live on kabatone.com (promoted nextjs → main, 2026-06-11). Re-pull GSC in ~2–3 weeks to measure CTR lift on the green pages.
+  </div>
+
+</div>
+</body>
+</html>
