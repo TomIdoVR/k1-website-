@@ -1,3 +1,8 @@
+## [v2.241] – 2026-06-15 — Recapture "what is video analytics?" question query
+### Changed
+- **`/resources/what-is-video-analytics/` (EN + ES)** — blended title back to a question form: "What Is Video Analytics? AI for CCTV & Public Safety" (was "AI Video Analytics for CCTV, Surveillance and Public Safety"). The page ranks pos 7.1 for "what is video analytics?" with 0 clicks — the prior title dropped the question the searcher is scanning for while the H1 still asked it. New title serves both the question intent and the AI/CCTV keywords. Descriptions unchanged.
+- From the zero-click sweep of fresh GSC (2026-06-15). Build verified 0 errors.
+
 ## [v2.240] – 2026-06-15 — CAD anomaly fix: own the multi-agency / NG911 query cluster
 ### Changed
 - **`/resources/best-cad-dispatch-software/` (EN + ES)** — the weekly report flagged CAD queries ranking pos 1.9–4 with **0 clicks**; root cause is a content/intent mismatch (the page ranked for "multi-agency 9-1-1", "NG911-ready", "cad + MDT + GPS" while the body had **0 mentions** of 911, NG911, MDT, or interoperability).

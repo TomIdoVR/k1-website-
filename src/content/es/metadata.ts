@@ -290,7 +290,7 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Analítica de Video IA para CCTV y Seguridad Pública | KabatOne",
+    title: "¿Qué Es la Analítica de Video? IA para CCTV y Seguridad | KabatOne",
     description: "Analítica inteligente de video detecta intrusiones, aglomeraciones, armas y LPR en cámaras CCTV e IP en tiempo real — integrada con despacho CAD y GIS.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
   },
