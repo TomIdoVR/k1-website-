@@ -401,8 +401,13 @@ export const metadata = {
   },
   bestCadDispatchSoftware: {
     title: "Mejor Software CAD de Despacho para Centros 911 en 2026 | KabatOne",
-    description: "Guía de compra del mejor software CAD para centros 911 — comparativa de funciones, integraciones y modelos de despliegue para agencias de seguridad pública.",
+    description: "El mejor software CAD para centros 911 — comparado por compatibilidad NG911, interoperabilidad multi-agencia e integración con MDT, GPS y video. Guía de compra para seguridad pública.",
     canonical: "https://kabatone.com/es/resources/best-cad-dispatch-software/",
+    og: {
+      title: "Mejor Software CAD para Centros 911 (Guía de Compra 2026)",
+      description: "Comparado por compatibilidad NG911, interoperabilidad multi-agencia e integración con MDT, GPS y video — cómo elegir software CAD para centros 911 y multi-agencia.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   cadDispatchLatinAmerica: {
     title: "Software CAD de Despacho para América Latina | KabatOne",

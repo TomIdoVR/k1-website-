@@ -1,3 +1,10 @@
+## [v2.240] – 2026-06-15 — CAD anomaly fix: own the multi-agency / NG911 query cluster
+### Changed
+- **`/resources/best-cad-dispatch-software/` (EN + ES)** — the weekly report flagged CAD queries ranking pos 1.9–4 with **0 clicks**; root cause is a content/intent mismatch (the page ranked for "multi-agency 9-1-1", "NG911-ready", "cad + MDT + GPS" while the body had **0 mentions** of 911, NG911, MDT, or interoperability).
+  - Added **2 FAQs per locale**: best CAD for **multi-agency 9-1-1 centers** (interoperability / C5 model) and **NG911-ready + MDT/GPS integration** — exact-match phrasing for the ranking queries, expands FAQPage schema for AI Overviews.
+  - Enriched meta description + OG (EN+ES) to surface NG911 / multi-agency / MDT-GPS intent.
+- Real target: this page carries **1,972 impressions at pos 16.3 with 6 clicks** — the cluster fix aims to lift it off page 2. Build verified 0 errors.
+
 ## [v2.239] – 2026-06-15 — SEO: K-Video title rewrite targeting "vms" cluster
 ### Changed
 - **Rewrote `/k-video/` EN title**: "AI Video Analytics & VMS Software…" → "VMS Software — Video Management System with AI Analytics | KabatOne"

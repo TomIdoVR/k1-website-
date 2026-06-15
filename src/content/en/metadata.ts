@@ -401,8 +401,13 @@ export const metadata = {
   },
   bestCadDispatchSoftware: {
     title: "Best CAD Dispatch Software for 911 Centers in 2026 | KabatOne",
-    description: "Buyer's guide to the best CAD dispatch software for 911 centers — comparing features, integrations, and deployment models for public safety agencies.",
+    description: "The best CAD dispatch software for 911 centers — compared for NG911 readiness, multi-agency interoperability, and MDT, GPS and video integration. A public-safety buyer's guide.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
+    og: {
+      title: "Best CAD Dispatch Software for 911 Centers (2026 Buyer's Guide)",
+      description: "Compared for NG911 readiness, multi-agency interoperability, and MDT, GPS and video integration — how to choose CAD dispatch software for 911 and multi-agency centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   publicSafetySoftwareCanada: {
     title: "Public Safety Software for Canada: 911, NG911 & PSAP Technology | KabatOne",
