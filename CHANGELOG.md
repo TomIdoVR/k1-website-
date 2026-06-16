@@ -1,3 +1,20 @@
+## [v2.243] – 2026-06-16 — GEO guide: Public Safety Software for the Dominican Republic
+### Added
+- **New page: `/resources/public-safety-software-dominican-republic/`** (EN + ES) — first Caribbean expansion
+  - Policia Nacional Dominicana ~37,000 officers / CESFRONT ~3,500 Haiti border / CESTUR ~4,000 tourism security / AMET transit / DNCD anti-narcotics
+  - Sistema Nacional 911 since 2014 (Santo Domingo) / 2017 (Santiago), 90%+ population coverage
+  - 31 provinces + Distrito Nacional / 158 municipios / 11.2M citizens
+  - Tourism: 10M+ visitors/yr, 15%+ GDP — Punta Cana, Puerto Plata, La Romana, Samana
+  - Haiti border: 376 km, CESFRONT checkpoints at Dajabon/Jimani/Elias Pina/Pedernales/Comendador, migration crisis since 2021
+  - Ports: Haina, Caucedo (DP World), Puerto Plata / Airports: AILA, Cibao, Punta Cana
+  - Ley 340-06 Compras y Contrataciones Publicas / DGCP portal / SIGEF budget
+  - Largest economy in the Caribbean and Central America
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwareDominicanRepublic` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-dominican-republic` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+- Internal links to Panama, Colombia, Mexico, LATAM CAD, product pages
+
 ## [v2.242] – 2026-06-16 — Daily SEO audit: trim K-Video description
 ### Fixed
 - **`/k-video/` EN description** — trimmed from 179 → 143 chars (removed "searchable" + "Any brand, any protocol.") to clear `desc_near_max` info flag. Daily Verge audit: 71 pages, 0 critical, 0 warnings.

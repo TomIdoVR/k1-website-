@@ -1439,6 +1439,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-dominican-republic',
+          category: 'Guide',
+          title: 'Public Safety Software for the Dominican Republic',
+          excerpt: 'Public safety technology for Dominican institutions — National Police ~37K officers, 911 System integration, CESFRONT Haiti border operations, CESTUR tourism security, and Ley 340-06 procurement.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

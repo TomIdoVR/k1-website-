@@ -1081,6 +1081,11 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, and PanamaCompra-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-panama/",
   },
+  publicSafetySoftwareDominicanRepublic: {
+    title: "Public Safety Software for the Dominican Republic | 911 System, CESFRONT Border & Tourism Security – KabatOne",
+    description: "KabatOne delivers unified public safety platform for the Dominican Republic National Police ~37K officers, 911 System, CESFRONT Haiti border operations, CESTUR tourism security, and Ley 340-06 procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-dominican-republic/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
