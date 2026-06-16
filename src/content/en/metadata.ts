@@ -11,7 +11,7 @@ export const metadata = {
   },
   kVideo: {
     title: "VMS Software — Video Management System with AI Analytics | KabatOne",
-    description: "Enterprise VMS software unifying thousands of cameras into one searchable platform. AI video analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
+    description: "Enterprise VMS software unifying thousands of cameras into one platform. AI video analytics — LPR, behavioral detection, object classification.",
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
