@@ -1,6 +1,6 @@
 export const metadata = {
   home: {
-    title: "Public Safety Platform for Cities & Command Centers | KabatOne",
+    title: "Public Safety Platform for Cities & Command Centers | K1",
     description: "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
     canonical: "https://kabatone.com/",
   },
@@ -10,27 +10,27 @@ export const metadata = {
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
-    title: "VMS Software — Video Management System with AI Analytics | KabatOne",
-    description: "Enterprise VMS software unifying thousands of cameras into one platform. AI video analytics — LPR, behavioral detection, object classification.",
+    title: "VMS Software — AI Video Management System | KabatOne",
+    description: "Enterprise VMS software unifying thousands of cameras into one platform. AI video analytics — LPR, behavioral detection, object classification. Any brand.",
     canonical: "https://kabatone.com/k-video/",
   },
   kSafety: {
-    title: "Situational Awareness and Command Center Software | KabatOne K-Safety",
+    title: "Situational Awareness & Command Center Software | KabatOne",
     description: "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
     canonical: "https://kabatone.com/k-safety/",
   },
   kTraffic: {
-    title: "Intelligent Traffic Management System for Smart Cities | KabatOne",
-    description: "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals.",
+    title: "Intelligent Traffic Management System | KabatOne",
+    description: "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals to reduce congestion.",
     canonical: "https://kabatone.com/k-traffic/",
   },
   kConnect: {
-    title: "Public-Private Camera Integration for Command Centers | KabatOne",
-    description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
+    title: "Public-Private Camera Integration for Command Centers | K1",
+    description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing.",
     canonical: "https://kabatone.com/k-connect/",
     og: {
       title: "K-Connect — Public-Private Camera Integration for Command Centers",
-      description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
+      description: "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -1080,6 +1080,11 @@ export const metadata = {
     title: "Public Safety Software for Panama | Canal Zone Security, SENAFRONT Border & PanamaCompra Procurement – KabatOne",
     description: "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, and PanamaCompra-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-panama/",
+  },
+  publicSafetySoftwareJamaica: {
+    title: "Public Safety Software for Jamaica | JCF, ZOSO Operations & Caribbean Tourism Security – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Jamaica Constabulary Force ~12K officers, JDF ZOSO joint operations, ODPEM hurricane response, Port of Kingston 3.2M TEU hub, and tourism security.",
+    canonical: "https://kabatone.com/resources/public-safety-software-jamaica/",
   },
   publicSafetySoftwareDominicanRepublic: {
     title: "Public Safety Software for the Dominican Republic | 911 System, CESFRONT Border & Tourism Security – KabatOne",

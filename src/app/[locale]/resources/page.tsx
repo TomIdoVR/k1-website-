@@ -1447,6 +1447,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-jamaica',
+          category: 'Guide',
+          title: 'Public Safety Software for Jamaica',
+          excerpt: 'Public safety technology for Jamaican parishes and municipalities — JCF ~12K officers, JDF ZOSO joint operations, ODPEM hurricane response, Port of Kingston 3.2M TEU hub, and Caribbean tourism security.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

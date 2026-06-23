@@ -1,3 +1,31 @@
+## [v2.244] – 2026-06-23 — Jamaica guide + K-Video VMS depth + K-Dispatch bounce fix
+### Added
+- **New page: `/resources/public-safety-software-jamaica/`** (EN + ES) — second Caribbean expansion
+  - Jamaica Constabulary Force (JCF) ~12,000 officers / JDF ~5,000 (Regiment, Coast Guard, Air Wing)
+  - ZOSO (Zones of Special Operations) — JCF+JDF joint operations; Norwood zero murders 2024-2025
+  - Homicide rate 23.7 in 2025 (down from 40.1 in 2024), lowest in 31 years; 100+ gangs
+  - ODPEM hurricane response — reassigned to PM Office after Hurricane Melissa (Nov 2025)
+  - 14 parishes / 2.8M citizens / Kingston ~670K metro / Montego Bay ~110K
+  - Tourism: 4M+ visitors/yr, US$4B+ forex, ~10% GDP — Montego Bay, Ocho Rios, Negril, Falmouth
+  - Port of Kingston (KFTL/CMA CGM 30yr concession 2016, 3.2M TEU capacity) — Caribbean's #1 transshipment hub
+  - Bauxite: world 5th producer, US$612M exports 2025
+  - Emergency lines: 119 (police), 110 (fire), 116 (ambulance) — no unified 911
+  - Procurement: Handbook of Public Sector Procurement Procedures / GOJEP / NCC
+  - CARICOM / Commonwealth / JMD / Bank of Jamaica
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwareJamaica` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-jamaica` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+
+### Improved
+- **K-Video VMS content depth expansion**
+  - New "What Is VMS?" explainer section (~300 words EN+ES) with Traditional vs Unified VMS comparison grid
+  - 3 new FAQs targeting `vms software` queries: "What is a VMS?", "Best VMS features for public safety", "VMS vs DVR/NVR difference"
+  - Total K-Video FAQs: 5 → 8
+- **K-Dispatch bounce rate fix**
+  - Added direct-answer strip below hero: immediately tells visitors what K-Dispatch is (CAD software), key stats, and deployment options
+  - Targets 61.5% bounce rate reduction by providing instant value above the fold
+
 ## [v2.243] – 2026-06-16 — GEO guide: Public Safety Software for the Dominican Republic
 ### Added
 - **New page: `/resources/public-safety-software-dominican-republic/`** (EN + ES) — first Caribbean expansion
