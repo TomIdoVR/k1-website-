@@ -576,6 +576,8 @@ export default async function WhatIsCadDispatchSoftwarePage({
                 </span>
                 {[
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas' : 'Platforms' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
+                  { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: 'RTCC' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
                   { href: '/resources/911-call-center-software-guide', label: es ? 'Guía centros 911' : '911 call center software guide' },

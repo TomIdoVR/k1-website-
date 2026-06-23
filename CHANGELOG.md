@@ -1,3 +1,8 @@
+## [v2.245] – 2026-06-23 — Internal-link concentration to starved money hubs
+### Changed
+- Routed internal links to the two highest-value hubs that were starved of inbound links (CAD best-dispatch: **7 inbound**, emergency-management: **6** — vs VMS's 45), from 5 high-relevance topical-neighbor pages: `what-is-cad-dispatch-software`, `how-c5-command-centers-work`, `what-is-a-real-time-crime-center`, `what-is-situational-awareness-software`, `rtcc-setup-guide`.
+- Each now links **Best CAD Dispatch Software** + **Emergency Management Software** → CAD hub 7→12 inbound, emergency-mgmt 6→11. Fixes a glaring gap (the CAD explainer didn't link the CAD buyer's guide). EN+ES, page bodies only. Build verified 0 errors.
+
 ## [v2.244] – 2026-06-23 — Jamaica guide + K-Video VMS depth + K-Dispatch bounce fix
 ### Added
 - **New page: `/resources/public-safety-software-jamaica/`** (EN + ES) — second Caribbean expansion
