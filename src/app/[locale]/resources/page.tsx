@@ -1479,6 +1479,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-bahamas',
+          category: 'Guide',
+          title: 'Public Safety Software for The Bahamas',
+          excerpt: 'Public safety technology for The Bahamas 700+ island archipelago — RBPF ~3,500 officers, RBDF maritime fleet, OPBAT joint operations, 3.5M+ cruise passengers, and inter-island dispatch.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

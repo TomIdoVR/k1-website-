@@ -1081,6 +1081,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-panama/",
   },
+  publicSafetySoftwareBahamas: {
+    title: "Software de Seguridad Publica para las Bahamas | RBPF, Seguridad Maritima RBDF y Operaciones Archipielago – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para las Bahamas RBPF ~3,500 oficiales, flota maritima RBDF, operaciones archipielago 700+ islas, coordinacion OPBAT y despacho inter-isla resiliente a huracanes.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-bahamas/",
+  },
   publicSafetySoftwareBarbados: {
     title: "Software de Seguridad Publica para Barbados | RBPF, Seguridad Turistica y Centro Regional RSS – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para Barbados RBPF ~1,500 oficiales, BDF Coast Guard, seguridad turistica para 1.5M+ visitantes anuales, coordinacion regional RSS y cobertura VMS isla-completa.",

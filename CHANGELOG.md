@@ -1,3 +1,22 @@
+## [v2.249] – 2026-06-24 — Bahamas guide (Caribbean expansion #6)
+### Added
+- **New page: `/resources/public-safety-software-bahamas/`** (EN + ES) — sixth Caribbean expansion
+  - Royal Bahamas Police Force (RBPF) ~3,500 officers / CDU Nassau / DEU / Tourism Police / Intelligence Branch
+  - Royal Bahamas Defence Force (RBDF) ~1,800 / largest Caribbean maritime fleet / Coral Harbour + Freeport/Inagua/Ragged Island/Exuma bases
+  - NEMA (National Emergency Management Agency) / Disaster Preparedness and Response Act
+  - 700+ islands/cays / 100,000 mi2 ocean / 97% maritime territory / 30 inhabited islands / ~400,000 pop
+  - OPBAT joint anti-narcotics (DEA/USCG/Royal Navy) / AUTEC US Navy Andros Island
+  - Hurricane Dorian 2019 Cat. 5 ($3.4B, Abaco/Grand Bahama devastated) / Matthew 2016 / Joaquin 2015
+  - Tourism ~50% GDP / Nassau 3.5M+ cruise pax / NAS Airport 3.5M+ pax / Private islands (CocoCay/Castaway Cay/Half Moon Cay/Ocean Cay)
+  - Atlantis Paradise Island / Baha Mar / Nassau Cruise Port $300M+ redesign 2023
+  - Financial center: 200+ banks / Securities Commission / CBOB / BSD 1:1 USD / Sand Dollar CBDC (world first 2020)
+  - 32 districts / New Providence 70% pop / Grand Bahama / Family Islands (Abaco/Eleuthera/Exuma/Andros/Long Island/Inagua)
+  - Data Protection Act 2003 / Financial Administration and Audit Act / CBSI/IDB/CDB funding
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to Barbados/Jamaica/PR/US/VMS/K-Dispatch
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Barbados
+
 ## [v2.248] – 2026-06-24 — Barbados guide (Caribbean expansion #5)
 ### Added
 - **New page: `/resources/public-safety-software-barbados/`** (EN + ES) — fifth Caribbean expansion
