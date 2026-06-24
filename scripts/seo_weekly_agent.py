@@ -1057,6 +1057,23 @@ def git_commit(files, today_str, summary):
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
+def _run_keyword_monitor(dry_run: bool = False, days: int = 28):
+    """Weekly non-branded keyword rank snapshot — piggybacks on this scheduled run.
+    Isolated in SEO/keywords/track_keywords.py; any failure here is swallowed so it
+    can never break the weekly report."""
+    script = REPO_ROOT / 'SEO' / 'keywords' / 'track_keywords.py'
+    if not script.exists():
+        return
+    try:
+        print('\n[keyword-monitor] snapshotting tracked non-branded keywords...')
+        cmd = [sys.executable, str(script), '--days', str(days)]
+        if dry_run:
+            cmd.append('--no-write')
+        subprocess.run(cmd, check=False)
+    except Exception as e:
+        print(f'[keyword-monitor] skipped: {e}')
+
+
 def main():
     parser = argparse.ArgumentParser(description='KabatOne weekly SEO orchestrator agent')
     parser.add_argument('--dry-run', action='store_true', help='Skip git commit')
@@ -1066,8 +1083,12 @@ def main():
 
     if args.no_ai:
         run_no_ai(dry_run=args.dry_run, days=args.days)
-        return 0
-    return run_orchestrator(dry_run=args.dry_run, days=args.days)
+    else:
+        run_orchestrator(dry_run=args.dry_run, days=args.days)
+
+    # Weekly keyword rank snapshot rides on the same scheduled run (no separate cron)
+    _run_keyword_monitor(dry_run=args.dry_run, days=args.days)
+    return 0
 
 
 if __name__ == '__main__':
