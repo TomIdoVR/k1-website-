@@ -227,6 +227,33 @@ export default async function KDispatchPage({
           </div>
         </section>
 
+        {/* ── DIRECT ANSWER STRIP ── */}
+        <section style={{ padding: '48px 40px', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'rgba(239,68,68,0.03)' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+            <p style={{ fontSize: '17px', color: 'var(--dim)', lineHeight: 1.8, marginBottom: '16px' }}>
+              {es
+                ? 'K-Dispatch es un software de despacho asistido por computadora (CAD) que centraliza las llamadas de emergencia 911, clasifica incidentes con IA, asigna las unidades más cercanas vía GPS, y coordina la respuesta entre policía, bomberos, paramédicos y otras agencias en una sola plataforma. Actualmente opera el centro 911 más grande de México (C5 CDMX) con más de 500 operadores y 100+ agencias coordinadas.'
+                : 'K-Dispatch is a computer-aided dispatch (CAD) software that centralizes 911 emergency calls, classifies incidents with AI, assigns the nearest units via GPS, and coordinates the response between police, fire, EMS, and other agencies on a single platform. It currently powers Mexico\'s largest 911 center (C5 CDMX) with 500+ operators and 100+ coordinated agencies.'}
+            </p>
+            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+              {(es ? [
+                { label: 'Tiempo de despacho', value: '5 min promedio' },
+                { label: 'Multiagencia', value: '100+ agencias en una plataforma' },
+                { label: 'Despliegue', value: 'Nube, local o híbrido' },
+              ] : [
+                { label: 'Dispatch time', value: '5 min average' },
+                { label: 'Multi-agency', value: '100+ agencies on one platform' },
+                { label: 'Deployment', value: 'Cloud, on-prem, or hybrid' },
+              ]).map((item, i) => (
+                <div key={i} style={{ flex: '1 1 200px' }}>
+                  <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '4px' }}>{item.label}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--white)' }}>{item.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── BENEFITS ── */}
         <section style={{ background: 'var(--bg-2)', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>

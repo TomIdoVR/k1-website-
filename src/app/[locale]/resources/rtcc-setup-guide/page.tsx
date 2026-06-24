@@ -530,6 +530,8 @@ export default async function RtccSetupGuidePage({
                 {[
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un RTCC?' : 'What Is a Real-Time Crime Center' },
                   { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'What Is Video Management Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
+                  { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}

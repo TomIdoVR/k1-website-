@@ -1,6 +1,6 @@
 export const metadata = {
   home: {
-    title: "Plataforma de Seguridad Pública para Municipios y C5 | KabatOne",
+    title: "Plataforma de Seguridad Pública para Municipios y C5 | K1",
     description: "La plataforma unificada de seguridad pública. Conecta video, despacho, GIS y campo en una sola vista operativa. Más de 40 ciudades confían en KabatOne.",
     canonical: "https://kabatone.com/es/",
   },
@@ -20,17 +20,17 @@ export const metadata = {
     canonical: "https://kabatone.com/es/k-safety/",
   },
   kTraffic: {
-    title: "Sistema de Gestión de Tráfico Inteligente para Ciudades | KabatOne",
+    title: "Sistema de Gestión de Tráfico Inteligente | KabatOne",
     description: "Control adaptativo de semáforos, detección de congestión y respuesta a incidentes en una plataforma ATMS. K-Traffic conecta cámaras, sensores y señales.",
     canonical: "https://kabatone.com/es/k-traffic/",
   },
   kConnect: {
-    title: "Integración de Cámaras Ciudadanas al Centro de Mando | KabatOne",
-    description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura — sin nueva infraestructura.",
+    title: "Integración de Cámaras Ciudadanas al Centro de Mando | K1",
+    description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura.",
     canonical: "https://kabatone.com/es/k-connect/",
     og: {
       title: "K-Connect — Integración de Cámaras Ciudadanas al Centro de Mando",
-      description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura — sin nueva infraestructura.",
+      description: "Conecta cámaras de negocios y ciudadanos a tu centro de mando. K-Connect amplía la cobertura de vigilancia con videovigilancia comunitaria segura.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -1080,6 +1080,21 @@ export const metadata = {
     title: "Software de Seguridad Publica para Panama | Seguridad Zona del Canal, Frontera SENAFRONT y Contratacion PanamaCompra – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-panama/",
+  },
+  publicSafetySoftwareTrinidadAndTobago: {
+    title: "Software de Seguridad Publica para Trinidad y Tobago | TTPS, Seguridad Energetica y Operaciones Maritimas – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para el Trinidad and Tobago Police Service ~7K oficiales, TTDF Coast Guard, seguridad energetica Atlantic LNG, Puerto de Port of Spain y coordinacion entre islas.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-trinidad-and-tobago/",
+  },
+  publicSafetySoftwareJamaica: {
+    title: "Software de Seguridad Publica para Jamaica | JCF, Operaciones ZOSO y Seguridad Turistica Caribe – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Jamaica Constabulary Force ~12K oficiales, operaciones conjuntas ZOSO con JDF, respuesta ODPEM ante huracanes, Puerto de Kingston 3.2M TEU y seguridad turistica.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-jamaica/",
+  },
+  publicSafetySoftwareDominicanRepublic: {
+    title: "Software de Seguridad Publica para la Republica Dominicana | Sistema 911, Frontera CESFRONT y Seguridad Turistica – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~37K agentes, Sistema 911, operaciones fronterizas CESFRONT con Haiti, seguridad turistica CESTUR y contratacion conforme a Ley 340-06.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-dominican-republic/",
   },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",

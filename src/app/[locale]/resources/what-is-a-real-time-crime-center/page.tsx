@@ -580,6 +580,8 @@ export default async function WhatIsARealTimeCrimeCenterPage({
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
                   { href: '/resources/rtcc-setup-guide', label: es ? 'Guía RTCC' : 'RTCC Setup Guide' },
                   { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
+                  { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}

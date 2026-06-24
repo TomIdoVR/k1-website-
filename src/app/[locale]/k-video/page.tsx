@@ -123,12 +123,18 @@ export default async function KVideoPage({
     { question: '¿Cuántas cámaras puede gestionar K-Video?', answer: 'K-Video soporta más de 10,000 cámaras gracias a su arquitectura de microservicios. Maneja cámaras IP, body cams y streams de drones con 98% de disponibilidad y conmutación automática por fallo.' },
     { question: '¿Soporta K-Video cámaras de terceros?', answer: 'Sí. K-Video es compatible con las principales plataformas VMS y fabricantes de cámaras IP, soportando múltiples protocolos de streaming incluyendo HLS, WebRTC, RTMP y RTSP.' },
     { question: '¿Qué es la búsqueda inteligente de video en K-Video?', answer: 'La búsqueda inteligente de K-Video permite encontrar eventos específicos en segundos en lugar de horas, utilizando filtros de IA como reconocimiento facial, LPR, detección de movimiento y análisis de comportamiento en archivos de video almacenados.' },
+    { question: '¿Qué es un VMS y por qué lo necesita la seguridad pública?', answer: 'Un VMS (Video Management System o Sistema de Gestión de Video) es el software que centraliza la grabación, almacenamiento, visualización en vivo y búsqueda forense de todas las cámaras de una organización. Para seguridad pública, un VMS unificado reemplaza la necesidad de acceder a múltiples consolas de DVR/NVR, permitiendo a los operadores ver cualquier cámara — municipal, de tráfico, portuaria o aeroportuaria — desde una sola interfaz. K-Video es un VMS de nueva generación que añade analítica de IA sobre esta base.' },
+    { question: '¿Cuáles son las mejores características de un software VMS para seguridad pública?', answer: 'Las características esenciales incluyen: soporte ONVIF/RTSP para conectar cámaras de cualquier fabricante, búsqueda forense con filtros de IA (reconocimiento facial, LPR, detección de anomalías), mapas GIS integrados para localizar cámaras por ubicación geográfica, almacenamiento híbrido nube/local, streaming de baja latencia (sub-segundo) para operaciones en tiempo real, y cifrado de extremo a extremo. K-Video incluye todas estas capacidades en una sola plataforma.' },
+    { question: '¿Cuál es la diferencia entre un VMS unificado y un DVR/NVR tradicional?', answer: 'Un DVR/NVR graba video de un conjunto limitado de cámaras en un dispositivo físico. Un VMS unificado como K-Video conecta miles de cámaras de múltiples fabricantes y ubicaciones en una sola plataforma con analítica de IA, búsqueda forense centralizada y mapas GIS. La diferencia clave: con un DVR/NVR necesitas acceder a cada dispositivo individualmente; con K-Video, todas las cámaras están en una sola vista operativa con capacidades de búsqueda inteligente.' },
   ] : [
     { question: 'What is K-Video?', answer: 'K-Video is a scalable cloud and on-premises video management system (VMS) powered by AI-driven analytics. It enables real-time monitoring, forensic search, and automated threat detection across thousands of cameras.' },
     { question: 'How does K-Video use AI for video analytics?', answer: 'K-Video integrates facial recognition at 94% accuracy, license plate recognition (LPR) at 99% read rate, anomaly detection, and behavioral analysis — all automated and in real time.' },
     { question: 'How many cameras can K-Video manage?', answer: 'K-Video supports over 10,000 cameras through its microservices architecture. It handles IP cameras, body cams, and drone streams with 98% uptime and automatic failover.' },
     { question: 'Does K-Video support third-party cameras?', answer: 'Yes. K-Video is compatible with major VMS platforms and IP camera manufacturers, supporting multiple streaming protocols including HLS, WebRTC, RTMP, and RTSP.' },
     { question: 'What is intelligent video search in K-Video?', answer: 'K-Video\'s intelligent search lets you find specific events in seconds instead of hours, using AI filters like facial recognition, LPR, motion detection, and behavioral analysis across stored video archives.' },
+    { question: 'What is a VMS and why does public safety need one?', answer: 'A VMS (Video Management System) is the software that centralizes recording, storage, live viewing, and forensic search of all cameras across an organization. For public safety, a unified VMS replaces the need to access multiple DVR/NVR consoles, allowing operators to view any camera — municipal, traffic, port, or airport — from a single interface. K-Video is a next-generation VMS that adds AI analytics on top of this foundation.' },
+    { question: 'What are the best VMS software features for public safety?', answer: 'Essential features include: ONVIF/RTSP support for connecting cameras from any manufacturer, forensic search with AI filters (facial recognition, LPR, anomaly detection), integrated GIS maps for locating cameras by geographic location, hybrid cloud/on-premises storage, sub-second latency streaming for real-time operations, and end-to-end encryption. K-Video includes all of these capabilities in a single platform.' },
+    { question: 'What is the difference between a unified VMS and a traditional DVR/NVR?', answer: 'A DVR/NVR records video from a limited set of cameras on a physical device. A unified VMS like K-Video connects thousands of cameras from multiple manufacturers and locations on one platform with AI analytics, centralized forensic search, and GIS maps. The key difference: with a DVR/NVR you need to access each device individually; with K-Video, all cameras are in a single operational view with intelligent search capabilities.' },
   ]
 
   const breadcrumbs = [
@@ -313,6 +319,94 @@ export default async function KVideoPage({
                 <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border)', borderTop: `2px solid ${ACCENT}`, padding: '28px 20px' }}>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '10px' }}>{int.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.65 }}>{int.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHAT IS VMS? EXPLAINER ── */}
+        <section style={{ padding: '80px 40px', borderTop: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+            <p style={{
+              fontFamily: 'DM Mono, monospace', fontSize: '11px',
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '16px',
+            }}>
+              {es ? 'Fundamentos' : 'Fundamentals'}
+            </p>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '24px', color: 'var(--white)' }}>
+              {es ? '¿Qué Es un VMS (Sistema de Gestión de Video)?' : 'What Is a VMS (Video Management System)?'}
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
+              {es
+                ? 'Un VMS (Video Management System) es el software central que conecta, graba, almacena y permite buscar video de todas las cámaras de una organización. En seguridad pública, un VMS unifica cámaras de distintos fabricantes — Hikvision, Axis, Dahua, Bosch, Hanwha — y de distintas ubicaciones — municipios, autopistas, puertos, aeropuertos, edificios públicos — en una sola interfaz operativa. Sin un VMS unificado, los operadores necesitan acceder a múltiples consolas de DVR/NVR, cada una mostrando solo un subconjunto de cámaras, lo que fragmenta la visibilidad operativa y retrasa la respuesta.'
+                : 'A VMS (Video Management System) is the central software that connects, records, stores, and enables search across all cameras in an organization. In public safety, a VMS unifies cameras from different manufacturers — Hikvision, Axis, Dahua, Bosch, Hanwha — and different locations — municipalities, highways, ports, airports, public buildings — into a single operational interface. Without a unified VMS, operators must access multiple DVR/NVR consoles, each showing only a subset of cameras, which fragments operational visibility and delays response.'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '28px' }}>
+              {es
+                ? 'K-Video es un VMS de nueva generación diseñado específicamente para seguridad pública. A diferencia de los VMS tradicionales que solo graban y reproducen video, K-Video añade analítica de IA (reconocimiento facial, LPR, detección de anomalías), búsqueda forense inteligente, mapas GIS con ubicación de cámaras, y streaming de baja latencia para operaciones en tiempo real. La arquitectura soporta más de 10,000 cámaras vía protocolos estándar (ONVIF, RTSP, HLS, WebRTC) sin depender de hardware propietario.'
+                : 'K-Video is a next-generation VMS designed specifically for public safety. Unlike traditional VMS platforms that only record and play back video, K-Video adds AI analytics (facial recognition, LPR, anomaly detection), intelligent forensic search, GIS maps with camera locations, and low-latency streaming for real-time operations. The architecture supports over 10,000 cameras via standard protocols (ONVIF, RTSP, HLS, WebRTC) without proprietary hardware lock-in.'}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              {(es ? [
+                { label: 'VMS Tradicional (DVR/NVR)', items: ['Acceso por dispositivo individual', 'Sin analítica de IA integrada', 'Búsqueda manual por hora y cámara', 'Hardware propietario por fabricante', 'Sin integración con GIS ni despacho'] },
+                { label: 'K-Video VMS Unificado', items: ['Todas las cámaras en una sola vista', 'IA integrada: facial, LPR, anomalías', 'Búsqueda forense inteligente en segundos', 'ONVIF/RTSP — cualquier fabricante', 'Integrado con K-Safety GIS y K-Dispatch'] },
+              ] : [
+                { label: 'Traditional VMS (DVR/NVR)', items: ['Access per individual device', 'No integrated AI analytics', 'Manual search by hour and camera', 'Proprietary hardware per manufacturer', 'No GIS or dispatch integration'] },
+                { label: 'K-Video Unified VMS', items: ['All cameras in one view', 'Built-in AI: facial, LPR, anomaly', 'Intelligent forensic search in seconds', 'ONVIF/RTSP — any manufacturer', 'Integrated with K-Safety GIS & K-Dispatch'] },
+              ]).map((col, ci) => (
+                <div key={ci} style={{
+                  background: ci === 0 ? 'rgba(239,68,68,0.06)' : 'rgba(34,197,94,0.06)',
+                  border: `1px solid ${ci === 0 ? 'rgba(239,68,68,0.15)' : 'rgba(34,197,94,0.15)'}`,
+                  borderRadius: '10px', padding: '24px 20px',
+                }}>
+                  <div style={{
+                    fontFamily: 'DM Mono, monospace', fontSize: '10px',
+                    letterSpacing: '0.15em', textTransform: 'uppercase',
+                    color: ci === 0 ? '#ef4444' : '#22c55e', marginBottom: '16px',
+                  }}>
+                    {col.label}
+                  </div>
+                  {col.items.map((item, ii) => (
+                    <div key={ii} style={{ fontSize: '14px', color: 'var(--dim)', lineHeight: 1.7, paddingLeft: '16px', position: 'relative', marginBottom: '6px' }}>
+                      <span style={{ position: 'absolute', left: 0, color: ci === 0 ? '#ef4444' : '#22c55e' }}>{ci === 0 ? '✗' : '✓'}</span>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── VMS CAMERA MANAGEMENT ── */}
+        <section style={{ background: 'var(--bg-2)', padding: '80px 40px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', marginBottom: '16px', color: 'var(--white)' }}>
+              {es ? 'K-Video VMS: Gestión de Cámaras para Seguridad Pública' : 'K-Video VMS Camera Management for Public Safety'}
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, maxWidth: '720px', marginBottom: '40px' }}>
+              {es
+                ? 'K-Video es un VMS (sistema de gestión de video) diseñado para seguridad pública. Conecta cámaras IP de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — vía ONVIF, RTSP o protocolos propietarios, y las unifica en una sola vista operativa en tiempo real.'
+                : 'K-Video is a VMS (video management system) built for public safety operations. It connects IP cameras from any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — via ONVIF, RTSP, or proprietary protocols, and unifies them into a single real-time operational view.'}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+              {(es ? [
+                { icon: '📷', title: 'Incorporación de Cámaras', desc: 'Agrega cámaras IP de cualquier fabricante vía ONVIF, RTSP o SDK propietario. Sin límite de dispositivos por instancia.' },
+                { icon: '📡', title: 'Gestión de Streams', desc: 'Transmisión de video en vivo con protocolos HLS, WebRTC y RTMP. Latencia sub-segundo para operaciones de despacho en tiempo real.' },
+                { icon: '🔍', title: 'Analítica por Cámara', desc: 'Asigna modelos de IA por cámara: LPR para entradas, detección de intrusión para perímetros, conteo de personas para afluencia.' },
+                { icon: '🗺️', title: 'Mapa de Cámaras en GIS', desc: 'Visualiza la cobertura de cámaras sobre el mapa operativo. Abre feeds en vivo desde el punto de incidente con un solo clic.' },
+              ] : [
+                { icon: '📷', title: 'Camera Onboarding', desc: 'Add IP cameras from any manufacturer via ONVIF, RTSP, or proprietary SDK. No device limit per instance.' },
+                { icon: '📡', title: 'Stream Management', desc: 'Live video streaming with HLS, WebRTC, and RTMP protocols. Sub-second latency for real-time dispatch operations.' },
+                { icon: '🔍', title: 'Per-Camera Analytics', desc: 'Assign AI models per camera: LPR for entry points, intrusion detection for perimeters, people counting for crowd flow.' },
+                { icon: '🗺️', title: 'Camera Map in GIS', desc: 'Visualize camera coverage on the operational map. Open live feeds from the incident point with a single click.' },
+              ]).map((item, i) => (
+                <div key={i} style={{ background: 'rgba(168,85,247,0.06)', border: '1px solid rgba(168,85,247,0.15)', borderRadius: '10px', padding: '24px 20px' }}>
+                  <div style={{ fontSize: '24px', marginBottom: '12px' }}>{item.icon}</div>
+                  <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '16px', color: 'var(--white)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.02em' }}>{item.title}</div>
+                  <div style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.65 }}>{item.desc}</div>
                 </div>
               ))}
             </div>

@@ -1,3 +1,81 @@
+## [v2.246] – 2026-06-24 — Trinidad and Tobago guide (Caribbean expansion #3)
+### Added
+- **New page: `/resources/public-safety-software-trinidad-and-tobago/`** (EN + ES) — third Caribbean expansion
+  - Trinidad and Tobago Police Service (TTPS) ~7,000 officers / 9 police divisions
+  - Trinidad and Tobago Defence Force (TTDF) ~4,000: Regiment, Coast Guard ~1,000, Air Guard
+  - National Operations Centre (NOC) under Ministry of National Security
+  - Caribbean's largest oil & gas producer: 30-40% GDP, 80%+ exports
+  - Atlantic LNG 4 trains Point Fortin; Point Lisas methanol (2nd world) + ammonia (1st world)
+  - Offshore platforms, Petrotrin refinery Pointe-a-Pierre, pipeline network
+  - Port of Port of Spain (PATT), Point Lisas industrial port
+  - Piarco International Airport (POS) + A.N.R. Robinson Airport Tobago (TAB)
+  - 14 municipal/regional corporations + Tobago House of Assembly (THA)
+  - ~1.4M citizens / Port of Spain metro ~600K / San Fernando ~50K / Chaguanas ~84K
+  - Gang violence: 603 homicides 2022 (~43/100K); Laventille, Morvant, Enterprise, Sea Lots
+  - Venezuela proximity 11km: narco-trafficking corridor, 40+ pirogues/week, arms + migration
+  - Coast Guard maritime patrols Venezuela-Grenada-Barbados corridor
+  - Trinidad-Tobago dual-island operational gap: TEMA, THA autonomy, ferry/air links
+  - Emergency lines: 999 (police) / 990 (fire) / 811 (ambulance) — no unified system
+  - Public Procurement Act 2015 / Office of Procurement Regulation (OPR) / Central Tenders Board
+  - Heritage and Stabilisation Fund (energy revenue)
+  - TTD / Central Bank / CARICOM / Commonwealth / OAS
+  - 6 FAQs (EN+ES), FAQPage + Article + Breadcrumb schema, comparison table, 5-step workflow
+  - Sitemap, resources hub card, metadata (EN+ES) updated
+
+## [v2.245] – 2026-06-23 — Internal-link concentration to starved money hubs
+### Changed
+- Routed internal links to the two highest-value hubs that were starved of inbound links (CAD best-dispatch: **7 inbound**, emergency-management: **6** — vs VMS's 45), from 5 high-relevance topical-neighbor pages: `what-is-cad-dispatch-software`, `how-c5-command-centers-work`, `what-is-a-real-time-crime-center`, `what-is-situational-awareness-software`, `rtcc-setup-guide`.
+- Each now links **Best CAD Dispatch Software** + **Emergency Management Software** → CAD hub 7→12 inbound, emergency-mgmt 6→11. Fixes a glaring gap (the CAD explainer didn't link the CAD buyer's guide). EN+ES, page bodies only. Build verified 0 errors.
+
+## [v2.244] – 2026-06-23 — Jamaica guide + K-Video VMS depth + K-Dispatch bounce fix
+### Added
+- **New page: `/resources/public-safety-software-jamaica/`** (EN + ES) — second Caribbean expansion
+  - Jamaica Constabulary Force (JCF) ~12,000 officers / JDF ~5,000 (Regiment, Coast Guard, Air Wing)
+  - ZOSO (Zones of Special Operations) — JCF+JDF joint operations; Norwood zero murders 2024-2025
+  - Homicide rate 23.7 in 2025 (down from 40.1 in 2024), lowest in 31 years; 100+ gangs
+  - ODPEM hurricane response — reassigned to PM Office after Hurricane Melissa (Nov 2025)
+  - 14 parishes / 2.8M citizens / Kingston ~670K metro / Montego Bay ~110K
+  - Tourism: 4M+ visitors/yr, US$4B+ forex, ~10% GDP — Montego Bay, Ocho Rios, Negril, Falmouth
+  - Port of Kingston (KFTL/CMA CGM 30yr concession 2016, 3.2M TEU capacity) — Caribbean's #1 transshipment hub
+  - Bauxite: world 5th producer, US$612M exports 2025
+  - Emergency lines: 119 (police), 110 (fire), 116 (ambulance) — no unified 911
+  - Procurement: Handbook of Public Sector Procurement Procedures / GOJEP / NCC
+  - CARICOM / Commonwealth / JMD / Bank of Jamaica
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwareJamaica` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-jamaica` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+
+### Improved
+- **K-Video VMS content depth expansion**
+  - New "What Is VMS?" explainer section (~300 words EN+ES) with Traditional vs Unified VMS comparison grid
+  - 3 new FAQs targeting `vms software` queries: "What is a VMS?", "Best VMS features for public safety", "VMS vs DVR/NVR difference"
+  - Total K-Video FAQs: 5 → 8
+- **K-Dispatch bounce rate fix**
+  - Added direct-answer strip below hero: immediately tells visitors what K-Dispatch is (CAD software), key stats, and deployment options
+  - Targets 61.5% bounce rate reduction by providing instant value above the fold
+
+## [v2.243] – 2026-06-16 — GEO guide: Public Safety Software for the Dominican Republic
+### Added
+- **New page: `/resources/public-safety-software-dominican-republic/`** (EN + ES) — first Caribbean expansion
+  - Policia Nacional Dominicana ~37,000 officers / CESFRONT ~3,500 Haiti border / CESTUR ~4,000 tourism security / AMET transit / DNCD anti-narcotics
+  - Sistema Nacional 911 since 2014 (Santo Domingo) / 2017 (Santiago), 90%+ population coverage
+  - 31 provinces + Distrito Nacional / 158 municipios / 11.2M citizens
+  - Tourism: 10M+ visitors/yr, 15%+ GDP — Punta Cana, Puerto Plata, La Romana, Samana
+  - Haiti border: 376 km, CESFRONT checkpoints at Dajabon/Jimani/Elias Pina/Pedernales/Comendador, migration crisis since 2021
+  - Ports: Haina, Caucedo (DP World), Puerto Plata / Airports: AILA, Cibao, Punta Cana
+  - Ley 340-06 Compras y Contrataciones Publicas / DGCP portal / SIGEF budget
+  - Largest economy in the Caribbean and Central America
+  - 6 FAQs + Article + Breadcrumb JSON-LD schema
+- Added `publicSafetySoftwareDominicanRepublic` metadata key to EN + ES metadata.ts
+- Added `/resources/public-safety-software-dominican-republic` to sitemap.ts (priority 0.75)
+- Added hub card to resources page
+- Internal links to Panama, Colombia, Mexico, LATAM CAD, product pages
+
+## [v2.242] – 2026-06-16 — Daily SEO audit: trim K-Video description
+### Fixed
+- **`/k-video/` EN description** — trimmed from 179 → 143 chars (removed "searchable" + "Any brand, any protocol.") to clear `desc_near_max` info flag. Daily Verge audit: 71 pages, 0 critical, 0 warnings.
+
 ## [v2.241] – 2026-06-15 — Recapture "what is video analytics?" question query
 ### Changed
 - **`/resources/what-is-video-analytics/` (EN + ES)** — blended title back to a question form: "What Is Video Analytics? AI for CCTV & Public Safety" (was "AI Video Analytics for CCTV, Surveillance and Public Safety"). The page ranks pos 7.1 for "what is video analytics?" with 0 clicks — the prior title dropped the question the searcher is scanning for while the H1 still asked it. New title serves both the question intent and the AI/CCTV keywords. Descriptions unchanged.
