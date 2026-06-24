@@ -1,3 +1,18 @@
+## [v2.250] – 2026-06-24 — Guyana guide (Caribbean/South America expansion #7)
+### Added
+- **New page: `/resources/public-safety-software-guyana/`** (EN + ES) — Caribbean/South America expansion
+  - Guyana Police Force (GPF) ~4,500 officers / SOCU / TSU / CID / Safe City Georgetown 200+ CCTV
+  - Guyana Defence Force (GDF) ~3,400: Infantry + Coast Guard + Air Corps / reinforced post-2023 Venezuela crisis
+  - Civil Defence Commission (CDC) / 90% pop below sea level on coastal strip / sea wall protection
+  - ExxonMobil Stabroek block: 11+ Bboe discovered / 600K+ bbl/day / 5 FPSOs (Liza Destiny/Unity, Prosperity, Yellowtail, Uaru) / world fastest oil boom
+  - Venezuela Essequibo dispute: 159,500 km2 (74% of Guyana) / Dec 2023 referendum / ICJ jurisdiction / SOUTHCOM+UK+Brazil support
+  - 10 administrative regions / Georgetown ~300K / Linden / New Amsterdam / vast jungle interior
+  - Procurement Act 2003 / NPTAB / Natural Resource Fund (NRF) / IDB/WB/USAID/UK FCDO
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added before Bahamas
+
 ## [v2.249] – 2026-06-24 — Bahamas guide (Caribbean expansion #6)
 ### Added
 - **New page: `/resources/public-safety-software-bahamas/`** (EN + ES) — sixth Caribbean expansion

@@ -1479,6 +1479,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-guyana',
+          category: 'Guide',
+          title: 'Public Safety Software for Guyana',
+          excerpt: "Public safety technology for Guyana 10 regions — GPF ~4,500 officers, GDF border security, ExxonMobil Stabroek oil boom protection, Safe City Georgetown, and Venezuela Essequibo dispute.",
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-bahamas',
           category: 'Guide',
           title: 'Public Safety Software for The Bahamas',

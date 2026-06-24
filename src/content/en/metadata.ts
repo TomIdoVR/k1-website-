@@ -1081,6 +1081,11 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, and PanamaCompra-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-panama/",
   },
+  publicSafetySoftwareGuyana: {
+    title: "Public Safety Software for Guyana | GPF, Oil Boom Security & Venezuela Border Operations – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Guyana GPF ~4,500 officers, GDF border and maritime security, ExxonMobil Stabroek oil infrastructure protection, Safe City Georgetown, and SOUTHCOM coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-guyana/",
+  },
   publicSafetySoftwareBahamas: {
     title: "Public Safety Software for The Bahamas | RBPF, RBDF Maritime Security & Archipelago Operations – KabatOne",
     description: "KabatOne delivers unified public safety platform for The Bahamas RBPF ~3,500 officers, RBDF maritime fleet, 700+ island archipelago operations, OPBAT coordination, and hurricane-resilient inter-island dispatch.",
