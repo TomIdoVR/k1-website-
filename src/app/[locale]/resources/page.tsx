@@ -1463,6 +1463,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-puerto-rico',
+          category: 'Guide',
+          title: 'Public Safety Software for Puerto Rico',
+          excerpt: 'Public safety technology for Puerto Rico 78 municipalities — NPPR ~12K officers, 10 PSAPs 9-1-1, hurricane-resilient operations, FEMA/CDBG-DR funding, and CJIS/NIST compliance.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

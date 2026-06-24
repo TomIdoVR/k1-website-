@@ -157,6 +157,7 @@ const pages = [
   { path: '/resources/public-safety-software-dominican-republic', priority: 0.75 },
   { path: '/resources/public-safety-software-trinidad-and-tobago', priority: 0.75 },
   { path: '/resources/public-safety-software-jamaica', priority: 0.75 },
+  { path: '/resources/public-safety-software-puerto-rico', priority: 0.75 },
     { path: '/resources/public-safety-software-central-african-republic', priority: 0.75 },
     { path: '/resources/public-safety-software-mauritania', priority: 0.75 },
     { path: '/resources/public-safety-software-eritrea', priority: 0.75 },

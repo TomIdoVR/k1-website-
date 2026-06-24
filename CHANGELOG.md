@@ -1,3 +1,24 @@
+## [v2.247] – 2026-06-24 — Puerto Rico guide (Caribbean expansion #4)
+### Added
+- **New page: `/resources/public-safety-software-puerto-rico/`** (EN + ES) — fourth Caribbean expansion
+  - Negociado de la Policia de Puerto Rico (NPPR) ~12,000 officers / 13 police areas / DOJ consent decree reform since 2012
+  - Municipal police forces: San Juan (~2,000), Bayamon, Carolina, Ponce, Caguas, Guaynabo (~3,000+ combined)
+  - Cuerpo de Bomberos ~2,800 firefighters / 95+ stations island-wide
+  - Sistema de Emergencias Medicas (SEM) / NMEAD disaster management / FEMA Region 2
+  - 9-1-1 System: NETEL 10 PSAPs / ~3M calls/year / NG9-1-1 transition
+  - Federal presence: FBI San Juan, DEA Caribbean Division, USCG Sector San Juan, CBP/ICE, Fort Buchanan
+  - Hurricane resilience: Maria 2017 ($90B+, 328-day blackout), Fiona 2022, 2019-2020 earthquake swarm
+  - LUMA Energy T&D / PREPA generation / Act 17-2019 100% renewable mandate by 2050
+  - SJU Airport 9M+ pax (Aerostar/ASUR), Port of San Juan 2nd Caribbean cruise 1.5M+ pax, Jones Act
+  - AAA/PRASA largest US water system under single entity / 60%+ non-revenue water loss
+  - 78 municipalities (no counties) / hub-and-spoke deployment model
+  - Federal funding: FEMA $20B+ HM, CDBG-DR $20B+ HUD, HSGP, COPS Office, USDA Rural, GSA Schedule
+  - CJIS Security Policy + NIST compliance native
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to US/DR/CAD/VMS/EMS guides
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Jamaica
+
 ## [v2.246] – 2026-06-24 — Trinidad and Tobago guide (Caribbean expansion #3)
 ### Added
 - **New page: `/resources/public-safety-software-trinidad-and-tobago/`** (EN + ES) — third Caribbean expansion
