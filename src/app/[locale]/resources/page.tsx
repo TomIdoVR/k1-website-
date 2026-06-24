@@ -1471,6 +1471,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-barbados',
+          category: 'Guide',
+          title: 'Public Safety Software for Barbados',
+          excerpt: 'Public safety technology for Barbados 11 parishes — RBPF ~1,500 officers, BDF Coast Guard, tourism security for 1.5M+ visitors, RSS regional hub, and island-wide VMS coverage.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-guatemala',
           category: 'Guide',
           title: 'Public Safety Software for Guatemala',

@@ -1,3 +1,23 @@
+## [v2.248] – 2026-06-24 — Barbados guide (Caribbean expansion #5)
+### Added
+- **New page: `/resources/public-safety-software-barbados/`** (EN + ES) — fifth Caribbean expansion
+  - Royal Barbados Police Force (RBPF) ~1,500 officers / 4 divisions / Tourist Police Unit / CID / Drug Squad
+  - Barbados Defence Force (BDF) ~800 personnel: Regiment + Coast Guard (ZEE ~167,000 km2)
+  - Barbados Fire Service (BFS) ~400 firefighters / 6 stations
+  - Department of Emergency Management (DEM) under Emergency Management Act
+  - Republic since Nov 2021 (Dame Sandra Mason, 1st President)
+  - Tourism: 700K+ air visitors + 800K+ cruise passengers via Bridgetown Cruise Terminal; 35-40% GDP
+  - BGI Airport 2.5M+ pax; Port of Bridgetown; Platinum Coast / South Coast / Bridgetown UNESCO
+  - RSS (Regional Security System) HQ in Barbados (7 members); CDEMA HQ; CARICOM IMPACS
+  - Financial center: 4,000+ IBC entities, FSC oversight, AML/CFT compliance
+  - 11 parishes / 431 km2 / ~280,000 pop / ~650 hab/km2 (most densely populated Caribbean)
+  - Data Protection Act 2019; Financial Management and Audit Act procurement; BBD/CBB
+  - Welcome Stamp digital nomad program (2020)
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to TnT/Jamaica/PR/UK/VMS/K-Dispatch
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Puerto Rico
+
 ## [v2.247] – 2026-06-24 — Puerto Rico guide (Caribbean expansion #4)
 ### Added
 - **New page: `/resources/public-safety-software-puerto-rico/`** (EN + ES) — fourth Caribbean expansion
