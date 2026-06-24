@@ -1,3 +1,27 @@
+## [v2.246] – 2026-06-24 — Trinidad and Tobago guide (Caribbean expansion #3)
+### Added
+- **New page: `/resources/public-safety-software-trinidad-and-tobago/`** (EN + ES) — third Caribbean expansion
+  - Trinidad and Tobago Police Service (TTPS) ~7,000 officers / 9 police divisions
+  - Trinidad and Tobago Defence Force (TTDF) ~4,000: Regiment, Coast Guard ~1,000, Air Guard
+  - National Operations Centre (NOC) under Ministry of National Security
+  - Caribbean's largest oil & gas producer: 30-40% GDP, 80%+ exports
+  - Atlantic LNG 4 trains Point Fortin; Point Lisas methanol (2nd world) + ammonia (1st world)
+  - Offshore platforms, Petrotrin refinery Pointe-a-Pierre, pipeline network
+  - Port of Port of Spain (PATT), Point Lisas industrial port
+  - Piarco International Airport (POS) + A.N.R. Robinson Airport Tobago (TAB)
+  - 14 municipal/regional corporations + Tobago House of Assembly (THA)
+  - ~1.4M citizens / Port of Spain metro ~600K / San Fernando ~50K / Chaguanas ~84K
+  - Gang violence: 603 homicides 2022 (~43/100K); Laventille, Morvant, Enterprise, Sea Lots
+  - Venezuela proximity 11km: narco-trafficking corridor, 40+ pirogues/week, arms + migration
+  - Coast Guard maritime patrols Venezuela-Grenada-Barbados corridor
+  - Trinidad-Tobago dual-island operational gap: TEMA, THA autonomy, ferry/air links
+  - Emergency lines: 999 (police) / 990 (fire) / 811 (ambulance) — no unified system
+  - Public Procurement Act 2015 / Office of Procurement Regulation (OPR) / Central Tenders Board
+  - Heritage and Stabilisation Fund (energy revenue)
+  - TTD / Central Bank / CARICOM / Commonwealth / OAS
+  - 6 FAQs (EN+ES), FAQPage + Article + Breadcrumb schema, comparison table, 5-step workflow
+  - Sitemap, resources hub card, metadata (EN+ES) updated
+
 ## [v2.245] – 2026-06-23 — Internal-link concentration to starved money hubs
 ### Changed
 - Routed internal links to the two highest-value hubs that were starved of inbound links (CAD best-dispatch: **7 inbound**, emergency-management: **6** — vs VMS's 45), from 5 high-relevance topical-neighbor pages: `what-is-cad-dispatch-software`, `how-c5-command-centers-work`, `what-is-a-real-time-crime-center`, `what-is-situational-awareness-software`, `rtcc-setup-guide`.

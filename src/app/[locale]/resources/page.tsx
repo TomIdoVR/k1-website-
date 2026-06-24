@@ -1447,6 +1447,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-trinidad-and-tobago',
+          category: 'Guide',
+          title: 'Public Safety Software for Trinidad and Tobago',
+          excerpt: 'Public safety technology for Trinidad and Tobago municipalities and corporations — TTPS ~7K officers, TTDF Coast Guard maritime operations, Atlantic LNG energy security, and cross-island coordination.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-jamaica',
           category: 'Guide',
           title: 'Public Safety Software for Jamaica',

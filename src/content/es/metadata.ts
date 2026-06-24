@@ -1081,6 +1081,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-panama/",
   },
+  publicSafetySoftwareTrinidadAndTobago: {
+    title: "Software de Seguridad Publica para Trinidad y Tobago | TTPS, Seguridad Energetica y Operaciones Maritimas – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para el Trinidad and Tobago Police Service ~7K oficiales, TTDF Coast Guard, seguridad energetica Atlantic LNG, Puerto de Port of Spain y coordinacion entre islas.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-trinidad-and-tobago/",
+  },
   publicSafetySoftwareJamaica: {
     title: "Software de Seguridad Publica para Jamaica | JCF, Operaciones ZOSO y Seguridad Turistica Caribe – KabatOne",
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Jamaica Constabulary Force ~12K oficiales, operaciones conjuntas ZOSO con JDF, respuesta ODPEM ante huracanes, Puerto de Kingston 3.2M TEU y seguridad turistica.",
