@@ -1070,6 +1070,19 @@ def _run_keyword_monitor(dry_run: bool = False, days: int = 28):
         if dry_run:
             cmd.append('--no-write')
         subprocess.run(cmd, check=False)
+        if not dry_run:
+            # Persist the weekly snapshot to the repo (separate commit; failure-safe)
+            hist = REPO_ROOT / 'SEO' / 'keywords' / 'keyword-history.csv'
+            changed = subprocess.run(
+                ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]
+            ).returncode != 0
+            if changed:
+                ds = datetime.now().strftime('%Y-%m-%d')
+                subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(hist)], check=False)
+                subprocess.run(
+                    ['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                     f'SEO: weekly keyword rank snapshot {ds}'], check=False)
+                print('[keyword-monitor] committed keyword-history.csv')
     except Exception as e:
         print(f'[keyword-monitor] skipped: {e}')
 
