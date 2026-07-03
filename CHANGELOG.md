@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## [v2.250] – 2026-06-24 — Guyana guide (Caribbean/South America expansion #7)
 ### Added
 - **New page: `/resources/public-safety-software-guyana/`** (EN + ES) — Caribbean/South America expansion
@@ -218,6 +219,11 @@
 ## [v2.233] – 2026-06-12 — SEO audit fix: VMS title length
 ### Fixed
 - **`/resources/what-is-video-management-software/` (EN)** — shortened title from 73 to 60 chars (removed redundant "System &" from "Video Management System & Software") to stay within the 70-char SEO limit. Daily Verge audit found 71 pages clean, 1 warning (this title), 0 critical.
+=======
+## [v2.251] – 2026-07-02 — Revert homepage to v1 on production
+### Changed
+- **Production (`main`) homepage reverted to the v1 design** by reverting the v2.230 homepage commit (`02dbf4a`). The v2 redesign was promoted to production before it was ready; this backs it out on `kabatone.com` only. SEO CTR fixes (v2.231, v2.232) are preserved. The v2 code remains intact on the `nextjs` staging branch for continued iteration before re-launch.
+>>>>>>> 7d8326b (Revert: homepage v2 → v1 on production (v2.251))
 
 ## [v2.232] – 2026-06-11 — Video Analytics hub: query-variant depth + cluster interlink
 ### Added
