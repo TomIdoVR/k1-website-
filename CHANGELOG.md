@@ -1,3 +1,7 @@
+## [v2.251] – 2026-07-02 — Revert homepage to v1 on production
+### Changed
+- **Production (`main`) homepage reverted to the v1 design** by reverting the v2.230 homepage commit (`02dbf4a`). The v2 redesign was promoted to production before it was ready; this backs it out on `kabatone.com` only. All SEO work since (v2.231–v2.246) is preserved. The v2 code remains intact on the `nextjs` staging branch for continued iteration before re-launch.
+
 ## [v2.246] – 2026-06-24 — Trinidad and Tobago guide (Caribbean expansion #3)
 ### Added
 - **New page: `/resources/public-safety-software-trinidad-and-tobago/`** (EN + ES) — third Caribbean expansion
