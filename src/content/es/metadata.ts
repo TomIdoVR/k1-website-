@@ -309,6 +309,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  cctvVideoAnalytics: {
+    title: "Analítica de Video CCTV: IA para Cámaras de Vigilancia | KabatOne",
+    description: "La analítica de video CCTV añade detección con IA a tus cámaras de vigilancia existentes — cualquier marca, sin reemplazar. Analítica en el borde vs servidor y qué detecta.",
+    canonical: "https://kabatone.com/es/resources/cctv-video-analytics/",
+    og: {
+      title: "Analítica de Video CCTV: IA para Cámaras de Vigilancia Existentes",
+      description: "Añade detección con IA a tus cámaras CCTV existentes — cualquier marca, sin reemplazar. Cómo funciona, en el borde vs servidor, y qué detecta.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   whatIsLprLicensePlateRecognition: {
     title: "LPR / ALPR: Guía de Reconocimiento de Placas Vehiculares | KabatOne",
     description: "El LPR/ALPR captura y coteja placas contra bases de datos de alertas en tiempo real. Cómo funciona, fijo vs móvil, precisión e integración en seguridad pública.",

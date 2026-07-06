@@ -309,6 +309,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  cctvVideoAnalytics: {
+    title: "CCTV Video Analytics: AI for Existing Surveillance Cameras | KabatOne",
+    description: "CCTV video analytics adds AI detection to your existing surveillance cameras — any brand, no rip-and-replace. Edge vs server analytics, what it detects, at municipal scale.",
+    canonical: "https://kabatone.com/resources/cctv-video-analytics/",
+    og: {
+      title: "CCTV Video Analytics: AI for Existing Surveillance Cameras",
+      description: "Add AI detection to your existing CCTV cameras — any brand, no rip-and-replace. How CCTV video analytics works, edge vs server, and what it detects.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   whatIsLprLicensePlateRecognition: {
     title: "What Is LPR / ALPR? License Plate Recognition Guide | KabatOne",
     description: "LPR/ALPR captures and cross-references vehicle plates against alert databases in real time. Learn how it works, system types, accuracy, and integration.",
