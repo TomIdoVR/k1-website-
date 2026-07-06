@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/",
   },
   kDispatch: {
-    title: "911 CAD Dispatch Software for Emergency Centers | KabatOne",
-    description: "From 911 call to unit dispatch in seconds. K-Dispatch centralizes intake, auto-recommends units, and integrates with video and GIS for public safety teams.",
+    title: "K-Dispatch: CAD Software for 911, Fire & Emergency Dispatch",
+    description: "K-Dispatch reduces 911 response times with AI-powered unit recommendation, NG911 integration, and real-time video feeds. CAD dispatch software for police, fire, and EMS agencies.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
@@ -245,12 +245,12 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS — Video Management Software for Public Safety | KabatOne",
-    description: "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
+    title: "What Is VMS Software? Video Management System Guide [2026]",
+    description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software/",
     og: {
-      title: "VMS: Video Management System Software for Public Safety",
-      description: "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
+      title: "What Is VMS Software? Video Management System Guide [2026]",
+      description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -295,8 +295,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "What Is Video Analytics? AI for CCTV & Public Safety | KabatOne",
-    description: "Intelligent AI video analytics detects intrusions, crowds, weapons, and LPR in CCTV and IP cameras — real time, integrated with CAD dispatch and GIS.",
+    title: "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]",
+    description: "Video analytics uses AI to detect intrusions, count crowds, recognize plates, and identify threats in real-time CCTV footage. Compare the best video analytics platforms and cameras for 2026.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
   },
   whatIsLprLicensePlateRecognition: {
@@ -405,8 +405,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/public-safety-software-brazil/",
   },
   bestCadDispatchSoftware: {
-    title: "Best CAD Dispatch Software for 911 Centers in 2026 | KabatOne",
-    description: "The best CAD dispatch software for 911 centers — compared for NG911 readiness, multi-agency interoperability, and MDT, GPS and video integration. A public-safety buyer's guide.",
+    title: "Best CAD Dispatch Software for 911, Fire & EMS [2026 Guide]",
+    description: "The best CAD dispatch software for 911 centers, fire departments, and EMS — compared for NG911, multi-agency dispatch, MDT, GPS, and video integration. Independent buyer's guide for 2026.",
     canonical: "https://kabatone.com/resources/best-cad-dispatch-software/",
     og: {
       title: "Best CAD Dispatch Software for 911 Centers (2026 Buyer's Guide)",

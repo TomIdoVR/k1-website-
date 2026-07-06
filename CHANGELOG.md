@@ -1,3 +1,12 @@
+## [v2.253] – 2026-07-06 — Aggressive non-branded organic CTR optimization
+### Changed
+- **VMS page meta (EN+ES)** — rewrote title from "VMS — Video Management Software for Public Safety" to "What Is VMS Software? Video Management System Guide [2026]" + new description with "Compare" hook. Targets 12,792 impressions @ 0.06% CTR (catastrophic) — goal: 3%+ CTR.
+- **Video Analytics page meta (EN+ES)** — rewrote title to "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]" + buyer-intent description. Targets 9,989 impressions @ 0.02% CTR.
+- **CAD Dispatch page meta (EN+ES)** — added "Fire & EMS" to title: "Best CAD Dispatch Software for 911, Fire & EMS [2026 Guide]". Captures "best fire computer aided dispatch software" query at pos 5.6 (392 imp, 0 clicks).
+- **K-Dispatch product page meta (EN+ES)** — rewrote title to "K-Dispatch: CAD Software for 911, Fire & Emergency Dispatch" + AI/NG911-focused description. Recovery play for pos 41.9 regression (was 18.9).
+- **C5 ES pages meta (2 pages)** — rewrote titles to match exact search queries: "C5: Qué Es, Qué Significa y Cómo Funciona" + "¿Qué es un C5 en Seguridad Pública?". Targets 1,636 combined impressions at pos 7-10 with 0 clicks.
+- **Total non-branded opportunity addressed:** 14,866+ impressions/month across 5 page clusters, currently generating only 7 clicks (0.05% CTR). TypeScript verified clean.
+
 ## [v2.252] – 2026-07-02 — Fusus CTR fix + CAD internal-link push (data-driven)
 ### Changed
 - **`/vs/fusus/` (EN + ES)** — "Fusus Alternative"-led title + question-hook description + OG. Target: **2,607 impressions at pos 7.8 earning 3 clicks** — a page-1 comparison page that had leaked clicks for weeks.
