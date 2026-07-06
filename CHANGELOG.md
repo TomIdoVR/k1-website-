@@ -1,3 +1,9 @@
+## [v2.254] – 2026-07-06 — Video Analytics content depth expansion
+### Improved
+- **Video Analytics Use Cases page** — added ~600 words of new content depth: "What Is Video Analytics Software?" definition section with market data ($20B by 2027), "Video Analytics vs. Traditional Surveillance" comparison grid (4 head-to-head rows), 3 new FAQs (ROI, accuracy in real-world conditions, offline operation) taking total from 6→9. All EN+ES bilingual.
+- **Internal cross-linking** — added LPR Integration, Face Recognition, and K-Video links to related resources section (3 new cross-links).
+- Targets 9,989 impressions at pos 22 / 0.02% CTR. Content depth is the primary lever to move from pos 22 → top 10.
+
 ## [v2.253] – 2026-07-06 — Aggressive non-branded organic CTR optimization
 ### Changed
 - **VMS page meta (EN+ES)** — rewrote title from "VMS — Video Management Software for Public Safety" to "What Is VMS Software? Video Management System Guide [2026]" + new description with "Compare" hook. Targets 12,792 impressions @ 0.06% CTR (catastrophic) — goal: 3%+ CTR.
