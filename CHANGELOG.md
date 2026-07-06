@@ -1,3 +1,8 @@
+## [v2.255] – 2026-07-06 — VMS→K-Video conversion path + Peregrine CTR fix
+### Improved
+- **VMS content page** — added prominent K-Video conversion callout (featured product box with CTA button) between "When Is a VMS Alone Not Enough?" and "What to Look For" sections. Added inline K-Video link within the AI Analytics content section. Both drive the 12,792 monthly impressions toward the product page. EN+ES bilingual.
+- **Peregrine /vs/ page meta (EN+ES)** — rewrote title from "Peregrine.ai Alternative" to "Peregrine.ai Analytics & Reporting Dashboards vs KabatOne [2026]" + query-matched description. Targets the exact query "peregrine.ai analytics reporting dashboards" (524 imp, pos 9.6, 0 clicks).
+
 ## [v2.254] – 2026-07-06 — Video Analytics content depth expansion
 ### Improved
 - **Video Analytics Use Cases page** — added ~600 words of new content depth: "What Is Video Analytics Software?" definition section with market data ($20B by 2027), "Video Analytics vs. Traditional Surveillance" comparison grid (4 head-to-head rows), 3 new FAQs (ROI, accuracy in real-world conditions, offline operation) taking total from 6→9. All EN+ES bilingual.

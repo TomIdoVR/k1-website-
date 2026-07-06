@@ -175,11 +175,11 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "Alternativa a Peregrine.ai: CAD, Video IA y GIS | KabatOne",
-    description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
+    title: "Peregrine.ai Dashboards de Analítica vs KabatOne [2026]",
+    description: "¿Cómo se comparan los dashboards de analítica de Peregrine.ai con KabatOne? Peregrine ofrece inteligencia predictiva — KabatOne ejecuta la operación: CAD, video IA, GIS y tráfico.",
     canonical: "https://kabatone.com/es/vs/peregrine/",
     og: {
-      title: "Alternativa a Peregrine.ai — Plataforma Unificada de Seguridad Pública",
+      title: "Peregrine.ai Dashboards vs KabatOne — Comparación Completa",
       description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
@@ -298,6 +298,16 @@ export const metadata = {
     title: "Analítica de Video con IA: Software para CCTV y Vigilancia [2026]",
     description: "La analítica de video usa IA para detectar intrusiones, contar multitudes, reconocer placas e identificar amenazas en CCTV en tiempo real. Compare las mejores plataformas de video analytics para 2026.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
+  },
+  aiVideoAnalytics: {
+    title: "Analítica de Video con IA: Cómo Funciona la IA en Video | KabatOne",
+    description: "La analítica de video con IA usa redes neuronales para detectar personas, vehículos y comportamientos con muchos menos falsos positivos que la analítica tradicional. Cómo funciona.",
+    canonical: "https://kabatone.com/es/resources/ai-video-analytics/",
+    og: {
+      title: "Analítica de Video con IA: Cómo Funciona la IA en Video",
+      description: "Las redes neuronales detectan personas, vehículos y comportamientos en video con muchos menos falsos positivos que la analítica tradicional — cómo funciona.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsLprLicensePlateRecognition: {
     title: "LPR / ALPR: Guía de Reconocimiento de Placas Vehiculares | KabatOne",

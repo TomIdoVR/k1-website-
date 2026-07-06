@@ -175,11 +175,11 @@ export const metadata = {
     canonical: "https://kabatone.com/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "Peregrine.ai Alternative: KabatOne — CAD, AI Video & GIS in One",
-    description: "Looking for a Peregrine.ai alternative? Peregrine gives you analytics dashboards — KabatOne adds CAD dispatch, AI video, GIS and traffic in one unified platform.",
+    title: "Peregrine.ai Analytics & Reporting Dashboards vs KabatOne [2026]",
+    description: "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS & traffic.",
     canonical: "https://kabatone.com/vs/peregrine/",
     og: {
-      title: "Peregrine.ai Alternative — KabatOne Unified Public Safety Platform",
+      title: "Peregrine.ai Analytics Dashboards vs KabatOne — Full Comparison",
       description: "Looking for a Peregrine.ai alternative? Peregrine gives you analytics dashboards — KabatOne adds CAD dispatch, AI video, GIS and traffic in one unified platform.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
@@ -298,6 +298,16 @@ export const metadata = {
     title: "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]",
     description: "Video analytics uses AI to detect intrusions, count crowds, recognize plates, and identify threats in real-time CCTV footage. Compare the best video analytics platforms and cameras for 2026.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
+  },
+  aiVideoAnalytics: {
+    title: "AI Video Analytics: How Intelligent Video Analytics Works | KabatOne",
+    description: "AI video analytics uses neural networks to detect people, vehicles and behaviors in surveillance video — with far fewer false positives than traditional rule-based analytics. How it works.",
+    canonical: "https://kabatone.com/resources/ai-video-analytics/",
+    og: {
+      title: "AI Video Analytics: How Intelligent Video Analytics Works",
+      description: "Neural networks detect people, vehicles and behaviors in surveillance video with far fewer false positives than traditional analytics — how AI video analytics works.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsLprLicensePlateRecognition: {
     title: "What Is LPR / ALPR? License Plate Recognition Guide | KabatOne",
