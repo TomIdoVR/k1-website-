@@ -439,6 +439,7 @@ export default async function VsCadPage({
                 </span>
                 {[
                   { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Qué es Software CAD' : 'What Is CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
                   { href: '/resources/rtcc-setup-guide', label: es ? 'Guía de Configuración RTCC' : 'RTCC Setup Guide' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>

@@ -525,6 +525,7 @@ export default async function CallCenterSoftwareGuidePage({
             {[
               { href: '/resources/public-safety-software-united-states', label: es ? 'Seguridad Pública EE.UU.: PSAP y NG911' : 'Public Safety Software — United States' },
               { href: '/resources/what-is-emergency-dispatch-software', label: es ? 'Software de Despacho de Emergencias' : 'Emergency Dispatch Software' },
+              { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
               { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué Es un Software CAD?' : 'What Is CAD Software?' },
               { href: '/resources/what-is-a-psap', label: es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?' },
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },

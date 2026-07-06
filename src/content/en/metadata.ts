@@ -160,9 +160,14 @@ export const metadata = {
     },
   },
   vsFusus: {
-    title: "KabatOne vs Fusus — RTCC vs Full Operations Platform",
-    description: "Fusus aggregates cameras for real-time awareness. KabatOne adds CAD dispatch, GIS, and traffic — a unified platform that goes beyond video intelligence.",
+    title: "Fusus Alternative for Public Safety: KabatOne vs Fusus",
+    description: "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
     canonical: "https://kabatone.com/vs/fusus/",
+    og: {
+      title: "Fusus Alternative — KabatOne Unified Public Safety Platform",
+      description: "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsPrepared911: {
     title: "KabatOne vs Prepared 911 — NG911 vs Full Response Platform",

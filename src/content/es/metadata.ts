@@ -160,9 +160,14 @@ export const metadata = {
     },
   },
   vsFusus: {
-    title: "KabatOne vs Fusus — RTCC vs Plataforma Completa | KabatOne",
-    description: "Fusus agrega video para conciencia situacional. KabatOne agrega despacho CAD, GIS y tráfico — plataforma unificada que va más allá de la inteligencia de video.",
+    title: "Alternativa a Fusus: CAD, GIS y Tráfico Unificados | KabatOne",
+    description: "¿Buscas una alternativa a Fusus? Fusus agrega video para conciencia situacional — KabatOne suma CAD, GIS y tráfico en una plataforma unificada más allá del video.",
     canonical: "https://kabatone.com/es/vs/fusus/",
+    og: {
+      title: "Alternativa a Fusus — Plataforma Unificada de Seguridad Pública",
+      description: "¿Buscas una alternativa a Fusus? Fusus agrega video para conciencia situacional — KabatOne suma CAD, GIS y tráfico en una plataforma unificada más allá del video.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsPrepared911: {
     title: "KabatOne vs Prepared 911 — NG911 vs Plataforma de Respuesta | KabatOne",
