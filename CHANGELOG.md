@@ -1,3 +1,10 @@
+## [v2.256] – 2026-07-06 — New spoke page: AI Video Analytics (hub-and-spoke cluster)
+### Added
+- **New page: `/resources/ai-video-analytics/`** (EN + ES) — a focused spoke splitting the "AI / intelligent video analytics" sub-cluster off the overloaded video-analytics hub. Targets ~3,275 impressions currently trapped at pos 18–28 on one page ("ai video analytics", "ai based/powered video analytics", "video analytics ai", "intelligent video analytics", "artificial intelligence video analytics").
+  - Full schema (FAQPage + Article + Breadcrumb), "AI vs traditional rule-based analytics" comparison table, 6-capability grid, 7 intent-matched FAQs, hero + definition + how-it-works (neural nets/deep learning) sections.
+  - Metadata EN+ES + OG; sitemap priority 0.7; interlinked with the video-analytics hub (both directions), VMS hub, K-Video product, LPR + face-recognition integrations.
+- First page of the **hub-and-spoke content cluster** strategy: focused spokes outrank a single overloaded hub for specific head terms (a relevance lever, independent of domain authority).
+
 ## [v2.255] – 2026-07-06 — VMS→K-Video conversion path + Peregrine CTR fix
 ### Improved
 - **VMS content page** — added prominent K-Video conversion callout (featured product box with CTA button) between "When Is a VMS Alone Not Enough?" and "What to Look For" sections. Added inline K-Video link within the AI Analytics content section. Both drive the 12,792 monthly impressions toward the product page. EN+ES bilingual.
