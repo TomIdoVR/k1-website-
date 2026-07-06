@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/",
   },
   kDispatch: {
-    title: "Software CAD y Despacho de Emergencias para 911 | KabatOne",
-    description: "Software CAD que reduce el despacho de emergencias. K-Dispatch centraliza el 911, recomienda unidades automáticamente y registra cada acción en tiempo real.",
+    title: "K-Dispatch: Software CAD para 911, Bomberos y Emergencias",
+    description: "K-Dispatch reduce tiempos de respuesta con recomendación de unidades por IA, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
     canonical: "https://kabatone.com/es/k-dispatch/",
   },
   kVideo: {
@@ -90,12 +90,12 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/psim-vs-unified-platform/",
   },
   c5CommandCenters: {
-    title: "¿Qué es un C5? Significado, Arquitectura y Tecnología 2026 | KabatOne",
-    description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
+    title: "C5: Qué Es, Qué Significa y Cómo Funciona [Guía Completa 2026]",
+    description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work/",
     og: {
-      title: "¿Qué es un C5? Significado y Arquitectura — Guía 2026",
-      description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad — el centro de mando que integra 911, video y despacho en ciudades de México. Las 5 C y la diferencia con el C4.",
+      title: "C5: Qué Es, Qué Significa y Cómo Funciona [Guía 2026]",
+      description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -175,11 +175,11 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/prepared911/",
   },
   vsPeregrine: {
-    title: "Alternativa a Peregrine.ai: CAD, Video IA y GIS | KabatOne",
-    description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
+    title: "Peregrine.ai Dashboards de Analítica vs KabatOne [2026]",
+    description: "¿Cómo se comparan los dashboards de analítica de Peregrine.ai con KabatOne? Peregrine ofrece inteligencia predictiva — KabatOne ejecuta la operación: CAD, video IA, GIS y tráfico.",
     canonical: "https://kabatone.com/es/vs/peregrine/",
     og: {
-      title: "Alternativa a Peregrine.ai — Plataforma Unificada de Seguridad Pública",
+      title: "Peregrine.ai Dashboards vs KabatOne — Comparación Completa",
       description: "¿Buscas una alternativa a Peregrine.ai? Peregrine ofrece analítica predictiva — KabatOne suma CAD, video IA, GIS y tráfico en una sola plataforma unificada.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
@@ -245,12 +245,12 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-cad-dispatch-software/",
   },
   whatIsVideoManagementSoftware: {
-    title: "VMS — Sistema y Software de Gestión de Video para Seguridad Pública | KabatOne",
-    description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
+    title: "¿Qué es un VMS? Software de Gestión de Video — Guía 2026",
+    description: "Un VMS (Video Management Software) centraliza video en vivo y grabado de cualquier cámara en una sola plataforma. Compare los mejores sistemas VMS, funciones de IA y opciones de integración para 2026.",
     canonical: "https://kabatone.com/es/resources/what-is-video-management-software/",
     og: {
-      title: "VMS: Sistema y Software de Gestión de Video para Seguridad Pública",
-      description: "El software de gestión de video (VMS) agrega cámaras de cualquier fabricante, añade analítica IA — LPR, detección de comportamientos, búsqueda forense — e integra con CAD y GIS.",
+      title: "¿Qué es un VMS? Software de Gestión de Video — Guía 2026",
+      description: "Un VMS (Video Management Software) centraliza video en vivo y grabado de cualquier cámara en una sola plataforma. Compare los mejores sistemas VMS, funciones de IA y opciones de integración para 2026.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -295,9 +295,19 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "¿Qué Es la Analítica de Video? IA para CCTV y Seguridad | KabatOne",
-    description: "Analítica inteligente de video detecta intrusiones, aglomeraciones, armas y LPR en cámaras CCTV e IP en tiempo real — integrada con despacho CAD y GIS.",
+    title: "Analítica de Video con IA: Software para CCTV y Vigilancia [2026]",
+    description: "La analítica de video usa IA para detectar intrusiones, contar multitudes, reconocer placas e identificar amenazas en CCTV en tiempo real. Compare las mejores plataformas de video analytics para 2026.",
     canonical: "https://kabatone.com/es/resources/what-is-video-analytics/",
+  },
+  aiVideoAnalytics: {
+    title: "Analítica de Video con IA: Cómo Funciona la IA en Video | KabatOne",
+    description: "La analítica de video con IA usa redes neuronales para detectar personas, vehículos y comportamientos con muchos menos falsos positivos que la analítica tradicional. Cómo funciona.",
+    canonical: "https://kabatone.com/es/resources/ai-video-analytics/",
+    og: {
+      title: "Analítica de Video con IA: Cómo Funciona la IA en Video",
+      description: "Las redes neuronales detectan personas, vehículos y comportamientos en video con muchos menos falsos positivos que la analítica tradicional — cómo funciona.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   whatIsLprLicensePlateRecognition: {
     title: "LPR / ALPR: Guía de Reconocimiento de Placas Vehiculares | KabatOne",
@@ -405,8 +415,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-brazil/",
   },
   bestCadDispatchSoftware: {
-    title: "Mejor Software CAD de Despacho para Centros 911 en 2026 | KabatOne",
-    description: "El mejor software CAD para centros 911 — comparado por compatibilidad NG911, interoperabilidad multi-agencia e integración con MDT, GPS y video. Guía de compra para seguridad pública.",
+    title: "Mejor Software CAD para 911, Bomberos y EMS [Guía 2026]",
+    description: "El mejor software CAD para centros 911, bomberos y ambulancias — comparado por NG911, despacho multi-agencia, MDT, GPS e integración de video. Guía independiente de compra 2026.",
     canonical: "https://kabatone.com/es/resources/best-cad-dispatch-software/",
     og: {
       title: "Mejor Software CAD para Centros 911 (Guía de Compra 2026)",
@@ -1122,8 +1132,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-dominican-republic/",
   },
   queEsUnC5: {
-    title: "¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad | KabatOne",
-    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    title: "¿Qué es un C5 en Seguridad Pública? Significado y Funciones 2026",
+    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",
     canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
 } as const

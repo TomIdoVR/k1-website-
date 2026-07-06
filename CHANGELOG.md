@@ -1,3 +1,30 @@
+## [v2.256] – 2026-07-06 — New spoke page: AI Video Analytics (hub-and-spoke cluster)
+### Added
+- **New page: `/resources/ai-video-analytics/`** (EN + ES) — a focused spoke splitting the "AI / intelligent video analytics" sub-cluster off the overloaded video-analytics hub. Targets ~3,275 impressions currently trapped at pos 18–28 on one page ("ai video analytics", "ai based/powered video analytics", "video analytics ai", "intelligent video analytics", "artificial intelligence video analytics").
+  - Full schema (FAQPage + Article + Breadcrumb), "AI vs traditional rule-based analytics" comparison table, 6-capability grid, 7 intent-matched FAQs, hero + definition + how-it-works (neural nets/deep learning) sections.
+  - Metadata EN+ES + OG; sitemap priority 0.7; interlinked with the video-analytics hub (both directions), VMS hub, K-Video product, LPR + face-recognition integrations.
+- First page of the **hub-and-spoke content cluster** strategy: focused spokes outrank a single overloaded hub for specific head terms (a relevance lever, independent of domain authority).
+
+## [v2.255] – 2026-07-06 — VMS→K-Video conversion path + Peregrine CTR fix
+### Improved
+- **VMS content page** — added prominent K-Video conversion callout (featured product box with CTA button) between "When Is a VMS Alone Not Enough?" and "What to Look For" sections. Added inline K-Video link within the AI Analytics content section. Both drive the 12,792 monthly impressions toward the product page. EN+ES bilingual.
+- **Peregrine /vs/ page meta (EN+ES)** — rewrote title from "Peregrine.ai Alternative" to "Peregrine.ai Analytics & Reporting Dashboards vs KabatOne [2026]" + query-matched description. Targets the exact query "peregrine.ai analytics reporting dashboards" (524 imp, pos 9.6, 0 clicks).
+
+## [v2.254] – 2026-07-06 — Video Analytics content depth expansion
+### Improved
+- **Video Analytics Use Cases page** — added ~600 words of new content depth: "What Is Video Analytics Software?" definition section with market data ($20B by 2027), "Video Analytics vs. Traditional Surveillance" comparison grid (4 head-to-head rows), 3 new FAQs (ROI, accuracy in real-world conditions, offline operation) taking total from 6→9. All EN+ES bilingual.
+- **Internal cross-linking** — added LPR Integration, Face Recognition, and K-Video links to related resources section (3 new cross-links).
+- Targets 9,989 impressions at pos 22 / 0.02% CTR. Content depth is the primary lever to move from pos 22 → top 10.
+
+## [v2.253] – 2026-07-06 — Aggressive non-branded organic CTR optimization
+### Changed
+- **VMS page meta (EN+ES)** — rewrote title from "VMS — Video Management Software for Public Safety" to "What Is VMS Software? Video Management System Guide [2026]" + new description with "Compare" hook. Targets 12,792 impressions @ 0.06% CTR (catastrophic) — goal: 3%+ CTR.
+- **Video Analytics page meta (EN+ES)** — rewrote title to "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]" + buyer-intent description. Targets 9,989 impressions @ 0.02% CTR.
+- **CAD Dispatch page meta (EN+ES)** — added "Fire & EMS" to title: "Best CAD Dispatch Software for 911, Fire & EMS [2026 Guide]". Captures "best fire computer aided dispatch software" query at pos 5.6 (392 imp, 0 clicks).
+- **K-Dispatch product page meta (EN+ES)** — rewrote title to "K-Dispatch: CAD Software for 911, Fire & Emergency Dispatch" + AI/NG911-focused description. Recovery play for pos 41.9 regression (was 18.9).
+- **C5 ES pages meta (2 pages)** — rewrote titles to match exact search queries: "C5: Qué Es, Qué Significa y Cómo Funciona" + "¿Qué es un C5 en Seguridad Pública?". Targets 1,636 combined impressions at pos 7-10 with 0 clicks.
+- **Total non-branded opportunity addressed:** 14,866+ impressions/month across 5 page clusters, currently generating only 7 clicks (0.05% CTR). TypeScript verified clean.
+
 ## [v2.252] – 2026-07-02 — Fusus CTR fix + CAD internal-link push (data-driven)
 ### Changed
 - **`/vs/fusus/` (EN + ES)** — "Fusus Alternative"-led title + question-hook description + OG. Target: **2,607 impressions at pos 7.8 earning 3 clicks** — a page-1 comparison page that had leaked clicks for weeks.

@@ -247,7 +247,13 @@ export default async function WhatIsVideoManagementSoftwarePage({
             <p style={pStyle}>
               {es
                 ? 'Los VMS de última generación ejecutan modelos de IA directamente sobre el flujo de video: detección y clasificación de objetos (personas, vehículos, armas), reconocimiento de placas vehiculares (LPR/ALPR), reconocimiento facial, análisis de comportamiento (merodeo, intrusión perimetral, abandono de objeto), conteo de personas y mapas de calor. Cada detección genera una alerta automática al operador con la imagen del evento y la ubicación de la cámara en el mapa.'
-                : 'State-of-the-art VMS systems run AI models directly on the video stream: object detection and classification (people, vehicles, weapons), license plate recognition (LPR/ALPR), facial recognition, behavioral analysis (loitering, perimeter intrusion, abandoned object), people counting, and heat maps. Each detection generates an automatic alert to the operator with the event image and the camera location on the map.'}
+                : 'State-of-the-art VMS systems run AI models directly on the video stream: object detection and classification (people, vehicles, weapons), license plate recognition (LPR/ALPR), facial recognition, behavioral analysis (loitering, perimeter intrusion, abandoned object), people counting, and heat maps. Each detection generates an automatic alert to the operator with the event image and the camera location on the map.'}{' '}
+              <Link href="/k-video" style={{ color: ACCENT, fontWeight: 500, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
+                {es ? 'K-Video de KabatOne' : "KabatOne's K-Video"}
+              </Link>
+              {es
+                ? ' ejecuta estas capacidades de IA nativamente — integradas con despacho CAD y GIS operacional.'
+                : ' runs these AI capabilities natively — integrated with CAD dispatch and operational GIS.'}
             </p>
 
             <h3 style={h3Style}>{es ? 'Búsqueda Forense' : 'Forensic Search'}</h3>
@@ -330,6 +336,29 @@ export default async function WhatIsVideoManagementSoftwarePage({
                 ? 'Las plataformas unificadas de seguridad pública como KabatOne integran VMS, despacho CAD, GIS y operaciones de campo en un solo entorno. Cuando un operador crea un incidente en K-Dispatch, las cámaras cercanas aparecen automáticamente en K-Video, la posición se marca en el mapa de K-Safety y las unidades reciben la alerta en su dispositivo móvil — todo sin cambiar de sistema ni depender de integración middleware.'
                 : 'Unified public safety platforms like KabatOne integrate VMS, CAD dispatch, GIS, and field operations into a single environment. When an operator creates an incident in K-Dispatch, nearby cameras automatically appear in K-Video, the position is marked on the K-Safety map, and units receive the alert on their mobile device — all without switching systems or relying on middleware integration.'}
             </p>
+          </div>
+        </section>
+
+        {/* ── K-VIDEO CONVERSION CALLOUT ── */}
+        <section style={{ padding: '0 32px 0' }}>
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(6,182,212,0.06) 100%)', border: '1px solid rgba(59,130,246,0.25)', borderLeft: `4px solid ${ACCENT}`, borderRadius: '0 12px 12px 0', padding: '28px 32px' }}>
+              <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase', color: ACCENT, marginBottom: '10px', marginTop: 0 }}>
+                {es ? 'Producto Destacado' : 'Featured Product'}
+              </p>
+              <p style={{ fontSize: '17px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', color: 'var(--white)', marginBottom: '10px', lineHeight: 1.2 }}>
+                {es ? 'K-Video: El VMS Construido para Seguridad Pública' : 'K-Video: The VMS Built for Public Safety'}
+              </p>
+              <p style={{ fontSize: '14px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '16px' }}>
+                {es
+                  ? 'K-Video agrega cámaras de cualquier fabricante, ejecuta analítica de IA (LPR, detección de objetos, reconocimiento facial) y opera nativamente con K-Dispatch y K-Safety — sin middleware, sin integraciones externas. Desplegado en más de 40 ciudades.'
+                  : 'K-Video aggregates cameras from any manufacturer, runs AI analytics (LPR, object detection, facial recognition), and operates natively with K-Dispatch and K-Safety — no middleware, no external integrations. Deployed across 40+ cities.'}
+              </p>
+              <Link href="/k-video" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: ACCENT, color: '#fff', padding: '10px 22px', borderRadius: '6px', fontSize: '13px', fontWeight: 700, fontFamily: 'Barlow Condensed, sans-serif', letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none' }}>
+                {es ? 'Ver K-Video' : 'Explore K-Video'}
+                <span style={{ fontSize: '16px' }}>→</span>
+              </Link>
+            </div>
           </div>
         </section>
 

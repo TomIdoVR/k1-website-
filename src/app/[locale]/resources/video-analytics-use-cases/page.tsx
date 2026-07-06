@@ -60,6 +60,18 @@ export default async function VideoAnalyticsUseCasesPage({
       question: '¿Cómo se integra la analítica de video con un centro C5 o CIOPS?',
       answer: 'En un C5 o CIOPS, las alertas de analítica de video no son notificaciones aisladas — se integran directamente en el mapa operativo GIS como eventos geolocalizados. El operador ve la alerta en el mapa con la cámara vinculada, evalúa el video en tiempo real, y puede despachar una unidad directamente desde la misma pantalla. KabatOne correlaciona automáticamente la alerta de video con el historial de incidentes de esa zona, los recursos disponibles más cercanos y las alertas LPR activas — entregando contexto completo en segundos.',
     },
+    {
+      question: '¿Cuál es el ROI de implementar analítica de video en seguridad pública?',
+      answer: 'El retorno de inversión varía según la escala del despliegue, pero los centros de mando que implementan analítica de video reportan consistentemente: 30-50% reducción en el tiempo de detección de incidentes, 20-40% mejora en tiempos de respuesta de emergencia, 60-80% reducción en horas-persona dedicadas a revisión forense, y 15-25% reducción en incidentes recurrentes en zonas monitoreadas. Para un municipio con 200-500 cámaras, el punto de equilibrio típico es de 12-18 meses considerando la reducción de costos operativos y el aumento en la resolución de casos.',
+    },
+    {
+      question: '¿Qué tan precisa es la analítica de video con IA en condiciones reales?',
+      answer: 'La precisión varía significativamente según el tipo de detección y las condiciones ambientales. Los sistemas actuales logran: 95%+ de precisión en LPR durante el día (85-90% de noche con iluminación IR), 92-98% en detección de intrusión perimetral en condiciones controladas, 85-93% en conteo de personas en densidades moderadas, y 75-88% en detección de comportamientos anómalos. Los factores que más afectan la precisión son la calidad de la cámara, la iluminación, el ángulo de instalación y la calibración inicial del modelo. KabatOne permite ajustar los umbrales de sensibilidad por zona para balancear entre tasa de detección y falsos positivos.',
+    },
+    {
+      question: '¿Puede la analítica de video funcionar sin conexión a internet?',
+      answer: 'Sí, los despliegues en seguridad pública generalmente funcionan en redes cerradas (LAN/WAN privada) sin depender de internet público. El procesamiento de analítica se ejecuta en servidores GPU locales dentro del centro de mando. La arquitectura on-premise es preferida en gobierno y seguridad pública por razones de soberanía de datos y latencia. KabatOne soporta tanto despliegues completamente on-premise como arquitecturas híbridas donde el procesamiento principal es local pero la gestión y actualización de modelos de IA puede ser remota.',
+    },
   ] : [
     {
       question: 'What are the most common video analytics use cases in public safety?',
@@ -84,6 +96,18 @@ export default async function VideoAnalyticsUseCasesPage({
     {
       question: 'How does video analytics integrate with a C5 or CIOPS command center?',
       answer: 'In a C5 or CIOPS, video analytics alerts are not isolated notifications — they integrate directly into the GIS operational map as geolocated events. The operator sees the alert on the map with the linked camera, reviews the live feed, and can dispatch a unit from the same screen. KabatOne automatically correlates the video alert with that zone\'s incident history, nearest available resources, and active LPR alerts — delivering complete context in seconds.',
+    },
+    {
+      question: 'What is the ROI of implementing video analytics in public safety?',
+      answer: 'ROI varies by deployment scale, but command centers implementing video analytics consistently report: 30-50% reduction in incident detection time, 20-40% improvement in emergency response times, 60-80% reduction in person-hours spent on forensic review, and 15-25% reduction in recurring incidents in monitored zones. For a municipality with 200-500 cameras, the typical breakeven point is 12-18 months considering reduced operational costs and increased case resolution rates.',
+    },
+    {
+      question: 'How accurate is AI video analytics in real-world conditions?',
+      answer: 'Accuracy varies significantly by detection type and environmental conditions. Current systems achieve: 95%+ LPR accuracy during daylight (85-90% at night with IR illumination), 92-98% in perimeter intrusion detection under controlled conditions, 85-93% in people counting at moderate densities, and 75-88% in behavioral anomaly detection. The main factors affecting accuracy are camera quality, lighting, installation angle, and initial model calibration. KabatOne allows sensitivity threshold adjustments per zone to balance detection rate against false positives.',
+    },
+    {
+      question: 'Can video analytics work without internet connectivity?',
+      answer: 'Yes, public safety deployments typically run on closed networks (private LAN/WAN) without depending on public internet. Analytics processing runs on local GPU servers within the command center. On-premise architecture is preferred in government and public safety for data sovereignty and latency reasons. KabatOne supports both fully on-premise deployments and hybrid architectures where primary processing is local but AI model management and updates can be remote.',
     },
   ]
 
@@ -252,6 +276,76 @@ export default async function VideoAnalyticsUseCasesPage({
               ? 'Los 8 principales casos de uso de analítica de video en centros de mando y seguridad pública — con métricas de rendimiento, requisitos de infraestructura y cómo cada uno se integra con despacho CAD y GIS.'
               : 'The 8 main video analytics use cases in command centers and public safety — with performance metrics, infrastructure requirements, and how each integrates with CAD dispatch and GIS.'}
           </p>
+        </section>
+
+        {/* WHAT IS VIDEO ANALYTICS — definition strip for head query */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '48px 0' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 40px' }}>
+            <h2 style={{
+              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800,
+              fontSize: 'clamp(26px, 3.5vw, 38px)', lineHeight: 1.1,
+              color: 'var(--white)', marginBottom: '20px',
+            }}>
+              {es ? '¿Qué es el Software de Analítica de Video?' : 'What Is Video Analytics Software?'}
+            </h2>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
+              {es
+                ? 'El software de analítica de video utiliza inteligencia artificial y visión por computadora para analizar automáticamente flujos de video en tiempo real o grabaciones almacenadas. A diferencia de los sistemas de vigilancia tradicionales que dependen de operadores humanos revisando pantallas, la analítica de video detecta eventos, clasifica objetos, identifica patrones de comportamiento y genera alertas sin intervención manual. En seguridad pública, esto transforma las cámaras de herramientas pasivas de grabación en sensores inteligentes que alimentan directamente los flujos operativos del centro de mando.'
+                : 'Video analytics software uses artificial intelligence and computer vision to automatically analyze live video streams or stored recordings. Unlike traditional surveillance systems that rely on human operators watching screens, video analytics detects events, classifies objects, identifies behavioral patterns, and generates alerts without manual intervention. In public safety, this transforms cameras from passive recording tools into intelligent sensors that feed directly into command center operational workflows.'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
+              {es
+                ? 'El mercado global de analítica de video se proyecta a superar los $20 mil millones para 2027, impulsado por la adopción en ciudades inteligentes, transporte público y seguridad ciudadana. Los sistemas modernos procesan 100+ flujos de video simultáneamente en servidores GPU centralizados, con modelos de IA especializados para cada tipo de detección — desde reconocimiento de placas (LPR) hasta análisis de multitudes.'
+                : 'The global video analytics market is projected to exceed $20 billion by 2027, driven by adoption in smart cities, public transit, and citizen safety. Modern systems process 100+ video streams simultaneously on centralized GPU servers, with specialized AI models for each detection type — from license plate recognition (LPR) to crowd analysis.'}
+            </p>
+          </div>
+        </section>
+
+        {/* VIDEO ANALYTICS vs TRADITIONAL SURVEILLANCE */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '48px 0', background: 'rgba(168,85,247,0.02)' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 40px' }}>
+            <h2 style={{
+              fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800,
+              fontSize: 'clamp(24px, 3vw, 34px)', lineHeight: 1.1,
+              color: 'var(--white)', marginBottom: '24px',
+            }}>
+              {es ? 'Analítica de Video vs. Vigilancia Tradicional' : 'Video Analytics vs. Traditional Surveillance'}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              {(es ? [
+                { trad: 'Operadores monitorean pantallas manualmente — fatiga visual después de 20 minutos', smart: 'IA monitorea 24/7 sin fatiga — detecta eventos que el ojo humano pierde' },
+                { trad: 'Las grabaciones se revisan después del incidente (horas o días)', smart: 'Detección en tiempo real con alertas < 2 segundos al operador' },
+                { trad: 'Sin contexto: el operador ve video sin datos adicionales', smart: 'Contexto integrado: historial de zona, recursos cercanos, alertas LPR activas' },
+                { trad: 'Escalabilidad limitada — cada cámara adicional requiere otro operador', smart: 'Un servidor GPU procesa 100+ cámaras simultáneamente con múltiples modelos de IA' },
+              ] : [
+                { trad: 'Operators monitor screens manually — visual fatigue after 20 minutes', smart: 'AI monitors 24/7 without fatigue — catches events human eyes miss' },
+                { trad: 'Recordings reviewed after the incident (hours or days)', smart: 'Real-time detection with < 2-second alerts to the operator' },
+                { trad: 'No context: operator sees video without additional data', smart: 'Integrated context: zone history, nearby resources, active LPR alerts' },
+                { trad: 'Limited scalability — each additional camera needs another operator', smart: 'One GPU server processes 100+ cameras simultaneously with multiple AI models' },
+              ]).map((row, i) => (
+                <div key={i} style={{ display: 'contents' }}>
+                  <div style={{
+                    background: 'rgba(239,68,68,0.06)', border: '1px solid rgba(239,68,68,0.15)',
+                    borderRadius: '10px', padding: '16px 20px',
+                  }}>
+                    <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#ef4444', marginBottom: '8px' }}>
+                      {es ? 'TRADICIONAL' : 'TRADITIONAL'}
+                    </div>
+                    <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.6 }}>{row.trad}</p>
+                  </div>
+                  <div style={{
+                    background: `rgba(168,85,247,0.06)`, border: `1px solid rgba(168,85,247,0.15)`,
+                    borderRadius: '10px', padding: '16px 20px',
+                  }}>
+                    <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: ACCENT, marginBottom: '8px' }}>
+                      {es ? 'CON ANALÍTICA IA' : 'WITH AI ANALYTICS'}
+                    </div>
+                    <p style={{ fontSize: '13px', color: 'var(--dim)', lineHeight: 1.6 }}>{row.smart}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* USE CASES GRID */}
@@ -448,6 +542,9 @@ export default async function VideoAnalyticsUseCasesPage({
                 { href: '/resources/what-is-video-management-software', label: es ? 'Guía VMS Software' : 'VMS Software Guide' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un Centro de Control en Tiempo Real?' : 'What Is a Real-Time Crime Center?' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? '¿Qué es Software de Conciencia Situacional?' : 'What Is Situational Awareness Software?' },
+                { href: '/integrations/lpr', label: es ? 'Integración LPR' : 'LPR Integration' },
+                { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Face Recognition' },
+                { href: '/k-video', label: es ? 'K-Video: VMS + Analítica IA' : 'K-Video: VMS + AI Analytics' },
               ].map((link, i) => (
                 <Link key={i} href={link.href} style={{
                   display: 'block', padding: '16px 20px',
