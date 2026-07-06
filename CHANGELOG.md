@@ -1,3 +1,10 @@
+## [v2.257] – 2026-07-06 — New spoke page: CCTV Video Analytics (cluster spoke #2)
+### Added
+- **New page: `/resources/cctv-video-analytics/`** (EN + ES) — second hub-and-spoke spoke, targeting the "CCTV / surveillance video analytics" sub-cluster (~2,000 impressions currently at pos 17–33 on the overloaded hub): "cctv video analytics", "video analytics surveillance", "video surveillance analytics", "surveillance video analytics".
+  - Distinct intent from the AI spoke — this one owns the *retrofit-existing-CCTV* angle (add AI to cameras you already have, any brand, no rip-and-replace).
+  - Full schema (FAQPage + Article + Breadcrumb), "edge vs server CCTV analytics" table, 6-detection grid, 7 FAQs, hero + definition + existing-CCTV + VMS-relationship sections.
+  - Metadata EN+ES + OG; sitemap priority 0.7; bidirectionally interlinked with the AI spoke, the video-analytics hub, and the VMS hub.
+
 ## [v2.256] – 2026-07-06 — New spoke page: AI Video Analytics (hub-and-spoke cluster)
 ### Added
 - **New page: `/resources/ai-video-analytics/`** (EN + ES) — a focused spoke splitting the "AI / intelligent video analytics" sub-cluster off the overloaded video-analytics hub. Targets ~3,275 impressions currently trapped at pos 18–28 on one page ("ai video analytics", "ai based/powered video analytics", "video analytics ai", "intelligent video analytics", "artificial intelligence video analytics").

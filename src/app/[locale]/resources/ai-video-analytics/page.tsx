@@ -311,6 +311,7 @@ export default async function AiVideoAnalyticsPage({
           <h2 style={{ ...sectionH2, fontSize: '20px' }}>{es ? 'Relacionado' : 'Related'}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
+              { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video CCTV' : 'CCTV Video Analytics' },
               { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video (guía general)' : 'Video Analytics (general guide)' },
               { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video (VMS)' : 'Video Management Software (VMS)' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
