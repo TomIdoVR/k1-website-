@@ -160,9 +160,14 @@ export const metadata = {
     },
   },
   vsFusus: {
-    title: "KabatOne vs Fusus — RTCC vs Full Operations Platform",
-    description: "Fusus aggregates cameras for real-time awareness. KabatOne adds CAD dispatch, GIS, and traffic — a unified platform that goes beyond video intelligence.",
+    title: "Fusus Alternative for Public Safety: KabatOne vs Fusus",
+    description: "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
     canonical: "https://kabatone.com/vs/fusus/",
+    og: {
+      title: "Fusus Alternative — KabatOne Unified Public Safety Platform",
+      description: "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
   },
   vsPrepared911: {
     title: "KabatOne vs Prepared 911 — NG911 vs Full Response Platform",
@@ -1080,6 +1085,26 @@ export const metadata = {
     title: "Public Safety Software for Panama | Canal Zone Security, SENAFRONT Border & PanamaCompra Procurement – KabatOne",
     description: "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport, and PanamaCompra-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-panama/",
+  },
+  publicSafetySoftwareGuyana: {
+    title: "Public Safety Software for Guyana | GPF, Oil Boom Security & Venezuela Border Operations – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Guyana GPF ~4,500 officers, GDF border and maritime security, ExxonMobil Stabroek oil infrastructure protection, Safe City Georgetown, and SOUTHCOM coordination.",
+    canonical: "https://kabatone.com/resources/public-safety-software-guyana/",
+  },
+  publicSafetySoftwareBahamas: {
+    title: "Public Safety Software for The Bahamas | RBPF, RBDF Maritime Security & Archipelago Operations – KabatOne",
+    description: "KabatOne delivers unified public safety platform for The Bahamas RBPF ~3,500 officers, RBDF maritime fleet, 700+ island archipelago operations, OPBAT coordination, and hurricane-resilient inter-island dispatch.",
+    canonical: "https://kabatone.com/resources/public-safety-software-bahamas/",
+  },
+  publicSafetySoftwareBarbados: {
+    title: "Public Safety Software for Barbados | RBPF, Tourism Security & RSS Regional Hub – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Barbados RBPF ~1,500 officers, BDF Coast Guard, tourism security for 1.5M+ annual visitors, RSS regional coordination, and island-wide VMS coverage.",
+    canonical: "https://kabatone.com/resources/public-safety-software-barbados/",
+  },
+  publicSafetySoftwarePuertoRico: {
+    title: "Public Safety Software for Puerto Rico | NPPR, 9-1-1 PSAPs & Hurricane Resilience – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Puerto Rico 78 municipalities, NPPR ~12K officers, 10 PSAPs, FEMA integration, hurricane-resilient operations, and CJIS/NIST compliance.",
+    canonical: "https://kabatone.com/resources/public-safety-software-puerto-rico/",
   },
   publicSafetySoftwareTrinidadAndTobago: {
     title: "Public Safety Software for Trinidad and Tobago | TTPS, Energy Security & Maritime Operations – KabatOne",

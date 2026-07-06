@@ -246,6 +246,7 @@ export default async function CadSoftwareMunicipiosMexicoPage({
             {[
               { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los C5' : 'How C5 Command Centers Work' },
               { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Qué Es el Software CAD' : 'What Is CAD Dispatch Software' },
+              { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
               { href: '/resources/911-call-center-software-guide', label: es ? 'Guía Software Centro 911' : '911 Call Center Software Guide' },
               { href: '/resources/public-safety-software-municipalities-mexico', label: es ? 'Software de Seguridad Pública México' : 'Public Safety Software Mexico' },
               { href: '/k-dispatch', label: 'K-Dispatch' },

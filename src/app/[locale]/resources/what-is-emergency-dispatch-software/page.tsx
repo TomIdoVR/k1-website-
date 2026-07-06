@@ -385,6 +385,7 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
             {[
               { href: '/resources/what-is-a-psap', label: es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?' },
               { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué Es un Software CAD?' : 'What Is CAD Software?' },
+              { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
               { href: '/resources/what-is-a-command-center', label: es ? '¿Qué Es un Centro de Mando?' : 'What Is a Command Center?' },
               { href: '/resources/what-is-emergency-management-software', label: es ? 'Software de Gestión de Emergencias' : 'Emergency Management Software' },
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },

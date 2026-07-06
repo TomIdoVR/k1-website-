@@ -519,6 +519,7 @@ export default async function CadDispatchLatinAmericaPage({
                 </span>
                 {[
                   { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el Software de Despacho CAD?' : 'What Is CAD Dispatch Software?' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
                   { href: '/resources/c5-command-centers-mexico-2026', label: es ? 'Centros C5 en México 2026' : 'C5 Command Centers Mexico 2026' },
                   { href: '/resources/911-call-center-software-guide', label: es ? 'Guía de Software para Call Centers 911' : '911 Call Center Software Guide' },
                   { href: '/resources/what-is-a-command-center', label: es ? '¿Qué es un Centro de Mando?' : 'What Is a Command Center?' },

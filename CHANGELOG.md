@@ -1,6 +1,87 @@
+## [v2.252] – 2026-07-02 — Fusus CTR fix + CAD internal-link push (data-driven)
+### Changed
+- **`/vs/fusus/` (EN + ES)** — "Fusus Alternative"-led title + question-hook description + OG. Target: **2,607 impressions at pos 7.8 earning 3 clicks** — a page-1 comparison page that had leaked clicks for weeks.
+- **CAD internal-link concentration (round 2)** — added `best-cad-dispatch-software` links from 5 more CAD-relevant pages (emergency-dispatch, 911-call-center-guide, cad-latam, cad-municipios-mexico, /vs/cad). The hub responded strongly to round 1 (pos 15→12); this pushes toward page 1. Hub inbound links ~12→17.
+- Both from the 2026-07-02 weekly analysis: non-branded organic clicks just went 10× (4→39, now 26% of clicks). Build verified 0 errors.
+
 ## [v2.251] – 2026-07-02 — Revert homepage to v1 on production
 ### Changed
-- **Production (`main`) homepage reverted to the v1 design** by reverting the v2.230 homepage commit (`02dbf4a`). The v2 redesign was promoted to production before it was ready; this backs it out on `kabatone.com` only. All SEO work since (v2.231–v2.246) is preserved. The v2 code remains intact on the `nextjs` staging branch for continued iteration before re-launch.
+- **Production (`main`) homepage reverted to the v1 design** by reverting the v2.230 homepage commit (`02dbf4a`). The v2 redesign was promoted to production before it was ready; this backs it out on `kabatone.com` only. SEO CTR fixes (v2.231, v2.232) are preserved. The v2 code remains intact on the `nextjs` staging branch for continued iteration before re-launch.
+
+## [v2.250] – 2026-06-24 — Guyana guide (Caribbean/South America expansion #7)
+### Added
+- **New page: `/resources/public-safety-software-guyana/`** (EN + ES) — Caribbean/South America expansion
+  - Guyana Police Force (GPF) ~4,500 officers / SOCU / TSU / CID / Safe City Georgetown 200+ CCTV
+  - Guyana Defence Force (GDF) ~3,400: Infantry + Coast Guard + Air Corps / reinforced post-2023 Venezuela crisis
+  - Civil Defence Commission (CDC) / 90% pop below sea level on coastal strip / sea wall protection
+  - ExxonMobil Stabroek block: 11+ Bboe discovered / 600K+ bbl/day / 5 FPSOs (Liza Destiny/Unity, Prosperity, Yellowtail, Uaru) / world fastest oil boom
+  - Venezuela Essequibo dispute: 159,500 km2 (74% of Guyana) / Dec 2023 referendum / ICJ jurisdiction / SOUTHCOM+UK+Brazil support
+  - 10 administrative regions / Georgetown ~300K / Linden / New Amsterdam / vast jungle interior
+  - Procurement Act 2003 / NPTAB / Natural Resource Fund (NRF) / IDB/WB/USAID/UK FCDO
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added before Bahamas
+
+## [v2.249] – 2026-06-24 — Bahamas guide (Caribbean expansion #6)
+### Added
+- **New page: `/resources/public-safety-software-bahamas/`** (EN + ES) — sixth Caribbean expansion
+  - Royal Bahamas Police Force (RBPF) ~3,500 officers / CDU Nassau / DEU / Tourism Police / Intelligence Branch
+  - Royal Bahamas Defence Force (RBDF) ~1,800 / largest Caribbean maritime fleet / Coral Harbour + Freeport/Inagua/Ragged Island/Exuma bases
+  - NEMA (National Emergency Management Agency) / Disaster Preparedness and Response Act
+  - 700+ islands/cays / 100,000 mi2 ocean / 97% maritime territory / 30 inhabited islands / ~400,000 pop
+  - OPBAT joint anti-narcotics (DEA/USCG/Royal Navy) / AUTEC US Navy Andros Island
+  - Hurricane Dorian 2019 Cat. 5 ($3.4B, Abaco/Grand Bahama devastated) / Matthew 2016 / Joaquin 2015
+  - Tourism ~50% GDP / Nassau 3.5M+ cruise pax / NAS Airport 3.5M+ pax / Private islands (CocoCay/Castaway Cay/Half Moon Cay/Ocean Cay)
+  - Atlantis Paradise Island / Baha Mar / Nassau Cruise Port $300M+ redesign 2023
+  - Financial center: 200+ banks / Securities Commission / CBOB / BSD 1:1 USD / Sand Dollar CBDC (world first 2020)
+  - 32 districts / New Providence 70% pop / Grand Bahama / Family Islands (Abaco/Eleuthera/Exuma/Andros/Long Island/Inagua)
+  - Data Protection Act 2003 / Financial Administration and Audit Act / CBSI/IDB/CDB funding
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to Barbados/Jamaica/PR/US/VMS/K-Dispatch
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Barbados
+
+## [v2.248] – 2026-06-24 — Barbados guide (Caribbean expansion #5)
+### Added
+- **New page: `/resources/public-safety-software-barbados/`** (EN + ES) — fifth Caribbean expansion
+  - Royal Barbados Police Force (RBPF) ~1,500 officers / 4 divisions / Tourist Police Unit / CID / Drug Squad
+  - Barbados Defence Force (BDF) ~800 personnel: Regiment + Coast Guard (ZEE ~167,000 km2)
+  - Barbados Fire Service (BFS) ~400 firefighters / 6 stations
+  - Department of Emergency Management (DEM) under Emergency Management Act
+  - Republic since Nov 2021 (Dame Sandra Mason, 1st President)
+  - Tourism: 700K+ air visitors + 800K+ cruise passengers via Bridgetown Cruise Terminal; 35-40% GDP
+  - BGI Airport 2.5M+ pax; Port of Bridgetown; Platinum Coast / South Coast / Bridgetown UNESCO
+  - RSS (Regional Security System) HQ in Barbados (7 members); CDEMA HQ; CARICOM IMPACS
+  - Financial center: 4,000+ IBC entities, FSC oversight, AML/CFT compliance
+  - 11 parishes / 431 km2 / ~280,000 pop / ~650 hab/km2 (most densely populated Caribbean)
+  - Data Protection Act 2019; Financial Management and Audit Act procurement; BBD/CBB
+  - Welcome Stamp digital nomad program (2020)
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to TnT/Jamaica/PR/UK/VMS/K-Dispatch
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Puerto Rico
+
+## [v2.247] – 2026-06-24 — Puerto Rico guide (Caribbean expansion #4)
+### Added
+- **New page: `/resources/public-safety-software-puerto-rico/`** (EN + ES) — fourth Caribbean expansion
+  - Negociado de la Policia de Puerto Rico (NPPR) ~12,000 officers / 13 police areas / DOJ consent decree reform since 2012
+  - Municipal police forces: San Juan (~2,000), Bayamon, Carolina, Ponce, Caguas, Guaynabo (~3,000+ combined)
+  - Cuerpo de Bomberos ~2,800 firefighters / 95+ stations island-wide
+  - Sistema de Emergencias Medicas (SEM) / NMEAD disaster management / FEMA Region 2
+  - 9-1-1 System: NETEL 10 PSAPs / ~3M calls/year / NG9-1-1 transition
+  - Federal presence: FBI San Juan, DEA Caribbean Division, USCG Sector San Juan, CBP/ICE, Fort Buchanan
+  - Hurricane resilience: Maria 2017 ($90B+, 328-day blackout), Fiona 2022, 2019-2020 earthquake swarm
+  - LUMA Energy T&D / PREPA generation / Act 17-2019 100% renewable mandate by 2050
+  - SJU Airport 9M+ pax (Aerostar/ASUR), Port of San Juan 2nd Caribbean cruise 1.5M+ pax, Jones Act
+  - AAA/PRASA largest US water system under single entity / 60%+ non-revenue water loss
+  - 78 municipalities (no counties) / hub-and-spoke deployment model
+  - Federal funding: FEMA $20B+ HM, CDBG-DR $20B+ HUD, HSGP, COPS Office, USDA Rural, GSA Schedule
+  - CJIS Security Policy + NIST compliance native
+  - 6 bilingual FAQs (EN + ES), comparison table, 4 deployment scenarios, cross-links to US/DR/CAD/VMS/EMS guides
+- Metadata: EN + ES with canonical URLs
+- Sitemap: added with priority 0.75
+- Resources hub: card added after Jamaica
 
 ## [v2.246] – 2026-06-24 — Trinidad and Tobago guide (Caribbean expansion #3)
 ### Added
