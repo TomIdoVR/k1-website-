@@ -1156,4 +1156,14 @@ export const metadata = {
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
     canonical: "https://kabatone.com/resources/que-es-un-c5/",
   },
+  ng911Software: {
+    title: "NG911 Software: Next Generation 911 Systems Explained | KabatOne",
+    description: "NG911 (Next Generation 911) upgrades legacy 9-1-1 with IP-based calls, text-to-911, video, and real-time data feeds to CAD. How ESInet/i3 architecture works and what PSAPs need.",
+    canonical: "https://kabatone.com/resources/ng911-software/",
+    og: {
+      title: "NG911 Software: Next Generation 911 Systems Explained",
+      description: "NG911 upgrades legacy 9-1-1 with text, video, precise location, and real-time CAD data feeds — how ESInet/i3 works and what PSAPs need to adopt NG911.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
 } as const

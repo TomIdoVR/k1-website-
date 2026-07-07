@@ -50,6 +50,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/ng911-software',
+          category: 'Guía de Referencia',
+          title: 'Software NG911: Cómo Funciona Next Generation 911',
+          excerpt: 'NG911 moderniza el 9-1-1 heredado con red IP, texto al 911, video y datos en tiempo real al CAD. Arquitectura ESInet/i3, integración con despacho y estado del despliegue en EE.UU.',
+          readTime: '9 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-cad-dispatch-software',
           category: 'Guía de Referencia',
           title: '¿Qué Es el Software CAD de Despacho?',
@@ -1196,6 +1204,14 @@ export default async function ResourcesPage({
           title: 'AI in Public Safety: A Guide for Cities',
           excerpt: 'How AI is transforming emergency response, dispatch, and video surveillance. Real use cases, benefits, limitations, and what to look for in a platform.',
           readTime: '8 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/ng911-software',
+          category: 'Reference Guide',
+          title: 'NG911 Software: How Next Generation 911 Systems Work',
+          excerpt: 'NG911 upgrades legacy 9-1-1 with IP network, text-to-911, video, and real-time data to CAD. ESInet/i3 architecture, CAD integration, and US deployment status explained.',
+          readTime: '9 min',
           isNew: true,
         },
         {

@@ -1,3 +1,12 @@
+## [v2.260] – 2026-07-07 — New spoke page: NG911 Software (K-Dispatch cluster)
+### Added
+- **New page: `/resources/ng911-software/`** (EN + ES) — NG911 (Next Generation 911) reference guide, the first spoke in the K-Dispatch content cluster (mirrors the VMS hub-and-spoke strategy that recovered VMS rankings).
+  - Targets "ng911 software", "next generation 911 software", "next-gen 911 system", "ng911 CAD", "ng911 dispatch", "text-to-911 software" — active procurement queries in US PSAP market.
+  - Full schema (FAQPage + Article + Breadcrumb), Legacy 9-1-1 vs NG911 comparison table, 6-capability grid (text-to-911, video, location, telematics, PSAP transfer, CAD data), 7 FAQs.
+  - Metadata EN+ES + OG; sitemap 0.7; cross-linked to K-Dispatch, best-cad-dispatch-software, 911-call-center-software-guide, Carbyne/Prepared911 comparison pages.
+  - Hub card added to resources/page.tsx (EN+ES).
+- **Strategy**: K-Dispatch regressed pos 18.9 → 41.9 in June. VMS recovered via 3 cluster spokes (ai-video-analytics, cctv-video-analytics, best-vms-software); this page starts the same play for the CAD cluster.
+
 ## [v2.259] – 2026-07-07 — Indexation triage: noindex 116 non-ICP country pages
 ### Changed
 - **`noindex,follow` on 116 non-ICP `public-safety-software-{country}` pages** (all Africa/Europe/Asia/Oceania + tiny Caribbean) and **removed them from the sitemap**. GSC showed 107 indexed / 325 not indexed (75%) — the June country-page flood (136 pages) is the not-indexed backlog; Google won't index thin content for markets KabatOne doesn't serve.
