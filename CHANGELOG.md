@@ -1,3 +1,11 @@
+## [v2.258] – 2026-07-07 — New spoke page: Best VMS Software (VMS cluster spoke)
+### Added
+- **New page: `/resources/best-vms-software/`** (EN + ES) — buyer's-guide spoke splitting the commercial "best VMS / video management platform" intent off the overloaded VMS hub (~4,000 impressions at pos 18–45 for "best vms software", "video management platform", "vms system", "video management system").
+  - Distinct from the educational hub ("what is VMS") and the /vs/vms comparison — this owns the *how-to-choose / buyer's-guide* angle.
+  - Full schema (FAQPage + Article + Breadcrumb), "VMS platform types" comparison table, 6-criteria selection grid, 6 FAQs, "when a VMS isn't enough" section.
+  - Metadata EN+ES + OG; sitemap 0.7; interlinked with the VMS hub, AI + CCTV video-analytics spokes, /vs/vms, and K-Video.
+- Third hub-and-spoke cluster page this cycle (after AI + CCTV video-analytics spokes) — concentrating focused pages on the highest-value non-branded sub-clusters.
+
 ## [v2.257] – 2026-07-06 — New spoke page: CCTV Video Analytics (cluster spoke #2)
 ### Added
 - **New page: `/resources/cctv-video-analytics/`** (EN + ES) — second hub-and-spoke spoke, targeting the "CCTV / surveillance video analytics" sub-cluster (~2,000 impressions currently at pos 17–33 on the overloaded hub): "cctv video analytics", "video analytics surveillance", "video surveillance analytics", "surveillance video analytics".

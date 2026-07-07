@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  bestVmsSoftware: {
+    title: "Best VMS Software 2026: Choose a Video Management Platform | KabatOne",
+    description: "How to choose the best VMS software: compare video management platform types, key criteria (any-brand cameras, AI analytics, dispatch integration), cost, and the best VMS for public safety.",
+    canonical: "https://kabatone.com/resources/best-vms-software/",
+    og: {
+      title: "Best VMS Software 2026: How to Choose a Video Management Platform",
+      description: "Compare VMS platform types and the criteria that matter — any-brand cameras, AI analytics, dispatch integration — plus the best VMS for public safety and command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   whatIsARealTimeCrimeCenter: {
     title: "What Is a Real-Time Crime Center (RTCC)? Complete Guide | KabatOne",
     description: "A Real-Time Crime Center (RTCC) integrates live video, AI analytics, LPR, and gunshot detection into a unified command environment. Learn how RTCCs work.",
