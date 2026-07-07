@@ -357,6 +357,18 @@
     <div class="timeline">
 
 
+      <!-- v2.259 -->
+      <div class="tl-entry fix" id="v2.259">
+        <div class="tl-meta"><span class="tl-ver">v2.259</span><span class="tl-date">2026-07-07</span></div>
+        <div class="tl-title">Indexation triage — noindex 116 non-ICP country pages</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>GSC showed 107 indexed / 325 not indexed (75%). Set <code>noindex,follow</code> on 116 non-ICP <code>public-safety-software-{country}</code> pages (all Africa/Europe/Asia + tiny Caribbean) and removed them from the sitemap — Google won't index thin content for markets KabatOne doesn't serve</li>
+            <li>Kept 20 ICP pages indexed (Mexico, US, Canada, LATAM). One <code>NOINDEX_KEYS</code> set in lib/metadata + matching sitemap filter — reversible. Reclaims crawl budget, lifts the indexed ratio</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.258 -->
       <div class="tl-entry feat" id="v2.258">
         <div class="tl-meta"><span class="tl-ver">v2.258</span><span class="tl-date">2026-07-07</span></div>
