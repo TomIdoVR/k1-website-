@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  bestVmsSoftware: {
+    title: "Mejor Software VMS: Cómo Elegir tu Plataforma de Video | KabatOne",
+    description: "Cómo elegir el mejor software VMS: compara tipos de plataforma de gestión de video, criterios clave (cámaras de cualquier marca, analítica IA, integración con despacho), costos y el mejor VMS para seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/best-vms-software/",
+    og: {
+      title: "Mejor Software VMS: Cómo Elegir una Plataforma de Gestión de Video",
+      description: "Compara los tipos de plataforma VMS y los criterios que importan — cámaras de cualquier marca, analítica IA, integración con despacho — y el mejor VMS para seguridad pública.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   whatIsARealTimeCrimeCenter: {
     title: "Centro de Crimen en Tiempo Real (RTCC): Guía | KabatOne",
     description: "Un RTCC integra video en vivo, analítica IA, LPR y detección de disparos en un entorno unificado. Aprende cómo funciona un RTCC y qué tecnologías necesita.",
