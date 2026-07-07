@@ -1156,4 +1156,14 @@ export const metadata = {
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",
     canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
+  ng911Software: {
+    title: "Software NG911: Sistema Next Generation 911 Explicado | KabatOne",
+    description: "NG911 moderniza el 9-1-1 heredado con red IP, texto al 911, video y datos en tiempo real al CAD. Cómo funciona la arquitectura ESInet/i3 y qué necesitan los centros PSAP.",
+    canonical: "https://kabatone.com/es/resources/ng911-software/",
+    og: {
+      title: "Software NG911: Sistema Next Generation 911 Explicado",
+      description: "NG911 moderniza el 9-1-1 con texto, video, ubicacion precisa y datos al CAD en tiempo real — como funciona ESInet/i3 y que necesitan los PSAPs para adoptar NG911.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
 } as const
