@@ -1,3 +1,9 @@
+## [v2.259] – 2026-07-07 — Indexation triage: noindex 116 non-ICP country pages
+### Changed
+- **`noindex,follow` on 116 non-ICP `public-safety-software-{country}` pages** (all Africa/Europe/Asia/Oceania + tiny Caribbean) and **removed them from the sitemap**. GSC showed 107 indexed / 325 not indexed (75%) — the June country-page flood (136 pages) is the not-indexed backlog; Google won't index thin content for markets KabatOne doesn't serve.
+- **Kept indexed: 20 ICP pages** — Mexico (national + municipalities), small-cities, US, Canada, and LATAM (Costa Rica, Panama, Dominican Republic, Ecuador, Guyana, Peru, Colombia, Chile, Argentina, Brazil, Guatemala, Honduras, El Salvador, Nicaragua, Puerto Rico).
+- Implemented as a single `NOINDEX_KEYS` set in `src/lib/metadata.ts` (drives `robots.index`) + a matching keep-filter in `src/app/sitemap.ts`. **Reversible** — remove a key to re-index. Reclaims crawl budget and should lift the site-wide indexed ratio. See `SEO/indexation-triage-plan.md`.
+
 ## [v2.258] – 2026-07-07 — New spoke page: Best VMS Software (VMS cluster spoke)
 ### Added
 - **New page: `/resources/best-vms-software/`** (EN + ES) — buyer's-guide spoke splitting the commercial "best VMS / video management platform" intent off the overloaded VMS hub (~4,000 impressions at pos 18–45 for "best vms software", "video management platform", "vms system", "video management system").

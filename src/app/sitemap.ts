@@ -226,10 +226,24 @@ const pages = [
   // /lp and /privacy-policy-tamaulipas excluded: pages have noindex — sitemap + noindex is contradictory
 ]
 
+// Indexation triage (2026-07-07): only ICP country pages stay in the sitemap; all other
+// public-safety-software-* pages are noindexed (see NOINDEX_KEYS in lib/metadata) and must
+// not be submitted. See SEO/indexation-triage-plan.md.
+const KEEP_COUNTRY_SLUGS = new Set([
+  'mexico', 'municipalities-mexico', 'small-cities', 'united-states', 'canada',
+  'costa-rica', 'panama', 'dominican-republic', 'ecuador', 'guyana', 'peru',
+  'colombia', 'chile', 'argentina', 'brazil', 'guatemala', 'honduras',
+  'el-salvador', 'nicaragua', 'puerto-rico',
+])
+function keepInSitemap(page: { path: string }): boolean {
+  const m = page.path.match(/^\/resources\/public-safety-software-(.+)$/)
+  return m ? KEEP_COUNTRY_SLUGS.has(m[1]) : true
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
 
-  for (const page of pages) {
+  for (const page of pages.filter(keepInSitemap)) {
     entries.push({
       url: `${baseUrl}${page.path}/`,
       lastModified: new Date(),
