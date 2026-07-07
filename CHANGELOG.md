@@ -1,3 +1,13 @@
+## [v2.262] – 2026-07-07 — New country pages: Venezuela, Bolivia, Uruguay
+### Added
+- **New page: `/resources/public-safety-software-venezuela/`** (EN + ES) — PNB ~100K officers, CICPC, GNB, FANB interagency coordination, PDVSA Lake Maracaibo and Orinoco Belt infrastructure protection, Puerto Cabello port (Caribbean's largest container port), Colombia border narco-transit corridor. 6 FAQs, 5 workflow steps, 4 challenge cards, comparison table. Indexed in sitemap (ICP LATAM market).
+- **New page: `/resources/public-safety-software-bolivia/`** (EN + ES) — Policia Boliviana ~40K officers, FELCN drug control (Chapare/Yungas coca regions, 3rd largest coca producer), FAN, YLB lithium security at Salar de Uyuni (world's largest lithium reserve ~21Mt), natural gas terminals GASBOL/GNEA. NB-SABS/SICOES procurement. Indexed in sitemap (ICP LATAM market).
+- **New page: `/resources/public-safety-software-uruguay/`** (EN + ES) — Policia Nacional ~17K officers, unified 911 system, AGESIC digital governance framework, smart city Montevideo, Port of Montevideo (Katoen Natie), Carrasco Airport MVD, URCDP data protection (GDPR-equivalent), TOCAF/ACCE compras.gub.uy procurement. Indexed in sitemap (ICP LATAM market).
+- Hub cards added to `resources/page.tsx` (EN + ES) for all 3 countries.
+- Metadata keys `publicSafetySoftwareVenezuela`, `publicSafetySoftwareBolivia`, `publicSafetySoftwareUruguay` added to EN + ES metadata.ts.
+- Slugs `venezuela`, `bolivia`, `uruguay` added to `KEEP_COUNTRY_SLUGS` in `sitemap.ts` — pages are indexed (ICP LATAM).
+- TypeScript 0 errors confirmed.
+
 ## [v2.261] – 2026-07-07 — GEO: add llms.txt for AI answer engines
 ### Added
 - **`/llms.txt`** (`public/llms.txt`) — a curated, LLM-readable map of KabatOne per the emerging llms.txt standard: one-paragraph summary, products (K-Dispatch/Video/Safety/Traffic/Connect), key concept guides (VMS, video analytics, AI/CCTV analytics, CAD, NG911, C5, RTCC), competitor comparisons, integrations, and contact. Helps ChatGPT / Perplexity / Google AI Overviews cite the right pages.

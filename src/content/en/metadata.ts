@@ -1151,6 +1151,21 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for the Dominican Republic National Police ~37K officers, 911 System, CESFRONT Haiti border operations, CESTUR tourism security, and Ley 340-06 procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-dominican-republic/",
   },
+  publicSafetySoftwareVenezuela: {
+    title: "Public Safety Software for Venezuela | PNB, CICPC, FANB & PDVSA Infrastructure – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Venezuela PNB ~100K officers, CICPC investigators, GNB/FANB coordination, PDVSA Lake Maracaibo infrastructure protection, and Puerto Cabello port security.",
+    canonical: "https://kabatone.com/resources/public-safety-software-venezuela/",
+  },
+  publicSafetySoftwareBolivia: {
+    title: "Public Safety Software for Bolivia | Policia Boliviana, FELCN Drug Control & Lithium Security – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Bolivia Policia Boliviana ~40K officers, FELCN drug control, FAN armed forces, YLB lithium infrastructure at Salar de Uyuni, and NB-SABS/SICOES procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-bolivia/",
+  },
+  publicSafetySoftwareUruguay: {
+    title: "Public Safety Software for Uruguay | Policia Nacional, Smart City Montevideo & AGESIC – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Uruguay Policia Nacional ~17K officers, unified 911 system, smart city Montevideo, Port of Montevideo, Carrasco Airport, and TOCAF/AGESIC-compliant procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-uruguay/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",

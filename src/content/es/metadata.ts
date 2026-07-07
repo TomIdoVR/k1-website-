@@ -1151,6 +1151,21 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~37K agentes, Sistema 911, operaciones fronterizas CESFRONT con Haiti, seguridad turistica CESTUR y contratacion conforme a Ley 340-06.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-dominican-republic/",
   },
+  publicSafetySoftwareVenezuela: {
+    title: "Software de Seguridad Publica para Venezuela | PNB, CICPC, FANB e Infraestructura PDVSA – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Venezuela — PNB ~100K funcionarios, CICPC, coordinacion GNB/FANB, proteccion de infraestructura PDVSA en el Lago de Maracaibo y el Puerto Cabello.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-venezuela/",
+  },
+  publicSafetySoftwareBolivia: {
+    title: "Software de Seguridad Publica para Bolivia | Policia Boliviana, FELCN y Litio de Uyuni – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Bolivia — Policia Boliviana ~40K efectivos, FELCN control de narcotrafico, FAN, infraestructura YLB en el Salar de Uyuni y contratacion NB-SABS/SICOES.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-bolivia/",
+  },
+  publicSafetySoftwareUruguay: {
+    title: "Software de Seguridad Publica para Uruguay | Policia Nacional, Smart City Montevideo y AGESIC – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Uruguay — Policia Nacional ~17K efectivos, sistema 911, smart city Montevideo, Puerto de Montevideo, Aeropuerto Carrasco y contratacion TOCAF/AGESIC.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-uruguay/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5 en Seguridad Pública? Significado y Funciones 2026",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",
