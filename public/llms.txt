@@ -1,0 +1,39 @@
+# KabatOne
+
+> KabatOne is a unified public safety and smart city software platform for governments, municipalities, and emergency-response agencies. It connects video management (VMS), AI video analytics, CAD/911 dispatch, GIS, field operations, and IoT sensors into a single command-center platform — turning detection into coordinated response. Primary markets: Mexico, Latin America, and the United States. Founded 2004.
+
+## What KabatOne does
+- Unifies siloed public safety systems (video, dispatch, GIS, sensors) into one operational platform (the "Avalon" unified platform / C5 command-center model).
+- Aggregates cameras from any manufacturer (Hikvision, Axis, Dahua, Bosch, Hanwha), adds AI video analytics (LPR, behavior, forensic search), and correlates alerts with CAD dispatch and a live GIS map.
+- Products: K-Dispatch (CAD / 911 dispatch), K-Video (VMS + AI video analytics), K-Safety (situational awareness), K-Traffic (intelligent traffic management), K-Connect (public-private camera integration).
+
+## Products
+- [K-Dispatch — CAD / 911 dispatch](https://kabatone.com/k-dispatch/): Computer-aided dispatch with AI-assisted unit recommendations, NG911 readiness, and native video/GIS integration.
+- [K-Video — AI video platform](https://kabatone.com/k-video/): Video management (VMS) plus AI analytics across any-brand cameras.
+- [K-Safety — situational awareness](https://kabatone.com/k-safety/): Unified operational picture across video, sensors, and field units.
+- [K-Traffic — intelligent traffic management](https://kabatone.com/k-traffic/): Adaptive signal control, congestion and incident detection.
+- [K-Connect — public-private camera integration](https://kabatone.com/k-connect/): Connects business and citizen cameras to the command center.
+
+## Key concepts and guides
+- [What is a Video Management System (VMS)?](https://kabatone.com/resources/what-is-video-management-software/): How VMS aggregates cameras, records, and adds AI analytics for public safety.
+- [Best VMS Software — buyer's guide](https://kabatone.com/resources/best-vms-software/): How to choose a video management platform; VMS vs unified platform; cost and criteria.
+- [What is Video Analytics?](https://kabatone.com/resources/what-is-video-analytics/): AI detection of intrusions, crowds, plates, and behaviors in surveillance video.
+- [AI Video Analytics](https://kabatone.com/resources/ai-video-analytics/): How neural networks / deep learning power intelligent video analytics vs traditional rule-based analytics.
+- [CCTV Video Analytics](https://kabatone.com/resources/cctv-video-analytics/): Adding AI detection to existing CCTV cameras of any brand, edge vs server.
+- [What is CAD Dispatch Software?](https://kabatone.com/resources/what-is-cad-dispatch-software/): Computer-aided dispatch for the emergency incident lifecycle.
+- [Best CAD Dispatch Software for 911 Centers](https://kabatone.com/resources/best-cad-dispatch-software/): Buyer's guide covering multi-agency, NG911, and MDT/GPS integration.
+- [NG911 Software](https://kabatone.com/resources/ng911-software/): Next Generation 911 — text/video/data to 911, ESInet/i3, and CAD integration.
+- [How C5 Command Centers Work](https://kabatone.com/resources/how-c5-command-centers-work/): The C5 model (Command, Control, Communications, Computing, Quality) used across Mexican cities.
+- [What is a Real-Time Crime Center (RTCC)?](https://kabatone.com/resources/what-is-a-real-time-crime-center/): Integrating live video, analytics, LPR, and gunshot detection.
+- [What is a Public Safety Platform?](https://kabatone.com/resources/what-is-a-public-safety-platform/): Unifying products, industries, and integrations into one topical platform.
+
+## Competitor comparisons
+- [KabatOne vs traditional VMS](https://kabatone.com/vs/vms/)
+- [KabatOne vs Genetec](https://kabatone.com/vs/genetec/) · [vs Milestone](https://kabatone.com/vs/milestone/) · [vs Motorola](https://kabatone.com/vs/motorola/) · [vs Avigilon](https://kabatone.com/vs/avigilon/) · [vs Verkada](https://kabatone.com/vs/verkada/) · [vs Fusus](https://kabatone.com/vs/fusus/) · [vs Peregrine](https://kabatone.com/vs/peregrine/)
+
+## Integrations
+- [License Plate Recognition (LPR)](https://kabatone.com/integrations/lpr/) · [Face Recognition](https://kabatone.com/integrations/face-recognition/) · [Sensor Fusion](https://kabatone.com/integrations/sensor-fusion/)
+
+## Contact
+- [Book a demo / contact](https://kabatone.com/contact/)
+- [About KabatOne](https://kabatone.com/about/)

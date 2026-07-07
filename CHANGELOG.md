@@ -1,3 +1,8 @@
+## [v2.261] – 2026-07-07 — GEO: add llms.txt for AI answer engines
+### Added
+- **`/llms.txt`** (`public/llms.txt`) — a curated, LLM-readable map of KabatOne per the emerging llms.txt standard: one-paragraph summary, products (K-Dispatch/Video/Safety/Traffic/Connect), key concept guides (VMS, video analytics, AI/CCTV analytics, CAD, NG911, C5, RTCC), competitor comparisons, integrations, and contact. Helps ChatGPT / Perplexity / Google AI Overviews cite the right pages.
+- Completes the GEO technical layer: AI crawlers already allowed (robots.txt wildcard), Organization + WebSite schema already injected site-wide, FAQPage/Article schema on all hubs+spokes. Remaining GEO work is off-page (entity `sameAs` breadth) + citation monitoring.
+
 ## [v2.260] – 2026-07-07 — New spoke page: NG911 Software (K-Dispatch cluster)
 ### Added
 - **New page: `/resources/ng911-software/`** (EN + ES) — NG911 (Next Generation 911) reference guide, the first spoke in the K-Dispatch content cluster (mirrors the VMS hub-and-spoke strategy that recovered VMS rankings).
