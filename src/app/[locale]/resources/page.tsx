@@ -1583,6 +1583,22 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/public-safety-software-paraguay',
+          category: 'Guide',
+          title: 'Public Safety Software for Paraguay',
+          excerpt: 'Public safety technology for Paraguay 17 departments — Policia Nacional ~25K officers, SENAD narco-trafficking control, Ciudad del Este free trade zone, river border control, and DNCP procurement.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/public-safety-software-suriname',
+          category: 'Guide',
+          title: 'Public Safety Software for Suriname',
+          excerpt: 'Public safety technology for Suriname 10 districts — KPS ~2,500 officers, Port Paramaribo cocaine corridor control, Staatsolie oil infrastructure, river border control with Brazil and Guyana.',
+          readTime: '6 min',
+          isNew: true,
+        },
+        {
           href: '/resources/public-safety-software-small-cities',
           category: 'Guide',
           title: 'Public Safety Software for Small Cities & Municipalities',

@@ -1166,6 +1166,16 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Uruguay Policia Nacional ~17K officers, unified 911 system, smart city Montevideo, Port of Montevideo, Carrasco Airport, and TOCAF/AGESIC-compliant procurement.",
     canonical: "https://kabatone.com/resources/public-safety-software-uruguay/",
   },
+  publicSafetySoftwareParaguay: {
+    title: "Public Safety Software for Paraguay | Policia Nacional, SENAD Drug Control & Ciudad del Este – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Paraguay Policia Nacional ~25K officers, SENAD narco-trafficking control, Ciudad del Este free trade zone security, river border control, and Law 2051/03 DNCP procurement.",
+    canonical: "https://kabatone.com/resources/public-safety-software-paraguay/",
+  },
+  publicSafetySoftwareSuriname: {
+    title: "Public Safety Software for Suriname | KPS, Port Paramaribo Drug Trafficking & River Borders – KabatOne",
+    description: "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure, and river border control with Brazil and Guyana.",
+    canonical: "https://kabatone.com/resources/public-safety-software-suriname/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",

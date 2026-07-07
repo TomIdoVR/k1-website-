@@ -1166,6 +1166,16 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para Uruguay — Policia Nacional ~17K efectivos, sistema 911, smart city Montevideo, Puerto de Montevideo, Aeropuerto Carrasco y contratacion TOCAF/AGESIC.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-uruguay/",
   },
+  publicSafetySoftwareParaguay: {
+    title: "Software de Seguridad Publica para Paraguay | Policia Nacional, SENAD y Ciudad del Este – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Paraguay — Policia Nacional ~25K efectivos, SENAD control narcotrafico, seguridad Ciudad del Este, control fronterizo fluvial y contratacion Ley 2051/03 DNCP.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-paraguay/",
+  },
+  publicSafetySoftwareSuriname: {
+    title: "Software de Seguridad Publica para Surinam | KPS, Narcotrafico Puerto Paramaribo y Fronteras Fluviales – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Surinam — KPS ~2,500 efectivos, control narcotrafico Puerto de Paramaribo, aeropuerto Johan Adolf Pengel, infraestructura Staatsolie y control fronterizo fluvial con Brasil y Guyana.",
+    canonical: "https://kabatone.com/es/resources/public-safety-software-suriname/",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5 en Seguridad Pública? Significado y Funciones 2026",
     description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",

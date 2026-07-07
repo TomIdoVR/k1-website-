@@ -189,6 +189,8 @@ const pages = [
   { path: '/resources/public-safety-software-venezuela', priority: 0.75 },
   { path: '/resources/public-safety-software-bolivia', priority: 0.75 },
   { path: '/resources/public-safety-software-uruguay', priority: 0.75 },
+  { path: '/resources/public-safety-software-paraguay', priority: 0.75 },
+  { path: '/resources/public-safety-software-suriname', priority: 0.75 },
   { path: '/resources/cad-dispatch-software-latin-america', priority: 0.8 },
   { path: '/integrations/lpr', priority: 0.6 },
   { path: '/integrations/face-recognition', priority: 0.6 },
@@ -238,7 +240,7 @@ const KEEP_COUNTRY_SLUGS = new Set([
   'costa-rica', 'panama', 'dominican-republic', 'ecuador', 'guyana', 'peru',
   'colombia', 'chile', 'argentina', 'brazil', 'guatemala', 'honduras',
   'el-salvador', 'nicaragua', 'puerto-rico',
-  'venezuela', 'bolivia', 'uruguay',
+  'venezuela', 'bolivia', 'uruguay', 'paraguay', 'suriname',
 ])
 function keepInSitemap(page: { path: string }): boolean {
   const m = page.path.match(/^\/resources\/public-safety-software-(.+)$/)
