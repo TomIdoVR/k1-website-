@@ -1087,6 +1087,33 @@ def _run_keyword_monitor(dry_run: bool = False, days: int = 28):
         print(f'[keyword-monitor] skipped: {e}')
 
 
+def _run_geo_monitor(dry_run: bool = False):
+    """Weekly GEO citation snapshot — asks Claude + web search the target buyer questions
+    and logs whether AI answer engines cite KabatOne vs competitors. Skipped on dry-run
+    (it costs API). Isolated in SEO/geo/track_geo.py; failures swallowed so they never
+    break the weekly report."""
+    if dry_run:
+        return
+    script = REPO_ROOT / 'SEO' / 'geo' / 'track_geo.py'
+    if not script.exists():
+        return
+    try:
+        print('\n[geo-monitor] checking AI-answer citations for target queries...')
+        subprocess.run([sys.executable, str(script)], check=False)
+        hist = REPO_ROOT / 'SEO' / 'geo' / 'geo-history.csv'
+        changed = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]
+        ).returncode != 0
+        if changed:
+            ds = datetime.now().strftime('%Y-%m-%d')
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(hist)], check=False)
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                            f'SEO: weekly GEO citation snapshot {ds}'], check=False)
+            print('[geo-monitor] committed geo-history.csv')
+    except Exception as e:
+        print(f'[geo-monitor] skipped: {e}')
+
+
 def main():
     parser = argparse.ArgumentParser(description='KabatOne weekly SEO orchestrator agent')
     parser.add_argument('--dry-run', action='store_true', help='Skip git commit')
@@ -1101,6 +1128,8 @@ def main():
 
     # Weekly keyword rank snapshot rides on the same scheduled run (no separate cron)
     _run_keyword_monitor(dry_run=args.dry_run, days=args.days)
+    # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
+    _run_geo_monitor(dry_run=args.dry_run)
     return 0
 
 

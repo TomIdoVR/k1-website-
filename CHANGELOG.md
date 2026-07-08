@@ -1,3 +1,8 @@
+## [v2.264] – 2026-07-07 — Emergency-mgmt "systems software" FAQ + GEO citation monitor
+### Added
+- **`/resources/what-is-emergency-management-software/` (EN + ES)** — added an "emergency management system(s) software" FAQ targeting the exact plural-variant queries the page ranks pos ~22 for (~347 impr) but had zero on-page coverage of.
+- **GEO citation monitor** (`SEO/geo/track_geo.py` + `geo-queries.txt` + `geo-history.csv`) — asks Claude with web search the 12 target buyer questions and logs whether AI answer engines (the GEO channel) cite KabatOne vs competitors. Wired into the Monday weekly run (skips dry-run; commits its own snapshot). **Baseline: KabatOne cited in 5/12 (41%)** — winning CAD/dispatch, RTCC, municipalities, Mexico/LATAM; absent for VMS, video analytics, C5, NG911, unified platform.
+
 ## [v2.263] – 2026-07-07 — New country pages: Paraguay, Suriname (South America complete)
 ### Added
 - **New page: `/resources/public-safety-software-paraguay/`** (EN + ES) — Policia Nacional ~25K officers, SENAD narco-trafficking control (PBC triangle / Amambay / San Pedro), Ciudad del Este (world's 3rd-largest free trade zone), river border control (Pilcomayo/Apa/Paraguay rivers), Silvio Pettirossi Airport ASU, Port of Asuncion ANNP, DNCP Law 2051/03 procurement. 6 FAQs, 5 workflow steps, 4 challenge cards, comparison table. Indexed in sitemap (ICP LATAM market).

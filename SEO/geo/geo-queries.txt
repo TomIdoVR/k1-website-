@@ -1,0 +1,14 @@
+# GEO target queries — buyer questions KabatOne's pages answer.
+# One per line. track_geo.py checks whether AI answer engines cite KabatOne for these.
+What is the best CAD dispatch software for 911 centers?
+What is the best VMS software for public safety?
+What is a unified public safety platform?
+What is a C5 command center?
+What is NG911 software and how does it work?
+What is AI video analytics?
+best public safety software for municipalities
+best video management software for cities
+Genetec alternatives for public safety
+real-time crime center (RTCC) software vendors
+computer aided dispatch software for multi-agency 911 centers
+public safety software for Mexico and Latin America
