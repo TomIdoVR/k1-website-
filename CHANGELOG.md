@@ -1,3 +1,7 @@
+## [v2.265] – 2026-07-08 — Country field on contact form
+### Added
+- **Country dropdown on the contact form** (`ContactForm.tsx`) — required select with LATAM markets first (Mexico, Peru, Colombia, Chile, Argentina, Brazil, Ecuador, Guatemala, Costa Rica, Panama, Dominican Republic), then United States and Other. Bilingual labels (EN/ES) via the existing `es` prop; submitted values always in English so leads can be allocated by geography consistently. Appears automatically on both `/contact/` and `/lp/` (Formspree picks up the new field with no backend change).
+
 ## [v2.264] – 2026-07-07 — Emergency-mgmt "systems software" FAQ + GEO citation monitor
 ### Added
 - **`/resources/what-is-emergency-management-software/` (EN + ES)** — added an "emergency management system(s) software" FAQ targeting the exact plural-variant queries the page ranks pos ~22 for (~347 impr) but had zero on-page coverage of.
