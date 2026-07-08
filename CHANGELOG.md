@@ -1,3 +1,27 @@
+## [v2.264] – 2026-07-07 — Emergency-mgmt "systems software" FAQ + GEO citation monitor
+### Added
+- **`/resources/what-is-emergency-management-software/` (EN + ES)** — added an "emergency management system(s) software" FAQ targeting the exact plural-variant queries the page ranks pos ~22 for (~347 impr) but had zero on-page coverage of.
+- **GEO citation monitor** (`SEO/geo/track_geo.py` + `geo-queries.txt` + `geo-history.csv`) — asks Claude with web search the 12 target buyer questions and logs whether AI answer engines (the GEO channel) cite KabatOne vs competitors. Wired into the Monday weekly run (skips dry-run; commits its own snapshot). **Baseline: KabatOne cited in 5/12 (41%)** — winning CAD/dispatch, RTCC, municipalities, Mexico/LATAM; absent for VMS, video analytics, C5, NG911, unified platform.
+
+## [v2.263] – 2026-07-07 — New country pages: Paraguay, Suriname (South America complete)
+### Added
+- **New page: `/resources/public-safety-software-paraguay/`** (EN + ES) — Policia Nacional ~25K officers, SENAD narco-trafficking control (PBC triangle / Amambay / San Pedro), Ciudad del Este (world's 3rd-largest free trade zone), river border control (Pilcomayo/Apa/Paraguay rivers), Silvio Pettirossi Airport ASU, Port of Asuncion ANNP, DNCP Law 2051/03 procurement. 6 FAQs, 5 workflow steps, 4 challenge cards, comparison table. Indexed in sitemap (ICP LATAM market).
+- **New page: `/resources/public-safety-software-suriname/`** (EN + ES) — KPS ~2,500 officers 10 districts, Nationaal Leger, Kustwacht Suriname, Port of Paramaribo cocaine corridor to Europe (Europol/DEA/Dutch Coast Guard), Johan Adolf Pengel Airport PBM, Staatsolie oil refinery Saramacca, Newmont Merian / Rosebel IAMGOLD gold mines, river border control with Brazil (Marowijne) and Guyana (Corentijn), Wet Financieel Beheer 2015 e-GP procurement. 6 FAQs, 5 workflow steps, 4 challenge cards, comparison table. Indexed in sitemap (ICP LATAM market).
+- Hub cards added to `resources/page.tsx` for Paraguay and Suriname (EN titles).
+- Metadata keys `publicSafetySoftwareParaguay`, `publicSafetySoftwareSuriname` added to EN + ES metadata.ts.
+- Slugs `paraguay`, `suriname` added to `KEEP_COUNTRY_SLUGS` in `sitemap.ts` — pages are indexed (ICP LATAM).
+- **South America now complete** — all 12 sovereign South American countries covered (Brazil, Colombia, Venezuela, Peru, Ecuador, Bolivia, Chile, Argentina, Paraguay, Uruguay, Guyana, Suriname).
+
+## [v2.262] – 2026-07-07 — New country pages: Venezuela, Bolivia, Uruguay
+### Added
+- **New page: `/resources/public-safety-software-venezuela/`** (EN + ES) — PNB ~100K officers, CICPC, GNB, FANB interagency coordination, PDVSA Lake Maracaibo and Orinoco Belt infrastructure protection, Puerto Cabello port (Caribbean's largest container port), Colombia border narco-transit corridor. 6 FAQs, 5 workflow steps, 4 challenge cards, comparison table. Indexed in sitemap (ICP LATAM market).
+- **New page: `/resources/public-safety-software-bolivia/`** (EN + ES) — Policia Boliviana ~40K officers, FELCN drug control (Chapare/Yungas coca regions, 3rd largest coca producer), FAN, YLB lithium security at Salar de Uyuni (world's largest lithium reserve ~21Mt), natural gas terminals GASBOL/GNEA. NB-SABS/SICOES procurement. Indexed in sitemap (ICP LATAM market).
+- **New page: `/resources/public-safety-software-uruguay/`** (EN + ES) — Policia Nacional ~17K officers, unified 911 system, AGESIC digital governance framework, smart city Montevideo, Port of Montevideo (Katoen Natie), Carrasco Airport MVD, URCDP data protection (GDPR-equivalent), TOCAF/ACCE compras.gub.uy procurement. Indexed in sitemap (ICP LATAM market).
+- Hub cards added to `resources/page.tsx` (EN + ES) for all 3 countries.
+- Metadata keys `publicSafetySoftwareVenezuela`, `publicSafetySoftwareBolivia`, `publicSafetySoftwareUruguay` added to EN + ES metadata.ts.
+- Slugs `venezuela`, `bolivia`, `uruguay` added to `KEEP_COUNTRY_SLUGS` in `sitemap.ts` — pages are indexed (ICP LATAM).
+- TypeScript 0 errors confirmed.
+
 ## [v2.261] – 2026-07-07 — GEO: add llms.txt for AI answer engines
 ### Added
 - **`/llms.txt`** (`public/llms.txt`) — a curated, LLM-readable map of KabatOne per the emerging llms.txt standard: one-paragraph summary, products (K-Dispatch/Video/Safety/Traffic/Connect), key concept guides (VMS, video analytics, AI/CCTV analytics, CAD, NG911, C5, RTCC), competitor comparisons, integrations, and contact. Helps ChatGPT / Perplexity / Google AI Overviews cite the right pages.

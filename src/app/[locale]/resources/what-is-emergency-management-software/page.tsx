@@ -51,6 +51,10 @@ export default async function WhatIsEmergencyManagementSoftwarePage({
           question: '¿Cómo apoya KabatOne la gestión de emergencias?',
           answer: 'KabatOne es una plataforma unificada de gestión de emergencias que integra todos los módulos en un solo entorno operativo. K-Dispatch maneja el despacho CAD completo con asignación inteligente. K-Video gestiona miles de cámaras con analítica de IA. K-Safety provee el mapa GIS operativo con incidentes y unidades en tiempo real. K-Traffic coordina la gestión de tráfico y semaforización. Todo opera desde una sola interfaz, eliminando la fragmentación entre sistemas de distintos proveedores. KabatOne está desplegado en más de 40 ciudades protegiendo a 73 millones de ciudadanos.',
         },
+        {
+          question: '¿Qué es un sistema de gestión de emergencias?',
+          answer: 'Un sistema de gestión de emergencias — también llamado software de sistemas de gestión de emergencias — es la plataforma que coordina la preparación, la respuesta y la recuperación de una agencia: detección de incidentes, despacho de recursos, conciencia situacional y reportes posteriores. El software de sistemas de gestión de emergencias moderno unifica herramientas antes separadas (despacho CAD, video/VMS, mapa GIS, alertas de sensores) en un solo entorno operativo. KabatOne es un sistema unificado de gestión de emergencias desplegado en más de 40 ciudades que protegen a 73 millones de ciudadanos.',
+        },
       ]
     : [
         {
@@ -76,6 +80,10 @@ export default async function WhatIsEmergencyManagementSoftwarePage({
         {
           question: 'How does KabatOne support emergency management?',
           answer: 'KabatOne is a unified emergency management platform that integrates all modules into a single operational environment. K-Dispatch handles full CAD dispatch with intelligent assignment. K-Video manages thousands of cameras with AI analytics. K-Safety provides the operational GIS map with real-time incidents and units. K-Traffic coordinates traffic management and signal control. Everything runs from a single interface, eliminating fragmentation between systems from different vendors. KabatOne is deployed across 40+ cities protecting 73 million citizens.',
+        },
+        {
+          question: 'What is an emergency management system (emergency management systems software)?',
+          answer: 'An emergency management system — also called emergency management systems software — is the platform that coordinates preparedness, response, and recovery across an agency: incident detection, resource dispatch, situational awareness, and after-action reporting. Modern emergency management systems software unifies what used to be separate tools (CAD dispatch, video/VMS, GIS mapping, sensor alerts) into one operational environment. KabatOne is a unified emergency management system deployed across 40+ cities protecting 73 million citizens.',
         },
       ]
 
