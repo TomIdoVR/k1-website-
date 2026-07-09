@@ -1,3 +1,8 @@
+## [v2.266] – 2026-07-08 — Halt country-page generation (SEO agent guardrail)
+### Changed
+- **`src/lib/seo-agent/intent.ts`** — added a hard rule to the Slack SEO agent's system prompt: **do not create new country/location pages** (`public-safety-software-*`). The country-page program is complete and paused; Google wasn't indexing them (75% "not indexed") and 116 non-ICP ones are now noindexed. The agent must decline such requests and redirect effort to on-page CTR, content depth, and internal linking on existing money pages. Stops the thin-page flood at its decision point.
+- Reconciled the 5 South-America pages (Venezuela, Bolivia, Uruguay, Paraguay, Suriname) into the sitemap keep-list — they're ICP (LATAM), so they stay indexed + submitted (consistent with the noindex triage).
+
 ## [v2.265] – 2026-07-08 — Country field on contact form
 ### Added
 - **Country dropdown on the contact form** (`ContactForm.tsx`) — required select with LATAM markets first (Mexico, Peru, Colombia, Chile, Argentina, Brazil, Ecuador, Guatemala, Costa Rica, Panama, Dominican Republic), then United States and Other. Bilingual labels (EN/ES) via the existing `es` prop; submitted values always in English so leads can be allocated by geography consistently. Appears automatically on both `/contact/` and `/lp/` (Formspree picks up the new field with no backend change).

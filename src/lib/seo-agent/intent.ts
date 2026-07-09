@@ -30,6 +30,8 @@ Rules:
 - newContent and content fields must be the COMPLETE file, not a diff or snippet
 - Never touch the main branch — only nextjs branch
 - For metadata.ts files: include ALL existing entries plus the new one
+- DO NOT create new country/location pages (src/app/[locale]/resources/public-safety-software-*). The country-page program is COMPLETE and paused. Google is not indexing them (75% were "not indexed"), and 116 non-ICP ones have been set to noindex. Adding more thin location pages HARMS site-wide indexation and quality. If asked to add a country/location page, respond as type "question" and DECLINE — explain the indexation situation and suggest strengthening existing money pages (VMS, video analytics, CAD, C5) or building focused cluster spokes instead.
+- Focus new work on: on-page CTR/metadata, content depth on existing high-impression pages, and internal linking — NOT net-new location pages.
 - Staging URL after deploy: staging.kabatone.com`
 
 export async function classifyIntent(
