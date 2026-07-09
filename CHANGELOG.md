@@ -1,3 +1,10 @@
+## [v2.268] – 2026-07-09 — Hero V3: light-theme unified platform (chosen direction)
+### Added
+- **Version 3 hero** added to `/hero-lab` (branch `hero-redesign`, still isolated) — built directly from a reference mockup the user supplied, not one of the two brainstormed directions. Light theme, single unified headline ("One Platform. Total Awareness."), a folded-ribbon "K" brand mark, and a horizontal fan of 7 module cards (CAD/911, Video & Analytics, GIS/Map, Event Management, Unified Digital Evidence, Mobile Response, Integrations) each with realistic mini-content, closing with a 3-stat row (67M+ Citizens Protected, 90+ Team Members, 15+ Countries).
+- Custom light nav built specifically for this hero (the shared site `<Nav/>` is styled dark via CSS vars and clashes with a light page) — removed the shared `<Nav/>` from the lab page to fix a fixed-position stacking overlap this introduced.
+- New AI-generated placeholder assets: `k-mark.webp` (brand mark), `cctv-still.webp`, `evidence-still.webp` (camera/evidence thumbnails) — swap for real product photography and finished brand art before anything ships.
+- New stylesheet `hero-lab-light.css`, scoped under `.hll-` to avoid collision with the existing dark `.hl-` hero-lab styles on the same page.
+
 ## [v2.267] – 2026-07-08 — Hero redesign lab (internal, not linked)
 ### Added
 - **`/hero-lab` internal review page** (EN + ES, `noindex`, not linked from nav/sitemap) — isolated space to brainstorm homepage hero directions without touching the live site. Branch `hero-redesign` created specifically so this work can't accidentally reach staging/production (the v2.230 homepage redesign was deployed before approval and had to be reverted on 2026-07-02 — this keeps the same mistake from repeating).

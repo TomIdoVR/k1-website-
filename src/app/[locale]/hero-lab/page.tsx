@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import Nav from '@/components/Nav'
 import HeroV1Screenshot from '@/components/hero-lab/HeroV1Screenshot'
 import HeroV2Hub from '@/components/hero-lab/HeroV2Hub'
+import HeroV3Platform from '@/components/hero-lab/HeroV3Platform'
 import ImageConcepts from '@/components/hero-lab/ImageConcepts'
 import './hero-lab.css'
+import './hero-lab-light.css'
 
 /* Internal review page for the hero brainstorm — not linked from nav or
    sitemap, not for production. Delete once a direction is chosen and
@@ -23,7 +24,14 @@ export default async function HeroLabPage({
 
   return (
     <>
-      <Nav />
+      <div style={{
+        fontFamily: "'DM Mono', monospace", fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase',
+        color: '#2563eb', background: '#f7f9fc', padding: '14px 40px 0',
+      }}>
+        <span style={{ color: '#0f172a', fontWeight: 700 }}>00</span> {es ? 'VERSIÓN 3 — Un platform, una imagen (dirección elegida)' : 'VERSION 3 — One platform, one image (chosen direction)'}
+      </div>
+      <HeroV3Platform es={es} />
+
       <div className="hl-lab">
         <div className="hl-label-bar">
           <span className="hl-tag">01</span> {es ? 'VERSIÓN 1 — El admin en sí' : 'VERSION 1 — The admin itself'}
