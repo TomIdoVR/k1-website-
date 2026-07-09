@@ -1,3 +1,13 @@
+## [v2.267] – 2026-07-08 — Hero redesign lab (internal, not linked)
+### Added
+- **`/hero-lab` internal review page** (EN + ES, `noindex`, not linked from nav/sitemap) — isolated space to brainstorm homepage hero directions without touching the live site. Branch `hero-redesign` created specifically so this work can't accidentally reach staging/production (the v2.230 homepage redesign was deployed before approval and had to be reverted on 2026-07-02 — this keeps the same mistake from repeating).
+- Two hero directions built for comparison, both reusing the live v1 hero's actual tokens/copy conventions:
+  - **Version 1 — the admin itself**: unified console screenshot showing live map, video wall, dispatch queue, and event board in one dashboard, so a visitor reads "one platform" at a glance.
+  - **Version 2 — not admin-related**: a hub-and-spoke diagram, KabatOne at the center with the six modules (CAD/911, GIS, Video, Events, Mobile, Integrations) connected around it.
+  - Both use AI-generated placeholder art (`public/images/hero-lab/`) — swap for real product screenshots / brand illustration before anything ships.
+- `src/components/hero-lab/` (HeroV1Screenshot, HeroV2Hub, ImageConcepts, ProofBar) and `src/app/[locale]/hero-lab/` route + stylesheet.
+- `.claude/launch.json`: added `autoPort` so the local dev server doesn't collide with other processes already holding port 3000.
+
 ## [v2.266] – 2026-07-08 — Halt country-page generation (SEO agent guardrail)
 ### Changed
 - **`src/lib/seo-agent/intent.ts`** — added a hard rule to the Slack SEO agent's system prompt: **do not create new country/location pages** (`public-safety-software-*`). The country-page program is complete and paused; Google wasn't indexing them (75% "not indexed") and 116 non-ICP ones are now noindexed. The agent must decline such requests and redirect effort to on-page CTR, content depth, and internal linking on existing money pages. Stops the thin-page flood at its decision point.
