@@ -32,6 +32,23 @@ interface ContactFormProps {
 
 const FORMSPREE_URL = 'https://formspree.io/f/mjganywz'
 
+// Submitted values stay in English so lead routing is consistent across locales
+const COUNTRY_OPTIONS: { value: string; en: string; es: string }[] = [
+  { value: 'Mexico', en: 'Mexico', es: 'México' },
+  { value: 'Peru', en: 'Peru', es: 'Perú' },
+  { value: 'Colombia', en: 'Colombia', es: 'Colombia' },
+  { value: 'Chile', en: 'Chile', es: 'Chile' },
+  { value: 'Argentina', en: 'Argentina', es: 'Argentina' },
+  { value: 'Brazil', en: 'Brazil', es: 'Brasil' },
+  { value: 'Ecuador', en: 'Ecuador', es: 'Ecuador' },
+  { value: 'Guatemala', en: 'Guatemala', es: 'Guatemala' },
+  { value: 'Costa Rica', en: 'Costa Rica', es: 'Costa Rica' },
+  { value: 'Panama', en: 'Panama', es: 'Panamá' },
+  { value: 'Dominican Republic', en: 'Dominican Republic', es: 'República Dominicana' },
+  { value: 'United States', en: 'United States', es: 'Estados Unidos' },
+  { value: 'Other', en: 'Other', es: 'Otro' },
+]
+
 const inputStyle: React.CSSProperties = {
   background: 'var(--dropdown-bg)',
   border: '1px solid var(--border)',
@@ -148,6 +165,17 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
             <label style={labelStyle}>{labels.labelPhone}</label>
             <input type="tel" name="phone" placeholder={labels.placeholderPhone} style={inputStyle} />
           </div>
+        </div>
+
+        {/* Country select */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
+          <label style={labelStyle}>{es ? 'País' : 'Country'}</label>
+          <select name="country" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
+            <option value="" disabled>{es ? 'Selecciona tu país' : 'Select your country'}</option>
+            {COUNTRY_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>{es ? opt.es : opt.en}</option>
+            ))}
+          </select>
         </div>
 
         {/* Interest select */}
