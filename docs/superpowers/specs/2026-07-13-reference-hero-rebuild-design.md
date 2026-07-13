@@ -78,6 +78,16 @@ Provide equivalent Spanish labels. Display the metrics as a centered three-colum
 - A small client-side carousel controller owns slide position, buttons, dots, drag/swipe, and keyboard behavior. Desktop layout does not require JavaScript.
 - Hero styles remain scoped under the existing `hll-` namespace to avoid changing later homepage sections.
 
+## Local-Only Parallel Environment
+
+- All implementation work happens in a dedicated local git worktree on branch `codex/hero-reference-rebuild`.
+- The worktree lives at `.worktrees/codex-hero-reference-rebuild/` and is ignored by git in the main checkout.
+- Visual review happens only on the local `/hero-lab` route until the user explicitly approves homepage integration.
+- Do not push the redesign branch, create a Vercel preview, merge into `nextjs`, or merge into `main` without explicit approval.
+- Claude Code may work in the main checkout or another worktree in parallel, but must not edit files inside the Codex worktree.
+- If Claude Code also changes the hero, it must use a separate branch/worktree. Reconcile those commits deliberately through cherry-pick or a reviewed merge rather than editing the same files concurrently.
+- The operational handoff and file-ownership rules are maintained in `docs/HERO-REDESIGN-LOCAL-WORKFLOW.md`.
+
 ## Accessibility and Performance
 
 - Use real links and buttons with visible focus states.
@@ -100,4 +110,5 @@ Provide equivalent Spanish labels. Display the metrics as a centered three-colum
 - Redesigning How It Works or any later homepage section.
 - Changing homepage SEO content outside the existing hero copy and approved proof metrics.
 - Pushing or merging the branch.
+- Changing the existing `nextjs` staging environment or creating any hosted preview.
 - Replacing the visual with a screenshot background.

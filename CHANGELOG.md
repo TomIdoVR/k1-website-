@@ -1,3 +1,8 @@
+## [v2.272] – 2026-07-13 — Isolate hero redesign for parallel local work
+### Added
+- Documented a local-only `codex/hero-reference-rebuild` worktree and `/hero-lab` review workflow so Codex and Claude Code can work in parallel without sharing physical files.
+- Added explicit branch, file-ownership, handoff, and no-deploy rules; `nextjs` staging and `main` production remain untouched unless the owner explicitly approves promotion.
+
 ## [v2.271] – 2026-07-13 — Reference-accurate hero rebuild specification
 ### Added
 - Documented the approved, hero-only rebuild against the supplied 1536 × 1024 reference, including the desktop composition, seven operational cards, EN/ES behavior, approved proof metrics, and mobile carousel controls.
