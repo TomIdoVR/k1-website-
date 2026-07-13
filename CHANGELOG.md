@@ -1,3 +1,13 @@
+## [v2.270] – 2026-07-13 — Per-app Google Play privacy policy pages
+### Added
+- **Dedicated privacy policy pages for mobile apps**, so each Google Play listing links to its own URL. New reusable component `src/components/AppPrivacyPolicy.tsx` holds the approved Google Play template (app + developer identification block, ARCO rights, and the Data Retention & Deletion section Google requires), interpolating the exact app name. Rendered in EN + ES to match the existing `/privacy` page.
+- Two thin per-app pages (each its own unique link):
+  - `C5 Escudo Pakal` → `/privacy/c5-escudo-pakal` (+ `/es/...`)
+  - `911 Michoacán` → `/privacy/911-michoacan` (+ `/es/...`)
+- Both set `robots: noindex, follow` and are kept out of the sitemap — the pages exist for store-listing compliance, not organic search, and near-identical legal copy across branded apps shouldn't dilute the index. Canonical + EN/ES hreflang alternates are emitted per page.
+### Notes
+- Adding a future branded app = one new page file (copy an existing one, change `APP_NAME`/`SLUG`/`LAST_UPDATED`). Developer name, legal entity, and contact details are constant and live in the shared component.
+
 ## [v2.268] – 2026-07-09 — Hero V3: light-theme unified platform (chosen direction)
 ### Added
 - **Version 3 hero** added to `/hero-lab` (branch `hero-redesign`, still isolated) — built directly from a reference mockup the user supplied, not one of the two brainstormed directions. Light theme, single unified headline ("One Platform. Total Awareness."), a folded-ribbon "K" brand mark, and a horizontal fan of 7 module cards (CAD/911, Video & Analytics, GIS/Map, Event Management, Unified Digital Evidence, Mobile Response, Integrations) each with realistic mini-content, closing with a 3-stat row (67M+ Citizens Protected, 90+ Team Members, 15+ Countries).
