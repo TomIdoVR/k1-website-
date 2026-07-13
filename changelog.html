@@ -357,6 +357,17 @@
     <div class="timeline">
 
 
+      <!-- v2.267 -->
+      <div class="tl-entry feat" id="v2.267">
+        <div class="tl-meta"><span class="tl-ver">v2.267</span><span class="tl-date">2026-07-13</span></div>
+        <div class="tl-title">GSC token refresh helper script</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><code>scripts/refresh_gsc_token.py</code> — OAuth helper to regenerate the GSC refresh token when it expires. Opens a local browser flow, catches the redirect on <code>localhost:8080</code>, exchanges the auth code, and prints the new <code>GSC_REFRESH_TOKEN</code>. Resolves the HTTP 400 error in <code>seo_weekly.py</code>.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.266 -->
       <div class="tl-entry fix" id="v2.266">
         <div class="tl-meta"><span class="tl-ver">v2.266</span><span class="tl-date">2026-07-08</span></div>

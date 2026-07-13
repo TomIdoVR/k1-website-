@@ -1,3 +1,7 @@
+## [v2.267] – 2026-07-13 — GSC token refresh helper script
+### Added
+- `scripts/refresh_gsc_token.py` — OAuth helper to regenerate the GSC refresh token when it expires. Opens a local browser flow, catches the redirect on `localhost:8080`, exchanges the auth code, and prints the new `GSC_REFRESH_TOKEN`. Resolves the HTTP 400 error in `seo_weekly.py` caused by a revoked refresh token.
+
 ## [v2.266] – 2026-07-08 — Halt country-page generation (SEO agent guardrail)
 ### Changed
 - **`src/lib/seo-agent/intent.ts`** — added a hard rule to the Slack SEO agent's system prompt: **do not create new country/location pages** (`public-safety-software-*`). The country-page program is complete and paused; Google wasn't indexing them (75% "not indexed") and 116 non-ICP ones are now noindexed. The agent must decline such requests and redirect effort to on-page CTR, content depth, and internal linking on existing money pages. Stops the thin-page flood at its decision point.
