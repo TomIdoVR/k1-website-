@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/",
   },
   kDispatch: {
-    title: "K-Dispatch: Software CAD para 911, Bomberos y Emergencias",
-    description: "K-Dispatch reduce tiempos de respuesta con recomendación de unidades por IA, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
+    title: "Software CAD de Despacho 911, Bomberos y EMS | K-Dispatch",
+    description: "K-Dispatch es software de despacho asistido por computadora (CAD) con IA que reduce tiempos de respuesta 911: recomendación de unidades, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
     canonical: "https://kabatone.com/es/k-dispatch/",
   },
   kVideo: {
@@ -261,6 +261,16 @@ export const metadata = {
     og: {
       title: "Mejor Software VMS: Cómo Elegir una Plataforma de Gestión de Video",
       description: "Compara los tipos de plataforma VMS y los criterios que importan — cámaras de cualquier marca, analítica IA, integración con despacho — y el mejor VMS para seguridad pública.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  rtccSoftware: {
+    title: "Mejor Software RTCC 2026: Proveedores de Centro de Crimen Comparados | KabatOne",
+    description: "Compara proveedores de software RTCC (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): qué es un software de centro de crimen en tiempo real, criterios de selección, costos y la mejor plataforma unificada para seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/rtcc-software/",
+    og: {
+      title: "Mejor Software RTCC: Plataformas de Centro de Crimen en Tiempo Real Comparadas",
+      description: "Qué es un software RTCC, los principales proveedores comparados y cuándo una plataforma unificada supera a un conjunto de sistemas integrados.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },

@@ -1,3 +1,19 @@
+## [v2.271] – 2026-07-13 — RTCC software buyer's guide (GEO citation recovery)
+### Added
+- **New `/resources/rtcc-software/` page (EN + ES)** — a "Best RTCC Software 2026" buyer's guide comparing real-time crime center vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) against KabatOne's unified platform. Definition-first, passage-level citable structure aimed at recovering the RTCC AI-answer citation lost this week (Y → N while 8 competitors hold it) and capturing `rtcc software` / `real-time crime center software` intent. Metadata EN+ES (`rtccSoftware` key), sitemap (`priority 0.8`), `llms.txt`, and the resources hub card all wired.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.270] – 2026-07-13 — CAD striking-distance CTR rescue (K-Dispatch)
+### Changed
+- **K-Dispatch metadata retitled for query match (EN + ES)** — title now leads with the exact striking-distance query: `CAD Dispatch Software for 911, Fire & EMS | K-Dispatch` (ES: `Software CAD de Despacho 911, Bomberos y EMS | K-Dispatch`). Descriptions now state "computer-aided dispatch (CAD)" explicitly. Targets `cad dispatch software` (pos 13.5/143imp) and `computer aided dispatch` sitting at pos 13–17 with ~0 clicks, plus the standing K-Dispatch rank regression (18.9 → 41.9). `src/content/{en,es}/metadata.ts`.
+### Added
+- **Direct-answer opening strip on `/resources/best-cad-dispatch-software/`** (v2.245 bounce-fix pattern) — a definition-first strip below the hero answering "what is CAD dispatch software / computer-aided dispatch" with three quick facts (what it is / who it's for / best platform 2026), above the fold to cut bounce on a striking-distance page.
+- **H1 on the best-CAD guide now carries "Computer-Aided Dispatch"** (EN + ES) so the page matches `computer aided dispatch` alongside the existing `cad dispatch software` match.
+- **Keyword-anchored internal link from `/resources/ng911-software/` into `/k-dispatch/`** — new contextual link using the anchor "K-Dispatch's CAD dispatch software" / "software CAD de despacho de K-Dispatch" in the NG911-and-CAD section, passing query-matched anchor equity to the K-Dispatch money page (prior links used only brand anchors).
+### Notes
+- All three target pages already present in `sitemap.ts`; no sitemap change required. TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
 ## [v2.267] – 2026-07-09 — Contact form: country field → region field
 ### Changed
 - **Contact form dropdown simplified from countries to five regions** — Latin America, North America, Europe, Asia, Africa. Field name is now `region` (was `country`). Bilingual labels (EN/ES), English values for consistent lead allocation.

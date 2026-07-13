@@ -228,14 +228,41 @@ export default async function BestCadDispatchSoftwarePage({
             </p>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '24px' }}>
               {es
-                ? 'Mejor Software CAD de Despacho para Centros 911 en 2026'
-                : 'Best CAD Dispatch Software for 911 Centers in 2026'}
+                ? 'Mejor Software CAD de Despacho (Despacho Asistido por Computadora) para Centros 911 en 2026'
+                : 'Best CAD Dispatch Software (Computer-Aided Dispatch) for 911 Centers in 2026'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
                 ? 'El software de despacho asistido por computadora (CAD) gestiona cada incidente desde la primera llamada hasta el cierre: clasificación, asignación de unidades, seguimiento y registro. Los mejores sistemas CAD modernos van más allá del despacho aislado — integran video en vivo, GIS operacional y aplicaciones móviles de campo en una sola plataforma. Esta comparativa analiza los principales sistemas CAD para centros 911, municipios y centros de mando en 2026.'
                 : 'Computer-aided dispatch (CAD) software manages every incident from first call to closure: classification, unit assignment, tracking, and record logging. The best modern CAD systems go beyond standalone dispatch — they integrate live video, operational GIS, and field mobile apps in one platform. This comparison analyzes the leading CAD dispatch systems for 911 centers, municipalities, and command centers in 2026.'}
             </p>
+          </div>
+        </section>
+
+        {/* ── DIRECT ANSWER STRIP (bounce-fix pattern) ── */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '40px 32px', background: 'rgba(239,68,68,0.05)' }}>
+          <div style={containerStyle}>
+            <p style={{ fontSize: '17px', color: 'var(--dim)', lineHeight: 1.8, marginTop: 0, marginBottom: '20px' }}>
+              {es
+                ? 'El software CAD de despacho —despacho asistido por computadora (en inglés, computer-aided dispatch)— gestiona el ciclo completo de un incidente 911: recepción de la llamada, clasificación, asignación de la unidad más cercana por GPS, seguimiento y registro. En 2026, el mejor software CAD va más allá del despacho aislado: integra video en vivo, mapa GIS y apps móviles de campo en una sola plataforma. Abajo comparamos las plataformas líderes para centros 911, municipios y centros de mando.'
+                : 'CAD dispatch software — computer-aided dispatch — manages the full 911 incident lifecycle: call intake, classification, nearest-unit assignment by GPS, tracking, and record logging. In 2026, the best CAD dispatch software goes beyond standalone dispatch: it integrates live video, an operational GIS map, and field mobile apps on one platform. Below we compare the leading systems for 911 centers, municipalities, and command centers.'}
+            </p>
+            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+              {(es ? [
+                { label: 'Qué es', value: 'Despacho asistido por computadora (CAD)' },
+                { label: 'Para quién', value: 'Centros 911, municipios, mando C5' },
+                { label: 'Mejor plataforma 2026', value: 'KabatOne K-Dispatch' },
+              ] : [
+                { label: 'What it is', value: 'Computer-aided dispatch (CAD)' },
+                { label: 'Who it is for', value: '911 centers, municipalities, C5' },
+                { label: 'Best platform 2026', value: 'KabatOne K-Dispatch' },
+              ]).map((item, i) => (
+                <div key={i} style={{ flex: '1 1 200px' }}>
+                  <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '4px' }}>{item.label}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--white)' }}>{item.value}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

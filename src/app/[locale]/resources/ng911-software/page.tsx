@@ -303,6 +303,13 @@ export default async function Ng911SoftwarePage({
             <Link href="/resources/best-cad-dispatch-software" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'mejor software CAD de despacho' : 'best CAD dispatch software guide'}</Link>
             {es ? '.' : '.'}
           </p>
+          <p style={{ ...para, marginBottom: 0 }}>
+            {es ? 'Ver cómo funciona el ' : 'See how '}
+            <Link href="/k-dispatch" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'software CAD de despacho de K-Dispatch' : "K-Dispatch's CAD dispatch software"}</Link>
+            {es
+              ? ' —despacho asistido por computadora (computer-aided dispatch) con IA— para centros 911, bomberos y EMS.'
+              : ' — AI-powered computer-aided dispatch for 911, fire, and EMS centers.'}
+          </p>
         </section>
 
         {/* ── FAQ ── */}

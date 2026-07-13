@@ -318,6 +318,7 @@ export default async function AiVideoAnalyticsPage({
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
               { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Face Recognition' },
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
+              { href: '/resources/rtcc-software', label: es ? 'Mejor Software RTCC (proveedores)' : 'Best RTCC Software (vendors)' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>
                 {r.label}
