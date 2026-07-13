@@ -499,6 +499,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un centro de crimen en tiempo real (RTCC)?' },
+                { href: '/vs/avigilon', en: 'KabatOne vs Avigilon (VMS comparison)', es: 'KabatOne vs Avigilon (comparación VMS)' },
                 { href: '/resources/ai-in-public-safety', en: 'AI in Public Safety: A Guide for Cities', es: 'IA en Seguridad Pública: Guía para Ciudades' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border)', textDecoration: 'none', color: 'var(--dim)', fontSize: '15px' }}>

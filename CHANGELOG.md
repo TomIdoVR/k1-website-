@@ -1,3 +1,9 @@
+## [v2.275] – 2026-07-13 — VMS momentum: cluster internal links → /vs/avigilon (P4)
+### Added
+- **Internal links from the breakout VMS cluster pages into `/vs/avigilon`** (EN + ES) — added a "KabatOne vs Avigilon" entry to the Related sections of `/resources/best-vms-software/` and `/resources/what-is-video-management-software/`. Both pages already discuss Avigilon in body copy but had zero links into the comparison page, which sits at striking-distance pos ~13. Passes topical authority from the two strongest VMS-cluster pages (the `vms` / `vms software` impression breakout) to the pos-13 Avigilon comparison. Capitalizes on this week's VMS momentum.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
 ## [v2.274] – 2026-07-13 — GEO citability sweep: NG911 + unified-platform + C5 (definition callouts)
 ### Added
 - **Brand-anchored, liftable definition callouts on three more hubs** (EN + ES), closing out the remaining GEO citation gaps identified in `SEO/SEO-PROGRAM-STATE.md`:
