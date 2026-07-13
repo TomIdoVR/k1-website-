@@ -223,6 +223,15 @@ export default async function WhatIsVideoManagementSoftwarePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <h2 style={h2Style}>{es ? '¿Qué Hace un VMS?' : 'What Does a VMS Do?'}</h2>
+            <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(59,130,246,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+                {es ? (
+                  <><strong style={{ color: '#f0f4f8' }}>El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante en una sola interfaz para grabar, reproducir y analizar el video de forma centralizada.</strong> Un VMS moderno para seguridad pública va más allá de la grabación: ejecuta analítica de IA sobre el flujo de video y se integra con despacho CAD y GIS operacional. K-Video de KabatOne es un VMS para seguridad pública que unifica cámaras de cualquier marca y envía solo los eventos relevantes al mapa operativo del centro de mando.</>
+                ) : (
+                  <><strong style={{ color: '#f0f4f8' }}>Video management software (VMS) is a platform that aggregates surveillance camera feeds from any manufacturer into a single interface to record, play back, and analyze video centrally.</strong> A modern public-safety VMS goes beyond recording: it runs AI analytics on the video stream and integrates with CAD dispatch and operational GIS. KabatOne&apos;s K-Video is a public-safety VMS that unifies cameras from any brand and pushes only the relevant events to the command-center operational map.</>
+                )}
+              </p>
+            </div>
             <p style={pStyle}>
               {es
                 ? 'Un sistema VMS moderno cubre cinco funciones operativas que las soluciones heredadas de CCTV no pueden ofrecer como una sola plataforma.'
