@@ -25,6 +25,7 @@
 - [NG911 Software](https://kabatone.com/resources/ng911-software/): Next Generation 911 — text/video/data to 911, ESInet/i3, and CAD integration.
 - [How C5 Command Centers Work](https://kabatone.com/resources/how-c5-command-centers-work/): The C5 model (Command, Control, Communications, Computing, Quality) used across Mexican cities.
 - [What is a Real-Time Crime Center (RTCC)?](https://kabatone.com/resources/what-is-a-real-time-crime-center/): Integrating live video, analytics, LPR, and gunshot detection.
+- [Best RTCC Software — vendors compared](https://kabatone.com/resources/rtcc-software/): Real-time crime center software buyer's guide; vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) compared vs KabatOne's unified platform; selection criteria and cost.
 - [What is a Public Safety Platform?](https://kabatone.com/resources/what-is-a-public-safety-platform/): Unifying products, industries, and integrations into one topical platform.
 
 ## Competitor comparisons

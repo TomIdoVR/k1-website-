@@ -114,6 +114,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/rtcc-software',
+          category: 'Guía de Compra',
+          title: 'Mejor Software RTCC: Proveedores Comparados',
+          excerpt: 'Qué es un software RTCC y comparación de los principales proveedores (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) frente a la plataforma unificada de KabatOne.',
+          readTime: '9 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-emergency-management-software',
           category: 'Guía de Referencia',
           title: '¿Qué Es un Software de Gestión de Emergencias?',
@@ -1268,6 +1276,14 @@ export default async function ResourcesPage({
           title: 'What Is a Real-Time Crime Center (RTCC)?',
           excerpt: 'An RTCC integrates live video surveillance, AI analytics, LPR, and dispatch into a single command environment. How it works and what technologies it requires.',
           readTime: '10 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/rtcc-software',
+          category: 'Buyer\'s Guide',
+          title: 'Best RTCC Software: Vendors Compared',
+          excerpt: 'What RTCC software is and how the main vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) compare against KabatOne\'s unified real-time crime center platform.',
+          readTime: '9 min',
           isNew: true,
         },
         {

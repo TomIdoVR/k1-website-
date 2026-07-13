@@ -33,20 +33,12 @@ interface ContactFormProps {
 const FORMSPREE_URL = 'https://formspree.io/f/mjganywz'
 
 // Submitted values stay in English so lead routing is consistent across locales
-const COUNTRY_OPTIONS: { value: string; en: string; es: string }[] = [
-  { value: 'Mexico', en: 'Mexico', es: 'México' },
-  { value: 'Peru', en: 'Peru', es: 'Perú' },
-  { value: 'Colombia', en: 'Colombia', es: 'Colombia' },
-  { value: 'Chile', en: 'Chile', es: 'Chile' },
-  { value: 'Argentina', en: 'Argentina', es: 'Argentina' },
-  { value: 'Brazil', en: 'Brazil', es: 'Brasil' },
-  { value: 'Ecuador', en: 'Ecuador', es: 'Ecuador' },
-  { value: 'Guatemala', en: 'Guatemala', es: 'Guatemala' },
-  { value: 'Costa Rica', en: 'Costa Rica', es: 'Costa Rica' },
-  { value: 'Panama', en: 'Panama', es: 'Panamá' },
-  { value: 'Dominican Republic', en: 'Dominican Republic', es: 'República Dominicana' },
-  { value: 'United States', en: 'United States', es: 'Estados Unidos' },
-  { value: 'Other', en: 'Other', es: 'Otro' },
+const REGION_OPTIONS: { value: string; en: string; es: string }[] = [
+  { value: 'Latin America', en: 'Latin America', es: 'Latinoamérica' },
+  { value: 'North America', en: 'North America', es: 'Norteamérica' },
+  { value: 'Europe', en: 'Europe', es: 'Europa' },
+  { value: 'Asia', en: 'Asia', es: 'Asia' },
+  { value: 'Africa', en: 'Africa', es: 'África' },
 ]
 
 const inputStyle: React.CSSProperties = {
@@ -167,12 +159,12 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           </div>
         </div>
 
-        {/* Country select */}
+        {/* Region select */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-          <label style={labelStyle}>{es ? 'País' : 'Country'}</label>
-          <select name="country" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
-            <option value="" disabled>{es ? 'Selecciona tu país' : 'Select your country'}</option>
-            {COUNTRY_OPTIONS.map((opt) => (
+          <label style={labelStyle}>{es ? 'Región' : 'Region'}</label>
+          <select name="region" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
+            <option value="" disabled>{es ? 'Selecciona tu región' : 'Select your region'}</option>
+            {REGION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{es ? opt.es : opt.en}</option>
             ))}
           </select>

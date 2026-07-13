@@ -1,3 +1,51 @@
+## [v2.275] – 2026-07-13 — VMS momentum: cluster internal links → /vs/avigilon (P4)
+### Added
+- **Internal links from the breakout VMS cluster pages into `/vs/avigilon`** (EN + ES) — added a "KabatOne vs Avigilon" entry to the Related sections of `/resources/best-vms-software/` and `/resources/what-is-video-management-software/`. Both pages already discuss Avigilon in body copy but had zero links into the comparison page, which sits at striking-distance pos ~13. Passes topical authority from the two strongest VMS-cluster pages (the `vms` / `vms software` impression breakout) to the pos-13 Avigilon comparison. Capitalizes on this week's VMS momentum.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.274] – 2026-07-13 — GEO citability sweep: NG911 + unified-platform + C5 (definition callouts)
+### Added
+- **Brand-anchored, liftable definition callouts on three more hubs** (EN + ES), closing out the remaining GEO citation gaps identified in `SEO/SEO-PROGRAM-STATE.md`:
+  - `/resources/ng911-software/` — under the "What is NG911?" H2: bolded "NG911 is software that…" definition + NENA i3 anchor + K-Dispatch (ESInet/CAD) attribution.
+  - `/resources/what-is-a-public-safety-platform/` — bolded "A public safety platform is a unified system…" definition + PSIM-vs-unified differentiator + K-Dispatch/K-Video/K-Safety "one system" attribution (targets the "unified platform" AI-answer gap).
+  - `/resources/how-c5-command-centers-work/` — brand-anchored "the software behind a C5 is the unified platform…" callout after the hero (the existing definition had no brand anchor, so AI engines lifted it without citing KabatOne) + K-Video/K-Dispatch/K-Safety attribution.
+- Completes the v2.272→v2.274 GEO definition-callout program across ai-video-analytics, VMS, NG911, unified-platform, and C5 — every page where AI answers cited competitors while KabatOne owned the ranking page. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes (0 errors). Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.273] – 2026-07-13 — VMS GEO citability (definition callout)
+### Added
+- **Brand-anchored, liftable definition callout on `/resources/what-is-video-management-software/`** (EN + ES) — directly under the "What Does a VMS Do?" H2. Leads with a bolded, subject-first one-sentence "Video management software (VMS) is…" definition (the passage AI engines lift), states the modern public-safety differentiator (AI analytics + CAD/GIS integration), and attributes it to KabatOne's K-Video. Extends the v2.272 GEO pattern to the VMS hub — the biggest impression breakout ("vms" pos ~8, 12K+ imp) and a page where AI answers cite Genetec/Milestone while KabatOne is absent. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.272] – 2026-07-13 — AI video analytics GEO citability (definition callout)
+### Added
+- **Brand-anchored, liftable definition callout on `/resources/ai-video-analytics/`** (EN + ES) — directly under the "What is AI video analytics?" H2. Leads with a bolded, subject-first one-sentence definition (the passage AI engines lift), states the 30–50% → <5% false-positive differentiator, and attributes the applied technology to KabatOne's K-Video. Aim: recover the "What is AI video analytics?" AI-answer citation where Milestone is cited and KabatOne was absent despite owning the ranking page. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.271] – 2026-07-13 — RTCC software buyer's guide (GEO citation recovery)
+### Added
+- **New `/resources/rtcc-software/` page (EN + ES)** — a "Best RTCC Software 2026" buyer's guide comparing real-time crime center vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) against KabatOne's unified platform. Definition-first, passage-level citable structure aimed at recovering the RTCC AI-answer citation lost this week (Y → N while 8 competitors hold it) and capturing `rtcc software` / `real-time crime center software` intent. Metadata EN+ES (`rtccSoftware` key), sitemap (`priority 0.8`), `llms.txt`, and the resources hub card all wired.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.270] – 2026-07-13 — CAD striking-distance CTR rescue (K-Dispatch)
+### Changed
+- **K-Dispatch metadata retitled for query match (EN + ES)** — title now leads with the exact striking-distance query: `CAD Dispatch Software for 911, Fire & EMS | K-Dispatch` (ES: `Software CAD de Despacho 911, Bomberos y EMS | K-Dispatch`). Descriptions now state "computer-aided dispatch (CAD)" explicitly. Targets `cad dispatch software` (pos 13.5/143imp) and `computer aided dispatch` sitting at pos 13–17 with ~0 clicks, plus the standing K-Dispatch rank regression (18.9 → 41.9). `src/content/{en,es}/metadata.ts`.
+### Added
+- **Direct-answer opening strip on `/resources/best-cad-dispatch-software/`** (v2.245 bounce-fix pattern) — a definition-first strip below the hero answering "what is CAD dispatch software / computer-aided dispatch" with three quick facts (what it is / who it's for / best platform 2026), above the fold to cut bounce on a striking-distance page.
+- **H1 on the best-CAD guide now carries "Computer-Aided Dispatch"** (EN + ES) so the page matches `computer aided dispatch` alongside the existing `cad dispatch software` match.
+- **Keyword-anchored internal link from `/resources/ng911-software/` into `/k-dispatch/`** — new contextual link using the anchor "K-Dispatch's CAD dispatch software" / "software CAD de despacho de K-Dispatch" in the NG911-and-CAD section, passing query-matched anchor equity to the K-Dispatch money page (prior links used only brand anchors).
+### Notes
+- All three target pages already present in `sitemap.ts`; no sitemap change required. TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.267] – 2026-07-09 — Contact form: country field → region field
+### Changed
+- **Contact form dropdown simplified from countries to five regions** — Latin America, North America, Europe, Asia, Africa. Field name is now `region` (was `country`). Bilingual labels (EN/ES), English values for consistent lead allocation.
+
 ## [v2.266] – 2026-07-08 — Halt country-page generation (SEO agent guardrail)
 ### Changed
 - **`src/lib/seo-agent/intent.ts`** — added a hard rule to the Slack SEO agent's system prompt: **do not create new country/location pages** (`public-safety-software-*`). The country-page program is complete and paused; Google wasn't indexing them (75% "not indexed") and 116 non-ICP ones are now noindexed. The agent must decline such requests and redirect effort to on-page CTR, content depth, and internal linking on existing money pages. Stops the thin-page flood at its decision point.

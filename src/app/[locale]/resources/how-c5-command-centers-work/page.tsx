@@ -145,6 +145,15 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
               ? 'Un centro C5 es una instalación de mando integrado que coordina respuesta a emergencias, videovigilancia, despacho de unidades, gestión de tráfico y protección civil desde un solo punto de operación. México opera más de 30 centros C5 en sus principales ciudades, cada uno capaz de monitorear miles de cámaras, gestionar llamadas 911 y coordinar múltiples agencias de seguridad en tiempo real.'
               : 'A C5 command center is an integrated facility that coordinates emergency response, video surveillance, unit dispatch, traffic management, and civil protection from a single point of operation. Mexico operates more than 30 C5 centers across its major cities, each capable of monitoring thousands of cameras, managing 911 calls, and coordinating multiple public safety agencies in real time.'}
           </p>
+          <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(6,182,212,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginTop: '28px', maxWidth: '720px' }}>
+            <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+              {es ? (
+                <><strong style={{ color: '#f0f4f8' }}>El software de un C5 es la plataforma unificada que conecta las cámaras, las llamadas 911, el despacho de unidades y los sensores de tráfico de un centro de mando en un solo mapa operativo en tiempo real.</strong> Sin esa capa de software, un C5 son sistemas aislados en la misma sala. KabatOne provee esta plataforma para centros C5 en México y LATAM — K-Video unifica las cámaras, K-Dispatch gestiona el despacho 911 y K-Safety superpone todo en un mapa común, con métricas de Calidad auditables integradas.</>
+              ) : (
+                <><strong style={{ color: '#f0f4f8' }}>The software behind a C5 is the unified platform that connects a command center&apos;s cameras, 911 calls, unit dispatch, and traffic sensors onto a single real-time operational map.</strong> Without that software layer, a C5 is isolated systems in the same room. KabatOne provides this platform for C5 centers across Mexico and LATAM — K-Video unifies the cameras, K-Dispatch runs 911 dispatch, and K-Safety overlays everything on a common map, with auditable Quality metrics built in.</>
+              )}
+            </p>
+          </div>
         </section>
 
         {/* -- SECTION: What Does C5 Stand For? -- */}

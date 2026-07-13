@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/",
   },
   kDispatch: {
-    title: "K-Dispatch: CAD Software for 911, Fire & Emergency Dispatch",
-    description: "K-Dispatch reduces 911 response times with AI-powered unit recommendation, NG911 integration, and real-time video feeds. CAD dispatch software for police, fire, and EMS agencies.",
+    title: "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
+    description: "K-Dispatch is AI-powered computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and real-time video. CAD dispatch software for police, fire, and EMS.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
@@ -261,6 +261,16 @@ export const metadata = {
     og: {
       title: "Best VMS Software 2026: How to Choose a Video Management Platform",
       description: "Compare VMS platform types and the criteria that matter — any-brand cameras, AI analytics, dispatch integration — plus the best VMS for public safety and command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  rtccSoftware: {
+    title: "Best RTCC Software 2026: Real-Time Crime Center Vendors Compared | KabatOne",
+    description: "Compare RTCC software vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): what real-time crime center software is, selection criteria, cost, and the best unified platform for public safety.",
+    canonical: "https://kabatone.com/resources/rtcc-software/",
+    og: {
+      title: "Best RTCC Software: Real-Time Crime Center Platforms Compared",
+      description: "What RTCC software is, the main vendors compared, and when a unified platform beats a stack of integrated systems for real-time crime centers.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
