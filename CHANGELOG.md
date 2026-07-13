@@ -1,3 +1,8 @@
+## [v2.271] – 2026-07-13 — Reference-accurate hero rebuild specification
+### Added
+- Documented the approved, hero-only rebuild against the supplied 1536 × 1024 reference, including the desktop composition, seven operational cards, EN/ES behavior, approved proof metrics, and mobile carousel controls.
+- Explicitly keeps every homepage section below the hero unchanged and requires visual comparison at desktop, tablet, and mobile sizes before completion.
+
 ## [v2.270] – 2026-07-13 — Per-app Google Play privacy policy pages
 ### Added
 - **Dedicated privacy policy pages for mobile apps**, so each Google Play listing links to its own URL. New reusable component `src/components/AppPrivacyPolicy.tsx` holds the approved Google Play template (app + developer identification block, ARCO rights, and the Data Retention & Deletion section Google requires), interpolating the exact app name. Rendered in EN + ES to match the existing `/privacy` page.
