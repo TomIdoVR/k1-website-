@@ -1,3 +1,13 @@
+## [v2.274] – 2026-07-13 — GEO citability sweep: NG911 + unified-platform + C5 (definition callouts)
+### Added
+- **Brand-anchored, liftable definition callouts on three more hubs** (EN + ES), closing out the remaining GEO citation gaps identified in `SEO/SEO-PROGRAM-STATE.md`:
+  - `/resources/ng911-software/` — under the "What is NG911?" H2: bolded "NG911 is software that…" definition + NENA i3 anchor + K-Dispatch (ESInet/CAD) attribution.
+  - `/resources/what-is-a-public-safety-platform/` — bolded "A public safety platform is a unified system…" definition + PSIM-vs-unified differentiator + K-Dispatch/K-Video/K-Safety "one system" attribution (targets the "unified platform" AI-answer gap).
+  - `/resources/how-c5-command-centers-work/` — brand-anchored "the software behind a C5 is the unified platform…" callout after the hero (the existing definition had no brand anchor, so AI engines lifted it without citing KabatOne) + K-Video/K-Dispatch/K-Safety attribution.
+- Completes the v2.272→v2.274 GEO definition-callout program across ai-video-analytics, VMS, NG911, unified-platform, and C5 — every page where AI answers cited competitors while KabatOne owned the ranking page. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes (0 errors). Shipped to `nextjs` (staging) worktree only — not pushed.
+
 ## [v2.273] – 2026-07-13 — VMS GEO citability (definition callout)
 ### Added
 - **Brand-anchored, liftable definition callout on `/resources/what-is-video-management-software/`** (EN + ES) — directly under the "What Does a VMS Do?" H2. Leads with a bolded, subject-first one-sentence "Video management software (VMS) is…" definition (the passage AI engines lift), states the modern public-safety differentiator (AI analytics + CAD/GIS integration), and attributes it to KabatOne's K-Video. Extends the v2.272 GEO pattern to the VMS hub — the biggest impression breakout ("vms" pos ~8, 12K+ imp) and a page where AI answers cite Genetec/Milestone while KabatOne is absent. GEO fix only — no ranking/URL change.
