@@ -1,3 +1,7 @@
+## [2.273] 2026-07-13 — Hero redesign: owner local-work guide
+**Added**
+- Added an "Working On This Yourself (Owner)" section to `docs/HERO-REDESIGN-LOCAL-WORKFLOW.md` — from-scratch, copy-pasteable steps so Omer can run and edit the isolated hero (`/hero-lab`) locally in the `codex/hero-reference-rebuild` worktree, commit-only, without pushing to staging or production. Requested in KAB-1606 ("make sure it's documented so I can work on it also").
+
 ## [v2.272] – 2026-07-13 — Isolate hero redesign for parallel local work
 ### Added
 - Documented a local-only `codex/hero-reference-rebuild` worktree and `/hero-lab` review workflow so Codex and Claude Code can work in parallel without sharing physical files.
@@ -17,6 +21,16 @@
 - Both set `robots: noindex, follow` and are kept out of the sitemap — the pages exist for store-listing compliance, not organic search, and near-identical legal copy across branded apps shouldn't dilute the index. Canonical + EN/ES hreflang alternates are emitted per page.
 ### Notes
 - Adding a future branded app = one new page file (copy an existing one, change `APP_NAME`/`SLUG`/`LAST_UPDATED`). Developer name, legal entity, and contact details are constant and live in the shared component.
+
+## [v2.269] – 2026-07-10 — Homepage: adopt Hero V3 as the live hero
+### Changed
+- **Homepage hero swapped to Hero V3** (`src/app/[locale]/page.tsx`, branch `hero-redesign`). The legacy dark hero (eyebrow + "The Unified Operating System for Public Safety" + single CTA) is replaced by `<HeroV3Platform es={es} />` — the light-theme "One Platform. Total Awareness." design chosen in `/hero-lab`. Fulfils KAB-1563.
+- Removed the shared dark `<Nav/>` from the homepage (V3 ships its own light nav) and dropped the now-unused `paddingTop: 70px` offset. Imported `hero-lab.css` + `hero-lab-light.css` into the homepage.
+- Preserved the C5 command-centers internal link (SEO) as a small centered strip between the hero and the dark body.
+### Notes / follow-ups (not yet done)
+- V3 still uses AI **placeholder** images (`k-mark.webp`, `cctv-still.webp`, `evidence-still.webp`) — swap for real art before promoting to production.
+- The hero is light while the sections below (HowItWorks, Modules, Proof, etc.) remain dark — a visible light→dark seam. Decide whether to light-theme the rest of the page or add a transition. Awaiting direction.
+- Not pushed. Lives on `hero-redesign` only; needs merge to `nextjs` (staging) then `main` (prod) on request.
 
 ## [v2.268] – 2026-07-09 — Hero V3: light-theme unified platform (chosen direction)
 ### Added

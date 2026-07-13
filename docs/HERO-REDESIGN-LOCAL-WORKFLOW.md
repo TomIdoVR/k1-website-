@@ -13,6 +13,64 @@ This document keeps the reference-accurate homepage hero rebuild isolated from K
 | Website staging | `nextjs` | `staging.kabatone.com` | Protected; do not merge or push hero work |
 | Production | `main` | `kabatone.com` | Protected; owner approval required |
 
+## Working On This Yourself (Owner)
+
+You can run and edit the hero locally without any agent involved. It never touches
+staging or production — everything lives in the `codex/hero-reference-rebuild`
+worktree on your machine.
+
+**One-time / each session:**
+
+```bash
+# 1. Go to the isolated hero worktree (already created — do NOT clone again)
+cd "/Users/omercnaani/Library/CloudStorage/OneDrive-SYMSERVICIOSINTEGRALESSADECV/Claude/k1 Website/.worktrees/codex-hero-reference-rebuild"
+
+# 2. Confirm you are on the right branch (should print: codex/hero-reference-rebuild)
+git branch --show-current
+
+# 3. Install dependencies the first time (skip on later runs)
+npm install
+
+# 4. Start the local dev server
+npm run dev
+```
+
+Then open the isolated hero in your browser (use the port Next.js prints if 3000 is taken):
+
+- English: `http://localhost:3000/en/hero-lab`
+- Spanish: `http://localhost:3000/es/hero-lab`
+
+The `/hero-lab` route is unlinked and `noindex`, so it is invisible to visitors and search engines.
+
+**Files you edit** (changes hot-reload in the browser):
+
+| What | File |
+|---|---|
+| Hero layout & content | `src/components/hero-lab/HeroV3Platform.tsx` |
+| Hero styles | `src/app/[locale]/hero-lab/hero-lab-light.css` |
+| Images | `public/images/hero-lab/` |
+
+**Saving your work (stay local — never push):**
+
+```bash
+git add -A
+git commit -m "Hero: <what you changed>"
+```
+
+Commit only. Do **not** run `git push`, and do **not** merge into `nextjs` or `main` —
+that is what keeps it off the live site until you approve promotion.
+
+**If it breaks and you want a clean slate:**
+
+```bash
+git restore .          # discard uncommitted edits
+# or, to go back to the last committed hero state:
+git reset --hard HEAD
+```
+
+If an agent is actively editing the same worktree, coordinate first (see Parallel-Work
+Rules) so you are not both writing the same file at once.
+
 ## Local Review
 
 From the Codex hero worktree:
