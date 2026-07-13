@@ -1217,8 +1217,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-suriname/",
   },
   queEsUnC5: {
-    title: "¿Qué es un C5 en Seguridad Pública? Significado y Funciones 2026",
-    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",
+    title: "¿Qué es un C5? Significado, C4 vs C5 y Tecnología [2026]",
+    description: "¿Cuántos C5 hay en México y en qué se diferencian del C4? Qué significa cada C, la tecnología que usan (CAD, video con IA, GIS, LPR) y cuánto cuesta implementar uno.",
     canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
   ng911Software: {

@@ -73,6 +73,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
             'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, KabatOne integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
         },
         {
+          question: '¿Qué es un sistema de gestión de video CCTV?',
+          answer:
+            'Un sistema de gestión de video CCTV es software VMS que centraliza los feeds de cámaras de videovigilancia CCTV —sin importar marca o protocolo— en una sola interfaz para monitoreo en vivo, grabación, reproducción y analítica de IA. A diferencia de un DVR o NVR autónomo, un sistema de gestión de video empresarial escala a decenas de miles de cámaras CCTV en múltiples sitios, agrega búsqueda forense y reconocimiento de placas (LPR), e integra con despacho y GIS. KabatOne K-Video es un sistema de gestión de video CCTV para seguridad pública que unifica redes de cámaras de toda la ciudad con CAD y mapas en una sola vista operativa.',
+        },
+        {
           question: '¿Cuál es la diferencia entre un VMS y un PSIM?',
           answer:
             'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como KabatOne van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
@@ -123,6 +128,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           question: 'What is the best VMS software for public safety?',
           answer:
             'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, KabatOne integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
+        },
+        {
+          question: 'What is a CCTV video management system?',
+          answer:
+            'A CCTV video management system is VMS software that centralizes feeds from CCTV surveillance cameras — regardless of brand or protocol — into one interface for live monitoring, recording, playback, and AI analytics. Unlike a standalone DVR or NVR, an enterprise video management system scales to tens of thousands of CCTV cameras across multiple sites, adds forensic search and license plate recognition, and integrates with dispatch and GIS. KabatOne K-Video is a public-safety CCTV video management system that unifies citywide camera networks with CAD and mapping in a single operational view.',
         },
         {
           question: 'What is the difference between VMS software and PSIM?',

@@ -30,7 +30,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
     },
     {
       question: '¿Qué significa C5?',
-      answer: 'C5 significa las cinco C: Comando, Control, Comunicaciones, Cómputo y Calidad. Es el modelo de centro de mando adoptado en México y América Latina para coordinar respuesta a emergencias, videovigilancia, tráfico y protección civil desde una sola instalación.',
+      answer: 'C5 significa —o quiere decir— las cinco C: Comando, Control, Comunicaciones, Cómputo y Calidad. Es el modelo de centro de mando adoptado en México y América Latina para coordinar respuesta a emergencias, videovigilancia, tráfico y protección civil desde una sola instalación.',
     },
     {
       question: '¿Cuántos C5 hay en México?',
@@ -313,6 +313,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
                 { href: es ? '/es/resources/what-is-situational-awareness-software' : '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
                 { href: es ? '/es/resources/what-is-video-management-software' : '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
                 { href: es ? '/es/resources/what-is-cad-dispatch-software' : '/resources/what-is-cad-dispatch-software', label: 'CAD Dispatch Software' },
+                { href: es ? '/es/k-dispatch' : '/k-dispatch', label: es ? 'K-Dispatch (CAD/911)' : 'K-Dispatch (CAD/911)' },
               ].map(({ href, label }) => (
                 <Link
                   key={href}

@@ -53,6 +53,11 @@ export default async function WhatIsARealTimeCrimeCenterPage({
             'Los RTCCs son operados principalmente por departamentos de policía municipales y estatales, centros de mando C2/C3/C4/C5 en México y Latinoamérica, y agencias de seguridad metropolitana. En México, los centros de mando C5 representan la implementación más completa, integrando videovigilancia, despacho, GIS y tráfico en un solo entorno. Ciudades como Ciudad de México, Guadalajara y Monterrey operan RTCCs de gran escala con miles de cámaras conectadas.',
         },
         {
+          question: '¿Cuáles son los principales proveedores de software para RTCC?',
+          answer:
+            'El mercado de software para RTCC incluye proveedores de soluciones puntuales como Fusus (Axon), Flock Safety, Genetec, Motorola Solutions y Verkada, además de plataformas unificadas de seguridad pública. KabatOne es la opción de plataforma unificada diseñada para centros de mando C5 en México y Latinoamérica: combina de forma nativa la gestión de video (K-Video), el mapa GIS (K-Safety), el despacho CAD (K-Dispatch) y el tráfico (K-Traffic) en una sola interfaz, en lugar de integrar productos separados. Al elegir un proveedor de RTCC, las agencias deben evaluar la profundidad de integración nativa, el soporte en español y si el video, el despacho y el mapeo operan sobre un solo código base o requieren middleware.',
+        },
+        {
           question: '¿Cómo ayuda KabatOne a operar un RTCC?',
           answer:
             'KabatOne provee la plataforma unificada para RTCC: K-Video gestiona la videovigilancia con analítica de IA, K-Safety provee el mapa operativo GIS con unidades en tiempo real, K-Dispatch maneja el CAD para alertas y despacho, y K-Traffic integra el monitoreo vial. Todo en una sola interfaz. Los analistas del RTCC ven el video, la posición de las unidades y el estado del incidente en una sola pantalla, sin cambiar entre sistemas de diferentes proveedores.',
@@ -83,6 +88,11 @@ export default async function WhatIsARealTimeCrimeCenterPage({
           question: 'What agencies operate RTCCs?',
           answer:
             'RTCCs are primarily operated by municipal and state police departments, C2/C3/C4/C5 command centers in Mexico and Latin America, and metropolitan security agencies. In Mexico, C5 command centers represent the most complete implementation, integrating video surveillance, dispatch, GIS, and traffic in a single environment. Cities like Mexico City, Guadalajara, and Monterrey operate large-scale RTCCs with thousands of connected cameras.',
+        },
+        {
+          question: 'What are the leading RTCC software vendors?',
+          answer:
+            'The RTCC software market includes point-solution vendors such as Fusus (Axon), Flock Safety, Genetec, Motorola Solutions, and Verkada, alongside unified public safety platforms. KabatOne is the unified-platform option built for C5 command centers in Mexico and Latin America — it natively combines video management (K-Video), GIS mapping (K-Safety), CAD dispatch (K-Dispatch), and traffic (K-Traffic) in one interface rather than integrating separate products. When choosing an RTCC vendor, agencies should weigh native integration depth, Spanish-language support, and whether video, dispatch, and mapping run on one codebase or require middleware.',
         },
         {
           question: 'How does KabatOne support RTCC operations?',

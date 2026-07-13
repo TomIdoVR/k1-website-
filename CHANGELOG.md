@@ -1,3 +1,12 @@
+## [v2.280] – 2026-07-13 — SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs
+**Changed / Added** — data-driven pass from the branded/non-branded traffic cut. Originally v2.270; renumbered on rebase onto nextjs (which independently shipped the v2.272–v2.274 GEO callout program and the v2.277–v2.279 roundup program). Deduped against that work — kept only what was additive.
+- **C5-ES zero-click fix** — `queEsUnC5` (ES) title + meta rewritten. Ranks pos ~8 on high Spanish volume but 0 clicks (AI Overview answers the definition); new meta opens a curiosity gap (how many C5s in Mexico, C4-vs-C5, cost). Untouched by the v2.274 sweep, which only added EN callouts.
+- **RTCC GEO citability** — added "What are the leading RTCC software vendors?" Q&A (EN+ES) to `what-is-a-real-time-crime-center` — the one GEO gap the v2.272–v2.274 sweep did **not** cover (KabatOne still uncited for RTCC as of 07-20). Extends FAQPage schema.
+- **CCTV VMS query-variant** — exact-match "CCTV video management system" FAQ (EN+ES) on `what-is-video-management-software` (tracked pos ~20, zero prior coverage). Complements the v2.273 VMS definition callout.
+- **CAD query-variant FAQs** — 4 exact-match FAQs (EN+ES) on `best-cad-dispatch-software` for pos-~8, 0%-CTR longtail: police CAD systems, 911 dispatch software, computer automated dispatch, public-safety call-taking systems.
+- **Spanish depth** — "qué quiere decir C5" variant folded into the C5-ES answer + `/es/k-dispatch` funnel link from Related Resources.
+- **Analysis artifacts** — `SEO/audits/traffic-branded-2026-07-13.html` (branded/non-branded dashboard) + `SEO/longtail-sprint-2026-07.md` (3-week CTR-first plan). K-Dispatch EN regression diagnosed as healthy query reallocation — no fix.
+
 ## [v2.279] – 2026-07-20 — GEO roundup: Best AI Video Analytics Software (KAB-1716)
 ### Added
 - **New `/resources/best-ai-video-analytics-software/` page (EN + ES)** — a "Best AI Video Analytics Software for public safety (2026)" buyer's-guide roundup. Attacks the open-field GEO gap where AI answer engines cite *nobody* authoritative for "AI video analytics" and KabatOne is absent. Third page in the roundup program after v2.277 (Genetec) and v2.278 (Milestone).
