@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  genetecAlternatives: {
+    title: "Best Genetec Alternatives for Public Safety 2026 | KabatOne",
+    description: "The best Genetec Security Center alternatives for public safety: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus and Motorola compared — why agencies switch and the best unified platform.",
+    canonical: "https://kabatone.com/resources/genetec-alternatives/",
+    og: {
+      title: "Best Genetec Alternatives for Public Safety (2026)",
+      description: "Compare the real Genetec alternatives — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a VMS that only manages cameras.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   bestVmsSoftware: {
     title: "Best VMS Software 2026: Choose a Video Management Platform | KabatOne",
     description: "How to choose the best VMS software: compare video management platform types, key criteria (any-brand cameras, AI analytics, dispatch integration), cost, and the best VMS for public safety.",

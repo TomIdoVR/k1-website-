@@ -1,3 +1,12 @@
+## [v2.277] – 2026-07-14 — GEO content: "Best Genetec Alternatives" roundup (KAB-1623)
+### Added
+- **New page `/resources/genetec-alternatives/` (EN + ES)** — a buyer's-guide roundup targeting the GEO query "Genetec alternatives for public safety," where AI answer engines cite 6 competitors but not KabatOne. We had `/vs/genetec` (head-to-head) but no roundup/listicle, which is the format AI engines cite for "X alternatives" questions. The page opens with a liftable, brand-anchored direct-answer callout ("The best Genetec alternatives for public safety in 2026 are KabatOne … Milestone … Avigilon … Verkada … Axon/Fusus … Motorola"), followed by an at-a-glance comparison table, a "why agencies switch" section, six per-vendor profiles (KabatOne first), 6 FAQs, and a Related grid.
+- Full schema: Article + FAQPage + BreadcrumbList (JSON-LD). Metadata added EN + ES (`genetecAlternatives`), sitemap entry (priority 0.75), and Resources hub cards (EN + ES).
+### Why
+- Weekly GEO review (KAB-1623): the "Genetec alternatives" query is an un-won AI-answer surface with a confirmed citation slot (competitors are already listed). A roundup page matches that intent far better than the existing head-to-head and also captures commercial "Genetec alternatives" search demand.
+### Notes
+- TypeScript typecheck passes (0 errors, `tsc --noEmit`). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
 ## [v2.276] – 2026-07-14 — Verge daily audit fix: K-Dispatch meta description length (KAB-1612)
 ### Fixed
 - **K-Dispatch metadata description trimmed 217 → 164 chars** (`src/content/en/metadata.ts`) — the daily Verge SEO audit (`scripts/seo-audit.mjs` vs baseline) flagged a new warning: description exceeded the 200-char max. Removed the redundant trailing "CAD dispatch software for police, fire, and EMS." sentence and folded "for police, fire & EMS" into the primary sentence, preserving the CAD / NG911 / 911-response keywords while landing at the ideal length.

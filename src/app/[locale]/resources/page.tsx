@@ -122,6 +122,14 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
+          href: '/resources/genetec-alternatives',
+          category: 'Guía de Compra',
+          title: 'Mejores Alternativas a Genetec para Seguridad Pública',
+          excerpt: 'Las alternativas reales a Genetec Security Center — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — comparadas, y cuándo una plataforma unificada supera a un VMS.',
+          readTime: '8 min',
+          isNew: true,
+        },
+        {
           href: '/resources/what-is-emergency-management-software',
           category: 'Guía de Referencia',
           title: '¿Qué Es un Software de Gestión de Emergencias?',
@@ -1284,6 +1292,14 @@ export default async function ResourcesPage({
           title: 'Best RTCC Software: Vendors Compared',
           excerpt: 'What RTCC software is and how the main vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) compare against KabatOne\'s unified real-time crime center platform.',
           readTime: '9 min',
+          isNew: true,
+        },
+        {
+          href: '/resources/genetec-alternatives',
+          category: 'Buyer\'s Guide',
+          title: 'Best Genetec Alternatives for Public Safety',
+          excerpt: 'The real Genetec Security Center alternatives — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — compared, and when a unified platform beats a VMS.',
+          readTime: '8 min',
           isNew: true,
         },
         {

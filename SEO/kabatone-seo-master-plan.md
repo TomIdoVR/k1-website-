@@ -21,8 +21,8 @@
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-07-07
-**Current site size:** 208 unique routes × 2 locales (EN + ES) = 416 sitemap URLs
+**Last updated:** 2026-07-14 (KAB-1623 weekly GEO review — GEO monitor 5/12 cited; new /resources/genetec-alternatives/ published, v2.277)
+**Current site size:** 209 unique routes × 2 locales (EN + ES) = 418 sitemap URLs
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 155 (hub + 154 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: **122 country-specific guides** live (Africa, Europe, Americas, Middle East, Asia-Pacific) + 3 regional/cohort guides (Middle East, LATAM, small cities, Mexico municipalities)
 - Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to Paperclip — strategic risk flagged 2026-05-19, see Phase 6 notes below
@@ -512,6 +512,7 @@
 | 2026-06-09 | Claude Code (SEO Director heartbeat — KAB-1099) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: **5/5 queries** (up from 3/5 — NEW: CAD LATAM pos 1, VMS unified pos 3); v2.225: /resources/public-safety-software-costa-rica — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap, metadata EN+ES |
 | 2026-06-09 | Claude Code (SEO Director heartbeat — KAB-1100) | GEO guide | — | Next.js | v2.226: /resources/public-safety-software-ecuador — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap, metadata EN+ES — ECU-911 national system, Policia Nacional ~47K, Guayaquil port/airport security, police-military joint ops, SERCOP procurement |
 | 2026-06-16 | Claude Code (SEO Director heartbeat — KAB-1198) | GEO monitoring + GEO guide | — | Next.js | GEO monitoring: **5/5 queries stable** ("municipalities" UP pos ~8→~3, VMS UP to 3 pages in top 10); v2.243: /resources/public-safety-software-dominican-republic — EN+ES, FAQ+breadcrumb+article schema, resources hub card, sitemap, metadata EN+ES — first Caribbean expansion; PN ~37K, CESFRONT ~3.5K Haiti border, CESTUR ~4K tourism, Sistema 911, 10M+ tourists/yr |
+| 2026-07-14 | Claude Code (SEO Director — KAB-1623) | Weekly GEO review + GEO content page | — | Next.js | **GEO monitor 5/12 cited (12-query set):** WIN — "best VMS software for public safety" N→**Y** (v2.273 VMS callout landing); LOSS — "RTCC software vendors" Y→N (volatile, 8 competitors now listed); CAD/municipalities/CAD-multi-agency/Mexico-LATAM holding Y. Persistent gaps: unified-platform, C5, NG911, AI-video-analytics, VMS-for-cities, **Genetec-alternatives**. v2.277: new /resources/genetec-alternatives/ (EN+ES) roundup — liftable direct-answer callout, comparison table, 6 vendor profiles, 6 FAQs, Article+FAQ+Breadcrumb schema, metadata EN+ES, sitemap, hub cards — targets the un-won "Genetec alternatives for public safety" AI-answer slot |
 
 ---
 
