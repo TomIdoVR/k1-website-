@@ -1,30 +1,30 @@
 {
-  "runAt": "2026-06-16T07:21:48.789Z",
+  "runAt": "2026-07-14T07:05:35.821Z",
   "baseUrl": "https://staging.kabatone.com",
   "pagesAudited": 71,
   "summary": {
     "critical": 0,
     "warnings": 0,
-    "info": 9,
+    "info": 11,
     "pagesWithIssues": 0,
     "pagesClean": 71,
     "newIssues": 1,
-    "resolvedIssues": 0
+    "resolvedIssues": 1
   },
   "pages": [
     {
       "url": "https://staging.kabatone.com/en/",
       "issues": [],
       "info": {
-        "title": "Public Safety Platform for Cities &amp; Command Centers | KabatOne",
+        "title": "Public Safety Platform for Cities &amp; Command Centers | K1",
         "description": "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
         "canonical": "https://kabatone.com/",
-        "ogTitle": "Public Safety Platform for Cities &amp; Command Centers | KabatOne",
+        "ogTitle": "Public Safety Platform for Cities &amp; Command Centers | K1",
         "ogDesc": "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 2,
-        "imgCount": 8,
+        "imgCount": 43,
         "imgNoAlt": 0
       }
     },
@@ -32,10 +32,10 @@
       "url": "https://staging.kabatone.com/en/k-safety/",
       "issues": [],
       "info": {
-        "title": "Situational Awareness and Command Center Software | KabatOne K-Safety",
+        "title": "Situational Awareness &amp; Command Center Software | KabatOne",
         "description": "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
         "canonical": "https://kabatone.com/k-safety/",
-        "ogTitle": "Situational Awareness and Command Center Software | KabatOne K-Safety",
+        "ogTitle": "Situational Awareness &amp; Command Center Software | KabatOne",
         "ogDesc": "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -46,13 +46,19 @@
     },
     {
       "url": "https://staging.kabatone.com/en/k-dispatch/",
-      "issues": [],
+      "issues": [
+        {
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (168/160 ideal)"
+        }
+      ],
       "info": {
-        "title": "911 CAD Dispatch Software for Emergency Centers | KabatOne",
-        "description": "From 911 call to unit dispatch in seconds. K-Dispatch centralizes intake, auto-recommends units, and integrates with video and GIS for public safety teams.",
+        "title": "CAD Dispatch Software for 911, Fire &amp; EMS | K-Dispatch",
+        "description": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire &amp; EMS.",
         "canonical": "https://kabatone.com/k-dispatch/",
-        "ogTitle": "911 CAD Dispatch Software for Emergency Centers | KabatOne",
-        "ogDesc": "From 911 call to unit dispatch in seconds. K-Dispatch centralizes intake, auto-recommends units, and integrates with video and GIS for public safety teams.",
+        "ogTitle": "CAD Dispatch Software for 911, Fire &amp; EMS | K-Dispatch",
+        "ogDesc": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire &amp; EMS.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -62,19 +68,13 @@
     },
     {
       "url": "https://staging.kabatone.com/en/k-video/",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (179/160 ideal)"
-        }
-      ],
+      "issues": [],
       "info": {
-        "title": "VMS Software — Video Management System with AI Analytics | KabatOne",
-        "description": "Enterprise VMS software unifying thousands of cameras into one searchable platform. AI video analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
+        "title": "VMS Software — AI Video Management System | KabatOne",
+        "description": "Enterprise VMS software unifying thousands of cameras into one platform. AI video analytics — LPR, behavioral detection, object classification. Any brand.",
         "canonical": "https://kabatone.com/k-video/",
-        "ogTitle": "VMS Software — Video Management System with AI Analytics | KabatOne",
-        "ogDesc": "Enterprise VMS software unifying thousands of cameras into one searchable platform. AI video analytics — LPR, behavioral detection, object classification. Any brand, any protocol.",
+        "ogTitle": "VMS Software — AI Video Management System | KabatOne",
+        "ogDesc": "Enterprise VMS software unifying thousands of cameras into one platform. AI video analytics — LPR, behavioral detection, object classification. Any brand.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -84,13 +84,19 @@
     },
     {
       "url": "https://staging.kabatone.com/en/k-traffic/",
-      "issues": [],
+      "issues": [
+        {
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (161/160 ideal)"
+        }
+      ],
       "info": {
-        "title": "Intelligent Traffic Management System for Smart Cities | KabatOne",
-        "description": "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals.",
+        "title": "Intelligent Traffic Management System | KabatOne",
+        "description": "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals to reduce congestion.",
         "canonical": "https://kabatone.com/k-traffic/",
-        "ogTitle": "Intelligent Traffic Management System for Smart Cities | KabatOne",
-        "ogDesc": "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals.",
+        "ogTitle": "Intelligent Traffic Management System | KabatOne",
+        "ogDesc": "Adaptive signal control, congestion detection, and incident response in one ATMS platform. K-Traffic connects cameras, sensors, and signals to reduce congestion.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -100,19 +106,13 @@
     },
     {
       "url": "https://staging.kabatone.com/en/k-connect/",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (172/160 ideal)"
-        }
-      ],
+      "issues": [],
       "info": {
-        "title": "Public-Private Camera Integration for Command Centers | KabatOne",
-        "description": "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
+        "title": "Public-Private Camera Integration for Command Centers | K1",
+        "description": "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing.",
         "canonical": "https://kabatone.com/k-connect/",
-        "ogTitle": "Public-Private Camera Integration for Command Centers | KabatOne",
-        "ogDesc": "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing — no new infrastructure needed.",
+        "ogTitle": "Public-Private Camera Integration for Command Centers | K1",
+        "ogDesc": "Connect business and citizen cameras to your command center. K-Connect expands surveillance coverage via secure public-private video sharing.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -414,15 +414,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (171/160 ideal)"
+          "msg": "Description near limit (189/160 ideal)"
         }
       ],
       "info": {
-        "title": "VMS — Video Management Software for Public Safety | KabatOne",
-        "description": "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
+        "title": "What Is VMS Software? Video Management System Guide [2026]",
+        "description": "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
         "canonical": "https://kabatone.com/resources/what-is-video-management-software/",
-        "ogTitle": "VMS — Video Management Software for Public Safety | KabatOne",
-        "ogDesc": "Video management software (VMS) aggregates cameras from any manufacturer, adds AI analytics — LPR, behavioral detection, forensic search — and integrates with CAD and GIS.",
+        "ogTitle": "What Is VMS Software? Video Management System Guide [2026]",
+        "ogDesc": "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -432,13 +432,19 @@
     },
     {
       "url": "https://staging.kabatone.com/en/resources/what-is-video-analytics/",
-      "issues": [],
+      "issues": [
+        {
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (190/160 ideal)"
+        }
+      ],
       "info": {
-        "title": "What Is Video Analytics? AI for CCTV &amp; Public Safety | KabatOne",
-        "description": "Intelligent AI video analytics detects intrusions, crowds, weapons, and LPR in CCTV and IP cameras — real time, integrated with CAD dispatch and GIS.",
+        "title": "Video Analytics Software: AI-Powered CCTV &amp; Surveillance [2026]",
+        "description": "Video analytics uses AI to detect intrusions, count crowds, recognize plates, and identify threats in real-time CCTV footage. Compare the best video analytics platforms and cameras for 2026.",
         "canonical": "https://kabatone.com/resources/what-is-video-analytics/",
-        "ogTitle": "What Is Video Analytics? AI for CCTV &amp; Public Safety | KabatOne",
-        "ogDesc": "Intelligent AI video analytics detects intrusions, crowds, weapons, and LPR in CCTV and IP cameras — real time, integrated with CAD dispatch and GIS.",
+        "ogTitle": "Video Analytics Software: AI-Powered CCTV &amp; Surveillance [2026]",
+        "ogDesc": "Video analytics uses AI to detect intrusions, count crowds, recognize plates, and identify threats in real-time CCTV footage. Compare the best video analytics platforms and cameras for 2026.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -952,13 +958,19 @@
     },
     {
       "url": "https://staging.kabatone.com/en/vs/fusus/",
-      "issues": [],
+      "issues": [
+        {
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (165/160 ideal)"
+        }
+      ],
       "info": {
-        "title": "KabatOne vs Fusus — RTCC vs Full Operations Platform",
-        "description": "Fusus aggregates cameras for real-time awareness. KabatOne adds CAD dispatch, GIS, and traffic — a unified platform that goes beyond video intelligence.",
+        "title": "Fusus Alternative for Public Safety: KabatOne vs Fusus",
+        "description": "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
         "canonical": "https://kabatone.com/vs/fusus/",
-        "ogTitle": "KabatOne vs Fusus — RTCC vs Full Operations Platform",
-        "ogDesc": "Fusus aggregates cameras for real-time awareness. KabatOne adds CAD dispatch, GIS, and traffic — a unified platform that goes beyond video intelligence.",
+        "ogTitle": "Fusus Alternative for Public Safety: KabatOne vs Fusus",
+        "ogDesc": "Looking for a Fusus alternative? Fusus aggregates cameras for real-time awareness — KabatOne adds CAD dispatch, GIS and traffic in one unified platform beyond video.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 4,
@@ -1084,15 +1096,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (161/160 ideal)"
+          "msg": "Description near limit (179/160 ideal)"
         }
       ],
       "info": {
-        "title": "Peregrine.ai Alternative: KabatOne — CAD, AI Video &amp; GIS in One",
-        "description": "Looking for a Peregrine.ai alternative? Peregrine gives you analytics dashboards — KabatOne adds CAD dispatch, AI video, GIS and traffic in one unified platform.",
+        "title": "Peregrine.ai Analytics &amp; Reporting Dashboards vs KabatOne [2026]",
+        "description": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS &amp; traffic.",
         "canonical": "https://kabatone.com/vs/peregrine/",
-        "ogTitle": "Peregrine.ai Alternative: KabatOne — CAD, AI Video &amp; GIS in One",
-        "ogDesc": "Looking for a Peregrine.ai alternative? Peregrine gives you analytics dashboards — KabatOne adds CAD dispatch, AI video, GIS and traffic in one unified platform.",
+        "ogTitle": "Peregrine.ai Analytics &amp; Reporting Dashboards vs KabatOne [2026]",
+        "ogDesc": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS &amp; traffic.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 4,
@@ -1207,9 +1219,16 @@
     {
       "severity": "info",
       "check": "desc_near_max",
-      "msg": "Description near limit (179/160 ideal)",
-      "page": "https://staging.kabatone.com/en/k-video/"
+      "msg": "Description near limit (168/160 ideal)",
+      "page": "https://staging.kabatone.com/en/k-dispatch/"
     }
   ],
-  "resolvedIssues": []
+  "resolvedIssues": [
+    {
+      "severity": "warning",
+      "check": "desc_long",
+      "msg": "Description too long (217 chars, max 200)",
+      "page": "https://staging.kabatone.com/en/k-dispatch/"
+    }
+  ]
 }
