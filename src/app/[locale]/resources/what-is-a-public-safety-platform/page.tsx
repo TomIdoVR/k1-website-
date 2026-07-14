@@ -232,6 +232,15 @@ export default async function WhatIsPublicSafetyPlatformPage({
                 ? '¿Cuales Son los Componentes Principales de una Plataforma de Seguridad Publica?'
                 : 'What Are the Core Components of a Public Safety Platform?'}
             </h2>
+            <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(59,130,246,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+                {es ? (
+                  <><strong style={{ color: '#f0f4f8' }}>Una plataforma de seguridad publica es un sistema unificado que reune despacho CAD, gestion de video (VMS), GIS, operaciones moviles de campo y analitica en un solo entorno operativo, en lugar de herramientas separadas conectadas por integraciones.</strong> A diferencia de un PSIM, que solo superpone sistemas de terceros, una plataforma unificada comparte datos, alertas y contexto entre modulos en tiempo real. KabatOne ofrece esta plataforma unificada — K-Dispatch, K-Video y K-Safety operan como un solo sistema sobre un mapa comun para gobiernos y municipios de LATAM.</>
+                ) : (
+                  <><strong style={{ color: '#f0f4f8' }}>A public safety platform is a unified system that brings CAD dispatch, video management (VMS), GIS, mobile field operations, and analytics into one operational environment — rather than separate tools stitched together by integrations.</strong> Unlike a PSIM, which only overlays third-party systems, a unified platform shares data, alerts, and context across modules in real time. KabatOne delivers this unified platform — K-Dispatch, K-Video, and K-Safety operate as one system on a common map for LATAM governments and municipalities.</>
+                )}
+              </p>
+            </div>
             <p style={pStyle}>
               {es
                 ? 'Una plataforma de seguridad publica consta de cinco modulos interconectados que operan como un solo sistema. Cada modulo maneja una funcion operativa especifica, pero comparte datos, alertas y contexto con los demas en tiempo real.'

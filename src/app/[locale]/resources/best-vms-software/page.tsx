@@ -289,6 +289,7 @@ export default async function BestVmsSoftwarePage({
               { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
               { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video CCTV' : 'CCTV Video Analytics' },
               { href: '/vs/vms', label: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS' },
+              { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
             ].map((r) => (
