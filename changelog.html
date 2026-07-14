@@ -357,6 +357,18 @@
     <div class="timeline">
 
 
+      <!-- v2.276 -->
+      <div class="tl-entry fix" id="v2.276">
+        <div class="tl-meta"><span class="tl-ver">v2.276</span><span class="tl-date">2026-07-14</span></div>
+        <div class="tl-title">Verge daily audit fix: K-Dispatch meta description length (KAB-1612)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>K-Dispatch metadata description trimmed 217 → 164 chars (<code>src/content/en/metadata.ts</code>) — the daily Verge SEO audit flagged a new warning for exceeding the 200-char max</li>
+            <li>Dropped the redundant trailing "CAD dispatch software for police, fire, and EMS." sentence, keeping the CAD / NG911 / 911-response keywords at ideal length. TS passes; nextjs staging</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.275 -->
       <div class="tl-entry feat" id="v2.275">
         <div class="tl-meta"><span class="tl-ver">v2.275</span><span class="tl-date">2026-07-13</span></div>

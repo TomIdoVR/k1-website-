@@ -6,7 +6,7 @@ export const metadata = {
   },
   kDispatch: {
     title: "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
-    description: "K-Dispatch is AI-powered computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and real-time video. CAD dispatch software for police, fire, and EMS.",
+    description: "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire & EMS.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
