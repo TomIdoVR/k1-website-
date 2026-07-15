@@ -45,7 +45,7 @@ function CadCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#ef4444' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 5a2 2 0 0 1 2-2h2l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v2a2 2 0 0 1-2 2A16 16 0 0 1 3 5z" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 5a2 2 0 0 1 2-2h2l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v2a2 2 0 0 1-2 2A16 16 0 0 1 3 5z" /></svg>
         </span>
         <span className="hll-card-title">CAD / 911</span>
       </div>
@@ -82,9 +82,9 @@ function VideoCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#2563eb' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="13" height="12" rx="2" /><path d="M15 10l6-3v10l-6-3" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="13" height="12" rx="2" /><path d="M15 10l6-3v10l-6-3" /></svg>
         </span>
-        <span className="hll-card-title">{es ? 'Video y Analítica' : 'Video &amp; Analytics'}</span>
+        <span className="hll-card-title">{es ? 'Video y Analítica' : 'Video & Analytics'}</span>
       </div>
       <div className="hll-video-grid">
         {[0, 1, 2, 3].map((i) => (
@@ -104,7 +104,7 @@ function GisCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#10b981' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-6-5.7-6-10a6 6 0 0 1 12 0c0 4.3-6 10-6 10z" /><circle cx="12" cy="11" r="2" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-6-5.7-6-10a6 6 0 0 1 12 0c0 4.3-6 10-6 10z" /><circle cx="12" cy="11" r="2" /></svg>
         </span>
         <span className="hll-card-title">GIS / {es ? 'Mapa' : 'Map'}</span>
       </div>
@@ -129,7 +129,7 @@ function EventCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#f59e0b' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M9 3v4M15 3v4" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M9 3v4M15 3v4" /></svg>
         </span>
         <span className="hll-card-title">{es ? 'Gestión de Eventos' : 'Event Management'}</span>
       </div>
@@ -163,7 +163,7 @@ function UdeCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#8b5cf6' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.5 20 5.5V12c0 5.2-3.6 8.4-8 9.5-4.4-1.1-8-4.3-8-9.5V5.5Z" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.5 20 5.5V12c0 5.2-3.6 8.4-8 9.5-4.4-1.1-8-4.3-8-9.5V5.5Z" /></svg>
         </span>
         <span className="hll-card-title">{es ? 'Evidencia Digital Unificada' : 'Unified Digital Evidence'}</span>
       </div>
@@ -190,7 +190,7 @@ function MobileCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#6366f1' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="7" y="3" width="10" height="18" rx="2" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="7" y="3" width="10" height="18" rx="2" /></svg>
         </span>
         <span className="hll-card-title">{es ? 'Respuesta Móvil' : 'Mobile Response'}</span>
       </div>
@@ -210,12 +210,12 @@ function MobileCard({ es }: { es: boolean }) {
 
 function IntegrationsCard({ es }: { es: boolean }) {
   const icons = [
-    <svg key="1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="M16 10l5-3v10l-5-3" /></svg>,
-    <svg key="2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>,
-    <svg key="3" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 19a10 10 0 0 1 0-14M20 5a10 10 0 0 1 0 14" /><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" /></svg>,
-    <svg key="4" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 15v-2a8 8 0 0 1 16 0v2M4 15h3v5H4zM17 15h3v5h-3z" /></svg>,
-    <svg key="5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M6 16a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6.9A3.5 3.5 0 0 1 17 16H6z" /></svg>,
-    <svg key="6" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="6" cy="12" r="2.4" /><circle cx="18" cy="6" r="2.4" /><circle cx="18" cy="18" r="2.4" /><path d="M8.3 10.7l7.4-3.4M8.3 13.3l7.4 3.4" /></svg>,
+    <svg key="1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="M16 10l5-3v10l-5-3" /></svg>,
+    <svg key="2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>,
+    <svg key="3" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 19a10 10 0 0 1 0-14M20 5a10 10 0 0 1 0 14" /><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" /></svg>,
+    <svg key="4" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 15v-2a8 8 0 0 1 16 0v2M4 15h3v5H4zM17 15h3v5h-3z" /></svg>,
+    <svg key="5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M6 16a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6.9A3.5 3.5 0 0 1 17 16H6z" /></svg>,
+    <svg key="6" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="6" cy="12" r="2.4" /><circle cx="18" cy="6" r="2.4" /><circle cx="18" cy="18" r="2.4" /><path d="M8.3 10.7l7.4-3.4M8.3 13.3l7.4 3.4" /></svg>,
   ]
   const labels = [
     { en: 'LPR Cameras', es: 'Cámaras LPR' },
@@ -229,7 +229,7 @@ function IntegrationsCard({ es }: { es: boolean }) {
     <div className="hll-card" style={{ '--cc': '#3b82f6' } as React.CSSProperties}>
       <div className="hll-card-head">
         <span className="hll-card-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="12" r="2.6" /><circle cx="18" cy="6" r="2.6" /><circle cx="18" cy="18" r="2.6" /><path d="M8.3 10.7 15.7 7.1M8.3 13.3 15.7 16.9" /></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="12" r="2.6" /><circle cx="18" cy="6" r="2.6" /><circle cx="18" cy="18" r="2.6" /><path d="M8.3 10.7 15.7 7.1M8.3 13.3 15.7 16.9" /></svg>
         </span>
         <span className="hll-card-title">{es ? 'Integraciones' : 'Integrations'}</span>
       </div>

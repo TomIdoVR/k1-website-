@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
-import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import HeroV3Platform from '@/components/hero-lab/HeroV3Platform'
+import './hero-lab/hero-lab.css'
+import './hero-lab/hero-lab-light.css'
 import CTASection from '@/components/CTASection'
 import ModulesSection from '@/components/ModulesSection'
 import HowItWorks from '@/components/HowItWorks'
@@ -359,53 +361,17 @@ export default async function HomePage({
 
   return (
     <>
-      <Nav />
-      <div className="page-light" style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
+      <HeroV3Platform es={es} />
+      <div className="page-light" style={{ position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
 
-        {/* ═══ HERO SECTION ═══ */}
-        <div className="dark-section hp-hero-wrap">
-        <div className="hp-bg-layer" />
-        <div className="hp-scan-line" />
-        <section className="hp-hero">
-          {/* Eyebrow */}
-          <div className="hp-eyebrow">
-            <span className="hp-eyebrow-dot" />
-            {es ? 'Plataforma de Seguridad Pública' : 'Public Safety Platform'}
-          </div>
-
-          {/* H1 */}
-          <h1 className="hp-headline">
-            {es
-              ? 'El Sistema Operativo Unificado para la Seguridad Pública'
-              : 'The Unified Operating System for Public Safety'}
-          </h1>
-
-          {/* Subtitle */}
-          <p className="hp-sub">
-            {es
-              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco soluciones integradas. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
-              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated solutions. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
-          </p>
-
-          {/* CTA Row */}
-          <div className="hp-cta-row">
-            <Link href="/contact" className="hp-btn-primary">
-              {es ? 'Solicita una Demo' : 'Book a Demo'}
-              <svg className="hp-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M3 7h8M7 3l4 4-4 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </div>
-
-          {/* C5 internal link */}
-          <p className="hp-c5-link">
+        {/* ═══ C5 internal link (preserved from legacy hero for SEO) ═══ */}
+        <div className="dark-section" style={{ textAlign: 'center', padding: '28px 40px 4px' }}>
+          <p className="hp-c5-link" style={{ margin: 0 }}>
             {es
               ? <>Conoce cómo funcionan los <Link href="/resources/how-c5-command-centers-work" style={{color:'#60a5fa',textDecoration:'none'}}>centros de mando C5 →</Link></>
               : <>Learn how <Link href="/resources/how-c5-command-centers-work" style={{color:'#60a5fa',textDecoration:'none'}}>C5 command centers work →</Link></>
             }
           </p>
-
-        </section>
         </div>
 
         {/* ═══ HOW IT WORKS ═══ */}
