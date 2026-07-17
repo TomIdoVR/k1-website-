@@ -274,6 +274,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  milestoneAlternatives: {
+    title: "Best Milestone XProtect Alternatives 2026 for Public Safety | KabatOne",
+    description: "The best Milestone XProtect alternatives for public safety: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola compared — why agencies switch, selection criteria, and the best unified platform.",
+    canonical: "https://kabatone.com/resources/milestone-alternatives/",
+    og: {
+      title: "Best Milestone XProtect Alternatives for Public Safety (2026)",
+      description: "Milestone alternatives compared — KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a pure VMS for command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   rtccSoftware: {
     title: "Best RTCC Software 2026: Real-Time Crime Center Vendors Compared | KabatOne",
     description: "Compare RTCC software vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): what real-time crime center software is, selection criteria, cost, and the best unified platform for public safety.",

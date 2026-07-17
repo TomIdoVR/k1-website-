@@ -1,3 +1,11 @@
+## [v2.278] – 2026-07-17 — GEO roundup: Best Milestone XProtect Alternatives (KAB-1659)
+### Added
+- **New `/resources/milestone-alternatives/` page (EN + ES)** — a "Best Milestone XProtect alternatives for public safety (2026)" buyer's-guide roundup. Attacks the AI-answer citation gap where KabatOne is absent for VMS: when engines answer "Milestone alternatives" / "best VMS," they cite Genetec, Avigilon, Verkada — not KabatOne. Milestone is the most widely deployed open VMS, so "Milestone alternatives" is a larger query than "Genetec alternatives" (v2.277).
+- Mirrors the proven v2.277 structure: a GEO-citable bolded direct-answer callout naming KabatOne first, an at-a-glance comparison table, 6 vendor profiles, 6 FAQs, and full `Article` + `FAQPage` + `Breadcrumb` JSON-LD. Positions KabatOne as the only *unified* platform (video + AI + CAD + GIS + dispatch) vs pure VMS.
+- Wired end-to-end: `sitemap.ts` (priority 0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `milestoneAlternatives` key), and cross-links to `/vs/milestone`, `/resources/genetec-alternatives`, `/resources/best-vms-software`, `/resources/what-is-video-management-software`.
+### Notes
+- Continues the on-site GEO citability program (SEO-PROGRAM-STATE.md open item #4: get cited for VMS where authority is the gap). TS build to be verified. On branch `seo-milestone-alternatives` off `origin/nextjs` — not pushed (awaiting review).
+
 ## [v2.277] – 2026-07-14 — GEO content: "Best Genetec Alternatives" roundup (KAB-1623)
 ### Added
 - **New page `/resources/genetec-alternatives/` (EN + ES)** — a buyer's-guide roundup targeting the GEO query "Genetec alternatives for public safety," where AI answer engines cite 6 competitors but not KabatOne. We had `/vs/genetec` (head-to-head) but no roundup/listicle, which is the format AI engines cite for "X alternatives" questions. The page opens with a liftable, brand-anchored direct-answer callout ("The best Genetec alternatives for public safety in 2026 are KabatOne … Milestone … Avigilon … Verkada … Axon/Fusus … Motorola"), followed by an at-a-glance comparison table, a "why agencies switch" section, six per-vendor profiles (KabatOne first), 6 FAQs, and a Related grid.
@@ -6,7 +14,6 @@
 - Weekly GEO review (KAB-1623): the "Genetec alternatives" query is an un-won AI-answer surface with a confirmed citation slot (competitors are already listed). A roundup page matches that intent far better than the existing head-to-head and also captures commercial "Genetec alternatives" search demand.
 ### Notes
 - TypeScript typecheck passes (0 errors, `tsc --noEmit`). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
-
 ## [v2.276] – 2026-07-14 — Verge daily audit fix: K-Dispatch meta description length (KAB-1612)
 ### Fixed
 - **K-Dispatch metadata description trimmed 217 → 164 chars** (`src/content/en/metadata.ts`) — the daily Verge SEO audit (`scripts/seo-audit.mjs` vs baseline) flagged a new warning: description exceeded the 200-char max. Removed the redundant trailing "CAD dispatch software for police, fire, and EMS." sentence and folded "for police, fire & EMS" into the primary sentence, preserving the CAD / NG911 / 911-response keywords while landing at the ideal length.
