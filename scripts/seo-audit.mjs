@@ -215,21 +215,29 @@ function checkPage(url, html) {
   return { url, issues, info };
 }
 
-async function fetchPage(url, timeout = 15000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
-    });
-    const html = await res.text();
-    clearTimeout(timer);
-    return { ok: true, status: res.status, html };
-  } catch (e) {
-    clearTimeout(timer);
-    return { ok: false, error: e.message };
+async function fetchPage(url, timeout = 20000, retries = 2) {
+  let lastError = "";
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
+      });
+      const html = await res.text();
+      clearTimeout(timer);
+      return { ok: true, status: res.status, html };
+    } catch (e) {
+      clearTimeout(timer);
+      lastError = e.message;
+      // Retry transient network/abort errors with linear backoff before flagging critical.
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
+      }
+    }
   }
+  return { ok: false, error: lastError };
 }
 
 async function runBatch(urls, batchSize) {
