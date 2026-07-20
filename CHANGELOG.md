@@ -1,3 +1,11 @@
+## [v2.280] – 2026-07-20 — Privacy notice: 911 Baja California Sur (SSP-BCS) (KAB-1716)
+### Added
+- **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.
+- `noindex, follow` + canonical/EN-ES hreflang, and kept out of the sitemap — a store-compliance page, not an organic-search target (matches the per-app privacy pages from v2.270).
+### Notes
+- ARCO phone normalized to `612 175 0400 Ext. 1097` to match the notice's own Contacto number; the source PDF showed a 13-digit typo.
+- **Rescued from `hero-redesign`** (commit `1397822`, was mislabeled v2.276 which collided with the K-Dispatch meta fix already on nextjs) — cherry-picked onto `nextjs` so the page reaches staging/production instead of 404ing like the v2.270 privacy pages did (KAB-1604). Only the page.tsx + component were taken; hero-lab changelog noise dropped.
+
 ## [v2.280] – 2026-07-13 — SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs
 **Changed / Added** — data-driven pass from the branded/non-branded traffic cut. Originally v2.270; renumbered on rebase onto nextjs (which independently shipped the v2.272–v2.274 GEO callout program and the v2.277–v2.279 roundup program). Deduped against that work — kept only what was additive.
 - **C5-ES zero-click fix** — `queEsUnC5` (ES) title + meta rewritten. Ranks pos ~8 on high Spanish volume but 0 clicks (AI Overview answers the definition); new meta opens a curiosity gap (how many C5s in Mexico, C4-vs-C5, cost). Untouched by the v2.274 sweep, which only added EN callouts.
