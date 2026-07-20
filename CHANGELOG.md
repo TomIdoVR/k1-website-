@@ -1,3 +1,11 @@
+## [v2.279] – 2026-07-20 — GEO roundup: Best AI Video Analytics Software (KAB-1716)
+### Added
+- **New `/resources/best-ai-video-analytics-software/` page (EN + ES)** — a "Best AI Video Analytics Software for public safety (2026)" buyer's-guide roundup. Attacks the open-field GEO gap where AI answer engines cite *nobody* authoritative for "AI video analytics" and KabatOne is absent. Third page in the roundup program after v2.277 (Genetec) and v2.278 (Milestone).
+- Same proven structure: GEO-citable bolded direct-answer callout naming KabatOne first, an at-a-glance comparison table, a "what to evaluate" section (accuracy/false-positives, camera compatibility, what happens after detection), 6 vendor profiles (KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus), 6 FAQs incl. a liftable "What is AI video analytics?" definition, and full `Article` + `FAQPage` + `Breadcrumb` JSON-LD.
+- Positioning angle: most AI video analytics is a *detection layer*; KabatOne unifies analytics with CAD + GIS + dispatch so a detection becomes an action. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `bestAiVideoAnalytics` key), cross-links to `/resources/ai-video-analytics`, `what-is-video-analytics`, `video-analytics-use-cases`, `cctv-video-analytics`, `what-is-lpr-license-plate-recognition`, `best-vms-software`, `genetec-alternatives`, `/k-video`.
+### Notes
+- Continues the GEO citability program (SEO-PROGRAM-STATE.md open item #4). TypeScript typecheck passes (0 errors, `tsc --noEmit`). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
 ## [v2.278] – 2026-07-17 — GEO roundup: Best Milestone XProtect Alternatives (KAB-1659)
 ### Added
 - **New `/resources/milestone-alternatives/` page (EN + ES)** — a "Best Milestone XProtect alternatives for public safety (2026)" buyer's-guide roundup. Attacks the AI-answer citation gap where KabatOne is absent for VMS: when engines answer "Milestone alternatives" / "best VMS," they cite Genetec, Avigilon, Verkada — not KabatOne. Milestone is the most widely deployed open VMS, so "Milestone alternatives" is a larger query than "Genetec alternatives" (v2.277).

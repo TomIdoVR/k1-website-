@@ -284,6 +284,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  bestAiVideoAnalytics: {
+    title: "Best AI Video Analytics Software 2026 for Public Safety | KabatOne",
+    description: "The best AI video analytics software for public safety: KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus compared — accuracy, false positives, camera compatibility, and when analytics must become dispatch.",
+    canonical: "https://kabatone.com/resources/best-ai-video-analytics-software/",
+    og: {
+      title: "Best AI Video Analytics Software for Public Safety (2026)",
+      description: "AI video analytics compared — KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus — and why what happens after a detection matters as much as the detection.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   rtccSoftware: {
     title: "Best RTCC Software 2026: Real-Time Crime Center Vendors Compared | KabatOne",
     description: "Compare RTCC software vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): what real-time crime center software is, selection criteria, cost, and the best unified platform for public safety.",
