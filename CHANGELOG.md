@@ -1,3 +1,10 @@
+## [v2.276] – 2026-07-14 — Privacy notice: 911 Baja California Sur (SSP-BCS)
+### Added
+- **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.
+- `noindex, follow` + canonical/EN-ES hreflang, and kept out of the sitemap — a store-compliance page, not an organic-search target (matches the per-app privacy pages from v2.270).
+### Notes
+- ARCO phone normalized to `612 175 0400 Ext. 1097` to match the notice's own Contacto number; the source PDF showed a 13-digit typo (`612121750400`).
+
 ## [2.273] 2026-07-13 — Hero redesign: owner local-work guide
 **Added**
 - Added an "Working On This Yourself (Owner)" section to `docs/HERO-REDESIGN-LOCAL-WORKFLOW.md` — from-scratch, copy-pasteable steps so Omer can run and edit the isolated hero (`/hero-lab`) locally in the `codex/hero-reference-rebuild` worktree, commit-only, without pushing to staging or production. Requested in KAB-1606 ("make sure it's documented so I can work on it also").
