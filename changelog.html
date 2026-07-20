@@ -356,6 +356,83 @@
 
     <div class="timeline">
 
+      <!-- v2.280 -->
+      <div class="tl-entry feat" id="v2.280">
+        <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-20</span></div>
+        <div class="tl-title">Privacy notice: 911 Baja California Sur (SSP-BCS) (KAB-1716)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New government privacy-notice page <code>/privacy/911-baja-california-sur</code> (+ <code>/es/</code>) reproducing the official SSP-BCS "Aviso de Privacidad Simplificado" (data, purpose, transfers, ARCO, changes, contact). New component <code>Privacy911BCS.tsx</code>; bilingual, Spanish governing</li>
+            <li>noindex,follow + canonical/EN-ES hreflang, kept out of the sitemap — store-compliance page, matches v2.270 per-app privacy pages. Rescued from hero-redesign (commit 1397822) onto nextjs so it reaches staging/production instead of 404ing</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- v2.280 -->
+      <div class="tl-entry feat" id="v2.280">
+        <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-13</span></div>
+        <div class="tl-title">SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>C5-ES zero-click fix</strong> — rewrote the ES title + meta for <code>que-es-un-c5</code> (pos ~8, 0 clicks — AI Overview answers the definition); new meta opens a curiosity gap the AIO can't fill. Untouched by the v2.274 sweep (EN only).</li>
+            <li><strong>RTCC GEO citability</strong> — added "What are the leading RTCC software vendors?" Q&amp;A (EN+ES) — the one GEO gap the v2.272–v2.274 sweep did not cover (KabatOne still uncited for RTCC as of 07-20). Extends FAQPage schema.</li>
+            <li><strong>CCTV VMS + CAD query-variants</strong> — exact-match FAQs (EN+ES): "CCTV video management system" on the VMS hub, and 4 CAD longtail variants (police CAD systems, 911 dispatch software, computer automated dispatch, call-taking systems) on <code>best-cad-dispatch-software</code>.</li>
+            <li><strong>Spanish depth + analysis</strong> — "qué quiere decir C5" variant + <code>/es/k-dispatch</code> funnel link; branded/non-branded traffic dashboard + longtail sprint plan. Deduped against v2.272–v2.279 (kept only additive changes).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.279 -->
+      <div class="tl-entry feat" id="v2.279">
+        <div class="tl-meta"><span class="tl-ver">v2.279</span><span class="tl-date">2026-07-20</span></div>
+        <div class="tl-title">GEO roundup: Best AI Video Analytics Software (KAB-1716)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New <code>/resources/best-ai-video-analytics-software/</code> (EN + ES) — "Best AI Video Analytics Software for public safety" roundup attacking the open-field GEO gap where AI engines cite nobody authoritative and KabatOne is absent. Third in the roundup program after Genetec (v2.277) and Milestone (v2.278)</li>
+            <li>Same proven pattern: GEO-citable direct-answer callout, comparison table, "what to evaluate" section, 6 vendor profiles (KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus), 6 FAQs incl. a liftable "What is AI video analytics?" definition, full Article + FAQPage + Breadcrumb schema. Wired into sitemap, resources hub (EN+ES), metadata (EN+ES), cross-linked to ai-video-analytics, what-is-video-analytics, best-vms-software, genetec-alternatives, /k-video</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- v2.278 -->
+      <div class="tl-entry feat" id="v2.278">
+        <div class="tl-meta"><span class="tl-ver">v2.278</span><span class="tl-date">2026-07-17</span></div>
+        <div class="tl-title">GEO roundup: Best Milestone XProtect Alternatives (KAB-1659)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New <code>/resources/milestone-alternatives/</code> (EN + ES) — a "Best Milestone XProtect alternatives for public safety" roundup attacking the AI-answer citation gap where KabatOne is absent for VMS (Milestone/Genetec win those answers)</li>
+            <li>Mirrors the v2.277 Genetec pattern: GEO-citable direct-answer callout, at-a-glance comparison table, 6 vendor profiles, 6 FAQs, full Article + FAQPage + Breadcrumb schema. Wired into sitemap, resources hub (EN+ES), metadata (EN+ES), and cross-linked to /vs/milestone, genetec-alternatives, best-vms-software</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.277 -->
+      <div class="tl-entry feat" id="v2.277">
+        <div class="tl-meta"><span class="tl-ver">v2.277</span><span class="tl-date">2026-07-14</span></div>
+        <div class="tl-title">GEO content: "Best Genetec Alternatives" roundup (KAB-1623)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New page <code>/resources/genetec-alternatives/</code> (EN + ES) — buyer's-guide roundup targeting the "Genetec alternatives for public safety" GEO query where AI engines cite 6 competitors but not KabatOne</li>
+            <li>Opens with a liftable brand-anchored direct-answer callout (KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola), plus comparison table, 6 vendor profiles, 6 FAQs, Article + FAQPage + Breadcrumb schema</li>
+            <li>Metadata EN + ES, sitemap (priority 0.75), Resources hub cards EN + ES. TS passes; nextjs staging</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.276 -->
+      <div class="tl-entry fix" id="v2.276">
+        <div class="tl-meta"><span class="tl-ver">v2.276</span><span class="tl-date">2026-07-14</span></div>
+        <div class="tl-title">Verge daily audit fix: K-Dispatch meta description length (KAB-1612)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>K-Dispatch metadata description trimmed 217 → 164 chars (<code>src/content/en/metadata.ts</code>) — the daily Verge SEO audit flagged a new warning for exceeding the 200-char max</li>
+            <li>Dropped the redundant trailing "CAD dispatch software for police, fire, and EMS." sentence, keeping the CAD / NG911 / 911-response keywords at ideal length. TS passes; nextjs staging</li>
+          </ul>
+        </div>
+      </div>
 
       <!-- v2.275 -->
       <div class="tl-entry feat" id="v2.275">

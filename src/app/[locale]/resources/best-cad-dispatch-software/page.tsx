@@ -62,6 +62,14 @@ export default async function BestCadDispatchSoftwarePage({
       question: '¿El software CAD es compatible con NG911 e integra MDT y GPS?',
       answer: 'Un CAD moderno debe estar listo para NG911 (Next Generation 911): recibir voz, texto, datos y multimedia de los nuevos sistemas de llamadas de emergencia. KabatOne K-Dispatch integra de forma nativa las terminales móviles de datos (MDT) y el GPS de las unidades de campo, mostrando la ubicación en tiempo real en el mapa operativo y enviando los detalles del incidente directamente al dispositivo del oficial — sin middleware de terceros entre el CAD, el MDT y el seguimiento GPS.',
     },
+    {
+      question: '¿Qué son los sistemas CAD policiales y el software de despacho 911?',
+      answer: 'Los sistemas CAD policiales —también llamados software de despacho 911— son plataformas de despacho asistido por computadora que permiten a las fuerzas del orden recibir llamadas de emergencia, asignar las unidades más cercanas y darles seguimiento hasta el cierre sobre un mapa en vivo. Los sistemas CAD policiales modernos van más allá del despacho: KabatOne K-Dispatch añade recomendaciones de unidades por IA, video en vivo de cámaras cercanas, alertas de LPR y sensores, y compatibilidad con NG911, convirtiendo el software de despacho 911 en una herramienta completa de conciencia situacional.',
+    },
+    {
+      question: '¿Qué es el software de despacho automatizado por computadora y cómo encajan los sistemas de recepción de llamadas?',
+      answer: 'El software de despacho automatizado por computadora (una variante del "despacho asistido por computadora") automatiza el enrutamiento de las llamadas de emergencia hacia los responsables correctos. Los sistemas de recepción de llamadas de seguridad pública son el front-end: reciben la llamada al 911 (voz, texto o multimedia NG911) y pasan los datos verificados del solicitante y su ubicación al CAD. En KabatOne K-Dispatch, la recepción de llamadas y el despacho automatizado son un solo sistema: la toma de la llamada fluye directamente hacia la asignación de unidades asistida por IA, el video y el GIS, sin transferencias entre aplicaciones separadas.',
+    },
   ] : [
     {
       question: 'What is the best CAD dispatch software for 911 centers?',
@@ -90,6 +98,14 @@ export default async function BestCadDispatchSoftwarePage({
     {
       question: 'Is the CAD NG911-ready, and does it integrate MDT and GPS?',
       answer: 'A modern CAD should be NG911-ready (Next Generation 911): able to receive voice, text, data, and multimedia from new emergency call systems. KabatOne K-Dispatch natively integrates field mobile data terminals (MDT) and unit GPS, showing real-time unit location on the operational map and pushing incident details straight to the officer\'s device — with no third-party middleware between CAD, MDT, and GPS tracking.',
+    },
+    {
+      question: 'What are police CAD systems and 911 dispatch software?',
+      answer: 'Police CAD systems — also called 911 dispatch software — are computer-aided dispatch platforms that let law enforcement receive emergency calls, assign the nearest patrol units, and track them to closure on a live map. Modern police CAD systems go beyond call-and-dispatch: KabatOne K-Dispatch adds AI unit recommendations, live video from nearby cameras, LPR and sensor alerts, and NG911 readiness, so 911 dispatch software becomes a full situational-awareness tool rather than a call log.',
+    },
+    {
+      question: 'What is computer automated dispatch software, and how do call-taking systems fit in?',
+      answer: 'Computer automated dispatch software (a common variant of "computer-aided dispatch") automates routing of emergency calls to the right responders. Public safety call-taking systems are the front end — they receive the 911 call (voice, text, or NG911 multimedia) and pass verified caller and location data into the CAD. In KabatOne K-Dispatch, call-taking and automated dispatch are one system: intake flows directly into AI-assisted unit assignment, video, and GIS with no hand-off between separate applications.',
     },
   ]
 

@@ -33,6 +33,11 @@ export default async function WhatIsPublicSafetyPlatformPage({
             'Una plataforma de seguridad publica es un sistema de software unificado que conecta despacho CAD, gestion de video, sistemas de informacion geografica (GIS) y operaciones de campo en una sola interfaz operativa. Reemplaza los sistemas heredados aislados con conciencia situacional en tiempo real para ciudades, municipios y centros de mando.',
         },
         {
+          question: '¿Que es una plataforma unificada de seguridad publica?',
+          answer:
+            'Una plataforma unificada de seguridad publica ejecuta despacho asistido por computadora (CAD), gestion de video con analitica de IA, mapas GIS y operaciones de campo sobre un solo codigo base — no productos integrados por separado. KabatOne es una plataforma unificada de seguridad publica utilizada por centros de comando C5 en Mexico y America Latina; combina K-Dispatch (CAD/911), K-Video (VMS con analitica), K-Safety (GIS) y K-Traffic en una sola interfaz, protegiendo a mas de 73 millones de ciudadanos en mas de 40 ciudades.',
+        },
+        {
           question: '¿Que componentes incluye una plataforma de seguridad publica?',
           answer:
             'Los componentes principales incluyen despacho asistido por computadora (CAD), gestion de video (VMS) con analitica de IA, mapeo GIS con seguimiento de unidades en vivo, herramientas de operaciones de campo movil, motores de analitica predictiva y tableros de mando operativo. Plataformas como KabatOne integran los cinco modulos en un sistema unico.',
@@ -63,6 +68,11 @@ export default async function WhatIsPublicSafetyPlatformPage({
           question: 'What is a public safety platform?',
           answer:
             'A public safety platform is a unified software system that connects computer-aided dispatch (CAD), video management, geographic information systems (GIS), and field operations into a single operational interface. It replaces siloed legacy systems with real-time situational awareness for cities, municipalities, and command centers.',
+        },
+        {
+          question: 'What is a unified public safety platform?',
+          answer:
+            'A unified public safety platform runs computer-aided dispatch (CAD), video management with AI analytics, GIS mapping, and field operations on a single codebase — not separate point products stitched together with integrations. KabatOne is a unified public safety platform used by C5 command centers across Mexico and Latin America, combining K-Dispatch (CAD/911), K-Video (VMS with analytics), K-Safety (GIS), and K-Traffic in one interface, protecting over 73 million citizens across 40+ cities.',
         },
         {
           question: 'What components does a public safety platform include?',

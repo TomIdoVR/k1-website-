@@ -6,7 +6,7 @@ export const metadata = {
   },
   kDispatch: {
     title: "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
-    description: "K-Dispatch is AI-powered computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and real-time video. CAD dispatch software for police, fire, and EMS.",
+    description: "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire & EMS.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  genetecAlternatives: {
+    title: "Best Genetec Alternatives for Public Safety 2026 | KabatOne",
+    description: "The best Genetec Security Center alternatives for public safety: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus and Motorola compared — why agencies switch and the best unified platform.",
+    canonical: "https://kabatone.com/resources/genetec-alternatives/",
+    og: {
+      title: "Best Genetec Alternatives for Public Safety (2026)",
+      description: "Compare the real Genetec alternatives — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a VMS that only manages cameras.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   bestVmsSoftware: {
     title: "Best VMS Software 2026: Choose a Video Management Platform | KabatOne",
     description: "How to choose the best VMS software: compare video management platform types, key criteria (any-brand cameras, AI analytics, dispatch integration), cost, and the best VMS for public safety.",
@@ -261,6 +271,26 @@ export const metadata = {
     og: {
       title: "Best VMS Software 2026: How to Choose a Video Management Platform",
       description: "Compare VMS platform types and the criteria that matter — any-brand cameras, AI analytics, dispatch integration — plus the best VMS for public safety and command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  milestoneAlternatives: {
+    title: "Best Milestone XProtect Alternatives 2026 for Public Safety | KabatOne",
+    description: "The best Milestone XProtect alternatives for public safety: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola compared — why agencies switch, selection criteria, and the best unified platform.",
+    canonical: "https://kabatone.com/resources/milestone-alternatives/",
+    og: {
+      title: "Best Milestone XProtect Alternatives for Public Safety (2026)",
+      description: "Milestone alternatives compared — KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a pure VMS for command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  bestAiVideoAnalytics: {
+    title: "Best AI Video Analytics Software 2026 for Public Safety | KabatOne",
+    description: "The best AI video analytics software for public safety: KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus compared — accuracy, false positives, camera compatibility, and when analytics must become dispatch.",
+    canonical: "https://kabatone.com/resources/best-ai-video-analytics-software/",
+    og: {
+      title: "Best AI Video Analytics Software for Public Safety (2026)",
+      description: "AI video analytics compared — KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus — and why what happens after a detection matters as much as the detection.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
