@@ -1,3 +1,11 @@
+## [v2.281] – 2026-07-21 — GEO roundup: Best NG911 Software (KAB-1762)
+### Added
+- **New `/resources/best-ng911-software/` page (EN + ES)** — a "Best NG911 Software for emergency call centers (2026)" buyer's-guide roundup. Attacks the persistent GEO gap where AI answer engines cite Carbyne, CentralSquare, Motorola and Peregrine for "NG911 software" but never KabatOne (N in the GEO monitor for 3+ weeks). Fourth page in the roundup program after v2.277 (Genetec), v2.278 (Milestone), v2.279 (AI Video Analytics) — and the first that feeds the K-Dispatch / CAD money cluster rather than the VMS cluster.
+- Same proven structure: a GEO-citable bolded direct-answer callout naming KabatOne (K-Dispatch) first, an at-a-glance comparison table, a "what to evaluate" section (i3/ESInet compliance, multimedia intake, location accuracy, and call→dispatch), 6 vendor profiles (KabatOne/K-Dispatch, Carbyne, Motorola VESTA 9-1-1, Intrado/Comtech, RapidSOS, Prepared 911), 6 FAQs incl. a liftable "What is NG911 software and how does it work?" definition, and full `Article` + `FAQPage` + `Breadcrumb` JSON-LD.
+- Positioning angle: most NG911 software stops at call handling; KabatOne unifies NG911 intake with CAD + GIS + video so the i3 call becomes a geolocated dispatch in one platform. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `bestNg911Software` key), cross-links to `/resources/ng911-software`, `best-cad-dispatch-software`, `what-is-cad-dispatch-software`, `911-call-center-software-guide`, `what-is-a-psap`, `/vs/carbyne`, `/vs/prepared911`, `/k-dispatch`.
+### Notes
+- Continues the GEO citability program (SEO-PROGRAM-STATE.md open item #4). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
 ## [v2.280] – 2026-07-20 — Privacy notice: 911 Baja California Sur (SSP-BCS) (KAB-1716)
 ### Added
 - **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.
