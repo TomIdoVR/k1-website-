@@ -489,6 +489,7 @@ export default async function BestCadDispatchSoftwarePage({
                 { href: '/resources/911-call-center-software-guide', en: '911 Call Center Software: Complete Guide', es: 'Software Centro 911: Guía Completa' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un Centro de Crimen en Tiempo Real?' },
                 { href: '/resources/best-public-safety-software', en: 'Best Public Safety Software Platforms 2026', es: 'Mejores Plataformas de Software de Seguridad Pública 2026' },
+                { href: '/resources/best-ng911-software', en: 'Best NG911 Software 2026 for Emergency Call Centers', es: 'Mejor Software NG911 2026 para Centros de Llamadas de Emergencia' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border)', textDecoration: 'none', color: 'var(--dim)', fontSize: '15px' }}>
                   <span>{es ? link.es : link.en}</span>

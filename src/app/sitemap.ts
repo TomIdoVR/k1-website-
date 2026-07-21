@@ -245,7 +245,7 @@ const KEEP_COUNTRY_SLUGS = new Set([
   'costa-rica', 'panama', 'dominican-republic', 'ecuador', 'guyana', 'peru',
   'colombia', 'chile', 'argentina', 'brazil', 'guatemala', 'honduras',
   'el-salvador', 'nicaragua', 'puerto-rico',
-  'venezuela', 'bolivia', 'uruguay', 'paraguay', 'suriname',
+  'venezuela', 'bolivia', 'uruguay', 'paraguay', 'suriname', 'trinidad-and-tobago',
 ])
 function keepInSitemap(page: { path: string }): boolean {
   const m = page.path.match(/^\/resources\/public-safety-software-(.+)$/)

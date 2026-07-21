@@ -405,6 +405,14 @@ export default async function HomePage({
             }
           </p>
 
+          {/* Best public safety software internal link */}
+          <p className="hp-c5-link">
+            {es
+              ? <>Compara opciones en nuestra guía de <Link href="/resources/best-public-safety-software" style={{color:'#60a5fa',textDecoration:'none'}}>las mejores plataformas de software de seguridad pública →</Link></>
+              : <>See how we compare in our guide to <Link href="/resources/best-public-safety-software" style={{color:'#60a5fa',textDecoration:'none'}}>the best public safety software platforms →</Link></>
+            }
+          </p>
+
         </section>
         </div>
 

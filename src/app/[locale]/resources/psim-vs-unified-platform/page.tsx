@@ -201,8 +201,8 @@ export default async function PsimVsUnifiedPlatformPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'PSIM vs Plataforma Unificada — ¿Cual Es la Diferencia?'
-              : 'PSIM vs Unified Platform — What\'s the Difference?'}
+              ? 'PSIM vs Plataforma Unificada (2026) — ¿Cual Es la Diferencia?'
+              : 'PSIM vs Unified Platform (2026) — What\'s the Difference?'}
           </h1>
           <p style={{
             fontSize: '18px', fontWeight: 300, color: 'var(--dim)',

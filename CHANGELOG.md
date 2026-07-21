@@ -1,3 +1,14 @@
+## [v2.282] – 2026-07-21 — Weekly SEO brief execution: internal links, freshness signal, Caribbean indexation
+### Added / Changed
+- **Homepage → `best-public-safety-software` internal link** — added an inline contextual link from the homepage to the roundup page, closing a hub-cluster gap flagged in the weekly SEO brief (the page had inbound links from /resources/ but not from the homepage itself).
+- **`psim-vs-unified-platform` H1 freshness signal** — appended "(2026)" to the EN + ES H1, matching the freshness-date pattern already used on other roundup/comparison pages to support CTR on a page that ranks but wasn't visually current.
+- **Caribbean indexation fix** — added Dominican Republic and Trinidad and Tobago to the "By country:" list on `/resources/cad-dispatch-software-latin-america/`. Trinidad and Tobago was also removed from `NOINDEX_KEYS` reconciliation via `KEEP_COUNTRY_SLUGS` in `sitemap.ts` (26 ICP-market country pages kept indexed; 115 non-ICP noindexed — 141 total country directories, now fully reconciled and consistent between `metadata.ts` and `sitemap.ts`).
+### Notes
+- **GSC API 400 token error** (flagged in the weekly Slack brief) — investigated across `SEO/kabatone-seo-master-plan.md` and all SEO docs in the repo; not documented anywhere on-site. This is a live-dashboard/API-credential issue outside repo scope — needs the original Slack brief detail or direct GSC access to diagnose. Flagged back to Omer.
+- **ES-MX content-expansion item** (master plan Phase 4) — resolved as stale, not a real gap. See master-plan correction below.
+- **Off-site items flagged back to Omer** (not actionable by Claude Code): GovTech outreach email, Seguridad en América article submission, GSC 400 error above.
+- Build verified 0 errors after all edits. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Executed per "so let's build a plan and execute" — reconciling the weekly Slack SEO brief against `SEO/kabatone-seo-master-plan.md` and prior audit findings.
+
 ## [v2.281] – 2026-07-21 — GEO roundup: Best NG911 Software (KAB-1762)
 ### Added
 - **New `/resources/best-ng911-software/` page (EN + ES)** — a "Best NG911 Software for emergency call centers (2026)" buyer's-guide roundup. Attacks the persistent GEO gap where AI answer engines cite Carbyne, CentralSquare, Motorola and Peregrine for "NG911 software" but never KabatOne (N in the GEO monitor for 3+ weeks). Fourth page in the roundup program after v2.277 (Genetec), v2.278 (Milestone), v2.279 (AI Video Analytics) — and the first that feeds the K-Dispatch / CAD money cluster rather than the VMS cluster.
