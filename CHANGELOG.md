@@ -1,3 +1,33 @@
+## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
+### Fixed
+- **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.
+### Added
+- **New `src/lib/analytics.ts`** — `trackLead()` fires events straight to GA4 via `gtag('event', ...)` (reliable regardless of GTM) and auto-attaches the visit's UTM params (`utm_source/medium/campaign/term/content`) so each lead carries its source into GA4. Also keeps a `dataLayer` push for any future GTM-side tag.
+- **Lead events wired** — `ContactForm.tsx` and `EbookDownloadForm.tsx` fire `generate_lead` (with `form_id` + region/org context); `CTASection.tsx` fires `book_demo` (intent micro-conversion).
+### Notes
+- First step of the non-search demand & lead-growth plan (Marketing & Growth). Unblocks per-channel lead attribution.
+- **Follow-up (GA4 UI, David Z):** mark `generate_lead` as a Key Event; add internal-IP + staging-referral (`*.vercel.app`, `*.netlify.app`, `grupokabat.com`, `formspree.io`) data filters; verify in Realtime after deploy.
+- Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
+## [v2.282] – 2026-07-21 — Weekly SEO brief execution: internal links, freshness signal, Caribbean indexation
+### Added / Changed
+- **Homepage → `best-public-safety-software` internal link** — added an inline contextual link from the homepage to the roundup page, closing a hub-cluster gap flagged in the weekly SEO brief (the page had inbound links from /resources/ but not from the homepage itself).
+- **`psim-vs-unified-platform` H1 freshness signal** — appended "(2026)" to the EN + ES H1, matching the freshness-date pattern already used on other roundup/comparison pages to support CTR on a page that ranks but wasn't visually current.
+- **Caribbean indexation fix** — added Dominican Republic and Trinidad and Tobago to the "By country:" list on `/resources/cad-dispatch-software-latin-america/`. Trinidad and Tobago was also removed from `NOINDEX_KEYS` reconciliation via `KEEP_COUNTRY_SLUGS` in `sitemap.ts` (26 ICP-market country pages kept indexed; 115 non-ICP noindexed — 141 total country directories, now fully reconciled and consistent between `metadata.ts` and `sitemap.ts`).
+### Notes
+- **GSC API 400 token error** (flagged in the weekly Slack brief) — investigated across `SEO/kabatone-seo-master-plan.md` and all SEO docs in the repo; not documented anywhere on-site. This is a live-dashboard/API-credential issue outside repo scope — needs the original Slack brief detail or direct GSC access to diagnose. Flagged back to Omer.
+- **ES-MX content-expansion item** (master plan Phase 4) — resolved as stale, not a real gap. See master-plan correction below.
+- **Off-site items flagged back to Omer** (not actionable by Claude Code): GovTech outreach email, Seguridad en América article submission, GSC 400 error above.
+- Build verified 0 errors after all edits. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Executed per "so let's build a plan and execute" — reconciling the weekly Slack SEO brief against `SEO/kabatone-seo-master-plan.md` and prior audit findings.
+
+## [v2.281] – 2026-07-21 — GEO roundup: Best NG911 Software (KAB-1762)
+### Added
+- **New `/resources/best-ng911-software/` page (EN + ES)** — a "Best NG911 Software for emergency call centers (2026)" buyer's-guide roundup. Attacks the persistent GEO gap where AI answer engines cite Carbyne, CentralSquare, Motorola and Peregrine for "NG911 software" but never KabatOne (N in the GEO monitor for 3+ weeks). Fourth page in the roundup program after v2.277 (Genetec), v2.278 (Milestone), v2.279 (AI Video Analytics) — and the first that feeds the K-Dispatch / CAD money cluster rather than the VMS cluster.
+- Same proven structure: a GEO-citable bolded direct-answer callout naming KabatOne (K-Dispatch) first, an at-a-glance comparison table, a "what to evaluate" section (i3/ESInet compliance, multimedia intake, location accuracy, and call→dispatch), 6 vendor profiles (KabatOne/K-Dispatch, Carbyne, Motorola VESTA 9-1-1, Intrado/Comtech, RapidSOS, Prepared 911), 6 FAQs incl. a liftable "What is NG911 software and how does it work?" definition, and full `Article` + `FAQPage` + `Breadcrumb` JSON-LD.
+- Positioning angle: most NG911 software stops at call handling; KabatOne unifies NG911 intake with CAD + GIS + video so the i3 call becomes a geolocated dispatch in one platform. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `bestNg911Software` key), cross-links to `/resources/ng911-software`, `best-cad-dispatch-software`, `what-is-cad-dispatch-software`, `911-call-center-software-guide`, `what-is-a-psap`, `/vs/carbyne`, `/vs/prepared911`, `/k-dispatch`.
+### Notes
+- Continues the GEO citability program (SEO-PROGRAM-STATE.md open item #4). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
 ## [v2.280] – 2026-07-20 — Privacy notice: 911 Baja California Sur (SSP-BCS) (KAB-1716)
 ### Added
 - **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.

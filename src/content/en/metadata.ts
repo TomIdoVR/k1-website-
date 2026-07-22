@@ -294,6 +294,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  bestNg911Software: {
+    title: "Best NG911 Software 2026 for Emergency Call Centers | KabatOne",
+    description: "The best NG911 software for public safety: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 compared — i3/ESInet, multimedia intake, location accuracy, and when the call must become dispatch.",
+    canonical: "https://kabatone.com/resources/best-ng911-software/",
+    og: {
+      title: "Best NG911 Software for Emergency Call Centers (2026)",
+      description: "NG911 software compared — KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 — and why what happens after the call matters as much as the intake.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   rtccSoftware: {
     title: "Best RTCC Software 2026: Real-Time Crime Center Vendors Compared | KabatOne",
     description: "Compare RTCC software vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): what real-time crime center software is, selection criteria, cost, and the best unified platform for public safety.",

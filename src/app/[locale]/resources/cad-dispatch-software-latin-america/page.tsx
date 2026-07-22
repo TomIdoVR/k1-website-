@@ -546,6 +546,8 @@ export default async function CadDispatchLatinAmericaPage({
                   { href: '/resources/public-safety-software-colombia', label: 'Colombia' },
                   { href: '/resources/public-safety-software-peru', label: es ? 'Perú' : 'Peru' },
                   { href: '/resources/public-safety-software-chile', label: 'Chile' },
+                  { href: '/resources/public-safety-software-dominican-republic', label: es ? 'República Dominicana' : 'Dominican Republic' },
+                  { href: '/resources/public-safety-software-trinidad-and-tobago', label: 'Trinidad & Tobago' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{
                     color: ACCENT, textDecoration: 'none',

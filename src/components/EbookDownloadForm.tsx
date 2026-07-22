@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackLead } from '@/lib/analytics'
 
 interface EbookDownloadFormProps {
   es?: boolean
@@ -64,13 +65,20 @@ export default function EbookDownloadForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
+    const formData = new FormData(e.currentTarget)
     try {
       const res = await fetch('https://formspree.io/f/xbdzngyq', {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        body: formData,
         headers: { Accept: 'application/json' },
       })
       if (res.ok) {
+        // Lead-magnet download = a lead. Fire to GA4 (see lib/analytics)
+        trackLead('generate_lead', {
+          form_id: 'ebook_download',
+          asset: pdfPath,
+          organization: String(formData.get('organization') || ''),
+        })
         setSubmitted(true)
       }
     } finally {

@@ -1,6 +1,7 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
+import { trackLead } from '@/lib/analytics'
 
 interface CTASectionProps {
   es: boolean
@@ -22,13 +23,7 @@ export default function CTASection({ es, h2, subtitle, cta1, cta2 }: CTASectionP
         <Link
           href="/contact"
           style={{ background: 'var(--blue)', color: '#fff', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '15px', boxShadow: '0 0 24px rgba(59,130,246,0.4)' }}
-          onClick={() => {
-            if (typeof window !== 'undefined') {
-              const w = window as Window & { dataLayer?: object[] }
-              w.dataLayer = w.dataLayer || []
-              w.dataLayer.push({ event: 'book_demo' })
-            }
-          }}
+          onClick={() => trackLead('book_demo', { location: 'cta_section' })}
         >
           {cta1 || (es ? 'Solicita una Demo' : 'Book a Demo')}
         </Link>

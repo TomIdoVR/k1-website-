@@ -44,6 +44,7 @@ const pages = [
   { path: '/resources/genetec-alternatives', priority: 0.75 },
   { path: '/resources/milestone-alternatives', priority: 0.75 },
   { path: '/resources/best-ai-video-analytics-software', priority: 0.75 },
+  { path: '/resources/best-ng911-software', priority: 0.75 },
   { path: '/resources/rtcc-software', priority: 0.8 },
   { path: '/resources/what-is-sensor-fusion', priority: 0.6 },
   { path: '/resources/c5-command-centers-mexico-2026', priority: 0.7 },
@@ -244,7 +245,7 @@ const KEEP_COUNTRY_SLUGS = new Set([
   'costa-rica', 'panama', 'dominican-republic', 'ecuador', 'guyana', 'peru',
   'colombia', 'chile', 'argentina', 'brazil', 'guatemala', 'honduras',
   'el-salvador', 'nicaragua', 'puerto-rico',
-  'venezuela', 'bolivia', 'uruguay', 'paraguay', 'suriname',
+  'venezuela', 'bolivia', 'uruguay', 'paraguay', 'suriname', 'trinidad-and-tobago',
 ])
 function keepInSitemap(page: { path: string }): boolean {
   const m = page.path.match(/^\/resources\/public-safety-software-(.+)$/)
