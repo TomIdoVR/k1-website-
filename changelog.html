@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.283 -->
+      <div class="tl-entry fix" id="v2.283">
+        <div class="tl-meta"><span class="tl-ver">v2.283</span><span class="tl-date">2026-07-22</span></div>
+        <div class="tl-title">Fix: lead conversion events now reach GA4 (measurement Phase 0)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><code>generate_lead</code> / <code>book_demo</code> were never reaching GA4 — the forms pushed events to <code>window.dataLayer</code> only, which GA4 (loaded via <code>gtag</code>) does not read without a GTM forwarding tag. Result: GA4 reported <strong>zero leads</strong> across every channel despite forms firing events</li>
+            <li>New <code>src/lib/analytics.ts</code> — <code>trackLead()</code> fires straight to GA4 via <code>gtag('event', …)</code> and auto-attaches UTM params so each lead carries its source/medium/campaign into GA4</li>
+            <li>Wired <code>generate_lead</code> into <code>ContactForm.tsx</code> and <code>EbookDownloadForm.tsx</code>; <code>book_demo</code> into <code>CTASection.tsx</code></li>
+            <li>Follow-up (GA4 UI): mark <code>generate_lead</code> as a Key Event, add internal-IP + staging-referral data filters, verify in Realtime after deploy</li>
+            <li>Typecheck: 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.282 -->
       <div class="tl-entry feat" id="v2.282">
         <div class="tl-meta"><span class="tl-ver">v2.282</span><span class="tl-date">2026-07-21</span></div>

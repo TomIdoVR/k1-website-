@@ -1,3 +1,14 @@
+## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
+### Fixed
+- **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.
+### Added
+- **New `src/lib/analytics.ts`** — `trackLead()` fires events straight to GA4 via `gtag('event', ...)` (reliable regardless of GTM) and auto-attaches the visit's UTM params (`utm_source/medium/campaign/term/content`) so each lead carries its source into GA4. Also keeps a `dataLayer` push for any future GTM-side tag.
+- **Lead events wired** — `ContactForm.tsx` and `EbookDownloadForm.tsx` fire `generate_lead` (with `form_id` + region/org context); `CTASection.tsx` fires `book_demo` (intent micro-conversion).
+### Notes
+- First step of the non-search demand & lead-growth plan (Marketing & Growth). Unblocks per-channel lead attribution.
+- **Follow-up (GA4 UI, David Z):** mark `generate_lead` as a Key Event; add internal-IP + staging-referral (`*.vercel.app`, `*.netlify.app`, `grupokabat.com`, `formspree.io`) data filters; verify in Realtime after deploy.
+- Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production.
+
 ## [v2.282] – 2026-07-21 — Weekly SEO brief execution: internal links, freshness signal, Caribbean indexation
 ### Added / Changed
 - **Homepage → `best-public-safety-software` internal link** — added an inline contextual link from the homepage to the roundup page, closing a hub-cluster gap flagged in the weekly SEO brief (the page had inbound links from /resources/ but not from the homepage itself).

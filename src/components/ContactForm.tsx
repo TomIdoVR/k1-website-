@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import { trackLead } from '@/lib/analytics'
 
 interface SelectOption {
   value: string
@@ -69,20 +70,23 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
     e.preventDefault()
     setStatus('submitting')
 
+    const formData = new FormData(e.currentTarget)
+
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        body: formData,
         headers: { Accept: 'application/json' },
       })
 
       if (res.ok) {
-        // Fire GA4 / GTM conversion event
-        if (typeof window !== 'undefined') {
-          const w = window as Window & { dataLayer?: object[] }
-          w.dataLayer = w.dataLayer || []
-          w.dataLayer.push({ event: 'generate_lead' })
-        }
+        // Fire GA4 conversion event (reaches GA4 via gtag — see lib/analytics)
+        trackLead('generate_lead', {
+          form_id: 'contact',
+          region: String(formData.get('region') || ''),
+          interest: String(formData.get('interest') || ''),
+          ...(campaignSource ? { campaign_source: campaignSource } : {}),
+        })
         setStatus('success')
       } else {
         setStatus('error')
