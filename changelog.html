@@ -357,6 +357,20 @@
     <div class="timeline">
 
 
+      <!-- v2.277 -->
+      <div class="tl-entry feat" id="v2.277">
+        <div class="tl-meta"><span class="tl-ver">v2.277</span><span class="tl-date">2026-07-24</span></div>
+        <div class="tl-title">Hero rebuild: reconcile Codex's card system into /hero-lab</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Brought Codex's <code>HeroCardCarousel</code> (accessible carousel), <code>HeroCardMedia</code> (bounded crops), and shared card-shell system into <code>hero-lab</code>, using real photography and the actual "1K" brand mark in place of AI placeholders</li>
+            <li>Fixed a real perf issue: card images served <code>unoptimized</code> as raw PNG (~5.7MB total) — converted to WebP, removed <code>unoptimized</code>; served bytes dropped to ~10KB/image via Next/Image</li>
+            <li>Added <code>tests/hero-reference-contract.test.mjs</code> (6/6 passing) guarding card geometry, crop bounds, carousel accessibility, responsive behavior</li>
+            <li><strong>Restored the live homepage <code>page.tsx</code> to its safe original</strong> — a prior WIP step had wired the new hero directly into production with <code>&lt;Nav/&gt;</code> removed; redesign stays isolated to <code>/hero-lab</code> (noindex) until approved</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.272 -->
       <!-- v2.276 -->
       <div class="tl-entry feat" id="v2.276">
@@ -405,6 +419,19 @@
             <li>Dedicated privacy policy pages so each Google Play listing links to its own URL — new reusable <code>AppPrivacyPolicy</code> component holds the approved template (app + developer identification, ARCO rights, and Google's required Data Retention &amp; Deletion section), rendered EN + ES</li>
             <li><code>C5 Escudo Pakal</code> → <code>/privacy/c5-escudo-pakal</code> and <code>911 Michoacán</code> → <code>/privacy/911-michoacan</code> (each with <code>/es/</code> alternate, canonical + hreflang)</li>
             <li>Both set <code>noindex, follow</code> and kept out of the sitemap — store-compliance pages, not organic-search targets. Adding a future app = one new page file</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.269 -->
+      <div class="tl-entry feat" id="v2.269">
+        <div class="tl-meta"><span class="tl-ver">v2.269</span><span class="tl-date">2026-07-10</span></div>
+        <div class="tl-title">Homepage — adopt Hero V3 as the live hero</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Homepage hero swapped to <code>&lt;HeroV3Platform/&gt;</code> in <code>src/app/[locale]/page.tsx</code> — the light-theme "One Platform. Total Awareness." design chosen in <code>/hero-lab</code> (fulfils KAB-1563)</li>
+            <li>Removed the shared dark <code>&lt;Nav/&gt;</code> from the homepage (V3 ships its own light nav); imported <code>hero-lab.css</code> + <code>hero-lab-light.css</code>; preserved the C5 command-centers internal link for SEO</li>
+            <li>Still on placeholder art (<code>k-mark</code>/<code>cctv-still</code>/<code>evidence-still</code>) and a light→dark seam below the hero — swap assets and resolve theming before promoting. On <code>hero-redesign</code> only, not pushed</li>
           </ul>
         </div>
       </div>

@@ -1,13 +1,8 @@
-/* Hero direction 3 — light theme, single unified headline + a fan of
-   module cards so a visitor reads the whole platform at a glance.
-   Built from a reference mockup the user supplied directly (not one of
-   the two brainstormed directions — this is its own, stronger track).
-   Custom nav here (not the shared dark <Nav/>), since the real site nav
-   is styled for a dark hero via CSS vars and would clash with a light
-   page. K-mark and camera/evidence stills are AI-generated placeholders —
-   swap before this ships. */
-
 import Image from 'next/image'
+import type { CSSProperties, ReactNode } from 'react'
+import { Link } from '@/i18n/navigation'
+import HeroCardCarousel from './HeroCardCarousel'
+import { HeroCardMedia } from './HeroCardMedia'
 
 const T = {
   eyebrow: { en: 'THE UNIFIED PUBLIC SAFETY PLATFORM', es: 'LA PLATAFORMA UNIFICADA DE SEGURIDAD PÚBLICA' },
@@ -19,312 +14,290 @@ const T = {
   },
   demo: { en: 'Book a Demo', es: 'Solicita una Demo' },
   watch: { en: 'Watch Overview', es: 'Ver Resumen' },
-  nav: {
-    sol: { en: 'Solutions', es: 'Soluciones' },
-    ind: { en: 'Industries', es: 'Industrias' },
-    res: { en: 'Resources', es: 'Recursos' },
-    co: { en: 'Company', es: 'Empresa' },
-  },
   stats: [
-    { num: '67M+', en: 'Citizens Protected', es: 'Ciudadanos Protegidos' },
-    { num: '90+', en: 'Team Members', es: 'Miembros del Equipo' },
-    { num: '15+', en: 'Countries', es: 'Países' },
+    { num: '70M+', en: 'Citizens Protected', es: 'Ciudadanos Protegidos', icon: 'people' },
+    { num: '40+', en: 'Cities Deployed', es: 'Ciudades Desplegadas', icon: 'city' },
+    { num: '99.9%', en: 'Uptime SLA', es: 'Disponibilidad SLA', icon: 'shield' },
   ],
 }
 
-function Chevron() {
+const moduleLinks = [
+  { href: '/k-safety', label: 'K-Safety', color: '#2563eb' },
+  { href: '/k-dispatch', label: 'K-Dispatch', color: '#ef4444' },
+  { href: '/k-traffic', label: 'K-Traffic', color: '#06b6d4' },
+  { href: '/k-video', label: 'K-Video', color: '#8b5cf6' },
+  { href: '/k-connect', label: 'K-Connect', color: '#22c55e' },
+] as const
+
+const industryLinks = [
+  { href: '/industries/public-safety', en: 'Public Safety', es: 'Seguridad Pública' },
+  { href: '/industries/municipalities', en: 'Municipalities', es: 'Municipios' },
+  { href: '/industries/airport', en: 'Airports', es: 'Aeropuertos' },
+  { href: '/industries/ports', en: 'Ports', es: 'Puertos' },
+] as const
+
+function Arrow({ direction = 'right' }: { direction?: 'left' | 'right' | 'down' }) {
+  const path = direction === 'down' ? 'M3 5.5 7 9l4-3.5' : direction === 'left' ? 'M11 7H3m4-4L3 7l4 4' : 'M3 7h8M7 3l4 4-4 4'
   return (
-    <svg width="9" height="9" viewBox="0 0 10 10" fill="none">
-      <path d="M2 3.5L5 6.5l3-3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d={path} stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 
-function CadCard({ es }: { es: boolean }) {
+function ModuleIcon({ children }: { children: ReactNode }) {
+  return <span className="hll-card-icon" aria-hidden="true">{children}</span>
+}
+
+function BrandLockup() {
   return (
-    <div className="hll-card" style={{ '--cc': '#ef4444' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 5a2 2 0 0 1 2-2h2l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v2a2 2 0 0 1-2 2A16 16 0 0 1 3 5z" /></svg>
-        </span>
-        <span className="hll-card-title">CAD / 911</span>
+    <span className="hll-brand-lockup" aria-hidden="true">
+      <span className="hll-brand-logo-mask" />
+    </span>
+  )
+}
+
+function PlatformMark() {
+  return (
+    <Image
+      className="hll-platform-mark"
+      src="/images/hero-cards/platform-mark.webp"
+      alt=""
+      width={1024}
+      height={1024}
+      priority
+    />
+  )
+}
+
+function HeroNavigation({ es }: { es: boolean }) {
+  const language = es ? 'es' : 'en'
+  return (
+    <nav className="hll-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
+      <Link href="/" className="hll-nav-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
+        <BrandLockup />
+      </Link>
+
+      <div className="hll-nav-links">
+        <details className="hll-nav-menu">
+          <summary>{es ? 'Soluciones' : 'Solutions'}<Arrow direction="down" /></summary>
+          <div className="hll-nav-dropdown">
+            {moduleLinks.map((item) => (
+              <Link href={item.href} key={item.href}>
+                <span style={{ background: item.color }} />{item.label}
+              </Link>
+            ))}
+          </div>
+        </details>
+        <details className="hll-nav-menu">
+          <summary>{es ? 'Industrias' : 'Industries'}<Arrow direction="down" /></summary>
+          <div className="hll-nav-dropdown">
+            {industryLinks.map((item) => <Link href={item.href} key={item.href}>{item[language]}</Link>)}
+          </div>
+        </details>
+        <details className="hll-nav-menu">
+          <summary>{es ? 'Recursos' : 'Resources'}<Arrow direction="down" /></summary>
+          <div className="hll-nav-dropdown">
+            <Link href="/resources">{es ? 'Centro de Recursos' : 'Resource Center'}</Link>
+            <Link href="/demo">{es ? 'Demo Interactiva' : 'Interactive Demo'}</Link>
+            <Link href="/simulator">{es ? 'Simulador de Incidentes' : 'Incident Simulator'}</Link>
+          </div>
+        </details>
+        <details className="hll-nav-menu">
+          <summary>{es ? 'Empresa' : 'Company'}<Arrow direction="down" /></summary>
+          <div className="hll-nav-dropdown hll-nav-dropdown--right">
+            <Link href="/about">{es ? 'Nosotros' : 'About'}</Link>
+            <Link href="/contact">{es ? 'Contacto' : 'Contact'}</Link>
+          </div>
+        </details>
       </div>
-      <div className="hll-cad-call">
-        <span className="hll-mini-label" style={{ color: '#ef4444' }}>{es ? 'LLAMADA ACTIVA' : 'ACTIVE CALL'}</span>
-        <div className="hll-mini-strong" style={{ marginTop: 3 }}>{es ? 'Emergencia Médica' : 'Medical Emergency'}</div>
-        <div className="hll-mini-row"><span>Main St &amp; 5th Ave</span><span>00:18</span></div>
-        <div className="hll-cad-wave">
-          {[6, 12, 8, 16, 10, 14, 7, 11, 9, 13, 6, 10].map((h, i) => (
-            <span key={i} style={{ height: h }} />
-          ))}
+
+      <div className="hll-nav-actions">
+        <div className="hll-language" aria-label={es ? 'Idioma' : 'Language'}>
+          <Link href="/" locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
+          <Link href="/" locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
         </div>
+        <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
       </div>
+
+      <details className="hll-mobile-menu">
+        <summary aria-label={es ? 'Abrir menú' : 'Open menu'}><span /><span /><span /></summary>
+        <div className="hll-mobile-menu-panel">
+          <Link href="/k-safety">{es ? 'Soluciones' : 'Solutions'}</Link>
+          <Link href="/industries/public-safety">{es ? 'Industrias' : 'Industries'}</Link>
+          <Link href="/resources">{es ? 'Recursos' : 'Resources'}</Link>
+          <Link href="/about">{es ? 'Empresa' : 'Company'}</Link>
+          <div className="hll-mobile-languages">
+            <Link href="/" locale="en">EN</Link><Link href="/" locale="es">ES</Link>
+          </div>
+          <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
+        </div>
+      </details>
+    </nav>
+  )
+}
+
+function CardHeader({ title, children }: { title: string; children: ReactNode }) {
+  return <header className="hll-card-head"><ModuleIcon>{children}</ModuleIcon><h2 className="hll-card-title">{title}</h2></header>
+}
+
+function CarIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 10 2-4h10l2 4M4 11h16v7H4zM7 18v2M17 18v2M7 14h.01M17 14h.01" /></svg>
+}
+
+function CadCard({ es }: { es: boolean }) {
+  const units = [
+    { label: 'Unit 12', status: es ? 'En Ruta' : 'En Route', eta: '2 min', color: '#1d5cff' },
+    { label: 'Unit 7', status: es ? 'En Escena' : 'On Scene', eta: '6 min', color: '#16a34a' },
+    { label: 'Unit 3', status: es ? 'Respondiendo' : 'Responding', eta: '8 min', color: '#1d5cff' },
+  ]
+  const wave = [7, 12, 5, 15, 9, 20, 11, 5, 16, 9, 22, 12, 7, 17, 10, 5, 14, 8, 18, 10, 6, 14, 8, 4]
+  return (
+    <article data-hero-card="true" className="hll-card hll-card--cad" style={{ '--cc': '#ff3b30' } as CSSProperties}>
+      <CardHeader title="CAD / 911"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 6c0-1 1-2 2-2Z" /></svg></CardHeader>
+      <section className="hll-cad-call">
+        <span className="hll-mini-label hll-text-red">{es ? 'LLAMADA ACTIVA' : 'ACTIVE CALL'}</span>
+        <strong>{es ? 'Emergencia Médica' : 'Medical Emergency'}</strong>
+        <div className="hll-mini-row"><span><b className="hll-location-dot" />Main St &amp; 5th Ave</span><time>00:18</time></div>
+        <div className="hll-cad-wave" aria-hidden="true">{wave.map((height, index) => <i key={index} style={{ height }} />)}</div>
+      </section>
       <span className="hll-mini-label">{es ? 'UNIDADES DESPACHADAS' : 'UNITS DISPATCHED'}</span>
-      <div className="hll-cad-units" style={{ marginTop: 6 }}>
-        {[
-          { c: '#2563eb', l: 'Unit 12', s: es ? 'En Ruta' : 'En Route', t: '2 min' },
-          { c: '#22c55e', l: 'Unit 7', s: es ? 'En Escena' : 'On Scene', t: '6 min' },
-          { c: '#f59e0b', l: 'Unit 3', s: es ? 'Respondiendo' : 'Responding', t: '8 min' },
-        ].map((u) => (
-          <div className="hll-cad-unit" key={u.l}>
-            <span className="hll-mini-dot" style={{ background: u.c }} />
-            <span style={{ flex: 1 }}>{u.l} · {u.s}</span>
-            <span style={{ color: '#94a3b8' }}>{u.t}</span>
+      <div className="hll-cad-units">
+        {units.map((unit) => (
+          <div className="hll-cad-unit" key={unit.label}>
+            <span className="hll-unit-icon" style={{ color: unit.color }}><CarIcon /></span>
+            <span><b>{unit.label}</b><small>{unit.status}</small></span><time>{unit.eta}</time>
           </div>
         ))}
       </div>
-    </div>
+    </article>
   )
 }
 
 function VideoCard({ es }: { es: boolean }) {
   return (
-    <div className="hll-card" style={{ '--cc': '#2563eb' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="13" height="12" rx="2" /><path d="M15 10l6-3v10l-6-3" /></svg>
-        </span>
-        <span className="hll-card-title">{es ? 'Video y Analítica' : 'Video & Analytics'}</span>
-      </div>
-      <div className="hll-video-grid">
-        {[0, 1, 2, 3].map((i) => (
-          <div className="hll-video-thumb" key={i}>
-            <Image src="/images/hero-lab/cctv-still.webp" alt="" fill sizes="90px" style={{ objectPosition: `${i * 20}% ${i * 15}%` }} />
-          </div>
-        ))}
-      </div>
-      <div className="hll-mini-row"><span>{es ? 'DETECCIONES IA' : 'AI DETECTIONS'}</span><b className="hll-mini-strong">23</b></div>
-      <div className="hll-mini-row" style={{ marginTop: 4 }}><span>{es ? 'CÁMARAS EN LÍNEA' : 'CAMERAS ONLINE'}</span><b className="hll-mini-strong">128</b></div>
-    </div>
+    <article data-hero-card="true" className="hll-card hll-card--video" style={{ '--cc': '#165dff' } as CSSProperties}>
+      <CardHeader title={es ? 'Video y Analítica' : 'Video & Analytics'}><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3Z" /></svg></CardHeader>
+      <HeroCardMedia variant="video" src="/images/hero-cards/video-analytics.webp" width={1040} height={1513} />
+      <div className="hll-data-line"><span>{es ? 'DETECCIONES IA' : 'AI DETECTIONS'}</span><strong>23</strong></div>
+      <div className="hll-data-line"><span>{es ? 'CÁMARAS EN LÍNEA' : 'CAMERAS ONLINE'}</span><strong>128</strong></div>
+    </article>
   )
 }
 
 function GisCard({ es }: { es: boolean }) {
   return (
-    <div className="hll-card" style={{ '--cc': '#10b981' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-6-5.7-6-10a6 6 0 0 1 12 0c0 4.3-6 10-6 10z" /><circle cx="12" cy="11" r="2" /></svg>
-        </span>
-        <span className="hll-card-title">GIS / {es ? 'Mapa' : 'Map'}</span>
+    <article data-hero-card="true" className="hll-card hll-card--gis" style={{ '--cc': '#16a34a' } as CSSProperties}>
+      <CardHeader title={es ? 'GIS / Mapa' : 'GIS / Map'}><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12Z" /><circle cx="12" cy="9" r="2.3" /></svg></CardHeader>
+      <HeroCardMedia variant="gis" src="/images/hero-cards/gis-map.webp" width={1128} height={1394} />
+      <div className="hll-gis-stats">
+        <div><span>{es ? 'INCIDENTES ACTIVOS' : 'ACTIVE INCIDENTS'}</span><strong>12</strong></div>
+        <div><span>{es ? 'UNIDADES EN ÁREA' : 'UNITS IN AREA'}</span><strong>23</strong></div>
       </div>
-      <div className="hll-gis-map">
-        <div className="hll-gis-ring" />
-        <div className="hll-gis-pulse" />
-      </div>
-      <div className="hll-mini-row"><span>{es ? 'INCIDENTES ACTIVOS' : 'ACTIVE INCIDENTS'}</span><b className="hll-mini-strong">12</b></div>
-      <div className="hll-mini-row" style={{ marginTop: 4 }}><span>{es ? 'UNIDADES EN ÁREA' : 'UNITS IN AREA'}</span><b className="hll-mini-strong">23</b></div>
-    </div>
+    </article>
   )
 }
 
 function EventCard({ es }: { es: boolean }) {
   const rows = [
-    { c: '#ef4444', l: es ? 'Accidente de Tráfico' : 'Traffic Accident', t: '10:16 AM' },
-    { c: '#f59e0b', l: es ? 'Emergencia Médica' : 'Medical Emergency', t: '10:24 AM' },
-    { c: '#2563eb', l: es ? 'Asistencia Ciudadana' : 'Citizen Assist', t: '10:32 AM' },
-    { c: '#22c55e', l: es ? 'Queja de Ruido' : 'Noise Complaint', t: '10:40 AM' },
+    { color: '#ef4444', en: 'Traffic Accident', es: 'Accidente de Tráfico', time: '10:16 AM' },
+    { color: '#2563eb', en: 'Medical Emergency', es: 'Emergencia Médica', time: '10:24 AM' },
+    { color: '#f97316', en: 'Citizen Assist', es: 'Asistencia Ciudadana', time: '10:32 AM' },
+    { color: '#16a34a', en: 'Noise Complaint', es: 'Queja de Ruido', time: '10:40 AM' },
   ]
   return (
-    <div className="hll-card" style={{ '--cc': '#f59e0b' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M9 3v4M15 3v4" /></svg>
-        </span>
-        <span className="hll-card-title">{es ? 'Gestión de Eventos' : 'Event Management'}</span>
-      </div>
+    <article data-hero-card="true" className="hll-card hll-card--events" style={{ '--cc': '#ff5a36' } as CSSProperties}>
+      <CardHeader title={es ? 'Gestión de Eventos' : 'Event Management'}><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M8 3v4M16 3v4" /></svg></CardHeader>
       <div className="hll-event-stats">
-        <div className="hll-event-stat"><b style={{ color: '#ef4444' }}>12</b><span className="hll-mini-label">{es ? 'NUEVO' : 'NEW'}</span></div>
-        <div className="hll-event-stat"><b style={{ color: '#f59e0b' }}>8</b><span className="hll-mini-label">{es ? 'EN CURSO' : 'IN PROGRESS'}</span></div>
-        <div className="hll-event-stat"><b style={{ color: '#22c55e' }}>24</b><span className="hll-mini-label">{es ? 'RESUELTO' : 'RESOLVED'}</span></div>
+        <div><span>{es ? 'NUEVOS' : 'NEW'}</span><strong>12</strong></div>
+        <div><span>{es ? 'EN CURSO' : 'IN PROGRESS'}</span><strong>8</strong></div>
+        <div><span>{es ? 'RESUELTOS' : 'RESOLVED'}</span><strong>24</strong></div>
       </div>
       <div className="hll-event-list">
-        {rows.map((r) => (
-          <div className="hll-event-row" key={r.l}>
-            <span className="hll-mini-dot" style={{ background: r.c }} />
-            <span style={{ flex: 1 }}>{r.l}</span>
-            <span style={{ color: '#94a3b8' }}>{r.t}</span>
-          </div>
-        ))}
+        {rows.map((row) => <div className="hll-event-row" key={row.en}><i style={{ background: row.color }} /><span>{es ? row.es : row.en}</span><time>{row.time}</time></div>)}
       </div>
-      <div className="hll-event-more">+ 9 {es ? 'eventos más' : 'more events'}</div>
-    </div>
+      <div className="hll-event-more"><b>+</b> 9 {es ? 'eventos más' : 'more events'}</div>
+    </article>
   )
 }
 
 function UdeCard({ es }: { es: boolean }) {
-  const shots = [
-    { es: 'Cám. Corporal', en: 'Body Worn', t: '08:41:25' },
-    { es: 'Video en Auto', en: 'In-Car Video', t: '08:41:30' },
-    { es: 'Cámara CCTV', en: 'CCTV Camera', t: '08:41:32' },
-    { es: 'Foto Evidencia', en: 'Evidence Photo', t: '08:47:35' },
-  ]
   return (
-    <div className="hll-card" style={{ '--cc': '#8b5cf6' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.5 20 5.5V12c0 5.2-3.6 8.4-8 9.5-4.4-1.1-8-4.3-8-9.5V5.5Z" /></svg>
-        </span>
-        <span className="hll-card-title">{es ? 'Evidencia Digital Unificada' : 'Unified Digital Evidence'}</span>
-      </div>
-      <div className="hll-ude-grid">
-        {shots.map((s, i) => (
-          <div className="hll-ude-thumb" key={s.en}>
-            <Image src="/images/hero-lab/evidence-still.webp" alt="" fill sizes="90px" style={{ objectPosition: `${i * 25}% ${i * 20}%` }} />
-            <span>{s.t}</span>
-          </div>
-        ))}
-      </div>
-      <div className="hll-mini-label">CASE #24-0157</div>
-      <div className="hll-mini-strong">{es ? 'Robo de Vehículo' : 'Vehicle Theft'}</div>
-      <div className="hll-ude-chain">
-        <span /><i /><span /><i /><span /><i /><span /><i /><span />
-      </div>
-      <div className="hll-mini-row"><span>{es ? 'ELEMENTOS' : 'EVIDENCE ITEMS'}</span><b className="hll-mini-strong">24</b></div>
-    </div>
+    <article data-hero-card="true" className="hll-card hll-card--ude" style={{ '--cc': '#7c3cff' } as CSSProperties}>
+      <CardHeader title={es ? 'Evidencia Digital Unificada (UDE)' : 'Unified Digital Evidence (UDE)'}><svg viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z" /><path d="m9 12 2 2 4-5" /></svg></CardHeader>
+      <HeroCardMedia variant="evidence" src="/images/hero-cards/digital-evidence.webp" width={1122} height={1402} />
+      <div className="hll-case-row"><span><b>CASE #24-0157</b>{es ? 'Robo de Vehículo' : 'Vehicle Theft'}</span><span><small>{es ? 'ELEMENTOS' : 'EVIDENCE ITEMS'}</small><strong>24</strong></span></div>
+      <span className="hll-mini-label">{es ? 'CADENA DE CUSTODIA' : 'CHAIN OF CUSTODY'}</span>
+      <div className="hll-ude-chain">{['BWC', 'CCTV', 'In-Car', 'Photo', 'Report'].map((label, index) => <span key={label}><i />{label}{index < 4 && <b />}</span>)}</div>
+    </article>
   )
 }
 
 function MobileCard({ es }: { es: boolean }) {
   return (
-    <div className="hll-card" style={{ '--cc': '#6366f1' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="7" y="3" width="10" height="18" rx="2" /></svg>
-        </span>
-        <span className="hll-card-title">{es ? 'Respuesta Móvil' : 'Mobile Response'}</span>
+    <article data-hero-card="true" className="hll-card hll-card--mobile" style={{ '--cc': '#7c3cff' } as CSSProperties}>
+      <CardHeader title={es ? 'Respuesta Móvil' : 'Mobile Response'}><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M10 5h4M11 19h2" /></svg></CardHeader>
+      <HeroCardMedia variant="mobile" src="/images/hero-cards/mobile-apps.webp" width={1124} height={1399} />
+      <div className="hll-mobile-metrics">
+        <span><strong>1,842</strong><small>{es ? 'Usuarios de respuesta' : 'Responder users'}</small></span>
+        <span><strong>5,736</strong><small>{es ? 'Usuarios ciudadanos' : 'Citizen users'}</small></span>
+        <span><strong>98%</strong><small>{es ? 'Disponibilidad' : 'App uptime'}</small></span>
       </div>
-      <div className="hll-mobile-phone">
-        <div className="hll-mobile-map" />
-        <div className="hll-mobile-route" />
-        <div className="hll-mobile-badge">
-          <span>Unit 12</span><span>ETA 2 min</span>
-        </div>
-        <div className="hll-mobile-btn">{es ? 'NAVEGAR' : 'NAVIGATE'}</div>
-      </div>
-      <div className="hll-mini-row"><span>{es ? 'PRIORIDAD' : 'PRIORITY'}</span><span style={{ color: '#ef4444', fontWeight: 600 }}>{es ? 'Alta' : 'High'}</span></div>
-      <div className="hll-mini-row" style={{ marginTop: 4 }}><span>{es ? 'RESPONDEDORES' : 'RESPONDERS'}</span><b className="hll-mini-strong">Unit 12</b></div>
-    </div>
+    </article>
   )
 }
 
 function IntegrationsCard({ es }: { es: boolean }) {
-  const icons = [
-    <svg key="1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="M16 10l5-3v10l-5-3" /></svg>,
-    <svg key="2" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>,
-    <svg key="3" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 19a10 10 0 0 1 0-14M20 5a10 10 0 0 1 0 14" /><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" /></svg>,
-    <svg key="4" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 15v-2a8 8 0 0 1 16 0v2M4 15h3v5H4zM17 15h3v5h-3z" /></svg>,
-    <svg key="5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M6 16a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6.9A3.5 3.5 0 0 1 17 16H6z" /></svg>,
-    <svg key="6" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="6" cy="12" r="2.4" /><circle cx="18" cy="6" r="2.4" /><circle cx="18" cy="18" r="2.4" /><path d="M8.3 10.7l7.4-3.4M8.3 13.3l7.4 3.4" /></svg>,
-  ]
-  const labels = [
-    { en: 'LPR Cameras', es: 'Cámaras LPR' },
-    { en: 'Access Control', es: 'Control de Acceso' },
-    { en: 'Sensors', es: 'Sensores' },
-    { en: 'Radio Systems', es: 'Sistemas de Radio' },
-    { en: 'Weather Feeds', es: 'Datos Climáticos' },
-    { en: 'IoT Devices', es: 'Dispositivos IoT' },
+  const items = [
+    { en: 'LPR Cameras', es: 'Cámaras LPR', icon: <svg viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="10" rx="2" /><path d="m17 10 4-2v8l-4-2" /></svg> },
+    { en: 'Access Control', es: 'Control de Acceso', icon: <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></svg> },
+    { en: 'Sensors', es: 'Sensores', icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" /><path d="M7 7a7 7 0 0 0 0 10M17 7a7 7 0 0 1 0 10M4 4a11 11 0 0 0 0 16M20 4a11 11 0 0 1 0 16" /></svg> },
+    { en: 'Radio Systems', es: 'Sistemas de Radio', icon: <svg viewBox="0 0 24 24"><path d="M7 19V5l11-2v16M7 8h11M10 12h5" /><circle cx="12.5" cy="16" r="2" /></svg> },
+    { en: 'Weather Feeds', es: 'Datos Climáticos', icon: <svg viewBox="0 0 24 24"><path d="M6 18a4 4 0 0 1 1-8 6 6 0 0 1 11 2 3 3 0 0 1 0 6Z" /></svg> },
+    { en: 'IoT Devices', es: 'Dispositivos IoT', icon: <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2" /><circle cx="18" cy="6" r="2" /><circle cx="18" cy="18" r="2" /><path d="m8 11 8-4M8 13l8 4" /></svg> },
   ]
   return (
-    <div className="hll-card" style={{ '--cc': '#3b82f6' } as React.CSSProperties}>
-      <div className="hll-card-head">
-        <span className="hll-card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="12" r="2.6" /><circle cx="18" cy="6" r="2.6" /><circle cx="18" cy="18" r="2.6" /><path d="M8.3 10.7 15.7 7.1M8.3 13.3 15.7 16.9" /></svg>
-        </span>
-        <span className="hll-card-title">{es ? 'Integraciones' : 'Integrations'}</span>
-      </div>
-      <div className="hll-int-grid">
-        {icons.map((icon, i) => (
-          <div className="hll-int-icon" key={i} title={es ? labels[i].es : labels[i].en}>{icon}</div>
-        ))}
-      </div>
-      <div className="hll-int-more">+ 20 {es ? 'más integraciones' : 'More Integrations'}</div>
-    </div>
+    <article data-hero-card="true" className="hll-card hll-card--integrations" style={{ '--cc': '#165dff' } as CSSProperties}>
+      <CardHeader title={es ? 'Integraciones' : 'Integrations'}><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="m8 11 7.5-4M8 13l7.5 4" /></svg></CardHeader>
+      <div className="hll-int-grid">{items.map((item) => <div className="hll-int-item" key={item.en}><span>{item.icon}</span><small>{es ? item.es : item.en}</small></div>)}</div>
+      <div className="hll-int-more">+ 20 {es ? 'integraciones más' : 'More Integrations'}</div>
+    </article>
   )
 }
 
-const StatIcons = {
-  people: (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0" /><circle cx="17" cy="9" r="2.4" /><path d="M15.5 20a4.5 4.5 0 0 1 6.5-4" /></svg>
-  ),
-  shield: (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 3 20 6v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z" /><path d="M8.5 12 11 14.5 15.5 9.5" /></svg>
-  ),
-  globe: (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
-  ),
+function HeroActions({ es }: { es: boolean }) {
+  const language = es ? 'es' : 'en'
+  return <div className="hll-ctas"><Link className="hll-btn-primary" href="/contact">{T.demo[language]}<Arrow /></Link><Link className="hll-btn-ghost" href="/demo"><span className="hll-play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 2 7 4-7 4Z" /></svg></span>{T.watch[language]}</Link></div>
+}
+
+function StatIcon({ name }: { name: string }) {
+  if (name === 'people') return <svg viewBox="0 0 42 42"><circle cx="16" cy="13" r="6" /><path d="M5 36v-5c0-6 5-10 11-10s11 4 11 10v5ZM27 9a5 5 0 0 1 0 10M28 24c5 0 9 4 9 9v3" /></svg>
+  if (name === 'city') return <svg viewBox="0 0 42 42"><path d="M8 36V12l13-6 13 6v24M15 16h3M24 16h3M15 23h3M24 23h3M15 30h3M24 30h3" /></svg>
+  return <svg viewBox="0 0 42 42"><path d="m21 4 14 5v11c0 9-6 15-14 18C13 35 7 29 7 20V9Z" /><path d="m15 21 4 4 8-9" /></svg>
+}
+
+function ProofMetrics({ es }: { es: boolean }) {
+  const language = es ? 'es' : 'en'
+  return <div className="hll-stats" aria-label={es ? 'Métricas de confianza' : 'Trust metrics'}>{T.stats.map((stat) => <div className="hll-stat" key={stat.num}><span className="hll-stat-icon"><StatIcon name={stat.icon} /></span><span><strong className="hll-stat-num">{stat.num}</strong><small className="hll-stat-label">{stat[language]}</small></span></div>)}</div>
 }
 
 export default function HeroV3Platform({ es }: { es: boolean }) {
+  const language = es ? 'es' : 'en'
+  const cards = [<CadCard key="cad" es={es} />, <VideoCard key="video" es={es} />, <GisCard key="gis" es={es} />, <EventCard key="events" es={es} />, <UdeCard key="ude" es={es} />, <MobileCard key="mobile" es={es} />, <IntegrationsCard key="integrations" es={es} />]
   return (
-    <div className="hll-page">
-      <nav className="hll-nav">
-        <span className="hll-nav-logo">
-          <span className="hll-nav-logo-mark" />
-          KABAT ONE
-        </span>
-        <div className="hll-nav-links">
-          <span className="hll-nav-link">{T.nav.sol[es ? 'es' : 'en']}<Chevron /></span>
-          <span className="hll-nav-link">{T.nav.ind[es ? 'es' : 'en']}<Chevron /></span>
-          <span className="hll-nav-link">{T.nav.res[es ? 'es' : 'en']}<Chevron /></span>
-          <span className="hll-nav-link">{T.nav.co[es ? 'es' : 'en']}<Chevron /></span>
-        </div>
-        <a className="hll-nav-cta" href="#demo">
-          {T.demo[es ? 'es' : 'en']}
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-        </a>
-      </nav>
-
+    <section className="hll-page" aria-labelledby="hll-title">
+      <HeroNavigation es={es} />
       <div className="hll-hero-head">
-        <div className="hll-eyebrow">{T.eyebrow[es ? 'es' : 'en']}</div>
-        <h1 className="hll-headline">
-          {T.h1a[es ? 'es' : 'en']}
-          <span className="hll-headline-grad">{T.h1b[es ? 'es' : 'en']}</span>
-        </h1>
-        <p className="hll-sub">{T.sub[es ? 'es' : 'en']}</p>
-        <div className="hll-ctas">
-          <a className="hll-btn-primary" href="#demo">
-            {T.demo[es ? 'es' : 'en']}
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </a>
-          <a className="hll-btn-ghost" href="#overview">
-            <span className="hll-play">
-              <svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor"><path d="M2 1.5v7l6-3.5z" /></svg>
-            </span>
-            {T.watch[es ? 'es' : 'en']}
-          </a>
-        </div>
+        <p className="hll-eyebrow">{T.eyebrow[language]}</p>
+        <h1 className="hll-headline" id="hll-title">{T.h1a[language]}<span className="hll-headline-grad">{T.h1b[language]}</span></h1>
+        <p className="hll-sub">{T.sub[language]}</p>
+        <HeroActions es={es} />
       </div>
-
-      <div className="hll-mark">
-        <Image src="/images/hero-lab/k-mark.webp" alt="" fill sizes="220px" />
+      <div className="hll-platform-stage">
+        <div className="hll-mark" aria-hidden="true"><PlatformMark /></div>
+        <HeroCardCarousel previousLabel={es ? 'Tarjeta anterior' : 'Previous card'} nextLabel={es ? 'Tarjeta siguiente' : 'Next card'} slideLabel={es ? 'Módulos de la plataforma' : 'Platform modules'}>{cards}</HeroCardCarousel>
       </div>
-
-      <div className="hll-cards-wrap">
-        <div className="hll-cards">
-          <CadCard es={es} />
-          <VideoCard es={es} />
-          <GisCard es={es} />
-          <EventCard es={es} />
-          <UdeCard es={es} />
-          <MobileCard es={es} />
-          <IntegrationsCard es={es} />
-        </div>
-      </div>
-
-      <div className="hll-stats">
-        {T.stats.map((s) => (
-          <div className="hll-stat" key={s.num}>
-            <span className="hll-stat-icon">
-              {s.num === '67M+' ? StatIcons.people : s.num === '90+' ? StatIcons.shield : StatIcons.globe}
-            </span>
-            <div>
-              <div className="hll-stat-num">{s.num}</div>
-              <div className="hll-stat-label">{s[es ? 'es' : 'en']}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+      <ProofMetrics es={es} />
+    </section>
   )
 }
