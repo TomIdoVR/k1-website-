@@ -1,3 +1,15 @@
+## [v2.279] – 2026-07-27 — How It Works: 5-stage incident lifecycle (/hero-lab)
+### Added
+- **`HowItWorks` section** ported from the Claude Design project "Kabat One Website" (`home/howitworks.jsx` + `home/howitworks.css`), pulled directly via the design MCP. Replaces the live site's 3-step Collect → Process → Respond block with the 5-stage lifecycle of a single incident: **Detect → Understand → Decide → Act → Learn**.
+- Each stage has its own purpose-drawn public-safety scene (converging CCTV/911/LPR/SOS/IoT signals; stacked GIS planes with AI enrichment; recommended-workflow card with priority rows; patrol route with responder app and multi-agency status; evidence sources with unified timeline and analytics), plus three-tier copy — stage name, claim, and detail — fully localized EN/ES.
+- **Scroll-driven progressive activation**: stages light up sequentially left→right as the section enters view, a rail fills behind them, and a pulse traverses once complete. Decide is emphasized as the orchestration layer. Fully disabled under `prefers-reduced-motion`.
+
+### Notes
+- The source relied on shared `.section`/`.wrap`/`.eyebrow`/`.h-display` classes from the design's `site.css`; those are inlined as `.hiw2-*` so the section is self-contained and cannot leak into the rest of the page.
+- One deliberate deviation: the section title renders in Space Grotesk sentence case rather than the design's Barlow Condensed uppercase (`.h-display`), to match the already-approved hero on this page — reverting is a one-line change.
+- Supersedes the interim 5-stage version I had built before the design was available; those files were removed.
+- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.278] – 2026-07-26 — Customer trust strip with real agency seals (/hero-lab)
 ### Added
 - **`CustomerStrip` component** in `/hero-lab` — compact auto-scrolling marquee of real customer/agency seals, replacing the old text-abbreviation badges ("C5CDMX", "YUC") that stood in for logos on the current homepage.
