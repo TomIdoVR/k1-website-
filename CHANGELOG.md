@@ -1,3 +1,10 @@
+## [v2.285] – 2026-07-27 — SEO: rescue video-analytics CTR/cannibalization (weekly #1 action)
+### Fixed
+- **"ai-powered video analytics" earns 1,123 page-1 impressions but 0 clicks**, split across two competing pages (`/resources/what-is-video-analytics/` 939 impr pos 9.3 + `/resources/ai-video-analytics/` 185 impr pos 7.1) — flagged as the #1 on-site action in the 2026-07-27 weekly report.
+- **Retitled the stronger page to own the winning phrase.** `whatIsVideoAnalytics` EN title → "AI-Powered Video Analytics: Detection & Best Platforms [2026]" (was "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]"); description rewritten to lead with "AI-powered video analytics" + best-platforms buyer intent. ES already led with "Analítica de Video con IA" — left unchanged.
+- **Reduced two-page dilution.** Re-anchored the Related-Resources cross-link from `what-is-video-analytics` → `ai-video-analytics`: head-term anchor "AI Video Analytics" → mechanism anchor "How AI Video Analytics Works". The stronger page keeps the head term; the mechanism page (whose H1 already reads "…How Intelligent Video Analytics Works" and which back-links with broad "video analytics" anchors) receives only the how-it-works intent.
+- On-site only, no authority/human dependency. Typecheck: 0 errors.
+
 ## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
 ### Fixed
 - **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.

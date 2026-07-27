@@ -355,8 +355,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/what-is-a-psap/",
   },
   whatIsVideoAnalytics: {
-    title: "Video Analytics Software: AI-Powered CCTV & Surveillance [2026]",
-    description: "Video analytics uses AI to detect intrusions, count crowds, recognize plates, and identify threats in real-time CCTV footage. Compare the best video analytics platforms and cameras for 2026.",
+    title: "AI-Powered Video Analytics: Detection & Best Platforms [2026]",
+    description: "AI-powered video analytics uses deep learning to detect intrusions, crowds, license plates, and threats in live CCTV. Compare the best AI video analytics platforms for 2026.",
     canonical: "https://kabatone.com/resources/what-is-video-analytics/",
   },
   aiVideoAnalytics: {
