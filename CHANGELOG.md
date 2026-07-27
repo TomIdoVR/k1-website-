@@ -1,3 +1,11 @@
+## [v2.286] – 2026-07-27 — CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages
+### Changed
+- **Freshness + reviewer byline** — `/resources/what-is-video-analytics/` and `/resources/what-is-video-management-software/` (EN+ES) now show "Updated: July 2026 · Reviewed by the KabatOne platform team" above the FAQ block, and `articleSchema()`'s `dateModified` is bumped to `2026-07-27` (was frozen at the `datePublished` value, `2026-05-18`).
+- **`articleSchema()` gains an optional 5th `dateModified` param** (`src/lib/schema.ts`), defaulting to `datePublished` for every other caller — no other page's schema output changes.
+### Notes
+- Board-approved via [KAB-1980](/KAB/issues/KAB-1980) ("both") on the [KAB-1721](/KAB/issues/KAB-1721) CTR-recovery request_confirmation: Track A (GEO citation push) + Track C (ranking lift on these two page-2-stuck flagship pages, ~30K combined impressions at pos 20–22). Track A is largely already executed via the GEO roundup program (genetec/milestone/ai-video/ng911/unified-platform, v2.277–v2.284, unpushed). This is the first concrete Track C on-page move: a freshness/E-E-A-T signal, cheap and directly supported by Google's stated preference for demonstrably-current content on definitional/how-it-works queries stuck on page 2. Content depth on both pages is already substantial (9+ FAQs each) — next Track C lever if this doesn't move the needle within 2–3 weekly pulls: earn or simulate real update history (changelog-style "what changed" note) rather than adding more FAQ volume.
+- Typecheck: 0 errors. Committed to `seo-track-c-vms-ranklift` (from `origin/nextjs` @ v2.283, worktree `/tmp/k1-track-c-wt`). **Not pushed** — project rule: no push without explicit request. Two other unpushed branches sit ahead of v2.283 (v2.284 `seo-unified-platform`, v2.285 `seo-va-ctr-rescue`) and will need reconciling before/at push time.
+
 ## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
 ### Fixed
 - **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.
