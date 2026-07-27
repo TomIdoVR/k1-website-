@@ -86,7 +86,8 @@ export function articleSchema(
   headline: string,
   description: string,
   url: string,
-  datePublished: string = '2026-03-18'
+  datePublished: string = '2026-03-18',
+  dateModified?: string
 ) {
   return {
     '@context': 'https://schema.org',
@@ -95,7 +96,7 @@ export function articleSchema(
     description,
     url,
     datePublished,
-    dateModified: datePublished,
+    dateModified: dateModified ?? datePublished,
     author: {
       '@type': 'Organization',
       name: 'KabatOne',

@@ -129,7 +129,8 @@ export default async function WhatIsVideoAnalyticsPage({
     es
       ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
       : 'https://kabatone.com/resources/what-is-video-analytics/',
-    '2026-05-18'
+    '2026-05-18',
+    '2026-07-27'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
@@ -226,6 +227,9 @@ export default async function WhatIsVideoAnalyticsPage({
               <Link href="/resources/what-is-a-real-time-crime-center" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>RTCC</Link>
               <Link href="/resources/what-is-gunshot-detection-software" style={{ color: '#94a3b8', textDecoration: 'none' }}>{es ? 'Detección de Disparos' : 'Gunshot Detection'}</Link>
             </div>
+            <p style={{ fontSize: '12px', color: '#475569', marginTop: '20px', marginBottom: 0 }}>
+              {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
+            </p>
           </div>
         </section>
 
