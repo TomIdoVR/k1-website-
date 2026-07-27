@@ -356,20 +356,6 @@
 
     <div class="timeline">
 
-      <!-- v2.279 -->
-      <div class="tl-entry fix" id="v2.279">
-        <div class="tl-meta"><span class="tl-ver">v2.279</span><span class="tl-date">2026-07-27</span></div>
-        <div class="tl-title">Weekly SEO: freshness signal fix + flagship page refresh</div>
-        <div class="tl-body">
-          <ul class="version-changes">
-            <li>Fixed <code>articleSchema()</code> in <code>src/lib/schema.ts</code> — <code>dateModified</code> was hardwired to always equal <code>datePublished</code>, so every page using this helper reported a fake "never modified" freshness signal. Added an optional <code>dateModified</code> param, backward-compatible for all other callers</li>
-            <li>Applied a real freshness refresh to the two flagship definitional pages stuck on page 2 (<code>/resources/what-is-video-management-software/</code>, <code>/resources/what-is-video-analytics/</code>, EN+ES) — ~15-16K monthly GSC impressions each, position 20-21 per the 2026-07-20 CTR diagnosis. Real <code>dateModified: '2026-07-27'</code> + visible "Updated: July 2026" stamp under each hero</li>
-            <li>Internal-link audit found both pages already saturated (55 and 24 inbound links from every relevant high-authority page) — ranking lift now depends on freshness/depth, not more linking</li>
-            <li>New finding: Google fully deprecated FAQ rich results sitewide 2026-05-07 — the ~214 pages here using <code>faqPageSchema()</code> have earned zero SERP rich-result real estate from that markup since. GEO/LLM-ingestion value kept, but it no longer counts toward classic SERP CTR strategy</li>
-          </ul>
-        </div>
-      </div>
-
       <!-- v2.278 -->
       <div class="tl-entry feat" id="v2.278">
         <div class="tl-meta"><span class="tl-ver">v2.278</span><span class="tl-date">2026-07-26</span></div>

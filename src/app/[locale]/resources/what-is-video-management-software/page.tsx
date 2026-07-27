@@ -159,8 +159,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
           es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety',
           es ? 'El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA y se integra con despacho y GIS. Guía completa para agencias de seguridad pública.' : 'VMS software aggregates cameras from any manufacturer, adds AI analytics, and integrates with dispatch and GIS. Complete guide for public safety agencies.',
           es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
-          '2026-05-18',
-          '2026-07-27'
+          '2026-05-18'
         )
       ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }} />
@@ -191,9 +190,6 @@ export default async function WhatIsVideoManagementSoftwarePage({
               {es
                 ? 'El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante y protocolo en una sola interfaz unificada. Graba, organiza, reproduce y analiza video de forma centralizada. Los sistemas VMS modernos para seguridad pública van más allá de la simple grabación: agregan analítica de inteligencia artificial — detección de objetos, reconocimiento de placas vehiculares (LPR), análisis de comportamiento — directamente al flujo de video. Esto transforma las cámaras de dispositivos pasivos de registro a sensores activos de detección que alertan a los operadores en tiempo real cuando ocurre un evento relevante.'
                 : 'Video management software (VMS) is a platform that aggregates video surveillance camera feeds from any manufacturer and protocol into a single unified interface. It records, organizes, plays back, and analyzes video centrally. Modern VMS systems for public safety go beyond simple recording: they add artificial intelligence analytics — object detection, license plate recognition (LPR), behavioral analysis — directly to the video pipeline. This transforms cameras from passive recording devices into active detection sensors that alert operators in real time when a relevant event occurs.'}
-            </p>
-            <p style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '18px', marginBottom: 0 }}>
-              {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
             </p>
           </div>
         </section>

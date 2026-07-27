@@ -1,13 +1,3 @@
-## [v2.279] – 2026-07-27 — Weekly SEO: freshness signal fix + flagship page refresh
-### Fixed
-- **`articleSchema()` never sent a real freshness signal** (`src/lib/schema.ts`) — `dateModified` was hardwired to always equal `datePublished`, so every one of the ~50+ pages using this helper reported the same "modified" date it was first published on, even after later content edits. Added an optional `dateModified` param (defaults to old behavior when omitted, so no other page's schema output changes).
-### Changed
-- **Applied a genuine freshness refresh to the two flagship definitional pages stuck on page 2** (`/resources/what-is-video-management-software/`, `/resources/what-is-video-analytics/`, EN+ES) — both target ~15-16K monthly GSC impressions at position 20–21 per the 2026-07-20 CTR diagnosis. Passed a real `dateModified: '2026-07-27'` and added a visible "Updated: July 2026 · Reviewed by the KabatOne platform team" line under each hero, so the freshness signal is honest (backed by this actual review pass, not just a schema bump).
-### Notes
-- **Internal-link audit found the "add more links" thesis already spent**: both pages already have 55 and 24 inbound internal links respectively from every relevant high-authority page (k-video, all VMS-category /vs/ pages, industries). Ranking lift on these two now depends on freshness/depth signals and off-page factors, not more internal linking.
-- **New finding, not previously tracked**: Google fully deprecated FAQ rich results sitewide on 2026-05-07 (the narrow gov/health exception ended 2023-08). All ~214 pages using `faqPageSchema()` here have earned zero SERP rich-result real estate from that markup since — for us or anyone. The schema still has GEO/LLM-ingestion value (kept in place) but the CTR strategy can no longer credit it for classic SERP visual real estate.
-- **Branded vs. non-branded CTR gap is now the sharpest lever in the data**: branded queries ("kabat one" etc.) are 2.2% of impressions but 66% of clicks (11.4% CTR); non-branded is 0.13% CTR. See `SEO/ctr-recovery-plan-2026-07-27.md` for the full weekly analysis and CTR-recovery plan.
-
 ## [v2.278] – 2026-07-26 — Customer trust strip with real agency seals (/hero-lab)
 ### Added
 - **`CustomerStrip` component** in `/hero-lab` — compact auto-scrolling marquee of real customer/agency seals, replacing the old text-abbreviation badges ("C5CDMX", "YUC") that stood in for logos on the current homepage.
