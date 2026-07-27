@@ -47,12 +47,15 @@
 .hiw2-eyebrow::after { background: linear-gradient(270deg, #22b8d4, transparent); }
 
 .hiw2-title {
+  /* design: .hiw2-title + .h-display */
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
   font-size: clamp(34px, 5vw, 68px);
   font-weight: 700;
   color: #101f36;
   margin: 20px 0 22px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
   line-height: 1.02;
+  text-transform: uppercase;
 }
 .hiw2-title em {
   font-style: normal;
@@ -203,10 +206,11 @@
 }
 
 .hiw2-t {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-size: clamp(21px, 2.1vw, 28px);
   color: #101f36;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.005em;
   margin: 13px 0 9px;
 }
 .hiw2-c {

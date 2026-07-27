@@ -1,3 +1,18 @@
+## [v2.280] – 2026-07-27 — Solutions section + design-accurate typography (/hero-lab)
+### Added
+- **`Solutions` section** ported from the Claude Design project "Kabat One Website" (`home/solutions.jsx` + `home/solutions.css` + the `SOLUTIONS` data in `home/data.jsx`), read through the design MCP. Two tiers as designed: three **core** solutions (K-Safety, K-Dispatch, K-Video) as large cards with product screenshots, then two **specialized** solutions (K-Traffic, K-Connect) as compact rows.
+- Positioning copy and per-product accent colours come straight from the design's data file, fully localized EN/ES. Screenshots keep the design's "Illustrative view" badge so they aren't mistaken for live captures.
+- The design's static `K-*.html` links are mapped to this app's real localized routes (`/k-safety`, `/k-dispatch`, `/k-video`, `/k-traffic`, `/k-connect`).
+
+### Fixed
+- **Restored the design's display typography.** Both this section and How It Works had been rendering headings in Space Grotesk sentence case instead of the design's Barlow Condensed uppercase (`.h-display` / `--f-display`). Now matches the design: section titles are Barlow Condensed uppercase, product/stage names Barlow Condensed.
+
+### Notes
+- The source `.sol` styles were authored against the dark theme and re-themed for the light page via `.k1-light .sol {...}` overrides in `light.css`; both are merged here so the section stands alone.
+- Shared `.section`/`.wrap`/`.eyebrow`/`.lede` classes are inlined as `.sol-*` so nothing leaks into the rest of the page.
+- The hero (`HeroV3Platform`) still uses Space Grotesk for its headline, where the design uses Barlow Condensed — left as-is pending a call on whether to align it.
+- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.279] – 2026-07-27 — How It Works: 5-stage incident lifecycle (/hero-lab)
 ### Added
 - **`HowItWorks` section** ported from the Claude Design project "Kabat One Website" (`home/howitworks.jsx` + `home/howitworks.css`), pulled directly via the design MCP. Replaces the live site's 3-step Collect → Process → Respond block with the 5-stage lifecycle of a single incident: **Detect → Understand → Decide → Act → Learn**.
