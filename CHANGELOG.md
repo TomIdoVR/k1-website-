@@ -1,3 +1,17 @@
+## [v2.278] – 2026-07-26 — Customer trust strip with real agency seals (/hero-lab)
+### Added
+- **`CustomerStrip` component** in `/hero-lab` — compact auto-scrolling marquee of real customer/agency seals, replacing the old text-abbreviation badges ("C5CDMX", "YUC") that stood in for logos on the current homepage.
+- **11 official government seals sourced and hosted locally** (`public/images/customers/`, 204KB total optimized WebP): C5 CDMX, Yucatán, Durango, Sinaloa, Tamaulipas, Jalisco, Michoacán, Chiapas, Puebla, Naucalpan, Nayarit. Each was pulled from that agency's own official `.gob.mx` site and visually verified — several government files proved mislabeled (one named "Escudo" rendered as an unrelated campaign mark) and were discarded. Original high-res downloads kept out of `public/` in `design-assets/customers-raw/` for re-optimization.
+- Hosting these locally also removes the fragile pattern used by the live partner row, which hotlinks 6 of 7 logos directly from vendor websites.
+
+### Fixed
+- **Seamless-loop drift in the marquee**: `translateX(-50%)` landed 30px short of the clone because flex `gap` adds no trailing gap after the last item, so the loop would visibly jump every cycle. Moved spacing to `margin-right` on each item so both halves are exactly equal width — drift verified at 0px on desktop and mobile.
+
+### Notes
+- Seals are grayscale at 62% opacity (full colour on strip hover) to unify visually mismatched official crests — some are horizontal wordmark lockups, others standalone shields, one a police star badge.
+- Known placeholder-grade assets pending clean replacements: **Naucalpan** carries a political campaign slogan baked into the image; **Sinaloa** is a faint line-art render that nearly disappears in the row. **INAMI** is omitted entirely — its official page serves only a broken 85×85 blank placeholder behind bot protection.
+- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.277] – 2026-07-24 — Hero rebuild: reconcile Codex's card system into /hero-lab
 ### Changed
 - **Reconciled the Codex-built hero rebuild** (`codex/hero-reference-rebuild` worktree) into `hero-lab`: brought over `HeroCardCarousel.tsx` (accessible carousel — ARIA region/group/slide roles, keyboard arrows/Home/End, scroll-sync, disabled end-states), `HeroCardMedia.tsx` (bounded media-crop regions), and the updated `HeroV3Platform.tsx` + `hero-lab-light.css` implementing a shared card-shell system across all 7 modules (equal frame size, title rhythm, icon size, bottom accent).

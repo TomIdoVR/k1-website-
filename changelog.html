@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.278 -->
+      <div class="tl-entry feat" id="v2.278">
+        <div class="tl-meta"><span class="tl-ver">v2.278</span><span class="tl-date">2026-07-26</span></div>
+        <div class="tl-title">Customer trust strip with real agency seals (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New <code>CustomerStrip</code> — compact auto-scrolling marquee using <strong>11 real official government seals</strong> (C5 CDMX, Yucatán, Durango, Sinaloa, Tamaulipas, Jalisco, Michoacán, Chiapas, Puebla, Naucalpan, Nayarit), replacing the text-abbreviation badges that stood in for logos</li>
+            <li>Each seal sourced from that agency’s own official <code>.gob.mx</code> site and visually verified — several mislabeled government files were caught and discarded; all now hosted locally (204KB optimized WebP) instead of hotlinked</li>
+            <li>Fixed a seamless-loop bug: <code>translateX(-50%)</code> landed 30px short of the clone (flex <code>gap</code> adds no trailing gap), which would have made the marquee jump every cycle — drift now 0px</li>
+            <li>Pending clean assets: Naucalpan carries a campaign slogan, Sinaloa is a faint line-art render, INAMI has no usable logo yet</li>
+          </ul>
+        </div>
+      </div>
+
 
       <!-- v2.277 -->
       <div class="tl-entry feat" id="v2.277">

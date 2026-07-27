@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import HeroV3Platform from '@/components/hero-lab/HeroV3Platform'
+import CustomerStrip from '@/components/hero-lab/CustomerStrip'
 import './hero-lab-light.css'
+import '@/components/hero-lab/customer-strip.css'
 
 /* Local-only review route for the approved reference hero. It remains
    unlinked and noindex until the owner approves homepage integration. */
@@ -18,6 +20,9 @@ export default async function HeroLabPage({
   const es = locale === 'es'
 
   return (
-    <HeroV3Platform es={es} />
+    <>
+      <HeroV3Platform es={es} />
+      <CustomerStrip es={es} />
+    </>
   )
 }
