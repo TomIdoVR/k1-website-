@@ -1,3 +1,15 @@
+## [v2.283] – 2026-07-28 — Hero cards: 3D half-circle arc (/hero-lab)
+### Changed
+- **Rebuilt the hero card row as a 3D half-circle fan.** All seven module cards (CAD/911, Video & Analytics, GIS/Map, Event Management, UDE, Mobile Response, Integrations) now sit on an arc: each step out from the centre yaws the card toward the middle (`rotateY` up to 18°), lifts it, and pushes it back in depth, with z-index rising toward the centre so the middle card stacks on top.
+- Deliberately **no `rotateZ`** — an early pass tilted the cards and read as a scattered hand of cards rather than panels standing on a curve. Cards also sit side by side (`gap: 8px`) rather than overlapping; the yaw already narrows each card's projected width, so negative margin just looked like clutter.
+- **The platform mark is now pure backdrop.** With all seven slots holding a real module card there is no free slot for the logo to occupy as a tile, so it drops to `opacity: 0.5` at a larger size and reads as a soft glow behind the arc's centre.
+- Stage height 494px → 516px to accommodate the 52px lift on the outermost cards.
+
+### Notes
+- The prior "temporary validation row" block, which flattened the arc to a straight baseline with `transform: translateY(0)`, is what this replaces — the earlier arc rules at the `min-width: 1181px` breakpoint had been overridden by it and were dead.
+- Verified at 1600px (centred, no overflow, no clipping), 1400px (horizontal scroll-snap engages as designed, nothing clipped vertically despite `overflow-x: auto` forcing `overflow-y: auto`), and 375px (arc correctly does not apply — flat scroll row unchanged). No console errors.
+- Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.282] – 2026-07-28 — Case Study, Ecosystem, Industries sections (/hero-lab)
 ### Added
 - **`CaseStudy` section** ported from the Claude Design project (`home/proof.jsx`'s `CustomerProof` component + `home/proof.css`). A photo-led metric hero ("10,000+ Connected Sensors & Cameras", Michoacán statewide deployment) over an operational-impact bullet list, a deployment-scope metrics grid, and a customer quote. Only the design's own approved figures are used — no invented counts. The command-center photo is an AI-generated stand-in (the source had an empty image-slot placeholder too) — swap for real photography before this ships.

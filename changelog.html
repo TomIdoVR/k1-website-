@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.283 -->
+      <div class="tl-entry feat" id="v2.283">
+        <div class="tl-meta"><span class="tl-ver">v2.283</span><span class="tl-date">2026-07-28</span></div>
+        <div class="tl-title">Hero cards: 3D half-circle arc (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Rebuilt the hero card row as a <strong>3D half-circle fan</strong> — each step out from the centre yaws the card toward the middle (<code>rotateY</code> up to 18°), lifts it, and pushes it back in depth, with z-index rising toward the centre</li>
+            <li>Deliberately <strong>no <code>rotateZ</code></strong>: an early pass tilted the cards and read as a scattered hand of cards rather than panels standing on a curve. Cards sit side by side rather than overlapping — the yaw already narrows each card's projected width</li>
+            <li>The platform mark is now <strong>pure backdrop</strong> — with all seven slots holding a real module card there's no free slot for the logo as a tile, so it softens to a glow behind the arc's centre</li>
+            <li>Replaces the prior "temporary validation row" block that had flattened the arc to a straight baseline (and left the earlier arc rules dead)</li>
+            <li>Verified at 1600px, 1400px (scroll-snap range, nothing clipped), and 375px (arc correctly does not apply); no console errors; isolated to <code>/hero-lab</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.282 -->
       <div class="tl-entry feat" id="v2.282">
         <div class="tl-meta"><span class="tl-ver">v2.282</span><span class="tl-date">2026-07-28</span></div>

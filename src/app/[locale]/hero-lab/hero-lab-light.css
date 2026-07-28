@@ -1305,41 +1305,59 @@
   .hll-card-media--mobile .hll-card-media-source { top: -94px; }
 }
 
-/* Temporary validation row: equal-height cards aligned on one straight baseline. */
+/* Desktop stage: equal-height cards arranged as a 3D half-circle fan. */
 @media (min-width: 1181px) {
   .hll-platform-stage {
-    height: 494px;
+    height: 516px;
     margin-top: 34px;
   }
 
+  /* The platform mark is pure backdrop now that all seven slots hold a real
+     module card — it sits behind the arc and reads as a soft glow, not a tile. */
   .hll-mark {
-    top: -56px;
-    width: 368px;
-    height: 296px;
-    opacity: 0.72;
+    top: -48px;
+    width: 396px;
+    height: 318px;
+    opacity: 0.5;
   }
 
   .hll-cards {
     align-items: flex-start;
-    gap: 10px;
-    padding: 76px 12px 40px;
-    perspective: 1200px;
+    gap: 8px;
+    padding: 86px 12px 36px;
+    perspective: 1500px;
+    transform-style: preserve-3d;
   }
 
+  /* Cards sit side by side rather than overlapping — the yaw already narrows
+     each card's projected width, so any negative margin reads as clutter. */
   .hll-card-slot {
     align-items: flex-start;
-    transform-origin: center center;
+    transform-origin: center bottom;
+    transition: transform 260ms cubic-bezier(0.2, 0.72, 0.2, 1);
   }
 
+  /* Nearer the centre = nearer the viewer, so the middle card stacks on top. */
   .hll-card-slot:nth-child(1),
+  .hll-card-slot:nth-child(7) { z-index: 1; }
   .hll-card-slot:nth-child(2),
+  .hll-card-slot:nth-child(6) { z-index: 2; }
   .hll-card-slot:nth-child(3),
-  .hll-card-slot:nth-child(4),
-  .hll-card-slot:nth-child(5),
-  .hll-card-slot:nth-child(6),
-  .hll-card-slot:nth-child(7) {
-    transform: translateY(0);
-  }
+  .hll-card-slot:nth-child(5) { z-index: 3; }
+  .hll-card-slot:nth-child(4) { z-index: 4; }
+
+  /* Symmetric around slot 4 (Event Management), which stays flat and forward.
+     Each step out from centre yaws the card toward the middle, lifts it, and
+     pushes it back in depth — that combination is what traces the half-circle.
+     Deliberately no rotateZ: the cards stay upright like panels standing on a
+     curve, which is what reads as a stage rather than a scattered hand of cards. */
+  .hll-card-slot:nth-child(1) { transform: translateY(-52px) translateZ(-80px) rotateY(18deg); }
+  .hll-card-slot:nth-child(2) { transform: translateY(-30px) translateZ(-40px) rotateY(12deg); }
+  .hll-card-slot:nth-child(3) { transform: translateY(-10px) translateZ(-12px) rotateY(6deg); }
+  .hll-card-slot:nth-child(4) { transform: translateY(16px) translateZ(10px) scale(1.015); }
+  .hll-card-slot:nth-child(5) { transform: translateY(-10px) translateZ(-12px) rotateY(-6deg); }
+  .hll-card-slot:nth-child(6) { transform: translateY(-30px) translateZ(-40px) rotateY(-12deg); }
+  .hll-card-slot:nth-child(7) { transform: translateY(-52px) translateZ(-80px) rotateY(-18deg); }
 
   .hll-card--cad {
     width: 212px;
