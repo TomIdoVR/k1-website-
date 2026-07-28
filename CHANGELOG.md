@@ -1,3 +1,13 @@
+## [v2.281] – 2026-07-27 — Solutions: replace with the design's actual richer version
+### Changed
+- **Replaced the Solutions section with `home/solutions2.jsx`** — the design's real, richer iteration of this section, which I'd missed in v2.280 (I had ported `home/solutions.jsx`, an earlier simpler card-grid draft in the same project). The user caught the mismatch against a screenshot of the actual design.
+- New shape: a **vertical accordion navigator** (five numbered products, one expanded at a time) paired with a **sticky app-window mock** of the active product's console — full nav sidebar, live canvas screenshot, and a data rail (incident tag, response timer, on-scene/en-route counts, live-video thumbnail, activity feed) — plus a **stationary "One Unified Platform" capability matrix** of 9 shared capabilities (GIS, Video, Event Management, AI, Integrations, Workflows, Evidence, Mobile, BI) that highlights which are core to whichever product is selected.
+- Selection is driven by scroll position via `IntersectionObserver` (expanding an item as it crosses the viewport center) with a short click-lock so an explicit click always wins over scroll-driven changes.
+- On mobile/tablet the sticky console is replaced by an inline copy of the same app-window mock inside each expanded item, and the capability matrix drops from 9 to 5 to 3 columns.
+- Verified: click-to-expand switches both the console and the capability matrix correctly (checked K-Video's 5 core capabilities render exactly as authored), mobile shows the inline console with the sticky one hidden, fully localized EN/ES, no horizontal overflow, TypeScript clean.
+- Superseded `home/solutions.jsx`-based component from v2.280 is fully replaced, not layered — same file paths (`Solutions.tsx`, `solutions.css`).
+- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.280] – 2026-07-27 — Solutions section + design-accurate typography (/hero-lab)
 ### Added
 - **`Solutions` section** ported from the Claude Design project "Kabat One Website" (`home/solutions.jsx` + `home/solutions.css` + the `SOLUTIONS` data in `home/data.jsx`), read through the design MCP. Two tiers as designed: three **core** solutions (K-Safety, K-Dispatch, K-Video) as large cards with product screenshots, then two **specialized** solutions (K-Traffic, K-Connect) as compact rows.
