@@ -1,3 +1,14 @@
+## [v2.287] – 2026-07-28 — GEO roundup: Best PSIM Alternatives (KAB-2037)
+### Added
+- **New `/resources/psim-alternatives/` page (EN + ES)** — a "Best PSIM alternatives for smart cities (2026)" buyer's-guide roundup. 5th page in the roundup program (Genetec v2.277, Milestone v2.278, AI-video-analytics v2.279, NG911 v2.281), first in the PSIM cluster. Distinct from the existing `psim-vs-unified-platform` explainer, which targets a "PSIM vs unified platform" definitional query — this page targets the buyer's "PSIM alternatives" listicle intent.
+- Same proven structure: direct-answer callout naming KabatOne first, comparison table, 6 vendor profiles (KabatOne, Genetec Security Center, CNL IPSecurityCenter/Vidsys, Hexagon, Advancis WinGuard, Motorola CommandCentral), 6 FAQs, full `Article` + `FAQPage` + `Breadcrumb` JSON-LD. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN+ES), `metadata.ts` (EN+ES `psimAlternatives` key), cross-links to `/resources/psim-vs-unified-platform`, `/resources/genetec-alternatives`, `/resources/what-is-a-command-center`, `/vs/genetec`, `/industries/municipalities`, `/k-safety`.
+### Fixed
+- **Resolved a stalled merge** left in the `/tmp/k1-nextjs-merge` worktree from a prior session — two legitimate parallel weekly-rescue commits (v2.285 CTR/cannibalization rescue, v2.286 Track C freshness signal) had conflicting `CHANGELOG.md`/`changelog.html` entries. Reconciled by keeping both entries in version order; no code changes were in conflict.
+### Notes
+- Weekly GEO monitor re-run (KAB-2037): 6/9 testable queries citing KabatOne this cycle (genetec-alternatives, milestone-alternatives, best-ai-video-analytics-software, best-vms-software, best-public-safety-software, C5 command centers Mexico); `best-ng911-software` shipped but not yet ranking (indexing lag); 3 queries (incl. RTCC) hit search-engine bot-detection walls this run and are unverified, not confirmed losses.
+- **Next up:** RTCC citability refresh (GEO-049) — the existing `/resources/rtcc-software/` page already names KabatOne but citation has flagged Y→N volatile for 3 cycles running; needs a content pass, not a new page. CTR-recovery Track A (live GSC data) remains blocked on Omer running `scripts/gsc_reauth.py` interactively.
+- Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Not pushed — awaiting explicit push approval.
+
 ## [v2.286] – 2026-07-27 — CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages
 ### Changed
 - **Freshness + reviewer byline** — `/resources/what-is-video-analytics/` and `/resources/what-is-video-management-software/` (EN+ES) now show "Updated: July 2026 · Reviewed by the KabatOne platform team" above the FAQ block, and `articleSchema()`'s `dateModified` is bumped to `2026-07-27` (was frozen at the `datePublished` value, `2026-05-18`).

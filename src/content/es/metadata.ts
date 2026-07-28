@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  psimAlternatives: {
+    title: "Mejores Alternativas a PSIM para Ciudades Inteligentes 2026 | KabatOne",
+    description: "Las mejores alternativas a un PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon comparadas — por qué las ciudades cambian y la mejor plataforma unificada.",
+    canonical: "https://kabatone.com/es/resources/psim-alternatives/",
+    og: {
+      title: "Mejores Alternativas a PSIM para Ciudades Inteligentes (2026)",
+      description: "Compara las alternativas reales a un PSIM — KabatOne, Genetec, CNL IPSecurityCenter, Hexagon, Advancis, Motorola — y cuándo una plataforma unificada supera a una capa de correlación.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   genetecAlternatives: {
     title: "Mejores Alternativas a Genetec para Seguridad Pública 2026 | KabatOne",
     description: "Las mejores alternativas a Genetec Security Center para seguridad pública: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian y la mejor plataforma unificada.",
