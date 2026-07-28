@@ -1,3 +1,18 @@
+## [v2.282] – 2026-07-28 — Case Study, Ecosystem, Industries sections (/hero-lab)
+### Added
+- **`CaseStudy` section** ported from the Claude Design project (`home/proof.jsx`'s `CustomerProof` component + `home/proof.css`). A photo-led metric hero ("10,000+ Connected Sensors & Cameras", Michoacán statewide deployment) over an operational-impact bullet list, a deployment-scope metrics grid, and a customer quote. Only the design's own approved figures are used — no invented counts. The command-center photo is an AI-generated stand-in (the source had an empty image-slot placeholder too) — swap for real photography before this ships.
+- **`Ecosystem` section** ported from the same `home/proof.jsx` file (the `Ecosystem` component) + `home/proof.css`. Five grouped integration categories (cameras, emergency comms, analytics/AI, sensors/IoT, radio) — entries with a real local partner logo render it, everything else renders as plain text.
+- **`Industries` section** ported from `home/industries.jsx` + `home/industries.css`. A photo grid with one large lead tile (Public Safety & Emergency Communications, spanning two rows) and four supporting tiles (Cities & Municipalities, Transportation & Traffic, Critical Infrastructure, Campuses & Large Venues), each linking to its real industry route. All five photos are AI-generated stand-ins (same empty-placeholder situation as the case study) — swap for real photography before this ships.
+
+### Fixed
+- **Ecosystem partner logos invisible on light background.** Three of the seven logo assets (`genetec.svg`, `corsight.svg`) are white-fill marks meant for a dark strip, so a `grayscale`+`opacity` treatment left them blank against the section's white background. Switched to `filter: brightness(0); opacity: 0.4` (opacity 0.75 on hover) — the same treatment the live homepage's own partner row already applies to these exact files.
+
+### Notes
+- Ordering: Hero → Customer Strip → How It Works → Solutions → **Case Study → Ecosystem → Industries**.
+- Shared `.section`/`.wrap`/`.eyebrow`/`.h-display`/`.lede` classes inlined per-section as `.cust-*`, `.eco-*`, `.ind-*`, following the pattern established for every prior section — display headings use `var(--font-barlow-condensed)` uppercase.
+- Verified EN/ES, desktop + mobile, no console errors, `tsc --noEmit` clean.
+- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.281] – 2026-07-27 — Solutions: replace with the design's actual richer version
 ### Changed
 - **Replaced the Solutions section with `home/solutions2.jsx`** — the design's real, richer iteration of this section, which I'd missed in v2.280 (I had ported `home/solutions.jsx`, an earlier simpler card-grid draft in the same project). The user caught the mismatch against a screenshot of the actual design.

@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.282 -->
+      <div class="tl-entry feat" id="v2.282">
+        <div class="tl-meta"><span class="tl-ver">v2.282</span><span class="tl-date">2026-07-28</span></div>
+        <div class="tl-title">Case Study, Ecosystem, Industries sections (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported <strong>Case Study</strong> from the design's <code>CustomerProof</code> component (<code>home/proof.jsx</code>) — a photo-led "10,000+ Connected Sensors &amp; Cameras" metric hero (Michoacán statewide deployment) over an operational-impact list, a deployment-scope metrics grid, and a customer quote</li>
+            <li>Ported <strong>Ecosystem</strong> from the same file's <code>Ecosystem</code> component — five grouped integration categories (cameras, emergency comms, analytics/AI, sensors/IoT, radio), with real partner logos where available</li>
+            <li>Ported <strong>Industries</strong> from <code>home/industries.jsx</code> — a photo grid with one two-row lead tile (Public Safety &amp; Emergency Communications) and four supporting tiles, each linking to its real industry route</li>
+            <li><strong>Fixed:</strong> three ecosystem partner logos (Genetec, Corsight) are white-fill marks meant for a dark strip and were invisible on this section's light background — switched to the same <code>brightness(0)</code>/opacity treatment the live homepage's own partner row already uses for these files</li>
+            <li>Command-center and industries photos are AI-generated stand-ins (the design had empty image-slot placeholders) — swap for real photography before this ships</li>
+            <li>Verified EN/ES, desktop + mobile, no console errors, <code>tsc --noEmit</code> clean; isolated to <code>/hero-lab</code>, live homepage untouched</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.281 -->
       <div class="tl-entry fix" id="v2.281">
         <div class="tl-meta"><span class="tl-ver">v2.281</span><span class="tl-date">2026-07-27</span></div>

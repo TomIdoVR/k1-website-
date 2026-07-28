@@ -1,0 +1,113 @@
+/* Industries — ported from the Claude Design project
+   (home/industries.css, the .ind-* rules). Shared .section/.wrap/
+   .eyebrow/.h-display classes inlined as .ind-* so this section stands
+   alone. Photo grid with a 2-row lead tile, per the source layout. */
+
+.ind {
+  padding-block: clamp(52px, 6vw, 88px);
+  background: #f7f8fa;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.ind-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.ind-head { margin-bottom: clamp(28px, 3vw, 40px); }
+
+.ind-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3b82f6;
+}
+
+.ind-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: #0f1724;
+  margin: 0;
+}
+.ind-title em { font-style: normal; color: #3b82f6; }
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+  gap: 14px;
+}
+
+.ind-card {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+.ind-lead { grid-column: span 1; grid-row: span 2; }
+
+.ind-slot { object-fit: cover; transition: transform 0.4s ease; }
+.ind-card:hover .ind-slot { transform: scale(1.04); }
+
+.ind-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(6, 12, 22, 0.88) 8%, rgba(6, 12, 22, 0.35) 55%, rgba(6, 12, 22, 0.05) 100%);
+}
+
+.ind-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ac, #3b82f6);
+  box-shadow: 0 0 10px var(--ac, #3b82f6);
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.ind-card-name {
+  flex: 1;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 19px);
+  line-height: 1.15;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+.ind-lead .ind-card-name { font-size: clamp(20px, 2vw, 27px); }
+
+.ind-card-arrow {
+  color: #fff;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.ind-card:hover .ind-card-arrow { opacity: 1; transform: translateX(0); }
+
+@media (max-width: 720px) {
+  .ind-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .ind-lead { grid-column: span 2; grid-row: span 1; }
+}
+@media (max-width: 460px) {
+  .ind-grid { grid-template-columns: 1fr; }
+  .ind-lead { grid-column: span 1; }
+}

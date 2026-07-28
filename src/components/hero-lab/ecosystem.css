@@ -1,0 +1,92 @@
+/* Technology ecosystem — ported from the Claude Design project
+   (home/proof.css, the .eco-* rules). Shared .section/.wrap/.eyebrow/
+   .h-display/.lede classes inlined as .eco-* so this section stands alone.
+   Light theme, sits directly under the dark case-study section. */
+
+.eco {
+  padding-block: clamp(52px, 6vw, 88px);
+  background: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.eco-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.eco-head { max-width: 640px; margin-bottom: clamp(36px, 4vw, 56px); }
+
+.eco-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0891b2;
+}
+
+.eco-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: #0f1724;
+  margin: 0 0 16px;
+}
+.eco-title em { font-style: normal; color: #0891b2; }
+
+.eco-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(18px, 2vw, 28px);
+  padding-block: clamp(24px, 2.6vw, 36px);
+  border-top: 1px solid #e6e9ee;
+  border-bottom: 1px solid #e6e9ee;
+}
+
+.eco-group-title {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8993a4;
+  margin: 0 0 16px;
+  line-height: 1.3;
+  min-height: 28px;
+}
+
+.eco-items { display: flex; flex-direction: column; gap: 14px; }
+
+.eco-item {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #29323f;
+  line-height: 1.3;
+}
+.eco-item.has-logo img {
+  height: 20px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  /* Several partner marks (Genetec, Corsight) are white-fill assets meant
+     for a dark strip — forcing brightness(0) makes every logo a flat
+     silhouette regardless of source color, matching how the live
+     homepage's own partner row already treats these same files. */
+  filter: brightness(0);
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+.eco-group:hover .eco-item.has-logo img { opacity: 0.75; }
+
+.eco-note { font-size: 12.5px; color: #8993a4; margin-top: 20px; }
+
+@media (max-width: 980px) { .eco-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .eco-grid { grid-template-columns: repeat(2, 1fr); } }
