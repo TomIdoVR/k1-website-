@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.286 -->
+      <div class="tl-entry feat" id="v2.286">
+        <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-27</span></div>
+        <div class="tl-title">CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Added "Updated: July 2026 · Reviewed by the KabatOne platform team" byline (EN+ES) above the FAQ block on <code>/resources/what-is-video-analytics/</code> and <code>/resources/what-is-video-management-software/</code> — the two flagship VMS pages stuck on page 2 (~pos 20–22, ~30K combined impressions)</li>
+            <li><code>articleSchema()</code>'s <code>dateModified</code> bumped to <code>2026-07-27</code> on both pages (was frozen at <code>datePublished</code>, 2026-05-18); added an optional 5th <code>dateModified</code> param to the shared helper, defaulting to <code>datePublished</code> so no other caller changes</li>
+            <li>Board-approved via KAB-1980 on the KAB-1721 CTR-recovery confirmation (Track A GEO + Track C ranking lift)</li>
+            <li>Typecheck: 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.285 -->
       <div class="tl-entry fix" id="v2.285">
         <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-27</span></div>

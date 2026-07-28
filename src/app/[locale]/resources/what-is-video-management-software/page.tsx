@@ -169,7 +169,8 @@ export default async function WhatIsVideoManagementSoftwarePage({
           es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety',
           es ? 'El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA y se integra con despacho y GIS. Guía completa para agencias de seguridad pública.' : 'VMS software aggregates cameras from any manufacturer, adds AI analytics, and integrates with dispatch and GIS. Complete guide for public safety agencies.',
           es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
-          '2026-05-18'
+          '2026-05-18',
+          '2026-07-27'
         )
       ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }} />
@@ -482,9 +483,12 @@ export default async function WhatIsVideoManagementSoftwarePage({
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
               {es ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
             </p>
-            <h2 style={{ ...h2Style, marginBottom: '32px' }}>
+            <h2 style={{ ...h2Style, marginBottom: '10px' }}>
               {es ? 'Preguntas Comunes sobre Software VMS' : 'Common Questions About VMS Software'}
             </h2>
+            <p style={{ fontSize: '12px', color: 'var(--muted)', marginBottom: '32px' }}>
+              {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
+            </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '24px 28px' }}>

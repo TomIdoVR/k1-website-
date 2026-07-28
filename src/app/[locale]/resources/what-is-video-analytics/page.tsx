@@ -129,7 +129,8 @@ export default async function WhatIsVideoAnalyticsPage({
     es
       ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
       : 'https://kabatone.com/resources/what-is-video-analytics/',
-    '2026-05-18'
+    '2026-05-18',
+    '2026-07-27'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
@@ -336,9 +337,12 @@ export default async function WhatIsVideoAnalyticsPage({
 
         {/* ── FAQ ── */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 24px 0' }}>
-          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '28px', fontWeight: 700, color: '#f0f4f8', marginBottom: '28px' }}>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: '28px', fontWeight: 700, color: '#f0f4f8', marginBottom: '10px' }}>
             {es ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
           </h2>
+          <p style={{ fontSize: '12px', color: '#475569', marginBottom: '24px' }}>
+            {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
+          </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {faqs.map((faq, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '10px', padding: '20px 22px' }}>
