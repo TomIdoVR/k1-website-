@@ -1,3 +1,12 @@
+## [v2.288] – 2026-07-29 — Remove the "Watch Overview" hero button (/hero-lab)
+### Removed
+- **Pulled the secondary "Watch Overview" / "Ver Resumen" CTA from the hero.** It pointed at `/demo` with no overview video behind it, so it promised something that does not exist yet. "Book a Demo" is now the hero's single call to action and centres on its own.
+
+### Notes
+- `T.watch` and the `.hll-btn-ghost` / `.hll-play` styles are deliberately left in place, so restoring the button once a video exists is a one-line change rather than a rebuild.
+- Only occurrence in the codebase — no equivalent button exists outside `/hero-lab`, so nothing else changed.
+- Verified EN/ES, no console errors, TypeScript clean. Scoped to `/hero-lab` (noindex, unlinked); the live homepage is untouched.
+
 ## [v2.287] – 2026-07-29 — Revert hero arc; rework the capability matrix (/hero-lab)
 ### Changed
 - **Reverted the 3D half-circle hero arc from v2.283.** `hero-lab-light.css` is restored byte-for-byte to its v2.282 state, so the hero cards sit on one flat baseline again. The arc was an explicit one-attempt experiment; the flat row is the version we're keeping.

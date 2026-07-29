@@ -267,7 +267,10 @@ function IntegrationsCard({ es }: { es: boolean }) {
 
 function HeroActions({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
-  return <div className="hll-ctas"><Link className="hll-btn-primary" href="/contact">{T.demo[language]}<Arrow /></Link><Link className="hll-btn-ghost" href="/demo"><span className="hll-play"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 2 7 4-7 4Z" /></svg></span>{T.watch[language]}</Link></div>
+  /* "Watch Overview" is pulled until an actual overview video exists — it
+     linked to /demo with nothing to play. T.watch and the .hll-btn-ghost /
+     .hll-play styles are left in place so restoring it is a one-liner. */
+  return <div className="hll-ctas"><Link className="hll-btn-primary" href="/contact">{T.demo[language]}<Arrow /></Link></div>
 }
 
 function StatIcon({ name }: { name: string }) {

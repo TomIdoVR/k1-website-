@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.288 -->
+      <div class="tl-entry changed" id="v2.288">
+        <div class="tl-meta"><span class="tl-ver">v2.288</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Remove the "Watch Overview" hero button (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Pulled the secondary <strong>"Watch Overview" / "Ver Resumen"</strong> CTA from the hero — it linked to <code>/demo</code> with no overview video behind it, promising something that doesn't exist yet</li>
+            <li><strong>"Book a Demo"</strong> is now the hero's single call to action and centres on its own</li>
+            <li><code>T.watch</code> and the <code>.hll-btn-ghost</code> / <code>.hll-play</code> styles are deliberately left in place, so restoring the button once a video exists is a one-line change</li>
+            <li>Only occurrence in the codebase — no equivalent button outside <code>/hero-lab</code>; verified EN/ES, no console errors, TypeScript clean</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.287 -->
       <div class="tl-entry changed" id="v2.287">
         <div class="tl-meta"><span class="tl-ver">v2.287</span><span class="tl-date">2026-07-29</span></div>
