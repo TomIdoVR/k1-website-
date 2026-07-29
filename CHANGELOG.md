@@ -1,3 +1,11 @@
+## [v2.290] – 2026-07-29 — Add .vercelignore (unblocks CLI deploys)
+### Fixed
+- **`vercel deploy` was timing out on upload.** The working directory is ~4.2GB, and `.claude/worktrees/` (~1.5GB of nested agent repo checkouts) is not gitignored, so the CLI was trying to upload all of it. Added a `.vercelignore` excluding `.claude/`, `.worktrees/`, `.k1/` and `.codex/` — all local tooling, none of it app code. Upload now completes and the build runs in about a minute.
+
+### Notes
+- `.worktrees/` is already gitignored so it was excluded from git-based builds, but the CLI needed it listed explicitly too.
+- Separately worth doing at some point: `.claude/worktrees/` should probably be gitignored, since right now it shows up as untracked noise in every `git status`.
+
 ## [v2.289] – 2026-07-29 — Capability matrix: all modules enabled for every product (/hero-lab)
 ### Changed
 - **Every product now highlights all ten platform modules** instead of a selective subset. The matrix reads as "each solution gives you the entire platform" rather than "here is your slice of it" — no module ever renders in the muted gray state now.

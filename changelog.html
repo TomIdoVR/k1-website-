@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.290 -->
+      <div class="tl-entry fix" id="v2.290">
+        <div class="tl-meta"><span class="tl-ver">v2.290</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Add .vercelignore (unblocks CLI deploys)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>vercel deploy</code> was timing out on upload</strong> — the working directory is ~4.2GB and <code>.claude/worktrees/</code> (~1.5GB of nested agent repo checkouts) is not gitignored, so the CLI tried to upload all of it</li>
+            <li>Added <code>.vercelignore</code> excluding <code>.claude/</code>, <code>.worktrees/</code>, <code>.k1/</code> and <code>.codex/</code> — all local tooling, none of it app code. Upload now completes and the build runs in about a minute</li>
+            <li>Worth doing separately: <code>.claude/worktrees/</code> should probably be gitignored, since it currently shows as untracked noise in every <code>git status</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.289 -->
       <div class="tl-entry changed" id="v2.289">
         <div class="tl-meta"><span class="tl-ver">v2.289</span><span class="tl-date">2026-07-29</span></div>
