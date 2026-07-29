@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import LegalSitec911 from '@/components/LegalSitec911'
 
 const APP_NAME = '911 Michoacán'
-const SLUG = 'sitec-911'
+const SLUG = '911-michoacan'
 
 export async function generateMetadata({
   params,

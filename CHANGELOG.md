@@ -1,3 +1,8 @@
+## [v2.286] – 2026-07-29 — Legal page URL: /legal/sitec-911 → /legal/911-michoacan
+### Changed
+- Renamed the legal page route from `/legal/sitec-911` to `/legal/911-michoacan` (EN + ES), updating the `SLUG` constant, canonical URL, and hreflang alternates.
+- Added permanent (308) redirects from the old `/legal/sitec-911` and `/es/legal/sitec-911` URLs to the new slug in `next.config.ts`, so the link already submitted to Google Play keeps resolving.
+
 ## [v2.285] – 2026-07-29 — Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One
 ### Changed
 - On the `/legal/sitec-911` page, replaced every visible mention of **"SITEC 911"** with **"911 Michoacán"** and every mention of **"CityShob"** (incl. "CityShob Software Ltd.") with **"Kabat-One"**, across both the EN and ES routes. Support email set to `support@kabatone.com`.
