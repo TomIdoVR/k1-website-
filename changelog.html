@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.287 -->
+      <div class="tl-entry changed" id="v2.287">
+        <div class="tl-meta"><span class="tl-ver">v2.287</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Revert hero arc; rework the capability matrix (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Reverted the 3D half-circle hero arc</strong> from v2.283 — <code>hero-lab-light.css</code> restored byte-for-byte to its v2.282 state, so the hero cards sit on one flat baseline again. The arc was an explicit one-attempt experiment; flat is the version we're keeping</li>
+            <li>The capability matrix now shows a <strong>fixed 10-module set for every product</strong> — modules never change between selections, only which are highlighted. Added the missing <strong>CAD / Dispatch</strong> module and locked the order: GIS · Video · Event Management · CAD / Dispatch · AI · Integrations · Workflows · Evidence · Mobile · BI</li>
+            <li>Non-core modules stay <strong>visible in muted gray</strong> rather than being hidden; core modules highlight in a <strong>fixed blue</strong> (<code>#1858f5</code>) instead of the product's accent colour — a legend reading "Blue — Core to this solution" has to mean one thing regardless of which product is selected</li>
+            <li>Legend updated to <strong>"Blue — Core to this solution" / "Gray — Available on the same platform"</strong>, localized EN/ES</li>
+            <li>Grid is 2 × 5 on desktop and mobile — ten across was too cramped for the longer labels, and the old 3-column mobile rule stranded a single tile on the last row</li>
+            <li>All five products verified against the spec programmatically (correct core set, no missing/extra, correct muted count); EN/ES, mobile, no console errors, TypeScript clean; isolated to <code>/hero-lab</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.286 -->
       <div class="tl-entry changed" id="v2.286">
         <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-29</span></div>

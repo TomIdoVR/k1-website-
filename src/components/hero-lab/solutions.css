@@ -175,7 +175,9 @@
 .sv-foundation-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .sv-foundation-rule { flex: 1; height: 1px; background: rgba(15, 30, 60, 0.1); }
 .sv-foundation-label { font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: #2a3c56; }
-.sv-foundation-caps { display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px; }
+/* Ten fixed modules, laid out 2 x 5 — ten across is too cramped to read the
+   longer labels ("Event Management", "CAD / Dispatch") at this column width. */
+.sv-foundation-caps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .sv-cap {
   display: flex;
   flex-direction: column;
@@ -190,7 +192,10 @@
   transition: background .35s, border-color .35s, color .35s;
 }
 .sv-cap em { font-style: normal; font-size: 10.5px; font-weight: 500; line-height: 1.2; color: #5c7091; transition: color .35s; }
-.sv-cap.is-core { color: var(--pc); background: color-mix(in srgb, var(--pc) 8%, #fff); border-color: color-mix(in srgb, var(--pc) 26%, transparent); }
+/* Core modules are always the same blue, never the product's accent colour —
+   the legend reads "Blue — Core to this solution", so the highlight has to
+   mean one thing regardless of which product is selected. */
+.sv-cap.is-core { color: #1858f5; background: color-mix(in srgb, #1858f5 8%, #fff); border-color: color-mix(in srgb, #1858f5 26%, transparent); }
 .sv-cap.is-core em { color: #16437a; font-weight: 600; }
 .sv-legend { display: flex; justify-content: center; gap: 22px; margin-top: 14px; }
 .sv-legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: #5c7091; }
@@ -201,9 +206,6 @@
 .sv-note svg { color: #8697ae; flex-shrink: 0; }
 
 /* ── Responsive ── */
-@media (max-width: 1120px) {
-  .sv-foundation-caps { grid-template-columns: repeat(5, 1fr); }
-}
 @media (max-width: 960px) {
   .sv-grid { grid-template-columns: 1fr; gap: 26px; }
   .sv-side { position: static; order: 2; }
@@ -214,7 +216,9 @@
   .sv-app-canvas { aspect-ratio: 16 / 10; }
 }
 @media (max-width: 560px) {
-  .sv-foundation-caps { grid-template-columns: repeat(3, 1fr); }
+  /* 2 x 5 rather than 3 wide — 10 items over 3 columns leaves a stranded
+     single tile on the last row. */
+  .sv-foundation-caps { grid-template-columns: repeat(2, 1fr); }
   .sv-legend { flex-direction: column; gap: 8px; align-items: center; }
 }
 

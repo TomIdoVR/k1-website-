@@ -23,11 +23,15 @@ type Loc = { en: string; es: string }
 type LocList = { en: string[]; es: string[] }
 const T2 = (en: string, es: string): Loc => ({ en, es })
 
-/* ── shared platform capabilities (stationary layer) ── */
+/* ── shared platform capabilities (stationary layer) ──
+   Fixed set, identical for every product — the whole point of the matrix is
+   that the modules never change, only which of them are core to the selected
+   solution. Order is deliberate and must stay stable across selections. */
 const CAPS: { key: string; label: Loc }[] = [
   { key: 'gis', label: T2('GIS', 'GIS') },
   { key: 'video', label: T2('Video', 'Video') },
   { key: 'events', label: T2('Event Management', 'Gestión de Eventos') },
+  { key: 'cad', label: T2('CAD / Dispatch', 'CAD / Despacho') },
   { key: 'ai', label: T2('AI', 'IA') },
   { key: 'intg', label: T2('Integrations', 'Integraciones') },
   { key: 'flows', label: T2('Workflows', 'Flujos') },
@@ -46,6 +50,7 @@ const CapIcon: Record<string, React.ReactNode> = {
   evid: <><path d="M12 3l7 3v6c0 4.5-3 7.2-7 8-4-.8-7-3.5-7-8V6l7-3Z" /><path d="M9.5 12l2 2 3.5-3.5" /></>,
   mobile: <><rect x="7" y="3" width="10" height="18" rx="2.4" /><path d="M11 18h2" /></>,
   bi: <><path d="M5 19V11M10 19V6M15 19v-5M20 19v-9M3 21h18" /></>,
+  cad: <><path d="M4.5 13a7.5 7.5 0 0 1 15 0" /><rect x="2.5" y="12.6" width="4" height="6.4" rx="1.7" /><rect x="17.5" y="12.6" width="4" height="6.4" rx="1.7" /><path d="M19.5 19v.8a2.6 2.6 0 0 1-2.6 2.6H14" /></>,
 }
 
 const NavIcon: Record<string, React.ReactNode> = {
@@ -107,7 +112,7 @@ const PRODUCTS: Product[] = [
       'De la primera llamada de emergencia a la respuesta coordinada — recepción, CAD, recomendación de unidades y trazabilidad completa.'),
     caps: [T2('911 call intake', 'Recepción de llamadas 911'), T2('Computer-aided dispatch', 'Despacho asistido por computadora'),
       T2('Unit recommendation & status', 'Recomendación y estado de unidades'), T2('Complete audit trail', 'Trazabilidad completa')],
-    core: ['gis', 'events', 'flows', 'mobile', 'bi'],
+    core: ['cad', 'gis', 'flows', 'mobile', 'intg', 'bi'],
     nav: [['Queue', 'list'], ['Active Calls', 'alert'], ['Dispatch', 'route'], ['Units', 'people'], ['Protocols', 'flow'], ['Recordings', 'clock'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('ACTIVE CALL', 'LLAMADA ACTIVA'), kind: T2('Medical Emergency', 'Emergencia médica'), timer: '00:18',
@@ -139,7 +144,7 @@ const PRODUCTS: Product[] = [
       'Control adaptativo de semáforos, detección de infracciones e incidentes, y prioridad para vehículos de emergencia en la misma plataforma.'),
     caps: [T2('Adaptive signal control', 'Control adaptativo de semáforos'), T2('Violation detection', 'Detección de infracciones'),
       T2('Incident detection', 'Detección de incidentes'), T2('Emergency preemption', 'Prioridad de emergencia')],
-    core: ['gis', 'video', 'ai', 'intg', 'bi'],
+    core: ['gis', 'video', 'ai', 'intg', 'events', 'bi'],
     nav: [['Corridors', 'route'], ['Signals', 'signal'], ['Violations', 'alert'], ['Incidents', 'map'], ['Preemption', 'flow'], ['Analytics', 'chart'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('CORRIDOR 07', 'CORREDOR 07'), kind: T2('Congestion detected', 'Congestión detectada'), timer: '02:10',
@@ -155,7 +160,7 @@ const PRODUCTS: Product[] = [
       'Integra cámaras privadas, comunitarias y de socios al centro de mando con control de acceso centrado en privacidad.'),
     caps: [T2('Community camera registry', 'Registro de cámaras comunitarias'), T2('Consent-based access', 'Acceso basado en consentimiento'),
       T2('Privacy-first controls', 'Controles centrados en privacidad'), T2('Partner camera onboarding', 'Alta de cámaras de socios')],
-    core: ['video', 'intg', 'evid', 'gis'],
+    core: ['intg', 'video', 'flows', 'gis', 'ai'],
     nav: [['Registry', 'list'], ['Partners', 'people'], ['Requests', 'alert'], ['Consent', 'lock'], ['Access Logs', 'clock'], ['Coverage', 'map'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('CONNECTED', 'CONECTADAS'), kind: T2('Community cameras', 'Cámaras comunitarias'), timer: '—',
@@ -320,7 +325,7 @@ export default function Solutions({ es }: { es: boolean }) {
                 {CAPS.map((c) => {
                   const on = p.core.includes(c.key)
                   return (
-                    <span className={`sv-cap${on ? ' is-core' : ''}`} key={c.key} style={{ '--pc': p.color } as React.CSSProperties}>
+                    <span className={`sv-cap${on ? ' is-core' : ''}`} key={c.key}>
                       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{CapIcon[c.key]}</svg>
                       <em>{c.label[lang]}</em>
                     </span>
@@ -328,8 +333,8 @@ export default function Solutions({ es }: { es: boolean }) {
                 })}
               </div>
               <div className="sv-legend">
-                <span><i className="sv-legend-on" />{es ? 'Núcleo de esta solución' : 'Core to this solution'}</span>
-                <span><i />{es ? 'También disponible' : 'Also available'}</span>
+                <span><i className="sv-legend-on" />{es ? 'Azul — Núcleo de esta solución' : 'Blue — Core to this solution'}</span>
+                <span><i />{es ? 'Gris — Disponible en la misma plataforma' : 'Gray — Available on the same platform'}</span>
               </div>
             </div>
 
