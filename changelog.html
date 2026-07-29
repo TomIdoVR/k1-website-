@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.284 -->
+      <div class="tl-entry feat" id="v2.284">
+        <div class="tl-meta"><span class="tl-ver">v2.284</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Legal page: SITEC 911 Terms of Use &amp; Privacy Policy</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New <code>/legal/sitec-911</code> page carrying the verbatim Spanish <strong>Condiciones de Uso</strong> and <strong>Política de Privacidad</strong> for the SITEC 911 emergency app (responsible entity: <strong>CityShob Software Ltd.</strong>) — Terms then Privacy on a single URL so Google Play can match it to the app listing</li>
+            <li>The Spanish text is the governing version and is rendered identically on both the EN and ES routes — no unofficial translation of binding legal terms</li>
+            <li>One-off component <code>LegalSitec911.tsx</code>, styled to match the existing per-app privacy pages (Barlow Condensed headings, DM Mono labels, dark theme); <code>robots: index:false, follow:true</code>, canonical + EN/ES/x-default hreflang, and a breadcrumb JSON-LD (Home / Legal / SITEC 911)</li>
+            <li>First page under the new <code>/legal/</code> route directory</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.283 -->
       <div class="tl-entry feat" id="v2.283">
         <div class="tl-meta"><span class="tl-ver">v2.283</span><span class="tl-date">2026-07-28</span></div>
