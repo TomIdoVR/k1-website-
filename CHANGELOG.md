@@ -1,3 +1,10 @@
+## [v2.284] – 2026-07-29 — Legal page: SITEC 911 Terms of Use & Privacy Policy
+### Added
+- **New `/legal/sitec-911` page** carrying the verbatim Spanish "Condiciones de Uso" and "Política de Privacidad" for the SITEC 911 emergency app (responsible entity: CityShob Software Ltd.). Single page, Terms followed by Privacy, so Google Play can match one URL to the app listing.
+- Legal text is the governing Spanish version and is rendered identically on both the EN (`/legal/sitec-911`) and ES (`/es/legal/sitec-911`) routes — no unofficial translation of binding terms.
+- New one-off component `src/components/LegalSitec911.tsx`, styled to match the existing per-app privacy pages (Barlow Condensed headings, DM Mono labels, dark theme). `robots: index:false, follow:true`, canonical + EN/ES/x-default hreflang, and a breadcrumb JSON-LD (Home / Legal / SITEC 911).
+- First page under the new `/legal/` route directory.
+
 ## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
 ### Fixed
 - **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.
