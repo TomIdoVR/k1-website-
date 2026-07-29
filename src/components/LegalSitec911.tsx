@@ -12,7 +12,7 @@ import { Link } from '@/i18n/navigation'
  */
 
 const APP_NAME = '911 Michoacán'
-const SLUG = 'sitec-911'
+const SLUG = '911-michoacan'
 const DEVELOPER = 'Kabat-One Software Ltd.'
 const ADDRESS = 'HaAlon 4 St., Kfar Netter, Israel'
 const SUPPORT_EMAIL = 'support@kabatone.com'
