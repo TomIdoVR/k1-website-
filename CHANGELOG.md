@@ -1,3 +1,14 @@
+## [v2.289] – 2026-07-29 — Capability matrix: all modules enabled for every product (/hero-lab)
+### Changed
+- **Every product now highlights all ten platform modules** instead of a selective subset. The matrix reads as "each solution gives you the entire platform" rather than "here is your slice of it" — no module ever renders in the muted gray state now.
+- **Legend collapsed to a single line** — "All modules included in every solution" / "Todos los módulos incluidos en cada solución". The previous two-row key ("Blue — Core to this solution" / "Gray — Available on the same platform") described a distinction that no longer exists: nothing is ever gray, and blue no longer singles anything out.
+
+### Notes
+- The per-product `core` arrays are deliberately kept (rather than collapsed into one shared constant) so a subset can be singled out again without restructuring the component. All five currently list the same ten keys.
+- Stale comments corrected — the file header and the `CAPS` block both still described the matrix as showing "which capabilities are core to the selected solution".
+- Verified all five products render 10/10 highlighted, EN/ES labels and legend, 2 × 5 grid, no console errors, TypeScript clean.
+- Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.288] – 2026-07-29 — Remove the "Watch Overview" hero button (/hero-lab)
 ### Removed
 - **Pulled the secondary "Watch Overview" / "Ver Resumen" CTA from the hero.** It pointed at `/demo` with no overview video behind it, so it promised something that does not exist yet. "Book a Demo" is now the hero's single call to action and centres on its own.

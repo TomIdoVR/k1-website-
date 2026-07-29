@@ -8,9 +8,9 @@
 
    Left: five numbered products in an accordion. Right: a sticky mock of
    that product's console, plus the stationary "one unified platform"
-   capability matrix showing which shared capabilities are core to the
-   selected solution. Scrolling the list drives selection via
-   IntersectionObserver; clicking locks that briefly so the click wins.
+   capability matrix listing the shared platform modules. Scrolling the list
+   drives selection via IntersectionObserver; clicking locks that briefly so
+   the click wins.
 
    The design's static K-*.html links map to this app's real localized
    routes. Asset paths map to this repo's /public layout. */
@@ -24,9 +24,14 @@ type LocList = { en: string[]; es: string[] }
 const T2 = (en: string, es: string): Loc => ({ en, es })
 
 /* ── shared platform capabilities (stationary layer) ──
-   Fixed set, identical for every product — the whole point of the matrix is
-   that the modules never change, only which of them are core to the selected
-   solution. Order is deliberate and must stay stable across selections. */
+   Fixed set, identical for every product. Order is deliberate and must stay
+   stable across selections so the grid never reshuffles as you scroll.
+
+   Every product currently lists all ten in its `core` array, so the whole
+   matrix renders highlighted — the message is "each solution gives you the
+   entire platform." The per-product `core` arrays are kept (rather than
+   collapsed into one constant) so a subset can be singled out again without
+   restructuring anything. */
 const CAPS: { key: string; label: Loc }[] = [
   { key: 'gis', label: T2('GIS', 'GIS') },
   { key: 'video', label: T2('Video', 'Video') },
@@ -96,7 +101,7 @@ const PRODUCTS: Product[] = [
       'Conciencia situacional en tiempo real sobre GIS, video, unidades y flujos — cada incidente coordinado desde una sola imagen operativa.'),
     caps: [T2('Live GIS operational picture', 'Imagen operativa GIS en vivo'), T2('Incident coordination & workflows', 'Coordinación de incidentes y flujos'),
       T2('Multi-agency collaboration', 'Colaboración entre agencias'), T2('Operational analytics', 'Analítica operativa')],
-    core: ['gis', 'video', 'events', 'flows', 'mobile', 'bi'],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
     nav: [['Overview', 'map'], ['Incidents', 'alert'], ['Units', 'people'], ['Map Layers', 'layers'], ['Workflows', 'flow'], ['Analytics', 'chart'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('INCIDENT 2451', 'INCIDENTE 2451'), kind: T2('Traffic Accident', 'Accidente vial'), timer: '04:32',
@@ -112,7 +117,7 @@ const PRODUCTS: Product[] = [
       'De la primera llamada de emergencia a la respuesta coordinada — recepción, CAD, recomendación de unidades y trazabilidad completa.'),
     caps: [T2('911 call intake', 'Recepción de llamadas 911'), T2('Computer-aided dispatch', 'Despacho asistido por computadora'),
       T2('Unit recommendation & status', 'Recomendación y estado de unidades'), T2('Complete audit trail', 'Trazabilidad completa')],
-    core: ['cad', 'gis', 'flows', 'mobile', 'intg', 'bi'],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
     nav: [['Queue', 'list'], ['Active Calls', 'alert'], ['Dispatch', 'route'], ['Units', 'people'], ['Protocols', 'flow'], ['Recordings', 'clock'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('ACTIVE CALL', 'LLAMADA ACTIVA'), kind: T2('Medical Emergency', 'Emergencia médica'), timer: '00:18',
@@ -128,7 +133,7 @@ const PRODUCTS: Product[] = [
       'Conecta video en vivo, analítica, eventos e investigaciones sobre la infraestructura de cámaras que ya operas.'),
     caps: [T2('Works with existing VMS', 'Funciona con tu VMS actual'), T2('AI detection & search', 'Detección y búsqueda con IA'),
       T2('Event-linked video', 'Video vinculado a eventos'), T2('Investigation tools', 'Herramientas de investigación')],
-    core: ['video', 'ai', 'evid', 'intg', 'gis'],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
     nav: [['Live Wall', 'cam'], ['Cameras', 'map'], ['Detections', 'alert'], ['Search', 'search'], ['Investigations', 'shield'], ['Evidence', 'doc'], ['Reports', 'chart'], ['Settings', 'gear']],
     rail: {
       tag: T2('AI DETECTIONS', 'DETECCIONES IA'), kind: T2('Vehicle of interest', 'Vehículo de interés'), timer: '00:06',
@@ -144,7 +149,7 @@ const PRODUCTS: Product[] = [
       'Control adaptativo de semáforos, detección de infracciones e incidentes, y prioridad para vehículos de emergencia en la misma plataforma.'),
     caps: [T2('Adaptive signal control', 'Control adaptativo de semáforos'), T2('Violation detection', 'Detección de infracciones'),
       T2('Incident detection', 'Detección de incidentes'), T2('Emergency preemption', 'Prioridad de emergencia')],
-    core: ['gis', 'video', 'ai', 'intg', 'events', 'bi'],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
     nav: [['Corridors', 'route'], ['Signals', 'signal'], ['Violations', 'alert'], ['Incidents', 'map'], ['Preemption', 'flow'], ['Analytics', 'chart'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('CORRIDOR 07', 'CORREDOR 07'), kind: T2('Congestion detected', 'Congestión detectada'), timer: '02:10',
@@ -160,7 +165,7 @@ const PRODUCTS: Product[] = [
       'Integra cámaras privadas, comunitarias y de socios al centro de mando con control de acceso centrado en privacidad.'),
     caps: [T2('Community camera registry', 'Registro de cámaras comunitarias'), T2('Consent-based access', 'Acceso basado en consentimiento'),
       T2('Privacy-first controls', 'Controles centrados en privacidad'), T2('Partner camera onboarding', 'Alta de cámaras de socios')],
-    core: ['intg', 'video', 'flows', 'gis', 'ai'],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
     nav: [['Registry', 'list'], ['Partners', 'people'], ['Requests', 'alert'], ['Consent', 'lock'], ['Access Logs', 'clock'], ['Coverage', 'map'], ['Reports', 'doc'], ['Settings', 'gear']],
     rail: {
       tag: T2('CONNECTED', 'CONECTADAS'), kind: T2('Community cameras', 'Cámaras comunitarias'), timer: '—',
@@ -333,8 +338,7 @@ export default function Solutions({ es }: { es: boolean }) {
                 })}
               </div>
               <div className="sv-legend">
-                <span><i className="sv-legend-on" />{es ? 'Azul — Núcleo de esta solución' : 'Blue — Core to this solution'}</span>
-                <span><i />{es ? 'Gris — Disponible en la misma plataforma' : 'Gray — Available on the same platform'}</span>
+                <span><i className="sv-legend-on" />{es ? 'Todos los módulos incluidos en cada solución' : 'All modules included in every solution'}</span>
               </div>
             </div>
 

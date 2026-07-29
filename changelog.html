@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.289 -->
+      <div class="tl-entry changed" id="v2.289">
+        <div class="tl-meta"><span class="tl-ver">v2.289</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Capability matrix: all modules enabled for every product (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every product now highlights all ten platform modules</strong> instead of a selective subset — the matrix reads as "each solution gives you the entire platform" rather than "here is your slice of it"</li>
+            <li><strong>Legend collapsed to a single line</strong> ("All modules included in every solution") — the previous two-row key described a distinction that no longer exists, since nothing renders gray any more and blue no longer singles anything out</li>
+            <li>Per-product <code>core</code> arrays kept rather than collapsed into one constant, so a subset can be singled out again without restructuring the component</li>
+            <li>Stale comments corrected — the file header and <code>CAPS</code> block still described the matrix as showing "which capabilities are core to the selected solution"</li>
+            <li>Verified all five products render 10/10 highlighted, EN/ES labels and legend, 2 × 5 grid, no console errors, TypeScript clean; isolated to <code>/hero-lab</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.288 -->
       <div class="tl-entry changed" id="v2.288">
         <div class="tl-meta"><span class="tl-ver">v2.288</span><span class="tl-date">2026-07-29</span></div>
