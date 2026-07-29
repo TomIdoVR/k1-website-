@@ -434,17 +434,17 @@ export default async function HomePage({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/partners/milestone.svg" alt="Milestone" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.genetec.com/binaries/content/gallery/genetecweb/ie/genetec_logo.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/genetec.svg" alt="Genetec" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://rapidsos.com/wp-content/uploads/2022/10/rapidsos-horizontal-logo.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/rapidsos.svg" alt="RapidSOS" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://carbyne.com/wp-content/uploads/2024/12/carbyne-registered-logo.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/carbyne.png" alt="Carbyne" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.corsight.ai/wp-content/uploads/2021/05/corsight-logo-white.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/corsight.svg" alt="Corsight" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://motorola-style.cdn.prismic.io/motorola-style/656612a6531ac2845a2568a5_LogoFill-1-.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/motorola.svg" alt="Motorola" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.i-pro.com/products_and_solutions/themes/custom/ipro/logo.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
+              <img src="/images/partners/ipro.svg" alt="iPro" style={{ height: '22px', width: 'auto', filter: 'brightness(0)', opacity: 0.4 }} />
             </div>
           </div>
         </section>

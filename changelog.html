@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.285 -->
+      <div class="tl-entry fix" id="v2.285">
+        <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Fix: homepage partner logos self-hosted (drop external hotlinks)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Homepage partner strip (Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro) was hotlinking each logo directly from the partner's own site/CDN — swapped all six to local <code>public/images/partners/</code> assets, matching the pattern already used for Milestone</li>
+            <li>Removes external requests from the page load (reliability/perf) and a dependency on third-party CDNs staying up or unchanged</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.284 -->
       <div class="tl-entry feat" id="v2.284">
         <div class="tl-meta"><span class="tl-ver">v2.284</span><span class="tl-date">2026-07-29</span></div>

@@ -1,3 +1,8 @@
+## [v2.285] – 2026-07-29 — Fix: homepage partner logos self-hosted (drop external hotlinks)
+### Fixed
+- Homepage partner strip (Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro) was hotlinking each logo directly from the partner's own site/CDN. Swapped all six to the local `public/images/partners/` assets, matching the pattern already used for Milestone.
+- Removes external requests from a page load (reliability/perf) and a dependency on third-party CDNs staying up or unchanged.
+
 ## [v2.284] – 2026-07-29 — Legal page: SITEC 911 Terms of Use & Privacy Policy
 ### Added
 - **New `/legal/sitec-911` page** carrying the verbatim Spanish "Condiciones de Uso" and "Política de Privacidad" for the SITEC 911 emergency app (responsible entity: CityShob Software Ltd.). Single page, Terms followed by Privacy, so Google Play can match one URL to the app listing.
