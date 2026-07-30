@@ -1,3 +1,17 @@
+## [v2.293] – 2026-07-30 — K-Safety solution page (/hero-lab/k-safety)
+### Added
+- **Redesigned K-Safety solution page**, ported from the Claude Design project "Kabat One Website" (`home/solution-page.jsx` + `home/solution-page.css` + `home/sol-ksafety.jsx`), read through the design MCP. Seven sections: hero console, shared-core strip, benefits, feature rows, process diagram, integrations, case study.
+- The hero renders a live-console mock — GIS map with a CAM-14 video inset, a Priority-1 "Vehicle of interest" event card, floating status chips and a stats row. The process section is the design's animated flow diagram: five input nodes → signal rails → a pulsing K-Safety core (COLLECT · ANALYZE · INTEGRATE) → three output nodes.
+- Fully localized EN/ES, including the flow-diagram step labels.
+
+### Notes
+- **Kept the design's split between renderer and content.** `SolutionPage.tsx` is generic and `sol-ksafety.ts` holds only K-Safety's copy, exactly as the design had it (`window.SOLPAGE` + a shared renderer) — so K-Dispatch, K-Video, K-Traffic and K-Connect each need only their own content file.
+- The design read content off `window.SOLPAGE` and localized via a global `window.k1tx`; both become props and local helpers here. A few values in the source are locale-invariant plain strings ("Unit 12", "24/7"), so the content type accepts either a string or an `{en, es}` pair.
+- Shared globals from the design's `site.css` (`.wrap`, `.section`, `.eyebrow`, `.h-display`, `.lede`, `.lbtn`, `.lhero-bg`, plus `--f-display` / `--f-mono` / `--navy` / `--cyan-bright`) are inlined as `.sp-`scoped equivalents so the page stands alone — same approach as every other hero-lab port.
+- All six module images it references already existed in `public/images/modules/`; no placeholder generation needed.
+- Verified at 1440px and 375px (all grids collapse to one column, chips hidden, no horizontal overflow), EN and ES, all 7 images loading, no console errors, TypeScript clean.
+- **The live `/k-safety` page is untouched.** This sits at `/hero-lab/k-safety`, noindex and unlinked, pending approval.
+
 ## [v2.292] – 2026-07-30 — More integration categories (/hero-lab)
 ### Added
 - **Ten more categories on the hero Integrations card**, each with its own icon: Face Recognition, Video Analytics, Drones, Radar, Smart Fences, Traffic Lights, Smart Lights, Panic Buttons, Gunshot Detection and BI Tools. The card now shows 16 categories, up from 6. This is the change that was actually requested.

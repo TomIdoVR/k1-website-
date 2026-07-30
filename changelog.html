@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.293 -->
+      <div class="tl-entry feat" id="v2.293">
+        <div class="tl-meta"><span class="tl-ver">v2.293</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">K-Safety solution page (/hero-lab/k-safety)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported the <strong>redesigned K-Safety solution page</strong> from the Claude Design project via the design MCP — seven sections: hero console, shared-core strip, benefits, feature rows, process diagram, integrations, case study</li>
+            <li>Hero renders a live-console mock (GIS map, CAM-14 video inset, Priority-1 event card, floating chips, stats); the process section is the design's animated flow — five inputs → signal rails → pulsing K-Safety core → three outputs</li>
+            <li><strong>Kept the design's renderer/content split</strong>: <code>SolutionPage.tsx</code> is generic and <code>sol-ksafety.ts</code> holds only K-Safety copy, so K-Dispatch, K-Video, K-Traffic and K-Connect each need just their own content file</li>
+            <li>Design globals (<code>.wrap</code>, <code>.section</code>, <code>.eyebrow</code>, <code>--f-display</code>, …) inlined as <code>.sp-</code>scoped equivalents so the page stands alone; all six module images already existed locally</li>
+            <li>Verified 1440px and 375px, EN and ES, all images loading, no console errors, TypeScript clean</li>
+            <li><strong>The live <code>/k-safety</code> page is untouched</strong> — this is noindex and unlinked at <code>/hero-lab/k-safety</code>, pending approval</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.292 -->
       <div class="tl-entry changed" id="v2.292">
         <div class="tl-meta"><span class="tl-ver">v2.292</span><span class="tl-date">2026-07-30</span></div>
