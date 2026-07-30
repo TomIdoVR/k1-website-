@@ -337,9 +337,6 @@ export default function Solutions({ es }: { es: boolean }) {
                   )
                 })}
               </div>
-              <div className="sv-legend">
-                <span><i className="sv-legend-on" />{es ? 'Todos los módulos incluidos en cada solución' : 'All modules included in every solution'}</span>
-              </div>
             </div>
 
             <p className="sv-note">

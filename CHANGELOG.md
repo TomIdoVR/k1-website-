@@ -1,3 +1,8 @@
+## [v2.291] – 2026-07-29 — Drop the capability matrix legend (/hero-lab)
+### Changed
+- **Removed the "All modules included in every solution" legend line** under the capability grid. With every module highlighted for every product there is no two-state key to explain, and the `.sv-note` directly below ("Add capabilities over time…") already carries the message.
+- The `.sv-legend` styles are left in `solutions.css` so the line can be restored in one edit if a selective state ever comes back.
+
 ## [v2.290] – 2026-07-29 — Add .vercelignore (unblocks CLI deploys)
 ### Fixed
 - **`vercel deploy` was timing out on upload.** The working directory is ~4.2GB, and `.claude/worktrees/` (~1.5GB of nested agent repo checkouts) is not gitignored, so the CLI was trying to upload all of it. Added a `.vercelignore` excluding `.claude/`, `.worktrees/`, `.k1/` and `.codex/` — all local tooling, none of it app code. Upload now completes and the build runs in about a minute.
