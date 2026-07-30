@@ -44,7 +44,7 @@
 
 .eco-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: clamp(18px, 2vw, 28px);
   padding-block: clamp(24px, 2.6vw, 36px);
   border-top: 1px solid #e6e9ee;

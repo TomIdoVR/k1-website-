@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.292 -->
+      <div class="tl-entry changed" id="v2.292">
+        <div class="tl-meta"><span class="tl-ver">v2.292</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">More integration categories (/hero-lab)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Ten more categories on the hero Integrations card</strong>, each with its own icon: Face Recognition, Video Analytics, Drones, Radar, Smart Fences, Traffic Lights, Smart Lights, Panic Buttons, Gunshot Detection and BI Tools — 16 categories now, up from 6</li>
+            <li><strong>Card layout reworked so they fit a fixed-height card</strong> — grid went 3 → 4 columns (6 rows would have overflowed), with tighter gaps and smaller icons and labels</li>
+            <li><strong>Fixed: tile size capped at 44px.</strong> Tiles size off the column width, so on the wider mobile card (286px vs 212px) they grew to ~61px and pushed the "+ N more" line past the card's fixed height, where <code>overflow: hidden</code> silently clipped it</li>
+            <li>From parallel work on KAB-2227: two more groups in the Ecosystem section (<strong>Access control &amp; identity</strong>, <strong>Drones &amp; aerial</strong>), and <code>.eco-grid</code> switched to <code>repeat(auto-fit, minmax(160px, 1fr))</code> so it wraps cleanly at 5–7 groups</li>
+            <li>Verified at 1600px, 820px and 375px — no overflow, no clipped labels, 4 × 4 throughout; TypeScript clean, no console errors</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.291 -->
       <div class="tl-entry changed" id="v2.291">
         <div class="tl-meta"><span class="tl-ver">v2.291</span><span class="tl-date">2026-07-29</span></div>

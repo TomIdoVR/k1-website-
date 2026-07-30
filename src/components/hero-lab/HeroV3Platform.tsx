@@ -255,6 +255,16 @@ function IntegrationsCard({ es }: { es: boolean }) {
     { en: 'Radio Systems', es: 'Sistemas de Radio', icon: <svg viewBox="0 0 24 24"><path d="M7 19V5l11-2v16M7 8h11M10 12h5" /><circle cx="12.5" cy="16" r="2" /></svg> },
     { en: 'Weather Feeds', es: 'Datos Climáticos', icon: <svg viewBox="0 0 24 24"><path d="M6 18a4 4 0 0 1 1-8 6 6 0 0 1 11 2 3 3 0 0 1 0 6Z" /></svg> },
     { en: 'IoT Devices', es: 'Dispositivos IoT', icon: <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2" /><circle cx="18" cy="6" r="2" /><circle cx="18" cy="18" r="2" /><path d="m8 11 8-4M8 13l8 4" /></svg> },
+    { en: 'Face Recognition', es: 'Reconocimiento Facial', icon: <svg viewBox="0 0 24 24"><path d="M4 8.5V6a2 2 0 0 1 2-2h2.5M15.5 4H18a2 2 0 0 1 2 2v2.5M20 15.5V18a2 2 0 0 1-2 2h-2.5M8.5 20H6a2 2 0 0 1-2-2v-2.5" /><circle cx="12" cy="10.5" r="2" /><path d="M8.8 16a4 4 0 0 1 6.4 0" /></svg> },
+    { en: 'Video Analytics', es: 'Analítica de Video', icon: <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><rect x="8" y="9" width="5.5" height="5.5" rx="1" /><path d="M16.5 15.5V11" /></svg> },
+    { en: 'Drones', es: 'Drones', icon: <svg viewBox="0 0 24 24"><circle cx="5.5" cy="5.5" r="2.2" /><circle cx="18.5" cy="5.5" r="2.2" /><circle cx="5.5" cy="18.5" r="2.2" /><circle cx="18.5" cy="18.5" r="2.2" /><rect x="9.5" y="9.5" width="5" height="5" rx="1.4" /><path d="m7.1 7.1 2.4 2.4M16.9 7.1l-2.4 2.4M7.1 16.9l2.4-2.4M16.9 16.9l-2.4-2.4" /></svg> },
+    { en: 'Radar', es: 'Radar', icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><path d="M12 12 18.4 6.5" /></svg> },
+    { en: 'Smart Fences', es: 'Cercas Inteligentes', icon: <svg viewBox="0 0 24 24"><path d="M5 20V8l3.5-3.2L12 8v12M12 20V8l3.5-3.2L19 8v12M3 12h18M3 16h18" /></svg> },
+    { en: 'Traffic Lights', es: 'Semáforos', icon: <svg viewBox="0 0 24 24"><rect x="8" y="2.5" width="8" height="17" rx="3" /><circle cx="12" cy="6.8" r="1.4" /><circle cx="12" cy="11" r="1.4" /><circle cx="12" cy="15.2" r="1.4" /><path d="M12 19.5V22" /></svg> },
+    { en: 'Smart Lights', es: 'Iluminación Inteligente', icon: <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.4 10.9V16h6.8v-2.1A6 6 0 0 0 12 3Z" /><path d="M9.6 19h4.8M10.6 21.5h2.8" /></svg> },
+    { en: 'Panic Buttons', es: 'Botones de Pánico', icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7" /><circle cx="12" cy="13.5" r="2.6" /><path d="M12 3v2.2M5.8 5.4 7.4 7M18.2 5.4 16.6 7" /></svg> },
+    { en: 'Gunshot Detection', es: 'Detección de Disparos', icon: <svg viewBox="0 0 24 24"><path d="M3 12h2M7.5 7.8v8.4M12 4v16M16.5 8.6v6.8M21 12h-2" /></svg> },
+    { en: 'BI Tools', es: 'Herramientas BI', icon: <svg viewBox="0 0 24 24"><path d="M5 19v-7M10 19V6M15 19v-4.5M20 19v-9M3 21h18" /></svg> },
   ]
   return (
     <article data-hero-card="true" className="hll-card hll-card--integrations" style={{ '--cc': '#165dff' } as CSSProperties}>

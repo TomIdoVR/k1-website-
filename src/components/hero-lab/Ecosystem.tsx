@@ -27,6 +27,8 @@ const ECOSYSTEM: { group: Loc; items: string[] }[] = [
   { group: { en: 'Analytics & AI', es: 'Analítica e IA' }, items: ['Corsight', 'LPR engines', 'Object & anomaly AI'] },
   { group: { en: 'Sensors & IoT', es: 'Sensores e IoT' }, items: ['Panic buttons', 'Gunshot detection', 'IoT & field sensors'] },
   { group: { en: 'Radio & operational comms', es: 'Radio y comunicaciones operativas' }, items: ['Motorola', 'APX / ASTRO', 'Standard PTT radio'] },
+  { group: { en: 'Access control & identity', es: 'Control de acceso e identidad' }, items: ['Access control panels', 'Badge & credential systems', 'OSDP / Wiegand'] },
+  { group: { en: 'Drones & aerial', es: 'Drones y sistemas aéreos' }, items: ['Drone / UAS feeds', 'Counter-drone systems', 'Aerial video downlink'] },
 ]
 
 export default function Ecosystem({ es }: { es: boolean }) {

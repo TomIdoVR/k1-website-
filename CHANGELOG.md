@@ -1,3 +1,20 @@
+## [v2.292] – 2026-07-30 — More integration categories (/hero-lab)
+### Added
+- **Ten more categories on the hero Integrations card**, each with its own icon: Face Recognition, Video Analytics, Drones, Radar, Smart Fences, Traffic Lights, Smart Lights, Panic Buttons, Gunshot Detection and BI Tools. The card now shows 16 categories, up from 6. This is the change that was actually requested.
+- **Two more groups in the Ecosystem section** (from parallel work on KAB-2227) — *Access control & identity* (access control panels, badge & credential systems, OSDP / Wiegand) and *Drones & aerial* (drone / UAS feeds, counter-drone systems, aerial video downlink). Both map to existing `/integrations/` pages (`access-control`, `drones`) the section did not previously surface.
+- `.eco-grid` switched from a hard `repeat(5, 1fr)` to `repeat(auto-fit, minmax(160px, 1fr))` so it wraps cleanly at 5, 6 or 7 groups. The 980px and 640px breakpoints are unchanged.
+
+### Fixed
+- **Card layout reworked so 16 items fit a fixed-height card.** The grid went from 3 columns to 4 (6 rows would have overflowed), with tighter gaps and smaller icons/labels.
+- **Tile size capped at 44px.** Tiles are sized off the column width, so on the wider mobile/tablet card (286px vs. 212px on desktop) they grew to ~61px and pushed the "+ N more" line past the card's fixed height, where `overflow: hidden` silently clipped it.
+
+### Notes
+- Verified at 1600px (13px slack), 820px and 375px (40px slack) — no overflow, no clipped labels, 4 × 4 at every breakpoint, no horizontal page overflow. TypeScript clean, no console errors.
+- The "+ 20 More Integrations" line is unchanged. It implied ~26 total when 6 were shown and now implies ~36 — worth a second look, since I don't know the real integration count.
+- The Ecosystem grid lands 6-across at 1600px, which leaves the 7th group alone on the second row. Cosmetic, and it reflows at other widths.
+- KAB-2227 read the same (truncated) request as being about the Ecosystem section rather than the hero card, which is why both were touched. The Ecosystem additions are kept — they are accurate and map to real `/integrations/` pages — but they were not what was asked for here.
+- Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
+
 ## [v2.291] – 2026-07-29 — Drop the capability matrix legend (/hero-lab)
 ### Changed
 - **Removed the "All modules included in every solution" legend line** under the capability grid. With every module highlighted for every product there is no two-state key to explain, and the `.sv-note` directly below ("Add capabilities over time…") already carries the message.
