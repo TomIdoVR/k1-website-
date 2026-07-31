@@ -1,3 +1,20 @@
+## [v2.297] – 2026-07-30 — K-Connect solution page (/hero-lab/k-connect)
+### Added
+- **Redesigned K-Connect solution page**, ported from the Claude Design project (`home/sol-kconnect.jsx`, whose copy was itself lifted from the live `/k-connect` page). Four benefits, six capability rows, three integration cards, and the **first use of the optional "Who uses K-Connect" audience band** — five cards covering schools, businesses, residential communities, government facilities and public venues. Case study is Mexico / municipal programs. Fully localized EN/ES.
+- **All six pages of the redesign now exist under `/hero-lab`** — homepage plus the five K-* solution pages, every one of them driven by the same `SolutionPage` renderer with a single content file each.
+
+### Changed
+- **Per-feature shot proportions.** Features accept optional `ar` (CSS aspect-ratio) and `h`, so a row whose image is not 1200×670 can opt out of the default crop. K-Connect's network mockup is 1200×546 and was being cut off; it now renders at its true ratio while the other five rows keep the default.
+- **Collapsed the two icon sets into one lookup** (`ALL_ICONS`), matching the design's own `SP_ALL_ICONS`. This replaces the bidirectional `??` fallback added in v2.295 — same behaviour, less indirection. K-Connect needed it again for `shield` as a flow node.
+
+### Notes
+- Accent resolved to `#22c55e` — the green the hero nav already uses for K-Connect, matching the design's own first hero chip and its dark-green `accentInk`. On the dark capability band it measures **8.09:1**, comfortably AA.
+- **Colour split, second instance:** the Solutions accordion tags K-Connect purple (`#8b5cf6`) while the hero nav uses green. Same problem noted for K-Traffic (cyan vs. amber) in v2.296. Two products now read as different colours depending on the surface — worth reconciling in one pass.
+- Uses the bare hero: the K-Connect network mockup already carries its own window chrome, so the console frame and floating chips are suppressed.
+- All images already existed; the hero and first capability row use `/images/k-connect-mockup.webp` at the root of `/images` rather than `/images/modules`.
+- Verified at 1440px and 375px, EN and ES: audience band renders 5 cards over 3 columns, first shot at `1200 / 546` and the rest at `1200 / 670`, all grids collapse to one column, no horizontal overflow, no console errors, TypeScript clean. **All five solution pages re-checked for empty `<svg>` glyphs after the icon-map change — zero across every page.**
+- **The live `/k-connect` page is untouched.** This sits at `/hero-lab/k-connect`, noindex and unlinked.
+
 ## [v2.296] – 2026-07-30 — K-Traffic solution page (/hero-lab/k-traffic)
 ### Added
 - **Redesigned K-Traffic solution page**, ported from the Claude Design project (`home/sol-ktraffic.jsx`, whose copy was itself lifted from the live `/k-traffic` page). Four benefits, six capability rows, four integration cards, and a five-bar **SYSTEM PERFORMANCE** panel. Case study is Mexico / 12 cities connected. Fully localized EN/ES.

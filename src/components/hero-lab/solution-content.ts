@@ -44,7 +44,9 @@ export type SolutionContent = {
   featuresEyebrow: Loc
   featuresH2a: Loc
   featuresH2b: Loc
-  features: { img: string; alt: Loc; t: Loc; d: Loc; pts: LocList }[]
+  /* `ar` (CSS aspect-ratio) and `h` override the default 1200x670 shot crop
+     for a single row whose image has different proportions. */
+  features: { img: string; ar?: string; h?: number; alt: Loc; t: Loc; d: Loc; pts: LocList }[]
   processEyebrow: Loc
   processH2a: Loc
   processH2b: Loc

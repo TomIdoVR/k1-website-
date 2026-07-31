@@ -44,14 +44,17 @@ const FLOW_ICONS: Record<string, React.ReactNode> = {
   bolt: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></>,
 }
 
-/* The two icon sets overlap in practice — K-Video uses `camera` as a benefit
-   icon and `brain` as a flow node — so each looks in the other set as a
-   fallback. (The design only added the first direction; without the second,
-   K-Video's "AI analytics" flow node renders an empty <svg>.) */
+/* Single lookup for every icon consumer — the two sets overlap in practice
+   (K-Video uses `camera` as a benefit and `brain` as a flow node; K-Traffic
+   uses `pin` and `bell` as benefits; K-Connect uses `shield` as a flow node)
+   and a split lookup leaves blank glyphs wherever a key lives in the other
+   map. Matches the design's own SP_ALL_ICONS. */
+const ALL_ICONS: Record<string, React.ReactNode> = { ...FLOW_ICONS, ...BENEFIT_ICONS }
+
 function BenefitIcon({ k }: { k: string }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {BENEFIT_ICONS[k] ?? FLOW_ICONS[k]}
+      {ALL_ICONS[k]}
     </svg>
   )
 }
@@ -59,7 +62,7 @@ function BenefitIcon({ k }: { k: string }) {
 function FlowIcon({ k }: { k: string }) {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {FLOW_ICONS[k] ?? BENEFIT_ICONS[k]}
+      {ALL_ICONS[k]}
     </svg>
   )
 }
@@ -176,8 +179,10 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           <div className="sp-feat-list">
             {p.features.map((f, i) => (
               <div className={`sp-feat${i % 2 ? ' is-rev' : ''}`} key={i}>
-                <div className="sp-feat-shot">
-                  <Image src={f.img} alt={t(f.alt, es)} width={1200} height={670} />
+                {/* `ar`/`h` let one row opt out of the default 1200x670 crop —
+                    K-Connect's network view is 1200x546 and would be cut off. */}
+                <div className="sp-feat-shot" style={f.ar ? { aspectRatio: f.ar } : undefined}>
+                  <Image src={f.img} alt={t(f.alt, es)} width={1200} height={f.h ?? 670} />
                 </div>
                 <div className="sp-feat-copy">
                   <h3 className="sp-feat-t">{t(f.t, es)}</h3>

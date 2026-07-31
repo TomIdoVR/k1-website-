@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.297 -->
+      <div class="tl-entry feat" id="v2.297">
+        <div class="tl-meta"><span class="tl-ver">v2.297</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">K-Connect solution page (/hero-lab/k-connect)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported the <strong>redesigned K-Connect solution page</strong> from the Claude Design project — four benefits, six capability rows, three integration cards, and the <strong>first use of the optional "Who uses K-Connect" audience band</strong> (schools, businesses, residential communities, government facilities, public venues); case study is Mexico / municipal programs; fully localized EN/ES</li>
+            <li><strong>All six pages of the redesign now exist under <code>/hero-lab</code></strong> — homepage plus five K-* solution pages, all on one shared renderer with a single content file each</li>
+            <li><strong>Per-feature shot proportions:</strong> features accept optional <code>ar</code> and <code>h</code>, so a row whose image isn't 1200×670 can opt out of the default crop. K-Connect's network mockup is 1200×546 and was being cut off</li>
+            <li><strong>Collapsed the two icon sets into one lookup</strong>, matching the design's own <code>SP_ALL_ICONS</code> — replaces the bidirectional fallback from v2.295 with less indirection. K-Connect needed it again for <code>shield</code> as a flow node</li>
+            <li>Accent <code>#22c55e</code> (8.09:1 on the dark band, comfortably AA). <strong>Colour split, second instance:</strong> the Solutions accordion tags K-Connect purple while the hero nav uses green — same as K-Traffic's cyan/amber. Two products now read differently by surface; worth one reconciling pass</li>
+            <li>Verified 1440px and 375px, EN and ES; <strong>all five solution pages re-checked for empty icon glyphs after the icon-map change — zero across every page</strong>; no overflow, no console errors, <code>tsc</code> clean</li>
+            <li><strong>The live <code>/k-connect</code> page is untouched</strong> — noindex and unlinked at <code>/hero-lab/k-connect</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.296 -->
       <div class="tl-entry feat" id="v2.296">
         <div class="tl-meta"><span class="tl-ver">v2.296</span><span class="tl-date">2026-07-30</span></div>
