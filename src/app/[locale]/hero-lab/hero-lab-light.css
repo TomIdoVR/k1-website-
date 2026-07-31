@@ -835,7 +835,9 @@
 
 .hll-stat-icon svg { width: 42px; height: 42px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .hll-stat-num { color: #0757f7; font-size: 23px; font-weight: 650; letter-spacing: -0.035em; line-height: 1; }
-.hll-stat-label { margin-top: 6px; color: #4f6082; font-size: 12px; }
+/* #4f6082 measured 2.85:1 on the navy proof bar — below the 4.5 AA floor for
+   12px text. Lightened, hue and saturation preserved. */
+.hll-stat-label { margin-top: 6px; color: #7386aa; font-size: 12px; }
 
 .hll-carousel-controls { display: none; }
 

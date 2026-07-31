@@ -24,9 +24,12 @@ const IMPACT: Loc[] = [
   TP('Statewide command visibility', 'Visibilidad de mando estatal'),
 ]
 
-const METRICS: { v: string; l: Loc }[] = [
-  { v: 'Statewide', l: TP('Unified operations', 'Operaciones unificadas') },
-  { v: 'Multi-agency', l: TP('Shared situational awareness', 'Conciencia situacional compartida') },
+/* `v` was typed as a bare string, so "Statewide" and "Multi-agency" rendered
+   untranslated on /es while their labels localized correctly. Values that are
+   words need the same Loc treatment; "24/7" is genuinely locale-invariant. */
+const METRICS: { v: Loc | string; l: Loc }[] = [
+  { v: TP('Statewide', 'Estatal'), l: TP('Unified operations', 'Operaciones unificadas') },
+  { v: TP('Multi-agency', 'Multiagencia'), l: TP('Shared situational awareness', 'Conciencia situacional compartida') },
   { v: '24/7', l: TP('Mission-critical use', 'Uso de misión crítica') },
 ]
 
@@ -85,7 +88,7 @@ export default function CaseStudy({ es }: { es: boolean }) {
             <div className="cust-metrics">
               {METRICS.map((m, i) => (
                 <div className="cust-metric" key={i}>
-                  <span className="cust-metric-n">{m.v}</span>
+                  <span className="cust-metric-n">{typeof m.v === 'string' ? m.v : m.v[lang]}</span>
                   <span className="cust-metric-c">{m.l[lang]}</span>
                 </div>
               ))}

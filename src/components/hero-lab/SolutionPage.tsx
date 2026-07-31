@@ -69,7 +69,7 @@ function FlowIcon({ k }: { k: string }) {
 
 export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolean }) {
   return (
-    <div className="sp" style={{ '--ac': p.accent, '--ac-ink': p.accentInk } as CSSProperties}>
+    <div className="sp" style={{ '--ac': p.accent, '--ac-ink': p.accentInk, '--ac-dark': p.accentOnDark ?? p.accent } as CSSProperties}>
       {/* ── Hero ── */}
       <section className="sp-hero" id="top">
         <div className="sp-hero-bg" aria-hidden="true"><span className="sp-hero-grid" /></div>
@@ -295,6 +295,35 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ──
+          Rendered visibly, not just emitted as JSON-LD. The live pages define
+          this content purely to feed faqPageSchema and never show it, which
+          contradicts Google's requirement that rich-result markup reflect
+          visible page content. */}
+      {p.faqs && p.faqs.length > 0 && (
+        <section className="sp-section sp-faq" id="faq">
+          <div className="sp-wrap">
+            <div className="sp-head sp-head-c">
+              <div className="sp-section-eyebrow">{es ? 'PREGUNTAS FRECUENTES' : 'FREQUENTLY ASKED'}</div>
+              <h2 className="sp-h2">
+                {es ? <>Sobre <em>{p.name}.</em></> : <>About <em>{p.name}.</em></>}
+              </h2>
+            </div>
+            <div className="sp-faq-list">
+              {p.faqs.map((f, i) => (
+                <details className="sp-faq-item" key={i} name="sp-faq">
+                  <summary className="sp-faq-q">
+                    {t(f.q, es)}
+                    <span className="sp-faq-mark" aria-hidden="true" />
+                  </summary>
+                  <div className="sp-faq-a">{t(f.a, es)}</div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Case study (dark moment) ── */}
       <section className="sp-case">

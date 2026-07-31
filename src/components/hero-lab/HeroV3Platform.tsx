@@ -241,7 +241,7 @@ function MobileCard({ es }: { es: boolean }) {
       <div className="hll-mobile-metrics">
         <span><strong>1,842</strong><small>{es ? 'Usuarios de respuesta' : 'Responder users'}</small></span>
         <span><strong>5,736</strong><small>{es ? 'Usuarios ciudadanos' : 'Citizen users'}</small></span>
-        <span><strong>98%</strong><small>{es ? 'Disponibilidad' : 'App uptime'}</small></span>
+        <span><strong>99.9%</strong><small>{es ? 'Disponibilidad' : 'App uptime'}</small></span>
       </div>
     </article>
   )

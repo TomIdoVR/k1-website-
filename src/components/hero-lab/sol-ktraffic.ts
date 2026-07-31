@@ -185,6 +185,41 @@ const KTRAFFIC: SolutionContent = {
     { t: S('Traffic operations & incident coordination', 'Operaciones de tráfico y coordinación de incidentes'), d: S('Links to public safety dispatch, emergency services, road crews.', 'Enlace con despacho de seguridad pública, servicios de emergencia y cuadrillas viales.') },
   ],
 
+  faqs: [
+    {
+      q: S('What is K-Traffic?',
+        '¿Qué es K-Traffic?'),
+      a: S('K-Traffic is an intelligent traffic management platform that connects traffic signals, cameras, sensors, and control centers into one integrated system. It reduces congestion, detects incidents, and optimizes city mobility in real time.',
+        'K-Traffic es una plataforma de gestión de tráfico inteligente que conecta semáforos, cámaras, sensores y centros de control en un sistema integrado. Reduce la congestión, detecta incidentes y optimiza la movilidad urbana en tiempo real.'),
+    },
+    {
+      q: S('How does K-Traffic manage traffic signals?',
+        '¿Cómo gestiona K-Traffic los semáforos?'),
+      a: S('K-Traffic uses adaptive signal control with 98% signal response time. The platform automatically adjusts signal cycles based on real-time data from IoT sensors, cameras, and inductive loop detectors.',
+        'K-Traffic utiliza control adaptativo de señales con un tiempo de respuesta del 98%. La plataforma ajusta automáticamente los ciclos de semáforos basándose en datos en tiempo real de sensores IoT, cámaras y detectores de lazo inductivo.'),
+    },
+    {
+      q: S('Does K-Traffic support adaptive signal control?',
+        '¿Soporta K-Traffic control adaptativo de señales?'),
+      a: S('Yes. K-Traffic includes predictive analytics and adaptive signal control that improves traffic flow, reduces congestion by 34%, and cuts travel times using AI models with 87% accuracy.',
+        'Sí. K-Traffic incluye analítica predictiva y control adaptativo de semáforos que mejora el flujo vehicular, reduce la congestión en un 34% y acorta los tiempos de viaje utilizando modelos de IA con 87% de precisión.'),
+    },
+    {
+      q: S('What sensors does K-Traffic integrate with?',
+        '¿Con qué sensores se integra K-Traffic?'),
+      a: S('K-Traffic integrates with IoT sensors, speed cameras, inductive loops, V2X systems, tunnel control, and smart signals. It also connects with public safety dispatch platforms and emergency services.',
+        'K-Traffic se integra con sensores IoT, cámaras de velocidad, lazos inductivos, sistemas V2X, control de túneles y semáforos inteligentes. También se conecta con plataformas de despacho de seguridad pública y servicios de emergencia.'),
+    },
+  ],
+
+  seo: {
+    metadataKey: 'kTraffic',
+    slug: 'k-traffic',
+    category: 'Intelligent Traffic Management System',
+    description: S('Intelligent traffic management system with adaptive signal control, violation and incident detection, and emergency preemption.',
+      'Sistema inteligente de gestión de tráfico con control adaptativo de semáforos, detección de infracciones e incidentes y prioridad de emergencia.'),
+  },
+
   caseEyebrow: S('PROVEN IN THE FIELD', 'PROBADO EN CAMPO'),
   caseMetric: '150+',
   caseMetricL: S('Intersections managed', 'Intersecciones gestionadas'),

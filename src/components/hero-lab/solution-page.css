@@ -147,9 +147,12 @@
 /* ── Feature rows (dark moment — screenshots pop) ── */
 .sp-features { background: linear-gradient(180deg, #0b1424 0%, #0a1220 100%); }
 /* The dark band now takes the product's accent rather than a fixed cyan. */
-.sp-features .sp-section-eyebrow { color: var(--ac); }
+/* --ac-dark is the accent tuned for this near-black band. It defaults to --ac,
+   but K-Safety's #1858f5 only reaches 3.29:1 here — below the 4.5 AA floor for
+   the 12px eyebrow — so that product supplies a lightened variant instead. */
+.sp-features .sp-section-eyebrow { color: var(--ac-dark, var(--ac)); }
 .sp-features .sp-h2 { color: #fff; }
-.sp-features .sp-h2 em { color: var(--ac); }
+.sp-features .sp-h2 em { color: var(--ac-dark, var(--ac)); }
 .sp-feat-list { display: flex; flex-direction: column; gap: clamp(40px, 5vw, 78px); }
 .sp-feat { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 62px); align-items: center; }
 .sp-feat.is-rev { grid-template-columns: 1fr 1.15fr; }
@@ -249,6 +252,37 @@
 .sp-int-card:hover { transform: translateY(-3px); border-color: rgba(34, 184, 212, 0.4); }
 .sp-int-card h3 { font-size: 15.5px; font-weight: 700; color: #11203a; margin: 0 0 7px; }
 .sp-int-card p { font-size: 13.5px; line-height: 1.55; color: #4d627f; margin: 0; }
+
+/* ── FAQ ── */
+.sp-faq { background: transparent; }
+.sp-faq-list { max-width: 860px; margin-inline: auto; display: flex; flex-direction: column; gap: 10px; }
+.sp-faq-item {
+  background: #fff; border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 14px;
+  box-shadow: 0 10px 26px -22px rgba(15, 23, 36, 0.4);
+  transition: border-color .2s ease;
+}
+.sp-faq-item[open] { border-color: color-mix(in srgb, var(--ac) 32%, transparent); }
+.sp-faq-q {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 22px; cursor: pointer; list-style: none;
+  font-family: var(--sp-f-display); font-weight: 600; font-size: clamp(16px, 1.5vw, 19px);
+  color: #11203a; line-height: 1.25;
+}
+.sp-faq-q::-webkit-details-marker { display: none; }
+.sp-faq-q:focus-visible { outline: 2px solid var(--ac); outline-offset: -2px; border-radius: 14px; }
+/* plus/minus built from two bars so it needs no icon font */
+.sp-faq-mark { position: relative; width: 15px; height: 15px; flex-shrink: 0; }
+.sp-faq-mark::before, .sp-faq-mark::after {
+  content: ''; position: absolute; left: 0; top: 6.5px; width: 15px; height: 2px;
+  border-radius: 2px; background: var(--ac-ink); transition: transform .22s ease;
+}
+.sp-faq-mark::after { transform: rotate(90deg); }
+.sp-faq-item[open] .sp-faq-mark::after { transform: rotate(0deg); }
+.sp-faq-a { padding: 0 22px 20px; font-size: 14.5px; line-height: 1.62; color: #4d627f; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-faq-mark::before, .sp-faq-mark::after { transition: none; }
+}
 
 /* ── Case study (dark moment) ── */
 .sp-case { background: linear-gradient(180deg, var(--sp-navy), #0c1626); padding-block: clamp(52px, 6vw, 84px); }

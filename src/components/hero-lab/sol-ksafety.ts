@@ -15,6 +15,9 @@ const KSAFETY: SolutionContent = {
   name: 'K-Safety',
   accent: '#1858f5',
   accentInk: '#0b6a80',
+  /* #1858f5 only reaches 3.29:1 on the dark capability band; this lightened
+     variant clears 5.0:1 while reading as the same blue. */
+  accentOnDark: '#4e7ff7',
   eyebrow: S('K-SAFETY · COMMAND & INCIDENT MANAGEMENT', 'K-SAFETY · COMANDO Y GESTIÓN DE INCIDENTES'),
   h1a: S('Coordinate every response', 'Coordina cada respuesta'),
   h1b: S('from one command platform.', 'desde una sola plataforma de mando.'),
@@ -174,6 +177,47 @@ const KSAFETY: SolutionContent = {
     { t: S('Emergency response tools', 'Herramientas de respuesta'), d: S('Panic buttons, 911 CAD, mobile responder apps.', 'Botones de pánico, CAD 911, apps de respuesta móvil.') },
     { t: S('GIS & mapping', 'GIS y mapeo'), d: S('Real-time mapping, routing, zone management, geofencing.', 'Mapeo en tiempo real, rutas, zonas, geocercas.') },
   ],
+
+  faqs: [
+    {
+      q: S('What is K-Safety?',
+        '¿Qué es K-Safety?'),
+      a: S('K-Safety is a public safety platform that unifies event management, GIS, VMS, mobile apps, and third-party integrations into one command center. It provides real-time situational awareness for cities and security agencies.',
+        'K-Safety es una plataforma de seguridad pública que unifica gestión de eventos, GIS, VMS, aplicaciones móviles e integraciones de terceros en un solo centro de mando. Proporciona conciencia situacional en tiempo real para ciudades y agencias de seguridad.'),
+    },
+    {
+      q: S('How does K-Safety provide situational awareness?',
+        '¿Cómo proporciona K-Safety conciencia situacional?'),
+      a: S('K-Safety overlays incidents, units, and live streams on a unified operational map with real-time GIS. It connects cameras, sensors, access points, mobile apps, and IoT devices into a single operational picture.',
+        'K-Safety superpone incidentes, unidades y transmisiones en vivo en un mapa operativo unificado con GIS en tiempo real. Conecta cámaras, sensores, puntos de acceso, aplicaciones móviles y dispositivos IoT en una sola imagen operativa.'),
+    },
+    {
+      q: S('What modules does K-Safety integrate?',
+        '¿Qué módulos integra K-Safety?'),
+      a: S('K-Safety integrates event detection and automated alerting, GIS mapping with live unit tracking, VMS integration, mobile apps for field responders, panic button and IoT sensor networks, and AI-powered threat forecasting.',
+        'K-Safety integra detección de eventos y alertas automáticas, mapeo GIS con seguimiento de unidades en vivo, integración VMS, aplicaciones móviles para respondedores de campo, red de botones de pánico y sensores IoT, y pronóstico de amenazas con IA.'),
+    },
+    {
+      q: S('Who uses K-Safety?',
+        '¿Quién usa K-Safety?'),
+      a: S('K-Safety is used by cities, municipalities, and public safety agencies. It currently operates across 68 active projects, connecting 100+ agencies with 30+ third-party integrations.',
+        'K-Safety es utilizado por ciudades, municipios y agencias de seguridad pública. Actualmente opera en 68 proyectos activos, conectando más de 100 agencias con más de 30 integraciones de terceros.'),
+    },
+    {
+      q: S('How does K-Safety compare to traditional PSIM?',
+        '¿Cómo se compara K-Safety con los PSIM tradicionales?'),
+      a: S('K-Safety surpasses traditional PSIM by offering real-time predictive AI, flexible cloud or on-premises deployment, and scalability from a single city to a nationwide network. It includes event automation, smart dispatch, and integrated geospatial analytics.',
+        'K-Safety supera a los PSIM tradicionales al ofrecer IA predictiva en tiempo real, despliegue flexible en nube o local, y escalabilidad desde una sola ciudad hasta una red nacional. Incluye automatización de eventos, despacho inteligente y analítica geoespacial integrada.'),
+    },
+  ],
+
+  seo: {
+    metadataKey: 'kSafety',
+    slug: 'k-safety',
+    category: 'Public Safety Platform',
+    description: S('Public safety platform that unifies event management, real-time GIS, VMS, and mobile apps into one command center.',
+      'Plataforma de seguridad pública que unifica gestión de eventos, GIS en tiempo real, VMS y aplicaciones móviles en un solo centro de mando.'),
+  },
 
   caseEyebrow: S('PROVEN IN THE FIELD', 'PROBADO EN CAMPO'),
   caseMetric: '10,000+',

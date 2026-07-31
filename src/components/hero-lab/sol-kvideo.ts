@@ -41,7 +41,7 @@ const KVIDEO: SolutionContent = {
   ],
   stats: [
     { v: '1,204+', l: S('Active cameras', 'Cámaras activas') },
-    { v: '98%', l: S('Uptime', 'Disponibilidad') },
+    { v: '99.9%', l: S('Uptime', 'Disponibilidad') },
     { v: '15+', l: S('AI models', 'Modelos de IA') },
   ],
 
@@ -70,8 +70,8 @@ const KVIDEO: SolutionContent = {
     },
     {
       icon: 'scale', t: S('Highly scalable & redundant', 'Altamente escalable y redundante'),
-      d: S('Microservices architecture handles thousands of cameras with 98% uptime and automatic failover.',
-        'Arquitectura de microservicios que maneja miles de cámaras con 98% de disponibilidad y conmutación automática por fallo.'),
+      d: S('Microservices architecture handles thousands of cameras with 99.9% uptime and automatic failover.',
+        'Arquitectura de microservicios que maneja miles de cámaras con 99.9% de disponibilidad y conmutación automática por fallo.'),
     },
     {
       icon: 'shield', t: S('Security & compliance', 'Seguridad y cumplimiento'),
@@ -151,7 +151,9 @@ const KVIDEO: SolutionContent = {
     { l: S('Face recognition accuracy', 'Precisión de reconocimiento facial'), v: '94%', w: '94%' },
     { l: S('LPR read rate', 'Tasa de lectura LPR'), v: '99%', w: '99%' },
     { l: S('Anomaly detection rate', 'Detección de anomalías'), v: '88%', w: '88%' },
-    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '98%', w: '98%' },
+    /* Bar capped at 99% so a 99.9% claim doesn't render as a completely full
+       track — same treatment as K-Traffic's uptime bar. */
+    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '99.9%', w: '99%' },
   ],
 
   processEyebrow: S('THE PROCESS', 'EL PROCESO'),
@@ -183,6 +185,65 @@ const KVIDEO: SolutionContent = {
     { t: S('IoT & smart sensors', 'IoT y sensores inteligentes'), d: S('Motion sensors, perimeter security, access control systems.', 'Sensores de movimiento, seguridad perimetral, sistemas de control de acceso.') },
   ],
 
+  faqs: [
+    {
+      q: S('What is K-Video?',
+        '¿Qué es K-Video?'),
+      a: S('K-Video is a scalable cloud and on-premises video management system (VMS) powered by AI-driven analytics. It enables real-time monitoring, forensic search, and automated threat detection across thousands of cameras.',
+        'K-Video es un sistema de gestión de video (VMS) escalable en nube y local, potenciado por analítica de IA. Permite monitoreo en tiempo real, búsqueda forense y detección automatizada de amenazas en miles de cámaras.'),
+    },
+    {
+      q: S('How does K-Video use AI for video analytics?',
+        '¿Cómo utiliza K-Video la IA para analítica de video?'),
+      a: S('K-Video integrates facial recognition at 94% accuracy, license plate recognition (LPR) at 99% read rate, anomaly detection, and behavioral analysis — all automated and in real time.',
+        'K-Video integra reconocimiento facial con 94% de precisión, reconocimiento de placas vehiculares (LPR) con 99% de tasa de lectura, detección de anomalías y análisis de comportamiento — todo automatizado y en tiempo real.'),
+    },
+    {
+      q: S('How many cameras can K-Video manage?',
+        '¿Cuántas cámaras puede gestionar K-Video?'),
+      a: S('K-Video supports over 10,000 cameras through its microservices architecture. It handles IP cameras, body cams, and drone streams with 99.9% uptime and automatic failover.',
+        'K-Video soporta más de 10,000 cámaras gracias a su arquitectura de microservicios. Maneja cámaras IP, body cams y streams de drones con 99.9% de disponibilidad y conmutación automática por fallo.'),
+    },
+    {
+      q: S('Does K-Video support third-party cameras?',
+        '¿Soporta K-Video cámaras de terceros?'),
+      a: S('Yes. K-Video is compatible with major VMS platforms and IP camera manufacturers, supporting multiple streaming protocols including HLS, WebRTC, RTMP, and RTSP.',
+        'Sí. K-Video es compatible con las principales plataformas VMS y fabricantes de cámaras IP, soportando múltiples protocolos de streaming incluyendo HLS, WebRTC, RTMP y RTSP.'),
+    },
+    {
+      q: S('What is intelligent video search in K-Video?',
+        '¿Qué es la búsqueda inteligente de video en K-Video?'),
+      a: S('K-Video\\\'s intelligent search lets you find specific events in seconds instead of hours, using AI filters like facial recognition, LPR, motion detection, and behavioral analysis across stored video archives.',
+        'La búsqueda inteligente de K-Video permite encontrar eventos específicos en segundos en lugar de horas, utilizando filtros de IA como reconocimiento facial, LPR, detección de movimiento y análisis de comportamiento en archivos de video almacenados.'),
+    },
+    {
+      q: S('What is a VMS and why does public safety need one?',
+        '¿Qué es un VMS y por qué lo necesita la seguridad pública?'),
+      a: S('A VMS (Video Management System) is the software that centralizes recording, storage, live viewing, and forensic search of all cameras across an organization. For public safety, a unified VMS replaces the need to access multiple DVR/NVR consoles, allowing operators to view any camera — municipal, traffic, port, or airport — from a single interface. K-Video is a next-generation VMS that adds AI analytics on top of this foundation.',
+        'Un VMS (Video Management System o Sistema de Gestión de Video) es el software que centraliza la grabación, almacenamiento, visualización en vivo y búsqueda forense de todas las cámaras de una organización. Para seguridad pública, un VMS unificado reemplaza la necesidad de acceder a múltiples consolas de DVR/NVR, permitiendo a los operadores ver cualquier cámara — municipal, de tráfico, portuaria o aeroportuaria — desde una sola interfaz. K-Video es un VMS de nueva generación que añade analítica de IA sobre esta base.'),
+    },
+    {
+      q: S('What are the best VMS software features for public safety?',
+        '¿Cuáles son las mejores características de un software VMS para seguridad pública?'),
+      a: S('Essential features include: ONVIF/RTSP support for connecting cameras from any manufacturer, forensic search with AI filters (facial recognition, LPR, anomaly detection), integrated GIS maps for locating cameras by geographic location, hybrid cloud/on-premises storage, sub-second latency streaming for real-time operations, and end-to-end encryption. K-Video includes all of these capabilities in a single platform.',
+        'Las características esenciales incluyen: soporte ONVIF/RTSP para conectar cámaras de cualquier fabricante, búsqueda forense con filtros de IA (reconocimiento facial, LPR, detección de anomalías), mapas GIS integrados para localizar cámaras por ubicación geográfica, almacenamiento híbrido nube/local, streaming de baja latencia (sub-segundo) para operaciones en tiempo real, y cifrado de extremo a extremo. K-Video incluye todas estas capacidades en una sola plataforma.'),
+    },
+    {
+      q: S('What is the difference between a unified VMS and a traditional DVR/NVR?',
+        '¿Cuál es la diferencia entre un VMS unificado y un DVR/NVR tradicional?'),
+      a: S('A DVR/NVR records video from a limited set of cameras on a physical device. A unified VMS like K-Video connects thousands of cameras from multiple manufacturers and locations on one platform with AI analytics, centralized forensic search, and GIS maps. The key difference: with a DVR/NVR you need to access each device individually; with K-Video, all cameras are in a single operational view with intelligent search capabilities.',
+        'Un DVR/NVR graba video de un conjunto limitado de cámaras en un dispositivo físico. Un VMS unificado como K-Video conecta miles de cámaras de múltiples fabricantes y ubicaciones en una sola plataforma con analítica de IA, búsqueda forense centralizada y mapas GIS. La diferencia clave: con un DVR/NVR necesitas acceder a cada dispositivo individualmente; con K-Video, todas las cámaras están en una sola vista operativa con capacidades de búsqueda inteligente.'),
+    },
+  ],
+
+  seo: {
+    metadataKey: 'kVideo',
+    slug: 'k-video',
+    category: 'Video Management System',
+    description: S('AI-powered video management system for public safety, with real-time monitoring, forensic search, and automated detection across thousands of cameras.',
+      'Sistema de gestión de video con IA para seguridad pública, con monitoreo en tiempo real, búsqueda forense y detección automatizada en miles de cámaras.'),
+  },
+
   caseEyebrow: S('PROVEN IN THE FIELD', 'PROBADO EN CAMPO'),
   caseMetric: '10,000+',
   caseMetricL: S('Connected sensors & cameras', 'Sensores y cámaras conectados'),
@@ -192,7 +253,7 @@ const KVIDEO: SolutionContent = {
     'Cámaras de múltiples fabricantes y municipios alimentan una sola imagen operativa estatal, con analítica e investigaciones sobre toda la red en vez de sistema por sistema.'),
   caseStats: [
     { v: S('Multi-vendor', 'Multi-fabricante'), l: S('Camera network', 'Red de cámaras') },
-    { v: '98%', l: S('Platform uptime', 'Disponibilidad de plataforma') },
+    { v: '99.9%', l: S('Platform uptime', 'Disponibilidad de plataforma') },
     { v: '15+', l: S('AI models running', 'Modelos de IA activos') },
   ],
   caseNote: S('Figures reflect reported platform performance. Deployment details subject to customer approval.',

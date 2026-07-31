@@ -187,6 +187,41 @@ const KCONNECT: SolutionContent = {
     { t: S('Communication & access', 'Comunicación y acceso'), d: S('Secure encrypted channels, SSO, mobile apps, and enterprise directory integration.', 'Canales encriptados seguros, SSO, apps móviles e integración con directorio empresarial.') },
   ],
 
+  faqs: [
+    {
+      q: S('What is K-Connect?',
+        '¿Qué es K-Connect?'),
+      a: S('K-Connect is a secure community-based video sharing platform that connects cameras from businesses, schools, and citizens to the municipal command center. It expands surveillance coverage without additional infrastructure through controlled video sharing.',
+        'K-Connect es una plataforma segura de videovigilancia comunitaria que conecta cámaras de negocios, escuelas y ciudadanos al centro de mando municipal. Amplía la cobertura de vigilancia sin infraestructura adicional mediante compartición controlada de video.'),
+    },
+    {
+      q: S('How do citizens share video with K-Connect?',
+        '¿Cómo comparten los ciudadanos video con K-Connect?'),
+      a: S('Organizations share specific cameras or streams with law enforcement on-demand, with granular permission controls. All connected parties see the same live feeds during an active incident, accelerating coordination.',
+        'Las organizaciones comparten cámaras o transmisiones específicas con las fuerzas del orden bajo demanda, con controles granulares de permisos. Todas las partes conectadas ven las mismas transmisiones en vivo durante un incidente activo, acelerando la coordinación.'),
+    },
+    {
+      q: S('Is K-Connect privacy-compliant?',
+        '¿Cumple K-Connect con normas de privacidad?'),
+      a: S('Yes. K-Connect implements role-based access, full audit trails, and automatic sharing expiry to ensure complete regulatory compliance. All communication channels are end-to-end encrypted.',
+        'Sí. K-Connect implementa acceso basado en roles, pistas de auditoría completas y expiración automática de compartición para asegurar el cumplimiento regulatorio total. Todos los canales de comunicación están encriptados de extremo a extremo.'),
+    },
+    {
+      q: S('How does K-Connect work with public safety agencies?',
+        '¿Cómo funciona K-Connect con agencias de seguridad pública?'),
+      a: S('K-Connect integrates with K-Safety, K-Dispatch, and third-party CAD/RTCC systems. It enables schools, businesses, residential communities, and government facilities to share real-time video with the agencies that protect their community.',
+        'K-Connect se integra con K-Safety, K-Dispatch y sistemas CAD/RTCC de terceros. Permite a escuelas, negocios, comunidades residenciales e instalaciones gubernamentales compartir video en tiempo real con las agencias que protegen su comunidad.'),
+    },
+  ],
+
+  seo: {
+    metadataKey: 'kConnect',
+    slug: 'k-connect',
+    category: 'Collaborative Video Sharing Platform',
+    description: S('Secure community-based video sharing platform connecting private organization cameras with public safety agencies under owner-controlled permissions.',
+      'Plataforma segura de videovigilancia comunitaria que conecta cámaras de organizaciones privadas con agencias de seguridad pública bajo permisos controlados por el dueño.'),
+  },
+
   caseEyebrow: S('PROVEN IN THE FIELD', 'PROBADO EN CAMPO'),
   caseMetric: S('Community', 'Comunidad'),
   caseMetricL: S('Coverage extended without new infrastructure', 'Cobertura ampliada sin nueva infraestructura'),

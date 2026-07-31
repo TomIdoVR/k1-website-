@@ -17,6 +17,9 @@ export type SolutionContent = {
   name: string
   accent: string
   accentInk: string
+  /* Optional accent variant for the near-black capability band. Only needed
+     when `accent` is too dark to clear 4.5:1 there (K-Safety's blue). */
+  accentOnDark?: string
   eyebrow: Loc
   h1a: Loc
   h1b: Loc
@@ -77,4 +80,18 @@ export type SolutionContent = {
   caseBody: Loc
   caseStats: { v: Loc | string; l: Loc }[]
   caseNote: Loc
+  /* Ported from the live pages, which defined these purely to feed
+     faqPageSchema and never rendered them. Here they are rendered visibly
+     AND fed to the schema, which is what Google's structured-data guidance
+     actually requires. */
+  faqs?: { q: Loc; a: Loc }[]
+  /* Everything the route wrapper needs to emit the same metadata and JSON-LD
+     the live pages carry today. `metadataKey` indexes src/content/{en,es}/
+     metadata.ts; `slug` is the production path segment. */
+  seo: {
+    metadataKey: 'kSafety' | 'kDispatch' | 'kVideo' | 'kTraffic' | 'kConnect'
+    slug: string
+    category: string
+    description: Loc
+  }
 }

@@ -1,3 +1,27 @@
+## [v2.298] – 2026-07-30 — Review remediation: SEO parity, FAQs, contrast, claim consistency
+Acts on the full content / design / performance / SEO review of the redesign.
+
+### Fixed — SEO parity (the promotion blockers)
+- **Removed the hardcoded `robots: noindex` from all five solution routes.** This was the single highest risk in the redesign: promoting it as a file-swap would have shipped a `noindex` directive to production and deindexed all five product pages outright. Routes now call `generatePageMetadata(...)` against the same `src/content/{en,es}/metadata.ts` entries the live pages use, restoring keyword-targeted titles, descriptions, canonicals, hreflang, OG and Twitter cards in both locales.
+- **Restored `<Nav>` and `<Footer>`.** The redesigned pages rendered neither, so each carried **one** internal link versus ~40 on the live equivalents — severing link equity into the `/resources/*` and `/industries/*` clusters. Measured after the fix: **1 → 25 internal links** per page.
+- **Restored all three JSON-LD blocks** — `softwareApplicationSchema`, `faqPageSchema`, `breadcrumbSchema` — via a new `SolutionRoute` wrapper, sourced from the existing helpers in `src/lib/schema.ts`. The redesign previously emitted zero.
+
+### Added — FAQ content (29 questions, ~930 EN words)
+- Ported every live page's FAQ set into its `sol-*.ts` content file and **rendered it visibly** as an accordion, not just as structured data. The live pages define this content purely to feed `faqPageSchema` and never display it, which contradicts Google's requirement that rich-result markup reflect visible page content — so this fixes a pre-existing defect rather than merely reaching parity. Counts: K-Safety 5, K-Dispatch 8, K-Video 8, K-Traffic 4, K-Connect 4.
+
+### Fixed — claim consistency
+- **Uptime is now 99.9% everywhere.** The homepage promised a 99.9% "Uptime SLA" while K-Video claimed 98% in five places including a ported FAQ answer — a contradiction on a contractual word. K-Traffic's 98% figures were verified to be *signal response time*, a genuinely different metric, and left alone.
+
+### Fixed — accessibility and i18n
+- Four WCAG AA contrast failures, all measured against real computed backgrounds: hero proof-bar labels (2.85:1), ecosystem category labels and disclaimer (3.10:1), case-study disclaimer (4.27:1). Replacements preserve hue and saturation and clear 4.8:1.
+- K-Safety's accent only reached 3.29:1 on the dark capability band. Added an optional `accentOnDark` token (defaults to `accent`) rather than reverting the design's per-product accent — only K-Safety needs it; the other four clear 6.6–8.1:1.
+- **Spanish leak on the homepage:** case-study metric *values* were typed as bare strings, so "Statewide" and "Multi-agency" rendered untranslated on `/es` while their labels localized correctly. Now "Estatal" / "Multiagencia".
+
+### Notes
+- One reported contrast failure was a false positive — `.cust-metric-c` measured 2.46:1 only because the checking script treated a translucent overlay as opaque white. Its real ratio is 6.8:1; left unchanged.
+- Measured performance for the record: the redesigned homepage transfers **850 KB vs 311 KB** live (19 images / 522 KB vs 2 / 24 KB); JS is unchanged at ~185 KB. Not a misconfiguration — `sizes` is correct throughout and Next serves properly-scaled variants — it is the cost of an image-led design. Flagged, not changed.
+- Still open: the homepage's SOC 2 / response-time trust copy and the dropped INAMI customer logo (needs an asset).
+
 ## [v2.297] – 2026-07-30 — K-Connect solution page (/hero-lab/k-connect)
 ### Added
 - **Redesigned K-Connect solution page**, ported from the Claude Design project (`home/sol-kconnect.jsx`, whose copy was itself lifted from the live `/k-connect` page). Four benefits, six capability rows, three integration cards, and the **first use of the optional "Who uses K-Connect" audience band** — five cards covering schools, businesses, residential communities, government facilities and public venues. Case study is Mexico / municipal programs. Fully localized EN/ES.

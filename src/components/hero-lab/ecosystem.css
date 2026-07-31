@@ -51,13 +51,15 @@
   border-bottom: 1px solid #e6e9ee;
 }
 
+/* #8993a4 measured 3.1:1 on white — these are real category labels and a
+   disclaimer, not decoration, so they need the 4.5 AA floor. */
 .eco-group-title {
   font-family: 'DM Mono', ui-monospace, monospace;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8993a4;
+  color: #667185;
   margin: 0 0 16px;
   line-height: 1.3;
   min-height: 28px;
@@ -86,7 +88,7 @@
 }
 .eco-group:hover .eco-item.has-logo img { opacity: 0.75; }
 
-.eco-note { font-size: 12.5px; color: #8993a4; margin-top: 20px; }
+.eco-note { font-size: 12.5px; color: #667185; margin-top: 20px; }
 
 @media (max-width: 980px) { .eco-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px) { .eco-grid { grid-template-columns: repeat(2, 1fr); } }

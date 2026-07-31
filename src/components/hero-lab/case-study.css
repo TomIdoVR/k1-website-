@@ -121,7 +121,8 @@
   margin: 0;
 }
 .cust-cite { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 13.5px; color: #93a7c2; margin-top: 12px; font-style: normal; letter-spacing: 0; }
-.cust-illu-note { font-size: 12.5px; color: #6a7d96; margin-top: 16px; }
+/* #6a7d96 measured 4.3:1 on the dark band — just under the 4.5 AA floor. */
+.cust-illu-note { font-size: 12.5px; color: #73859c; margin-top: 16px; }
 
 @media (max-width: 900px) { .cust-below { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .cust-metrics { grid-template-columns: 1fr; } }

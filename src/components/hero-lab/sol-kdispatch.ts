@@ -193,6 +193,65 @@ const KDISPATCH: SolutionContent = {
     { t: S('Smart city & IoT data', 'Datos de ciudad inteligente e IoT'), d: S('Traffic sensors, environmental data, smart infrastructure feeds.', 'Sensores de tráfico, datos ambientales, infraestructura inteligente.') },
   ],
 
+  faqs: [
+    {
+      q: S('What is K-Dispatch?',
+        '¿Qué es K-Dispatch?'),
+      a: S('K-Dispatch is an AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.',
+        'K-Dispatch es una plataforma de Despacho Asistido por Computadora (CAD) potenciada por IA que optimiza la respuesta a emergencias, mejora la comunicación multiagencia y se integra con todas las tecnologías de seguridad pública.'),
+    },
+    {
+      q: S('How does K-Dispatch handle 911 calls?',
+        '¿Cómo maneja K-Dispatch las llamadas al 911?'),
+      a: S('K-Dispatch integrates voice 911, text-to-911, and multimedia emergency messaging. The system automatically triages incidents, assigns priority, and recommends optimal response using artificial intelligence.',
+        'K-Dispatch integra llamadas de voz 911, texto-a-911 y mensajería multimedia de emergencia. El sistema clasifica automáticamente los incidentes, asigna prioridad y recomienda la respuesta óptima utilizando inteligencia artificial.'),
+    },
+    {
+      q: S('What systems does K-Dispatch integrate with?',
+        '¿Con qué sistemas se integra K-Dispatch?'),
+      a: S('K-Dispatch connects with leading public safety technologies including radio systems, GIS, VMS, mobile responder apps, facial recognition, LPR, gunshot detection, and drone feeds.',
+        'K-Dispatch se conecta con las principales tecnologías de seguridad pública incluyendo sistemas de radio, GIS, VMS, aplicaciones móviles de respondedores, reconocimiento facial, LPR, detección de disparos y feeds de drones.'),
+    },
+    {
+      q: S('Is K-Dispatch suitable for multi-agency dispatch?',
+        '¿Es K-Dispatch adecuado para despacho multiagencia?'),
+      a: S('Yes. K-Dispatch is built for multi-agency coordination, connecting police, fire, medical, and traffic departments on a single platform. It currently powers Mexico\\\'s largest 911 center with 100+ connected agencies.',
+        'Sí. K-Dispatch está diseñado para coordinación multiagencia, conectando policía, bomberos, servicios médicos y tránsito en una sola plataforma. Actualmente impulsa el centro 911 más grande de México con más de 100 agencias conectadas.'),
+    },
+    {
+      q: S('What makes K-Dispatch different from legacy CAD systems?',
+        '¿Qué diferencia a K-Dispatch de los sistemas CAD tradicionales?'),
+      a: S('K-Dispatch uses AI to automatically triage incidents, predict escalations, and optimize dispatch routing. It handles 25,000+ daily calls with a 5-minute average response time, significantly outperforming legacy CAD systems.',
+        'K-Dispatch utiliza IA para clasificar incidentes automáticamente, predecir escalaciones y optimizar el enrutamiento de despacho. Gestiona más de 25,000 llamadas diarias con un tiempo promedio de respuesta de 5 minutos, superando significativamente a los sistemas CAD heredados.'),
+    },
+    {
+      q: S('Can K-Dispatch work with our existing radio and RMS systems?',
+        '¿K-Dispatch funciona con nuestros sistemas de radio y RMS existentes?'),
+      a: S('Yes. K-Dispatch integrates with all major radio systems (P25, TETRA, DMR) and Records Management Systems. The platform uses open APIs and standard protocols (CAP, NIEM, NENA i3) to connect with your existing infrastructure without requiring a full replacement.',
+        'Si. K-Dispatch se integra con todos los principales sistemas de radio (P25, TETRA, DMR) y Sistemas de Gestion de Registros. La plataforma usa APIs abiertas y protocolos estandar (CAP, NIEM, NENA i3) para conectarse con su infraestructura existente sin requerir un reemplazo completo.'),
+    },
+    {
+      q: S('How long does it take to deploy K-Dispatch?',
+        '¿Cuanto tiempo toma implementar K-Dispatch?'),
+      a: S('A typical deployment takes 8 to 16 weeks depending on the number of agencies, integration complexity, and training requirements. KabatOne provides a phased rollout with parallel operation so your existing CAD continues running until the transition is complete.',
+        'Una implementacion tipica toma de 8 a 16 semanas dependiendo del numero de agencias, complejidad de integraciones y requisitos de capacitacion. KabatOne ofrece un despliegue por fases con operacion en paralelo para que su CAD existente continue funcionando hasta completar la transicion.'),
+    },
+    {
+      q: S('Does K-Dispatch support cloud deployment?',
+        '¿K-Dispatch soporta despliegue en la nube?'),
+      a: S('K-Dispatch supports cloud, on-premises, and hybrid deployment models. Cloud deployments use redundant data centers with 99.99% uptime SLA. On-premises deployments are available for agencies with strict data sovereignty requirements, common in government and military environments.',
+        'K-Dispatch soporta modelos de despliegue en la nube, en sitio e hibrido. Los despliegues en la nube usan centros de datos redundantes con SLA de 99.99% de disponibilidad. Los despliegues en sitio estan disponibles para agencias con requisitos estrictos de soberania de datos, comun en entornos gubernamentales y militares.'),
+    },
+  ],
+
+  seo: {
+    metadataKey: 'kDispatch',
+    slug: 'k-dispatch',
+    category: 'Computer-Aided Dispatch Software',
+    description: S('Emergency call-taking and computer-aided dispatch software unifying multi-channel intake, triage, CAD, and field response.',
+      'Software de recepción de emergencias y despacho asistido por computadora que unifica recepción multicanal, triaje, CAD y respuesta en campo.'),
+  },
+
   caseEyebrow: S('PROVEN IN THE FIELD', 'PROBADO EN CAMPO'),
   caseMetric: S('Multi-agency', 'Multiagencia'),
   caseMetricL: S('Emergency coordination at city scale', 'Coordinación de emergencias a escala urbana'),

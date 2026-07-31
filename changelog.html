@@ -356,6 +356,24 @@
 
     <div class="timeline">
 
+      <!-- v2.298 -->
+      <div class="tl-entry fix" id="v2.298">
+        <div class="tl-meta"><span class="tl-ver">v2.298</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">Review remediation: SEO parity, FAQs, contrast, claim consistency</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Removed the hardcoded <code>noindex</code> from all five solution routes</strong> — the single highest risk in the redesign, which on promotion would have deindexed all five product pages outright. Metadata now comes from the same source the live pages use (titles, descriptions, canonicals, hreflang, OG, Twitter — EN and ES)</li>
+            <li><strong>Restored <code>&lt;Nav&gt;</code> and <code>&lt;Footer&gt;</code></strong> — the pages had <strong>1</strong> internal link versus ~40 live, severing link equity into the resources and industries clusters. Now <strong>25</strong> per page</li>
+            <li><strong>Restored all three JSON-LD blocks</strong> (SoftwareApplication, FAQPage, BreadcrumbList) via a new <code>SolutionRoute</code> wrapper; the redesign emitted zero</li>
+            <li><strong>Added 29 FAQs (~930 EN words)</strong> ported from the live pages and <strong>rendered visibly</strong> as an accordion — the live pages define this content only to feed schema and never show it, so this fixes a pre-existing defect rather than just reaching parity</li>
+            <li><strong>Uptime unified to 99.9%</strong> — the homepage promised a 99.9% SLA while K-Video claimed 98% in five places. K-Traffic's 98% figures are <em>signal response time</em>, a different metric, and were left alone</li>
+            <li><strong>Four WCAG AA contrast failures fixed</strong> (2.85 / 3.10 / 3.10 / 4.27 → 4.8+), plus K-Safety's accent on the dark band (3.29) via a new optional <code>accentOnDark</code> token</li>
+            <li><strong>Spanish leak fixed</strong> — homepage case-study metric values were bare strings, so "Statewide"/"Multi-agency" never translated</li>
+            <li>Measured for the record: redesigned homepage transfers 850 KB vs 311 KB live (images 522 KB vs 24 KB), JS unchanged. Correct <code>sizes</code> throughout — it's the cost of an image-led design, flagged not changed</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.297 -->
       <div class="tl-entry feat" id="v2.297">
         <div class="tl-meta"><span class="tl-ver">v2.297</span><span class="tl-date">2026-07-30</span></div>
