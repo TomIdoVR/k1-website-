@@ -515,7 +515,7 @@ export default async function RtccSetupGuidePage({
                 </span>
                 {[
                   { href: '/integrations/lpr', label: 'LPR' },
-                  { href: '/integrations/facial-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                  { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
                   { href: '/integrations/sensor-fusion', label: es ? 'Fusión de Sensores' : 'Sensor Fusion' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>

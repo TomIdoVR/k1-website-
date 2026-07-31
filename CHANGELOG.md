@@ -1,3 +1,17 @@
+## [v2.305] – 2026-07-31 — Fix broken internal links so staging is navigable
+### Fixed
+- **Three broken internal links (→ 404s) across the site, found by a full static audit (KAB-2346).** So the staging preview can be reviewed end-to-end without dead ends:
+  - `/integrations/facial-recognition` → `/integrations/face-recognition` — the route is `face-recognition`; the "Facial Recognition" footer/related link in 6 pages pointed at a non-existent `facial-recognition` slug (`vs/genetec`, `vs/milestone`, `vs/verint`, `vs/vms`, `vs/fusus`, `resources/rtcc-setup-guide`).
+  - `/resources/public-safety-software-uk` → `/resources/public-safety-software-united-kingdom` — the UK country page is slugged `united-kingdom`; three related-link lists used the `-uk` shorthand (`public-safety-software-israel`, `-jamaica`, `-trinidad-and-tobago`).
+  - `/privacy-policy` → `/privacy` — the demo page footer's "Privacy Protocol" link; every other page correctly uses `/privacy`.
+
+### Added
+- `scripts/audit-internal-links.py` — static internal-link checker. Maps `page.*` files to valid routes and cross-checks every internal target, covering both `href="…"` JSX and `href:/to:/path:` object-config links (the main Nav/Footer author links as data, which an `href=`-only scan misses). Re-run reports **0 broken** after this fix.
+
+### Notes
+- These are content-page links present on both branches; fixed here on `hero-redesign` (the staging branch under review). Same fix should ride along when `hero-redesign`/`nextjs` are promoted.
+- Not pushed — staged on `hero-redesign` for review.
+
 ## [v2.304] – 2026-07-31 — K-Safety hero: matte white canvas back to transparent
 ### Fixed
 - **The K-Safety hero screen's background is transparent again, not white (KAB-2346).** v2.302 flood-filled the *generated* hero to transparency so the panels float on the light hero gradient; v2.303 then swapped in Omer's real `ksafe.png`, which shipped as a solid-white RGB canvas — reintroducing the white block the `heroLight` treatment is meant to remove. Re-applied the matte to the real image: border-seeded flood fill (connected-to-edge white only, so white *inside* the dashboard panels is untouched) with a feathered edge so the panel drop shadows survive. 76% of the canvas is now transparent; corners read alpha 0. Verified by compositing over both the light hero gradient and a dark field — panels intact, no white rectangle, no visible halo on the light background.

@@ -508,7 +508,7 @@ export default async function VsGenetecPage({
               </span>
               {[
                 { href: '/integrations/lpr', label: 'LPR' },
-                { href: '/integrations/facial-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
                 { href: '/integrations/access-control', label: es ? 'Control de Acceso' : 'Access Control' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>

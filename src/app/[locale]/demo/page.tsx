@@ -490,7 +490,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           </span>
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }}
             >
               Privacy Protocol
