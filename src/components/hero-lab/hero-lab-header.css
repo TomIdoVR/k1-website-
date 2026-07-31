@@ -1,0 +1,293 @@
+/* Shared site header for the redesign.
+   Extracted verbatim from hero-lab-light.css so the homepage header —
+   the one with the real KabatOne logo lockup, uppercase nav and EN/ES
+   switch — can be used on the solution pages too. Previously those ran a
+   second, different nav (.hlc-*) with a placeholder '1K' badge, so the
+   header changed as you moved between pages. */
+
+
+
+/* Navigation */
+/* Self-sufficiency: on the homepage the nav is transparent and sits over
+   .hll-page's light gradient. The solution pages have no such wrapper, so it
+   landed on the dark body background and the navy logo went invisible.
+   Declaring the tokens and a background here makes the header stand alone.
+   #fafcff is exactly the first stop of the homepage gradient, so the homepage
+   is visually unchanged. */
+.hll-nav {
+  --hll-navy: #081a4d;
+  --hll-blue: #0757f7;
+  --hll-muted: #4f5f84;
+  --hll-line: rgba(77, 108, 171, 0.15);
+  color: var(--hll-navy);
+  background: #fafcff;
+  position: relative;
+  z-index: 30;
+  width: min(100%, 1536px);
+  height: 96px;
+  margin: 0 auto;
+  padding: 24px 52px;
+  display: grid;
+  grid-template-columns: 236px 1fr auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.hll-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  width: 206px;
+}
+
+.hll-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  width: 206px;
+  height: 35px;
+}
+
+.hll-brand-logo-mask {
+  display: block;
+  width: 206px;
+  height: 35px;
+  background: #091847;
+  -webkit-mask: url('/images/hero-cards/header-logo-lockup.png') center / contain no-repeat;
+  mask: url('/images/hero-cards/header-logo-lockup.png') center / contain no-repeat;
+}
+
+.hll-nav-links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 62px);
+}
+
+.hll-nav-menu {
+  position: relative;
+}
+
+.hll-nav-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0b1946;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hll-nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.hll-nav-menu[open] summary,
+.hll-nav-menu summary:hover {
+  color: var(--hll-blue);
+}
+
+.hll-nav-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -18px;
+  width: 210px;
+  padding: 8px;
+  border: 1px solid rgba(96, 122, 181, 0.16);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 65px rgba(35, 67, 126, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.hll-nav-dropdown--right {
+  right: -18px;
+  left: auto;
+}
+
+.hll-nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  border-radius: 10px;
+  color: #20315f;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.hll-nav-dropdown a:hover {
+  color: var(--hll-blue);
+  background: #f1f6ff;
+}
+
+.hll-nav-dropdown a > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.hll-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hll-language {
+  display: flex;
+  padding: 3px;
+  border: 1px solid rgba(30, 76, 157, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.hll-language a {
+  padding: 4px 6px;
+  border-radius: 5px;
+  color: #7b89a8;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+}
+
+.hll-language a[aria-current='page'] {
+  color: var(--hll-blue);
+  background: white;
+  box-shadow: 0 2px 8px rgba(25, 73, 150, 0.09);
+}
+
+.hll-nav-cta,
+.hll-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: white !important;
+  background: linear-gradient(135deg, #0757f7, #064ee7);
+  box-shadow: 0 13px 28px -12px rgba(3, 75, 232, 0.68), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hll-nav-cta {
+  min-height: 47px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.hll-nav-cta:hover,
+.hll-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -13px rgba(3, 75, 232, 0.74), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.hll-mobile-menu {
+  display: none;
+}
+
+/* Mobile response */
+.hll-mobile-phone {
+  position: relative;
+  width: 112px;
+  height: 187px;
+  margin: 3px auto 11px;
+  overflow: hidden;
+  border: 4px solid #101729;
+  border-radius: 17px;
+  color: white;
+  background: #0c1728;
+  box-shadow: 0 14px 24px rgba(14, 23, 45, 0.25);
+}
+
+.hll-mobile-map {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(38deg, transparent 48%, rgba(36, 60, 91, 0.68) 49%, rgba(36, 60, 91, 0.68) 51%, transparent 52%),
+    linear-gradient(135deg, transparent 45%, rgba(34, 55, 88, 0.6) 46%, rgba(34, 55, 88, 0.6) 49%, transparent 50%),
+    radial-gradient(circle at 48% 52%, #172c46, #0b1728 62%);
+}
+
+.hll-mobile-actions { position: absolute; z-index: 4; right: 7px; bottom: 8px; left: 7px; display: flex; align-items: center; justify-content: space-between; font-size: 6px; }
+.hll-mobile-actions b { font-size: 8px; }
+.hll-mobile-actions button { border: 0; border-radius: 5px; padding: 5px 8px; color: white; background: #9d42f5; font-size: 6.5px; }
+
+.hll-mobile-detail { margin: 0; font-size: 7px; }
+.hll-mobile-detail div { padding: 4px 0; border-bottom: 1px solid rgba(61, 88, 136, 0.07); }
+.hll-mobile-detail div:last-child { border-bottom: 0; }
+.hll-mobile-detail dt { color: #5f6f8d; }
+.hll-mobile-detail dd { margin: 1px 0 0; font-weight: 570; }
+.hll-mobile-detail dd i { display: inline-block; width: 4px; height: 4px; margin-right: 4px; border-radius: 50%; background: #ef3340; }@media (max-width: 1500px) and (min-width: 1181px) {
+
+  .hll-nav { padding-inline: 34px; grid-template-columns: 210px 1fr auto; }
+  .hll-nav-links { gap: 30px; }
+}
+@media (max-width: 1180px) {
+
+  .hll-nav { grid-template-columns: 1fr auto; padding-inline: 28px; }
+  .hll-nav-links,
+  .hll-nav-actions { display: none; }
+  .hll-mobile-menu { position: relative; display: block; }
+  .hll-mobile-menu > summary { display: flex; width: 42px; height: 42px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
+  .hll-mobile-menu > summary::-webkit-details-marker { display: none; }
+  .hll-mobile-menu > summary span { width: 19px; height: 2px; border-radius: 2px; background: #10224f; }
+  .hll-mobile-menu-panel { position: absolute; top: 52px; right: 0; display: flex; width: min(290px, calc(100vw - 40px)); padding: 16px; flex-direction: column; gap: 6px; border: 1px solid rgba(67, 96, 152, 0.13); border-radius: 16px; background: rgba(255, 255, 255, 0.97); box-shadow: 0 24px 60px rgba(37, 66, 119, 0.18); }
+  .hll-mobile-menu-panel > a:not(.hll-nav-cta) { padding: 10px; border-radius: 8px; color: #1c315f; font-size: 14px; }
+  .hll-mobile-menu-panel > a:hover { background: #f1f6ff; }
+  .hll-mobile-languages { display: flex; gap: 8px; padding: 8px 10px; }
+  .hll-mobile-languages a { color: #0757f7; font-family: 'DM Mono', monospace; font-size: 12px; }
+}
+@media (max-width: 900px) {
+
+  .hll-nav { height: 78px; padding: 16px 22px; }
+  .hll-nav-logo,
+  .hll-brand-lockup,
+  .hll-brand-logo-mask { width: 176px; }
+  .hll-brand-lockup,
+  .hll-brand-logo-mask { height: 30px; }
+}
+@media (max-width: 560px) {
+
+  .hll-nav { padding-inline: 18px; }
+}
+
+
+.hll-mobile-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 10px;
+  padding: 8px 3px;
+  border: 1px solid rgba(54, 83, 137, 0.08);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.hll-mobile-metrics span {
+  min-width: 0;
+  padding-inline: 3px;
+  text-align: center;
+}
+
+.hll-mobile-metrics span + span {
+  border-left: 1px solid rgba(54, 83, 137, 0.08);
+}
+
+.hll-mobile-metrics strong,
+.hll-mobile-metrics small {
+  display: block;
+}
+
+.hll-mobile-metrics strong {
+  color: #0c1d4c;
+  font-size: 9px;
+}
+
+.hll-mobile-metrics small {
+  margin-top: 3px;
+  color: #667592;
+  font-size: 5.5px;
+  line-height: 1.2;
+}

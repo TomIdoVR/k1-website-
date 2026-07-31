@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import type { CSSProperties, ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
-import { pv } from './preview-links'
+import HeroLabHeader, { Arrow } from './HeroLabHeader'
+import './hero-lab-header.css'
 import HeroCardCarousel from './HeroCardCarousel'
 import { HeroCardMedia } from './HeroCardMedia'
 
@@ -25,40 +26,8 @@ const T = {
   ],
 }
 
-const moduleLinks = [
-  { href: '/k-safety', label: 'K-Safety', color: '#2563eb' },
-  { href: '/k-dispatch', label: 'K-Dispatch', color: '#ef4444' },
-  { href: '/k-traffic', label: 'K-Traffic', color: '#06b6d4' },
-  { href: '/k-video', label: 'K-Video', color: '#8b5cf6' },
-  { href: '/k-connect', label: 'K-Connect', color: '#22c55e' },
-] as const
-
-const industryLinks = [
-  { href: '/industries/public-safety', en: 'Public Safety', es: 'Seguridad Pública' },
-  { href: '/industries/municipalities', en: 'Municipalities', es: 'Municipios' },
-  { href: '/industries/airport', en: 'Airports', es: 'Aeropuertos' },
-  { href: '/industries/ports', en: 'Ports', es: 'Puertos' },
-] as const
-
-function Arrow({ direction = 'right' }: { direction?: 'left' | 'right' | 'down' }) {
-  const path = direction === 'down' ? 'M3 5.5 7 9l4-3.5' : direction === 'left' ? 'M11 7H3m4-4L3 7l4 4' : 'M3 7h8M7 3l4 4-4 4'
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d={path} stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 function ModuleIcon({ children }: { children: ReactNode }) {
   return <span className="hll-card-icon" aria-hidden="true">{children}</span>
-}
-
-function BrandLockup() {
-  return (
-    <span className="hll-brand-lockup" aria-hidden="true">
-      <span className="hll-brand-logo-mask" />
-    </span>
-  )
 }
 
 function PlatformMark() {
@@ -71,73 +40,6 @@ function PlatformMark() {
       height={1024}
       priority
     />
-  )
-}
-
-function HeroNavigation({ es }: { es: boolean }) {
-  const language = es ? 'es' : 'en'
-  return (
-    <nav className="hll-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
-      <Link href={pv('/')} className="hll-nav-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
-        <BrandLockup />
-      </Link>
-
-      <div className="hll-nav-links">
-        <details className="hll-nav-menu">
-          <summary>{es ? 'Soluciones' : 'Solutions'}<Arrow direction="down" /></summary>
-          <div className="hll-nav-dropdown">
-            {moduleLinks.map((item) => (
-              <Link href={pv(item.href)} key={item.href}>
-                <span style={{ background: item.color }} />{item.label}
-              </Link>
-            ))}
-          </div>
-        </details>
-        <details className="hll-nav-menu">
-          <summary>{es ? 'Industrias' : 'Industries'}<Arrow direction="down" /></summary>
-          <div className="hll-nav-dropdown">
-            {industryLinks.map((item) => <Link href={item.href} key={item.href}>{item[language]}</Link>)}
-          </div>
-        </details>
-        <details className="hll-nav-menu">
-          <summary>{es ? 'Recursos' : 'Resources'}<Arrow direction="down" /></summary>
-          <div className="hll-nav-dropdown">
-            <Link href="/resources">{es ? 'Centro de Recursos' : 'Resource Center'}</Link>
-            <Link href="/demo">{es ? 'Demo Interactiva' : 'Interactive Demo'}</Link>
-            <Link href="/simulator">{es ? 'Simulador de Incidentes' : 'Incident Simulator'}</Link>
-          </div>
-        </details>
-        <details className="hll-nav-menu">
-          <summary>{es ? 'Empresa' : 'Company'}<Arrow direction="down" /></summary>
-          <div className="hll-nav-dropdown hll-nav-dropdown--right">
-            <Link href="/about">{es ? 'Nosotros' : 'About'}</Link>
-            <Link href="/contact">{es ? 'Contacto' : 'Contact'}</Link>
-          </div>
-        </details>
-      </div>
-
-      <div className="hll-nav-actions">
-        <div className="hll-language" aria-label={es ? 'Idioma' : 'Language'}>
-          <Link href={pv('/')} locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
-          <Link href={pv('/')} locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
-        </div>
-        <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
-      </div>
-
-      <details className="hll-mobile-menu">
-        <summary aria-label={es ? 'Abrir menú' : 'Open menu'}><span /><span /><span /></summary>
-        <div className="hll-mobile-menu-panel">
-          <Link href={pv('/k-safety')}>{es ? 'Soluciones' : 'Solutions'}</Link>
-          <Link href="/industries/public-safety">{es ? 'Industrias' : 'Industries'}</Link>
-          <Link href="/resources">{es ? 'Recursos' : 'Resources'}</Link>
-          <Link href="/about">{es ? 'Empresa' : 'Company'}</Link>
-          <div className="hll-mobile-languages">
-            <Link href={pv('/')} locale="en">EN</Link><Link href={pv('/')} locale="es">ES</Link>
-          </div>
-          <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
-        </div>
-      </details>
-    </nav>
   )
 }
 
@@ -303,7 +205,7 @@ export default function HeroV3Platform({ es }: { es: boolean }) {
   const cards = [<CadCard key="cad" es={es} />, <VideoCard key="video" es={es} />, <GisCard key="gis" es={es} />, <EventCard key="events" es={es} />, <UdeCard key="ude" es={es} />, <MobileCard key="mobile" es={es} />, <IntegrationsCard key="integrations" es={es} />]
   return (
     <section className="hll-page" aria-labelledby="hll-title">
-      <HeroNavigation es={es} />
+      <HeroLabHeader es={es} />
       <div className="hll-hero-head">
         <p className="hll-eyebrow">{T.eyebrow[language]}</p>
         <h1 className="hll-headline" id="hll-title">{T.h1a[language]}<span className="hll-headline-grad">{T.h1b[language]}</span></h1>

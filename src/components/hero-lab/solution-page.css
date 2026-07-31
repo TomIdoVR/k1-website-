@@ -46,7 +46,18 @@
 /* The visual column is deliberately the wider one — the hero art carries a full
    product composition (incident board, cameras, analytics) and needs the room
    to stay legible. */
-.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.22fr; gap: clamp(26px, 3.4vw, 56px); align-items: center; }
+/* The visual column is deliberately the wider one — the hero art carries a full
+   product composition (incident board, live cameras, analytics) and has to stay
+   legible at a glance. */
+.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.42fr; gap: clamp(20px, 2.6vw, 40px); align-items: center; }
+
+/* Above the 1240px content cap the composition would stay boxed inside the
+   column and read small. Letting it run out toward the viewport edge buys real
+   scale without shifting the copy. Capped so the rightmost analytics panel is
+   never clipped off-screen. */
+@media (min-width: 1180px) {
+  .sp-hero-visual { margin-right: max(-7vw, -132px); }
+}
 .sp-eyebrow { font-family: var(--sp-f-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.22em; color: var(--ac-ink); margin-bottom: 20px; }
 .sp-h1 { font-family: var(--sp-f-display); font-weight: 800; font-size: clamp(38px, 4.6vw, 66px); line-height: 0.98; letter-spacing: -0.015em; text-transform: none; display: flex; flex-direction: column; margin-bottom: 22px; }
 .sp-h1 > span:not(.sp-h1-em) { color: var(--sp-ink); }

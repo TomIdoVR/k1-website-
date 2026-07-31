@@ -12,7 +12,9 @@
    FAQ schema is emitted only when the content file actually renders FAQs, so
    the markup always reflects visible content. */
 
-import { HeroLabNav, HeroLabFooter } from './HeroLabChrome'
+import HeroLabHeader from './HeroLabHeader'
+import { HeroLabFooter } from './HeroLabChrome'
+import './hero-lab-header.css'
 import './hero-lab-chrome.css'
 import { softwareApplicationSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import SolutionPage from './SolutionPage'
@@ -34,7 +36,7 @@ export default function SolutionRoute({ p, locale }: { p: SolutionContent; local
 
   return (
     <>
-      <HeroLabNav es={es} />
+      <HeroLabHeader es={es} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
