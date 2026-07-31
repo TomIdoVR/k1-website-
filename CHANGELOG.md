@@ -1,3 +1,13 @@
+## [v2.301] – 2026-07-31 — Redesign-native nav and footer (drop the legacy chrome)
+### Fixed
+- **The redesigned pages were wearing the old site's chrome.** v2.298 wrapped them in the live `<Nav>` and `<Footer>` to restore internal links for SEO — that fixed the links but dragged the legacy dark nav bar above the light redesign, so the pages read as "this is still the old design" at first glance. v2.299 did the same to the redesigned homepage's footer.
+- Added `HeroLabChrome` (`HeroLabNav` + `HeroLabFooter`) in the redesign's own light language — Barlow Condensed display, Space Grotesk body, DM Mono labels, sticky translucent nav — scoped under `.hlc-` so it cannot collide with the live components. Both the five solution routes and the redesigned homepage now use it.
+
+### Notes
+- **The SEO fix is preserved and improved.** Link parity with `src/components/Footer.tsx` was deliberate: the same 20 destinations (about, contact, privacy, 6 integrations, 11 comparison pages), plus the five product pages and five industry pages the live footer omits. Internal links per solution page: **25 → 46**.
+- No `@/components/Nav` or `@/components/Footer` import remains anywhere under `src/app/[locale]/hero-lab/` or `src/components/hero-lab/` — the redesign is now visually self-contained and can be reviewed without the old design bleeding in.
+- The nav collapses its link row below 820px; the footer goes 5 → 3 → 2 columns.
+
 ## [v2.300] – 2026-07-31 — Nine purpose-built product screenshots (Gemini)
 ### Fixed
 - **Every solution page was showing its hero image again as feature 1** — all five of them, the most visible image defect on the redesign. Each now has a distinct, purpose-generated screenshot for that row.

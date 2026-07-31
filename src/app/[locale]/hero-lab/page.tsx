@@ -7,7 +7,8 @@ import CaseStudy from '@/components/hero-lab/CaseStudy'
 import Ecosystem from '@/components/hero-lab/Ecosystem'
 import Industries from '@/components/hero-lab/Industries'
 import TrustBand from '@/components/hero-lab/TrustBand'
-import Footer from '@/components/Footer'
+import { HeroLabFooter } from '@/components/hero-lab/HeroLabChrome'
+import '@/components/hero-lab/hero-lab-chrome.css'
 import './hero-lab-light.css'
 import '@/components/hero-lab/trust-band.css'
 import '@/components/hero-lab/customer-strip.css'
@@ -50,7 +51,7 @@ export default async function HeroLabPage({
           which default to the dark palette at :root. Without this it renders
           a dark slab under a light page. */}
       <div className="page-light">
-        <Footer es={es} />
+        <HeroLabFooter es={es} />
       </div>
     </>
   )

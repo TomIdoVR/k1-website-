@@ -1,0 +1,131 @@
+/* Nav + footer chrome for the redesigned pages.
+
+   Scoped under .hlc- so it never collides with the live site's Nav/Footer
+   styles. Matches the redesign's light language (Barlow Condensed display,
+   Space Grotesk body, DM Mono labels) rather than the legacy dark chrome. */
+
+.hlc-nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(247, 249, 252, 0.86);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid rgba(15, 30, 60, 0.08);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hlc-nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.hlc-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.hlc-logo-mark {
+  display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 8px;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 800; font-size: 15px; letter-spacing: 0.02em;
+  color: #fff; background: linear-gradient(140deg, #1858f5, #22b8d4);
+}
+.hlc-logo-word {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 19px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #0f1724;
+}
+
+.hlc-nav-links { display: flex; align-items: center; gap: clamp(10px, 1.6vw, 24px); margin-left: auto; }
+.hlc-nav-link, .hlc-menu > summary {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500; color: #2b3f5e;
+  text-decoration: none; cursor: pointer; list-style: none;
+  padding: 7px 2px; white-space: nowrap;
+  transition: color .18s ease;
+}
+.hlc-menu > summary::-webkit-details-marker { display: none; }
+.hlc-nav-link:hover, .hlc-menu > summary:hover { color: #1858f5; }
+
+.hlc-menu { position: relative; }
+.hlc-menu[open] > summary { color: #1858f5; }
+.hlc-dropdown {
+  position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+  min-width: 210px; display: flex; flex-direction: column; gap: 2px;
+  padding: 8px; border-radius: 12px;
+  background: #fff; border: 1px solid rgba(15, 30, 60, 0.09);
+  box-shadow: 0 24px 48px -24px rgba(20, 40, 80, 0.4);
+}
+.hlc-dropdown a {
+  display: flex; align-items: center; gap: 9px;
+  padding: 9px 11px; border-radius: 8px;
+  font-size: 13.5px; color: #2b3f5e; text-decoration: none; white-space: nowrap;
+  transition: background .15s ease, color .15s ease;
+}
+.hlc-dropdown a:hover { background: #f1f5fb; color: #1858f5; }
+.hlc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+.hlc-nav-cta {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center;
+  padding: 10px 18px; border-radius: 9px;
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  color: #fff; background: #1858f5;
+  box-shadow: 0 12px 26px -14px rgba(24, 88, 245, 0.65);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.hlc-nav-cta:hover { transform: translateY(-1px); box-shadow: 0 16px 32px -14px rgba(24, 88, 245, 0.75); }
+
+/* ── Footer ── */
+.hlc-footer {
+  background: linear-gradient(180deg, #0f1724, #0b1220);
+  color: #c6d4e6;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.hlc-footer-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: clamp(44px, 5vw, 68px) clamp(20px, 5vw, 64px) clamp(28px, 3vw, 40px);
+  display: grid; grid-template-columns: 1fr 3fr; gap: clamp(28px, 4vw, 64px);
+}
+.hlc-footer-brand { display: flex; flex-direction: column; gap: 14px; }
+.hlc-footer-tag { font-size: 13.5px; line-height: 1.6; color: #93a7c2; margin: 0; max-width: 24ch; }
+
+.hlc-footer-cols {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(18px, 2.4vw, 32px);
+}
+.hlc-footer-col { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+.hlc-footer-col h3 {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #6f83a0; margin: 0 0 4px;
+}
+.hlc-footer-col a {
+  font-size: 13px; line-height: 1.4; color: #b8c8dd; text-decoration: none;
+  transition: color .15s ease;
+}
+.hlc-footer-col a:hover { color: #3dd6ef; }
+
+.hlc-footer-base {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.hlc-footer-base span {
+  display: block; max-width: 1240px; margin: 0 auto;
+  padding: 18px clamp(20px, 5vw, 64px);
+  font-size: 12.5px; color: #7d90ab;
+}
+
+@media (max-width: 1040px) {
+  .hlc-footer-inner { grid-template-columns: 1fr; }
+  .hlc-footer-cols { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 820px) {
+  .hlc-nav-links { display: none; }
+}
+@media (max-width: 620px) {
+  .hlc-footer-cols { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hlc-nav-cta, .hlc-nav-link, .hlc-menu > summary, .hlc-dropdown a, .hlc-footer-col a { transition: none; }
+}

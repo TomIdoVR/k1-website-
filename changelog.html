@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.301 -->
+      <div class="tl-entry fix" id="v2.301">
+        <div class="tl-meta"><span class="tl-ver">v2.301</span><span class="tl-date">2026-07-31</span></div>
+        <div class="tl-title">Redesign-native nav and footer (drop the legacy chrome)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The redesigned pages were wearing the old site's chrome.</strong> v2.298 wrapped them in the live <code>&lt;Nav&gt;</code>/<code>&lt;Footer&gt;</code> to restore internal links for SEO — that fixed links but put a legacy dark nav bar above the light redesign, so the pages read as the old design at first glance</li>
+            <li>Added <code>HeroLabChrome</code> in the redesign's own light language, scoped under <code>.hlc-</code> so it can't collide with the live components. Used by the five solution routes and the redesigned homepage</li>
+            <li><strong>The SEO fix is preserved and improved</strong> — same 20 destinations as the live footer, plus the five product and five industry pages it omits. Internal links per solution page <strong>25 → 46</strong></li>
+            <li>No legacy <code>Nav</code>/<code>Footer</code> import remains anywhere in the redesign tree — it is now visually self-contained</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.300 -->
       <div class="tl-entry feat" id="v2.300">
         <div class="tl-meta"><span class="tl-ver">v2.300</span><span class="tl-date">2026-07-31</span></div>
