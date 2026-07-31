@@ -1,3 +1,26 @@
+## [v2.295] – 2026-07-30 — K-Video solution page (/hero-lab/k-video)
+### Added
+- **Redesigned K-Video solution page**, ported from the Claude Design project (`home/sol-kvideo.jsx`, whose copy was itself lifted from the live `/k-video` page). Content in `sol-kvideo.ts`, rendered by the shared `SolutionPage` component. Six feature rows: real-time monitoring at scale, AI detection & analytics, forensic search & investigations, cameras on the map, video in dispatch & command, and works-with-your-VMS. Case study is Michoacán statewide (10,000+ connected sensors & cameras). Fully localized EN/ES.
+- New **AI PERFORMANCE metrics panel** above the integrations — face-recognition accuracy 94%, LPR read rate 99%, anomaly detection 88%, uptime 98% — rendered as labelled progress bars.
+
+### Changed
+- **Extended the shared contract and renderer** to fit K-Video's design, which differs from K-Safety/K-Dispatch:
+  - `heroVideo` and `heroEvent` are now **optional** — K-Video's hero is already a video wall, so it ships the event card without the picture-in-picture feed.
+  - New optional `perfLabel`/`perfBars` (the AI-performance panel) and an optional `audience` band between process and integrations.
+  - `BenefitIcon`/`FlowIcon` now fall back across both icon sets, so K-Video's `camera` benefit icon and `brain` flow node render instead of an empty `<svg>`.
+  - CSS for `.sp-perf*` (metrics bars) and `.sp-aud*` (audience cards).
+
+- **The dark capability band now takes the product accent** (`var(--ac)`) instead of a fixed cyan, per the design's revision.
+
+### Fixed
+- **Replaced an improvised `sol-kvideo.ts`.** An earlier pass had written the content from the *live* page rephrased rather than from the design file — different headline ("Every camera in one view." vs. the design's "AI video analytics and VMS / software for public safety."), different accent (`#a855f7`), different stats and hero rows, an invented picture-in-picture overlay, and no AI Performance panel. Now a faithful port of `home/sol-kvideo.jsx`; the route file was already correct and was kept.
+
+### Notes
+- Framed (non-bare) hero reading as a live video wall (`K-VIDEO · LIVE WALL`), using the existing `modules/video.webp`; the event overlay shows an AI LPR detection. No dedicated `hero-k-video.png` was needed.
+- Accent resolved to `#22b8d4` (design's `var(--k-video)`), `accentInk` `#7e22ce`. Four integration cards and five benefits, per the design. All feature/integration images map to existing `/images/modules/` assets.
+- **Accessibility flag:** now that the dark band uses the product accent, K-Safety's `#1858f5` eyebrow measures **3.29:1** against it — under WCAG AA's 4.5:1 for 12px text. K-Video (`#22b8d4`) and K-Dispatch (`#0ea5e9`) are fine. Left as designed rather than silently overridden; lightening `--ac` for the dark band only would fix it.
+- Verified at 1440px and 375px, EN and ES: 5 benefit icons and 8 flow icons all non-empty, 4 perf bars at correct widths, all grids collapse to one column, no horizontal overflow, no console errors, `tsc --noEmit` clean. **The live `/k-video` page is untouched** — this sits at `/hero-lab/k-video`, noindex and unlinked. K-Safety and K-Dispatch re-checked and unaffected (new contract fields are all optional).
+
 ## [v2.294] – 2026-07-30 — K-Dispatch solution page (/hero-lab/k-dispatch)
 ### Added
 - **Redesigned K-Dispatch solution page**, ported from the Claude Design project (`home/sol-kdispatch.jsx`). Same seven sections as K-Safety, with seven feature rows rather than six: multi-channel intake, triage & prioritization, CAD & unit recommendation, GIS & AVL tracking, field & multi-agency response, AI-assisted/human-led, and audit trail & reporting. Case study is C5 CDMX. Fully localized EN/ES.

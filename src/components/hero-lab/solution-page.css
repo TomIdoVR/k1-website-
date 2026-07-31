@@ -146,9 +146,10 @@
 
 /* ── Feature rows (dark moment — screenshots pop) ── */
 .sp-features { background: linear-gradient(180deg, #0b1424 0%, #0a1220 100%); }
-.sp-features .sp-section-eyebrow { color: #4fd3e8; }
+/* The dark band now takes the product's accent rather than a fixed cyan. */
+.sp-features .sp-section-eyebrow { color: var(--ac); }
 .sp-features .sp-h2 { color: #fff; }
-.sp-features .sp-h2 em { color: #4fd3e8; }
+.sp-features .sp-h2 em { color: var(--ac); }
 .sp-feat-list { display: flex; flex-direction: column; gap: clamp(40px, 5vw, 78px); }
 .sp-feat { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 62px); align-items: center; }
 .sp-feat.is-rev { grid-template-columns: 1fr 1.15fr; }
@@ -220,6 +221,26 @@
 }
 .sp-flow-core-name { font-family: var(--sp-f-display); font-weight: 700; font-size: clamp(18px, 1.9vw, 24px); letter-spacing: 0.06em; color: #14233a; }
 .sp-flow-core-steps { font-family: var(--sp-f-mono); font-size: 8.5px; letter-spacing: 0.12em; color: #1e4f8a; white-space: nowrap; }
+
+/* ── Audience (optional band) ── */
+.sp-aud { background: transparent; }
+.sp-aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.sp-aud-card { background: #fff; border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 16px; padding: 24px 22px; box-shadow: 0 12px 30px -22px rgba(20, 40, 80, 0.3); transition: transform .22s ease, border-color .22s ease; }
+.sp-aud-card:hover { transform: translateY(-4px); border-color: rgba(34, 184, 212, 0.4); }
+.sp-aud-card h3 { font-family: var(--sp-f-display); font-weight: 600; font-size: 19px; color: #11203a; margin: 0 0 8px; line-height: 1.12; letter-spacing: 0.005em; }
+.sp-aud-card p { font-size: 14px; line-height: 1.56; color: #4d627f; margin: 0; }
+@media (max-width: 900px) { .sp-aud-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .sp-aud-grid { grid-template-columns: 1fr; } }
+
+/* ── Performance metrics panel (optional, above the integrations head) ── */
+.sp-perf { background: #fff; border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 16px; padding: clamp(22px, 2.6vw, 32px); margin-bottom: clamp(36px, 4vw, 56px); box-shadow: 0 12px 30px -22px rgba(20, 40, 80, 0.3); }
+.sp-perf-label { font-family: var(--sp-f-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--ac-ink); margin-bottom: 20px; }
+.sp-perf-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+.sp-perf-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: #46597a; margin-bottom: 7px; }
+.sp-perf-v { font-family: var(--sp-f-display); font-weight: 700; font-size: 16px; color: #11203a; }
+.sp-perf-track { height: 6px; background: rgba(15, 30, 60, 0.08); border-radius: 3px; overflow: hidden; }
+.sp-perf-fill { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #1858f5, #22b8d4); }
+@media (max-width: 700px) { .sp-perf-bars { grid-template-columns: 1fr; } }
 
 /* ── Integrations ── */
 .sp-int { background: #eef2f7; }

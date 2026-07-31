@@ -27,8 +27,10 @@ export type SolutionContent = {
   heroBare?: boolean
   heroAlt: Loc
   consoleTitle: Loc
-  heroVideo: { img: string; label: Loc }
-  heroEvent: { tag: Loc; title: Loc; loc: Loc; rows: { l: Loc; v: Loc | string }[] }
+  /* Both hero overlays are optional — K-Video, for instance, ships the event
+     card without the picture-in-picture video feed. */
+  heroVideo?: { img: string; label: Loc }
+  heroEvent?: { tag: Loc; title: Loc; loc: Loc; rows: { l: Loc; v: Loc | string }[] }
   chips?: { c: string; t: Loc }[]
   /* Some values are locale-invariant in the design ("Unit 12", "24/7", "2"),
      so these accept a bare string alongside an {en, es} pair. */
@@ -49,6 +51,15 @@ export type SolutionContent = {
   processIn: { k: string; t: Loc }[]
   processCore: LocList
   processOut: { k: string; t: Loc }[]
+  /* Optional "who uses this" band, rendered between process and integrations. */
+  audienceEyebrow?: Loc
+  audienceH2a?: Loc
+  audienceH2b?: Loc
+  audience?: { t: Loc; d: Loc }[]
+  /* Optional metrics panel that sits above the integrations head. `w` is the
+     bar's CSS width and is usually the same figure as `v`. */
+  perfLabel?: Loc
+  perfBars?: { l: Loc; v: string; w: string }[]
   intEyebrow: Loc
   intH2a: Loc
   intH2b: Loc

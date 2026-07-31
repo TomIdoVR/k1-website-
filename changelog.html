@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.295 -->
+      <div class="tl-entry feat" id="v2.295">
+        <div class="tl-meta"><span class="tl-ver">v2.295</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">K-Video solution page (/hero-lab/k-video)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported the <strong>redesigned K-Video solution page</strong> from the Claude Design project, rendered by the shared <code>SolutionPage</code> component. Six feature rows (real-time monitoring at scale, AI detection & analytics, forensic search, cameras on the map, video in dispatch & command, works-with-your-VMS); case study is Michoacán statewide (10,000+ sensors & cameras); fully localized EN/ES</li>
+            <li>New <strong>AI PERFORMANCE metrics panel</strong> above the integrations — face recognition 94%, LPR read rate 99%, anomaly detection 88%, uptime 98% — as labelled progress bars</li>
+            <li><strong>Extended the shared contract and renderer</strong> for K-Video's design: <code>heroVideo</code>/<code>heroEvent</code> now optional (its hero is already a video wall, so no picture-in-picture feed), new optional <code>perfBars</code> panel and <code>audience</code> band, and benefit/flow icons now fall back across both sets so <code>camera</code> and <code>brain</code> render. Added <code>.sp-perf*</code> / <code>.sp-aud*</code> CSS</li>
+            <li>Framed hero reading as a live video wall using the existing <code>video.webp</code>; accent <code>#22b8d4</code>; four integration cards and five benefits per the design. <code>tsc</code> clean</li>
+            <li><strong>Fixed: replaced an improvised <code>sol-kvideo.ts</code></strong> — an earlier pass had written the content from the <em>live</em> page rephrased rather than from the design file (different headline, accent <code>#a855f7</code>, different stats, an invented picture-in-picture overlay, no AI Performance panel). Now a faithful port of <code>home/sol-kvideo.jsx</code></li>
+            <li><strong>Accessibility flag:</strong> the dark band now uses the product accent, so K-Safety's <code>#1858f5</code> eyebrow measures <strong>3.29:1</strong> against it — under WCAG AA's 4.5:1 for 12px text. K-Video and K-Dispatch are fine. Left as designed rather than silently overridden</li>
+            <li><strong>The live <code>/k-video</code> page is untouched</strong> — noindex and unlinked at <code>/hero-lab/k-video</code>; K-Safety and K-Dispatch re-checked and unaffected (new contract fields are all optional)</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.294 -->
       <div class="tl-entry feat" id="v2.294">
         <div class="tl-meta"><span class="tl-ver">v2.294</span><span class="tl-date">2026-07-30</span></div>

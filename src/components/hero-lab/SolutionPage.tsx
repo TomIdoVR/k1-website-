@@ -44,10 +44,14 @@ const FLOW_ICONS: Record<string, React.ReactNode> = {
   bolt: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></>,
 }
 
+/* The two icon sets overlap in practice — K-Video uses `camera` as a benefit
+   icon and `brain` as a flow node — so each looks in the other set as a
+   fallback. (The design only added the first direction; without the second,
+   K-Video's "AI analytics" flow node renders an empty <svg>.) */
 function BenefitIcon({ k }: { k: string }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {BENEFIT_ICONS[k]}
+      {BENEFIT_ICONS[k] ?? FLOW_ICONS[k]}
     </svg>
   )
 }
@@ -55,7 +59,7 @@ function BenefitIcon({ k }: { k: string }) {
 function FlowIcon({ k }: { k: string }) {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {FLOW_ICONS[k]}
+      {FLOW_ICONS[k] ?? BENEFIT_ICONS[k]}
     </svg>
   )
 }
@@ -103,23 +107,27 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
               )}
               <div className="sp-console-body">
                 <Image src={p.heroImg} alt={t(p.heroAlt, es)} width={1200} height={800} priority />
-                <div className="sp-ov-video">
-                  <span className="sp-ov-feed" style={{ backgroundImage: `url(${p.heroVideo.img})` }} aria-hidden="true" />
-                  <span className="sp-ov-video-bar">
-                    <span className="sp-live-dot" />
-                    {t(p.heroVideo.label, es)}
-                  </span>
-                </div>
-                <div className="sp-ov-event">
-                  <span className="sp-ov-tag">{t(p.heroEvent.tag, es)}</span>
-                  <div className="sp-ov-title">{t(p.heroEvent.title, es)}</div>
-                  <div className="sp-ov-loc">{t(p.heroEvent.loc, es)}</div>
-                  <div className="sp-ov-rows">
-                    {p.heroEvent.rows.map((r, i) => (
-                      <div key={i}><span>{t(r.l, es)}</span><b>{t(r.v, es)}</b></div>
-                    ))}
+                {p.heroVideo && (
+                  <div className="sp-ov-video">
+                    <span className="sp-ov-feed" style={{ backgroundImage: `url(${p.heroVideo.img})` }} aria-hidden="true" />
+                    <span className="sp-ov-video-bar">
+                      <span className="sp-live-dot" />
+                      {t(p.heroVideo.label, es)}
+                    </span>
                   </div>
-                </div>
+                )}
+                {p.heroEvent && (
+                  <div className="sp-ov-event">
+                    <span className="sp-ov-tag">{t(p.heroEvent.tag, es)}</span>
+                    <div className="sp-ov-title">{t(p.heroEvent.title, es)}</div>
+                    <div className="sp-ov-loc">{t(p.heroEvent.loc, es)}</div>
+                    <div className="sp-ov-rows">
+                      {p.heroEvent.rows.map((r, i) => (
+                        <div key={i}><span>{t(r.l, es)}</span><b>{t(r.v, es)}</b></div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             {p.chips?.map((c, i) => (
@@ -224,9 +232,49 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
         </div>
       </section>
 
-      {/* ── Integrations (light band) ── */}
+      {/* ── Audience (optional) ── */}
+      {p.audience && (
+        <section className="sp-section sp-aud">
+          <div className="sp-wrap">
+            <div className="sp-head">
+              <div className="sp-section-eyebrow">{p.audienceEyebrow && t(p.audienceEyebrow, es)}</div>
+              <h2 className="sp-h2">
+                {p.audienceH2a && t(p.audienceH2a, es)} <em>{p.audienceH2b && t(p.audienceH2b, es)}</em>
+              </h2>
+            </div>
+            <div className="sp-aud-grid">
+              {p.audience.map((a, i) => (
+                <div className="sp-aud-card" key={i}>
+                  <h3>{t(a.t, es)}</h3>
+                  <p>{t(a.d, es)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Integrations (light band), optionally preceded by a metrics panel ── */}
       <section className="sp-section sp-int">
         <div className="sp-wrap">
+          {p.perfBars && (
+            <div className="sp-perf">
+              <div className="sp-perf-label">{p.perfLabel && t(p.perfLabel, es)}</div>
+              <div className="sp-perf-bars">
+                {p.perfBars.map((b, i) => (
+                  <div className="sp-perf-row" key={i}>
+                    <div className="sp-perf-top">
+                      <span>{t(b.l, es)}</span>
+                      <span className="sp-perf-v">{b.v}</span>
+                    </div>
+                    <div className="sp-perf-track">
+                      <span className="sp-perf-fill" style={{ width: b.w }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="sp-head">
             <div className="sp-section-eyebrow">{t(p.intEyebrow, es)}</div>
             <h2 className="sp-h2">{t(p.intH2a, es)} <em>{t(p.intH2b, es)}</em></h2>
