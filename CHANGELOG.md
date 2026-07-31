@@ -1,3 +1,14 @@
+## [v2.303] – 2026-07-31 — K-Safety hero: real labels, real logo, larger
+### Changed
+- **The hero now carries real UI text instead of placeholder bars.** v2.302 suppressed all text because image models usually garble UI type — that was too cautious here. Regenerated with the actual labels and they render sharp and correctly spelled: K-SAFETY, INCIDENT MANAGEMENT BOARD, the four status columns with counts (NEW 12 / IN PROGRESS 7 / ON SCENE 5 / RESOLVED 18), real incident names and cross-streets, KPI values (86 / 7 / 5 / 18 / 02:14), and chart titles.
+- **The real 1K brand mark replaces the generic app icon**, edited in via nano-banana-2 with `K1_logo-ng.svg` supplied as a second reference image. Everything else in the composition was preserved.
+- **The art is bigger.** Two changes: the transparent margin around the panels was trimmed (the composition only filled 64.5% of its canvas — 154px of dead space at the top alone), and the hero's visual column went from `1.12fr` to `1.22fr`.
+
+### Notes
+- `1.45fr` was tried first and pushed the copy column too narrow — the eyebrow wrapped to two lines and the three stats broke onto two rows. `1.22fr` keeps stats on one row and the eyebrow on one line while still rendering the art ~18% wider than before.
+- **Two small text errors survived the logo edit pass:** the Noise Complaint priority reads "LAW" instead of "LOW", and the analytics panel reads "UpZone" instead of "Uptown". Legible but wrong — worth a corrective pass before this goes anywhere public.
+- The uploaded reference image still could not be used directly; a pasted image is not a file on disk. This is a generated approximation of it.
+
 ## [v2.302] – 2026-07-31 — K-Safety hero: light 3D panel composition
 ### Changed
 - **New K-Safety hero** in the 3D angled multi-panel style: an incident board with four tinted status columns and KPI sparklines, flanked by a live-camera panel and an analytics panel, all floating in perspective. Replaces the flat GIS console shot.

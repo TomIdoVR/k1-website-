@@ -43,7 +43,10 @@
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%);
 }
-.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.12fr; gap: clamp(32px, 4.5vw, 72px); align-items: center; }
+/* The visual column is deliberately the wider one — the hero art carries a full
+   product composition (incident board, cameras, analytics) and needs the room
+   to stay legible. */
+.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.22fr; gap: clamp(26px, 3.4vw, 56px); align-items: center; }
 .sp-eyebrow { font-family: var(--sp-f-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.22em; color: var(--ac-ink); margin-bottom: 20px; }
 .sp-h1 { font-family: var(--sp-f-display); font-weight: 800; font-size: clamp(38px, 4.6vw, 66px); line-height: 0.98; letter-spacing: -0.015em; text-transform: none; display: flex; flex-direction: column; margin-bottom: 22px; }
 .sp-h1 > span:not(.sp-h1-em) { color: var(--sp-ink); }
