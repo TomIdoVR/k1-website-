@@ -86,7 +86,7 @@ const KTRAFFIC: SolutionContent = {
   featuresH2b: S('smarter traffic management.', 'gestión inteligente de tráfico.'),
   features: [
     {
-      img: '/images/k-traffic-mockup.webp',
+      img: '/images/modules/traffic-corridor.webp',
       alt: S('Corridor view with live signal states and adaptive timing across intersections',
         'Vista de corredor con estados de semáforos y tiempos adaptativos en intersecciones'),
       t: S('Traffic signal & adaptive control', 'Control adaptativo de semáforos'),

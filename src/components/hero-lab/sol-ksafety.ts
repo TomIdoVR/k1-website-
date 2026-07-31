@@ -86,7 +86,7 @@ const KSAFETY: SolutionContent = {
   featuresH2b: S('Every source.', 'Todas las fuentes.'),
   features: [
     {
-      img: '/images/modules/gis.webp',
+      img: '/images/modules/gis-ops.webp',
       alt: S('Operational GIS map with live incidents, units, and camera locations',
         'Mapa GIS operativo con incidentes, unidades y cámaras en vivo'),
       t: S('Live operational map', 'Mapa operativo en vivo'),

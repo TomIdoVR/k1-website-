@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.300 -->
+      <div class="tl-entry feat" id="v2.300">
+        <div class="tl-meta"><span class="tl-ver">v2.300</span><span class="tl-date">2026-07-31</span></div>
+        <div class="tl-title">Nine purpose-built product screenshots (Gemini)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every solution page was repeating its hero image as feature 1</strong> — all five, the most visible image defect on the redesign. Each now has a distinct, purpose-generated screenshot</li>
+            <li><strong>Fixed two images that didn't match their section</strong>: K-Video's "Forensic search" was a BI dashboard, K-Connect's "Granular permission control" was the citizen-app shot</li>
+            <li>Nine new 1200×670 screenshots generated with Gemini (Nano Banana Pro) in the existing dark-navy/cyan product language, with K-Connect's in its own green and K-Traffic's in amber</li>
+            <li><strong>Prompting technique:</strong> image models render UI text as gibberish, which looks worse than repetition. Every prompt forbids text and asks for grey bars and dots where labels would sit — results read as real screenshots with no garbled type</li>
+            <li>Two first attempts came back as a monitor on a white background; caught by sampling corner-pixel brightness across all nine rather than eyeballing, then regenerated with explicit "no device frame" wording</li>
+            <li>Distinct images <strong>11 → 20</strong> across 36 slots. Still repetitive across pages: <code>gis.webp</code> on all 5, <code>video.webp</code> and <code>ai.webp</code> on 4 each — roughly 16 more generations to finish</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.299 -->
       <div class="tl-entry fix" id="v2.299">
         <div class="tl-meta"><span class="tl-ver">v2.299</span><span class="tl-date">2026-07-31</span></div>

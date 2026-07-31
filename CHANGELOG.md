@@ -1,3 +1,21 @@
+## [v2.300] – 2026-07-31 — Nine purpose-built product screenshots (Gemini)
+### Fixed
+- **Every solution page was showing its hero image again as feature 1** — all five of them, the most visible image defect on the redesign. Each now has a distinct, purpose-generated screenshot for that row.
+- **Two images that didn't match their section.** K-Video's "Forensic search & investigations" was illustrated with a BI dashboard; K-Connect's "Granular permission control" used the citizen-app shot. Both replaced with images that actually depict the feature.
+- Reduced the worst cross-page repetition: `events.webp` 4 → 3 uses, `integrations.webp` 3 → 2.
+
+### Added
+Nine new 1200×670 product screenshots generated with Gemini (Nano Banana Pro), in the existing dark-navy/cyan product language:
+`gis-ops`, `cad-units`, `video-wall`, `traffic-corridor`, `connect-network`, `forensic-search`, `permissions`, `integrations-topology`, `event-board`.
+
+### Notes
+- **Prompting technique that made this viable:** image models render UI text as gibberish, which on a product page looks worse than repetition. Every prompt explicitly forbids text, letters and numbers and asks for short grey bars and dots where labels would sit. The results read as genuine product screenshots with no garbled type.
+- Two first attempts came back as a monitor on a white background rather than a full-bleed screenshot. Caught by sampling corner-pixel brightness across all nine rather than eyeballing them, then regenerated with explicit "no device frame, no bezel, no background" wording.
+- K-Connect's network diagram is generated in the product's own green (`#22c55e`) and K-Traffic's corridor view in amber/cyan, so each page's imagery matches its accent.
+- Distinct images across the five pages: **11 → 20** over 36 slots. All five same-page duplicates are gone.
+- **Still repetitive across pages:** `gis.webp` appears on all 5, `video.webp` and `ai.webp` on 4 each, `dispatch.webp` on 3. Fixing that fully needs roughly 16 more generations — not done here.
+- The K-Dispatch hero is still the `dispatch.webp` stand-in noted in v2.294; the design's dedicated `hero-k-dispatch.png` is still not in the repo.
+
 ## [v2.299] – 2026-07-31 — Homepage redesign: SEO parity with production
 
 SEO review of the `hero-lab` preview deployment. The five solution pages came back clean — schema identical to production, all FAQ Q&A visible in the rendered body, every page *gained* content, ES fully translated. All the regressions were on the redesigned homepage, and every one is now closed. Measured after the fix: **1,492 words vs production's 1,492**, with C5, CAD, 911, NG911 and VMS frequencies matching exactly.

@@ -101,7 +101,7 @@ const KDISPATCH: SolutionContent = {
         ['Teléfono, radio, IoT y app ciudadana', 'Texto al 911 y mensajería multimedia', 'Una sola cola para cada canal']),
     },
     {
-      img: '/images/modules/events.webp',
+      img: '/images/modules/event-board.webp',
       alt: S('Call triage board scoring incidents by priority with recommended protocols',
         'Tablero de triaje puntuando incidentes por prioridad con protocolos recomendados'),
       t: S('Triage & prioritization', 'Triaje y priorización'),
@@ -111,7 +111,7 @@ const KDISPATCH: SolutionContent = {
         ['Triaje y puntuación de prioridad', 'Clasificación por protocolo', 'Escalamiento y re-priorización']),
     },
     {
-      img: '/images/modules/dispatch.webp',
+      img: '/images/modules/cad-units.webp',
       alt: S('CAD console recommending the nearest available unit for an active incident',
         'Consola CAD recomendando la unidad disponible más cercana para un incidente activo'),
       t: S('CAD & unit recommendation', 'CAD y recomendación de unidades'),

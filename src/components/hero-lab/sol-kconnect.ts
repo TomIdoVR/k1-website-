@@ -87,7 +87,7 @@ const KCONNECT: SolutionContent = {
   featuresH2b: S('Respond. Audit.', 'Responder. Auditar.'),
   features: [
     {
-      img: '/images/k-connect-mockup.webp', ar: '1200 / 546', h: 546,
+      img: '/images/modules/connect-network.webp', ar: '1200 / 546', h: 546,
       alt: S('Network view of connected organizations and their registered cameras',
         'Vista de red de organizaciones conectadas y sus cámaras registradas'),
       t: S('Connected organization network', 'Red de organizaciones conectadas'),
@@ -97,7 +97,7 @@ const KCONNECT: SolutionContent = {
         ['Las organizaciones registran sus cámaras', 'Cada dueño mantiene el control', 'Una red, muchos participantes']),
     },
     {
-      img: '/images/modules/citizen.webp',
+      img: '/images/modules/permissions.webp',
       alt: S('Granular permission controls determining which cameras are shared and with whom',
         'Controles granulares de permisos definiendo qué cámaras se comparten y con quién'),
       t: S('Granular permission control', 'Control granular de permisos'),

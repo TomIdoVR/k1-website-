@@ -85,7 +85,7 @@ const KVIDEO: SolutionContent = {
   featuresH2b: S('and AI analytics solution.', 'con analítica IA.'),
   features: [
     {
-      img: '/images/modules/video.webp',
+      img: '/images/modules/video-wall.webp',
       alt: S('Unified video wall combining live feeds from thousands of cameras',
         'Muro de video unificado combinando señales en vivo de miles de cámaras'),
       t: S('Real-time monitoring at scale', 'Monitoreo en tiempo real a escala'),
@@ -105,7 +105,7 @@ const KVIDEO: SolutionContent = {
         ['Reconocimiento facial y de placas', 'Detección de anomalías y comportamiento', 'Alertas automáticas de movimiento e intrusión']),
     },
     {
-      img: '/images/modules/bi.webp',
+      img: '/images/modules/forensic-search.webp',
       alt: S('Forensic search retrieving relevant footage across the camera network',
         'Búsqueda forense recuperando video relevante en la red de cámaras'),
       t: S('Forensic search & investigations', 'Búsqueda forense e investigaciones'),
@@ -135,7 +135,7 @@ const KVIDEO: SolutionContent = {
         ['Video en vivo hacia CAD y RTCC', 'Señales adjuntas al incidente', 'Contexto antes de que lleguen las unidades']),
     },
     {
-      img: '/images/modules/integrations.webp',
+      img: '/images/modules/integrations-topology.webp',
       alt: S('Integration layer connecting existing VMS platforms and IP camera systems',
         'Capa de integración conectando plataformas VMS y sistemas de cámaras IP existentes'),
       t: S('Works with your existing VMS', 'Funciona con tu VMS existente'),
