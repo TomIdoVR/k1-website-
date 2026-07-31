@@ -13,7 +13,7 @@
 import Image from 'next/image'
 import type { CSSProperties } from 'react'
 import { Link } from '@/i18n/navigation'
-import type { Loc, LocList, SolutionContent } from './sol-ksafety'
+import type { Loc, LocList, SolutionContent } from './solution-content'
 
 const t = (v: Loc | string, es: boolean): string => (typeof v === 'string' ? v : es ? v.es : v.en)
 const tl = (v: LocList, es: boolean): string[] => (es ? v.es : v.en)
@@ -23,6 +23,8 @@ const BENEFIT_ICONS: Record<string, React.ReactNode> = {
   link: <><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1" /><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1" /></>,
   brain: <><path d="M12 5a3 3 0 0 0-6 0 3 3 0 0 0-1 5.8A3 3 0 0 0 8 16a3 3 0 0 0 4 2.8V5Z" /><path d="M12 5a3 3 0 0 1 6 0 3 3 0 0 1 1 5.8A3 3 0 0 1 16 16a3 3 0 0 1-4 2.8V5Z" /></>,
   scale: <><path d="M12 4v16M6 8h12" /><path d="M3 14l3-6 3 6a3 3 0 0 1-6 0ZM15 14l3-6 3 6a3 3 0 0 1-6 0Z" /></>,
+  bolt: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></>,
+  phone: <><path d="M4 5c0-1 1-2 2-2h2l2 4-2 2a12 12 0 0 0 5 5l2-2 4 2v2c0 1-1 2-2 2A16 16 0 0 1 4 5Z" /></>,
 }
 
 const FLOW_ICONS: Record<string, React.ReactNode> = {
@@ -31,6 +33,12 @@ const FLOW_ICONS: Record<string, React.ReactNode> = {
   access: <><rect x="5" y="3" width="14" height="18" rx="2" /><circle cx="9" cy="8" r="1" /><circle cx="15" cy="8" r="1" /><circle cx="9" cy="12" r="1" /><circle cx="15" cy="12" r="1" /><path d="M9 17h6" /></>,
   mobile: <><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M11 18.5h2" /></>,
   iot: <><circle cx="12" cy="12" r="2" /><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7" /><path d="M12 14v7" /></>,
+  sms: <><path d="M4 5h16v11H9l-5 4V5Z" /><path d="M8 10h8M8 13h5" /></>,
+  radio: <><circle cx="12" cy="13" r="2.5" /><path d="M7.5 8.5a6 6 0 0 0 0 9M16.5 8.5a6 6 0 0 1 0 9" /></>,
+  users: <><circle cx="9" cy="8" r="3" /><path d="M3 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0-2-5.2M15.5 20a6 6 0 0 1 5.5-6" /></>,
+  chart: <><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></>,
+  truck: <><rect x="2" y="8" width="12" height="8" rx="1.5" /><path d="M14 11h4l3 3v2h-7z" /><circle cx="6" cy="18" r="1.8" /><circle cx="17" cy="18" r="1.8" /></>,
+  phoneIn: <><path d="M4 5c0-1 1-2 2-2h2l2 4-2 2a12 12 0 0 0 5 5l2-2 4 2v2c0 1-1 2-2 2A16 16 0 0 1 4 5Z" /></>,
   bell: <><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8" /><path d="M13.7 21a2 2 0 0 1-3.4 0" /></>,
   pin: <><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" /><circle cx="12" cy="9" r="2.4" /></>,
   bolt: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" /></>,
@@ -83,12 +91,16 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           </div>
 
           <div className="sp-hero-visual">
-            <div className="sp-console">
-              <div className="sp-console-bar">
-                <span className="sp-console-dot" /><span className="sp-console-dot" /><span className="sp-console-dot" />
-                <span className="sp-console-title">{t(p.consoleTitle, es)}</span>
-                <span className="sp-console-live"><span className="sp-live-dot" />LIVE</span>
-              </div>
+            {/* heroBare: the screenshot supplies its own chrome, so the title
+                bar is dropped and the overlays reposition against the image. */}
+            <div className={`sp-console${p.heroBare ? ' is-bare' : ''}`}>
+              {!p.heroBare && (
+                <div className="sp-console-bar">
+                  <span className="sp-console-dot" /><span className="sp-console-dot" /><span className="sp-console-dot" />
+                  <span className="sp-console-title">{t(p.consoleTitle, es)}</span>
+                  <span className="sp-console-live"><span className="sp-live-dot" />LIVE</span>
+                </div>
+              )}
               <div className="sp-console-body">
                 <Image src={p.heroImg} alt={t(p.heroAlt, es)} width={1200} height={800} priority />
                 <div className="sp-ov-video">
@@ -110,7 +122,7 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
                 </div>
               </div>
             </div>
-            {p.chips.map((c, i) => (
+            {p.chips?.map((c, i) => (
               <div className={`sp-chip sp-chip-${i + 1}`} key={i}><i style={{ background: c.c }} />{t(c.t, es)}</div>
             ))}
           </div>
@@ -237,7 +249,7 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           <div className="sp-section-eyebrow sp-case-eyebrow">{t(p.caseEyebrow, es)}</div>
           <div className="sp-case-grid">
             <div className="sp-case-main">
-              <div className="sp-case-metric">{p.caseMetric}</div>
+              <div className="sp-case-metric">{t(p.caseMetric, es)}</div>
               <h2 className="sp-case-metric-l">{t(p.caseMetricL, es)}</h2>
               <div className="sp-case-meta">
                 <span className="sp-case-name">{t(p.caseName, es)}</span>

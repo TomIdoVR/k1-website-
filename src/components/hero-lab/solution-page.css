@@ -79,6 +79,15 @@
 .sp-console img { width: 100%; height: auto; display: block; }
 .sp-console-body { position: relative; }
 
+/* "Bare" hero: the supplied screenshot already carries its own window chrome
+   and annotations, so the console frame, title bar and floating chips are all
+   suppressed and the overlays are repositioned against the image itself. */
+.sp-console.is-bare { background: transparent; border: none; box-shadow: none; overflow: visible; }
+.sp-console.is-bare .sp-console-body img { border-radius: 14px; }
+.sp-console.is-bare .sp-ov-video { top: 15%; bottom: auto; left: 13%; width: 30%; max-width: 176px; }
+.sp-console.is-bare .sp-ov-event { top: auto; bottom: -26px; right: -18px; width: 190px; }
+.sp-hero-visual:has(.is-bare) .sp-chip { display: none; }
+
 /* live video feed overlay */
 .sp-ov-video {
   position: absolute; left: 14px; bottom: 14px; width: 38%; max-width: 210px;
@@ -101,15 +110,15 @@
 }
 .sp-ov-tag { display: inline-block; font-family: var(--sp-f-mono); font-size: 8px; font-weight: 600; letter-spacing: 0.12em; color: #dc2626; background: rgba(220, 38, 38, 0.1); padding: 3px 7px; border-radius: 4px; }
 .sp-ov-title { font-family: var(--sp-f-display); font-weight: 700; font-size: 14.5px; color: #14233a; margin: 8px 0 2px; letter-spacing: 0.005em; }
-.sp-ov-loc { font-family: var(--sp-f-mono); font-size: 9px; color: #6a7d96; }
+.sp-ov-loc { font-family: var(--sp-f-mono); font-size: 10.5px; color: #4d627f; }
 .sp-ov-rows { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(15, 30, 60, 0.09); }
-.sp-ov-rows div { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 9.5px; }
-.sp-ov-rows span { color: #6a7d96; }
-.sp-ov-rows b { color: #14233a; font-weight: 700; font-size: 10px; }
+.sp-ov-rows div { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 10.5px; }
+.sp-ov-rows span { color: #4d627f; }
+.sp-ov-rows b { color: #14233a; font-weight: 700; font-size: 11px; }
 
 .sp-chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.96); border: 1px solid rgba(15, 30, 60, 0.1); border-radius: 10px; padding: 9px 13px; font-size: 12.5px; font-weight: 500; color: var(--sp-ink); box-shadow: 0 16px 30px -12px rgba(20, 40, 80, 0.35); }
 .sp-chip i { width: 9px; height: 9px; border-radius: 50%; }
-.sp-chip-1 { top: 22px; left: -16px; animation: sp-chip-float 5s ease-in-out infinite; }
+.sp-chip-1 { top: 58px; left: -16px; animation: sp-chip-float 5s ease-in-out infinite; }
 .sp-chip-2 { bottom: 26px; right: -14px; animation: sp-chip-float 5s ease-in-out infinite 1.4s; }
 @keyframes sp-chip-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 

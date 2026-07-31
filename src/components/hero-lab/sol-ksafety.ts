@@ -6,60 +6,7 @@
    the remaining K-* pages (K-Dispatch, K-Video, K-Traffic, K-Connect) can
    each drop in their own file against the same SolutionPage component. */
 
-export type Loc = { en: string; es: string }
-export type LocList = { en: string[]; es: string[] }
-
-const S = (en: string, es: string): Loc => ({ en, es })
-const SL = (en: string[], es: string[]): LocList => ({ en, es })
-
-export type SolutionContent = {
-  key: string
-  name: string
-  accent: string
-  accentInk: string
-  eyebrow: Loc
-  h1a: Loc
-  h1b: Loc
-  sub: Loc
-  heroImg: string
-  heroAlt: Loc
-  consoleTitle: Loc
-  heroVideo: { img: string; label: Loc }
-  heroEvent: { tag: Loc; title: Loc; loc: Loc; rows: { l: Loc; v: Loc | string }[] }
-  chips: { c: string; t: Loc }[]
-  /* Some values are locale-invariant in the design ("Unit 12", "24/7"), so
-     these accept a bare string alongside a {en,es} pair. */
-  stats: { v: Loc | string; l: Loc }[]
-  coreLabel: Loc
-  core: LocList
-  benefitsEyebrow: Loc
-  benefitsH2a: Loc
-  benefitsH2b: Loc
-  benefits: { icon: string; t: Loc; d: Loc }[]
-  featuresEyebrow: Loc
-  featuresH2a: Loc
-  featuresH2b: Loc
-  features: { img: string; alt: Loc; t: Loc; d: Loc; pts: LocList }[]
-  processEyebrow: Loc
-  processH2a: Loc
-  processH2b: Loc
-  processIn: { k: string; t: Loc }[]
-  processCore: LocList
-  processOut: { k: string; t: Loc }[]
-  intEyebrow: Loc
-  intH2a: Loc
-  intH2b: Loc
-  intSub: Loc
-  integrations: { t: Loc; d: Loc }[]
-  caseEyebrow: Loc
-  caseMetric: string
-  caseMetricL: Loc
-  caseName: Loc
-  caseScope: Loc
-  caseBody: Loc
-  caseStats: { v: Loc | string; l: Loc }[]
-  caseNote: Loc
-}
+import { type Loc, type LocList, type SolutionContent, S, SL } from './solution-content'
 
 /* The design referenced its own asset folder (assets/modules/…); these map to
    this repo's /public/images/modules, where all six already exist. */

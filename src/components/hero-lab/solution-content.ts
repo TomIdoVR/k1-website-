@@ -1,0 +1,67 @@
+/* Shared shape for every K-* solution page's content.
+
+   The Claude Design project keeps one content file per product
+   (home/sol-ksafety.jsx, sol-kdispatch.jsx, sol-ktraffic.jsx, sol-kvideo.jsx)
+   all feeding a single generic renderer via window.SOLPAGE. This is the typed
+   equivalent of that contract — SolutionPage.tsx renders it, and each
+   sol-*.ts supplies one. */
+
+export type Loc = { en: string; es: string }
+export type LocList = { en: string[]; es: string[] }
+
+export const S = (en: string, es: string): Loc => ({ en, es })
+export const SL = (en: string[], es: string[]): LocList => ({ en, es })
+
+export type SolutionContent = {
+  key: string
+  name: string
+  accent: string
+  accentInk: string
+  eyebrow: Loc
+  h1a: Loc
+  h1b: Loc
+  sub: Loc
+  heroImg: string
+  /* When the supplied hero screenshot already carries its own window chrome,
+     the console frame and floating chips are suppressed (see .is-bare). */
+  heroBare?: boolean
+  heroAlt: Loc
+  consoleTitle: Loc
+  heroVideo: { img: string; label: Loc }
+  heroEvent: { tag: Loc; title: Loc; loc: Loc; rows: { l: Loc; v: Loc | string }[] }
+  chips?: { c: string; t: Loc }[]
+  /* Some values are locale-invariant in the design ("Unit 12", "24/7", "2"),
+     so these accept a bare string alongside an {en, es} pair. */
+  stats: { v: Loc | string; l: Loc }[]
+  coreLabel: Loc
+  core: LocList
+  benefitsEyebrow: Loc
+  benefitsH2a: Loc
+  benefitsH2b: Loc
+  benefits: { icon: string; t: Loc; d: Loc }[]
+  featuresEyebrow: Loc
+  featuresH2a: Loc
+  featuresH2b: Loc
+  features: { img: string; alt: Loc; t: Loc; d: Loc; pts: LocList }[]
+  processEyebrow: Loc
+  processH2a: Loc
+  processH2b: Loc
+  processIn: { k: string; t: Loc }[]
+  processCore: LocList
+  processOut: { k: string; t: Loc }[]
+  intEyebrow: Loc
+  intH2a: Loc
+  intH2b: Loc
+  intSub: Loc
+  integrations: { t: Loc; d: Loc }[]
+  caseEyebrow: Loc
+  /* K-Safety's is a bare figure ("10,000+"); K-Dispatch's is a translated
+     phrase ("Multi-agency" / "Multiagencia"), so this takes either. */
+  caseMetric: Loc | string
+  caseMetricL: Loc
+  caseName: Loc
+  caseScope: Loc
+  caseBody: Loc
+  caseStats: { v: Loc | string; l: Loc }[]
+  caseNote: Loc
+}

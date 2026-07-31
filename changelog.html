@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.294 -->
+      <div class="tl-entry feat" id="v2.294">
+        <div class="tl-meta"><span class="tl-ver">v2.294</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">K-Dispatch solution page (/hero-lab/k-dispatch)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported the <strong>redesigned K-Dispatch solution page</strong> from the Claude Design project — same seven sections as K-Safety with seven feature rows (intake, triage, CAD, GIS/AVL, field response, AI-assisted, audit trail); case study is C5 CDMX; fully localized EN/ES</li>
+            <li><strong>Extracted the shared content contract</strong> into <code>solution-content.ts</code> — it had been living inside <code>sol-ksafety.ts</code>, which stopped making sense with a second product consuming it. K-Video and K-Traffic now need only their own data file</li>
+            <li><strong>Brought the renderer up to date with the design</strong>, which had moved on since the K-Safety port: new <code>heroBare</code> mode (screenshot supplies its own chrome, so the title bar, frame and floating chips are suppressed and overlays reposition), six new flow icons, two new benefit icons, optional chips, and a translatable <code>caseMetric</code></li>
+            <li><strong>Hero image is a stand-in</strong> — the design points at <code>hero-k-dispatch.png</code>, which isn't in this repo and is too large for the design file API. Falls back to the existing <code>dispatch.webp</code>; drop the real PNG into <code>public/images/modules/</code> and flip the marked line</li>
+            <li>Verified 1440px and 375px, EN and ES, 8 flow nodes, 7 feature rows, no overflow, no console errors, TypeScript clean; K-Safety re-checked after the shared-type refactor</li>
+            <li><strong>The live <code>/k-dispatch</code> page is untouched</strong> — noindex and unlinked at <code>/hero-lab/k-dispatch</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.293 -->
       <div class="tl-entry feat" id="v2.293">
         <div class="tl-meta"><span class="tl-ver">v2.293</span><span class="tl-date">2026-07-30</span></div>

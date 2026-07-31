@@ -1,3 +1,21 @@
+## [v2.294] – 2026-07-30 — K-Dispatch solution page (/hero-lab/k-dispatch)
+### Added
+- **Redesigned K-Dispatch solution page**, ported from the Claude Design project (`home/sol-kdispatch.jsx`). Same seven sections as K-Safety, with seven feature rows rather than six: multi-channel intake, triage & prioritization, CAD & unit recommendation, GIS & AVL tracking, field & multi-agency response, AI-assisted/human-led, and audit trail & reporting. Case study is C5 CDMX. Fully localized EN/ES.
+- **Extracted the shared content contract** into `solution-content.ts` (`SolutionContent`, `Loc`, `LocList`, `S`, `SL`). It previously lived inside `sol-ksafety.ts`, which no longer made sense with a second product consuming it — K-Video and K-Traffic now only need their own data file.
+
+### Changed
+- **Brought the renderer up to date with the design**, which had itself moved on since the K-Safety port:
+  - New `heroBare` mode — when the supplied hero screenshot already carries its own window chrome, the console title bar is dropped, the frame/shadow are removed, the overlays reposition against the image, and the floating chips are suppressed via `:has(.is-bare)`.
+  - Six new flow icons (`phoneIn`, `sms`, `radio`, `truck`, `users`, `chart`) and two new benefit icons (`bolt`, `phone`).
+  - `chips` is now optional, and `caseMetric` is translatable — K-Safety's is a bare figure ("10,000+"), K-Dispatch's is a phrase ("Multi-agency" / "Multiagencia"). Both types are accepted.
+  - Overlay text sizes bumped and `.sp-chip-1` moved from `top: 22px` to `58px`, matching the design's revisions.
+
+### Notes
+- **The hero image is a stand-in.** The design points at `assets/modules/hero-k-dispatch.png`, which is not in this repo, and pulling a full-size PNG through the design file API is size-capped. It currently falls back to the existing `dispatch.webp` console image — which lands well, but the `.is-bare` overlay offsets were tuned against the real asset. Drop the PNG into `public/images/modules/` and flip the one line in `sol-kdispatch.ts` marked with the comment.
+- Resolved the design's `var(--k-dispatch)` to `#0ea5e9`, the accent already used by the Solutions accordion.
+- Verified at 1440px and 375px, EN and ES, 8 flow nodes with all icons rendering, 7 feature rows, 6 integration cards, no horizontal overflow, no console errors, TypeScript clean. K-Safety re-checked and unaffected by the shared-type refactor.
+- **The live `/k-dispatch` page is untouched.** This sits at `/hero-lab/k-dispatch`, noindex and unlinked.
+
 ## [v2.293] – 2026-07-30 — K-Safety solution page (/hero-lab/k-safety)
 ### Added
 - **Redesigned K-Safety solution page**, ported from the Claude Design project "Kabat One Website" (`home/solution-page.jsx` + `home/solution-page.css` + `home/sol-ksafety.jsx`), read through the design MCP. Seven sections: hero console, shared-core strip, benefits, feature rows, process diagram, integrations, case study.
