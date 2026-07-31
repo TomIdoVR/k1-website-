@@ -12,6 +12,7 @@
    product pages which the live footer omits. */
 
 import { Link } from '@/i18n/navigation'
+import { pv } from './preview-links'
 
 type Loc = { en: string; es: string }
 const S = (en: string, es: string): Loc => ({ en, es })
@@ -70,7 +71,7 @@ export function HeroLabNav({ es }: { es: boolean }) {
   return (
     <nav className="hlc-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
       <div className="hlc-nav-inner">
-        <Link href="/" className="hlc-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
+        <Link href={pv('/')} className="hlc-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
           <span className="hlc-logo-mark" aria-hidden="true">1K</span>
           <span className="hlc-logo-word">KABAT ONE</span>
         </Link>
@@ -80,7 +81,7 @@ export function HeroLabNav({ es }: { es: boolean }) {
             <summary>{es ? 'Soluciones' : 'Solutions'}<Chevron /></summary>
             <div className="hlc-dropdown">
               {PRODUCTS.map((p) => (
-                <Link href={p.href} key={p.href}><span className="hlc-dot" style={{ background: p.color }} />{p.label}</Link>
+                <Link href={pv(p.href)} key={p.href}><span className="hlc-dot" style={{ background: p.color }} />{p.label}</Link>
               ))}
             </div>
           </details>
@@ -115,7 +116,7 @@ export function HeroLabFooter({ es }: { es: boolean }) {
         <div className="hlc-footer-cols">
           <div className="hlc-footer-col">
             <h3>{es ? 'Soluciones' : 'Solutions'}</h3>
-            {PRODUCTS.map((p) => <Link href={p.href} key={p.href}>{p.label}</Link>)}
+            {PRODUCTS.map((p) => <Link href={pv(p.href)} key={p.href}>{p.label}</Link>)}
           </div>
           <div className="hlc-footer-col">
             <h3>{es ? 'Industrias' : 'Industries'}</h3>

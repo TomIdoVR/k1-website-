@@ -18,6 +18,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import { pv } from './preview-links'
 
 type Loc = { en: string; es: string }
 type LocList = { en: string[]; es: string[] }
@@ -307,7 +308,7 @@ export default function Solutions({ es }: { es: boolean }) {
                         <li key={k} style={{ '--ci': k } as React.CSSProperties}><span className="sv-check" aria-hidden="true">✓</span>{c[lang]}</li>
                       ))}
                     </ul>
-                    <Link className="sv-cta" href={x.href}>
+                    <Link className="sv-cta" href={pv(x.href)}>
                       {es ? `Explorar ${x.name}` : `Explore ${x.name}`}
                       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M3 7.5h8.5M7.5 3.5l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </Link>

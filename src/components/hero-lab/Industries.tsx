@@ -12,6 +12,7 @@
 
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import { pv } from './preview-links'
 
 type Loc = { en: string; es: string }
 
@@ -73,7 +74,7 @@ function Tile({ ind, lang, lead }: { ind: Industry; lang: 'en' | 'es'; lead?: bo
   return (
     <Link
       className={`ind-card${lead ? ' ind-lead' : ''}`}
-      href={ind.href}
+      href={pv(ind.href)}
       style={{ '--ac': ind.color } as React.CSSProperties}
     >
       <Image src={ind.img} alt={ind.alt[lang]} fill sizes={lead ? '(max-width: 720px) 100vw, 50vw' : '(max-width: 720px) 50vw, 25vw'} className="ind-slot" />
@@ -115,7 +116,7 @@ export default function Industries({ es }: { es: boolean }) {
           {MORE.map((ind, i) => (
             <span key={ind.key}>
               {i > 0 && <span className="ind-more-sep" aria-hidden="true">·</span>}
-              <Link className="ind-more-link" href={ind.href}>{ind.name[lang]}</Link>
+              <Link className="ind-more-link" href={pv(ind.href)}>{ind.name[lang]}</Link>
             </span>
           ))}
         </p>

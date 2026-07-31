@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import type { CSSProperties, ReactNode } from 'react'
 import { Link } from '@/i18n/navigation'
+import { pv } from './preview-links'
 import HeroCardCarousel from './HeroCardCarousel'
 import { HeroCardMedia } from './HeroCardMedia'
 
@@ -77,7 +78,7 @@ function HeroNavigation({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
   return (
     <nav className="hll-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
-      <Link href="/" className="hll-nav-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
+      <Link href={pv('/')} className="hll-nav-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
         <BrandLockup />
       </Link>
 
@@ -86,7 +87,7 @@ function HeroNavigation({ es }: { es: boolean }) {
           <summary>{es ? 'Soluciones' : 'Solutions'}<Arrow direction="down" /></summary>
           <div className="hll-nav-dropdown">
             {moduleLinks.map((item) => (
-              <Link href={item.href} key={item.href}>
+              <Link href={pv(item.href)} key={item.href}>
                 <span style={{ background: item.color }} />{item.label}
               </Link>
             ))}
@@ -117,8 +118,8 @@ function HeroNavigation({ es }: { es: boolean }) {
 
       <div className="hll-nav-actions">
         <div className="hll-language" aria-label={es ? 'Idioma' : 'Language'}>
-          <Link href="/" locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
-          <Link href="/" locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
+          <Link href={pv('/')} locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
+          <Link href={pv('/')} locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
         </div>
         <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
       </div>
@@ -126,12 +127,12 @@ function HeroNavigation({ es }: { es: boolean }) {
       <details className="hll-mobile-menu">
         <summary aria-label={es ? 'Abrir menú' : 'Open menu'}><span /><span /><span /></summary>
         <div className="hll-mobile-menu-panel">
-          <Link href="/k-safety">{es ? 'Soluciones' : 'Solutions'}</Link>
+          <Link href={pv('/k-safety')}>{es ? 'Soluciones' : 'Solutions'}</Link>
           <Link href="/industries/public-safety">{es ? 'Industrias' : 'Industries'}</Link>
           <Link href="/resources">{es ? 'Recursos' : 'Resources'}</Link>
           <Link href="/about">{es ? 'Empresa' : 'Company'}</Link>
           <div className="hll-mobile-languages">
-            <Link href="/" locale="en">EN</Link><Link href="/" locale="es">ES</Link>
+            <Link href={pv('/')} locale="en">EN</Link><Link href={pv('/')} locale="es">ES</Link>
           </div>
           <Link className="hll-nav-cta" href="/contact">{T.demo[language]}<Arrow /></Link>
         </div>
