@@ -1,7 +1,7 @@
 ## [v2.303] – 2026-07-31 — K-Safety hero: use Omer's actual shared image, larger
 ### Changed
 - **The hero now uses the real image Omer shared, not a generated approximation.** The prior pass regenerated an approximation because the reference was thought to be a pasted image with no file on disk — but the actual asset (`ksafe.png`) was in `~/Downloads`. Converted it to `hero-k-safety.webp` (1774×887, cwebp `-q 92 -sharp_yuv`). This is the genuine high-fidelity K-Safety composition: correct 1K brand mark, real status columns (NEW 12 / IN PROGRESS 7 / ON SCENE 5 / RESOLVED 18), trend deltas (+12% / -8% / +3% / +15%), Export button, "This Week" date picker, BY TYPE donut and INCIDENTS BY AREA/RESPONSE TIME analytics panel.
-- **The art is bigger.** The hero's visual column went from `1.12fr` to `1.3fr` (with gap tightened to `clamp(26px, 3.4vw, 56px)`), directly addressing the "image is too small" feedback (KAB-2337).
+- **The art is bigger.** The hero's visual column went from `1.12fr` to `1.22fr` (with gap tightened to `clamp(26px, 3.4vw, 56px)`), directly addressing the "image is too small" feedback (KAB-2337).
 
 ### Fixed
 - The text errors in the previous generated approximation ("LAW" for "LOW", "UpZone" for "Uptown") are gone — the real image has correct labels ("LOW", "Uptown").
