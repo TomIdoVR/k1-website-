@@ -1,3 +1,14 @@
+## [v2.304] – 2026-07-31 — K-Safety hero: matte white canvas back to transparent
+### Fixed
+- **The K-Safety hero screen's background is transparent again, not white (KAB-2346).** v2.302 flood-filled the *generated* hero to transparency so the panels float on the light hero gradient; v2.303 then swapped in Omer's real `ksafe.png`, which shipped as a solid-white RGB canvas — reintroducing the white block the `heroLight` treatment is meant to remove. Re-applied the matte to the real image: border-seeded flood fill (connected-to-edge white only, so white *inside* the dashboard panels is untouched) with a feathered edge so the panel drop shadows survive. 76% of the canvas is now transparent; corners read alpha 0. Verified by compositing over both the light hero gradient and a dark field — panels intact, no white rectangle, no visible halo on the light background.
+
+### Added
+- `scripts/matte-hero-transparent.py` — reusable border-flood matte for the light 3D-panel heroes, so a future white-background export can be re-matted in one command instead of hand-editing alpha.
+
+### Notes
+- Asset only; no code change — `sol-ksafety.ts` already carries `heroLight: true` (which bypasses Next's optimizer, since it flattens alpha) and the renderer path was unchanged.
+- Not pushed — staged on `hero-redesign` for review.
+
 ## [v2.303] – 2026-07-31 — K-Safety hero: use Omer's actual shared image, larger
 ### Changed
 - **The hero now uses the real image Omer shared, not a generated approximation.** The prior pass regenerated an approximation because the reference was thought to be a pasted image with no file on disk — but the actual asset (`ksafe.png`) was in `~/Downloads`. Converted it to `hero-k-safety.webp` (1774×887, cwebp `-q 92 -sharp_yuv`). This is the genuine high-fidelity K-Safety composition: correct 1K brand mark, real status columns (NEW 12 / IN PROGRESS 7 / ON SCENE 5 / RESOLVED 18), trend deltas (+12% / -8% / +3% / +15%), Export button, "This Week" date picker, BY TYPE donut and INCIDENTS BY AREA/RESPONSE TIME analytics panel.

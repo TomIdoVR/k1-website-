@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.304 -->
+      <div class="tl-entry fix" id="v2.304">
+        <div class="tl-meta"><span class="tl-ver">v2.304</span><span class="tl-date">2026-07-31</span></div>
+        <div class="tl-title">K-Safety hero: matte white canvas back to transparent</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The hero screen's background is transparent again, not white (KAB-2346).</strong> v2.302 matted the <em>generated</em> hero transparent so the panels float on the light gradient; v2.303 swapped in Omer's real <code>ksafe.png</code>, which shipped as a solid-white RGB canvas — reintroducing the white block that <code>heroLight</code> is meant to remove. Re-applied the matte to the real image: border-seeded flood fill (edge-connected white only, so white inside the panels is untouched) with a feathered edge so the panel drop shadows survive</li>
+            <li><strong>76% of the canvas is now transparent</strong>; corners read alpha 0. Verified over both the light hero gradient and a dark field — panels intact, no white rectangle, no visible halo</li>
+            <li>Added <code>scripts/matte-hero-transparent.py</code> so a future white-background export can be re-matted in one command. Asset only — no code change; <code>sol-ksafety.ts</code> already carried <code>heroLight: true</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.303 -->
       <div class="tl-entry changed" id="v2.303">
         <div class="tl-meta"><span class="tl-ver">v2.303</span><span class="tl-date">2026-07-31</span></div>
