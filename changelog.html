@@ -359,13 +359,12 @@
       <!-- v2.303 -->
       <div class="tl-entry changed" id="v2.303">
         <div class="tl-meta"><span class="tl-ver">v2.303</span><span class="tl-date">2026-07-31</span></div>
-        <div class="tl-title">K-Safety hero: real labels, real logo, larger</div>
+        <div class="tl-title">K-Safety hero: use Omer's actual shared image, larger</div>
         <div class="tl-body">
           <ul class="version-changes">
-            <li><strong>Real UI text instead of placeholder bars.</strong> v2.302 suppressed all text because image models usually garble UI type — too cautious here. Regenerated with actual labels: K-SAFETY, the four status columns with counts, real incident names and cross-streets, KPI values, chart titles — all sharp and correctly spelled</li>
-            <li><strong>Real 1K brand mark</strong> replaces the generic app icon, edited in via nano-banana-2 with <code>K1_logo-ng.svg</code> as a second reference image; the rest of the composition preserved</li>
-            <li><strong>Bigger art</strong> — trimmed the transparent margin (the composition filled only 64.5% of its canvas) and widened the hero visual column from <code>1.12fr</code> to <code>1.22fr</code>. <code>1.45fr</code> was tried first but pushed the copy column too narrow, wrapping the eyebrow and breaking the stats onto two rows</li>
-            <li><strong>Two text errors survived the logo edit:</strong> "LAW" instead of "LOW" on a priority label, and "UpZone" instead of "Uptown" — worth a corrective pass before this goes public</li>
+            <li><strong>Uses the real image Omer shared, not a generated approximation.</strong> The prior pass regenerated an approximation, assuming the reference was a pasted image with no file on disk — but the actual asset (<code>ksafe.png</code>) was in <code>~/Downloads</code>. Converted it to <code>hero-k-safety.webp</code> (1774×887, cwebp <code>-q 92 -sharp_yuv</code>): the genuine high-fidelity composition — correct 1K mark, real status columns with counts, trend deltas, Export button, date picker, and the full analytics panel</li>
+            <li><strong>Bigger art</strong> — widened the hero visual column from <code>1.12fr</code> to <code>1.3fr</code> (gap tightened to <code>clamp(26px, 3.4vw, 56px)</code>), directly addressing the "image is too small" feedback (KAB-2337)</li>
+            <li><strong>Text errors gone</strong> — the previous approximation's "LAW"/"UpZone" slips are absent; the real image reads "LOW" and "Uptown" correctly</li>
           </ul>
         </div>
       </div>

@@ -1,13 +1,14 @@
-## [v2.303] – 2026-07-31 — K-Safety hero: real labels, real logo, larger
+## [v2.303] – 2026-07-31 — K-Safety hero: use Omer's actual shared image, larger
 ### Changed
-- **The hero now carries real UI text instead of placeholder bars.** v2.302 suppressed all text because image models usually garble UI type — that was too cautious here. Regenerated with the actual labels and they render sharp and correctly spelled: K-SAFETY, INCIDENT MANAGEMENT BOARD, the four status columns with counts (NEW 12 / IN PROGRESS 7 / ON SCENE 5 / RESOLVED 18), real incident names and cross-streets, KPI values (86 / 7 / 5 / 18 / 02:14), and chart titles.
-- **The real 1K brand mark replaces the generic app icon**, edited in via nano-banana-2 with `K1_logo-ng.svg` supplied as a second reference image. Everything else in the composition was preserved.
-- **The art is bigger.** Two changes: the transparent margin around the panels was trimmed (the composition only filled 64.5% of its canvas — 154px of dead space at the top alone), and the hero's visual column went from `1.12fr` to `1.22fr`.
+- **The hero now uses the real image Omer shared, not a generated approximation.** The prior pass regenerated an approximation because the reference was thought to be a pasted image with no file on disk — but the actual asset (`ksafe.png`) was in `~/Downloads`. Converted it to `hero-k-safety.webp` (1774×887, cwebp `-q 92 -sharp_yuv`). This is the genuine high-fidelity K-Safety composition: correct 1K brand mark, real status columns (NEW 12 / IN PROGRESS 7 / ON SCENE 5 / RESOLVED 18), trend deltas (+12% / -8% / +3% / +15%), Export button, "This Week" date picker, BY TYPE donut and INCIDENTS BY AREA/RESPONSE TIME analytics panel.
+- **The art is bigger.** The hero's visual column went from `1.12fr` to `1.3fr` (with gap tightened to `clamp(26px, 3.4vw, 56px)`), directly addressing the "image is too small" feedback (KAB-2337).
+
+### Fixed
+- The text errors in the previous generated approximation ("LAW" for "LOW", "UpZone" for "Uptown") are gone — the real image has correct labels ("LOW", "Uptown").
 
 ### Notes
-- `1.45fr` was tried first and pushed the copy column too narrow — the eyebrow wrapped to two lines and the three stats broke onto two rows. `1.22fr` keeps stats on one row and the eyebrow on one line while still rendering the art ~18% wider than before.
-- **Two small text errors survived the logo edit pass:** the Noise Complaint priority reads "LAW" instead of "LOW", and the analytics panel reads "UpZone" instead of "Uptown". Legible but wrong — worth a corrective pass before this goes anywhere public.
-- The uploaded reference image still could not be used directly; a pasted image is not a file on disk. This is a generated approximation of it.
+- Ref: KAB-2337. Previous webp backed up to `/tmp/hero-k-safety.prev.webp` for the session.
+- Not pushed — staged on `hero-redesign` for review.
 
 ## [v2.302] – 2026-07-31 — K-Safety hero: light 3D panel composition
 ### Changed
