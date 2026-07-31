@@ -28,6 +28,10 @@ export type SolutionContent = {
   /* When the supplied hero screenshot already carries its own window chrome,
      the console frame and floating chips are suppressed (see .is-bare). */
   heroBare?: boolean
+  /* Set when the hero art is light 3D panels on a white canvas. Blends the
+     white out so the panels float on the hero gradient instead of sitting in
+     a white box. Do not set for dark screenshots. */
+  heroLight?: boolean
   heroAlt: Loc
   consoleTitle: Loc
   /* Both hero overlays are optional — K-Video, for instance, ships the event

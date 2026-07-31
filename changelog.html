@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.302 -->
+      <div class="tl-entry feat" id="v2.302">
+        <div class="tl-meta"><span class="tl-ver">v2.302</span><span class="tl-date">2026-07-31</span></div>
+        <div class="tl-title">K-Safety hero: light 3D panel composition</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Safety hero</strong> in the 3D angled multi-panel style — incident board with tinted status columns and KPI sparklines, flanked by live-camera and analytics panels, floating in perspective. Drops the video inset, event card and chips, which would have sat on top of the panels</li>
+            <li><strong>White canvas → transparent:</strong> flood-filled the background from the image border (connected-to-edge white only, so white inside the panels is untouched) with partial alpha on the boundary so drop shadows survive. 45% of the image became transparent</li>
+            <li><strong><code>mix-blend-mode: multiply</code> was tried first and did nothing</strong> — <code>.sp-hero-inner</code> sets <code>z-index</code>, creating a stacking context that isolates the blend from the gradient behind it. Noted in CSS so it isn't retried</li>
+            <li><strong>Next's optimizer flattens alpha</strong> even when emitting WebP, which put the white block back — light heroes now pass <code>unoptimized</code>; the file is already a ~90KB WebP</li>
+            <li>Generated with Gemini using the same no-text technique as v2.300. The pasted reference image itself could not be used directly — a pasted image isn't a file on disk; drop it in the repo or Claude Design to use the exact artwork</li>
+            <li>Only K-Safety uses this treatment; the other four heroes are unchanged</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.301 -->
       <div class="tl-entry fix" id="v2.301">
         <div class="tl-meta"><span class="tl-ver">v2.301</span><span class="tl-date">2026-07-31</span></div>

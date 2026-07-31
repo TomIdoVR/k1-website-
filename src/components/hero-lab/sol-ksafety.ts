@@ -23,28 +23,17 @@ const KSAFETY: SolutionContent = {
   h1b: S('from one command platform.', 'desde una sola plataforma de mando.'),
   sub: S('Unify incidents, GIS, video, sensors, mobile responders, and the systems you already run into one operational picture — and coordinate the response from one place.',
     'Unifica incidentes, GIS, video, sensores, unidades móviles y los sistemas que ya operas en una sola imagen operativa — y coordina la respuesta desde un solo lugar.'),
-  heroImg: '/images/modules/gis.webp',
-  heroAlt: S('K-Safety command console showing live GIS situational awareness with incidents and units',
-    'Consola de mando K-Safety con conciencia situacional GIS en vivo, incidentes y unidades'),
+  /* Light 3D multi-panel hero — incident board flanked by a live-camera panel
+     and an analytics panel. Self-contained composition, so it runs `heroBare`
+     (no console frame) and drops the video/event overlays and floating chips
+     that the flat console hero needed: they would sit on top of the panels
+     rather than reading as part of the product. */
+  heroImg: '/images/modules/hero-k-safety.webp',
+  heroBare: true,
+  heroLight: true,
+  heroAlt: S('K-Safety incident board with live camera and analytics panels',
+    'Tablero de incidentes K-Safety con paneles de cámara en vivo y analítica'),
   consoleTitle: S('K-SAFETY · SITUATIONAL AWARENESS', 'K-SAFETY · CONCIENCIA SITUACIONAL'),
-  heroVideo: {
-    img: '/images/modules/video.webp',
-    label: S('CAM-14 · Main St & 5th', 'CAM-14 · Main St y 5th'),
-  },
-  heroEvent: {
-    tag: S('PRIORITY 1', 'PRIORIDAD 1'),
-    title: S('Vehicle of interest', 'Vehículo de interés'),
-    loc: S('Main St & 5th Ave', 'Main St y 5th Ave'),
-    rows: [
-      { l: S('Detected by', 'Detectado por'), v: S('LPR · CAM-14', 'LPR · CAM-14') },
-      { l: S('Assigned', 'Asignado'), v: 'Unit 12' },
-      { l: S('ETA', 'ETA'), v: S('2 min', '2 min') },
-    ],
-  },
-  chips: [
-    { c: '#ef4444', t: S('Incident enriched', 'Incidente enriquecido') },
-    { c: '#3b82f6', t: S('Cameras + units + sensors', 'Cámaras + unidades + sensores') },
-  ],
   stats: [
     { v: S('Unified', 'Unificada'), l: S('Operating picture', 'Imagen operativa') },
     { v: S('Multi-agency', 'Multiagencia'), l: S('Coordination', 'Coordinación') },

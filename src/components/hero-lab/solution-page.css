@@ -84,6 +84,16 @@
    suppressed and the overlays are repositioned against the image itself. */
 .sp-console.is-bare { background: transparent; border: none; box-shadow: none; overflow: visible; }
 .sp-console.is-bare .sp-console-body img { border-radius: 14px; }
+
+/* Light 3D panel heroes are shipped with the white canvas flood-filled out to
+   transparency (shadows preserved), so the panels float directly on the hero
+   gradient. No frame, no radius — the art is its own silhouette.
+   `mix-blend-mode` was tried first and does nothing here: .sp-hero-inner sets
+   z-index, which creates a stacking context and isolates the blend from the
+   gradient painted on .sp-hero behind it. */
+.sp-console.is-light .sp-console-body img {
+  border-radius: 0;
+}
 .sp-console.is-bare .sp-ov-video { top: 15%; bottom: auto; left: 13%; width: 30%; max-width: 176px; }
 .sp-console.is-bare .sp-ov-event { top: auto; bottom: -26px; right: -18px; width: 190px; }
 .sp-hero-visual:has(.is-bare) .sp-chip { display: none; }

@@ -100,7 +100,7 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           <div className="sp-hero-visual">
             {/* heroBare: the screenshot supplies its own chrome, so the title
                 bar is dropped and the overlays reposition against the image. */}
-            <div className={`sp-console${p.heroBare ? ' is-bare' : ''}`}>
+            <div className={`sp-console${p.heroBare ? ' is-bare' : ''}${p.heroLight ? ' is-light' : ''}`}>
               {!p.heroBare && (
                 <div className="sp-console-bar">
                   <span className="sp-console-dot" /><span className="sp-console-dot" /><span className="sp-console-dot" />
@@ -109,7 +109,18 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
                 </div>
               )}
               <div className="sp-console-body">
-                <Image src={p.heroImg} alt={t(p.heroAlt, es)} width={1200} height={800} priority />
+                {/* Light heroes ship with a transparent canvas so the panels float.
+                    Next's optimizer flattens alpha even when it emits WebP, which
+                    puts the white block back — so those bypass it. The file is
+                    already a compressed ~90KB WebP, so nothing is lost. */}
+                <Image
+                  src={p.heroImg}
+                  alt={t(p.heroAlt, es)}
+                  width={1200}
+                  height={800}
+                  priority
+                  unoptimized={p.heroLight}
+                />
                 {p.heroVideo && (
                   <div className="sp-ov-video">
                     <span className="sp-ov-feed" style={{ backgroundImage: `url(${p.heroVideo.img})` }} aria-hidden="true" />

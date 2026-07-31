@@ -1,3 +1,21 @@
+## [v2.302] – 2026-07-31 — K-Safety hero: light 3D panel composition
+### Changed
+- **New K-Safety hero** in the 3D angled multi-panel style: an incident board with four tinted status columns and KPI sparklines, flanked by a live-camera panel and an analytics panel, all floating in perspective. Replaces the flat GIS console shot.
+- Because the composition is self-contained, this hero runs `heroBare` and drops the video inset, event card and floating chips the flat console hero needed — they would have sat on top of the panels rather than reading as part of the product.
+
+### Added
+- `heroLight` flag on `SolutionContent` for heroes whose art is light panels on a transparent canvas.
+
+### Notes
+Three things had to be solved to make a light hero sit on the light hero gradient:
+1. **The white canvas read as a white block.** Fixed by flood-filling the background to transparency from the image border — connected-to-edge white only, so the white *inside* the panels is untouched, and pixels on the fill boundary keep partial alpha so the drop shadows survive instead of hard-clipping. 45% of the image became transparent.
+2. **`mix-blend-mode: multiply` was tried first and did nothing.** `.sp-hero-inner` sets `z-index`, which creates a stacking context and isolates the blend from the gradient painted on `.sp-hero` behind it. Noted in the CSS so it isn't retried.
+3. **Next's image optimizer flattens alpha** — it returns `hasAlpha: false` even when it emits WebP, which put the white block straight back. Light heroes therefore pass `unoptimized`; the file is already a compressed ~90KB WebP so nothing is given up.
+
+- Generated with Gemini (Nano Banana Pro) from the reference. Same no-text technique as v2.300 — every label is a grey placeholder bar — so there is no garbled UI type. One stray "KPI" label did render; legible rather than gibberish, left in place.
+- **The uploaded reference image itself could not be used directly** — a pasted image is visible in conversation but is not a file on disk and was not in the Design project's `uploads/`. To use the exact artwork, drop it in the repo or upload it to Claude Design.
+- Only K-Safety uses this treatment; the other four heroes are unchanged and still optimized.
+
 ## [v2.301] – 2026-07-31 — Redesign-native nav and footer (drop the legacy chrome)
 ### Fixed
 - **The redesigned pages were wearing the old site's chrome.** v2.298 wrapped them in the live `<Nav>` and `<Footer>` to restore internal links for SEO — that fixed the links but dragged the legacy dark nav bar above the light redesign, so the pages read as "this is still the old design" at first glance. v2.299 did the same to the redesigned homepage's footer.
