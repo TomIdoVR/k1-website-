@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.296 -->
+      <div class="tl-entry feat" id="v2.296">
+        <div class="tl-meta"><span class="tl-ver">v2.296</span><span class="tl-date">2026-07-30</span></div>
+        <div class="tl-title">K-Traffic solution page (/hero-lab/k-traffic)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Ported the <strong>redesigned K-Traffic solution page</strong> from the Claude Design project — four benefits, six capability rows, four integration cards, and a five-bar <strong>SYSTEM PERFORMANCE</strong> panel; case study is Mexico / 12 cities connected; fully localized EN/ES</li>
+            <li><strong>Completes the set</strong> — all five K-* solution pages now live under <code>/hero-lab</code>, driven by one shared <code>SolutionPage</code> renderer with a single content file each</li>
+            <li><strong>No renderer changes needed</strong> — the first of these five ports where the contract already covered everything the design used</li>
+            <li>The bidirectional icon fallback added in v2.295 earns its keep: K-Traffic uses <code>pin</code> and <code>bell</code> as <em>benefit</em> icons, and both live only in the flow set</li>
+            <li>Accent resolved to <code>#06b6d4</code> (the cyan the hero nav uses, matching the design's own chip). <strong>Worth reconciling:</strong> the Solutions accordion tags K-Traffic amber <code>#f59e0b</code>, so the product reads as two colours in two places. On the dark band this cyan measures 7.59:1 — comfortably AA</li>
+            <li>All images already existed; hero uses <code>/images/k-traffic-mockup.webp</code>. Verified 1440px and 375px, EN and ES, all icons non-empty, no overflow, no console errors, <code>tsc</code> clean</li>
+            <li><strong>The live <code>/k-traffic</code> page is untouched</strong> — noindex and unlinked at <code>/hero-lab/k-traffic</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.295 -->
       <div class="tl-entry feat" id="v2.295">
         <div class="tl-meta"><span class="tl-ver">v2.295</span><span class="tl-date">2026-07-30</span></div>

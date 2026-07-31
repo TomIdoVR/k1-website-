@@ -1,3 +1,19 @@
+## [v2.296] – 2026-07-30 — K-Traffic solution page (/hero-lab/k-traffic)
+### Added
+- **Redesigned K-Traffic solution page**, ported from the Claude Design project (`home/sol-ktraffic.jsx`, whose copy was itself lifted from the live `/k-traffic` page). Four benefits, six capability rows, four integration cards, and a five-bar **SYSTEM PERFORMANCE** panel. Case study is Mexico / 12 cities connected. Fully localized EN/ES.
+- This completes the set — all five K-* solution pages now exist under `/hero-lab`, all driven by the same `SolutionPage` renderer with one content file each.
+
+### Notes
+- **No renderer changes were needed.** K-Traffic exercised the contract as it already stood, which is the first time that has happened across these five ports.
+- **The bidirectional icon fallback added in v2.295 earns its keep here.** K-Traffic uses `pin` and `bell` as *benefit* icons, and both live only in the flow-icon set. Without the fallback these would render as empty `<svg>` elements.
+- Accent resolved to `#06b6d4` — the cyan the hero nav already uses for K-Traffic, which matches the design's own first hero chip and pairs with its teal `accentInk`. **Worth reconciling separately:** the Solutions accordion currently tags K-Traffic amber (`#f59e0b`), so the product reads as two different colours in two places.
+- On the dark capability band this cyan measures **7.59:1** against the background — comfortably AA, in contrast to K-Safety's `#1858f5` at 3.29:1 (flagged in v2.295 and still open).
+- `perfBars` deliberately shows uptime as "99.9%" while capping the bar itself at 99% width; the contract already allowed `v` and `w` to differ.
+- All images already existed. The hero and first capability row use `/images/k-traffic-mockup.webp`, which sits at the root of `/images` rather than `/images/modules` — mapped accordingly.
+- Non-breaking hyphens (U+2011) in "K‑Traffic" within prose are the design's own and were preserved.
+- Verified at 1440px and 375px, EN and ES: 4 benefit icons and 8 flow icons all non-empty, 5 perf bars at correct widths, 7 core chips, all grids collapse to one column, chips hidden on mobile, no horizontal overflow, no console errors, TypeScript clean.
+- **The live `/k-traffic` page is untouched.** This sits at `/hero-lab/k-traffic`, noindex and unlinked.
+
 ## [v2.295] – 2026-07-30 — K-Video solution page (/hero-lab/k-video)
 ### Added
 - **Redesigned K-Video solution page**, ported from the Claude Design project (`home/sol-kvideo.jsx`, whose copy was itself lifted from the live `/k-video` page). Content in `sol-kvideo.ts`, rendered by the shared `SolutionPage` component. Six feature rows: real-time monitoring at scale, AI detection & analytics, forensic search & investigations, cameras on the map, video in dispatch & command, and works-with-your-VMS. Case study is Michoacán statewide (10,000+ connected sensors & cameras). Fully localized EN/ES.
