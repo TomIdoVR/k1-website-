@@ -60,6 +60,15 @@ const REST: Industry[] = [
   },
 ]
 
+/* Verticals production covers that the five-tile photo grid has no room for.
+   Rendered as a text link row so the /industries/ pages keep an inbound link
+   from the homepage and their keywords stay on the page. */
+const MORE: { key: string; href: string; name: Loc }[] = [
+  { key: 'airport', href: '/industries/airport', name: { en: 'Airport Security', es: 'Seguridad Aeroportuaria' } },
+  { key: 'retail', href: '/industries/retail', name: { en: 'Retail', es: 'Retail' } },
+  { key: 'logistics', href: '/industries/logistics', name: { en: 'Logistics', es: 'Logística' } },
+]
+
 function Tile({ ind, lang, lead }: { ind: Industry; lang: 'en' | 'es'; lead?: boolean }) {
   return (
     <Link
@@ -96,6 +105,20 @@ export default function Industries({ es }: { es: boolean }) {
             <Tile key={ind.key} ind={ind} lang={lang} />
           ))}
         </div>
+
+        {/* The photo grid is designed for one lead tile plus four. Production
+            covers seven verticals, so airport, retail and logistics are
+            restored here as a text row rather than by breaking the grid —
+            keeps the internal links and the vertical keywords. */}
+        <p className="ind-more">
+          <span className="ind-more-label">{es ? 'También operamos en' : 'Also serving'}</span>
+          {MORE.map((ind, i) => (
+            <span key={ind.key}>
+              {i > 0 && <span className="ind-more-sep" aria-hidden="true">·</span>}
+              <Link className="ind-more-link" href={ind.href}>{ind.name[lang]}</Link>
+            </span>
+          ))}
+        </p>
       </div>
     </section>
   )

@@ -1,3 +1,24 @@
+## [v2.299] – 2026-07-31 — Homepage redesign: SEO parity with production
+
+SEO review of the `hero-lab` preview deployment. The five solution pages came back clean — schema identical to production, all FAQ Q&A visible in the rendered body, every page *gained* content, ES fully translated. All the regressions were on the redesigned homepage, and every one is now closed. Measured after the fix: **1,492 words vs production's 1,492**, with C5, CAD, 911, NG911 and VMS frequencies matching exactly.
+
+### Fixed — internal link graph
+- **Restored `<Footer>` on the redesigned homepage.** It rendered none, dropping **17 internal links**: all 11 `/vs/` competitor pages and all 6 `/integrations/` pages. The homepage is the strongest link source into both clusters. Measured: **0 → 11** `/vs/` links, **0 → 6** `/integrations/`.
+- Wrapped the footer in `.page-light`. `Footer` reads the global theme tokens, which default to the dark palette at `:root` — without this it renders a dark slab beneath a light page.
+- **Restored the airport, retail and logistics verticals** as a text link row beneath the industry grid. Production covers seven; the redesign's photo grid is built for one lead tile plus four, so adding links rather than a sixth tile keeps both the design and the `/industries/*` link equity.
+
+### Fixed — keyword coverage
+- **H1 now carries the ranking phrase.** It read "One Platform. Total Awareness." — memorable, but zero retrieval value against production's "The Unified Operating System for Public Safety". The tagline moved into the eyebrow, so nothing is lost visually and the two-line gradient treatment still applies. ES: "El Sistema Operativo Unificado para Seguridad Pública."
+- Visible-text term frequency, before → after (production in parentheses): **C5 0 → 4** (4), **CAD 3 → 10** (10), **911 5 → 10** (10), **NG911 1 → 4** (4), **VMS 1 → 4** (4). C5 at zero was the worst of these — it anchors the entire `/resources/` Mexico cluster.
+
+### Added — trust and proof band
+- New `TrustBand` section restoring two blocks the redesign dropped: the **SOC 2 Type II / end-to-end encryption / RBAC** security block, and the quantified **"under 90 seconds vs 4–6 minutes on legacy CAD"** dispatch stat — the page's most citable line for AI Overviews. Copy is lifted verbatim from `src/app/[locale]/page.tsx` so both homepages make identical claims. A third card carries the NG911 / CAD / VMS / C5 interoperability terms.
+
+### Notes
+- **Three findings in the first review pass were wrong and are retracted.** Text extraction that stripped HTML tags also discarded image `alt` attributes, which is where the logo strips live. The named Mexican agency seals and the partner brands (Genetec, Milestone, Motorola, RapidSOS, Carbyne, Corsight) were never lost. Only INAMI is genuinely missing, and it has no usable asset yet. `C5 CDMX` is in fact *new* here — production doesn't have it.
+- **The K-Dispatch title is not a redesign regression.** This branch is **46 commits behind `main`**, which already carries the optimized "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch". A rebase resolves it and also pulls in five production `/resources/*` pages missing from this branch. Editing `metadata.ts` here would only create a conflict.
+- Left alone: the `/en` → `/` 307 on the language switcher (next-intl `localePrefix` behavior; a global routing change for one crawler hop), and `fetchPriority` on the hero image (Next 15 already emits `fetchpriority="high"` from `priority`).
+
 ## [v2.298] – 2026-07-30 — Review remediation: SEO parity, FAQs, contrast, claim consistency
 Acts on the full content / design / performance / SEO review of the redesign.
 

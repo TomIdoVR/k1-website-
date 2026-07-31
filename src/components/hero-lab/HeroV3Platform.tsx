@@ -5,9 +5,12 @@ import HeroCardCarousel from './HeroCardCarousel'
 import { HeroCardMedia } from './HeroCardMedia'
 
 const T = {
-  eyebrow: { en: 'THE UNIFIED PUBLIC SAFETY PLATFORM', es: 'LA PLATAFORMA UNIFICADA DE SEGURIDAD PÚBLICA' },
-  h1a: { en: 'One Platform.', es: 'Una Plataforma.' },
-  h1b: { en: 'Total Awareness.', es: 'Conciencia Total.' },
+  /* The tagline moved from the H1 into the eyebrow so the H1 can carry the
+     phrase the production homepage already ranks on. Nothing is lost visually
+     — the two-line gradient treatment still applies to h1a/h1b. */
+  eyebrow: { en: 'ONE PLATFORM. TOTAL AWARENESS.', es: 'UNA PLATAFORMA. CONCIENCIA TOTAL.' },
+  h1a: { en: 'The Unified Operating System ', es: 'El Sistema Operativo Unificado ' },
+  h1b: { en: 'for Public Safety.', es: 'para Seguridad Pública.' },
   sub: {
     en: 'Dispatch, video, GIS, event management, evidence, mobile response and integrations — unified into a single operational platform.',
     es: 'Despacho, video, GIS, gestión de eventos, evidencia, respuesta móvil e integraciones — unificados en una sola plataforma operativa.',

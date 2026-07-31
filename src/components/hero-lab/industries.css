@@ -111,3 +111,33 @@
   .ind-grid { grid-template-columns: 1fr; }
   .ind-lead { grid-column: span 1; }
 }
+
+/* Secondary vertical links — airport / retail / logistics. Keeps the
+   /industries/ internal links and their keywords on the homepage without
+   forcing a sixth tile into the photo grid. */
+.ind-more {
+  margin: clamp(24px, 3vw, 36px) 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4f5f84;
+}
+
+.ind-more-label {
+  margin-right: 12px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0891b2;
+}
+
+.ind-more-link {
+  color: #0f1724;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.4);
+}
+
+.ind-more-link:hover { color: #0757f7; border-bottom-color: #0757f7; }
+
+.ind-more-sep { margin: 0 10px; color: rgba(79, 95, 132, 0.5); }

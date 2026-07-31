@@ -356,6 +356,25 @@
 
     <div class="timeline">
 
+      <!-- v2.299 -->
+      <div class="tl-entry fix" id="v2.299">
+        <div class="tl-meta"><span class="tl-ver">v2.299</span><span class="tl-date">2026-07-31</span></div>
+        <div class="tl-title">Homepage redesign: SEO parity with production</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Restored <code>&lt;Footer&gt;</code> on the redesigned homepage</strong> — it rendered none, dropping <strong>17 internal links</strong>: all 11 <code>/vs/</code> competitor pages and all 6 <code>/integrations/</code> pages. The homepage is the strongest link source into both clusters. Measured: <strong>0 → 11</strong> and <strong>0 → 6</strong></li>
+            <li><strong>H1 now carries the ranking phrase</strong> — it read "One Platform. Total Awareness.", memorable but with zero retrieval value against production's "The Unified Operating System for Public Safety". The tagline moved into the eyebrow, so nothing is lost visually</li>
+            <li><strong>Visible-text keyword coverage restored</strong> (production in parentheses): C5 <strong>0 → 4</strong> (4), CAD 3 → 10 (10), 911 5 → 10 (10), NG911 1 → 4 (4), VMS 1 → 4 (4). C5 at zero was the worst — it anchors the entire Mexico resources cluster</li>
+            <li><strong>New <code>TrustBand</code> section</strong> restoring the <strong>SOC 2 Type II / encryption / RBAC</strong> block and the <strong>"under 90 seconds vs 4–6 minutes on legacy CAD"</strong> stat — the page's most citable line for AI Overviews. Copy lifted verbatim from the live homepage so both make identical claims</li>
+            <li><strong>Airport, retail and logistics verticals restored</strong> as a text link row — production covers seven, the redesign's photo grid is built for 1+4, so links were added rather than breaking the grid</li>
+            <li>Footer wrapped in <code>.page-light</code>; it reads global theme tokens that default to the dark palette at <code>:root</code> and would otherwise render a dark slab under a light page</li>
+            <li><strong>Result: 1,492 words vs production's 1,492</strong>, with every tracked term frequency matching exactly</li>
+            <li><strong>Three findings from the first review pass are retracted</strong> — text extraction that stripped HTML tags also discarded image <code>alt</code> attributes, where the logo strips live. The Mexican agency seals and partner brands were never lost; only INAMI is missing, and it has no usable asset. <code>C5 CDMX</code> is in fact <em>new</em> here</li>
+            <li>The K-Dispatch title is <strong>not</strong> a redesign regression — this branch is 46 commits behind <code>main</code>, which already carries the optimized title. A rebase resolves it and pulls in five missing <code>/resources/*</code> pages</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.298 -->
       <div class="tl-entry fix" id="v2.298">
         <div class="tl-meta"><span class="tl-ver">v2.298</span><span class="tl-date">2026-07-30</span></div>

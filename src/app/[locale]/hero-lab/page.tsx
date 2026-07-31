@@ -6,7 +6,10 @@ import Solutions from '@/components/hero-lab/Solutions'
 import CaseStudy from '@/components/hero-lab/CaseStudy'
 import Ecosystem from '@/components/hero-lab/Ecosystem'
 import Industries from '@/components/hero-lab/Industries'
+import TrustBand from '@/components/hero-lab/TrustBand'
+import Footer from '@/components/Footer'
 import './hero-lab-light.css'
+import '@/components/hero-lab/trust-band.css'
 import '@/components/hero-lab/customer-strip.css'
 import '@/components/hero-lab/howitworks.css'
 import '@/components/hero-lab/solutions.css'
@@ -36,8 +39,19 @@ export default async function HeroLabPage({
       <HowItWorks es={es} />
       <Solutions es={es} />
       <CaseStudy es={es} />
+      <TrustBand es={es} />
       <Ecosystem es={es} />
       <Industries es={es} />
+      {/* Footer restores the 11 /vs/ competitor and 6 /integrations/ internal
+          links the redesign was otherwise dropping — the homepage is the
+          strongest link source to both clusters.
+
+          Wrapped in .page-light because Footer reads the global theme tokens,
+          which default to the dark palette at :root. Without this it renders
+          a dark slab under a light page. */}
+      <div className="page-light">
+        <Footer es={es} />
+      </div>
     </>
   )
 }
