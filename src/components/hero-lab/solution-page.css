@@ -360,3 +360,19 @@
   .sp-flow-rail span::after, .sp-flow-core, .sp-flow-node .sp-flow-ic, .sp-flow-node,
   .sp-live-dot, .sp-chip { animation: none; }
 }
+
+/* ── Wide hero (heroWide) ──────────────────────────────────────────────
+   For dense product screenshots (e.g. K-Safety's 1774px dashboard) the
+   two-column hero caps the shot at ~700px, so baked-in text renders at
+   ~0.4x and is unreadable — and no `fr`/margin tweak can beat that cap.
+   Wide mode stacks the copy above and runs the shot as a full-bleed band
+   out to its native width (never upscaled), so text lands near 1:1.
+   `.sp-hero` already clips overflow, so the 100vw child adds no scroll. */
+.sp-hero-inner.is-wide { grid-template-columns: 1fr; gap: clamp(28px, 3.5vw, 48px); }
+.sp-hero-inner.is-wide .sp-hero-copy { max-width: 780px; }
+.sp-hero-inner.is-wide .sp-hero-visual {
+  margin-right: 0;
+  width: min(100vw, 1774px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

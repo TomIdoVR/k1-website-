@@ -32,6 +32,13 @@ export type SolutionContent = {
      white out so the panels float on the hero gradient instead of sitting in
      a white box. Do not set for dark screenshots. */
   heroLight?: boolean
+  /* Set when the hero art is a dense full-dashboard screenshot whose baked-in
+     text is unreadable at the ~700px the two-column hero allows. Stacks the
+     copy above and gives the shot a full-bleed band (up to its native width),
+     so the text renders at near-1:1 instead of ~0.4x. Widening the column can
+     never fix this — the two-column structure caps the visual at ~half the
+     container regardless of the fr ratio. */
+  heroWide?: boolean
   heroAlt: Loc
   consoleTitle: Loc
   /* Both hero overlays are optional — K-Video, for instance, ships the event

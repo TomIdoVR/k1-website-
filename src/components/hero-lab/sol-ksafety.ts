@@ -31,6 +31,9 @@ const KSAFETY: SolutionContent = {
   heroImg: '/images/modules/hero-k-safety.webp',
   heroBare: true,
   heroLight: true,
+  /* Real product dashboard screenshot (1774px, dense small text) — render it
+     full-width so the labels are legible, not squeezed into the hero column. */
+  heroWide: true,
   heroAlt: S('K-Safety incident board with live camera and analytics panels',
     'Tablero de incidentes K-Safety con paneles de cámara en vivo y analítica'),
   consoleTitle: S('K-SAFETY · SITUATIONAL AWARENESS', 'K-SAFETY · CONCIENCIA SITUACIONAL'),

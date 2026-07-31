@@ -1,3 +1,11 @@
+## [v2.306] – 2026-07-31 — K-Safety hero: full-width so the dashboard text is readable
+### Fixed
+- **The K-Safety hero screenshot is finally legible (KAB-2360).** The image is a real 1774px-wide product dashboard with dense baked-in text. It sat in the *right column of a two-column hero* (`.sp-hero-inner: 1fr 1.42fr`), which caps the visual at ~700px even with the negative-margin bleed — so it always rendered at ~0.4× and the labels collapsed to a few pixels. **That is why every prior width nudge (changing the `fr` ratio / the bleed margin) failed: the two-column structure, not the width value, was the ceiling.**
+- Added an opt-in `heroWide` mode: the copy stacks above and the screenshot runs as a **full-bleed band out to its native 1774px** (never upscaled), so its text renders at near-1:1 on desktop instead of ~0.4×. `.sp-hero` already clips overflow, so the 100vw child adds no horizontal scroll. Enabled on K-Safety only (`sol-ksafety.ts`); every other solution page keeps the two-column console hero unchanged.
+
+### Notes
+- Not pushed — staged on `hero-redesign` for review. `tsc --noEmit` clean.
+
 ## [v2.305] – 2026-07-31 — Fix broken internal links so staging is navigable
 ### Fixed
 - **Three broken internal links (→ 404s) across the site, found by a full static audit (KAB-2346).** So the staging preview can be reviewed end-to-end without dead ends:

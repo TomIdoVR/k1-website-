@@ -73,7 +73,7 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
       {/* ── Hero ── */}
       <section className="sp-hero" id="top">
         <div className="sp-hero-bg" aria-hidden="true"><span className="sp-hero-grid" /></div>
-        <div className="sp-wrap sp-hero-inner">
+        <div className={`sp-wrap sp-hero-inner${p.heroWide ? ' is-wide' : ''}`}>
           <div className="sp-hero-copy">
             <div className="sp-eyebrow">{t(p.eyebrow, es)}</div>
             <h1 className="sp-h1">
