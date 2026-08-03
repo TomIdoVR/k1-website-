@@ -1,3 +1,14 @@
+## [v2.308] – 2026-08-03 — K-Safety hero: professional three-panel composition
+### Changed
+- **Replaced the K-Safety hero with a purpose-built three-panel composition** (incident board flanked by a live-camera panel and analytics). Generated to be legible at the size the slot actually renders, rather than a dense screenshot shrunk to fit.
+- The console now reads as real enterprise software rather than a wireframe: left icon rail, `Board / Map / List` segmented control, filter dropdowns, Export action, search field, notification badge and avatar stack, per-incident category icons, priority pills, unit chips, elapsed timers, KPI deltas, and charts with real axes and a legend.
+
+### Notes
+- **The root problem was density, not size.** The previous art was 1774px of content rendering at ~44%, putting its 11px UI labels at ~4.8px on screen. No amount of widening the column could fix a ~2.5x shortfall — the fix was a composition with roughly a third of the elements at 2–3x the type size. Now renders at 90% scale, so the same labels land at ~9.9px.
+- **File size halved (499KB → 257KB)** by dropping `alphaQuality` from 100 to 70. The alpha channel here is mostly binary, so the extra precision was pure waste; shadows were checked for banding afterwards and are clean.
+- **Confirmed `unoptimized` is genuinely required, not cargo-culted.** Tested Next's optimizer directly: with an explicit `Accept: image/webp` header it returns WebP but with `hasAlpha = false` and 0% transparent pixels — it flattens alpha even when not falling back to JPEG. Separately, `deviceSizes` is capped at 1200 in `next.config.ts`, so the optimizer could not have served this 1774px hero at native width regardless.
+- Background knockout samples the true canvas colour (237,241,243 — not white, which is why an earlier white-threshold pass only caught 2.5%) and uses a distance ramp so drop shadows fade out instead of hard-clipping.
+
 ## [v2.307] – 2026-08-03 — Admin-console hero rebuilt as a real dashboard (KAB-2393)
 ### Changed
 - **The admin-console hero no longer ships a flat AI screenshot.** Board feedback on the hero was "the admin looks too simplified — make it more professional." The console visual was `concept-4-admin.webp`, an AI-generated image the code itself flagged to "swap for a real product screenshot before this ships." Replaced it with `HeroConsoleMock` — a **real HTML/CSS operations surface**: a module rail (K-Safety/Dispatch/Video/Traffic/Connect), a live GIS map with animated incident pins and unit markers, a KPI telemetry strip, a dispatch queue, a video wall, and an event log. Token-driven (`--bg-2`/`--border`/`--muted`, DM Mono / Barlow / Space Grotesk) and bilingual, so it themes correctly and reads as a dense, credible console instead of a simplified picture.

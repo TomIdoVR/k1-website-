@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.308 -->
+      <div class="tl-entry changed" id="v2.308">
+        <div class="tl-meta"><span class="tl-ver">v2.308</span><span class="tl-date">2026-08-03</span></div>
+        <div class="tl-title">K-Safety hero: professional three-panel composition</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New three-panel hero</strong> — incident board flanked by live-camera and analytics panels, generated to be legible at the size the slot actually renders rather than a dense screenshot shrunk to fit</li>
+            <li>Console now reads as real enterprise software: icon rail, <code>Board / Map / List</code> control, filter dropdowns, Export, search, notification badge, avatar stack, priority pills, unit chips, elapsed timers, KPI deltas, charts with real axes</li>
+            <li><strong>The problem was density, not size</strong> — the old art rendered at ~44%, putting 11px labels at ~4.8px. Widening the column could never fix a ~2.5x shortfall. Now renders at 90%, so labels land at ~9.9px</li>
+            <li><strong>File halved, 499KB → 257KB</strong>, by dropping <code>alphaQuality</code> 100 → 70 — alpha here is near-binary so the precision was waste; shadows checked for banding after</li>
+            <li>Confirmed <code>unoptimized</code> is genuinely needed: Next’s optimizer returns WebP with <code>hasAlpha=false</code> even given an explicit WebP Accept header, and <code>deviceSizes</code> caps at 1200 so it could not serve this 1774px hero natively anyway</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.306 -->
       <!-- v2.307 -->
       <div class="tl-entry changed" id="v2.307">
