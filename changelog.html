@@ -357,6 +357,18 @@
     <div class="timeline">
 
       <!-- v2.306 -->
+      <!-- v2.307 -->
+      <div class="tl-entry changed" id="v2.307">
+        <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-03</span></div>
+        <div class="tl-title">Admin-console hero rebuilt as a real dashboard (KAB-2393)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The admin-console hero no longer ships a flat AI screenshot.</strong> Board feedback was "the admin looks too simplified — make it more professional." The visual was <code>concept-4-admin.webp</code>, an AI image the code itself flagged to swap before shipping. Replaced with <code>HeroConsoleMock</code> — a <strong>real HTML/CSS operations surface</strong>: module rail, live GIS map with animated incident pins + unit markers, KPI telemetry strip, dispatch queue, video wall, and event log. Token-driven and bilingual, so it reads as a dense, credible console instead of a simplified picture.</li>
+            <li>Same mock swapped into <code>ImageConcepts</code> ("Concept 1 — The admin itself"); added <code>/hero-lab-admin</code> — an internal noindex review route — so the board can review the change (V1 was otherwise orphaned). Staged on <code>hero-redesign</code>, not pushed; <code>tsc --noEmit</code> clean.</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="tl-entry fix" id="v2.306">
         <div class="tl-meta"><span class="tl-ver">v2.306</span><span class="tl-date">2026-07-31</span></div>
         <div class="tl-title">K-Safety hero: full-width so the dashboard text is readable</div>

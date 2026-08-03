@@ -1,3 +1,15 @@
+## [v2.307] – 2026-08-03 — Admin-console hero rebuilt as a real dashboard (KAB-2393)
+### Changed
+- **The admin-console hero no longer ships a flat AI screenshot.** Board feedback on the hero was "the admin looks too simplified — make it more professional." The console visual was `concept-4-admin.webp`, an AI-generated image the code itself flagged to "swap for a real product screenshot before this ships." Replaced it with `HeroConsoleMock` — a **real HTML/CSS operations surface**: a module rail (K-Safety/Dispatch/Video/Traffic/Connect), a live GIS map with animated incident pins and unit markers, a KPI telemetry strip, a dispatch queue, a video wall, and an event log. Token-driven (`--bg-2`/`--border`/`--muted`, DM Mono / Barlow / Space Grotesk) and bilingual, so it themes correctly and reads as a dense, credible console instead of a simplified picture.
+- Swapped the same mock into `ImageConcepts` ("Concept 1 — The admin itself") so every admin surface is consistent; the non-admin hub concept keeps its illustration.
+
+### Added
+- `HeroConsoleMock.tsx` + `.hcm-*` styles (appended to `hero-lab.css`, no existing rules touched).
+- `/hero-lab-admin` — internal, noindex, unlinked review route mounting the upgraded `HeroV1Screenshot` + `ImageConcepts` (V1 was otherwise orphaned) so the board can review the change directly.
+
+### Notes
+- Not pushed — staged on `hero-redesign` for board review. `tsc --noEmit` clean. Which hero direction becomes "option C" is still an open question to the board (interaction on KAB-2393); this change is direction-agnostic — it upgrades the admin wherever it appears.
+
 ## [v2.306] – 2026-07-31 — K-Safety hero: full-width so the dashboard text is readable
 ### Fixed
 - **The K-Safety hero screenshot is finally legible (KAB-2360).** The image is a real 1774px-wide product dashboard with dense baked-in text. It sat in the *right column of a two-column hero* (`.sp-hero-inner: 1fr 1.42fr`), which caps the visual at ~700px even with the negative-margin bleed — so it always rendered at ~0.4× and the labels collapsed to a few pixels. **That is why every prior width nudge (changing the `fr` ratio / the bleed margin) failed: the two-column structure, not the width value, was the ceiling.**

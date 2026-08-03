@@ -5,6 +5,7 @@
    before this ships to production. */
 
 import Image from 'next/image'
+import HeroConsoleMock from './HeroConsoleMock'
 
 export default function ImageConcepts({ es }: { es: boolean }) {
   return (
@@ -22,14 +23,7 @@ export default function ImageConcepts({ es }: { es: boolean }) {
               </span>
             </div>
             <div className="hl-console-body">
-              <Image
-                src="/images/hero-lab/concept-4-admin.webp"
-                alt={es
-                  ? 'Panel de administración unificado con mapa, video, despacho y eventos'
-                  : 'Unified admin dashboard with map, video, dispatch, and events'}
-                fill
-                sizes="(max-width: 900px) 90vw, 560px"
-              />
+              <HeroConsoleMock es={es} />
             </div>
           </div>
         </div>

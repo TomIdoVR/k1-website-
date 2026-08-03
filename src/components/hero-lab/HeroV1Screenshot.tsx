@@ -1,11 +1,11 @@
 /* Hero direction 1 — unified admin console hero.
    Shows the actual admin surface (map, video, dispatch, events in one
    dashboard) so a visitor immediately reads "one platform, several modules."
-   Console image is AI-generated (concept-4-admin) — swap for a real product
-   screenshot before this ships to production. */
+   The console is a real HTML/CSS mock (HeroConsoleMock), not a flat AI image —
+   denser and more professional than the old concept-4-admin screenshot. */
 
-import Image from 'next/image'
 import ProofBar from './ProofBar'
+import HeroConsoleMock from './HeroConsoleMock'
 
 export default function HeroV1Screenshot({ es }: { es: boolean }) {
   return (
@@ -54,15 +54,7 @@ export default function HeroV1Screenshot({ es }: { es: boolean }) {
                 </span>
               </div>
               <div className="hl-console-body">
-                <Image
-                  src="/images/hero-lab/concept-4-admin.webp"
-                  alt={es
-                    ? 'Panel de administración unificado con mapa en vivo, muro de video, cola de despacho y tablero de eventos'
-                    : 'Unified admin dashboard with live map, video wall, dispatch queue, and event board'}
-                  fill
-                  sizes="(max-width: 980px) 90vw, 600px"
-                  priority
-                />
+                <HeroConsoleMock es={es} />
               </div>
             </div>
             <div className="hl-chip hl-chip-1">
