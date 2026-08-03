@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.309 -->
+      <div class="tl-entry fix" id="v2.309">
+        <div class="tl-meta"><span class="tl-ver">v2.309</span><span class="tl-date">2026-08-03</span></div>
+        <div class="tl-title">K-Safety hero back beside the copy (drops the full-bleed workaround)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Hero art sits next to the headline again</strong> instead of stacked below it. <code>heroWide</code> was a workaround for the <em>previous</em> dense screenshot; v2.308 replaced that art with a composition drawn for the hero slot, which made the workaround obsolete — it should have been removed in the same change</li>
+            <li><strong>Bleed now derived from the real gutter</strong> — <code>calc(-1 * max(0px, (100vw - 1240px) / 2 - 16px))</code>. A fixed <code>-12vw</code> clipped the analytics panel 70px off-screen at 1280px, where the gutter is only 20px</li>
+            <li>Column ratio returned from <code>1fr 1.42fr</code> to the design's <code>1fr 1.12fr</code>; the gutter bleed recovers the image size without squeezing the headline</li>
+            <li>Measured, none clipped: 1280 → 32% / 7.1px labels, 1600 → 41% / 9.1px, 1920 → 50% / 11.0px. Mobile stacks with the bleed zeroed</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.308 -->
       <div class="tl-entry changed" id="v2.308">
         <div class="tl-meta"><span class="tl-ver">v2.308</span><span class="tl-date">2026-08-03</span></div>

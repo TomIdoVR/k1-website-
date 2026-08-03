@@ -31,9 +31,11 @@ const KSAFETY: SolutionContent = {
   heroImg: '/images/modules/hero-k-safety.webp',
   heroBare: true,
   heroLight: true,
-  /* Real product dashboard screenshot (1774px, dense small text) — render it
-     full-width so the labels are legible, not squeezed into the hero column. */
-  heroWide: true,
+  /* Deliberately NOT heroWide. That flag stacked the art full-bleed below the
+     copy as a workaround for the previous dense screenshot, whose baked-in
+     labels were unreadable in a half-width column. This composition was drawn
+     for the hero slot — about a third of the elements at 2-3x the type size —
+     so it stays beside the copy where a hero visual belongs. */
   heroAlt: S('K-Safety incident board with live camera and analytics panels',
     'Tablero de incidentes K-Safety con paneles de cámara en vivo y analítica'),
   consoleTitle: S('K-SAFETY · SITUATIONAL AWARENESS', 'K-SAFETY · CONCIENCIA SITUACIONAL'),

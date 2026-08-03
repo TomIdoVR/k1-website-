@@ -49,14 +49,22 @@
 /* The visual column is deliberately the wider one — the hero art carries a full
    product composition (incident board, live cameras, analytics) and has to stay
    legible at a glance. */
-.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.42fr; gap: clamp(20px, 2.6vw, 40px); align-items: center; }
+/* Near-even split. The visual column was pushed to 1.42fr while fighting the
+   old dense screenshot's legibility; that squeezed the copy to ~443px and broke
+   the h1 onto four lines. The current hero art is drawn to read at this size,
+   so the ratio goes back to serving the headline. */
+.sp-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.12fr; gap: clamp(20px, 2.6vw, 40px); align-items: center; }
 
 /* Above the 1240px content cap the composition would stay boxed inside the
    column and read small. Letting it run out toward the viewport edge buys real
    scale without shifting the copy. Capped so the rightmost analytics panel is
    never clipped off-screen. */
+/* Bleed into exactly the gutter outside the 1240px content cap, never past it.
+   A fixed -12vw clipped the rightmost analytics panel at 1280px, where the
+   gutter is only 20px; this derives the bleed from the space that actually
+   exists, so it scales with the viewport and can never overflow. */
 @media (min-width: 1180px) {
-  .sp-hero-visual { margin-right: max(-7vw, -132px); }
+  .sp-hero-visual { margin-right: calc(-1 * max(0px, (100vw - 1240px) / 2 - 16px)); }
 }
 .sp-eyebrow { font-family: var(--sp-f-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.22em; color: var(--ac-ink); margin-bottom: 20px; }
 .sp-h1 { font-family: var(--sp-f-display); font-weight: 800; font-size: clamp(38px, 4.6vw, 66px); line-height: 0.98; letter-spacing: -0.015em; text-transform: none; display: flex; flex-direction: column; margin-bottom: 22px; }

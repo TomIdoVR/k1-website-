@@ -1,3 +1,13 @@
+## [v2.309] – 2026-08-03 — K-Safety hero back beside the copy (drops the full-bleed workaround)
+### Fixed
+- **The hero art sits next to the headline again instead of stacked below it.** `heroWide` was introduced to render the art full-bleed under the copy — a workaround for the *previous* dense screenshot, whose baked-in labels were unreadable in a half-width column. v2.308 replaced that art with a composition drawn for the hero slot, which made the workaround obsolete; it should have been removed in the same change.
+- **Bleed is now derived from the gutter that actually exists** — `calc(-1 * max(0px, (100vw - 1240px) / 2 - 16px))`. A fixed `-12vw` clipped the rightmost analytics panel 70px off-screen at 1280px, where the gutter is only 20px wide. The visual now grows with the viewport and can never overflow it.
+- Column ratio returned from `1fr 1.42fr` to the design's `1fr 1.12fr`. The wider visual column had been compensating for the old art and was squeezing the copy to ~443px; the gutter bleed recovers that size without taking width from the headline.
+
+### Notes
+- Measured across widths, image scale / effective label size, none clipped: 1280 → 32% / 7.1px, 1600 → 41% / 9.1px, 1920 → 50% / 11.0px. Mobile stacks with the bleed correctly zeroed.
+- `heroWide` and its `.is-wide` CSS are kept, unused. They remain the right tool if a future hero genuinely needs a dense full-width screenshot — the flag was not wrong, it was just applied to a problem that has since been solved a better way.
+
 ## [v2.308] – 2026-08-03 — K-Safety hero: professional three-panel composition
 ### Changed
 - **Replaced the K-Safety hero with a purpose-built three-panel composition** (incident board flanked by a live-camera panel and analytics). Generated to be legible at the size the slot actually renders, rather than a dense screenshot shrunk to fit.
