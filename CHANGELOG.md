@@ -69,6 +69,30 @@
 ### Notes
 - Not pushed — staged on `hero-redesign` for board review. `tsc --noEmit` clean. Which hero direction becomes "option C" is still an open question to the board (interaction on KAB-2393); this change is direction-agnostic — it upgrades the admin wherever it appears.
 
+## [v2.307] – 2026-08-04 — Weekly brief collector: service-account auth, all-channel traffic
+
+First half of merging the two Monday SEO jobs into one. `scripts/weekly_brief.py` collects everything the weekly brief needs — all-channel GA4 traffic, GSC search performance, deterministic opportunity scoring — into a single JSON. No LLM, no HTML, no git, no Slack; those belong to the caller.
+
+### Fixed — the credential failure that cost three weeks
+- **Service-account auth only, no OAuth refresh token in the path.** The weekly pull had been failing since mid-July with `invalid_grant`. It was diagnosed as an expired token and regenerated twice; each replacement died within a week. Refresh tokens are now removed from the weekly path entirely rather than re-fixed.
+- **No silent OAuth fallback.** That fallback is *why* it went unnoticed for three weeks: `google_auth.py --check gsc` kept reporting `[OK]` via the service-account path while the actual weekly job failed. The collector fails loudly instead.
+- Verified by running the full pull with `~/.config/claude-seo/oauth-token.json` renamed away — this is the regression test for the whole class of failure.
+- Required granting `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com` Full access on the `https://kabatone.com/` property. GA4 access already existed; GSC did not (403 until granted).
+
+### Fixed — GSC totals were wrong by 58%
+- **Totals now come from a dimensionless query.** They were being summed from query-dimension rows, which undercounts badly: measured **180 clicks summed vs 427 actual**, 54,009 impressions vs 87,954. GSC anonymises rare queries and omits them from query-dimension results, so those rows can never sum to site totals.
+- **Query row limit 1,000 → 25,000.** The site returns ~2,566 queries over 28 days, so the previous cap silently truncated ranking data. Striking-distance count went **125 → 211** once the full set was pulled.
+
+### Added — non-search traffic
+The previous GA4 pull hard-filtered every page-level query to Organic Search, so ~70% of sessions appeared as a single number with no detail. Now collected: per-channel sessions/users/engagement/key-events with prior-period deltas, landing pages **per channel**, referrer source/medium breakdown, and 12-week trend.
+
+- **`AI Assistant` isolated as its own section** — 55 sessions, +120% vs prior, with its own landing pages and weekly trend. This is the only direct measurement of whether the GEO work converts to traffic, and it had never appeared in any report.
+- First full picture: Direct **62.6%**, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9%. The brief had been reporting only the 29.5%.
+
+### Notes
+- Scoring helpers (`expected_ctr`, `business_value`, `assign_cluster`) are imported from `seo_weekly_agent.py` rather than duplicated, so the brief and the dashboard cannot disagree about what counts as an opportunity.
+- Phases 2–3 (rewiring the cloud trigger, retiring the superseded LaunchAgents and skills) are not in this commit. Full design at `~/.claude/plans/dynamic-riding-raven.md`.
+
 ## [v2.306] – 2026-07-31 — K-Safety hero: full-width so the dashboard text is readable
 ### Fixed
 - **The K-Safety hero screenshot is finally legible (KAB-2360).** The image is a real 1774px-wide product dashboard with dense baked-in text. It sat in the *right column of a two-column hero* (`.sp-hero-inner: 1fr 1.42fr`), which caps the visual at ~700px even with the negative-margin bleed — so it always rendered at ~0.4× and the labels collapsed to a few pixels. **That is why every prior width nudge (changing the `fr` ratio / the bleed margin) failed: the two-column structure, not the width value, was the ceiling.**

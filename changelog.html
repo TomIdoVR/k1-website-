@@ -356,6 +356,24 @@
 
     <div class="timeline">
 
+      <!-- v2.307 -->
+      <div class="tl-entry fix" id="v2.307">
+        <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief collector: service-account auth, all-channel traffic</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Killed the credential failure that cost three weeks.</strong> The weekly GSC pull had failed since mid-July with <code>invalid_grant</code>; it was diagnosed as an expired token and regenerated twice, and each replacement died within a week. <code>scripts/weekly_brief.py</code> authenticates by service account only — refresh tokens are removed from the weekly path rather than re-fixed</li>
+            <li><strong>No silent OAuth fallback</strong> — that fallback is why it went unnoticed: <code>google_auth.py --check gsc</code> kept reporting <code>[OK]</code> via the service account while the real job failed. Verified by running the full pull with the OAuth token renamed away</li>
+            <li><strong>GSC totals were wrong by 58%.</strong> They were summed from query-dimension rows, which undercounts because GSC anonymises rare queries and omits them — measured <strong>180 clicks summed vs 427 actual</strong>. Totals now come from a dimensionless query and tie out to the Search Console UI exactly</li>
+            <li><strong>Query row limit 1,000 → 25,000</strong> — the site returns ~2,566 queries over 28 days, so ranking data was silently truncated. Striking-distance count went <strong>125 → 211</strong></li>
+            <li><strong>Non-search traffic is finally reported.</strong> The old GA4 pull filtered every page-level query to Organic Search, so ~70% of sessions were a single number. Now: per-channel sessions/engagement/key-events with deltas, landing pages per channel, referrer breakdown, 12-week trend</li>
+            <li><strong>AI Assistant isolated as its own section</strong> — 55 sessions, +120% vs prior, with its own landing pages and trend. The only direct measurement of whether GEO work converts to traffic, and it had never appeared in any report</li>
+            <li>First full picture: Direct <strong>62.6%</strong>, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9% — the brief had been reporting only the 29.5%</li>
+            <li>Scoring helpers imported from <code>seo_weekly_agent.py</code> rather than duplicated, so brief and dashboard cannot disagree about what counts as an opportunity</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.312 -->
       <div class="tl-entry changed" id="v2.312">
         <div class="tl-meta"><span class="tl-ver">v2.312</span><span class="tl-date">2026-08-04</span></div>
