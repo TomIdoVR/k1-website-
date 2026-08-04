@@ -356,6 +356,39 @@
 
     <div class="timeline">
 
+      <!-- v2.308 -->
+      <div class="tl-entry added" id="v2.308">
+        <div class="tl-meta"><span class="tl-ver">v2.308</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Second half of merging the two Monday SEO jobs.</strong> <code>scripts/weekly_report.py</code> consumes the collector JSON from v2.307 and produces the human brief: an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan, rendered into a self-contained HTML dashboard. The collector owns data; this owns narrative and presentation — neither imports the other's job</li>
+            <li><strong>Why the split matters.</strong> The old monolith pulled data and rendered in one process, so a dead OAuth token could run "green" for three weeks while producing nothing. Now the collector fails loudly on bad auth and the report fails loudly on a missing brief — one can't mask the other</li>
+            <li><strong>New signals surfaced.</strong> Dashboard renders against the collector's richer shape: AI Assistant KPI (GEO reach), all-channel source mix, keyword opportunity stack, a dedicated <strong>Striking Distance</strong> table (pos 5–15), cluster momentum, and top referrers</li>
+            <li><strong>No new dependencies.</strong> The Anthropic call goes over <code>urllib</code>, same as the collector's GSC calls — no SDK. <code>--no-ai</code> renders a deterministic brief with zero network and zero key, and the LLM path falls back to it automatically on any failure so the report is never blank</li>
+            <li>Verified end-to-end on live 28-day data: collector → report in both deterministic and <code>claude-sonnet-4-6</code> modes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.307 -->
+      <div class="tl-entry fix" id="v2.307">
+        <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief collector: service-account auth, all-channel traffic</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Killed the credential failure that cost three weeks.</strong> The weekly GSC pull had failed since mid-July with <code>invalid_grant</code>; it was diagnosed as an expired token and regenerated twice, and each replacement died within a week. <code>scripts/weekly_brief.py</code> authenticates by service account only — refresh tokens are removed from the weekly path rather than re-fixed</li>
+            <li><strong>No silent OAuth fallback</strong> — that fallback is why it went unnoticed: <code>google_auth.py --check gsc</code> kept reporting <code>[OK]</code> via the service account while the real job failed. Verified by running the full pull with the OAuth token renamed away</li>
+            <li><strong>GSC totals were understated by 58%.</strong> They were summed from query-dimension rows, which undercounts because GSC anonymises rare queries and omits them — measured <strong>180 clicks summed vs 427 actual</strong>. Totals now come from a dimensionless query and tie out to the Search Console UI exactly</li>
+            <li><strong>Query row limit 1,000 → 25,000</strong> — the site returns ~2,566 queries over 28 days, so ranking data was silently truncated. Striking-distance count went <strong>125 → 211</strong></li>
+            <li><strong>Non-search traffic is finally reported.</strong> The old GA4 pull filtered every page-level query to Organic Search, so ~70% of sessions were a single number. Now: per-channel sessions/engagement/key-events with deltas, landing pages per channel, referrer breakdown, 12-week trend</li>
+            <li><strong>AI Assistant isolated as its own section</strong> — 55 sessions, +120% vs prior, with its own landing pages and trend. The only direct measurement of whether GEO work converts to traffic, and it had never appeared in any report</li>
+            <li>First full picture: Direct <strong>62.6%</strong>, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9% — the brief had been reporting only the 29.5%</li>
+            <li><em>Versions v2.287–v2.306 are the homepage redesign work on the <code>hero-redesign</code> branch and will appear here when that merges</em></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.286 -->
       <div class="tl-entry changed" id="v2.286">
         <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-29</span></div>
