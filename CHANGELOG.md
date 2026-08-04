@@ -1,3 +1,13 @@
+## [v2.310] – 2026-08-03 — Real KabatOne mark in the K-Safety hero app icon
+### Fixed
+- **The app-icon badge inside the hero screenshot now carries the real "1K" KabatOne mark** instead of the generic "K" the image model invented. It is the same artwork the site header uses (`hero-cards/header-logo-lockup.png`), so the brand reads consistently between the page chrome and the product shot.
+
+### Notes
+- Done as a **pixel composite rather than a regeneration**: the glyph was swapped in place, so every other detail of the approved composition is byte-identical. Regenerating would have risked changing incident names, chart shapes or layout for a 47px logo.
+- Method: located the badge by scanning for brand-blue in the header region (found at 446,93 / 47×50, fill `rgb(22,98,246)`), derived its rounded-square silhouette by flooding non-blue inward from the bounding box, blended the invented glyph's pixels back to the badge blue — proportional to their distance from blue, so antialiased edges dissolve rather than leaving a halo — then composited the real mark, recoloured white, centred at 29×25.
+- The lockup PNG is a **mask** (alpha carries the shape, RGB is white), which is why it reads as blank on a light background. The mark had to be isolated from the wordmark first — a column-wise alpha scan found the gap at x=56, putting the mark at x∈[13,55], y∈[5,41].
+- File 213KB (from 194KB); the composite adds detail the encoder has to carry. Still well inside the budget set in v2.308.
+
 ## [v2.309] – 2026-08-03 — K-Safety hero back beside the copy (drops the full-bleed workaround)
 ### Fixed
 - **The hero art sits next to the headline again instead of stacked below it.** `heroWide` was introduced to render the art full-bleed under the copy — a workaround for the *previous* dense screenshot, whose baked-in labels were unreadable in a half-width column. v2.308 replaced that art with a composition drawn for the hero slot, which made the workaround obsolete; it should have been removed in the same change.

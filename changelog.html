@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.310 -->
+      <div class="tl-entry fix" id="v2.310">
+        <div class="tl-meta"><span class="tl-ver">v2.310</span><span class="tl-date">2026-08-03</span></div>
+        <div class="tl-title">Real KabatOne mark in the K-Safety hero app icon</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>The app-icon badge inside the hero screenshot now carries the <strong>real "1K" KabatOne mark</strong> instead of the generic "K" the image model invented — same artwork the site header uses, so branding reads consistently between page chrome and product shot</li>
+            <li><strong>Pixel composite, not a regeneration</strong> — the glyph was swapped in place so every other detail of the approved composition is byte-identical. Regenerating would have risked changing incident names, charts or layout for a 47px logo</li>
+            <li>Badge located by scanning for brand-blue (446,93 / 47×50, fill <code>rgb(22,98,246)</code>); silhouette derived by flooding non-blue inward; invented glyph blended back to blue proportional to distance so antialiased edges dissolve without a halo</li>
+            <li>The lockup PNG is a <strong>mask</strong> (alpha carries the shape), which is why it reads blank on light. A column-wise alpha scan found the mark/wordmark gap at x=56 to isolate just the mark</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.309 -->
       <div class="tl-entry fix" id="v2.309">
         <div class="tl-meta"><span class="tl-ver">v2.309</span><span class="tl-date">2026-08-03</span></div>
