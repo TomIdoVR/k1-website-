@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.312 -->
+      <div class="tl-entry changed" id="v2.312">
+        <div class="tl-meta"><span class="tl-ver">v2.312</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">K-Dispatch hero: map centre-stage with a live video inset</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Recomposed around the map</strong> — the live dispatch map moves from a side panel to the centre, with the call queue moving left and recommended units plus KPIs moving right. Dispatch is a geographic job, so the map now carries the composition</li>
+            <li><strong>Added a live video inset over the map</strong> — picture-in-picture camera card with a red LIVE badge and "CAM-07 · Incident scene" caption, showing video and location together the way an operator sees them</li>
+            <li>Map is now <strong>light</strong>, matching the panel language; the previous dark map read fine in support but would have broken the set once promoted to centre</li>
+            <li>Same geometry as K-Safety: 41% scale, ~9.1px labels, side-by-side, nothing clipped. Real 1K mark composited in (badge at 444,28 / 56×56)</li>
+            <li>208KB (from 95KB) — the light basemap and camera still are photographic detail the encoder carries. Known cosmetic: the generated basemap has nonsense street labels, ~4px at hero scale so they read as texture</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.311 -->
       <div class="tl-entry feat" id="v2.311">
         <div class="tl-meta"><span class="tl-ver">v2.311</span><span class="tl-date">2026-08-04</span></div>

@@ -1,3 +1,15 @@
+## [v2.312] – 2026-08-04 — K-Dispatch hero: map centre-stage with a live video inset
+### Changed
+- **Recomposed the K-Dispatch hero around the map.** The live dispatch map moves from a side panel to the centre — the largest, forward-facing surface — with the call queue moving left and recommended units plus KPIs moving right. Dispatch is a geographic job, so the map now carries the composition rather than sitting in support.
+- **Added a live video inset over the map**: a picture-in-picture camera card with a red LIVE badge and a "CAM-07 · Incident scene" caption, so the hero shows video and location together the way an operator actually sees them.
+- The map is now **light**, matching the panel language. The previous version's map came back dark, which read fine as a side panel but would have been a hard break in the set once promoted to centre.
+
+### Notes
+- Same measured geometry as before and as K-Safety: 41% scale, ~9.1px effective labels, side-by-side, nothing clipped.
+- Real 1K mark composited in as usual (badge at 444,28 / 56x56, fill `rgb(5,170,233)`), so it never shipped with an invented glyph.
+- 208KB, up from 95KB — the light street map and the added camera still are both photographic-ish detail the encoder has to carry. Still comfortably under K-Safety's 213KB.
+- Known cosmetic: the generated basemap carries some nonsense street labels. They render at roughly 4px at hero scale so they read as map texture rather than words, but they are there under magnification.
+
 ## [v2.311] – 2026-08-04 — K-Dispatch hero: purpose-built three-panel composition
 ### Added
 - **New K-Dispatch hero**, built to the recipe established on K-Safety: call queue by intake channel, CAD console with the active call and recommended units, and a live dispatch map. Drawn for the hero slot — few elements at large type — rather than a dense screenshot shrunk to fit.
