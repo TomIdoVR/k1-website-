@@ -1,3 +1,22 @@
+## [v2.313] – 2026-08-05 — K-Video hero: purpose-built video wall composition
+### Added
+- **New K-Video hero**, third in the set after K-Safety and K-Dispatch and built to the same recipe: few elements at large type, drawn for the hero slot rather than a dense screenshot shrunk to fit. The product's core surface goes centre-stage — here the **live video wall**, with a focused CAM-14 street feed carrying teal AI bounding boxes, a red LIVE badge, and three camera thumbnails (CAM-02 / CAM-07 / CAM-11) beneath it.
+- **Detections feed on the left** — License Plate 0:04, Person of Interest 0:26, Loitering 1:12, Abandoned Object 2:40 — and **AI performance on the right**: face recognition 94%, LPR read rate 99%, anomaly detection 88%, platform uptime 99.9%, plus KPI tiles for 1,204+ active cameras and 15+ AI models. Those four bars are the page's own `perfBars` values, so the artwork and the section below it cannot drift apart.
+- The **AI DETECTION card** the hero used to overlay in DOM is now inside the artwork, sitting on the focused feed where an operator would see it: "Vehicle of interest", Matched · Plate list, LPR read rate · 99%, Confidence · 96%.
+- Carries the **real 1K KabatOne mark** in its app icon, composited in by pixel surgery (badge found at 299,30 / 51×52, fill `rgb(30,173,197)`), so it never shipped with an invented glyph.
+
+### Changed
+- **Retires the stand-in.** The hero pointed at `video.webp` — the same image the page already used in its capability rows — so the page showed it twice. That duplicate is gone.
+- `heroEvent` and `chips` removed from `sol-kvideo.ts`: the composition is self-contained now, same as K-Dispatch.
+
+### Fixed
+- **Pinned the Turbopack workspace root** in `next.config.ts`. A stray `package-lock.json` in the home directory made Turbopack infer `/Users/omercnaani` as the root, and every module resolution failed from there (`Can't resolve 'tailwindcss'`) — the dev server compiled nothing. `turbopack.root` now points at the project directory.
+
+### Notes
+- Geometry verified identical to K-Dispatch at 1280px: 574px wide, 0.324 scale, side-by-side with the copy, nothing clipped.
+- 124KB — the lightest of the three heroes (K-Dispatch 208KB, K-Safety 213KB); the light panels and flat UI compress better than K-Dispatch's street map.
+- Two contrast "failures" flagged during the sweep were false positives — the features and case bands paint their near-black via `background-image` gradients, so a `background-color`-only check walks past them to the light page body. Real ratios are 7.7:1 and higher.
+
 ## [v2.312] – 2026-08-04 — K-Dispatch hero: map centre-stage with a live video inset
 ### Changed
 - **Recomposed the K-Dispatch hero around the map.** The live dispatch map moves from a side panel to the centre — the largest, forward-facing surface — with the call queue moving left and recommended units plus KPIs moving right. Dispatch is a geographic job, so the map now carries the composition rather than sitting in support.

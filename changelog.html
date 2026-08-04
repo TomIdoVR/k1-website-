@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.313 -->
+      <div class="tl-entry added" id="v2.313">
+        <div class="tl-meta"><span class="tl-ver">v2.313</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">K-Video hero: purpose-built video wall composition</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Video hero</strong>, third in the set after K-Safety and K-Dispatch and built to the same recipe: few elements at large type, drawn for the hero slot rather than a dense screenshot shrunk to fit. The product's core surface goes centre-stage — here the <strong>live video wall</strong>, with a focused CAM-14 street feed carrying teal AI bounding boxes, a red LIVE badge, and three camera thumbnails (CAM-02 / CAM-07 / CAM-11) beneath it</li>
+            <li><strong>Detections feed on the left</strong> — License Plate 0:04, Person of Interest 0:26, Loitering 1:12, Abandoned Object 2:40 — and <strong>AI performance on the right</strong>: face recognition 94%, LPR read rate 99%, anomaly detection 88%, platform uptime 99.9%, plus KPI tiles for 1,204+ active cameras and 15+ AI models. Those four bars are the page's own <code>perfBars</code> values, so the artwork and the section below it cannot drift apart</li>
+            <li>The <strong>AI DETECTION card</strong> the hero used to overlay in DOM is now inside the artwork, sitting on the focused feed where an operator would see it: "Vehicle of interest", Matched · Plate list, LPR read rate · 99%, Confidence · 96%</li>
+            <li>Carries the <strong>real 1K KabatOne mark</strong> in its app icon, composited in by pixel surgery (badge found at 299,30 / 51×52, fill <code>rgb(30,173,197)</code>), so it never shipped with an invented glyph</li>
+            <li><strong>Retires the stand-in.</strong> The hero pointed at <code>video.webp</code> — the same image the page already used in its capability rows — so the page showed it twice. That duplicate is gone, and <code>heroEvent</code>/<code>chips</code> are removed from <code>sol-kvideo.ts</code> now that the composition is self-contained</li>
+            <li><strong>Pinned the Turbopack workspace root</strong> in <code>next.config.ts</code>. A stray <code>package-lock.json</code> in the home directory made Turbopack infer <code>/Users/omercnaani</code> as the root, and every module resolution failed from there (<code>Can't resolve 'tailwindcss'</code>) — the dev server compiled nothing</li>
+            <li>Geometry verified identical to K-Dispatch at 1280px: 574px wide, 0.324 scale, side-by-side with the copy, nothing clipped. 124KB — the lightest of the three heroes</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.307 -->
       <div class="tl-entry fix" id="v2.307">
         <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-04</span></div>

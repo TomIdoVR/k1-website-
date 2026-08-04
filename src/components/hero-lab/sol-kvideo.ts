@@ -21,24 +21,17 @@ const KVIDEO: SolutionContent = {
   h1b: S('software for public safety.', 'con IA para seguridad pública.'),
   sub: S('Scalable cloud and on-premises video management powered by AI-driven analytics — enabling real-time monitoring, forensic search, and automated threat detection across thousands of cameras.',
     'Agrega todas las cámaras en una vista unificada y con capacidad de búsqueda. K-Video añade analítica con IA para que encuentres lo que importa en segundos, no horas.'),
-  heroImg: '/images/modules/video.webp',
+  /* Purpose-built three-panel composition (v2.313): live video wall centre
+     stage with the AI-detection card overlaid on the focused feed, detections
+     feed left, AI performance right. The detection card, chips and stats the
+     hero used to overlay are all inside the artwork now, so heroEvent/chips
+     are gone — see sol-kdispatch for the same pattern. */
+  heroImg: '/images/modules/hero-k-video.webp',
   heroAlt: S('K-Video wall showing multiple live camera feeds with AI detections',
     'Videowall de K-Video con múltiples cámaras en vivo y detecciones de IA'),
+  heroBare: true,
+  heroLight: true,
   consoleTitle: S('K-VIDEO · LIVE WALL', 'K-VIDEO · MURO EN VIVO'),
-  heroEvent: {
-    tag: S('AI DETECTION', 'DETECCIÓN IA'),
-    title: S('Vehicle of interest', 'Vehículo de interés'),
-    loc: S('CAM-14 · Main St & 5th', 'CAM-14 · Main St y 5th'),
-    rows: [
-      { l: S('Matched', 'Coincidencia'), v: S('Plate list', 'Lista de placas') },
-      { l: S('LPR read rate', 'Tasa de lectura LPR'), v: '99%' },
-      { l: S('Cameras', 'Cámaras'), v: '1,204+' },
-    ],
-  },
-  chips: [
-    { c: '#a855f7', t: S('AI analytics on every feed', 'Analítica IA en cada señal') },
-    { c: '#3b82f6', t: S('Works with your VMS', 'Funciona con tu VMS') },
-  ],
   stats: [
     { v: '1,204+', l: S('Active cameras', 'Cámaras activas') },
     { v: '99.9%', l: S('Uptime', 'Disponibilidad') },
