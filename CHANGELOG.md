@@ -35,6 +35,7 @@ The previous GA4 pull hard-filtered every page-level query to Organic Search, so
 - First full picture: Direct **62.6%**, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9%. The brief had been reporting only the 29.5%.
 
 ### Notes
+- Credentials resolve in order: `GOOGLE_SERVICE_ACCOUNT_JSON_B64` → `GOOGLE_SERVICE_ACCOUNT_JSON` → local key file. The base64 form exists because cloud environment variables are entered as single-line `KEY=value` pairs, which a multi-line JSON key cannot survive — pasting it raw fails with `Couldn't parse "{"`.
 - Scoring helpers (`expected_ctr`, `business_value`, `assign_cluster`) are imported from `seo_weekly_agent.py` rather than duplicated, so the brief and the dashboard cannot disagree about what counts as an opportunity.
 - Phase 2 (rewiring the cloud trigger to run this) requires the script to be reachable on GitHub, which is why it lands here on `nextjs` rather than the redesign branch.
 

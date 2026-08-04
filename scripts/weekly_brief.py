@@ -43,6 +43,10 @@ GSC_PROPERTY = 'https://kabatone.com/'
 GSC_ENDPOINT = 'https://www.googleapis.com/webmasters/v3/sites/{site}/searchAnalytics/query'
 
 SA_ENV = 'GOOGLE_SERVICE_ACCOUNT_JSON'
+# Cloud environment variables are entered as single-line KEY=value pairs, which
+# a multi-line JSON key cannot survive. Base64 keeps it to one line with no
+# quotes or newlines to mangle, so that form wins where both are set.
+SA_ENV_B64 = 'GOOGLE_SERVICE_ACCOUNT_JSON_B64'
 SA_FILE = Path.home() / '.config' / 'claude-seo' / 'gsc-service-account.json'
 
 SCOPES = [
@@ -64,7 +68,21 @@ def service_account_credentials():
     token go unnoticed for three weeks, because the service-account path kept
     the health check green while the real weekly job failed.
     """
+    import base64
     from google.oauth2 import service_account
+
+    encoded = os.environ.get(SA_ENV_B64)
+    if encoded:
+        try:
+            info = json.loads(base64.b64decode(encoded))
+        except Exception as exc:
+            raise SystemExit(
+                f'{SA_ENV_B64} is set but could not be decoded: {type(exc).__name__}: {exc}\n'
+                'Regenerate with:\n'
+                "  { printf '%s=' GOOGLE_SERVICE_ACCOUNT_JSON_B64; "
+                "base64 < ~/.config/claude-seo/gsc-service-account.json | tr -d '\\n'; } | pbcopy"
+            )
+        return service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
 
     raw = os.environ.get(SA_ENV)
     if raw:
@@ -78,7 +96,8 @@ def service_account_credentials():
         return service_account.Credentials.from_service_account_file(str(SA_FILE), scopes=SCOPES)
 
     raise SystemExit(
-        f'No service-account credentials. Set {SA_ENV} or place the key at {SA_FILE}.'
+        f'No service-account credentials. Set {SA_ENV_B64} (preferred in cloud '
+        f'environments), {SA_ENV}, or place the key at {SA_FILE}.'
     )
 
 
