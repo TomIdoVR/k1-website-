@@ -1,3 +1,17 @@
+## [v2.308] – 2026-08-04 — Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON
+
+Second half of merging the two Monday SEO jobs into one. `scripts/weekly_report.py` consumes the collector JSON from v2.307 and produces the human brief — an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan — rendered into a self-contained HTML dashboard. The collector owns *data*; this owns *narrative + presentation*. Neither imports the other's responsibilities, so a failure in one can't silently mask the other (the bug that let a dead OAuth token run green for three weeks).
+
+### Added
+- **`scripts/weekly_report.py`** — reads `weekly_brief.py --out` JSON, calls Anthropic over `urllib` (no SDK, matching the collector), and renders a dark KabatOne dashboard: KPIs (sessions, organic, AI Assistant, opportunity uplift), weekly trend + source-mix charts, keyword opportunity stack, a dedicated **Striking Distance** table (pos 5–15), cluster momentum, and top referrers.
+- **`--no-ai`** deterministic brief (zero network, zero key) — also the automatic fallback whenever the LLM step fails, so the report is never blank.
+- Reuses only the shape-agnostic markdown→HTML formatters from `seo_weekly_agent.py`; the renderer targets the collector's own JSON contract rather than the legacy `analyse()` shape.
+
+### Verified
+- End-to-end on live 28-day data: collector → report in both deterministic and `claude-sonnet-4-6` modes. LLM brief correctly grounded (C5, LATAM dispatch, real position/impression figures) with valid P0/P1/P2 badges.
+
+*(Versions v2.287–v2.306 are the homepage redesign work on the `hero-redesign` branch and will appear here when that merges.)*
+
 ## [v2.307] – 2026-08-04 — Weekly brief collector: service-account auth, all-channel traffic
 
 First half of merging the two Monday SEO jobs into one. `scripts/weekly_brief.py` collects everything the weekly brief needs — all-channel GA4 traffic, GSC search performance, deterministic opportunity scoring — into a single JSON. No LLM, no HTML, no git, no Slack; those belong to the caller.

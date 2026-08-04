@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.308 -->
+      <div class="tl-entry added" id="v2.308">
+        <div class="tl-meta"><span class="tl-ver">v2.308</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Second half of merging the two Monday SEO jobs.</strong> <code>scripts/weekly_report.py</code> consumes the collector JSON from v2.307 and produces the human brief: an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan, rendered into a self-contained HTML dashboard. The collector owns data; this owns narrative and presentation — neither imports the other's job</li>
+            <li><strong>Why the split matters.</strong> The old monolith pulled data and rendered in one process, so a dead OAuth token could run "green" for three weeks while producing nothing. Now the collector fails loudly on bad auth and the report fails loudly on a missing brief — one can't mask the other</li>
+            <li><strong>New signals surfaced.</strong> Dashboard renders against the collector's richer shape: AI Assistant KPI (GEO reach), all-channel source mix, keyword opportunity stack, a dedicated <strong>Striking Distance</strong> table (pos 5–15), cluster momentum, and top referrers</li>
+            <li><strong>No new dependencies.</strong> The Anthropic call goes over <code>urllib</code>, same as the collector's GSC calls — no SDK. <code>--no-ai</code> renders a deterministic brief with zero network and zero key, and the LLM path falls back to it automatically on any failure so the report is never blank</li>
+            <li>Verified end-to-end on live 28-day data: collector → report in both deterministic and <code>claude-sonnet-4-6</code> modes</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.307 -->
       <div class="tl-entry fix" id="v2.307">
         <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-04</span></div>
