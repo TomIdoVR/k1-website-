@@ -21,35 +21,21 @@ const KDISPATCH: SolutionContent = {
   h1b: S('to coordinated field response.', 'a la respuesta coordinada en campo.'),
   sub: S('Multi-channel intake, triage, CAD, and unit dispatch in one connected workflow — with video, GIS, and field context on every call, and operators firmly in control.',
     'Recepción multicanal, triaje, CAD y despacho de unidades en un flujo conectado — con video, GIS y contexto de campo en cada llamada, y los operadores siempre en control.'),
-  /* The design points at a dedicated hero screenshot, assets/modules/
-     hero-k-dispatch.png, which is not in this repo — drop it in at
-     public/images/modules/hero-k-dispatch.png and switch this line back.
-     Until then this falls back to the existing K-Dispatch console image;
-     the .is-bare overlay offsets were tuned against the real asset, so the
-     video inset and call-queue card sit approximately, not exactly. */
-  heroImg: '/images/modules/dispatch.webp',
+  /* Light 3D three-panel hero — call queue by intake channel, CAD console with
+     the active call and recommended units, and a live dispatch map. Drawn for
+     the hero slot (few elements, large type) rather than a dense screenshot
+     shrunk to fit, and carrying the real 1K mark in its app icon.
+
+     Self-contained composition, so it runs `heroBare` + `heroLight` and drops
+     the video/event overlays and floating chips the flat console hero needed —
+     they would sit on top of the panels rather than read as part of the
+     product. Deliberately NOT heroWide: it is legible beside the copy. */
+  heroImg: '/images/modules/hero-k-dispatch.webp',
   heroBare: true,
-  heroAlt: S('K-Dispatch CAD console showing an active call, assigned units, and live map',
-    'Consola CAD de K-Dispatch con una llamada activa, unidades asignadas y mapa en vivo'),
+  heroLight: true,
+  heroAlt: S('K-Dispatch CAD console showing an active call, recommended units, call queue, and live map',
+    'Consola CAD de K-Dispatch con una llamada activa, unidades recomendadas, cola de llamadas y mapa en vivo'),
   consoleTitle: S('K-DISPATCH · CAD', 'K-DISPATCH · CAD'),
-  heroVideo: {
-    img: '/images/modules/video.webp',
-    label: S('CAM-07 · Incident scene', 'CAM-07 · Escena del incidente'),
-  },
-  heroEvent: {
-    tag: S('CALL QUEUE', 'COLA DE LLAMADAS'),
-    title: S('4 active calls', '4 llamadas activas'),
-    loc: S('Avg answer · 6s', 'Respuesta prom. · 6s'),
-    rows: [
-      { l: S('Voice 911', 'Voz 911'), v: '2' },
-      { l: S('Text-to-911', 'Texto al 911'), v: '1' },
-      { l: S('Citizen app', 'App ciudadana'), v: '1' },
-    ],
-  },
-  chips: [
-    { c: '#ef4444', t: S('Call received · P1', 'Llamada recibida · P1') },
-    { c: '#3b82f6', t: S('Nearest unit assigned', 'Unidad más cercana asignada') },
-  ],
   stats: [
     { v: S('Multi-channel', 'Multicanal'), l: S('Call intake', 'Recepción de llamadas') },
     { v: S('Human-led', 'Guiado por personas'), l: S('Decision support', 'Soporte a decisiones') },

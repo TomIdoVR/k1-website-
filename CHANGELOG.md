@@ -1,3 +1,19 @@
+## [v2.311] – 2026-08-04 — K-Dispatch hero: purpose-built three-panel composition
+### Added
+- **New K-Dispatch hero**, built to the recipe established on K-Safety: call queue by intake channel, CAD console with the active call and recommended units, and a live dispatch map. Drawn for the hero slot — few elements at large type — rather than a dense screenshot shrunk to fit.
+- Content mirrors the page's own narrative (multi-channel intake → triage → CAD → dispatch): Voice 911 / Text-to-911 / Citizen App queue rows with wait times, a PRIORITY 1 "Medical Emergency" active call with a running 02:14 timer, three recommended units with ETAs and the nearest highlighted, and KPIs for active calls, average answer and dispatched-today.
+- Carries the **real 1K KabatOne mark** in its app icon, swapped in by pixel composite (badge found at 500,32 / 60×61, fill `rgb(0,174,212)`), so it never shipped with an invented glyph.
+
+### Changed
+- **Retires the stand-in.** The hero pointed at `dispatch.webp` — the same console image the page already used in its capability rows — because the design's own `hero-k-dispatch.png` was never in this repo. That duplicate is gone.
+- Dropped `heroVideo`, `heroEvent` and `chips` for this page. The composition is self-contained, so those overlays would sit *on top of* the panels rather than read as part of the product — same call as K-Safety.
+- Runs `heroBare` + `heroLight`, and deliberately not `heroWide`: it is legible beside the copy.
+
+### Notes
+- Verified identical geometry to K-Safety at 1600px: 41% scale, ~9.1px effective labels, side-by-side, nothing clipped, no page overflow.
+- 95KB — well under K-Safety's 213KB, because this composition has far less photographic content (one vector map versus several city-street camera stills).
+- The pipeline is now scripted end to end (knockout → trim → logo composite), so the remaining three heroes are one generation plus one script run each.
+
 ## [v2.310] – 2026-08-03 — Real KabatOne mark in the K-Safety hero app icon
 ### Fixed
 - **The app-icon badge inside the hero screenshot now carries the real "1K" KabatOne mark** instead of the generic "K" the image model invented. It is the same artwork the site header uses (`hero-cards/header-logo-lockup.png`), so the brand reads consistently between the page chrome and the product shot.

@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.311 -->
+      <div class="tl-entry feat" id="v2.311">
+        <div class="tl-meta"><span class="tl-ver">v2.311</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">K-Dispatch hero: purpose-built three-panel composition</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Dispatch hero</strong> to the recipe established on K-Safety — call queue by intake channel, CAD console with active call and recommended units, live dispatch map. Drawn for the hero slot rather than a dense screenshot shrunk to fit</li>
+            <li>Content mirrors the page narrative: Voice 911 / Text-to-911 / Citizen App queue with wait times, PRIORITY 1 active call with running timer, three units with ETAs and the nearest highlighted, plus answer-time KPIs</li>
+            <li><strong>Carries the real 1K mark</strong> from the start — swapped by pixel composite (badge at 500,32 / 60×61), so it never shipped with an invented glyph</li>
+            <li><strong>Retires the stand-in</strong>: the hero had been reusing <code>dispatch.webp</code>, the same image the page already showed in its capability rows. That duplicate is gone</li>
+            <li>Dropped <code>heroVideo</code>/<code>heroEvent</code>/<code>chips</code> — the composition is self-contained, so those overlays would sit on top of the panels rather than read as part of the product</li>
+            <li>Verified identical geometry to K-Safety at 1600px: 41% scale, ~9.1px labels, side-by-side, nothing clipped. 95KB (vs K-Safety's 213KB — far less photographic content)</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.310 -->
       <div class="tl-entry fix" id="v2.310">
         <div class="tl-meta"><span class="tl-ver">v2.310</span><span class="tl-date">2026-08-03</span></div>
