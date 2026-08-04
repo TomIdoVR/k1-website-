@@ -1,3 +1,13 @@
+## [v2.288] – 2026-08-04 — GEO-049: RTCC citability refresh — add Flock Safety (KAB-2446)
+### Changed
+- **`/resources/rtcc-software/` (EN + ES) — citability refresh, no new page.** The weekly GEO monitor found the root cause of the 3-cycle RTCC citation volatility: **Flock Safety (FlockOS) is now the single most-cited RTCC platform** in AI answers ("best RTCC software" cites FlockOS/Axon/Activu/Case Closed), yet it was entirely absent from this listicle's vendor table and FAQ — making the page read as incomplete/dated to answer engines.
+- Added **Flock Safety (FlockOS)** as the first row of the vendor comparison table (EN+ES, origin "Cloud LPR & real-time crime"), to the "Who are the main RTCC software vendors?" FAQ answer (EN+ES), and to the `Article`-schema `description` vendor list (EN+ES).
+- `articleSchema()` `dateModified` bumped `2026-07-13` → `2026-08-04` for a freshness signal.
+### Notes
+- **Weekly GEO monitor (KAB-2446, RTCC focus, live web-search proxy):** "real-time crime center RTCC software vendors" holding **Y** — `/resources/what-is-a-real-time-crime-center` explainer surfaces AND KabatOne is named in the AI answer as the unified-platform / C5-LATAM option. "best RTCC software" phrasing still **N** — the `/resources/rtcc-software/` listicle is not surfacing; this refresh targets that gap. Competitors seen: Flock Safety/FlockOS, Axon/Fusus, Genetec, Motorola, Verkada, Activu, Case Closed.
+- **Next up:** re-check the "best RTCC software" citation after indexing (~1–2 weeks); RTCC and "best VMS for cities" remain the softest queries. CTR-recovery Track A (live GSC data) still blocked on Omer running `scripts/gsc_reauth.py` interactively.
+- Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Not pushed — awaiting explicit push approval.
+
 ## [v2.287] – 2026-07-28 — GEO roundup: Best PSIM Alternatives (KAB-2037)
 ### Added
 - **New `/resources/psim-alternatives/` page (EN + ES)** — a "Best PSIM alternatives for smart cities (2026)" buyer's-guide roundup. 5th page in the roundup program (Genetec v2.277, Milestone v2.278, AI-video-analytics v2.279, NG911 v2.281), first in the PSIM cluster. Distinct from the existing `psim-vs-unified-platform` explainer, which targets a "PSIM vs unified platform" definitional query — this page targets the buyer's "PSIM alternatives" listicle intent.
