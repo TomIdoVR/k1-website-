@@ -1,11 +1,12 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-06-02
+**Last updated:** 2026-08-04
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
-**Production domain:** kabatone.com
-**Staging (static):** https://staging-k1-website.vercel.app/hero-mockup
-**Stack:** Next.js (App Router) on Vercel — branch `nextjs` in TomIdoVR/k1-website-
-**Static fallback:** `hero-mockup.html` on `main` branch — kept in sync for comparison pages and footer links
+**Production domain:** kabatone.com — `main` branch
+**Staging:** staging.kabatone.com — `nextjs` branch, auto-deploys on push
+**Stack:** Next.js 15 (App Router) on Vercel — TomIdoVR/k1-website-
+**GSC property:** `https://kabatone.com/` (URL-prefix). **Not** `sc-domain:kabatone.com` — that property does not exist on the account, and scripts asking for it fail with a permission error.
+**Analytics auth:** service account `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com`, read-only on GA4 (`properties/530090453`) and GSC. No OAuth refresh token is used in the weekly path.
 
 ---
 
@@ -21,11 +22,25 @@
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last updated:** 2026-07-21 (KAB-1762 weekly GEO review — GEO monitor 7/12 cited, unified-platform + best-VMS-for-cities won this cycle; new /resources/best-ng911-software/ published, v2.281)
-**Current site size:** 209 unique routes × 2 locales (EN + ES) = 418 sitemap URLs
-- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 155 (hub + 154 articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
-- Geographic market guides: **122 country-specific guides** live (Africa, Europe, Americas, Middle East, Asia-Pacific) + 3 regional/cohort guides (Middle East, LATAM, small cities, Mexico municipalities)
-- Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to Paperclip — strategic risk flagged 2026-05-19, see Phase 6 notes below
+**Last GEO monitor run:** 2026-07-21 (KAB-1762 weekly GEO review — 7/12 cited, unified-platform + best-VMS-for-cities won this cycle; new /resources/best-ng911-software/ published, v2.281)
+
+> This is the *GEO monitor* date, not the plan date — the two used to share the same "Last updated" label, which made a stale plan look freshly reviewed. The plan date is at the top of this file. The weekly brief now flags this GEO date when it is more than 21 days old, so citation counts stop being read as current when they are not.
+**Current site size:** 237 unique routes × 2 locales (EN + ES) = 474 sitemap URLs *(counted 2026-08-04)*
+
+**Route breakdown (2026-08-04):**
+
+| Group | Count | Note |
+|---|---|---|
+| `/resources/public-safety-software-<country>/` | **141** | Templated market guides — see sprawl warning below |
+| `/resources/` (non-country) | 39 | Hand-written guides and roundups |
+| `/vs/` competitor comparisons | 21 | |
+| Everything else | 36 | Products, industries, integrations, legal, demo |
+
+⚠️ **Country-page count is drifting from what this plan documented.** The guardrail added in v2.266 was meant to halt country-page generation, and this plan recorded 121. There are now **141** — 20 more than documented. Either the guardrail is not holding or pages were added by another route. Verify before the next generation run: thin duplicate pages at this scale are an indexation liability, not an asset.
+- Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 180 (hub + 141 country guides + 39 other articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
+- Geographic market guides: **141 country-specific guides** live *(counted 2026-08-04; this line previously read 122)*
+- Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to **Paperclip** — strategic risk flagged 2026-05-19, see Phase 6 notes below.
+  **This is the likely source of the 122 → 141 drift.** The v2.266 guardrail was meant to halt generation, but the count kept climbing, so the dispatcher appears to still be firing. Paperclip's local server was stopped 2026-08-04; if the count stops moving while it is down, that confirms the route. Re-enable Paperclip only once the guardrail is verified to hold.
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
 - Note: Empty `src/app/[locale]/resources/public-safety-software-bahrain/` directory exists (no page.tsx, untracked) — leftover from aborted generation, safe to delete

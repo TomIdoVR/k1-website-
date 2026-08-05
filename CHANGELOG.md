@@ -1,3 +1,65 @@
+## [v2.313] – 2026-08-04 — SEO: market segmentation + synthetic-impression filter
+
+**Fixed**
+- The weekly brief's headline CTR was structurally misleading. Site-wide CTR (0.49%) is dominated by US impressions that produce almost no clicks — 53,311 impressions to 77 clicks (0.14%), with 1,716 of 1,725 US queries earning zero clicks in 28 days. The target market (LATAM + Spain) runs at **1.34% CTR** and delivers 42% of all clicks from 15% of impressions.
+- Identified automated SERP polling in the query data: three unrelated queries ("computer automated dispatch software", "peregrine.ai analytics reporting dashboards", "best fire computer aided dispatch software") each showing 900–1,200 impressions at positions 3.7–6.9, zero clicks, ~100% desktop, and an identical usa/gbr/nld/deu/ita/hkg country fingerprint. Unfiltered, these ranked #2, #4 and #5 in the opportunity list and drove three of the four P0 actions in the 2026-08-04 brief.
+
+**Added**
+- `scripts/weekly_brief.py` — `target_market` segment (LATAM + Spain), `by_country` breakdown, and a `synthetic` block flagging queries whose profile matches automated rank tracking rather than human demand. Synthetic queries are excluded from opportunity scoring and striking-distance counts. Criteria are conservative and recorded in the JSON: `clicks=0, impressions>=150, position<=10, desktop_share>=0.95`.
+- `SEO/audits/weekly-2026-08-04-corrected.{json,md}` — revised brief. The original's Sections 2 and 4 are superseded; the P0 title rewrites it proposed had already shipped on 2026-07-06, one day before the measurement window, and moved CTR 0.00pp.
+
+**Changed**
+- GEO status 7/12 → **8/12**. "Genetec alternatives for public safety" is now a confirmed AI citation win. "best NG911 software" is cited but not won — the page is in the source set and K-Dispatch is described, under a secondary "unified/CAD-integrated" bucket rather than the headline recommendations (Motorola VESTA, Intrado Viper, Tyler New World).
+
+## [v2.309] – 2026-08-04 — SEO: weekly brief 2026-08-04
+
+**Added**
+- `SEO/audits/weekly-2026-08-04.json` — 28-day data from GA4 + GSC via service-account auth: 2,883 sessions (+62.4%), 850 organic (29.5%), 55 AI Assistant (+120%), 427 clicks, 87,954 impressions, avg pos 13.5, 211 striking-distance queries
+- `SEO/audits/weekly-2026-08-04.md` — CEO-format brief: traffic by channel, search deltas, GEO citation status, and P0/P1/P2 action plan tied to named queries
+- `SEO/audits/traffic-2026-08-04.html` — self-contained HTML dashboard (deterministic fallback — no Anthropic key in this environment)
+- `SEO/audits/traffic-latest.html` — symlink-equivalent latest view
+
+## [v2.308] – 2026-08-04 — Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON
+
+Second half of merging the two Monday SEO jobs into one. `scripts/weekly_report.py` consumes the collector JSON from v2.307 and produces the human brief — an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan — rendered into a self-contained HTML dashboard. The collector owns *data*; this owns *narrative + presentation*. Neither imports the other's responsibilities, so a failure in one can't silently mask the other (the bug that let a dead OAuth token run green for three weeks).
+
+### Added
+- **`scripts/weekly_report.py`** — reads `weekly_brief.py --out` JSON, calls Anthropic over `urllib` (no SDK, matching the collector), and renders a dark KabatOne dashboard: KPIs (sessions, organic, AI Assistant, opportunity uplift), weekly trend + source-mix charts, keyword opportunity stack, a dedicated **Striking Distance** table (pos 5–15), cluster momentum, and top referrers.
+- **`--no-ai`** deterministic brief (zero network, zero key) — also the automatic fallback whenever the LLM step fails, so the report is never blank.
+- Reuses only the shape-agnostic markdown→HTML formatters from `seo_weekly_agent.py`; the renderer targets the collector's own JSON contract rather than the legacy `analyse()` shape.
+
+### Verified
+- End-to-end on live 28-day data: collector → report in both deterministic and `claude-sonnet-4-6` modes. LLM brief correctly grounded (C5, LATAM dispatch, real position/impression figures) with valid P0/P1/P2 badges.
+
+*(Versions v2.287–v2.306 are the homepage redesign work on the `hero-redesign` branch and will appear here when that merges.)*
+
+## [v2.307] – 2026-08-04 — Weekly brief collector: service-account auth, all-channel traffic
+
+First half of merging the two Monday SEO jobs into one. `scripts/weekly_brief.py` collects everything the weekly brief needs — all-channel GA4 traffic, GSC search performance, deterministic opportunity scoring — into a single JSON. No LLM, no HTML, no git, no Slack; those belong to the caller.
+
+*(Versions v2.287–v2.306 are the homepage redesign work on the `hero-redesign` branch and will appear here when that merges.)*
+
+### Fixed — the credential failure that cost three weeks
+- **Service-account auth only, no OAuth refresh token in the path.** The weekly pull had been failing since mid-July with `invalid_grant`. It was diagnosed as an expired token and regenerated twice; each replacement died within a week. Refresh tokens are now removed from the weekly path rather than re-fixed.
+- **No silent OAuth fallback.** That fallback is *why* it went unnoticed for three weeks: `google_auth.py --check gsc` kept reporting `[OK]` via the service-account path while the actual weekly job failed. The collector fails loudly instead.
+- Verified by running the full pull with `~/.config/claude-seo/oauth-token.json` renamed away — the regression test for this whole class of failure.
+- Required granting `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com` Full access on the `https://kabatone.com/` property. GA4 access already existed; GSC did not (403 until granted).
+
+### Fixed — GSC totals were understated by 58%
+- **Totals now come from a dimensionless query.** They were summed from query-dimension rows, which undercounts badly: measured **180 clicks summed vs 427 actual**, 54,009 impressions vs 87,954. GSC anonymises rare queries and omits them from query-dimension results, so those rows can never sum to site totals.
+- **Query row limit 1,000 → 25,000.** The site returns ~2,566 queries over 28 days, so the previous cap silently truncated ranking data. Striking-distance count went **125 → 211**.
+
+### Added — non-search traffic
+The previous GA4 pull hard-filtered every page-level query to Organic Search, so ~70% of sessions appeared as a single number with no detail. Now collected: per-channel sessions/users/engagement/key-events with prior-period deltas, landing pages **per channel**, referrer source/medium breakdown, and 12-week trend.
+
+- **`AI Assistant` isolated as its own section** — 55 sessions, +120% vs prior, with its own landing pages and weekly trend. The only direct measurement of whether the GEO work converts to traffic, and it had never appeared in any report.
+- First full picture: Direct **62.6%**, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9%. The brief had been reporting only the 29.5%.
+
+### Notes
+- Credentials resolve in order: `GOOGLE_SERVICE_ACCOUNT_JSON_B64` → `GOOGLE_SERVICE_ACCOUNT_JSON` → local key file. The base64 form exists because cloud environment variables are entered as single-line `KEY=value` pairs, which a multi-line JSON key cannot survive — pasting it raw fails with `Couldn't parse "{"`.
+- Scoring helpers (`expected_ctr`, `business_value`, `assign_cluster`) are imported from `seo_weekly_agent.py` rather than duplicated, so the brief and the dashboard cannot disagree about what counts as an opportunity.
+- Phase 2 (rewiring the cloud trigger to run this) requires the script to be reachable on GitHub, which is why it lands here on `nextjs` rather than the redesign branch.
+
 ## [v2.286] – 2026-07-29 — Legal page URL: /legal/sitec-911 → /legal/911-michoacan
 ### Changed
 - Renamed the legal page route from `/legal/sitec-911` to `/legal/911-michoacan` (EN + ES), updating the `SLUG` constant, canonical URL, and hreflang alternates.
