@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.313 -->
+      <div class="tl-entry fix" id="v2.313">
+        <div class="tl-meta"><span class="tl-ver">v2.313</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">SEO: market segmentation + synthetic-impression filter</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The headline CTR was structurally misleading.</strong> Site-wide CTR (0.49%) is dominated by US impressions that produce almost no clicks — 53,311 impressions to 77 clicks (0.14%), with 1,716 of 1,725 US queries earning zero clicks in 28 days. The target market (LATAM + Spain) runs at <strong>1.34% CTR</strong> and delivers 42% of all clicks from 15% of impressions</li>
+            <li><strong>Automated SERP polling identified.</strong> Three unrelated queries — "computer automated dispatch software", "peregrine.ai analytics reporting dashboards", "best fire computer aided dispatch software" — each show 900–1,200 impressions at positions 3.7–6.9, zero clicks, ~100% desktop, and an identical usa/gbr/nld/deu/ita/hkg country fingerprint. Unfiltered they ranked #2, #4 and #5 in the opportunity list and drove three of the four P0 actions in the 2026-08-04 brief</li>
+            <li><strong>Collector now segments.</strong> <code>scripts/weekly_brief.py</code> emits <code>target_market</code>, <code>by_country</code> and a <code>synthetic</code> block; synthetic queries are excluded from opportunity scoring and striking-distance counts. Criteria recorded in the JSON: <code>clicks=0, impressions&ge;150, position&le;10, desktop_share&ge;0.95</code></li>
+            <li><strong>Brief corrected.</strong> <code>SEO/audits/weekly-2026-08-04-corrected.{json,md}</code> supersedes Sections 2 and 4 of the original — the P0 title rewrites it proposed had already shipped on 2026-07-06, one day before the measurement window opened, and moved CTR 0.00pp</li>
+            <li><strong>GEO 7/12 → 8/12.</strong> "Genetec alternatives for public safety" is a confirmed AI citation win. "best NG911 software" is cited but not won — the page is in the source set and K-Dispatch is described, under a secondary "unified/CAD-integrated" bucket rather than the headline recommendations (Motorola VESTA, Intrado Viper, Tyler New World)</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.309 -->
       <div class="tl-entry added" id="v2.309">
         <div class="tl-meta"><span class="tl-ver">v2.309</span><span class="tl-date">2026-08-04</span></div>
