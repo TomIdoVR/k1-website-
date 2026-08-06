@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* ── Skip link ──
+   Off-screen until focused, then pinned to the top-left. First tab stop on
+   every page, so keyboard users can jump the whole header. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 18px;
+  border-radius: 0 0 8px 0;
+  background: #0757f7;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid #0b1220;
+  outline-offset: 2px;
+}
+
 /* ── Simulator keyframes ── */
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }

@@ -127,7 +127,7 @@ export function HeroLabFooter({ es }: { es: boolean }) {
             {INTEGRATIONS.map((i) => <Link href={i.href} key={i.href}>{i.t[lang]}</Link>)}
           </div>
           <div className="hlc-footer-col">
-            <h3>{es ? 'Comparativas' : 'Comparativas'}</h3>
+            <h3>{es ? 'Comparativas' : 'Comparisons'}</h3>
             {COMPARISONS.map((c) => <Link href={c.href} key={c.href}>vs. {c.label}</Link>)}
           </div>
           <div className="hlc-footer-col">

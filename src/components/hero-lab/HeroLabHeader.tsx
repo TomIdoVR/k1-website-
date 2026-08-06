@@ -97,7 +97,16 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
       </div>
 
       <details className="hll-mobile-menu">
-        <summary aria-label={es ? 'Abrir menú' : 'Open menu'}><span /><span /><span /></summary>
+        {/* The name has to change with state, and aria-label cannot — it is a
+            static string, so it stayed "Open menu" while the menu was open.
+            Two visually-hidden labels swapped by [open] give the summary the
+            right accessible name in both states. <details> already exposes the
+            expanded state natively, so no aria-expanded is needed. */}
+        <summary>
+          <span className="hll-sr-only hll-label-open">{es ? 'Abrir menú' : 'Open menu'}</span>
+          <span className="hll-sr-only hll-label-close">{es ? 'Cerrar menú' : 'Close menu'}</span>
+          <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
+        </summary>
         <div className="hll-mobile-menu-panel">
           <Link href={pv('/k-safety')}>{es ? 'Soluciones' : 'Solutions'}</Link>
           <Link href="/industries/public-safety">{es ? 'Industrias' : 'Industries'}</Link>

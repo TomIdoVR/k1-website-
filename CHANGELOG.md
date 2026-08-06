@@ -1,3 +1,23 @@
+## [v2.320] – 2026-08-06 — Audit follow-up: server-rendered lang, skip link, accessible contact form
+### Fixed
+- **Every page shipped with no `lang` attribute.** `[locale]/layout.tsx` carried a comment reading "Set lang attribute server-side before React hydrates" above an inline `<script>` that set `document.documentElement.lang` — in the browser, after parse. The served HTML had no `lang` at all, which is what assistive tech and language detection read before JS runs. `<html>` now lives in `[locale]/layout.tsx`, where the locale is actually available, and renders `lang` server-side. Verified on a production build: `/hero-lab` → `lang="en"`, `/es/hero-lab` → `lang="es"`.
+  - The root layout is now a pass-through. It cannot resolve the locale — it sits above the `[locale]` segment — so `getLocale()` there returned the default and Spanish pages would still have shipped `lang="en"`. Passing the locale down via a middleware header was also tried and does not work: `headers()` reads the request, and next-intl's rewrite drops request-header mutations.
+  - `params.locale` is validated against `routing.locales` before use. With `localePrefix: 'as-needed'` the segment can capture a real path component on un-prefixed English URLs, which produced `lang="contact"` and `lang="hero-lab"` in testing.
+  - Root `not-found.tsx` now renders its own `html`/`body`, since the root layout no longer provides them. `global-error.tsx` already did.
+- **Contact form had no production-safe fallback.** It carried no `method` or `action`, so the browser default was **GET to the current URL** — putting name, email, phone and message into the query string, and therefore into server and analytics logs, any time `handleSubmit` did not run. It now declares `method="post"` and posts to the Formspree endpoint as a no-JS fallback; the normal path still `preventDefault()`s and submits via `fetch`.
+- **Contact fields had no programmatic labels.** Zero `htmlFor` in the component — placeholders were doing the work, which screen readers do not treat as labels. All seven controls now pair `htmlFor`/`id`, and the five personal-data fields carry `autocomplete` tokens (`name`, `organization`, `email`, `tel`, `country-name`).
+- **English footer said "Comparativas".** `{es ? 'Comparativas' : 'Comparativas'}` — the ternary returned Spanish in both branches.
+
+### Added
+- **Skip link** as the first tab stop on every page, off-screen until focused, localized (`Skip to content` / `Ir al contenido`), targeting a new `<main id="main">`. There was none anywhere in `src/`.
+- **Consent notice** above the contact submit button in both languages, linking to the existing `/privacy` route.
+- The hero-lab mobile menu's accessible name now changes with state. It was a static `aria-label="Open menu"` that still read "Open menu" while open; `aria-label` cannot vary, so two visually-hidden labels swap on `[open]`. `<details>` already exposes the expanded state natively, so no `aria-expanded` is needed — contrary to the audit's note.
+
+### Notes
+- Sourced from an external end-to-end audit. Its top "launch blocker" — that `/hero-lab` is `noindex` and titled "Hero Lab (internal)" — is the intended state, not a defect: it is an internal review route, deliberately unlinked, as the comment in its own `page.tsx` says. No change made.
+- Still open from that audit and **not** addressed here, as they are content/ownership decisions: the 70M vs 73M split (hero-lab consistently says 70M+; every 73M is on a `/vs/*` page), the claim register for SOC 2 / 99.9% / 42%, untranslated `/es/demo/*` routes, and the missing H1s on `/simulator` and the five demo scenarios — all confirmed real.
+- **Unrelated pre-existing issue found while verifying:** the dev server does not run the middleware, so un-prefixed English URLs (`/hero-lab`, `/contact`) fall through to the homepage locally. `middleware.ts` sits at the repo root while the app uses a `src/` directory. The Vercel build picks it up and production is unaffected — verified against the deployment — but local dev testing must use `/en/…` prefixes. `middleware.ts` is byte-identical to before this change.
+
 ## [v2.319] – 2026-08-05 — Full review: every image unique, and mobile fixed
 ### Changed
 - **Ended image reuse across the redesign.** An inventory of the whole surface found **seven images doing duty in 21 places**: `ai.webp` on four pages, `gis.webp` on four, `video.webp` on four, `events.webp` on three, and `responder.webp`, `integrations.webp` and `dispatch.webp` on two each. The one flagged by eye — the phones-on-a-desk shot shared by K-Safety and K-Dispatch — was a symptom, not the problem.

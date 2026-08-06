@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.320 -->
+      <div class="tl-entry fix" id="v2.320">
+        <div class="tl-meta"><span class="tl-ver">v2.320</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Audit follow-up: server-rendered lang, skip link, accessible contact form</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every page shipped with no <code>lang</code> attribute.</strong> A comment reading "Set lang attribute server-side before React hydrates" sat above an inline <code>&lt;script&gt;</code> that set it <em>in the browser, after parse</em> — so the served HTML had none, which is what assistive tech and language detection read before JS runs. <code>&lt;html&gt;</code> now lives in <code>[locale]/layout.tsx</code> where the locale is available. Verified on a production build: <code>/hero-lab</code> → <code>lang="en"</code>, <code>/es/hero-lab</code> → <code>lang="es"</code></li>
+            <li>The root layout is now a pass-through — it sits above the <code>[locale]</code> segment and cannot resolve the locale, so <code>getLocale()</code> there returned the default. A middleware-header approach was also tried and does not work: <code>headers()</code> reads the request and next-intl's rewrite drops request-header mutations. <code>params.locale</code> is validated against <code>routing.locales</code>, since with <code>localePrefix: 'as-needed'</code> the segment can capture a real path component (this produced <code>lang="contact"</code> in testing)</li>
+            <li><strong>Contact form had no production-safe fallback.</strong> No <code>method</code> or <code>action</code>, so the browser default was <strong>GET to the current URL</strong> — putting name, email, phone and message into the query string and server/analytics logs whenever the JS handler did not run. Now <code>method="post"</code> to the Formspree endpoint as a no-JS fallback</li>
+            <li><strong>Contact fields had no programmatic labels</strong> — zero <code>htmlFor</code>, with placeholders doing the work. All seven controls now pair <code>htmlFor</code>/<code>id</code>, and the five personal-data fields carry <code>autocomplete</code> tokens. Added a consent notice above the submit button in both languages</li>
+            <li><strong>Added a skip link</strong> as the first tab stop on every page, localized, targeting a new <code>&lt;main id="main"&gt;</code>. There was none anywhere in <code>src/</code></li>
+            <li><strong>English footer said "Comparativas"</strong> — <code>{es ? 'Comparativas' : 'Comparativas'}</code> returned Spanish in both branches. The mobile menu's accessible name now changes with state, which a static <code>aria-label</code> could not do</li>
+            <li>The audit's top "launch blocker" — <code>/hero-lab</code> being <code>noindex</code> and titled "Hero Lab (internal)" — is the intended state for an internal review route, not a defect. No change made</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.319 -->
       <div class="tl-entry changed" id="v2.319">
         <div class="tl-meta"><span class="tl-ver">v2.319</span><span class="tl-date">2026-08-05</span></div>
