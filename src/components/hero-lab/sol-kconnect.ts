@@ -27,25 +27,18 @@ const KCONNECT: SolutionContent = {
   h1b: S('sharing for public safety.', 'videovigilancia comunitaria.'),
   sub: S('Secure, real-time video sharing and collaboration between private organizations and public safety agencies — enabling unified situational awareness without boundaries.',
     'Conecta cámaras de negocios y ciudadanos al centro de mando municipal. K‑Connect amplía la cobertura de vigilancia sin infraestructura adicional.'),
-  heroImg: '/images/k-connect-mockup.webp',
+  /* Purpose-built three-panel composition (v2.314): the connected-organizations
+     table goes centre-stage — the thing K-Connect actually is — with the access
+     log left and the role/permission model plus network totals right. The
+     sharing card, chips and stats the hero used to overlay are all inside the
+     artwork now, so heroEvent/chips are gone. Same pattern as sol-kdispatch,
+     sol-kvideo and sol-ktraffic. */
+  heroImg: '/images/modules/hero-k-connect.webp',
   heroBare: true,
+  heroLight: true,
   heroAlt: S('K‑Connect network view showing connected organization cameras shared with agencies',
     'Vista de red K‑Connect con cámaras de organizaciones conectadas compartidas con agencias'),
   consoleTitle: S('K-CONNECT NETWORK', 'RED K-CONNECT'),
-  heroEvent: {
-    tag: S('SHARING ACTIVE', 'COMPARTIENDO'),
-    title: S('Connected organizations', 'Organizaciones conectadas'),
-    loc: S('Role-based access · Audited', 'Acceso por roles · Auditado'),
-    rows: [
-      { l: S('Cameras shared', 'Cámaras compartidas'), v: '12' },
-      { l: S('Access', 'Acceso'), v: S('Role-based', 'Por roles') },
-      { l: S('Expiry', 'Expiración'), v: S('Automatic', 'Automática') },
-    ],
-  },
-  chips: [
-    { c: '#22c55e', t: S('Controlled video sharing', 'Compartición controlada') },
-    { c: '#3b82f6', t: S('Audit trails & expiry', 'Auditoría y expiración') },
-  ],
   stats: [
     { v: S('Cross-agency', 'Interagencial'), l: S('Sharing', 'Compartición') },
     { v: S('Role-based', 'Basado en roles'), l: S('Access', 'Acceso') },

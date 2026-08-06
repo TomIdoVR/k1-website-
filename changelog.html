@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.314 -->
+      <div class="tl-entry added" id="v2.314">
+        <div class="tl-meta"><span class="tl-ver">v2.314</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">K-Traffic and K-Connect heroes: the set is complete</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Traffic hero.</strong> The corridor view goes centre-stage: one arterial labelled MAIN ST with four signal nodes carrying their live timings (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s) over a green→amber→green flow band, three live intersection thumbnails beneath, and an ADAPTIVE CONTROL card reading "Corridor optimization / Main St · 4 signals". Incidents on the left, SYSTEM PERFORMANCE on the right — the page's own five <code>perfBars</code> values (98 / 34 / 91 / 99.9 / 87) plus 150+ intersections and 12 cities</li>
+            <li><strong>New K-Connect hero.</strong> The connected-organizations table goes centre-stage, because that is what K-Connect actually is: Riverside Mall, City Hospital and Central Bank all Shared, Metro School District Pending, with shared feed thumbnails beneath and a SHARING ACTIVE card. Access log on the left, and on the right the permission model — Dispatcher · View live, Investigator · View + export, Supervisor · Full access — over 48 organizations, 312 shared cameras, 27 active grants</li>
+            <li>Both carry the <strong>real 1K KabatOne mark</strong> in their app icons, composited in by pixel surgery (K-Traffic 437,34 / 38×38; K-Connect 460,21 / 57×57)</li>
+            <li><strong>Retires the last two stand-ins.</strong> K-Traffic pointed at <code>k-traffic-mockup.webp</code> and K-Connect at <code>k-connect-mockup.webp</code> — the same shots the homepage and the Solutions accordion use. Those files stay where they are still used; the solution pages no longer borrow them. <code>heroEvent</code>/<code>chips</code> removed from both. <strong>All five solution heroes are now purpose-built</strong> and share one measured geometry</li>
+            <li><strong>Fixed a leak in the logo-swap script.</strong> It found the tile interior by flood-filling inward from the badge box, which works only while the invented glyph is fully enclosed by tile fill. K-Connect's glyph touched the tile's top edge, so the flood ran through the gap and left roughly half the glyph unpainted under the composited mark. Replaced with a scanline-enclosure test — a pixel is interior when it has fill both left and right on its row <em>and</em> above and below in its column</li>
+            <li>Geometry verified for both at 1280px: 574px wide, 0.324 scale, side-by-side, nothing clipped — identical to the other three. K-Traffic 217KB, K-Connect 110KB</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.313 -->
       <div class="tl-entry added" id="v2.313">
         <div class="tl-meta"><span class="tl-ver">v2.313</span><span class="tl-date">2026-08-05</span></div>

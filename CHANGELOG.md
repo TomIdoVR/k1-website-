@@ -1,3 +1,22 @@
+## [v2.314] – 2026-08-05 — K-Traffic and K-Connect heroes: the set is complete
+### Added
+- **New K-Traffic hero.** The corridor view goes centre-stage: one arterial labelled MAIN ST with four signal nodes carrying their live timings (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s) over a green→amber→green flow band, three live intersection thumbnails beneath, an ADAPTIVE CONTROL card reading "Corridor optimization / Main St · 4 signals / Signals 4 · Response 98% · Congestion -34%", incidents on the left (Collision, Stalled Vehicle, Signal Fault, Congestion Spike) and SYSTEM PERFORMANCE on the right — the page's own five `perfBars` values (98 / 34 / 91 / 99.9 / 87) plus 150+ intersections and 12 cities.
+- **New K-Connect hero.** The connected-organizations table goes centre-stage, because that is what K-Connect actually is: Riverside Mall 8 cameras, City Hospital 12, Central Bank 4 all Shared, Metro School District 6 Pending, with three shared feed thumbnails beneath and a SHARING ACTIVE card reading "Connected organizations / Role-based access · Audited / Cameras shared 12 · Access Role-based · Expiry Automatic". Access log on the left (granted / viewed / expired / requested), and on the right the permission model — Dispatcher · View live, Investigator · View + export, Supervisor · Full access — over 48 organizations, 312 shared cameras, 27 active grants.
+- Both carry the **real 1K KabatOne mark** in their app icons, composited in by pixel surgery (K-Traffic 437,34 / 38×38 fill `rgb(3,175,204)`; K-Connect 460,21 / 57×57 fill `rgb(40,173,94)`).
+
+### Changed
+- **Retires the last two stand-ins.** K-Traffic pointed at `k-traffic-mockup.webp` and K-Connect at `k-connect-mockup.webp` — the same shots the homepage and the Solutions accordion use. Those files stay where they are still used; the solution pages no longer borrow them.
+- `heroEvent` and `chips` removed from both content files: the compositions are self-contained, matching K-Dispatch and K-Video.
+- **All five solution heroes are now purpose-built** and share one measured geometry.
+
+### Fixed
+- **The logo-swap script leaked on K-Connect.** It found the tile interior by flood-filling inward from the badge's bounding box, which works only while the invented glyph is fully enclosed by tile fill. K-Connect's glyph touched the tile's top edge, so the flood ran straight through the gap and left roughly half the glyph unpainted under the composited mark. Replaced the flood with a scanline-enclosure test — a pixel is tile interior when it has fill both left and right on its row *and* above and below in its column — which handles rounded corners without depending on connectivity.
+
+### Notes
+- Geometry verified for both at 1280px: 574px wide, 0.324 scale, side-by-side with the copy, nothing clipped — identical to K-Safety, K-Dispatch and K-Video.
+- K-Traffic 217KB, K-Connect 110KB. K-Connect is the lightest of the five; its flat table compresses far better than the photographic corridor and street scenes.
+- Known cosmetic, same class as the K-Safety camera timestamp: the K-Connect hospital thumbnail carries a garbled signboard. It renders at roughly 3px at hero scale so it reads as texture, but it is there under magnification.
+
 ## [v2.313] – 2026-08-05 — K-Video hero: purpose-built video wall composition
 ### Added
 - **New K-Video hero**, third in the set after K-Safety and K-Dispatch and built to the same recipe: few elements at large type, drawn for the hero slot rather than a dense screenshot shrunk to fit. The product's core surface goes centre-stage — here the **live video wall**, with a focused CAM-14 street feed carrying teal AI bounding boxes, a red LIVE badge, and three camera thumbnails (CAM-02 / CAM-07 / CAM-11) beneath it.

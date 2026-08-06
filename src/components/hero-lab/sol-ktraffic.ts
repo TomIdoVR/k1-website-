@@ -27,24 +27,18 @@ const KTRAFFIC: SolutionContent = {
   h1b: S('with adaptive signal control.', 'inteligente con control adaptativo.'),
   sub: S('Connects traffic signals, cameras, sensors, and control centers into one intelligent platform — reducing congestion, detecting incidents, and optimizing city mobility in real time.',
     'Optimiza el flujo, detecta infracciones y responde a incidentes antes de que se conviertan en colapsos. K‑Traffic conecta semáforos, sensores y aplicación de normas en un sistema adaptativo.'),
-  heroImg: '/images/k-traffic-mockup.webp',
+  /* Purpose-built three-panel composition (v2.314): the corridor diagram goes
+     centre-stage — four Main St signals with their live timings over a
+     green→amber→green flow band — with incidents left and system performance
+     right. The adaptive-control card, chips and stats the hero used to
+     overlay are all inside the artwork now, so heroEvent/chips are gone.
+     Same pattern as sol-kdispatch and sol-kvideo. */
+  heroImg: '/images/modules/hero-k-traffic.webp',
   heroAlt: S('K‑Traffic console showing corridor flow, signal states, and detected incidents',
     'Consola de K‑Traffic con flujo de corredores, estados de semáforos e incidentes detectados'),
+  heroBare: true,
+  heroLight: true,
   consoleTitle: S('K-TRAFFIC · CORRIDOR VIEW', 'K-TRAFFIC · VISTA DE CORREDOR'),
-  heroEvent: {
-    tag: S('ADAPTIVE CONTROL', 'CONTROL ADAPTATIVO'),
-    title: S('Corridor optimization', 'Optimización de corredor'),
-    loc: S('Main St · 4 signals', 'Main St · 4 semáforos'),
-    rows: [
-      { l: S('Signals', 'Semáforos'), v: '4' },
-      { l: S('Response', 'Respuesta'), v: '98%' },
-      { l: S('Congestion', 'Congestión'), v: '-34%' },
-    ],
-  },
-  chips: [
-    { c: '#06b6d4', t: S('Adaptive signal control', 'Control adaptativo') },
-    { c: '#22c55e', t: S('Real-time incident detection', 'Detección en tiempo real') },
-  ],
   stats: [
     { v: '150+', l: S('Intersections managed', 'Intersecciones gestionadas') },
     { v: '12', l: S('Cities connected', 'Ciudades conectadas') },
