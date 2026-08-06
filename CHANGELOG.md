@@ -1,3 +1,17 @@
+## [v2.315] – 2026-08-05 — Purpose-built map for the K-Safety homepage section
+### Added
+- **New K-Safety map canvas** on the homepage Solutions accordion, with a **live video inset** floating over the map: a CAM-07 street view of the collision with a red LIVE badge and a "CAM-07 · Reforma & Chapultepec" caption, the same picture-in-picture idea as the K-Dispatch hero.
+- The map is now the incident the panel beside it is actually describing: a Traffic Accident on Paseo de la Reforma at Av. Reforma & Chapultepec, **U-14 and U-03 on scene**, **U-22, U-07 and U-31 inbound** on dashed routes. Districts are labelled POLANCO, CHAPULTEPEC, ROMA and CONDESA; every other street is deliberately unlabelled.
+
+### Changed
+- **The section's art contradicted its own copy.** Only the map is an image here — the left nav, the title bar and the right rail are all real DOM. The rail reads "INCIDENT 2451 · Traffic Accident · Av. Reforma & Chapultepec · HIGH PRIORITY · On scene 2 · En route 3", while the image showed *FORCED ENTRY* and *VEHICLE STOP* pins and carried **two units both labelled U-14**. Map and rail now tell one story, and all five unit IDs are distinct.
+- **Retires the most over-used image on the site.** The section was showing `/images/modules/gis.webp`, which also appears on the live homepage, the LP page (three times), `ModulesSection`, and the capability rows of all four other solution pages — ten places in total. K-Safety, the flagship product, was being represented on the homepage by the site's most generic stock shot. `gis.webp` stays where it is still used; this section no longer borrows it.
+
+### Notes
+- Authored to a **safe area**. The canvas is 468×414 (ratio 1.13) and the art is 4:3, so `object-fit: cover` eats ~7.8% off each side — measured, not estimated. A first pass placed the video card too far left and the crop cut its caption to "AM-07"; the art was re-composed to keep every label, marker and the card inside the central ~76%.
+- 75KB at 1200×896, opaque WebP — it goes through the Next optimizer normally, unlike the transparent solution heroes.
+- Verified at true render size rather than by screenshot: the Browser pane has been returning blank captures, so the crop was reproduced deterministically with sharp at the measured box.
+
 ## [v2.314] – 2026-08-05 — K-Traffic and K-Connect heroes: the set is complete
 ### Added
 - **New K-Traffic hero.** The corridor view goes centre-stage: one arterial labelled MAIN ST with four signal nodes carrying their live timings (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s) over a green→amber→green flow band, three live intersection thumbnails beneath, an ADAPTIVE CONTROL card reading "Corridor optimization / Main St · 4 signals / Signals 4 · Response 98% · Congestion -34%", incidents on the left (Collision, Stalled Vehicle, Signal Fault, Congestion Spike) and SYSTEM PERFORMANCE on the right — the page's own five `perfBars` values (98 / 34 / 91 / 99.9 / 87) plus 150+ intersections and 12 cities.

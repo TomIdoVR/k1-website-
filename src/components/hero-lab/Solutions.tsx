@@ -96,7 +96,15 @@ type Product = {
 const PRODUCTS: Product[] = [
   {
     key: 'safety', n: '01', name: 'K-Safety', color: '#1858f5',
-    logo: '/images/icons/k-safety.png', img: '/images/modules/gis.webp', href: '/k-safety',
+    /* Purpose-built map (v2.315). This canvas only ever shows the map — the
+       nav, rail and title bar around it are DOM — so the art has to agree
+       with the rail beside it. `gis.webp` did not: it showed FORCED ENTRY and
+       VEHICLE STOP while the rail read "Traffic Accident · Av. Reforma &
+       Chapultepec · On scene 2 · En route 3". This one is that incident, with
+       U-14/U-03 on scene and U-22/U-07/U-31 inbound.
+       Authored inside a central safe area: the canvas is ~1.13 wide but the
+       art is 4:3, so object-fit:cover eats ~8% off each side. */
+    logo: '/images/icons/k-safety.png', img: '/images/modules/k-safety-map.webp', href: '/k-safety',
     short: T2('Command & Incident Management', 'Comando y Gestión de Incidentes'),
     body: T2('Real-time situational awareness across GIS, video, units and workflows — every incident coordinated from one operational picture.',
       'Conciencia situacional en tiempo real sobre GIS, video, unidades y flujos — cada incidente coordinado desde una sola imagen operativa.'),

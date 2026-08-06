@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.315 -->
+      <div class="tl-entry changed" id="v2.315">
+        <div class="tl-meta"><span class="tl-ver">v2.315</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">Purpose-built map for the K-Safety homepage section</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Safety map canvas</strong> on the homepage Solutions accordion, with a <strong>live video inset</strong> floating over the map: a CAM-07 street view of the collision with a red LIVE badge and a "CAM-07 · Reforma &amp; Chapultepec" caption — the same picture-in-picture idea as the K-Dispatch hero</li>
+            <li><strong>The section's art contradicted its own copy.</strong> Only the map is an image here — the left nav, title bar and right rail are all real DOM. The rail reads "INCIDENT 2451 · Traffic Accident · Av. Reforma &amp; Chapultepec · On scene 2 · En route 3", while the image showed <em>FORCED ENTRY</em> and <em>VEHICLE STOP</em> pins and carried <strong>two units both labelled U-14</strong>. The map is now that incident — U-14 and U-03 on scene, U-22/U-07/U-31 inbound on dashed routes — and all five unit IDs are distinct</li>
+            <li><strong>Retires the most over-used image on the site.</strong> The section was showing <code>/images/modules/gis.webp</code>, which also appears on the live homepage, the LP page (three times), <code>ModulesSection</code>, and the capability rows of all four other solution pages — ten places in total. K-Safety, the flagship product, was represented on the homepage by the site's most generic stock shot</li>
+            <li>Authored to a <strong>measured safe area</strong>: the canvas is 468×414 but the art is 4:3, so <code>object-fit: cover</code> eats ~7.8% off each side. A first pass placed the video card too far left and the crop cut its caption to "AM-07"; the art was re-composed to keep every label, marker and the card inside the central ~76%. 75KB at 1200×896</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.314 -->
       <div class="tl-entry added" id="v2.314">
         <div class="tl-meta"><span class="tl-ver">v2.314</span><span class="tl-date">2026-08-05</span></div>
