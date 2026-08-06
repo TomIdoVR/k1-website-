@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.318 -->
+      <div class="tl-entry changed" id="v2.318">
+        <div class="tl-meta"><span class="tl-ver">v2.318</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">Ecosystem section: one rhythm for logos and text</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every entry is now the same chip</strong>, whether it carries a partner logo or a word. The section had been setting logos as bare images inside a plain text column, so two visual languages sat in one list with no shared baseline, height or weight. One bordered box per entry gives each column a single rhythm</li>
+            <li><strong>The brands were the faintest thing in the section.</strong> Logos rendered at <code>opacity: 0.4</code>, putting them <em>below</em> the plain text beside them — so the strongest trust signal on the page was the weakest mark on it. Now 0.82, full on hover</li>
+            <li><strong>Normalised the marks on a fixed 88×18 box</strong> instead of height alone. The seven assets range 4.13:1 (RapidSOS) to 6.65:1 (Carbyne), so a shared 20px height produced widths from 83px to 133px — a 60% spread in visual mass that read as ragged</li>
+            <li><strong>Removed five columns of dead space.</strong> The grid used <code>auto-fit, minmax(160px, 1fr)</code>, resolving to six columns against seven groups — so "Drones &amp; aerial" wrapped onto a row alone and left the rest empty. Now fixed at four columns for a 4 + 3 layout with one empty cell; 3 under 1080px, 2 under 720px, 1 under 440px</li>
+            <li>Measured after the change at 1280px: 4 columns, 4 + 3 rows, 1 empty cell (was 5), all 23 chips a uniform 38px tall, all 7 logo boxes a uniform 88×18</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.317 -->
       <div class="tl-entry fix" id="v2.317">
         <div class="tl-meta"><span class="tl-ver">v2.317</span><span class="tl-date">2026-08-05</span></div>

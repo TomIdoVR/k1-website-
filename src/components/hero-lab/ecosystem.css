@@ -42,10 +42,15 @@
 
 .eco-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
 
+/* Fixed 4 columns rather than auto-fit. There are seven groups, and
+   auto-fit/minmax(160px) resolved to six at desktop — so the seventh wrapped
+   onto a row by itself and left five columns of dead space. 4 x 2 leaves a
+   single empty cell instead. */
 .eco-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: clamp(18px, 2vw, 28px);
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  gap: clamp(22px, 2.4vw, 34px) clamp(18px, 2vw, 28px);
   padding-block: clamp(24px, 2.6vw, 36px);
   border-top: 1px solid #e6e9ee;
   border-bottom: 1px solid #e6e9ee;
@@ -65,17 +70,37 @@
   min-height: 28px;
 }
 
-.eco-items { display: flex; flex-direction: column; gap: 14px; }
+/* Every entry is the same chip, whether it carries a logo or a word. The
+   section previously set logos as bare images in a text column: the marks
+   ranged 4.13:1 to 6.65:1 in aspect, so at a shared 20px height their widths
+   ran 83-133px, and at 0.4 opacity the brands — the strongest trust signal
+   here — rendered fainter than the plain text beside them. One box per entry
+   gives the column a single rhythm and stops the two kinds fighting. */
+.eco-items { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .eco-item {
-  font-size: 14.5px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #e2e6ec;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13.5px;
   font-weight: 500;
   color: #29323f;
-  line-height: 1.3;
+  line-height: 1.25;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.eco-item:hover { border-color: #cbd3dd; box-shadow: 0 1px 3px rgb(15 23 36 / 0.06); }
+
+/* Normalise on a fixed box rather than height alone, so wide wordmarks
+   (Carbyne 6.65:1) and narrow ones (RapidSOS 4.13:1) end up with comparable
+   visual mass instead of a 60% spread in width. */
 .eco-item.has-logo img {
-  height: 20px;
-  max-width: 100%;
+  display: block;
+  width: 88px;
+  height: 18px;
   object-fit: contain;
   object-position: left center;
   /* Several partner marks (Genetec, Corsight) are white-fill assets meant
@@ -83,12 +108,13 @@
      silhouette regardless of source color, matching how the live
      homepage's own partner row already treats these same files. */
   filter: brightness(0);
-  opacity: 0.4;
+  opacity: 0.82;
   transition: opacity 0.2s ease;
 }
-.eco-group:hover .eco-item.has-logo img { opacity: 0.75; }
+.eco-item.has-logo:hover img { opacity: 1; }
 
 .eco-note { font-size: 12.5px; color: #667185; margin-top: 20px; }
 
-@media (max-width: 980px) { .eco-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px) { .eco-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1080px) { .eco-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .eco-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .eco-grid { grid-template-columns: 1fr; } }

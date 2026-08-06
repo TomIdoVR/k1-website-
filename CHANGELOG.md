@@ -1,3 +1,16 @@
+## [v2.318] – 2026-08-05 — Ecosystem section: one rhythm for logos and text
+### Changed
+- **Every entry is now the same chip**, whether it carries a partner logo or a word. The section had been setting logos as bare images inside a plain text column, so two different visual languages sat in one list with no shared baseline, height or weight. A single bordered box per entry gives each column one rhythm and stops the two kinds fighting.
+- **The brands were the faintest thing in the section.** Logos rendered at `opacity: 0.4`, which put them *below* the plain text beside them (`#29323f`, weight 500) — so the strongest trust signal on the page was also the weakest mark on it. Now 0.82, going to full on hover.
+- **Normalised the marks on a fixed 88×18 box** instead of height alone. The seven assets range from 4.13:1 (RapidSOS) to 6.65:1 (Carbyne), so a shared 20px height produced widths from 83px to 133px — a 60% spread in visual mass that read as ragged. `object-fit: contain` in a fixed box equalises them.
+
+### Fixed
+- **Five columns of dead space.** The grid used `auto-fit, minmax(160px, 1fr)`, which resolved to six columns at desktop against seven groups — so "Drones & aerial" wrapped onto a row by itself and left the rest of that row empty. Fixed at four columns, giving a 4 + 3 layout with a single empty cell. Breakpoints move to 3 columns under 1080px, 2 under 720px, 1 under 440px.
+
+### Notes
+- Measured after the change at 1280px: 4 columns, 4 + 3 rows, 1 empty cell (was 5), all 23 chips a uniform 38px tall, all 7 logo boxes a uniform 88×18.
+- The underlying content still mixes three kinds of thing — vendor brands (Milestone, Genetec, Motorola), open standards (ONVIF/RTSP, NG911, OSDP/Wiegand) and device categories (Panic buttons, Gunshot detection, Drone feeds). The chip treatment unifies them visually; splitting them into separate bands is a content decision, not a styling one, and is left alone.
+
 ## [v2.317] – 2026-08-05 — LIVE VIDEO thumbnail fix, and a corridor map for the K-Traffic hero
 ### Fixed
 - **The rail's LIVE VIDEO block was showing fragments of other cameras.** `.sv-rail-thumb` painted `/images/modules/video.webp` — which is a *video wall*, a grid of many camera tiles — at `center/220%` inside a 113×46 box. The result landed mid-grid, so the thumbnail showed slivers of neighbouring tiles and pieces of their burned-in labels ("CAM CONDESA", "CAM OFFLINE") rather than one feed. It now uses `cam-still.webp`, a single street camera view authored at ratio 2.36 against the box's 2.46, sized `cover` so it barely crops. The `brightness(1.25)` lift that was compensating for the dark wall drops to `1.08`.
