@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.316 -->
+      <div class="tl-entry changed" id="v2.316">
+        <div class="tl-meta"><span class="tl-ver">v2.316</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">Purpose-built call queue for the K-Dispatch homepage section</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>New K-Dispatch canvas: an active call queue</strong>, not a map. Four roomy call rows — a selected P1 "Medical Emergency · Av. Reforma &amp; Chapultepec · 00:18 · DISPATCHING", then P2 Traffic Accident (ON SCENE), P2 Structure Fire (EN ROUTE) and P3 Noise Complaint (QUEUED) — over a RECOMMENDED UNITS strip with U-12 tagged RECOMMENDED at 2 min, U-07 at 6 min and U-31 at 9 min</li>
+            <li><strong>Deliberately not a second map.</strong> This panel's active nav item is <strong>Queue</strong>, and its four capabilities are 911 intake, computer-aided dispatch, unit recommendation and audit trail — none of them geographic. K-Safety sits directly above it and now carries the map, so a second map here was the repetition worth removing. The queue also lets the panel show unit recommendation, which a map cannot</li>
+            <li><strong>The art contradicted its own rail, again.</strong> The rail reads "ACTIVE CALL · Medical Emergency · Av. Reforma &amp; Chapultepec · 00:18 · On scene 1 · En route 2"; the image showed <strong>"INCIDENT 1842 · FORCED ENTRY"</strong>, repeated <strong>U-03 and U-11 twice each</strong>, and had a panel clipped off its right edge. Row 1 is now the rail's own call down to the 00:18 timer, and U-12 is the unit its activity feed says was recommended</li>
+            <li><strong>Retires another shared image.</strong> The section was showing <code>/images/modules/dispatch.webp</code>, which also appears on the live homepage, the LP page, <code>ModulesSection</code>, and the capability rows of K-Video and K-Traffic. It stays where it is still used</li>
+            <li>A first pass clipped the RECOMMENDED UNITS strip against the bottom edge and drew an outer card border that would have read as a frame inside the frame. <code>cover</code> does not crop vertically here, so that clipping would have shipped — re-composed to fit with margin and no outer container. 42KB at 1200×896</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.315 -->
       <div class="tl-entry changed" id="v2.315">
         <div class="tl-meta"><span class="tl-ver">v2.315</span><span class="tl-date">2026-08-05</span></div>

@@ -1,3 +1,17 @@
+## [v2.316] – 2026-08-05 — Purpose-built call queue for the K-Dispatch homepage section
+### Added
+- **New K-Dispatch canvas: an active call queue**, not a map. Four roomy call rows — a selected P1 "Medical Emergency · Av. Reforma & Chapultepec · 00:18 · DISPATCHING", then P2 Traffic Accident (Circuito Interior, ON SCENE), P2 Structure Fire (Av. Insurgentes Sur, EN ROUTE) and P3 Noise Complaint (Col. Roma Norte, QUEUED) — over a RECOMMENDED UNITS strip with U-12 (2 min, tagged RECOMMENDED), U-07 (6 min) and U-31 (9 min).
+
+### Changed
+- **Deliberately not a second map.** This panel's active nav item is **Queue**, and its four capabilities are 911 intake, computer-aided dispatch, unit recommendation and audit trail — none of them geographic. K-Safety sits directly above it and now carries the map, so a second map here was the repetition worth removing. The queue also lets the panel show unit recommendation, which a map cannot.
+- **The art contradicted its own rail, again.** The rail reads "ACTIVE CALL · Medical Emergency · Av. Reforma & Chapultepec · HIGH PRIORITY · 00:18 · On scene 1 · En route 2"; the image showed **"INCIDENT 1842 · FORCED ENTRY"**. It also repeated **U-03 AVAILABLE and U-11 AVAILABLE twice each**, and had a panel clipped off its right edge. Row 1 is now the rail's own call down to the 00:18 timer, and U-12 is the unit the rail's activity feed says was recommended.
+- **Retires another shared image.** The section was showing `/images/modules/dispatch.webp`, which also appears on the live homepage, the LP page, `ModulesSection`, and the capability rows of K-Video and K-Traffic. It stays where it is still used.
+
+### Notes
+- Same measured safe area as v2.315: canvas 468×414 (ratio 1.13), art 4:3, so `object-fit: cover` eats ~7.8% off each side.
+- A first pass clipped the RECOMMENDED UNITS strip against the bottom edge and drew an outer card border that would have read as a frame inside the frame. Cover does not crop vertically here, so that clipping would have shipped — re-composed to fit with margin and no outer container.
+- 42KB at 1200×896, the lightest asset in the set: flat UI with no photographic content.
+
 ## [v2.315] – 2026-08-05 — Purpose-built map for the K-Safety homepage section
 ### Added
 - **New K-Safety map canvas** on the homepage Solutions accordion, with a **live video inset** floating over the map: a CAM-07 street view of the collision with a red LIVE badge and a "CAM-07 · Reforma & Chapultepec" caption, the same picture-in-picture idea as the K-Dispatch hero.

@@ -120,7 +120,15 @@ const PRODUCTS: Product[] = [
   },
   {
     key: 'dispatch', n: '02', name: 'K-Dispatch', color: '#0ea5e9',
-    logo: '/images/icons/k-dispatch.png', img: '/images/modules/dispatch.webp', href: '/k-dispatch',
+    /* Purpose-built call queue (v2.316). Deliberately NOT a map: this panel's
+       active nav item is Queue and its four capabilities are intake, CAD, unit
+       recommendation and audit trail — none of them geographic — and K-Safety
+       directly above it already carries the map. The previous `dispatch.webp`
+       was a map that also disagreed with the rail beside it (it read
+       "INCIDENT 1842 · FORCED ENTRY" against a rail saying "ACTIVE CALL ·
+       Medical Emergency") and repeated U-03 and U-11 twice each.
+       Row 1 is the rail's own call; U-12 is the rail feed's recommended unit. */
+    logo: '/images/icons/k-dispatch.png', img: '/images/modules/k-dispatch-queue.webp', href: '/k-dispatch',
     short: T2('Emergency Call-Taking & Dispatch', 'Recepción de Emergencias y Despacho'),
     body: T2('From the first emergency call to coordinated field response — intake, CAD, unit recommendation and a full audit trail.',
       'De la primera llamada de emergencia a la respuesta coordinada — recepción, CAD, recomendación de unidades y trazabilidad completa.'),
