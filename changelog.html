@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.317 -->
+      <div class="tl-entry fix" id="v2.317">
+        <div class="tl-meta"><span class="tl-ver">v2.317</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">LIVE VIDEO thumbnail fix, and a corridor map for the K-Traffic hero</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The rail's LIVE VIDEO block was showing fragments of other cameras.</strong> <code>.sv-rail-thumb</code> painted <code>/images/modules/video.webp</code> — which is a <em>video wall</em>, a grid of many camera tiles — at <code>center/220%</code> inside a 113×46 box. It landed mid-grid, so the thumbnail showed slivers of neighbouring tiles and pieces of their burned-in labels ("CAM CONDESA", "CAM OFFLINE") instead of one feed. Now uses <code>cam-still.webp</code>, a single street camera view authored at ratio 2.36 against the box's 2.46 and sized <code>cover</code> so it barely crops. Affects all five products, since the rail is shared</li>
+            <li><strong>Rebuilt the K-Traffic hero around a real corridor map.</strong> The first version drew the corridor as a thin abstract strip floating in a mostly empty white panel, which read as sparse next to the other four heroes. The centre panel is now a dense light-theme basemap that fills it: Main St running diagonally with its <strong>segments colour-coded by congestion</strong> (green → amber → green), four signals sitting on the road with white label chips (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s), cyan vehicle dots thickening through the amber stretch, and the three live intersection thumbnails along the bottom edge. The ADAPTIVE CONTROL card now sits fully inside the panel instead of straddling its edge</li>
+            <li>Geometry unchanged: 574px wide, 0.324 scale at 1280px, side-by-side, nothing clipped. 306KB — now the heaviest of the five; re-encoding at quality 74 came out <em>larger</em>, so the alpha channel dominates rather than the colour data</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.316 -->
       <div class="tl-entry changed" id="v2.316">
         <div class="tl-meta"><span class="tl-ver">v2.316</span><span class="tl-date">2026-08-05</span></div>

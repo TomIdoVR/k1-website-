@@ -1,3 +1,17 @@
+## [v2.317] – 2026-08-05 — LIVE VIDEO thumbnail fix, and a corridor map for the K-Traffic hero
+### Fixed
+- **The rail's LIVE VIDEO block was showing fragments of other cameras.** `.sv-rail-thumb` painted `/images/modules/video.webp` — which is a *video wall*, a grid of many camera tiles — at `center/220%` inside a 113×46 box. The result landed mid-grid, so the thumbnail showed slivers of neighbouring tiles and pieces of their burned-in labels ("CAM CONDESA", "CAM OFFLINE") rather than one feed. It now uses `cam-still.webp`, a single street camera view authored at ratio 2.36 against the box's 2.46, sized `cover` so it barely crops. The `brightness(1.25)` lift that was compensating for the dark wall drops to `1.08`.
+- This affects all five products, since the rail is shared.
+
+### Changed
+- **Rebuilt the K-Traffic hero around a real corridor map.** The first version drew the corridor as a thin abstract strip — four signal icons and a flow bar floating in a mostly empty white panel — which read as sparse and unfinished next to the other four heroes. The centre panel is now a dense light-theme city basemap that fills the panel: Main St running diagonally with its **segments colour-coded by congestion** (green → amber → green), the four signals sitting *on* the road with white label chips (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s), cyan vehicle dots thickening through the amber stretch, and the three live intersection thumbnails tucked along the bottom edge.
+- The ADAPTIVE CONTROL card now sits fully inside the panel instead of straddling its edge.
+
+### Notes
+- Geometry unchanged and still matches the set: 574px wide, 0.324 scale at 1280px, side-by-side, nothing clipped.
+- 306KB, up from 217KB and now the heaviest of the five — the full basemap plus three photographic thumbnails cost real bytes. Re-encoding at quality 74 came out *larger* (321KB), so the alpha channel dominates rather than the colour data; left at 82.
+- Real 1K mark composited as usual (badge at 396,25 / 44×44, fill `rgb(3,173,204)`).
+
 ## [v2.316] – 2026-08-05 — Purpose-built call queue for the K-Dispatch homepage section
 ### Added
 - **New K-Dispatch canvas: an active call queue**, not a map. Four roomy call rows — a selected P1 "Medical Emergency · Av. Reforma & Chapultepec · 00:18 · DISPATCHING", then P2 Traffic Accident (Circuito Interior, ON SCENE), P2 Structure Fire (Av. Insurgentes Sur, EN ROUTE) and P3 Noise Complaint (Col. Roma Norte, QUEUED) — over a RECOMMENDED UNITS strip with U-12 (2 min, tagged RECOMMENDED), U-07 (6 min) and U-31 (9 min).

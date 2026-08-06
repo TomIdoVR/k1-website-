@@ -164,7 +164,12 @@
 .sv-rail-split b { font-size: 12px; font-weight: 700; }
 .sv-ok { color: #56d9a3; }
 .sv-info { color: #6db3ff; }
-.sv-rail-thumb { position: relative; display: block; height: 46px; border-radius: 5px; background: url('/images/modules/video.webp') center/220% no-repeat; filter: brightness(1.25); }
+/* One camera, not a wall. This used to point at video.webp — a grid of many
+   camera tiles — scaled to 220% inside a 113x46 box, so it landed mid-grid and
+   showed slivers of neighbouring tiles and their burned-in labels. cam-still is
+   a single feed authored at 2.36 against this box's 2.46, so cover barely
+   crops it. */
+.sv-rail-thumb { position: relative; display: block; height: 46px; border-radius: 5px; background: url('/images/modules/cam-still.webp') center/cover no-repeat; filter: brightness(1.08); }
 .sv-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); }
 .sv-play::after { content: ''; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border-left: 5px solid #0b1220; border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent; }
 .sv-feed { display: flex; align-items: flex-start; gap: 5px; font-size: 8.5px; line-height: 1.35; color: #97a8bf; }
