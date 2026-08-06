@@ -90,7 +90,7 @@ const KTRAFFIC: SolutionContent = {
         ['Ciclos adaptativos según demanda', 'Vista de corredor e intersección', 'Control manual en cualquier momento']),
     },
     {
-      img: '/images/modules/ai.webp',
+      img: '/images/modules/ai-traffic-forecast.webp',
       alt: S('Predictive traffic analytics and AI modeling forecasting congestion',
         'Analítica predictiva de tráfico y modelado con IA previendo congestión'),
       t: S('Predictive analytics & AI modeling', 'Analítica predictiva y modelado con IA'),
@@ -100,7 +100,7 @@ const KTRAFFIC: SolutionContent = {
         ['Pronóstico de congestión', 'Ajuste automático de señales', 'Refinamiento continuo del modelo']),
     },
     {
-      img: '/images/modules/events.webp',
+      img: '/images/modules/traffic-incident-detect.webp',
       alt: S('Incident detection raising automated alerts to traffic and public safety operations',
         'Detección de incidentes generando alertas automáticas a tráfico y seguridad pública'),
       t: S('Real-time incident detection', 'Detección de incidentes en tiempo real'),
@@ -110,7 +110,7 @@ const KTRAFFIC: SolutionContent = {
         ['Detección instantánea de incidentes', 'Alertas automatizadas', 'Respuesta coordinada tráfico + seguridad']),
     },
     {
-      img: '/images/modules/gis.webp',
+      img: '/images/modules/traffic-flow-map.webp',
       alt: S('GIS map showing traffic flow, corridors, and congestion across the road network',
         'Mapa GIS con flujo vehicular, corredores y congestión en la red vial'),
       t: S('GIS & mapping for flow optimization', 'GIS y mapeo para optimización de flujo'),
@@ -120,7 +120,7 @@ const KTRAFFIC: SolutionContent = {
         ['Capa de tráfico en el GIS operativo', 'Vista de congestión y cierres', 'Mapa compartido con mando']),
     },
     {
-      img: '/images/modules/dispatch.webp',
+      img: '/images/modules/traffic-decision-support.webp',
       alt: S('Automated decision support recommending roadway operations actions',
         'Soporte automatizado de decisiones recomendando acciones de operación vial'),
       t: S('Automated decision support', 'Soporte automatizado de decisiones'),
@@ -130,7 +130,7 @@ const KTRAFFIC: SolutionContent = {
         ['Acciones viales recomendadas', 'Enlazado al despacho de seguridad', 'Servicios de emergencia y cuadrillas']),
     },
     {
-      img: '/images/modules/video.webp',
+      img: '/images/modules/traffic-enforcement.webp',
       alt: S('Traffic cameras and speed cameras monitoring intersections and corridors',
         'Cámaras de tráfico y de velocidad monitoreando intersecciones y corredores'),
       t: S('Cameras & enforcement', 'Cámaras y aplicación de normas'),

@@ -144,7 +144,12 @@ const PRODUCTS: Product[] = [
   },
   {
     key: 'video', n: '03', name: 'K-Video', color: '#22b8d4',
-    logo: '/images/icons/k-video.png', img: '/images/modules/video.webp', href: '/k-video',
+    /* Purpose-built canvas (v2.319), completing the set alongside K-Safety and
+       K-Dispatch. Matches its own rail: "AI DETECTIONS · Vehicle of interest ·
+       Detections 23 · Cameras 128", so the wall shows a plate match against a
+       watchlist rather than generic tiles. Authored 4:3 against a ~1.13 canvas,
+       so cover crops ~8% per side — content stays in the central safe area. */
+    logo: '/images/icons/k-video.png', img: '/images/modules/k-video-wall.webp', href: '/k-video',
     short: T2('Video Management & Analytics', 'Gestión de Video y Analítica'),
     body: T2('Connect live video, analytics, events and investigations across the camera infrastructure you already operate.',
       'Conecta video en vivo, analítica, eventos e investigaciones sobre la infraestructura de cámaras que ya operas.'),

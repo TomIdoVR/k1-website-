@@ -143,12 +143,23 @@
   background: rgba(255, 255, 255, 0.55);
 }
 
+/* Measured 14x18 on a phone — far under the 44px touch minimum, and this is a
+   real control, not decoration. Keeps its visual size; only the hit area grows. */
 .hll-language a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 30px;
   padding: 4px 6px;
   border-radius: 5px;
   color: #7b89a8;
   font-family: 'DM Mono', monospace;
   font-size: 9px;
+}
+
+@media (pointer: coarse) {
+  .hll-language a { min-width: 44px; min-height: 44px; }
 }
 
 .hll-language a[aria-current='page'] {
@@ -237,7 +248,14 @@
   .hll-mobile-menu-panel > a:not(.hll-nav-cta) { padding: 10px; border-radius: 8px; color: #1c315f; font-size: 14px; }
   .hll-mobile-menu-panel > a:hover { background: #f1f6ff; }
   .hll-mobile-languages { display: flex; gap: 8px; padding: 8px 10px; }
-  .hll-mobile-languages a { color: #0757f7; font-family: 'DM Mono', monospace; font-size: 12px; }
+  /* This is the switcher that is actually visible on a phone (the .hll-language
+     one is desktop-only). It measured 14x18 — well under the 44px touch
+     minimum. Visual size unchanged; only the hit area grows. */
+  .hll-mobile-languages a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 44px; min-height: 44px;
+    color: #0757f7; font-family: 'DM Mono', monospace; font-size: 12px;
+  }
 }
 @media (max-width: 900px) {
 

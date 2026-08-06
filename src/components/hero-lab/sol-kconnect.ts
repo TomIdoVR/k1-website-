@@ -100,7 +100,7 @@ const KCONNECT: SolutionContent = {
         ['Decisiones por cámara', 'Control de acceso por roles', 'Expiración automática']),
     },
     {
-      img: '/images/modules/video.webp',
+      img: '/images/modules/shared-feeds.webp',
       alt: S('Shared organization feeds appearing alongside agency cameras during an incident',
         'Señales compartidas junto a cámaras de la agencia durante un incidente'),
       t: S('Shared live feeds in an incident', 'Señales compartidas en un incidente'),
@@ -110,7 +110,7 @@ const KCONNECT: SolutionContent = {
         ['Mismas señales para todos', 'Coordinación más rápida', 'Conciencia situacional unificada']),
     },
     {
-      img: '/images/modules/gis.webp',
+      img: '/images/modules/coverage-map.webp',
       alt: S('Map showing which connected cameras cover the area around an incident',
         'Mapa mostrando qué cámaras conectadas cubren la zona de un incidente'),
       t: S('Coverage on the operational map', 'Cobertura en el mapa operativo'),
@@ -120,7 +120,7 @@ const KCONNECT: SolutionContent = {
         ['Cámaras conectadas en el mapa', 'Cobertura visible en contexto', 'Misma vista que cámaras de la agencia']),
     },
     {
-      img: '/images/modules/events.webp',
+      img: '/images/modules/audit-trail.webp',
       alt: S('Audit trail recording each shared access against the incident record',
         'Pista de auditoría registrando cada acceso compartido en el registro del incidente'),
       t: S('Audit trail & compliance', 'Auditoría y cumplimiento'),
@@ -130,7 +130,7 @@ const KCONNECT: SolutionContent = {
         ['Auditoría completa de accesos', 'Canales encriptados y conformes', 'Rendición de cuentas transparente']),
     },
     {
-      img: '/images/modules/integrations.webp',
+      img: '/images/modules/deployment-flex.webp',
       alt: S('Integration layer connecting K‑Video, K‑Safety, and third-party VMS platforms',
         'Capa de integración conectando K‑Video, K‑Safety y plataformas VMS de terceros'),
       t: S('Deployment flexibility', 'Flexibilidad de despliegue'),

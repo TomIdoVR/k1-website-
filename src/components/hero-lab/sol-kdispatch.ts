@@ -117,7 +117,7 @@ const KDISPATCH: SolutionContent = {
         ['Mapeo GIS y seguimiento AVL', 'Rutas y ETA en vivo', 'Zonas, sectores y cobertura']),
     },
     {
-      img: '/images/modules/responder.webp',
+      img: '/images/modules/responder-dispatch.webp',
       alt: S('Responder mobile app receiving the dispatched call with navigation and status',
         'App móvil de respuesta recibiendo la llamada despachada con navegación y estado'),
       t: S('Field & multi-agency response', 'Respuesta en campo y multiagencia'),
@@ -127,7 +127,7 @@ const KDISPATCH: SolutionContent = {
         ['Interoperabilidad de radio y multiagencia', 'Estados móviles desde el campo', 'Coordinación mando-campo']),
     },
     {
-      img: '/images/modules/ai.webp',
+      img: '/images/modules/ai-dispatch-assist.webp',
       alt: S('AI assistance surfacing risk indicators and recommended dispatch actions',
         'Asistencia de IA mostrando indicadores de riesgo y acciones de despacho recomendadas'),
       t: S('AI-assisted, human-led', 'Asistido por IA, guiado por personas'),

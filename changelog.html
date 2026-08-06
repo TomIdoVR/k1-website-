@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.319 -->
+      <div class="tl-entry changed" id="v2.319">
+        <div class="tl-meta"><span class="tl-ver">v2.319</span><span class="tl-date">2026-08-05</span></div>
+        <div class="tl-title">Full review: every image unique, and mobile fixed</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Ended image reuse across the redesign.</strong> An inventory of the whole surface found <strong>seven images doing duty in 21 places</strong>: <code>ai.webp</code> on four pages, <code>gis.webp</code> on four, <code>video.webp</code> on four, <code>events.webp</code> on three, and <code>responder.webp</code>, <code>integrations.webp</code>, <code>dispatch.webp</code> on two each. The one spotted by eye — the phones-on-a-desk shot shared by K-Safety and K-Dispatch — was a symptom, not the problem</li>
+            <li><strong>15 purpose-built replacements</strong>, each written from the slot's own alt text so the picture says what the caption claims, and each matching the dark-navy UI house style — across K-Dispatch (responder call, AI recommendation), K-Video (cameras on map, AI detection, video linked into CAD, new accordion canvas), K-Traffic (incident detection, congestion forecast, flow-coloured GIS, enforcement, recommended actions) and K-Connect (audit trail, shared feeds, coverage cones, deployment options)</li>
+            <li>Verified after the change: <strong>36 distinct module images across the five solution pages, zero shared between any two.</strong> Originals stay wherever they are still the single best fit, and on the untouched live homepage and LP page</li>
+            <li><strong>Fixed horizontal scroll on phones.</strong> K-Connect measured a 409px document against a 375px viewport, K-Traffic 386px. <code>.sp-flow-t</code> is <code>white-space: nowrap</code> and the flow diagram's <code>1fr</code>/<code>auto</code> tracks take an automatic min-content minimum, so tracks could not shrink below the widest label and pushed the page sideways. Tracks are now <code>minmax(0, …)</code>, labels wrap, nodes get <code>min-width: 0</code>. Both now measure 375 = 375</li>
+            <li><strong>Fixed touch targets below the 44px minimum</strong>, all measured on a phone: language switcher <strong>14×18 → 44×44</strong> (the earlier fix hit <code>.hll-language</code>, which is desktop-only — the visible one is <code>.hll-mobile-languages</code>), footer links <strong>159×18 → 159×44</strong>, carousel arrows <strong>35×35 → 44×44</strong>, carousel dots <strong>7×7 → 44×44</strong> hit area via <code>::before</code> with the dot still 7px visually</li>
+            <li><strong>Lifted type below the readable floor on phones</strong>: hero eyebrow 9.5px → 11px; solution-page stat labels and platform-module chips 10.5px → 12px</li>
+            <li>Three images were regenerated after review rather than shipped as-is: the enforcement panel invented a fourth violation row duplicating another's data; the congestion forecast rendered three tiles with a duplicate "LEAD TIME 00 min"; the coverage map drew its cones as saturated beams that washed out the basemap</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.318 -->
       <div class="tl-entry changed" id="v2.318">
         <div class="tl-meta"><span class="tl-ver">v2.318</span><span class="tl-date">2026-08-05</span></div>

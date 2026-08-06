@@ -338,8 +338,14 @@
   .sp-hero-inner { grid-template-columns: 1fr; }
   .sp-ben-grid { grid-template-columns: 1fr 1fr; }
   .sp-int-grid { grid-template-columns: 1fr 1fr; }
-  .sp-flow { grid-template-columns: 1fr; gap: 22px; justify-items: center; }
-  .sp-flow-col { display: grid; grid-template-columns: repeat(3, auto); justify-content: center; }
+  /* minmax(0, …) throughout: a bare 1fr/auto track has an automatic minimum of
+     min-content, and .sp-flow-t is nowrap, so the tracks refused to shrink
+     below the widest label and pushed the whole page into horizontal scroll
+     (K-Connect measured 409px against a 375px viewport, K-Traffic 386px). */
+  .sp-flow { grid-template-columns: minmax(0, 1fr); gap: 22px; justify-items: center; width: 100%; }
+  .sp-flow-col { display: grid; grid-template-columns: repeat(3, minmax(0, auto)); justify-content: center; max-width: 100%; }
+  .sp-flow-node { min-width: 0; }
+  .sp-flow-t { white-space: normal; overflow-wrap: anywhere; }
   .sp-flow-col-out { align-items: stretch; }
   .sp-flow-rail { flex-direction: row; padding: 0; gap: 0; width: auto; }
   .sp-flow-rail span { width: 2px; height: 24px; background: linear-gradient(180deg, rgba(24, 88, 245, 0.2), #1858f5); }
@@ -358,7 +364,11 @@
   .sp-hero { padding-top: 104px; }
   .sp-ben-grid, .sp-int-grid { grid-template-columns: 1fr; }
   .sp-chip { display: none; }
-  .sp-flow-col { grid-template-columns: 1fr 1fr; }
+  .sp-flow-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* 10.5px stat labels and module chips are real content, not decoration —
+     lift them to the 12px floor on phones. */
+  .sp-stat-l { font-size: 12px; }
+  .sp-core-label, .sp-core-chips span { font-size: 12px; }
   .sp-ov-video { width: 46%; left: 8px; bottom: 8px; }
   .sp-ov-event { width: 50%; right: 8px; top: 8px; padding: 9px 10px; }
   .sp-ov-rows { display: none; }

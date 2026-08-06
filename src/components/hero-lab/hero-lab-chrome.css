@@ -106,6 +106,13 @@
 }
 .hlc-footer-col a:hover { color: #3dd6ef; }
 
+/* Footer links measured 159x18 on a phone — wide enough but only 18px tall,
+   so neighbouring rows are easy to hit by mistake. Padding gives each its own
+   44px band on touch devices without changing the desktop rhythm. */
+@media (pointer: coarse) {
+  .hlc-footer-col a { display: block; padding-block: 13px; }
+}
+
 .hlc-footer-base {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }

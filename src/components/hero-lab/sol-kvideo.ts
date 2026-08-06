@@ -88,7 +88,7 @@ const KVIDEO: SolutionContent = {
         ['Miles de cámaras en una plataforma', 'Soporte HLS, WebRTC, RTMP, RTSP', 'Almacenamiento en nube o local']),
     },
     {
-      img: '/images/modules/ai.webp',
+      img: '/images/modules/ai-video-detection.webp',
       alt: S('AI engine detecting vehicles, plates, and anomalies across camera feeds',
         'Motor de IA detectando vehículos, placas y anomalías en las señales'),
       t: S('AI detection & analytics', 'Detección y analítica con IA'),
@@ -108,7 +108,7 @@ const KVIDEO: SolutionContent = {
         ['Búsqueda en toda la red', 'Construcción de casos y exportación', 'Auditoría completa para investigaciones']),
     },
     {
-      img: '/images/modules/gis.webp',
+      img: '/images/modules/cameras-on-map.webp',
       alt: S('Map showing camera locations and the nearest feeds to an incident',
         'Mapa con ubicación de cámaras y las señales más cercanas a un incidente'),
       t: S('Cameras on the map', 'Cámaras en el mapa'),
@@ -118,7 +118,7 @@ const KVIDEO: SolutionContent = {
         ['Capa de cámaras en el GIS operativo', 'Cámara más cercana al incidente', 'Vista de cobertura y puntos ciegos']),
     },
     {
-      img: '/images/modules/dispatch.webp',
+      img: '/images/modules/video-in-dispatch.webp',
       alt: S('Live video surfaced directly inside CAD and dispatch workflows',
         'Video en vivo disponible dentro de los flujos de CAD y despacho'),
       t: S('Video in dispatch & command', 'Video en despacho y mando'),

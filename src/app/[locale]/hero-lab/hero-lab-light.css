@@ -886,8 +886,12 @@
   .hll-carousel-arrow:disabled { cursor: default; opacity: 0.3; }
   .hll-carousel-arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .hll-carousel-dots { display: flex; align-items: center; gap: 7px; }
-  .hll-carousel-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(7, 87, 247, 0.25); cursor: pointer; transition: width 180ms ease, background 180ms ease; }
+  /* The dot stays 7px visually; ::before grows the hit area to 44px. A bare
+     7x7 button is unhittable on a phone. */
+  .hll-carousel-dot { position: relative; width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(7, 87, 247, 0.25); cursor: pointer; transition: width 180ms ease, background 180ms ease; }
+  .hll-carousel-dot::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; }
   .hll-carousel-dot[aria-current='true'] { width: 21px; border-radius: 8px; background: #0757f7; }
+  @media (pointer: coarse) { .hll-carousel-arrow { width: 44px; height: 44px; } }
   .hll-stats { margin-top: 65px; }
   .hll-stat { min-width: 190px; padding-inline: 24px; }
 }
@@ -912,7 +916,8 @@
   .hll-page { background: radial-gradient(circle at 50% 53%, rgba(79, 160, 255, 0.18), transparent 34%), linear-gradient(180deg, #fbfcff, #eef5fd); }
   .hll-nav { padding-inline: 18px; }
   .hll-hero-head { margin-top: 22px; padding-inline: 18px; }
-  .hll-eyebrow { max-width: 330px; margin-inline: auto; font-size: 9.5px; }
+  /* 9.5px was below the readable floor for real copy on a phone. */
+  .hll-eyebrow { max-width: 330px; margin-inline: auto; font-size: 11px; letter-spacing: 0.07em; }
   .hll-headline { font-size: clamp(26px, 9.2vw, 52px); line-height: 1; overflow-wrap: break-word; }
   .hll-headline-grad { margin-top: 4px; }
   .hll-sub { margin-top: 17px; font-size: 14px; line-height: 1.55; }

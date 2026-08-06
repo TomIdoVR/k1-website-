@@ -1,3 +1,28 @@
+## [v2.319] – 2026-08-05 — Full review: every image unique, and mobile fixed
+### Changed
+- **Ended image reuse across the redesign.** An inventory of the whole surface found **seven images doing duty in 21 places**: `ai.webp` on four pages, `gis.webp` on four, `video.webp` on four, `events.webp` on three, and `responder.webp`, `integrations.webp` and `dispatch.webp` on two each. The one flagged by eye — the phones-on-a-desk shot shared by K-Safety and K-Dispatch — was a symptom, not the problem.
+- **15 purpose-built replacements**, each written from the slot's own alt text so the picture says what the caption claims, and each matching the established dark-navy UI house style:
+  - **K-Dispatch** — responder receiving the dispatched call (`responder-dispatch`), AI recommendation with a human confirm step (`ai-dispatch-assist`)
+  - **K-Video** — cameras on the operational map (`cameras-on-map`), AI detection across feeds (`ai-video-detection`), live video linked into the CAD record (`video-in-dispatch`), plus a purpose-built accordion canvas (`k-video-wall`)
+  - **K-Traffic** — automated incident detection (`traffic-incident-detect`), congestion forecast (`ai-traffic-forecast`), flow-coloured GIS network (`traffic-flow-map`), cameras and enforcement (`traffic-enforcement`), recommended roadway actions (`traffic-decision-support`)
+  - **K-Connect** — audit trail (`audit-trail`), shared community feeds in an incident (`shared-feeds`), camera coverage cones (`coverage-map`), deployment options (`deployment-flex`)
+- Verified after the change: **36 distinct module images across the five solution pages, zero shared between any two.** The originals stay wherever they are still the single best fit, and on the live homepage and LP page, which are untouched.
+
+### Fixed
+- **Horizontal scroll on phones.** K-Connect measured a 409px document against a 375px viewport, K-Traffic 386px. Cause: `.sp-flow-t` is `white-space: nowrap`, and the flow diagram's `1fr`/`auto` grid tracks take an automatic minimum of min-content — so the tracks could not shrink below the widest label ("Loop detectors", "Organizations") and pushed the page sideways. Tracks are now `minmax(0, …)`, labels wrap, and nodes get `min-width: 0`. Both pages now measure 375 = 375.
+- **Touch targets below the 44px minimum**, all measured on a phone and all real controls:
+  - Language switcher **14×18 → 44×44**. The earlier fix targeted `.hll-language`, which is desktop-only; the one actually visible on a phone is `.hll-mobile-languages`.
+  - Footer links **159×18 → 159×44**
+  - Carousel arrows **35×35 → 44×44**
+  - Carousel dots **7×7 → 44×44** hit area via `::before`, dot still 7px visually
+- **Type below the readable floor on phones**: hero eyebrow 9.5px → 11px; solution-page stat labels and platform-module chips 10.5px → 12px.
+
+### Notes
+- Three images were regenerated after review rather than shipped as-is: the enforcement panel invented a fourth violation row duplicating another's location and time; the congestion forecast rendered three stat tiles with a duplicate "LEAD TIME 00 min"; the coverage map drew its cones as saturated beams that washed out the basemap.
+- The mock app-chrome text inside the homepage hero cards still measures 7–9px. Left alone deliberately — it is simulated miniature UI, not content anyone is meant to read.
+- `concept-5-hub.webp` still appears twice, but only in `/hero-lab-admin` (an internal concepts gallery) and in `HeroV2Hub`, a dead unreferenced component. Neither is on a reviewed page.
+- 15 new assets total ~950KB, largest 135KB.
+
 ## [v2.318] – 2026-08-05 — Ecosystem section: one rhythm for logos and text
 ### Changed
 - **Every entry is now the same chip**, whether it carries a partner logo or a word. The section had been setting logos as bare images inside a plain text column, so two different visual languages sat in one list with no shared baseline, height or weight. A single bordered box per entry gives each column one rhythm and stops the two kinds fighting.
