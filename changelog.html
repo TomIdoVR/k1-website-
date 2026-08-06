@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.324 -->
+      <div class="tl-entry added" id="v2.324">
+        <div class="tl-meta"><span class="tl-ver">v2.324</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Sticky solution headers on mobile</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Each solution's header pins to the top while you scroll through it, then hands off to the next.</strong> On a phone the accordion is one column and an expanded solution is taller than the viewport — K-Traffic's is 632px against an 812px screen — so the product name scrolled away and you lost track of which solution you were reading</li>
+            <li>Implemented as <code>position: sticky</code> on <code>.sv-item-head</code> within each <code>.sv-item</code>, so the hand-off is native: once an item's bottom passes, its header releases and the next one's takes over. No scroll listeners. Mobile only (<code>max-width: 960px</code>); desktop untouched</li>
+            <li><strong><code>.sv-item</code> had <code>overflow: hidden</code>, which would have made this silently do nothing</strong> — <code>hidden</code> turns the item into a scroll container, and a sticky child then sticks to <em>that</em> box rather than the page. Changed to <code>overflow: clip</code>, same clipping without a scroll container. Where <code>clip</code> is unsupported the declaration is dropped and the header simply does not stick, rather than breaking layout</li>
+            <li>The header was <code>background: none</code>, so pinned content would have scrolled straight through it. It now carries the item's own surface — white when collapsed, the active gradient when expanded — plus a soft shadow while pinned</li>
+            <li>Verified by scripted scroll rather than by eye: the pinned header cycles K-Safety → K-Dispatch → K-Video → K-Traffic → K-Connect in order, and an expanded K-Traffic holds for 500px against the 547px available</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.323 -->
       <div class="tl-entry added" id="v2.323">
         <div class="tl-meta"><span class="tl-ver">v2.323</span><span class="tl-date">2026-08-06</span></div>

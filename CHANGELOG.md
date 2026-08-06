@@ -1,3 +1,15 @@
+## [v2.324] – 2026-08-06 — Sticky solution headers on mobile
+### Added
+- **Each solution's header pins to the top while you scroll through it, then hands off to the next.** On a phone the accordion is one column and an expanded solution is taller than the viewport — K-Traffic's is 632px against an 812px screen — so the product name scrolled away and you lost track of which solution you were reading.
+- Implemented as `position: sticky` on `.sv-item-head` within each `.sv-item`, so the hand-off is native: once an item's bottom passes, its header releases and the following item's takes over. No scroll listeners.
+- Mobile only (`max-width: 960px`), where the accordion is single-column. Desktop is untouched.
+
+### Notes
+- **`.sv-item` had `overflow: hidden`, which would have made this silently do nothing.** `hidden` turns the item into a scroll container, and a sticky child then sticks to *that* box rather than the page. Changed to `overflow: clip`, which gives the same rounded-corner clipping without creating a scroll container. Where `clip` is unsupported the declaration is dropped, `hidden` stays, and the header simply does not stick — it degrades cleanly rather than breaking layout.
+- The header was `background: none`, so pinned content would have scrolled straight through it. It now carries the item's own surface — white when collapsed, the active gradient when expanded — plus a soft shadow so it reads as lifted while pinned.
+- `top: 0` with no offset is correct here: the hero-lab header is `position: relative`, not fixed, so it scrolls away rather than occupying the top of the viewport.
+- Verified by scripted scroll rather than by eye: the pinned header cycles K-Safety → K-Dispatch → K-Video → K-Traffic → K-Connect in order, and an expanded K-Traffic holds its header for 500px of scroll against the 547px available (item height minus header), releasing as the item leaves.
+
 ## [v2.323] – 2026-08-06 — One H1 on the simulator and demo scenario pages (SEO-004)
 ### Added
 - **An H1 on the twelve pages that had none.** `/simulator` and the five demo scenarios (`lpr`, `school`, `violence`, `medical`, `access-control`), in both locales, shipped server HTML with zero headings of any level — not just no H1. Each now carries exactly one, localized:
