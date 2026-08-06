@@ -202,13 +202,13 @@ export default async function WhatIsVideoManagementSoftwarePage({
                   { value: '10,000+', label: 'Cámaras por instancia VMS' },
                   { value: '< 2 seg', label: 'Latencia de alerta de IA' },
                   { value: '30–40%', label: 'Reducción en tiempo de respuesta' },
-                  { value: '99.9%', label: 'Uptime en despliegues de ciudad' },
+                  { value: '99.99%', label: 'Uptime en despliegues de ciudad' },
                 ]
               : [
                   { value: '10,000+', label: 'Cameras per VMS instance' },
                   { value: '< 2 sec', label: 'AI alert latency' },
                   { value: '30–40%', label: 'Reduction in response time' },
-                  { value: '99.9%', label: 'Uptime in city deployments' },
+                  { value: '99.99%', label: 'Uptime in city deployments' },
                 ]
             ).map((stat, i) => (
               <div key={i}>

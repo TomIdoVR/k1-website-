@@ -383,8 +383,8 @@ export default async function HomePage({
           {/* Subtitle */}
           <p className="hp-sub">
             {es
-              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco soluciones integradas. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 70 millones de ciudadanos.'
-              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated solutions. One common operating picture. Trusted by 40+ cities, protecting 70 million citizens.'}
+              ? 'KabatOne es la plataforma de mando y control para gobiernos y agencias de seguridad pública. Cinco soluciones integradas. Una imagen operativa unificada. Utilizada por más de 40 ciudades, protegiendo a 73 millones de ciudadanos.'
+              : 'KabatOne is the command-and-control platform for governments and public safety agencies. Five integrated solutions. One common operating picture. Trusted by 40+ cities, protecting 73 million citizens.'}
           </p>
 
           {/* CTA Row */}

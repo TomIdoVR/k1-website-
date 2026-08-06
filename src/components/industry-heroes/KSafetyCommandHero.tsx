@@ -29,7 +29,7 @@ const metrics = [
   { label: 'Incidents', val: '12', color: '#ef4444' },
   { label: 'Cameras', val: '5.4K', color: '#06b6d4' },
   { label: 'Units', val: '94', color: '#22c55e' },
-  { label: 'Uptime', val: '99.9%', color: '#a855f7' },
+  { label: 'Uptime', val: '99.99%', color: '#a855f7' },
 ]
 
 export default function KSafetyCommandHero() {

@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.321 -->
+      <div class="tl-entry changed" id="v2.321">
+        <div class="tl-meta"><span class="tl-ver">v2.321</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Reconcile citizens protected to 73M and uptime to 99.99%</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>70M → 73M everywhere.</strong> The site had been split between the two figures — hero-lab said 70M+ while every <code>/vs/*</code> page already said 73M. Ten occurrences moved across the homepage, LP page, <code>/vs/tyler-technologies</code>, <code>end-of-siloed-response</code>, <code>ProofBar</code>, <code>HeroV3Platform</code> and the EN metadata. <strong>40 files now carry 73M and none carry 70M</strong></li>
+            <li><strong>99.9% → 99.99% everywhere</strong> — 32 occurrences across solution pages, industry pages, resource articles, industry hero components and the hero-lab proof bar</li>
+            <li><strong>Two hero images had 99.9% baked into the artwork.</strong> The K-Video and K-Traffic performance panels are pixels, not DOM, so a text-only change would have left each hero contradicting the copy beside it. Both regenerated with "Platform uptime 99.99%" and reprocessed through the usual knockout/trim/1K-mark pipeline. Every other in-use image was checked against a contact sheet — none carries an uptime or citizens figure</li>
+            <li><code>99.999%</code> survives in <code>resources/what-is-a-psap</code> and is correct: it is the PSAP industry "five nines" standard, in an untouched file. The substitution could not have produced it — <code>99.9%</code> does not occur inside <code>99.999%</code></li>
+            <li>The uptime progress bars stay capped at <code>w: '99%'</code> so a 99.99% claim does not render as a visually full bar; only the label changed</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.320 -->
       <div class="tl-entry fix" id="v2.320">
         <div class="tl-meta"><span class="tl-ver">v2.320</span><span class="tl-date">2026-08-06</span></div>

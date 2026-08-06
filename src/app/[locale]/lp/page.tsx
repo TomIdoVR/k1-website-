@@ -25,7 +25,7 @@ export default async function LandingPage({
 
   const stats = [
     { value: '40+',  label: es ? 'Municipios Desplegados'         : 'Municipalities Deployed' },
-    { value: '70M+', label: es ? 'Ciudadanos Protegidos'           : 'Citizens Protected'      },
+    { value: '73M+', label: es ? 'Ciudadanos Protegidos'           : 'Citizens Protected'      },
     { value: '40%',  label: es ? 'Reducción en Tiempo de Respuesta': 'Faster Response Time'    },
     { value: '72h',  label: es ? 'A Operación Completa'            : 'To Full Operations'      },
   ]

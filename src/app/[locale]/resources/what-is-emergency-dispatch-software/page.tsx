@@ -50,7 +50,7 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
         {
           question: '¿Qué características debe tener un buen software de despacho de emergencias?',
           answer:
-            'Los seis criterios clave son: (1) Mapa operativo en tiempo real con posición GPS de todas las unidades, (2) Integración con sistemas de video para ver cámaras cercanas al incidente antes de despachar, (3) Multi-agencia — capacidad de coordinar policía, bomberos y EMS en un solo entorno, (4) Registro automático de tiempos para cumplimiento normativo y análisis de rendimiento, (5) Disponibilidad alta (99.9%+) con redundancia ante fallos, (6) Integración con infraestructura NG911 para recibir texto, imagen y video de ciudadanos.',
+            'Los seis criterios clave son: (1) Mapa operativo en tiempo real con posición GPS de todas las unidades, (2) Integración con sistemas de video para ver cámaras cercanas al incidente antes de despachar, (3) Multi-agencia — capacidad de coordinar policía, bomberos y EMS en un solo entorno, (4) Registro automático de tiempos para cumplimiento normativo y análisis de rendimiento, (5) Disponibilidad alta (99.99%+) con redundancia ante fallos, (6) Integración con infraestructura NG911 para recibir texto, imagen y video de ciudadanos.',
         },
         {
           question: '¿Cómo apoya KabatOne el despacho de emergencias?',
@@ -82,7 +82,7 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
         {
           question: 'What features should good emergency dispatch software have?',
           answer:
-            'The six key criteria are: (1) Real-time operational map with GPS position of all units, (2) Video integration to view cameras near the incident before dispatching, (3) Multi-agency capability — ability to coordinate police, fire, and EMS in a single environment, (4) Automatic time logging for regulatory compliance and performance analysis, (5) High availability (99.9%+) with failover redundancy, (6) NG911 integration to receive text, image, and video from citizens.',
+            'The six key criteria are: (1) Real-time operational map with GPS position of all units, (2) Video integration to view cameras near the incident before dispatching, (3) Multi-agency capability — ability to coordinate police, fire, and EMS in a single environment, (4) Automatic time logging for regulatory compliance and performance analysis, (5) High availability (99.99%+) with failover redundancy, (6) NG911 integration to receive text, image, and video from citizens.',
         },
         {
           question: 'How does KabatOne support emergency dispatch?',

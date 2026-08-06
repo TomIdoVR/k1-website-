@@ -34,7 +34,7 @@ const KVIDEO: SolutionContent = {
   consoleTitle: S('K-VIDEO · LIVE WALL', 'K-VIDEO · MURO EN VIVO'),
   stats: [
     { v: '1,204+', l: S('Active cameras', 'Cámaras activas') },
-    { v: '99.9%', l: S('Uptime', 'Disponibilidad') },
+    { v: '99.99%', l: S('Uptime', 'Disponibilidad') },
     { v: '15+', l: S('AI models', 'Modelos de IA') },
   ],
 
@@ -63,8 +63,8 @@ const KVIDEO: SolutionContent = {
     },
     {
       icon: 'scale', t: S('Highly scalable & redundant', 'Altamente escalable y redundante'),
-      d: S('Microservices architecture handles thousands of cameras with 99.9% uptime and automatic failover.',
-        'Arquitectura de microservicios que maneja miles de cámaras con 99.9% de disponibilidad y conmutación automática por fallo.'),
+      d: S('Microservices architecture handles thousands of cameras with 99.99% uptime and automatic failover.',
+        'Arquitectura de microservicios que maneja miles de cámaras con 99.99% de disponibilidad y conmutación automática por fallo.'),
     },
     {
       icon: 'shield', t: S('Security & compliance', 'Seguridad y cumplimiento'),
@@ -144,9 +144,9 @@ const KVIDEO: SolutionContent = {
     { l: S('Face recognition accuracy', 'Precisión de reconocimiento facial'), v: '94%', w: '94%' },
     { l: S('LPR read rate', 'Tasa de lectura LPR'), v: '99%', w: '99%' },
     { l: S('Anomaly detection rate', 'Detección de anomalías'), v: '88%', w: '88%' },
-    /* Bar capped at 99% so a 99.9% claim doesn't render as a completely full
+    /* Bar capped at 99% so a 99.99% claim doesn't render as a completely full
        track — same treatment as K-Traffic's uptime bar. */
-    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '99.9%', w: '99%' },
+    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '99.99%', w: '99%' },
   ],
 
   processEyebrow: S('THE PROCESS', 'EL PROCESO'),
@@ -194,8 +194,8 @@ const KVIDEO: SolutionContent = {
     {
       q: S('How many cameras can K-Video manage?',
         '¿Cuántas cámaras puede gestionar K-Video?'),
-      a: S('K-Video supports over 10,000 cameras through its microservices architecture. It handles IP cameras, body cams, and drone streams with 99.9% uptime and automatic failover.',
-        'K-Video soporta más de 10,000 cámaras gracias a su arquitectura de microservicios. Maneja cámaras IP, body cams y streams de drones con 99.9% de disponibilidad y conmutación automática por fallo.'),
+      a: S('K-Video supports over 10,000 cameras through its microservices architecture. It handles IP cameras, body cams, and drone streams with 99.99% uptime and automatic failover.',
+        'K-Video soporta más de 10,000 cámaras gracias a su arquitectura de microservicios. Maneja cámaras IP, body cams y streams de drones con 99.99% de disponibilidad y conmutación automática por fallo.'),
     },
     {
       q: S('Does K-Video support third-party cameras?',
@@ -246,7 +246,7 @@ const KVIDEO: SolutionContent = {
     'Cámaras de múltiples fabricantes y municipios alimentan una sola imagen operativa estatal, con analítica e investigaciones sobre toda la red en vez de sistema por sistema.'),
   caseStats: [
     { v: S('Multi-vendor', 'Multi-fabricante'), l: S('Camera network', 'Red de cámaras') },
-    { v: '99.9%', l: S('Platform uptime', 'Disponibilidad de plataforma') },
+    { v: '99.99%', l: S('Platform uptime', 'Disponibilidad de plataforma') },
     { v: '15+', l: S('AI models running', 'Modelos de IA activos') },
   ],
   caseNote: S('Figures reflect reported platform performance. Deployment details subject to customer approval.',

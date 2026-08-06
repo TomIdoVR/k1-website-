@@ -103,13 +103,13 @@ export default async function KTrafficPage({
     { label: 'Tiempo de Respuesta de Señal', value: '98%', width: '98%' },
     { label: 'Reducción de Congestión', value: '34%', width: '34%' },
     { label: 'Tasa de Detección de Incidentes', value: '91%', width: '91%' },
-    { label: 'Disponibilidad de Plataforma', value: '99.9%', width: '99%' },
+    { label: 'Disponibilidad de Plataforma', value: '99.99%', width: '99%' },
     { label: 'Precisión del Modelo IA', value: '87%', width: '87%' },
   ] : [
     { label: 'Signal Response Time', value: '98%', width: '98%' },
     { label: 'Congestion Reduction', value: '34%', width: '34%' },
     { label: 'Incident Detection Rate', value: '91%', width: '91%' },
-    { label: 'Platform Uptime', value: '99.9%', width: '99%' },
+    { label: 'Platform Uptime', value: '99.99%', width: '99%' },
     { label: 'AI Model Accuracy', value: '87%', width: '87%' },
   ]
 

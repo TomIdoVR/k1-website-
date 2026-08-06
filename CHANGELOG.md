@@ -1,3 +1,18 @@
+## [v2.321] – 2026-08-06 — Reconcile citizens protected to 73M and uptime to 99.99%
+### Changed
+- **70M → 73M everywhere.** The site had been split between the two figures, which the external audit flagged: hero-lab said 70M+ while every `/vs/*` page already said 73M. Ten occurrences moved across the homepage, the LP page, `/vs/tyler-technologies`, `end-of-siloed-response`, `ProofBar`, `HeroV3Platform` and the EN metadata. **40 files now carry 73M and none carry 70M** — this reconciles the split rather than introducing a new number.
+- **99.9% → 99.99% everywhere.** 32 occurrences across the solution pages, industry pages, resource articles, industry hero components and the hero-lab proof bar.
+
+### Fixed
+- **Two hero images had 99.9% baked into the artwork.** The K-Video and K-Traffic performance panels are pixels, not DOM, so a text-only change would have left each hero contradicting the copy beside it — the same defect class as the earlier rail/art mismatches. Both were regenerated with "Platform uptime 99.99%" and reprocessed through the usual knockout/trim/1K-mark pipeline.
+  - Every other image still in use was checked against a contact sheet: none carries an uptime or citizens figure, so no further regeneration was needed.
+
+### Notes
+- `99.999%` survives in `resources/what-is-a-psap` and is correct — it is the PSAP industry "five nines" standard, in a file this change did not touch. The substitution could not have produced it: `99.9%` does not occur inside `99.999%`.
+- The uptime progress bars stay capped at `w: '99%'` so a 99.99% claim does not render as a visually full bar; only the label changed.
+- K-Traffic's regenerated header draws its logo as a squared cyan block bleeding to the panel corner rather than the rounded tile the other four use. The real 1K mark is composited in as usual, so only the tile silhouette differs, at roughly 15px on screen.
+- K-Traffic 247KB (was 306KB), K-Video 186KB (was 123KB).
+
 ## [v2.320] – 2026-08-06 — Audit follow-up: server-rendered lang, skip link, accessible contact form
 ### Fixed
 - **Every page shipped with no `lang` attribute.** `[locale]/layout.tsx` carried a comment reading "Set lang attribute server-side before React hydrates" above an inline `<script>` that set `document.documentElement.lang` — in the browser, after parse. The served HTML had no `lang` at all, which is what assistive tech and language detection read before JS runs. `<html>` now lives in `[locale]/layout.tsx`, where the locale is actually available, and renders `lang` server-side. Verified on a production build: `/hero-lab` → `lang="en"`, `/es/hero-lab` → `lang="es"`.

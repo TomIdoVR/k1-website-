@@ -20,7 +20,7 @@ const markers = [
 const stats = [
   { value: '12', label: 'Vessels', color: '#10b981' },
   { value: '847', label: 'Cameras' },
-  { value: '99.9%', label: 'Uptime', color: '#10b981' },
+  { value: '99.99%', label: 'Uptime', color: '#10b981' },
 ]
 
 export default function PortCommandHero() {

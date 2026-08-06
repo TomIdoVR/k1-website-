@@ -20,9 +20,9 @@ const T = {
   demo: { en: 'Book a Demo', es: 'Solicita una Demo' },
   watch: { en: 'Watch Overview', es: 'Ver Resumen' },
   stats: [
-    { num: '70M+', en: 'Citizens Protected', es: 'Ciudadanos Protegidos', icon: 'people' },
+    { num: '73M+', en: 'Citizens Protected', es: 'Ciudadanos Protegidos', icon: 'people' },
     { num: '40+', en: 'Cities Deployed', es: 'Ciudades Desplegadas', icon: 'city' },
-    { num: '99.9%', en: 'Uptime SLA', es: 'Disponibilidad SLA', icon: 'shield' },
+    { num: '99.99%', en: 'Uptime SLA', es: 'Disponibilidad SLA', icon: 'shield' },
   ],
 }
 
@@ -147,7 +147,7 @@ function MobileCard({ es }: { es: boolean }) {
       <div className="hll-mobile-metrics">
         <span><strong>1,842</strong><small>{es ? 'Usuarios de respuesta' : 'Responder users'}</small></span>
         <span><strong>5,736</strong><small>{es ? 'Usuarios ciudadanos' : 'Citizen users'}</small></span>
-        <span><strong>99.9%</strong><small>{es ? 'Disponibilidad' : 'App uptime'}</small></span>
+        <span><strong>99.99%</strong><small>{es ? 'Disponibilidad' : 'App uptime'}</small></span>
       </div>
     </article>
   )

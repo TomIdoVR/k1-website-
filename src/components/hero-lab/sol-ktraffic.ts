@@ -5,7 +5,7 @@
    Notes on this one: it uses `pin` and `bell` as benefit icons, which exist
    only in the flow-icon set — they resolve through the bidirectional fallback
    in SolutionPage. The performance panel has five bars rather than four, and
-   uptime deliberately shows "99.9%" while the bar itself is capped at 99%.
+   uptime deliberately shows "99.99%" while the bar itself is capped at 99%.
 
    Non-breaking hyphens (U+2011) in "K‑Traffic" inside prose are the design's
    own, kept so the product name never breaks across lines. */
@@ -146,7 +146,7 @@ const KTRAFFIC: SolutionContent = {
     { l: S('Signal response time', 'Tiempo de respuesta de señal'), v: '98%', w: '98%' },
     { l: S('Congestion reduction', 'Reducción de congestión'), v: '34%', w: '34%' },
     { l: S('Incident detection rate', 'Tasa de detección de incidentes'), v: '91%', w: '91%' },
-    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '99.9%', w: '99%' },
+    { l: S('Platform uptime', 'Disponibilidad de plataforma'), v: '99.99%', w: '99%' },
     { l: S('AI model accuracy', 'Precisión del modelo IA'), v: '87%', w: '87%' },
   ],
 

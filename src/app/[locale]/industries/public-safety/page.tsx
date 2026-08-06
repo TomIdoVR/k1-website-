@@ -40,12 +40,12 @@ export default async function PublicSafetyPage({
       ? [
           { value: '40+', label: 'Proyectos Activos' },
           { value: '73M', label: 'Ciudadanos Protegidos' },
-          { value: '99.9%', label: 'Disponibilidad' },
+          { value: '99.99%', label: 'Disponibilidad' },
         ]
       : [
           { value: '40+', label: 'Active Projects' },
           { value: '73M', label: 'Citizens Protected' },
-          { value: '99.9%', label: 'Platform Uptime' },
+          { value: '99.99%', label: 'Platform Uptime' },
         ],
     cta1: es ? 'Solicita una Demo' : 'Book a Demo',
     cta2: es ? 'Ver la Plataforma' : 'See the Platform',
@@ -219,12 +219,12 @@ export default async function PublicSafetyPage({
 
   const publicSafetyFaqs = es ? [
     { question: '¿Cómo ayuda KabatOne a la seguridad pública?', answer: 'KabatOne proporciona una plataforma unificada que transforma datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada. Conecta cámaras, sensores, drones y sistemas de comunicación en una sola imagen operativa.' },
-    { question: '¿Cuántas ciudades protege KabatOne?', answer: 'KabatOne opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.9%.' },
+    { question: '¿Cuántas ciudades protege KabatOne?', answer: 'KabatOne opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.99%.' },
     { question: '¿Qué productos ofrece KabatOne para seguridad pública?', answer: 'KabatOne despliega la suite completa: K-Safety para conciencia situacional, K-Dispatch para despacho CAD, K-Traffic para gestión de tráfico, K-Video para gestión de video y K-Connect para video comunitario compartido.' },
     { question: '¿Cómo reduce KabatOne los tiempos de respuesta?', answer: 'Los motores de reglas impulsados por IA detectan incidentes automáticamente, activan protocolos y despachan recursos. El despacho inteligente y la analítica geoespacial aseguran que las unidades correctas lleguen a las ubicaciones correctas en el menor tiempo.' },
   ] : [
     { question: 'How does KabatOne help public safety?', answer: 'KabatOne provides a unified platform that transforms fragmented city data into actionable intelligence and coordinated response. It connects cameras, sensors, drones, and communication systems into a single operational picture.' },
-    { question: 'How many cities does KabatOne protect?', answer: 'KabatOne operates across 40+ active projects, protecting over 73 million citizens with 99.9% platform uptime.' },
+    { question: 'How many cities does KabatOne protect?', answer: 'KabatOne operates across 40+ active projects, protecting over 73 million citizens with 99.99% platform uptime.' },
     { question: 'What products does KabatOne offer for public safety?', answer: 'KabatOne deploys the complete suite: K-Safety for situational awareness, K-Dispatch for CAD dispatch, K-Traffic for traffic management, K-Video for video management, and K-Connect for community video sharing.' },
     { question: 'How does KabatOne reduce response times?', answer: 'AI-powered rule engines automatically detect incidents, trigger protocols, and dispatch resources. Smart dispatch and geospatial analytics ensure the right units reach the right locations in minimum time.' },
   ]
