@@ -57,18 +57,12 @@
 }
 
 /* Navigation */
-.hll-nav {
-  position: relative;
-  z-index: 30;
-  width: min(100%, 1536px);
-  height: 96px;
-  margin: 0 auto;
-  padding: 24px 52px;
-  display: grid;
-  grid-template-columns: 236px 1fr auto;
-  align-items: center;
-  gap: 30px;
-}
+/* .hll-nav intentionally lives in components/hero-lab/hero-lab-header.css only.
+   A copy used to sit here as well — left behind when the header was extracted —
+   and because this file loads after it at equal specificity, it silently won
+   and reverted the header to position: relative. That made the header sticky on
+   the solution pages but not on the homepage, from identical markup. One owner
+   now; the rule there is a strict superset of what was here. */
 
 .hll-nav-logo {
   display: inline-flex;

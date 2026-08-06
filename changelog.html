@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.325 -->
+      <div class="tl-entry fix" id="v2.325">
+        <div class="tl-meta"><span class="tl-ver">v2.325</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Sticky site header, and reversed capability rows collapse on mobile</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The redesign header now sticks on every page.</strong> The live site's <code>Nav</code> was already fixed; <code>.hll-nav</code> was the only header that scrolled away. Three separate things had to be true before it would pin — each would have made the fix look done while doing nothing</li>
+            <li><strong>1. A duplicate <code>.hll-nav</code> rule survived in <code>hero-lab-light.css</code></strong> from when the header was extracted into its own file. It loads after <code>hero-lab-header.css</code> at equal specificity, so it won and reset <code>position</code> to <code>relative</code> — which is why the header stuck on solution pages but not the homepage, from identical markup. The stale copy is gone</li>
+            <li><strong>2. On the homepage the header rendered <em>inside</em> <code>&lt;section className="hll-page"&gt;</code></strong>. A sticky element cannot escape its parent's box, and that section is the hero only — ~1537px of a 13884px document — so it unstuck the moment the hero ended. Now a sibling, a direct child of <code>&lt;main&gt;</code></li>
+            <li><strong>3. The accordion's own sticky headers moved from <code>top: 0</code> to <code>top: var(--hll-nav-h)</code></strong>, or they would have pinned <em>underneath</em> the header. The variable is published on <code>:root</code> (96px, 78px under 900px) so the offset tracks the real height. Also added <code>scroll-padding-top</code> so anchors do not land beneath the header</li>
+            <li><strong>Reversed capability rows never collapsed on mobile.</strong> <code>.sp-feat.is-rev</code> sets its own columns with two classes (0,2,0) while the mobile override used one (0,1,0), and media queries add no specificity — so every alternating row stayed two-column, rendering its image <strong>141px wide against 333px</strong>. Affects all five solution pages</li>
+            <li>Verified by scripted scroll at 375px and 1280px: the header holds <code>top: 0</code> at every scroll position, the solution header stacks flush beneath it at 78px with no overlap, and all six K-Safety images now measure 333px. Desktop unchanged</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.324 -->
       <div class="tl-entry added" id="v2.324">
         <div class="tl-meta"><span class="tl-ver">v2.324</span><span class="tl-date">2026-08-06</span></div>

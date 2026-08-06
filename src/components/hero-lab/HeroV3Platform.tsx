@@ -204,8 +204,15 @@ export default function HeroV3Platform({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
   const cards = [<CadCard key="cad" es={es} />, <VideoCard key="video" es={es} />, <GisCard key="gis" es={es} />, <EventCard key="events" es={es} />, <UdeCard key="ude" es={es} />, <MobileCard key="mobile" es={es} />, <IntegrationsCard key="integrations" es={es} />]
   return (
-    <section className="hll-page" aria-labelledby="hll-title">
+    /* The header sits outside .hll-page deliberately. A sticky element cannot
+       escape its parent's box, and .hll-page is only the hero section — about
+       1537px of a 13884px document — so nesting the header inside it made the
+       nav unstick and scroll away as soon as the hero ended. As a sibling it is
+       a direct child of <main> and stays pinned for the whole page. It declares
+       its own colour tokens and background, so it does not depend on .hll-page. */
+    <>
       <HeroLabHeader es={es} />
+      <section className="hll-page" aria-labelledby="hll-title">
       <div className="hll-hero-head">
         <p className="hll-eyebrow">{T.eyebrow[language]}</p>
         <h1 className="hll-headline" id="hll-title">{T.h1a[language]}<span className="hll-headline-grad">{T.h1b[language]}</span></h1>
@@ -217,6 +224,7 @@ export default function HeroV3Platform({ es }: { es: boolean }) {
         <HeroCardCarousel previousLabel={es ? 'Tarjeta anterior' : 'Previous card'} nextLabel={es ? 'Tarjeta siguiente' : 'Next card'} slideLabel={es ? 'Módulos de la plataforma' : 'Platform modules'}>{cards}</HeroCardCarousel>
       </div>
       <ProofMetrics es={es} />
-    </section>
+      </section>
+    </>
   )
 }

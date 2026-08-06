@@ -232,7 +232,10 @@
   .sv-item { overflow: clip; }
   .sv-item-head {
     position: sticky;
-    top: 0;
+    /* Sits directly beneath the site header, which is itself sticky — top: 0
+       would pin these underneath it. Falls back to 0 if the variable is
+       missing so the header still pins rather than not sticking at all. */
+    top: var(--hll-nav-h, 0px);
     z-index: 5;
     background: #fff;
     border-radius: 14px 14px 0 0;

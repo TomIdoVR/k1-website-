@@ -1,3 +1,17 @@
+## [v2.325] – 2026-08-06 — Sticky site header, and reversed capability rows collapse on mobile
+### Fixed
+- **The redesign header now sticks on every page.** The live site's `Nav` was already `position: fixed`; `.hll-nav` was the only header that scrolled away. Three separate things had to be true before it would actually pin, and each would have made the fix look done while doing nothing:
+  1. A **duplicate `.hll-nav` rule survived in `hero-lab-light.css`** from when the header was extracted into its own file. It loads after `hero-lab-header.css` at equal specificity, so it won and reset `position` to `relative`. This is why the header stuck on the solution pages but not the homepage, from the same markup. The stale copy is gone; the header file is the single owner and its rule is a strict superset.
+  2. On the homepage the header was rendered **inside** `<section className="hll-page">`. A sticky element cannot escape its parent's box, and that section is the hero only — about 1537px of a 13884px document — so the header unstuck the moment the hero ended. It is now a sibling, a direct child of `<main>`.
+  3. The solutions accordion's own sticky headers had to move from `top: 0` to `top: var(--hll-nav-h)`, or they would have pinned *underneath* the header. `--hll-nav-h` is published on `:root` (96px, 78px under 900px) so the offset tracks the real height rather than a hard-coded guess.
+- Added `scroll-padding-top` so in-page anchors no longer land beneath the now-sticky header, and a hairline bottom border so it separates from content while pinned.
+
+- **Reversed capability rows never collapsed on mobile.** `.sp-feat.is-rev` sets its own `grid-template-columns` with two classes (0,2,0); the mobile override targeted `.sp-feat` with one (0,1,0), and a media query adds no specificity — so the single-class rule never beat it. Every alternating row stayed two-column on phones, rendering its image **141px wide against 333px** for the others. Affects all five solution pages; K-Safety alone had three broken rows.
+
+### Notes
+- Verified by scripted scroll at 375px and 1280px: the header holds `top: 0` at every scroll position on both the homepage and the solution pages, the solutions header stacks flush beneath it at exactly 78px with no overlap, and all six K-Safety capability images now measure 333px.
+- Desktop is unchanged: alternating rows still mirror correctly (567/493 and 493/567) and the header keeps its 96px height.
+
 ## [v2.324] – 2026-08-06 — Sticky solution headers on mobile
 ### Added
 - **Each solution's header pins to the top while you scroll through it, then hands off to the next.** On a phone the accordion is one column and an expanded solution is taller than the viewport — K-Traffic's is 632px against an 812px screen — so the product name scrolled away and you lost track of which solution you were reading.

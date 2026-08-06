@@ -7,6 +7,16 @@
 
 
 
+/* Published so sections elsewhere can offset their own sticky elements against
+   the header's real height instead of hard-coding it. Kept in sync with the
+   .hll-nav height at each breakpoint below. */
+:root { --hll-nav-h: 96px; }
+@media (max-width: 900px) { :root { --hll-nav-h: 78px; } }
+
+/* Anchor targets (#solutions, etc.) would otherwise land underneath the now
+   sticky header. */
+html { scroll-padding-top: calc(var(--hll-nav-h) + 12px); }
+
 /* Navigation */
 /* Self-sufficiency: on the homepage the nav is transparent and sits over
    .hll-page's light gradient. The solution pages have no such wrapper, so it
@@ -21,8 +31,14 @@
   --hll-line: rgba(77, 108, 171, 0.15);
   color: var(--hll-navy);
   background: #fafcff;
-  position: relative;
+  /* Sticky on every redesign page. The live site's Nav is already fixed; this
+     header was the only one that scrolled away. --hll-nav-h is published on
+     :root below so other sections can offset their own sticky elements against
+     it — the solutions accordion pins its headers directly beneath this one. */
+  position: sticky;
+  top: 0;
   z-index: 30;
+  border-bottom: 1px solid rgba(77, 108, 171, 0.12);
   width: min(100%, 1536px);
   height: 96px;
   margin: 0 auto;

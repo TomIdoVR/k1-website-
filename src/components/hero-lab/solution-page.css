@@ -355,7 +355,12 @@
   .sp-flow-rail-out span:nth-child(3) { background: none; border-top-color: #22b8d4; }
 }
 @media (max-width: 860px) {
-  .sp-feat, .sp-case-grid { grid-template-columns: 1fr; }
+  /* .sp-feat.is-rev must be listed explicitly. It sets its own
+     grid-template-columns with two classes (0,2,0), and a media query adds no
+     specificity — so the single-class rule below never beat it and every
+     reversed row stayed two-column on phones. Its image rendered 141px wide
+     against 333px for the others. */
+  .sp-feat, .sp-feat.is-rev, .sp-case-grid { grid-template-columns: 1fr; }
   .sp-feat.is-rev .sp-feat-shot { order: 0; }
   .sp-case-side { flex-direction: row; flex-wrap: wrap; }
   .sp-case-stat { flex: 1; min-width: 150px; }
