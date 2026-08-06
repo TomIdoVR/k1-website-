@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import ScenarioPlayer from '@/components/demo/ScenarioPlayer'
 import { medicalScenario } from '@/data/demo/medical'
+import ScenarioHeading from '@/components/demo/ScenarioHeading'
 
 export const metadata: Metadata = {
   title: '911 Medical Emergency Scenario | KabatOne Platform',
@@ -10,10 +11,15 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://kabatone.com/demo/medical' },
 }
 
-export default function MedicalScenarioPage() {
+export default async function MedicalScenarioPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const es = locale === 'es'
   return (
-    <Suspense>
-      <ScenarioPlayer scenario={medicalScenario} basePath="/demo/medical" />
-    </Suspense>
+    <>
+      <ScenarioHeading>{es ? 'Recorrido del escenario de emergencia médica 911' : '911 medical emergency scenario walkthrough'}</ScenarioHeading>
+      <Suspense>
+        <ScenarioPlayer scenario={medicalScenario} basePath="/demo/medical" />
+      </Suspense>
+    </>
   )
 }

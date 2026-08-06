@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { generatePageMetadata } from '@/lib/metadata'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import ScenarioHeading from '@/components/demo/ScenarioHeading'
 import SimulatorLoader from './SimulatorLoader'
 
 export async function generateMetadata({
@@ -24,6 +25,11 @@ export default async function SimulatorPage({
   return (
     <>
       <Nav />
+      <ScenarioHeading>
+        {es
+          ? 'Simulador interactivo de respuesta de seguridad pública'
+          : 'Interactive public safety response simulator'}
+      </ScenarioHeading>
       <SimulatorLoader es={es} />
       <Footer es={es} />
     </>

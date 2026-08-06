@@ -1,3 +1,22 @@
+## [v2.323] – 2026-08-06 — One H1 on the simulator and demo scenario pages (SEO-004)
+### Added
+- **An H1 on the twelve pages that had none.** `/simulator` and the five demo scenarios (`lpr`, `school`, `violence`, `medical`, `access-control`), in both locales, shipped server HTML with zero headings of any level — not just no H1. Each now carries exactly one, localized:
+  - Interactive public safety response simulator / Simulador interactivo de respuesta de seguridad pública
+  - License plate recognition scenario walkthrough / Recorrido del escenario de reconocimiento de placas
+  - Active shooter school response scenario walkthrough / Recorrido del escenario de respuesta a tirador activo en escuela
+  - Violence detection scenario walkthrough / Recorrido del escenario de detección de violencia
+  - 911 medical emergency scenario walkthrough / Recorrido del escenario de emergencia médica 911
+  - Unauthorized access response scenario walkthrough / Recorrido del escenario de respuesta a acceso no autorizado
+- New `ScenarioHeading` component carrying the shared treatment.
+
+### Notes
+- **Deliberate deviation from the ticket, which asked for a *visible* H1.** These are full-screen immersive players — dark, `min-h-screen`, with their own top bar — and neither `ScenarioPlayer` nor `TopBar` renders any heading that could be promoted. There is no surface that can carry a visible page heading without breaking the demo, so the H1 is visually hidden instead.
+- Hidden with `clip-path`, not `display: none` or `visibility: hidden`, so it stays in the accessibility tree and in the crawled document. Both of those would have removed it from the very things the ticket exists to fix.
+- Rendered from the page (a server component) and placed **outside** `Suspense`, so it is in the initial HTML rather than appearing after hydration — the ticket's validation step specifically checks server HTML.
+- The scenario pages became `async` and now take `params` in order to resolve the locale; they previously took no props.
+- Verified on a real deployment, not locally: all 12 URLs return exactly one `<h1>` with the correct localized text.
+- Their metadata is still English-only on the `/es/` routes — that is SEO-003, a separate content decision, and is untouched here.
+
 ## [v2.322] – 2026-08-06 — Keep preview and staging deploys out of the search index
 ### Fixed
 - **The review host was fully indexable.** `k1-redesign.vercel.app` served `robots.txt` with `Allow: /`, no `X-Robots-Tag`, and `<meta name="robots" content="index, follow">` on production templates — while the review link was being shared. Canonicals pointing at `kabatone.com` are a hint, not a directive, so nothing prevented the staging host being indexed as duplicate content against the real site.

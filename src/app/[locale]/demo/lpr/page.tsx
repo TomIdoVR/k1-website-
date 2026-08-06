@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import LprScenario from '@/components/demo/LprScenario'
+import ScenarioHeading from '@/components/demo/ScenarioHeading'
 
 export const metadata: Metadata = {
   title: 'LPR Detection Walkthrough | KabatOne Platform Demo',
@@ -17,19 +18,24 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LprDemoPage() {
+export default async function LprDemoPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const es = locale === 'es'
   return (
-    <Suspense
-      fallback={
-        <div
-          className="flex items-center justify-center min-h-screen"
-          style={{ background: '#08101A', color: '#48647A', fontFamily: 'monospace' }}
-        >
-          LOADING...
-        </div>
-      }
-    >
-      <LprScenario />
-    </Suspense>
+    <>
+      <ScenarioHeading>{es ? 'Recorrido del escenario de reconocimiento de placas' : 'License plate recognition scenario walkthrough'}</ScenarioHeading>
+      <Suspense
+        fallback={
+          <div
+            className="flex items-center justify-center min-h-screen"
+            style={{ background: '#08101A', color: '#48647A', fontFamily: 'monospace' }}
+          >
+            LOADING...
+          </div>
+        }
+      >
+        <LprScenario />
+      </Suspense>
+    </>
   )
 }

@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.323 -->
+      <div class="tl-entry added" id="v2.323">
+        <div class="tl-meta"><span class="tl-ver">v2.323</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">One H1 on the simulator and demo scenario pages (SEO-004)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>An H1 on the twelve pages that had none.</strong> <code>/simulator</code> and the five demo scenarios (lpr, school, violence, medical, access-control), in both locales, shipped server HTML with zero headings of <em>any</em> level — not just no H1. Each now carries exactly one, localized in EN and ES</li>
+            <li><strong>Deliberate deviation from the ticket, which asked for a <em>visible</em> H1.</strong> These are full-screen immersive players with their own top bar, and neither <code>ScenarioPlayer</code> nor <code>TopBar</code> renders any heading that could be promoted — there is no surface that can carry a visible page heading without breaking the demo. The H1 is visually hidden instead</li>
+            <li>Hidden with <code>clip-path</code>, not <code>display: none</code> or <code>visibility: hidden</code>, so it stays in the accessibility tree and the crawled document — both alternatives would have removed it from the very things the ticket exists to fix</li>
+            <li>Rendered from the page (a server component) and placed <strong>outside</strong> <code>Suspense</code>, so it is in the initial HTML rather than appearing after hydration. Verified on a real deployment: all 12 URLs return exactly one <code>&lt;h1&gt;</code> with the correct localized text</li>
+            <li>Their metadata is still English-only on the <code>/es/</code> routes — that is SEO-003, a separate content decision, untouched here</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.322 -->
       <div class="tl-entry fix" id="v2.322">
         <div class="tl-meta"><span class="tl-ver">v2.322</span><span class="tl-date">2026-08-06</span></div>
