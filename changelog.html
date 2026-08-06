@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.322 -->
+      <div class="tl-entry fix" id="v2.322">
+        <div class="tl-meta"><span class="tl-ver">v2.322</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Keep preview and staging deploys out of the search index</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The review host was fully indexable.</strong> <code>k1-redesign.vercel.app</code> served <code>robots.txt</code> with <code>Allow: /</code>, no <code>X-Robots-Tag</code>, and <code>index, follow</code> on production templates — while the review link was being shared. Canonicals pointing at <code>kabatone.com</code> are a hint, not a directive, so nothing prevented the staging host being indexed as duplicate content against the real site</li>
+            <li>Preview and branch deploys now send <code>X-Robots-Tag: noindex, nofollow</code> on every path via <code>headers()</code> in <code>next.config.ts</code> — covering both <code>k1-redesign.vercel.app</code> and <code>staging.kabatone.com</code>, since Vercel marks branch deploys as <code>preview</code></li>
+            <li>Gated on <code>VERCEL_ENV === 'preview'</code> rather than <code>!== 'production'</code> on purpose: if the variable were ever missing or renamed, the fail-safe must be "stay indexable". The inverse would silently de-index <code>kabatone.com</code></li>
+            <li><code>robots.txt</code> stays permissive on preview by design — disallowing the crawl would stop crawlers ever <em>seeing</em> the <code>noindex</code>, stranding already-indexed URLs. Allowing the fetch and serving the header is what actually removes them</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.321 -->
       <div class="tl-entry changed" id="v2.321">
         <div class="tl-meta"><span class="tl-ver">v2.321</span><span class="tl-date">2026-08-06</span></div>

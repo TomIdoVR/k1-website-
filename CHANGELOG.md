@@ -1,3 +1,13 @@
+## [v2.322] – 2026-08-06 — Keep preview and staging deploys out of the search index
+### Fixed
+- **The review host was fully indexable.** `k1-redesign.vercel.app` served `robots.txt` with `Allow: /`, no `X-Robots-Tag`, and `<meta name="robots" content="index, follow">` on production templates — while the review link was being shared. Canonicals pointing at `kabatone.com` are a hint, not a directive, so nothing prevented the staging host being indexed as duplicate content against the real site.
+- Preview and branch deploys now send `X-Robots-Tag: noindex, nofollow` on every path, via `headers()` in `next.config.ts`. This covers both `k1-redesign.vercel.app` and `staging.kabatone.com`, since Vercel marks branch deploys as `preview`.
+
+### Notes
+- Gated on `VERCEL_ENV === 'preview'` rather than `!== 'production'` on purpose. If the variable were ever missing or renamed, the fail-safe has to be "stay indexable" — the inverse would silently de-index `kabatone.com`, which is unrecoverable in a way that an indexed staging host is not.
+- `robots.txt` is deliberately left permissive on preview. Disallowing the crawl would stop crawlers *fetching* the page and therefore stop them ever seeing the `noindex` — which leaves already-indexed URLs stranded. Allowing the fetch and serving the header is what actually removes them.
+- Verified with `VERCEL_ENV=preview npx next build` before deploying, since a malformed `headers()` is a build-time failure.
+
 ## [v2.321] – 2026-08-06 — Reconcile citizens protected to 73M and uptime to 99.99%
 ### Changed
 - **70M → 73M everywhere.** The site had been split between the two figures, which the external audit flagged: hero-lab said 70M+ while every `/vs/*` page already said 73M. Ten occurrences moved across the homepage, the LP page, `/vs/tyler-technologies`, `end-of-siloed-response`, `ProofBar`, `HeroV3Platform` and the EN metadata. **40 files now carry 73M and none carry 70M** — this reconciles the split rather than introducing a new number.
