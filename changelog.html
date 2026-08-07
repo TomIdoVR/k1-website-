@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.327 -->
+      <div class="tl-entry changed" id="v2.327">
+        <div class="tl-meta"><span class="tl-ver">v2.327</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Homepage headline moves to Barlow Condensed</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The homepage hero H1 now uses Barlow Condensed</strong>, matching every other display heading on the redesign — the section headings directly beneath it and all five solution page H1s. It was the only display heading still set in Space Grotesk, which is why it read as belonging to a different site than the titles below it</li>
+            <li>Not a font-loading fault, which was checked first: <code>.hll-headline</code> hard-codes the literal family <code>'Space Grotesk'</code> rather than the <code>--font-space-grotesk</code> variable — a pattern that usually falls back silently to a system face. It was not falling back (<code>document.fonts.check</code> returned true); the mismatch was a genuine design inconsistency from the port</li>
+            <li>Size and tracking moved with the family. <code>-0.055em</code> was tuned for Space Grotesk's wide geometric forms and is far too tight on a condensed face, so it relaxes to <code>-0.015em</code>; and a condensed face reads smaller at the same px, so the clamp rises from 58–78px to 64–90px, and correspondingly at the two mobile breakpoints</li>
+            <li>Verified it is genuinely rendering the condensed face rather than a fallback by measuring the same string in both families: <strong>790px in Barlow Condensed against 1064px in Space Grotesk</strong>, 26% narrower. Fits both viewports with no overflow</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.326 -->
       <div class="tl-entry fix" id="v2.326">
         <div class="tl-meta"><span class="tl-ver">v2.326</span><span class="tl-date">2026-08-06</span></div>

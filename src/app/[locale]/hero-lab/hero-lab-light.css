@@ -245,14 +245,23 @@
   line-height: 1.35;
 }
 
+/* Barlow Condensed, matching every other display heading on the redesign —
+   the section headings directly below this one and all five solution page H1s.
+   This was the only display heading still set in Space Grotesk.
+
+   The size and tracking move with it rather than being inherited: -0.055em was
+   tuned for Space Grotesk's wide geometric forms and is far too tight on a
+   condensed face, and a condensed face reads smaller at the same px, so the
+   clamp goes up to hold the same optical weight. 700 is the heaviest Barlow
+   Condensed weight actually loaded in layout.tsx — 800 would be synthesised. */
 .hll-headline {
   margin: 0;
   color: #07194c;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(58px, 5vw, 78px);
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-size: clamp(64px, 5.8vw, 90px);
   font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 0.94;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
 }
 
 .hll-headline-grad {
@@ -907,7 +916,9 @@
   .hll-brand-logo-mask { height: 30px; }
   .hll-hero-head { margin-top: 28px; }
   .hll-eyebrow { font-size: 11px; letter-spacing: 0.08em; }
-  .hll-headline { font-size: clamp(48px, 10vw, 68px); }
+  /* Scaled up with the switch to Barlow Condensed, which reads smaller than
+     Space Grotesk at the same px. */
+  .hll-headline { font-size: clamp(54px, 11vw, 78px); }
   .hll-sub { max-width: 580px; font-size: 16px; }
   .hll-stats { max-width: 680px; flex-wrap: wrap; row-gap: 18px; }
   .hll-stat { flex: 1 1 180px; justify-content: center; border-right: 0; }
@@ -919,7 +930,7 @@
   .hll-hero-head { margin-top: 22px; padding-inline: 18px; }
   /* 9.5px was below the readable floor for real copy on a phone. */
   .hll-eyebrow { max-width: 330px; margin-inline: auto; font-size: 11px; letter-spacing: 0.07em; }
-  .hll-headline { font-size: clamp(26px, 9.2vw, 52px); line-height: 1; overflow-wrap: break-word; }
+  .hll-headline { font-size: clamp(30px, 10.4vw, 58px); line-height: 1; overflow-wrap: break-word; }
   .hll-headline-grad { margin-top: 4px; }
   .hll-sub { margin-top: 17px; font-size: 14px; line-height: 1.55; }
   .hll-ctas { flex-direction: column; gap: 14px; margin-top: 20px; }

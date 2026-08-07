@@ -1,3 +1,13 @@
+## [v2.327] – 2026-08-06 — Homepage headline moves to Barlow Condensed
+### Changed
+- **The homepage hero H1 now uses Barlow Condensed**, matching every other display heading on the redesign — the section headings directly beneath it and all five solution page H1s. It was the only display heading still set in Space Grotesk, which is why it read as belonging to a different site than the titles below it.
+
+### Notes
+- Not a font-loading fault, which was checked first: `.hll-headline` hard-codes the literal family name `'Space Grotesk'` rather than using the `--font-space-grotesk` variable, a pattern that usually falls back silently to a system face. It was not falling back — `document.fonts.check('700 64px "Space Grotesk"')` returned true. The mismatch was a genuine design inconsistency carried over from the port.
+- Size and tracking moved with the family rather than being inherited. `-0.055em` was tuned for Space Grotesk's wide geometric forms and is far too tight on a condensed face, so it relaxes to `-0.015em` (matching `.sp-h1`); and a condensed face reads smaller at the same px, so the clamp rises from `58–78px` to `64–90px`, from `48–68px` to `54–78px` under 1180px, and from `26–52px` to `30–58px` under 560px.
+- Stays at weight 700. `layout.tsx` loads Barlow Condensed at 400/500/600/700 only, so the 800 used by `.sp-h1` is synthesised — worth reconciling separately rather than copying here.
+- Verified it is genuinely rendering the condensed face rather than a fallback, by measuring the same string in both families at the same size: 790px in Barlow Condensed against 1064px in Space Grotesk, 26% narrower. Fits both viewports with no overflow — 732px wide at 1280px, 339px at 375px.
+
 ## [v2.326] – 2026-08-06 — Remove the dark band under the homepage header
 ### Fixed
 - **A 14px dark band appeared between the header and the hero**, introduced by v2.325. `.hll-hero-head` carries a 14px top margin. While the header lived inside `.hll-page` that margin had a sibling above it; once the header moved out to become a sibling of the section, the margin had nothing to collapse against and collapsed *through* the section's top edge — pushing `.hll-page` down and exposing the dark `#0f1724` body background in the gap.
