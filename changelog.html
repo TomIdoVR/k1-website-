@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.326 -->
+      <div class="tl-entry fix" id="v2.326">
+        <div class="tl-meta"><span class="tl-ver">v2.326</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Remove the dark band under the homepage header</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>A 14px dark band appeared between the header and the hero</strong>, introduced by v2.325. <code>.hll-hero-head</code> carries a 14px top margin; while the header lived inside <code>.hll-page</code> that margin had a sibling above it, but once the header moved out to become a sibling of the section, the margin collapsed <em>through</em> the section's top edge — pushing <code>.hll-page</code> down and exposing the dark <code>#0f1724</code> body background</li>
+            <li><code>.hll-page</code> now uses <code>display: flow-root</code>, which establishes a block formatting context and contains the margin. Its existing <code>overflow: clip</code> does <strong>not</strong> do this — unlike <code>hidden</code>, <code>clip</code> creates no formatting context — which is why the section was not already containing it</li>
+            <li>Verified: the gap is 0 and the intended 14px above the headline is preserved, now inside the section rather than escaping it</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.325 -->
       <div class="tl-entry fix" id="v2.325">
         <div class="tl-meta"><span class="tl-ver">v2.325</span><span class="tl-date">2026-08-06</span></div>

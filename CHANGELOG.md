@@ -1,3 +1,9 @@
+## [v2.326] – 2026-08-06 — Remove the dark band under the homepage header
+### Fixed
+- **A 14px dark band appeared between the header and the hero**, introduced by v2.325. `.hll-hero-head` carries a 14px top margin. While the header lived inside `.hll-page` that margin had a sibling above it; once the header moved out to become a sibling of the section, the margin had nothing to collapse against and collapsed *through* the section's top edge — pushing `.hll-page` down and exposing the dark `#0f1724` body background in the gap.
+- `.hll-page` now uses `display: flow-root`, which establishes a block formatting context and contains the margin. Its existing `overflow: clip` does **not** do this — unlike `hidden`, `clip` creates no formatting context — which is why the section was not already containing it.
+- Verified: the gap between header and section is 0, and the intended 14px of breathing room above the headline is preserved (it is now inside the section rather than escaping it).
+
 ## [v2.325] – 2026-08-06 — Sticky site header, and reversed capability rows collapse on mobile
 ### Fixed
 - **The redesign header now sticks on every page.** The live site's `Nav` was already `position: fixed`; `.hll-nav` was the only header that scrolled away. Three separate things had to be true before it would actually pin, and each would have made the fix look done while doing nothing:

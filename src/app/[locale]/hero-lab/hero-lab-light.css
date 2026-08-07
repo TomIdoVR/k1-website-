@@ -13,6 +13,13 @@
   isolation: isolate;
   min-height: 1024px;
   overflow: clip;
+  /* Contains child margins. .hll-hero-head has a 14px top margin, and once the
+     header moved out of this section (v2.325) that margin had nothing above it
+     to collapse against — so it collapsed *through* the section's top edge,
+     pushing .hll-page down 14px and showing the dark body background as a black
+     band under the header. overflow: clip does not establish a block formatting
+     context, so it did not contain it; flow-root does. */
+  display: flow-root;
   color: var(--hll-navy);
   background:
     radial-gradient(circle at 50% 59%, rgba(75, 158, 255, 0.17) 0, rgba(93, 167, 255, 0.08) 22%, transparent 44%),
