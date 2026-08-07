@@ -9,7 +9,10 @@ export default function Footer({ es }: { es: boolean }) {
           © 2026 KabatOne Inc.<br />{es ? 'Todos los derechos reservados.' : 'All rights reserved.'}
         </div>
         {/* Right: columns grouped together */}
-        <div style={{ display: 'flex', gap: '48px' }}>
+        {/* wrap + 0 min-width: three link columns at a 48px gap could not fit a
+            320px screen and pushed every legacy page into horizontal scroll
+            (374px document against a 320px viewport). */}
+        <div className="footer-cols" style={{ display: 'flex', gap: '48px', flexWrap: 'wrap', minWidth: 0 }}>
           {/* Company column */}
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '14px' }}>

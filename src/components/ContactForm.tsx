@@ -102,7 +102,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
 
   if (status === 'success') {
     return (
-      <div style={{
+      <div className="cf-card" style={{
         background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
         borderRadius: '20px', padding: '48px', textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px',
@@ -130,7 +130,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
   }
 
   return (
-    <div style={{
+    <div className="cf-card" style={{
       background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
       borderRadius: '20px', padding: '48px',
     }}>
@@ -149,7 +149,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
       <form onSubmit={handleSubmit} method="post" action={FORMSPREE_URL}>
         {campaignSource && <input type="hidden" name="campaign_source" value={campaignSource} />}
         {/* Row 1: Name + Company */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
             <label htmlFor="cf-name" style={labelStyle}>{labels.labelName}</label>
             <input id="cf-name" type="text" name="name" autoComplete="name" placeholder={labels.placeholderName} required style={inputStyle} />
@@ -161,7 +161,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
         </div>
 
         {/* Row 2: Email + Phone */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
             <label htmlFor="cf-email" style={labelStyle}>{labels.labelEmail}</label>
             <input id="cf-email" type="email" name="email" autoComplete="email" placeholder={labels.placeholderEmail} required style={inputStyle} />

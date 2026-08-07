@@ -1,3 +1,17 @@
+## [v2.328] – 2026-08-06 — Contact page is usable on a phone again
+### Fixed
+- **`/contact` rendered a 770px document inside a 390px viewport**, holding its desktop `1fr 420px` grid at every width. The form was squeezed to **164px** and each field to **74px** — the primary conversion path was unusable on a phone.
+- **The cause was not a missing breakpoint. The responsive rules existed and had never matched anything.** They were written as attribute-substring selectors against the inline style attribute — `div[style*="grid-template-columns: 1fr 420px"]` — but React serialises inline styles with **no space after the colon** (`grid-template-columns:1fr 420px`). Several selectors additionally embedded the JS quote characters (`padding: '80px 40px 0'`), which never appear in rendered HTML at all. Measured: the space-form selector matched **0** elements, the React-form selector matched 1. One rule also targeted `gap: 16px` where the markup used `12px`, so it was wrong on two counts.
+- Replaced the whole block with real class names — `.contact-wrap`, `.contact-grid`, `.contact-offices`, `.contact-cta`, `.contact-cta-card`, plus `.cf-row` and `.cf-card` on the form. Classes also solve what pushed the original author toward attribute matching: `ContactForm` is a separate component, and a class can be targeted across that boundary where an inline style cannot.
+- Added `min-width: 0` to the grid children. Grid items default to `min-width: auto`, which is what allowed the `1fr` track to refuse to yield to the fixed `420px` one.
+
+- **The shared `Footer` broke every legacy page at 320px.** Three link columns at a 48px gap with `flex-wrap: nowrap` produced a 374px row inside a 320px viewport. Now wraps, with `min-width: 0`.
+
+### Notes
+- Verified across nine widths — 320, 360, 375, 390, 430, 640, 768, 1024, 1280 — all now at **0 horizontal overflow**. The form goes from 238px at 320px to 514px at 1280px, one field per row below 640px, inputs 48px tall (above the 44px touch minimum), and the two-column desktop layout is unchanged from 1024px up.
+- `/about` (747px) and `/industries/public-safety` (502px) still overflow at 390px. They have their own causes, are unaffected by the footer change, and are untouched here — they were the audit's Warning-level items against Contact's Critical.
+- The redesign pages were already clean and remain so: `/hero-lab` and `/hero-lab/k-safety` measure 0 overflow at 390px.
+
 ## [v2.327] – 2026-08-06 — Homepage headline moves to Barlow Condensed
 ### Changed
 - **The homepage hero H1 now uses Barlow Condensed**, matching every other display heading on the redesign — the section headings directly beneath it and all five solution page H1s. It was the only display heading still set in Space Grotesk, which is why it read as belonging to a different site than the titles below it.

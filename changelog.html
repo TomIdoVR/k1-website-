@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.328 -->
+      <div class="tl-entry fix" id="v2.328">
+        <div class="tl-meta"><span class="tl-ver">v2.328</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Contact page is usable on a phone again</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>/contact</code> rendered a 770px document inside a 390px viewport</strong>, holding its desktop <code>1fr 420px</code> grid at every width. The form was squeezed to <strong>164px</strong> and each field to <strong>74px</strong> — the primary conversion path was unusable on a phone</li>
+            <li><strong>The cause was not a missing breakpoint. The responsive rules existed and had never matched anything.</strong> They were attribute-substring selectors against the inline style attribute — <code>div[style*="grid-template-columns: 1fr 420px"]</code> — but React serialises inline styles with <strong>no space after the colon</strong>. Several also embedded the JS quote characters, which never appear in rendered HTML. Measured: the space-form selector matched <strong>0</strong> elements, the React-form selector matched 1. One rule also targeted <code>gap: 16px</code> where the markup used <code>12px</code></li>
+            <li>Replaced the block with real class names, which additionally solve what pushed the original author toward attribute matching: <code>ContactForm</code> is a separate component, and a class can be targeted across that boundary where an inline style cannot. Added <code>min-width: 0</code> to the grid children — items default to <code>min-width: auto</code>, which let the <code>1fr</code> track refuse to yield to the fixed <code>420px</code> one</li>
+            <li><strong>The shared <code>Footer</code> broke every legacy page at 320px</strong> — three link columns at a 48px gap with <code>flex-wrap: nowrap</code> made a 374px row inside a 320px viewport. Now wraps</li>
+            <li>Verified across nine widths (320 → 1280): <strong>0 horizontal overflow at every one</strong>, one field per row below 640px, inputs 48px tall, desktop two-column layout unchanged from 1024px up</li>
+            <li><code>/about</code> and <code>/industries/public-safety</code> still overflow at 390px — separate causes, untouched here; they were Warning-level against Contact's Critical</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.327 -->
       <div class="tl-entry changed" id="v2.327">
         <div class="tl-meta"><span class="tl-ver">v2.327</span><span class="tl-date">2026-08-06</span></div>
