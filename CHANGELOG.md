@@ -1,3 +1,15 @@
+## [v2.330] – 2026-08-06 — Social previews on the demo and scenario pages
+### Fixed
+- **`metadataBase` was never set**, which is why relative Open Graph URLs failed silently. Without it Next cannot resolve a relative image to an absolute one and drops the **entire** `openGraph` block — `/demo/lpr` declared a full OG block with title, description and image and emitted **zero** `og:` tags. Now set on the root layout, so relative metadata URLs resolve site-wide.
+- **`/demo/lpr` pointed at an image that does not exist** (`/demo/lpr/stage-1-detect.webp`). Repointed to `/demo/lpr/LPR.png`. Every OG image referenced anywhere under `/demo` is now verified to exist on disk.
+- **Added the missing Open Graph blocks.** `/demo` and `/demo/medical` had none at all; `/demo/school` and `/demo/access-control` had blocks with no image. All six now carry title, url, siteName, type and a real image — the scenario's own still where one exists, `og-default.png` for the explorer root.
+- Verified across all twelve demo URLs (EN and ES): every one emits an `og:image` that resolves.
+
+### Notes
+- **hreflang deliberately not added** to the demo family, though the audit lists it. The Spanish scenario routes still serve English titles and canonicals — declaring an hreflang pair would assert to Google that a Spanish version exists when it does not, which is worse than the current silence. It should ship together with the `/es/demo` localisation decision, not before it.
+- The scenario stills are not 1200×630, so social platforms will crop them. A present-but-cropped preview beats no preview; purpose-built 1200×630 art per template is a separate design task.
+- Testing note: dev does not run the middleware (root `middleware.ts` against a `src/` directory), so un-prefixed English URLs fall through to the wrong route locally. `/demo/medical` appeared to have no OG until re-tested as `/en/demo/medical`. Production is unaffected.
+
 ## [v2.329] – 2026-08-06 — About and all seven industry templates work on a phone
 ### Fixed
 - **`/about` rendered a 747px document inside a 390px viewport.** Same root cause as the contact page: the responsive rules were attribute-substring selectors against the inline style attribute, which React serialises with no space after the colon, so none of them matched. Worse here — the one class-based rule, `.about-hero-grid`, was also dead, because **no element in the file carried a className at all**. The entire responsive layer was inert and the page held its desktop grids at every width.

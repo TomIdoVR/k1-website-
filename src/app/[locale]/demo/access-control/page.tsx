@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'Unauthorized Access Control Response Walkthrough | KabatOne Platform Demo',
     description:
       'See how KabatOne detects and responds to an unauthorized server room breach — from badge denial and face recognition to security lockdown and officer dispatch.',
+    images: ['/demo/access-control/cam03-server-corridor.jpg'],
   },
   alternates: {
     canonical: 'https://kabatone.com/demo/access-control',

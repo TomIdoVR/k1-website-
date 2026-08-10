@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'LPR Detection Walkthrough | KabatOne Platform Demo',
     description:
       'See how KabatOne\'s unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.',
-    images: ['/demo/lpr/stage-1-detect.webp'],
+    images: ['/demo/lpr/LPR.png'],
   },
   alternates: {
     canonical: 'https://kabatone.com/demo/lpr',

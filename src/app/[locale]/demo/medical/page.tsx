@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: '911 Medical Emergency Scenario | KabatOne Platform',
   description:
     "See how KabatOne handles a 911 cardiac emergency — from AI call intake and geo-location to paramedic dispatch and hospital pre-alert in under 3 minutes.",
+  openGraph: {
+    title: '911 Medical Emergency Scenario | KabatOne Platform',
+    url: 'https://kabatone.com/demo/medical',
+    siteName: 'KabatOne',
+    type: 'website',
+    images: ['/demo/medical/stage-1-detect.jpg'],
+  },
   alternates: { canonical: 'https://kabatone.com/demo/medical' },
 }
 

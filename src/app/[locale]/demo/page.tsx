@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: 'Scenario Explorer | KabatOne Platform',
   description:
     "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
+  openGraph: {
+    title: 'Scenario Explorer | KabatOne Platform',
+    url: 'https://kabatone.com/demo',
+    siteName: 'KabatOne',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
   alternates: { canonical: 'https://kabatone.com/demo' },
 }
 

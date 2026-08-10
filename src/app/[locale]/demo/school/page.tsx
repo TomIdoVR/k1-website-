@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'Active Shooter School Response Walkthrough | KabatOne Platform Demo',
     description:
       'See how KabatOne coordinates an active threat response at a school — from SOS alert and CCTV detection to officer dispatch and lockdown in under 90 seconds.',
+    images: ['/demo/school/cam01-entrance.jpg'],
   },
   alternates: {
     canonical: 'https://kabatone.com/demo/school',

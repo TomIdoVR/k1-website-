@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.330 -->
+      <div class="tl-entry fix" id="v2.330">
+        <div class="tl-meta"><span class="tl-ver">v2.330</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">Social previews on the demo and scenario pages</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>metadataBase</code> was never set</strong>, which is why relative Open Graph URLs failed silently. Without it Next cannot resolve a relative image to an absolute one and drops the <strong>entire</strong> <code>openGraph</code> block — <code>/demo/lpr</code> declared a full block with title, description and image and emitted <strong>zero</strong> <code>og:</code> tags. Now set on the root layout, fixing relative metadata URLs site-wide</li>
+            <li><strong><code>/demo/lpr</code> pointed at an image that does not exist</strong> (<code>stage-1-detect.webp</code>). Repointed to a real file; every OG image referenced under <code>/demo</code> is now verified to exist on disk</li>
+            <li><strong>Added the missing Open Graph blocks.</strong> <code>/demo</code> and <code>/demo/medical</code> had none at all; <code>/demo/school</code> and <code>/demo/access-control</code> had blocks with no image. All six now carry title, url, siteName, type and a real image. Verified across all twelve demo URLs (EN and ES)</li>
+            <li><strong>hreflang deliberately not added</strong>, though the audit lists it. The Spanish scenario routes still serve English titles and canonicals — declaring an hreflang pair would assert to Google that a Spanish version exists when it does not. It should ship with the <code>/es/demo</code> localisation decision, not before it</li>
+            <li>The scenario stills are not 1200×630, so platforms will crop them. A cropped preview beats no preview; purpose-built art per template is a separate design task</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.329 -->
       <div class="tl-entry fix" id="v2.329">
         <div class="tl-meta"><span class="tl-ver">v2.329</span><span class="tl-date">2026-08-06</span></div>
