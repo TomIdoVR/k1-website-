@@ -26,9 +26,9 @@ export default async function VsMark43Page({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Mark43', url: es ? 'https://kabatone.com/es/vs/mark43/' : 'https://kabatone.com/vs/mark43/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Mark43', url: es ? 'https://kabatone.com/es/vs/mark43' : 'https://kabatone.com/vs/mark43' },
   ]
 
   const faqs = es ? [

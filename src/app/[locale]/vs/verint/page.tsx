@@ -26,9 +26,9 @@ export default async function VsVerintPage({
   const ACCENT = '#3b82f6'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Verint', url: es ? 'https://kabatone.com/es/vs/verint/' : 'https://kabatone.com/vs/verint/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Verint', url: es ? 'https://kabatone.com/es/vs/verint' : 'https://kabatone.com/vs/verint' },
   ]
 
   const faqs = es ? [
@@ -209,7 +209,7 @@ export default async function VsVerintPage({
             articleSchema(
               es ? 'KabatOne vs Verint — Inteligencia de Video vs Plataforma de Operaciones Unificada' : 'KabatOne vs Verint — Video Intelligence vs Unified Operations Platform',
               es ? 'Verint gestiona video a escala con analítica IA. KabatOne agrega despacho CAD, GIS operacional y gestión de tráfico — la plataforma de operaciones completa para centros de mando C5.' : 'Verint manages video at scale with AI analytics. KabatOne adds CAD dispatch, operational GIS, and traffic management — the complete operations platform for C5 command centers.',
-              es ? 'https://kabatone.com/es/vs/verint/' : 'https://kabatone.com/vs/verint/',
+              es ? 'https://kabatone.com/es/vs/verint' : 'https://kabatone.com/vs/verint',
               '2026-04-07'
             )
           ),

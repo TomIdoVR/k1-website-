@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para SAPS, Metro Police y NDMC de Sudáfrica — despacho CAD integrado para 9 provincias y coordinación de desastres NDMC/SAWS, gestión de cámaras Safe City conforme a POPIA y cumplimiento Ley de Ciberdelitos con contratación CSD/PFMA.'
     : 'Unified platform for South African SAPS, Metro Police, and NDMC — integrated CAD dispatch for 9 provinces and NDMC/SAWS disaster coordination, POPIA-compliant Safe City camera management, and Cybercrimes Act compliance with CSD/PFMA procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-south-africa/'
-    : 'https://kabatone.com/resources/public-safety-software-south-africa/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-south-africa'
+    : 'https://kabatone.com/resources/public-safety-software-south-africa'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Sudáfrica' : 'South Africa', url },
   ]
 

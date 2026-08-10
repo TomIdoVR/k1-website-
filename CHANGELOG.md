@@ -1,3 +1,15 @@
+## [v2.314] – 2026-08-10 — Every canonical URL now resolves to a 200
+
+**Fixed**
+- **Every canonical, hreflang, `og:url`, JSON-LD `url` and sitemap entry pointed at a URL that redirects.** All 450 canonicals in `src/content/{en,es}/metadata.ts` ended in a slash, and `src/app/sitemap.ts` emitted slashed URLs — but Next's default is to 308 `/path/` → `/path`. So the URL we published as canonical was never the URL that served the page, and the page Google did land on carried a canonical pointing back at the redirecting form.
+- In production this stacks on a second hop: Vercel serves `www.kabatone.com` as the primary domain and **307**s the apex, while the code, `robots.txt`, the sitemap and the GSC property are all non-www. An indexed URL therefore cost `307 → 308 → 200`. GSC confirms Google resolved it in our favour — all 142 reported pages are the non-www form, 0 www — so nothing was lost, but every crawl of every page paid for two extra round-trips. The 307 half is Vercel domain config, not code, and is why the daily staging audit never saw it.
+- Rewrote 449 canonicals and 856 schema / `llms.txt` URLs to the unslashed form, and replaced the sitemap's slash-appending with a `loc()` helper. Only the bare origin `https://kabatone.com/` keeps its slash.
+
+**Notes**
+- **The obvious fix — `trailingSlash: true`, keeping the slashed form Google has indexed — was tried and rejected.** Next applies it to route handlers too; only static files with extensions and `.well-known/` are exempt. `/api/slack/events` would have begun returning a 308, and Slack's Events API does not follow redirects. Going unslashed instead aims the canonicals at the URL that already serves 200 and leaves the Slack routes alone.
+- Verified against a production build: canonical, `og:url`, all three hreflang alternates and the JSON-LD `url` on `/resources/best-cad-dispatch-software` are unslashed and identical; the ES counterpart matches; the homepage keeps `https://kabatone.com/`; all 232 sitemap entries are unslashed except the root; the served paths return 200 with no redirect; and `POST /api/slack/events` still answers 401 (signature check) rather than a 308.
+- Does not fix the 307 on its own — that needs the apex set as primary domain in Vercel. Until then this takes the chain from 2 hops to 1. See `SEO/weekly-report-2026-08-10.md`.
+
 ## [v2.313] – 2026-08-04 — SEO: market segmentation + synthetic-impression filter
 
 **Fixed**

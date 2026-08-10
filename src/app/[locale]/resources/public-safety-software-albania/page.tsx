@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareAlbania({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía del Estado albanesa, SHISH inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor R7, seguridad del Puerto de Durrës, candidatura UE y coordinación NATO/FRONTEX."
         : "KabatOne delivers public safety platform for Albanian State Police, SHISH intelligence, and Border Guard — Corridor 8 and Corridor R7 management, Port of Durrës security, EU candidacy, and NATO/FRONTEX coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-albania/"
-        : "https://kabatone.com/resources/public-safety-software-albania/",
+        ? "https://kabatone.com/es/resources/public-safety-software-albania"
+        : "https://kabatone.com/resources/public-safety-software-albania",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Albania"
           : "Public Safety Software for Albania",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-albania/"
-          : "https://kabatone.com/resources/public-safety-software-albania/",
+          ? "https://kabatone.com/es/resources/public-safety-software-albania"
+          : "https://kabatone.com/resources/public-safety-software-albania",
       },
     ]),
     faqPageSchema([

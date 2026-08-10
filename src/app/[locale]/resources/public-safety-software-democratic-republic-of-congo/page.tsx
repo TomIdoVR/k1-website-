@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareDRCPage({
       ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional Congolesa, FARDC, gestión de desastres y programas de ciudad inteligente en la República Democrática del Congo."
       : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Congolese National Police, FARDC, disaster management, and smart city programs in the Democratic Republic of Congo.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-democratic-republic-of-congo/"
-      : "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo/",
+      ? "https://kabatone.com/es/resources/public-safety-software-democratic-republic-of-congo"
+      : "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareDRCPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública RDC" : "Public Safety Software DRC",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-democratic-republic-of-congo/"
-        : "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo/",
+        ? "https://kabatone.com/es/resources/public-safety-software-democratic-republic-of-congo"
+        : "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo",
     },
   ]);
 

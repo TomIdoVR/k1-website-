@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
       ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Congolesas (FAC), la Policía Nacional Republicana (PNR), gestión del Puerto de Pointe-Noire y seguridad de la infraestructura petrolera del Congo."
       : "KabatOne delivers public safety platform for the Congolese Armed Forces (FAC), National Republican Police (PNR), Port of Pointe-Noire management, and oil infrastructure security in the Republic of Congo.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-republic-of-congo/"
-      : "https://kabatone.com/resources/public-safety-software-republic-of-congo/",
+      ? "https://kabatone.com/es/resources/public-safety-software-republic-of-congo"
+      : "https://kabatone.com/resources/public-safety-software-republic-of-congo",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para República del Congo" : "Public Safety Software for Republic of Congo",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-republic-of-congo/" : "https://kabatone.com/resources/public-safety-software-republic-of-congo/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-republic-of-congo" : "https://kabatone.com/resources/public-safety-software-republic-of-congo",
     },
   ]);
 

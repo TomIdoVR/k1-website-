@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareUgandaPage({
       ? 'Plataforma unificada para la Policía de Uganda (UPF) y UPDF — despacho CAD integrado en 10 subregiones, Kampala Safe City, OPM/UNMA gestión de desastres, UETCL/Karuma Dam 600 MW, UNOC/TotalEnergies EACOP, fronteras EAC, Data Protection Act 2019/PDPO y adquisición PPDA/Act 85 2003.'
       : 'Unified platform for Uganda Police Force (UPF) and UPDF — integrated CAD dispatch across 10 subregions, Kampala Safe City, OPM/UNMA disaster management, UETCL/Karuma Dam 600 MW, UNOC/TotalEnergies EACOP, EAC borders, Data Protection Act 2019/PDPO compliance, and PPDA/Act 85 2003 procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-uganda/'
-      : 'https://kabatone.com/resources/public-safety-software-uganda/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-uganda'
+      : 'https://kabatone.com/resources/public-safety-software-uganda',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareUgandaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: 'Uganda',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-uganda/'
-        : 'https://kabatone.com/resources/public-safety-software-uganda/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-uganda'
+        : 'https://kabatone.com/resources/public-safety-software-uganda',
     },
   ])
 

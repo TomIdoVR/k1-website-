@@ -209,7 +209,7 @@ export default async function MunicipalitiesPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Municipios' : 'Municipalities', url: 'https://kabatone.com/industries/municipalities/' },
+          { name: es ? 'Municipios' : 'Municipalities', url: 'https://kabatone.com/industries/municipalities' },
         ])) }}
       />
       <script

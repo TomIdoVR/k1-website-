@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareNorthMacedonia({
         ? "KabatOne ofrece plataforma de seguridad pública para el MUP macedonio, UBK inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor 10, candidatura UE 2005/negociaciones 2022, NATO desde 2020 y coordinación FRONTEX/SELEC."
         : "KabatOne delivers public safety platform for Macedonian MUP, UBK intelligence, and Border Police — Corridor 8 and Corridor 10 management, EU candidacy 2005/negotiations 2022, NATO since 2020, and FRONTEX/SELEC coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-north-macedonia/"
-        : "https://kabatone.com/resources/public-safety-software-north-macedonia/",
+        ? "https://kabatone.com/es/resources/public-safety-software-north-macedonia"
+        : "https://kabatone.com/resources/public-safety-software-north-macedonia",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Macedonia del Norte"
           : "Public Safety Software for North Macedonia",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-north-macedonia/"
-          : "https://kabatone.com/resources/public-safety-software-north-macedonia/",
+          ? "https://kabatone.com/es/resources/public-safety-software-north-macedonia"
+          : "https://kabatone.com/resources/public-safety-software-north-macedonia",
       },
     ]),
     faqPageSchema([

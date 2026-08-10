@@ -97,18 +97,18 @@ export default async function RtccSoftwarePage({
       ? 'Guía de compra del mejor software RTCC (centro de crimen en tiempo real): qué es, proveedores comparados (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), criterios de selección, costos y la mejor plataforma para seguridad pública en 2026.'
       : 'Buyer\'s guide to the best RTCC (real-time crime center) software: what it is, vendors compared (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), selection criteria, cost, and the best platform for public safety in 2026.',
     es
-      ? 'https://kabatone.com/es/resources/rtcc-software/'
-      : 'https://kabatone.com/resources/rtcc-software/',
+      ? 'https://kabatone.com/es/resources/rtcc-software'
+      : 'https://kabatone.com/resources/rtcc-software',
     '2026-07-13'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Software RTCC' : 'RTCC Software',
       url: es
-        ? 'https://kabatone.com/es/resources/rtcc-software/'
-        : 'https://kabatone.com/resources/rtcc-software/',
+        ? 'https://kabatone.com/es/resources/rtcc-software'
+        : 'https://kabatone.com/resources/rtcc-software',
     },
   ])
 

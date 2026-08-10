@@ -26,9 +26,9 @@ export default async function VsPalantirPage({
   const ACCENT = '#8b5cf6'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Palantir', url: es ? 'https://kabatone.com/es/vs/palantir/' : 'https://kabatone.com/vs/palantir/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Palantir', url: es ? 'https://kabatone.com/es/vs/palantir' : 'https://kabatone.com/vs/palantir' },
   ]
 
   const faqs = es ? [

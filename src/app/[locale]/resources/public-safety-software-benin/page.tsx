@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareBeninPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Benin (FAB), Policía Nacional, Puerto de Cotonou y seguridad ante amenaza yihadista en el norte del país."
     : "KabatOne delivers public safety platform for the Beninese Armed Forces (FAB), National Police, Port of Cotonou, and security against jihadist threats in the country's north.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-benin/"
-    : "https://kabatone.com/resources/public-safety-software-benin/";
+    ? "https://kabatone.com/es/resources/public-safety-software-benin"
+    : "https://kabatone.com/resources/public-safety-software-benin";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareBeninPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Benin" : "Public Safety Software for Benin", url: canonical },
   ]);
 

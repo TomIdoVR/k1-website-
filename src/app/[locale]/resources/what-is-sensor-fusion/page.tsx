@@ -97,18 +97,18 @@ export default async function WhatIsSensorFusionPage({
       ? 'Guía completa sobre fusión de sensores: cómo combinar video, LPR, sensores IoT y detección acústica en una plataforma unificada para reducir falsos positivos y mejorar la conciencia situacional.'
       : 'Complete guide to sensor fusion: how to combine video, LPR, IoT sensors, and acoustic detection in a unified platform to reduce false positives and improve situational awareness.',
     es
-      ? 'https://kabatone.com/es/resources/what-is-sensor-fusion/'
-      : 'https://kabatone.com/resources/what-is-sensor-fusion/',
+      ? 'https://kabatone.com/es/resources/what-is-sensor-fusion'
+      : 'https://kabatone.com/resources/what-is-sensor-fusion',
     '2026-04-07'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es la Fusión de Sensores?' : 'What Is Sensor Fusion?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-sensor-fusion/'
-        : 'https://kabatone.com/resources/what-is-sensor-fusion/',
+        ? 'https://kabatone.com/es/resources/what-is-sensor-fusion'
+        : 'https://kabatone.com/resources/what-is-sensor-fusion',
     },
   ])
 

@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareLeiberiaPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Liberia (AFL), Policía Nacional (LNP), Puerto de Monrovia y seguridad de hierro, caucho y recursos minerales."
     : "KabatOne delivers public safety platform for the Armed Forces of Liberia (AFL), National Police (LNP), Port of Monrovia, and security for iron ore, rubber, and mineral resources.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-liberia/"
-    : "https://kabatone.com/resources/public-safety-software-liberia/";
+    ? "https://kabatone.com/es/resources/public-safety-software-liberia"
+    : "https://kabatone.com/resources/public-safety-software-liberia";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareLeiberiaPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Liberia" : "Public Safety Software for Liberia", url: canonical },
   ]);
 

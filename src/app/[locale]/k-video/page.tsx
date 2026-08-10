@@ -138,8 +138,8 @@ export default async function KVideoPage({
   ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: 'K-Video', url: es ? 'https://kabatone.com/es/k-video/' : 'https://kabatone.com/k-video/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: 'K-Video', url: es ? 'https://kabatone.com/es/k-video' : 'https://kabatone.com/k-video' },
   ]
 
   return (

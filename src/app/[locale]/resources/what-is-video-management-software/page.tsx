@@ -143,11 +143,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
 
   /* ── Breadcrumb items ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es el Software de Gestión de Video (VMS)?' : 'What Is Video Management Software (VMS)?',
-      url: es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
+      url: es ? 'https://kabatone.com/es/resources/what-is-video-management-software' : 'https://kabatone.com/resources/what-is-video-management-software',
     },
   ]
 
@@ -168,7 +168,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         articleSchema(
           es ? '¿Qué Es el Software de Gestión de Video (VMS)? Guía para Seguridad Pública' : 'What Is Video Management Software (VMS)? A Guide for Public Safety',
           es ? 'El software VMS agrega cámaras de cualquier fabricante, añade analítica de IA y se integra con despacho y GIS. Guía completa para agencias de seguridad pública.' : 'VMS software aggregates cameras from any manufacturer, adds AI analytics, and integrates with dispatch and GIS. Complete guide for public safety agencies.',
-          es ? 'https://kabatone.com/es/resources/what-is-video-management-software/' : 'https://kabatone.com/resources/what-is-video-management-software/',
+          es ? 'https://kabatone.com/es/resources/what-is-video-management-software' : 'https://kabatone.com/resources/what-is-video-management-software',
           '2026-05-18'
         )
       ) }} />

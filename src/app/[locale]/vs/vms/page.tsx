@@ -26,9 +26,9 @@ export default async function VsVmsPage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS', url: es ? 'https://kabatone.com/es/vs/vms/' : 'https://kabatone.com/vs/vms/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS', url: es ? 'https://kabatone.com/es/vs/vms' : 'https://kabatone.com/vs/vms' },
   ]
 
   const faqs = es ? [

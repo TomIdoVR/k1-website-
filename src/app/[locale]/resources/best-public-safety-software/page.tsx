@@ -26,9 +26,9 @@ export default async function BestPublicSafetySoftwarePage({
   const ACCENT = '#7c3aed'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
-    { name: es ? 'Mejor Software de Seguridad Pública 2026' : 'Best Public Safety Software 2026', url: es ? 'https://kabatone.com/es/resources/best-public-safety-software/' : 'https://kabatone.com/resources/best-public-safety-software/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
+    { name: es ? 'Mejor Software de Seguridad Pública 2026' : 'Best Public Safety Software 2026', url: es ? 'https://kabatone.com/es/resources/best-public-safety-software' : 'https://kabatone.com/resources/best-public-safety-software' },
   ]
 
   const faqs = es ? [
@@ -226,8 +226,8 @@ export default async function BestPublicSafetySoftwarePage({
     : 'The top public safety software platforms for government agencies in 2026 — evaluated by category: CAD dispatch, video management, GIS, RTCC, and unified command center platforms.'
 
   const url = es
-    ? 'https://kabatone.com/es/resources/best-public-safety-software/'
-    : 'https://kabatone.com/resources/best-public-safety-software/'
+    ? 'https://kabatone.com/es/resources/best-public-safety-software'
+    : 'https://kabatone.com/resources/best-public-safety-software'
 
   return (
     <>

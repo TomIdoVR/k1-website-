@@ -112,8 +112,8 @@ export default async function KConnectPage({
   ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: 'K-Connect', url: es ? 'https://kabatone.com/es/k-connect/' : 'https://kabatone.com/k-connect/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: 'K-Connect', url: es ? 'https://kabatone.com/es/k-connect' : 'https://kabatone.com/k-connect' },
   ]
 
   return (

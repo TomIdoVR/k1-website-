@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareEquatorialGuineaPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de la República (FAR), Policía Nacional, Puerto de Malabo, y seguridad de infraestructura petrolera offshore en Guinea Ecuatorial."
     : "KabatOne delivers public safety platform for the Armed Forces of the Republic (FAR), National Police, Port of Malabo, and offshore oil infrastructure security in Equatorial Guinea.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-equatorial-guinea/"
-    : "https://kabatone.com/resources/public-safety-software-equatorial-guinea/";
+    ? "https://kabatone.com/es/resources/public-safety-software-equatorial-guinea"
+    : "https://kabatone.com/resources/public-safety-software-equatorial-guinea";
 
   const faqs = [
     {
@@ -78,8 +78,8 @@ export default async function PublicSafetySoftwareEquatorialGuineaPage({
   );
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Guinea Ecuatorial" : "Public Safety Software for Equatorial Guinea", url: canonical },
   ]);
 

@@ -139,8 +139,8 @@ export default async function KTrafficPage({
   ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: 'K-Traffic', url: es ? 'https://kabatone.com/es/k-traffic/' : 'https://kabatone.com/k-traffic/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: 'K-Traffic', url: es ? 'https://kabatone.com/es/k-traffic' : 'https://kabatone.com/k-traffic' },
   ]
 
   return (

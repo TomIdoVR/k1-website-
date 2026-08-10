@@ -91,11 +91,11 @@ export default async function AccessControlIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Control de Acceso' : 'Access Control',
-      url: es ? 'https://kabatone.com/es/integrations/access-control/' : 'https://kabatone.com/integrations/access-control/',
+      url: es ? 'https://kabatone.com/es/integrations/access-control' : 'https://kabatone.com/integrations/access-control',
     },
   ]
 
@@ -169,7 +169,7 @@ export default async function AccessControlIntegrationPage({
               es
                 ? 'Cómo KabatOne integra sistemas de control de acceso físico con video, despacho CAD y GIS para respuesta automática a violaciones de acceso.'
                 : 'How KabatOne integrates physical access control systems with video, CAD dispatch, and GIS for automatic response to access violations.',
-              es ? 'https://kabatone.com/es/integrations/access-control/' : 'https://kabatone.com/integrations/access-control/',
+              es ? 'https://kabatone.com/es/integrations/access-control' : 'https://kabatone.com/integrations/access-control',
               '2026-03-20'
             )
           ),

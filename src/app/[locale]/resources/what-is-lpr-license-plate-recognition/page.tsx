@@ -100,18 +100,18 @@ export default async function WhatIsLprPage({
       ? 'Guía completa sobre LPR/ALPR: cómo funciona el reconocimiento automático de placas, tipos fijo y móvil, precisión, bases de datos y su integración en plataformas de seguridad pública.'
       : 'Complete guide to LPR/ALPR: how automatic license plate recognition works, fixed vs mobile types, accuracy, database integration, and deployment in public safety platforms.',
     es
-      ? 'https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition/'
-      : 'https://kabatone.com/resources/what-is-lpr-license-plate-recognition/',
+      ? 'https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition'
+      : 'https://kabatone.com/resources/what-is-lpr-license-plate-recognition',
     '2026-04-07'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es el LPR?' : 'What Is LPR?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition/'
-        : 'https://kabatone.com/resources/what-is-lpr-license-plate-recognition/',
+        ? 'https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition'
+        : 'https://kabatone.com/resources/what-is-lpr-license-plate-recognition',
     },
   ])
 

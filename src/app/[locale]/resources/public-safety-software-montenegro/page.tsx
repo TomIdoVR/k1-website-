@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareMontenegro({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía montenegrina, ANB inteligencia y Guardia de Fronteras — gestión del Puerto de Bar y costa adriática 293 km, autopista Bar-Boljare financiada por China, candidatura UE y coordinación NATO/FRONTEX."
         : "KabatOne delivers public safety platform for Montenegrin Police, ANB intelligence, and Border Guard — Port of Bar and Adriatic coast 293 km management, Bar-Boljare highway funded by China, EU candidacy, and NATO/FRONTEX coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-montenegro/"
-        : "https://kabatone.com/resources/public-safety-software-montenegro/",
+        ? "https://kabatone.com/es/resources/public-safety-software-montenegro"
+        : "https://kabatone.com/resources/public-safety-software-montenegro",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Montenegro"
           : "Public Safety Software for Montenegro",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-montenegro/"
-          : "https://kabatone.com/resources/public-safety-software-montenegro/",
+          ? "https://kabatone.com/es/resources/public-safety-software-montenegro"
+          : "https://kabatone.com/resources/public-safety-software-montenegro",
       },
     ]),
     faqPageSchema([

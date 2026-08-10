@@ -93,13 +93,13 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Software de Detección de Disparos?' : 'What Is Gunshot Detection Software?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-gunshot-detection-software/'
-        : 'https://kabatone.com/resources/what-is-gunshot-detection-software/',
+        ? 'https://kabatone.com/es/resources/what-is-gunshot-detection-software'
+        : 'https://kabatone.com/resources/what-is-gunshot-detection-software',
     },
   ]
 
@@ -160,8 +160,8 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
                 ? 'Un software de detección de disparos usa sensores acústicos para detectar automáticamente disparos, triangular su ubicación y alertar a los centros de mando en segundos.'
                 : 'Gunshot detection software uses acoustic sensors to automatically detect gunfire, triangulate its location, and alert command centers within seconds.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-gunshot-detection-software/'
-                : 'https://kabatone.com/resources/what-is-gunshot-detection-software/',
+                ? 'https://kabatone.com/es/resources/what-is-gunshot-detection-software'
+                : 'https://kabatone.com/resources/what-is-gunshot-detection-software',
               '2026-03-26'
             )
           ),

@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.314 -->
+      <div class="tl-entry fix" id="v2.314">
+        <div class="tl-meta"><span class="tl-ver">v2.314</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">Every canonical URL now resolves to a 200</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every canonical, hreflang, <code>og:url</code>, JSON-LD <code>url</code> and sitemap entry pointed at a URL that redirects.</strong> All 450 canonicals ended in a slash and the sitemap emitted slashed URLs, but Next 308s <code>/path/</code> &rarr; <code>/path</code> — so the URL we published as canonical was never the URL that served the page</li>
+            <li><strong>In production this stacked on a second hop.</strong> Vercel serves <code>www.kabatone.com</code> as primary and <strong>307</strong>s the apex, while the code, <code>robots.txt</code>, sitemap and GSC property are all non-www — an indexed URL cost <code>307 &rarr; 308 &rarr; 200</code>. GSC shows Google resolved it our way (142 pages, 0 www), so nothing was lost, but every crawl paid for two extra round-trips</li>
+            <li>Rewrote 449 canonicals and 856 schema / <code>llms.txt</code> URLs to the unslashed form, and replaced the sitemap's slash-appending with a <code>loc()</code> helper. Only the bare origin keeps its slash</li>
+            <li><strong><code>trailingSlash: true</code> was tried and rejected.</strong> Next applies it to route handlers too, so <code>/api/slack/events</code> would have started returning a 308 — and Slack's Events API does not follow redirects</li>
+            <li>Verified against a production build: canonical, <code>og:url</code>, all three hreflang alternates and the JSON-LD <code>url</code> agree and are unslashed; the homepage keeps its slash; all 232 sitemap entries are correct; served paths return 200 with no redirect; and <code>POST /api/slack/events</code> still answers 401 rather than a 308</li>
+            <li>Does not fix the 307 alone — that needs the apex set as primary domain in Vercel. Until then the chain goes from 2 hops to 1</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.313 -->
       <div class="tl-entry fix" id="v2.313">
         <div class="tl-meta"><span class="tl-ver">v2.313</span><span class="tl-date">2026-08-04</span></div>

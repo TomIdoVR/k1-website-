@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareDjiboutiPage({
       ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Yibuti, gestión del Puerto de Yibuti, coordinación con Camp Lemonnier (AFRICOM) y seguridad marítima en el Estrecho de Bab-el-Mandeb."
       : "KabatOne delivers public safety platform for the Djibouti National Police, Port of Djibouti management, coordination with Camp Lemonnier (AFRICOM), and maritime security across the Bab-el-Mandeb strait.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-djibouti/"
-      : "https://kabatone.com/resources/public-safety-software-djibouti/",
+      ? "https://kabatone.com/es/resources/public-safety-software-djibouti"
+      : "https://kabatone.com/resources/public-safety-software-djibouti",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareDjiboutiPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para Yibuti" : "Public Safety Software for Djibouti",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-djibouti/" : "https://kabatone.com/resources/public-safety-software-djibouti/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-djibouti" : "https://kabatone.com/resources/public-safety-software-djibouti",
     },
   ]);
 

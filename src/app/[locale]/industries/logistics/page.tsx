@@ -139,7 +139,7 @@ export default async function LogisticsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Logística' : 'Logistics', url: 'https://kabatone.com/industries/logistics/' },
+          { name: es ? 'Logística' : 'Logistics', url: 'https://kabatone.com/industries/logistics' },
         ])) }}
       />
       <script

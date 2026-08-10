@@ -113,13 +113,13 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Software de Conciencia Situacional?' : 'What Is Situational Awareness Software?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software/'
-        : 'https://kabatone.com/resources/what-is-situational-awareness-software/',
+        ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software'
+        : 'https://kabatone.com/resources/what-is-situational-awareness-software',
     },
   ]
 
@@ -180,8 +180,8 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
                 ? 'Un software de conciencia situacional agrega cámaras, sensores, despacho y datos GIS en un mapa operativo unificado para mejorar los tiempos de respuesta y la coordinación.'
                 : 'Situational awareness software aggregates cameras, sensors, dispatch, and GIS data into a unified operational map to improve response times and coordination.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software/'
-                : 'https://kabatone.com/resources/what-is-situational-awareness-software/',
+                ? 'https://kabatone.com/es/resources/what-is-situational-awareness-software'
+                : 'https://kabatone.com/resources/what-is-situational-awareness-software',
               '2026-05-18'
             )
           ),

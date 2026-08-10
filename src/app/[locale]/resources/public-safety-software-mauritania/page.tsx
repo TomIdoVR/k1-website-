@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareMauritaniaPage({
       ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Mauritania, la Gendarmería Nacional (GSN), gestión del Puerto de Nouakchott, fronteras saharianas y coordinación contra el GSIM/Al-Qaeda en el Sahel."
       : "KabatOne delivers public safety platform for the Mauritania National Police, National Gendarmerie (GSN), Port of Nouakchott management, Saharan border control, and coordination against GSIM/Al-Qaeda in the Sahel.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-mauritania/"
-      : "https://kabatone.com/resources/public-safety-software-mauritania/",
+      ? "https://kabatone.com/es/resources/public-safety-software-mauritania"
+      : "https://kabatone.com/resources/public-safety-software-mauritania",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareMauritaniaPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para Mauritania" : "Public Safety Software for Mauritania",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-mauritania/" : "https://kabatone.com/resources/public-safety-software-mauritania/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-mauritania" : "https://kabatone.com/resources/public-safety-software-mauritania",
     },
   ]);
 

@@ -124,8 +124,8 @@ export default async function KSafetyPage({
   ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: 'K-Safety', url: es ? 'https://kabatone.com/es/k-safety/' : 'https://kabatone.com/k-safety/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: 'K-Safety', url: es ? 'https://kabatone.com/es/k-safety' : 'https://kabatone.com/k-safety' },
   ]
 
   return (

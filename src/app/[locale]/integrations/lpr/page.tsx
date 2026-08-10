@@ -91,11 +91,11 @@ export default async function LprIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition',
-      url: es ? 'https://kabatone.com/es/integrations/lpr/' : 'https://kabatone.com/integrations/lpr/',
+      url: es ? 'https://kabatone.com/es/integrations/lpr' : 'https://kabatone.com/integrations/lpr',
     },
   ]
 
@@ -158,7 +158,7 @@ export default async function LprIntegrationPage({
               es
                 ? 'Cómo KabatOne integra LPR y ALPR en operaciones de seguridad pública. Cotejo en tiempo real con listas de alertas y captura automática de evidencia.'
                 : 'How KabatOne integrates LPR and ALPR into public safety operations. Real-time hot list matching, stolen vehicle alerts, and automatic evidence capture.',
-              es ? 'https://kabatone.com/es/integrations/lpr/' : 'https://kabatone.com/integrations/lpr/',
+              es ? 'https://kabatone.com/es/integrations/lpr' : 'https://kabatone.com/integrations/lpr',
               '2026-03-20'
             )
           ),

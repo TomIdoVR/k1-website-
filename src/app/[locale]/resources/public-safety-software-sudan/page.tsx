@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareSudanPage({
       ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para las Fuerzas Armadas Sudanesas, gestión de desastres y programas de reconstrucción en Sudán."
       : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Sudanese Armed Forces, disaster management, and reconstruction programs in Sudan.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-sudan/"
-      : "https://kabatone.com/resources/public-safety-software-sudan/",
+      ? "https://kabatone.com/es/resources/public-safety-software-sudan"
+      : "https://kabatone.com/resources/public-safety-software-sudan",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareSudanPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Sudán" : "Public Safety Software Sudan",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-sudan/"
-        : "https://kabatone.com/resources/public-safety-software-sudan/",
+        ? "https://kabatone.com/es/resources/public-safety-software-sudan"
+        : "https://kabatone.com/resources/public-safety-software-sudan",
     },
   ]);
 

@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
       ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Police Nationale, FRCI, gestión de emergencias y programas de ciudad inteligente en Costa de Marfil."
       : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Police Nationale, FRCI, emergency management, and smart city programs in Ivory Coast.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-ivory-coast/"
-      : "https://kabatone.com/resources/public-safety-software-ivory-coast/",
+      ? "https://kabatone.com/es/resources/public-safety-software-ivory-coast"
+      : "https://kabatone.com/resources/public-safety-software-ivory-coast",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Costa de Marfil" : "Public Safety Software Ivory Coast",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-ivory-coast/"
-        : "https://kabatone.com/resources/public-safety-software-ivory-coast/",
+        ? "https://kabatone.com/es/resources/public-safety-software-ivory-coast"
+        : "https://kabatone.com/resources/public-safety-software-ivory-coast",
     },
   ]);
 

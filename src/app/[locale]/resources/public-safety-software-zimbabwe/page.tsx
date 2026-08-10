@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareZimbabwePage({
       ? 'Plataforma unificada para la Policía de la República de Zimbabue (ZRP) y ZNA — despacho CAD integrado en 10 provincias, Harare Safe City, ZINWA gestión hídrica, Zimbabwe Power Company/ZETDC, Puerto Beitbridge/Forbes y Cybercrime Act 2017/PDA y adquisición PRAZ/PFMA.'
       : 'Unified platform for Zimbabwe Republic Police (ZRP) and ZNA — integrated CAD dispatch across 10 provinces, Harare Safe City, ZINWA water management, Zimbabwe Power Company/ZETDC, Beitbridge/Forbes border, Cybercrime Act 2017/PDA compliance, and PRAZ/PFMA procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-zimbabwe/'
-      : 'https://kabatone.com/resources/public-safety-software-zimbabwe/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-zimbabwe'
+      : 'https://kabatone.com/resources/public-safety-software-zimbabwe',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareZimbabwePage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: es ? 'Zimbabue' : 'Zimbabwe',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-zimbabwe/'
-        : 'https://kabatone.com/resources/public-safety-software-zimbabwe/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-zimbabwe'
+        : 'https://kabatone.com/resources/public-safety-software-zimbabwe',
     },
   ])
 

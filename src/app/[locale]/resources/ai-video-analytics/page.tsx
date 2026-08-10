@@ -107,18 +107,18 @@ export default async function AiVideoAnalyticsPage({
       ? 'Guía sobre analítica de video con IA: cómo funcionan las redes neuronales y el aprendizaje profundo en video, IA vs analítica tradicional basada en reglas, precisión, y aplicación en seguridad pública.'
       : 'Guide to AI video analytics: how neural networks and deep learning work on video, AI vs traditional rule-based analytics, accuracy, and application in public safety.',
     es
-      ? 'https://kabatone.com/es/resources/ai-video-analytics/'
-      : 'https://kabatone.com/resources/ai-video-analytics/',
+      ? 'https://kabatone.com/es/resources/ai-video-analytics'
+      : 'https://kabatone.com/resources/ai-video-analytics',
     '2026-07-02'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Analítica de Video con IA' : 'AI Video Analytics',
       url: es
-        ? 'https://kabatone.com/es/resources/ai-video-analytics/'
-        : 'https://kabatone.com/resources/ai-video-analytics/',
+        ? 'https://kabatone.com/es/resources/ai-video-analytics'
+        : 'https://kabatone.com/resources/ai-video-analytics',
     },
   ])
 

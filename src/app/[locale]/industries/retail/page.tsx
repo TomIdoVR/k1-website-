@@ -121,7 +121,7 @@ export default async function RetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: 'Retail', url: 'https://kabatone.com/industries/retail/' },
+          { name: 'Retail', url: 'https://kabatone.com/industries/retail' },
         ])) }}
       />
       <script

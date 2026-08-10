@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareZambiaPage({
       ? 'Plataforma unificada para la Policía de Zambia (ZP) y ZAF — despacho CAD integrado en 10 provincias, Lusaka Safe City, DMMU gestión de desastres, ZESCO/Kariba Dam, Copperbelt cobre/cobalto, Tunduma/Chirundu/Kazungula fronteras, Data Protection Act 2021/ZICTA y adquisición ZPPA/PPA 2020.'
       : 'Unified platform for Zambia Police (ZP) and ZAF — integrated CAD dispatch across 10 provinces, Lusaka Safe City, DMMU disaster management, ZESCO/Kariba Dam, Copperbelt copper/cobalt, Tunduma/Chirundu/Kazungula borders, Data Protection Act 2021/ZICTA compliance, and ZPPA/PPA 2020 procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-zambia/'
-      : 'https://kabatone.com/resources/public-safety-software-zambia/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-zambia'
+      : 'https://kabatone.com/resources/public-safety-software-zambia',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareZambiaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: 'Zambia',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-zambia/'
-        : 'https://kabatone.com/resources/public-safety-software-zambia/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-zambia'
+        : 'https://kabatone.com/resources/public-safety-software-zambia',
     },
   ])
 

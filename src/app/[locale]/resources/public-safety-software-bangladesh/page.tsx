@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para Policía de Bangladesh, FSCD y DDM — despacho CAD integrado para 64 distritos y coordinación de ciclones/inundaciones DDM/BMD, gestión de cámaras Dhaka Safe City conforme a Ley de Seguridad Digital y cumplimiento BGD e-GOV CIRT con contratación e-GP/APP 2006.'
     : 'Unified platform for Bangladesh Police, FSCD, and DDM — integrated CAD dispatch for 64 districts and DDM/BMD cyclone/flood coordination, Dhaka Safe City camera management compliant with Digital Security Act, and BGD e-GOV CIRT compliance with e-GP/PPA 2006 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-bangladesh/'
-    : 'https://kabatone.com/resources/public-safety-software-bangladesh/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-bangladesh'
+    : 'https://kabatone.com/resources/public-safety-software-bangladesh'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: 'Bangladesh', url },
   ]
 

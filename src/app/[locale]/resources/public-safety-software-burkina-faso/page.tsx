@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para la Police Nationale, Forces Armées Nationales y programas de estabilización del Sahel en Burkina Faso."
       : "KabatOne delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Police Nationale, Forces Armées Nationales, and Sahel stabilisation programs in Burkina Faso.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-burkina-faso/"
-      : "https://kabatone.com/resources/public-safety-software-burkina-faso/",
+      ? "https://kabatone.com/es/resources/public-safety-software-burkina-faso"
+      : "https://kabatone.com/resources/public-safety-software-burkina-faso",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Burkina Faso" : "Public Safety Software Burkina Faso",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-burkina-faso/"
-        : "https://kabatone.com/resources/public-safety-software-burkina-faso/",
+        ? "https://kabatone.com/es/resources/public-safety-software-burkina-faso"
+        : "https://kabatone.com/resources/public-safety-software-burkina-faso",
     },
   ]);
 

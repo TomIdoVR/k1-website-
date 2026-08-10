@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para policía provincial, Rescue 1122 y NDMA de Pakistán — despacho CAD integrado para 4 provincias y coordinación de desastres NDMA/PMD, gestión de cámaras Safe City conforme a PDPA 2023 y cumplimiento PECA/PTA con contratación PPRA 2004.'
     : 'Unified platform for Pakistan provincial police, Rescue 1122, and NDMA — integrated CAD dispatch for 4 provinces and NDMA/PMD disaster coordination, PDPA 2023-compliant Safe City camera management, and PECA/PTA cybersecurity compliance with PPRA 2004 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-pakistan/'
-    : 'https://kabatone.com/resources/public-safety-software-pakistan/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-pakistan'
+    : 'https://kabatone.com/resources/public-safety-software-pakistan'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Pakistán' : 'Pakistan', url },
   ]
 

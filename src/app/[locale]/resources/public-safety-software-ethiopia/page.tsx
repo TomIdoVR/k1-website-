@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la EFPC y el NDRMC de Etiopía — despacho CAD integrado en 12 estados regionales, Addis Abeba Safe City/LRT, fronteras Moyale/Tog Wajale/Galafi, IGAD/CEWARN gestión de crisis, Proclamación 1321/2024/INSA y adquisición PPAA/Banco Mundial.'
     : 'Unified platform for Ethiopia EFPC and NDRMC — integrated CAD dispatch across 12 regional states, Addis Ababa Safe City/LRT, Moyale/Tog Wajale/Galafi border crossings, IGAD/CEWARN crisis management, Proclamation 1321/2024/INSA compliance, and PPAA/World Bank procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-ethiopia/'
-    : 'https://kabatone.com/resources/public-safety-software-ethiopia/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-ethiopia'
+    : 'https://kabatone.com/resources/public-safety-software-ethiopia'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Etiopía' : 'Ethiopia', url },
   ]
 

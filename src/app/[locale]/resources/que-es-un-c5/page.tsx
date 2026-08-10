@@ -86,7 +86,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   const article = articleSchema(
     es ? '¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad' : 'What Is a C5 Command Center? Command, Control, Communications, Computing & Quality',
     es ? 'Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.' : 'A C5 is a Command, Control, Communications, Computing, and Quality center for public safety. Learn how C5 centers operate in Mexico and Latin America with KabatOne\'s K1 platform.',
-    es ? 'https://kabatone.com/es/resources/que-es-un-c5/' : 'https://kabatone.com/resources/que-es-un-c5/',
+    es ? 'https://kabatone.com/es/resources/que-es-un-c5' : 'https://kabatone.com/resources/que-es-un-c5',
     '2024-01-15'
   )
 

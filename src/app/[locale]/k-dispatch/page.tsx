@@ -127,8 +127,8 @@ export default async function KDispatchPage({
   ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: 'K-Dispatch', url: es ? 'https://kabatone.com/es/k-dispatch/' : 'https://kabatone.com/k-dispatch/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: 'K-Dispatch', url: es ? 'https://kabatone.com/es/k-dispatch' : 'https://kabatone.com/k-dispatch' },
   ]
 
   return (
