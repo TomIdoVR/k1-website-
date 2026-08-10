@@ -1,0 +1,103 @@
+/* Before/after section. Tokens match the ecosystem and solutions sections so
+   it reads as part of the same system: DM Mono eyebrow, Barlow Condensed
+   display title, Space Grotesk body, 1240px wrap. */
+
+.ba {
+  padding-block: clamp(52px, 6vw, 88px);
+  background: linear-gradient(180deg, #f7fafd 0%, #ffffff 100%);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.ba-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.ba-head { max-width: 680px; margin-bottom: clamp(32px, 3.6vw, 48px); }
+
+.ba-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0891b2;
+}
+
+.ba-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: #0f1724;
+  margin: 0 0 16px;
+}
+.ba-title em { font-style: normal; color: #0891b2; }
+
+.ba-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
+
+/* Two columns that read as a pair, with the "after" side visually favoured.
+   Equal-width tracks so rows line up as before/after counterparts. */
+.ba-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  align-items: start;
+}
+
+.ba-col {
+  padding: clamp(20px, 2.2vw, 30px);
+  border-radius: 16px;
+  border: 1px solid #e2e8f2;
+  background: #fff;
+}
+.ba-col-before { background: #f6f7f9; border-color: #e4e7ec; }
+.ba-col-after {
+  border-color: rgba(8, 145, 178, 0.32);
+  box-shadow: 0 20px 44px -34px rgba(8, 100, 145, 0.55);
+}
+
+.ba-col-title {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  color: #667185;
+}
+.ba-col-after .ba-col-title { color: #0e7490; }
+
+.ba-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #3d4b60;
+}
+.ba-item:last-child { margin-bottom: 0; }
+.ba-col-after .ba-item { color: #23324a; }
+
+.ba-mark {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 6px;
+}
+/* #9aa3b0 on #f6f7f9 is decorative only — the text beside it carries meaning. */
+.ba-mark-before { color: #8a94a6; background: #e8eaee; }
+.ba-mark-after { color: #0e7490; background: rgba(8, 145, 178, 0.12); }
+
+@media (max-width: 760px) {
+  .ba-cols { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,3 +1,24 @@
+## [v2.332] – 2026-08-10 — Alternate homepage running order for side-by-side review
+### Added
+- **`/hero-lab-story`** — the homepage in a problem → action → result order, for comparison against `/hero-lab`. Same components, same styling, only the sequence changes plus one new section. **`/hero-lab` is untouched**, so the two can be reviewed against each other. Follows the `/hero-lab-prev` precedent.
+- **New `BeforeAfter` section** — the piece the page did not have. Five paired rows contrasting a fragmented command centre with a unified one, written in operational language rather than feature language: the 911 call, the camera and the responding unit living in three systems, versus one incident record from call to closure.
+
+### Notes
+- **The problem this tests.** The current order makes four consecutive capability statements — how it works, solutions, integrations, industries — with the only proof, the case study, sitting behind all of them at position five. A reader gets breadth four times and outcome once, at the end.
+
+  | | current | `/hero-lab-story` |
+  |---|---|---|
+  | 3 | how it works | **before / after** — the problem |
+  | 4 | solutions | how it works — the action |
+  | 5 | case study | **case study** — the result, promoted |
+  | 6 | trust band | solutions — what you deploy |
+  | 7 | ecosystem | industries — where it applies |
+  | 8 | industries | **ecosystem** — demoted to supporting |
+
+  The reordering interleaves proof between the breadth sections instead of stacking them, so the page makes its argument once and then evidences it.
+- **No numbers are claimed in the new section, deliberately.** Inventing a figure to make the before/after land would be exactly the unsourced-claim problem both audits flagged. The case study carries the evidence — and its bullets are still qualitative ("one unified operational picture") where they should carry measured outcomes from a named deployment. That needs figures only the business can supply.
+- This is a proposal to react to, not a decision. Nothing on the live homepage or `/hero-lab` changed.
+
 ## [v2.331] – 2026-08-10 — Nav dropdowns close each other; integration disclaimer moves above the logos
 ### Fixed
 - **Every nav dropdown could be open at once**, panels overlapping each other — the four menus were independent `<details>` elements with nothing tying them together. They now share `name="hll-nav"`, which makes the browser enforce mutual exclusivity natively: opening one closes the others, with no JavaScript and no click-outside handler. The same mechanism the FAQ accordion in `SolutionPage` already used.
