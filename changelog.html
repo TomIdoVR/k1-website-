@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.315 -->
+      <div class="tl-entry fix" id="v2.315">
+        <div class="tl-meta"><span class="tl-ver">v2.315</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">The SEO audit can finally see redirects, and runs against production</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The audit followed redirects silently, so it could never report one.</strong> <code>fetch</code> follows by default, so a URL reaching 200 after two hops graded identically to one served directly — which is why the production <code>307 &rarr; 308 &rarr; 200</code> chain went unreported for months while the audit printed &ldquo;0 critical, 0 warnings&rdquo; daily. <code>fetchPage</code> now uses <code>redirect: "manual"</code> and walks the chain itself</li>
+            <li><strong>It audited a URL space Google never sees.</strong> Requests went to <code>/en/...</code>, but <code>localePrefix: 'as-needed'</code> serves EN at the root — so each was itself a redirect, in no sitemap and named by no canonical. On production <code>/en/k-dispatch</code> was a <em>three</em>-hop chain</li>
+            <li>New checks: <code>redirect_chain</code> (warning at one hop, critical at two), <code>canonical_host_mismatch</code> (production hosts only), and <code>canonical_not_self</code> — the last compares <em>paths only</em>, since staging is supposed to carry production canonicals and comparing full URLs fired on all 71 staging pages</li>
+            <li>Verified across all three hosts as found: <code>kabatone.com</code> &rarr; 71 &times; <code>redirect_chain</code> (the 307 to www) and <code>www.kabatone.com</code> &rarr; 71 &times; <code>canonical_host_mismatch</code> &mdash; the same defect from each side. Both cleared the moment the apex became the serving domain with www on a permanent 308</li>
+            <li><strong>Coverage went from 71 URLs to 232.</strong> The hard-coded table covered 31% of what the sitemap publishes &mdash; the ES locale and country pages were never audited at all. Newly visible: 44 over-length titles, 44 over-length descriptions, 12 missing H1s, 8 missing <code>og:image</code>. Not regressions, just never looked at</li>
+            <li><strong>Still correctly reported: 231 &times; <code>redirect_chain</code></strong> on production &mdash; the deployed sitemap still emits slashed URLs, so every one 308s. Falls to zero once v2.314 ships</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.314 -->
       <div class="tl-entry fix" id="v2.314">
         <div class="tl-meta"><span class="tl-ver">v2.314</span><span class="tl-date">2026-08-10</span></div>

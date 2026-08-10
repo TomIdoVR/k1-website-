@@ -1,3 +1,19 @@
+## [v2.315] – 2026-08-10 — The SEO audit can finally see redirects, and runs against production
+
+**Fixed**
+- **The audit followed redirects silently, so it could never report one.** `fetch` follows by default, so a URL that only reached 200 after two hops graded identically to one served directly. This is why the production `307 → 308 → 200` chain on every indexed URL went unreported for months while the audit printed "0 critical, 0 warnings" every day. `fetchPage` now uses `redirect: "manual"` and walks the chain itself, capped at 5 hops.
+- **It audited a URL space Google never sees.** Requests went to `${BASE_URL}/en${route}` — but `localePrefix: 'as-needed'` serves EN at the root, so every one of those was itself a redirect, present in no sitemap and named by no canonical. On production `/en/k-dispatch` was a *three*-hop chain. **The URL list now comes from the target's own sitemap**, not from a hard-coded route table. Whether we publish `/path` or `/path/` changed twice in one day (v2.314 de-slashed everything), and each wrong guess either hid a real redirect or invented 70 false ones — two interim versions of this commit did exactly that in opposite directions. Asking the deployment what it publishes cannot go stale. Hosts are rewritten to the audited origin, since `sitemap.ts` hard-codes the production origin and auditing staging would otherwise have graded production. Falls back to `ROUTES` if the sitemap is unreachable.
+- **New check `redirect_chain`** — warning at one hop, critical at two or more. A URL we publish as canonical must serve 200 itself; any hop means Google is asked to crawl one URL and index another.
+- **New check `canonical_host_mismatch`** — fires only on a production host, when the page is served by one host and its canonical names another. Catches "serves on www, every canonical says apex" directly.
+- **New check `canonical_not_self`** — the canonical's path must match the audited path. Deliberately compares *paths only*: staging and preview are supposed to carry production canonicals, and comparing full URLs fired on all 71 staging pages, which would have buried the real signal under a permanent false positive.
+- Carried forward the retry-with-backoff in `fetchPage` that existed only as an uncommitted local edit.
+
+**Notes**
+- Verified against all three hosts as found: `kabatone.com` → **71 × `redirect_chain`** (the 307 to www) and `www.kabatone.com` → **71 × `canonical_host_mismatch`** (served there, claimed the apex) — the same defect from each side. Both cleared the moment the apex was made the serving domain in Vercel with www on a permanent 308, confirming the check works as a pass/fail gate.
+- **Coverage went from 71 URLs to 232.** The hard-coded table covered 31% of what the sitemap actually publishes — the ES locale and the country pages were never audited at all. The newly-visible pages carry 44 over-length titles, 44 over-length descriptions, 12 missing H1s, 8 missing `og:image` and 6 `canonical_not_self`. These are not regressions; they are pages the audit had simply never looked at. Triage separately.
+- **Remaining, correctly reported: 231 × `redirect_chain` on production** — the deployed sitemap still emits slashed URLs, so every one still 308s. That is precisely what v2.314 fixes, and it should fall to zero once that ships.
+- The daily job still targets staging; production is now worth a separate weekly run, since the 307 exists only there. See `SEO/weekly-report-2026-08-10.md`.
+
 ## [v2.314] – 2026-08-10 — Every canonical URL now resolves to a 200
 
 **Fixed**
