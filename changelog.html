@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.333 -->
+      <div class="tl-entry changed" id="v2.333">
+        <div class="tl-meta"><span class="tl-ver">v2.333</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">Before/after becomes a diagram instead of prose</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The before/after section now argues with a drawing, not ten lines of text.</strong> The first pass was five paired prose rows — a wall of text making the case that the homepage has too much text. The claim is "four records versus one record", and that is a shape rather than a sentence</li>
+            <li><strong>Left:</strong> four cards adrift at slight angles, unconnected, each with its own timestamp — 10:42, 10:47, 10:51, 11:26. <strong>Right:</strong> the same four moments as nodes on a single lit spine under one incident number and one clock, over a bar reading "one auditable timeline". Copy drops from ~140 words to <strong>69</strong></li>
+            <li><strong>Inline SVG rather than generated artwork</strong>, deliberately: crisp at any size, both language variants are real text rather than baked pixels, no image weight, and nothing can come back garbled — a real risk that already cost regenerations elsewhere in this redesign</li>
+            <li>Each drawing is <code>role="img"</code> with a full <code>aria-label</code>, since here the picture carries the argument rather than decorating it. Colours and type come from the same tokens as the ecosystem and solutions sections</li>
+            <li>Still <code>/hero-lab-story</code> only — <code>/hero-lab</code> remains untouched</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.332 -->
       <div class="tl-entry added" id="v2.332">
         <div class="tl-meta"><span class="tl-ver">v2.332</span><span class="tl-date">2026-08-10</span></div>

@@ -1,73 +1,86 @@
 /* The problem → action → result section the homepage was missing.
 
-   Design feedback: the page rests on "look how much our system does" and never
-   says what the world looks like before KabatOne and after it. Every other
-   section is a capability statement — modules, solutions, integrations,
-   industries — so a reader gets breadth five times and outcome never.
+   First pass was five paired prose rows, which was ten lines of text arguing
+   that the page has too much text. Replaced with a diagram: the whole point is
+   "four records versus one record", and that is a shape, not a sentence.
 
-   Deliberately written in operational language, not feature language: each row
-   is a moment an operator actually recognises, paired with what changes. No
-   numbers are claimed here — the case study carries the evidence, and inventing
-   a figure would be exactly the unsourced-claim problem the audits flagged. */
+   Inline SVG rather than generated artwork — it stays crisp at any size, both
+   language variants are real text rather than pixels, and nothing can come back
+   garbled. Each drawing is role="img" with a label, since it carries the
+   meaning rather than decorating it. */
 
-type Row = { before: { en: string; es: string }; after: { en: string; es: string } }
+type L = { en: string; es: string }
+const t = (v: L, es: boolean) => (es ? v.es : v.en)
 
-const ROWS: Row[] = [
-  {
-    before: {
-      en: 'The 911 call, the camera that saw it and the unit that responds live in three separate systems.',
-      es: 'La llamada al 911, la cámara que lo vio y la unidad que responde viven en tres sistemas distintos.',
-    },
-    after: {
-      en: 'One incident record, from the first call through to closure.',
-      es: 'Un solo registro del incidente, desde la primera llamada hasta el cierre.',
-    },
-  },
-  {
-    before: {
-      en: 'An operator re-keys the same incident into dispatch, then video, then the report.',
-      es: 'Un operador recaptura el mismo incidente en despacho, luego en video y luego en el reporte.',
-    },
-    after: {
-      en: 'Entered once. Everything downstream reads the same record.',
-      es: 'Se captura una vez. Todo lo demás lee el mismo registro.',
-    },
-  },
-  {
-    before: {
-      en: 'Finding the nearest useful camera means knowing which building it is in and who owns it.',
-      es: 'Encontrar la cámara más cercana implica saber en qué edificio está y quién es su dueño.',
-    },
-    after: {
-      en: 'The nearest feed opens inside the incident, on the same map command already uses.',
-      es: 'La señal más cercana se abre dentro del incidente, en el mismo mapa que ya usa mando.',
-    },
-  },
-  {
-    before: {
-      en: 'After the fact, nobody can reconstruct what the picture actually looked like at 10:42.',
-      es: 'Después, nadie puede reconstruir cómo se veía realmente la situación a las 10:42.',
-    },
-    after: {
-      en: 'Every decision and status change sits on one auditable timeline.',
-      es: 'Cada decisión y cambio de estado queda en una sola línea de tiempo auditable.',
-    },
-  },
-  {
-    before: {
-      en: 'Adding a camera vendor or a radio system starts a new integration project.',
-      es: 'Añadir un proveedor de cámaras o un sistema de radio inicia un nuevo proyecto de integración.',
-    },
-    after: {
-      en: 'New sources connect to the platform you already run.',
-      es: 'Las nuevas fuentes se conectan a la plataforma que ya operas.',
-    },
-  },
+const NODES: { label: L; icon: 'call' | 'camera' | 'unit' | 'report'; time: string }[] = [
+  { label: { en: '911 Call', es: 'Llamada' }, icon: 'call', time: '10:42' },
+  { label: { en: 'Camera', es: 'Cámara' }, icon: 'camera', time: '10:47' },
+  { label: { en: 'Unit', es: 'Unidad' }, icon: 'unit', time: '10:51' },
+  { label: { en: 'Report', es: 'Reporte' }, icon: 'report', time: '11:26' },
 ]
 
-export default function BeforeAfter({ es }: { es: boolean }) {
-  const lang = es ? 'es' : 'en'
+function Glyph({ kind }: { kind: string }) {
+  const d: Record<string, string> = {
+    call: 'M2.6 3.4a1 1 0 0 1 1-.9h1.6a1 1 0 0 1 1 .8l.35 1.7a1 1 0 0 1-.28.9l-.7.7a8 8 0 0 0 3.1 3.1l.7-.7a1 1 0 0 1 .9-.28l1.7.35a1 1 0 0 1 .8 1v1.6a1 1 0 0 1-.9 1A11 11 0 0 1 2.6 3.4Z',
+    camera: 'M2 5.2h6.2v5.6H2zM8.2 7l3.8-1.7v5.4L8.2 9z',
+    unit: 'M2.2 9.4V7.2l1.3-2.5h7l1.3 2.5v2.2M3.9 9.4h6.2M4.2 11a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Zm5.6 0a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Z',
+    report: 'M3.4 2.2h4.4l2.8 2.8v6.8H3.4zM7.8 2.2V5h2.8',
+  }
+  return <path d={d[kind]} fill="none" stroke="currentColor" strokeWidth="1.15" strokeLinejoin="round" strokeLinecap="round" />
+}
 
+/* Four cards adrift: no connectors, each with its own timestamp. */
+function FragmentedDiagram({ es }: { es: boolean }) {
+  const pos = [
+    { x: 8, y: 10, r: -4 }, { x: 168, y: 30, r: 5 },
+    { x: 22, y: 92, r: 6 }, { x: 176, y: 112, r: -5 },
+  ]
+  return (
+    <svg className="ba-svg" viewBox="0 0 320 180" role="img"
+      aria-label={es
+        ? 'Cuatro sistemas separados, cada uno con su propio registro y su propia hora, sin conexión entre ellos.'
+        : 'Four separate systems, each holding its own record and its own timestamp, with nothing connecting them.'}>
+      {pos.map((p, i) => (
+        <g key={i} transform={`translate(${p.x} ${p.y}) rotate(${p.r} 68 29)`} className="ba-frag-card">
+          <rect x="0" y="0" width="136" height="58" rx="9" />
+          <g className="ba-frag-ic" transform="translate(13 21)"><Glyph kind={NODES[i].icon} /></g>
+          <text className="ba-frag-label" x="34" y="26">{t(NODES[i].label, es)}</text>
+          <text className="ba-frag-time" x="34" y="42">{NODES[i].time}</text>
+        </g>
+      ))}
+    </svg>
+  )
+}
+
+/* One spine, four nodes on it, one timestamp. */
+function UnifiedDiagram({ es }: { es: boolean }) {
+  const xs = [46, 118, 190, 262]
+  return (
+    <svg className="ba-svg" viewBox="0 0 320 180" role="img"
+      aria-label={es
+        ? 'Un solo registro del incidente: llamada, cámara, unidad y reporte conectados en una misma línea de tiempo.'
+        : 'A single incident record: call, camera, unit and report connected on one timeline.'}>
+      <text className="ba-uni-tag" x="16" y="26">{es ? 'INCIDENTE 2451' : 'INCIDENT 2451'}</text>
+      <text className="ba-uni-time" x="304" y="26" textAnchor="end">10:42</text>
+
+      <line className="ba-spine" x1="30" y1="92" x2="290" y2="92" />
+      {xs.map((x, i) => (
+        <g key={i}>
+          {i > 0 && <line className="ba-spine-lit" x1={xs[i - 1]} y1="92" x2={x} y2="92" />}
+          <circle className="ba-node-ring" cx={x} cy="92" r="19" />
+          <g className="ba-node-ic" transform={`translate(${x - 7} 85)`}><Glyph kind={NODES[i].icon} /></g>
+          <text className="ba-node-label" x={x} y="130" textAnchor="middle">{t(NODES[i].label, es)}</text>
+        </g>
+      ))}
+      <rect className="ba-uni-bar" x="30" y="150" width="260" height="7" rx="3.5" />
+      <text className="ba-uni-bar-label" x="160" y="172" textAnchor="middle">
+        {es ? 'una sola línea de tiempo auditable' : 'one auditable timeline'}
+      </text>
+    </svg>
+  )
+}
+
+export default function BeforeAfter({ es }: { es: boolean }) {
   return (
     <section className="ba" id="before-after">
       <div className="ba-wrap">
@@ -80,38 +93,30 @@ export default function BeforeAfter({ es }: { es: boolean }) {
           </h2>
           <p className="ba-lede">
             {es
-              ? 'La mayoría de los centros de mando no carecen de tecnología: tienen demasiada, sin conectar. Esto es lo que cambia cuando un solo incidente recorre una sola plataforma.'
-              : 'Most command centers are not short of technology. They have too much of it, unconnected. This is what changes when one incident runs through one platform.'}
+              ? 'La mayoría de los centros de mando no carecen de tecnología: tienen demasiada, sin conectar.'
+              : 'Most command centers are not short of technology. They have too much of it, unconnected.'}
           </p>
         </div>
 
-        <div className="ba-cols" role="list">
+        <div className="ba-cols">
           <div className="ba-col ba-col-before">
             <h3 className="ba-col-title">{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</h3>
-            {ROWS.map((r, i) => (
-              <p className="ba-item" role="listitem" key={i}>
-                <span className="ba-mark ba-mark-before" aria-hidden="true">
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                    <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
-                </span>
-                {r.before[lang]}
-              </p>
-            ))}
+            <FragmentedDiagram es={es} />
+            <p className="ba-caption">
+              {es
+                ? 'Cuatro sistemas, cuatro registros, cuatro horas distintas. Nadie puede reconstruir la imagen completa.'
+                : 'Four systems, four records, four different clocks. Nobody can reconstruct the whole picture.'}
+            </p>
           </div>
 
           <div className="ba-col ba-col-after">
             <h3 className="ba-col-title">{es ? 'Con KabatOne' : 'With KabatOne'}</h3>
-            {ROWS.map((r, i) => (
-              <p className="ba-item" role="listitem" key={i}>
-                <span className="ba-mark ba-mark-after" aria-hidden="true">
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                    <path d="M2.5 6.3l2.4 2.4L9.5 4" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                {r.after[lang]}
-              </p>
-            ))}
+            <UnifiedDiagram es={es} />
+            <p className="ba-caption">
+              {es
+                ? 'Un solo registro, desde la primera llamada hasta el cierre.'
+                : 'One record, from the first call through to closure.'}
+            </p>
           </div>
         </div>
       </div>

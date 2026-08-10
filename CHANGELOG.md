@@ -1,3 +1,16 @@
+## [v2.333] – 2026-08-10 — Before/after becomes a diagram instead of prose
+### Changed
+- **The before/after section now argues with a drawing, not ten lines of text.** The first pass (v2.332) was five paired prose rows — which meant a wall of text making the case that the homepage has too much text. The claim is "four records versus one record", and that is a shape rather than a sentence.
+  - **Left:** four cards adrift at slight angles, unconnected, each carrying its own timestamp — 10:42, 10:47, 10:51, 11:26.
+  - **Right:** the same four moments as nodes on a single lit spine under one incident number and one clock, over a bar reading "one auditable timeline".
+  - Copy drops from roughly 140 words to **69**, now one caption per side instead of five rows each.
+
+### Notes
+- **Inline SVG rather than generated artwork**, deliberately. It stays crisp at any size, both language variants are real text rather than baked pixels, it costs no image weight, and nothing can come back garbled — a real risk on generated UI art, and one that already cost regenerations elsewhere in this redesign.
+- Each drawing is `role="img"` with a full `aria-label` describing what it shows, since here the picture carries the argument rather than decorating it. The captions are not a substitute for that.
+- Colours and type come from the same tokens as the ecosystem and solutions sections, so it reads as part of the system rather than an inserted graphic.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.332] – 2026-08-10 — Alternate homepage running order for side-by-side review
 ### Added
 - **`/hero-lab-story`** — the homepage in a problem → action → result order, for comparison against `/hero-lab`. Same components, same styling, only the sequence changes plus one new section. **`/hero-lab` is untouched**, so the two can be reviewed against each other. Follows the `/hero-lab-prev` precedent.

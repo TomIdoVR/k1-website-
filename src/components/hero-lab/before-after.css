@@ -1,6 +1,9 @@
-/* Before/after section. Tokens match the ecosystem and solutions sections so
-   it reads as part of the same system: DM Mono eyebrow, Barlow Condensed
-   display title, Space Grotesk body, 1240px wrap. */
+/* Before/after section. Tokens match the ecosystem and solutions sections so it
+   reads as part of the same system: DM Mono eyebrow, Barlow Condensed display
+   title, Space Grotesk body, 1240px wrap.
+
+   The two diagrams carry the argument, so the copy is one caption per side
+   rather than the five prose rows this started as. */
 
 .ba {
   padding-block: clamp(52px, 6vw, 88px);
@@ -8,13 +11,8 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.ba-wrap {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding-inline: clamp(20px, 5vw, 64px);
-}
-
-.ba-head { max-width: 680px; margin-bottom: clamp(32px, 3.6vw, 48px); }
+.ba-wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 64px); }
+.ba-head { max-width: 680px; margin-bottom: clamp(30px, 3.4vw, 44px); }
 
 .ba-eyebrow {
   display: block;
@@ -41,17 +39,17 @@
 
 .ba-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
 
-/* Two columns that read as a pair, with the "after" side visually favoured.
-   Equal-width tracks so rows line up as before/after counterparts. */
 .ba-cols {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 28px);
-  align-items: start;
+  align-items: stretch;
 }
 
 .ba-col {
-  padding: clamp(20px, 2.2vw, 30px);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2.2vw, 28px);
   border-radius: 16px;
   border: 1px solid #e2e8f2;
   background: #fff;
@@ -68,35 +66,52 @@
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin: 0 0 18px;
+  margin: 0 0 6px;
   color: #667185;
 }
 .ba-col-after .ba-col-title { color: #0e7490; }
 
-.ba-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  margin: 0 0 14px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: #3d4b60;
-}
-.ba-item:last-child { margin-bottom: 0; }
-.ba-col-after .ba-item { color: #23324a; }
+.ba-svg { display: block; width: 100%; height: auto; margin: 4px 0 2px; }
 
-.ba-mark {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 20px;
-  height: 20px;
-  margin-top: 1px;
-  border-radius: 6px;
+.ba-caption {
+  margin: auto 0 0;
+  padding-top: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5768;
 }
-/* #9aa3b0 on #f6f7f9 is decorative only — the text beside it carries meaning. */
-.ba-mark-before { color: #8a94a6; background: #e8eaee; }
-.ba-mark-after { color: #0e7490; background: rgba(8, 145, 178, 0.12); }
+.ba-col-after .ba-caption { color: #23324a; }
+
+/* ── fragmented side ── */
+.ba-frag-card rect { fill: #fff; stroke: #dfe3ea; stroke-width: 1; }
+.ba-frag-ic { color: #98a2b3; }
+.ba-frag-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; fill: #5c6675;
+}
+.ba-frag-time {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; fill: #98a2b3;
+}
+
+/* ── unified side ── */
+.ba-uni-tag {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px;
+  letter-spacing: 0.1em; fill: #0e7490;
+}
+.ba-uni-time {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; fill: #7d8798;
+}
+.ba-spine { stroke: #dbe3ee; stroke-width: 2.5; stroke-linecap: round; }
+.ba-spine-lit { stroke: #22b8d4; stroke-width: 2.5; stroke-linecap: round; }
+.ba-node-ring { fill: #fff; stroke: #22b8d4; stroke-width: 1.8; }
+.ba-node-ic { color: #0e7490; }
+.ba-node-label {
+  font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; fill: #23324a;
+}
+.ba-uni-bar { fill: rgba(34, 184, 212, 0.18); }
+.ba-uni-bar-label {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px;
+  letter-spacing: 0.08em; fill: #0e7490;
+}
 
 @media (max-width: 760px) {
   .ba-cols { grid-template-columns: minmax(0, 1fr); }
