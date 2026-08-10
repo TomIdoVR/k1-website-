@@ -1,3 +1,17 @@
+## [v2.331] – 2026-08-10 — Nav dropdowns close each other; integration disclaimer moves above the logos
+### Fixed
+- **Every nav dropdown could be open at once**, panels overlapping each other — the four menus were independent `<details>` elements with nothing tying them together. They now share `name="hll-nav"`, which makes the browser enforce mutual exclusivity natively: opening one closes the others, with no JavaScript and no click-outside handler. The same mechanism the FAQ accordion in `SolutionPage` already used.
+  - Verified by clicking Solutions → Industries → Company in sequence: exactly one menu open at every step.
+
+### Changed
+- **The "these are compatibilities, not partnerships" caveat now sits above the logo grid**, not beneath it. The wording already existed, in 12.5px grey type at the foot of the section — and a reviewer read the whole section and still came away thinking the logos implied formal partnerships. That is the evidence the placement was not working: a disclaimer after the marks is read after the impression has formed, if at all.
+  - Now a tinted band with a `COMPATIBILITIES` label chip, 13.5px, immediately before the grid. Measured 7.15:1 for the body text and 4.98:1 for the chip — both pass AA.
+  - The footnote keeps only the scope statement ("current, supported and commercially available"), so the two are not repeating each other.
+
+### Notes
+- From design feedback rather than an audit. Both items were verified in the code before changing anything: the dropdowns genuinely had no shared name, and the disclaimer genuinely already existed — the fix was placement, not new copy.
+- This does not settle the wider ask in that feedback — that the homepage leans on breadth rather than a before/after outcome story, and repeats its message across five consecutive sections. That is a content restructure and needs a decision, not a patch.
+
 ## [v2.330] – 2026-08-06 — Social previews on the demo and scenario pages
 ### Fixed
 - **`metadataBase` was never set**, which is why relative Open Graph URLs failed silently. Without it Next cannot resolve a relative image to an absolute one and drops the **entire** `openGraph` block — `/demo/lpr` declared a full OG block with title, description and image and emitted **zero** `og:` tags. Now set on the root layout, so relative metadata URLs resolve site-wide.

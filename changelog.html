@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.331 -->
+      <div class="tl-entry fix" id="v2.331">
+        <div class="tl-meta"><span class="tl-ver">v2.331</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">Nav dropdowns close each other; integration disclaimer moves above the logos</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every nav dropdown could be open at once</strong>, panels overlapping — the four menus were independent <code>&lt;details&gt;</code> elements with nothing tying them together. They now share <code>name="hll-nav"</code>, so the browser enforces mutual exclusivity natively: opening one closes the others, with no JavaScript and no click-outside handler. Same mechanism the FAQ accordion already used. Verified by clicking Solutions → Industries → Company: exactly one open at every step</li>
+            <li><strong>The "compatibilities, not partnerships" caveat now sits above the logo grid</strong>, not beneath it. The wording already existed, in 12.5px grey type at the foot of the section — and a reviewer read the section and still came away thinking the logos implied formal partnerships. That is the evidence the placement was not working: a disclaimer after the marks is read after the impression has formed, if at all</li>
+            <li>Now a tinted band with a <code>COMPATIBILITIES</code> chip, 13.5px, immediately before the grid — measured 7.15:1 body and 4.98:1 chip, both passing AA. The footnote keeps only the scope statement so the two do not repeat each other</li>
+            <li>Does not settle the wider feedback — that the homepage leans on breadth rather than a before/after outcome story, and repeats its message across five consecutive sections. That is a content restructure, not a patch</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.330 -->
       <div class="tl-entry fix" id="v2.330">
         <div class="tl-meta"><span class="tl-ver">v2.330</span><span class="tl-date">2026-08-06</span></div>

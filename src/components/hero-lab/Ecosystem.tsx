@@ -50,6 +50,18 @@ export default function Ecosystem({ es }: { es: boolean }) {
           </p>
         </div>
 
+        {/* Above the logos, not below them. The same wording used to sit at the
+            foot of the section in small grey type, and a reviewer still read
+            the logo grid as implying formal partnerships — so the disclaimer
+            was not doing its job where it was. It has to be read before the
+            marks, not after. */}
+        <p className="eco-disclaimer">
+          <span className="eco-disclaimer-tag">{es ? 'COMPATIBILIDADES' : 'COMPATIBILITIES'}</span>
+          {es
+            ? 'Marcas de terceros mostradas como integraciones compatibles y soportadas — no como sociedades formales ni respaldos, salvo donde exista una alianza declarada.'
+            : 'Third-party brands are shown as supported, compatible integrations — not as formal partnerships or endorsements, unless an alliance is stated.'}
+        </p>
+
         <div className="eco-grid">
           {ECOSYSTEM.map((g, i) => (
             <div className="eco-group" key={i}>
@@ -64,10 +76,12 @@ export default function Ecosystem({ es }: { es: boolean }) {
             </div>
           ))}
         </div>
+        {/* The partnership caveat moved above the grid; this keeps only the
+            scope note, so the two are not saying the same thing twice. */}
         <p className="eco-note">
           {es
-            ? 'Solo se muestran integraciones actuales, soportadas y disponibles comercialmente. Marcas referidas como compatibilidades, no como sociedades formales salvo donde exista una alianza.'
-            : 'Only current, supported, and commercially available integrations are shown. Brands shown as compatibilities, not formal partnerships unless an alliance exists.'}
+            ? 'Solo se muestran integraciones actuales, soportadas y disponibles comercialmente.'
+            : 'Only current, supported, and commercially available integrations are shown.'}
         </p>
       </div>
     </section>

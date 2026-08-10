@@ -54,8 +54,12 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
         <BrandLockup />
       </Link>
 
+      {/* A shared name makes these four mutually exclusive: opening one closes
+          the others, enforced by the browser — no JS, no click-outside handler.
+          Without it every dropdown could be open at once and the panels
+          overlapped. Same mechanism as the FAQ accordion in SolutionPage. */}
       <div className="hll-nav-links">
-        <details className="hll-nav-menu">
+        <details className="hll-nav-menu" name="hll-nav">
           <summary>{es ? 'Soluciones' : 'Solutions'}<Arrow direction="down" /></summary>
           <div className="hll-nav-dropdown">
             {MODULE_LINKS.map((item) => (
@@ -65,13 +69,13 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
             ))}
           </div>
         </details>
-        <details className="hll-nav-menu">
+        <details className="hll-nav-menu" name="hll-nav">
           <summary>{es ? 'Industrias' : 'Industries'}<Arrow direction="down" /></summary>
           <div className="hll-nav-dropdown">
             {INDUSTRY_LINKS.map((item) => <Link href={item.href} key={item.href}>{item[language]}</Link>)}
           </div>
         </details>
-        <details className="hll-nav-menu">
+        <details className="hll-nav-menu" name="hll-nav">
           <summary>{es ? 'Recursos' : 'Resources'}<Arrow direction="down" /></summary>
           <div className="hll-nav-dropdown">
             <Link href="/resources">{es ? 'Centro de Recursos' : 'Resource Center'}</Link>
@@ -79,7 +83,7 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
             <Link href="/simulator">{es ? 'Simulador de Incidentes' : 'Incident Simulator'}</Link>
           </div>
         </details>
-        <details className="hll-nav-menu">
+        <details className="hll-nav-menu" name="hll-nav">
           <summary>{es ? 'Empresa' : 'Company'}<Arrow direction="down" /></summary>
           <div className="hll-nav-dropdown hll-nav-dropdown--right">
             <Link href="/about">{es ? 'Nosotros' : 'About'}</Link>
