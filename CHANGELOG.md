@@ -1,3 +1,15 @@
+## [v2.329] – 2026-08-06 — About and all seven industry templates work on a phone
+### Fixed
+- **`/about` rendered a 747px document inside a 390px viewport.** Same root cause as the contact page: the responsive rules were attribute-substring selectors against the inline style attribute, which React serialises with no space after the colon, so none of them matched. Worse here — the one class-based rule, `.about-hero-grid`, was also dead, because **no element in the file carried a className at all**. The entire responsive layer was inert and the page held its desktop grids at every width.
+  - All seven grids now carry real classes (`about-hero-grid`, `about-story-grid`, `about-metrics`, `about-cards-2/3/5`, `about-stat-pair`) with a staged collapse: 4-up and 5-up step down at 960px, 2-up and 3-up at 768px, everything to one column at 560px.
+- **All seven industry templates had the identical dead-selector problem**, not just the one the audit sampled. `/industries/public-safety` measured 502px at 390px, its challenges grid computing to `150px + 136px + 152px` because the `repeat(3, 1fr)` tracks could not shrink. Fixed-column grids across airport, logistics, municipalities, ports, public-safety, retail and stadiums now use an `.ind-grid` class: 2-up at 900px, 1-up at 640px.
+- Added `min-width: 0` to grid and flex children throughout. Items default to `min-width: auto`, which prevents a track ever shrinking below its content — the mechanism behind every one of these overflows.
+
+### Notes
+- Verified with a rendered-content sanity check on every measurement, after an earlier run reported a false clean: the dev server was returning 500s and the iframes were measuring blank documents. That 500 was mine — a CSS comment containing backticks inside a JSX template literal terminated the `<style>` string. Every figure below is from a page confirmed to have rendered its sections.
+- **0 horizontal overflow at 375, 390, 768 and 1280 on all nine pages touched**, plus the two redesign pages as a regression check.
+- **Known limit:** four industry pages still overflow 23–52px at **320px** specifically. The cause is a decorative "In Practice" callout with roughly 103px of accumulated left padding, and it needs bespoke work per page. Left alone deliberately — every realistic width is clean, and 320px is under 1% of devices.
+
 ## [v2.328] – 2026-08-06 — Contact page is usable on a phone again
 ### Fixed
 - **`/contact` rendered a 770px document inside a 390px viewport**, holding its desktop `1fr 420px` grid at every width. The form was squeezed to **164px** and each field to **74px** — the primary conversion path was unusable on a phone.

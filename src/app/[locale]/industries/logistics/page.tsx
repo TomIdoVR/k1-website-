@@ -172,7 +172,7 @@ export default async function LogisticsPage({
             <p style={labelStyle}>{challengesLabel}</p>
             <h2 style={h2Style}>{challengesH2}</h2>
             <p style={descStyle}>{challengesDesc}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {challenges.map((c, i) => (
                 <div key={i} style={{ ...cardStyle, transition: 'border-color 0.2s, background 0.2s' }}>
                   <div style={{ width: '40px', height: '40px', background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.18)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', color: 'var(--cyan)' }}>
@@ -223,7 +223,7 @@ export default async function LogisticsPage({
             <p style={labelStyle}>{coverageLabel}</p>
             <h2 style={h2Style}>{coverageH2}</h2>
             <p style={descStyle}>{coverageDesc}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {coverageZones.map((z, i) => (
                 <div key={i} style={{ ...cardStyle, borderTop: '2px solid var(--cyan)' }}>
                   <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800, fontSize: '13px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '10px' }}>{z.zone}</div>
@@ -241,7 +241,7 @@ export default async function LogisticsPage({
             <p style={labelStyle}>{capLabel}</p>
             <h2 style={h2Style}>{capH2}</h2>
             <p style={descStyle}>{capDesc}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {capabilities.map((c, i) => (
                 <div key={i} style={{ ...cardStyle, transition: 'border-color 0.2s, background 0.2s' }}>
                   <div style={{ width: '40px', height: '40px', background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', color: 'var(--blue-light)' }}>
@@ -359,14 +359,28 @@ export default async function LogisticsPage({
           @media (max-width: 768px) {
             section > div { padding-left: 24px !important; padding-right: 24px !important; }
           }
-          @media (max-width: 640px) {
-            section > div > div[style*="grid-template-columns: repeat(2"] {
-              grid-template-columns: 1fr !important;
-            }
-            section > div > div[style*="grid-template-columns: repeat(3"] {
-              grid-template-columns: 1fr !important;
-            }
+
+          /* Class selectors, because the rules that used to live here matched
+             nothing: they tested the inline style attribute for
+             "grid-template-columns: repeat(...)" with a space after the colon,
+             and React serialises inline styles without one. Every fixed-column
+             grid therefore held its desktop track count at every width -- the
+             challenges grid computed to 150px+136px+152px inside a 390px
+             viewport. Inline styles win over stylesheets, so !important. */
+          .ind-grid > * { min-width: 0; }
+          @media (max-width: 900px) {
+            .ind-grid { grid-template-columns: repeat(2, 1fr) !important; }
           }
+          @media (max-width: 640px) {
+            .ind-grid { grid-template-columns: 1fr !important; }
+          }
+          /* Flex items also default to min-width: auto, so a card could stay
+             wider than its own wrapped flex row on the narrowest phones. */
+          @media (max-width: 400px) {
+            section div { min-width: 0; }
+            section h1, section h2, section h3, section p { overflow-wrap: anywhere; }
+          }
+
         `}</style>
       </div>
     </>

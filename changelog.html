@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.329 -->
+      <div class="tl-entry fix" id="v2.329">
+        <div class="tl-meta"><span class="tl-ver">v2.329</span><span class="tl-date">2026-08-06</span></div>
+        <div class="tl-title">About and all seven industry templates work on a phone</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>/about</code> rendered a 747px document inside a 390px viewport.</strong> Same root cause as contact — attribute-substring selectors that React's inline-style serialisation never matches. Worse here: the one class-based rule, <code>.about-hero-grid</code>, was also dead, because <strong>no element in the file carried a className at all</strong>. The entire responsive layer was inert</li>
+            <li>All seven grids now carry real classes with a staged collapse: 4-up and 5-up step down at 960px, 2-up and 3-up at 768px, everything to one column at 560px</li>
+            <li><strong>All seven industry templates had the identical problem</strong>, not just the one the audit sampled. <code>/industries/public-safety</code> measured 502px at 390px, its challenges grid computing to <code>150px + 136px + 152px</code>. Fixed-column grids across airport, logistics, municipalities, ports, public-safety, retail and stadiums now use an <code>.ind-grid</code> class: 2-up at 900px, 1-up at 640px</li>
+            <li>Added <code>min-width: 0</code> to grid and flex children throughout — items default to <code>min-width: auto</code>, which prevents a track shrinking below its content and is the mechanism behind every one of these overflows</li>
+            <li><strong>Verified with a rendered-content sanity check</strong>, after an earlier run reported a false clean: the dev server was returning 500s and the iframes were measuring blank documents. That 500 was self-inflicted — a CSS comment containing backticks inside a JSX template literal terminated the <code>&lt;style&gt;</code> string</li>
+            <li><strong>0 horizontal overflow at 375, 390, 768 and 1280</strong> on all nine pages touched, plus both redesign pages as a regression check. <strong>Known limit:</strong> four industry pages still overflow 23–52px at 320px specifically — a decorative callout with ~103px of accumulated left padding, needing bespoke work per page. Left alone deliberately</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.328 -->
       <div class="tl-entry fix" id="v2.328">
         <div class="tl-meta"><span class="tl-ver">v2.328</span><span class="tl-date">2026-08-06</span></div>

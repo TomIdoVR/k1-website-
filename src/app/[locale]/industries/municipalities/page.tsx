@@ -250,7 +250,7 @@ export default async function MunicipalitiesPage({
                 ? 'Cinco ventajas fundamentales que hacen de KabatOne la plataforma preferida para operaciones de emergencia municipales en todo el mundo.'
                 : 'Five core advantages that make KabatOne the platform of choice for municipal emergency operations worldwide.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {benefits.map((b, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', transition: 'border-color 0.2s' }}>
                   <div style={{
@@ -318,7 +318,7 @@ export default async function MunicipalitiesPage({
                 ? 'Dos modos operativos — una plataforma unificada para todo lo que tu ciudad necesita para gestionar operaciones diarias y respuesta a emergencias.'
                 : 'Two operational modes — one unified platform for everything your city needs to manage daily operations and emergency response.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
               {/* Emergency Dispatch column */}
               <div>
                 <h3 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '20px', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '20px', paddingBottom: '12px', borderBottom: '1px solid var(--border)' }}>
@@ -489,10 +489,28 @@ export default async function MunicipalitiesPage({
           @media (max-width: 768px) {
             section > div { grid-template-columns: 1fr !important; }
           }
-          @media (max-width: 640px) {
-            section > div > div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
-            section > div > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+          /* Class selectors, because the rules that used to live here matched
+             nothing: they tested the inline style attribute for
+             "grid-template-columns: repeat(...)" with a space after the colon,
+             and React serialises inline styles without one. Every fixed-column
+             grid therefore held its desktop track count at every width -- the
+             challenges grid computed to 150px+136px+152px inside a 390px
+             viewport. Inline styles win over stylesheets, so !important. */
+          .ind-grid > * { min-width: 0; }
+          @media (max-width: 900px) {
+            .ind-grid { grid-template-columns: repeat(2, 1fr) !important; }
           }
+          @media (max-width: 640px) {
+            .ind-grid { grid-template-columns: 1fr !important; }
+          }
+          /* Flex items also default to min-width: auto, so a card could stay
+             wider than its own wrapped flex row on the narrowest phones. */
+          @media (max-width: 400px) {
+            section div { min-width: 0; }
+            section h1, section h2, section h3, section p { overflow-wrap: anywhere; }
+          }
+
         `}</style>
       </div>
     </>

@@ -278,7 +278,7 @@ export default async function PublicSafetyPage({
                 ? 'Las ciudades hoy enfrentan una convergencia de desafios de datos, coordinacion y tecnologia que demandan un enfoque unificado.'
                 : 'Cities today face a convergence of data, coordination, and technology challenges that demand a unified approach.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {challenges.map((c, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', transition: 'border-color 0.2s' }}>
                   <div style={{
@@ -346,7 +346,7 @@ export default async function PublicSafetyPage({
                 ? 'Una plataforma unificada que transforma los datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada.'
                 : 'A unified platform that transforms fragmented city data into actionable intelligence and coordinated response.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {capabilities.map((cap, i) => (
                 <div key={i} style={{
                   background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)',
@@ -500,10 +500,28 @@ export default async function PublicSafetyPage({
           @media (max-width: 768px) {
             section > div { grid-template-columns: 1fr !important; }
           }
-          @media (max-width: 640px) {
-            section > div > div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
-            section > div > div[style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+
+          /* Class selectors, because the rules that used to live here matched
+             nothing: they tested the inline style attribute for
+             "grid-template-columns: repeat(...)" with a space after the colon,
+             and React serialises inline styles without one. Every fixed-column
+             grid therefore held its desktop track count at every width -- the
+             challenges grid computed to 150px+136px+152px inside a 390px
+             viewport. Inline styles win over stylesheets, so !important. */
+          .ind-grid > * { min-width: 0; }
+          @media (max-width: 900px) {
+            .ind-grid { grid-template-columns: repeat(2, 1fr) !important; }
           }
+          @media (max-width: 640px) {
+            .ind-grid { grid-template-columns: 1fr !important; }
+          }
+          /* Flex items also default to min-width: auto, so a card could stay
+             wider than its own wrapped flex row on the narrowest phones. */
+          @media (max-width: 400px) {
+            section div { min-width: 0; }
+            section h1, section h2, section h3, section p { overflow-wrap: anywhere; }
+          }
+
         `}</style>
       </div>
     </>
