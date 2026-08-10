@@ -1,3 +1,19 @@
+## [v2.316] – 2026-08-10 — The Spanish demo pages told Google not to index them
+
+**Fixed**
+- **All six `/es/demo/*` pages served the English canonical.** They live under `[locale]` but declared a static `export const metadata`, which Next evaluates once per module rather than once per locale — so `/es/demo/lpr` emitted `canonical: https://kabatone.com/demo/lpr`. Every Spanish demo page was telling Google it was a duplicate of the English one and should not be indexed, on a site where Spanish pages are two of the top five earners. Now built by a `demoMetadata()` helper that takes the locale, emits a self-referential canonical and full `en` / `es` / `x-default` hreflang.
+- **Spanish titles and descriptions are now actually Spanish.** The same static-metadata bug meant `/es/demo/*` presented English titles to Spanish searchers even though the pages render Spanish headings.
+- **`/demo/lpr` declared a social preview image that does not exist.** It pointed at `/demo/lpr/stage-1-detect.webp`, which is not in the repo — so the preview 404'd. Repointed at `/demo/lpr/cam-highway-lpr.jpeg`. (An unmerged commit on another branch repoints it at `/demo/lpr/LPR.png`, which is also not committed — that would not have fixed it either.)
+- **Added `metadataBase`.** Without it Next resolves relative OG images against the request host, and drops the whole `openGraph` block when it cannot resolve one at all.
+- **Four demo pages had no `og:image`** — `/demo`, `/demo/school`, `/demo/medical` and their ES twins now carry one, using assets verified to exist in the repo.
+- **The twelve missing H1s are fixed** on `/simulator` and the five demo scenarios in both locales. This is v2.323's work, which had only ever existed on `hero-redesign` and so had never reached staging or production.
+- Shortened the `/demo/access-control` title from 73 to 55 characters, under the 70-character limit.
+
+**Notes**
+- The demo pages keep inline metadata instead of moving to `generatePageMetadata`, which hard-codes the shared `og-default.png` and would have destroyed the per-scenario social previews.
+- Verified on a production build against all 232 sitemap URLs: warnings **122 → 86**. `canonical_not_self` 6 → 0, `h1_missing` 12 → 0, `og_image_missing` 8 → 0, `og_title_missing` 4 → 0, `og_desc_missing` 4 → 0. Zero critical throughout.
+- **Not fixed, deliberately: 42 over-length titles and 44 over-length descriptions across 50 pages**, all of them indexed (the LATAM/ICP country whitelist plus a few resource pages). `SEO/ctr-recovery-plan-2026-07-27.md` holds an explicit decision against blanket title/meta rewrites, on the grounds that untargeted rewrites risk rankings that are otherwise fine. Over-length titles are truncated by Google, not penalised. Worth doing as a scoped, measured batch — not as a sweep.
+
 ## [v2.315] – 2026-08-10 — The SEO audit can finally see redirects, and runs against production
 
 **Fixed**

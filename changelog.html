@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.316 -->
+      <div class="tl-entry fix" id="v2.316">
+        <div class="tl-meta"><span class="tl-ver">v2.316</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">The Spanish demo pages told Google not to index them</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>All six <code>/es/demo/*</code> pages served the English canonical.</strong> They sit under <code>[locale]</code> but used a static <code>export const metadata</code>, which Next evaluates once per module, not per locale &mdash; so every Spanish demo page declared itself a duplicate of the English one, on a site where Spanish pages are two of the top five earners. Now locale-aware, with self-referential canonicals and full hreflang</li>
+            <li><strong>Spanish titles and descriptions are now actually Spanish</strong>, and the twelve missing H1s on <code>/simulator</code> and the five scenarios are fixed (v2.323's work, which had only ever lived on <code>hero-redesign</code>)</li>
+            <li><strong><code>/demo/lpr</code> declared a social preview image that does not exist</strong> in the repo, so the preview 404'd. Repointed at a real asset; four other demo pages gained a missing <code>og:image</code>; added <code>metadataBase</code> so relative OG images resolve</li>
+            <li>Verified on a production build across all 232 sitemap URLs: warnings <strong>122 &rarr; 86</strong>, zero critical. <code>canonical_not_self</code> 6&rarr;0, <code>h1_missing</code> 12&rarr;0, <code>og_image_missing</code> 8&rarr;0</li>
+            <li><strong>Deliberately not fixed:</strong> 42 long titles / 44 long descriptions across 50 indexed pages. <code>ctr-recovery-plan-2026-07-27.md</code> holds an explicit decision against blanket title/meta rewrites; length causes truncation, not penalty. Do it as a scoped batch</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.315 -->
       <div class="tl-entry fix" id="v2.315">
         <div class="tl-meta"><span class="tl-ver">v2.315</span><span class="tl-date">2026-08-10</span></div>

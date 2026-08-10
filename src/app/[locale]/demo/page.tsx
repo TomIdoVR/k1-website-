@@ -2,11 +2,29 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'Scenario Explorer | KabatOne Platform',
-  description:
-    "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
-  alternates: { canonical: 'https://kabatone.com/demo' },
+import { demoMetadata } from '@/lib/demo-metadata'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return demoMetadata({
+    path: '/demo',
+    locale,
+    ogImage: '/og-default.png',
+    en: {
+      title: 'Scenario Explorer | KabatOne Platform',
+      description:
+        "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
+    },
+    es: {
+      title: 'Explorador de Escenarios | Plataforma KabatOne',
+      description:
+        'Recorre escenarios reales de seguridad pública y descubre cómo la plataforma unificada de KabatOne gestiona incidentes de principio a fin.',
+    },
+  })
 }
 
 /* ── data ── */
