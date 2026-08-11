@@ -59,6 +59,26 @@
   height: auto;
 }
 
+/* The art is rendered on its own pale-blue ground, which does not match the
+   page gradient behind it — measured, the image's right edge is #cadbf5 and its
+   bottom edge #9d9ca1 against a #f7faff page, so the file reads as a pasted
+   rectangle with three visible seams. Fading the edges dissolves it instead.
+
+   The insets are picked off where the content actually sits: the console cards
+   stop well short of the left and right edges, so 5% there costs nothing, and
+   the bottom fade starts at 90% where there is only road below the vehicles.
+   The top is left hard because nothing there meets an edge. */
+.hsplit-art img {
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 0 90%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, #000 0 90%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask-composite: intersect;
+}
+
 /* The proof metrics sit under both columns, aligned to the copy rather than
    centred across the full width — centred, they read as belonging to the image. */
 .hll-page--split .hll-stats {

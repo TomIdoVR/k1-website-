@@ -1,3 +1,17 @@
+## [v2.339] – 2026-08-11 — Real hero art; header bar goes full-bleed
+### Fixed
+- **The header no longer has black bands down each side on wide screens.** `.hll-nav` was `width: min(100%, 1536px); margin: 0 auto`, which capped the white background as well as the contents — so above 1536px the bar simply stopped and the dark body background showed through on both sides. Measured at 1920px before the fix: the nav ran 192→1728 inside a 1920px viewport. The bar is now full width and only its *contents* are held to the 1536px column, so nothing below 1536px changes and the four responsive overrides (all max-width queries under that threshold) are untouched.
+
+### Changed
+- **The hero placeholder is replaced with the real art** — the console stack over the city, with the SOS phone, radio, patrol car, responder and ambulance.
+- **Softened the art's edges.** The file is rendered on its own pale-blue ground that does not match the page gradient: measured, its right edge is `#cadbf5` and its bottom edge `#9d9ca1` against a `#f7faff` page, so it read as a pasted rectangle with three visible seams. A mask now fades the left and right 5% and the bottom 10% — picked off where the content actually sits, so no console card or vehicle is clipped.
+
+### Notes
+- The art was already on disk at `~/Downloads/image15.png`; the previous entry shipped a placeholder because I looked for it in the repo and not there.
+- Turbopack dev caches optimized images at `.next/dev/cache/images`, not `.next/cache/images`. After swapping the file the optimizer kept serving a 750x555 derivative — the placeholder's aspect ratio — until that directory was purged. Worth knowing for any future art swap; production is unaffected, since each deployment builds its own cache.
+- Still open, and not touched here: the page's containers do not share a left edge. At 1920px the nav logo sits at 244px, the hero copy at 344px and the before/after section at 404px, because the three use 1536px, 1360px and 1240px containers. Aligning only the hero would pull it away from the sections below it, so this needs one decision across the page rather than a local fix.
+- Still `/hero-lab-story` only. `/hero-lab` shares the header file and gains the full-bleed fix; nothing else there changes.
+
 ## [v2.338] – 2026-08-11 — Two-column hero; module cards move up behind the claim
 ### Changed
 - **The hero becomes two-column** on `/hero-lab-story`: copy left, one image right, replacing the centred stack. The headline gets its own column instead of competing with full-width art. Opt-in via a `split` prop defaulted off, so `/hero-lab` keeps the centred version and the two stay comparable.

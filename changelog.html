@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.339 -->
+      <div class="tl-entry fixed" id="v2.339">
+        <div class="tl-meta"><span class="tl-ver">v2.339</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Real hero art; header bar goes full-bleed</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The header no longer has black bands down each side on wide screens.</strong> <code>.hll-nav</code> was <code>width: min(100%, 1536px); margin: 0 auto</code>, which capped the white background as well as the contents — above 1536px the bar stopped and the dark body background showed through. Measured at 1920px before the fix: the nav ran 192→1728. The bar is now full width with only its <em>contents</em> held to the 1536px column, so nothing below 1536px changes</li>
+            <li><strong>The hero placeholder is replaced with the real art</strong> — the console stack over the city, with the SOS phone, radio, patrol car, responder and ambulance</li>
+            <li><strong>Softened the art's edges.</strong> The file is rendered on its own pale-blue ground that does not match the page gradient: its right edge measured <code>#cadbf5</code> and its bottom <code>#9d9ca1</code> against a <code>#f7faff</code> page, so it read as a pasted rectangle. A mask fades the left and right 5% and the bottom 10%, placed off where the content sits so no card or vehicle is clipped</li>
+            <li>Turbopack dev caches optimized images at <code>.next/dev/cache/images</code>, not <code>.next/cache/images</code> — after swapping the file the optimizer kept serving the placeholder's derivative until that directory was purged. Production is unaffected; each deployment builds its own cache</li>
+            <li><strong>Still open:</strong> the page's containers do not share a left edge. At 1920px the nav logo sits at 244px, the hero copy at 344px and the before/after section at 404px, because the three use 1536px, 1360px and 1240px containers. That needs one decision across the page rather than a local fix</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.338 -->
       <div class="tl-entry changed" id="v2.338">
         <div class="tl-meta"><span class="tl-ver">v2.338</span><span class="tl-date">2026-08-11</span></div>
