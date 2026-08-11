@@ -67,7 +67,13 @@ function ProofMetrics({ es }: { es: boolean }) {
    of it. Opt-in and defaulted off so /hero-lab keeps the centred version and
    the two can be compared side by side. The art is one file — swapping it needs
    no code change. */
-const HERO_ART = '/images/hero/unified-platform.png'
+/* The 2:1 extension of unified-platform.png, not the original. The source render
+   is 1.37:1; a hero band is far wider than that, so `cover` on the original had
+   to discard over half its height and cut the console. The wide file adds 680px
+   of matched pale ground on the left — the side the copy sits on — so the art
+   can bleed edge to edge with nothing cropped. The original is kept alongside
+   it; drop a genuinely wide render in here when one exists. */
+const HERO_ART = '/images/hero/unified-platform-wide.png'
 
 /* `fill` rather than fixed dimensions: as a background layer the art has to
    cover a box whose aspect ratio is set by the viewport, not by the file. It

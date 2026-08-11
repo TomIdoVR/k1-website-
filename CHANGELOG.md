@@ -1,3 +1,21 @@
+## [v2.341] – 2026-08-11 — Hero matches the design: full-bleed art, copy on top
+### Changed
+- **The hero is now the composition from the design**: the art bleeds edge to edge across the whole section, the copy sits over its left side, and the proof metrics sit at the foot of the hero rather than below it.
+- **Switched from `contain` to `cover`.** The previous fit was forced by aspect ratio, and the new art-only render removes that constraint.
+
+### Added
+- `unified-platform-art.png` — the art-only render (1536x1024), no baked-in text or navigation, so the copy stays live HTML.
+- `unified-platform-wide.png` — that render extended to 2.25:1 (2304x1024) by continuing its left edge. The edge is a flat near-white ramp, so the extension is that ramp matched stop for stop: measured across the join at three heights, the largest channel difference is 1/255. Nothing is cropped or upscaled — 768px of matched ground is added on the side the copy sits on.
+
+### Notes
+- **Why 2.25:1.** A hero band at 1920 is far wider than the 1.5:1 render, so `cover` would have had to discard height and cut the console. Extended, the whole frame fits: measured at 1920x792, the crop takes 74px off the top — pure sky, the console starts at 85 — and nothing off the sides or bottom.
+- **`object-position: right bottom` is chosen, not defaulted.** `bottom` because the art has ~85px of spare sky above the console but only ~9px below the vehicles, so a vertical crop has to come off the top. `right` because a tall viewport crops width instead — about 218px at 1920x950 — and centred, half of that would come off the console's right edge; anchored right it all comes off the extended pale ground, which is what that ground is for.
+- The desktop scrim is much lighter than before: the new art's left side is already near-white (#fdfdfd to #f4f5f9), so the wash is now mostly tone-matching rather than legibility insurance.
+- On phones the copy starts at the top instead of centring — centred inside an 88vh section it sat ~225px below the header with nothing above it. The art fills the lower half behind the metrics.
+- The previous art (`unified-platform.png`, the 1.37:1 render with its own extension) is left in place, unused, rather than deleted.
+- Verified EN and ES at 1920x1080, 1920x900, 834 and 375: zero horizontal overflow at every width.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.340] – 2026-08-11 — Hero copy moves on top of the art; art no longer stacks on mobile
 ### Changed
 - **The hero art becomes a background layer and the copy sits on top of it**, instead of the two sitting side by side. At 1920x780 the art paints from x=853 and the headline runs to x=964, so there is 111px of real overlap and the art bleeds to the right edge.

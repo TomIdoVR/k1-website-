@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.341 -->
+      <div class="tl-entry changed" id="v2.341">
+        <div class="tl-meta"><span class="tl-ver">v2.341</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Hero matches the design: full-bleed art, copy on top</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The hero is now the composition from the design</strong> — the art bleeds edge to edge, the copy sits over its left side, and the proof metrics sit at the foot of the hero rather than below it</li>
+            <li><strong>Added the art-only render</strong> (1536×1024, no baked-in text or navigation), so the copy stays live HTML and <code>/es</code> does not inherit an English hero</li>
+            <li><strong>Extended it to 2.25:1</strong> (2304×1024) by continuing its left edge. That edge is a flat near-white ramp, so the extension matches it stop for stop — measured across the join at three heights, the largest channel difference is 1/255. Nothing is cropped or upscaled; 768px of matched ground is added on the side the copy sits on</li>
+            <li><strong>Switched from <code>contain</code> to <code>cover</code>.</strong> At 1920×792 the crop now takes 74px off the top — pure sky, the console starts at 85 — and nothing off the sides or bottom</li>
+            <li><code>object-position: right bottom</code> is chosen, not defaulted: <em>bottom</em> because there is ~85px of spare sky above the console but only ~9px below the vehicles, so a vertical crop must come off the top; <em>right</em> because a tall viewport crops width instead (~218px at 1920×950) and centred, half would come off the console's right edge</li>
+            <li>On phones the copy starts at the top instead of centring — centred in an 88vh section it sat ~225px below the header with nothing above it</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.340 -->
       <div class="tl-entry changed" id="v2.340">
         <div class="tl-meta"><span class="tl-ver">v2.340</span><span class="tl-date">2026-08-11</span></div>

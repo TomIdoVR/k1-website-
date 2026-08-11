@@ -11,12 +11,17 @@
    center`. Both were written for a hero whose text sat in a centred column, so
    both need explicit left values here rather than relying on the container. */
 
+/* Column flex so the copy sits in the body of the hero and the proof metrics are
+   pushed to its foot, over the art — the arrangement in the design. Flex also
+   establishes a block formatting context, so it keeps the margin containment
+   that `display: flow-root` was added to .hll-page for. */
 .hll-page--split {
-  /* The centred hero reserved 1024px for the mark and the card carousel. This
-     layout sets its own height from the viewport instead, so the art always has
-     a band to fill rather than a fixed box the copy may not reach the bottom of. */
-  min-height: 0;
-  padding-bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  /* Tall on purpose: the art is 2.25:1, and the taller the section the less
+     `cover` has to crop. At 1920 the whole frame fits at 853px. */
+  min-height: clamp(560px, 88vh, 900px);
+  padding-bottom: 30px;
 }
 
 /* ── the art layer ───────────────────────────────────────────────────────────
@@ -31,23 +36,20 @@
   pointer-events: none;
 }
 
-/* `contain`, not `cover`, and this is the constraint the whole layout turns on.
-   The file is 1466x1073 — 1.37:1. A full-bleed hero band is nearer 3:1, so
-   `cover` has to scale the art to the section's width and then throw away well
-   over half its height: measured at 1920x620 it cut the incident card off at
-   the top and the units panel off at the bottom, leaving the console unreadable
-   in both directions.
+/* `right bottom` is chosen, not defaulted, and both halves matter.
 
-   `contain` anchored right keeps the whole console intact and lets the section
-   height decide how large it is — which is why min-height below is generous.
-   At 1920x760 the art lands 1038px wide starting at x=882, so it still runs
-   under the right end of the copy rather than sitting politely beside it.
+   `bottom`: on a wide, short viewport `cover` fits by width and crops height.
+   The art has ~85px of spare sky above the console but only ~9px below the
+   vehicles, so the crop has to come off the top. Anchoring to the bottom sends
+   it there and keeps the vehicles on the ground line.
 
-   A wider source file would remove the compromise: at roughly 2.4:1 the art
-   could go back to `cover` and genuinely bleed edge to edge. */
+   `right`: on a tall viewport it fits by height and crops width instead —
+   about 218px at 1920x950. Centred, half of that would come off the console's
+   right edge. Anchored right, all of it comes off the extended pale ground on
+   the left, which is exactly what that ground is for. */
 .hsplit-art img {
-  object-fit: contain;
-  object-position: right center;
+  object-fit: cover;
+  object-position: right bottom;
 }
 
 /* The scrim. Two jobs, and the second is the one that matters: it blends the
@@ -63,26 +65,24 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(97deg,
-      #f7faff 0%,
-      rgba(247, 250, 255, 0.97) 26%,
-      rgba(247, 250, 255, 0.86) 40%,
-      rgba(247, 250, 255, 0.42) 55%,
-      rgba(247, 250, 255, 0.08) 68%,
-      transparent 78%),
+    linear-gradient(96deg,
+      rgba(250, 252, 255, 0.74) 0%,
+      rgba(250, 252, 255, 0.56) 30%,
+      rgba(250, 252, 255, 0.26) 48%,
+      rgba(250, 252, 255, 0.06) 62%,
+      transparent 72%),
     /* Softens the cut where the section meets the customer strip below. */
-    linear-gradient(to bottom, transparent 72%, rgba(240, 245, 253, 0.85) 100%);
+    linear-gradient(to bottom, transparent 78%, rgba(242, 246, 252, 0.7) 100%);
 }
 
 /* ── the copy ───────────────────────────────────────────────────────────── */
 .hsplit {
   position: relative;
   z-index: 2;
+  flex: 1;
   display: grid;
   align-content: center;
-  /* Generous because the art is `contain`-fitted: the section's height is what
-     sets how large the console renders, so a short hero would shrink it. */
-  min-height: clamp(520px, 76vh, 760px);
+  width: 100%;
   max-width: 1360px;
   margin: 0 auto;
   padding: clamp(24px, 3.4vw, 48px) clamp(20px, 5vw, 64px) 0;
@@ -115,6 +115,7 @@
   z-index: 2;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: 100%;
   max-width: 1360px;
   margin-top: 0;
   padding: 0 clamp(20px, 5vw, 64px);
@@ -140,23 +141,25 @@
    To drop the art on phones entirely instead, add `display: none` to
    .hsplit-art in this block — the copy and the layout do not depend on it. */
 @media (max-width: 980px) {
+  /* Shorter, and the copy runs from the top rather than floating in the middle.
+     Centred inside an 88vh section it sat ~225px below the header with nothing
+     above it; starting it high puts the copy first and leaves the lower half of
+     the section to the art and the proof metrics. */
+  .hll-page--split { min-height: clamp(520px, 80vh, 700px); }
+
   .hsplit {
-    /* The copy measures ~300px here. 74vh left ~160px of dead space above the
-       eyebrow on a 812px screen, so the hero opened on nothing. */
-    min-height: clamp(380px, 54vh, 520px);
+    align-content: start;
     padding-top: clamp(20px, 4vw, 34px);
   }
   .hsplit-copy { max-width: none; }
   .hsplit-copy .hll-headline { font-size: clamp(38px, 8.4vw, 58px); }
 
-  /* Back to `cover` here. `contain` in a 375px-wide box shrinks the art to
-     about 375x275 and parks it against one edge, which read as a stray
-     thumbnail colliding with the proof metrics. Filling the section instead
-     puts it genuinely *behind* the copy, which is the point — and since the
-     console is far too small to read at this width, it is doing the job of
-     texture, not information. 68% vertical lands the crop on the city and
-     vehicles, which survive being small far better than the panels do. */
-  .hsplit-art img { object-fit: cover; object-position: 62% 68%; }
+  /* A phone crops to roughly 28% of the frame's width. Anchored right that
+     window lands on the units panel and the ambulance alone, which reads as a
+     fragment. 88% pulls it back onto the patrol car, the responder and the
+     ambulance together — the part of the frame that still says something at
+     this size, since the console text does not survive the crop either way. */
+  .hsplit-art img { object-position: 88% bottom; }
   /* Vertical rather than left-weighted: once the copy runs the full width there
      is no clear side to keep the art on. Moderate here — at tablet widths the
      frame is large enough that the console still reads, and the phone-weight
