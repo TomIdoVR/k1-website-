@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.340 -->
+      <div class="tl-entry changed" id="v2.340">
+        <div class="tl-meta"><span class="tl-ver">v2.340</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Hero copy moves on top of the art; art no longer stacks on mobile</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The hero art becomes a background layer with the copy on top of it</strong>, instead of the two sitting side by side. At 1920×780 the art paints from x=853 while the headline runs to x=964 — 111px of real overlap — and it bleeds to the right edge</li>
+            <li><strong>On narrow screens the art moves behind the copy rather than under it.</strong> It used to stack, making the hero two screens tall; now it fills the section as texture with the copy over it. Measured at 375px the section went from 1183px to 659px</li>
+            <li><strong>Fixed: each proof metric was rendering 180px tall on mobile.</strong> <code>.hll-stat { flex: 1 1 180px }</code> is set under max-width 900 for a <em>row</em>, where 180px is a width — turning the container into a column re-pointed that basis at the main axis, so three 59px rows rendered as 548px. Reset to <code>flex: 0 0 auto</code>; stats are now 60px each</li>
+            <li><strong>Fixed: the proof-metric labels failed contrast here.</strong> <code>#7386aa</code> was chosen for the dark navy proof bar, where lightening it raised contrast; on a light hero it measured 3.7:1, under the 4.5 floor for 12px text. Darkened to <code>#5a6b8a</code> (5.2:1), scoped to this hero only</li>
+            <li><strong>The art is <code>contain</code>-fitted, not <code>cover</code>.</strong> The file is 1.37:1 while a full-bleed band is nearer 3:1, so <code>cover</code> cut the incident card off the top and the units panel off the bottom. <strong>A wider source — roughly 2.4:1, about 2560×1080 — would remove the compromise</strong> and let the art bleed edge to edge</li>
+            <li>Three scrim weights: left-weighted above 980px so the console stays clear on the right, moderate for tablets (a phone-weight scrim made the art invisible at 834px), heavy on phones where the metrics land on the busiest part of the frame</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.339 -->
       <div class="tl-entry fixed" id="v2.339">
         <div class="tl-meta"><span class="tl-ver">v2.339</span><span class="tl-date">2026-08-11</span></div>

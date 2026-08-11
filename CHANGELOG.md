@@ -1,3 +1,20 @@
+## [v2.340] – 2026-08-11 — Hero copy moves on top of the art; art no longer stacks on mobile
+### Changed
+- **The hero art becomes a background layer and the copy sits on top of it**, instead of the two sitting side by side. At 1920x780 the art paints from x=853 and the headline runs to x=964, so there is 111px of real overlap and the art bleeds to the right edge.
+- **On narrow screens the art moves behind the copy rather than under it.** It used to stack — copy, then image — which made the hero two screens tall. Now it fills the section as texture with the copy over it, so the hero is one screen: measured at 375px, the section went from 1183px to 659px.
+
+### Fixed
+- **Each proof metric was rendering 180px tall on mobile.** `hero-lab-light.css` sets `.hll-stat { flex: 1 1 180px }` under max-width 900, written for a row where 180px is a *width*. Turning the container into a column re-points that basis at the main axis, so three 59px rows rendered as 548px. Reset to `flex: 0 0 auto`: stats are now 60px each, 187px total.
+- **The proof-metric labels failed contrast on this hero.** `#7386aa` was chosen for the dark navy proof bar, where lightening it *raised* contrast; on a light hero it measured 3.7:1, under the 4.5 floor for 12px text, before any art was behind it. Darkened to `#5a6b8a` (5.2:1) and scoped to the split hero, so the navy bar elsewhere keeps the value that is correct there.
+
+### Notes
+- **`contain`, not `cover`, and this is the constraint worth knowing.** The file is 1466x1073 — 1.37:1 — while a full-bleed hero band is nearer 3:1. `cover` had to scale the art to the section width and discard over half its height: at 1920x620 it cut the incident card off the top and the units panel off the bottom. `contain` anchored right keeps the console intact and lets the section height decide its size, which is why the hero min-height is generous.
+- **A wider source file would remove that compromise.** At roughly 2.4:1 — about 2560x1080 — the art could go back to `cover` and genuinely bleed edge to edge, with the console in the right 45% and clean ground in the left 45% for the copy to sit on.
+- Three scrim weights, because one does not fit: left-weighted above 980px so the console stays clear on the right; moderate and vertical for tablets, where a phone-weight scrim washed the art out entirely (at 834px it was effectively invisible); heavy on phones, where the metrics land on the busiest part of the frame.
+- To drop the art on phones entirely instead, `display: none` on `.hsplit-art` in the max-width 980 block — nothing in the layout depends on it.
+- Verified EN and ES at 1920, 834 and 375: zero horizontal overflow at every width.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.339] – 2026-08-11 — Real hero art; header bar goes full-bleed
 ### Fixed
 - **The header no longer has black bands down each side on wide screens.** `.hll-nav` was `width: min(100%, 1536px); margin: 0 auto`, which capped the white background as well as the contents — so above 1536px the bar simply stopped and the dark body background showed through on both sides. Measured at 1920px before the fix: the nav ran 192→1728 inside a 1920px viewport. The bar is now full width and only its *contents* are held to the 1536px column, so nothing below 1536px changes and the four responsive overrides (all max-width queries under that threshold) are untouched.

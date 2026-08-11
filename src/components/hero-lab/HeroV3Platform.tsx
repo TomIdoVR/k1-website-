@@ -62,29 +62,25 @@ function ProofMetrics({ es }: { es: boolean }) {
    them as their own section further down, leaving the hero free to carry a
    single purpose-built image once that art exists.
 
-   `split` switches the hero from the centred stack to the two-column layout:
-   copy left, one image right. Opt-in and defaulted off so /hero-lab keeps the
-   centred version and the two can be compared side by side. The art is one
-   file — swapping it needs no code change. */
+   `split` switches the hero from the centred stack to the full-bleed layout:
+   the art is a background layer spanning the section and the copy sits on top
+   of it. Opt-in and defaulted off so /hero-lab keeps the centred version and
+   the two can be compared side by side. The art is one file — swapping it needs
+   no code change. */
 const HERO_ART = '/images/hero/unified-platform.png'
 
-/* Deliberately an <Image> with priority and explicit dimensions: in the split
-   layout this is the LCP element, and a hero image without reserved height is
-   the classic CLS source. The copy is live HTML rather than baked into the
-   art so it stays selectable, translatable and searchable. */
-function HeroArt({ es }: { es: boolean }) {
+/* `fill` rather than fixed dimensions: as a background layer the art has to
+   cover a box whose aspect ratio is set by the viewport, not by the file. It
+   is still the LCP element, so it keeps `priority`, and the box it fills is
+   sized by CSS, so there is nothing to shift.
+
+   aria-hidden with an empty alt: the copy on top now carries the meaning, and
+   at this size the console is decoration. Announcing a long description of an
+   image the user cannot read anything in is noise, not access. */
+function HeroArt() {
   return (
-    <div className="hsplit-art">
-      <Image
-        src={HERO_ART}
-        alt={es
-          ? 'La consola de Kabat One: un incidente activo, cámaras en vivo, el mapa con las unidades desplegadas y el estado de cada unidad, sobre una ciudad con patrulla, ambulancia y personal en campo.'
-          : 'The Kabat One console: one active incident, live cameras, the map with responding units and each unit’s status, above a city with a patrol car, an ambulance and responders in the field.'}
-        width={1449}
-        height={1073}
-        priority
-        sizes="(max-width: 980px) 92vw, 52vw"
-      />
+    <div className="hsplit-art" aria-hidden="true">
+      <Image src={HERO_ART} alt="" fill priority sizes="100vw" />
     </div>
   )
 }
@@ -98,6 +94,7 @@ export default function HeroV3Platform({ es, modules = true, split = false }: { 
       <>
         <HeroLabHeader es={es} />
         <section className="hll-page hll-page--split" aria-labelledby="hll-title">
+          <HeroArt />
           <div className="hsplit">
             <div className="hsplit-copy">
               <p className="hll-eyebrow">{T.eyebrow[language]}</p>
@@ -105,7 +102,6 @@ export default function HeroV3Platform({ es, modules = true, split = false }: { 
               <p className="hll-sub">{T.sub[language]}</p>
               <HeroActions es={es} />
             </div>
-            <HeroArt es={es} />
           </div>
           <ProofMetrics es={es} />
         </section>

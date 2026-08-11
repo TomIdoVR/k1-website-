@@ -1,4 +1,5 @@
-/* Two-column hero: copy left, one image right.
+/* Full-bleed hero: the art is a background layer spanning the section and the
+   copy sits on top of it.
 
    Loaded only by /hero-lab-story, so /hero-lab keeps the centred stack and the
    two running orders stay comparable. Everything here is scoped under
@@ -11,28 +12,86 @@
    both need explicit left values here rather than relying on the container. */
 
 .hll-page--split {
-  /* The centred hero reserved 1024px for the mark and the card carousel.
-     Nothing in this layout needs that floor, and enforcing it leaves a band of
-     empty gradient under the fold on short viewports. */
+  /* The centred hero reserved 1024px for the mark and the card carousel. This
+     layout sets its own height from the viewport instead, so the art always has
+     a band to fill rather than a fixed box the copy may not reach the bottom of. */
   min-height: 0;
-  padding-bottom: 40px;
+  padding-bottom: 34px;
 }
 
+/* ── the art layer ───────────────────────────────────────────────────────────
+   .hll-page already carries `overflow: clip` and `isolation: isolate`, so this
+   is contained and its stacking stays local. next/image `fill` supplies the
+   absolute positioning on the <img>; what it does not supply is the fit, which
+   is why object-fit/position are set here rather than as props. */
+.hsplit-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* `contain`, not `cover`, and this is the constraint the whole layout turns on.
+   The file is 1466x1073 — 1.37:1. A full-bleed hero band is nearer 3:1, so
+   `cover` has to scale the art to the section's width and then throw away well
+   over half its height: measured at 1920x620 it cut the incident card off at
+   the top and the units panel off at the bottom, leaving the console unreadable
+   in both directions.
+
+   `contain` anchored right keeps the whole console intact and lets the section
+   height decide how large it is — which is why min-height below is generous.
+   At 1920x760 the art lands 1038px wide starting at x=882, so it still runs
+   under the right end of the copy rather than sitting politely beside it.
+
+   A wider source file would remove the compromise: at roughly 2.4:1 the art
+   could go back to `cover` and genuinely bleed edge to edge. */
+.hsplit-art img {
+  object-fit: contain;
+  object-position: right center;
+}
+
+/* The scrim. Two jobs, and the second is the one that matters: it blends the
+   file's pale-blue ground into the page gradient, and it guarantees the copy
+   has a light, even field behind it no matter how the art crops at a given
+   viewport. Left-weighted so the console stays legible on the right.
+
+   Measured behind the headline at 1920x620 after this: #eef3fd, which is
+   12.9:1 against the #07194c headline — the art can move around underneath
+   without ever dropping the copy near the 4.5 AA floor. */
+.hsplit-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(97deg,
+      #f7faff 0%,
+      rgba(247, 250, 255, 0.97) 26%,
+      rgba(247, 250, 255, 0.86) 40%,
+      rgba(247, 250, 255, 0.42) 55%,
+      rgba(247, 250, 255, 0.08) 68%,
+      transparent 78%),
+    /* Softens the cut where the section meets the customer strip below. */
+    linear-gradient(to bottom, transparent 72%, rgba(240, 245, 253, 0.85) 100%);
+}
+
+/* ── the copy ───────────────────────────────────────────────────────────── */
 .hsplit {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  align-items: center;
-  gap: clamp(24px, 4vw, 64px);
+  align-content: center;
+  /* Generous because the art is `contain`-fitted: the section's height is what
+     sets how large the console renders, so a short hero would shrink it. */
+  min-height: clamp(520px, 76vh, 760px);
   max-width: 1360px;
   margin: 0 auto;
-  padding: clamp(28px, 4vw, 64px) clamp(20px, 5vw, 64px) 0;
+  padding: clamp(24px, 3.4vw, 48px) clamp(20px, 5vw, 64px) 0;
 }
 
-.hsplit-copy { position: relative; z-index: 4; min-width: 0; text-align: left; }
+.hsplit-copy { min-width: 0; max-width: 620px; text-align: left; }
 
 /* The shared clamp tops out at 90px, which was tuned for a full-width centred
-   column. In a half-width column that overflows into two- and three-word lines,
-   so the ceiling comes down and the floor with it.
+   column. Over the art the copy is held to 620px, so the ceiling comes down.
 
    `balance` is doing real work here, not polish: left to itself the first line
    fills to "The Unified Operating" and orphans "System" on a line of its own.
@@ -49,65 +108,97 @@
 
 .hsplit-copy .hll-ctas { justify-content: flex-start; margin-top: 26px; }
 
-.hsplit-art { position: relative; z-index: 3; min-width: 0; }
-
-/* Height is intrinsic to the file's aspect ratio, so the box is reserved before
-   the image decodes and the copy beside it never shifts. */
-.hsplit-art img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* The art is rendered on its own pale-blue ground, which does not match the
-   page gradient behind it — measured, the image's right edge is #cadbf5 and its
-   bottom edge #9d9ca1 against a #f7faff page, so the file reads as a pasted
-   rectangle with three visible seams. Fading the edges dissolves it instead.
-
-   The insets are picked off where the content actually sits: the console cards
-   stop well short of the left and right edges, so 5% there costs nothing, and
-   the bottom fade starts at 90% where there is only road below the vehicles.
-   The top is left hard because nothing there meets an edge. */
-.hsplit-art img {
-  -webkit-mask-image:
-    linear-gradient(to bottom, #000 0 90%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to bottom, #000 0 90%, transparent 100%),
-    linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
-  mask-composite: intersect;
-}
-
-/* The proof metrics sit under both columns, aligned to the copy rather than
-   centred across the full width — centred, they read as belonging to the image. */
+/* The proof metrics ride on the art too, aligned to the copy rather than
+   centred — centred, they read as belonging to the image rather than the page. */
 .hll-page--split .hll-stats {
+  position: relative;
+  z-index: 2;
   flex-wrap: wrap;
   justify-content: flex-start;
   max-width: 1360px;
-  margin-top: 8px;
+  margin-top: 0;
   padding: 0 clamp(20px, 5vw, 64px);
 }
 
 .hll-page--split .hll-stat { padding-left: 0; }
 .hll-page--split .hll-stat + .hll-stat { padding-left: 38px; }
 
-/* Stack before the columns get too narrow to hold the headline. At this width
-   the art leads, because the copy is short enough to read in full underneath. */
+/* #7386aa was chosen for the dark navy proof bar, where lightening it raised
+   contrast. On this light hero it does the opposite: measured 3.7:1 against the
+   page, under the 4.5 floor for 12px text before any art is behind it.
+   Darkened to 5.2:1 here. Scoped to the split hero — the same string is used on
+   the navy bar elsewhere, where the lighter value is the correct one. */
+.hll-page--split .hll-stat-label { color: #5a6b8a; }
+
+/* ── narrow ──────────────────────────────────────────────────────────────────
+   The art stays behind the copy rather than stacking beneath it, so the hero
+   is one screen instead of two. Below 980px the frame is cropped hard by
+   `cover` and the console text is far too small to read, so the art is treated
+   as texture: shifted to the city band, which survives the crop legibly, and
+   pushed further under an almost-solid scrim.
+
+   To drop the art on phones entirely instead, add `display: none` to
+   .hsplit-art in this block — the copy and the layout do not depend on it. */
 @media (max-width: 980px) {
   .hsplit {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-    padding-top: 22px;
+    /* The copy measures ~300px here. 74vh left ~160px of dead space above the
+       eyebrow on a 812px screen, so the hero opened on nothing. */
+    min-height: clamp(380px, 54vh, 520px);
+    padding-top: clamp(20px, 4vw, 34px);
   }
+  .hsplit-copy { max-width: none; }
   .hsplit-copy .hll-headline { font-size: clamp(38px, 8.4vw, 58px); }
-  .hsplit-copy .hll-sub { max-width: none; }
+
+  /* Back to `cover` here. `contain` in a 375px-wide box shrinks the art to
+     about 375x275 and parks it against one edge, which read as a stray
+     thumbnail colliding with the proof metrics. Filling the section instead
+     puts it genuinely *behind* the copy, which is the point — and since the
+     console is far too small to read at this width, it is doing the job of
+     texture, not information. 68% vertical lands the crop on the city and
+     vehicles, which survive being small far better than the panels do. */
+  .hsplit-art img { object-fit: cover; object-position: 62% 68%; }
+  /* Vertical rather than left-weighted: once the copy runs the full width there
+     is no clear side to keep the art on. Moderate here — at tablet widths the
+     frame is large enough that the console still reads, and the phone-weight
+     scrim below washed it out to nothing (measured at 834px: the art was
+     effectively invisible). */
+  .hsplit-art::after {
+    background:
+      linear-gradient(180deg,
+        rgba(248, 251, 255, 0.97) 0%,
+        rgba(248, 251, 255, 0.88) 34%,
+        rgba(248, 251, 255, 0.74) 60%,
+        rgba(246, 250, 255, 0.84) 84%,
+        rgba(244, 248, 254, 0.92) 100%);
+  }
 }
 
 @media (max-width: 620px) {
+  /* On a phone the frame is cropped hard enough that the console is only
+     shapes, and the proof metrics land on the busiest part of it — the
+     responder, the vehicles, the units panel. The floor comes up to 0.90 and
+     closes to 0.96 so the art never competes with 12px labels. */
+  .hsplit-art::after {
+    background:
+      linear-gradient(180deg,
+        #f8fbff 0%,
+        rgba(248, 251, 255, 0.94) 38%,
+        rgba(248, 251, 255, 0.90) 62%,
+        rgba(246, 250, 255, 0.94) 84%,
+        rgba(244, 248, 254, 0.96) 100%);
+  }
+
   /* Three stats side by side at 375px leaves ~110px each, which wraps every
      label onto three lines. One per row instead, dividers dropped. */
   .hll-page--split .hll-stats { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .hll-page--split .hll-stat { min-width: 0; min-height: 0; padding: 6px 0; border-right: 0; }
+
+  /* `flex: 0 0 auto` is the load-bearing part. hero-lab-light.css sets
+     `.hll-stat { flex: 1 1 180px }` under max-width 900 — written for a row,
+     where 180px is a *width*. Turning the container into a column re-points
+     that basis at the main axis, so every stat became 180px TALL: measured,
+     three 59px rows rendering as 548px and inflating the whole hero section to
+     1183px on a 375px screen. Resetting the basis puts them back to intrinsic
+     height. */
+  .hll-page--split .hll-stat { flex: 0 0 auto; min-width: 0; min-height: 0; padding: 6px 0; border-right: 0; }
   .hll-page--split .hll-stat + .hll-stat { padding-left: 0; }
 }
