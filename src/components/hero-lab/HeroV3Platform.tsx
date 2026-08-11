@@ -60,10 +60,59 @@ function ProofMetrics({ es }: { es: boolean }) {
 /* `modules` controls whether the seven module cards ride in the hero.
    /hero-lab keeps them (default). /hero-lab-story turns them off and renders
    them as their own section further down, leaving the hero free to carry a
-   single purpose-built image once that art exists. */
-export default function HeroV3Platform({ es, modules = true }: { es: boolean; modules?: boolean }) {
+   single purpose-built image once that art exists.
+
+   `split` switches the hero from the centred stack to the two-column layout:
+   copy left, one image right. Opt-in and defaulted off so /hero-lab keeps the
+   centred version and the two can be compared side by side. The art is one
+   file — swapping it needs no code change. */
+const HERO_ART = '/images/hero/unified-platform.png'
+
+/* Deliberately an <Image> with priority and explicit dimensions: in the split
+   layout this is the LCP element, and a hero image without reserved height is
+   the classic CLS source. The copy is live HTML rather than baked into the
+   art so it stays selectable, translatable and searchable. */
+function HeroArt({ es }: { es: boolean }) {
+  return (
+    <div className="hsplit-art">
+      <Image
+        src={HERO_ART}
+        alt={es
+          ? 'La consola de Kabat One: un incidente activo, cámaras en vivo, el mapa con las unidades desplegadas y el estado de cada unidad, sobre una ciudad con patrulla, ambulancia y personal en campo.'
+          : 'The Kabat One console: one active incident, live cameras, the map with responding units and each unit’s status, above a city with a patrol car, an ambulance and responders in the field.'}
+        width={1449}
+        height={1073}
+        priority
+        sizes="(max-width: 980px) 92vw, 52vw"
+      />
+    </div>
+  )
+}
+
+export default function HeroV3Platform({ es, modules = true, split = false }: { es: boolean; modules?: boolean; split?: boolean }) {
   const language = es ? 'es' : 'en'
   const cards = moduleCards(es)
+
+  if (split) {
+    return (
+      <>
+        <HeroLabHeader es={es} />
+        <section className="hll-page hll-page--split" aria-labelledby="hll-title">
+          <div className="hsplit">
+            <div className="hsplit-copy">
+              <p className="hll-eyebrow">{T.eyebrow[language]}</p>
+              <h1 className="hll-headline" id="hll-title">{T.h1a[language]}<span className="hll-headline-grad">{T.h1b[language]}</span></h1>
+              <p className="hll-sub">{T.sub[language]}</p>
+              <HeroActions es={es} />
+            </div>
+            <HeroArt es={es} />
+          </div>
+          <ProofMetrics es={es} />
+        </section>
+      </>
+    )
+  }
+
   return (
     /* The header sits outside .hll-page deliberately. A sticky element cannot
        escape its parent's box, and .hll-page is only the hero section — about

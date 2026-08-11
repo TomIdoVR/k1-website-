@@ -1,3 +1,19 @@
+## [v2.338] – 2026-08-11 — Two-column hero; module cards move up behind the claim
+### Changed
+- **The hero becomes two-column** on `/hero-lab-story`: copy left, one image right, replacing the centred stack. The headline gets its own column instead of competing with full-width art. Opt-in via a `split` prop defaulted off, so `/hero-lab` keeps the centred version and the two stay comparable.
+- **The module cards move up**, from after Solutions to directly after BEFORE / AFTER. That section ends on the claim that every source lands in one record; the cards are what that record actually looks like, so they now read as evidence for the claim just made rather than as a second feature list. It also breaks up what was four consecutive capability statements.
+- The customer logo strip stays directly under the hero, so some credibility still arrives before any of the argument.
+- New running order: hero → logos → before/after → module cards → how it works → solutions → case study → industries → ecosystem → trust band.
+
+### Notes
+- **The hero art is a placeholder.** `public/images/hero/unified-platform.png` is a marked stand-in — replacing that one file is the whole swap, no code change needed. Dimensions are read from the file, so a different aspect ratio re-lays out on its own.
+- The hero copy is live HTML, not baked into the image, so it stays selectable, translatable and searchable — and `/es` does not inherit an English hero.
+- `text-wrap: balance` on the split headline is load-bearing, not polish: unbalanced, the first line fills to "The Unified Operating" and orphans "System" on a line of its own. Balanced it breaks "The Unified" / "Operating System", which is the reference's break and also survives the longer Spanish string.
+- The image carries explicit width/height and `priority`, so the box is reserved before it decodes (no CLS) and it is preloaded as the LCP element.
+- Measured at 1280px: copy 64–570, art 622–1216, side by side, no horizontal overflow, hero 601px tall so it clears an 860px fold. At 375px it stacks, the proof metrics go one per row, and page overflow is 0.
+- Verified in EN and ES; both return 200 and both show the new order.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.337] – 2026-08-11 — Module cards leave the hero; new running order
 ### Changed
 - **The seven module cards are out of the hero.** Seven dense product panels at position one is a capability dump made before the page has argued anything, and it is what prevented the hero from carrying a single image. The hero now runs headline → sub → CTA → one visual → proof metrics.

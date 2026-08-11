@@ -21,6 +21,7 @@ import '@/components/hero-lab/case-study.css'
 import '@/components/hero-lab/ecosystem.css'
 import '@/components/hero-lab/industries.css'
 import '@/components/hero-lab/platform-modules.css'
+import '@/components/hero-lab/hero-split.css'
 
 /* Alternate homepage running order, for side-by-side review against /hero-lab.
    Same components, same styling — only the sequence changes, plus one new
@@ -32,30 +33,37 @@ import '@/components/hero-lab/platform-modules.css'
    behind all of them at position five.
 
      current                     this route
-     1 hero + 7 module cards     1 hero, cards removed <- awaiting one image
-     2 customer logos            2 customer logos
+     1 hero + 7 module cards     1 hero, split layout  <- copy left, art right
+     2 customer logos            2 customer logos         credibility, early
      3 how it works              3 BEFORE / AFTER      <- new: the problem
-     4 solutions                 4 how it works           the mechanism
-     5 case study                5 solutions              what you buy
-     6 trust band                6 platform modules    <- the cards, relocated
+     4 solutions                 4 platform modules    <- the cards, relocated
+     5 case study                5 how it works           the mechanism
+     6 trust band                6 solutions              what you buy
      7 ecosystem                 7 case study             the result
      8 industries                8 industries             where it applies
                                  9 ecosystem           <- demoted: supporting
                                 10 trust band
 
-   Two changes from the first pass at this route:
+   Three changes from the first pass at this route:
 
    The seven module cards leave the hero. Seven dense product panels at
    position one is a capability dump made before the page has argued
    anything, and it is what stopped the hero from carrying a single image.
-   They now run as their own section after Solutions, framed as the working
-   surfaces behind the product names rather than as a second feature list —
-   at that position, a straight capability restatement would be breadth
-   twice in a row.
 
-   Known cost of this order: the first hard proof, the case study, now sits
-   at position seven. The customer logo strip stays directly under the hero
-   so some credibility still arrives early.
+   The cards then run directly after BEFORE / AFTER rather than after
+   Solutions. That section ends on the claim that every source lands in one
+   record; the cards are what that record actually looks like, so they read
+   as evidence for the claim just made instead of as a second feature list.
+   It also breaks up what was otherwise four consecutive capability
+   statements — how it works, solutions, industries, ecosystem.
+
+   The hero becomes two-column: copy left, one image right. The headline
+   gets its own column instead of competing with full-width art, and the
+   longer Spanish strings stop wrapping awkwardly against a centred axis.
+
+   Known cost of this order: the first hard proof, the case study, still
+   sits at position seven. The customer logo strip stays directly under the
+   hero so some credibility arrives before any of it.
 
    Still open, because it needs numbers only the business can supply: the
    case study's bullets are qualitative ("one unified operational picture")
@@ -75,12 +83,12 @@ export default async function HeroLabStoryPage({
 
   return (
     <>
-      <HeroV3Platform es={es} modules={false} />
+      <HeroV3Platform es={es} modules={false} split />
       <CustomerStrip es={es} />
       <BeforeAfter es={es} />
+      <PlatformModules es={es} />
       <HowItWorks es={es} />
       <Solutions es={es} />
-      <PlatformModules es={es} />
       <CaseStudy es={es} />
       <Industries es={es} />
       <Ecosystem es={es} />

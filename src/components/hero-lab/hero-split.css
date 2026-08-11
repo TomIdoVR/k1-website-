@@ -1,0 +1,93 @@
+/* Two-column hero: copy left, one image right.
+
+   Loaded only by /hero-lab-story, so /hero-lab keeps the centred stack and the
+   two running orders stay comparable. Everything here is scoped under
+   .hll-page--split — the shared hero tokens, background and button styles in
+   hero-lab-light.css still apply, this only re-lays them out.
+
+   The centred rules it has to undo are inherited from that file: .hll-sub
+   carries `margin: 14px auto 0` and .hll-ctas carries `justify-content:
+   center`. Both were written for a hero whose text sat in a centred column, so
+   both need explicit left values here rather than relying on the container. */
+
+.hll-page--split {
+  /* The centred hero reserved 1024px for the mark and the card carousel.
+     Nothing in this layout needs that floor, and enforcing it leaves a band of
+     empty gradient under the fold on short viewports. */
+  min-height: 0;
+  padding-bottom: 40px;
+}
+
+.hsplit {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 64px) clamp(20px, 5vw, 64px) 0;
+}
+
+.hsplit-copy { position: relative; z-index: 4; min-width: 0; text-align: left; }
+
+/* The shared clamp tops out at 90px, which was tuned for a full-width centred
+   column. In a half-width column that overflows into two- and three-word lines,
+   so the ceiling comes down and the floor with it.
+
+   `balance` is doing real work here, not polish: left to itself the first line
+   fills to "The Unified Operating" and orphans "System" on a line of its own.
+   Balancing splits it "The Unified" / "Operating System", which is both the
+   reference's break and the one that survives the longer Spanish string. */
+.hsplit-copy .hll-headline { font-size: clamp(40px, 4.4vw, 68px); text-wrap: balance; }
+
+.hsplit-copy .hll-sub {
+  max-width: 46ch;
+  margin-left: 0;
+  margin-right: 0;
+  text-wrap: pretty;
+}
+
+.hsplit-copy .hll-ctas { justify-content: flex-start; margin-top: 26px; }
+
+.hsplit-art { position: relative; z-index: 3; min-width: 0; }
+
+/* Height is intrinsic to the file's aspect ratio, so the box is reserved before
+   the image decodes and the copy beside it never shifts. */
+.hsplit-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The proof metrics sit under both columns, aligned to the copy rather than
+   centred across the full width — centred, they read as belonging to the image. */
+.hll-page--split .hll-stats {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1360px;
+  margin-top: 8px;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.hll-page--split .hll-stat { padding-left: 0; }
+.hll-page--split .hll-stat + .hll-stat { padding-left: 38px; }
+
+/* Stack before the columns get too narrow to hold the headline. At this width
+   the art leads, because the copy is short enough to read in full underneath. */
+@media (max-width: 980px) {
+  .hsplit {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 22px;
+  }
+  .hsplit-copy .hll-headline { font-size: clamp(38px, 8.4vw, 58px); }
+  .hsplit-copy .hll-sub { max-width: none; }
+}
+
+@media (max-width: 620px) {
+  /* Three stats side by side at 375px leaves ~110px each, which wraps every
+     label onto three lines. One per row instead, dividers dropped. */
+  .hll-page--split .hll-stats { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .hll-page--split .hll-stat { min-width: 0; min-height: 0; padding: 6px 0; border-right: 0; }
+  .hll-page--split .hll-stat + .hll-stat { padding-left: 0; }
+}

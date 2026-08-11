@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.338 -->
+      <div class="tl-entry changed" id="v2.338">
+        <div class="tl-meta"><span class="tl-ver">v2.338</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Two-column hero; module cards move up behind the claim</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The hero becomes two-column</strong> — copy left, one image right, replacing the centred stack. The headline gets its own column instead of competing with full-width art. Opt-in via a <code>split</code> prop defaulted off, so <code>/hero-lab</code> keeps the centred version and the two stay comparable</li>
+            <li><strong>The module cards move up</strong>, from after Solutions to directly after BEFORE / AFTER. That section ends on the claim that every source lands in one record; the cards are what that record actually looks like, so they now read as evidence for the claim just made rather than as a second feature list — and it breaks up what was four consecutive capability statements</li>
+            <li>New running order: hero → logos → before/after → module cards → how it works → solutions → case study → industries → ecosystem → trust band. The customer logo strip stays directly under the hero so some credibility arrives before any of the argument</li>
+            <li><strong>The hero art is a placeholder.</strong> <code>public/images/hero/unified-platform.png</code> is a marked stand-in — replacing that one file is the whole swap, no code change needed</li>
+            <li>The hero copy is live HTML rather than baked into the image, so it stays selectable, translatable and searchable, and <code>/es</code> does not inherit an English hero. The image carries explicit dimensions and <code>priority</code>, so its box is reserved before it decodes and it is preloaded as the LCP element</li>
+            <li>Measured at 1280px: copy 64–570, art 622–1216, side by side, no horizontal overflow, hero 601px tall so it clears an 860px fold. At 375px it stacks, the proof metrics go one per row, and page overflow is 0. Verified in EN and ES</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.337 -->
       <div class="tl-entry changed" id="v2.337">
         <div class="tl-meta"><span class="tl-ver">v2.337</span><span class="tl-date">2026-08-11</span></div>
