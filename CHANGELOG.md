@@ -1,3 +1,19 @@
+## [v2.337] – 2026-08-11 — Module cards leave the hero; new running order
+### Changed
+- **The seven module cards are out of the hero.** Seven dense product panels at position one is a capability dump made before the page has argued anything, and it is what prevented the hero from carrying a single image. The hero now runs headline → sub → CTA → one visual → proof metrics.
+- **New running order on `/hero-lab-story`:** hero → customer logos → the difference → how it works → products → platform modules → case study → industries → integrations → proven & secure.
+- **The cards return as their own section after the products**, framed as *what your team actually sees* — the working surfaces behind the product names — rather than as a second feature list. At that position a straight capability restatement would be breadth stated twice in a row, which is the failure this route's order exists to avoid.
+- The cards were extracted to `HeroModuleCards.tsx` so the hero and the new section render the same seven from one source. Class names are unchanged, so every responsive rule in `hero-lab-light.css` applies to both hosts.
+
+### Fixed
+- **Two of the seven cards were unreachable on a laptop.** The cards lay out to ~1556px, but the carousel arrows and dots are only turned on below 1180px — so at 1280px the track was scrollable with no affordance and cards 6 and 7 sat off-screen. In the new section the track runs full-bleed and the controls are on at every width; verified by walking to the last card, which now lands fully in view with the next arrow correctly disabled. `/hero-lab` still has the original behaviour, untouched for comparison.
+
+### Notes
+- The hero's interim visual is the existing platform mark, promoted from background element to the hero's own image (static and centred instead of an absolutely-positioned backdrop). This is a placeholder — the purpose-built header image is the next piece of work.
+- Known cost of this order: the first hard proof, the case study, now sits at position seven. The customer logo strip stays directly under the hero so some credibility still arrives early.
+- Worth a decision: the products section already carries a "one unified platform" capability matrix listing the same shared modules, so there are now two places on the page enumerating them.
+- Verified `/hero-lab` is byte-for-byte unaffected: cards still in its hero, stage classes and mark positioning unchanged, no modules section.
+
 ## [v2.336] – 2026-08-10 — Before/after brought closer to the reference design
 ### Changed
 - **The six disconnected sources now sit in a clean two-column grid** rather than jittered positions. Measured after: exactly two column origins instead of six. The point of that half is not that the sources are *messy* — it is that they are perfectly orderly and still unconnected, which the alignment says better than scatter did.
