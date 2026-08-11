@@ -10,7 +10,15 @@ on:
   workflow_dispatch:
 
 env:
-  SITE_URL: https://www.kabatone.com
+  # Canonical apex domain. www.kabatone.com 308-redirects here, so pointing the
+  # health check at www made every scheduled run fail on the redirect (v2.335).
+  SITE_URL: https://kabatone.com
+
+# The default GITHUB_TOKEN is read-only, which made the incident-issue step
+# 403 on every real failure. Grant only what that step needs.
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   health-check:
@@ -32,7 +40,7 @@ jobs:
         run: |
           HEALTHY=false
           for i in 1 2 3; do
-            STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
+            STATUS=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
             echo "Attempt $i: HTTP $STATUS"
             if [ "$STATUS" = "200" ]; then
               HEALTHY=true
@@ -43,7 +51,7 @@ jobs:
 
           # Also verify Spanish locale works (middleware + i18n)
           if [ "$HEALTHY" = "true" ]; then
-            ES_STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL/es")
+            ES_STATUS=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL/es")
             echo "ES locale: HTTP $ES_STATUS"
             if [ "$ES_STATUS" != "200" ]; then
               HEALTHY=false
@@ -64,37 +72,78 @@ jobs:
         run: |
           echo "🚨 Site is down! Finding last working deployment..."
 
-          # Fetch recent production deployments via Vercel API
-          RESPONSE=$(curl -s \
-            "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&teamId=$VERCEL_TEAM_ID&target=production&limit=10&state=READY" \
-            -H "Authorization: Bearer $VERCEL_TOKEN")
+          API="https://api.vercel.com"
 
-          # Test each deployment until we find one that works
-          URLS=$(echo "$RESPONSE" | jq -r '.deployments[].url')
+          # The deployment currently serving production is, by definition, the one
+          # that just failed the health check. It must never be a rollback target --
+          # promoting it back onto itself is what this step used to do.
+          CURRENT=$(curl -s -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "$API/v9/projects/$VERCEL_PROJECT_ID?teamId=$VERCEL_TEAM_ID" \
+            | jq -r '.targets.production.id // .targets.production.uid // empty')
+          echo "Currently live: ${CURRENT:-<unknown>}"
 
-          for URL in $URLS; do
-            STATUS=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "https://$URL")
-            echo "Testing $URL → HTTP $STATUS"
-            if [ "$STATUS" = "200" ]; then
-              DEPLOY_ID=$(echo "$RESPONSE" | jq -r --arg url "$URL" '.deployments[] | select(.url == $url) | .uid')
-              echo "Promoting deployment: $DEPLOY_ID ($URL)"
+          RESPONSE=$(curl -s -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "$API/v6/deployments?projectId=$VERCEL_PROJECT_ID&teamId=$VERCEL_TEAM_ID&target=production&limit=20&state=READY")
 
-              PROMOTE_RESULT=$(curl -s -X POST \
-                "https://api.vercel.com/v10/projects/$VERCEL_PROJECT_ID/promote/$DEPLOY_ID?teamId=$VERCEL_TEAM_ID" \
-                -H "Authorization: Bearer $VERCEL_TOKEN" \
-                -H "Content-Type: application/json")
+          # Newest first, so we roll back the shortest distance that works.
+          echo "$RESPONSE" | jq -r '.deployments | sort_by(.created) | reverse | .[] | "\(.uid) \(.url)"' > candidates.txt
 
-              echo "Promote response: $PROMOTE_RESULT"
+          if [ ! -s candidates.txt ]; then
+            echo "::error::Vercel API returned no READY production deployments"
+            exit 1
+          fi
 
-              # Verify rollback worked
-              sleep 15
-              VERIFY=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
-              echo "Verification after rollback: HTTP $VERIFY"
+          PROMOTED=""
+          while read -r DEP_ID DEP_URL; do
+            [ -z "$DEP_ID" ] && continue
+
+            if [ "$DEP_ID" = "$CURRENT" ]; then
+              echo "Skip $DEP_URL -- currently live, this is the deployment that failed"
+              continue
+            fi
+
+            # Validate a candidate the same way production is validated. A build that
+            # only serves / is not a working rollback target if /es is broken.
+            ROOT=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "https://$DEP_URL")
+            ES=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "https://$DEP_URL/es")
+            echo "Testing $DEP_URL -> / $ROOT, /es $ES"
+            if [ "$ROOT" != "200" ] || [ "$ES" != "200" ]; then
+              continue
+            fi
+
+            echo "Promoting $DEP_ID ($DEP_URL)"
+            PROMOTE_RESULT=$(curl -s -w '\n%{http_code}' -X POST \
+              "$API/v10/projects/$VERCEL_PROJECT_ID/promote/$DEP_ID?teamId=$VERCEL_TEAM_ID" \
+              -H "Authorization: Bearer $VERCEL_TOKEN" \
+              -H "Content-Type: application/json")
+            PROMOTE_CODE=$(echo "$PROMOTE_RESULT" | tail -n1)
+            PROMOTE_BODY=$(echo "$PROMOTE_RESULT" | sed '$d')
+            echo "Promote HTTP $PROMOTE_CODE: $PROMOTE_BODY"
+
+            case "$PROMOTE_CODE" in
+              2*) PROMOTED="$DEP_ID"; break ;;
+              *)  echo "Promote rejected -- trying next candidate" ;;
+            esac
+          done < candidates.txt
+
+          if [ -z "$PROMOTED" ]; then
+            echo "::error::No healthy rollback candidate found"
+            exit 1
+          fi
+
+          # Confirm production actually recovered rather than assuming it did.
+          for i in 1 2 3 4 5 6; do
+            sleep 10
+            V_ROOT=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
+            V_ES=$(curl -sIL -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL/es")
+            echo "Verify $i: / $V_ROOT, /es $V_ES"
+            if [ "$V_ROOT" = "200" ] && [ "$V_ES" = "200" ]; then
+              echo "✅ Rolled back to $PROMOTED -- production healthy"
               exit 0
             fi
           done
 
-          echo "::error::No working deployment found!"
+          echo "::error::Promoted $PROMOTED but production is still unhealthy"
           exit 1
 
       - name: Create or update incident issue

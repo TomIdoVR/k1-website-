@@ -1,3 +1,20 @@
+## [v2.335] – 2026-08-11 — Health check stops crying wolf; auto-rollback actually rolls back
+### Fixed
+- **The hourly "Production Health Check" failure emails were a false alarm — the site was never down.** The workflow monitored `https://www.kabatone.com`, which 308-redirects to the apex `https://kabatone.com`, and the check demanded a literal `200` without following redirects. Every scheduled run saw `HTTP 308` three times and declared production dead.
+  - `SITE_URL` now points at the canonical apex domain, and all four health curls use `-sIL` so a future redirect cannot resurrect the same false positive.
+- **Added `permissions: contents: read, issues: write`.** The incident-issue step was separately failing with `403 Resource not accessible by integration` because the default `GITHUB_TOKEN` carried only read scopes — so even a genuine outage would not have opened an incident.
+- **The auto-rollback step could never actually roll back.** It walked the READY production deployments and promoted the first one returning `200` — but the newest one is the deployment already serving production, so during a real outage it would have promoted the broken deploy back onto itself and reported success. The only reason nothing bad shipped is that Vercel rejected each self-promotion with a `conflict`.
+  - The step now reads the current production deployment from `/v9/projects` and **skips it explicitly** as a rollback candidate.
+  - Candidates are sorted newest-first, so a rollback moves the shortest distance that works.
+  - A candidate must serve **both** `/` and `/es` — matching how production itself is validated. A build that only serves the homepage is not a working rollback target.
+  - Promotion is verified by HTTP status, and a rejected promote falls through to the next candidate instead of aborting.
+  - After promoting, the step polls production for up to 60s and **fails the job** if the site has not recovered, rather than logging one status and exiting `0`.
+
+### Notes
+- Caught while testing: the candidate loop originally read into `UID`, which is **readonly in bash** (it holds the user's numeric uid). `read -r UID URL` silently failed to assign, `$UID` stayed `501`, the skip-the-live-deployment check never matched, and the loop promoted the broken deployment. Renamed to `DEP_ID`/`DEP_URL`. Worth remembering: a failed `read` into a readonly name does not abort the loop, it just leaves the stale value in place.
+- Verified against live production before committing: apex `/` and `/es` both `200`, and `www` with `-L` resolves `200`.
+- Version numbering note: `v2.314`–`v2.334` are in flight on the staging/redesign branches; this entry takes `v2.335` off `main`. Reconcile at merge if those land first.
+
 ## [v2.313] – 2026-08-04 — SEO: market segmentation + synthetic-impression filter
 
 **Fixed**
