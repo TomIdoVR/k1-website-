@@ -10,6 +10,60 @@
 
 ---
 
+## Weekly brief pipeline — how the Monday report is produced
+
+Rebuilt 2026-08-04. Two Monday jobs that never exchanged data were merged into one.
+
+claude.ai routine `trig_012DxBrEmwRQj76RaMenDyZw` ("Weekly SEO Plan — KabatOne"),
+cron `0 12 * * 1`, runs on branch `nextjs`, posts to Slack `#marketing`:
+
+| Step | What |
+|---|---|
+| 1 | `scripts/weekly_brief.py --out SEO/audits/weekly-<date>.json` — **data only**: GA4 all channels + GSC, deterministic opportunity scoring. No LLM. |
+| 2 | `scripts/weekly_report.py --data <json> --no-ai` — HTML dashboard |
+| 3 | Claude writes `SEO/audits/weekly-<date>.md` — 5 sections: Traffic / Search / GEO / Plan / Operations & Health |
+| 4 | Commit both, post to Slack |
+
+**Python owns the numbers; the LLM owns the narrative.** The old monolith did both in
+one process, so a dead credential could run "green" while the real job produced nothing.
+Every P0 in section 4 must cite a figure from sections 1–3.
+
+**Auth is service-account only.** No OAuth refresh token exists in this path. In the
+cloud the routine reads env var `GOOGLE_SERVICE_ACCOUNT_JSON_B64` (base64 — cloud env
+vars are single-line `KEY=value`, so raw multi-line JSON fails to parse). Locally the
+scripts fall back to `~/.config/claude-seo/gsc-service-account.json`. There is
+deliberately **no** OAuth fallback: a silent fallback is what let a broken token look
+healthy for three weeks.
+
+Regression test for the whole class of credential failure — this must pass:
+
+```
+mv ~/.config/claude-seo/oauth-token.json ~/.config/claude-seo/oauth-token.json.hide
+python3 scripts/weekly_brief.py --out /tmp/wb.json     # must succeed
+mv ~/.config/claude-seo/oauth-token.json.hide ~/.config/claude-seo/oauth-token.json
+```
+
+### Two bugs that had corrupted every prior brief
+
+- **GSC totals must come from a dimensionless query.** Summing query-dimension rows
+  undercounts badly — measured **180 clicks vs 427 actual** — because GSC omits
+  anonymised rare queries from that dimension. Query rows are for ranking work only.
+- **Query row limit must exceed the query count.** At 1,000 rows against ~2,566 real
+  queries, ranking data was silently truncated; raising it took striking-distance from
+  125 to 211.
+
+### Open items (as of 2026-08-04)
+
+| # | Item | Owner |
+|---|---|---|
+| 1 | Delete the `kabatone-seo-desktop` OAuth client in Google Console. Its secret + refresh token were exposed in plaintext in the routine prompt. Desktop clients cannot rotate secrets, so deletion is the fix. Safe now — nothing in the weekly path uses OAuth. | Omer |
+| 2 | Verify the country-page guardrail. Count was 122, is now 141. `ccr.ts` dispatches generation to Paperclip, stopped 2026-08-04 — if the count holds while it is down, that confirms the dispatcher is the route. | — |
+| 3 | Retire `com.kabatone.seo-weekly.plist` (Mon 08:07, runs the superseded monolith redundantly) and `com.kabatone.seo-mailer.plist` (crashing daily with `IndexError`, empty `PRIORITY_QUEUE`, sends nothing). Not yet done — both still scheduled. | — |
+| 4 | Collapse the overlapping `kabatone-seo-audit` and `kabatone-seo-director` skills into one. Their duplicated project facts drifted and are wrong in both. | — |
+| 5 | CTR is the standing weakness: ~0.5% at average position 13.5, with **211** striking-distance queries. `"c5"` alone is pos 8.5 / 5,423 impressions / 0.24% CTR against ~4% expected. | — |
+
+---
+
 ## Overall progress
 
 | Phase | Status | Complete |
