@@ -1,3 +1,14 @@
+## [v2.336] – 2026-08-10 — Before/after brought closer to the reference design
+### Changed
+- **The six disconnected sources now sit in a clean two-column grid** rather than jittered positions. Measured after: exactly two column origins instead of six. The point of that half is not that the sources are *messy* — it is that they are perfectly orderly and still unconnected, which the alignment says better than scatter did.
+- **Added the vertical divider between the two states**, with the arrow riding on it rather than floating beside it. Drawn on the compare grid so it spans whichever side is taller, and removed when the layout stacks under 900px.
+- Redrew the dashed connectors to leave the hub's left and right edges and curve to each card's vertical centre, so they read as six tethers to one unanswered question.
+
+### Notes
+- **The reference design is not in the Claude Design project.** Checked directly: `list_files` shows no component matching it, `home/lifecycle.jsx` is a different section (the operational response lifecycle), and the two most recent uploads — `pasted-1785441164875-0.png` and `pasted-1785441165349-0.png` — are a different concept again ("From raw data to resolved incident", K-Safety at the centre). So there was no source to port the way every other section on this page was ported; this is matched by eye from the shared image.
+- If the design is added to the Claude Design project, or the source file is available, it can be ported properly rather than approximated — that would close the remaining gap in spacing and detail.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.334] – 2026-08-10 — Before/after rebuilt to the "Every system. One incident." direction
 ### Changed
 - **Rebuilt the before/after section to the reference direction.** Headline becomes "Every system. One incident. Complete clarity.", and the two halves are now styled as different *kinds* of object rather than two matching cards — the contrast should register before either side is read.

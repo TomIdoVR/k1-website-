@@ -42,22 +42,29 @@ function Glyph({ kind, size = 16 }: { kind: Kind | 'people'; size?: number }) {
   )
 }
 
-/* Six cards orbiting a question mark, joined by dashed lines that resolve to
-   nothing. Fixed viewBox so the scatter keeps its shape as the column narrows. */
+/* Six cards in a clean two-column grid, each tethered to a central question
+   mark by a dashed line that leads nowhere. Aligned rather than scattered —
+   the point is not that the sources are messy, it is that they are orderly and
+   still unconnected. Fixed viewBox so the arrangement holds as the column
+   narrows. */
 function DisconnectedDiagram({ es }: { es: boolean }) {
+  const COL_L = 0, COL_R = 252
+  const ROWS = [16, 116, 216]
   const CARDS = [
-    { x: 4, y: 16 }, { x: 244, y: 16 },
-    { x: 0, y: 116 }, { x: 252, y: 116 },
-    { x: 12, y: 216 }, { x: 240, y: 216 },
+    { x: COL_L, y: ROWS[0] }, { x: COL_R, y: ROWS[0] },
+    { x: COL_L, y: ROWS[1] }, { x: COL_R, y: ROWS[1] },
+    { x: COL_L, y: ROWS[2] }, { x: COL_R, y: ROWS[2] },
   ]
-  const HUB = { x: 174, y: 132, w: 46, h: 46 }
+  const HUB = { x: 174, y: 133, w: 46, h: 46 }
+  /* Left column links leave the hub's left edge, right column its right edge,
+     each curving out to the vertical centre of its card. */
   const LINKS = [
-    'M174 150 C 150 146, 140 90, 146 56',
-    'M220 150 C 244 146, 252 90, 248 56',
-    'M174 158 C 150 158, 148 156, 142 152',
-    'M220 158 C 244 158, 246 156, 252 152',
-    'M176 176 C 152 190, 148 232, 152 250',
-    'M218 176 C 242 190, 246 232, 242 250',
+    'M174 146 C 150 132, 152 60, 142 46',
+    'M220 146 C 244 132, 242 60, 252 46',
+    'M174 156 C 158 156, 156 146, 142 146',
+    'M220 156 C 236 156, 238 146, 252 146',
+    'M174 166 C 150 180, 152 232, 142 246',
+    'M220 166 C 244 180, 242 232, 252 246',
   ]
 
   return (
