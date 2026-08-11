@@ -1,81 +1,92 @@
-/* The problem → action → result section the homepage was missing.
+/* "Every system. One incident. Complete clarity." — the problem → action →
+   result section the homepage was missing.
 
-   First pass was five paired prose rows, which was ten lines of text arguing
-   that the page has too much text. Replaced with a diagram: the whole point is
-   "four records versus one record", and that is a shape, not a sentence.
+   Both sides render from the same SOURCES array on purpose: the argument is not
+   that the fragmented world has different data, it is that it has the *same*
+   data with nothing joining it up. Same six sources, same six timestamps, on
+   both sides. Left they orbit a question mark; right they are one record.
 
-   Inline SVG rather than generated artwork — it stays crisp at any size, both
-   language variants are real text rather than pixels, and nothing can come back
-   garbled. Each drawing is role="img" with a label, since it carries the
-   meaning rather than decorating it. */
+   Left is SVG because it is a diagram — scattered positions and connectors need
+   to hold their relationships at any width. Right is HTML because it is a UI
+   mockup and genuinely is a list, so it should be marked up as one. */
 
 type L = { en: string; es: string }
 const t = (v: L, es: boolean) => (es ? v.es : v.en)
 
-const NODES: { label: L; icon: 'call' | 'camera' | 'unit' | 'report'; time: string }[] = [
-  { label: { en: '911 Call', es: 'Llamada' }, icon: 'call', time: '10:42' },
-  { label: { en: 'Camera', es: 'Cámara' }, icon: 'camera', time: '10:47' },
-  { label: { en: 'Unit', es: 'Unidad' }, icon: 'unit', time: '10:51' },
-  { label: { en: 'Report', es: 'Reporte' }, icon: 'report', time: '11:26' },
+type Kind = 'call' | 'camera' | 'pin' | 'radio' | 'car' | 'doc'
+
+const SOURCES: { label: L; time: string; icon: Kind; color: string }[] = [
+  { label: { en: '911 Call', es: 'Llamada 911' }, time: '10:42:11', icon: 'call', color: '#2563eb' },
+  { label: { en: 'Cameras', es: 'Cámaras' }, time: '10:43:02', icon: 'camera', color: '#8b5cf6' },
+  { label: { en: 'GIS', es: 'GIS' }, time: '10:43:15', icon: 'pin', color: '#22c55e' },
+  { label: { en: 'Radio', es: 'Radio' }, time: '10:43:42', icon: 'radio', color: '#f97316' },
+  { label: { en: 'LPR Hit', es: 'Lectura LPR' }, time: '10:44:01', icon: 'car', color: '#2563eb' },
+  { label: { en: 'Report', es: 'Reporte' }, time: '10:45:10', icon: 'doc', color: '#f59e0b' },
 ]
 
-function Glyph({ kind }: { kind: string }) {
-  const d: Record<string, string> = {
-    call: 'M2.6 3.4a1 1 0 0 1 1-.9h1.6a1 1 0 0 1 1 .8l.35 1.7a1 1 0 0 1-.28.9l-.7.7a8 8 0 0 0 3.1 3.1l.7-.7a1 1 0 0 1 .9-.28l1.7.35a1 1 0 0 1 .8 1v1.6a1 1 0 0 1-.9 1A11 11 0 0 1 2.6 3.4Z',
-    camera: 'M2 5.2h6.2v5.6H2zM8.2 7l3.8-1.7v5.4L8.2 9z',
-    unit: 'M2.2 9.4V7.2l1.3-2.5h7l1.3 2.5v2.2M3.9 9.4h6.2M4.2 11a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Zm5.6 0a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8Z',
-    report: 'M3.4 2.2h4.4l2.8 2.8v6.8H3.4zM7.8 2.2V5h2.8',
-  }
-  return <path d={d[kind]} fill="none" stroke="currentColor" strokeWidth="1.15" strokeLinejoin="round" strokeLinecap="round" />
+const PATHS: Record<Kind | 'people', string> = {
+  call: 'M3.2 4.1a1.1 1.1 0 0 1 1.1-1h1.7a1.1 1.1 0 0 1 1.1.9l.35 1.8a1.1 1.1 0 0 1-.3 1l-.8.8a8.6 8.6 0 0 0 3.3 3.3l.8-.8a1.1 1.1 0 0 1 1-.3l1.8.35a1.1 1.1 0 0 1 .9 1.1v1.7a1.1 1.1 0 0 1-1 1.1A11.8 11.8 0 0 1 3.2 4.1Z',
+  camera: 'M2.4 5.6h7v6.4h-7zM9.4 7.7l4-2v6l-4-2z',
+  pin: 'M8 14.4s4.6-4.3 4.6-7.5a4.6 4.6 0 1 0-9.2 0C3.4 10.1 8 14.4 8 14.4Z M8 8.3a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Z',
+  radio: 'M8 9.6a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2ZM4.7 4.7a4.7 4.7 0 0 0 0 6.6M11.3 4.7a4.7 4.7 0 0 1 0 6.6M2.4 2.4a7.9 7.9 0 0 0 0 11.2M13.6 2.4a7.9 7.9 0 0 1 0 11.2',
+  car: 'M2.6 10.9V8.3l1.6-3h7.6l1.6 3v2.6M4.6 10.9h6.8M4.9 12.7a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Zm6.2 0a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z',
+  doc: 'M4 2.5h5.2l3.2 3.2v8.3H4zM9.2 2.5v3.4h3.2',
+  people: 'M11 13.4v-1.2a2.4 2.4 0 0 0-2.4-2.4H4.8a2.4 2.4 0 0 0-2.4 2.4v1.2M6.7 7.4a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4ZM15.2 13.4v-1.2a2.4 2.4 0 0 0-1.8-2.3M11.4 3.1a2.4 2.4 0 0 1 0 4.6',
 }
 
-/* Four cards adrift: no connectors, each with its own timestamp. */
-function FragmentedDiagram({ es }: { es: boolean }) {
-  const pos = [
-    { x: 8, y: 10, r: -4 }, { x: 168, y: 30, r: 5 },
-    { x: 22, y: 92, r: 6 }, { x: 176, y: 112, r: -5 },
-  ]
+function Glyph({ kind, size = 16 }: { kind: Kind | 'people'; size?: number }) {
   return (
-    <svg className="ba-svg" viewBox="0 0 320 180" role="img"
-      aria-label={es
-        ? 'Cuatro sistemas separados, cada uno con su propio registro y su propia hora, sin conexión entre ellos.'
-        : 'Four separate systems, each holding its own record and its own timestamp, with nothing connecting them.'}>
-      {pos.map((p, i) => (
-        <g key={i} transform={`translate(${p.x} ${p.y}) rotate(${p.r} 68 29)`} className="ba-frag-card">
-          <rect x="0" y="0" width="136" height="58" rx="9" />
-          <g className="ba-frag-ic" transform="translate(13 21)"><Glyph kind={NODES[i].icon} /></g>
-          <text className="ba-frag-label" x="34" y="26">{t(NODES[i].label, es)}</text>
-          <text className="ba-frag-time" x="34" y="42">{NODES[i].time}</text>
-        </g>
-      ))}
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d={PATHS[kind]} stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
 
-/* One spine, four nodes on it, one timestamp. */
-function UnifiedDiagram({ es }: { es: boolean }) {
-  const xs = [46, 118, 190, 262]
-  return (
-    <svg className="ba-svg" viewBox="0 0 320 180" role="img"
-      aria-label={es
-        ? 'Un solo registro del incidente: llamada, cámara, unidad y reporte conectados en una misma línea de tiempo.'
-        : 'A single incident record: call, camera, unit and report connected on one timeline.'}>
-      <text className="ba-uni-tag" x="16" y="26">{es ? 'INCIDENTE 2451' : 'INCIDENT 2451'}</text>
-      <text className="ba-uni-time" x="304" y="26" textAnchor="end">10:42</text>
+/* Six cards orbiting a question mark, joined by dashed lines that resolve to
+   nothing. Fixed viewBox so the scatter keeps its shape as the column narrows. */
+function DisconnectedDiagram({ es }: { es: boolean }) {
+  const CARDS = [
+    { x: 4, y: 16 }, { x: 244, y: 16 },
+    { x: 0, y: 116 }, { x: 252, y: 116 },
+    { x: 12, y: 216 }, { x: 240, y: 216 },
+  ]
+  const HUB = { x: 174, y: 132, w: 46, h: 46 }
+  const LINKS = [
+    'M174 150 C 150 146, 140 90, 146 56',
+    'M220 150 C 244 146, 252 90, 248 56',
+    'M174 158 C 150 158, 148 156, 142 152',
+    'M220 158 C 244 158, 246 156, 252 152',
+    'M176 176 C 152 190, 148 232, 152 250',
+    'M218 176 C 242 190, 246 232, 242 250',
+  ]
 
-      <line className="ba-spine" x1="30" y1="92" x2="290" y2="92" />
-      {xs.map((x, i) => (
-        <g key={i}>
-          {i > 0 && <line className="ba-spine-lit" x1={xs[i - 1]} y1="92" x2={x} y2="92" />}
-          <circle className="ba-node-ring" cx={x} cy="92" r="19" />
-          <g className="ba-node-ic" transform={`translate(${x - 7} 85)`}><Glyph kind={NODES[i].icon} /></g>
-          <text className="ba-node-label" x={x} y="130" textAnchor="middle">{t(NODES[i].label, es)}</text>
+  return (
+    <svg className="ba-svg" viewBox="0 0 394 400" role="img"
+      aria-label={es
+        ? 'Seis fuentes del mismo incidente — llamada 911, cámaras, GIS, radio, lectura LPR y reporte — dispersas alrededor de un signo de interrogación, sin conectarse entre sí.'
+        : 'Six sources from the same incident — 911 call, cameras, GIS, radio, LPR hit and report — scattered around a question mark, with nothing joining them together.'}>
+      {LINKS.map((d, i) => <path key={i} className="ba-link" d={d} />)}
+
+      <g className="ba-hub">
+        <rect x={HUB.x} y={HUB.y} width={HUB.w} height={HUB.h} rx="11" />
+        <text x={HUB.x + HUB.w / 2} y={HUB.y + 31} textAnchor="middle">?</text>
+      </g>
+
+      {SOURCES.map((s, i) => (
+        <g key={i} transform={`translate(${CARDS[i].x} ${CARDS[i].y})`} className="ba-chip">
+          <rect width="142" height="60" rx="12" />
+          <g style={{ color: s.color }} transform="translate(14 16)"><Glyph kind={s.icon} /></g>
+          <text className="ba-chip-label" x="40" y="26">{t(s.label, es).toUpperCase()}</text>
+          <text className="ba-chip-time" x="40" y="44">{s.time}</text>
         </g>
       ))}
-      <rect className="ba-uni-bar" x="30" y="150" width="260" height="7" rx="3.5" />
-      <text className="ba-uni-bar-label" x="160" y="172" textAnchor="middle">
-        {es ? 'una sola línea de tiempo auditable' : 'one auditable timeline'}
-      </text>
+
+      {/* The operator left holding it */}
+      <g className="ba-figure" transform="translate(197 316)">
+        <path className="ba-tangle" d="M-22 0c-9-8 3-16 10-9s-14 12-4 16 20-10 11-17-19 3-12 10" />
+        <circle cx="0" cy="36" r="17" />
+        <path d="M-30 84a30 30 0 0 1 60 0Z" />
+      </g>
     </svg>
   )
 }
@@ -88,35 +99,86 @@ export default function BeforeAfter({ es }: { es: boolean }) {
           <div className="ba-eyebrow">{es ? 'EL CAMBIO' : 'THE DIFFERENCE'}</div>
           <h2 className="ba-title">
             {es
-              ? <>Un mismo incidente, <em>antes y después.</em></>
-              : <>The same incident, <em>before and after.</em></>}
+              ? <>Cada sistema. <em>Un incidente. Claridad total.</em></>
+              : <>Every system. <em>One incident. Complete clarity.</em></>}
           </h2>
           <p className="ba-lede">
             {es
-              ? 'La mayoría de los centros de mando no carecen de tecnología: tienen demasiada, sin conectar.'
-              : 'Most command centers are not short of technology. They have too much of it, unconnected.'}
+              ? 'Kabat One unifica cada fuente de información para que tu equipo vea la imagen completa y actúe más rápido.'
+              : 'Kabat One unifies every source of information so your team can see the full picture and act faster.'}
           </p>
         </div>
 
-        <div className="ba-cols">
-          <div className="ba-col ba-col-before">
-            <h3 className="ba-col-title">{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</h3>
-            <FragmentedDiagram es={es} />
-            <p className="ba-caption">
-              {es
-                ? 'Cuatro sistemas, cuatro registros, cuatro horas distintas. Nadie puede reconstruir la imagen completa.'
-                : 'Four systems, four records, four different clocks. Nobody can reconstruct the whole picture.'}
+        <div className="ba-compare">
+          {/* ── before ── */}
+          <div className="ba-side">
+            <span className="ba-pill">{es ? 'DESCONECTADO' : 'DISCONNECTED'}</span>
+            <p className="ba-sub">
+              {es ? <>Sistemas distintos. Datos distintos.<br />Sin una única fuente de verdad.</>
+                  : <>Different systems. Different data.<br />No single source of truth.</>}
             </p>
+            <DisconnectedDiagram es={es} />
           </div>
 
-          <div className="ba-col ba-col-after">
-            <h3 className="ba-col-title">{es ? 'Con KabatOne' : 'With KabatOne'}</h3>
-            <UnifiedDiagram es={es} />
-            <p className="ba-caption">
-              {es
-                ? 'Un solo registro, desde la primera llamada hasta el cierre.'
-                : 'One record, from the first call through to closure.'}
+          <div className="ba-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h11M11 5.5 15.5 10 11 14.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* ── after ── */}
+          <div className="ba-side">
+            <span className="ba-pill ba-pill-brand">{es ? 'CON KABAT ONE' : 'WITH KABAT ONE'}</span>
+            <p className="ba-sub">
+              {es ? <>Un incidente. Toda la información.<br /><b>Conectado. En tiempo real.</b></>
+                  : <>One incident. All information.<br /><b>Connected. In real time.</b></>}
             </p>
+
+            <div className="ba-record">
+              <div className="ba-record-head">
+                <span className="ba-record-mark" aria-hidden="true">K</span>
+                <span className="ba-record-id">{es ? 'INCIDENTE #2451' : 'INCIDENT #2451'}</span>
+                <span className="ba-record-live"><i />{es ? 'EN VIVO' : 'LIVE'}</span>
+              </div>
+
+              <div className="ba-record-body">
+                <div className="ba-map" aria-hidden="true">
+                  <svg viewBox="0 0 130 160" preserveAspectRatio="xMidYMid slice">
+                    <rect width="130" height="160" fill="#eef1f5" />
+                    <path d="M0 44h130M0 96h130M34 0v160M92 0v160" stroke="#fff" strokeWidth="7" />
+                    <path d="M0 122 C 40 108, 60 132, 130 116" stroke="#cfe3f2" strokeWidth="9" fill="none" />
+                    <circle cx="65" cy="82" r="26" fill="#ef4444" opacity="0.16" />
+                    <circle cx="65" cy="82" r="15" fill="#ef4444" />
+                    <path d="M65 75v8M65 88h0" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
+                  </svg>
+                </div>
+
+                <ul className="ba-sources">
+                  {SOURCES.map((s, i) => (
+                    <li key={i}>
+                      <span className="ba-src-ic" style={{ color: s.color }}><Glyph kind={s.icon} size={15} /></span>
+                      <span className="ba-src-label">{t(s.label, es)}</span>
+                      <span className="ba-src-time">{s.time}</span>
+                      <span className="ba-src-check" aria-hidden="true">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                          <circle cx="8" cy="8" r="6.6" stroke="currentColor" strokeWidth="1.3" />
+                          <path d="M5.3 8.2 7.1 10l3.6-3.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="ba-outcome">
+              <span className="ba-outcome-line" aria-hidden="true" />
+              <span className="ba-outcome-ic" aria-hidden="true"><Glyph kind="people" size={20} /></span>
+              <p className="ba-outcome-text">
+                {es ? <>Un equipo. Una imagen.<br /><b>Mejores decisiones. Mejores resultados.</b></>
+                    : <>One team. One picture.<br /><b>Better decisions. Better outcomes.</b></>}
+              </p>
+            </div>
           </div>
         </div>
       </div>

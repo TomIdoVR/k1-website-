@@ -1,3 +1,18 @@
+## [v2.334] – 2026-08-10 — Before/after rebuilt to the "Every system. One incident." direction
+### Changed
+- **Rebuilt the before/after section to the reference direction.** Headline becomes "Every system. One incident. Complete clarity.", and the two halves are now styled as different *kinds* of object rather than two matching cards — the contrast should register before either side is read.
+  - **Left:** six sources — 911 Call, Cameras, GIS, Radio, LPR Hit, Report — drifting around a question mark, joined by dashed connectors that resolve to nothing, with a faceless grey operator beneath holding the mess together.
+  - **Right:** the same six as one live incident record — `INCIDENT #2451`, a map with the incident plotted, and each source checked off against its timestamp.
+  - Below it, the outcome: one team, one picture, better decisions.
+- **Both sides render from the same `SOURCES` array**, deliberately. The argument is not that the fragmented world has *different* data — it is that it has the *same* data with nothing joining it up. Identical six sources and identical six timestamps on both sides; only the arrangement changes.
+
+### Notes
+- Left is SVG because it is a diagram: the scatter positions and connectors have to hold their relationships as the column narrows. Right is HTML because it is a UI mockup and genuinely is a list, so it is marked up as a `<ul>` rather than drawn.
+- Still no invented numbers. The timestamps are illustrative and identical across both halves, so nothing here reads as a performance claim.
+- The arrow between the halves rotates to point downward once the layout stacks under 900px.
+- Caught a syntax error before it shipped: the icon-path map opened with `{` and closed with `]`, which took the route to a 500. Typecheck flagged it as "Property assignment expected" at the closing line.
+- Still `/hero-lab-story` only — `/hero-lab` remains untouched for comparison.
+
 ## [v2.333] – 2026-08-10 — Before/after becomes a diagram instead of prose
 ### Changed
 - **The before/after section now argues with a drawing, not ten lines of text.** The first pass (v2.332) was five paired prose rows — which meant a wall of text making the case that the homepage has too much text. The claim is "four records versus one record", and that is a shape rather than a sentence.

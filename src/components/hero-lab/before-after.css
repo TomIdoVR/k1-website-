@@ -1,118 +1,195 @@
-/* Before/after section. Tokens match the ecosystem and solutions sections so it
-   reads as part of the same system: DM Mono eyebrow, Barlow Condensed display
-   title, Space Grotesk body, 1240px wrap.
+/* "Every system. One incident. Complete clarity."
 
-   The two diagrams carry the argument, so the copy is one caption per side
-   rather than the five prose rows this started as. */
+   Left is a diagram, right is a UI mockup, and they are styled as two different
+   kinds of object on purpose: the disconnected side is flat, grey and drifting;
+   the unified side is a real product surface with elevation and colour. The
+   contrast is meant to be felt before either side is read.
+
+   Tokens follow the ecosystem and solutions sections so this reads as part of
+   the same system rather than an inserted graphic. */
 
 .ba {
   padding-block: clamp(52px, 6vw, 88px);
-  background: linear-gradient(180deg, #f7fafd 0%, #ffffff 100%);
+  background: #fff;
   font-family: 'Space Grotesk', sans-serif;
 }
 
 .ba-wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 64px); }
-.ba-head { max-width: 680px; margin-bottom: clamp(30px, 3.4vw, 44px); }
+.ba-head { max-width: 620px; margin-bottom: clamp(30px, 3.6vw, 46px); }
 
 .ba-eyebrow {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-family: 'DM Mono', ui-monospace, monospace;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #0891b2;
+  color: #0757f7;
 }
 
 .ba-title {
   font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: clamp(30px, 3.6vw, 46px);
-  line-height: 1.08;
+  font-size: clamp(30px, 3.9vw, 50px);
+  line-height: 1.04;
   letter-spacing: -0.005em;
   text-transform: uppercase;
   color: #0f1724;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
-.ba-title em { font-style: normal; color: #0891b2; }
+.ba-title em { font-style: normal; color: #0757f7; }
 
 .ba-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
 
-.ba-cols {
+/* A hairline divider between the two states, with the arrow sitting on it. */
+.ba-compare {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 2vw, 28px);
-  align-items: stretch;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(8px, 1.6vw, 26px);
+  align-items: start;
 }
 
-.ba-col {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(20px, 2.2vw, 28px);
-  border-radius: 16px;
-  border: 1px solid #e2e8f2;
-  background: #fff;
-}
-.ba-col-before { background: #f6f7f9; border-color: #e4e7ec; }
-.ba-col-after {
-  border-color: rgba(8, 145, 178, 0.32);
-  box-shadow: 0 20px 44px -34px rgba(8, 100, 145, 0.55);
-}
+.ba-side { display: flex; flex-direction: column; align-items: center; min-width: 0; }
 
-.ba-col-title {
+.ba-pill {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: #eef1f5;
+  color: #667185;
   font-family: 'DM Mono', ui-monospace, monospace;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin: 0 0 6px;
-  color: #667185;
 }
-.ba-col-after .ba-col-title { color: #0e7490; }
+.ba-pill-brand { background: #0757f7; color: #fff; }
 
-.ba-svg { display: block; width: 100%; height: auto; margin: 4px 0 2px; }
-
-.ba-caption {
-  margin: auto 0 0;
-  padding-top: 14px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #4b5768;
+.ba-sub {
+  margin: 16px 0 22px;
+  text-align: center;
+  font-size: clamp(14.5px, 1.25vw, 16.5px);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1c2939;
 }
-.ba-col-after .ba-caption { color: #23324a; }
+.ba-sub b { color: #0757f7; font-weight: 600; }
 
-/* ── fragmented side ── */
-.ba-frag-card rect { fill: #fff; stroke: #dfe3ea; stroke-width: 1; }
-.ba-frag-ic { color: #98a2b3; }
-.ba-frag-label {
-  font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; fill: #5c6675;
-}
-.ba-frag-time {
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; fill: #98a2b3;
+.ba-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: 132px;
+  border-radius: 50%;
+  border: 1px solid #dfe5ee;
+  background: #fff;
+  color: #0757f7;
+  box-shadow: 0 6px 16px -10px rgba(20, 45, 90, 0.4);
 }
 
-/* ── unified side ── */
-.ba-uni-tag {
+/* ── left: the scatter ── */
+.ba-svg { display: block; width: 100%; max-width: 430px; height: auto; }
+
+.ba-chip rect { fill: #fff; stroke: #e6eaf0; stroke-width: 1.2; }
+.ba-chip-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; fill: #1c2939;
+}
+.ba-chip-time {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; fill: #98a2b3;
+}
+
+.ba-link { fill: none; stroke: #cbd3de; stroke-width: 1.5; stroke-dasharray: 5 5; }
+
+.ba-hub rect { fill: #f2f4f7; stroke: #e0e5ec; stroke-width: 1.2; }
+.ba-hub text {
+  font-family: 'Space Grotesk', sans-serif; font-size: 23px; font-weight: 700; fill: #98a2b3;
+}
+
+/* The operator, deliberately faceless and grey — they are the one holding the
+   mess together, and they are not the hero of this half. */
+.ba-figure { fill: #dfe3e9; }
+.ba-tangle { fill: none; stroke: #cbd3de; stroke-width: 1.6; }
+
+/* ── right: the record ── */
+.ba-record {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 16px;
+  border: 1px solid #e4e9f1;
+  background: #fff;
+  box-shadow: 0 26px 60px -34px rgba(17, 45, 90, 0.42);
+  overflow: hidden;
+}
+
+.ba-record-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #eef1f6;
+}
+.ba-record-mark {
+  display: grid; place-items: center;
+  width: 24px; height: 24px; border-radius: 7px;
+  background: #0757f7; color: #fff;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 15px; line-height: 1;
+}
+.ba-record-id {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 18px; letter-spacing: 0.02em; color: #0f1724;
+}
+.ba-record-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: auto;
   font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px;
-  letter-spacing: 0.1em; fill: #0e7490;
+  letter-spacing: 0.12em; color: #16a34a;
 }
-.ba-uni-time {
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px; fill: #7d8798;
-}
-.ba-spine { stroke: #dbe3ee; stroke-width: 2.5; stroke-linecap: round; }
-.ba-spine-lit { stroke: #22b8d4; stroke-width: 2.5; stroke-linecap: round; }
-.ba-node-ring { fill: #fff; stroke: #22b8d4; stroke-width: 1.8; }
-.ba-node-ic { color: #0e7490; }
-.ba-node-label {
-  font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; fill: #23324a;
-}
-.ba-uni-bar { fill: rgba(34, 184, 212, 0.18); }
-.ba-uni-bar-label {
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px;
-  letter-spacing: 0.08em; fill: #0e7490;
-}
+.ba-record-live i { width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
 
-@media (max-width: 760px) {
-  .ba-cols { grid-template-columns: minmax(0, 1fr); }
+.ba-record-body { display: grid; grid-template-columns: 0.82fr 1fr; gap: 12px; padding: 12px; }
+.ba-map { border-radius: 10px; overflow: hidden; background: #eef1f5; }
+.ba-map svg { display: block; width: 100%; height: 100%; min-height: 150px; }
+
+.ba-sources { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ba-sources li {
+  display: grid;
+  grid-template-columns: 22px 1fr auto 18px;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 2px;
+  border-bottom: 1px solid #f1f4f8;
+}
+.ba-sources li:last-child { border-bottom: 0; }
+.ba-src-ic { display: grid; place-items: center; }
+.ba-src-label { font-size: 13.5px; font-weight: 500; color: #1c2939; }
+.ba-src-time {
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; color: #7d8798;
+}
+.ba-src-check { color: #16a34a; display: grid; place-items: center; }
+
+/* ── outcome ── */
+.ba-outcome { display: flex; flex-direction: column; align-items: center; }
+.ba-outcome-line { width: 1px; height: 26px; background: #d7dfea; }
+.ba-outcome-ic {
+  display: grid; place-items: center;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: #e8f0ff; color: #0757f7;
+}
+.ba-outcome-text {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1c2939;
+}
+.ba-outcome-text b { color: #0757f7; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .ba-compare { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  /* The arrow turns to point down once the sides stack. */
+  .ba-arrow { margin: 0 auto; transform: rotate(90deg); }
 }
