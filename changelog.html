@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.342 -->
+      <div class="tl-entry fixed" id="v2.342">
+        <div class="tl-meta"><span class="tl-ver">v2.342</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Hero art: nothing cropped, and sharper</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The art is no longer cut.</strong> <code>cover</code> had to discard whatever did not fit a band far wider than the file's 1.5:1, and at wide-but-short viewports that came off the top — taking the incident card with it. The art is now sized by height with width following, so the whole frame is always present</li>
+            <li><strong>Sharper.</strong> The file holds 1536px of real detail; stretched across a 2000px hero on a 2× display it was being asked for 2667px — a <strong>1.74× upscale</strong>. Capped at 700px tall it lands ~1050px wide, so the same display asks for 2100px: <strong>1.37×</strong></li>
+            <li><strong>The ground is drawn in CSS now, not baked into a file.</strong> The 2.25:1 extension added 768px of flat fill and no detail, while forcing every real pixel to stretch across the full width with it. The same tones are a CSS gradient sampled off the art's own left edge — measured on the live page, art edge and CSS ground differ by at most 4/255</li>
+            <li>On phones the art is sized by width instead of height: the section is taller than it is wide there, so height-sizing would push it past the viewport edge and leave only a sliver of the console</li>
+            <li><strong>This does not reach true 1:1, and no crop or fit can.</strong> At 2000px on a 2× display the slot is 2667 device pixels and the render holds 1536 — only a larger render closes the rest, roughly 3072×2048</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.341 -->
       <div class="tl-entry changed" id="v2.341">
         <div class="tl-meta"><span class="tl-ver">v2.341</span><span class="tl-date">2026-08-11</span></div>

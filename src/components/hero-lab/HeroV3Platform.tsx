@@ -73,7 +73,13 @@ function ProofMetrics({ es }: { es: boolean }) {
    of matched pale ground on the left — the side the copy sits on — so the art
    can bleed edge to edge with nothing cropped. The original is kept alongside
    it; drop a genuinely wide render in here when one exists. */
-const HERO_ART = '/images/hero/unified-platform-wide.png'
+/* The native render, not the 2.25:1 extension. The extension existed to let the
+   art `cover` a full-bleed band, but the 768px it added were flat fill — no
+   detail — while every real pixel got stretched across the whole width with it.
+   That ground is now drawn in CSS instead, so it extends to any width for free
+   and the art is only ever asked to cover the part of the frame it actually
+   has resolution for. */
+const HERO_ART = '/images/hero/unified-platform-art.png'
 
 /* `fill` rather than fixed dimensions: as a background layer the art has to
    cover a box whose aspect ratio is set by the viewport, not by the file. It
@@ -86,7 +92,14 @@ const HERO_ART = '/images/hero/unified-platform-wide.png'
 function HeroArt() {
   return (
     <div className="hsplit-art" aria-hidden="true">
-      <Image src={HERO_ART} alt="" fill priority sizes="100vw" />
+      <Image
+        src={HERO_ART}
+        alt=""
+        width={1536}
+        height={1024}
+        priority
+        sizes="(max-width: 980px) 100vw, 1040px"
+      />
     </div>
   )
 }

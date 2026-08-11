@@ -29,26 +29,41 @@
    is contained and its stacking stays local. next/image `fill` supplies the
    absolute positioning on the <img>; what it does not supply is the fit, which
    is why object-fit/position are set here rather than as props. */
+/* The ground the art sits on, drawn rather than photographed. These are the
+   art's own left-edge tones, sampled off the file stop for stop, so the join is
+   invisible and the ground can now run to any width at no cost and no blur.
+   This is what the 768px baked into the wide file used to do. */
 .hsplit-art {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  background: linear-gradient(180deg,
+    #fdfdfd 0%, #fdfdfd 12%, #fafbfd 30%, #f8fafc 50%,
+    #f8f9fd 70%, #f4f5fa 88%, #f4f5f9 100%);
 }
 
-/* `right bottom` is chosen, not defaulted, and both halves matter.
+/* Sized by height, anchored bottom-right — and this is what stops the art being
+   both cropped and soft.
 
-   `bottom`: on a wide, short viewport `cover` fits by width and crops height.
-   The art has ~85px of spare sky above the console but only ~9px below the
-   vehicles, so the crop has to come off the top. Anchoring to the bottom sends
-   it there and keeps the vehicles on the ground line.
+   Cropped: `cover` had to discard whatever did not fit a band far wider than
+   the file's 1.5:1, and at wide-but-short viewports that came off the top,
+   taking the incident card with it. Sizing by height and letting width follow
+   means the whole frame is always present.
 
-   `right`: on a tall viewport it fits by height and crops width instead —
-   about 218px at 1920x950. Centred, half of that would come off the console's
-   right edge. Anchored right, all of it comes off the extended pale ground on
-   the left, which is exactly what that ground is for. */
+   Soft: the file holds 1536px of real detail. Stretched across a 2000px hero on
+   a 2x display it was being asked for 2667px — 1.74x upscale. Capped at 700px
+   tall the art lands ~1050px wide, so the same display asks for 2100px: 1.37x.
+   Still short of true 1:1, which no crop or fit can fix — only a bigger render
+   can. */
 .hsplit-art img {
-  object-fit: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: min(100%, 700px);
+  width: auto;
+  max-width: 66%;
+  object-fit: contain;
   object-position: right bottom;
 }
 
@@ -154,12 +169,16 @@
   .hsplit-copy { max-width: none; }
   .hsplit-copy .hll-headline { font-size: clamp(38px, 8.4vw, 58px); }
 
-  /* A phone crops to roughly 28% of the frame's width. Anchored right that
-     window lands on the units panel and the ambulance alone, which reads as a
-     fragment. 88% pulls it back onto the patrol car, the responder and the
-     ambulance together — the part of the frame that still says something at
-     this size, since the console text does not survive the crop either way. */
-  .hsplit-art img { object-position: 88% bottom; }
+  /* Sized by width here rather than height. On a phone the section is taller
+     than it is wide, so height-sizing would push the art far past the viewport
+     edge and leave only a sliver of the console showing. Full width, anchored
+     to the bottom, keeps the vehicles and the city band — the part that still
+     reads at this size — sitting under the copy. */
+  .hsplit-art img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
   /* Vertical rather than left-weighted: once the copy runs the full width there
      is no clear side to keep the art on. Moderate here — at tablet widths the
      frame is large enough that the console still reads, and the phone-weight

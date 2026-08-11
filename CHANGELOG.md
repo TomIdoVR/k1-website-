@@ -1,3 +1,18 @@
+## [v2.342] – 2026-08-11 — Hero art: nothing cropped, and sharper
+### Fixed
+- **The art is no longer cut.** `cover` had to discard whatever did not fit a band far wider than the file's 1.5:1, and at wide-but-short viewports that came off the top — taking the incident card with it. The art is now sized by height with width following, so the whole frame is always present.
+- **Sharper.** The file holds 1536px of real detail. Stretched across a 2000px hero on a 2x display it was being asked for 2667px — a 1.74x upscale. Capped at 700px tall it lands ~1050px wide, so the same display asks for 2100px: **1.37x**.
+
+### Changed
+- **The ground is now drawn in CSS, not baked into a file.** The 2.25:1 extension added 768px of flat fill and no detail, while forcing every real pixel to stretch across the full width with it. The same tones are now a CSS gradient — sampled off the art's own left edge stop for stop — so the ground runs to any width at no cost and no blur. Measured on the live page: the art's left edge and the CSS ground differ by at most 4/255.
+- Back to the native render (`unified-platform-art.png`) rather than the extension.
+- On phones the art is sized by width instead of height — the section is taller than it is wide there, so height-sizing would push it past the viewport edge and leave only a sliver of the console.
+
+### Notes
+- **This does not reach true 1:1, and no crop or fit can get it there.** At 2000px on a 2x display the slot is 2667 device pixels and the render holds 1536. Only a larger render fixes the remainder — roughly 3072x2048 would cover a 2x display at this size with headroom.
+- The 2.25:1 extension (`unified-platform-wide.png`) is left in place, unused, rather than deleted.
+- Verified at 2000x960, 1440x900 and 375x812: whole frame visible, aspect preserved, zero horizontal overflow.
+
 ## [v2.341] – 2026-08-11 — Hero matches the design: full-bleed art, copy on top
 ### Changed
 - **The hero is now the composition from the design**: the art bleeds edge to edge across the whole section, the copy sits over its left side, and the proof metrics sit at the foot of the hero rather than below it.
