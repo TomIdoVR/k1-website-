@@ -1,3 +1,13 @@
+## [v2.344] – 2026-08-11 — The two verdict cards stop repeating, and the left panel stops gapping
+### Changed
+- **The fragmented side's verdict card no longer repeats its own heading.** "Fragmented Intelligence" was the panel title *and* the verdict card directly below it. The card now mirrors the unified side clause for clause instead: "Six systems. No single picture." / "Slower decisions. Higher risk." against "One team. One picture." / "Better decisions. Better outcomes." — the same sentence answered twice rather than one term stated twice.
+- **Closed the void at the foot of the left panel.** The panels stretch to match each other and the console is much the taller, so the diagram was pinned to the top with ~250px of empty panel under it. `margin-block: auto` splits that space instead: measured after, 119px above the diagram and 119px below.
+
+### Notes
+- Spanish moves with it: "Seis sistemas. Ninguna imagen común." / "Decisiones más lentas. Mayor riesgo."
+- The term now appears exactly once per locale, verified by count in the source.
+- Desktop screenshots still could not be captured — the Browser pane returns blank frames above roughly 1000px wide — so the wide layout is confirmed by measurement. The narrow layout was checked by eye.
+
 ## [v2.343] – 2026-08-11 — The difference section rebuilt to the reference composition
 ### Changed
 - **Rebuilt both halves of the difference section to the reference direction — as markup, not as the image it was drawn as.**

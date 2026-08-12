@@ -330,9 +330,14 @@ export default function BeforeAfter({ es }: { es: boolean }) {
             <Scatter es={es} />
             <div className="ba-verdict ba-verdict--bad">
               <span className="ba-verdict-ic" aria-hidden="true"><Ic n="x" size={17} /></span>
+              {/* Deliberately not a restatement of the panel heading above it.
+                  It mirrors the unified side's verdict clause for clause —
+                  "no single picture" against "one picture", "slower decisions,
+                  higher risk" against "better decisions, better outcomes" — so
+                  the two cards read as the same sentence answered twice. */}
               <span>
-                <b>{es ? 'Inteligencia fragmentada.' : 'Fragmented Intelligence.'}</b>
-                <small>{es ? 'Sistemas desconectados. Demora. Riesgo.' : 'Disconnected systems. Delay. Risk.'}</small>
+                <b>{es ? 'Seis sistemas. Ninguna imagen común.' : 'Six systems. No single picture.'}</b>
+                <small>{es ? 'Decisiones más lentas. Mayor riesgo.' : 'Slower decisions. Higher risk.'}</small>
               </span>
             </div>
           </article>

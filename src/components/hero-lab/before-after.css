@@ -122,7 +122,12 @@
 }
 
 /* ── left: the scatter ────────────────────────────────────────────────────── */
-.ba-scatter { display: block; width: 100%; max-width: 520px; height: auto; margin-bottom: auto; }
+/* `margin-block: auto`, not `margin-bottom: auto`. The panels stretch to match
+   each other, and the console is the taller of the two, so the leftover space
+   in this panel is substantial — pinned to the top it left ~250px of void above
+   the verdict card. Auto on both sides splits it, and the diagram sits in the
+   middle of its own panel. */
+.ba-scatter { display: block; width: 100%; max-width: 520px; height: auto; margin-block: auto; }
 
 .ba-chip rect { fill: #fff; stroke: #e6eaf0; stroke-width: 1.2; }
 .ba-chip-label {
