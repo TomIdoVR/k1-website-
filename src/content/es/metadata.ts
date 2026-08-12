@@ -6,7 +6,7 @@ export const metadata = {
   },
   kDispatch: {
     title: "Software CAD de Despacho 911, Bomberos y EMS | K-Dispatch",
-    description: "K-Dispatch es software de despacho asistido por computadora (CAD) con IA que reduce tiempos de respuesta 911: recomendación de unidades, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
+    description: "K-Dispatch es software de despacho asistido por computadora (CAD) con IA que reduce tiempos de respuesta 911: recomendación de unidades, integración NG911 y video en tiempo real.",
     canonical: "https://kabatone.com/es/k-dispatch",
   },
   kVideo: {
@@ -266,7 +266,7 @@ export const metadata = {
   },
   genetecAlternatives: {
     title: "Mejores Alternativas a Genetec para Seguridad Pública 2026 | KabatOne",
-    description: "Las mejores alternativas a Genetec Security Center para seguridad pública: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian y la mejor plataforma unificada.",
+    description: "Las mejores alternativas a Genetec Security Center para seguridad pública: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian.",
     canonical: "https://kabatone.com/es/resources/genetec-alternatives",
     og: {
       title: "Mejores Alternativas a Genetec para Seguridad Pública (2026)",
@@ -276,7 +276,7 @@ export const metadata = {
   },
   bestVmsSoftware: {
     title: "Mejor Software VMS: Cómo Elegir tu Plataforma de Video | KabatOne",
-    description: "Cómo elegir el mejor software VMS: compara tipos de plataforma de gestión de video, criterios clave (cámaras de cualquier marca, analítica IA, integración con despacho), costos y el mejor VMS para seguridad pública.",
+    description: "Cómo elegir el mejor software VMS: compara tipos de plataforma de gestión de video, criterios clave (cámaras de cualquier marca, analítica IA, integración con despacho).",
     canonical: "https://kabatone.com/es/resources/best-vms-software",
     og: {
       title: "Mejor Software VMS: Cómo Elegir una Plataforma de Gestión de Video",
@@ -286,7 +286,7 @@ export const metadata = {
   },
   milestoneAlternatives: {
     title: "Mejores Alternativas a Milestone XProtect 2026 | KabatOne",
-    description: "Las mejores alternativas a Milestone XProtect para seguridad pública: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y la mejor plataforma unificada.",
+    description: "Las mejores alternativas a Milestone XProtect para seguridad pública: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección.",
     canonical: "https://kabatone.com/es/resources/milestone-alternatives",
     og: {
       title: "Mejores Alternativas a Milestone XProtect para Seguridad Pública (2026)",
@@ -296,7 +296,7 @@ export const metadata = {
   },
   bestAiVideoAnalytics: {
     title: "Mejor Software de Analítica de Video con IA 2026 | KabatOne",
-    description: "El mejor software de analítica de video con IA para seguridad pública: KabatOne, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — precisión, falsos positivos, compatibilidad de cámaras y cuándo la analítica debe convertirse en despacho.",
+    description: "El mejor software de analítica de video con IA para seguridad pública: KabatOne, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — precisión, falsos positivos, compatibilidad de cámaras.",
     canonical: "https://kabatone.com/es/resources/best-ai-video-analytics-software",
     og: {
       title: "Mejor Software de Analítica de Video con IA para Seguridad Pública (2026)",
@@ -305,8 +305,8 @@ export const metadata = {
     },
   },
   bestNg911Software: {
-    title: "Mejor Software NG911 2026 para Centros de Llamadas de Emergencia | KabatOne",
-    description: "El mejor software NG911 para seguridad pública: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — i3/ESInet, recepción multimedia, precisión de ubicación y cuándo la llamada debe convertirse en despacho.",
+    title: "Mejor Software NG911 2026 para Centros de Emergencia | KabatOne",
+    description: "El mejor software NG911 para seguridad pública: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — i3/ESInet, recepción multimedia, precisión de ubicación.",
     canonical: "https://kabatone.com/es/resources/best-ng911-software",
     og: {
       title: "Mejor Software NG911 para Centros de Llamadas de Emergencia (2026)",
@@ -315,8 +315,8 @@ export const metadata = {
     },
   },
   rtccSoftware: {
-    title: "Mejor Software RTCC 2026: Proveedores de Centro de Crimen Comparados | KabatOne",
-    description: "Compara proveedores de software RTCC (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): qué es un software de centro de crimen en tiempo real, criterios de selección, costos y la mejor plataforma unificada para seguridad pública.",
+    title: "Mejor Software RTCC 2026: Proveedores Comparados | KabatOne",
+    description: "Compara proveedores de software RTCC (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): qué es un software de centro de crimen en tiempo real, criterios de selección.",
     canonical: "https://kabatone.com/es/resources/rtcc-software",
     og: {
       title: "Mejor Software RTCC: Plataformas de Centro de Crimen en Tiempo Real Comparadas",
@@ -515,7 +515,7 @@ export const metadata = {
     },
   },
   publicSafetySoftwareSmallCities: {
-    title: "Seguridad Pública para Ciudades Pequeñas — Capacidad C5 Accesible | KabatOne",
+    title: "Seguridad Pública para Ciudades Pequeñas: Capacidad C5 | KabatOne",
     description: "Seguridad pública al alcance de presupuestos pequeños: video, despacho y GIS con capacidad nivel C5 — sin precios empresariales. Cómo lo implementan los municipios pequeños.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-small-cities",
     og: {
@@ -545,7 +545,7 @@ export const metadata = {
     canonical: "https://kabatone.com/es/vs/palantir",
   },
   publicSafetySoftwareCanada: {
-    title: "Software de Seguridad Pública para Canadá: 911, NG911 y PSAP | KabatOne",
+    title: "Software de Seguridad Pública para Canadá: 911, NG911, PSAP | KabatOne",
     description: "Plataforma unificada para PSAPs, policía municipal y agencias de emergencias en Canadá — despacho CAD con soporte NG911/CRTC, video analytics e interfaz bilingüe EN/FR.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-canada",
   },
@@ -852,8 +852,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-tunisia",
   },
   publicSafetySoftwareMexicoNational: {
-    title: "Software de Seguridad Pública para México: SSPC/Guardia Nacional, SINAPROC/CENAPRED, Sistema 911/PLATAFORMA MÉXICO y Digital México 2025 | KabatOne",
-    description: "Plataforma unificada para la SSPC y Guardia Nacional de México — despacho CAD integrado con los 31 estados y CDMX a través del Sistema 911, centros C5/C4, SINAPROC multi-riesgo, SEMAR/SEDENA coordinación, LFPDPPP/LGPDPPSO/INAI y adquisición LAASSP/CompraNet.",
+    title: "Software de Seguridad Pública para México: SSPC, C5/C4 | KabatOne",
+    description: "Plataforma unificada para la SSPC y Guardia Nacional de México — despacho CAD integrado con los 31 estados, CDMX a través del Sistema 911, centros C5/C4, SINAPROC multi-riesgo.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-mexico",
   },
   publicSafetySoftwareEthiopia: {
@@ -1137,48 +1137,48 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-sao-tome-and-principe",
   },
   videoManagementPublicSafetyGuide: {
-    title: "Gestion de Video para Seguridad Publica: Guia Completa de VMS para Municipios | KabatOne",
-    description: "Plataforma VMS unificada para seguridad publica — integra miles de camaras de cualquier fabricante con despacho CAD, GIS y analitica AI en una sola interfaz de centro de mando. Desplegado en mas de 40 ciudades.",
+    title: "Gestion de Video para Seguridad Publica: Guia VMS | KabatOne",
+    description: "Plataforma VMS unificada para seguridad publica — integra miles de camaras de cualquier fabricante con despacho CAD, GIS y analitica AI en una sola interfaz de centro de mando.",
     canonical: "https://kabatone.com/es/resources/video-management-public-safety-guide",
   },
   publicSafetySoftwareGuatemala: {
-    title: "Software de Seguridad Publica para Guatemala | PNC/Ejercito, CCS Guatemala City, CONRED Volcanes y GUATECOMPRAS – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~32K agentes, Ejercito de Guatemala y municipios — integracion CCS centro de mando, respuesta a desastres CONRED, seguridad portuaria Puerto Quetzal/Santo Tomas de Castilla y contratacion via GUATECOMPRAS.",
+    title: "Software de Seguridad Publica para Guatemala: PNC/Ejercito – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~32K agentes, Ejercito de Guatemala y municipios — integracion CCS centro de mando, respuesta a desastres CONRED.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-guatemala",
   },
   publicSafetySoftwareHonduras: {
-    title: "Software de Seguridad Publica para Honduras | PNH/PMOP/FUSINA, SNE 911, Puerto Cortes y Decreto 148.5 – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNH ~15K agentes, PMOP, FUSINA y municipios hondurenos — integracion SNE 911, respuesta a desastres COPECO, seguridad portuaria Puerto Cortes y contratacion conforme al Decreto 148.5.",
+    title: "Software de Seguridad Publica para Honduras: HNP/PMOP – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNH ~15K agentes, PMOP, FUSINA y municipios hondurenos — integracion SNE 911, respuesta a desastres COPECO.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-honduras",
   },
   publicSafetySoftwareNicaragua: {
-    title: "Software de Seguridad Publica para Nicaragua | Policia Nacional/Ejercito, SINAPRED Volcanes, Puerto Corinto y Ley 323 – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~16K agentes, Ejercito de Nicaragua 7 regiones militares y municipios — integracion 118/115/128, respuesta SINAPRED/INETER a desastres, seguridad portuaria Puerto Corinto y contratacion conforme a la Ley 323.",
+    title: "Software de Seguridad Publica para Nicaragua: PN/Ejercito – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~16K agentes, Ejercito de Nicaragua 7 regiones militares y municipios — integracion 118/115/128.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-nicaragua",
   },
   publicSafetySoftwareElSalvador: {
-    title: "Software de Seguridad Publica para El Salvador | PNC/FAES, Estado de Excepcion, Puerto Acajutla, DGPC/SNET y LACAP – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~28K agentes, FAES ~25K efectivos y municipios salvadorenos — integracion 911/COEN, alertas volcanicas y sismicas DGPC/SNET, seguridad Puerto Acajutla/Aeropuerto SAL y contratacion conforme a la LACAP.",
+    title: "Software de Seguridad Publica para El Salvador: PNC/FAES – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la PNC ~28K agentes, FAES ~25K efectivos y municipios salvadorenos — integracion 911/COEN, alertas volcanicas, sismicas DGPC/SNET.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-el-salvador",
   },
   publicSafetySoftwareCostaRica: {
-    title: "Software de Seguridad Publica para Costa Rica | Fuerza Publica/OIJ, Sistema 9-1-1, CNE/OVSICORI, Aeropuerto SJO y Ley 9986 – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Fuerza Publica ~13K agentes, investigadores del OIJ y municipalidades costarricenses — integracion 9-1-1/CNE, alertas volcanicas y sismicas OVSICORI/RSN, seguridad SJO/Puerto Limon y contratacion conforme a la Ley 9986 y SICOP.",
+    title: "Software de Seguridad Publica para Costa Rica: OIJ, 9-1-1 – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Fuerza Publica ~13K agentes, investigadores del OIJ y municipalidades costarricenses — integracion 9-1-1/CNE, alertas volcanicas.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-costa-rica",
   },
   publicSafetySoftwareEcuador: {
-    title: "Software de Seguridad Publica para Ecuador | Integracion ECU-911, Seguridad Puerto Guayaquil y Contratacion SERCOP – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil, LPR antinarcotico en puertos y aeropuertos, operaciones conjuntas policia-militares y contratacion conforme a SERCOP.",
+    title: "Software de Seguridad Publica para Ecuador: ECU-911 – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~47K agentes, el sistema ECU-911 y municipalidades ecuatorianas — coordinacion metropolitana Quito/Guayaquil.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-ecuador",
   },
   publicSafetySoftwarePanama: {
-    title: "Software de Seguridad Publica para Panama | Seguridad Zona del Canal, Frontera SENAFRONT y Contratacion PanamaCompra – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien, Aeropuerto Tocumen y contratacion conforme a PanamaCompra.",
+    title: "Software de Seguridad Publica para Panama: Canal, SENAFRONT – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~26K agentes, seguridad ACP de la zona del Canal, operaciones fronterizas SENAFRONT en el Darien.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-panama",
   },
   publicSafetySoftwareGuyana: {
-    title: "Software de Seguridad Publica para Guyana | GPF, Seguridad Petrolera y Operaciones Frontera Venezuela – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Guyana GPF ~4,500 oficiales, GDF seguridad fronteriza y maritima, proteccion infraestructura petrolera ExxonMobil Stabroek, Safe City Georgetown y coordinacion SOUTHCOM.",
+    title: "Software de Seguridad Publica para Guyana: GPF, Petroleo – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Guyana GPF ~4,500 oficiales, GDF seguridad fronteriza y maritima, proteccion infraestructura petrolera ExxonMobil Stabroek.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-guyana",
   },
   publicSafetySoftwareBahamas: {
@@ -1192,13 +1192,13 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-barbados",
   },
   publicSafetySoftwarePuertoRico: {
-    title: "Software de Seguridad Publica para Puerto Rico | NPPR, PSAPs 9-1-1 y Resiliencia ante Huracanes – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para los 78 municipios de Puerto Rico, NPPR ~12K oficiales, 10 PSAPs, integracion FEMA, operaciones resilientes ante huracanes y cumplimiento CJIS/NIST.",
+    title: "Software de Seguridad Publica para Puerto Rico: NPPR – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para los 78 municipios de Puerto Rico, NPPR ~12K oficiales, 10 PSAPs, integracion FEMA y operaciones resilientes ante huracanes.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-puerto-rico",
   },
   publicSafetySoftwareTrinidadAndTobago: {
-    title: "Software de Seguridad Publica para Trinidad y Tobago | TTPS, Seguridad Energetica y Operaciones Maritimas – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para el Trinidad and Tobago Police Service ~7K oficiales, TTDF Coast Guard, seguridad energetica Atlantic LNG, Puerto de Port of Spain y coordinacion entre islas.",
+    title: "Software de Seguridad Publica para Trinidad y Tobago: TTPS – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para el Trinidad and Tobago Police Service ~7K oficiales, TTDF Coast Guard, seguridad energetica Atlantic LNG.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-trinidad-and-tobago",
   },
   publicSafetySoftwareJamaica: {
@@ -1207,33 +1207,33 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-jamaica",
   },
   publicSafetySoftwareDominicanRepublic: {
-    title: "Software de Seguridad Publica para la Republica Dominicana | Sistema 911, Frontera CESFRONT y Seguridad Turistica – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~37K agentes, Sistema 911, operaciones fronterizas CESFRONT con Haiti, seguridad turistica CESTUR y contratacion conforme a Ley 340-06.",
+    title: "Software de Seguridad Publica para la Republica Dominicana – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para la Policia Nacional ~37K agentes, Sistema 911, operaciones fronterizas CESFRONT con Haiti y seguridad turistica CESTUR.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-dominican-republic",
   },
   publicSafetySoftwareVenezuela: {
-    title: "Software de Seguridad Publica para Venezuela | PNB, CICPC, FANB e Infraestructura PDVSA – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Venezuela — PNB ~100K funcionarios, CICPC, coordinacion GNB/FANB, proteccion de infraestructura PDVSA en el Lago de Maracaibo y el Puerto Cabello.",
+    title: "Software de Seguridad Publica para Venezuela: PNB, CICPC – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Venezuela — PNB ~100K funcionarios, CICPC, coordinacion GNB/FANB, proteccion de infraestructura PDVSA en el Lago de Maracaibo.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-venezuela",
   },
   publicSafetySoftwareBolivia: {
-    title: "Software de Seguridad Publica para Bolivia | Policia Boliviana, FELCN y Litio de Uyuni – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Bolivia — Policia Boliviana ~40K efectivos, FELCN control de narcotrafico, FAN, infraestructura YLB en el Salar de Uyuni y contratacion NB-SABS/SICOES.",
+    title: "Software de Seguridad Publica para Bolivia: FELCN, YLB – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Bolivia — Policia Boliviana ~40K efectivos, FELCN control de narcotrafico, FAN, infraestructura YLB en el Salar de Uyuni.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-bolivia",
   },
   publicSafetySoftwareUruguay: {
-    title: "Software de Seguridad Publica para Uruguay | Policia Nacional, Smart City Montevideo y AGESIC – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Uruguay — Policia Nacional ~17K efectivos, sistema 911, smart city Montevideo, Puerto de Montevideo, Aeropuerto Carrasco y contratacion TOCAF/AGESIC.",
+    title: "Software de Seguridad Publica para Uruguay: 911, Montevideo – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Uruguay — Policia Nacional ~17K efectivos, sistema 911, smart city Montevideo, Puerto de Montevideo, Aeropuerto Carrasco.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-uruguay",
   },
   publicSafetySoftwareParaguay: {
-    title: "Software de Seguridad Publica para Paraguay | Policia Nacional, SENAD y Ciudad del Este – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Paraguay — Policia Nacional ~25K efectivos, SENAD control narcotrafico, seguridad Ciudad del Este, control fronterizo fluvial y contratacion Ley 2051/03 DNCP.",
+    title: "Software de Seguridad Publica para Paraguay: SENAD – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Paraguay — Policia Nacional ~25K efectivos, SENAD control narcotrafico, seguridad Ciudad del Este, control fronterizo fluvial.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-paraguay",
   },
   publicSafetySoftwareSuriname: {
-    title: "Software de Seguridad Publica para Surinam | KPS, Narcotrafico Puerto Paramaribo y Fronteras Fluviales – KabatOne",
-    description: "KabatOne ofrece plataforma unificada de seguridad publica para Surinam — KPS ~2,500 efectivos, control narcotrafico Puerto de Paramaribo, aeropuerto Johan Adolf Pengel, infraestructura Staatsolie y control fronterizo fluvial con Brasil y Guyana.",
+    title: "Software de Seguridad Publica para Surinam: KPS – KabatOne",
+    description: "KabatOne ofrece plataforma unificada de seguridad publica para Surinam — KPS ~2,500 efectivos, control narcotrafico Puerto de Paramaribo, aeropuerto Johan Adolf Pengel e infraestructura Staatsolie.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-suriname",
   },
   queEsUnC5: {

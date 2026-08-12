@@ -1,3 +1,16 @@
+## [v2.317] – 2026-08-12 — Trimmed the 86 over-length titles and descriptions v2.316 deferred
+
+**Fixed**
+- **86 over-length metadata strings** (42 titles over 70 chars, 44 descriptions over 200) across 84 pages in `src/content/en/metadata.ts` and `src/content/es/metadata.ts`. v2.316 deliberately left these for a scoped batch; this is that batch. Worst case was `publicSafetySoftwareMexicoNational` at a 138-char title and 262-char description.
+- **The trim rule is deliberately conservative**, because `SEO/ctr-recovery-plan-2026-07-27.md` rules out blanket title/meta rewrites: the leading keyword phrase is preserved verbatim and the brand suffix is kept, and only the trailing agency/port/procurement enumeration is cut, at a clause boundary. Nothing was reworded or reordered, so no page's targeting changed — this only removes text SERPs already truncate. Canonicals were not touched (verified: 0 canonical lines in the diff).
+- 21 entries were hand-authored rather than rule-trimmed, where the greedy rule left more than ~12 characters of budget unused and dropped a keyword worth keeping — e.g. `/resources/rtcc-software` would have gone to a 34-char "Best RTCC Software 2026", losing "Real-Time Crime Center" entirely.
+- Fixed a trim bug that split thousands separators, turning `KPS ~2,500 efectivos` into `KPS ~2, 500 efectivos` on the Suriname ES description.
+
+**Notes**
+- **The audit this batch came from covers about half the site, not all of it.** It is described as the first full-coverage run at 232 routes, but the repo has 239 routes × 2 locales ≈ 478 URLs, and it audited only 52 of the 282 country-guide URLs — Australia, India, Germany, France, Italy, Spain, Netherlands and Saudi Arabia were never checked despite being live and in `sitemap.ts`. All 232 URLs were fetched from `staging.kabatone.com`, whose deployed sitemap is behind the repo. Same failure class as the stale-branch false CLEAN in KAB-2480.
+- Consequently **the real over-length population is ~418 strings, not 86.** A full scan of both metadata files finds 203 over-cap in EN and 215 in ES. The 332 not covered here sit on pages the audit never fetched; tracked separately rather than widened into this batch, since they are live pages and the CTR plan warns against untargeted rewrites.
+- Typecheck: 0 errors outside pre-existing untracked `hero-lab*` files from the `hero-redesign` worktree.
+
 ## [v2.316] – 2026-08-10 — The Spanish demo pages told Google not to index them
 
 **Fixed**
