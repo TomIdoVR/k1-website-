@@ -1,0 +1,5 @@
+2026-07-22 | KAB-1823 daily audit CLEAN | pages=71 critical=0 warnings=0 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
+2026-07-31 | KAB-2294 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
+2026-08-03 | KAB-2382 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
+2026-08-04 | KAB-2432 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
+2026-08-12 | KAB-2472 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 SEO fixes, silent-exit per step 6; committed stranded seo-audit.mjs retry fix + refreshed baseline
