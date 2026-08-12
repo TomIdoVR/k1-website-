@@ -1,3 +1,18 @@
+## [v2.343] – 2026-08-11 — The difference section rebuilt to the reference composition
+### Changed
+- **Rebuilt both halves of the difference section to the reference direction — as markup, not as the image it was drawn as.**
+  - **Left:** the six sources now sit in two columns tethered to a central alert, and each dashed link carries a **red break marker**. The previous version ran the lines to a question mark and left "these do not connect" implicit; the crosses state it. The operator below gains the tangled knot.
+  - **Right:** a real console instead of a six-row list — navy icon rail, incident header with live badge, event stream, a 5/5 checklist, a map with the units' route drawn on it, a live camera tile, active units with status pills, and a six-cell stat strip. Below it the eight-module rail.
+- Both halves still render from the same `SOURCES` array: same six sources, same six timestamps, only the arrangement changes.
+
+### Notes
+- **Why it is markup and not the render.** Almost everything in that frame is text. Baked into a raster it would cost four things this version keeps: the Spanish page renders in Spanish, the copy is selectable and indexable, screen readers get more than an alt string, and nothing is upscaled on a 2x display. Measured from the reference: its smallest labels are ~11px in a 1622px-wide file, which is ~8px landing in a 1240px container before any device pixel ratio. At 375px the whole frame would render 375x224 and every label would be 2-3px — and no crop rescues that, because the argument *is* the two halves side by side.
+- The one genuinely pictorial element — the live camera still — stays a raster (`cam-still.webp`). Photographs as images, interface as markup.
+- **Panel split is 0.58:1, not 0.66:1.** At 0.66 the event stream had 60px for its labels and clipped "GIS Location", "Radio Comms" and "Report Created". The reference's own panels run about 0.63:1 for the same reason, and the scatter loses nothing by being narrower.
+- The unit markers are positioned on the route's own vertices in the map viewBox — (306,96), (150,168), (64,214) — so they sit on the line rather than near it. The LPR callout moved to the bottom corner because the top corner sat directly on the lead unit's marker.
+- Verified at 1600 and 375: no truncated labels anywhere, zero horizontal overflow, all parts painting with the intended tokens. Desktop screenshots could not be captured — the Browser pane returns blank frames at large viewports — so the wide layout is confirmed by measurement rather than by eye.
+- Still `/hero-lab-story` only. `/hero-lab` remains untouched.
+
 ## [v2.342] – 2026-08-11 — Hero art: nothing cropped, and sharper
 ### Fixed
 - **The art is no longer cut.** `cover` had to discard whatever did not fit a band far wider than the file's 1.5:1, and at wide-but-short viewports that came off the top — taking the incident card with it. The art is now sized by height with width following, so the whole frame is always present.

@@ -1,9 +1,9 @@
 /* "Every system. One incident. Complete clarity."
 
-   Left is a diagram, right is a UI mockup, and they are styled as two different
-   kinds of object on purpose: the disconnected side is flat, grey and drifting;
-   the unified side is a real product surface with elevation and colour. The
-   contrast is meant to be felt before either side is read.
+   Two panels styled as two different kinds of object on purpose: the fragmented
+   side is flat, pale and inert; the unified side is a real product surface with
+   elevation, colour and a working chrome. The contrast should be felt before
+   either side is read.
 
    Tokens follow the ecosystem and solutions sections so this reads as part of
    the same system rather than an inserted graphic. */
@@ -14,7 +14,10 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.ba-wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(20px, 5vw, 64px); }
+/* Wider than the other sections. The console carries four columns of real
+   content; at the shared 1240px the event stream and units list start
+   truncating their labels. */
+.ba-wrap { max-width: 1420px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
 .ba-head { max-width: 620px; margin-bottom: clamp(30px, 3.6vw, 46px); }
 
 .ba-eyebrow {
@@ -42,60 +45,75 @@
 
 .ba-lede { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.55; color: #4b5768; margin: 0; }
 
-/* A hairline divider between the two states, with the arrow sitting on it. The
-   rule is drawn on the middle track so it spans the full height of whichever
-   side is taller, and disappears when the layout stacks. */
+/* The console needs substantially more width than the scatter. At 0.66:1 the
+   event stream had 60px for its labels and clipped "GIS Location", "Radio
+   Comms" and "Report Created"; the reference's own panels run about 0.63:1 for
+   the same reason. The scatter loses nothing by being narrower — it is a
+   diagram with six short labels. */
 .ba-compare {
-  position: relative;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: clamp(8px, 1.6vw, 26px);
-  align-items: start;
-}
-.ba-compare::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 50%;
-  width: 1px;
-  background: #e4e9f1;
+  grid-template-columns: minmax(0, 0.58fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(10px, 1.4vw, 20px);
 }
 
-.ba-side { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.ba-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: clamp(20px, 2vw, 30px) clamp(16px, 1.8vw, 26px) clamp(18px, 2vw, 26px);
+  border-radius: 22px;
+  border: 1px solid #e8ecf3;
+  background: linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 100%);
+}
 
-.ba-pill {
+/* Elevation is the tell: the unified side is a surface, the fragmented side is
+   a flat diagram of one. */
+.ba-panel--good {
+  border-color: #dfe7f5;
+  background: linear-gradient(180deg, #fdfdff 0%, #f2f6fd 100%);
+  box-shadow: 0 30px 70px -46px rgba(17, 45, 90, 0.5);
+}
+
+.ba-badge {
   display: inline-block;
-  padding: 7px 16px;
+  padding: 6px 15px;
   border-radius: 999px;
-  background: #eef1f5;
-  color: #667185;
   font-family: 'DM Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.16em;
+  color: #fff;
 }
-.ba-pill-brand { background: #0757f7; color: #fff; }
+.ba-badge--red { background: #e8342f; }
+.ba-badge--blue { background: #0757f7; }
 
-.ba-sub {
-  margin: 16px 0 22px;
+.ba-panel-title {
+  margin: 15px 0 8px;
+  font-size: clamp(21px, 2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f1724;
   text-align: center;
-  font-size: clamp(14.5px, 1.25vw, 16.5px);
-  font-weight: 600;
-  line-height: 1.45;
-  color: #1c2939;
 }
-.ba-sub b { color: #0757f7; font-weight: 600; }
 
-/* Rides on the divider, so it needs to sit above the rule rather than beside it. */
+.ba-panel-sub {
+  max-width: 42ch;
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  text-align: center;
+  font-size: clamp(13.5px, 1.1vw, 15px);
+  line-height: 1.5;
+  color: #55637a;
+}
+.ba-panel-sub b { color: #0757f7; font-weight: 600; }
+
 .ba-arrow {
-  position: relative;
-  z-index: 1;
+  align-self: center;
   display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
-  margin-top: 168px;
   border-radius: 50%;
   border: 1px solid #dfe5ee;
   background: #fff;
@@ -103,109 +121,356 @@
   box-shadow: 0 6px 16px -10px rgba(20, 45, 90, 0.4);
 }
 
-/* ── left: the scatter ── */
-.ba-svg { display: block; width: 100%; max-width: 430px; height: auto; }
+/* ── left: the scatter ────────────────────────────────────────────────────── */
+.ba-scatter { display: block; width: 100%; max-width: 520px; height: auto; margin-bottom: auto; }
 
 .ba-chip rect { fill: #fff; stroke: #e6eaf0; stroke-width: 1.2; }
 .ba-chip-label {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; fill: #1c2939;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.03em; fill: #1c2939;
 }
-.ba-chip-time {
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; fill: #98a2b3;
-}
+.ba-chip-time { font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; }
 
-.ba-link { fill: none; stroke: #cbd3de; stroke-width: 1.5; stroke-dasharray: 5 5; }
+.ba-link { fill: none; stroke: #b9c3d2; stroke-width: 1.5; stroke-dasharray: 5 5; }
 
-.ba-hub rect { fill: #f2f4f7; stroke: #e0e5ec; stroke-width: 1.2; }
-.ba-hub text {
-  font-family: 'Space Grotesk', sans-serif; font-size: 23px; font-weight: 700; fill: #98a2b3;
-}
+/* The break marker. This is the idea the previous version left implicit: the
+   lines do not merely fail to arrive anywhere, they are actively severed. */
+.ba-break circle { fill: #fff; stroke: #f3d5d4; stroke-width: 1; }
+.ba-break path { stroke: #e8342f; stroke-width: 2; stroke-linecap: round; fill: none; }
 
-/* The operator, deliberately faceless and grey — they are the one holding the
-   mess together, and they are not the hero of this half. */
-.ba-figure { fill: #dfe3e9; }
-.ba-tangle { fill: none; stroke: #cbd3de; stroke-width: 1.6; }
+.ba-hub circle { fill: #fff; stroke: #f0d2d1; stroke-width: 1.4; }
+.ba-hub-mark path { fill: none; stroke: #e8342f; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transform: scale(1.4); }
 
-/* ── right: the record ── */
-.ba-record {
+/* Deliberately faceless and grey — the operator is the one holding the mess
+   together, and they are not the hero of this half. */
+.ba-figure { fill: #d2d8e2; }
+.ba-tangle { fill: none; stroke: #aab4c4; stroke-width: 2; }
+
+/* ── verdict cards ────────────────────────────────────────────────────────── */
+.ba-verdict {
+  display: flex;
+  align-items: center;
+  gap: 13px;
   width: 100%;
-  max-width: 430px;
-  border-radius: 16px;
-  border: 1px solid #e4e9f1;
+  margin-top: clamp(16px, 2vw, 24px);
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #e8ecf3;
   background: #fff;
-  box-shadow: 0 26px 60px -34px rgba(17, 45, 90, 0.42);
+}
+.ba-verdict span { display: block; }
+.ba-verdict b { display: block; font-size: 15px; font-weight: 700; color: #0f1724; }
+.ba-verdict small { display: block; margin-top: 2px; font-size: 13px; color: #55637a; }
+
+.ba-verdict-ic {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.ba-verdict--bad .ba-verdict-ic { background: #fdeceb; color: #e8342f; }
+.ba-verdict--good .ba-verdict-ic { background: #e8f0ff; color: #0757f7; }
+.ba-verdict--good { border-color: #dbe6fa; }
+
+/* ── the module rail ──────────────────────────────────────────────────────── */
+.ba-modules {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 12px 8px;
+  list-style: none;
+  border-radius: 14px;
+  border: 1px solid #e8ecf3;
+  background: #fff;
+}
+.ba-modules li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: #55637a;
+  text-align: center;
+}
+
+/* ── the console ──────────────────────────────────────────────────────────── */
+.uc {
+  display: flex;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #dde5f1;
+  background: #fff;
+  box-shadow: 0 22px 50px -34px rgba(17, 45, 90, 0.45);
   overflow: hidden;
 }
 
-.ba-record-head {
+.uc-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex: none;
+  width: 46px;
+  padding: 12px 0 14px;
+  background: #0d1c42;
+  color: #7f92bd;
+}
+.uc-rail-mark {
+  display: grid; place-items: center;
+  width: 26px; height: 26px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  background: #0757f7;
+  color: #fff;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700; font-size: 17px; line-height: 1;
+}
+.uc-rail-ic { display: grid; place-items: center; }
+.uc-rail-ic--last { margin-top: auto; }
+
+.uc-main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.uc-top {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 16px;
+  gap: 9px;
+  padding: 9px 12px;
   border-bottom: 1px solid #eef1f6;
 }
-.ba-record-mark {
-  display: grid; place-items: center;
-  width: 24px; height: 24px; border-radius: 7px;
-  background: #0757f7; color: #fff;
+.uc-id {
   font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
-  font-weight: 700; font-size: 15px; line-height: 1;
+  font-weight: 700; font-size: 17px; letter-spacing: 0.02em; color: #0f1724;
 }
-.ba-record-id {
-  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
-  font-weight: 700; font-size: 18px; letter-spacing: 0.02em; color: #0f1724;
+.uc-live, .uc-cam-live {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: 'DM Mono', ui-monospace, monospace; font-size: 9.5px;
+  letter-spacing: 0.11em; color: #16a34a;
 }
-.ba-record-live {
-  display: inline-flex; align-items: center; gap: 6px;
+.uc-live i, .uc-cam-live i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+.uc-search {
+  display: flex; align-items: center; gap: 7px;
   margin-left: auto;
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 10.5px;
-  letter-spacing: 0.12em; color: #16a34a;
+  padding: 5px 11px;
+  border-radius: 7px;
+  border: 1px solid #e8ecf3;
+  background: #f7f9fc;
+  font-size: 10.5px;
+  color: #97a2b6;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.ba-record-live i { width: 6px; height: 6px; border-radius: 50%; background: #16a34a; }
-
-.ba-record-body { display: grid; grid-template-columns: 0.82fr 1fr; gap: 12px; padding: 12px; }
-.ba-map { border-radius: 10px; overflow: hidden; background: #eef1f5; }
-.ba-map svg { display: block; width: 100%; height: 100%; min-height: 150px; }
-
-.ba-sources { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-.ba-sources li {
-  display: grid;
-  grid-template-columns: 22px 1fr auto 18px;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 2px;
-  border-bottom: 1px solid #f1f4f8;
-}
-.ba-sources li:last-child { border-bottom: 0; }
-.ba-src-ic { display: grid; place-items: center; }
-.ba-src-label { font-size: 13.5px; font-weight: 500; color: #1c2939; }
-.ba-src-time {
-  font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; color: #7d8798;
-}
-.ba-src-check { color: #16a34a; display: grid; place-items: center; }
-
-/* ── outcome ── */
-.ba-outcome { display: flex; flex-direction: column; align-items: center; }
-.ba-outcome-line { width: 1px; height: 26px; background: #d7dfea; }
-.ba-outcome-ic {
+.uc-bell { position: relative; color: #6a788f; }
+.uc-bell b {
+  position: absolute; top: -4px; right: -5px;
   display: grid; place-items: center;
-  width: 46px; height: 46px; border-radius: 50%;
-  background: #e8f0ff; color: #0757f7;
+  min-width: 13px; height: 13px; padding: 0 3px;
+  border-radius: 999px;
+  background: #ef4444; color: #fff;
+  font-size: 8.5px; font-weight: 700;
 }
-.ba-outcome-text {
-  margin: 12px 0 0;
-  text-align: center;
-  font-size: clamp(14px, 1.2vw, 16px);
-  font-weight: 600;
-  line-height: 1.45;
+.uc-avatar {
+  width: 21px; height: 21px; border-radius: 50%;
+  background: linear-gradient(140deg, #7f93bb, #4f6591);
+}
+
+.uc-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 9px;
+  padding: 9px;
+}
+.uc-col { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+
+.uc-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid #eaeef5;
+  background: #fbfcfe;
+}
+.uc-card-title {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  margin: 0 0 7px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 9.5px; font-weight: 500; letter-spacing: 0.13em; color: #6a788f;
+}
+.uc-count { color: #97a2b6; letter-spacing: 0.08em; }
+
+.uc-stream, .uc-check, .uc-units { list-style: none; margin: 0; padding: 0; }
+.uc-stream li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto 14px;
+  align-items: center;
+  gap: 7px;
+  padding: 4.5px 0;
+  font-size: 11.5px;
   color: #1c2939;
 }
-.ba-outcome-text b { color: #0757f7; font-weight: 600; }
+.uc-ic { display: grid; place-items: center; }
+.uc-stream-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uc-time { font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; color: #8a95a9; }
+.uc-ok { display: grid; place-items: center; color: #16a34a; }
 
-@media (max-width: 900px) {
-  .ba-compare { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  .ba-compare::before { display: none; }
-  /* The arrow turns to point down once the sides stack. */
-  .ba-arrow { margin: 0 auto; transform: rotate(90deg); }
+.uc-check li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+  padding: 4px 0;
+  font-size: 11px;
+  color: #3d4a60;
+}
+
+.uc-units li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, auto) 1fr 12px;
+  align-items: center;
+  gap: 7px;
+  padding: 5.5px 0;
+  border-bottom: 1px solid #f1f4f8;
+}
+.uc-units li:last-child { border-bottom: 0; }
+.uc-unit-id { font-size: 11.5px; font-weight: 600; color: #1c2939; white-space: nowrap; }
+.uc-chev { color: #b6c0d0; display: grid; place-items: center; }
+
+.uc-pill {
+  justify-self: end;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 9.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.uc-pill--blue { background: #e6efff; color: #1d4ed8; }
+.uc-pill--green { background: #e6f7ec; color: #15803d; }
+.uc-pill--amber { background: #fdf0e3; color: #b45309; }
+
+/* ── map ──────────────────────────────────────────────────────────────────── */
+.uc-map {
+  position: relative;
+  min-width: 0;
+  min-height: 190px;
+  border-radius: 10px;
+  border: 1px solid #eaeef5;
+  overflow: hidden;
+}
+.uc-map svg { display: block; width: 100%; height: 100%; }
+
+/* Unit markers are HTML rather than SVG so they stay crisp and keep their own
+   colour tokens; percentages track the SVG's slice so they sit on the route. */
+.uc-pin {
+  position: absolute;
+  display: grid; place-items: center;
+  width: 22px; height: 22px;
+  margin: -11px 0 0 -11px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 0 3px 8px -3px rgba(15, 35, 75, 0.5);
+}
+.uc-pin--blue { background: #2563eb; }
+.uc-pin--green { background: #16a34a; }
+
+/* Bottom-right, not top-right: the route ends at 76.5%/32%, so a callout in the
+   top corner sat directly on top of the lead unit's marker. */
+.uc-callout {
+  position: absolute;
+  bottom: 8px; right: 8px;
+  display: flex; flex-direction: column; gap: 1px;
+  max-width: 62%;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #e6ebf3;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 20px -12px rgba(15, 35, 75, 0.5);
+  font-size: 10.5px;
+  color: #55637a;
+}
+.uc-callout-top {
+  display: flex; align-items: center; gap: 5px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 9px; letter-spacing: 0.1em; color: #6a788f;
+}
+.uc-callout b { font-size: 12px; color: #0f1724; }
+
+/* ── camera ───────────────────────────────────────────────────────────────── */
+.uc-card--cam { padding-bottom: 10px; }
+.uc-cam { position: relative; border-radius: 7px; overflow: hidden; aspect-ratio: 16 / 10; }
+.uc-cam img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.uc-cam-live {
+  position: absolute; top: 6px; left: 6px;
+  padding: 2px 6px; border-radius: 4px;
+  background: rgba(12, 22, 44, 0.72); color: #ff5a5a;
+}
+.uc-cam-loc {
+  position: absolute; left: 6px; bottom: 6px;
+  padding: 2px 7px; border-radius: 4px;
+  background: rgba(12, 22, 44, 0.72);
+  color: #eef2f8; font-size: 9.5px;
+}
+
+/* ── stat strip ───────────────────────────────────────────────────────────── */
+.uc-stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border-top: 1px solid #eef1f6;
+}
+.uc-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 9px 4px;
+  border-right: 1px solid #f1f4f8;
+}
+.uc-stat:last-child { border-right: 0; }
+.uc-stat-k {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 8.5px; letter-spacing: 0.09em; color: #8a95a9; text-align: center;
+}
+.uc-stat-v { font-size: 13.5px; font-weight: 700; color: #0f1724; }
+.uc-stat-v--red { color: #ef4444; }
+.uc-stat-v--green { color: #16a34a; }
+
+/* ── responsive ───────────────────────────────────────────────────────────── */
+
+/* The console loses its third column first: camera and units move under the map
+   rather than squeezing four columns into a half-width panel. */
+@media (max-width: 1240px) {
+  .uc-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .uc-map { grid-column: 1 / -1; order: -1; min-height: 200px; }
+  .ba-modules { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 4px; }
+}
+
+/* Below this the two panels cannot both hold their content side by side — the
+   scatter's cards start colliding with their own labels. */
+@media (max-width: 1040px) {
+  .ba-compare { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .ba-arrow { transform: rotate(90deg); }
+  .ba-panel { padding-inline: clamp(16px, 4vw, 30px); }
+  .ba-scatter { max-width: 560px; }
+}
+
+@media (max-width: 700px) {
+  .uc-body { grid-template-columns: minmax(0, 1fr); }
+  .uc-map { min-height: 220px; }
+  /* Six stat cells at 340px leave ~55px each, which breaks every label onto
+     three lines. Three per row instead. */
+  .uc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .uc-stat:nth-child(3) { border-right: 0; }
+  .uc-stat:nth-child(-n+3) { border-bottom: 1px solid #f1f4f8; }
+  .uc-rail { flex-direction: row; width: auto; gap: 12px; padding: 8px 10px; overflow-x: auto; }
+  .uc { flex-direction: column; }
+  .uc-rail-ic--last { margin-top: 0; margin-left: auto; }
+  .uc-search { display: none; }
+}
+
+@media (max-width: 460px) {
+  .ba-modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

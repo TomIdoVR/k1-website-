@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.343 -->
+      <div class="tl-entry changed" id="v2.343">
+        <div class="tl-meta"><span class="tl-ver">v2.343</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">The difference section rebuilt to the reference composition</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Left half:</strong> the six sources sit in two columns tethered to a central alert, and each dashed link now carries a <strong>red break marker</strong>. The previous version ran the lines to a question mark and left "these do not connect" implicit — the crosses state it</li>
+            <li><strong>Right half:</strong> a real console instead of a six-row list — navy icon rail, incident header with live badge, event stream, a 5/5 checklist, a map with the units' route drawn on it, a live camera tile, active units with status pills, a six-cell stat strip, and the eight-module rail beneath</li>
+            <li><strong>Built as markup, not as the rendered image.</strong> Almost everything in that frame is text, and baking it into a raster would cost four things this keeps: Spanish renders in Spanish, the copy is selectable and indexable, screen readers get more than an alt string, and nothing is upscaled on a 2× display</li>
+            <li><strong>The numbers behind that call:</strong> the reference's smallest labels are ~11px in a 1622px file — ~8px landing in a 1240px container, before device pixel ratio. At 375px the whole frame would render 375×224 with every label at 2–3px, and no crop rescues it because the argument <em>is</em> the two halves side by side</li>
+            <li>The one genuinely pictorial element — the live camera still — stays a raster. Photographs as images, interface as markup</li>
+            <li>Panel split is 0.58:1: at 0.66 the event stream had 60px for its labels and clipped "GIS Location", "Radio Comms" and "Report Created"</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.342 -->
       <div class="tl-entry fixed" id="v2.342">
         <div class="tl-meta"><span class="tl-ver">v2.342</span><span class="tl-date">2026-08-11</span></div>
