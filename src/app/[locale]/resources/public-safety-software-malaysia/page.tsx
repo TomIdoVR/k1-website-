@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para PDRM, JBPM y SAMM de Malasia — despacho CAD integrado para 14 contingentes y coordinación de inundaciones NADMA/DID, gestión de cámaras Safe City conforme a PDPA 2010 y cumplimiento NACSA con contratación ePerolehan/MyGPR.'
     : 'Unified platform for Malaysian PDRM, JBPM, and SAMM — integrated CAD dispatch for 14 state contingents and NADMA/DID flood coordination, Safe City camera management compliant with PDPA 2010, and NACSA cybersecurity compliance with ePerolehan/MyGPR procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-malaysia/'
-    : 'https://kabatone.com/resources/public-safety-software-malaysia/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-malaysia'
+    : 'https://kabatone.com/resources/public-safety-software-malaysia'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Malasia' : 'Malaysia', url },
   ]
 

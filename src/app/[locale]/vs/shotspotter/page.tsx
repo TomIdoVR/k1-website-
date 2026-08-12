@@ -26,9 +26,9 @@ export default async function VsShotSpotterPage({
   const ACCENT = '#10b981'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs ShotSpotter', url: es ? 'https://kabatone.com/es/vs/shotspotter/' : 'https://kabatone.com/vs/shotspotter/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs ShotSpotter', url: es ? 'https://kabatone.com/es/vs/shotspotter' : 'https://kabatone.com/vs/shotspotter' },
   ]
 
   const faqs = es ? [

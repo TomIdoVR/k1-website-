@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareMozambiquePage({
       ? 'Plataforma unificada para la Policía de la República de Mozambique (PRM) y FADM — despacho CAD integrado en 11 provincias, Maputo Safe City, INGC gestión de desastres, TotalEnergies/ENH LNG Cabo Delgado, Port of Maputo/CFM, Lei 3/2022 y adquisición UGEA/CCP.'
       : 'Unified platform for Mozambique Republic Police (PRM) and FADM — integrated CAD dispatch across 11 provinces, Maputo Safe City, INGC disaster management, TotalEnergies/ENH LNG Cabo Delgado, Port of Maputo/CFM, Law 3/2022 compliance, and UGEA/CCP procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-mozambique/'
-      : 'https://kabatone.com/resources/public-safety-software-mozambique/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-mozambique'
+      : 'https://kabatone.com/resources/public-safety-software-mozambique',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareMozambiquePage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: es ? 'Mozambique' : 'Mozambique',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-mozambique/'
-        : 'https://kabatone.com/resources/public-safety-software-mozambique/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-mozambique'
+        : 'https://kabatone.com/resources/public-safety-software-mozambique',
     },
   ])
 

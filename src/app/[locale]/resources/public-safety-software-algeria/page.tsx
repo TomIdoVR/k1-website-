@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la DGSN y DGPC de Argelia — despacho CAD integrado en 58 wilayas, Argel Safe City, seguridad de infraestructura SONATRACH (Hassi Messaoud/Hassi R\'Mel/In Amenas/Arzew), fronteras del Sahel, Ley 18-07/ANPDP/CERT-DZ y adquisición bajo el Decreto 15-247.'
     : 'Unified platform for Algeria DGSN and DGPC — integrated CAD dispatch across 58 wilayas, Algiers Safe City, SONATRACH infrastructure security (Hassi Messaoud/Hassi R\'Mel/In Amenas/Arzew), Sahel border monitoring, Law 18-07/ANPDP/CERT-DZ compliance, and Décret 15-247 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-algeria/'
-    : 'https://kabatone.com/resources/public-safety-software-algeria/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-algeria'
+    : 'https://kabatone.com/resources/public-safety-software-algeria'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Argelia' : 'Algeria', url },
   ]
 

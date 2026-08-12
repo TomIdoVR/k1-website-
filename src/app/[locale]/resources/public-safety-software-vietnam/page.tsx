@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para el MPS y la Công an de Vietnam — despacho CAD integrado para 63 Công an provinciales y coordinación de desastres VNMHA/NCHMF, gestión de cámaras conforme al Decreto 13/2023 y cumplimiento con Luật An ninh mạng con contratación muasamcong/Luật Đấu thầu.'
     : 'Unified platform for Vietnam MPS and Công an — integrated CAD dispatch for 63 provincial police departments and VNMHA/NCHMF disaster coordination, Decree 13/2023-compliant camera management, and Cybersecurity Law compliance with muasamcong/Bidding Law procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-vietnam/'
-    : 'https://kabatone.com/resources/public-safety-software-vietnam/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-vietnam'
+    : 'https://kabatone.com/resources/public-safety-software-vietnam'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Vietnam' : 'Vietnam', url },
   ]
 

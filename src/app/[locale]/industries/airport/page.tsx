@@ -157,7 +157,7 @@ export default async function AirportPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Aeropuertos' : 'Airports', url: 'https://kabatone.com/industries/airport/' },
+          { name: es ? 'Aeropuertos' : 'Airports', url: 'https://kabatone.com/industries/airport' },
         ])) }}
       />
       <script

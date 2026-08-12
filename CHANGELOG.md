@@ -1,3 +1,125 @@
+## [v2.316] – 2026-08-10 — The Spanish demo pages told Google not to index them
+
+**Fixed**
+- **All six `/es/demo/*` pages served the English canonical.** They live under `[locale]` but declared a static `export const metadata`, which Next evaluates once per module rather than once per locale — so `/es/demo/lpr` emitted `canonical: https://kabatone.com/demo/lpr`. Every Spanish demo page was telling Google it was a duplicate of the English one and should not be indexed, on a site where Spanish pages are two of the top five earners. Now built by a `demoMetadata()` helper that takes the locale, emits a self-referential canonical and full `en` / `es` / `x-default` hreflang.
+- **Spanish titles and descriptions are now actually Spanish.** The same static-metadata bug meant `/es/demo/*` presented English titles to Spanish searchers even though the pages render Spanish headings.
+- **`/demo/lpr` declared a social preview image that does not exist.** It pointed at `/demo/lpr/stage-1-detect.webp`, which is not in the repo — so the preview 404'd. Repointed at `/demo/lpr/cam-highway-lpr.jpeg`. (An unmerged commit on another branch repoints it at `/demo/lpr/LPR.png`, which is also not committed — that would not have fixed it either.)
+- **Added `metadataBase`.** Without it Next resolves relative OG images against the request host, and drops the whole `openGraph` block when it cannot resolve one at all.
+- **Four demo pages had no `og:image`** — `/demo`, `/demo/school`, `/demo/medical` and their ES twins now carry one, using assets verified to exist in the repo.
+- **The twelve missing H1s are fixed** on `/simulator` and the five demo scenarios in both locales. This is v2.323's work, which had only ever existed on `hero-redesign` and so had never reached staging or production.
+- Shortened the `/demo/access-control` title from 73 to 55 characters, under the 70-character limit.
+
+**Notes**
+- The demo pages keep inline metadata instead of moving to `generatePageMetadata`, which hard-codes the shared `og-default.png` and would have destroyed the per-scenario social previews.
+- Verified on a production build against all 232 sitemap URLs: warnings **122 → 86**. `canonical_not_self` 6 → 0, `h1_missing` 12 → 0, `og_image_missing` 8 → 0, `og_title_missing` 4 → 0, `og_desc_missing` 4 → 0. Zero critical throughout.
+- **Not fixed, deliberately: 42 over-length titles and 44 over-length descriptions across 50 pages**, all of them indexed (the LATAM/ICP country whitelist plus a few resource pages). `SEO/ctr-recovery-plan-2026-07-27.md` holds an explicit decision against blanket title/meta rewrites, on the grounds that untargeted rewrites risk rankings that are otherwise fine. Over-length titles are truncated by Google, not penalised. Worth doing as a scoped, measured batch — not as a sweep.
+
+## [v2.315] – 2026-08-10 — The SEO audit can finally see redirects, and runs against production
+
+**Fixed**
+- **The audit followed redirects silently, so it could never report one.** `fetch` follows by default, so a URL that only reached 200 after two hops graded identically to one served directly. This is why the production `307 → 308 → 200` chain on every indexed URL went unreported for months while the audit printed "0 critical, 0 warnings" every day. `fetchPage` now uses `redirect: "manual"` and walks the chain itself, capped at 5 hops.
+- **It audited a URL space Google never sees.** Requests went to `${BASE_URL}/en${route}` — but `localePrefix: 'as-needed'` serves EN at the root, so every one of those was itself a redirect, present in no sitemap and named by no canonical. On production `/en/k-dispatch` was a *three*-hop chain. **The URL list now comes from the target's own sitemap**, not from a hard-coded route table. Whether we publish `/path` or `/path/` changed twice in one day (v2.314 de-slashed everything), and each wrong guess either hid a real redirect or invented 70 false ones — two interim versions of this commit did exactly that in opposite directions. Asking the deployment what it publishes cannot go stale. Hosts are rewritten to the audited origin, since `sitemap.ts` hard-codes the production origin and auditing staging would otherwise have graded production. Falls back to `ROUTES` if the sitemap is unreachable.
+- **New check `redirect_chain`** — warning at one hop, critical at two or more. A URL we publish as canonical must serve 200 itself; any hop means Google is asked to crawl one URL and index another.
+- **New check `canonical_host_mismatch`** — fires only on a production host, when the page is served by one host and its canonical names another. Catches "serves on www, every canonical says apex" directly.
+- **New check `canonical_not_self`** — the canonical's path must match the audited path. Deliberately compares *paths only*: staging and preview are supposed to carry production canonicals, and comparing full URLs fired on all 71 staging pages, which would have buried the real signal under a permanent false positive.
+- Carried forward the retry-with-backoff in `fetchPage` that existed only as an uncommitted local edit.
+
+**Notes**
+- Verified against all three hosts as found: `kabatone.com` → **71 × `redirect_chain`** (the 307 to www) and `www.kabatone.com` → **71 × `canonical_host_mismatch`** (served there, claimed the apex) — the same defect from each side. Both cleared the moment the apex was made the serving domain in Vercel with www on a permanent 308, confirming the check works as a pass/fail gate.
+- **Coverage went from 71 URLs to 232.** The hard-coded table covered 31% of what the sitemap actually publishes — the ES locale and the country pages were never audited at all. The newly-visible pages carry 44 over-length titles, 44 over-length descriptions, 12 missing H1s, 8 missing `og:image` and 6 `canonical_not_self`. These are not regressions; they are pages the audit had simply never looked at. Triage separately.
+- **Remaining, correctly reported: 231 × `redirect_chain` on production** — the deployed sitemap still emits slashed URLs, so every one still 308s. That is precisely what v2.314 fixes, and it should fall to zero once that ships.
+- The daily job still targets staging; production is now worth a separate weekly run, since the 307 exists only there. See `SEO/weekly-report-2026-08-10.md`.
+
+## [v2.314] – 2026-08-10 — Every canonical URL now resolves to a 200
+
+**Fixed**
+- **Every canonical, hreflang, `og:url`, JSON-LD `url` and sitemap entry pointed at a URL that redirects.** All 450 canonicals in `src/content/{en,es}/metadata.ts` ended in a slash, and `src/app/sitemap.ts` emitted slashed URLs — but Next's default is to 308 `/path/` → `/path`. So the URL we published as canonical was never the URL that served the page, and the page Google did land on carried a canonical pointing back at the redirecting form.
+- In production this stacks on a second hop: Vercel serves `www.kabatone.com` as the primary domain and **307**s the apex, while the code, `robots.txt`, the sitemap and the GSC property are all non-www. An indexed URL therefore cost `307 → 308 → 200`. GSC confirms Google resolved it in our favour — all 142 reported pages are the non-www form, 0 www — so nothing was lost, but every crawl of every page paid for two extra round-trips. The 307 half is Vercel domain config, not code, and is why the daily staging audit never saw it.
+- Rewrote 449 canonicals and 856 schema / `llms.txt` URLs to the unslashed form, and replaced the sitemap's slash-appending with a `loc()` helper. Only the bare origin `https://kabatone.com/` keeps its slash.
+
+**Notes**
+- **The obvious fix — `trailingSlash: true`, keeping the slashed form Google has indexed — was tried and rejected.** Next applies it to route handlers too; only static files with extensions and `.well-known/` are exempt. `/api/slack/events` would have begun returning a 308, and Slack's Events API does not follow redirects. Going unslashed instead aims the canonicals at the URL that already serves 200 and leaves the Slack routes alone.
+- Verified against a production build: canonical, `og:url`, all three hreflang alternates and the JSON-LD `url` on `/resources/best-cad-dispatch-software` are unslashed and identical; the ES counterpart matches; the homepage keeps `https://kabatone.com/`; all 232 sitemap entries are unslashed except the root; the served paths return 200 with no redirect; and `POST /api/slack/events` still answers 401 (signature check) rather than a 308.
+- Does not fix the 307 on its own — that needs the apex set as primary domain in Vercel. Until then this takes the chain from 2 hops to 1. See `SEO/weekly-report-2026-08-10.md`.
+
+## [v2.313] – 2026-08-04 — SEO: market segmentation + synthetic-impression filter
+
+**Fixed**
+- The weekly brief's headline CTR was structurally misleading. Site-wide CTR (0.49%) is dominated by US impressions that produce almost no clicks — 53,311 impressions to 77 clicks (0.14%), with 1,716 of 1,725 US queries earning zero clicks in 28 days. The target market (LATAM + Spain) runs at **1.34% CTR** and delivers 42% of all clicks from 15% of impressions.
+- Identified automated SERP polling in the query data: three unrelated queries ("computer automated dispatch software", "peregrine.ai analytics reporting dashboards", "best fire computer aided dispatch software") each showing 900–1,200 impressions at positions 3.7–6.9, zero clicks, ~100% desktop, and an identical usa/gbr/nld/deu/ita/hkg country fingerprint. Unfiltered, these ranked #2, #4 and #5 in the opportunity list and drove three of the four P0 actions in the 2026-08-04 brief.
+
+**Added**
+- `scripts/weekly_brief.py` — `target_market` segment (LATAM + Spain), `by_country` breakdown, and a `synthetic` block flagging queries whose profile matches automated rank tracking rather than human demand. Synthetic queries are excluded from opportunity scoring and striking-distance counts. Criteria are conservative and recorded in the JSON: `clicks=0, impressions>=150, position<=10, desktop_share>=0.95`.
+- `SEO/audits/weekly-2026-08-04-corrected.{json,md}` — revised brief. The original's Sections 2 and 4 are superseded; the P0 title rewrites it proposed had already shipped on 2026-07-06, one day before the measurement window, and moved CTR 0.00pp.
+
+**Changed**
+- GEO status 7/12 → **8/12**. "Genetec alternatives for public safety" is now a confirmed AI citation win. "best NG911 software" is cited but not won — the page is in the source set and K-Dispatch is described, under a secondary "unified/CAD-integrated" bucket rather than the headline recommendations (Motorola VESTA, Intrado Viper, Tyler New World).
+
+## [v2.309] – 2026-08-04 — SEO: weekly brief 2026-08-04
+
+**Added**
+- `SEO/audits/weekly-2026-08-04.json` — 28-day data from GA4 + GSC via service-account auth: 2,883 sessions (+62.4%), 850 organic (29.5%), 55 AI Assistant (+120%), 427 clicks, 87,954 impressions, avg pos 13.5, 211 striking-distance queries
+- `SEO/audits/weekly-2026-08-04.md` — CEO-format brief: traffic by channel, search deltas, GEO citation status, and P0/P1/P2 action plan tied to named queries
+- `SEO/audits/traffic-2026-08-04.html` — self-contained HTML dashboard (deterministic fallback — no Anthropic key in this environment)
+- `SEO/audits/traffic-latest.html` — symlink-equivalent latest view
+
+## [v2.308] – 2026-08-04 — Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON
+
+Second half of merging the two Monday SEO jobs into one. `scripts/weekly_report.py` consumes the collector JSON from v2.307 and produces the human brief — an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan — rendered into a self-contained HTML dashboard. The collector owns *data*; this owns *narrative + presentation*. Neither imports the other's responsibilities, so a failure in one can't silently mask the other (the bug that let a dead OAuth token run green for three weeks).
+
+### Added
+- **`scripts/weekly_report.py`** — reads `weekly_brief.py --out` JSON, calls Anthropic over `urllib` (no SDK, matching the collector), and renders a dark KabatOne dashboard: KPIs (sessions, organic, AI Assistant, opportunity uplift), weekly trend + source-mix charts, keyword opportunity stack, a dedicated **Striking Distance** table (pos 5–15), cluster momentum, and top referrers.
+- **`--no-ai`** deterministic brief (zero network, zero key) — also the automatic fallback whenever the LLM step fails, so the report is never blank.
+- Reuses only the shape-agnostic markdown→HTML formatters from `seo_weekly_agent.py`; the renderer targets the collector's own JSON contract rather than the legacy `analyse()` shape.
+
+### Verified
+- End-to-end on live 28-day data: collector → report in both deterministic and `claude-sonnet-4-6` modes. LLM brief correctly grounded (C5, LATAM dispatch, real position/impression figures) with valid P0/P1/P2 badges.
+
+*(Versions v2.287–v2.306 are the homepage redesign work on the `hero-redesign` branch and will appear here when that merges.)*
+
+## [v2.307] – 2026-08-04 — Weekly brief collector: service-account auth, all-channel traffic
+
+First half of merging the two Monday SEO jobs into one. `scripts/weekly_brief.py` collects everything the weekly brief needs — all-channel GA4 traffic, GSC search performance, deterministic opportunity scoring — into a single JSON. No LLM, no HTML, no git, no Slack; those belong to the caller.
+
+*(Versions v2.287–v2.306 are the homepage redesign work on the `hero-redesign` branch and will appear here when that merges.)*
+
+### Fixed — the credential failure that cost three weeks
+- **Service-account auth only, no OAuth refresh token in the path.** The weekly pull had been failing since mid-July with `invalid_grant`. It was diagnosed as an expired token and regenerated twice; each replacement died within a week. Refresh tokens are now removed from the weekly path rather than re-fixed.
+- **No silent OAuth fallback.** That fallback is *why* it went unnoticed for three weeks: `google_auth.py --check gsc` kept reporting `[OK]` via the service-account path while the actual weekly job failed. The collector fails loudly instead.
+- Verified by running the full pull with `~/.config/claude-seo/oauth-token.json` renamed away — the regression test for this whole class of failure.
+- Required granting `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com` Full access on the `https://kabatone.com/` property. GA4 access already existed; GSC did not (403 until granted).
+
+### Fixed — GSC totals were understated by 58%
+- **Totals now come from a dimensionless query.** They were summed from query-dimension rows, which undercounts badly: measured **180 clicks summed vs 427 actual**, 54,009 impressions vs 87,954. GSC anonymises rare queries and omits them from query-dimension results, so those rows can never sum to site totals.
+- **Query row limit 1,000 → 25,000.** The site returns ~2,566 queries over 28 days, so the previous cap silently truncated ranking data. Striking-distance count went **125 → 211**.
+
+### Added — non-search traffic
+The previous GA4 pull hard-filtered every page-level query to Organic Search, so ~70% of sessions appeared as a single number with no detail. Now collected: per-channel sessions/users/engagement/key-events with prior-period deltas, landing pages **per channel**, referrer source/medium breakdown, and 12-week trend.
+
+- **`AI Assistant` isolated as its own section** — 55 sessions, +120% vs prior, with its own landing pages and weekly trend. The only direct measurement of whether the GEO work converts to traffic, and it had never appeared in any report.
+- First full picture: Direct **62.6%**, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9%. The brief had been reporting only the 29.5%.
+
+### Notes
+- Credentials resolve in order: `GOOGLE_SERVICE_ACCOUNT_JSON_B64` → `GOOGLE_SERVICE_ACCOUNT_JSON` → local key file. The base64 form exists because cloud environment variables are entered as single-line `KEY=value` pairs, which a multi-line JSON key cannot survive — pasting it raw fails with `Couldn't parse "{"`.
+- Scoring helpers (`expected_ctr`, `business_value`, `assign_cluster`) are imported from `seo_weekly_agent.py` rather than duplicated, so the brief and the dashboard cannot disagree about what counts as an opportunity.
+- Phase 2 (rewiring the cloud trigger to run this) requires the script to be reachable on GitHub, which is why it lands here on `nextjs` rather than the redesign branch.
+
+## [v2.286] – 2026-07-29 — Legal page URL: /legal/sitec-911 → /legal/911-michoacan
+### Changed
+- Renamed the legal page route from `/legal/sitec-911` to `/legal/911-michoacan` (EN + ES), updating the `SLUG` constant, canonical URL, and hreflang alternates.
+- Added permanent (308) redirects from the old `/legal/sitec-911` and `/es/legal/sitec-911` URLs to the new slug in `next.config.ts`, so the link already submitted to Google Play keeps resolving.
+
+## [v2.285] – 2026-07-29 — Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One
+### Changed
+- On the `/legal/sitec-911` page, replaced every visible mention of **"SITEC 911"** with **"911 Michoacán"** and every mention of **"CityShob"** (incl. "CityShob Software Ltd.") with **"Kabat-One"**, across both the EN and ES routes. Support email set to `support@kabatone.com`.
+- Text-only rebrand: the URL slug (`/legal/sitec-911`), route folder, component name, and page metadata canonical/hreflang are all unchanged, so the live URL already given to Google Play keeps working.
+
+## [v2.284] – 2026-07-29 — Legal page: SITEC 911 Terms of Use & Privacy Policy
+### Added
+- **New `/legal/sitec-911` page** carrying the verbatim Spanish "Condiciones de Uso" and "Política de Privacidad" for the SITEC 911 emergency app (responsible entity: CityShob Software Ltd.). Single page, Terms followed by Privacy, so Google Play can match one URL to the app listing.
+- Legal text is the governing Spanish version and is rendered identically on both the EN (`/legal/sitec-911`) and ES (`/es/legal/sitec-911`) routes — no unofficial translation of binding terms.
+- New one-off component `src/components/LegalSitec911.tsx`, styled to match the existing per-app privacy pages (Barlow Condensed headings, DM Mono labels, dark theme). `robots: index:false, follow:true`, canonical + EN/ES/x-default hreflang, and a breadcrumb JSON-LD (Home / Legal / SITEC 911).
+- First page under the new `/legal/` route directory.
 ## [v2.288] – 2026-08-04 — GEO-049: RTCC citability refresh — add Flock Safety (KAB-2446)
 ### Changed
 - **`/resources/rtcc-software/` (EN + ES) — citability refresh, no new page.** The weekly GEO monitor found the root cause of the 3-cycle RTCC citation volatility: **Flock Safety (FlockOS) is now the single most-cited RTCC platform** in AI answers ("best RTCC software" cites FlockOS/Axon/Activu/Case Closed), yet it was entirely absent from this listicle's vendor table and FAQ — making the page read as incomplete/dated to answer engines.

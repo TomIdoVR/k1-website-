@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para PNP, BFP y PCG de Filipinas — despacho CAD integrado para 17 regiones y coordinación de desastres NDRRMC/PAGASA, gestión de cámaras conforme a RA 10173/NPC y cumplimiento DICT con contratación PhilGEPS/RA 9184.'
     : 'Unified platform for Philippine PNP, BFP, and PCG — integrated CAD dispatch for 17 regions and NDRRMC/PAGASA disaster coordination, RA 10173/NPC-compliant camera management, and DICT cybersecurity compliance with PhilGEPS/RA 9184 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-philippines/'
-    : 'https://kabatone.com/resources/public-safety-software-philippines/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-philippines'
+    : 'https://kabatone.com/resources/public-safety-software-philippines'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Filipinas' : 'Philippines', url },
   ]
 

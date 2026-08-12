@@ -80,17 +80,17 @@ export default async function EndOfSiloedResponsePage({
         ? 'Cómo los líderes de seguridad pública pueden pasar de sistemas fragmentados a operaciones unificadas.'
         : 'How public safety leaders can move from fragmented systems to unified operations.',
       es
-        ? 'https://kabatone.com/es/resources/end-of-siloed-response/'
-        : 'https://kabatone.com/resources/end-of-siloed-response/',
+        ? 'https://kabatone.com/es/resources/end-of-siloed-response'
+        : 'https://kabatone.com/resources/end-of-siloed-response',
     ),
     breadcrumbSchema([
-      { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-      { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+      { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+      { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
       {
         name: es ? 'El Fin de la Respuesta en Silos' : 'The End of Siloed Response',
         url: es
-          ? 'https://kabatone.com/es/resources/end-of-siloed-response/'
-          : 'https://kabatone.com/resources/end-of-siloed-response/',
+          ? 'https://kabatone.com/es/resources/end-of-siloed-response'
+          : 'https://kabatone.com/resources/end-of-siloed-response',
       },
     ]),
   ]

@@ -26,9 +26,9 @@ export default async function VsTylerTechnologiesPage({
   const ACCENT = '#0ea5e9'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Tyler Technologies', url: es ? 'https://kabatone.com/es/vs/tyler-technologies/' : 'https://kabatone.com/vs/tyler-technologies/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Tyler Technologies', url: es ? 'https://kabatone.com/es/vs/tyler-technologies' : 'https://kabatone.com/vs/tyler-technologies' },
   ]
 
   const faqs = es ? [

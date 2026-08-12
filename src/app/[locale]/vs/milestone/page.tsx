@@ -26,9 +26,9 @@ export default async function VsMilestonePage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Milestone', url: es ? 'https://kabatone.com/es/vs/milestone/' : 'https://kabatone.com/vs/milestone/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Milestone', url: es ? 'https://kabatone.com/es/vs/milestone' : 'https://kabatone.com/vs/milestone' },
   ]
 
   const faqs = es ? [

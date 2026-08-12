@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para DGSN, Gendarmería Real y DGPC de Marruecos — despacho CAD integrado para 12 regiones y coordinación de emergencias DGM/ABH, gestión de cámaras Casablanca Safe City conforme a Ley 09-08/CNDP y cumplimiento DGSSI/maCERT con contratación marchespublics/Decreto 2-12-349.'
     : 'Unified platform for Moroccan DGSN, Royal Gendarmerie, and DGPC — integrated CAD dispatch for 12 regions and DGM/ABH emergency coordination, Casablanca Safe City camera management compliant with Law 09-08/CNDP, and DGSSI/maCERT compliance with marchespublics/Decree 2-12-349 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-morocco/'
-    : 'https://kabatone.com/resources/public-safety-software-morocco/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-morocco'
+    : 'https://kabatone.com/resources/public-safety-software-morocco'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Marruecos' : 'Morocco', url },
   ]
 

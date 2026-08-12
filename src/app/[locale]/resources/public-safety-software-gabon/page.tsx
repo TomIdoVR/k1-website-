@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareGabonPage({
       ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Gabón (FDG), la Policía Nacional Republicana (PNR), gestión del Puerto de Owendo y seguridad de los recursos de petróleo y manganeso en Gabón."
       : "KabatOne delivers public safety platform for the Gabonese Defence Forces (FDG), National Republican Police (PNR), Port of Owendo management, and security for oil and manganese resources in Gabon.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-gabon/"
-      : "https://kabatone.com/resources/public-safety-software-gabon/",
+      ? "https://kabatone.com/es/resources/public-safety-software-gabon"
+      : "https://kabatone.com/resources/public-safety-software-gabon",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareGabonPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para Gabón" : "Public Safety Software for Gabon",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-gabon/" : "https://kabatone.com/resources/public-safety-software-gabon/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-gabon" : "https://kabatone.com/resources/public-safety-software-gabon",
     },
   ]);
 

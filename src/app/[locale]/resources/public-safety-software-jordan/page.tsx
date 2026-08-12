@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la PSD y CDD de Jordania — despacho CAD integrado en 12 gobernados, Amman Safe City/GAM, seguridad portuaria Aqaba/ASEZA, fronteras King Hussein/Sheikh Hussein/Jaber, Ley 24/2023/NITC/CERT.jo y adquisición Reglamento 32/1994.'
     : 'Unified platform for Jordan PSD and CDD — integrated CAD dispatch across 12 governorates, Amman Safe City/GAM, Aqaba Port/ASEZA security, King Hussein/Sheikh Hussein/Jaber border crossings, Law 24/2023/NITC/CERT.jo compliance, and Regulation 32/1994 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-jordan/'
-    : 'https://kabatone.com/resources/public-safety-software-jordan/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-jordan'
+    : 'https://kabatone.com/resources/public-safety-software-jordan'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Jordania' : 'Jordan', url },
   ]
 

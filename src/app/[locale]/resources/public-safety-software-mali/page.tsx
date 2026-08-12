@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareMaliPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para las Forces Armées Maliennes, gestión humanitaria y programas de estabilización del Sahel en Mali."
       : "KabatOne delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Forces Armées Maliennes, humanitarian management, and Sahel stabilisation programs in Mali.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-mali/"
-      : "https://kabatone.com/resources/public-safety-software-mali/",
+      ? "https://kabatone.com/es/resources/public-safety-software-mali"
+      : "https://kabatone.com/resources/public-safety-software-mali",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareMaliPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Mali" : "Public Safety Software Mali",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-mali/"
-        : "https://kabatone.com/resources/public-safety-software-mali/",
+        ? "https://kabatone.com/es/resources/public-safety-software-mali"
+        : "https://kabatone.com/resources/public-safety-software-mali",
     },
   ]);
 

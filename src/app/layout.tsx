@@ -3,6 +3,12 @@ import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
+  /* Required for relative URLs in metadata to resolve. Without it Next falls
+     back to the request host, so a relative og:image renders as
+     http://localhost:3999/... in dev and can resolve to whatever host served
+     the page — and when Next cannot resolve one at all it drops the whole
+     openGraph block. */
+  metadataBase: new URL('https://kabatone.com'),
   verification: {
     google: 'DTq9cTtA8K66rDO1x_BKB49knpC4BhRobzjiuYtrQk8',
   },

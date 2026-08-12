@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareCyprus({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía de Chipre, KYP inteligencia y Guardia Nacional — gestión de la Línea Verde ONU, protección de la ZEE gasífera Afrodita/ENI, Puerto de Limassol, bases militares británicas y coordinación Frontex/UE."
         : "KabatOne delivers public safety platform for Cyprus Police, KYP intelligence, and National Guard — UN Green Line management, Aphrodite/ENI gas EEZ protection, Port of Limassol, British military bases, and Frontex/EU coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-cyprus/"
-        : "https://kabatone.com/resources/public-safety-software-cyprus/",
+        ? "https://kabatone.com/es/resources/public-safety-software-cyprus"
+        : "https://kabatone.com/resources/public-safety-software-cyprus",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Chipre"
           : "Public Safety Software for Cyprus",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-cyprus/"
-          : "https://kabatone.com/resources/public-safety-software-cyprus/",
+          ? "https://kabatone.com/es/resources/public-safety-software-cyprus"
+          : "https://kabatone.com/resources/public-safety-software-cyprus",
       },
     ]),
     faqPageSchema([

@@ -95,19 +95,19 @@ export default async function BuildRtccImplementationGuidePage({
   const breadcrumbs = [
     {
       name: es ? 'Inicio' : 'Home',
-      url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/',
+      url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/',
     },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: es
         ? 'Guía de Implementación de un RTCC'
         : 'How to Build a Real-Time Crime Center',
       url: es
-        ? 'https://kabatone.com/es/resources/build-rtcc-implementation-guide/'
-        : 'https://kabatone.com/resources/build-rtcc-implementation-guide/',
+        ? 'https://kabatone.com/es/resources/build-rtcc-implementation-guide'
+        : 'https://kabatone.com/resources/build-rtcc-implementation-guide',
     },
   ]
 
@@ -120,8 +120,8 @@ export default async function BuildRtccImplementationGuidePage({
       ? 'Guía paso a paso para planificar e implementar un centro de crimen en tiempo real (RTCC) — requisitos tecnológicos, modelo de personal, fuentes de datos y errores comunes a evitar.'
       : 'Step-by-step guide to planning and implementing a real-time crime center (RTCC) — technology requirements, staffing model, data feeds, vendor selection, and common pitfalls to avoid.',
     es
-      ? 'https://kabatone.com/es/resources/build-rtcc-implementation-guide/'
-      : 'https://kabatone.com/resources/build-rtcc-implementation-guide/',
+      ? 'https://kabatone.com/es/resources/build-rtcc-implementation-guide'
+      : 'https://kabatone.com/resources/build-rtcc-implementation-guide',
     '2026-04-08'
   )
 

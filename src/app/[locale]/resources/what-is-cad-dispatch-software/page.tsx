@@ -113,11 +113,11 @@ export default async function WhatIsCadDispatchSoftwarePage({
 
   /* ── Breadcrumb items ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?',
-      url: es ? 'https://kabatone.com/es/resources/what-is-cad-dispatch-software/' : 'https://kabatone.com/resources/what-is-cad-dispatch-software/',
+      url: es ? 'https://kabatone.com/es/resources/what-is-cad-dispatch-software' : 'https://kabatone.com/resources/what-is-cad-dispatch-software',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function WhatIsCadDispatchSoftwarePage({
               es
                 ? 'El software CAD de despacho gestiona la recepción de llamadas de emergencia, la clasificación de incidentes y el despacho de unidades. Aprende cómo funciona y qué buscar en un sistema moderno.'
                 : 'CAD dispatch software manages emergency call intake, incident classification, and unit dispatch. Learn how it works, what modern systems include, and how to choose the right platform.',
-              es ? 'https://kabatone.com/es/resources/what-is-cad-dispatch-software/' : 'https://kabatone.com/resources/what-is-cad-dispatch-software/',
+              es ? 'https://kabatone.com/es/resources/what-is-cad-dispatch-software' : 'https://kabatone.com/resources/what-is-cad-dispatch-software',
               '2026-05-18'
             )
           ),

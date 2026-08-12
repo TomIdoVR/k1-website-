@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareGuineaBissauPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea-Bisáu (FARP), Policía de Orden Público, Puerto de Bissau y control de las rutas de narcotráfico atlántico."
     : "KabatOne delivers public safety platform for the Guinea-Bissau Armed Forces (FARP), Public Order Police, Port of Bissau, and control of Atlantic drug trafficking routes.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-guinea-bissau/"
-    : "https://kabatone.com/resources/public-safety-software-guinea-bissau/";
+    ? "https://kabatone.com/es/resources/public-safety-software-guinea-bissau"
+    : "https://kabatone.com/resources/public-safety-software-guinea-bissau";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareGuineaBissauPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Guinea-Bisáu" : "Public Safety Software for Guinea-Bissau", url: canonical },
   ]);
 

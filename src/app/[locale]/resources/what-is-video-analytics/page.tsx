@@ -127,19 +127,19 @@ export default async function WhatIsVideoAnalyticsPage({
       ? 'Guía completa sobre analítica de video: cómo funciona, tipos de detección (intrusión, LPR, comportamiento, fuego), diferencia entre edge y servidor, tasas de falsos positivos e integración en centros de mando.'
       : 'Complete guide to video analytics: how it works, detection types (intrusion, LPR, behavior, fire), edge vs server analytics, false positive rates, and integration into command centers.',
     es
-      ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
-      : 'https://kabatone.com/resources/what-is-video-analytics/',
+      ? 'https://kabatone.com/es/resources/what-is-video-analytics'
+      : 'https://kabatone.com/resources/what-is-video-analytics',
     '2026-05-18',
     '2026-07-27'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es la Analítica de Video?' : 'What Is Video Analytics?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-video-analytics/'
-        : 'https://kabatone.com/resources/what-is-video-analytics/',
+        ? 'https://kabatone.com/es/resources/what-is-video-analytics'
+        : 'https://kabatone.com/resources/what-is-video-analytics',
     },
   ])
 

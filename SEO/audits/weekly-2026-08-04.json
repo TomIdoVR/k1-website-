@@ -1,0 +1,1131 @@
+{
+  "generated": "2026-08-04T22:04:07",
+  "period": {
+    "start": "2026-07-07",
+    "end": "2026-08-03",
+    "days": 28
+  },
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "traffic": {
+    "channels": [
+      {
+        "channel": "Direct",
+        "sessions": 1806,
+        "users": 1596,
+        "engagement_rate": 27.9,
+        "key_events": 1,
+        "prior_sessions": 908,
+        "delta_pct": 98.9,
+        "share_pct": 62.6
+      },
+      {
+        "channel": "Organic Search",
+        "sessions": 850,
+        "users": 558,
+        "engagement_rate": 48.5,
+        "key_events": 2,
+        "prior_sessions": 732,
+        "delta_pct": 16.1,
+        "share_pct": 29.5
+      },
+      {
+        "channel": "Referral",
+        "sessions": 102,
+        "users": 64,
+        "engagement_rate": 57.8,
+        "key_events": 1,
+        "prior_sessions": 85,
+        "delta_pct": 20.0,
+        "share_pct": 3.5
+      },
+      {
+        "channel": "AI Assistant",
+        "sessions": 55,
+        "users": 27,
+        "engagement_rate": 45.5,
+        "key_events": 0,
+        "prior_sessions": 25,
+        "delta_pct": 120.0,
+        "share_pct": 1.9
+      },
+      {
+        "channel": "Unassigned",
+        "sessions": 44,
+        "users": 44,
+        "engagement_rate": 2.3,
+        "key_events": 0,
+        "prior_sessions": 10,
+        "delta_pct": 340.0,
+        "share_pct": 1.5
+      },
+      {
+        "channel": "Organic Social",
+        "sessions": 25,
+        "users": 18,
+        "engagement_rate": 24.0,
+        "key_events": 0,
+        "prior_sessions": 15,
+        "delta_pct": 66.7,
+        "share_pct": 0.9
+      },
+      {
+        "channel": "Cross-network",
+        "sessions": 1,
+        "users": 1,
+        "engagement_rate": 0.0,
+        "key_events": 0,
+        "prior_sessions": 0,
+        "delta_pct": null,
+        "share_pct": 0.0
+      }
+    ],
+    "totals": {
+      "sessions": 2883,
+      "prior_sessions": 1775,
+      "delta_pct": 62.4
+    },
+    "organic": {
+      "sessions": 850,
+      "share_pct": 29.5
+    },
+    "ai_assistant": {
+      "sessions": 55,
+      "weekly": [
+        {
+          "year": "2026",
+          "week": "24",
+          "sessions": 2
+        },
+        {
+          "year": "2026",
+          "week": "25",
+          "sessions": 8
+        },
+        {
+          "year": "2026",
+          "week": "26",
+          "sessions": 8
+        },
+        {
+          "year": "2026",
+          "week": "27",
+          "sessions": 5
+        },
+        {
+          "year": "2026",
+          "week": "28",
+          "sessions": 12
+        },
+        {
+          "year": "2026",
+          "week": "29",
+          "sessions": 17
+        },
+        {
+          "year": "2026",
+          "week": "30",
+          "sessions": 14
+        },
+        {
+          "year": "2026",
+          "week": "31",
+          "sessions": 14
+        }
+      ],
+      "pages": [
+        {
+          "page": "/",
+          "sessions": 17
+        },
+        {
+          "page": "(not set)",
+          "sessions": 13
+        },
+        {
+          "page": "/resources",
+          "sessions": 3
+        }
+      ]
+    },
+    "weekly_trend": [
+      {
+        "year": "2026",
+        "week": "20",
+        "sessions": 132
+      },
+      {
+        "year": "2026",
+        "week": "21",
+        "sessions": 264
+      },
+      {
+        "year": "2026",
+        "week": "22",
+        "sessions": 332
+      },
+      {
+        "year": "2026",
+        "week": "23",
+        "sessions": 331
+      },
+      {
+        "year": "2026",
+        "week": "24",
+        "sessions": 393
+      },
+      {
+        "year": "2026",
+        "week": "25",
+        "sessions": 375
+      },
+      {
+        "year": "2026",
+        "week": "26",
+        "sessions": 521
+      },
+      {
+        "year": "2026",
+        "week": "27",
+        "sessions": 462
+      },
+      {
+        "year": "2026",
+        "week": "28",
+        "sessions": 564
+      },
+      {
+        "year": "2026",
+        "week": "29",
+        "sessions": 642
+      },
+      {
+        "year": "2026",
+        "week": "30",
+        "sessions": 581
+      },
+      {
+        "year": "2026",
+        "week": "31",
+        "sessions": 997
+      },
+      {
+        "year": "2026",
+        "week": "32",
+        "sessions": 214
+      }
+    ],
+    "referrers": [
+      {
+        "source": "(direct)",
+        "medium": "(none)",
+        "sessions": 1806
+      },
+      {
+        "source": "google",
+        "medium": "organic",
+        "sessions": 785
+      },
+      {
+        "source": "grupokabat.com",
+        "medium": "referral",
+        "sessions": 59
+      },
+      {
+        "source": "bing",
+        "medium": "organic",
+        "sessions": 56
+      },
+      {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 43
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "ai-assistant",
+        "sessions": 37
+      },
+      {
+        "source": "gemini.google.com",
+        "medium": "ai-assistant",
+        "sessions": 13
+      },
+      {
+        "source": "linkedin.com",
+        "medium": "referral",
+        "sessions": 13
+      },
+      {
+        "source": "teams.public.onecdn.static.microsoft",
+        "medium": "referral",
+        "sessions": 11
+      },
+      {
+        "source": "yuanbao.tencent.com",
+        "medium": "referral",
+        "sessions": 7
+      },
+      {
+        "source": "mokka.corp.google.com",
+        "medium": "referral",
+        "sessions": 6
+      },
+      {
+        "source": "panel-kabat-exposeguridad.netlify.app",
+        "medium": "referral",
+        "sessions": 6
+      },
+      {
+        "source": "alas-la.org",
+        "medium": "referral",
+        "sessions": 4
+      },
+      {
+        "source": "notebooklm.google.com",
+        "medium": "referral",
+        "sessions": 4
+      },
+      {
+        "source": "perplexity.ai",
+        "medium": "ai-assistant",
+        "sessions": 4
+      },
+      {
+        "source": "facebook.com",
+        "medium": "referral",
+        "sessions": 3
+      },
+      {
+        "source": "mx.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 3
+      },
+      {
+        "source": "vercel.com",
+        "medium": "referral",
+        "sessions": 3
+      },
+      {
+        "source": "es.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "google.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "m.facebook.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "search.brave.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "(data not available)",
+        "medium": "(data not available)",
+        "sessions": 1
+      },
+      {
+        "source": "114.114.114.114:9421",
+        "medium": "referral",
+        "sessions": 1
+      },
+      {
+        "source": "cn.bing.com",
+        "medium": "referral",
+        "sessions": 1
+      }
+    ],
+    "pages_by_channel": {
+      "Direct": [
+        {
+          "page": "/",
+          "sessions": 473
+        },
+        {
+          "page": "/es",
+          "sessions": 77
+        },
+        {
+          "page": "(not set)",
+          "sessions": 47
+        },
+        {
+          "page": "/resources/best-public-safety-software",
+          "sessions": 47
+        },
+        {
+          "page": "/es/about",
+          "sessions": 44
+        },
+        {
+          "page": "/en/hero-lab",
+          "sessions": 42
+        },
+        {
+          "page": "/resources/how-c5-command-centers-work",
+          "sessions": 38
+        },
+        {
+          "page": "/contact",
+          "sessions": 33
+        },
+        {
+          "page": "/resources/what-is-video-management-software",
+          "sessions": 30
+        },
+        {
+          "page": "/es/privacy",
+          "sessions": 25
+        }
+      ],
+      "Organic Search": [
+        {
+          "page": "/es",
+          "sessions": 100
+        },
+        {
+          "page": "/es/resources/how-c5-command-centers-work",
+          "sessions": 93
+        },
+        {
+          "page": "(not set)",
+          "sessions": 91
+        },
+        {
+          "page": "/",
+          "sessions": 86
+        },
+        {
+          "page": "/resources/best-cad-dispatch-software",
+          "sessions": 49
+        },
+        {
+          "page": "/resources/what-is-video-management-software",
+          "sessions": 41
+        },
+        {
+          "page": "/resources/cctv-video-analytics",
+          "sessions": 28
+        },
+        {
+          "page": "/resources/how-c5-command-centers-work",
+          "sessions": 18
+        },
+        {
+          "page": "/es/industries/ports",
+          "sessions": 17
+        },
+        {
+          "page": "/es/resources/what-is-emergency-dispatch-software",
+          "sessions": 16
+        }
+      ],
+      "Referral": [
+        {
+          "page": "/es",
+          "sessions": 40
+        },
+        {
+          "page": "/",
+          "sessions": 20
+        },
+        {
+          "page": "(not set)",
+          "sessions": 9
+        },
+        {
+          "page": "/privacy",
+          "sessions": 4
+        }
+      ],
+      "Unassigned": [
+        {
+          "page": "",
+          "sessions": 28
+        },
+        {
+          "page": "(not set)",
+          "sessions": 5
+        },
+        {
+          "page": "/",
+          "sessions": 4
+        }
+      ],
+      "AI Assistant": [
+        {
+          "page": "/",
+          "sessions": 17
+        },
+        {
+          "page": "(not set)",
+          "sessions": 13
+        },
+        {
+          "page": "/resources",
+          "sessions": 3
+        }
+      ],
+      "Organic Social": [
+        {
+          "page": "/",
+          "sessions": 9
+        },
+        {
+          "page": "/es",
+          "sessions": 7
+        },
+        {
+          "page": "/resources/public-safety-software-middle-east",
+          "sessions": 4
+        }
+      ]
+    }
+  },
+  "search": {
+    "totals": {
+      "clicks": 427,
+      "impressions": 87954,
+      "ctr_pct": 0.49,
+      "avg_position": 13.5
+    },
+    "prior": {
+      "clicks": 369,
+      "impressions": 75065,
+      "ctr_pct": 0.49,
+      "avg_position": 13.2
+    },
+    "delta": {
+      "clicks_pct": 15.7,
+      "impressions_pct": 17.2
+    },
+    "query_count": 2566,
+    "opportunities": [
+      {
+        "query": "c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 5423,
+        "clicks": 13,
+        "position": 8.5,
+        "ctr_pct": 0.24,
+        "expected_ctr_pct": 4.0,
+        "score": 509.8,
+        "potential_clicks": 203
+      },
+      {
+        "query": "computer automated dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 1186,
+        "clicks": 0,
+        "position": 6.9,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 6.0,
+        "score": 213.5,
+        "potential_clicks": 71
+      },
+      {
+        "query": "peregrine.ai analytics reporting dashboards",
+        "cluster": "Comparisons",
+        "impressions": 956,
+        "clicks": 0,
+        "position": 3.7,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 11.0,
+        "score": 210.3,
+        "potential_clicks": 105
+      },
+      {
+        "query": "best fire computer aided dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 914,
+        "clicks": 0,
+        "position": 5.4,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 6.0,
+        "score": 164.5,
+        "potential_clicks": 54
+      },
+      {
+        "query": "real time dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 352,
+        "clicks": 0,
+        "position": 9.9,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 42.2,
+        "potential_clicks": 14
+      },
+      {
+        "query": "computer aided dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 338,
+        "clicks": 1,
+        "position": 8.7,
+        "ctr_pct": 0.3,
+        "expected_ctr_pct": 4.0,
+        "score": 37.6,
+        "potential_clicks": 12
+      },
+      {
+        "query": "public safety software rated highest for computer-aided dispatch and resource deployment optimization?",
+        "cluster": "CAD / Dispatch",
+        "impressions": 72,
+        "clicks": 0,
+        "position": 2.3,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 16.0,
+        "score": 34.6,
+        "potential_clicks": 11
+      },
+      {
+        "query": "vms software",
+        "cluster": "Video / VMS",
+        "impressions": 1257,
+        "clicks": 4,
+        "position": 13.1,
+        "ctr_pct": 0.32,
+        "expected_ctr_pct": 1.5,
+        "score": 29.7,
+        "potential_clicks": 14
+      },
+      {
+        "query": "dispatch mapping software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 247,
+        "clicks": 0,
+        "position": 9.7,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 29.6,
+        "potential_clicks": 9
+      },
+      {
+        "query": "ai-powered video analytics",
+        "cluster": "Video / VMS",
+        "impressions": 507,
+        "clicks": 0,
+        "position": 12.0,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 2.5,
+        "score": 25.4,
+        "potential_clicks": 12
+      },
+      {
+        "query": "can 911 dispatch centers use centralsquare cad to manage multi-agency emergency response coordination with real-time unit tracking and call routing?",
+        "cluster": "CAD / Dispatch",
+        "impressions": 99,
+        "clicks": 0,
+        "position": 4.6,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 8.0,
+        "score": 23.8,
+        "potential_clicks": 7
+      },
+      {
+        "query": "looking for enterprise platform for port security",
+        "cluster": "Other",
+        "impressions": 83,
+        "clicks": 0,
+        "position": 1.9,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 28.0,
+        "score": 23.2,
+        "potential_clicks": 23
+      },
+      {
+        "query": "911 dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 126,
+        "clicks": 0,
+        "position": 6.5,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 6.0,
+        "score": 22.7,
+        "potential_clicks": 7
+      },
+      {
+        "query": "what is vms software",
+        "cluster": "Video / VMS",
+        "impressions": 304,
+        "clicks": 1,
+        "position": 8.8,
+        "ctr_pct": 0.33,
+        "expected_ctr_pct": 4.0,
+        "score": 22.3,
+        "potential_clicks": 11
+      },
+      {
+        "query": "video analytics",
+        "cluster": "Video / VMS",
+        "impressions": 1213,
+        "clicks": 0,
+        "position": 23.0,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 0.8,
+        "score": 19.4,
+        "potential_clicks": 9
+      },
+      {
+        "query": "police cad systems",
+        "cluster": "CAD / Dispatch",
+        "impressions": 143,
+        "clicks": 0,
+        "position": 8.0,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 17.2,
+        "potential_clicks": 5
+      },
+      {
+        "query": "cctv video analytics",
+        "cluster": "Video / VMS",
+        "impressions": 562,
+        "clicks": 1,
+        "position": 19.1,
+        "ctr_pct": 0.18,
+        "expected_ctr_pct": 1.5,
+        "score": 14.9,
+        "potential_clicks": 7
+      },
+      {
+        "query": "que es el c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 147,
+        "clicks": 0,
+        "position": 8.9,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 14.7,
+        "potential_clicks": 5
+      },
+      {
+        "query": "best public safety software for emergency dispatch and 911 call center operations rated by agencies?",
+        "cluster": "CAD / Dispatch",
+        "impressions": 55,
+        "clicks": 0,
+        "position": 4.3,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 8.0,
+        "score": 13.2,
+        "potential_clicks": 4
+      },
+      {
+        "query": "police dispatch system",
+        "cluster": "CAD / Dispatch",
+        "impressions": 163,
+        "clicks": 0,
+        "position": 11.1,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 2.5,
+        "score": 12.2,
+        "potential_clicks": 4
+      }
+    ],
+    "striking_distance": [
+      {
+        "query": "c5",
+        "position": 8.5,
+        "impressions": 5423,
+        "clicks": 13,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "vms software",
+        "position": 13.1,
+        "impressions": 1257,
+        "clicks": 4,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "computer automated dispatch software",
+        "position": 6.9,
+        "impressions": 1186,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "best fire computer aided dispatch software",
+        "position": 5.4,
+        "impressions": 914,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "ai-powered video analytics",
+        "position": 12.0,
+        "impressions": 507,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "real time dispatch software",
+        "position": 9.9,
+        "impressions": 352,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "computer aided dispatch software",
+        "position": 8.7,
+        "impressions": 338,
+        "clicks": 1,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "what is vms software",
+        "position": 8.8,
+        "impressions": 304,
+        "clicks": 1,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "dispatch mapping software",
+        "position": 9.7,
+        "impressions": 247,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "fusus",
+        "position": 9.4,
+        "impressions": 199,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "vms camera software",
+        "position": 13.3,
+        "impressions": 195,
+        "clicks": 1,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "vms management software",
+        "position": 10.2,
+        "impressions": 193,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "police dispatch system",
+        "position": 11.1,
+        "impressions": 163,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "grupo kabat",
+        "position": 8.2,
+        "impressions": 155,
+        "clicks": 4,
+        "cluster": "Other"
+      },
+      {
+        "query": "que es el c5",
+        "position": 8.9,
+        "impressions": 147,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "police cad systems",
+        "position": 8.0,
+        "impressions": 143,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "computer aided dispatch system",
+        "position": 10.5,
+        "impressions": 127,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "911 dispatch software",
+        "position": 6.5,
+        "impressions": 126,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "emergency dispatch software",
+        "position": 12.4,
+        "impressions": 126,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "cctv ai analytics",
+        "position": 12.9,
+        "impressions": 123,
+        "clicks": 4,
+        "cluster": "AI / Analytics"
+      },
+      {
+        "query": "computer aided dispatch",
+        "position": 12.7,
+        "impressions": 122,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "vms",
+        "position": 11.4,
+        "impressions": 121,
+        "clicks": 1,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "police dispatch software",
+        "position": 11.1,
+        "impressions": 121,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "vms surveillance software",
+        "position": 11.5,
+        "impressions": 121,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "cad dispatch software",
+        "position": 13.2,
+        "impressions": 119,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "ai cctv analytics",
+        "position": 14.5,
+        "impressions": 118,
+        "clicks": 0,
+        "cluster": "AI / Analytics"
+      },
+      {
+        "query": "vms application software",
+        "position": 12.8,
+        "impressions": 118,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "vms analytics",
+        "position": 10.4,
+        "impressions": 115,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "lpr",
+        "position": 6.1,
+        "impressions": 114,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "que es c5",
+        "position": 8.4,
+        "impressions": 114,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      }
+    ],
+    "striking_distance_count": 211,
+    "clusters": {
+      "Brand": {
+        "clicks": 109,
+        "impressions": 229,
+        "queries": 4
+      },
+      "C5 / Command Ctr": {
+        "clicks": 23,
+        "impressions": 7439,
+        "queries": 260
+      },
+      "Video / VMS": {
+        "clicks": 25,
+        "impressions": 26049,
+        "queries": 860
+      },
+      "AI / Analytics": {
+        "clicks": 5,
+        "impressions": 1935,
+        "queries": 84
+      },
+      "Other": {
+        "clicks": 9,
+        "impressions": 4224,
+        "queries": 664
+      },
+      "CAD / Dispatch": {
+        "clicks": 9,
+        "impressions": 12303,
+        "queries": 630
+      },
+      "Comparisons": {
+        "clicks": 0,
+        "impressions": 1114,
+        "queries": 27
+      },
+      "Emergency Mgmt": {
+        "clicks": 0,
+        "impressions": 683,
+        "queries": 30
+      },
+      "Country / LATAM": {
+        "clicks": 0,
+        "impressions": 33,
+        "queries": 7
+      }
+    },
+    "pages": [
+      {
+        "page": "https://kabatone.com/",
+        "clicks": 81,
+        "impressions": 685,
+        "position": 7.8
+      },
+      {
+        "page": "https://kabatone.com/es/",
+        "clicks": 55,
+        "impressions": 501,
+        "position": 5.8
+      },
+      {
+        "page": "https://kabatone.com/es/resources/how-c5-command-centers-work/",
+        "clicks": 51,
+        "impressions": 9526,
+        "position": 7.8
+      },
+      {
+        "page": "https://kabatone.com/resources/best-cad-dispatch-software/",
+        "clicks": 49,
+        "impressions": 26507,
+        "position": 8.7
+      },
+      {
+        "page": "https://kabatone.com/resources/what-is-video-management-software/",
+        "clicks": 28,
+        "impressions": 18404,
+        "position": 19.2
+      },
+      {
+        "page": "https://kabatone.com/resources/how-c5-command-centers-work/",
+        "clicks": 22,
+        "impressions": 2505,
+        "position": 7.0
+      },
+      {
+        "page": "https://kabatone.com/resources/cctv-video-analytics/",
+        "clicks": 20,
+        "impressions": 3634,
+        "position": 18.1
+      },
+      {
+        "page": "https://kabatone.com/k-dispatch/",
+        "clicks": 11,
+        "impressions": 2314,
+        "position": 9.7
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software/",
+        "clicks": 10,
+        "impressions": 466,
+        "position": 10.2
+      },
+      {
+        "page": "https://kabatone.com/about/",
+        "clicks": 9,
+        "impressions": 349,
+        "position": 3.2
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-emergency-management-software/",
+        "clicks": 7,
+        "impressions": 80,
+        "position": 6.3
+      },
+      {
+        "page": "https://kabatone.com/integrations/drones/",
+        "clicks": 6,
+        "impressions": 502,
+        "position": 9.3
+      },
+      {
+        "page": "https://kabatone.com/integrations/lpr/",
+        "clicks": 6,
+        "impressions": 374,
+        "position": 9.3
+      },
+      {
+        "page": "https://kabatone.com/k-traffic/",
+        "clicks": 5,
+        "impressions": 265,
+        "position": 14.3
+      },
+      {
+        "page": "https://kabatone.com/es/k-dispatch/",
+        "clicks": 4,
+        "impressions": 191,
+        "position": 7.5
+      },
+      {
+        "page": "https://kabatone.com/es/resources/public-safety-software-panama/",
+        "clicks": 4,
+        "impressions": 62,
+        "position": 14.4
+      },
+      {
+        "page": "https://kabatone.com/es/resources/public-safety-software-peru/",
+        "clicks": 4,
+        "impressions": 74,
+        "position": 6.6
+      },
+      {
+        "page": "https://kabatone.com/k-video/",
+        "clicks": 4,
+        "impressions": 590,
+        "position": 15.5
+      },
+      {
+        "page": "https://kabatone.com/resources/911-call-center-software-guide/",
+        "clicks": 4,
+        "impressions": 1083,
+        "position": 11.4
+      },
+      {
+        "page": "https://kabatone.com/vs/fusus/",
+        "clicks": 4,
+        "impressions": 1509,
+        "position": 7.8
+      }
+    ]
+  },
+  "site": {
+    "routes": 237,
+    "locales": 2,
+    "sitemap_urls": 474,
+    "commits_this_week": 7,
+    "recent_commits": [
+      "696012f Merge pull request #5 from TomIdoVR/seo-weekly-brief-wt",
+      "48de86a Fix: accept base64 service-account key for cloud env vars (v2.307)",
+      "9901df9 Add: weekly brief caller \u2014 LLM synthesis + HTML dashboard from collector JSON (v2.308)",
+      "8e8aa20 Add: weekly brief collector \u2014 service-account auth, all-channel traffic (v2.307)",
+      "f53ac9c Change: legal page URL sitec-911 \u2192 911-michoacan + permanent redirects (v2.286)",
+      "1aec890 Change: rebrand legal page SITEC 911 \u2192 911 Michoac\u00e1n, CityShob \u2192 Kabat-One (v2.285)",
+      "051306b Feat: SITEC 911 legal page \u2014 Terms of Use & Privacy Policy (v2.284)"
+    ],
+    "branch": "run"
+  }
+}

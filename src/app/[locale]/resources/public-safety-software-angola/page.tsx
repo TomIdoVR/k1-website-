@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareAngolaPage({
       ? 'Plataforma unificada para la Policía Nacional de Angola (PNA) y FAA — despacho CAD integrado en 18 provincias, Luanda Safe City, SINSE inteligencia, Sonangol infraestructura petrolífera, Puerto de Luanda/Porto de Lobito, Lei 22/2011/ANPD y adquisición Contratação Pública.'
       : 'Unified platform for Angola National Police (PNA) and FAA — integrated CAD dispatch across 18 provinces, Luanda Safe City, SINSE intelligence, Sonangol oil infrastructure, Port of Luanda/Lobito, Law 22/2011/ANPD compliance, and Contratação Pública procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-angola/'
-      : 'https://kabatone.com/resources/public-safety-software-angola/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-angola'
+      : 'https://kabatone.com/resources/public-safety-software-angola',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareAngolaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: 'Angola',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-angola/'
-        : 'https://kabatone.com/resources/public-safety-software-angola/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-angola'
+        : 'https://kabatone.com/resources/public-safety-software-angola',
     },
   ])
 

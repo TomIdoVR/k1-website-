@@ -91,11 +91,11 @@ export default async function DronesIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Drones (UAV/UAS)' : 'Drones (UAV/UAS)',
-      url: es ? 'https://kabatone.com/es/integrations/drones/' : 'https://kabatone.com/integrations/drones/',
+      url: es ? 'https://kabatone.com/es/integrations/drones' : 'https://kabatone.com/integrations/drones',
     },
   ]
 
@@ -147,7 +147,7 @@ export default async function DronesIntegrationPage({
         __html: JSON.stringify(articleSchema(
           es ? 'Integración de Drones (UAV/UAS) para Seguridad Pública' : 'Drone (UAV/UAS) Integration for Public Safety',
           es ? 'Cómo KabatOne integra drones con video, despacho CAD y GIS para persecuciones, búsqueda y rescate, y vigilancia aérea en tiempo real.' : 'How KabatOne integrates drones with video, CAD dispatch, and GIS for pursuits, search and rescue, and real-time aerial surveillance.',
-          es ? 'https://kabatone.com/es/integrations/drones/' : 'https://kabatone.com/integrations/drones/',
+          es ? 'https://kabatone.com/es/integrations/drones' : 'https://kabatone.com/integrations/drones',
           '2026-03-20'
         ))
       }} />

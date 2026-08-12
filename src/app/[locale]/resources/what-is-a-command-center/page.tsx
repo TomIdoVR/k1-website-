@@ -93,13 +93,13 @@ export default async function WhatIsACommandCenterPage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Centro de Mando?' : 'What Is a Command Center?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-a-command-center/'
-        : 'https://kabatone.com/resources/what-is-a-command-center/',
+        ? 'https://kabatone.com/es/resources/what-is-a-command-center'
+        : 'https://kabatone.com/resources/what-is-a-command-center',
     },
   ]
 
@@ -160,8 +160,8 @@ export default async function WhatIsACommandCenterPage({
                 ? 'Un centro de mando es una instalación centralizada que coordina videovigilancia, despacho, GIS y respuesta en campo. Guía completa sobre clasificación C1–C5 y plataformas unificadas.'
                 : 'A command center is a centralized facility that coordinates video surveillance, dispatch, GIS, and field response. Complete guide to C1–C5 classification and unified platforms.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-a-command-center/'
-                : 'https://kabatone.com/resources/what-is-a-command-center/',
+                ? 'https://kabatone.com/es/resources/what-is-a-command-center'
+                : 'https://kabatone.com/resources/what-is-a-command-center',
               '2026-03-26'
             )
           ),

@@ -192,8 +192,8 @@ export default async function PrivacyPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-          { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-          { name: es ? 'Política de Privacidad' : 'Privacy Policy', url: es ? 'https://kabatone.com/es/privacy/' : 'https://kabatone.com/privacy/' },
+          { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+          { name: es ? 'Política de Privacidad' : 'Privacy Policy', url: es ? 'https://kabatone.com/es/privacy' : 'https://kabatone.com/privacy' },
         ])) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>

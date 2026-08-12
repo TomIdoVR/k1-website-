@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareBosniaHerzegovina({
         ? "KabatOne ofrece plataforma de seguridad pública para Bosnia y Herzegovina — SIPA policía estatal, OSA-OBA inteligencia, Corredor Vc Budapest-Ploče, gestión entidades RS/FBiH/Brčko, proceso candidatura UE 2022 y coordinación EUFOR Althea/Frontex."
         : "KabatOne delivers public safety platform for Bosnia and Herzegovina — SIPA state police, OSA-OBA intelligence, Corridor Vc Budapest-Ploče, RS/FBiH/Brčko entity management, EU candidacy process 2022, and EUFOR Althea/Frontex coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-bosnia-herzegovina/"
-        : "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina/",
+        ? "https://kabatone.com/es/resources/public-safety-software-bosnia-herzegovina"
+        : "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Bosnia y Herzegovina"
           : "Public Safety Software for Bosnia and Herzegovina",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-bosnia-herzegovina/"
-          : "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina/",
+          ? "https://kabatone.com/es/resources/public-safety-software-bosnia-herzegovina"
+          : "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina",
       },
     ]),
     faqPageSchema([

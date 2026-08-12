@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.316 -->
+      <div class="tl-entry fix" id="v2.316">
+        <div class="tl-meta"><span class="tl-ver">v2.316</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">The Spanish demo pages told Google not to index them</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>All six <code>/es/demo/*</code> pages served the English canonical.</strong> They sit under <code>[locale]</code> but used a static <code>export const metadata</code>, which Next evaluates once per module, not per locale &mdash; so every Spanish demo page declared itself a duplicate of the English one, on a site where Spanish pages are two of the top five earners. Now locale-aware, with self-referential canonicals and full hreflang</li>
+            <li><strong>Spanish titles and descriptions are now actually Spanish</strong>, and the twelve missing H1s on <code>/simulator</code> and the five scenarios are fixed (v2.323's work, which had only ever lived on <code>hero-redesign</code>)</li>
+            <li><strong><code>/demo/lpr</code> declared a social preview image that does not exist</strong> in the repo, so the preview 404'd. Repointed at a real asset; four other demo pages gained a missing <code>og:image</code>; added <code>metadataBase</code> so relative OG images resolve</li>
+            <li>Verified on a production build across all 232 sitemap URLs: warnings <strong>122 &rarr; 86</strong>, zero critical. <code>canonical_not_self</code> 6&rarr;0, <code>h1_missing</code> 12&rarr;0, <code>og_image_missing</code> 8&rarr;0</li>
+            <li><strong>Deliberately not fixed:</strong> 42 long titles / 44 long descriptions across 50 indexed pages. <code>ctr-recovery-plan-2026-07-27.md</code> holds an explicit decision against blanket title/meta rewrites; length causes truncation, not penalty. Do it as a scoped batch</li>
       <!-- v2.288 -->
       <div class="tl-entry feat" id="v2.288">
         <div class="tl-meta"><span class="tl-ver">v2.288</span><span class="tl-date">2026-08-04</span></div>
@@ -369,6 +380,96 @@
         </div>
       </div>
 
+      <!-- v2.315 -->
+      <div class="tl-entry fix" id="v2.315">
+        <div class="tl-meta"><span class="tl-ver">v2.315</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">The SEO audit can finally see redirects, and runs against production</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The audit followed redirects silently, so it could never report one.</strong> <code>fetch</code> follows by default, so a URL reaching 200 after two hops graded identically to one served directly — which is why the production <code>307 &rarr; 308 &rarr; 200</code> chain went unreported for months while the audit printed &ldquo;0 critical, 0 warnings&rdquo; daily. <code>fetchPage</code> now uses <code>redirect: "manual"</code> and walks the chain itself</li>
+            <li><strong>It audited a URL space Google never sees.</strong> Requests went to <code>/en/...</code>, but <code>localePrefix: 'as-needed'</code> serves EN at the root — so each was itself a redirect, in no sitemap and named by no canonical. On production <code>/en/k-dispatch</code> was a <em>three</em>-hop chain</li>
+            <li>New checks: <code>redirect_chain</code> (warning at one hop, critical at two), <code>canonical_host_mismatch</code> (production hosts only), and <code>canonical_not_self</code> — the last compares <em>paths only</em>, since staging is supposed to carry production canonicals and comparing full URLs fired on all 71 staging pages</li>
+            <li>Verified across all three hosts as found: <code>kabatone.com</code> &rarr; 71 &times; <code>redirect_chain</code> (the 307 to www) and <code>www.kabatone.com</code> &rarr; 71 &times; <code>canonical_host_mismatch</code> &mdash; the same defect from each side. Both cleared the moment the apex became the serving domain with www on a permanent 308</li>
+            <li><strong>Coverage went from 71 URLs to 232.</strong> The hard-coded table covered 31% of what the sitemap publishes &mdash; the ES locale and country pages were never audited at all. Newly visible: 44 over-length titles, 44 over-length descriptions, 12 missing H1s, 8 missing <code>og:image</code>. Not regressions, just never looked at</li>
+            <li><strong>Still correctly reported: 231 &times; <code>redirect_chain</code></strong> on production &mdash; the deployed sitemap still emits slashed URLs, so every one 308s. Falls to zero once v2.314 ships</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.314 -->
+      <div class="tl-entry fix" id="v2.314">
+        <div class="tl-meta"><span class="tl-ver">v2.314</span><span class="tl-date">2026-08-10</span></div>
+        <div class="tl-title">Every canonical URL now resolves to a 200</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Every canonical, hreflang, <code>og:url</code>, JSON-LD <code>url</code> and sitemap entry pointed at a URL that redirects.</strong> All 450 canonicals ended in a slash and the sitemap emitted slashed URLs, but Next 308s <code>/path/</code> &rarr; <code>/path</code> — so the URL we published as canonical was never the URL that served the page</li>
+            <li><strong>In production this stacked on a second hop.</strong> Vercel serves <code>www.kabatone.com</code> as primary and <strong>307</strong>s the apex, while the code, <code>robots.txt</code>, sitemap and GSC property are all non-www — an indexed URL cost <code>307 &rarr; 308 &rarr; 200</code>. GSC shows Google resolved it our way (142 pages, 0 www), so nothing was lost, but every crawl paid for two extra round-trips</li>
+            <li>Rewrote 449 canonicals and 856 schema / <code>llms.txt</code> URLs to the unslashed form, and replaced the sitemap's slash-appending with a <code>loc()</code> helper. Only the bare origin keeps its slash</li>
+            <li><strong><code>trailingSlash: true</code> was tried and rejected.</strong> Next applies it to route handlers too, so <code>/api/slack/events</code> would have started returning a 308 — and Slack's Events API does not follow redirects</li>
+            <li>Verified against a production build: canonical, <code>og:url</code>, all three hreflang alternates and the JSON-LD <code>url</code> agree and are unslashed; the homepage keeps its slash; all 232 sitemap entries are correct; served paths return 200 with no redirect; and <code>POST /api/slack/events</code> still answers 401 rather than a 308</li>
+            <li>Does not fix the 307 alone — that needs the apex set as primary domain in Vercel. Until then the chain goes from 2 hops to 1</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.313 -->
+      <div class="tl-entry fix" id="v2.313">
+        <div class="tl-meta"><span class="tl-ver">v2.313</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">SEO: market segmentation + synthetic-impression filter</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The headline CTR was structurally misleading.</strong> Site-wide CTR (0.49%) is dominated by US impressions that produce almost no clicks — 53,311 impressions to 77 clicks (0.14%), with 1,716 of 1,725 US queries earning zero clicks in 28 days. The target market (LATAM + Spain) runs at <strong>1.34% CTR</strong> and delivers 42% of all clicks from 15% of impressions</li>
+            <li><strong>Automated SERP polling identified.</strong> Three unrelated queries — "computer automated dispatch software", "peregrine.ai analytics reporting dashboards", "best fire computer aided dispatch software" — each show 900–1,200 impressions at positions 3.7–6.9, zero clicks, ~100% desktop, and an identical usa/gbr/nld/deu/ita/hkg country fingerprint. Unfiltered they ranked #2, #4 and #5 in the opportunity list and drove three of the four P0 actions in the 2026-08-04 brief</li>
+            <li><strong>Collector now segments.</strong> <code>scripts/weekly_brief.py</code> emits <code>target_market</code>, <code>by_country</code> and a <code>synthetic</code> block; synthetic queries are excluded from opportunity scoring and striking-distance counts. Criteria recorded in the JSON: <code>clicks=0, impressions&ge;150, position&le;10, desktop_share&ge;0.95</code></li>
+            <li><strong>Brief corrected.</strong> <code>SEO/audits/weekly-2026-08-04-corrected.{json,md}</code> supersedes Sections 2 and 4 of the original — the P0 title rewrites it proposed had already shipped on 2026-07-06, one day before the measurement window opened, and moved CTR 0.00pp</li>
+            <li><strong>GEO 7/12 → 8/12.</strong> "Genetec alternatives for public safety" is a confirmed AI citation win. "best NG911 software" is cited but not won — the page is in the source set and K-Dispatch is described, under a secondary "unified/CAD-integrated" bucket rather than the headline recommendations (Motorola VESTA, Intrado Viper, Tyler New World)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.309 -->
+      <div class="tl-entry added" id="v2.309">
+        <div class="tl-meta"><span class="tl-ver">v2.309</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">SEO: weekly brief 2026-08-04</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>28-day data collected.</strong> 2,883 sessions (+62.4%), 850 organic (29.5%), 55 AI Assistant (+120%), 427 clicks, 87,954 impressions, avg pos 13.5, 211 striking-distance queries — <code>SEO/audits/weekly-2026-08-04.json</code></li>
+            <li><strong>CEO-format brief written.</strong> Traffic by channel with deltas, GSC search performance, GEO citation status (7/12 cited, AI Assistant +120% confirms GEO converting), and P0/P1/P2 action plan — every P0 tied to a named query or specific figure — <code>SEO/audits/weekly-2026-08-04.md</code></li>
+            <li><strong>HTML dashboard generated</strong> (deterministic fallback — no Anthropic key in environment) — <code>SEO/audits/traffic-2026-08-04.html</code></li>
+            <li><strong>Top P0:</strong> "c5" at pos 8.5 with 5,423 impressions and 0.24% CTR — title/meta rewrite could add ~190 clicks/period (half current total)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.308 -->
+      <div class="tl-entry added" id="v2.308">
+        <div class="tl-meta"><span class="tl-ver">v2.308</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Second half of merging the two Monday SEO jobs.</strong> <code>scripts/weekly_report.py</code> consumes the collector JSON from v2.307 and produces the human brief: an LLM-written Weekly Intelligence plus a prioritised P0/P1/P2 action plan, rendered into a self-contained HTML dashboard. The collector owns data; this owns narrative and presentation — neither imports the other's job</li>
+            <li><strong>Why the split matters.</strong> The old monolith pulled data and rendered in one process, so a dead OAuth token could run "green" for three weeks while producing nothing. Now the collector fails loudly on bad auth and the report fails loudly on a missing brief — one can't mask the other</li>
+            <li><strong>New signals surfaced.</strong> Dashboard renders against the collector's richer shape: AI Assistant KPI (GEO reach), all-channel source mix, keyword opportunity stack, a dedicated <strong>Striking Distance</strong> table (pos 5–15), cluster momentum, and top referrers</li>
+            <li><strong>No new dependencies.</strong> The Anthropic call goes over <code>urllib</code>, same as the collector's GSC calls — no SDK. <code>--no-ai</code> renders a deterministic brief with zero network and zero key, and the LLM path falls back to it automatically on any failure so the report is never blank</li>
+            <li>Verified end-to-end on live 28-day data: collector → report in both deterministic and <code>claude-sonnet-4-6</code> modes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.307 -->
+      <div class="tl-entry fix" id="v2.307">
+        <div class="tl-meta"><span class="tl-ver">v2.307</span><span class="tl-date">2026-08-04</span></div>
+        <div class="tl-title">Weekly brief collector: service-account auth, all-channel traffic</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Killed the credential failure that cost three weeks.</strong> The weekly GSC pull had failed since mid-July with <code>invalid_grant</code>; it was diagnosed as an expired token and regenerated twice, and each replacement died within a week. <code>scripts/weekly_brief.py</code> authenticates by service account only — refresh tokens are removed from the weekly path rather than re-fixed</li>
+            <li><strong>No silent OAuth fallback</strong> — that fallback is why it went unnoticed: <code>google_auth.py --check gsc</code> kept reporting <code>[OK]</code> via the service account while the real job failed. Verified by running the full pull with the OAuth token renamed away</li>
+            <li><strong>GSC totals were understated by 58%.</strong> They were summed from query-dimension rows, which undercounts because GSC anonymises rare queries and omits them — measured <strong>180 clicks summed vs 427 actual</strong>. Totals now come from a dimensionless query and tie out to the Search Console UI exactly</li>
+            <li><strong>Query row limit 1,000 → 25,000</strong> — the site returns ~2,566 queries over 28 days, so ranking data was silently truncated. Striking-distance count went <strong>125 → 211</strong></li>
+            <li><strong>Non-search traffic is finally reported.</strong> The old GA4 pull filtered every page-level query to Organic Search, so ~70% of sessions were a single number. Now: per-channel sessions/engagement/key-events with deltas, landing pages per channel, referrer breakdown, 12-week trend</li>
+            <li><strong>AI Assistant isolated as its own section</strong> — 55 sessions, +120% vs prior, with its own landing pages and trend. The only direct measurement of whether GEO work converts to traffic, and it had never appeared in any report</li>
+            <li>First full picture: Direct <strong>62.6%</strong>, Organic Search 29.5%, Referral 3.5%, AI Assistant 1.9% — the brief had been reporting only the 29.5%</li>
+            <li><em>Versions v2.287–v2.306 are the homepage redesign work on the <code>hero-redesign</code> branch and will appear here when that merges</em></li>
       <!-- v2.287 -->
       <div class="tl-entry feat" id="v2.287">
         <div class="tl-meta"><span class="tl-ver">v2.287</span><span class="tl-date">2026-07-28</span></div>
@@ -384,6 +485,13 @@
       </div>
 
       <!-- v2.286 -->
+      <div class="tl-entry changed" id="v2.286">
+        <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Legal page URL: /legal/sitec-911 → /legal/911-michoacan</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Renamed the legal page route from <code>/legal/sitec-911</code> to <code>/legal/911-michoacan</code> (EN + ES) — updated the slug, canonical URL, and hreflang alternates</li>
+            <li>Added permanent (308) redirects from the old <code>/legal/sitec-911</code> and <code>/es/legal/sitec-911</code> URLs in <code>next.config.ts</code>, so the link already submitted to Google Play keeps resolving</li>
       <div class="tl-entry feat" id="v2.286">
         <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-27</span></div>
         <div class="tl-title">CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages</div>
@@ -398,6 +506,27 @@
       </div>
 
       <!-- v2.285 -->
+      <div class="tl-entry changed" id="v2.285">
+        <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>On the <code>/legal/sitec-911</code> page, replaced every visible mention of "SITEC 911" with "911 Michoacán" and "CityShob" (incl. "CityShob Software Ltd.") with "Kabat-One", across both the EN and ES routes. Support email set to <code>support@kabatone.com</code></li>
+            <li>Text-only rebrand — the URL slug, route folder, component name, and metadata canonical/hreflang are unchanged, so the live URL already given to Google Play keeps working</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.284 -->
+      <div class="tl-entry feat" id="v2.284">
+        <div class="tl-meta"><span class="tl-ver">v2.284</span><span class="tl-date">2026-07-29</span></div>
+        <div class="tl-title">Legal page: SITEC 911 Terms of Use &amp; Privacy Policy</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>New <code>/legal/sitec-911</code> page carrying the verbatim Spanish <strong>Condiciones de Uso</strong> and <strong>Política de Privacidad</strong> for the SITEC 911 emergency app (responsible entity: <strong>CityShob Software Ltd.</strong>) — Terms then Privacy on a single URL so Google Play can match it to the app listing</li>
+            <li>The Spanish text is the governing version and is rendered identically on both the EN and ES routes — no unofficial translation of binding legal terms</li>
+            <li>One-off component <code>LegalSitec911.tsx</code>, styled to match the existing per-app privacy pages (Barlow Condensed headings, DM Mono labels, dark theme); <code>robots: index:false, follow:true</code>, canonical + EN/ES/x-default hreflang, and a breadcrumb JSON-LD (Home / Legal / SITEC 911)</li>
+            <li>First page under the new <code>/legal/</code> route directory</li>
       <div class="tl-entry fix" id="v2.285">
         <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-27</span></div>
         <div class="tl-title">SEO: rescue video-analytics CTR/cannibalization (weekly #1 action)</div>

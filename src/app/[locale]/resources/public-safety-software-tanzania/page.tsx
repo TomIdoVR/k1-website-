@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareTanzaniaPage({
       ? 'Plataforma unificada para la Fuerza de Policía de Tanzania y JPF — despacho CAD integrado en 31 regiones, Dar es Salaam Safe City, NFRS protección contra incendios, Puerto de TPA 20M+ TEU, PDPA 2022/TCRA y adquisición PPRA/Tendas.'
       : 'Unified platform for Tanzania Police Force and JPF — integrated CAD dispatch across 31 regions, Dar es Salaam Safe City, NFRS fire protection, TPA Port 20M+ TEU, PDPA 2022/TCRA compliance, and PPRA/Tendas procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-tanzania/'
-      : 'https://kabatone.com/resources/public-safety-software-tanzania/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-tanzania'
+      : 'https://kabatone.com/resources/public-safety-software-tanzania',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareTanzaniaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: es ? 'Tanzania' : 'Tanzania',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-tanzania/'
-        : 'https://kabatone.com/resources/public-safety-software-tanzania/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-tanzania'
+        : 'https://kabatone.com/resources/public-safety-software-tanzania',
     },
   ])
 

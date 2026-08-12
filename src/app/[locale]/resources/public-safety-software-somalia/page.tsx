@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareSomaliaPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones anti-Al-Shabaab y conciencia situacional para la Policía Federal de Somalia, SNA y programas de reconstrucción de la seguridad pública."
       : "KabatOne delivers modular command-and-control, anti-Al-Shabaab operations coordination, and situational awareness for the Somali Federal Police, SNA, and public safety reconstruction programs.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-somalia/"
-      : "https://kabatone.com/resources/public-safety-software-somalia/",
+      ? "https://kabatone.com/es/resources/public-safety-software-somalia"
+      : "https://kabatone.com/resources/public-safety-software-somalia",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareSomaliaPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Somalia" : "Public Safety Software Somalia",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-somalia/"
-        : "https://kabatone.com/resources/public-safety-software-somalia/",
+        ? "https://kabatone.com/es/resources/public-safety-software-somalia"
+        : "https://kabatone.com/resources/public-safety-software-somalia",
     },
   ]);
 

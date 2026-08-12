@@ -154,7 +154,7 @@ export default async function StadiumsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Estadios' : 'Stadiums', url: 'https://kabatone.com/industries/stadiums/' },
+          { name: es ? 'Estadios' : 'Stadiums', url: 'https://kabatone.com/industries/stadiums' },
         ])) }}
       />
       <script

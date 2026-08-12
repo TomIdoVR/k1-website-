@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la Policía Real de Omán (ROP) y CDAA — despacho CAD integrado en 11 gobernados, ISOC de Mascate, seguridad portuaria Salalah/Duqm/Sohar, infraestructura PDO/OQ, Decreto Real 6/2022/ITA/OCERT y adquisición mediante Decreto Real 36/2008.'
     : 'Unified platform for Royal Oman Police (ROP) and CDAA — integrated CAD dispatch across 11 governorates, Muscat ISOC, Port of Salalah/Duqm/Sohar security, PDO/OQ infrastructure, Royal Decree 6/2022/ITA/OCERT compliance, and Royal Decree 36/2008 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-oman/'
-    : 'https://kabatone.com/resources/public-safety-software-oman/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-oman'
+    : 'https://kabatone.com/resources/public-safety-software-oman'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Omán' : 'Oman', url },
   ]
 

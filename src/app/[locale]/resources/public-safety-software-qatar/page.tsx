@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para MOI, Policía de Qatar y QFRS — despacho CAD integrado con el NCC y coordinación de emergencias QAWS/HMC, gestión de cámaras Doha Safe City/FIFA 2022 legado conforme a PDPL 2016 y cumplimiento NCSA/Q-CERT con contratación Etimad/Ley 24/2015.'
     : 'Unified platform for Qatar MOI, Police, and QFRS — integrated CAD dispatch with NCC and QAWS/HMC emergency coordination, Doha Safe City/FIFA 2022 legacy camera management compliant with PDPL 2016, and NCSA/Q-CERT compliance with Etimad/Law 24/2015 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-qatar/'
-    : 'https://kabatone.com/resources/public-safety-software-qatar/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-qatar'
+    : 'https://kabatone.com/resources/public-safety-software-qatar'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: 'Qatar', url },
   ]
 

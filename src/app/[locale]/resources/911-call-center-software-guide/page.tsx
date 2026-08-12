@@ -111,21 +111,21 @@ export default async function CallCenterSoftwareGuidePage({
       ? 'El software para centros de llamadas 911 gestiona la recepción de emergencias, clasificación de incidentes y despacho de unidades. Funciones clave, diferencia con CAD e integración con NG911.'
       : '911 call center software manages emergency call intake, incident classification, and unit dispatch. Learn the key features, how it differs from CAD, NG911 integration, and what to evaluate.',
     es
-      ? 'https://kabatone.com/es/resources/911-call-center-software-guide/'
-      : 'https://kabatone.com/resources/911-call-center-software-guide/',
+      ? 'https://kabatone.com/es/resources/911-call-center-software-guide'
+      : 'https://kabatone.com/resources/911-call-center-software-guide',
     '2026-05-18'
   )
 
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es
         ? 'Software para Centro de Llamadas 911: Guía de Selección'
         : '911 Call Center Software: Features & Selection Guide',
       url: es
-        ? 'https://kabatone.com/es/resources/911-call-center-software-guide/'
-        : 'https://kabatone.com/resources/911-call-center-software-guide/',
+        ? 'https://kabatone.com/es/resources/911-call-center-software-guide'
+        : 'https://kabatone.com/resources/911-call-center-software-guide',
     },
   ])
 

@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareRwandaPage({
       ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional de Ruanda, RDF, gestión de desastres MIDIMAR y programas de ciudad inteligente Kigali."
       : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for Rwanda National Police, RDF, MIDIMAR disaster management, and Kigali Smart City programs.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-rwanda/"
-      : "https://kabatone.com/resources/public-safety-software-rwanda/",
+      ? "https://kabatone.com/es/resources/public-safety-software-rwanda"
+      : "https://kabatone.com/resources/public-safety-software-rwanda",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareRwandaPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Rwanda" : "Public Safety Software Rwanda",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-rwanda/"
-        : "https://kabatone.com/resources/public-safety-software-rwanda/",
+        ? "https://kabatone.com/es/resources/public-safety-software-rwanda"
+        : "https://kabatone.com/resources/public-safety-software-rwanda",
     },
   ]);
 

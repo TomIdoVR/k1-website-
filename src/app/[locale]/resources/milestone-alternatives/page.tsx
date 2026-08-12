@@ -97,18 +97,18 @@ export default async function MilestoneAlternativesPage({
       ? 'Las mejores alternativas a Milestone XProtect para seguridad pública: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y cuál es la mejor plataforma unificada.'
       : 'The best Milestone XProtect alternatives for public safety: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, and Motorola compared — why agencies switch, selection criteria, and the best unified platform.',
     es
-      ? 'https://kabatone.com/es/resources/milestone-alternatives/'
-      : 'https://kabatone.com/resources/milestone-alternatives/',
+      ? 'https://kabatone.com/es/resources/milestone-alternatives'
+      : 'https://kabatone.com/resources/milestone-alternatives',
     '2026-07-17'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Alternativas a Milestone' : 'Milestone Alternatives',
       url: es
-        ? 'https://kabatone.com/es/resources/milestone-alternatives/'
-        : 'https://kabatone.com/resources/milestone-alternatives/',
+        ? 'https://kabatone.com/es/resources/milestone-alternatives'
+        : 'https://kabatone.com/resources/milestone-alternatives',
     },
   ])
 

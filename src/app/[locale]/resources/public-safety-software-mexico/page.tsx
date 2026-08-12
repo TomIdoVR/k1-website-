@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la SSPC y Guardia Nacional de México — despacho CAD integrado con los 31 estados y CDMX a través del Sistema 911, centros C5/C4, SINAPROC multi-riesgo, SEMAR/SEDENA coordinación, LFPDPPP/LGPDPPSO/INAI y adquisición LAASSP/CompraNet.'
     : 'Unified platform for Mexico SSPC and Guardia Nacional — integrated CAD dispatch across 31 states and CDMX via 911 System, C5/C4 command centres, SINAPROC multi-hazard, SEMAR/SEDENA coordination, LFPDPPP/LGPDPPSO/INAI compliance, and LAASSP/CompraNet procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-mexico/'
-    : 'https://kabatone.com/resources/public-safety-software-mexico/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-mexico'
+    : 'https://kabatone.com/resources/public-safety-software-mexico'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'México' : 'Mexico', url },
   ]
 

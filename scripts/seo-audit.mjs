@@ -23,6 +23,10 @@ const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
 const DIFF_ONLY = args.includes("--diff");
 const CONCURRENCY = 5;
+const MAX_REDIRECTS = 5;
+// Hosts that serve the indexed site. Only these are held to "canonical must
+// name this host" — staging and preview legitimately carry prod canonicals.
+const PROD_HOSTS = new Set(["kabatone.com", "www.kabatone.com"]);
 
 // All known routes (EN locale)
 const ROUTES = [
@@ -149,6 +153,27 @@ function checkPage(url, html) {
   info.canonical = canonical;
   if (!canonical) {
     issues.push({ severity: "warning", check: "canonical_missing", msg: "No canonical tag found" });
+  } else {
+    /* Compare the path, not the whole URL. Staging and preview hosts are
+       supposed to carry production canonicals, so a host difference there is
+       correct, not a defect — comparing full URLs would fire on all 71 staging
+       pages every day and bury the real signal. */
+    const strip = (u) => { try { return new URL(u).pathname.replace(/\/$/, "") || "/" } catch { return u } };
+    if (strip(canonical) !== strip(url)) {
+      issues.push({
+        severity: "warning",
+        check: "canonical_not_self",
+        msg: `Canonical path ${strip(canonical)} does not match the audited path ${strip(url)}`,
+      });
+    } else if (PROD_HOSTS.has(new URL(url).host) && new URL(canonical).host !== new URL(url).host) {
+      /* On a production host the canonical must name that same host. This is
+         what catches "site serves on www but every canonical says apex". */
+      issues.push({
+        severity: "warning",
+        check: "canonical_host_mismatch",
+        msg: `Served on ${new URL(url).host} but canonical claims ${new URL(canonical).host}`,
+      });
+    }
   }
 
   // OG tags
@@ -215,19 +240,44 @@ function checkPage(url, html) {
   return { url, issues, info };
 }
 
+/**
+ * Follow redirects by hand rather than letting fetch swallow them.
+ *
+ * `fetch` follows redirects silently, so an audited URL that only reached 200
+ * after two hops graded exactly the same as one served directly — which is how
+ * the production `307 (apex→www) → 308 (trailing slash) → 200` chain on every
+ * indexed URL went unreported for months. The chain is now data the checks can
+ * see. See SEO/weekly-report-2026-08-10.md.
+ */
 async function fetchPage(url, timeout = 20000, retries = 2) {
   let lastError = "";
   for (let attempt = 0; attempt <= retries; attempt++) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
     try {
-      const res = await fetch(url, {
-        signal: controller.signal,
-        headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
-      });
+      const chain = [];
+      let current = url;
+      let res;
+      for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+        res = await fetch(current, {
+          signal: controller.signal,
+          redirect: "manual",
+          headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
+        });
+        if (res.status < 300 || res.status >= 400) break;
+        const location = res.headers.get("location");
+        if (!location) break;
+        const next = new URL(location, current).href;
+        chain.push({ from: current, to: next, status: res.status });
+        current = next;
+        if (hop === MAX_REDIRECTS) {
+          clearTimeout(timer);
+          return { ok: false, error: `More than ${MAX_REDIRECTS} redirects`, chain };
+        }
+      }
       const html = await res.text();
       clearTimeout(timer);
-      return { ok: true, status: res.status, html };
+      return { ok: true, status: res.status, html, chain, finalUrl: current };
     } catch (e) {
       clearTimeout(timer);
       lastError = e.message;
@@ -238,6 +288,44 @@ async function fetchPage(url, timeout = 20000, retries = 2) {
     }
   }
   return { ok: false, error: lastError };
+}
+
+/**
+ * A URL we publish as canonical — in the sitemap, in a `rel=canonical`, in
+ * hreflang — must serve 200 itself. Any hop means Google is asked to crawl one
+ * URL and index another.
+ */
+function checkRedirectChain(url, chain, finalUrl) {
+  if (!chain || chain.length === 0) return [];
+  const hops = chain.map(h => `${h.status} → ${h.to}`).join(", ");
+  return [{
+    severity: chain.length > 1 ? "critical" : "warning",
+    check: "redirect_chain",
+    msg: `${chain.length} redirect${chain.length > 1 ? "s" : ""} before 200 (${hops}). Canonical URLs must serve 200 directly.`,
+    finalUrl,
+  }];
+}
+
+/**
+ * The URLs this deployment publishes, read from its own sitemap.
+ *
+ * Hosts are rewritten to the audited origin: sitemap.ts hard-codes the
+ * production origin, so auditing staging would otherwise fetch production and
+ * silently grade the wrong site.
+ */
+async function sitemapUrls(baseUrl) {
+  const res = await fetchPage(`${baseUrl}/sitemap.xml`);
+  if (!res.ok || res.status >= 400) {
+    process.stderr.write(`  ! sitemap unreachable (${res.status || res.error}); falling back to ROUTES\n`);
+    return null;
+  }
+  const locs = [...res.html.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].trim());
+  if (locs.length === 0) {
+    process.stderr.write(`  ! sitemap had no <loc> entries; falling back to ROUTES\n`);
+    return null;
+  }
+  const origin = new URL(baseUrl).origin;
+  return [...new Set(locs.map(u => { try { return origin + new URL(u).pathname } catch { return null } }).filter(Boolean))];
 }
 
 async function runBatch(urls, batchSize) {
@@ -254,7 +342,10 @@ async function runBatch(urls, batchSize) {
             info: {},
           };
         }
-        return checkPage(url, res.html);
+        const page = checkPage(url, res.html);
+        page.issues.unshift(...checkRedirectChain(url, res.chain, res.finalUrl));
+        page.info.redirectHops = res.chain.length;
+        return page;
       })
     );
     results.push(...batchResults);
@@ -266,9 +357,21 @@ async function runBatch(urls, batchSize) {
 async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
-  process.stderr.write(`Routes: ${ROUTES.length} | Concurrency: ${CONCURRENCY}\n\n`);
 
-  const urls = ROUTES.map(r => `${BASE_URL}/en${r === "/" ? "/" : r}`);
+  /* Audit the URL space we actually publish, not `/en/*`.
+     `localePrefix: 'as-needed'` serves EN at the root, so every `/en/...` URL
+     the audit used to request was a redirect that appears in no sitemap and no
+     canonical — it graded a URL space Google never sees, which is the second
+     reason the production redirect chain stayed invisible.
+
+     The list comes from the target's own sitemap rather than from a slash
+     convention hard-coded here. Whether we publish `/path` or `/path/` is a
+     decision that has now changed twice (v2.314 de-slashed everything), and
+     each time a hard-coded guess is wrong it either hides a real redirect or
+     invents 70 false ones. Asking the deployment what it publishes cannot go
+     stale. Falls back to ROUTES if the sitemap is unreachable. */
+  const urls = await sitemapUrls(BASE_URL) ?? ROUTES.map(r => `${BASE_URL}${r}`);
+  process.stderr.write(`Routes: ${urls.length} | Concurrency: ${CONCURRENCY}\n\n`);
   const results = await runBatch(urls, CONCURRENCY);
 
   const allIssues = results.flatMap(r => r.issues.map(i => ({ ...i, page: r.url })));
