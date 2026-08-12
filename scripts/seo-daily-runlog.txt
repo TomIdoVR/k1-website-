@@ -2,4 +2,4 @@
 2026-07-31 | KAB-2294 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
 2026-08-03 | KAB-2382 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
 2026-08-04 | KAB-2432 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 fixes, silent-exit per step 6
-2026-08-12 | KAB-2472 daily audit CLEAN | pages=71 critical=0 warnings=0 info=11 newIssues=0 resolved=0 | 0 SEO fixes, silent-exit per step 6; committed stranded seo-audit.mjs retry fix + refreshed baseline
+2026-08-12 | KAB-2472 daily audit INVALID->RERUN | local run pages=71 CLEAN was a FALSE NEGATIVE: local nextjs was 16 commits behind origin, running pre-v2.315 seo-audit.mjs that only knew 71 routes. Re-ran with origin/nextjs script: pages=232 critical=0 warnings=86 (44 desc_long + 42 title_long) info=40. Issue cancelled as superseded routine instance before fixes landed. Backlog handed off - see follow-up issue.
