@@ -63,6 +63,8 @@ def main():
     ap.add_argument('--model', default='claude-sonnet-4-6')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-write', action='store_true')
+    ap.add_argument('--allow-partial', action='store_true',
+                    help='write the snapshot even if some queries failed (default: refuse)')
     args = ap.parse_args()
 
     key = _api_key()
@@ -81,12 +83,21 @@ def main():
         queries = queries[:args.limit]
 
     today = datetime.now().strftime('%Y-%m-%d')
-    rows, cited = [], 0
+    rows, cited, failed = [], 0, 0
     for q in queries:
         try:
             text, urls = ask_with_search(client, args.model, q)
         except Exception as e:
-            print(f'  [error] {q[:50]}: {str(e)[:80]}')
+            msg = str(e)
+            # Credit exhaustion / auth failures affect every remaining query — stop now
+            # instead of burning the rest of the run and logging a misleading partial snapshot.
+            if any(s in msg.lower() for s in ('credit balance', 'authentication', 'permission')):
+                print(f'\n  [FATAL] {msg[:200]}')
+                print('  Aborting: this failure applies to every remaining query.')
+                failed += len(queries) - len(rows)
+                break
+            print(f'  [error] {q[:50]}: {msg[:120]}')
+            failed += 1
             continue
         blob = (text + ' ' + ' '.join(urls)).lower()
         kabat = ('kabatone' in blob) or any('kabatone.com' in u.lower() for u in urls)
@@ -97,6 +108,14 @@ def main():
         print(f"  {'✅ CITED ' if kabat else '❌ absent'}  {q[:52]:<52}  vs: {', '.join(comps[:4]) or '—'}")
 
     print(f"\nKabatOne cited in {cited}/{len(rows)} AI answers ({100*cited//max(len(rows),1)}%).")
+
+    if failed:
+        print(f'{failed}/{len(queries)} queries failed — this snapshot covers only '
+              f'{len(rows)} of {len(queries)} queries.')
+        if not args.allow_partial:
+            print('Refusing to write a partial snapshot (a partial run distorts the trend line).\n'
+                  'Fix the cause and re-run, or pass --allow-partial to record it anyway.')
+            sys.exit(2)
 
     if not args.no_write and rows:
         new = not HISTORY.exists()

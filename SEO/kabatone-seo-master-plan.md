@@ -1,11 +1,29 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-06-02
+**Last updated:** 2026-08-12
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com
 **Staging (static):** https://staging-k1-website.vercel.app/hero-mockup
 **Stack:** Next.js (App Router) on Vercel — branch `nextjs` in TomIdoVR/k1-website-
 **Static fallback:** `hero-mockup.html` on `main` branch — kept in sync for comparison pages and footer links
+
+---
+
+## Status — 2026-08-12 (KAB-2474 weekly review)
+
+**GEO gap is mostly closed.** VMS, unified-platform and NG911 flipped `N → Y` in AI answers since
+the 07-07 baseline — cited in 4/5 queries measured (was 5/12). The Phase 3 roundup pages caused it.
+**C5 is the only category question still uncited**, and it is an authority problem, not content:
+the page has FAQPage schema, a verbatim-matching first FAQ, and 24 inbound internal links.
+
+**Content pipeline (Phase 3) is complete** — every row below is `Done`. No page is queued, and the
+remaining GEO gap does not call for one. Next content decision is *subtractive*: consolidate the
+video-analytics cluster (3 competing URLs, 2 de-ranked).
+
+🔴 **Blocked:** the SEO Anthropic API key is out of credit, so `track_geo.py` cannot complete a
+full 12-query run (partial since ~08-04). GEO coverage is unmeasurable until it is topped up.
+
+Detail: `weekly-report-2026-08-12.md`.
 
 ---
 
