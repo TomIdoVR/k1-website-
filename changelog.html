@@ -357,6 +357,36 @@
     <div class="timeline">
 
       <!-- v2.318 -->
+      <div class="tl-entry fix" id="v2.319">
+        <div class="tl-meta"><span class="tl-ver">v2.319</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">The coverage guard v2.318 shipped was armed at 56 pages, not 187</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Re-seeded <code>scripts/seo-baseline.json</code> from 71 pages to 234.</strong> v2.318 added a guard that refuses when a run resolves under 80&percnt; of the previous baseline's <code>pagesAudited</code> &mdash; but the committed baseline still recorded <code>71</code>, the fossil left by the stale-checkout runs KAB-2480 was filed for. The script rewrites that file after every run, so each routine run starting from a fresh checkout reset it to 71 and armed the floor at <strong>56</strong>. A collapse from 234 URLs to 60 would have passed silently. The floor is now <strong>187</strong></li>
+            <li>Seed is the verified full run of 2026-08-13 against staging: 234 URLs, 0 critical / 4 warnings / 83 info. Warnings are down from 86 because v2.317's title and description trims are now deployed</li>
+            <li>Added <code>SEO/kab2480-audit-trust-guards.md</code>, the KAB-2480 write-up that had only ever existed on the unmerged <code>seo-audit-guardrails</code> branch &mdash; corrected to match what shipped: four guards, not three</li>
+            <li><strong>The KAB-2491 version collision resolved itself upstream.</strong> All four "unpushed work" markers are present on <code>origin/nextjs</code> and local <code>nextjs</code> is level with it, so no renumbering was needed and none was done</li>
+            <li><strong>Repo repair:</strong> 24 refs under <code>.git/refs</code> had become unreadable OneDrive cloud placeholders, so every <code>git fetch</code> aborted with <code>bad object</code> and no branch could be reconciled. All 24 recovered from <code>.git/packed-refs</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.318 -->
+      <div class="tl-entry fix" id="v2.319">
+        <div class="tl-meta"><span class="tl-ver">v2.319</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">The audit now states coverage as a share of the repo, and the missing half turns out to be deliberate</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Coverage accounting.</strong> The audit crawled 234 URLs while the repo has 239 routes &times; 2 locales = 478. A raw page count cannot tell full coverage from half of it, so every run now reports <code>Coverage: 234/478 repo URLs (49&percnt;)</code> and carries <code>coveragePct</code> in the report JSON</li>
+            <li><strong>The gap is policy, not a bug.</strong> The accounting balances exactly &mdash; 234 crawled + 230 noindex-by-policy + 14 off-sitemap by design = 478, with <strong>0 unexplained</strong>. The 230 are the non-ICP country pages the 2026-07-07 indexation triage set to <code>noindex,follow</code>. Neither the sitemap nor the crawler is dropping routes</li>
+            <li><strong>New <code>route_not_in_sitemap</code> warning.</strong> Every uncrawled route must now be <em>explained</em> &mdash; noindex-by-policy or on an explicit allowlist. Anything else is a page someone shipped and never added to <code>sitemap.ts</code>: never audited, never submitted to Google. Raised per URL rather than absorbed into the denominator</li>
+            <li><strong>The over-cap backlog is far smaller than estimated.</strong> Projected at ~332 strings; measured, 412 are over cap but 411 sit on noindexed pages with no search impact. Exactly one was indexable &mdash; the ES <code>psimAlternatives</code> description at 218 chars &mdash; trimmed to 190. Indexable over-cap is now zero in both locales</li>
+            <li>Added <code>--coverage-only</code>, which answers coverage from the sitemap with no crawl. Guard verified by removing <code>/lp</code> from the allowlist: the run reported <code>2 unexplained</code> and named both <code>/lp</code> and <code>/es/lp</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.318 -->
       <div class="tl-entry fix" id="v2.318">
         <div class="tl-meta"><span class="tl-ver">v2.318</span><span class="tl-date">2026-08-13</span></div>
         <div class="tl-title">The daily SEO audit can now refuse to run instead of reporting the wrong site</div>

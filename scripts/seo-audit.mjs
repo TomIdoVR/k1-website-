@@ -12,7 +12,7 @@
  *  - Images with missing alt text
  */
 
-import { writeFileSync, readFileSync, existsSync } from "fs";
+import { writeFileSync, readFileSync, existsSync, readdirSync } from "fs";
 import { execFileSync } from "child_process";
 import { URL } from "url";
 
@@ -23,6 +23,8 @@ const BASE_URL = getArg("--url", "https://staging.kabatone.com");
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
 const DIFF_ONLY = args.includes("--diff");
+// Report coverage accounting and exit without crawling.
+const COVERAGE_ONLY = args.includes("--coverage-only");
 // Guard overrides. Each silences one refusal (exit 3) — pass only after
 // establishing why the guard is wrong, never to make a red run go green.
 const ALLOW_STALE = args.includes("--allow-stale");
@@ -414,6 +416,105 @@ function checkCoverage(count) {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Coverage accounting (KAB-2507).
+
+   The crawl list comes from the deployed sitemap, and the sitemap is a subset
+   of the repo by design: `keepInSitemap` in src/app/sitemap.ts drops non-ICP
+   country pages (they are noindex,follow per the 2026-07-07 indexation triage),
+   and a handful of routes are deliberately never submitted. So "232 pages
+   audited" was true and also only half the repo — a raw page count reads as
+   full coverage when it is not.
+
+   This states coverage as a fraction of repo routes and, more importantly,
+   forces every uncrawled route to be *explained*. A route that is neither
+   noindex-by-policy nor on the off-sitemap allowlist is a real gap — someone
+   shipped a page and never added it to sitemap.ts — and it is reported as a
+   warning rather than silently absorbed into the denominator. */
+
+const APP_ROUTES_DIR = "src/app/[locale]";
+const SITEMAP_SRC = "src/app/sitemap.ts";
+
+/* Routes intentionally absent from sitemap.ts. Each is off-index on purpose:
+   internal previews, ad landing pages, and per-contract legal notices that are
+   linked directly and must not compete in search. Adding a page here is a
+   deliberate act — an unlisted route NOT in this set is flagged. */
+const OFF_SITEMAP_ROUTES = new Set([
+  "/hero-lab-prev",          // design preview, not public
+  "/lp",                     // paid-campaign landing page
+  "/legal/911-michoacan",
+  "/privacy-policy-tamaulipas",
+  "/privacy/911-baja-california-sur",
+  "/privacy/911-michoacan",
+  "/privacy/c5-escudo-pakal",
+]);
+
+const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;
+
+function repoRoutes(dir = APP_ROUTES_DIR, prefix = "") {
+  if (!existsSync(dir)) return null;
+  const out = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`);
+      if (sub) out.push(...sub);
+    } else if (entry.name === "page.tsx") {
+      out.push(prefix); // "" for the homepage
+    }
+  }
+  return out;
+}
+
+/* The paths sitemap.ts lists at all, before keepInSitemap filters them. Parsed
+   rather than imported because this is a .mjs script and sitemap.ts is TS. */
+function sitemapListedPaths() {
+  if (!existsSync(SITEMAP_SRC)) return null;
+  const src = readFileSync(SITEMAP_SRC, "utf-8");
+  const paths = [...src.matchAll(/\{\s*path:\s*'([^']*)'/g)].map(m => m[1]);
+  return paths.length ? new Set(paths) : null;
+}
+
+function computeCoverage(crawledUrls) {
+  const routes = repoRoutes();
+  const listed = sitemapListedPaths();
+  if (!routes || !listed) return null;
+
+  const crawled = new Set(crawledUrls.map(u => { try { return new URL(u).pathname } catch { return u } }));
+  const isCrawled = p => crawled.has(p) || crawled.has(p === "" ? "/" : `${p}/`) || (p === "" && crawled.has("/"));
+
+  const buckets = { noindexPolicy: [], offSitemap: [], unexplained: [] };
+  let covered = 0;
+  const repoUrls = [];
+
+  for (const route of routes) {
+    for (const path of [route, `/es${route}`]) {
+      repoUrls.push(path);
+      if (isCrawled(path)) { covered++; continue }
+      if (!listed.has(route)) {
+        (OFF_SITEMAP_ROUTES.has(route) ? buckets.offSitemap : buckets.unexplained).push(path);
+      } else if (COUNTRY_PAGE_RE.test(route)) {
+        /* Listed but not emitted: keepInSitemap dropped it as a non-ICP market. */
+        buckets.noindexPolicy.push(path);
+      } else {
+        /* Listed, indexable, and still not served — a stale deploy or a
+           sitemap bug. This is the case that must never pass silently. */
+        buckets.unexplained.push(path);
+      }
+    }
+  }
+
+  return {
+    repoRoutes: routes.length,
+    repoUrls: repoUrls.length,
+    crawled: crawledUrls.length,
+    covered,
+    pct: Math.round((covered / repoUrls.length) * 1000) / 10,
+    excludedNoindexPolicy: buckets.noindexPolicy.length,
+    excludedOffSitemap: buckets.offSitemap.length,
+    unexplained: buckets.unexplained.sort(),
+  };
+}
+
 async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
@@ -437,10 +538,39 @@ async function main() {
   }
   const urls = fromSitemap ?? ROUTES.map(r => `${BASE_URL}${r}`);
   checkCoverage(urls.length);
+  const coverage = computeCoverage(urls);
+  if (coverage) {
+    process.stderr.write(
+      `Coverage: ${coverage.covered}/${coverage.repoUrls} repo URLs (${coverage.pct}%) — ` +
+      `${coverage.excludedNoindexPolicy} noindex-by-policy, ${coverage.excludedOffSitemap} off-sitemap by design, ` +
+      `${coverage.unexplained.length} unexplained\n`
+    );
+    for (const p of coverage.unexplained.slice(0, 20)) {
+      process.stderr.write(`  ! uncrawled and unexplained: ${p}\n`);
+    }
+  } else {
+    process.stderr.write(`  ! coverage accounting unavailable (repo route dir or sitemap.ts not readable)\n`);
+  }
+  /* Coverage is answerable from the sitemap alone — no crawl needed. Useful
+     for checking that a newly shipped page is actually in the audited set. */
+  if (COVERAGE_ONLY) {
+    console.log(JSON.stringify(coverage, null, 2));
+    process.exit(coverage && coverage.unexplained.length > 0 ? 1 : 0);
+  }
   process.stderr.write(`Routes: ${urls.length} | Concurrency: ${CONCURRENCY}\n\n`);
   const results = await runBatch(urls, CONCURRENCY);
 
   const allIssues = results.flatMap(r => r.issues.map(i => ({ ...i, page: r.url })));
+  /* A shipped page missing from the sitemap is never graded and never crawled
+     by Google. It belongs in the issue list, not just in a coverage footnote. */
+  for (const path of coverage?.unexplained ?? []) {
+    allIssues.push({
+      severity: "warning",
+      check: "route_not_in_sitemap",
+      msg: `Route exists in ${APP_ROUTES_DIR} but is not served by the sitemap, so it is never audited or submitted. Add it to ${SITEMAP_SRC}, or to OFF_SITEMAP_ROUTES in this script if that is deliberate.`,
+      page: `${BASE_URL}${path}`,
+    });
+  }
   const critical = allIssues.filter(i => i.severity === "critical");
   const warnings = allIssues.filter(i => i.severity === "warning");
   const infos = allIssues.filter(i => i.severity === "info");
@@ -449,10 +579,16 @@ async function main() {
     runAt: now,
     baseUrl: BASE_URL,
     pagesAudited: results.length,
+    coverage,
     summary: {
       critical: critical.length,
       warnings: warnings.length,
       info: infos.length,
+      /* Report coverage as a share of known repo routes. A raw page count
+         cannot distinguish full coverage from half of it. */
+      coveragePct: coverage?.pct ?? null,
+      coverageAudited: coverage ? `${coverage.covered}/${coverage.repoUrls}` : null,
+      coverageUnexplained: coverage?.unexplained.length ?? null,
       pagesWithIssues: results.filter(r => r.issues.some(i => i.severity !== "info")).length,
       pagesClean: results.filter(r => r.issues.filter(i => i.severity !== "info").length === 0).length,
     },
@@ -477,7 +613,7 @@ async function main() {
   writeFileSync(BASELINE_FILE, JSON.stringify(report, null, 2));
 
   process.stderr.write(`\nAudit complete\n`);
-  process.stderr.write(`Pages: ${report.pagesAudited} | Critical: ${critical.length} | Warnings: ${warnings.length} | Info: ${infos.length}\n`);
+  process.stderr.write(`Pages: ${report.pagesAudited}${coverage ? ` (${coverage.pct}% of ${coverage.repoUrls} repo URLs)` : ""} | Critical: ${critical.length} | Warnings: ${warnings.length} | Info: ${infos.length}\n`);
   process.stderr.write(`Report: ${OUT_FILE}\n\n`);
 
   // Print summary JSON to stdout for piping
