@@ -1,3 +1,17 @@
+## [v2.345] – 2026-08-12 — No invented count, no dead carousel controls, media panel clears the header
+### Fixed
+- **The solutions media panel was parking underneath the site header.** `.sv-side` stuck at a hardcoded `top: 88px`, set before the header became sticky; the header is 96px, so the panel sat 8px *under* it and clipped the top of every app window — worst on K-Traffic and K-Connect, where the panel stays pinned longest. It now sticks to `calc(var(--hll-nav-h) + 16px)`, so it follows the 78px mobile header too without a second hardcoded number.
+- **The carousel showed its dots and arrows even when nothing scrolled.** They now render only when the track actually overflows its viewport, measured with a ResizeObserver rather than inferred from card count — whether seven cards overflow depends on container width, so the same seven scroll at 1180px and fit at 1920px.
+
+### Changed
+- **The fragmented verdict no longer states a number.** "Six systems" claimed something about the reader's estate rather than about the problem; an agency may run three systems or thirty. Now **"Separate systems. No single picture."** / "Sistemas separados. Ninguna imagen común." "Separate" also avoids "disconnected" and "fragmented", which the panel's sub and heading already carry.
+
+### Notes
+- When the carousel is not scrollable it also drops its `carousel` roledescription, its tab stop and its "3 / 7" live region — a scroll container that cannot scroll is a dead tab stop, and announcing a position the user is not in is noise.
+- `scrollable` starts `true` so the server-rendered markup matches the client's first render. The alternative starts empty and pops the controls in on hydration at the widths that need them, which is the more visible of the two flashes.
+- 1px of tolerance in the overflow test: sub-pixel layout regularly leaves `scrollWidth` a hair over `clientWidth` with nothing actually clipped.
+- Built on a detached worktree — the primary tree is mid-merge on `nextjs` with eight conflicted files, including both changelog files, and was left untouched.
+
 ## [v2.344] – 2026-08-11 — The two verdict cards stop repeating, and the left panel stops gapping
 ### Changed
 - **The fragmented side's verdict card no longer repeats its own heading.** "Fragmented Intelligence" was the panel title *and* the verdict card directly below it. The card now mirrors the unified side clause for clause instead: "Six systems. No single picture." / "Slower decisions. Higher risk." against "One team. One picture." / "Better decisions. Better outcomes." — the same sentence answered twice rather than one term stated twice.

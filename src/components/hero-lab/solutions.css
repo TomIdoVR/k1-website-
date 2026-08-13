@@ -119,7 +119,12 @@
 .sv-visual-inline { display: none; }
 
 /* ── right: sticky app window + foundation ── */
-.sv-side { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+/* 88px was set before the site header became sticky, and the header is 96px —
+   so the panel parked 8px *underneath* it and clipped the top of every app
+   window, worst on the lower items (K-Traffic, K-Connect) where the panel is
+   pinned for longest. Driven off the header's own token now, plus a gap, so it
+   follows the 78px mobile header without a second hardcoded number. */
+.sv-side { position: sticky; top: calc(var(--hll-nav-h, 96px) + 16px); display: flex; flex-direction: column; gap: 16px; }
 
 .sv-app {
   border-radius: 14px;

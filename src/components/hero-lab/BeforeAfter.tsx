@@ -334,9 +334,15 @@ export default function BeforeAfter({ es }: { es: boolean }) {
                   It mirrors the unified side's verdict clause for clause —
                   "no single picture" against "one picture", "slower decisions,
                   higher risk" against "better decisions, better outcomes" — so
-                  the two cards read as the same sentence answered twice. */}
+                  the two cards read as the same sentence answered twice.
+
+                  No count. The diagram happens to show six sources, but an
+                  agency may run three or thirty, and a verdict that says "six"
+                  makes a claim about their estate rather than about the
+                  problem. "Separate" also avoids "disconnected" and
+                  "fragmented", which the sub and the heading already carry. */}
               <span>
-                <b>{es ? 'Seis sistemas. Ninguna imagen común.' : 'Six systems. No single picture.'}</b>
+                <b>{es ? 'Sistemas separados. Ninguna imagen común.' : 'Separate systems. No single picture.'}</b>
                 <small>{es ? 'Decisiones más lentas. Mayor riesgo.' : 'Slower decisions. Higher risk.'}</small>
               </span>
             </div>

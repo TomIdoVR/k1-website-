@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.345 -->
+      <div class="tl-entry fixed" id="v2.345">
+        <div class="tl-meta"><span class="tl-ver">v2.345</span><span class="tl-date">2026-08-12</span></div>
+        <div class="tl-title">No invented count, no dead carousel controls, media panel clears the header</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The solutions media panel was parking underneath the site header.</strong> <code>.sv-side</code> stuck at a hardcoded <code>top: 88px</code>, set before the header became sticky &mdash; the header is 96px, so the panel sat 8px <em>under</em> it and clipped the top of every app window, worst on K-Traffic and K-Connect where it stays pinned longest. Now <code>calc(var(--hll-nav-h) + 16px)</code>, which follows the 78px mobile header too</li>
+            <li><strong>The carousel showed dots and arrows even when nothing scrolled.</strong> They render only when the track actually overflows, measured with a ResizeObserver rather than inferred from card count &mdash; the same seven cards scroll at 1180px and fit at 1920px</li>
+            <li><strong>The fragmented verdict no longer states a number.</strong> "Six systems" claimed something about the reader's estate rather than about the problem; an agency may run three or thirty. Now <strong>"Separate systems. No single picture."</strong></li>
+            <li>When not scrollable the carousel also drops its <code>carousel</code> roledescription, its tab stop and its "3 / 7" live region &mdash; a scroll container that cannot scroll is a dead tab stop</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.344 -->
       <div class="tl-entry changed" id="v2.344">
         <div class="tl-meta"><span class="tl-ver">v2.344</span><span class="tl-date">2026-08-11</span></div>
