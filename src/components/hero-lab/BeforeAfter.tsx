@@ -21,6 +21,7 @@
    timestamps, on both sides. */
 
 import Image from 'next/image'
+import BeforeAfterCompare from './BeforeAfterCompare'
 
 type L = { en: string; es: string }
 const t = (v: L, es: boolean) => (es ? v.es : v.en)
@@ -318,7 +319,10 @@ export default function BeforeAfter({ es }: { es: boolean }) {
           </p>
         </div>
 
-        <div className="ba-compare">
+        <BeforeAfterCompare
+          previousLabel={es ? 'Ver la vulnerabilidad' : 'Show the vulnerability'}
+          nextLabel={es ? 'Ver la ventaja' : 'Show the advantage'}
+        >
           <article className="ba-panel ba-panel--bad">
             <span className="ba-badge ba-badge--red">{es ? 'LA VULNERABILIDAD' : 'THE VULNERABILITY'}</span>
             <h3 className="ba-panel-title">{es ? 'Inteligencia fragmentada' : 'Fragmented Intelligence'}</h3>
@@ -382,7 +386,7 @@ export default function BeforeAfter({ es }: { es: boolean }) {
               </span>
             </div>
           </article>
-        </div>
+        </BeforeAfterCompare>
       </div>
     </section>
   )

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.347 -->
+      <div class="tl-entry fixed" id="v2.347">
+        <div class="tl-meta"><span class="tl-ver">v2.347</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Media panel actually clears the header; before/after gets real scroll buttons</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The solutions media panel was still clipping under the header on K-Traffic and K-Connect</strong>, despite v2.345's offset fix. Different root cause: <code>.sv-side</code>'s sticky containing block is the <code>.sv-grid</code> row it shares with the accordion list, only ~866px tall. At its natural content height (744px for K-Connect) the panel needed 112+744=856px to hold its offset &mdash; ~10px of slack in an 866px box. Gave <code>.sv-side</code> a firm <code>max-height: 620px</code> with <code>overflow-y: auto</code> as a fallback, and trimmed <code>.sv-app-body</code> so the fallback rarely has to engage</li>
+            <li><strong>The before/after scroll strip had no visible way to scroll on some setups.</strong> It was always scrollable, but the only cue was a native scrollbar, and macOS defaults to "show scrollbars: when scrolling" &mdash; a static page shows none under that setting. Added explicit, always-visible previous/next arrow buttons that don't depend on an OS preference</li>
+            <li><strong>The before/after panels were oversized for the 700-1040px range</strong>, capped at 560px and dominating the screen edge to edge. Reduced the cap to 440px</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.346 -->
       <div class="tl-entry fixed" id="v2.346">
         <div class="tl-meta"><span class="tl-ver">v2.346</span><span class="tl-date">2026-08-13</span></div>

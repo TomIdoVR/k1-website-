@@ -1,3 +1,15 @@
+## [v2.347] – 2026-08-13 — Media panel actually clears the header; before/after gets real scroll buttons
+### Fixed
+- **The solutions media panel was still clipping under the header on K-Traffic and K-Connect**, despite v2.345's offset fix. Root cause was different from what that fix addressed: `.sv-side`'s sticky containing block is the `.sv-grid` row it shares with the five-item accordion list, and that row is only ~866px tall. At its natural content height (measured at 744px for K-Connect — a 477px app window + a 216px stats block + a 20px caption), the panel needed 112 + 744 = 856px to hold its top offset, an ~866px box leaving only ~10px of slack. Any solution whose content ran a little longer broke it outright — nothing specific to K-Traffic/K-Connect, just whichever panels happened to be tallest. Gave `.sv-side` a firm `max-height: 620px` with `overflow-y: auto` as a fallback, and trimmed `.sv-app-body` from `min(46vh, 430px)` to `min(38vh, 360px)` so the fallback rarely has to engage at all.
+- **The before/after scroll strip had no visible way to scroll on some setups.** It was always scrollable (confirmed: `scrollWidth > clientWidth`), but the only cue was a native scrollbar — and macOS defaults to "show scrollbars: when scrolling," so a static, non-interacting page renders no scrollbar at all under that setting. Added `BeforeAfterCompare`, a small client component with explicit, always-visible previous/next arrow buttons that don't depend on an OS preference.
+
+### Changed
+- **The before/after panels were oversized for the 700-1040px range.** Capped at 560px, a panel dominated the screen edge to edge on a ~1015px-wide viewport with barely a sliver of its neighbour peeking in. Reduced the cap to 440px, both for the panel and the scatter diagram inside it.
+
+### Notes
+- Diagnosing the header-clip took several rounds of live measurement on the deployed page — one early theory (`align-items: stretch` on `.sv-grid`) looked promising but turned out to make things worse: it grows the sticky element's own box to match the container exactly, which is the opposite of what sticky needs (spare room = container height − element height − offset). The fix that shipped is the one actually verified against the numbers.
+- Built on the same detached worktree as v2.345/v2.346 — the primary tree is still mid-merge on `nextjs`.
+
 ## [v2.346] – 2026-08-13 — Map stops ballooning; before/after becomes a horizontal scroller under 1040px
 ### Fixed
 - **The unified-command map could render at ~620px tall on a ~825px-wide box.** `.uc-map` only floored its height (`min-height`), and the SVG inside is `height: 100%` — with nothing definite to resolve that percentage against, the browser fell back to the SVG's own 400x300 (4:3) intrinsic ratio scaled off the box's *width* instead. Below 1240px the map spans the full console width, so at typical tablet widths that produced a box roughly three times taller than intended. Changed `min-height` to `height` at all three breakpoints, which is what the original rules were clearly reaching for.

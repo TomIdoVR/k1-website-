@@ -469,6 +469,8 @@
    Same technique the module-card carousel above uses, minus its JS — two
    panels need only native scroll, not tracked-index dots and arrow buttons. */
 @media (max-width: 1040px) {
+  .ba-compare-wrap { position: relative; }
+
   .ba-compare {
     display: flex;
     align-items: stretch;
@@ -478,26 +480,58 @@
     padding-bottom: 14px;
   }
   .ba-panel {
-    /* 100% of the strip minus 34px, capped at 560px — always leaves the next
-       panel visibly peeking in, and stops the panel ballooning on the wider
-       end of this range (tablet widths up to 1040px). */
-    flex: 0 0 min(560px, calc(100% - 34px));
+    /* 100% of the strip minus 44px, capped at 440px. Previously capped at
+       560px — on a ~700-1040px range that panel dominated the screen edge to
+       edge, and left barely more than a sliver of the next one peeking in.
+       440px reads as a card next to more of its neighbour, not a full-bleed
+       takeover. */
+    flex: 0 0 min(440px, calc(100% - 44px));
     scroll-snap-align: center;
-    padding-inline: clamp(16px, 4vw, 30px);
+    padding-inline: clamp(16px, 4vw, 26px);
   }
   /* Non-snapping — it rides between the two panels rather than being a stop
      of its own, so it appears mid-swipe as connective tissue, not a dead page. */
   .ba-arrow { flex: 0 0 auto; }
-  .ba-scatter { max-width: 560px; }
+  .ba-scatter { max-width: 440px; }
 
-  /* An actual scrollbar, not the hidden-native-plus-custom-dots pattern the
-     module carousel uses — asked for explicitly, and honest about there being
-     exactly two stops rather than needing paging controls for it. */
+  /* A visible native scrollbar was the first attempt here, but macOS defaults
+     to "show scrollbars: when scrolling" — a static, non-interacting page
+     renders no scrollbar at all under that setting, so there was no cue the
+     strip could scroll. BeforeAfterCompare adds explicit arrow buttons that
+     don't depend on an OS preference; the scrollbar styling stays as a bonus
+     for browsers/settings that do show one, but is no longer the only cue. */
   .ba-compare { scrollbar-width: thin; scrollbar-color: #c7d1e2 transparent; }
   .ba-compare::-webkit-scrollbar { height: 8px; }
   .ba-compare::-webkit-scrollbar-track { background: transparent; }
   .ba-compare::-webkit-scrollbar-thumb { background: #c7d1e2; border-radius: 999px; }
   .ba-compare::-webkit-scrollbar-thumb:hover { background: #aebbd2; }
+
+  .ba-scroll-controls {
+    position: absolute;
+    inset: 0;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 4px;
+    pointer-events: none;
+    /* Lifted above the panels' own box-shadow but under the header. */
+    z-index: 3;
+  }
+  .ba-scroll-btn {
+    pointer-events: auto;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+    border-radius: 50%;
+    border: 1px solid #dfe5ee;
+    background: #fff;
+    color: #0757f7;
+    box-shadow: 0 10px 24px -12px rgba(20, 45, 90, 0.5);
+  }
+  .ba-scroll-btn:disabled { opacity: 0.32; pointer-events: none; }
+  .ba-scroll-btn svg { width: 18px; height: 18px; }
 }
 
 @media (max-width: 700px) {

@@ -121,10 +121,34 @@
 /* ── right: sticky app window + foundation ── */
 /* 88px was set before the site header became sticky, and the header is 96px —
    so the panel parked 8px *underneath* it and clipped the top of every app
-   window, worst on the lower items (K-Traffic, K-Connect) where the panel is
-   pinned for longest. Driven off the header's own token now, plus a gap, so it
-   follows the 78px mobile header without a second hardcoded number. */
-.sv-side { position: sticky; top: calc(var(--hll-nav-h, 96px) + 16px); display: flex; flex-direction: column; gap: 16px; }
+   window. That part is fixed — driven off the header's own token, plus a gap.
+
+   It did not fix the actual clipping, though, which has a separate cause:
+   .sv-side's sticky containing block is the .sv-grid row it shares with the
+   five-item accordion list, and that row is only ~866px tall (one open item
+   plus four collapsed). At its natural content height (measured at 744px for
+   K-Connect: a 477px app window + a 216px stats block + a 20px caption), the
+   panel needed 112 + 744 = 856px to hold its top offset — 10px of slack in an
+   866px box. Any solution whose content runs a little longer breaks it
+   outright, which is exactly why K-Traffic and K-Connect were worst: nothing
+   about those two specifically, just whichever panels happened to be tallest.
+
+   max-height gives the panel a hard, generous ceiling well inside that ~866px
+   budget instead of trusting content to happen to fit. overflow-y is the
+   fallback for whichever solution's content still exceeds it — an internal
+   scroll inside the panel, not the top of the app window sliding under the
+   header. */
+.sv-side {
+  position: sticky;
+  top: calc(var(--hll-nav-h, 96px) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 620px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
 
 .sv-app {
   border-radius: 14px;
@@ -142,7 +166,11 @@
 .sv-app-tools { margin-left: auto; display: flex; align-items: center; gap: 12px; color: #7d8ea6; }
 .sv-app-avatar { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #1858f5; color: #fff; font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; }
 
-.sv-app-body { display: grid; grid-template-columns: 118px 1fr 152px; height: min(46vh, 430px); }
+/* Trimmed from min(46vh, 430px) — with the 620px ceiling on .sv-side above,
+   a shorter app window means the internal scroll fallback rarely has to
+   engage in the first place; the stats block and caption below it fit
+   without it for every solution measured. */
+.sv-app-body { display: grid; grid-template-columns: 118px 1fr 152px; height: min(38vh, 360px); }
 .sv-app-side { display: flex; flex-direction: column; gap: 2px; padding: 10px 8px; background: #0d1524; border-right: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
 .sv-app-side span { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 7px; }
 .sv-app-side span.is-on { background: color-mix(in srgb, var(--pc) 26%, transparent); }
