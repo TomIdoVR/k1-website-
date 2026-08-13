@@ -29,6 +29,7 @@ const COVERAGE_ONLY = args.includes("--coverage-only");
 // establishing why the guard is wrong, never to make a red run go green.
 const ALLOW_STALE = args.includes("--allow-stale");
 const ALLOW_UNSHIPPED = args.includes("--allow-unshipped");
+const ALLOW_UNVERIFIED_SYNC = args.includes("--allow-unverified-sync");
 const ALLOW_ROUTE_FALLBACK = args.includes("--allow-route-fallback");
 const ALLOW_COVERAGE_DROP = args.includes("--allow-coverage-drop");
 const EXIT_REFUSED = 3;
@@ -392,7 +393,20 @@ function checkCheckoutSync() {
     [behind, ahead] = git("rev-list", "--left-right", "--count", "origin/nextjs...nextjs")
       .split(/\s+/).map(Number);
   } catch (e) {
-    process.stderr.write(`  ! checkout-sync check skipped (git unavailable: ${e.message.split("\n")[0]})\n`);
+    /* Fail CLOSED. This used to warn and return, which meant a broken git made
+       the guard silently pass — the run then graded an unverified checkout and
+       reported CLEAN. That is the same failure KAB-2480 spent four weeks on,
+       just reached through git instead of through a stale branch. A guard that
+       cannot run has not passed. (Seen 2026-08-13: one dangling ref under
+       refs/codex/ aborted every fetch, and the audit audited anyway.) */
+    if (!ALLOW_UNVERIFIED_SYNC) {
+      refuse(
+        `could not verify the checkout matches ${BASE_URL} (git failed: ${e.message.split("\n")[0]}). ` +
+        `An unverifiable checkout is not a synced one — fix git, or the run grades an unknown tree.`,
+        "--allow-unverified-sync",
+      );
+    }
+    process.stderr.write(`  ! checkout-sync UNVERIFIED (${e.message.split("\n")[0]}) — proceeding under --allow-unverified-sync\n`);
     return;
   }
   if (behind > 0 && !ALLOW_STALE) {
