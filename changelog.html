@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.346 -->
+      <div class="tl-entry fixed" id="v2.346">
+        <div class="tl-meta"><span class="tl-ver">v2.346</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Map stops ballooning; before/after becomes a horizontal scroller under 1040px</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The unified-command map could render at ~620px tall on an ~825px-wide box.</strong> <code>.uc-map</code> only floored its height (<code>min-height</code>), and the SVG inside is <code>height: 100%</code> &mdash; with nothing definite to resolve that percentage against, it fell back to the SVG's own 400x300 (4:3) intrinsic ratio scaled off the box's <em>width</em> instead. Below 1240px the map spans the full console width, so at typical tablet widths that produced a box roughly three times too tall. Changed <code>min-height</code> to <code>height</code> at all three breakpoints</li>
+            <li><strong>Below 1040px, the two panels are now a horizontal scroll-snap strip instead of a stacked column.</strong> Stacking buried the console a full screen below the fold; now one panel fills the view and the next visibly peeks in at the edge as the cue to swipe &mdash; the same technique the module-card carousel above this section uses, minus its JS</li>
+            <li>The connector arrow no longer rotates 90&deg; to sit between stacked cards &mdash; it now rides non-snapping in the scroll strip, appearing mid-swipe as connective tissue between the two panels</li>
+            <li>Gave the strip an actual visible scrollbar rather than the hidden-native-plus-dots pattern the module carousel uses &mdash; there are only two stops here, not seven</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.345 -->
       <div class="tl-entry fixed" id="v2.345">
         <div class="tl-meta"><span class="tl-ver">v2.345</span><span class="tl-date">2026-08-12</span></div>

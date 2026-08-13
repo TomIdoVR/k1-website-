@@ -1,3 +1,16 @@
+## [v2.346] – 2026-08-13 — Map stops ballooning; before/after becomes a horizontal scroller under 1040px
+### Fixed
+- **The unified-command map could render at ~620px tall on a ~825px-wide box.** `.uc-map` only floored its height (`min-height`), and the SVG inside is `height: 100%` — with nothing definite to resolve that percentage against, the browser fell back to the SVG's own 400x300 (4:3) intrinsic ratio scaled off the box's *width* instead. Below 1240px the map spans the full console width, so at typical tablet widths that produced a box roughly three times taller than intended. Changed `min-height` to `height` at all three breakpoints, which is what the original rules were clearly reaching for.
+
+### Changed
+- **Below 1040px, the two panels are now a horizontal scroll-snap strip instead of a stacked column.** Stacking buried the console a full screen below the fold; now one panel fills the view and the next visibly peeks in at the edge as the cue to swipe. Same technique the module-card carousel above this section already uses, minus its JS — two stops need only native scroll, not tracked-index dots and arrow buttons.
+- The connector arrow between the panels no longer rotates 90° to sit between stacked cards. It rides in the scroll strip between the two panels, non-snapping, so it appears mid-swipe as connective tissue rather than a dead stop of its own.
+- Gave the scroll strip an actual visible scrollbar (`scrollbar-width: thin` / styled `::-webkit-scrollbar`) rather than the hidden-native-plus-custom-dots pattern the module carousel uses — asked for explicitly, and honest that there are only two stops here, not seven.
+
+### Notes
+- Panel width in the scroll strip is `min(560px, calc(100% - 34px))` — always leaves 34px of the next panel peeking in regardless of viewport, and caps the panel from ballooning at the wide end of this range (tablet widths up to 1040px).
+- Built on the same detached worktree as v2.345 — the primary tree is still mid-merge on `nextjs`.
+
 ## [v2.345] – 2026-08-12 — No invented count, no dead carousel controls, media panel clears the header
 ### Fixed
 - **The solutions media panel was parking underneath the site header.** `.sv-side` stuck at a hardcoded `top: 88px`, set before the header became sticky; the header is 96px, so the panel sat 8px *under* it and clipped the top of every app window — worst on K-Traffic and K-Connect, where the panel stays pinned longest. It now sticks to `calc(var(--hll-nav-h) + 16px)`, so it follows the 78px mobile header too without a second hardcoded number.

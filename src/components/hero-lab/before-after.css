@@ -360,10 +360,18 @@
 .uc-pill--amber { background: #fdf0e3; color: #b45309; }
 
 /* ── map ──────────────────────────────────────────────────────────────────── */
+/* `height`, not `min-height`. The SVG inside is set to `height: 100%`, and
+   when this box only floors its height, that percentage has nothing definite
+   to resolve against — it fell through to the SVG's own intrinsic ratio from
+   its viewBox (400x300, 4:3) scaled off this box's *width* instead. Below
+   1240px the map spans the full console width, so at, say, 825px wide that
+   put its height at 825 x 0.75 ≈ 620px — the runaway box in the screenshot.
+   A firm `height` gives the child something to resolve against and stops the
+   box from taking its cue from width at all. */
 .uc-map {
   position: relative;
   min-width: 0;
-  min-height: 190px;
+  height: 190px;
   border-radius: 10px;
   border: 1px solid #eaeef5;
   overflow: hidden;
@@ -449,22 +457,52 @@
    rather than squeezing four columns into a half-width panel. */
 @media (max-width: 1240px) {
   .uc-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .uc-map { grid-column: 1 / -1; order: -1; min-height: 200px; }
+  .uc-map { grid-column: 1 / -1; order: -1; height: 200px; }
   .ba-modules { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 4px; }
 }
 
-/* Below this the two panels cannot both hold their content side by side — the
-   scatter's cards start colliding with their own labels. */
+/* Below this the two panels cannot both hold their content at once — the
+   scatter's cards start colliding with their own labels if it is squeezed down
+   to sit beside the console. Rather than stack them (which buries the console
+   a full screen below the fold), they become a horizontal scroll-snap strip:
+   one panel fills the view, the next peeks in at the edge as the cue to swipe.
+   Same technique the module-card carousel above uses, minus its JS — two
+   panels need only native scroll, not tracked-index dots and arrow buttons. */
 @media (max-width: 1040px) {
-  .ba-compare { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .ba-arrow { transform: rotate(90deg); }
-  .ba-panel { padding-inline: clamp(16px, 4vw, 30px); }
+  .ba-compare {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    padding-bottom: 14px;
+  }
+  .ba-panel {
+    /* 100% of the strip minus 34px, capped at 560px — always leaves the next
+       panel visibly peeking in, and stops the panel ballooning on the wider
+       end of this range (tablet widths up to 1040px). */
+    flex: 0 0 min(560px, calc(100% - 34px));
+    scroll-snap-align: center;
+    padding-inline: clamp(16px, 4vw, 30px);
+  }
+  /* Non-snapping — it rides between the two panels rather than being a stop
+     of its own, so it appears mid-swipe as connective tissue, not a dead page. */
+  .ba-arrow { flex: 0 0 auto; }
   .ba-scatter { max-width: 560px; }
+
+  /* An actual scrollbar, not the hidden-native-plus-custom-dots pattern the
+     module carousel uses — asked for explicitly, and honest about there being
+     exactly two stops rather than needing paging controls for it. */
+  .ba-compare { scrollbar-width: thin; scrollbar-color: #c7d1e2 transparent; }
+  .ba-compare::-webkit-scrollbar { height: 8px; }
+  .ba-compare::-webkit-scrollbar-track { background: transparent; }
+  .ba-compare::-webkit-scrollbar-thumb { background: #c7d1e2; border-radius: 999px; }
+  .ba-compare::-webkit-scrollbar-thumb:hover { background: #aebbd2; }
 }
 
 @media (max-width: 700px) {
   .uc-body { grid-template-columns: minmax(0, 1fr); }
-  .uc-map { min-height: 220px; }
+  .uc-map { height: 220px; }
   /* Six stat cells at 340px leave ~55px each, which breaks every label onto
      three lines. Three per row instead. */
   .uc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
