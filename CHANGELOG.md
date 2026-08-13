@@ -1,4 +1,4 @@
-## [v2.319] – 2026-08-13 — The coverage guard v2.318 shipped was armed at 56 pages, not 187
+## [v2.320] – 2026-08-13 — The coverage guard v2.318 shipped was armed at 56 pages, not 187
 
 **Fixed**
 - **Re-seeded `scripts/seo-baseline.json` from 71 pages to 234.** v2.318 added `checkCoverage()`, which refuses when a run resolves under 80% of the previous baseline's `pagesAudited`. But the baseline committed on `nextjs` still recorded `pagesAudited: 71` — the fossil left by the stale-checkout runs KAB-2480 was filed for. The script rewrites that file at the end of every run, so each routine run starting from a fresh `origin/nextjs` checkout reset it to 71 and armed the floor at **56**. A collapse from 234 URLs to 60 would have passed silently. The guard existed in code and was inert in practice; the floor is now **187**.
@@ -8,7 +8,7 @@
 - `SEO/kab2480-audit-trust-guards.md` — the KAB-2480 write-up, which had only ever existed on the unmerged `seo-audit-guardrails` branch. Corrected to match what actually shipped: four guards, not three (v2.318 added the ahead-of-origin check after KAB-2504).
 
 **Notes**
-- KAB-2491 opened to reconcile a version collision between local and origin `nextjs`. That tangle resolved itself upstream — all four "unpushed work" markers (PSIM roundup, CTR docs, RTCC refresh, Track C freshness) are present on `origin/nextjs`, and local `nextjs` is level with it. No renumbering was needed and none was done.
+- KAB-2491 opened to reconcile a version collision between local and origin `nextjs`. That tangle resolved itself upstream — all four "unpushed work" markers (PSIM roundup, CTR docs, RTCC refresh, Track C freshness) are present on `origin/nextjs`, and local `nextjs` is level with it, so the local-vs-origin renumbering that issue asked for was not needed and was not done. (This entry was itself renumbered v2.319 → v2.320: a concurrent KAB-2507 commit claimed v2.319 in the same minute and swept these staged files into it. Same failure mode, new cause — two agents committing to one working tree.)
 - `seo-audit-guardrails` is superseded, not merged. Its `seo-audit.mjs` is an earlier implementation of the same guards; v2.318's is a superset. Only the baseline and the doc were carried across.
 - **Repo repair:** 24 refs under `.git/refs` had become unreadable OneDrive cloud placeholders (`Resource deadlock avoided`), so every `git fetch` aborted with `bad object` and no branch could be reconciled. All 24 were recovered from `.git/packed-refs`. `.git` living inside OneDrive is a structural exposure and will recur.
 
