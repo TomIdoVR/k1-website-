@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.348 -->
+      <div class="tl-entry fixed" id="v2.348">
+        <div class="tl-meta"><span class="tl-ver">v2.348</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Media panel actually clears the header now, with a real trade-off</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>v2.347's cap on <code>.sv-side</code> didn't fix the header clip &mdash; wrong lever.</strong> Live measurement walking scrollY through K-Connect's and K-Traffic's own reading ranges showed the panel clipped throughout regardless of its height. Root cause: <code>.sv-side</code>'s sticky containing block is the <code>.sv-grid</code> row, auto-sized from the accordion list's content &mdash; for K-Connect (the last item), the four collapsed rows ahead of it consume nearly the whole row before its own row starts. A smaller panel only delays the problem, it doesn't remove it</li>
+            <li><strong>Fixed by giving <code>.sv-list</code> 900px of <code>padding-bottom</code></strong> &mdash; the grid item that actually drives the row's auto height, not <code>.sv-grid</code> itself. Verified across both K-Traffic's and K-Connect's full reading ranges: the panel now holds <code>top: 112px</code> throughout with margin to spare</li>
+            <li><strong>The 900px is real, visible space, not a trick.</strong> A matching negative margin (the usual "invisible spacer" pattern) doesn't work inside CSS Grid &mdash; auto-track-sizing measures a grid item's margin box, so a negative margin cancels the padding's contribution to the row height along with its visual footprint. There is now a visible gap between the end of the solutions list and whatever follows, on desktop/tablet only &mdash; scoped off below the 960px breakpoint, where <code>.sv-side</code> already drops to <code>position: static</code></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.347 -->
       <div class="tl-entry fixed" id="v2.347">
         <div class="tl-meta"><span class="tl-ver">v2.347</span><span class="tl-date">2026-08-13</span></div>

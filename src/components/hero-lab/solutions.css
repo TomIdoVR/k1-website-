@@ -63,7 +63,30 @@
 .sv-grid { display: grid; grid-template-columns: 34fr 66fr; gap: clamp(22px, 2.4vw, 38px); align-items: start; }
 
 /* ── left: numbered product navigator ── */
-.sv-list { display: flex; flex-direction: column; gap: 10px; }
+/* padding-bottom here, not on .sv-grid: .sv-side's sticky containing block is
+   the grid AREA (the row), which is auto-sized from the natural content
+   height of whichever column is tallest — almost always this one, the
+   five-item accordion. Padding on .sv-grid itself only enlarges the
+   container's own outer box, which does nothing for that row sizing; it has
+   to go on the grid ITEM that the row-height calculation actually measures.
+
+   900px, not something smaller: for K-Connect (the last item, and so the one
+   with the least room before it — four collapsed rows above it consume the
+   grid's height before its own row even starts), the natural row height
+   (~866px) left only ~10px of slack against the 112px offset + panel height.
+   800px of extra room still left K-Connect 13px short; 900px was the first
+   value that held position:sticky's top offset for its full read range with
+   real margin, verified by walking scrollY through it in 100px steps.
+
+   This can't be canceled with a matching negative margin the way it would be
+   in normal block flow — CSS Grid's auto-track-sizing measures a grid item's
+   margin box, so a negative margin cancels the padding's contribution to the
+   row's height calculation along with its visual footprint (confirmed: with
+   both applied, the row grew only 46px against 900px of un-canceled padding
+   elsewhere). The 900px is real, visible space between the last accordion
+   item and whatever section follows — the honest cost of the fix, not a side
+   effect of it. */
+.sv-list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 900px; }
 .sv-item {
   position: relative;
   border-radius: 14px;
@@ -279,6 +302,10 @@
   }
 
   .sv-grid { grid-template-columns: 1fr; gap: 26px; }
+  /* .sv-side drops to position:static below, so it no longer needs sticky
+     room — the 900px reserved for that above would otherwise just be dead
+     space at the end of the list on every phone and tablet under 960px. */
+  .sv-list { padding-bottom: 10px; }
   .sv-side { position: static; order: 2; }
   .sv-side .sv-app { display: none; }
   .sv-visual-inline { display: block; margin: 16px 0 18px; }
