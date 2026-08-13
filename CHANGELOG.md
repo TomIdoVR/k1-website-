@@ -1,3 +1,20 @@
+## [v2.318] – 2026-08-13 — The daily SEO audit can now refuse to run instead of reporting the wrong site
+
+**Fixed**
+- **New guard: local branch ahead of origin.** The 2026-08-13 daily run (KAB-2504) re-flagged all 86 over-length strings that v2.317 had already fixed — the commit was never pushed, so staging was still serving pre-fix HTML. The loop only ever guarded against the checkout being *behind* origin. `seo-audit.mjs` now refuses when it is *ahead* too: those fixes are not on the audited deployment yet, so every finding would be a false positive.
+- **Three guards that were documented but never implemented now exist in code.** The routine's exit-code contract has promised since KAB-2480 that exit 3 means "the audit refused to run" — stale checkout, unreachable sitemap, or coverage below 80% of the last run. The script implemented none of them. An unreachable sitemap silently fell back to the hard-coded 71-route `ROUTES` list and reported CLEAN about a fraction of the site — the exact failure KAB-2480 was filed for.
+
+**Added**
+- `checkCheckoutSync()` — `git fetch origin nextjs` + `rev-list --left-right --count`; refuses on behind (`--allow-stale`) or ahead (`--allow-unshipped`). Skipped for localhost targets, and skipped with a warning if git is unavailable rather than failing the run.
+- `checkCoverage()` — refuses when the sitemap yields under 80% of the previous run's `pagesAudited` (`--allow-coverage-drop`). Reads the baseline before it is overwritten.
+- Sitemap-unreachable refusal (`--allow-route-fallback`) — the `ROUTES` fallback is now opt-in rather than silent.
+
+**Notes**
+- Guards refuse rather than warn. The audit's failure mode is not crashing; it is producing a confident number about the wrong site, and a warning gets scrolled past. Exit 3 never means "audited clean".
+- Verified against `staging.kabatone.com`, exit 3 each: ahead-of-origin (reproduced today's exact false positive), sitemap-unreachable, and coverage-drop. The behind-origin branch shares the same verified `rev-list` call and was not exercised live, since forcing it would require rewinding the branch. Staging currently publishes 234 sitemap URLs (232 at the last run — the 12 pushed commits added two).
+- Routine step 0 updated in Paperclip to match: sync is now checked in both directions, ahead-check before auditing, wait for the Vercel redeploy before running.
+- Coverage is still ~49% of the ~478 live URLs — tracked in KAB-2501/KAB-2502, not addressed here.
+
 ## [v2.317] – 2026-08-12 — Trimmed the 86 over-length titles and descriptions v2.316 deferred
 
 **Fixed**

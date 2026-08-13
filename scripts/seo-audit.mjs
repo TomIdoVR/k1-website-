@@ -13,6 +13,7 @@
  */
 
 import { writeFileSync, readFileSync, existsSync } from "fs";
+import { execFileSync } from "child_process";
 import { URL } from "url";
 
 // --- Config ---
@@ -22,6 +23,13 @@ const BASE_URL = getArg("--url", "https://staging.kabatone.com");
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
 const DIFF_ONLY = args.includes("--diff");
+// Guard overrides. Each silences one refusal (exit 3) — pass only after
+// establishing why the guard is wrong, never to make a red run go green.
+const ALLOW_STALE = args.includes("--allow-stale");
+const ALLOW_UNSHIPPED = args.includes("--allow-unshipped");
+const ALLOW_ROUTE_FALLBACK = args.includes("--allow-route-fallback");
+const ALLOW_COVERAGE_DROP = args.includes("--allow-coverage-drop");
+const EXIT_REFUSED = 3;
 const CONCURRENCY = 5;
 const MAX_REDIRECTS = 5;
 // Hosts that serve the indexed site. Only these are held to "canonical must
@@ -354,9 +362,62 @@ async function runBatch(urls, batchSize) {
   return results;
 }
 
+/* Refuse rather than report. A guard that only warns gets scrolled past: the
+   audit's failure mode is not crashing, it is producing a confident number
+   about the wrong site. Exit 3 means "did not audit", never "audited clean". */
+function refuse(msg, override) {
+  process.stderr.write(`\n  REFUSED: ${msg}\n  Override with ${override} only if you have established the guard is wrong.\n\n`);
+  process.exit(EXIT_REFUSED);
+}
+
+const git = (...a) => execFileSync("git", a, { encoding: "utf-8" }).trim();
+
+/**
+ * The checkout must match what the audited deployment is serving, in BOTH
+ * directions:
+ *  - behind origin  -> we grade a route list the deployment has moved past
+ *                      (KAB-2480: four weeks of false CLEAN off a stale branch)
+ *  - ahead of origin -> the deployment has not received our fixes yet, so the
+ *                      audit re-flags already-fixed work as live defects
+ *                      (KAB-2504: 86 warnings, all of them unpushed v2.317)
+ * Only meaningful when auditing a deployed origin; localhost serves the tree.
+ */
+function checkCheckoutSync() {
+  if (/localhost|127\.0\.0\.1/.test(BASE_URL)) return;
+  let behind, ahead;
+  try {
+    git("fetch", "origin", "nextjs", "--quiet");
+    [behind, ahead] = git("rev-list", "--left-right", "--count", "origin/nextjs...nextjs")
+      .split(/\s+/).map(Number);
+  } catch (e) {
+    process.stderr.write(`  ! checkout-sync check skipped (git unavailable: ${e.message.split("\n")[0]})\n`);
+    return;
+  }
+  if (behind > 0 && !ALLOW_STALE) {
+    refuse(`local nextjs is ${behind} commit(s) BEHIND origin — the route list and metadata here are older than what is deployed.`, "--allow-stale");
+  }
+  if (ahead > 0 && !ALLOW_UNSHIPPED) {
+    refuse(`local nextjs is ${ahead} commit(s) AHEAD of origin — those fixes are not on ${BASE_URL} yet, so every finding would be a false positive. Push and let the deploy finish first.`, "--allow-unshipped");
+  }
+  process.stderr.write(`  Checkout in sync with origin/nextjs\n`);
+}
+
+/* A silent drop in route count is how coverage collapses unnoticed — the run
+   still says CLEAN, just about fewer pages. Compare against the last run. */
+function checkCoverage(count) {
+  if (!existsSync(BASELINE_FILE)) return;
+  let prev;
+  try { prev = JSON.parse(readFileSync(BASELINE_FILE, "utf-8")).pagesAudited } catch { return }
+  if (!prev) return;
+  if (count < prev * 0.8 && !ALLOW_COVERAGE_DROP) {
+    refuse(`route coverage collapsed: ${count} URLs vs ${prev} last run (${Math.round((count / prev) * 100)}%).`, "--allow-coverage-drop");
+  }
+}
+
 async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
+  checkCheckoutSync();
 
   /* Audit the URL space we actually publish, not `/en/*`.
      `localePrefix: 'as-needed'` serves EN at the root, so every `/en/...` URL
@@ -370,7 +431,12 @@ async function main() {
      each time a hard-coded guess is wrong it either hides a real redirect or
      invents 70 false ones. Asking the deployment what it publishes cannot go
      stale. Falls back to ROUTES if the sitemap is unreachable. */
-  const urls = await sitemapUrls(BASE_URL) ?? ROUTES.map(r => `${BASE_URL}${r}`);
+  const fromSitemap = await sitemapUrls(BASE_URL);
+  if (!fromSitemap && !ALLOW_ROUTE_FALLBACK) {
+    refuse(`sitemap unreachable at ${BASE_URL}/sitemap.xml — the hard-coded ROUTES fallback covers a fraction of the site and would report a fake CLEAN.`, "--allow-route-fallback");
+  }
+  const urls = fromSitemap ?? ROUTES.map(r => `${BASE_URL}${r}`);
+  checkCoverage(urls.length);
   process.stderr.write(`Routes: ${urls.length} | Concurrency: ${CONCURRENCY}\n\n`);
   const results = await runBatch(urls, CONCURRENCY);
 
