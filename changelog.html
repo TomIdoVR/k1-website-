@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.354 -->
+      <div class="tl-entry fixed" id="v2.354">
+        <div class="tl-meta"><span class="tl-ver">v2.354</span><span class="tl-date">2026-08-14</span></div>
+        <div class="tl-title">Touch targets to 44x44; module cards nest correctly under their section</div>
+        <div class="tl-body">
+          <p style="margin: 0 0 10px; color: var(--muted);">Four items from the professional website audit, the cheap and unambiguous ones &mdash; the rest need a decision (claim evidence/sourcing, customer quote attribution, brand spelling) or real infrastructure (Lighthouse against production-equivalent hosting).</p>
+          <ul class="version-changes">
+            <li><strong>Four interactive elements were under the 44x44px WCAG 2.5.5 touch-target floor:</strong> the module carousel's prev/next arrows (35x35, only reaching 44 under a <code>pointer: coarse</code> match that doesn't reliably trigger on every touch device or testing tool &mdash; simplified to unconditionally 44x44), the mobile menu trigger (42x42), and the before/after scroll buttons (38x38). Carousel dots were flagged too but are already correct &mdash; 7px visually with a documented 44x44 <code>::before</code> hit area &mdash; a measurement-tool false positive, left alone</li>
+            <li><strong>The menu-trigger fix didn't take on its own</strong> &mdash; a duplicate <code>.hll-mobile-menu &gt; summary</code> rule in <code>hero-lab-light.css</code>, left over from before the header became a sibling of <code>.hll-page</code>, loads after <code>hero-lab-header.css</code> and was winning the cascade at 42x42 even after that file was corrected. Fixed the rule that actually renders</li>
+            <li><strong>The seven module-card titles were <code>&lt;h2&gt;</code> under <code>/hero-lab-story</code>'s own section <code>&lt;h2&gt;</code></strong> ("What your team actually sees") &mdash; two H2s at the same level. <code>/hero-lab</code>'s hero use of these same cards is correctly H2 under the page's H1, so this couldn't be a global find-replace. <code>moduleCards()</code> now takes an optional heading-level argument threaded to <code>CardHeader</code>; <code>/hero-lab-story</code> passes <code>'h3'</code>, <code>/hero-lab</code> keeps its current H2. React Context was the first attempt &mdash; cleaner, fewer call sites &mdash; but broke the production build, since everything here is a server component and context requires <code>'use client'</code></li>
+            <li><strong>Checked, not changed:</strong> the audit's <code>99.99%</code>/<code>99.9%</code> inconsistency does not reproduce. Every uptime claim across the whole site already reads <code>99.99%</code> &mdash; searched the full <code>src/</code> tree, no bare <code>99.9%</code> anywhere. Left untouched rather than inventing a fix for a problem that isn't in this codebase</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.353 -->
       <div class="tl-entry fixed" id="v2.353">
         <div class="tl-meta"><span class="tl-ver">v2.353</span><span class="tl-date">2026-08-14</span></div>

@@ -869,7 +869,13 @@
   .hll-nav-links,
   .hll-nav-actions { display: none; }
   .hll-mobile-menu { position: relative; display: block; }
-  .hll-mobile-menu > summary { display: flex; width: 42px; height: 42px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
+  /* This rule, not the seemingly-identical one in hero-lab-header.css, is what
+     actually renders: hero-lab-light.css loads after it, so its 42x42
+     duplicate won the cascade even after that file was fixed to 44x44.
+     Left as a duplicate rather than deleted — untangling which of the two
+     stylesheets should own this now that the header is a sibling of .hll-page
+     rather than nested in it is a bigger change than a touch-target fix. */
+  .hll-mobile-menu > summary { display: flex; width: 44px; height: 44px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
   .hll-mobile-menu > summary::-webkit-details-marker { display: none; }
   .hll-mobile-menu > summary span { width: 19px; height: 2px; border-radius: 2px; background: #10224f; }
   .hll-mobile-menu-panel { position: absolute; top: 52px; right: 0; display: flex; width: min(290px, calc(100vw - 40px)); padding: 16px; flex-direction: column; gap: 6px; border: 1px solid rgba(67, 96, 152, 0.13); border-radius: 16px; background: rgba(255, 255, 255, 0.97); box-shadow: 0 24px 60px rgba(37, 66, 119, 0.18); }
@@ -892,7 +898,12 @@
   .hll-card-slot { scroll-snap-align: center; }
   .hll-card { width: 286px; min-height: 410px; transform: none; }
   .hll-carousel-controls { position: absolute; z-index: 10; right: 0; bottom: -54px; left: 0; display: flex; align-items: center; justify-content: center; gap: 16px; }
-  .hll-carousel-arrow { display: grid; width: 35px; height: 35px; padding: 0; place-items: center; border: 1px solid rgba(49, 88, 161, 0.14); border-radius: 50%; color: #0757f7; background: rgba(255, 255, 255, 0.85); box-shadow: 0 7px 17px rgba(44, 76, 132, 0.1); cursor: pointer; }
+  /* 44x44, not 35x35 stepping up to 44 only under `pointer: coarse`. That
+     media feature doesn't reliably match on every touch device or testing
+     tool — an audit measuring this in a plain resized browser window would
+     see the unmet 35px box, which is what happened. Simpler and always
+     correct: the visible circle is the target, at every input type. */
+  .hll-carousel-arrow { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; border: 1px solid rgba(49, 88, 161, 0.14); border-radius: 50%; color: #0757f7; background: rgba(255, 255, 255, 0.85); box-shadow: 0 7px 17px rgba(44, 76, 132, 0.1); cursor: pointer; }
   .hll-carousel-arrow:disabled { cursor: default; opacity: 0.3; }
   .hll-carousel-arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .hll-carousel-dots { display: flex; align-items: center; gap: 7px; }
@@ -901,7 +912,6 @@
   .hll-carousel-dot { position: relative; width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(7, 87, 247, 0.25); cursor: pointer; transition: width 180ms ease, background 180ms ease; }
   .hll-carousel-dot::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; }
   .hll-carousel-dot[aria-current='true'] { width: 21px; border-radius: 8px; background: #0757f7; }
-  @media (pointer: coarse) { .hll-carousel-arrow { width: 44px; height: 44px; } }
   .hll-stats { margin-top: 65px; }
   .hll-stat { min-width: 190px; padding-inline: 24px; }
 }

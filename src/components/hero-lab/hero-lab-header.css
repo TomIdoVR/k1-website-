@@ -282,7 +282,7 @@ html { scroll-padding-top: calc(var(--hll-nav-h) + 12px); }
   .hll-nav-links,
   .hll-nav-actions { display: none; }
   .hll-mobile-menu { position: relative; display: block; }
-  .hll-mobile-menu > summary { display: flex; width: 42px; height: 42px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
+  .hll-mobile-menu > summary { display: flex; width: 44px; height: 44px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
   .hll-mobile-menu > summary::-webkit-details-marker { display: none; }
   /* Scoped to the aria-hidden bars so it does not also style the two
      visually-hidden state labels that now live inside the summary. */

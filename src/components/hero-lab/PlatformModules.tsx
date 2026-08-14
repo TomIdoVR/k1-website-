@@ -45,7 +45,10 @@ export default function PlatformModules({ es }: { es: boolean }) {
           nextLabel={es ? 'Tarjeta siguiente' : 'Next card'}
           slideLabel={es ? 'Módulos de la plataforma' : 'Platform modules'}
         >
-          {moduleCards(es)}
+          {/* h3: this section already has its own H2 above ("What your team
+              actually sees"). The cards' titles nest under it as
+              subsections, not as siblings of it. */}
+          {moduleCards(es, 'h3')}
         </HeroCardCarousel>
       </div>
     </section>

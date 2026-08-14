@@ -12,19 +12,34 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { HeroCardMedia } from './HeroCardMedia'
 
+/* The seven card titles were a hard-coded <h2>, correct on /hero-lab where
+   the cards ride in the hero under the page's H1 — but wrong on
+   /hero-lab-story, where PlatformModules renders this same card set under
+   its own H2 ("What your team actually sees"). Two H2s at the same level
+   there, one of them not describing a real section.
+
+   A plain prop, not context: everything in this file is a server component
+   (no 'use client'), and createContext/useContext both require one. Threading
+   `headingLevel` through all seven card components and moduleCards() touches
+   more call sites than context would have, but it is the version that
+   actually builds. Defaults to 'h2' everywhere so the /hero-lab call site,
+   which never passes it, keeps its current — correct — markup unchanged. */
+type HeadingLevel = 'h2' | 'h3'
+
 function ModuleIcon({ children }: { children: ReactNode }) {
   return <span className="hll-card-icon" aria-hidden="true">{children}</span>
 }
 
-function CardHeader({ title, children }: { title: string; children: ReactNode }) {
-  return <header className="hll-card-head"><ModuleIcon>{children}</ModuleIcon><h2 className="hll-card-title">{title}</h2></header>
+function CardHeader({ title, children, headingLevel = 'h2' }: { title: string; children: ReactNode; headingLevel?: HeadingLevel }) {
+  const HeadingTag = headingLevel
+  return <header className="hll-card-head"><ModuleIcon>{children}</ModuleIcon><HeadingTag className="hll-card-title">{title}</HeadingTag></header>
 }
 
 function CarIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 10 2-4h10l2 4M4 11h16v7H4zM7 18v2M17 18v2M7 14h.01M17 14h.01" /></svg>
 }
 
-function CadCard({ es }: { es: boolean }) {
+function CadCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   const units = [
     { label: 'Unit 12', status: es ? 'En Ruta' : 'En Route', eta: '2 min', color: '#1d5cff' },
     { label: 'Unit 7', status: es ? 'En Escena' : 'On Scene', eta: '6 min', color: '#16a34a' },
@@ -33,7 +48,7 @@ function CadCard({ es }: { es: boolean }) {
   const wave = [7, 12, 5, 15, 9, 20, 11, 5, 16, 9, 22, 12, 7, 17, 10, 5, 14, 8, 18, 10, 6, 14, 8, 4]
   return (
     <article data-hero-card="true" className="hll-card hll-card--cad" style={{ '--cc': '#ff3b30' } as CSSProperties}>
-      <CardHeader title="CAD / 911"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 6c0-1 1-2 2-2Z" /></svg></CardHeader>
+      <CardHeader title="CAD / 911" headingLevel={headingLevel}><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a14 14 0 0 0 5 5l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 6c0-1 1-2 2-2Z" /></svg></CardHeader>
       <section className="hll-cad-call">
         <span className="hll-mini-label hll-text-red">{es ? 'LLAMADA ACTIVA' : 'ACTIVE CALL'}</span>
         <strong>{es ? 'Emergencia Médica' : 'Medical Emergency'}</strong>
@@ -53,10 +68,10 @@ function CadCard({ es }: { es: boolean }) {
   )
 }
 
-function VideoCard({ es }: { es: boolean }) {
+function VideoCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   return (
     <article data-hero-card="true" className="hll-card hll-card--video" style={{ '--cc': '#165dff' } as CSSProperties}>
-      <CardHeader title={es ? 'Video y Analítica' : 'Video & Analytics'}><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3Z" /></svg></CardHeader>
+      <CardHeader title={es ? 'Video y Analítica' : 'Video & Analytics'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3Z" /></svg></CardHeader>
       <HeroCardMedia variant="video" src="/images/hero-cards/video-analytics.webp" width={1040} height={1513} />
       <div className="hll-data-line"><span>{es ? 'DETECCIONES IA' : 'AI DETECTIONS'}</span><strong>23</strong></div>
       <div className="hll-data-line"><span>{es ? 'CÁMARAS EN LÍNEA' : 'CAMERAS ONLINE'}</span><strong>128</strong></div>
@@ -64,10 +79,10 @@ function VideoCard({ es }: { es: boolean }) {
   )
 }
 
-function GisCard({ es }: { es: boolean }) {
+function GisCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   return (
     <article data-hero-card="true" className="hll-card hll-card--gis" style={{ '--cc': '#16a34a' } as CSSProperties}>
-      <CardHeader title={es ? 'GIS / Mapa' : 'GIS / Map'}><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12Z" /><circle cx="12" cy="9" r="2.3" /></svg></CardHeader>
+      <CardHeader title={es ? 'GIS / Mapa' : 'GIS / Map'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12Z" /><circle cx="12" cy="9" r="2.3" /></svg></CardHeader>
       <HeroCardMedia variant="gis" src="/images/hero-cards/gis-map.webp" width={1128} height={1394} />
       <div className="hll-gis-stats">
         <div><span>{es ? 'INCIDENTES ACTIVOS' : 'ACTIVE INCIDENTS'}</span><strong>12</strong></div>
@@ -77,7 +92,7 @@ function GisCard({ es }: { es: boolean }) {
   )
 }
 
-function EventCard({ es }: { es: boolean }) {
+function EventCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   const rows = [
     { color: '#ef4444', en: 'Traffic Accident', es: 'Accidente de Tráfico', time: '10:16 AM' },
     { color: '#2563eb', en: 'Medical Emergency', es: 'Emergencia Médica', time: '10:24 AM' },
@@ -86,7 +101,7 @@ function EventCard({ es }: { es: boolean }) {
   ]
   return (
     <article data-hero-card="true" className="hll-card hll-card--events" style={{ '--cc': '#ff5a36' } as CSSProperties}>
-      <CardHeader title={es ? 'Gestión de Eventos' : 'Event Management'}><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M8 3v4M16 3v4" /></svg></CardHeader>
+      <CardHeader title={es ? 'Gestión de Eventos' : 'Event Management'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2" /><path d="M4 9h16M8 3v4M16 3v4" /></svg></CardHeader>
       <div className="hll-event-stats">
         <div><span>{es ? 'NUEVOS' : 'NEW'}</span><strong>12</strong></div>
         <div><span>{es ? 'EN CURSO' : 'IN PROGRESS'}</span><strong>8</strong></div>
@@ -100,10 +115,10 @@ function EventCard({ es }: { es: boolean }) {
   )
 }
 
-function UdeCard({ es }: { es: boolean }) {
+function UdeCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   return (
     <article data-hero-card="true" className="hll-card hll-card--ude" style={{ '--cc': '#7c3cff' } as CSSProperties}>
-      <CardHeader title={es ? 'Evidencia Digital Unificada (UDE)' : 'Unified Digital Evidence (UDE)'}><svg viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z" /><path d="m9 12 2 2 4-5" /></svg></CardHeader>
+      <CardHeader title={es ? 'Evidencia Digital Unificada (UDE)' : 'Unified Digital Evidence (UDE)'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z" /><path d="m9 12 2 2 4-5" /></svg></CardHeader>
       <HeroCardMedia variant="evidence" src="/images/hero-cards/digital-evidence.webp" width={1122} height={1402} />
       <div className="hll-case-row"><span><b>CASE #24-0157</b>{es ? 'Robo de Vehículo' : 'Vehicle Theft'}</span><span><small>{es ? 'ELEMENTOS' : 'EVIDENCE ITEMS'}</small><strong>24</strong></span></div>
       <span className="hll-mini-label">{es ? 'CADENA DE CUSTODIA' : 'CHAIN OF CUSTODY'}</span>
@@ -112,10 +127,10 @@ function UdeCard({ es }: { es: boolean }) {
   )
 }
 
-function MobileCard({ es }: { es: boolean }) {
+function MobileCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   return (
     <article data-hero-card="true" className="hll-card hll-card--mobile" style={{ '--cc': '#7c3cff' } as CSSProperties}>
-      <CardHeader title={es ? 'Respuesta Móvil' : 'Mobile Response'}><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M10 5h4M11 19h2" /></svg></CardHeader>
+      <CardHeader title={es ? 'Respuesta Móvil' : 'Mobile Response'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M10 5h4M11 19h2" /></svg></CardHeader>
       <HeroCardMedia variant="mobile" src="/images/hero-cards/mobile-apps.webp" width={1124} height={1399} />
       <div className="hll-mobile-metrics">
         <span><strong>1,842</strong><small>{es ? 'Usuarios de respuesta' : 'Responder users'}</small></span>
@@ -126,7 +141,7 @@ function MobileCard({ es }: { es: boolean }) {
   )
 }
 
-function IntegrationsCard({ es }: { es: boolean }) {
+function IntegrationsCard({ es, headingLevel }: { es: boolean; headingLevel?: HeadingLevel }) {
   const items = [
     { en: 'LPR Cameras', es: 'Cámaras LPR', icon: <svg viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="10" rx="2" /><path d="m17 10 4-2v8l-4-2" /></svg> },
     { en: 'Access Control', es: 'Control de Acceso', icon: <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></svg> },
@@ -147,21 +162,21 @@ function IntegrationsCard({ es }: { es: boolean }) {
   ]
   return (
     <article data-hero-card="true" className="hll-card hll-card--integrations" style={{ '--cc': '#165dff' } as CSSProperties}>
-      <CardHeader title={es ? 'Integraciones' : 'Integrations'}><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="m8 11 7.5-4M8 13l7.5 4" /></svg></CardHeader>
+      <CardHeader title={es ? 'Integraciones' : 'Integrations'} headingLevel={headingLevel}><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="m8 11 7.5-4M8 13l7.5 4" /></svg></CardHeader>
       <div className="hll-int-grid">{items.map((item) => <div className="hll-int-item" key={item.en}><span>{item.icon}</span><small>{es ? item.es : item.en}</small></div>)}</div>
       <div className="hll-int-more">+ 20 {es ? 'integraciones más' : 'More Integrations'}</div>
     </article>
   )
 }
 
-export function moduleCards(es: boolean) {
+export function moduleCards(es: boolean, headingLevel?: HeadingLevel) {
   return [
-    <CadCard key="cad" es={es} />,
-    <VideoCard key="video" es={es} />,
-    <GisCard key="gis" es={es} />,
-    <EventCard key="events" es={es} />,
-    <UdeCard key="ude" es={es} />,
-    <MobileCard key="mobile" es={es} />,
-    <IntegrationsCard key="integrations" es={es} />,
+    <CadCard key="cad" es={es} headingLevel={headingLevel} />,
+    <VideoCard key="video" es={es} headingLevel={headingLevel} />,
+    <GisCard key="gis" es={es} headingLevel={headingLevel} />,
+    <EventCard key="events" es={es} headingLevel={headingLevel} />,
+    <UdeCard key="ude" es={es} headingLevel={headingLevel} />,
+    <MobileCard key="mobile" es={es} headingLevel={headingLevel} />,
+    <IntegrationsCard key="integrations" es={es} headingLevel={headingLevel} />,
   ]
 }
