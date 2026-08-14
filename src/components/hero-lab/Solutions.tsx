@@ -287,8 +287,6 @@ export default function Solutions({ es }: { es: boolean }) {
     return () => io.disconnect()
   }, [])
 
-  const select = (i: number) => { lockRef.current = Date.now() + 900; setActive(i) }
-
   return (
     <section className="sv" id="solutions">
       <div className="sv-wrap">
@@ -311,15 +309,23 @@ export default function Solutions({ es }: { es: boolean }) {
               const on = i === active
               return (
                 <div className={`sv-item${on ? ' is-active' : ''}`} key={x.key} style={{ '--pc': x.color } as React.CSSProperties}>
-                  {/* Header and visual share one sticky box (mobile only — see
-                      .sv-pin) rather than each sticking at its own computed
+                  {/* Header, visual and summary share one sticky box (mobile
+                      only — see .sv-pin) rather than each sticking at its own computed
                       offset. A fixed offset for the visual would need the
                       header's exact rendered height, which isn't constant:
                       .sv-cat wraps to two lines for some products ("Emergency
                       Call-Taking & Dispatch") and one for others, so the
                       header itself isn't a fixed height to offset against. */}
                   <div className="sv-pin">
-                    <button className="sv-item-head" aria-expanded={on} aria-controls={`sv-body-${x.key}`} onClick={() => select(i)}>
+                    <button
+                      className="sv-item-head"
+                      aria-expanded={on}
+                      aria-controls={`sv-body-${x.key}`}
+                      onClick={() => {
+                        lockRef.current = Date.now() + 900
+                        setActive(i)
+                      }}
+                    >
                       <span className="sv-num">{x.n}</span>
                       <Image className="sv-mark" src={x.logo} alt="" aria-hidden="true" draggable={false} width={30} height={30} />
                       <span className="sv-names">
@@ -329,10 +335,10 @@ export default function Solutions({ es }: { es: boolean }) {
                       <svg className="sv-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
                     </button>
                     {on && <div className="sv-visual-inline"><AppMock p={x} es={es} /></div>}
+                    {on && <p className="sv-text">{x.body[lang]}</p>}
                   </div>
 
                   <div className="sv-body" id={`sv-body-${x.key}`} hidden={!on}>
-                    <p className="sv-text">{x.body[lang]}</p>
                     <ul className="sv-caps">
                       {x.caps.map((c, k) => (
                         <li key={k} style={{ '--ci': k } as React.CSSProperties}><span className="sv-check" aria-hidden="true">✓</span>{c[lang]}</li>

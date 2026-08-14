@@ -1,3 +1,18 @@
+## [v2.355] – 2026-08-14 — Mobile comparison cards and solution context stay compact and readable
+
+### Fixed
+- **The before/after comparison no longer becomes an excessively tall mobile section.** Panels now follow the available carousel width, the scroller follows the active panel height, and phone-sized unified-command cards retain the incident header, map and module rail while omitting secondary dashboard columns and statistics.
+- **The two mobile comparison cards now remain visually balanced.** The redundant unified-command verdict is removed only on narrow phones; measured at 390px, the cards are 565px and 596px tall, with no horizontal page overflow.
+- **Solution visuals no longer cover their descriptive copy while scrolling.** On mobile, the product header, application visual and summary paragraph now share one sticky unit; the checklist and CTA continue scrolling beneath it.
+- **The Solutions click handler now satisfies React's render-purity lint rule** by keeping the interaction timestamp directly inside the event handler, without changing selection behavior.
+
+### Added
+- **Responsive regression coverage** for the before/after carousel width, compact console, active-panel height synchronization and narrow-phone content rules.
+
+### Checked
+- Verified at 390px, 600px, 768px and 1440px; no horizontal overflow or browser console errors.
+- ESLint and the webpack production build pass.
+
 ## [v2.354] – 2026-08-14 — Touch targets to 44x44; module cards nest correctly under their section
 
 Four items from the professional website audit (kabatone-homepage-redesign-audit-2026-08-14.pdf), the cheap and unambiguous ones — the rest need a decision (claim evidence/sourcing, customer quote attribution, brand spelling) or real infrastructure (Lighthouse against production-equivalent hosting), not a code change.

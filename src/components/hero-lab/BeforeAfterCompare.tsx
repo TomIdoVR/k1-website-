@@ -1,6 +1,6 @@
 'use client'
 
-/* The scroller wrapper for the two before/after panels. Below 1040px
+/* The scroller wrapper for the two before/after panels. Below 1180px
    .ba-compare switches from a CSS grid to a horizontal scroll-snap strip
    (before-after.css) — this component adds the part CSS alone can't: an
    explicit, always-visible control row.
@@ -10,15 +10,10 @@
    renders no scrollbar at all, so there was no visible cue that the strip
    could scroll. Buttons don't depend on an OS preference.
 
-   The buttons then floated at the strip's vertical mid-point, one at each
-   edge. Two problems, both visible the moment the panels differ in height:
-   the strip is as tall as the console, so beside the much shorter scatter
-   panel the left button hung in empty space with nothing under it; and the
-   decorative .ba-arrow that rides between the panels landed on the same line,
-   giving three circles in a row where only two were interactive. The controls
-   now sit as a static centred row below the strip — the same arrangement the
-   module carousel above uses — with dots between them, so which panel you are
-   on is readable without counting circles. */
+   The controls sit in a static row below the strip, with dots between them.
+   The strip also follows the active panel's height. Without that measurement,
+   flexbox makes it as tall as the much longer console even while the shorter
+   fragmented panel is selected, leaving a large empty scroll region. */
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 
@@ -42,10 +37,28 @@ export default function BeforeAfterCompare({
     [],
   )
 
-  /* Nearest panel centre to the strip's centre, rather than
-     round(scrollLeft / clientWidth): the panels are a flat 440px and snap
-     centred, so they are not laid out on a clientWidth grid and the division
-     drifts by a whole panel on wider screens. */
+  const setScrollerHeight = useCallback((panel: HTMLElement | undefined) => {
+    const el = ref.current
+    if (!el) return
+
+    if (!window.matchMedia('(max-width: 1180px)').matches) {
+      el.style.removeProperty('height')
+      return
+    }
+
+    if (!panel) return
+    const height = `${panel.offsetHeight + 14}px`
+    if (el.style.height !== height) el.style.height = height
+  }, [])
+
+  const syncActivePanelHeight = useCallback((target: number) => {
+    const items = panels()
+    setScrollerHeight(items[target])
+  }, [panels, setScrollerHeight])
+
+  /* Use the panel nearest the strip's centre rather than dividing scrollLeft
+     by clientWidth. Each slide deliberately leaves a small next-state peek,
+     so its width is not the same as the scroller's width. */
   const measure = useCallback(() => {
     const el = ref.current
     if (!el) return
@@ -61,7 +74,8 @@ export default function BeforeAfterCompare({
       }
     })
     setIndex(best)
-  }, [panels])
+    syncActivePanelHeight(best)
+  }, [panels, syncActivePanelHeight])
 
   useEffect(() => {
     const el = ref.current
@@ -69,24 +83,30 @@ export default function BeforeAfterCompare({
     measure()
     const ro = new ResizeObserver(measure)
     ro.observe(el)
+    panels().forEach((panel) => ro.observe(panel))
+    const responsive = window.matchMedia('(max-width: 1180px)')
+    responsive.addEventListener('change', measure)
     el.addEventListener('scroll', measure, { passive: true })
     return () => {
       ro.disconnect()
+      responsive.removeEventListener('change', measure)
       el.removeEventListener('scroll', measure)
     }
-  }, [measure])
+  }, [measure, panels])
 
   function goTo(target: number) {
     const el = ref.current
     const panel = panels()[target]
     if (!el || !panel) return
+    setIndex(target)
+    syncActivePanelHeight(target)
     el.scrollTo({
-      left: panel.offsetLeft - (el.clientWidth - panel.offsetWidth) / 2,
+      left: panel.offsetLeft,
       behavior: 'smooth',
     })
   }
 
-  const count = panels().length || panelLabels.length
+  const count = panelLabels.length
 
   return (
     <div className="ba-compare-wrap">

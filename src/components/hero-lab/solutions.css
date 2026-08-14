@@ -134,6 +134,7 @@
 .sv-body { padding: 4px 18px 22px; border-top: 1px solid rgba(15, 30, 60, 0.07); margin-top: 2px; animation: svIn .4s cubic-bezier(.2, .8, .3, 1) both; }
 @keyframes svIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .sv-text { font-size: 14.5px; line-height: 1.6; color: #4a5f7d; margin: 16px 0 18px; text-wrap: pretty; }
+.sv-pin > .sv-text { margin-inline: 18px; }
 .sv-caps { list-style: none; display: grid; gap: 11px; margin: 0 0 20px; padding: 0; }
 .sv-caps li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #2b3f5e; animation: svIn .38s cubic-bezier(.2, .8, .3, 1) both; animation-delay: calc(.04s + var(--ci) * .04s); }
 .sv-check { display: grid; place-items: center; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; border-radius: 5px; font-size: 9.5px; color: var(--pc); background: color-mix(in srgb, var(--pc) 12%, #fff); border: 1px solid color-mix(in srgb, var(--pc) 30%, transparent); }
@@ -268,7 +269,7 @@
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  /* Sticky solution headers, header + visual together.
+  /* Sticky solution context: header + visual + summary together.
      On a phone the accordion is one column and an expanded solution is taller
      than the viewport, so the product name scrolls away and you lose track of
      which solution you are reading. .sv-pin (header + app-mockup visual, see
@@ -277,7 +278,7 @@
      once that item's bottom passes, it releases and the following item's
      .sv-pin takes over.
 
-     Header and visual stick as ONE box rather than each at its own computed
+     Header, visual and summary stick as ONE box rather than each at its own computed
      offset. The header alone used to be the sticky element, and the visual
      right below it just scrolled normally — so on a long solution the visual
      scrolled out from under the header almost immediately, while the header

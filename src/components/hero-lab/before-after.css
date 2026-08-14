@@ -71,6 +71,8 @@
 /* Elevation is the tell: the unified side is a surface, the fragmented side is
    a flat diagram of one. */
 .ba-panel--good {
+  container-type: inline-size;
+  container-name: unified-panel;
   border-color: #dfe7f5;
   background: linear-gradient(180deg, #fdfdff 0%, #f2f6fd 100%);
   box-shadow: 0 30px 70px -46px rgba(17, 45, 90, 0.5);
@@ -468,7 +470,7 @@
    one panel fills the view, the next peeks in at the edge as the cue to swipe.
    Same technique the module-card carousel above uses, minus its JS — two
    panels need only native scroll, not tracked-index dots and arrow buttons. */
-@media (max-width: 1040px) {
+@media (max-width: 1180px) {
   .ba-compare-wrap { position: relative; }
 
   .ba-compare {
@@ -481,24 +483,18 @@
        flex-start lets each panel size to its own content instead. */
     align-items: flex-start;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: 20px;
+    scroll-padding-inline: 0;
     padding-bottom: 14px;
+    transition: height 280ms ease;
   }
   .ba-panel {
-    /* A flat 440px, not min(440px, calc(100% - 44px)). The calc() version
-       shrank the panel below 440px on any screen narrower than ~484px — every
-       phone — which is exactly what squeezed the console's third column
-       (camera + active units) down to the width where its labels stopped
-       fitting ("LIVE CAMERA" truncating to "LIVE C..."). The strip already
-       scrolls horizontally; a panel narrower than the phone screen bought
-       nothing, since you were always going to need to scroll to see the
-       whole card regardless of exactly how narrow it got. Holding it at a
-       flat 440px keeps every card's internal layout identical at every
-       viewport width — the console never has to re-decide how to fit into a
-       shrinking box. */
-    flex: 0 0 440px;
-    scroll-snap-align: center;
+    /* One clear comparison state at a time. The small remainder is the swipe
+       cue without exposing half of the next dashboard. Unlike the former
+       fixed 440px basis, this follows the actual tablet or phone container. */
+    flex: 0 0 calc(100% - clamp(28px, 8vw, 64px));
+    scroll-snap-align: start;
     padding-inline: clamp(16px, 4vw, 26px);
   }
   /* Hidden here, not merely non-snapping. On the desktop grid it is the
@@ -593,34 +589,23 @@
   .ba-scroll-dot[aria-current='true'] { width: 21px; border-radius: 8px; background: #0757f7; }
 }
 
-/* 1040px, not 700px — and this is the asymmetry bug, not a cosmetic tweak.
-   These rules describe how the console lays itself out when it is in a narrow
-   box. They were keyed to the viewport, but the box the console actually
-   lives in stopped tracking the viewport at 1040px: that is where .ba-panel
-   becomes a flat 440px, so the console is ~388px wide at every width from
-   1040px down.
+/* The console responds to the width of its own panel, not the page. Tablet
+   slides retain the useful two-column console; only a genuinely phone-sized
+   panel collapses to the compact one-column presentation. */
+@media (max-width: 1180px) {
+  @container unified-panel (max-width: 540px) {
+    .uc-body { grid-template-columns: minmax(0, 1fr); }
+    .uc-col { display: none; }
+    .uc-map { height: 180px; }
+    .uc-stats { display: none; }
+    .uc-rail { flex-direction: row; width: auto; gap: 12px; padding: 8px 10px; overflow-x: auto; }
+    .uc { flex-direction: column; }
+    .uc-rail-ic--last { margin-top: 0; margin-left: auto; }
+    .uc-search { display: none; }
+    .ba-modules { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
 
-   That left a 700-1040px band where the panel was already 440px but the
-   console was still laying out for a wide viewport — six stat cells, a
-   vertical icon rail and a two-column body crammed into 388px, spilling out
-   past the panel's edge and truncating ("STATUS" to "ST...", "UNIT 12" to
-   "UNIT 1:"). Matching this breakpoint to the one that fixes the panel width
-   keeps the console's layout and its container in agreement at every width. */
-@media (max-width: 1040px) {
-  .uc-body { grid-template-columns: minmax(0, 1fr); }
-  .uc-map { height: 220px; }
-  /* Six stat cells in a ~388px console leave ~64px each, which breaks every
-     label onto three lines. Three per row instead. */
-  .uc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .uc-stat:nth-child(3) { border-right: 0; }
-  .uc-stat:nth-child(-n+3) { border-bottom: 1px solid #f1f4f8; }
-  .uc-rail { flex-direction: row; width: auto; gap: 12px; padding: 8px 10px; overflow-x: auto; }
-  .uc { flex-direction: column; }
-  .uc-rail-ic--last { margin-top: 0; margin-left: auto; }
-  .uc-search { display: none; }
-  /* Four across, at every width in this range. Previously this dropped to
-     three below 460px, which made sense when the panel shrank with the
-     viewport — now that it holds 440px, the rail's box never changes, so
-     neither should its column count. */
-  .ba-modules { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @container unified-panel (max-width: 420px) {
+    .ba-verdict--good { display: none; }
+  }
 }
