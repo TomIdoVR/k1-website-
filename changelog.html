@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.350 -->
+      <div class="tl-entry fixed" id="v2.350">
+        <div class="tl-meta"><span class="tl-ver">v2.350</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Panels hold their size on narrow screens; scroll buttons stop hiding as the connector arrow</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The console's third column was truncating to garbled fragments on real phones</strong> &mdash; confirmed via an iPhone Safari screenshot after this session's Chrome testing across 375-1300px couldn't reproduce it. Root cause: the panel's width was <code>min(440px, calc(100% - 44px))</code>, which shrinks below 440px on any screen narrower than ~484px &mdash; every phone. Changed to a flat <code>flex: 0 0 440px</code> that never shrinks with the viewport; the strip already scrolls horizontally, so a narrower panel bought nothing. Verified at 375px: zero truncated labels, where there were several before</li>
+            <li><strong>The two panels are confirmed equal width at every screen size</strong> &mdash; both share the same base rule with no per-variant width override</li>
+            <li><strong>The scroll buttons were nearly invisible next to the decorative connector arrow</strong> between the panels &mdash; both were white circles with a blue icon at about the same size. Inverted the scroll buttons to solid blue with a white icon so they read as buttons on sight; the connector arrow keeps its original look</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.349 -->
       <div class="tl-entry fixed" id="v2.349">
         <div class="tl-meta"><span class="tl-ver">v2.349</span><span class="tl-date">2026-08-13</span></div>

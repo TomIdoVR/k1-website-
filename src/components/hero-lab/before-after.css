@@ -486,12 +486,18 @@
     padding-bottom: 14px;
   }
   .ba-panel {
-    /* 100% of the strip minus 44px, capped at 440px. Previously capped at
-       560px — on a ~700-1040px range that panel dominated the screen edge to
-       edge, and left barely more than a sliver of the next one peeking in.
-       440px reads as a card next to more of its neighbour, not a full-bleed
-       takeover. */
-    flex: 0 0 min(440px, calc(100% - 44px));
+    /* A flat 440px, not min(440px, calc(100% - 44px)). The calc() version
+       shrank the panel below 440px on any screen narrower than ~484px — every
+       phone — which is exactly what squeezed the console's third column
+       (camera + active units) down to the width where its labels stopped
+       fitting ("LIVE CAMERA" truncating to "LIVE C..."). The strip already
+       scrolls horizontally; a panel narrower than the phone screen bought
+       nothing, since you were always going to need to scroll to see the
+       whole card regardless of exactly how narrow it got. Holding it at a
+       flat 440px keeps every card's internal layout identical at every
+       viewport width — the console never has to re-decide how to fit into a
+       shrinking box. */
+    flex: 0 0 440px;
     scroll-snap-align: center;
     padding-inline: clamp(16px, 4vw, 26px);
   }
@@ -527,6 +533,12 @@
     /* Lifted above the panels' own box-shadow but under the header. */
     z-index: 3;
   }
+  /* Solid blue, not the white-with-blue-icon treatment .ba-arrow uses. Both
+     were white circles with a blue chevron/arrow at roughly the same size —
+     next to each other in the same strip they read as the same element, and
+     it wasn't obvious which two were interactive and which one was just the
+     connector between the panels. Inverting the colour makes these read as
+     buttons on sight, distinct from the decorative arrow between the cards. */
   .ba-scroll-btn {
     pointer-events: auto;
     display: grid;
@@ -535,10 +547,10 @@
     height: 38px;
     margin-top: -19px;
     border-radius: 50%;
-    border: 1px solid #dfe5ee;
-    background: #fff;
-    color: #0757f7;
-    box-shadow: 0 10px 24px -12px rgba(20, 45, 90, 0.5);
+    border: none;
+    background: #0757f7;
+    color: #fff;
+    box-shadow: 0 10px 24px -8px rgba(7, 87, 247, 0.55);
   }
   .ba-scroll-btn:disabled { opacity: 0.32; pointer-events: none; }
   .ba-scroll-btn svg { width: 18px; height: 18px; }

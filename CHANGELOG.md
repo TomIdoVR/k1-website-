@@ -1,3 +1,12 @@
+## [v2.350] – 2026-08-13 — Panels hold their size on narrow screens; scroll buttons stop hiding as the connector arrow
+### Fixed
+- **The console's third column (camera + active units) was truncating to garbled fragments on real phones** — confirmed via an iPhone Safari screenshot, after this session's Chrome testing across 375-1300px couldn't reproduce it. Root cause: `.ba-panel`'s width was `min(440px, calc(100% - 44px))`, which shrinks below 440px on any screen narrower than ~484px — every phone. Changed to a flat `flex: 0 0 440px` that never shrinks with the viewport. The strip already scrolls horizontally, so a panel narrower than the phone screen bought nothing — you were always going to scroll to see the whole card either way. Verified on the deployed build at 375px: zero truncated labels anywhere, where there were several before.
+- **The two panels are explicitly confirmed equal width at every screen size** — both share the same `.ba-panel` base rule with no per-variant width override, so this was already implied by the fix above; verified directly (440px === 440px at 375px viewport).
+- **The scroll buttons were nearly invisible next to the decorative connector arrow between the panels** — both were white circles with a blue chevron/arrow at about the same size, reading as the same element. Inverted the scroll buttons to solid blue with a white icon, so they read as buttons on sight; the connector arrow keeps its original white-with-blue-icon look.
+
+### Notes
+- Below 700px viewport `.uc-body` already collapses to a single column (existing rule, unchanged) — combined with the panel no longer shrinking, that column now gets the full ~386px to work with instead of being squeezed under it.
+
 ## [v2.349] – 2026-08-13 — Mobile: no more dead space in the scatter panel, image stays with the header
 ### Fixed
 - **The "fragmented intelligence" panel had 250px+ of dead space above and below its diagram on phones.** `.ba-compare`'s scroll strip used `align-items: stretch`, forcing the shorter panel (a few hundred px of scatter diagram) to match the taller one (the console, often 1000px+ with its modules rail and verdict card) — and `.ba-scatter`'s `margin-block: auto` then centred the diagram in that artificially tall box. Changed to `align-items: flex-start` so each panel sizes to its own content, and the diagram's margin back to a plain 16px gap. Verified on the deployed build: panel heights no longer match (558px vs 1629px), and the gap between the subtitle and the diagram is a clean 16px.
