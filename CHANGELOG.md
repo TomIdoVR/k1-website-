@@ -1,3 +1,14 @@
+## [v2.321] – 2026-08-14 — The audit was measuring escaped HTML, so apostrophes and ampersands counted as 5–6 characters
+
+**Fixed**
+- **`scripts/seo-audit.mjs` now decodes HTML entities before measuring title and description length.** The extractor read the serialized HTML verbatim, so `&` cost 5 characters and `'` cost 6. Three country guides were flagged over-length by exactly the entity overhead and nothing else: `/resources/public-safety-software-suriname` measured 71/70 for a title that is 67 characters (`KPS & Port Security` → `KPS &amp; Port Security`), and `costa-rica` (202/200) and `ecuador` (205/200) measured 5 over for descriptions of 197 and 200 — both containing `Costa Rica's` / `Ecuador's`. Google measures the decoded text, so the metadata was compliant and the audit was wrong.
+- Decoding is applied inside `extract()` rather than at each call site, so canonical URLs, OG tags, and every other extracted value are now unescaped too — `&amp;` in a canonical query string was previously compared as a literal `&amp;`.
+- Handles named (`&amp; &lt; &gt; &quot; &apos; &nbsp;`) and numeric (`&#39;` / `&#x27;`) forms, and leaves anything unrecognized or out of Unicode range untouched rather than corrupting it.
+
+**Notes**
+- No metadata strings were edited. Shortening compliant titles to satisfy a miscounting checker would have been the wrong fix — and any title or description within 6 characters of the cap that contains an apostrophe or ampersand was a latent false positive on the same footing.
+- Post-fix run: 234 pages, 0 critical / 0 warnings / 86 info, 234/234 clean. The 3 warnings resolved; the 2 "new" diffs are `desc_near_max` info entries surfacing at their true decoded lengths.
+
 ## [v2.320] – 2026-08-13 — The coverage guard v2.318 shipped was armed at 56 pages, not 187
 
 **Fixed**

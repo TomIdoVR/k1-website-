@@ -1,23 +1,38 @@
 {
-  "runAt": "2026-08-13T13:02:15.147Z",
+  "runAt": "2026-08-14T07:01:50.587Z",
   "baseUrl": "https://staging.kabatone.com",
   "pagesAudited": 234,
+  "coverage": {
+    "repoRoutes": 239,
+    "repoUrls": 478,
+    "crawled": 234,
+    "covered": 234,
+    "pct": 49,
+    "excludedNoindexPolicy": 230,
+    "excludedOffSitemap": 14,
+    "unexplained": []
+  },
   "summary": {
     "critical": 0,
-    "warnings": 4,
-    "info": 83,
-    "pagesWithIssues": 4,
-    "pagesClean": 230
+    "warnings": 0,
+    "info": 86,
+    "coveragePct": 49,
+    "coverageAudited": "234/478",
+    "coverageUnexplained": 0,
+    "pagesWithIssues": 0,
+    "pagesClean": 234,
+    "newIssues": 2,
+    "resolvedIssues": 3
   },
   "pages": [
     {
       "url": "https://staging.kabatone.com/",
       "issues": [],
       "info": {
-        "title": "Public Safety Platform for Cities &amp; Command Centers | K1",
+        "title": "Public Safety Platform for Cities & Command Centers | K1",
         "description": "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
         "canonical": "https://kabatone.com",
-        "ogTitle": "Public Safety Platform for Cities &amp; Command Centers | K1",
+        "ogTitle": "Public Safety Platform for Cities & Command Centers | K1",
         "ogDesc": "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -50,15 +65,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (168/160 ideal)"
+          "msg": "Description near limit (164/160 ideal)"
         }
       ],
       "info": {
-        "title": "CAD Dispatch Software for 911, Fire &amp; EMS | K-Dispatch",
-        "description": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire &amp; EMS.",
+        "title": "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
+        "description": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire & EMS.",
         "canonical": "https://kabatone.com/k-dispatch",
-        "ogTitle": "CAD Dispatch Software for 911, Fire &amp; EMS | K-Dispatch",
-        "ogDesc": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire &amp; EMS.",
+        "ogTitle": "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
+        "ogDesc": "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire & EMS.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -128,10 +143,10 @@
       "url": "https://staging.kabatone.com/k-safety",
       "issues": [],
       "info": {
-        "title": "Situational Awareness &amp; Command Center Software | KabatOne",
+        "title": "Situational Awareness & Command Center Software | KabatOne",
         "description": "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
         "canonical": "https://kabatone.com/k-safety",
-        "ogTitle": "Situational Awareness &amp; Command Center Software | KabatOne",
+        "ogTitle": "Situational Awareness & Command Center Software | KabatOne",
         "ogDesc": "K-Safety overlays incidents, field units, video feeds, and IoT alerts on one GIS map — giving command centers complete situational awareness in real time.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -474,10 +489,10 @@
       "url": "https://staging.kabatone.com/resources",
       "issues": [],
       "info": {
-        "title": "Resources &amp; Guides — Public Safety Platform | KabatOne",
+        "title": "Resources & Guides — Public Safety Platform | KabatOne",
         "description": "Guides, deep dives, and reference articles on public safety platforms, RTCC, CAD dispatch, and smart city technology. For city officials and security directors.",
         "canonical": "https://kabatone.com/resources",
-        "ogTitle": "Resources &amp; Guides — Public Safety Platform | KabatOne",
+        "ogTitle": "Resources & Guides — Public Safety Platform | KabatOne",
         "ogDesc": "Guides, deep dives, and reference articles on public safety platforms, RTCC, CAD dispatch, and smart city technology. For city officials and security directors.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -576,10 +591,10 @@
       "url": "https://staging.kabatone.com/resources/what-is-a-public-safety-platform",
       "issues": [],
       "info": {
-        "title": "What Is a Public Safety Platform? Definition &amp; Guide | KabatOne",
+        "title": "What Is a Public Safety Platform? Definition & Guide | KabatOne",
         "description": "A public safety platform unifies CAD dispatch, video, GIS, and field operations into one system. Learn how cities use it to protect citizens.",
         "canonical": "https://kabatone.com/resources/what-is-a-public-safety-platform",
-        "ogTitle": "What Is a Public Safety Platform? Definition &amp; Guide | KabatOne",
+        "ogTitle": "What Is a Public Safety Platform? Definition & Guide | KabatOne",
         "ogDesc": "A public safety platform unifies CAD dispatch, video, GIS, and field operations into one system. Learn how cities use it to protect citizens.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -610,10 +625,10 @@
       "url": "https://staging.kabatone.com/resources/psim-vs-unified-platform",
       "issues": [],
       "info": {
-        "title": "PSIM vs Unified Platform — What&#x27;s the Difference? | KabatOne",
+        "title": "PSIM vs Unified Platform — What's the Difference? | KabatOne",
         "description": "PSIM integrates alarms from siloed systems. Unified platforms replace silos entirely. Compare architectures, costs, and real-world outcomes for public safety.",
         "canonical": "https://kabatone.com/resources/psim-vs-unified-platform",
-        "ogTitle": "PSIM vs Unified Platform — What&#x27;s the Difference? | KabatOne",
+        "ogTitle": "PSIM vs Unified Platform — What's the Difference? | KabatOne",
         "ogDesc": "PSIM integrates alarms from siloed systems. Unified platforms replace silos entirely. Compare architectures, costs, and real-world outcomes for public safety.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -650,10 +665,10 @@
         }
       ],
       "info": {
-        "title": "What Is a C5 Command Center? Architecture &amp; Tech (2026) | KabatOne",
+        "title": "What Is a C5 Command Center? Architecture & Tech (2026) | KabatOne",
         "description": "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
         "canonical": "https://kabatone.com/resources/how-c5-command-centers-work",
-        "ogTitle": "What Is a C5 Command Center? Architecture &amp; Tech (2026) | KabatOne",
+        "ogTitle": "What Is a C5 Command Center? Architecture & Tech (2026) | KabatOne",
         "ogDesc": "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -736,10 +751,10 @@
       "url": "https://staging.kabatone.com/resources/smart-city-platform-guide",
       "issues": [],
       "info": {
-        "title": "Smart City Platform Guide — Use Cases &amp; Technology | KabatOne",
+        "title": "Smart City Platform Guide — Use Cases & Technology | KabatOne",
         "description": "A smart city platform connects IoT sensors, video, traffic, and emergency services into one operational view. Guide to selecting the right platform.",
         "canonical": "https://kabatone.com/resources/smart-city-platform-guide",
-        "ogTitle": "Smart City Platform Guide — Use Cases &amp; Technology | KabatOne",
+        "ogTitle": "Smart City Platform Guide — Use Cases & Technology | KabatOne",
         "ogDesc": "A smart city platform connects IoT sensors, video, traffic, and emergency services into one operational view. Guide to selecting the right platform.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -1254,10 +1269,10 @@
         }
       ],
       "info": {
-        "title": "AI-Powered Video Analytics: Detection &amp; Best Platforms [2026]",
+        "title": "AI-Powered Video Analytics: Detection & Best Platforms [2026]",
         "description": "AI-powered video analytics uses deep learning to detect intrusions, crowds, license plates, and threats in live CCTV. Compare the best AI video analytics platforms for 2026.",
         "canonical": "https://kabatone.com/resources/what-is-video-analytics",
-        "ogTitle": "AI-Powered Video Analytics: Detection &amp; Best Platforms [2026]",
+        "ogTitle": "AI-Powered Video Analytics: Detection & Best Platforms [2026]",
         "ogDesc": "AI-powered video analytics uses deep learning to detect intrusions, crowds, license plates, and threats in live CCTV. Compare the best AI video analytics platforms for 2026.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -1639,17 +1654,17 @@
       "url": "https://staging.kabatone.com/es/resources/psim-alternatives",
       "issues": [
         {
-          "severity": "warning",
-          "check": "desc_long",
-          "msg": "Description too long (218 chars, max 200)"
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (183/160 ideal)"
         }
       ],
       "info": {
         "title": "Mejores Alternativas a PSIM para Ciudades Inteligentes 2026 | KabatOne",
-        "description": "Las mejores alternativas a un PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon comparadas — por qué las ciudades cambian y la mejor plataforma unificada.",
+        "description": "Alternativas al PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL y Hexagon comparadas, y por qué las ciudades migran a una plataforma unificada.",
         "canonical": "https://kabatone.com/es/resources/psim-alternatives/",
         "ogTitle": "Mejores Alternativas a PSIM para Ciudades Inteligentes 2026 | KabatOne",
-        "ogDesc": "Las mejores alternativas a un PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon comparadas — por qué las ciudades cambian y la mejor plataforma unificada.",
+        "ogDesc": "Alternativas al PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL y Hexagon comparadas, y por qué las ciudades migran a una plataforma unificada.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -1844,10 +1859,10 @@
       "url": "https://staging.kabatone.com/resources/911-call-center-software-guide",
       "issues": [],
       "info": {
-        "title": "911 Call Center Software: Complete Buyer&#x27;s Guide | KabatOne",
+        "title": "911 Call Center Software: Complete Buyer's Guide | KabatOne",
         "description": "911 call center software manages call intake, CAD dispatch, and unit coordination. Learn what modern 911 systems include and how to evaluate them.",
         "canonical": "https://kabatone.com/resources/911-call-center-software-guide",
-        "ogTitle": "911 Call Center Software: Complete Buyer&#x27;s Guide | KabatOne",
+        "ogTitle": "911 Call Center Software: Complete Buyer's Guide | KabatOne",
         "ogDesc": "911 call center software manages call intake, CAD dispatch, and unit coordination. Learn what modern 911 systems include and how to evaluate them.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -1980,10 +1995,10 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-peru",
       "issues": [],
       "info": {
-        "title": "Peru Public Safety Software: C5 &amp; Platforms | KabatOne",
+        "title": "Peru Public Safety Software: C5 & Platforms | KabatOne",
         "description": "Public safety technology for Peruvian cities — C5 command centers, unified dispatch, video, and GIS. How KabatOne supports security operations in Peru.",
         "canonical": "https://kabatone.com/resources/public-safety-software-peru",
-        "ogTitle": "Peru Public Safety Software: C5 &amp; Platforms | KabatOne",
+        "ogTitle": "Peru Public Safety Software: C5 & Platforms | KabatOne",
         "ogDesc": "Public safety technology for Peruvian cities — C5 command centers, unified dispatch, video, and GIS. How KabatOne supports security operations in Peru.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2060,10 +2075,10 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-chile",
       "issues": [],
       "info": {
-        "title": "Chile Public Safety Software: Dispatch &amp; Municipal | KabatOne",
+        "title": "Chile Public Safety Software: Dispatch & Municipal | KabatOne",
         "description": "Public safety platform for Chilean municipalities — unified dispatch (133/131/132), FNDR-funded CCTV integration, GIS, and incident management on one platform.",
         "canonical": "https://kabatone.com/resources/public-safety-software-chile",
-        "ogTitle": "Chile Public Safety Software: Dispatch &amp; Municipal | KabatOne",
+        "ogTitle": "Chile Public Safety Software: Dispatch & Municipal | KabatOne",
         "ogDesc": "Public safety platform for Chilean municipalities — unified dispatch (133/131/132), FNDR-funded CCTV integration, GIS, and incident management on one platform.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2094,10 +2109,10 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-argentina",
       "issues": [],
       "info": {
-        "title": "Argentina Public Safety Software: C5 &amp; Platforms | KabatOne",
+        "title": "Argentina Public Safety Software: C5 & Platforms | KabatOne",
         "description": "Public safety platform for Argentine provinces — Buenos Aires CMU integration, unified 911/101/107 dispatch, GIS, and incident management on one platform.",
         "canonical": "https://kabatone.com/resources/public-safety-software-argentina",
-        "ogTitle": "Argentina Public Safety Software: C5 &amp; Platforms | KabatOne",
+        "ogTitle": "Argentina Public Safety Software: C5 & Platforms | KabatOne",
         "ogDesc": "Public safety platform for Argentine provinces — Buenos Aires CMU integration, unified 911/101/107 dispatch, GIS, and incident management on one platform.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2128,10 +2143,10 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-brazil",
       "issues": [],
       "info": {
-        "title": "Brazil Public Safety Software: CIOPS &amp; State Platforms | KabatOne",
+        "title": "Brazil Public Safety Software: CIOPS & State Platforms | KabatOne",
         "description": "Unified public safety platform for Brazilian states and CIOPS centers — video, 190/192/193 dispatch, GIS, and incident management across 214 million citizens.",
         "canonical": "https://kabatone.com/resources/public-safety-software-brazil",
-        "ogTitle": "Brazil Public Safety Software: CIOPS &amp; State Platforms | KabatOne",
+        "ogTitle": "Brazil Public Safety Software: CIOPS & State Platforms | KabatOne",
         "ogDesc": "Unified public safety platform for Brazilian states and CIOPS centers — video, 190/192/193 dispatch, GIS, and incident management across 214 million citizens.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2164,15 +2179,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (192/160 ideal)"
+          "msg": "Description near limit (187/160 ideal)"
         }
       ],
       "info": {
-        "title": "Best CAD Dispatch Software for 911, Fire &amp; EMS [2026 Guide]",
-        "description": "The best CAD dispatch software for 911 centers, fire departments, and EMS — compared for NG911, multi-agency dispatch, MDT, GPS, and video integration. Independent buyer&#x27;s guide for 2026.",
+        "title": "Best CAD Dispatch Software for 911, Fire & EMS [2026 Guide]",
+        "description": "The best CAD dispatch software for 911 centers, fire departments, and EMS — compared for NG911, multi-agency dispatch, MDT, GPS, and video integration. Independent buyer's guide for 2026.",
         "canonical": "https://kabatone.com/resources/best-cad-dispatch-software",
-        "ogTitle": "Best CAD Dispatch Software for 911, Fire &amp; EMS [2026 Guide]",
-        "ogDesc": "The best CAD dispatch software for 911 centers, fire departments, and EMS — compared for NG911, multi-agency dispatch, MDT, GPS, and video integration. Independent buyer&#x27;s guide for 2026.",
+        "ogTitle": "Best CAD Dispatch Software for 911, Fire & EMS [2026 Guide]",
+        "ogDesc": "The best CAD dispatch software for 911 centers, fire departments, and EMS — compared for NG911, multi-agency dispatch, MDT, GPS, and video integration. Independent buyer's guide for 2026.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2248,10 +2263,10 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-united-states",
       "issues": [],
       "info": {
-        "title": "Public Safety Software for US Cities: 911, RTCC &amp; CAD | KabatOne",
+        "title": "Public Safety Software for US Cities: 911, RTCC & CAD | KabatOne",
         "description": "Public safety platform for US PSAPs and municipal command centers — CAD dispatch with NG911 support, video analytics for RTCCs, and GIS coordination under NIMS.",
         "canonical": "https://kabatone.com/resources/public-safety-software-united-states",
-        "ogTitle": "Public Safety Software for US Cities: 911, RTCC &amp; CAD | KabatOne",
+        "ogTitle": "Public Safety Software for US Cities: 911, RTCC & CAD | KabatOne",
         "ogDesc": "Public safety platform for US PSAPs and municipal command centers — CAD dispatch with NG911 support, video analytics for RTCCs, and GIS coordination under NIMS.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2294,10 +2309,10 @@
         }
       ],
       "info": {
-        "title": "Public Safety Software for Canada: 911, NG911 &amp; PSAP | KabatOne",
+        "title": "Public Safety Software for Canada: 911, NG911 & PSAP | KabatOne",
         "description": "Unified public safety platform for Canadian PSAPs, municipal police, and emergency agencies — CAD dispatch with NG911/CRTC support, video analytics, and bilingual EN/FR interface.",
         "canonical": "https://kabatone.com/resources/public-safety-software-canada",
-        "ogTitle": "Public Safety Software for Canada: 911, NG911 &amp; PSAP | KabatOne",
+        "ogTitle": "Public Safety Software for Canada: 911, NG911 & PSAP | KabatOne",
         "ogDesc": "Unified public safety platform for Canadian PSAPs, municipal police, and emergency agencies — CAD dispatch with NG911/CRTC support, video analytics, and bilingual EN/FR interface.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -2382,15 +2397,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (190/160 ideal)"
+          "msg": "Description near limit (185/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Guatemala: PNC/Ejército – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Guatemala&#x27;s PNC ~32K officers, Ejército de Guatemala, and municipalities — CCS command center integration, CONRED disaster response.",
+        "description": "KabatOne delivers unified public safety platform for Guatemala's PNC ~32K officers, Ejército de Guatemala, and municipalities — CCS command center integration, CONRED disaster response.",
         "canonical": "https://kabatone.com/resources/public-safety-software-guatemala",
         "ogTitle": "Public Safety Software for Guatemala: PNC/Ejército – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Guatemala&#x27;s PNC ~32K officers, Ejército de Guatemala, and municipalities — CCS command center integration, CONRED disaster response.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Guatemala's PNC ~32K officers, Ejército de Guatemala, and municipalities — CCS command center integration, CONRED disaster response.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2428,15 +2443,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (197/160 ideal)"
+          "msg": "Description near limit (192/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Honduras: HNP/PMOP/FUSINA – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Honduras&#x27; HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security.",
+        "description": "KabatOne delivers unified public safety platform for Honduras' HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security.",
         "canonical": "https://kabatone.com/resources/public-safety-software-honduras",
         "ogTitle": "Public Safety Software for Honduras: HNP/PMOP/FUSINA – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Honduras&#x27; HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Honduras' HNP ~15K officers, PMOP, FUSINA, and municipalities — SNE 911 integration, COPECO disaster response, Puerto Cortes port security.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2474,15 +2489,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (191/160 ideal)"
+          "msg": "Description near limit (186/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Nicaragua: National Police/Army – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Nicaragua&#x27;s National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration.",
+        "description": "KabatOne delivers unified public safety platform for Nicaragua's National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration.",
         "canonical": "https://kabatone.com/resources/public-safety-software-nicaragua",
         "ogTitle": "Public Safety Software for Nicaragua: National Police/Army – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Nicaragua&#x27;s National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Nicaragua's National Police ~16K officers, Nicaraguan Army 7 military regions, and municipalities — 118/115/128 dispatch integration.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2520,15 +2535,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (187/160 ideal)"
+          "msg": "Description near limit (182/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for El Salvador: PNC/FAES – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for El Salvador&#x27;s PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic, seismic alerts.",
+        "description": "KabatOne delivers unified public safety platform for El Salvador's PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic, seismic alerts.",
         "canonical": "https://kabatone.com/resources/public-safety-software-el-salvador",
         "ogTitle": "Public Safety Software for El Salvador: PNC/FAES – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for El Salvador&#x27;s PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic, seismic alerts.",
+        "ogDesc": "KabatOne delivers unified public safety platform for El Salvador's PNC ~28K officers, FAES ~25K troops, and municipalities — 911/COEN integration, DGPC/SNET volcanic, seismic alerts.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2564,17 +2579,17 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-costa-rica",
       "issues": [
         {
-          "severity": "warning",
-          "check": "desc_long",
-          "msg": "Description too long (202 chars, max 200)"
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (197/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Costa Rica: Fuerza Publica/OIJ – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Costa Rica&#x27;s Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic, seismic alerts.",
+        "description": "KabatOne delivers unified public safety platform for Costa Rica's Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic, seismic alerts.",
         "canonical": "https://kabatone.com/resources/public-safety-software-costa-rica",
         "ogTitle": "Public Safety Software for Costa Rica: Fuerza Publica/OIJ – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Costa Rica&#x27;s Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic, seismic alerts.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Costa Rica's Fuerza Publica ~13K officers, OIJ investigators, and municipalities — 9-1-1/CNE integration, OVSICORI/RSN volcanic, seismic alerts.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2610,17 +2625,17 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-ecuador",
       "issues": [
         {
-          "severity": "warning",
-          "check": "desc_long",
-          "msg": "Description too long (205 chars, max 200)"
+          "severity": "info",
+          "check": "desc_near_max",
+          "msg": "Description near limit (200/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Ecuador: ECU-911 Integration – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Ecuador&#x27;s National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port, airport LPR.",
+        "description": "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port, airport LPR.",
         "canonical": "https://kabatone.com/resources/public-safety-software-ecuador",
         "ogTitle": "Public Safety Software for Ecuador: ECU-911 Integration – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Ecuador&#x27;s National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port, airport LPR.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Ecuador's National Police ~47K officers, ECU-911 system, and municipalities — Quito/Guayaquil metro coordination, anti-narcotics port, airport LPR.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -2658,15 +2673,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (175/160 ideal)"
+          "msg": "Description near limit (170/160 ideal)"
         }
       ],
       "info": {
         "title": "Public Safety Software for Panama: Canal Zone Security – KabatOne",
-        "description": "KabatOne delivers unified public safety platform for Panama&#x27;s National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport.",
+        "description": "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport.",
         "canonical": "https://kabatone.com/resources/public-safety-software-panama",
         "ogTitle": "Public Safety Software for Panama: Canal Zone Security – KabatOne",
-        "ogDesc": "KabatOne delivers unified public safety platform for Panama&#x27;s National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport.",
+        "ogDesc": "KabatOne delivers unified public safety platform for Panama's National Police ~26K officers, Canal Zone ACP security, SENAFRONT Darien border operations, Tocumen Airport.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 5,
@@ -3116,21 +3131,16 @@
       "url": "https://staging.kabatone.com/resources/public-safety-software-suriname",
       "issues": [
         {
-          "severity": "warning",
-          "check": "title_long",
-          "msg": "Title too long (71 chars, max 70)"
-        },
-        {
           "severity": "info",
           "check": "desc_near_max",
           "msg": "Description near limit (186/160 ideal)"
         }
       ],
       "info": {
-        "title": "Public Safety Software for Suriname: KPS &amp; Port Security – KabatOne",
+        "title": "Public Safety Software for Suriname: KPS & Port Security – KabatOne",
         "description": "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure.",
         "canonical": "https://kabatone.com/resources/public-safety-software-suriname",
-        "ogTitle": "Public Safety Software for Suriname: KPS &amp; Port Security – KabatOne",
+        "ogTitle": "Public Safety Software for Suriname: KPS & Port Security – KabatOne",
         "ogDesc": "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -3799,15 +3809,15 @@
         {
           "severity": "info",
           "check": "desc_near_max",
-          "msg": "Description near limit (179/160 ideal)"
+          "msg": "Description near limit (175/160 ideal)"
         }
       ],
       "info": {
-        "title": "Peregrine.ai Analytics &amp; Reporting Dashboards vs KabatOne [2026]",
-        "description": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS &amp; traffic.",
+        "title": "Peregrine.ai Analytics & Reporting Dashboards vs KabatOne [2026]",
+        "description": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS & traffic.",
         "canonical": "https://kabatone.com/vs/peregrine",
-        "ogTitle": "Peregrine.ai Analytics &amp; Reporting Dashboards vs KabatOne [2026]",
-        "ogDesc": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS &amp; traffic.",
+        "ogTitle": "Peregrine.ai Analytics & Reporting Dashboards vs KabatOne [2026]",
+        "ogDesc": "How do Peregrine.ai analytics reporting dashboards compare to KabatOne? Peregrine delivers predictive intelligence — KabatOne runs the operation: CAD, AI video, GIS & traffic.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 4,
@@ -3929,10 +3939,10 @@
         }
       ],
       "info": {
-        "title": "Verkada Alternative: KabatOne — CAD, GIS &amp; Traffic Beyond Cameras",
+        "title": "Verkada Alternative: KabatOne — CAD, GIS & Traffic Beyond Cameras",
         "description": "Looking for a Verkada alternative? Verkada covers cloud cameras and access control — KabatOne adds CAD dispatch, GIS and traffic for the full detection-to-response workflow.",
         "canonical": "https://kabatone.com/vs/verkada",
-        "ogTitle": "Verkada Alternative: KabatOne — CAD, GIS &amp; Traffic Beyond Cameras",
+        "ogTitle": "Verkada Alternative: KabatOne — CAD, GIS & Traffic Beyond Cameras",
         "ogDesc": "Looking for a Verkada alternative? Verkada covers cloud cameras and access control — KabatOne adds CAD dispatch, GIS and traffic for the full detection-to-response workflow.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
@@ -4208,10 +4218,10 @@
       "issues": [],
       "info": {
         "title": "Contact KabatOne — Request a Demo",
-        "description": "Schedule a live demo with KabatOne&#x27;s solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
+        "description": "Schedule a live demo with KabatOne's solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
         "canonical": "https://kabatone.com/contact",
         "ogTitle": "Contact KabatOne — Request a Demo",
-        "ogDesc": "Schedule a live demo with KabatOne&#x27;s solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
+        "ogDesc": "Schedule a live demo with KabatOne's solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 2,
@@ -4241,11 +4251,11 @@
       "url": "https://staging.kabatone.com/privacy",
       "issues": [],
       "info": {
-        "title": "Privacy Policy &amp; Data Protection | KabatOne",
-        "description": "KabatOne&#x27;s privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
+        "title": "Privacy Policy & Data Protection | KabatOne",
+        "description": "KabatOne's privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
         "canonical": "https://kabatone.com/privacy",
-        "ogTitle": "Privacy Policy &amp; Data Protection | KabatOne",
-        "ogDesc": "KabatOne&#x27;s privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
+        "ogTitle": "Privacy Policy & Data Protection | KabatOne",
+        "ogDesc": "KabatOne's privacy policy — how we collect, use, and protect your personal data. Learn about your ARCO rights and our data security practices.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 3,
@@ -4276,10 +4286,10 @@
       "issues": [],
       "info": {
         "title": "Incident Simulator — Unified vs Fragmented Response | KabatOne",
-        "description": "Interactive simulator comparing fragmented public safety systems vs. KabatOne&#x27;s unified platform. Watch the same incident unfold two ways — in real time.",
+        "description": "Interactive simulator comparing fragmented public safety systems vs. KabatOne's unified platform. Watch the same incident unfold two ways — in real time.",
         "canonical": "https://kabatone.com/simulator",
         "ogTitle": "Incident Simulator — Unified vs Fragmented Response | KabatOne",
-        "ogDesc": "Interactive simulator comparing fragmented public safety systems vs. KabatOne&#x27;s unified platform. Watch the same incident unfold two ways — in real time.",
+        "ogDesc": "Interactive simulator comparing fragmented public safety systems vs. KabatOne's unified platform. Watch the same incident unfold two ways — in real time.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 2,
@@ -4310,10 +4320,10 @@
       "issues": [],
       "info": {
         "title": "Scenario Explorer | KabatOne Platform",
-        "description": "Walk through real public safety scenarios and see how KabatOne&#x27;s unified platform handles incidents end-to-end.",
+        "description": "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
         "canonical": "https://kabatone.com/demo",
         "ogTitle": "Scenario Explorer | KabatOne Platform",
-        "ogDesc": "Walk through real public safety scenarios and see how KabatOne&#x27;s unified platform handles incidents end-to-end.",
+        "ogDesc": "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
         "ogImage": "https://kabatone.com/og-default.png",
         "h1Count": 1,
         "jsonLdCount": 2,
@@ -4344,10 +4354,10 @@
       "issues": [],
       "info": {
         "title": "LPR Detection Walkthrough | KabatOne Platform Demo",
-        "description": "See how KabatOne&#x27;s unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.",
+        "description": "See how KabatOne's unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.",
         "canonical": "https://kabatone.com/demo/lpr",
         "ogTitle": "LPR Detection Walkthrough | KabatOne Platform Demo",
-        "ogDesc": "See how KabatOne&#x27;s unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.",
+        "ogDesc": "See how KabatOne's unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.",
         "ogImage": "https://kabatone.com/demo/lpr/cam-highway-lpr.jpeg",
         "h1Count": 1,
         "jsonLdCount": 2,
@@ -4412,10 +4422,10 @@
       "issues": [],
       "info": {
         "title": "Violence Detection Walkthrough | KabatOne Platform Demo",
-        "description": "See how KabatOne&#x27;s AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
+        "description": "See how KabatOne's AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
         "canonical": "https://kabatone.com/demo/violence",
         "ogTitle": "Violence Detection Walkthrough | KabatOne Platform Demo",
-        "ogDesc": "See how KabatOne&#x27;s AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
+        "ogDesc": "See how KabatOne's AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
         "ogImage": "https://kabatone.com/demo/violence/stage-1-detect.jpg",
         "h1Count": 1,
         "jsonLdCount": 2,
@@ -4508,6 +4518,40 @@
         "imgNoAlt": 0,
         "redirectHops": 0
       }
+    }
+  ],
+  "newIssues": [
+    {
+      "severity": "info",
+      "check": "desc_near_max",
+      "msg": "Description near limit (197/160 ideal)",
+      "page": "https://staging.kabatone.com/resources/public-safety-software-costa-rica"
+    },
+    {
+      "severity": "info",
+      "check": "desc_near_max",
+      "msg": "Description near limit (200/160 ideal)",
+      "page": "https://staging.kabatone.com/resources/public-safety-software-ecuador"
+    }
+  ],
+  "resolvedIssues": [
+    {
+      "severity": "warning",
+      "check": "desc_long",
+      "msg": "Description too long (202 chars, max 200)",
+      "page": "https://staging.kabatone.com/resources/public-safety-software-costa-rica"
+    },
+    {
+      "severity": "warning",
+      "check": "desc_long",
+      "msg": "Description too long (205 chars, max 200)",
+      "page": "https://staging.kabatone.com/resources/public-safety-software-ecuador"
+    },
+    {
+      "severity": "warning",
+      "check": "title_long",
+      "msg": "Title too long (71 chars, max 70)",
+      "page": "https://staging.kabatone.com/resources/public-safety-software-suriname"
     }
   ]
 }

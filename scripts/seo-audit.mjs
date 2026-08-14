@@ -120,9 +120,37 @@ const DESC_MIN = 100;
 const DESC_MAX = 200;
 const DESC_IDEAL_MAX = 160;
 
+// Serialized HTML escapes &, ', ", <, > as entities. Measuring the raw escaped
+// string inflates title/description lengths (an apostrophe costs 6 chars, an
+// ampersand 5) and produces phantom *_long warnings for metadata that is
+// actually within limits. Google measures the decoded text, so we do too.
+const NAMED_ENTITIES = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+function decodeEntities(str) {
+  return str.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, body) => {
+    if (body[0] === "#") {
+      const code =
+        body[1] === "x" || body[1] === "X"
+          ? parseInt(body.slice(2), 16)
+          : parseInt(body.slice(1), 10);
+      if (!Number.isFinite(code) || code < 0 || code > 0x10ffff) return match;
+      return String.fromCodePoint(code);
+    }
+    const named = NAMED_ENTITIES[body.toLowerCase()];
+    return named === undefined ? match : named;
+  });
+}
+
 function extract(html, regex) {
   const m = html.match(regex);
-  return m ? m[1].trim() : null;
+  return m ? decodeEntities(m[1]).trim() : null;
 }
 
 function checkPage(url, html) {

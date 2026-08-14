@@ -356,7 +356,22 @@
 
     <div class="timeline">
 
-      <!-- v2.318 -->
+      <!-- v2.321 -->
+      <div class="tl-entry fix" id="v2.321">
+        <div class="tl-meta"><span class="tl-ver">v2.321</span><span class="tl-date">2026-08-14</span></div>
+        <div class="tl-title">The audit was measuring escaped HTML, so apostrophes and ampersands counted as 5&ndash;6 characters</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>scripts/seo-audit.mjs</code> now decodes HTML entities before measuring title and description length.</strong> The extractor read the serialized HTML verbatim, so <code>&amp;</code> cost 5 characters and an apostrophe cost 6</li>
+            <li>Three country guides were flagged over-length by exactly the entity overhead and nothing else: <code>/resources/public-safety-software-suriname</code> measured 71/70 for a title that is 67 characters, and <code>costa-rica</code> (202/200) and <code>ecuador</code> (205/200) measured 5 over for descriptions of 197 and 200. Google measures the decoded text, so the metadata was compliant and the audit was wrong</li>
+            <li>Decoding is applied inside <code>extract()</code> rather than per call site, so canonical URLs and OG tags are unescaped too &mdash; an <code>&amp;amp;</code> in a canonical query string was previously compared literally</li>
+            <li><strong>No metadata strings were edited.</strong> Shortening compliant titles to satisfy a miscounting checker would have been the wrong fix, and any title or description within 6 characters of the cap containing an apostrophe or ampersand was a latent false positive on the same footing</li>
+            <li>Post-fix run: 234 pages, 0 critical / 0 warnings / 86 info, 234/234 clean</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.320 -->
       <div class="tl-entry fix" id="v2.320">
         <div class="tl-meta"><span class="tl-ver">v2.320</span><span class="tl-date">2026-08-13</span></div>
         <div class="tl-title">The coverage guard v2.318 shipped was armed at 56 pages, not 187</div>
