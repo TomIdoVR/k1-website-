@@ -322,6 +322,10 @@ export default function BeforeAfter({ es }: { es: boolean }) {
         <BeforeAfterCompare
           previousLabel={es ? 'Ver la vulnerabilidad' : 'Show the vulnerability'}
           nextLabel={es ? 'Ver la ventaja' : 'Show the advantage'}
+          panelLabels={[
+            es ? 'La vulnerabilidad' : 'The vulnerability',
+            es ? 'La ventaja' : 'The advantage',
+          ]}
         >
           <article className="ba-panel ba-panel--bad">
             <span className="ba-badge ba-badge--red">{es ? 'LA VULNERABILIDAD' : 'THE VULNERABILITY'}</span>

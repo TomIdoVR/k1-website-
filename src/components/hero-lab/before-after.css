@@ -501,9 +501,14 @@
     scroll-snap-align: center;
     padding-inline: clamp(16px, 4vw, 26px);
   }
-  /* Non-snapping — it rides between the two panels rather than being a stop
-     of its own, so it appears mid-swipe as connective tissue, not a dead page. */
-  .ba-arrow { flex: 0 0 auto; }
+  /* Hidden here, not merely non-snapping. On the desktop grid it is the
+     connector between two panels you can see at once, which is the only thing
+     that makes it read as connective tissue. In the strip you see one panel at
+     a time, so it stops connecting anything — and being a white circle with a
+     blue arrow it landed on the same line as the scroll buttons and read as a
+     third control. The strip's own affordance is the panel peeking in at the
+     edge; it does not need a second one. */
+  .ba-arrow { display: none; }
   /* The desktop centring (margin-block: auto) depended on the panel being
      stretched to the console's height — with flex-start above, the panel now
      hugs the diagram's own height, so auto margins have nothing to centre
@@ -522,38 +527,70 @@
   .ba-compare::-webkit-scrollbar-thumb { background: #c7d1e2; border-radius: 999px; }
   .ba-compare::-webkit-scrollbar-thumb:hover { background: #aebbd2; }
 
+  /* A static row under the strip, not two buttons absolutely centred on its
+     edges. The strip is as tall as its tallest child — the console — while
+     the scatter panel is roughly half that, so a control pinned to 50% of the
+     strip sat level with the console's map and level with *nothing* beside the
+     scatter: a lone circle floating in the panel's empty right margin. Below
+     the strip it is always adjacent to whatever panel is showing, at any
+     height either panel happens to take. */
   .ba-scroll-controls {
-    position: absolute;
-    inset: 0;
-    top: 50%;
     display: flex;
-    justify-content: space-between;
-    padding-inline: 4px;
-    pointer-events: none;
-    /* Lifted above the panels' own box-shadow but under the header. */
-    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
   }
-  /* Solid blue, not the white-with-blue-icon treatment .ba-arrow uses. Both
-     were white circles with a blue chevron/arrow at roughly the same size —
-     next to each other in the same strip they read as the same element, and
-     it wasn't obvious which two were interactive and which one was just the
-     connector between the panels. Inverting the colour makes these read as
-     buttons on sight, distinct from the decorative arrow between the cards. */
+  /* Solid blue, not the white-with-blue-icon treatment the rest of the light
+     theme uses for arrows: at this size, on this near-white section, an
+     outlined white circle reads as decoration. The .ba-arrow connector these
+     were once confused with is now hidden in this layout, so the contrast is
+     no longer disambiguating two circles — it is just making the control
+     legible.
+     44x44 is the WCAG 2.5.5 touch-target floor. */
   .ba-scroll-btn {
-    pointer-events: auto;
     display: grid;
     place-items: center;
-    width: 38px;
-    height: 38px;
-    margin-top: -19px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
     border-radius: 50%;
     border: none;
     background: #0757f7;
     color: #fff;
+    cursor: pointer;
     box-shadow: 0 10px 24px -8px rgba(7, 87, 247, 0.55);
   }
-  .ba-scroll-btn:disabled { opacity: 0.32; pointer-events: none; }
+  .ba-scroll-btn:disabled { opacity: 0.32; pointer-events: none; box-shadow: none; }
   .ba-scroll-btn svg { width: 18px; height: 18px; }
+
+  /* Two panels, so the dots are less a navigation aid than a position
+     readout — with one panel visible at a time and no page numbers, they are
+     the only thing that says which half of the comparison you are looking at
+     and that there is exactly one more. */
+  .ba-scroll-dots { display: flex; align-items: center; gap: 7px; }
+  .ba-scroll-dot {
+    position: relative;
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(7, 87, 247, 0.25);
+    cursor: pointer;
+    transition: width 180ms ease, background 180ms ease;
+  }
+  /* 7px visually; ::before grows the hit area to the 44px floor. */
+  .ba-scroll-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+  }
+  .ba-scroll-dot[aria-current='true'] { width: 21px; border-radius: 8px; background: #0757f7; }
 }
 
 /* 1040px, not 700px — and this is the asymmetry bug, not a cosmetic tweak.

@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.353 -->
+      <div class="tl-entry fixed" id="v2.353">
+        <div class="tl-meta"><span class="tl-ver">v2.353</span><span class="tl-date">2026-08-14</span></div>
+        <div class="tl-title">Before/after scroll controls read as controls, in a place they can be reached</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Three circles in a row, two of them buttons.</strong> In the scroll-strip layout (below 1040px) the decorative <code>.ba-arrow</code> connector landed on the same line as the two scroll buttons. It is now hidden there &mdash; it only made sense on the desktop grid, where both panels are visible and it visibly joins them</li>
+            <li><strong>The prev button floated in empty space.</strong> The controls sat at <code>top: 50%</code> of a strip as tall as the console; beside the much shorter scatter panel that put a lone circle in blank margin. They are now a static centred row <em>below</em> the strip</li>
+            <li><strong>Position dots between the arrows</strong>, matching the module carousel &mdash; the only cue for which half of the comparison is showing. Clickable, <code>aria-current</code> on the active one, 7px visually with a 44px hit area</li>
+            <li><strong>Arrows step panel-to-panel</strong> instead of by <code>clientWidth</code>: panels are a flat 440px and snap centred, so <code>scrollBy(clientWidth)</code> overshot on wider screens</li>
+            <li>Verified at 663px and 420px: connector 0&times;0, one 44px control row under the strip, correct disabled states, and next moves <code>aria-current</code> to the second dot</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.352 -->
       <div class="tl-entry fixed" id="v2.352">
         <div class="tl-meta"><span class="tl-ver">v2.352</span><span class="tl-date">2026-08-13</span></div>

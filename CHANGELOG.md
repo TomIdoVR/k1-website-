@@ -1,3 +1,17 @@
+## [v2.353] – 2026-08-14 — Before/after scroll controls read as controls, in a place they can be reached
+### Fixed
+- **Three circles in a row, two of them buttons.** In the scroll-strip layout (below 1040px) the decorative `.ba-arrow` connector — a white circle with a blue arrow that rides *between* the two panels — landed on the same line as the two scroll buttons, so the section ended with three near-identical circles of which only two did anything. The connector is now hidden in that layout: it only ever made sense on the desktop grid, where you can see both panels at once and it visibly joins them. With one panel in view at a time it connects nothing, and the strip already has an affordance in the next panel peeking in at the edge.
+- **The prev button floated in empty space.** The controls were absolutely positioned at `top: 50%` of the strip, and the strip is as tall as its tallest child — the console. Beside the scatter panel, which is roughly half that height, the button sat level with nothing, hanging in the panel's blank lower margin. They are now a static centred row *below* the strip, so they stay adjacent to whichever panel is showing at whatever height it takes.
+
+### Added
+- **Position dots between the arrows**, matching the module carousel above. With one panel visible at a time and no other page-position cue, they are the only thing that says which half of the comparison you are looking at and that there is exactly one more. Clickable, `aria-current` on the active one, 7px visually with a 44px hit area.
+
+### Changed
+- **The arrows now step panel-to-panel rather than by `clientWidth`.** Panels are a flat 440px and snap centred, so they are not laid out on a `clientWidth` grid — `scrollBy(clientWidth)` overshot on wider screens. `goTo(i)` scrolls to a panel's own centre, and the active index is the panel whose centre is nearest the strip's, which is also what drives the dots and the disabled states.
+
+### Notes
+- Verified with a rendered check at 663px and 420px: connector measures 0×0, controls are one 44px-tall row centred under the strip, prev disabled on panel 1 / next disabled on panel 2, and clicking next moves `aria-current` to the second dot and centres the advantage panel.
+
 ## [v2.352] – 2026-08-13 — Console lays out from its own box, not the viewport
 ### Fixed
 - **The console spilled out of its panel and truncated between ~700-1040px viewport.** The compact console rules (single-column body, three stat cells per row, horizontal icon rail) were keyed to `max-width: 700px`, but the box the console actually sits in stops tracking the viewport at **1040px** — that is where `.ba-panel` becomes a flat 440px, making the console ~388px wide at every width from 1040px down. That left a 700-1040px band where the panel was already 440px while the console still laid out for a wide viewport: six stat cells, a vertical rail and a two-column body crammed into 388px, spilling past the panel's edge and truncating ("STATUS" to "ST...", "UNIT 12" to "UNIT 1:", "ANALYTICS" to "ANALYTI..."). Retargeted those rules to `max-width: 1040px` so the console's layout and its container change at the same breakpoint.
