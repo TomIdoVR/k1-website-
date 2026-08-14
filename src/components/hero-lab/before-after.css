@@ -473,7 +473,13 @@
 
   .ba-compare {
     display: flex;
-    align-items: stretch;
+    /* flex-start, not stretch. Stretch forces the shorter panel (the scatter
+       diagram, a few hundred px of natural content) to match the taller one
+       (the console, with its modules rail and verdict card, often 1000px+) —
+       on a phone this read as the diagram floating in the vertical centre of
+       a mostly-empty card, hundreds of px of dead space above and below it.
+       flex-start lets each panel size to its own content instead. */
+    align-items: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 20px;
@@ -492,7 +498,11 @@
   /* Non-snapping — it rides between the two panels rather than being a stop
      of its own, so it appears mid-swipe as connective tissue, not a dead page. */
   .ba-arrow { flex: 0 0 auto; }
-  .ba-scatter { max-width: 440px; }
+  /* The desktop centring (margin-block: auto) depended on the panel being
+     stretched to the console's height — with flex-start above, the panel now
+     hugs the diagram's own height, so auto margins have nothing to centre
+     within and the diagram just sits at the panel's natural top padding. */
+  .ba-scatter { max-width: 440px; margin-block: 0; }
 
   /* A visible native scrollbar was the first attempt here, but macOS defaults
      to "show scrollbars: when scrolling" — a static, non-interacting page

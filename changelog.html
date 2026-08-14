@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.349 -->
+      <div class="tl-entry fixed" id="v2.349">
+        <div class="tl-meta"><span class="tl-ver">v2.349</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Mobile: no more dead space in the scatter panel, image stays with the header</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The "fragmented intelligence" panel had 250px+ of dead space above and below its diagram on phones.</strong> The scroll strip used <code>align-items: stretch</code>, forcing the shorter panel to match the taller console panel's height, and the diagram's <code>margin-block: auto</code> then centred it in that artificially tall box. Changed to <code>align-items: flex-start</code> so each panel sizes to its own content</li>
+            <li><strong>On mobile solution cards, the app-window image scrolled away almost immediately while only the product name stayed pinned.</strong> The sticky header and the inline visual below it were independent — only the header was sticky, the visual just scrolled normally. Wrapped both in one <code>.sv-pin</code> sticky unit so they move together and release together once the item ends. Verified across a 300px scroll: the visual stayed attached exactly 16px below the header the whole way</li>
+            <li>A fixed pixel offset for the visual was considered and rejected — the header's real height isn't constant, since the category text wraps to two lines for some products and one for others. A shared sticky parent sidesteps that entirely</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.348 -->
       <div class="tl-entry fixed" id="v2.348">
         <div class="tl-meta"><span class="tl-ver">v2.348</span><span class="tl-date">2026-08-13</span></div>

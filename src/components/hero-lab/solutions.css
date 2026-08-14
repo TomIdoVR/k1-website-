@@ -268,25 +268,40 @@
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  /* Sticky solution headers.
+  /* Sticky solution headers, header + visual together.
      On a phone the accordion is one column and an expanded solution is taller
      than the viewport, so the product name scrolls away and you lose track of
-     which solution you are reading. Each header now pins to the top while its
-     own solution is on screen and hands off to the next one, because each
-     .sv-item-head is sticky inside its own .sv-item — once that item's bottom
-     passes, its header releases and the following item's takes over.
+     which solution you are reading. .sv-pin (header + app-mockup visual, see
+     the JSX) pins to the top while its own solution is on screen and hands
+     off to the next one, because .sv-pin is sticky inside its own .sv-item —
+     once that item's bottom passes, it releases and the following item's
+     .sv-pin takes over.
+
+     Header and visual stick as ONE box rather than each at its own computed
+     offset. The header alone used to be the sticky element, and the visual
+     right below it just scrolled normally — so on a long solution the visual
+     scrolled out from under the header almost immediately, while the header
+     kept pinning alone for the rest of the read. Making only the visual
+     *also* sticky at a fixed px offset below the header would need the
+     header's exact height, which isn't constant: .sv-cat wraps to two lines
+     for some products ("Emergency Call-Taking & Dispatch") and one for
+     others. A shared sticky parent sidesteps that entirely — whatever the
+     header's real height is, the visual sits right below it, and the pair
+     move as a unit.
 
      Two things this depends on:
      - .sv-item must use overflow: clip, not hidden. `hidden` makes the item a
        scroll container, and a sticky child then sticks to *that* box rather
        than the page — silently doing nothing. `clip` gives the same rounded
        corner clipping without creating a scroll container. Where `clip` is
-       unsupported the earlier `hidden` simply stays and the header does not
+       unsupported the earlier `hidden` simply stays and the pin does not
        stick, which degrades cleanly.
-     - the header needs its own opaque background. It was `background: none`,
-       so pinned content would have scrolled straight through it. */
+     - .sv-pin needs its own opaque background. Between the header and the
+       visual there's a 16px gap (see .sv-visual-inline's margin); with no
+       background there, the rest of that solution's text would show through
+       that gap while scrolling underneath the pinned unit. */
   .sv-item { overflow: clip; }
-  .sv-item-head {
+  .sv-pin {
     position: sticky;
     /* Sits directly beneath the site header, which is itself sticky — top: 0
        would pin these underneath it. Falls back to 0 if the variable is
@@ -296,7 +311,8 @@
     background: #fff;
     border-radius: 14px 14px 0 0;
   }
-  .sv-item.is-active .sv-item-head {
+  .sv-item-head { background: none; }
+  .sv-item.is-active .sv-pin {
     background: linear-gradient(180deg, #f4f8ff, #f1f6ff);
     box-shadow: 0 6px 14px -12px rgba(20, 40, 80, 0.45);
   }

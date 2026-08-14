@@ -311,18 +311,27 @@ export default function Solutions({ es }: { es: boolean }) {
               const on = i === active
               return (
                 <div className={`sv-item${on ? ' is-active' : ''}`} key={x.key} style={{ '--pc': x.color } as React.CSSProperties}>
-                  <button className="sv-item-head" aria-expanded={on} aria-controls={`sv-body-${x.key}`} onClick={() => select(i)}>
-                    <span className="sv-num">{x.n}</span>
-                    <Image className="sv-mark" src={x.logo} alt="" aria-hidden="true" draggable={false} width={30} height={30} />
-                    <span className="sv-names">
-                      <span className="sv-name">{x.name}</span>
-                      <span className="sv-cat">{x.short[lang]}</span>
-                    </span>
-                    <svg className="sv-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
-                  </button>
+                  {/* Header and visual share one sticky box (mobile only — see
+                      .sv-pin) rather than each sticking at its own computed
+                      offset. A fixed offset for the visual would need the
+                      header's exact rendered height, which isn't constant:
+                      .sv-cat wraps to two lines for some products ("Emergency
+                      Call-Taking & Dispatch") and one for others, so the
+                      header itself isn't a fixed height to offset against. */}
+                  <div className="sv-pin">
+                    <button className="sv-item-head" aria-expanded={on} aria-controls={`sv-body-${x.key}`} onClick={() => select(i)}>
+                      <span className="sv-num">{x.n}</span>
+                      <Image className="sv-mark" src={x.logo} alt="" aria-hidden="true" draggable={false} width={30} height={30} />
+                      <span className="sv-names">
+                        <span className="sv-name">{x.name}</span>
+                        <span className="sv-cat">{x.short[lang]}</span>
+                      </span>
+                      <svg className="sv-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                    </button>
+                    {on && <div className="sv-visual-inline"><AppMock p={x} es={es} /></div>}
+                  </div>
 
                   <div className="sv-body" id={`sv-body-${x.key}`} hidden={!on}>
-                    <div className="sv-visual-inline"><AppMock p={x} es={es} /></div>
                     <p className="sv-text">{x.body[lang]}</p>
                     <ul className="sv-caps">
                       {x.caps.map((c, k) => (
