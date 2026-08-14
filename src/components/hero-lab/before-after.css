@@ -556,11 +556,24 @@
   .ba-scroll-btn svg { width: 18px; height: 18px; }
 }
 
-@media (max-width: 700px) {
+/* 1040px, not 700px — and this is the asymmetry bug, not a cosmetic tweak.
+   These rules describe how the console lays itself out when it is in a narrow
+   box. They were keyed to the viewport, but the box the console actually
+   lives in stopped tracking the viewport at 1040px: that is where .ba-panel
+   becomes a flat 440px, so the console is ~388px wide at every width from
+   1040px down.
+
+   That left a 700-1040px band where the panel was already 440px but the
+   console was still laying out for a wide viewport — six stat cells, a
+   vertical icon rail and a two-column body crammed into 388px, spilling out
+   past the panel's edge and truncating ("STATUS" to "ST...", "UNIT 12" to
+   "UNIT 1:"). Matching this breakpoint to the one that fixes the panel width
+   keeps the console's layout and its container in agreement at every width. */
+@media (max-width: 1040px) {
   .uc-body { grid-template-columns: minmax(0, 1fr); }
   .uc-map { height: 220px; }
-  /* Six stat cells at 340px leave ~55px each, which breaks every label onto
-     three lines. Three per row instead. */
+  /* Six stat cells in a ~388px console leave ~64px each, which breaks every
+     label onto three lines. Three per row instead. */
   .uc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .uc-stat:nth-child(3) { border-right: 0; }
   .uc-stat:nth-child(-n+3) { border-bottom: 1px solid #f1f4f8; }
@@ -568,8 +581,9 @@
   .uc { flex-direction: column; }
   .uc-rail-ic--last { margin-top: 0; margin-left: auto; }
   .uc-search { display: none; }
-}
-
-@media (max-width: 460px) {
-  .ba-modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* Four across, at every width in this range. Previously this dropped to
+     three below 460px, which made sense when the panel shrank with the
+     viewport — now that it holds 440px, the rail's box never changes, so
+     neither should its column count. */
+  .ba-modules { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.352 -->
+      <div class="tl-entry fixed" id="v2.352">
+        <div class="tl-meta"><span class="tl-ver">v2.352</span><span class="tl-date">2026-08-13</span></div>
+        <div class="tl-title">Console lays out from its own box, not the viewport</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The console spilled out of its panel and truncated between ~700-1040px viewport.</strong> Its compact rules (single-column body, three stat cells, horizontal rail) were keyed to <code>max-width: 700px</code> &mdash; but the box it sits in stops tracking the viewport at <strong>1040px</strong>, where <code>.ba-panel</code> becomes a flat 440px. That left a band where the panel was already 440px while the console still laid out for a wide viewport, spilling past the panel edge and truncating ("STATUS" &rarr; "ST...", "UNIT 12" &rarr; "UNIT 1:"). Retargeted to <code>max-width: 1040px</code> so layout and container change together</li>
+            <li><strong>The module rail no longer drops to three columns below 460px</strong> &mdash; that made sense when the panel shrank with the viewport; now that it holds 440px, the rail's box never changes, so its column count shouldn't either</li>
+            <li>Same root cause as v2.350's phone truncation, one layer up: a component sizing itself from the viewport while living in a container that had stopped following it. Verified at 375, 900, 1030 (scroll) and 1050 (desktop grid)</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.351 -->
       <div class="tl-entry fixed" id="v2.351">
         <div class="tl-meta"><span class="tl-ver">v2.351</span><span class="tl-date">2026-08-14</span></div>
