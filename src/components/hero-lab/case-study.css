@@ -33,7 +33,11 @@
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  min-height: clamp(240px, 26vw, 340px);
+  /* Flat 340px, not clamp(240px, 26vw, 340px). The vw term shrank the photo
+     to 238px tall on a phone, so the narrower the screen the more of the
+     photograph object-fit: cover cropped away — narrow AND short. Holding the
+     height means only the width changes with the viewport. */
+  min-height: 340px;
   background: #0a1424;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }

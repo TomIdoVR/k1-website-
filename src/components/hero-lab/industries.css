@@ -103,9 +103,16 @@
 }
 .ind-card:hover .ind-card-arrow { opacity: 1; transform: translateX(0); }
 
+/* Row height stays 220px here, and the lead card keeps its double row, rather
+   than dropping to 160px / single row as it used to. Narrowing the screen
+   already narrows every tile; also shortening it collapsed the lead image from
+   549x454 to 350x160 — the same photograph re-cropped into a letterbox sliver,
+   with the subject of the shot pushed out of frame by object-fit: cover. The
+   tiles are the images in this section, so holding their height is what keeps
+   the images the same size as the viewport gets narrower. */
 @media (max-width: 720px) {
-  .ind-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-  .ind-lead { grid-column: span 2; grid-row: span 1; }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-lead { grid-column: span 2; grid-row: span 2; }
 }
 @media (max-width: 460px) {
   .ind-grid { grid-template-columns: 1fr; }

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.351 -->
+      <div class="tl-entry fixed" id="v2.351">
+        <div class="tl-meta"><span class="tl-ver">v2.351</span><span class="tl-date">2026-08-14</span></div>
+        <div class="tl-title">Industry tiles and the case-study photo hold their height on narrow screens</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The five industry tiles shrank to letterbox slivers on phones.</strong> Under 720px the grid dropped <code>grid-auto-rows</code> from 220px to 160px <em>and</em> demoted the lead card from a 2-row span to 1 row, taking the lead image from 549&times;454 to 350&times;160. Because the tiles use <code>object-fit: cover</code> that didn't scale the photograph down, it re-cropped it &mdash; the subject of each shot got pushed out of frame as the screen narrowed. Tile height is now a flat 220px, lead 454px, measured at 1440/900/700/500/460/430/390/360px with no horizontal overflow</li>
+            <li><strong>The case-study hero photo shrank the same way</strong> &mdash; <code>min-height: clamp(240px, 26vw, 340px)</code> meant the narrower the screen, the shorter the photo (340px &rarr; 238px), so a phone got both the narrowest and the most aggressively cropped version. Now a flat <code>340px</code>; only the width varies with the viewport</li>
+            <li>Same principle as v2.350's fixed-width panels, applied to the image sections: narrowing the viewport should narrow an image, not also shorten it. Not changed &mdash; the split hero's art sits absolutely positioned behind the copy at <code>max-width: 66%</code>, so pinning its size would push it under the headline</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.350 -->
       <div class="tl-entry fixed" id="v2.350">
         <div class="tl-meta"><span class="tl-ver">v2.350</span><span class="tl-date">2026-08-13</span></div>

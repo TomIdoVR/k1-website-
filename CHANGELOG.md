@@ -1,3 +1,12 @@
+## [v2.351] – 2026-08-14 — Industry tiles and the case-study photo hold their height on narrow screens
+### Fixed
+- **The five industry tiles shrank to letterbox slivers on phones.** Under 720px `.ind-grid` dropped `grid-auto-rows` from 220px to 160px *and* demoted the lead card from a 2-row span to 1 row, so the lead image went from 549×454 to 350×160 — a 2.8× height collapse. Because `.ind-slot` is `object-fit: cover`, that didn't scale the photograph down, it re-cropped it: the subject of each shot got pushed out of frame as the screen narrowed. Removed the 160px row override and gave the lead card `grid-row: span 2` at that breakpoint too. Measured on the deployed build with the fix applied: tile height is a flat 220px and the lead 454px at 1440/900/700/500/460/430/390/360px — previously 220 → 160. No horizontal overflow at any of those widths.
+- **The case-study hero photo shrank the same way** — `min-height: clamp(240px, 26vw, 340px)` meant the narrower the screen, the shorter the photo (340px → 238px), so a phone got both the narrowest *and* the most aggressively cropped version of the image. Changed to a flat `340px`; only the width now varies with the viewport.
+
+### Notes
+- Same principle as v2.350's `flex: 0 0 440px` panel fix, applied to the image sections: narrowing the viewport should narrow an image, not also shorten it.
+- Not changed: the split hero's art (`.hsplit-art img`) is absolutely positioned at `max-width: 66%` behind the copy, so pinning its size would push it under the headline. Left as-is pending a decision on that section.
+
 ## [v2.350] – 2026-08-13 — Panels hold their size on narrow screens; scroll buttons stop hiding as the connector arrow
 ### Fixed
 - **The console's third column (camera + active units) was truncating to garbled fragments on real phones** — confirmed via an iPhone Safari screenshot, after this session's Chrome testing across 375-1300px couldn't reproduce it. Root cause: `.ba-panel`'s width was `min(440px, calc(100% - 44px))`, which shrinks below 440px on any screen narrower than ~484px — every phone. Changed to a flat `flex: 0 0 440px` that never shrinks with the viewport. The strip already scrolls horizontally, so a panel narrower than the phone screen bought nothing — you were always going to scroll to see the whole card either way. Verified on the deployed build at 375px: zero truncated labels anywhere, where there were several before.
