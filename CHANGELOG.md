@@ -1,3 +1,15 @@
+## [v2.322] – 2026-08-15 — Staging was serving `Allow: /` on a full duplicate of production
+
+**Fixed**
+- **`src/app/robots.ts` now disallows crawling on preview deployments.** `staging.kabatone.com/robots.txt` was byte-identical to production's — `User-Agent: * / Allow: /` — on a site that is a complete duplicate of kabatone.com. Canonical tags on staging already point at `https://kabatone.com/...`, which mitigates the duplicate-content risk but does not control it: canonicals are a hint, not a directive, and nothing prevented Google from crawling and consolidating against the staging host.
+- The gate is fail-safe by construction. Only an explicit `process.env.VERCEL_ENV === 'preview'` returns `Disallow: /`; production and local dev fall through to the previous return value verbatim. A missing or unexpected `VERCEL_ENV` therefore cannot noindex kabatone.com — the failure mode points at "staging stays crawlable" (today's status quo), never at "production goes dark".
+- Preview output drops the `Sitemap:` line as well. Advertising the production sitemap from a host that disallows crawling was contradictory.
+
+**Notes**
+- Found by the KAB-2643 pre-production checklist (finding F-4), which grades staging ahead of a `nextjs` → `main` promotion. Verified live before the fix: staging `robots.txt` returned `Allow: /` and `staging.kabatone.com/k-dispatch` served `<meta name="robots" content="index, follow"/>`.
+- `main` is the Vercel production branch and `kabatone.com` is a production domain on the project, so `main` deploys resolve `VERCEL_ENV` to `production` and are unaffected. Confirmed against the project's domain list rather than assumed.
+- Verified with `tsc --noEmit` in a clean `/tmp` worktree — exit 0, 0 errors. The OneDrive checkout is polluted with untracked `hero-lab` files and produces phantom errors (finding F-1); it is not a trustworthy gate.
+
 ## [v2.321] – 2026-08-14 — The audit was measuring escaped HTML, so apostrophes and ampersands counted as 5–6 characters
 
 **Fixed**

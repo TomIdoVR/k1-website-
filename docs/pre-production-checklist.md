@@ -24,8 +24,8 @@ auto-deploys to `staging.kabatone.com`. Never push `main` directly.
 | 8 | Homepage parity (title / h1 / JSON-LD) | **PASS** | identical on both; 2 JSON-LD blocks each |
 | 9 | Canonical + hreflang emitted | **PASS** | canonical + `en` / `es` / `x-default` present on both |
 | 10 | Sitemap URLs return 200, not redirects | **FAIL (production)** | see F-3 — **fixed by this promotion** |
-| 11 | Staging excluded from indexing | **FAIL** | see F-4 |
-| 12 | Production build green on Vercel | **NOT RUN** | Vercel-side; local build is unreliable on Node 25 |
+| 11 | Staging excluded from indexing | **FIXED (v2.322, unpushed)** | see F-4 |
+| 12 | Production build green on Vercel | **PASS** | `dpl_GZbz2c7RyjqqR7NPyn8BBjkFrBDY` @ `1cc8d95` (branch `nextjs`) → `READY` |
 | 13 | Visual / QA pass on staging | **NOT RUN** | needs `/website-qa` against staging |
 
 Local `npm run build` is a known false negative on this machine (fails at
@@ -78,6 +78,19 @@ Partially mitigated: staging's canonical and hreflang both point at
 is a mitigation, not a control — canonicals are a hint. Fix by gating
 `robots.txt` on the deployment environment so non-production returns
 `Disallow: /`.
+
+**Status: fixed in v2.322 (local, unpushed).** `src/app/robots.ts` returns
+`Disallow: /` when `process.env.VERCEL_ENV === 'preview'`. The gate is
+fail-safe: *only* an explicit `'preview'` disallows, so production and local
+dev return the previous value verbatim and a missing `VERCEL_ENV` cannot
+noindex kabatone.com. `main` is the Vercel production branch and
+`kabatone.com` is a production domain on project `k1-website`, so `main`
+deploys resolve to `production` — confirmed against the project's domain list,
+not assumed. `tsc --noEmit` exit 0 in a clean worktree.
+
+Note this fix ships *with* the promotion: pushing it to `nextjs` corrects
+staging immediately, and merging carries a no-op change to production (the
+production branch of the conditional is byte-identical to today's output).
 
 ### F-1 — P1: the primary checkout cannot be trusted for verification
 
@@ -137,9 +150,10 @@ renders at `/en/hero-lab*`, not `/en`, and is not production-ready.
    recoverable after the merge.**
 2. Run `/website-qa` against `staging.kabatone.com` — nav, forms, ES locale,
    mobile.
-3. Confirm the latest `nextjs` Vercel deployment is READY (Vercel is the real
-   build gate).
-4. Decide on F-4: fix staging `robots.txt` before or after promotion.
+3. ~~Confirm the latest `nextjs` Vercel deployment is READY.~~ **Done
+   2026-08-15** — `dpl_GZbz2c7RyjqqR7NPyn8BBjkFrBDY` @ `1cc8d95` is `READY`.
+4. ~~Decide on F-4.~~ **Fixed in v2.322**, local and unpushed. Ships with the
+   promotion; production output is unchanged by it.
 5. Merge on explicit instruction from Omer only.
 
 Gates 1–11 are re-runnable; re-run them on the promotion candidate commit, not

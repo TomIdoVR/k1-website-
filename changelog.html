@@ -357,6 +357,22 @@
     <div class="timeline">
 
       <!-- v2.321 -->
+      <div class="tl-entry fix" id="v2.322">
+        <div class="tl-meta"><span class="tl-ver">v2.322</span><span class="tl-date">2026-08-15</span></div>
+        <div class="tl-title">Staging was serving <code>Allow: /</code> on a full duplicate of production</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>src/app/robots.ts</code> now disallows crawling on preview deployments.</strong> <code>staging.kabatone.com/robots.txt</code> was byte-identical to production&rsquo;s &mdash; <code>User-Agent: *</code> / <code>Allow: /</code> &mdash; on a site that is a complete duplicate of kabatone.com</li>
+            <li>Canonical tags on staging already point at <code>https://kabatone.com/&hellip;</code>, which mitigates the duplicate-content risk but does not control it: canonicals are a hint, not a directive, and nothing prevented Google from crawling and consolidating against the staging host</li>
+            <li><strong>The gate is fail-safe by construction.</strong> Only an explicit <code>VERCEL_ENV === 'preview'</code> returns <code>Disallow: /</code>; production and local dev fall through to the previous return value verbatim. A missing or unexpected <code>VERCEL_ENV</code> cannot noindex kabatone.com &mdash; the failure mode points at &ldquo;staging stays crawlable&rdquo;, never at &ldquo;production goes dark&rdquo;</li>
+            <li>Preview output drops the <code>Sitemap:</code> line too &mdash; advertising the production sitemap from a host that disallows crawling was contradictory</li>
+            <li>Found by the KAB-2643 pre-production checklist (finding F-4). <code>main</code> is the Vercel production branch and <code>kabatone.com</code> is a production domain on the project, so <code>main</code> deploys resolve <code>VERCEL_ENV</code> to <code>production</code> and are unaffected &mdash; confirmed against the project&rsquo;s domain list, not assumed</li>
+            <li>Verified with <code>tsc --noEmit</code> in a clean <code>/tmp</code> worktree &mdash; exit 0, 0 errors</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.321 -->
       <div class="tl-entry fix" id="v2.321">
         <div class="tl-meta"><span class="tl-ver">v2.321</span><span class="tl-date">2026-08-14</span></div>
         <div class="tl-title">The audit was measuring escaped HTML, so apostrophes and ampersands counted as 5&ndash;6 characters</div>
