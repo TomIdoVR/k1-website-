@@ -10,10 +10,20 @@ on:
   workflow_dispatch:
 
 env:
-  SITE_URL: https://www.kabatone.com
+  # The apex, not www. www.kabatone.com 308-redirects here by design (curl -sI
+  # doesn't follow redirects and only accepts a bare 200), so checking www
+  # made every run here fail regardless of whether the site was actually up —
+  # confirmed live: www returned 308 -> kabatone.com, which returned 200.
+  SITE_URL: https://kabatone.com
 
 jobs:
   health-check:
+    permissions:
+      # "Create or update incident issue" below needs this to list/comment/
+      # label/create issues. Without it the step 403s and the whole job shows
+      # failed — including on a genuine incident, which defeats the point of
+      # filing the issue in the first place.
+      issues: write
     # Run on: successful production deploys, scheduled, or manual trigger
     if: |
       (github.event_name == 'deployment_status' &&
@@ -86,11 +96,25 @@ jobs:
 
               echo "Promote response: $PROMOTE_RESULT"
 
+              # A "conflict: already the current production deployment" error
+              # here means this candidate isn't a fix — it's what's already
+              # live, and the site is still down for some other reason. Move
+              # on to the next candidate instead of declaring success on a
+              # promote that changed nothing (seen live: this exact response,
+              # while SITE_URL kept returning a non-200 status afterward).
+              if echo "$PROMOTE_RESULT" | jq -e '.error' > /dev/null 2>&1; then
+                echo "Promote failed, trying next candidate: $(echo "$PROMOTE_RESULT" | jq -r '.error.message')"
+                continue
+              fi
+
               # Verify rollback worked
               sleep 15
               VERIFY=$(curl -sI -o /dev/null -w "%{http_code}" --max-time 10 "$SITE_URL")
               echo "Verification after rollback: HTTP $VERIFY"
-              exit 0
+              if [ "$VERIFY" = "200" ]; then
+                exit 0
+              fi
+              echo "Promoted deployment still isn't serving 200 — trying next candidate."
             fi
           done
 
