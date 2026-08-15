@@ -26,7 +26,7 @@ auto-deploys to `staging.kabatone.com`. Never push `main` directly.
 | 10 | Sitemap URLs return 200, not redirects | **FAIL (production)** | see F-3 — **fixed by this promotion** |
 | 11 | Staging excluded from indexing | **FIXED (v2.322, unpushed)** | see F-4 |
 | 12 | Production build green on Vercel | **PASS** | `dpl_GZbz2c7RyjqqR7NPyn8BBjkFrBDY` @ `1cc8d95` (branch `nextjs`) → `READY` |
-| 13 | Visual / QA pass on staging | **NOT RUN** | needs `/website-qa` against staging |
+| 13 | Visual / QA pass on staging | **PASS (no regressions)** | see F-5 — defects found, all pre-existing on production |
 
 Local `npm run build` is a known false negative on this machine (fails at
 `/_global-error` prerender under Node v25.8.1; Vercel's Node 20/22 builds fine).
@@ -92,6 +92,55 @@ Note this fix ships *with* the promotion: pushing it to `nextjs` corrects
 staging immediately, and merging carries a no-op change to production (the
 production branch of the conditional is byte-identical to today's output).
 
+### F-5 — QA pass on staging: defects found, none of them regressions
+
+Run 2026-08-15 against `staging.kabatone.com`. **Every defect below reproduces
+identically on production**, so none of them block the promotion — but none of
+them are fixed by it either. Verdict for gate 13: **no regressions**.
+
+**Coverage.** All 234 sitemap routes fetched: 234/234 → 200, zero dead pages.
+EN/ES parity is exact — 117 EN routes, 117 ES routes, zero missing counterparts
+in either direction. 11,716 `href`s harvested across all 234 pages → 439 unique
+internal links; the 205 off-sitemap ones were status-checked individually.
+Zero console errors on `/`, `/es`, `/contact`.
+
+**D-1 — P1: the mobile contact page does not collapse to one column.** At a
+390px viewport `/contact` and `/es/contact` lay out at 770px — just under 2×
+the viewport. The form card is cut off at the right edge, the adjacent card
+sits entirely off-screen, and the form's field grid stays 2-up at ~145px per
+input (placeholders truncate to "Jane S…" / "City o…"). This is the primary
+lead-capture path on the site. Also overflowing, less severely: `/` and `/es`
+at 430px, `/k-dispatch` at 605px. `/demo` is correct at 390px.
+Production measures the same values on all six — not a regression.
+
+**D-2 — P1: 13 internal links 404.** All 404 on production too.
+- `/privacy-policy` — linked from `src/app/[locale]/demo/page.tsx:511`, under
+  the demo request form. The real page is `/privacy-policy-tamaulipas`; the
+  generic path has never existed. A dead privacy link under a lead form is the
+  worst-placed one in the set.
+- `/es/es/contact`, `/es/es/k-dispatch`, and five `/es/es/resources/*` — the
+  locale prefix is applied twice. A locale-aware link helper is being handed an
+  already-prefixed path somewhere in the ES tree.
+- `/integrations/facial-recognition` and `/es/integrations/facial-recognition`
+  — linked from the `vs/*` comparison pages and `resources/rtcc-setup-guide`.
+- `/resources/public-safety-software-uk` and its ES twin — linked from the
+  jamaica, trinidad-and-tobago and israel country guides. No UK guide exists;
+  either write one or repoint the links.
+- `/ehref=` — malformed markup, an `href` swallowed part of the adjacent
+  attribute. Source not yet located; it is a string-built link somewhere.
+
+**D-3 — Info: internal links that redirect.** `/resources/`, `/es/resources/`,
+`/resources/psim-alternatives/`, `/es/resources/psim-alternatives/`, `/es/` are
+linked with a trailing slash and 308 to the non-slash form; five `/en/demo/*`
+links 307 to the unprefixed form. Cosmetic — one wasted hop per click — but
+these are the same class as F-3 and should be cleaned in the same pass.
+
+**Not a defect.** The bundled crawler reported "page load timed out (30s)" and
+a failed mobile test. That is a `networkidle` artifact of the hero's entrance
+animation, not a real failure: the page renders correctly, all 234 routes
+return 200, and a direct Playwright run with `domcontentloaded` loaded every
+page with zero console errors.
+
 ### F-1 — P1: the primary checkout cannot be trusted for verification
 
 The `nextjs` working tree in OneDrive is polluted with untracked files from
@@ -148,8 +197,10 @@ renders at `/en/hero-lab*`, not `/en`, and is not production-ready.
 1. Baseline GSC (impressions, clicks, avg position, indexed count) so the
    trailing-slash re-consolidation is measurable — **do this first, it is not
    recoverable after the merge.**
-2. Run `/website-qa` against `staging.kabatone.com` — nav, forms, ES locale,
-   mobile.
+2. ~~Run `/website-qa` against `staging.kabatone.com`.~~ **Done 2026-08-15** —
+   no regressions; see F-5. The defects it surfaced (mobile contact overflow,
+   13 broken internal links) are pre-existing on production and tracked
+   separately, not as promotion blockers.
 3. ~~Confirm the latest `nextjs` Vercel deployment is READY.~~ **Done
    2026-08-15** — `dpl_GZbz2c7RyjqqR7NPyn8BBjkFrBDY` @ `1cc8d95` is `READY`.
 4. ~~Decide on F-4.~~ **Fixed in v2.322**, local and unpushed. Ships with the
