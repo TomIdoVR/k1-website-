@@ -224,3 +224,24 @@
   .hll-page--split .hll-stat { flex: 0 0 auto; min-width: 0; min-height: 0; padding: 6px 0; border-right: 0; }
   .hll-page--split .hll-stat + .hll-stat { padding-left: 0; }
 }
+
+/* Phone refinement: the source artwork is already pale, so the earlier
+   near-opaque scrim reduced the product UI to a watermark. Bring the frame
+   slightly closer and let more of its colour through below the copy, while
+   retaining the lightest part of the scrim behind the headline. */
+@media (max-width: 620px) {
+  .hsplit-art img {
+    width: 112%;
+    right: -6%;
+  }
+
+  .hsplit-art::after {
+    background:
+      linear-gradient(180deg,
+        #f8fbff 0%,
+        rgba(248, 251, 255, 0.95) 38%,
+        rgba(248, 251, 255, 0.78) 62%,
+        rgba(246, 250, 255, 0.78) 84%,
+        rgba(244, 248, 254, 0.84) 100%);
+  }
+}

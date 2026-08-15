@@ -337,6 +337,24 @@
   .sv-legend { flex-direction: column; gap: 8px; align-items: center; }
 }
 
+/* The complete active product owns the mobile sticky state. Keeping the
+   earlier .sv-pin rules intact preserves their documented fallback; these
+   later overrides expand the pinned composition to include the summary,
+   checklist and CTA. IntersectionObserver moves .is-active to the next
+   product, producing a clean full-card handoff at the same top offset. */
+@media (max-width: 960px) {
+  .sv-item.is-active {
+    position: sticky;
+    top: var(--hll-nav-h, 0px);
+    z-index: 5;
+  }
+  .sv-item.is-active .sv-pin {
+    position: static;
+    top: auto;
+    z-index: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sv-body, .sv-caps li { animation: none; }
   .sv-cap, .sv-chev, .sv-item { transition: none; }

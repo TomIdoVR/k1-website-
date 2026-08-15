@@ -1,3 +1,15 @@
+## [v2.356] – 2026-08-15 — Sticky mobile product cards and stronger hero artwork
+
+### Fixed
+- **Solution text no longer scrolls behind the sticky application image on mobile.** The complete active product card — title, category, application visual, summary, checklist and CTA — now owns the sticky state as one unit.
+- **Product transitions retain a stable reading position.** When the next solution becomes active, it takes over at the same header offset instead of allowing the outgoing visual to overlap the incoming or outgoing text.
+- **The mobile hero artwork no longer disappears into its scrim.** The pale source image is slightly enlarged and the overlay is relaxed only below the copy, restoring product detail and colour while preserving the light reading field behind the headline.
+
+### Checked
+- Verified at 390×844: K-Safety and K-Dispatch both pin at the 78px site-header offset, their complete 682px cards fit within the viewport, and the handoff remains within 2px of the same position. The hero artwork is more visible without moving or obscuring its copy.
+- Verified at 1440px that the mobile sticky override does not apply; no horizontal overflow at mobile or desktop widths.
+- ESLint, responsive regression checks and the webpack production build pass.
+
 ## [v2.355] – 2026-08-14 — Mobile comparison cards and solution context stay compact and readable
 
 ### Fixed
