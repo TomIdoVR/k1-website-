@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.359 -->
+      <div class="tl-entry changed" id="v2.359">
+        <div class="tl-meta"><span class="tl-ver">v2.359</span><span class="tl-date">2026-08-16</span></div>
+        <div class="tl-dot"></div>
+        <h2>Redesign promoted site-wide: homepage, five solution pages, header and footer</h2>
+        <ul>
+          <li><strong>The redesign is now the site.</strong> <code>/</code> renders the composition approved at <code>/hero-lab-story</code>, and the five <code>/k-*</code> solution pages render the redesigned layout. Every route keeps the <code>generatePageMetadata</code> key it already used, so titles, descriptions, canonicals and hreflang are unchanged, and the same three JSON-LD blocks are re-emitted.</li>
+          <li><strong><code>PREVIEW_BASE</code> flipped to empty.</strong> Redesign links now resolve to canonical routes instead of <code>/hero-lab/…</code> — correct only because the six routes were promoted in the same change. Zero <code>/hero-lab</code> hrefs served on any page.</li>
+          <li><strong><code>Nav</code> and <code>Footer</code> became thin adapters</strong> over the redesigned header and footer, reaching all 169/170 pages without editing a call site and reverting the same way.</li>
+          <li><strong>Language switch stays on the current page.</strong> It previously pointed at <code>/</code>, which as a site-wide header meant switching language from any page threw you to the homepage.</li>
+          <li><strong><code>/industries/stadiums</code> restored to navigation</strong> — it was missing from the redesigned header but present in the nav it replaces.</li>
+          <li><strong>Legacy pages keep their layout and dark theme.</strong> The redesigned header is light and sticky at 96px; the nav it replaces was dark and fixed at 70px, which all 169 legacy pages offset against. <code>promoted-chrome.css</code> scopes a dark, fixed, 70px re-skin to those pages only; redesigned routes are visually unchanged.</li>
+          <li>Verified on the deployed build across seven routes; <code>tsc</code> clean and <code>lint</code> exit 0.</li>
+        </ul>
+      </div>
+
       <!-- v2.358 -->
       <div class="tl-entry fixed" id="v2.358">
         <div class="tl-meta"><span class="tl-ver">v2.358</span><span class="tl-date">2026-08-15</span></div>

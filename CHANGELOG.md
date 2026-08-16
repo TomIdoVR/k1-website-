@@ -1,3 +1,20 @@
+## [v2.359] – 2026-08-16 — Redesign promoted site-wide: homepage, five solution pages, header and footer
+
+### Changed
+- **The redesign is now the site.** `/` renders `HomeComposition` (the composition approved at `/hero-lab-story`), and `/k-safety`, `/k-dispatch`, `/k-video`, `/k-traffic`, `/k-connect` render `SolutionRoute`. All six previously lived only under `/hero-lab`. Metadata is unchanged by the promotion: every route keeps the same `generatePageMetadata` key it already used (`home`, `kSafety`, `kDispatch`, `kVideo`, `kTraffic`, `kConnect`), so titles, descriptions, canonicals and hreflang are identical. `SolutionRoute` re-emits the same three JSON-LD blocks (SoftwareApplication, FAQPage, BreadcrumbList) the old solution pages carried.
+- **`PREVIEW_BASE` flipped to `''`.** `pv()` is now an identity function, so every redesign link resolves to the canonical route rather than `/hero-lab/…`. This is only correct *because* the six routes above were promoted in the same change — flipping it alone would have made the review routes link out to old pages. Verified: zero `/hero-lab` hrefs served on any page.
+- **`Nav` and `Footer` became thin adapters over `HeroLabHeader` / `HeroLabFooter`.** 169 pages render `<Nav />` and 170 render `<Footer es={es} />`; swapping the components' internals reaches all of them without editing a call site, and reverts the same way. Both keep their existing signatures.
+
+### Fixed
+- **The language switch stays on the current page.** It pointed at `pv('/')`, which was survivable while this header served six routes but as the site-wide header meant switching language from `/contact`, `/vs/axon` or any resources article threw you to the homepage. Now uses `usePathname()` from next-intl, which returns the path without the locale prefix — exactly what `<Link locale>` wants, so it stays a real anchor with a correct href. Verified: `/vs/genetec` emits `href="/es/vs/genetec"`.
+- **`/industries/stadiums` restored to navigation.** It was absent from `HeroLabHeader`'s `INDUSTRY_LINKS` but present in the nav it replaces, so promoting the header as-authored would have orphaned a real page from site navigation. (`/industries/logistics` and `/industries/retail` are linked by neither nav; that predates this change and is left alone.)
+- **Legacy pages keep their layout and their dark theme.** `HeroLabHeader` is light (`#fafcff`) and `position: sticky` at 96px in normal flow; the nav it replaces was dark and `position: fixed` at 70px, and all 169 legacy pages hard-code `paddingTop: 70px` to clear it. Dropped in unmodified that put a light bar on a dark page *and* left a 70px empty band under it on every page. `promoted-chrome.css` scopes a dark, fixed, 70px re-skin to `.hll-legacy-chrome`, the wrapper `Nav` renders. Redesigned routes render `HeroLabHeader` directly, outside the wrapper, and are visually unchanged. Both the wrapper and the file are deleted when the last legacy page is converted.
+- No footer variant was needed — `HeroLabFooter` is already dark (`#0f1724` → `#0b1220`, the legacy `--bg`/`--bg-2` pair). Its link inventory is a superset of the old footer's: same 20 destinations plus resources, the five product pages and five industry pages.
+
+### Verified
+- `tsc --noEmit` clean; `npm run lint` exit 0, 0 errors (PRE-004 gate holds).
+- Deployed build checked on `/`, `/about`, `/vs/genetec`, `/k-safety`, `/es/contact`, `/es/k-dispatch`, `/resources`: redesigned header on every one, legacy wrapper present on exactly the un-redesigned pages and absent on the promoted ones, `promoted-chrome.css` present in the served CSS chunk with `position:fixed;top:0;left:0;right:0`, and no `<nav style=` (the old inline nav) anywhere.
+
 ## [v2.358] – 2026-08-15 — Mobile performance: analytics off the critical path; homepage composition extracted
 
 ### Fixed

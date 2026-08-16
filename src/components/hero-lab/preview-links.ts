@@ -9,10 +9,15 @@
    remapped. Industries, integrations, comparisons and company links have no
    redesign yet, so they correctly continue to the live pages.
 
-   ON PROMOTION: set PREVIEW_BASE to '' and every link becomes canonical
-   again — no other edit needed. */
+   PROMOTED. The six redesigned routes now ARE the canonical routes — '/' and
+   the five /k-* pages render the redesign directly — so pv() is an identity
+   function and every link resolves to the live page. The /hero-lab review
+   routes still exist and still render the same components; their navigation
+   now correctly leaves the preview, because the destination it leaves to is
+   the redesign. Kept rather than deleted so the mapping is one edit away if
+   the promotion is rolled back. */
 
-export const PREVIEW_BASE = '/hero-lab'
+export const PREVIEW_BASE = ''
 
 /** Routes that exist in both the live site and the redesign. */
 const REDESIGNED = new Set(['/', '/k-safety', '/k-dispatch', '/k-video', '/k-traffic', '/k-connect'])

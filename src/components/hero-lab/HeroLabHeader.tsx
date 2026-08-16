@@ -1,3 +1,5 @@
+'use client'
+
 /* The redesign's site header — one component, used by every redesigned page.
 
    The homepage and the solution pages previously rendered two different navs:
@@ -9,7 +11,7 @@
    Links run through pv() so navigation stays inside the preview while the
    redesign lives under /hero-lab. */
 
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import { pv } from './preview-links'
 
 export function Arrow({ direction = 'right' }: { direction?: 'left' | 'right' | 'down' }) {
@@ -37,16 +39,37 @@ const MODULE_LINKS = [
   { href: '/k-connect', label: 'K-Connect', color: '#22c55e' },
 ] as const
 
+/* Stadiums restored. It was absent here while this header only served the
+   redesigned routes, but /industries/stadiums is a real page that the previous
+   site-wide nav linked to — promoting this header without it would have
+   orphaned that page from navigation entirely.
+
+   Two industry pages, /industries/logistics and /industries/retail, are linked
+   by neither this header nor the one it replaces. That predates this change,
+   so it is left alone rather than silently fixed here. */
 const INDUSTRY_LINKS = [
   { href: '/industries/public-safety', en: 'Public Safety', es: 'Seguridad Pública' },
   { href: '/industries/municipalities', en: 'Municipalities', es: 'Municipios' },
   { href: '/industries/airport', en: 'Airports', es: 'Aeropuertos' },
   { href: '/industries/ports', en: 'Ports', es: 'Puertos' },
+  { href: '/industries/stadiums', en: 'Stadiums & Venues', es: 'Estadios y Recintos' },
 ] as const
 
 export default function HeroLabHeader({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
   const demo = es ? 'Solicita una Demo' : 'Book a Demo'
+
+  /* The language switch has to stay on the current page. It previously pointed
+     at pv('/'), which was survivable when this header only served the homepage
+     and five solution pages, but as the site-wide header it would have meant
+     switching to Spanish from /contact, /vs/axon or any resources article threw
+     you back to the homepage — on every page of the site.
+
+     usePathname() from next-intl returns the path WITHOUT the locale prefix,
+     which is exactly what <Link locale> wants, so this stays a real anchor with
+     a correct href: no JS needed to work, and the CSS (.hll-language a) keeps
+     matching, which a <button> would have broken. */
+  const here = usePathname()
 
   return (
     <nav className="hll-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
@@ -94,8 +117,8 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
 
       <div className="hll-nav-actions">
         <div className="hll-language" aria-label={es ? 'Idioma' : 'Language'}>
-          <Link href={pv('/')} locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
-          <Link href={pv('/')} locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
+          <Link href={here} locale="en" aria-current={!es ? 'page' : undefined}>EN</Link>
+          <Link href={here} locale="es" aria-current={es ? 'page' : undefined}>ES</Link>
         </div>
         <Link className="hll-nav-cta" href="/contact">{demo}<Arrow /></Link>
       </div>
@@ -117,7 +140,7 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
           <Link href="/resources">{es ? 'Recursos' : 'Resources'}</Link>
           <Link href="/about">{es ? 'Empresa' : 'Company'}</Link>
           <div className="hll-mobile-languages">
-            <Link href={pv('/')} locale="en">EN</Link><Link href={pv('/')} locale="es">ES</Link>
+            <Link href={here} locale="en">EN</Link><Link href={here} locale="es">ES</Link>
           </div>
           <Link className="hll-nav-cta" href="/contact">{demo}<Arrow /></Link>
         </div>
