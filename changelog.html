@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.357 -->
+      <div class="tl-entry fixed" id="v2.357">
+        <div class="tl-meta"><span class="tl-ver">v2.357</span><span class="tl-date">2026-08-15</span></div>
+        <div class="tl-dot"></div>
+        <div class="tl-title">Three pre-production launch gates closed (PRE-001, PRE-002, PRE-004)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>PRE-001 — carousel controls, <code>target-size</code> now passes with 0 failing nodes.</strong> Each dot was a 7px button with a 44&times;44 <code>::before</code> stretched over it; at 14px apart every overlay spanned ~3 neighbours per side and the topmost swallowed the click. The button <em>is</em> the target now: 28&times;44, no gap, dot drawn inside. <strong>The same defect existed twice</strong> — a higher-specificity copy in <code>platform-modules.css</code> outranked the base rule, so fixing one file left the bug live on the page that shows it</li>
+            <li><strong>PRE-002 — colour contrast, accessibility now 100/100 with 0 failing nodes.</strong> Eleven nodes were below 4.5:1, each darkened along its existing hue: worst was <code>.sv-num</code> at 2.56&rarr;4.68 (why the 01–05 solution numbers read as decorative grey). The red badge was fixed by darkening its background instead, since its text was already pure white</li>
+            <li><strong>PRE-004 — lint gate now exits 0.</strong> All 9 errors resolved. Two anchors in <code>global-error</code> and the root <code>not-found</code> are deliberately <em>kept</em> as plain <code>&lt;a&gt;</code> with a written reason — a crashed app shell needs a full document load, and routes outside <code>[locale]</code> must pass through locale middleware</li>
+            <li><strong>The performance audit's "Grade A — 99/100" is desktop-only.</strong> Measured here: desktop 98 / LCP 0.9s, but <strong>mobile 69 / LCP 6.4s</strong>. Server response is 20ms and warming doesn't move it — this is client-side cost under mobile throttling, and the checklist records performance as an unqualified Pass</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.356 -->
       <div class="tl-entry fixed" id="v2.356">
         <div class="tl-meta"><span class="tl-ver">v2.356</span><span class="tl-date">2026-08-15</span></div>

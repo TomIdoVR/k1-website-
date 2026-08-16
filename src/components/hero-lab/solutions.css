@@ -108,7 +108,10 @@
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: #93a3ba;
+  /* 2.56:1 on white was the worst failure on the page — the solution numbers
+     (01-05) were effectively decorative-grey at 11.5px. 4.68:1 now. The active
+     item still overrides this with its product colour on the line below. */
+  color: #697585;
   padding-bottom: 3px;
   border-bottom: 1.5px solid rgba(15, 30, 60, 0.12);
 }

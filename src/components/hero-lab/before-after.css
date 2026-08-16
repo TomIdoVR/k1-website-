@@ -88,7 +88,12 @@
   letter-spacing: 0.16em;
   color: #fff;
 }
-.ba-badge--red { background: #e8342f; }
+/* White on #e8342f measured 4.23:1 — just under the floor for 11px badge text.
+   Fixed by darkening the background rather than the text, since the text is
+   already pure white: #cc2921 takes it to 5.38:1 and keeps the badge red. The
+   same #e8342f stays on the break markers and hub icon, which are strokes, not
+   text. */
+.ba-badge--red { background: #cc2921; }
 .ba-badge--blue { background: #0757f7; }
 
 .ba-panel-title {
@@ -257,7 +262,10 @@
 .uc-live, .uc-cam-live {
   display: inline-flex; align-items: center; gap: 5px;
   font-family: 'DM Mono', ui-monospace, monospace; font-size: 9.5px;
-  letter-spacing: 0.11em; color: #16a34a;
+  /* 3.30:1 on white at 10px — under the 4.5 floor. 4.61:1 now. Scoped to the
+     text badge; .uc-ok ticks, .uc-pin--green and the stat value keep #16a34a,
+     which are icons/large figures rather than small text. */
+  letter-spacing: 0.11em; color: #12873d;
 }
 .uc-live i, .uc-cam-live i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 
@@ -564,29 +572,31 @@
      readout — with one panel visible at a time and no page numbers, they are
      the only thing that says which half of the comparison you are looking at
      and that there is exactly one more. */
-  .ba-scroll-dots { display: flex; align-items: center; gap: 7px; }
+  /* The button IS the target; the dot is drawn inside it. Same defect as the
+     module carousel: a 7px button with a 44x44 `::before` stretched over it
+     overlaps its neighbours (7px dots, 7px apart) so the wrong dot receives
+     the click. Only two dots here rather than seven, so the overlap was less
+     visible — but it was the same bug, and it is fixed the same way. */
+  .ba-scroll-dots { display: flex; align-items: center; gap: 0; }
   .ba-scroll-dot {
-    position: relative;
-    width: 7px;
-    height: 7px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 44px;
     padding: 0;
     border: 0;
-    border-radius: 50%;
-    background: rgba(7, 87, 247, 0.25);
+    background: none;
     cursor: pointer;
-    transition: width 180ms ease, background 180ms ease;
   }
-  /* 7px visually; ::before grows the hit area to the 44px floor. */
   .ba-scroll-dot::before {
     content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(7, 87, 247, 0.25);
+    transition: width 180ms ease, background 180ms ease;
   }
-  .ba-scroll-dot[aria-current='true'] { width: 21px; border-radius: 8px; background: #0757f7; }
+  .ba-scroll-dot[aria-current='true']::before { width: 21px; border-radius: 8px; background: #0757f7; }
 }
 
 /* The console responds to the width of its own panel, not the page. Tablet

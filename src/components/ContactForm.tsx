@@ -1,6 +1,9 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+/* The locale-aware Link, not next/link: a Spanish visitor reading the consent
+   notice must land on /es/privacy, not the English notice. */
+import { Link } from '@/i18n/navigation'
 
 interface SelectOption {
   value: string
@@ -218,9 +221,9 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           {es
             ? 'Al enviar este formulario aceptas que KabatOne use tus datos para responder a tu solicitud. No los compartimos con terceros.'
             : 'By submitting this form you agree that KabatOne may use your details to respond to your enquiry. We do not share them with third parties.'}{' '}
-          <a href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
+          <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
             {es ? 'Aviso de privacidad' : 'Privacy notice'}
-          </a>
+          </Link>
         </p>
 
         {/* Submit */}

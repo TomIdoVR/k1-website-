@@ -27,7 +27,8 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #0891b2;
+  /* 3.49:1 on #f7f9fc -> 4.64:1, same cyan hue. */
+  color: #067b97;
 }
 
 .tbd-title {

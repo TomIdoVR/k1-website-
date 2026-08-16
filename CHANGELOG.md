@@ -1,3 +1,18 @@
+## [v2.357] – 2026-08-15 — Three pre-production launch gates closed (PRE-001, PRE-002, PRE-004)
+
+### Fixed
+- **PRE-001 — carousel controls (`target-size` now passes with 0 failing nodes).** Each dot was a 7px button with a 44x44 absolutely-positioned `::before` stretched over it to reach the touch-target floor. With 7px dots and a 7px gap the dots sit 14px apart, so every overlay spanned roughly three neighbours per side and the topmost one swallowed the click — the audit's "dot 2 is intercepted by dot 3". Rebuilt so the button *is* the target: 28x44, no gap, with the 7px dot drawn by `::before` inside it. Seven genuinely separate targets, each above the 24px WCAG 2.5.8 minimum.
+  - **The same defect existed twice.** `platform-modules.css` carries a higher-specificity copy (`.hll-modules .hll-carousel-dot`) that outranks the base rule, so fixing only `hero-lab-light.css` left the bug live on the page that actually shows it — caught because the deployed computed width stayed 21px while the new `display: grid` came through. The before/after scroller dots had the pattern copied verbatim and were fixed too.
+- **PRE-002 — colour contrast (accessibility now 100/100, 0 failing nodes).** Eleven nodes were below 4.5:1. Each was darkened along its existing hue rather than recoloured: `.cst-label` 3.81→4.66, `.sv-num` 2.56→4.68 (the worst, and the reason the 01–05 solution numbers read as decorative grey), `.uc-live` 3.30→4.61, `.ind-eyebrow` 3.46→4.61, `.ind-more-label` 3.46→4.61, `.eco-eyebrow` 3.68→4.64, `.tbd-eyebrow` 3.49→4.64. The red badge was fixed by darkening its background (#e8342f→#cc2921, white text 4.23→5.38) since the text was already pure white.
+  - Fixes are scoped to the failing small-text nodes. Large display text (`.ind-title em`, `.eco-title em`), icon strokes, map pins and accent borders keep the original brand values — they clear the 3:1 large-text floor or aren't text at all.
+- **PRE-004 — lint gate (`npm run lint` now exits 0).** All 9 errors resolved: 4 raw internal anchors, 3 explicit `any`, 2 synchronous setState-in-effect.
+  - The two `<a>` tags in `global-error.tsx` and the root `not-found.tsx` are deliberately *kept* as plain anchors with a scoped disable and a written reason, not converted. `global-error` replaces the root layout after a crash took the app shell down, so a full document load is the recovery a soft navigation would defeat; the root `not-found` serves routes outside `[locale]`, so `/` must pass through the locale middleware to be rewritten. The two that genuinely wanted client navigation (`[locale]/not-found.tsx`, the privacy link in `ContactForm`) use the locale-aware `Link`, so a Spanish visitor lands on `/es`.
+  - The three `any` casts were all the same Leaflet `_leaflet_id` container guard. Given a real local type rather than silenced — the guard is load-bearing, since re-initialising a bound container throws.
+
+### Notes
+- **The performance audit's "Grade A — 99/100" is desktop-only.** Measured on this build: desktop 98 / LCP 0.9s (matching the audit), but **mobile 69 / LCP 6.4s / FCP 3.2s**. Server response is 20ms and warming the deployment doesn't move it, so this is client-side asset and CPU cost under mobile throttling, not cold start. Not a regression from these changes — desktop still matches baseline — but the pre-production checklist records performance as an unqualified Pass, and on mobile it is not.
+- Verified against Lighthouse on the deployed build rather than by inspection: accessibility 100, best-practices 100, `color-contrast` and `target-size` both 0 failing nodes, CLS 0.
+
 ## [v2.356] – 2026-08-15 — Sticky mobile product cards and stronger hero artwork
 
 ### Fixed

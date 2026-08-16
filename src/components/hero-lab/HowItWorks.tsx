@@ -278,7 +278,16 @@ export default function HowItWorks({ es }: { es: boolean }) {
     const host = ref.current
     if (!host) return
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) { setProg(1); return }
+    if (reduce) {
+      /* Jump straight to the finished state, but a frame later rather than
+         synchronously in the effect body — a synchronous setState here is the
+         cascading-render pattern the lint rule flags. One frame is
+         imperceptible for what is a static, animation-free end state, and it
+         cannot be hoisted into useState's initialiser without risking a
+         hydration mismatch (the server has no matchMedia and would render 0). */
+      const id = requestAnimationFrame(() => setProg(1))
+      return () => cancelAnimationFrame(id)
+    }
     let raf = 0
     const onScroll = () => {
       if (raf) return

@@ -25,7 +25,9 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #0891b2;
+  /* 3.68:1 on white -> 4.64:1. Scoped to the eyebrow: .eco-title em and the
+     3px accent border keep #0891b2, since neither is small body text. */
+  color: #077f9c;
 }
 
 .eco-title {
