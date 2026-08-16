@@ -706,18 +706,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - **Confirmed `unoptimized` is genuinely required, not cargo-culted.** Tested Next's optimizer directly: with an explicit `Accept: image/webp` header it returns WebP but with `hasAlpha = false` and 0% transparent pixels — it flattens alpha even when not falling back to JPEG. Separately, `deviceSizes` is capped at 1200 in `next.config.ts`, so the optimizer could not have served this 1774px hero at native width regardless.
 - Background knockout samples the true canvas colour (237,241,243 — not white, which is why an earlier white-threshold pass only caught 2.5%) and uses a distance ramp so drop shadows fade out instead of hard-clipping.
 
-## [v2.307] – 2026-08-03 — Admin-console hero rebuilt as a real dashboard (KAB-2393)
-### Changed
-- **The admin-console hero no longer ships a flat AI screenshot.** Board feedback on the hero was "the admin looks too simplified — make it more professional." The console visual was `concept-4-admin.webp`, an AI-generated image the code itself flagged to "swap for a real product screenshot before this ships." Replaced it with `HeroConsoleMock` — a **real HTML/CSS operations surface**: a module rail (K-Safety/Dispatch/Video/Traffic/Connect), a live GIS map with animated incident pins and unit markers, a KPI telemetry strip, a dispatch queue, a video wall, and an event log. Token-driven (`--bg-2`/`--border`/`--muted`, DM Mono / Barlow / Space Grotesk) and bilingual, so it themes correctly and reads as a dense, credible console instead of a simplified picture.
-- Swapped the same mock into `ImageConcepts` ("Concept 1 — The admin itself") so every admin surface is consistent; the non-admin hub concept keeps its illustration.
-
-### Added
-- `HeroConsoleMock.tsx` + `.hcm-*` styles (appended to `hero-lab.css`, no existing rules touched).
-- `/hero-lab-admin` — internal, noindex, unlinked review route mounting the upgraded `HeroV1Screenshot` + `ImageConcepts` (V1 was otherwise orphaned) so the board can review the change directly.
-
-### Notes
-- Not pushed — staged on `hero-redesign` for board review. `tsc --noEmit` clean. Which hero direction becomes "option C" is still an open question to the board (interaction on KAB-2393); this change is direction-agnostic — it upgrades the admin wherever it appears.
-
 ## [v2.307] – 2026-08-04 — Weekly brief collector: service-account auth, all-channel traffic
 
 First half of merging the two Monday SEO jobs into one. `scripts/weekly_brief.py` collects everything the weekly brief needs — all-channel GA4 traffic, GSC search performance, deterministic opportunity scoring — into a single JSON. No LLM, no HTML, no git, no Slack; those belong to the caller.
@@ -1143,6 +1131,28 @@ Acts on the full content / design / performance / SEO review of the redesign.
 ## [2.273] 2026-07-13 — Hero redesign: owner local-work guide
 **Added**
 - Added an "Working On This Yourself (Owner)" section to `docs/HERO-REDESIGN-LOCAL-WORKFLOW.md` — from-scratch, copy-pasteable steps so Omer can run and edit the isolated hero (`/hero-lab`) locally in the `codex/hero-reference-rebuild` worktree, commit-only, without pushing to staging or production. Requested in KAB-1606 ("make sure it's documented so I can work on it also").
+
+## [v2.275] – 2026-07-13 — VMS momentum: cluster internal links → /vs/avigilon (P4)
+### Added
+- **Internal links from the breakout VMS cluster pages into `/vs/avigilon`** (EN + ES) — added a "KabatOne vs Avigilon" entry to the Related sections of `/resources/best-vms-software/` and `/resources/what-is-video-management-software/`. Both pages already discuss Avigilon in body copy but had zero links into the comparison page, which sits at striking-distance pos ~13. Passes topical authority from the two strongest VMS-cluster pages (the `vms` / `vms software` impression breakout) to the pos-13 Avigilon comparison. Capitalizes on this week's VMS momentum.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.274] – 2026-07-13 — GEO citability sweep: NG911 + unified-platform + C5 (definition callouts)
+### Added
+- **Brand-anchored, liftable definition callouts on three more hubs** (EN + ES), closing out the remaining GEO citation gaps identified in `SEO/SEO-PROGRAM-STATE.md`:
+  - `/resources/ng911-software/` — under the "What is NG911?" H2: bolded "NG911 is software that…" definition + NENA i3 anchor + K-Dispatch (ESInet/CAD) attribution.
+  - `/resources/what-is-a-public-safety-platform/` — bolded "A public safety platform is a unified system…" definition + PSIM-vs-unified differentiator + K-Dispatch/K-Video/K-Safety "one system" attribution (targets the "unified platform" AI-answer gap).
+  - `/resources/how-c5-command-centers-work/` — brand-anchored "the software behind a C5 is the unified platform…" callout after the hero (the existing definition had no brand anchor, so AI engines lifted it without citing KabatOne) + K-Video/K-Dispatch/K-Safety attribution.
+- Completes the v2.272→v2.274 GEO definition-callout program across ai-video-analytics, VMS, NG911, unified-platform, and C5 — every page where AI answers cited competitors while KabatOne owned the ranking page. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes (0 errors). Shipped to `nextjs` (staging) worktree only — not pushed.
+
+## [v2.273] – 2026-07-13 — VMS GEO citability (definition callout)
+### Added
+- **Brand-anchored, liftable definition callout on `/resources/what-is-video-management-software/`** (EN + ES) — directly under the "What Does a VMS Do?" H2. Leads with a bolded, subject-first one-sentence "Video management software (VMS) is…" definition (the passage AI engines lift), states the modern public-safety differentiator (AI analytics + CAD/GIS integration), and attributes it to KabatOne's K-Video. Extends the v2.272 GEO pattern to the VMS hub — the biggest impression breakout ("vms" pos ~8, 12K+ imp) and a page where AI answers cite Genetec/Milestone while KabatOne is absent. GEO fix only — no ranking/URL change.
+### Notes
+- TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
 
 ## [v2.272] – 2026-07-13 — Isolate hero redesign for parallel local work
 ### Added

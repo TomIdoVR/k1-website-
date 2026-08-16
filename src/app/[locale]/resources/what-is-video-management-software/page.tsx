@@ -73,6 +73,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
             'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, KabatOne integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
         },
         {
+          question: '¿Qué es un sistema de gestión de video CCTV?',
+          answer:
+            'Un sistema de gestión de video CCTV es software VMS que centraliza los feeds de cámaras de videovigilancia CCTV —sin importar marca o protocolo— en una sola interfaz para monitoreo en vivo, grabación, reproducción y analítica de IA. A diferencia de un DVR o NVR autónomo, un sistema de gestión de video empresarial escala a decenas de miles de cámaras CCTV en múltiples sitios, agrega búsqueda forense y reconocimiento de placas (LPR), e integra con despacho y GIS. KabatOne K-Video es un sistema de gestión de video CCTV para seguridad pública que unifica redes de cámaras de toda la ciudad con CAD y mapas en una sola vista operativa.',
+        },
+        {
           question: '¿Cuál es la diferencia entre un VMS y un PSIM?',
           answer:
             'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como KabatOne van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
@@ -123,6 +128,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
           question: 'What is the best VMS software for public safety?',
           answer:
             'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, KabatOne integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
+        },
+        {
+          question: 'What is a CCTV video management system?',
+          answer:
+            'A CCTV video management system is VMS software that centralizes feeds from CCTV surveillance cameras — regardless of brand or protocol — into one interface for live monitoring, recording, playback, and AI analytics. Unlike a standalone DVR or NVR, an enterprise video management system scales to tens of thousands of CCTV cameras across multiple sites, adds forensic search and license plate recognition, and integrates with dispatch and GIS. KabatOne K-Video is a public-safety CCTV video management system that unifies citywide camera networks with CAD and mapping in a single operational view.',
         },
         {
           question: 'What is the difference between VMS software and PSIM?',
@@ -223,6 +233,15 @@ export default async function WhatIsVideoManagementSoftwarePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <h2 style={h2Style}>{es ? '¿Qué Hace un VMS?' : 'What Does a VMS Do?'}</h2>
+            <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(59,130,246,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+                {es ? (
+                  <><strong style={{ color: '#f0f4f8' }}>El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante en una sola interfaz para grabar, reproducir y analizar el video de forma centralizada.</strong> Un VMS moderno para seguridad pública va más allá de la grabación: ejecuta analítica de IA sobre el flujo de video y se integra con despacho CAD y GIS operacional. K-Video de KabatOne es un VMS para seguridad pública que unifica cámaras de cualquier marca y envía solo los eventos relevantes al mapa operativo del centro de mando.</>
+                ) : (
+                  <><strong style={{ color: '#f0f4f8' }}>Video management software (VMS) is a platform that aggregates surveillance camera feeds from any manufacturer into a single interface to record, play back, and analyze video centrally.</strong> A modern public-safety VMS goes beyond recording: it runs AI analytics on the video stream and integrates with CAD dispatch and operational GIS. KabatOne&apos;s K-Video is a public-safety VMS that unifies cameras from any brand and pushes only the relevant events to the command-center operational map.</>
+                )}
+              </p>
+            </div>
             <p style={pStyle}>
               {es
                 ? 'Un sistema VMS moderno cubre cinco funciones operativas que las soluciones heredadas de CCTV no pueden ofrecer como una sola plataforma.'
@@ -490,6 +509,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un centro de crimen en tiempo real (RTCC)?' },
+                { href: '/vs/avigilon', en: 'KabatOne vs Avigilon (VMS comparison)', es: 'KabatOne vs Avigilon (comparación VMS)' },
                 { href: '/resources/ai-in-public-safety', en: 'AI in Public Safety: A Guide for Cities', es: 'IA en Seguridad Pública: Guía para Ciudades' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border)', textDecoration: 'none', color: 'var(--dim)', fontSize: '15px' }}>

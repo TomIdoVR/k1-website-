@@ -62,6 +62,14 @@ export default async function BestCadDispatchSoftwarePage({
       question: '¿El software CAD es compatible con NG911 e integra MDT y GPS?',
       answer: 'Un CAD moderno debe estar listo para NG911 (Next Generation 911): recibir voz, texto, datos y multimedia de los nuevos sistemas de llamadas de emergencia. KabatOne K-Dispatch integra de forma nativa las terminales móviles de datos (MDT) y el GPS de las unidades de campo, mostrando la ubicación en tiempo real en el mapa operativo y enviando los detalles del incidente directamente al dispositivo del oficial — sin middleware de terceros entre el CAD, el MDT y el seguimiento GPS.',
     },
+    {
+      question: '¿Qué son los sistemas CAD policiales y el software de despacho 911?',
+      answer: 'Los sistemas CAD policiales —también llamados software de despacho 911— son plataformas de despacho asistido por computadora que permiten a las fuerzas del orden recibir llamadas de emergencia, asignar las unidades más cercanas y darles seguimiento hasta el cierre sobre un mapa en vivo. Los sistemas CAD policiales modernos van más allá del despacho: KabatOne K-Dispatch añade recomendaciones de unidades por IA, video en vivo de cámaras cercanas, alertas de LPR y sensores, y compatibilidad con NG911, convirtiendo el software de despacho 911 en una herramienta completa de conciencia situacional.',
+    },
+    {
+      question: '¿Qué es el software de despacho automatizado por computadora y cómo encajan los sistemas de recepción de llamadas?',
+      answer: 'El software de despacho automatizado por computadora (una variante del "despacho asistido por computadora") automatiza el enrutamiento de las llamadas de emergencia hacia los responsables correctos. Los sistemas de recepción de llamadas de seguridad pública son el front-end: reciben la llamada al 911 (voz, texto o multimedia NG911) y pasan los datos verificados del solicitante y su ubicación al CAD. En KabatOne K-Dispatch, la recepción de llamadas y el despacho automatizado son un solo sistema: la toma de la llamada fluye directamente hacia la asignación de unidades asistida por IA, el video y el GIS, sin transferencias entre aplicaciones separadas.',
+    },
   ] : [
     {
       question: 'What is the best CAD dispatch software for 911 centers?',
@@ -90,6 +98,14 @@ export default async function BestCadDispatchSoftwarePage({
     {
       question: 'Is the CAD NG911-ready, and does it integrate MDT and GPS?',
       answer: 'A modern CAD should be NG911-ready (Next Generation 911): able to receive voice, text, data, and multimedia from new emergency call systems. KabatOne K-Dispatch natively integrates field mobile data terminals (MDT) and unit GPS, showing real-time unit location on the operational map and pushing incident details straight to the officer\'s device — with no third-party middleware between CAD, MDT, and GPS tracking.',
+    },
+    {
+      question: 'What are police CAD systems and 911 dispatch software?',
+      answer: 'Police CAD systems — also called 911 dispatch software — are computer-aided dispatch platforms that let law enforcement receive emergency calls, assign the nearest patrol units, and track them to closure on a live map. Modern police CAD systems go beyond call-and-dispatch: KabatOne K-Dispatch adds AI unit recommendations, live video from nearby cameras, LPR and sensor alerts, and NG911 readiness, so 911 dispatch software becomes a full situational-awareness tool rather than a call log.',
+    },
+    {
+      question: 'What is computer automated dispatch software, and how do call-taking systems fit in?',
+      answer: 'Computer automated dispatch software (a common variant of "computer-aided dispatch") automates routing of emergency calls to the right responders. Public safety call-taking systems are the front end — they receive the 911 call (voice, text, or NG911 multimedia) and pass verified caller and location data into the CAD. In KabatOne K-Dispatch, call-taking and automated dispatch are one system: intake flows directly into AI-assisted unit assignment, video, and GIS with no hand-off between separate applications.',
     },
   ]
 
@@ -228,14 +244,41 @@ export default async function BestCadDispatchSoftwarePage({
             </p>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 56px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '24px' }}>
               {es
-                ? 'Mejor Software CAD de Despacho para Centros 911 en 2026'
-                : 'Best CAD Dispatch Software for 911 Centers in 2026'}
+                ? 'Mejor Software CAD de Despacho (Despacho Asistido por Computadora) para Centros 911 en 2026'
+                : 'Best CAD Dispatch Software (Computer-Aided Dispatch) for 911 Centers in 2026'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
                 ? 'El software de despacho asistido por computadora (CAD) gestiona cada incidente desde la primera llamada hasta el cierre: clasificación, asignación de unidades, seguimiento y registro. Los mejores sistemas CAD modernos van más allá del despacho aislado — integran video en vivo, GIS operacional y aplicaciones móviles de campo en una sola plataforma. Esta comparativa analiza los principales sistemas CAD para centros 911, municipios y centros de mando en 2026.'
                 : 'Computer-aided dispatch (CAD) software manages every incident from first call to closure: classification, unit assignment, tracking, and record logging. The best modern CAD systems go beyond standalone dispatch — they integrate live video, operational GIS, and field mobile apps in one platform. This comparison analyzes the leading CAD dispatch systems for 911 centers, municipalities, and command centers in 2026.'}
             </p>
+          </div>
+        </section>
+
+        {/* ── DIRECT ANSWER STRIP (bounce-fix pattern) ── */}
+        <section style={{ borderTop: '1px solid var(--border)', padding: '40px 32px', background: 'rgba(239,68,68,0.05)' }}>
+          <div style={containerStyle}>
+            <p style={{ fontSize: '17px', color: 'var(--dim)', lineHeight: 1.8, marginTop: 0, marginBottom: '20px' }}>
+              {es
+                ? 'El software CAD de despacho —despacho asistido por computadora (en inglés, computer-aided dispatch)— gestiona el ciclo completo de un incidente 911: recepción de la llamada, clasificación, asignación de la unidad más cercana por GPS, seguimiento y registro. En 2026, el mejor software CAD va más allá del despacho aislado: integra video en vivo, mapa GIS y apps móviles de campo en una sola plataforma. Abajo comparamos las plataformas líderes para centros 911, municipios y centros de mando.'
+                : 'CAD dispatch software — computer-aided dispatch — manages the full 911 incident lifecycle: call intake, classification, nearest-unit assignment by GPS, tracking, and record logging. In 2026, the best CAD dispatch software goes beyond standalone dispatch: it integrates live video, an operational GIS map, and field mobile apps on one platform. Below we compare the leading systems for 911 centers, municipalities, and command centers.'}
+            </p>
+            <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+              {(es ? [
+                { label: 'Qué es', value: 'Despacho asistido por computadora (CAD)' },
+                { label: 'Para quién', value: 'Centros 911, municipios, mando C5' },
+                { label: 'Mejor plataforma 2026', value: 'KabatOne K-Dispatch' },
+              ] : [
+                { label: 'What it is', value: 'Computer-aided dispatch (CAD)' },
+                { label: 'Who it is for', value: '911 centers, municipalities, C5' },
+                { label: 'Best platform 2026', value: 'KabatOne K-Dispatch' },
+              ]).map((item, i) => (
+                <div key={i} style={{ flex: '1 1 200px' }}>
+                  <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '4px' }}>{item.label}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--white)' }}>{item.value}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -446,6 +489,7 @@ export default async function BestCadDispatchSoftwarePage({
                 { href: '/resources/911-call-center-software-guide', en: '911 Call Center Software: Complete Guide', es: 'Software Centro 911: Guía Completa' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un Centro de Crimen en Tiempo Real?' },
                 { href: '/resources/best-public-safety-software', en: 'Best Public Safety Software Platforms 2026', es: 'Mejores Plataformas de Software de Seguridad Pública 2026' },
+                { href: '/resources/best-ng911-software', en: 'Best NG911 Software 2026 for Emergency Call Centers', es: 'Mejor Software NG911 2026 para Centros de Llamadas de Emergencia' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border)', textDecoration: 'none', color: 'var(--dim)', fontSize: '15px' }}>
                   <span>{es ? link.es : link.en}</span>

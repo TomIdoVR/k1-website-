@@ -44,7 +44,7 @@ export const NOINDEX_KEYS = new Set<string>([
   'publicSafetySoftwareSomalia', 'publicSafetySoftwareSouthAfrica', 'publicSafetySoftwareSouthKorea',
   'publicSafetySoftwareSouthSudan', 'publicSafetySoftwareSpain', 'publicSafetySoftwareSudan',
   'publicSafetySoftwareSweden', 'publicSafetySoftwareSwitzerland', 'publicSafetySoftwareTanzania',
-  'publicSafetySoftwareThailand', 'publicSafetySoftwareTogo', 'publicSafetySoftwareTrinidadAndTobago',
+  'publicSafetySoftwareThailand', 'publicSafetySoftwareTogo',
   'publicSafetySoftwareTunisia', 'publicSafetySoftwareTurkey', 'publicSafetySoftwareUAE',
   'publicSafetySoftwareUganda', 'publicSafetySoftwareUnitedKingdom', 'publicSafetySoftwareVietnam',
   'publicSafetySoftwareZambia', 'publicSafetySoftwareZimbabwe',

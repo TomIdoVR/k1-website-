@@ -43,6 +43,10 @@ GSC_PROPERTY = 'https://kabatone.com/'
 GSC_ENDPOINT = 'https://www.googleapis.com/webmasters/v3/sites/{site}/searchAnalytics/query'
 
 SA_ENV = 'GOOGLE_SERVICE_ACCOUNT_JSON'
+# Cloud environment variables are entered as single-line KEY=value pairs, which
+# a multi-line JSON key cannot survive. Base64 keeps it to one line with no
+# quotes or newlines to mangle, so that form wins where both are set.
+SA_ENV_B64 = 'GOOGLE_SERVICE_ACCOUNT_JSON_B64'
 SA_FILE = Path.home() / '.config' / 'claude-seo' / 'gsc-service-account.json'
 
 SCOPES = [
@@ -64,7 +68,21 @@ def service_account_credentials():
     token go unnoticed for three weeks, because the service-account path kept
     the health check green while the real weekly job failed.
     """
+    import base64
     from google.oauth2 import service_account
+
+    encoded = os.environ.get(SA_ENV_B64)
+    if encoded:
+        try:
+            info = json.loads(base64.b64decode(encoded))
+        except Exception as exc:
+            raise SystemExit(
+                f'{SA_ENV_B64} is set but could not be decoded: {type(exc).__name__}: {exc}\n'
+                'Regenerate with:\n'
+                "  { printf '%s=' GOOGLE_SERVICE_ACCOUNT_JSON_B64; "
+                "base64 < ~/.config/claude-seo/gsc-service-account.json | tr -d '\\n'; } | pbcopy"
+            )
+        return service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
 
     raw = os.environ.get(SA_ENV)
     if raw:
@@ -78,7 +96,8 @@ def service_account_credentials():
         return service_account.Credentials.from_service_account_file(str(SA_FILE), scopes=SCOPES)
 
     raise SystemExit(
-        f'No service-account credentials. Set {SA_ENV} or place the key at {SA_FILE}.'
+        f'No service-account credentials. Set {SA_ENV_B64} (preferred in cloud '
+        f'environments), {SA_ENV}, or place the key at {SA_FILE}.'
     )
 
 
@@ -238,6 +257,40 @@ def gsc_query(token, start, end, dimensions, limit=1000):
         )
 
 
+# A query that ranks on page one, collects hundreds of impressions and earns
+# literally zero clicks, all from desktop, is not human demand — it is an
+# automated rank tracker hitting the SERP. Measured on 2026-08-04: three
+# unrelated queries ("computer automated dispatch software",
+# "peregrine.ai analytics reporting dashboards", "best fire computer aided
+# dispatch software") each showed 900-1,200 impressions at positions 3.7-6.9,
+# zero clicks, ~100% desktop, and an identical usa/gbr/nld/deu/ita/hkg country
+# fingerprint. Left unfiltered these dominate the opportunity ranking and drag
+# site CTR from ~1.3% (real LATAM traffic) down to the reported 0.49%.
+# KabatOne sells into Latin America and Spain. Reporting a single site-wide CTR
+# mixes that real audience with a large volume of non-converting impressions
+# (2026-08-04: USA 53,311 impressions -> 77 clicks, 0.14%, with 1,716 of 1,725
+# US queries earning zero clicks in 28 days). The target-market segment is the
+# figure to steer on; by_country keeps everything else visible.
+TARGET_MARKET = {
+    'mex', 'col', 'per', 'chl', 'arg', 'ecu', 'cri', 'pan', 'ven', 'gtm',
+    'hnd', 'slv', 'nic', 'dom', 'bol', 'pry', 'ury', 'esp',
+}
+
+SYNTHETIC_MIN_IMPRESSIONS = 150
+SYNTHETIC_MAX_POSITION = 10.0
+SYNTHETIC_MIN_DESKTOP_SHARE = 0.95
+
+
+def is_synthetic(impressions, clicks, position, desktop_share):
+    """True when a query's profile matches automated SERP checking, not humans."""
+    return (
+        clicks == 0
+        and impressions >= SYNTHETIC_MIN_IMPRESSIONS
+        and 0 < position <= SYNTHETIC_MAX_POSITION
+        and desktop_share >= SYNTHETIC_MIN_DESKTOP_SHARE
+    )
+
+
 def pull_gsc(token, days):
     today = datetime.now()
     end_cur = (today - timedelta(days=1)).strftime('%Y-%m-%d')
@@ -253,6 +306,19 @@ def pull_gsc(token, days):
     # returns for a 28-day window, so ranking data isn't truncated either.
     q_cur = gsc_query(token, start_cur, end_cur, ['query'], limit=25000)
     pages = gsc_query(token, start_cur, end_cur, ['page'], limit=100)
+    countries = gsc_query(token, start_cur, end_cur, ['country'], limit=50)
+    q_device = gsc_query(token, start_cur, end_cur, ['query', 'device'], limit=25000)
+
+    # Desktop share per query, used by the synthetic filter below.
+    desktop_share = {}
+    for row in q_device:
+        query, device = row['keys'][0], row['keys'][1]
+        agg = desktop_share.setdefault(query, [0, 0])  # [desktop, total]
+        impressions = int(row.get('impressions', 0))
+        agg[1] += impressions
+        if device == 'DESKTOP':
+            agg[0] += impressions
+    desktop_share = {q: (d / t) for q, (d, t) in desktop_share.items() if t}
 
     def totals(start, end):
         rows = gsc_query(token, start, end, [], limit=1)
@@ -269,13 +335,23 @@ def pull_gsc(token, days):
     cur_totals, prior_totals = totals(start_cur, end_cur), totals(start_prior, end_prior)
 
     # Opportunity scoring — impressions x CTR gap x business value.
-    opportunities, striking = [], []
+    opportunities, striking, synthetic = [], [], []
     for row in q_cur:
         query = row['keys'][0]
         impressions = row.get('impressions', 0)
         position = row.get('position', 0)
         ctr = row.get('ctr', 0)  # REST API returns 0-1
         gap = max(0.0, expected_ctr(position) - ctr)
+
+        if is_synthetic(impressions, int(row.get('clicks', 0)), position,
+                        desktop_share.get(query, 0.0)):
+            synthetic.append({
+                'query': query, 'impressions': int(impressions),
+                'position': round(position, 1),
+                'desktop_share': round(desktop_share.get(query, 0.0), 3),
+            })
+            continue  # never rank or score a query no human is searching
+
         if impressions >= 50 and gap > 0:
             opportunities.append({
                 'query': query,
@@ -309,8 +385,55 @@ def pull_gsc(token, days):
     def pct_delta(now, was):
         return round((now - was) / was * 100, 1) if was else None
 
+    # Corrected totals. Synthetic queries contribute impressions but zero clicks
+    # by definition, so clicks carry over unchanged and only the denominator moves.
+    synthetic.sort(key=lambda s: -s['impressions'])
+    synthetic_impressions = sum(s['impressions'] for s in synthetic)
+    real_impressions = max(0, cur_totals['impressions'] - synthetic_impressions)
+    adjusted = {
+        'clicks': cur_totals['clicks'],
+        'impressions': real_impressions,
+        'ctr_pct': round(cur_totals['clicks'] / real_impressions * 100, 2) if real_impressions else 0.0,
+    }
+
+    by_country = [{
+        'country': r['keys'][0],
+        'clicks': int(r.get('clicks', 0)),
+        'impressions': int(r.get('impressions', 0)),
+        'ctr_pct': round(r.get('ctr', 0) * 100, 2),
+        'position': round(r.get('position', 0), 1),
+    } for r in countries]
+    by_country.sort(key=lambda c: -c['clicks'])
+
+    tm_clicks = sum(c['clicks'] for c in by_country if c['country'] in TARGET_MARKET)
+    tm_impressions = sum(c['impressions'] for c in by_country if c['country'] in TARGET_MARKET)
+    target_market = {
+        'countries': sorted(TARGET_MARKET),
+        'clicks': tm_clicks,
+        'impressions': tm_impressions,
+        'ctr_pct': round(tm_clicks / tm_impressions * 100, 2) if tm_impressions else 0.0,
+        'share_of_clicks_pct': round(tm_clicks / cur_totals['clicks'] * 100, 1)
+                               if cur_totals['clicks'] else 0.0,
+    }
+
     return {
         'totals': cur_totals,
+        'adjusted_totals': adjusted,
+        'target_market': target_market,
+        'synthetic': {
+            'queries': synthetic[:20],
+            'query_count': len(synthetic),
+            'impressions': synthetic_impressions,
+            'share_of_impressions_pct': round(
+                synthetic_impressions / cur_totals['impressions'] * 100, 1
+            ) if cur_totals['impressions'] else 0.0,
+            'criteria': (
+                f'clicks=0, impressions>={SYNTHETIC_MIN_IMPRESSIONS}, '
+                f'position<={SYNTHETIC_MAX_POSITION}, '
+                f'desktop_share>={SYNTHETIC_MIN_DESKTOP_SHARE}'
+            ),
+        },
+        'by_country': by_country[:20],
         'prior': prior_totals,
         'delta': {
             'clicks_pct': pct_delta(cur_totals['clicks'], prior_totals['clicks']),
@@ -400,7 +523,16 @@ def main():
         f"  ({traffic['organic']['share_pct']}% of total)")
     say(f"  AI Assistant:      {traffic['ai_assistant']['sessions']:>7,}")
     say(f"  Clicks:            {search['totals']['clicks']:>7,}")
-    say(f"  Impressions:       {search['totals']['impressions']:>7,}")
+    say(f"  Impressions:       {search['totals']['impressions']:>7,}"
+        f"  ({search['totals']['ctr_pct']}% CTR, raw)")
+    syn = search['synthetic']
+    say(f"  Synthetic impr:    {syn['impressions']:>7,}"
+        f"  ({syn['share_of_impressions_pct']}% of total, {syn['query_count']} queries)")
+    say(f"  Real impressions:  {search['adjusted_totals']['impressions']:>7,}"
+        f"  ({search['adjusted_totals']['ctr_pct']}% CTR, adjusted)")
+    tm = search['target_market']
+    say(f"  Target market:     {tm['impressions']:>7,} impr, {tm['clicks']} clicks"
+        f"  ({tm['ctr_pct']}% CTR, {tm['share_of_clicks_pct']}% of all clicks)")
     say(f"  Avg position:      {search['totals']['avg_position']:>7}")
     say(f"  Striking distance: {search['striking_distance_count']:>7}")
     return 0

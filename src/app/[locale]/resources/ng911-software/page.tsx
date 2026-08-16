@@ -218,6 +218,15 @@ export default async function Ng911SoftwarePage({
         {/* ── Definition ── */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 24px 0' }}>
           <h2 style={sectionH2}>{es ? '¿Qué es NG911?' : 'What is NG911?'}</h2>
+          <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(34,211,238,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
+            <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+              {es ? (
+                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) es software que traslada el sistema de emergencias 9-1-1 de la red telefónica analógica (PSTN) a una arquitectura IP moderna (ESInet), permitiendo que el PSAP reciba texto, video, ubicación de alta precisión y datos de sensores además de voz.</strong> Sigue el estándar i3 de NENA. Su valor operativo real aparece cuando esos datos multimedia llegan al despacho: K-Dispatch de KabatOne consume flujos NG911/ESInet y los convierte en incidentes accionables en el mapa CAD, uniendo la llamada con las unidades en campo y las cámaras del centro de mando.</>
+              ) : (
+                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) is software that moves the 9-1-1 emergency system off the analog telephone network (PSTN) and onto a modern IP architecture (ESInet), letting the PSAP receive text, video, high-precision location, and sensor data alongside voice.</strong> It follows NENA&apos;s i3 standard. Its real operational value shows up at dispatch: KabatOne&apos;s K-Dispatch consumes NG911/ESInet feeds and turns them into actionable incidents on the CAD map, tying the call to field units and command-center cameras.</>
+              )}
+            </p>
+          </div>
           <p style={para}>
             {es
               ? 'NG911 — Next Generation 911 — es la transición del sistema de emergencias 9-1-1 de una red analógica de telefonía conmutada (PSTN) a una arquitectura IP moderna: la ESInet (Emergency Services IP Network). Esta migración transforma el PSAP (Public Safety Answering Point) de un receptor pasivo de llamadas de voz en un centro multimedia de datos de emergencia capaz de procesar texto, video, ubicación de alta precisión, telemática vehicular y datos de sensores.'
@@ -302,6 +311,13 @@ export default async function Ng911SoftwarePage({
               : ' is designed to consume the NG911 data feed directly — including text-to-911 and attached images — and use that information for automated unit recommendation, incident geolocation, and event-record creation. The NG911 + integrated CAD combination reduces time from call receipt to effective unit dispatch. To explore what to look for in a modern CAD, see the '}
             <Link href="/resources/best-cad-dispatch-software" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'mejor software CAD de despacho' : 'best CAD dispatch software guide'}</Link>
             {es ? '.' : '.'}
+          </p>
+          <p style={{ ...para, marginBottom: 0 }}>
+            {es ? 'Ver cómo funciona el ' : 'See how '}
+            <Link href="/k-dispatch" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'software CAD de despacho de K-Dispatch' : "K-Dispatch's CAD dispatch software"}</Link>
+            {es
+              ? ' —despacho asistido por computadora (computer-aided dispatch) con IA— para centros 911, bomberos y EMS.'
+              : ' — AI-powered computer-aided dispatch for 911, fire, and EMS centers.'}
           </p>
         </section>
 

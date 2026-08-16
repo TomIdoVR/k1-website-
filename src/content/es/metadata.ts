@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/",
   },
   kDispatch: {
-    title: "K-Dispatch: Software CAD para 911, Bomberos y Emergencias",
-    description: "K-Dispatch reduce tiempos de respuesta con recomendación de unidades por IA, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
+    title: "Software CAD de Despacho 911, Bomberos y EMS | K-Dispatch",
+    description: "K-Dispatch es software de despacho asistido por computadora (CAD) con IA que reduce tiempos de respuesta 911: recomendación de unidades, integración NG911 y video en tiempo real. Software CAD para policía, bomberos y EMS.",
     canonical: "https://kabatone.com/es/k-dispatch/",
   },
   kVideo: {
@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  genetecAlternatives: {
+    title: "Mejores Alternativas a Genetec para Seguridad Pública 2026 | KabatOne",
+    description: "Las mejores alternativas a Genetec Security Center para seguridad pública: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian y la mejor plataforma unificada.",
+    canonical: "https://kabatone.com/es/resources/genetec-alternatives/",
+    og: {
+      title: "Mejores Alternativas a Genetec para Seguridad Pública (2026)",
+      description: "Compara las alternativas reales a Genetec — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — y cuándo una plataforma unificada supera a un VMS que solo gestiona cámaras.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   bestVmsSoftware: {
     title: "Mejor Software VMS: Cómo Elegir tu Plataforma de Video | KabatOne",
     description: "Cómo elegir el mejor software VMS: compara tipos de plataforma de gestión de video, criterios clave (cámaras de cualquier marca, analítica IA, integración con despacho), costos y el mejor VMS para seguridad pública.",
@@ -261,6 +271,46 @@ export const metadata = {
     og: {
       title: "Mejor Software VMS: Cómo Elegir una Plataforma de Gestión de Video",
       description: "Compara los tipos de plataforma VMS y los criterios que importan — cámaras de cualquier marca, analítica IA, integración con despacho — y el mejor VMS para seguridad pública.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  milestoneAlternatives: {
+    title: "Mejores Alternativas a Milestone XProtect 2026 | KabatOne",
+    description: "Las mejores alternativas a Milestone XProtect para seguridad pública: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y la mejor plataforma unificada.",
+    canonical: "https://kabatone.com/es/resources/milestone-alternatives/",
+    og: {
+      title: "Mejores Alternativas a Milestone XProtect para Seguridad Pública (2026)",
+      description: "Alternativas a Milestone comparadas — KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola — y cuándo una plataforma unificada supera a un VMS puro.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  bestAiVideoAnalytics: {
+    title: "Mejor Software de Analítica de Video con IA 2026 | KabatOne",
+    description: "El mejor software de analítica de video con IA para seguridad pública: KabatOne, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — precisión, falsos positivos, compatibilidad de cámaras y cuándo la analítica debe convertirse en despacho.",
+    canonical: "https://kabatone.com/es/resources/best-ai-video-analytics-software/",
+    og: {
+      title: "Mejor Software de Analítica de Video con IA para Seguridad Pública (2026)",
+      description: "Analítica de video con IA comparada — KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus — y por qué lo que ocurre tras la detección importa tanto como la detección.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  bestNg911Software: {
+    title: "Mejor Software NG911 2026 para Centros de Llamadas de Emergencia | KabatOne",
+    description: "El mejor software NG911 para seguridad pública: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — i3/ESInet, recepción multimedia, precisión de ubicación y cuándo la llamada debe convertirse en despacho.",
+    canonical: "https://kabatone.com/es/resources/best-ng911-software/",
+    og: {
+      title: "Mejor Software NG911 para Centros de Llamadas de Emergencia (2026)",
+      description: "Software NG911 comparado — KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 — y por qué lo que ocurre después de la llamada importa tanto como la recepción.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  rtccSoftware: {
+    title: "Mejor Software RTCC 2026: Proveedores de Centro de Crimen Comparados | KabatOne",
+    description: "Compara proveedores de software RTCC (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): qué es un software de centro de crimen en tiempo real, criterios de selección, costos y la mejor plataforma unificada para seguridad pública.",
+    canonical: "https://kabatone.com/es/resources/rtcc-software/",
+    og: {
+      title: "Mejor Software RTCC: Plataformas de Centro de Crimen en Tiempo Real Comparadas",
+      description: "Qué es un software RTCC, los principales proveedores comparados y cuándo una plataforma unificada supera a un conjunto de sistemas integrados.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
@@ -1177,8 +1227,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/public-safety-software-suriname/",
   },
   queEsUnC5: {
-    title: "¿Qué es un C5 en Seguridad Pública? Significado y Funciones 2026",
-    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Aprenda qué significa C5, cómo funciona, qué tecnología usa y cómo se diferencia del C4 en seguridad pública mexicana.",
+    title: "¿Qué es un C5? Significado, C4 vs C5 y Tecnología [2026]",
+    description: "¿Cuántos C5 hay en México y en qué se diferencian del C4? Qué significa cada C, la tecnología que usan (CAD, video con IA, GIS, LPR) y cuánto cuesta implementar uno.",
     canonical: "https://kabatone.com/es/resources/que-es-un-c5/",
   },
   ng911Software: {

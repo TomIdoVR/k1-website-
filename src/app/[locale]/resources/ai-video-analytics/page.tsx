@@ -213,6 +213,15 @@ export default async function AiVideoAnalyticsPage({
         {/* ── Definition ── */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 24px 0' }}>
           <h2 style={sectionH2}>{es ? '¿Qué es la analítica de video con IA?' : 'What is AI video analytics?'}</h2>
+          <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(168,85,247,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
+            <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
+              {es ? (
+                <><strong style={{ color: '#f0f4f8' }}>La analítica de video con IA es software que usa redes neuronales de aprendizaje profundo para identificar automáticamente personas, vehículos, armas y comportamientos en video de cámaras — en vivo o grabado.</strong> Reemplaza la detección de movimiento por comprensión de la escena, reduciendo los falsos positivos de un 30–50% típico a menos del 5%. En seguridad pública, K-Video de KabatOne ejecuta analítica de video con IA sobre cámaras de cualquier fabricante y muestra solo los eventos relevantes en el mapa operativo del centro de mando.</>
+              ) : (
+                <><strong style={{ color: '#f0f4f8' }}>AI video analytics is software that uses deep-learning neural networks to automatically identify people, vehicles, weapons, and behaviors in live or recorded camera footage.</strong> It replaces pixel-change motion detection with scene understanding, cutting false positives from a typical 30–50% down to under 5%. In public safety, KabatOne&apos;s K-Video runs AI video analytics on cameras from any manufacturer and surfaces only the relevant events on the command-center operational map.</>
+              )}
+            </p>
+          </div>
           <p style={para}>
             {es
               ? 'La analítica de video con IA — también llamada analítica de video inteligente (IVA) — es el uso de redes neuronales de aprendizaje profundo para interpretar automáticamente las imágenes de las cámaras de vigilancia. En lugar de disparar una alerta cada vez que cambia un píxel (como hace la detección de movimiento tradicional), un modelo de IA reconoce lo que realmente hay en la escena: una persona, un vehículo, un arma, un comportamiento.'
@@ -318,6 +327,7 @@ export default async function AiVideoAnalyticsPage({
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
               { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Face Recognition' },
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
+              { href: '/resources/rtcc-software', label: es ? 'Mejor Software RTCC (proveedores)' : 'Best RTCC Software (vendors)' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>
                 {r.label}

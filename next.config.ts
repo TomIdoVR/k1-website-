@@ -27,6 +27,25 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  /* From main. Both sides added a top-level key here and git read the two as
+     one conflict; they are unrelated and both are required. Dropping these
+     would 404 a URL that was handed to Google Play. */
+  async redirects() {
+    return [
+      // Legal page slug renamed sitec-911 → 911-michoacan (Aug 2026).
+      // Old URL was given to Google Play — keep it working with a permanent redirect.
+      {
+        source: '/legal/sitec-911',
+        destination: '/legal/911-michoacan',
+        permanent: true,
+      },
+      {
+        source: '/es/legal/sitec-911',
+        destination: '/es/legal/911-michoacan',
+        permanent: true,
+      },
+    ]
+  },
   images: {
     formats: ['image/webp'],
     deviceSizes: [640, 750, 1080, 1200],

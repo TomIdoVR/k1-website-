@@ -4,6 +4,11 @@ import { useState, FormEvent } from 'react'
 /* The locale-aware Link, not next/link: a Spanish visitor reading the consent
    notice must land on /es/privacy, not the English notice. */
 import { Link } from '@/i18n/navigation'
+/* From main. Unrelated to the Link above — git only read them as one conflict
+   because both sides added an import at the same position. trackLead is what
+   fires the GA4 generate_lead conversion, so losing it would silently break
+   lead attribution. */
+import { trackLead } from '@/lib/analytics'
 
 interface SelectOption {
   value: string
@@ -36,20 +41,12 @@ interface ContactFormProps {
 const FORMSPREE_URL = 'https://formspree.io/f/mjganywz'
 
 // Submitted values stay in English so lead routing is consistent across locales
-const COUNTRY_OPTIONS: { value: string; en: string; es: string }[] = [
-  { value: 'Mexico', en: 'Mexico', es: 'México' },
-  { value: 'Peru', en: 'Peru', es: 'Perú' },
-  { value: 'Colombia', en: 'Colombia', es: 'Colombia' },
-  { value: 'Chile', en: 'Chile', es: 'Chile' },
-  { value: 'Argentina', en: 'Argentina', es: 'Argentina' },
-  { value: 'Brazil', en: 'Brazil', es: 'Brasil' },
-  { value: 'Ecuador', en: 'Ecuador', es: 'Ecuador' },
-  { value: 'Guatemala', en: 'Guatemala', es: 'Guatemala' },
-  { value: 'Costa Rica', en: 'Costa Rica', es: 'Costa Rica' },
-  { value: 'Panama', en: 'Panama', es: 'Panamá' },
-  { value: 'Dominican Republic', en: 'Dominican Republic', es: 'República Dominicana' },
-  { value: 'United States', en: 'United States', es: 'Estados Unidos' },
-  { value: 'Other', en: 'Other', es: 'Otro' },
+const REGION_OPTIONS: { value: string; en: string; es: string }[] = [
+  { value: 'Latin America', en: 'Latin America', es: 'Latinoamérica' },
+  { value: 'North America', en: 'North America', es: 'Norteamérica' },
+  { value: 'Europe', en: 'Europe', es: 'Europa' },
+  { value: 'Asia', en: 'Asia', es: 'Asia' },
+  { value: 'Africa', en: 'Africa', es: 'África' },
 ]
 
 const inputStyle: React.CSSProperties = {
@@ -80,20 +77,23 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
     e.preventDefault()
     setStatus('submitting')
 
+    const formData = new FormData(e.currentTarget)
+
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        body: new FormData(e.currentTarget),
+        body: formData,
         headers: { Accept: 'application/json' },
       })
 
       if (res.ok) {
-        // Fire GA4 / GTM conversion event
-        if (typeof window !== 'undefined') {
-          const w = window as Window & { dataLayer?: object[] }
-          w.dataLayer = w.dataLayer || []
-          w.dataLayer.push({ event: 'generate_lead' })
-        }
+        // Fire GA4 conversion event (reaches GA4 via gtag — see lib/analytics)
+        trackLead('generate_lead', {
+          form_id: 'contact',
+          region: String(formData.get('region') || ''),
+          interest: String(formData.get('interest') || ''),
+          ...(campaignSource ? { campaign_source: campaignSource } : {}),
+        })
         setStatus('success')
       } else {
         setStatus('error')
@@ -175,12 +175,23 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           </div>
         </div>
 
-        {/* Country select */}
+        {/* Region select */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-          <label htmlFor="cf-country" style={labelStyle}>{es ? 'País' : 'Country'}</label>
-          <select id="cf-country" name="country" autoComplete="country-name" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
-            <option value="" disabled>{es ? 'Selecciona tu país' : 'Select your country'}</option>
-            {COUNTRY_OPTIONS.map((opt) => (
+          {/* Region, from main, not this branch's country field. main changed
+              country → a 5-region dropdown in v2.267 for lead allocation, and
+              this branch never picked that up — its country version is stale,
+              and COUNTRY_OPTIONS no longer exists after the merge, so keeping
+              it would not even compile.
+
+              The htmlFor/id pairing is this branch's accessibility fix and is
+              kept on top of main's semantics. autoComplete is deliberately
+              omitted: there is no valid token for a bespoke 5-region taxonomy,
+              and country-name would autofill "Mexico" into a list whose only
+              matching option is "Latin America". */}
+          <label htmlFor="cf-region" style={labelStyle}>{es ? 'Región' : 'Region'}</label>
+          <select id="cf-region" name="region" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
+            <option value="" disabled>{es ? 'Selecciona tu región' : 'Select your region'}</option>
+            {REGION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{es ? opt.es : opt.en}</option>
             ))}
           </select>

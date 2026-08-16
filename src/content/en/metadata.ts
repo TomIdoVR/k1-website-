@@ -5,8 +5,8 @@ export const metadata = {
     canonical: "https://kabatone.com/",
   },
   kDispatch: {
-    title: "K-Dispatch: CAD Software for 911, Fire & Emergency Dispatch",
-    description: "K-Dispatch reduces 911 response times with AI-powered unit recommendation, NG911 integration, and real-time video feeds. CAD dispatch software for police, fire, and EMS agencies.",
+    title: "CAD Dispatch Software for 911, Fire & EMS | K-Dispatch",
+    description: "AI computer-aided dispatch (CAD) software that cuts 911 response times with automated unit recommendation, NG911 integration, and live video for police, fire & EMS.",
     canonical: "https://kabatone.com/k-dispatch/",
   },
   kVideo: {
@@ -254,6 +254,16 @@ export const metadata = {
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
+  genetecAlternatives: {
+    title: "Best Genetec Alternatives for Public Safety 2026 | KabatOne",
+    description: "The best Genetec Security Center alternatives for public safety: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus and Motorola compared — why agencies switch and the best unified platform.",
+    canonical: "https://kabatone.com/resources/genetec-alternatives/",
+    og: {
+      title: "Best Genetec Alternatives for Public Safety (2026)",
+      description: "Compare the real Genetec alternatives — KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a VMS that only manages cameras.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
   bestVmsSoftware: {
     title: "Best VMS Software 2026: Choose a Video Management Platform | KabatOne",
     description: "How to choose the best VMS software: compare video management platform types, key criteria (any-brand cameras, AI analytics, dispatch integration), cost, and the best VMS for public safety.",
@@ -261,6 +271,46 @@ export const metadata = {
     og: {
       title: "Best VMS Software 2026: How to Choose a Video Management Platform",
       description: "Compare VMS platform types and the criteria that matter — any-brand cameras, AI analytics, dispatch integration — plus the best VMS for public safety and command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  milestoneAlternatives: {
+    title: "Best Milestone XProtect Alternatives 2026 for Public Safety | KabatOne",
+    description: "The best Milestone XProtect alternatives for public safety: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola compared — why agencies switch, selection criteria, and the best unified platform.",
+    canonical: "https://kabatone.com/resources/milestone-alternatives/",
+    og: {
+      title: "Best Milestone XProtect Alternatives for Public Safety (2026)",
+      description: "Milestone alternatives compared — KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, Motorola — and when a unified platform beats a pure VMS for command centers.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  bestAiVideoAnalytics: {
+    title: "Best AI Video Analytics Software 2026 for Public Safety | KabatOne",
+    description: "The best AI video analytics software for public safety: KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus compared — accuracy, false positives, camera compatibility, and when analytics must become dispatch.",
+    canonical: "https://kabatone.com/resources/best-ai-video-analytics-software/",
+    og: {
+      title: "Best AI Video Analytics Software for Public Safety (2026)",
+      description: "AI video analytics compared — KabatOne, BriefCam, Avigilon, Genetec, Verkada, Axon/Fusus — and why what happens after a detection matters as much as the detection.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  bestNg911Software: {
+    title: "Best NG911 Software 2026 for Emergency Call Centers | KabatOne",
+    description: "The best NG911 software for public safety: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 compared — i3/ESInet, multimedia intake, location accuracy, and when the call must become dispatch.",
+    canonical: "https://kabatone.com/resources/best-ng911-software/",
+    og: {
+      title: "Best NG911 Software for Emergency Call Centers (2026)",
+      description: "NG911 software compared — KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 — and why what happens after the call matters as much as the intake.",
+      image: "https://kabatone.com/images/og-default.jpg",
+    },
+  },
+  rtccSoftware: {
+    title: "Best RTCC Software 2026: Real-Time Crime Center Vendors Compared | KabatOne",
+    description: "Compare RTCC software vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada, KabatOne): what real-time crime center software is, selection criteria, cost, and the best unified platform for public safety.",
+    canonical: "https://kabatone.com/resources/rtcc-software/",
+    og: {
+      title: "Best RTCC Software: Real-Time Crime Center Platforms Compared",
+      description: "What RTCC software is, the main vendors compared, and when a unified platform beats a stack of integrated systems for real-time crime centers.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
