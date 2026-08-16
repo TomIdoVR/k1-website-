@@ -1,27 +1,5 @@
 import type { Metadata } from 'next'
-import HeroV3Platform from '@/components/hero-lab/HeroV3Platform'
-import CustomerStrip from '@/components/hero-lab/CustomerStrip'
-import BeforeAfter from '@/components/hero-lab/BeforeAfter'
-import HowItWorks from '@/components/hero-lab/HowItWorks'
-import Solutions from '@/components/hero-lab/Solutions'
-import PlatformModules from '@/components/hero-lab/PlatformModules'
-import CaseStudy from '@/components/hero-lab/CaseStudy'
-import Ecosystem from '@/components/hero-lab/Ecosystem'
-import Industries from '@/components/hero-lab/Industries'
-import TrustBand from '@/components/hero-lab/TrustBand'
-import { HeroLabFooter } from '@/components/hero-lab/HeroLabChrome'
-import '@/components/hero-lab/hero-lab-chrome.css'
-import '../hero-lab/hero-lab-light.css'
-import '@/components/hero-lab/trust-band.css'
-import '@/components/hero-lab/customer-strip.css'
-import '@/components/hero-lab/before-after.css'
-import '@/components/hero-lab/howitworks.css'
-import '@/components/hero-lab/solutions.css'
-import '@/components/hero-lab/case-study.css'
-import '@/components/hero-lab/ecosystem.css'
-import '@/components/hero-lab/industries.css'
-import '@/components/hero-lab/platform-modules.css'
-import '@/components/hero-lab/hero-split.css'
+import HomeComposition from '@/components/hero-lab/HomeComposition'
 
 /* Alternate homepage running order, for side-by-side review against /hero-lab.
    Same components, same styling — only the sequence changes, plus one new
@@ -81,21 +59,5 @@ export default async function HeroLabStoryPage({
   const { locale } = await params
   const es = locale === 'es'
 
-  return (
-    <>
-      <HeroV3Platform es={es} modules={false} split />
-      <CustomerStrip es={es} />
-      <BeforeAfter es={es} />
-      <PlatformModules es={es} />
-      <HowItWorks es={es} />
-      <Solutions es={es} />
-      <CaseStudy es={es} />
-      <Industries es={es} />
-      <Ecosystem es={es} />
-      <TrustBand es={es} />
-      <div className="page-light">
-        <HeroLabFooter es={es} />
-      </div>
-    </>
-  )
+  return <HomeComposition es={es} />
 }

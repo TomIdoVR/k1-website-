@@ -8,9 +8,19 @@ export default function GoogleTagManager() {
   if (!GTM_ID) return null
 
   return (
+    /* lazyOnload for the same reason as GoogleAnalytics: measured, this
+       container and gtag.js together cost 18 mobile Lighthouse points and 2.6s
+       of LCP while loading afterInteractive.
+
+       Worth a separate look: this container and GoogleAnalytics both load GA4
+       instrumentation from googletagmanager.com. If GTM-K55RZLP9 also fires
+       GA4, the site is loading two copies of the same tracking and may be
+       double-counting pageviews — removing whichever is redundant would save
+       more than deferring does. That needs someone with container access to
+       confirm, so nothing is removed here. */
     <Script
       id="gtm-script"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       dangerouslySetInnerHTML={{
         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

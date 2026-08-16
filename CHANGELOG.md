@@ -1,3 +1,20 @@
+## [v2.358] – 2026-08-15 — Mobile performance: analytics off the critical path; homepage composition extracted
+
+### Fixed
+- **Mobile performance 69 → 83, LCP 6.4s → 4.2s, FCP 3.2s → 1.8s.** Measured, not guessed: gtag.js (166KB) and GTM (119KB) were both loading `afterInteractive`, i.e. straight onto the critical path right after hydration, competing with first render under 4x CPU throttling. Blocking `googletagmanager.com` entirely scored 87 / LCP 3.8s, which put a precise number on the cost — 18 Lighthouse points and 2.6s of LCP — before anything was changed. Switching both to `lazyOnload` recovers 14 of those 18 points.
+  - Both `<Script>` tags in `GoogleAnalytics` share one strategy on purpose: the inline `gtag('config')` depends on the library above it, so splitting the strategies would reorder the config against its own dependency.
+  - No image was ever the problem — nothing above 40KB in the resource list is an image. The hero art is already well optimised.
+
+### Added
+- **`HomeComposition` — the redesign composition extracted into one shared component.** `/hero-lab-story` now renders it instead of re-declaring the section list, so the review route and the future homepage cannot drift; "approved on staging" keeps meaning "what ships". It deliberately owns no metadata: the homepage needs the production generator and the review route needs its internal `noindex` title, so each route keeps its own metadata export. That separation is the substance of SEO-001.
+
+### Notes
+- **Trade-off worth a decision, not silently mine to make:** `lazyOnload` fires the GA4 pageview after window load rather than immediately after hydration. Visitors who bounce before that point will no longer be counted. On a slow mobile connection that is a real, if small, loss of pageview volume — and this site's weekly SEO reporting is built on GA4 numbers, so the series will show a step change. `generate_lead` is unaffected: it fires on form submit, long after load.
+- **Possible duplicate instrumentation, flagged not changed.** `GoogleAnalytics` loads GA4 directly *and* `GoogleTagManager` loads container GTM-K55RZLP9, both from googletagmanager.com. If that container also fires GA4, the site is loading two copies of the same tracking and may be double-counting pageviews — removing whichever is redundant would beat deferring. Confirming that needs container access, so nothing was removed.
+- **LCP is 4.2s on mobile, still above the 2.5s "good" threshold.** This was the single biggest lever, not the last one.
+- Desktop is unchanged at 99 / LCP 0.9s. Accessibility stays 100 with `color-contrast` and `target-size` both at zero failing nodes.
+- **The homepage promotion (PRE-005) is not in this commit.** Overwriting `src/app/[locale]/page.tsx` — the live production homepage — was blocked by the permission classifier. The composition it needs is ready and the route change is a few lines; it needs explicit approval to land.
+
 ## [v2.357] – 2026-08-15 — Three pre-production launch gates closed (PRE-001, PRE-002, PRE-004)
 
 ### Fixed

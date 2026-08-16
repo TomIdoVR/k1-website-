@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.358 -->
+      <div class="tl-entry fixed" id="v2.358">
+        <div class="tl-meta"><span class="tl-ver">v2.358</span><span class="tl-date">2026-08-15</span></div>
+        <div class="tl-dot"></div>
+        <div class="tl-title">Mobile performance: analytics off the critical path</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Mobile 69 &rarr; 83, LCP 6.4s &rarr; 4.2s, FCP 3.2s &rarr; 1.8s.</strong> gtag.js (166KB) and GTM (119KB) both loaded <code>afterInteractive</code> — straight onto the critical path, competing with first render under 4&times; CPU throttling. Blocking googletagmanager entirely scored 87/3.8s, putting a precise number on the cost (18 points, 2.6s LCP) before changing anything; <code>lazyOnload</code> recovers 14 of those 18 points</li>
+            <li><strong>No image was ever the problem</strong> — nothing above 40KB in the resource list is an image. The hero art is already well optimised</li>
+            <li><strong>Trade-off, flagged not hidden:</strong> <code>lazyOnload</code> fires the GA4 pageview after window load, so very fast bounces stop being counted. Weekly SEO reporting is built on these numbers and will show a step change. <code>generate_lead</code> is unaffected — it fires on submit</li>
+            <li><strong>Possible duplicate tracking, flagged not changed:</strong> GA4 loads directly <em>and</em> via GTM container GTM-K55RZLP9. If that container also fires GA4, the site loads two copies and may double-count pageviews. Confirming needs container access</li>
+            <li>Extracted <code>HomeComposition</code> so the review route and the future homepage render one shared tree and cannot drift. Desktop unchanged at 99/LCP 0.9s; accessibility still 100</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.357 -->
       <div class="tl-entry fixed" id="v2.357">
         <div class="tl-meta"><span class="tl-ver">v2.357</span><span class="tl-date">2026-08-15</span></div>
