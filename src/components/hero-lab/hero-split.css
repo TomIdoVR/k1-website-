@@ -123,6 +123,33 @@
 
 .hsplit-copy .hll-ctas { justify-content: flex-start; margin-top: 26px; }
 
+/* The two restored guide links. Stacked rather than inline because the Spanish
+   strings are long enough to wrap mid-phrase on one line, which reads as a
+   single broken sentence instead of two distinct links.
+
+   Deliberately quiet — smaller than .hll-sub and in the muted tone — so they
+   sit under the CTA as a footnote. They are here to carry link equity to two
+   resource articles, not to compete with the headline for attention. */
+.hsplit-guides {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 20px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.hsplit-guides a {
+  color: #4b6da8;
+  text-decoration: none;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.hsplit-guides a:hover {
+  color: var(--hll-blue, #0757f7);
+  border-bottom-color: currentColor;
+}
+
 /* The proof metrics ride on the art too, aligned to the copy rather than
    centred — centred, they read as belonging to the image rather than the page. */
 .hll-page--split .hll-stats {

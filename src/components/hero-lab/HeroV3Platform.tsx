@@ -104,6 +104,40 @@ function HeroArt() {
   )
 }
 
+/* Two internal links the old homepage carried and the redesign dropped.
+
+   They are here for SEO continuity, not decoration. The homepage is the
+   highest-authority page on the site, and these were its only links to
+   /resources/how-c5-command-centers-work and
+   /resources/best-public-safety-software. Neither article was orphaned by the
+   promotion — they keep roughly 20 and 5 other inbound links plus sitemap
+   entries — but each lost its single most valuable one.
+
+   The anchor text is copied verbatim from the old homepage. Anchor text is the
+   ranking signal being preserved, so rewording it to fit the new voice would
+   throw away most of what restoring the links is for.
+
+   Styled as a quiet footnote under the CTA rather than as body copy: this hero
+   was deliberately trimmed, and two link lines should not read as a third
+   paragraph competing with the headline. */
+function HeroGuideLinks({ es }: { es: boolean }) {
+  return (
+    <p className="hsplit-guides">
+      {es ? (
+        <>
+          <Link href="/resources/how-c5-command-centers-work">Conoce cómo funcionan los centros de mando C5 →</Link>
+          <Link href="/resources/best-public-safety-software">Compara las mejores plataformas de software de seguridad pública →</Link>
+        </>
+      ) : (
+        <>
+          <Link href="/resources/how-c5-command-centers-work">Learn how C5 command centers work →</Link>
+          <Link href="/resources/best-public-safety-software">Compare the best public safety software platforms →</Link>
+        </>
+      )}
+    </p>
+  )
+}
+
 export default function HeroV3Platform({ es, modules = true, split = false }: { es: boolean; modules?: boolean; split?: boolean }) {
   const language = es ? 'es' : 'en'
   const cards = moduleCards(es)
@@ -120,6 +154,7 @@ export default function HeroV3Platform({ es, modules = true, split = false }: { 
               <h1 className="hll-headline" id="hll-title">{T.h1a[language]}<span className="hll-headline-grad">{T.h1b[language]}</span></h1>
               <p className="hll-sub">{T.sub[language]}</p>
               <HeroActions es={es} />
+              <HeroGuideLinks es={es} />
             </div>
           </div>
           <ProofMetrics es={es} />
