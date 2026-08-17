@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-08-14T07:01:50.587Z",
+  "runAt": "2026-08-17T07:02:32.618Z",
   "baseUrl": "https://staging.kabatone.com",
   "pagesAudited": 234,
   "coverage": {
@@ -21,8 +21,8 @@
     "coverageUnexplained": 0,
     "pagesWithIssues": 0,
     "pagesClean": 234,
-    "newIssues": 2,
-    "resolvedIssues": 3
+    "newIssues": 0,
+    "resolvedIssues": 0
   },
   "pages": [
     {
@@ -4520,38 +4520,6 @@
       }
     }
   ],
-  "newIssues": [
-    {
-      "severity": "info",
-      "check": "desc_near_max",
-      "msg": "Description near limit (197/160 ideal)",
-      "page": "https://staging.kabatone.com/resources/public-safety-software-costa-rica"
-    },
-    {
-      "severity": "info",
-      "check": "desc_near_max",
-      "msg": "Description near limit (200/160 ideal)",
-      "page": "https://staging.kabatone.com/resources/public-safety-software-ecuador"
-    }
-  ],
-  "resolvedIssues": [
-    {
-      "severity": "warning",
-      "check": "desc_long",
-      "msg": "Description too long (202 chars, max 200)",
-      "page": "https://staging.kabatone.com/resources/public-safety-software-costa-rica"
-    },
-    {
-      "severity": "warning",
-      "check": "desc_long",
-      "msg": "Description too long (205 chars, max 200)",
-      "page": "https://staging.kabatone.com/resources/public-safety-software-ecuador"
-    },
-    {
-      "severity": "warning",
-      "check": "title_long",
-      "msg": "Title too long (71 chars, max 70)",
-      "page": "https://staging.kabatone.com/resources/public-safety-software-suriname"
-    }
-  ]
+  "newIssues": [],
+  "resolvedIssues": []
 }
