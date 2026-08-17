@@ -38,6 +38,7 @@ export default function HeroCardCarousel({
      depends on the container width, so the same seven scroll at 1180px and fit
      at 1920px. */
   const [scrollable, setScrollable] = useState(true)
+  const [pageCount, setPageCount] = useState(1)
 
   useEffect(() => {
     const viewport = viewportRef.current
@@ -45,7 +46,14 @@ export default function HeroCardCarousel({
 
     /* 1px of tolerance: sub-pixel layout regularly leaves scrollWidth a hair
        over clientWidth with nothing actually clipped. */
-    const measure = () => setScrollable(viewport.scrollWidth - viewport.clientWidth > 1)
+    const measure = () => {
+      setScrollable(viewport.scrollWidth - viewport.clientWidth > 1)
+      /* Dots must count pages, not cards, or the fix above is invisible: two
+         real stops would still be drawn as seven dots, five of which do
+         nothing. Recomputed on resize because the same seven cards are two
+         pages at 1440px and seven at 390px. */
+      setPageCount(Math.max(1, Math.ceil(viewport.scrollWidth / viewport.clientWidth)))
+    }
     measure()
 
     const observer = new ResizeObserver(measure)
@@ -57,35 +65,48 @@ export default function HeroCardCarousel({
     return () => observer.disconnect()
   }, [cards.length])
 
-  const goTo = useCallback((index: number) => {
-    const next = Math.max(0, Math.min(index, cards.length - 1))
-    cardRefs.current[next]?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center',
-    })
+  /* Paging is by viewport, not by card, and that is the whole point.
+
+     One stop per card meant seven dots and seven stops while six of the seven
+     cards were already on screen. Advancing moved the track by one card width,
+     which at that size is a barely-perceptible nudge — so the control looked
+     broken: you clicked, clicked again, and nothing appeared to happen until
+     the sixth click finally revealed the one card that had been off-screen.
+
+     A page is one viewport width. With seven cards and six visible that is two
+     stops, not seven: one click, the last card appears, done. When the cards
+     genuinely do not fit (a phone showing one at a time) page count and card
+     count converge, so narrow screens behave exactly as before. */
+  const goTo = useCallback((targetPage: number) => {
+    const viewport = viewportRef.current
+    if (!viewport) return
+    const last = Math.max(0, Math.ceil(viewport.scrollWidth / viewport.clientWidth) - 1)
+    const next = Math.max(0, Math.min(targetPage, last))
+    viewport.scrollTo({ left: next * viewport.clientWidth, behavior: 'smooth' })
     setActiveIndex(next)
-  }, [cards.length])
+  }, [])
 
   const syncActiveCard = useCallback(() => {
     const viewport = viewportRef.current
     if (!viewport) return
 
-    const viewportCenter = viewport.scrollLeft + viewport.clientWidth / 2
-    let closestIndex = 0
-    let closestDistance = Number.POSITIVE_INFINITY
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth
+    const last = Math.max(0, Math.ceil(viewport.scrollWidth / viewport.clientWidth) - 1)
 
-    cardRefs.current.forEach((card, index) => {
-      if (!card) return
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2
-      const distance = Math.abs(cardCenter - viewportCenter)
-      if (distance < closestDistance) {
-        closestDistance = distance
-        closestIndex = index
-      }
-    })
+    /* Derive the page from scrollLeft rather than trusting the last goTo: the
+       track can also be moved by swipe, trackpad or keyboard, and scroll-snap
+       pulls the final resting position to the nearest card, so it rarely lands
+       on an exact multiple of the viewport width. Rounding absorbs that drift.
 
-    setActiveIndex(closestIndex)
+       The end is special-cased because the final page is usually partial — at
+       maxScroll the rounded quotient can still point at the page before it,
+       which would leave the "next" arrow enabled with nowhere to go. */
+    if (maxScroll <= 1) { setActiveIndex(0); return }
+    setActiveIndex(
+      viewport.scrollLeft >= maxScroll - 1
+        ? last
+        : Math.min(last, Math.round(viewport.scrollLeft / viewport.clientWidth)),
+    )
   }, [])
 
   useEffect(() => () => {
@@ -112,7 +133,7 @@ export default function HeroCardCarousel({
     }
     if (event.key === 'End') {
       event.preventDefault()
-      goTo(cards.length - 1)
+      goTo(pageCount - 1)
     }
   }
 
@@ -161,12 +182,12 @@ export default function HeroCardCarousel({
         </button>
 
         <div className="hll-carousel-dots">
-          {cards.map((_, index) => (
+          {Array.from({ length: pageCount }, (_, index) => (
             <button
               className="hll-carousel-dot"
               type="button"
               key={index}
-              aria-label={`${slideLabel} ${index + 1}`}
+              aria-label={`${slideLabel} ${index + 1} / ${pageCount}`}
               aria-current={activeIndex === index ? 'true' : undefined}
               onClick={() => goTo(index)}
             />
@@ -177,7 +198,7 @@ export default function HeroCardCarousel({
           className="hll-carousel-arrow hll-carousel-arrow--next"
           type="button"
           aria-label={nextLabel || 'Next card'}
-          disabled={activeIndex === cards.length - 1}
+          disabled={activeIndex >= pageCount - 1}
           onClick={() => goTo(activeIndex + 1)}
         >
           <svg viewBox="0 0 20 20" aria-hidden="true">
@@ -188,10 +209,12 @@ export default function HeroCardCarousel({
       )}
 
       {/* Announcing "3 / 7" when every card is already on screen describes a
-          position the user is not in. */}
+          position the user is not in — and now that a stop is a page rather
+          than a card, "/ 7" would also be the wrong denominator: the control
+          has as many positions as there are pages. */}
       {scrollable && (
         <span className="hll-sr-only" aria-live="polite">
-          {slideLabel} {activeIndex + 1} / {cards.length}
+          {slideLabel} {activeIndex + 1} / {pageCount}
         </span>
       )}
     </div>

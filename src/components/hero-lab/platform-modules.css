@@ -84,6 +84,18 @@
    carousel controls on below 1180px, which left two cards permanently
    unreachable on a laptop. In this section they are on at every width, and
    the track scrolls and snaps at every width to match. */
+/* Kept `mandatory`. A `proximity` variant was tried while chasing a Next
+   button that appeared not to scroll, on the theory that mandatory was
+   fighting the animated scroll. That was a bad diagnosis: the springback only
+   occurred for scrolls issued programmatically from the automation harness,
+   which does not animate `behavior: 'smooth'` at all. An instant
+   `scrollLeft = 200` snapped to 276 — the clamped end of the track — which
+   proves the end is a valid resting position under mandatory, so there is
+   nothing here for proximity to fix.
+
+   Mandatory is also the better behaviour on the surface that matters most:
+   on a phone a swipe reliably centres a card instead of drifting between
+   two. The real bug was in the paging logic, not the snapping. */
 .hll-modules .hll-cards-viewport {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
