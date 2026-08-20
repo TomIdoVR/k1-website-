@@ -110,7 +110,23 @@ export default function BeforeAfterCompare({
 
   return (
     <div className="ba-compare-wrap">
-      <div className="ba-compare" ref={ref}>{children}</div>
+      {/* Below 1180px this becomes a horizontal scroll strip, and a region that
+          scrolls has to be reachable by keyboard — WCAG 2.1.1. Without a tab
+          stop, a keyboard-only visitor could reach the arrow buttons but could
+          never scroll the strip itself, and the second panel's content was only
+          reachable by pointer.
+
+          tabIndex is applied only while it actually scrolls: above the
+          breakpoint the panels sit in a grid with nothing to scroll, and a
+          focusable element that does nothing is just a dead tab stop. Mirrors
+          how HeroCardCarousel already handles its own viewport. */}
+      <div
+        className="ba-compare"
+        ref={ref}
+        role={scrollable ? 'region' : undefined}
+        aria-label={scrollable ? panelLabels.join(' / ') : undefined}
+        tabIndex={scrollable ? 0 : undefined}
+      >{children}</div>
       {scrollable && (
         <div className="ba-scroll-controls">
           <button

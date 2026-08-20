@@ -481,6 +481,15 @@
 @media (max-width: 1180px) {
   .ba-compare-wrap { position: relative; }
 
+  /* The strip takes keyboard focus while it scrolls (WCAG 2.1.1), so that tab
+     stop needs to be visible. Matches the outline hero-lab-light.css already
+     applies to links, buttons and the module carousel's viewport — that rule
+     is scoped under .hll-page and does not reach this section. */
+  .ba-compare:focus-visible {
+    outline: 3px solid rgba(7, 87, 247, 0.45);
+    outline-offset: 4px;
+  }
+
   .ba-compare {
     display: flex;
     /* flex-start, not stretch. Stretch forces the shorter panel (the scatter
