@@ -6,8 +6,11 @@ const hero = readFileSync('src/components/hero-lab/HeroV3Platform.tsx', 'utf8')
 const carousel = readFileSync('src/components/hero-lab/HeroCardCarousel.tsx', 'utf8')
 const media = readFileSync('src/components/hero-lab/HeroCardMedia.tsx', 'utf8')
 const css = readFileSync('src/app/[locale]/hero-lab/hero-lab-light.css', 'utf8')
+/* The seven module cards left the hero when they became their own section, so
+   the assertions about them follow them here rather than being deleted. */
+const moduleCards = readFileSync('src/components/hero-lab/HeroModuleCards.tsx', 'utf8')
 
-test('hero contains the seven reference modules and approved proof metrics', () => {
+test('the seven reference modules survive, wherever they are rendered', () => {
   for (const label of [
     'CAD / 911',
     'Video & Analytics',
@@ -16,25 +19,38 @@ test('hero contains the seven reference modules and approved proof metrics', () 
     'Unified Digital Evidence',
     'Mobile Response',
     'Integrations',
-  ]) assert.match(hero, new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  ]) assert.match(moduleCards, new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
 
-  assert.equal((hero.match(/data-hero-card=/g) ?? []).length, 7)
-  assert.match(hero, /num: '70M\+'/)
-  assert.match(hero, /num: '40\+'/)
-  assert.match(hero, /num: '99\.9%'/)
+  assert.equal((moduleCards.match(/data-hero-card=/g) ?? []).length, 7)
+  /* And they are specifically NOT in the hero any more — that separation is
+     the point of the change, so it is worth pinning rather than assuming. */
+  assert.equal((hero.match(/data-hero-card=/g) ?? []).length, 0)
 })
 
-test('hero uses four bounded raster visuals and the 3D platform mark', () => {
+test('hero carries the approved proof metrics', () => {
+  /* 73M+ and 99.99% replaced 70M+ and 99.9%. Both are signed-off public claims,
+     so the test tracks the approved values rather than the original ones. */
+  assert.match(hero, /num: '73M\+'/)
+  assert.match(hero, /num: '40\+'/)
+  assert.match(hero, /num: '99\.99%'/)
+  /* Guard against the superseded figures reappearing. */
+  assert.doesNotMatch(hero, /num: '70M\+'/)
+  assert.doesNotMatch(hero, /num: '99\.9%'/)
+})
+
+test('four bounded raster visuals ship with the cards, and the hero keeps the 3D mark', () => {
+  /* The four card visuals moved with the cards; only the platform mark stayed
+     behind in the hero. Each is still asserted, just against its current home. */
   for (const asset of [
     'video-analytics.webp',
     'gis-map.webp',
     'digital-evidence.webp',
     'mobile-apps.webp',
-    'platform-mark.webp',
-  ]) assert.match(hero, new RegExp(`/images/hero-cards/${asset.replace('.', '\\.')}`))
+  ]) assert.match(moduleCards, new RegExp(`/images/hero-cards/${asset.replace('.', '\\.')}`))
+  assert.match(hero, /\/images\/hero-cards\/platform-mark\.webp/)
 
-  assert.equal((hero.match(/<HeroCardMedia/g) ?? []).length, 4)
-  assert.equal((hero.match(/className="hll-card-art /g) ?? []).length, 0)
+  assert.equal((moduleCards.match(/<HeroCardMedia/g) ?? []).length, 4)
+  assert.equal((moduleCards.match(/className="hll-card-art /g) ?? []).length, 0)
   assert.match(media, /className={`hll-card-media/)
   assert.match(media, /overflow-hidden media region/i)
 })
@@ -72,7 +88,21 @@ test('carousel exposes accessible controls and keyboard behavior', () => {
   assert.match(carousel, /aria-current=/)
   assert.match(carousel, /ArrowLeft/)
   assert.match(carousel, /ArrowRight/)
-  assert.match(carousel, /scrollIntoView/)
+  /* scrollIntoView is gone on purpose. It scrolled one CARD into view, which
+     is what produced seven dots and six dead clicks while six of the seven
+     cards were already on screen. Paging is now by viewport width via
+     scrollTo, so the assertion tracks the new mechanism. */
+  assert.match(carousel, /scrollTo\(/)
+  assert.doesNotMatch(carousel, /scrollIntoView/)
+})
+
+test('carousel pages by viewport, not by card', () => {
+  /* The regression this locks down: dots and stops must be derived from how
+     many viewport-widths the track occupies, never from cards.length. */
+  assert.match(carousel, /pageCount/)
+  assert.match(carousel, /Math\.ceil\(viewport\.scrollWidth \/ viewport\.clientWidth\)/)
+  assert.match(carousel, /Array\.from\(\{ length: pageCount \}/)
+  assert.doesNotMatch(carousel, /length: cards\.length \}/)
 })
 
 test('responsive styles provide a desktop stage and mobile snap carousel', () => {
