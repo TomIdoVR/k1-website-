@@ -12,6 +12,7 @@ Scheduled via macOS LaunchAgent: com.kabatone.seo-weekly.plist
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta
@@ -38,14 +39,77 @@ def expected_ctr(pos):
     if pos <= 20: return 0.015
     return 0.008
 
-def business_value(query):
+# ── Intent qualification ──────────────────────────────────────────────────────
+# Topic vocabulary alone does not make a query valuable. The dominant example is "c5":
+# 5,115 impressions at position 8.9, but the sibling queries are "c5 mapa",
+# "camaras de videovigilancia c5" (CDMX residents looking for the actual C5 agency),
+# "c5 flyover closures" (a Manila highway) and "c5 data centers" (unrelated sense).
+# Those clicks are unwinnable and worthless if won. Scoring them as a 2.5x opportunity
+# put the site's single largest non-opportunity at the top of the brief every week.
+
+_NON_BUYER = [
+    # citizen / civic-service intent
+    'mapa', 'map', 'camara', 'camaras', 'cámara', 'cámaras', 'videovigilancia',
+    'telefono', 'teléfono', 'numero', 'número', 'denuncia', 'denuncias',
+    'tramite', 'trámite', 'horario', 'ubicacion', 'ubicación', 'direccion', 'dirección',
+    # jobs
+    'empleo', 'vacantes', 'sueldo', 'salario', 'jobs', 'careers',
+    # unrelated senses of the same token
+    'flyover', 'closure', 'closures', 'traffic update', 'data center', 'data centers',
+    'datacenter', 'datacenters',
+]
+_BUYER = [
+    'software', 'platform', 'plataforma', 'system', 'systems', 'sistema', 'sistemas',
+    'solution', 'solutions', 'solucion', 'solución', 'vendor', 'vendors', 'provider',
+    'proveedor', 'best', 'top', 'demo', 'pricing', 'precio', 'cost', 'quote',
+    'alternative', 'alternatives', 'alternativa', 'vs', 'compare', 'comparison',
+    'integration', 'api', 'rfp', 'tender', 'licitacion', 'licitación',
+]
+_INFORMATIONAL = [
+    'what is', 'que es', 'qué es', 'how does', 'how do', 'como funciona',
+    'cómo funciona', 'diferencia', 'difference', 'meaning', 'significado',
+]
+# A query that is only these tokens carries no qualifier and cannot be read as a buyer.
+_BARE_TOKENS = {'c5', 'c4', 'cdmx', 'mexico', 'méxico', 'y', 'o', 'de', 'la', 'el', 'un', 'una'}
+
+
+def _has(query, terms):
+    """Word-boundary match. Substring matching wrongly fired 'ai' inside
+    'computer aided dispatch' and 'cad' inside 'academic'."""
     q = query.lower()
-    if any(t in q for t in ['dispatch', 'cad', '911', 'k-dispatch']): return 3.0
-    if any(t in q for t in ['c5', 'command center', 'centro de mando', 'c4']): return 2.5
-    if any(t in q for t in ['video management', 'vms', 'k-video', 'video analytics']): return 2.0
-    if any(t in q for t in ['vs', 'alternative', 'compare', 'peregrine', 'motorola']): return 2.0
-    if any(t in q for t in ['mexico', 'latam', 'municipal']): return 1.8
-    return 1.0
+    return any(re.search(r'\b' + re.escape(t) + r'\b', q) for t in terms)
+
+
+def query_intent(query):
+    """buyer | informational | navigational — whether the searcher could become a customer."""
+    q = query.lower().strip()
+    if _has(q, _BUYER):
+        return 'buyer'
+    if _has(q, _NON_BUYER):
+        return 'navigational'
+    if _has(q, _INFORMATIONAL):
+        return 'informational'
+    if set(re.findall(r"[a-z0-9áéíóúñü]+", q)) <= _BARE_TOKENS:
+        return 'navigational'
+    return 'buyer'
+
+
+def business_value(query):
+    intent = query_intent(query)
+    # Kept in the ranking so it stays visible and auditable, but never near the top.
+    if intent == 'navigational':
+        return 0.2
+    q = query.lower()
+    if _has(q, ['dispatch', 'cad', '911', 'k-dispatch']):                     base = 3.0
+    elif _has(q, ['c5', 'command center', 'centro de mando', 'c4']):          base = 2.5
+    elif _has(q, ['video management', 'vms', 'k-video', 'video analytics']):  base = 2.0
+    elif _has(q, ['vs', 'alternative', 'compare', 'peregrine', 'motorola']):  base = 2.0
+    elif _has(q, ['mexico', 'latam', 'municipal']):                           base = 1.8
+    else:                                                                     base = 1.0
+    # Informational queries earn GEO citations, not clicks.
+    if intent == 'informational':
+        base *= 0.6
+    return round(base, 2)
 
 CLUSTERS = {
     'Brand':             ['kabatone', 'kabat one', 'cityshob'],
@@ -59,9 +123,8 @@ CLUSTERS = {
 }
 
 def assign_cluster(query):
-    q = query.lower()
     for name, keywords in CLUSTERS.items():
-        if any(k in q for k in keywords):
+        if _has(query, keywords):
             return name
     return 'Other'
 
