@@ -672,6 +672,19 @@
         </div>
       </div>
 
+<div class="tl-entry fixed" id="v2.335">
+        <div class="tl-meta"><span class="tl-ver">v2.335</span><span class="tl-date">2026-08-11</span></div>
+        <div class="tl-title">Health check stops crying wolf; auto-rollback actually rolls back</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>The hourly failure emails were a false alarm — the site was never down.</strong> The workflow monitored <code>www.kabatone.com</code>, which 308-redirects to the apex <code>kabatone.com</code>, and demanded a literal <code>200</code> without following redirects. <code>SITE_URL</code> now points at the apex and all health curls use <code>-sIL</code></li>
+            <li><strong>Added <code>permissions: contents: read, issues: write</code>.</strong> The incident-issue step was separately 403ing because the default <code>GITHUB_TOKEN</code> carried only read scopes — a genuine outage would not have opened an incident</li>
+            <li><strong>The auto-rollback step could never actually roll back.</strong> It promoted the first READY deployment returning <code>200</code> — which is the one already serving production. It now reads the current production deployment and skips it, requires a candidate to serve both <code>/</code> and <code>/es</code>, falls through on a rejected promote, and polls production afterwards, failing the job if the site has not recovered</li>
+            <li>Caught while testing: the loop read into <code>UID</code>, which is <strong>readonly in bash</strong>, so the skip-the-live-deployment check never matched and it would have promoted the broken deploy. Renamed to <code>DEP_ID</code>/<code>DEP_URL</code></li>
+          </ul>
+        </div>
+      </div>
+
 <div class="tl-entry changed" id="v2.334">
         <div class="tl-meta"><span class="tl-ver">v2.334</span><span class="tl-date">2026-08-10</span></div>
         <div class="tl-title">Before/after rebuilt to the "Every system. One incident." direction</div>
