@@ -181,10 +181,18 @@
   background: rgba(255, 255, 255, 0.55);
 }
 
+/* #697590, not #7b89a8 — 3.47:1 against the header, under the 4.5 floor.
+   Only the inactive locale uses this colour; the active one is overridden
+   blue by the [aria-current='page'] rule below and already passed.
+
+   This is a duplicate of the rule in hero-lab-header.css and loads after it,
+   so fixing that file alone changed nothing: the old value kept winning the
+   cascade. Both are corrected; the duplication itself is worth collapsing
+   once the chrome stops being defined in two stylesheets. */
 .hll-language a {
   padding: 4px 6px;
   border-radius: 5px;
-  color: #7b89a8;
+  color: #697590;
   font-family: 'DM Mono', monospace;
   font-size: 9px;
 }
