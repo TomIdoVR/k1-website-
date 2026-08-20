@@ -1,3 +1,16 @@
+## [v2.323] – 2026-08-20 — One 502 wiped an entire week of SEO monitoring
+
+**Fixed**
+- **`scripts/seo_weekly_agent.py` now retries transient API failures.** The Monday 2026-08-17 run produced no report at all: the orchestrator died on `anthropic.InternalServerError: 502` with no retry wrapping the call, and `traffic-latest.html` still pointed at `traffic-2026-08-10.html`. `_create_with_retry` gives the turn 5 attempts with 5→60s exponential backoff on 5xx, rate-limit and connection errors; 4xx re-raises immediately so a bad request still fails fast.
+- **Step isolation in `main()`.** The keyword monitor and the GEO monitor run *after* the report step, with nothing between them — so the report crash took both down and that week has no snapshot of any kind. Each of the three steps now runs in its own `try`, and `main()` returns non-zero if any of them failed. A bad report no longer silently costs the monitors.
+- **`stop_reason == 'max_tokens'` had no branch in the tool loop.** A truncated assistant turn carries no `tool_use` block, so the loop would append a second assistant message and 400 on the next request — an obscure failure for a simple cause. It now exits 1 with a clear message. `max_tokens` raised 4096 → 8192, since the digest plus action plan was running close to the old cap. The same guard covers any other stop reason that yields no tool call.
+- **`MAX_TOOL_ITERATIONS` (20) backstops the `while True` tool loop.** The orchestrator needs ~4 turns in practice; there was no ceiling on a model that kept calling tools.
+
+**Notes**
+- `_create_with_retry` was exercised against synthetic 502 / 529 / 400 responses: retries and succeeds on 5xx, re-raises 400 without sleeping, gives up after the attempt cap.
+- `~/.claude/skills/seo-weekly-agent/SKILL.md` gained a troubleshooting table mapping each error-log symptom to its cause, and a stale line calling the orchestrator prompt "the Haiku prompt" was corrected — it runs on `claude-sonnet-4-6`.
+- The missing 2026-08-17 window has **not** been backfilled yet; that needs a manual `--days 28` re-run.
+
 ## [v2.322] – 2026-08-15 — Staging was serving `Allow: /` on a full duplicate of production
 
 **Fixed**

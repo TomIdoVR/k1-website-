@@ -777,6 +777,37 @@ def _run_tool(name: str, args: dict):
     raise ValueError(f'Unknown tool: {name}')
 
 
+MAX_TOOL_ITERATIONS = 20   # backstop: the orchestrator needs ~4 turns in practice
+API_MAX_ATTEMPTS = 5       # a single 502 killed the 2026-08-17 run; retry the turn
+
+
+def _create_with_retry(client, **kwargs):
+    """Call messages.create, retrying transient API failures with backoff.
+
+    The SDK already retries 5xx twice internally; this is the outer layer for
+    when that budget is exhausted (Anthropic 502s can persist for a minute or
+    two). Client errors (4xx other than 429) are re-raised immediately.
+    """
+    import time
+    import anthropic
+
+    for attempt in range(1, API_MAX_ATTEMPTS + 1):
+        try:
+            return client.messages.create(**kwargs)
+        except (anthropic.APIConnectionError, anthropic.RateLimitError) as e:
+            err = e
+        except anthropic.APIStatusError as e:
+            if e.status_code < 500:
+                raise
+            err = e
+        if attempt == API_MAX_ATTEMPTS:
+            raise err
+        delay = min(60, 5 * 2 ** (attempt - 1))
+        print(f'  [retry] {type(err).__name__} — attempt {attempt}/{API_MAX_ATTEMPTS}, '
+              f'sleeping {delay}s')
+        time.sleep(delay)
+
+
 def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
     import anthropic
 
@@ -809,15 +840,23 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
         ),
     }]
 
-    while True:
-        response = client.messages.create(
+    for iteration in range(1, MAX_TOOL_ITERATIONS + 1):
+        response = _create_with_retry(
+            client,
             model='claude-sonnet-4-6',
-            max_tokens=4096,
+            max_tokens=8192,
             system=ORCHESTRATOR_SYSTEM,
             tools=TOOLS,
             messages=messages,
         )
         messages.append({'role': 'assistant', 'content': response.content})
+
+        if response.stop_reason == 'max_tokens':
+            # No tool_use block to answer, so the loop would append a second
+            # assistant turn and 400 on the next request. Fail loudly instead.
+            print(f'ERROR: hit max_tokens on iteration {iteration} — output truncated. '
+                  f'Raise max_tokens and re-run.')
+            return 1
 
         if response.stop_reason == 'end_turn':
             for block in response.content:
@@ -849,8 +888,18 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
                         'is_error': True,
                     })
 
-        if tool_results:
-            messages.append({'role': 'user', 'content': tool_results})
+        if not tool_results:
+            # Neither end_turn nor a tool call — nothing to send back, so
+            # looping would append two assistant turns in a row and 400.
+            print(f'ERROR: no tool calls and stop_reason={response.stop_reason!r} '
+                  f'on iteration {iteration}. Aborting.')
+            return 1
+
+        messages.append({'role': 'user', 'content': tool_results})
+    else:
+        print(f'ERROR: orchestrator did not finish within {MAX_TOOL_ITERATIONS} '
+              f'tool iterations. Aborting.')
+        return 1
 
     return 0
 
@@ -1121,16 +1170,37 @@ def main():
     parser.add_argument('--no-ai', action='store_true', help='Skip LLM — raw analysis only')
     args = parser.parse_args()
 
-    if args.no_ai:
-        run_no_ai(dry_run=args.dry_run, days=args.days)
-    else:
-        run_orchestrator(dry_run=args.dry_run, days=args.days)
+    exit_code = 0
+
+    # The report step is the most failure-prone (network + LLM). Isolate it so a
+    # failure there doesn't also silently skip the two monitors below — that is
+    # what wiped the 2026-08-17 run entirely.
+    try:
+        if args.no_ai:
+            run_no_ai(dry_run=args.dry_run, days=args.days)
+        else:
+            exit_code = run_orchestrator(dry_run=args.dry_run, days=args.days) or 0
+    except Exception:
+        import traceback
+        print('ERROR: report step failed — continuing to monitors.')
+        traceback.print_exc()
+        exit_code = 1
 
     # Weekly keyword rank snapshot rides on the same scheduled run (no separate cron)
-    _run_keyword_monitor(dry_run=args.dry_run, days=args.days)
-    # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
-    _run_geo_monitor(dry_run=args.dry_run)
-    return 0
+    for label, fn in (
+        ('keyword-monitor', lambda: _run_keyword_monitor(dry_run=args.dry_run, days=args.days)),
+        # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
+        ('geo-monitor', lambda: _run_geo_monitor(dry_run=args.dry_run)),
+    ):
+        try:
+            fn()
+        except Exception:
+            import traceback
+            print(f'ERROR: {label} failed.')
+            traceback.print_exc()
+            exit_code = 1
+
+    return exit_code
 
 
 if __name__ == '__main__':

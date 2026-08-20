@@ -356,7 +356,23 @@
 
     <div class="timeline">
 
-      <!-- v2.321 -->
+      <!-- v2.323 -->
+      <div class="tl-entry fix" id="v2.323">
+        <div class="tl-meta"><span class="tl-ver">v2.323</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">One 502 wiped an entire week of SEO monitoring</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>scripts/seo_weekly_agent.py</code> now retries transient API failures.</strong> The Monday 2026-08-17 run produced no report at all &mdash; the orchestrator died on <code>anthropic.InternalServerError: 502</code> with no retry wrapping the call, and <code>traffic-latest.html</code> still pointed at <code>traffic-2026-08-10.html</code>. <code>_create_with_retry</code> gives the turn 5 attempts with 5&rarr;60s exponential backoff on 5xx, rate-limit and connection errors; 4xx re-raises immediately so a bad request still fails fast</li>
+            <li><strong>Step isolation in <code>main()</code>.</strong> The keyword monitor and the GEO monitor run <em>after</em> the report step, so the report crash took both down and that week has no snapshot of any kind. Each of the three steps now runs in its own <code>try</code>, and <code>main()</code> returns non-zero if any failed</li>
+            <li><strong><code>stop_reason == 'max_tokens'</code> had no branch in the tool loop.</strong> A truncated assistant turn carries no <code>tool_use</code> block, so the loop would append a second assistant message and 400 on the next request. It now exits 1 with a clear message, and <code>max_tokens</code> is raised 4096 &rarr; 8192 &mdash; the digest plus action plan was running close to the old cap</li>
+            <li><strong><code>MAX_TOOL_ITERATIONS</code> (20) backstops the <code>while True</code> tool loop.</strong> The orchestrator needs ~4 turns in practice; there was no ceiling at all</li>
+            <li><code>_create_with_retry</code> was exercised against synthetic 502 / 529 / 400 responses: retries and succeeds on 5xx, re-raises 400 without sleeping, gives up after the attempt cap</li>
+            <li>The missing 2026-08-17 window has <strong>not</strong> been backfilled yet &mdash; that needs a manual <code>--days 28</code> re-run</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- v2.322 -->
       <div class="tl-entry fix" id="v2.322">
         <div class="tl-meta"><span class="tl-ver">v2.322</span><span class="tl-date">2026-08-15</span></div>
         <div class="tl-title">Staging was serving <code>Allow: /</code> on a full duplicate of production</div>
