@@ -56,7 +56,17 @@ export default function CaseStudy({ es }: { es: boolean }) {
             fill
             sizes="(max-width: 900px) 100vw, 1240px"
             className="cust-photo"
-            priority
+            /* No `priority`. This photo sits far below the fold — the case
+               study is the seventh section — but `priority` made Next emit a
+               <head> preload for it, so the browser fetched it in parallel
+               with the hero art and the two competed for bandwidth during the
+               exact window that decides LCP. Confirmed on the deployed build:
+               two image preloads in <head>, this being the larger at 38KB.
+
+               Without it the image lazy-loads when it approaches the viewport,
+               which is the correct behaviour for a below-fold photo and leaves
+               the LCP element's preload uncontested. */
+            loading="lazy"
           />
           <span className="cust-scrim" aria-hidden="true" />
 
