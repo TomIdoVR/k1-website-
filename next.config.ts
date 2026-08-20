@@ -67,13 +67,26 @@ const nextConfig: NextConfig = {
       "font-src 'self' data: https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://cdn.prod.website-files.com https://www.googletagmanager.com https://www.google-analytics.com",
       "media-src 'self' https://commondatastorage.googleapis.com",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://formspree.io https://api.github.com",
+      /* Wildcards, not just www.google-analytics.com. GA4 does not post to a
+         single host: it picks a regional collector — region1.google-analytics.com
+         was observed live — so an allowlist naming only the www host lets the
+         page load while quietly dropping every hit. Report-Only caught this
+         before it could be enforced; an enforcing policy would have taken out
+         analytics in production with no visible symptom. */
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://formspree.io https://api.github.com",
       "form-action 'self' https://formspree.io",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "object-src 'none'",
       "upgrade-insecure-requests",
     ].join('; ')
+
+    /* vercel.live is the preview feedback toolbar. It is injected only on
+       preview deploys, so it is allowed only there rather than widening the
+       production policy for something production never loads. */
+    const previewCsp = csp
+      .replace("script-src 'self'", "script-src 'self' https://vercel.live")
+      .concat("; frame-src 'self' https://vercel.live")
 
     const common = [...security, { key: 'Content-Security-Policy-Report-Only', value: csp }]
 
@@ -87,7 +100,11 @@ const nextConfig: NextConfig = {
        indexable", never "de-index production". Local dev is unaffected either way. */
     const headers =
       process.env.VERCEL_ENV === 'preview'
-        ? [...common, { key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
+        ? [
+            ...security,
+            { key: 'Content-Security-Policy-Report-Only', value: previewCsp },
+            { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          ]
         : common
 
     return [{ source: '/:path*', headers }]
