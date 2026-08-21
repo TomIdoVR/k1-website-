@@ -1,3 +1,14 @@
+## [v2.373] – 2026-08-21 — Mobile: submenus restored, form errors and success no longer land off-screen
+### Fixed
+- **The mobile menu had no submenus.** Each of the four items was a single link into the *first* entry of its section — Solutions went to `/k-safety`, Industries to `/industries/public-safety`. On desktop the same four are dropdowns listing everything, so on a phone **four of the five solution pages and four of the five industry pages were unreachable from the menu entirely**. The pages existed and sat in the sitemap; nothing in the mobile UI led to them. Reachable nav links on mobile went from 4 to 15.
+- **The contact form never moved the viewport.** There were no refs, no `scrollIntoView` and no focus management anywhere in it, and the form is taller than a phone screen. Submitting with a required field empty blocked silently from the user's point of view — the browser focused a field that was off-screen (measured at 375×812: the Name field sat 380px above the viewport). On success the form is replaced by a card shorter than itself, so the confirmation could land outside the viewport too.
+- Both now scroll into view. The success heading takes focus and carries `role="status"` so it is announced rather than only shown, and a `role="alert"` notice states that required fields are missing — the native browser bubble is easy to miss on a phone and disappears on the next tap.
+
+### Notes
+- The submenus are nested `<details>` reusing the same `MODULE_LINKS` / `INDUSTRY_LINKS` constants the desktop dropdowns read, so the two navigations cannot drift apart. A shared `name` makes them mutually exclusive — browser-enforced, no JS and no click-outside handler.
+- Verified on a 375×812 deploy: submitting empty scrolls the first invalid field from −380px to +90px and focuses it, all four sections open with 44px targets, mutual exclusion holds, and the panel fits the viewport with no horizontal overflow.
+- Not verified live: the success-card scroll, which needs a real Formspree submission. It uses the same `scrollIntoView` path as the invalid-field case, which is verified.
+
 ## [v2.372] – 2026-08-21 — GA4 lead conversions were never sent: gtag needs an explicit send_to
 ### Fixed
 - **Every lead conversion was silently lost before reaching GA4.** Leads arrived at Formspree and the inbox, the branded success page rendered, and nothing errored — but `generate_lead` never reached GA4.
@@ -571,25 +582,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - `top: 0` with no offset is correct here: the hero-lab header is `position: relative`, not fixed, so it scrolls away rather than occupying the top of the viewport.
 - Verified by scripted scroll rather than by eye: the pinned header cycles K-Safety → K-Dispatch → K-Video → K-Traffic → K-Connect in order, and an expanded K-Traffic holds its header for 500px of scroll against the 547px available (item height minus header), releasing as the item leaves.
 
-## [v2.323] – 2026-08-06 — One H1 on the simulator and demo scenario pages (SEO-004)
-### Added
-- **An H1 on the twelve pages that had none.** `/simulator` and the five demo scenarios (`lpr`, `school`, `violence`, `medical`, `access-control`), in both locales, shipped server HTML with zero headings of any level — not just no H1. Each now carries exactly one, localized:
-  - Interactive public safety response simulator / Simulador interactivo de respuesta de seguridad pública
-  - License plate recognition scenario walkthrough / Recorrido del escenario de reconocimiento de placas
-  - Active shooter school response scenario walkthrough / Recorrido del escenario de respuesta a tirador activo en escuela
-  - Violence detection scenario walkthrough / Recorrido del escenario de detección de violencia
-  - 911 medical emergency scenario walkthrough / Recorrido del escenario de emergencia médica 911
-  - Unauthorized access response scenario walkthrough / Recorrido del escenario de respuesta a acceso no autorizado
-- New `ScenarioHeading` component carrying the shared treatment.
-
-### Notes
-- **Deliberate deviation from the ticket, which asked for a *visible* H1.** These are full-screen immersive players — dark, `min-h-screen`, with their own top bar — and neither `ScenarioPlayer` nor `TopBar` renders any heading that could be promoted. There is no surface that can carry a visible page heading without breaking the demo, so the H1 is visually hidden instead.
-- Hidden with `clip-path`, not `display: none` or `visibility: hidden`, so it stays in the accessibility tree and in the crawled document. Both of those would have removed it from the very things the ticket exists to fix.
-- Rendered from the page (a server component) and placed **outside** `Suspense`, so it is in the initial HTML rather than appearing after hydration — the ticket's validation step specifically checks server HTML.
-- The scenario pages became `async` and now take `params` in order to resolve the locale; they previously took no props.
-- Verified on a real deployment, not locally: all 12 URLs return exactly one `<h1>` with the correct localized text.
-- Their metadata is still English-only on the `/es/` routes — that is SEO-003, a separate content decision, and is untouched here.
-
 ## [v2.323] – 2026-08-20 — One 502 wiped an entire week of SEO monitoring
 
 **Fixed**
@@ -603,16 +595,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - `~/.claude/skills/seo-weekly-agent/SKILL.md` gained a troubleshooting table mapping each error-log symptom to its cause, and a stale line calling the orchestrator prompt "the Haiku prompt" was corrected — it runs on `claude-sonnet-4-6`.
 - The missing 2026-08-17 window has **not** been backfilled yet; that needs a manual `--days 28` re-run.
 
-## [v2.322] – 2026-08-06 — Keep preview and staging deploys out of the search index
-### Fixed
-- **The review host was fully indexable.** `k1-redesign.vercel.app` served `robots.txt` with `Allow: /`, no `X-Robots-Tag`, and `<meta name="robots" content="index, follow">` on production templates — while the review link was being shared. Canonicals pointing at `kabatone.com` are a hint, not a directive, so nothing prevented the staging host being indexed as duplicate content against the real site.
-- Preview and branch deploys now send `X-Robots-Tag: noindex, nofollow` on every path, via `headers()` in `next.config.ts`. This covers both `k1-redesign.vercel.app` and `staging.kabatone.com`, since Vercel marks branch deploys as `preview`.
-
-### Notes
-- Gated on `VERCEL_ENV === 'preview'` rather than `!== 'production'` on purpose. If the variable were ever missing or renamed, the fail-safe has to be "stay indexable" — the inverse would silently de-index `kabatone.com`, which is unrecoverable in a way that an indexed staging host is not.
-- `robots.txt` is deliberately left permissive on preview. Disallowing the crawl would stop crawlers *fetching* the page and therefore stop them ever seeing the `noindex` — which leaves already-indexed URLs stranded. Allowing the fetch and serving the header is what actually removes them.
-- Verified with `VERCEL_ENV=preview npx next build` before deploying, since a malformed `headers()` is a build-time failure.
-
 ## [v2.322] – 2026-08-15 — Staging was serving `Allow: /` on a full duplicate of production
 
 **Fixed**
@@ -625,21 +607,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - `main` is the Vercel production branch and `kabatone.com` is a production domain on the project, so `main` deploys resolve `VERCEL_ENV` to `production` and are unaffected. Confirmed against the project's domain list rather than assumed.
 - Verified with `tsc --noEmit` in a clean `/tmp` worktree — exit 0, 0 errors. The OneDrive checkout is polluted with untracked `hero-lab` files and produces phantom errors (finding F-1); it is not a trustworthy gate.
 
-## [v2.321] – 2026-08-06 — Reconcile citizens protected to 73M and uptime to 99.99%
-### Changed
-- **70M → 73M everywhere.** The site had been split between the two figures, which the external audit flagged: hero-lab said 70M+ while every `/vs/*` page already said 73M. Ten occurrences moved across the homepage, the LP page, `/vs/tyler-technologies`, `end-of-siloed-response`, `ProofBar`, `HeroV3Platform` and the EN metadata. **40 files now carry 73M and none carry 70M** — this reconciles the split rather than introducing a new number.
-- **99.9% → 99.99% everywhere.** 32 occurrences across the solution pages, industry pages, resource articles, industry hero components and the hero-lab proof bar.
-
-### Fixed
-- **Two hero images had 99.9% baked into the artwork.** The K-Video and K-Traffic performance panels are pixels, not DOM, so a text-only change would have left each hero contradicting the copy beside it — the same defect class as the earlier rail/art mismatches. Both were regenerated with "Platform uptime 99.99%" and reprocessed through the usual knockout/trim/1K-mark pipeline.
-  - Every other image still in use was checked against a contact sheet: none carries an uptime or citizens figure, so no further regeneration was needed.
-
-### Notes
-- `99.999%` survives in `resources/what-is-a-psap` and is correct — it is the PSAP industry "five nines" standard, in a file this change did not touch. The substitution could not have produced it: `99.9%` does not occur inside `99.999%`.
-- The uptime progress bars stay capped at `w: '99%'` so a 99.99% claim does not render as a visually full bar; only the label changed.
-- K-Traffic's regenerated header draws its logo as a squared cyan block bleeding to the panel corner rather than the rounded tile the other four use. The real 1K mark is composited in as usual, so only the tile silhouette differs, at roughly 15px on screen.
-- K-Traffic 247KB (was 306KB), K-Video 186KB (was 123KB).
-
 ## [v2.321] – 2026-08-14 — The audit was measuring escaped HTML, so apostrophes and ampersands counted as 5–6 characters
 
 **Fixed**
@@ -650,26 +617,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 **Notes**
 - No metadata strings were edited. Shortening compliant titles to satisfy a miscounting checker would have been the wrong fix — and any title or description within 6 characters of the cap that contains an apostrophe or ampersand was a latent false positive on the same footing.
 - Post-fix run: 234 pages, 0 critical / 0 warnings / 86 info, 234/234 clean. The 3 warnings resolved; the 2 "new" diffs are `desc_near_max` info entries surfacing at their true decoded lengths.
-
-## [v2.320] – 2026-08-06 — Audit follow-up: server-rendered lang, skip link, accessible contact form
-### Fixed
-- **Every page shipped with no `lang` attribute.** `[locale]/layout.tsx` carried a comment reading "Set lang attribute server-side before React hydrates" above an inline `<script>` that set `document.documentElement.lang` — in the browser, after parse. The served HTML had no `lang` at all, which is what assistive tech and language detection read before JS runs. `<html>` now lives in `[locale]/layout.tsx`, where the locale is actually available, and renders `lang` server-side. Verified on a production build: `/hero-lab` → `lang="en"`, `/es/hero-lab` → `lang="es"`.
-  - The root layout is now a pass-through. It cannot resolve the locale — it sits above the `[locale]` segment — so `getLocale()` there returned the default and Spanish pages would still have shipped `lang="en"`. Passing the locale down via a middleware header was also tried and does not work: `headers()` reads the request, and next-intl's rewrite drops request-header mutations.
-  - `params.locale` is validated against `routing.locales` before use. With `localePrefix: 'as-needed'` the segment can capture a real path component on un-prefixed English URLs, which produced `lang="contact"` and `lang="hero-lab"` in testing.
-  - Root `not-found.tsx` now renders its own `html`/`body`, since the root layout no longer provides them. `global-error.tsx` already did.
-- **Contact form had no production-safe fallback.** It carried no `method` or `action`, so the browser default was **GET to the current URL** — putting name, email, phone and message into the query string, and therefore into server and analytics logs, any time `handleSubmit` did not run. It now declares `method="post"` and posts to the Formspree endpoint as a no-JS fallback; the normal path still `preventDefault()`s and submits via `fetch`.
-- **Contact fields had no programmatic labels.** Zero `htmlFor` in the component — placeholders were doing the work, which screen readers do not treat as labels. All seven controls now pair `htmlFor`/`id`, and the five personal-data fields carry `autocomplete` tokens (`name`, `organization`, `email`, `tel`, `country-name`).
-- **English footer said "Comparativas".** `{es ? 'Comparativas' : 'Comparativas'}` — the ternary returned Spanish in both branches.
-
-### Added
-- **Skip link** as the first tab stop on every page, off-screen until focused, localized (`Skip to content` / `Ir al contenido`), targeting a new `<main id="main">`. There was none anywhere in `src/`.
-- **Consent notice** above the contact submit button in both languages, linking to the existing `/privacy` route.
-- The hero-lab mobile menu's accessible name now changes with state. It was a static `aria-label="Open menu"` that still read "Open menu" while open; `aria-label` cannot vary, so two visually-hidden labels swap on `[open]`. `<details>` already exposes the expanded state natively, so no `aria-expanded` is needed — contrary to the audit's note.
-
-### Notes
-- Sourced from an external end-to-end audit. Its top "launch blocker" — that `/hero-lab` is `noindex` and titled "Hero Lab (internal)" — is the intended state, not a defect: it is an internal review route, deliberately unlinked, as the comment in its own `page.tsx` says. No change made.
-- Still open from that audit and **not** addressed here, as they are content/ownership decisions: the 70M vs 73M split (hero-lab consistently says 70M+; every 73M is on a `/vs/*` page), the claim register for SOC 2 / 99.9% / 42%, untranslated `/es/demo/*` routes, and the missing H1s on `/simulator` and the five demo scenarios — all confirmed real.
-- **Unrelated pre-existing issue found while verifying:** the dev server does not run the middleware, so un-prefixed English URLs (`/hero-lab`, `/contact`) fall through to the homepage locally. `middleware.ts` sits at the repo root while the app uses a `src/` directory. The Vercel build picks it up and production is unaffected — verified against the deployment — but local dev testing must use `/en/…` prefixes. `middleware.ts` is byte-identical to before this change.
 
 ## [v2.320] – 2026-08-13 — The coverage guard v2.318 shipped was armed at 56 pages, not 187
 
@@ -685,31 +632,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - `seo-audit-guardrails` is superseded, not merged. Its `seo-audit.mjs` is an earlier implementation of the same guards; v2.318's is a superset. Only the baseline and the doc were carried across.
 - **Repo repair:** 24 refs under `.git/refs` had become unreadable OneDrive cloud placeholders (`Resource deadlock avoided`), so every `git fetch` aborted with `bad object` and no branch could be reconciled. All 24 were recovered from `.git/packed-refs`. `.git` living inside OneDrive is a structural exposure and will recur.
 
-## [v2.319] – 2026-08-05 — Full review: every image unique, and mobile fixed
-### Changed
-- **Ended image reuse across the redesign.** An inventory of the whole surface found **seven images doing duty in 21 places**: `ai.webp` on four pages, `gis.webp` on four, `video.webp` on four, `events.webp` on three, and `responder.webp`, `integrations.webp` and `dispatch.webp` on two each. The one flagged by eye — the phones-on-a-desk shot shared by K-Safety and K-Dispatch — was a symptom, not the problem.
-- **15 purpose-built replacements**, each written from the slot's own alt text so the picture says what the caption claims, and each matching the established dark-navy UI house style:
-  - **K-Dispatch** — responder receiving the dispatched call (`responder-dispatch`), AI recommendation with a human confirm step (`ai-dispatch-assist`)
-  - **K-Video** — cameras on the operational map (`cameras-on-map`), AI detection across feeds (`ai-video-detection`), live video linked into the CAD record (`video-in-dispatch`), plus a purpose-built accordion canvas (`k-video-wall`)
-  - **K-Traffic** — automated incident detection (`traffic-incident-detect`), congestion forecast (`ai-traffic-forecast`), flow-coloured GIS network (`traffic-flow-map`), cameras and enforcement (`traffic-enforcement`), recommended roadway actions (`traffic-decision-support`)
-  - **K-Connect** — audit trail (`audit-trail`), shared community feeds in an incident (`shared-feeds`), camera coverage cones (`coverage-map`), deployment options (`deployment-flex`)
-- Verified after the change: **36 distinct module images across the five solution pages, zero shared between any two.** The originals stay wherever they are still the single best fit, and on the live homepage and LP page, which are untouched.
-
-### Fixed
-- **Horizontal scroll on phones.** K-Connect measured a 409px document against a 375px viewport, K-Traffic 386px. Cause: `.sp-flow-t` is `white-space: nowrap`, and the flow diagram's `1fr`/`auto` grid tracks take an automatic minimum of min-content — so the tracks could not shrink below the widest label ("Loop detectors", "Organizations") and pushed the page sideways. Tracks are now `minmax(0, …)`, labels wrap, and nodes get `min-width: 0`. Both pages now measure 375 = 375.
-- **Touch targets below the 44px minimum**, all measured on a phone and all real controls:
-  - Language switcher **14×18 → 44×44**. The earlier fix targeted `.hll-language`, which is desktop-only; the one actually visible on a phone is `.hll-mobile-languages`.
-  - Footer links **159×18 → 159×44**
-  - Carousel arrows **35×35 → 44×44**
-  - Carousel dots **7×7 → 44×44** hit area via `::before`, dot still 7px visually
-- **Type below the readable floor on phones**: hero eyebrow 9.5px → 11px; solution-page stat labels and platform-module chips 10.5px → 12px.
-
-### Notes
-- Three images were regenerated after review rather than shipped as-is: the enforcement panel invented a fourth violation row duplicating another's location and time; the congestion forecast rendered three stat tiles with a duplicate "LEAD TIME 00 min"; the coverage map drew its cones as saturated beams that washed out the basemap.
-- The mock app-chrome text inside the homepage hero cards still measures 7–9px. Left alone deliberately — it is simulated miniature UI, not content anyone is meant to read.
-- `concept-5-hub.webp` still appears twice, but only in `/hero-lab-admin` (an internal concepts gallery) and in `HeroV2Hub`, a dead unreferenced component. Neither is on a reviewed page.
-- 15 new assets total ~950KB, largest 135KB.
-
 ## [v2.319] – 2026-08-13 — The audit now states coverage as a share of the repo, and the missing half turns out to be deliberate
 
 **Added**
@@ -721,19 +643,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - **The gap is policy, not a bug.** The accounting balances exactly: 234 crawled + 230 noindex-by-policy + 14 off-sitemap by design = 478, with **0 unexplained**. The 230 are the non-ICP country pages that the 2026-07-07 indexation triage set to `noindex,follow` and that `keepInSitemap` drops on purpose. Neither the sitemap nor the crawler is dropping routes.
 - **KAB-2481 is much smaller than estimated.** The remaining over-cap backlog was projected at ~332 strings. Measured against `NOINDEX_KEYS`: 412 strings are over cap, but 411 of them sit on noindexed pages and have no search impact. Exactly **one** was on an indexable page — the ES `psimAlternatives` description (218 chars) — trimmed to 190 here. The indexable over-cap population is now zero in both locales.
 - Guard verified by removing `/lp` from the allowlist: the run reported `2 unexplained` and named both `/lp` and `/es/lp`.
-
-## [v2.318] – 2026-08-05 — Ecosystem section: one rhythm for logos and text
-### Changed
-- **Every entry is now the same chip**, whether it carries a partner logo or a word. The section had been setting logos as bare images inside a plain text column, so two different visual languages sat in one list with no shared baseline, height or weight. A single bordered box per entry gives each column one rhythm and stops the two kinds fighting.
-- **The brands were the faintest thing in the section.** Logos rendered at `opacity: 0.4`, which put them *below* the plain text beside them (`#29323f`, weight 500) — so the strongest trust signal on the page was also the weakest mark on it. Now 0.82, going to full on hover.
-- **Normalised the marks on a fixed 88×18 box** instead of height alone. The seven assets range from 4.13:1 (RapidSOS) to 6.65:1 (Carbyne), so a shared 20px height produced widths from 83px to 133px — a 60% spread in visual mass that read as ragged. `object-fit: contain` in a fixed box equalises them.
-
-### Fixed
-- **Five columns of dead space.** The grid used `auto-fit, minmax(160px, 1fr)`, which resolved to six columns at desktop against seven groups — so "Drones & aerial" wrapped onto a row by itself and left the rest of that row empty. Fixed at four columns, giving a 4 + 3 layout with a single empty cell. Breakpoints move to 3 columns under 1080px, 2 under 720px, 1 under 440px.
-
-### Notes
-- Measured after the change at 1280px: 4 columns, 4 + 3 rows, 1 empty cell (was 5), all 23 chips a uniform 38px tall, all 7 logo boxes a uniform 88×18.
-- The underlying content still mixes three kinds of thing — vendor brands (Milestone, Genetec, Motorola), open standards (ONVIF/RTSP, NG911, OSDP/Wiegand) and device categories (Panic buttons, Gunshot detection, Drone feeds). The chip treatment unifies them visually; splitting them into separate bands is a content decision, not a styling one, and is left alone.
 
 ## [v2.318] – 2026-08-13 — The daily SEO audit can now refuse to run instead of reporting the wrong site
 
@@ -752,20 +661,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - Routine step 0 updated in Paperclip to match: sync is now checked in both directions, ahead-check before auditing, wait for the Vercel redeploy before running.
 - Coverage is still ~49% of the ~478 live URLs — tracked in KAB-2501/KAB-2502, not addressed here.
 
-## [v2.317] – 2026-08-05 — LIVE VIDEO thumbnail fix, and a corridor map for the K-Traffic hero
-### Fixed
-- **The rail's LIVE VIDEO block was showing fragments of other cameras.** `.sv-rail-thumb` painted `/images/modules/video.webp` — which is a *video wall*, a grid of many camera tiles — at `center/220%` inside a 113×46 box. The result landed mid-grid, so the thumbnail showed slivers of neighbouring tiles and pieces of their burned-in labels ("CAM CONDESA", "CAM OFFLINE") rather than one feed. It now uses `cam-still.webp`, a single street camera view authored at ratio 2.36 against the box's 2.46, sized `cover` so it barely crops. The `brightness(1.25)` lift that was compensating for the dark wall drops to `1.08`.
-- This affects all five products, since the rail is shared.
-
-### Changed
-- **Rebuilt the K-Traffic hero around a real corridor map.** The first version drew the corridor as a thin abstract strip — four signal icons and a flow bar floating in a mostly empty white panel — which read as sparse and unfinished next to the other four heroes. The centre panel is now a dense light-theme city basemap that fills the panel: Main St running diagonally with its **segments colour-coded by congestion** (green → amber → green), the four signals sitting *on* the road with white label chips (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s), cyan vehicle dots thickening through the amber stretch, and the three live intersection thumbnails tucked along the bottom edge.
-- The ADAPTIVE CONTROL card now sits fully inside the panel instead of straddling its edge.
-
-### Notes
-- Geometry unchanged and still matches the set: 574px wide, 0.324 scale at 1280px, side-by-side, nothing clipped.
-- 306KB, up from 217KB and now the heaviest of the five — the full basemap plus three photographic thumbnails cost real bytes. Re-encoding at quality 74 came out *larger* (321KB), so the alpha channel dominates rather than the colour data; left at 82.
-- Real 1K mark composited as usual (badge at 396,25 / 44×44, fill `rgb(3,173,204)`).
-
 ## [v2.317] – 2026-08-12 — Trimmed the 86 over-length titles and descriptions v2.316 deferred
 
 **Fixed**
@@ -778,20 +673,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - **The audit this batch came from covers about half the site, not all of it.** It is described as the first full-coverage run at 232 routes, but the repo has 239 routes × 2 locales ≈ 478 URLs, and it audited only 52 of the 282 country-guide URLs — Australia, India, Germany, France, Italy, Spain, Netherlands and Saudi Arabia were never checked despite being live and in `sitemap.ts`. All 232 URLs were fetched from `staging.kabatone.com`, whose deployed sitemap is behind the repo. Same failure class as the stale-branch false CLEAN in KAB-2480.
 - Consequently **the real over-length population is ~418 strings, not 86.** A full scan of both metadata files finds 203 over-cap in EN and 215 in ES. The 332 not covered here sit on pages the audit never fetched; tracked separately rather than widened into this batch, since they are live pages and the CTR plan warns against untargeted rewrites.
 - Typecheck: 0 errors outside pre-existing untracked `hero-lab*` files from the `hero-redesign` worktree.
-
-## [v2.316] – 2026-08-05 — Purpose-built call queue for the K-Dispatch homepage section
-### Added
-- **New K-Dispatch canvas: an active call queue**, not a map. Four roomy call rows — a selected P1 "Medical Emergency · Av. Reforma & Chapultepec · 00:18 · DISPATCHING", then P2 Traffic Accident (Circuito Interior, ON SCENE), P2 Structure Fire (Av. Insurgentes Sur, EN ROUTE) and P3 Noise Complaint (Col. Roma Norte, QUEUED) — over a RECOMMENDED UNITS strip with U-12 (2 min, tagged RECOMMENDED), U-07 (6 min) and U-31 (9 min).
-
-### Changed
-- **Deliberately not a second map.** This panel's active nav item is **Queue**, and its four capabilities are 911 intake, computer-aided dispatch, unit recommendation and audit trail — none of them geographic. K-Safety sits directly above it and now carries the map, so a second map here was the repetition worth removing. The queue also lets the panel show unit recommendation, which a map cannot.
-- **The art contradicted its own rail, again.** The rail reads "ACTIVE CALL · Medical Emergency · Av. Reforma & Chapultepec · HIGH PRIORITY · 00:18 · On scene 1 · En route 2"; the image showed **"INCIDENT 1842 · FORCED ENTRY"**. It also repeated **U-03 AVAILABLE and U-11 AVAILABLE twice each**, and had a panel clipped off its right edge. Row 1 is now the rail's own call down to the 00:18 timer, and U-12 is the unit the rail's activity feed says was recommended.
-- **Retires another shared image.** The section was showing `/images/modules/dispatch.webp`, which also appears on the live homepage, the LP page, `ModulesSection`, and the capability rows of K-Video and K-Traffic. It stays where it is still used.
-
-### Notes
-- Same measured safe area as v2.315: canvas 468×414 (ratio 1.13), art 4:3, so `object-fit: cover` eats ~7.8% off each side.
-- A first pass clipped the RECOMMENDED UNITS strip against the bottom edge and drew an outer card border that would have read as a frame inside the frame. Cover does not crop vertically here, so that clipping would have shipped — re-composed to fit with margin and no outer container.
-- 42KB at 1200×896, the lightest asset in the set: flat UI with no photographic content.
 
 ## [v2.316] – 2026-08-10 — The Spanish demo pages told Google not to index them
 
@@ -809,20 +690,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - Verified on a production build against all 232 sitemap URLs: warnings **122 → 86**. `canonical_not_self` 6 → 0, `h1_missing` 12 → 0, `og_image_missing` 8 → 0, `og_title_missing` 4 → 0, `og_desc_missing` 4 → 0. Zero critical throughout.
 - **Not fixed, deliberately: 42 over-length titles and 44 over-length descriptions across 50 pages**, all of them indexed (the LATAM/ICP country whitelist plus a few resource pages). `SEO/ctr-recovery-plan-2026-07-27.md` holds an explicit decision against blanket title/meta rewrites, on the grounds that untargeted rewrites risk rankings that are otherwise fine. Over-length titles are truncated by Google, not penalised. Worth doing as a scoped, measured batch — not as a sweep.
 
-## [v2.315] – 2026-08-05 — Purpose-built map for the K-Safety homepage section
-### Added
-- **New K-Safety map canvas** on the homepage Solutions accordion, with a **live video inset** floating over the map: a CAM-07 street view of the collision with a red LIVE badge and a "CAM-07 · Reforma & Chapultepec" caption, the same picture-in-picture idea as the K-Dispatch hero.
-- The map is now the incident the panel beside it is actually describing: a Traffic Accident on Paseo de la Reforma at Av. Reforma & Chapultepec, **U-14 and U-03 on scene**, **U-22, U-07 and U-31 inbound** on dashed routes. Districts are labelled POLANCO, CHAPULTEPEC, ROMA and CONDESA; every other street is deliberately unlabelled.
-
-### Changed
-- **The section's art contradicted its own copy.** Only the map is an image here — the left nav, the title bar and the right rail are all real DOM. The rail reads "INCIDENT 2451 · Traffic Accident · Av. Reforma & Chapultepec · HIGH PRIORITY · On scene 2 · En route 3", while the image showed *FORCED ENTRY* and *VEHICLE STOP* pins and carried **two units both labelled U-14**. Map and rail now tell one story, and all five unit IDs are distinct.
-- **Retires the most over-used image on the site.** The section was showing `/images/modules/gis.webp`, which also appears on the live homepage, the LP page (three times), `ModulesSection`, and the capability rows of all four other solution pages — ten places in total. K-Safety, the flagship product, was being represented on the homepage by the site's most generic stock shot. `gis.webp` stays where it is still used; this section no longer borrows it.
-
-### Notes
-- Authored to a **safe area**. The canvas is 468×414 (ratio 1.13) and the art is 4:3, so `object-fit: cover` eats ~7.8% off each side — measured, not estimated. A first pass placed the video card too far left and the crop cut its caption to "AM-07"; the art was re-composed to keep every label, marker and the card inside the central ~76%.
-- 75KB at 1200×896, opaque WebP — it goes through the Next optimizer normally, unlike the transparent solution heroes.
-- Verified at true render size rather than by screenshot: the Browser pane has been returning blank captures, so the crop was reproduced deterministically with sharp at the measured box.
-
 ## [v2.315] – 2026-08-10 — The SEO audit can finally see redirects, and runs against production
 
 **Fixed**
@@ -839,25 +706,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - **Remaining, correctly reported: 231 × `redirect_chain` on production** — the deployed sitemap still emits slashed URLs, so every one still 308s. That is precisely what v2.314 fixes, and it should fall to zero once that ships.
 - The daily job still targets staging; production is now worth a separate weekly run, since the 307 exists only there. See `SEO/weekly-report-2026-08-10.md`.
 
-## [v2.314] – 2026-08-05 — K-Traffic and K-Connect heroes: the set is complete
-### Added
-- **New K-Traffic hero.** The corridor view goes centre-stage: one arterial labelled MAIN ST with four signal nodes carrying their live timings (3rd Ave · 42s, 5th Ave · 38s, 7th Ave · 55s amber, 9th Ave · 30s) over a green→amber→green flow band, three live intersection thumbnails beneath, an ADAPTIVE CONTROL card reading "Corridor optimization / Main St · 4 signals / Signals 4 · Response 98% · Congestion -34%", incidents on the left (Collision, Stalled Vehicle, Signal Fault, Congestion Spike) and SYSTEM PERFORMANCE on the right — the page's own five `perfBars` values (98 / 34 / 91 / 99.9 / 87) plus 150+ intersections and 12 cities.
-- **New K-Connect hero.** The connected-organizations table goes centre-stage, because that is what K-Connect actually is: Riverside Mall 8 cameras, City Hospital 12, Central Bank 4 all Shared, Metro School District 6 Pending, with three shared feed thumbnails beneath and a SHARING ACTIVE card reading "Connected organizations / Role-based access · Audited / Cameras shared 12 · Access Role-based · Expiry Automatic". Access log on the left (granted / viewed / expired / requested), and on the right the permission model — Dispatcher · View live, Investigator · View + export, Supervisor · Full access — over 48 organizations, 312 shared cameras, 27 active grants.
-- Both carry the **real 1K KabatOne mark** in their app icons, composited in by pixel surgery (K-Traffic 437,34 / 38×38 fill `rgb(3,175,204)`; K-Connect 460,21 / 57×57 fill `rgb(40,173,94)`).
-
-### Changed
-- **Retires the last two stand-ins.** K-Traffic pointed at `k-traffic-mockup.webp` and K-Connect at `k-connect-mockup.webp` — the same shots the homepage and the Solutions accordion use. Those files stay where they are still used; the solution pages no longer borrow them.
-- `heroEvent` and `chips` removed from both content files: the compositions are self-contained, matching K-Dispatch and K-Video.
-- **All five solution heroes are now purpose-built** and share one measured geometry.
-
-### Fixed
-- **The logo-swap script leaked on K-Connect.** It found the tile interior by flood-filling inward from the badge's bounding box, which works only while the invented glyph is fully enclosed by tile fill. K-Connect's glyph touched the tile's top edge, so the flood ran straight through the gap and left roughly half the glyph unpainted under the composited mark. Replaced the flood with a scanline-enclosure test — a pixel is tile interior when it has fill both left and right on its row *and* above and below in its column — which handles rounded corners without depending on connectivity.
-
-### Notes
-- Geometry verified for both at 1280px: 574px wide, 0.324 scale, side-by-side with the copy, nothing clipped — identical to K-Safety, K-Dispatch and K-Video.
-- K-Traffic 217KB, K-Connect 110KB. K-Connect is the lightest of the five; its flat table compresses far better than the photographic corridor and street scenes.
-- Known cosmetic, same class as the K-Safety camera timestamp: the K-Connect hospital thumbnail carries a garbled signboard. It renders at roughly 3px at hero scale so it reads as texture, but it is there under magnification.
-
 ## [v2.314] – 2026-08-10 — Every canonical URL now resolves to a 200
 
 **Fixed**
@@ -869,25 +717,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - **The obvious fix — `trailingSlash: true`, keeping the slashed form Google has indexed — was tried and rejected.** Next applies it to route handlers too; only static files with extensions and `.well-known/` are exempt. `/api/slack/events` would have begun returning a 308, and Slack's Events API does not follow redirects. Going unslashed instead aims the canonicals at the URL that already serves 200 and leaves the Slack routes alone.
 - Verified against a production build: canonical, `og:url`, all three hreflang alternates and the JSON-LD `url` on `/resources/best-cad-dispatch-software` are unslashed and identical; the ES counterpart matches; the homepage keeps `https://kabatone.com/`; all 232 sitemap entries are unslashed except the root; the served paths return 200 with no redirect; and `POST /api/slack/events` still answers 401 (signature check) rather than a 308.
 - Does not fix the 307 on its own — that needs the apex set as primary domain in Vercel. Until then this takes the chain from 2 hops to 1. See `SEO/weekly-report-2026-08-10.md`.
-
-## [v2.313] – 2026-08-05 — K-Video hero: purpose-built video wall composition
-### Added
-- **New K-Video hero**, third in the set after K-Safety and K-Dispatch and built to the same recipe: few elements at large type, drawn for the hero slot rather than a dense screenshot shrunk to fit. The product's core surface goes centre-stage — here the **live video wall**, with a focused CAM-14 street feed carrying teal AI bounding boxes, a red LIVE badge, and three camera thumbnails (CAM-02 / CAM-07 / CAM-11) beneath it.
-- **Detections feed on the left** — License Plate 0:04, Person of Interest 0:26, Loitering 1:12, Abandoned Object 2:40 — and **AI performance on the right**: face recognition 94%, LPR read rate 99%, anomaly detection 88%, platform uptime 99.9%, plus KPI tiles for 1,204+ active cameras and 15+ AI models. Those four bars are the page's own `perfBars` values, so the artwork and the section below it cannot drift apart.
-- The **AI DETECTION card** the hero used to overlay in DOM is now inside the artwork, sitting on the focused feed where an operator would see it: "Vehicle of interest", Matched · Plate list, LPR read rate · 99%, Confidence · 96%.
-- Carries the **real 1K KabatOne mark** in its app icon, composited in by pixel surgery (badge found at 299,30 / 51×52, fill `rgb(30,173,197)`), so it never shipped with an invented glyph.
-
-### Changed
-- **Retires the stand-in.** The hero pointed at `video.webp` — the same image the page already used in its capability rows — so the page showed it twice. That duplicate is gone.
-- `heroEvent` and `chips` removed from `sol-kvideo.ts`: the composition is self-contained now, same as K-Dispatch.
-
-### Fixed
-- **Pinned the Turbopack workspace root** in `next.config.ts`. A stray `package-lock.json` in the home directory made Turbopack infer `/Users/omercnaani` as the root, and every module resolution failed from there (`Can't resolve 'tailwindcss'`) — the dev server compiled nothing. `turbopack.root` now points at the project directory.
-
-### Notes
-- Geometry verified identical to K-Dispatch at 1280px: 574px wide, 0.324 scale, side-by-side with the copy, nothing clipped.
-- 124KB — the lightest of the three heroes (K-Dispatch 208KB, K-Safety 213KB); the light panels and flat UI compress better than K-Dispatch's street map.
-- Two contrast "failures" flagged during the sweep were false positives — the features and case bands paint their near-black via `background-image` gradients, so a `background-color`-only check walks past them to the light page body. Real ratios are 7.7:1 and higher.
 
 ## [v2.313] – 2026-08-04 — SEO: market segmentation + synthetic-impression filter
 
@@ -940,16 +769,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - The lockup PNG is a **mask** (alpha carries the shape, RGB is white), which is why it reads as blank on a light background. The mark had to be isolated from the wordmark first — a column-wise alpha scan found the gap at x=56, putting the mark at x∈[13,55], y∈[5,41].
 - File 213KB (from 194KB); the composite adds detail the encoder has to carry. Still well inside the budget set in v2.308.
 
-## [v2.309] – 2026-08-03 — K-Safety hero back beside the copy (drops the full-bleed workaround)
-### Fixed
-- **The hero art sits next to the headline again instead of stacked below it.** `heroWide` was introduced to render the art full-bleed under the copy — a workaround for the *previous* dense screenshot, whose baked-in labels were unreadable in a half-width column. v2.308 replaced that art with a composition drawn for the hero slot, which made the workaround obsolete; it should have been removed in the same change.
-- **Bleed is now derived from the gutter that actually exists** — `calc(-1 * max(0px, (100vw - 1240px) / 2 - 16px))`. A fixed `-12vw` clipped the rightmost analytics panel 70px off-screen at 1280px, where the gutter is only 20px wide. The visual now grows with the viewport and can never overflow it.
-- Column ratio returned from `1fr 1.42fr` to the design's `1fr 1.12fr`. The wider visual column had been compensating for the old art and was squeezing the copy to ~443px; the gutter bleed recovers that size without taking width from the headline.
-
-### Notes
-- Measured across widths, image scale / effective label size, none clipped: 1280 → 32% / 7.1px, 1600 → 41% / 9.1px, 1920 → 50% / 11.0px. Mobile stacks with the bleed correctly zeroed.
-- `heroWide` and its `.is-wide` CSS are kept, unused. They remain the right tool if a future hero genuinely needs a dense full-width screenshot — the flag was not wrong, it was just applied to a problem that has since been solved a better way.
-
 ## [v2.309] – 2026-08-04 — SEO: weekly brief 2026-08-04
 
 **Added**
@@ -957,17 +776,6 @@ Four items from the professional website audit (kabatone-homepage-redesign-audit
 - `SEO/audits/weekly-2026-08-04.md` — CEO-format brief: traffic by channel, search deltas, GEO citation status, and P0/P1/P2 action plan tied to named queries
 - `SEO/audits/traffic-2026-08-04.html` — self-contained HTML dashboard (deterministic fallback — no Anthropic key in this environment)
 - `SEO/audits/traffic-latest.html` — symlink-equivalent latest view
-
-## [v2.308] – 2026-08-03 — K-Safety hero: professional three-panel composition
-### Changed
-- **Replaced the K-Safety hero with a purpose-built three-panel composition** (incident board flanked by a live-camera panel and analytics). Generated to be legible at the size the slot actually renders, rather than a dense screenshot shrunk to fit.
-- The console now reads as real enterprise software rather than a wireframe: left icon rail, `Board / Map / List` segmented control, filter dropdowns, Export action, search field, notification badge and avatar stack, per-incident category icons, priority pills, unit chips, elapsed timers, KPI deltas, and charts with real axes and a legend.
-
-### Notes
-- **The root problem was density, not size.** The previous art was 1774px of content rendering at ~44%, putting its 11px UI labels at ~4.8px on screen. No amount of widening the column could fix a ~2.5x shortfall — the fix was a composition with roughly a third of the elements at 2–3x the type size. Now renders at 90% scale, so the same labels land at ~9.9px.
-- **File size halved (499KB → 257KB)** by dropping `alphaQuality` from 100 to 70. The alpha channel here is mostly binary, so the extra precision was pure waste; shadows were checked for banding afterwards and are clean.
-- **Confirmed `unoptimized` is genuinely required, not cargo-culted.** Tested Next's optimizer directly: with an explicit `Accept: image/webp` header it returns WebP but with `hasAlpha = false` and 0% transparent pixels — it flattens alpha even when not falling back to JPEG. Separately, `deviceSizes` is capped at 1200 in `next.config.ts`, so the optimizer could not have served this 1774px hero at native width regardless.
-- Background knockout samples the true canvas colour (237,241,243 — not white, which is why an earlier white-threshold pass only caught 2.5%) and uses a distance ramp so drop shadows fade out instead of hard-clipping.
 
 ## [v2.308] – 2026-08-04 — Weekly brief caller: LLM synthesis + HTML dashboard from the collector JSON
 
@@ -1272,15 +1080,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - Verified all five products render 10/10 highlighted, EN/ES labels and legend, 2 × 5 grid, no console errors, TypeScript clean.
 - Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
 
-## [v2.288] – 2026-07-29 — Remove the "Watch Overview" hero button (/hero-lab)
-### Removed
-- **Pulled the secondary "Watch Overview" / "Ver Resumen" CTA from the hero.** It pointed at `/demo` with no overview video behind it, so it promised something that does not exist yet. "Book a Demo" is now the hero's single call to action and centres on its own.
-
-### Notes
-- `T.watch` and the `.hll-btn-ghost` / `.hll-play` styles are deliberately left in place, so restoring the button once a video exists is a one-line change rather than a rebuild.
-- Only occurrence in the codebase — no equivalent button exists outside `/hero-lab`, so nothing else changed.
-- Verified EN/ES, no console errors, TypeScript clean. Scoped to `/hero-lab` (noindex, unlinked); the live homepage is untouched.
-
 ## [v2.288] – 2026-08-04 — GEO-049: RTCC citability refresh — add Flock Safety (KAB-2446)
 ### Changed
 - **`/resources/rtcc-software/` (EN + ES) — citability refresh, no new page.** The weekly GEO monitor found the root cause of the 3-cycle RTCC citation volatility: **Flock Safety (FlockOS) is now the single most-cited RTCC platform** in AI answers ("best RTCC software" cites FlockOS/Axon/Activu/Case Closed), yet it was entirely absent from this listicle's vendor table and FAQ — making the page read as incomplete/dated to answer engines.
@@ -1290,19 +1089,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - **Weekly GEO monitor (KAB-2446, RTCC focus, live web-search proxy):** "real-time crime center RTCC software vendors" holding **Y** — `/resources/what-is-a-real-time-crime-center` explainer surfaces AND KabatOne is named in the AI answer as the unified-platform / C5-LATAM option. "best RTCC software" phrasing still **N** — the `/resources/rtcc-software/` listicle is not surfacing; this refresh targets that gap. Competitors seen: Flock Safety/FlockOS, Axon/Fusus, Genetec, Motorola, Verkada, Activu, Case Closed.
 - **Next up:** re-check the "best RTCC software" citation after indexing (~1–2 weeks); RTCC and "best VMS for cities" remain the softest queries. CTR-recovery Track A (live GSC data) still blocked on Omer running `scripts/gsc_reauth.py` interactively.
 - Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Not pushed — awaiting explicit push approval.
-
-## [v2.287] – 2026-07-29 — Revert hero arc; rework the capability matrix (/hero-lab)
-### Changed
-- **Reverted the 3D half-circle hero arc from v2.283.** `hero-lab-light.css` is restored byte-for-byte to its v2.282 state, so the hero cards sit on one flat baseline again. The arc was an explicit one-attempt experiment; the flat row is the version we're keeping.
-- **The capability matrix now shows a fixed 10-module platform set for every product**, so the modules never change between selections — only which of them are highlighted. Added the missing **CAD / Dispatch** module (with a headset icon) and locked the order to: GIS · Video · Event Management · CAD / Dispatch · AI · Integrations · Workflows · Evidence · Mobile · BI.
-- **Core modules per product** now read: K-Safety (GIS, Event Management, Video, Workflows, Mobile, BI) · K-Dispatch (CAD / Dispatch, GIS, Workflows, Mobile, Integrations, BI) · K-Video (Video, AI, Evidence, Integrations, GIS) · K-Traffic (GIS, Video, AI, Integrations, Event Management, BI) · K-Connect (Integrations, Video, Workflows, GIS, AI). Non-core modules stay visible in a muted gray rather than being hidden.
-- **Core highlight is now a fixed blue (`#1858f5`), not the product's accent colour.** It previously tinted itself per product (red for K-Dispatch, purple for K-Video, …), which contradicts a legend that says "Blue — Core to this solution" — the highlight has to mean one thing regardless of selection.
-- Legend updated to **"Blue — Core to this solution"** / **"Gray — Available on the same platform"**, localized EN/ES.
-
-### Notes
-- Grid is now 2 × 5 on desktop and 2 × 5 on mobile. Ten across was too cramped for the longer labels, and the old 3-column mobile rule left a stranded single tile on the last row; 10 divides cleanly into 5 and 2 only.
-- Verified all five products against the spec programmatically (correct core set, no missing/extra, correct muted count), plus EN/ES labels, mobile layout, and no console errors. TypeScript clean.
-- Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
 
 ## [v2.287] – 2026-07-28 — GEO roundup: Best PSIM Alternatives (KAB-2037)
 ### Added
@@ -1315,16 +1101,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - **Next up:** RTCC citability refresh (GEO-049) — the existing `/resources/rtcc-software/` page already names KabatOne but citation has flagged Y→N volatile for 3 cycles running; needs a content pass, not a new page. CTR-recovery Track A (live GSC data) remains blocked on Omer running `scripts/gsc_reauth.py` interactively.
 - Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Not pushed — awaiting explicit push approval.
 
-## [v2.286] – 2026-07-29 — Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One
-### Changed
-- On the `/legal/sitec-911` page, replaced every visible mention of **"SITEC 911"** with **"911 Michoacán"** and every mention of **"CityShob"** (incl. "CityShob Software Ltd." and the support email) with **"Kabat-One"**, across both the EN and ES routes.
-- Text-only rebrand: the URL slug (`/legal/sitec-911`), route folder, component name, and page metadata canonical/hreflang are all unchanged, so the live URL already given to Google Play keeps working.
-
-## [v2.286] – 2026-07-29 — Legal page URL: /legal/sitec-911 → /legal/911-michoacan
-### Changed
-- Renamed the legal page route from `/legal/sitec-911` to `/legal/911-michoacan` (EN + ES), updating the `SLUG` constant, canonical URL, and hreflang alternates.
-- Added permanent (308) redirects from the old `/legal/sitec-911` and `/es/legal/sitec-911` URLs to the new slug in `next.config.ts`, so the link already submitted to Google Play keeps resolving.
-
 ## [v2.286] – 2026-07-27 — CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages
 ### Changed
 - **Freshness + reviewer byline** — `/resources/what-is-video-analytics/` and `/resources/what-is-video-management-software/` (EN+ES) now show "Updated: July 2026 · Reviewed by the KabatOne platform team" above the FAQ block, and `articleSchema()`'s `dateModified` is bumped to `2026-07-27` (was frozen at the `datePublished` value, `2026-05-18`).
@@ -1332,16 +1108,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 ### Notes
 - Board-approved via [KAB-1980](/KAB/issues/KAB-1980) ("both") on the [KAB-1721](/KAB/issues/KAB-1721) CTR-recovery request_confirmation: Track A (GEO citation push) + Track C (ranking lift on these two page-2-stuck flagship pages, ~30K combined impressions at pos 20–22). Track A is largely already executed via the GEO roundup program (genetec/milestone/ai-video/ng911/unified-platform, v2.277–v2.284, unpushed). This is the first concrete Track C on-page move: a freshness/E-E-A-T signal, cheap and directly supported by Google's stated preference for demonstrably-current content on definitional/how-it-works queries stuck on page 2. Content depth on both pages is already substantial (9+ FAQs each) — next Track C lever if this doesn't move the needle within 2–3 weekly pulls: earn or simulate real update history (changelog-style "what changed" note) rather than adding more FAQ volume.
 - Typecheck: 0 errors. Committed to `seo-track-c-vms-ranklift` (from `origin/nextjs` @ v2.283, worktree `/tmp/k1-track-c-wt`). **Not pushed** — project rule: no push without explicit request. Two other unpushed branches sit ahead of v2.283 (v2.284 `seo-unified-platform`, v2.285 `seo-va-ctr-rescue`) and will need reconciling before/at push time.
-
-## [v2.285] – 2026-07-29 — Fix: homepage partner logos self-hosted (drop external hotlinks)
-### Fixed
-- Homepage partner strip (Genetec, RapidSOS, Carbyne, Corsight, Motorola, iPro) was hotlinking each logo directly from the partner's own site/CDN. Swapped all six to the local `public/images/partners/` assets, matching the pattern already used for Milestone.
-- Removes external requests from a page load (reliability/perf) and a dependency on third-party CDNs staying up or unchanged.
-
-## [v2.285] – 2026-07-29 — Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One
-### Changed
-- On the `/legal/sitec-911` page, replaced every visible mention of **"SITEC 911"** with **"911 Michoacán"** and every mention of **"CityShob"** (incl. "CityShob Software Ltd.") with **"Kabat-One"**, across both the EN and ES routes. Support email set to `support@kabatone.com`.
-- Text-only rebrand: the URL slug (`/legal/sitec-911`), route folder, component name, and page metadata canonical/hreflang are all unchanged, so the live URL already given to Google Play keeps working.
 
 ## [v2.285] – 2026-07-27 — SEO: rescue video-analytics CTR/cannibalization (weekly #1 action)
 ### Fixed
@@ -1357,18 +1123,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - New one-off component `src/components/LegalSitec911.tsx`, styled to match the existing per-app privacy pages (Barlow Condensed headings, DM Mono labels, dark theme). `robots: index:false, follow:true`, canonical + EN/ES/x-default hreflang, and a breadcrumb JSON-LD (Home / Legal / SITEC 911).
 - First page under the new `/legal/` route directory.
 
-## [v2.283] – 2026-07-28 — Hero cards: 3D half-circle arc (/hero-lab)
-### Changed
-- **Rebuilt the hero card row as a 3D half-circle fan.** All seven module cards (CAD/911, Video & Analytics, GIS/Map, Event Management, UDE, Mobile Response, Integrations) now sit on an arc: each step out from the centre yaws the card toward the middle (`rotateY` up to 18°), lifts it, and pushes it back in depth, with z-index rising toward the centre so the middle card stacks on top.
-- Deliberately **no `rotateZ`** — an early pass tilted the cards and read as a scattered hand of cards rather than panels standing on a curve. Cards also sit side by side (`gap: 8px`) rather than overlapping; the yaw already narrows each card's projected width, so negative margin just looked like clutter.
-- **The platform mark is now pure backdrop.** With all seven slots holding a real module card there is no free slot for the logo to occupy as a tile, so it drops to `opacity: 0.5` at a larger size and reads as a soft glow behind the arc's centre.
-- Stage height 494px → 516px to accommodate the 52px lift on the outermost cards.
-
-### Notes
-- The prior "temporary validation row" block, which flattened the arc to a straight baseline with `transform: translateY(0)`, is what this replaces — the earlier arc rules at the `min-width: 1181px` breakpoint had been overridden by it and were dead.
-- Verified at 1600px (centred, no overflow, no clipping), 1400px (horizontal scroll-snap engages as designed, nothing clipped vertically despite `overflow-x: auto` forcing `overflow-y: auto`), and 375px (arc correctly does not apply — flat scroll row unchanged). No console errors.
-- Scoped to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
-
 ## [v2.283] – 2026-07-22 — Fix: lead conversion events now reach GA4 (measurement Phase 0)
 ### Fixed
 - **`generate_lead` / `book_demo` were never reaching GA4.** GA4 is loaded directly via `gtag` (see `components/GoogleAnalytics.tsx`), but the forms pushed conversion events to `window.dataLayer` only — which GA4 does not read unless GTM has a forwarding tag (it doesn't). Result: GA4 reported **zero leads** across every channel despite forms firing events.
@@ -1379,21 +1133,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - First step of the non-search demand & lead-growth plan (Marketing & Growth). Unblocks per-channel lead attribution.
 - **Follow-up (GA4 UI, David Z):** mark `generate_lead` as a Key Event; add internal-IP + staging-referral (`*.vercel.app`, `*.netlify.app`, `grupokabat.com`, `formspree.io`) data filters; verify in Realtime after deploy.
 - Typecheck: 0 errors. Committed to `nextjs` (staging auto-deploys). Not promoted to production.
-
-## [v2.282] – 2026-07-28 — Case Study, Ecosystem, Industries sections (/hero-lab)
-### Added
-- **`CaseStudy` section** ported from the Claude Design project (`home/proof.jsx`'s `CustomerProof` component + `home/proof.css`). A photo-led metric hero ("10,000+ Connected Sensors & Cameras", Michoacán statewide deployment) over an operational-impact bullet list, a deployment-scope metrics grid, and a customer quote. Only the design's own approved figures are used — no invented counts. The command-center photo is an AI-generated stand-in (the source had an empty image-slot placeholder too) — swap for real photography before this ships.
-- **`Ecosystem` section** ported from the same `home/proof.jsx` file (the `Ecosystem` component) + `home/proof.css`. Five grouped integration categories (cameras, emergency comms, analytics/AI, sensors/IoT, radio) — entries with a real local partner logo render it, everything else renders as plain text.
-- **`Industries` section** ported from `home/industries.jsx` + `home/industries.css`. A photo grid with one large lead tile (Public Safety & Emergency Communications, spanning two rows) and four supporting tiles (Cities & Municipalities, Transportation & Traffic, Critical Infrastructure, Campuses & Large Venues), each linking to its real industry route. All five photos are AI-generated stand-ins (same empty-placeholder situation as the case study) — swap for real photography before this ships.
-
-### Fixed
-- **Ecosystem partner logos invisible on light background.** Three of the seven logo assets (`genetec.svg`, `corsight.svg`) are white-fill marks meant for a dark strip, so a `grayscale`+`opacity` treatment left them blank against the section's white background. Switched to `filter: brightness(0); opacity: 0.4` (opacity 0.75 on hover) — the same treatment the live homepage's own partner row already applies to these exact files.
-
-### Notes
-- Ordering: Hero → Customer Strip → How It Works → Solutions → **Case Study → Ecosystem → Industries**.
-- Shared `.section`/`.wrap`/`.eyebrow`/`.h-display`/`.lede` classes inlined per-section as `.cust-*`, `.eco-*`, `.ind-*`, following the pattern established for every prior section — display headings use `var(--font-barlow-condensed)` uppercase.
-- Verified EN/ES, desktop + mobile, no console errors, `tsc --noEmit` clean.
-- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
 
 ## [v2.282] – 2026-07-21 — Weekly SEO brief execution: internal links, freshness signal, Caribbean indexation
 ### Added / Changed
@@ -1406,16 +1145,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - **Off-site items flagged back to Omer** (not actionable by Claude Code): GovTech outreach email, Seguridad en América article submission, GSC 400 error above.
 - Build verified 0 errors after all edits. Committed to `nextjs` (staging auto-deploys). Not promoted to production. Executed per "so let's build a plan and execute" — reconciling the weekly Slack SEO brief against `SEO/kabatone-seo-master-plan.md` and prior audit findings.
 
-## [v2.281] – 2026-07-27 — Solutions: replace with the design's actual richer version
-### Changed
-- **Replaced the Solutions section with `home/solutions2.jsx`** — the design's real, richer iteration of this section, which I'd missed in v2.280 (I had ported `home/solutions.jsx`, an earlier simpler card-grid draft in the same project). The user caught the mismatch against a screenshot of the actual design.
-- New shape: a **vertical accordion navigator** (five numbered products, one expanded at a time) paired with a **sticky app-window mock** of the active product's console — full nav sidebar, live canvas screenshot, and a data rail (incident tag, response timer, on-scene/en-route counts, live-video thumbnail, activity feed) — plus a **stationary "One Unified Platform" capability matrix** of 9 shared capabilities (GIS, Video, Event Management, AI, Integrations, Workflows, Evidence, Mobile, BI) that highlights which are core to whichever product is selected.
-- Selection is driven by scroll position via `IntersectionObserver` (expanding an item as it crosses the viewport center) with a short click-lock so an explicit click always wins over scroll-driven changes.
-- On mobile/tablet the sticky console is replaced by an inline copy of the same app-window mock inside each expanded item, and the capability matrix drops from 9 to 5 to 3 columns.
-- Verified: click-to-expand switches both the console and the capability matrix correctly (checked K-Video's 5 core capabilities render exactly as authored), mobile shows the inline console with the sticky one hidden, fully localized EN/ES, no horizontal overflow, TypeScript clean.
-- Superseded `home/solutions.jsx`-based component from v2.280 is fully replaced, not layered — same file paths (`Solutions.tsx`, `solutions.css`).
-- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
-
 ## [v2.281] – 2026-07-21 — GEO roundup: Best NG911 Software (KAB-1762)
 ### Added
 - **New `/resources/best-ng911-software/` page (EN + ES)** — a "Best NG911 Software for emergency call centers (2026)" buyer's-guide roundup. Attacks the persistent GEO gap where AI answer engines cite Carbyne, CentralSquare, Motorola and Peregrine for "NG911 software" but never KabatOne (N in the GEO monitor for 3+ weeks). Fourth page in the roundup program after v2.277 (Genetec), v2.278 (Milestone), v2.279 (AI Video Analytics) — and the first that feeds the K-Dispatch / CAD money cluster rather than the VMS cluster.
@@ -1423,29 +1152,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - Positioning angle: most NG911 software stops at call handling; KabatOne unifies NG911 intake with CAD + GIS + video so the i3 call becomes a geolocated dispatch in one platform. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `bestNg911Software` key), cross-links to `/resources/ng911-software`, `best-cad-dispatch-software`, `what-is-cad-dispatch-software`, `911-call-center-software-guide`, `what-is-a-psap`, `/vs/carbyne`, `/vs/prepared911`, `/k-dispatch`.
 ### Notes
 - Continues the GEO citability program (SEO-PROGRAM-STATE.md open item #4). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
-
-## [v2.280] – 2026-07-27 — Solutions section + design-accurate typography (/hero-lab)
-### Added
-- **`Solutions` section** ported from the Claude Design project "Kabat One Website" (`home/solutions.jsx` + `home/solutions.css` + the `SOLUTIONS` data in `home/data.jsx`), read through the design MCP. Two tiers as designed: three **core** solutions (K-Safety, K-Dispatch, K-Video) as large cards with product screenshots, then two **specialized** solutions (K-Traffic, K-Connect) as compact rows.
-- Positioning copy and per-product accent colours come straight from the design's data file, fully localized EN/ES. Screenshots keep the design's "Illustrative view" badge so they aren't mistaken for live captures.
-- The design's static `K-*.html` links are mapped to this app's real localized routes (`/k-safety`, `/k-dispatch`, `/k-video`, `/k-traffic`, `/k-connect`).
-
-### Fixed
-- **Restored the design's display typography.** Both this section and How It Works had been rendering headings in Space Grotesk sentence case instead of the design's Barlow Condensed uppercase (`.h-display` / `--f-display`). Now matches the design: section titles are Barlow Condensed uppercase, product/stage names Barlow Condensed.
-
-### Notes
-- The source `.sol` styles were authored against the dark theme and re-themed for the light page via `.k1-light .sol {...}` overrides in `light.css`; both are merged here so the section stands alone.
-- Shared `.section`/`.wrap`/`.eyebrow`/`.lede` classes are inlined as `.sol-*` so nothing leaks into the rest of the page.
-- The hero (`HeroV3Platform`) still uses Space Grotesk for its headline, where the design uses Barlow Condensed — left as-is pending a call on whether to align it.
-- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
-
-## [v2.280] – 2026-07-20 — Privacy notice: 911 Baja California Sur (SSP-BCS) (KAB-1716)
-### Added
-- **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.
-- `noindex, follow` + canonical/EN-ES hreflang, and kept out of the sitemap — a store-compliance page, not an organic-search target (matches the per-app privacy pages from v2.270).
-### Notes
-- ARCO phone normalized to `612 175 0400 Ext. 1097` to match the notice's own Contacto number; the source PDF showed a 13-digit typo.
-- **Rescued from `hero-redesign`** (commit `1397822`, was mislabeled v2.276 which collided with the K-Dispatch meta fix already on nextjs) — cherry-picked onto `nextjs` so the page reaches staging/production instead of 404ing like the v2.270 privacy pages did (KAB-1604). Only the page.tsx + component were taken; hero-lab changelog noise dropped.
 
 ## [v2.280] – 2026-07-13 — SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs
 **Changed / Added** — data-driven pass from the branded/non-branded traffic cut. Originally v2.270; renumbered on rebase onto nextjs (which independently shipped the v2.272–v2.274 GEO callout program and the v2.277–v2.279 roundup program). Deduped against that work — kept only what was additive.
@@ -1456,18 +1162,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - **Spanish depth** — "qué quiere decir C5" variant folded into the C5-ES answer + `/es/k-dispatch` funnel link from Related Resources.
 - **Analysis artifacts** — `SEO/audits/traffic-branded-2026-07-13.html` (branded/non-branded dashboard) + `SEO/longtail-sprint-2026-07.md` (3-week CTR-first plan). K-Dispatch EN regression diagnosed as healthy query reallocation — no fix.
 
-## [v2.279] – 2026-07-27 — How It Works: 5-stage incident lifecycle (/hero-lab)
-### Added
-- **`HowItWorks` section** ported from the Claude Design project "Kabat One Website" (`home/howitworks.jsx` + `home/howitworks.css`), pulled directly via the design MCP. Replaces the live site's 3-step Collect → Process → Respond block with the 5-stage lifecycle of a single incident: **Detect → Understand → Decide → Act → Learn**.
-- Each stage has its own purpose-drawn public-safety scene (converging CCTV/911/LPR/SOS/IoT signals; stacked GIS planes with AI enrichment; recommended-workflow card with priority rows; patrol route with responder app and multi-agency status; evidence sources with unified timeline and analytics), plus three-tier copy — stage name, claim, and detail — fully localized EN/ES.
-- **Scroll-driven progressive activation**: stages light up sequentially left→right as the section enters view, a rail fills behind them, and a pulse traverses once complete. Decide is emphasized as the orchestration layer. Fully disabled under `prefers-reduced-motion`.
-
-### Notes
-- The source relied on shared `.section`/`.wrap`/`.eyebrow`/`.h-display` classes from the design's `site.css`; those are inlined as `.hiw2-*` so the section is self-contained and cannot leak into the rest of the page.
-- One deliberate deviation: the section title renders in Space Grotesk sentence case rather than the design's Barlow Condensed uppercase (`.h-display`), to match the already-approved hero on this page — reverting is a one-line change.
-- Supersedes the interim 5-stage version I had built before the design was available; those files were removed.
-- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
-
 ## [v2.279] – 2026-07-20 — GEO roundup: Best AI Video Analytics Software (KAB-1716)
 ### Added
 - **New `/resources/best-ai-video-analytics-software/` page (EN + ES)** — a "Best AI Video Analytics Software for public safety (2026)" buyer's-guide roundup. Attacks the open-field GEO gap where AI answer engines cite *nobody* authoritative for "AI video analytics" and KabatOne is absent. Third page in the roundup program after v2.277 (Genetec) and v2.278 (Milestone).
@@ -1475,20 +1169,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - Positioning angle: most AI video analytics is a *detection layer*; KabatOne unifies analytics with CAD + GIS + dispatch so a detection becomes an action. Wired end-to-end: `sitemap.ts` (0.75), resources hub cards (EN + ES), `metadata.ts` (EN + ES `bestAiVideoAnalytics` key), cross-links to `/resources/ai-video-analytics`, `what-is-video-analytics`, `video-analytics-use-cases`, `cctv-video-analytics`, `what-is-lpr-license-plate-recognition`, `best-vms-software`, `genetec-alternatives`, `/k-video`.
 ### Notes
 - Continues the GEO citability program (SEO-PROGRAM-STATE.md open item #4). TypeScript typecheck passes (0 errors, `tsc --noEmit`). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
-
-## [v2.278] – 2026-07-26 — Customer trust strip with real agency seals (/hero-lab)
-### Added
-- **`CustomerStrip` component** in `/hero-lab` — compact auto-scrolling marquee of real customer/agency seals, replacing the old text-abbreviation badges ("C5CDMX", "YUC") that stood in for logos on the current homepage.
-- **11 official government seals sourced and hosted locally** (`public/images/customers/`, 204KB total optimized WebP): C5 CDMX, Yucatán, Durango, Sinaloa, Tamaulipas, Jalisco, Michoacán, Chiapas, Puebla, Naucalpan, Nayarit. Each was pulled from that agency's own official `.gob.mx` site and visually verified — several government files proved mislabeled (one named "Escudo" rendered as an unrelated campaign mark) and were discarded. Original high-res downloads kept out of `public/` in `design-assets/customers-raw/` for re-optimization.
-- Hosting these locally also removes the fragile pattern used by the live partner row, which hotlinks 6 of 7 logos directly from vendor websites.
-
-### Fixed
-- **Seamless-loop drift in the marquee**: `translateX(-50%)` landed 30px short of the clone because flex `gap` adds no trailing gap after the last item, so the loop would visibly jump every cycle. Moved spacing to `margin-right` on each item so both halves are exactly equal width — drift verified at 0px on desktop and mobile.
-
-### Notes
-- Seals are grayscale at 62% opacity (full colour on strip hover) to unify visually mismatched official crests — some are horizontal wordmark lockups, others standalone shields, one a police star badge.
-- Known placeholder-grade assets pending clean replacements: **Naucalpan** carries a political campaign slogan baked into the image; **Sinaloa** is a faint line-art render that nearly disappears in the row. **INAMI** is omitted entirely — its official page serves only a broken 85×85 blank placeholder behind bot protection.
-- Isolated to `/hero-lab` (noindex, unlinked). The live homepage is untouched.
 
 ## [v2.278] – 2026-07-17 — GEO roundup: Best Milestone XProtect Alternatives (KAB-1659)
 ### Added
@@ -1498,15 +1178,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 ### Notes
 - Continues the on-site GEO citability program (SEO-PROGRAM-STATE.md open item #4: get cited for VMS where authority is the gap). TS build to be verified. On branch `seo-milestone-alternatives` off `origin/nextjs` — not pushed (awaiting review).
 
-## [v2.277] – 2026-07-24 — Hero rebuild: reconcile Codex's card system into /hero-lab
-### Changed
-- **Reconciled the Codex-built hero rebuild** (`codex/hero-reference-rebuild` worktree) into `hero-lab`: brought over `HeroCardCarousel.tsx` (accessible carousel — ARIA region/group/slide roles, keyboard arrows/Home/End, scroll-sync, disabled end-states), `HeroCardMedia.tsx` (bounded media-crop regions), and the updated `HeroV3Platform.tsx` + `hero-lab-light.css` implementing a shared card-shell system across all 7 modules (equal frame size, title rhythm, icon size, bottom accent).
-- Real assets now in use: the actual "1K" brand mark (`platform-mark`) and real photography for Video & Analytics, GIS/Map, Unified Digital Evidence, and Mobile Response cards (`public/images/hero-cards/`), replacing the earlier AI-generated placeholders.
-- **Fixed a real performance issue found during review**: the 4 card images were served `unoptimized` as raw PNG (~1.2–1.6MB each, ~5.7MB total). Converted to compressed WebP and removed `unoptimized` so Next/Image can further optimize per-viewport — confirmed the actually-served bytes dropped from ~1.5MB to ~10KB per image at typical card size.
-- Added `tests/hero-reference-contract.test.mjs` (6 tests, all passing) — guards card geometry, media-crop bounds, carousel accessibility, and responsive behavior.
-- **Restored `src/app/[locale]/page.tsx` to its safe original** (matching `nextjs`) — a prior WIP step had wired `HeroV3Platform` directly into the live homepage with `<Nav/>` removed, which would have shipped with no persistent navigation below the hero. The hero redesign remains isolated to `/hero-lab` (noindex, unlinked) until explicitly approved for homepage integration.
-- Simplified `/hero-lab` to show only the chosen V3 direction (dropped the superseded V1/V2/ImageConcepts comparison scaffolding from the route, matching the now-settled direction). The old components/stylesheet remain in the repo, unused, pending a decision on whether to delete them.
-
 ## [v2.277] – 2026-07-14 — GEO content: "Best Genetec Alternatives" roundup (KAB-1623)
 ### Added
 - **New page `/resources/genetec-alternatives/` (EN + ES)** — a buyer's-guide roundup targeting the GEO query "Genetec alternatives for public safety," where AI answer engines cite 6 competitors but not KabatOne. We had `/vs/genetec` (head-to-head) but no roundup/listicle, which is the format AI engines cite for "X alternatives" questions. The page opens with a liftable, brand-anchored direct-answer callout ("The best Genetec alternatives for public safety in 2026 are KabatOne … Milestone … Avigilon … Verkada … Axon/Fusus … Motorola"), followed by an at-a-glance comparison table, a "why agencies switch" section, six per-vendor profiles (KabatOne first), 6 FAQs, and a Related grid.
@@ -1515,12 +1186,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - Weekly GEO review (KAB-1623): the "Genetec alternatives" query is an un-won AI-answer surface with a confirmed citation slot (competitors are already listed). A roundup page matches that intent far better than the existing head-to-head and also captures commercial "Genetec alternatives" search demand.
 ### Notes
 - TypeScript typecheck passes (0 errors, `tsc --noEmit`). Committed to `nextjs` (staging auto-deploys). Not promoted to production.
-## [v2.276] – 2026-07-14 — Privacy notice: 911 Baja California Sur (SSP-BCS)
-### Added
-- **Government privacy notice page for the 911 Baja California Sur app** at `/privacy/911-baja-california-sur` (+ `/es/`). Reproduces the official "Aviso de Privacidad Simplificado" of the Secretaría de Seguridad Pública del Estado de Baja California Sur (data collected, purpose, transfers, ARCO rights, changes, contact) in the site style. New component `src/components/Privacy911BCS.tsx` + thin page. Bilingual: Spanish is the governing text, English an unofficial translation.
-- `noindex, follow` + canonical/EN-ES hreflang, and kept out of the sitemap — a store-compliance page, not an organic-search target (matches the per-app privacy pages from v2.270).
-### Notes
-- ARCO phone normalized to `612 175 0400 Ext. 1097` to match the notice's own Contacto number; the source PDF showed a 13-digit typo (`612121750400`).
 
 ## [v2.276] – 2026-07-14 — Verge daily audit fix: K-Dispatch meta description length (KAB-1612)
 ### Fixed
@@ -1554,37 +1219,17 @@ Acts on the full content / design / performance / SEO review of the redesign.
 ### Notes
 - TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
 
-## [v2.272] – 2026-07-13 — Isolate hero redesign for parallel local work
-### Added
-- Documented a local-only `codex/hero-reference-rebuild` worktree and `/hero-lab` review workflow so Codex and Claude Code can work in parallel without sharing physical files.
-- Added explicit branch, file-ownership, handoff, and no-deploy rules; `nextjs` staging and `main` production remain untouched unless the owner explicitly approves promotion.
-
 ## [v2.272] – 2026-07-13 — AI video analytics GEO citability (definition callout)
 ### Added
 - **Brand-anchored, liftable definition callout on `/resources/ai-video-analytics/`** (EN + ES) — directly under the "What is AI video analytics?" H2. Leads with a bolded, subject-first one-sentence definition (the passage AI engines lift), states the 30–50% → <5% false-positive differentiator, and attributes the applied technology to KabatOne's K-Video. Aim: recover the "What is AI video analytics?" AI-answer citation where Milestone is cited and KabatOne was absent despite owning the ranking page. GEO fix only — no ranking/URL change.
 ### Notes
 - TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
 
-## [v2.271] – 2026-07-13 — Reference-accurate hero rebuild specification
-### Added
-- Documented the approved, hero-only rebuild against the supplied 1536 × 1024 reference, including the desktop composition, seven operational cards, EN/ES behavior, approved proof metrics, and mobile carousel controls.
-- Explicitly keeps every homepage section below the hero unchanged and requires visual comparison at desktop, tablet, and mobile sizes before completion.
-
 ## [v2.271] – 2026-07-13 — RTCC software buyer's guide (GEO citation recovery)
 ### Added
 - **New `/resources/rtcc-software/` page (EN + ES)** — a "Best RTCC Software 2026" buyer's guide comparing real-time crime center vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) against KabatOne's unified platform. Definition-first, passage-level citable structure aimed at recovering the RTCC AI-answer citation lost this week (Y → N while 8 competitors hold it) and capturing `rtcc software` / `real-time crime center software` intent. Metadata EN+ES (`rtccSoftware` key), sitemap (`priority 0.8`), `llms.txt`, and the resources hub card all wired.
 ### Notes
 - TS build passes. Shipped to `nextjs` (staging) worktree only — not pushed.
-
-## [v2.270] – 2026-07-13 — Per-app Google Play privacy policy pages
-### Added
-- **Dedicated privacy policy pages for mobile apps**, so each Google Play listing links to its own URL. New reusable component `src/components/AppPrivacyPolicy.tsx` holds the approved Google Play template (app + developer identification block, ARCO rights, and the Data Retention & Deletion section Google requires), interpolating the exact app name. Rendered in EN + ES to match the existing `/privacy` page.
-- Two thin per-app pages (each its own unique link):
-  - `C5 Escudo Pakal` → `/privacy/c5-escudo-pakal` (+ `/es/...`)
-  - `911 Michoacán` → `/privacy/911-michoacan` (+ `/es/...`)
-- Both set `robots: noindex, follow` and are kept out of the sitemap — the pages exist for store-listing compliance, not organic search, and near-identical legal copy across branded apps shouldn't dilute the index. Canonical + EN/ES hreflang alternates are emitted per page.
-### Notes
-- Adding a future branded app = one new page file (copy an existing one, change `APP_NAME`/`SLUG`/`LAST_UPDATED`). Developer name, legal entity, and contact details are constant and live in the shared component.
 
 ## [v2.270] – 2026-07-13 — CAD striking-distance CTR rescue (K-Dispatch)
 ### Changed
@@ -1612,16 +1257,6 @@ Acts on the full content / design / performance / SEO review of the redesign.
 - Custom light nav built specifically for this hero (the shared site `<Nav/>` is styled dark via CSS vars and clashes with a light page) — removed the shared `<Nav/>` from the lab page to fix a fixed-position stacking overlap this introduced.
 - New AI-generated placeholder assets: `k-mark.webp` (brand mark), `cctv-still.webp`, `evidence-still.webp` (camera/evidence thumbnails) — swap for real product photography and finished brand art before anything ships.
 - New stylesheet `hero-lab-light.css`, scoped under `.hll-` to avoid collision with the existing dark `.hl-` hero-lab styles on the same page.
-
-## [v2.267] – 2026-07-08 — Hero redesign lab (internal, not linked)
-### Added
-- **`/hero-lab` internal review page** (EN + ES, `noindex`, not linked from nav/sitemap) — isolated space to brainstorm homepage hero directions without touching the live site. Branch `hero-redesign` created specifically so this work can't accidentally reach staging/production (the v2.230 homepage redesign was deployed before approval and had to be reverted on 2026-07-02 — this keeps the same mistake from repeating).
-- Two hero directions built for comparison, both reusing the live v1 hero's actual tokens/copy conventions:
-  - **Version 1 — the admin itself**: unified console screenshot showing live map, video wall, dispatch queue, and event board in one dashboard, so a visitor reads "one platform" at a glance.
-  - **Version 2 — not admin-related**: a hub-and-spoke diagram, KabatOne at the center with the six modules (CAD/911, GIS, Video, Events, Mobile, Integrations) connected around it.
-  - Both use AI-generated placeholder art (`public/images/hero-lab/`) — swap for real product screenshots / brand illustration before anything ships.
-- `src/components/hero-lab/` (HeroV1Screenshot, HeroV2Hub, ImageConcepts, ProofBar) and `src/app/[locale]/hero-lab/` route + stylesheet.
-- `.claude/launch.json`: added `autoPort` so the local dev server doesn't collide with other processes already holding port 3000.
 
 ## [v2.267] – 2026-07-09 — Contact form: country field → region field
 ### Changed

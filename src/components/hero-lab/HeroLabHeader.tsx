@@ -134,11 +134,59 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
           <span className="hll-sr-only hll-label-close">{es ? 'Cerrar menú' : 'Close menu'}</span>
           <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
         </summary>
+        {/* Nested disclosures, not flat links.
+
+            Each of these four used to be a single link into the *first* item of
+            its section: Solutions went to /k-safety, Industries to
+            /industries/public-safety. On desktop the same four are dropdowns
+            listing everything, so on a phone four of the five solution pages and
+            four of the five industry pages were unreachable from the menu — the
+            pages existed and sat in the sitemap, but nothing in the mobile UI
+            led to them.
+
+            Same <details> mechanism as the desktop bar, with a shared `name` so
+            opening one section closes the others — enforced by the browser, no
+            JS and no click-outside handler. The lists reuse the same
+            MODULE_LINKS / INDUSTRY_LINKS constants the desktop dropdowns read,
+            so the two navigations cannot drift apart. */}
         <div className="hll-mobile-menu-panel">
-          <Link href={pv('/k-safety')}>{es ? 'Soluciones' : 'Solutions'}</Link>
-          <Link href="/industries/public-safety">{es ? 'Industrias' : 'Industries'}</Link>
-          <Link href="/resources">{es ? 'Recursos' : 'Resources'}</Link>
-          <Link href="/about">{es ? 'Empresa' : 'Company'}</Link>
+          <details className="hll-mobile-section" name="hll-mobile-nav">
+            <summary>{es ? 'Soluciones' : 'Solutions'}<Arrow direction="down" /></summary>
+            <div className="hll-mobile-sublinks">
+              {MODULE_LINKS.map((item) => (
+                <Link href={pv(item.href)} key={item.href}>
+                  <span style={{ background: item.color }} />{item.label}
+                </Link>
+              ))}
+            </div>
+          </details>
+
+          <details className="hll-mobile-section" name="hll-mobile-nav">
+            <summary>{es ? 'Industrias' : 'Industries'}<Arrow direction="down" /></summary>
+            <div className="hll-mobile-sublinks">
+              {INDUSTRY_LINKS.map((item) => (
+                <Link href={item.href} key={item.href}>{item[language]}</Link>
+              ))}
+            </div>
+          </details>
+
+          <details className="hll-mobile-section" name="hll-mobile-nav">
+            <summary>{es ? 'Recursos' : 'Resources'}<Arrow direction="down" /></summary>
+            <div className="hll-mobile-sublinks">
+              <Link href="/resources">{es ? 'Centro de Recursos' : 'Resource Center'}</Link>
+              <Link href="/demo">{es ? 'Demo Interactiva' : 'Interactive Demo'}</Link>
+              <Link href="/simulator">{es ? 'Simulador de Incidentes' : 'Incident Simulator'}</Link>
+            </div>
+          </details>
+
+          <details className="hll-mobile-section" name="hll-mobile-nav">
+            <summary>{es ? 'Empresa' : 'Company'}<Arrow direction="down" /></summary>
+            <div className="hll-mobile-sublinks">
+              <Link href="/about">{es ? 'Nosotros' : 'About'}</Link>
+              <Link href="/contact">{es ? 'Contacto' : 'Contact'}</Link>
+            </div>
+          </details>
+
           <div className="hll-mobile-languages">
             <Link href={here} locale="en">EN</Link><Link href={here} locale="es">ES</Link>
           </div>

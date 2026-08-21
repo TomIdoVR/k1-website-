@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, useEffect, FormEvent, FormEvent as ReactFormEvent } from 'react'
 /* The locale-aware Link, not next/link: a Spanish visitor reading the consent
    notice must land on /es/privacy, not the English notice. */
 import { Link } from '@/i18n/navigation'
@@ -72,9 +72,45 @@ const labelStyle: React.CSSProperties = {
 
 export default function ContactForm({ es, campaignSource, labels, selectOptions }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  /* Set when the browser blocks submission on a required field, so the reason
+     is stated in the page and not only in a native bubble — those are easy to
+     miss on a phone and vanish on the next tap. */
+  const [invalidNotice, setInvalidNotice] = useState(false)
+
+  /* The form is taller than a phone screen, so every state change happened
+     off-screen: submitting from the bottom of the form left the success card
+     — which is shorter than the form it replaces — outside the viewport, and a
+     required field near the top could be blocked without the user seeing why.
+     Nothing here scrolled or moved focus. These two refs fix both. */
+  /* HTMLElement, not HTMLDivElement: this points at the success card (a div) or
+     the error notice (a p), whichever is on screen. */
+  const cardRef = useRef<HTMLElement | null>(null)
+  const headingRef = useRef<HTMLDivElement>(null)
+  const invalidHandled = useRef(false)
+
+  useEffect(() => {
+    if (status !== 'success' && status !== 'error') return
+    cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    /* Moving focus as well as scrolling: a screen-reader user gets no benefit
+       from a scroll, and the outcome is the only thing on screen worth reading.
+       tabIndex -1 makes it focusable without adding a tab stop. */
+    if (status === 'success') headingRef.current?.focus()
+  }, [status])
+
+  /* Fires per invalid control. Only the first one matters — that is where the
+     browser puts focus, and it is the field to bring into view. */
+  function handleInvalid(e: ReactFormEvent<HTMLFormElement>) {
+    setInvalidNotice(true)
+    if (invalidHandled.current) return
+    invalidHandled.current = true
+    const el = e.target as HTMLElement | null
+    requestAnimationFrame(() => el?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+    window.setTimeout(() => { invalidHandled.current = false }, 400)
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setInvalidNotice(false)
     setStatus('submitting')
 
     const formData = new FormData(e.currentTarget)
@@ -105,7 +141,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
 
   if (status === 'success') {
     return (
-      <div className="cf-card" style={{
+      <div className="cf-card" ref={(n) => { cardRef.current = n }} style={{
         background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
         borderRadius: '20px', padding: '48px', textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px',
@@ -120,7 +156,15 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '1.6rem', color: 'var(--white)' }}>
+        {/* role="status" announces the outcome to a screen reader without
+            stealing focus mid-submit; tabIndex -1 lets the effect move focus
+            here afterwards without adding a tab stop. */}
+        <div
+          ref={headingRef}
+          tabIndex={-1}
+          role="status"
+          style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '1.6rem', color: 'var(--white)', outline: 'none' }}
+        >
           {es ? '¡Mensaje Enviado!' : 'Message Sent!'}
         </div>
         <p style={{ color: 'var(--dim)', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '360px' }}>
@@ -149,7 +193,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           the query string — and therefore into server and analytics logs — any
           time handleSubmit does not run. handleSubmit still preventDefaults and
           POSTs via fetch on the normal path. */}
-      <form onSubmit={handleSubmit} method="post" action={FORMSPREE_URL}>
+      <form onSubmit={handleSubmit} onInvalidCapture={handleInvalid} method="post" action={FORMSPREE_URL}>
         {campaignSource && <input type="hidden" name="campaign_source" value={campaignSource} />}
         {/* Row 1: Name + Company */}
         <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -214,9 +258,21 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           <textarea id="cf-message" name="message" placeholder={labels.placeholderMessage} rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }} />
         </div>
 
+        {/* Missing-field notice. The browser already focuses the first invalid
+            control and shows its own bubble, but that bubble is easy to miss on
+            a phone and disappears on the next tap — this states the reason in
+            the page, next to the button that did not work. */}
+        {invalidNotice && status !== 'error' && (
+          <p role="alert" style={{ color: '#f87171', fontSize: '0.85rem', marginBottom: '12px', fontFamily: 'Space Grotesk, sans-serif' }}>
+            {es
+              ? 'Faltan campos obligatorios. Revisa los campos marcados más arriba.'
+              : 'Some required fields are missing. Please check the highlighted fields above.'}
+          </p>
+        )}
+
         {/* Error message */}
         {status === 'error' && (
-          <p style={{ color: '#f87171', fontSize: '0.85rem', marginBottom: '12px', fontFamily: 'Space Grotesk, sans-serif' }}>
+          <p role="alert" ref={(n) => { cardRef.current = n }} style={{ color: '#f87171', fontSize: '0.85rem', marginBottom: '12px', fontFamily: 'Space Grotesk, sans-serif' }}>
             {es
               ? 'Algo salió mal. Por favor intenta de nuevo o escríbenos directamente a info@kabatone.com.'
               : 'Something went wrong. Please try again or email us directly at info@kabatone.com.'}
