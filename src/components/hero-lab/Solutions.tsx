@@ -354,7 +354,22 @@ export default function Solutions({ es }: { es: boolean }) {
             })}
           </div>
 
-          <div className="sv-side">
+          {/* Focusable because it scrolls. solutions.css caps this panel at
+              max-height 620px with overflow-y: auto — that ceiling is what keeps
+              the sticky panel clear of the header — but a scroll container with
+              no tab stop is unreachable by keyboard, so whatever the cap hides
+              is pointer-only. Axe flags it as scrollable-region-focusable.
+
+              Same fix already applied to the before/after strip: role="region",
+              a localized label naming the panel, and tabIndex 0. Unconditional
+              here rather than measured, because unlike that strip this panel
+              carries the cap at every width, so it can always overflow. */}
+          <div
+            className="sv-side"
+            role="region"
+            aria-label={es ? `Vista previa de ${p.name}` : `${p.name} preview`}
+            tabIndex={0}
+          >
             <div className="sv-stage-wrap"><AppMock p={p} es={es} /></div>
 
             <div className="sv-foundation">

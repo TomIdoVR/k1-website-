@@ -356,6 +356,95 @@
 
     <div class="timeline">
 
+      <!-- v2.368 -->
+      <div class="tl-entry fixed" id="v2.368">
+        <div class="tl-meta"><span class="tl-ver">v2.368</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">Solutions media panel is keyboard-reachable</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>The Solutions media panel could not be reached by keyboard.</strong> <code>.sv-side</code> is capped at <code>max-height: 620px</code> with <code>overflow-y: auto</code> &mdash; the ceiling that keeps the sticky panel clear of the header &mdash; but a scroll container with no tab stop is pointer-only, so anything the cap hid was unreachable without a mouse. Now <code>role="region"</code>, a localized label naming the product, and <code>tabIndex 0</code>, with a matching focus outline</li>
+          <li>Same defect fixed for the before/after strip in v2.364; that pass corrected one instance and missed this one</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.367 -->
+      <div class="tl-entry fixed" id="v2.367">
+        <div class="tl-meta"><span class="tl-ver">v2.367</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">All 23 WCAG AA contrast failures fixed</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li>Real axe-core returned exactly 23 failing nodes across seven colours. Each replacement was computed to clear 4.5:1 against its measured background while preserving hue &mdash; <code>.uc-time</code> 2.94&rarr;4.51, <code>.uc-search</code> 2.44&rarr;4.53, <code>.uc-count</code> 2.51&rarr;4.58, and six more</li>
+          <li>The red and green stat values needed 4.5, not the 3.0 large-text threshold: axe measured 13.5px bold, and WCAG large text starts at 18.66px bold</li>
+          <li>The language switcher needed two edits &mdash; the rule is declared in two stylesheets and the later one kept winning the cascade</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.366 -->
+      <div class="tl-entry fixed" id="v2.366">
+        <div class="tl-meta"><span class="tl-ver">v2.366</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">CSP allowlist missed GA4's regional collector</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>GA4 does not post to <code>www.google-analytics.com</code></strong> &mdash; it selects a regional collector. The original allowlist would have let pages load normally while silently dropping every analytics hit. Now wildcarded</li>
+          <li>This is the argument for Report-Only in one entry: the same policy shipped enforcing would have cost analytics on launch day</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.365 -->
+      <div class="tl-entry fixed" id="v2.365">
+        <div class="tl-meta"><span class="tl-ver">v2.365</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">Stop preloading a below-fold photo against the LCP image</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li>The case-study photo carried <code>priority</code>, so Next preloaded it in <code>&lt;head&gt;</code> despite it sitting seven sections down &mdash; competing with the hero art during the window that decides LCP. Head image preloads went from 2 to 1</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.364 -->
+      <div class="tl-entry fixed" id="v2.364">
+        <div class="tl-meta"><span class="tl-ver">v2.364</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">Before/after scroll strip is keyboard-reachable</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li>Below 1180px the strip scrolls but had no tab stop, leaving the second panel pointer-only. Now a labelled region with <code>tabIndex 0</code>, applied only while it actually scrolls, plus a focus outline</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.363 -->
+      <div class="tl-entry added" id="v2.363">
+        <div class="tl-meta"><span class="tl-ver">v2.363</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">Baseline security headers, CSP in Report-Only</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><code>nosniff</code>, <code>X-Frame-Options: DENY</code>, <code>Referrer-Policy</code> and a <code>Permissions-Policy</code> denying camera, microphone, geolocation, payment, usb and interest-cohort &mdash; each denial checked against the codebase first rather than copied from a template</li>
+          <li>CSP ships Report-Only: an enforcing policy that is slightly wrong silently breaks GTM, GA4 or the Formspree POST in production</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.362 -->
+      <div class="tl-entry fixed" id="v2.362">
+        <div class="tl-meta"><span class="tl-ver">v2.362</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">All 12 npm vulnerabilities cleared; stale contract tests updated</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><code>next</code> 16.2.6 &rarr; 16.3.1 and <code>next-intl</code> 4.8.3 &rarr; 4.13.7 plus transitives. <strong>0 vulnerabilities</strong>, down from 12 (9 high)</li>
+          <li><strong>16.2.11 is not sufficient</strong> &mdash; the advisory's vulnerable range is <code>9.3.4-canary.0 - 16.3.0-preview.10</code>, so every 16.2.x is affected</li>
+          <li>Three contract-test assertions pinned to the pre-refactor design were updated rather than deleted, plus a new test pinning the carousel paging fix. 8 pass, 0 fail</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.361 -->
+      <div class="tl-entry fixed" id="v2.361">
+        <div class="tl-meta"><span class="tl-ver">v2.361</span><span class="tl-date">2026-08-16</span></div>
+        <div class="tl-title">Restore the homepage's two resource links lost in promotion</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li>The old homepage was the only page linking to two resource articles; the redesign dropped both. Neither was orphaned, but each lost its highest-authority link. Anchor text copied verbatim, since that is the ranking signal being preserved</li>
+        </ul></div>
+      </div>
+
+      <!-- v2.360 -->
+      <div class="tl-entry fixed" id="v2.360">
+        <div class="tl-meta"><span class="tl-ver">v2.360</span><span class="tl-date">2026-08-16</span></div>
+        <div class="tl-title">Module carousel pages by viewport, not by card</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li>Seven cards produced seven dots while six were already on screen, so each click advanced one card width &mdash; too small to notice. A stop is now one viewport width: two stops, not seven. Dots, arrows, Home/End and the screen-reader announcement all follow pages</li>
+        </ul></div>
+      </div>
+
+
 <div class="tl-entry changed" id="v2.359">
         <div class="tl-meta"><span class="tl-ver">v2.359</span><span class="tl-date">2026-08-16</span></div>
         <div class="tl-dot"></div>

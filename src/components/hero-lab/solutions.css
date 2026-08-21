@@ -134,6 +134,12 @@
 .sv-item.is-active .sv-chev { transform: rotate(180deg); color: var(--pc); }
 .sv-item-head:focus-visible { outline: 2px solid #1858f5; outline-offset: -3px; border-radius: 12px; }
 
+/* The media panel is a tab stop because it scrolls (see .sv-side below), so
+   that stop has to be visible. Offset outward rather than inward like the
+   accordion header above: this panel's content runs to its own edges, and an
+   inset outline would sit on top of the app mock. */
+.sv-side:focus-visible { outline: 3px solid rgba(24, 88, 245, 0.5); outline-offset: 3px; border-radius: 14px; }
+
 .sv-body { padding: 4px 18px 22px; border-top: 1px solid rgba(15, 30, 60, 0.07); margin-top: 2px; animation: svIn .4s cubic-bezier(.2, .8, .3, 1) both; }
 @keyframes svIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .sv-text { font-size: 14.5px; line-height: 1.6; color: #4a5f7d; margin: 16px 0 18px; text-wrap: pretty; }

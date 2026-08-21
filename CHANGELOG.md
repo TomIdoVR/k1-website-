@@ -1,3 +1,47 @@
+## [v2.368] – 2026-08-20 — Solutions media panel is keyboard-reachable
+### Fixed
+- **The Solutions media panel could not be reached by keyboard.** `.sv-side` is capped at `max-height: 620px` with `overflow-y: auto` — the ceiling that keeps the sticky panel clear of the header, added in v2.348 — but a scroll container with no tab stop is pointer-only, so anything the cap hid was unreachable without a mouse. Axe reported it as one serious `scrollable-region-focusable` violation. It now carries `role="region"`, a localized label naming the product (`K-Safety preview` / `Vista previa de K-Safety`) and `tabIndex 0`, with a matching `:focus-visible` outline offset outward so it does not sit on top of the app mock.
+- This is the same defect fixed for the before/after strip in v2.364; that pass corrected one instance and missed this one. Applied unconditionally here rather than measured, because unlike that strip this panel carries its cap at every width and can always overflow.
+
+## [v2.367] – 2026-08-20 — All 23 WCAG AA contrast failures fixed
+### Fixed
+- Real axe-core against the deployed build returned exactly 23 failing nodes, tracing to seven colours, nearly all in the before/after console mock. Each replacement was computed to clear 4.5:1 against its measured background while preserving hue: `.uc-time` 2.94→4.51, `.uc-stat-k` 3.02→4.51, `.uc-card-title` 4.36→4.55, `.uc-count` 2.51→4.58, `.uc-search` 2.44→4.53, `.uc-pill--amber` 4.48→4.57, `.uc-stat-v--red` 3.76→4.54, `.uc-stat-v--green` 3.30→4.55, `.hll-language a` 3.47→4.57.
+- The red and green stat values needed 4.5, not the 3.0 large-text threshold: axe measured 13.5px bold, and WCAG large text starts at 18.66px bold.
+- The language switcher needed two edits — `.hll-language a` is declared in both `hero-lab-header.css` and `hero-lab-light.css`, and the latter loads second, so fixing the header alone left the old value winning the cascade.
+
+## [v2.366] – 2026-08-20 — CSP allowlist missed GA4's regional collector
+### Fixed
+- GA4 does not post to `www.google-analytics.com`; it selects a regional collector (`region1.google-analytics.com` observed live). The original allowlist would have let pages load normally while silently dropping every analytics hit. `connect-src` now uses `*.google-analytics.com` and `*.analytics.google.com`.
+- `vercel.live` (the preview feedback toolbar) is allowed on preview deploys only, rather than widening the production policy for something production never loads.
+- This is the argument for Report-Only in one entry: the same policy shipped enforcing would have cost analytics on launch day.
+
+## [v2.365] – 2026-08-20 — Stop preloading a below-fold photo against the LCP image
+### Fixed
+- The case-study command-center photo carried `priority`, which makes Next emit a `<head>` preload. It sits seven sections down, so the browser fetched it in parallel with the hero art and the two competed for bandwidth during the window that decides LCP. Head image preloads went from 2 to 1.
+
+## [v2.364] – 2026-08-20 — Before/after scroll strip is keyboard-reachable
+### Fixed
+- Below 1180px `.ba-compare` becomes a horizontal scroll strip with no tab stop, leaving the second panel pointer-only. Now `role="region"` with a label and `tabIndex 0`, applied only while it actually scrolls, plus a `:focus-visible` outline — the existing rule is scoped under `.hll-page` and did not reach this section.
+
+## [v2.363] – 2026-08-20 — Baseline security headers, CSP in Report-Only
+### Added
+- `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, and a `Permissions-Policy` denying camera, microphone, geolocation, payment, usb and interest-cohort. Each denial was checked against the codebase first — no `<iframe>` embeds and no calls to any of those APIs — rather than copied from a template.
+- CSP ships as `Content-Security-Policy-Report-Only`. An enforcing policy that is slightly wrong silently breaks GTM, GA4 or the Formspree POST in production; Report-Only applies the identical policy and reports violations without blocking, so the allowlist can be proven against real traffic first.
+
+## [v2.362] – 2026-08-20 — All 12 npm vulnerabilities cleared; stale contract tests updated
+### Fixed
+- `next` 16.2.6 → 16.3.1, `next-intl` 4.8.3 → 4.13.7, plus `npm audit fix` for transitives. `npm audit` reports **0 vulnerabilities**, down from 12 (9 high).
+- **Correction to the pre-production report: 16.2.11 is not sufficient.** The advisory's vulnerable range is `9.3.4-canary.0 - 16.3.0-preview.10`, so every 16.2.x is affected; 16.2.12 was installed first and still flagged high.
+- Three of six contract-test assertions were pinned to the pre-refactor design. Updated rather than deleted: the seven module cards moved to `HeroModuleCards` (and the hero is now asserted to hold zero), the four card visuals moved with them, proof metrics are the signed-off 73M+ / 99.99% with guards against the superseded figures returning, and `scrollIntoView` became `scrollTo`. Added a test pinning the paging fix itself. 8 pass, 0 fail.
+
+## [v2.361] – 2026-08-16 — Restore the homepage's two resource links lost in promotion
+### Fixed
+- The old homepage was the only page linking to `/resources/how-c5-command-centers-work` and `/resources/best-public-safety-software`; the redesigned composition dropped both. Neither article was orphaned — roughly 20 and 5 other inbound links plus sitemap entries — but each lost its highest-authority link. Anchor text is copied verbatim, since that is the ranking signal being preserved.
+
+## [v2.360] – 2026-08-16 — Module carousel pages by viewport, not by card
+### Fixed
+- Seven cards produced seven dots and seven stops while six were already on screen, so each click advanced one card width — a nudge too small to notice. A stop is now one viewport width: seven cards with six visible is two stops, not seven. Dots, arrow disabled states, Home/End and the screen-reader announcement all follow pages. On phones, where cards show one at a time, page and card counts converge.
+
 ## [v2.359] – 2026-08-16 — Redesign promoted site-wide: homepage, five solution pages, header and footer
 
 ### Changed
