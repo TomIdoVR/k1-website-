@@ -26,9 +26,9 @@ export default async function VsGenetecPage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Genetec', url: es ? 'https://kabatone.com/es/vs/genetec/' : 'https://kabatone.com/vs/genetec/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Genetec', url: es ? 'https://kabatone.com/es/vs/genetec' : 'https://kabatone.com/vs/genetec' },
   ]
 
   const faqs = es ? [

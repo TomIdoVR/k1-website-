@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareEswatiniPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas de Defensa de Eswatini (UMBUTFO), Policía Real de Mozambique (RPM), protección de la industria azucarera y manufacturera, y gestión de fronteras con Sudáfrica y Mozambique."
     : "KabatOne delivers public safety platform for Eswatini Defence Force (UMBUTFO), Royal Eswatini Police Service (REPS), sugar and manufacturing industry protection, and border management with South Africa and Mozambique.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-eswatini/"
-    : "https://kabatone.com/resources/public-safety-software-eswatini/";
+    ? "https://kabatone.com/es/resources/public-safety-software-eswatini"
+    : "https://kabatone.com/resources/public-safety-software-eswatini";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareEswatiniPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Eswatini" : "Public Safety Software for Eswatini", url: canonical },
   ]);
 

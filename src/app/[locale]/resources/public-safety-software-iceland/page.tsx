@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareIceland({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional islandesa, KÍB Inteligencia y Guardia Costera — gestión de riesgos volcánicos Fagradalsfjall/Grindavík, ZEE pesquera 200 nm, Base Keflavík NATO, Corredor Ártico y coordinación FRONTEX/Schengen."
         : "KabatOne delivers public safety platform for Iceland National Police, KÍB Intelligence, and Coast Guard — volcanic risk management Fagradalsfjall/Grindavík, 200 nm fishing EEZ, NATO Keflavík Base, Arctic Corridor, and FRONTEX/Schengen coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-iceland/"
-        : "https://kabatone.com/resources/public-safety-software-iceland/",
+        ? "https://kabatone.com/es/resources/public-safety-software-iceland"
+        : "https://kabatone.com/resources/public-safety-software-iceland",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Islandia"
           : "Public Safety Software for Iceland",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-iceland/"
-          : "https://kabatone.com/resources/public-safety-software-iceland/",
+          ? "https://kabatone.com/es/resources/public-safety-software-iceland"
+          : "https://kabatone.com/resources/public-safety-software-iceland",
       },
     ]),
     faqPageSchema([

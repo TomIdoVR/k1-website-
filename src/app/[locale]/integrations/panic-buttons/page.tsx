@@ -111,11 +111,11 @@ export default async function PanicButtonsIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Botones de Pánico' : 'Panic Buttons',
-      url: es ? 'https://kabatone.com/es/integrations/panic-buttons/' : 'https://kabatone.com/integrations/panic-buttons/',
+      url: es ? 'https://kabatone.com/es/integrations/panic-buttons' : 'https://kabatone.com/integrations/panic-buttons',
     },
   ]
 
@@ -169,7 +169,7 @@ export default async function PanicButtonsIntegrationPage({
         __html: JSON.stringify(articleSchema(
           es ? 'Integración de Botones de Pánico para Seguridad Pública' : 'Panic Button Integration for Public Safety',
           es ? 'Cómo KabatOne integra botones de pánico físicos y wearables con despacho CAD, video y GIS para respuesta de emergencia en segundos.' : 'How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS for emergency response in seconds.',
-          es ? 'https://kabatone.com/es/integrations/panic-buttons/' : 'https://kabatone.com/integrations/panic-buttons/',
+          es ? 'https://kabatone.com/es/integrations/panic-buttons' : 'https://kabatone.com/integrations/panic-buttons',
           '2026-05-18'
         ))
       }} />

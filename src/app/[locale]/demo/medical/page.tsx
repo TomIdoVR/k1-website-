@@ -4,18 +4,29 @@ import ScenarioPlayer from '@/components/demo/ScenarioPlayer'
 import { medicalScenario } from '@/data/demo/medical'
 import ScenarioHeading from '@/components/demo/ScenarioHeading'
 
-export const metadata: Metadata = {
-  title: '911 Medical Emergency Scenario | KabatOne Platform',
-  description:
-    "See how KabatOne handles a 911 cardiac emergency — from AI call intake and geo-location to paramedic dispatch and hospital pre-alert in under 3 minutes.",
-  openGraph: {
-    title: '911 Medical Emergency Scenario | KabatOne Platform',
-    url: 'https://kabatone.com/demo/medical',
-    siteName: 'KabatOne',
-    type: 'website',
-    images: ['/demo/medical/stage-1-detect.jpg'],
-  },
-  alternates: { canonical: 'https://kabatone.com/demo/medical' },
+import { demoMetadata } from '@/lib/demo-metadata'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  return demoMetadata({
+    path: '/demo/medical',
+    locale,
+    ogImage: '/demo/medical/stage-1-detect.jpg',
+    en: {
+      title: '911 Medical Emergency Scenario | KabatOne Platform',
+      description:
+        'See how KabatOne handles a 911 cardiac emergency — from AI call intake and geo-location to paramedic dispatch and hospital pre-alert in under 3 minutes.',
+    },
+    es: {
+      title: 'Escenario de Emergencia Médica 911 | Plataforma KabatOne',
+      description:
+        'Descubre cómo KabatOne atiende una emergencia cardíaca 911: de la recepción con IA y geolocalización al despacho de paramédicos en menos de 3 minutos.',
+    },
+  })
 }
 
 export default async function MedicalScenarioPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareSenegalPage({
       ? 'Plataforma unificada para la Police Nationale y Gendarmerie de Senegal — despacho CAD integrado en 14 regiones, Dakar Safe City, DGPC protección civil, Puerto de Dakar/PAD, PETROSEN gas offshore Sangomar, CDP/Loi 2008-12 y adquisición DCMP/Code des marchés.'
       : 'Unified platform for Senegal Police Nationale and Gendarmerie — integrated CAD dispatch across 14 regions, Dakar Safe City, DGPC civil protection, Port of Dakar/PAD, PETROSEN Sangomar offshore gas, CDP/Law 2008-12 compliance, and DCMP/Code des marchés procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-senegal/'
-      : 'https://kabatone.com/resources/public-safety-software-senegal/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-senegal'
+      : 'https://kabatone.com/resources/public-safety-software-senegal',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareSenegalPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: 'Senegal',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-senegal/'
-        : 'https://kabatone.com/resources/public-safety-software-senegal/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-senegal'
+        : 'https://kabatone.com/resources/public-safety-software-senegal',
     },
   ])
 

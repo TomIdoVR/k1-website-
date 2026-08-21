@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para NPF, NSCDC y FFS de Nigeria — despacho CAD integrado para 36 mandos estatales y coordinación de desastres NEMA/NiMet, gestión de cámaras Safe City conforme a NDPA 2023 y cumplimiento de Ley de Ciberseguridad con contratación BPP/APP 2007.'
     : 'Unified platform for Nigerian NPF, NSCDC, and FFS — integrated CAD dispatch for 36 state commands and NEMA/NiMet disaster coordination, NDPA 2023-compliant Safe City camera management, and Cybersecurity Act compliance with BPP/PPA 2007 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-nigeria/'
-    : 'https://kabatone.com/resources/public-safety-software-nigeria/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-nigeria'
+    : 'https://kabatone.com/resources/public-safety-software-nigeria'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: 'Nigeria', url },
   ]
 

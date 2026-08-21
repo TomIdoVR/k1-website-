@@ -26,9 +26,9 @@ export default async function VsFususPage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Fusus', url: es ? 'https://kabatone.com/es/vs/fusus/' : 'https://kabatone.com/vs/fusus/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Fusus', url: es ? 'https://kabatone.com/es/vs/fusus' : 'https://kabatone.com/vs/fusus' },
   ]
 
   const faqs = es ? [

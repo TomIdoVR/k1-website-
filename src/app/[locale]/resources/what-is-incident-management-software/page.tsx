@@ -97,18 +97,18 @@ export default async function WhatIsIncidentManagementSoftwarePage({
       ? 'El software de gestión de incidentes rastrea, coordina y resuelve emergencias en tiempo real — conectando despacho, unidades de campo, video y mando. Cómo funciona y qué considerar al elegirlo.'
       : 'Incident management software tracks, coordinates, and resolves emergencies in real time — connecting dispatch, field units, video, and command. How it works, key features, and what to look for.',
     es
-      ? 'https://kabatone.com/es/resources/what-is-incident-management-software/'
-      : 'https://kabatone.com/resources/what-is-incident-management-software/',
+      ? 'https://kabatone.com/es/resources/what-is-incident-management-software'
+      : 'https://kabatone.com/resources/what-is-incident-management-software',
     '2026-04-07'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Software de Gestión de Incidentes?' : 'What Is Incident Management Software?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-incident-management-software/'
-        : 'https://kabatone.com/resources/what-is-incident-management-software/',
+        ? 'https://kabatone.com/es/resources/what-is-incident-management-software'
+        : 'https://kabatone.com/resources/what-is-incident-management-software',
     },
   ])
 

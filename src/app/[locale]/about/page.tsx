@@ -174,8 +174,8 @@ export default async function AboutPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
-          { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-          { name: es ? 'Nosotros' : 'About', url: es ? 'https://kabatone.com/es/about/' : 'https://kabatone.com/about/' },
+          { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+          { name: es ? 'Nosotros' : 'About', url: es ? 'https://kabatone.com/es/about' : 'https://kabatone.com/about' },
         ])) }}
       />
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>

@@ -91,11 +91,11 @@ export default async function AiInPublicSafetyPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? 'IA en Seguridad Pública' : 'AI in Public Safety',
-      url: es ? 'https://kabatone.com/es/resources/ai-in-public-safety/' : 'https://kabatone.com/resources/ai-in-public-safety/',
+      url: es ? 'https://kabatone.com/es/resources/ai-in-public-safety' : 'https://kabatone.com/resources/ai-in-public-safety',
     },
   ]
 
@@ -222,7 +222,7 @@ export default async function AiInPublicSafetyPage({
               es
                 ? 'Cómo la inteligencia artificial está transformando la respuesta a emergencias, la videovigilancia y el despacho. Casos de uso reales, beneficios, limitaciones y qué buscar en una plataforma IA.'
                 : 'How artificial intelligence is transforming emergency response, video surveillance, and dispatch. Real use cases, benefits, limitations, and what to look for in an AI platform.',
-              es ? 'https://kabatone.com/es/resources/ai-in-public-safety/' : 'https://kabatone.com/resources/ai-in-public-safety/',
+              es ? 'https://kabatone.com/es/resources/ai-in-public-safety' : 'https://kabatone.com/resources/ai-in-public-safety',
               '2026-03-20'
             )
           ),

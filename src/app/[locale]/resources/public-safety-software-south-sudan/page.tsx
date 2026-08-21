@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareSouthSudanPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación humanitaria y conciencia situacional para las fuerzas de seguridad de Sudán del Sur, gestión de desastres y programas de reconstrucción de paz."
       : "KabatOne delivers modular command-and-control, humanitarian coordination, and situational awareness for South Sudan security forces, disaster management, and peacebuilding reconstruction programs.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-south-sudan/"
-      : "https://kabatone.com/resources/public-safety-software-south-sudan/",
+      ? "https://kabatone.com/es/resources/public-safety-software-south-sudan"
+      : "https://kabatone.com/resources/public-safety-software-south-sudan",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareSouthSudanPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Sudán del Sur" : "Public Safety Software South Sudan",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-south-sudan/"
-        : "https://kabatone.com/resources/public-safety-software-south-sudan/",
+        ? "https://kabatone.com/es/resources/public-safety-software-south-sudan"
+        : "https://kabatone.com/resources/public-safety-software-south-sudan",
     },
   ]);
 

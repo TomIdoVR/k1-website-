@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareBurundiPage({
     ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa Nacional de Burundi (FDN), Policía Nacional, misiones de paz de la UA, control del Lago Tanganica y gestión de crisis en una de las regiones más volátiles de los Grandes Lagos."
     : "KabatOne delivers public safety platform for Burundi's National Defence Force (FDN), National Police, AU peacekeeping missions, Lake Tanganyika monitoring, and crisis management in one of the Great Lakes' most volatile regions.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-burundi/"
-    : "https://kabatone.com/resources/public-safety-software-burundi/";
+    ? "https://kabatone.com/es/resources/public-safety-software-burundi"
+    : "https://kabatone.com/resources/public-safety-software-burundi";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareBurundiPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Burundi" : "Public Safety Software for Burundi", url: canonical },
   ]);
 

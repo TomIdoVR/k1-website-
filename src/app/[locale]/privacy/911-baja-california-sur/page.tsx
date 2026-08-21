@@ -11,8 +11,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const es = locale === 'es'
-  const canonicalEn = `https://kabatone.com/privacy/${SLUG}/`
-  const canonicalEs = `https://kabatone.com/es/privacy/${SLUG}/`
+  const canonicalEn = `https://kabatone.com/privacy${SLUG}/`
+  const canonicalEs = `https://kabatone.com/es/privacy${SLUG}/`
 
   return {
     title: es

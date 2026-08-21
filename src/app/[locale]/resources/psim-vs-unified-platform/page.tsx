@@ -26,9 +26,9 @@ export default async function PsimVsUnifiedPlatformPage({
   const ACCENT = '#8b5cf6'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
-    { name: es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform', url: es ? 'https://kabatone.com/es/resources/psim-vs-unified-platform/' : 'https://kabatone.com/resources/psim-vs-unified-platform/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
+    { name: es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform', url: es ? 'https://kabatone.com/es/resources/psim-vs-unified-platform' : 'https://kabatone.com/resources/psim-vs-unified-platform' },
   ]
 
   const faqs = es ? [
@@ -155,7 +155,7 @@ export default async function PsimVsUnifiedPlatformPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(
           es ? 'PSIM vs Plataforma Unificada — ¿Cual Es la Diferencia?' : 'PSIM vs Unified Platform — What\'s the Difference?',
           es ? 'PSIM integra alarmas de sistemas aislados. Las plataformas unificadas reemplazan los silos. Compara arquitecturas, costos y resultados reales en seguridad publica.' : 'PSIM integrates alarms from siloed systems. Unified platforms replace silos entirely. Compare architectures, costs, and real-world outcomes for public safety.',
-          es ? 'https://kabatone.com/es/resources/psim-vs-unified-platform/' : 'https://kabatone.com/resources/psim-vs-unified-platform/',
+          es ? 'https://kabatone.com/es/resources/psim-vs-unified-platform' : 'https://kabatone.com/resources/psim-vs-unified-platform',
           '2026-03-19'
         )) }}
       />

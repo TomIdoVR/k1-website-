@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareTogoPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Togo (FAT), Policía Nacional, gestión del Puerto de Lomé y seguridad marítima en el Golfo de Guinea."
     : "KabatOne delivers public safety platform for the Togolese Armed Forces (FAT), National Police, Port of Lomé management, and maritime security in the Gulf of Guinea.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-togo/"
-    : "https://kabatone.com/resources/public-safety-software-togo/";
+    ? "https://kabatone.com/es/resources/public-safety-software-togo"
+    : "https://kabatone.com/resources/public-safety-software-togo";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareTogoPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Togo" : "Public Safety Software for Togo", url: canonical },
   ]);
 

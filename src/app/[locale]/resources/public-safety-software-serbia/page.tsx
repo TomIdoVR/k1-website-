@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareSerbia({
         ? "KabatOne ofrece plataforma de seguridad pública para el MUP serbio, BIA inteligencia y Policía de Fronteras — gestión Corredor X y VII, protección Puerto de Belgrado y Novi Sad, seguridad Rio Danubio 588 km, proceso candidatura UE/Schengen y coordinación FRONTEX/SELEC."
         : "KabatOne delivers public safety platform for Serbian MUP, BIA intelligence, and Border Police — Corridor X and VII management, Port of Belgrade and Novi Sad protection, Danube 588 km river security, EU/Schengen candidacy process, and FRONTEX/SELEC coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-serbia/"
-        : "https://kabatone.com/resources/public-safety-software-serbia/",
+        ? "https://kabatone.com/es/resources/public-safety-software-serbia"
+        : "https://kabatone.com/resources/public-safety-software-serbia",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Serbia"
           : "Public Safety Software for Serbia",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-serbia/"
-          : "https://kabatone.com/resources/public-safety-software-serbia/",
+          ? "https://kabatone.com/es/resources/public-safety-software-serbia"
+          : "https://kabatone.com/resources/public-safety-software-serbia",
       },
     ]),
     faqPageSchema([

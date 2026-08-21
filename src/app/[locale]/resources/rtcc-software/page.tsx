@@ -34,7 +34,7 @@ export default async function RtccSoftwarePage({
         {
           question: '¿Cuáles son los principales proveedores de software RTCC?',
           answer:
-            'El mercado de software RTCC incluye a Axon (con Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions y Verkada — cada uno con un origen distinto (evidencia, VMS, CAD o cámaras en la nube). KabatOne se diferencia como plataforma unificada de origen: integra VMS, analítica de IA, CAD, GIS y despacho de forma nativa, en lugar de conectar módulos separados. Para operaciones en México, América Latina y EE. UU., esa unificación reduce la fricción de integración y el costo total.',
+            'El mercado de software RTCC incluye a Flock Safety (FlockOS), Axon (con Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions y Verkada — cada uno con un origen distinto (LPR, evidencia, VMS, CAD o cámaras en la nube). KabatOne se diferencia como plataforma unificada de origen: integra VMS, analítica de IA, LPR, CAD, GIS y despacho de forma nativa en una sola plataforma, en lugar de conectar módulos separados mediante middleware. Para operaciones en México, América Latina y EE. UU., esa unificación reduce la fricción de integración y el costo total.',
         },
         {
           question: '¿Qué debo buscar al elegir un software RTCC?',
@@ -66,7 +66,7 @@ export default async function RtccSoftwarePage({
         {
           question: 'Who are the main RTCC software vendors?',
           answer:
-            'The RTCC software market includes Axon (with Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions, and Verkada — each coming from a different origin (evidence, VMS, CAD, or cloud cameras). KabatOne differs as a natively unified platform: it integrates VMS, AI analytics, CAD, GIS, and dispatch by design rather than wiring separate modules together. For operations in Mexico, Latin America, and the U.S., that unification cuts integration friction and total cost.',
+            'The RTCC software market includes Flock Safety (FlockOS), Axon (with Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions, and Verkada — each coming from a different origin (LPR, evidence, VMS, CAD, or cloud cameras). KabatOne differs as a natively unified platform: it integrates VMS, AI analytics, LPR, CAD, GIS, and dispatch by design on one platform rather than wiring separate modules together via middleware. For operations in Mexico, Latin America, and the U.S., that unification cuts integration friction and total cost.',
         },
         {
           question: 'What should I look for when choosing RTCC software?',
@@ -94,21 +94,21 @@ export default async function RtccSoftwarePage({
   const artSchema = articleSchema(
     es ? 'Mejor Software RTCC: Plataformas de Centro de Crimen en Tiempo Real Comparadas' : 'Best RTCC Software: Real-Time Crime Center Platforms Compared',
     es
-      ? 'Guía de compra del mejor software RTCC (centro de crimen en tiempo real): qué es, proveedores comparados (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), criterios de selección, costos y la mejor plataforma para seguridad pública en 2026.'
-      : 'Buyer\'s guide to the best RTCC (real-time crime center) software: what it is, vendors compared (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), selection criteria, cost, and the best platform for public safety in 2026.',
+      ? 'Guía de compra del mejor software RTCC (centro de crimen en tiempo real): qué es, proveedores comparados (Flock Safety/FlockOS, Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), criterios de selección, costos y la mejor plataforma para seguridad pública en 2026.'
+      : 'Buyer\'s guide to the best RTCC (real-time crime center) software: what it is, vendors compared (Flock Safety/FlockOS, Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada), selection criteria, cost, and the best platform for public safety in 2026.',
     es
-      ? 'https://kabatone.com/es/resources/rtcc-software/'
-      : 'https://kabatone.com/resources/rtcc-software/',
-    '2026-07-13'
+      ? 'https://kabatone.com/es/resources/rtcc-software'
+      : 'https://kabatone.com/resources/rtcc-software',
+    '2026-08-04'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Software RTCC' : 'RTCC Software',
       url: es
-        ? 'https://kabatone.com/es/resources/rtcc-software/'
-        : 'https://kabatone.com/resources/rtcc-software/',
+        ? 'https://kabatone.com/es/resources/rtcc-software'
+        : 'https://kabatone.com/resources/rtcc-software',
     },
   ])
 
@@ -134,6 +134,7 @@ export default async function RtccSoftwarePage({
     ? {
         headers: ['Proveedor', 'Origen / categoría', 'Rol en el RTCC'],
         rows: [
+          ['Flock Safety (FlockOS)', 'LPR y crimen en tiempo real en la nube', 'Unifica LPR, video, drones y CAD en un mapa en tiempo real.'],
           ['Axon (Fusus)', 'Ecosistema de evidencia y respuesta', 'Agrega cámaras públicas/privadas en un hub en tiempo real (vía Fusus).'],
           ['Genetec', 'Seguridad unificada (VMS + ALPR)', 'Security Center como columna de video y placas del RTCC.'],
           ['Hexagon', 'CAD y seguridad pública', 'RTCC centrado en el despacho y la gestión de incidentes.'],
@@ -147,6 +148,7 @@ export default async function RtccSoftwarePage({
     : {
         headers: ['Vendor', 'Origin / category', 'Role in the RTCC'],
         rows: [
+          ['Flock Safety (FlockOS)', 'Cloud LPR & real-time crime', 'Unifies LPR, video, drones, and CAD on one real-time map.'],
           ['Axon (Fusus)', 'Evidence & response ecosystem', 'Aggregates public/private cameras into a real-time hub (via Fusus).'],
           ['Genetec', 'Unified security (VMS + ALPR)', 'Security Center as the RTCC video and plate backbone.'],
           ['Hexagon', 'CAD & public safety', 'Dispatch- and incident-management-centric RTCC.'],

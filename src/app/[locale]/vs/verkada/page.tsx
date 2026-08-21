@@ -26,12 +26,12 @@ export default async function VsVerkadaPage({
   const ACCENT = '#10b981'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Verkada', url: es ? 'https://kabatone.com/es/vs/verkada/' : 'https://kabatone.com/vs/verkada/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Verkada', url: es ? 'https://kabatone.com/es/vs/verkada' : 'https://kabatone.com/vs/verkada' },
   ]
 
-  const pageUrl = es ? 'https://kabatone.com/es/vs/verkada/' : 'https://kabatone.com/vs/verkada/'
+  const pageUrl = es ? 'https://kabatone.com/es/vs/verkada' : 'https://kabatone.com/vs/verkada'
 
   const faqs = es ? [
     {

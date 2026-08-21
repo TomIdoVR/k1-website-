@@ -234,6 +234,14 @@ export default async function ResourcesPage({
           isNew: false,
         },
         {
+          href: '/resources/psim-alternatives',
+          category: 'Guía de Compra',
+          title: 'Mejores Alternativas a PSIM para Ciudades Inteligentes',
+          excerpt: 'Las alternativas reales a un PSIM tradicional — KabatOne, Genetec, CNL IPSecurityCenter, Hexagon, Advancis, Motorola — comparadas, y cuándo una plataforma unificada supera a una capa de correlación.',
+          readTime: '8 min',
+          isNew: true,
+        },
+        {
           href: '/resources/how-c5-command-centers-work',
           category: 'Análisis Profundo',
           title: '¿Cómo Funcionan los Centros de Mando C5?',
@@ -1429,6 +1437,14 @@ export default async function ResourcesPage({
           excerpt: 'PSIM integrates alarms from siloed systems. Unified platforms replace silos entirely. Compare architectures, costs, and real-world outcomes.',
           readTime: '6 min',
           isNew: false,
+        },
+        {
+          href: '/resources/psim-alternatives',
+          category: 'Buyer\'s Guide',
+          title: 'Best PSIM Alternatives for Smart Cities',
+          excerpt: 'The real alternatives to a traditional PSIM — KabatOne, Genetec, CNL IPSecurityCenter, Hexagon, Advancis, Motorola — compared, and when a unified platform beats a correlation layer.',
+          readTime: '8 min',
+          isNew: true,
         },
         {
           href: '/resources/how-c5-command-centers-work',

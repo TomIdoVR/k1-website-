@@ -97,18 +97,18 @@ export default async function BestVmsSoftwarePage({
       ? 'Guía de compra del mejor software VMS (gestión de video): qué buscar, VMS vs plataforma unificada, compatibilidad de cámaras, costos y las mejores plataformas para seguridad pública en 2026.'
       : 'Buyer\'s guide to the best VMS (video management) software: what to look for, VMS vs unified platform, camera compatibility, cost, and the best platforms for public safety in 2026.',
     es
-      ? 'https://kabatone.com/es/resources/best-vms-software/'
-      : 'https://kabatone.com/resources/best-vms-software/',
+      ? 'https://kabatone.com/es/resources/best-vms-software'
+      : 'https://kabatone.com/resources/best-vms-software',
     '2026-07-07'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Mejor Software VMS' : 'Best VMS Software',
       url: es
-        ? 'https://kabatone.com/es/resources/best-vms-software/'
-        : 'https://kabatone.com/resources/best-vms-software/',
+        ? 'https://kabatone.com/es/resources/best-vms-software'
+        : 'https://kabatone.com/resources/best-vms-software',
     },
   ])
 

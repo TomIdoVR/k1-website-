@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareBotswanaPage({
     ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Botsuana (BDF), Servicio de Policía, protección de las minas de diamantes De Beers/Debswana, gestión del Kalahari y coordinación SADC."
     : "KabatOne delivers public safety platform for Botswana Defence Force (BDF), Police Service, De Beers/Debswana diamond mine protection, Kalahari management, and SADC coordination.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-botswana/"
-    : "https://kabatone.com/resources/public-safety-software-botswana/";
+    ? "https://kabatone.com/es/resources/public-safety-software-botswana"
+    : "https://kabatone.com/resources/public-safety-software-botswana";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareBotswanaPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Botsuana" : "Public Safety Software for Botswana", url: canonical },
   ]);
 

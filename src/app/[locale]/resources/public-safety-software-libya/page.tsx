@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareLibyaPage({
       ? "KabatOne ofrece plataforma modular de mando y control, protección de infraestructura petrolera y conciencia situacional para el Gobierno de Unidad Nacional de Libia, programas de seguridad en Trípoli/Bengasi y reconstrucción post-conflicto."
       : "KabatOne delivers modular command-and-control, oil infrastructure protection, and situational awareness for Libya's Government of National Unity, Tripoli/Benghazi security programs, and post-conflict reconstruction.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-libya/"
-      : "https://kabatone.com/resources/public-safety-software-libya/",
+      ? "https://kabatone.com/es/resources/public-safety-software-libya"
+      : "https://kabatone.com/resources/public-safety-software-libya",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareLibyaPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Libia" : "Public Safety Software Libya",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-libya/"
-        : "https://kabatone.com/resources/public-safety-software-libya/",
+        ? "https://kabatone.com/es/resources/public-safety-software-libya"
+        : "https://kabatone.com/resources/public-safety-software-libya",
     },
   ]);
 

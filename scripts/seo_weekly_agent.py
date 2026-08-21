@@ -12,6 +12,7 @@ Scheduled via macOS LaunchAgent: com.kabatone.seo-weekly.plist
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timedelta
@@ -38,14 +39,77 @@ def expected_ctr(pos):
     if pos <= 20: return 0.015
     return 0.008
 
-def business_value(query):
+# ── Intent qualification ──────────────────────────────────────────────────────
+# Topic vocabulary alone does not make a query valuable. The dominant example is "c5":
+# 5,115 impressions at position 8.9, but the sibling queries are "c5 mapa",
+# "camaras de videovigilancia c5" (CDMX residents looking for the actual C5 agency),
+# "c5 flyover closures" (a Manila highway) and "c5 data centers" (unrelated sense).
+# Those clicks are unwinnable and worthless if won. Scoring them as a 2.5x opportunity
+# put the site's single largest non-opportunity at the top of the brief every week.
+
+_NON_BUYER = [
+    # citizen / civic-service intent
+    'mapa', 'map', 'camara', 'camaras', 'cámara', 'cámaras', 'videovigilancia',
+    'telefono', 'teléfono', 'numero', 'número', 'denuncia', 'denuncias',
+    'tramite', 'trámite', 'horario', 'ubicacion', 'ubicación', 'direccion', 'dirección',
+    # jobs
+    'empleo', 'vacantes', 'sueldo', 'salario', 'jobs', 'careers',
+    # unrelated senses of the same token
+    'flyover', 'closure', 'closures', 'traffic update', 'data center', 'data centers',
+    'datacenter', 'datacenters',
+]
+_BUYER = [
+    'software', 'platform', 'plataforma', 'system', 'systems', 'sistema', 'sistemas',
+    'solution', 'solutions', 'solucion', 'solución', 'vendor', 'vendors', 'provider',
+    'proveedor', 'best', 'top', 'demo', 'pricing', 'precio', 'cost', 'quote',
+    'alternative', 'alternatives', 'alternativa', 'vs', 'compare', 'comparison',
+    'integration', 'api', 'rfp', 'tender', 'licitacion', 'licitación',
+]
+_INFORMATIONAL = [
+    'what is', 'que es', 'qué es', 'how does', 'how do', 'como funciona',
+    'cómo funciona', 'diferencia', 'difference', 'meaning', 'significado',
+]
+# A query that is only these tokens carries no qualifier and cannot be read as a buyer.
+_BARE_TOKENS = {'c5', 'c4', 'cdmx', 'mexico', 'méxico', 'y', 'o', 'de', 'la', 'el', 'un', 'una'}
+
+
+def _has(query, terms):
+    """Word-boundary match. Substring matching wrongly fired 'ai' inside
+    'computer aided dispatch' and 'cad' inside 'academic'."""
     q = query.lower()
-    if any(t in q for t in ['dispatch', 'cad', '911', 'k-dispatch']): return 3.0
-    if any(t in q for t in ['c5', 'command center', 'centro de mando', 'c4']): return 2.5
-    if any(t in q for t in ['video management', 'vms', 'k-video', 'video analytics']): return 2.0
-    if any(t in q for t in ['vs', 'alternative', 'compare', 'peregrine', 'motorola']): return 2.0
-    if any(t in q for t in ['mexico', 'latam', 'municipal']): return 1.8
-    return 1.0
+    return any(re.search(r'\b' + re.escape(t) + r'\b', q) for t in terms)
+
+
+def query_intent(query):
+    """buyer | informational | navigational — whether the searcher could become a customer."""
+    q = query.lower().strip()
+    if _has(q, _BUYER):
+        return 'buyer'
+    if _has(q, _NON_BUYER):
+        return 'navigational'
+    if _has(q, _INFORMATIONAL):
+        return 'informational'
+    if set(re.findall(r"[a-z0-9áéíóúñü]+", q)) <= _BARE_TOKENS:
+        return 'navigational'
+    return 'buyer'
+
+
+def business_value(query):
+    intent = query_intent(query)
+    # Kept in the ranking so it stays visible and auditable, but never near the top.
+    if intent == 'navigational':
+        return 0.2
+    q = query.lower()
+    if _has(q, ['dispatch', 'cad', '911', 'k-dispatch']):                     base = 3.0
+    elif _has(q, ['c5', 'command center', 'centro de mando', 'c4']):          base = 2.5
+    elif _has(q, ['video management', 'vms', 'k-video', 'video analytics']):  base = 2.0
+    elif _has(q, ['vs', 'alternative', 'compare', 'peregrine', 'motorola']):  base = 2.0
+    elif _has(q, ['mexico', 'latam', 'municipal']):                           base = 1.8
+    else:                                                                     base = 1.0
+    # Informational queries earn GEO citations, not clicks.
+    if intent == 'informational':
+        base *= 0.6
+    return round(base, 2)
 
 CLUSTERS = {
     'Brand':             ['kabatone', 'kabat one', 'cityshob'],
@@ -59,9 +123,8 @@ CLUSTERS = {
 }
 
 def assign_cluster(query):
-    q = query.lower()
     for name, keywords in CLUSTERS.items():
-        if any(k in q for k in keywords):
+        if _has(query, keywords):
             return name
     return 'Other'
 
@@ -777,6 +840,37 @@ def _run_tool(name: str, args: dict):
     raise ValueError(f'Unknown tool: {name}')
 
 
+MAX_TOOL_ITERATIONS = 20   # backstop: the orchestrator needs ~4 turns in practice
+API_MAX_ATTEMPTS = 5       # a single 502 killed the 2026-08-17 run; retry the turn
+
+
+def _create_with_retry(client, **kwargs):
+    """Call messages.create, retrying transient API failures with backoff.
+
+    The SDK already retries 5xx twice internally; this is the outer layer for
+    when that budget is exhausted (Anthropic 502s can persist for a minute or
+    two). Client errors (4xx other than 429) are re-raised immediately.
+    """
+    import time
+    import anthropic
+
+    for attempt in range(1, API_MAX_ATTEMPTS + 1):
+        try:
+            return client.messages.create(**kwargs)
+        except (anthropic.APIConnectionError, anthropic.RateLimitError) as e:
+            err = e
+        except anthropic.APIStatusError as e:
+            if e.status_code < 500:
+                raise
+            err = e
+        if attempt == API_MAX_ATTEMPTS:
+            raise err
+        delay = min(60, 5 * 2 ** (attempt - 1))
+        print(f'  [retry] {type(err).__name__} — attempt {attempt}/{API_MAX_ATTEMPTS}, '
+              f'sleeping {delay}s')
+        time.sleep(delay)
+
+
 def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
     import anthropic
 
@@ -809,15 +903,23 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
         ),
     }]
 
-    while True:
-        response = client.messages.create(
+    for iteration in range(1, MAX_TOOL_ITERATIONS + 1):
+        response = _create_with_retry(
+            client,
             model='claude-sonnet-4-6',
-            max_tokens=4096,
+            max_tokens=8192,
             system=ORCHESTRATOR_SYSTEM,
             tools=TOOLS,
             messages=messages,
         )
         messages.append({'role': 'assistant', 'content': response.content})
+
+        if response.stop_reason == 'max_tokens':
+            # No tool_use block to answer, so the loop would append a second
+            # assistant turn and 400 on the next request. Fail loudly instead.
+            print(f'ERROR: hit max_tokens on iteration {iteration} — output truncated. '
+                  f'Raise max_tokens and re-run.')
+            return 1
 
         if response.stop_reason == 'end_turn':
             for block in response.content:
@@ -849,8 +951,18 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
                         'is_error': True,
                     })
 
-        if tool_results:
-            messages.append({'role': 'user', 'content': tool_results})
+        if not tool_results:
+            # Neither end_turn nor a tool call — nothing to send back, so
+            # looping would append two assistant turns in a row and 400.
+            print(f'ERROR: no tool calls and stop_reason={response.stop_reason!r} '
+                  f'on iteration {iteration}. Aborting.')
+            return 1
+
+        messages.append({'role': 'user', 'content': tool_results})
+    else:
+        print(f'ERROR: orchestrator did not finish within {MAX_TOOL_ITERATIONS} '
+              f'tool iterations. Aborting.')
+        return 1
 
     return 0
 
@@ -1121,16 +1233,37 @@ def main():
     parser.add_argument('--no-ai', action='store_true', help='Skip LLM — raw analysis only')
     args = parser.parse_args()
 
-    if args.no_ai:
-        run_no_ai(dry_run=args.dry_run, days=args.days)
-    else:
-        run_orchestrator(dry_run=args.dry_run, days=args.days)
+    exit_code = 0
+
+    # The report step is the most failure-prone (network + LLM). Isolate it so a
+    # failure there doesn't also silently skip the two monitors below — that is
+    # what wiped the 2026-08-17 run entirely.
+    try:
+        if args.no_ai:
+            run_no_ai(dry_run=args.dry_run, days=args.days)
+        else:
+            exit_code = run_orchestrator(dry_run=args.dry_run, days=args.days) or 0
+    except Exception:
+        import traceback
+        print('ERROR: report step failed — continuing to monitors.')
+        traceback.print_exc()
+        exit_code = 1
 
     # Weekly keyword rank snapshot rides on the same scheduled run (no separate cron)
-    _run_keyword_monitor(dry_run=args.dry_run, days=args.days)
-    # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
-    _run_geo_monitor(dry_run=args.dry_run)
-    return 0
+    for label, fn in (
+        ('keyword-monitor', lambda: _run_keyword_monitor(dry_run=args.dry_run, days=args.days)),
+        # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
+        ('geo-monitor', lambda: _run_geo_monitor(dry_run=args.dry_run)),
+    ):
+        try:
+            fn()
+        except Exception:
+            import traceback
+            print(f'ERROR: {label} failed.')
+            traceback.print_exc()
+            exit_code = 1
+
+    return exit_code
 
 
 if __name__ == '__main__':

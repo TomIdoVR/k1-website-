@@ -232,9 +232,9 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
   ]
 
   const canonical = es
-    ? `https://kabatone.com/es/privacy/${slug}/`
-    : `https://kabatone.com/privacy/${slug}/`
-  const home = es ? 'https://kabatone.com/es/' : 'https://kabatone.com/'
+    ? `https://kabatone.com/es/privacy${slug}/`
+    : `https://kabatone.com/privacy${slug}/`
+  const home = es ? 'https://kabatone.com/es' : 'https://kabatone.com/'
 
   return (
     <>
@@ -243,7 +243,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: home },
-          { name: es ? 'Política de Privacidad' : 'Privacy Policy', url: es ? 'https://kabatone.com/es/privacy/' : 'https://kabatone.com/privacy/' },
+          { name: es ? 'Política de Privacidad' : 'Privacy Policy', url: es ? 'https://kabatone.com/es/privacy' : 'https://kabatone.com/privacy' },
           { name: appName, url: canonical },
         ])) }}
       />

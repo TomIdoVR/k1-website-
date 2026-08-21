@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareNamibiaPage({
     ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Namibia (NDF), Policía Nacional, protección de minas de uranio Rossing/Husab, seguridad marítima del Atlántico y gestión de fronteras SADC."
     : "KabatOne delivers public safety platform for Namibia Defence Force (NDF), National Police, Rossing/Husab uranium mine protection, Atlantic maritime security, and SADC border management.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-namibia/"
-    : "https://kabatone.com/resources/public-safety-software-namibia/";
+    ? "https://kabatone.com/es/resources/public-safety-software-namibia"
+    : "https://kabatone.com/resources/public-safety-software-namibia";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareNamibiaPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Namibia" : "Public Safety Software for Namibia", url: canonical },
   ]);
 

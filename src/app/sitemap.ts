@@ -45,6 +45,7 @@ const pages = [
   { path: '/resources/milestone-alternatives', priority: 0.75 },
   { path: '/resources/best-ai-video-analytics-software', priority: 0.75 },
   { path: '/resources/best-ng911-software', priority: 0.75 },
+  { path: '/resources/psim-alternatives', priority: 0.75 },
   { path: '/resources/rtcc-software', priority: 0.8 },
   { path: '/resources/what-is-sensor-fusion', priority: 0.6 },
   { path: '/resources/c5-command-centers-mexico-2026', priority: 0.7 },
@@ -252,34 +253,38 @@ function keepInSitemap(page: { path: string }): boolean {
   return m ? KEEP_COUNTRY_SLUGS.has(m[1]) : true
 }
 
+/* Next serves `/path`, not `/path/` — it 308s the slashed form away. Emitting
+   slashed URLs here meant every entry in the sitemap was a redirect rather than
+   a 200. Only the root keeps its slash, since `https://kabatone.com` and
+   `https://kabatone.com/` are the same resource. Canonicals in
+   src/content/{en,es}/metadata.ts are kept in the same unslashed form.
+   See SEO/weekly-report-2026-08-10.md. */
+function loc(path: string): string {
+  return path === '' ? `${baseUrl}/` : `${baseUrl}${path}`
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
 
   for (const page of pages.filter(keepInSitemap)) {
+    const en = loc(page.path)
+    const es = loc(`/es${page.path}`)
     entries.push({
-      url: `${baseUrl}${page.path}/`,
+      url: en,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: page.priority,
       alternates: {
-        languages: {
-          en: `${baseUrl}${page.path}/`,
-          es: `${baseUrl}/es${page.path}/`,
-          'x-default': `${baseUrl}${page.path}/`,
-        },
+        languages: { en, es, 'x-default': en },
       },
     })
     entries.push({
-      url: `${baseUrl}/es${page.path}/`,
+      url: es,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: page.priority,
       alternates: {
-        languages: {
-          en: `${baseUrl}${page.path}/`,
-          es: `${baseUrl}/es${page.path}/`,
-          'x-default': `${baseUrl}${page.path}/`,
-        },
+        languages: { en, es, 'x-default': en },
       },
     })
   }

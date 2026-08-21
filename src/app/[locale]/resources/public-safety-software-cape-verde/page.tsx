@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareCapeVerdePage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Cabo Verde (FACV), Policía Nacional, seguridad marítima atlántica, protección del turismo y coordinación ECOWAS — archipiélago estratégico en la encrucijada atlántica."
     : "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security, tourism protection, and ECOWAS coordination — strategic archipelago at the Atlantic crossroads.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-cape-verde/"
-    : "https://kabatone.com/resources/public-safety-software-cape-verde/";
+    ? "https://kabatone.com/es/resources/public-safety-software-cape-verde"
+    : "https://kabatone.com/resources/public-safety-software-cape-verde";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareCapeVerdePage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Cabo Verde" : "Public Safety Software for Cape Verde", url: canonical },
   ]);
 

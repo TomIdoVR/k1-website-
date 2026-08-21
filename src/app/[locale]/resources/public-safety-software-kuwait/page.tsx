@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para MOI de Kuwait, KNP y DGFD — despacho CAD integrado para 6 distritos de seguridad, Kuwait Safe City/KSCP 70K+ cámaras, seguridad portuaria Mina Al-Ahmadi/JKIA, Ley 22/2023/CITRA, KU-CERT y adquisición CAPT/MoF.'
     : 'Unified platform for Kuwait MOI, KNP, and DGFD — integrated CAD dispatch for 6 security districts, Kuwait Safe City/KSCP 70K+ cameras, Mina Al-Ahmadi/JKIA port security, Law 22/2023/CITRA, KU-CERT compliance, and CAPT/MoF procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-kuwait/'
-    : 'https://kabatone.com/resources/public-safety-software-kuwait/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-kuwait'
+    : 'https://kabatone.com/resources/public-safety-software-kuwait'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: 'Kuwait', url },
   ]
 

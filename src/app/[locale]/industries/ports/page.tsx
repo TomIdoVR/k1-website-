@@ -127,7 +127,7 @@ export default async function PortsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Puertos' : 'Ports', url: 'https://kabatone.com/industries/ports/' },
+          { name: es ? 'Puertos' : 'Ports', url: 'https://kabatone.com/industries/ports' },
         ])) }}
       />
       <script

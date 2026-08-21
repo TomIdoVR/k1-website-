@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para MOI, Policía Egipcia y CPS — despacho CAD integrado para 27 gobernaciones y coordinación de emergencias EMA/NARSS, gestión de cámaras Cairo Safe City conforme a PDPL 2020 y cumplimiento NCSA/EG-CERT con contratación GAGS/Ley 182/2018.'
     : 'Unified platform for Egyptian MOI, Police, and CPS — integrated CAD dispatch for 27 governorates and EMA/NARSS emergency coordination, Cairo Safe City camera management compliant with PDPL 2020, and NCSA/EG-CERT compliance with GAGS/Law 182/2018 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-egypt/'
-    : 'https://kabatone.com/resources/public-safety-software-egypt/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-egypt'
+    : 'https://kabatone.com/resources/public-safety-software-egypt'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Egipto' : 'Egypt', url },
   ]
 

@@ -97,12 +97,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para la Policía Federal de Iraq (IFP) y el MOI — despacho CAD en 18 gobernados, Baghdad Safe City/NOC, KRSC/Asayish Región del Kurdistán, seguridad de campos Rumaila/West Qurna/Kirkuk, Puerto Umm Qasr/ABOT, CMC/NITA-Iraq y adquisición GCB/PMO.'
     : 'Unified platform for Iraq Federal Police (IFP) and MOI — integrated CAD dispatch across 18 governorates, Baghdad Safe City/NOC, KRSC/Asayish Kurdistan Region, Rumaila/West Qurna/Kirkuk oilfield security, Umm Qasr Port/ABOT, CMC/NITA-Iraq compliance, and GCB/PMO procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-iraq/'
-    : 'https://kabatone.com/resources/public-safety-software-iraq/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-iraq'
+    : 'https://kabatone.com/resources/public-safety-software-iraq'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: 'Iraq', url },
   ]
 

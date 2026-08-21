@@ -91,8 +91,8 @@ export default async function SmartCityPlatformGuidePage({
       ? 'Una plataforma de ciudad inteligente conecta sensores IoT, video, trafico y servicios de emergencia en una vista operativa. Guia para seleccionar e implementar la plataforma correcta.'
       : 'A smart city platform connects IoT sensors, video, traffic systems, and emergency services into one operational view. Guide to selecting and deploying the right platform.',
     url: es
-      ? 'https://kabatone.com/es/resources/smart-city-platform-guide/'
-      : 'https://kabatone.com/resources/smart-city-platform-guide/',
+      ? 'https://kabatone.com/es/resources/smart-city-platform-guide'
+      : 'https://kabatone.com/resources/smart-city-platform-guide',
   }
 
   return (

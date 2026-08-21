@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareLesothoPage({
     ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Lesoto (LDF), Servicio de Policía Montada, proyecto hídrico LHWP, mina de diamantes Letseng y seguridad en las montañas del Drakensberg — completamente rodeado por Sudáfrica."
     : "KabatOne delivers public safety platform for Lesotho Defence Force (LDF), Mounted Police Service, LHWP water project, Letseng diamond mine, and Drakensberg mountain security — entirely surrounded by South Africa.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-lesotho/"
-    : "https://kabatone.com/resources/public-safety-software-lesotho/";
+    ? "https://kabatone.com/es/resources/public-safety-software-lesotho"
+    : "https://kabatone.com/resources/public-safety-software-lesotho";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareLesothoPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Lesoto" : "Public Safety Software for Lesotho", url: canonical },
   ]);
 

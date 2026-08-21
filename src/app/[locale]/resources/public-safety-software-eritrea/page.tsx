@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareEritreaPage({
       ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Eritrea, la Policía del Estado de Eritrea, gestión portuaria en Massawa/Assab y seguridad marítima en el Estrecho de Bab-el-Mandeb."
       : "KabatOne delivers public safety platform for the Eritrea Defence Forces, Eritrea State Police, port management at Massawa/Assab, and maritime security across the Red Sea and Bab-el-Mandeb corridor.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-eritrea/"
-      : "https://kabatone.com/resources/public-safety-software-eritrea/",
+      ? "https://kabatone.com/es/resources/public-safety-software-eritrea"
+      : "https://kabatone.com/resources/public-safety-software-eritrea",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareEritreaPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para Eritrea" : "Public Safety Software for Eritrea",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-eritrea/" : "https://kabatone.com/resources/public-safety-software-eritrea/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-eritrea" : "https://kabatone.com/resources/public-safety-software-eritrea",
     },
   ]);
 

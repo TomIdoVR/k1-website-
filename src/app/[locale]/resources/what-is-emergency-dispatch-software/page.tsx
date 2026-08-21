@@ -101,19 +101,19 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
       ? 'Guía completa sobre software de despacho de emergencias: definición, diferencia con CAD, NG911 y criterios de evaluación para centros de despacho y seguridad pública.'
       : 'Complete guide to emergency dispatch software: definition, difference from CAD, NG911 integration, and evaluation criteria for dispatch centers and public safety agencies.',
     es
-      ? 'https://kabatone.com/es/resources/what-is-emergency-dispatch-software/'
-      : 'https://kabatone.com/resources/what-is-emergency-dispatch-software/',
+      ? 'https://kabatone.com/es/resources/what-is-emergency-dispatch-software'
+      : 'https://kabatone.com/resources/what-is-emergency-dispatch-software',
     '2026-04-07'
   )
 
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Software de Despacho de Emergencias?' : 'What Is Emergency Dispatch Software?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-emergency-dispatch-software/'
-        : 'https://kabatone.com/resources/what-is-emergency-dispatch-software/',
+        ? 'https://kabatone.com/es/resources/what-is-emergency-dispatch-software'
+        : 'https://kabatone.com/resources/what-is-emergency-dispatch-software',
     },
   ])
 

@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareLuxembourg({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía Grand-Ducal luxemburguesa, SREL inteligencia y Ejército — protección del mayor centro financiero europeo per cápita, seguridad de LuxAir/Cargolux, instituciones UE/NATO y coordinación INTERPOL/Europol."
         : "KabatOne delivers public safety platform for Luxembourg Grand-Ducal Police, SREL intelligence, and Army — protection of Europe's largest per-capita financial center, LuxAir/Cargolux security, EU/NATO institutions, and INTERPOL/Europol coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-luxembourg/"
-        : "https://kabatone.com/resources/public-safety-software-luxembourg/",
+        ? "https://kabatone.com/es/resources/public-safety-software-luxembourg"
+        : "https://kabatone.com/resources/public-safety-software-luxembourg",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Luxemburgo"
           : "Public Safety Software for Luxembourg",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-luxembourg/"
-          : "https://kabatone.com/resources/public-safety-software-luxembourg/",
+          ? "https://kabatone.com/es/resources/public-safety-software-luxembourg"
+          : "https://kabatone.com/resources/public-safety-software-luxembourg",
       },
     ]),
     faqPageSchema([
