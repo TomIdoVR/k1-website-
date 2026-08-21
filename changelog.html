@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.372 -->
+      <div class="tl-entry fixed" id="v2.372">
+        <div class="tl-meta"><span class="tl-ver">v2.372</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">GA4 lead conversions were never sent: gtag needs an explicit send_to</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>Every lead conversion was silently lost before reaching GA4.</strong> Leads arrived at Formspree and the inbox, the success page rendered, nothing errored &mdash; but <code>generate_lead</code> never reached GA4</li>
+          <li><strong>Cause:</strong> the site loads gtag.js <em>and</em> a GTM container sharing one dataLayer. In that configuration <code>gtag('event', ...)</code> without an explicit target never resolves to the GA4 property &mdash; the call succeeds, throws nothing, and issues no <code>/g/collect</code> request. Measured live: without <code>send_to</code> &rarr; <strong>0</strong> hits; with it &rarr; <strong>1</strong>; bare <code>dataLayer.push</code> &rarr; <strong>0</strong></li>
+          <li><strong>Fix:</strong> <code>send_to</code> is now part of every <code>trackLead</code> payload</li>
+          <li><code>page_view</code> was unaffected throughout, which is why GA4 looked healthy &mdash; traffic reported normally while conversions read zero since 20 Aug</li>
+          <li>Verified end to end: a real production submission produced <code>generate_lead</code> in GA4 Realtime within a minute. Closes <strong>PRE-003</strong>, the last launch gate</li>
+        </ul></div>
+      </div>
+
+
       <!-- v2.371 -->
       <div class="tl-entry fixed" id="v2.371">
         <div class="tl-meta"><span class="tl-ver">v2.371</span><span class="tl-date">2026-08-21</span></div>
