@@ -12,6 +12,10 @@ import { Link } from '@/i18n/navigation'
  */
 
 const APP_NAME = '911 Michoacán'
+/* main's renamed slug. It must stay in step with the permanent redirect kept
+   in next.config.ts (/legal/sitec-911 → /legal/911-michoacan); reverting to
+   the old value here would send the redirect target back to the old URL and
+   loop. */
 const SLUG = '911-michoacan'
 const DEVELOPER = 'Kabat-One Software Ltd.'
 const ADDRESS = 'HaAlon 4 St., Kfar Netter, Israel'

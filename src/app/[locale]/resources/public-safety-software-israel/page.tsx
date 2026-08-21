@@ -302,7 +302,7 @@ export default async function PublicSafetySoftwareIsraelPage({
               { href: '/resources/public-safety-software-middle-east', label: es ? 'Oriente Medio' : 'Middle East' },
               { href: '/resources/public-safety-software-turkey', label: es ? 'Turquía' : 'Türkiye' },
               { href: '/resources/public-safety-software-singapore', label: es ? 'Singapur' : 'Singapore' },
-              { href: '/resources/public-safety-software-uk', label: es ? 'Reino Unido' : 'UK' },
+              { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Reino Unido' : 'UK' },
               { href: '/resources/public-safety-software-germany', label: es ? 'Alemania' : 'Germany' },
             ].map((link) => (
               <Link

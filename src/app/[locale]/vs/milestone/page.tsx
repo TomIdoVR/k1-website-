@@ -502,7 +502,7 @@ export default async function VsMilestonePage({
               </span>
               {[
                 { href: '/integrations/lpr', label: 'LPR' },
-                { href: '/integrations/facial-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
                 { href: '/integrations/drones', label: 'Drones' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>

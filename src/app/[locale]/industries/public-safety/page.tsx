@@ -40,12 +40,12 @@ export default async function PublicSafetyPage({
       ? [
           { value: '40+', label: 'Proyectos Activos' },
           { value: '73M', label: 'Ciudadanos Protegidos' },
-          { value: '99.9%', label: 'Disponibilidad' },
+          { value: '99.99%', label: 'Disponibilidad' },
         ]
       : [
           { value: '40+', label: 'Active Projects' },
           { value: '73M', label: 'Citizens Protected' },
-          { value: '99.9%', label: 'Platform Uptime' },
+          { value: '99.99%', label: 'Platform Uptime' },
         ],
     cta1: es ? 'Solicita una Demo' : 'Book a Demo',
     cta2: es ? 'Ver la Plataforma' : 'See the Platform',
@@ -219,12 +219,12 @@ export default async function PublicSafetyPage({
 
   const publicSafetyFaqs = es ? [
     { question: '¿Cómo ayuda KabatOne a la seguridad pública?', answer: 'KabatOne proporciona una plataforma unificada que transforma datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada. Conecta cámaras, sensores, drones y sistemas de comunicación en una sola imagen operativa.' },
-    { question: '¿Cuántas ciudades protege KabatOne?', answer: 'KabatOne opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.9%.' },
+    { question: '¿Cuántas ciudades protege KabatOne?', answer: 'KabatOne opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.99%.' },
     { question: '¿Qué productos ofrece KabatOne para seguridad pública?', answer: 'KabatOne despliega la suite completa: K-Safety para conciencia situacional, K-Dispatch para despacho CAD, K-Traffic para gestión de tráfico, K-Video para gestión de video y K-Connect para video comunitario compartido.' },
     { question: '¿Cómo reduce KabatOne los tiempos de respuesta?', answer: 'Los motores de reglas impulsados por IA detectan incidentes automáticamente, activan protocolos y despachan recursos. El despacho inteligente y la analítica geoespacial aseguran que las unidades correctas lleguen a las ubicaciones correctas en el menor tiempo.' },
   ] : [
     { question: 'How does KabatOne help public safety?', answer: 'KabatOne provides a unified platform that transforms fragmented city data into actionable intelligence and coordinated response. It connects cameras, sensors, drones, and communication systems into a single operational picture.' },
-    { question: 'How many cities does KabatOne protect?', answer: 'KabatOne operates across 40+ active projects, protecting over 73 million citizens with 99.9% platform uptime.' },
+    { question: 'How many cities does KabatOne protect?', answer: 'KabatOne operates across 40+ active projects, protecting over 73 million citizens with 99.99% platform uptime.' },
     { question: 'What products does KabatOne offer for public safety?', answer: 'KabatOne deploys the complete suite: K-Safety for situational awareness, K-Dispatch for CAD dispatch, K-Traffic for traffic management, K-Video for video management, and K-Connect for community video sharing.' },
     { question: 'How does KabatOne reduce response times?', answer: 'AI-powered rule engines automatically detect incidents, trigger protocols, and dispatch resources. Smart dispatch and geospatial analytics ensure the right units reach the right locations in minimum time.' },
   ]
@@ -278,7 +278,7 @@ export default async function PublicSafetyPage({
                 ? 'Las ciudades hoy enfrentan una convergencia de desafios de datos, coordinacion y tecnologia que demandan un enfoque unificado.'
                 : 'Cities today face a convergence of data, coordination, and technology challenges that demand a unified approach.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {challenges.map((c, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', transition: 'border-color 0.2s' }}>
                   <div style={{
@@ -346,7 +346,7 @@ export default async function PublicSafetyPage({
                 ? 'Una plataforma unificada que transforma los datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada.'
                 : 'A unified platform that transforms fragmented city data into actionable intelligence and coordinated response.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {capabilities.map((cap, i) => (
                 <div key={i} style={{
                   background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)',
@@ -500,10 +500,28 @@ export default async function PublicSafetyPage({
           @media (max-width: 768px) {
             section > div { grid-template-columns: 1fr !important; }
           }
-          @media (max-width: 640px) {
-            section > div > div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
-            section > div > div[style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+
+          /* Class selectors, because the rules that used to live here matched
+             nothing: they tested the inline style attribute for
+             "grid-template-columns: repeat(...)" with a space after the colon,
+             and React serialises inline styles without one. Every fixed-column
+             grid therefore held its desktop track count at every width -- the
+             challenges grid computed to 150px+136px+152px inside a 390px
+             viewport. Inline styles win over stylesheets, so !important. */
+          .ind-grid > * { min-width: 0; }
+          @media (max-width: 900px) {
+            .ind-grid { grid-template-columns: repeat(2, 1fr) !important; }
           }
+          @media (max-width: 640px) {
+            .ind-grid { grid-template-columns: 1fr !important; }
+          }
+          /* Flex items also default to min-width: auto, so a card could stay
+             wider than its own wrapped flex row on the narrowest phones. */
+          @media (max-width: 400px) {
+            section div { min-width: 0; }
+            section h1, section h2, section h3, section p { overflow-wrap: anywhere; }
+          }
+
         `}</style>
       </div>
     </>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import ScenarioPlayer from '@/components/demo/ScenarioPlayer'
 import { violenceScenario } from '@/data/demo/violence'
+import ScenarioHeading from '@/components/demo/ScenarioHeading'
 
 export const metadata: Metadata = {
   title: 'Violence Detection Walkthrough | KabatOne Platform Demo',
@@ -18,19 +19,24 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ViolenceDemoPage() {
+export default async function ViolenceDemoPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const es = locale === 'es'
   return (
-    <Suspense
-      fallback={
-        <div
-          className="flex items-center justify-center min-h-screen"
-          style={{ background: '#08101A', color: '#48647A', fontFamily: 'monospace' }}
-        >
-          LOADING...
-        </div>
-      }
-    >
-      <ScenarioPlayer scenario={violenceScenario} basePath="/demo/violence" />
-    </Suspense>
+    <>
+      <ScenarioHeading>{es ? 'Recorrido del escenario de detección de violencia' : 'Violence detection scenario walkthrough'}</ScenarioHeading>
+      <Suspense
+        fallback={
+          <div
+            className="flex items-center justify-center min-h-screen"
+            style={{ background: '#08101A', color: '#48647A', fontFamily: 'monospace' }}
+          >
+            LOADING...
+          </div>
+        }
+      >
+        <ScenarioPlayer scenario={violenceScenario} basePath="/demo/violence" />
+      </Suspense>
+    </>
   )
 }

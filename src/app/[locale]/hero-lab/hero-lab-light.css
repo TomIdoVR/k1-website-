@@ -1,0 +1,1520 @@
+.hll-page,
+.hll-page * {
+  box-sizing: border-box;
+}
+
+.hll-page {
+  --hll-navy: #081a4d;
+  --hll-blue: #0757f7;
+  --hll-cyan: #12c7c2;
+  --hll-muted: #4f5f84;
+  --hll-line: rgba(77, 108, 171, 0.15);
+  position: relative;
+  isolation: isolate;
+  min-height: 1024px;
+  overflow: clip;
+  /* Contains child margins. .hll-hero-head has a 14px top margin, and once the
+     header moved out of this section (v2.325) that margin had nothing above it
+     to collapse against — so it collapsed *through* the section's top edge,
+     pushing .hll-page down 14px and showing the dark body background as a black
+     band under the header. overflow: clip does not establish a block formatting
+     context, so it did not contain it; flow-root does. */
+  display: flow-root;
+  color: var(--hll-navy);
+  background:
+    radial-gradient(circle at 50% 59%, rgba(75, 158, 255, 0.17) 0, rgba(93, 167, 255, 0.08) 22%, transparent 44%),
+    radial-gradient(circle at 77% 25%, rgba(195, 217, 255, 0.27), transparent 31%),
+    linear-gradient(180deg, #fafcff 0%, #f7faff 38%, #eff5fd 78%, #edf3fb 100%);
+  font-family: 'Space Grotesk', sans-serif;
+  padding-bottom: 28px;
+}
+
+.hll-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image: radial-gradient(rgba(30, 84, 178, 0.09) 0.55px, transparent 0.55px);
+  background-size: 7px 7px;
+  mask-image: linear-gradient(to bottom, transparent, black 30%, black 88%, transparent);
+}
+
+.hll-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hll-page button,
+.hll-page summary {
+  font: inherit;
+}
+
+.hll-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Navigation */
+/* .hll-nav intentionally lives in components/hero-lab/hero-lab-header.css only.
+   A copy used to sit here as well — left behind when the header was extracted —
+   and because this file loads after it at equal specificity, it silently won
+   and reverted the header to position: relative. That made the header sticky on
+   the solution pages but not on the homepage, from identical markup. One owner
+   now; the rule there is a strict superset of what was here. */
+
+.hll-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  width: 206px;
+}
+
+.hll-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  width: 206px;
+  height: 35px;
+}
+
+.hll-brand-logo-mask {
+  display: block;
+  width: 206px;
+  height: 35px;
+  background: #091847;
+  -webkit-mask: url('/images/hero-cards/header-logo-lockup.png') center / contain no-repeat;
+  mask: url('/images/hero-cards/header-logo-lockup.png') center / contain no-repeat;
+}
+
+.hll-nav-links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 62px);
+}
+
+.hll-nav-menu {
+  position: relative;
+}
+
+.hll-nav-menu summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0b1946;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hll-nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.hll-nav-menu[open] summary,
+.hll-nav-menu summary:hover {
+  color: var(--hll-blue);
+}
+
+.hll-nav-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -18px;
+  width: 210px;
+  padding: 8px;
+  border: 1px solid rgba(96, 122, 181, 0.16);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 65px rgba(35, 67, 126, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.hll-nav-dropdown--right {
+  right: -18px;
+  left: auto;
+}
+
+.hll-nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  border-radius: 10px;
+  color: #20315f;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.hll-nav-dropdown a:hover {
+  color: var(--hll-blue);
+  background: #f1f6ff;
+}
+
+.hll-nav-dropdown a > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.hll-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hll-language {
+  display: flex;
+  padding: 3px;
+  border: 1px solid rgba(30, 76, 157, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* #697590, not #7b89a8 — 3.47:1 against the header, under the 4.5 floor.
+   Only the inactive locale uses this colour; the active one is overridden
+   blue by the [aria-current='page'] rule below and already passed.
+
+   This is a duplicate of the rule in hero-lab-header.css and loads after it,
+   so fixing that file alone changed nothing: the old value kept winning the
+   cascade. Both are corrected; the duplication itself is worth collapsing
+   once the chrome stops being defined in two stylesheets. */
+.hll-language a {
+  padding: 4px 6px;
+  border-radius: 5px;
+  color: #697590;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+}
+
+.hll-language a[aria-current='page'] {
+  color: var(--hll-blue);
+  background: white;
+  box-shadow: 0 2px 8px rgba(25, 73, 150, 0.09);
+}
+
+.hll-nav-cta,
+.hll-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: white !important;
+  background: linear-gradient(135deg, #0757f7, #064ee7);
+  box-shadow: 0 13px 28px -12px rgba(3, 75, 232, 0.68), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hll-nav-cta {
+  min-height: 47px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.hll-nav-cta:hover,
+.hll-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -13px rgba(3, 75, 232, 0.74), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.hll-mobile-menu {
+  display: none;
+}
+
+/* Headline */
+.hll-hero-head {
+  position: relative;
+  z-index: 4;
+  max-width: 780px;
+  margin: 14px auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.hll-eyebrow {
+  margin: 0 0 13px;
+  color: #0757f7;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.085em;
+  line-height: 1.35;
+}
+
+/* Barlow Condensed, matching every other display heading on the redesign —
+   the section headings directly below this one and all five solution page H1s.
+   This was the only display heading still set in Space Grotesk.
+
+   The size and tracking move with it rather than being inherited: -0.055em was
+   tuned for Space Grotesk's wide geometric forms and is far too tight on a
+   condensed face, and a condensed face reads smaller at the same px, so the
+   clamp goes up to hold the same optical weight. 700 is the heaviest Barlow
+   Condensed weight actually loaded in layout.tsx — 800 would be synthesised. */
+.hll-headline {
+  margin: 0;
+  color: #07194c;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-size: clamp(64px, 5.8vw, 90px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+
+.hll-headline-grad {
+  display: block;
+  margin-top: 4px;
+  background: linear-gradient(100deg, #0753ff 7%, #147ef4 46%, #13c2bc 96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hll-sub {
+  max-width: 640px;
+  margin: 14px auto 0;
+  color: var(--hll-muted);
+  font-size: 17px;
+  font-weight: 450;
+  letter-spacing: -0.018em;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+.hll-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-top: 18px;
+}
+
+.hll-btn-primary {
+  min-width: 160px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 520;
+}
+
+.hll-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0757f7 !important;
+  font-size: 14px;
+  font-weight: 560;
+}
+
+.hll-play {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(46, 92, 174, 0.17);
+  border-radius: 50%;
+  color: var(--hll-blue);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 7px 18px rgba(70, 104, 163, 0.08);
+}
+
+.hll-play svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transform: translateX(1px);
+}
+
+/* Platform composition */
+.hll-platform-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 455px;
+  margin-top: 39px;
+}
+
+.hll-mark {
+  position: absolute;
+  z-index: 0;
+  top: -28px;
+  left: 50%;
+  width: 350px;
+  height: 285px;
+  transform: translateX(-50%);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.hll-mark::before {
+  content: '';
+  position: absolute;
+  inset: -22%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(84, 165, 255, 0.3), rgba(84, 165, 255, 0.08) 42%, transparent 70%);
+  filter: blur(18px);
+}
+
+.hll-platform-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hll-carousel,
+.hll-cards-viewport,
+.hll-cards {
+  width: 100%;
+  height: 100%;
+}
+
+.hll-cards-viewport {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  outline: none;
+}
+
+.hll-cards {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  padding: 66px 20px 26px;
+}
+
+.hll-card-slot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hll-card {
+  --cc: #165dff;
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 17px 14px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  border-radius: 20px;
+  color: #0c1d4c;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.92), rgba(245, 249, 255, 0.7));
+  box-shadow:
+    0 28px 56px -32px rgba(29, 62, 120, 0.5),
+    0 8px 26px rgba(64, 98, 158, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px) saturate(1.15);
+  animation: hll-card-rise 650ms cubic-bezier(0.2, 0.72, 0.2, 1) both;
+}
+
+.hll-card::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
+  right: 9px;
+  bottom: 0;
+  left: 9px;
+  height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: var(--cc);
+  box-shadow: 0 -4px 13px color-mix(in srgb, var(--cc) 24%, transparent);
+}
+
+.hll-card-slot:nth-child(2) .hll-card { animation-delay: 55ms; }
+.hll-card-slot:nth-child(3) .hll-card { animation-delay: 110ms; }
+.hll-card-slot:nth-child(4) .hll-card { animation-delay: 165ms; }
+.hll-card-slot:nth-child(5) .hll-card { animation-delay: 220ms; }
+.hll-card-slot:nth-child(6) .hll-card { animation-delay: 275ms; }
+.hll-card-slot:nth-child(7) .hll-card { animation-delay: 330ms; }
+
+@keyframes hll-card-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hll-card--cad { width: 194px; min-height: 382px; }
+.hll-card--video { width: 196px; min-height: 374px; }
+.hll-card--gis { width: 188px; min-height: 366px; }
+.hll-card--events { width: 220px; min-height: 342px; }
+.hll-card--ude { width: 232px; min-height: 374px; }
+.hll-card--mobile { width: 188px; min-height: 380px; }
+.hll-card--integrations { width: 204px; min-height: 374px; }
+
+.hll-card-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 30px;
+  margin-bottom: 12px;
+}
+
+.hll-card-icon {
+  display: inline-grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  color: var(--cc);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 7px 18px -9px color-mix(in srgb, var(--cc) 58%, transparent);
+}
+
+.hll-card-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hll-card-title {
+  margin: 0;
+  color: #0a1946;
+  font-size: 10.5px;
+  font-weight: 720;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.hll-mini-label {
+  display: block;
+  color: #627193;
+  font-family: 'DM Mono', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.015em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hll-text-red { color: #f12335; }
+
+.hll-mini-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  color: #324467;
+  font-size: 8px;
+}
+
+.hll-mini-row > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hll-location-dot {
+  width: 3px;
+  height: 3px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #ef3340;
+}
+
+/* CAD */
+.hll-cad-call {
+  margin: 2px 0 13px;
+  padding: 11px 10px 8px;
+  border: 1px solid rgba(255, 128, 138, 0.11);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 244, 246, 0.72));
+  box-shadow: 0 7px 15px rgba(179, 55, 67, 0.035);
+}
+
+.hll-cad-call strong {
+  display: block;
+  margin: 7px 0 5px;
+  font-size: 9px;
+  font-weight: 660;
+}
+
+.hll-cad-wave {
+  display: flex;
+  align-items: center;
+  gap: 1.6px;
+  height: 28px;
+  margin-top: 5px;
+}
+
+.hll-cad-wave i {
+  width: 2px;
+  border-radius: 2px;
+  background: #ff3344;
+}
+
+.hll-cad-units {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.hll-cad-unit {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 50px;
+  border-bottom: 1px solid rgba(68, 92, 139, 0.08);
+  font-size: 8px;
+}
+
+.hll-cad-unit:last-child { border-bottom: 0; }
+
+.hll-unit-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hll-cad-unit b,
+.hll-cad-unit small {
+  display: block;
+}
+
+.hll-cad-unit b { font-size: 8.5px; }
+.hll-cad-unit small { margin-top: 2px; color: #546483; font-size: 7px; }
+.hll-cad-unit time { color: #536483; font-size: 7.5px; }
+
+/* Video */
+.hll-video-grid,
+.hll-ude-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.hll-video-grid { margin: 5px 0 22px; }
+
+.hll-video-thumb,
+.hll-ude-thumb {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.05 / 1;
+  border-radius: 8px;
+  background: #111d32;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.hll-video-thumb img,
+.hll-ude-thumb img {
+  object-fit: cover;
+  filter: saturate(0.8) contrast(1.06);
+}
+
+.hll-detection {
+  position: absolute;
+  border: 1px solid #00c4ff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 196, 255, 0.7);
+}
+
+.hll-detection--1 { top: 30%; left: 39%; width: 16%; height: 38%; }
+.hll-detection--2 { top: 26%; left: 53%; width: 20%; height: 43%; }
+.hll-detection--3 { top: 34%; left: 31%; width: 18%; height: 34%; }
+.hll-detection--4 { top: 31%; left: 61%; width: 17%; height: 39%; }
+
+.hll-data-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  border-top: 1px solid rgba(64, 93, 146, 0.08);
+}
+
+.hll-data-line span { color: #445578; font-size: 7.5px; font-weight: 560; }
+.hll-data-line strong { color: #0757f7; font-size: 14px; }
+
+/* GIS */
+.hll-gis-map {
+  position: relative;
+  overflow: hidden;
+  height: 202px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background:
+    linear-gradient(28deg, transparent 47%, rgba(44, 75, 110, 0.38) 48%, rgba(44, 75, 110, 0.38) 50%, transparent 51%),
+    linear-gradient(118deg, transparent 42%, rgba(44, 75, 110, 0.28) 43%, rgba(44, 75, 110, 0.28) 45%, transparent 46%),
+    radial-gradient(circle at 65% 35%, #23364d, #111d2e 62%, #0b1424);
+  box-shadow: inset 0 0 26px rgba(0, 0, 0, 0.24), 0 8px 18px rgba(13, 33, 64, 0.13);
+}
+
+.hll-map-road {
+  position: absolute;
+  height: 2px;
+  background: #2454a1;
+  box-shadow: 0 0 6px rgba(37, 111, 255, 0.75);
+  transform-origin: left center;
+}
+
+.hll-map-road--one { top: 61%; left: 4%; width: 92%; transform: rotate(-28deg); }
+.hll-map-road--two { top: 31%; left: 7%; width: 82%; transform: rotate(23deg); }
+.hll-map-road--three { top: 74%; left: 24%; width: 65%; transform: rotate(-68deg); }
+
+.hll-gis-zone,
+.hll-gis-ring,
+.hll-gis-pulse {
+  position: absolute;
+  top: 56%;
+  left: 56%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hll-gis-zone { width: 108px; height: 108px; border: 1px solid rgba(53, 130, 255, 0.65); background: rgba(19, 98, 246, 0.2); }
+.hll-gis-ring { width: 66px; height: 66px; border: 1px solid rgba(255, 66, 83, 0.78); background: rgba(240, 47, 65, 0.2); }
+.hll-gis-pulse { width: 29px; height: 29px; background: #ec3344; box-shadow: 0 0 0 7px rgba(236, 51, 68, 0.18), 0 0 19px rgba(236, 51, 68, 0.58); }
+.hll-gis-pulse i { position: absolute; top: 8px; left: 10px; width: 9px; height: 12px; border: 2px solid white; border-radius: 7px 7px 8px 8px; }
+
+.hll-gis-marker {
+  --marker: #2783ff;
+  position: absolute;
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 6px 6px 8px 8px;
+  color: white;
+  background: var(--marker);
+  box-shadow: 0 0 9px color-mix(in srgb, var(--marker) 62%, transparent);
+}
+
+.hll-gis-marker svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.hll-gis-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 13px;
+}
+
+.hll-gis-stats div { padding: 9px 8px; border-radius: 9px; background: rgba(255, 255, 255, 0.52); }
+.hll-gis-stats span { display: block; min-height: 18px; color: #566585; font-size: 6.5px; }
+.hll-gis-stats strong { display: block; margin-top: 4px; color: #16a34a; font-size: 14px; }
+
+/* Events */
+.hll-event-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 4px 0 13px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.hll-event-stats div { padding: 10px 5px; text-align: center; }
+.hll-event-stats span { display: block; min-height: 18px; color: #677697; font-size: 6px; }
+.hll-event-stats strong { display: block; font-size: 13px; }
+.hll-event-stats div:nth-child(1) strong { color: #ff3b30; }
+.hll-event-stats div:nth-child(2) strong { color: #0757f7; }
+.hll-event-stats div:nth-child(3) strong { color: #16a34a; }
+
+.hll-event-list { display: flex; flex-direction: column; }
+.hll-event-row { display: grid; grid-template-columns: 7px 1fr auto; align-items: center; gap: 6px; min-height: 39px; border-bottom: 1px solid rgba(63, 90, 139, 0.07); font-size: 7.4px; }
+.hll-event-row i { width: 5px; height: 5px; border-radius: 50%; }
+.hll-event-row time { color: #71809c; font-size: 6.5px; }
+.hll-event-more { margin-top: 8px; color: #35496f; font-size: 7.5px; }
+.hll-event-more b { margin-right: 7px; color: #0757f7; font-size: 12px; }
+
+/* Evidence */
+.hll-ude-grid { margin: 2px 0 12px; }
+.hll-ude-thumb { aspect-ratio: 1.3 / 1; }
+.hll-ude-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 52%, rgba(3, 9, 22, 0.78)); }
+.hll-ude-thumb b,
+.hll-ude-thumb time { position: absolute; z-index: 2; color: white; font-family: 'DM Mono', monospace; font-size: 5.4px; }
+.hll-ude-thumb b { top: 4px; left: 5px; }
+.hll-ude-thumb time { right: 4px; bottom: 4px; }
+
+.hll-case-row { display: flex; align-items: end; justify-content: space-between; gap: 8px; margin: 2px 0 10px; }
+.hll-case-row span:first-child { font-size: 7.4px; }
+.hll-case-row span:first-child b { display: block; margin-bottom: 2px; color: #0757f7; font-size: 7px; }
+.hll-case-row span:last-child { text-align: right; }
+.hll-case-row small { display: block; color: #72809b; font-size: 5.5px; }
+.hll-case-row strong { display: block; color: #0c1d4c; font-size: 18px; line-height: 1; }
+
+.hll-ude-chain { display: flex; align-items: flex-start; justify-content: space-between; margin-top: 7px; }
+.hll-ude-chain span { position: relative; display: flex; flex: 1; flex-direction: column; align-items: center; color: #5d6c88; font-size: 5.5px; text-align: center; }
+.hll-ude-chain span i { z-index: 2; width: 6px; height: 6px; margin-bottom: 4px; border: 1px solid #7d3dff; border-radius: 50%; background: white; }
+.hll-ude-chain span b { position: absolute; top: 2px; left: 54%; width: 92%; height: 1px; background: #7d3dff; }
+
+/* Mobile response */
+.hll-mobile-phone {
+  position: relative;
+  width: 112px;
+  height: 187px;
+  margin: 3px auto 11px;
+  overflow: hidden;
+  border: 4px solid #101729;
+  border-radius: 17px;
+  color: white;
+  background: #0c1728;
+  box-shadow: 0 14px 24px rgba(14, 23, 45, 0.25);
+}
+
+.hll-phone-speaker { position: absolute; z-index: 5; top: 4px; left: 50%; width: 28px; height: 4px; border-radius: 4px; background: #020713; transform: translateX(-50%); }
+.hll-phone-status { position: absolute; z-index: 4; top: 15px; right: 8px; left: 8px; display: flex; justify-content: space-between; font-size: 6.5px; }
+.hll-phone-status b { color: #a454ff; font-size: 8px; }
+
+.hll-mobile-map {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(38deg, transparent 48%, rgba(36, 60, 91, 0.68) 49%, rgba(36, 60, 91, 0.68) 51%, transparent 52%),
+    linear-gradient(135deg, transparent 45%, rgba(34, 55, 88, 0.6) 46%, rgba(34, 55, 88, 0.6) 49%, transparent 50%),
+    radial-gradient(circle at 48% 52%, #172c46, #0b1728 62%);
+}
+
+.hll-route { position: absolute; height: 2px; border-radius: 2px; background: #8b4dff; box-shadow: 0 0 4px #8b4dff; transform-origin: left center; }
+.hll-route--one { top: 48%; left: 19%; width: 60%; transform: rotate(-31deg); }
+.hll-route--two { top: 64%; left: 43%; width: 43%; transform: rotate(47deg); }
+.hll-route-node { position: absolute; width: 7px; height: 7px; border: 2px solid #3b82f6; border-radius: 50%; background: #0c1728; }
+.hll-route-node--one { top: 44%; left: 20%; }
+.hll-route-node--two { top: 38%; left: 69%; }
+.hll-route-pin { position: absolute; top: 49%; left: 47%; width: 17px; height: 17px; border: 4px solid rgba(168, 79, 255, 0.34); border-radius: 50%; background: #bd39eb; box-shadow: 0 0 10px #9f42ff; }
+
+.hll-mobile-actions { position: absolute; z-index: 4; right: 7px; bottom: 8px; left: 7px; display: flex; align-items: center; justify-content: space-between; font-size: 6px; }
+.hll-mobile-actions b { font-size: 8px; }
+.hll-mobile-actions button { border: 0; border-radius: 5px; padding: 5px 8px; color: white; background: #9d42f5; font-size: 6.5px; }
+
+.hll-mobile-detail { margin: 0; font-size: 7px; }
+.hll-mobile-detail div { padding: 4px 0; border-bottom: 1px solid rgba(61, 88, 136, 0.07); }
+.hll-mobile-detail div:last-child { border-bottom: 0; }
+.hll-mobile-detail dt { color: #5f6f8d; }
+.hll-mobile-detail dd { margin: 1px 0 0; font-weight: 570; }
+.hll-mobile-detail dd i { display: inline-block; width: 4px; height: 4px; margin-right: 4px; border-radius: 50%; background: #ef3340; }
+
+/* Integrations */
+/* 16 integration categories in a fixed-height card — 4 x 4 rather than the
+   original 3-wide, which would need 6 rows and overflow the card. */
+.hll-int-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin: 14px 0 16px; }
+.hll-int-item { display: flex; min-width: 0; flex-direction: column; align-items: center; gap: 7px; text-align: center; }
+/* Square tiles that track the column width, but capped — on the wider
+   mobile card (286px) an uncapped tile grows to ~61px and four rows then
+   overflow the fixed card height, clipping the "+ N more" line. */
+.hll-int-item > span { display: grid; width: 100%; max-width: 44px; aspect-ratio: 1; place-items: center; border: 1px solid rgba(95, 121, 174, 0.08); border-radius: 8px; color: #10295e; background: rgba(255, 255, 255, 0.64); box-shadow: 0 7px 16px rgba(56, 84, 139, 0.05); }
+.hll-int-item svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.hll-int-item small { min-height: 16px; color: #263a65; font-size: 6px; line-height: 1.25; }
+.hll-int-more { color: #172c5c; font-size: 8px; text-align: center; }
+
+/* Metrics */
+.hll-stats {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+}
+
+.hll-stat {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 230px;
+  min-height: 62px;
+  padding: 0 38px;
+  border-right: 1px solid rgba(43, 79, 145, 0.24);
+}
+
+.hll-stat:last-child { border-right: 0; }
+.hll-stat > span:last-child { display: flex; flex-direction: column; }
+
+.hll-stat-icon {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: #2c72f8;
+}
+
+.hll-stat-icon svg { width: 42px; height: 42px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hll-stat-num { color: #0757f7; font-size: 23px; font-weight: 650; letter-spacing: -0.035em; line-height: 1; }
+/* #4f6082 measured 2.85:1 on the navy proof bar — below the 4.5 AA floor for
+   12px text. Lightened, hue and saturation preserved. */
+.hll-stat-label { margin-top: 6px; color: #7386aa; font-size: 12px; }
+
+.hll-carousel-controls { display: none; }
+
+.hll-page :is(a, button, summary, .hll-cards-viewport):focus-visible {
+  outline: 3px solid rgba(7, 87, 247, 0.45);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1500px) and (min-width: 1181px) {
+  .hll-nav { padding-inline: 34px; grid-template-columns: 210px 1fr auto; }
+  .hll-nav-links { gap: 30px; }
+  .hll-card { transform: scale(0.94); transform-origin: center bottom; }
+  .hll-cards { gap: 0; padding-inline: 4px; }
+}
+
+@media (max-width: 1180px) {
+  .hll-page { min-height: 1000px; }
+  .hll-nav { grid-template-columns: 1fr auto; padding-inline: 28px; }
+  .hll-nav-links,
+  .hll-nav-actions { display: none; }
+  .hll-mobile-menu { position: relative; display: block; }
+  /* This rule, not the seemingly-identical one in hero-lab-header.css, is what
+     actually renders: hero-lab-light.css loads after it, so its 42x42
+     duplicate won the cascade even after that file was fixed to 44x44.
+     Left as a duplicate rather than deleted — untangling which of the two
+     stylesheets should own this now that the header is a sibling of .hll-page
+     rather than nested in it is a bigger change than a touch-target fix. */
+  .hll-mobile-menu > summary { display: flex; width: 44px; height: 44px; cursor: pointer; list-style: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(45, 83, 153, 0.12); border-radius: 10px; background: rgba(255, 255, 255, 0.72); }
+  .hll-mobile-menu > summary::-webkit-details-marker { display: none; }
+  .hll-mobile-menu > summary span { width: 19px; height: 2px; border-radius: 2px; background: #10224f; }
+  .hll-mobile-menu-panel { position: absolute; top: 52px; right: 0; display: flex; width: min(290px, calc(100vw - 40px)); padding: 16px; flex-direction: column; gap: 6px; border: 1px solid rgba(67, 96, 152, 0.13); border-radius: 16px; background: rgba(255, 255, 255, 0.97); box-shadow: 0 24px 60px rgba(37, 66, 119, 0.18); }
+  .hll-mobile-menu-panel > a:not(.hll-nav-cta) { padding: 10px; border-radius: 8px; color: #1c315f; font-size: 14px; }
+  .hll-mobile-menu-panel > a:hover { background: #f1f6ff; }
+  .hll-mobile-languages { display: flex; gap: 8px; padding: 8px 10px; }
+  .hll-mobile-languages a { color: #0757f7; font-family: 'DM Mono', monospace; font-size: 12px; }
+  .hll-platform-stage { height: 492px; }
+  .hll-mark { top: -38px; width: 310px; height: 250px; }
+  .hll-cards-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: max(24px, calc((100vw - 286px) / 2));
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hll-cards-viewport::-webkit-scrollbar { display: none; }
+  .hll-cards { width: max-content; min-width: 100%; justify-content: flex-start; gap: 18px; padding: 78px max(24px, calc((100vw - 286px) / 2)) 8px; }
+  .hll-card-slot { scroll-snap-align: center; }
+  .hll-card { width: 286px; min-height: 410px; transform: none; }
+  .hll-carousel-controls { position: absolute; z-index: 10; right: 0; bottom: -54px; left: 0; display: flex; align-items: center; justify-content: center; gap: 16px; }
+  /* 44x44, not 35x35 stepping up to 44 only under `pointer: coarse`. That
+     media feature doesn't reliably match on every touch device or testing
+     tool — an audit measuring this in a plain resized browser window would
+     see the unmet 35px box, which is what happened. Simpler and always
+     correct: the visible circle is the target, at every input type. */
+  .hll-carousel-arrow { display: grid; width: 44px; height: 44px; padding: 0; place-items: center; border: 1px solid rgba(49, 88, 161, 0.14); border-radius: 50%; color: #0757f7; background: rgba(255, 255, 255, 0.85); box-shadow: 0 7px 17px rgba(44, 76, 132, 0.1); cursor: pointer; }
+  .hll-carousel-arrow:disabled { cursor: default; opacity: 0.3; }
+  .hll-carousel-arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  /* gap: 0 — the buttons are the targets now and sit flush without overlapping.
+     See .hll-carousel-dot below for why the old 7px gap was unusable. */
+  .hll-carousel-dots { display: flex; align-items: center; gap: 0; }
+  /* The dot stays 7px visually; ::before grows the hit area to 44px. A bare
+     7x7 button is unhittable on a phone. */
+  /* The button IS the target; the dot is drawn inside it.
+
+     Previously the button was the 7px dot itself and a 44x44 `::before` was
+     stretched over it to reach the touch-target floor. With 7px dots and a 7px
+     gap the dots sit 14px apart, so each of those 44px overlays spanned about
+     three neighbours on either side — a normal click on dot 2 was intercepted
+     by dot 3's overlay (later in the DOM, so painted on top), and Lighthouse
+     flagged all seven for target size and spacing.
+
+     28x44 per button with no gap gives seven genuinely separate targets
+     (196px total), each above the 24px WCAG 2.5.8 minimum, with the visual
+     7px dot rendered by ::before inside its own button. */
+  .hll-carousel-dot {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .hll-carousel-dot::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(7, 87, 247, 0.25);
+    transition: width 180ms ease, background 180ms ease;
+  }
+  .hll-carousel-dot[aria-current='true']::before { width: 21px; border-radius: 8px; background: #0757f7; }
+  .hll-stats { margin-top: 65px; }
+  .hll-stat { min-width: 190px; padding-inline: 24px; }
+}
+
+@media (max-width: 900px) {
+  .hll-page { min-height: auto; padding-bottom: 45px; }
+  .hll-nav { height: 78px; padding: 16px 22px; }
+  .hll-nav-logo,
+  .hll-brand-lockup,
+  .hll-brand-logo-mask { width: 176px; }
+  .hll-brand-lockup,
+  .hll-brand-logo-mask { height: 30px; }
+  .hll-hero-head { margin-top: 28px; }
+  .hll-eyebrow { font-size: 11px; letter-spacing: 0.08em; }
+  /* Scaled up with the switch to Barlow Condensed, which reads smaller than
+     Space Grotesk at the same px. */
+  .hll-headline { font-size: clamp(54px, 11vw, 78px); }
+  .hll-sub { max-width: 580px; font-size: 16px; }
+  .hll-stats { max-width: 680px; flex-wrap: wrap; row-gap: 18px; }
+  .hll-stat { flex: 1 1 180px; justify-content: center; border-right: 0; }
+}
+
+@media (max-width: 560px) {
+  .hll-page { background: radial-gradient(circle at 50% 53%, rgba(79, 160, 255, 0.18), transparent 34%), linear-gradient(180deg, #fbfcff, #eef5fd); }
+  .hll-nav { padding-inline: 18px; }
+  .hll-hero-head { margin-top: 22px; padding-inline: 18px; }
+  /* 9.5px was below the readable floor for real copy on a phone. */
+  .hll-eyebrow { max-width: 330px; margin-inline: auto; font-size: 11px; letter-spacing: 0.07em; }
+  .hll-headline { font-size: clamp(30px, 10.4vw, 58px); line-height: 1; overflow-wrap: break-word; }
+  .hll-headline-grad { margin-top: 4px; }
+  .hll-sub { margin-top: 17px; font-size: 14px; line-height: 1.55; }
+  .hll-ctas { flex-direction: column; gap: 14px; margin-top: 20px; }
+  .hll-btn-primary { min-width: 176px; }
+  .hll-platform-stage { height: 492px; margin-top: 15px; }
+  .hll-mark { top: -23px; width: 260px; height: 208px; opacity: 0.66; }
+  .hll-cards { padding-top: 66px; }
+  .hll-card { width: 286px; }
+  .hll-stats { width: min(100%, 330px); margin-top: 64px; flex-direction: column; align-items: stretch; gap: 0; }
+  .hll-stat { min-height: 78px; justify-content: flex-start; padding: 12px 44px; border-bottom: 1px solid rgba(43, 79, 145, 0.15); }
+  .hll-stat:last-child { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hll-page *,
+  .hll-page *::before,
+  .hll-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Semantic hero cards: shared geometry with supplied art limited to media crops. */
+.hll-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px 16px;
+}
+
+.hll-card > :not(.hll-card-art) {
+  opacity: 1;
+}
+
+.hll-card-head {
+  display: flex;
+  flex: 0 0 46px;
+  height: 46px;
+  min-height: 46px;
+  margin: 0 0 8px;
+  align-items: center;
+  gap: 8px;
+}
+
+.hll-card-title {
+  display: flex;
+  min-height: 26px;
+  margin: 0;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 720;
+  line-height: 1.15;
+}
+
+.hll-card-icon {
+  flex-basis: 30px;
+}
+
+.hll-card-media {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(54, 83, 137, 0.1);
+  border-radius: 9px;
+  background: #eef4fb;
+  box-shadow: 0 8px 18px rgba(38, 71, 130, 0.09);
+}
+
+.hll-card-media-source {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hll-card-media--video { height: 152px; }
+.hll-card-media--video .hll-card-media-source { top: -58px; left: -12%; width: 124%; }
+
+.hll-card-media--gis { height: 130px; }
+.hll-card-media--gis .hll-card-media-source { top: -52px; left: -13%; width: 126%; }
+
+.hll-card-media--evidence { height: 112px; }
+.hll-card-media--evidence .hll-card-media-source { top: -62px; left: -19.5%; width: 139%; }
+
+.hll-card-media--mobile { height: 178px; }
+.hll-card-media--mobile .hll-card-media-source { top: -64px; left: -23.5%; width: 147%; }
+
+.hll-card--video .hll-data-line {
+  min-height: 40px;
+  padding-inline: 4px;
+}
+
+.hll-card--gis .hll-gis-stats {
+  margin-top: 10px;
+}
+
+.hll-card--ude .hll-case-row {
+  margin-top: 8px;
+}
+
+.hll-mobile-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 10px;
+  padding: 8px 3px;
+  border: 1px solid rgba(54, 83, 137, 0.08);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.hll-mobile-metrics span {
+  min-width: 0;
+  padding-inline: 3px;
+  text-align: center;
+}
+
+.hll-mobile-metrics span + span {
+  border-left: 1px solid rgba(54, 83, 137, 0.08);
+}
+
+.hll-mobile-metrics strong,
+.hll-mobile-metrics small {
+  display: block;
+}
+
+.hll-mobile-metrics strong {
+  color: #0c1d4c;
+  font-size: 9px;
+}
+
+.hll-mobile-metrics small {
+  margin-top: 3px;
+  color: #667592;
+  font-size: 5.5px;
+  line-height: 1.2;
+}
+
+.hll-card--integrations .hll-int-grid {
+  gap: 5px;
+  margin: 8px 0 10px;
+}
+
+.hll-card--integrations .hll-int-item {
+  gap: 4px;
+}
+
+@media (max-width: 1180px) {
+  .hll-card-media--video { height: 210px; }
+  .hll-card-media--video .hll-card-media-source { top: -83px; }
+
+  .hll-card-media--gis { height: 180px; }
+  .hll-card-media--gis .hll-card-media-source { top: -75px; }
+
+  .hll-card-media--evidence { height: 165px; }
+  .hll-card-media--evidence .hll-card-media-source { top: -89px; }
+
+  .hll-card-media--mobile { height: 230px; }
+  .hll-card-media--mobile .hll-card-media-source { top: -94px; }
+}
+
+/* Supplied reference artwork: each image includes its complete card surface. */
+.hll-card-art {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  height: auto;
+  border-radius: inherit;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 6%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 6%, #000 91%, transparent 100%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.hll-card-art--cad {
+  width: 206.5%;
+  clip-path: inset(0 0 4.2%);
+}
+
+.hll-card-art--video {
+  width: 112.7%;
+  clip-path: inset(0 0 5%);
+}
+
+.hll-card-art--gis {
+  width: 113.4%;
+  clip-path: inset(5.5% 0 0);
+}
+
+.hll-card-art--events {
+  width: 119.6%;
+  clip-path: inset(5.5% 0 7.5%);
+}
+
+.hll-card-art--ude {
+  width: 121.8%;
+  clip-path: inset(5% 0 0);
+}
+
+.hll-card-art--mobile {
+  width: 111.4%;
+  clip-path: inset(4.5% 0 0);
+}
+
+.hll-card-art--integrations {
+  width: 117.6%;
+  clip-path: inset(0 0 7%);
+}
+
+.hll-platform-mark {
+  object-fit: contain;
+  filter: saturate(1.08) drop-shadow(0 20px 24px rgba(20, 94, 210, 0.2));
+}
+
+/* Equal visual rhythm: one shared frame, with artwork center-cropped without distortion. */
+.hll-card--cad,
+.hll-card--video,
+.hll-card--gis,
+.hll-card--events,
+.hll-card--ude,
+.hll-card--mobile,
+.hll-card--integrations {
+  width: 200px;
+  height: 340px;
+  min-height: 340px;
+}
+
+.hll-card > :not(.hll-card-art) {
+  opacity: 0;
+}
+
+/* Normalize the source PNGs' mixed top/bottom accents to one shared edge. */
+.hll-card::after {
+  display: block;
+  height: 2px;
+  z-index: 10;
+}
+
+@media (max-width: 1180px) {
+  .hll-card--cad,
+  .hll-card--video,
+  .hll-card--gis,
+  .hll-card--events,
+  .hll-card--ude,
+  .hll-card--mobile,
+  .hll-card--integrations {
+    width: 286px;
+    height: 410px;
+    min-height: 410px;
+  }
+}
+
+/* Final HTML/CSS card pass: overrides the older full-card PNG experiment above. */
+.hll-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 340px;
+  min-height: 340px;
+  padding: 14px 12px 16px;
+}
+
+.hll-card > :not(.hll-card-art) {
+  opacity: 1;
+}
+
+.hll-card-head {
+  flex: 0 0 46px;
+  height: 46px;
+  min-height: 46px;
+  margin: 0 0 8px;
+  gap: 8px;
+}
+
+.hll-card-title {
+  display: flex;
+  min-height: 26px;
+  margin: 0;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 720;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.hll-card-art {
+  display: none;
+}
+
+.hll-card-media {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(54, 83, 137, 0.1);
+  border-radius: 9px;
+  background: #eef4fb;
+  box-shadow: 0 8px 18px rgba(38, 71, 130, 0.09);
+}
+
+.hll-card-media-source {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hll-card-media--video { height: 152px; }
+.hll-card-media--video .hll-card-media-source { top: -58px; left: -12%; width: 124%; }
+
+.hll-card-media--gis { height: 130px; }
+.hll-card-media--gis .hll-card-media-source { top: -52px; left: -13%; width: 126%; }
+
+.hll-card-media--evidence { height: 112px; }
+.hll-card-media--evidence .hll-card-media-source { top: -62px; left: -19.5%; width: 139%; }
+
+.hll-card-media--mobile { height: 178px; }
+.hll-card-media--mobile .hll-card-media-source { top: -64px; left: -23.5%; width: 147%; }
+
+@media (min-width: 1181px) {
+  .hll-cards {
+    perspective: 1400px;
+    transform-style: preserve-3d;
+  }
+
+  .hll-card-slot {
+    transform-origin: center bottom;
+    transition: transform 220ms ease;
+  }
+
+  .hll-card-slot:nth-child(1) { transform: translateY(-38px) rotateZ(-2.4deg) rotateY(7deg); }
+  .hll-card-slot:nth-child(2) { transform: translateY(-22px) rotateZ(-1.45deg) rotateY(4.5deg); }
+  .hll-card-slot:nth-child(3) { transform: translateY(-4px) rotateZ(-0.6deg) rotateY(2deg); }
+  .hll-card-slot:nth-child(4) { transform: translateY(22px) scale(1.018); }
+  .hll-card-slot:nth-child(5) { transform: translateY(-4px) rotateZ(0.6deg) rotateY(-2deg); }
+  .hll-card-slot:nth-child(6) { transform: translateY(-22px) rotateZ(1.45deg) rotateY(-4.5deg); }
+  .hll-card-slot:nth-child(7) { transform: translateY(-38px) rotateZ(2.4deg) rotateY(-7deg); }
+}
+
+@media (min-width: 1181px) and (max-width: 1510px) {
+  .hll-cards-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 22px;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hll-cards-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hll-cards {
+    width: max-content;
+    min-width: 100%;
+    justify-content: flex-start;
+    padding-inline: 22px;
+  }
+
+  .hll-card-slot {
+    scroll-snap-align: center;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hll-card {
+    width: 286px;
+    height: 410px;
+    min-height: 410px;
+  }
+
+  .hll-card-media--video { height: 210px; }
+  .hll-card-media--video .hll-card-media-source { top: -83px; }
+
+  .hll-card-media--gis { height: 180px; }
+  .hll-card-media--gis .hll-card-media-source { top: -75px; }
+
+  .hll-card-media--evidence { height: 165px; }
+  .hll-card-media--evidence .hll-card-media-source { top: -89px; }
+
+  .hll-card-media--mobile { height: 230px; }
+  .hll-card-media--mobile .hll-card-media-source { top: -94px; }
+}
+
+/* Temporary validation row: equal-height cards aligned on one straight baseline. */
+@media (min-width: 1181px) {
+  .hll-platform-stage {
+    height: 494px;
+    margin-top: 34px;
+  }
+
+  .hll-mark {
+    top: -56px;
+    width: 368px;
+    height: 296px;
+    opacity: 0.72;
+  }
+
+  .hll-cards {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 76px 12px 40px;
+    perspective: 1200px;
+  }
+
+  .hll-card-slot {
+    align-items: flex-start;
+    transform-origin: center center;
+  }
+
+  .hll-card-slot:nth-child(1),
+  .hll-card-slot:nth-child(2),
+  .hll-card-slot:nth-child(3),
+  .hll-card-slot:nth-child(4),
+  .hll-card-slot:nth-child(5),
+  .hll-card-slot:nth-child(6),
+  .hll-card-slot:nth-child(7) {
+    transform: translateY(0);
+  }
+
+  .hll-card--cad {
+    width: 212px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--video {
+    width: 204px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--gis {
+    width: 198px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--events {
+    width: 214px;
+    height: 378px;
+    min-height: 378px;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.97), rgba(247, 250, 255, 0.87));
+  }
+
+  .hll-card--ude {
+    width: 230px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--mobile {
+    width: 202px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--integrations {
+    width: 212px;
+    height: 378px;
+    min-height: 378px;
+  }
+
+  .hll-card--events .hll-event-list {
+    margin-top: 8px;
+  }
+
+  .hll-card--events .hll-event-row {
+    min-height: 39px;
+  }
+
+  /* Padded source crops keep every supplied visual safely inside its frame. */
+  .hll-card-media--video { height: 160px; }
+  .hll-card-media--video .hll-card-media-source {
+    top: -47px;
+    left: -2%;
+    width: 104%;
+  }
+
+  .hll-card-media--gis { height: 134px; }
+  .hll-card-media--gis .hll-card-media-source {
+    top: -49px;
+    left: -9%;
+    width: 118%;
+  }
+
+  .hll-card-media--evidence { height: 142px; }
+  .hll-card-media--evidence .hll-card-media-source {
+    top: -62px;
+    left: -12%;
+    width: 124%;
+  }
+
+  .hll-card-media--mobile { height: 184px; }
+  .hll-card-media--mobile .hll-card-media-source {
+    top: -56px;
+    left: -20%;
+    width: 140%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hll-card-media--video { height: 230px; }
+  .hll-card-media--video .hll-card-media-source {
+    top: -78px;
+    left: -6%;
+    width: 112%;
+  }
+
+  .hll-card-media--gis { height: 202px; }
+  .hll-card-media--gis .hll-card-media-source {
+    top: -74px;
+    left: -8.5%;
+    width: 118%;
+  }
+
+  .hll-card-media--evidence { height: 170px; }
+  .hll-card-media--evidence .hll-card-media-source {
+    top: -82px;
+    left: -12%;
+    width: 124%;
+  }
+
+  .hll-card-media--mobile { height: 240px; }
+  .hll-card-media--mobile .hll-card-media-source {
+    top: -86px;
+    left: -20%;
+    width: 140%;
+  }
+}

@@ -1,7 +1,7 @@
 export const metadata = {
   home: {
     title: "Public Safety Platform for Cities & Command Centers | K1",
-    description: "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 70 million citizens. Request a demo.",
+    description: "Unified public safety platform connecting 911 dispatch, video, GIS, and field operations. Trusted by 40+ cities protecting 73 million citizens. Request a demo.",
     canonical: "https://kabatone.com/",
   },
   kDispatch: {

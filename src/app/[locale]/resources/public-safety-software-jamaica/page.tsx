@@ -428,7 +428,7 @@ export default async function PublicSafetySoftwareJamaicaPage({
                   { href: '/resources/public-safety-software-dominican-republic', label: es ? 'Seguridad Publica — Republica Dominicana' : 'Public Safety Software — Dominican Republic' },
                   { href: '/resources/public-safety-software-colombia', label: es ? 'Seguridad Publica — Colombia' : 'Public Safety Software — Colombia' },
                   { href: '/resources/public-safety-software-mexico', label: es ? 'Seguridad Publica — Mexico' : 'Public Safety Software — Mexico' },
-                  { href: '/resources/public-safety-software-uk', label: es ? 'Seguridad Publica — Reino Unido' : 'Public Safety Software — United Kingdom' },
+                  { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Seguridad Publica — Reino Unido' : 'Public Safety Software — United Kingdom' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{
                     color: ACCENT, textDecoration: 'none',
@@ -541,7 +541,7 @@ export default async function PublicSafetySoftwareJamaicaPage({
                   es: 'Software CAD de Despacho para America Latina',
                 },
                 {
-                  href: '/resources/public-safety-software-uk',
+                  href: '/resources/public-safety-software-united-kingdom',
                   en: 'Public Safety Software for the United Kingdom',
                   es: 'Software de Seguridad Publica para el Reino Unido',
                 },

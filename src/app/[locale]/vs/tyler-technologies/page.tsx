@@ -247,8 +247,8 @@ export default async function VsTylerTechnologiesPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'En seguridad pública específicamente, Tyler opera el portafolio heredado de New World Public Safety (adquirido en 2015 por aproximadamente $670 millones), que incluye Enterprise CAD, Enterprise Supervisor (RMS), Enterprise Justice, gestión de tribunales y movilidad de campo. Tyler ha estado modernizando gradualmente este portafolio hacia arquitectura en la nube, pero muchos despliegues siguen siendo on-premise.'
-                : 'In public safety specifically, Tyler operates the legacy New World Public Safety portfolio (acquired in 2015 for approximately $670 million), which includes Enterprise CAD, Enterprise Supervisor (RMS), Enterprise Justice, court management, and field mobility. Tyler has been gradually modernizing this portfolio toward cloud architecture, but many deployments remain on-premise.'}
+                ? 'En seguridad pública específicamente, Tyler opera el portafolio heredado de New World Public Safety (adquirido en 2015 por aproximadamente $673 millones), que incluye Enterprise CAD, Enterprise Supervisor (RMS), Enterprise Justice, gestión de tribunales y movilidad de campo. Tyler ha estado modernizando gradualmente este portafolio hacia arquitectura en la nube, pero muchos despliegues siguen siendo on-premise.'
+                : 'In public safety specifically, Tyler operates the legacy New World Public Safety portfolio (acquired in 2015 for approximately $673 million), which includes Enterprise CAD, Enterprise Supervisor (RMS), Enterprise Justice, court management, and field mobility. Tyler has been gradually modernizing this portfolio toward cloud architecture, but many deployments remain on-premise.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es

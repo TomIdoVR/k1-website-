@@ -1,0 +1,154 @@
+/* Industries — ported from the Claude Design project
+   (home/industries.css, the .ind-* rules). Shared .section/.wrap/
+   .eyebrow/.h-display classes inlined as .ind-* so this section stands
+   alone. Photo grid with a 2-row lead tile, per the source layout. */
+
+.ind {
+  padding-block: clamp(52px, 6vw, 88px);
+  background: #f7f8fa;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.ind-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.ind-head { margin-bottom: clamp(28px, 3vw, 40px); }
+
+.ind-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* 3.46:1 on the #f7f8fa section background. 4.61:1 now. Only the eyebrow
+     changes — .ind-title em keeps the brighter #3b82f6, which is large display
+     text and clears the 3:1 large-text floor comfortably. */
+  color: #326ed1;
+}
+
+.ind-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: #0f1724;
+  margin: 0;
+}
+.ind-title em { font-style: normal; color: #3b82f6; }
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+  gap: 14px;
+}
+
+.ind-card {
+  position: relative;
+  grid-column: span 1;
+  grid-row: span 1;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+.ind-lead { grid-column: span 1; grid-row: span 2; }
+
+.ind-slot { object-fit: cover; transition: transform 0.4s ease; }
+.ind-card:hover .ind-slot { transform: scale(1.04); }
+
+.ind-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(6, 12, 22, 0.88) 8%, rgba(6, 12, 22, 0.35) 55%, rgba(6, 12, 22, 0.05) 100%);
+}
+
+.ind-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ac, #3b82f6);
+  box-shadow: 0 0 10px var(--ac, #3b82f6);
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.ind-card-name {
+  flex: 1;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 19px);
+  line-height: 1.15;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+.ind-lead .ind-card-name { font-size: clamp(20px, 2vw, 27px); }
+
+.ind-card-arrow {
+  color: #fff;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.ind-card:hover .ind-card-arrow { opacity: 1; transform: translateX(0); }
+
+/* Row height stays 220px here, and the lead card keeps its double row, rather
+   than dropping to 160px / single row as it used to. Narrowing the screen
+   already narrows every tile; also shortening it collapsed the lead image from
+   549x454 to 350x160 — the same photograph re-cropped into a letterbox sliver,
+   with the subject of the shot pushed out of frame by object-fit: cover. The
+   tiles are the images in this section, so holding their height is what keeps
+   the images the same size as the viewport gets narrower. */
+@media (max-width: 720px) {
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .ind-lead { grid-column: span 2; grid-row: span 2; }
+}
+@media (max-width: 460px) {
+  .ind-grid { grid-template-columns: 1fr; }
+  .ind-lead { grid-column: span 1; }
+}
+
+/* Secondary vertical links — airport / retail / logistics. Keeps the
+   /industries/ internal links and their keywords on the homepage without
+   forcing a sixth tile into the photo grid. */
+.ind-more {
+  margin: clamp(24px, 3vw, 36px) 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4f5f84;
+}
+
+.ind-more-label {
+  margin-right: 12px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  /* 3.46:1 on #f7f8fa -> 4.61:1, same cyan hue. */
+  color: #067b97;
+}
+
+.ind-more-link {
+  color: #0f1724;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.4);
+}
+
+.ind-more-link:hover { color: #0757f7; border-bottom-color: #0757f7; }
+
+.ind-more-sep { margin: 0 10px; color: rgba(79, 95, 132, 0.5); }

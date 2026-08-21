@@ -1,0 +1,370 @@
+/* Solutions — vertical navigator + app-window visual.
+   Ported from the Claude Design project (home/solutions2.css). Shared
+   .section/.wrap/.eyebrow/.h-display classes it relied on are inlined as
+   .sv-* so this section stands alone and nothing leaks into the rest of
+   the page (same pattern as howitworks.css and the earlier solutions.css). */
+
+.sv {
+  position: relative;
+  padding-block: clamp(72px, 9vw, 132px);
+  font-family: 'Space Grotesk', sans-serif;
+  color: #14233a;
+  background: linear-gradient(180deg, #fbfcfe, #f4f7fb);
+}
+
+.sv-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+/* ── Header ── */
+.sv-head { max-width: 860px; margin: 0 auto clamp(34px, 4vw, 52px); text-align: center; }
+
+.sv-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1858f5;
+}
+.sv-eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, #22b8d4, transparent);
+}
+
+.sv-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4.6vw, 62px);
+  font-weight: 700;
+  color: #101f36;
+  margin: 18px 0;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+.sv-title em { font-style: normal; color: #2f7dfa; }
+
+.sv-lede {
+  font-size: clamp(15px, 1.45vw, 17.5px);
+  line-height: 1.6;
+  color: #55698a;
+  max-width: 62ch;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+
+.sv-grid { display: grid; grid-template-columns: 34fr 66fr; gap: clamp(22px, 2.4vw, 38px); align-items: start; }
+
+/* ── left: numbered product navigator ── */
+/* padding-bottom here, not on .sv-grid: .sv-side's sticky containing block is
+   the grid AREA (the row), which is auto-sized from the natural content
+   height of whichever column is tallest — almost always this one, the
+   five-item accordion. Padding on .sv-grid itself only enlarges the
+   container's own outer box, which does nothing for that row sizing; it has
+   to go on the grid ITEM that the row-height calculation actually measures.
+
+   900px, not something smaller: for K-Connect (the last item, and so the one
+   with the least room before it — four collapsed rows above it consume the
+   grid's height before its own row even starts), the natural row height
+   (~866px) left only ~10px of slack against the 112px offset + panel height.
+   800px of extra room still left K-Connect 13px short; 900px was the first
+   value that held position:sticky's top offset for its full read range with
+   real margin, verified by walking scrollY through it in 100px steps.
+
+   This can't be canceled with a matching negative margin the way it would be
+   in normal block flow — CSS Grid's auto-track-sizing measures a grid item's
+   margin box, so a negative margin cancels the padding's contribution to the
+   row's height calculation along with its visual footprint (confirmed: with
+   both applied, the row grew only 46px against 900px of un-canceled padding
+   elsewhere). The 900px is real, visible space between the last accordion
+   item and whatever section follows — the honest cost of the fix, not a side
+   effect of it. */
+.sv-list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 900px; }
+.sv-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(15, 30, 60, 0.08);
+  transition: border-color .3s, box-shadow .3s, background .3s;
+}
+.sv-item.is-active {
+  background: linear-gradient(180deg, #f4f8ff, #eef4ff);
+  border-color: color-mix(in srgb, var(--pc) 26%, transparent);
+  box-shadow: 0 18px 40px -30px color-mix(in srgb, var(--pc) 60%, transparent);
+}
+.sv-item.is-active::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--pc); }
+
+.sv-item-head { display: flex; align-items: center; gap: 13px; width: 100%; padding: 20px 18px; background: none; border: none; text-align: left; }
+.sv-num {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  /* 2.56:1 on white was the worst failure on the page — the solution numbers
+     (01-05) were effectively decorative-grey at 11.5px. 4.68:1 now. The active
+     item still overrides this with its product colour on the line below. */
+  color: #697585;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid rgba(15, 30, 60, 0.12);
+}
+.sv-item.is-active .sv-num { color: var(--pc); border-color: var(--pc); }
+.sv-mark { width: 30px; height: 30px; object-fit: contain; object-position: center top; clip-path: inset(0 0 26% 0); opacity: 0.55; transition: opacity .3s; flex-shrink: 0; }
+.sv-item.is-active .sv-mark, .sv-item-head:hover .sv-mark { opacity: 1; }
+.sv-names { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.sv-name {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.1;
+  color: #22364f;
+  transition: color .3s;
+}
+.sv-item-head:hover .sv-name { color: #101f36; }
+.sv-item.is-active .sv-name { color: var(--pc); }
+.sv-cat { font-size: 13px; color: #5c7091; }
+.sv-chev { color: #93a3ba; flex-shrink: 0; transition: transform .3s, color .3s; }
+.sv-item.is-active .sv-chev { transform: rotate(180deg); color: var(--pc); }
+.sv-item-head:focus-visible { outline: 2px solid #1858f5; outline-offset: -3px; border-radius: 12px; }
+
+/* The media panel is a tab stop because it scrolls (see .sv-side below), so
+   that stop has to be visible. Offset outward rather than inward like the
+   accordion header above: this panel's content runs to its own edges, and an
+   inset outline would sit on top of the app mock. */
+.sv-side:focus-visible { outline: 3px solid rgba(24, 88, 245, 0.5); outline-offset: 3px; border-radius: 14px; }
+
+.sv-body { padding: 4px 18px 22px; border-top: 1px solid rgba(15, 30, 60, 0.07); margin-top: 2px; animation: svIn .4s cubic-bezier(.2, .8, .3, 1) both; }
+@keyframes svIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.sv-text { font-size: 14.5px; line-height: 1.6; color: #4a5f7d; margin: 16px 0 18px; text-wrap: pretty; }
+.sv-pin > .sv-text { margin-inline: 18px; }
+.sv-caps { list-style: none; display: grid; gap: 11px; margin: 0 0 20px; padding: 0; }
+.sv-caps li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #2b3f5e; animation: svIn .38s cubic-bezier(.2, .8, .3, 1) both; animation-delay: calc(.04s + var(--ci) * .04s); }
+.sv-check { display: grid; place-items: center; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; border-radius: 5px; font-size: 9.5px; color: var(--pc); background: color-mix(in srgb, var(--pc) 12%, #fff); border: 1px solid color-mix(in srgb, var(--pc) 30%, transparent); }
+.sv-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14.5px; color: var(--pc); border-bottom: 1px solid transparent; padding-bottom: 2px; width: fit-content; transition: gap .2s, border-color .2s; }
+.sv-cta:hover { gap: 13px; border-color: currentColor; }
+.sv-visual-inline { display: none; }
+
+/* ── right: sticky app window + foundation ── */
+/* 88px was set before the site header became sticky, and the header is 96px —
+   so the panel parked 8px *underneath* it and clipped the top of every app
+   window. That part is fixed — driven off the header's own token, plus a gap.
+
+   It did not fix the actual clipping, though, which has a separate cause:
+   .sv-side's sticky containing block is the .sv-grid row it shares with the
+   five-item accordion list, and that row is only ~866px tall (one open item
+   plus four collapsed). At its natural content height (measured at 744px for
+   K-Connect: a 477px app window + a 216px stats block + a 20px caption), the
+   panel needed 112 + 744 = 856px to hold its top offset — 10px of slack in an
+   866px box. Any solution whose content runs a little longer breaks it
+   outright, which is exactly why K-Traffic and K-Connect were worst: nothing
+   about those two specifically, just whichever panels happened to be tallest.
+
+   max-height gives the panel a hard, generous ceiling well inside that ~866px
+   budget instead of trusting content to happen to fit. overflow-y is the
+   fallback for whichever solution's content still exceeds it — an internal
+   scroll inside the panel, not the top of the app window sliding under the
+   header. */
+.sv-side {
+  position: sticky;
+  top: calc(var(--hll-nav-h, 96px) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 620px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.sv-app {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b1220;
+  border: 1px solid rgba(15, 30, 60, 0.16);
+  box-shadow: 0 40px 80px -46px rgba(11, 18, 32, 0.6);
+}
+.sv-app-bar { display: flex; align-items: center; gap: 7px; padding: 11px 15px; background: #0e1626; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.sv-dot { width: 9px; height: 9px; border-radius: 50%; }
+.sv-dot:nth-child(1) { background: #e0556a; }
+.sv-dot:nth-child(2) { background: #e0a44e; }
+.sv-dot:nth-child(3) { background: #4ea564; }
+.sv-app-title { margin-left: 9px; font-size: 12.5px; font-weight: 600; color: #dbe4f0; }
+.sv-app-tools { margin-left: auto; display: flex; align-items: center; gap: 12px; color: #7d8ea6; }
+.sv-app-avatar { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #1858f5; color: #fff; font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; }
+
+/* Trimmed from min(46vh, 430px) — with the 620px ceiling on .sv-side above,
+   a shorter app window means the internal scroll fallback rarely has to
+   engage in the first place; the stats block and caption below it fit
+   without it for every solution measured. */
+.sv-app-body { display: grid; grid-template-columns: 118px 1fr 152px; height: min(38vh, 360px); }
+.sv-app-side { display: flex; flex-direction: column; gap: 2px; padding: 10px 8px; background: #0d1524; border-right: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
+.sv-app-side span { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 7px; }
+.sv-app-side span.is-on { background: color-mix(in srgb, var(--pc) 26%, transparent); }
+.sv-app-side svg { width: 14px; height: 14px; color: rgba(255, 255, 255, 0.42); flex-shrink: 0; }
+.sv-app-side span.is-on svg { color: #cfe0ff; }
+.sv-app-side b { font-weight: 500; font-size: 10.5px; color: #8b9cb5; white-space: nowrap; }
+.sv-app-side span.is-on b { color: #fff; font-weight: 600; }
+
+.sv-app-canvas { position: relative; background: #060c17; overflow: hidden; }
+.sv-app-canvas img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sv-canvas-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6, 12, 23, 0.18), rgba(6, 12, 23, 0.05) 40%, rgba(6, 12, 23, 0.22)); }
+
+.sv-app-rail { display: flex; flex-direction: column; gap: 7px; padding: 9px; background: #0d1524; border-left: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
+.sv-rail-card { display: flex; flex-direction: column; gap: 3px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 8px 9px; }
+.sv-rail-tag { display: flex; align-items: center; gap: 5px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.08em; color: #ff8b96; }
+.sv-rail-tag i { width: 5px; height: 5px; border-radius: 50%; background: #ef4444; }
+.sv-rail-card b { font-size: 10.5px; font-weight: 600; color: #e8eef8; }
+.sv-rail-card em { font-style: normal; font-size: 9px; color: #8b9cb5; }
+.sv-rail-pill { align-self: flex-start; margin-top: 2px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 7.5px; letter-spacing: 0.08em; color: #ffb4bd; background: rgba(239, 68, 68, 0.16); border-radius: 4px; padding: 2px 5px; }
+.sv-rail-label { font-family: 'DM Mono', ui-monospace, monospace; font-size: 7.5px; letter-spacing: 0.1em; color: #7d8ea6; }
+.sv-rail-timer strong { font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1; color: #fff; letter-spacing: 0.01em; }
+.sv-rail-split { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.sv-rail-split div { display: flex; flex-direction: column; gap: 2px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 7px 8px; }
+.sv-rail-split b { font-size: 12px; font-weight: 700; }
+.sv-ok { color: #56d9a3; }
+.sv-info { color: #6db3ff; }
+/* One camera, not a wall. This used to point at video.webp — a grid of many
+   camera tiles — scaled to 220% inside a 113x46 box, so it landed mid-grid and
+   showed slivers of neighbouring tiles and their burned-in labels. cam-still is
+   a single feed authored at 2.36 against this box's 2.46, so cover barely
+   crops it. */
+.sv-rail-thumb { position: relative; display: block; height: 46px; border-radius: 5px; background: url('/images/modules/cam-still.webp') center/cover no-repeat; filter: brightness(1.08); }
+.sv-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); }
+.sv-play::after { content: ''; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border-left: 5px solid #0b1220; border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent; }
+.sv-feed { display: flex; align-items: flex-start; gap: 5px; font-size: 8.5px; line-height: 1.35; color: #97a8bf; }
+.sv-feed i { width: 4px; height: 4px; border-radius: 50%; background: #4b9bff; margin-top: 4px; flex-shrink: 0; }
+
+/* ── stationary platform foundation ── */
+.sv-foundation { background: #fff; border: 1px solid rgba(15, 30, 60, 0.08); border-radius: 14px; padding: 18px clamp(14px, 1.6vw, 24px) 16px; box-shadow: 0 14px 34px -30px rgba(20, 40, 80, 0.4); }
+.sv-foundation-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.sv-foundation-rule { flex: 1; height: 1px; background: rgba(15, 30, 60, 0.1); }
+.sv-foundation-label { font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: #2a3c56; }
+/* Ten fixed modules, laid out 2 x 5 — ten across is too cramped to read the
+   longer labels ("Event Management", "CAD / Dispatch") at this column width. */
+.sv-foundation-caps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.sv-cap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+  padding: 12px 4px;
+  border-radius: 10px;
+  color: #8697ae;
+  background: #f7f9fc;
+  border: 1px solid rgba(15, 30, 60, 0.07);
+  transition: background .35s, border-color .35s, color .35s;
+}
+.sv-cap em { font-style: normal; font-size: 10.5px; font-weight: 500; line-height: 1.2; color: #5c7091; transition: color .35s; }
+/* Core modules are always the same blue, never the product's accent colour —
+   the legend reads "Blue — Core to this solution", so the highlight has to
+   mean one thing regardless of which product is selected. */
+.sv-cap.is-core { color: #1858f5; background: color-mix(in srgb, #1858f5 8%, #fff); border-color: color-mix(in srgb, #1858f5 26%, transparent); }
+.sv-cap.is-core em { color: #16437a; font-weight: 600; }
+.sv-legend { display: flex; justify-content: center; gap: 22px; margin-top: 14px; }
+.sv-legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: #5c7091; }
+.sv-legend i { width: 8px; height: 8px; border-radius: 50%; background: #c2ccda; }
+.sv-legend i.sv-legend-on { background: #1858f5; }
+
+.sv-note { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 13px; color: #5c7091; margin: 0; }
+.sv-note svg { color: #8697ae; flex-shrink: 0; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  /* Sticky solution context: header + visual + summary together.
+     On a phone the accordion is one column and an expanded solution is taller
+     than the viewport, so the product name scrolls away and you lose track of
+     which solution you are reading. .sv-pin (header + app-mockup visual, see
+     the JSX) pins to the top while its own solution is on screen and hands
+     off to the next one, because .sv-pin is sticky inside its own .sv-item —
+     once that item's bottom passes, it releases and the following item's
+     .sv-pin takes over.
+
+     Header, visual and summary stick as ONE box rather than each at its own computed
+     offset. The header alone used to be the sticky element, and the visual
+     right below it just scrolled normally — so on a long solution the visual
+     scrolled out from under the header almost immediately, while the header
+     kept pinning alone for the rest of the read. Making only the visual
+     *also* sticky at a fixed px offset below the header would need the
+     header's exact height, which isn't constant: .sv-cat wraps to two lines
+     for some products ("Emergency Call-Taking & Dispatch") and one for
+     others. A shared sticky parent sidesteps that entirely — whatever the
+     header's real height is, the visual sits right below it, and the pair
+     move as a unit.
+
+     Two things this depends on:
+     - .sv-item must use overflow: clip, not hidden. `hidden` makes the item a
+       scroll container, and a sticky child then sticks to *that* box rather
+       than the page — silently doing nothing. `clip` gives the same rounded
+       corner clipping without creating a scroll container. Where `clip` is
+       unsupported the earlier `hidden` simply stays and the pin does not
+       stick, which degrades cleanly.
+     - .sv-pin needs its own opaque background. Between the header and the
+       visual there's a 16px gap (see .sv-visual-inline's margin); with no
+       background there, the rest of that solution's text would show through
+       that gap while scrolling underneath the pinned unit. */
+  .sv-item { overflow: clip; }
+  .sv-pin {
+    position: sticky;
+    /* Sits directly beneath the site header, which is itself sticky — top: 0
+       would pin these underneath it. Falls back to 0 if the variable is
+       missing so the header still pins rather than not sticking at all. */
+    top: var(--hll-nav-h, 0px);
+    z-index: 5;
+    background: #fff;
+    border-radius: 14px 14px 0 0;
+  }
+  .sv-item-head { background: none; }
+  .sv-item.is-active .sv-pin {
+    background: linear-gradient(180deg, #f4f8ff, #f1f6ff);
+    box-shadow: 0 6px 14px -12px rgba(20, 40, 80, 0.45);
+  }
+
+  .sv-grid { grid-template-columns: 1fr; gap: 26px; }
+  /* .sv-side drops to position:static below, so it no longer needs sticky
+     room — the 900px reserved for that above would otherwise just be dead
+     space at the end of the list on every phone and tablet under 960px. */
+  .sv-list { padding-bottom: 10px; }
+  .sv-side { position: static; order: 2; }
+  .sv-side .sv-app { display: none; }
+  .sv-visual-inline { display: block; margin: 16px 0 18px; }
+  .sv-app-body { grid-template-columns: 1fr; height: auto; }
+  .sv-app-side, .sv-app-rail { display: none; }
+  .sv-app-canvas { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 560px) {
+  /* 2 x 5 rather than 3 wide — 10 items over 3 columns leaves a stranded
+     single tile on the last row. */
+  .sv-foundation-caps { grid-template-columns: repeat(2, 1fr); }
+  .sv-legend { flex-direction: column; gap: 8px; align-items: center; }
+}
+
+/* The complete active product owns the mobile sticky state. Keeping the
+   earlier .sv-pin rules intact preserves their documented fallback; these
+   later overrides expand the pinned composition to include the summary,
+   checklist and CTA. IntersectionObserver moves .is-active to the next
+   product, producing a clean full-card handoff at the same top offset. */
+@media (max-width: 960px) {
+  .sv-item.is-active {
+    position: sticky;
+    top: var(--hll-nav-h, 0px);
+    z-index: 5;
+  }
+  .sv-item.is-active .sv-pin {
+    position: static;
+    top: auto;
+    z-index: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-body, .sv-caps li { animation: none; }
+  .sv-cap, .sv-chev, .sv-item { transition: none; }
+}

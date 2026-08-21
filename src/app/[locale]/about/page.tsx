@@ -193,7 +193,7 @@ export default async function AboutPage({
         </div>
 
         {/* ── HERO ── */}
-        <section style={{
+        <section className="about-hero-grid" style={{
           maxWidth: '1160px', margin: '0 auto', padding: '80px 40px 96px',
           display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center',
         }}>
@@ -267,7 +267,7 @@ export default async function AboutPage({
             </div>
 
             {/* Globe metrics */}
-            <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', width: '100%', position: 'relative', zIndex: 1 }}>
+            <div className="about-stat-pair" style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', width: '100%', position: 'relative', zIndex: 1 }}>
               {[
                 { val: '68.5M+', label: content.metricCitizens },
                 { val: '68+', label: content.metricProjects },
@@ -285,7 +285,7 @@ export default async function AboutPage({
 
         {/* ── STATS BAR ── */}
         <div style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'rgba(255,255,255,0.015)' }}>
-          <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="about-metrics" style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
             {[
               { val: '+68.5M', accent: true, label: content.stat1Label },
               { val: '+68', accent: true, label: content.stat2Label },
@@ -317,7 +317,7 @@ export default async function AboutPage({
         {/* ── MISSION ── */}
         <section id="mission" style={{ padding: '96px 0', borderTop: '1px solid var(--border)' }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 40px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+            <div className="about-story-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
               <div>
                 <p style={{ fontFamily: 'DM Mono, monospace', fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '16px' }}>
                   {content.missionEyebrow}
@@ -371,7 +371,7 @@ export default async function AboutPage({
             <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800, fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, color: 'var(--white)', marginBottom: '20px' }}>
               {content.valuesH2}
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginTop: '48px' }}>
+            <div className="about-cards-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginTop: '48px' }}>
               {values.map((v, i) => (
                 <div key={i} style={{
                   background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)',
@@ -408,7 +408,7 @@ export default async function AboutPage({
             <p style={{ fontSize: '17px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '680px' }}>
               {content.csBody}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', marginTop: '48px' }}>
+            <div className="about-cards-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', marginTop: '48px' }}>
               {services.map((svc, i) => (
                 <div key={i} style={{
                   background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)',
@@ -460,7 +460,7 @@ export default async function AboutPage({
             <p style={{ fontSize: '17px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '680px' }}>
               {content.gpBody}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '48px' }}>
+            <div className="about-cards-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginTop: '48px' }}>
               {presenceCards.map((card, i) => (
                 <div key={i} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)', borderRadius: '14px', padding: '28px' }}>
                   <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: card.regionColor, marginBottom: '12px' }}>
@@ -519,20 +519,38 @@ export default async function AboutPage({
 
         <style>{`
           @keyframes aboutSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+          /* Real class selectors. This block previously used attribute-substring
+             matching against the inline style attribute, which never matched:
+             React serialises inline styles with no space after the colon, while
+             every selector here was written with one. The .about-hero-grid rule
+             was dead too - no element in this file carried a className at all.
+             So the whole responsive layer was inert and the page held its
+             desktop grids at every width: 747px of document in a 390px viewport.
+
+             Inline styles beat stylesheet rules, so these need !important. */
           @media (max-width: 960px) {
-            .about-hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+            .about-hero-grid,
+            .about-story-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+            .about-metrics { grid-template-columns: repeat(2, 1fr) !important; }
+            .about-cards-5 { grid-template-columns: repeat(3, 1fr) !important; }
           }
           @media (max-width: 768px) {
-            section > div > div[style*="grid-template-columns: 1fr 1fr"],
-            section > div > div[style*="grid-template-columns: repeat(2"],
-            section > div > div[style*="grid-template-columns: repeat(3"],
-            section > div > div[style*="grid-template-columns: repeat(5"] {
-              grid-template-columns: 1fr !important;
-            }
-            section[style*="grid-template-columns: 1fr 1fr"] {
-              grid-template-columns: 1fr !important;
-            }
+            .about-cards-2,
+            .about-cards-3 { grid-template-columns: 1fr !important; }
+            .about-cards-5 { grid-template-columns: repeat(2, 1fr) !important; }
           }
+          @media (max-width: 560px) {
+            .about-metrics,
+            .about-cards-5,
+            .about-stat-pair { grid-template-columns: 1fr !important; }
+            .about-hero-grid { padding: 48px 20px 56px !important; }
+            .about-metrics { padding: 0 20px !important; }
+          }
+          /* Grid items default to min-width: auto, which stops a track ever
+             shrinking below its content and is what forced the page wide. */
+          .about-hero-grid > *, .about-story-grid > *, .about-metrics > *,
+          .about-cards-2 > *, .about-cards-3 > *, .about-cards-5 > *,
+          .about-stat-pair > * { min-width: 0; }
         `}</style>
       </div>
     </>

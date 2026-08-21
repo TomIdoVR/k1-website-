@@ -28,12 +28,14 @@ export default function BottomNav({
   // Pulse the NEXT button on the very first stage to hint at it
   const [pulsed, setPulsed] = useState(false)
   useEffect(() => {
-    if (isFirst) {
-      const t = setTimeout(() => setPulsed(true), 800)
-      return () => clearTimeout(t)
-    } else {
-      setPulsed(false)
-    }
+    if (!isFirst) return
+    const t = setTimeout(() => setPulsed(true), 800)
+    /* Reset in cleanup rather than in an else-branch. The previous version
+       called setPulsed(false) synchronously in the effect body, which is the
+       cascading-render pattern the lint rule flags. Cleanup fires on exactly
+       the same transition (isFirst becoming false), so the behaviour is
+       identical — the hint still clears the moment the user leaves stage one. */
+    return () => { clearTimeout(t); setPulsed(false) }
   }, [isFirst])
 
   return (

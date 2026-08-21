@@ -2,6 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 
+/* Leaflet stamps `_leaflet_id` on a container element once a map is bound to
+   it. It is an internal field and absent from @types/leaflet, so it needs a
+   local declaration rather than an `any` cast. The guard itself is
+   load-bearing: re-initialising a container that already has a map throws
+   "Map container is already initialized". */
+type LeafletBoundElement = HTMLElement & { _leaflet_id?: number }
+
 interface Unit {
   id: string
   status: string
@@ -43,7 +50,7 @@ export default function DecideMapPanel({ incidentCoords, units }: DecideMapPanel
     }
 
     const buildMap = (L: typeof import('leaflet')) => {
-      if (cancelled || !el || (el as any)._leaflet_id) return
+      if (cancelled || !el || (el as LeafletBoundElement)._leaflet_id) return
 
       const map = L.map(el, {
         zoomControl: false,

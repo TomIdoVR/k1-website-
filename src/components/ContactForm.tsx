@@ -1,6 +1,13 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+/* The locale-aware Link, not next/link: a Spanish visitor reading the consent
+   notice must land on /es/privacy, not the English notice. */
+import { Link } from '@/i18n/navigation'
+/* From main. Unrelated to the Link above — git only read them as one conflict
+   because both sides added an import at the same position. trackLead is what
+   fires the GA4 generate_lead conversion, so losing it would silently break
+   lead attribution. */
 import { trackLead } from '@/lib/analytics'
 
 interface SelectOption {
@@ -98,7 +105,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
 
   if (status === 'success') {
     return (
-      <div style={{
+      <div className="cf-card" style={{
         background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
         borderRadius: '20px', padding: '48px', textAlign: 'center',
         display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px',
@@ -126,7 +133,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
   }
 
   return (
-    <div style={{
+    <div className="cf-card" style={{
       background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)',
       borderRadius: '20px', padding: '48px',
     }}>
@@ -137,36 +144,52 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
         {labels.formSub}
       </p>
 
-      <form onSubmit={handleSubmit}>
+      {/* method/action are the no-JS fallback. Without them the browser default
+          is GET to the current URL, which would put name, email and phone into
+          the query string — and therefore into server and analytics logs — any
+          time handleSubmit does not run. handleSubmit still preventDefaults and
+          POSTs via fetch on the normal path. */}
+      <form onSubmit={handleSubmit} method="post" action={FORMSPREE_URL}>
         {campaignSource && <input type="hidden" name="campaign_source" value={campaignSource} />}
         {/* Row 1: Name + Company */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-            <label style={labelStyle}>{labels.labelName}</label>
-            <input type="text" name="name" placeholder={labels.placeholderName} required style={inputStyle} />
+            <label htmlFor="cf-name" style={labelStyle}>{labels.labelName}</label>
+            <input id="cf-name" type="text" name="name" autoComplete="name" placeholder={labels.placeholderName} required style={inputStyle} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-            <label style={labelStyle}>{labels.labelCompany}</label>
-            <input type="text" name="company" placeholder={labels.placeholderCompany} style={inputStyle} />
+            <label htmlFor="cf-company" style={labelStyle}>{labels.labelCompany}</label>
+            <input id="cf-company" type="text" name="company" autoComplete="organization" placeholder={labels.placeholderCompany} style={inputStyle} />
           </div>
         </div>
 
         {/* Row 2: Email + Phone */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-            <label style={labelStyle}>{labels.labelEmail}</label>
-            <input type="email" name="email" placeholder={labels.placeholderEmail} required style={inputStyle} />
+            <label htmlFor="cf-email" style={labelStyle}>{labels.labelEmail}</label>
+            <input id="cf-email" type="email" name="email" autoComplete="email" placeholder={labels.placeholderEmail} required style={inputStyle} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-            <label style={labelStyle}>{labels.labelPhone}</label>
-            <input type="tel" name="phone" placeholder={labels.placeholderPhone} style={inputStyle} />
+            <label htmlFor="cf-phone" style={labelStyle}>{labels.labelPhone}</label>
+            <input id="cf-phone" type="tel" name="phone" autoComplete="tel" placeholder={labels.placeholderPhone} style={inputStyle} />
           </div>
         </div>
 
         {/* Region select */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-          <label style={labelStyle}>{es ? 'Región' : 'Region'}</label>
-          <select name="region" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
+          {/* Region, from main, not this branch's country field. main changed
+              country → a 5-region dropdown in v2.267 for lead allocation, and
+              this branch never picked that up — its country version is stale,
+              and COUNTRY_OPTIONS no longer exists after the merge, so keeping
+              it would not even compile.
+
+              The htmlFor/id pairing is this branch's accessibility fix and is
+              kept on top of main's semantics. autoComplete is deliberately
+              omitted: there is no valid token for a bespoke 5-region taxonomy,
+              and country-name would autofill "Mexico" into a list whose only
+              matching option is "Latin America". */}
+          <label htmlFor="cf-region" style={labelStyle}>{es ? 'Región' : 'Region'}</label>
+          <select id="cf-region" name="region" required defaultValue="" style={{ ...inputStyle, appearance: 'auto' as const }}>
             <option value="" disabled>{es ? 'Selecciona tu región' : 'Select your region'}</option>
             {REGION_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{es ? opt.es : opt.en}</option>
@@ -176,8 +199,8 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
 
         {/* Interest select */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-          <label style={labelStyle}>{labels.labelInterest}</label>
-          <select name="interest" style={{ ...inputStyle, appearance: 'auto' as const }}>
+          <label htmlFor="cf-interest" style={labelStyle}>{labels.labelInterest}</label>
+          <select id="cf-interest" name="interest" style={{ ...inputStyle, appearance: 'auto' as const }}>
             <option value="">{labels.selectDefault}</option>
             {selectOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -187,8 +210,8 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
 
         {/* Message textarea */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
-          <label style={labelStyle}>{labels.labelMessage}</label>
-          <textarea name="message" placeholder={labels.placeholderMessage} rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }} />
+          <label htmlFor="cf-message" style={labelStyle}>{labels.labelMessage}</label>
+          <textarea id="cf-message" name="message" placeholder={labels.placeholderMessage} rows={5} style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }} />
         </div>
 
         {/* Error message */}
@@ -199,6 +222,20 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
               : 'Something went wrong. Please try again or email us directly at info@kabatone.com.'}
           </p>
         )}
+
+        {/* Consent notice. Sits above the button so it is read before the
+            action, not after it. */}
+        <p style={{
+          fontSize: '0.75rem', lineHeight: 1.5, color: 'var(--dim)',
+          marginBottom: '14px', fontFamily: 'Space Grotesk, sans-serif',
+        }}>
+          {es
+            ? 'Al enviar este formulario aceptas que KabatOne use tus datos para responder a tu solicitud. No los compartimos con terceros.'
+            : 'By submitting this form you agree that KabatOne may use your details to respond to your enquiry. We do not share them with third parties.'}{' '}
+          <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
+            {es ? 'Aviso de privacidad' : 'Privacy notice'}
+          </Link>
+        </p>
 
         {/* Submit */}
         <button

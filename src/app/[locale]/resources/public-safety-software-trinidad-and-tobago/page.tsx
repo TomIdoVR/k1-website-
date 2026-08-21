@@ -541,7 +541,7 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
                   es: 'Software CAD de Despacho para America Latina',
                 },
                 {
-                  href: '/resources/public-safety-software-uk',
+                  href: '/resources/public-safety-software-united-kingdom',
                   en: 'Public Safety Software for the United Kingdom',
                   es: 'Software de Seguridad Publica para el Reino Unido',
                 },

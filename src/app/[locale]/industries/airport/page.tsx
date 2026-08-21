@@ -198,7 +198,7 @@ export default async function AirportPage({
                 ? 'Los aeropuertos son uno de los entornos de seguridad mas complejos del mundo — extensas areas, alto trafico y cero tolerancia al fallo.'
                 : 'Airports are among the most complex security environments in the world — vast footprints, high traffic, and zero tolerance for failure.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {challenges.map((c, i) => (
                 <div key={i} style={{ background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px', transition: 'border-color 0.2s' }}>
                   <div style={{
@@ -235,7 +235,7 @@ export default async function AirportPage({
                 ? 'La plataforma de seguridad aeroportuaria de KabatOne sigue un flujo de trabajo estructurado y automatizado que asegura que ninguna amenaza quede sin atender.'
                 : 'KabatOne\'s airport security platform follows a structured, automated workflow that ensures no threat goes unaddressed.'}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, position: 'relative' }}>
+            <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, position: 'relative' }}>
               {/* connector line */}
               <div style={{
                 position: 'absolute', top: '28px', left: '10%', right: '10%', height: '1px',
@@ -413,13 +413,28 @@ export default async function AirportPage({
           @media (max-width: 768px) {
             section > div { grid-template-columns: 1fr !important; }
           }
+
+          /* Class selectors, because the rules that used to live here matched
+             nothing: they tested the inline style attribute for
+             "grid-template-columns: repeat(...)" with a space after the colon,
+             and React serialises inline styles without one. Every fixed-column
+             grid therefore held its desktop track count at every width -- the
+             challenges grid computed to 150px+136px+152px inside a 390px
+             viewport. Inline styles win over stylesheets, so !important. */
+          .ind-grid > * { min-width: 0; }
+          @media (max-width: 900px) {
+            .ind-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          }
           @media (max-width: 640px) {
-            section > div > div[style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
-            section > div > div[style*="grid-template-columns: repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+            .ind-grid { grid-template-columns: 1fr !important; }
           }
-          @media (max-width: 480px) {
-            section > div > div[style*="grid-template-columns: repeat(5"] { grid-template-columns: 1fr !important; }
+          /* Flex items also default to min-width: auto, so a card could stay
+             wider than its own wrapped flex row on the narrowest phones. */
+          @media (max-width: 400px) {
+            section div { min-width: 0; }
+            section h1, section h2, section h3, section p { overflow-wrap: anywhere; }
           }
+
         `}</style>
       </div>
     </>

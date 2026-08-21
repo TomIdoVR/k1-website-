@@ -54,7 +54,7 @@ export default async function AiInPublicSafetyPage({
         {
           question: '¿Qué debo buscar en una plataforma de IA para seguridad pública?',
           answer:
-            'Los criterios clave son: integración nativa con CAD y VMS (no middleware de terceros), transparencia del modelo (puedes ver qué detectó la IA y por qué), personalización de umbrales (ajustar la sensibilidad según el contexto operativo), auditoría completa de alertas y acciones, soporte para cámaras de múltiples fabricantes (no propietario de hardware), y SLA de disponibilidad del 99.9% o superior. Solicita siempre una demo con datos reales de tu ciudad, no con datos de demostración.',
+            'Los criterios clave son: integración nativa con CAD y VMS (no middleware de terceros), transparencia del modelo (puedes ver qué detectó la IA y por qué), personalización de umbrales (ajustar la sensibilidad según el contexto operativo), auditoría completa de alertas y acciones, soporte para cámaras de múltiples fabricantes (no propietario de hardware), y SLA de disponibilidad del 99.99% o superior. Solicita siempre una demo con datos reales de tu ciudad, no con datos de demostración.',
         },
       ]
     : [
@@ -86,7 +86,7 @@ export default async function AiInPublicSafetyPage({
         {
           question: 'What should I look for in an AI platform for public safety?',
           answer:
-            'Key criteria: native integration with CAD and VMS (no third-party middleware), model transparency (you can see what the AI detected and why), threshold customization (adjust sensitivity based on operational context), full audit trail of alerts and actions, support for cameras from multiple manufacturers (no hardware lock-in), and 99.9%+ uptime SLA. Always request a demo with real data from your city, not demonstration data.',
+            'Key criteria: native integration with CAD and VMS (no third-party middleware), model transparency (you can see what the AI detected and why), threshold customization (adjust sensitivity based on operational context), full audit trail of alerts and actions, support for cameras from multiple manufacturers (no hardware lock-in), and 99.99%+ uptime SLA. Always request a demo with real data from your city, not demonstration data.',
         },
       ]
 

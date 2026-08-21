@@ -109,7 +109,7 @@ export default async function ContactPage({
       <div style={{ paddingTop: '70px', background: 'var(--bg)', color: 'var(--white)', minHeight: '100vh' }}>
 
         {/* ── PAGE HEADER ── */}
-        <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '80px 40px 0' }}>
+        <div className="contact-wrap" style={{ maxWidth: '1160px', margin: '0 auto', padding: '80px 40px 0' }}>
           <div style={{ textAlign: 'center', marginBottom: '72px' }}>
             <p style={{
               display: 'inline-flex', alignItems: 'center', gap: '10px',
@@ -137,7 +137,7 @@ export default async function ContactPage({
           </div>
 
           {/* ── CONTACT GRID ── */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '48px', alignItems: 'start' }}>
+          <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '48px', alignItems: 'start' }}>
 
             {/* FORM */}
             <ContactForm
@@ -345,7 +345,7 @@ export default async function ContactPage({
                 }}>
                   {content.globalPresence}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div className="contact-offices" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   {offices.map((office, i) => (
                     <div key={i} style={{
                       display: 'flex', alignItems: 'center', gap: '8px',
@@ -370,8 +370,8 @@ export default async function ContactPage({
         }} />
 
         {/* ── BOTTOM CTA ── */}
-        <section style={{ padding: '80px 40px 100px', textAlign: 'center' }}>
-          <div style={{
+        <section className="contact-cta" style={{ padding: '80px 40px 100px', textAlign: 'center' }}>
+          <div className="contact-cta-card" style={{
             maxWidth: '620px', margin: '0 auto',
             background: 'rgba(255,255,255,0.025)', border: '1px solid var(--border-b)',
             borderRadius: '24px', padding: '56px 48px',
@@ -410,39 +410,44 @@ export default async function ContactPage({
 
         <Footer es={es} />
 
+        {/* Responsive rules target real class names.
+
+            This block previously used attribute-substring selectors against the
+            inline style attribute — `div[style*="grid-template-columns: 1fr 420px"]`
+            and similar. None of them ever matched: React serialises inline styles
+            with no space after the colon (`grid-template-columns:1fr 420px`), and
+            several selectors even included the JS quote characters, which never
+            appear in rendered HTML at all. The whole responsive layer was inert,
+            so the page held its desktop two-column grid at every width: 770px of
+            document against a 390px viewport, with the form squeezed to 164px and
+            each field to 74px.
+
+            Class selectors also let the form's own rows be targeted from here —
+            the reason attribute matching was reached for, since ContactForm is a
+            separate component. */}
         <style>{`
           @keyframes contactBlink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
           }
+          /* min-width: 0 lets the form column shrink below its content width.
+             Grid items default to min-width: auto, which is what let the 1fr
+             track refuse to give way to the fixed 420px one. */
+          .contact-grid > * { min-width: 0; }
+
           @media (max-width: 900px) {
-            div[style*="grid-template-columns: 1fr 420px"] {
-              grid-template-columns: 1fr !important;
-            }
+            .contact-grid { grid-template-columns: 1fr !important; }
           }
           @media (max-width: 640px) {
-            div[style*="padding: '80px 40px 0'"],
-            div[style*="padding: 80px 40px 0"] {
-              padding: 48px 20px 0 !important;
-            }
-            div[style*="grid-template-columns: 1fr 1fr"][style*="gap: '16px'"],
-            div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 16px"] {
-              grid-template-columns: 1fr !important;
-            }
+            .contact-wrap { padding: 48px 20px 0 !important; }
+            .cf-row { grid-template-columns: 1fr !important; }
+            .contact-offices { grid-template-columns: 1fr !important; }
           }
           @media (max-width: 480px) {
-            div[style*="padding: '48px'"],
-            div[style*="padding: 48px"] {
-              padding: 24px 16px !important;
-            }
-            section[style*="padding: '80px 40px 100px'"],
-            section[style*="padding: 80px 40px 100px"] {
-              padding: 36px 12px 48px !important;
-            }
-            div[style*="padding: '56px 48px'"],
-            div[style*="padding: 56px 48px"] {
-              padding: 36px 20px !important;
-            }
+            .contact-cta { padding: 36px 12px 48px !important; }
+            .contact-cta-card { padding: 36px 20px !important; }
+            /* 48px each side took 96px out of a 390px screen. */
+            .cf-card { padding: 28px 20px !important; }
           }
         `}</style>
       </div>

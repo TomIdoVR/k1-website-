@@ -44,7 +44,7 @@ export default async function EndOfSiloedResponsePage({
 
     stats: [
       { value: '40+', label: es ? 'Ciudades con operaciones unificadas' : 'Cities running unified command' },
-      { value: '70M+', label: es ? 'Ciudadanos protegidos' : 'Citizens protected' },
+      { value: '73M+', label: es ? 'Ciudadanos protegidos' : 'Citizens protected' },
       { value: '40%', label: es ? 'Respuesta más rápida documentada' : 'Faster response time documented' },
     ],
 

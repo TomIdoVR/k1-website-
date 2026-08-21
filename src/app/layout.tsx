@@ -1,32 +1,24 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
+  /* Required for relative URLs in metadata to resolve. Without it Next cannot
+     turn a relative openGraph image into an absolute one and drops the whole
+     block — /demo/lpr declared an OG image and emitted no og: tags at all. */
+  metadataBase: new URL('https://kabatone.com'),
   verification: {
     google: 'DTq9cTtA8K66rDO1x_BKB49knpC4BhRobzjiuYtrQk8',
   },
 }
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-})
+/* Pass-through by design. With i18n routing the <html> element lives in
+   [locale]/layout.tsx, because that is the first layout that can see the locale
+   and therefore the only place lang can be server-rendered correctly. A root
+   layout owning <html> sits above the [locale] segment, so it always fell back
+   to the default and every Spanish page shipped lang="en".
 
-const barlowCondensed = Barlow_Condensed({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-barlow-condensed',
-  display: 'swap',
-})
-
+   Routes outside [locale] — the root not-found and global-error — render their
+   own html/body. */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html suppressHydrationWarning className={`${spaceGrotesk.variable} ${barlowCondensed.variable}`}>
-      <body suppressHydrationWarning>
-        {children}
-      </body>
-    </html>
-  )
+  return children
 }

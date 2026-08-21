@@ -511,7 +511,7 @@ export default async function VsVmsPage({
               </span>
               {[
                 { href: '/integrations/lpr', label: 'LPR' },
-                { href: '/integrations/facial-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
+                { href: '/integrations/face-recognition', label: es ? 'Reconocimiento Facial' : 'Facial Recognition' },
                 { href: '/integrations/access-control', label: es ? 'Control de Acceso' : 'Access Control' },
                 { href: '/integrations/sensor-fusion', label: es ? 'Fusion de Sensores' : 'Sensor Fusion' },
               ].map((link) => (

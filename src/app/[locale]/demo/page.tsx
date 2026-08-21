@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: 'Scenario Explorer | KabatOne Platform',
   description:
     "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
+  openGraph: {
+    title: 'Scenario Explorer | KabatOne Platform',
+    url: 'https://kabatone.com/demo',
+    siteName: 'KabatOne',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
   alternates: { canonical: 'https://kabatone.com/demo' },
 }
 
@@ -490,7 +497,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           </span>
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }}
             >
               Privacy Protocol

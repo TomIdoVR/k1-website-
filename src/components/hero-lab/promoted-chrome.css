@@ -1,0 +1,109 @@
+/* The redesigned header, adapted for the pages that have not been redesigned yet.
+
+   Promoting HeroLabHeader to the site-wide <Nav> puts it on ~169 legacy pages.
+   Those pages are dark (--bg #0f1724, body text --white) and every one of them
+   hard-codes `paddingTop: 70px` on its content wrapper to clear the old
+   position:fixed 70px nav. Dropping the redesign header in unmodified breaks
+   both: a light #fafcff bar lands on a dark page, and a sticky 96px header in
+   normal flow leaves a 70px empty band under it on every page at once.
+
+   Rather than edit 169 files, the site-wide adapter wraps the header in
+   .hll-legacy-chrome and this file re-skins it there only. The redesigned
+   routes (/, /k-safety …) render HeroLabHeader directly, outside this wrapper,
+   so their light presentation is untouched.
+
+   This is a transition state. When a legacy page is redesigned it stops using
+   <Nav> and picks up the light header automatically; when the last one is
+   converted, this file and the wrapper go away together. */
+
+/* ── Geometry: match the old nav exactly, so the 70px offsets stay correct ── */
+.hll-legacy-chrome .hll-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding-block: 0;
+  z-index: 100;
+  grid-template-columns: 180px 1fr auto;
+}
+
+/* ── Surface: the old nav's tokens, so the bar reads as part of the page ── */
+.hll-legacy-chrome .hll-nav {
+  color: var(--white);
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  --hll-navy: var(--white);
+  --hll-blue: var(--blue-light);
+  --hll-muted: var(--dim);
+  --hll-line: var(--border);
+}
+
+/* The lockup is a mask, so the logo colour is just the mask's background.
+   206x35 is the light header's size; the old dark nav ran 160x27 and the bar
+   here is 70px rather than 96px, so it scales down with it. */
+.hll-legacy-chrome .hll-brand-lockup,
+.hll-legacy-chrome .hll-brand-logo-mask {
+  width: 160px;
+  height: 27px;
+}
+.hll-legacy-chrome .hll-brand-logo-mask {
+  background: var(--white);
+}
+
+/* ── Menu items ── */
+.hll-legacy-chrome .hll-nav-menu summary {
+  color: var(--dim);
+}
+.hll-legacy-chrome .hll-nav-menu[open] summary,
+.hll-legacy-chrome .hll-nav-menu summary:hover {
+  color: var(--white);
+}
+
+.hll-legacy-chrome .hll-nav-dropdown {
+  border-color: var(--border-b);
+  background: var(--dropdown-bg);
+  box-shadow: 0 20px 60px var(--shadow);
+}
+.hll-legacy-chrome .hll-nav-dropdown a {
+  color: var(--white);
+}
+.hll-legacy-chrome .hll-nav-dropdown a:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Language switch ── */
+.hll-legacy-chrome .hll-language {
+  border-color: var(--border);
+  background: transparent;
+}
+.hll-legacy-chrome .hll-language a {
+  color: var(--muted);
+}
+.hll-legacy-chrome .hll-language a[aria-current='page'] {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+/* ── CTA: the old nav's flat blue, not the redesign's gradient + lift ── */
+.hll-legacy-chrome .hll-nav-cta {
+  min-height: 38px;
+  background: var(--blue);
+  box-shadow: 0 0 20px rgba(24, 88, 245, 0.35);
+  font-size: 13px;
+}
+.hll-legacy-chrome .hll-nav-cta:hover {
+  transform: none;
+  box-shadow: 0 0 26px rgba(24, 88, 245, 0.5);
+}
+
+/* The light header drops to 78px at 900px and the mobile menu takes over.
+   Legacy pages offset by a flat 70px at every width, so the height is pinned. */
+@media (max-width: 900px) {
+  .hll-legacy-chrome .hll-nav {
+    height: 70px;
+  }
+}
