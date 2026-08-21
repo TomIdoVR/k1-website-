@@ -1,3 +1,21 @@
+## [v2.375] – 2026-08-21 — Hero: dead space between the header and the headline removed
+### Fixed
+- **The gap under the site header was mostly empty gradient.** The hero's `min-height` was `clamp(560px, 88vh, 900px)` — set back when the art was a 2.25:1 file being `cover`ed, where extra height meant less of the frame got cropped away. That stopped being true when the art was changed to `contain`, capped at `700px` and anchored bottom-right: it no longer crops, and it no longer grows past 700 however tall the section gets. The height above that was empty, and since `.hsplit` centres the copy in it, half the waste landed above the eyebrow.
+- **Height now follows the art instead of the viewport:** `clamp(560px, 45vw, 730px)`. The unit is `vw` because that is what governs the art's drawn height — it is width-capped at 66%, so it renders `min(700, 0.44 x viewport width)` tall. 730px is 700 of art plus the 30px foot beneath it, the tallest the section is ever asked to be.
+- `.hsplit` top padding trimmed from `clamp(24px, 3.4vw, 48px)` to `clamp(24px, 2.6vw, 40px)`. It stacks on top of the centring slack, so it reads as roughly double its value in the gap under the header.
+
+### Measured
+| Viewport | Header → eyebrow before | after |
+|---|---|---|
+| 1024x768 | 134px | 72px |
+| 1440x900 | 151px | 74px |
+| 1440x1080 | 205px | 74px |
+| 1920x1080 | 198px | 109px |
+
+### Notes
+- The art itself is untouched — its drawn size is identical at every width tested, because it was already width-capped rather than height-capped below 1590px. Only the letterboxing around it shrank.
+- Below 980px nothing changes: that breakpoint already overrides both `min-height` and `.hsplit` padding-top with its own values.
+
 ## [v2.374] – 2026-08-21 — Mobile: all five products expanded, scroll-driven accordion switched off
 ### Fixed
 - **Scrolling the products section on a phone fought itself.** An IntersectionObserver with `rootMargin: -45% 0px -45%` activated whichever product crossed the middle of the viewport. Activating one expanded it and collapsed another mid-scroll, which changed the page height under the user's finger, which changed what was crossing the middle — a feedback loop between scrolling and layout. On top of that, both the active card and its `.sv-pin` were `position: sticky`, so two nested sticky contexts moved at once.
