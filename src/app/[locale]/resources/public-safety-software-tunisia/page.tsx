@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareTunisiaPage({
       ? 'Plataforma unificada para la DGPN y Garde Nationale de Túnez — despacho CAD integrado en 24 gobernaciones, Túnez Safe City, ONPC protección civil, Puerto de Túnez Radès/Sfax, INPDP/Loi 63-2004 y adquisición HAICOP/Code des marchés publics.'
       : 'Unified platform for Tunisia DGPN and Garde Nationale — integrated CAD dispatch across 24 governorates, Tunis Safe City, ONPC civil protection, Port of Tunis Radès/Sfax, INPDP/Law 63-2004 compliance, and HAICOP/Code des marchés publics procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-tunisia/'
-      : 'https://kabatone.com/resources/public-safety-software-tunisia/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-tunisia'
+      : 'https://kabatone.com/resources/public-safety-software-tunisia',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareTunisiaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: es ? 'Túnez' : 'Tunisia',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-tunisia/'
-        : 'https://kabatone.com/resources/public-safety-software-tunisia/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-tunisia'
+        : 'https://kabatone.com/resources/public-safety-software-tunisia',
     },
   ])
 

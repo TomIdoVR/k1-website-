@@ -237,7 +237,7 @@ export default async function PublicSafetyPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com/' },
           { name: es ? 'Industrias' : 'Industries', url: 'https://kabatone.com/' },
-          { name: es ? 'Seguridad Pública' : 'Public Safety', url: 'https://kabatone.com/industries/public-safety/' },
+          { name: es ? 'Seguridad Pública' : 'Public Safety', url: 'https://kabatone.com/industries/public-safety' },
         ])) }}
       />
       <script

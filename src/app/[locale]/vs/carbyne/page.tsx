@@ -26,9 +26,9 @@ export default async function VsCarbyneePage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Carbyne', url: es ? 'https://kabatone.com/es/vs/carbyne/' : 'https://kabatone.com/vs/carbyne/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Carbyne', url: es ? 'https://kabatone.com/es/vs/carbyne' : 'https://kabatone.com/vs/carbyne' },
   ]
 
   const faqs = es ? [

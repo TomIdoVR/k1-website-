@@ -26,9 +26,9 @@ export default async function VsPrepared911Page({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Prepared 911', url: es ? 'https://kabatone.com/es/vs/prepared911/' : 'https://kabatone.com/vs/prepared911/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Prepared 911', url: es ? 'https://kabatone.com/es/vs/prepared911' : 'https://kabatone.com/vs/prepared911' },
   ]
 
   const faqs = es ? [

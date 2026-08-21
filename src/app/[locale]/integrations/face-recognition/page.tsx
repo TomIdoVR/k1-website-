@@ -91,11 +91,11 @@ export default async function FaceRecognitionIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Reconocimiento Facial' : 'Face Recognition',
-      url: es ? 'https://kabatone.com/es/integrations/face-recognition/' : 'https://kabatone.com/integrations/face-recognition/',
+      url: es ? 'https://kabatone.com/es/integrations/face-recognition' : 'https://kabatone.com/integrations/face-recognition',
     },
   ]
 
@@ -172,7 +172,7 @@ export default async function FaceRecognitionIntegrationPage({
               es
                 ? 'Cómo KabatOne integra reconocimiento facial para personas buscadas, desaparecidos y monitoreo de multitudes con arquitectura de privacidad por diseño.'
                 : 'How KabatOne integrates facial recognition for wanted persons, missing persons, and crowd monitoring with privacy-by-design architecture.',
-              es ? 'https://kabatone.com/es/integrations/face-recognition/' : 'https://kabatone.com/integrations/face-recognition/',
+              es ? 'https://kabatone.com/es/integrations/face-recognition' : 'https://kabatone.com/integrations/face-recognition',
               '2026-03-20'
             )
           ),

@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareSierraLeonePage({
     ? "KabatOne entrega plataforma de seguridad pública para la República de Sierra Leona Fuerzas Armadas (RSLAF), Policía (SLP), Puerto de Freetown y seguridad de recursos minerales estratégicos."
     : "KabatOne delivers public safety platform for the Republic of Sierra Leone Armed Forces (RSLAF), Police (SLP), Port of Freetown, and security for strategic mineral resources.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-sierra-leone/"
-    : "https://kabatone.com/resources/public-safety-software-sierra-leone/";
+    ? "https://kabatone.com/es/resources/public-safety-software-sierra-leone"
+    : "https://kabatone.com/resources/public-safety-software-sierra-leone";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareSierraLeonePage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Sierra Leona" : "Public Safety Software for Sierra Leone", url: canonical },
   ]);
 

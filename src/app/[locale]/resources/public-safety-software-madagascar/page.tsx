@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareMadagascarPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Madagascar (FAM), Gendarmerie Nationale, Puerto de Toamasina y gestión de desastres por ciclones en el Océano Índico."
     : "KabatOne delivers public safety platform for Madagascar Armed Forces (FAM), Gendarmerie Nationale, Port of Toamasina, and cyclone disaster management in the Indian Ocean.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-madagascar/"
-    : "https://kabatone.com/resources/public-safety-software-madagascar/";
+    ? "https://kabatone.com/es/resources/public-safety-software-madagascar"
+    : "https://kabatone.com/resources/public-safety-software-madagascar";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareMadagascarPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Madagascar" : "Public Safety Software for Madagascar", url: canonical },
   ]);
 

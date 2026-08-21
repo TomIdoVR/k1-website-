@@ -1,7 +1,11 @@
 # KabatOne SEO Program — State of Play
 
 > **Single source of truth for the SEO effort.** Read this first in any new session.
-> Last updated: 2026-07-13. Keep this file current when the program's state changes.
+> Last updated: 2026-08-12. Keep this file current when the program's state changes.
+>
+> 🔴 **The SEO Anthropic API key is out of credit** (`~/.config/claude-seo/anthropic-api-key`).
+> `track_geo.py` has been unable to finish a full run since ~2026-08-04. Top up at
+> console.anthropic.com → Plans & Billing before trusting any GEO coverage number.
 > Companion docs: `CHANGELOG.md` (exact versions), `SEO/kabatone-seo-master-plan.md`.
 
 ## Strategy in one paragraph
@@ -48,8 +52,11 @@ authority**. ICP = **Mexico + LATAM + US/Canada** only; everything else is noind
 - Money pages: VMS hub pos ~15, video-analytics pos ~18, **CAD pos 12 (climbing fast, +clicks)**,
   **C5-ES pos 7 / 40 clicks (confirmed win, 0→40)**.
 - Indexation: was 107 indexed / 325 not indexed (75%) → triage in place to recover.
-- **GEO: cited in 5/12 AI answers** — winning CAD/RTCC/municipalities/LATAM; **absent for VMS,
-  video analytics, C5, NG911, "unified platform"** (Genetec/Milestone/Motorola/Axon win those).
+- **GEO (2026-08-12): VMS, unified-platform and NG911 all flipped `N → Y`** — cited in 4/5 answers
+  measured, vs 5/12 on the 07-07 baseline. The roundup pages did their job. **C5 is the only
+  remaining gap**, and it is an authority gap, not a content one: the page carries FAQPage schema,
+  its first FAQ matches the query verbatim, and it has 24 inbound internal links.
+  See `weekly-report-2026-08-12.md`.
 
 ## Division of labor — IMPORTANT
 - **Claude Code (this agent) owns on-site SEO execution.**
@@ -71,5 +78,5 @@ authority**. ICP = **Mexico + LATAM + US/Canada** only; everything else is noind
 2. **Watch the Monday runs:** indexed-ratio recovery, keyword movers, GEO citation changes.
 3. **Phase 2 indexation:** delete the 116 noindexed pages entirely — only after confirming zero
    traffic; needs explicit sign-off (irreversible).
-4. **GEO gap:** get cited for VMS / video analytics / C5 / NG911 / unified-platform (pages exist,
+4. **GEO gap — mostly closed as of 08-12.** Remaining: **C5** only (pages exist,
    authority is the gap).

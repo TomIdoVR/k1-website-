@@ -30,28 +30,28 @@ export default async function PublicSafetySoftwareMalta({
         ? "KabatOne ofrece plataforma de seguridad pública para la Policía maltesa, Fuerzas Armadas AFM y Guardia de Fronteras — gestión del Gran Puerto de La Valeta y Marsaxlokk, ruta migratoria central del Mediterráneo, Schengen y coordinación FRONTEX/Eurosur."
         : "KabatOne delivers public safety platform for Malta Police, Armed Forces AFM, and Border Guard — Grand Harbour Valletta and Marsaxlokk management, Central Mediterranean migration route, Schengen, and FRONTEX/Eurosur coordination.",
       es
-        ? "https://kabatone.com/es/resources/public-safety-software-malta/"
-        : "https://kabatone.com/resources/public-safety-software-malta/",
+        ? "https://kabatone.com/es/resources/public-safety-software-malta"
+        : "https://kabatone.com/resources/public-safety-software-malta",
       "2026-05-19"
     ),
     breadcrumbSchema([
       {
         name: es ? "Inicio" : "Home",
-        url: es ? "https://kabatone.com/es/" : "https://kabatone.com/",
+        url: es ? "https://kabatone.com/es" : "https://kabatone.com/",
       },
       {
         name: es ? "Recursos" : "Resources",
         url: es
-          ? "https://kabatone.com/es/resources/"
-          : "https://kabatone.com/resources/",
+          ? "https://kabatone.com/es/resources"
+          : "https://kabatone.com/resources",
       },
       {
         name: es
           ? "Software de Seguridad Pública para Malta"
           : "Public Safety Software for Malta",
         url: es
-          ? "https://kabatone.com/es/resources/public-safety-software-malta/"
-          : "https://kabatone.com/resources/public-safety-software-malta/",
+          ? "https://kabatone.com/es/resources/public-safety-software-malta"
+          : "https://kabatone.com/resources/public-safety-software-malta",
       },
     ]),
     faqPageSchema([

@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.370 -->
+      <div class="tl-entry changed" id="v2.370">
+        <div class="tl-meta"><span class="tl-ver">v2.370</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">Promotion: merge <code>nextjs</code> (SEO program) into <code>main</code></div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>Merged <code>nextjs</code> &rarr; <code>main</code>.</strong> The branches had diverged since <code>930d43b</code> &mdash; <code>main</code> took the <code>hero-redesign</code> promotion (PR #9), <code>nextjs</code> carried 33 commits of SEO and audit-tooling work. 15 files conflicted; each was resolved deliberately rather than by taking a side wholesale</li>
+            <li><strong>The five product pages keep <code>main</code>'s redesigned <code>SolutionRoute</code> body.</strong> The <code>nextjs</code> side of those conflicts was the pre-redesign inline markup &mdash; keeping it would have reverted the redesign in production</li>
+            <li><strong>The one SEO fix buried inside that reverted markup was ported forward.</strong> <code>nextjs</code> had stripped the trailing slash from the breadcrumb URLs so <code>BreadcrumbList</code> matches the canonical exactly; <code>SolutionRoute.tsx</code> still emitted the slashed form and now does not</li>
+            <li><strong>The five demo pages take the <code>nextjs</code> side</strong> &mdash; localized <code>generateMetadata</code> via <code>demoMetadata()</code>, which is what gives them Spanish titles and descriptions. This also keeps the corrected <code>/demo/lpr</code> OG image: <code>main</code> pointed at <code>LPR.png</code>, which does not exist in <code>public/</code></li>
+            <li><strong>Both changelogs were reconciled entry-by-entry, not concatenated.</strong> The branches assigned the <em>same version numbers to different work</em> (v2.280, v2.285, v2.286 each exist twice with unrelated content), so a naive merge both duplicated shared entries and would have collapsed distinct ones. 595 entries, no duplicate headers; the three colliding HTML entries carry <code>-2</code> ids</li>
+            <li><code>SEO/geo/geo-history.csv</code> unioned and de-duplicated across both sides (<code>main</code> held history through 08-10, <code>nextjs</code> held the 08-12 rows) &mdash; 67 rows, nothing dropped. <code>SEO-PROGRAM-STATE.md</code> takes the <code>nextjs</code> side; <code>main</code>'s copy was the stale 07-13 snapshot</li>
+            <li>Verified with <code>tsc --noEmit</code> in a clean <code>/tmp</code> worktree &mdash; exit 0. Per v2.322 the OneDrive checkout is not a trustworthy gate</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.369 -->
       <div class="tl-entry fixed" id="v2.369">
         <div class="tl-meta"><span class="tl-ver">v2.369</span><span class="tl-date">2026-08-20</span></div>
@@ -1447,6 +1464,19 @@
         </div>
       </div>
 
+      <!-- v2.286 (SEO branch) -->
+      <div class="tl-entry feat" id="v2.286-2">
+        <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-27</span></div>
+        <div class="tl-title">CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Added "Updated: July 2026 · Reviewed by the KabatOne platform team" byline (EN+ES) above the FAQ block on <code>/resources/what-is-video-analytics/</code> and <code>/resources/what-is-video-management-software/</code> — the two flagship VMS pages stuck on page 2 (~pos 20–22, ~30K combined impressions)</li>
+            <li><code>articleSchema()</code>'s <code>dateModified</code> bumped to <code>2026-07-27</code> on both pages (was frozen at <code>datePublished</code>, 2026-05-18); added an optional 5th <code>dateModified</code> param to the shared helper, defaulting to <code>datePublished</code> so no other caller changes</li>
+            <li>Board-approved via KAB-1980 on the KAB-1721 CTR-recovery confirmation (Track A GEO + Track C ranking lift)</li>
+            <li>Typecheck: 0 errors</li>
+          </ul>
+        </div>
+      </div>
 <div class="tl-entry changed" id="v2.286">
         <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-29</span></div>
         <div class="tl-title">Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One</div>
@@ -1458,6 +1488,19 @@
         </div>
       </div>
 
+      <!-- v2.285 (SEO branch) -->
+      <div class="tl-entry fix" id="v2.285-2">
+        <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-27</span></div>
+        <div class="tl-title">SEO: rescue video-analytics CTR/cannibalization (weekly #1 action)</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li>Weekly GSC (2026-07-27): the query <strong>"ai-powered video analytics"</strong> earns 1,123 page-1 impressions but <strong>0 clicks</strong>, split across two competing pages (<code>/resources/what-is-video-analytics/</code> 939 impr pos 9.3 + <code>/resources/ai-video-analytics/</code> 185 impr pos 7.1)</li>
+            <li>Retitled the stronger page's EN metadata to lead with the exact winning phrase — <code>whatIsVideoAnalytics</code> title now <em>"AI-Powered Video Analytics: Detection &amp; Best Platforms [2026]"</em> (was "Video Analytics Software: AI-Powered CCTV…"), description rewritten to lead with "AI-powered video analytics" + buyer/platform intent. ES already led with "Analítica de Video con IA" — left as-is</li>
+            <li>Reduced two-page dilution: the Related-Resources cross-link from <code>what-is-video-analytics</code> → <code>ai-video-analytics</code> was re-anchored from the head term "AI Video Analytics" to the mechanism intent <em>"How AI Video Analytics Works"</em>, so the stronger page keeps ownership of the head term and passes only the "how it works" query to the mechanism page (which already owns that intent via its H1 + reciprocal broad "video analytics" backlinks)</li>
+            <li>On-site only, no authority/human dependency. Typecheck: 0 errors</li>
+          </ul>
+        </div>
+      </div>
 <div class="tl-entry fix" id="v2.285">
         <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-29</span></div>
         <div class="tl-title">Fix: homepage partner logos self-hosted (drop external hotlinks)</div>
@@ -1524,6 +1567,19 @@
         </div>
       </div>
 
+      <!-- v2.280 (SEO branch) -->
+      <div class="tl-entry feat" id="v2.280-2">
+        <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-13</span></div>
+        <div class="tl-title">SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>C5-ES zero-click fix</strong> — rewrote the ES title + meta for <code>que-es-un-c5</code> (pos ~8, 0 clicks — AI Overview answers the definition); new meta opens a curiosity gap the AIO can't fill. Untouched by the v2.274 sweep (EN only).</li>
+            <li><strong>RTCC GEO citability</strong> — added "What are the leading RTCC software vendors?" Q&amp;A (EN+ES) — the one GEO gap the v2.272–v2.274 sweep did not cover (KabatOne still uncited for RTCC as of 07-20). Extends FAQPage schema.</li>
+            <li><strong>CCTV VMS + CAD query-variants</strong> — exact-match FAQs (EN+ES): "CCTV video management system" on the VMS hub, and 4 CAD longtail variants (police CAD systems, 911 dispatch software, computer automated dispatch, call-taking systems) on <code>best-cad-dispatch-software</code>.</li>
+            <li><strong>Spanish depth + analysis</strong> — "qué quiere decir C5" variant + <code>/es/k-dispatch</code> funnel link; branded/non-branded traffic dashboard + longtail sprint plan. Deduped against v2.272–v2.279 (kept only additive changes).</li>
+          </ul>
+        </div>
+      </div>
 <div class="tl-entry feat" id="v2.280">
         <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-27</span></div>
         <div class="tl-title">Solutions section + design-accurate typography (/hero-lab)</div>

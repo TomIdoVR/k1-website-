@@ -26,9 +26,9 @@ export default async function VsPeregrinePage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Peregrine', url: es ? 'https://kabatone.com/es/vs/peregrine/' : 'https://kabatone.com/vs/peregrine/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Peregrine', url: es ? 'https://kabatone.com/es/vs/peregrine' : 'https://kabatone.com/vs/peregrine' },
   ]
 
   const faqs = es ? [

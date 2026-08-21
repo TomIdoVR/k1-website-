@@ -97,18 +97,18 @@ export default async function GenetecAlternativesPage({
       ? 'Las mejores alternativas a Genetec Security Center para seguridad pública: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y cuál es la mejor plataforma unificada.'
       : 'The best Genetec Security Center alternatives for public safety: KabatOne, Milestone, Avigilon, Verkada, Axon/Fusus, and Motorola compared — why agencies switch, selection criteria, and the best unified platform.',
     es
-      ? 'https://kabatone.com/es/resources/genetec-alternatives/'
-      : 'https://kabatone.com/resources/genetec-alternatives/',
+      ? 'https://kabatone.com/es/resources/genetec-alternatives'
+      : 'https://kabatone.com/resources/genetec-alternatives',
     '2026-07-14'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Alternativas a Genetec' : 'Genetec Alternatives',
       url: es
-        ? 'https://kabatone.com/es/resources/genetec-alternatives/'
-        : 'https://kabatone.com/resources/genetec-alternatives/',
+        ? 'https://kabatone.com/es/resources/genetec-alternatives'
+        : 'https://kabatone.com/resources/genetec-alternatives',
     },
   ])
 

@@ -286,9 +286,9 @@ function SectionBlock({ section }: { section: Section }) {
 
 export default function LegalSitec911({ es }: { es: boolean }) {
   const canonical = es
-    ? `https://kabatone.com/es/legal/${SLUG}/`
-    : `https://kabatone.com/legal/${SLUG}/`
-  const home = es ? 'https://kabatone.com/es/' : 'https://kabatone.com/'
+    ? `https://kabatone.com/es/legal${SLUG}/`
+    : `https://kabatone.com/legal${SLUG}/`
+  const home = es ? 'https://kabatone.com/es' : 'https://kabatone.com/'
 
   return (
     <>
@@ -297,7 +297,7 @@ export default function LegalSitec911({ es }: { es: boolean }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: home },
-          { name: 'Legal', url: es ? 'https://kabatone.com/es/legal/' : 'https://kabatone.com/legal/' },
+          { name: 'Legal', url: es ? 'https://kabatone.com/es/legal' : 'https://kabatone.com/legal' },
           { name: APP_NAME, url: canonical },
         ])) }}
       />

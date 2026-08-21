@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareGuineaPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea (FAG), Policía Nacional, Puerto de Conakry y seguridad de la mayor reserva mundial de bauxita y yacimientos de hierro."
     : "KabatOne delivers public safety platform for the Guinean Armed Forces (FAG), National Police, Port of Conakry, and security for the world's largest bauxite reserves and iron ore deposits.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-guinea/"
-    : "https://kabatone.com/resources/public-safety-software-guinea/";
+    ? "https://kabatone.com/es/resources/public-safety-software-guinea"
+    : "https://kabatone.com/resources/public-safety-software-guinea";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareGuineaPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Guinea" : "Public Safety Software for Guinea", url: canonical },
   ]);
 

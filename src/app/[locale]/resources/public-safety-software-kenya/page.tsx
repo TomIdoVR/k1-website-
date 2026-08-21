@@ -83,12 +83,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
     ? 'Plataforma unificada para NPS, KFRS y NYS de Kenia — despacho CAD integrado para 47 mandos de condado y coordinación de desastres NDMA/KMD, gestión de cámaras Nairobi Safe City conforme a DPA 2019 y cumplimiento KE-CIRT con contratación GPP/PPADA 2015.'
     : 'Unified platform for Kenyan NPS, KFRS, and NYS — integrated CAD dispatch for 47 county commands and NDMA/KMD disaster coordination, Nairobi Safe City camera management compliant with DPA 2019, and KE-CIRT/CC cybersecurity compliance with GPP/PPADA 2015 procurement.'
   const url = es
-    ? 'https://kabatone.com/es/resources/public-safety-software-kenya/'
-    : 'https://kabatone.com/resources/public-safety-software-kenya/'
+    ? 'https://kabatone.com/es/resources/public-safety-software-kenya'
+    : 'https://kabatone.com/resources/public-safety-software-kenya'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     { name: es ? 'Kenia' : 'Kenya', url },
   ]
 

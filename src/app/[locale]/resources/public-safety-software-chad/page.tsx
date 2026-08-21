@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareChadPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación de la MNJTF contra ISWAP/Boko Haram y conciencia situacional para las Armées Nationales du Tchad, gestión de desastres del Lago Chad y programas de estabilización en Chad."
       : "KabatOne delivers modular command-and-control, MNJTF coordination against ISWAP/Boko Haram, and situational awareness for the Armées Nationales du Tchad, Lake Chad disaster management, and stabilisation programs in Chad.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-chad/"
-      : "https://kabatone.com/resources/public-safety-software-chad/",
+      ? "https://kabatone.com/es/resources/public-safety-software-chad"
+      : "https://kabatone.com/resources/public-safety-software-chad",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareChadPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Chad" : "Public Safety Software Chad",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-chad/"
-        : "https://kabatone.com/resources/public-safety-software-chad/",
+        ? "https://kabatone.com/es/resources/public-safety-software-chad"
+        : "https://kabatone.com/resources/public-safety-software-chad",
     },
   ]);
 

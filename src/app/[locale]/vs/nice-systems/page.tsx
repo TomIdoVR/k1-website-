@@ -26,9 +26,9 @@ export default async function VsNiceSystemsPage({
   const ACCENT = '#3b82f6'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs NICE Systems', url: es ? 'https://kabatone.com/es/vs/nice-systems/' : 'https://kabatone.com/vs/nice-systems/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs NICE Systems', url: es ? 'https://kabatone.com/es/vs/nice-systems' : 'https://kabatone.com/vs/nice-systems' },
   ]
 
   const faqs = es ? [
@@ -164,7 +164,7 @@ export default async function VsNiceSystemsPage({
     es
       ? 'Comparación detallada entre KabatOne y NICE Systems/Qognify: despacho CAD, GIS operacional, gestión de video y tráfico para municipios y centros de mando en LATAM.'
       : 'Detailed comparison between KabatOne and NICE Systems/Qognify: CAD dispatch, operational GIS, video management, and traffic for municipalities and command centers.',
-    es ? 'https://kabatone.com/es/vs/nice-systems/' : 'https://kabatone.com/vs/nice-systems/',
+    es ? 'https://kabatone.com/es/vs/nice-systems' : 'https://kabatone.com/vs/nice-systems',
     '2026-04-07',
   )
 

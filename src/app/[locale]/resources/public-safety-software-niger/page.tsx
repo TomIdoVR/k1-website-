@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareNigerPage({
       ? "KabatOne ofrece plataforma modular de mando y control, coordinación antiterrorista y conciencia situacional para las Forces Armées du Niger, gestión de emergencias y programas de estabilización en Níger — el corazón de la AES."
       : "KabatOne delivers modular command-and-control, counter-terrorism coordination, and situational awareness for the Forces Armées du Niger, emergency management, and stabilisation programs in Niger — the heart of the AES.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-niger/"
-      : "https://kabatone.com/resources/public-safety-software-niger/",
+      ? "https://kabatone.com/es/resources/public-safety-software-niger"
+      : "https://kabatone.com/resources/public-safety-software-niger",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareNigerPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Níger" : "Public Safety Software Niger",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-niger/"
-        : "https://kabatone.com/resources/public-safety-software-niger/",
+        ? "https://kabatone.com/es/resources/public-safety-software-niger"
+        : "https://kabatone.com/resources/public-safety-software-niger",
     },
   ]);
 

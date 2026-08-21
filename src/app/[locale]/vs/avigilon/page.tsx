@@ -26,12 +26,12 @@ export default async function VsAvigilonPage({
   const ACCENT = '#3b82f6'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Avigilon', url: es ? 'https://kabatone.com/es/vs/avigilon/' : 'https://kabatone.com/vs/avigilon/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Avigilon', url: es ? 'https://kabatone.com/es/vs/avigilon' : 'https://kabatone.com/vs/avigilon' },
   ]
 
-  const pageUrl = es ? 'https://kabatone.com/es/vs/avigilon/' : 'https://kabatone.com/vs/avigilon/'
+  const pageUrl = es ? 'https://kabatone.com/es/vs/avigilon' : 'https://kabatone.com/vs/avigilon'
 
   const faqs = es ? [
     {

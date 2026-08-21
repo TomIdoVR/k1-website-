@@ -91,11 +91,11 @@ export default async function SensorFusionIntegrationPage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations/' : 'https://kabatone.com/integrations/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Integraciones' : 'Integrations', url: es ? 'https://kabatone.com/es/integrations' : 'https://kabatone.com/integrations' },
     {
       name: es ? 'Fusión de Sensores' : 'Sensor Fusion',
-      url: es ? 'https://kabatone.com/es/integrations/sensor-fusion/' : 'https://kabatone.com/integrations/sensor-fusion/',
+      url: es ? 'https://kabatone.com/es/integrations/sensor-fusion' : 'https://kabatone.com/integrations/sensor-fusion',
     },
   ]
 
@@ -174,7 +174,7 @@ export default async function SensorFusionIntegrationPage({
               es
                 ? 'Cómo KabatOne integra detección de disparos, sensores IoT, datos ambientales y video en una sola vista de conciencia situacional.'
                 : 'How KabatOne fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view.',
-              es ? 'https://kabatone.com/es/integrations/sensor-fusion/' : 'https://kabatone.com/integrations/sensor-fusion/',
+              es ? 'https://kabatone.com/es/integrations/sensor-fusion' : 'https://kabatone.com/integrations/sensor-fusion',
               '2026-03-20'
             )
           ),

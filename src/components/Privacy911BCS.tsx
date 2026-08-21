@@ -139,9 +139,9 @@ export default function Privacy911BCS({ es }: { es: boolean }) {
     : `This privacy notice may be consulted on the institutional portal located at: ${PORTAL}`
 
   const canonical = es
-    ? `https://kabatone.com/es/privacy/${SLUG}/`
-    : `https://kabatone.com/privacy/${SLUG}/`
-  const home = es ? 'https://kabatone.com/es/' : 'https://kabatone.com/'
+    ? `https://kabatone.com/es/privacy${SLUG}/`
+    : `https://kabatone.com/privacy${SLUG}/`
+  const home = es ? 'https://kabatone.com/es' : 'https://kabatone.com/'
 
   return (
     <>
@@ -150,7 +150,7 @@ export default function Privacy911BCS({ es }: { es: boolean }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
           { name: es ? 'Inicio' : 'Home', url: home },
-          { name: es ? 'Aviso de Privacidad' : 'Privacy Notice', url: es ? 'https://kabatone.com/es/privacy/' : 'https://kabatone.com/privacy/' },
+          { name: es ? 'Aviso de Privacidad' : 'Privacy Notice', url: es ? 'https://kabatone.com/es/privacy' : 'https://kabatone.com/privacy' },
           { name: APP_NAME, url: canonical },
         ])) }}
       />

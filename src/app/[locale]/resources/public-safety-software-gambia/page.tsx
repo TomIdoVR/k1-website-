@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareGambiaPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Gambia (GAF), Servicio de Policía, gestión del Río Gambia, seguridad turística y transición post-dictadura en el país más pequeño del continente africano."
     : "KabatOne delivers public safety platform for Gambia Armed Forces (GAF), Police Service, Gambia River management, tourist security, and post-dictatorship transition in the smallest mainland country in Africa.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-gambia/"
-    : "https://kabatone.com/resources/public-safety-software-gambia/";
+    ? "https://kabatone.com/es/resources/public-safety-software-gambia"
+    : "https://kabatone.com/resources/public-safety-software-gambia";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareGambiaPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Gambia" : "Public Safety Software for Gambia", url: canonical },
   ]);
 

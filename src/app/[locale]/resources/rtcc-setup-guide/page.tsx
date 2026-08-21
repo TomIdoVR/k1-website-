@@ -91,11 +91,11 @@ export default async function RtccSetupGuidePage({
       ]
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? 'Guía de Implementación RTCC' : 'RTCC Setup Guide',
-      url: es ? 'https://kabatone.com/es/resources/rtcc-setup-guide/' : 'https://kabatone.com/resources/rtcc-setup-guide/',
+      url: es ? 'https://kabatone.com/es/resources/rtcc-setup-guide' : 'https://kabatone.com/resources/rtcc-setup-guide',
     },
   ]
 
@@ -184,7 +184,7 @@ export default async function RtccSetupGuidePage({
               es
                 ? 'Guía paso a paso para planificar, construir y operar un RTCC: infraestructura, software, integración de cámaras, capacitación y métricas clave.'
                 : 'Step-by-step guide to planning, building, and operating an RTCC: infrastructure, software, camera integration, training, and key metrics.',
-              es ? 'https://kabatone.com/es/resources/rtcc-setup-guide/' : 'https://kabatone.com/resources/rtcc-setup-guide/',
+              es ? 'https://kabatone.com/es/resources/rtcc-setup-guide' : 'https://kabatone.com/resources/rtcc-setup-guide',
               '2026-03-20'
             )
           ),

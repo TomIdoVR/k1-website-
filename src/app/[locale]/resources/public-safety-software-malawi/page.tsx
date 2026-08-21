@@ -24,8 +24,8 @@ export default async function PublicSafetySoftwareMalawiPage({
     ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas de Defensa de Malaui (MDF), Servicio de Policía, seguridad del Lago Malaui, gestión de fronteras SADC y protección de recursos de uranio/té/tabaco."
     : "KabatOne delivers public safety platform for Malawi Defence Force (MDF), Police Service, Lake Malawi security, SADC border management, and protection of uranium/tea/tobacco strategic resources.";
   const canonical = es
-    ? "https://kabatone.com/es/resources/public-safety-software-malawi/"
-    : "https://kabatone.com/resources/public-safety-software-malawi/";
+    ? "https://kabatone.com/es/resources/public-safety-software-malawi"
+    : "https://kabatone.com/resources/public-safety-software-malawi";
 
   const faqs = [
     {
@@ -73,8 +73,8 @@ export default async function PublicSafetySoftwareMalawiPage({
   const article = articleSchema(title, description, canonical, "2026-05-19");
   const faqSchema = faqPageSchema(faqs);
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     { name: es ? "Software de Seguridad Pública para Malaui" : "Public Safety Software for Malawi", url: canonical },
   ]);
 

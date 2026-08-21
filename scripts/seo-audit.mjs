@@ -12,7 +12,8 @@
  *  - Images with missing alt text
  */
 
-import { writeFileSync, readFileSync, existsSync } from "fs";
+import { writeFileSync, readFileSync, existsSync, readdirSync } from "fs";
+import { execFileSync } from "child_process";
 import { URL } from "url";
 
 // --- Config ---
@@ -22,7 +23,21 @@ const BASE_URL = getArg("--url", "https://staging.kabatone.com");
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
 const DIFF_ONLY = args.includes("--diff");
+// Report coverage accounting and exit without crawling.
+const COVERAGE_ONLY = args.includes("--coverage-only");
+// Guard overrides. Each silences one refusal (exit 3) — pass only after
+// establishing why the guard is wrong, never to make a red run go green.
+const ALLOW_STALE = args.includes("--allow-stale");
+const ALLOW_UNSHIPPED = args.includes("--allow-unshipped");
+const ALLOW_UNVERIFIED_SYNC = args.includes("--allow-unverified-sync");
+const ALLOW_ROUTE_FALLBACK = args.includes("--allow-route-fallback");
+const ALLOW_COVERAGE_DROP = args.includes("--allow-coverage-drop");
+const EXIT_REFUSED = 3;
 const CONCURRENCY = 5;
+const MAX_REDIRECTS = 5;
+// Hosts that serve the indexed site. Only these are held to "canonical must
+// name this host" — staging and preview legitimately carry prod canonicals.
+const PROD_HOSTS = new Set(["kabatone.com", "www.kabatone.com"]);
 
 // All known routes (EN locale)
 const ROUTES = [
@@ -105,9 +120,37 @@ const DESC_MIN = 100;
 const DESC_MAX = 200;
 const DESC_IDEAL_MAX = 160;
 
+// Serialized HTML escapes &, ', ", <, > as entities. Measuring the raw escaped
+// string inflates title/description lengths (an apostrophe costs 6 chars, an
+// ampersand 5) and produces phantom *_long warnings for metadata that is
+// actually within limits. Google measures the decoded text, so we do too.
+const NAMED_ENTITIES = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+function decodeEntities(str) {
+  return str.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, body) => {
+    if (body[0] === "#") {
+      const code =
+        body[1] === "x" || body[1] === "X"
+          ? parseInt(body.slice(2), 16)
+          : parseInt(body.slice(1), 10);
+      if (!Number.isFinite(code) || code < 0 || code > 0x10ffff) return match;
+      return String.fromCodePoint(code);
+    }
+    const named = NAMED_ENTITIES[body.toLowerCase()];
+    return named === undefined ? match : named;
+  });
+}
+
 function extract(html, regex) {
   const m = html.match(regex);
-  return m ? m[1].trim() : null;
+  return m ? decodeEntities(m[1]).trim() : null;
 }
 
 function checkPage(url, html) {
@@ -149,6 +192,27 @@ function checkPage(url, html) {
   info.canonical = canonical;
   if (!canonical) {
     issues.push({ severity: "warning", check: "canonical_missing", msg: "No canonical tag found" });
+  } else {
+    /* Compare the path, not the whole URL. Staging and preview hosts are
+       supposed to carry production canonicals, so a host difference there is
+       correct, not a defect — comparing full URLs would fire on all 71 staging
+       pages every day and bury the real signal. */
+    const strip = (u) => { try { return new URL(u).pathname.replace(/\/$/, "") || "/" } catch { return u } };
+    if (strip(canonical) !== strip(url)) {
+      issues.push({
+        severity: "warning",
+        check: "canonical_not_self",
+        msg: `Canonical path ${strip(canonical)} does not match the audited path ${strip(url)}`,
+      });
+    } else if (PROD_HOSTS.has(new URL(url).host) && new URL(canonical).host !== new URL(url).host) {
+      /* On a production host the canonical must name that same host. This is
+         what catches "site serves on www but every canonical says apex". */
+      issues.push({
+        severity: "warning",
+        check: "canonical_host_mismatch",
+        msg: `Served on ${new URL(url).host} but canonical claims ${new URL(canonical).host}`,
+      });
+    }
   }
 
   // OG tags
@@ -215,21 +279,92 @@ function checkPage(url, html) {
   return { url, issues, info };
 }
 
-async function fetchPage(url, timeout = 15000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
-    });
-    const html = await res.text();
-    clearTimeout(timer);
-    return { ok: true, status: res.status, html };
-  } catch (e) {
-    clearTimeout(timer);
-    return { ok: false, error: e.message };
+/**
+ * Follow redirects by hand rather than letting fetch swallow them.
+ *
+ * `fetch` follows redirects silently, so an audited URL that only reached 200
+ * after two hops graded exactly the same as one served directly — which is how
+ * the production `307 (apex→www) → 308 (trailing slash) → 200` chain on every
+ * indexed URL went unreported for months. The chain is now data the checks can
+ * see. See SEO/weekly-report-2026-08-10.md.
+ */
+async function fetchPage(url, timeout = 20000, retries = 2) {
+  let lastError = "";
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const chain = [];
+      let current = url;
+      let res;
+      for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+        res = await fetch(current, {
+          signal: controller.signal,
+          redirect: "manual",
+          headers: { "User-Agent": "KabatOne-Verge-SEO-Audit/1.0" },
+        });
+        if (res.status < 300 || res.status >= 400) break;
+        const location = res.headers.get("location");
+        if (!location) break;
+        const next = new URL(location, current).href;
+        chain.push({ from: current, to: next, status: res.status });
+        current = next;
+        if (hop === MAX_REDIRECTS) {
+          clearTimeout(timer);
+          return { ok: false, error: `More than ${MAX_REDIRECTS} redirects`, chain };
+        }
+      }
+      const html = await res.text();
+      clearTimeout(timer);
+      return { ok: true, status: res.status, html, chain, finalUrl: current };
+    } catch (e) {
+      clearTimeout(timer);
+      lastError = e.message;
+      // Retry transient network/abort errors with linear backoff before flagging critical.
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
+      }
+    }
   }
+  return { ok: false, error: lastError };
+}
+
+/**
+ * A URL we publish as canonical — in the sitemap, in a `rel=canonical`, in
+ * hreflang — must serve 200 itself. Any hop means Google is asked to crawl one
+ * URL and index another.
+ */
+function checkRedirectChain(url, chain, finalUrl) {
+  if (!chain || chain.length === 0) return [];
+  const hops = chain.map(h => `${h.status} → ${h.to}`).join(", ");
+  return [{
+    severity: chain.length > 1 ? "critical" : "warning",
+    check: "redirect_chain",
+    msg: `${chain.length} redirect${chain.length > 1 ? "s" : ""} before 200 (${hops}). Canonical URLs must serve 200 directly.`,
+    finalUrl,
+  }];
+}
+
+/**
+ * The URLs this deployment publishes, read from its own sitemap.
+ *
+ * Hosts are rewritten to the audited origin: sitemap.ts hard-codes the
+ * production origin, so auditing staging would otherwise fetch production and
+ * silently grade the wrong site.
+ */
+async function sitemapUrls(baseUrl) {
+  const res = await fetchPage(`${baseUrl}/sitemap.xml`);
+  if (!res.ok || res.status >= 400) {
+    process.stderr.write(`  ! sitemap unreachable (${res.status || res.error}); falling back to ROUTES\n`);
+    return null;
+  }
+  const locs = [...res.html.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].trim());
+  if (locs.length === 0) {
+    process.stderr.write(`  ! sitemap had no <loc> entries; falling back to ROUTES\n`);
+    return null;
+  }
+  const origin = new URL(baseUrl).origin;
+  return [...new Set(locs.map(u => { try { return origin + new URL(u).pathname } catch { return null } }).filter(Boolean))];
 }
 
 async function runBatch(urls, batchSize) {
@@ -246,7 +381,10 @@ async function runBatch(urls, batchSize) {
             info: {},
           };
         }
-        return checkPage(url, res.html);
+        const page = checkPage(url, res.html);
+        page.issues.unshift(...checkRedirectChain(url, res.chain, res.finalUrl));
+        page.info.redirectHops = res.chain.length;
+        return page;
       })
     );
     results.push(...batchResults);
@@ -255,15 +393,226 @@ async function runBatch(urls, batchSize) {
   return results;
 }
 
+/* Refuse rather than report. A guard that only warns gets scrolled past: the
+   audit's failure mode is not crashing, it is producing a confident number
+   about the wrong site. Exit 3 means "did not audit", never "audited clean". */
+function refuse(msg, override) {
+  process.stderr.write(`\n  REFUSED: ${msg}\n  Override with ${override} only if you have established the guard is wrong.\n\n`);
+  process.exit(EXIT_REFUSED);
+}
+
+const git = (...a) => execFileSync("git", a, { encoding: "utf-8" }).trim();
+
+/**
+ * The checkout must match what the audited deployment is serving, in BOTH
+ * directions:
+ *  - behind origin  -> we grade a route list the deployment has moved past
+ *                      (KAB-2480: four weeks of false CLEAN off a stale branch)
+ *  - ahead of origin -> the deployment has not received our fixes yet, so the
+ *                      audit re-flags already-fixed work as live defects
+ *                      (KAB-2504: 86 warnings, all of them unpushed v2.317)
+ * Only meaningful when auditing a deployed origin; localhost serves the tree.
+ */
+function checkCheckoutSync() {
+  if (/localhost|127\.0\.0\.1/.test(BASE_URL)) return;
+  let behind, ahead;
+  try {
+    git("fetch", "origin", "nextjs", "--quiet");
+    [behind, ahead] = git("rev-list", "--left-right", "--count", "origin/nextjs...nextjs")
+      .split(/\s+/).map(Number);
+  } catch (e) {
+    /* Fail CLOSED. This used to warn and return, which meant a broken git made
+       the guard silently pass — the run then graded an unverified checkout and
+       reported CLEAN. That is the same failure KAB-2480 spent four weeks on,
+       just reached through git instead of through a stale branch. A guard that
+       cannot run has not passed. (Seen 2026-08-13: one dangling ref under
+       refs/codex/ aborted every fetch, and the audit audited anyway.) */
+    if (!ALLOW_UNVERIFIED_SYNC) {
+      refuse(
+        `could not verify the checkout matches ${BASE_URL} (git failed: ${e.message.split("\n")[0]}). ` +
+        `An unverifiable checkout is not a synced one — fix git, or the run grades an unknown tree.`,
+        "--allow-unverified-sync",
+      );
+    }
+    process.stderr.write(`  ! checkout-sync UNVERIFIED (${e.message.split("\n")[0]}) — proceeding under --allow-unverified-sync\n`);
+    return;
+  }
+  if (behind > 0 && !ALLOW_STALE) {
+    refuse(`local nextjs is ${behind} commit(s) BEHIND origin — the route list and metadata here are older than what is deployed.`, "--allow-stale");
+  }
+  if (ahead > 0 && !ALLOW_UNSHIPPED) {
+    refuse(`local nextjs is ${ahead} commit(s) AHEAD of origin — those fixes are not on ${BASE_URL} yet, so every finding would be a false positive. Push and let the deploy finish first.`, "--allow-unshipped");
+  }
+  process.stderr.write(`  Checkout in sync with origin/nextjs\n`);
+}
+
+/* A silent drop in route count is how coverage collapses unnoticed — the run
+   still says CLEAN, just about fewer pages. Compare against the last run. */
+function checkCoverage(count) {
+  if (!existsSync(BASELINE_FILE)) return;
+  let prev;
+  try { prev = JSON.parse(readFileSync(BASELINE_FILE, "utf-8")).pagesAudited } catch { return }
+  if (!prev) return;
+  if (count < prev * 0.8 && !ALLOW_COVERAGE_DROP) {
+    refuse(`route coverage collapsed: ${count} URLs vs ${prev} last run (${Math.round((count / prev) * 100)}%).`, "--allow-coverage-drop");
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Coverage accounting (KAB-2507).
+
+   The crawl list comes from the deployed sitemap, and the sitemap is a subset
+   of the repo by design: `keepInSitemap` in src/app/sitemap.ts drops non-ICP
+   country pages (they are noindex,follow per the 2026-07-07 indexation triage),
+   and a handful of routes are deliberately never submitted. So "232 pages
+   audited" was true and also only half the repo — a raw page count reads as
+   full coverage when it is not.
+
+   This states coverage as a fraction of repo routes and, more importantly,
+   forces every uncrawled route to be *explained*. A route that is neither
+   noindex-by-policy nor on the off-sitemap allowlist is a real gap — someone
+   shipped a page and never added it to sitemap.ts — and it is reported as a
+   warning rather than silently absorbed into the denominator. */
+
+const APP_ROUTES_DIR = "src/app/[locale]";
+const SITEMAP_SRC = "src/app/sitemap.ts";
+
+/* Routes intentionally absent from sitemap.ts. Each is off-index on purpose:
+   internal previews, ad landing pages, and per-contract legal notices that are
+   linked directly and must not compete in search. Adding a page here is a
+   deliberate act — an unlisted route NOT in this set is flagged. */
+const OFF_SITEMAP_ROUTES = new Set([
+  "/hero-lab-prev",          // design preview, not public
+  "/lp",                     // paid-campaign landing page
+  "/legal/911-michoacan",
+  "/privacy-policy-tamaulipas",
+  "/privacy/911-baja-california-sur",
+  "/privacy/911-michoacan",
+  "/privacy/c5-escudo-pakal",
+]);
+
+const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;
+
+function repoRoutes(dir = APP_ROUTES_DIR, prefix = "") {
+  if (!existsSync(dir)) return null;
+  const out = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`);
+      if (sub) out.push(...sub);
+    } else if (entry.name === "page.tsx") {
+      out.push(prefix); // "" for the homepage
+    }
+  }
+  return out;
+}
+
+/* The paths sitemap.ts lists at all, before keepInSitemap filters them. Parsed
+   rather than imported because this is a .mjs script and sitemap.ts is TS. */
+function sitemapListedPaths() {
+  if (!existsSync(SITEMAP_SRC)) return null;
+  const src = readFileSync(SITEMAP_SRC, "utf-8");
+  const paths = [...src.matchAll(/\{\s*path:\s*'([^']*)'/g)].map(m => m[1]);
+  return paths.length ? new Set(paths) : null;
+}
+
+function computeCoverage(crawledUrls) {
+  const routes = repoRoutes();
+  const listed = sitemapListedPaths();
+  if (!routes || !listed) return null;
+
+  const crawled = new Set(crawledUrls.map(u => { try { return new URL(u).pathname } catch { return u } }));
+  const isCrawled = p => crawled.has(p) || crawled.has(p === "" ? "/" : `${p}/`) || (p === "" && crawled.has("/"));
+
+  const buckets = { noindexPolicy: [], offSitemap: [], unexplained: [] };
+  let covered = 0;
+  const repoUrls = [];
+
+  for (const route of routes) {
+    for (const path of [route, `/es${route}`]) {
+      repoUrls.push(path);
+      if (isCrawled(path)) { covered++; continue }
+      if (!listed.has(route)) {
+        (OFF_SITEMAP_ROUTES.has(route) ? buckets.offSitemap : buckets.unexplained).push(path);
+      } else if (COUNTRY_PAGE_RE.test(route)) {
+        /* Listed but not emitted: keepInSitemap dropped it as a non-ICP market. */
+        buckets.noindexPolicy.push(path);
+      } else {
+        /* Listed, indexable, and still not served — a stale deploy or a
+           sitemap bug. This is the case that must never pass silently. */
+        buckets.unexplained.push(path);
+      }
+    }
+  }
+
+  return {
+    repoRoutes: routes.length,
+    repoUrls: repoUrls.length,
+    crawled: crawledUrls.length,
+    covered,
+    pct: Math.round((covered / repoUrls.length) * 1000) / 10,
+    excludedNoindexPolicy: buckets.noindexPolicy.length,
+    excludedOffSitemap: buckets.offSitemap.length,
+    unexplained: buckets.unexplained.sort(),
+  };
+}
+
 async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
-  process.stderr.write(`Routes: ${ROUTES.length} | Concurrency: ${CONCURRENCY}\n\n`);
+  checkCheckoutSync();
 
-  const urls = ROUTES.map(r => `${BASE_URL}/en${r === "/" ? "/" : r}`);
+  /* Audit the URL space we actually publish, not `/en/*`.
+     `localePrefix: 'as-needed'` serves EN at the root, so every `/en/...` URL
+     the audit used to request was a redirect that appears in no sitemap and no
+     canonical — it graded a URL space Google never sees, which is the second
+     reason the production redirect chain stayed invisible.
+
+     The list comes from the target's own sitemap rather than from a slash
+     convention hard-coded here. Whether we publish `/path` or `/path/` is a
+     decision that has now changed twice (v2.314 de-slashed everything), and
+     each time a hard-coded guess is wrong it either hides a real redirect or
+     invents 70 false ones. Asking the deployment what it publishes cannot go
+     stale. Falls back to ROUTES if the sitemap is unreachable. */
+  const fromSitemap = await sitemapUrls(BASE_URL);
+  if (!fromSitemap && !ALLOW_ROUTE_FALLBACK) {
+    refuse(`sitemap unreachable at ${BASE_URL}/sitemap.xml — the hard-coded ROUTES fallback covers a fraction of the site and would report a fake CLEAN.`, "--allow-route-fallback");
+  }
+  const urls = fromSitemap ?? ROUTES.map(r => `${BASE_URL}${r}`);
+  checkCoverage(urls.length);
+  const coverage = computeCoverage(urls);
+  if (coverage) {
+    process.stderr.write(
+      `Coverage: ${coverage.covered}/${coverage.repoUrls} repo URLs (${coverage.pct}%) — ` +
+      `${coverage.excludedNoindexPolicy} noindex-by-policy, ${coverage.excludedOffSitemap} off-sitemap by design, ` +
+      `${coverage.unexplained.length} unexplained\n`
+    );
+    for (const p of coverage.unexplained.slice(0, 20)) {
+      process.stderr.write(`  ! uncrawled and unexplained: ${p}\n`);
+    }
+  } else {
+    process.stderr.write(`  ! coverage accounting unavailable (repo route dir or sitemap.ts not readable)\n`);
+  }
+  /* Coverage is answerable from the sitemap alone — no crawl needed. Useful
+     for checking that a newly shipped page is actually in the audited set. */
+  if (COVERAGE_ONLY) {
+    console.log(JSON.stringify(coverage, null, 2));
+    process.exit(coverage && coverage.unexplained.length > 0 ? 1 : 0);
+  }
+  process.stderr.write(`Routes: ${urls.length} | Concurrency: ${CONCURRENCY}\n\n`);
   const results = await runBatch(urls, CONCURRENCY);
 
   const allIssues = results.flatMap(r => r.issues.map(i => ({ ...i, page: r.url })));
+  /* A shipped page missing from the sitemap is never graded and never crawled
+     by Google. It belongs in the issue list, not just in a coverage footnote. */
+  for (const path of coverage?.unexplained ?? []) {
+    allIssues.push({
+      severity: "warning",
+      check: "route_not_in_sitemap",
+      msg: `Route exists in ${APP_ROUTES_DIR} but is not served by the sitemap, so it is never audited or submitted. Add it to ${SITEMAP_SRC}, or to OFF_SITEMAP_ROUTES in this script if that is deliberate.`,
+      page: `${BASE_URL}${path}`,
+    });
+  }
   const critical = allIssues.filter(i => i.severity === "critical");
   const warnings = allIssues.filter(i => i.severity === "warning");
   const infos = allIssues.filter(i => i.severity === "info");
@@ -272,10 +621,16 @@ async function main() {
     runAt: now,
     baseUrl: BASE_URL,
     pagesAudited: results.length,
+    coverage,
     summary: {
       critical: critical.length,
       warnings: warnings.length,
       info: infos.length,
+      /* Report coverage as a share of known repo routes. A raw page count
+         cannot distinguish full coverage from half of it. */
+      coveragePct: coverage?.pct ?? null,
+      coverageAudited: coverage ? `${coverage.covered}/${coverage.repoUrls}` : null,
+      coverageUnexplained: coverage?.unexplained.length ?? null,
       pagesWithIssues: results.filter(r => r.issues.some(i => i.severity !== "info")).length,
       pagesClean: results.filter(r => r.issues.filter(i => i.severity !== "info").length === 0).length,
     },
@@ -300,7 +655,7 @@ async function main() {
   writeFileSync(BASELINE_FILE, JSON.stringify(report, null, 2));
 
   process.stderr.write(`\nAudit complete\n`);
-  process.stderr.write(`Pages: ${report.pagesAudited} | Critical: ${critical.length} | Warnings: ${warnings.length} | Info: ${infos.length}\n`);
+  process.stderr.write(`Pages: ${report.pagesAudited}${coverage ? ` (${coverage.pct}% of ${coverage.repoUrls} repo URLs)` : ""} | Critical: ${critical.length} | Warnings: ${warnings.length} | Info: ${infos.length}\n`);
   process.stderr.write(`Report: ${OUT_FILE}\n\n`);
 
   // Print summary JSON to stdout for piping

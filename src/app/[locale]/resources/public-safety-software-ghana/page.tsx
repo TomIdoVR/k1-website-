@@ -28,8 +28,8 @@ export default async function PublicSafetySoftwareGhanaPage({
       ? 'Plataforma unificada para el Servicio de Policía de Ghana (GPS) y GNFS — despacho CAD integrado en 16 regiones, Accra Safe City, NADMO gestión de desastres, Puerto de Tema/GPHA, hub ECOWAS/ECOMOG, Data Protection Act 2012/DPC y GPPA/PPA 2003.'
       : 'Unified platform for Ghana Police Service (GPS) and GNFS — integrated CAD dispatch across 16 regions, Accra Safe City, NADMO disaster management, Port of Tema/GPHA, ECOWAS/ECOMOG hub, Data Protection Act 2012/DPC compliance, and GPPA/PPA 2003 procurement.',
     es
-      ? 'https://kabatone.com/es/resources/public-safety-software-ghana/'
-      : 'https://kabatone.com/resources/public-safety-software-ghana/',
+      ? 'https://kabatone.com/es/resources/public-safety-software-ghana'
+      : 'https://kabatone.com/resources/public-safety-software-ghana',
     '2025-05-19'
   )
 
@@ -69,16 +69,16 @@ export default async function PublicSafetySoftwareGhanaPage({
   ])
 
   const breadcrumbData = breadcrumbSchema([
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     {
       name: es ? 'Recursos' : 'Resources',
-      url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/',
+      url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources',
     },
     {
       name: 'Ghana',
       url: es
-        ? 'https://kabatone.com/es/resources/public-safety-software-ghana/'
-        : 'https://kabatone.com/resources/public-safety-software-ghana/',
+        ? 'https://kabatone.com/es/resources/public-safety-software-ghana'
+        : 'https://kabatone.com/resources/public-safety-software-ghana',
     },
   ])
 

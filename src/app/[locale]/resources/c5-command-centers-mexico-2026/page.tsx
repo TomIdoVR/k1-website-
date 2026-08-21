@@ -93,13 +93,13 @@ export default async function C5CommandCentersMexico2026Page({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide',
       url: es
-        ? 'https://kabatone.com/es/resources/c5-command-centers-mexico-2026/'
-        : 'https://kabatone.com/resources/c5-command-centers-mexico-2026/',
+        ? 'https://kabatone.com/es/resources/c5-command-centers-mexico-2026'
+        : 'https://kabatone.com/resources/c5-command-centers-mexico-2026',
     },
   ]
 
@@ -110,8 +110,8 @@ export default async function C5CommandCentersMexico2026Page({
       ? 'Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.'
       : 'C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.',
     es
-      ? 'https://kabatone.com/es/resources/c5-command-centers-mexico-2026/'
-      : 'https://kabatone.com/resources/c5-command-centers-mexico-2026/',
+      ? 'https://kabatone.com/es/resources/c5-command-centers-mexico-2026'
+      : 'https://kabatone.com/resources/c5-command-centers-mexico-2026',
     '2026-04-08'
   )
 

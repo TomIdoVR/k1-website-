@@ -109,18 +109,18 @@ export default async function Ng911SoftwarePage({
       ? 'Guía sobre NG911 (Next Generation 911): cómo funciona la arquitectura ESInet/i3, diferencia con E911, texto al 911, video, integración CAD y estado del despliegue en EE.UU.'
       : 'Guide to NG911 (Next Generation 911): how ESInet/i3 architecture works, difference from E911, text-to-911, video, CAD integration, and US deployment status.',
     es
-      ? 'https://kabatone.com/es/resources/ng911-software/'
-      : 'https://kabatone.com/resources/ng911-software/',
+      ? 'https://kabatone.com/es/resources/ng911-software'
+      : 'https://kabatone.com/resources/ng911-software',
     '2026-07-07'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Software NG911' : 'NG911 Software',
       url: es
-        ? 'https://kabatone.com/es/resources/ng911-software/'
-        : 'https://kabatone.com/resources/ng911-software/',
+        ? 'https://kabatone.com/es/resources/ng911-software'
+        : 'https://kabatone.com/resources/ng911-software',
     },
   ])
 

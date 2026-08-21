@@ -97,18 +97,18 @@ export default async function BestNg911SoftwarePage({
       ? 'El mejor software NG911 (Next Generation 911) para seguridad pública: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — qué evaluar, ESInet e i3, y cuándo la llamada debe convertirse en despacho.'
       : 'The best NG911 (Next Generation 911) software for public safety: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, and Prepared 911 compared — what to evaluate, ESInet and i3, and when the call should become a dispatch.',
     es
-      ? 'https://kabatone.com/es/resources/best-ng911-software/'
-      : 'https://kabatone.com/resources/best-ng911-software/',
+      ? 'https://kabatone.com/es/resources/best-ng911-software'
+      : 'https://kabatone.com/resources/best-ng911-software',
     '2026-07-21'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Mejor Software NG911' : 'Best NG911 Software',
       url: es
-        ? 'https://kabatone.com/es/resources/best-ng911-software/'
-        : 'https://kabatone.com/resources/best-ng911-software/',
+        ? 'https://kabatone.com/es/resources/best-ng911-software'
+        : 'https://kabatone.com/resources/best-ng911-software',
     },
   ])
 

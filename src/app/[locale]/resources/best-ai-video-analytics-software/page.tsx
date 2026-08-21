@@ -97,18 +97,18 @@ export default async function BestAiVideoAnalyticsPage({
       ? 'El mejor software de analítica de video con IA para seguridad pública: KabatOne, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — qué evaluar, cómo se reducen los falsos positivos y cuándo la analítica debe convertirse en despacho.'
       : 'The best AI video analytics software for public safety: KabatOne, BriefCam, Avigilon, Genetec, Verkada, and Axon/Fusus compared — what to evaluate, how false positives are cut, and when analytics should become dispatch.',
     es
-      ? 'https://kabatone.com/es/resources/best-ai-video-analytics-software/'
-      : 'https://kabatone.com/resources/best-ai-video-analytics-software/',
+      ? 'https://kabatone.com/es/resources/best-ai-video-analytics-software'
+      : 'https://kabatone.com/resources/best-ai-video-analytics-software',
     '2026-07-20'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Mejor Analítica de Video con IA' : 'Best AI Video Analytics Software',
       url: es
-        ? 'https://kabatone.com/es/resources/best-ai-video-analytics-software/'
-        : 'https://kabatone.com/resources/best-ai-video-analytics-software/',
+        ? 'https://kabatone.com/es/resources/best-ai-video-analytics-software'
+        : 'https://kabatone.com/resources/best-ai-video-analytics-software',
     },
   ])
 

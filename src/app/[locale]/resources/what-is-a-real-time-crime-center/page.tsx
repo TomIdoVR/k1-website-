@@ -103,13 +103,13 @@ export default async function WhatIsARealTimeCrimeCenterPage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Centro de Crimen en Tiempo Real?' : 'What Is a Real-Time Crime Center?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-a-real-time-crime-center/'
-        : 'https://kabatone.com/resources/what-is-a-real-time-crime-center/',
+        ? 'https://kabatone.com/es/resources/what-is-a-real-time-crime-center'
+        : 'https://kabatone.com/resources/what-is-a-real-time-crime-center',
     },
   ]
 
@@ -170,8 +170,8 @@ export default async function WhatIsARealTimeCrimeCenterPage({
                 ? 'Un Centro de Crimen en Tiempo Real (RTCC) integra videovigilancia en vivo, analítica de IA, LPR y despacho en un solo entorno para reducir tiempos de respuesta y crímenes sin resolver.'
                 : 'A Real-Time Crime Center (RTCC) integrates live video surveillance, AI analytics, LPR, and dispatch into a single environment to reduce response times and unsolved crimes.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-a-real-time-crime-center/'
-                : 'https://kabatone.com/resources/what-is-a-real-time-crime-center/',
+                ? 'https://kabatone.com/es/resources/what-is-a-real-time-crime-center'
+                : 'https://kabatone.com/resources/what-is-a-real-time-crime-center',
               '2026-03-23'
             )
           ),

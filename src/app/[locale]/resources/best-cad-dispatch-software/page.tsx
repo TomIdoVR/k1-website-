@@ -25,11 +25,11 @@ export default async function BestCadDispatchSoftwarePage({
   const ACCENT = '#ef4444'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? 'Mejor Software CAD de Despacho 2026' : 'Best CAD Dispatch Software 2026',
-      url: es ? 'https://kabatone.com/es/resources/best-cad-dispatch-software/' : 'https://kabatone.com/resources/best-cad-dispatch-software/',
+      url: es ? 'https://kabatone.com/es/resources/best-cad-dispatch-software' : 'https://kabatone.com/resources/best-cad-dispatch-software',
     },
   ]
 
@@ -217,7 +217,7 @@ export default async function BestCadDispatchSoftwarePage({
         articleSchema(
           es ? 'Mejor Software CAD de Despacho para Centros 911 en 2026' : 'Best CAD Dispatch Software for 911 Centers in 2026',
           es ? 'Comparativa de los mejores sistemas de despacho asistido por computadora (CAD) para centros 911, municipios y centros de mando C5 en 2026.' : 'Comparison of the best computer-aided dispatch (CAD) systems for 911 centers, municipalities, and C5 command centers in 2026.',
-          es ? 'https://kabatone.com/es/resources/best-cad-dispatch-software/' : 'https://kabatone.com/resources/best-cad-dispatch-software/',
+          es ? 'https://kabatone.com/es/resources/best-cad-dispatch-software' : 'https://kabatone.com/resources/best-cad-dispatch-software',
           '2026-05-18'
         )
       ) }} />

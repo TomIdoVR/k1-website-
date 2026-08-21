@@ -89,13 +89,13 @@ export default async function WhatIsEmergencyManagementSoftwarePage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un Software de Gestión de Emergencias?' : 'What Is Emergency Management Software?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-emergency-management-software/'
-        : 'https://kabatone.com/resources/what-is-emergency-management-software/',
+        ? 'https://kabatone.com/es/resources/what-is-emergency-management-software'
+        : 'https://kabatone.com/resources/what-is-emergency-management-software',
     },
   ]
 
@@ -156,8 +156,8 @@ export default async function WhatIsEmergencyManagementSoftwarePage({
                 ? 'Un software de gestión de emergencias coordina el ciclo completo del incidente: detección, despacho, coordinación en campo y resolución. Guía con módulos, beneficios y criterios de evaluación.'
                 : 'Emergency management software coordinates the full incident lifecycle: detection, dispatch, field coordination, and resolution. Guide covering modules, benefits, and evaluation criteria.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-emergency-management-software/'
-                : 'https://kabatone.com/resources/what-is-emergency-management-software/',
+                ? 'https://kabatone.com/es/resources/what-is-emergency-management-software'
+                : 'https://kabatone.com/resources/what-is-emergency-management-software',
               '2026-03-30'
             )
           ),

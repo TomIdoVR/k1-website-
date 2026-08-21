@@ -81,13 +81,13 @@ export default async function WhatIsAPsapPage({
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources/' : 'https://kabatone.com/resources/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
       name: es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?',
       url: es
-        ? 'https://kabatone.com/es/resources/what-is-a-psap/'
-        : 'https://kabatone.com/resources/what-is-a-psap/',
+        ? 'https://kabatone.com/es/resources/what-is-a-psap'
+        : 'https://kabatone.com/resources/what-is-a-psap',
     },
   ]
 
@@ -148,8 +148,8 @@ export default async function WhatIsAPsapPage({
                 ? 'Un PSAP (Public Safety Answering Point) es la instalación donde se reciben las llamadas al 911 y se despachan las unidades de emergencia. Guía completa con tecnología, NG911 y criterios de evaluación.'
                 : 'A PSAP (Public Safety Answering Point) is the facility where 911 calls are received and emergency units dispatched. Complete guide covering technology, NG911, and evaluation criteria.',
               es
-                ? 'https://kabatone.com/es/resources/what-is-a-psap/'
-                : 'https://kabatone.com/resources/what-is-a-psap/',
+                ? 'https://kabatone.com/es/resources/what-is-a-psap'
+                : 'https://kabatone.com/resources/what-is-a-psap',
               '2026-05-18'
             )
           ),

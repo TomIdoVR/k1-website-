@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
       ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA."
       : "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-central-african-republic/"
-      : "https://kabatone.com/resources/public-safety-software-central-african-republic/",
+      ? "https://kabatone.com/es/resources/public-safety-software-central-african-republic"
+      : "https://kabatone.com/resources/public-safety-software-central-african-republic",
     "2026-05-19"
   );
 
@@ -78,11 +78,11 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
-    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
+    { name: es ? "Recursos" : "Resources", url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources" },
     {
       name: es ? "Software de Seguridad Pública para República Centroafricana" : "Public Safety Software for Central African Republic",
-      url: es ? "https://kabatone.com/es/resources/public-safety-software-central-african-republic/" : "https://kabatone.com/resources/public-safety-software-central-african-republic/",
+      url: es ? "https://kabatone.com/es/resources/public-safety-software-central-african-republic" : "https://kabatone.com/resources/public-safety-software-central-african-republic",
     },
   ]);
 

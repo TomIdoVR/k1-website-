@@ -26,9 +26,9 @@ export default async function VsMotorolaPage({
   const ACCENT = '#2563eb'
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs/' : 'https://kabatone.com/vs/' },
-    { name: 'KabatOne vs Motorola Solutions', url: es ? 'https://kabatone.com/es/vs/motorola/' : 'https://kabatone.com/vs/motorola/' },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
+    { name: 'KabatOne vs Motorola Solutions', url: es ? 'https://kabatone.com/es/vs/motorola' : 'https://kabatone.com/vs/motorola' },
   ]
 
   const faqs = es ? [

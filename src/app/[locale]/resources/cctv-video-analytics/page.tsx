@@ -107,18 +107,18 @@ export default async function CctvVideoAnalyticsPage({
       ? 'Guía sobre analítica de video CCTV: cómo añadir detección con IA a las cámaras de circuito cerrado existentes, analítica en el borde vs servidor, qué detecta la vigilancia inteligente, y despliegue a escala municipal.'
       : 'Guide to CCTV video analytics: how to add AI detection to existing closed-circuit cameras, edge vs server analytics, what surveillance analytics detects, and municipal-scale deployment.',
     es
-      ? 'https://kabatone.com/es/resources/cctv-video-analytics/'
-      : 'https://kabatone.com/resources/cctv-video-analytics/',
+      ? 'https://kabatone.com/es/resources/cctv-video-analytics'
+      : 'https://kabatone.com/resources/cctv-video-analytics',
     '2026-07-06'
   )
   const bcSchema = breadcrumbSchema([
     { name: 'Home', url: 'https://kabatone.com/' },
-    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources/' },
+    { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com/resources' },
     {
       name: es ? 'Analítica de Video CCTV' : 'CCTV Video Analytics',
       url: es
-        ? 'https://kabatone.com/es/resources/cctv-video-analytics/'
-        : 'https://kabatone.com/resources/cctv-video-analytics/',
+        ? 'https://kabatone.com/es/resources/cctv-video-analytics'
+        : 'https://kabatone.com/resources/cctv-video-analytics',
     },
   ])
 

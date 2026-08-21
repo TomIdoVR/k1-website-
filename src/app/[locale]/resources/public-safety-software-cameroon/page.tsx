@@ -29,8 +29,8 @@ export default async function PublicSafetySoftwareCameroonPage({
       ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Sûreté Nationale, BIR, protección de infraestructuras críticas y programas de ciudad inteligente en Camerún."
       : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Sûreté Nationale, BIR, critical infrastructure protection, and smart city programs in Cameroon.",
     es
-      ? "https://kabatone.com/es/resources/public-safety-software-cameroon/"
-      : "https://kabatone.com/resources/public-safety-software-cameroon/",
+      ? "https://kabatone.com/es/resources/public-safety-software-cameroon"
+      : "https://kabatone.com/resources/public-safety-software-cameroon",
     "2026-05-19"
   );
 
@@ -78,16 +78,16 @@ export default async function PublicSafetySoftwareCameroonPage({
   ]);
 
   const breadcrumb = breadcrumbSchema([
-    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es/" : "https://kabatone.com/" },
+    { name: es ? "Inicio" : "Home", url: es ? "https://kabatone.com/es" : "https://kabatone.com/" },
     {
       name: es ? "Recursos" : "Resources",
-      url: es ? "https://kabatone.com/es/resources/" : "https://kabatone.com/resources/",
+      url: es ? "https://kabatone.com/es/resources" : "https://kabatone.com/resources",
     },
     {
       name: es ? "Software de Seguridad Pública Camerún" : "Public Safety Software Cameroon",
       url: es
-        ? "https://kabatone.com/es/resources/public-safety-software-cameroon/"
-        : "https://kabatone.com/resources/public-safety-software-cameroon/",
+        ? "https://kabatone.com/es/resources/public-safety-software-cameroon"
+        : "https://kabatone.com/resources/public-safety-software-cameroon",
     },
   ]);
 
