@@ -17,6 +17,12 @@ type GtagFn = (
   params?: Record<string, unknown>,
 ) => void
 
+/* Must stay in step with GoogleAnalytics.tsx, which resolves the id the same
+   way. Duplicated rather than imported so this module stays free of the
+   component tree — importing a client component into a lib pulls it into every
+   bundle that touches analytics. */
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-5MB9CK1FGS'
+
 const UTM_KEYS = [
   'utm_source',
   'utm_medium',
@@ -54,7 +60,23 @@ export function trackLead(
     dataLayer?: Record<string, unknown>[]
   }
 
-  const payload = { ...getUtmParams(), ...params }
+  /* `send_to` is not optional here, and its absence was silently costing every
+     lead conversion.
+
+     This site loads gtag.js AND a GTM container (GTM-K55RZLP9) sharing one
+     dataLayer. In that configuration `gtag('event', ...)` without an explicit
+     target does not resolve to the GA4 property: the call succeeds, pushes to
+     the dataLayer, throws nothing — and never issues a /g/collect request. The
+     event simply evaporates.
+
+     Measured on production, three variants of the same call:
+       gtag('event', 'generate_lead', {...})                  -> 0 collect hits
+       gtag('event', 'generate_lead', { send_to: GA_ID, ...}) -> 1 collect hit
+       dataLayer.push({ event: 'generate_lead' })             -> 0 collect hits
+
+     page_view was unaffected throughout, which is why this looked healthy from
+     the GA4 UI: traffic reported normally while conversions read zero. */
+  const payload = { send_to: GA_MEASUREMENT_ID, ...getUtmParams(), ...params }
 
   // Primary path: straight to GA4 via gtag. Reliable regardless of GTM config.
   if (typeof w.gtag === 'function') {
