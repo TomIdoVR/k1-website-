@@ -18,9 +18,22 @@
 .hll-page--split {
   display: flex;
   flex-direction: column;
-  /* Tall on purpose: the art is 2.25:1, and the taller the section the less
-     `cover` has to crop. At 1920 the whole frame fits at 853px. */
-  min-height: clamp(560px, 88vh, 900px);
+  /* Height follows the art, not the viewport.
+
+     88vh was set when the art was a 2.25:1 file being `cover`ed: the taller the
+     section, the less of the frame got cropped away. Neither half of that is
+     true any more — the art is capped at 700px and anchored bottom-right with
+     `contain`, so it never crops and never exceeds 700 no matter how tall the
+     section gets. Everything above that was empty gradient, and because .hsplit
+     centres the copy in it, half of the waste landed between the header and the
+     eyebrow: 151px at 1440x900, 198px at 1920x1080, 205px on a tall window.
+
+     vw, because that is what actually governs the art's drawn height: it is
+     width-capped at 66%, so it renders min(700, 0.44 x viewport width) tall.
+     45vw tracks that, and 730px = 700 art + the 30px foot below it, which is
+     the tallest the section is ever asked to be. The floor stays 560px for the
+     narrow end, where the copy — not the art — sets the height. */
+  min-height: clamp(560px, 45vw, 730px);
   padding-bottom: 30px;
 }
 
@@ -100,7 +113,10 @@
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
-  padding: clamp(24px, 3.4vw, 48px) clamp(20px, 5vw, 64px) 0;
+  /* The top pad is deliberately smaller than the sides. It stacks on top of
+     the centring slack above, so it reads as roughly double its own value in
+     the gap under the header. */
+  padding: clamp(24px, 2.6vw, 40px) clamp(20px, 5vw, 64px) 0;
 }
 
 .hsplit-copy { min-width: 0; max-width: 620px; text-align: left; }

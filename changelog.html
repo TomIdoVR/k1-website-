@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.375 -->
+      <div class="tl-entry fixed" id="v2.375">
+        <div class="tl-meta"><span class="tl-ver">v2.375</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">Hero: dead space between the header and the headline removed</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>The gap under the site header was mostly empty gradient.</strong> The hero's <code>min-height</code> was <code>clamp(560px, 88vh, 900px)</code> &mdash; set when the art was a 2.25:1 file being <code>cover</code>ed, where extra height meant less of the frame got cropped. That stopped being true once the art became <code>contain</code>, capped at 700px and anchored bottom-right</li>
+          <li><strong>Height now follows the art, not the viewport:</strong> <code>clamp(560px, 45vw, 730px)</code>. <code>vw</code> because that is what governs the art's drawn height &mdash; width-capped at 66%, it renders <code>min(700, 0.44 &times; viewport width)</code> tall. 730px is 700 of art plus its 30px foot</li>
+          <li>Header &rarr; eyebrow measured: <strong>1024&times;768</strong> 134&rarr;72px, <strong>1440&times;900</strong> 151&rarr;74px, <strong>1440&times;1080</strong> 205&rarr;74px, <strong>1920&times;1080</strong> 198&rarr;109px</li>
+          <li>The art is untouched &mdash; its drawn size is identical at every width tested, since it was already width-capped below 1590px. Only the letterboxing around it shrank</li>
+          <li>Below 980px nothing changes: that breakpoint already overrides both values</li>
+        </ul></div>
+      </div>
+
       <!-- v2.374 -->
       <div class="tl-entry fixed" id="v2.374">
         <div class="tl-meta"><span class="tl-ver">v2.374</span><span class="tl-date">2026-08-21</span></div>
