@@ -1,3 +1,14 @@
+## [v2.324] – 2026-08-21 — Three of the last seven daily audits never ran, and nothing said so
+
+**Fixed**
+- **`scripts/seo-audit.mjs` now reports missed days (`checkMissedRuns`).** The daily loop's guards all protect against a confident number about the wrong site. None protected against *no number at all*. On 2026-08-15, 08-16 and 08-19 the routine fired, created its execution issue, and died at the adapter (`adapter_failed: API Error: Unable to connect to API (ENOTFOUND)`) before running anything — 16 of the routine's last 50 runs failed the same way. Because only successful runs write a report or a runlog line, a day with no audit is indistinguishable from a day that needed none, and the next run reports CLEAN as if the streak were unbroken. The audit now reads the last dated entry in `scripts/seo-daily-runlog.txt` and prints the gap, and `summary.lastRun` / `summary.missedDays` carry it into the JSON report so the daily comment can cite it.
+- This is the same failure class as v2.323 in the weekly agent, one layer up: the work is fine, the *evidence that the work happened* is what goes missing.
+
+**Notes**
+- **Reports, never refuses.** A gap is already in the past; refusing today's audit because yesterday's was missed would turn one missed day into two. This is the one guard here that is deliberately non-blocking.
+- Verified both paths: a fixture runlog ending 2026-08-17 against a 08-21 run prints `MISSED RUNS: 3 day(s)`; a missing runlog file returns `null` and does not crash.
+- **Separate, undiagnosed-in-code failure:** no routine *in the entire company* fired between 2026-08-05 and 08-11 — checked across all five company routines, including one whose history spans 06-18→08-20. That is an instance-level outage, not a per-routine fault, and `checkMissedRuns` will surface it but cannot prevent it.
+
 ## [v2.323] – 2026-08-20 — One 502 wiped an entire week of SEO monitoring
 
 **Fixed**

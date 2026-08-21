@@ -22,6 +22,8 @@ const getArg = (name, def) => { const i = args.indexOf(name); return i >= 0 ? ar
 const BASE_URL = getArg("--url", "https://staging.kabatone.com");
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
+const RUNLOG_FILE = getArg("--runlog", "scripts/seo-daily-runlog.txt");
+const TODAY = new Date().toISOString().slice(0, 10);
 const DIFF_ONLY = args.includes("--diff");
 // Report coverage accounting and exit without crawling.
 const COVERAGE_ONLY = args.includes("--coverage-only");
@@ -401,6 +403,38 @@ function refuse(msg, override) {
   process.exit(EXIT_REFUSED);
 }
 
+/* A missed day leaves no artifact. Every other guard here protects against a
+   confident number about the wrong site; this one protects against no number
+   at all, which is worse because nothing surfaces it. When the routine fire
+   dies at the adapter (KAB-2694: `adapter_failed ENOTFOUND` on 08-15/16/19,
+   16 of 50 runs historically) or the whole instance is down (no routine in the
+   company fired 2026-08-05..08-11), the loop simply skips a day and the next
+   successful run reports CLEAN as if nothing happened.
+
+   Reports, never refuses: a gap is already in the past, and refusing today's
+   audit because yesterday's was missed would turn one missed day into two. */
+function checkMissedRuns() {
+  if (!existsSync(RUNLOG_FILE)) return null;
+  const dates = readFileSync(RUNLOG_FILE, "utf-8")
+    .split("\n")
+    .map(l => /^(\d{4}-\d{2}-\d{2})\s*\|/.exec(l)?.[1])
+    .filter(Boolean)
+    .sort();
+  const last = dates.at(-1);
+  if (!last) return null;
+  const DAY = 86400000;
+  const gap = Math.round((Date.parse(TODAY) - Date.parse(last)) / DAY) - 1;
+  if (gap > 0) {
+    process.stderr.write(
+      `\n  ! MISSED RUNS: ${gap} day(s) with no audit between ${last} and ${TODAY}.\n` +
+      `    Check the routine's run history — a fire ending in anything other than\n` +
+      `    'completed' produced no report, so the streak of CLEAN runs is not a\n` +
+      `    streak of covered days.\n\n`
+    );
+  }
+  return { lastRun: last, missedDays: Math.max(0, gap) };
+}
+
 const git = (...a) => execFileSync("git", a, { encoding: "utf-8" }).trim();
 
 /**
@@ -561,6 +595,7 @@ async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
   checkCheckoutSync();
+  const runlog = checkMissedRuns();
 
   /* Audit the URL space we actually publish, not `/en/*`.
      `localePrefix: 'as-needed'` serves EN at the root, so every `/en/...` URL
@@ -633,6 +668,10 @@ async function main() {
       coverageUnexplained: coverage?.unexplained.length ?? null,
       pagesWithIssues: results.filter(r => r.issues.some(i => i.severity !== "info")).length,
       pagesClean: results.filter(r => r.issues.filter(i => i.severity !== "info").length === 0).length,
+      /* Days since the last logged run that produced no audit at all. A CLEAN
+         report says nothing about the days that never ran — see checkMissedRuns. */
+      lastRun: runlog?.lastRun ?? null,
+      missedDays: runlog?.missedDays ?? null,
     },
     pages: results,
   };
