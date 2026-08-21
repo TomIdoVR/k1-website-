@@ -290,6 +290,43 @@ html { scroll-padding-top: calc(var(--hll-nav-h) + 12px); }
   .hll-mobile-menu-panel { position: absolute; top: 52px; right: 0; display: flex; width: min(290px, calc(100vw - 40px)); padding: 16px; flex-direction: column; gap: 6px; border: 1px solid rgba(67, 96, 152, 0.13); border-radius: 16px; background: rgba(255, 255, 255, 0.97); box-shadow: 0 24px 60px rgba(37, 66, 119, 0.18); }
   .hll-mobile-menu-panel > a:not(.hll-nav-cta) { padding: 10px; border-radius: 8px; color: #1c315f; font-size: 14px; }
   .hll-mobile-menu-panel > a:hover { background: #f1f6ff; }
+
+  /* Collapsible sections. The summary row matches what the flat links used to
+     look like, so the closed menu is visually unchanged — the difference only
+     appears on tap. */
+  .hll-mobile-section > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 44px min-height, not padding alone: these are the primary navigation
+       targets on a phone and were previously plain 14px links. */
+    min-height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    color: #1c315f;
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .hll-mobile-section > summary::-webkit-details-marker { display: none; }
+  .hll-mobile-section[open] > summary { background: #f1f6ff; color: #0757f7; }
+  .hll-mobile-section[open] > summary svg { transform: rotate(180deg); }
+  .hll-mobile-section > summary svg { transition: transform .2s; flex-shrink: 0; }
+
+  .hll-mobile-sublinks { display: flex; flex-direction: column; padding: 2px 0 6px 10px; }
+  .hll-mobile-sublinks a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #40527d;
+    font-size: 13.5px;
+  }
+  .hll-mobile-sublinks a:hover { background: #f1f6ff; color: #0757f7; }
+  /* The product colour dot, same token the desktop dropdown uses. */
+  .hll-mobile-sublinks a > span { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .hll-mobile-languages { display: flex; gap: 8px; padding: 8px 10px; }
   /* This is the switcher that is actually visible on a phone (the .hll-language
      one is desktop-only). It measured 14x18 — well under the 44px touch
