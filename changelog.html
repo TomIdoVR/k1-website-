@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.371 -->
+      <div class="tl-entry fixed" id="v2.371">
+        <div class="tl-meta"><span class="tl-ver">v2.371</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">The breadcrumb fix v2.370 claimed to port forward never shipped</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong><code>BreadcrumbList</code> on all five product pages emitted trailing-slash URLs that no canonical matches.</strong> <code>SolutionRoute.tsx</code> produced <code>https://kabatone.com/k-safety/</code> and <code>https://kabatone.com/es/</code>, while the canonical tags on those same pages are <code>https://kabatone.com/k-safety</code> and <code>https://kabatone.com/es/k-safety</code> &mdash; a self-inflicted mismatch in the one structured-data block Google renders directly in the SERP</li>
+            <li>The <code>nextjs</code> branch had already fixed this in the per-page breadcrumb arrays, but the redesign replaced those arrays with <code>SolutionRoute</code>, so the fix sat inside the markup v2.370 deliberately discarded</li>
+            <li><strong>v2.370 stated this fix was ported forward. It was not.</strong> The edit was made in the worktree and never staged, so the merge commit shipped without it &mdash; and the changelog claim went out anyway. Caught by reading the live JSON-LD on production rather than trusting the commit message</li>
+            <li>Verified against production after deploy: breadcrumb <code>item</code> values now match <code>&lt;link rel="canonical"&gt;</code> byte-for-byte on both locales</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.370 -->
       <div class="tl-entry changed" id="v2.370">
         <div class="tl-meta"><span class="tl-ver">v2.370</span><span class="tl-date">2026-08-21</span></div>

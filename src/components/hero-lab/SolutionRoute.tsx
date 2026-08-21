@@ -25,8 +25,8 @@ export default function SolutionRoute({ p, locale }: { p: SolutionContent; local
   const base = es ? `https://kabatone.com/es/${p.seo.slug}` : `https://kabatone.com/${p.seo.slug}`
 
   const breadcrumbs = [
-    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es/' : 'https://kabatone.com/' },
-    { name: p.name, url: `${base}/` },
+    { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
+    { name: p.name, url: base },
   ]
 
   const faqs = p.faqs?.map((f) => ({
