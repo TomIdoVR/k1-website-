@@ -1,3 +1,15 @@
+## [v2.372] – 2026-08-21 — GA4 lead conversions were never sent: gtag needs an explicit send_to
+### Fixed
+- **Every lead conversion was silently lost before reaching GA4.** Leads arrived at Formspree and the inbox, the branded success page rendered, and nothing errored — but `generate_lead` never reached GA4.
+- **Root cause,** measured on production rather than inferred: the site loads gtag.js *and* a GTM container (`GTM-K55RZLP9`) sharing one dataLayer. In that configuration `gtag('event', ...)` without an explicit target never resolves to the GA4 property. The call succeeds, pushes to the dataLayer, throws nothing — and issues no `/g/collect` request at all. Three variants of the same call on the live site: without `send_to` → **0** collect hits; with `send_to` → **1**; bare `dataLayer.push` → **0**.
+- The bare-push result confirms the warning already written at the top of `lib/analytics.ts`: a dataLayer push only reaches GA4 if GTM has a forwarding tag, and it does not. The gtag path existed to solve exactly that — and was itself inert.
+- **Fix:** `send_to` is now part of every `trackLead` payload.
+
+### Notes
+- `page_view` was unaffected throughout, which is why nothing looked wrong in the GA4 UI: traffic reported normally while conversions read zero. The property bears out the timeline — `generate_lead` fired once on 19 Aug and once on 20 Aug, then stopped.
+- Verified end to end after deploy: a real submission through the production form produced `generate_lead` in GA4 Realtime within a minute. This closes **PRE-003**, the last open launch gate.
+- Found only because the GA4 leg of PRE-003 was actually checked rather than assumed. Nothing in the browser console, the form, or Formspree indicated a problem.
+
 ## [v2.371] – 2026-08-21 — The breadcrumb fix v2.370 claimed to port forward never shipped
 
 ### Fixed
