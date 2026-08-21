@@ -356,8 +356,7 @@
 
     <div class="timeline">
 
-      <!-- v2.373 -->
-      <div class="tl-entry fixed" id="v2.373">
+<div class="tl-entry fixed" id="v2.373">
         <div class="tl-meta"><span class="tl-ver">v2.373</span><span class="tl-date">2026-08-21</span></div>
         <div class="tl-title">Mobile: submenus restored, form errors and success no longer land off-screen</div>
         <div class="tl-body"><ul class="version-changes">
@@ -368,9 +367,19 @@
         </ul></div>
       </div>
 
+<div class="tl-entry fixed" id="v2.372">
+        <div class="tl-meta"><span class="tl-ver">v2.372</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">GA4 lead conversions were never sent: gtag needs an explicit send_to</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>Every lead conversion was silently lost before reaching GA4.</strong> Leads arrived at Formspree and the inbox, the success page rendered, nothing errored &mdash; but <code>generate_lead</code> never reached GA4</li>
+          <li><strong>Cause:</strong> the site loads gtag.js <em>and</em> a GTM container sharing one dataLayer. In that configuration <code>gtag('event', ...)</code> without an explicit target never resolves to the GA4 property &mdash; the call succeeds, throws nothing, and issues no <code>/g/collect</code> request. Measured live: without <code>send_to</code> &rarr; <strong>0</strong> hits; with it &rarr; <strong>1</strong>; bare <code>dataLayer.push</code> &rarr; <strong>0</strong></li>
+          <li><strong>Fix:</strong> <code>send_to</code> is now part of every <code>trackLead</code> payload</li>
+          <li><code>page_view</code> was unaffected throughout, which is why GA4 looked healthy &mdash; traffic reported normally while conversions read zero since 20 Aug</li>
+          <li>Verified end to end: a real production submission produced <code>generate_lead</code> in GA4 Realtime within a minute. Closes <strong>PRE-003</strong>, the last launch gate</li>
+        </ul></div>
+      </div>
 
-      <!-- v2.371 -->
-      <div class="tl-entry fixed" id="v2.371">
+<div class="tl-entry fixed" id="v2.371">
         <div class="tl-meta"><span class="tl-ver">v2.371</span><span class="tl-date">2026-08-21</span></div>
         <div class="tl-title">The breadcrumb fix v2.370 claimed to port forward never shipped</div>
         <div class="tl-body">
@@ -383,8 +392,7 @@
         </div>
       </div>
 
-      <!-- v2.370 -->
-      <div class="tl-entry changed" id="v2.370">
+<div class="tl-entry changed" id="v2.370">
         <div class="tl-meta"><span class="tl-ver">v2.370</span><span class="tl-date">2026-08-21</span></div>
         <div class="tl-title">Promotion: merge <code>nextjs</code> (SEO program) into <code>main</code></div>
         <div class="tl-body">
@@ -400,8 +408,7 @@
         </div>
       </div>
 
-      <!-- v2.369 -->
-      <div class="tl-entry fixed" id="v2.369">
+<div class="tl-entry fixed" id="v2.369">
         <div class="tl-meta"><span class="tl-ver">v2.369</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">Carousel crashed the route when the viewport measured zero width</div>
         <div class="tl-body"><ul class="version-changes">
@@ -412,9 +419,7 @@
         </ul></div>
       </div>
 
-
-      <!-- v2.368 -->
-      <div class="tl-entry fixed" id="v2.368">
+<div class="tl-entry fixed" id="v2.368">
         <div class="tl-meta"><span class="tl-ver">v2.368</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">Solutions media panel is keyboard-reachable</div>
         <div class="tl-body"><ul class="version-changes">
@@ -423,8 +428,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.367 -->
-      <div class="tl-entry fixed" id="v2.367">
+<div class="tl-entry fixed" id="v2.367">
         <div class="tl-meta"><span class="tl-ver">v2.367</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">All 23 WCAG AA contrast failures fixed</div>
         <div class="tl-body"><ul class="version-changes">
@@ -434,8 +438,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.366 -->
-      <div class="tl-entry fixed" id="v2.366">
+<div class="tl-entry fixed" id="v2.366">
         <div class="tl-meta"><span class="tl-ver">v2.366</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">CSP allowlist missed GA4's regional collector</div>
         <div class="tl-body"><ul class="version-changes">
@@ -444,8 +447,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.365 -->
-      <div class="tl-entry fixed" id="v2.365">
+<div class="tl-entry fixed" id="v2.365">
         <div class="tl-meta"><span class="tl-ver">v2.365</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">Stop preloading a below-fold photo against the LCP image</div>
         <div class="tl-body"><ul class="version-changes">
@@ -453,8 +455,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.364 -->
-      <div class="tl-entry fixed" id="v2.364">
+<div class="tl-entry fixed" id="v2.364">
         <div class="tl-meta"><span class="tl-ver">v2.364</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">Before/after scroll strip is keyboard-reachable</div>
         <div class="tl-body"><ul class="version-changes">
@@ -462,8 +463,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.363 -->
-      <div class="tl-entry added" id="v2.363">
+<div class="tl-entry added" id="v2.363">
         <div class="tl-meta"><span class="tl-ver">v2.363</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">Baseline security headers, CSP in Report-Only</div>
         <div class="tl-body"><ul class="version-changes">
@@ -472,8 +472,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.362 -->
-      <div class="tl-entry fixed" id="v2.362">
+<div class="tl-entry fixed" id="v2.362">
         <div class="tl-meta"><span class="tl-ver">v2.362</span><span class="tl-date">2026-08-20</span></div>
         <div class="tl-title">All 12 npm vulnerabilities cleared; stale contract tests updated</div>
         <div class="tl-body"><ul class="version-changes">
@@ -483,8 +482,7 @@
         </ul></div>
       </div>
 
-      <!-- v2.361 -->
-      <div class="tl-entry fixed" id="v2.361">
+<div class="tl-entry fixed" id="v2.361">
         <div class="tl-meta"><span class="tl-ver">v2.361</span><span class="tl-date">2026-08-16</span></div>
         <div class="tl-title">Restore the homepage's two resource links lost in promotion</div>
         <div class="tl-body"><ul class="version-changes">
@@ -492,15 +490,13 @@
         </ul></div>
       </div>
 
-      <!-- v2.360 -->
-      <div class="tl-entry fixed" id="v2.360">
+<div class="tl-entry fixed" id="v2.360">
         <div class="tl-meta"><span class="tl-ver">v2.360</span><span class="tl-date">2026-08-16</span></div>
         <div class="tl-title">Module carousel pages by viewport, not by card</div>
         <div class="tl-body"><ul class="version-changes">
           <li>Seven cards produced seven dots while six were already on screen, so each click advanced one card width &mdash; too small to notice. A stop is now one viewport width: two stops, not seven. Dots, arrows, Home/End and the screen-reader announcement all follow pages</li>
         </ul></div>
       </div>
-
 
 <div class="tl-entry changed" id="v2.359">
         <div class="tl-meta"><span class="tl-ver">v2.359</span><span class="tl-date">2026-08-16</span></div>
@@ -1491,19 +1487,6 @@
         </div>
       </div>
 
-      <!-- v2.286 (SEO branch) -->
-      <div class="tl-entry feat" id="v2.286-2">
-        <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-27</span></div>
-        <div class="tl-title">CTR-recovery Track C: freshness/E-E-A-T signal on flagship VMS pages</div>
-        <div class="tl-body">
-          <ul class="version-changes">
-            <li>Added "Updated: July 2026 · Reviewed by the KabatOne platform team" byline (EN+ES) above the FAQ block on <code>/resources/what-is-video-analytics/</code> and <code>/resources/what-is-video-management-software/</code> — the two flagship VMS pages stuck on page 2 (~pos 20–22, ~30K combined impressions)</li>
-            <li><code>articleSchema()</code>'s <code>dateModified</code> bumped to <code>2026-07-27</code> on both pages (was frozen at <code>datePublished</code>, 2026-05-18); added an optional 5th <code>dateModified</code> param to the shared helper, defaulting to <code>datePublished</code> so no other caller changes</li>
-            <li>Board-approved via KAB-1980 on the KAB-1721 CTR-recovery confirmation (Track A GEO + Track C ranking lift)</li>
-            <li>Typecheck: 0 errors</li>
-          </ul>
-        </div>
-      </div>
 <div class="tl-entry changed" id="v2.286">
         <div class="tl-meta"><span class="tl-ver">v2.286</span><span class="tl-date">2026-07-29</span></div>
         <div class="tl-title">Legal page: rebrand SITEC 911 → 911 Michoacán / CityShob → Kabat-One</div>
@@ -1515,19 +1498,6 @@
         </div>
       </div>
 
-      <!-- v2.285 (SEO branch) -->
-      <div class="tl-entry fix" id="v2.285-2">
-        <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-27</span></div>
-        <div class="tl-title">SEO: rescue video-analytics CTR/cannibalization (weekly #1 action)</div>
-        <div class="tl-body">
-          <ul class="version-changes">
-            <li>Weekly GSC (2026-07-27): the query <strong>"ai-powered video analytics"</strong> earns 1,123 page-1 impressions but <strong>0 clicks</strong>, split across two competing pages (<code>/resources/what-is-video-analytics/</code> 939 impr pos 9.3 + <code>/resources/ai-video-analytics/</code> 185 impr pos 7.1)</li>
-            <li>Retitled the stronger page's EN metadata to lead with the exact winning phrase — <code>whatIsVideoAnalytics</code> title now <em>"AI-Powered Video Analytics: Detection &amp; Best Platforms [2026]"</em> (was "Video Analytics Software: AI-Powered CCTV…"), description rewritten to lead with "AI-powered video analytics" + buyer/platform intent. ES already led with "Analítica de Video con IA" — left as-is</li>
-            <li>Reduced two-page dilution: the Related-Resources cross-link from <code>what-is-video-analytics</code> → <code>ai-video-analytics</code> was re-anchored from the head term "AI Video Analytics" to the mechanism intent <em>"How AI Video Analytics Works"</em>, so the stronger page keeps ownership of the head term and passes only the "how it works" query to the mechanism page (which already owns that intent via its H1 + reciprocal broad "video analytics" backlinks)</li>
-            <li>On-site only, no authority/human dependency. Typecheck: 0 errors</li>
-          </ul>
-        </div>
-      </div>
 <div class="tl-entry fix" id="v2.285">
         <div class="tl-meta"><span class="tl-ver">v2.285</span><span class="tl-date">2026-07-29</span></div>
         <div class="tl-title">Fix: homepage partner logos self-hosted (drop external hotlinks)</div>
@@ -1594,19 +1564,6 @@
         </div>
       </div>
 
-      <!-- v2.280 (SEO branch) -->
-      <div class="tl-entry feat" id="v2.280-2">
-        <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-13</span></div>
-        <div class="tl-title">SEO week (reconciled): C5-ES CTR + RTCC/CCTV/CAD query-variant FAQs</div>
-        <div class="tl-body">
-          <ul class="version-changes">
-            <li><strong>C5-ES zero-click fix</strong> — rewrote the ES title + meta for <code>que-es-un-c5</code> (pos ~8, 0 clicks — AI Overview answers the definition); new meta opens a curiosity gap the AIO can't fill. Untouched by the v2.274 sweep (EN only).</li>
-            <li><strong>RTCC GEO citability</strong> — added "What are the leading RTCC software vendors?" Q&amp;A (EN+ES) — the one GEO gap the v2.272–v2.274 sweep did not cover (KabatOne still uncited for RTCC as of 07-20). Extends FAQPage schema.</li>
-            <li><strong>CCTV VMS + CAD query-variants</strong> — exact-match FAQs (EN+ES): "CCTV video management system" on the VMS hub, and 4 CAD longtail variants (police CAD systems, 911 dispatch software, computer automated dispatch, call-taking systems) on <code>best-cad-dispatch-software</code>.</li>
-            <li><strong>Spanish depth + analysis</strong> — "qué quiere decir C5" variant + <code>/es/k-dispatch</code> funnel link; branded/non-branded traffic dashboard + longtail sprint plan. Deduped against v2.272–v2.279 (kept only additive changes).</li>
-          </ul>
-        </div>
-      </div>
 <div class="tl-entry feat" id="v2.280">
         <div class="tl-meta"><span class="tl-ver">v2.280</span><span class="tl-date">2026-07-27</span></div>
         <div class="tl-title">Solutions section + design-accurate typography (/hero-lab)</div>
