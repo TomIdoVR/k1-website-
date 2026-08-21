@@ -1,3 +1,13 @@
+## [v2.371] – 2026-08-21 — The breadcrumb fix v2.370 claimed to port forward never shipped
+
+### Fixed
+- **`BreadcrumbList` on all five product pages emitted trailing-slash URLs that no canonical matches.** `SolutionRoute.tsx` produced `https://kabatone.com/k-safety/` and `https://kabatone.com/es/`, while the canonical tags on those same pages are `https://kabatone.com/k-safety` and `https://kabatone.com/es/k-safety`. A breadcrumb item pointing at a URL that redirects to the canonical is a self-inflicted mismatch in the one structured-data block Google renders directly in the SERP.
+- The `nextjs` branch had already fixed this in the per-page breadcrumb arrays, but the redesign replaced those arrays with `SolutionRoute`, so the fix was inside the markup v2.370 deliberately discarded.
+
+### Notes
+- **v2.370 stated this fix was ported forward. It was not.** The edit was made in the worktree and never staged, so the merge commit shipped without it — and the changelog claim went out anyway. Caught by checking the live JSON-LD on production rather than trusting the commit message; `curl https://kabatone.com/k-safety` still returned the slashed form after the deploy went green.
+- Verified against production after deploy: breadcrumb `item` values now match the `<link rel="canonical">` byte-for-byte on both locales.
+
 ## [v2.370] – 2026-08-21 — Promotion: merge `nextjs` (SEO program) into `main`
 
 ### Changed
