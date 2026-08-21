@@ -96,11 +96,25 @@ test('carousel exposes accessible controls and keyboard behavior', () => {
   assert.doesNotMatch(carousel, /scrollIntoView/)
 })
 
+test('carousel page count is guarded against a zero-width viewport', () => {
+  /* Regression: pageCount fed Array.from({ length: pageCount }). clientWidth is
+     0 before layout, scrollWidth / 0 is Infinity, and Array.from on an infinite
+     length throws RangeError — which took the whole route to the error
+     boundary in production while the build still passed. The guard must stay. */
+  assert.match(carousel, /function pagesIn/)
+  assert.match(carousel, /if \(!width\) return 1/)
+  /* And no raw division may creep back in outside the helper. */
+  const raw = carousel.match(/scrollWidth \/ viewport\.clientWidth/g) ?? []
+  assert.equal(raw.length, 0, 'divide by clientWidth only inside pagesIn()')
+})
+
 test('carousel pages by viewport, not by card', () => {
   /* The regression this locks down: dots and stops must be derived from how
      many viewport-widths the track occupies, never from cards.length. */
   assert.match(carousel, /pageCount/)
-  assert.match(carousel, /Math\.ceil\(viewport\.scrollWidth \/ viewport\.clientWidth\)/)
+  /* The division now lives in pagesIn(), which is where the zero-width guard
+     is; asserting the raw expression here would fight that fix. */
+  assert.match(carousel, /Math\.ceil\(viewport\.scrollWidth \/ width\)/)
   assert.match(carousel, /Array\.from\(\{ length: pageCount \}/)
   assert.doesNotMatch(carousel, /length: cards\.length \}/)
 })

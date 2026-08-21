@@ -10,6 +10,26 @@ import {
   useState,
 } from 'react'
 
+/* How many viewport-widths the track occupies, guarded against a zero-width
+   viewport.
+
+   Without the guard this crashed the page. clientWidth is 0 whenever the
+   element has not been laid out yet — first paint, or while an ancestor is
+   display:none — and scrollWidth / 0 is Infinity, so pageCount became Infinity
+   and `Array.from({ length: pageCount })` threw "RangeError: Invalid array
+   length", taking the whole route down to the error boundary. The production
+   build succeeds either way, because it only fails once the component measures
+   in a real browser.
+
+   Returning 1 for an unmeasurable viewport is the honest answer: a track with
+   no width has no pages to page through, and the ResizeObserver re-measures as
+   soon as it does have width. */
+function pagesIn(viewport: HTMLDivElement): number {
+  const width = viewport.clientWidth
+  if (!width) return 1
+  return Math.max(1, Math.ceil(viewport.scrollWidth / width))
+}
+
 type HeroCardCarouselProps = {
   children: ReactNode
   previousLabel: string
@@ -52,7 +72,7 @@ export default function HeroCardCarousel({
          real stops would still be drawn as seven dots, five of which do
          nothing. Recomputed on resize because the same seven cards are two
          pages at 1440px and seven at 390px. */
-      setPageCount(Math.max(1, Math.ceil(viewport.scrollWidth / viewport.clientWidth)))
+      setPageCount(pagesIn(viewport))
     }
     measure()
 
@@ -80,7 +100,7 @@ export default function HeroCardCarousel({
   const goTo = useCallback((targetPage: number) => {
     const viewport = viewportRef.current
     if (!viewport) return
-    const last = Math.max(0, Math.ceil(viewport.scrollWidth / viewport.clientWidth) - 1)
+    const last = pagesIn(viewport) - 1
     const next = Math.max(0, Math.min(targetPage, last))
     viewport.scrollTo({ left: next * viewport.clientWidth, behavior: 'smooth' })
     setActiveIndex(next)
@@ -91,7 +111,7 @@ export default function HeroCardCarousel({
     if (!viewport) return
 
     const maxScroll = viewport.scrollWidth - viewport.clientWidth
-    const last = Math.max(0, Math.ceil(viewport.scrollWidth / viewport.clientWidth) - 1)
+    const last = pagesIn(viewport) - 1
 
     /* Derive the page from scrollLeft rather than trusting the last goTo: the
        track can also be moved by swipe, trackpad or keyboard, and scroll-snap
@@ -105,7 +125,7 @@ export default function HeroCardCarousel({
     setActiveIndex(
       viewport.scrollLeft >= maxScroll - 1
         ? last
-        : Math.min(last, Math.round(viewport.scrollLeft / viewport.clientWidth)),
+        : Math.min(last, viewport.clientWidth ? Math.round(viewport.scrollLeft / viewport.clientWidth) : 0),
     )
   }, [])
 
