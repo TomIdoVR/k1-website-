@@ -1,3 +1,14 @@
+## [v2.373] – 2026-08-21 — Mobile: submenus restored, form errors and success no longer land off-screen
+### Fixed
+- **The mobile menu had no submenus.** Each of the four items was a single link into the *first* entry of its section — Solutions went to `/k-safety`, Industries to `/industries/public-safety`. On desktop the same four are dropdowns listing everything, so on a phone **four of the five solution pages and four of the five industry pages were unreachable from the menu entirely**. The pages existed and sat in the sitemap; nothing in the mobile UI led to them. Reachable nav links on mobile went from 4 to 15.
+- **The contact form never moved the viewport.** There were no refs, no `scrollIntoView` and no focus management anywhere in it, and the form is taller than a phone screen. Submitting with a required field empty blocked silently from the user's point of view — the browser focused a field that was off-screen (measured at 375×812: the Name field sat 380px above the viewport). On success the form is replaced by a card shorter than itself, so the confirmation could land outside the viewport too.
+- Both now scroll into view. The success heading takes focus and carries `role="status"` so it is announced rather than only shown, and a `role="alert"` notice states that required fields are missing — the native browser bubble is easy to miss on a phone and disappears on the next tap.
+
+### Notes
+- The submenus are nested `<details>` reusing the same `MODULE_LINKS` / `INDUSTRY_LINKS` constants the desktop dropdowns read, so the two navigations cannot drift apart. A shared `name` makes them mutually exclusive — browser-enforced, no JS and no click-outside handler.
+- Verified on a 375×812 deploy: submitting empty scrolls the first invalid field from −380px to +90px and focuses it, all four sections open with 44px targets, mutual exclusion holds, and the panel fits the viewport with no horizontal overflow.
+- Not verified live: the success-card scroll, which needs a real Formspree submission. It uses the same `scrollIntoView` path as the invalid-field case, which is verified.
+
 ## [v2.371] – 2026-08-21 — The breadcrumb fix v2.370 claimed to port forward never shipped
 
 ### Fixed

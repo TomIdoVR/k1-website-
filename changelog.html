@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.373 -->
+      <div class="tl-entry fixed" id="v2.373">
+        <div class="tl-meta"><span class="tl-ver">v2.373</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">Mobile: submenus restored, form errors and success no longer land off-screen</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>The mobile menu had no submenus.</strong> Each item was a single link into the <em>first</em> entry of its section, so <strong>four of five solution pages and four of five industry pages were unreachable from the menu entirely</strong> on a phone. Reachable nav links went from 4 to 15</li>
+          <li><strong>The contact form never moved the viewport</strong> &mdash; no refs, no <code>scrollIntoView</code>, no focus management, on a form taller than a phone screen. Submitting with a field empty focused a control 380px above the viewport; on success the confirmation card could land outside it</li>
+          <li>Both now scroll into view, the success heading takes focus with <code>role="status"</code>, and a <code>role="alert"</code> notice states which fields are missing &mdash; the native bubble is easy to miss on a phone and vanishes on the next tap</li>
+          <li>Submenus reuse the same link constants the desktop dropdowns read, so the two navigations cannot drift apart</li>
+        </ul></div>
+      </div>
+
+
       <!-- v2.371 -->
       <div class="tl-entry fixed" id="v2.371">
         <div class="tl-meta"><span class="tl-ver">v2.371</span><span class="tl-date">2026-08-21</span></div>
