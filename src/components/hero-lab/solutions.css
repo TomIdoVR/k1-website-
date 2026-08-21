@@ -364,6 +364,67 @@
   }
 }
 
+/* ── Above 960px: the accordion. One product's detail at a time. ──
+   The JSX no longer gates these on `on`, and no longer sets `hidden`, so the
+   accordion is expressed here instead. `hidden` had to go: it removes the body
+   from the accessibility tree, which would have been wrong on mobile where the
+   body is visible. */
+@media (min-width: 961px) {
+  .sv-item:not(.is-active) .sv-body,
+  .sv-item:not(.is-active) .sv-text { display: none; }
+}
+
+/* ── Below 960px: every product expanded, no accordion, no sticky. ──
+
+   The section used to run an IntersectionObserver that activated whichever
+   product crossed the middle of the viewport, while the active card and its
+   .sv-pin were both sticky. On a phone that combination fought itself:
+   activating a product expanded it and collapsed another mid-scroll, the page
+   height changed under the user's finger, and that changed which product was
+   crossing the middle — a feedback loop between scrolling and layout, on top
+   of two nested sticky contexts.
+
+   Showing everything removes the cause rather than tuning the symptom. There
+   is no selection to track, so the observer is switched off (see Solutions.tsx)
+   and every sticky rule above is unwound here.
+
+   The cost is a longer section — five products' worth of detail instead of
+   one. That is the right trade on a phone: scrolling is cheap and predictable,
+   whereas tapping to expand while the page reflows underneath is neither. */
+@media (max-width: 960px) {
+  .sv-body,
+  .sv-text,
+  .sv-visual-inline { display: block; }
+  .sv-caps { display: grid; }
+
+  /* Unwind the sticky machinery — both layers of it. */
+  .sv-item.is-active,
+  .sv-pin {
+    position: static;
+    top: auto;
+    z-index: auto;
+  }
+  .sv-item { overflow: visible; }
+
+  /* Nothing is selected any more, so nothing should look selected or
+     invite a tap that does nothing. */
+  .sv-item.is-active .sv-pin {
+    background: none;
+    box-shadow: none;
+  }
+  .sv-chev { display: none; }
+  .sv-item-head { cursor: default; }
+
+  /* Every card carries its own product colour rather than only the active one,
+     so the five stay visually distinct while stacked. */
+  .sv-item { border-color: color-mix(in srgb, var(--pc) 22%, transparent); }
+  .sv-item.is-active { background: #fff; box-shadow: none; }
+  .sv-item.is-active::before { opacity: 1; }
+  .sv-name { color: var(--pc); }
+  .sv-num { color: var(--pc); border-color: var(--pc); }
+  .sv-mark { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sv-body, .sv-caps li { animation: none; }
   .sv-cap, .sv-chev, .sv-item { transition: none; }

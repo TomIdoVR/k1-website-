@@ -1,3 +1,15 @@
+## [v2.374] – 2026-08-21 — Mobile: all five products expanded, scroll-driven accordion switched off
+### Fixed
+- **Scrolling the products section on a phone fought itself.** An IntersectionObserver with `rootMargin: -45% 0px -45%` activated whichever product crossed the middle of the viewport. Activating one expanded it and collapsed another mid-scroll, which changed the page height under the user's finger, which changed what was crossing the middle — a feedback loop between scrolling and layout. On top of that, both the active card and its `.sv-pin` were `position: sticky`, so two nested sticky contexts moved at once.
+- **Below 960px every product is now expanded**, the observer does not run, and both sticky layers are unwound. There is no selection to track, so the cause is removed rather than the symptom tuned.
+
+### Notes
+- Visibility moved from conditional rendering into CSS. Rendering `.sv-visual-inline` and `.sv-text` only for the active product could not express "all expanded" without knowing the viewport at render time — which on a phone means a visible reflow on hydration as four products expand. CSS puts the right layout on screen at first paint. Desktop pays almost nothing: those nodes sit inside `.sv-visual-inline`, which is `display: none` above 960px, and browsers do not fetch lazy images inside a `display: none` subtree.
+- The `hidden` attribute was removed from `.sv-body` for the same reason it mattered: `hidden` drops the element from the accessibility tree, which would have been wrong on mobile where the body is visible. Both breakpoints now decide visibility in CSS, and `aria-expanded` reports `true` for every product below 960px.
+- Each card now carries its own product colour on mobile rather than only the active one, so five stacked cards stay visually distinct.
+- **The cost is a longer section** — five products' worth of detail instead of one. That is the right trade on a phone: scrolling is cheap and predictable, whereas tapping to expand while the page reflows underneath is neither.
+- Desktop is unchanged: verified at 1440px that exactly one body is visible, clicking a product switches the accordion, and the sticky media panel still pins.
+
 ## [v2.373] – 2026-08-21 — Mobile: submenus restored, form errors and success no longer land off-screen
 ### Fixed
 - **The mobile menu had no submenus.** Each of the four items was a single link into the *first* entry of its section — Solutions went to `/k-safety`, Industries to `/industries/public-safety`. On desktop the same four are dropdowns listing everything, so on a phone **four of the five solution pages and four of the five industry pages were unreachable from the menu entirely**. The pages existed and sat in the sitemap; nothing in the mobile UI led to them. Reachable nav links on mobile went from 4 to 15.

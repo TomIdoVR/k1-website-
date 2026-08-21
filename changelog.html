@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.374 -->
+      <div class="tl-entry fixed" id="v2.374">
+        <div class="tl-meta"><span class="tl-ver">v2.374</span><span class="tl-date">2026-08-21</span></div>
+        <div class="tl-title">Mobile: all five products expanded, scroll-driven accordion switched off</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>Scrolling the products section on a phone fought itself.</strong> An IntersectionObserver activated whichever product crossed the middle of the viewport &mdash; which expanded one and collapsed another mid-scroll, changing the page height under the user's finger, which changed what was crossing the middle. A feedback loop between scrolling and layout, on top of two nested sticky contexts</li>
+          <li><strong>Below 960px every product is now expanded</strong>, the observer does not run, and both sticky layers are unwound &mdash; removing the cause rather than tuning the symptom</li>
+          <li>Visibility moved from conditional rendering into CSS, so the right layout is on screen at first paint instead of reflowing on hydration. <code>hidden</code> was dropped from the body because it removes the element from the accessibility tree, which would be wrong where the body is visible</li>
+          <li><strong>The cost is a longer section</strong> &mdash; five products of detail instead of one. The right trade on a phone: scrolling is cheap and predictable; tapping to expand while the page reflows underneath is neither</li>
+          <li>Desktop unchanged &mdash; verified at 1440px: one body visible, clicking switches the accordion, sticky media panel still pins</li>
+        </ul></div>
+      </div>
+
+
 <div class="tl-entry fixed" id="v2.373">
         <div class="tl-meta"><span class="tl-ver">v2.373</span><span class="tl-date">2026-08-21</span></div>
         <div class="tl-title">Mobile: submenus restored, form errors and success no longer land off-screen</div>

@@ -268,9 +268,35 @@ export default function Solutions({ es }: { es: boolean }) {
   const lockRef = useRef(0)
   const p = PRODUCTS[active]
 
+  /* True below 960px, where every product is expanded and the accordion does
+     not apply. Set after mount, so it only drives ARIA and the observer — the
+     visual layout is CSS, which means no hydration flash. */
+  const [allExpanded, setAllExpanded] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 960px)')
+    const sync = () => setAllExpanded(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
   useEffect(() => {
     const host = listRef.current
     if (!host) return
+
+    /* The observer is the reason mobile scrolling felt wrong, so it does not
+       run there at all.
+
+       With rootMargin -45%/-45% it activates whichever product crosses the
+       middle of the viewport. On a phone that expanded one product and
+       collapsed another mid-scroll, which changed the page height under the
+       user's finger, which changed what was crossing the middle — a feedback
+       loop between scrolling and layout. Now that everything below 960px is
+       expanded there is nothing for it to select, and switching it off removes
+       the loop. */
+    if (window.matchMedia('(max-width: 960px)').matches) return
+
     const items = Array.from(host.querySelectorAll<HTMLElement>('.sv-item'))
     const io = new IntersectionObserver(
       (entries) => {
@@ -285,7 +311,7 @@ export default function Solutions({ es }: { es: boolean }) {
     )
     items.forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [allExpanded])
 
   return (
     <section className="sv" id="solutions">
@@ -319,7 +345,7 @@ export default function Solutions({ es }: { es: boolean }) {
                   <div className="sv-pin">
                     <button
                       className="sv-item-head"
-                      aria-expanded={on}
+                      aria-expanded={allExpanded || on}
                       aria-controls={`sv-body-${x.key}`}
                       onClick={() => {
                         lockRef.current = Date.now() + 900
@@ -334,11 +360,26 @@ export default function Solutions({ es }: { es: boolean }) {
                       </span>
                       <svg className="sv-chev" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
                     </button>
-                    {on && <div className="sv-visual-inline"><AppMock p={x} es={es} /></div>}
-                    {on && <p className="sv-text">{x.body[lang]}</p>}
+                    {/* Rendered for every product, not only the active one, and
+                        shown or hidden in CSS instead. Below 960px every product
+                        is expanded, and conditional rendering cannot express
+                        that without knowing the viewport at render time — which
+                        on a phone means a visible reflow on hydration as four
+                        products suddenly expand. Letting CSS own it puts the
+                        right layout on screen at first paint.
+
+                        Desktop cost is near zero: these live inside
+                        .sv-visual-inline, which is display:none above 960px, and
+                        browsers do not fetch lazy images inside a display:none
+                        subtree. */}
+                    <div className="sv-visual-inline"><AppMock p={x} es={es} /></div>
+                    <p className="sv-text">{x.body[lang]}</p>
                   </div>
 
-                  <div className="sv-body" id={`sv-body-${x.key}`} hidden={!on}>
+                  {/* No `hidden` attribute: it would keep the body out of the
+                      accessibility tree on mobile even while CSS displays it.
+                      Visibility is decided in CSS for both breakpoints. */}
+                  <div className="sv-body" id={`sv-body-${x.key}`}>
                     <ul className="sv-caps">
                       {x.caps.map((c, k) => (
                         <li key={k} style={{ '--ci': k } as React.CSSProperties}><span className="sv-check" aria-hidden="true">✓</span>{c[lang]}</li>
