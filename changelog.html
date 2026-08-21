@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.369 -->
+      <div class="tl-entry fixed" id="v2.369">
+        <div class="tl-meta"><span class="tl-ver">v2.369</span><span class="tl-date">2026-08-20</span></div>
+        <div class="tl-title">Carousel crashed the route when the viewport measured zero width</div>
+        <div class="tl-body"><ul class="version-changes">
+          <li><strong>The homepage rendered "Something went wrong" instead of the page.</strong> <code>pageCount</code> fed <code>Array.from({ length: pageCount })</code>, and <code>clientWidth</code> is 0 before layout &mdash; <code>scrollWidth / 0</code> is <code>Infinity</code>, so <code>Array.from</code> threw <code>RangeError: Invalid array length</code> and dropped the whole route to the error boundary</li>
+          <li>Introduced in v2.360 and latent since: it depends on render timing, so earlier deploys of the same code rendered fine. <strong>The production build passes either way</strong> &mdash; the failure only happens once the component measures in a real browser, which is why a green build was never evidence the page worked</li>
+          <li>Every division by <code>clientWidth</code> now routes through a guarded <code>pagesIn()</code> helper, plus a regression test so the guard cannot quietly disappear</li>
+          <li>Found only because the post-fix Axe re-run landed on the error boundary rather than the homepage</li>
+        </ul></div>
+      </div>
+
+
       <!-- v2.368 -->
       <div class="tl-entry fixed" id="v2.368">
         <div class="tl-meta"><span class="tl-ver">v2.368</span><span class="tl-date">2026-08-20</span></div>

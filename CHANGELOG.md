@@ -1,3 +1,12 @@
+## [v2.369] – 2026-08-20 — Carousel crashed the route when the viewport measured zero width
+### Fixed
+- **The homepage rendered "Something went wrong" instead of the page.** `pageCount` fed `Array.from({ length: pageCount })`, and `clientWidth` is 0 whenever the element has not been laid out — first paint, or while an ancestor is `display: none`. `scrollWidth / 0` is `Infinity`, so `Array.from` threw `RangeError: Invalid array length` and took the whole route down to the error boundary.
+- Introduced in v2.360 with the per-viewport paging change and latent since: it depends on render timing, so earlier deploys of the same code rendered fine. **The production build passes either way** — the failure only occurs once the component measures in a real browser, which is why a green build was never evidence the page worked.
+- Every division by `clientWidth` now routes through a guarded `pagesIn()` helper returning 1 for an unmeasurable viewport, with the one remaining inline division guarded in place. Added a regression test asserting the guard exists and that no raw division reappears outside the helper.
+
+### Notes
+- Found only because the post-fix Axe re-run landed on the error boundary rather than the homepage. Without that re-run this would have shipped as a white error page on `/`.
+
 ## [v2.368] – 2026-08-20 — Solutions media panel is keyboard-reachable
 ### Fixed
 - **The Solutions media panel could not be reached by keyboard.** `.sv-side` is capped at `max-height: 620px` with `overflow-y: auto` — the ceiling that keeps the sticky panel clear of the header, added in v2.348 — but a scroll container with no tab stop is pointer-only, so anything the cap hid was unreachable without a mouse. Axe reported it as one serious `scrollable-region-focusable` violation. It now carries `role="region"`, a localized label naming the product (`K-Safety preview` / `Vista previa de K-Safety`) and `tabIndex 0`, with a matching `:focus-visible` outline offset outward so it does not sit on top of the app mock.
