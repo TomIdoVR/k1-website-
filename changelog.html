@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.326 -->
+      <div class="tl-entry fix" id="v2.326">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.326</span><span class="tl-date">2026-08-27</span></div>
+          <h3 class="tl-title">The daily fire now gets a second chance, and a dead one stops being silent</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the daily SEO routine losing whole days invisibly. The fire itself died on a transient adapter error in 16 of its last 50 runs, and because only successful runs write an artifact, a lost day looked identical to a quiet one. A second 13:00 UTC catch-up fire now recovers a dead 07:00 one, gated by the new <code>scripts/routine-health.mjs</code> so it costs nothing on a healthy day (exit 10 = no-op, 0 = proceed, 2 = unknown, fails open). The same script joins the platform's run history against the runlog to name LOST DAYS — 2026-08-15, 08-16 and 08-19 — which neither source can identify alone.</p>
+        </div>
+      </div>
+
       <!-- v2.325 -->
       <div class="tl-entry added" id="v2.325">
         <div class="version-header">

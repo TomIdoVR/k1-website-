@@ -1,3 +1,18 @@
+## [v2.326] – 2026-08-27 — The daily fire now gets a second chance, and a dead one stops being silent
+
+*Authored 2026-08-22, shipped 2026-08-27: the commit sat unpushed on the local checkout for five days and collided with v2.325's version number, which is the same class of invisibility it was written to fix.*
+
+**Fixed**
+- **The routine fires twice a day now: 07:00 UTC and a 13:00 UTC catch-up.** v2.324 made a missed day *visible after the fact*; it could not prevent one. The fire itself dies roughly a third of the time — 16 of the routine's last 50 runs, always `adapter_failed: API Error: Unable to connect to API (ENOTFOUND)`, never a fault in `seo-audit.mjs`. Paperclip's terminal-run recovery retries once, hits the same transient error, and parks the execution issue in `blocked`, so the day is simply lost. A second independent fire six hours later is the retry, at the layer that actually owns the failure. The audit is cheap and re-runnable; the thing worth protecting is the artifact.
+- **`scripts/routine-health.mjs` (new, v1.0) gates the catch-up so it costs nothing on a healthy day.** It checks whether today already has a `scripts/seo-daily-runlog.txt` entry and exits `10` (no-op — close the execution issue without auditing), `0` (proceed — the morning fire died, recover the day), or `2` (unknown). Exit 2 fails **open**: a broken health check must never become the reason a day goes unaudited.
+- **A non-`completed` fire is no longer silent.** The same script joins the platform's routine run history against the runlog and reports LOST DAYS. Neither source is sufficient alone — a run marked `failed` whose audit finished before the adapter dropped is *not* a lost day (2026-08-12), and a day with no runlog line *is* one regardless of what the run status says. Only the join distinguishes them. Step 4 of the routine now requires that line in the daily comment, which is where a human reads it.
+
+**Notes**
+- Verified against live data: the script independently derives 2026-08-15, 08-16 and 08-19 as the lost days — exactly the three the issue named, from the join rather than from the report — and classifies 08-12 as a failed fire that was covered anyway. Both gate paths were exercised (`exit 10` on today, `exit 0` on an unlogged date).
+- **The lost-day scan is anchored at 2026-08-12 (`--since`), and says so in its output.** Logging every run including a silent CLEAN only became the rule then; the runlog before that is sparse by design (12 dated lines, first on 07-22) because successful runs legitimately exited without logging. Scanning further back reported ~15 days as LOST that were audited fine. An alert that cries wolf that loudly stops being read, so the excluded count is printed rather than silently dropped.
+- Still open, and **not** fixed here: retry-on-`adapter_failed` inside Paperclip itself, which is platform code outside this repo. The catch-up fire is a workaround at the layer this agent controls, not a substitute — it recovers the day, it does not stop the fire dying. Stranded `blocked` execution issues and their paired "Recover stalled issue X" issues still accumulate and are owned elsewhere.
+- Unchanged and deliberately so: the instance-wide outage 2026-08-05 → 08-11, when no routine in the company fired at all. A second trigger cannot help when the scheduler never fires; that needs separate diagnosis.
+
 ## [v2.325] – 2026-08-24 — Weekly SEO brief (2026-08-24)
 
 **Added**
