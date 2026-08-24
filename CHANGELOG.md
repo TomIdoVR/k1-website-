@@ -1,3 +1,10 @@
+## [v2.325] – 2026-08-24 — Weekly SEO brief (2026-08-24)
+
+**Added**
+- `SEO/audits/weekly-2026-08-24.json` — GA4 + GSC data pull (3,504 sessions, 480 clicks, 96,364 real impressions)
+- `SEO/audits/traffic-2026-08-24.html` — HTML dashboard; `traffic-latest.html` symlink updated
+- `SEO/audits/weekly-2026-08-24.md` — written brief covering traffic (+46% total, Direct spike +76%), search (311 striking-distance queries, "c5" at pos 8.8 with +209 potential clicks), GEO status (stale — last monitor 2026-07-28, Anthropic API key out of credit), plan (P0: CAD/VMS CTR fixes, top up GEO API), and operations health
+
 ## [v2.324] – 2026-08-21 — Three of the last seven daily audits never ran, and nothing said so
 
 **Fixed**
