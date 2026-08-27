@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  KAB-2909 — out-of-band watchdog for the daily SEO audit loop.
+
+  RunAtLoad is the important key, not StartInterval. The outages this exists to
+  catch are the machine being off (2026-08-23..08-26: battery hit 0%, hibernate,
+  no power until 08-27). Nothing on this Mac can alert while the Mac is dead, so
+  the local leg's job is to alert the instant it comes back — which RunAtLoad
+  does, at login/boot, before anyone thinks to check a runlog.
+
+  StartInterval 900 keeps the external dead-man ping frequent enough that a
+  healthchecks.io check on a 1d period / 12h grace never false-alarms, and
+  re-checks coverage through the day. Re-alerting is rate-limited inside the
+  script (12h), not here.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.kabatone.seo-scheduler-watchdog</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/node</string>
+    <string>/Users/omercnaani/Library/CloudStorage/OneDrive-SYMSERVICIOSINTEGRALESSADECV/Claude/k1 Website/scripts/scheduler-watchdog.mjs</string>
+    <string>--quiet</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/omercnaani/Library/CloudStorage/OneDrive-SYMSERVICIOSINTEGRALESSADECV/Claude/k1 Website</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StartInterval</key>
+  <integer>900</integer>
+  <key>StandardOutPath</key>
+  <string>/Users/omercnaani/.claude/tasks/scheduler-watchdog.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/omercnaani/.claude/tasks/scheduler-watchdog.out.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>/Users/omercnaani</string>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>

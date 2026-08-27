@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.327 -->
+      <div class="tl-entry fix" id="v2.327">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.327</span><span class="tl-date">2026-08-27</span></div>
+          <h3 class="tl-title">The scheduler outages were a flat battery, and the watchdog now lives outside the thing that dies</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the root cause of the multi-day SEO monitoring gaps: the machine was off, not the scheduler. Power logs show the MacBook hibernating at <code>Charge:1%</code> on 2026-08-23 02:46 and not waking until 2026-08-27 11:27 — corroborated to the hour by Paperclip's own backup trail. <strong>Added</strong> <code>scripts/scheduler-watchdog.mjs</code> and a <code>launchd</code> job that, unlike every previous detector, does not run inside the thing that dies: it reads the runlog directly, alerts when coverage is more than 36h stale, and fires <code>RunAtLoad</code> so a machine-down gap is reported within a minute of the Mac returning. An opt-in dead-man ping to an external uptime service is the one leg that can alert while the Mac is still off.</p>
+        </div>
+      </div>
+
       <!-- v2.326 -->
       <div class="tl-entry fix" id="v2.326">
         <div class="version-header">
