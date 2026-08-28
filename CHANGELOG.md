@@ -1,3 +1,16 @@
+## [v2.328] – 2026-08-28 — The GEO citation monitor is on a schedule again, and the number it reports doubled
+
+**Fixed**
+- **The 16-day GEO staleness was a dry API key, not broken code.** `SEO/geo/track_geo.py` bills the standalone pay-as-you-go key at `~/.config/claude-seo/anthropic-api-key`, separate from the subscription; it had run out (the KAB-2483 failure mode, where partial runs were logged as full ones). A one-token live call confirmed the key is funded again *before* committing to a full web-search run, so a second dry-key run could not silently poison the history file.
+- **Ran the monitor. KabatOne is now cited in 10 of 12 AI answers (83%)**, against 42% on 2026-07-07 and 80% on the partial 2026-08-12 run. The two misses are *"What is a C5 command center?"* and *"What is AI video analytics?"* — both already-identified open fields, and both now measured rather than assumed.
+
+**Added**
+- **`~/Library/LaunchAgents/com.kabatone.seo-geo.plist`** — runs the monitor every Monday at **07:30 local**, deliberately *before* the 08:07 `com.kabatone.seo-weekly` job so the Monday brief reads a fresh `geo-history.csv` rather than the previous week's. Validated with `plutil -lint` and bootstrapped into `gui/$(id -u)`; `launchctl print` confirms it loaded.
+
+**Notes**
+- This is the measurement layer for the open KAB-1721 decision (AI Overview absorption). Without it there is no way to tell whether a GEO citation push moved anything, so it was restored ahead of that decision rather than after it.
+- Weekly-report action item **#4** (`business_value()` intent-aware) needed no work — it already shipped in `84a7ce2`; a bare `c5` query resolves to `navigational` and scores 0.2, so it can no longer top the brief. The action list was stale on that point.
+
 ## [v2.327] – 2026-08-27 — The scheduler outages were a flat battery, and the watchdog now lives outside the thing that dies
 
 **Added**

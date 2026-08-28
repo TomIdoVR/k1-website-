@@ -356,6 +356,17 @@
 
     <div class="timeline">
 
+      <!-- v2.328 -->
+      <div class="tl-entry added" id="v2.328">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.328</span><span class="tl-date">2026-08-28</span></div>
+          <h3 class="tl-title">The GEO citation monitor is on a schedule again — and the number it reports doubled</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the 16-day staleness of the GEO citation monitor. The stall was never a code fault: <code>track_geo.py</code> bills the standalone pay-as-you-go key at <code>~/.config/claude-seo/anthropic-api-key</code>, which had run dry. The key is funded again (verified with a live call before spending anything on a full run), so the monitor was run and now reports <strong>KabatOne cited in 10 of 12 AI answers (83%)</strong> — up from 42% on 2026-07-07. The two remaining misses are <em>"What is a C5 command center?"</em> and <em>"What is AI video analytics?"</em>, both already known open fields. <strong>Added</strong> <code>com.kabatone.seo-geo.plist</code>, a <code>launchd</code> job running the monitor every Monday at 07:30 — deliberately ahead of the 08:07 weekly agent, so the Monday brief reads a fresh <code>geo-history.csv</code> instead of last week's. Restoring this matters now because it is the measurement layer for the pending AI-Overview decision on KAB-1721.</p>
+        </div>
+      </div>
+
       <!-- v2.327 -->
       <div class="tl-entry fix" id="v2.327">
         <div class="version-header">
