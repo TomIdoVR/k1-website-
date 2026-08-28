@@ -56,7 +56,9 @@ SCOPES = [
 
 # Scoring helpers are shared with the dashboard generator so the brief and the
 # dashboard can never disagree about what counts as an opportunity.
-from seo_weekly_agent import expected_ctr, business_value, assign_cluster  # noqa: E402
+from seo_weekly_agent import (  # noqa: E402
+    expected_ctr, business_value, assign_cluster, query_intent,
+)
 
 
 # ── Auth ─────────────────────────────────────────────────────────────────────
@@ -362,7 +364,17 @@ def pull_gsc(token, days):
                 'ctr_pct': round(ctr * 100, 2),
                 'expected_ctr_pct': round(expected_ctr(position) * 100, 2),
                 'score': round(impressions * gap * business_value(query), 1),
+                # Carried alongside potential_clicks on purpose. The ranking below is by
+                # score and is already intent-weighted, but a raw "+209 potential clicks"
+                # printed on its own gets narrated as the headline regardless of where it
+                # ranked -- that is how 'c5' (navigational, CDMX residents looking for the
+                # actual agency) led two consecutive Slack briefs. Any renderer must show
+                # this label next to the number.
+                'intent': query_intent(query),
                 'potential_clicks': int(impressions * gap),
+                'potential_clicks_qualified': (
+                    0 if query_intent(query) == 'navigational' else int(impressions * gap)
+                ),
             })
         if 5 <= position <= 15 and impressions >= 20:
             striking.append({

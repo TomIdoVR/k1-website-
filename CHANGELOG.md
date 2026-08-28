@@ -1,3 +1,22 @@
+## [v2.330] – 2026-08-28 — The Slack brief's ranking was right; the number printed next to it wasn't
+
+**Fixed**
+- `weekly_brief.py` now carries an `intent` label and a `potential_clicks_qualified` field on
+  every opportunity. The scorer was never wrong — it ranks `c5` fourth (43.3) behind
+  `computer aided dispatch software` (67.3) — but the brief also printed a bare
+  "+209 potential clicks", and two consecutive Monday briefs led with `c5` as "the single
+  largest unlocked opportunity", recommending backlinks be spent on it. `c5` is navigational:
+  CDMX residents looking for the actual C5 agency. Qualified potential for navigational
+  queries is now 0, so a renderer cannot print the misleading figure without the label.
+
+**Changed**
+- `kabatone-seo-director` skill rewritten for SEO **and** GEO: GEO promoted to a first-class
+  report section, plus AI-referrer breakdown, named referrers, target-market split, and
+  country-page and striking-distance trends adopted from the Slack brief. Four new guardrails
+  from real failures: verify behaviour by execution not by reading (G6), re-check for
+  concurrent work before executing (G7), never print a number without its intent label (G8),
+  and reconcile the two pipelines instead of letting them contradict each other weekly.
+
 ## [v2.329] – 2026-08-28 — The site was pointing 28 internal links at its worst video page and 8 at its best
 
 **Changed**

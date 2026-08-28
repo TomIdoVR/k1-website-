@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.330 -->
+      <div class="tl-entry fix" id="v2.330">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.330</span><span class="tl-date">2026-08-28</span></div>
+          <h3 class="tl-title">The Slack brief's ranking was right; the number printed next to it wasn't</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the recurring disagreement between the Monday Slack brief and the weekly report. The brief's scorer was never at fault — it ranks <code>c5</code> fourth (43.3) behind <code>computer aided dispatch software</code> (67.3). But it also printed a bare <em>"+209 potential clicks"</em>, and two consecutive briefs led with <code>c5</code> as "the single largest unlocked opportunity", recommending backlinks — the scarcest resource in the program — be spent on it. <code>c5</code> is navigational: Mexico City residents looking for the actual C5 agency, confirmed by a 3-second dwell and 77% bounce on the matching page. Opportunities now carry an <code>intent</code> label and a <code>potential_clicks_qualified</code> field that is 0 for navigational queries, so a renderer cannot show the misleading number without its context.</p>
+          <p><strong>Changed</strong> the <code>kabatone-seo-director</code> skill to cover SEO <em>and</em> GEO. GEO is now a first-class report section rather than an appendix, and the report adopts the AI-referrer breakdown, named referrers, target-market split, and country-page and striking-distance trends that the Slack brief did better. Four guardrails were added from real failures: verify behaviour by running code rather than reading it, re-check for concurrent work immediately before executing, never print a figure without its intent label, and reconcile the two pipelines instead of letting them contradict each other every week.</p>
+        </div>
+      </div>
+
       <!-- v2.329 -->
       <div class="tl-entry changed" id="v2.329">
         <div class="version-header">
