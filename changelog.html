@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.331 -->
+      <div class="tl-entry fix" id="v2.331">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.331</span><span class="tl-date">2026-08-28</span></div>
+          <h3 class="tl-title">Two canonicals the v2.314 sweep missed, and an AI-traffic "decline" that wasn't</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> two <code>psim-alternatives</code> canonicals (EN + ES) that still carried a trailing slash and pointed at a URL returning 308 — the stragglers the v2.314 unslashing sweep missed, live for 18 days. A self-referential canonical aimed at a redirect is exactly what costs indexing. They were found by sweeping all 452 canonicals rather than spot-checking, and that sweep is now part of the SEO skill's technical section.</p>
+          <p><strong>Fixed</strong> a wrong headline in the 2026-08-28 weekly report, which flagged "AI Assistant fell 25% — first decline since tracking began". Sessions did fall 59 → 44, but distinct <em>users rose 30 → 34</em>, bounce improved to 38.6% and dwell rose: fewer repeat sessions from more distinct people staying longer. The 28-day window was also dragged by a spike in the prior period while the most recent week was the strongest in three. Perplexity (6 → 1) is the one genuinely negative signal. Also added the instrument-scope caveat — <code>track_geo.py</code> asks Claude with web search, not ChatGPT, while GA4 shows ChatGPT is our largest AI referrer.</p>
+        </div>
+      </div>
+
       <!-- v2.330 -->
       <div class="tl-entry fix" id="v2.330">
         <div class="version-header">

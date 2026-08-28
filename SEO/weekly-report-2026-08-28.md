@@ -196,11 +196,23 @@ users (1.11 sessions/user) at 70% bounce; Unassigned is 47 sessions at a literal
 1.07 sessions/user. Both carry the bot signature the program has flagged since July. Direct
 "growing 39%" is not a marketing result and should not be reported to the board as one.
 
-**🔴 AI Assistant fell 25% (59 → 44) — the first decline since tracking began.** Bounce is the
-best on the site (38.6%), so the traffic that does arrive is the highest-quality segment we have.
-This is the leading indicator for the GEO program, and it is now pointing down while the GEO
-monitor has not run in 16 days (§8). Worth noting the base is small — 15 sessions of movement —
-so treat as a signal to instrument, not yet a trend.
+**AI Assistant sessions fell 25% (59 → 44) — but this is not a decline, and an earlier draft
+of this report was wrong to flag it 🔴.** Distinct **users rose 30 → 34 (+13%)** over the same
+window. Sessions-per-user dropped to 1.29, bounce improved to 38.6% — the best on the site — and
+dwell rose. Fewer repeat sessions from more distinct people who stay longer is an improvement,
+not a loss. The 28-day comparison is also dragged by a spike in the *prior* window (9 sessions on
+07-29); the most recent week (Aug 21–27, 12 sessions) is the strongest in three.
+
+**Report users, not sessions, for this channel.** At 44 sessions the base is small enough that
+a handful of repeat visits swings the session count by 25% while the underlying audience grows.
+
+The one genuinely negative signal is **Perplexity: 6 → 1 sessions**. Small base, but it is the
+only engine moving clearly the wrong way — and the GEO monitor cannot see it (§7).
+
+⚠️ **Instrument scope:** `track_geo.py` asks **Claude with web search** and checks whether
+KabatOne appears. It is a proxy for AI-answer visibility — **not** a ChatGPT measurement. Yet
+GA4 shows ChatGPT is our largest AI referrer by far. We are measuring one engine and getting
+traffic from another. Do not report the citation rate as "AI engines cite us" without this caveat.
 
 **Landing pages — sessions, dwell, bounce**
 
@@ -221,7 +233,10 @@ Two content-quality findings, distinct from ranking:
   second-largest pool on the site, and visitors leave in half a minute. It is a Track C target
   (§4) and the dwell number says a ranking lift alone would pour traffic into a page that does not
   hold it. Content depth first, then links.
-- **`/es/resources/que-es-un-c5` — 3s dwell, 77% bounce.** That is a bounce-on-arrival. Consistent
+- **`/es/resources/que-es-un-c5` — 3s dwell, 77% bounce (13 sessions, this 28d window).** A
+  parallel pull over a different window returned 5s / 60% on 5 sessions — the figure is
+  window-sensitive on a small base, so treat the magnitude loosely. Either way it is
+  bounce-on-arrival, which is the point. Consistent
   with the `c5` navigational read in §3: these are CDMX residents who wanted the agency, landed on
   a vendor explainer, and left immediately. Further confirmation to keep `c5` excluded.
 

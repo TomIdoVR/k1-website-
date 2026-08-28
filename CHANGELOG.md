@@ -1,3 +1,25 @@
+## [v2.331] – 2026-08-28 — Two canonicals the v2.314 sweep missed, and an AI-traffic "decline" that wasn't
+
+**Fixed**
+- `psim-alternatives` (EN + ES) still carried a **slashed** canonical pointing at a URL that
+  308s — the two stragglers the v2.314 unslashing sweep missed, live for 18 days. A
+  self-referential canonical aimed at a redirect is precisely what costs indexing. Found by
+  sweeping all 452 canonicals rather than spot-checking; that sweep is now in the skill.
+- Corrected `SEO/weekly-report-2026-08-28.md`: it flagged "🔴 AI Assistant fell 25%, first
+  decline since tracking began." Sessions did fall 59 → 44, but distinct **users rose 30 → 34**,
+  bounce improved to 38.6% and dwell rose — fewer repeat sessions from more distinct people
+  staying longer. The report now reads users for this channel and notes that the 28-day window
+  is dragged by a spike in the prior period. Perplexity (6 → 1) is the one real negative.
+- Added the instrument-scope caveat: `track_geo.py` tests **Claude with web search**, not
+  ChatGPT — while GA4 shows ChatGPT is our largest AI referrer. The citation rate also counts
+  "our URL was retrieved" identically to "the answer recommended us."
+
+**Changed**
+- `kabatone-seo-director` gains G9 (read users before calling a trend on a small base) and G10
+  (state what the instrument actually measures), the qualified-vs-unqualified CTR-gap technique
+  for proving intent mismatch, a check for **local unpushed** commits alongside staging-vs-prod,
+  and the canonical sweep. All five came from running the skill against its own test cases.
+
 ## [v2.330] – 2026-08-28 — The Slack brief's ranking was right; the number printed next to it wasn't
 
 **Fixed**
