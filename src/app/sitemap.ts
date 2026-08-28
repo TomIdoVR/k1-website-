@@ -37,8 +37,6 @@ const pages = [
   { path: '/resources/what-is-a-psap', priority: 0.6 },
   { path: '/resources/what-is-emergency-dispatch-software', priority: 0.6 },
   { path: '/resources/what-is-lpr-license-plate-recognition', priority: 0.6 },
-  { path: '/resources/what-is-video-analytics', priority: 0.6 },
-  { path: '/resources/ai-video-analytics', priority: 0.7 },
   { path: '/resources/cctv-video-analytics', priority: 0.7 },
   { path: '/resources/best-vms-software', priority: 0.7 },
   { path: '/resources/genetec-alternatives', priority: 0.75 },

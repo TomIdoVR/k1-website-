@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.329 -->
+      <div class="tl-entry changed" id="v2.329">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.329</span><span class="tl-date">2026-08-28</span></div>
+          <h3 class="tl-title">The site was pointing 28 internal links at its worst video page and 8 at its best</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Changed</strong> the video-analytics cluster to a single destination. <code>/resources/what-is-video-analytics</code> (position 27.2, 6 clicks) and <code>/resources/ai-video-analytics</code> now <strong>301</strong> to <code>/resources/cctv-video-analytics</code> — position 11.0, 82 clicks, sessions up 193% and the best-performing page on the site. The cannibalisation mechanism turned out to be internal linking: the two retired pages absorbed <strong>28 of the cluster's 36 internal links</strong> while the winner had 8, which is why <code>cctv-video-analytics</code> sat near position 18 for months and only broke out once external signals outweighed the site's own. All 28 links were rewritten across 26 files, both paths removed from <code>sitemap.ts</code> (234 → 230 URLs), and the self-links and duplicate <code>key={r.href}</code> collisions the merge created were resolved. <code>/resources/best-ai-video-analytics-software</code> was deliberately <em>not</em> folded in — distinct buyer intent, and it gained 6.8 positions on its head query this week.</p>
+          <p><strong>Fixed</strong> two intent misclassifications in <code>seo_weekly_agent.py</code>. <code>_INFORMATIONAL</code> listed <code>significado</code> but not the conjugated <code>significa</code>, so <em>"que significa c4 y c5"</em> scored as a buyer at 2.5. Brand terms had no navigational entry, so <code>grupo kabat</code> and <code>kabatone</code> — already converting at ~27% CTR — competed in the opportunity queue as if unwon. Both now score 0.2; buyer queries verified unchanged.</p>
+        </div>
+      </div>
+
       <!-- v2.328 -->
       <div class="tl-entry added" id="v2.328">
         <div class="version-header">

@@ -468,7 +468,7 @@ export default async function KVideoPage({
                   {es ? 'Guía de referencia →' : 'Reference guide →'}
                 </span>
               </Link>
-              <Link href="/resources/what-is-video-analytics" style={{
+              <Link href="/resources/cctv-video-analytics" style={{
                 display: 'block', padding: '20px 24px', borderRadius: '10px',
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px', fontWeight: 400,

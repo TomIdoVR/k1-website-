@@ -186,7 +186,7 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
-          href: '/resources/what-is-video-analytics',
+          href: '/resources/cctv-video-analytics',
           category: 'Guía de Referencia',
           title: '¿Qué Es la Analítica de Video con IA?',
           excerpt: 'La analítica de video usa IA para detectar intrusiones, LPR, aglomeraciones, disparos y anomalías en cámaras sin monitoreo humano continuo. Edge vs servidor, precisión e integración en centros de mando.',
@@ -1391,7 +1391,7 @@ export default async function ResourcesPage({
           isNew: true,
         },
         {
-          href: '/resources/what-is-video-analytics',
+          href: '/resources/cctv-video-analytics',
           category: 'Reference Guide',
           title: 'What Is Video Analytics?',
           excerpt: 'Video analytics uses AI to detect intrusions, LPR events, crowds, gunshots, and anomalies in surveillance cameras without continuous human monitoring. Edge vs server, accuracy, and command center integration.',

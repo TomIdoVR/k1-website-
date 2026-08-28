@@ -505,7 +505,7 @@ export default async function VsAvigilonPage({
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué es un RTCC' : 'What Is a Real-Time Crime Center' },
                   { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo funcionan los centros C5' : 'How C5 Command Centers Work' },
                   { href: '/resources/what-is-video-management-software', label: es ? 'Guía VMS Software' : 'VMS Software Guide' },
-                  { href: '/resources/what-is-video-analytics', label: es ? 'Qué es Analítica de Video' : 'What Is Video Analytics' },
+                  { href: '/resources/cctv-video-analytics', label: es ? 'Qué es Analítica de Video' : 'What Is Video Analytics' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
                     {link.label}

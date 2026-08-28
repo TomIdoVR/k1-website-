@@ -196,7 +196,7 @@ export default async function RtccSoftwarePage({
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
               <Link href="/resources/what-is-a-real-time-crime-center" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>{es ? '¿Qué es un RTCC?' : 'What Is an RTCC?'}</Link>
               <Link href="/resources/build-rtcc-implementation-guide" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Guía de Implementación' : 'Implementation Guide'}</Link>
-              <Link href="/resources/ai-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica con IA' : 'AI Video Analytics'}</Link>
+              <Link href="/resources/cctv-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica con IA' : 'AI Video Analytics'}</Link>
               <Link href="/k-video" style={{ color: '#94a3b8', textDecoration: 'none' }}>K-Video</Link>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default async function RtccSoftwarePage({
             {es
               ? 'Para profundizar, consulta '
               : 'To go deeper, see '}
-            <Link href="/resources/ai-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
+            <Link href="/resources/cctv-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
             {es ? ', ' : ', '}
             <Link href="/k-dispatch" style={{ color: ACCENT, textDecoration: 'none' }}>K-Dispatch (CAD)</Link>
             {es ? ' y la ' : ' and the '}
@@ -309,7 +309,7 @@ export default async function RtccSoftwarePage({
             {[
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué Es un RTCC? (guía general)' : 'What Is an RTCC? (general guide)' },
               { href: '/resources/build-rtcc-implementation-guide', label: es ? 'Guía de Implementación de un RTCC' : 'RTCC Implementation Guide' },
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
+              { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
               { href: '/k-dispatch', label: es ? 'K-Dispatch — CAD / Despacho 911' : 'K-Dispatch — CAD / 911 Dispatch' },
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },

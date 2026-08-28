@@ -538,7 +538,7 @@ export default async function VideoAnalyticsUseCasesPage({
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
               {[
-                { href: '/resources/what-is-video-analytics', label: es ? '¿Qué es la Analítica de Video?' : 'What Is Video Analytics?' },
+                { href: '/resources/cctv-video-analytics', label: es ? '¿Qué es la Analítica de Video?' : 'What Is Video Analytics?' },
                 { href: '/resources/what-is-video-management-software', label: es ? 'Guía VMS Software' : 'VMS Software Guide' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un Centro de Control en Tiempo Real?' : 'What Is a Real-Time Crime Center?' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? '¿Qué es Software de Conciencia Situacional?' : 'What Is Situational Awareness Software?' },

@@ -57,6 +57,9 @@ _NON_BUYER = [
     # unrelated senses of the same token
     'flyover', 'closure', 'closures', 'traffic update', 'data center', 'data centers',
     'datacenter', 'datacenters',
+    # Brand and parent-company lookups. These already convert at ~27% CTR; ranking them
+    # as "opportunities" just pushes won traffic to the top of the queue (v2.328).
+    'kabatone', 'kabat one', 'kabat', 'cityshob', 'grupo kabat',
 ]
 _BUYER = [
     'software', 'platform', 'plataforma', 'system', 'systems', 'sistema', 'sistemas',
@@ -68,6 +71,9 @@ _BUYER = [
 _INFORMATIONAL = [
     'what is', 'que es', 'qué es', 'how does', 'how do', 'como funciona',
     'cómo funciona', 'diferencia', 'difference', 'meaning', 'significado',
+    # 'significa' is the conjugated form and far more common in real queries than
+    # 'significado' — 'que significa c4 y c5' was scoring as a buyer at 2.5x (v2.328).
+    'significa', 'significan', 'stands for', 'definition', 'definicion', 'definición',
 ]
 # A query that is only these tokens carries no qualifier and cannot be read as a buyer.
 _BARE_TOKENS = {'c5', 'c4', 'cdmx', 'mexico', 'méxico', 'y', 'o', 'de', 'la', 'el', 'un', 'una'}

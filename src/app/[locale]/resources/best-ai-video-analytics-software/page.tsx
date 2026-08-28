@@ -182,8 +182,7 @@ export default async function BestAiVideoAnalyticsPage({
             </p>
             <div style={{ fontSize: '12px', color: '#475569', lineHeight: 2 }}>
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
-              <Link href="/resources/ai-video-analytics" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video con IA' : 'AI Video Analytics'}</Link>
-              <Link href="/resources/what-is-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? '¿Qué es la Analítica de Video?' : 'What Is Video Analytics?'}</Link>
+              <Link href="/resources/cctv-video-analytics" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video con IA' : 'AI Video Analytics'}</Link>
               <Link href="/resources/best-vms-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Mejor Software VMS' : 'Best VMS Software'}</Link>
               <Link href="/k-video" style={{ color: '#94a3b8', textDecoration: 'none' }}>K-Video</Link>
             </div>
@@ -248,7 +247,7 @@ export default async function BestAiVideoAnalyticsPage({
             {es
               ? 'Ese tercer criterio es el que más se pasa por alto. La mayoría de la analítica es una capa de detección; para el detalle de intención y casos de uso, consulta '
               : 'That third criterion is the most overlooked. Most analytics is a detection layer; for the intent and use-case detail, see '}
-            <Link href="/resources/ai-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'Analítica de Video con IA' : 'AI Video Analytics'}</Link>
+            <Link href="/resources/cctv-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'Analítica de Video con IA' : 'AI Video Analytics'}</Link>
             {es ? ' y ' : ' and '}
             <Link href="/resources/video-analytics-use-cases" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases'}</Link>
             {es ? '.' : '.'}
@@ -289,10 +288,8 @@ export default async function BestAiVideoAnalyticsPage({
           <h2 style={{ ...sectionH2, fontSize: '20px' }}>{es ? 'Relacionado' : 'Related'}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
-              { href: '/resources/what-is-video-analytics', label: es ? '¿Qué Es la Analítica de Video?' : 'What Is Video Analytics?' },
-              { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video para CCTV' : 'CCTV Video Analytics' },
+              { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/what-is-lpr-license-plate-recognition', label: es ? '¿Qué Es el LPR?' : 'What Is LPR?' },
               { href: '/resources/best-vms-software', label: es ? 'Mejor Software VMS' : 'Best VMS Software' },
               { href: '/resources/genetec-alternatives', label: es ? 'Alternativas a Genetec' : 'Genetec Alternatives' },

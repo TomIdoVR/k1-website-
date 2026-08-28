@@ -272,7 +272,7 @@ export default async function WhatIsSensorFusionPage({
               { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
               { href: '/resources/what-is-gunshot-detection-software', label: es ? 'Detección de Disparos' : 'Gunshot Detection' },
               { href: '/resources/what-is-lpr-license-plate-recognition', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
-              { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
+              { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
               { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>

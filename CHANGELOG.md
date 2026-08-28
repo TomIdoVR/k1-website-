@@ -1,3 +1,31 @@
+## [v2.329] – 2026-08-28 — The site was pointing 28 internal links at its worst video page and 8 at its best
+
+**Changed**
+- Consolidated the video-analytics cluster. `/resources/what-is-video-analytics` (position 27.2,
+  6 clicks) and `/resources/ai-video-analytics` now 301 to `/resources/cctv-video-analytics`
+  (position 11.0, 82 clicks — the best-performing page on the site, sessions +193% this period).
+  The mechanism was internal: the two retired pages absorbed **28 of the cluster's 36 internal
+  links** while the winner had 8. That is why `cctv-video-analytics` sat at position ~18 for
+  months and only broke out once external signals outweighed the site's own linking.
+- Rewrote all 28 internal links to the winner across 26 files, removed both paths from
+  `sitemap.ts` (234 → 230 URLs), and resolved the self-links and duplicate `key={r.href}`
+  collisions the merge created on `cctv-video-analytics`, `best-ai-video-analytics-software`
+  and `best-vms-software`.
+- **Not** redirected: `/resources/best-ai-video-analytics-software`. Distinct buyer intent, and
+  it gained 6.8 positions on its head query this week. Folding it in would have destroyed a
+  winner to tidy a cluster.
+
+**Fixed**
+- Two intent misclassifications in `seo_weekly_agent.py`. `_INFORMATIONAL` listed `significado`
+  but not the conjugated `significa`, so `que significa c4 y c5` scored as a **buyer at 2.5**.
+  Brand terms had no navigational entry, so `grupo kabat` and `kabatone` — which already convert
+  at ~27% CTR — competed for space in the opportunity queue as if unwon. Both now score 0.2.
+  Buyer queries verified unchanged.
+
+**Note** — a correction to the weekly report's own first draft: it claimed `business_value()`
+hard-codes `c5` at 2.5×. It does not; v2.313 already made it intent-aware and `c5` scores 0.2.
+The claim was written from reading the constant rather than running the classifier.
+
 ## [v2.328] – 2026-08-28 — The GEO citation monitor is on a schedule again, and the number it reports doubled
 
 **Fixed**

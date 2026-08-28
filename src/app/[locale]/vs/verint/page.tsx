@@ -498,7 +498,7 @@ export default async function VsVerintPage({
                 </span>
                 {[
                   { href: '/resources/what-is-a-command-center', label: es ? 'Qué es un Centro de Mando C5' : 'What Is a C5 Command Center' },
-                  { href: '/resources/what-is-video-analytics', label: es ? 'Qué es la Analítica de Video' : 'What Is Video Analytics' },
+                  { href: '/resources/cctv-video-analytics', label: es ? 'Qué es la Analítica de Video' : 'What Is Video Analytics' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>
                     {link.label}

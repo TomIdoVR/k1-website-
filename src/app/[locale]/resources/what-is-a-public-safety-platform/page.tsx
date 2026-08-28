@@ -490,7 +490,7 @@ export default async function WhatIsPublicSafetyPlatformPage({
                 {[
                   { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software de Despacho CAD' : 'What Is CAD Dispatch Software' },
                   { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'What Is Video Management Software' },
-                  { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'What Is Video Analytics' },
+                  { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video' : 'What Is Video Analytics' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un RTCC?' : 'What Is an RTCC' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>

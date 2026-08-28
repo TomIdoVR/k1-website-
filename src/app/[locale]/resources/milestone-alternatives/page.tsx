@@ -291,7 +291,7 @@ export default async function MilestoneAlternativesPage({
               { href: '/resources/genetec-alternatives', label: es ? 'Alternativas a Genetec' : 'Genetec Alternatives' },
               { href: '/resources/best-vms-software', label: es ? 'Mejor Software VMS' : 'Best VMS Software' },
               { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS?' : 'What Is a VMS?' },
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
+              { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
               { href: '/vs/genetec', label: es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec' },
               { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
