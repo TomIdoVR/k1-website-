@@ -68,7 +68,9 @@ const ROUTES = [
   "/resources/what-is-a-real-time-crime-center/",
   "/resources/what-is-a-psap/",
   "/resources/what-is-video-management-software/",
-  "/resources/what-is-video-analytics/",
+  /* /resources/what-is-video-analytics removed v2.332: 301'd into
+     /resources/cctv-video-analytics by the v2.329 consolidation. Left here it
+     would make the sitemap-unreachable fallback audit a redirect. */
   "/resources/what-is-incident-management-software/",
   "/resources/what-is-lpr-license-plate-recognition/",
   "/resources/what-is-sensor-fusion/",
@@ -523,6 +525,12 @@ const OFF_SITEMAP_ROUTES = new Set([
   "/privacy/911-baja-california-sur",
   "/privacy/911-michoacan",
   "/privacy/c5-escudo-pakal",
+  /* Video-analytics cluster consolidation (v2.329, 2026-08-28). Both were 301'd
+     into /resources/cctv-video-analytics and dropped from sitemap.ts; the page.tsx
+     files survive only because next.config redirects shadow them. Verified live:
+     single-hop 308 to the winner, 200, both locales. */
+  "/resources/what-is-video-analytics",
+  "/resources/ai-video-analytics",
 ]);
 
 const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;

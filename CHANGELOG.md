@@ -1,3 +1,22 @@
+## [v2.332] – 2026-08-30 — The consolidation left four routes the audit could not explain
+
+**Fixed**
+- Four `route_not_in_sitemap` warnings created by v2.329 and unseen for two days, because the
+  2026-08-29 fire died before running. The video-analytics consolidation dropped
+  `/resources/what-is-video-analytics` and `/resources/ai-video-analytics` from `sitemap.ts`
+  and 301'd them into `/resources/cctv-video-analytics`, but left the `page.tsx` files in
+  place, shadowed by the redirects. A route present in the repo and absent from the sitemap is
+  exactly what the coverage guard is built to refuse to explain away, so it flagged them —
+  correctly. Verified live before silencing: all four are **single-hop 308s landing on a 200**,
+  EN and ES. Added both paths to `OFF_SITEMAP_ROUTES` in `scripts/seo-audit.mjs` with the
+  reasoning written inline, so the allowlist records *why* an entry is there, not just that it is.
+
+**Changed**
+- The accepted `desc_near_max` info set is now **82, down from 86**. No description was edited:
+  the four URLs that left the sitemap in v2.329 took their four near-max descriptions with them.
+  The remaining 82 measure 161–200 with none over the 200 hard cap, so the standing accept
+  (decided 2026-08-17) holds unchanged.
+
 ## [v2.331] – 2026-08-28 — Two canonicals the v2.314 sweep missed, and an AI-traffic "decline" that wasn't
 
 **Fixed**

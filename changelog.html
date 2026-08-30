@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.332 -->
+      <div class="tl-entry fix" id="v2.332">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.332</span><span class="tl-date">2026-08-30</span></div>
+          <h3 class="tl-title">The consolidation left four routes the audit could not explain</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> four <code>route_not_in_sitemap</code> warnings that v2.329 created and nobody saw, because the fire that would have caught them died. Consolidating the video-analytics cluster dropped <code>/resources/what-is-video-analytics</code> and <code>/resources/ai-video-analytics</code> from <code>sitemap.ts</code> and 301'd them into <code>/resources/cctv-video-analytics</code> — but the <code>page.tsx</code> files stayed, shadowed by the redirects. The audit correctly refused to call a route it found in the repo and not in the sitemap "explained". Verified live before silencing it: all four are single-hop 308s landing on a 200, both locales. Added to <code>OFF_SITEMAP_ROUTES</code> with the reasoning inline, so the allowlist records why rather than just that.</p>
+          <p><strong>Note</strong> the accepted <code>desc_near_max</code> info set moved 86 → 82. Not a change in the descriptions: the four URLs that left the sitemap took their four near-max descriptions with them. Remaining 82 measure 161–200, none over the 200 hard cap.</p>
+        </div>
+      </div>
+
       <!-- v2.331 -->
       <div class="tl-entry fix" id="v2.331">
         <div class="version-header">

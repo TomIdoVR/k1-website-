@@ -1,28 +1,28 @@
 {
-  "runAt": "2026-08-28T07:17:00.095Z",
+  "runAt": "2026-08-30T08:20:05.326Z",
   "baseUrl": "https://staging.kabatone.com",
-  "pagesAudited": 234,
+  "pagesAudited": 230,
   "coverage": {
     "repoRoutes": 239,
     "repoUrls": 478,
-    "crawled": 234,
-    "covered": 234,
-    "pct": 49,
+    "crawled": 230,
+    "covered": 230,
+    "pct": 48.1,
     "excludedNoindexPolicy": 230,
-    "excludedOffSitemap": 14,
+    "excludedOffSitemap": 18,
     "unexplained": []
   },
   "summary": {
     "critical": 0,
     "warnings": 0,
-    "info": 86,
-    "coveragePct": 49,
-    "coverageAudited": "234/478",
+    "info": 82,
+    "coveragePct": 48.1,
+    "coverageAudited": "230/478",
     "coverageUnexplained": 0,
     "pagesWithIssues": 0,
-    "pagesClean": 234,
-    "lastRun": "2026-08-27",
-    "missedDays": 0,
+    "pagesClean": 230,
+    "lastRun": "2026-08-28",
+    "missedDays": 1,
     "newIssues": 0,
     "resolvedIssues": 0
   },
@@ -1262,98 +1262,6 @@
       }
     },
     {
-      "url": "https://staging.kabatone.com/resources/what-is-video-analytics",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (173/160 ideal)"
-        }
-      ],
-      "info": {
-        "title": "AI-Powered Video Analytics: Detection & Best Platforms [2026]",
-        "description": "AI-powered video analytics uses deep learning to detect intrusions, crowds, license plates, and threats in live CCTV. Compare the best AI video analytics platforms for 2026.",
-        "canonical": "https://kabatone.com/resources/what-is-video-analytics",
-        "ogTitle": "AI-Powered Video Analytics: Detection & Best Platforms [2026]",
-        "ogDesc": "AI-powered video analytics uses deep learning to detect intrusions, crowds, license plates, and threats in live CCTV. Compare the best AI video analytics platforms for 2026.",
-        "ogImage": "https://kabatone.com/og-default.png",
-        "h1Count": 1,
-        "jsonLdCount": 5,
-        "imgCount": 1,
-        "imgNoAlt": 0,
-        "redirectHops": 0
-      }
-    },
-    {
-      "url": "https://staging.kabatone.com/es/resources/what-is-video-analytics",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (200/160 ideal)"
-        }
-      ],
-      "info": {
-        "title": "Analítica de Video con IA: Software para CCTV y Vigilancia [2026]",
-        "description": "La analítica de video usa IA para detectar intrusiones, contar multitudes, reconocer placas e identificar amenazas en CCTV en tiempo real. Compare las mejores plataformas de video analytics para 2026.",
-        "canonical": "https://kabatone.com/es/resources/what-is-video-analytics",
-        "ogTitle": "Analítica de Video con IA: Software para CCTV y Vigilancia [2026]",
-        "ogDesc": "La analítica de video usa IA para detectar intrusiones, contar multitudes, reconocer placas e identificar amenazas en CCTV en tiempo real. Compare las mejores plataformas de video analytics para 2026.",
-        "ogImage": "https://kabatone.com/og-default.png",
-        "h1Count": 1,
-        "jsonLdCount": 5,
-        "imgCount": 1,
-        "imgNoAlt": 0,
-        "redirectHops": 0
-      }
-    },
-    {
-      "url": "https://staging.kabatone.com/resources/ai-video-analytics",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (188/160 ideal)"
-        }
-      ],
-      "info": {
-        "title": "AI Video Analytics: How Intelligent Video Analytics Works | KabatOne",
-        "description": "AI video analytics uses neural networks to detect people, vehicles and behaviors in surveillance video — with far fewer false positives than traditional rule-based analytics. How it works.",
-        "canonical": "https://kabatone.com/resources/ai-video-analytics",
-        "ogTitle": "AI Video Analytics: How Intelligent Video Analytics Works | KabatOne",
-        "ogDesc": "AI video analytics uses neural networks to detect people, vehicles and behaviors in surveillance video — with far fewer false positives than traditional rule-based analytics. How it works.",
-        "ogImage": "https://kabatone.com/og-default.png",
-        "h1Count": 1,
-        "jsonLdCount": 5,
-        "imgCount": 1,
-        "imgNoAlt": 0,
-        "redirectHops": 0
-      }
-    },
-    {
-      "url": "https://staging.kabatone.com/es/resources/ai-video-analytics",
-      "issues": [
-        {
-          "severity": "info",
-          "check": "desc_near_max",
-          "msg": "Description near limit (180/160 ideal)"
-        }
-      ],
-      "info": {
-        "title": "Analítica de Video con IA: Cómo Funciona la IA en Video | KabatOne",
-        "description": "La analítica de video con IA usa redes neuronales para detectar personas, vehículos y comportamientos con muchos menos falsos positivos que la analítica tradicional. Cómo funciona.",
-        "canonical": "https://kabatone.com/es/resources/ai-video-analytics",
-        "ogTitle": "Analítica de Video con IA: Cómo Funciona la IA en Video | KabatOne",
-        "ogDesc": "La analítica de video con IA usa redes neuronales para detectar personas, vehículos y comportamientos con muchos menos falsos positivos que la analítica tradicional. Cómo funciona.",
-        "ogImage": "https://kabatone.com/og-default.png",
-        "h1Count": 1,
-        "jsonLdCount": 5,
-        "imgCount": 1,
-        "imgNoAlt": 0,
-        "redirectHops": 0
-      }
-    },
-    {
       "url": "https://staging.kabatone.com/resources/cctv-video-analytics",
       "issues": [
         {
@@ -1641,7 +1549,7 @@
       "info": {
         "title": "Best PSIM Alternatives for Smart Cities 2026 | KabatOne",
         "description": "The best alternatives to a traditional PSIM for smart cities and public safety: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon compared — why cities switch and the best unified platform.",
-        "canonical": "https://kabatone.com/resources/psim-alternatives/",
+        "canonical": "https://kabatone.com/resources/psim-alternatives",
         "ogTitle": "Best PSIM Alternatives for Smart Cities 2026 | KabatOne",
         "ogDesc": "The best alternatives to a traditional PSIM for smart cities and public safety: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon compared — why cities switch and the best unified platform.",
         "ogImage": "https://kabatone.com/og-default.png",
@@ -1664,7 +1572,7 @@
       "info": {
         "title": "Mejores Alternativas a PSIM para Ciudades Inteligentes 2026 | KabatOne",
         "description": "Alternativas al PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL y Hexagon comparadas, y por qué las ciudades migran a una plataforma unificada.",
-        "canonical": "https://kabatone.com/es/resources/psim-alternatives/",
+        "canonical": "https://kabatone.com/es/resources/psim-alternatives",
         "ogTitle": "Mejores Alternativas a PSIM para Ciudades Inteligentes 2026 | KabatOne",
         "ogDesc": "Alternativas al PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL y Hexagon comparadas, y por qué las ciudades migran a una plataforma unificada.",
         "ogImage": "https://kabatone.com/og-default.png",
