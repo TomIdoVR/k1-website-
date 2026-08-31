@@ -490,7 +490,7 @@ export default async function AiInPublicSafetyPage({
                 </span>
                 {[
                   { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
-                  { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
+                  { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>

@@ -348,7 +348,7 @@ export default async function PublicSafetySoftwareMiddleEastPage({
                 { href: '/resources/public-safety-software-united-kingdom', label: es ? 'Software de Seguridad Pública — Reino Unido' : 'Public Safety Software — UK' },
                 { href: '/resources/public-safety-software-australia', label: es ? 'Software de Seguridad Pública — Australia' : 'Public Safety Software — Australia' },
                 { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
-                { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
+                { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
                 { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video' : 'Video Management Software' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },

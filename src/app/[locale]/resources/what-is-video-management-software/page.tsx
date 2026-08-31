@@ -466,7 +466,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Plataformas' : 'Platforms' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: 'RTCC' },
                   { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública' : 'AI in Public Safety' },
-                  { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
+                  { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video' : 'Video Analytics' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}
@@ -508,7 +508,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
-                { href: '/resources/what-is-video-analytics', en: 'What Is Video Analytics?', es: '¿Qué es la Analítica de Video?' },
+                { href: '/resources/cctv-video-analytics', en: 'What Is Video Analytics?', es: '¿Qué es la Analítica de Video?' },
                 { href: '/resources/video-analytics-use-cases', en: 'Video Analytics Use Cases for Command Centers', es: 'Casos de Uso de Analítica de Video para Centros de Mando' },
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },

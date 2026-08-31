@@ -126,6 +126,17 @@ const nextConfig: NextConfig = {
         destination: '/es/legal/911-michoacan',
         permanent: true,
       },
+
+      // Video-analytics cluster consolidation. /what-is-video-analytics (pos 27.2, 6 clicks)
+      // and /ai-video-analytics were cannibalising /cctv-video-analytics (pos 11.0, 82 clicks,
+      // the best-performing page on the site) while absorbing 28 of the cluster's 36 internal
+      // links against the winner's 8. /resources/best-ai-video-analytics-software is
+      // deliberately NOT redirected — distinct buyer intent, and it gained 6.8 positions on
+      // its head query.
+      { source: '/resources/what-is-video-analytics',    destination: '/resources/cctv-video-analytics',    permanent: true },
+      { source: '/es/resources/what-is-video-analytics', destination: '/es/resources/cctv-video-analytics', permanent: true },
+      { source: '/resources/ai-video-analytics',         destination: '/resources/cctv-video-analytics',    permanent: true },
+      { source: '/es/resources/ai-video-analytics',      destination: '/es/resources/cctv-video-analytics', permanent: true },
     ]
   },
   images: {

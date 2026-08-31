@@ -185,8 +185,7 @@ export default async function BestVmsSoftwarePage({
             <div style={{ fontSize: '12px', color: '#475569', lineHeight: 2 }}>
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
               <Link href="/resources/what-is-video-management-software" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>{es ? '¿Qué es un VMS?' : 'What Is a VMS?'}</Link>
-              <Link href="/resources/what-is-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video' : 'Video Analytics'}</Link>
-              <Link href="/resources/ai-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica con IA' : 'AI Video Analytics'}</Link>
+              <Link href="/resources/cctv-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video' : 'Video Analytics'}</Link>
               <Link href="/k-video" style={{ color: '#94a3b8', textDecoration: 'none' }}>K-Video</Link>
             </div>
           </div>
@@ -260,7 +259,7 @@ export default async function BestVmsSoftwarePage({
             {es
               ? 'Para ver esa capa de analítica en detalle, consulta '
               : 'To see that analytics layer in detail, see '}
-            <Link href="/resources/ai-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
+            <Link href="/resources/cctv-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
             {es ? ' y ' : ' and '}
             <Link href="/vs/vms" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'KabatOne vs VMS tradicional' : 'KabatOne vs traditional VMS'}</Link>
             {es ? '.' : '.'}
@@ -286,7 +285,6 @@ export default async function BestVmsSoftwarePage({
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
               { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS? (guía general)' : 'What Is a VMS? (general guide)' },
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
               { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video CCTV' : 'CCTV Video Analytics' },
               { href: '/vs/vms', label: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS' },
               { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },

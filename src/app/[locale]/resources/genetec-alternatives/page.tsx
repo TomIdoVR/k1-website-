@@ -290,7 +290,7 @@ export default async function GenetecAlternativesPage({
               { href: '/vs/genetec', label: es ? 'KabatOne vs Genetec (comparación directa)' : 'KabatOne vs Genetec (head-to-head)' },
               { href: '/resources/best-vms-software', label: es ? 'Mejor Software VMS' : 'Best VMS Software' },
               { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS?' : 'What Is a VMS?' },
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
+              { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
               { href: '/vs/milestone', label: es ? 'KabatOne vs Milestone' : 'KabatOne vs Milestone' },
               { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
               { href: '/vs/verkada', label: es ? 'KabatOne vs Verkada' : 'KabatOne vs Verkada' },

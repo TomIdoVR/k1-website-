@@ -267,7 +267,7 @@ export const metadata = {
   psimAlternatives: {
     title: "Best PSIM Alternatives for Smart Cities 2026 | KabatOne",
     description: "The best alternatives to a traditional PSIM for smart cities and public safety: KabatOne, Genetec, CNL IPSecurityCenter, Hexagon compared — why cities switch and the best unified platform.",
-    canonical: "https://kabatone.com/resources/psim-alternatives/",
+    canonical: "https://kabatone.com/resources/psim-alternatives",
     og: {
       title: "Best PSIM Alternatives for Smart Cities (2026)",
       description: "Compare the real PSIM alternatives — KabatOne, Genetec, CNL IPSecurityCenter, Hexagon, Advancis, Motorola — and when a unified platform beats a correlation layer.",

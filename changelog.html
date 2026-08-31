@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.376 -->
+      <div class="tl-entry changed" id="v2.376">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.376</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">The site pointed 28 internal links at its worst video page and 8 at its best</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Changed</strong> the video-analytics cluster to a single destination. <code>/resources/what-is-video-analytics</code> (position 27.2, 6 clicks) and <code>/resources/ai-video-analytics</code> now <strong>301</strong> to <code>/resources/cctv-video-analytics</code> — position 11.0, 82 clicks, sessions up 193%, the best-performing page on the site. The cannibalisation mechanism was internal linking: the retired pages held <strong>28 of the cluster's 36 internal links</strong> against the winner's 8, which is why <code>cctv-video-analytics</code> sat near position 18 for months. Links were rewritten across 24 files, both paths removed from the sitemap, and the self-links and duplicate <code>key</code> collisions the merge created were resolved. <code>/resources/best-ai-video-analytics-software</code> was deliberately kept out — distinct buyer intent, and it gained 6.8 positions on its head query.</p>
+          <p><strong>Fixed</strong> two <code>psim-alternatives</code> canonicals (EN + ES) that pointed at a URL returning 308 — the stragglers the v2.314 unslashing sweep missed.</p>
+        </div>
+      </div>
+
       <!-- v2.375 -->
       <div class="tl-entry fixed" id="v2.375">
         <div class="tl-meta"><span class="tl-ver">v2.375</span><span class="tl-date">2026-08-21</span></div>
