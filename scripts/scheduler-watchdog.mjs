@@ -57,6 +57,8 @@
  *   node scripts/scheduler-watchdog.mjs [--runlog <path>] [--max-age-hours 36]
  *                                       [--now <ISO>] [--json] [--quiet]
  *                                       [--no-notify] [--no-ping] [--force-alert]
+ *                                       [--dry-run]  (evaluate only: no state,
+ *                                                     no log, no banner, no ping)
  *
  * Exit codes:
  *   0  OK      — coverage is fresh.
@@ -132,7 +134,16 @@ function readState() {
   }
 }
 
+/* --dry-run exists because --no-notify was not enough. Testing a STALE verdict
+   with --now writes that synthetic future timestamp into lastAlertAt, and the
+   12h re-alert cooldown then suppresses REAL alerts until the fake time passes
+   — a test silently disarms the watchdog for days. --no-notify only stops the
+   banner; the state write is what does the damage. This happened twice during
+   KAB-807 verification before the flag existed. */
+const DRY_RUN = hasFlag("--dry-run");
+
 function writeState(state) {
+  if (DRY_RUN) return;
   try {
     writeFileSync(STATE_FILE, JSON.stringify(state, null, 2) + "\n");
   } catch (e) {
@@ -144,6 +155,7 @@ const out = [];
 const say = line => out.push(line);
 
 function logLine(line) {
+  if (DRY_RUN) return;
   try {
     appendFileSync(LOG_FILE, `${NOW.toISOString()} ${line}\n`);
   } catch {
@@ -153,6 +165,7 @@ function logLine(line) {
 
 /** macOS notification. Best-effort: no GUI session (SSH, boot) means no banner. */
 function notify(title, message) {
+  if (DRY_RUN) return "skipped (--dry-run)";
   if (hasFlag("--no-notify")) return "skipped (--no-notify)";
   try {
     const esc = s => s.replace(/["\\]/g, "\\$&");
@@ -176,6 +189,7 @@ function notify(title, message) {
  * immediate rather than waiting out the service's own grace period.
  */
 async function deadManPing(healthy) {
+  if (DRY_RUN) return { status: "skipped (--dry-run)" };
   if (hasFlag("--no-ping")) return { status: "skipped (--no-ping)" };
   if (!existsSync(PING_URL_FILE)) {
     return {
@@ -218,7 +232,15 @@ if (!last) {
     detail = `last audit ${last} — ${ageHours.toFixed(1)}h ago (~${missed} day${missed === 1 ? "" : "s"} uncovered), threshold ${MAX_AGE_HOURS}h`;
   } else {
     verdict = "OK";
-    detail = `last audit ${last} — ${ageHours.toFixed(1)}h ago, under the ${MAX_AGE_HOURS}h threshold`;
+    /* ageHours is measured against the day's NOMINAL_RUN_HOUR_UTC anchor, not
+       against when the audit actually landed, so a run that finished earlier
+       than nominal reads as negative — "-3.9h ago" is nonsense to a reader
+       even though the threshold comparison above is correct. Report the
+       relationship instead of the signed number; the anchor stays untouched
+       so alert timing does not shift. */
+    detail = ageHours < 0
+      ? `last audit ${last} — today, logged ${(-ageHours).toFixed(1)}h ahead of the ${NOMINAL_RUN_HOUR_UTC}:00 UTC nominal hour; well under the ${MAX_AGE_HOURS}h threshold`
+      : `last audit ${last} — ${ageHours.toFixed(1)}h ago, under the ${MAX_AGE_HOURS}h threshold`;
   }
 }
 

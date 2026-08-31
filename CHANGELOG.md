@@ -1,3 +1,15 @@
+## [v2.333] – 2026-08-31 — Testing the watchdog disarmed the watchdog
+
+**Fixed**
+- **`scripts/scheduler-watchdog.mjs` gained `--dry-run`, because `--no-notify` was not enough.** Verifying STALE detection means passing a synthetic future `--now`. That timestamp was then written to `lastAlertAt`, and the 12h re-alert cooldown compares against it — so a test silently suppressed *real* alerts until the fake time passed, roughly 3.5 days each time. `--no-notify` only stops the banner; the state write is what does the damage. This happened twice during KAB-807 verification before the flag existed, and both times the state had to be hand-restored. `--dry-run` now short-circuits `writeState()`, `logLine()`, `notify()` and `deadManPing()`, so an evaluation leaves no trace.
+- **The age display no longer prints a negative number.** `ageHours` is measured against the day's `NOMINAL_RUN_HOUR_UTC` (12:00) anchor rather than against when the audit actually landed, so a run finishing before noon read as `-3.9h ago` — nonsense to a reader, even though the threshold comparison was always correct. It now reports the relationship ("today, logged 3.3h ahead of the 12:00 UTC nominal hour"). **The anchor is deliberately untouched**, so alert timing does not shift.
+
+**Notes**
+- Verified all three age branches: before-nominal (was negative), after-nominal (positive, unchanged), and STALE at 72h (verdict, arithmetic and exit code unchanged).
+- Verified `--dry-run` against a 120h synthetic gap: correct STALE verdict printed, `notification: skipped (--dry-run)`, `dead-man ping: skipped (--dry-run)`, and both the state file and alert log byte-identical before and after.
+- The synthetic STALE line an earlier test wrote into `~/.claude/tasks/scheduler-watchdog.log` was removed and the poisoned state restored to `lastVerdict: OK` with no `lastAlertAt`.
+- **Leg 2 is still INACTIVE.** `~/.config/claude-seo/healthcheck-url` does not exist, so the only leg that can fire while the Mac is hibernating remains unarmed. Nothing in this release changes that.
+
 ## [v2.332] – 2026-08-30 — The consolidation left four routes the audit could not explain
 
 **Fixed**
