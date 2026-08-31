@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.339 -->
+      <div class="tl-entry added" id="v2.339">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.339</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">Documenting the branch topology that nearly caused a bad merge</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> <code>SEO/BRANCHING.md</code>: how work actually reaches production. <code>main</code> and <code>nextjs</code> have diverged — <code>main</code> carries 165+ commits that never went through <code>nextjs</code> and sits at a higher version, with 30+ source files modified on both sides. Shipping goes through a PR branched from <code>main</code>, built in a worktree, because switching the primary tree collides with untracked files that are tracked on <code>main</code>.</p>
+          <p><strong>Changed</strong> <code>SEO-PROGRAM-STATE.md</code>, which opened with a red banner saying the Anthropic key was dry and the GEO monitor could not complete a run — contradicted since v2.328, on the file whose first line is "read this first". It now points at the diff script and the carry-over ledger, and lists three resolved items that kept being re-raised, including a board decision that had been approved on 2026-07-27.</p>
+          <p><strong>Shipped</strong> to production via PR #17: the video-analytics consolidation and two canonical fixes. Verified live — both retired URLs 301 in one hop, the winner serves 200, the deliberately-excluded buyer page untouched, sitemap at 230 URLs.</p>
+        </div>
+      </div>
+
       <!-- v2.338 -->
       <div class="tl-entry fix" id="v2.338b">
         <div class="version-header">

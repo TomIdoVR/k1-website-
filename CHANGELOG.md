@@ -1,3 +1,27 @@
+## [v2.339] – 2026-08-31 — Documenting the branch topology that nearly caused a bad merge
+
+**Added**
+- `SEO/BRANCHING.md` — how work actually reaches production. `main` and `nextjs` have diverged:
+  `main` carries 165+ commits that never went through `nextjs` and sits at a *higher* version,
+  with 30+ source files modified on both sides. Shipping goes through a **PR branched from
+  `main`**, built in a `git worktree` (switching the primary tree collides with untracked files
+  that are tracked on `main`). Records why the one-line `rev-list` check misleads.
+
+**Changed**
+- `SEO/SEO-PROGRAM-STATE.md` de-staled. It opened with a 🔴 banner saying the Anthropic key was
+  dry and `track_geo.py` could not finish a run — contradicted since v2.328 — on the file whose
+  first line is "read this first". Now points at `seo_diff.py` and the carry-over ledger as the
+  entry points, and lists three resolved-do-not-re-raise items: the key, the GSC reauth block,
+  and the KAB-1721 "pending decision" that was approved on 2026-07-27.
+- `SEO/carry-over.md`: VID-1, SHIP-1 and CANON-2 closed against PR #17, with live verification.
+
+**Shipped to production (PR #17, v2.376)**
+- Video-analytics consolidation and the two `psim-alternatives` canonicals. Verified live:
+  both retired URLs 301 in one hop to `/resources/cctv-video-analytics`, the winner serves 200,
+  `best-ai-video-analytics-software` correctly untouched, sitemap at 230 URLs with no retired
+  paths, `psim-alternatives` canonical unslashed.
+
+## [v2.338] – 2026-08-31 — "Production is 13 commits behind" was half a question
 ## [v2.338b] – 2026-08-31 — "Production is 13 commits behind" was half a question
 
 **Fixed**
