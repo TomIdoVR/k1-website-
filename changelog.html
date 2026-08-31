@@ -357,6 +357,14 @@
     <div class="timeline">
 
       <!-- v2.338 -->
+      <div class="tl-entry fix" id="v2.338b">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.338b</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">"Production is 13 commits behind" was half a question</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> a one-directional branch check. <code>git rev-list --count origin/main..origin/nextjs</code> answers how much staging has that production doesn't — it says nothing about whether production carries work staging lacks. It reported "production is 13 commits behind" while <code>main</code> was simultaneously <strong>163 commits ahead</strong> on a separate line at a higher version (production v2.375 vs staging v2.337); that range reached production as PRs #12–#16 and never went through <code>nextjs</code>.</p>
+          <p>Acting on that number would have merged an older branch into a newer one across 8 source files modified on both sides, including <code>next.config.ts</code> and <code>metadata.ts</code>. It was caught by a merge-base check at the last step — not by the analysis that recommended it. Shipping now reports both directions, names each branch's version, detects divergence, lists the overlapping files, and refuses to call a diverged branch "behind".</p>
       <div class="tl-entry added" id="v2.338">
         <div class="version-header">
           <div class="tl-meta"><span class="tl-ver">v2.338</span><span class="tl-date">2026-08-31</span></div>

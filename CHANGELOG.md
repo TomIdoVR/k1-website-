@@ -1,3 +1,35 @@
+## [v2.338b] – 2026-08-31 — "Production is 13 commits behind" was half a question
+
+**Fixed**
+- `seo_diff.py` counted branch divergence in one direction only. `git rev-list --count
+  origin/main..origin/nextjs` answers *how much staging has that production doesn't* — it says
+  nothing about whether production carries work staging lacks. It reported **"production is 13
+  commits behind"** while `main` was simultaneously **163 commits ahead** on a separate line at a
+  *higher* version (production v2.375 vs staging v2.337): v2.338–v2.375 reached production as
+  PRs #12–#16 and never went through `nextjs`.
+
+  Acting on that number would have merged an older branch into a newer one across **8 source
+  files modified on both sides** — `next.config.ts`, `src/content/en/metadata.ts`, `k-video`,
+  `what-is-video-management-software` among them. It was caught by a merge-base check at the
+  last step, not by the analysis that recommended it, and the same one-way check had been
+  repeated all session and shipped in v2.334.
+
+  Shipping now reports both directions, names the version on each branch, detects divergence via
+  merge-base, lists the overlapping files, and refuses to describe a diverged branch as "behind".
+
+**Changed**
+- `kabatone-seo-director` gains **G12 — "behind" is a two-directional question**, and
+  `SEO/carry-over.md`'s SHIP-1 entry is corrected. The underlying need is real — production's
+  `next.config.ts` has no reference to the v2.329 redirects — but the route is a PR branched
+  from `main` with the SEO changes re-applied, not a merge of `nextjs`.
+
+> **Numbering note:** two changes shipped as v2.338 on 2026-08-31 — this one and the weekly
+> SEO brief below — because a scheduled agent and an interactive session picked the next
+> version from the same CHANGELOG within minutes of each other. The brief's number is already
+> pushed, so this entry is disambiguated as **v2.338b** rather than rewriting published history.
+> Its commit message still reads `(v2.338)`.
+
+
 ## [v2.338] – 2026-08-31 — Weekly SEO brief (2026-08-31)
 
 **Added**

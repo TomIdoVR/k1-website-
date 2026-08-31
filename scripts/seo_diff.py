@@ -197,10 +197,42 @@ def _sh(cmd):
 
 
 def shipping():
+    """Counts BOTH directions on purpose.
+
+    `git rev-list --count origin/main..origin/nextjs` alone says "production is N commits
+    behind" and reads like staleness. It is only half the question: main can carry work
+    that never went through nextjs (PRs merged straight to production), in which case the
+    branches have diverged and a merge is a real merge, not a promotion.
+
+    This was not hypothetical -- the one-directional check reported "production is 13
+    commits behind" while main was simultaneously 163 commits ahead on a separate line at
+    a HIGHER version, with 8 files modified on both sides. Acting on the one-way number
+    would have merged an older branch into a newer one across the live site."""
     _sh(['git', 'fetch', 'origin', '--quiet'])
+    ahead = int(_sh(['git', 'rev-list', '--count', 'origin/main..origin/nextjs']) or 0)
+    behind = int(_sh(['git', 'rev-list', '--count', 'origin/nextjs..origin/main']) or 0)
+    base = _sh(['git', 'merge-base', 'origin/main', 'origin/nextjs'])
+    main_sha = _sh(['git', 'rev-parse', 'origin/main'])
+    overlap = []
+    if behind:
+        mine = set(filter(None, _sh(['git', 'diff', '--name-only',
+                                     'origin/main...origin/nextjs']).split('\n')))
+        theirs = set(filter(None, _sh(['git', 'diff', '--name-only',
+                                       'origin/nextjs...origin/main']).split('\n')))
+        overlap = sorted(f for f in (mine & theirs)
+                         if f.startswith('src/') or f.endswith('.ts') or f.endswith('.tsx'))
+    def _ver(ref):
+        out = _sh(['git', 'show', f'{ref}:CHANGELOG.md'])
+        m = re.match(r'##\s*\[([^\]]+)\]', out.split('\n')[0]) if out else None
+        return m.group(1) if m else '?'
     return {
-        'staging_ahead_of_prod': int(_sh(['git', 'rev-list', '--count',
-                                          'origin/main..origin/nextjs']) or 0),
+        'staging_ahead_of_prod': ahead,
+        'prod_ahead_of_staging': behind,
+        'diverged': bool(behind) and base != main_sha,
+        'fast_forward_possible': base == main_sha,
+        'overlapping_files': overlap,
+        'version_main': _ver('origin/main'),
+        'version_nextjs': _ver('origin/nextjs'),
         'local_unpushed': int(_sh(['git', 'rev-list', '--count',
                                    'origin/nextjs..nextjs']) or 0),
         'last_prod_commit': _sh(['git', 'log', 'origin/main', '-1',
@@ -381,9 +413,26 @@ def render(d):
 
     s = d['shipping']
     a("\n## Shipping\n")
-    a(f"- Staging ahead of production: **{s['staging_ahead_of_prod']}** commits")
+    a(f"- `nextjs` ahead of `main`: **{s['staging_ahead_of_prod']}** commits "
+      f"(staging {s['version_nextjs']})")
+    a(f"- `main` ahead of `nextjs`: **{s['prod_ahead_of_staging']}** commits "
+      f"(production {s['version_main']})")
     a(f"- Local commits never pushed: **{s['local_unpushed']}**")
     a(f"- Last production commit: `{s['last_prod_commit']}`")
+    if s['diverged']:
+        a(f"\n> 🔴 **The branches have DIVERGED — this is not a promotion.** `main` carries "
+          f"{s['prod_ahead_of_staging']} commits that never went through `nextjs`, so merging "
+          f"`nextjs` into `main` merges an older line into a newer one, not newer into older. "
+          f"Do not describe production as simply 'behind'.")
+        if s['overlapping_files']:
+            a(f">\n> **{len(s['overlapping_files'])} source files changed on BOTH sides** — real "
+              f"regression risk on the live site:\n>\n"
+              + "\n".join(f"> - `{f}`" for f in s['overlapping_files'][:10]))
+        a(">\n> Route SEO changes through a PR branched from `main` and resolved against its "
+          "newer versions, rather than a direct merge.")
+    elif s['staging_ahead_of_prod']:
+        a(f"\n> `main` is an ancestor of `nextjs` — a clean fast-forward. "
+          f"{s['staging_ahead_of_prod']} commits are built but not live.")
     if s['local_unpushed']:
         a(f"\n> **{s['local_unpushed']} commits exist only on this machine.** Unpushed work is "
           f"invisible in every metric and reads identically to work never done.")
