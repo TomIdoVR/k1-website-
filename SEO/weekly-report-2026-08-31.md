@@ -122,16 +122,55 @@ cluster is the only one whose positions are improving. The playbook is proven on
 
 ---
 
-## 4. GEO
+## 4. Is the trend declining? — no, but it has **stalled**, and that is worse than it looks
 
-| Run | Cited | Rate |
+Tested over 18 weeks, not the 3-day window:
+
+| | W17 | W23 | W27 | W30 | W33 | W35 |
+|---|---|---|---|---|---|---|
+| Clicks | 2 | 89 | 117 | 124 | 145 | **128** |
+| Impressions | 341 | 11,364 | 22,259 | **29,478** | 29,006 | 27,107 |
+| Position | 22.8 | 13.6 | 12.3 | 13.0 | 12.2 | **14.1** |
+| CTR | 0.59% | 0.78% | 0.53% | 0.42% | 0.50% | **0.47%** |
+
+**Clicks are not declining** — last 4 complete weeks average 126 vs 116 prior, **+7.7%**; GA4
+organic **+11.5%**. But look at the other three rows:
+
+- **Impressions plateaued at ~28K since W30** — six weeks flat, after growing 86× in the
+  thirteen before it. The publishing engine that drove that growth has stopped producing.
+- **Position stuck at 13–14 since W23** — twelve weeks, no improvement.
+- **CTR never improved.** 0.4–0.6% for three months. At position 13 the curve predicts 2.5%;
+  we earn 0.5%. **Five times below curve.**
+
+All three levers flat at once means the current playbook has run out. Clicks still creep up on
+base effects alone. **The growth is over unless CTR moves** — and more pages cannot help, because
+more impressions at 0.5% is nothing. That is the aggressive case, and it is a conversion problem,
+not a volume one.
+
+---
+
+## 5. GEO — the zero-click cause, confirmed directly for the first time
+
+**The 83% was measured on queries we already win.** Not one of the 12 tracked queries was in
+the zero-click block. Retargeted the monitor to 25 queries in three blocks and re-ran:
+
+| Block | Cited | Rate |
 |---|---|---|
-| 2026-07-07 | 5/12 | 41.7% |
-| 2026-08-28 | 10/12 | **83.3%** |
-| 2026-08-31 | 10/12 | **83.3%** |
+| Baseline 12 (trend continuity) | 10/12 | 83% |
+| **Zero-click page-1 queries** | **3/7** | **43%** |
+| ES / PT (new) | 4/6 | 67% |
+| **Overall** | **17/25** | **68%** |
 
-Held at 83.3% across two runs — the first stability check the programme has had. Partial runs
-(08-04, 08-12) excluded.
+**`best fire computer aided dispatch software` — ABSENT from the AI answer.** That is the site's
+#1 opportunity: 749 impressions, position 6.4, **zero clicks for four consecutive weeks**. It
+ranks on page one and earns nothing because the Overview answers without us.
+
+AI-Overview absorption has been the working theory since 2026-07-20. This is the first time it
+has been tested against the queries actually bleeding, and it holds. Also absent:
+`911 dispatch software`, `AI VMS software`, `analytic CCTV cameras`.
+
+ES/PT is healthier than feared (4/6) — but `mejor software de gestión de video para ciudades`
+and its Portuguese twin are both absent, in the ICP market.
 
 ⚠️ **Instrument scope (G10):** `track_geo.py` asks **Claude with web search** and counts "in
 retrieved sources" the same as "named in the answer". **It does not test ChatGPT — which sends

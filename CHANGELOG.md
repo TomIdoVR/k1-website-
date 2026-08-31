@@ -132,7 +132,6 @@
   `best-ai-video-analytics-software` correctly untouched, sitemap at 230 URLs with no retired
   paths, `psim-alternatives` canonical unslashed.
 
-## [v2.338] – 2026-08-31 — "Production is 13 commits behind" was half a question
 ## [v2.338b] – 2026-08-31 — "Production is 13 commits behind" was half a question
 
 **Fixed**
