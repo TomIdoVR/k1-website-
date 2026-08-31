@@ -389,7 +389,6 @@ export default async function PublicSafetySoftwareUSAPage({
                 { href: '/resources/911-call-center-software-guide', label: es ? 'Software Centro 911' : '911 Call Center Software' },
                 { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness' },
-                { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
               ].map((r) => (
                 <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>
                   {r.label}

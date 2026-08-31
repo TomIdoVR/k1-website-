@@ -208,7 +208,7 @@ export default async function Ng911SoftwarePage({
               <Link href="/k-safety" style={{ color: ACCENT, textDecoration: 'none' }}>K-Safety</Link>
               <br />
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Software'}</Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Software'}</Link>
               <Link href="/resources/best-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Mejor CAD' : 'Best CAD'}</Link>
               <Link href="/resources/911-call-center-software-guide" style={{ color: '#94a3b8', textDecoration: 'none' }}>{es ? 'Centro de Llamadas 911' : '911 Call Center Guide'}</Link>
             </div>
@@ -339,8 +339,7 @@ export default async function Ng911SoftwarePage({
           <h2 style={{ ...sectionH2, fontSize: '20px' }}>{es ? 'Relacionado' : 'Related'}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
-              { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
-              { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
+              { href: '/resources/best-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
               { href: '/resources/911-call-center-software-guide', label: es ? 'Software para Centro de Llamadas 911' : '911 Call Center Software' },
               { href: '/resources/what-is-emergency-dispatch-software', label: es ? 'Software de Despacho de Emergencias' : 'Emergency Dispatch Software' },
               { href: '/vs/carbyne', label: es ? 'KabatOne vs Carbyne' : 'KabatOne vs Carbyne' },

@@ -1,3 +1,31 @@
+## [v2.342] – 2026-08-31 — The GEO rate was 83% because we only tested queries we already win
+
+**Changed**
+- Retargeted `SEO/geo/geo-queries.txt` from 12 queries to 25, in three labelled blocks: the
+  original 12 (trend continuity), **the zero-click page-1 block**, and **ES/PT** (carry-over
+  GEO-1). The split is the point — the old set measured queries we already rank for, which is
+  how the citation rate reached 83% while 36 page-1 queries earned zero clicks. Not one tracked
+  query was in the zero-click block.
+
+**Found — the zero-click block's cause, confirmed directly for the first time**
+- Real citation rate is **68% (17/25)**, not 83%.
+- **`best fire computer aided dispatch software` — we are ABSENT from the AI answer.** That is
+  the site's #1 opportunity: 749 impressions, position 6.4, **zero clicks for four straight
+  weeks**. It ranks on page 1 and earns nothing because the AI Overview answers without us.
+  The July diagnosis (AI Overview absorption) has been the working theory since 2026-07-20;
+  this is the first time it has been tested against the specific queries that are bleeding.
+- 4 of 7 zero-click queries: absent. ES/PT: 4 of 6 cited — the LATAM side is healthier than
+  feared, but `mejor software de gestión de video para ciudades` and its Portuguese equivalent
+  are both absent.
+
+**Fixed**
+- CAD-1: repointed **9 buyer-intent anchors** from `/resources/what-is-cad-dispatch-software`
+  (rank ~30) to `/resources/best-cad-dispatch-software` (rank ~6.5) — anchors reading "Best CAD"
+  and "CAD Software" pointed at the definitional page. The other 38 anchors say "What Is CAD
+  Dispatch Software" and correctly stay: **the raw 60-vs-23 link count overstated the problem,
+  because it counted links without reading them.** Also deduplicated the three `key={r.href}`
+  collisions the repoint created.
+
 ## [v2.341] – 2026-08-31 — The Slack brief's edge was seven computed fields, so they are computed now
 
 **Added**

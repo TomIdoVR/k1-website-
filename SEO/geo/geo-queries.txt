@@ -1,5 +1,19 @@
-# GEO target queries — buyer questions KabatOne's pages answer.
-# One per line. track_geo.py checks whether AI answer engines cite KabatOne for these.
+# GEO monitor — queries tested for AI-answer citation.
+#
+# Three blocks, and the split matters. The original 12 measured queries we already
+# rank for, which is why the rate reached 83% while 36 page-1 queries earned zero
+# clicks: we were measuring where we win, not where we bleed.
+#
+# Block A keeps the original 12 so the trend line stays comparable.
+# Block B is the zero-click page-1 block — buyer-intent queries ranking 5–10 and
+#   returning nothing, the AI-Overview-absorption cases. This is the hypothesis
+#   under test: if we are uncited on these, GEO is the lever, not rankings.
+# Block C is ES/PT, because 12 English queries cannot measure a LATAM market whose
+#   /es pages pull AI traffic at 300–1,350s dwell (carry-over GEO-1).
+#
+# ~25 queries at roughly $0.02 each ≈ $0.50/run, weekly.
+
+# ── A. Baseline (unchanged — protects the trend line) ──────────────────────────
 What is the best CAD dispatch software for 911 centers?
 What is the best VMS software for public safety?
 What is a unified public safety platform?
@@ -12,3 +26,20 @@ Genetec alternatives for public safety
 real-time crime center (RTCC) software vendors
 computer aided dispatch software for multi-agency 911 centers
 public safety software for Mexico and Latin America
+
+# ── B. The zero-click block (new — where the clicks are actually being lost) ───
+best fire computer aided dispatch software
+911 dispatch software for emergency call centers
+AI CCTV analytics software
+AI VMS software for security operations
+audio video management system for public safety
+best AI video analytics software
+analytic CCTV cameras for city surveillance
+
+# ── C. Spanish / Portuguese (GEO-1 — the ICP we cannot currently see) ──────────
+¿Cuál es el mejor software de despacho 911?
+¿Qué es un centro de mando y control C5?
+software de seguridad pública para municipios
+mejor software de gestión de video para ciudades
+melhor software de despacho para segurança pública
+software de videomonitoramento para cidades

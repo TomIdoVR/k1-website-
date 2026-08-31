@@ -220,7 +220,7 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
               <br />
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
               <Link href="/resources/what-is-a-psap" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?'}</Link>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Software'}</Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Software'}</Link>
               <Link href="/resources/what-is-a-command-center" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Centro de Mando' : 'Command Center'}</Link>
               <Link href="/resources/what-is-emergency-management-software" style={{ color: '#94a3b8', textDecoration: 'none' }}>{es ? 'Gestión de Emergencias' : 'Emergency Management'}</Link>
             </div>

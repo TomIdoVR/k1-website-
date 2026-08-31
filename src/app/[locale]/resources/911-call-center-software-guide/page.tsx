@@ -353,7 +353,7 @@ export default async function CallCenterSoftwareGuidePage({
               <Link href="/resources/what-is-emergency-dispatch-software" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>
                 {es ? 'Software de Despacho' : 'Emergency Dispatch Software'}
               </Link>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>
+              <Link href="/resources/best-cad-dispatch-software" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>
                 {es ? 'Software CAD' : 'CAD Software'}
               </Link>
               <Link href="/resources/what-is-a-psap" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>

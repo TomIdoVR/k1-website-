@@ -203,7 +203,7 @@ export default async function WhatIsIncidentManagementSoftwarePage({
               <Link href="/k-dispatch" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>K-Dispatch</Link>
               <br />
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Dispatch'}</Link>
+              <Link href="/resources/best-cad-dispatch-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Software CAD' : 'CAD Dispatch'}</Link>
               <Link href="/resources/what-is-situational-awareness-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Conciencia Situacional' : 'Situational Awareness'}</Link>
               <Link href="/resources/what-is-a-command-center" style={{ color: '#94a3b8', textDecoration: 'none' }}>{es ? 'Centro de Mando' : 'Command Center'}</Link>
             </div>
@@ -331,7 +331,7 @@ export default async function WhatIsIncidentManagementSoftwarePage({
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[
-              { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
+              { href: '/resources/best-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
               { href: '/resources/what-is-situational-awareness-software', label: es ? 'Conciencia Situacional' : 'Situational Awareness Software' },
               { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
               { href: '/resources/what-is-a-command-center', label: es ? 'Centro de Mando' : 'Command Center' },

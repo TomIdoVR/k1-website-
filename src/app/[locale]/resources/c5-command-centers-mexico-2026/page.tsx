@@ -702,7 +702,7 @@ export default async function C5CommandCentersMexico2026Page({
                   { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué Es un RTCC' : 'What Is an RTCC' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
-                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
                   { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'Video Management Software' },
                   { href: '/resources/public-safety-software-municipalities-mexico', label: es ? 'Seguridad Pública en México' : 'Public Safety Software Mexico' },
                 ].map((link) => (
