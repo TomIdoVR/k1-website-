@@ -1,3 +1,10 @@
+## [v2.338] – 2026-08-31 — Weekly SEO brief (2026-08-31)
+
+**Added**
+- SEO/audits/weekly-2026-08-31.json — GA4 + GSC data collection (3,426 sessions, +20.8%; 531 clicks, +18.5%)
+- SEO/audits/weekly-2026-08-31.md — five-section brief; flags stale GEO monitor (34 days), 18 staging commits undeployed, country-page guardrail breach (141 vs 121)
+- SEO/audits/traffic-2026-08-31.html / traffic-latest.html — HTML dashboard
+
 ## [v2.337] – 2026-08-31 — The blocker held against the CEO for five weeks had been approved in July
 
 **Fixed**
