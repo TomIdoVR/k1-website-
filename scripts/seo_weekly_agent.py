@@ -1215,10 +1215,22 @@ def _run_geo_monitor(dry_run: bool = False):
     script = REPO_ROOT / 'SEO' / 'geo' / 'track_geo.py'
     if not script.exists():
         return
+    # The dedicated `com.kabatone.seo-geo` LaunchAgent (07:30) owns this run; this
+    # step is the fallback for when that job fails. Both firing logged every query
+    # twice, doubling paid API spend and corrupting the citation rate. If today's
+    # rows are already present, the 07:30 run succeeded and there is nothing to do.
+    hist = REPO_ROOT / 'SEO' / 'geo' / 'geo-history.csv'
+    today = datetime.now().strftime('%Y-%m-%d')
+    try:
+        if hist.exists() and any(
+                ln.startswith(today + ',') for ln in hist.read_text().splitlines()):
+            print(f'[geo-monitor] skipped: {today} rows already logged by com.kabatone.seo-geo')
+            return
+    except Exception as e:
+        print(f'[geo-monitor] freshness check failed, running anyway: {e}')
     try:
         print('\n[geo-monitor] checking AI-answer citations for target queries...')
         subprocess.run([sys.executable, str(script)], check=False)
-        hist = REPO_ROOT / 'SEO' / 'geo' / 'geo-history.csv'
         changed = subprocess.run(
             ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]
         ).returncode != 0

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.340 -->
+      <div class="tl-entry fixed" id="v2.340">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.340</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">One owner for the paid GEO monitor; the K-Dispatch "decline" withdrawn</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the GEO citation monitor running twice every Monday. A dedicated scheduled job at 07:30 and the weekly agent's own step at 08:07 both invoked the same paid script, so today's history file held 24 rows for a 12-query set — double API spend, and duplicated rows corrupting the citation rate. The weekly agent now skips when the day's rows already exist, which removes the duplicate run without removing the fallback if the 07:30 job fails. Today's doubled rows were de-duplicated; both runs had agreed, so the published 83.3% was accidentally correct.</p>
+          <p><strong>Withdrew</strong> the K-Dispatch escalation raised earlier the same day. Queried directly against Search Console rather than through the top-20 page cap: clicks are flat at 10 across both 28-day windows while impressions fell 39%, so click-through actually rose from 0.43% to 0.71%. The page shed mid-tail terms it held at positions 45–84 and never converted, and moved to position 1–4 on several exact-match queries. The average position fell because the query mix changed, not because the page got worse — the same conclusion reached in July. The English CAD cluster grew 21% in clicks on 20% fewer impressions.</p>
+          <p><strong>Found</strong> a new cannibalisation case: a "what is CAD dispatch software" explainer surfaced this window at position 29.7 and now competes with the cluster's winner on the same buyer queries, ranking 57–67 where the winner ranks 6.3–6.7 — while holding 13 internal links against the winner's 9. Same mechanism the video-analytics consolidation fixed.</p>
+        </div>
+      </div>
+
       <!-- v2.339 -->
       <div class="tl-entry added" id="v2.339">
         <div class="version-header">

@@ -1,3 +1,51 @@
+## [v2.340] – 2026-08-31 — One owner for the paid GEO monitor; the K-Dispatch "decline" withdrawn
+
+**Fixed**
+- **The GEO citation monitor was running twice every Monday.** `com.kabatone.seo-geo`
+  (LaunchAgent, 07:30) and `seo_weekly_agent.py`'s own `geo-monitor` step (08:07) both shelled
+  out to `SEO/geo/track_geo.py`. Today's `geo-history.csv` carried **24 rows for a 12-query
+  set** — every query logged twice, doubling paid API spend and corrupting the one metric the
+  GEO programme is judged on. v2.328 added the standalone LaunchAgent without noticing the
+  in-script path already existed, so `launchctl` showed one job and two ran.
+- The weekly agent now **checks whether today's rows already exist** and skips if they do,
+  rather than dropping the step outright. Normal Monday: 07:30 writes, 08:07 skips — one run.
+  If the 07:30 job ever fails, the 08:07 step still runs, so removing the duplicate did not
+  remove the safety net. Verified by execution, not by reading: the guard prints
+  `skipped: 2026-08-31 rows already logged by com.kabatone.seo-geo`.
+- De-duplicated today's 12 doubled rows (backup at `/tmp/geo-history.bak.csv`). Every pair was
+  byte-identical including the competitor column, and both runs agreed 10/12 — so the published
+  **83.3% was accidentally correct**. Two runs that disagreed would have blended into a
+  meaningless number with nothing flagging it.
+
+**Changed**
+- **Withdrew the `/k-dispatch/` escalation** raised in this morning's report (WATCH-1). It was
+  filed as a real decline in every metric on a falling average position (9.6 → 14.4). Queried
+  page-level against GSC directly rather than through the top-20 cap: **clicks are flat at 10
+  across both 28-day windows** while impressions fell 2,332 → 1,414, so **CTR rose 0.43% →
+  0.71%**. The lost impressions are mid-tail terms the page held at positions 45–84 and never
+  converted (`emergency dispatch software` 21.8 → 45.1, `dispatch automation software`
+  34.2 → 60), while it moved to **position 1.0–4.0** on `911 cad`, `emergency cad` and
+  `911 dispatcher software`. Average position fell because the query mix changed, not because
+  the page got worse. v2.282 reached this same conclusion in July — *"K-Dispatch EN regression
+  diagnosed as healthy query reallocation — no fix"* — and the fresh data agrees with it. The
+  whole EN CAD cluster grew **68 → 82 clicks (+21%)** on 20% fewer impressions.
+- A hypothesis that the decline was a slash-migration artifact was tested and **rejected**: the
+  unslashed `/k-dispatch` carries only 10 impressions. The migration is real and systemic
+  elsewhere (unslashed rows in the top-20 went 0 → 2 → 4 across the 08-20/08-28/08-31 pulls,
+  and `best-cad-dispatch-software` now ranks in both forms on the same queries), but it does
+  not explain this page.
+
+**Added**
+- `SEO/weekly-report-2026-08-31-full.md` — full week-over-week analysis. The 08:20 automated
+  report compared pulls **3 days apart**; this one uses a genuine 28d-vs-prior-28d window and a
+  direct GSC query for the CAD cluster.
+- New finding **CAD-1**: `/resources/what-is-cad-dispatch-software` surfaced this window
+  (**0 → 682 impressions**, position 29.7) and now competes with `best-cad-dispatch-software`
+  on `911 cad software`, `911 cad system` and `911 cad systems` — ranking **57–67 where the
+  winner ranks 6.3–6.7**. It holds **13 internal links against the winner's 9**. That is the
+  same misdirected-internal-link mechanism the video-analytics consolidation fixed, and that
+  cluster is the only one whose positions are improving.
+
 ## [v2.339] – 2026-08-31 — Documenting the branch topology that nearly caused a bad merge
 
 **Added**
