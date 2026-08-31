@@ -1,3 +1,27 @@
+## [v2.344] – 2026-08-31 — Two more answer-first blocks, and one query that content cannot fix
+
+**Changed**
+- `/resources/best-vms-software` — added the operational criteria a security-operations buyer
+  actually decides on, which the page had skipped entirely: **failover** and edge recording when
+  a server drops, **bandwidth and retention** maths (H.265 roughly halves consumption versus
+  H.264 at the same perceived quality; dual streaming views low and records high), **ONVIF/RTSP**
+  vendor independence, and **VSaaS versus on-premise** deployment models. The page argued
+  platform strategy and never answered the questions that decide a deployment.
+- `/resources/cctv-video-analytics` — added the municipal retrofit argument, which is
+  KabatOne's actual differentiator and appeared once in passing. Cities do not replace camera
+  estates; the question they are asking is whether analytics can run in software over existing
+  CCTV. Also added the detection vocabulary that was missing — tripwire/line-crossing,
+  object-left-behind — and named the real purchase criterion: **false-positive rate**, because
+  analytics generating hundreds of daily false alerts get switched off in the first week.
+
+**Not changed — and this is the finding**
+- `911 dispatch software for emergency call centers` is absent from AI answers, but auditing the
+  page showed **NG911, ANI/ALI, call-taking and text-to-911 are all already covered**. Content is
+  not the constraint. We are missing from the sources the engine retrieves, which cites
+  CentralSquare, Hexagon, Mark43 and Motorola. Writing more content here would have been motion
+  without effect. Logged as **AUTH-2** — an authority gap with a named target, which turns
+  AUTH-1 from a general ask into four specific queries.
+
 ## [v2.343] – 2026-08-31 — The page ranked 6th for fire CAD and said nothing about fire
 
 **Changed**
