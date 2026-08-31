@@ -470,7 +470,7 @@ export default async function LprIntegrationPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
-                { href: '/resources/what-is-video-analytics', label: es ? '¿Qué Es la Analítica de Video?' : 'What Is Video Analytics?' },
+                { href: '/resources/cctv-video-analytics', label: es ? '¿Qué Es la Analítica de Video?' : 'What Is Video Analytics?' },
                 { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS?' : 'What Is Video Management Software (VMS)?' },
                 { href: '/resources/rtcc-setup-guide', label: es ? 'Guía de Implementación RTCC' : 'RTCC Setup Guide' },
                 { href: '/resources/ai-in-public-safety', label: es ? 'IA en Seguridad Pública: Guía para Ciudades' : 'AI in Public Safety: A Guide for Cities' },

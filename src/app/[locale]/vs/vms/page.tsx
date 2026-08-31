@@ -495,7 +495,7 @@ export default async function VsVmsPage({
                 <span>{es ? '¿Qué es VMS Software? Guía de Gestión de Video' : 'What Is VMS Software? Video Management Guide'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
-              <Link href="/resources/what-is-video-analytics" style={{
+              <Link href="/resources/cctv-video-analytics" style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 padding: '16px 20px', borderRadius: '8px',
                 border: '1px solid var(--border)', textDecoration: 'none',

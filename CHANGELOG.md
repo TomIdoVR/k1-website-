@@ -1,3 +1,29 @@
+## [v2.376] – 2026-08-31 — The site pointed 28 internal links at its worst video page and 8 at its best
+
+**Changed**
+- Consolidated the video-analytics cluster. `/resources/what-is-video-analytics` (position 27.2,
+  6 clicks) and `/resources/ai-video-analytics` now 301 to `/resources/cctv-video-analytics`
+  (position 11.0, 82 clicks — the best-performing page on the site, sessions +193%). The
+  mechanism was internal: the retired pages held **28 of the cluster's 36 internal links** while
+  the winner held 8, which is why `cctv-video-analytics` sat near position 18 for months.
+- Rewrote the internal links to the winner across 24 files, removed both paths from
+  `sitemap.ts`, and resolved the self-links and duplicate `key={r.href}` collisions the merge
+  created on `cctv-video-analytics`, `best-ai-video-analytics-software` and `best-vms-software`.
+- **Not** redirected: `/resources/best-ai-video-analytics-software` — distinct buyer intent, and
+  it gained 6.8 positions on its head query. Folding it in would have destroyed a winner to tidy
+  a cluster.
+
+**Fixed**
+- `psim-alternatives` (EN + ES) carried a slashed canonical pointing at a URL that 308s — the two
+  stragglers the v2.314 unslashing sweep missed. A self-referential canonical aimed at a redirect
+  is what costs indexing.
+
+**Notes**
+- These changes were developed on `nextjs` (v2.329, v2.331) and are re-applied here against
+  `main`, because the branches have diverged: `main` carries 163 commits that never went through
+  `nextjs` and is at a higher version. Merging `nextjs` directly would have merged an older line
+  into a newer one across 8 files modified on both sides.
+
 ## [v2.375] – 2026-08-21 — Hero: dead space between the header and the headline removed
 ### Fixed
 - **The gap under the site header was mostly empty gradient.** The hero's `min-height` was `clamp(560px, 88vh, 900px)` — set back when the art was a 2.25:1 file being `cover`ed, where extra height meant less of the frame got cropped away. That stopped being true when the art was changed to `contain`, capped at `700px` and anchored bottom-right: it no longer crops, and it no longer grows past 700 however tall the section gets. The height above that was empty, and since `.hsplit` centres the copy in it, half the waste landed above the eyebrow.

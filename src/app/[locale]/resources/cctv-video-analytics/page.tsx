@@ -203,8 +203,8 @@ export default async function CctvVideoAnalyticsPage({
               <Link href="/integrations/sensor-fusion" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'Fusión de Sensores' : 'Sensor Fusion'}</Link>
               <br />
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
-              <Link href="/resources/ai-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video con IA' : 'AI Video Analytics'}</Link>
-              <Link href="/resources/what-is-video-analytics" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Analítica de Video' : 'Video Analytics'}</Link>
+              <Link href="/resources/best-ai-video-analytics-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Mejor Software de Analítica con IA' : 'Best AI Analytics Software'}</Link>
+              <Link href="/resources/video-analytics-use-cases" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Casos de Uso' : 'Use Cases'}</Link>
               <Link href="/resources/what-is-video-management-software" style={{ color: '#94a3b8', textDecoration: 'none' }}>VMS</Link>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default async function CctvVideoAnalyticsPage({
             {es
               ? 'Esto la distingue de la videovigilancia tradicional (solo grabación) y la conecta con la '
               : 'This distinguishes it from traditional video surveillance (recording only) and connects it to '}
-            <Link href="/resources/ai-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
+            <strong style={{ color: '#e2e8f0', fontWeight: 600 }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</strong>
             {es ? ', que es el motor de detección subyacente.' : ', which is the underlying detection engine.'}
           </p>
         </section>
@@ -308,8 +308,8 @@ export default async function CctvVideoAnalyticsPage({
           <h2 style={{ ...sectionH2, fontSize: '20px' }}>{es ? 'Relacionado' : 'Related'}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
-              { href: '/resources/ai-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
-              { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video (guía general)' : 'Video Analytics (general guide)' },
+              { href: '/resources/best-ai-video-analytics-software', label: es ? 'Mejor Software de Analítica de Video con IA' : 'Best AI Video Analytics Software' },
+              { href: '/resources/video-analytics-use-cases', label: es ? 'Casos de Uso de Analítica de Video' : 'Video Analytics Use Cases' },
               { href: '/resources/what-is-video-management-software', label: es ? 'Software de Gestión de Video (VMS)' : 'Video Management Software (VMS)' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },

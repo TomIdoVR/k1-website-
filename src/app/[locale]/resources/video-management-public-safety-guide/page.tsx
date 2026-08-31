@@ -422,7 +422,7 @@ export default async function VideoManagementPublicSafetyGuidePage({
                 </span>
                 {[
                   { href: '/resources/what-is-video-management-software', label: es ? '¿Que es VMS?' : 'What Is VMS?' },
-                  { href: '/resources/what-is-video-analytics', label: es ? '¿Que es Video Analytics?' : 'What Is Video Analytics?' },
+                  { href: '/resources/cctv-video-analytics', label: es ? '¿Que es Video Analytics?' : 'What Is Video Analytics?' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'What Is an RTCC?' },
                   { href: '/resources/what-is-a-command-center', label: es ? '¿Que es un Centro de Mando?' : 'What Is a Command Center?' },
                   { href: '/resources/what-is-sensor-fusion', label: es ? '¿Que es Fusion de Sensores?' : 'What Is Sensor Fusion?' },
@@ -520,7 +520,7 @@ export default async function VideoManagementPublicSafetyGuidePage({
                   es: '¿Que es el software de gestion de video (VMS)?',
                 },
                 {
-                  href: '/resources/what-is-video-analytics',
+                  href: '/resources/cctv-video-analytics',
                   en: 'What Is Video Analytics?',
                   es: '¿Que es Video Analytics?',
                 },

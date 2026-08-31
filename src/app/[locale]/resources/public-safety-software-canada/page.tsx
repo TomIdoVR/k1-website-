@@ -355,7 +355,7 @@ export default async function PublicSafetySoftwareCanadaPage({
                 { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD 2026' : 'Best CAD Dispatch Software 2026' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'Real-Time Crime Center' },
                 { href: '/resources/what-is-a-psap', label: es ? '¿Qué es un PSAP?' : 'What Is a PSAP?' },
-                { href: '/resources/what-is-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
+                { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
                 { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
               ].map((r) => (
                 <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>
