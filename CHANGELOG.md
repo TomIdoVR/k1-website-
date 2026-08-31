@@ -1,3 +1,38 @@
+## [v2.341] – 2026-08-31 — The Slack brief's edge was seven computed fields, so they are computed now
+
+**Added**
+- `seo_diff.py` now computes the seven fields the Monday Slack brief had and the weekly report
+  did not: **AI Assistant broken out by engine** with shares, the **13-week AI session series**,
+  **named top referrers**, **striking-distance count**, **cluster-level CTR**, **country pages
+  vs guardrail**, and **commits / production pushes this week + master-plan age**.
+
+  The pattern behind the gap: where a field is *computed* it is right, and where it is
+  *remembered* it is missing or stale. The Slack brief's advantage was entirely in fields it
+  computed; its four factual errors this week — GEO "dark 34 days", "deploy 18 staging commits",
+  "476 sitemap URLs", and a P1 that shipped that morning — were all in fields it remembered.
+
+- The AI series **excludes the week in progress from its trend**. Averaging a partial week in is
+  what makes the Slack brief read "flat to declining"; on complete weeks only, the channel is
+  flat (12.0 vs 12.7). One line of arithmetic, opposite conclusion.
+
+**Changed**
+- Report format now follows the Slack brief: a one-line **Focus**, six numbered blocks, tables
+  over prose, and a plan split **P0 / P1 / P2**. It is the format Omer reads, and a finding
+  nobody reaches is worth nothing. The depth the brief has no room for — mechanism, intent
+  labels, refutations, carry-over ages — is nested inside rather than dropped.
+- **G1 now covers escalations, not just proposed fixes.** A fix feels like a proposal and invites
+  the check; a symptom feels like an observation and does not. Both are the claim "this needs
+  attention". Cost: `/k-dispatch` was escalated 🔴 this morning when CHANGELOG v2.282 had already
+  diagnosed it in July as healthy query reallocation — clicks flat, CTR up 0.43% → 0.71%, cluster
+  +21%. G1 ran on that report's other recommendation and not on this one.
+
+**Found**
+- **CAD-1** — the CAD cluster is repeating the mistake the video cluster just fixed:
+  **60 internal anchors point at `what-is-cad-dispatch-software` (rank ~30) and 23 at
+  `best-cad-dispatch-software` (rank ~6.5)**, a 2.6:1 ratio favouring the loser, with 19 of the
+  46 linking files being country pages. Counted independently; a parallel report put it at 13
+  vs 9, which counts a subset. Same direction, worse ratio.
+
 ## [v2.340] – 2026-08-31 — One owner for the paid GEO monitor; the K-Dispatch "decline" withdrawn
 
 **Fixed**

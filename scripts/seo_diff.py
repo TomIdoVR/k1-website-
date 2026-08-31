@@ -256,6 +256,89 @@ def canonical_sweep():
     return bad
 
 
+def ga4_detail(days=28):
+    """Referrer-level detail the channel table cannot show.
+
+    Sessions by channel say whether GEO is working; they cannot say WHICH engine, and
+    "AI Assistant" is four very different products in one bucket. The weekly series
+    matters as much: a 28-day aggregate hides whether a small channel peaked and is now
+    sliding, which is the only shape worth acting on at this base size (G9).
+
+    Builds its client the same way seo_weekly_agent.pull_ga4 does, so there is one auth
+    path to keep working.
+    """
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient
+        from google.analytics.data_v1beta.types import (
+            RunReportRequest, DateRange, Dimension, Metric)
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from google_auth import get_oauth_credentials
+        from seo_weekly_agent import GA4_PROPERTY
+
+        creds = get_oauth_credentials(
+            ['https://www.googleapis.com/auth/analytics.readonly'])
+        client = BetaAnalyticsDataClient(credentials=creds)
+
+        def run(dims, start, end, limit=200):
+            req = RunReportRequest(
+                property=GA4_PROPERTY,
+                dimensions=[Dimension(name=d) for d in dims],
+                metrics=[Metric(name='sessions')],
+                date_ranges=[DateRange(start_date=start, end_date=end)], limit=limit)
+            return client.run_report(req).rows
+
+        refs = [{'source': r.dimension_values[0].value,
+                 'sessions': int(r.metric_values[0].value)}
+                for r in run(['sessionSource'], f'{days}daysAgo', 'yesterday')]
+        refs.sort(key=lambda x: -x['sessions'])
+
+        AI = ('chatgpt.com', 'gemini.google.com', 'perplexity.ai', 'claude.ai',
+              'copilot.microsoft.com', 'copilot.com', 'duck.ai', 'bing.com/chat')
+        ai = [r for r in refs if r['source'] in AI]
+        tot = sum(r['sessions'] for r in ai) or 1
+        for r in ai:
+            r['share_pct'] = round(r['sessions'] / tot * 100, 1)
+
+        series = []
+        for r in run(['year', 'week', 'sessionDefaultChannelGroup'],
+                     '90daysAgo', 'yesterday', limit=500):
+            if r.dimension_values[2].value == 'AI Assistant':
+                series.append((f"{r.dimension_values[0].value}W{int(r.dimension_values[1].value):02d}",
+                               int(r.metric_values[0].value)))
+        series.sort()
+        return {'top_referrers': refs[:8], 'ai_referrers': ai, 'ai_weekly': series[-13:]}
+    except Exception as e:
+        return {'error': f'{type(e).__name__}: {e}'}
+
+
+def repo_health():
+    """Countable operational facts that otherwise get remembered, and drift."""
+    since = '7 days ago'
+    country = len([p for p in glob.glob(
+        str(ROOT / 'src' / 'app' / '[[]locale[]]' / 'resources' / '*'))
+        if os.path.isdir(p) and re.search(
+            r'public-safety-software-|cad-dispatch-software-', os.path.basename(p))])
+    guard = None
+    plan = ROOT / 'SEO' / 'kabatone-seo-master-plan.md'
+    plan_age = None
+    if plan.exists():
+        m = re.search(r'recorded (\d+)\.', plan.read_text())
+        if m:
+            guard = int(m.group(1))
+        plan_age = (datetime.now()
+                    - datetime.fromtimestamp(plan.stat().st_mtime)).days
+    return {
+        'commits_this_week_nextjs': int(_sh(['git', 'rev-list', '--count',
+                                             f'--since={since}', 'origin/nextjs']) or 0),
+        'prod_pushes_this_week': int(_sh(['git', 'rev-list', '--count',
+                                          f'--since={since}', 'origin/main']) or 0),
+        'country_pages': country,
+        'country_guardrail': guard,
+        'country_over_guardrail': (country - guard) if guard else None,
+        'master_plan_age_days': plan_age,
+    }
+
+
 def carry_over():
     """Ages the ledger so escalation is mechanical rather than dependent on someone
     re-reading last week's prose. G5 was aspirational without state: KAB-1721 sat open
@@ -369,6 +452,19 @@ def render(d):
         a(f"\n> ⛔ {', '.join(repr(o['query']) for o in nav)} — navigational. Qualified "
           f"potential is 0 by design. Keep the row visible, never headline the raw number.")
 
+    cl = d.get('clusters') or {}
+    if cl:
+        a("\n## Clusters — impressions vs click efficiency\n")
+        a("| Cluster | Impressions | Clicks | CTR | Queries |")
+        a("|---|---|---|---|---|")
+        for name, v in list(cl.items())[:8]:
+            a(f"| {name} | {v['impressions']:,} | {v['clicks']} | {v['ctr_pct']}% | {v['queries']} |")
+        worst = [ (n,v) for n,v in cl.items() if v['impressions'] >= 2000 and v['ctr_pct'] < 0.2 ]
+        if worst:
+            a("\n> Impression-rich, click-poor: "
+              + ", ".join(f"**{n}** ({v['impressions']:,} impr @ {v['ctr_pct']}%)" for n,v in worst)
+              + " — that is where the leak is, and it is a cluster-level problem, not a page one.")
+
     mv = d['movers']
     a(f"\n## Movers (≥{MOVER_MIN_DELTA} positions, ≥{MOVER_MIN_IMPR} impressions)\n")
     a(f"**Up {len(mv['up'])} · Down {len(mv['down'])}**\n")
@@ -410,6 +506,55 @@ def render(d):
                 a(f"\n> **`{c['channel']}` shows the bot signature** "
                   f"({c['sessions_per_user']} sessions/user at {c['bounce']}% bounce). "
                   f"Exclude from every conclusion; never report as growth.")
+
+    gd = d.get('ga4_detail') or {}
+    if gd and not gd.get('error'):
+        if gd.get('ai_referrers'):
+            a("\n### AI Assistant by engine\n")
+            a("| Engine | Sessions | Share |")
+            a("|---|---|---|")
+            for r in gd['ai_referrers']:
+                a(f"| {r['source']} | {r['sessions']} | {r['share_pct']}% |")
+            a("\n> The monitor tests Claude with web search. This table is the only evidence "
+              "about the engines that actually send traffic — read them together, not "
+              "interchangeably (G10).")
+        if gd.get('ai_weekly'):
+            ser = gd['ai_weekly']
+            vals = [v for _, v in ser]
+            a(f"\n**AI weekly series (13w):** " + " · ".join(str(v) for v in vals[:-1])
+              + f" · _{vals[-1]}*_")
+            # The final bucket is the week in progress. Averaging a partial week in
+            # manufactures a decline that does not exist -- the exact G9 failure this
+            # series was added to prevent. Drop it from the trend, keep it visible.
+            complete = vals[:-1]
+            a(f"> _*last bucket ({ser[-1][0]}) is the week in progress and is excluded "
+              f"from the trend below._")
+            if len(complete) >= 6:
+                peak = max(complete)
+                recent = sum(complete[-3:]) / 3; early = sum(complete[-6:-3]) / 3
+                trend = "rising" if recent > early * 1.15 else (
+                        "declining" if recent < early * 0.85 else "flat")
+                a(f">\n> Peak {peak}; last 3 complete weeks average {recent:.1f} vs prior 3 "
+                  f"at {early:.1f} — **{trend}**. On this base, read the series, never the "
+                  f"28-day delta alone (G9).")
+        if gd.get('top_referrers'):
+            a("\n**Top referrers:** " + " · ".join(
+                f"{r['source']} {r['sessions']}" for r in gd['top_referrers'][:6]))
+
+    rh = d.get('repo_health') or {}
+    if rh:
+        a("\n## Operations & health\n")
+        a("| Signal | Value | |")
+        a("|---|---|---|")
+        a(f"| Striking distance (pos 5–15) | {d.get('striking_distance_count','?')} | |")
+        a(f"| Commits this week (`nextjs`) | {rh['commits_this_week_nextjs']} | |")
+        a(f"| Production pushes this week | {rh['prod_pushes_this_week']} | "
+          f"{'⚠️ none' if not rh['prod_pushes_this_week'] else '✅'} |")
+        over = rh.get('country_over_guardrail')
+        a(f"| Country pages vs guardrail | {rh['country_pages']} vs {rh.get('country_guardrail','?')} | "
+          f"{'⚠️ ' + str(over) + ' over' if over and over > 0 else '✅'} |")
+        age = rh.get('master_plan_age_days')
+        a(f"| Master plan age | {age}d | {'⚠️ stale' if age and age > 14 else '✅'} |")
 
     s = d['shipping']
     a("\n## Shipping\n")
@@ -541,6 +686,11 @@ def main():
         'canonical_issues': canonical_sweep(),
         'geo': geo_freshness(),
         'carry_over': carry_over(),
+        'ga4_detail': ga4_detail() if ga4 else None,
+        'repo_health': repo_health(),
+        'striking_distance_count': len([r for r in query_index(cur).values()
+                                        if 5 <= r.get('position', 99) <= 15
+                                        and r.get('impressions', 0) >= 10]),
     }
     md = render(data)
     if args.out:

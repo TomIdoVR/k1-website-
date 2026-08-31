@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.341 -->
+      <div class="tl-entry added" id="v2.341">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.341</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">The Slack brief's edge was seven computed fields, so they are computed now</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> to <code>seo_diff.py</code> the seven fields the Monday Slack brief had and the weekly report did not: AI Assistant broken out by engine with shares, the 13-week AI session series, named top referrers, striking-distance count, cluster-level CTR, country pages versus guardrail, and commits/production-pushes this week with master-plan age. The pattern behind the gap: where a field is computed it is right; where it is remembered it is missing or stale. The brief's advantage was entirely computed fields — and its four factual errors this week were all remembered ones.</p>
+          <p>The AI series excludes the week in progress from its trend. Averaging a partial week in is what makes the brief read "flat to declining"; on complete weeks only the channel is flat. One line of arithmetic, opposite conclusion.</p>
+          <p><strong>Changed</strong> the report format to follow the Slack brief — one-line focus, six numbered blocks, tables over prose, plan split P0/P1/P2 — with mechanism, intent labels and refutations nested inside rather than dropped. Also extended the "already tried" guardrail to cover <em>escalations</em>, not just proposed fixes: a symptom feels like an observation and skips the check, which is how <code>/k-dispatch</code> was escalated this morning despite having been diagnosed in July as healthy query reallocation.</p>
+          <p><strong>Found</strong> CAD-1: 60 internal anchors point at the CAD explainer ranking ~30 while 23 point at the buyer page ranking ~6.5 — the same misdirected-link mechanism the video-analytics consolidation just corrected.</p>
+        </div>
+      </div>
+
       <!-- v2.340 -->
       <div class="tl-entry fixed" id="v2.340">
         <div class="version-header">
