@@ -1,3 +1,18 @@
+## [v2.336] – 2026-08-31 — v2.330 added the safe number but left the unsafe one as the default
+
+**Fixed**
+- `weekly_brief.py` now emits `potential_clicks` **already intent-qualified** (0 for
+  navigational), with the raw figure preserved as `potential_clicks_raw_unqualified` for
+  auditing. v2.330 added `potential_clicks_qualified` *beside* the raw field and left
+  `potential_clicks` — the name any renderer or narrator reaches for first — still returning
+  216 for `c5`. That is the same shape of mistake it was fixing: the safe value existed but the
+  unsafe one was the obvious default, and nothing in the file renders either, so the payload
+  goes to an LLM narrator that can still pick the wrong one.
+
+  Found by a regression test written for guardrail G6, which asked whether the scorer was
+  broken. It correctly refuted the premise, then observed that the fields exist in both
+  generators but the render is where the leak was — so the earlier fix was incomplete.
+
 ## [v2.335] – 2026-08-31 — The carry-over count is now state, not memory
 
 **Added**

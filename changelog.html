@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.336 -->
+      <div class="tl-entry fix" id="v2.336">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.336</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">v2.330 added the safe number but left the unsafe one as the default</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> an incomplete fix. <code>weekly_brief.py</code> now emits <code>potential_clicks</code> already intent-qualified — 0 for navigational queries — with the raw figure preserved as <code>potential_clicks_raw_unqualified</code> for auditing. v2.330 added a <em>qualified</em> field beside the raw one and left <code>potential_clicks</code>, the name any renderer or narrator reaches for first, still returning 216 for <code>c5</code>. That is the same shape of mistake it was fixing: the safe value existed, but the unsafe one was the obvious default.</p>
+          <p>Found by a regression test written for the "verify by execution" guardrail. Asked whether the scorer was broken, it correctly refuted the premise — then pointed out that the fields exist in both generators while the render is where the leak actually was.</p>
+        </div>
+      </div>
+
       <!-- v2.335 -->
       <div class="tl-entry added" id="v2.335">
         <div class="version-header">

@@ -371,10 +371,19 @@ def pull_gsc(token, days):
                 # actual agency) led two consecutive Slack briefs. Any renderer must show
                 # this label next to the number.
                 'intent': query_intent(query),
-                'potential_clicks': int(impressions * gap),
-                'potential_clicks_qualified': (
+                # `potential_clicks` is the field any renderer or narrator reaches for
+                # first, so it must ALREADY be the safe one -- v2.330 added a qualified
+                # field beside it and left the raw number as the obvious default, which
+                # is the same shape of mistake it was fixing. For navigational queries
+                # this is 0; the raw figure stays available for auditing, under a name
+                # nobody will print by accident.
+                'potential_clicks': (
                     0 if query_intent(query) == 'navigational' else int(impressions * gap)
                 ),
+                'potential_clicks_qualified': (   # kept as an alias for existing readers
+                    0 if query_intent(query) == 'navigational' else int(impressions * gap)
+                ),
+                'potential_clicks_raw_unqualified': int(impressions * gap),
             })
         if 5 <= position <= 15 and impressions >= 20:
             striking.append({
