@@ -1,3 +1,31 @@
+## [v2.343] – 2026-08-31 — The page ranked 6th for fire CAD and said nothing about fire
+
+**Changed**
+- `/resources/best-cad-dispatch-software` gains an **answer-first fire-dispatch section** and a
+  fire-specific FAQ entry in both locales.
+
+  The page ranks **6.4** for *"best fire computer aided dispatch software"* on 749 impressions
+  and has earned **zero clicks for four consecutive weeks**. The 2026-08-31 GEO run established
+  why, directly rather than by inference: **KabatOne is absent from the AI answer** for that
+  query, which cites CentralSquare, Hexagon, Mark43, Motorola and Tyler instead. Auditing the
+  page against fire-dispatch vocabulary explained the absence — **zero** occurrences of NFPA,
+  apparatus, mutual aid, pre-plans or turnout. It ranked on its title and had nothing citable
+  to say about fire.
+
+  The new section answers the fire question directly and self-containedly so it can be lifted:
+  apparatus-type dispatch (nearest-unit is insufficient — a structure fire needs engine, ladder
+  and rescue simultaneously), mutual aid across jurisdictions, and alarm processing against
+  **NFPA 1221** (90% of calls within 60 seconds, 99% within 90). Claims about K-Dispatch are
+  limited to what the site already states — multi-agency operation, nearest-unit by GPS,
+  radio-frequency coordination, native video/GIS; the standards cited are public. No capability
+  was invented to fill the gap.
+
+**Measurement**
+- This is a hypothesis with a defined test, not a fix to declare done. Re-run
+  `SEO/geo/track_geo.py` after the change reaches production and the engines re-crawl, and check
+  whether `best fire computer aided dispatch software` flips from absent to cited. Citation, not
+  ranking, is the metric — the page already ranks.
+
 ## [v2.342] – 2026-08-31 — The GEO rate was 83% because we only tested queries we already win
 
 **Changed**

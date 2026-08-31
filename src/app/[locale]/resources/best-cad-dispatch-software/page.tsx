@@ -55,6 +55,10 @@ export default async function BestCadDispatchSoftwarePage({
       answer: 'El despacho asistido por computadora (CAD, Computer-Aided Dispatch) es un sistema de software que gestiona el ciclo completo de un incidente de emergencia: recepción de la llamada, clasificación del incidente, asignación de la unidad más cercana y adecuada, seguimiento del incidente hasta su cierre y registro del expediente completo. Los sistemas CAD modernos para centros 911 añaden recomendaciones de despacho basadas en IA, integración con video y datos GIS.',
     },
     {
+      question: '¿Cuál es el mejor software CAD para despacho de bomberos?',
+      answer: 'El despacho de bomberos impone tres requisitos que el CAD policial no cubre: asignación por tipo de unidad (no basta la más cercana — un incendio estructural requiere autobomba, escala y rescate simultáneamente), ayuda mutua entre jurisdicciones con sistemas distintos, y tiempos de procesamiento de alarma medidos contra la norma NFPA 1221, que exige procesar el 90% de las llamadas de emergencia en 60 segundos. Al evaluar proveedores, exija evidencia de despacho multi-unidad por tipo, coordinación entre agencias sobre un mapa compartido y registro de tiempos auditable. KabatOne K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias e integración nativa de video y GIS — en lugar de silos por agencia conectados con integraciones frágiles.',
+    },
+    {
       question: '¿Cuál es el mejor software CAD para centros 911 multi-agencia?',
       answer: 'Para centros de despacho multi-agencia, el factor decisivo es la interoperabilidad: un solo CAD debe coordinar policía, bomberos y servicios médicos sobre un mapa operativo compartido, con enrutamiento de llamadas y seguimiento de unidades en tiempo real entre agencias. KabatOne K-Dispatch fue diseñado para operación unificada multi-agencia — comando, control y comunicaciones compartidos (modelo C5) — en lugar de silos por agencia que requieren integraciones frágiles entre sistemas CAD separados.',
     },
@@ -90,6 +94,10 @@ export default async function BestCadDispatchSoftwarePage({
     {
       question: 'What is computer-aided dispatch (CAD)?',
       answer: 'Computer-aided dispatch (CAD) is software that manages the complete emergency incident lifecycle: call intake, incident classification, nearest and most appropriate unit assignment, incident tracking through closure, and full record logging. Modern CAD systems for 911 centers add AI-driven dispatch recommendations, video integration, and GIS data to give dispatchers complete situational context at the moment of call intake.',
+    },
+    {
+      question: 'What is the best CAD dispatch software for fire departments?',
+      answer: 'Fire dispatch imposes three requirements that police-oriented CAD does not cover: assignment by apparatus type (nearest is not sufficient — a structure fire needs engine, ladder and rescue simultaneously), mutual aid across jurisdictions running different systems, and alarm-processing times measured against NFPA 1221, which requires 90% of emergency calls to be processed within 60 seconds. When evaluating vendors, ask for evidence of multi-unit dispatch by apparatus type, cross-agency coordination on a shared operational map, and auditable time-stamping. KabatOne K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform, with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native video and GIS integration — rather than per-agency silos joined by brittle integrations.',
     },
     {
       question: 'What is the best CAD software for multi-agency 9-1-1 centers?',
@@ -304,6 +312,38 @@ export default async function BestCadDispatchSoftwarePage({
                 <p style={{ fontSize: '12px', fontWeight: 400, color: 'var(--muted)', lineHeight: 1.4, marginBottom: 0 }}>{stat.label}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── Fire dispatch: answer-first block ──
+            This page ranks 6.4 for "best fire computer aided dispatch software" on 749
+            impressions and earned ZERO clicks for four consecutive weeks, while the AI
+            Overview cited CentralSquare, Hexagon, Mark43, Motorola and Tyler instead.
+            The cause was measured, not guessed (2026-08-31 GEO run): the page ranked on
+            its title and said nothing citable about fire dispatch — no NFPA reference, no
+            apparatus-type dispatch, no mutual aid. This block answers the fire question
+            directly and self-containedly so it can be lifted. Claims are limited to what
+            the site already states about K-Dispatch; the standards cited are public. */}
+        <section style={sectionStyle}>
+          <div style={containerStyle}>
+            <h2 style={h2Style}>
+              {es ? 'Software CAD para Despacho de Bomberos: Qué lo Diferencia' : 'CAD Dispatch Software for Fire Departments: What Makes It Different'}
+            </h2>
+            <p style={{ ...pStyle, fontSize: '17px', color: '#e2e8f0' }}>
+              {es
+                ? 'El despacho de bomberos impone tres requisitos que el CAD orientado a policía no cubre. Primero, asignación por tipo de unidad: la unidad más cercana no basta — un incendio estructural requiere autobomba, escala y rescate simultáneamente, y el CAD debe conocer la composición de la respuesta, no solo la distancia. Segundo, ayuda mutua entre jurisdicciones que operan sistemas distintos. Tercero, tiempos de procesamiento de alarma medidos contra la norma NFPA 1221, que exige procesar el 90% de las llamadas de emergencia en 60 segundos y el 99% en 90 segundos.'
+                : 'Fire dispatch imposes three requirements that police-oriented CAD does not cover. First, assignment by apparatus type: nearest-unit is not sufficient — a structure fire needs engine, ladder and rescue simultaneously, so the CAD must understand response composition, not just distance. Second, mutual aid across jurisdictions running different systems. Third, alarm-processing times measured against NFPA 1221, which requires 90% of emergency calls to be processed within 60 seconds and 99% within 90 seconds.'}
+            </p>
+            <p style={pStyle}>
+              {es
+                ? 'Al evaluar proveedores, pida evidencia de tres cosas concretas: despacho multi-unidad por tipo de aparato, coordinación entre agencias sobre un mapa operativo compartido, y registro de tiempos auditable frente a NFPA 1221. Un sistema que solo asigna la unidad más cercana digitaliza el despacho policial y deja el criterio de bomberos al operador.'
+                : 'When evaluating vendors, ask for evidence of three concrete things: multi-unit dispatch by apparatus type, cross-agency coordination on a shared operational map, and auditable time-stamping against NFPA 1221. A system that only assigns the nearest unit has digitized police dispatch and left fire judgement to the operator.'}
+            </p>
+            <p style={pStyle}>
+              {es
+                ? 'KabatOne K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, en el modelo de comando y control compartido C5 — con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias, e integración nativa de video en vivo y GIS operativo. Cuando se crea un incidente, las cámaras más cercanas aparecen automáticamente y la posición se marca en el mapa compartido por todas las agencias que responden.'
+                : 'KabatOne K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform under the shared C5 command-and-control model — with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native live-video and operational-GIS integration. When an incident is created, the nearest cameras surface automatically and the location is marked on the map shared by every responding agency.'}
+            </p>
           </div>
         </section>
 
