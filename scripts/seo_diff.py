@@ -224,6 +224,39 @@ def canonical_sweep():
     return bad
 
 
+def carry_over():
+    """Ages the ledger so escalation is mechanical rather than dependent on someone
+    re-reading last week's prose. G5 was aspirational without state: KAB-1721 sat open
+    five weeks and only resurfaced by luck."""
+    f = ROOT / 'SEO' / 'carry-over.md'
+    if not f.exists():
+        return {'available': False}
+    today = datetime.now().date()
+    items, section = [], None
+    for line in f.read_text().splitlines():
+        low = line.strip().lower()
+        if low.startswith('## open'):
+            section = 'open'; continue
+        if low.startswith('## closed'):
+            section = 'closed'; continue
+        if section != 'open' or not line.startswith('|'):
+            continue
+        c = [x.strip() for x in line.strip('|').split('|')]
+        if len(c) < 5 or c[0] in ('id', '---') or set(c[0]) <= {'-'}:
+            continue
+        try:
+            raised = datetime.strptime(c[2], '%Y-%m-%d').date()
+        except ValueError:
+            continue
+        weeks = (today - raised).days // 7
+        items.append({'id': c[0], 'item': c[1], 'first_raised': c[2], 'owner': c[3],
+                      'status': c[4], 'weeks_open': weeks, 'escalate': weeks >= 3})
+    items.sort(key=lambda i: -i['weeks_open'])
+    return {'available': True, 'items': items,
+            'escalated': [i for i in items if i['escalate']],
+            'blocked_on_human': [i for i in items if i['status'] == 'blocked']}
+
+
 def geo_freshness():
     csv = ROOT / 'SEO' / 'geo' / 'geo-history.csv'
     if not csv.exists():
@@ -377,6 +410,32 @@ def render(d):
     else:
         a("\n## Canonical sweep\n\n- ✅ No slashed canonicals outside the bare origin.")
 
+    co = d.get('carry_over') or {}
+    if co.get('available'):
+        a("\n## Carry-over ledger\n")
+        if not co['items']:
+            a("- Nothing open.")
+        else:
+            a("| Item | Owner | Weeks | Status | |")
+            a("|---|---|---|---|---|")
+            for i in co['items']:
+                a(f"| {i['id']} — {i['item'][:52]} | {i['owner']} | **{i['weeks_open']}** | "
+                  f"{i['status']} | {'🔴' if i['escalate'] else ''} |")
+            esc = co['escalated']
+            if esc:
+                a(f"\n> 🔴 **{len(esc)} item(s) at 3+ weeks unexecuted.** State plainly in the "
+                  f"report that these have not moved: "
+                  + ", ".join(f"{i['id']} ({i['weeks_open']}w)" for i in esc))
+            human = co['blocked_on_human']
+            if human:
+                a(f"\n> **{len(human)} blocked on a human**, not on work: "
+                  + ", ".join(f"{i['id']} → {i['owner']}" for i in human)
+                  + ". Distinguish these from not-yet-done in §10.")
+        a("\n_Update `SEO/carry-over.md` as part of the report — move shipped items to Closed._")
+    else:
+        a("\n## Carry-over ledger\n\n- ⚠️ `SEO/carry-over.md` missing — carry-over counts "
+          "will be guesswork. Create it.")
+
     a("\n---\n\n## Verification gate — clear before publishing\n")
     a("Every claim below is the kind that has shipped wrong before. Check each by "
       "**execution or an explicit history query**, not by recall:\n")
@@ -432,6 +491,7 @@ def main():
         'shipping': shipping(),
         'canonical_issues': canonical_sweep(),
         'geo': geo_freshness(),
+        'carry_over': carry_over(),
     }
     md = render(data)
     if args.out:

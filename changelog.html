@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.335 -->
+      <div class="tl-entry added" id="v2.335">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.335</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">The carry-over count is now state, not memory</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> <code>SEO/carry-over.md</code>, a ledger of open items with first-raised dates, owners and status. <code>seo_diff.py</code> reads it, computes weeks-open and escalates anything at 3+ weeks, separating <em>blocked on a human</em> from <em>not yet done</em>. The guardrail has said "count carry-overs and escalate" since July, but with no state it depended on someone re-reading last week's prose — KAB-1721 sat open six weeks and only resurfaced because a July file happened to get read.</p>
+          <p><strong>Changed</strong> the <code>kabatone-seo-director</code> skill for progressive disclosure: the always-loaded body drops from 470 to 332 lines, with the report template and execution playbook moved into <code>references/</code> and loaded only when relevant. Its description was rewritten to replace a literal trigger-phrase list with semantic coverage, drop the over-broad "action items" trigger, and add explicit boundaries against the sibling skills it was colliding with.</p>
+          <p><strong>Changed</strong> the eval suite after iteration 1 returned 20/20 on both the new skill and the old baseline — a non-discriminating result. Runs now withhold the two files that contained the answers under test, assertions moved from "reaches the right conclusion" to "verified it, found something new, qualified the number", and four regression tests were added for guardrails that had never been tested as fixed.</p>
+        </div>
+      </div>
+
       <!-- v2.334 -->
       <div class="tl-entry added" id="v2.334">
         <div class="version-header">

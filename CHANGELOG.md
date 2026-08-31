@@ -1,3 +1,32 @@
+## [v2.335] – 2026-08-31 — The carry-over count is now state, not memory
+
+**Added**
+- `SEO/carry-over.md` — a ledger of open items with `first_raised` dates, owners and status.
+  `seo_diff.py` reads it, computes weeks-open, and escalates anything at 3+ weeks to 🔴,
+  separating *blocked on a human* from *not yet done*. G5 has said "count carry-overs and
+  escalate" since July, but with no state it depended on someone re-reading last week's prose:
+  KAB-1721 sat open **six weeks** and only resurfaced because a July file happened to get read.
+  Seeded with the real queue, including the four items closed this week.
+
+**Changed**
+- `kabatone-seo-director` restructured for progressive disclosure — the always-loaded body drops
+  from 470 to 332 lines, with the report template and execution playbook moved to
+  `references/report-template.md` and `references/execution.md` and loaded only when relevant.
+  A question like "should we turn on trailingSlash?" no longer pays for a 12-section report
+  template it will not use.
+- Description rewritten: the literal trigger-phrase list is replaced with semantic coverage, the
+  dangerously generic `action items` trigger is dropped, and explicit boundaries are added
+  against the sibling skills it was colliding with (`kabatone-seo-audit` for one-off deep audits,
+  `kabatone-campaign-manager` / `kabatone-content` for campaigns and writing, `kabatone-strategy`
+  for positioning) and against any site other than kabatone.com.
+- Eval suite rewritten after iteration 1 scored 20/20 on **both** the new skill and the old
+  baseline — a non-discriminating result. Two causes fixed: runs now withhold
+  `weekly-report-2026-08-28.md` and `ctr-diagnosis-2026-07-20.md`, which contained the answers
+  under test, and assertions moved from "reaches the right conclusion" (which both versions do)
+  to "verified it, found something no existing report mentions, qualified the number". Four new
+  regression tests cover G6, G7, G9 and the ledger — guardrails derived from real failures that
+  had never been tested as fixed.
+
 ## [v2.334] – 2026-08-31 — The errors were all comparisons, so the comparison is now a script
 
 **Added**
