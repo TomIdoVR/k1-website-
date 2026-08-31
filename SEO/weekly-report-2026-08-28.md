@@ -286,7 +286,7 @@ detected and recovered rather than silently lost. That machinery is now sound.
 
 | # | Blocker | Owner | Note |
 |---|---|---|---|
-| B1 | **KAB-1721 board decision on Tracks A + C** | **Omer** | Open since 2026-07-20 — **5 weeks**. Blocks any movement on the 2,003 zero-click impressions. The single highest-value unanswered question in the program. |
+| B1 | ~~KAB-1721 board decision on Tracks A + C~~ | ~~Omer~~ | ❌ **WITHDRAWN 2026-08-31 — this blocker did not exist.** CHANGELOG v2.286 records board approval via KAB-1980 ("both") on **2026-07-27**. Track A ran as the roundup program (v2.277–v2.284); Track C's first move (freshness/E-E-A-T on the two flagship VMS pages) shipped the same day. This report, and the two before it, wrongly held a decided item against Omer for five weeks. What actually stalled is the Track C **escalation** — v2.286 set its own trigger ("if this doesn't move the needle within 2–3 weekly pulls"), the page went 17.4 → 17.5 across two pulls, and nobody pulled the lever. Re-owned to Claude in `SEO/carry-over.md`. |
 | B2 | Backlinks / authority | **Omer** | Needs human. Unblocked only after B1 defines where authority should point. |
 | B3 | GEO monitor not scheduled | Claude | 16 days stale. I can fix this — not blocked on a human. |
 
@@ -329,9 +329,16 @@ first, depth second, links third.
 **Effort:** ~1h. Redirects in `next.config.ts`, 28 link rewrites, sitemap removal, changelog.
 **Risk:** low — both pages are already de-ranked; nothing to lose.
 
-### #2 — Answer B1: green-light Track A (GEO) and/or Track C — **Omer** 🔴 week 5
-The 34 zero-click page-1 queries are 2,003 impressions of proven buyer intent with a documented
-cause. Nothing in the queue moves them until this is decided. **This is the ask of the week.**
+### #2 — ❌ **Withdrawn.** Track A and Track C were approved on 2026-07-27 (KAB-1980)
+Replaced by: **execute the Track C escalation** — earn real update history on
+`/resources/what-is-video-management-software`, per the trigger v2.286 set for itself. Owner:
+Claude, not Omer. The zero-click block is real and the cause is documented; what was missing was
+follow-through, not a decision.
+
+**The real ask of the week is SHIP-1** — promote `nextjs` → `main`. Verified live: production
+still serves `/resources/ai-video-analytics` at 200 while staging 302s it to the consolidation
+target. Until that ships, the consolidation and canonical fixes are worth zero, and any Track C
+measurement is measuring stale pages.
 
 ### #3 — Re-schedule the GEO monitor (16 days stale) — Claude
 AI Assistant traffic just fell 25% and the instrument that would explain it is not running.
@@ -384,5 +391,6 @@ escalates above #1.
 | Item | Weeks |
 |---|---|
 | Video-analytics consolidation | **3** 🔴 |
-| KAB-1721 board decision (B1) | **5** 🔴 |
+| ~~KAB-1721 board decision (B1)~~ | ❌ withdrawn — was approved 2026-07-27 |
+| Track C escalation (re-owned to Claude) | **5** 🔴 |
 | Backlink/authority program | 6+ |

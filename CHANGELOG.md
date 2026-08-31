@@ -1,3 +1,32 @@
+## [v2.337] – 2026-08-31 — The blocker held against the CEO for five weeks had been approved in July
+
+**Fixed**
+- **KAB-1721 was never blocked on Omer.** Three consecutive weekly reports, and the carry-over
+  ledger created hours earlier, listed "green-light Track A / Track C" as blocked on his
+  decision — escalating it to 🔴 at five weeks and calling it "the single highest-value
+  unanswered question in the program". CHANGELOG **v2.286** records board approval via KAB-1980
+  ("both") on **2026-07-27**. Track A ran as the roundup program (v2.277–v2.284); Track C's
+  first move shipped the same day.
+
+  What actually stalled is the Track C *escalation*: v2.286 set its own trigger — revisit "if
+  this doesn't move the needle within 2–3 weekly pulls" — and
+  `/resources/what-is-video-management-software` went 17.4 → 17.5 across the 08-20 and 08-28
+  pulls on ~18.6K impressions. The trigger fired weeks ago. The item is re-owned to Claude as
+  an execution task, and the real ask of the week is promoting staging to production.
+
+- `track_geo.py` now sets `timeout=120.0, max_retries=2`. launchd will not start a second
+  instance while one is running, so a single wedged request would not cost one Monday — it
+  would silently block *every* Monday, with zero-byte logs and no non-zero exit. `base_url` is
+  deliberately left alone: `ANTHROPIC_BASE_URL` points at the local headroom proxy on purpose.
+
+**Changed**
+- `kabatone-seo-director` gains **G11 — a subagent's finding is an input, not a fact**. A
+  regression run reported the GEO monitor "hung 3 hours, blocking every future Monday" and
+  recommended killing the process. It had misread `ps` `ELAPSED`: `05:50` is five minutes, not
+  five hours. Waiting instead of killing showed the job finishing normally — exit 0, 12 rows,
+  83% cited. The structural finding underneath the wrong conclusion (no timeout) was real and
+  shipped; the destructive recommendation did not.
+
 ## [v2.336] – 2026-08-31 — v2.330 added the safe number but left the unsafe one as the default
 
 **Fixed**

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.337 -->
+      <div class="tl-entry fix" id="v2.337">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.337</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">The blocker held against the CEO for five weeks had been approved in July</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> a false blocker. Three consecutive weekly reports listed KAB-1721 — "green-light Track A / Track C" — as blocked on Omer's decision, escalated it at five weeks, and called it the single highest-value unanswered question in the program. CHANGELOG v2.286 records board approval via KAB-1980 on <strong>2026-07-27</strong>. Track A ran as the roundup program; Track C's first move shipped the same day. What actually stalled was the Track C <em>escalation</em>: v2.286 set its own trigger — revisit if the needle doesn't move within 2–3 weekly pulls — and the target page went 17.4 → 17.5 across two pulls. The trigger fired weeks ago. Re-owned as an execution task; the real ask is promoting staging to production.</p>
+          <p><strong>Fixed</strong> the GEO monitor's missing timeout (<code>timeout=120s, max_retries=2</code>). launchd will not start a second instance while one runs, so a wedged request would not cost one Monday — it would silently block every Monday, with zero-byte logs and no non-zero exit. <code>base_url</code> is deliberately left alone; it points at the local headroom proxy on purpose.</p>
+          <p><strong>Changed</strong> the skill to add a guardrail: a subagent's finding is an input, not a fact. A regression run reported the monitor "hung 3 hours" and recommended killing it — having misread <code>ps ELAPSED</code>, where <code>05:50</code> is five minutes, not five hours. Waiting instead of killing showed it finishing normally: exit 0, 12 rows, 83% cited.</p>
+        </div>
+      </div>
+
       <!-- v2.336 -->
       <div class="tl-entry fix" id="v2.336">
         <div class="version-header">
