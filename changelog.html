@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.334 -->
+      <div class="tl-entry added" id="v2.334">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.334</span><span class="tl-date">2026-08-31</span></div>
+          <h3 class="tl-title">The errors were all comparisons, so the comparison is now a script</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> <code>scripts/seo_diff.py</code> — everything in the weekly report that requires <em>comparing</em> things rather than reading a single file: movers with money-page flagging, the zero-click block with position deltas and an <code>improved_but_still_zero</code> count, opportunities ranked by score with intent labels and qualified potential, channels carrying users and sessions-per-user with bot-signature detection, shipping including local unpushed commits, GEO freshness with partial runs excluded from the trend, and the canonical sweep.</p>
+          <p>Every error this program has shipped was a comparison done by hand or a claim made from recall — <em>"AI Assistant fell 25%, first decline since tracking began"</em> (sessions fell; distinct users rose 13%), <em>"business_value() hard-codes c5"</em> (it scores 0.2; the branch is unreachable), movers hand-diffed between two JSON files. On its first run the script found <strong>15</strong> page-1 queries that improved position and still returned zero clicks, where the hand-written report had listed 5. It imports the shared scorer from <code>seo_weekly_agent.py</code>, so intent and expected-CTR keep one definition across the skill, the Slack brief and the dashboard.</p>
+          <p><strong>Changed</strong> the <code>kabatone-seo-director</code> skill to lead with that script and to require a <strong>verification gate</strong> before publishing: superlatives checked against full history rather than two adjacent pulls, channel declines checked against users, behavioural claims proved by running the code. Both errors that got furthest were absolutes stated from recall, so the gate targets that class specifically — and it says to weaken an unverifiable claim rather than drop it.</p>
+        </div>
+      </div>
+
       <!-- v2.332 -->
       <div class="tl-entry fix" id="v2.332">
         <div class="version-header">

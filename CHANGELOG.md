@@ -1,3 +1,31 @@
+## [v2.334] – 2026-08-31 — The errors were all comparisons, so the comparison is now a script
+
+**Added**
+- `scripts/seo_diff.py` — everything in the weekly report that requires comparing things rather
+  than reading one file. Movers (query and page, money pages flagged), the zero-click block with
+  position deltas and an `improved_but_still_zero` count, opportunities ranked by score with
+  intent labels and qualified potential, channels carrying **users and sessions/user** with
+  bot-signature detection, shipping including **local unpushed** commits, GEO freshness with
+  partial runs excluded from the trend, and the canonical sweep.
+
+  Every error this program has shipped was a comparison done by hand or a claim made from
+  recall: "AI Assistant fell 25%, first decline since tracking began" (sessions fell, users
+  rose 13%), "`business_value()` hard-codes c5" (it scores 0.2 — the branch is unreachable),
+  movers hand-diffed between two JSONs. On its first run it also found **15** page-1 queries
+  that improved position and still returned zero clicks, where the hand-written report had
+  listed 5.
+
+  It imports the shared scorer from `seo_weekly_agent.py`, so intent and expected-CTR keep one
+  definition across the skill, the Monday Slack brief and the dashboard.
+
+**Changed**
+- `kabatone-seo-director` now leads its data collection with that script and requires a
+  **verification gate** before publishing: every superlative checked against full history rather
+  than two adjacent pulls, every channel decline checked against users, every behavioural claim
+  proved by running the code. Both errors that got furthest were absolutes stated from recall,
+  and neither survived thirty seconds of checking — so the gate targets that class specifically,
+  and says to weaken an unverifiable claim rather than drop it.
+
 ## [v2.333] – 2026-08-31 — Testing the watchdog disarmed the watchdog
 
 **Fixed**
