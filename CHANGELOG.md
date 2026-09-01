@@ -1,3 +1,31 @@
+## [v2.345] – 2026-09-01 — The coverage denominator counted another branch's files
+
+**Fixed**
+- `scripts/seo-audit.mjs` — the repo-route scan walked the filesystem with `readdirSync`, so it
+  counted **any** `page.tsx` in the checkout, including untracked files. This repo is one shared
+  checkout worked by several agents and the `hero-redesign` branch's `/hero-lab*` pages live here
+  permanently as untracked scratch, so today's audit raised **16 phantom `route_not_in_sitemap`
+  warnings** for routes that are not on `nextjs` and not on staging. The scan now takes its route
+  list from `git ls-files`, which is the correct definition rather than merely a filter: the audit
+  grades deployed HTML, staging serves only pushed commits, and step 0b already guarantees nothing
+  is unpushed — so a route that is not committed cannot be live.
+- Added `/legal/sitec-911` to `OFF_SITEMAP_ROUTES`. This one was **real**: a tracked route added
+  yesterday by v2.342 and absent from the sitemap. Verified live before allowlisting — 200 in both
+  locales, `noindex, follow`, absent from the served sitemap. It is a per-contract legal notice,
+  the same class as `/legal/911-michoacan` directly above it, and the page declares its own
+  non-indexation, so listing it would contradict the page.
+
+**Added — a guard, because the first attempt at this fix shipped inert**
+- The tracked-file lookup was first written with the pathspec
+  `src/app/[locale]/**/page.tsx`. Git pathspecs are globs, `[locale]` reads as a character class
+  matching one of `l/o/c/a/e`, and the scan returned **2 routes instead of 239**. The audit then
+  printed `Coverage: 2/2 repo URLs (100%) — 0 unexplained` and exited 0. A collapsed denominator
+  reads exactly like a perfect score.
+- No existing guard caught it. The 80%-of-last-run check watches the **crawl** list, which comes
+  from the sitemap and was still a healthy 230 throughout. `computeCoverage` now refuses (exit 3)
+  when the tracked scan returns under half the on-disk routes. Verified by injecting the fault:
+  the mutant exits 3 and names the collapse, so the guard is armed rather than documented.
+
 ## [v2.344] – 2026-08-31 — Two more answer-first blocks, and one query that content cannot fix
 
 **Changed**

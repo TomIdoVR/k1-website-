@@ -521,6 +521,11 @@ const OFF_SITEMAP_ROUTES = new Set([
   "/hero-lab-prev",          // design preview, not public
   "/lp",                     // paid-campaign landing page
   "/legal/911-michoacan",
+  /* Per-contract legal notice added by v2.342 (9fa95d9, 2026-08-31), same class
+     as 911-michoacan above. Verified live 2026-09-01 before allowlisting: 200 in
+     both locales, `noindex, follow`, absent from the served sitemap — the page
+     declares its own non-indexation, so listing it would contradict the page. */
+  "/legal/sitec-911",
   "/privacy-policy-tamaulipas",
   "/privacy/911-baja-california-sur",
   "/privacy/911-michoacan",
@@ -535,14 +540,45 @@ const OFF_SITEMAP_ROUTES = new Set([
 
 const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;
 
-function repoRoutes(dir = APP_ROUTES_DIR, prefix = "") {
+/* Routes on the CURRENT BRANCH, from git rather than the filesystem.
+   readdirSync counts any page.tsx sitting in the checkout, including untracked
+   files another agent left behind — this repo is one shared checkout worked by
+   several agents, and the hero-redesign branch's /hero-lab* pages live here
+   permanently as untracked scratch. On 2026-09-01 that put 16 phantom routes
+   into the denominator and raised 16 "shipped but not in sitemap" warnings for
+   pages that are not on nextjs and not on staging.
+   Tracked-only is not just a filter, it is the correct definition: the audit
+   grades deployed HTML, staging serves only pushed commits, and step 0b already
+   guarantees nothing is unpushed. A route that is not committed cannot be live,
+   so calling it an unlisted live route is wrong by construction. */
+/* NB: the pathspec is `:(literal)` and the page.tsx match is done in JS. Passing
+   a recursive-glob pathspec under the route dir silently returns almost nothing,
+   because git pathspecs are globs and `[locale]` reads as a character class
+   matching one of l/o/c/a/e. That failure is invisible in the worst way: the
+   denominator collapses and the audit prints "100% coverage, 0 unexplained" —
+   a clean bill of health from measuring nothing. */
+function trackedRouteFiles() {
+  try {
+    const out = execFileSync(
+      "git", ["ls-files", "-z", "--", `:(literal)${APP_ROUTES_DIR}`],
+      { encoding: "utf-8" }
+    );
+    const files = out.split("\0").filter(f => f.endsWith("/page.tsx"));
+    return files.length ? new Set(files) : null;
+  } catch {
+    return null; // not a git checkout — fall back to the filesystem walk
+  }
+}
+
+function repoRoutes(dir = APP_ROUTES_DIR, prefix = "", tracked = trackedRouteFiles()) {
   if (!existsSync(dir)) return null;
   const out = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (entry.isDirectory()) {
-      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`);
+      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`, tracked);
       if (sub) out.push(...sub);
     } else if (entry.name === "page.tsx") {
+      if (tracked && !tracked.has(`${dir}/${entry.name}`)) continue; // untracked: not on this branch
       out.push(prefix); // "" for the homepage
     }
   }
@@ -562,6 +598,23 @@ function computeCoverage(crawledUrls) {
   const routes = repoRoutes();
   const listed = sitemapListedPaths();
   if (!routes || !listed) return null;
+
+  /* The tracked-file filter is the coverage denominator, so if it ever breaks
+     the audit reports a high coverage % over a tiny route set — "100% of 2 URLs,
+     0 unexplained" reads exactly like a clean day. That is what the `[locale]`
+     pathspec bug did on first write (see trackedRouteFiles). No existing guard
+     caught it: the 80%-of-last-run check watches the CRAWL list, which comes
+     from the sitemap and was still a healthy 230. Tracked routes are a subset of
+     on-disk routes and in practice nearly all of them, so a large shortfall is a
+     scan bug, never a real branch state. Refuse rather than report. */
+  const onDisk = repoRoutes(APP_ROUTES_DIR, "", null);
+  if (onDisk && routes.length < onDisk.length * 0.5) {
+    refuse(
+      `git-tracked route scan returned ${routes.length} routes against ${onDisk.length} on disk — ` +
+      `the coverage denominator collapsed, and a coverage % over a broken route list is a fake CLEAN.`,
+      "--allow-route-fallback"
+    );
+  }
 
   const crawled = new Set(crawledUrls.map(u => { try { return new URL(u).pathname } catch { return u } }));
   const isCrawled = p => crawled.has(p) || crawled.has(p === "" ? "/" : `${p}/`) || (p === "" && crawled.has("/"));

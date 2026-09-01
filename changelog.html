@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.345 -->
+      <div class="tl-entry fixed" id="v2.345">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.345</span><span class="tl-date">2026-09-01</span></div>
+          <h3 class="tl-title">The coverage denominator counted another branch's files</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the daily SEO audit's repo-route scan, which walked the filesystem and so counted <em>any</em> <code>page.tsx</code> in the checkout, including untracked ones. This repo is a single checkout worked by several agents, and the redesign branch's <code>/hero-lab*</code> pages live here permanently as untracked scratch — so today's run raised <strong>16 phantom "not in sitemap" warnings</strong> for routes that are on no branch we ship and on no page we serve. The scan now reads its route list from git. That is the correct definition rather than a convenient filter: the audit grades deployed HTML, staging serves only pushed commits, so a route that is not committed cannot be live.</p>
+          <p>One of the eighteen findings <strong>was real</strong>: <code>/legal/sitec-911</code>, added the day before and genuinely missing from the sitemap. Verified live before allowlisting — 200 in both locales, <code>noindex, follow</code>. It is a per-contract legal notice that declares its own non-indexation, so listing it would contradict the page.</p>
+          <p><strong>The first attempt at this fix shipped inert, which is the part worth recording.</strong> Written with the pathspec <code>src/app/[locale]/**/page.tsx</code>, it returned <strong>2 routes instead of 239</strong> — git pathspecs are globs, and <code>[locale]</code> reads as a character class. The audit then printed <code>Coverage: 2/2 repo URLs (100%) — 0 unexplained</code> and exited clean. A collapsed denominator is indistinguishable from a perfect score, and no existing guard caught it: the 80%-of-last-run check watches the crawl list, which comes from the sitemap and stayed a healthy 230 throughout. The audit now refuses outright when the route scan returns under half the on-disk routes — verified by injecting the fault and confirming it exits 3, rather than trusting that it would.</p>
+        </div>
+      </div>
+
       <!-- v2.344 -->
       <div class="tl-entry changed" id="v2.344">
         <div class="version-header">
