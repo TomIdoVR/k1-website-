@@ -1,30 +1,60 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-08-12
+**Last updated:** 2026-09-01
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com — `main` branch
 **Staging:** staging.kabatone.com — `nextjs` branch, auto-deploys on push
 **Stack:** Next.js 15 (App Router) on Vercel — TomIdoVR/k1-website-
 **GSC property:** `https://kabatone.com/` (URL-prefix). **Not** `sc-domain:kabatone.com` — that property does not exist on the account, and scripts asking for it fail with a permission error.
-**Analytics auth:** service account `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com`, read-only on GA4 (`properties/530090453`) and GSC. No OAuth refresh token is used in the weekly path.
+**Analytics auth:** **OAuth2 refresh token**, not a service account. `scripts/gsc_pull_weekly.py` reads `client_id` / `client_secret` / `refresh_token` from `.secrets/gsc-credentials.json` and exchanges them at `oauth2.googleapis.com/token`; the OAuth app is published to production so the token does not expire. GA4 property `530090453`.
+> Corrected 2026-09-01. This line previously claimed a service account and stated "no OAuth refresh token is used in the weekly path" — the exact opposite of what the script does. A `gsc-service-account.json` does sit in `~/.config/claude-seo/`, which is what made the wrong claim survive inspection; the weekly path does not use it. Verified by reading the auth path in the script, not by looking at which credential files exist.
 
 ---
 
-## Status — 2026-08-12 (KAB-2474 weekly review)
+## Status — 2026-09-01 (KAB-3142 weekly review)
 
-**GEO gap is mostly closed.** VMS, unified-platform and NG911 flipped `N → Y` in AI answers since
-the 07-07 baseline — cited in 4/5 queries measured (was 5/12). The Phase 3 roundup pages caused it.
-**C5 is the only category question still uncited**, and it is an authority problem, not content:
-the page has FAQPage schema, a verbatim-matching first FAQ, and 24 inbound internal links.
+**The GEO measurement got honest, and the number went down as a result.** v2.342 retargeted
+`geo-queries.txt` from 12 queries to 25 in three labelled blocks — the original 12 (trend
+continuity), the **zero-click page-1 block**, and **ES/PT**. The old set only tested queries we
+already won, which is how the rate read 83% while 35 page-1 queries earned zero clicks. Real
+rate on the honest set: **73.0% (27/37) on 2026-08-31**, against 41.7% at the 07-07 baseline.
+Read the trend across complete runs only; partial runs are excluded.
 
-**Content pipeline (Phase 3) is complete** — every row below is `Done`. No page is queued, and the
-remaining GEO gap does not call for one. Next content decision is *subtractive*: consolidate the
-video-analytics cluster (3 competing URLs, 2 de-ranked).
+**The C5 diagnosis in the previous status block was wrong, and it cost six weeks.** It said
+C5 "is an authority problem, not content: the page has FAQPage schema, a verbatim-matching
+first FAQ, and 24 inbound internal links." All of that was true and none of it was the
+constraint. **The pages defined C5 incorrectly.** They said the fifth C is *Calidad* / Quality;
+it is *Contacto Ciudadano* — Citizen Contact — per the institution the model is named after,
+Mexico City's *Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano*
+(`c5.cdmx.gob.mx`). An answer engine will not cite a definition that contradicts the government
+body that owns the term, no matter how well-linked or well-schema'd the page is. Fixed in
+**v2.347** across 5 pages, both locales, FAQPage schema, meta descriptions and `llms.txt`.
 
-🔴 **Blocked:** the SEO Anthropic API key is out of credit, so `track_geo.py` cannot complete a
-full 12-query run (partial since ~08-04). GEO coverage is unmeasurable until it is topped up.
+The lesson generalises past C5: *"we rank and are not cited"* has at least two causes with
+opposite remedies, and the schema/link inventory cannot tell them apart. Audit the claim
+against primary sources **before** concluding authority.
 
-Detail: `weekly-report-2026-08-12.md`.
+**Content pipeline restarted, and it is now diagnosis-driven rather than page-driven.** The
+Phase 3 roundup program is complete and no new roundup is queued. What replaced it is the
+answer-first program against the zero-click block: v2.343 (fire CAD), v2.344 (VMS + CCTV),
+v2.347 (C5). Each is a hypothesis with a defined test — re-run `track_geo.py` after it reaches
+production and check whether the query flips from absent to cited. **Citation is the metric,
+not rank; these pages already rank.**
+
+**Two queries are confirmed *not* content gaps** and must not be written for again:
+`911 dispatch software for emergency call centers` (v2.344) and `What is AI video analytics?`
+(2026-09-01) — both pages already cover the ground; the constraint is authority. They are the
+named targets that turn AUTH-1 from a general backlink ask into a specific list.
+
+⚠️ **Route to production is a PR cut from `main`, never a merge of `nextjs`.** The branches have
+diverged: `main` is ~165 commits ahead at v2.376 while `nextjs` is ~32 ahead at v2.347, with 32
+source files changed on both sides. See `SEO/BRANCHING.md`.
+
+**Resolved since the last plan update — do not re-raise:**
+- ~~Anthropic API key out of credit~~ — refunded; full runs completed 08-28 and 08-31.
+- ~~C5 is an authority problem~~ — it was a content error. See above.
+
+Detail: `weekly-report-2026-09-01.md`. Open items and their age: `SEO/carry-over.md`.
 
 ---
 
@@ -40,7 +70,7 @@ Detail: `weekly-report-2026-08-12.md`.
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last GEO monitor run:** 2026-07-28 (KAB-2037 weekly GEO review — 6/9 testable queries cited; GEO monitor re-run surfaced a new open-field gap, "PSIM alternatives"; new /resources/psim-alternatives/ published, v2.287. RTCC citability refresh followed in v2.288.)
+**Last GEO monitor run:** 2026-08-31 — **27/37 cited (73.0%)** on the retargeted 25-query set (v2.342). Still absent: `What is a C5 command center?` (fixed v2.347, awaiting re-crawl), `What is AI video analytics?` (**not a content gap** — authority), and the ES/PT city-video pair. Scheduled weekly via `com.kabatone.seo-geo`, Mondays 07:30.
 
 > This is the *GEO monitor* date, not the plan date — the two used to share the same "Last updated" label, which made a stale plan look freshly reviewed. The plan date is at the top of this file. The weekly brief now flags this GEO date when it is more than 21 days old, so citation counts stop being read as current when they are not.
 **Current site size:** 237 unique routes × 2 locales (EN + ES) = 474 sitemap URLs *(counted 2026-08-04)*
