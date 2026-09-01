@@ -1,3 +1,14 @@
+## [v2.346] – 2026-09-01 — v2.345's collapse guard has a blind spot: a zero-match pathspec
+
+**Fixed**
+- **`trackedRouteFiles()` no longer falls back silently.** v2.345 added a refusal (exit 3) when the git-tracked route scan returns under half the on-disk routes. Reproducing the original `[locale]` pathspec bug in this checkout shows the guard never fires for it: the buggy glob matches **0** files, not 2, and `files.length ? new Set(files) : null` turns zero into `null` — which means "not a git checkout, use the filesystem walk". The guard compares tracked-vs-on-disk, and the fallback makes those two identical by construction, so there is no shortfall left to detect.
+- The fallback is the right recovery — a noisy denominator beats no denominator — but it silently re-enables the untracked-file counting v2.345 existed to remove. It now prints an explicit warning naming the fallback and telling the reader not to trust the coverage number until the pathspec is checked. The `catch` branch (git genuinely unavailable) warns too, rather than being indistinguishable from a healthy run.
+
+**Notes**
+- **Correcting the v2.345 note:** the pathspec bug returned **0** routes here, not 2. The observable symptom is therefore not `100% of 2 URLs` but a loud exit 1 with 16 phantom `/hero-lab*` routes and `repoRoutes` inflated 239 → 248. Both are wrong; only one is quiet. The "collapsed denominator reads as a perfect score" reasoning still holds for a *partial* collapse, which is the band v2.345's guard genuinely covers.
+- Proved by mutation, not by reading: reverting the pathspec to the buggy glob on a copy reproduces 0 tracked files → silent fallback → 16 unexplained routes. After this change the same mutant prints the warning first.
+- Healthy path verified unchanged: `--coverage-only` still reports 230/478 (48.1%), 0 unexplained, exit 0, and emits no fallback warning.
+
 ## [v2.345] – 2026-09-01 — The coverage denominator counted another branch's files
 
 **Fixed**

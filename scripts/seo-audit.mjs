@@ -564,9 +564,29 @@ function trackedRouteFiles() {
       { encoding: "utf-8" }
     );
     const files = out.split("\0").filter(f => f.endsWith("/page.tsx"));
-    return files.length ? new Set(files) : null;
+    /* An empty result is not "no routes on this branch" — it means the pathspec
+       matched nothing, which is what the `[locale]` glob bug did. Falling back
+       to the filesystem walk is the right recovery (better a noisy denominator
+       than none), but it must not be silent: the fallback re-enables exactly
+       the untracked-file counting v2.345 removed, and the collapse guard below
+       cannot see it, because the guard compares tracked-vs-on-disk and the
+       fallback makes those two identical by construction. Verified 2026-09-01
+       by reverting the pathspec: 0 tracked files, silent fallback, 16 phantom
+       hero-lab routes back in the denominator. */
+    if (!files.length) {
+      process.stderr.write(
+        `  ! tracked-route scan matched 0 files under ${APP_ROUTES_DIR} — falling back to the\n` +
+        `    filesystem walk, so untracked files from other branches WILL be counted.\n` +
+        `    Check the git pathspec before trusting any coverage number from this run.\n`
+      );
+      return null;
+    }
+    return new Set(files);
   } catch {
-    return null; // not a git checkout — fall back to the filesystem walk
+    process.stderr.write(
+      `  ! not a git checkout (or git unavailable) — coverage falls back to the filesystem walk\n`
+    );
+    return null;
   }
 }
 
