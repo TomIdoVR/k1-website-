@@ -483,7 +483,7 @@ export default async function VsGenetecPage({
                 <span>{es ? 'Cómo funcionan los centros C5' : 'How C5 Command Centers Work'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
-              <Link href="/resources/what-is-video-management-software" style={{
+              <Link href="/resources/best-vms-software" style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 padding: '16px 20px', borderRadius: '8px',
                 border: '1px solid var(--border)', textDecoration: 'none',

@@ -246,11 +246,11 @@ export const metadata = {
   },
   whatIsVideoManagementSoftware: {
     title: "What Is VMS Software? Video Management System Guide [2026]",
-    description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
+    description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Learn how a VMS works, its core components, ONVIF and RTSP camera support, and how it differs from AI video analytics.",
     canonical: "https://kabatone.com/resources/what-is-video-management-software",
     og: {
       title: "What Is VMS Software? Video Management System Guide [2026]",
-      description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Compare top VMS systems, key features, AI analytics, and integration options for 2026.",
+      description: "VMS (Video Management Software) centralizes live and recorded video from any camera into one platform. Learn how a VMS works, its core components, ONVIF and RTSP camera support, and how it differs from AI video analytics.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },

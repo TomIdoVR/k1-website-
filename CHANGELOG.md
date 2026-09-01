@@ -40,6 +40,35 @@
 - Both scheduled jobs (`com.kabatone.seo-weekly`, `com.kabatone.seo-geo`) execute from the
   **OneDrive path, which is currently unreadable**. These fixes are correct in git but will not
   take effect on Monday until that working copy is restored or the jobs are repointed.
+## [v2.348] – 2026-09-01 — Track C was never a depth problem: the explainer's own description promised a comparison
+
+**Fixed**
+- `/resources/what-is-video-management-software` described itself as *"Compare top VMS systems…"*
+  in both its meta description and its `og` description, in both locales. That is a **buyer
+  promise on a definitional page**, and it is why Google serves the explainer — not
+  `/resources/best-vms-software` — for the query **`best vms software`**, at position 22–24 for
+  **zero clicks**, while the actual buyer page does not rank for it at all. Descriptions are now
+  definitional (how a VMS works, components, ONVIF/RTSP support, how it differs from AI
+  analytics).
+- Repointed the three competitor-comparison pages (`/vs/avigilon`, `/vs/milestone`,
+  `/vs/genetec`) from the explainer to the buyer page. A competitor comparison is buyer context
+  by definition, and the buyer page had only 6 inbound links.
+
+**Why this closes a five-week carry-over**
+- Track C has been open since 2026-07-27 with the prescription "content depth". That was wrong
+  twice over. **G1 caught the first repeat:** v2.286 already tried freshness signals and a
+  reviewer byline on this page, and the position moved 17.4 → 17.5 across five weeks. And the
+  page is 549 lines with six sections — not thin. Adding depth would have been a third attempt
+  at a diagnosis that had already failed twice.
+- The measured cause is intent collision, which makes this the **third instance of one
+  mechanism**: the video-analytics cluster (v2.329/v2.376), CAD-1 (v2.342), and now VMS. In each
+  case a definitional page absorbed buyer queries that belonged to a buyer page. Worth treating
+  as a site-wide pattern rather than three coincidences.
+
+**Note on scope**
+- 20 anchors reading "VMS Software" / "Video Management Software" still point at the explainer
+  and were deliberately left alone: that is topic naming, not buyer intent, and repointing them
+  would repeat the CAD-1 error of counting links without reading them.
 
 ## [v2.347] – 2026-09-01 — The C5 pages told the wrong story about what the fifth C is
 

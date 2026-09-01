@@ -366,6 +366,16 @@
           <p><strong>Fixed</strong> the opportunity scorer, which ranked automated SERP polling first. <code>best fire computer aided dispatch software</code> topped this week's table at 120 "qualified" clicks on impressions a rank-tracking bot generated — <strong>2,007 of 2,010 desktop, 0 clicks at position 6.8</strong>, and a fixed country spread with <strong>zero Mexico</strong>. Unfiltered, the same set drove three of four P0 actions in the 4 Aug brief. Implemented as an evidence-backed denylist scoring 0.0, deliberately <em>not</em> a threshold: "page-1 with zero clicks" equally describes genuine AI-Overview absorption, and a threshold would have suppressed that finding.</p>
           <p><strong>Fixed</strong> the GEO citation rate, which averaged two runs on one date and published <strong>73.0%</strong> — a figure belonging to neither. It now de-duplicates by date and query, last run wins; 31 Aug reads <strong>68.0%</strong>, and like-for-like on the shared queries it is 83.3% in both runs. <strong>There was no GEO decline.</strong></p>
           <p><strong>Added</strong> <code>scripts/gsc_pull_weekly.py</code> to version control. It had existed only as an untracked file in a working copy that became unreadable, taking the weekly data pull with it.</p>
+      <!-- v2.348 -->
+      <div class="tl-entry fix" id="v2.348">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.348</span><span class="tl-date">2026-09-01</span></div>
+          <h3 class="tl-title">Track C was never a depth problem: the explainer's own description promised a comparison</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the VMS explainer, which described itself as "Compare top VMS systems…" in its meta and og descriptions, in both locales — a buyer promise on a definitional page. That is why Google serves the explainer rather than <code>/resources/best-vms-software</code> for the query <strong>best vms software</strong>, at position 22–24 for zero clicks, while the buyer page does not rank for it at all. Descriptions are now definitional, and the three competitor-comparison pages were repointed to the buyer page.</p>
+          <p><strong>This closes a five-week carry-over</strong> whose prescription — "content depth" — was wrong twice over. The guardrail caught the repeat: v2.286 already tried freshness signals here and the position moved 17.4 → 17.5 in five weeks, and the page is 549 lines with six sections. It is the <strong>third instance of one mechanism</strong>: video analytics, CAD, and now VMS, each a definitional page absorbing buyer queries belonging to a buyer page.</p>
+          <p>Twenty anchors reading "VMS Software" were deliberately left pointing at the explainer — that is topic naming, not buyer intent, and repointing them would repeat the earlier error of counting links without reading them.</p>
         </div>
       </div>
 
