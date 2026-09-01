@@ -356,6 +356,32 @@
 
     <div class="timeline">
 
+      <!-- v2.347 -->
+      <div class="tl-entry fixed" id="v2.347">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.347</span><span class="tl-date">2026-09-01</span></div>
+          <h3 class="tl-title">The C5 pages told the wrong story about what the fifth C is</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> a factual error running across five pages, both locales, and <code>llms.txt</code>. Every C5 page said the fifth C is <strong>Calidad / Quality</strong> — "performance metrics, process auditing, continuous improvement". It is not. The fifth C is <strong>Contacto Ciudadano</strong>, Citizen Contact, per the institution the model is named after: Mexico City's <em>Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano</em>. Naming genuinely varies by state — Jalisco leads with <em>Coordinación</em>, and several states operate as <strong>C5i</strong>, where the <em>i</em> is <em>Inteligencia</em> — but "Quality" was not a variant. It was wrong, in 20 places, including <strong>FAQPage schema</strong> and <strong>meta descriptions</strong>: the two surfaces most directly consumed by AI answer engines and SERP snippets.</p>
+          <p><strong>This is the GEO finding, not a typo.</strong> <code>What is a C5 command center?</code> has been uncited in every monitor run since the July baseline, and v2.274 already tried the standard remedy — a brand-anchored definition callout on this exact page — without flipping it. This is why it never flipped: the page did not lack a brand anchor, it disagreed with every primary source an engine retrieves alongside it. An engine will not cite a definition that contradicts the government body that owns the term. The error was also propagating: a live search run during this work returned an AI summary asserting the "Quality" definition with kabatone.com in the result set. We were in the retrieved sources and losing the citation anyway.</p>
+          <p><strong>Added</strong> the substance the definitional question actually wants — the <strong>C2 → C4 → C5 → C5i ladder as institutional scope, not a technology tier</strong>. A C4 dispatches and monitors incidents already channelled by the authorities; a C5 also operates the public's inbound channels — 911, the <strong>089</strong> anonymous tip line, Locatel, street panic buttons — inside the same facility; a C5i adds crime analysis. The response-workflow section no longer assumes every incident begins as a 911 call, and the unified-platform argument now lands on something concrete: the cost of fragmentation is that a tip arriving on 089 lived in a different system from the video that could confirm it.</p>
+          <p><strong>Worth separating from the previous entry.</strong> In v2.344, the content was already correct and complete and the constraint was authority, so writing more would have been motion. Here the content was wrong. The two look identical from the outside — "we rank and are not cited" — and point at opposite actions. Checking which one you have before writing is the whole discipline.</p>
+        </div>
+      </div>
+
+      <!-- v2.346 -->
+      <div class="tl-entry fixed" id="v2.346">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.346</span><span class="tl-date">2026-09-01</span></div>
+          <h3 class="tl-title">v2.345's collapse guard has a blind spot: a zero-match pathspec</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed</strong> the audit's tracked-route scan so it no longer falls back silently. v2.345 added a refusal when the git route scan returns under half the on-disk routes — but reproducing the original bug shows the guard never fires for it. The buggy glob matches <strong>zero</strong> files, not two, and zero is treated as "not a git checkout, use the filesystem walk". The guard compares tracked against on-disk, and the fallback makes those identical by construction, so there is no shortfall left to detect. The fallback is still the right recovery — a noisy denominator beats no denominator — but it now prints an explicit warning naming itself, rather than quietly re-enabling the untracked-file counting v2.345 existed to remove.</p>
+          <p><strong>Correcting the previous entry:</strong> the pathspec bug returned 0 routes here, not 2, so the observable symptom was a loud failure with 16 phantom routes rather than a quiet "100% of 2 URLs". The "collapsed denominator reads as a perfect score" reasoning still holds for a partial collapse, which is the band the guard genuinely covers. Proved by mutation rather than by reading the code.</p>
+        </div>
+      </div>
+
       <!-- v2.345 -->
       <div class="tl-entry fixed" id="v2.345">
         <div class="version-header">

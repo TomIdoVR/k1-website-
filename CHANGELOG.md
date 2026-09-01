@@ -1,3 +1,58 @@
+## [v2.347] – 2026-09-01 — The C5 pages told the wrong story about what the fifth C is
+
+**Fixed — a factual error across five pages, both locales, and `llms.txt`**
+- Every C5 page said the fifth C is **Calidad / Quality** ("performance metrics, process
+  auditing, continuous improvement"). It is not. The fifth C is **Contacto Ciudadano** —
+  Citizen Contact. The canonical source is the institution the model is named after: Mexico
+  City's *Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano*
+  (`c5.cdmx.gob.mx`). No state government source uses "Calidad". Naming does vary — Jalisco
+  leads with *Coordinación*, and several states (Sonora, Michoacán, Edomex) operate as **C5i**,
+  where the *i* is *Inteligencia* — but "Quality" was not a variant, it was wrong.
+- Corrected in: `/resources/how-c5-command-centers-work`, `/resources/que-es-un-c5`,
+  `/resources/c5-command-centers-mexico-2026`, the `/resources` hub excerpts, `/k-dispatch`,
+  `src/content/{en,es}/metadata.ts`, and `public/llms.txt` — 20 occurrences in all. It was in
+  **FAQPage schema** and in **meta descriptions**, which is to say in the two places most
+  directly consumed by AI answer engines and SERP snippets.
+
+**Why this is the GEO finding, not a typo**
+- `What is a C5 command center?` has been uncited in every GEO run since the monitor's
+  2026-07-07 baseline — v2.274 already tried the standard remedy (a brand-anchored definition
+  callout on this exact page) and it did not flip. The 2026-08-31 run still shows **absent,
+  Motorola cited**. This is why: the page did not lack a brand anchor, it disagreed with every
+  primary source an engine retrieves alongside it. An engine will not cite a page whose
+  definition contradicts `c5.cdmx.gob.mx`.
+- The error was also **propagating**. A live web search run during this session returned an
+  AI-generated summary asserting "C5 adds a fifth dimension: Quality (Calidad)" with
+  kabatone.com in the result set — our page is being retrieved and is the likely origin of that
+  sentence. We were in the source set and losing the citation anyway.
+- **Distinct from the AUTH-2 pattern (v2.344).** There, the content was already correct and
+  complete and the constraint was authority. Here the content was wrong. Checking which of the
+  two before writing is the whole discipline; the answers point at opposite actions.
+
+**Added — the substance the definitional question actually wants**
+- The **C2 → C4 → C5 → C5i ladder** framed as institutional scope rather than a technology
+  tier: a C4 dispatches and monitors incidents already channelled by the authorities; a C5 also
+  operates the public's inbound channels — **911**, the **089** anonymous tip line, Locatel,
+  street panic buttons — inside the same facility; a C5i adds crime analysis.
+- The response-workflow section no longer assumes every incident starts as a 911 call. It now
+  names the three real entry points (911, an 089 tip, a detection from the center's own camera
+  network) converging on one dispatch flow — which is also where the unified-platform argument
+  lands honestly: the fragmentation cost is that a tip on 089 lived in a different system from
+  the video that could confirm it. No KabatOne capability was invented; claims stay within what
+  the site already states.
+
+**Measurement**
+- Hypothesis with a defined test, same contract as v2.343: re-run `SEO/geo/track_geo.py` after
+  this reaches production and the engines re-crawl, and check whether
+  `What is a C5 command center?` flips from absent to cited. Citation is the metric — the C5
+  cluster already carries 5,422 impressions at 0.28% CTR, the site's largest and worst-
+  converting cluster. Note the head term `c5` stays **navigational** (qualified potential 0,
+  per G3/G8); the win being chased here is the definitional AI answer, not clicks on `c5`.
+
+**Verified**
+- `npx tsc --noEmit` clean. `git grep` sweep for all eleven phrasings of the wrong expansion
+  returns nothing across `src/` and `public/`.
+
 ## [v2.346] – 2026-09-01 — v2.345's collapse guard has a blind spot: a zero-match pathspec
 
 **Fixed**

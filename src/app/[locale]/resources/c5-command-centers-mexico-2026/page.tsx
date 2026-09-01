@@ -30,7 +30,7 @@ export default async function C5CommandCentersMexico2026Page({
         {
           question: '¿Qué significa C5 en México?',
           answer:
-            'C5 significa Centro de Control, Comando, Comunicación, Cómputo y Calidad. Son los centros de coordinación de emergencias integrados de México, responsables de articular la respuesta de policía, bomberos, servicios médicos de emergencia y videovigilancia en ciudades y estados. El término "Calidad" se refiere a la evaluación continua del desempeño operativo y los estándares de servicio al ciudadano.',
+            'C5 significa Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano. Son los centros de coordinación de emergencias integrados de México, responsables de articular la respuesta de policía, bomberos, servicios médicos de emergencia y videovigilancia en ciudades y estados. La quinta C, Contacto Ciudadano, es lo que distingue a un C5: el centro opera los canales por los que la población reporta — el 911, la línea 089 de denuncia anónima y los servicios de atención ciudadana. El nombre varía por estado: Jalisco antepone Coordinación, y los estados que además concentran análisis criminal operan como C5i, donde la i es Inteligencia.',
         },
         {
           question: '¿Cuántos centros C5 tiene México?',
@@ -45,7 +45,7 @@ export default async function C5CommandCentersMexico2026Page({
         {
           question: '¿Cuál es la diferencia entre C2, C4 y C5?',
           answer:
-            'C2 es el nivel básico de coordinación con funciones de mando y control. C4 agrega cómputo y comunicaciones al modelo C2 — habilitando despacho asistido por computadora y videovigilancia centralizada. C5 incorpora Calidad como quinta dimensión, sumando gestión del desempeño, atención ciudadana (línea 911) y coordinación interinstitucional formal. A mayor número de componentes, mayor capacidad operativa e integración tecnológica del centro.',
+            'C2 es el nivel básico de coordinación con funciones de mando y control, típicamente municipal. C4 agrega Cómputo y Comunicaciones al modelo C2 — habilitando despacho asistido por computadora y videovigilancia centralizada. C5 incorpora Contacto Ciudadano como quinta dimensión: el centro deja de recibir únicamente incidentes canalizados por la autoridad y pasa a operar directamente los canales del ciudadano — 911, denuncia anónima 089 y atención ciudadana. C5i suma Inteligencia: análisis criminal y explotación de datos en la misma instalación. La escalera describe alcance institucional, no una certificación tecnológica.',
         },
         {
           question: '¿Cómo apoya KabatOne a los centros C5?',
@@ -62,7 +62,7 @@ export default async function C5CommandCentersMexico2026Page({
         {
           question: 'What does C5 stand for in Mexico?',
           answer:
-            'C5 stands for Centro de Control, Comando, Comunicación, Cómputo y Calidad — Mexico\'s integrated emergency coordination centers. These facilities are responsible for coordinating police, fire, emergency medical services, and surveillance operations at the municipal and state level. The "Quality" (Calidad) dimension refers to ongoing performance evaluation and citizen service standards.',
+            'C5 stands for Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — Command, Control, Computing, Communications, and Citizen Contact. These are Mexico\'s integrated emergency coordination centers, responsible for coordinating police, fire, emergency medical services, and surveillance operations at the municipal and state level. The fifth C, Citizen Contact, is what makes a center a C5: it operates the channels the public reports through — 911, the 089 anonymous tip line, and citizen-service lines. Naming varies by state — Jalisco leads with Coordination, and states that also consolidate crime analysis operate as C5i, where the i is Intelligence.',
         },
         {
           question: 'How many C5 command centers does Mexico have?',
@@ -77,7 +77,7 @@ export default async function C5CommandCentersMexico2026Page({
         {
           question: 'What is the difference between C2, C4, and C5?',
           answer:
-            'C2 is the basic coordination level covering command and control functions. C4 adds computing and communications to the C2 model — enabling computer-aided dispatch and centralized video surveillance. C5 incorporates Quality as the fifth dimension, adding performance management, citizen contact (911 line), and formal inter-agency coordination. More components means greater operational capability and technology integration.',
+            'C2 is the basic coordination level covering command and control, typically municipal. C4 adds Computing and Communications to the C2 model — enabling computer-aided dispatch and centralized video surveillance. C5 incorporates Citizen Contact as the fifth dimension: the center stops merely receiving incidents channelled by the authorities and starts operating the public\'s own channels — 911, the 089 anonymous tip line, and citizen-service lines. C5i adds Intelligence: crime analysis and data exploitation in the same facility. The ladder describes institutional scope, not a technology certification.',
         },
         {
           question: 'How does KabatOne support C5 command centers?',
@@ -262,8 +262,8 @@ export default async function C5CommandCentersMexico2026Page({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'C5 significa Centro de Control, Comando, Comunicación, Cómputo y Calidad. Son los principales centros de coordinación de emergencias en México: coordinan la respuesta policial, operaciones de bomberos, servicios médicos de urgencias, videovigilancia y gestión de incidentes a nivel municipal y estatal.'
-                : 'C5 stands for Centro de Control, Comando, Comunicación, Cómputo y Calidad. These are Mexico\'s primary hubs for coordinating emergency response, police operations, video surveillance, and incident management at the municipal and state level.'}
+                ? 'C5 significa Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano. Son los principales centros de coordinación de emergencias en México: coordinan la respuesta policial, operaciones de bomberos, servicios médicos de urgencias, videovigilancia y gestión de incidentes a nivel municipal y estatal — y operan los canales por los que entra el reporte ciudadano, del 911 a la denuncia anónima 089.'
+                : 'C5 stands for Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — Command, Control, Computing, Communications, and Citizen Contact. These are Mexico\'s primary hubs for coordinating emergency response, police operations, video surveillance, and incident management at the municipal and state level — and they operate the channels citizen reports arrive through, from 911 to the 089 anonymous tip line.'}
             </p>
             <p style={pStyle}>
               {es
