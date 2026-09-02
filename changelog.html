@@ -366,6 +366,20 @@
           <p><strong>Fixed</strong> the opportunity scorer, which ranked automated SERP polling first. <code>best fire computer aided dispatch software</code> topped this week's table at 120 "qualified" clicks on impressions a rank-tracking bot generated — <strong>2,007 of 2,010 desktop, 0 clicks at position 6.8</strong>, and a fixed country spread with <strong>zero Mexico</strong>. Unfiltered, the same set drove three of four P0 actions in the 4 Aug brief. Implemented as an evidence-backed denylist scoring 0.0, deliberately <em>not</em> a threshold: "page-1 with zero clicks" equally describes genuine AI-Overview absorption, and a threshold would have suppressed that finding.</p>
           <p><strong>Fixed</strong> the GEO citation rate, which averaged two runs on one date and published <strong>73.0%</strong> — a figure belonging to neither. It now de-duplicates by date and query, last run wins; 31 Aug reads <strong>68.0%</strong>, and like-for-like on the shared queries it is 83.3% in both runs. <strong>There was no GEO decline.</strong></p>
           <p><strong>Added</strong> <code>scripts/gsc_pull_weekly.py</code> to version control. It had existed only as an untracked file in a working copy that became unreadable, taking the weekly data pull with it.</p>
+      <!-- v2.349 -->
+      <div class="tl-entry fix" id="v2.349">
+        <div class="tl-meta"><span class="tl-ver">v2.349</span><span class="tl-date">2026-09-02</span></div>
+        <div class="tl-title">The country-page drift diagnosis was wrong on every point</div>
+        <div class="tl-body">
+          <ul class="version-changes">
+            <li><strong>There is no auto-generation pipeline.</strong> The plan blamed the 122 &rarr; 141 country-page drift on <code>ccr.ts</code> dispatching generation jobs to Paperclip. <code>fireCcrAgent</code> has <strong>zero callers</strong> anywhere in <code>src/</code> — it is dead code. The drift came from agent sessions creating pages by hand</li>
+            <li><strong>The v2.266 "guardrail" never governed generation.</strong> <code>KEEP_COUNTRY_SLUGS</code> in <code>src/app/sitemap.ts</code> is a sitemap filter — 26 ICP slugs submitted, 115 noindexed. It cannot stop a page from being created, so testing it against the page count was testing the wrong thing</li>
+            <li><strong>Paperclip is not stopped — it is broken.</strong> <code>com.kabatone.paperclip</code> was never unloaded and carries <code>KeepAlive</code>/<code>RunAtLoad</code>, so it restarted itself (PID 820, up since 2026-08-31). Nothing listens on port 3100 and <code>paperclip.log</code> (17 MB) ends in a <code>tsx</code> preflight crash, <code>Unknown system error -11</code>. The weekly <code>paperclip-update</code> job is a no-op: its <code>git pull</code> fails on a branch with no upstream and <code>set -euo pipefail</code> aborts before the restart line</li>
+            <li><strong>Count verified at 141</strong>, unchanged for four weeks. The indexation liability stands, and nothing in the creation path prevents the next session from adding more</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- v2.348 -->
       <div class="tl-entry fix" id="v2.348">
         <div class="version-header">

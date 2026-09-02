@@ -84,11 +84,16 @@ Detail: `weekly-report-2026-09-01.md`. Open items and their age: `SEO/carry-over
 | `/vs/` competitor comparisons | 21 | |
 | Everything else | 36 | Products, industries, integrations, legal, demo |
 
-⚠️ **Country-page count is drifting from what this plan documented.** The guardrail added in v2.266 was meant to halt country-page generation, and this plan recorded 121. There are now **141** — 20 more than documented. Either the guardrail is not holding or pages were added by another route. Verify before the next generation run: thin duplicate pages at this scale are an indexation liability, not an asset.
+✅ **Country-page drift has stopped, and the diagnosis behind it was wrong** *(verified 2026-09-02)*. The count is **141**, unchanged in the four weeks since 2026-08-04. Two claims this plan carried do not survive checking:
+
+1. **There is no auto-generation pipeline.** `fireCcrAgent` in `src/lib/seo-agent/ccr.ts` has **zero callers** anywhere in `src/` — it is dead code. Nothing in this repo dispatches country-guide creation to Paperclip. The 122 → 141 drift came from agent sessions creating pages by hand, not from an automated route.
+2. **The v2.266 guardrail never governed generation.** `KEEP_COUNTRY_SLUGS` in `src/app/sitemap.ts` is a *sitemap filter* — it decides which country pages get submitted (26 ICP slugs kept, 115 noindexed). It cannot and never could stop a page from being created. Testing it against the page count was testing the wrong thing.
+
+The standing risk is unchanged: 141 thin templated pages is an indexation liability, and nothing structurally prevents the next agent session from adding more. A real guardrail would have to live in the creation path, not the sitemap.
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 180 (hub + 141 country guides + 39 other articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: **141 country-specific guides** live *(counted 2026-08-04; this line previously read 122)*
-- Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to **Paperclip** — strategic risk flagged 2026-05-19, see Phase 6 notes below.
-  **This is the likely source of the 122 → 141 drift.** The v2.266 guardrail was meant to halt generation, but the count kept climbing, so the dispatcher appears to still be firing. Paperclip's local server was stopped 2026-08-04; if the count stops moving while it is down, that confirms the route. Re-enable Paperclip only once the guardrail is verified to hold.
+- Auto-generation pipeline: **none live.** `src/lib/seo-agent/ccr.ts` exposes `fireCcrAgent` (a generic Paperclip issue-creator, 52 lines, not country-specific) and nothing calls it. The strategic risk flagged 2026-05-19 does not exist in the current tree.
+- Paperclip status *(checked 2026-09-02)*: **not stopped — broken.** `com.kabatone.paperclip` was never unloaded and carries `KeepAlive`/`RunAtLoad`, so it restarted on its own; PID 820 has been up since 2026-08-31. But nothing listens on port 3100 and `paperclip.log` (17 MB) ends in a `tsx` preflight crash, `Unknown system error -11`. Separately, `com.kabatone.paperclip-update` (Mon 07:00) does restart the dev server by design, but its `git pull` fails — the checked-out branch `fix/kab-688-…` has no upstream — and under `set -euo pipefail` the script exits before reaching the restart. So that weekly job is currently a no-op.
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
 - Note: Empty `src/app/[locale]/resources/public-safety-software-bahrain/` directory exists (no page.tsx, untracked) — leftover from aborted generation, safe to delete

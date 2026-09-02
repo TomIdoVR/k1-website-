@@ -40,6 +40,16 @@
 - Both scheduled jobs (`com.kabatone.seo-weekly`, `com.kabatone.seo-geo`) execute from the
   **OneDrive path, which is currently unreadable**. These fixes are correct in git but will not
   take effect on Monday until that working copy is restored or the jobs are repointed.
+## [v2.349] – 2026-09-02 — SEO: country-page drift diagnosis was wrong
+
+**Fixed**
+- The master plan blamed the 122 → 141 country-page drift on an auto-generation pipeline dispatching jobs to Paperclip, and proposed testing it by stopping Paperclip. Both halves were wrong. `fireCcrAgent` in `src/lib/seo-agent/ccr.ts` has **zero callers** in `src/` — it is dead code, and no automated route creates country pages. The drift came from agent sessions creating pages by hand.
+- The v2.266 "guardrail" was never a generation guardrail. `KEEP_COUNTRY_SLUGS` in `src/app/sitemap.ts` filters which country pages enter the sitemap (26 ICP slugs kept, 115 noindexed); it cannot prevent a page from being created. The count was being used to test something the code never did.
+- Paperclip was documented as "stopped 2026-08-04". It is not stopped — `com.kabatone.paperclip` was never unloaded and carries `KeepAlive`/`RunAtLoad`, so it restarted itself (PID 820, up since 2026-08-31). It is **broken**: nothing listens on port 3100 and `paperclip.log` ends in a `tsx` preflight crash (`Unknown system error -11`). The weekly `com.kabatone.paperclip-update` job is a no-op — its `git pull` fails on a branch with no upstream and `set -euo pipefail` aborts the script before the restart line.
+
+**Verified**
+- Country-page count holds at **141**, unchanged for four weeks. The indexation liability stands (141 thin templated pages), and nothing in the creation path prevents the next session from adding more.
+
 ## [v2.348] – 2026-09-01 — Track C was never a depth problem: the explainer's own description promised a comparison
 
 **Fixed**
