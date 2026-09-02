@@ -293,6 +293,89 @@ def is_synthetic(impressions, clicks, position, desktop_share):
     )
 
 
+# Brand navigation and third-party navigation are the same class to
+# query_intent() and opposites in reality. Measured 2026-09-02 in the target
+# market: "kabat one" 89 impressions -> 43 clicks (48%), "kabatone" 23 -> 14,
+# against "c5" 4,666 -> 2. Excluding "navigational" wholesale therefore threw
+# out our best-converting traffic along with the noise and reported target
+# CTR as 0.22%, which is worse than the number it was meant to correct.
+# Only navigation toward someone ELSE'S institution belongs in the exclusion.
+BRAND_TOKENS = (
+    'kabatone', 'kabat one', 'kabat-one', 'grupo kabat', 'cityshob',
+    'k-dispatch', 'k dispatch', 'k-video', 'k video', 'k-safety', 'k safety',
+    'k-traffic', 'k traffic', 'avalon',
+)
+
+
+def is_brand(query):
+    q = query.lower()
+    return any(tok in q for tok in BRAND_TOKENS)
+
+
+def qualified_target_market(q_country_rows, tm_impressions_actual):
+    """Target-market performance with third-party navigational queries removed.
+
+    Target-market CTR fell 1.34% -> 1.09% between 2026-08-03 and 2026-08-30 while
+    target-market clicks GREW 20%. The cause is not a conversion problem: `c5` alone
+    carries 5,181 impressions for 3 clicks, and the Spanish C5 page 10,225 for 32.
+    In Mexico "C5" is the government agency (Centro de Comando, Control, Computo,
+    Comunicaciones y Contacto Ciudadano) — residents wanting a phone number or a
+    camera feed. A vendor page cannot win that intent, so leaving those impressions
+    in the denominator makes the KPI drift down no matter how well the buyer pages
+    do. Same failure as the site-wide 0.49%, one level in.
+
+    Brand navigation is deliberately KEPT — see BRAND_TOKENS above for what
+    happens when it is not.
+
+    IMPORTANT — this is computed on the query+country dimension, which GSC
+    anonymises: rare queries are omitted, so these totals run BELOW the true
+    country-dimension figures. `coverage_pct` states how much of the real
+    target-market impression volume the query rows actually account for. Use
+    `ctr_pct` here as the steering number and `target_market.ctr_pct` as the
+    reported one; do not present this as a corrected version of that.
+    """
+    clicks = impressions = 0
+    nav_clicks = nav_impressions = 0
+    nav_queries = {}
+    for row in q_country_rows:
+        query, country = row['keys'][0], row['keys'][1]
+        if country not in TARGET_MARKET:
+            continue
+        imp = int(row.get('impressions', 0))
+        clk = int(row.get('clicks', 0))
+        if query_intent(query) == 'navigational' and not is_brand(query):
+            nav_impressions += imp
+            nav_clicks += clk
+            agg = nav_queries.setdefault(query, [0, 0])
+            agg[0] += imp
+            agg[1] += clk
+            continue
+        impressions += imp
+        clicks += clk
+
+    top_nav = sorted(
+        ({'query': q, 'impressions': i, 'clicks': c} for q, (i, c) in nav_queries.items()),
+        key=lambda n: -n['impressions'],
+    )[:10]
+    seen = impressions + nav_impressions
+    return {
+        'basis': 'query+country dimension (GSC omits anonymised rare queries)',
+        'coverage_pct': round(seen / tm_impressions_actual * 100, 1)
+                        if tm_impressions_actual else 0.0,
+        'clicks': clicks,
+        'impressions': impressions,
+        'ctr_pct': round(clicks / impressions * 100, 2) if impressions else 0.0,
+        'excluded_navigational': {
+            'definition': 'navigational toward a third party (brand navigation kept)',
+            'clicks': nav_clicks,
+            'impressions': nav_impressions,
+            'ctr_pct': round(nav_clicks / nav_impressions * 100, 2) if nav_impressions else 0.0,
+            'query_count': len(nav_queries),
+            'queries': top_nav,
+        },
+    }
+
+
 def pull_gsc(token, days):
     today = datetime.now()
     end_cur = (today - timedelta(days=1)).strftime('%Y-%m-%d')
@@ -310,6 +393,7 @@ def pull_gsc(token, days):
     pages = gsc_query(token, start_cur, end_cur, ['page'], limit=100)
     countries = gsc_query(token, start_cur, end_cur, ['country'], limit=50)
     q_device = gsc_query(token, start_cur, end_cur, ['query', 'device'], limit=25000)
+    q_country = gsc_query(token, start_cur, end_cur, ['query', 'country'], limit=25000)
 
     # Desktop share per query, used by the synthetic filter below.
     desktop_share = {}
@@ -435,6 +519,7 @@ def pull_gsc(token, days):
         'ctr_pct': round(tm_clicks / tm_impressions * 100, 2) if tm_impressions else 0.0,
         'share_of_clicks_pct': round(tm_clicks / cur_totals['clicks'] * 100, 1)
                                if cur_totals['clicks'] else 0.0,
+        'qualified': qualified_target_market(q_country, tm_impressions),
     }
 
     return {
@@ -554,6 +639,14 @@ def main():
     tm = search['target_market']
     say(f"  Target market:     {tm['impressions']:>7,} impr, {tm['clicks']} clicks"
         f"  ({tm['ctr_pct']}% CTR, {tm['share_of_clicks_pct']}% of all clicks)")
+    q = tm.get('qualified') or {}
+    if q:
+        nav = q.get('excluded_navigational', {})
+        say(f"    ex-navigational: {q['impressions']:>7,} impr, {q['clicks']} clicks"
+            f"  ({q['ctr_pct']}% CTR — steer on this)")
+        say(f"    navigational:    {nav.get('impressions', 0):>7,} impr,"
+            f" {nav.get('clicks', 0)} clicks"
+            f"  ({nav.get('query_count', 0)} queries, {q.get('coverage_pct')}% coverage)")
     say(f"  Avg position:      {search['totals']['avg_position']:>7}")
     say(f"  Striking distance: {search['striking_distance_count']:>7}")
     return 0

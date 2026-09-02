@@ -40,6 +40,22 @@
 - Both scheduled jobs (`com.kabatone.seo-weekly`, `com.kabatone.seo-geo`) execute from the
   **OneDrive path, which is currently unreadable**. These fixes are correct in git but will not
   take effect on Monday until that working copy is restored or the jobs are repointed.
+## [v2.350] – 2026-09-02 — Intent collisions are two pages, not a site-wide pattern; and the target-market KPI now excludes third-party navigation
+
+**Added**
+- `scripts/intent_collision.py` — finds buyer queries that Google serves with a definitional page while the buyer page ranks behind it or not at all. The mechanism had been found three times by hand (v2.329/v2.376 video analytics, v2.342 CAD-1, v2.348 VMS); this looks for the rest directly.
+- **Result: 202 collisions, 13,898 stranded impressions — and they are not spread across the site.** `what-is-video-management-software` accounts for 152 queries and 9,905 impressions; `what-is-video-analytics` for 46 and 3,574. Everything else on the site totals **4 queries**. "Site-wide pattern" was the wrong generalisation: it is two pages.
+- Worst single case: **`vms software`, 1,191 impressions** — explainer at position 10.8 with 5 clicks, `/resources/best-vms-software` at 21.1 with zero.
+- Output is tiered. Tier 1 (25 queries) carries an explicit buying marker and is actionable on sight. Tier 2 (177) is head terms that read as shopping to a person and as nothing in particular to a matcher — v2.348 deliberately left bare topic anchors alone, so that judgement is surfaced rather than made automatically.
+
+**Fixed**
+- `scripts/weekly_brief.py` — `target_market.qualified` reports target-market performance with **third-party** navigational queries removed: 1.26% CTR (5,692 impressions / 72 clicks) against 0.17% on the excluded block (5,153 / 9), which is `c5` and its variants. The 1.34% → 1.09% decline over August was this block growing, not conversion getting worse.
+- Brand navigation is deliberately kept. The first cut excluded all navigational queries and reported target CTR as **0.22%** — worse than the number it was correcting — because `query_intent` files brand navigation and third-party navigation in the same bucket, and in the target market "kabat one" runs 89 impressions → 43 clicks (48%) against `c5` at 4,666 → 2.
+- `coverage_pct` is reported alongside: this is a query+country figure and GSC omits anonymised rare queries, so it accounts for 57.9% of real target-market impressions. It is the steering number, not a replacement for `target_market.ctr_pct`.
+
+**Calibration note**
+- The detector's position cap was first set at 20 and silently excluded the v2.348 case it was built to generalise (that explainer held 22.3). Set to 30 and validated by confirming `best vms software` reappears.
+
 ## [v2.349] – 2026-09-02 — SEO: country-page drift diagnosis was wrong
 
 **Fixed**
