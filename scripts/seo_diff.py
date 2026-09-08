@@ -134,9 +134,9 @@ def zero_click_block(cur, prior):
 
 
 def opportunities(cur):
-    """Ranked by score, never by raw potential. Navigational queries keep a visible row
-    but a qualified potential of 0 -- an unlabelled big number gets narrated as the
-    headline no matter where it ranked (see CHANGELOG v2.330)."""
+    """Ranked by score, never by raw potential. Navigational and bot-polling queries keep
+    a visible row but a qualified potential of 0 -- an unlabelled big number gets narrated
+    as the headline no matter where it ranked (see CHANGELOG v2.330, v2.378)."""
     out = []
     for r in query_index(cur).values():
         impr = r.get('impressions', 0)
@@ -150,7 +150,7 @@ def opportunities(cur):
         out.append({'query': r['query'], 'position': r['position'], 'impressions': impr,
                     'clicks': r.get('clicks', 0), 'cluster': assign_cluster(r['query']),
                     'intent': intent, 'potential_clicks': pot,
-                    'potential_clicks_qualified': 0 if intent == 'navigational' else pot,
+                    'potential_clicks_qualified': 0 if intent in ('navigational', 'polling') else pot,
                     'score': round(impr * gap * business_value(r['query']), 1)})
     out.sort(key=lambda o: -o['score'])
     return out
@@ -377,15 +377,34 @@ def geo_freshness():
     if not csv.exists():
         return {'available': False}
     rows = [l.split(',') for l in csv.read_text().strip().splitlines()[1:] if l.strip()]
-    by_date = collections.defaultdict(list)
+    # De-duplicate by (date, query), last occurrence wins.
+    #
+    # A date can legitimately hold more than one run: on 2026-08-31 the 12-query set ran in
+    # the morning and the expanded 25-query set ran after `geo-queries.txt` grew at 13:31,
+    # leaving 37 rows for 25 distinct queries. Counting rows averaged a 12-query run and a
+    # 25-query run together and published 73.0% -- a number belonging to neither. Deduped,
+    # that date reads 68.0% (17/25), and the 12 queries common to both runs read 83.3% in
+    # each, i.e. flat rather than the 10-point fall the raw rows implied.
+    #
+    # This is NOT the v2.340 double-run bug. That fix worked: the 24 doubled rows written at
+    # 08:07 were correctly reduced to 12 by 09:04. The failure here is that the history has
+    # no run identifier, so two honest runs on one date are indistinguishable by row count.
+    by_date = collections.defaultdict(dict)
+    dupes = collections.Counter()
     for r in rows:
-        by_date[r[0]].append(r)
+        if len(r) < 3:
+            continue
+        q = r[1].strip()
+        if q in by_date[r[0]]:
+            dupes[r[0]] += 1
+        by_date[r[0]][q] = r
     runs = []
     for d in sorted(by_date):
-        got = by_date[d]
-        cited = sum(1 for r in got if len(r) > 2 and r[2].strip().upper() == 'Y')
+        got = list(by_date[d].values())
+        cited = sum(1 for r in got if r[2].strip().upper() == 'Y')
         runs.append({'date': d, 'queries': len(got), 'cited': cited,
                      'rate_pct': round(cited / len(got) * 100, 1) if got else 0,
+                     'superseded_rows': dupes.get(d, 0),
                      'complete': len(got) >= 12})
     last = runs[-1] if runs else None
     age = None
