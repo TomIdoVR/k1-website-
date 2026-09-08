@@ -586,7 +586,7 @@ export default async function BestPublicSafetySoftwarePage({
               {[
                 { href: '/resources/what-is-a-public-safety-platform', label: es ? '¿Qué es una plataforma de seguridad pública?' : 'What Is a Public Safety Platform?' },
                 { href: '/resources/psim-vs-unified-platform', label: es ? 'PSIM vs Plataforma Unificada' : 'PSIM vs Unified Platform' },
-                { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD de despacho?' : 'What Is CAD Dispatch Software?' },
+                { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                 { href: '/resources/what-is-video-management-software', label: es ? '¿Qué es el software de gestión de video?' : 'What Is Video Management Software?' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un centro de crimen en tiempo real?' : 'What Is a Real-Time Crime Center?' },
                 { href: '/resources/end-of-siloed-response', label: es ? 'El Fin de la Respuesta en Silos' : 'The End of Siloed Response' },

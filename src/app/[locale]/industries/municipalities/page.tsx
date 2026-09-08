@@ -466,8 +466,8 @@ export default async function MunicipalitiesPage({
               <Link href="/resources/how-c5-command-centers-work" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
                 {es ? '¿Cómo Funcionan los Centros de Mando C5?' : 'How C5 Command Centers Work'}
               </Link>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
-                {es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?'}
+              <Link href="/resources/best-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software'}
               </Link>
             </div>
           </div>

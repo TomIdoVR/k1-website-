@@ -424,7 +424,7 @@ export default async function PublicSafetySoftwareColombiaPage({
                   {es ? 'Recursos relacionados:' : 'Related resources:'}
                 </span>
                 {[
-                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software de Despacho CAD' : 'What Is CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'What Is a Real-Time Crime Center' },
                   { href: '/resources/public-safety-software-municipalities-mexico', label: es ? 'Seguridad Publica — Mexico' : 'Public Safety Software — Mexico' },
@@ -516,9 +516,9 @@ export default async function PublicSafetySoftwareColombiaPage({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
                 {
-                  href: '/resources/what-is-cad-dispatch-software',
-                  en: 'What Is CAD Dispatch Software?',
-                  es: '¿Que es el software de despacho CAD?',
+                  href: '/resources/best-cad-dispatch-software',
+                  en: 'Best CAD Dispatch Software',
+                  es: 'Mejor Software CAD de Despacho',
                 },
                 {
                   href: '/resources/what-is-situational-awareness-software',

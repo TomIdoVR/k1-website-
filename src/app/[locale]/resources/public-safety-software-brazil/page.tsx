@@ -491,7 +491,7 @@ export default async function PublicSafetySoftwareBrazilPage({
               {[
                 { href: '/resources/best-public-safety-software', label: es ? 'Mejores plataformas de seguridad publica' : 'Best Public Safety Software' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Que es un Centro de Control en Tiempo Real?' : 'What Is a Real-Time Crime Center?' },
-                { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Que es software CAD de despacho?' : 'What Is CAD Dispatch Software?' },
+                { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                 { href: '/resources/public-safety-software-colombia', label: es ? 'Software de seguridad publica — Colombia' : 'Public Safety Software — Colombia' },
               ].map((link, i) => (
                 <Link key={i} href={link.href} style={{

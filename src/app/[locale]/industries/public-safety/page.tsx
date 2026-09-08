@@ -477,8 +477,8 @@ export default async function PublicSafetyPage({
               <Link href="/resources/what-is-a-public-safety-platform" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
                 {es ? '¿Qué Es una Plataforma de Seguridad Pública?' : 'What Is a Public Safety Platform?'}
               </Link>
-              <Link href="/resources/what-is-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
-                {es ? '¿Qué Es el Software CAD de Despacho?' : 'What Is CAD Dispatch Software?'}
+              <Link href="/resources/best-cad-dispatch-software" style={{ fontSize: '13px', color: 'var(--cyan)', textDecoration: 'none' }}>
+                {es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software'}
               </Link>
             </div>
           </div>
