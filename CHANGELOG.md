@@ -1,3 +1,41 @@
+## [v2.377] – 2026-09-08 — The CAD cluster pointed 60 internal links at a page ranking 56–68
+
+**Changed**
+- Re-pointed the CAD cluster's buyer-intent internal links from
+  `/resources/what-is-cad-dispatch-software` to `/resources/best-cad-dispatch-software`
+  across **24 files (32 links)**. The winner ranks **6.8–11.0** on every CAD buyer query and
+  earns 66 clicks; the explainer ranks **56–68** on those same queries. Inbound internal links
+  were **60 to the explainer against 23 to the winner** — 2.6:1 the wrong way. After this change:
+  **55 to the winner, 28 to the explainer.**
+- Scope was decided by page intent, not by slug. Only pages whose visitors are choosing a
+  vendor were re-pointed: the `/vs/*` competitor pages, the `public-safety-software-*` country
+  pages, `best-public-safety-software`, and the two `/industries/*` pages.
+- **Anchor text moved with the href.** A link reading "What Is CAD Dispatch Software" now reads
+  "Best CAD Dispatch Software" / "Mejor Software CAD de Despacho". Re-pointing the href alone
+  would have left a definitional anchor aimed at a comparison page — a worse signal than the
+  problem being fixed.
+
+**Not changed — deliberately**
+- `/resources/what-is-cad-dispatch-software` is **kept and still linked**. It is a definitional
+  and GEO asset with genuine informational intent; this is a link-equity correction, not a
+  consolidation. No 301s, no sitemap removal.
+- The explainer keeps its links from other explainers (`what-is-a-psap`,
+  `what-is-incident-management-software`, `que-es-un-c5`, and the resources hub card).
+  Explainer-to-explainer linking is coherent and was left alone — that is why 28 links remain.
+- The 14 files that already linked to **both** pages were untouched; they were never misdirected.
+
+**Notes**
+- Mechanism and precedent: this is the same fix as VID-1 (v2.376), which is the one change in
+  this programme with measured proof. In the first pull that measured it,
+  `/resources/cctv-video-analytics` gained **+38 clicks — 63% of the entire site's click growth**.
+- Link counting includes nav/footer links defined as data (`href:` / `to:` / `path:`). An
+  `href=`-only scan misses those and undercounts; the earlier 13-vs-9 figure in the ledger was
+  measured that narrower way.
+- Branched from `main`, not merged from `nextjs` — the branches are diverged (`main` 165 ahead,
+  `nextjs` 35 ahead, 33 files changed on both sides).
+- Pre-existing duplicate `href` in `public-safety-software-guatemala` (`cad-dispatch-software-latin-america`)
+  was left alone — it is on `main` already and unrelated to this change.
+
 ## [v2.376] – 2026-08-31 — The site pointed 28 internal links at its worst video page and 8 at its best
 
 **Changed**
