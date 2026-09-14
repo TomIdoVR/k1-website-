@@ -48,6 +48,15 @@
   **OneDrive path, which is currently unreadable**. These fixes are correct in git but will not
   take effect on Monday until that working copy is restored or the jobs are repointed.
 
+## [SEO] 2026-09-07 — Weekly SEO brief
+
+**Added**
+- `SEO/audits/weekly-2026-09-07.json` — raw GA4 + GSC data (28-day period ending 2026-09-06)
+- `SEO/audits/weekly-2026-09-07.md` — five-section brief (Traffic, Search, GEO, Plan, Operations)
+- `SEO/audits/traffic-2026-09-07.html` — HTML dashboard (deterministic render, no AI)
+
+Key findings: organic sessions +16.5%, search clicks +34.3%; direct traffic −12.9% pulling headline total to −4.5%; 35 staging commits not in production including the C5 content fix (v2.347).
+
 ## [v2.347] – 2026-09-01 — The C5 pages told the wrong story about what the fifth C is
 
 **Fixed — a factual error across five pages, both locales, and `llms.txt`**
