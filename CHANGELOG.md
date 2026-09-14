@@ -1,3 +1,10 @@
+## [SEO Brief] 2026-09-14 — Weekly SEO brief
+**Added**
+- `SEO/audits/weekly-2026-09-14.json` — GA4 + GSC data pull (28-day period Aug 17–Sep 13)
+- `SEO/audits/weekly-2026-09-14.md` — five-section brief: traffic, search, GEO, plan, operations
+- `SEO/audits/traffic-2026-09-14.html` — HTML dashboard (deterministic, no AI)
+- Organic clicks +29% to 597; staging 36 commits ahead of prod; missing Python deps flagged
+
 ## [v2.378] – 2026-09-08 — The scorer's #1 opportunity was a bot, and a citation rate averaged two different runs
 
 **Fixed — the opportunity scorer ranked automated SERP polling first**
