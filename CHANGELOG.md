@@ -1,3 +1,12 @@
+## [v2.383] – 2026-09-15 — Careers sections are no longer one flat dark field
+
+**Changed**
+- **Alternating section backgrounds on both careers pages.** Everything below the hero sat on the same `--bg`, so the pages read as one unbroken dark field. Sections now alternate using the homepage's own treatments: `--bg-2` bands between rules (the `.hp-proof` pattern) plus faint cyan and blue gradient washes (the `.hp-modules` pattern). Job page: intro tinted cyan, content sections alternate band/plain, CTA tinted blue. Index: Why banded, Open Positions tinted, CTA banded and tinted.
+- Both tokens are theme-aware — `--bg-2` is `#f1f5f9` in light mode, not a dark panel — so the banding stays correct in both themes.
+
+**Fixed**
+- `.car-band` and `.car-tint-*` both set the `background` shorthand, so combining them dropped the band colour and only the gradient rendered. Bands now set `background-color` and tints `background-image`, so a section using both composes. Caught by reading computed styles on the served page: the CTA reported `backgroundColor: transparent` despite carrying `car-band`.
+
 ## [v2.382] – 2026-09-15 — Careers rebuilt on the homepage's language, and the job page stopped being a document
 
 **Fixed — the reference page was wrong twice**

@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.383 -->
+      <div class="tl-entry changed" id="v2.383">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.383</span><span class="tl-date">2026-09-15</span></div>
+          <h3 class="tl-title">Careers sections are no longer one flat dark field</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Alternating section backgrounds</strong> on both careers pages. Everything below the hero sat on the same <code>--bg</code>, so the pages read as one unbroken dark field. Sections now alternate using the homepage's own treatments &mdash; <code>--bg-2</code> bands between rules (the <code>.hp-proof</code> pattern) plus faint cyan and blue gradient washes. Both tokens are <strong>theme-aware</strong>, so the banding stays correct in light mode too.</p>
+          <p><strong>Fixed a CSS conflict:</strong> <code>.car-band</code> and <code>.car-tint-*</code> both set the <code>background</code> shorthand, so combining them dropped the band colour and only the gradient rendered. Bands now set <code>background-color</code> and tints <code>background-image</code>. Caught by reading computed styles on the served page &mdash; the CTA reported <code>backgroundColor: transparent</code> despite carrying <code>car-band</code>.</p>
+        </div>
+      </div>
+
+
       <!-- v2.382 -->
       <div class="tl-entry changed" id="v2.382">
         <div class="version-header">
