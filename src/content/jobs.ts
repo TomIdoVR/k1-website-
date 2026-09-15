@@ -8,6 +8,9 @@
 // To post a new role: add an entry here. The index page, the detail route,
 // the sitemap and the JobPosting structured data all derive from this file.
 
+/** Where applications go. Shown as visible text as well as in the mailto: link. */
+export const APPLY_EMAIL = 'careers@kabatone.com'
+
 export interface JobSection {
   heading: string
   body?: string

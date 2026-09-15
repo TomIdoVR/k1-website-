@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.381 -->
+      <div class="tl-entry fixed" id="v2.381">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.381</span><span class="tl-date">2026-09-15</span></div>
+          <h3 class="tl-title">The careers page was built in the old site's language</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Rebuilt</strong> <code>/careers</code> and <code>/careers/[slug]</code> against the current design language. They had been modelled on <code>/about</code> &mdash; which is pre-redesign and was never migrated &mdash; so a brand-new page shipped reproducing the <strong>old site's styling</strong>. DM Mono eyebrows instead of 11px/600 sans at <code>0.28em</code>; <code>clamp(52px,7vw,80px)</code> instead of <code>clamp(38px,4.5vw,60px)</code>; mixed-case H2s instead of uppercase Barlow; 400-weight body instead of 300.</p>
+          <p><strong>Reused the shared components</strong> instead of hand-rolling them. <code>Breadcrumb</code> had been reimplemented by hand and <code>PageHero</code> / <code>CTASection</code> ignored &mdash; <code>CTASection</code> is used by <strong>219 pages</strong>. The apply CTA stays bespoke on purpose: both hardcode <code>/contact</code> and fire <code>trackLead('book_demo')</code>, which would have logged candidates as demo leads.</p>
+          <p><strong>Verified by diffing rendered HTML</strong> against <code>/industries/airport</code> rather than by eye &mdash; matching Breadcrumb, type scale, section rhythm, alternating band, 300-weight body and <code>0.28em</code> eyebrows.</p>
+          <p><strong>Fixed Apply opening a blank page.</strong> The button was a bare <code>mailto:</code>, which opens an empty tab for anyone whose browser has no mail app registered. <code>careers@kabatone.com</code> now renders as visible, selectable text beside every Apply button, so the page never dead-ends.</p>
+        </div>
+      </div>
+
+
       <!-- v2.380 -->
       <div class="tl-entry added" id="v2.380">
         <div class="version-header">

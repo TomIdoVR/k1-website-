@@ -1,3 +1,13 @@
+## [v2.381] – 2026-09-15 — The careers page was built in the old site's language
+
+**Fixed**
+- **Rebuilt `/careers` and `/careers/[slug]` against the current design language.** They had been modelled on `/about`, which is pre-redesign and was never migrated — so a brand-new page shipped reproducing the old site's styling. Every token was wrong: DM Mono eyebrows at `0.25em` instead of 11px/600 sans at `0.28em` with a bullet dot; `clamp(52px, 7vw, 80px)` H1 instead of `clamp(38px, 4.5vw, 60px)`; mixed-case H2s instead of uppercase Barlow at `lineHeight 1.0`; 400-weight body instead of 300; 1160/40px containers instead of the `80px 32px` section rhythm with the `rgba(255,255,255,0.01)` alternating band.
+- **Reused the shared components instead of hand-rolling them.** `Breadcrumb` was reimplemented by hand; `PageHero` and `CTASection` were ignored entirely — `CTASection` is used by 219 pages. The apply CTA stays bespoke on purpose: `PageHero` and `CTASection` both hardcode `/contact` and fire `trackLead('book_demo')`, which is the wrong destination and would have logged candidates as demo leads.
+- Verified by diffing the rendered HTML against `/industries/airport` rather than by eye — matching Breadcrumb, type scale, section rhythm, alternating band, 300-weight body and `0.28em` eyebrows.
+
+**Fixed — Apply opened a blank page**
+- The button was a bare `mailto:`, which opens an empty tab for anyone whose browser has no mail app registered — i.e. most webmail users. `careers@kabatone.com` now also renders as visible, selectable text beside every Apply button, from a single `APPLY_EMAIL` constant in `src/content/jobs.ts`, so the page never dead-ends.
+
 ## [v2.380] – 2026-09-15 — Careers is a new section, not a restored one
 
 **Added**
