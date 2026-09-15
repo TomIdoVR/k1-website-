@@ -356,6 +356,22 @@
 
     <div class="timeline">
 
+      <!-- v2.380 -->
+      <div class="tl-entry added" id="v2.380">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.380</span><span class="tl-date">2026-09-15</span></div>
+          <h3 class="tl-title">Careers is a new section, not a restored one</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> <code>/careers</code> and <code>/careers/[slug]</code> in <strong>EN and ES</strong>. First posting: <em>Tech Lead, Next-Generation Public Safety Platform (Hands-On)</em> &mdash; Israel, hybrid. An index page and a detail route per role, both fully translated.</p>
+          <p><strong>Roles live in <code>src/content/jobs.ts</code></strong>, each carrying complete <code>en</code> and <code>es</code> content. A role renders in whatever language the visitor picked, so Israel and Mexico openings both read naturally on either locale. Posting a new role means adding one entry &mdash; index, detail route, sitemap and structured data all derive from it.</p>
+          <p><strong>Added <code>jobPostingSchema()</code></strong> &mdash; JobPosting JSON-LD, making roles eligible for the Google Jobs experience. <code>description</code> is emitted as escaped HTML per Google's requirement, and <code>TELECOMMUTE</code> is set only for fully-remote roles; a hybrid role keeps its physical <code>jobLocation</code>.</p>
+          <p><strong>Fixed</strong> <code>kabatone.com/careers</code> returning <strong>404</strong>. The URL was live and indexed on the pre-March-2026 Webflow site and has been dead since the Next.js rebuild.</p>
+          <p><strong>Not a restoration.</strong> The old "careers" was never a page in this repo &mdash; history holds exactly one hit, a placeholder <code>&lt;a href="#"&gt;Careers&lt;/a&gt;</code> in the static <code>about.html</code> footer (<code>1885ab0</code>, removed in <code>313f4a8</code>). The real page lived on Webflow, outside git. Applications go to <code>careers@kabatone.com</code> by <code>mailto:</code> so candidates can attach a CV.</p>
+        </div>
+      </div>
+
+
       <!-- v2.379 -->
       <div class="tl-entry fixed" id="v2.379">
         <div class="version-header">

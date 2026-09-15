@@ -17,6 +17,7 @@ export default function Footer({ es }: { es: boolean }) {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
               <Link href="/about"   style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Nosotros' : 'About'}</Link>
+              <Link href="/careers" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Empleos' : 'Careers'}</Link>
               <Link href="/contact" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Contacto' : 'Contact'}</Link>
               <Link href="/privacy" style={{ color: 'var(--dim)', textDecoration: 'none' }}>{es ? 'Privacidad' : 'Privacy'}</Link>
             </div>

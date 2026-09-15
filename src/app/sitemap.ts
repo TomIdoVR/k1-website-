@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { jobs } from '@/content/jobs'
 
 const baseUrl = 'https://kabatone.com'
 
@@ -16,6 +17,8 @@ const pages = [
   { path: '/industries/logistics', priority: 0.7 },
   { path: '/industries/ports', priority: 0.7 },
   { path: '/industries/stadiums', priority: 0.7 },
+  { path: '/careers', priority: 0.6 },
+  ...jobs.map((job) => ({ path: `/careers/${job.slug}`, priority: 0.6 })),
   { path: '/resources', priority: 0.7 },
   { path: '/resources/rtcc-setup-guide', priority: 0.6 },
   { path: '/resources/ai-in-public-safety', priority: 0.6 },

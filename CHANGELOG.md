@@ -1,3 +1,18 @@
+## [v2.380] – 2026-09-15 — Careers is a new section, not a restored one
+
+**Added**
+- **`/careers` and `/careers/[slug]`, EN + ES.** First posting: *Tech Lead, Next-Generation Public Safety Platform (Hands-On)* — Israel, hybrid. Index page (why KabatOne + open roles) and a detail route per role, both fully translated.
+- **`src/content/jobs.ts`** — every role carries complete `en` and `es` content plus location/department/dates. A role renders in whatever language the visitor picked, so Israel and Mexico openings both read naturally on either locale. Posting a new role means adding one entry; the index, the detail route, the sitemap and the structured data all derive from it.
+- **`jobPostingSchema()` in `src/lib/schema.ts`** — JobPosting JSON-LD, making roles eligible for the Google Jobs experience. `description` is emitted as escaped HTML per Google's requirement. `TELECOMMUTE` is set only for fully-remote roles; a hybrid role keeps its physical `jobLocation` and no `jobLocationType`.
+- Footer link (About · **Careers** · Contact · Privacy) and sitemap entries for `/careers` plus each job page, EN and ES with hreflang.
+
+**Fixed**
+- **`https://kabatone.com/careers` returned 404.** The URL was live and indexed on the pre-March-2026 Webflow site and has been dead since the Next.js rebuild. It now resolves.
+
+**Context**
+- The old site's "careers" was never a page in this repo — history has exactly one hit, a placeholder `<a href="#">Careers</a>` in the static `about.html` footer (`1885ab0`, removed in `313f4a8`). The real page lived on Webflow, outside git, and was not recoverable. This is new work, not a restoration.
+- Applications go to `careers@kabatone.com` via `mailto:` with the role pre-filled in the subject, so candidates can attach a CV. No ATS, and no Formspree — the free tier cannot take file uploads.
+
 ## [v2.379] – 2026-09-14 — The fix shipped six days ago and never reached the machine that runs it
 
 **Fixed**

@@ -74,6 +74,11 @@ export const metadata = {
     description: "KabatOne protects 73M+ citizens across 40+ cities with a unified public safety platform built for governments, municipalities, and command centers.",
     canonical: "https://kabatone.com/about",
   },
+  careers: {
+    title: "Careers at KabatOne — Build Mission-Critical Public Safety Software",
+    description: "Join the team building the unified public safety platform trusted by 40+ cities. Engineering roles in Israel and Mexico. See our open positions.",
+    canonical: "https://kabatone.com/careers",
+  },
   contact: {
     title: "Contact KabatOne — Request a Demo",
     description: "Schedule a live demo with KabatOne's solutions team. See the platform running on real city data in 30 minutes. No commitment required.",
