@@ -11,8 +11,19 @@
 /** Where applications go. Shown as visible text as well as in the mailto: link. */
 export const APPLY_EMAIL = 'careers@kabatone.com'
 
+/**
+ * How a section renders on the job page.
+ *  prose     — paragraphs (intro / context sections)
+ *  cards     — numbered cards, for responsibilities
+ *  checklist — two-column dotted panels, for requirements
+ *  tags      — pills, for short "nice to have" items
+ *  steps     — big-numbered milestone cards, for a timeline
+ */
+export type JobSectionLayout = 'prose' | 'cards' | 'checklist' | 'tags' | 'steps'
+
 export interface JobSection {
   heading: string
+  layout?: JobSectionLayout
   body?: string
   bullets?: string[]
 }
@@ -68,14 +79,17 @@ export const jobs: Job[] = [
       sections: [
         {
           heading: 'About KabatOne',
+          layout: 'prose',
           body: 'KabatOne builds a unified, mission-critical public safety platform connecting emergency dispatch, GIS, video, sensors, incident management, mobile responders, evidence, and third-party systems. Our products support real-time decision-making in complex command-center environments across multiple countries.',
         },
         {
           heading: 'The Role',
+          layout: 'prose',
           body: 'You will own the architecture, write production code, make and document the technical decisions, and build and lead the engineering team that delivers it. The platform is developed with an AI-native, spec-driven engineering workflow in which AI coding agents do much of the mechanical work under human specification, review and approval. You will own that way of working for the team as well.\n\nThis is a technical leadership role, not an AI research role and not a people-management-only role. Humans decide; the platform and the process are built so that operators and engineers stay in control.',
         },
         {
           heading: "What You'll Do",
+          layout: 'cards',
           bullets: [
             'Own the technical direction of the platform: architecture, technology stack, engineering standards and the decisions that outlive any single feature, documented as you go.',
             'Take ownership of the existing foundation: review it, keep what holds, change what does not.',
@@ -90,6 +104,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Requirements',
+          layout: 'checklist',
           bullets: [
             '8+ years building backend or platform software, with deep TypeScript / Node.js in production (NestJS or equivalent) and strong PostgreSQL.',
             'Has taken a greenfield system from zero to production and operated it, and has taken over a codebase built by others and made it their own.',
@@ -103,6 +118,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Advantage',
+          layout: 'tags',
           bullets: [
             'Public safety, CAD, PSIM, video management, GIS or smart-city domain experience.',
             'Angular; Kubernetes and Helm; on-premises or air-gapped delivery; Kafka, Temporal, Keycloak / OIDC; OpenTelemetry.',
@@ -113,6 +129,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Your First Year',
+          layout: 'steps',
           bullets: [
             'The architecture and stack are yours: reviewed, decided, documented.',
             'A team is in place and shipping through the gated workflow.',
@@ -132,14 +149,17 @@ export const jobs: Job[] = [
       sections: [
         {
           heading: 'Sobre KabatOne',
+          layout: 'prose',
           body: 'KabatOne desarrolla una plataforma unificada de seguridad pública de misión crítica que conecta despacho de emergencias, GIS, video, sensores, gestión de incidentes, unidades móviles en campo, evidencia y sistemas de terceros. Nuestros productos sostienen la toma de decisiones en tiempo real en entornos complejos de centros de mando en varios países.',
         },
         {
           heading: 'El Rol',
+          layout: 'prose',
           body: 'Serás dueño de la arquitectura, escribirás código de producción, tomarás y documentarás las decisiones técnicas, y construirás y liderarás al equipo de ingeniería que la entrega. La plataforma se desarrolla con un flujo de trabajo de ingeniería AI-native y spec-driven, en el que los agentes de codificación con IA hacen gran parte del trabajo mecánico bajo especificación, revisión y aprobación humana. También serás dueño de esa forma de trabajar para el equipo.\n\nEs un rol de liderazgo técnico: no es un rol de investigación en IA ni un rol exclusivamente de gestión de personas. Deciden las personas; la plataforma y el proceso están construidos para que operadores e ingenieros mantengan el control.',
         },
         {
           heading: 'Qué Harás',
+          layout: 'cards',
           bullets: [
             'Ser dueño de la dirección técnica de la plataforma: arquitectura, stack tecnológico, estándares de ingeniería y las decisiones que sobreviven a cualquier funcionalidad individual, documentadas sobre la marcha.',
             'Tomar la propiedad de la base existente: revisarla, conservar lo que se sostiene y cambiar lo que no.',
@@ -154,6 +174,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Requisitos',
+          layout: 'checklist',
           bullets: [
             '8+ años construyendo software de backend o de plataforma, con TypeScript / Node.js a profundidad en producción (NestJS o equivalente) y PostgreSQL sólido.',
             'Haber llevado un sistema greenfield de cero a producción y haberlo operado, y haber tomado un código base construido por otros y haberlo hecho propio.',
@@ -167,6 +188,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Deseable',
+          layout: 'tags',
           bullets: [
             'Experiencia de dominio en seguridad pública, CAD, PSIM, gestión de video, GIS o ciudad inteligente.',
             'Angular; Kubernetes y Helm; entrega on-premises o en entornos air-gapped; Kafka, Temporal, Keycloak / OIDC; OpenTelemetry.',
@@ -177,6 +199,7 @@ export const jobs: Job[] = [
         },
         {
           heading: 'Tu Primer Año',
+          layout: 'steps',
           bullets: [
             'La arquitectura y el stack son tuyos: revisados, decididos, documentados.',
             'Hay un equipo en marcha entregando a través del flujo con compuertas.',

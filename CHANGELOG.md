@@ -1,3 +1,17 @@
+## [v2.382] – 2026-09-15 — Careers rebuilt on the homepage's language, and the job page stopped being a document
+
+**Fixed — the reference page was wrong twice**
+- v2.381 moved careers off `/about` and onto `/industries/airport`. Both are pre-redesign. The actual current language is **Homepage v2** (June 2026), and it shares almost nothing with the industry pages: DM Mono 40× vs 12×, `clamp(52px, 8vw, 110px)` display type vs `clamp(44px, 5vw, 64px)`, zero `0.28em` sans eyebrows, zero 300-weight body, no alternating band, no breadcrumb component. Rebuilt both careers pages on the homepage's devices — DM Mono eyebrow with a rule and blinking dot, oversized uppercase Barlow with a gradient tail, radial glow, cyan-topped cards, the glowing primary button.
+- `src/components/careers/CareersStyles.tsx` holds the `car-*` classes, mirroring the homepage's `hp-*` block so the two stay legible side by side.
+
+**Changed — the job page was plain**
+- Sections now declare a `layout` in `src/content/jobs.ts` instead of all rendering as one flat bullet list: `prose`, `cards` (numbered, for responsibilities), `checklist` (dotted panels, for requirements), `tags` (chips, for nice-to-haves), `steps` (big-numbered milestones, for the first year). The Tech Lead posting renders 9 cards, 8 checklist panels, 14 chips and 4 milestones. Future roles pick layouts per section.
+- A bullet like `Angular; Kubernetes and Helm; Kafka, Temporal` was becoming one sentence-long pill; the `tags` layout now splits on `;` into separate chips. Section kickers read `05` rather than `05 — CAREERS` on every section.
+- Hero gained a badge rail (location / department / reports to / type) and the index gained a stat row, both from the homepage's patterns.
+
+**Fixed**
+- `Área` was used as the department label in **both** locales; English now reads `Department`.
+
 ## [v2.381] – 2026-09-15 — The careers page was built in the old site's language
 
 **Fixed**

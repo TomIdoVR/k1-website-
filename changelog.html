@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.382 -->
+      <div class="tl-entry changed" id="v2.382">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.382</span><span class="tl-date">2026-09-15</span></div>
+          <h3 class="tl-title">Careers rebuilt on the homepage's language, and the job page stopped being a document</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>The reference page was wrong twice.</strong> v2.381 moved careers off <code>/about</code> and onto <code>/industries/airport</code> &mdash; but both are pre-redesign. The actual current language is <strong>Homepage v2</strong>, which shares almost nothing with the industry pages: DM Mono 40&times; vs 12&times;, <code>clamp(52px,8vw,110px)</code> display type, zero <code>0.28em</code> sans eyebrows, zero 300-weight body, no breadcrumb component.</p>
+          <p><strong>Rebuilt on the homepage's devices</strong> &mdash; DM Mono eyebrow with rule and blinking dot, oversized uppercase Barlow with a gradient tail, radial glow, cyan-topped cards, the glowing primary button. <code>CareersStyles.tsx</code> holds the <code>car-*</code> classes mirroring the homepage's <code>hp-*</code> block.</p>
+          <p><strong>The job page was plain.</strong> Sections now declare a <code>layout</code> &mdash; <code>cards</code> (numbered responsibilities), <code>checklist</code> (dotted requirement panels), <code>tags</code> (chips), <code>steps</code> (big-numbered milestones) &mdash; instead of all rendering as one flat bullet list. The Tech Lead posting renders <strong>9 cards, 8 panels, 14 chips and 4 milestones</strong>.</p>
+          <p><strong>Fixed</strong> <code>Área</code> used as the department label in <em>both</em> locales; English now reads <code>Department</code>.</p>
+        </div>
+      </div>
+
+
       <!-- v2.381 -->
       <div class="tl-entry fixed" id="v2.381">
         <div class="version-header">
