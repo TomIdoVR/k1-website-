@@ -13,7 +13,20 @@ import {
 import '@/components/hero-lab/solution-page.css'
 import '@/components/careers/careers.css'
 
-const ACCENT = { '--ac': '#1858f5', '--ac-ink': '#1d4ed8', '--ac-dark': '#1858f5' } as CSSProperties
+const ACCENT = { '--ac': '#1858f5', '--ac-ink': '#1d4ed8', '--ac-dark': '#6ea8ff' } as CSSProperties
+
+/* Section tones, cycled in order. One navy band lands on the third section —
+   the responsibilities cards — mirroring where the solution pages put their own
+   dark .sp-features block, so the page has a focal point instead of one flat
+   field. White cards read well against it. */
+const SECTION_TONES = [
+  'crs-band-white',
+  'crs-band-cool',
+  'crs-band-dark',
+  'crs-band-white',
+  'crs-band-cool',
+  '',
+]
 
 function canonicalFor(slug: string, locale: string) {
   return locale === 'es'
@@ -193,6 +206,7 @@ export default async function JobPage({
               <div className="sp-eyebrow">{department} · {location}</div>
               <h1 className="sp-h1"><span>{c.title}</span></h1>
               <p className="sp-sub">{c.summary}</p>
+              <p className="sp-lede">{c.intro}</p>
               <div className="crs-meta">
                 {t.rows.map((r) => (
                   <div key={r.k}>
@@ -208,17 +222,9 @@ export default async function JobPage({
           </div>
         </section>
 
-        <section className="sp-section">
-          <div className="sp-wrap">
-            <p className="crs-prose" style={{ fontSize: 'clamp(16.5px, 1.5vw, 19px)', color: '#11203a' }}>
-              {c.intro}
-            </p>
-          </div>
-        </section>
-
         {c.sections.map((section, i) => (
           <section
-            className={`sp-section${i % 2 === 1 ? ' sp-core' : ''}`}
+            className={`sp-section ${SECTION_TONES[i % SECTION_TONES.length]}`}
             key={section.heading}
           >
             <div className="sp-wrap">
@@ -231,7 +237,7 @@ export default async function JobPage({
           </section>
         ))}
 
-        <section className="sp-section" id="apply" style={{ scrollMarginTop: '80px' }}>
+        <section className="sp-section crs-band-white" id="apply" style={{ scrollMarginTop: '80px' }}>
           <div className="sp-wrap">
             <div className="sp-head sp-head-c">
               <div className="sp-section-eyebrow">{t.ctaEyebrow}</div>

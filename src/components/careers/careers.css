@@ -5,7 +5,31 @@
    These additions are form controls, the step indicator and the role cards,
    none of which exist there. */
 
-.crs-hero-inner { grid-template-columns: 1fr; max-width: 900px; }
+/* Single-column hero. The width stays sp-wrap's 1240px so the hero's left
+   edge lines up with every section below it; the measure is constrained on the
+   text itself instead. */
+.crs-hero-inner { grid-template-columns: 1fr; }
+.crs-hero-inner .sp-h1 { max-width: 20ch; }
+.crs-hero-inner .sp-lede { margin-top: 20px; }
+
+/* Section tones.
+   The base page is #f7f9fc and sp-core is a 55% white wash over it — too close
+   to read as separate bands. These are distinct steps in the same light family,
+   plus one navy band borrowed from .sp-features so the page has a focal point
+   rather than one flat field. */
+.crs-band-white { background: #fff; border-block: 1px solid rgba(15, 30, 60, 0.07); }
+.crs-band-cool { background: #eef4fc; border-block: 1px solid rgba(15, 30, 60, 0.06); }
+.crs-band-dark { background: linear-gradient(180deg, #0b1424 0%, #0a1220 100%); }
+.crs-band-dark .sp-h2 { color: #fff; }
+.crs-band-dark .sp-section-eyebrow,
+.crs-band-dark .crs-num { color: #6ea8ff; }
+.crs-band-dark .sp-lede,
+.crs-band-dark .crs-prose { color: #c6d4e6; }
+.crs-band-dark .crs-check { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); color: #c6d4e6; }
+.crs-band-dark .crs-chip { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.12); color: #c6d4e6; }
+.crs-band-dark .crs-step { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); box-shadow: none; }
+.crs-band-dark .crs-step .sp-ben-d { color: #c6d4e6; }
+.crs-band-dark .crs-step-n { color: #6ea8ff; opacity: 0.5; }
 .crs-stats { display: flex; flex-wrap: wrap; gap: clamp(20px, 4vw, 52px); margin-top: 8px; }
 .crs-stat-v { font-family: var(--sp-f-display); font-weight: 800; font-size: clamp(30px, 3.4vw, 44px); line-height: 1; color: var(--ac-ink); }
 .crs-stat-l { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7d96; margin-top: 7px; }
@@ -31,6 +55,9 @@
 
 /* Job body */
 .crs-prose { font-size: clamp(15.5px, 1.4vw, 17px); line-height: 1.68; color: var(--sp-body); margin: 0 0 16px; max-width: 68ch; }
+/* Sections that are a single block of prose do not need a full section's
+   breathing room above and below. */
+.crs-section-tight { padding-block: clamp(36px, 4vw, 56px); }
 .crs-meta { display: flex; flex-wrap: wrap; gap: clamp(18px, 3vw, 42px); padding: 22px 0; margin: 4px 0 30px;
   border-top: 1px solid rgba(15, 30, 60, 0.09); border-bottom: 1px solid rgba(15, 30, 60, 0.09); }
 .crs-meta-k { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7d96; }

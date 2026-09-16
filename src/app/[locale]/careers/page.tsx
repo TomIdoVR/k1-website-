@@ -11,7 +11,7 @@ import '@/components/hero-lab/solution-page.css'
 import '@/components/careers/careers.css'
 
 // Brand blue, matching the solution pages' accent contract.
-const ACCENT = { '--ac': '#1858f5', '--ac-ink': '#1d4ed8', '--ac-dark': '#1858f5' } as CSSProperties
+const ACCENT = { '--ac': '#1858f5', '--ac-ink': '#1d4ed8', '--ac-dark': '#6ea8ff' } as CSSProperties
 
 export async function generateMetadata({
   params,
@@ -126,7 +126,7 @@ export default async function CareersPage({
           </div>
         </section>
 
-        <section className="sp-section sp-benefits">
+        <section className="sp-section sp-benefits crs-band-white">
           <div className="sp-wrap">
             <div className="sp-head">
               <div className="sp-section-eyebrow">{t.whyEyebrow}</div>
@@ -143,7 +143,7 @@ export default async function CareersPage({
           </div>
         </section>
 
-        <section className="sp-section" id="open-positions" style={{ scrollMarginTop: '80px' }}>
+        <section className="sp-section crs-band-cool" id="open-positions" style={{ scrollMarginTop: '80px' }}>
           <div className="sp-wrap">
             <div className="sp-head">
               <div className="sp-section-eyebrow">{t.openEyebrow}</div>
@@ -176,7 +176,7 @@ export default async function CareersPage({
           </div>
         </section>
 
-        <section className="sp-section sp-core">
+        <section className="sp-section crs-band-white">
           <div className="sp-wrap">
             <div className="sp-head sp-head-c">
               <div className="sp-section-eyebrow">{t.ctaEyebrow}</div>
