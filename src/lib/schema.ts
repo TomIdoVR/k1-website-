@@ -131,3 +131,48 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
     })),
   }
 }
+
+// JobPosting schema — makes an open role eligible for the Google Jobs experience.
+// `description` must be the full posting as HTML, per Google's requirement.
+export function jobPostingSchema(job: {
+  title: string
+  descriptionHtml: string
+  datePosted: string
+  validThrough: string
+  employmentType: string
+  country: string
+  region: string
+  url: string
+  department: string
+  workplace: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: job.title,
+    description: job.descriptionHtml,
+    datePosted: job.datePosted,
+    validThrough: job.validThrough,
+    employmentType: job.employmentType,
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: 'KabatOne',
+      sameAs: 'https://kabatone.com',
+      logo: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png',
+    },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: job.region,
+        addressCountry: job.country,
+      },
+    },
+    // TELECOMMUTE is for fully-remote roles only. A hybrid role keeps its
+    // physical jobLocation and sets no jobLocationType.
+    ...(job.workplace === 'REMOTE' ? { jobLocationType: 'TELECOMMUTE' } : {}),
+    occupationalCategory: job.department,
+    directApply: false,
+    url: job.url,
+  }
+}

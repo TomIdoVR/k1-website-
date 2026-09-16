@@ -74,6 +74,11 @@ export const metadata = {
     description: "Conoce a KabatOne: la plataforma de seguridad pública que protege a más de 73 millones de ciudadanos en 40+ ciudades de América Latina.",
     canonical: "https://kabatone.com/es/about",
   },
+  careers: {
+    title: "Empleos en KabatOne — Construye Software de Seguridad Pública Crítico",
+    description: "Únete al equipo que construye la plataforma unificada de seguridad pública en la que confían más de 40 ciudades. Vacantes de ingeniería en Israel y México.",
+    canonical: "https://kabatone.com/es/careers",
+  },
   contact: {
     title: "Contacto KabatOne — Solicita una Demo",
     description: "Agenda una demo con el equipo de KabatOne. Te mostramos la plataforma con datos reales de ciudad en 30 minutos, sin compromiso.",
