@@ -46,11 +46,10 @@ export default function ApplicationForm({
   /** Brings an element clear of the sticky header, then focuses it if it can be. */
   function revealAndFocus(el: HTMLElement | null) {
     if (!el) return
-    const top = el.getBoundingClientRect().top + window.scrollY - 110
-    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
     if (typeof (el as HTMLInputElement).focus === 'function') {
-      // preventScroll: the smooth scroll above owns the movement; letting focus
-      // scroll as well lands the field back under the header.
+      // preventScroll: scrollIntoView owns the movement; letting focus scroll
+      // too lands the field back under the sticky header.
       ;(el as HTMLInputElement).focus({ preventScroll: true })
     }
   }
@@ -68,7 +67,7 @@ export default function ApplicationForm({
   // re-render that setUnanswered causes.
   useEffect(() => {
     if (!missingId || !formRef.current) return
-    revealAndFocus(formRef.current.querySelector<HTMLElement>(`#q-${missingId}-label`))
+    revealAndFocus(formRef.current.querySelector<HTMLElement>(`#q-${missingId}`))
     setMissingId(null)
   }, [missingId])
 
@@ -267,7 +266,13 @@ export default function ApplicationForm({
           </p>
           {questions.map((q, i) => (
             <div
-              className={`crs-q${unanswered && !answered.has(q.id) ? ' is-missing' : ''}`}
+              id={`q-${q.id}`}
+              className="crs-q"
+              style={
+                unanswered && !answered.has(q.id)
+                  ? { borderColor: '#f0a882', background: '#fffaf6' }
+                  : undefined
+              }
               role="group"
               aria-labelledby={`q-${q.id}-label`}
               aria-invalid={unanswered && !answered.has(q.id) ? true : undefined}
