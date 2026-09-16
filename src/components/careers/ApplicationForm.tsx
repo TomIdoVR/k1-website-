@@ -259,6 +259,7 @@ export default function ApplicationForm({
               className={`crs-q${unanswered && !answered.has(q.id) ? ' is-missing' : ''}`}
               role="group"
               aria-labelledby={`q-${q.id}-label`}
+              aria-invalid={unanswered && !answered.has(q.id) ? true : undefined}
               key={q.id}
             >
               {/* Short label travels with the answer so Slack shows the
@@ -278,7 +279,6 @@ export default function ApplicationForm({
                       type="radio"
                       name={`q_${q.id}`}
                       value={opt.v}
-                      required={step === 2}
                       onChange={() => setAnswered((prev) => new Set(prev).add(q.id))}
                     />
                     <span>{opt.label}</span>
