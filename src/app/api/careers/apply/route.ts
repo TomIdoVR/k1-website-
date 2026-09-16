@@ -9,13 +9,18 @@
  * the application, so the route reports success if any configured channel
  * accepted it, and only fails when every configured channel failed.
  *
- * Slack posting reuses SLACK_BOT_TOKEN, already configured in Vercel for the
- * SEO agent, through the same @slack/web-api client as src/lib/seo-agent/slack.
- * So the only Slack setting this needs is which channel to post into.
+ * Slack posting uses its own app token rather than the SEO agent's, so that
+ * re-scoping or rotating the SEO token can never silently stop applications
+ * arriving, and so candidate data is not handled by an app provisioned for
+ * something else. SLACK_BOT_TOKEN is kept only as a fallback.
  *
  * Environment (set in Vercel):
- *   SLACK_CAREERS_CHANNEL      Channel id or #name. Token is already present.
- *   SLACK_CAREERS_WEBHOOK_URL  Optional alternative to the bot token.
+ *   SLACK_HIRING_BOT_TOKEN     Dedicated hiring app's bot token (xoxb-).
+ *                              Needs chat:write, and the app must be a member
+ *                              of the channel when that channel is private.
+ *   SLACK_CAREERS_CHANNEL      Channel id or #name.
+ *   SLACK_BOT_TOKEN            Fallback if the dedicated token is unset.
+ *   SLACK_CAREERS_WEBHOOK_URL  Optional alternative to a bot token.
  *   RESEND_API_KEY             Email sender.
  *   CAREERS_FROM_EMAIL         Verified From address, e.g. careers@kabatone.com
  *   CAREERS_NOTIFY_EMAILS      Comma-separated recipients. A Slack channel's
@@ -58,11 +63,14 @@ function htmlEscape(text: string): string {
 
 async function postToSlack(app: Application): Promise<boolean> {
   const webhook = process.env.SLACK_CAREERS_WEBHOOK_URL
-  const token = process.env.SLACK_BOT_TOKEN
+  const token = process.env.SLACK_HIRING_BOT_TOKEN || process.env.SLACK_BOT_TOKEN
   const channel = process.env.SLACK_CAREERS_CHANNEL
   if (!webhook && !(token && channel)) {
     console.error('[careers] slack not configured:', {
-      webhook: Boolean(webhook), token: Boolean(token), channel: Boolean(channel),
+      webhook: Boolean(webhook),
+      hiringToken: Boolean(process.env.SLACK_HIRING_BOT_TOKEN),
+      fallbackToken: Boolean(process.env.SLACK_BOT_TOKEN),
+      channel: Boolean(channel),
     })
     return false
   }
