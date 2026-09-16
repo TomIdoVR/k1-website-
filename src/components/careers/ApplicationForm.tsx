@@ -43,10 +43,17 @@ export default function ApplicationForm({
   const [step, setStep] = useState<1 | 2>(1)
   const formRef = useRef<HTMLFormElement>(null)
 
-  /** Brings an element clear of the sticky header, then focuses it if it can be. */
+  /**
+   * Brings an element clear of the sticky header, then focuses it if it can be.
+   *
+   * Instant, not smooth: behaviour 'smooth' silently does nothing in some
+   * mobile contexts — measured at 375px, a smooth call left the page untouched
+   * while the identical 'auto' call scrolled correctly. Landing on the field is
+   * the requirement; the animation was only a nicety.
+   */
   function revealAndFocus(el: HTMLElement | null) {
     if (!el) return
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    el.scrollIntoView({ behavior: 'auto', block: 'center' })
     if (typeof (el as HTMLInputElement).focus === 'function') {
       // preventScroll: scrollIntoView owns the movement; letting focus scroll
       // too lands the field back under the sticky header.
@@ -59,8 +66,9 @@ export default function ApplicationForm({
   // the form back into view, clearing the sticky header.
   useEffect(() => {
     if (step !== 2 || !formRef.current) return
+    // Same reason as revealAndFocus: smooth is unreliable on mobile here.
     const top = formRef.current.getBoundingClientRect().top + window.scrollY - 90
-    window.scrollTo({ top, behavior: 'smooth' })
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'auto' })
   }, [step])
 
   // Runs after the highlight is painted, so the scroll is not racing the
