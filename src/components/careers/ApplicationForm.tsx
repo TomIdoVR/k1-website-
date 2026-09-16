@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, useEffect, FormEvent } from 'react'
 import { trackLead } from '@/lib/analytics'
 import { APPLY_EMAIL, type JobQuestion } from '@/content/jobs'
 
@@ -39,6 +39,16 @@ export default function ApplicationForm({
   // finish. Roles without questions stay a single step.
   const twoStep = questions.length > 0
   const [step, setStep] = useState<1 | 2>(1)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  // Advancing a step swaps the panel without moving the page, so on a phone the
+  // candidate lands mid-form — often past the first question. Bring the top of
+  // the form back into view, clearing the sticky header.
+  useEffect(() => {
+    if (step !== 2 || !formRef.current) return
+    const top = formRef.current.getBoundingClientRect().top + window.scrollY - 90
+    window.scrollTo({ top, behavior: 'smooth' })
+  }, [step])
 
   const t = {
     name: es ? 'Nombre completo' : 'Full name',
@@ -145,7 +155,7 @@ export default function ApplicationForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="crs-form" style={{ padding: '32px 30px' }}>
+    <form ref={formRef} onSubmit={handleSubmit} className="crs-form">
       {/* Context for whoever reads this in Slack or email. */}
       <input type="hidden" name="role" value={roleTitle} />
       <input type="hidden" name="role_slug" value={roleSlug} />
@@ -224,14 +234,14 @@ export default function ApplicationForm({
             {t.questionsIntro}
           </p>
           {questions.map((q, i) => (
-            <fieldset className="crs-q" key={q.id}>
+            <div className="crs-q" role="group" aria-labelledby={`q-${q.id}-label`} key={q.id}>
               {/* Short label travels with the answer so Slack shows the
                   question, not a bare id. */}
               <input type="hidden" name={`label_${q.id}`} value={q.short} />
-              <legend className="crs-q-legend">
+              <p className="crs-q-legend" id={`q-${q.id}-label`}>
                 <span className="crs-num">{String(i + 1).padStart(2, '0')}</span>
                 {es ? q.es : q.en}
-              </legend>
+              </p>
               <div className="crs-q-opts">
                 {[
                   { v: 'Yes', label: t.yes },
@@ -249,7 +259,7 @@ export default function ApplicationForm({
                   </label>
                 ))}
               </div>
-            </fieldset>
+            </div>
           ))}
           {unanswered && (
             <p className="crs-err">{t.answerAll}</p>
