@@ -62,14 +62,18 @@ function htmlEscape(text: string): string {
 }
 
 async function postToSlack(app: Application): Promise<boolean> {
-  const webhook = process.env.SLACK_CAREERS_WEBHOOK_URL
-  const token = process.env.SLACK_HIRING_BOT_TOKEN || process.env.SLACK_BOT_TOKEN
-  const channel = process.env.SLACK_CAREERS_CHANNEL
+  // Trimmed: a value piped into `vercel env add` can carry a trailing newline,
+  // and Slack rejects "C0C2F01B2MA\n" as channel_not_found.
+  const webhook = process.env.SLACK_CAREERS_WEBHOOK_URL?.trim()
+  const hiringToken = process.env.SLACK_HIRING_BOT_TOKEN?.trim()
+  const fallbackToken = process.env.SLACK_BOT_TOKEN?.trim()
+  const token = hiringToken || fallbackToken
+  const channel = process.env.SLACK_CAREERS_CHANNEL?.trim()
   if (!webhook && !(token && channel)) {
     console.error('[careers] slack not configured:', {
       webhook: Boolean(webhook),
-      hiringToken: Boolean(process.env.SLACK_HIRING_BOT_TOKEN),
-      fallbackToken: Boolean(process.env.SLACK_BOT_TOKEN),
+      hiringToken: Boolean(hiringToken),
+      fallbackToken: Boolean(fallbackToken),
       channel: Boolean(channel),
     })
     return false
@@ -129,6 +133,7 @@ async function postToSlack(app: Application): Promise<boolean> {
       blocks,
     })
     if (!result.ok) console.error('[careers] slack returned not-ok:', result.error)
+    else console.log('[careers] slack posted to', channel)
     return Boolean(result.ok)
   } catch (err) {
     // The Slack SDK throws on API errors; err.data.error carries the real reason
@@ -137,7 +142,11 @@ async function postToSlack(app: Application): Promise<boolean> {
       (err as { data?: { error?: string } })?.data?.error ??
       (err as Error)?.message ??
       String(err)
-    console.error('[careers] slack post failed:', reason)
+    console.error('[careers] slack post failed:', reason, {
+      tokenSource: hiringToken ? 'SLACK_HIRING_BOT_TOKEN' : 'SLACK_BOT_TOKEN',
+      tokenPrefix: token?.slice(0, 5),
+      channel: JSON.stringify(channel),
+    })
     return false
   }
 }
