@@ -9,14 +9,20 @@
  * the application, so the route reports success if any configured channel
  * accepted it, and only fails when every configured channel failed.
  *
+ * Slack posting reuses SLACK_BOT_TOKEN, already configured in Vercel for the
+ * SEO agent, through the same @slack/web-api client as src/lib/seo-agent/slack.
+ * So the only Slack setting this needs is which channel to post into.
+ *
  * Environment (set in Vercel):
- *   SLACK_CAREERS_WEBHOOK_URL  Slack incoming webhook, bound to one channel.
- *   SLACK_BOT_TOKEN            Alternative to the webhook, with
- *   SLACK_CAREERS_CHANNEL      the channel id or #name to post into.
+ *   SLACK_CAREERS_CHANNEL      Channel id or #name. Token is already present.
+ *   SLACK_CAREERS_WEBHOOK_URL  Optional alternative to the bot token.
  *   RESEND_API_KEY             Email sender.
  *   CAREERS_FROM_EMAIL         Verified From address, e.g. careers@kabatone.com
- *   CAREERS_NOTIFY_EMAILS      Comma-separated recipients.
+ *   CAREERS_NOTIFY_EMAILS      Comma-separated recipients. A Slack channel's
+ *                              own email address works here too.
  */
+
+import { WebClient, type Block, type KnownBlock } from '@slack/web-api'
 
 export const runtime = 'nodejs'
 
@@ -68,23 +74,29 @@ async function postToSlack(app: Application): Promise<boolean> {
     line('CV', app.cvLink),
   ].filter(Boolean).join('\n')
 
-  const blocks = [
+  const blocks: (Block | KnownBlock)[] = [
     {
       type: 'header',
-      text: { type: 'plain_text', text: `New application — ${app.role}`.slice(0, 150) },
+      text: { type: 'plain_text' as const, text: `New application — ${app.role}`.slice(0, 150) },
     },
-    { type: 'section', text: { type: 'mrkdwn', text: fields || '_no details_' } },
-    ...(app.message
-      ? [{
-          type: 'section',
-          text: { type: 'mrkdwn', text: `*Message:*\n${slackEscape(app.message).slice(0, 2800)}` },
-        }]
-      : []),
-    {
-      type: 'context',
-      elements: [{ type: 'mrkdwn', text: `Role: \`${slackEscape(app.roleSlug)}\` · Locale: \`${app.locale}\`` }],
-    },
+    { type: 'section', text: { type: 'mrkdwn' as const, text: fields || '_no details_' } },
   ]
+  if (app.message) {
+    blocks.push({
+      type: 'section',
+      text: {
+        type: 'mrkdwn' as const,
+        text: `*Message:*\n${slackEscape(app.message).slice(0, 2800)}`,
+      },
+    })
+  }
+  blocks.push({
+    type: 'context',
+    elements: [{
+      type: 'mrkdwn' as const,
+      text: `Role: \`${slackEscape(app.roleSlug)}\` · Locale: \`${app.locale}\``,
+    }],
+  })
 
   const payload = { text: `New application — ${app.role}`, blocks }
 
@@ -97,18 +109,13 @@ async function postToSlack(app: Application): Promise<boolean> {
       })
       return res.ok
     }
-    const res = await fetch('https://slack.com/api/chat.postMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ channel, ...payload }),
+    // Same client the SEO agent posts with, so Slack behaviour stays consistent.
+    const result = await new WebClient(token).chat.postMessage({
+      channel: channel as string,
+      text: payload.text,
+      blocks,
     })
-    // Slack returns HTTP 200 with ok:false on API errors.
-    const body = await res.json().catch(() => ({ ok: false }))
-    if (!body.ok) console.error('[careers] slack chat.postMessage failed:', body.error)
-    return Boolean(body.ok)
+    return Boolean(result.ok)
   } catch (err) {
     console.error('[careers] slack post threw:', err)
     return false

@@ -1,3 +1,12 @@
+## [v2.386] – 2026-09-16 — Careers Slack posting reuses the token that was already there
+
+**Changed**
+- The apply route now posts through **`@slack/web-api`** with the existing **`SLACK_BOT_TOKEN`**, the same client and credential `src/lib/seo-agent/slack.ts` already uses. Confirmed against `vercel env ls`: `SLACK_BOT_TOKEN` and `SLACK_SIGNING_SECRET` have been set in Production and Preview for 121 days. **The only Slack setting careers needs is `SLACK_CAREERS_CHANNEL`** — no new webhook, no new credential.
+- A webhook URL still works as an alternative via `SLACK_CAREERS_WEBHOOK_URL`, but it is no longer the documented path.
+
+**Correction to v2.385**
+- v2.385 said Formspree "cannot reach Slack". That overstated the finding: its pricing page lists no *native* Slack integration, but a notification email addressed to a Slack channel's own email address reaches Slack fine — which is how the existing demo-form submissions get there. The reasons to keep our own route are the 50-submission monthly cap, the richer Block Kit message naming the role, and not depending on an email relay — not an inability to reach Slack.
+
 ## [v2.385] – 2026-09-16 — Applications go to Slack and email through our own route, not Formspree
 
 **Added**

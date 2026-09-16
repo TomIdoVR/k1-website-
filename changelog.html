@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.386 -->
+      <div class="tl-entry changed" id="v2.386">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.386</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Careers Slack posting reuses the token that was already there</h3>
+        </div>
+        <div class="tl-body">
+          <p>The apply route now posts through <strong><code>@slack/web-api</code></strong> with the existing <strong><code>SLACK_BOT_TOKEN</code></strong> &mdash; the same client and credential <code>src/lib/seo-agent/slack.ts</code> already uses. Confirmed via <code>vercel env ls</code>: that token has been set in Production and Preview for 121 days. <strong>The only Slack setting careers needs is <code>SLACK_CAREERS_CHANNEL</code></strong> &mdash; no new webhook, no new credential.</p>
+          <p><strong>Correction to v2.385:</strong> it said Formspree "cannot reach Slack". That overstated the finding &mdash; its pricing page lists no <em>native</em> Slack integration, but a notification email sent to a Slack channel's own email address reaches Slack fine, which is how the existing demo-form submissions get there. The reasons to keep our own route are the 50-submission monthly cap, the richer Block Kit message naming the role, and not depending on an email relay.</p>
+        </div>
+      </div>
+
+
       <!-- v2.385 -->
       <div class="tl-entry added" id="v2.385">
         <div class="version-header">
