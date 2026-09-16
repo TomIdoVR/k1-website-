@@ -211,7 +211,7 @@ export default async function JobPage({
         { name: c.title, url: canonicalFor(job.slug, locale) },
       ])) }} />
 
-      <div style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
+      <div className="page-light" style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
 
         <nav aria-label="Breadcrumb" className="car-crumb">
           <Link href="/">{t.home}</Link>
@@ -222,7 +222,7 @@ export default async function JobPage({
         </nav>
 
         {/* ── HERO ── */}
-        <section style={{ position: 'relative', overflow: 'hidden', paddingBottom: '72px' }}>
+        <section className="dark-section car-hero-wrap" style={{ position: 'relative', overflow: 'hidden', paddingBottom: '72px' }}>
           <div className="car-glow" />
           <div className="car-hero">
             <div className="car-eyebrow">
@@ -251,7 +251,7 @@ export default async function JobPage({
         </section>
 
         {/* ── INTRO ── */}
-        <section className="car-section car-tint-cyan">
+        <section className="car-section">
           <div className="car-inner-narrow">
             <p className="car-prose car-prose-lead">{c.intro}</p>
           </div>
@@ -261,7 +261,7 @@ export default async function JobPage({
         {c.sections.map((section, i) => {
           const wide = section.layout === 'cards' || section.layout === 'steps' || section.layout === 'checklist'
           return (
-            <section className={`car-section${i % 2 === 0 ? ' car-band' : ''}`} key={section.heading}>
+            <section className={`car-section${i % 2 === 0 ? ' dark-section' : ''}`} key={section.heading}>
               <div className={wide ? 'car-inner' : 'car-inner-narrow'}>
                 <div className="car-label">{String(i + 1).padStart(2, '0')}</div>
                 <h2 className="car-h2">{section.heading}</h2>
@@ -272,7 +272,7 @@ export default async function JobPage({
         })}
 
         {/* ── CTA ── */}
-        <section className="car-section car-tint-blue" style={{ position: 'relative', overflow: 'hidden' }}>
+        <section className="car-section dark-section car-tint-blue" style={{ position: 'relative', overflow: 'hidden' }}>
           <div className="car-glow" />
           <div className="car-inner car-center" style={{ position: 'relative', zIndex: 1 }}>
             <div className="car-label">{t.ctaLabel}</div>

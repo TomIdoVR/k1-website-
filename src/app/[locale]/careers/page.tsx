@@ -98,7 +98,7 @@ export default async function CareersPage({
         { name: t.careers, url: es ? 'https://kabatone.com/es/careers' : 'https://kabatone.com/careers' },
       ])) }} />
 
-      <div style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
+      <div className="page-light" style={{ paddingTop: '70px', position: 'relative', minHeight: '100vh', background: 'var(--bg)', color: 'var(--white)' }}>
 
         <nav aria-label="Breadcrumb" className="car-crumb">
           <Link href="/">{t.home}</Link>
@@ -107,7 +107,7 @@ export default async function CareersPage({
         </nav>
 
         {/* ── HERO ── */}
-        <section style={{ position: 'relative', overflow: 'hidden', paddingBottom: '64px' }}>
+        <section className="dark-section car-hero-wrap" style={{ position: 'relative', overflow: 'hidden', paddingBottom: '64px' }}>
           <div className="car-glow" />
           <div className="car-hero">
             <div className="car-eyebrow">
@@ -133,7 +133,7 @@ export default async function CareersPage({
         </section>
 
         {/* ── WHY ── */}
-        <section className="car-section car-band">
+        <section className="car-section">
           <div className="car-inner car-center">
             <div className="car-label">{t.whyLabel}</div>
             <h2 className="car-h2">{t.whyH2}</h2>
@@ -153,7 +153,7 @@ export default async function CareersPage({
         </section>
 
         {/* ── OPEN POSITIONS ── */}
-        <section className="car-section car-tint-cyan" id="open-positions" style={{ scrollMarginTop: '70px' }}>
+        <section className="car-section dark-section car-tint-cyan" id="open-positions" style={{ scrollMarginTop: '70px' }}>
           <div className="car-inner car-center">
             <div className="car-label">{t.openLabel}</div>
             <h2 className="car-h2">{t.openH2}</h2>
@@ -187,7 +187,7 @@ export default async function CareersPage({
         </section>
 
         {/* ── CTA ── */}
-        <section className="car-section car-band car-tint-blue" style={{ position: 'relative', overflow: 'hidden' }}>
+        <section className="car-section" style={{ position: 'relative', overflow: 'hidden' }}>
           <div className="car-glow" />
           <div className="car-inner car-center" style={{ position: 'relative', zIndex: 1 }}>
             <div className="car-label">{t.ctaLabel}</div>

@@ -68,12 +68,14 @@ export default function CareersStyles() {
          var(--bg-2) between two rules, and several blocks carry a faint cyan or
          blue wash. Both tokens are theme-aware, so these stay correct in light
          mode (--bg-2 is #f1f5f9 there, not a dark panel). */
-      /* Bands set background-color and tints set background-image, so the two
-         compose when a section uses both instead of the tint silently winning. */
-      .car-band { background-color: var(--bg-2); border-bottom: 1px solid var(--border); }
-      .car-band-soft { background-color: var(--subtle-bg); border-bottom: 1px solid var(--border); }
-      .car-tint-cyan { background-image: linear-gradient(180deg, rgba(6,182,212,0.045) 0%, transparent 78%); }
-      .car-tint-blue { background-image: linear-gradient(180deg, rgba(59,130,246,0.05) 0%, transparent 78%); }
+      /* Contrast comes from .page-light + .dark-section, the way the homepage
+         does it — a light page with dark islands. --bg vs --bg-2 was never a
+         usable band: #0f1724 against #0b1220 is 4/255 per channel, invisible.
+         .dark-section redefines the whole token set, so text, borders and cards
+         flip with it and nothing needs a per-section colour override. */
+      .car-hero-wrap { margin-top: -70px; padding-top: 70px; }
+      .car-tint-cyan { background-image: linear-gradient(180deg, rgba(6,182,212,0.05) 0%, transparent 72%); }
+      .car-tint-blue { background-image: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, transparent 72%); }
       .car-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
       .car-inner-narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
       .car-center { text-align: center; }

@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.384 -->
+      <div class="tl-entry fixed" id="v2.384">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.384</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">The careers pages were dark end to end, so no band colour could ever show</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>v2.383's alternating bands were invisible.</strong> <code>--bg</code> is <code>#0f1724</code> and <code>--bg-2</code> is <code>#0b1220</code> &mdash; <strong>4/255 per channel</strong>. No band colour would have worked: both pages were dark top to bottom with nothing to contrast against.</p>
+          <p><strong>The site has no <code>prefers-color-scheme</code> at all.</strong> Contrast comes from <code>.page-light</code> wrappers with <code>.dark-section</code> islands &mdash; and <strong>the homepage is a light page</strong>, with dark islands for its hero, proof and why blocks. That is where its rhythm comes from, and what careers was missing.</p>
+          <p>Both careers pages now use the same mechanism. Job page: dark hero bleeding under the nav, light intro, content sections alternating, dark CTA. Index: dark hero with the stat row, light Why, dark Open Positions, light CTA. <code>.dark-section</code> redefines the whole token set, so text, borders and cards flip with it &mdash; no per-section colour overrides.</p>
+        </div>
+      </div>
+
+
       <!-- v2.383 -->
       <div class="tl-entry changed" id="v2.383">
         <div class="version-header">

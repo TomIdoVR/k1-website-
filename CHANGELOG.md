@@ -1,3 +1,11 @@
+## [v2.384] – 2026-09-16 — The careers pages were dark end to end, so no band colour could ever show
+
+**Fixed**
+- **v2.383's alternating bands were invisible, and the approach was wrong.** `--bg` is `#0f1724` and `--bg-2` is `#0b1220` — **4/255 per channel**, imperceptible. No choice of band colour would have worked, because both careers pages were dark from top to bottom and had nothing to contrast against.
+- **The site has no `prefers-color-scheme` at all.** Contrast comes from `.page-light` wrappers with `.dark-section` islands, and **the homepage is a light page** — `<div className="page-light">` with `.dark-section` on the hero, proof and why blocks. That is where its visual rhythm comes from, and it is what the careers pages were missing.
+- Both careers pages now use the same mechanism. Job page: dark hero bleeding under the nav, light intro, then content sections alternating dark/light, dark CTA. Index: dark hero with the stat row, light Why, dark Open Positions, light CTA. `.dark-section` redefines the whole token set, so text, borders and cards flip with it — no per-section colour overrides.
+- Verified by computed styles on the served build: nine sections alternating `rgb(15,23,36)` with `rgb(230,238,248)` text against light sections with `rgb(30,41,59)` text.
+
 ## [v2.383] – 2026-09-15 — Careers sections are no longer one flat dark field
 
 **Changed**
