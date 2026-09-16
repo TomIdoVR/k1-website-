@@ -60,7 +60,12 @@ async function postToSlack(app: Application): Promise<boolean> {
   const webhook = process.env.SLACK_CAREERS_WEBHOOK_URL
   const token = process.env.SLACK_BOT_TOKEN
   const channel = process.env.SLACK_CAREERS_CHANNEL
-  if (!webhook && !(token && channel)) return false
+  if (!webhook && !(token && channel)) {
+    console.error('[careers] slack not configured:', {
+      webhook: Boolean(webhook), token: Boolean(token), channel: Boolean(channel),
+    })
+    return false
+  }
 
   const line = (label: string, value: string) =>
     value ? `*${label}:* ${slackEscape(value)}` : ''
@@ -115,9 +120,16 @@ async function postToSlack(app: Application): Promise<boolean> {
       text: payload.text,
       blocks,
     })
+    if (!result.ok) console.error('[careers] slack returned not-ok:', result.error)
     return Boolean(result.ok)
   } catch (err) {
-    console.error('[careers] slack post threw:', err)
+    // The Slack SDK throws on API errors; err.data.error carries the real reason
+    // (not_in_channel, channel_not_found, invalid_auth, missing_scope…).
+    const reason =
+      (err as { data?: { error?: string } })?.data?.error ??
+      (err as Error)?.message ??
+      String(err)
+    console.error('[careers] slack post failed:', reason)
     return false
   }
 }
