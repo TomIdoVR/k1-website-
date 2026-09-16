@@ -52,8 +52,6 @@ export default function CareersStyles() {
       .car-btn:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 0 64px rgba(24,88,245,0.55), inset 0 1px 0 rgba(255,255,255,0.1); }
       .car-arrow { transition: transform 0.18s; }
       .car-btn:hover .car-arrow { transform: translateX(3px); }
-      .car-mailnote { font-size: 13px; color: var(--muted); margin-top: 16px; }
-      .car-mailnote a { color: var(--blue-light); text-decoration: underline; }
 
       .car-badges { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; margin: 40px 0 8px; animation: car-reveal 0.8s cubic-bezier(0.2,0.8,0.4,1) both; animation-delay: 0.64s; }
       .car-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0 34px; border-right: 1px solid var(--border); }

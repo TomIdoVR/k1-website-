@@ -1,3 +1,14 @@
+## [v2.390] – 2026-09-16 — Dropped the email fallback line; cards 04 and 09 had no title
+
+**Removed**
+- The **"Prefer email? Write to us at…"** line from the careers index and the job page. With a working form, a second route is a distraction rather than a safety net.
+- The job hero's note was also removed, and it had gone **factually wrong**: it read *"if the button doesn't open your mail app"*, but that button has scrolled to the form since v2.385 and opens nothing. Leftover from the `mailto:` era.
+- The `mailto` builders, `APPLY_EMAIL` imports, the dead `ctaBtn` key and the orphaned `.car-mailnote` rules went with them. The address still appears in the form's **error** state, which is a genuine fallback rather than a standing invitation.
+
+**Fixed**
+- **Cards 04 and 09 rendered with no title.** The card layout derived one by splitting each bullet on the first `": "`, so any bullet without that punctuation silently lost its heading. A title is content, not punctuation.
+- Bullets may now be `string` or `{ title, text }`. `bulletParts()` splits for display and `bulletText()` flattens for the checklist, chip and milestone layouts and for the JobPosting structured data, so the schema keeps the full sentence. Verified on the rendered page: all nine cards titled, EN and ES.
+
 ## [v2.389] – 2026-09-16 — Screening questions, as a second step
 
 **Added**

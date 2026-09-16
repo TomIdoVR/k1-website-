@@ -33,11 +33,32 @@ export interface JobQuestion {
   es: string
 }
 
+/**
+ * A bullet is either plain text, or an explicit title plus detail.
+ *
+ * The card layout used to derive a title by splitting on the first ": ", which
+ * silently left untitled cards for any bullet without one. A title is content,
+ * not punctuation, so it is stated rather than inferred.
+ */
+export type JobBullet = string | { title: string; text: string }
+
 export interface JobSection {
   heading: string
   layout?: JobSectionLayout
   body?: string
-  bullets?: string[]
+  bullets?: JobBullet[]
+}
+
+/** Splits a bullet into its optional title and its text. */
+export function bulletParts(b: JobBullet): { title?: string; text: string } {
+  if (typeof b !== 'string') return b
+  const i = b.indexOf(': ')
+  return i === -1 ? { text: b } : { title: b.slice(0, i), text: b.slice(i + 2) }
+}
+
+/** The bullet as one flat string, for prose layouts and structured data. */
+export function bulletText(b: JobBullet): string {
+  return typeof b === 'string' ? b : `${b.title}: ${b.text}`
 }
 
 export interface JobContent {
@@ -129,12 +150,18 @@ export const jobs: Job[] = [
             'Own the technical direction of the platform: architecture, technology stack, engineering standards and the decisions that outlive any single feature, documented as you go.',
             'Take ownership of the existing foundation: review it, keep what holds, change what does not.',
             'Write production code, especially the hard parts: multi-tenancy and security, the core event and data model, integrations, and the real-time operator path. Expect roughly half your time hands-on in the first year.',
-            'Define the MVP together with Product and deliver it as a working system that can be deployed to a first set of customers.',
+            {
+              title: 'Define the MVP with Product',
+              text: 'Deliver it as a working system that can be deployed to a first set of customers.',
+            },
             'Build the team: hire and onboard the first engineers, set the practices, run the review and merge gates, grow people.',
             'Lead the AI-native development process: adopt and evolve our spec-driven, gated workflow, integrate AI coding agents with clear guardrails and human accountability, and measure quality and cost.',
             'Design the platform to be AI-ready: data model, event semantics, audit trail and integration seams that allow decision-support and AI-assisted capabilities to be added later without redesign.',
             'Own delivery engineering with DevOps: environments, CI/CD, observability, release and upgrade path, and the security posture of the codebase and its tooling.',
-            'Work closely with Product and business stakeholders, DevOps, our existing product development teams, and the operational reality of command centers.',
+            {
+              title: 'Work across the delivery chain',
+              text: 'Product and business stakeholders, DevOps, our existing product development teams, and the operational reality of command centers.',
+            },
           ],
         },
         {
@@ -199,12 +226,18 @@ export const jobs: Job[] = [
             'Ser dueño de la dirección técnica de la plataforma: arquitectura, stack tecnológico, estándares de ingeniería y las decisiones que sobreviven a cualquier funcionalidad individual, documentadas sobre la marcha.',
             'Tomar la propiedad de la base existente: revisarla, conservar lo que se sostiene y cambiar lo que no.',
             'Escribir código de producción, especialmente las partes difíciles: multi-tenancy y seguridad, el modelo central de eventos y datos, las integraciones y la ruta del operador en tiempo real. Espera dedicar aproximadamente la mitad de tu tiempo hands-on durante el primer año.',
-            'Definir el MVP junto con Producto y entregarlo como un sistema funcional, desplegable a un primer grupo de clientes.',
+            {
+              title: 'Definir el MVP junto con Producto',
+              text: 'Entregarlo como un sistema funcional, desplegable a un primer grupo de clientes.',
+            },
             'Construir el equipo: contratar e incorporar a los primeros ingenieros, establecer las prácticas, operar las compuertas de revisión y merge, y hacer crecer a las personas.',
             'Liderar el proceso de desarrollo AI-native: adoptar y evolucionar nuestro flujo spec-driven con compuertas, integrar agentes de codificación con IA con guardrails claros y responsabilidad humana, y medir calidad y costo.',
             'Diseñar la plataforma para que esté lista para IA: modelo de datos, semántica de eventos, traza de auditoría y puntos de integración que permitan añadir después capacidades de apoyo a la decisión y asistidas por IA sin rediseñar.',
             'Ser dueño de la ingeniería de entrega junto con DevOps: entornos, CI/CD, observabilidad, ruta de release y upgrade, y la postura de seguridad del código y de su tooling.',
-            'Trabajar de cerca con Producto y stakeholders de negocio, DevOps, nuestros equipos de desarrollo de producto actuales, y la realidad operativa de los centros de mando.',
+            {
+              title: 'Trabajar con toda la cadena de entrega',
+              text: 'Producto y stakeholders de negocio, DevOps, nuestros equipos de desarrollo de producto actuales, y la realidad operativa de los centros de mando.',
+            },
           ],
         },
         {

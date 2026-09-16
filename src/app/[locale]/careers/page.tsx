@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import CareersStyles from '@/components/careers/CareersStyles'
 import ApplicationForm from '@/components/careers/ApplicationForm'
 import { Link } from '@/i18n/navigation'
-import { sortedJobs, APPLY_EMAIL } from '@/content/jobs'
+import { sortedJobs } from '@/content/jobs'
 
 export async function generateMetadata({
   params,
@@ -56,8 +56,6 @@ export default async function CareersPage({
     ctaSub: es
       ? 'Si crees que deberías trabajar aquí, escríbenos. Cuéntanos qué has construido y qué quieres construir después.'
       : 'If you think you should be working here, write to us. Tell us what you’ve built and what you want to build next.',
-    ctaBtn: es ? 'Envíanos tu CV' : 'Send us your CV',
-    orEmail: es ? '¿Prefieres el correo? Escríbenos a' : 'Prefer email? Write to us at',
   }
 
   const stats = es
@@ -87,9 +85,6 @@ export default async function CareersPage({
         { h: 'AI-Native Engineering', p: 'We work spec-first, with coding agents under human review and explicit gates. AI does the mechanical work; people decide.' },
         { h: 'Real Ownership', p: 'Small teams, large scope. You make architecture decisions that outlive years of features — and you sign your name to them.' },
       ]
-
-  const mailto = `mailto:${APPLY_EMAIL}?subject=` +
-    encodeURIComponent(es ? 'Candidatura espontánea — KabatOne' : 'General application — KabatOne')
 
   return (
     <>
@@ -200,9 +195,6 @@ export default async function CareersPage({
               roleTitle={es ? 'Candidatura espontánea' : 'General application'}
               roleSlug="general"
             />
-            <p className="car-mailnote car-center" style={{ textAlign: 'center' }}>
-              {t.orEmail} <a href={mailto}>{APPLY_EMAIL}</a>
-            </p>
           </div>
         </section>
 

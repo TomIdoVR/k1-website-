@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.390 -->
+      <div class="tl-entry fixed" id="v2.390">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.390</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Dropped the email fallback line; cards 04 and 09 had no title</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Removed</strong> the "Prefer email? Write to us at…" line from both careers pages. The job hero's note went too, and it had gone <strong>factually wrong</strong> &mdash; it read <em>"if the button doesn't open your mail app"</em>, but that button has scrolled to the form since v2.385. The address still appears in the form's <strong>error</strong> state, which is a real fallback rather than a standing invitation.</p>
+          <p><strong>Cards 04 and 09 rendered with no title.</strong> The layout derived one by splitting each bullet on the first <code>": "</code>, so any bullet without that punctuation silently lost its heading. A title is content, not punctuation &mdash; bullets may now be a string or <code>{ title, text }</code>. <code>bulletText()</code> flattens them for the checklist, chip and milestone layouts and for the JobPosting schema. All nine cards titled, EN and ES.</p>
+        </div>
+      </div>
+
+
       <!-- v2.389 -->
       <div class="tl-entry added" id="v2.389">
         <div class="version-header">

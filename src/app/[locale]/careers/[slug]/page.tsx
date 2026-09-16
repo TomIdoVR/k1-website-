@@ -6,7 +6,10 @@ import Footer from '@/components/Footer'
 import CareersStyles from '@/components/careers/CareersStyles'
 import ApplicationForm from '@/components/careers/ApplicationForm'
 import { Link } from '@/i18n/navigation'
-import { getJob, APPLY_EMAIL, type Job, type JobContent, type JobSection } from '@/content/jobs'
+import {
+  getJob, bulletParts, bulletText,
+  type Job, type JobContent, type JobSection,
+} from '@/content/jobs'
 
 function canonicalFor(slug: string, locale: string) {
   return locale === 'es'
@@ -60,7 +63,9 @@ function descriptionHtml(c: JobContent): string {
       for (const para of section.body.split('\n\n')) parts.push(`<p>${escape(para)}</p>`)
     }
     if (section.bullets) {
-      parts.push(`<ul>${section.bullets.map((b) => `<li>${escape(b)}</li>`).join('')}</ul>`)
+      parts.push(
+        `<ul>${section.bullets.map((b) => `<li>${escape(bulletText(b))}</li>`).join('')}</ul>`
+      )
     }
   }
   return parts.join('')
@@ -82,19 +87,12 @@ function SectionBody({ section }: { section: JobSection }) {
     return (
       <div className="car-grid">
         {bullets.map((b, i) => {
-          const [lead, ...rest] = b.split(': ')
-          const hasLead = rest.length > 0
+          const { title, text } = bulletParts(b)
           return (
-            <div className="car-card" key={b.slice(0, 40)}>
+            <div className="car-card" key={text.slice(0, 40)}>
               <div className="car-card-n">{String(i + 1).padStart(2, '0')}</div>
-              {hasLead ? (
-                <>
-                  <div className="car-card-h">{lead}</div>
-                  <p className="car-card-p">{rest.join(': ')}</p>
-                </>
-              ) : (
-                <p className="car-card-p">{b}</p>
-              )}
+              {title && <div className="car-card-h">{title}</div>}
+              <p className="car-card-p">{text}</p>
             </div>
           )
         })}
@@ -105,7 +103,7 @@ function SectionBody({ section }: { section: JobSection }) {
   if (layout === 'checklist') {
     return (
       <div className="car-checks">
-        {bullets.map((b) => <div className="car-check" key={b.slice(0, 40)}>{b}</div>)}
+        {bullets.map(bulletText).map((b) => <div className="car-check" key={b.slice(0, 40)}>{b}</div>)}
       </div>
     )
   }
@@ -113,7 +111,7 @@ function SectionBody({ section }: { section: JobSection }) {
   if (layout === 'tags') {
     // A bullet like "Angular; Kubernetes and Helm; Kafka, Temporal" is a list of
     // separate things, so it reads as separate chips rather than one long pill.
-    const chips = bullets.flatMap((b) =>
+    const chips = bullets.map(bulletText).flatMap((b) =>
       b.replace(/\.$/, '').split(';').map((x) => x.trim()).filter(Boolean)
     )
     return (
@@ -126,7 +124,7 @@ function SectionBody({ section }: { section: JobSection }) {
   if (layout === 'steps') {
     return (
       <div className="car-steps">
-        {bullets.map((b, i) => (
+        {bullets.map(bulletText).map((b, i) => (
           <div className="car-step" key={b.slice(0, 40)}>
             <div className="car-step-n">{String(i + 1).padStart(2, '0')}</div>
             <p className="car-step-p">{b}</p>
@@ -143,7 +141,7 @@ function SectionBody({ section }: { section: JobSection }) {
       ))}
       {bullets.length > 0 && (
         <div className="car-checks">
-          {bullets.map((b) => <div className="car-check" key={b.slice(0, 40)}>{b}</div>)}
+          {bullets.map(bulletText).map((b) => <div className="car-check" key={b.slice(0, 40)}>{b}</div>)}
         </div>
       )}
     </>
@@ -175,20 +173,13 @@ export default async function JobPage({
     type: es ? 'Jornada' : 'Type',
     typeValue: es ? 'Tiempo completo' : 'Full time',
     apply: es ? 'Postularme' : 'Apply for this role',
-    applyNote: es
-      ? 'Adjunta tu CV. Si el botón no abre tu correo, escríbenos a'
-      : 'Attach your CV. If the button doesn’t open your mail app, write to us at',
     backToAll: es ? 'Ver todas las vacantes' : 'See all open positions',
     ctaLabel: es ? 'Postúlate' : 'Get in touch',
     ctaH2: es ? '¿Te Interesa Este Rol?' : 'Interested in This Role?',
     ctaSub: es
       ? 'Cuéntanos quién eres y qué has construido. Leemos todas las candidaturas.'
       : 'Tell us who you are and what you’ve built. We read every application.',
-    orEmail: es ? '¿Prefieres el correo? Escríbenos a' : 'Prefer email? Write to us at',
   }
-
-  const mailto = `mailto:${APPLY_EMAIL}?subject=` +
-    encodeURIComponent(`${es ? 'Candidatura' : 'Application'}: ${c.title}`)
 
   const badges = [
     { k: t.location, v: location },
@@ -238,9 +229,6 @@ export default async function JobPage({
             <a href="#apply" className="car-btn">
               {t.apply}<span className="car-arrow">→</span>
             </a>
-            <p className="car-mailnote">
-              {t.applyNote} <a href={mailto}>{APPLY_EMAIL}</a>
-            </p>
             <div className="car-badges">
               {badges.map((b) => (
                 <div className="car-badge" key={b.k}>
@@ -290,9 +278,6 @@ export default async function JobPage({
               roleSlug={job.slug}
               questions={job.questions}
             />
-            <p className="car-mailnote car-center" style={{ textAlign: 'center' }}>
-              {t.orEmail} <a href={mailto}>{APPLY_EMAIL}</a>
-            </p>
             <div style={{ marginTop: '30px', textAlign: 'center' }}>
               <Link href="/careers" className="car-role-go" style={{ textDecoration: 'none' }}>
                 ← {t.backToAll}
