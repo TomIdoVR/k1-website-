@@ -15,30 +15,8 @@ import { APPLY_EMAIL } from '@/content/jobs'
  */
 const ENDPOINT = '/api/careers/apply'
 
-const inputStyle: React.CSSProperties = {
-  background: 'var(--dropdown-bg)',
-  border: '1px solid var(--border)',
-  color: 'var(--white)',
-  borderRadius: '8px',
-  padding: '12px 16px',
-  fontFamily: 'Space Grotesk, sans-serif',
-  fontSize: '0.9rem',
-  outline: 'none',
-  width: '100%',
-}
-
-const labelStyle: React.CSSProperties = {
-  fontFamily: 'DM Mono, monospace',
-  fontSize: '10.5px',
-  fontWeight: 500,
-  letterSpacing: '0.14em',
-  textTransform: 'uppercase',
-  color: 'var(--dim)',
-  display: 'block',
-  marginBottom: '8px',
-}
-
-const fieldWrap: React.CSSProperties = { marginBottom: '18px' }
+/** Keeps a stray 200MB scan from being uploaded; a CV is a document. */
+const MAX_CV_BYTES = 10 * 1024 * 1024
 
 export default function ApplicationForm({
   es,
@@ -50,16 +28,22 @@ export default function ApplicationForm({
   roleSlug: string
 }) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  // One of CV-file or CV-link is required; picking a file relaxes the link.
+  const [hasFile, setHasFile] = useState(false)
+  const [tooBig, setTooBig] = useState(false)
 
   const t = {
     name: es ? 'Nombre completo' : 'Full name',
     email: es ? 'Correo electrónico' : 'Email',
     phone: es ? 'Teléfono (opcional)' : 'Phone (optional)',
     linkedin: es ? 'LinkedIn o portafolio' : 'LinkedIn or portfolio',
-    cvLink: es ? 'Enlace a tu CV' : 'Link to your CV',
+    cvFile: es ? 'Sube tu CV' : 'Upload your CV',
+    cvFileHint: es ? 'PDF o Word, hasta 10 MB' : 'PDF or Word, up to 10 MB',
+    cvLink: es ? 'O un enlace a tu CV' : 'Or a link to your CV',
     cvHint: es
-      ? 'Google Drive, Dropbox o cualquier enlace público'
-      : 'Google Drive, Dropbox, or any shareable link',
+      ? 'Google Drive, Dropbox o LinkedIn — si prefieres no subir el archivo'
+      : 'Google Drive, Dropbox or LinkedIn — if you’d rather not upload a file',
+    tooBig: es ? 'Ese archivo supera los 10 MB.' : 'That file is over 10 MB.',
     location: es ? 'Dónde vives' : 'Where you’re based',
     message: es ? 'Cuéntanos qué has construido' : 'Tell us what you’ve built',
     messageHint: es
@@ -81,15 +65,20 @@ export default function ApplicationForm({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('submitting')
     const formData = new FormData(e.currentTarget)
 
+    const cv = formData.get('cv')
+    if (cv instanceof File && cv.size > MAX_CV_BYTES) {
+      setTooBig(true)
+      return
+    }
+    setTooBig(false)
+    setStatus('submitting')
+
     try {
-      const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData.entries())),
-      })
+      // Multipart rather than JSON: the CV rides along with the fields, and the
+      // browser sets its own boundary — so no Content-Type header here.
+      const res = await fetch(ENDPOINT, { method: 'POST', body: formData })
       if (res.ok) {
         trackLead('generate_lead', { form_id: 'careers_application', role: roleSlug })
         setStatus('success')
@@ -135,44 +124,61 @@ export default function ApplicationForm({
         aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
       />
 
-      <div style={fieldWrap}>
-        <label style={labelStyle} htmlFor="af-name">{t.name}</label>
-        <input id="af-name" name="name" type="text" required style={inputStyle} autoComplete="name" />
+      <div className="car-field">
+        <label className="car-field-label" htmlFor="af-name">{t.name}</label>
+        <input id="af-name" name="name" type="text" required className="car-input" autoComplete="name" />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '18px' }}>
-        <div style={fieldWrap}>
-          <label style={labelStyle} htmlFor="af-email">{t.email}</label>
-          <input id="af-email" name="email" type="email" required style={inputStyle} autoComplete="email" />
+      <div className="car-field-row">
+        <div className="car-field">
+          <label className="car-field-label" htmlFor="af-email">{t.email}</label>
+          <input id="af-email" name="email" type="email" required className="car-input" autoComplete="email" />
         </div>
-        <div style={fieldWrap}>
-          <label style={labelStyle} htmlFor="af-phone">{t.phone}</label>
-          <input id="af-phone" name="phone" type="tel" style={inputStyle} autoComplete="tel" />
-        </div>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '18px' }}>
-        <div style={fieldWrap}>
-          <label style={labelStyle} htmlFor="af-linkedin">{t.linkedin}</label>
-          <input id="af-linkedin" name="linkedin" type="url" placeholder="https://" style={inputStyle} />
-        </div>
-        <div style={fieldWrap}>
-          <label style={labelStyle} htmlFor="af-location">{t.location}</label>
-          <input id="af-location" name="location" type="text" style={inputStyle} />
+        <div className="car-field">
+          <label className="car-field-label" htmlFor="af-phone">{t.phone}</label>
+          <input id="af-phone" name="phone" type="tel" className="car-input" autoComplete="tel" />
         </div>
       </div>
 
-      <div style={fieldWrap}>
-        <label style={labelStyle} htmlFor="af-cv-link">{t.cvLink}</label>
-        <input id="af-cv-link" name="cv_link" type="url" required placeholder="https://" style={inputStyle} />
-        <p style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '7px' }}>{t.cvHint}</p>
+      <div className="car-field-row">
+        <div className="car-field">
+          <label className="car-field-label" htmlFor="af-linkedin">{t.linkedin}</label>
+          <input id="af-linkedin" name="linkedin" type="url" placeholder="https://" className="car-input" />
+        </div>
+        <div className="car-field">
+          <label className="car-field-label" htmlFor="af-location">{t.location}</label>
+          <input id="af-location" name="location" type="text" className="car-input" />
+        </div>
       </div>
 
-      <div style={fieldWrap}>
-        <label style={labelStyle} htmlFor="af-message">{t.message}</label>
-        <textarea id="af-message" name="message" rows={5} style={{ ...inputStyle, resize: 'vertical' }} />
-        <p style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '7px' }}>{t.messageHint}</p>
+      <div className="car-field">
+        <label className="car-field-label" htmlFor="af-cv">{t.cvFile}</label>
+        <input
+          id="af-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf"
+          className="car-input"
+          onChange={(e) => setHasFile(Boolean(e.currentTarget.files?.length))}
+        />
+        <p className="car-field-hint">{t.cvFileHint}</p>
       </div>
+
+      <div className="car-field">
+        <label className="car-field-label" htmlFor="af-cv-link">{t.cvLink}</label>
+        <input
+          id="af-cv-link" name="cv_link" type="url" placeholder="https://"
+          className="car-input" required={!hasFile}
+        />
+        <p className="car-field-hint">{t.cvHint}</p>
+      </div>
+
+      <div className="car-field">
+        <label className="car-field-label" htmlFor="af-message">{t.message}</label>
+        <textarea id="af-message" name="message" rows={5} className="car-input" style={{ resize: 'vertical' }} />
+        <p className="car-field-hint">{t.messageHint}</p>
+      </div>
+
+      {tooBig && (
+        <p style={{ fontSize: '14px', color: '#f87171', marginBottom: '16px' }}>{t.tooBig}</p>
+      )}
 
       {status === 'error' && (
         <p style={{ fontSize: '14px', color: '#f87171', marginBottom: '16px' }}>

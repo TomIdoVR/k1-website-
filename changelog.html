@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.388 -->
+      <div class="tl-entry fixed" id="v2.388">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.388</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Form text was unreadable, and a CV link alone was the wrong ask</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Near-white text on a white field.</strong> Inputs used <code>var(--dropdown-bg)</code> for background and <code>var(--white)</code> for text &mdash; but <code>.dark-section</code> redefines <code>--white</code> to <code>#e6eef8</code> and <strong>never defines <code>--dropdown-bg</code></strong>, so the field inherited <code>.page-light</code>'s <code>#ffffff</code>. Fields now use <code>--glass</code> and <code>--white</code>, which both contexts redefine. Measured on the rendered page: <strong>15.36:1</strong>.</p>
+          <p><strong>Added CV upload.</strong> A link-only field was unusual &mdash; every mainstream ATS takes a file, and candidates have a PDF rather than a shareable URL. The link stays as an alternative; one of the two is required. The CV is attached in the Slack thread under its application via <code>files.uploadV2</code>, so the document sits with the details. <strong>Requires <code>files:write</code></strong>; without it the upload is logged and skipped rather than failing the application.</p>
+          <p>Guarded at both ends: 10&nbsp;MB cap and PDF/Word only, rejected client-side and again on the route (<strong>413</strong>, <strong>415</strong>).</p>
+        </div>
+      </div>
+
+
       <!-- v2.386 -->
       <div class="tl-entry changed" id="v2.386">
         <div class="version-header">

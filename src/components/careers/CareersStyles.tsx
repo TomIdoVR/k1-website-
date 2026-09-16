@@ -135,6 +135,41 @@ export default function CareersStyles() {
       .car-step-n { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 42px; line-height: 1; color: rgba(6,182,212,0.35); margin-bottom: 10px; }
       .car-step-p { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--dim); }
 
+      /* Form fields.
+         --dropdown-bg is NOT redefined by .dark-section, so it inherited
+         .page-light's #ffffff while --white became #e6eef8 — near-white text on
+         a white field. --glass and --white are both redefined by .dark-section
+         and .page-light, so using those keeps contrast correct in either. */
+      .car-input {
+        width: 100%;
+        background: var(--glass);
+        border: 1px solid var(--border);
+        color: var(--white);
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.92rem;
+        outline: none;
+        transition: border-color 0.15s, background 0.15s;
+      }
+      .car-input:focus { border-color: var(--cyan); background: var(--card-hover-bg); }
+      .car-input::placeholder { color: var(--muted); opacity: 0.75; }
+      .car-input[type="file"] { padding: 10px 14px; cursor: pointer; }
+      .car-input[type="file"]::file-selector-button {
+        background: var(--glass); border: 1px solid var(--border); color: var(--white);
+        border-radius: 6px; padding: 6px 12px; margin-right: 12px; cursor: pointer;
+        font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .car-field-label {
+        font-family: 'DM Mono', monospace; font-size: 10.5px; font-weight: 500;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim);
+        display: block; margin-bottom: 8px;
+      }
+      .car-field-hint { font-size: 12px; color: var(--muted); margin-top: 7px; }
+      .car-field { margin-bottom: 18px; }
+      .car-field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+
       .car-crumb { max-width: 1160px; margin: 0 auto; padding: 18px 40px 0; display: flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
       .car-crumb a { color: var(--muted); text-decoration: none; }
       .car-crumb a:hover { color: var(--cyan); }

@@ -1,3 +1,15 @@
+## [v2.388] – 2026-09-16 — Form text was unreadable, and a CV link alone was the wrong ask
+
+**Fixed — near-white text on a white field**
+- The form inputs used `var(--dropdown-bg)` for background and `var(--white)` for text. **`.dark-section` redefines `--white` to `#e6eef8` but never defines `--dropdown-bg`**, so inside the dark apply section the field inherited `.page-light`'s `#ffffff` while the text went near-white. Typing was almost invisible.
+- Fields now use `--glass` and `--white`, both of which `.dark-section` and `.page-light` redefine, so contrast is correct in either context. Measured on the rendered page: **15.36:1**, against WCAG AAA's 7:1.
+
+**Added — CV upload**
+- A link-only CV field was unusual: every mainstream ATS takes a file, and candidates have a PDF rather than a shareable URL to hand. The form now takes an upload, with the link kept as an alternative — one of the two is required, and choosing a file relaxes the link.
+- The CV is attached in the Slack thread under its application via `files.uploadV2`, so the document sits with the candidate's details instead of in a separate store. **Requires `files:write` on the hiring app.** If it is missing the upload is logged and skipped — the application still posts, because losing a submission over an attachment would be worse than losing the attachment.
+- Guarded both ends: 10 MB cap and `.pdf/.doc/.docx/.rtf/.txt` only, rejected client-side before upload and again on the route (**413** `cv_too_large`, **415** `cv_type_not_allowed`).
+- The route now accepts multipart as well as JSON, so it stays curl-testable.
+
 ## [v2.386] – 2026-09-16 — Careers Slack posting reuses the token that was already there
 
 **Changed**

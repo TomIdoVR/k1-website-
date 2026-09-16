@@ -16,8 +16,9 @@
  *
  * Environment (set in Vercel):
  *   SLACK_HIRING_BOT_TOKEN     Dedicated hiring app's bot token (xoxb-).
- *                              Needs chat:write, and the app must be a member
- *                              of the channel when that channel is private.
+ *                              Needs chat:write, plus files:write to attach
+ *                              CVs, and the app must be a member of the
+ *                              channel when that channel is private.
  *   SLACK_CAREERS_CHANNEL      Channel id or #name.
  *   SLACK_BOT_TOKEN            Fallback if the dedicated token is unset.
  *   SLACK_CAREERS_WEBHOOK_URL  Optional alternative to a bot token.
@@ -32,6 +33,8 @@ import { WebClient, type Block, type KnownBlock } from '@slack/web-api'
 export const runtime = 'nodejs'
 
 const MAX = { short: 200, long: 5000 }
+const MAX_CV_BYTES = 10 * 1024 * 1024
+const ALLOWED_CV = /\.(pdf|docx?|rtf|txt)$/i
 
 interface Application {
   name: string
@@ -44,6 +47,7 @@ interface Application {
   role: string
   roleSlug: string
   locale: string
+  cv?: { name: string; bytes: Buffer }
 }
 
 function clean(value: unknown, limit: number): string {
@@ -62,6 +66,9 @@ function htmlEscape(text: string): string {
 }
 
 async function postToSlack(app: Application): Promise<boolean> {
+  // Returns true when the application itself reached Slack. A CV that fails to
+  // upload is logged but does not fail the submission — the details still got
+  // through, and losing an application over an attachment would be worse.
   // Trimmed: a value piped into `vercel env add` can carry a trailing newline,
   // and Slack rejects "C0C2F01B2MA\n" as channel_not_found.
   const webhook = process.env.SLACK_CAREERS_WEBHOOK_URL?.trim()
@@ -88,7 +95,8 @@ async function postToSlack(app: Application): Promise<boolean> {
     line('Phone', app.phone),
     line('Location', app.location),
     line('LinkedIn', app.linkedin),
-    line('CV', app.cvLink),
+    line('CV link', app.cvLink),
+    app.cv ? `*CV file:* ${slackEscape(app.cv.name)} _(attached in thread)_` : '',
   ].filter(Boolean).join('\n')
 
   const blocks: (Block | KnownBlock)[] = [
@@ -126,15 +134,34 @@ async function postToSlack(app: Application): Promise<boolean> {
       })
       return res.ok
     }
-    // Same client the SEO agent posts with, so Slack behaviour stays consistent.
-    const result = await new WebClient(token).chat.postMessage({
+    const client = new WebClient(token)
+    const result = await client.chat.postMessage({
       channel: channel as string,
       text: payload.text,
       blocks,
     })
-    if (!result.ok) console.error('[careers] slack returned not-ok:', result.error)
-    else console.log('[careers] slack posted to', channel)
-    return Boolean(result.ok)
+    if (!result.ok) {
+      console.error('[careers] slack returned not-ok:', result.error)
+      return false
+    }
+    console.log('[careers] slack posted to', channel)
+
+    if (app.cv) {
+      try {
+        await client.filesUploadV2({
+          channel_id: channel as string,
+          thread_ts: result.ts as string,
+          file: app.cv.bytes,
+          filename: app.cv.name,
+          initial_comment: `CV — ${app.name}`,
+        })
+      } catch (err) {
+        // Needs files:write on the app. Surfaced, never fatal.
+        const why = (err as { data?: { error?: string } })?.data?.error ?? String(err)
+        console.error('[careers] cv upload failed:', why)
+      }
+    }
+    return true
   } catch (err) {
     // The Slack SDK throws on API errors; err.data.error carries the real reason
     // (not_in_channel, channel_not_found, invalid_auth, missing_scope…).
@@ -194,11 +221,34 @@ async function sendEmail(app: Application): Promise<boolean> {
 }
 
 export async function POST(request: Request) {
+  // The form posts multipart so the CV can ride along; JSON is still accepted
+  // so the endpoint stays curl-testable.
   let body: Record<string, unknown>
-  try {
-    body = await request.json()
-  } catch {
-    return Response.json({ error: 'invalid_json' }, { status: 400 })
+  let cv: Application['cv']
+
+  const contentType = request.headers.get('content-type') || ''
+  if (contentType.includes('multipart/form-data')) {
+    const form = await request.formData()
+    body = Object.fromEntries(
+      [...form.entries()].filter(([, v]) => typeof v === 'string')
+    ) as Record<string, unknown>
+
+    const file = form.get('cv')
+    if (file instanceof File && file.size > 0) {
+      if (file.size > MAX_CV_BYTES) {
+        return Response.json({ error: 'cv_too_large' }, { status: 413 })
+      }
+      if (!ALLOWED_CV.test(file.name)) {
+        return Response.json({ error: 'cv_type_not_allowed' }, { status: 415 })
+      }
+      cv = { name: file.name, bytes: Buffer.from(await file.arrayBuffer()) }
+    }
+  } else {
+    try {
+      body = await request.json()
+    } catch {
+      return Response.json({ error: 'invalid_json' }, { status: 400 })
+    }
   }
 
   // Honeypot: a real person never fills a field they cannot see.
@@ -217,6 +267,7 @@ export async function POST(request: Request) {
     role: clean(body.role, MAX.short) || 'General application',
     roleSlug: clean(body.role_slug, MAX.short) || 'general',
     locale: clean(body.locale, 8) || 'en',
+    cv,
   }
 
   if (!app.name || !app.email || !app.email.includes('@')) {
