@@ -4,6 +4,7 @@ import { breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CareersStyles from '@/components/careers/CareersStyles'
+import ApplicationForm from '@/components/careers/ApplicationForm'
 import { Link } from '@/i18n/navigation'
 import { sortedJobs, APPLY_EMAIL } from '@/content/jobs'
 
@@ -56,6 +57,7 @@ export default async function CareersPage({
       ? 'Si crees que deberías trabajar aquí, escríbenos. Cuéntanos qué has construido y qué quieres construir después.'
       : 'If you think you should be working here, write to us. Tell us what you’ve built and what you want to build next.',
     ctaBtn: es ? 'Envíanos tu CV' : 'Send us your CV',
+    orEmail: es ? '¿Prefieres el correo? Escríbenos a' : 'Prefer email? Write to us at',
   }
 
   const stats = es
@@ -189,15 +191,17 @@ export default async function CareersPage({
         {/* ── CTA ── */}
         <section className="car-section" style={{ position: 'relative', overflow: 'hidden' }}>
           <div className="car-glow" />
-          <div className="car-inner car-center" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="car-label">{t.ctaLabel}</div>
-            <h2 className="car-h2">{t.ctaH2}</h2>
-            <p className="car-section-sub" style={{ marginBottom: '34px' }}>{t.ctaSub}</p>
-            <a href={mailto} className="car-btn">
-              {t.ctaBtn}<span className="car-arrow">→</span>
-            </a>
-            <p className="car-mailnote">
-              <a href={mailto}>{APPLY_EMAIL}</a>
+          <div className="car-inner-narrow" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="car-label car-label-center">{t.ctaLabel}</div>
+            <h2 className="car-h2 car-center">{t.ctaH2}</h2>
+            <p className="car-section-sub car-center" style={{ margin: '0 auto 36px' }}>{t.ctaSub}</p>
+            <ApplicationForm
+              es={es}
+              roleTitle={es ? 'Candidatura espontánea' : 'General application'}
+              roleSlug="general"
+            />
+            <p className="car-mailnote car-center" style={{ textAlign: 'center' }}>
+              {t.orEmail} <a href={mailto}>{APPLY_EMAIL}</a>
             </p>
           </div>
         </section>

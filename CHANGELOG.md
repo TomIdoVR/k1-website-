@@ -1,3 +1,16 @@
+## [v2.385] – 2026-09-16 — Applications go to Slack and email through our own route, not Formspree
+
+**Added**
+- **`/api/careers/apply`** — receives applications and fans them out to Slack and email. The "Apply for this role" button now scrolls to a real form instead of opening a `mailto:` that dead-ends for anyone without a desktop mail client.
+- **`ApplicationForm`** (`src/components/careers/`) — name, email, phone, LinkedIn, location, CV link and message, plus hidden `role` / `role_slug` / `locale` so the Slack message names the job rather than reading "new submission". Posts JSON; shows a success panel, and on failure surfaces the `careers@` address rather than swallowing the error.
+
+**Changed — Formspree was the wrong tool here**
+- Verified against Formspree's pricing page: the free tier is **50 submissions/month**, has **no Slack integration on any tier**, and gates **multiple recipients** and **file uploads** behind paid plans. It cannot do what careers needs, and paying would not have added Slack. `@slack/web-api` was already a dependency and a Slack app already exists, so posting to a channel was a short step.
+- Slack and email are delivered **independently**: the route returns success if either channel accepted the application and only fails when every configured channel failed, so a Slack outage never loses a candidate. Email carries `reply_to` set to the applicant, so replying from the inbox answers them.
+- A honeypot field catches bots, inputs are length-capped, and Slack mrkdwn is escaped.
+
+**Configuration** — the route is inert until these are set in Vercel: `SLACK_CAREERS_WEBHOOK_URL` (or `SLACK_BOT_TOKEN` + `SLACK_CAREERS_CHANNEL`), and `RESEND_API_KEY` + `CAREERS_FROM_EMAIL` + `CAREERS_NOTIFY_EMAILS`. With none set a submission returns 502 and the form tells the candidate to email instead — it never reports a delivery that did not happen.
+
 ## [v2.384] – 2026-09-16 — The careers pages were dark end to end, so no band colour could ever show
 
 **Fixed**

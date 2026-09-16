@@ -4,6 +4,7 @@ import { breadcrumbSchema, jobPostingSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CareersStyles from '@/components/careers/CareersStyles'
+import ApplicationForm from '@/components/careers/ApplicationForm'
 import { Link } from '@/i18n/navigation'
 import { getJob, APPLY_EMAIL, type Job, type JobContent, type JobSection } from '@/content/jobs'
 
@@ -181,8 +182,9 @@ export default async function JobPage({
     ctaLabel: es ? 'Postúlate' : 'Get in touch',
     ctaH2: es ? '¿Te Interesa Este Rol?' : 'Interested in This Role?',
     ctaSub: es
-      ? 'Envíanos tu CV y una nota breve sobre lo que has construido. Leemos todo.'
-      : 'Send us your CV and a short note about what you’ve built. We read everything.',
+      ? 'Cuéntanos quién eres y qué has construido. Leemos todas las candidaturas.'
+      : 'Tell us who you are and what you’ve built. We read every application.',
+    orEmail: es ? '¿Prefieres el correo? Escríbenos a' : 'Prefer email? Write to us at',
   }
 
   const mailto = `mailto:${APPLY_EMAIL}?subject=` +
@@ -233,7 +235,7 @@ export default async function JobPage({
               {head} {tail && <span className="car-grad">{tail}</span>}
             </h1>
             <p className="car-sub">{c.summary}</p>
-            <a href={mailto} className="car-btn">
+            <a href="#apply" className="car-btn">
               {t.apply}<span className="car-arrow">→</span>
             </a>
             <p className="car-mailnote">
@@ -271,20 +273,22 @@ export default async function JobPage({
           )
         })}
 
-        {/* ── CTA ── */}
-        <section className="car-section dark-section car-tint-blue" style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* ── APPLY ── */}
+        <section
+          className="car-section dark-section car-tint-blue"
+          id="apply"
+          style={{ position: 'relative', overflow: 'hidden', scrollMarginTop: '70px' }}
+        >
           <div className="car-glow" />
-          <div className="car-inner car-center" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="car-label">{t.ctaLabel}</div>
-            <h2 className="car-h2">{t.ctaH2}</h2>
-            <p className="car-section-sub" style={{ marginBottom: '34px' }}>{t.ctaSub}</p>
-            <a href={mailto} className="car-btn">
-              {t.apply}<span className="car-arrow">→</span>
-            </a>
-            <p className="car-mailnote">
-              <a href={mailto}>{APPLY_EMAIL}</a>
+          <div className="car-inner-narrow" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="car-label car-label-center">{t.ctaLabel}</div>
+            <h2 className="car-h2 car-center">{t.ctaH2}</h2>
+            <p className="car-section-sub car-center" style={{ margin: '0 auto 36px' }}>{t.ctaSub}</p>
+            <ApplicationForm es={es} roleTitle={c.title} roleSlug={job.slug} />
+            <p className="car-mailnote car-center" style={{ textAlign: 'center' }}>
+              {t.orEmail} <a href={mailto}>{APPLY_EMAIL}</a>
             </p>
-            <div style={{ marginTop: '30px' }}>
+            <div style={{ marginTop: '30px', textAlign: 'center' }}>
               <Link href="/careers" className="car-role-go" style={{ textDecoration: 'none' }}>
                 ← {t.backToAll}
               </Link>

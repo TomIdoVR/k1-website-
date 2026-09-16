@@ -82,6 +82,8 @@ export default function CareersStyles() {
 
       .car-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
       .car-center .car-label { justify-content: center; }
+      .car-label-center { justify-content: center; }
+      h2.car-center, p.car-center { text-align: center; }
       .car-h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); color: var(--white); letter-spacing: -0.01em; line-height: 1.1; margin: 12px 0 16px; text-transform: uppercase; }
       .car-section-sub { font-size: 1rem; color: var(--dim); line-height: 1.7; max-width: 620px; font-weight: 300; }
       .car-center .car-section-sub { margin: 0 auto; }

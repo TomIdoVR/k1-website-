@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.385 -->
+      <div class="tl-entry added" id="v2.385">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.385</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Applications go to Slack and email through our own route, not Formspree</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added <code>/api/careers/apply</code></strong> &mdash; receives applications and fans them out to Slack and email. "Apply for this role" now scrolls to a real form instead of opening a <code>mailto:</code> that dead-ends for anyone without a desktop mail client.</p>
+          <p><strong>Formspree was the wrong tool.</strong> Verified against its pricing page: the free tier is <strong>50 submissions/month</strong>, has <strong>no Slack integration on any tier</strong>, and gates multiple recipients and file uploads behind paid plans &mdash; so paying would not have added Slack either. <code>@slack/web-api</code> was already a dependency.</p>
+          <p><strong>Slack and email deliver independently:</strong> the route succeeds if either channel accepted the application and fails only when every configured channel failed, so a Slack outage never loses a candidate. Email sets <code>reply_to</code> to the applicant. A honeypot catches bots, inputs are length-capped, and Slack mrkdwn is escaped.</p>
+          <p><strong>Inert until configured:</strong> with no channel set a submission returns 502 and the form tells the candidate to email instead &mdash; it never reports a delivery that did not happen.</p>
+        </div>
+      </div>
+
+
       <!-- v2.384 -->
       <div class="tl-entry fixed" id="v2.384">
         <div class="version-header">
