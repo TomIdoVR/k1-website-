@@ -34,12 +34,25 @@ export default function ApplicationForm({
   const [hasFile, setHasFile] = useState(false)
   const [tooBig, setTooBig] = useState(false)
   const [unanswered, setUnanswered] = useState(false)
+  const [answered, setAnswered] = useState<Set<string>>(new Set())
   // Screening questions come second: asking them before the basics reads as a
   // gate, and a candidate who has filled their details in is more likely to
   // finish. Roles without questions stay a single step.
   const twoStep = questions.length > 0
   const [step, setStep] = useState<1 | 2>(1)
   const formRef = useRef<HTMLFormElement>(null)
+
+  /** Brings an element clear of the sticky header, then focuses it if it can be. */
+  function revealAndFocus(el: HTMLElement | null) {
+    if (!el) return
+    const top = el.getBoundingClientRect().top + window.scrollY - 110
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    if (typeof (el as HTMLInputElement).focus === 'function') {
+      // preventScroll: the smooth scroll above owns the movement; letting focus
+      // scroll as well lands the field back under the header.
+      ;(el as HTMLInputElement).focus({ preventScroll: true })
+    }
+  }
 
   // Advancing a step swaps the panel without moving the page, so on a phone the
   // candidate lands mid-form — often past the first question. Bring the top of
@@ -98,13 +111,20 @@ export default function ApplicationForm({
     const formData = new FormData(form)
 
     if (twoStep && step === 1) {
-      if (!form.reportValidity()) return
+      if (!form.checkValidity()) {
+        const firstInvalid = form.querySelector<HTMLElement>(':invalid')
+        revealAndFocus(firstInvalid)
+        form.reportValidity()
+        return
+      }
       setStep(2)
       return
     }
 
-    if (twoStep && questions.some((q) => !formData.get(`q_${q.id}`))) {
+    const missing = questions.find((q) => !formData.get(`q_${q.id}`))
+    if (twoStep && missing) {
       setUnanswered(true)
+      revealAndFocus(form.querySelector<HTMLElement>(`#q-${missing.id}-label`))
       return
     }
     setUnanswered(false)
@@ -112,6 +132,7 @@ export default function ApplicationForm({
     const cv = formData.get('cv')
     if (cv instanceof File && cv.size > MAX_CV_BYTES) {
       setTooBig(true)
+      revealAndFocus(form.querySelector<HTMLElement>('#af-cv'))
       return
     }
     setTooBig(false)
@@ -234,7 +255,12 @@ export default function ApplicationForm({
             {t.questionsIntro}
           </p>
           {questions.map((q, i) => (
-            <div className="crs-q" role="group" aria-labelledby={`q-${q.id}-label`} key={q.id}>
+            <div
+              className={`crs-q${unanswered && !answered.has(q.id) ? ' is-missing' : ''}`}
+              role="group"
+              aria-labelledby={`q-${q.id}-label`}
+              key={q.id}
+            >
               {/* Short label travels with the answer so Slack shows the
                   question, not a bare id. */}
               <input type="hidden" name={`label_${q.id}`} value={q.short} />
@@ -253,7 +279,7 @@ export default function ApplicationForm({
                       name={`q_${q.id}`}
                       value={opt.v}
                       required={step === 2}
-                      onChange={() => setUnanswered(false)}
+                      onChange={() => setAnswered((prev) => new Set(prev).add(q.id))}
                     />
                     <span>{opt.label}</span>
                   </label>

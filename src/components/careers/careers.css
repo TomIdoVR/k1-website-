@@ -101,7 +101,9 @@
 .crs-stepbar-track { flex: 1; min-width: 70px; height: 3px; border-radius: 3px; background: rgba(15, 30, 60, 0.09); overflow: hidden; }
 .crs-stepbar-track i { display: block; height: 100%; background: var(--ac); transition: width .3s ease; }
 
-.crs-q { border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 14px; padding: 20px; margin: 0 0 12px; background: #fbfcfe; }
+.crs-q { border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 14px; padding: 20px; margin: 0 0 12px; background: #fbfcfe; transition: border-color .2s, background .2s; }
+/* Scrolling to the problem only helps if the problem is visible once you arrive. */
+.crs-q.is-missing { border-color: #f0a882; background: #fffaf6; }
 .crs-q-legend { display: block; padding: 0; margin: 0 0 14px; font-size: 14.5px; line-height: 1.55; color: #11203a; }
 .crs-q-opts { display: flex; gap: 10px; }
 .crs-q-opt { display: inline-flex; align-items: center; gap: 9px; cursor: pointer; background: #fff;
