@@ -35,6 +35,7 @@ export default function ApplicationForm({
   const [tooBig, setTooBig] = useState(false)
   const [unanswered, setUnanswered] = useState(false)
   const [answered, setAnswered] = useState<Set<string>>(new Set())
+  const [missingId, setMissingId] = useState<string | null>(null)
   // Screening questions come second: asking them before the basics reads as a
   // gate, and a candidate who has filled their details in is more likely to
   // finish. Roles without questions stay a single step.
@@ -62,6 +63,14 @@ export default function ApplicationForm({
     const top = formRef.current.getBoundingClientRect().top + window.scrollY - 90
     window.scrollTo({ top, behavior: 'smooth' })
   }, [step])
+
+  // Runs after the highlight is painted, so the scroll is not racing the
+  // re-render that setUnanswered causes.
+  useEffect(() => {
+    if (!missingId || !formRef.current) return
+    revealAndFocus(formRef.current.querySelector<HTMLElement>(`#q-${missingId}-label`))
+    setMissingId(null)
+  }, [missingId])
 
   const t = {
     name: es ? 'Nombre completo' : 'Full name',
@@ -124,7 +133,7 @@ export default function ApplicationForm({
     const missing = questions.find((q) => !formData.get(`q_${q.id}`))
     if (twoStep && missing) {
       setUnanswered(true)
-      revealAndFocus(form.querySelector<HTMLElement>(`#q-${missing.id}-label`))
+      setMissingId(missing.id)
       return
     }
     setUnanswered(false)
@@ -132,7 +141,9 @@ export default function ApplicationForm({
     const cv = formData.get('cv')
     if (cv instanceof File && cv.size > MAX_CV_BYTES) {
       setTooBig(true)
-      revealAndFocus(form.querySelector<HTMLElement>('#af-cv'))
+      requestAnimationFrame(() =>
+        revealAndFocus(form.querySelector<HTMLElement>('#af-cv'))
+      )
       return
     }
     setTooBig(false)
