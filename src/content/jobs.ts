@@ -21,6 +21,18 @@ export const APPLY_EMAIL = 'careers@kabatone.com'
  */
 export type JobSectionLayout = 'prose' | 'cards' | 'checklist' | 'tags' | 'steps'
 
+/**
+ * A yes/no screening question, asked on step 2 of the application form.
+ * `short` is what the Slack message shows, so a reviewer can scan the answers
+ * without re-reading the full question each time.
+ */
+export interface JobQuestion {
+  id: string
+  short: string
+  en: string
+  es: string
+}
+
 export interface JobSection {
   heading: string
   layout?: JobSectionLayout
@@ -52,6 +64,8 @@ export interface Job {
   location: { en: string; es: string }
   department: { en: string; es: string }
   reportsTo: { en: string; es: string }
+  /** Screening questions. Omit for roles that need none. */
+  questions?: JobQuestion[]
   en: JobContent
   es: JobContent
 }
@@ -69,6 +83,27 @@ export const jobs: Job[] = [
     location: { en: 'Israel — Hybrid', es: 'Israel — Híbrido' },
     department: { en: 'R&D', es: 'I+D' },
     reportsTo: { en: 'R&D leadership', es: 'Dirección de I+D' },
+
+    questions: [
+      {
+        id: 'greenfield',
+        short: 'Led greenfield architecture to production',
+        en: 'Have you personally led the architecture and hands-on development of a greenfield backend/platform system from initial design to production?',
+        es: '¿Has liderado personalmente la arquitectura y el desarrollo hands-on de un sistema backend o de plataforma greenfield, desde el diseño inicial hasta producción?',
+      },
+      {
+        id: 'stack',
+        short: 'TypeScript/Node + PostgreSQL, real-time',
+        en: 'Do you have strong hands-on production experience with TypeScript/Node.js and PostgreSQL, including real-time or event-driven systems?',
+        es: '¿Tienes experiencia sólida y hands-on en producción con TypeScript/Node.js y PostgreSQL, incluyendo sistemas en tiempo real o basados en eventos?',
+      },
+      {
+        id: 'ai_agents',
+        short: 'Uses AI coding agents routinely',
+        en: 'Do you use AI coding agents (e.g. Claude Code, Cursor, GitHub Copilot or similar) regularly as part of your software development workflow?',
+        es: '¿Usas agentes de codificación con IA (por ejemplo Claude Code, Cursor, GitHub Copilot o similares) de forma habitual en tu flujo de desarrollo de software?',
+      },
+    ],
 
     en: {
       title: 'Tech Lead, Next-Generation Public Safety Platform (Hands-On)',

@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.389 -->
+      <div class="tl-entry added" id="v2.389">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.389</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Screening questions, as a second step</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Three yes/no qualification questions</strong> on the Tech Lead posting: led greenfield architecture to production; hands-on TypeScript/Node.js + PostgreSQL with real-time systems; routine use of AI coding agents.</p>
+          <p><strong>The form is now two steps</strong> when a role defines questions &mdash; details first, questions second. Asking screening questions before the basics reads as a gate, and a candidate who has already filled their details in is likelier to finish. Roles without questions stay a single step, so the general application is unchanged.</p>
+          <p>Questions live per role in <code>src/content/jobs.ts</code> in both locales. Each carries a <code>short</code> label used only in Slack, so a reviewer scans <code>&#9989; Led greenfield architecture to production</code> rather than a full paragraph. Slack shows a <strong>Screening</strong> block with &#9989;/&#10060; per answer.</p>
+          <p><strong>A "no" is not a rejection</strong> anywhere in the code &mdash; answers are reported, not scored. The form says so, so candidates answer honestly rather than strategically.</p>
+        </div>
+      </div>
+
+
       <!-- v2.388 -->
       <div class="tl-entry fixed" id="v2.388">
         <div class="version-header">

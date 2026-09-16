@@ -170,6 +170,27 @@ export default function CareersStyles() {
       .car-field { margin-bottom: 18px; }
       .car-field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 
+      .car-steps-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; flex-wrap: wrap; }
+      .car-step-pip { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); }
+      .car-step-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--white); }
+      .car-step-track { flex: 1; min-width: 70px; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+      .car-step-track i { display: block; height: 100%; background: var(--cyan); transition: width 0.3s ease; }
+
+      .car-q { border: 1px solid var(--border); border-radius: 10px; padding: 20px 20px 18px; margin: 0 0 14px; background: var(--glass); }
+      .car-q-legend { display: block; padding: 0; font-size: 15px; font-weight: 300; line-height: 1.6; color: var(--white); margin-bottom: 14px; }
+      .car-q-n { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--cyan); display: block; margin-bottom: 8px; }
+      .car-q-opts { display: flex; gap: 10px; }
+      .car-q-opt { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
+        border: 1px solid var(--border); border-radius: 999px; padding: 9px 20px;
+        font-size: 14px; color: var(--dim); transition: border-color 0.15s, color 0.15s, background 0.15s; }
+      .car-q-opt:hover { border-color: var(--cyan); color: var(--white); }
+      .car-q-opt input { accent-color: var(--cyan); margin: 0; }
+      .car-q-opt:has(input:checked) { border-color: var(--cyan); color: var(--white); background: var(--card-hover-bg); }
+
+      .car-btn-ghost { background: none; border: 1px solid var(--border); color: var(--dim); border-radius: 8px;
+        padding: 13px 22px; font-size: 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+      .car-btn-ghost:hover { border-color: var(--cyan); color: var(--white); }
+
       .car-crumb { max-width: 1160px; margin: 0 auto; padding: 18px 40px 0; display: flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
       .car-crumb a { color: var(--muted); text-decoration: none; }
       .car-crumb a:hover { color: var(--cyan); }

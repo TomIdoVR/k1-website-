@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import { trackLead } from '@/lib/analytics'
-import { APPLY_EMAIL } from '@/content/jobs'
+import { APPLY_EMAIL, type JobQuestion } from '@/content/jobs'
 
 /**
  * Job application form. Posts to /api/careers/apply, which fans the submission
@@ -22,15 +22,23 @@ export default function ApplicationForm({
   es,
   roleTitle,
   roleSlug,
+  questions = [],
 }: {
   es: boolean
   roleTitle: string
   roleSlug: string
+  questions?: JobQuestion[]
 }) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   // One of CV-file or CV-link is required; picking a file relaxes the link.
   const [hasFile, setHasFile] = useState(false)
   const [tooBig, setTooBig] = useState(false)
+  const [unanswered, setUnanswered] = useState(false)
+  // Screening questions come second: asking them before the basics reads as a
+  // gate, and a candidate who has filled their details in is more likely to
+  // finish. Roles without questions stay a single step.
+  const twoStep = questions.length > 0
+  const [step, setStep] = useState<1 | 2>(1)
 
   const t = {
     name: es ? 'Nombre completo' : 'Full name',
@@ -50,6 +58,17 @@ export default function ApplicationForm({
       ? 'Unas líneas bastan. Nos interesa el sistema del que estás más orgulloso.'
       : 'A few lines is plenty. We care about the system you’re proudest of.',
     submit: es ? 'Enviar candidatura' : 'Send application',
+    continueBtn: es ? 'Continuar' : 'Continue',
+    back: es ? 'Volver' : 'Back',
+    stepOf: es ? 'Paso {n} de 2' : 'Step {n} of 2',
+    stepDetails: es ? 'Tus datos' : 'Your details',
+    stepQuestions: es ? 'Unas preguntas' : 'A few questions',
+    questionsIntro: es
+      ? 'Tres preguntas rápidas sobre este rol. Responde con honestidad — un “no” no te descarta automáticamente.'
+      : 'Three quick questions about this role. Answer honestly — a “no” isn’t an automatic rejection.',
+    yes: es ? 'Sí' : 'Yes',
+    no: es ? 'No' : 'No',
+    answerAll: es ? 'Responde las tres preguntas.' : 'Please answer all three questions.',
     submitting: es ? 'Enviando…' : 'Sending…',
     successH: es ? '¡Candidatura enviada!' : 'Application sent!',
     successP: es
@@ -65,7 +84,20 @@ export default function ApplicationForm({
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const formData = new FormData(e.currentTarget)
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    if (twoStep && step === 1) {
+      if (!form.reportValidity()) return
+      setStep(2)
+      return
+    }
+
+    if (twoStep && questions.some((q) => !formData.get(`q_${q.id}`))) {
+      setUnanswered(true)
+      return
+    }
+    setUnanswered(false)
 
     const cv = formData.get('cv')
     if (cv instanceof File && cv.size > MAX_CV_BYTES) {
@@ -124,6 +156,15 @@ export default function ApplicationForm({
         aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
       />
 
+      {twoStep && (
+        <div className="car-steps-bar">
+          <span className="car-step-pip">{t.stepOf.replace('{n}', String(step))}</span>
+          <span className="car-step-name">{step === 1 ? t.stepDetails : t.stepQuestions}</span>
+          <span className="car-step-track"><i style={{ width: step === 1 ? '50%' : '100%' }} /></span>
+        </div>
+      )}
+
+      <div hidden={twoStep && step !== 1}>
       <div className="car-field">
         <label className="car-field-label" htmlFor="af-name">{t.name}</label>
         <input id="af-name" name="name" type="text" required className="car-input" autoComplete="name" />
@@ -175,6 +216,46 @@ export default function ApplicationForm({
         <textarea id="af-message" name="message" rows={5} className="car-input" style={{ resize: 'vertical' }} />
         <p className="car-field-hint">{t.messageHint}</p>
       </div>
+      </div>
+
+      {twoStep && (
+        <div hidden={step !== 2}>
+          <p className="car-field-hint" style={{ margin: '0 0 22px', fontSize: '14px' }}>
+            {t.questionsIntro}
+          </p>
+          {questions.map((q, i) => (
+            <fieldset className="car-q" key={q.id}>
+              {/* Short label travels with the answer so Slack shows the
+                  question, not a bare id. */}
+              <input type="hidden" name={`label_${q.id}`} value={q.short} />
+              <legend className="car-q-legend">
+                <span className="car-q-n">{String(i + 1).padStart(2, '0')}</span>
+                {es ? q.es : q.en}
+              </legend>
+              <div className="car-q-opts">
+                {[
+                  { v: 'Yes', label: t.yes },
+                  { v: 'No', label: t.no },
+                ].map((opt) => (
+                  <label className="car-q-opt" key={opt.v}>
+                    <input
+                      type="radio"
+                      name={`q_${q.id}`}
+                      value={opt.v}
+                      required={step === 2}
+                      onChange={() => setUnanswered(false)}
+                    />
+                    <span>{opt.label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          ))}
+          {unanswered && (
+            <p style={{ fontSize: '14px', color: '#f87171', marginBottom: '16px' }}>{t.answerAll}</p>
+          )}
+        </div>
+      )}
 
       {tooBig && (
         <p style={{ fontSize: '14px', color: '#f87171', marginBottom: '16px' }}>{t.tooBig}</p>
@@ -187,10 +268,30 @@ export default function ApplicationForm({
         </p>
       )}
 
-      <button type="submit" className="car-btn" disabled={status === 'submitting'} style={{ border: 'none', cursor: status === 'submitting' ? 'default' : 'pointer', opacity: status === 'submitting' ? 0.7 : 1 }}>
-        {status === 'submitting' ? t.submitting : t.submit}
-        {status !== 'submitting' && <span className="car-arrow">→</span>}
-      </button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+        {twoStep && step === 2 && (
+          <button type="button" className="car-btn-ghost" onClick={() => setStep(1)}>
+            ← {t.back}
+          </button>
+        )}
+        <button
+          type="submit"
+          className="car-btn"
+          disabled={status === 'submitting'}
+          style={{
+            border: 'none',
+            cursor: status === 'submitting' ? 'default' : 'pointer',
+            opacity: status === 'submitting' ? 0.7 : 1,
+          }}
+        >
+          {status === 'submitting'
+            ? t.submitting
+            : twoStep && step === 1
+              ? t.continueBtn
+              : t.submit}
+          {status !== 'submitting' && <span className="car-arrow">→</span>}
+        </button>
+      </div>
     </form>
   )
 }

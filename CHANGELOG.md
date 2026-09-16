@@ -1,3 +1,15 @@
+## [v2.389] – 2026-09-16 — Screening questions, as a second step
+
+**Added**
+- **Three yes/no qualification questions** on the Tech Lead posting: led greenfield architecture to production; hands-on TypeScript/Node.js + PostgreSQL with real-time or event-driven systems; routine use of AI coding agents.
+- **The form is now two steps** when a role defines questions — details first, questions second. Asking screening questions before the basics reads as a gate, and a candidate who has already filled their details in is likelier to finish. Roles without questions stay a single step, so the general application on `/careers` is unchanged.
+- Questions live in `src/content/jobs.ts` per role, in both locales, so each posting carries its own. Each also has a `short` label used only in Slack, so a reviewer scans `✅ Led greenfield architecture to production` rather than a full paragraph or a bare field id.
+- Slack shows a **Screening** block with ✅ / ❌ per answer, above the candidate's message.
+- Step bar with progress, a Back button, and a guard that refuses submission until all three are answered.
+
+**Note**
+- A "no" is not treated as a rejection anywhere in the code — the answers are reported, not scored. The form says so, so candidates answer honestly rather than strategically.
+
 ## [v2.388] – 2026-09-16 — Form text was unreadable, and a CV link alone was the wrong ask
 
 **Fixed — near-white text on a white field**

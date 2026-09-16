@@ -48,6 +48,7 @@ interface Application {
   roleSlug: string
   locale: string
   cv?: { name: string; bytes: Buffer }
+  answers: { question: string; answer: string }[]
 }
 
 function clean(value: unknown, limit: number): string {
@@ -99,6 +100,10 @@ async function postToSlack(app: Application): Promise<boolean> {
     app.cv ? `*CV file:* ${slackEscape(app.cv.name)} _(attached in thread)_` : '',
   ].filter(Boolean).join('\n')
 
+  const screening = app.answers
+    .map((a) => `${a.answer === 'Yes' ? '✅' : '❌'} ${slackEscape(a.question)}`)
+    .join('\n')
+
   const blocks: (Block | KnownBlock)[] = [
     {
       type: 'header',
@@ -106,6 +111,12 @@ async function postToSlack(app: Application): Promise<boolean> {
     },
     { type: 'section', text: { type: 'mrkdwn' as const, text: fields || '_no details_' } },
   ]
+  if (screening) {
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn' as const, text: `*Screening:*\n${screening}` },
+    })
+  }
   if (app.message) {
     blocks.push({
       type: 'section',
@@ -268,6 +279,15 @@ export async function POST(request: Request) {
     roleSlug: clean(body.role_slug, MAX.short) || 'general',
     locale: clean(body.locale, 8) || 'en',
     cv,
+    // Screening answers arrive as q_<id>; the page sends a readable label for
+    // each so Slack shows the question rather than a bare id.
+    answers: Object.keys(body)
+      .filter((k) => k.startsWith('q_'))
+      .map((k) => ({
+        question: clean(body[`label_${k.slice(2)}`], MAX.short) || k.slice(2),
+        answer: clean(body[k], 12),
+      }))
+      .filter((a) => a.answer),
   }
 
   if (!app.name || !app.email || !app.email.includes('@')) {

@@ -284,7 +284,12 @@ export default async function JobPage({
             <div className="car-label car-label-center">{t.ctaLabel}</div>
             <h2 className="car-h2 car-center">{t.ctaH2}</h2>
             <p className="car-section-sub car-center" style={{ margin: '0 auto 36px' }}>{t.ctaSub}</p>
-            <ApplicationForm es={es} roleTitle={c.title} roleSlug={job.slug} />
+            <ApplicationForm
+              es={es}
+              roleTitle={c.title}
+              roleSlug={job.slug}
+              questions={job.questions}
+            />
             <p className="car-mailnote car-center" style={{ textAlign: 'center' }}>
               {t.orEmail} <a href={mailto}>{APPLY_EMAIL}</a>
             </p>
