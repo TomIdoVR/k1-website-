@@ -53,6 +53,7 @@ const COMPARISONS = [
 
 const COMPANY = [
   { href: '/about', t: S('About', 'Nosotros') },
+  { href: '/careers', t: S('Careers', 'Empleos') },
   { href: '/contact', t: S('Contact', 'Contacto') },
   { href: '/resources', t: S('Resources', 'Recursos') },
   { href: '/privacy', t: S('Privacy', 'Privacidad') },

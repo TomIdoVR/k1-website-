@@ -1,0 +1,127 @@
+/* Careers — the few things solution-page.css does not cover.
+   Everything structural (sp-wrap, sp-section, sp-head, sp-h1/h2, sp-ben,
+   sp-btn, sp-tick) is reused from the production solution pages, so careers
+   inherits the live site's language instead of carrying a parallel one.
+   These additions are form controls, the step indicator and the role cards,
+   none of which exist there. */
+
+/* Single-column hero. The width stays sp-wrap's 1240px so the hero's left
+   edge lines up with every section below it; the measure is constrained on the
+   text itself instead. */
+.crs-hero-inner { grid-template-columns: 1fr; }
+.crs-hero-inner .sp-h1 { max-width: 20ch; }
+.crs-hero-inner .sp-lede { margin-top: 20px; }
+
+/* Section tones.
+   The base page is #f7f9fc and sp-core is a 55% white wash over it — too close
+   to read as separate bands. These are distinct steps in the same light family,
+   plus one navy band borrowed from .sp-features so the page has a focal point
+   rather than one flat field. */
+.crs-band-white { background: #fff; border-block: 1px solid rgba(15, 30, 60, 0.07); }
+.crs-band-cool { background: #eef4fc; border-block: 1px solid rgba(15, 30, 60, 0.06); }
+.crs-band-dark { background: linear-gradient(180deg, #0b1424 0%, #0a1220 100%); }
+.crs-band-dark .sp-h2 { color: #fff; }
+.crs-band-dark .sp-section-eyebrow,
+.crs-band-dark .crs-num { color: #6ea8ff; }
+.crs-band-dark .sp-lede,
+.crs-band-dark .crs-prose { color: #c6d4e6; }
+.crs-band-dark .crs-check { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); color: #c6d4e6; }
+.crs-band-dark .crs-chip { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.12); color: #c6d4e6; }
+.crs-band-dark .crs-step { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); box-shadow: none; }
+.crs-band-dark .crs-step .sp-ben-d { color: #c6d4e6; }
+.crs-band-dark .crs-step-n { color: #6ea8ff; opacity: 0.5; }
+.crs-stats { display: flex; flex-wrap: wrap; gap: clamp(20px, 4vw, 52px); margin-top: 8px; }
+.crs-stat-v { font-family: var(--sp-f-display); font-weight: 800; font-size: clamp(30px, 3.4vw, 44px); line-height: 1; color: var(--ac-ink); }
+.crs-stat-l { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7d96; margin-top: 7px; }
+
+/* Role cards — sp-ben with a left accent rule, so a list of roles reads as
+   rows rather than as feature tiles. */
+.crs-roles { display: flex; flex-direction: column; gap: 14px; }
+.crs-role { display: block; text-decoration: none; color: inherit; background: #fff;
+  border: 1px solid rgba(15, 30, 60, 0.09); border-left: 3px solid var(--ac);
+  border-radius: 16px; padding: 28px 30px;
+  box-shadow: 0 12px 30px -22px rgba(20, 40, 80, 0.3);
+  transition: transform .22s ease, box-shadow .22s ease; }
+.crs-role:hover { transform: translateY(-2px); box-shadow: 0 18px 38px -20px rgba(20, 40, 80, 0.36); }
+.crs-role-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.crs-tag { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 999px; padding: 5px 12px; color: var(--ac-ink); background: rgba(24, 88, 245, 0.07);
+  border: 1px solid rgba(24, 88, 245, 0.16); }
+.crs-tag-2 { color: #6a7d96; background: rgba(15, 30, 60, 0.04); border-color: rgba(15, 30, 60, 0.09); }
+.crs-role-t { font-family: var(--sp-f-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(22px, 2.4vw, 30px); line-height: 1.06; color: #0d1828; margin: 0 0 12px; }
+.crs-role-d { font-size: 14.5px; line-height: 1.6; color: #4d627f; margin: 0 0 16px; max-width: 70ch; }
+.crs-role-go { font-family: var(--sp-f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ac-ink); }
+
+/* Job body */
+.crs-prose { font-size: clamp(15.5px, 1.4vw, 17px); line-height: 1.68; color: var(--sp-body); margin: 0 0 16px; max-width: 68ch; }
+/* Sections that are a single block of prose do not need a full section's
+   breathing room above and below. */
+.crs-section-tight { padding-block: clamp(36px, 4vw, 56px); }
+.crs-meta { display: flex; flex-wrap: wrap; gap: clamp(18px, 3vw, 42px); padding: 22px 0; margin: 4px 0 30px;
+  border-top: 1px solid rgba(15, 30, 60, 0.09); border-bottom: 1px solid rgba(15, 30, 60, 0.09); }
+.crs-meta-k { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a7d96; }
+.crs-meta-v { font-family: var(--sp-f-display); font-weight: 700; font-size: 18px; color: #11203a; margin-top: 5px; }
+.crs-num { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--ac-ink); margin-bottom: 10px; }
+.crs-checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.crs-check { display: flex; gap: 12px; align-items: flex-start; background: #fff;
+  border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 14px; padding: 16px 18px;
+  font-size: 14.5px; line-height: 1.55; color: #4d627f; }
+.crs-chips { display: flex; flex-wrap: wrap; gap: 9px; }
+.crs-chip { border: 1px solid rgba(15, 30, 60, 0.1); background: #fff; border-radius: 999px;
+  padding: 9px 16px; font-size: 13.5px; color: #4d627f; }
+.crs-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.crs-step { background: #fff; border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 16px; padding: 24px 22px;
+  box-shadow: 0 12px 30px -24px rgba(20, 40, 80, 0.3); }
+.crs-step-n { font-family: var(--sp-f-display); font-weight: 800; font-size: 34px; line-height: 1;
+  color: var(--ac); opacity: 0.35; margin-bottom: 10px; }
+
+/* Form — solution-page.css carries no field styles. */
+.crs-form { background: #fff; border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 18px;
+  padding: clamp(24px, 3vw, 34px); box-shadow: 0 16px 40px -28px rgba(20, 40, 80, 0.35); }
+.crs-field { margin-bottom: 18px; }
+.crs-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.crs-label { display: block; font-family: var(--sp-f-mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: #6a7d96; margin-bottom: 8px; }
+.crs-input { width: 100%; background: #fbfcfe; border: 1px solid rgba(15, 30, 60, 0.14);
+  border-radius: 10px; padding: 12px 15px; font-family: 'Space Grotesk', sans-serif;
+  font-size: 14.5px; color: #11203a; outline: none; transition: border-color .15s, box-shadow .15s; }
+.crs-input::placeholder { color: #9aa9bd; }
+.crs-input:focus { border-color: var(--ac); box-shadow: 0 0 0 3px rgba(24, 88, 245, 0.12); background: #fff; }
+.crs-input[type="file"] { padding: 10px 13px; cursor: pointer; }
+.crs-input[type="file"]::file-selector-button { background: rgba(24, 88, 245, 0.08); color: var(--ac-ink);
+  border: 1px solid rgba(24, 88, 245, 0.2); border-radius: 8px; padding: 6px 12px; margin-right: 12px;
+  cursor: pointer; font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; }
+.crs-hint { font-size: 12.5px; color: #8295ab; margin-top: 7px; }
+.crs-err { font-size: 13.5px; color: #c2410c; margin-bottom: 14px; }
+
+.crs-stepbar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.crs-stepbar-n { font-family: var(--sp-f-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ac-ink); }
+.crs-stepbar-t { font-family: var(--sp-f-display); font-weight: 700; font-size: 17px; text-transform: uppercase; color: #11203a; }
+.crs-stepbar-track { flex: 1; min-width: 70px; height: 3px; border-radius: 3px; background: rgba(15, 30, 60, 0.09); overflow: hidden; }
+.crs-stepbar-track i { display: block; height: 100%; background: var(--ac); transition: width .3s ease; }
+
+.crs-q { border: 1px solid rgba(15, 30, 60, 0.09); border-radius: 14px; padding: 20px; margin: 0 0 12px; background: #fbfcfe; transition: border-color .2s, background .2s; }
+/* Keeps a question clear of the sticky header when scrolled to. */
+.crs-q { scroll-margin-top: 110px; }
+.crs-q-legend { display: block; padding: 0; margin: 0 0 14px; font-size: 14.5px; line-height: 1.55; color: #11203a; }
+.crs-q-opts { display: flex; gap: 10px; }
+.crs-q-opt { display: inline-flex; align-items: center; gap: 9px; cursor: pointer; background: #fff;
+  border: 1px solid rgba(15, 30, 60, 0.14); border-radius: 999px; padding: 9px 20px;
+  font-size: 14px; color: #4d627f; transition: border-color .15s, color .15s, background .15s; }
+.crs-q-opt:hover { border-color: var(--ac); color: #11203a; }
+.crs-q-opt input { accent-color: var(--ac); margin: 0; }
+.crs-q-opt:has(input:checked) { border-color: var(--ac); color: #11203a; background: rgba(24, 88, 245, 0.06); }
+
+.crs-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.crs-btn-ghost { background: #fff; border: 1px solid rgba(15, 30, 60, 0.14); color: #4d627f;
+  border-radius: 10px; padding: 12px 20px; font-size: 14px; cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif; transition: border-color .15s, color .15s; }
+.crs-btn-ghost:hover { border-color: var(--ac); color: #11203a; }
+.crs-ok { text-align: center; padding: 36px 20px; }
+.crs-ok-t { font-family: var(--sp-f-display); font-weight: 700; font-size: 26px; color: #0d1828; margin-bottom: 8px; }
+
+@media (max-width: 720px) {
+  .crs-q-opts { flex-direction: column; align-items: stretch; }
+  .crs-q-opt { justify-content: center; }
+}
