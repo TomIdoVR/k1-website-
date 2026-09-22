@@ -419,7 +419,7 @@ export default async function VsCarbyneePage({
                   {es ? 'Recursos:' : 'Resources:'}
                 </span>
                 {[
-                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Qué es Software CAD' : 'What Is CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/what-is-a-public-safety-platform', label: es ? 'Qué es una Plataforma' : 'What Is a Platform' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: '#06b6d4', textDecoration: 'none', borderBottom: '1px solid rgba(6,182,212,0.25)' }}>

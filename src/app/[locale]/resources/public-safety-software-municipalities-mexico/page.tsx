@@ -395,7 +395,7 @@ export default async function PublicSafetySoftwareMexicoPage({
                 </span>
                 {[
                   { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
-                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software de Despacho CAD' : 'What Is CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}

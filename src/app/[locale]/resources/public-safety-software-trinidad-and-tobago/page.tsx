@@ -424,7 +424,7 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
                   {es ? 'Recursos relacionados:' : 'Related resources:'}
                 </span>
                 {[
-                  { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Software de Despacho CAD' : 'What Is CAD Dispatch Software' },
+                  { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/public-safety-software-jamaica', label: es ? 'Seguridad Publica — Jamaica' : 'Public Safety Software — Jamaica' },
                   { href: '/resources/public-safety-software-dominican-republic', label: es ? 'Seguridad Publica — Republica Dominicana' : 'Public Safety Software — Dominican Republic' },
                   { href: '/resources/public-safety-software-colombia', label: es ? 'Seguridad Publica — Colombia' : 'Public Safety Software — Colombia' },
