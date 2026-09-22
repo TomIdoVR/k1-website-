@@ -1,3 +1,37 @@
+## [v2.399] – 2026-09-22 — Every job application now says where the candidate came from
+
+**Added**
+- **Visit attribution, site-wide** (`src/lib/attribution.ts`, `AttributionCapture` in the root
+  layout). On landing, the visit's UTM parameters, ad click-id type (`li_fat_id`, `gclid`,
+  `fbclid`, `msclkid`), `?ref=` code and external referrer are stored in `localStorage`
+  (`k1_attr`) as a **first** and **last non-direct** touch. A candidate who clicks a LinkedIn ad,
+  reads the homepage, and applies days later by typing the URL is still credited to the ad —
+  reading UTMs off the URL at submit time (as `trackLead` did) loses them on the first click.
+- **Channel classifier** — one readable label per touch: LinkedIn Ads, LinkedIn (organic),
+  Google Ads, Meta Ads, Search (organic), Job board — Indeed / Glassdoor / Computrabajo / OCC /
+  AllJobs / Drushim / JobMaster…, AI assistant, Email, Referral — <code/host>, Direct / unknown.
+  The API route re-derives the channel from the raw touch rather than trusting a client label.
+- **"How did you hear about this role?"** — optional select on the application form (EN/ES).
+  Catches what tracking cannot: word of mouth, WhatsApp forwards, LinkedIn's app stripping the
+  referrer.
+- Source shown on every application in **Slack** (channel, first-visit channel if different,
+  self-reported answer, campaign / ad / landing page) and in the email notification.
+- One **structured log line** per application (`[careers] application {…}`) with channel and
+  UTMs — no name, email or phone — so submissions can be counted by source from Vercel logs.
+- GA4 `generate_lead` for careers now carries `source_channel` and the *stored* UTMs.
+
+**Verified** locally: landed on `/es` with LinkedIn paid UTMs, returned directly to the job page,
+applied — server classified `LinkedIn Ads` with campaign and ad intact. 17/17 classifier cases pass.
+
+## [v2.398] – 2026-09-16 — Careers section (backfilled entry)
+
+**Added**
+- `/careers` and `/careers/[slug]` (EN/ES) built on the production solution-page design, with
+  JobPosting JSON-LD, content in `src/content/jobs.ts`, and a two-step application form
+  (details + CV upload or link, then screening questions) posting to `/api/careers/apply`,
+  which delivers to Slack via the dedicated hiring app (email via Resend when configured).
+- Commits v2.388–v2.398 shipped without changelog entries; this entry records them.
+
 ## [v2.377] – 2026-09-08 — The CAD cluster pointed 60 internal links at a page ranking 56–68
 
 **Changed**

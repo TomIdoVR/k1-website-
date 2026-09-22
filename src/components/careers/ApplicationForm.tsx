@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import { trackLead } from '@/lib/analytics'
+import { getAttribution, classifyTouch } from '@/lib/attribution'
 import { APPLY_EMAIL, type JobQuestion } from '@/content/jobs'
 
 /**
@@ -17,6 +18,22 @@ const ENDPOINT = '/api/careers/apply'
 
 /** Keeps a stray 200MB scan from being uploaded; a CV is a document. */
 const MAX_CV_BYTES = 10 * 1024 * 1024
+
+/**
+ * Self-reported source. Complements the tracked one rather than duplicating
+ * it: tracking cannot see a colleague's recommendation, a WhatsApp forward, or
+ * a LinkedIn app that strips the referrer. Values are English so Slack reads
+ * the same whichever language the candidate used.
+ */
+const HEARD_OPTIONS: { v: string; en: string; es: string }[] = [
+  { v: 'LinkedIn — job post or ad', en: 'LinkedIn — a job post or ad', es: 'LinkedIn — una vacante o anuncio' },
+  { v: 'LinkedIn — someone shared it', en: 'LinkedIn — someone shared it', es: 'LinkedIn — alguien la compartió' },
+  { v: 'Referred by someone I know', en: 'Someone I know referred me', es: 'Me la recomendó alguien que conozco' },
+  { v: 'Job board', en: 'A job board', es: 'Una bolsa de trabajo' },
+  { v: 'Search engine', en: 'Google or another search engine', es: 'Google u otro buscador' },
+  { v: 'KabatOne website', en: 'The KabatOne website', es: 'El sitio de KabatOne' },
+  { v: 'Other', en: 'Other', es: 'Otro' },
+]
 
 export default function ApplicationForm({
   es,
@@ -116,6 +133,8 @@ export default function ApplicationForm({
     errorH: es ? 'No se pudo enviar' : 'That didn’t send',
     errorP: es ? 'Escríbenos directamente a' : 'Write to us directly at',
     required: es ? 'obligatorio' : 'required',
+    heard: es ? '¿Cómo conociste esta vacante? (opcional)' : 'How did you hear about this role? (optional)',
+    heardPick: es ? 'Selecciona una opción' : 'Choose one',
   }
 
   const mailto = `mailto:${APPLY_EMAIL}?subject=` +
@@ -156,12 +175,26 @@ export default function ApplicationForm({
     setTooBig(false)
     setStatus('submitting')
 
+    // Where the candidate came from, captured when they landed on the site.
+    const attribution = getAttribution()
+    formData.set('attribution', JSON.stringify(attribution))
+    formData.set('page', window.location.pathname)
+
     try {
       // Multipart rather than JSON: the CV rides along with the fields, and the
       // browser sets its own boundary — so no Content-Type header here.
       const res = await fetch(ENDPOINT, { method: 'POST', body: formData })
       if (res.ok) {
-        trackLead('generate_lead', { form_id: 'careers_application', role: roleSlug })
+        const last = attribution.last
+        trackLead('generate_lead', {
+          form_id: 'careers_application',
+          role: roleSlug,
+          source_channel: classifyTouch(last),
+          // Stored UTMs win over the current URL's (usually none by now).
+          ...(last?.utm_source ? { utm_source: last.utm_source } : {}),
+          ...(last?.utm_medium ? { utm_medium: last.utm_medium } : {}),
+          ...(last?.utm_campaign ? { utm_campaign: last.utm_campaign } : {}),
+        })
         setStatus('success')
       } else {
         setStatus('error')
@@ -258,6 +291,16 @@ export default function ApplicationForm({
           className="crs-input" required={!hasFile}
         />
         <p className="crs-hint">{t.cvHint}</p>
+      </div>
+
+      <div className="crs-field">
+        <label className="crs-label" htmlFor="af-heard">{t.heard}</label>
+        <select id="af-heard" name="heard" className="crs-input" defaultValue="">
+          <option value="">{t.heardPick}</option>
+          {HEARD_OPTIONS.map((o) => (
+            <option key={o.v} value={o.v}>{es ? o.es : o.en}</option>
+          ))}
+        </select>
       </div>
 
       <div className="crs-field">
