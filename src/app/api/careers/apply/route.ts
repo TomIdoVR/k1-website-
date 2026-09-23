@@ -29,6 +29,7 @@
  */
 
 import { WebClient, type Block, type KnownBlock } from '@slack/web-api'
+import { classifyTouch, sanitizeTouch, type Touch } from '@/lib/attribution'
 
 export const runtime = 'nodejs'
 
@@ -49,6 +50,55 @@ interface Application {
   locale: string
   cv?: { name: string; bytes: Buffer }
   answers: { question: string; answer: string }[]
+  source: Source
+}
+
+interface Source {
+  /** Channel of the most recent non-direct visit, e.g. "LinkedIn Ads". */
+  channel: string
+  /** Channel of the first visit, when it differs from the last. */
+  firstChannel?: string
+  last?: Touch
+  /** What the candidate said, from "How did you hear about this role?". */
+  heard: string
+  /** Page the form was submitted from. */
+  page: string
+}
+
+/**
+ * Re-derives the channel here rather than trusting one the browser sent. The
+ * raw touch is still client-supplied, so treat it as a strong hint, not proof.
+ */
+function parseSource(body: Record<string, unknown>): Source {
+  let raw: { first?: unknown; last?: unknown } = {}
+  const json = typeof body.attribution === 'string' ? body.attribution.slice(0, 4000) : ''
+  try {
+    if (json) raw = JSON.parse(json)
+  } catch { /* malformed: fall through to unknown */ }
+  const first = sanitizeTouch(raw.first)
+  const last = sanitizeTouch(raw.last) ?? first
+  const channel = classifyTouch(last)
+  const firstChannel = classifyTouch(first)
+  return {
+    channel,
+    firstChannel: first && firstChannel !== channel ? firstChannel : undefined,
+    last,
+    heard: clean(body.heard, 80),
+    page: clean(body.page, MAX.short),
+  }
+}
+
+/** "utm_campaign · landing" detail line, empty when there is nothing to add. */
+function sourceDetail(src: Source): string {
+  const t = src.last
+  if (!t) return ''
+  return [
+    t.utm_campaign && `campaign ${t.utm_campaign}`,
+    t.utm_content && `ad ${t.utm_content}`,
+    (t.utm_source || t.utm_medium) && `${t.utm_source ?? '-'} / ${t.utm_medium ?? '-'}`,
+    t.referrer && `from ${t.referrer}`,
+    t.landing && `landed on ${t.landing}`,
+  ].filter(Boolean).join(' · ')
 }
 
 function clean(value: unknown, limit: number): string {
@@ -104,12 +154,21 @@ async function postToSlack(app: Application): Promise<boolean> {
     .map((a) => `${a.answer === 'Yes' ? '✅' : '❌'} ${slackEscape(a.question)}`)
     .join('\n')
 
+  const src = app.source
+  const sourceText = [
+    `*Source:* ${slackEscape(src.channel)}` +
+      (src.firstChannel ? ` _(first visit: ${slackEscape(src.firstChannel)})_` : ''),
+    src.heard ? `*They said:* ${slackEscape(src.heard)}` : '',
+    sourceDetail(src) ? `_${slackEscape(sourceDetail(src))}_` : '',
+  ].filter(Boolean).join('\n')
+
   const blocks: (Block | KnownBlock)[] = [
     {
       type: 'header',
       text: { type: 'plain_text' as const, text: `New application — ${app.role}`.slice(0, 150) },
     },
     { type: 'section', text: { type: 'mrkdwn' as const, text: fields || '_no details_' } },
+    { type: 'section', text: { type: 'mrkdwn' as const, text: sourceText } },
   ]
   if (screening) {
     blocks.push({
@@ -206,6 +265,8 @@ async function sendEmail(app: Application): Promise<boolean> {
       <table style="border-collapse:collapse;font-size:14px">
         ${row('Name', app.name)}${row('Email', app.email)}${row('Phone', app.phone)}
         ${row('Location', app.location)}${row('LinkedIn', app.linkedin)}${row('CV', app.cvLink)}
+        ${row('Source', app.source.channel)}${row('First visit', app.source.firstChannel ?? '')}
+        ${row('They said', app.source.heard)}${row('Source detail', sourceDetail(app.source))}
       </table>
       ${app.message ? `<h3 style="margin:24px 0 6px;font-size:14px">Message</h3><p style="white-space:pre-wrap;font-size:14px;line-height:1.6">${htmlEscape(app.message)}</p>` : ''}
     </div>`
@@ -288,11 +349,29 @@ export async function POST(request: Request) {
         answer: clean(body[k], 12),
       }))
       .filter((a) => a.answer),
+    source: parseSource(body),
   }
 
   if (!app.name || !app.email || !app.email.includes('@')) {
     return Response.json({ error: 'missing_fields' }, { status: 400 })
   }
+
+  // One structured line per application, so submissions can be counted by
+  // source from the Vercel logs even if a Slack message is deleted.
+  // No name, email or phone here: logs are not the place for candidate PII.
+  console.log('[careers] application', JSON.stringify({
+    role: app.roleSlug,
+    locale: app.locale,
+    channel: app.source.channel,
+    first_channel: app.source.firstChannel ?? app.source.channel,
+    heard: app.source.heard || null,
+    utm_source: app.source.last?.utm_source ?? null,
+    utm_medium: app.source.last?.utm_medium ?? null,
+    utm_campaign: app.source.last?.utm_campaign ?? null,
+    utm_content: app.source.last?.utm_content ?? null,
+    referrer: app.source.last?.referrer ?? null,
+    click_id: app.source.last?.click_id ?? null,
+  }))
 
   const [slackOk, emailOk] = await Promise.all([postToSlack(app), sendEmail(app)])
 

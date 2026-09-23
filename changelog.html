@@ -356,6 +356,29 @@
 
     <div class="timeline">
 
+      <!-- v2.399 -->
+      <div class="tl-entry added" id="v2.399">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.399</span><span class="tl-date">2026-09-22</span></div>
+          <h3 class="tl-title">Every job application now says where the candidate came from</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> site-wide visit attribution: UTMs, ad click-id type, <code>?ref=</code> and external referrer are stored on landing as a first and last non-direct touch, so a candidate who clicks a LinkedIn ad and applies days later is still credited to the ad. A classifier turns each touch into one channel (LinkedIn Ads, LinkedIn organic, Google Ads, job boards, search, referral, direct…), re-derived on the server.</p>
+          <p><strong>Added</strong> an optional &ldquo;How did you hear about this role?&rdquo; field. Source appears on every application in Slack and email, in one PII-free structured log line per application, and on the GA4 <code>generate_lead</code> event.</p>
+        </div>
+      </div>
+
+      <!-- v2.398 -->
+      <div class="tl-entry added" id="v2.398">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.398</span><span class="tl-date">2026-09-16</span></div>
+          <h3 class="tl-title">Careers section (backfilled entry)</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added</strong> <code>/careers</code> and <code>/careers/[slug]</code> (EN/ES) on the production design, with JobPosting JSON-LD and a two-step application form delivering to Slack through the dedicated hiring app. Commits v2.388&ndash;v2.398 shipped without changelog entries; this records them.</p>
+        </div>
+      </div>
+
       <!-- v2.377 -->
       <div class="tl-entry changed" id="v2.377">
         <div class="version-header">

@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { organizationSchema, webSiteSchema } from '@/lib/schema'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import AttributionCapture from '@/components/AttributionCapture'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager'
 
 export const metadata: Metadata = {
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
           <GoogleTagManagerNoScript />
           <GoogleAnalytics />
           <GoogleTagManager />
+          <AttributionCapture />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
