@@ -253,7 +253,7 @@ export default async function ResourcesPage({
           href: '/resources/que-es-un-c5',
           category: 'Guía',
           title: '¿Qué es un C5? Centro de Comando, Control y Videovigilancia',
-          excerpt: 'Un C5 es un Centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Significado, tecnología y operación en México y América Latina.',
+          excerpt: 'Un C5 es un Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Significado, tecnología y operación en México y América Latina.',
           readTime: '8 min',
           isNew: true,
         },

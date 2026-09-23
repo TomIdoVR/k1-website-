@@ -1,3 +1,50 @@
+## [v2.402] – 2026-09-23 — Production still defined the fifth C as "Calidad"
+
+**Fixed — the correction existed since 1 September and never reached production**
+- `v2.347` corrected the fifth C from **Calidad / Quality** to **Contacto Ciudadano /
+  Citizen Contact** across 10 files. Only **4** of them ever reached `main`, and none of the
+  three pages that matter. Live production this morning: **14** wrong occurrences on
+  `how-c5-command-centers-work`, **12** on `que-es-un-c5`, **5** on
+  `c5-command-centers-mexico-2026`, plus the `/resources` hub excerpt and both metadata files.
+- **`public/llms.txt` described the C5 model as "(Command, Control, Communications, Computing,
+  Quality)"** — the file AI crawlers read first, stating the definition wrong on the very line
+  that points at the C5 page.
+- **The C3/C4 order was also wrong.** Canonically C3 is Cómputo and C4 Comunicaciones; both
+  pages had them swapped. Part of the same correction, not a separate fix.
+
+**Fixed — a page the original correction missed entirely**
+- `public-safety-software-municipalities-mexico` stated "Comando, Control, Comunicaciones,
+  Computo y Calidad" in **four** places — two of them **FAQPage schema answers**, which is
+  precisely the surface answer engines quote. Wrong on `nextjs` as well as `main`, so
+  re-applying v2.347 alone would have left it. Corrected in the file's existing unaccented
+  prose style.
+
+**Why this is a GEO fix and not a typo**
+- `What is a C5 command center?` has been **uncited since the 2026-07-07 baseline** and came
+  back uncited again on 2026-09-21. The diagnosis: our pages contradicted
+  `c5.cdmx.gob.mx` — the institution the model is named after — so an engine choosing between
+  us and the authority had no reason to choose us. `v2.274`'s brand-anchor callout did not
+  flip it, which is consistent with the contradiction being the cause rather than anchoring.
+- **This is a falsifiable test with a deadline.** The GEO monitor runs Monday 07:30. If that
+  query does not flip N→Y once this is live and re-crawled, the diagnosis is wrong and GEO-4
+  should be closed as refuted rather than carried a fourth week.
+- **Citation is the metric, not rank.** `c5` itself is navigational — citizens looking for
+  Mexico City's C5, qualified potential 0 — so this is not expected to move clicks. The
+  definitional cluster (`que significa c4 y c5`, p4.7) is the only click-bearing part.
+
+**Scope**
+- Branched from `main`, not merged from `nextjs` — the two have diverged (55 / 176 commits,
+  36 overlapping files). The three C5 pages were taken whole from `nextjs`, which also brings
+  their answer-first rewrites; the shared files (`metadata.ts` ×2, `/resources`, `llms.txt`)
+  were edited surgically so 176 commits of unrelated work stayed out.
+- `k-dispatch` was **left alone**: production has no naming error there and the page has
+  diverged 582 lines.
+- `que-es-un-c5` deliberately retains one "Calidad" — the sentence *"La quinta C no es
+  Calidad: es Contacto Ciudadano"*, which names the misconception on purpose.
+- Verified: `tsc --noEmit` clean, `npm run build` exit 0, and the compiled output carries the
+  corrected definition in 18 files with **zero** occurrences of the wrong one.
+
+
 ## [v2.399] – 2026-09-22 — Every job application now says where the candidate came from
 
 **Added**

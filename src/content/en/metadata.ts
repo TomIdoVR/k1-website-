@@ -1243,7 +1243,7 @@ export const metadata = {
   },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
-    description: "Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    description: "Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
     canonical: "https://kabatone.com/resources/que-es-un-c5",
   },
   ng911Software: {

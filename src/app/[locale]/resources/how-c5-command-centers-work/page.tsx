@@ -26,11 +26,11 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
   const faqs = es ? [
     {
       question: '¿Qué es un C5?',
-      answer: 'Un C5 es un centro de mando integrado de seguridad pública que concentra Comando, Control, Comunicaciones, Cómputo y Calidad en una sola instalación. Los centros C5 operan en las principales ciudades de México y América Latina para coordinar la respuesta policial, bomberos, emergencias médicas, videovigilancia urbana, tráfico y protección civil desde un único punto de control con video walls y estaciones de operadores conectadas en tiempo real.',
+      answer: 'Un C5 es un centro de mando integrado de seguridad pública que concentra Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano en una sola instalación. Los centros C5 operan en las principales ciudades de México y América Latina para coordinar la respuesta policial, bomberos, emergencias médicas, videovigilancia urbana, tráfico y protección civil desde un único punto de control con video walls y estaciones de operadores conectadas en tiempo real.',
     },
     {
       question: '¿Qué significa C5?',
-      answer: 'C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Es el modelo de centro de mando utilizado en México y América Latina para coordinar respuesta a emergencias, videovigilancia, tráfico y protección civil desde una sola instalación.',
+      answer: 'C5 significa Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — así lo define el C5 de la Ciudad de México, el centro que dio nombre al modelo. La quinta C es Contacto Ciudadano: los canales por los que la población llega al centro (911, la línea 089 de denuncia anónima, Locatel y aplicaciones móviles). El nombre varía por estado: Jalisco antepone Coordinación y varios estados operan como C5i, donde la i es Inteligencia.',
     },
     {
       question: '¿Qué tecnología utilizan los centros de mando C5?',
@@ -42,7 +42,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
     },
     {
       question: '¿Cuál es la diferencia entre un C4 y un C5?',
-      answer: 'Un C4 incluye Comando, Control, Comunicaciones y Cómputo. Un C5 agrega una quinta dimensión: Calidad, que incorpora métricas de desempeño, auditoría de procesos y mejora continua en las operaciones del centro de mando. El modelo C5 representa la evolución del C4 hacia estándares operativos más exigentes.',
+      answer: 'Un C4 incluye Comando, Control, Comunicaciones y Cómputo: es un centro que despacha y monitorea. Un C5 agrega una quinta C, Contacto Ciudadano, y con ella la responsabilidad de operar los canales de entrada del ciudadano — 911, la línea 089 de denuncia anónima y los servicios de atención — dentro de la misma instalación. La diferencia no es tecnológica sino de alcance: el C4 recibe incidentes ya reportados por la autoridad, mientras que el C5 es también la puerta de entrada de la denuncia ciudadana. Los estados que además concentran análisis criminal se denominan C5i, donde la i es Inteligencia.',
     },
     {
       question: '¿Qué plataformas de software operan en los centros C5?',
@@ -55,11 +55,11 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
   ] : [
     {
       question: 'What is a C5 command center?',
-      answer: 'A C5 command center is an integrated public safety facility that consolidates Command, Control, Communications, Computing, and Quality (C5) into a single operational hub. C5 centers are widely deployed across major Mexican cities — including Mexico City, Guadalajara, Monterrey, and Puebla — to coordinate police, fire, EMS, surveillance, traffic, and civil protection from a unified environment with video walls and real-time operator workstations.',
+      answer: 'A C5 command center is an integrated public safety facility that consolidates Command, Control, Computing, Communications, and Citizen Contact into a single operational hub. C5 centers are widely deployed across major Mexican cities — including Mexico City, Guadalajara, Monterrey, and Puebla — to coordinate police, fire, EMS, surveillance, traffic, and civil protection from a unified environment with video walls and real-time operator workstations.',
     },
     {
       question: 'What does C5 stand for?',
-      answer: 'C5 stands for Centro de Comando, Control, Comunicaciones, Cómputo y Calidad (Command, Control, Communications, Computing, and Quality). C5 centers are integrated emergency response and public safety command centers used across Mexico and Latin America to coordinate police, fire, EMS, traffic, and civil protection from a single facility.',
+      answer: 'C5 stands for Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — Command, Control, Computing, Communications, and Citizen Contact — as defined by Mexico City\'s C5, the center the model is named after. The fifth C is Citizen Contact: the channels through which the public reaches the center, including 911, the 089 anonymous tip line, Locatel and mobile apps. Naming varies by state — Jalisco leads with Coordination, and several states operate as C5i, where the i is Intelligence.',
     },
     {
       question: 'What technology do C5 command centers use?',
@@ -71,7 +71,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
     },
     {
       question: 'What is the difference between C4 and C5?',
-      answer: 'A C4 center includes Command, Control, Communications, and Computing. A C5 center adds a fifth dimension: Quality (Calidad), which incorporates performance metrics, process auditing, and continuous improvement into command center operations. The C5 model represents the evolution of C4 toward more demanding operational standards.',
+      answer: 'A C4 center covers Command, Control, Communications, and Computing — it dispatches and it monitors. A C5 adds a fifth C, Contacto Ciudadano (Citizen Contact), and with it the responsibility for running the public\'s inbound channels — 911, the 089 anonymous tip line, and citizen-service lines — inside the same facility. The difference is scope rather than technology: a C4 receives incidents already reported by the authorities, while a C5 is also the front door for citizen reporting. States that additionally consolidate crime analysis are designated C5i, where the i is Intelligence.',
     },
     {
       question: 'What software platforms power C5 centers?',
@@ -148,9 +148,9 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(6,182,212,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginTop: '28px', maxWidth: '720px' }}>
             <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
               {es ? (
-                <><strong style={{ color: '#f0f4f8' }}>El software de un C5 es la plataforma unificada que conecta las cámaras, las llamadas 911, el despacho de unidades y los sensores de tráfico de un centro de mando en un solo mapa operativo en tiempo real.</strong> Sin esa capa de software, un C5 son sistemas aislados en la misma sala. KabatOne provee esta plataforma para centros C5 en México y LATAM — K-Video unifica las cámaras, K-Dispatch gestiona el despacho 911 y K-Safety superpone todo en un mapa común, con métricas de Calidad auditables integradas.</>
+                <><strong style={{ color: '#f0f4f8' }}>El software de un C5 es la plataforma unificada que conecta las cámaras, las llamadas 911, el despacho de unidades y los sensores de tráfico de un centro de mando en un solo mapa operativo en tiempo real.</strong> Sin esa capa de software, un C5 son sistemas aislados en la misma sala. KabatOne provee esta plataforma para centros C5 en México y LATAM — K-Video unifica las cámaras, K-Dispatch gestiona el despacho 911 y K-Safety superpone todo en un mapa común, de modo que una denuncia que entra por 089 y una cámara que la corrobora llegan al mismo operador.</>
               ) : (
-                <><strong style={{ color: '#f0f4f8' }}>The software behind a C5 is the unified platform that connects a command center&apos;s cameras, 911 calls, unit dispatch, and traffic sensors onto a single real-time operational map.</strong> Without that software layer, a C5 is isolated systems in the same room. KabatOne provides this platform for C5 centers across Mexico and LATAM — K-Video unifies the cameras, K-Dispatch runs 911 dispatch, and K-Safety overlays everything on a common map, with auditable Quality metrics built in.</>
+                <><strong style={{ color: '#f0f4f8' }}>The software behind a C5 is the unified platform that connects a command center&apos;s cameras, 911 calls, unit dispatch, and traffic sensors onto a single real-time operational map.</strong> Without that software layer, a C5 is isolated systems in the same room. KabatOne provides this platform for C5 centers across Mexico and LATAM — K-Video unifies the cameras, K-Dispatch runs 911 dispatch, and K-Safety overlays everything on a common map, so a tip arriving on 089 and the camera that corroborates it reach the same operator.</>
               )}
             </p>
           </div>
@@ -168,8 +168,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
             {es
-              ? 'C5 significa Centro de Comando, Control, Comunicaciones, Cómputo y Calidad. Cada componente representa una capacidad operativa específica dentro del centro de mando.'
-              : 'C5 stands for Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — Command, Control, Communications, Computing, and Quality. Each component represents a specific operational capability within the command center.'}
+              ? 'C5 significa Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — así lo define el C5 de la Ciudad de México, la institución que dio nombre al modelo. Cada componente representa una capacidad operativa específica dentro del centro de mando.'
+              : 'C5 stands for Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — Command, Control, Computing, Communications, and Citizen Contact — as defined by Mexico City\'s C5, the institution the model is named after. Each component represents a specific operational capability within the command center.'}
           </p>
           <div style={{
             display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '12px',
@@ -178,9 +178,9 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
             {[
               { letter: 'C1', label: es ? 'Comando' : 'Command', desc: es ? 'Autoridad operativa y toma de decisiones centralizada' : 'Centralized operational authority and decision-making' },
               { letter: 'C2', label: 'Control', desc: es ? 'Supervisión en tiempo real de unidades y recursos' : 'Real-time oversight of units and resources' },
-              { letter: 'C3', label: es ? 'Comunicaciones' : 'Communications', desc: es ? 'Radio, telefonía 911 y redes de datos' : '911 telephony, radio, and data networks' },
-              { letter: 'C4', label: es ? 'Cómputo' : 'Computing', desc: es ? 'Infraestructura de software, servidores y analítica' : 'Software infrastructure, servers, and analytics' },
-              { letter: 'C5', label: es ? 'Calidad' : 'Quality', desc: es ? 'Métricas, auditoría y mejora continua' : 'Metrics, auditing, and continuous improvement' },
+              { letter: 'C3', label: es ? 'Cómputo' : 'Computing', desc: es ? 'Infraestructura de software, servidores y analítica' : 'Software infrastructure, servers, and analytics' },
+              { letter: 'C4', label: es ? 'Comunicaciones' : 'Communications', desc: es ? 'Radio, telefonía 911 y redes de datos' : '911 telephony, radio, and data networks' },
+              { letter: 'C5', label: es ? 'Contacto Ciudadano' : 'Citizen Contact', desc: es ? '911, denuncia anónima 089, Locatel y apps' : '911, the 089 anonymous tip line, Locatel, and apps' },
             ].map((c, i) => (
               <div key={i} style={{
                 background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)',
@@ -200,8 +200,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </div>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
             {es
-              ? 'El modelo C5 evolucionó a partir del C4 cuando las autoridades mexicanas añadieron Calidad como quinta dimensión obligatoria. La Calidad incorpora indicadores clave de desempeño (KPIs), auditorías de proceso y protocolos de mejora continua que aseguran que los centros de mando cumplan estándares operativos verificables.'
-              : 'The C5 model evolved from C4 when Mexican authorities added Quality as a mandatory fifth dimension. Quality incorporates key performance indicators (KPIs), process audits, and continuous improvement protocols that ensure command centers meet verifiable operational standards.'}
+              ? 'La escalera de nomenclatura va de C2 a C5i y describe alcance, no marca. Un C2 es mando y control a nivel municipal. Un C4 añade Cómputo y Comunicaciones — despacho asistido por computadora y videovigilancia centralizada. Un C5 añade Contacto Ciudadano: el centro deja de recibir únicamente incidentes reportados por la autoridad y pasa a operar los canales de entrada del ciudadano, incluidas la línea 911, la denuncia anónima 089 y los servicios de atención como Locatel. Un C5i suma Inteligencia — análisis criminal y explotación de datos dentro de la misma instalación.'
+              : 'The naming ladder runs from C2 to C5i and describes scope, not brand. A C2 is command and control at municipal level. A C4 adds Computing and Communications — computer-aided dispatch and centralized video surveillance. A C5 adds Citizen Contact: the center stops merely receiving incidents reported by the authorities and starts operating the public\'s inbound channels, including the 911 line, the 089 anonymous tip line, and citizen-service lines such as Locatel. A C5i adds Intelligence — crime analysis and data exploitation inside the same facility.'}
           </p>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
@@ -338,8 +338,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '24px' }}>
             {es
-              ? 'El flujo de respuesta a emergencias en un centro C5 sigue una secuencia estandarizada desde la recepción de la llamada 911 hasta la resolución del incidente. Cada paso genera datos que alimentan los indicadores de Calidad (la quinta C del modelo C5).'
-              : 'The emergency response workflow in a C5 center follows a standardized sequence from 911 call reception to incident resolution. Every step generates data that feeds the Quality indicators — the fifth C in the C5 model.'}
+              ? 'El flujo de respuesta en un centro C5 sigue una secuencia estandarizada desde la entrada del reporte ciudadano hasta la resolución del incidente. La entrada no siempre es una llamada al 911: puede ser una denuncia anónima al 089, un botón de auxilio o una detección de la propia red de videovigilancia — y las tres desembocan en el mismo flujo de despacho.'
+              : 'The response workflow in a C5 center follows a standardized sequence from the citizen report arriving to the incident being resolved. That entry point is not always a 911 call: it may be an anonymous 089 tip, a street panic button, or a detection from the center\'s own video surveillance network — and all three feed the same dispatch workflow.'}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {[
@@ -375,8 +375,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 step: '05',
                 title: es ? 'Resolución y Registro' : 'Resolution and Logging',
                 desc: es
-                  ? 'Una vez resuelto el incidente, todas las acciones, tiempos de respuesta y evidencia de video quedan registrados automáticamente. Estos datos alimentan los dashboards de Calidad (C5) y permiten auditorías posteriores y análisis de mejora continua.'
-                  : 'Once the incident is resolved, all actions, response times, and video evidence are automatically logged. This data feeds the Quality (C5) dashboards and enables post-incident audits and continuous improvement analysis.',
+                  ? 'Una vez resuelto el incidente, todas las acciones, tiempos de respuesta y evidencia de video quedan registrados automáticamente. Ese registro sostiene la cadena de custodia de la evidencia, alimenta los indicadores de desempeño que el centro reporta a la autoridad estatal y permite auditorías posteriores.'
+                  : 'Once the incident is resolved, all actions, response times, and video evidence are automatically logged. That record supports chain of custody for the evidence, feeds the performance indicators the center reports to the state authority, and enables post-incident audits.',
               },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '20px', position: 'relative' }}>
@@ -414,8 +414,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
             {es
-              ? 'Los primeros centros C5 funcionaban con sistemas separados para cada función — un software para despacho, otro para video, otro para GIS. Los operadores debían alternar entre múltiples pantallas y aplicaciones para gestionar un solo incidente. Esta fragmentación generaba retrasos, errores de coordinación y dificultad para mantener los estándares de Calidad.'
-              : 'Early C5 centers operated with separate systems for each function — one software for dispatch, another for video, another for GIS. Operators had to switch between multiple screens and applications to manage a single incident. This fragmentation created delays, coordination errors, and difficulty maintaining Quality standards.'}
+              ? 'Los primeros centros C5 funcionaban con sistemas separados para cada función — un software para despacho, otro para video, otro para GIS. Los operadores debían alternar entre múltiples pantallas y aplicaciones para gestionar un solo incidente. Esta fragmentación generaba retrasos, errores de coordinación y una dificultad concreta: la denuncia que entraba por 089 vivía en un sistema distinto al del video que podía confirmarla.'
+              : 'Early C5 centers operated with separate systems for each function — one software for dispatch, another for video, another for GIS. Operators had to switch between multiple screens and applications to manage a single incident. This fragmentation created delays, coordination errors, and one concrete failure: a tip arriving on 089 lived in a different system from the video that could confirm it.'}
           </p>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '16px' }}>
             {es
@@ -429,8 +429,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
           </p>
           <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'La transición de sistemas fragmentados a plataformas unificadas ha permitido a los centros C5 reducir tiempos de respuesta hasta en un 40%, mejorar la coordinación multiagencia y cumplir de manera consistente con los indicadores de Calidad que exige el modelo C5.'
-              : 'The transition from fragmented systems to unified platforms has enabled C5 centers to reduce response times by up to 40%, improve multi-agency coordination, and consistently meet the Quality indicators required by the C5 model.'}
+              ? 'La transición de sistemas fragmentados a plataformas unificadas ha permitido a los centros C5 reducir tiempos de respuesta hasta en un 40%, mejorar la coordinación multiagencia y sostener de manera consistente los indicadores de desempeño que se reportan a la autoridad estatal.'
+              : 'The transition from fragmented systems to unified platforms has enabled C5 centers to reduce response times by up to 40%, improve multi-agency coordination, and consistently sustain the performance indicators reported to the state authority.'}
           </p>
 
           {/* ── Internal links ── */}
