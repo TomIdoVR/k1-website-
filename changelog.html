@@ -356,6 +356,23 @@
 
     <div class="timeline">
 
+      <!-- v2.401 -->
+      <div class="tl-entry changed" id="v2.401">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.401</span><span class="tl-date">2026-09-23</span></div>
+          <h3 class="tl-title">SEO agents moved to Claude Opus 5.5</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Three SEO call sites now run <code>claude-opus-5-5</code></strong> (released 21 September), up from <code>claude-sonnet-4-6</code>: the weekly agent, the weekly report's <code>DEFAULT_MODEL</code>, and the Slack intent classifier. Confirmed on the account via the Models API &mdash; 1M input, 128K output, adaptive thinking only.</p>
+          <p><strong>The intent classifier would have silently returned nothing.</strong> It read <code>content[0].text</code>, but from Opus 5 onward adaptive thinking is on by default, so <code>content[0]</code> is a <code>thinking</code> block whenever the model reasons first &mdash; which a live test confirms it does on non-trivial prompts. It would have thrown on real Slack messages while passing any trivial smoke test. It now concatenates every <code>text</code> block.</p>
+          <p><strong>The weekly brief's <code>max_tokens</code> went 2048 &rarr; 8192.</strong> Thinking tokens count against the cap. A live run on a <em>minimal</em> payload spent 811 tokens thinking plus 1066 answering &mdash; 1877 of 2048, leaving 171 to spare. A real payload would have truncated mid-XML and silently dropped the brief to the deterministic fallback.</p>
+          <p><strong>The GEO tracker stays on Sonnet 4.6, deliberately.</strong> It is the measurement instrument behind <code>geo-history.csv</code>; changing its model changes what is being measured and breaks continuity with the existing trend.</p>
+        </div>
+      </div>
+
+
+      <!-- v2.400 -->
+      <div class="tl-entry fixed" id="v2.400">
       <!-- v2.405 -->
       <div class="tl-entry fixed" id="v2.405">
         <div class="version-header">

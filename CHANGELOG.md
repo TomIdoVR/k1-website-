@@ -1,3 +1,35 @@
+## [v2.401] – 2026-09-23 — SEO agents moved to Claude Opus 5.5
+
+**Changed**
+- **The three SEO call sites now run `claude-opus-5-5`** (released 2026-09-21), up from
+  `claude-sonnet-4-6`: `scripts/seo_weekly_agent.py`, `scripts/weekly_report.py`
+  (`DEFAULT_MODEL`) and `src/lib/seo-agent/intent.ts`. Confirmed available on the account
+  via the Models API — 1M input / 128K output, adaptive thinking only.
+
+**Fixed**
+- **`intent.ts` would have silently returned an empty intent.** It read
+  `response.content[0].text`, but from Opus 5 onward adaptive thinking is on by default, so
+  `content[0]` is a `thinking` block whenever the model reasons before answering — and a live
+  test confirms it does on non-trivial prompts. The classifier would have thrown
+  `Intent non-JSON` on real Slack messages while passing any trivial smoke test. It now
+  concatenates every `text` block instead of indexing `[0]`.
+- **`weekly_report.py` raised `max_tokens` 2048 → 8192.** Thinking tokens count against
+  `max_tokens`. A live run on a *minimal* payload spent 811 tokens thinking plus 1066 on the
+  answer — 1877 of 2048, leaving 171 tokens of headroom. A real payload (15 opportunities,
+  15 striking-distance rows, 10 pages) would have truncated mid-XML and dropped the brief to
+  the deterministic fallback.
+
+**Unchanged**
+- `SEO/geo/track_geo.py` stays on `claude-sonnet-4-6` **deliberately**. It is the GEO
+  measurement instrument feeding `SEO/geo/geo-history.csv`; changing its model changes what
+  is being measured and breaks week-over-week continuity with the existing history.
+
+**Verified**
+- `npx tsc --noEmit` clean; `py_compile` clean on both scripts.
+- Live API call through `weekly_report.SYSTEM` on `claude-opus-5-5`: `stop_reason: end_turn`,
+  both `<intelligence>` and `<action_plan>` blocks returned complete.
+
+## [v2.400] – 2026-09-23 — Closed ledger rows escalated forever, burying the real ones
 ## [v2.405] – 2026-09-28 — VMS: ship the intent-collision fix that sat on staging for four weeks
 
 **Fixed — re-applied from v2.348, which never reached production**
