@@ -96,11 +96,11 @@ export const metadata = {
   },
   c5CommandCenters: {
     title: "What Is a C5 Command Center? Architecture & Tech (2026) | KabatOne",
-    description: "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
+    description: "A C5 command center runs 911, 089 tips, video, dispatch, and traffic on one map — Command, Control, Computing, Communications, Citizen Contact. C4 vs C5 vs C5i, explained.",
     canonical: "https://kabatone.com/resources/how-c5-command-centers-work",
     og: {
       title: "What Is a C5 Command Center? Architecture & Tech (2026)",
-      description: "A C5 command center coordinates 911, video, dispatch, and traffic across a city — Command, Control, Communications, Computing, Quality. See the architecture and how it differs from a C4.",
+      description: "A C5 command center runs 911, 089 tips, video, dispatch, and traffic on one map — Command, Control, Computing, Communications, Citizen Contact. C4 vs C5 vs C5i, explained.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },

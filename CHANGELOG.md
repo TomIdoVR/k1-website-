@@ -19,6 +19,16 @@
   re-applying v2.347 alone would have left it. Corrected in the file's existing unaccented
   prose style.
 
+**The English variant was a separate miss — caught by the preview, not by the sweep**
+- The first pass grepped for **"Calidad"** and cleaned every Spanish occurrence, then the
+  Vercel preview still served *"Command, Control, Communications, Computing, Quality"* in the
+  page's `description`, `og:description` and `twitter:description`. The **English** strings say
+  **"Quality"**, so a Spanish-only grep never saw them: `en/metadata.ts` ×2 and the
+  `/resources` hub's EN excerpt. Fixed, and the sweep now runs in both languages.
+- That is the whole point of checking the rendered page rather than the diff: a meta
+  description is one of the two surfaces this change exists to correct, and it would have
+  shipped wrong.
+
 **Why this is a GEO fix and not a typo**
 - `What is a C5 command center?` has been **uncited since the 2026-07-07 baseline** and came
   back uncited again on 2026-09-21. The diagnosis: our pages contradicted

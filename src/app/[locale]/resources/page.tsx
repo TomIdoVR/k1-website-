@@ -1458,7 +1458,7 @@ export default async function ResourcesPage({
           href: '/resources/que-es-un-c5',
           category: 'Guide',
           title: 'What Is a C5 Command Center? Command, Control & Surveillance',
-          excerpt: 'A C5 is a Command, Control, Communications, Computing, and Quality center for public safety. How C5 centers work in Mexico and Latin America.',
+          excerpt: 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center for public safety. How C5 centers work in Mexico and Latin America.',
           readTime: '8 min',
           isNew: true,
         },
