@@ -42,7 +42,7 @@ export async function classifyIntent(
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-opus-5-5',
     max_tokens: 8192,
     system: SYSTEM_PROMPT(context),
     messages: [
@@ -55,8 +55,12 @@ export async function classifyIntent(
     ],
   })
 
-  const text =
-    response.content[0].type === 'text' ? response.content[0].text : ''
+  // Adaptive thinking is on by default from Opus 5 onward, so content[0] can be
+  // a thinking block. Concatenate every text block instead of indexing [0].
+  const text = response.content
+    .filter((b): b is Anthropic.TextBlock => b.type === 'text')
+    .map((b) => b.text)
+    .join('')
 
   const jsonMatch = text.match(/```json\s*([\s\S]*?)```/) ||
     text.match(/(\{[\s\S]*\})/)

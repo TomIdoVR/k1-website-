@@ -857,7 +857,7 @@ def _tool_generate_html_report(
     intelligence_html = format_intelligence_html(intelligence_text)
     action_plan_html = format_action_plan_html(action_plan_text)
     html = build_html(analysis, today_str, period_str, intelligence_html,
-                      ai_model='claude-sonnet-4-6', action_plan_html=action_plan_html)
+                      ai_model='claude-opus-5-5', action_plan_html=action_plan_html)
     AUDITS_DIR.mkdir(parents=True, exist_ok=True)
     html_path = AUDITS_DIR / f'traffic-{today_str}.html'
     html_path.write_text(html, encoding='utf-8')
@@ -955,7 +955,7 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
     period_str = f"{start.strftime('%b %d')} – {end.strftime('%b %d, %Y')}"
 
     print(f'[seo-weekly-orchestrator] {today_str} — {period_str}')
-    print(f'Mode: {"dry-run" if dry_run else "live"} | model: claude-sonnet-4-6')
+    print(f'Mode: {"dry-run" if dry_run else "live"} | model: claude-opus-5-5')
 
     client = anthropic.Anthropic(api_key=api_key)
     messages = [{
@@ -971,7 +971,7 @@ def run_orchestrator(dry_run: bool = False, days: int = 28) -> int:
     for iteration in range(1, MAX_TOOL_ITERATIONS + 1):
         response = _create_with_retry(
             client,
-            model='claude-sonnet-4-6',
+            model='claude-opus-5-5',
             max_tokens=8192,
             system=ORCHESTRATOR_SYSTEM,
             tools=TOOLS,
