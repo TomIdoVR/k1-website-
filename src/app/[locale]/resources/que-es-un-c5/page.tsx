@@ -26,11 +26,11 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   const faqs = es ? [
     {
       question: '¿Qué es un C5?',
-      answer: 'Un C5 es un Centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Los centros C5 integran despacho policial, videovigilancia urbana, atención de emergencias 911, gestión del tráfico y protección civil en un único punto de operación con video walls y estaciones de operadores conectadas en tiempo real.',
+      answer: 'Un C5 es un Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Los centros C5 integran despacho policial, videovigilancia urbana, atención de emergencias 911, gestión del tráfico y protección civil en un único punto de operación con video walls y estaciones de operadores conectadas en tiempo real.',
     },
     {
       question: '¿Qué significa C5?',
-      answer: 'C5 significa —o quiere decir— las cinco C: Comando, Control, Comunicaciones, Cómputo y Calidad. Es el modelo de centro de mando adoptado en México y América Latina para coordinar respuesta a emergencias, videovigilancia, tráfico y protección civil desde una sola instalación.',
+      answer: 'C5 significa —o quiere decir— las cinco C: Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano, tal como lo define el C5 de la Ciudad de México, la institución que dio nombre al modelo. La quinta C no es Calidad: es Contacto Ciudadano, es decir, los canales por los que la población reporta — el 911, la línea 089 de denuncia anónima y los servicios de atención ciudadana como Locatel. El nombre varía por estado: Jalisco antepone Coordinación, y los estados que además concentran análisis criminal operan como C5i, donde la i es Inteligencia.',
     },
     {
       question: '¿Cuántos C5 hay en México?',
@@ -38,7 +38,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
     },
     {
       question: '¿Cuál es la diferencia entre un C4 y un C5?',
-      answer: 'Un C4 incluye Comando, Control, Comunicaciones y Cómputo. Un C5 agrega la quinta C: Calidad, que incorpora métricas de desempeño, auditoría de procesos y mejora continua. El modelo C5 representa la evolución del C4 hacia estándares operativos más exigentes con indicadores medibles de efectividad.',
+      answer: 'Un C4 incluye Comando, Control, Comunicaciones y Cómputo: despacha y monitorea. Un C5 agrega la quinta C, Contacto Ciudadano, y con ella la responsabilidad de operar los canales de entrada del ciudadano —911, denuncia anónima 089 y atención ciudadana— dentro de la misma instalación. La diferencia es de alcance institucional, no de tecnología: el C4 recibe incidentes ya canalizados por la autoridad, el C5 es además la puerta de entrada de la denuncia ciudadana. Los estados que suman análisis criminal en el mismo edificio se denominan C5i, donde la i es Inteligencia.',
     },
     {
       question: '¿Qué tecnología usa un C5?',
@@ -59,11 +59,11 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   ] : [
     {
       question: 'What is a C5 command center?',
-      answer: 'A C5 command center is an integrated public safety facility that consolidates Command, Control, Communications, Computing, and Quality (C5) into a single operational hub. C5 centers coordinate police dispatch, urban surveillance, 911 emergency response, traffic management, and civil protection from a unified environment with video walls and real-time operator workstations.',
+      answer: 'A C5 command center is an integrated public safety facility that consolidates Command, Control, Computing, Communications, and Citizen Contact into a single operational hub. C5 centers coordinate police dispatch, urban surveillance, 911 emergency response, traffic management, and civil protection from a unified environment with video walls and real-time operator workstations.',
     },
     {
       question: 'What does C5 stand for?',
-      answer: 'C5 stands for the five Cs: Comando, Control, Comunicaciones, Cómputo y Calidad (Command, Control, Communications, Computing, and Quality). It is the command center model adopted in Mexico and Latin America to coordinate emergency response, surveillance, traffic, and civil protection from a single facility.',
+      answer: 'C5 stands for the five Cs: Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano (Command, Control, Computing, Communications, and Citizen Contact), as defined by Mexico City\'s C5 — the institution the model is named after. The fifth C is Citizen Contact: the channels the public reports through, including 911, the 089 anonymous tip line, and citizen-service lines such as Locatel. Naming varies by state — Jalisco leads with Coordination, and states that also consolidate crime analysis operate as C5i, where the i is Intelligence.',
     },
     {
       question: 'How many C5 centers exist in Mexico?',
@@ -71,7 +71,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
     },
     {
       question: 'What is the difference between C4 and C5?',
-      answer: 'A C4 center includes Command, Control, Communications, and Computing. A C5 center adds the fifth C: Quality (Calidad), which incorporates performance metrics, process auditing, and continuous improvement. The C5 model represents the evolution of C4 toward more demanding operational standards with measurable effectiveness indicators.',
+      answer: 'A C4 center covers Command, Control, Communications, and Computing — it dispatches and monitors. A C5 adds the fifth C, Contacto Ciudadano (Citizen Contact), and with it responsibility for the public\'s inbound channels — 911, the 089 anonymous tip line, and citizen-service lines — inside the same facility. The difference is institutional scope, not technology: a C4 receives incidents already channelled by the authorities, while a C5 is also the front door for citizen reporting. States that consolidate crime analysis in the same building are designated C5i, where the i is Intelligence.',
     },
     {
       question: 'What technology does a C5 center use?',
@@ -84,8 +84,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   ]
 
   const article = articleSchema(
-    es ? '¿Qué es un C5? Centro de Comando, Control, Comunicaciones, Cómputo y Calidad' : 'What Is a C5 Command Center? Command, Control, Communications, Computing & Quality',
-    es ? 'Un C5 es un centro de Comando, Control, Comunicaciones, Cómputo y Calidad para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.' : 'A C5 is a Command, Control, Communications, Computing, and Quality center for public safety. Learn how C5 centers operate in Mexico and Latin America with KabatOne\'s K1 platform.',
+    es ? '¿Qué es un C5? Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano' : 'What Is a C5 Command Center? Command, Control, Computing, Communications & Citizen Contact',
+    es ? 'Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.' : 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center for public safety. Learn how C5 centers operate in Mexico and Latin America with KabatOne\'s K1 platform.',
     es ? 'https://kabatone.com/es/resources/que-es-un-c5' : 'https://kabatone.com/resources/que-es-un-c5',
     '2024-01-15'
   )
@@ -132,8 +132,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
 
           <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: '#94a3b8', lineHeight: 1.7, maxWidth: 720, margin: '0 auto 32px' }}>
             {es
-              ? 'Un C5 es un Centro de Comando, Control, Comunicaciones, Cómputo y Calidad — el modelo de centro de mando integrado de seguridad pública adoptado en México y América Latina.'
-              : 'A C5 is a Command, Control, Communications, Computing, and Quality center — the integrated public safety command center model adopted across Mexico and Latin America.'}
+              ? 'Un C5 es un Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano — el modelo de centro de mando integrado de seguridad pública adoptado en México y América Latina.'
+              : 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center — the integrated public safety command center model adopted across Mexico and Latin America.'}
           </p>
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -154,8 +154,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.8, color: '#cbd5e1' }}>
               {es
-                ? 'Un C5 (Centro de Comando, Control, Comunicaciones, Cómputo y Calidad) es una instalación de seguridad pública que concentra múltiples sistemas operativos en un único punto de control: despacho 911, videovigilancia urbana con miles de cámaras, gestión de tráfico, patrullaje policial, protección civil y atención de emergencias. Los centros C5 operan las 24 horas en turnos continuos y sirven como el núcleo de coordinación de la seguridad pública municipal y estatal en México y América Latina.'
-                : 'A C5 (Centro de Comando, Control, Comunicaciones, Cómputo y Calidad) is a public safety facility that concentrates multiple operational systems into a single control point: 911 dispatch, urban video surveillance with thousands of cameras, traffic management, police patrol, civil protection, and emergency response. C5 centers operate 24 hours a day in continuous shifts, serving as the coordination hub for municipal and state public safety in Mexico and Latin America.'}
+                ? 'Un C5 (Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano) es una instalación de seguridad pública que concentra múltiples sistemas operativos en un único punto de control: despacho 911, videovigilancia urbana con miles de cámaras, gestión de tráfico, patrullaje policial, protección civil y atención de emergencias. Los centros C5 operan las 24 horas en turnos continuos y sirven como el núcleo de coordinación de la seguridad pública municipal y estatal en México y América Latina.'
+                : 'A C5 (Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano) is a public safety facility that concentrates multiple operational systems into a single control point: 911 dispatch, urban video surveillance with thousands of cameras, traffic management, police patrol, civil protection, and emergency response. C5 centers operate 24 hours a day in continuous shifts, serving as the coordination hub for municipal and state public safety in Mexico and Latin America.'}
             </p>
           </div>
         </section>
@@ -175,7 +175,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
               { letter: 'C2', label: es ? 'Control' : 'Control', desc: es ? 'Supervisión de operaciones policiales, de emergencia y de protección civil desde un punto central.' : 'Oversight of police, emergency, and civil protection operations from a central point.' },
               { letter: 'C3', label: es ? 'Comunicaciones' : 'Communications', desc: es ? 'Radio unificado, telefonía 911, videoconferencia y sistemas de alerta pública integrados.' : 'Unified radio, 911 telephony, videoconferencing, and integrated public alert systems.' },
               { letter: 'C4', label: es ? 'Cómputo' : 'Computing', desc: es ? 'CAD, VMS, GIS, análisis de datos, reconocimiento de placas y plataformas de IA operando en red.' : 'CAD, VMS, GIS, data analytics, LPR, and AI platforms operating on an integrated network.' },
-              { letter: 'C5', label: es ? 'Calidad' : 'Quality', desc: es ? 'Métricas de desempeño, auditoría de procesos y mejora continua de las operaciones del centro.' : 'Performance metrics, process auditing, and continuous improvement of center operations.' },
+              { letter: 'C5', label: es ? 'Contacto Ciudadano' : 'Citizen Contact', desc: es ? 'Los canales por los que entra el reporte: 911, denuncia anónima 089, Locatel, botones de auxilio y apps.' : 'The channels reports arrive through: 911, the 089 anonymous tip line, Locatel, street panic buttons, and apps.' },
             ].map(({ letter, label, desc }) => (
               <div key={letter} style={{ background: '#131f33', border: '1px solid #1e3a5f', borderRadius: 10, padding: '24px 20px' }}>
                 <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: 13, color: ACCENT, fontWeight: 700, marginBottom: 6 }}>{letter}</div>

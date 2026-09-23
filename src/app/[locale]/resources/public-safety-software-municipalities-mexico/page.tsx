@@ -43,7 +43,7 @@ export default async function PublicSafetySoftwareMexicoPage({
     },
     {
       question: '¿Que es un centro de mando C5?',
-      answer: 'Un C5 (Centro de Comando, Control, Comunicaciones, Computo y Calidad) es la infraestructura estandar de mando para seguridad publica en Mexico. Los centros C5 coordinan videovigilancia, despacho de emergencias, gestion de trafico y comunicaciones interinstitucionales. Ciudades como la Ciudad de Mexico, Guadalajara y Monterrey operan centros C5 a nivel estatal y metropolitano.',
+      answer: 'Un C5 (Centro de Comando, Control, Computo, Comunicaciones y Contacto Ciudadano) es la infraestructura estandar de mando para seguridad publica en Mexico. Los centros C5 coordinan videovigilancia, despacho de emergencias, gestion de trafico y comunicaciones interinstitucionales. Ciudades como la Ciudad de Mexico, Guadalajara y Monterrey operan centros C5 a nivel estatal y metropolitano.',
     },
     {
       question: '¿Como funciona el 911 en Mexico?',
@@ -68,7 +68,7 @@ export default async function PublicSafetySoftwareMexicoPage({
     },
     {
       question: 'What is a C5 command center?',
-      answer: 'A C5 (Centro de Comando, Control, Comunicaciones, Computo y Calidad) is the standard command infrastructure for public safety in Mexico. C5 centers coordinate video surveillance, emergency dispatch, traffic management, and multi-agency communications. Cities like Mexico City, Guadalajara, and Monterrey operate C5 centers at state and metropolitan levels.',
+      answer: 'A C5 (Centro de Comando, Control, Computo, Comunicaciones y Contacto Ciudadano) is the standard command infrastructure for public safety in Mexico. C5 centers coordinate video surveillance, emergency dispatch, traffic management, and multi-agency communications. Cities like Mexico City, Guadalajara, and Monterrey operate C5 centers at state and metropolitan levels.',
     },
     {
       question: 'How does 911 work in Mexico?',
@@ -194,8 +194,8 @@ export default async function PublicSafetySoftwareMexicoPage({
             </h3>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'La Ley General del Sistema Nacional de Seguridad Publica establece la obligacion de los estados y municipios de contar con infraestructura tecnologica para la prevencion y atencion de emergencias. Los centros C5 (Centro de Comando, Control, Comunicaciones, Computo y Calidad) son la estructura estandar para operar estas capacidades. Un C5 integra videovigilancia, despacho, comunicaciones de radio, gestion de trafico y atencion al 911 desde un solo punto de mando.'
-                : 'Mexico\'s Ley General del Sistema Nacional de Seguridad Publica mandates that states and municipalities maintain technological infrastructure for emergency prevention and response. C5 centers (Centro de Comando, Control, Comunicaciones, Computo y Calidad) are the standard structure for operating these capabilities. A C5 integrates video surveillance, dispatch, radio communications, traffic management, and 911 response from a single command point.'}
+                ? 'La Ley General del Sistema Nacional de Seguridad Publica establece la obligacion de los estados y municipios de contar con infraestructura tecnologica para la prevencion y atencion de emergencias. Los centros C5 (Centro de Comando, Control, Computo, Comunicaciones y Contacto Ciudadano) son la estructura estandar para operar estas capacidades. Un C5 integra videovigilancia, despacho, comunicaciones de radio, gestion de trafico y atencion al 911 desde un solo punto de mando.'
+                : 'Mexico\'s Ley General del Sistema Nacional de Seguridad Publica mandates that states and municipalities maintain technological infrastructure for emergency prevention and response. C5 centers (Centro de Comando, Control, Computo, Comunicaciones y Contacto Ciudadano) are the standard structure for operating these capabilities. A C5 integrates video surveillance, dispatch, radio communications, traffic management, and 911 response from a single command point.'}
             </p>
 
             <h3 style={{

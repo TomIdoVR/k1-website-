@@ -96,11 +96,11 @@ export const metadata = {
   },
   c5CommandCenters: {
     title: "C5: Qué Es, Qué Significa y Cómo Funciona [Guía Completa 2026]",
-    description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
+    description: "C5 significa Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
     canonical: "https://kabatone.com/es/resources/how-c5-command-centers-work",
     og: {
       title: "C5: Qué Es, Qué Significa y Cómo Funciona [Guía 2026]",
-      description: "C5 significa Comando, Control, Comunicaciones, Cómputo y Calidad. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
+      description: "C5 significa Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano. Conozca las 5 C, la diferencia entre C4 y C5, qué tecnología usan los centros C5 en México, y cómo modernizarlos en 2026.",
       image: "https://kabatone.com/images/og-default.jpg",
     },
   },
