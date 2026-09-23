@@ -364,12 +364,32 @@ def carry_over():
         except ValueError:
             continue
         weeks = (today - raised).days // 7
-        items.append({'id': c[0], 'item': c[1], 'first_raised': c[2], 'owner': c[3],
-                      'status': c[4], 'weeks_open': weeks, 'escalate': weeks >= 3})
+        # A row can be resolved but still sit in the Open section — the ledger is edited by
+        # hand and moving rows is the step that gets skipped. Aging it as unexecuted turns
+        # every shipped item into a standing 🔴, which is how a real escalation gets lost in
+        # noise. Closed rows keep their age (useful history) but never escalate.
+        raw_id = c[0]
+        ident = raw_id.strip('~').strip()
+        closed = bool(re.match(r'^~~.*~~$', raw_id)) or bool(
+            re.search(r'\b(closed|resolved|withdrawn|superseded|shipped to production)\b',
+                      c[4], re.I))
+        items.append({'id': raw_id, 'ident': ident, 'item': c[1], 'first_raised': c[2],
+                      'owner': c[3], 'status': c[4], 'weeks_open': weeks,
+                      'closed': closed, 'escalate': weeks >= 3 and not closed})
     items.sort(key=lambda i: -i['weeks_open'])
+    seen, dupes = {}, []
+    for i in items:
+        key = re.sub(r'-closed$', '', i['ident'], flags=re.I).lower()
+        if key in seen:
+            dupes.append((seen[key], i['id']))
+        else:
+            seen[key] = i['id']
     return {'available': True, 'items': items,
             'escalated': [i for i in items if i['escalate']],
-            'blocked_on_human': [i for i in items if i['status'] == 'blocked']}
+            'closed_in_open_section': [i for i in items if i['closed']],
+            'duplicate_ids': dupes,
+            'blocked_on_human': [i for i in items
+                                 if i['status'] == 'blocked' and not i['closed']]}
 
 
 def geo_freshness():
@@ -632,13 +652,27 @@ def render(d):
             a("| Item | Owner | Weeks | Status | |")
             a("|---|---|---|---|---|")
             for i in co['items']:
+                mark = '🔴' if i['escalate'] else ('✅' if i.get('closed') else '')
                 a(f"| {i['id']} — {i['item'][:52]} | {i['owner']} | **{i['weeks_open']}** | "
-                  f"{i['status']} | {'🔴' if i['escalate'] else ''} |")
+                  f"{i['status']} | {mark} |")
             esc = co['escalated']
             if esc:
                 a(f"\n> 🔴 **{len(esc)} item(s) at 3+ weeks unexecuted.** State plainly in the "
                   f"report that these have not moved: "
                   + ", ".join(f"{i['id']} ({i['weeks_open']}w)" for i in esc))
+            else:
+                a("\n> ✅ **Nothing open at 3+ weeks.** Closed rows still listed above are "
+                  "excluded from escalation by status, not by age.")
+            stale = co.get('closed_in_open_section') or []
+            if stale:
+                a(f"\n> **{len(stale)} closed row(s) still filed under `## Open`** — move them "
+                  "to `## Closed` so the section means what it says: "
+                  + ", ".join(i['id'] for i in stale))
+            dupes = co.get('duplicate_ids') or []
+            if dupes:
+                a(f"\n> ⚠️ **{len(dupes)} duplicate ledger id(s)** — the same item is aging "
+                  "twice and escalating twice. Resolve, do not silently dedupe: "
+                  + ", ".join(f"{a_}/{b}" for a_, b in dupes))
             human = co['blocked_on_human']
             if human:
                 a(f"\n> **{len(human)} blocked on a human**, not on work: "

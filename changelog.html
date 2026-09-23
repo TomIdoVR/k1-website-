@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.400 -->
+      <div class="tl-entry fixed" id="v2.400">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.400</span><span class="tl-date">2026-09-23</span></div>
+          <h3 class="tl-title">Closed ledger rows escalated forever, burying the real ones</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong><code>seo_diff.py</code> escalated every closed carry-over row.</strong> The ledger ages rows from <code>first_raised</code> and flagged &#128308; at <code>weeks &gt;= 3</code> with no check on status &mdash; so a <strong>shipped</strong> item kept escalating for the rest of its life. Five rows were affected, taking the escalation list from <strong>7 real items to 12</strong>. That is the failure the carry-over rule exists to prevent, inverted: not a forgotten item, but a genuine escalation lost in noise it generated itself.</p>
+          <p>Rows now count as closed when the id is struck through or the status matches closed / resolved / withdrawn / superseded / shipped to production. They keep their age, because the history is useful, and render &#9989; &mdash; but they never escalate and no longer count as "blocked on a human".</p>
+          <p><strong>Duplicate ledger ids were aging and escalating twice.</strong> <code>KAB-1721</code> and <code>KAB-1721-CLOSED</code> are the same item, both filed under Open, both 8 weeks, both flagged &mdash; with statuses that contradict each other. The parser now <em>reports</em> duplicates rather than silently deduping them, because which row is authoritative is a judgement call, not a merge.</p>
+          <p><strong>Week of 22 September.</strong> The &minus;7.7% click drop was fully accounted for by two slashed&rarr;unslashed URL handovers (&minus;49 clicks against a site total of &minus;47), and the CAD cluster's apparent collapse was one rank-tracking bot leaving the dataset &mdash; ex-bot, CAD impressions are <strong>+11.3%</strong> with clicks flat. Neither was escalated. <code>CAD-1</code> closed and verified live on production; <code>MIGRATE-1</code> closed after the migration checked out end to end.</p>
+        </div>
+      </div>
+
+
       <!-- v2.390 -->
       <div class="tl-entry fixed" id="v2.390">
         <div class="version-header">

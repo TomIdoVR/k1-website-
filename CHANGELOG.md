@@ -1,3 +1,40 @@
+## [v2.400] – 2026-09-23 — Closed ledger rows escalated forever, burying the real ones
+
+**Fixed**
+- **`seo_diff.py` escalated every closed carry-over row.** The ledger ages rows from
+  `first_raised` and flagged 🔴 at `weeks >= 3` with no check on status, so a **shipped** item
+  kept escalating for the rest of its life. Five rows were affected — `~~CAD-1~~` (shipped to
+  production 09-22), `~~MIGRATE-1~~`, `PLAN-2`, `GEOSCHED-3` and `SYNC-1` — taking the
+  escalation list from **7 real items to 12**. That is the failure G5 exists to prevent,
+  inverted: not a forgotten item, but a genuine escalation lost in noise it generated itself.
+  Rows are now closed if the id is struck through (`~~ID~~`) or the status matches
+  closed / resolved / withdrawn / superseded / shipped to production. Closed rows keep their
+  age (the history is useful) and render ✅, but never escalate, and no longer count as
+  "blocked on a human".
+- **Duplicate ledger ids were aging and escalating twice.** `KAB-1721` and `KAB-1721-CLOSED`
+  are the same item, both filed under `## Open`, both 8 weeks, both 🔴 — and their statuses
+  contradict each other (`reframed 2026-09-08` vs `open`). The parser now reports duplicates
+  instead of silently deduping them, because which row is authoritative is a judgement call,
+  not a merge.
+
+**Added**
+- Two housekeeping nudges in the rendered ledger: closed rows still filed under `## Open`
+  (5 right now), and duplicate ids. Both were previously invisible and both distort the
+  weekly escalation count.
+- `SEO/weekly-report-2026-09-22.md` — the week's analysis. The −7.7% click drop is fully
+  accounted for by two slashed→unslashed URL handovers (−49 clicks against a site total of
+  −47), and the CAD cluster's apparent collapse was one rank-tracking bot leaving the dataset;
+  ex-bot, CAD impressions are **+11.3%** with clicks flat. Neither was escalated.
+
+**Changed**
+- `SEO/carry-over.md` — `CAD-1` closed and verified live on production after PR #18 merged
+  (every buyer link flipped off the page ranking 30.2 onto the one ranking 9.4); `MIGRATE-1`
+  closed after the migration was verified correct end to end (301s single-hop, canonicals
+  right, 206/206 internal links already unslashed); `PLAN-2` records **why PR #7 was closed
+  unmerged** — it instructed deleting the OAuth client that `gsc_pull_weekly.py` actually
+  depends on, which would have broken every weekly GSC pull.
+
+
 ## [v2.390] – 2026-09-16 — Dropped the email fallback line; cards 04 and 09 had no title
 
 **Removed**
