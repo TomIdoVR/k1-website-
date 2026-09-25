@@ -1,3 +1,20 @@
+## [v2.403] – 2026-09-25 — The homepage H1 now names the buyer
+
+**Changed**
+- **Hero H1 rewritten to name who it's for and what they run.** Was *"The Unified Operating
+  System for Public Safety."* Now *"One platform for your 911, video and dispatch — built for
+  municipalities and C5."* ES: *"Una plataforma para tu 911, video y despacho — hecha para
+  municipios y C5."* The gradient treatment stays on the second half.
+- **Why:** an external review (Instinct) found the buyer focus stopped at the browser tab — the
+  ES `<title>` names "Municipios y C5", but both languages opened on the same generic headline.
+- **The old H1 was kept for ranking (v2.359), and it wasn't earning any.** Search Console, 90
+  days: queries matching the phrase brought the homepage **0 clicks from 13 impressions**. Homepage
+  traffic is branded — "kabat one" / "kabatone" account for ~330 of its 360 clicks — so the H1
+  is free to do the job a headline should.
+- **Keyword coverage v2.359 added is kept, not traded away.** That change put C5 and 911 into the
+  visible text; the new H1 carries both terms itself.
+
+
 ## [v2.399] – 2026-09-22 — Every job application now says where the candidate came from
 
 **Added**
