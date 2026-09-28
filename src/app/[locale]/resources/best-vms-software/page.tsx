@@ -247,6 +247,35 @@ export default async function BestVmsSoftwarePage({
           </div>
         </section>
 
+        {/* ── Security-operations criteria: answer-first ──
+            The 2026-08-31 GEO run found KabatOne ABSENT from the AI answer for
+            "AI VMS software for security operations", which cited Avigilon, Genetec,
+            Milestone, Motorola and Verkada. Auditing this page against the vocabulary a
+            security-operations buyer actually evaluates on found the gap: no VSaaS, no
+            failover, no bandwidth or storage maths, no H.265, no redundancy. The page
+            argued platform strategy and skipped the operational questions that decide a
+            deployment. Claims stay within what the site already states. */}
+        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 0' }}>
+          <h2 style={sectionH2}>
+            {es ? 'VMS para operaciones de seguridad: las preguntas que deciden el despliegue' : 'VMS for security operations: the questions that decide a deployment'}
+          </h2>
+          <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, marginTop: '10px' }}>
+            {es
+              ? 'Un VMS para un centro de operaciones de seguridad se evalúa sobre cuatro ejes operativos, no sobre la lista de funciones. Primero, continuidad: qué ocurre cuando un servidor de grabación cae — un despliegue serio exige conmutación por error (failover) automática y grabación en el borde que sobreviva a una caída de red. Segundo, ancho de banda y almacenamiento: la retención es una decisión de presupuesto, no una casilla — H.265 reduce el consumo aproximadamente a la mitad frente a H.264 con la misma calidad percibida, y el streaming dual permite ver en baja resolución mientras se graba en alta.'
+              : 'A VMS for a security operations center is judged on four operational axes, not on the feature list. First, continuity: what happens when a recording server fails — a serious deployment requires automatic failover and edge recording that survives a network outage. Second, bandwidth and storage: retention is a budget decision, not a checkbox — H.265 roughly halves consumption versus H.264 at the same perceived quality, and dual streaming lets operators view in low resolution while recording in high.'}
+          </p>
+          <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, marginTop: '14px' }}>
+            {es
+              ? 'Tercero, independencia del fabricante: ONVIF y RTSP determinan si puede aprovechar las cámaras que ya tiene o queda atado al hardware de un proveedor. Cuarto, modelo de despliegue: VSaaS (VMS en la nube) traslada el coste de capital a operativo y elimina el mantenimiento de servidores, pero depende del enlace de subida; el modelo local mantiene el video en sitio. La mayoría de los centros de mando acaban en una arquitectura híbrida.'
+              : 'Third, vendor independence: ONVIF and RTSP determine whether you can use the cameras you already own or stay locked to one manufacturer’s hardware. Fourth, deployment model: VSaaS (cloud VMS) shifts capital cost to operating cost and removes server maintenance, but depends on the uplink; on-premise keeps video on site. Most command centres end up hybrid.'}
+          </p>
+          <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, marginTop: '14px' }}>
+            {es
+              ? 'KabatOne K-Video agrega cámaras de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — y añade analítica de video con IA sobre la infraestructura existente, correlacionando las alertas con el despacho CAD y un mapa GIS en vivo. Para un centro de operaciones, la diferencia práctica es que la detección y la respuesta ocurren en la misma plataforma, en lugar de exigir que un operador vigile un VMS y trabaje el incidente en otro sistema.'
+              : 'KabatOne K-Video aggregates cameras from any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — and adds AI video analytics on top of existing infrastructure, correlating alerts with CAD dispatch and a live GIS map. For an operations centre the practical difference is that detection and response happen on one platform, rather than requiring an operator to watch one VMS and work the incident in another system.'}
+          </p>
+        </section>
+
         {/* ── When VMS isn't enough ── */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 0' }}>
           <h2 style={sectionH2}>{es ? 'Cuándo un VMS estándar no es suficiente' : 'When a standard VMS is not enough'}</h2>

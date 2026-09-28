@@ -237,6 +237,35 @@ export default async function CctvVideoAnalyticsPage({
           </p>
         </section>
 
+        {/* ── City surveillance: answer-first ──
+            The 2026-08-31 GEO run found KabatOne ABSENT from the AI answer for
+            "analytic CCTV cameras for city surveillance", which cited Avigilon and
+            Motorola. The gap this page had: no false-positive numbers, no tripwire /
+            object-left vocabulary, and the retrofit argument -- analytics on the cameras
+            a city already owns, which is KabatOne's actual differentiator -- was stated
+            once in passing. Municipal buyers do not replace camera estates; that is the
+            question they are actually asking. */}
+        <section style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 0' }}>
+          <h2 style={sectionH2}>
+            {es ? 'Analítica para videovigilancia municipal: sobre las cámaras que la ciudad ya tiene' : 'Analytics for city surveillance: on the cameras the city already owns'}
+          </h2>
+          <p style={{ ...para, marginTop: '10px' }}>
+            {es
+              ? 'Una ciudad rara vez sustituye su parque de cámaras. La pregunta real no es qué cámara analítica comprar, sino si la analítica puede aplicarse por software sobre el CCTV existente. La analítica moderna se ejecuta sobre el flujo RTSP de cámaras de cualquier fabricante, por lo que una ciudad con cámaras Hikvision, Axis, Dahua o Bosch instaladas puede añadir detección sin cambiar hardware — un despliegue de semanas en lugar de un ciclo de licitación de capital.'
+              : 'A city rarely replaces its camera estate. The real question is not which analytic camera to buy, but whether analytics can be applied in software over the CCTV already installed. Modern analytics runs on the RTSP stream from any manufacturer’s cameras, so a city with existing Hikvision, Axis, Dahua or Bosch estates can add detection without replacing hardware — a deployment measured in weeks rather than a capital procurement cycle.'}
+          </p>
+          <p style={{ ...para, marginTop: '14px' }}>
+            {es
+              ? 'Las detecciones que importan en vía pública son cruce de línea (tripwire) en perímetros e infraestructura crítica, merodeo en cajeros y transporte, objeto abandonado en estaciones y plazas, aglomeración para control de multitudes, y lectura de placas (LPR) para vehículos de interés. El criterio de compra decisivo no es el catálogo de detecciones sino la tasa de falsos positivos: una analítica que genera cientos de alertas diarias falsas se desactiva sola en la primera semana, porque ningún operador puede atenderla.'
+              : 'The detections that matter in public space are line-crossing (tripwire) on perimeters and critical infrastructure, loitering at ATMs and transit, object-left-behind in stations and plazas, crowd density for public-order management, and licence plate recognition for vehicles of interest. The decisive purchase criterion is not the detection catalogue but the false-positive rate: analytics that generate hundreds of false alerts a day get switched off within the first week, because no operator can service them.'}
+          </p>
+          <p style={{ ...para, marginTop: '14px' }}>
+            {es
+              ? 'KabatOne K-Video agrega cámaras de cualquier fabricante y aplica analítica con IA sobre la infraestructura existente, correlacionando cada alerta con el despacho CAD y un mapa GIS en vivo. Para una ciudad, eso significa que una detección no termina en una notificación: crea un incidente con la cámara más cercana ya vinculada y la posición marcada en el mapa que comparten todas las agencias que responden.'
+              : 'KabatOne K-Video aggregates cameras from any manufacturer and applies AI analytics over existing infrastructure, correlating each alert with CAD dispatch and a live GIS map. For a city that means a detection does not end in a notification: it creates an incident with the nearest camera already attached and the location marked on the map shared by every responding agency.'}
+          </p>
+        </section>
+
         {/* ── Edge vs Server table ── */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 0' }}>
           <h2 style={sectionH2}>{es ? 'Analítica CCTV: en el borde vs. en servidor' : 'CCTV analytics: edge vs. server-based'}</h2>
