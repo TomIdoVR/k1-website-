@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.410 -->
+      <div class="tl-entry changed" id="v2.410">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.410</span><span class="tl-date">2026-09-28</span></div>
+          <h3 class="tl-title">One long-lived branch: <code>nextjs</code> retired, <code>main</code> is the only line</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong><code>main</code> is now the only long-lived branch.</strong> Every change is a short branch off <code>main</code>, checked on its Vercel PR preview, and merged by PR &mdash; merging is the deploy. <code>nextjs</code> is retired and archived as the tag <code>archive/nextjs-2026-09-28</code>; nothing was deleted.</p>
+          <p><strong>Why:</strong> <code>nextjs</code> had diverged from <code>main</code> since 21 August, and finished fixes sat on it for 22&ndash;28 days because nothing moved them to production &mdash; the CAD links, the C5 definition, the VMS fix and the answer-first content. The cause was an instruction telling every agent to build there. Everything of value on it was shipped first, in PRs #21&ndash;#25.</p>
+          <p><strong>Instructions and tooling updated to match:</strong> <code>CLAUDE.md</code>, <code>AGENTS.md</code> and <code>SEO/BRANCHING.md</code> describe the new flow. <code>seo_diff.py</code> now flags any branch holding unshipped work for more than 7 days, and the daily audit checks production against <code>main</code>.</p>
+        </div>
+      </div>
+
       <!-- v2.406 -->
       <div class="tl-entry added" id="v2.406">
         <div class="version-header">

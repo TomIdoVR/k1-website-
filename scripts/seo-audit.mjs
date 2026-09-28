@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * KabatOne Verge SEO Audit Script
- * Usage: node scripts/seo-audit.mjs [--url https://staging.kabatone.com] [--out scripts/seo-report.json] [--diff]
+ * Usage: node scripts/seo-audit.mjs [--url https://kabatone.com] [--out scripts/seo-report.json] [--diff]
  *
  * Checks every known route for:
  *  - Title/description presence, length, uniqueness
@@ -19,7 +19,11 @@ import { URL } from "url";
 // --- Config ---
 const args = process.argv.slice(2);
 const getArg = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : def; };
-const BASE_URL = getArg("--url", "https://staging.kabatone.com");
+const BASE_URL = getArg("--url", "https://kabatone.com");
+/* The branch the audited deployment serves. Was `nextjs` (staging) until
+   2026-09-28, when nextjs was retired: main is now the only long-lived branch
+   and production is what gets audited. Change it here, not at each call site. */
+const DEPLOY_BRANCH = "main";
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
 const RUNLOG_FILE = getArg("--runlog", "scripts/seo-daily-runlog.txt");
@@ -453,8 +457,8 @@ function checkCheckoutSync() {
   if (/localhost|127\.0\.0\.1/.test(BASE_URL)) return;
   let behind, ahead;
   try {
-    git("fetch", "origin", "nextjs", "--quiet");
-    [behind, ahead] = git("rev-list", "--left-right", "--count", "origin/nextjs...nextjs")
+    git("fetch", "origin", DEPLOY_BRANCH, "--quiet");
+    [behind, ahead] = git("rev-list", "--left-right", "--count", `origin/${DEPLOY_BRANCH}...HEAD`)
       .split(/\s+/).map(Number);
   } catch (e) {
     /* Fail CLOSED. This used to warn and return, which meant a broken git made
@@ -474,12 +478,12 @@ function checkCheckoutSync() {
     return;
   }
   if (behind > 0 && !ALLOW_STALE) {
-    refuse(`local nextjs is ${behind} commit(s) BEHIND origin — the route list and metadata here are older than what is deployed.`, "--allow-stale");
+    refuse(`local checkout is ${behind} commit(s) BEHIND origin — the route list and metadata here are older than what is deployed.`, "--allow-stale");
   }
   if (ahead > 0 && !ALLOW_UNSHIPPED) {
-    refuse(`local nextjs is ${ahead} commit(s) AHEAD of origin — those fixes are not on ${BASE_URL} yet, so every finding would be a false positive. Push and let the deploy finish first.`, "--allow-unshipped");
+    refuse(`local checkout is ${ahead} commit(s) AHEAD of origin — those fixes are not on ${BASE_URL} yet, so every finding would be a false positive. Push and let the deploy finish first.`, "--allow-unshipped");
   }
-  process.stderr.write(`  Checkout in sync with origin/nextjs\n`);
+  process.stderr.write(`  Checkout in sync with origin/${DEPLOY_BRANCH}\n`);
 }
 
 /* A silent drop in route count is how coverage collapses unnoticed — the run
@@ -546,7 +550,7 @@ const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;
    several agents, and the hero-redesign branch's /hero-lab* pages live here
    permanently as untracked scratch. On 2026-09-01 that put 16 phantom routes
    into the denominator and raised 16 "shipped but not in sitemap" warnings for
-   pages that are not on nextjs and not on staging.
+   pages that were never committed or deployed.
    Tracked-only is not just a filter, it is the correct definition: the audit
    grades deployed HTML, staging serves only pushed commits, and step 0b already
    guarantees nothing is unpushed. A route that is not committed cannot be live,
