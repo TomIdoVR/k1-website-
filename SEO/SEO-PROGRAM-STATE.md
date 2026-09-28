@@ -1,12 +1,25 @@
 # KabatOne SEO Program — State of Play
 
 > **Single source of truth for the SEO effort.** Read this first in any new session.
-> Last updated: 2026-08-12. Keep this file current when the program's state changes.
+> Last updated: **2026-08-31**. Keep this file current when the program's state changes.
 >
-> 🔴 **The SEO Anthropic API key is out of credit** (`~/.config/claude-seo/anthropic-api-key`).
-> `track_geo.py` has been unable to finish a full run since ~2026-08-04. Top up at
-> console.anthropic.com → Plans & Billing before trusting any GEO coverage number.
-> Companion docs: `CHANGELOG.md` (exact versions), `SEO/kabatone-seo-master-plan.md`.
+> ⚠️ **Read `SEO/BRANCHING.md` before shipping anything.** `main` and `nextjs` have diverged;
+> production work goes through a **PR branched from `main`**, not a merge of `nextjs`.
+>
+> **Start every analysis with:** `python3.11 scripts/seo_diff.py --out /tmp/seo-diff.md`
+> Open items and their age: `SEO/carry-over.md` (the diff script reads and escalates it).
+>
+> Companion docs: `CHANGELOG.md` (exact versions), `SEO/kabatone-seo-master-plan.md`,
+> `SEO/BRANCHING.md` (how work reaches production).
+>
+> **Resolved, do not re-raise:**
+> - ~~Anthropic key out of credit~~ — refunded; `track_geo.py` ran 12/12 on 08-28 and again
+>   on 08-31 (83% cited). Scheduled weekly via `com.kabatone.seo-geo` (Mon 07:30).
+> - ~~Track A blocked on interactive `gsc_reauth.py`~~ — GSC pulls run unattended; OAuth app
+>   published with a non-expiring token.
+> - ~~KAB-1721 awaiting board decision~~ — **approved 2026-07-27** via KAB-1980 ("both").
+>   Track A ran (v2.277–v2.284); Track C's first move shipped the same day. What remains is
+>   the Track C *escalation*, owned by Claude, not a decision owed by Omer.
 
 ## Strategy in one paragraph
 Grow **non-branded organic** (89% of clicks were branded; the ~11% non-branded is the

@@ -1,30 +1,60 @@
 # KabatOne — Master SEO Plan
-**Last updated:** 2026-08-12
+**Last updated:** 2026-09-01
 **Primary market:** Mexico (es-MX) — Phase 2
 **Launch language:** English (en)
 **Production domain:** kabatone.com — `main` branch
 **Staging:** staging.kabatone.com — `nextjs` branch, auto-deploys on push
 **Stack:** Next.js 15 (App Router) on Vercel — TomIdoVR/k1-website-
 **GSC property:** `https://kabatone.com/` (URL-prefix). **Not** `sc-domain:kabatone.com` — that property does not exist on the account, and scripts asking for it fail with a permission error.
-**Analytics auth:** service account `kabatone-seo-reader@kabatone-seo.iam.gserviceaccount.com`, read-only on GA4 (`properties/530090453`) and GSC. No OAuth refresh token is used in the weekly path.
+**Analytics auth:** **OAuth2 refresh token**, not a service account. `scripts/gsc_pull_weekly.py` reads `client_id` / `client_secret` / `refresh_token` from `.secrets/gsc-credentials.json` and exchanges them at `oauth2.googleapis.com/token`; the OAuth app is published to production so the token does not expire. GA4 property `530090453`.
+> Corrected 2026-09-01. This line previously claimed a service account and stated "no OAuth refresh token is used in the weekly path" — the exact opposite of what the script does. A `gsc-service-account.json` does sit in `~/.config/claude-seo/`, which is what made the wrong claim survive inspection; the weekly path does not use it. Verified by reading the auth path in the script, not by looking at which credential files exist.
 
 ---
 
-## Status — 2026-08-12 (KAB-2474 weekly review)
+## Status — 2026-09-01 (KAB-3142 weekly review)
 
-**GEO gap is mostly closed.** VMS, unified-platform and NG911 flipped `N → Y` in AI answers since
-the 07-07 baseline — cited in 4/5 queries measured (was 5/12). The Phase 3 roundup pages caused it.
-**C5 is the only category question still uncited**, and it is an authority problem, not content:
-the page has FAQPage schema, a verbatim-matching first FAQ, and 24 inbound internal links.
+**The GEO measurement got honest, and the number went down as a result.** v2.342 retargeted
+`geo-queries.txt` from 12 queries to 25 in three labelled blocks — the original 12 (trend
+continuity), the **zero-click page-1 block**, and **ES/PT**. The old set only tested queries we
+already won, which is how the rate read 83% while 35 page-1 queries earned zero clicks. Real
+rate on the honest set: **73.0% (27/37) on 2026-08-31**, against 41.7% at the 07-07 baseline.
+Read the trend across complete runs only; partial runs are excluded.
 
-**Content pipeline (Phase 3) is complete** — every row below is `Done`. No page is queued, and the
-remaining GEO gap does not call for one. Next content decision is *subtractive*: consolidate the
-video-analytics cluster (3 competing URLs, 2 de-ranked).
+**The C5 diagnosis in the previous status block was wrong, and it cost six weeks.** It said
+C5 "is an authority problem, not content: the page has FAQPage schema, a verbatim-matching
+first FAQ, and 24 inbound internal links." All of that was true and none of it was the
+constraint. **The pages defined C5 incorrectly.** They said the fifth C is *Calidad* / Quality;
+it is *Contacto Ciudadano* — Citizen Contact — per the institution the model is named after,
+Mexico City's *Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano*
+(`c5.cdmx.gob.mx`). An answer engine will not cite a definition that contradicts the government
+body that owns the term, no matter how well-linked or well-schema'd the page is. Fixed in
+**v2.347** across 5 pages, both locales, FAQPage schema, meta descriptions and `llms.txt`.
 
-🔴 **Blocked:** the SEO Anthropic API key is out of credit, so `track_geo.py` cannot complete a
-full 12-query run (partial since ~08-04). GEO coverage is unmeasurable until it is topped up.
+The lesson generalises past C5: *"we rank and are not cited"* has at least two causes with
+opposite remedies, and the schema/link inventory cannot tell them apart. Audit the claim
+against primary sources **before** concluding authority.
 
-Detail: `weekly-report-2026-08-12.md`.
+**Content pipeline restarted, and it is now diagnosis-driven rather than page-driven.** The
+Phase 3 roundup program is complete and no new roundup is queued. What replaced it is the
+answer-first program against the zero-click block: v2.343 (fire CAD), v2.344 (VMS + CCTV),
+v2.347 (C5). Each is a hypothesis with a defined test — re-run `track_geo.py` after it reaches
+production and check whether the query flips from absent to cited. **Citation is the metric,
+not rank; these pages already rank.**
+
+**Two queries are confirmed *not* content gaps** and must not be written for again:
+`911 dispatch software for emergency call centers` (v2.344) and `What is AI video analytics?`
+(2026-09-01) — both pages already cover the ground; the constraint is authority. They are the
+named targets that turn AUTH-1 from a general backlink ask into a specific list.
+
+⚠️ **Route to production is a PR cut from `main`, never a merge of `nextjs`.** The branches have
+diverged: `main` is ~165 commits ahead at v2.376 while `nextjs` is ~32 ahead at v2.347, with 32
+source files changed on both sides. See `SEO/BRANCHING.md`.
+
+**Resolved since the last plan update — do not re-raise:**
+- ~~Anthropic API key out of credit~~ — refunded; full runs completed 08-28 and 08-31.
+- ~~C5 is an authority problem~~ — it was a content error. See above.
+
+Detail: `weekly-report-2026-09-01.md`. Open items and their age: `SEO/carry-over.md`.
 
 ---
 
@@ -40,7 +70,7 @@ Detail: `weekly-report-2026-08-12.md`.
 | Phase 5 — Authority & backlinks | In progress | 15% |
 | Phase 6 — Generative Engine Optimization (GEO) | In progress | 98% |
 
-**Last GEO monitor run:** 2026-07-28 (KAB-2037 weekly GEO review — 6/9 testable queries cited; GEO monitor re-run surfaced a new open-field gap, "PSIM alternatives"; new /resources/psim-alternatives/ published, v2.287. RTCC citability refresh followed in v2.288.)
+**Last GEO monitor run:** 2026-08-31 — **27/37 cited (73.0%)** on the retargeted 25-query set (v2.342). Still absent: `What is a C5 command center?` (fixed v2.347, awaiting re-crawl), `What is AI video analytics?` (**not a content gap** — authority), and the ES/PT city-video pair. Scheduled weekly via `com.kabatone.seo-geo`, Mondays 07:30.
 
 > This is the *GEO monitor* date, not the plan date — the two used to share the same "Last updated" label, which made a stale plan look freshly reviewed. The plan date is at the top of this file. The weekly brief now flags this GEO date when it is more than 21 days old, so citation counts stop being read as current when they are not.
 **Current site size:** 237 unique routes × 2 locales (EN + ES) = 474 sitemap URLs *(counted 2026-08-04)*
@@ -54,11 +84,16 @@ Detail: `weekly-report-2026-08-12.md`.
 | `/vs/` competitor comparisons | 21 | |
 | Everything else | 36 | Products, industries, integrations, legal, demo |
 
-⚠️ **Country-page count is drifting from what this plan documented.** The guardrail added in v2.266 was meant to halt country-page generation, and this plan recorded 121. There are now **141** — 20 more than documented. Either the guardrail is not holding or pages were added by another route. Verify before the next generation run: thin duplicate pages at this scale are an indexation liability, not an asset.
+✅ **Country-page drift has stopped, and the diagnosis behind it was wrong** *(verified 2026-09-02)*. The count is **141**, unchanged in the four weeks since 2026-08-04. Two claims this plan carried do not survive checking:
+
+1. **There is no auto-generation pipeline.** `fireCcrAgent` in `src/lib/seo-agent/ccr.ts` has **zero callers** anywhere in `src/` — it is dead code. Nothing in this repo dispatches country-guide creation to Paperclip. The 122 → 141 drift came from agent sessions creating pages by hand, not from an automated route.
+2. **The v2.266 guardrail never governed generation.** `KEEP_COUNTRY_SLUGS` in `src/app/sitemap.ts` is a *sitemap filter* — it decides which country pages get submitted (26 ICP slugs kept, 115 noindexed). It cannot and never could stop a page from being created. Testing it against the page count was testing the wrong thing.
+
+The standing risk is unchanged: 141 thin templated pages is an indexation liability, and nothing structurally prevents the next agent session from adding more. A real guardrail would have to live in the creation path, not the sitemap.
 - Homepage: 1 | Products: 5 | Industries: 7 | /vs/ comparisons: 21 | /resources/: 180 (hub + 141 country guides + 39 other articles) | /integrations/: 6 | /demo/: 6 (hub, lpr, school, violence, medical, access-control) | Other: 4 (about, contact, privacy, simulator)
 - Geographic market guides: **141 country-specific guides** live *(counted 2026-08-04; this line previously read 122)*
-- Auto-generation pipeline: `src/lib/seo-agent/ccr.ts` dispatches country-guide creation jobs to **Paperclip** — strategic risk flagged 2026-05-19, see Phase 6 notes below.
-  **This is the likely source of the 122 → 141 drift.** The v2.266 guardrail was meant to halt generation, but the count kept climbing, so the dispatcher appears to still be firing. Paperclip's local server was stopped 2026-08-04; if the count stops moving while it is down, that confirms the route. Re-enable Paperclip only once the guardrail is verified to hold.
+- Auto-generation pipeline: **none live.** `src/lib/seo-agent/ccr.ts` exposes `fireCcrAgent` (a generic Paperclip issue-creator, 52 lines, not country-specific) and nothing calls it. The strategic risk flagged 2026-05-19 does not exist in the current tree.
+- Paperclip status *(checked 2026-09-02)*: **not stopped — broken.** `com.kabatone.paperclip` was never unloaded and carries `KeepAlive`/`RunAtLoad`, so it restarted on its own; PID 820 has been up since 2026-08-31. But nothing listens on port 3100 and `paperclip.log` (17 MB) ends in a `tsx` preflight crash, `Unknown system error -11`. Separately, `com.kabatone.paperclip-update` (Mon 07:00) does restart the dev server by design, but its `git pull` fails — the checked-out branch `fix/kab-688-…` has no upstream — and under `set -euo pipefail` the script exits before reaching the restart. So that weekly job is currently a no-op.
 - Note: /lp and /privacy-policy-tamaulipas removed from sitemap (noindex pages — v2.48)
 - Note: /vs/shotspotter + /vs/palantir exist in sitemap + codebase but were undocumented — synced 2026-04-27
 - Note: Empty `src/app/[locale]/resources/public-safety-software-bahrain/` directory exists (no page.tsx, untracked) — leftover from aborted generation, safe to delete
