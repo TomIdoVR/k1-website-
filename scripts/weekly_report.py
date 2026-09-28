@@ -41,7 +41,7 @@ SCRIPTS = Path(__file__).parent
 sys.path.insert(0, str(SCRIPTS))
 
 AUDITS_DIR = REPO_ROOT / 'SEO' / 'audits'
-DEFAULT_MODEL = 'claude-sonnet-4-6'
+DEFAULT_MODEL = 'claude-opus-5-5'
 ANTHROPIC_ENDPOINT = 'https://api.anthropic.com/v1/messages'
 
 # Pure markdown→HTML helpers are shape-agnostic, so the brief and the legacy
@@ -119,7 +119,7 @@ def synthesize(data, model, timeout=120):
 
     payload = json.dumps({
         'model': model,
-        'max_tokens': 2048,
+        'max_tokens': 8192,
         'system': SYSTEM,
         'messages': [{
             'role': 'user',

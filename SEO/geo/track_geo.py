@@ -75,7 +75,15 @@ def main():
         import anthropic
     except ImportError:
         print('anthropic library not installed.'); sys.exit(1)
-    client = anthropic.Anthropic(api_key=key)
+    # Timeout is the load-bearing part. launchd will not start a second instance of a
+    # job while one is still running, so a single wedged request does not cost one
+    # Monday -- it silently blocks EVERY Monday until someone kills the PID by hand,
+    # with zero-byte logs and no non-zero exit to say so.
+    #
+    # base_url is deliberately NOT pinned: ANTHROPIC_BASE_URL points at the local
+    # headroom proxy on purpose (com.kabatone.headroom-proxy), and overriding it here
+    # would route around the user's own setup.
+    client = anthropic.Anthropic(api_key=key, timeout=120.0, max_retries=2)
 
     queries = [q.strip() for q in QUERIES_FILE.read_text().splitlines()
                if q.strip() and not q.startswith('#')]

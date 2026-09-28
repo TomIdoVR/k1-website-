@@ -26,6 +26,38 @@
   `vms software` p14.6 / 782 impr; `best-vms-software` not ranking for either.
 - Verified: `tsc` clean, `npm run build` exit 0.
 
+## [v2.404] – 2026-09-28 — The weekly orchestrator had failed every Monday since June 15
+
+**Fixed**
+- **`seo_weekly_agent.py` shelled out to bare `python3.11`**, which is not on launchd's PATH
+  (`/usr/local/bin:/usr/bin:/bin`). `pull_gsc()` raised `FileNotFoundError` on **all 14 logged
+  scheduled runs since 2026-06-15**. The job still exited 0, because its keyword and GEO sub-steps
+  ran, so nothing flagged it. Both call sites (`pull_gsc`, `verify_serp_polling`) now use
+  `sys.executable`. Verified by running `pull_gsc(28)` under launchd's exact environment:
+  3,817 rows. The old call reproduces the failure there.
+
+**Added**
+- `SEO/weekly-report-2026-09-28.md` — the week's analysis. Search is flat and healthy (clicks −1.1%,
+  CTR and position up: query reallocation). P0 #1 is **PR #21**: production still defines the fifth C
+  of C5 as "Calidad" (verified live, 10× EN / 36× ES) on the ES C5 page, which grew +32% in clicks.
+  It also shows v2.348's VMS intent-collision fix never reached production either.
+- The 2026-09-21 and 2026-09-28 GEO and keyword snapshots. The scheduled jobs' own commits
+  fail on this OneDrive checkout (`Resource deadlock avoided`), so the cloud Slack brief kept
+  reporting GEO as stale.
+
+**Changed**
+- `SEO/carry-over.md`: 9 closed rows moved from Open to Closed; the `KAB-1721` duplicate
+  resolved (folded into AUTH-1); AUTH-2 closed as refuted (cited 3 runs straight with no
+  authority spend); GEO-4 re-statused from "watching" to blocked on PR #21 (the fix was never
+  live); a concurrent session's `SHIP-1` re-id'd to `SHIP-3` (SHIP-1 is a closed id). Escalations
+  7 → 4, all real.
+
+**Refuted**
+- The Slack brief's P0, `vms`: it has had five snippet passes since June, and CTR is flat at 0.27% at p8.5, while
+  `vms software` converts 0.64% at a worse p14.6. It's a mixed-intent head term (SCORER-2).
+- PLAN-2's rebuttal that `com.kabatone.seo-weekly` "produces the Monday brief". It was loaded
+  but its analysis had failed since June; the brief comes from the cloud routine.
+
 ## [v2.403] – 2026-09-25 — The homepage H1 now names the buyer
 
 **Changed**
@@ -41,6 +73,7 @@
   is free to do the job a headline should.
 - **Keyword coverage v2.359 added is kept, not traded away.** That change put C5 and 911 into the
   visible text; the new H1 carries both terms itself.
+
 ## [v2.402] – 2026-09-23 — Production still defined the fifth C as "Calidad"
 
 **Fixed — the correction existed since 1 September and never reached production**
@@ -97,6 +130,73 @@
 - Verified: `tsc --noEmit` clean, `npm run build` exit 0, and the compiled output carries the
   corrected definition in 18 files with **zero** occurrences of the wrong one.
 
+
+## [v2.401] – 2026-09-23 — SEO agents moved to Claude Opus 5.5
+
+**Changed**
+- **The three SEO call sites now run `claude-opus-5-5`** (released 2026-09-21), up from
+  `claude-sonnet-4-6`: `scripts/seo_weekly_agent.py`, `scripts/weekly_report.py`
+  (`DEFAULT_MODEL`) and `src/lib/seo-agent/intent.ts`. Confirmed available on the account
+  via the Models API — 1M input / 128K output, adaptive thinking only.
+
+**Fixed**
+- **`intent.ts` would have silently returned an empty intent.** It read
+  `response.content[0].text`, but from Opus 5 onward adaptive thinking is on by default, so
+  `content[0]` is a `thinking` block whenever the model reasons before answering — and a live
+  test confirms it does on non-trivial prompts. The classifier would have thrown
+  `Intent non-JSON` on real Slack messages while passing any trivial smoke test. It now
+  concatenates every `text` block instead of indexing `[0]`.
+- **`weekly_report.py` raised `max_tokens` 2048 → 8192.** Thinking tokens count against
+  `max_tokens`. A live run on a *minimal* payload spent 811 tokens thinking plus 1066 on the
+  answer — 1877 of 2048, leaving 171 tokens of headroom. A real payload (15 opportunities,
+  15 striking-distance rows, 10 pages) would have truncated mid-XML and dropped the brief to
+  the deterministic fallback.
+
+**Unchanged**
+- `SEO/geo/track_geo.py` stays on `claude-sonnet-4-6` **deliberately**. It is the GEO
+  measurement instrument feeding `SEO/geo/geo-history.csv`; changing its model changes what
+  is being measured and breaks week-over-week continuity with the existing history.
+
+**Verified**
+- `npx tsc --noEmit` clean; `py_compile` clean on both scripts.
+- Live API call through `weekly_report.SYSTEM` on `claude-opus-5-5`: `stop_reason: end_turn`,
+  both `<intelligence>` and `<action_plan>` blocks returned complete.
+
+## [v2.400] – 2026-09-23 — Closed ledger rows escalated forever, burying the real ones
+
+**Fixed**
+- **`seo_diff.py` escalated every closed carry-over row.** The ledger ages rows from
+  `first_raised` and flagged 🔴 at `weeks >= 3` with no check on status, so a **shipped** item
+  kept escalating for the rest of its life. Five rows were affected — `~~CAD-1~~` (shipped to
+  production 09-22), `~~MIGRATE-1~~`, `PLAN-2`, `GEOSCHED-3` and `SYNC-1` — taking the
+  escalation list from **7 real items to 12**. That is the failure G5 exists to prevent,
+  inverted: not a forgotten item, but a genuine escalation lost in noise it generated itself.
+  Rows are now closed if the id is struck through (`~~ID~~`) or the status matches
+  closed / resolved / withdrawn / superseded / shipped to production. Closed rows keep their
+  age (the history is useful) and render ✅, but never escalate, and no longer count as
+  "blocked on a human".
+- **Duplicate ledger ids were aging and escalating twice.** `KAB-1721` and `KAB-1721-CLOSED`
+  are the same item, both filed under `## Open`, both 8 weeks, both 🔴 — and their statuses
+  contradict each other (`reframed 2026-09-08` vs `open`). The parser now reports duplicates
+  instead of silently deduping them, because which row is authoritative is a judgement call,
+  not a merge.
+
+**Added**
+- Two housekeeping nudges in the rendered ledger: closed rows still filed under `## Open`
+  (5 right now), and duplicate ids. Both were previously invisible and both distort the
+  weekly escalation count.
+- `SEO/weekly-report-2026-09-22.md` — the week's analysis. The −7.7% click drop is fully
+  accounted for by two slashed→unslashed URL handovers (−49 clicks against a site total of
+  −47), and the CAD cluster's apparent collapse was one rank-tracking bot leaving the dataset;
+  ex-bot, CAD impressions are **+11.3%** with clicks flat. Neither was escalated.
+
+**Changed**
+- `SEO/carry-over.md` — `CAD-1` closed and verified live on production after PR #18 merged
+  (every buyer link flipped off the page ranking 30.2 onto the one ranking 9.4); `MIGRATE-1`
+  closed after the migration was verified correct end to end (301s single-hop, canonicals
+  right, 206/206 internal links already unslashed); `PLAN-2` records **why PR #7 was closed
+  unmerged** — it instructed deleting the OAuth client that `gsc_pull_weekly.py` actually
+  depends on, which would have broken every weekly GSC pull.
 
 ## [v2.399] – 2026-09-22 — Every job application now says where the candidate came from
 

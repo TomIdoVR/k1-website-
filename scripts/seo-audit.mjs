@@ -22,6 +22,8 @@ const getArg = (name, def) => { const i = args.indexOf(name); return i >= 0 ? ar
 const BASE_URL = getArg("--url", "https://staging.kabatone.com");
 const OUT_FILE = getArg("--out", "scripts/seo-report.json");
 const BASELINE_FILE = getArg("--baseline", "scripts/seo-baseline.json");
+const RUNLOG_FILE = getArg("--runlog", "scripts/seo-daily-runlog.txt");
+const TODAY = new Date().toISOString().slice(0, 10);
 const DIFF_ONLY = args.includes("--diff");
 // Report coverage accounting and exit without crawling.
 const COVERAGE_ONLY = args.includes("--coverage-only");
@@ -66,7 +68,9 @@ const ROUTES = [
   "/resources/what-is-a-real-time-crime-center/",
   "/resources/what-is-a-psap/",
   "/resources/what-is-video-management-software/",
-  "/resources/what-is-video-analytics/",
+  /* /resources/what-is-video-analytics removed v2.332: 301'd into
+     /resources/cctv-video-analytics by the v2.329 consolidation. Left here it
+     would make the sitemap-unreachable fallback audit a redirect. */
   "/resources/what-is-incident-management-software/",
   "/resources/what-is-lpr-license-plate-recognition/",
   "/resources/what-is-sensor-fusion/",
@@ -401,6 +405,38 @@ function refuse(msg, override) {
   process.exit(EXIT_REFUSED);
 }
 
+/* A missed day leaves no artifact. Every other guard here protects against a
+   confident number about the wrong site; this one protects against no number
+   at all, which is worse because nothing surfaces it. When the routine fire
+   dies at the adapter (KAB-2694: `adapter_failed ENOTFOUND` on 08-15/16/19,
+   16 of 50 runs historically) or the whole instance is down (no routine in the
+   company fired 2026-08-05..08-11), the loop simply skips a day and the next
+   successful run reports CLEAN as if nothing happened.
+
+   Reports, never refuses: a gap is already in the past, and refusing today's
+   audit because yesterday's was missed would turn one missed day into two. */
+function checkMissedRuns() {
+  if (!existsSync(RUNLOG_FILE)) return null;
+  const dates = readFileSync(RUNLOG_FILE, "utf-8")
+    .split("\n")
+    .map(l => /^(\d{4}-\d{2}-\d{2})\s*\|/.exec(l)?.[1])
+    .filter(Boolean)
+    .sort();
+  const last = dates.at(-1);
+  if (!last) return null;
+  const DAY = 86400000;
+  const gap = Math.round((Date.parse(TODAY) - Date.parse(last)) / DAY) - 1;
+  if (gap > 0) {
+    process.stderr.write(
+      `\n  ! MISSED RUNS: ${gap} day(s) with no audit between ${last} and ${TODAY}.\n` +
+      `    Check the routine's run history — a fire ending in anything other than\n` +
+      `    'completed' produced no report, so the streak of CLEAN runs is not a\n` +
+      `    streak of covered days.\n\n`
+    );
+  }
+  return { lastRun: last, missedDays: Math.max(0, gap) };
+}
+
 const git = (...a) => execFileSync("git", a, { encoding: "utf-8" }).trim();
 
 /**
@@ -485,22 +521,84 @@ const OFF_SITEMAP_ROUTES = new Set([
   "/hero-lab-prev",          // design preview, not public
   "/lp",                     // paid-campaign landing page
   "/legal/911-michoacan",
+  /* Per-contract legal notice added by v2.342 (9fa95d9, 2026-08-31), same class
+     as 911-michoacan above. Verified live 2026-09-01 before allowlisting: 200 in
+     both locales, `noindex, follow`, absent from the served sitemap — the page
+     declares its own non-indexation, so listing it would contradict the page. */
+  "/legal/sitec-911",
   "/privacy-policy-tamaulipas",
   "/privacy/911-baja-california-sur",
   "/privacy/911-michoacan",
   "/privacy/c5-escudo-pakal",
+  /* Video-analytics cluster consolidation (v2.329, 2026-08-28). Both were 301'd
+     into /resources/cctv-video-analytics and dropped from sitemap.ts; the page.tsx
+     files survive only because next.config redirects shadow them. Verified live:
+     single-hop 308 to the winner, 200, both locales. */
+  "/resources/what-is-video-analytics",
+  "/resources/ai-video-analytics",
 ]);
 
 const COUNTRY_PAGE_RE = /^\/resources\/public-safety-software-/;
 
-function repoRoutes(dir = APP_ROUTES_DIR, prefix = "") {
+/* Routes on the CURRENT BRANCH, from git rather than the filesystem.
+   readdirSync counts any page.tsx sitting in the checkout, including untracked
+   files another agent left behind — this repo is one shared checkout worked by
+   several agents, and the hero-redesign branch's /hero-lab* pages live here
+   permanently as untracked scratch. On 2026-09-01 that put 16 phantom routes
+   into the denominator and raised 16 "shipped but not in sitemap" warnings for
+   pages that are not on nextjs and not on staging.
+   Tracked-only is not just a filter, it is the correct definition: the audit
+   grades deployed HTML, staging serves only pushed commits, and step 0b already
+   guarantees nothing is unpushed. A route that is not committed cannot be live,
+   so calling it an unlisted live route is wrong by construction. */
+/* NB: the pathspec is `:(literal)` and the page.tsx match is done in JS. Passing
+   a recursive-glob pathspec under the route dir silently returns almost nothing,
+   because git pathspecs are globs and `[locale]` reads as a character class
+   matching one of l/o/c/a/e. That failure is invisible in the worst way: the
+   denominator collapses and the audit prints "100% coverage, 0 unexplained" —
+   a clean bill of health from measuring nothing. */
+function trackedRouteFiles() {
+  try {
+    const out = execFileSync(
+      "git", ["ls-files", "-z", "--", `:(literal)${APP_ROUTES_DIR}`],
+      { encoding: "utf-8" }
+    );
+    const files = out.split("\0").filter(f => f.endsWith("/page.tsx"));
+    /* An empty result is not "no routes on this branch" — it means the pathspec
+       matched nothing, which is what the `[locale]` glob bug did. Falling back
+       to the filesystem walk is the right recovery (better a noisy denominator
+       than none), but it must not be silent: the fallback re-enables exactly
+       the untracked-file counting v2.345 removed, and the collapse guard below
+       cannot see it, because the guard compares tracked-vs-on-disk and the
+       fallback makes those two identical by construction. Verified 2026-09-01
+       by reverting the pathspec: 0 tracked files, silent fallback, 16 phantom
+       hero-lab routes back in the denominator. */
+    if (!files.length) {
+      process.stderr.write(
+        `  ! tracked-route scan matched 0 files under ${APP_ROUTES_DIR} — falling back to the\n` +
+        `    filesystem walk, so untracked files from other branches WILL be counted.\n` +
+        `    Check the git pathspec before trusting any coverage number from this run.\n`
+      );
+      return null;
+    }
+    return new Set(files);
+  } catch {
+    process.stderr.write(
+      `  ! not a git checkout (or git unavailable) — coverage falls back to the filesystem walk\n`
+    );
+    return null;
+  }
+}
+
+function repoRoutes(dir = APP_ROUTES_DIR, prefix = "", tracked = trackedRouteFiles()) {
   if (!existsSync(dir)) return null;
   const out = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (entry.isDirectory()) {
-      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`);
+      const sub = repoRoutes(`${dir}/${entry.name}`, `${prefix}/${entry.name}`, tracked);
       if (sub) out.push(...sub);
     } else if (entry.name === "page.tsx") {
+      if (tracked && !tracked.has(`${dir}/${entry.name}`)) continue; // untracked: not on this branch
       out.push(prefix); // "" for the homepage
     }
   }
@@ -520,6 +618,23 @@ function computeCoverage(crawledUrls) {
   const routes = repoRoutes();
   const listed = sitemapListedPaths();
   if (!routes || !listed) return null;
+
+  /* The tracked-file filter is the coverage denominator, so if it ever breaks
+     the audit reports a high coverage % over a tiny route set — "100% of 2 URLs,
+     0 unexplained" reads exactly like a clean day. That is what the `[locale]`
+     pathspec bug did on first write (see trackedRouteFiles). No existing guard
+     caught it: the 80%-of-last-run check watches the CRAWL list, which comes
+     from the sitemap and was still a healthy 230. Tracked routes are a subset of
+     on-disk routes and in practice nearly all of them, so a large shortfall is a
+     scan bug, never a real branch state. Refuse rather than report. */
+  const onDisk = repoRoutes(APP_ROUTES_DIR, "", null);
+  if (onDisk && routes.length < onDisk.length * 0.5) {
+    refuse(
+      `git-tracked route scan returned ${routes.length} routes against ${onDisk.length} on disk — ` +
+      `the coverage denominator collapsed, and a coverage % over a broken route list is a fake CLEAN.`,
+      "--allow-route-fallback"
+    );
+  }
 
   const crawled = new Set(crawledUrls.map(u => { try { return new URL(u).pathname } catch { return u } }));
   const isCrawled = p => crawled.has(p) || crawled.has(p === "" ? "/" : `${p}/`) || (p === "" && crawled.has("/"));
@@ -561,6 +676,7 @@ async function main() {
   const now = new Date().toISOString();
   process.stderr.write(`\nKabatOne Verge SEO Audit - ${BASE_URL}\n`);
   checkCheckoutSync();
+  const runlog = checkMissedRuns();
 
   /* Audit the URL space we actually publish, not `/en/*`.
      `localePrefix: 'as-needed'` serves EN at the root, so every `/en/...` URL
@@ -633,6 +749,10 @@ async function main() {
       coverageUnexplained: coverage?.unexplained.length ?? null,
       pagesWithIssues: results.filter(r => r.issues.some(i => i.severity !== "info")).length,
       pagesClean: results.filter(r => r.issues.filter(i => i.severity !== "info").length === 0).length,
+      /* Days since the last logged run that produced no audit at all. A CLEAN
+         report says nothing about the days that never ran — see checkMissedRuns. */
+      lastRun: runlog?.lastRun ?? null,
+      missedDays: runlog?.missedDays ?? null,
     },
     pages: results,
   };
