@@ -78,7 +78,7 @@ def verify_serp_polling(query, start_date, end_date, prop='https://kabatone.com/
     for dim, key in (('device', ('desktop', 'mobile', 'tablet')),
                      ('country', ('usa', 'gbr', 'nld', 'deu', 'ita', 'hkg', 'mex'))):
         for v in key:
-            cmd = ['python3.11', helper, '--property', prop, '--start-date', start_date,
+            cmd = [sys.executable, helper, '--property', prop, '--start-date', start_date,
                    '--end-date', end_date, '--dimensions', 'query', '--limit', '1000',
                    '--json', '--' + dim, v]
             try:
@@ -281,7 +281,7 @@ def pull_gsc(days):
     end_cur = (today - timedelta(days=1)).strftime('%Y-%m-%d')
     start_cur = (today - timedelta(days=days)).strftime('%Y-%m-%d')
     r = subprocess.run(
-        ['python3.11', script, '--property', GSC_PROPERTY,
+        [sys.executable, script, '--property', GSC_PROPERTY,
          '--start-date', start_cur, '--end-date', end_cur,
          '--dimensions', 'query', '--limit', '1000', '--json'],
         capture_output=True, text=True, check=True)

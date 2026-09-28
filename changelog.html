@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.404 -->
+      <div class="tl-entry fixed" id="v2.404">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.404</span><span class="tl-date">2026-09-28</span></div>
+          <h3 class="tl-title">The weekly orchestrator had failed every Monday since June 15</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Fixed:</strong> <code>seo_weekly_agent.py</code> called bare <code>python3.11</code>, which is not on launchd's PATH. The GSC pull failed on all 14 scheduled runs since 2026-06-15 while the job exited 0. Both call sites now use <code>sys.executable</code>; verified under launchd's exact environment (3,817 rows).</p>
+          <p><strong>Added:</strong> weekly report 2026-09-28. P0 is PR #21: production still defines the fifth C of C5 as "Calidad". It also shows v2.348's VMS fix never reached production. Also added: the 09-21 and 09-28 GEO and keyword snapshots, which the scheduled jobs could not commit on OneDrive.</p>
+          <p><strong>Changed:</strong> carry-over ledger cleaned. 9 closed rows filed correctly, KAB-1721 duplicate resolved, AUTH-2 closed as refuted, GEO-4 blocked on PR #21. Escalations 7 → 4.</p>
+          <p><strong>Refuted:</strong> the Slack brief's <code>vms</code> P0 (five prior snippet passes, CTR flat), and PLAN-2's claim that the local job produced the Monday brief.</p>
+        </div>
+      </div>
+
+
       <!-- v2.401 -->
       <div class="tl-entry changed" id="v2.401">
         <div class="version-header">
