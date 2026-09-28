@@ -1,3 +1,33 @@
+## [v2.406] – 2026-09-28 — Answer-first content for the top buyer pages, stranded on staging since August
+
+**Added — re-applied from v2.343 / v2.344, which never reached production**
+- **`best-cad-dispatch-software`: a fire-dispatch section and FAQ entry** (EN + ES). The page
+  ranks ~6 for "best fire computer aided dispatch software" and earned no clicks while the AI
+  answer cited five competitors; the page said nothing citable about fire dispatch.
+- **`best-vms-software`: a security-operations section** — failover, bandwidth/storage, ONVIF/RTSP,
+  VSaaS vs on-premise. Pairs with v2.405, which pointed the VMS buyer links here.
+- **`cctv-video-analytics`: an analytics-on-existing-cameras section** — the detections that matter
+  in public space and false-positive rate as the purchase criterion.
+
+**Fixed — a factual error in the re-applied copy**
+- The fire block cited **NFPA 1221** with "90% within 60 seconds **and 99% within 90 seconds**".
+  NFPA 1221 was consolidated into **NFPA 1225 (2022)**, and the 99%/90 s figure matches neither
+  standard's published pairing. Corrected all six occurrences to *NFPA 1225, 90% of emergency
+  calls processed within 60 seconds* — the figure that could be verified. This is the passage
+  written to be quoted by AI answers, so an uncheckable number there is worse than none.
+
+**Not included — deliberately**
+- v2.342's remaining CAD link repoints. v2.377 already re-pointed the buyer-intent links and
+  **deliberately kept** explainer-to-explainer links (`what-is-incident-management-software`,
+  `what-is-emergency-dispatch-software`, `911-call-center-software-guide`, `ng911-software`).
+  Re-pointing those would undo that decision.
+
+**Also**
+- `SEO/audits/traffic-latest.html` pointed at `traffic-2026-08-10.html`; restored to
+  `traffic-2026-08-31.html` as on `nextjs`. The consolidation in #24 copied the symlink as a file.
+
+Verified: `tsc` clean, `npm run build` exit 0.
+
 ## [v2.405] – 2026-09-28 — VMS: ship the intent-collision fix that sat on staging for four weeks
 
 **Fixed — re-applied from v2.348, which never reached production**
