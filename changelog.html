@@ -355,6 +355,17 @@
     <p class="page-sub">A running log of every change made to this website — by any agent or contributor. Updated with each deployment.</p>
 
     <div class="timeline">
+      <!-- v2.405 -->
+      <div class="tl-entry fixed" id="v2.405">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.405</span><span class="tl-date">2026-09-28</span></div>
+          <h3 class="tl-title">VMS: ship the intent-collision fix that sat on staging for four weeks</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>The VMS explainer promised a comparison it isn't.</strong> Its description read <em>&ldquo;Compare top VMS systems&hellip;&rdquo;</em> &mdash; a buyer promise on a definitional page &mdash; so Google served it for buyer searches. It is now definitional in both locales. <code>/vs/avigilon</code>, <code>/vs/milestone</code> and <code>/vs/genetec</code> now link the buyer page, <code>/resources/best-vms-software</code>.</p>
+          <p><strong>Why now:</strong> <code>vms</code> is the top opportunity by score (position 8.5, 1,840 impressions), and v2.348 fixed this on 1 September &mdash; but only on staging. Verified live on 28 September: still unfixed on production. The third finished fix found stranded, after the CAD links and the C5 correction. Expect movement over 2&ndash;3 weekly pulls.</p>
+        </div>
+      </div>
 
       <!-- v2.404 -->
       <div class="tl-entry fixed" id="v2.404">
@@ -367,36 +378,6 @@
           <p><strong>Added:</strong> weekly report 2026-09-28. P0 is PR #21: production still defines the fifth C of C5 as "Calidad". It also shows v2.348's VMS fix never reached production. Also added: the 09-21 and 09-28 GEO and keyword snapshots, which the scheduled jobs could not commit on OneDrive.</p>
           <p><strong>Changed:</strong> carry-over ledger cleaned. 9 closed rows filed correctly, KAB-1721 duplicate resolved, AUTH-2 closed as refuted, GEO-4 blocked on PR #21. Escalations 7 → 4.</p>
           <p><strong>Refuted:</strong> the Slack brief's <code>vms</code> P0 (five prior snippet passes, CTR flat), and PLAN-2's claim that the local job produced the Monday brief.</p>
-        </div>
-      </div>
-
-
-      <!-- v2.401 -->
-      <div class="tl-entry changed" id="v2.401">
-        <div class="version-header">
-          <div class="tl-meta"><span class="tl-ver">v2.401</span><span class="tl-date">2026-09-23</span></div>
-          <h3 class="tl-title">SEO agents moved to Claude Opus 5.5</h3>
-        </div>
-        <div class="tl-body">
-          <p><strong>Three SEO call sites now run <code>claude-opus-5-5</code></strong> (released 21 September), up from <code>claude-sonnet-4-6</code>: the weekly agent, the weekly report's <code>DEFAULT_MODEL</code>, and the Slack intent classifier. Confirmed on the account via the Models API &mdash; 1M input, 128K output, adaptive thinking only.</p>
-          <p><strong>The intent classifier would have silently returned nothing.</strong> It read <code>content[0].text</code>, but from Opus 5 onward adaptive thinking is on by default, so <code>content[0]</code> is a <code>thinking</code> block whenever the model reasons first &mdash; which a live test confirms it does on non-trivial prompts. It would have thrown on real Slack messages while passing any trivial smoke test. It now concatenates every <code>text</code> block.</p>
-          <p><strong>The weekly brief's <code>max_tokens</code> went 2048 &rarr; 8192.</strong> Thinking tokens count against the cap. A live run on a <em>minimal</em> payload spent 811 tokens thinking plus 1066 answering &mdash; 1877 of 2048, leaving 171 to spare. A real payload would have truncated mid-XML and silently dropped the brief to the deterministic fallback.</p>
-          <p><strong>The GEO tracker stays on Sonnet 4.6, deliberately.</strong> It is the measurement instrument behind <code>geo-history.csv</code>; changing its model changes what is being measured and breaks continuity with the existing trend.</p>
-        </div>
-      </div>
-
-
-      <!-- v2.400 -->
-      <div class="tl-entry fixed" id="v2.400">
-      <!-- v2.405 -->
-      <div class="tl-entry fixed" id="v2.405">
-        <div class="version-header">
-          <div class="tl-meta"><span class="tl-ver">v2.405</span><span class="tl-date">2026-09-28</span></div>
-          <h3 class="tl-title">VMS: ship the intent-collision fix that sat on staging for four weeks</h3>
-        </div>
-        <div class="tl-body">
-          <p><strong>The VMS explainer promised a comparison it isn't.</strong> Its description read <em>&ldquo;Compare top VMS systems&hellip;&rdquo;</em> &mdash; a buyer promise on a definitional page &mdash; so Google served it for buyer searches. It is now definitional in both locales. <code>/vs/avigilon</code>, <code>/vs/milestone</code> and <code>/vs/genetec</code> now link the buyer page, <code>/resources/best-vms-software</code>.</p>
-          <p><strong>Why now:</strong> <code>vms</code> is the top opportunity by score (position 8.5, 1,840 impressions), and v2.348 fixed this on 1 September &mdash; but only on staging. Verified live on 28 September: still unfixed on production. The third finished fix found stranded, after the CAD links and the C5 correction. Expect movement over 2&ndash;3 weekly pulls.</p>
         </div>
       </div>
 
@@ -426,6 +407,33 @@
         </div>
       </div>
 
+      <!-- v2.401 -->
+      <div class="tl-entry changed" id="v2.401">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.401</span><span class="tl-date">2026-09-23</span></div>
+          <h3 class="tl-title">SEO agents moved to Claude Opus 5.5</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Three SEO call sites now run <code>claude-opus-5-5</code></strong> (released 21 September), up from <code>claude-sonnet-4-6</code>: the weekly agent, the weekly report's <code>DEFAULT_MODEL</code>, and the Slack intent classifier. Confirmed on the account via the Models API &mdash; 1M input, 128K output, adaptive thinking only.</p>
+          <p><strong>The intent classifier would have silently returned nothing.</strong> It read <code>content[0].text</code>, but from Opus 5 onward adaptive thinking is on by default, so <code>content[0]</code> is a <code>thinking</code> block whenever the model reasons first &mdash; which a live test confirms it does on non-trivial prompts. It would have thrown on real Slack messages while passing any trivial smoke test. It now concatenates every <code>text</code> block.</p>
+          <p><strong>The weekly brief's <code>max_tokens</code> went 2048 &rarr; 8192.</strong> Thinking tokens count against the cap. A live run on a <em>minimal</em> payload spent 811 tokens thinking plus 1066 answering &mdash; 1877 of 2048, leaving 171 to spare. A real payload would have truncated mid-XML and silently dropped the brief to the deterministic fallback.</p>
+          <p><strong>The GEO tracker stays on Sonnet 4.6, deliberately.</strong> It is the measurement instrument behind <code>geo-history.csv</code>; changing its model changes what is being measured and breaks continuity with the existing trend.</p>
+        </div>
+      </div>
+
+      <!-- v2.400 -->
+      <div class="tl-entry fixed" id="v2.400">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.400</span><span class="tl-date">2026-09-23</span></div>
+          <h3 class="tl-title">Closed ledger rows escalated forever, burying the real ones</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong><code>seo_diff.py</code> escalated every closed carry-over row.</strong> The ledger ages rows from <code>first_raised</code> and flagged &#128308; at <code>weeks &gt;= 3</code> with no check on status &mdash; so a <strong>shipped</strong> item kept escalating for the rest of its life. Five rows were affected, taking the escalation list from <strong>7 real items to 12</strong>. That is the failure the carry-over rule exists to prevent, inverted: not a forgotten item, but a genuine escalation lost in noise it generated itself.</p>
+          <p>Rows now count as closed when the id is struck through or the status matches closed / resolved / withdrawn / superseded / shipped to production. They keep their age, because the history is useful, and render &#9989; &mdash; but they never escalate and no longer count as "blocked on a human".</p>
+          <p><strong>Duplicate ledger ids were aging and escalating twice.</strong> <code>KAB-1721</code> and <code>KAB-1721-CLOSED</code> are the same item, both filed under Open, both 8 weeks, both flagged &mdash; with statuses that contradict each other. The parser now <em>reports</em> duplicates rather than silently deduping them, because which row is authoritative is a judgement call, not a merge.</p>
+          <p><strong>Week of 22 September.</strong> The &minus;7.7% click drop was fully accounted for by two slashed&rarr;unslashed URL handovers (&minus;49 clicks against a site total of &minus;47), and the CAD cluster's apparent collapse was one rank-tracking bot leaving the dataset &mdash; ex-bot, CAD impressions are <strong>+11.3%</strong> with clicks flat. Neither was escalated. <code>CAD-1</code> closed and verified live on production; <code>MIGRATE-1</code> closed after the migration checked out end to end.</p>
+        </div>
+      </div>
 
       <!-- v2.399 -->
       <div class="tl-entry added" id="v2.399">
