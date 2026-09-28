@@ -6,12 +6,13 @@ import HeroCardCarousel from './HeroCardCarousel'
 import { moduleCards } from './HeroModuleCards'
 
 const T = {
-  /* The tagline moved from the H1 into the eyebrow so the H1 can carry the
-     phrase the production homepage already ranks on. Nothing is lost visually
-     — the two-line gradient treatment still applies to h1a/h1b. */
+  /* The H1 names the buyer and what they run. The old "Unified Operating
+     System for Public Safety" was kept for ranking, but GSC showed it earned
+     0 clicks in 90 days — homepage traffic is branded ("kabat one"), so the
+     H1 is free to speak to municipalities and C5s. h1b keeps the gradient. */
   eyebrow: { en: 'ONE PLATFORM. TOTAL AWARENESS.', es: 'UNA PLATAFORMA. CONCIENCIA TOTAL.' },
-  h1a: { en: 'The Unified Operating System ', es: 'El Sistema Operativo Unificado ' },
-  h1b: { en: 'for Public Safety.', es: 'para Seguridad Pública.' },
+  h1a: { en: 'One platform for your 911, video and dispatch — ', es: 'Una plataforma para tu 911, video y despacho — ' },
+  h1b: { en: 'built for municipalities and C5.', es: 'hecha para municipios y C5.' },
   sub: {
     en: 'Dispatch, video, GIS, event management, evidence, mobile response and integrations — unified into a single operational platform.',
     es: 'Despacho, video, GIS, gestión de eventos, evidencia, respuesta móvil e integraciones — unificados en una sola plataforma operativa.',
