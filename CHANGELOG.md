@@ -1,3 +1,31 @@
+## [v2.405] – 2026-09-28 — VMS: ship the intent-collision fix that sat on staging for four weeks
+
+**Fixed — re-applied from v2.348, which never reached production**
+- **`/resources/what-is-video-management-software` promised a comparison it isn't.** Its
+  description read *"Compare top VMS systems…"* (EN) / *"Compare los mejores sistemas VMS…"*
+  (ES) — a buyer promise on a definitional page. Now definitional: how a VMS works, its
+  components, ONVIF/RTSP support, how it differs from AI analytics. Both locales, `description`
+  and `og`.
+- **`/vs/avigilon`, `/vs/milestone`, `/vs/genetec` now link `/resources/best-vms-software`.**
+  A competitor comparison is buyer context by definition; they linked the explainer.
+
+**Why now**
+- `vms` is the **#1 opportunity by score** (position 8.5, 1,840 impressions, 28d), mostly
+  LATAM Spanish search — and Google serves it the explainer, not the buyer page. That is the
+  intent collision v2.348 diagnosed on 2026-09-01.
+- v2.348 fixed it on `nextjs` only. Verified live 2026-09-28: the explainer still carried the
+  buyer promise (6× EN, 6× ES) and the three `/vs` pages linked it, with **0** links to the
+  buyer page. Third finished fix found stranded on staging, after CAD-1 (PR #18) and the C5
+  correction (PR #21).
+
+**Scope**
+- Branched from `main` and applied as a patch of v2.348's source hunks only (5 files, 7 lines)
+  — `nextjs` has diverged, so no merge. The 20 "VMS Software" topic-naming anchors elsewhere are
+  left on the explainer, as v2.348 decided: that is naming, not buyer intent.
+- **Expect movement over 2–3 pulls**, not immediately. Baseline: `vms` p8.5 / 1,840 impr;
+  `vms software` p14.6 / 782 impr; `best-vms-software` not ranking for either.
+- Verified: `tsc` clean, `npm run build` exit 0.
+
 ## [v2.403] – 2026-09-25 — The homepage H1 now names the buyer
 
 **Changed**
