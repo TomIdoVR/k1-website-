@@ -1,3 +1,31 @@
+## [v2.410] – 2026-09-28 — One long-lived branch: `nextjs` retired, `main` is the only line
+
+**Changed — how work ships**
+- **`main` is the only long-lived branch.** Every change is a short-lived branch off `main`,
+  checked on its Vercel PR preview, and merged by PR — merging is the deploy. The PR preview
+  replaces `staging.kabatone.com` as the staging check.
+- **`nextjs` is retired**, archived as the tag `archive/nextjs-2026-09-28` (recoverable; nothing
+  deleted). It had diverged from `main` since 2026-08-21 — 185 commits one way, 56 the other,
+  42 source files on both sides — and finished fixes sat on it for 22–28 days because nothing
+  moved them to production (CAD-1, C5, VMS, the answer-first content). The cause was an
+  instruction: `CLAUDE.md` said *"All development happens on `nextjs`"*, so every agent built there.
+- **Before retiring it, everything of value was shipped:** its website work was already live or
+  went out in #21–#25; its SEO tooling and history moved in #24.
+
+**Changed — instructions**
+- `CLAUDE.md`, `AGENTS.md`: workflow rewritten — branch from `main`, PR, preview, merge. Explicit
+  "never build on `nextjs`".
+- `SEO/BRANCHING.md`: rewritten around the new model, keeping the stranded-fix table as the reason.
+
+**Changed — tooling**
+- `scripts/seo_diff.py` → `shipping()`: no longer compares `main` against `nextjs`. It lists every
+  remote branch holding commits `main` lacks and flags 🔴 any older than **7 days** — the new shape
+  of the old failure. First run found 5 such branches (oldest: `ipro-partnership`, 160 days).
+- `scripts/seo-audit.mjs`: audits **`kabatone.com`** against **`main`** by default (was staging
+  against `nextjs`). The branch is now one constant, `DEPLOY_BRANCH`.
+
+Verified: both scripts run; `tsc` clean; `npm run build` exit 0.
+
 ## [v2.406] – 2026-09-28 — Answer-first content for the top buyer pages, stranded on staging since August
 
 **Added — re-applied from v2.343 / v2.344, which never reached production**
