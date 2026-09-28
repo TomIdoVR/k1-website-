@@ -1,3 +1,35 @@
+## [v2.404] – 2026-09-28 — The weekly orchestrator had failed every Monday since June 15
+
+**Fixed**
+- **`seo_weekly_agent.py` shelled out to bare `python3.11`**, which is not on launchd's PATH
+  (`/usr/local/bin:/usr/bin:/bin`). `pull_gsc()` raised `FileNotFoundError` on **all 14 logged
+  scheduled runs since 2026-06-15**. The job still exited 0, because its keyword and GEO sub-steps
+  ran, so nothing flagged it. Both call sites (`pull_gsc`, `verify_serp_polling`) now use
+  `sys.executable`. Verified by running `pull_gsc(28)` under launchd's exact environment:
+  3,817 rows. The old call reproduces the failure there.
+
+**Added**
+- `SEO/weekly-report-2026-09-28.md` — the week's analysis. Search is flat and healthy (clicks −1.1%,
+  CTR and position up: query reallocation). P0 #1 is **PR #21**: production still defines the fifth C
+  of C5 as "Calidad" (verified live, 10× EN / 36× ES) on the ES C5 page, which grew +32% in clicks.
+  It also shows v2.348's VMS intent-collision fix never reached production either.
+- The 2026-09-21 and 2026-09-28 GEO and keyword snapshots. The scheduled jobs' own commits
+  fail on this OneDrive checkout (`Resource deadlock avoided`), so the cloud Slack brief kept
+  reporting GEO as stale.
+
+**Changed**
+- `SEO/carry-over.md`: 9 closed rows moved from Open to Closed; the `KAB-1721` duplicate
+  resolved (folded into AUTH-1); AUTH-2 closed as refuted (cited 3 runs straight with no
+  authority spend); GEO-4 re-statused from "watching" to blocked on PR #21 (the fix was never
+  live); a concurrent session's `SHIP-1` re-id'd to `SHIP-3` (SHIP-1 is a closed id). Escalations
+  7 → 4, all real.
+
+**Refuted**
+- The Slack brief's P0, `vms`: it has had five snippet passes since June, and CTR is flat at 0.27% at p8.5, while
+  `vms software` converts 0.64% at a worse p14.6. It's a mixed-intent head term (SCORER-2).
+- PLAN-2's rebuttal that `com.kabatone.seo-weekly` "produces the Monday brief". It was loaded
+  but its analysis had failed since June; the brief comes from the cloud routine.
+
 ## [v2.401] – 2026-09-23 — SEO agents moved to Claude Opus 5.5
 
 **Changed**
