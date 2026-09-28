@@ -356,6 +356,21 @@
 
     <div class="timeline">
 
+      <!-- v2.402 -->
+      <div class="tl-entry fixed" id="v2.402">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.402</span><span class="tl-date">2026-09-23</span></div>
+          <h3 class="tl-title">Production still defined the fifth C as &ldquo;Calidad&rdquo;</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>The correction existed since 1 September and never reached production.</strong> <code>v2.347</code> changed the fifth C from <strong>Calidad / Quality</strong> to <strong>Contacto Ciudadano / Citizen Contact</strong> across 10 files &mdash; but only <strong>4</strong> reached <code>main</code>, and none of the three pages that matter. Live this morning: <strong>14</strong> wrong occurrences on <em>how-c5-command-centers-work</em>, <strong>12</strong> on <em>que-es-un-c5</em>, <strong>5</strong> on <em>c5-command-centers-mexico-2026</em>, plus the resources hub and both metadata files. <code>public/llms.txt</code> &mdash; the file AI crawlers read first &mdash; described the model as &ldquo;Command, Control, Communications, Computing, Quality&rdquo; on the very line pointing at the C5 page. The C3/C4 order was swapped too; canonically C3 is C&oacute;mputo and C4 Comunicaciones.</p>
+          <p><strong>And a page the original correction missed entirely.</strong> <em>public-safety-software-municipalities-mexico</em> stated the wrong fifth C in <strong>four</strong> places, two of them <strong>FAQPage schema answers</strong> &mdash; exactly the surface answer engines quote. It was wrong on staging as well as production, so re-applying v2.347 alone would have left it in place.</p>
+          <p><strong>Why this is a GEO fix, not a typo.</strong> <em>&ldquo;What is a C5 command center?&rdquo;</em> has been uncited since the 7 July baseline and came back uncited again on 21 September. Our pages contradicted <code>c5.cdmx.gob.mx</code> &mdash; the institution the model is named after &mdash; so an engine choosing between us and the authority had no reason to pick us.</p>
+          <p><strong>A falsifiable test with a deadline.</strong> The GEO monitor runs Monday 07:30. If that query does not flip once this is live and re-crawled, the diagnosis is wrong and the item should be closed as refuted rather than carried a fourth week. Citation is the metric, not rank &mdash; <code>c5</code> itself is navigational, so this is not expected to move clicks.</p>
+        </div>
+      </div>
+
+
       <!-- v2.399 -->
       <div class="tl-entry added" id="v2.399">
         <div class="version-header">
