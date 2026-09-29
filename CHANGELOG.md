@@ -1,3 +1,27 @@
+## [v2.407] – 2026-09-28 — Homepage motion: count-ups, scroll reveals, a live console
+
+**Added — experimental, on `feat/homepage-motion` only**
+- **Stats count up** (`CountUp.tsx`): the hero's 73M+ / 40+ / 99.99%, the case study's 10,000+
+  and the console's 5/5 checklist count up the first time they come into view. The server still
+  renders the final value, so crawlers, no-JS and reduced-motion visitors get the real number.
+  Box width is locked before counting so neighbours never shift.
+- **Scroll reveals** (`MotionReveal.tsx`): one observer fades and lifts below-the-fold blocks
+  (section heads, before/after panels, case study, industry tiles, ecosystem groups, trust cards),
+  staggering siblings. Only elements below the fold at mount are touched, so nothing on screen
+  ever blinks out. No framer-motion — the homepage bundle gains a few hundred bytes, not a library.
+- **A live "Unified Command" console** (`home-motion.css`): events land in order with their ticks,
+  the checklist completes item by item, units' route dashes converge on the incident from both
+  ends, the incident radiates, LIVE badges breathe and the camera still carries a faint scan.
+  The fragmented half drifts and its severed links flicker — disorder beside order.
+- **Ambient**: hero stats fade up after first paint; the hero art drifts slower than the page as
+  it scrolls away (scroll-driven CSS, never touches the LCP paint); the case-study photo settles
+  from a slight over-scale as it arrives.
+
+**Guardrails**
+- Every rule sits under `prefers-reduced-motion: no-preference`; both components bail out on reduce.
+- Verified on a production build at 1440 and 375, EN and ES: CLS unchanged (0.004, all from the
+  existing customer marquee), no horizontal overflow, no new console errors.
+
 ## [v2.406] – 2026-09-28 — Answer-first content for the top buyer pages, stranded on staging since August
 
 **Added — re-applied from v2.343 / v2.344, which never reached production**

@@ -23,6 +23,7 @@ import Ecosystem from '@/components/hero-lab/Ecosystem'
 import Industries from '@/components/hero-lab/Industries'
 import TrustBand from '@/components/hero-lab/TrustBand'
 import { HeroLabFooter } from '@/components/hero-lab/HeroLabChrome'
+import MotionReveal from '@/components/hero-lab/MotionReveal'
 
 import '@/components/hero-lab/hero-lab-chrome.css'
 import '@/app/[locale]/hero-lab/hero-lab-light.css'
@@ -36,10 +37,12 @@ import '@/components/hero-lab/ecosystem.css'
 import '@/components/hero-lab/industries.css'
 import '@/components/hero-lab/platform-modules.css'
 import '@/components/hero-lab/hero-split.css'
+import '@/components/hero-lab/home-motion.css'
 
 export default function HomeComposition({ es }: { es: boolean }) {
   return (
     <>
+      <MotionReveal />
       <HeroV3Platform es={es} modules={false} split />
       <CustomerStrip es={es} />
       <BeforeAfter es={es} />

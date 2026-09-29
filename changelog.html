@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.407 -->
+      <div class="tl-entry added" id="v2.407">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.407</span><span class="tl-date">2026-09-28</span></div>
+          <h3 class="tl-title">Homepage motion: count-ups, scroll reveals, a live console</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Experimental, on <code>feat/homepage-motion</code> only.</strong> The hero stats (73M+, 40+, 99.99%), the case study&rsquo;s 10,000+ and the console&rsquo;s checklist count up the first time they come into view. The server still renders the final numbers, so crawlers and reduced-motion visitors see the real values.</p>
+          <p><strong>Below-the-fold blocks fade and lift in as they arrive</strong>, with siblings staggered. This uses one small observer and no animation library. The before/after section&rsquo;s console now plays like a live incident: events land in order, the checklist completes, units converge on a pulsing incident. The fragmented side drifts and flickers beside it.</p>
+          <p>Everything respects reduced motion. Checked on a production build at desktop and phone width in EN and ES: no layout shift added, no overflow, no new console errors.</p>
+        </div>
+      </div>
+
       <!-- v2.406 -->
       <div class="tl-entry added" id="v2.406">
         <div class="version-header">

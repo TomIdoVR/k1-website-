@@ -22,6 +22,7 @@
 
 import Image from 'next/image'
 import BeforeAfterCompare from './BeforeAfterCompare'
+import CountUp from './CountUp'
 
 type L = { en: string; es: string }
 const t = (v: L, es: boolean) => (es ? v.es : v.en)
@@ -195,7 +196,7 @@ function Console({ es }: { es: boolean }) {
               <h4 className="uc-card-title">{es ? 'FLUJO DE EVENTOS' : 'EVENT STREAM'}</h4>
               <ul className="uc-stream">
                 {SOURCES.map((s, i) => (
-                  <li key={i}>
+                  <li key={i} style={{ '--i': i } as React.CSSProperties}>
                     <span className="uc-ic" style={{ color: s.color }}><Ic n={s.icon} size={14} /></span>
                     <span className="uc-stream-label">{t(s.label, es)}</span>
                     <span className="uc-time">{s.time}</span>
@@ -208,11 +209,11 @@ function Console({ es }: { es: boolean }) {
             <section className="uc-card">
               <h4 className="uc-card-title">
                 {es ? 'LISTA DE VERIFICACIÓN' : 'CHECKLIST'}
-                <span className="uc-count">5/5</span>
+                <CountUp className="uc-count" value="5/5" delay={1100} duration={1000} />
               </h4>
               <ul className="uc-check">
                 {CHECKLIST.map((c, i) => (
-                  <li key={i}>
+                  <li key={i} style={{ '--i': i } as React.CSSProperties}>
                     <span className="uc-ok" aria-hidden="true"><Ic n="check" size={11} /></span>
                     {t(c, es)}
                   </li>
@@ -234,9 +235,15 @@ function Console({ es }: { es: boolean }) {
               <path d="M96 0c14 60-22 96-8 150s34 84 18 150" stroke="#cfe0f2" strokeWidth="16" fill="none" />
               {/* roads */}
               <path d="M0 74h400M0 142h400M0 210h400M82 0v300M156 0v300M230 0v300M304 0v300" stroke="#fff" strokeWidth="7" />
-              {/* the route the units are taking */}
-              <path d="M64 214 L64 168 L150 168 L196 142 L268 118 L306 96" stroke="#2563eb" strokeWidth="2.6" fill="none" strokeDasharray="7 6" />
+              {/* the route the units are taking — drawn as two legs that both
+                  end on the incident, so the marching dashes (home-motion.css)
+                  converge on it from either side instead of running through it */}
+              <g stroke="#2563eb" strokeWidth="2.6" fill="none" strokeDasharray="7 6">
+                <path className="uc-route" d="M64 214 L64 168 L150 168 L196 142" />
+                <path className="uc-route" d="M306 96 L268 118 L196 142" />
+              </g>
               {/* incident */}
+              <circle className="uc-inc-pulse" cx="196" cy="142" r="22" fill="#ef4444" />
               <circle cx="196" cy="142" r="34" fill="#ef4444" opacity="0.14" />
               <circle cx="196" cy="142" r="22" fill="#ef4444" opacity="0.24" />
               <circle cx="196" cy="142" r="13" fill="#ef4444" />

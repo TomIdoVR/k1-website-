@@ -4,6 +4,7 @@ import HeroLabHeader, { Arrow } from './HeroLabHeader'
 import './hero-lab-header.css'
 import HeroCardCarousel from './HeroCardCarousel'
 import { moduleCards } from './HeroModuleCards'
+import CountUp from './CountUp'
 
 const T = {
   /* The H1 names the buyer and what they run. The old "Unified Operating
@@ -55,7 +56,7 @@ function StatIcon({ name }: { name: string }) {
 
 function ProofMetrics({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
-  return <div className="hll-stats" aria-label={es ? 'Métricas de confianza' : 'Trust metrics'}>{T.stats.map((stat) => <div className="hll-stat" key={stat.num}><span className="hll-stat-icon"><StatIcon name={stat.icon} /></span><span><strong className="hll-stat-num">{stat.num}</strong><small className="hll-stat-label">{stat[language]}</small></span></div>)}</div>
+  return <div className="hll-stats" aria-label={es ? 'Métricas de confianza' : 'Trust metrics'}>{T.stats.map((stat, i) => <div className="hll-stat" key={stat.num} style={{ '--si': i } as React.CSSProperties}><span className="hll-stat-icon"><StatIcon name={stat.icon} /></span><span><strong className="hll-stat-num"><CountUp value={stat.num} delay={250 + i * 90} /></strong><small className="hll-stat-label">{stat[language]}</small></span></div>)}</div>
 }
 
 /* `modules` controls whether the seven module cards ride in the hero.
