@@ -60,7 +60,16 @@ export default function MotionReveal() {
     )
     tagged.forEach((el) => io.observe(el))
 
-    return () => io.disconnect()
+    /* The hero art's motion layer loops forever; pause it while the hero is
+       off screen so it is not repainting for nobody. */
+    const fx = document.querySelector('.hfx')
+    const fxIo = new IntersectionObserver(([e]) => fx?.classList.toggle('is-paused', !e.isIntersecting))
+    if (fx) fxIo.observe(fx)
+
+    return () => {
+      io.disconnect()
+      fxIo.disconnect()
+    }
   }, [])
 
   return null

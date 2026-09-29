@@ -1,3 +1,28 @@
+## [v2.409] – 2026-09-29 — Hero art comes alive: an SVG motion layer over the render
+
+**Added — `HeroArtFx.tsx`, on `feat/homepage-motion`**
+- The hero render stays one untouched raster (it is the LCP element); motion is a separate SVG
+  drawn in the render's own 1536×1024 pixel space and fitted with `xMaxYMax meet` — the SVG twin
+  of the `<img>`'s `object-fit: contain; object-position: right bottom`.
+- **What moves, each on the feature it belongs to** (coordinates read off the file):
+  radar pulses on both incident markers; units converging on the incident along the dashed route;
+  light running down the connectors between the glass panels and into the ground beacon; progress
+  creeping along the three unit timelines; the beacon rippling; the SOS button pulsing; police car
+  and ambulance light bars flashing blue-blue / red-red; incidents surfacing across the city; a
+  soft glint crossing the panels every 7s.
+- Pure CSS animation, no JS. Fades in 0.8s after load so it never competes with the LCP paint;
+  paused by `MotionReveal` once the hero leaves the screen; hidden entirely under reduced motion.
+
+**Changed**
+- `.hsplit-frame` wraps the render and the layer and carries the sizing the `<img>` used to
+  (`aspect-ratio` replaces its intrinsic width), at every breakpoint — so both always share one box.
+  The `<img>` is now `fill`; preload, `sizes` and LCP behaviour are unchanged.
+- The scroll parallax moved from the `<img>` to the frame so the layer rides along with the art.
+
+**Verified** (production build): overlay rendered onto the native render — every mark lands on its
+target; image and overlay boxes identical at 1633×835 and 375×812; CLS 0; no overflow; no new
+console errors.
+
 ## [v2.408] – 2026-09-29 — Solutions panel: stop the app window's title bar vanishing under the header
 
 **Fixed**

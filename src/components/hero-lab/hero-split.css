@@ -68,14 +68,27 @@
    a 2x display it was being asked for 2667px — 1.74x upscale. Capped at 700px
    tall the art lands ~1050px wide, so the same display asks for 2100px: 1.37x.
    Still short of true 1:1, which no crop or fit can fix — only a bigger render
-   can. */
-.hsplit-art img {
+   can.
+
+   These rules sit on .hsplit-frame, not the <img>: the frame holds both the
+   render and its SVG motion layer (HeroArtFx), and both fill it with the same
+   contain-and-anchor-bottom-right fit, so the overlay tracks the art exactly.
+   aspect-ratio stands in for the width the <img> used to derive on its own. */
+.hsplit-frame {
   position: absolute;
   right: 0;
   bottom: 0;
   height: min(100%, 700px);
   width: auto;
   max-width: 66%;
+  aspect-ratio: 1536 / 1024;
+}
+.hsplit-frame img,
+.hsplit-frame .hfx {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: right bottom;
 }
@@ -217,7 +230,7 @@
      edge and leave only a sliver of the console showing. Full width, anchored
      to the bottom, keeps the vehicles and the city band — the part that still
      reads at this size — sitting under the copy. */
-  .hsplit-art img {
+  .hsplit-frame {
     width: 100%;
     height: auto;
     max-width: none;
@@ -273,7 +286,7 @@
    slightly closer and let more of its colour through below the copy, while
    retaining the lightest part of the scrim behind the headline. */
 @media (max-width: 620px) {
-  .hsplit-art img {
+  .hsplit-frame {
     width: 112%;
     right: -6%;
   }

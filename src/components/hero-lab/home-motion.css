@@ -12,6 +12,10 @@
    3. Ambient — the fragmented panel's drift, the hero art's scroll parallax,
       and the case-study photo settling as it comes in. */
 
+/* The hero art's motion layer only exists as motion: its marks are drawn at
+   rest positions that mean nothing standing still. Hidden unless it can move. */
+.hfx { display: none; }
+
 @media (prefers-reduced-motion: no-preference) {
 
   /* ── 1. reveals ─────────────────────────────────────────────────────────── */
@@ -143,9 +147,10 @@
 
   /* Hero art drifts slower than the page as the hero scrolls away. Scroll-
      driven, so it costs nothing at load and never touches the LCP paint;
-     browsers without scroll timelines simply keep the art still. */
+     browsers without scroll timelines simply keep the art still. On the frame,
+     not the <img>, so the motion layer rides along with the render. */
   @supports (animation-timeline: scroll()) {
-    .hsplit-art img {
+    .hsplit-frame {
       animation: hsplit-parallax linear both;
       animation-timeline: scroll(root);
       animation-range: 0 90vh;
@@ -153,5 +158,88 @@
     @keyframes hsplit-parallax {
       to { transform: translateY(70px) scale(1.03); }
     }
+  }
+
+  /* ── 4. hero art motion layer (HeroArtFx) ──────────────────────────────── */
+
+  /* Arrives after the render has painted, so it never competes with LCP. */
+  .hfx { display: block; animation: hfx-in 1.2s ease-out 0.8s both; pointer-events: none; }
+  @keyframes hfx-in { from { opacity: 0; } }
+
+  /* Paused by MotionReveal once the hero is off screen. */
+  .hfx.is-paused, .hfx.is-paused * { animation-play-state: paused; }
+
+  .hfx-radar,
+  .hfx-sos,
+  .hfx-beacon,
+  .hfx-ping-ring,
+  .hfx-flash { transform-box: fill-box; transform-origin: center; }
+
+  .hfx-radar { opacity: 0; animation: hfx-radar 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite; }
+  .hfx-radar--sm { animation-duration: 2s; }
+  @keyframes hfx-radar {
+    0% { opacity: 0.42; transform: scale(0.6); }
+    100% { opacity: 0; transform: scale(2.3); }
+  }
+
+  .hfx-sos { opacity: 0; animation: hfx-sos 1.8s ease-out infinite; }
+  @keyframes hfx-sos {
+    0% { opacity: 0.75; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.9); }
+  }
+
+  .hfx-beacon { opacity: 0; animation: hfx-beacon 2.4s ease-out infinite; }
+  @keyframes hfx-beacon {
+    0% { opacity: 0.8; transform: scale(0.8); }
+    100% { opacity: 0; transform: scale(3.2); }
+  }
+
+  /* Marks that travel: placed entirely by their keyframes (--x0/--y0 set per
+     mark in HeroArtFx), fading in and out at the ends of the path. */
+  .hfx-mover { opacity: 0; animation: hfx-move 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+  .hfx-link { animation-duration: 2s; animation-timing-function: ease-in; }
+  .hfx-track { animation-duration: 3.2s; }
+  @keyframes hfx-move {
+    0% { opacity: 0; transform: translate(var(--x0), var(--y0)); }
+    15%, 80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--x1), var(--y1)); }
+  }
+
+  /* Light bars: blue double-flash, then red — the rhythm of a real bar. */
+  .hfx-flash { opacity: 0; animation: hfx-flash-blue 1.3s linear infinite; }
+  .hfx-flash--red { animation-name: hfx-flash-red; }
+  @keyframes hfx-flash-blue {
+    0%, 12% { opacity: 0.95; transform: scale(1); }
+    13%, 22% { opacity: 0; }
+    23%, 33% { opacity: 0.95; transform: scale(1.12); }
+    34%, 100% { opacity: 0; }
+  }
+  @keyframes hfx-flash-red {
+    0%, 49% { opacity: 0; }
+    50%, 62% { opacity: 0.95; transform: scale(1); }
+    63%, 72% { opacity: 0; }
+    73%, 83% { opacity: 0.95; transform: scale(1.12); }
+    84%, 100% { opacity: 0; }
+  }
+
+  /* City pings: each surfaces once per 9s cycle, staggered by 1.8s. */
+  .hfx-ping-ring { opacity: 0; animation: hfx-ping-ring 9s ease-out infinite; }
+  .hfx-ping-dot { opacity: 0; animation: hfx-ping-dot 9s ease-out infinite; }
+  @keyframes hfx-ping-ring {
+    0% { opacity: 0.7; transform: scale(0.3); }
+    18%, 100% { opacity: 0; transform: scale(2.6); }
+  }
+  @keyframes hfx-ping-dot {
+    0% { opacity: 0; }
+    4% { opacity: 0.9; }
+    20% { opacity: 0.9; }
+    30%, 100% { opacity: 0; }
+  }
+
+  /* A soft glint crossing the glass panels, then a long rest. */
+  .hfx-glint { animation: hfx-glint 7s cubic-bezier(0.45, 0, 0.3, 1) infinite 1.6s; transform: translateX(760px); }
+  @keyframes hfx-glint {
+    0% { transform: translateX(760px); }
+    28%, 100% { transform: translateX(1880px); }
   }
 }

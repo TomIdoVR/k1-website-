@@ -5,6 +5,7 @@ import './hero-lab-header.css'
 import HeroCardCarousel from './HeroCardCarousel'
 import { moduleCards } from './HeroModuleCards'
 import CountUp from './CountUp'
+import HeroArtFx from './HeroArtFx'
 
 const T = {
   /* The H1 names the buyer and what they run. The old "Unified Operating
@@ -94,14 +95,18 @@ const HERO_ART = '/images/hero/unified-platform-art.png'
 function HeroArt() {
   return (
     <div className="hsplit-art" aria-hidden="true">
-      <Image
-        src={HERO_ART}
-        alt=""
-        width={1536}
-        height={1024}
-        priority
-        sizes="(max-width: 980px) 100vw, 1040px"
-      />
+      {/* The frame, not the <img>, carries the sizing (hero-split.css), so the
+          render and its motion layer share one box and one fit. */}
+      <div className="hsplit-frame">
+        <Image
+          src={HERO_ART}
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 980px) 100vw, 1040px"
+        />
+        <HeroArtFx />
+      </div>
     </div>
   )
 }
