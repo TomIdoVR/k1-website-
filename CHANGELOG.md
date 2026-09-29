@@ -1,3 +1,74 @@
+## [v2.410] – 2026-09-29 — Hero art: drop the light-bar flashes
+
+**Removed**
+- The police car and ambulance light-bar flashes from the hero motion layer (`HeroArtFx`), with
+  their keyframes and the two glow gradients only they used. Per review: everything else in the
+  layer stays.
+
+## [v2.409] – 2026-09-29 — Hero art comes alive: an SVG motion layer over the render
+
+**Added — `HeroArtFx.tsx`, on `feat/homepage-motion`**
+- The hero render stays one untouched raster (it is the LCP element); motion is a separate SVG
+  drawn in the render's own 1536×1024 pixel space and fitted with `xMaxYMax meet` — the SVG twin
+  of the `<img>`'s `object-fit: contain; object-position: right bottom`.
+- **What moves, each on the feature it belongs to** (coordinates read off the file):
+  radar pulses on both incident markers; units converging on the incident along the dashed route;
+  light running down the connectors between the glass panels and into the ground beacon; progress
+  creeping along the three unit timelines; the beacon rippling; the SOS button pulsing; police car
+  and ambulance light bars flashing blue-blue / red-red; incidents surfacing across the city; a
+  soft glint crossing the panels every 7s.
+- Pure CSS animation, no JS. Fades in 0.8s after load so it never competes with the LCP paint;
+  paused by `MotionReveal` once the hero leaves the screen; hidden entirely under reduced motion.
+
+**Changed**
+- `.hsplit-frame` wraps the render and the layer and carries the sizing the `<img>` used to
+  (`aspect-ratio` replaces its intrinsic width), at every breakpoint — so both always share one box.
+  The `<img>` is now `fill`; preload, `sizes` and LCP behaviour are unchanged.
+- The scroll parallax moved from the `<img>` to the frame so the layer rides along with the art.
+
+**Verified** (production build): overlay rendered onto the native render — every mark lands on its
+target; image and overlay boxes identical at 1633×835 and 375×812; CLS 0; no overflow; no new
+console errors.
+
+## [v2.408] – 2026-09-29 — Solutions panel: stop the app window's title bar vanishing under the header
+
+**Fixed**
+- **The sticky Solutions panel scrolled its own contents.** `.sv-side` carried `max-height: 620px;
+  overflow-y: auto`. Wherever its content rendered a few px past 620 (font rendering varies by
+  machine), scrolling the page with the pointer over the panel scrolled the panel's inside first,
+  sliding the app window's title bar out of view — it read as the header covering the panel.
+  The cap is removed: the 900px `.sv-list` padding already keeps the panel pinned, so the ceiling
+  had nothing left to protect.
+- **Pinned lower**: `top` is now header + `clamp(20px, 5vh, 48px)` (was header + 16px) — 138px at
+  1633×835, 134px at 1366×768. Every product's panel fits both, and it still only releases after
+  the last accordion item has left the screen.
+- **Dropped the panel's `tabIndex={0}`** and its focus ring. It existed only because the panel was
+  a scroll box; with nothing to scroll it would be an empty stop in the tab order.
+
+## [v2.407] – 2026-09-28 — Homepage motion: count-ups, scroll reveals, a live console
+
+**Added — experimental, on `feat/homepage-motion` only**
+- **Stats count up** (`CountUp.tsx`): the hero's 73M+ / 40+ / 99.99%, the case study's 10,000+
+  and the console's 5/5 checklist count up the first time they come into view. The server still
+  renders the final value, so crawlers, no-JS and reduced-motion visitors get the real number.
+  Box width is locked before counting so neighbours never shift.
+- **Scroll reveals** (`MotionReveal.tsx`): one observer fades and lifts below-the-fold blocks
+  (section heads, before/after panels, case study, industry tiles, ecosystem groups, trust cards),
+  staggering siblings. Only elements below the fold at mount are touched, so nothing on screen
+  ever blinks out. No framer-motion — the homepage bundle gains a few hundred bytes, not a library.
+- **A live "Unified Command" console** (`home-motion.css`): events land in order with their ticks,
+  the checklist completes item by item, units' route dashes converge on the incident from both
+  ends, the incident radiates, LIVE badges breathe and the camera still carries a faint scan.
+  The fragmented half drifts and its severed links flicker — disorder beside order.
+- **Ambient**: hero stats fade up after first paint; the hero art drifts slower than the page as
+  it scrolls away (scroll-driven CSS, never touches the LCP paint); the case-study photo settles
+  from a slight over-scale as it arrives.
+
+**Guardrails**
+- Every rule sits under `prefers-reduced-motion: no-preference`; both components bail out on reduce.
+- Verified on a production build at 1440 and 375, EN and ES: CLS unchanged (0.004, all from the
+  existing customer marquee), no horizontal overflow, no new console errors.
+
 ## [v2.406] – 2026-09-28 — Answer-first content for the top buyer pages, stranded on staging since August
 
 **Added — re-applied from v2.343 / v2.344, which never reached production**

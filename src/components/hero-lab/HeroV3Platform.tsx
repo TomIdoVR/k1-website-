@@ -4,6 +4,8 @@ import HeroLabHeader, { Arrow } from './HeroLabHeader'
 import './hero-lab-header.css'
 import HeroCardCarousel from './HeroCardCarousel'
 import { moduleCards } from './HeroModuleCards'
+import CountUp from './CountUp'
+import HeroArtFx from './HeroArtFx'
 
 const T = {
   /* The H1 names the buyer and what they run. The old "Unified Operating
@@ -55,7 +57,7 @@ function StatIcon({ name }: { name: string }) {
 
 function ProofMetrics({ es }: { es: boolean }) {
   const language = es ? 'es' : 'en'
-  return <div className="hll-stats" aria-label={es ? 'Métricas de confianza' : 'Trust metrics'}>{T.stats.map((stat) => <div className="hll-stat" key={stat.num}><span className="hll-stat-icon"><StatIcon name={stat.icon} /></span><span><strong className="hll-stat-num">{stat.num}</strong><small className="hll-stat-label">{stat[language]}</small></span></div>)}</div>
+  return <div className="hll-stats" aria-label={es ? 'Métricas de confianza' : 'Trust metrics'}>{T.stats.map((stat, i) => <div className="hll-stat" key={stat.num} style={{ '--si': i } as React.CSSProperties}><span className="hll-stat-icon"><StatIcon name={stat.icon} /></span><span><strong className="hll-stat-num"><CountUp value={stat.num} delay={250 + i * 90} /></strong><small className="hll-stat-label">{stat[language]}</small></span></div>)}</div>
 }
 
 /* `modules` controls whether the seven module cards ride in the hero.
@@ -93,14 +95,18 @@ const HERO_ART = '/images/hero/unified-platform-art.png'
 function HeroArt() {
   return (
     <div className="hsplit-art" aria-hidden="true">
-      <Image
-        src={HERO_ART}
-        alt=""
-        width={1536}
-        height={1024}
-        priority
-        sizes="(max-width: 980px) 100vw, 1040px"
-      />
+      {/* The frame, not the <img>, carries the sizing (hero-split.css), so the
+          render and its motion layer share one box and one fit. */}
+      <div className="hsplit-frame">
+        <Image
+          src={HERO_ART}
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 980px) 100vw, 1040px"
+        />
+        <HeroArtFx />
+      </div>
     </div>
   )
 }

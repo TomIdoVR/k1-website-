@@ -1,0 +1,227 @@
+/* Homepage motion layer.
+
+   Everything here is additive: delete the file (and MotionReveal) and the page
+   renders exactly as before. Every rule sits inside a no-preference query, so
+   visitors with reduced motion on get the static page, not a shortened one.
+
+   Three kinds of motion, kept deliberately apart:
+   1. Reveals — `.rv` / `.rv-in`, set by MotionReveal on below-the-fold blocks.
+   2. The live console — an internal sequence in the "Unified Command" panel,
+      played once when it arrives (`.rv-seq.rv-in`), plus a few ambient loops
+      (route, incident pulse, live dots) that make it read as a live system.
+   3. Ambient — the fragmented panel's drift, the hero art's scroll parallax,
+      and the case-study photo settling as it comes in. */
+
+/* The hero art's motion layer only exists as motion: its marks are drawn at
+   rest positions that mean nothing standing still. Hidden unless it can move. */
+.hfx { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ── 1. reveals ─────────────────────────────────────────────────────────── */
+  .rv {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(min(var(--rv-i, 0), 6) * 90ms);
+  }
+  .rv.rv-in { opacity: 1; transform: none; }
+
+  /* The case-study photo settles as its frame arrives — a slow push-in from
+     slightly over-scaled, so the reveal reads as a camera, not a fade. */
+  .cust-hero.rv .cust-photo {
+    transform: scale(1.1);
+    transition: transform 1.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .cust-hero.rv-in .cust-photo { transform: none; }
+
+  /* ── 2. the live console ───────────────────────────────────────────────── */
+
+  /* Events land in order, as they would on a real incident — each row slides
+     in, then its tick pops. The checklist follows the stream and completes
+     item by item while its 0/5 counter (CountUp) runs alongside it. */
+  .uc.rv-seq:not(.rv-in) .uc-stream li,
+  .uc.rv-seq:not(.rv-in) .uc-check li { opacity: 0; }
+
+  .uc.rv-in .uc-stream li {
+    animation: uc-row-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 260ms + 200ms);
+  }
+  .uc.rv-in .uc-stream .uc-ok {
+    animation: uc-tick 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+    animation-delay: calc(var(--i) * 260ms + 520ms);
+  }
+  .uc.rv-in .uc-check li {
+    animation: uc-row-in 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 220ms + 900ms);
+  }
+  .uc.rv-in .uc-check .uc-ok {
+    animation: uc-tick 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+    animation-delay: calc(var(--i) * 220ms + 1100ms);
+  }
+  @keyframes uc-row-in {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes uc-tick {
+    from { opacity: 0; transform: scale(0.2); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Ambient: these loop for as long as the panel is on the page. Units close
+     on the incident from both ends of the route, the incident radiates, and
+     the LIVE badges breathe. */
+  .uc-route { animation: uc-march 0.9s linear infinite; }
+  @keyframes uc-march { to { stroke-dashoffset: -13; } }
+
+  .uc-inc-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: uc-ping 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+  }
+  @keyframes uc-ping {
+    0% { opacity: 0.45; transform: scale(0.4); }
+    80%, 100% { opacity: 0; transform: scale(1.9); }
+  }
+
+  .uc-live i,
+  .uc-cam-live i { animation: uc-blink 1.6s ease-in-out infinite; }
+  @keyframes uc-blink { 50% { opacity: 0.25; } }
+
+  /* A faint scan sweeping the camera still — enough to say "feed", not so
+     much it reads as a glitch. ::before, so it paints above the still but
+     under the LIVE and location labels that come after it. */
+  .uc-cam::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 0%, rgba(120, 200, 255, 0.16) 48%, rgba(120, 200, 255, 0.05) 52%, transparent 100%);
+    background-size: 100% 220%;
+    animation: uc-scan 3.6s linear infinite;
+  }
+  @keyframes uc-scan {
+    from { background-position: 0 120%; }
+    to { background-position: 0 -120%; }
+  }
+
+  /* ── 3. ambient ─────────────────────────────────────────────────────────── */
+
+  /* The fragmented half never settles: each source drifts on its own clock
+     and the severed links flicker. The contrast with the console beside it —
+     one ordered sequence — is the point of the section. `translate` rather
+     than `transform`, because the chips are positioned by their SVG
+     transform attribute and a CSS transform would replace it. */
+  .ba-chip { animation: ba-drift 5.5s ease-in-out infinite; }
+  .ba-chip:nth-of-type(2n) { animation-duration: 6.8s; animation-delay: -2.1s; }
+  .ba-chip:nth-of-type(3n) { animation-duration: 4.9s; animation-delay: -3.4s; }
+  @keyframes ba-drift {
+    0%, 100% { translate: 0 0; }
+    33% { translate: 3px -4px; }
+    66% { translate: -3px 3px; }
+  }
+  .ba-break { animation: ba-flicker 2.6s steps(1, end) infinite; }
+  .ba-scatter > g:nth-child(odd) .ba-break { animation-delay: -1.3s; }
+  .ba-scatter > g:nth-child(3n) .ba-break { animation-duration: 3.4s; }
+  @keyframes ba-flicker {
+    0%, 100% { opacity: 1; }
+    46% { opacity: 0.35; }
+    52% { opacity: 1; }
+    58% { opacity: 0.5; }
+  }
+
+  /* Hero stats fade up just after first paint, which also covers the gap
+     between the server's final value and CountUp starting its count. */
+  .hll-page--split .hll-stat {
+    animation: hll-stat-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--si, 0) * 90ms + 250ms);
+  }
+  @keyframes hll-stat-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  .hll-stat-num { font-variant-numeric: tabular-nums; }
+  .cust-metric-v { font-variant-numeric: tabular-nums; }
+
+  /* Hero art drifts slower than the page as the hero scrolls away. Scroll-
+     driven, so it costs nothing at load and never touches the LCP paint;
+     browsers without scroll timelines simply keep the art still. On the frame,
+     not the <img>, so the motion layer rides along with the render. */
+  @supports (animation-timeline: scroll()) {
+    .hsplit-frame {
+      animation: hsplit-parallax linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 90vh;
+    }
+    @keyframes hsplit-parallax {
+      to { transform: translateY(70px) scale(1.03); }
+    }
+  }
+
+  /* ── 4. hero art motion layer (HeroArtFx) ──────────────────────────────── */
+
+  /* Arrives after the render has painted, so it never competes with LCP. */
+  .hfx { display: block; animation: hfx-in 1.2s ease-out 0.8s both; pointer-events: none; }
+  @keyframes hfx-in { from { opacity: 0; } }
+
+  /* Paused by MotionReveal once the hero is off screen. */
+  .hfx.is-paused, .hfx.is-paused * { animation-play-state: paused; }
+
+  .hfx-radar,
+  .hfx-sos,
+  .hfx-beacon,
+  .hfx-ping-ring { transform-box: fill-box; transform-origin: center; }
+
+  .hfx-radar { opacity: 0; animation: hfx-radar 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite; }
+  .hfx-radar--sm { animation-duration: 2s; }
+  @keyframes hfx-radar {
+    0% { opacity: 0.42; transform: scale(0.6); }
+    100% { opacity: 0; transform: scale(2.3); }
+  }
+
+  .hfx-sos { opacity: 0; animation: hfx-sos 1.8s ease-out infinite; }
+  @keyframes hfx-sos {
+    0% { opacity: 0.75; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.9); }
+  }
+
+  .hfx-beacon { opacity: 0; animation: hfx-beacon 2.4s ease-out infinite; }
+  @keyframes hfx-beacon {
+    0% { opacity: 0.8; transform: scale(0.8); }
+    100% { opacity: 0; transform: scale(3.2); }
+  }
+
+  /* Marks that travel: placed entirely by their keyframes (--x0/--y0 set per
+     mark in HeroArtFx), fading in and out at the ends of the path. */
+  .hfx-mover { opacity: 0; animation: hfx-move 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+  .hfx-link { animation-duration: 2s; animation-timing-function: ease-in; }
+  .hfx-track { animation-duration: 3.2s; }
+  @keyframes hfx-move {
+    0% { opacity: 0; transform: translate(var(--x0), var(--y0)); }
+    15%, 80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--x1), var(--y1)); }
+  }
+
+  /* City pings: each surfaces once per 9s cycle, staggered by 1.8s. */
+  .hfx-ping-ring { opacity: 0; animation: hfx-ping-ring 9s ease-out infinite; }
+  .hfx-ping-dot { opacity: 0; animation: hfx-ping-dot 9s ease-out infinite; }
+  @keyframes hfx-ping-ring {
+    0% { opacity: 0.7; transform: scale(0.3); }
+    18%, 100% { opacity: 0; transform: scale(2.6); }
+  }
+  @keyframes hfx-ping-dot {
+    0% { opacity: 0; }
+    4% { opacity: 0.9; }
+    20% { opacity: 0.9; }
+    30%, 100% { opacity: 0; }
+  }
+
+  /* A soft glint crossing the glass panels, then a long rest. */
+  .hfx-glint { animation: hfx-glint 7s cubic-bezier(0.45, 0, 0.3, 1) infinite 1.6s; transform: translateX(760px); }
+  @keyframes hfx-glint {
+    0% { transform: translateX(760px); }
+    28%, 100% { transform: translateX(1880px); }
+  }
+}

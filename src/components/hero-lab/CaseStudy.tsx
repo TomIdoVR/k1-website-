@@ -12,6 +12,7 @@
    placeholder there too) — swap for real photography before this ships. */
 
 import Image from 'next/image'
+import CountUp from './CountUp'
 
 type Loc = { en: string; es: string }
 const TP = (en: string, es: string): Loc => ({ en, es })
@@ -72,7 +73,7 @@ export default function CaseStudy({ es }: { es: boolean }) {
 
           <div className="cust-overlay">
             <div className="cust-headline">
-              <span className="cust-metric-v">10,000+</span>
+              <CountUp className="cust-metric-v" value="10,000+" duration={2000} />
               <h2 className="cust-metric-l">{es ? 'Sensores y cámaras conectados' : 'Connected Sensors & Cameras'}</h2>
             </div>
             <div className="cust-meta">
