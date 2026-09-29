@@ -356,6 +356,18 @@
 
     <div class="timeline">
 
+      <!-- v2.408 -->
+      <div class="tl-entry fixed" id="v2.408">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.408</span><span class="tl-date">2026-09-29</span></div>
+          <h3 class="tl-title">Solutions panel: stop the app window's title bar vanishing under the header</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>The sticky product panel could scroll its own contents.</strong> It was capped at 620px with its own scrollbar. When the content came out slightly taller, scrolling over it moved the inside of the panel first and pushed the app window&rsquo;s title bar out of view, which looked like the header covering it. The cap is gone; the panel no longer scrolls independently.</p>
+          <p><strong>It also pins lower</strong>, 20&ndash;48px below the header depending on screen height, and fits fully on both a large monitor and a 1366&times;768 laptop.</p>
+        </div>
+      </div>
+
       <!-- v2.407 -->
       <div class="tl-entry added" id="v2.407">
         <div class="version-header">

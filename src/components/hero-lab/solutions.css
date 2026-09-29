@@ -134,12 +134,6 @@
 .sv-item.is-active .sv-chev { transform: rotate(180deg); color: var(--pc); }
 .sv-item-head:focus-visible { outline: 2px solid #1858f5; outline-offset: -3px; border-radius: 12px; }
 
-/* The media panel is a tab stop because it scrolls (see .sv-side below), so
-   that stop has to be visible. Offset outward rather than inward like the
-   accordion header above: this panel's content runs to its own edges, and an
-   inset outline would sit on top of the app mock. */
-.sv-side:focus-visible { outline: 3px solid rgba(24, 88, 245, 0.5); outline-offset: 3px; border-radius: 14px; }
-
 .sv-body { padding: 4px 18px 22px; border-top: 1px solid rgba(15, 30, 60, 0.07); margin-top: 2px; animation: svIn .4s cubic-bezier(.2, .8, .3, 1) both; }
 @keyframes svIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .sv-text { font-size: 14.5px; line-height: 1.6; color: #4a5f7d; margin: 16px 0 18px; text-wrap: pretty; }
@@ -170,17 +164,23 @@
    budget instead of trusting content to happen to fit. overflow-y is the
    fallback for whichever solution's content still exceeds it — an internal
    scroll inside the panel, not the top of the app window sliding under the
-   header. */
+   header.
+
+   Both since removed. The .sv-list padding-bottom (900px, above) now gives the
+   row far more room than any panel needs, so the ceiling had nothing left to
+   protect — and the overflow-y it brought turned the panel into a scroll box
+   of its own. Wherever content ran a few px past 620 (font rendering varies by
+   machine), the wheel scrolled the panel's inside before the page, sliding the
+   app window's title bar out of view under what looked like the header.
+
+   The offset scales with viewport height so the panel sits clear of the header
+   with room to breathe on a tall screen and still fits on a short laptop. */
 .sv-side {
   position: sticky;
-  top: calc(var(--hll-nav-h, 96px) + 16px);
+  top: calc(var(--hll-nav-h, 96px) + clamp(20px, 5vh, 48px));
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-height: 620px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
 }
 
 .sv-app {
@@ -199,10 +199,8 @@
 .sv-app-tools { margin-left: auto; display: flex; align-items: center; gap: 12px; color: #7d8ea6; }
 .sv-app-avatar { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #1858f5; color: #fff; font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; }
 
-/* Trimmed from min(46vh, 430px) — with the 620px ceiling on .sv-side above,
-   a shorter app window means the internal scroll fallback rarely has to
-   engage in the first place; the stats block and caption below it fit
-   without it for every solution measured. */
+/* Trimmed from min(46vh, 430px) so the whole panel — app window, stats block
+   and caption — fits under the header on a short laptop screen. */
 .sv-app-body { display: grid; grid-template-columns: 118px 1fr 152px; height: min(38vh, 360px); }
 .sv-app-side { display: flex; flex-direction: column; gap: 2px; padding: 10px 8px; background: #0d1524; border-right: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
 .sv-app-side span { display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 7px; }

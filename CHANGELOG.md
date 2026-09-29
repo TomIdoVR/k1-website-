@@ -1,3 +1,18 @@
+## [v2.408] – 2026-09-29 — Solutions panel: stop the app window's title bar vanishing under the header
+
+**Fixed**
+- **The sticky Solutions panel scrolled its own contents.** `.sv-side` carried `max-height: 620px;
+  overflow-y: auto`. Wherever its content rendered a few px past 620 (font rendering varies by
+  machine), scrolling the page with the pointer over the panel scrolled the panel's inside first,
+  sliding the app window's title bar out of view — it read as the header covering the panel.
+  The cap is removed: the 900px `.sv-list` padding already keeps the panel pinned, so the ceiling
+  had nothing left to protect.
+- **Pinned lower**: `top` is now header + `clamp(20px, 5vh, 48px)` (was header + 16px) — 138px at
+  1633×835, 134px at 1366×768. Every product's panel fits both, and it still only releases after
+  the last accordion item has left the screen.
+- **Dropped the panel's `tabIndex={0}`** and its focus ring. It existed only because the panel was
+  a scroll box; with nothing to scroll it would be an empty stop in the tab order.
+
 ## [v2.407] – 2026-09-28 — Homepage motion: count-ups, scroll reveals, a live console
 
 **Added — experimental, on `feat/homepage-motion` only**
