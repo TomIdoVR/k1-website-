@@ -61,7 +61,7 @@ const PINGS: [number, number, string, number][] = [
   [468, 560, '#2563eb', 7.2],
 ]
 
-const GLOW = { blue: '#2563eb', red: '#ef4444', cyan: '#38bdf8', light: '#3b82f6' }
+const GLOW = { blue: '#2563eb', cyan: '#38bdf8' }
 
 export default function HeroArtFx() {
   return (
@@ -129,12 +129,6 @@ export default function HeroArtFx() {
 
       {/* SOS on the phone */}
       <circle className="hfx-sos" cx="580" cy="740" r="24" fill="none" stroke="#ef4444" strokeWidth="3" />
-
-      {/* light bars: police car, then ambulance */}
-      <circle className="hfx-flash hfx-flash--blue" cx="865" cy="825" r="22" fill="url(#hfx-glow-light)" />
-      <circle className="hfx-flash hfx-flash--red" cx="910" cy="834" r="22" fill="url(#hfx-glow-red)" />
-      <circle className="hfx-flash hfx-flash--blue" cx="1257" cy="808" r="22" fill="url(#hfx-glow-light)" style={d(0.35)} />
-      <circle className="hfx-flash hfx-flash--red" cx="1345" cy="791" r="18" fill="url(#hfx-glow-red)" style={d(0.35)} />
     </svg>
   )
 }

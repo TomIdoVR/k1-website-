@@ -1,3 +1,10 @@
+## [v2.410] – 2026-09-29 — Hero art: drop the light-bar flashes
+
+**Removed**
+- The police car and ambulance light-bar flashes from the hero motion layer (`HeroArtFx`), with
+  their keyframes and the two glow gradients only they used. Per review: everything else in the
+  layer stays.
+
 ## [v2.409] – 2026-09-29 — Hero art comes alive: an SVG motion layer over the render
 
 **Added — `HeroArtFx.tsx`, on `feat/homepage-motion`**

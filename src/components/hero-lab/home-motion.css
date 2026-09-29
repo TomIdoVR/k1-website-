@@ -172,8 +172,7 @@
   .hfx-radar,
   .hfx-sos,
   .hfx-beacon,
-  .hfx-ping-ring,
-  .hfx-flash { transform-box: fill-box; transform-origin: center; }
+  .hfx-ping-ring { transform-box: fill-box; transform-origin: center; }
 
   .hfx-radar { opacity: 0; animation: hfx-radar 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite; }
   .hfx-radar--sm { animation-duration: 2s; }
@@ -203,23 +202,6 @@
     0% { opacity: 0; transform: translate(var(--x0), var(--y0)); }
     15%, 80% { opacity: 1; }
     100% { opacity: 0; transform: translate(var(--x1), var(--y1)); }
-  }
-
-  /* Light bars: blue double-flash, then red — the rhythm of a real bar. */
-  .hfx-flash { opacity: 0; animation: hfx-flash-blue 1.3s linear infinite; }
-  .hfx-flash--red { animation-name: hfx-flash-red; }
-  @keyframes hfx-flash-blue {
-    0%, 12% { opacity: 0.95; transform: scale(1); }
-    13%, 22% { opacity: 0; }
-    23%, 33% { opacity: 0.95; transform: scale(1.12); }
-    34%, 100% { opacity: 0; }
-  }
-  @keyframes hfx-flash-red {
-    0%, 49% { opacity: 0; }
-    50%, 62% { opacity: 0.95; transform: scale(1); }
-    63%, 72% { opacity: 0; }
-    73%, 83% { opacity: 0.95; transform: scale(1.12); }
-    84%, 100% { opacity: 0; }
   }
 
   /* City pings: each surfaces once per 9s cycle, staggered by 1.8s. */
