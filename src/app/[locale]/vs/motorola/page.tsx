@@ -213,6 +213,23 @@ export default async function VsMotorolaPage({
               ? 'Motorola Solutions domina las comunicaciones de seguridad pública — radios LMR, PremierOne CAD, CommandCentral Aware y Avigilon son líderes del mercado. El desafío es que cada uno es un producto separado con su propia licencia, integración y contrato de mantenimiento. KabatOne integra video, despacho CAD, GIS y gestión de tráfico en un flujo de respuesta nativo desde el primer día — sin proyectos de integración entre sistemas.'
               : 'Motorola Solutions dominates public safety communications — LMR radios, PremierOne CAD, CommandCentral Aware, and Avigilon are all market leaders. The challenge is that each is a separate product with its own license, integration effort, and maintenance contract. KabatOne integrates video, CAD dispatch, GIS, and traffic management into one native response workflow from day one — no cross-system integration projects required.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS MOTOROLA SOLUTIONS? ── */}

@@ -406,6 +406,33 @@ def carry_over():
                                  if i['status'] == 'blocked' and not i['closed']]}
 
 
+def geo_results():
+    """Latest run per engine from geo-results.csv, split by block, named vs retrieved.
+
+    geo-history.csv (the legacy trend) scores "our URL was retrieved" the same as "the
+    answer recommended us". On 2026-10-05 that read 80%; split, Claude named KabatOne in
+    3 of 40 answers while retrieving our pages in 34. Report both, lead with `named`."""
+    import csv as _csv
+    path = ROOT / 'SEO' / 'geo' / 'geo-results.csv'
+    if not path.exists():
+        return {'available': False}
+    rows = list(_csv.DictReader(path.open()))
+    out = {}
+    for eng in sorted({r['engine'] for r in rows}):
+        er = [r for r in rows if r['engine'] == eng]
+        last = max(r['date'] for r in er)
+        cur = {r['query']: r for r in er if r['date'] == last}.values()   # dedupe re-runs
+        blocks = collections.defaultdict(lambda: [0, 0, 0])
+        for r in cur:
+            b = blocks[r['block']]
+            b[0] += 1
+            b[1] += r['named_in_answer'] == 'Y'
+            b[2] += 'Y' in (r['named_in_answer'], r['in_source_set'])
+        out[eng] = {'date': last, 'blocks': {k: dict(n=v[0], named=v[1], retrieved=v[2])
+                                             for k, v in sorted(blocks.items())}}
+    return {'available': True, 'engines': out}
+
+
 def geo_freshness():
     csv = ROOT / 'SEO' / 'geo' / 'geo-history.csv'
     if not csv.exists():
@@ -652,6 +679,15 @@ def render(d):
         if g['age_days'] is not None and g['age_days'] > 10:
             a(f"- ⚠️ **{g['age_days']} days stale** — run `python3.11 SEO/geo/track_geo.py`")
         a(f"- ⚠️ {g['note']}")
+    gr = d.get('geo_results') or {}
+    if gr.get('available'):
+        a("\n**Named in the answer vs only retrieved** (`geo-results.csv`, latest run per engine; "
+          "block D = CAD). Lead with *named* — retrieval alone is not a recommendation.\n")
+        a("| Engine | Date | Block | Named | Named or retrieved |")
+        a("|---|---|---|---|---|")
+        for eng, e in gr['engines'].items():
+            for blk, b in e['blocks'].items():
+                a(f"| {eng} | {e['date']} | {blk} | {b['named']}/{b['n']} | {b['retrieved']}/{b['n']} |")
 
     if d['canonical_issues']:
         a("\n## ⚠️ Canonical sweep — stragglers found\n")
@@ -755,6 +791,7 @@ def main():
         'shipping': shipping(),
         'canonical_issues': canonical_sweep(),
         'geo': geo_freshness(),
+        'geo_results': geo_results(),
         'carry_over': carry_over(),
         'ga4_detail': ga4_detail() if ga4 else None,
         'repo_health': repo_health(),

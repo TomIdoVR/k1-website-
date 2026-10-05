@@ -11,7 +11,13 @@
 # Block C is ES/PT, because 12 English queries cannot measure a LATAM market whose
 #   /es pages pull AI traffic at 300–1,350s dwell (carry-over GEO-1).
 #
-# ~25 queries at roughly $0.02 each ≈ $0.50/run, weekly.
+# Block D is CAD (added 2026-10-05): CAD / K-Dispatch is KabatOne's 2027+ focus, and
+#   A–C only asked generic "best X" questions. D asks what a CAD buyer actually asks an
+#   AI while shortlisting: alternatives to incumbents, how to evaluate, RFP, deployment
+#   model, the LATAM 911/C5 context. D does NOT feed the legacy trend line (geo-history.csv);
+#   it is reported from geo-results.csv.
+#
+# ~40 queries at roughly $0.02 each ≈ $0.80/run per engine, weekly.
 
 # ── A. Baseline (unchanged — protects the trend line) ──────────────────────────
 What is the best CAD dispatch software for 911 centers?
@@ -43,3 +49,20 @@ software de seguridad pública para municipios
 mejor software de gestión de video para ciudades
 melhor software de despacho para segurança pública
 software de videomonitoramento para cidades
+
+# ── D. CAD / K-Dispatch (2027 focus — buyer-journey questions, EN/ES/PT) ──────
+Motorola PremierOne CAD alternatives for 911 centers
+Hexagon CAD alternatives for public safety agencies
+CentralSquare CAD alternatives
+Tyler Technologies CAD alternatives for police and fire
+How do I choose a computer aided dispatch system for a 911 center?
+What should a CAD dispatch software RFP include?
+cloud-based CAD dispatch software for police, fire and EMS
+NG911-ready CAD dispatch software
+CAD dispatch software integrated with video and real-time crime center
+police dispatch software for mid-size cities
+¿Qué es un sistema CAD de despacho de emergencias?
+software de despacho para centros C5 y 911 en México
+alternativas a Motorola para despacho de emergencias 911
+¿Cómo elegir un sistema de despacho de emergencias para un municipio?
+software CAD de despacho para polícia e bombeiros

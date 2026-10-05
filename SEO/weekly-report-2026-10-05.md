@@ -1,10 +1,11 @@
 # KabatOne Weekly SEO + GEO — 2026-10-05
 
-**Focus:** Search is flat and healthy, and both fixes shipped on 09-28 are live. The 07:30 GEO run died on
-**Anthropic API credit**. Omer topped up the key, and the re-run is complete: **20/25 (80%)**.
-*"What is a C5 command center?"* is **cited for the first time ever**, after 7 straight misses since July, 7 days
-after the corrected definition went live. It's the signal GEO-4 was waiting for, and it still needs the 10-12 run
-to confirm it, with GEO-2 split first.
+**Focus:** AI answer engines **read us but don't recommend us.** With "named in the answer" finally
+separated from "our page was retrieved", Claude names KabatOne in **3 of 40** answers while retrieving
+our pages in **34 of 40**. The 80% headline this program has reported since July was counting retrievals.
+The cause: recommendations come from third-party "best of" lists, and we aren't on them. Where our own
+pages dominate the sources (Mexico C5/911), K-Dispatch is recommended **#1**. Search is flat and healthy.
+Per Omer's 10-05 direction, **GEO and CAD now lead the program.**
 
 GSC 28d `2026-09-06 → 10-03` vs `08-30 → 09-26` (7-day shift, 21 days overlap: small deltas are noise) ·
 GA4 28d vs prior 28d · GEO: 07:30 run aborted on credit; **complete re-run 2026-10-05 after top-up** · previous report `weekly-report-2026-09-28.md`
@@ -54,7 +55,7 @@ AI/Analytics 7c / 1,087i · Brand 93c / 185i.
 |---|---|---|---|---|
 | **CAD-1:** internal links → `best-cad-dispatch-software` (PR #18) | 09-22 | 12c / 1,521i / 0.79% (ex-bot) | **11c / 1,366i / 0.81%** | **First read: flat.** The page: 59 → 56 clicks, impr 19.6k → 17.7k, **pos 9.1 → 8.8**. That's reallocation again. VID-1's equivalent needed 3 weeks. **Verdict 10-12**, as contracted |
 | **VMS:** intent collision fix (PR #23) | 09-28 | `vms` p8.5 / 1,840i / 0.27% · `vms software` p14.6 / 0.64% | `vms` **p8.1 / 3,128i / 0.26%** · `vms software` p14.7 / **0.81%** | Only ~5 post-fix days are in the window. `vms` impressions rose 70% with CTR flat. The ES explainer went 3,439 → 5,322 impr. **Too early.** The bare-vs-qualified CTR gap widened to **3×** (SCORER-2) |
-| **GEO-4:** C5 definition corrected (PR #21) | 09-28 | N on every run since 07-07 | **Y**, in an unsaved partial run | See §3 |
+| **GEO-4:** C5 definition corrected (PR #21) | 09-28 | N on every run since 07-07 | Retrieved ×5, **not named; answer still says "Calidad"** | **Not a win.** See §3 correction |
 
 Re-verified live today: the ES C5 page shows "Contacto Ciudadano" 28×. `what-is-video-management-software`
 has 0× "Compare top VMS systems". `/vs/avigilon|milestone|genetec` each link `best-vms-software` 1× and the explainer 0×.
@@ -81,82 +82,108 @@ That's the video-analytics AI-Overview absorption signature again, so a snippet 
 
 ## 3. GEO
 
-**20 / 25 cited (80%)** · complete runs: 08-31 68% → 09-14 84% → 09-21 80% → 09-28 76% → **10-05 80%**.
-The 07:30 scheduled run hit `400 — credit balance is too low` after 7 queries and correctly refused a partial
-snapshot. After Omer topped up the key, a manual re-run completed all 25 (`SEO/geo/geo-history.csv`, 10-05 rows).
+### The new measure: named vs retrieved (Claude, 40 queries, 2026-10-05)
 
-| Query | 09-28 | 10-05 | Cited instead |
+| Block | Queries | **Named in answer** | Named or retrieved |
 |---|---|---|---|
-| **What is a C5 command center?** | N | **Y** | none |
-| analytic CCTV cameras for city surveillance | N | **Y** | Avigilon |
-| best fire computer aided dispatch software | Y | **N** | CentralSquare, Hexagon, Mark43, Motorola |
-| What is AI video analytics? | N | N | Avigilon, Motorola |
-| AI VMS software for security operations | N | N | Avigilon, Genetec, Milestone, Motorola |
-| mejor software de gestión de video para ciudades | N | N | Avigilon, Genetec, Milestone, Motorola |
-| software de videomonitoramento para cidades | N | N | Avigilon, Genetec, Milestone, Motorola |
+| A. original set | 12 | **1** | 11 |
+| B. zero-click block | 7 | **0** | 5 |
+| C. ES / PT | 6 | **1** | 4 |
+| **D. CAD buyer journey (new)** | 15 | **1** | 14 |
+| **Total** | 40 | **3 (7.5%)** | 34 (85%) |
 
-**C5 (GEO-4): first citation ever.** It was N on every complete run (07-07, 08-12, 08-28, 08-31, 09-14, 09-21,
-09-28) and came back **Y in both runs today**, the aborted 07:30 one and the complete re-run. The ES query
-*"¿Qué es un centro de mando y control C5?"* stayed Y. It is exactly what the diagnosis predicted: the page had been
-publishing the wrong fifth C, and the definition went live 09-28. Still **not a verdict.** Both samples are from the same
-day and the same instrument, and the instrument can't yet tell "named in the answer" from "our URL was retrieved"
-(GEO-2). Confirm on 10-12 with GEO-2 shipped. N on 10-12 and 10-19 → refuted.
+The three named: *public safety software for Mexico and Latin America* · *¿Qué es un centro de mando y control C5?*
+· *software de despacho para centros C5 y 911 en México*. **All three are LATAM.** No English buyer query names us.
 
-**The weak spot is unchanged:** 4 of the 5 uncited queries are video/VMS, all lost to the same four vendors. The fire-CAD
-loss is one query on a sampled instrument, so it's watched, not escalated. PR #23 (VMS) has had ~7 days. Hold AUTH-1 spend.
+**Mechanism (two queries inspected in full):**
 
-**The outage is a recurrence.** The same key ran dry in July–August (the 08-24 brief: GEO stale since 07-28), and a
-month of data was lost. The 08:07 orchestrator also failed today on credit (`kabatone-seo-weekly-error.log`).
+| Query | Sources the answer drew on | KabatOne |
+|---|---|---|
+| software de despacho para centros C5 y 911 en México | **kabatone.com 18**, motorolasolutions 3, businesswire 3, gov sites | **Recommended #1** ("Recomendado principal para C5 en México") |
+| Motorola PremierOne CAD alternatives for 911 centers | ginasoftware 12, zipdo 3, civiciq 3, toolsinfo 3, criticalcommunicationsreview 3, gitnux 2, wifitalents 2, kabatone 2 | Retrieved, **not named** |
 
-**Instrument scope (G10):** Claude with web search. ChatGPT sends 58% of AI traffic and isn't measured.
-Keep the % out of board decks.
+When the source set is ours, we win. When it's third-party listicles, we're a footnote. Our CAD content is
+retrieved for 14 of 15 CAD questions, so **this is not a content gap.** It's a **third-party-mention gap**:
+the US CAD answer is assembled from "best CAD software" list sites we don't appear on. That's an authority problem, but a
+specific and cheap one. It isn't "buy backlinks"; it's "get K-Dispatch onto the 10–20 list pages AI engines actually read".
 
-## 4. Plan
+### Correction: the C5 "first citation" this morning was not a win
+
+This report's earlier draft called *"What is a C5 command center?"* a first-ever citation and an early sign GEO-4 worked.
+**It was wrong.** Inspected in full, the answer retrieved our C5 page **five times** and still told the buyer that
+the fifth C is **"Quality / Calidad"**, the wrong definition we removed from our own site on 09-28. It never
+named KabatOne. That's exactly the "retrieved, not recommended" case GEO-2 existed to catch, and it caught it on its first run.
+The legacy trend line (`geo-history.csv`, 80% today) is unchanged in meaning but **no longer the headline**.
+
+**GEO-4 is reframed:** the question isn't "are we cited" but "does the answer use our definition". As of 10-05 it
+doesn't, even with our page in hand. The Spanish C5 question *does* name us. The English one reads us and overrides us with
+the more common wrong definition.
+
+### Instrument
+- Claude only. **OpenAI (ChatGPT, 58% of our AI traffic) and Perplexity are now built in and waiting on keys** (§4).
+- 07:30 scheduled run aborted on API credit; key topped up by Omer; re-runs complete.
+- Each query is one sample per week. Read blocks, not single queries.
+
+## 4. Plan — reweighted to GEO + CAD (Omer, 2026-10-05)
+
+Standing direction: **GEO is first-class, CAD / K-Dispatch is the primary topic** (2027+ company focus).
+Video/VMS moves to maintenance: finish measuring PR #23, no new investment. Trade-off, stated plainly: CAD
+search is small (11 clicks / 1,366 impr per 28d vs video's 6,689 impr), so **total traffic will grow more
+slowly** on this path. The scoreboard changes to match (below).
 
 ### P0 — this week
 
-**#1 — GEO-2: split `cited` into `named_in_answer` and `in_source_set`.** *Owner: Claude. Effort: ~1h.
-Deadline: before the 10-12 run. 5 weeks open, 🔴.*
-**Why it beats the runner-up:** C5 just flipped, and 10-12 is the verdict. If that answer recommends only Motorola but
-retrieved our URL, it isn't a flip, and today's instrument scores both cases the same. Without the split, the verdict on the
-program's most promising experiment is uninterpretable. The runner-up is PIPE-2, moving the jobs off OneDrive. It
-matters, but it doesn't gate a decision this week.
+**#1 — Get K-Dispatch onto the third-party CAD lists AI engines read.** *Owner: Marketing (David Z) with Omer;
+Claude builds the target list. Effort: target list today, outreach over 2–4 weeks.*
+The mechanism above says this is the lever. I'll extract every domain that appears in the sources of the 15 CAD
+answers, rank them by how often they appear, and hand over a list with the exact page, current vendors listed, and how
+each takes submissions (editorial pitch, vendor form, G2/Capterra profile). **Why it beats the runner-up (homepage path,
+#3):** it's the only item that addresses why we're not named. Everything on our own site is already being read.
 
-**✅ DONE today: Anthropic key topped up** *(Omer)*, GEO re-run complete. **Auto-reload: confirm it's on** in
-console.anthropic.com → Billing. Without it, this happens a third time. The key in use is `SEO-agent` (`…OAAA`).
+**#2 — Add OpenAI and Perplexity keys** *(Omer, 5 min).* The code is shipped and skips each engine cleanly
+until its key exists. Put the keys in `~/.config/claude-seo/openai-api-key` and `~/.config/claude-seo/perplexity-api-key`
+(file contents = the key only; never in chat). About $1–2/week for both at 40 queries. ChatGPT sends 58% of our AI traffic,
+and we're currently guessing at it.
 
-**#2 — ✅ DONE: denylisted the orchestrator's #1 "quick win" as a rank-tracking bot.** Re-run under launchd's exact
-environment, the orchestrator led with *"software for public safety: position 3.3, 1,353 impr, 0 clicks, ~149 clicks
-available."* `verify_serp_polling()` (09-06 → 10-03): **1,369 impressions, 100% desktop, 0 mobile, 0 clicks**, US 1,164
-plus a thin GB/NL/DE/IT/HK spread, Mexico 1. That's the documented polling fingerprint, the same one behind SCORER-1.
-Added to `_SERP_POLLING` with the evidence inline, so both the Slack brief and the dashboard stop leading with it.
-The genuine head term `public safety software` (446 impr, p8.7, 2 clicks) is untouched.
+**#3 — Homepage → K-Dispatch path** *(Omer to approve a design).* AI-referred visitors land on the homepage
+(48 of 131 sessions in 13 weeks); 13 reached a CAD page. Solutions lists K-Safety first, K-Dispatch second. The fix
+(K-Dispatch first in Solutions, a dispatch-led line in the hero) is in the homepage redesign files, which are under
+hold, so **not changed**. Proposal for your review rather than a commit.
 
-**#3 — ✅ DONE: `seo_diff.py` no longer reports a git failure as "0 ahead / 0 behind".** *(v2.411, this branch)*
-This morning's diff printed **"0 / 0, not diverged."** The truth is **56 / 198, diverged.** A `git rev-list` on the
-OneDrive checkout timed out after 60s, and `int('' or 0)` turned the failure into a clean bill of health. That's the exact
-G12 failure the function was written to prevent. Failed counts are now `None` and render as **UNKNOWN**, and the timeout is
-raised to 180s. **Verified by execution both ways:** the real run returns 56 / 198 / diverged, and a forced failure renders the
-UNKNOWN warning.
+### Shipped today (v2.411–v2.412, branch `seo/weekly-2026-10-05`, not pushed)
+
+| What | Why | Verified |
+|---|---|---|
+| **GEO-2: named vs retrieved split** in `track_geo.py`; new `geo-results.csv` | the 80% was counting retrievals | 3 classifier unit cases; one full answer inspected by hand (C5) |
+| **OpenAI + Perplexity engines** | ChatGPT = 58% of AI traffic | code paths built; **not executed** (no keys). First run with keys is the test |
+| **Block D: 15 CAD buyer-journey questions** (EN/ES/PT) | A–C only asked "best X" | ran: 15/15 answered |
+| **Legacy trend protected** | new blocks must not move the 07-07→ line | only Claude A–C, once per date |
+| **`llms.txt` leads with K-Dispatch**: CAD facts, 8 CAD/911 guides, 9 CAD/NG911 comparisons | the AI-crawler summary of the site led with VMS | all 31 URLs return 200; 2 stale links (308 since VID-1) fixed |
+| **Site-wide Organization schema** leads with dispatch; `knowsAbout`; product catalog, K-Dispatch first | the one entity description on every page said nothing specific about CAD | rendered locally, JSON-LD present on `/` |
+| **"Short answer" block on 6 CAD comparison pages** (`/vs/cad`, motorola, hexagon, centralsquare, tyler-technologies, mark43), EN+ES | a self-contained verdict at the top, not only in the FAQ | rendered locally in both languages; **no new claims**: it's each page's own first FAQ answer |
+| **`seo_diff.py` reports named vs retrieved by engine and block** | so the weekly report leads with the right number | ran it |
+| Build | | `npm run build` exit 0 |
+
+**Fire CAD (#6 from the proposal) was already done.** `best-cad-dispatch-software` has carried a fire-dispatch block since
+08-31 (NFPA 1225, apparatus-type dispatch, mutual aid). We still lose *"best fire CAD software"*. On today's evidence that's the
+same third-party-list mechanism, so it folds into #1. There's no decision needed from you.
 
 ### P1 — this month
-
-1. **PIPE-2: point the scheduled jobs at `~/dev/k1-website`** *(Claude; needs Omer's OK to edit LaunchAgents).*
-   The OneDrive checkout now costs us two things: the jobs can't commit there (`Resource deadlock avoided`), and
-   git there is slow enough to time out (#3). The `~/dev` clone ran the same commands in seconds today.
-2. **Retire `nextjs` as the working branch** *(Omer: decision).* It's 56 behind and 198 ahead of production, and nothing on it
-   is a path to production anymore. Every SEO fix in September had to be rebuilt on a branch from `main` (SHIP-1/3).
-   Decide whether to point staging at `main` and stop committing to `nextjs`. Until then, all SEO work branches
-   from `main` (this report does).
-3. **OPS-1: seo-mailer / audit watchdog** *(Omer: restore the deleted daily audit, or retire the watchdog).* `seo-scheduler-watchdog` still exits 1.
-4. **SCORER-2: bare acronym head terms** *(Claude).* `vms` tops the opportunity table and will top today's Slack brief.
-   The qualified-vs-bare CTR test is now 3× (0.81% vs 0.26%). Build the test into `query_intent` so both pipelines stop leading with it.
+1. **GEO-4 (reframed):** the English C5 answer overrides our definition with the common wrong one. Test whether the source pages
+   it trusts (Wikipedia-type sources) carry "Calidad"; if so, it's another third-party fix.
+2. **PIPE-2:** move the scheduled jobs to `~/dev/k1-website` *(needs your OK to edit LaunchAgents)*.
+3. **BRANCH-1:** retire `nextjs` as the working branch *(your decision)*.
+4. **SCORER-2:** bare acronyms scoring as buyer.
 
 ### P2 — backlog
+Video/VMS (maintenance) · OPS-1 watchdog · PIPE-3 Slack push · GEO-3 quoted-literal queries.
 
-- **AUTH-1 authority spend:** still hold on VMS until PR #23 has 2–3 full pulls (it has ~5 days). 11 weeks open, blocked on budget, by design.
-- **GEO-3:** quoted-literal academic queries still score buyer (`"traffic management system" "11 ktco2e"` is in the zero-click table again).
-- **PIPE-3:** the cloud Slack routine can't push its artifacts *(Omer: amend the routine prompt)*.
+### New scoreboard (leads every weekly report from now)
+1. **CAD named rate**, by engine and language (block D, `geo-results.csv`). Baseline 10-05: Claude 1/15.
+2. **Overall named rate**. Baseline: Claude 3/40.
+3. **AI-referred sessions landing on CAD pages.** Baseline: 13 in 13 weeks.
+4. **CAD search clicks.** Baseline: 11 / 28d.
+5. **Demo requests from CAD pages**: not yet instrumented; I'll check GA4 for a conversion event next week.
 
 ## 5. Operations
 
@@ -195,12 +222,14 @@ UNKNOWN warning.
 | id | item | owner | weeks | status |
 |---|---|---|---|---|
 | OPS-2 | Anthropic key out of credit (**recurrence**) | Omer | 0 | topped up 10-05; **confirm auto-reload** |
-| GEO-2 | Split cited flag | Claude | 5 | 🔴 P0 #1 |
+| GEO-2 | Split cited flag | Claude | 5 | ✅ shipped v2.412 |
 | GEO-3 | Quoted-literal queries score buyer | Claude | 5 | 🔴 P2, low value |
-| GEO-4 | C5 flip | Claude | 5 | **first Y ever (10-05)**; verdict 10-12 |
+| GEO-4 | C5 flip | Claude | 5 | **reframed**: retrieved ×5, answer still says "Calidad" |
 | AUTH-1 | Authority program | Omer | 11 | blocked by design |
 | OPS-1 | seo-mailer / watchdog | Omer | 1 | decision needed |
 | PIPE-2 | Jobs on OneDrive checkout | Claude | 1 | P1 #1 |
 | PIPE-3 | Slack routine can't push | Omer | 1 | blocked |
 | SCORER-2 | Bare acronym = buyer | Claude | 1 | P1 #4 |
-| BRANCH-1 | Retire `nextjs` as working branch | Omer | 0 | new, P1 #2 |
+| BRANCH-1 | Retire `nextjs` as working branch | Omer | 0 | new, P1 #3 |
+| GEO-5 | Get K-Dispatch onto third-party CAD lists | Marketing / Omer | 0 | new, P0 #1 |
+| GEO-6 | OpenAI + Perplexity keys | Omer | 0 | new, P0 #2 |
