@@ -21,6 +21,9 @@ topic, being the 2027+ company focus. Video/VMS moves to maintenance.
 - Block D in `geo-queries.txt`: 15 CAD buyer-journey questions (incumbent alternatives, evaluation,
   RFP, cloud, NG911, Mexico 911/C5) in EN/ES/PT.
 - `seo_diff.py`: named-vs-retrieved table by engine and block.
+- `SEO/geo/cad-third-party-targets-2026-10-05.md`: the third-party pages that 19 CAD answers drew
+  their sources from, ranked by use. KabatOne is on none of the top 22. It lists the route in for each
+  and separates out the competitor-owned ones (GINA, the single most-used source, is a dispatch vendor).
 - "Short answer" block under the H1 of `/vs/cad`, `/vs/motorola`, `/vs/hexagon`, `/vs/centralsquare`,
   `/vs/tyler-technologies`, `/vs/mark43`, EN and ES. It renders each page's own first FAQ answer, so
   there are no new claims.

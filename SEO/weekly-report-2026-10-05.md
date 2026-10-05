@@ -134,10 +134,12 @@ slowly** on this path. The scoreboard changes to match (below).
 ### P0 — this week
 
 **#1 — Get K-Dispatch onto the third-party CAD lists AI engines read.** *Owner: Marketing (David Z) with Omer;
-Claude builds the target list. Effort: target list today, outreach over 2–4 weeks.*
-The mechanism above says this is the lever. I'll extract every domain that appears in the sources of the 15 CAD
-answers, rank them by how often they appear, and hand over a list with the exact page, current vendors listed, and how
-each takes submissions (editorial pitch, vendor form, G2/Capterra profile). **Why it beats the runner-up (homepage path,
+Target list ✅ delivered (`SEO/geo/cad-third-party-targets-2026-10-05.md`). Outreach over 2–4 weeks.*
+The mechanism above says this is the lever. 19 CAD answers were re-run and their sources tallied: **KabatOne is on
+none of the 22 most-used third-party pages.** Four are self-serve directories (G2, SourceForge/Slashdot,
+FeaturedCustomers, GovLaunch) and need no gatekeeper; four list sites (gitnux, wifitalents, zipdo, worldmetrics)
+share one format. The single most-used source, ginasoftware.com, is a **competing dispatch vendor's** blog, so
+it's unreachable. **Why it beats the runner-up (homepage path,
 #3):** it's the only item that addresses why we're not named. Everything on our own site is already being read.
 
 **#2 — Add OpenAI and Perplexity keys** *(Omer, 5 min).* The code is shipped and skips each engine cleanly
