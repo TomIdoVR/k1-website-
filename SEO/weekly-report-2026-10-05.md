@@ -1,13 +1,13 @@
 # KabatOne Weekly SEO + GEO — 2026-10-05
 
-**Focus:** Search is flat and healthy, and both fixes shipped on 09-28 are live. But the GEO run
-died this morning because the **Anthropic API key is out of credit**. Before it died, it returned the
-first-ever citation for *"What is a C5 command center?"*, after 7 straight misses since July. That
-result was not saved. Top up the key and the C5 experiment can be judged on 10-12. Leave it empty
-and the experiment goes dark.
+**Focus:** Search is flat and healthy, and both fixes shipped on 09-28 are live. The 07:30 GEO run died on
+**Anthropic API credit**. Omer topped up the key, and the re-run is complete: **20/25 (80%)**.
+*"What is a C5 command center?"* is **cited for the first time ever**, after 7 straight misses since July, 7 days
+after the corrected definition went live. It's the signal GEO-4 was waiting for, and it still needs the 10-12 run
+to confirm it, with GEO-2 split first.
 
 GSC 28d `2026-09-06 → 10-03` vs `08-30 → 09-26` (7-day shift, 21 days overlap: small deltas are noise) ·
-GA4 28d vs prior 28d · GEO: **aborted 2026-10-05 after 7 of 25 queries** · previous report `weekly-report-2026-09-28.md`
+GA4 28d vs prior 28d · GEO: 07:30 run aborted on credit; **complete re-run 2026-10-05 after top-up** · previous report `weekly-report-2026-09-28.md`
 
 ---
 
@@ -81,27 +81,32 @@ That's the video-analytics AI-Overview absorption signature again, so a snippet 
 
 ## 3. GEO
 
-**No valid run this week.** At 07:30, `track_geo.py` answered 7 of 25 queries and then hit
-`400 — credit balance is too low`. It correctly refused to write a partial snapshot. Last complete run: **09-28,
-19/25 (76%)**. Trend: 08-31 68% → 09-14 84% → 09-21 80% → 09-28 76%.
+**20 / 25 cited (80%)** · complete runs: 08-31 68% → 09-14 84% → 09-21 80% → 09-28 76% → **10-05 80%**.
+The 07:30 scheduled run hit `400 — credit balance is too low` after 7 queries and correctly refused a partial
+snapshot. After Omer topped up the key, a manual re-run completed all 25 (`SEO/geo/geo-history.csv`, 10-05 rows).
 
-**What the 7 queries returned before the abort** (not saved, n=7, one sample):
+| Query | 09-28 | 10-05 | Cited instead |
+|---|---|---|---|
+| **What is a C5 command center?** | N | **Y** | none |
+| analytic CCTV cameras for city surveillance | N | **Y** | Avigilon |
+| best fire computer aided dispatch software | Y | **N** | CentralSquare, Hexagon, Mark43, Motorola |
+| What is AI video analytics? | N | N | Avigilon, Motorola |
+| AI VMS software for security operations | N | N | Avigilon, Genetec, Milestone, Motorola |
+| mejor software de gestión de video para ciudades | N | N | Avigilon, Genetec, Milestone, Motorola |
+| software de videomonitoramento para cidades | N | N | Avigilon, Genetec, Milestone, Motorola |
 
-| Query | 09-28 | 10-05 (partial) |
-|---|---|---|
-| **What is a C5 command center?** | N | **Y** (vs Motorola) |
-| What is AI video analytics? | N | N |
-| best CAD dispatch software for 911 · best VMS for public safety · unified public safety platform · NG911 · public safety software for municipalities | Y | Y |
+**C5 (GEO-4): first citation ever.** It was N on every complete run (07-07, 08-12, 08-28, 08-31, 09-14, 09-21,
+09-28) and came back **Y in both runs today**, the aborted 07:30 one and the complete re-run. The ES query
+*"¿Qué es un centro de mando y control C5?"* stayed Y. It is exactly what the diagnosis predicted: the page had been
+publishing the wrong fifth C, and the definition went live 09-28. Still **not a verdict.** Both samples are from the same
+day and the same instrument, and the instrument can't yet tell "named in the answer" from "our URL was retrieved"
+(GEO-2). Confirm on 10-12 with GEO-2 shipped. N on 10-12 and 10-19 → refuted.
 
-**The C5 result is the first citation for that query ever.** It was N on every complete run (07-07, 08-12, 08-28,
-08-31, 09-14, 09-21, 09-28). It came 7 days after the corrected definition went live. That's encouraging, and it is
-exactly what the GEO-4 diagnosis predicted. But it's **one unsaved sample from a sampled instrument**, and
-the instrument can't tell "named in the answer" from "our URL was in the source set" (GEO-2, G10). It's not a verdict.
-The fair read is the 10-12 run, and **that run needs a funded key**.
+**The weak spot is unchanged:** 4 of the 5 uncited queries are video/VMS, all lost to the same four vendors. The fire-CAD
+loss is one query on a sampled instrument, so it's watched, not escalated. PR #23 (VMS) has had ~7 days. Hold AUTH-1 spend.
 
-**This is a recurrence.** The same key ran dry in July–August: the 08-24 brief reported GEO stale since 07-28 for this
-reason, and GEO data was lost for a month. Both `track_geo.py` and `seo_weekly_agent.py` read
-`~/.config/claude-seo/anthropic-api-key`. So **today's 08:07 orchestrator analysis will fail too**.
+**The outage is a recurrence.** The same key ran dry in July–August (the 08-24 brief: GEO stale since 07-28), and a
+month of data was lost. The 08:07 orchestrator also failed today on credit (`kabatone-seo-weekly-error.log`).
 
 **Instrument scope (G10):** Claude with web search. ChatGPT sends 58% of AI traffic and isn't measured.
 Keep the % out of board decks.
@@ -110,19 +115,22 @@ Keep the % out of board decks.
 
 ### P0 — this week
 
-**#1 — Top up the Anthropic API key and turn on auto-reload.** *Owner: Omer (console.anthropic.com →
-Billing). Effort: 2 minutes. Then Claude re-runs GEO today.*
-**Why it beats the runner-up:** it's the only thing between the program and the verdict on its
-most promising open experiment. C5 flipped in the partial sample, and without credit the 10-12 run dies the
-same way. It also silently breaks the orchestrator's analysis step every Monday. **Auto-reload matters more than
-the top-up itself:** this is the second time the key has run dry, and last time a month of GEO data was lost.
-The runner-up is GEO-2 (#2 below). It makes the verdict *meaningful*, but there's no verdict without data, so it comes second.
-
-**#2 — GEO-2: split `cited` into `named_in_answer` and `in_source_set`.** *Owner: Claude. Effort: ~1h.
+**#1 — GEO-2: split `cited` into `named_in_answer` and `in_source_set`.** *Owner: Claude. Effort: ~1h.
 Deadline: before the 10-12 run. 5 weeks open, 🔴.*
-The C5 "Y" this morning is exactly the case this split exists for. If the answer still says "Calidad", or recommends only
-Motorola while citing our URL, that's a source-set hit, not a flip. Without the split, the 10-12 verdict can't
-tell those apart.
+**Why it beats the runner-up:** C5 just flipped, and 10-12 is the verdict. If that answer recommends only Motorola but
+retrieved our URL, it isn't a flip, and today's instrument scores both cases the same. Without the split, the verdict on the
+program's most promising experiment is uninterpretable. The runner-up is PIPE-2, moving the jobs off OneDrive. It
+matters, but it doesn't gate a decision this week.
+
+**✅ DONE today: Anthropic key topped up** *(Omer)*, GEO re-run complete. **Auto-reload: confirm it's on** in
+console.anthropic.com → Billing. Without it, this happens a third time. The key in use is `SEO-agent` (`…OAAA`).
+
+**#2 — ✅ DONE: denylisted the orchestrator's #1 "quick win" as a rank-tracking bot.** Re-run under launchd's exact
+environment, the orchestrator led with *"software for public safety: position 3.3, 1,353 impr, 0 clicks, ~149 clicks
+available."* `verify_serp_polling()` (09-06 → 10-03): **1,369 impressions, 100% desktop, 0 mobile, 0 clicks**, US 1,164
+plus a thin GB/NL/DE/IT/HK spread, Mexico 1. That's the documented polling fingerprint, the same one behind SCORER-1.
+Added to `_SERP_POLLING` with the evidence inline, so both the Slack brief and the dashboard stop leading with it.
+The genuine head term `public safety software` (446 impr, p8.7, 2 clicks) is untouched.
 
 **#3 — ✅ DONE: `seo_diff.py` no longer reports a git failure as "0 ahead / 0 behind".** *(v2.411, this branch)*
 This morning's diff printed **"0 / 0, not diverged."** The truth is **56 / 198, diverged.** A `git rev-list` on the
@@ -159,8 +167,9 @@ UNKNOWN warning.
 | Commits this week | 0. Nothing has shipped since 09-29 |
 | Branches | **Diverged:** `nextjs` 56 ahead, `main` 198 ahead (production v2.410, staging v2.400). The diff script reported 0 / 0. Fixed (#3) |
 | Local unpushed (OneDrive `nextjs`) | 2 (v2.401, v2.404). **Both already reached `main`** via PR #24 (`bbfc141`, `86437f1`), so nothing is stranded |
-| GEO freshness | ⚠️ last complete run 09-28. **10-05 aborted (credit)** |
-| Orchestrator (`seo-weekly`, 08:07) | ⚠️ will fail its analysis step today, same key |
+| GEO freshness | ✅ 10-05 complete (manual re-run after the 07:30 run aborted on credit) |
+| Orchestrator (`seo-weekly`, 08:07) | ❌ failed on credit. **Re-run OK** (`--dry-run`, launchd env): `SEO/audits/traffic-2026-10-05.html` written. Its headline was a bot (P0 #2) |
+| Headroom proxy | ⚠️ a re-run from an interactive shell inherits `ANTHROPIC_BASE_URL=localhost:8787`. The proxy compressed the agent's tool results, and the model then invented numbers (it said so itself). launchd doesn't set it, so scheduled runs are unaffected. **Run the agent with launchd's env, never from a shell** |
 | Slack routine | last run 09-28; today's fires 08:02 EDT. **Expect it to lead with `vms` and report GEO stale**. Both are explained above |
 | Scheduler watchdog | exit 1 (OPS-1) |
 | Master plan age | 20 days ⚠️ |
@@ -173,7 +182,7 @@ UNKNOWN warning.
 - PR #21: C5 fifth C corrected (`5a141c2`). ES page: 28× "Contacto Ciudadano", 0× wrong.
 - PR #23: VMS intent collision fixed (v2.405). Buyer promise gone, `/vs/` pages link `best-vms-software`.
 - PR #25: answer-first content for the top buyer pages (v2.406).
-- v2.411 (this branch, unpushed): `seo_diff.py` silent-zero fix.
+- v2.411 (this branch, unpushed): `seo_diff.py` silent-zero fix; `software for public safety` denylisted as polling; 10-05 GEO rows.
 
 **Refuted / corrected**
 - **Last week's P0 #4, "push `nextjs`", is withdrawn.** The two commits it was protecting are already on `main`.
@@ -185,10 +194,10 @@ UNKNOWN warning.
 
 | id | item | owner | weeks | status |
 |---|---|---|---|---|
-| OPS-2 | Anthropic key out of credit (**recurrence**) | Omer | 0 | 🔴 blocking GEO + orchestrator |
-| GEO-2 | Split cited flag | Claude | 5 | 🔴 P0 #2 |
+| OPS-2 | Anthropic key out of credit (**recurrence**) | Omer | 0 | topped up 10-05; **confirm auto-reload** |
+| GEO-2 | Split cited flag | Claude | 5 | 🔴 P0 #1 |
 | GEO-3 | Quoted-literal queries score buyer | Claude | 5 | 🔴 P2, low value |
-| GEO-4 | C5 flip | Claude | 5 | watching. First Y (unsaved); verdict 10-12 |
+| GEO-4 | C5 flip | Claude | 5 | **first Y ever (10-05)**; verdict 10-12 |
 | AUTH-1 | Authority program | Omer | 11 | blocked by design |
 | OPS-1 | seo-mailer / watchdog | Omer | 1 | decision needed |
 | PIPE-2 | Jobs on OneDrive checkout | Claude | 1 | P1 #1 |
