@@ -165,6 +165,13 @@
 **Known**
 - Version numbers now run backwards in history (v2.378, then v2.348–v2.350 replayed on top). Cosmetic; this entry restores monotonicity.
 
+## [SEO Brief] 2026-09-14 — Weekly SEO brief
+**Added**
+- `SEO/audits/weekly-2026-09-14.json` — GA4 + GSC data pull (28-day period Aug 17–Sep 13)
+- `SEO/audits/weekly-2026-09-14.md` — five-section brief: traffic, search, GEO, plan, operations
+- `SEO/audits/traffic-2026-09-14.html` — HTML dashboard (deterministic, no AI)
+- Organic clicks +29% to 597; staging 36 commits ahead of prod; missing Python deps flagged
+
 ## [v2.378] – 2026-09-08 — The scorer's #1 opportunity was a bot, and a citation rate averaged two different runs
 
 **Fixed — the opportunity scorer ranked automated SERP polling first**
@@ -262,6 +269,15 @@
 - 20 anchors reading "VMS Software" / "Video Management Software" still point at the explainer
   and were deliberately left alone: that is topic naming, not buyer intent, and repointing them
   would repeat the CAD-1 error of counting links without reading them.
+
+## [SEO] 2026-09-07 — Weekly SEO brief
+
+**Added**
+- `SEO/audits/weekly-2026-09-07.json` — raw GA4 + GSC data (28-day period ending 2026-09-06)
+- `SEO/audits/weekly-2026-09-07.md` — five-section brief (Traffic, Search, GEO, Plan, Operations)
+- `SEO/audits/traffic-2026-09-07.html` — HTML dashboard (deterministic render, no AI)
+
+Key findings: organic sessions +16.5%, search clicks +34.3%; direct traffic −12.9% pulling headline total to −4.5%; 35 staging commits not in production including the C5 content fix (v2.347).
 
 ## [v2.347] – 2026-09-01 — The C5 pages told the wrong story about what the fifth C is
 
