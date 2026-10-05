@@ -191,9 +191,22 @@ def channels(ga4):
 def _sh(cmd):
     try:
         return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
-                              timeout=60).stdout.strip()
+                              timeout=180).stdout.strip()
     except Exception:
         return ''
+
+
+def _count(cmd):
+    """A git count, or None if git failed or timed out.
+
+    Never fall back to 0: on the OneDrive checkout `rev-list` can time out, and a silent 0
+    printed "0 ahead / 0 behind, not diverged" on 2026-10-05 while the truth was 56 / 198.
+    """
+    try:
+        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=180)
+        return int(r.stdout.strip()) if r.returncode == 0 else None
+    except Exception:
+        return None
 
 
 def shipping():
@@ -209,8 +222,8 @@ def shipping():
     a HIGHER version, with 8 files modified on both sides. Acting on the one-way number
     would have merged an older branch into a newer one across the live site."""
     _sh(['git', 'fetch', 'origin', '--quiet'])
-    ahead = int(_sh(['git', 'rev-list', '--count', 'origin/main..origin/nextjs']) or 0)
-    behind = int(_sh(['git', 'rev-list', '--count', 'origin/nextjs..origin/main']) or 0)
+    ahead = _count(['git', 'rev-list', '--count', 'origin/main..origin/nextjs'])
+    behind = _count(['git', 'rev-list', '--count', 'origin/nextjs..origin/main'])
     base = _sh(['git', 'merge-base', 'origin/main', 'origin/nextjs'])
     main_sha = _sh(['git', 'rev-parse', 'origin/main'])
     overlap = []
@@ -233,8 +246,9 @@ def shipping():
         'overlapping_files': overlap,
         'version_main': _ver('origin/main'),
         'version_nextjs': _ver('origin/nextjs'),
-        'local_unpushed': int(_sh(['git', 'rev-list', '--count',
-                                   'origin/nextjs..nextjs']) or 0),
+        'local_unpushed': _count(['git', 'rev-list', '--count',
+                                  'origin/nextjs..nextjs']),
+        'unknown': ahead is None or behind is None or not base or not main_sha,
         'last_prod_commit': _sh(['git', 'log', 'origin/main', '-1',
                                  '--format=%h %ad %s', '--date=short']),
     }
@@ -597,6 +611,9 @@ def render(d):
 
     s = d['shipping']
     a("\n## Shipping\n")
+    if s.get('unknown'):
+        a("> ⚠️ **git query failed or timed out — branch divergence is UNKNOWN.** Do not report "
+          "0 ahead / 0 behind. Re-run, or count by hand with `git rev-list --count` both ways (G12).\n")
     a(f"- `nextjs` ahead of `main`: **{s['staging_ahead_of_prod']}** commits "
       f"(staging {s['version_nextjs']})")
     a(f"- `main` ahead of `nextjs`: **{s['prod_ahead_of_staging']}** commits "

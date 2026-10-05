@@ -1,3 +1,25 @@
+## [v2.411] – 2026-10-05 — Weekly SEO report; the diff script reported a git failure as "not diverged"
+
+**Fixed**
+- **`scripts/seo_diff.py` turned a failed git count into `0`.** On the OneDrive checkout a
+  `git rev-list` timed out (60s), `_sh` returned `''`, and `int('' or 0)` printed
+  "`nextjs` 0 ahead / `main` 0 ahead, not diverged". The truth was **56 / 198, diverged**: the exact
+  G12 failure `shipping()` was written to prevent. Counts now go through `_count()`, which returns
+  `None` on failure; the report renders an **UNKNOWN** warning instead of zeros. Timeout raised to 180s.
+  Verified by execution: the real run returns 56 / 198 / diverged; a forced failure renders the warning.
+
+**Added**
+- `SEO/weekly-report-2026-10-05.md`. Search flat and healthy (clicks +2.3%, CTR 0.48 → 0.52%,
+  position 12.6 → 11.6; reallocation, not decay). CAD-1 first read flat (11c / 1,366i / 0.81% vs the
+  12c / 1,521i baseline), verdict 10-12. The GEO run aborted on **Anthropic API credit** after 7 of 25
+  queries; before it did, *"What is a C5 command center?"* came back cited for the first time ever
+  (N on every run since 07-07). That was one unsaved sample, so it is not a verdict.
+- `SEO/gsc-fresh-2026-10-05.json`: the week's GSC pull.
+
+**Changed**
+- `SEO/carry-over.md`: SHIP-3 closed (both halves live, re-verified); new OPS-2 (API credit,
+  recurrence) and BRANCH-1 (retire `nextjs`); GEO-2 promoted to P0 ahead of the 10-12 GEO-4 verdict.
+
 ## [v2.410] – 2026-09-29 — Hero art: drop the light-bar flashes
 
 **Removed**
