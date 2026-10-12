@@ -208,6 +208,23 @@ export default async function VsMark43Page({
               ? 'Mark43 llevó arquitectura cloud-native al mundo del CAD legacy — una mejora real para agencias que operaban con sistemas on-premise de décadas. KabatOne parte desde el mismo punto de partida cloud-native y lo extiende: video, CAD, GIS y gestión de tráfico en un solo flujo operativo, sin necesidad de sistemas adicionales para cubrir el ciclo completo de respuesta.'
               : 'Mark43 brought cloud-native architecture to the legacy CAD world — a genuine improvement for agencies running decades-old on-premise systems. KabatOne starts from that same cloud-native baseline and extends it: video, CAD, GIS, and traffic management in one operational workflow, with no additional systems required to cover the full response cycle.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS MARK43? ── */}

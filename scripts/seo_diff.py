@@ -191,9 +191,22 @@ def channels(ga4):
 def _sh(cmd):
     try:
         return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
-                              timeout=60).stdout.strip()
+                              timeout=180).stdout.strip()
     except Exception:
         return ''
+
+
+def _count(cmd):
+    """A git count, or None if git failed or timed out.
+
+    Never fall back to 0: on the OneDrive checkout `rev-list` can time out, and a silent 0
+    printed "0 ahead / 0 behind, not diverged" on 2026-10-05 while the truth was 56 / 198.
+    """
+    try:
+        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=180)
+        return int(r.stdout.strip()) if r.returncode == 0 else None
+    except Exception:
+        return None
 
 
 def shipping():
@@ -209,8 +222,8 @@ def shipping():
     a HIGHER version, with 8 files modified on both sides. Acting on the one-way number
     would have merged an older branch into a newer one across the live site."""
     _sh(['git', 'fetch', 'origin', '--quiet'])
-    ahead = int(_sh(['git', 'rev-list', '--count', 'origin/main..origin/nextjs']) or 0)
-    behind = int(_sh(['git', 'rev-list', '--count', 'origin/nextjs..origin/main']) or 0)
+    ahead = _count(['git', 'rev-list', '--count', 'origin/main..origin/nextjs'])
+    behind = _count(['git', 'rev-list', '--count', 'origin/nextjs..origin/main'])
     base = _sh(['git', 'merge-base', 'origin/main', 'origin/nextjs'])
     main_sha = _sh(['git', 'rev-parse', 'origin/main'])
     overlap = []
@@ -233,8 +246,9 @@ def shipping():
         'overlapping_files': overlap,
         'version_main': _ver('origin/main'),
         'version_nextjs': _ver('origin/nextjs'),
-        'local_unpushed': int(_sh(['git', 'rev-list', '--count',
-                                   'origin/nextjs..nextjs']) or 0),
+        'local_unpushed': _count(['git', 'rev-list', '--count',
+                                  'origin/nextjs..nextjs']),
+        'unknown': ahead is None or behind is None or not base or not main_sha,
         'last_prod_commit': _sh(['git', 'log', 'origin/main', '-1',
                                  '--format=%h %ad %s', '--date=short']),
     }
@@ -390,6 +404,33 @@ def carry_over():
             'duplicate_ids': dupes,
             'blocked_on_human': [i for i in items
                                  if i['status'] == 'blocked' and not i['closed']]}
+
+
+def geo_results():
+    """Latest run per engine from geo-results.csv, split by block, named vs retrieved.
+
+    geo-history.csv (the legacy trend) scores "our URL was retrieved" the same as "the
+    answer recommended us". On 2026-10-05 that read 80%; split, Claude named KabatOne in
+    3 of 40 answers while retrieving our pages in 34. Report both, lead with `named`."""
+    import csv as _csv
+    path = ROOT / 'SEO' / 'geo' / 'geo-results.csv'
+    if not path.exists():
+        return {'available': False}
+    rows = list(_csv.DictReader(path.open()))
+    out = {}
+    for eng in sorted({r['engine'] for r in rows}):
+        er = [r for r in rows if r['engine'] == eng]
+        last = max(r['date'] for r in er)
+        cur = {r['query']: r for r in er if r['date'] == last}.values()   # dedupe re-runs
+        blocks = collections.defaultdict(lambda: [0, 0, 0])
+        for r in cur:
+            b = blocks[r['block']]
+            b[0] += 1
+            b[1] += r['named_in_answer'] == 'Y'
+            b[2] += 'Y' in (r['named_in_answer'], r['in_source_set'])
+        out[eng] = {'date': last, 'blocks': {k: dict(n=v[0], named=v[1], retrieved=v[2])
+                                             for k, v in sorted(blocks.items())}}
+    return {'available': True, 'engines': out}
 
 
 def geo_freshness():
@@ -597,6 +638,9 @@ def render(d):
 
     s = d['shipping']
     a("\n## Shipping\n")
+    if s.get('unknown'):
+        a("> ⚠️ **git query failed or timed out — branch divergence is UNKNOWN.** Do not report "
+          "0 ahead / 0 behind. Re-run, or count by hand with `git rev-list --count` both ways (G12).\n")
     a(f"- `nextjs` ahead of `main`: **{s['staging_ahead_of_prod']}** commits "
       f"(staging {s['version_nextjs']})")
     a(f"- `main` ahead of `nextjs`: **{s['prod_ahead_of_staging']}** commits "
@@ -635,6 +679,15 @@ def render(d):
         if g['age_days'] is not None and g['age_days'] > 10:
             a(f"- ⚠️ **{g['age_days']} days stale** — run `python3.11 SEO/geo/track_geo.py`")
         a(f"- ⚠️ {g['note']}")
+    gr = d.get('geo_results') or {}
+    if gr.get('available'):
+        a("\n**Named in the answer vs only retrieved** (`geo-results.csv`, latest run per engine; "
+          "block D = CAD). Lead with *named* — retrieval alone is not a recommendation.\n")
+        a("| Engine | Date | Block | Named | Named or retrieved |")
+        a("|---|---|---|---|---|")
+        for eng, e in gr['engines'].items():
+            for blk, b in e['blocks'].items():
+                a(f"| {eng} | {e['date']} | {blk} | {b['named']}/{b['n']} | {b['retrieved']}/{b['n']} |")
 
     if d['canonical_issues']:
         a("\n## ⚠️ Canonical sweep — stragglers found\n")
@@ -738,6 +791,7 @@ def main():
         'shipping': shipping(),
         'canonical_issues': canonical_sweep(),
         'geo': geo_freshness(),
+        'geo_results': geo_results(),
         'carry_over': carry_over(),
         'ga4_detail': ga4_detail() if ga4 else None,
         'repo_health': repo_health(),

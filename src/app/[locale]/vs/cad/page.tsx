@@ -210,6 +210,23 @@ export default async function VsCadPage({
               ? 'Los sistemas CAD fueron diseñados para una función crítica: conectar despachadores con unidades. Motorola PremierOne, Hexagon HxGN OnCall, Tyler Technologies New World CAD y CentralSquare hacen esa función bien. El problema es que el ciclo de respuesta moderno va mucho más allá del despacho — incluye video de cámaras de ciudad, conciencia situacional GIS a escala municipal, coordinación de tráfico durante emergencias y documentación de campo. KabatOne integra el CAD con todo eso en un solo sistema nativo.'
               : 'CAD systems were designed for one critical function: connecting dispatchers with units. Motorola PremierOne, Hexagon HxGN OnCall, Tyler Technologies New World CAD, and CentralSquare do that function well. The problem is that the modern response cycle goes far beyond dispatch — it includes city camera video, municipal-scale GIS situational awareness, traffic coordination during emergencies, and field documentation. KabatOne integrates CAD with all of that in one native system.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS TRADITIONAL CAD? ── */}

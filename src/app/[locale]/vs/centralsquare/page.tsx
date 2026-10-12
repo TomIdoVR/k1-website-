@@ -218,6 +218,23 @@ export default async function VsCentralsquarePage({
               ? 'CentralSquare es el resultado de fusionar cuatro empresas de software gubernamental — Superion, TriTech, Aptean Public Sector y Zuercher — en una cartera amplia pero heterogénea de productos CAD, RMS y ERP municipal. KabatOne ofrece el camino opuesto: una sola plataforma cloud-native, un solo código base, que unifica video, CAD, GIS y tráfico en el flujo operativo de respuesta — probada en 40+ ciudades de Latinoamérica.'
               : 'CentralSquare is the result of merging four government software companies — Superion, TriTech, Aptean Public Sector, and Zuercher — into a broad but heterogeneous portfolio of CAD, RMS, and municipal ERP products. KabatOne offers the opposite path: one cloud-native platform, one codebase, unifying video, CAD, GIS, and traffic in the response operational workflow — proven in 40+ cities across Latin America.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS CENTRALSQUARE? ── */}

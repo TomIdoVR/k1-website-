@@ -2,138 +2,293 @@
 """
 KabatOne — GEO (Generative Engine Optimization) citation monitor.
 
-For each target buyer question, asks Claude *with web search* to answer it, then
-checks whether kabatone.com / KabatOne appears in the answer or its citations —
-a proxy for "would an AI answer engine cite us?". Logs a dated snapshot and reports
-which queries cite KabatOne vs which cite competitors instead.
+For each target buyer question, asks an AI answer engine *with web search* to answer it,
+then checks whether KabatOne appears — and, separately, HOW it appears:
+
+  named_in_answer  KabatOne / K-Dispatch is named in the answer text the buyer reads
+  in_source_set    a kabatone.com URL was among the sources the engine retrieved or cited
+
+These are different outcomes. "Retrieved our page, recommended Motorola" is a source-set
+hit, not a win. Until 2026-10-05 both scored as one "cited" flag (carry-over GEO-2).
+
+Engines (each optional except Claude, which carries the trend line):
+  claude      Anthropic Messages API + web_search tool  — key: ~/.config/claude-seo/anthropic-api-key
+  openai      OpenAI Responses API + web_search tool    — key: ~/.config/claude-seo/openai-api-key
+  perplexity  Perplexity Sonar (search is built in)     — key: ~/.config/claude-seo/perplexity-api-key
+An engine with no key file is skipped with a note; it never fails the run.
+
+Outputs:
+  geo-results.csv   every engine, every block: date, engine, block, query, named_in_answer,
+                    in_source_set, kabatone_url, competitors.  The analysis file.
+  geo-history.csv   LEGACY trend line, unchanged meaning: Claude only, blocks A–C only,
+                    kabatone_cited = named OR retrieved. Written at most once per date.
 
 Usage:
-  python3.11 track_geo.py                 # run all queries, append snapshot
-  python3.11 track_geo.py --no-write       # report only
-  python3.11 track_geo.py --limit 3        # first 3 queries (cheap smoke test)
+  python3.11 track_geo.py                       # all engines with keys, all blocks
+  python3.11 track_geo.py --engines claude      # one engine
+  python3.11 track_geo.py --blocks D            # one block (e.g. the CAD block)
+  python3.11 track_geo.py --no-write --limit 3  # cheap smoke test
 
-Cost: one web-search-enabled message per query (~$0.01-0.03 each).
-Run weekly (e.g. alongside the Monday weekly agent).
+Cost: one web-search-enabled request per query per engine (~$0.01-0.03 each).
 """
-import argparse, csv, os, re, sys
+import argparse, csv, json, os, re, sys, urllib.error, urllib.request
 from pathlib import Path
 from datetime import datetime
 
 HERE = Path(__file__).parent
 HISTORY = HERE / 'geo-history.csv'
+RESULTS = HERE / 'geo-results.csv'
 QUERIES_FILE = HERE / 'geo-queries.txt'
+KEY_DIR = Path.home() / '.config' / 'claude-seo'
+
+# Blocks that feed the legacy trend line. Adding a block must never move that line.
+LEGACY_BLOCKS = {'A', 'B', 'C'}
 
 COMPETITORS = ['genetec', 'milestone', 'motorola', 'avigilon', 'verkada', 'fusus',
                'axon', 'hexagon', 'mark43', 'tyler technologies', 'centralsquare',
-               'carbyne', 'rapidsos', 'peregrine', 'flock safety']
+               'carbyne', 'rapidsos', 'peregrine', 'flock safety', 'zuercher', 'intrado',
+               'zetron', 'versaterm', 'spillman']
 
-def _api_key():
-    kf = Path.home() / '.config' / 'claude-seo' / 'anthropic-api-key'
+# KabatOne's product names count as being named; the domain alone does not.
+_NAMED = re.compile(r'\bkabat\s?one\b|\bk-dispatch\b|\bk-safety\b|\bk-video\b', re.I)
+_PROMPT = '{q} Recommend specific vendors/products and cite sources.'
+
+RESULT_FIELDS = ['date', 'engine', 'block', 'query', 'named_in_answer', 'in_source_set',
+                 'kabatone_url', 'competitors']
+
+
+class FatalEngineError(Exception):
+    """Credit, auth or permission failure: applies to every remaining query on this engine."""
+
+
+def _key(name, env):
+    kf = KEY_DIR / name
     if kf.exists():
         return kf.read_text().strip()
-    return os.environ.get('ANTHROPIC_API_KEY', '')
+    return os.environ.get(env, '')
 
-def ask_with_search(client, model, query):
-    """Ask the query with web search on; return (full_text, citation_urls)."""
-    resp = client.messages.create(
-        model=model,
-        max_tokens=1024,
-        tools=[{'type': 'web_search_20250305', 'name': 'web_search', 'max_uses': 3}],
-        messages=[{'role': 'user',
-                   'content': f'{query} Recommend specific vendors/products and cite sources.'}],
-    )
-    text_parts, urls = [], []
-    for block in resp.content:
-        btype = getattr(block, 'type', '')
-        if btype == 'text':
-            text_parts.append(block.text or '')
-            for cit in (getattr(block, 'citations', None) or []):
-                u = getattr(cit, 'url', None)
-                if u:
-                    urls.append(u)
-        elif btype == 'web_search_tool_result':
-            for item in (getattr(block, 'content', None) or []):
-                u = getattr(item, 'url', None)
-                if u:
-                    urls.append(u)
-    return ' '.join(text_parts), urls
+
+def load_queries(blocks=None):
+    """[(block_letter, query)] from geo-queries.txt; a block starts at '# ── X.'"""
+    out, block = [], 'A'
+    for line in QUERIES_FILE.read_text().splitlines():
+        s = line.strip()
+        m = re.match(r'#\s*──\s*([A-Z])\.', s)
+        if m:
+            block = m.group(1)
+            continue
+        if s and not s.startswith('#') and (not blocks or block in blocks):
+            out.append((block, s))
+    return out
+
+
+def _fatal(msg):
+    m = msg.lower()
+    return any(s in m for s in ('credit balance', 'insufficient_quota', 'authentication',
+                                'invalid api key', 'invalid_api_key', 'permission'))
+
+
+# ── engines: each factory returns ask(q) -> (answer_text, [urls]), or None if no key ──
+
+def make_claude(model):
+    key = _key('anthropic-api-key', 'ANTHROPIC_API_KEY')
+    if not key:
+        return None
+    import anthropic
+    # Timeout is load-bearing: launchd won't start a second instance while one runs, so a
+    # wedged request would silently block every later Monday. base_url is deliberately NOT
+    # pinned -- ANTHROPIC_BASE_URL may point at the local headroom proxy on purpose.
+    client = anthropic.Anthropic(api_key=key, timeout=120.0, max_retries=2)
+
+    def ask(q):
+        try:
+            resp = client.messages.create(
+                model=model, max_tokens=1024,
+                tools=[{'type': 'web_search_20250305', 'name': 'web_search', 'max_uses': 3}],
+                messages=[{'role': 'user', 'content': _PROMPT.format(q=q)}])
+        except Exception as e:
+            if _fatal(str(e)):
+                raise FatalEngineError(str(e))
+            raise
+        text, urls = [], []
+        for b in resp.content:
+            t = getattr(b, 'type', '')
+            if t == 'text':
+                text.append(b.text or '')
+                urls += [c.url for c in (getattr(b, 'citations', None) or [])
+                         if getattr(c, 'url', None)]
+            elif t == 'web_search_tool_result':
+                urls += [i.url for i in (getattr(b, 'content', None) or [])
+                         if getattr(i, 'url', None)]
+        return ' '.join(text), urls
+    return ask
+
+
+def make_openai(model):
+    key = _key('openai-api-key', 'OPENAI_API_KEY')
+    if not key:
+        return None
+    import openai
+    client = openai.OpenAI(api_key=key, timeout=120.0, max_retries=2)
+
+    def ask(q):
+        try:
+            resp = client.responses.create(model=model, tools=[{'type': 'web_search'}],
+                                           input=_PROMPT.format(q=q))
+        except Exception as e:
+            if _fatal(str(e)) or getattr(e, 'status_code', 0) in (401, 403, 429):
+                raise FatalEngineError(str(e))
+            raise
+        text, urls = [], []
+        for item in (resp.output or []):
+            t = getattr(item, 'type', '')
+            if t == 'message':
+                for c in (item.content or []):
+                    text.append(getattr(c, 'text', '') or '')
+                    urls += [a.url for a in (getattr(c, 'annotations', None) or [])
+                             if getattr(a, 'url', None)]
+            elif t == 'web_search_call':
+                act = getattr(item, 'action', None)
+                urls += [s.url for s in (getattr(act, 'sources', None) or [])
+                         if getattr(s, 'url', None)]
+        return ' '.join(text), urls
+    return ask
+
+
+def make_perplexity(model):
+    key = _key('perplexity-api-key', 'PERPLEXITY_API_KEY')
+    if not key:
+        return None
+
+    def ask(q):
+        body = json.dumps({'model': model,
+                           'messages': [{'role': 'user', 'content': _PROMPT.format(q=q)}]})
+        req = urllib.request.Request('https://api.perplexity.ai/chat/completions',
+                                     data=body.encode(), method='POST',
+                                     headers={'Authorization': f'Bearer {key}',
+                                              'Content-Type': 'application/json'})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                d = json.load(r)
+        except urllib.error.HTTPError as e:
+            msg = f'{e.code} {e.read()[:200]!r}'
+            if e.code in (401, 402, 403) or _fatal(msg):
+                raise FatalEngineError(msg)
+            raise RuntimeError(msg)
+        text = d['choices'][0]['message']['content']
+        urls = list(d.get('citations') or []) + [s.get('url') for s in
+                                                 (d.get('search_results') or []) if s.get('url')]
+        return text, urls
+    return ask
+
+
+ENGINES = {'claude': make_claude, 'openai': make_openai, 'perplexity': make_perplexity}
+KEY_FILES = {'claude': 'anthropic-api-key', 'openai': 'openai-api-key',
+             'perplexity': 'perplexity-api-key'}
+
+
+def classify(text, urls):
+    named = bool(_NAMED.search(text or ''))
+    hits = [u for u in urls if 'kabatone.com' in (u or '').lower()]
+    low = (text or '').lower()
+    comps = sorted({c for c in COMPETITORS if re.search(rf'\b{re.escape(c)}\b', low)})
+    return named, bool(hits), (hits[0] if hits else ''), comps
+
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--model', default='claude-sonnet-4-6')
+    ap.add_argument('--engines', default='claude,openai,perplexity')
+    ap.add_argument('--blocks', default='', help='e.g. D or A,B,C (default: all)')
+    ap.add_argument('--model', default='claude-sonnet-4-6', help='Claude model')
+    ap.add_argument('--openai-model', default='gpt-5')
+    ap.add_argument('--perplexity-model', default='sonar')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-write', action='store_true')
     ap.add_argument('--allow-partial', action='store_true',
-                    help='write the snapshot even if some queries failed (default: refuse)')
+                    help='write an engine whose run partially failed (default: drop it)')
     args = ap.parse_args()
 
-    key = _api_key()
-    if not key:
-        print('No Anthropic API key (~/.config/claude-seo/anthropic-api-key). Aborting.')
-        sys.exit(1)
-    try:
-        import anthropic
-    except ImportError:
-        print('anthropic library not installed.'); sys.exit(1)
-    # Timeout is the load-bearing part. launchd will not start a second instance of a
-    # job while one is still running, so a single wedged request does not cost one
-    # Monday -- it silently blocks EVERY Monday until someone kills the PID by hand,
-    # with zero-byte logs and no non-zero exit to say so.
-    #
-    # base_url is deliberately NOT pinned: ANTHROPIC_BASE_URL points at the local
-    # headroom proxy on purpose (com.kabatone.headroom-proxy), and overriding it here
-    # would route around the user's own setup.
-    client = anthropic.Anthropic(api_key=key, timeout=120.0, max_retries=2)
-
-    queries = [q.strip() for q in QUERIES_FILE.read_text().splitlines()
-               if q.strip() and not q.startswith('#')]
+    blocks = {b.strip().upper() for b in args.blocks.split(',') if b.strip()} or None
+    queries = load_queries(blocks)
     if args.limit:
         queries = queries[:args.limit]
-
     today = datetime.now().strftime('%Y-%m-%d')
-    rows, cited, failed = [], 0, 0
-    for q in queries:
+    models = {'claude': args.model, 'openai': args.openai_model,
+              'perplexity': args.perplexity_model}
+
+    all_rows, claude_complete, exit_code = [], False, 0
+    for name in [e.strip() for e in args.engines.split(',') if e.strip()]:
         try:
-            text, urls = ask_with_search(client, args.model, q)
-        except Exception as e:
-            msg = str(e)
-            # Credit exhaustion / auth failures affect every remaining query — stop now
-            # instead of burning the rest of the run and logging a misleading partial snapshot.
-            if any(s in msg.lower() for s in ('credit balance', 'authentication', 'permission')):
-                print(f'\n  [FATAL] {msg[:200]}')
-                print('  Aborting: this failure applies to every remaining query.')
-                failed += len(queries) - len(rows)
-                break
-            print(f'  [error] {q[:50]}: {msg[:120]}')
-            failed += 1
+            ask = ENGINES[name](models[name])
+        except ImportError as e:
+            print(f'\n[{name}] skipped: library missing ({e})')
             continue
-        blob = (text + ' ' + ' '.join(urls)).lower()
-        kabat = ('kabatone' in blob) or any('kabatone.com' in u.lower() for u in urls)
-        comps = sorted({c for c in COMPETITORS if c in blob})
-        cited += 1 if kabat else 0
-        rows.append({'date': today, 'query': q, 'kabatone_cited': 'Y' if kabat else 'N',
-                     'competitors': '; '.join(comps)})
-        print(f"  {'✅ CITED ' if kabat else '❌ absent'}  {q[:52]:<52}  vs: {', '.join(comps[:4]) or '—'}")
+        if ask is None:
+            print(f'\n[{name}] skipped: no key at {KEY_DIR / KEY_FILES[name]}')
+            if name == 'claude':
+                exit_code = 1
+            continue
+        print(f'\n[{name}] {len(queries)} queries')
+        rows, failed = [], 0
+        for i, (block, q) in enumerate(queries):
+            try:
+                text, urls = ask(q)
+            except FatalEngineError as e:
+                print(f'  [FATAL] {str(e)[:200]}\n  Aborting {name}: applies to every remaining query.')
+                failed += len(queries) - i
+                break
+            except Exception as e:
+                print(f'  [error] {q[:50]}: {str(e)[:120]}')
+                failed += 1
+                continue
+            named, retrieved, url, comps = classify(text, urls)
+            mark = '✅ NAMED ' if named else ('🔗 SOURCE' if retrieved else '❌ absent')
+            print(f"  {mark}  {block}  {q[:50]:<50}  vs: {', '.join(comps[:4]) or '—'}")
+            rows.append({'date': today, 'engine': name, 'block': block, 'query': q,
+                         'named_in_answer': 'Y' if named else 'N',
+                         'in_source_set': 'Y' if retrieved else 'N',
+                         'kabatone_url': url, 'competitors': '; '.join(comps)})
+        n = len(rows)
+        nm = sum(r['named_in_answer'] == 'Y' for r in rows)
+        either = sum('Y' in (r['named_in_answer'], r['in_source_set']) for r in rows)
+        print(f'[{name}] named in answer {nm}/{n} · named or retrieved {either}/{n}')
+        if failed:
+            print(f'[{name}] {failed}/{len(queries)} failed — a partial run distorts the trend.')
+            if not args.allow_partial:
+                print(f'[{name}] not written (pass --allow-partial to record it anyway).')
+                if name == 'claude':
+                    exit_code = 2
+                continue
+        all_rows += rows
+        if name == 'claude' and not failed:
+            claude_complete = True
 
-    print(f"\nKabatOne cited in {cited}/{len(rows)} AI answers ({100*cited//max(len(rows),1)}%).")
+    if args.no_write or not all_rows:
+        sys.exit(exit_code)
 
-    if failed:
-        print(f'{failed}/{len(queries)} queries failed — this snapshot covers only '
-              f'{len(rows)} of {len(queries)} queries.')
-        if not args.allow_partial:
-            print('Refusing to write a partial snapshot (a partial run distorts the trend line).\n'
-                  'Fix the cause and re-run, or pass --allow-partial to record it anyway.')
-            sys.exit(2)
+    new = not RESULTS.exists()
+    with open(RESULTS, 'a', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=RESULT_FIELDS)
+        if new:
+            w.writeheader()
+        w.writerows(all_rows)
+    print(f'\nappended {len(all_rows)} rows -> {RESULTS.name}')
 
-    if not args.no_write and rows:
-        new = not HISTORY.exists()
+    # Legacy trend line: Claude, blocks A–C, full set only, one snapshot per date.
+    legacy = [r for r in all_rows if r['engine'] == 'claude' and r['block'] in LEGACY_BLOCKS]
+    already = HISTORY.exists() and any(l.startswith(today + ',')
+                                       for l in HISTORY.read_text().splitlines())
+    if legacy and already:
+        print(f'{HISTORY.name} already has {today}; legacy trend not re-written.')
+    elif legacy and claude_complete and not args.limit and not blocks:
         with open(HISTORY, 'a', newline='') as f:
-            w = csv.DictWriter(f, fieldnames=['date', 'query', 'kabatone_cited', 'competitors'])
-            if new:
-                w.writeheader()
-            for r in rows:
-                w.writerow(r)
-        print(f'appended {len(rows)} rows -> {HISTORY.name}')
+            w = csv.writer(f)
+            for r in legacy:
+                cited = 'Y' if 'Y' in (r['named_in_answer'], r['in_source_set']) else 'N'
+                w.writerow([today, r['query'], cited, r['competitors']])
+        print(f'appended {len(legacy)} rows -> {HISTORY.name} (legacy trend)')
+    sys.exit(exit_code)
+
 
 if __name__ == '__main__':
     main()

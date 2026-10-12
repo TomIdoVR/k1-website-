@@ -1,3 +1,88 @@
+## [v2.414] – 2026-10-12 — Weekly SEO report: AI referrals halved; CAD-1 verdict
+
+**Added**
+- `SEO/weekly-report-2026-10-12.md`. Search improved a second week (clicks 573 → 600, position 11.6 → 10.7).
+  AI-referred sessions fell to 5 and 6 a week (W40, W41) from 11–16. That's a real drop; the cause is unknown
+  and can't be diagnosed without measuring ChatGPT. GEO named rate is flat at 3/40 (CAD 1/15). CAD-1 verdict:
+  page position improved 9.4 → 8.5 and CTR rose, but clicks didn't measurably move. Includes step-by-step
+  instructions for the OpenAI and Perplexity API keys.
+- `SEO/gsc-fresh-2026-10-12.json`; 10-12 rows in `geo-results.csv` and `geo-history.csv`.
+
+**Changed**
+- `SEO/carry-over.md`: CAD-1 closed with its verdict; AI-1 opened; GEO-4 and GEO-5 updated.
+
+## [v2.413] – 2026-10-12 — Homepage leads with K-Dispatch
+
+**Changed**
+- Solutions section: K-Dispatch is now 01, K-Safety 02. CAD is the 2027+ focus, and the homepage is
+  where AI-referred visitors land (48 of 131 AI sessions in 13 weeks; only 13 reached a CAD page).
+- Hero sub-line leads with "AI-assisted 911 dispatch at the core" (EN/ES). The H1 is unchanged.
+- Hero guide links: a K-Dispatch link added first. The two existing links (C5, best public safety
+  software) are kept verbatim, because their anchor text is the ranking signal they preserve.
+
+## [v2.412] – 2026-10-05 — GEO and CAD lead: AI engines read us but don't recommend us
+
+**Changed — program direction (Omer, 2026-10-05):** GEO is first-class and CAD / K-Dispatch is the primary
+topic, being the 2027+ company focus. Video/VMS moves to maintenance.
+
+**Fixed — the GEO measure was counting retrievals as recommendations (GEO-2)**
+- `SEO/geo/track_geo.py` now records `named_in_answer` (KabatOne or a K- product named in the answer
+  text) separately from `in_source_set` (a kabatone.com URL among the sources). Results go to the
+  new `SEO/geo/geo-results.csv`; `geo-history.csv` keeps its old meaning (Claude, blocks A–C, one
+  snapshot per date) so the trend since July is unbroken.
+- **First run: named in 3 of 40 answers, retrieved in 34 of 40.** The 80% reported this morning, and
+  every rate since July, measured retrieval. The morning's "first C5 citation" was one of them: the
+  answer retrieved our C5 page five times and still defined the fifth C as "Quality".
+- Mechanism, from two answers inspected in full: when kabatone.com supplies most sources (Mexico C5/911),
+  K-Dispatch is recommended first; when third-party "best of" lists supply them (Motorola PremierOne
+  alternatives), we are retrieved and not named.
+
+**Added**
+- OpenAI (Responses API + web search) and Perplexity (Sonar) engines in `track_geo.py`. Each is skipped
+  cleanly until its key file exists. Not yet executed: no keys.
+- Block D in `geo-queries.txt`: 15 CAD buyer-journey questions (incumbent alternatives, evaluation,
+  RFP, cloud, NG911, Mexico 911/C5) in EN/ES/PT.
+- `seo_diff.py`: named-vs-retrieved table by engine and block.
+- `SEO/geo/cad-third-party-targets-2026-10-05.md`: the third-party pages that 19 CAD answers drew
+  their sources from, ranked by use. KabatOne is on none of the top 22. It lists the route in for each
+  and separates out the competitor-owned ones (GINA, the single most-used source, is a dispatch vendor).
+- "Short answer" block under the H1 of `/vs/cad`, `/vs/motorola`, `/vs/hexagon`, `/vs/centralsquare`,
+  `/vs/tyler-technologies`, `/vs/mark43`, EN and ES. It renders each page's own first FAQ answer, so
+  there are no new claims.
+
+**Changed**
+- `public/llms.txt` leads with K-Dispatch: a CAD section built from the claims the K-Dispatch page
+  already makes, 8 CAD/911 guides, and 9 CAD/NG911 comparisons. Two links that 308 since the
+  video-analytics consolidation now point at their target.
+- Site-wide Organization JSON-LD (`src/lib/schema.ts`) leads with dispatch and adds `knowsAbout` and a
+  product catalog with K-Dispatch first.
+
+## [v2.411] – 2026-10-05 — Weekly SEO report; the diff script reported a git failure as "not diverged"
+
+**Fixed**
+- **`scripts/seo_diff.py` turned a failed git count into `0`.** On the OneDrive checkout a
+  `git rev-list` timed out (60s), `_sh` returned `''`, and `int('' or 0)` printed
+  "`nextjs` 0 ahead / `main` 0 ahead, not diverged". The truth was **56 / 198, diverged**: the exact
+  G12 failure `shipping()` was written to prevent. Counts now go through `_count()`, which returns
+  `None` on failure; the report renders an **UNKNOWN** warning instead of zeros. Timeout raised to 180s.
+  Verified by execution: the real run returns 56 / 198 / diverged; a forced failure renders the warning.
+- **The orchestrator's #1 "quick win" was a rank-tracking bot.** `software for public safety` (p3.3,
+  1,353 impr, 0 clicks) checks out under `verify_serp_polling()` as 100% desktop, 0 mobile, 0 clicks,
+  with the fixed US/GB/NL/DE/IT/HK spread and Mexico 1. Added to `_SERP_POLLING`, with the evidence inline.
+
+**Added**
+- `SEO/weekly-report-2026-10-05.md`. Search flat and healthy (clicks +2.3%, CTR 0.48 → 0.52%,
+  position 12.6 → 11.6; reallocation, not decay). CAD-1 first read flat (11c / 1,366i / 0.81% vs the
+  12c / 1,521i baseline), verdict 10-12. The 07:30 GEO run aborted on **Anthropic API credit**. After a top-up the
+  re-run completed: **20/25 (80%)**, and *"What is a C5 command center?"* is cited for the first time
+  ever (N on every run since 07-07). Verdict 10-12.
+- `SEO/geo/geo-history.csv`: the 25 rows from 2026-10-05.
+- `SEO/gsc-fresh-2026-10-05.json`: the week's GSC pull.
+
+**Changed**
+- `SEO/carry-over.md`: SHIP-3 closed (both halves live, re-verified); new OPS-2 (API credit,
+  recurrence) and BRANCH-1 (retire `nextjs`); GEO-2 promoted to P0 ahead of the 10-12 GEO-4 verdict.
+
 ## [v2.410] – 2026-09-29 — Hero art: drop the light-bar flashes
 
 **Removed**

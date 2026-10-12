@@ -61,6 +61,9 @@ _SERP_POLLING = {
     'best fire computer aided dispatch software',
     'computer automated dispatch software',
     'peregrine.ai analytics reporting dashboards',
+    # 2026-10-05, verify_serp_polling 09-06 -> 10-03: 1,369 impr, 100% desktop, 0 mobile,
+    # 0 clicks, US 1,164 + thin GB/NL/DE/IT/HK. Topped the orchestrator's quick-win list.
+    'software for public safety',
 }
 
 

@@ -228,6 +228,23 @@ export default async function VsTylerTechnologiesPage({
               ? 'Tyler Technologies es el proveedor de software gubernamental más grande de Estados Unidos — una suite amplia que cubre CAD, RMS, ERP municipal, tribunales, tesorería y decenas de otros módulos administrativos. KabatOne no compite en amplitud: compite en profundidad operativa. Una sola plataforma cloud-native que une video, CAD, GIS y tráfico en el flujo de respuesta, construida y probada en los centros de mando más exigentes de Latinoamérica.'
               : 'Tyler Technologies is the largest government software provider in the United States — a broad suite covering CAD, RMS, municipal ERP, courts, treasury, and dozens of other administrative modules. KabatOne does not compete on breadth: it competes on operational depth. A single cloud-native platform that unifies video, CAD, GIS, and traffic in the response workflow — built and proven in Latin America\'s most demanding command centers.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS TYLER? ── */}

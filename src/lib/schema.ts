@@ -6,7 +6,28 @@ export function organizationSchema() {
     name: 'KabatOne',
     url: 'https://kabatone.com',
     logo: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png',
-    description: 'KabatOne is a public safety and smart city software platform serving governments, municipalities, and emergency response organizations. It provides unified situational awareness by connecting video management, CAD/dispatch, GIS, field operations, and AI analytics in one platform.',
+    // Leads with dispatch: CAD / K-Dispatch is the 2027+ focus, and this block is emitted
+    // site-wide from the layout -- the one entity description every AI crawler reads. (v2.412)
+    description: 'KabatOne is a unified public safety platform for governments, municipalities, and emergency response organizations. Its core is K-Dispatch, AI-assisted computer-aided dispatch (CAD) and 911 software for multi-agency police, fire, and EMS response, connected natively to video management, GIS, field operations, and AI analytics in one platform.',
+    knowsAbout: [
+      'Computer-aided dispatch (CAD)', '911 dispatch', 'NG911', 'Emergency call handling',
+      'Multi-agency dispatch', 'C5 command centers', 'Video management systems (VMS)',
+      'AI video analytics', 'Real-time crime centers', 'Public safety GIS',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'KabatOne public safety platform',
+      itemListElement: [
+        ['K-Dispatch', 'https://kabatone.com/k-dispatch', 'AI-assisted CAD and 911 dispatch for police, fire, and EMS'],
+        ['K-Safety', 'https://kabatone.com/k-safety', 'Unified situational awareness and operational GIS'],
+        ['K-Video', 'https://kabatone.com/k-video', 'Video management (VMS) with AI analytics'],
+        ['K-Traffic', 'https://kabatone.com/k-traffic', 'Intelligent traffic management'],
+        ['K-Connect', 'https://kabatone.com/k-connect', 'Public-private camera integration'],
+      ].map(([name, url, description]) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'SoftwareApplication', name, url, description, applicationCategory: 'BusinessApplication' },
+      })),
+    },
     foundingDate: '2004',
     numberOfEmployees: { '@type': 'QuantitativeValue', value: 80, unitText: 'employees' },
     address: {

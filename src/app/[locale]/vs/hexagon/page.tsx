@@ -208,6 +208,23 @@ export default async function VsHexagonPage({
               ? 'Hexagon HxGN OnCall es uno de los sistemas CAD más maduros del mercado, respaldado por el liderazgo geoespacial de Hexagon AB. KabatOne incluye capacidades de CAD y GIS equivalentes y las combina con gestión de video nativa (K-Video) y gestión de tráfico inteligente (K-Traffic) — conectando el flujo completo de respuesta en un solo sistema sin requerir integraciones adicionales.'
               : 'Hexagon HxGN OnCall is one of the most mature CAD systems in the market, backed by Hexagon AB\'s geospatial leadership. KabatOne includes equivalent CAD and GIS capabilities and combines them with native video management (K-Video) and intelligent traffic management (K-Traffic) — connecting the full response workflow in one system without additional integrations.'}
           </p>
+          {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
+              answer engine finds a self-contained verdict at the top, not only in the FAQ.
+              No new claims -- same text as faqs[0], same language. (v2.412, GEO / CAD focus) */}
+          <div style={{
+            marginTop: '28px', padding: '20px 24px', borderLeft: `3px solid ${ACCENT}`,
+            background: 'var(--bg-2)', borderRadius: '2px',
+          }}>
+            <p style={{
+              fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+              color: ACCENT, marginBottom: '8px',
+            }}>
+              {es ? 'Respuesta corta' : 'Short answer'}
+            </p>
+            <p style={{ fontSize: '16px', color: 'var(--white)', lineHeight: 1.7, margin: 0 }}>
+              {faqs[0].answer}
+            </p>
+          </div>
         </section>
 
         {/* ── WHAT IS HEXAGON SAFETY? ── */}
