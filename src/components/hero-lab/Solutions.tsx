@@ -95,7 +95,34 @@ type Product = {
 
 const PRODUCTS: Product[] = [
   {
-    key: 'safety', n: '01', name: 'K-Safety', color: '#1858f5',
+    /* K-Dispatch leads (v2.413): CAD is the 2027+ company focus, and the homepage is
+       where AI-referred visitors land. Its visual is a call queue, not a map, so
+       swapping order does not put two maps next to each other. */
+    key: 'dispatch', n: '01', name: 'K-Dispatch', color: '#0ea5e9',
+    /* Purpose-built call queue (v2.316). Deliberately NOT a map: this panel's
+       active nav item is Queue and its four capabilities are intake, CAD, unit
+       recommendation and audit trail — none of them geographic — and K-Safety
+       directly below it already carries the map. The previous `dispatch.webp`
+       was a map that also disagreed with the rail beside it (it read
+       "INCIDENT 1842 · FORCED ENTRY" against a rail saying "ACTIVE CALL ·
+       Medical Emergency") and repeated U-03 and U-11 twice each.
+       Row 1 is the rail's own call; U-12 is the rail feed's recommended unit. */
+    logo: '/images/icons/k-dispatch.png', img: '/images/modules/k-dispatch-queue.webp', href: '/k-dispatch',
+    short: T2('Emergency Call-Taking & Dispatch', 'Recepción de Emergencias y Despacho'),
+    body: T2('From the first emergency call to coordinated field response — intake, CAD, unit recommendation and a full audit trail.',
+      'De la primera llamada de emergencia a la respuesta coordinada — recepción, CAD, recomendación de unidades y trazabilidad completa.'),
+    caps: [T2('911 call intake', 'Recepción de llamadas 911'), T2('Computer-aided dispatch', 'Despacho asistido por computadora'),
+      T2('Unit recommendation & status', 'Recomendación y estado de unidades'), T2('Complete audit trail', 'Trazabilidad completa')],
+    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
+    nav: [['Queue', 'list'], ['Active Calls', 'alert'], ['Dispatch', 'route'], ['Units', 'people'], ['Protocols', 'flow'], ['Recordings', 'clock'], ['Reports', 'doc'], ['Settings', 'gear']],
+    rail: {
+      tag: T2('ACTIVE CALL', 'LLAMADA ACTIVA'), kind: T2('Medical Emergency', 'Emergencia médica'), timer: '00:18',
+      onScene: '1', enRoute: '2',
+      feed: { en: ['Call answered · line 3', 'Unit U-12 recommended'], es: ['Llamada atendida · línea 3', 'Unidad U-12 recomendada'] },
+    },
+  },
+  {
+    key: 'safety', n: '02', name: 'K-Safety', color: '#1858f5',
     /* Purpose-built map (v2.315). This canvas only ever shows the map — the
        nav, rail and title bar around it are DOM — so the art has to agree
        with the rail beside it. `gis.webp` did not: it showed FORCED ENTRY and
@@ -116,30 +143,6 @@ const PRODUCTS: Product[] = [
       tag: T2('INCIDENT 2451', 'INCIDENTE 2451'), kind: T2('Traffic Accident', 'Accidente vial'), timer: '04:32',
       onScene: '2', enRoute: '3',
       feed: { en: ['Incident created by 911 call', 'Unit U-07 dispatched'], es: ['Incidente creado por llamada 911', 'Unidad U-07 despachada'] },
-    },
-  },
-  {
-    key: 'dispatch', n: '02', name: 'K-Dispatch', color: '#0ea5e9',
-    /* Purpose-built call queue (v2.316). Deliberately NOT a map: this panel's
-       active nav item is Queue and its four capabilities are intake, CAD, unit
-       recommendation and audit trail — none of them geographic — and K-Safety
-       directly above it already carries the map. The previous `dispatch.webp`
-       was a map that also disagreed with the rail beside it (it read
-       "INCIDENT 1842 · FORCED ENTRY" against a rail saying "ACTIVE CALL ·
-       Medical Emergency") and repeated U-03 and U-11 twice each.
-       Row 1 is the rail's own call; U-12 is the rail feed's recommended unit. */
-    logo: '/images/icons/k-dispatch.png', img: '/images/modules/k-dispatch-queue.webp', href: '/k-dispatch',
-    short: T2('Emergency Call-Taking & Dispatch', 'Recepción de Emergencias y Despacho'),
-    body: T2('From the first emergency call to coordinated field response — intake, CAD, unit recommendation and a full audit trail.',
-      'De la primera llamada de emergencia a la respuesta coordinada — recepción, CAD, recomendación de unidades y trazabilidad completa.'),
-    caps: [T2('911 call intake', 'Recepción de llamadas 911'), T2('Computer-aided dispatch', 'Despacho asistido por computadora'),
-      T2('Unit recommendation & status', 'Recomendación y estado de unidades'), T2('Complete audit trail', 'Trazabilidad completa')],
-    core: ['gis', 'video', 'events', 'cad', 'ai', 'intg', 'flows', 'evid', 'mobile', 'bi'],
-    nav: [['Queue', 'list'], ['Active Calls', 'alert'], ['Dispatch', 'route'], ['Units', 'people'], ['Protocols', 'flow'], ['Recordings', 'clock'], ['Reports', 'doc'], ['Settings', 'gear']],
-    rail: {
-      tag: T2('ACTIVE CALL', 'LLAMADA ACTIVA'), kind: T2('Medical Emergency', 'Emergencia médica'), timer: '00:18',
-      onScene: '1', enRoute: '2',
-      feed: { en: ['Call answered · line 3', 'Unit U-12 recommended'], es: ['Llamada atendida · línea 3', 'Unidad U-12 recomendada'] },
     },
   },
   {

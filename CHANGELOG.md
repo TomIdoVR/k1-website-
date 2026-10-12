@@ -1,3 +1,12 @@
+## [v2.413] – 2026-10-12 — Homepage leads with K-Dispatch
+
+**Changed**
+- Solutions section: K-Dispatch is now 01, K-Safety 02. CAD is the 2027+ focus, and the homepage is
+  where AI-referred visitors land (48 of 131 AI sessions in 13 weeks; only 13 reached a CAD page).
+- Hero sub-line leads with "AI-assisted 911 dispatch at the core" (EN/ES). The H1 is unchanged.
+- Hero guide links: a K-Dispatch link added first. The two existing links (C5, best public safety
+  software) are kept verbatim, because their anchor text is the ranking signal they preserve.
+
 ## [v2.412] – 2026-10-05 — GEO and CAD lead: AI engines read us but don't recommend us
 
 **Changed — program direction (Omer, 2026-10-05):** GEO is first-class and CAD / K-Dispatch is the primary

@@ -16,8 +16,8 @@ const T = {
   h1a: { en: 'One platform for your 911, video and dispatch — ', es: 'Una plataforma para tu 911, video y despacho — ' },
   h1b: { en: 'built for municipalities and C5.', es: 'hecha para municipios y C5.' },
   sub: {
-    en: 'Dispatch, video, GIS, event management, evidence, mobile response and integrations — unified into a single operational platform.',
-    es: 'Despacho, video, GIS, gestión de eventos, evidencia, respuesta móvil e integraciones — unificados en una sola plataforma operativa.',
+    en: 'AI-assisted 911 dispatch at the core — connected to video, GIS, event management, evidence, mobile response and integrations in a single operational platform.',
+    es: 'Despacho 911 asistido por IA en el centro — conectado con video, GIS, gestión de eventos, evidencia, respuesta móvil e integraciones en una sola plataforma operativa.',
   },
   demo: { en: 'Book a Demo', es: 'Solicita una Demo' },
   watch: { en: 'Watch Overview', es: 'Ver Resumen' },
@@ -111,7 +111,11 @@ function HeroArt() {
   )
 }
 
-/* Two internal links the old homepage carried and the redesign dropped.
+/* A K-Dispatch link leads (v2.413): AI-referred visitors land on the homepage
+   and few reached a CAD page, and CAD is the 2027+ focus. The two links below it
+   are unchanged.
+
+   Two internal links the old homepage carried and the redesign dropped.
 
    They are here for SEO continuity, not decoration. The homepage is the
    highest-authority page on the site, and these were its only links to
@@ -132,11 +136,13 @@ function HeroGuideLinks({ es }: { es: boolean }) {
     <p className="hsplit-guides">
       {es ? (
         <>
+          <Link href="/k-dispatch">Conoce K-Dispatch, software CAD de despacho 911 →</Link>
           <Link href="/resources/how-c5-command-centers-work">Conoce cómo funcionan los centros de mando C5 →</Link>
           <Link href="/resources/best-public-safety-software">Compara las mejores plataformas de software de seguridad pública →</Link>
         </>
       ) : (
         <>
+          <Link href="/k-dispatch">Explore K-Dispatch, CAD software for 911 dispatch →</Link>
           <Link href="/resources/how-c5-command-centers-work">Learn how C5 command centers work →</Link>
           <Link href="/resources/best-public-safety-software">Compare the best public safety software platforms →</Link>
         </>
