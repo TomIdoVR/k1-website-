@@ -1,3 +1,16 @@
+## [v2.414] – 2026-10-12 — Weekly SEO report: AI referrals halved; CAD-1 verdict
+
+**Added**
+- `SEO/weekly-report-2026-10-12.md`. Search improved a second week (clicks 573 → 600, position 11.6 → 10.7).
+  AI-referred sessions fell to 5 and 6 a week (W40, W41) from 11–16. That's a real drop; the cause is unknown
+  and can't be diagnosed without measuring ChatGPT. GEO named rate is flat at 3/40 (CAD 1/15). CAD-1 verdict:
+  page position improved 9.4 → 8.5 and CTR rose, but clicks didn't measurably move. Includes step-by-step
+  instructions for the OpenAI and Perplexity API keys.
+- `SEO/gsc-fresh-2026-10-12.json`; 10-12 rows in `geo-results.csv` and `geo-history.csv`.
+
+**Changed**
+- `SEO/carry-over.md`: CAD-1 closed with its verdict; AI-1 opened; GEO-4 and GEO-5 updated.
+
 ## [v2.413] – 2026-10-12 — Homepage leads with K-Dispatch
 
 **Changed**

@@ -39,3 +39,43 @@ date,engine,block,query,named_in_answer,in_source_set,kabatone_url,competitors
 2026-10-05,claude,D,alternativas a Motorola para despacho de emergencias 911,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; mark43; motorola; tyler technologies
 2026-10-05,claude,D,¿Cómo elegir un sistema de despacho de emergencias para un municipio?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,
 2026-10-05,claude,D,software CAD de despacho para polícia e bombeiros,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; motorola; tyler technologies
+2026-10-12,claude,A,What is the best CAD dispatch software for 911 centers?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,A,What is the best VMS software for public safety?,N,Y,https://www.kabatone.com/resources/best-public-safety-software,avigilon; axon; genetec; milestone; motorola
+2026-10-12,claude,A,What is a unified public safety platform?,N,Y,https://kabatone.com/resources/what-is-a-public-safety-platform,axon; mark43; motorola
+2026-10-12,claude,A,What is a C5 command center?,N,Y,https://kabatone.com/resources/how-c5-command-centers-work,motorola
+2026-10-12,claude,A,What is NG911 software and how does it work?,N,Y,https://kabatone.com/resources/ng911-software,
+2026-10-12,claude,A,What is AI video analytics?,N,N,,
+2026-10-12,claude,A,best public safety software for municipalities,N,Y,https://www.kabatone.com/resources/best-public-safety-software,centralsquare; mark43; motorola; tyler technologies
+2026-10-12,claude,A,best video management software for cities,N,Y,https://www.kabatone.com/resources/best-public-safety-software,avigilon; genetec; milestone; motorola
+2026-10-12,claude,A,Genetec alternatives for public safety,Y,Y,https://www.kabatone.com/resources/genetec-alternatives,avigilon; axon; fusus; genetec; milestone; motorola; verkada
+2026-10-12,claude,A,real-time crime center (RTCC) software vendors,N,Y,https://kabatone.com/resources/rtcc-software,axon; flock safety; fusus; genetec; hexagon; motorola; verkada
+2026-10-12,claude,A,computer aided dispatch software for multi-agency 911 centers,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; motorola; tyler technologies
+2026-10-12,claude,A,public safety software for Mexico and Latin America,Y,Y,https://kabatone.com/resources/best-cad-dispatch-software,avigilon; hexagon; motorola
+2026-10-12,claude,B,best fire computer aided dispatch software,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,B,911 dispatch software for emergency call centers,N,Y,https://www.kabatone.com/resources/best-ng911-software,hexagon; motorola; tyler technologies
+2026-10-12,claude,B,AI CCTV analytics software,N,Y,https://kabatone.com/resources/cctv-video-analytics,avigilon; genetec; motorola; verkada
+2026-10-12,claude,B,AI VMS software for security operations,N,N,,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,claude,B,audio video management system for public safety,N,Y,https://www.kabatone.com/resources/best-public-safety-software,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,claude,B,best AI video analytics software,N,Y,https://www.kabatone.com/resources/best-ai-video-analytics-software,
+2026-10-12,claude,B,analytic CCTV cameras for city surveillance,N,N,,avigilon; motorola
+2026-10-12,claude,C,¿Cuál es el mejor software de despacho 911?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; motorola; tyler technologies
+2026-10-12,claude,C,¿Qué es un centro de mando y control C5?,N,Y,https://kabatone.com/resources/que-es-un-c5,
+2026-10-12,claude,C,software de seguridad pública para municipios,N,Y,https://www.kabatone.com/resources/best-public-safety-software,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,C,mejor software de gestión de video para ciudades,N,Y,https://www.kabatone.com/resources/best-public-safety-software,avigilon; genetec; milestone; motorola
+2026-10-12,claude,C,melhor software de despacho para segurança pública,N,Y,https://www.kabatone.com/resources/best-public-safety-software,hexagon; motorola; tyler technologies
+2026-10-12,claude,C,software de videomonitoramento para cidades,N,N,,avigilon; genetec; milestone; motorola
+2026-10-12,claude,D,Motorola PremierOne CAD alternatives for 911 centers,N,Y,https://kabatone.com/vs/cad,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,D,Hexagon CAD alternatives for public safety agencies,N,Y,https://www.kabatone.com/resources/best-public-safety-software,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,D,CentralSquare CAD alternatives,N,Y,https://www.kabatone.com/resources/best-public-safety-software,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,D,Tyler Technologies CAD alternatives for police and fire,N,N,,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; versaterm; zuercher
+2026-10-12,claude,D,How do I choose a computer aided dispatch system for a 911 center?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,
+2026-10-12,claude,D,What should a CAD dispatch software RFP include?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,
+2026-10-12,claude,D,"cloud-based CAD dispatch software for police, fire and EMS",N,Y,https://kabatone.com/resources/best-cad-dispatch-software,mark43; motorola; rapidsos; tyler technologies; versaterm
+2026-10-12,claude,D,NG911-ready CAD dispatch software,N,Y,https://www.kabatone.com/resources/best-ng911-software,centralsquare; hexagon; motorola; tyler technologies
+2026-10-12,claude,D,CAD dispatch software integrated with video and real-time crime center,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,axon; fusus; hexagon; motorola
+2026-10-12,claude,D,police dispatch software for mid-size cities,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies
+2026-10-12,claude,D,¿Qué es un sistema CAD de despacho de emergencias?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,
+2026-10-12,claude,D,software de despacho para centros C5 y 911 en México,Y,Y,https://www.kabatone.com/resources/what-is-emergency-dispatch-software,
+2026-10-12,claude,D,alternativas a Motorola para despacho de emergencias 911,N,N,,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,claude,D,¿Cómo elegir un sistema de despacho de emergencias para un municipio?,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,
+2026-10-12,claude,D,software CAD de despacho para polícia e bombeiros,N,N,,hexagon; mark43; motorola; tyler technologies
