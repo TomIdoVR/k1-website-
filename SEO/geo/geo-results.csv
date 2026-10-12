@@ -159,3 +159,43 @@ date,engine,block,query,named_in_answer,in_source_set,kabatone_url,competitors
 2026-10-12,perplexity,D,alternativas a Motorola para despacho de emergencias 911,N,Y,https://www.kabatone.com/resources/best-ng911-software,carbyne; hexagon; intrado; mark43; motorola; tyler technologies
 2026-10-12,perplexity,D,¿Cómo elegir un sistema de despacho de emergencias para un municipio?,N,Y,https://kabatone.com/es/resources/best-cad-dispatch-software,centralsquare; hexagon; motorola; tyler technologies
 2026-10-12,perplexity,D,software CAD de despacho para polícia e bombeiros,N,Y,https://kabatone.com/resources/best-cad-dispatch-software,centralsquare; hexagon; motorola
+2026-10-12,gemini,A,What is the best CAD dispatch software for 911 centers?,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; zuercher
+2026-10-12,gemini,A,What is the best VMS software for public safety?,N,Y,https://kabatone.com,avigilon; axon; fusus; genetec; hexagon; milestone; motorola
+2026-10-12,gemini,A,What is a unified public safety platform?,N,Y,https://kabatone.com,axon; centralsquare; fusus; hexagon; mark43; motorola
+2026-10-12,gemini,A,What is a C5 command center?,Y,Y,https://kabatone.com,avigilon; genetec; hexagon; motorola
+2026-10-12,gemini,A,What is NG911 software and how does it work?,N,Y,https://kabatone.com,carbyne; intrado; motorola; rapidsos
+2026-10-12,gemini,A,What is AI video analytics?,N,N,,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,gemini,A,best public safety software for municipalities,Y,Y,https://kabatone.com,avigilon; axon; carbyne; centralsquare; hexagon; mark43; motorola; rapidsos; tyler technologies
+2026-10-12,gemini,A,best video management software for cities,N,Y,https://kabatone.com,avigilon; genetec; hexagon; milestone; motorola
+2026-10-12,gemini,A,Genetec alternatives for public safety,N,Y,https://kabatone.com,avigilon; axon; flock safety; fusus; genetec; hexagon; milestone; motorola
+2026-10-12,gemini,A,real-time crime center (RTCC) software vendors,Y,Y,https://kabatone.com,avigilon; axon; flock safety; fusus; genetec; hexagon; motorola; peregrine
+2026-10-12,gemini,A,computer aided dispatch software for multi-agency 911 centers,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,gemini,A,public safety software for Mexico and Latin America,Y,Y,https://kabatone.com,axon; carbyne; genetec; hexagon; motorola
+2026-10-12,gemini,B,best fire computer aided dispatch software,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies
+2026-10-12,gemini,B,911 dispatch software for emergency call centers,N,Y,https://kabatone.com,carbyne; centralsquare; hexagon; mark43; motorola; rapidsos; spillman; tyler technologies; zuercher
+2026-10-12,gemini,B,AI CCTV analytics software,N,N,,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,gemini,B,AI VMS software for security operations,N,N,,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,gemini,B,audio video management system for public safety,Y,Y,https://kabatone.com,avigilon; axon; fusus; genetec; milestone; motorola
+2026-10-12,gemini,B,best AI video analytics software,N,N,,avigilon; genetec; milestone; motorola; verkada
+2026-10-12,gemini,B,analytic CCTV cameras for city surveillance,N,N,,avigilon; genetec; milestone; motorola
+2026-10-12,gemini,C,¿Cuál es el mejor software de despacho 911?,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; zuercher
+2026-10-12,gemini,C,¿Qué es un centro de mando y control C5?,N,Y,https://kabatone.com,centralsquare; genetec; hexagon; milestone; motorola
+2026-10-12,gemini,C,software de seguridad pública para municipios,N,N,,carbyne; genetec; hexagon; motorola
+2026-10-12,gemini,C,mejor software de gestión de video para ciudades,N,N,,avigilon; genetec; hexagon; milestone; motorola
+2026-10-12,gemini,C,melhor software de despacho para segurança pública,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; rapidsos; spillman; tyler technologies; zuercher
+2026-10-12,gemini,C,software de videomonitoramento para cidades,N,N,,avigilon; genetec; milestone; motorola
+2026-10-12,gemini,D,Motorola PremierOne CAD alternatives for 911 centers,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; versaterm
+2026-10-12,gemini,D,Hexagon CAD alternatives for public safety agencies,Y,Y,https://kabatone.com,avigilon; carbyne; centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; versaterm; zuercher
+2026-10-12,gemini,D,CentralSquare CAD alternatives,Y,Y,https://kabatone.com,axon; centralsquare; fusus; hexagon; mark43; motorola; spillman; tyler technologies; versaterm
+2026-10-12,gemini,D,Tyler Technologies CAD alternatives for police and fire,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; versaterm; zuercher
+2026-10-12,gemini,D,How do I choose a computer aided dispatch system for a 911 center?,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; tyler technologies; versaterm
+2026-10-12,gemini,D,What should a CAD dispatch software RFP include?,N,Y,https://kabatone.com,avigilon; centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; zuercher
+2026-10-12,gemini,D,"cloud-based CAD dispatch software for police, fire and EMS",N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; rapidsos; tyler technologies
+2026-10-12,gemini,D,NG911-ready CAD dispatch software,N,Y,https://kabatone.com,carbyne; centralsquare; hexagon; mark43; motorola; rapidsos; tyler technologies
+2026-10-12,gemini,D,CAD dispatch software integrated with video and real-time crime center,N,N,,avigilon; axon; centralsquare; fusus; genetec; hexagon; motorola; spillman; tyler technologies
+2026-10-12,gemini,D,police dispatch software for mid-size cities,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; zuercher
+2026-10-12,gemini,D,¿Qué es un sistema CAD de despacho de emergencias?,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies
+2026-10-12,gemini,D,software de despacho para centros C5 y 911 en México,Y,Y,https://kabatone.com,axon; carbyne; hexagon; motorola
+2026-10-12,gemini,D,alternativas a Motorola para despacho de emergencias 911,N,Y,https://kabatone.com,carbyne; centralsquare; hexagon; mark43; motorola; spillman; tyler technologies; zetron
+2026-10-12,gemini,D,¿Cómo elegir un sistema de despacho de emergencias para un municipio?,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; tyler technologies
+2026-10-12,gemini,D,software CAD de despacho para polícia e bombeiros,N,Y,https://kabatone.com,centralsquare; hexagon; mark43; motorola; spillman; tyler technologies

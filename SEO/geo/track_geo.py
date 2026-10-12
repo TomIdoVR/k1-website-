@@ -14,6 +14,7 @@ hit, not a win. Until 2026-10-05 both scored as one "cited" flag (carry-over GEO
 Engines (each optional except Claude, which carries the trend line):
   claude      Anthropic Messages API + web_search tool  — key: ~/.config/claude-seo/anthropic-api-key
   openai      OpenAI Responses API + web_search tool    — key: ~/.config/claude-seo/openai-api-key
+  gemini      Gemini API + Google Search grounding      — key: ~/.config/claude-seo/gemini-api-key
   perplexity  Perplexity Agent API (search built in)    — key: ~/.config/claude-seo/perplexity-api-key
 An engine with no key file is skipped with a note; it never fails the run.
 
@@ -192,9 +193,58 @@ def make_perplexity(model):
     return ask
 
 
-ENGINES = {'claude': make_claude, 'openai': make_openai, 'perplexity': make_perplexity}
+def make_gemini(model):
+    """Gemini API with Google Search grounding (Interactions API, POST /v1beta/interactions).
+    A proxy for the Gemini app and for AI Overviews, which run on Gemini; not the same product.
+    Gemini 3+ bills per search query (5,000/month free, then $14 per 1,000). Sources are the
+    url_citation annotations on the model_output text, plus any google_search_result URLs.
+    Request/response shape taken from ai.google.dev docs on 2026-10-12; first live call is the test."""
+    key = _key('gemini-api-key', 'GEMINI_API_KEY')
+    if not key:
+        return None
+
+    def ask(q):
+        body = json.dumps({'model': model, 'input': _PROMPT.format(q=q),
+                           'tools': [{'type': 'google_search'}]})
+        req = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/interactions',
+                                     data=body.encode(), method='POST',
+                                     headers={'x-goog-api-key': key, 'Content-Type': 'application/json'})
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                d = json.load(r)
+        except urllib.error.HTTPError as e:
+            msg = f'{e.code} {e.read()[:300]!r}'
+            if e.code in (400, 401, 403) and any(x in msg.lower() for x in
+                                                 ('api key', 'api_key', 'permission', 'billing', 'quota')):
+                raise FatalEngineError(msg)
+            if e.code == 429 and 'quota' in msg.lower():
+                raise FatalEngineError(msg)
+            raise RuntimeError(msg)
+        text, urls = [], []
+        for step in (d.get('steps') or []):
+            if step.get('type') == 'model_output':
+                for c in (step.get('content') or []):
+                    if isinstance(c, dict) and c.get('text'):
+                        text.append(c['text'])
+                    for a in ((c.get('annotations') if isinstance(c, dict) else None) or []):
+                        # url is a vertexaisearch.cloud.google.com redirect; the real site is the
+                        # annotation `title` (e.g. 'axon.com'). Without this, kabatone.com is invisible.
+                        t_ = (a.get('title') or '').strip()
+                        if t_ and '.' in t_ and ' ' not in t_:
+                            urls.append('https://' + t_)
+                        elif a.get('url'):
+                            urls.append(a['url'])
+        ask.searches += sum(len((st.get('arguments') or {}).get('queries') or [1])
+                            for st in (d.get('steps') or []) if st.get('type') == 'google_search_call')
+        return ' '.join(text), urls
+    ask.searches = 0
+    return ask
+
+
+ENGINES = {'claude': make_claude, 'openai': make_openai, 'perplexity': make_perplexity,
+           'gemini': make_gemini}
 KEY_FILES = {'claude': 'anthropic-api-key', 'openai': 'openai-api-key',
-             'perplexity': 'perplexity-api-key'}
+             'perplexity': 'perplexity-api-key', 'gemini': 'gemini-api-key'}
 
 
 def classify(text, urls):
@@ -207,10 +257,11 @@ def classify(text, urls):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--engines', default='claude,openai,perplexity')
+    ap.add_argument('--engines', default='claude,openai,gemini,perplexity')
     ap.add_argument('--blocks', default='', help='e.g. D or A,B,C (default: all)')
     ap.add_argument('--model', default='claude-sonnet-4-6', help='Claude model')
     ap.add_argument('--openai-model', default='gpt-5-mini')  # gpt-5 measured ~$0.16/query on 2026-10-12; mini is the cost-appropriate default
+    ap.add_argument('--gemini-model', default='gemini-3.8-flash')
     ap.add_argument('--perplexity-model', default='fast', help='Agent API preset')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-write', action='store_true')
@@ -224,7 +275,7 @@ def main():
         queries = queries[:args.limit]
     today = datetime.now().strftime('%Y-%m-%d')
     models = {'claude': args.model, 'openai': args.openai_model,
-              'perplexity': args.perplexity_model}
+              'perplexity': args.perplexity_model, 'gemini': args.gemini_model}
 
     all_rows, claude_complete, exit_code = [], False, 0
     for name in [e.strip() for e in args.engines.split(',') if e.strip()]:
@@ -262,6 +313,8 @@ def main():
         nm = sum(r['named_in_answer'] == 'Y' for r in rows)
         either = sum('Y' in (r['named_in_answer'], r['in_source_set']) for r in rows)
         print(f'[{name}] named in answer {nm}/{n} · named or retrieved {either}/{n}')
+        if getattr(ask, 'searches', 0):
+            print(f'[{name}] {ask.searches} grounded searches ({ask.searches / max(n, 1):.1f} per answer); free tier 5,000/month, then $14 per 1,000')
         if getattr(ask, 'spent', 0):
             print(f'[{name}] reported cost ${ask.spent:.3f} (${ask.spent / max(n, 1):.4f} per answer)')
         if failed:
