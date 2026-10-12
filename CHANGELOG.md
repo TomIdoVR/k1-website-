@@ -1,3 +1,20 @@
+## [v2.415] – 2026-10-12 — ChatGPT and Perplexity measured; three engine bugs fixed
+
+**Fixed**
+- **OpenAI sources were always empty.** The Responses API returns the source list only when
+  `include=['web_search_call.action.sources']` is passed, so `in_source_set` could never be Y for ChatGPT.
+  One test query: 0 sources before, 160 after.
+- **Perplexity: the Sonar `/chat/completions` endpoint is retired** (403 "Sonar is now the Agent API").
+  Moved to `POST /v1/agent` with the `fast` preset; the response's own `usage.cost` is summed and printed.
+- **OpenAI timeouts and cost.** `gpt-5` at default reasoning timed out on 3 of the first 10 queries and cost
+  about $0.16 per answer (31 answers, $5.06). Default is now `gpt-5-mini` at low reasoning effort,
+  timeout 240s: about $0.026 per answer (estimated from token counts at list prices from memory).
+
+**Added**
+- First three-engine run (40 queries, 2026-10-12), in `geo-results.csv`. Named in the answer: Claude 3,
+  **OpenAI 8**, Perplexity 3. Only the two Mexico-specific questions name us on all three.
+- Weekly report addendum with the cross-engine table.
+
 ## [v2.414] – 2026-10-12 — Weekly SEO report: AI referrals halved; CAD-1 verdict
 
 **Added**
