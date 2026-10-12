@@ -1,3 +1,18 @@
+## [v2.416] – 2026-10-12 — Gemini added to the GEO monitor
+
+**Added**
+- Gemini engine in `track_geo.py`: Gemini API with Google Search grounding (Interactions API,
+  `gemini-3.8-flash`). It's a proxy for the Gemini app and for AI Overviews, which run on Gemini; it isn't the
+  same product. Gemini sent 27% of recent AI referrals (12 of 44), second only to ChatGPT, and should have
+  been measured from the start.
+- Gemini's citations are Google redirect URLs; the real domain is in the annotation `title`, which is
+  now what gets checked. Without that, kabatone.com could never register as a source.
+- First run, 40 queries: named in **8**, used as a source in 31. Strongest in English (7/29) and on
+  CAD (3/15: Hexagon and CentralSquare alternatives, Mexico C5/911). 114 grounded searches, 2.9 per answer.
+
+**Changed**
+- `--engines` default is now `claude,openai,gemini,perplexity`, ordered by referral share.
+
 ## [v2.415] – 2026-10-12 — ChatGPT and Perplexity measured; three engine bugs fixed
 
 **Fixed**

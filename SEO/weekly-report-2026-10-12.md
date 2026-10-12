@@ -213,3 +213,33 @@ Keys added, both engines fixed and run (v2.415). **Named in the answer, 40 queri
   useful next step is reading *which* ChatGPT queries lost us the click, and that needs several weeks of data.
 - **Cost, measured:** ChatGPT about $0.026 per answer (~$1 a week for 40; **$10 lasts about 10 weeks**; prices from memory,
   verify against the OpenAI billing page). Perplexity reports its own cost: $0.002 per answer, $0.08 for the full run.
+
+---
+
+## Addendum 2: Gemini added (four engines)
+
+Gemini sent 27% of recent AI referrals (12 of 44), second only to ChatGPT. The 10-05 plan proposed
+ChatGPT and Perplexity and left Gemini out, even though the referral table in that same report showed it.
+That was a planning miss: measured engines should follow referral share. Fixed in v2.416.
+
+**Named in the answer, 40 queries per engine, 2026-10-12:**
+
+| Engine | Share of AI referrals | Named | English (29) | ES/PT (11) | CAD (15) | Used as a source |
+|---|---|---|---|---|---|---|
+| ChatGPT | 58% | **8** | 3 | **5** | 4 | 17 |
+| **Gemini** | 27% | **8** | **7** | 1 | 3 | 31 |
+| Perplexity | ~10% | 3 | 2 | 1 | 1 | 18 |
+| Claude | ~2% | 3 | 2 | 1 | 1 | 33 |
+
+- **The two engines that send real traffic name us most** (8 each). The 3/40 figure that led the 10-05 report
+  came from the engine that sends the least.
+- **ChatGPT and Gemini are complementary:** ChatGPT names us in Spanish and Portuguese, Gemini in English.
+- **Two questions name us on all four engines,** both Mexico-specific: *public safety software for Mexico and
+  Latin America* and *software de despacho para centros C5 y 911 en México*.
+- **Gemini uses our pages to describe competitors.** Asked for *Motorola PremierOne CAD alternatives*, it cited
+  kabatone.com 7 times, as evidence for what PremierOne is and what buyers want from an alternative, and still
+  didn't name us. That's the same "read, not recommended" pattern, now confirmed on the engine behind AI Overviews.
+- **The third-party list sites show up in Gemini's sources too:** ginasoftware.com (18 citations on one answer),
+  researchandmarkets.com, devopsschool.com, featuredcustomers.com. All are on the GEO-5 target list.
+- **Cost:** 114 grounded searches for 40 answers (2.9 each), about 500 a month. That's inside the free tier of
+  5,000 grounded searches a month, per Google's pricing page; token cost not yet measured.
