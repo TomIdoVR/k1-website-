@@ -1,3 +1,10 @@
+## [v2.401] – 2026-10-12 — Weekly SEO brief 2026-10-12
+
+**Added**
+- `SEO/audits/weekly-2026-10-12.json` — raw GA4 + GSC data (28-day period 2026-09-14 → 2026-10-11)
+- `SEO/audits/traffic-2026-10-12.html` — HTML dashboard (deterministic, --no-ai)
+- `SEO/audits/weekly-2026-10-12.md` — written brief: 2,908 sessions (-7.1%); `vms` at pos 7.9 is the biggest CTR opportunity (112 potential clicks); AI Assistant down -26% with a 2-week cliff; 56 staging commits unreleased to production
+
 ## [v2.400] – 2026-09-23 — Closed ledger rows escalated forever, burying the real ones
 
 **Fixed**
