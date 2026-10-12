@@ -187,3 +187,29 @@ printf '%s' 'PASTE-PERPLEXITY-KEY' > ~/.config/claude-seo/perplexity-api-key
 chmod 600 ~/.config/claude-seo/*-api-key
 ```
 Cost at 40 queries a week: about $1–2 for both. Tell me when they're in, and I'll run all three engines and report.
+
+---
+
+## Addendum (same day): ChatGPT and Perplexity measured
+
+Keys added, both engines fixed and run (v2.415). **Named in the answer, 40 queries each:**
+
+| Engine | A | B | C (ES/PT) | D (CAD) | **Total** | English | ES/PT |
+|---|---|---|---|---|---|---|---|
+| Claude | 2/12 | 0/7 | 0/6 | 1/15 | **3/40** | 2/29 | 1/11 |
+| **ChatGPT** (gpt-5-mini) | 2/12 | 0/7 | 2/6 | 4/15 | **8/40** | 3/29 | **5/11** |
+| Perplexity | 2/12 | 0/7 | 0/6 | 1/15 | **3/40** | 2/29 | 1/11 |
+
+- **Only two questions name us on all three engines:** *public safety software for Mexico and Latin America* and
+  *software de despacho para centros C5 y 911 en México*. Our pages are the source there, so it holds up across engines.
+- **ChatGPT names us most (8/40), and most in Spanish/Portuguese (5/11).** It named us on 4 CAD questions,
+  including *Hexagon CAD alternatives*, where it listed KabatOne under "smaller vendors to consider". **Named is
+  not recommended first**; I haven't scored position yet.
+- **The English C5 answer names us on ChatGPT and Perplexity, but not on Claude.** GEO-4's refute rule used Claude only;
+  with two of three engines now using our definition, I'm not closing it as refuted on 10-19.
+- **Sources differ by engine:** our pages were a source for 33/40 on Claude, 17/40 on ChatGPT and 18/40 on
+  Perplexity. ChatGPT searches less (low effort), so its source count isn't comparable.
+- **AI-1 (referrals halved) is not explained.** This measures what answers say, not who clicks through. The most
+  useful next step is reading *which* ChatGPT queries lost us the click, and that needs several weeks of data.
+- **Cost, measured:** ChatGPT about $0.026 per answer (~$1 a week for 40; **$10 lasts about 10 weeks**; prices from memory,
+  verify against the OpenAI billing page). Perplexity reports its own cost: $0.002 per answer, $0.08 for the full run.

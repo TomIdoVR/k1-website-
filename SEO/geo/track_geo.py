@@ -14,7 +14,7 @@ hit, not a win. Until 2026-10-05 both scored as one "cited" flag (carry-over GEO
 Engines (each optional except Claude, which carries the trend line):
   claude      Anthropic Messages API + web_search tool  — key: ~/.config/claude-seo/anthropic-api-key
   openai      OpenAI Responses API + web_search tool    — key: ~/.config/claude-seo/openai-api-key
-  perplexity  Perplexity Sonar (search is built in)     — key: ~/.config/claude-seo/perplexity-api-key
+  perplexity  Perplexity Agent API (search built in)    — key: ~/.config/claude-seo/perplexity-api-key
 An engine with no key file is skipped with a note; it never fails the run.
 
 Outputs:
@@ -29,7 +29,8 @@ Usage:
   python3.11 track_geo.py --blocks D            # one block (e.g. the CAD block)
   python3.11 track_geo.py --no-write --limit 3  # cheap smoke test
 
-Cost: one web-search-enabled request per query per engine (~$0.01-0.03 each).
+Cost: one web-search-enabled request per query per engine. Claude ~$0.01-0.03; OpenAI gpt-5 measured
+~$0.16 (1.2M tokens for 31 answers, 2026-10-12), so the default is gpt-5-mini; re-measure after the first run.
 """
 import argparse, csv, json, os, re, sys, urllib.error, urllib.request
 from pathlib import Path
@@ -129,11 +130,15 @@ def make_openai(model):
     if not key:
         return None
     import openai
-    client = openai.OpenAI(api_key=key, timeout=120.0, max_retries=2)
+    client = openai.OpenAI(api_key=key, timeout=240.0, max_retries=1)
 
     def ask(q):
         try:
+            # Sources are returned only when asked for; without `include`, in_source_set
+            # was always N for OpenAI (verified 2026-10-12: 0 sources vs 160 with it).
             resp = client.responses.create(model=model, tools=[{'type': 'web_search'}],
+                                           include=['web_search_call.action.sources'],
+                                           reasoning={'effort': 'low'},   # default effort timed out 3 of 10 at 120s
                                            input=_PROMPT.format(q=q))
         except Exception as e:
             if _fatal(str(e)) or getattr(e, 'status_code', 0) in (401, 403, 429):
@@ -156,14 +161,16 @@ def make_openai(model):
 
 
 def make_perplexity(model):
+    """Perplexity Agent API (POST /v1/agent). The old Sonar /chat/completions endpoint was
+    retired (403 on 2026-10-12). `model` is a preset name ('fast', ...). Each response carries
+    its own cost in usage.cost.total_cost, accumulated in ask.spent."""
     key = _key('perplexity-api-key', 'PERPLEXITY_API_KEY')
     if not key:
         return None
 
     def ask(q):
-        body = json.dumps({'model': model,
-                           'messages': [{'role': 'user', 'content': _PROMPT.format(q=q)}]})
-        req = urllib.request.Request('https://api.perplexity.ai/chat/completions',
+        body = json.dumps({'preset': model, 'input': _PROMPT.format(q=q)})
+        req = urllib.request.Request('https://api.perplexity.ai/v1/agent',
                                      data=body.encode(), method='POST',
                                      headers={'Authorization': f'Bearer {key}',
                                               'Content-Type': 'application/json'})
@@ -175,10 +182,13 @@ def make_perplexity(model):
             if e.code in (401, 402, 403) or _fatal(msg):
                 raise FatalEngineError(msg)
             raise RuntimeError(msg)
-        text = d['choices'][0]['message']['content']
-        urls = list(d.get('citations') or []) + [s.get('url') for s in
-                                                 (d.get('search_results') or []) if s.get('url')]
+        ask.spent += ((d.get('usage') or {}).get('cost') or {}).get('total_cost', 0) or 0
+        text = ' '.join(c.get('text', '') for o in d.get('output', [])
+                        if o.get('type') == 'message' for c in o.get('content', []))
+        urls = [x['url'] for o in d.get('output', []) if o.get('type') == 'search_results'
+                for x in o.get('results', []) if x.get('url')]
         return text, urls
+    ask.spent = 0.0
     return ask
 
 
@@ -200,8 +210,8 @@ def main():
     ap.add_argument('--engines', default='claude,openai,perplexity')
     ap.add_argument('--blocks', default='', help='e.g. D or A,B,C (default: all)')
     ap.add_argument('--model', default='claude-sonnet-4-6', help='Claude model')
-    ap.add_argument('--openai-model', default='gpt-5')
-    ap.add_argument('--perplexity-model', default='sonar')
+    ap.add_argument('--openai-model', default='gpt-5-mini')  # gpt-5 measured ~$0.16/query on 2026-10-12; mini is the cost-appropriate default
+    ap.add_argument('--perplexity-model', default='fast', help='Agent API preset')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-write', action='store_true')
     ap.add_argument('--allow-partial', action='store_true',
@@ -252,6 +262,8 @@ def main():
         nm = sum(r['named_in_answer'] == 'Y' for r in rows)
         either = sum('Y' in (r['named_in_answer'], r['in_source_set']) for r in rows)
         print(f'[{name}] named in answer {nm}/{n} · named or retrieved {either}/{n}')
+        if getattr(ask, 'spent', 0):
+            print(f'[{name}] reported cost ${ask.spent:.3f} (${ask.spent / max(n, 1):.4f} per answer)')
         if failed:
             print(f'[{name}] {failed}/{len(queries)} failed — a partial run distorts the trend.')
             if not args.allow_partial:
