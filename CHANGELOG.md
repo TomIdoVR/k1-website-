@@ -1,3 +1,47 @@
+## [v2.417] – 2026-10-14 — One long-lived branch: `nextjs` retired, `main` is the only line; daily audit retired
+
+**Changed — how work ships**
+- **`main` is the only long-lived branch.** Every change is a short-lived branch off `main`,
+  checked on its Vercel PR preview, and merged by PR — merging is the deploy. The PR preview
+  replaces `staging.kabatone.com` as the staging check.
+- **`nextjs` is retired**, archived as the tag `archive/nextjs-2026-09-28` (recoverable; nothing
+  deleted). It had diverged from `main` since 2026-08-21 — 185 commits one way, 56 the other,
+  42 source files on both sides — and finished fixes sat on it for 22–28 days because nothing
+  moved them to production (CAD-1, C5, VMS, the answer-first content). The cause was an
+  instruction: `CLAUDE.md` said *"All development happens on `nextjs`"*, so every agent built there.
+- **Before retiring it, everything of value was shipped:** its website work was already live or
+  went out in #21–#25; its SEO tooling and history moved in #24.
+
+**Changed — instructions**
+- `CLAUDE.md`, `AGENTS.md`: workflow rewritten — branch from `main`, PR, preview, merge. Explicit
+  "never build on `nextjs`".
+- `SEO/BRANCHING.md`: rewritten around the new model, keeping the stranded-fix table as the reason.
+
+**Changed — tooling**
+- `scripts/seo_diff.py` → `shipping()`: no longer compares `main` against `nextjs`. It lists every
+  remote branch holding commits `main` lacks and flags 🔴 any older than **7 days** — the new shape
+  of the old failure. On 2026-10-14 it lists 6 (oldest: `ipro-partnership`, 175 days).
+- `scripts/seo-audit.mjs`: audits **`kabatone.com`** against **`main`** by default (was staging
+  against `nextjs`). The branch is now one constant, `DEPLOY_BRANCH`.
+
+**Retired — the daily SEO audit (Omer, 2026-10-14)**
+- The daily audit routine stopped after **2026-09-01** and was later deleted; nothing has audited
+  the site daily since. Its out-of-band alarm, `com.kabatone.seo-scheduler-watchdog`, kept
+  alerting STALE every 15 minutes and exiting 1 for six weeks — a permanently red alarm that
+  trains everyone to ignore alarms. Retired rather than restored.
+- The watchdog LaunchAgent is unloaded and its plist moved to `scripts/launchd/retired/`
+  (recoverable, not deleted). `scripts/seo-audit.mjs` stays and still runs on demand — now
+  against `kabatone.com` / `main`.
+
+**Rebased onto `main` (was PR #26 at v2.410; #27 had since used that number)**
+- `scripts/seo_diff.py` conflicted with v2.411's `_count()`, which returns `None` instead of a
+  silent 0 when git times out on the OneDrive checkout. Kept both: the new branch scan counts
+  through `_count()`, and the report says the list may be incomplete when a count fails —
+  otherwise a timeout would print "✅ everything built is live". `origin/run` (the Slack brief's
+  artifact branch) is excluded: it is never a ship path and would be flagged 🔴 forever.
+
+Verified: both scripts run; `tsc` clean; `npm run build` exit 0.
+
 ## [v2.416] – 2026-10-12 — Gemini added to the GEO monitor
 
 **Added**

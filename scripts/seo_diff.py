@@ -210,47 +210,51 @@ def _count(cmd):
 
 
 def shipping():
-    """Counts BOTH directions on purpose.
+    """What is built but not live.
 
-    `git rev-list --count origin/main..origin/nextjs` alone says "production is N commits
-    behind" and reads like staleness. It is only half the question: main can carry work
-    that never went through nextjs (PRs merged straight to production), in which case the
-    branches have diverged and a merge is a real merge, not a promotion.
+    Until 2026-09-28 this compared `main` with a long-lived `nextjs` staging branch.
+    That model failed: the two diverged on 2026-08-21, and finished fixes sat on
+    `nextjs` for 14-27 days because nothing forced them to production (CAD-1, C5,
+    VMS). `nextjs` was retired and archived as `archive/nextjs-2026-09-28`; every
+    change now ships as a short-lived branch off `main` through a PR.
 
-    This was not hypothetical -- the one-directional check reported "production is 13
-    commits behind" while main was simultaneously 163 commits ahead on a separate line at
-    a HIGHER version, with 8 files modified on both sides. Acting on the one-way number
-    would have merged an older branch into a newer one across the live site."""
-    _sh(['git', 'fetch', 'origin', '--quiet'])
-    ahead = _count(['git', 'rev-list', '--count', 'origin/main..origin/nextjs'])
-    behind = _count(['git', 'rev-list', '--count', 'origin/nextjs..origin/main'])
-    base = _sh(['git', 'merge-base', 'origin/main', 'origin/nextjs'])
-    main_sha = _sh(['git', 'rev-parse', 'origin/main'])
-    overlap = []
-    if behind:
-        mine = set(filter(None, _sh(['git', 'diff', '--name-only',
-                                     'origin/main...origin/nextjs']).split('\n')))
-        theirs = set(filter(None, _sh(['git', 'diff', '--name-only',
-                                       'origin/nextjs...origin/main']).split('\n')))
-        overlap = sorted(f for f in (mine & theirs)
-                         if f.startswith('src/') or f.endswith('.ts') or f.endswith('.tsx'))
+    So "stranded" now means one thing: a remote branch holding commits `main`
+    lacks. Anything older than STALE_DAYS is the same failure in its new shape --
+    work done and invisible -- and is flagged, not merely counted."""
+    STALE_DAYS = 7
+    _sh(['git', 'fetch', 'origin', '--prune', '--quiet'])
     def _ver(ref):
         out = _sh(['git', 'show', f'{ref}:CHANGELOG.md'])
         m = re.match(r'##\s*\[([^\]]+)\]', out.split('\n')[0]) if out else None
         return m.group(1) if m else '?'
+    branches, unknown = [], False
+    for ref in filter(None, _sh(['git', 'for-each-ref', '--format=%(refname:short)',
+                                 'refs/remotes/origin']).split('\n')):
+        if ref in ('origin/main', 'origin/HEAD', 'origin', 'origin/run'):
+            continue  # origin/run holds the Slack brief's artifacts; it is never a ship path
+        n = _count(['git', 'rev-list', '--count', f'origin/main..{ref}'])
+        if n is None:
+            unknown = True
+            continue
+        if not n:
+            continue
+        ts = int(_sh(['git', 'log', '-1', '--format=%ct', ref]) or 0)
+        age = (datetime.now() - datetime.fromtimestamp(ts)).days if ts else None
+        branches.append({'branch': ref.split('/', 1)[1], 'commits': n, 'age_days': age,
+                         'stale': age is not None and age > STALE_DAYS})
+    branches.sort(key=lambda b: -(b['age_days'] or 0))
+    local = _sh(['git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+    upstream = _sh(['git', 'rev-parse', '--abbrev-ref', '@{u}'])
     return {
-        'staging_ahead_of_prod': ahead,
-        'prod_ahead_of_staging': behind,
-        'diverged': bool(behind) and base != main_sha,
-        'fast_forward_possible': base == main_sha,
-        'overlapping_files': overlap,
         'version_main': _ver('origin/main'),
-        'version_nextjs': _ver('origin/nextjs'),
-        'local_unpushed': _count(['git', 'rev-list', '--count',
-                                  'origin/nextjs..nextjs']),
-        'unknown': ahead is None or behind is None or not base or not main_sha,
+        'unknown': unknown,
         'last_prod_commit': _sh(['git', 'log', 'origin/main', '-1',
                                  '--format=%h %ad %s', '--date=short']),
+        'unmerged_branches': branches,
+        'stale_days': STALE_DAYS,
+        'local_branch': local,
+        'local_unpushed': (_count(['git', 'rev-list', '--count', f'{upstream}..HEAD'])
+                           or 0) if upstream else 0,
     }
 
 
@@ -342,8 +346,6 @@ def repo_health():
         plan_age = (datetime.now()
                     - datetime.fromtimestamp(plan.stat().st_mtime)).days
     return {
-        'commits_this_week_nextjs': int(_sh(['git', 'rev-list', '--count',
-                                             f'--since={since}', 'origin/nextjs']) or 0),
         'prod_pushes_this_week': int(_sh(['git', 'rev-list', '--count',
                                           f'--since={since}', 'origin/main']) or 0),
         'country_pages': country,
@@ -627,7 +629,6 @@ def render(d):
         a("| Signal | Value | |")
         a("|---|---|---|")
         a(f"| Striking distance (pos 5–15) | {d.get('striking_distance_count','?')} | |")
-        a(f"| Commits this week (`nextjs`) | {rh['commits_this_week_nextjs']} | |")
         a(f"| Production pushes this week | {rh['prod_pushes_this_week']} | "
           f"{'⚠️ none' if not rh['prod_pushes_this_week'] else '✅'} |")
         over = rh.get('country_over_guardrail')
@@ -639,31 +640,27 @@ def render(d):
     s = d['shipping']
     a("\n## Shipping\n")
     if s.get('unknown'):
-        a("> ⚠️ **git query failed or timed out — branch divergence is UNKNOWN.** Do not report "
-          "0 ahead / 0 behind. Re-run, or count by hand with `git rev-list --count` both ways (G12).\n")
-    a(f"- `nextjs` ahead of `main`: **{s['staging_ahead_of_prod']}** commits "
-      f"(staging {s['version_nextjs']})")
-    a(f"- `main` ahead of `nextjs`: **{s['prod_ahead_of_staging']}** commits "
-      f"(production {s['version_main']})")
-    a(f"- Local commits never pushed: **{s['local_unpushed']}**")
-    a(f"- Last production commit: `{s['last_prod_commit']}`")
-    if s['diverged']:
-        a(f"\n> 🔴 **The branches have DIVERGED — this is not a promotion.** `main` carries "
-          f"{s['prod_ahead_of_staging']} commits that never went through `nextjs`, so merging "
-          f"`nextjs` into `main` merges an older line into a newer one, not newer into older. "
-          f"Do not describe production as simply 'behind'.")
-        if s['overlapping_files']:
-            a(f">\n> **{len(s['overlapping_files'])} source files changed on BOTH sides** — real "
-              f"regression risk on the live site:\n>\n"
-              + "\n".join(f"> - `{f}`" for f in s['overlapping_files'][:10]))
-        a(">\n> Route SEO changes through a PR branched from `main` and resolved against its "
-          "newer versions, rather than a direct merge.")
-    elif s['staging_ahead_of_prod']:
-        a(f"\n> `main` is an ancestor of `nextjs` — a clean fast-forward. "
-          f"{s['staging_ahead_of_prod']} commits are built but not live.")
+        a("> ⚠️ **A git count failed or timed out — the branch list below may be incomplete.** "
+          "Do not report 'everything is live' from it. Re-run, or count by hand.\n")
+    a(f"- Production: **{s['version_main']}** — last commit `{s['last_prod_commit']}`")
+    ub = s.get('unmerged_branches') or []
+    stale = [b for b in ub if b['stale']]
+    if not ub:
+        a("- ✅ No branch holds work that `main` lacks — everything built is live.")
+    else:
+        a(f"- Branches holding work not on `main`: **{len(ub)}**"
+          + (f" — **{len(stale)} older than {s['stale_days']} days**" if stale else ""))
+        a("\n| Branch | Commits not on main | Last commit |")
+        a("|---|---|---|")
+        for b in ub[:12]:
+            a(f"| `{b['branch']}` | {b['commits']} | {b['age_days']}d{' 🔴' if b['stale'] else ''} |")
+        if stale:
+            a(f"\n> 🔴 **{len(stale)} branch(es) have held unshipped work for over "
+              f"{s['stale_days']} days.** This is how CAD-1, C5 and VMS sat invisible for "
+              f"14–27 days. Open a PR against `main`, or delete the branch if it is abandoned.")
     if s['local_unpushed']:
-        a(f"\n> **{s['local_unpushed']} commits exist only on this machine.** Unpushed work is "
-          f"invisible in every metric and reads identically to work never done.")
+        a(f"\n> **{s['local_unpushed']} commits on `{s['local_branch']}` exist only on this "
+          f"machine.** Unpushed work is invisible in every metric.")
 
     g = d['geo']
     a("\n## GEO\n")
