@@ -1,3 +1,18 @@
+## [v2.417] – 2026-10-19 — Weekly SEO report: GEO single runs are too noisy to read
+
+**Added**
+- `SEO/weekly-report-2026-10-19.md`. Clicks +8% (649), position 10.0. Brand searches drove 26 of the +49 clicks,
+  alongside LinkedIn growth; non-brand clicks rose about 4.6%.
+- GEO noise test from an accidental double run: 19 of 160 answers flipped between identical runs 30 minutes apart.
+  ChatGPT named KabatOne 5 times in one run and 10 in the other; Claude 3 and 3. Week-over-week moves smaller than ~5
+  per engine can't be read from one run.
+- 10-19 four-engine rows in `SEO/geo/geo-results.csv` (both runs). The scheduled job doesn't commit this file (PIPE-4).
+
+**Changed**
+- Carry-over ledger: closed GEO-4 (3 of 4 engines use our C5 definition) and PIPE-2 (jobs run from `~/dev/k1-website`).
+  Opened GEO-8 (two intentional runs a week, fix the job race) and PIPE-4. AI-1 moved to watching: the drop is broad,
+  and it isn't the tag or a shift to Direct.
+
 ## [v2.416] – 2026-10-12 — Gemini added to the GEO monitor
 
 **Added**

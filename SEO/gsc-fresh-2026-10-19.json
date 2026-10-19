@@ -1,0 +1,1260 @@
+{
+ "meta": {
+  "property": "https://kabatone.com/",
+  "date_range": "2026-09-20 to 2026-10-17",
+  "days": 28,
+  "pulled_at": "2026-10-19",
+  "data_source": "Google Search Console API (field data)",
+  "lag_note": "GSC has ~2-3 day lag; data through 2026-10-17"
+ },
+ "totals": {
+  "total_clicks": 649,
+  "total_impressions": 112434,
+  "avg_ctr_pct": 0.58,
+  "avg_position": 10.0
+ },
+ "top_queries_by_impressions": [
+  {
+   "query": "kabat one",
+   "clicks": 77,
+   "impressions": 223,
+   "ctr": 34.53,
+   "position": 1.0
+  },
+  {
+   "query": "kabatone",
+   "clicks": 44,
+   "impressions": 74,
+   "ctr": 59.46,
+   "position": 1.0
+  },
+  {
+   "query": "vms",
+   "clicks": 10,
+   "impressions": 3326,
+   "ctr": 0.3,
+   "position": 7.3
+  },
+  {
+   "query": "c5",
+   "clicks": 5,
+   "impressions": 4506,
+   "ctr": 0.11,
+   "position": 8.0
+  },
+  {
+   "query": "reconocimiento de placas vehiculares",
+   "clicks": 5,
+   "impressions": 35,
+   "ctr": 14.29,
+   "position": 9.3
+  },
+  {
+   "query": "cctv ai analytics",
+   "clicks": 4,
+   "impressions": 246,
+   "ctr": 1.63,
+   "position": 3.6
+  },
+  {
+   "query": "grupo kabat",
+   "clicks": 3,
+   "impressions": 467,
+   "ctr": 0.64,
+   "position": 6.0
+  },
+  {
+   "query": "ai-based intelligent video analytics platform for border surveillance using existing cctv infrastructure.",
+   "clicks": 2,
+   "impressions": 16,
+   "ctr": 12.5,
+   "position": 2.1
+  },
+  {
+   "query": "c5 mexico",
+   "clicks": 2,
+   "impressions": 241,
+   "ctr": 0.83,
+   "position": 6.5
+  },
+  {
+   "query": "camaras de videovigilancia c5",
+   "clicks": 2,
+   "impressions": 59,
+   "ctr": 3.39,
+   "position": 6.6
+  },
+  {
+   "query": "cctv analytics",
+   "clicks": 2,
+   "impressions": 380,
+   "ctr": 0.53,
+   "position": 4.6
+  },
+  {
+   "query": "centro de mando",
+   "clicks": 2,
+   "impressions": 71,
+   "ctr": 2.82,
+   "position": 6.1
+  },
+  {
+   "query": "c\u00e1maras de videovigilancia c5",
+   "clicks": 2,
+   "impressions": 13,
+   "ctr": 15.38,
+   "position": 6.6
+  },
+  {
+   "query": "public safety software",
+   "clicks": 2,
+   "impressions": 422,
+   "ctr": 0.47,
+   "position": 8.8
+  },
+  {
+   "query": "que es c5 en seguridad publica",
+   "clicks": 2,
+   "impressions": 196,
+   "ctr": 1.02,
+   "position": 5.2
+  },
+  {
+   "query": "911 dispatch (cad system)",
+   "clicks": 1,
+   "impressions": 11,
+   "ctr": 9.09,
+   "position": 9.5
+  },
+  {
+   "query": "ai cctv analytics",
+   "clicks": 1,
+   "impressions": 88,
+   "ctr": 1.14,
+   "position": 4.6
+  },
+  {
+   "query": "alpr",
+   "clicks": 1,
+   "impressions": 158,
+   "ctr": 0.63,
+   "position": 9.2
+  },
+  {
+   "query": "best computer aided dispatch software",
+   "clicks": 1,
+   "impressions": 45,
+   "ctr": 2.22,
+   "position": 3.6
+  },
+  {
+   "query": "c/5",
+   "clicks": 1,
+   "impressions": 5,
+   "ctr": 20.0,
+   "position": 7.6
+  },
+  {
+   "query": "c4 estado de mexico",
+   "clicks": 1,
+   "impressions": 4,
+   "ctr": 25.0,
+   "position": 3.8
+  },
+  {
+   "query": "c4 y c5 que es",
+   "clicks": 1,
+   "impressions": 20,
+   "ctr": 5.0,
+   "position": 3
+  },
+  {
+   "query": "c5 que es",
+   "clicks": 1,
+   "impressions": 384,
+   "ctr": 0.26,
+   "position": 6.6
+  },
+  {
+   "query": "c5 que es policia",
+   "clicks": 1,
+   "impressions": 17,
+   "ctr": 5.88,
+   "position": 5.6
+  },
+  {
+   "query": "c5i",
+   "clicks": 1,
+   "impressions": 16,
+   "ctr": 6.25,
+   "position": 6.1
+  },
+  {
+   "query": "cad systems police",
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 50.0,
+   "position": 1
+  },
+  {
+   "query": "camara analitica",
+   "clicks": 1,
+   "impressions": 48,
+   "ctr": 2.08,
+   "position": 9.1
+  },
+  {
+   "query": "camaras de c5",
+   "clicks": 1,
+   "impressions": 16,
+   "ctr": 6.25,
+   "position": 9.6
+  },
+  {
+   "query": "cctv ai analytics software",
+   "clicks": 1,
+   "impressions": 41,
+   "ctr": 2.44,
+   "position": 6.7
+  },
+  {
+   "query": "cctv analytics software",
+   "clicks": 1,
+   "impressions": 107,
+   "ctr": 0.93,
+   "position": 11.6
+  }
+ ],
+ "top_pages_by_impressions": [
+  {
+   "page": "https://kabatone.com/es",
+   "clicks": 82,
+   "impressions": 1169,
+   "ctr": 7.01,
+   "position": 5.0
+  },
+  {
+   "page": "https://kabatone.com/",
+   "clicks": 78,
+   "impressions": 920,
+   "ctr": 8.48,
+   "position": 4.5
+  },
+  {
+   "page": "https://kabatone.com/es/resources/how-c5-command-centers-work",
+   "clicks": 61,
+   "impressions": 13531,
+   "ctr": 0.45,
+   "position": 7.0
+  },
+  {
+   "page": "https://kabatone.com/resources/best-cad-dispatch-software",
+   "clicks": 60,
+   "impressions": 14663,
+   "ctr": 0.41,
+   "position": 8.2
+  },
+  {
+   "page": "https://kabatone.com/resources/cctv-video-analytics",
+   "clicks": 46,
+   "impressions": 7845,
+   "ctr": 0.59,
+   "position": 11.4
+  },
+  {
+   "page": "https://kabatone.com/es/resources/que-es-un-c5",
+   "clicks": 29,
+   "impressions": 7971,
+   "ctr": 0.36,
+   "position": 6.0
+  },
+  {
+   "page": "https://kabatone.com/es/resources/what-is-a-command-center",
+   "clicks": 23,
+   "impressions": 3648,
+   "ctr": 0.63,
+   "position": 6.3
+  },
+  {
+   "page": "https://kabatone.com/es/resources/cctv-video-analytics",
+   "clicks": 21,
+   "impressions": 2518,
+   "ctr": 0.83,
+   "position": 7.9
+  },
+  {
+   "page": "https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition",
+   "clicks": 17,
+   "impressions": 2711,
+   "ctr": 0.63,
+   "position": 7.3
+  },
+  {
+   "page": "https://kabatone.com/es/resources/what-is-video-management-software",
+   "clicks": 16,
+   "impressions": 5723,
+   "ctr": 0.28,
+   "position": 6.9
+  },
+  {
+   "page": "https://kabatone.com/resources/best-public-safety-software",
+   "clicks": 16,
+   "impressions": 7286,
+   "ctr": 0.22,
+   "position": 9.4
+  },
+  {
+   "page": "https://kabatone.com/resources/how-c5-command-centers-work",
+   "clicks": 11,
+   "impressions": 1611,
+   "ctr": 0.68,
+   "position": 5.0
+  },
+  {
+   "page": "https://kabatone.com/resources/what-is-video-management-software",
+   "clicks": 9,
+   "impressions": 7484,
+   "ctr": 0.12,
+   "position": 18.8
+  },
+  {
+   "page": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software",
+   "clicks": 7,
+   "impressions": 341,
+   "ctr": 2.05,
+   "position": 6.8
+  },
+  {
+   "page": "https://kabatone.com/k-dispatch",
+   "clicks": 7,
+   "impressions": 493,
+   "ctr": 1.42,
+   "position": 25.4
+  },
+  {
+   "page": "https://kabatone.com/resources/best-ai-video-analytics-software",
+   "clicks": 7,
+   "impressions": 3050,
+   "ctr": 0.23,
+   "position": 12.8
+  },
+  {
+   "page": "https://kabatone.com/es/resources/ai-in-public-safety",
+   "clicks": 6,
+   "impressions": 185,
+   "ctr": 3.24,
+   "position": 8.0
+  },
+  {
+   "page": "https://kabatone.com/about",
+   "clicks": 5,
+   "impressions": 379,
+   "ctr": 1.32,
+   "position": 2.8
+  },
+  {
+   "page": "https://kabatone.com/es/resources/best-vms-software",
+   "clicks": 4,
+   "impressions": 356,
+   "ctr": 1.12,
+   "position": 10.9
+  },
+  {
+   "page": "https://kabatone.com/es/resources/what-is-emergency-management-software",
+   "clicks": 4,
+   "impressions": 233,
+   "ctr": 1.72,
+   "position": 8.5
+  }
+ ],
+ "striking_distance": {
+  "description": "Queries with position 5-15 and >= 10 impressions (strong page-1 opportunities)",
+  "count": 98,
+  "rows": [
+   {
+    "query": "c5",
+    "clicks": 5,
+    "impressions": 4506,
+    "ctr": 0.11,
+    "position": 8.0
+   },
+   {
+    "query": "vms",
+    "clicks": 10,
+    "impressions": 3326,
+    "ctr": 0.3,
+    "position": 7.3
+   },
+   {
+    "query": "psap",
+    "clicks": 1,
+    "impressions": 1177,
+    "ctr": 0.08,
+    "position": 5.2
+   },
+   {
+    "query": "rtcc",
+    "clicks": 1,
+    "impressions": 969,
+    "ctr": 0.1,
+    "position": 7.8
+   },
+   {
+    "query": "grupo kabat",
+    "clicks": 3,
+    "impressions": 467,
+    "ctr": 0.64,
+    "position": 6.0
+   },
+   {
+    "query": "que es el c5 en mexico",
+    "clicks": 1,
+    "impressions": 463,
+    "ctr": 0.22,
+    "position": 6.4
+   },
+   {
+    "query": "public safety software",
+    "clicks": 2,
+    "impressions": 422,
+    "ctr": 0.47,
+    "position": 8.8
+   },
+   {
+    "query": "que es c5",
+    "clicks": 1,
+    "impressions": 385,
+    "ctr": 0.26,
+    "position": 6.6
+   },
+   {
+    "query": "c5 que es",
+    "clicks": 1,
+    "impressions": 384,
+    "ctr": 0.26,
+    "position": 6.6
+   },
+   {
+    "query": "ai video analytics",
+    "clicks": 0,
+    "impressions": 313,
+    "ctr": 0,
+    "position": 10.2
+   },
+   {
+    "query": "c5 mexico",
+    "clicks": 2,
+    "impressions": 241,
+    "ctr": 0.83,
+    "position": 6.5
+   },
+   {
+    "query": "que significa c5",
+    "clicks": 1,
+    "impressions": 240,
+    "ctr": 0.42,
+    "position": 6.7
+   },
+   {
+    "query": "situational awareness platform",
+    "clicks": 1,
+    "impressions": 214,
+    "ctr": 0.47,
+    "position": 7.6
+   },
+   {
+    "query": "que es c5 en seguridad publica",
+    "clicks": 2,
+    "impressions": 196,
+    "ctr": 1.02,
+    "position": 5.2
+   },
+   {
+    "query": "1. \u00bfqu\u00e9 hace la video anal\u00edtica con ia? * 1 punto a) graba con mejor resoluci\u00f3n b) convierte las c\u00e1maras en sensores que detectan y miden c) sustituye al sistema de almac\u00e9n d) guarda el video en la nube",
+    "clicks": 0,
+    "impressions": 192,
+    "ctr": 0,
+    "position": 7.4
+   },
+   {
+    "query": "ai video analytics software",
+    "clicks": 0,
+    "impressions": 182,
+    "ctr": 0,
+    "position": 14.0
+   },
+   {
+    "query": "alpr",
+    "clicks": 1,
+    "impressions": 158,
+    "ctr": 0.63,
+    "position": 9.2
+   },
+   {
+    "query": "vms software for cctv",
+    "clicks": 1,
+    "impressions": 137,
+    "ctr": 0.73,
+    "position": 14.1
+   },
+   {
+    "query": "software vms",
+    "clicks": 1,
+    "impressions": 112,
+    "ctr": 0.89,
+    "position": 13.5
+   },
+   {
+    "query": "cctv analytics software",
+    "clicks": 1,
+    "impressions": 107,
+    "ctr": 0.93,
+    "position": 11.6
+   },
+   {
+    "query": "smart city platform",
+    "clicks": 1,
+    "impressions": 87,
+    "ctr": 1.15,
+    "position": 10.8
+   },
+   {
+    "query": "police cad software",
+    "clicks": 1,
+    "impressions": 86,
+    "ctr": 1.16,
+    "position": 9.7
+   },
+   {
+    "query": "que significa c1 c2, c3, c4 c5 seguridad",
+    "clicks": 1,
+    "impressions": 83,
+    "ctr": 1.2,
+    "position": 5.3
+   },
+   {
+    "query": "analytic cctv cameras",
+    "clicks": 0,
+    "impressions": 80,
+    "ctr": 0,
+    "position": 5.1
+   },
+   {
+    "query": "lpr que significa",
+    "clicks": 1,
+    "impressions": 75,
+    "ctr": 1.33,
+    "position": 6.4
+   },
+   {
+    "query": "access control system integrations",
+    "clicks": 0,
+    "impressions": 74,
+    "ctr": 0,
+    "position": 10
+   },
+   {
+    "query": "analytical cctv camera",
+    "clicks": 0,
+    "impressions": 73,
+    "ctr": 0,
+    "position": 5.2
+   },
+   {
+    "query": "sistema pnb",
+    "clicks": 1,
+    "impressions": 72,
+    "ctr": 1.39,
+    "position": 8.3
+   },
+   {
+    "query": "centro de mando",
+    "clicks": 2,
+    "impressions": 71,
+    "ctr": 2.82,
+    "position": 6.1
+   },
+   {
+    "query": "computer aided dispatch software companies",
+    "clicks": 1,
+    "impressions": 68,
+    "ctr": 1.47,
+    "position": 11.0
+   },
+   {
+    "query": "911 cad demo",
+    "clicks": 0,
+    "impressions": 63,
+    "ctr": 0,
+    "position": 11.6
+   },
+   {
+    "query": "911 call center software",
+    "clicks": 0,
+    "impressions": 63,
+    "ctr": 0,
+    "position": 9.4
+   },
+   {
+    "query": "911 call taking software",
+    "clicks": 0,
+    "impressions": 62,
+    "ctr": 0,
+    "position": 13.2
+   },
+   {
+    "query": "ai in public safety",
+    "clicks": 0,
+    "impressions": 61,
+    "ctr": 0,
+    "position": 14.5
+   },
+   {
+    "query": "camaras de videovigilancia c5",
+    "clicks": 2,
+    "impressions": 59,
+    "ctr": 3.39,
+    "position": 6.6
+   },
+   {
+    "query": "ai video analytics camera",
+    "clicks": 0,
+    "impressions": 59,
+    "ctr": 0,
+    "position": 11.5
+   },
+   {
+    "query": "video analytics for cctv",
+    "clicks": 1,
+    "impressions": 57,
+    "ctr": 1.75,
+    "position": 7.6
+   },
+   {
+    "query": "ai video analytics platform cctv camera integration",
+    "clicks": 0,
+    "impressions": 54,
+    "ctr": 0,
+    "position": 7.8
+   },
+   {
+    "query": "ai vms software",
+    "clicks": 0,
+    "impressions": 52,
+    "ctr": 0,
+    "position": 10.6
+   },
+   {
+    "query": "ai analytics video surveillance systems",
+    "clicks": 0,
+    "impressions": 49,
+    "ctr": 0,
+    "position": 11.8
+   },
+   {
+    "query": "camara analitica",
+    "clicks": 1,
+    "impressions": 48,
+    "ctr": 2.08,
+    "position": 9.1
+   },
+   {
+    "query": "ai based ip video analytics",
+    "clicks": 0,
+    "impressions": 46,
+    "ctr": 0,
+    "position": 6.4
+   },
+   {
+    "query": "analytics cctv software",
+    "clicks": 0,
+    "impressions": 46,
+    "ctr": 0,
+    "position": 8.7
+   },
+   {
+    "query": "access control system integration",
+    "clicks": 0,
+    "impressions": 43,
+    "ctr": 0,
+    "position": 11.7
+   },
+   {
+    "query": "anal\u00edtica de video",
+    "clicks": 0,
+    "impressions": 42,
+    "ctr": 0,
+    "position": 11.5
+   },
+   {
+    "query": "cctv ai analytics software",
+    "clicks": 1,
+    "impressions": 41,
+    "ctr": 2.44,
+    "position": 6.7
+   },
+   {
+    "query": "cctv analytics systems",
+    "clicks": 1,
+    "impressions": 41,
+    "ctr": 2.44,
+    "position": 12.1
+   },
+   {
+    "query": "911 center cad system sound effects",
+    "clicks": 0,
+    "impressions": 37,
+    "ctr": 0,
+    "position": 10.4
+   },
+   {
+    "query": "advanced cctv analytics solution",
+    "clicks": 0,
+    "impressions": 36,
+    "ctr": 0,
+    "position": 7.3
+   },
+   {
+    "query": "reconocimiento de placas vehiculares",
+    "clicks": 5,
+    "impressions": 35,
+    "ctr": 14.29,
+    "position": 9.3
+   },
+   {
+    "query": "avigilon",
+    "clicks": 0,
+    "impressions": 35,
+    "ctr": 0,
+    "position": 9.9
+   },
+   {
+    "query": "911 dispatch department software",
+    "clicks": 0,
+    "impressions": 33,
+    "ctr": 0,
+    "position": 10.3
+   },
+   {
+    "query": "advanced video management system",
+    "clicks": 0,
+    "impressions": 33,
+    "ctr": 0,
+    "position": 13.8
+   },
+   {
+    "query": "911 call handling systems",
+    "clicks": 0,
+    "impressions": 32,
+    "ctr": 0,
+    "position": 12
+   },
+   {
+    "query": "advanced cctv analytics solutions",
+    "clicks": 0,
+    "impressions": 31,
+    "ctr": 0,
+    "position": 10.4
+   },
+   {
+    "query": "avigilon alternatives",
+    "clicks": 0,
+    "impressions": 31,
+    "ctr": 0,
+    "position": 14.8
+   },
+   {
+    "query": "911 software companies",
+    "clicks": 0,
+    "impressions": 30,
+    "ctr": 0,
+    "position": 13.8
+   },
+   {
+    "query": "analitica de video perimetral",
+    "clicks": 0,
+    "impressions": 30,
+    "ctr": 0,
+    "position": 8.3
+   },
+   {
+    "query": "911 call handling software",
+    "clicks": 0,
+    "impressions": 29,
+    "ctr": 0,
+    "position": 10.8
+   },
+   {
+    "query": "ai video detector",
+    "clicks": 0,
+    "impressions": 29,
+    "ctr": 0,
+    "position": 13.3
+   },
+   {
+    "query": "ai based video analytics",
+    "clicks": 0,
+    "impressions": 28,
+    "ctr": 0,
+    "position": 11.6
+   },
+   {
+    "query": "ai based video analytics software",
+    "clicks": 0,
+    "impressions": 28,
+    "ctr": 0,
+    "position": 14.6
+   },
+   {
+    "query": "911 call center",
+    "clicks": 0,
+    "impressions": 27,
+    "ctr": 0,
+    "position": 7.9
+   },
+   {
+    "query": "ambulance dispatch system software",
+    "clicks": 0,
+    "impressions": 27,
+    "ctr": 0,
+    "position": 12.3
+   },
+   {
+    "query": "are there scalable integrated public safety camera platforms for large agencies?",
+    "clicks": 0,
+    "impressions": 24,
+    "ctr": 0,
+    "position": 6.9
+   },
+   {
+    "query": "artifical intelligence video analytics",
+    "clicks": 0,
+    "impressions": 24,
+    "ctr": 0,
+    "position": 14.9
+   },
+   {
+    "query": "911 contact center management software",
+    "clicks": 0,
+    "impressions": 23,
+    "ctr": 0,
+    "position": 10.7
+   },
+   {
+    "query": "analitica de video",
+    "clicks": 0,
+    "impressions": 23,
+    "ctr": 0,
+    "position": 13.4
+   },
+   {
+    "query": "anal\u00edtica de v\u00eddeo",
+    "clicks": 0,
+    "impressions": 23,
+    "ctr": 0,
+    "position": 11.4
+   },
+   {
+    "query": "ai video analytics companies",
+    "clicks": 0,
+    "impressions": 21,
+    "ctr": 0,
+    "position": 9.2
+   },
+   {
+    "query": "911 call center project management",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 8.6
+   },
+   {
+    "query": "911 call handling system",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 8.3
+   },
+   {
+    "query": "ai camera analytics",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 8.2
+   },
+   {
+    "query": "ai in video analytics",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 14.3
+   },
+   {
+    "query": "avigilon alternative",
+    "clicks": 0,
+    "impressions": 20,
+    "ctr": 0,
+    "position": 7.9
+   },
+   {
+    "query": "audio video management system",
+    "clicks": 0,
+    "impressions": 18,
+    "ctr": 0,
+    "position": 7.8
+   },
+   {
+    "query": "automated dispatch systems",
+    "clicks": 0,
+    "impressions": 18,
+    "ctr": 0,
+    "position": 12.6
+   },
+   {
+    "query": "c5 que es policia",
+    "clicks": 1,
+    "impressions": 17,
+    "ctr": 5.88,
+    "position": 5.6
+   },
+   {
+    "query": "hexagon safety",
+    "clicks": 1,
+    "impressions": 17,
+    "ctr": 5.88,
+    "position": 9.6
+   },
+   {
+    "query": "c5i",
+    "clicks": 1,
+    "impressions": 16,
+    "ctr": 6.25,
+    "position": 6.1
+   },
+   {
+    "query": "camaras de c5",
+    "clicks": 1,
+    "impressions": 16,
+    "ctr": 6.25,
+    "position": 9.6
+   },
+   {
+    "query": "911 communications management software",
+    "clicks": 0,
+    "impressions": 16,
+    "ctr": 0,
+    "position": 11.1
+   },
+   {
+    "query": ". \u00bfqu\u00e9 hace la video anal\u00edtica con ia? * 1 punto a) graba con mejor resoluci\u00f3n b) convierte las c\u00e1maras en sensores que detectan y miden c) sustituye al sistema de almac\u00e9n d) guarda el video en la nube",
+    "clicks": 0,
+    "impressions": 15,
+    "ctr": 0,
+    "position": 7.9
+   },
+   {
+    "query": "academic institutions dispatch systems",
+    "clicks": 0,
+    "impressions": 15,
+    "ctr": 0,
+    "position": 11.5
+   },
+   {
+    "query": "c\u00e1maras de videovigilancia c5",
+    "clicks": 2,
+    "impressions": 13,
+    "ctr": 15.38,
+    "position": 6.6
+   },
+   {
+    "query": "fusus cameras",
+    "clicks": 1,
+    "impressions": 13,
+    "ctr": 7.69,
+    "position": 6.5
+   },
+   {
+    "query": "911 software replacement",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 13.7
+   },
+   {
+    "query": "ai sensor fusion",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 15
+   },
+   {
+    "query": "alternatives to milestone or genetec video search?",
+    "clicks": 0,
+    "impressions": 13,
+    "ctr": 0,
+    "position": 6.6
+   },
+   {
+    "query": "anal\u00edtica de video industrial con ia",
+    "clicks": 0,
+    "impressions": 12,
+    "ctr": 0,
+    "position": 10.8
+   },
+   {
+    "query": "911 dispatch (cad system)",
+    "clicks": 1,
+    "impressions": 11,
+    "ctr": 9.09,
+    "position": 9.5
+   },
+   {
+    "query": "police cad simulator",
+    "clicks": 1,
+    "impressions": 11,
+    "ctr": 9.09,
+    "position": 7.7
+   },
+   {
+    "query": "sistema lpr policia",
+    "clicks": 1,
+    "impressions": 11,
+    "ctr": 9.09,
+    "position": 5.9
+   },
+   {
+    "query": "911 psap",
+    "clicks": 0,
+    "impressions": 11,
+    "ctr": 0,
+    "position": 7.5
+   },
+   {
+    "query": "smart city platforms",
+    "clicks": 1,
+    "impressions": 10,
+    "ctr": 10.0,
+    "position": 5.6
+   },
+   {
+    "query": "ai safety software",
+    "clicks": 0,
+    "impressions": 10,
+    "ctr": 0,
+    "position": 7.4
+   },
+   {
+    "query": "apa itu c5",
+    "clicks": 0,
+    "impressions": 10,
+    "ctr": 0,
+    "position": 7.7
+   },
+   {
+    "query": "avigilon vms alternative",
+    "clicks": 0,
+    "impressions": 10,
+    "ctr": 0,
+    "position": 11.3
+   }
+  ]
+ },
+ "daily_trend": [
+  {
+   "date": "2026-09-20",
+   "clicks": 12,
+   "impressions": 2898,
+   "ctr": 0.41,
+   "position": 10.5
+  },
+  {
+   "date": "2026-09-21",
+   "clicks": 23,
+   "impressions": 3866,
+   "ctr": 0.59,
+   "position": 9.5
+  },
+  {
+   "date": "2026-09-22",
+   "clicks": 34,
+   "impressions": 4944,
+   "ctr": 0.69,
+   "position": 9.5
+  },
+  {
+   "date": "2026-09-23",
+   "clicks": 25,
+   "impressions": 4419,
+   "ctr": 0.57,
+   "position": 10.3
+  },
+  {
+   "date": "2026-09-24",
+   "clicks": 19,
+   "impressions": 4239,
+   "ctr": 0.45,
+   "position": 9.1
+  },
+  {
+   "date": "2026-09-25",
+   "clicks": 21,
+   "impressions": 3574,
+   "ctr": 0.59,
+   "position": 9.2
+  },
+  {
+   "date": "2026-09-26",
+   "clicks": 14,
+   "impressions": 3059,
+   "ctr": 0.46,
+   "position": 10.6
+  },
+  {
+   "date": "2026-09-27",
+   "clicks": 9,
+   "impressions": 3846,
+   "ctr": 0.23,
+   "position": 10.4
+  },
+  {
+   "date": "2026-09-28",
+   "clicks": 38,
+   "impressions": 4017,
+   "ctr": 0.95,
+   "position": 9.9
+  },
+  {
+   "date": "2026-09-29",
+   "clicks": 24,
+   "impressions": 4046,
+   "ctr": 0.59,
+   "position": 12.3
+  },
+  {
+   "date": "2026-09-30",
+   "clicks": 30,
+   "impressions": 3891,
+   "ctr": 0.77,
+   "position": 8.9
+  },
+  {
+   "date": "2026-10-01",
+   "clicks": 22,
+   "impressions": 3670,
+   "ctr": 0.6,
+   "position": 11.4
+  },
+  {
+   "date": "2026-10-02",
+   "clicks": 19,
+   "impressions": 3663,
+   "ctr": 0.52,
+   "position": 11.7
+  },
+  {
+   "date": "2026-10-03",
+   "clicks": 11,
+   "impressions": 2748,
+   "ctr": 0.4,
+   "position": 10.9
+  },
+  {
+   "date": "2026-10-04",
+   "clicks": 20,
+   "impressions": 3151,
+   "ctr": 0.63,
+   "position": 11.1
+  },
+  {
+   "date": "2026-10-05",
+   "clicks": 31,
+   "impressions": 4418,
+   "ctr": 0.7,
+   "position": 10.5
+  },
+  {
+   "date": "2026-10-06",
+   "clicks": 20,
+   "impressions": 4610,
+   "ctr": 0.43,
+   "position": 9.4
+  },
+  {
+   "date": "2026-10-07",
+   "clicks": 30,
+   "impressions": 4611,
+   "ctr": 0.65,
+   "position": 9.7
+  },
+  {
+   "date": "2026-10-08",
+   "clicks": 30,
+   "impressions": 4496,
+   "ctr": 0.67,
+   "position": 8.6
+  },
+  {
+   "date": "2026-10-09",
+   "clicks": 32,
+   "impressions": 4232,
+   "ctr": 0.76,
+   "position": 8.8
+  },
+  {
+   "date": "2026-10-10",
+   "clicks": 16,
+   "impressions": 3394,
+   "ctr": 0.47,
+   "position": 9.4
+  },
+  {
+   "date": "2026-10-11",
+   "clicks": 20,
+   "impressions": 4252,
+   "ctr": 0.47,
+   "position": 8.8
+  },
+  {
+   "date": "2026-10-12",
+   "clicks": 24,
+   "impressions": 4473,
+   "ctr": 0.54,
+   "position": 8.9
+  },
+  {
+   "date": "2026-10-13",
+   "clicks": 36,
+   "impressions": 5231,
+   "ctr": 0.69,
+   "position": 10.4
+  },
+  {
+   "date": "2026-10-14",
+   "clicks": 25,
+   "impressions": 4603,
+   "ctr": 0.54,
+   "position": 9.3
+  },
+  {
+   "date": "2026-10-15",
+   "clicks": 28,
+   "impressions": 4548,
+   "ctr": 0.62,
+   "position": 10.1
+  },
+  {
+   "date": "2026-10-16",
+   "clicks": 24,
+   "impressions": 4341,
+   "ctr": 0.55,
+   "position": 11.3
+  },
+  {
+   "date": "2026-10-17",
+   "clicks": 12,
+   "impressions": 3194,
+   "ctr": 0.38,
+   "position": 11.1
+  }
+ ]
+}
