@@ -1,3 +1,22 @@
+## [v2.418] – 2026-10-19 — GEO monitor runs twice, guards itself, commits its own data
+
+**Fixed**
+- The GEO job race (GEO-8). With four engines the 07:30 run takes ~54 min, so the 08:07 orchestrator's
+  "are today's rows in geo-history.csv?" check ran before that file existed and paid for a second full set.
+  `track_geo.py` now holds a lock while running (a second call exits 0) and skips a date that already has
+  results unless `--force`. The orchestrator just calls it.
+- The four-engine results were never committed by the job (PIPE-4). `track_geo.py` now commits
+  `geo-results.csv` and `geo-history.csv` after a full run, and only those two paths (`--no-commit` to skip).
+
+**Changed**
+- Two runs per engine by default (`--runs`), with a `run` column. Existing rows were backfilled: 10-19's
+  accidental double run became runs 1 and 2. The legacy trend line uses run 1 only.
+- `seo_diff.py` reports each engine's named mean, range and answers flipped between runs, plus a by-block
+  table per run. It replaces the single-run count, which carried ±3–5 of noise.
+
+Verified by execution: migration (520 rows), skip, lock, a real 2-query × 2-run Claude sample (runs 3 and 4,
+legacy history untouched), path-limited commit in a scratch repo, and the orchestrator fallback.
+
 ## [v2.417] – 2026-10-19 — Weekly SEO report: GEO single runs are too noisy to read
 
 **Added**

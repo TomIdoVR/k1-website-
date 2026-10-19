@@ -143,6 +143,7 @@ verified live (homepage, `llms.txt`, the "Short answer" blocks). The rest of the
 (a) Fix the race so two jobs never run unplanned (§5). (b) Run each engine **twice on purpose**, tag the rows with a run
 number, and have `seo_diff.py` report the average and the range, not one count. Extra cost: about $1–1.50 a week (ChatGPT
 ~$1, Perplexity $0.08, Gemini inside the free tier). (c) Commit `geo-results.csv` from the job (PIPE-4).
+**Update, same day: built in v2.418** on this branch; it goes live when the branch merges and `~/dev/k1-website` pulls `main` before 10-26 07:30.
 **Why it isn't #1:** it doesn't move AI answers; it only lets us see whether GEO-5 did. It has to land before GEO-5 results
 arrive, so it's this week.
 
