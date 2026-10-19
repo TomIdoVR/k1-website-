@@ -1,0 +1,1516 @@
+{
+  "generated": "2026-10-19T12:06:49",
+  "period": {
+    "start": "2026-09-21",
+    "end": "2026-10-18",
+    "days": 28
+  },
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "traffic": {
+    "channels": [
+      {
+        "channel": "Direct",
+        "sessions": 1676,
+        "users": 1546,
+        "engagement_rate": 19.9,
+        "key_events": 11,
+        "prior_sessions": 1904,
+        "delta_pct": -12.0,
+        "share_pct": 56.9
+      },
+      {
+        "channel": "Organic Search",
+        "sessions": 1031,
+        "users": 734,
+        "engagement_rate": 50.6,
+        "key_events": 7,
+        "prior_sessions": 925,
+        "delta_pct": 11.5,
+        "share_pct": 35.0
+      },
+      {
+        "channel": "Referral",
+        "sessions": 104,
+        "users": 63,
+        "engagement_rate": 48.1,
+        "key_events": 2,
+        "prior_sessions": 92,
+        "delta_pct": 13.0,
+        "share_pct": 3.5
+      },
+      {
+        "channel": "Organic Social",
+        "sessions": 94,
+        "users": 61,
+        "engagement_rate": 48.9,
+        "key_events": 10,
+        "prior_sessions": 21,
+        "delta_pct": 347.6,
+        "share_pct": 3.2
+      },
+      {
+        "channel": "AI Assistant",
+        "sessions": 28,
+        "users": 20,
+        "engagement_rate": 53.6,
+        "key_events": 0,
+        "prior_sessions": 51,
+        "delta_pct": -45.1,
+        "share_pct": 1.0
+      },
+      {
+        "channel": "Unassigned",
+        "sessions": 10,
+        "users": 10,
+        "engagement_rate": 50.0,
+        "key_events": 0,
+        "prior_sessions": 7,
+        "delta_pct": 42.9,
+        "share_pct": 0.3
+      },
+      {
+        "channel": "Paid Social",
+        "sessions": 3,
+        "users": 3,
+        "engagement_rate": 100.0,
+        "key_events": 1,
+        "prior_sessions": 0,
+        "delta_pct": null,
+        "share_pct": 0.1
+      }
+    ],
+    "totals": {
+      "sessions": 2946,
+      "prior_sessions": 3000,
+      "delta_pct": -1.8
+    },
+    "organic": {
+      "sessions": 1031,
+      "share_pct": 35.0
+    },
+    "ai_assistant": {
+      "sessions": 28,
+      "weekly": [
+        {
+          "year": "2026",
+          "week": "31",
+          "sessions": 13
+        },
+        {
+          "year": "2026",
+          "week": "32",
+          "sessions": 10
+        },
+        {
+          "year": "2026",
+          "week": "33",
+          "sessions": 16
+        },
+        {
+          "year": "2026",
+          "week": "34",
+          "sessions": 10
+        },
+        {
+          "year": "2026",
+          "week": "35",
+          "sessions": 10
+        },
+        {
+          "year": "2026",
+          "week": "36",
+          "sessions": 14
+        },
+        {
+          "year": "2026",
+          "week": "37",
+          "sessions": 14
+        },
+        {
+          "year": "2026",
+          "week": "38",
+          "sessions": 15
+        },
+        {
+          "year": "2026",
+          "week": "39",
+          "sessions": 14
+        },
+        {
+          "year": "2026",
+          "week": "40",
+          "sessions": 4
+        },
+        {
+          "year": "2026",
+          "week": "41",
+          "sessions": 7
+        },
+        {
+          "year": "2026",
+          "week": "42",
+          "sessions": 4
+        }
+      ],
+      "pages": [
+        {
+          "page": "/",
+          "sessions": 6
+        },
+        {
+          "page": "(not set)",
+          "sessions": 2
+        },
+        {
+          "page": "/es/k-dispatch",
+          "sessions": 2
+        },
+        {
+          "page": "/es/resources/best-public-safety-software",
+          "sessions": 2
+        },
+        {
+          "page": "/k-traffic",
+          "sessions": 2
+        },
+        {
+          "page": "/resources/best-ai-video-analytics-software",
+          "sessions": 2
+        }
+      ]
+    },
+    "weekly_trend": [
+      {
+        "year": "2026",
+        "week": "31",
+        "sessions": 684
+      },
+      {
+        "year": "2026",
+        "week": "32",
+        "sessions": 1096
+      },
+      {
+        "year": "2026",
+        "week": "33",
+        "sessions": 681
+      },
+      {
+        "year": "2026",
+        "week": "34",
+        "sessions": 820
+      },
+      {
+        "year": "2026",
+        "week": "35",
+        "sessions": 794
+      },
+      {
+        "year": "2026",
+        "week": "36",
+        "sessions": 820
+      },
+      {
+        "year": "2026",
+        "week": "37",
+        "sessions": 689
+      },
+      {
+        "year": "2026",
+        "week": "38",
+        "sessions": 721
+      },
+      {
+        "year": "2026",
+        "week": "39",
+        "sessions": 658
+      },
+      {
+        "year": "2026",
+        "week": "40",
+        "sessions": 737
+      },
+      {
+        "year": "2026",
+        "week": "41",
+        "sessions": 761
+      },
+      {
+        "year": "2026",
+        "week": "42",
+        "sessions": 804
+      },
+      {
+        "year": "2026",
+        "week": "43",
+        "sessions": 43
+      }
+    ],
+    "referrers": [
+      {
+        "source": "(direct)",
+        "medium": "(none)",
+        "sessions": 1676
+      },
+      {
+        "source": "google",
+        "medium": "organic",
+        "sessions": 934
+      },
+      {
+        "source": "grupokabat.com",
+        "medium": "referral",
+        "sessions": 71
+      },
+      {
+        "source": "bing",
+        "medium": "organic",
+        "sessions": 66
+      },
+      {
+        "source": "linkedin",
+        "medium": "social",
+        "sessions": 38
+      },
+      {
+        "source": "linkedin",
+        "medium": "job_board",
+        "sessions": 25
+      },
+      {
+        "source": "linkedin.com",
+        "medium": "referral",
+        "sessions": 24
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "ai-assistant",
+        "sessions": 18
+      },
+      {
+        "source": "114.114.114.114:9421",
+        "medium": "referral",
+        "sessions": 11
+      },
+      {
+        "source": "mx.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 10
+      },
+      {
+        "source": "teams.public.onecdn.static.microsoft",
+        "medium": "referral",
+        "sessions": 10
+      },
+      {
+        "source": "facebook.com",
+        "medium": "referral",
+        "sessions": 6
+      },
+      {
+        "source": "yahoo",
+        "medium": "organic",
+        "sessions": 6
+      },
+      {
+        "source": "duckduckgo",
+        "medium": "organic",
+        "sessions": 5
+      },
+      {
+        "source": "gemini.google.com",
+        "medium": "ai-assistant",
+        "sessions": 5
+      },
+      {
+        "source": "linkedinamp;utm_medium=socialamp;utm_campaign=shay",
+        "medium": "(not set)",
+        "sessions": 5
+      },
+      {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 4
+      },
+      {
+        "source": "linkedin",
+        "medium": "paid_social",
+        "sessions": 3
+      },
+      {
+        "source": "perplexity.ai",
+        "medium": "ai-assistant",
+        "sessions": 3
+      },
+      {
+        "source": "ar.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "au.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "cl.search.yahoo.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "gemini",
+        "medium": "ai-assistant",
+        "sessions": 2
+      },
+      {
+        "source": "notebook.google.com",
+        "medium": "referral",
+        "sessions": 2
+      },
+      {
+        "source": "alas-la.org",
+        "medium": "referral",
+        "sessions": 1
+      }
+    ],
+    "pages_by_channel": {
+      "Direct": [
+        {
+          "page": "/",
+          "sessions": 301
+        },
+        {
+          "page": "/es",
+          "sessions": 88
+        },
+        {
+          "page": "/resources/best-cad-dispatch-software",
+          "sessions": 78
+        },
+        {
+          "page": "/resources/best-public-safety-software",
+          "sessions": 68
+        },
+        {
+          "page": "/resources/rtcc-software",
+          "sessions": 63
+        },
+        {
+          "page": "/es/about",
+          "sessions": 37
+        },
+        {
+          "page": "/careers",
+          "sessions": 32
+        },
+        {
+          "page": "/es/contact",
+          "sessions": 30
+        },
+        {
+          "page": "/es/legal/911-michoacan",
+          "sessions": 30
+        },
+        {
+          "page": "/resources/best-ng911-software",
+          "sessions": 29
+        }
+      ],
+      "Organic Search": [
+        {
+          "page": "/es",
+          "sessions": 147
+        },
+        {
+          "page": "(not set)",
+          "sessions": 106
+        },
+        {
+          "page": "/",
+          "sessions": 106
+        },
+        {
+          "page": "/es/resources/how-c5-command-centers-work",
+          "sessions": 77
+        },
+        {
+          "page": "/resources/best-cad-dispatch-software",
+          "sessions": 73
+        },
+        {
+          "page": "/resources/cctv-video-analytics",
+          "sessions": 55
+        },
+        {
+          "page": "/es/resources/what-is-a-command-center",
+          "sessions": 37
+        },
+        {
+          "page": "/es/resources/que-es-un-c5",
+          "sessions": 36
+        },
+        {
+          "page": "/es/resources/cctv-video-analytics",
+          "sessions": 22
+        },
+        {
+          "page": "/es/resources/what-is-video-management-software",
+          "sessions": 18
+        }
+      ],
+      "Organic Social": [
+        {
+          "page": "/careers/tech-lead-next-generation-public-safety-platform",
+          "sessions": 60
+        },
+        {
+          "page": "/",
+          "sessions": 11
+        },
+        {
+          "page": "(not set)",
+          "sessions": 8
+        },
+        {
+          "page": "/about",
+          "sessions": 4
+        },
+        {
+          "page": "/es/careers/tech-lead-next-generation-public-safety-platform",
+          "sessions": 3
+        }
+      ],
+      "Referral": [
+        {
+          "page": "/es",
+          "sessions": 49
+        },
+        {
+          "page": "/",
+          "sessions": 13
+        },
+        {
+          "page": "(not set)",
+          "sessions": 12
+        },
+        {
+          "page": "/es/resources/what-is-a-command-center",
+          "sessions": 8
+        },
+        {
+          "page": "/es/contact",
+          "sessions": 4
+        },
+        {
+          "page": "/resources/public-safety-software-el-salvador",
+          "sessions": 4
+        }
+      ],
+      "AI Assistant": [
+        {
+          "page": "/",
+          "sessions": 6
+        },
+        {
+          "page": "(not set)",
+          "sessions": 2
+        },
+        {
+          "page": "/es/k-dispatch",
+          "sessions": 2
+        },
+        {
+          "page": "/es/resources/best-public-safety-software",
+          "sessions": 2
+        },
+        {
+          "page": "/k-traffic",
+          "sessions": 2
+        },
+        {
+          "page": "/resources/best-ai-video-analytics-software",
+          "sessions": 2
+        }
+      ],
+      "Unassigned": [
+        {
+          "page": "/careers/tech-lead-next-generation-public-safety-platform",
+          "sessions": 6
+        },
+        {
+          "page": "(not set)",
+          "sessions": 3
+        }
+      ]
+    }
+  },
+  "search": {
+    "totals": {
+      "clicks": 637,
+      "impressions": 109536,
+      "ctr_pct": 0.58,
+      "avg_position": 10.0
+    },
+    "adjusted_totals": {
+      "clicks": 637,
+      "impressions": 105601,
+      "ctr_pct": 0.6
+    },
+    "target_market": {
+      "countries": [
+        "arg",
+        "bol",
+        "chl",
+        "col",
+        "cri",
+        "dom",
+        "ecu",
+        "esp",
+        "gtm",
+        "hnd",
+        "mex",
+        "nic",
+        "pan",
+        "per",
+        "pry",
+        "slv",
+        "ury",
+        "ven"
+      ],
+      "clicks": 325,
+      "impressions": 41018,
+      "ctr_pct": 0.79,
+      "share_of_clicks_pct": 51.0,
+      "qualified": {
+        "basis": "query+country dimension (GSC omits anonymised rare queries)",
+        "coverage_pct": 58.9,
+        "clicks": 116,
+        "impressions": 18577,
+        "ctr_pct": 0.62,
+        "excluded_navigational": {
+          "definition": "navigational toward a third party (brand navigation kept)",
+          "clicks": 12,
+          "impressions": 5569,
+          "ctr_pct": 0.22,
+          "query_count": 136,
+          "queries": [
+            {
+              "query": "c5",
+              "impressions": 4223,
+              "clicks": 5
+            },
+            {
+              "query": "c4 y c5",
+              "impressions": 148,
+              "clicks": 0
+            },
+            {
+              "query": "c5 mexico",
+              "impressions": 133,
+              "clicks": 0
+            },
+            {
+              "query": "camaras c5",
+              "impressions": 113,
+              "clicks": 0
+            },
+            {
+              "query": "kabat",
+              "impressions": 65,
+              "clicks": 0
+            },
+            {
+              "query": "camaras de videovigilancia c5",
+              "impressions": 56,
+              "clicks": 2
+            },
+            {
+              "query": "el c5",
+              "impressions": 55,
+              "clicks": 0
+            },
+            {
+              "query": "camara c5",
+              "impressions": 54,
+              "clicks": 0
+            },
+            {
+              "query": "camaras analiticas",
+              "impressions": 47,
+              "clicks": 0
+            },
+            {
+              "query": "camara analitica",
+              "impressions": 45,
+              "clicks": 1
+            }
+          ]
+        }
+      }
+    },
+    "synthetic": {
+      "queries": [
+        {
+          "query": "computer automated dispatch software",
+          "impressions": 1315,
+          "position": 8.9,
+          "desktop_share": 0.999
+        },
+        {
+          "query": "best fire computer aided dispatch software",
+          "impressions": 1182,
+          "position": 5.3,
+          "desktop_share": 0.999
+        },
+        {
+          "query": "police dispatch system",
+          "impressions": 612,
+          "position": 9.7,
+          "desktop_share": 0.995
+        },
+        {
+          "query": "software for public safety",
+          "impressions": 541,
+          "position": 3.2,
+          "desktop_share": 1.0
+        },
+        {
+          "query": "peregrine.ai analytics reporting dashboards",
+          "impressions": 285,
+          "position": 3.1,
+          "desktop_share": 1.0
+        }
+      ],
+      "query_count": 5,
+      "impressions": 3935,
+      "share_of_impressions_pct": 3.6,
+      "criteria": "clicks=0, impressions>=150, position<=10.0, desktop_share>=0.95"
+    },
+    "by_country": [
+      {
+        "country": "mex",
+        "clicks": 182,
+        "impressions": 23116,
+        "ctr_pct": 0.79,
+        "position": 6.8
+      },
+      {
+        "country": "usa",
+        "clicks": 105,
+        "impressions": 45835,
+        "ctr_pct": 0.23,
+        "position": 12.9
+      },
+      {
+        "country": "isr",
+        "clicks": 37,
+        "impressions": 309,
+        "ctr_pct": 11.97,
+        "position": 6.4
+      },
+      {
+        "country": "per",
+        "clicks": 26,
+        "impressions": 2834,
+        "ctr_pct": 0.92,
+        "position": 6.0
+      },
+      {
+        "country": "ind",
+        "clicks": 25,
+        "impressions": 2396,
+        "ctr_pct": 1.04,
+        "position": 11.4
+      },
+      {
+        "country": "arg",
+        "clicks": 23,
+        "impressions": 2850,
+        "ctr_pct": 0.81,
+        "position": 6.1
+      },
+      {
+        "country": "col",
+        "clicks": 17,
+        "impressions": 2740,
+        "ctr_pct": 0.62,
+        "position": 7.3
+      },
+      {
+        "country": "esp",
+        "clicks": 17,
+        "impressions": 3091,
+        "ctr_pct": 0.55,
+        "position": 9.1
+      },
+      {
+        "country": "phl",
+        "clicks": 17,
+        "impressions": 531,
+        "ctr_pct": 3.2,
+        "position": 6.9
+      },
+      {
+        "country": "chl",
+        "clicks": 15,
+        "impressions": 1485,
+        "ctr_pct": 1.01,
+        "position": 6.4
+      },
+      {
+        "country": "ecu",
+        "clicks": 10,
+        "impressions": 887,
+        "ctr_pct": 1.13,
+        "position": 6.3
+      },
+      {
+        "country": "sau",
+        "clicks": 10,
+        "impressions": 432,
+        "ctr_pct": 2.31,
+        "position": 7.4
+      },
+      {
+        "country": "can",
+        "clicks": 9,
+        "impressions": 1764,
+        "ctr_pct": 0.51,
+        "position": 10.6
+      },
+      {
+        "country": "cri",
+        "clicks": 9,
+        "impressions": 519,
+        "ctr_pct": 1.73,
+        "position": 5.1
+      },
+      {
+        "country": "idn",
+        "clicks": 8,
+        "impressions": 586,
+        "ctr_pct": 1.37,
+        "position": 6.3
+      },
+      {
+        "country": "bra",
+        "clicks": 7,
+        "impressions": 1002,
+        "ctr_pct": 0.7,
+        "position": 8.1
+      },
+      {
+        "country": "gbr",
+        "clicks": 7,
+        "impressions": 2920,
+        "ctr_pct": 0.24,
+        "position": 13.0
+      },
+      {
+        "country": "pri",
+        "clicks": 7,
+        "impressions": 252,
+        "ctr_pct": 2.78,
+        "position": 6.3
+      },
+      {
+        "country": "ury",
+        "clicks": 6,
+        "impressions": 378,
+        "ctr_pct": 1.59,
+        "position": 5.8
+      },
+      {
+        "country": "sgp",
+        "clicks": 5,
+        "impressions": 462,
+        "ctr_pct": 1.08,
+        "position": 10.0
+      }
+    ],
+    "prior": {
+      "clicks": 566,
+      "impressions": 121994,
+      "ctr_pct": 0.46,
+      "avg_position": 13.4
+    },
+    "delta": {
+      "clicks_pct": 12.5,
+      "impressions_pct": -10.2
+    },
+    "query_count": 4425,
+    "opportunities": [
+      {
+        "query": "vms",
+        "cluster": "Video / VMS",
+        "impressions": 3269,
+        "clicks": 10,
+        "position": 7.3,
+        "ctr_pct": 0.31,
+        "expected_ctr_pct": 4.0,
+        "score": 241.5,
+        "intent": "buyer",
+        "potential_clicks": 120,
+        "potential_clicks_qualified": 120,
+        "potential_clicks_raw_unqualified": 120
+      },
+      {
+        "query": "psap",
+        "cluster": "Other",
+        "impressions": 1157,
+        "clicks": 1,
+        "position": 5.2,
+        "ctr_pct": 0.09,
+        "expected_ctr_pct": 6.0,
+        "score": 68.4,
+        "intent": "buyer",
+        "potential_clicks": 68,
+        "potential_clicks_qualified": 68,
+        "potential_clicks_raw_unqualified": 68
+      },
+      {
+        "query": "que es el c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 1080,
+        "clicks": 0,
+        "position": 7.5,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 64.8,
+        "intent": "informational",
+        "potential_clicks": 43,
+        "potential_clicks_qualified": 43,
+        "potential_clicks_raw_unqualified": 43
+      },
+      {
+        "query": "cctv video analytics",
+        "cluster": "Video / VMS",
+        "impressions": 409,
+        "clicks": 1,
+        "position": 4.8,
+        "ctr_pct": 0.24,
+        "expected_ctr_pct": 8.0,
+        "score": 63.4,
+        "intent": "buyer",
+        "potential_clicks": 31,
+        "potential_clicks_qualified": 31,
+        "potential_clicks_raw_unqualified": 31
+      },
+      {
+        "query": "que es el c5 en mexico",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 462,
+        "clicks": 1,
+        "position": 6.3,
+        "ctr_pct": 0.22,
+        "expected_ctr_pct": 6.0,
+        "score": 40.1,
+        "intent": "informational",
+        "potential_clicks": 26,
+        "potential_clicks_qualified": 26,
+        "potential_clicks_raw_unqualified": 26
+      },
+      {
+        "query": "rtcc",
+        "cluster": "Other",
+        "impressions": 946,
+        "clicks": 1,
+        "position": 7.8,
+        "ctr_pct": 0.11,
+        "expected_ctr_pct": 4.0,
+        "score": 36.8,
+        "intent": "buyer",
+        "potential_clicks": 36,
+        "potential_clicks_qualified": 36,
+        "potential_clicks_raw_unqualified": 36
+      },
+      {
+        "query": "c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 4423,
+        "clicks": 5,
+        "position": 8.0,
+        "ctr_pct": 0.11,
+        "expected_ctr_pct": 4.0,
+        "score": 34.4,
+        "intent": "navigational",
+        "potential_clicks": 0,
+        "potential_clicks_qualified": 0,
+        "potential_clicks_raw_unqualified": 171
+      },
+      {
+        "query": "c5 que es",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 384,
+        "clicks": 1,
+        "position": 6.6,
+        "ctr_pct": 0.26,
+        "expected_ctr_pct": 6.0,
+        "score": 33.1,
+        "intent": "informational",
+        "potential_clicks": 22,
+        "potential_clicks_qualified": 22,
+        "potential_clicks_raw_unqualified": 22
+      },
+      {
+        "query": "que es c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 377,
+        "clicks": 1,
+        "position": 6.6,
+        "ctr_pct": 0.27,
+        "expected_ctr_pct": 6.0,
+        "score": 32.4,
+        "intent": "informational",
+        "potential_clicks": 21,
+        "potential_clicks_qualified": 21,
+        "potential_clicks_raw_unqualified": 21
+      },
+      {
+        "query": "que es el c5 en la polic\u00eda",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 347,
+        "clicks": 0,
+        "position": 5.6,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 6.0,
+        "score": 31.2,
+        "intent": "informational",
+        "potential_clicks": 20,
+        "potential_clicks_qualified": 20,
+        "potential_clicks_raw_unqualified": 20
+      },
+      {
+        "query": "lpr",
+        "cluster": "Other",
+        "impressions": 716,
+        "clicks": 0,
+        "position": 7.5,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 28.6,
+        "intent": "buyer",
+        "potential_clicks": 28,
+        "potential_clicks_qualified": 28,
+        "potential_clicks_raw_unqualified": 28
+      },
+      {
+        "query": "cctv analytics",
+        "cluster": "AI / Analytics",
+        "impressions": 366,
+        "clicks": 2,
+        "position": 4.6,
+        "ctr_pct": 0.55,
+        "expected_ctr_pct": 8.0,
+        "score": 27.3,
+        "intent": "buyer",
+        "potential_clicks": 27,
+        "potential_clicks_qualified": 27,
+        "potential_clicks_raw_unqualified": 27
+      },
+      {
+        "query": "ai video analytics",
+        "cluster": "Video / VMS",
+        "impressions": 290,
+        "clicks": 0,
+        "position": 9.8,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 23.2,
+        "intent": "buyer",
+        "potential_clicks": 11,
+        "potential_clicks_qualified": 11,
+        "potential_clicks_raw_unqualified": 11
+      },
+      {
+        "query": "computer aided dispatch software",
+        "cluster": "CAD / Dispatch",
+        "impressions": 268,
+        "clicks": 0,
+        "position": 11.0,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 2.5,
+        "score": 20.1,
+        "intent": "buyer",
+        "potential_clicks": 6,
+        "potential_clicks_qualified": 6,
+        "potential_clicks_raw_unqualified": 6
+      },
+      {
+        "query": "cctv ai analytics",
+        "cluster": "AI / Analytics",
+        "impressions": 218,
+        "clicks": 4,
+        "position": 3.7,
+        "ctr_pct": 1.83,
+        "expected_ctr_pct": 11.0,
+        "score": 20.0,
+        "intent": "buyer",
+        "potential_clicks": 19,
+        "potential_clicks_qualified": 19,
+        "potential_clicks_raw_unqualified": 19
+      },
+      {
+        "query": "que significa c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 238,
+        "clicks": 1,
+        "position": 6.7,
+        "ctr_pct": 0.42,
+        "expected_ctr_pct": 6.0,
+        "score": 19.9,
+        "intent": "informational",
+        "potential_clicks": 13,
+        "potential_clicks_qualified": 13,
+        "potential_clicks_raw_unqualified": 13
+      },
+      {
+        "query": "que significa c4 y c5",
+        "cluster": "C5 / Command Ctr",
+        "impressions": 120,
+        "clicks": 0,
+        "position": 3.8,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 11.0,
+        "score": 19.8,
+        "intent": "informational",
+        "potential_clicks": 13,
+        "potential_clicks_qualified": 13,
+        "potential_clicks_raw_unqualified": 13
+      },
+      {
+        "query": "police cad systems",
+        "cluster": "CAD / Dispatch",
+        "impressions": 155,
+        "clicks": 0,
+        "position": 7.4,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 4.0,
+        "score": 18.6,
+        "intent": "buyer",
+        "potential_clicks": 6,
+        "potential_clicks_qualified": 6,
+        "potential_clicks_raw_unqualified": 6
+      },
+      {
+        "query": "vms que es",
+        "cluster": "Video / VMS",
+        "impressions": 247,
+        "clicks": 0,
+        "position": 6.8,
+        "ctr_pct": 0,
+        "expected_ctr_pct": 6.0,
+        "score": 17.8,
+        "intent": "informational",
+        "potential_clicks": 14,
+        "potential_clicks_qualified": 14,
+        "potential_clicks_raw_unqualified": 14
+      },
+      {
+        "query": "general vms",
+        "cluster": "Video / VMS",
+        "impressions": 122,
+        "clicks": 1,
+        "position": 4.6,
+        "ctr_pct": 0.82,
+        "expected_ctr_pct": 8.0,
+        "score": 17.5,
+        "intent": "buyer",
+        "potential_clicks": 8,
+        "potential_clicks_qualified": 8,
+        "potential_clicks_raw_unqualified": 8
+      }
+    ],
+    "striking_distance": [
+      {
+        "query": "c5",
+        "position": 8.0,
+        "impressions": 4423,
+        "clicks": 5,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "vms",
+        "position": 7.3,
+        "impressions": 3269,
+        "clicks": 10,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "psap",
+        "position": 5.2,
+        "impressions": 1157,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "que es el c5",
+        "position": 7.5,
+        "impressions": 1080,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "rtcc",
+        "position": 7.8,
+        "impressions": 946,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "lpr",
+        "position": 7.5,
+        "impressions": 716,
+        "clicks": 0,
+        "cluster": "Other"
+      },
+      {
+        "query": "que es el c5 en mexico",
+        "position": 6.3,
+        "impressions": 462,
+        "clicks": 1,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "grupo kabat",
+        "position": 5.8,
+        "impressions": 460,
+        "clicks": 3,
+        "cluster": "Other"
+      },
+      {
+        "query": "public safety software",
+        "position": 8.9,
+        "impressions": 403,
+        "clicks": 1,
+        "cluster": "Emergency Mgmt"
+      },
+      {
+        "query": "c5 que es",
+        "position": 6.6,
+        "impressions": 384,
+        "clicks": 1,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "que es c5",
+        "position": 6.6,
+        "impressions": 377,
+        "clicks": 1,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "que es el c5 en la polic\u00eda",
+        "position": 5.6,
+        "impressions": 347,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "situational awareness software",
+        "position": 9.1,
+        "impressions": 338,
+        "clicks": 0,
+        "cluster": "Other"
+      },
+      {
+        "query": "ai video analytics",
+        "position": 9.8,
+        "impressions": 290,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "computer aided dispatch software",
+        "position": 11.0,
+        "impressions": 268,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      },
+      {
+        "query": "vms que es",
+        "position": 6.8,
+        "impressions": 247,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "c5 mexico",
+        "position": 6.5,
+        "impressions": 240,
+        "clicks": 2,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "qu\u00e9 hace la video anal\u00edtica con ia? * 1 punto a) graba con mejor resoluci\u00f3n b) convierte las c\u00e1maras en sensores que detectan y miden c) sustituye al sistema de almac\u00e9n d) guarda el video en la nube",
+        "position": 7.3,
+        "impressions": 240,
+        "clicks": 0,
+        "cluster": "Other"
+      },
+      {
+        "query": "que significa c5",
+        "position": 6.7,
+        "impressions": 238,
+        "clicks": 1,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "situational awareness platform",
+        "position": 7.7,
+        "impressions": 207,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "que es c5 en seguridad publica",
+        "position": 5.2,
+        "impressions": 195,
+        "clicks": 2,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "que es el c4 en la polic\u00eda",
+        "position": 7.8,
+        "impressions": 195,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "1. \u00bfqu\u00e9 hace la video anal\u00edtica con ia? * 1 punto a) graba con mejor resoluci\u00f3n b) convierte las c\u00e1maras en sensores que detectan y miden c) sustituye al sistema de almac\u00e9n d) guarda el video en la nube",
+        "position": 7.4,
+        "impressions": 192,
+        "clicks": 0,
+        "cluster": "Other"
+      },
+      {
+        "query": "c 5",
+        "position": 10.3,
+        "impressions": 179,
+        "clicks": 0,
+        "cluster": "Other"
+      },
+      {
+        "query": "c5 significado",
+        "position": 5.7,
+        "impressions": 176,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "ai video analytics software",
+        "position": 13.9,
+        "impressions": 175,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "que es vms",
+        "position": 6.8,
+        "impressions": 174,
+        "clicks": 0,
+        "cluster": "Video / VMS"
+      },
+      {
+        "query": "que significa c5 en seguridad publica",
+        "position": 5.5,
+        "impressions": 165,
+        "clicks": 0,
+        "cluster": "C5 / Command Ctr"
+      },
+      {
+        "query": "alpr",
+        "position": 9.3,
+        "impressions": 155,
+        "clicks": 1,
+        "cluster": "Other"
+      },
+      {
+        "query": "police cad systems",
+        "position": 7.4,
+        "impressions": 155,
+        "clicks": 0,
+        "cluster": "CAD / Dispatch"
+      }
+    ],
+    "striking_distance_count": 398,
+    "clusters": {
+      "Brand": {
+        "clicks": 117,
+        "impressions": 456,
+        "queries": 5
+      },
+      "Video / VMS": {
+        "clicks": 24,
+        "impressions": 17577,
+        "queries": 805
+      },
+      "C5 / Command Ctr": {
+        "clicks": 27,
+        "impressions": 12839,
+        "queries": 386
+      },
+      "Other": {
+        "clicks": 33,
+        "impressions": 17275,
+        "queries": 1883
+      },
+      "AI / Analytics": {
+        "clicks": 10,
+        "impressions": 2185,
+        "queries": 160
+      },
+      "CAD / Dispatch": {
+        "clicks": 8,
+        "impressions": 14407,
+        "queries": 742
+      },
+      "Emergency Mgmt": {
+        "clicks": 1,
+        "impressions": 4859,
+        "queries": 332
+      },
+      "Comparisons": {
+        "clicks": 0,
+        "impressions": 817,
+        "queries": 87
+      },
+      "Country / LATAM": {
+        "clicks": 0,
+        "impressions": 88,
+        "queries": 25
+      }
+    },
+    "pages": [
+      {
+        "page": "https://kabatone.com/es",
+        "clicks": 82,
+        "impressions": 1156,
+        "position": 5.0
+      },
+      {
+        "page": "https://kabatone.com/",
+        "clicks": 74,
+        "impressions": 898,
+        "position": 4.5
+      },
+      {
+        "page": "https://kabatone.com/es/resources/how-c5-command-centers-work",
+        "clicks": 61,
+        "impressions": 13342,
+        "position": 7.0
+      },
+      {
+        "page": "https://kabatone.com/resources/best-cad-dispatch-software",
+        "clicks": 59,
+        "impressions": 14106,
+        "position": 8.1
+      },
+      {
+        "page": "https://kabatone.com/resources/cctv-video-analytics",
+        "clicks": 46,
+        "impressions": 7469,
+        "position": 11.5
+      },
+      {
+        "page": "https://kabatone.com/es/resources/que-es-un-c5",
+        "clicks": 29,
+        "impressions": 7807,
+        "position": 6.0
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-a-command-center",
+        "clicks": 23,
+        "impressions": 3569,
+        "position": 6.2
+      },
+      {
+        "page": "https://kabatone.com/es/resources/cctv-video-analytics",
+        "clicks": 20,
+        "impressions": 2487,
+        "position": 7.9
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition",
+        "clicks": 16,
+        "impressions": 2636,
+        "position": 7.3
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-video-management-software",
+        "clicks": 16,
+        "impressions": 5630,
+        "position": 6.9
+      },
+      {
+        "page": "https://kabatone.com/resources/best-public-safety-software",
+        "clicks": 15,
+        "impressions": 7085,
+        "position": 9.4
+      },
+      {
+        "page": "https://kabatone.com/resources/how-c5-command-centers-work",
+        "clicks": 11,
+        "impressions": 1570,
+        "position": 5.0
+      },
+      {
+        "page": "https://kabatone.com/resources/what-is-video-management-software",
+        "clicks": 9,
+        "impressions": 7260,
+        "position": 18.8
+      },
+      {
+        "page": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software",
+        "clicks": 7,
+        "impressions": 331,
+        "position": 6.8
+      },
+      {
+        "page": "https://kabatone.com/k-dispatch",
+        "clicks": 7,
+        "impressions": 478,
+        "position": 25.1
+      },
+      {
+        "page": "https://kabatone.com/resources/best-ai-video-analytics-software",
+        "clicks": 7,
+        "impressions": 2979,
+        "position": 12.8
+      },
+      {
+        "page": "https://kabatone.com/es/resources/ai-in-public-safety",
+        "clicks": 6,
+        "impressions": 185,
+        "position": 8.0
+      },
+      {
+        "page": "https://kabatone.com/about",
+        "clicks": 5,
+        "impressions": 373,
+        "position": 2.8
+      },
+      {
+        "page": "https://kabatone.com/es/resources/best-vms-software",
+        "clicks": 4,
+        "impressions": 353,
+        "position": 10.7
+      },
+      {
+        "page": "https://kabatone.com/resources/what-is-situational-awareness-software/",
+        "clicks": 4,
+        "impressions": 569,
+        "position": 16.4
+      }
+    ]
+  },
+  "site": {
+    "routes": 241,
+    "locales": 2,
+    "sitemap_urls": 482,
+    "commits_this_week": 0,
+    "recent_commits": [],
+    "branch": "run"
+  }
+}

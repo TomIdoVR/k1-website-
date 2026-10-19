@@ -1,3 +1,11 @@
+## [v2.402] 2026-10-19 — Weekly SEO brief: Organic +11.5%, AI traffic down −45%, 56 commits unshipped
+
+**Added**
+- `SEO/audits/weekly-2026-10-19.json` — GA4 + GSC data for the 28-day period ending 2026-10-18
+- `SEO/audits/weekly-2026-10-19.md` — full five-section brief (traffic, search, GEO, plan, operations)
+- `SEO/audits/traffic-2026-10-19.html` — HTML dashboard (deterministic render, no AI)
+- Key findings: Organic Search +11.5%, AI Assistant −45.1% (28 vs 51 sessions), "vms" #1 opportunity (~120 potential clicks at pos 7.3), GEO monitor 49 days overdue, staging 56 commits ahead of production
+
 ## [v2.401] – 2026-10-12 — Weekly SEO brief 2026-10-12
 
 **Added**
