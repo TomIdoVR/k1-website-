@@ -407,11 +407,16 @@ def carry_over():
 
 
 def geo_results():
-    """Latest run per engine from geo-results.csv, split by block, named vs retrieved.
+    """Latest date per engine from geo-results.csv: named vs retrieved, per run and per block.
 
     geo-history.csv (the legacy trend) scores "our URL was retrieved" the same as "the
     answer recommended us". On 2026-10-05 that read 80%; split, Claude named KabatOne in
-    3 of 40 answers while retrieving our pages in 34. Report both, lead with `named`."""
+    3 of 40 answers while retrieving our pages in 34. Report both, lead with `named`.
+
+    Since GEO-8 each date carries several runs (the `run` column). One run is too noisy to
+    compare: on 2026-10-19 two identical runs gave ChatGPT 5 vs 10 named of 40. So report the
+    mean and the range across runs, never a single run's count. Rows written before the
+    column existed count as run 1."""
     import csv as _csv
     path = ROOT / 'SEO' / 'geo' / 'geo-results.csv'
     if not path.exists():
@@ -421,15 +426,41 @@ def geo_results():
     for eng in sorted({r['engine'] for r in rows}):
         er = [r for r in rows if r['engine'] == eng]
         last = max(r['date'] for r in er)
-        cur = {r['query']: r for r in er if r['date'] == last}.values()   # dedupe re-runs
-        blocks = collections.defaultdict(lambda: [0, 0, 0])
-        for r in cur:
-            b = blocks[r['block']]
-            b[0] += 1
-            b[1] += r['named_in_answer'] == 'Y'
-            b[2] += 'Y' in (r['named_in_answer'], r['in_source_set'])
-        out[eng] = {'date': last, 'blocks': {k: dict(n=v[0], named=v[1], retrieved=v[2])
-                                             for k, v in sorted(blocks.items())}}
+        by_run = collections.defaultdict(dict)
+        for r in er:
+            if r['date'] == last:
+                by_run[int(r.get('run') or 1)][r['query']] = r   # last write wins within a run
+        runs = []
+        for run in sorted(by_run):
+            cur = by_run[run].values()
+            blocks = collections.defaultdict(lambda: [0, 0, 0])
+            for r in cur:
+                b = blocks[r['block']]
+                b[0] += 1
+                b[1] += r['named_in_answer'] == 'Y'
+                b[2] += 'Y' in (r['named_in_answer'], r['in_source_set'])
+            runs.append({'run': run, 'n': len(cur),
+                         'named': sum(v[1] for v in blocks.values()),
+                         'retrieved': sum(v[2] for v in blocks.values()),
+                         'blocks': {k: dict(n=v[0], named=v[1], retrieved=v[2])
+                                    for k, v in sorted(blocks.items())}})
+        # Answers that flipped between runs: the measured noise for this engine and date.
+        flips = 0
+        if len(runs) > 1:
+            first = by_run[runs[0]['run']]
+            for q, r in first.items():
+                if any(by_run[x['run']].get(q, r)['named_in_answer'] != r['named_in_answer']
+                       for x in runs[1:]):
+                    flips += 1
+        named = [x['named'] for x in runs]
+        out[eng] = {'date': last, 'runs': runs, 'n': runs[0]['n'],
+                    'named_mean': round(sum(named) / len(named), 1),
+                    'named_min': min(named), 'named_max': max(named), 'flips': flips,
+                    'retrieved_mean': round(sum(x['retrieved'] for x in runs) / len(runs), 1),
+                    'blocks': {blk: dict(n=runs[0]['blocks'].get(blk, {}).get('n', 0),
+                                         named=[x['blocks'].get(blk, {}).get('named', 0) for x in runs],
+                                         retrieved=[x['blocks'].get(blk, {}).get('retrieved', 0) for x in runs])
+                               for blk in sorted({k for x in runs for k in x['blocks']})}}
     return {'available': True, 'engines': out}
 
 
@@ -474,9 +505,9 @@ def geo_freshness():
                - datetime.strptime(last['date'], '%Y-%m-%d').date()).days
     return {'available': True, 'runs': runs, 'last': last, 'age_days': age,
             'complete_runs': [r for r in runs if r['complete']],
-            'note': 'track_geo.py asks Claude with web search only -- it is not a '
-                    'ChatGPT measurement, and it scores "in retrieved sources" the '
-                    'same as "named in the answer".'}
+            'note': 'geo-history.csv is the legacy line: Claude only, blocks A-C, run 1, and it '
+                    'scores "in retrieved sources" the same as "named in the answer". '
+                    'Use the four-engine named table below.'}
 
 
 # ---------- render --------------------------------------------------------------
@@ -595,8 +626,8 @@ def render(d):
             a("|---|---|---|")
             for r in gd['ai_referrers']:
                 a(f"| {r['source']} | {r['sessions']} | {r['share_pct']}% |")
-            a("\n> The monitor tests Claude with web search. This table is the only evidence "
-              "about the engines that actually send traffic — read them together, not "
+            a("\n> The GEO monitor measures what four engines' API answers say; this table is the "
+              "only evidence about which engines actually send visitors. Read them together, not "
               "interchangeably (G10).")
         if gd.get('ai_weekly'):
             ser = gd['ai_weekly']
@@ -681,13 +712,29 @@ def render(d):
         a(f"- ⚠️ {g['note']}")
     gr = d.get('geo_results') or {}
     if gr.get('available'):
-        a("\n**Named in the answer vs only retrieved** (`geo-results.csv`, latest run per engine; "
-          "block D = CAD). Lead with *named* — retrieval alone is not a recommendation.\n")
-        a("| Engine | Date | Block | Named | Named or retrieved |")
-        a("|---|---|---|---|---|")
+        a("\n**Named in the answer vs only retrieved** (`geo-results.csv`, latest date per engine). "
+          "Lead with *named*; retrieval alone is not a recommendation. Single runs are noisy: read the "
+          "mean, and treat a week-over-week move inside the range as no change.\n")
+        a("| Engine | Date | Runs | Named, mean | Range | Flipped between runs | Named or retrieved, mean |")
+        a("|---|---|---|---|---|---|---|")
         for eng, e in gr['engines'].items():
-            for blk, b in e['blocks'].items():
-                a(f"| {eng} | {e['date']} | {blk} | {b['named']}/{b['n']} | {b['retrieved']}/{b['n']} |")
+            nr = len(e['runs'])
+            rng = f"{e['named_min']}–{e['named_max']}" if nr > 1 else "1 run, no range"
+            fl = f"{e['flips']}/{e['n']}" if nr > 1 else "—"
+            a(f"| {eng} | {e['date']} | {nr} | **{e['named_mean']}**/{e['n']} | {rng} | {fl} | "
+              f"{e['retrieved_mean']}/{e['n']} |")
+        a("\nBy block (named per run; D = CAD):\n")
+        a("| Engine | " + " | ".join(sorted({b for e in gr['engines'].values() for b in e['blocks']})) + " |")
+        blks = sorted({b for e in gr['engines'].values() for b in e['blocks']})
+        a("|---|" + "---|" * len(blks))
+        for eng, e in gr['engines'].items():
+            cells = []
+            for blk in blks:
+                b = e['blocks'].get(blk)
+                cells.append(f"{' / '.join(map(str, b['named']))} of {b['n']}" if b else "—")
+            a(f"| {eng} | " + " | ".join(cells) + " |")
+        if any(len(e['runs']) == 1 for e in gr['engines'].values()):
+            a("\n> ⚠️ One run only for some engines: their counts carry ±3–5 of noise (GEO-8).")
 
     if d['canonical_issues']:
         a("\n## ⚠️ Canonical sweep — stragglers found\n")

@@ -20,12 +20,27 @@ An engine with no key file is skipped with a note; it never fails the run.
 
 Outputs:
   geo-results.csv   every engine, every block: date, engine, block, query, named_in_answer,
-                    in_source_set, kabatone_url, competitors.  The analysis file.
+                    in_source_set, kabatone_url, competitors, run.  The analysis file.
+                    `run` numbers repeated samples of the same query on the same date.
   geo-history.csv   LEGACY trend line, unchanged meaning: Claude only, blocks A–C only,
                     kabatone_cited = named OR retrieved. Written at most once per date.
 
+Two runs per date (GEO-8). One answer per query is too noisy to compare week to week: on
+2026-10-19 two identical runs 30 minutes apart disagreed on 19 of 160 answers, and ChatGPT
+named KabatOne in 5 vs 10 of 40. Each engine now runs the set twice by default; seo_diff.py
+reports the average and the range. The legacy trend line uses run 1 only.
+
+Scheduling (GEO-8, PIPE-4). The 07:30 LaunchAgent and the 08:07 orchestrator fallback both call
+this script. With four engines x two runs it can outlast 08:07, so the orchestrator's old
+"are today's rows written yet?" check fired too early and ran a second full set. Now:
+  - a lock file makes a second concurrent invocation exit 0 without running;
+  - a date that already has results is skipped unless --force;
+  - after a full scheduled run it commits geo-results.csv and geo-history.csv itself, so the
+    data never depends on which job happened to run (pass --no-commit to skip).
+
 Usage:
-  python3.11 track_geo.py                       # all engines with keys, all blocks
+  python3.11 track_geo.py                       # all engines with keys, all blocks, 2 runs, commit
+  python3.11 track_geo.py --runs 1 --force      # one extra sample today
   python3.11 track_geo.py --engines claude      # one engine
   python3.11 track_geo.py --blocks D            # one block (e.g. the CAD block)
   python3.11 track_geo.py --no-write --limit 3  # cheap smoke test
@@ -33,7 +48,7 @@ Usage:
 Cost: one web-search-enabled request per query per engine. Claude ~$0.01-0.03; OpenAI gpt-5 measured
 ~$0.16 (1.2M tokens for 31 answers, 2026-10-12), so the default is gpt-5-mini; re-measure after the first run.
 """
-import argparse, csv, json, os, re, sys, urllib.error, urllib.request
+import argparse, csv, fcntl, json, os, re, subprocess, sys, urllib.error, urllib.request
 from pathlib import Path
 from datetime import datetime
 
@@ -41,6 +56,8 @@ HERE = Path(__file__).parent
 HISTORY = HERE / 'geo-history.csv'
 RESULTS = HERE / 'geo-results.csv'
 QUERIES_FILE = HERE / 'geo-queries.txt'
+LOCK = HERE / '.track_geo.lock'
+REPO_ROOT = HERE.parent.parent
 KEY_DIR = Path.home() / '.config' / 'claude-seo'
 
 # Blocks that feed the legacy trend line. Adding a block must never move that line.
@@ -56,7 +73,54 @@ _NAMED = re.compile(r'\bkabat\s?one\b|\bk-dispatch\b|\bk-safety\b|\bk-video\b', 
 _PROMPT = '{q} Recommend specific vendors/products and cite sources.'
 
 RESULT_FIELDS = ['date', 'engine', 'block', 'query', 'named_in_answer', 'in_source_set',
-                 'kabatone_url', 'competitors']
+                 'kabatone_url', 'competitors', 'run']
+
+
+def ensure_run_column():
+    """One-time migration: add `run` to a geo-results.csv written before GEO-8.
+
+    Rows are numbered by occurrence within (date, engine, query), so a date that ran twice
+    by accident (2026-10-19) becomes runs 1 and 2 instead of looking like one 80-query run."""
+    if not RESULTS.exists():
+        return
+    with open(RESULTS, newline='') as f:
+        rows = list(csv.DictReader(f))
+        header = rows[0].keys() if rows else []
+    if 'run' in header or not rows:
+        return
+    seen = {}
+    for r in rows:
+        k = (r['date'], r['engine'], r['query'])
+        seen[k] = seen.get(k, 0) + 1
+        r['run'] = str(seen[k])
+    with open(RESULTS, 'w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=RESULT_FIELDS)
+        w.writeheader()
+        w.writerows(rows)
+    print(f'{RESULTS.name}: added run column to {len(rows)} existing rows')
+
+
+def runs_on(date, engine):
+    """Highest run number already recorded for this engine on this date (0 if none)."""
+    if not RESULTS.exists():
+        return 0
+    with open(RESULTS, newline='') as f:
+        return max((int(r.get('run') or 1) for r in csv.DictReader(f)
+                    if r['date'] == date and r['engine'] == engine), default=0)
+
+
+def commit_results(today):
+    """PIPE-4: commit the GEO files from the job itself. Only these two paths are committed,
+    whatever else is staged in the checkout."""
+    paths = [str(RESULTS), str(HISTORY)]
+    git = ['git', '-C', str(REPO_ROOT)]
+    if subprocess.run(git + ['diff', '--quiet', 'HEAD', '--'] + paths).returncode == 0:
+        print('nothing to commit')
+        return
+    subprocess.run(git + ['add', '--'] + paths, check=False)
+    r = subprocess.run(git + ['commit', '-m', f'SEO: weekly GEO snapshot {today}', '--'] + paths,
+                       capture_output=True, text=True)
+    print((r.stdout or r.stderr).strip().splitlines()[0] if (r.stdout or r.stderr) else 'commit done')
 
 
 class FatalEngineError(Exception):
@@ -265,15 +329,35 @@ def main():
     ap.add_argument('--perplexity-model', default='fast', help='Agent API preset')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-write', action='store_true')
+    ap.add_argument('--runs', type=int, default=2, help='samples per query per engine (GEO-8)')
+    ap.add_argument('--force', action='store_true',
+                    help='run even if today already has results (adds further run numbers)')
+    ap.add_argument('--no-commit', action='store_true', help='do not git-commit the GEO files')
     ap.add_argument('--allow-partial', action='store_true',
                     help='write an engine whose run partially failed (default: drop it)')
     args = ap.parse_args()
+
+    # One run at a time. A second invocation (the 08:07 fallback while the 07:30 job is
+    # still going) exits cleanly instead of paying for and writing a duplicate set.
+    lock = open(LOCK, 'w')
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print('another track_geo.py run is in progress; skipping')
+        sys.exit(0)
+
+    if not args.no_write:
+        ensure_run_column()
+    today = datetime.now().strftime('%Y-%m-%d')
+    if not (args.force or args.no_write) and RESULTS.exists() and any(
+            l.startswith(today + ',') for l in RESULTS.read_text().splitlines()):
+        print(f'{RESULTS.name} already has {today}; skipping (pass --force for more samples)')
+        sys.exit(0)
 
     blocks = {b.strip().upper() for b in args.blocks.split(',') if b.strip()} or None
     queries = load_queries(blocks)
     if args.limit:
         queries = queries[:args.limit]
-    today = datetime.now().strftime('%Y-%m-%d')
     models = {'claude': args.model, 'openai': args.openai_model,
               'perplexity': args.perplexity_model, 'gemini': args.gemini_model}
 
@@ -289,44 +373,50 @@ def main():
             if name == 'claude':
                 exit_code = 1
             continue
-        print(f'\n[{name}] {len(queries)} queries')
-        rows, failed = [], 0
-        for i, (block, q) in enumerate(queries):
-            try:
-                text, urls = ask(q)
-            except FatalEngineError as e:
-                print(f'  [FATAL] {str(e)[:200]}\n  Aborting {name}: applies to every remaining query.')
-                failed += len(queries) - i
-                break
-            except Exception as e:
-                print(f'  [error] {q[:50]}: {str(e)[:120]}')
-                failed += 1
-                continue
-            named, retrieved, url, comps = classify(text, urls)
-            mark = '✅ NAMED ' if named else ('🔗 SOURCE' if retrieved else '❌ absent')
-            print(f"  {mark}  {block}  {q[:50]:<50}  vs: {', '.join(comps[:4]) or '—'}")
-            rows.append({'date': today, 'engine': name, 'block': block, 'query': q,
-                         'named_in_answer': 'Y' if named else 'N',
-                         'in_source_set': 'Y' if retrieved else 'N',
-                         'kabatone_url': url, 'competitors': '; '.join(comps)})
-        n = len(rows)
-        nm = sum(r['named_in_answer'] == 'Y' for r in rows)
-        either = sum('Y' in (r['named_in_answer'], r['in_source_set']) for r in rows)
-        print(f'[{name}] named in answer {nm}/{n} · named or retrieved {either}/{n}')
-        if getattr(ask, 'searches', 0):
-            print(f'[{name}] {ask.searches} grounded searches ({ask.searches / max(n, 1):.1f} per answer); free tier 5,000/month, then $14 per 1,000')
-        if getattr(ask, 'spent', 0):
-            print(f'[{name}] reported cost ${ask.spent:.3f} (${ask.spent / max(n, 1):.4f} per answer)')
-        if failed:
-            print(f'[{name}] {failed}/{len(queries)} failed — a partial run distorts the trend.')
-            if not args.allow_partial:
-                print(f'[{name}] not written (pass --allow-partial to record it anyway).')
-                if name == 'claude':
-                    exit_code = 2
-                continue
-        all_rows += rows
-        if name == 'claude' and not failed:
-            claude_complete = True
+        first = runs_on(today, name) + 1
+        for run in range(first, first + args.runs):
+            print(f'\n[{name}] run {run}: {len(queries)} queries')
+            rows, failed = [], 0
+            searches0, spent0 = getattr(ask, 'searches', 0), getattr(ask, 'spent', 0)
+            for i, (block, q) in enumerate(queries):
+                try:
+                    text, urls = ask(q)
+                except FatalEngineError as e:
+                    print(f'  [FATAL] {str(e)[:200]}\n  Aborting {name}: applies to every remaining query.')
+                    failed += len(queries) - i
+                    break
+                except Exception as e:
+                    print(f'  [error] {q[:50]}: {str(e)[:120]}')
+                    failed += 1
+                    continue
+                named, retrieved, url, comps = classify(text, urls)
+                mark = '✅ NAMED ' if named else ('🔗 SOURCE' if retrieved else '❌ absent')
+                print(f"  {mark}  {block}  {q[:50]:<50}  vs: {', '.join(comps[:4]) or '—'}")
+                rows.append({'date': today, 'engine': name, 'block': block, 'query': q,
+                             'named_in_answer': 'Y' if named else 'N',
+                             'in_source_set': 'Y' if retrieved else 'N',
+                             'kabatone_url': url, 'competitors': '; '.join(comps),
+                             'run': run})
+            n = len(rows)
+            nm = sum(r['named_in_answer'] == 'Y' for r in rows)
+            either = sum('Y' in (r['named_in_answer'], r['in_source_set']) for r in rows)
+            print(f'[{name}] named in answer {nm}/{n} · named or retrieved {either}/{n}')
+            searches = getattr(ask, 'searches', 0) - searches0
+            spent = getattr(ask, 'spent', 0) - spent0
+            if searches:
+                print(f'[{name}] {searches} grounded searches ({searches / max(n, 1):.1f} per answer); free tier 5,000/month, then $14 per 1,000')
+            if spent:
+                print(f'[{name}] reported cost ${spent:.3f} (${spent / max(n, 1):.4f} per answer)')
+            if failed:
+                print(f'[{name}] {failed}/{len(queries)} failed — a partial run distorts the trend.')
+                if not args.allow_partial:
+                    print(f'[{name}] not written (pass --allow-partial to record it anyway).')
+                    if name == 'claude':
+                        exit_code = 2
+                    continue
+            all_rows += rows
+            if name == 'claude' and not failed and run == 1:
+                claude_complete = True
 
     if args.no_write or not all_rows:
         sys.exit(exit_code)
@@ -340,7 +430,8 @@ def main():
     print(f'\nappended {len(all_rows)} rows -> {RESULTS.name}')
 
     # Legacy trend line: Claude, blocks A–C, full set only, one snapshot per date.
-    legacy = [r for r in all_rows if r['engine'] == 'claude' and r['block'] in LEGACY_BLOCKS]
+    legacy = [r for r in all_rows if r['engine'] == 'claude' and r['block'] in LEGACY_BLOCKS
+              and r['run'] == 1]
     already = HISTORY.exists() and any(l.startswith(today + ',')
                                        for l in HISTORY.read_text().splitlines())
     if legacy and already:
@@ -352,6 +443,8 @@ def main():
                 cited = 'Y' if 'Y' in (r['named_in_answer'], r['in_source_set']) else 'N'
                 w.writerow([today, r['query'], cited, r['competitors']])
         print(f'appended {len(legacy)} rows -> {HISTORY.name} (legacy trend)')
+    if not args.no_commit and not args.limit and not blocks:
+        commit_results(today)
     sys.exit(exit_code)
 
 

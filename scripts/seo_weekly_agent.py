@@ -1277,31 +1277,15 @@ def _run_geo_monitor(dry_run: bool = False):
     script = REPO_ROOT / 'SEO' / 'geo' / 'track_geo.py'
     if not script.exists():
         return
-    # The dedicated `com.kabatone.seo-geo` LaunchAgent (07:30) owns this run; this
-    # step is the fallback for when that job fails. Both firing logged every query
-    # twice, doubling paid API spend and corrupting the citation rate. If today's
-    # rows are already present, the 07:30 run succeeded and there is nothing to do.
-    hist = REPO_ROOT / 'SEO' / 'geo' / 'geo-history.csv'
-    today = datetime.now().strftime('%Y-%m-%d')
+    # The dedicated `com.kabatone.seo-geo` LaunchAgent (07:30) owns this run; this step is
+    # the fallback for when that job fails. The guard used to live here, as "are today's
+    # rows in geo-history.csv yet?", but four engines made the 07:30 run outlast 08:07 and
+    # this check fired before the file was written: 2026-10-19 ran the full set twice (GEO-8).
+    # track_geo.py now owns the guard (a lock while running, skip if today has results) and
+    # commits its own output (PIPE-4), so this step only has to call it.
     try:
-        if hist.exists() and any(
-                ln.startswith(today + ',') for ln in hist.read_text().splitlines()):
-            print(f'[geo-monitor] skipped: {today} rows already logged by com.kabatone.seo-geo')
-            return
-    except Exception as e:
-        print(f'[geo-monitor] freshness check failed, running anyway: {e}')
-    try:
-        print('\n[geo-monitor] checking AI-answer citations for target queries...')
+        print('\n[geo-monitor] running track_geo.py (skips itself if the 07:30 job ran or is running)...')
         subprocess.run([sys.executable, str(script)], check=False)
-        changed = subprocess.run(
-            ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]
-        ).returncode != 0
-        if changed:
-            ds = datetime.now().strftime('%Y-%m-%d')
-            subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(hist)], check=False)
-            subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
-                            f'SEO: weekly GEO citation snapshot {ds}'], check=False)
-            print('[geo-monitor] committed geo-history.csv')
     except Exception as e:
         print(f'[geo-monitor] skipped: {e}')
 

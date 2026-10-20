@@ -52,3 +52,4 @@ outputs/
 # Python bytecode
 __pycache__/
 *.pyc
+SEO/geo/.track_geo.lock
