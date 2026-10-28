@@ -150,7 +150,7 @@ def opportunities(cur):
         out.append({'query': r['query'], 'position': r['position'], 'impressions': impr,
                     'clicks': r.get('clicks', 0), 'cluster': assign_cluster(r['query']),
                     'intent': intent, 'potential_clicks': pot,
-                    'potential_clicks_qualified': 0 if intent in ('navigational', 'polling') else pot,
+                    'potential_clicks_qualified': 0 if intent in ('navigational', 'polling', 'acronym') else pot,
                     'score': round(impr * gap * business_value(r['query']), 1)})
     out.sort(key=lambda o: -o['score'])
     return out
@@ -554,14 +554,15 @@ def render(d):
     a("| # | Query | Pos | Impr | Potential | Qualified | Intent | Score |")
     a("|---|---|---|---|---|---|---|---|")
     for i, o in enumerate(d['opportunities'][:12], 1):
-        flag = " ⛔" if o['intent'] == 'navigational' else ""
+        flag = " ⛔" if o['intent'] in ('navigational', 'acronym') else ""
         a(f"| {i} | {o['query'][:36]} | {o['position']} | {o['impressions']:,} | "
           f"{o['potential_clicks']} | **{o['potential_clicks_qualified']}** | "
           f"{o['intent']}{flag} | {o['score']} |")
-    nav = [o for o in d['opportunities'][:12] if o['intent'] == 'navigational']
+    nav = [o for o in d['opportunities'][:12] if o['intent'] in ('navigational', 'acronym')]
     if nav:
-        a(f"\n> ⛔ {', '.join(repr(o['query']) for o in nav)} — navigational. Qualified "
-          f"potential is 0 by design. Keep the row visible, never headline the raw number.")
+        a(f"\n> ⛔ {', '.join(repr(o['query']) for o in nav)} — navigational, or a bare acronym "
+          f"(a definition lookup). Qualified potential is 0 by design. Keep the row visible, "
+          f"never headline the raw number.")
 
     cl = d.get('clusters') or {}
     if cl:
