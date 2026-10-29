@@ -1,3 +1,26 @@
+## [v2.419] – 2026-10-28 — Bare acronyms stop topping the opportunity table; weekly report
+
+**Fixed**
+- **`query_intent()` ranked bare acronyms as buyer opportunities.** `vms`, `psap`, `rtcc` and `lpr`, typed on
+  their own, drew 5,856 page-one impressions between 2026-09-29 and 10-26 for 11 clicks (0.19%), where page one
+  normally earns 2–5%. `vms` had five snippet rewrites since June without its CTR moving, and still led the
+  opportunity table and the Slack brief every week. They now get a new intent, `acronym`: the row stays visible,
+  qualified potential is 0 and value is 0.2, as for `c5`. Exact match only: `vms software` stays buyer. One shared
+  scorer feeds this report, the dashboard and `weekly_brief.py`, so all three correct at once. Verified by running
+  the scorer and regenerating the table: the top is now the Spanish "what is a C5" questions (informational), and
+  the largest buyer row is worth 18 clicks. (SCORER-2, closed.)
+
+**Added**
+- `SEO/weekly-report-2026-10-28.md`. GEO-5 listings still not live (3 weeks). `best-cad-dispatch-software` has lost
+  clicks three weeks running (17 → 14 → 10 → 7, position 7.9 → 10.3); this corrects the 10-19 "reallocation" read,
+  and it isn't cannibalization. `psap` closed as a definition lookup (1 click in 1,246 impressions).
+- The 2026-10-26 GEO snapshot (4 engines × 40 questions × 2 runs) and keyword snapshot, committed by the scheduled
+  jobs on the Mac and not yet on GitHub.
+
+**Changed**
+- `SEO/carry-over.md`: SCORER-2, PSAP-1, GEO-8 and PIPE-4 closed (v2.418's two-run, self-committing GEO job verified
+  on its first scheduled run); CAD-2 opened; GEO-5, GEO-4 and PIPE-3 updated.
+
 ## [v2.418] – 2026-10-19 — GEO monitor runs twice, guards itself, commits its own data
 
 **Fixed**

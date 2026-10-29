@@ -462,10 +462,10 @@ def pull_gsc(token, days):
                 # this is 0; the raw figure stays available for auditing, under a name
                 # nobody will print by accident.
                 'potential_clicks': (
-                    0 if query_intent(query) == 'navigational' else int(impressions * gap)
+                    0 if query_intent(query) in ('navigational', 'acronym') else int(impressions * gap)
                 ),
                 'potential_clicks_qualified': (   # kept as an alias for existing readers
-                    0 if query_intent(query) == 'navigational' else int(impressions * gap)
+                    0 if query_intent(query) in ('navigational', 'acronym') else int(impressions * gap)
                 ),
                 'potential_clicks_raw_unqualified': int(impressions * gap),
             })

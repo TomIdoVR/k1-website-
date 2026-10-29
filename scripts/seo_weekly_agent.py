@@ -133,6 +133,13 @@ _INFORMATIONAL = [
 ]
 # A query that is only these tokens carries no qualifier and cannot be read as a buyer.
 _BARE_TOKENS = {'c5', 'c4', 'cdmx', 'mexico', 'méxico', 'y', 'o', 'de', 'la', 'el', 'un', 'una'}
+# A bare acronym typed on its own is a definition lookup, not a buyer. Exact match only:
+# "vms software" stays buyer. Evidence (GSC 2026-09-29..10-26): vms, psap, rtcc and lpr
+# drew 5,856 page-one impressions (avg pos 5.5-8.1) for 11 clicks, 0.19%, where page one
+# normally earns 2-5%. vms alone had five snippet rewrites since June and its CTR never
+# moved; the scorer ranked it the #1 opportunity every week regardless (SCORER-2).
+# Add a term only with the same evidence: page-one rank, high impressions, ~0 clicks.
+_BARE_ACRONYMS = {'vms', 'psap', 'rtcc', 'lpr'}
 
 
 def _has(query, terms):
@@ -143,10 +150,13 @@ def _has(query, terms):
 
 
 def query_intent(query):
-    """buyer | informational | navigational — whether the searcher could become a customer."""
+    """buyer | informational | navigational | acronym | polling — whether the searcher
+    could become a customer."""
     q = query.lower().strip()
     if q in _SERP_POLLING:
         return 'polling'
+    if q in _BARE_ACRONYMS:
+        return 'acronym'
     if _has(q, _BUYER):
         return 'buyer'
     if _has(q, _NON_BUYER):
@@ -165,7 +175,7 @@ def business_value(query):
     if intent == 'polling':
         return 0.0
     # Kept in the ranking so it stays visible and auditable, but never near the top.
-    if intent == 'navigational':
+    if intent in ('navigational', 'acronym'):
         return 0.2
     q = query.lower()
     if _has(q, ['dispatch', 'cad', '911', 'k-dispatch']):                     base = 3.0
