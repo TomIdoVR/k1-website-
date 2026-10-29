@@ -113,9 +113,9 @@ the video-analytics block. No snippet rewrites.
 
 ### P0 — this week
 
-**#1: Get GEO-5 live.** *Owner: David Z, Omer to chase today. ~2 hours of form-filling. **3 weeks 🔴.***
+**#1: Get GEO-5 live.** *Owner: Omer (doing it himself, confirmed 10-29). ~2 hours of form-filling. **3 weeks 🔴.***
 Status I can verify: all three Second Brain tasks are still open, 4–5 days past due; G2 shows no KabatOne or K-Dispatch
-profile; the other directories block automated checks, so I can't see whether David Z submitted anything. **Ask him today.**
+profile; the other directories block automated checks, so their status can't be confirmed from here.
 Everything he needs is in the kit (https://claude.ai/artifact/EBXxbGGuXWeakxP6TTT1hR): routes, approved copy in EN and ES, and
 the four pitch emails. The pitches are yours to send.
 *Why it beats the runner-up:* it's the only identified lever for both problems this week. AI answers build their CAD
@@ -178,7 +178,7 @@ video/VMS maintenance.
 
 | Item | Owner | Weeks | Status |
 |---|---|---|---|
-| GEO-5 third-party listings | David Z / Omer | 3 🔴 | not live; tasks past due |
+| GEO-5 third-party listings | Omer | 3 🔴 | not live; tasks past due |
 | PIPE-3 Slack routine on retired branch, push blocked | Omer | 4 🔴 | needs routine edit |
 | BRANCH-1 retire `nextjs` (PR #31) | Omer | 3 🔴 | needs renumber + merge |
 | OPS-1 mailer crash | Claude | 4 🔴 | open |
