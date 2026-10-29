@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -137,10 +138,10 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
           </p>
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href={es ? '/es/contact' : '/contact'} style={{ background: ACCENT, color: '#0f1724', padding: '12px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>
+            <Link href={'/contact'} style={{ background: ACCENT, color: '#0f1724', padding: '12px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>
               {es ? 'Solicitar Demo' : 'Request Demo'}
             </Link>
-            <Link href={es ? '/es/resources/how-c5-command-centers-work' : '/resources/how-c5-command-centers-work'} style={{ border: `1px solid ${ACCENT}`, color: ACCENT, padding: '12px 28px', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
+            <Link href={'/resources/how-c5-command-centers-work'} style={{ border: `1px solid ${ACCENT}`, color: ACCENT, padding: '12px 28px', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
               {es ? 'Cómo Funcionan los C5' : 'How C5 Centers Work'}
             </Link>
           </div>
@@ -276,7 +277,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
 
             <div style={{ textAlign: 'center', marginTop: 36 }}>
               <Link
-                href={es ? '/es/contact' : '/contact'}
+                href={'/contact'}
                 style={{ background: ACCENT, color: '#0f1724', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}
               >
                 {es ? 'Ver Plataforma K1 para C5' : 'See K1 Platform for C5'}
@@ -308,12 +309,15 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
             </h3>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               {[
-                { href: es ? '/es/resources/how-c5-command-centers-work' : '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
-                { href: es ? '/es/resources/c5-command-centers-mexico-2026' : '/resources/c5-command-centers-mexico-2026', label: es ? 'C5 en México 2026' : 'C5 in Mexico 2026' },
-                { href: es ? '/es/resources/what-is-situational-awareness-software' : '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
-                { href: es ? '/es/resources/what-is-video-management-software' : '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
-                { href: es ? '/es/resources/what-is-cad-dispatch-software' : '/resources/what-is-cad-dispatch-software', label: 'CAD Dispatch Software' },
-                { href: es ? '/es/k-dispatch' : '/k-dispatch', label: es ? 'K-Dispatch (CAD/911)' : 'K-Dispatch (CAD/911)' },
+                { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
+                { href: '/resources/c5-command-centers-mexico-2026', label: es ? 'C5 en México 2026' : 'C5 in Mexico 2026' },
+                { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
+                { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
+                { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD?' : 'CAD Dispatch Software' },
+                { href: '/k-dispatch', label: es ? 'K-Dispatch (CAD/911)' : 'K-Dispatch (CAD/911)' },
+                { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America' },
+                { href: '/resources/cad-software-municipios-mexico', label: es ? 'Software CAD para Municipios de México' : 'CAD Software for Mexican Municipalities' },
+                { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: requisitos del CAD' : 'Mexico 911 Standard: CAD Requirements' },
               ].map(({ href, label }) => (
                 <Link
                   key={href}
@@ -326,6 +330,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
             </div>
           </div>
         </section>
+
+        <CadLeadForm es={es} source="que-es-un-c5" />
 
         <CTASection es={es} h2={es ? '¿Necesita una Plataforma para su Centro C5?' : 'Need a Platform for Your C5 Center?'} subtitle={es ? 'KabatOne K1 opera en más de 40 ciudades de América Latina. Solicite una demostración personalizada para su municipio o estado.' : 'KabatOne K1 operates in over 40 cities across Latin America. Request a personalized demo for your municipality or state.'} />
       </main>

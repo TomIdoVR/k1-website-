@@ -214,19 +214,19 @@ const KDISPATCH: SolutionContent = {
       q: S('Can K-Dispatch work with our existing radio and RMS systems?',
         '¿K-Dispatch funciona con nuestros sistemas de radio y RMS existentes?'),
       a: S('Yes. K-Dispatch integrates with all major radio systems (P25, TETRA, DMR) and Records Management Systems. The platform uses open APIs and standard protocols (CAP, NIEM, NENA i3) to connect with your existing infrastructure without requiring a full replacement.',
-        'Si. K-Dispatch se integra con todos los principales sistemas de radio (P25, TETRA, DMR) y Sistemas de Gestion de Registros. La plataforma usa APIs abiertas y protocolos estandar (CAP, NIEM, NENA i3) para conectarse con su infraestructura existente sin requerir un reemplazo completo.'),
+        'Sí. K-Dispatch se integra con todos los principales sistemas de radio (P25, TETRA, DMR) y Sistemas de Gestión de Registros. La plataforma usa APIs abiertas y protocolos estándar (CAP, NIEM, NENA i3) para conectarse con su infraestructura existente sin requerir un reemplazo completo.'),
     },
     {
       q: S('How long does it take to deploy K-Dispatch?',
-        '¿Cuanto tiempo toma implementar K-Dispatch?'),
+        '¿Cuánto tiempo toma implementar K-Dispatch?'),
       a: S('A typical deployment takes 8 to 16 weeks depending on the number of agencies, integration complexity, and training requirements. KabatOne provides a phased rollout with parallel operation so your existing CAD continues running until the transition is complete.',
-        'Una implementacion tipica toma de 8 a 16 semanas dependiendo del numero de agencias, complejidad de integraciones y requisitos de capacitacion. KabatOne ofrece un despliegue por fases con operacion en paralelo para que su CAD existente continue funcionando hasta completar la transicion.'),
+        'Una implementación típica toma de 8 a 16 semanas dependiendo del número de agencias, complejidad de integraciones y requisitos de capacitación. KabatOne ofrece un despliegue por fases con operación en paralelo para que su CAD existente continúe funcionando hasta completar la transición.'),
     },
     {
       q: S('Does K-Dispatch support cloud deployment?',
         '¿K-Dispatch soporta despliegue en la nube?'),
       a: S('K-Dispatch supports cloud, on-premises, and hybrid deployment models. Cloud deployments use redundant data centers with 99.99% uptime SLA. On-premises deployments are available for agencies with strict data sovereignty requirements, common in government and military environments.',
-        'K-Dispatch soporta modelos de despliegue en la nube, en sitio e hibrido. Los despliegues en la nube usan centros de datos redundantes con SLA de 99.99% de disponibilidad. Los despliegues en sitio estan disponibles para agencias con requisitos estrictos de soberania de datos, comun en entornos gubernamentales y militares.'),
+        'K-Dispatch soporta modelos de despliegue en la nube, en sitio e híbrido. Los despliegues en la nube usan centros de datos redundantes con SLA de 99.99% de disponibilidad. Los despliegues en sitio están disponibles para agencias con requisitos estrictos de soberanía de datos, común en entornos gubernamentales y militares.'),
     },
   ],
 

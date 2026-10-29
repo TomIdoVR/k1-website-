@@ -724,7 +724,7 @@ def render(d):
             fl = f"{e['flips']}/{e['n']}" if nr > 1 else "—"
             a(f"| {eng} | {e['date']} | {nr} | **{e['named_mean']}**/{e['n']} | {rng} | {fl} | "
               f"{e['retrieved_mean']}/{e['n']} |")
-        a("\nBy block (named per run; D = CAD):\n")
+        a("\nBy block (named per run; D = CAD, E = LATAM CAD in Spanish):\n")
         a("| Engine | " + " | ".join(sorted({b for e in gr['engines'].values() for b in e['blocks']})) + " |")
         blks = sorted({b for e in gr['engines'].values() for b in e['blocks']})
         a("|---|" + "---|" * len(blks))

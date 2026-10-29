@@ -26,6 +26,7 @@ const pages = [
   { path: '/resources/psim-vs-unified-platform', priority: 0.6 },
   { path: '/resources/how-c5-command-centers-work', priority: 0.8 },
   { path: '/resources/que-es-un-c5', priority: 0.8 },
+  { path: '/resources/norma-tecnica-911', priority: 0.8 },
   { path: '/resources/smart-city-platform-guide', priority: 0.6 },
   { path: '/resources/public-safety-software-municipalities-mexico', priority: 0.6 },
   { path: '/resources/end-of-siloed-response', priority: 0.7 },
