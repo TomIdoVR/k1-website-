@@ -1,3 +1,16 @@
+## [v2.421] – 2026-10-29 — Lead counts no longer include job applications; leads carry language
+
+**Fixed**
+- **`generate_lead` counted job applications as sales leads.** GA4, Aug–Oct 2026: 67 `generate_lead`
+  events, of which 19 came from the careers application form. The contact forms produced 44
+  (`/contact` 32, `/es/contact` 12), about 15 a month, 4 of them Spanish. Careers now fires its own
+  `job_application` event with the same parameters, so careers source attribution (v2.399) is
+  unchanged and `generate_lead` means sales leads only (CAD plan item #2).
+
+**Added**
+- Every lead event carries `page_language` (from `<html lang>`) and `page_path`. GA4 event-scoped
+  custom dimension `page_language` registered on property 530090453 via the Admin API.
+
 ## [v2.420] – 2026-10-29 — Spanish C5 entry page sent leads to 404s; K-Dispatch ES copy fixed
 
 **Fixed**
