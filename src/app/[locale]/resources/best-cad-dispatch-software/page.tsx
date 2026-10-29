@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -541,6 +542,8 @@ export default async function BestCadDispatchSoftwarePage({
         </section>
 
         {/* ── CTA ── */}
+        <CadLeadForm es={es} source="best-cad" />
+
         <CTASection
           es={es}
           h2={es ? 'Ve K-Dispatch en Acción para tu Centro 911' : 'See K-Dispatch in Action for Your 911 Center'}

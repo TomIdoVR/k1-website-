@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
+import CadLeadForm from '@/components/CadLeadForm'
 
 /* CAD inbound plan item #6. Spanish CAD-buyer search is near zero, but "norma técnica 911"
    / "norma técnica calle 911" have autocomplete demand and no page answered them (this URL
@@ -212,9 +213,9 @@ export default async function NormaTecnica911Page({ params }: { params: Promise<
                 : 'K-Dispatch brings emergency call handling and dispatch into one platform, with map, video and an AI Co-Pilot for the operator. Our team can walk through this list against your current operation with you.'}
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Link href="/contact" style={{ background: ACCENT, color: '#0f1724', padding: '12px 24px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>
+              <a href="#contacto" style={{ background: ACCENT, color: '#0f1724', padding: '12px 24px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>
                 {es ? 'Solicitar una revisión' : 'Request a review'}
-              </Link>
+              </a>
               <Link href="/k-dispatch" style={{ border: `1px solid ${ACCENT}`, color: ACCENT, padding: '12px 24px', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
                 {es ? 'Conocer K-Dispatch' : 'See K-Dispatch'}
               </Link>
@@ -231,6 +232,8 @@ export default async function NormaTecnica911Page({ params }: { params: Promise<
             ))}
           </div>
         </section>
+
+        <CadLeadForm es={es} source="norma-911" />
       </main>
       <Footer es={es} />
     </>

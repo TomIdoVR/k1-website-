@@ -1,3 +1,18 @@
+## [v2.423] – 2026-10-29 — Lead forms on the pages CAD buyers land on
+
+**Added**
+- **`CadLeadForm`**: the existing `ContactForm` (same Formspree endpoint, same `generate_lead`
+  event) with CAD-specific copy, K-Dispatch listed first, and a per-page `source` tag sent as
+  `campaign_source` in both the lead e-mail and GA4. CAD plan item #3, form part.
+- Embedded on `/resources/norma-tecnica-911` (`norma-911`), `/resources/que-es-un-c5`
+  (`que-es-un-c5`), `/resources/how-c5-command-centers-work` (`how-c5`) and
+  `/resources/best-cad-dispatch-software` (`best-cad`), in both languages. Why: Spanish C5/911
+  searchers land on these resource pages, not the product page, and their only next step was a link
+  to `/contact`. The Norma page's "Solicitar una revisión" button now jumps to the form.
+- Not yet: WhatsApp contact and calendar booking (waiting on the WhatsApp line and response
+  owner, Jason). Verified the forms render with the right source tag on all five page/language
+  combinations; no test lead was submitted, to keep the sales inbox clean.
+
 ## [v2.422] – 2026-10-29 — New page: what Mexico's Norma Técnica 9-1-1 requires of a CAD
 
 **Added**

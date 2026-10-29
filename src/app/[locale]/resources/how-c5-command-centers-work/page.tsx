@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -571,6 +572,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
         </section>
 
         {/* -- CTA -- */}
+        <CadLeadForm es={es} source="how-c5" />
+
         <CTASection
           es={es}
           h2={es ? 'Transforma tu Centro C5 con Tecnología Unificada' : 'Transform Your C5 Center with Unified Technology'}
