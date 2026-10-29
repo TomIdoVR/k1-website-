@@ -458,6 +458,9 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un RTCC?' : 'What Is a Real-Time Crime Center' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
+                { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America' },
+                { href: '/resources/cad-software-municipios-mexico', label: es ? 'Software CAD para Municipios de México' : 'CAD Software for Mexican Municipalities' },
+                { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD?' : 'What Is CAD Dispatch Software' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                   {link.label}

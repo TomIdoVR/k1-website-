@@ -1,3 +1,43 @@
+## [v2.420] – 2026-10-29 — Spanish C5 entry page sent leads to 404s; K-Dispatch ES copy fixed
+
+**Fixed**
+- **`/es/resources/que-es-un-c5` linked to `/es/es/...` 404s, including its CTAs to `/es/contact` and
+  `/es/k-dispatch`.** The page builds hrefs as `es ? '/es/x' : '/x'` and passes them to the
+  locale-aware `Link` from `@/i18n/navigation`, which prefixes `/es` again. This is the page Spanish
+  "¿qué es el C5?" searchers land on (the Spanish C5 cluster drew ~8,900 impressions in 28 days), so
+  every visitor who clicked through to the product or the contact form hit an error page. All 7
+  broken hrefs now use bare paths. A crawl of all 117 Spanish sitemap URLs found this was the only
+  affected page. The absolute breadcrumb URLs in the JSON-LD keep their `/es/` prefix.
+- **Four Spanish CAD pages were never indexed** (CAD plan item #9). URL Inspection: 
+  `/es/resources/cad-dispatch-software-latin-america` and `/es/resources/cad-software-municipios-mexico`
+  are "URL is unknown to Google", `/es/resources/c5-command-centers-mexico-2026` likewise, and
+  `/es/resources/what-is-cad-dispatch-software` is "Discovered – currently not indexed", although all
+  four are 5–7 months old, return 200, self-canonical, indexable and in the sitemap (last read 24 Oct).
+  Mechanism: none of the indexed, trafficked Spanish pages (the K-Dispatch page, both C5 pages, the
+  ES homepage, the municipalities page) linked to them; the C5 page's links to two of them were the
+  404s above. Both C5 pages now link to all four.
+- **K-Dispatch H1 read "llamadaa la respuesta" to crawlers and screen readers.** The two H1 spans in
+  `SolutionPage` had no whitespace between them; the flex column hides that visually but text
+  extraction (Google snippets, AI engines) joins them. One `{' '}` fixes every solution page.
+- **K-Dispatch ES FAQ accents:** Sí, Gestión, estándar, ¿Cuánto, implementación típica, número,
+  capacitación, operación, continúe, transición, híbrido, están, soberanía, común.
+- **`/es/contact` demo e-mail button used the English subject "Demo Request"**; it is now
+  "Solicitud de demo" on Spanish and unchanged on English.
+
+**Added**
+- GEO monitor block E: 12 Spanish LATAM CAD buyer questions (Norma Técnica 911, cost, anexo técnico,
+  state C5, Zetron/Hexagon/Carbyne alternatives, municipal C2/C4, Línea 123, CRUM, SISMED911,
+  C5 video integration). First scheduled run 2 Nov; does not feed the legacy trend line.
+
+**Not changed, flagged for Omer**
+- The K-Dispatch FAQ still states 25,000+ daily calls, a 5-minute average response time and a
+  99.99% uptime SLA, and `/resources/cad-dispatch-software-latin-america` states "40+ cities /
+  73M citizens" (the About page says 68.5M) and "<90 s dispatch". None has a signed-off source.
+- Missing Spanish accents are site-wide (airport, municipalities, public-safety, PSIM pages), not
+  just K-Dispatch: logged as a follow-up.
+- Research note corrected: the "two-step contact form not live" finding was wrong. v2.389 changed
+  the careers application form, not the contact page.
+
 ## [v2.419] – 2026-10-28 — Bare acronyms stop topping the opportunity table; weekly report
 
 **Fixed**
