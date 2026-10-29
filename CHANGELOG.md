@@ -1,3 +1,18 @@
+## [v2.422] – 2026-10-29 — New page: what Mexico's Norma Técnica 9-1-1 requires of a CAD
+
+**Added**
+- **`/es/resources/norma-tecnica-911`** (and `/resources/norma-tecnica-911`): the 22 CAD and GIS
+  software requirements of the SESNSP's Norma Técnica 9-1-1 v2.0 (sections 4.2 and 4.8), each with
+  its clause number and the question to put to any vendor when drafting a tender's anexo técnico;
+  the 7.3.1 time targets (reception ≤90 s, dispatch ≤90 s, urban arrival ≤10 min); clause 4.2.24
+  (in-house CADs must comply too); a five-question FAQPage. CAD plan item #6, first part.
+  Why: Spanish CAD-buyer search is near zero, while "norma técnica 911" / "norma técnica calle 911"
+  have autocomplete demand and the URL was a 404. No competitor publishes this.
+- Deliberately **no compliance claim for K-Dispatch**. That section is added only after Daniel
+  validates the clause matrix (item #5); until then the page quotes the official document only.
+  The Norma frames its scope as seven aspects, not five as the research notes said.
+- Sitemap entry (priority 0.8); linked from both Spanish C5 pages, which Google indexes.
+
 ## [v2.421] – 2026-10-29 — Lead counts no longer include job applications; leads carry language
 
 **Fixed**

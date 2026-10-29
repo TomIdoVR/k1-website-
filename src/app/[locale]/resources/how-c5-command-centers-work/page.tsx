@@ -461,6 +461,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America' },
                 { href: '/resources/cad-software-municipios-mexico', label: es ? 'Software CAD para Municipios de México' : 'CAD Software for Mexican Municipalities' },
                 { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD?' : 'What Is CAD Dispatch Software' },
+                { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: requisitos del CAD' : 'Mexico 911 Standard: CAD Requirements' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                   {link.label}

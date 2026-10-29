@@ -1241,6 +1241,11 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure.",
     canonical: "https://kabatone.com/resources/public-safety-software-suriname",
   },
+  normaTecnica911: {
+    title: "Mexico's 911 Technical Standard (Norma Técnica 9-1-1): CAD Requirements | KabatOne",
+    description: "What the SESNSP's Norma Técnica 9-1-1 v2.0 requires of a 911 center's CAD and GIS in Mexico: integrations, the national incident catalogue, 90-second times and the question to ask each vendor.",
+    canonical: "https://kabatone.com/resources/norma-tecnica-911",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
     description: "Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",

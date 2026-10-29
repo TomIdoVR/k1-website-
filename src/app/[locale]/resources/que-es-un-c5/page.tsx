@@ -316,6 +316,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
                 { href: '/k-dispatch', label: es ? 'K-Dispatch (CAD/911)' : 'K-Dispatch (CAD/911)' },
                 { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America' },
                 { href: '/resources/cad-software-municipios-mexico', label: es ? 'Software CAD para Municipios de México' : 'CAD Software for Mexican Municipalities' },
+                { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: requisitos del CAD' : 'Mexico 911 Standard: CAD Requirements' },
               ].map(({ href, label }) => (
                 <Link
                   key={href}
