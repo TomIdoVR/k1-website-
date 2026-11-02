@@ -1256,6 +1256,16 @@ export const metadata = {
     description: "Qué debe hacer un CAD para bomberos y urgencias médicas: clasificación por protocolo, primeros auxilios por teléfono, recomendación por capacidad, coordinación con el CRUM y tiempos.",
     canonical: "https://kabatone.com/es/resources/fire-ems-dispatch-software",
   },
+  anexoTecnicoCad911: {
+    title: "Anexo Técnico para Licitar un CAD 911: Qué Debe Incluir | KabatOne",
+    description: "Las 12 secciones del anexo técnico de una licitación de sistema CAD 911 o C5 en México, con ejemplo de redacción para cada una, alineadas a la Norma Técnica 9-1-1 y a la LAASSP 2025.",
+    canonical: "https://kabatone.com/es/resources/anexo-tecnico-cad-911",
+  },
+  linea123Software: {
+    title: "Software para la Línea 123 y el NUSE en Colombia | KabatOne",
+    description: "Qué debe hacer la plataforma de la Línea 123 en Colombia: recepción multicanal, coordinación de policía, bomberos y salud, mapa con cámaras, y cómo se contrata en SECOP II.",
+    canonical: "https://kabatone.com/es/resources/linea-123-software",
+  },
   normaTecnica911: {
     title: "Norma Técnica 9-1-1: Requisitos del CAD, Cláusula por Cláusula | KabatOne",
     description: "Qué exige la Norma Técnica 9-1-1 v2.0 del SESNSP al CAD y al GIS de un centro 911: integraciones, catálogo nacional de incidentes, tiempos de 90 segundos y la pregunta para cada proveedor.",

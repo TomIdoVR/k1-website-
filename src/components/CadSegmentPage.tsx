@@ -22,6 +22,8 @@ export type SegmentCopy = {
   problem: string
   reqTitle: string
   reqs: SegmentReq[]
+  /** Label before each req's `ask` line; defaults to "Ask the vendor". */
+  askLabel?: string
   howTitle: string
   how: string[]
   faqTitle: string
@@ -81,7 +83,7 @@ export default function CadSegmentPage({ es, c }: { es: boolean; c: SegmentCopy 
             <div key={r.title} style={{ ...card, display: 'flex', flexDirection: 'column', gap: 6 }}>
               <h3 style={{ fontSize: 17, fontWeight: 700 }}>{r.title}</h3>
               <p style={{ color: '#cbd5e1', lineHeight: 1.65 }}>{r.body}</p>
-              <p style={{ fontSize: 14, color: '#94a3b8' }}><strong style={{ color: '#cbd5e1' }}>{es ? 'Pregunta al proveedor: ' : 'Ask the vendor: '}</strong>{r.ask}</p>
+              <p style={{ fontSize: 14, color: '#94a3b8' }}><strong style={{ color: '#cbd5e1' }}>{c.askLabel ?? (es ? 'Pregunta al proveedor: ' : 'Ask the vendor: ')}</strong>{r.ask}</p>
             </div>
           ))}
         </section>

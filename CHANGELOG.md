@@ -1,3 +1,19 @@
+## [v2.426] – 2026-11-02 — Tender technical-annex guide and Línea 123 page
+
+**Added**
+- **`/es/resources/anexo-tecnico-cad-911`** (+ EN): the 12 sections of a Mexican 911/C5 CAD tender's
+  technical annex, each with sample requirement wording, built on the Norma Técnica 9-1-1 clauses and
+  the 2025 procurement change (LAASSP in force 17 Apr 2025; Compras MX replaced CompraNet). Vendor-
+  neutral by design. CAD plan item #7 (public guide; the downloadable template waits on product
+  validation). Why: "¿Qué debe incluir el anexo técnico de una licitación de sistema CAD 911?" was the
+  weakest question in the 29 Oct GEO block E baseline.
+- **`/es/resources/linea-123-software`** (+ EN): Colombia's Línea 123 / NUSE, with sourced buying facts
+  (Bogotá Decreto 644 de 2025; reverse auction SCJ-SIF-SASI-010-2024, COP 9,343M; SECOP II). CAD plan
+  item #24, first Tier-1 country page; another block E gap.
+- `CadSegmentPage` takes an optional `askLabel` ("Ejemplo de redacción" on the annex guide).
+- Linked from the Norma page (its annex CTA now points to the guide), the Mexican municipal CAD page and
+  the Colombia page; sitemap 0.8.
+
 ## [v2.425] – 2026-11-02 — KabatOne vs Zetron comparison page
 
 **Added**
