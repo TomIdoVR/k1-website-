@@ -1241,6 +1241,16 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para Surinam — KPS ~2,500 efectivos, control narcotrafico Puerto de Paramaribo, aeropuerto Johan Adolf Pengel e infraestructura Staatsolie.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-suriname",
   },
+  policeCadSoftware: {
+    title: "Software CAD para Policía: Qué Debe Hacer un Sistema de Despacho | KabatOne",
+    description: "Qué debe hacer un software CAD para policía: ubicación de quien llama, prioridad, recomendación de unidades, AVL, app móvil, video, intercambio con el IPH y qué preguntar a cada proveedor.",
+    canonical: "https://kabatone.com/es/resources/police-cad-software",
+  },
+  fireEmsDispatchSoftware: {
+    title: "Software de Despacho para Bomberos y Ambulancias (CAD) | KabatOne",
+    description: "Qué debe hacer un CAD para bomberos y urgencias médicas: clasificación por protocolo, primeros auxilios por teléfono, recomendación por capacidad, coordinación con el CRUM y tiempos.",
+    canonical: "https://kabatone.com/es/resources/fire-ems-dispatch-software",
+  },
   normaTecnica911: {
     title: "Norma Técnica 9-1-1: Requisitos del CAD, Cláusula por Cláusula | KabatOne",
     description: "Qué exige la Norma Técnica 9-1-1 v2.0 del SESNSP al CAD y al GIS de un centro 911: integraciones, catálogo nacional de incidentes, tiempos de 90 segundos y la pregunta para cada proveedor.",

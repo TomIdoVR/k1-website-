@@ -1,3 +1,20 @@
+## [v2.424] – 2026-11-02 — Police CAD and fire & EMS dispatch pages
+
+**Added**
+- **`/resources/police-cad-software`** (+ ES "Software CAD para policía") and
+  **`/resources/fire-ems-dispatch-software`** (+ ES "Software de despacho para bomberos y ambulancias").
+  CAD plan item #26. GSC 4–31 Oct: 75 police CAD queries (1,736 impressions, 1 click, "police dispatch
+  system" p8.2, "police cad systems" p8.4) and ~50 fire/EMS queries (~1,190 impressions excluding the
+  polling bot query, 1 click; "ambulance dispatch software", "ems dispatch software" at p18–27) all
+  landed on the generic best-CAD, US country and K-Dispatch pages. Each page: the problem, what the CAD
+  must do with a vendor question per requirement, how K-Dispatch approaches it (approved facts only, no
+  figures), FAQPage, the on-page lead form (`police-cad`, `fire-ems-cad`). The Spanish fire/EMS page
+  covers CRUM coordination and the Norma Técnica 911 telephone first-aid and 90-second rules (a GEO
+  block E gap). CJIS, medical protocols and station alerting appear as buyer questions, not claims.
+- `CadSegmentPage`: shared layout for CAD segment pages.
+- Linked from `/resources/best-cad-dispatch-software` (the page these queries hit today) and
+  `/resources/what-is-emergency-dispatch-software`; sitemap priority 0.8.
+
 ## [v2.423] – 2026-10-29 — Lead forms on the pages CAD buyers land on
 
 **Added**

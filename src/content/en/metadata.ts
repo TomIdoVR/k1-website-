@@ -1241,6 +1241,16 @@ export const metadata = {
     description: "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure.",
     canonical: "https://kabatone.com/resources/public-safety-software-suriname",
   },
+  policeCadSoftware: {
+    title: "Police CAD Software: What a Police Dispatch System Must Do | KabatOne",
+    description: "What police computer-aided dispatch software must do: caller location, priority, unit recommendation, AVL, mobile, video and RMS integration, and the questions to ask each vendor.",
+    canonical: "https://kabatone.com/resources/police-cad-software",
+  },
+  fireEmsDispatchSoftware: {
+    title: "Fire & EMS Dispatch Software: What a Fire and Ambulance CAD Needs | KabatOne",
+    description: "What fire and EMS dispatch software must do: protocol triage, pre-arrival instructions, unit recommendation by capability, response plans, hospital coordination and time reporting.",
+    canonical: "https://kabatone.com/resources/fire-ems-dispatch-software",
+  },
   normaTecnica911: {
     title: "Mexico's 911 Technical Standard (Norma Técnica 9-1-1): CAD Requirements | KabatOne",
     description: "What the SESNSP's Norma Técnica 9-1-1 v2.0 requires of a 911 center's CAD and GIS in Mexico: integrations, the national incident catalogue, 90-second times and the question to ask each vendor.",
