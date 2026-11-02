@@ -1266,6 +1266,21 @@ export const metadata = {
     description: "Qué debe hacer la plataforma de la Línea 123 en Colombia: recepción multicanal, coordinación de policía, bomberos y salud, mapa con cámaras, y cómo se contrata en SECOP II.",
     canonical: "https://kabatone.com/es/resources/linea-123-software",
   },
+  ecu911Modernizacion: {
+    title: "Modernización del ECU 911: Plataforma de Atención y Despacho | KabatOne",
+    description: "Qué debe hacer la plataforma de atención y despacho del ECU 911: un solo flujo, video de miles de cámaras en el incidente, coordinación de instituciones y migración por fases.",
+    canonical: "https://kabatone.com/es/resources/ecu-911-modernizacion",
+  },
+  sistema911Argentina: {
+    title: "Sistema 911 Provincial en Argentina con Inteligencia Artificial | KabatOne",
+    description: "Qué debe hacer un 911 provincial en Argentina: IA que asista al operador, varios centros en un sistema, despacho en el mapa. Lo que pidió la licitación de Buenos Aires.",
+    canonical: "https://kabatone.com/es/resources/sistema-911-argentina",
+  },
+  chile911Sinaproc: {
+    title: "911 Chileno (SINAPROC): Plataforma del Número Único de Emergencias | KabatOne",
+    description: "Qué plantea el proyecto SINAPROC para el 911 chileno y qué debe hacer la plataforma: unificar Carabineros, Bomberos y SAMU, ubicación en tiempo real, piloto y escala nacional.",
+    canonical: "https://kabatone.com/es/resources/911-chile-sinaproc",
+  },
   normaTecnica911: {
     title: "Norma Técnica 9-1-1: Requisitos del CAD, Cláusula por Cláusula | KabatOne",
     description: "Qué exige la Norma Técnica 9-1-1 v2.0 del SESNSP al CAD y al GIS de un centro 911: integraciones, catálogo nacional de incidentes, tiempos de 90 segundos y la pregunta para cada proveedor.",

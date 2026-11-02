@@ -1,3 +1,8 @@
+## [v2.427] – 2026-11-02 — CAD pages for Ecuador, Argentina and Chile
+**Added**
+- Three Spanish-first CAD pages: ECU 911 modernization, provincial 911 systems in Argentina, and Chile's single emergency number (SINAPROC). Each covers how the system is bought, what the platform must do, what to ask the vendor, an FAQ and the CAD lead form (sources `ecu-911`, `911-argentina`, `911-chile`). Shared copy lives in `src/content/cad-countries.ts` and renders through `CadSegmentPage` (CAD plan item #24).
+- Metadata in both locales, sitemap entries, and links from each country's public-safety page.
+
 ## [v2.426] – 2026-11-02 — Tender technical-annex guide and Línea 123 page
 
 **Added**

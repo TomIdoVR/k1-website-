@@ -424,6 +424,7 @@ export default async function PublicSafetySoftwareEcuadorPage({
                   {es ? 'Recursos relacionados:' : 'Related resources:'}
                 </span>
                 {[
+                  { href: '/resources/ecu-911-modernizacion', label: es ? "Modernización del ECU 911" : "Modernizing ECU 911" },
                   { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para America Latina' : 'CAD Dispatch Software for Latin America' },
                   { href: '/resources/public-safety-software-colombia', label: es ? 'Seguridad Publica — Colombia' : 'Public Safety Software — Colombia' },

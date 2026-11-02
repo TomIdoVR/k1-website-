@@ -1266,6 +1266,21 @@ export const metadata = {
     description: "What a Línea 123 / NUSE emergency platform in Colombia must do, how cities buy it through SECOP II, and what to ask each vendor.",
     canonical: "https://kabatone.com/resources/linea-123-software",
   },
+  ecu911Modernizacion: {
+    title: "Modernizing ECU 911: Ecuador's Emergency Dispatch Platform | KabatOne",
+    description: "What a modern call handling and dispatch platform for Ecuador's ECU 911 must do: one flow, video from thousands of cameras on the incident, every institution on one record.",
+    canonical: "https://kabatone.com/resources/ecu-911-modernizacion",
+  },
+  sistema911Argentina: {
+    title: "Provincial 911 Systems in Argentina with AI | KabatOne",
+    description: "What a provincial 911 system in Argentina must do: AI that assists the operator, several centers on one system, dispatch on one map. What the Buenos Aires tender required.",
+    canonical: "https://kabatone.com/resources/sistema-911-argentina",
+  },
+  chile911Sinaproc: {
+    title: "Chile's 911 (SINAPROC): The Single Emergency Number Platform | KabatOne",
+    description: "What Chile's SINAPROC bill proposes for a single 911 number and what the platform must do: unify Carabineros, Bomberos and SAMU, real-time location, pilot then national scale.",
+    canonical: "https://kabatone.com/resources/911-chile-sinaproc",
+  },
   normaTecnica911: {
     title: "Mexico's 911 Technical Standard (Norma Técnica 9-1-1): CAD Requirements | KabatOne",
     description: "What the SESNSP's Norma Técnica 9-1-1 v2.0 requires of a 911 center's CAD and GIS in Mexico: integrations, the national incident catalogue, 90-second times and the question to ask each vendor.",
