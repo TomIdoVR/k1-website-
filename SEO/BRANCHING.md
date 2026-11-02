@@ -1,70 +1,58 @@
-# How work reaches production
+# Branching — one long-lived branch
 
-Read this before shipping. Getting it wrong nearly cost a live regression on 2026-08-31.
+**Updated 2026-09-28.** `main` is the only long-lived branch. Every change is a short-lived
+branch off `main`, reviewed on its Vercel preview, and merged by PR. Merging is shipping.
 
-## The topology is not what the branch names suggest
+| Where | What |
+|---|---|
+| `main` | Production — `kabatone.com`, deploys on every merge |
+| A PR's preview URL | Staging for that change — Vercel posts it on the PR |
+| `nextjs` | **Retired.** Archived as the tag `archive/nextjs-2026-09-28`. Do not build on it. |
 
-| Branch | Role | Version (2026-08-31) |
-|---|---|---|
-| `main` | **production** — `kabatone.com` | v2.376 |
-| `nextjs` | staging — `staging.kabatone.com` | v2.338 |
-
-`nextjs` is **not** simply ahead of `main`. The two have **diverged**:
-
-- `main` carries **165+ commits that never went through `nextjs`** — the v2.338–v2.375 range
-  (hero fixes, mobile menus, GA4 lead-conversion fix) reached production as PRs #12–#17.
-- `main` is at a **higher version** than `nextjs`.
-- **30+ source files are modified on both sides**, including `next.config.ts`,
-  `src/content/{en,es}/metadata.ts`, `k-video`, and `what-is-video-management-software`.
-
-## The rule
-
-**To ship to production: branch from `main`, re-apply the change, open a PR to `main`.**
-
-Do **not** merge `nextjs` into `main`. That merges an older line into a newer one across files
-both sides have edited. On 2026-08-31 that merge was approved and started before a merge-base
-check caught the divergence at the last step.
+## How to ship a change
 
 ```bash
-# Correct route
-git worktree add -b seo/<slug> <path> origin/main   # worktree avoids untracked-file collisions
-# ...re-apply the change against main's current content...
-npm run build                                        # needs its own npm install in a worktree
+git fetch origin
+git switch -c <type>/<topic> origin/main     # e.g. seo/vms-intent-collision
+# … change, build (npm run build), update CHANGELOG.md + changelog.html …
+git push -u origin <type>/<topic>
 gh pr create --base main
+# check the Vercel preview on the PR, then merge — that is the deploy
 ```
 
-A worktree is strongly preferred: switching the primary tree to a `main`-based branch collides
-with dozens of untracked files (`hero-lab`, `design-assets/`, `public/images/hero-cards/`) that
-exist as *tracked* files on `main`.
+Verify on the live site after the deploy, not on the diff: several fixes this year were
+correct in git and wrong on the page.
 
-## Why the one-line check misleads
+## Why `nextjs` was retired
 
-```bash
-git rev-list --count origin/main..origin/nextjs    # "13 behind"  ← only half the question
-git rev-list --count origin/nextjs..origin/main    # "163 ahead"  ← the half that gets skipped
-test "$(git merge-base origin/main origin/nextjs)" = "$(git rev-parse origin/main)" \
-  && echo "fast-forward" || echo "DIVERGED"
-```
+`nextjs` was meant to be a rehearsal copy promoted to `main` in one go. That stopped on
+**2026-08-21**, the last promotion. After it, work reached `main` directly through PR
+branches (careers, hero, mobile menus, SEO fixes) while other work kept landing on `nextjs`
+and was never promoted. By 2026-09-28 they had diverged — **`main` 185 commits ahead,
+`nextjs` 56 ahead, 42 source files changed on both sides** — so `nextjs` could no longer be
+promoted without overwriting newer production code.
 
-`scripts/seo_diff.py` now reports both directions, names each branch's version, lists the
-overlapping files, and refuses to describe a diverged branch as "behind". Trust it over a
-remembered number.
+The cost was measured, not hypothetical. Finished SEO fixes sat on `nextjs`, invisible in
+every metric:
 
-## Consequence: SEO work exists twice
+| Fix | Built on `nextjs` | Shipped to `main` | Days stranded |
+|---|---|---|---|
+| CAD-1 internal links | v2.342 / 2026-08-31 | PR #18 / 2026-09-22 | 22 |
+| C5 fifth-C definition | v2.347 / 2026-09-01 | PR #21 / 2026-09-28 | 27 |
+| VMS intent collision | v2.348 / 2026-09-01 | PR #23 / 2026-09-28 | 27 |
+| Answer-first CAD/VMS/CCTV | v2.343–344 / 2026-08-31 | PR #25 / 2026-09-28 | 28 |
 
-The video-analytics consolidation and canonical fixes live on `nextjs` (v2.329, v2.331) *and*
-on `main` (v2.376, PR #17) as **different commits with the same effect**. That is expected and
-harmless, but it means:
+The underlying cause was an instruction, not a person: `CLAUDE.md` said *"All development
+happens on `nextjs`"*, so every agent built there, faithfully, long after the workflow it
+described had stopped.
 
-- Don't "re-ship" v2.329 work to production — check `main` first (`git show origin/main:next.config.ts | grep cctv`).
-- Version numbers are **per branch**. Take the next version from the CHANGELOG of the branch
-  you are actually on.
+On retirement, all of `nextjs`'s website work was either already live or shipped in PRs
+#24–#25; its SEO tooling and history moved in #24. Two things were deliberately **not**
+shipped: v2.342's remaining CAD link repoints (v2.377 chose to keep those
+explainer-to-explainer links), and daily audit-log commits.
 
-## Standing rules
+## The guard that replaces the old divergence check
 
-- Never push to `main` directly. PRs only.
-- Never commit redesign work (`hero-lab`, `hero-lab-prev`, `hero-redesign`) unless Omer says so.
-  Adding a directory can sweep it in — verify with
-  `git diff --cached --name-only | grep -i "hero-lab\|redesign"`.
-- `CHANGELOG.md` **and** `changelog.html` in the same commit as the change.
-- Do not push without an explicit request.
+`scripts/seo_diff.py` → `shipping()` now lists every remote branch that holds commits `main`
+lacks, and flags 🔴 any whose last commit is older than **7 days**. That is the new shape of
+the old failure: work done and invisible. Ship it or delete the branch.
