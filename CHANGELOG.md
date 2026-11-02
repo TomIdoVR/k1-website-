@@ -1,3 +1,13 @@
+## [v2.431] – 2026-11-02 — Norma Técnica 9-1-1 self-assessment PDF (gated)
+**Added**
+- A downloadable self-assessment for the Norma Técnica 9-1-1 page (CAD plan item #6). It is a 3-page A4 PDF in Spanish (`/downloads/norma-tecnica-911-autoevaluacion.pdf`) and English (`/downloads/norma-tecnica-911-self-assessment.pdf`). Each of the 22 CAD and GIS clauses has the requirement, the question for the vendor, met/partial/not-met boxes and a notes column, followed by a summary box and the official SESNSP source.
+- A gate on `/resources/norma-tecnica-911`. A download form (source `norma-911-pdf`) sits above the existing contact form, and a hero button links to it. The PDF link appears only after a successful submit, which fires `generate_lead`.
+- The PDFs are rendered from a print page, `/resources/norma-tecnica-911/autoevaluacion` (noindex, not in the sitemap), with headless Chrome. The PDFs carry `X-Robots-Tag: noindex`, so the form stays the way in.
+
+**Changed**
+- Moved the clause data to `src/content/norma-911.ts`, shared by the page and the print version.
+- `EbookDownloadForm` takes optional `copy`, `readOnlineHref` and `source` props. Its defaults are unchanged, so the existing ebook page behaves as before.
+
 ## [v2.430] – 2026-11-02 — Lead form and vendor facts on the English CAD buyer pages
 **Changed**
 - CAD plan item #26. Diagnosis (GSC Oct 3–31): `/k-dispatch` gets 316 impressions on CAD queries, at an average position of 40.4. It ranks 48–80 on generic head terms ("911 dispatch software"), where a small vendor's product page does not compete. English CAD demand lands on the resource pages instead: `best-cad-dispatch-software` 8,392 impressions at position 9.7, `what-is-cad-dispatch-software` 2,031, `what-is-emergency-dispatch-software` 1,927, `best-ng911-software` 403, `911-call-center-software-guide` 400. Four of those five had no lead form, and one did not link to K-Dispatch.

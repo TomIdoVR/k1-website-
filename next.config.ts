@@ -107,7 +107,13 @@ const nextConfig: NextConfig = {
           ]
         : common
 
-    return [{ source: '/:path*', headers }]
+    return [
+      { source: '/:path*', headers },
+      /* Gated lead-magnet PDFs (Norma 911 self-assessment, CAD plan item #6): reachable by
+         link after the form, but kept out of search results so the form stays the way in. */
+      { source: '/downloads/norma-tecnica-911-autoevaluacion.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
+      { source: '/downloads/norma-tecnica-911-self-assessment.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
+    ]
   },
   /* From main. Both sides added a top-level key here and git read the two as
      one conflict; they are unrelated and both are required. Dropping these

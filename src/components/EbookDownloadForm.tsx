@@ -6,6 +6,12 @@ import { trackLead } from '@/lib/analytics'
 interface EbookDownloadFormProps {
   es?: boolean
   pdfPath?: string
+  /** Overrides for the default ebook copy, for other gated downloads. */
+  copy?: Partial<Record<'formTitle' | 'formSub' | 'btnSubmit' | 'successTitle' | 'successSub' | 'downloadBtn', string>>
+  /** "Read online" link after download; null hides it. */
+  readOnlineHref?: string | null
+  /** Recorded as campaign_source in the lead e-mail and GA4. */
+  source?: string
 }
 
 const inputStyle: React.CSSProperties = {
@@ -33,6 +39,9 @@ const labelStyle: React.CSSProperties = {
 export default function EbookDownloadForm({
   es = false,
   pdfPath = '/downloads/the-end-of-siloed-response.pdf',
+  copy,
+  readOnlineHref = '/ebook/siloed-response-en.html',
+  source,
 }: EbookDownloadFormProps) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -60,6 +69,7 @@ export default function EbookDownloadForm({
     disclaimer: es
       ? 'No compartimos tu información. Puedes darte de baja en cualquier momento.'
       : 'We never share your data. Unsubscribe anytime.',
+    ...copy,
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -77,6 +87,7 @@ export default function EbookDownloadForm({
         trackLead('generate_lead', {
           form_id: 'ebook_download',
           asset: pdfPath,
+          ...(source ? { campaign_source: source } : {}),
           organization: String(formData.get('organization') || ''),
         })
         setSubmitted(true)
@@ -143,8 +154,8 @@ export default function EbookDownloadForm({
           {c.downloadBtn}
         </a>
 
-        <a
-          href="/ebook/siloed-response-en.html"
+        {readOnlineHref && <a
+          href={readOnlineHref}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -160,7 +171,7 @@ export default function EbookDownloadForm({
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
           </svg>
           {c.readOnlineBtn}
-        </a>
+        </a>}
       </div>
     )
   }
@@ -187,6 +198,7 @@ export default function EbookDownloadForm({
       </p>
 
       <form onSubmit={handleSubmit}>
+        {source && <input type="hidden" name="campaign_source" value={source} />}
         {/* Full Name */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '16px' }}>
           <label style={labelStyle}>{c.labelName}</label>
