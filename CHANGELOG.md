@@ -1,3 +1,9 @@
+## [v2.429] – 2026-11-02 — K-Dispatch vendor facts for AI answers
+**Added**
+- A "vendor profile" block on the C5 pages (`how-c5-command-centers-work`, `que-es-un-c5`, `c5-command-centers-mexico-2026`, EN+ES). It opens with one paragraph naming KabatOne and K-Dispatch as a CAD vendor for 911 and C5/C4/C2 centers, followed by the 10 criteria buyers compare as a definition list (CAD plan item #16). Claude retrieves our CAD pages in 52 of 60 answers but names us in 4, and the pages never stated the vendor and its answers in one quotable place.
+- Two K-Dispatch FAQ entries (EN+ES, included in the FAQPage schema): who makes K-Dispatch and which centers it is built for, and what a 911/C5 center should compare when choosing CAD.
+- One source for both: `src/content/cad-vendor-facts.ts`, approved CAD facts only, no performance figures. The `sol-kdispatch.ts` change is content only; the hero-lab layout is untouched.
+
 ## [v2.428] – 2026-11-02 — One intent per C5 page
 **Changed**
 - Ended the C5 cannibalization (CAD plan item #9). In GSC (Oct 3–31), 160 of 491 C5 queries split across pages, and three pages had titles starting "¿Qué es un C5?". Each page now targets one intent:

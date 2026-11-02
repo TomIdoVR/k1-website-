@@ -5,6 +5,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -331,6 +332,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
           </div>
         </section>
 
+        <CadVendorFacts es={es} />
         <CadLeadForm es={es} source="que-es-un-c5" />
 
         <CTASection es={es} h2={es ? '¿Necesita una Plataforma para su Centro C5?' : 'Need a Platform for Your C5 Center?'} subtitle={es ? 'KabatOne K1 opera en más de 40 ciudades de América Latina. Solicite una demostración personalizada para su municipio o estado.' : 'KabatOne K1 operates in over 40 cities across Latin America. Request a personalized demo for your municipality or state.'} />

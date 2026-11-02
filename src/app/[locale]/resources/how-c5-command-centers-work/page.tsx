@@ -5,6 +5,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -581,6 +582,7 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
         </section>
 
         {/* -- CTA -- */}
+        <CadVendorFacts es={es} />
         <CadLeadForm es={es} source="how-c5" />
 
         <CTASection
