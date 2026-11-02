@@ -21,7 +21,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: 'https://kabatone.com' + (es ? '/es/' : '/') },
     { name: es ? 'Recursos' : 'Resources', url: 'https://kabatone.com' + (es ? '/es/resources/' : '/resources/') },
-    { name: es ? '¿Qué es un C5?' : 'What Is a C5 Command Center?', url: 'https://kabatone.com' + (es ? '/es/resources/que-es-un-c5/' : '/resources/que-es-un-c5/') },
+    { name: es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5', url: 'https://kabatone.com' + (es ? '/es/resources/que-es-un-c5/' : '/resources/que-es-un-c5/') },
   ]
 
   const faqs = es ? [
@@ -125,9 +125,9 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
 
           <h1 style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 700, lineHeight: 1.1, marginBottom: 20 }}>
             {es ? (
-              <>¿Qué es un <span style={{ color: ACCENT }}>C5</span>?</>
+              <>C2, C4 y C5: <span style={{ color: ACCENT }}>¿en qué se diferencian?</span></>
             ) : (
-              <>What Is a <span style={{ color: ACCENT }}>C5</span> Command Center?</>
+              <>C2, C4 and C5: <span style={{ color: ACCENT }}>what is the difference?</span></>
             )}
           </h1>
 
@@ -309,8 +309,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
             </h3>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               {[
-                { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
-                { href: '/resources/c5-command-centers-mexico-2026', label: es ? 'C5 en México 2026' : 'C5 in Mexico 2026' },
+                { href: '/resources/how-c5-command-centers-work', label: es ? '¿Qué es un C5 y cómo funciona?' : 'What is a C5 and how it works' },
+                { href: '/resources/c5-command-centers-mexico-2026', label: es ? 'Plataforma para C5: qué debe tener el software' : 'C5 platform: software requirements' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
                 { href: '/resources/what-is-video-management-software', label: es ? 'Software VMS' : 'VMS Software' },
                 { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD?' : 'CAD Dispatch Software' },

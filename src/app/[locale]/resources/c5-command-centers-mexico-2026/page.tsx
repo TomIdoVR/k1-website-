@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -96,7 +96,7 @@ export default async function C5CommandCentersMexico2026Page({
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Recursos' : 'Resources', url: es ? 'https://kabatone.com/es/resources' : 'https://kabatone.com/resources' },
     {
-      name: es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide',
+      name: es ? 'Plataforma para C5' : 'C5 command center platform',
       url: es
         ? 'https://kabatone.com/es/resources/c5-command-centers-mexico-2026'
         : 'https://kabatone.com/resources/c5-command-centers-mexico-2026',
@@ -105,7 +105,7 @@ export default async function C5CommandCentersMexico2026Page({
 
   /* ── Schema ── */
   const artSchema = articleSchema(
-    es ? 'Centros C5 en México: Guía de Tecnología 2026 | KabatOne' : 'C5 Command Centers in Mexico: 2026 Technology Guide | KabatOne',
+    es ? 'Plataforma para C5: qué debe tener el software de un centro C5' : 'C5 command center platform: software requirements for Mexico',
     es
       ? 'Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.'
       : 'C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.',
@@ -223,7 +223,7 @@ export default async function C5CommandCentersMexico2026Page({
             </Link>
             <span style={{ opacity: 0.4 }}>/</span>
             <span style={{ color: 'var(--dim)' }}>
-              {es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide'}
+              {es ? 'Plataforma para C5' : 'C5 command center platform'}
             </span>
           </nav>
         </div>
@@ -243,13 +243,13 @@ export default async function C5CommandCentersMexico2026Page({
               marginBottom: '24px',
             }}>
               {es
-                ? 'Centros C5 en México: Guía de Tecnología 2026'
-                : 'C5 Command Centers in Mexico: 2026 Technology Guide'}
+                ? 'Plataforma para C5: qué debe tener el software'
+                : 'C5 Command Center Platform: What the Software Must Do'}
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'La guía definitiva sobre cómo funcionan los centros de mando C5, qué tecnología usan y cómo las plataformas unificadas están transformando las operaciones de seguridad pública en ciudades mexicanas.'
-                : 'The definitive guide to how C5 command centers work, what technology they use, and how unified platforms are transforming public safety operations across Mexican cities.'}
+                ? 'Qué debe integrar la plataforma de un C5 o C4 en México, dónde fallan las integraciones heredadas y qué evaluar al elegir el software.'
+                : 'What the platform of a C5 or C4 in Mexico must integrate, where legacy integrations break down, and what to evaluate when choosing the software.'}
             </p>
           </div>
         </section>
@@ -699,7 +699,8 @@ export default async function C5CommandCentersMexico2026Page({
                   {es ? 'Recursos:' : 'Resources:'}
                 </span>
                 {[
-                  { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros C5' : 'How C5 Command Centers Work' },
+                  { href: '/resources/how-c5-command-centers-work', label: es ? '¿Qué es un C5 y cómo funciona?' : 'What is a C5 and how it works' },
+                  { href: '/resources/que-es-un-c5', label: es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué Es un RTCC' : 'What Is an RTCC' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
                   { href: '/resources/best-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },
@@ -758,14 +759,7 @@ export default async function C5CommandCentersMexico2026Page({
           </div>
         </section>
 
-        {/* ── CTA ── */}
-        <CTASection
-          es={es}
-          h2={es ? '¿Listo para Unificar tu Centro C5?' : 'Ready to Unify Your C5 Command Center?'}
-          subtitle={es
-            ? 'Agenda una demo personalizada y descubre cómo KabatOne integra videovigilancia, despacho CAD, GIS, fusión de sensores y tráfico en una sola plataforma — desplegada en más de 40 ciudades en América Latina.'
-            : 'Schedule a personalized demo and see how KabatOne integrates video surveillance, CAD dispatch, GIS, sensor fusion, and traffic management in one platform — deployed in 40+ cities in Latin America.'}
-        />
+        <CadLeadForm es={es} source="c5-plataforma" />
       </div>
 
       <Footer es={es} />

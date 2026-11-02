@@ -355,8 +355,8 @@ export const metadata = {
     },
   },
   whatIsACommandCenter: {
-    title: "¿Qué Es un C5? Centro de Mando C2–C5: Guía Completa | KabatOne",
-    description: "C5 = Centro de Comando, Control, Comunicaciones, Cómputo y Contacto Ciudadano. Guía completa C1–C5 sobre centros de mando para seguridad pública.",
+    title: "¿Qué Es un Centro de Mando? Niveles C2 a C5 Explicados | KabatOne",
+    description: "Qué es un centro de mando de seguridad pública, qué sistemas integra (video, CAD, GIS, radio) y cómo se organizan los niveles C2, C3, C4 y C5.",
     canonical: "https://kabatone.com/es/resources/what-is-a-command-center",
   },
   whatIsGunshotDetectionSoftware: {
@@ -455,8 +455,8 @@ export const metadata = {
     },
   },
   c5CommandCentersMexico2026: {
-    title: "Centros C5 en México: Guía de Tecnología 2026 | KabatOne",
-    description: "Los centros C5 coordinan policía, bomberos, EMS y video en ciudades mexicanas. Guía 2026: tecnología, software y plataformas unificadas de seguridad.",
+    title: "Plataforma para C5: Qué Debe Tener el Software de un Centro C5 | KabatOne",
+    description: "Qué debe integrar la plataforma de un C5 o C4 en México: 911 y despacho CAD, videovigilancia, GIS, sensores y tráfico. Stack, retos de integración y qué evaluar.",
     canonical: "https://kabatone.com/es/resources/c5-command-centers-mexico-2026",
   },
   cadSoftwareMunicipiosMexico: {
@@ -1287,8 +1287,8 @@ export const metadata = {
     canonical: "https://kabatone.com/es/resources/norma-tecnica-911",
   },
   queEsUnC5: {
-    title: "¿Qué es un C5? Significado, C4 vs C5 y Tecnología [2026]",
-    description: "¿Cuántos C5 hay en México y en qué se diferencian del C4? Qué significa cada C, la tecnología que usan (CAD, video con IA, GIS, LPR) y cuánto cuesta implementar uno.",
+    title: "C2, C4 y C5: Diferencias y Qué Significa Cada C [2026]",
+    description: "¿En qué se diferencian un C2, un C4 y un C5? Qué agrega cada C, qué atiende cada nivel en México y qué tecnología necesita cada uno (CAD, video, GIS, LPR).",
     canonical: "https://kabatone.com/es/resources/que-es-un-c5",
   },
   ng911Software: {

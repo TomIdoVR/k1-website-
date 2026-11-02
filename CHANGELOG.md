@@ -1,3 +1,12 @@
+## [v2.428] – 2026-11-02 — One intent per C5 page
+**Changed**
+- Ended the C5 cannibalization (CAD plan item #9). In GSC (Oct 3–31), 160 of 491 C5 queries split across pages, and three pages had titles starting "¿Qué es un C5?". Each page now targets one intent:
+  - `how-c5-command-centers-work` is the definition page. It is unchanged, because Google already ranks it first.
+  - `que-es-un-c5` targets the C2, C4 and C5 differences. It already ranks 3–5 on "diferencia entre c4 y c5" and "c4 y c5". Its title and H1 changed.
+  - `what-is-a-command-center` (ES) covers command centers in general. Its title changed.
+  - `c5-command-centers-mexico-2026` is now the buyer page, "Plataforma para C5". Its title, H1 and intro changed. The CAD lead form (`c5-plataforma`) replaces the generic CTA, which also drops an unsourced "40+ cities" line.
+- Updated cross-links between the four pages so each anchor names the page's intent. No URLs changed and nothing was redirected.
+
 ## [v2.427] – 2026-11-02 — CAD pages for Ecuador, Argentina and Chile
 **Added**
 - Three Spanish-first CAD pages: ECU 911 modernization, provincial 911 systems in Argentina, and Chile's single emergency number (SINAPROC). Each covers how the system is bought, what the platform must do, what to ask the vendor, an FAQ and the CAD lead form (sources `ecu-911`, `911-argentina`, `911-chile`). Shared copy lives in `src/content/cad-countries.ts` and renders through `CadSegmentPage` (CAD plan item #24).
