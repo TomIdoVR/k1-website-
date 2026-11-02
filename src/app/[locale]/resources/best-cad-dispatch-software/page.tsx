@@ -7,6 +7,7 @@ import CTASection from '@/components/CTASection'
 import CadLeadForm from '@/components/CadLeadForm'
 import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
+import { PSAP_AI_FAQS } from '@/content/psap-ai-faqs'
 
 export async function generateMetadata({
   params,
@@ -35,7 +36,7 @@ export default async function BestCadDispatchSoftwarePage({
     },
   ]
 
-  const faqs = es ? [
+  const baseFaqs = es ? [
     {
       question: '¿Cuál es el mejor software CAD para centros 911?',
       answer: 'El mejor software CAD para centros 911 depende del tamaño y las necesidades de tu agencia. Para municipios y gobiernos de LATAM, KabatOne K-Dispatch ofrece la integración más completa: recepción de llamadas 911, despacho asistido por IA, integración nativa con video y GIS, y soporte en español. Tyler Technologies y CentralSquare lideran el mercado de EE.UU. pero carecen de la integración de video y sensores IoT que ofrece una plataforma unificada.',
@@ -118,6 +119,8 @@ export default async function BestCadDispatchSoftwarePage({
       answer: 'Computer automated dispatch software (a common variant of "computer-aided dispatch") automates routing of emergency calls to the right responders. Public safety call-taking systems are the front end — they receive the 911 call (voice, text, or NG911 multimedia) and pass verified caller and location data into the CAD. In KabatOne K-Dispatch, call-taking and automated dispatch are one system: intake flows directly into AI-assisted unit assignment, video, and GIS with no hand-off between separate applications.',
     },
   ]
+
+  const faqs = [...baseFaqs, ...PSAP_AI_FAQS.bestCad[es ? 'es' : 'en']]
 
   const sectionStyle: React.CSSProperties = { borderTop: '1px solid var(--border)', padding: '72px 32px' }
   const containerStyle: React.CSSProperties = { maxWidth: '820px', margin: '0 auto' }

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import CadLeadForm from '@/components/CadLeadForm'
 import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
+import { PSAP_AI_FAQS } from '@/content/psap-ai-faqs'
 
 export async function generateMetadata({
   params,
@@ -25,7 +26,7 @@ export default async function BestNg911SoftwarePage({
   const es = locale === 'es'
   const ACCENT = '#06b6d4'
 
-  const faqs = es
+  const baseFaqs = es
     ? [
         {
           question: '¿Cuál es el mejor software NG911 para centros de llamadas de emergencia?',
@@ -90,6 +91,8 @@ export default async function BestNg911SoftwarePage({
             'For Mexico and Latin America, KabatOne is the option built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of call handling with CAD, GIS, and video for multi-agency operation. Unlike a solution that only modernizes call intake, KabatOne turns every emergency call into a geolocated dispatch inside the command center — exactly the flow that state and municipal C5 centers running 911 need.',
         },
       ]
+
+  const faqs = [...baseFaqs, ...PSAP_AI_FAQS.bestNg911[es ? 'es' : 'en']]
 
   const faqSchema = faqPageSchema(faqs)
   const artSchema = articleSchema(

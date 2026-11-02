@@ -5,6 +5,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import { Link } from '@/i18n/navigation'
+import { PSAP_AI_FAQS } from '@/content/psap-ai-faqs'
 
 export async function generateMetadata({
   params,
@@ -25,7 +26,7 @@ export default async function WhatIsAPsapPage({
   const ACCENT = '#06b6d4'
 
   /* ── FAQ data ── */
-  const faqs = es
+  const baseFaqs = es
     ? [
         {
           question: '¿Qué es un PSAP?',
@@ -78,6 +79,7 @@ export default async function WhatIsAPsapPage({
           answer: 'KabatOne provides the operational platform PSAPs need to go beyond call-taking. K-Dispatch handles full CAD dispatch — from call intake to incident closure — with intelligent unit assignment. K-Video lets PSAP operators view cameras near the incident before dispatching, providing visual context that improves classification. K-Safety displays all active units and incidents on an operational GIS map. KabatOne integrates with the PSAP\'s existing telephony infrastructure and is deployed across 40+ cities.',
         },
       ]
+  const faqs = [...baseFaqs, ...PSAP_AI_FAQS.whatIsPsap[es ? 'es' : 'en']]
 
   /* ── Breadcrumbs ── */
   const breadcrumbs = [

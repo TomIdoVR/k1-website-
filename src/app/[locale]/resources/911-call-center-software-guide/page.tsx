@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import CadLeadForm from '@/components/CadLeadForm'
 import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
+import { PSAP_AI_FAQS } from '@/content/psap-ai-faqs'
 
 export async function generateMetadata({
   params,
@@ -26,7 +27,7 @@ export default async function CallCenterSoftwareGuidePage({
   const ACCENT = '#ef4444'
 
   /* ── FAQ data ── */
-  const faqs = es
+  const baseFaqs = es
     ? [
         {
           question: '¿Cuál es la diferencia entre el software 911 y el software CAD?',
@@ -101,6 +102,7 @@ export default async function CallCenterSoftwareGuidePage({
             '911 dispatch departments typically run two core software systems: a call handling system (CHs) for answering and routing 911 calls, and a CAD (Computer-Aided Dispatch) system for creating incidents, assigning units, and tracking field response. Leading 911 dispatch department software vendors include Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety, and Carbyne for NG911 intake. Modern platforms like KabatOne K-Dispatch unify both functions — call intake and CAD dispatch — in one interface, eliminating data handoff delays between call-taker and dispatcher.',
         },
       ]
+  const faqs = [...baseFaqs, ...PSAP_AI_FAQS.callCenterGuide[es ? 'es' : 'en']]
 
   const faqSchema = faqPageSchema(faqs)
 
