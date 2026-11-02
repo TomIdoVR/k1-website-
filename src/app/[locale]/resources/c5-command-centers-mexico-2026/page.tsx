@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -759,6 +760,7 @@ export default async function C5CommandCentersMexico2026Page({
           </div>
         </section>
 
+        <CadVendorFacts es={es} />
         <CadLeadForm es={es} source="c5-plataforma" />
       </div>
 

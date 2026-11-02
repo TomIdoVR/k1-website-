@@ -8,6 +8,7 @@
    rather than six. */
 
 import { type SolutionContent, S, SL } from './solution-content'
+import { VENDOR_SUMMARY, vendorFactsText } from '@/content/cad-vendor-facts'
 
 const KDISPATCH: SolutionContent = {
   key: 'dispatch',
@@ -185,6 +186,19 @@ const KDISPATCH: SolutionContent = {
         '¿Qué es K-Dispatch?'),
       a: S('K-Dispatch is an AI-powered Computer-Aided Dispatch (CAD) platform that streamlines emergency response, enhances multi-agency communication, and integrates seamlessly with all public safety technologies.',
         'K-Dispatch es una plataforma de Despacho Asistido por Computadora (CAD) potenciada por IA que optimiza la respuesta a emergencias, mejora la comunicación multiagencia y se integra con todas las tecnologías de seguridad pública.'),
+    },
+    /* Vendor facts (CAD plan item #16): who makes K-Dispatch and how it answers the
+       criteria buyers compare, worded identically to the C5 pages' vendor block. */
+    {
+      q: S('Who makes K-Dispatch, and which centers is it built for?',
+        '¿Quién desarrolla K-Dispatch y para qué centros está diseñado?'),
+      a: S(VENDOR_SUMMARY.en, VENDOR_SUMMARY.es),
+    },
+    {
+      q: S('What should a 911 or C5 center compare when choosing CAD software?',
+        '¿Qué debe comparar un centro 911 o C5 al elegir software CAD?'),
+      a: S('Compare at least these criteria. How K-Dispatch answers each one: ' + vendorFactsText('en'),
+        'Compare al menos estos criterios. Así responde K-Dispatch a cada uno: ' + vendorFactsText('es')),
     },
     {
       q: S('How does K-Dispatch handle 911 calls?',
