@@ -638,7 +638,9 @@ export default async function WhatIsACommandCenterPage({
                 {[
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Qué Es un Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué Es un RTCC' : 'What Is an RTCC' },
-                  { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los Centros de Mando C5' : 'How C5 Command Centers Work' },
+                  { href: '/resources/how-c5-command-centers-work', label: es ? '¿Qué es un C5 y cómo funciona?' : 'What is a C5 and how it works' },
+                  { href: '/resources/que-es-un-c5', label: es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5' },
+                  { href: '/resources/c5-command-centers-mexico-2026', label: es ? 'Plataforma para C5' : 'C5 command center platform' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                     {link.label}

@@ -455,8 +455,8 @@ export const metadata = {
     },
   },
   c5CommandCentersMexico2026: {
-    title: "C5 Command Centers in Mexico: 2026 Technology Guide | KabatOne",
-    description: "C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. 2026 guide to technology stack and software requirements.",
+    title: "C5 Command Center Platform: Software Requirements for Mexico | KabatOne",
+    description: "What a C5 or C4 platform in Mexico must integrate: 911 and CAD dispatch, video surveillance, GIS, sensors and traffic. The stack, integration challenges and what to evaluate.",
     canonical: "https://kabatone.com/resources/c5-command-centers-mexico-2026",
   },
   cadSoftwareMunicipiosMexico: {
@@ -1287,8 +1287,8 @@ export const metadata = {
     canonical: "https://kabatone.com/resources/norma-tecnica-911",
   },
   queEsUnC5: {
-    title: "¿Qué es un C5? Centro de Mando, Control y Videovigilancia | KabatOne",
-    description: "Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Descubra cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.",
+    title: "C2 vs C4 vs C5 Command Centers: The Differences Explained | KabatOne",
+    description: "How C2, C4 and C5 command centers differ: what each added C means, what each level handles in Mexico, and the technology each one needs (CAD, video, GIS, LPR).",
     canonical: "https://kabatone.com/resources/que-es-un-c5",
   },
   ng911Software: {

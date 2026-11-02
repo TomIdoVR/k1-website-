@@ -564,7 +564,16 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'Centros C5 en México: Guía 2026' : 'C5 Command Centers in Mexico: 2026 Guide'}</span>
+                <span>{es ? 'Plataforma para C5: qué debe tener el software' : 'C5 platform: software requirements'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
+              <Link href="/resources/que-es-un-c5" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
