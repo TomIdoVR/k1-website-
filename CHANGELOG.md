@@ -1,3 +1,35 @@
+## [v2.425] – 2026-11-02 — KabatOne vs Zetron comparison page
+
+**Added**
+- **`/vs/zetron`** (+ ES "Alternativa a Zetron para centros 911 y C5"). CAD plan item #16. Zetron is
+  named in 13 of 16 AI answers to the Spanish question "alternativas a Motorola para despacho de
+  emergencias 911" (19 and 26 Oct) and we had no page for it. Side-by-side table, when each fits, FAQ,
+  lead form (`vs-zetron`). Zetron facts are sourced (its product pages; Codan's 2021 acquisition): it
+  sells MAX Dispatch/ACOM consoles, MAX Call Taking and its own MAX CAD, so the page does not claim it
+  lacks a CAD. Nothing is stated as missing that research could not confirm (cloud, AI, TETRA).
+- Linked from `/vs/motorola` and `/vs/hexagon`; sitemap 0.7.
+- Not built: a SISMED911 page. SISMED911 is PAHO's donated tool for medical-emergency regulation
+  (signed with the CDMX health secretariat on 22 Jul 2025); no source shows it replacing or
+  integrating with a 911 CAD, so a "vs" framing would be wrong. Covered instead by the CRUM section of
+  the Spanish fire & EMS page.
+
+## [v2.424] – 2026-11-02 — Police CAD and fire & EMS dispatch pages
+
+**Added**
+- **`/resources/police-cad-software`** (+ ES "Software CAD para policía") and
+  **`/resources/fire-ems-dispatch-software`** (+ ES "Software de despacho para bomberos y ambulancias").
+  CAD plan item #26. GSC 4–31 Oct: 75 police CAD queries (1,736 impressions, 1 click, "police dispatch
+  system" p8.2, "police cad systems" p8.4) and ~50 fire/EMS queries (~1,190 impressions excluding the
+  polling bot query, 1 click; "ambulance dispatch software", "ems dispatch software" at p18–27) all
+  landed on the generic best-CAD, US country and K-Dispatch pages. Each page: the problem, what the CAD
+  must do with a vendor question per requirement, how K-Dispatch approaches it (approved facts only, no
+  figures), FAQPage, the on-page lead form (`police-cad`, `fire-ems-cad`). The Spanish fire/EMS page
+  covers CRUM coordination and the Norma Técnica 911 telephone first-aid and 90-second rules (a GEO
+  block E gap). CJIS, medical protocols and station alerting appear as buyer questions, not claims.
+- `CadSegmentPage`: shared layout for CAD segment pages.
+- Linked from `/resources/best-cad-dispatch-software` (the page these queries hit today) and
+  `/resources/what-is-emergency-dispatch-software`; sitemap priority 0.8.
+
 ## [v2.423] – 2026-10-29 — Lead forms on the pages CAD buyers land on
 
 **Added**

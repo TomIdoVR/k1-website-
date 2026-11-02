@@ -526,6 +526,8 @@ export default async function BestCadDispatchSoftwarePage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
+                { href: '/resources/police-cad-software', en: 'Police CAD Software: What It Must Do', es: 'Software CAD para Policía' },
+                { href: '/resources/fire-ems-dispatch-software', en: 'Fire & EMS Dispatch Software', es: 'Software de Despacho para Bomberos y Ambulancias' },
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/911-call-center-software-guide', en: '911 Call Center Software: Complete Guide', es: 'Software Centro 911: Guía Completa' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un Centro de Crimen en Tiempo Real?' },

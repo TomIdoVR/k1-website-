@@ -149,6 +149,11 @@ export const metadata = {
     description: "Axon built a body camera and evidence ecosystem. KabatOne is software-native: fixed camera video, CAD dispatch, GIS, and traffic — no proprietary hardware.",
     canonical: "https://kabatone.com/vs/axon",
   },
+  vsZetron: {
+    title: "KabatOne vs Zetron: A Zetron Alternative for 911 Centers",
+    description: "Zetron grew from radio dispatch consoles and offers call handling and CAD. KabatOne brings call handling, dispatch, video, sensors and an AI Co-Pilot onto one map.",
+    canonical: "https://kabatone.com/vs/zetron",
+  },
   vsCarbyne: {
     title: "KabatOne vs Carbyne — Next-Gen 911 vs Full Response Platform",
     description: "Carbyne reinvented 911 intake with caller location and video. KabatOne manages everything after the call: CAD dispatch, city cameras, GIS, and traffic.",
@@ -1240,6 +1245,16 @@ export const metadata = {
     title: "Public Safety Software for Suriname: KPS & Port Security – KabatOne",
     description: "KabatOne delivers unified public safety platform for Suriname KPS ~2,500 officers, Port of Paramaribo cocaine corridor control, Johan Adolf Pengel Airport, Staatsolie oil infrastructure.",
     canonical: "https://kabatone.com/resources/public-safety-software-suriname",
+  },
+  policeCadSoftware: {
+    title: "Police CAD Software: What a Police Dispatch System Must Do | KabatOne",
+    description: "What police computer-aided dispatch software must do: caller location, priority, unit recommendation, AVL, mobile, video and RMS integration, and the questions to ask each vendor.",
+    canonical: "https://kabatone.com/resources/police-cad-software",
+  },
+  fireEmsDispatchSoftware: {
+    title: "Fire & EMS Dispatch Software: What a Fire and Ambulance CAD Needs | KabatOne",
+    description: "What fire and EMS dispatch software must do: protocol triage, pre-arrival instructions, unit recommendation by capability, response plans, hospital coordination and time reporting.",
+    canonical: "https://kabatone.com/resources/fire-ems-dispatch-software",
   },
   normaTecnica911: {
     title: "Mexico's 911 Technical Standard (Norma Técnica 9-1-1): CAD Requirements | KabatOne",
