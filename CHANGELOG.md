@@ -1,3 +1,9 @@
+## [v2.433] – 2026-11-02 — Answers for AI-style 911 and PSAP questions
+**Added**
+- CAD plan item #26, last part. GSC (Aug 5 – Oct 31) shows 193 question-shaped 911/PSAP queries, such as "what software do modern dispatch centers use", "can PSAP software display live caller locations" and "which providers offer leading PSAP technology". Our pages rank 2–5 for them with zero clicks, because the AI answer takes the click. The win is being named inside that answer.
+- Seven answer-first FAQ entries (EN+ES) in `src/content/psap-ai-faqs.ts`: what modern dispatch centers use, which providers offer PSAP/911 technology, live caller location, unifying fragmented data, operator support, multi-agency dispatch, and small PSAPs. Each states the general fact first, then how K-Dispatch does it, using approved facts only; nothing claims a "best", a price or a performance figure. The providers answer lists the market factually: Motorola VESTA/PremierOne, Hexagon, CentralSquare, Tyler, Mark43, Zetron, Carbyne and KabatOne.
+- The entries are appended to the existing FAQ arrays of `911-call-center-software-guide`, `best-cad-dispatch-software`, `best-ng911-software` and `what-is-a-psap`, matched to the questions each page ranks for. Each page keeps a single FAQPage schema.
+
 ## [v2.431] – 2026-11-02 — Norma Técnica 9-1-1 self-assessment PDF (gated)
 **Added**
 - A downloadable self-assessment for the Norma Técnica 9-1-1 page (CAD plan item #6). It is a 3-page A4 PDF in Spanish (`/downloads/norma-tecnica-911-autoevaluacion.pdf`) and English (`/downloads/norma-tecnica-911-self-assessment.pdf`). Each of the 22 CAD and GIS clauses has the requirement, the question for the vendor, met/partial/not-met boxes and a notes column, followed by a summary box and the official SESNSP source.
