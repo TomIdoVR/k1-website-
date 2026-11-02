@@ -3,7 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -305,13 +306,8 @@ export default async function BestNg911SoftwarePage({
           </div>
         </section>
 
-        <CTASection
-          es={es}
-          h2={es ? '¿Modernizando tu 911 a NG911?' : 'Modernizing Your 911 to NG911?'}
-          subtitle={es
-            ? 'KabatOne unifica la recepción NG911 con CAD, GIS y video en una sola plataforma — donde cada llamada se convierte en un despacho. Agenda una demo de K-Dispatch.'
-            : 'KabatOne unifies NG911 call handling with CAD, GIS, and video in one platform — where every call becomes a dispatch. Book a K-Dispatch demo.'}
-        />
+        <CadVendorFacts es={es} />
+        <CadLeadForm es={es} source="best-ng911" />
       </main>
       <Footer es={es} />
     </>

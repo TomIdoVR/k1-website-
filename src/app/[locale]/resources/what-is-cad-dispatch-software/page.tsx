@@ -3,7 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -695,20 +696,8 @@ export default async function WhatIsCadDispatchSoftwarePage({
           </div>
         </section>
 
-        {/* ── CTA ── */}
-        <CTASection
-          es={es}
-          h2={
-            es
-              ? 'Ve K-Dispatch en Acción en tu Ciudad'
-              : 'See K-Dispatch in Action for Your City'
-          }
-          subtitle={
-            es
-              ? 'KabatOne K-Dispatch gestiona despacho CAD, video, GIS y tráfico en una sola plataforma. Solicita una demostración con datos reales de ciudad.'
-              : 'KabatOne K-Dispatch manages CAD dispatch, video, GIS, and traffic in one unified platform. Request a live demo with real city data.'
-          }
-        />
+        <CadVendorFacts es={es} />
+        <CadLeadForm es={es} source="what-is-cad" />
 
         <Footer es={es} />
 

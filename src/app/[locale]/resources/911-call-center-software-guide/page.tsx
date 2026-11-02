@@ -3,7 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -540,15 +541,8 @@ export default async function CallCenterSoftwareGuidePage({
         </section>
 
         <div style={{ height: '60px' }} />
-        <CTASection
-          es={es}
-          h2={es
-            ? '¿Listo para Modernizar tu Centro de Llamadas 911?'
-            : 'Ready to Modernize Your 911 Call Center?'}
-          subtitle={es
-            ? 'Agenda una demo de K-Dispatch y ve cómo KabatOne unifica la recepción de llamadas 911, el despacho CAD y GIS en un solo entorno operativo.'
-            : 'Schedule a K-Dispatch demo and see how KabatOne unifies 911 call intake, CAD dispatch, and GIS into a single operational environment.'}
-        />
+        <CadVendorFacts es={es} />
+        <CadLeadForm es={es} source="911-call-center" />
       </main>
 
       <Footer es={es} />

@@ -5,6 +5,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
 import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -544,6 +545,7 @@ export default async function BestCadDispatchSoftwarePage({
         </section>
 
         {/* ── CTA ── */}
+        <CadVendorFacts es={es} />
         <CadLeadForm es={es} source="best-cad" />
 
         <CTASection
