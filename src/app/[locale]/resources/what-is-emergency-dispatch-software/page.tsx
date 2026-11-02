@@ -3,7 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
+import CadVendorFacts from '@/components/CadVendorFacts'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({
@@ -400,13 +401,8 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
         </section>
 
         <div style={{ height: '60px' }} />
-        <CTASection
-          es={es}
-          h2={es ? '¿Listo para Modernizar tu Centro de Despacho?' : 'Ready to Modernize Your Dispatch Center?'}
-          subtitle={es
-            ? 'Agenda una demo de K-Dispatch y ve cómo KabatOne unifica despacho, video y GIS en un solo entorno operativo.'
-            : 'Schedule a K-Dispatch demo and see how KabatOne unifies dispatch, video, and GIS into a single operational environment.'}
-        />
+        <CadVendorFacts es={es} />
+        <CadLeadForm es={es} source="emergency-dispatch" />
       </main>
 
       <Footer es={es} />

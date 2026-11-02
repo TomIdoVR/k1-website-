@@ -1,3 +1,8 @@
+## [v2.430] – 2026-11-02 — Lead form and vendor facts on the English CAD buyer pages
+**Changed**
+- CAD plan item #26. Diagnosis (GSC Oct 3–31): `/k-dispatch` gets 316 impressions on CAD queries, at an average position of 40.4. It ranks 48–80 on generic head terms ("911 dispatch software"), where a small vendor's product page does not compete. English CAD demand lands on the resource pages instead: `best-cad-dispatch-software` 8,392 impressions at position 9.7, `what-is-cad-dispatch-software` 2,031, `what-is-emergency-dispatch-software` 1,927, `best-ng911-software` 403, `911-call-center-software-guide` 400. Four of those five had no lead form, and one did not link to K-Dispatch.
+- On `what-is-cad-dispatch-software`, `what-is-emergency-dispatch-software`, `911-call-center-software-guide` and `best-ng911-software`, the generic CTA is replaced by the K-Dispatch vendor block and the CAD lead form. Each form has its own source tag. `best-cad-dispatch-software` gets the vendor block before its existing form.
+
 ## [v2.429] – 2026-11-02 — K-Dispatch vendor facts for AI answers
 **Added**
 - A "vendor profile" block on the C5 pages (`how-c5-command-centers-work`, `que-es-un-c5`, `c5-command-centers-mexico-2026`, EN+ES). It opens with one paragraph naming KabatOne and K-Dispatch as a CAD vendor for 911 and C5/C4/C2 centers, followed by the 10 criteria buyers compare as a definition list (CAD plan item #16). Claude retrieves our CAD pages in 52 of 60 answers but names us in 4, and the pages never stated the vendor and its answers in one quotable place.
