@@ -424,6 +424,7 @@ export default async function PublicSafetySoftwareChilePage({
                   {es ? 'Recursos relacionados:' : 'Related resources:'}
                 </span>
                 {[
+                  { href: '/resources/911-chile-sinaproc', label: es ? "911 chileno (SINAPROC)" : "Chile's 911 (SINAPROC)" },
                   { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'What Is a Real-Time Crime Center' },

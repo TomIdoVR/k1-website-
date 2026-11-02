@@ -424,6 +424,7 @@ export default async function PublicSafetySoftwareArgentinaPage({
                   {es ? 'Recursos relacionados:' : 'Related resources:'}
                 </span>
                 {[
+                  { href: '/resources/sistema-911-argentina', label: es ? "Sistema 911 provincial con IA" : "Provincial 911 with AI" },
                   { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD de Despacho' : 'Best CAD Dispatch Software' },
                   { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para America Latina' : 'CAD Dispatch Software for Latin America' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Centro de Crimen en Tiempo Real' : 'What Is a Real-Time Crime Center' },
