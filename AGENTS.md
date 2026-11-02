@@ -65,11 +65,12 @@ Each module has: a tab button + a panel (`#panel-{name}`) + an image in `images/
 
 ## Git Workflow
 
-- **Active branch:** `nextjs` — staging (auto-deploys to `staging.kabatone.com`)
-- **Production branch:** `main` — deploys to `kabatone.com` on merge only
+- **One long-lived branch:** `main` — deploys to `kabatone.com` on every merge
+- **Every change:** a short-lived branch off `main`, merged via PR. The PR's Vercel preview is the staging check.
+- **`nextjs` is retired** (2026-09-28, archived as tag `archive/nextjs-2026-09-28`). Do not build on it or merge it.
 - **Remote:** `https://github.com/TomIdoVR/k1-website-.git`
 - Pushes to GitHub are done **on explicit request only** — do not auto-push
-- Merges to `main` (production promotion) require **explicit owner approval**
+- Merging a PR into `main` puts it live — do it only with the owner's approval of that change
 - Commit message format: `Type: short description (vX.Y)`
 
 ---
