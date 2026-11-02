@@ -149,6 +149,11 @@ export const metadata = {
     description: "Axon built a body camera and evidence ecosystem. KabatOne is software-native: fixed camera video, CAD dispatch, GIS, and traffic — no proprietary hardware.",
     canonical: "https://kabatone.com/vs/axon",
   },
+  vsZetron: {
+    title: "KabatOne vs Zetron: A Zetron Alternative for 911 Centers",
+    description: "Zetron grew from radio dispatch consoles and offers call handling and CAD. KabatOne brings call handling, dispatch, video, sensors and an AI Co-Pilot onto one map.",
+    canonical: "https://kabatone.com/vs/zetron",
+  },
   vsCarbyne: {
     title: "KabatOne vs Carbyne — Next-Gen 911 vs Full Response Platform",
     description: "Carbyne reinvented 911 intake with caller location and video. KabatOne manages everything after the call: CAD dispatch, city cameras, GIS, and traffic.",

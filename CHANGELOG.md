@@ -1,3 +1,18 @@
+## [v2.425] – 2026-11-02 — KabatOne vs Zetron comparison page
+
+**Added**
+- **`/vs/zetron`** (+ ES "Alternativa a Zetron para centros 911 y C5"). CAD plan item #16. Zetron is
+  named in 13 of 16 AI answers to the Spanish question "alternativas a Motorola para despacho de
+  emergencias 911" (19 and 26 Oct) and we had no page for it. Side-by-side table, when each fits, FAQ,
+  lead form (`vs-zetron`). Zetron facts are sourced (its product pages; Codan's 2021 acquisition): it
+  sells MAX Dispatch/ACOM consoles, MAX Call Taking and its own MAX CAD, so the page does not claim it
+  lacks a CAD. Nothing is stated as missing that research could not confirm (cloud, AI, TETRA).
+- Linked from `/vs/motorola` and `/vs/hexagon`; sitemap 0.7.
+- Not built: a SISMED911 page. SISMED911 is PAHO's donated tool for medical-emergency regulation
+  (signed with the CDMX health secretariat on 22 Jul 2025); no source shows it replacing or
+  integrating with a 911 CAD, so a "vs" framing would be wrong. Covered instead by the CRUM section of
+  the Spanish fire & EMS page.
+
 ## [v2.424] – 2026-11-02 — Police CAD and fire & EMS dispatch pages
 
 **Added**

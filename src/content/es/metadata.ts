@@ -149,6 +149,11 @@ export const metadata = {
     description: "Axon construyó un ecosistema de cámaras corporales y evidencia. KabatOne es software nativo: video, CAD, GIS y tráfico — sin hardware propietario.",
     canonical: "https://kabatone.com/es/vs/axon",
   },
+  vsZetron: {
+    title: "KabatOne vs Zetron: Alternativa a Zetron para Centros 911 y C5",
+    description: "Zetron nació en las consolas de radio y ofrece recepción de llamadas y CAD. KabatOne une atención de llamadas, despacho, video, sensores y AI Co-Pilot en un mismo mapa, en español.",
+    canonical: "https://kabatone.com/es/vs/zetron",
+  },
   vsCarbyne: {
     title: "KabatOne vs Carbyne — Next-Gen 911 vs Plataforma de Respuesta Completa",
     description: "Carbyne reinventó la recepción de llamadas 911 con ubicación del llamante. KabatOne gestiona todo lo que sigue: despacho CAD, video de ciudad, GIS y tráfico.",

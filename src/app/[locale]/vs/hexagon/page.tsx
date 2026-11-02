@@ -467,6 +467,15 @@ export default async function VsHexagonPage({
               {es ? 'Artículos Relacionados' : 'Related Resources'}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <Link href="/vs/zetron" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'KabatOne vs Zetron: alternativa para centros 911' : 'KabatOne vs Zetron'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
               <Link href="/vs/cad" style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 padding: '16px 20px', borderRadius: '8px',

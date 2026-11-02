@@ -216,6 +216,7 @@ const pages = [
   { path: '/vs/mark43', priority: 0.7 },
   { path: '/vs/axon', priority: 0.7 },
   { path: '/vs/carbyne', priority: 0.7 },
+  { path: '/vs/zetron', priority: 0.7 },
   { path: '/vs/cad', priority: 0.7 },
   { path: '/vs/fusus', priority: 0.7 },
   { path: '/vs/prepared911', priority: 0.7 },
