@@ -4,6 +4,7 @@ import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CTASection from '@/components/CTASection'
+import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -458,6 +459,10 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 { href: '/resources/what-is-emergency-management-software', label: es ? 'Gestión de Emergencias' : 'Emergency Management Software' },
                 { href: '/resources/what-is-a-real-time-crime-center', label: es ? '¿Qué es un RTCC?' : 'What Is a Real-Time Crime Center' },
                 { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'What Is Situational Awareness Software' },
+                { href: '/resources/cad-dispatch-software-latin-america', label: es ? 'Software CAD para América Latina' : 'CAD Dispatch Software for Latin America' },
+                { href: '/resources/cad-software-municipios-mexico', label: es ? 'Software CAD para Municipios de México' : 'CAD Software for Mexican Municipalities' },
+                { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué es el software CAD?' : 'What Is CAD Dispatch Software' },
+                { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: requisitos del CAD' : 'Mexico 911 Standard: CAD Requirements' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ color: ACCENT, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
                   {link.label}
@@ -567,6 +572,8 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
         </section>
 
         {/* -- CTA -- */}
+        <CadLeadForm es={es} source="how-c5" />
+
         <CTASection
           es={es}
           h2={es ? 'Transforma tu Centro C5 con Tecnología Unificada' : 'Transform Your C5 Center with Unified Technology'}

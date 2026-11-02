@@ -186,7 +186,11 @@ export default function ApplicationForm({
       const res = await fetch(ENDPOINT, { method: 'POST', body: formData })
       if (res.ok) {
         const last = attribution.last
-        trackLead('generate_lead', {
+        /* Its own event, not generate_lead: job applications were 19 of the 67
+           generate_lead events in Aug-Oct 2026, inflating the sales-lead count
+           the CAD inbound plan is measured by. Same params, so careers source
+           attribution (v2.399) is unchanged under the new name. */
+        trackLead('job_application', {
           form_id: 'careers_application',
           role: roleSlug,
           source_channel: classifyTouch(last),

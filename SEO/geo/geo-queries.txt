@@ -66,3 +66,22 @@ software de despacho para centros C5 y 911 en México
 alternativas a Motorola para despacho de emergencias 911
 ¿Cómo elegir un sistema de despacho de emergencias para un municipio?
 software CAD de despacho para polícia e bombeiros
+
+# ── E. LATAM CAD buyer questions in Spanish (added 2026-10-29, CAD plan item #10) ──
+#   Block D names us only when the question already says "México/C5" (15/16) and never on the
+#   generic Spanish CAD question (0/16). E asks what a Mexican or LATAM 911/C5 buyer types while
+#   drafting a tender: the Norma Técnica, cost, bases técnicas, municipal C2/C4, Colombia's 123,
+#   and the challengers that show up in Spanish answers (Zetron, Carbyne). Baseline: first run.
+#   Like D, E does NOT feed the legacy trend line. Adds ~12 × 4 engines × 2 runs ≈ $1/week.
+¿Qué empresas venden software CAD para centros 911 en México?
+¿Qué software de despacho cumple con la Norma Técnica 911 del SESNSP?
+¿Cuánto cuesta un sistema de despacho 911 para un municipio?
+¿Qué debe incluir el anexo técnico de una licitación de sistema CAD 911?
+¿Cuál es el mejor software para un C5 estatal en México?
+alternativas a Zetron, Hexagon y Carbyne para centros 911 en Latinoamérica
+software para centro de mando C4 o C2 municipal
+software para la Línea 123 de emergencias en Colombia
+plataforma de seguridad pública para municipios en México con despacho 911 y videovigilancia
+¿Conviene SISMED911 o un CAD comercial para urgencias médicas?
+software de despacho de ambulancias y urgencias médicas (CRUM) en México
+¿Cómo integrar el CAD 911 con las cámaras de videovigilancia de un C5?

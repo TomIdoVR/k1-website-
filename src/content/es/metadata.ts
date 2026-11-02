@@ -1241,6 +1241,11 @@ export const metadata = {
     description: "KabatOne ofrece plataforma unificada de seguridad publica para Surinam — KPS ~2,500 efectivos, control narcotrafico Puerto de Paramaribo, aeropuerto Johan Adolf Pengel e infraestructura Staatsolie.",
     canonical: "https://kabatone.com/es/resources/public-safety-software-suriname",
   },
+  normaTecnica911: {
+    title: "Norma Técnica 9-1-1: Requisitos del CAD, Cláusula por Cláusula | KabatOne",
+    description: "Qué exige la Norma Técnica 9-1-1 v2.0 del SESNSP al CAD y al GIS de un centro 911: integraciones, catálogo nacional de incidentes, tiempos de 90 segundos y la pregunta para cada proveedor.",
+    canonical: "https://kabatone.com/es/resources/norma-tecnica-911",
+  },
   queEsUnC5: {
     title: "¿Qué es un C5? Significado, C4 vs C5 y Tecnología [2026]",
     description: "¿Cuántos C5 hay en México y en qué se diferencian del C4? Qué significa cada C, la tecnología que usan (CAD, video con IA, GIS, LPR) y cuánto cuesta implementar uno.",

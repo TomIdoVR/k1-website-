@@ -1,3 +1,86 @@
+## [v2.423] – 2026-10-29 — Lead forms on the pages CAD buyers land on
+
+**Added**
+- **`CadLeadForm`**: the existing `ContactForm` (same Formspree endpoint, same `generate_lead`
+  event) with CAD-specific copy, K-Dispatch listed first, and a per-page `source` tag sent as
+  `campaign_source` in both the lead e-mail and GA4. CAD plan item #3, form part.
+- Embedded on `/resources/norma-tecnica-911` (`norma-911`), `/resources/que-es-un-c5`
+  (`que-es-un-c5`), `/resources/how-c5-command-centers-work` (`how-c5`) and
+  `/resources/best-cad-dispatch-software` (`best-cad`), in both languages. Why: Spanish C5/911
+  searchers land on these resource pages, not the product page, and their only next step was a link
+  to `/contact`. The Norma page's "Solicitar una revisión" button now jumps to the form.
+- Not yet: WhatsApp contact and calendar booking (waiting on the WhatsApp line and response
+  owner, Jason). Verified the forms render with the right source tag on all five page/language
+  combinations; no test lead was submitted, to keep the sales inbox clean.
+
+## [v2.422] – 2026-10-29 — New page: what Mexico's Norma Técnica 9-1-1 requires of a CAD
+
+**Added**
+- **`/es/resources/norma-tecnica-911`** (and `/resources/norma-tecnica-911`): the 22 CAD and GIS
+  software requirements of the SESNSP's Norma Técnica 9-1-1 v2.0 (sections 4.2 and 4.8), each with
+  its clause number and the question to put to any vendor when drafting a tender's anexo técnico;
+  the 7.3.1 time targets (reception ≤90 s, dispatch ≤90 s, urban arrival ≤10 min); clause 4.2.24
+  (in-house CADs must comply too); a five-question FAQPage. CAD plan item #6, first part.
+  Why: Spanish CAD-buyer search is near zero, while "norma técnica 911" / "norma técnica calle 911"
+  have autocomplete demand and the URL was a 404. No competitor publishes this.
+- Deliberately **no compliance claim for K-Dispatch**. That section is added only after Daniel
+  validates the clause matrix (item #5); until then the page quotes the official document only.
+  The Norma frames its scope as seven aspects, not five as the research notes said.
+- Sitemap entry (priority 0.8); linked from both Spanish C5 pages, which Google indexes.
+
+## [v2.421] – 2026-10-29 — Lead counts no longer include job applications; leads carry language
+
+**Fixed**
+- **`generate_lead` counted job applications as sales leads.** GA4, Aug–Oct 2026: 67 `generate_lead`
+  events, of which 19 came from the careers application form. The contact forms produced 44
+  (`/contact` 32, `/es/contact` 12), about 15 a month, 4 of them Spanish. Careers now fires its own
+  `job_application` event with the same parameters, so careers source attribution (v2.399) is
+  unchanged and `generate_lead` means sales leads only (CAD plan item #2).
+
+**Added**
+- Every lead event carries `page_language` (from `<html lang>`) and `page_path`. GA4 event-scoped
+  custom dimension `page_language` registered on property 530090453 via the Admin API.
+
+## [v2.420] – 2026-10-29 — Spanish C5 entry page sent leads to 404s; K-Dispatch ES copy fixed
+
+**Fixed**
+- **`/es/resources/que-es-un-c5` linked to `/es/es/...` 404s, including its CTAs to `/es/contact` and
+  `/es/k-dispatch`.** The page builds hrefs as `es ? '/es/x' : '/x'` and passes them to the
+  locale-aware `Link` from `@/i18n/navigation`, which prefixes `/es` again. This is the page Spanish
+  "¿qué es el C5?" searchers land on (the Spanish C5 cluster drew ~8,900 impressions in 28 days), so
+  every visitor who clicked through to the product or the contact form hit an error page. All 7
+  broken hrefs now use bare paths. A crawl of all 117 Spanish sitemap URLs found this was the only
+  affected page. The absolute breadcrumb URLs in the JSON-LD keep their `/es/` prefix.
+- **Four Spanish CAD pages were never indexed** (CAD plan item #9). URL Inspection: 
+  `/es/resources/cad-dispatch-software-latin-america` and `/es/resources/cad-software-municipios-mexico`
+  are "URL is unknown to Google", `/es/resources/c5-command-centers-mexico-2026` likewise, and
+  `/es/resources/what-is-cad-dispatch-software` is "Discovered – currently not indexed", although all
+  four are 5–7 months old, return 200, self-canonical, indexable and in the sitemap (last read 24 Oct).
+  Mechanism: none of the indexed, trafficked Spanish pages (the K-Dispatch page, both C5 pages, the
+  ES homepage, the municipalities page) linked to them; the C5 page's links to two of them were the
+  404s above. Both C5 pages now link to all four.
+- **K-Dispatch H1 read "llamadaa la respuesta" to crawlers and screen readers.** The two H1 spans in
+  `SolutionPage` had no whitespace between them; the flex column hides that visually but text
+  extraction (Google snippets, AI engines) joins them. One `{' '}` fixes every solution page.
+- **K-Dispatch ES FAQ accents:** Sí, Gestión, estándar, ¿Cuánto, implementación típica, número,
+  capacitación, operación, continúe, transición, híbrido, están, soberanía, común.
+- **`/es/contact` demo e-mail button used the English subject "Demo Request"**; it is now
+  "Solicitud de demo" on Spanish and unchanged on English.
+
+**Added**
+- GEO monitor block E: 12 Spanish LATAM CAD buyer questions (Norma Técnica 911, cost, anexo técnico,
+  state C5, Zetron/Hexagon/Carbyne alternatives, municipal C2/C4, Línea 123, CRUM, SISMED911,
+  C5 video integration). First scheduled run 2 Nov; does not feed the legacy trend line.
+
+**Not changed, flagged for Omer**
+- The K-Dispatch FAQ still states 25,000+ daily calls, a 5-minute average response time and a
+  99.99% uptime SLA, and `/resources/cad-dispatch-software-latin-america` states "40+ cities /
+  73M citizens" (the About page says 68.5M) and "<90 s dispatch". None has a signed-off source.
+- Missing Spanish accents are site-wide (airport, municipalities, public-safety, PSIM pages), not
+  just K-Dispatch: logged as a follow-up.
+- Research note corrected: the "two-step contact form not live" finding was wrong. v2.389 changed
+  the careers application form, not the contact page.
+
 ## [v2.419] – 2026-10-28 — Bare acronyms stop topping the opportunity table; weekly report
 
 **Fixed**

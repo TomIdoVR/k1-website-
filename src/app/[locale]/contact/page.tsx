@@ -393,7 +393,7 @@ export default async function ContactPage({
             <p style={{ color: 'var(--dim)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '32px' }}>
               {content.ctaSub}
             </p>
-            <a href="mailto:info@kabatone.com?subject=Demo Request" style={{
+            <a href={`mailto:info@kabatone.com?subject=${encodeURIComponent(es ? 'Solicitud de demo' : 'Demo Request')}`} style={{
               display: 'inline-flex', alignItems: 'center', gap: '9px',
               background: 'var(--blue)', color: 'white',
               fontFamily: 'Space Grotesk, sans-serif', fontSize: '15px', fontWeight: 500,

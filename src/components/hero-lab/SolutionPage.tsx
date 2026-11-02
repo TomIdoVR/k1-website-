@@ -77,7 +77,7 @@ export default function SolutionPage({ p, es }: { p: SolutionContent; es: boolea
           <div className="sp-hero-copy">
             <div className="sp-eyebrow">{t(p.eyebrow, es)}</div>
             <h1 className="sp-h1">
-              <span>{t(p.h1a, es)}</span>
+              <span>{t(p.h1a, es)}</span>{' '}
               <span className="sp-h1-em">{t(p.h1b, es)}</span>
             </h1>
             <p className="sp-sub">{t(p.sub, es)}</p>

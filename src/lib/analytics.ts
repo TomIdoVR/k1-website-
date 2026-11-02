@@ -76,7 +76,14 @@ export function trackLead(
 
      page_view was unaffected throughout, which is why this looked healthy from
      the GA4 UI: traffic reported normally while conversions read zero. */
-  const payload = { send_to: GA_MEASUREMENT_ID, ...getUtmParams(), ...params }
+  /* page_language and page_path ride on every lead event so leads can be counted by
+     language and by the page that produced them (CAD inbound plan item #2). The
+     language comes from the rendered <html lang>, which the [locale] layout sets. */
+  const page = {
+    page_language: document.documentElement.lang || (location.pathname.startsWith('/es') ? 'es' : 'en'),
+    page_path: location.pathname,
+  }
+  const payload = { send_to: GA_MEASUREMENT_ID, ...page, ...getUtmParams(), ...params }
 
   // Primary path: straight to GA4 via gtag. Reliable regardless of GTM config.
   if (typeof w.gtag === 'function') {
