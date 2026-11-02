@@ -1256,6 +1256,16 @@ export const metadata = {
     description: "What fire and EMS dispatch software must do: protocol triage, pre-arrival instructions, unit recommendation by capability, response plans, hospital coordination and time reporting.",
     canonical: "https://kabatone.com/resources/fire-ems-dispatch-software",
   },
+  anexoTecnicoCad911: {
+    title: "911 CAD Tender Technical Annex (Mexico): What to Include | KabatOne",
+    description: "The 12 sections of a Mexican 911 or C5 CAD tender's technical annex, with sample wording for each, aligned with the Norma Técnica 9-1-1 and the 2025 procurement law.",
+    canonical: "https://kabatone.com/resources/anexo-tecnico-cad-911",
+  },
+  linea123Software: {
+    title: "Línea 123 Software for Colombia's Emergency Number | KabatOne",
+    description: "What a Línea 123 / NUSE emergency platform in Colombia must do, how cities buy it through SECOP II, and what to ask each vendor.",
+    canonical: "https://kabatone.com/resources/linea-123-software",
+  },
   normaTecnica911: {
     title: "Mexico's 911 Technical Standard (Norma Técnica 9-1-1): CAD Requirements | KabatOne",
     description: "What the SESNSP's Norma Técnica 9-1-1 v2.0 requires of a 911 center's CAD and GIS in Mexico: integrations, the national incident catalogue, 90-second times and the question to ask each vendor.",

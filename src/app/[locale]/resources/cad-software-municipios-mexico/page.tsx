@@ -244,6 +244,8 @@ export default async function CadSoftwareMunicipiosMexicoPage({
           </h2>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             {[
+              { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: Requisitos del CAD' : 'Mexico 911 Standard: CAD Requirements' },
+              { href: '/resources/anexo-tecnico-cad-911', label: es ? 'Anexo Técnico para Licitar un CAD 911' : 'CAD Tender Technical Annex' },
               { href: '/resources/how-c5-command-centers-work', label: es ? 'Cómo Funcionan los C5' : 'How C5 Command Centers Work' },
               { href: '/resources/what-is-cad-dispatch-software', label: es ? 'Qué Es el Software CAD' : 'What Is CAD Dispatch Software' },
               { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },

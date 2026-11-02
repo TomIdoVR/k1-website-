@@ -216,6 +216,9 @@ export default async function NormaTecnica911Page({ params }: { params: Promise<
               <a href="#contacto" style={{ background: ACCENT, color: '#0f1724', padding: '12px 24px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>
                 {es ? 'Solicitar una revisión' : 'Request a review'}
               </a>
+              <Link href="/resources/anexo-tecnico-cad-911" style={{ border: `1px solid ${ACCENT}`, color: ACCENT, padding: '12px 24px', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
+                {es ? 'Guía del anexo técnico' : 'Technical annex guide'}
+              </Link>
               <Link href="/k-dispatch" style={{ border: `1px solid ${ACCENT}`, color: ACCENT, padding: '12px 24px', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
                 {es ? 'Conocer K-Dispatch' : 'See K-Dispatch'}
               </Link>
