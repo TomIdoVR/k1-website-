@@ -66,6 +66,7 @@ const ES: SegmentCopy = {
   ],
   related: [
     { href: '/resources/norma-tecnica-911', label: 'Norma Técnica 9-1-1: requisitos del CAD' },
+    { href: '/resources/fasp-2027-911-c5', label: 'FASP 2027 para el 911 y el C5' },
     { href: '/resources/police-cad-software', label: 'Software CAD para policía' },
     { href: '/resources/fire-ems-dispatch-software', label: 'Despacho para bomberos y ambulancias' },
     { href: '/resources/cad-software-municipios-mexico', label: 'Software CAD para municipios de México' },
@@ -128,6 +129,7 @@ const EN: SegmentCopy = {
   ],
   related: [
     { href: '/resources/norma-tecnica-911', label: "Mexico's 911 standard: CAD requirements" },
+    { href: '/resources/fasp-2027-911-c5', label: 'FASP 2027 for 911 and C5' },
     { href: '/resources/police-cad-software', label: 'Police CAD software' },
     { href: '/resources/fire-ems-dispatch-software', label: 'Fire and EMS dispatch software' },
     { href: '/resources/best-cad-dispatch-software', label: 'Best CAD dispatch software' },
