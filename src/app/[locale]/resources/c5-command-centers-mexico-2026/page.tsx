@@ -702,6 +702,7 @@ export default async function C5CommandCentersMexico2026Page({
                 {[
                   { href: '/resources/how-c5-command-centers-work', label: es ? '¿Qué es un C5 y cómo funciona?' : 'What is a C5 and how it works' },
                   { href: '/resources/que-es-un-c5', label: es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5' },
+                  { href: '/resources/fasp-2027-911-c5', label: es ? 'FASP 2027 para el 911 y el C5' : 'FASP 2027 for 911 and C5' },
                   { href: '/resources/what-is-a-real-time-crime-center', label: es ? 'Qué Es un RTCC' : 'What Is an RTCC' },
                   { href: '/resources/what-is-situational-awareness-software', label: es ? 'Software de Conciencia Situacional' : 'Situational Awareness Software' },
                   { href: '/resources/best-cad-dispatch-software', label: es ? 'Software CAD de Despacho' : 'CAD Dispatch Software' },

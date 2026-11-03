@@ -1256,6 +1256,11 @@ export const metadata = {
     description: "Qué debe hacer un CAD para bomberos y urgencias médicas: clasificación por protocolo, primeros auxilios por teléfono, recomendación por capacidad, coordinación con el CRUM y tiempos.",
     canonical: "https://kabatone.com/es/resources/fire-ems-dispatch-software",
   },
+  fasp2027: {
+    title: "FASP 2027 para el 911 y el C5: Montos, Programas y Calendario | KabatOne",
+    description: "Cómo financiar tecnología de 911 y C5 con el FASP 2027: monto propuesto, programa 3.8, criterios que pesan en la fórmula, calendario del proyecto de inversión y reglas, con fuentes oficiales.",
+    canonical: "https://kabatone.com/es/resources/fasp-2027-911-c5",
+  },
   anexoTecnicoCad911: {
     title: "Anexo Técnico para Licitar un CAD 911: Qué Debe Incluir | KabatOne",
     description: "Las 12 secciones del anexo técnico de una licitación de sistema CAD 911 o C5 en México, con ejemplo de redacción para cada una, alineadas a la Norma Técnica 9-1-1 y a la LAASSP 2025.",

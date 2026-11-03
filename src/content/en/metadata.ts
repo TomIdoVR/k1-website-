@@ -1256,6 +1256,11 @@ export const metadata = {
     description: "What fire and EMS dispatch software must do: protocol triage, pre-arrival instructions, unit recommendation by capability, response plans, hospital coordination and time reporting.",
     canonical: "https://kabatone.com/resources/fire-ems-dispatch-software",
   },
+  fasp2027: {
+    title: "FASP 2027 for 911 and C5 Technology in Mexico: Amounts and Calendar | KabatOne",
+    description: "How Mexican states fund 911 and C5 technology through FASP 2027: proposed amount, program 3.8, formula criteria, investment-project calendar and rules, from official sources.",
+    canonical: "https://kabatone.com/resources/fasp-2027-911-c5",
+  },
   anexoTecnicoCad911: {
     title: "911 CAD Tender Technical Annex (Mexico): What to Include | KabatOne",
     description: "The 12 sections of a Mexican 911 or C5 CAD tender's technical annex, with sample wording for each, aligned with the Norma Técnica 9-1-1 and the 2025 procurement law.",
