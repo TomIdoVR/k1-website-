@@ -17,6 +17,7 @@ Usage:
   python3.11 scripts/seo_diff.py --cur A.json --prior B.json
   python3.11 scripts/seo_diff.py --json out.json          # also write machine-readable
   python3.11 scripts/seo_diff.py --no-ga4                 # skip the GA4 pull (offline/fast)
+  python3.11 scripts/seo_diff.py --no-vercel              # skip the AI-crawler pull (Vercel CLI)
 """
 from __future__ import annotations
 import argparse, glob, json, os, re, subprocess, sys, collections
@@ -512,6 +513,124 @@ def geo_freshness():
                     'Use the four-engine named table below.'}
 
 
+# Vercel observability. The MCP `create_observability_query` tool 404s, so this goes through
+# the CLI. Retention is ~30 days, which is why every pull is persisted to AI_CRAWLER_CSV.
+VERCEL_SCOPE = 'omercnaani-5410s-projects'
+VERCEL_QUERY_SCOPE = {'type': 'project', 'ownerId': 'team_sw68iotiJDlME57CTQrVy6R9',
+                      'projectIds': ['prj_q8jUVRE66gFD7SQ5oCTSkMidqsfJ']}
+AI_CRAWLER_CSV = ROOT / 'SEO' / 'geo' / 'ai-crawler-history.csv'
+# Vercel's lowercase bot_name -> display name. User-triggered = a person asked an AI and it
+# fetched our page live inside that chat; that is the GEO line. Index crawlers build the
+# engines' search indexes and training sets. Google-Extended is a robots.txt token, not a
+# user agent, so it never appears in request logs.
+AI_USER_BOTS = {'chatgpt-user': 'ChatGPT-User', 'claude-user': 'Claude-User',
+                'perplexity-user': 'Perplexity-User'}
+AI_INDEX_BOTS = {'oai-searchbot': 'OAI-SearchBot', 'gptbot': 'GPTBot', 'claudebot': 'ClaudeBot',
+                 'perplexitybot': 'PerplexityBot', 'meta-externalagent': 'Meta-externalagent',
+                 'amazonbot': 'Amazonbot', 'applebot-extended': 'Applebot-Extended',
+                 'bytespider': 'Bytespider', 'ccbot': 'CCBot', 'exasearchbot': 'ExaSearchBot'}
+AI_OTHER_BOTS = {'gpt-actions': 'GPT-Actions', 'chatgpt-operator': 'ChatGPT-Operator',
+                 'duckassistbot': 'DuckAssistBot', 'exauser': 'ExaUser'}
+
+
+def _vercel_query(start, end, group_by, filt=None, limit=200):
+    """Summary rows of one observability query, or raises RuntimeError.
+
+    Read `summary`, not `data`: `data` is hourly buckets. Leave `granularity` out (setting it
+    failed) and keep the default limit off -- it is 10, which silently dropped every AI bot
+    below Amazonbot."""
+    q = {'metric': 'vercel.request.count', 'aggregation': 'sum', 'limit': limit,
+         'startTime': start.strftime('%Y-%m-%dT00:00:00Z'),
+         'endTime': end.strftime('%Y-%m-%dT00:00:00Z'),
+         'groupBy': group_by, 'scope': VERCEL_QUERY_SCOPE}
+    if filt:
+        q['filter'] = filt
+    import tempfile
+    with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:
+        json.dump(q, f)
+    try:
+        r = subprocess.run(['vercel', 'api', '/v2/observability/query', '--method', 'POST',
+                            '--input', f.name, '--scope', VERCEL_SCOPE],
+                           cwd=ROOT, capture_output=True, text=True, timeout=150)
+    except FileNotFoundError:
+        raise RuntimeError('vercel CLI not installed')
+    except subprocess.TimeoutExpired:
+        raise RuntimeError('timed out after 150s')
+    finally:
+        os.unlink(f.name)
+    try:
+        return json.loads(r.stdout)['summary']
+    except Exception:
+        err = (r.stderr or r.stdout).strip().splitlines()
+        raise RuntimeError(err[-1][:160] if err else f'exit {r.returncode}')
+
+
+def ai_crawlers(weeks=4, path_days=14):
+    """AI-bot requests to kabatone.com per complete ISO week, plus ChatGPT-User top paths.
+
+    GEO results say whether engines NAME us; this says whether AI assistants FETCH us. On
+    2026-11-02 ChatGPT-User fetched pages 70-100x a week while ChatGPT sent 2-5 referral
+    visits, which is what moved AI-1 from "less retrieval" to "fewer clicks per mention".
+
+    One query per week, never one 28-day query grouped by path: those time out (408). Each
+    week that comes back is upserted into AI_CRAWLER_CSV so the trend outlives retention.
+    Any failure leaves that piece unavailable; the report never crashes on it."""
+    from datetime import timedelta
+    today = datetime.now(timezone.utc).date()
+    this_monday = today - timedelta(days=today.weekday())
+    known = {**AI_USER_BOTS, **AI_INDEX_BOTS, **AI_OTHER_BOTS}
+    out = {'weeks': [], 'errors': [], 'paths': None}
+    for i in range(weeks, 0, -1):
+        start = this_monday - timedelta(weeks=i)
+        y, w, _ = start.isocalendar()
+        label = f"{y}-W{w:02d}"
+        try:
+            rows = _vercel_query(start, start + timedelta(days=7), ['bot_name'])
+        except RuntimeError as e:
+            out['errors'].append(f"{label}: {e}")
+            continue
+        counts = {r['bot_name']: r['vercel_request_count_sum'] for r in rows
+                  if r.get('bot_name') in known}
+        out['weeks'].append({'week': label, 'start': start.isoformat(), 'bots': counts,
+                             # older than retention -> the head of the week may be missing
+                             'truncated': (today - start).days > 30})
+    end = this_monday
+    start = end - timedelta(days=path_days)
+    try:
+        rows = _vercel_query(start, end, ['request_path'], "bot_name eq 'chatgpt-user'", limit=10)
+        out['paths'] = {'start': start.isoformat(),
+                        'end': (end - timedelta(days=1)).isoformat(),
+                        'rows': [(r['request_path'], r['vercel_request_count_sum']) for r in rows]}
+    except RuntimeError as e:
+        out['errors'].append(f"ChatGPT-User paths: {e}")
+    out['history'] = _ai_crawler_persist(out['weeks'])
+    return out
+
+
+def _ai_crawler_persist(weeks):
+    """Upsert complete weeks into the CSV (a re-pull replaces that week) and return the full
+    history as {week: {bot: requests}}. Truncated weeks are not written over a full one."""
+    import csv as _csv
+    hist = {}
+    if AI_CRAWLER_CSV.exists():
+        for r in _csv.DictReader(AI_CRAWLER_CSV.open()):
+            hist.setdefault(r['week'], {'start': r['week_start'], 'pulled': r['pulled'],
+                                        'bots': {}})['bots'][r['bot']] = int(r['requests'])
+    pulled = datetime.now().strftime('%Y-%m-%d')
+    for w in weeks:
+        if w['truncated'] and w['week'] in hist:
+            continue
+        hist[w['week']] = {'start': w['start'], 'pulled': pulled, 'bots': dict(w['bots'])}
+    if weeks:
+        with AI_CRAWLER_CSV.open('w', newline='') as f:
+            wr = _csv.writer(f)
+            wr.writerow(['week', 'week_start', 'bot', 'requests', 'pulled'])
+            for wk in sorted(hist):
+                for bot, n in sorted(hist[wk]['bots'].items()):
+                    wr.writerow([wk, hist[wk]['start'], bot, n, hist[wk]['pulled']])
+    return {wk: hist[wk]['bots'] for wk in sorted(hist)}
+
+
 # ---------- render --------------------------------------------------------------
 
 def render(d):
@@ -734,6 +853,63 @@ def render(d):
         if any(len(e['runs']) == 1 for e in gr['engines'].values()):
             a("\n> ⚠️ One run only for some engines: their counts carry ±3–5 of noise (GEO-8).")
 
+    ac = d.get('ai_crawlers')
+    if ac is not None:
+        a("\n## AI crawlers — who fetches our pages (Vercel)\n")
+        hist = ac.get('history') or {}
+        if not ac['weeks']:
+            a("- ⚠️ **Live pull unavailable** — " + "; ".join(ac['errors'] or ['no weeks returned']))
+            if hist:
+                a(f"- Last persisted weeks in `{AI_CRAWLER_CSV.relative_to(ROOT)}`: "
+                  + " · ".join(f"{wk} user-triggered "
+                               f"{sum(b.get(k, 0) for k in AI_USER_BOTS)}"
+                               for wk, b in list(hist.items())[-4:]))
+        else:
+            wks = ac['weeks']
+            a("Verified bot requests per complete ISO week (Mon–Sun, UTC). **User-triggered** = "
+              "a person asked the AI and it fetched our page inside that chat: the line that "
+              "matters for GEO. Index crawlers feed search indexes and training.\n")
+            a("| Bot | Type | " + " | ".join(w['week'][5:] + ('*' if w['truncated'] else '')
+                                          for w in wks) + " |")
+            a("|---|---|" + "---:|" * len(wks))
+
+            def row(name, kind, keys, bold=False):
+                vals = [sum(w['bots'].get(k, 0) for k in keys) for w in wks]
+                cells = [f"**{v:,}**" if bold else f"{v:,}" for v in vals]
+                a(f"| {'**' + name + '**' if bold else name} | {kind} | " + " | ".join(cells) + " |")
+                return vals
+
+            for group, kind in ((AI_USER_BOTS, 'user'), (AI_INDEX_BOTS, 'index'),
+                                (AI_OTHER_BOTS, 'other agent')):
+                for k, name in group.items():
+                    if any(w['bots'].get(k) for w in wks) or group is AI_USER_BOTS:
+                        row(name, kind, [k])
+            user = row('User-triggered total', 'user', AI_USER_BOTS, bold=True)
+            row('Index crawlers total', 'index', AI_INDEX_BOTS, bold=True)
+            if any(w['truncated'] for w in wks):
+                a("\n\\* Week starts beyond Vercel's ~30-day retention: its first days may be missing.")
+            if len(user) >= 2:
+                cur, prev = user[-1], user[-2]
+                avg = sum(user[:-1]) / len(user[:-1])
+                chg = f"{(cur - prev) / prev * 100:+.0f}%" if prev else "n/a"
+                a(f"\n- **User-triggered {wks[-1]['week']}: {cur}** vs {prev} the week before "
+                  f"({chg}); prior {len(user) - 1}-week mean {avg:.0f}. One week is not a trend — "
+                  "compare with the AI-referral sessions in GA4 before calling it.")
+            if len(hist) > len(wks):
+                a("- Persisted user-triggered trend: " + " → ".join(
+                    f"{wk[5:]} {sum(b.get(k, 0) for k in AI_USER_BOTS)}"
+                    for wk, b in list(hist.items())[-8:]))
+            if ac['errors']:
+                a("- ⚠️ Partial pull — " + "; ".join(ac['errors']))
+        p = ac.get('paths')
+        if p:
+            a(f"\n**ChatGPT-User top paths, {p['start']} → {p['end']}** "
+              f"({sum(n for _, n in p['rows'])} requests in the top {len(p['rows'])}):\n")
+            for path, n in p['rows']:
+                a(f"- `{path}` — {n}")
+        elif ac['weeks']:
+            a("\n- ChatGPT-User top paths unavailable this run.")
+
     if d['canonical_issues']:
         a("\n## ⚠️ Canonical sweep — stragglers found\n")
         for c in d['canonical_issues']:
@@ -801,6 +977,7 @@ def main():
     ap.add_argument('--cur'); ap.add_argument('--prior')
     ap.add_argument('--json'); ap.add_argument('--out')
     ap.add_argument('--no-ga4', action='store_true')
+    ap.add_argument('--no-vercel', action='store_true', help='skip the AI-crawler pull')
     args = ap.parse_args()
 
     if args.cur and args.prior:
@@ -837,6 +1014,7 @@ def main():
         'canonical_issues': canonical_sweep(),
         'geo': geo_freshness(),
         'geo_results': geo_results(),
+        'ai_crawlers': None if args.no_vercel else ai_crawlers(),
         'carry_over': carry_over(),
         'ga4_detail': ga4_detail() if ga4 else None,
         'repo_health': repo_health(),
