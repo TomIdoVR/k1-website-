@@ -29,6 +29,7 @@ const pages = [
   { path: '/resources/norma-tecnica-911', priority: 0.8 },
   { path: '/resources/anexo-tecnico-cad-911', priority: 0.8 },
   { path: '/resources/fasp-2027-911-c5', priority: 0.8 },
+  { path: '/resources/estadisticas-911-mexico-2026', priority: 0.8 },
   { path: '/resources/police-cad-software', priority: 0.8 },
   { path: '/resources/fire-ems-dispatch-software', priority: 0.8 },
   { path: '/resources/smart-city-platform-guide', priority: 0.6 },

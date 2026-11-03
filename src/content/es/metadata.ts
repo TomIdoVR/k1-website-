@@ -1256,6 +1256,11 @@ export const metadata = {
     description: "Qué debe hacer un CAD para bomberos y urgencias médicas: clasificación por protocolo, primeros auxilios por teléfono, recomendación por capacidad, coordinación con el CRUM y tiempos.",
     canonical: "https://kabatone.com/es/resources/fire-ems-dispatch-software",
   },
+  estadisticas911: {
+    title: "Estadísticas del 911 en México 2026: Llamadas por Estado | KabatOne",
+    description: "Llamadas al 9-1-1 de enero a septiembre de 2026: 41.1 millones, 71.85 % improcedentes, emergencias más reportadas y datos de los 32 estados, con datos oficiales del SESNSP.",
+    canonical: "https://kabatone.com/es/resources/estadisticas-911-mexico-2026",
+  },
   fasp2027: {
     title: "FASP 2027 para el 911 y el C5: Montos, Programas y Calendario | KabatOne",
     description: "Cómo financiar tecnología de 911 y C5 con el FASP 2027: monto propuesto, programa 3.8, criterios que pesan en la fórmula, calendario del proyecto de inversión y reglas, con fuentes oficiales.",

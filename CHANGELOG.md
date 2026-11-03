@@ -1,3 +1,12 @@
+## [v2.436] – 2026-11-03 — 911 statistics in Mexico 2026 (data page)
+**Added**
+- `/resources/estadisticas-911-mexico-2026` (EN+ES), CAD plan item #22: the data foundation of the "Estado del 911 en México" report, published as a citable page. It is built from the SESNSP/CNI 9-1-1 open-data file for Jan–Sep 2026, whose totals match SESNSP's 15 Oct 2026 PDF call for call; Claude reproduced them independently from the raw file.
+  - Headline figures: 41,103,146 calls; 71.85% improcedentes (not passed to an agency); 11,568,778 calls passed on (+5.34% year over year); silent calls 17,584,179 (42.8%), more than all calls passed on.
+  - Tables: call categories, the 8 improcedente types, the top 10 incidents, all 32 states (calls, passed on, % improcedentes, calls per 1,000 people using INEGI 2020 population), and the trend from 2018 to 2026.
+  - Dataset, Article, FAQPage and Breadcrumb JSON-LD, and a lead form (source `estadisticas-911`).
+- Data lives in `src/content/estadisticas-911-2026.ts`; regenerate it at each quarterly release. Improcedente calls are never called "fake". The 2026 classification breaks (Chiapas, Estado de México, Zacatecas, Oaxaca) are flagged on the page. Response times, abandonment and 089 are not reported, because the public data has none.
+- Linked from the FASP guide (EN+ES) and the C5 definition page; added to the sitemap.
+
 ## [v2.435] – 2026-11-03 — FASP 2027 planning guide for 911 and C5
 **Added**
 - `/resources/fasp-2027-911-c5` (EN+ES), CAD plan item #12. It explains how state C5 and Secretariado Ejecutivo teams fund 911 and command-center technology through FASP: the 2026 amount (MXN 9,951 million) and the 2027 proposal (10,447.9 million, labeled as pending approval); program 3.8 and subprograms 3.8.1–3.8.3; the formula weights for camera availability (3.6%), plate-reader availability (2.4%) and 911/089 call abandonment (2.4%); the annual calendar (investment projects 1–15 Jan, concertación and anexos técnicos in February, reprogramming caps, commit by 31 Dec and pay by Q1); and the 25% state contribution. Facts were checked against the DOF text of 27 Dec 2025, the Ley de Coordinación Fiscal and the 2025 LGSNSP. No K-Dispatch Norma-compliance claim. Lead form source `fasp-2027`.

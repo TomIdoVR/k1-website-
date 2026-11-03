@@ -1256,6 +1256,11 @@ export const metadata = {
     description: "What fire and EMS dispatch software must do: protocol triage, pre-arrival instructions, unit recommendation by capability, response plans, hospital coordination and time reporting.",
     canonical: "https://kabatone.com/resources/fire-ems-dispatch-software",
   },
+  estadisticas911: {
+    title: "911 Statistics in Mexico 2026: Calls by State | KabatOne",
+    description: "Mexico 9-1-1 calls, January to September 2026: 41.1 million, 71.85% not passed to an agency, the most reported emergencies and all 32 states, from official SESNSP data.",
+    canonical: "https://kabatone.com/resources/estadisticas-911-mexico-2026",
+  },
   fasp2027: {
     title: "FASP 2027 for 911 and C5 Technology in Mexico: Amounts and Calendar | KabatOne",
     description: "How Mexican states fund 911 and C5 technology through FASP 2027: proposed amount, program 3.8, formula criteria, investment-project calendar and rules, from official sources.",

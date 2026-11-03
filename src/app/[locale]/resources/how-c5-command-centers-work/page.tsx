@@ -577,6 +577,15 @@ export default async function C5CommandCentersPage({ params }: { params: Promise
                 <span>{es ? 'C2, C4 y C5: diferencias' : 'C2 vs C4 vs C5'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
+              <Link href="/resources/estadisticas-911-mexico-2026" style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '16px 20px', borderRadius: '8px',
+                border: '1px solid var(--border)', textDecoration: 'none',
+                color: 'var(--dim)', fontSize: '15px',
+              }}>
+                <span>{es ? 'Estadísticas del 911 en México 2026' : '911 statistics in Mexico 2026'}</span>
+                <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
+              </Link>
             </div>
           </div>
         </section>
