@@ -1,3 +1,8 @@
+## [v2.434] – 2026-11-02 — Diagnosis of the best-CAD click drop (ledger CAD-2)
+**Changed**
+- `SEO/carry-over.md` CAD-2: added the verdict the ledger scheduled for the 11-02 pull. About 80% of `best-cad-dispatch-software`'s impression loss comes from two queries that vanished at an unchanged position, consistent with rank-tracker or synthetic traffic. The real slips are police-CAD queries, now targeted by the new police CAD page. The page-one competitors are directories and AI listicles, so the lever is listings and roundup pitches (CAD plan #4 and #11), not on-page edits. Edits are on hold until the 11-09 pull. Also recorded that `what-is-cad`'s position ~30 is not a target, because Google already ranks best-cad 7–11 for the definition terms.
+- AI-1: added Vercel crawler counts for Oct 3–Nov 1. ChatGPT fetched our pages 70–100 times a week while sending 2–5 visits, so fewer clicks per mention rather than less retrieval. GEO-8 and PIPE-4: second confirmation from the 11-02 run.
+
 ## [v2.433] – 2026-11-02 — Answers for AI-style 911 and PSAP questions
 **Added**
 - CAD plan item #26, last part. GSC (Aug 5 – Oct 31) shows 193 question-shaped 911/PSAP queries, such as "what software do modern dispatch centers use", "can PSAP software display live caller locations" and "which providers offer leading PSAP technology". Our pages rank 2–5 for them with zero clicks, because the AI answer takes the click. The win is being named inside that answer.
