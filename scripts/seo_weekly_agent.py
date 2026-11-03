@@ -1300,6 +1300,36 @@ def _run_geo_monitor(dry_run: bool = False):
         print(f'[geo-monitor] skipped: {e}')
 
 
+def _run_ai_crawler_monitor(dry_run: bool = False):
+    """Weekly AI-crawler snapshot -- verified AI-bot requests per ISO week from Vercel
+    observability, upserted into SEO/geo/ai-crawler-history.csv. Vercel keeps ~30 days, so
+    this scheduled run is what keeps the trend: a pull only happens when seo_diff.py runs,
+    and that is manual. Skipped on dry-run; failures swallowed."""
+    if dry_run:
+        return
+    script = REPO_ROOT / 'scripts' / 'seo_diff.py'
+    hist = REPO_ROOT / 'SEO' / 'geo' / 'ai-crawler-history.csv'
+    if not script.exists():
+        return
+    try:
+        print('\n[ai-crawler-monitor] pulling AI-bot requests from Vercel...')
+        subprocess.run([sys.executable, str(script), '--ai-crawlers-only'], check=False)
+        if not hist.exists():
+            return
+        tracked = subprocess.run(['git', '-C', str(REPO_ROOT), 'ls-files', '--error-unmatch',
+                                  str(hist)], capture_output=True).returncode == 0
+        changed = not tracked or subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]).returncode != 0
+        if changed:
+            ds = datetime.now().strftime('%Y-%m-%d')
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(hist)], check=False)
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                            f'SEO: weekly AI-crawler snapshot {ds}'], check=False)
+            print('[ai-crawler-monitor] committed ai-crawler-history.csv')
+    except Exception as e:
+        print(f'[ai-crawler-monitor] skipped: {e}')
+
+
 def main():
     parser = argparse.ArgumentParser(description='KabatOne weekly SEO orchestrator agent')
     parser.add_argument('--dry-run', action='store_true', help='Skip git commit')
@@ -1328,6 +1358,8 @@ def main():
         ('keyword-monitor', lambda: _run_keyword_monitor(dry_run=args.dry_run, days=args.days)),
         # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
         ('geo-monitor', lambda: _run_geo_monitor(dry_run=args.dry_run)),
+        # Weekly AI-crawler snapshot (do AI assistants fetch our pages?) -- Vercel keeps ~30 days
+        ('ai-crawler-monitor', lambda: _run_ai_crawler_monitor(dry_run=args.dry_run)),
     ):
         try:
             fn()

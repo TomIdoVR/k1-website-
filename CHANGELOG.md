@@ -5,6 +5,8 @@
   - ChatGPT-User top 10 paths for the last 14 days.
   - One query per week, reading `summary` with `limit: 200`: the API's default limit of 10 bots silently drops every AI bot below Amazonbot, and 28-day path queries time out. Any error renders "unavailable" with the last persisted weeks; the report never crashes. `--no-vercel` skips the pull.
 - `SEO/geo/ai-crawler-history.csv`: each pull upserts its complete weeks, so the trend survives Vercel's ~30-day retention. Seeded with W41–W44, which match the 11-02 manual pull (ChatGPT-User 85 · 98 · 69 · 20).
+- Weekly automation: `seo_weekly_agent.py` (the Monday 08:07 `com.kabatone.seo-weekly` LaunchAgent) gains an `ai-crawler-monitor` step that runs `seo_diff.py --ai-crawlers-only` and commits the CSV when it changed, like the keyword monitor. Without it the history only grew when someone ran `seo_diff.py` by hand. The cloud Slack routine never runs `seo_diff.py`, so this local job is the only scheduled path.
+  - The LaunchAgent's PATH (`/usr/local/bin:/usr/bin:/bin`) has neither the Homebrew `vercel` nor the `node` its shebang needs. `seo_diff.py` now finds the CLI at `/opt/homebrew/bin` and puts its directory on the subprocess PATH. Verified by running under that exact environment, and the commit path in a throwaway clone.
 
 **Changed**
 - `SEO/carry-over.md`: AI-1 notes the snapshot is automated; new AI-2 tracks the W44 halving of user-triggered fetches (63 vs 124–154).
