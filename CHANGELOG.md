@@ -1,3 +1,12 @@
+## [v2.439] – 2026-11-03 — Campaign tags in lead e-mails; LinkedIn Insight Tag (off until configured)
+**Added**
+- Lead e-mails from the contact form, the CAD lead forms and every gated-PDF form now carry `lead_channel` (e.g. "LinkedIn Ads"), `first_channel` when it differs, the stored UTM values and `landing_page`. The same fields ride on the GA4 `generate_lead` event. For the CAD ABM campaign (plan item #13), so a lead can be matched to the ad that brought it even after the person clicks through to another page. New `leadAttributionFields()` in `src/lib/attribution.ts` reuses the visit attribution the careers form already stores.
+- `LinkedInInsightTag` in the root layout (lazyOnload). It stays off until `NEXT_PUBLIC_LINKEDIN_PARTNER_ID` is set to the numeric partner ID from Campaign Manager; any other value is ignored.
+
+**Changed**
+- Privacy notice (ES + EN), Cookies section: names Google Analytics and the LinkedIn Insight Tag, says visit source is attached to submitted forms, and points to LinkedIn's ad settings. Last updated: November 2026.
+- CSP (report-only) allows `snap.licdn.com` (script) and `px.ads.linkedin.com` (img, connect).
+
 ## [v2.438] – 2026-11-03 — Weekly AI-crawler block in the SEO diff
 **Added**
 - `scripts/seo_diff.py` § "AI crawlers": verified AI-bot requests to kabatone.com for the last 4 complete ISO weeks, from Vercel observability (`vercel api /v2/observability/query`, metric `vercel.request.count`; the MCP query tool 404s). GEO results show whether engines name us; this shows whether AI assistants actually fetch our pages.

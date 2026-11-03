@@ -62,7 +62,7 @@ export default async function PrivacyPage({
     {
       id: 'cookies',
       heading: 'Cookies',
-      body: 'Utilizamos cookies para funcionalidades del sitio y análisis de tráfico. Servicios de terceros nos apoyan en el análisis de datos. Puedes deshabilitar las cookies desde la configuración de tu navegador, aunque esto podría afectar algunas funcionalidades del servicio.',
+      body: 'Utilizamos cookies para funcionalidades del sitio, análisis de tráfico y medición de publicidad. Usamos Google Analytics para medir el uso del sitio y la etiqueta Insight Tag de LinkedIn para medir los resultados de nuestros anuncios en LinkedIn y mostrar anuncios a personas que visitaron el sitio. También registramos de qué campaña o sitio llegó tu visita y lo asociamos a los formularios que envíes. Puedes deshabilitar las cookies desde la configuración de tu navegador, aunque esto podría afectar algunas funcionalidades del servicio, y administrar los anuncios de LinkedIn en la configuración de publicidad de tu cuenta de LinkedIn.',
     },
     {
       id: 'security',
@@ -143,7 +143,7 @@ export default async function PrivacyPage({
     {
       id: 'cookies',
       heading: 'Cookies',
-      body: 'We use cookies for website functionality and traffic analytics. Third-party services assist in data analysis. You may disable cookies through your browser settings, though this may affect some service functionality.',
+      body: 'We use cookies for website functionality, traffic analytics and advertising measurement. We use Google Analytics to measure how the site is used, and the LinkedIn Insight Tag to measure the results of our LinkedIn ads and to show ads to people who visited the site. We also record which campaign or website a visit came from and attach it to any form you submit. You may disable cookies through your browser settings, though this may affect some service functionality, and you can manage LinkedIn ads in the advertising settings of your LinkedIn account.',
     },
     {
       id: 'security',
@@ -231,7 +231,7 @@ export default async function PrivacyPage({
             {es ? 'Política de Privacidad' : 'Privacy Policy'}
           </h1>
           <p style={{ fontSize: '16px', color: 'var(--muted)', fontFamily: 'DM Mono, monospace', letterSpacing: '0.04em' }}>
-            {es ? 'Última actualización: marzo 2026' : 'Last updated: March 2026'}
+            {es ? 'Última actualización: noviembre 2026' : 'Last updated: November 2026'}
           </p>
         </section>
 
