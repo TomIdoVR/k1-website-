@@ -1,3 +1,14 @@
+## [v2.439] – 2026-11-04 — Schedule the weekly AI-crawler pull
+**Added**
+- `seo_weekly_agent.py` (the Monday 08:07 `com.kabatone.seo-weekly` LaunchAgent) gains an `ai-crawler-monitor` step that runs `seo_diff.py --ai-crawlers-only` and commits `SEO/geo/ai-crawler-history.csv` when it changed, like the keyword monitor. Without it the history (v2.438) only grew when someone ran `seo_diff.py` by hand, and Vercel keeps ~30 days. The cloud Slack routine never runs `seo_diff.py`, so this local job is the only scheduled path.
+
+**Fixed**
+- The LaunchAgent's PATH (`/usr/local/bin:/usr/bin:/bin`) has neither the Homebrew `vercel` nor the `node` its shebang needs, so the pull would have failed there. `seo_diff.py` now finds the CLI at `/opt/homebrew/bin` and puts its directory on the subprocess PATH. Verified under that exact environment, and the commit path in a throwaway clone.
+
+**Changed**
+- `SEO/carry-over.md` AI-2 names the scheduled job.
+- This was the second commit of PR #49, which merged before it was pushed; shipped here as its own version.
+
 ## [v2.438] – 2026-11-03 — Weekly AI-crawler block in the SEO diff
 **Added**
 - `scripts/seo_diff.py` § "AI crawlers": verified AI-bot requests to kabatone.com for the last 4 complete ISO weeks, from Vercel observability (`vercel api /v2/observability/query`, metric `vercel.request.count`; the MCP query tool 404s). GEO results show whether engines name us; this shows whether AI assistants actually fetch our pages.

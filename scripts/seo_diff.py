@@ -18,6 +18,7 @@ Usage:
   python3.11 scripts/seo_diff.py --json out.json          # also write machine-readable
   python3.11 scripts/seo_diff.py --no-ga4                 # skip the GA4 pull (offline/fast)
   python3.11 scripts/seo_diff.py --no-vercel              # skip the AI-crawler pull (Vercel CLI)
+  python3.11 scripts/seo_diff.py --ai-crawlers-only       # just update ai-crawler-history.csv
 """
 from __future__ import annotations
 import argparse, glob, json, os, re, subprocess, sys, collections
@@ -533,6 +534,17 @@ AI_OTHER_BOTS = {'gpt-actions': 'GPT-Actions', 'chatgpt-operator': 'ChatGPT-Oper
                  'duckassistbot': 'DuckAssistBot', 'exauser': 'ExaUser'}
 
 
+def _vercel_bin():
+    """The CLI path. The Monday LaunchAgent runs with PATH=/usr/local/bin:/usr/bin:/bin,
+    which misses Homebrew's /opt/homebrew/bin, so a bare `vercel` is not found there -- and
+    nor is `node`, which the CLI's shebang needs, so _vercel_query also extends PATH."""
+    import shutil
+    for c in (shutil.which('vercel'), '/opt/homebrew/bin/vercel', '/usr/local/bin/vercel'):
+        if c and os.path.exists(c):
+            return c
+    return None
+
+
 def _vercel_query(start, end, group_by, filt=None, limit=200):
     """Summary rows of one observability query, or raises RuntimeError.
 
@@ -546,14 +558,17 @@ def _vercel_query(start, end, group_by, filt=None, limit=200):
     if filt:
         q['filter'] = filt
     import tempfile
+    vercel = _vercel_bin()
+    if not vercel:
+        raise RuntimeError('vercel CLI not installed')
     with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:
         json.dump(q, f)
     try:
-        r = subprocess.run(['vercel', 'api', '/v2/observability/query', '--method', 'POST',
+        r = subprocess.run([vercel, 'api', '/v2/observability/query', '--method', 'POST',
                             '--input', f.name, '--scope', VERCEL_SCOPE],
-                           cwd=ROOT, capture_output=True, text=True, timeout=150)
-    except FileNotFoundError:
-        raise RuntimeError('vercel CLI not installed')
+                           cwd=ROOT, capture_output=True, text=True, timeout=150,
+                           env={**os.environ, 'PATH': os.path.dirname(vercel) + os.pathsep
+                                + os.environ.get('PATH', '')})
     except subprocess.TimeoutExpired:
         raise RuntimeError('timed out after 150s')
     finally:
@@ -978,7 +993,17 @@ def main():
     ap.add_argument('--json'); ap.add_argument('--out')
     ap.add_argument('--no-ga4', action='store_true')
     ap.add_argument('--no-vercel', action='store_true', help='skip the AI-crawler pull')
+    ap.add_argument('--ai-crawlers-only', action='store_true',
+                    help='only pull AI-crawler counts and update the history CSV')
     args = ap.parse_args()
+
+    if args.ai_crawlers_only:
+        ac = ai_crawlers()
+        for e in ac['errors']:
+            print(f"  ! {e}", file=sys.stderr)
+        print(f"ai-crawlers: {len(ac['weeks'])} week(s) pulled, "
+              f"{len(ac['history'])} in {AI_CRAWLER_CSV.relative_to(ROOT)}")
+        return 0 if ac['weeks'] else 1
 
     if args.cur and args.prior:
         cf, pf = args.cur, args.prior
