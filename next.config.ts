@@ -113,6 +113,8 @@ const nextConfig: NextConfig = {
          link after the form, but kept out of search results so the form stays the way in. */
       { source: '/downloads/norma-tecnica-911-autoevaluacion.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
       { source: '/downloads/norma-tecnica-911-self-assessment.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
+      { source: '/downloads/guia-fasp-2027-911-c5.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
+      { source: '/downloads/fasp-2027-911-c5-guide.pdf', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
     ]
   },
   /* From main. Both sides added a top-level key here and git read the two as

@@ -2,6 +2,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CadLeadForm from '@/components/CadLeadForm'
 import { Link } from '@/i18n/navigation'
+import type { ReactNode } from 'react'
 import { articleSchema, faqPageSchema, breadcrumbSchema } from '@/lib/schema'
 
 /* Shared layout for CAD segment pages (police, fire & EMS; CAD plan item #26). Each page
@@ -34,7 +35,8 @@ export type SegmentCopy = {
   articleDescription: string
 }
 
-export default function CadSegmentPage({ es, c }: { es: boolean; c: SegmentCopy }) {
+/** `download` (optional) renders after the requirements, e.g. a gated PDF of the page. */
+export default function CadSegmentPage({ es, c, download }: { es: boolean; c: SegmentCopy; download?: ReactNode }) {
   const ACCENT = '#06b6d4'
   const base = 'https://kabatone.com' + (es ? '/es' : '')
   const url = `${base}/resources/${c.slug}`
@@ -87,6 +89,8 @@ export default function CadSegmentPage({ es, c }: { es: boolean; c: SegmentCopy 
             </div>
           ))}
         </section>
+
+        {download}
 
         <section style={wrap}>
           <h2 style={h2}>{c.howTitle}</h2>
