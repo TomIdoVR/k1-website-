@@ -1,3 +1,11 @@
+## [v2.437] – 2026-11-03 — FASP 2027 guide as a gated PDF
+**Added**
+- A 2-page PDF of the FASP 2027 guide (CAD plan item #12), in Spanish (`/downloads/guia-fasp-2027-911-c5.pdf`) and English (`/downloads/fasp-2027-911-c5-guide.pdf`), gated by a download form on `/resources/fasp-2027-911-c5` (source `fasp-2027-pdf`). The plan measures #12 by downloads from state-government domains, and that needs a file to download.
+- Printable source page `/resources/fasp-2027-911-c5/guia-pdf` (noindex, not in the sitemap), rendered with headless Chrome. It contains key figures, how FASP works, programs 3.8.x, formula weights, the annual cycle with a "have ready" checkbox per stage, the remaining FAQs and the sources. The PDFs are served with `X-Robots-Tag: noindex`.
+
+**Changed**
+- The FASP copy moved to `src/content/fasp-2027.ts`, so the web guide and the PDF share one source. `CadSegmentPage` takes an optional `download` slot, rendered after the requirements.
+
 ## [v2.436] – 2026-11-03 — 911 statistics in Mexico 2026 (data page)
 **Added**
 - `/resources/estadisticas-911-mexico-2026` (EN+ES), CAD plan item #22: the data foundation of the "Estado del 911 en México" report, published as a citable page. It is built from the SESNSP/CNI 9-1-1 open-data file for Jan–Sep 2026, whose totals match SESNSP's 15 Oct 2026 PDF call for call; Claude reproduced them independently from the raw file.
