@@ -54,6 +54,7 @@ const ES: SegmentCopy = {
   related: [
     { href: '/resources/norma-tecnica-911', label: 'Norma Técnica 9-1-1: requisitos del CAD' },
     { href: '/resources/anexo-tecnico-cad-911', label: 'Anexo técnico para licitar un CAD 911' },
+    { href: '/resources/estadisticas-911-mexico-2026', label: 'Estadísticas del 911 en México 2026' },
     { href: '/resources/c5-command-centers-mexico-2026', label: 'Plataforma para C5' },
     { href: '/k-dispatch', label: 'K-Dispatch' },
   ],
@@ -99,6 +100,7 @@ const EN: SegmentCopy = {
   related: [
     { href: '/resources/norma-tecnica-911', label: 'Mexico’s 911 standard: CAD requirements' },
     { href: '/resources/anexo-tecnico-cad-911', label: '911 CAD tender technical annex' },
+    { href: '/resources/estadisticas-911-mexico-2026', label: '911 statistics in Mexico 2026' },
     { href: '/resources/c5-command-centers-mexico-2026', label: 'C5 command center platform' },
     { href: '/k-dispatch', label: 'K-Dispatch' },
   ],
