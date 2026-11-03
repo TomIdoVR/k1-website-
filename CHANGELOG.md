@@ -1,3 +1,14 @@
+## [v2.438] – 2026-11-03 — Weekly AI-crawler block in the SEO diff
+**Added**
+- `scripts/seo_diff.py` § "AI crawlers": verified AI-bot requests to kabatone.com for the last 4 complete ISO weeks, from Vercel observability (`vercel api /v2/observability/query`, metric `vercel.request.count`; the MCP query tool 404s). GEO results show whether engines name us; this shows whether AI assistants actually fetch our pages.
+  - Splits **user-triggered** fetches (ChatGPT-User, Claude-User, Perplexity-User: a person asked an AI) from **index crawlers** (OAI-SearchBot, GPTBot, ClaudeBot, PerplexityBot, Meta-externalagent, Amazonbot and others) and other AI agents, with week-over-week change on the user-triggered line.
+  - ChatGPT-User top 10 paths for the last 14 days.
+  - One query per week, reading `summary` with `limit: 200`: the API's default limit of 10 bots silently drops every AI bot below Amazonbot, and 28-day path queries time out. Any error renders "unavailable" with the last persisted weeks; the report never crashes. `--no-vercel` skips the pull.
+- `SEO/geo/ai-crawler-history.csv`: each pull upserts its complete weeks, so the trend survives Vercel's ~30-day retention. Seeded with W41–W44, which match the 11-02 manual pull (ChatGPT-User 85 · 98 · 69 · 20).
+
+**Changed**
+- `SEO/carry-over.md`: AI-1 notes the snapshot is automated; new AI-2 tracks the W44 halving of user-triggered fetches (63 vs 124–154).
+
 ## [v2.437] – 2026-11-03 — FASP 2027 guide as a gated PDF
 **Added**
 - A 2-page PDF of the FASP 2027 guide (CAD plan item #12), in Spanish (`/downloads/guia-fasp-2027-911-c5.pdf`) and English (`/downloads/fasp-2027-911-c5-guide.pdf`), gated by a download form on `/resources/fasp-2027-911-c5` (source `fasp-2027-pdf`). The plan measures #12 by downloads from state-government domains, and that needs a file to download.
