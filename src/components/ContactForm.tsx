@@ -9,6 +9,7 @@ import { Link } from '@/i18n/navigation'
    fires the GA4 generate_lead conversion, so losing it would silently break
    lead attribution. */
 import { trackLead } from '@/lib/analytics'
+import { leadAttributionFields } from '@/lib/attribution'
 
 interface SelectOption {
   value: string
@@ -114,6 +115,9 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
     setStatus('submitting')
 
     const formData = new FormData(e.currentTarget)
+    // Channel and campaign tags ride into the lead e-mail (see lib/attribution).
+    const attribution = leadAttributionFields()
+    for (const [k, v] of Object.entries(attribution)) formData.set(k, v)
 
     try {
       const res = await fetch(FORMSPREE_URL, {
@@ -129,6 +133,7 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           region: String(formData.get('region') || ''),
           interest: String(formData.get('interest') || ''),
           ...(campaignSource ? { campaign_source: campaignSource } : {}),
+          ...attribution,
         })
         setStatus('success')
       } else {

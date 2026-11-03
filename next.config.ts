@@ -62,10 +62,10 @@ const nextConfig: NextConfig = {
        report endpoint has been quiet across a normal traffic day. */
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://snap.licdn.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' data: https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://cdn.prod.website-files.com https://www.googletagmanager.com https://www.google-analytics.com",
+      "img-src 'self' data: blob: https://cdn.prod.website-files.com https://www.googletagmanager.com https://www.google-analytics.com https://px.ads.linkedin.com",
       "media-src 'self' https://commondatastorage.googleapis.com",
       /* Wildcards, not just www.google-analytics.com. GA4 does not post to a
          single host: it picks a regional collector — region1.google-analytics.com
@@ -73,7 +73,7 @@ const nextConfig: NextConfig = {
          page load while quietly dropping every hit. Report-Only caught this
          before it could be enforced; an enforcing policy would have taken out
          analytics in production with no visible symptom. */
-      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://formspree.io https://api.github.com",
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://formspree.io https://api.github.com https://px.ads.linkedin.com",
       "form-action 'self' https://formspree.io",
       "frame-ancestors 'none'",
       "base-uri 'self'",

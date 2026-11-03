@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { trackLead } from '@/lib/analytics'
+import { leadAttributionFields } from '@/lib/attribution'
 
 interface EbookDownloadFormProps {
   es?: boolean
@@ -76,6 +77,9 @@ export default function EbookDownloadForm({
     e.preventDefault()
     setLoading(true)
     const formData = new FormData(e.currentTarget)
+    // Channel and campaign tags ride into the lead e-mail (see lib/attribution).
+    const attribution = leadAttributionFields()
+    for (const [k, v] of Object.entries(attribution)) formData.set(k, v)
     try {
       const res = await fetch('https://formspree.io/f/xbdzngyq', {
         method: 'POST',
@@ -89,6 +93,7 @@ export default function EbookDownloadForm({
           asset: pdfPath,
           ...(source ? { campaign_source: source } : {}),
           organization: String(formData.get('organization') || ''),
+          ...attribution,
         })
         setSubmitted(true)
       }

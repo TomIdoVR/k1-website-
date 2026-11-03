@@ -6,6 +6,7 @@ import { organizationSchema, webSiteSchema } from '@/lib/schema'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AttributionCapture from '@/components/AttributionCapture'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager'
+import LinkedInInsightTag from '@/components/LinkedInInsightTag'
 
 export const metadata: Metadata = {
   manifest: '/site.webmanifest',
@@ -57,6 +58,7 @@ export default async function LocaleLayout({
           <GoogleTagManagerNoScript />
           <GoogleAnalytics />
           <GoogleTagManager />
+          <LinkedInInsightTag />
           <AttributionCapture />
           <script
             type="application/ld+json"

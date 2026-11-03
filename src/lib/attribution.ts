@@ -170,3 +170,23 @@ export function classifyTouch(t: Touch | undefined): string {
   if (host) return `Referral — ${host}`
   return 'Direct / unknown'
 }
+
+/**
+ * Flat fields for a sales-lead submission (CAD ABM, plan item #13). Formspree
+ * puts every form field in the lead e-mail, so these let a lead be matched to
+ * the campaign and ad that brought it without cross-checking GA4 by hand.
+ * Stored touches win over the current URL, which has usually lost its UTMs by
+ * the time someone submits.
+ */
+export function leadAttributionFields(): Record<string, string> {
+  const { first, last } = getAttribution()
+  const out: Record<string, string> = { lead_channel: classifyTouch(last) }
+  // Compared by timestamp: both come back from JSON as separate objects.
+  if (first && first.at !== last?.at) out.first_channel = classifyTouch(first)
+  for (const key of UTM_KEYS) {
+    const v = last?.[key]
+    if (v) out[key] = v
+  }
+  if (last?.landing) out.landing_page = last.landing
+  return out
+}
