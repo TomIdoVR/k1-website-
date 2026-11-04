@@ -779,7 +779,8 @@ TOOLS = [
             "properties": {
                 "analysis_json": {
                     "type": "string",
-                    "description": "JSON string of the full analysis dict returned by pull_and_analyze",
+                    "description": ("Optional and normally omitted: the tool uses the analysis pull_and_analyze "
+                                    "already computed. Re-typing it costs thousands of output tokens and drops fields."),
                 },
                 "intelligence_text": {
                     "type": "string",
@@ -807,7 +808,7 @@ TOOLS = [
                     "description": "Human-readable period like 'May 13 – Jun 09, 2026'",
                 },
             },
-            "required": ["analysis_json", "intelligence_text", "action_plan_text", "today_str", "period_str"],
+            "required": ["intelligence_text", "action_plan_text", "today_str", "period_str"],
         },
     },
     {
@@ -855,6 +856,7 @@ def _tool_pull_and_analyze(days: int = 28) -> dict:
     print(f'          {len(gsc_rows)} queries')
     analysis = analyse(gsc_rows, ga4)
     _session_state['ga4'] = ga4
+    _session_state['analysis'] = analysis
     org = analysis['organic']
     print(f'    Sessions: {analysis["total_cur"]:,} ({analysis["total_delta"]:+.1f}%)')
     print(f'    Organic:  {org["sessions"]:,} ({org["share"]}%, {org["delta"]:+.1f}%)')
@@ -863,10 +865,13 @@ def _tool_pull_and_analyze(days: int = 28) -> dict:
 
 
 def _tool_generate_html_report(
-    analysis_json: str, intelligence_text: str, action_plan_text: str,
+    analysis_json: str | None, intelligence_text: str, action_plan_text: str,
     today_str: str, period_str: str
 ) -> dict:
-    analysis = json.loads(analysis_json)
+    # Build from the analysis pull_and_analyze actually computed. The model re-types it as
+    # analysis_json and drops fields ('pages' on 11-02, 'organic' on 10-26), which crashed
+    # the dashboard step two Mondays running. The model's copy is used only as a fallback.
+    analysis = _session_state.get('analysis') or json.loads(analysis_json or '{}')
     intelligence_html = format_intelligence_html(intelligence_text)
     action_plan_html = format_action_plan_html(action_plan_text)
     html = build_html(analysis, today_str, period_str, intelligence_html,
@@ -907,7 +912,7 @@ def _run_tool(name: str, args: dict):
         return _tool_pull_and_analyze(args.get('days', 28))
     if name == 'generate_html_report':
         return _tool_generate_html_report(
-            args['analysis_json'], args['intelligence_text'],
+            args.get('analysis_json'), args['intelligence_text'],
             args.get('action_plan_text', ''),
             args['today_str'], args['period_str']
         )
@@ -1300,6 +1305,36 @@ def _run_geo_monitor(dry_run: bool = False):
         print(f'[geo-monitor] skipped: {e}')
 
 
+def _run_ai_crawler_monitor(dry_run: bool = False):
+    """Weekly AI-crawler snapshot -- verified AI-bot requests per ISO week from Vercel
+    observability, upserted into SEO/geo/ai-crawler-history.csv. Vercel keeps ~30 days, so
+    this scheduled run is what keeps the trend: a pull only happens when seo_diff.py runs,
+    and that is manual. Skipped on dry-run; failures swallowed."""
+    if dry_run:
+        return
+    script = REPO_ROOT / 'scripts' / 'seo_diff.py'
+    hist = REPO_ROOT / 'SEO' / 'geo' / 'ai-crawler-history.csv'
+    if not script.exists():
+        return
+    try:
+        print('\n[ai-crawler-monitor] pulling AI-bot requests from Vercel...')
+        subprocess.run([sys.executable, str(script), '--ai-crawlers-only'], check=False)
+        if not hist.exists():
+            return
+        tracked = subprocess.run(['git', '-C', str(REPO_ROOT), 'ls-files', '--error-unmatch',
+                                  str(hist)], capture_output=True).returncode == 0
+        changed = not tracked or subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'diff', '--quiet', '--', str(hist)]).returncode != 0
+        if changed:
+            ds = datetime.now().strftime('%Y-%m-%d')
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(hist)], check=False)
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                            f'SEO: weekly AI-crawler snapshot {ds}'], check=False)
+            print('[ai-crawler-monitor] committed ai-crawler-history.csv')
+    except Exception as e:
+        print(f'[ai-crawler-monitor] skipped: {e}')
+
+
 def main():
     parser = argparse.ArgumentParser(description='KabatOne weekly SEO orchestrator agent')
     parser.add_argument('--dry-run', action='store_true', help='Skip git commit')
@@ -1328,6 +1363,8 @@ def main():
         ('keyword-monitor', lambda: _run_keyword_monitor(dry_run=args.dry_run, days=args.days)),
         # Weekly GEO citation snapshot (are AI answer engines citing KabatOne?)
         ('geo-monitor', lambda: _run_geo_monitor(dry_run=args.dry_run)),
+        # Weekly AI-crawler snapshot (do AI assistants fetch our pages?) -- Vercel keeps ~30 days
+        ('ai-crawler-monitor', lambda: _run_ai_crawler_monitor(dry_run=args.dry_run)),
     ):
         try:
             fn()

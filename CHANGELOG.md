@@ -1,3 +1,11 @@
+## [v2.440] – 2026-11-04 — Weekly SEO dashboard no longer crashes; 11-02 outputs
+**Fixed**
+- `scripts/seo_weekly_agent.py`: `generate_html_report` now builds the dashboard from the analysis `pull_and_analyze` computed (kept in `_session_state['analysis']`) instead of the copy the model re-types as `analysis_json`. The re-typed copy dropped fields (`organic` on 10-26, `pages` on 11-02) and crashed the dashboard step two Mondays running. `analysis_json` is now optional and used only as a fallback.
+
+**Added**
+- 11-02 weekly outputs: `SEO/gsc-fresh-2026-11-02.json`, `SEO/audits/raw-ga4-2026-{10-12,11-02}.json`, `SEO/audits/traffic-2026-{10-12,11-02}.html`, refreshed `traffic-latest.html`.
+- Carries the v2.438 follow-up commit (schedule the AI-crawler pull in the Monday job), which was pushed after PR #49 merged and never reached `main`.
+
 ## [v2.438] – 2026-11-03 — Weekly AI-crawler block in the SEO diff
 **Added**
 - `scripts/seo_diff.py` § "AI crawlers": verified AI-bot requests to kabatone.com for the last 4 complete ISO weeks, from Vercel observability (`vercel api /v2/observability/query`, metric `vercel.request.count`; the MCP query tool 404s). GEO results show whether engines name us; this shows whether AI assistants actually fetch our pages.
@@ -5,6 +13,8 @@
   - ChatGPT-User top 10 paths for the last 14 days.
   - One query per week, reading `summary` with `limit: 200`: the API's default limit of 10 bots silently drops every AI bot below Amazonbot, and 28-day path queries time out. Any error renders "unavailable" with the last persisted weeks; the report never crashes. `--no-vercel` skips the pull.
 - `SEO/geo/ai-crawler-history.csv`: each pull upserts its complete weeks, so the trend survives Vercel's ~30-day retention. Seeded with W41–W44, which match the 11-02 manual pull (ChatGPT-User 85 · 98 · 69 · 20).
+- Weekly automation: `seo_weekly_agent.py` (the Monday 08:07 `com.kabatone.seo-weekly` LaunchAgent) gains an `ai-crawler-monitor` step that runs `seo_diff.py --ai-crawlers-only` and commits the CSV when it changed, like the keyword monitor. Without it the history only grew when someone ran `seo_diff.py` by hand. The cloud Slack routine never runs `seo_diff.py`, so this local job is the only scheduled path.
+  - The LaunchAgent's PATH (`/usr/local/bin:/usr/bin:/bin`) has neither the Homebrew `vercel` nor the `node` its shebang needs. `seo_diff.py` now finds the CLI at `/opt/homebrew/bin` and puts its directory on the subprocess PATH. Verified by running under that exact environment, and the commit path in a throwaway clone.
 
 **Changed**
 - `SEO/carry-over.md`: AI-1 notes the snapshot is automated; new AI-2 tracks the W44 halving of user-triggered fetches (63 vs 124–154).
