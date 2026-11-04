@@ -1,3 +1,7 @@
+## [v2.441] – 2026-11-04 — AI-crawler history: no no-op commits
+**Fixed**
+- `seo_diff.py`: re-pulling a week whose counts are unchanged no longer restamps its `pulled` date. Before, every run rewrote all 50 rows of `SEO/geo/ai-crawler-history.csv`, so the Monday `ai-crawler-monitor` step (v2.438) would commit a no-op diff each week. Verified: a same-day re-pull now leaves the file byte-identical.
+
 ## [v2.440] – 2026-11-04 — Weekly SEO dashboard no longer crashes; 11-02 outputs
 **Fixed**
 - `scripts/seo_weekly_agent.py`: `generate_html_report` now builds the dashboard from the analysis `pull_and_analyze` computed (kept in `_session_state['analysis']`) instead of the copy the model re-types as `analysis_json`. The re-typed copy dropped fields (`organic` on 10-26, `pages` on 11-02) and crashed the dashboard step two Mondays running. `analysis_json` is now optional and used only as a fallback.

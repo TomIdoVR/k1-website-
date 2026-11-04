@@ -635,6 +635,8 @@ def _ai_crawler_persist(weeks):
     for w in weeks:
         if w['truncated'] and w['week'] in hist:
             continue
+        if hist.get(w['week'], {}).get('bots') == w['bots']:
+            continue   # unchanged: keep its pulled date, so a re-pull is not a diff
         hist[w['week']] = {'start': w['start'], 'pulled': pulled, 'bots': dict(w['bots'])}
     if weeks:
         with AI_CRAWLER_CSV.open('w', newline='') as f:
