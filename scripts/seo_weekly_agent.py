@@ -779,7 +779,8 @@ TOOLS = [
             "properties": {
                 "analysis_json": {
                     "type": "string",
-                    "description": "JSON string of the full analysis dict returned by pull_and_analyze",
+                    "description": ("Optional and normally omitted: the tool uses the analysis pull_and_analyze "
+                                    "already computed. Re-typing it costs thousands of output tokens and drops fields."),
                 },
                 "intelligence_text": {
                     "type": "string",
@@ -807,7 +808,7 @@ TOOLS = [
                     "description": "Human-readable period like 'May 13 – Jun 09, 2026'",
                 },
             },
-            "required": ["analysis_json", "intelligence_text", "action_plan_text", "today_str", "period_str"],
+            "required": ["intelligence_text", "action_plan_text", "today_str", "period_str"],
         },
     },
     {
@@ -855,6 +856,7 @@ def _tool_pull_and_analyze(days: int = 28) -> dict:
     print(f'          {len(gsc_rows)} queries')
     analysis = analyse(gsc_rows, ga4)
     _session_state['ga4'] = ga4
+    _session_state['analysis'] = analysis
     org = analysis['organic']
     print(f'    Sessions: {analysis["total_cur"]:,} ({analysis["total_delta"]:+.1f}%)')
     print(f'    Organic:  {org["sessions"]:,} ({org["share"]}%, {org["delta"]:+.1f}%)')
@@ -863,10 +865,13 @@ def _tool_pull_and_analyze(days: int = 28) -> dict:
 
 
 def _tool_generate_html_report(
-    analysis_json: str, intelligence_text: str, action_plan_text: str,
+    analysis_json: str | None, intelligence_text: str, action_plan_text: str,
     today_str: str, period_str: str
 ) -> dict:
-    analysis = json.loads(analysis_json)
+    # Build from the analysis pull_and_analyze actually computed. The model re-types it as
+    # analysis_json and drops fields ('pages' on 11-02, 'organic' on 10-26), which crashed
+    # the dashboard step two Mondays running. The model's copy is used only as a fallback.
+    analysis = _session_state.get('analysis') or json.loads(analysis_json or '{}')
     intelligence_html = format_intelligence_html(intelligence_text)
     action_plan_html = format_action_plan_html(action_plan_text)
     html = build_html(analysis, today_str, period_str, intelligence_html,
@@ -907,7 +912,7 @@ def _run_tool(name: str, args: dict):
         return _tool_pull_and_analyze(args.get('days', 28))
     if name == 'generate_html_report':
         return _tool_generate_html_report(
-            args['analysis_json'], args['intelligence_text'],
+            args.get('analysis_json'), args['intelligence_text'],
             args.get('action_plan_text', ''),
             args['today_str'], args['period_str']
         )

@@ -1,3 +1,11 @@
+## [v2.440] – 2026-11-04 — Weekly SEO dashboard no longer crashes; 11-02 outputs
+**Fixed**
+- `scripts/seo_weekly_agent.py`: `generate_html_report` now builds the dashboard from the analysis `pull_and_analyze` computed (kept in `_session_state['analysis']`) instead of the copy the model re-types as `analysis_json`. The re-typed copy dropped fields (`organic` on 10-26, `pages` on 11-02) and crashed the dashboard step two Mondays running. `analysis_json` is now optional and used only as a fallback.
+
+**Added**
+- 11-02 weekly outputs: `SEO/gsc-fresh-2026-11-02.json`, `SEO/audits/raw-ga4-2026-{10-12,11-02}.json`, `SEO/audits/traffic-2026-{10-12,11-02}.html`, refreshed `traffic-latest.html`.
+- Carries the v2.438 follow-up commit (schedule the AI-crawler pull in the Monday job), which was pushed after PR #49 merged and never reached `main`.
+
 ## [v2.438] – 2026-11-03 — Weekly AI-crawler block in the SEO diff
 **Added**
 - `scripts/seo_diff.py` § "AI crawlers": verified AI-bot requests to kabatone.com for the last 4 complete ISO weeks, from Vercel observability (`vercel api /v2/observability/query`, metric `vercel.request.count`; the MCP query tool 404s). GEO results show whether engines name us; this shows whether AI assistants actually fetch our pages.

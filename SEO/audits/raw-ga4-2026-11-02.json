@@ -1,0 +1,241 @@
+{
+  "generated": "2026-11-02T00:00:00",
+  "period": "Oct 05 \u2013 Nov 01, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 2113,
+      "users": 1992,
+      "bounce": 85.7
+    },
+    "Organic Search": {
+      "sessions": 961,
+      "users": 697,
+      "bounce": 48.4
+    },
+    "Referral": {
+      "sessions": 106,
+      "users": 68,
+      "bounce": 48.1
+    },
+    "Organic Social": {
+      "sessions": 67,
+      "users": 44,
+      "bounce": 49.3
+    },
+    "AI Assistant": {
+      "sessions": 33,
+      "users": 26,
+      "bounce": 30.3
+    },
+    "Unassigned": {
+      "sessions": 9,
+      "users": 9,
+      "bounce": 44.4
+    }
+  },
+  "sources_prior": {
+    "Direct": 1657,
+    "Organic Search": 965,
+    "Referral": 91,
+    "Organic Social": 67,
+    "AI Assistant": 47,
+    "Unassigned": 6,
+    "Paid Social": 3
+  },
+  "weekly": [
+    {
+      "week": "33",
+      "year": "2026",
+      "sessions": 544
+    },
+    {
+      "week": "34",
+      "year": "2026",
+      "sessions": 820
+    },
+    {
+      "week": "35",
+      "year": "2026",
+      "sessions": 794
+    },
+    {
+      "week": "36",
+      "year": "2026",
+      "sessions": 820
+    },
+    {
+      "week": "37",
+      "year": "2026",
+      "sessions": 689
+    },
+    {
+      "week": "38",
+      "year": "2026",
+      "sessions": 721
+    },
+    {
+      "week": "39",
+      "year": "2026",
+      "sessions": 658
+    },
+    {
+      "week": "40",
+      "year": "2026",
+      "sessions": 737
+    },
+    {
+      "week": "41",
+      "year": "2026",
+      "sessions": 761
+    },
+    {
+      "week": "42",
+      "year": "2026",
+      "sessions": 804
+    },
+    {
+      "week": "43",
+      "year": "2026",
+      "sessions": 926
+    },
+    {
+      "week": "44",
+      "year": "2026",
+      "sessions": 774
+    },
+    {
+      "week": "45",
+      "year": "2026",
+      "sessions": 119
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 147,
+      "duration": 1048,
+      "bounce": 42.9
+    },
+    "/": {
+      "sessions": 93,
+      "duration": 242,
+      "bounce": 32.3
+    },
+    "(not set)": {
+      "sessions": 92,
+      "duration": 16,
+      "bounce": 97.8
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 81,
+      "duration": 135,
+      "bounce": 63.0
+    },
+    "/resources/best-cad-dispatch-software": {
+      "sessions": 60,
+      "duration": 62,
+      "bounce": 43.3
+    },
+    "/es/resources/que-es-un-c5": {
+      "sessions": 45,
+      "duration": 87,
+      "bounce": 60.0
+    },
+    "/resources/cctv-video-analytics": {
+      "sessions": 27,
+      "duration": 133,
+      "bounce": 51.9
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 23,
+      "duration": 223,
+      "bounce": 56.5
+    },
+    "/es/resources/cctv-video-analytics": {
+      "sessions": 21,
+      "duration": 74,
+      "bounce": 42.9
+    },
+    "/es/resources/what-is-video-management-software": {
+      "sessions": 19,
+      "duration": 141,
+      "bounce": 36.8
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 14,
+      "duration": 29,
+      "bounce": 85.7
+    },
+    "/about": {
+      "sessions": 13,
+      "duration": 244,
+      "bounce": 23.1
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 13,
+      "duration": 202,
+      "bounce": 46.2
+    },
+    "/es/resources/what-is-lpr-license-plate-recognition": {
+      "sessions": 12,
+      "duration": 149,
+      "bounce": 41.7
+    },
+    "/es/about": {
+      "sessions": 10,
+      "duration": 178,
+      "bounce": 60.0
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 9,
+      "duration": 33,
+      "bounce": 66.7
+    },
+    "/es/resources/what-is-emergency-dispatch-software": {
+      "sessions": 8,
+      "duration": 477,
+      "bounce": 0.0
+    },
+    "/k-safety": {
+      "sessions": 8,
+      "duration": 38,
+      "bounce": 75.0
+    },
+    "/resources/smart-city-platform-guide": {
+      "sessions": 8,
+      "duration": 144,
+      "bounce": 50.0
+    },
+    "/es/integrations/lpr": {
+      "sessions": 7,
+      "duration": 344,
+      "bounce": 14.3
+    },
+    "/integrations/access-control": {
+      "sessions": 7,
+      "duration": 301,
+      "bounce": 14.3
+    },
+    "/es/k-dispatch": {
+      "sessions": 6,
+      "duration": 41,
+      "bounce": 33.3
+    },
+    "/es/k-safety": {
+      "sessions": 6,
+      "duration": 27,
+      "bounce": 50.0
+    },
+    "/k-dispatch": {
+      "sessions": 6,
+      "duration": 642,
+      "bounce": 0.0
+    },
+    "/resources/best-ng911-software": {
+      "sessions": 6,
+      "duration": 91,
+      "bounce": 16.7
+    }
+  }
+}
