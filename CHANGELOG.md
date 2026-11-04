@@ -1,3 +1,9 @@
+## [v2.442] – 2026-11-04 — Monday Slack brief builds from production and keeps its files
+**Fixed**
+- Cloud routine `trig_012DxBrEmwRQj76RaMenDyZw` (Weekly SEO Plan, Mondays 12:00 UTC) still checked out the retired `origin/nextjs`, so the Slack brief ran September's scripts and reported a meaningless "56 staging commits ahead of prod". Its prompt now checks out `origin/main`, and the shipping line reports production commits, merged PRs and branches holding work not on `main` (same rule as `seo_diff.py` `shipping()`).
+- The routine's artifacts were never saved: auto-mode denied every `git push`, and `origin/run` has not moved since 10-19. STEP 6 now commits on top of `origin/run` in a worktree and pushes `HEAD:run` under explicit authorization (no force, no changelog edits on the artifacts branch). Also installs its Python deps with `python3 -m pip`. Prompt edited with Omer's approval; first verified run is 11-09.
+- Ledger: PIPE-3 → watching (verdict 11-09), BRANCH-1 closed.
+
 ## [v2.441] – 2026-11-04 — AI-crawler history: no no-op commits
 **Fixed**
 - `seo_diff.py`: re-pulling a week whose counts are unchanged no longer restamps its `pulled` date. Before, every run rewrote all 50 rows of `SEO/geo/ai-crawler-history.csv`, so the Monday `ai-crawler-monitor` step (v2.438) would commit a no-op diff each week. Verified: a same-day re-pull now leaves the file byte-identical.
