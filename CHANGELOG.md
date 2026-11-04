@@ -4,6 +4,7 @@
 
 **Fixed**
 - The LaunchAgent's PATH (`/usr/local/bin:/usr/bin:/bin`) has neither the Homebrew `vercel` nor the `node` its shebang needs, so the pull would have failed there. `seo_diff.py` now finds the CLI at `/opt/homebrew/bin` and puts its directory on the subprocess PATH. Verified under that exact environment, and the commit path in a throwaway clone.
+- A re-pull of an unchanged week no longer restamps its `pulled` date, so the Monday job commits the CSV only when a count actually changed or a new week arrived.
 
 **Changed**
 - `SEO/carry-over.md` AI-2 names the scheduled job.
