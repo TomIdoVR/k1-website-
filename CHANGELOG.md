@@ -1,3 +1,9 @@
+## [v2.442] – 2026-11-06 — Weekly SEO jobs push their snapshots to GitHub
+**Changed**
+- `scripts/seo_weekly_agent.py` and `SEO/geo/track_geo.py`: new `git_push()` runs after the jobs commit (once at the end of the 08:07 run; after the GEO commit in the 07:30 run). Before this, the keyword, GEO, AI-crawler and traffic snapshots were committed only in `~/dev/k1-website` and reached GitHub only when someone pushed by hand, so local `main` drifted from origin.
+  - Pushes only when the checkout is on `main`; rebases onto `origin/main` first (`--autostash`, so uncommitted edits are kept), which also drops local snapshots origin already has; never forces; retries once; any failure is logged and the commits stay local for the next run.
+  - Tested against a throwaway bare remote: rebased over a concurrent upstream commit and pushed, second run "nothing to push", skipped on a non-main branch, and on a copy of the job folder's diverged `main` (4 duplicate commits) dropped them all and pushed nothing.
+
 ## [v2.441] – 2026-11-04 — AI-crawler history: no no-op commits
 **Fixed**
 - `seo_diff.py`: re-pulling a week whose counts are unchanged no longer restamps its `pulled` date. Before, every run rewrote all 50 rows of `SEO/geo/ai-crawler-history.csv`, so the Monday `ai-crawler-monitor` step (v2.438) would commit a no-op diff each week. Verified: a same-day re-pull now leaves the file byte-identical.
