@@ -121,6 +121,41 @@ def commit_results(today):
     r = subprocess.run(git + ['commit', '-m', f'SEO: weekly GEO snapshot {today}', '--'] + paths,
                        capture_output=True, text=True)
     print((r.stdout or r.stderr).strip().splitlines()[0] if (r.stdout or r.stderr) else 'commit done')
+    try:
+        git_push()
+    except Exception as e:
+        print(f'[push] skipped: {e}')
+
+
+def git_push():
+    """Publish the job's commits to origin/main so its snapshots reach GitHub (they used to stay
+    on this Mac). Only from a checkout on main; rebases onto origin first, which also drops local
+    snapshots origin already has; never forces. A failure is logged and the commits stay local
+    for the next run to push."""
+    git = ['git', '-C', str(REPO_ROOT)]
+    branch = subprocess.run(git + ['rev-parse', '--abbrev-ref', 'HEAD'],
+                            capture_output=True, text=True).stdout.strip()
+    if branch != 'main':
+        print(f'[push] skipped: checkout is on {branch!r}, not main')
+        return
+    for attempt in (1, 2):
+        pull = subprocess.run(git + ['pull', '--rebase', '--autostash', '-q', 'origin', 'main'],
+                              capture_output=True, text=True)
+        if pull.returncode != 0:
+            subprocess.run(git + ['rebase', '--abort'], capture_output=True)
+            print(f'[push] skipped: rebase onto origin/main failed: {pull.stderr.strip()[:300]}')
+            return
+        ahead = subprocess.run(git + ['rev-list', '--count', 'origin/main..HEAD'],
+                               capture_output=True, text=True).stdout.strip()
+        if ahead == '0':
+            print('[push] nothing to push')
+            return
+        push = subprocess.run(git + ['push', '-q', 'origin', 'HEAD:main'],
+                              capture_output=True, text=True)
+        if push.returncode == 0:
+            print(f'[push] pushed {ahead} commit(s) to origin/main')
+            return
+        print(f'[push] attempt {attempt} failed: {push.stderr.strip()[:300]}')
 
 
 class FatalEngineError(Exception):

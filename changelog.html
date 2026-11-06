@@ -356,14 +356,25 @@
 
     <div class="timeline">
 
-      <!-- v2.442 -->
-      <div class="tl-entry fixed" id="v2.442">
+      <!-- v2.443 -->
+      <div class="tl-entry fixed" id="v2.443">
         <div class="version-header">
-          <div class="tl-meta"><span class="tl-ver">v2.442</span><span class="tl-date">2026-11-04</span></div>
+          <div class="tl-meta"><span class="tl-ver">v2.443</span><span class="tl-date">2026-11-06</span></div>
           <h3 class="tl-title">Monday Slack brief builds from production and keeps its files</h3>
         </div>
         <div class="tl-body">
           <p><strong>Fixed:</strong> the weekly Slack SEO brief now runs on the production code instead of the retired staging branch, and reports work waiting outside production instead of a stale staging count. Its report files are now pushed so each week is kept. First check is the 11-09 run.</p>
+        </div>
+      </div>
+
+      <!-- v2.442 -->
+      <div class="tl-entry changed" id="v2.442">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.442</span><span class="tl-date">2026-11-06</span></div>
+          <h3 class="tl-title">Weekly SEO snapshots now reach GitHub</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Changed:</strong> the Monday SEO jobs saved their weekly keyword, AI-citation, AI-crawler and traffic snapshots only on the Mac that runs them. They now publish those snapshots to GitHub after each run, safely: they never overwrite anything and leave the snapshots in place to retry next week if publishing fails.</p>
         </div>
       </div>
 

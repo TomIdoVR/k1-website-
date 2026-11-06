@@ -1,8 +1,14 @@
-## [v2.442] – 2026-11-04 — Monday Slack brief builds from production and keeps its files
+## [v2.443] – 2026-11-06 — Monday Slack brief builds from production and keeps its files
 **Fixed**
 - Cloud routine `trig_012DxBrEmwRQj76RaMenDyZw` (Weekly SEO Plan, Mondays 12:00 UTC) still checked out the retired `origin/nextjs`, so the Slack brief ran September's scripts and reported a meaningless "56 staging commits ahead of prod". Its prompt now checks out `origin/main`, and the shipping line reports production commits, merged PRs and branches holding work not on `main` (same rule as `seo_diff.py` `shipping()`).
 - The routine's artifacts were never saved: auto-mode denied every `git push`, and `origin/run` has not moved since 10-19. STEP 6 now commits on top of `origin/run` in a worktree and pushes `HEAD:run` under explicit authorization (no force, no changelog edits on the artifacts branch). Also installs its Python deps with `python3 -m pip`. Prompt edited with Omer's approval; first verified run is 11-09.
 - Ledger: PIPE-3 → watching (verdict 11-09), BRANCH-1 closed.
+
+## [v2.442] – 2026-11-06 — Weekly SEO jobs push their snapshots to GitHub
+**Changed**
+- `scripts/seo_weekly_agent.py` and `SEO/geo/track_geo.py`: new `git_push()` runs after the jobs commit (once at the end of the 08:07 run; after the GEO commit in the 07:30 run). Before this, the keyword, GEO, AI-crawler and traffic snapshots were committed only in `~/dev/k1-website` and reached GitHub only when someone pushed by hand, so local `main` drifted from origin.
+  - Pushes only when the checkout is on `main`; rebases onto `origin/main` first (`--autostash`, so uncommitted edits are kept), which also drops local snapshots origin already has; never forces; retries once; any failure is logged and the commits stay local for the next run.
+  - Tested against a throwaway bare remote: rebased over a concurrent upstream commit and pushed, second run "nothing to push", skipped on a non-main branch, and on a copy of the job folder's diverged `main` (4 duplicate commits) dropped them all and pushed nothing.
 
 ## [v2.441] – 2026-11-04 — AI-crawler history: no no-op commits
 **Fixed**
