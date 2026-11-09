@@ -1,3 +1,15 @@
+## [v2.444] – 2026-11-09 — Weekly SEO + GEO report 2026-11-09; orchestrator prompt matches the scorer
+**Added**
+- `SEO/weekly-report-2026-11-09.md`. Focus: best search week since early October (W45 165 clicks in 6 days; `best-cad` 7 → 8 → 13 after the 11-02 edits), but five new pages are unknown to Google a week after launch (`police-cad-software` EN, FASP 2027 EN+ES, `/vs/zetron` EN+ES): the 11-03 indexing requests hit the daily quota and were never retried (new ledger item INDEX-1). GEO: the 52-question rate rose only because of the 12 Mexico questions added 10-29; on the original 40, ChatGPT/Gemini/Perplexity named KabatOne in 16.5/120 answers per run vs 25 on 11-02 (ChatGPT 10 → 5, same in both runs).
+- `SEO/gsc-fresh-2026-11-09.json`.
+
+**Fixed**
+- `scripts/seo_weekly_agent.py` orchestrator prompt: the "methodology" still listed `c5` 2.5× and `vms` 2×, contradicting the shared scorer, so on 11-09 the model called SCORER-2's deliberate 0.2 (v2.419) a bug. The prompt now defers to `business_value` / `query_intent`, explains the 0.2, and warns that top-3 queries with sudden impressions and zero clicks have been synthetic traffic (its 11-09 #1 action, "fix titles on milestone/motorola alternatives", was that pattern).
+- Both report commit paths now include `SEO/audits/traffic-latest.html`, which the job updated but never committed.
+
+**Changed**
+- `SEO/carry-over.md`: new INDEX-1; closed ORCH-1 (this version) and BRANCH-1 (done in v2.432; PR #26 superseded); 11-09 notes on CAD-2, AI-1, AI-2, PIPE-3, OPS-1, GEO-5; OPS-2 kept open: the Anthropic key ran out of credit on 11-09 and the GEO Claude engine was not recorded.
+
 ## [v2.443] – 2026-11-06 — Monday Slack brief builds from production and keeps its files
 **Fixed**
 - Cloud routine `trig_012DxBrEmwRQj76RaMenDyZw` (Weekly SEO Plan, Mondays 12:00 UTC) still checked out the retired `origin/nextjs`, so the Slack brief ran September's scripts and reported a meaningless "56 staging commits ahead of prod". Its prompt now checks out `origin/main`, and the shipping line reports production commits, merged PRs and branches holding work not on `main` (same rule as `seo_diff.py` `shipping()`).
