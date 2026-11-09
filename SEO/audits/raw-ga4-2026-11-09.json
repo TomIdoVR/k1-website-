@@ -1,0 +1,236 @@
+{
+  "generated": "2026-11-09T00:00:00",
+  "period": "Oct 12 \u2013 Nov 08, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 2355,
+      "users": 2212,
+      "bounce": 85.4
+    },
+    "Organic Search": {
+      "sessions": 908,
+      "users": 673,
+      "bounce": 47.5
+    },
+    "Referral": {
+      "sessions": 145,
+      "users": 109,
+      "bounce": 60.7
+    },
+    "Organic Social": {
+      "sessions": 48,
+      "users": 36,
+      "bounce": 52.1
+    },
+    "AI Assistant": {
+      "sessions": 37,
+      "users": 34,
+      "bounce": 35.1
+    },
+    "Unassigned": {
+      "sessions": 3,
+      "users": 3,
+      "bounce": 100.0
+    }
+  },
+  "sources_prior": {
+    "Direct": 1655,
+    "Organic Search": 997,
+    "Organic Social": 89,
+    "Referral": 80,
+    "AI Assistant": 40,
+    "Unassigned": 12,
+    "Paid Social": 3
+  },
+  "weekly": [
+    {
+      "week": "34",
+      "year": "2026",
+      "sessions": 753
+    },
+    {
+      "week": "35",
+      "year": "2026",
+      "sessions": 794
+    },
+    {
+      "week": "36",
+      "year": "2026",
+      "sessions": 820
+    },
+    {
+      "week": "37",
+      "year": "2026",
+      "sessions": 689
+    },
+    {
+      "week": "38",
+      "year": "2026",
+      "sessions": 721
+    },
+    {
+      "week": "39",
+      "year": "2026",
+      "sessions": 658
+    },
+    {
+      "week": "40",
+      "year": "2026",
+      "sessions": 737
+    },
+    {
+      "week": "41",
+      "year": "2026",
+      "sessions": 761
+    },
+    {
+      "week": "42",
+      "year": "2026",
+      "sessions": 804
+    },
+    {
+      "week": "43",
+      "year": "2026",
+      "sessions": 926
+    },
+    {
+      "week": "44",
+      "year": "2026",
+      "sessions": 774
+    },
+    {
+      "week": "45",
+      "year": "2026",
+      "sessions": 985
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 121,
+      "duration": 1250,
+      "bounce": 41.3
+    },
+    "(not set)": {
+      "sessions": 89,
+      "duration": 3,
+      "bounce": 98.9
+    },
+    "/": {
+      "sessions": 85,
+      "duration": 269,
+      "bounce": 35.3
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 64,
+      "duration": 149,
+      "bounce": 64.1
+    },
+    "/resources/best-cad-dispatch-software": {
+      "sessions": 57,
+      "duration": 66,
+      "bounce": 40.4
+    },
+    "/es/resources/que-es-un-c5": {
+      "sessions": 44,
+      "duration": 108,
+      "bounce": 47.7
+    },
+    "/resources/cctv-video-analytics": {
+      "sessions": 25,
+      "duration": 233,
+      "bounce": 40.0
+    },
+    "/es/resources/what-is-video-management-software": {
+      "sessions": 19,
+      "duration": 118,
+      "bounce": 42.1
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 18,
+      "duration": 166,
+      "bounce": 50.0
+    },
+    "/es/resources/cctv-video-analytics": {
+      "sessions": 17,
+      "duration": 22,
+      "bounce": 47.1
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 17,
+      "duration": 29,
+      "bounce": 82.4
+    },
+    "/es/resources/what-is-lpr-license-plate-recognition": {
+      "sessions": 13,
+      "duration": 170,
+      "bounce": 53.8
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 13,
+      "duration": 129,
+      "bounce": 53.8
+    },
+    "/es/about": {
+      "sessions": 12,
+      "duration": 178,
+      "bounce": 50.0
+    },
+    "/about": {
+      "sessions": 11,
+      "duration": 342,
+      "bounce": 9.1
+    },
+    "/resources/smart-city-platform-guide": {
+      "sessions": 10,
+      "duration": 125,
+      "bounce": 50.0
+    },
+    "/es/k-dispatch": {
+      "sessions": 9,
+      "duration": 22,
+      "bounce": 55.6
+    },
+    "/es/resources/public-safety-software-peru": {
+      "sessions": 8,
+      "duration": 250,
+      "bounce": 37.5
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 8,
+      "duration": 24,
+      "bounce": 62.5
+    },
+    "/es/resources/what-is-emergency-dispatch-software": {
+      "sessions": 7,
+      "duration": 405,
+      "bounce": 14.3
+    },
+    "/es/resources/what-is-emergency-management-software": {
+      "sessions": 7,
+      "duration": 185,
+      "bounce": 28.6
+    },
+    "/resources/best-vms-software": {
+      "sessions": 7,
+      "duration": 34,
+      "bounce": 42.9
+    },
+    "/es/contact": {
+      "sessions": 6,
+      "duration": 253,
+      "bounce": 66.7
+    },
+    "/es/resources/best-ai-video-analytics-software": {
+      "sessions": 6,
+      "duration": 196,
+      "bounce": 16.7
+    },
+    "/integrations/access-control": {
+      "sessions": 6,
+      "duration": 310,
+      "bounce": 16.7
+    }
+  }
+}
