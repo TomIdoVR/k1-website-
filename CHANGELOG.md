@@ -10,6 +10,12 @@
 **Changed**
 - `SEO/carry-over.md`: new INDEX-1; closed ORCH-1 (this version) and BRANCH-1 (done in v2.432; PR #26 superseded); 11-09 notes on CAD-2, AI-1, AI-2, PIPE-3, OPS-1, GEO-5; OPS-2 kept open: the Anthropic key ran out of credit on 11-09 and the GEO Claude engine was not recorded.
 
+## [v2.443] – 2026-11-06 — Monday Slack brief builds from production and keeps its files
+**Fixed**
+- Cloud routine `trig_012DxBrEmwRQj76RaMenDyZw` (Weekly SEO Plan, Mondays 12:00 UTC) still checked out the retired `origin/nextjs`, so the Slack brief ran September's scripts and reported a meaningless "56 staging commits ahead of prod". Its prompt now checks out `origin/main`, and the shipping line reports production commits, merged PRs and branches holding work not on `main` (same rule as `seo_diff.py` `shipping()`).
+- The routine's artifacts were never saved: auto-mode denied every `git push`, and `origin/run` has not moved since 10-19. STEP 6 now commits on top of `origin/run` in a worktree and pushes `HEAD:run` under explicit authorization (no force, no changelog edits on the artifacts branch). Also installs its Python deps with `python3 -m pip`. Prompt edited with Omer's approval; first verified run is 11-09.
+- Ledger: PIPE-3 → watching (verdict 11-09), BRANCH-1 closed.
+
 ## [v2.442] – 2026-11-06 — Weekly SEO jobs push their snapshots to GitHub
 **Changed**
 - `scripts/seo_weekly_agent.py` and `SEO/geo/track_geo.py`: new `git_push()` runs after the jobs commit (once at the end of the 08:07 run; after the GEO commit in the 07:30 run). Before this, the keyword, GEO, AI-crawler and traffic snapshots were committed only in `~/dev/k1-website` and reached GitHub only when someone pushed by hand, so local `main` drifted from origin.
