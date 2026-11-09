@@ -674,13 +674,14 @@ ctr_gap = expected_ctr(position) - actual_ctr
 Expected CTR by position:
 pos 1-2→28% | 2-3→16% | 3-4→11% | 4-5→8% | 5-7→6% | 7-10→4% | 10-13→2.5% | 13-20→1.5% | >20→0.8%
 
-Business value multipliers:
-- dispatch / cad / 911 / k-dispatch → 3x (core product, highest priority)
-- c5 / command center / centro de mando → 2.5x
-- video management / vms / video analytics → 2x
-- vs / alternative / compare / peregrine / motorola → 2x
-- mexico / latam / municipal → 1.8x
-- everything else → 1x
+Business value comes from the shared scorer (`business_value` / `query_intent` in this file); the
+value pull_and_analyze returns per query is authoritative. Do not re-derive it or call it a bug.
+- Buyer queries on core products score highest (CAD / 911 / dispatch first, then C5, video, comparisons).
+- Bare acronyms (`c5`, `vms`, `psap`, `rtcc`, `lpr`), navigational and citizen queries score 0.2 **on purpose**:
+  they are definition lookups that never convert (`c5`: 5,661 impr at 0.07% CTR vs 2.13% for its qualified
+  Spanish variants). Show them with their intent label; never headline their raw potential clicks.
+- Before calling a top-3 query with zero clicks a snippet problem, check whether its impressions appeared
+  suddenly at an unchanged position: that pattern has been rank-tracker or synthetic traffic, not searchers.
 
 ### Keyword clusters
 Brand | C5/Command Ctr | Video/VMS | CAD/Dispatch | Comparisons | Country/LATAM | Emergency Mgmt | AI/Analytics
@@ -903,7 +904,7 @@ def _tool_generate_html_report(
 
 
 def _tool_commit_report(html_path: str, json_path: str, today_str: str, summary: str) -> str:
-    git_commit([html_path, json_path], today_str, summary)
+    git_commit([html_path, json_path, str(AUDITS_DIR / 'traffic-latest.html')], today_str, summary)
     return f'Committed: {Path(html_path).name}, {Path(json_path).name}'
 
 
@@ -1088,7 +1089,7 @@ def run_no_ai(dry_run: bool = False, days: int = 28):
     if dry_run:
         print(f'[dry-run] Would commit: {html_path.name}')
     else:
-        git_commit([str(html_path), str(raw_path)], today_str, summary)
+        git_commit([str(html_path), str(raw_path), str(latest)], today_str, summary)
         print('[✓] Committed.')
 
 
