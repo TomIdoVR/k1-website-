@@ -1,3 +1,30 @@
+## [v2.405] – 2026-11-10 — Playwright smoke tests for the live site
+
+**Added**
+- **`e2e/` Playwright suite (49 tests, ~1 minute).** Until now the only automated check was
+  `health-check.yml`, which curls `/` and `/es` for a 200 and cannot see a broken hero, a dead
+  form or a lost canonical. The suite covers: 13 key pages × EN/ES (200, `lang`, one visible H1,
+  no uncaught JS errors, no same-origin 4xx/5xx); SEO head on 5 pages (canonical, hreflang
+  en/es/x-default, description, JSON-LD parses, distinct ES canonical) plus `robots.txt`,
+  `llms.txt`, `sitemap.xml` and ~40 sampled sitemap URLs; the contact form (EN, ES, error path,
+  required fields); the two-step careers application with screening questions; header/footer
+  links, language switcher and demo CTA; and mobile (no horizontal scroll, menu opens).
+- Forms are stubbed at the network layer (Formspree and `/api/careers/apply`), so the suite never
+  creates a real lead or sends a real application.
+- `.github/workflows/e2e.yml` runs it after every Vercel Preview/Production deployment, nightly
+  at 06:17 UTC against production, and on demand. `VERCEL_AUTOMATION_BYPASS_SECRET` (optional
+  repo secret) lets it through Deployment Protection on preview URLs.
+- `npm run test:e2e`, `test:e2e:prod`, `test:e2e:ui`. Target any deployment with `E2E_BASE_URL`.
+
+**Notes**
+- Verified: 49/49 pass against `https://www.kabatone.com`. Not verified: the GitHub Action (it
+  has not run) and the default local mode. `next dev` does not start reliably in this OneDrive
+  folder (Turbopack cannot open its cache database; webpack takes over a minute to compile the
+  first page), so use `test:e2e:prod` or set `E2E_BASE_URL`.
+- Production (`main`) and `nextjs` have diverged, so locators are semantic and accept both
+  builds' markup (EN/ES as link or button; `<summary>` or button menu toggle; `fieldset` or
+  `div[role=group]` for screening questions).
+
 ## [v2.404] – 2026-09-28 — The weekly orchestrator had failed every Monday since June 15
 
 **Fixed**

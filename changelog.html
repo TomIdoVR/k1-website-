@@ -356,6 +356,20 @@
 
     <div class="timeline">
 
+      <!-- v2.405 -->
+      <div class="tl-entry added" id="v2.405">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.405</span><span class="tl-date">2026-11-10</span></div>
+          <h3 class="tl-title">Playwright smoke tests for the live site</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added:</strong> an <code>e2e/</code> Playwright suite (49 tests, about a minute). The only automated check before this was <code>health-check.yml</code>, which curls <code>/</code> and <code>/es</code> for a 200 and cannot see a broken hero, a dead form or a lost canonical. It covers 13 key pages in EN and ES, the SEO head (canonical, hreflang, JSON-LD) plus <code>robots.txt</code>, <code>llms.txt</code> and a sample of sitemap URLs, the contact form, the two-step careers application, header/footer links, the language switcher, and mobile layout.</p>
+          <p><strong>Added:</strong> forms are stubbed at the network layer, so the suite never creates a real lead or application. <code>.github/workflows/e2e.yml</code> runs it after each Vercel Preview/Production deployment, nightly at 06:17 UTC against production, and on demand. Scripts: <code>test:e2e</code>, <code>test:e2e:prod</code>, <code>test:e2e:ui</code>; target any deployment with <code>E2E_BASE_URL</code>.</p>
+          <p><strong>Notes:</strong> 49/49 pass against kabatone.com. The GitHub Action has not run yet, and local <code>next dev</code> mode is unreliable in this OneDrive folder, so use <code>test:e2e:prod</code>. Locators accept both the <code>main</code> and <code>nextjs</code> markup, since the branches have diverged.</p>
+        </div>
+      </div>
+
+
       <!-- v2.404 -->
       <div class="tl-entry fixed" id="v2.404">
         <div class="version-header">
