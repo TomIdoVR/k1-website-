@@ -1,3 +1,10 @@
+## [v2.445] – 2026-11-11 — Ledger: G2/Capterra/GetApp/Software Advice listings live, OPS-2 closed
+**Changed**
+- `SEO/carry-over.md`: GEO-5 gets the 11-10 directory work. G2 categories fixed and unverified claims removed (99.99% uptime SLA, 8-16 weeks, 100+ agencies, SOC 2). Capterra, GetApp and Software Advice published with the K-Dispatch video (https://youtu.be/ofjw2Ti4Rb8). SourceForge and FeaturedCustomers submitted. GovLaunch still needs Omer's account. INDEX-1 moves to watching: indexing was requested for all five pages on 11-09, so verify on 11-16. OPS-2 closed: credit topped up and the Claude engine re-run on 11-09 (core 3/40 both runs).
+
+**Fixed**
+- `changelog.html`: the v2.444 entry was missing its closing tags after the PR #55 merge, so it swallowed the entries below it.
+
 ## [v2.444] – 2026-11-09 — Weekly SEO + GEO report 2026-11-09; orchestrator prompt matches the scorer
 **Added**
 - `SEO/weekly-report-2026-11-09.md`. Focus: best search week since early October (W45 165 clicks in 6 days; `best-cad` 7 → 8 → 13 after the 11-02 edits), but five new pages are unknown to Google a week after launch (`police-cad-software` EN, FASP 2027 EN+ES, `/vs/zetron` EN+ES): the 11-03 indexing requests hit the daily quota and were never retried (new ledger item INDEX-1). GEO: the 52-question rate rose only because of the 12 Mexico questions added 10-29; on the original 40, ChatGPT/Gemini/Perplexity named KabatOne in 16.5/120 answers per run vs 25 on 11-02 (ChatGPT 10 → 5, same in both runs).
