@@ -1,3 +1,17 @@
+## [v2.406] – 2026-11-11 — Commit the SEO data snapshots that were sitting uncommitted
+
+**Changed**
+- SEO working data that the weekly pipeline and audits produced but nobody committed: GA4 and
+  GSC snapshots (`SEO/audits/raw-ga4-*`, `SEO/gsc-fresh-*`, `SEO/gsc-full-audit-*`), traffic
+  dashboards, older weekly reports, `SEO/ctr-diagnosis-2026-07-20.md`, and the updated
+  `SEO/geo/geo-history.csv`, `SEO/carry-over.md` (GEO-4 clock started, SHIP-1 closed),
+  `scripts/seo-baseline.json` and `scripts/seo-report.json`.
+- No site code or content changed. Nothing here ships to visitors.
+
+**Notes**
+- Left out on purpose: hero redesign work, `AGENTS.md` (has a dangling heading with no content),
+  and a file-mode-only change on `weekly-report-2026-09-08.md`.
+
 ## [v2.405] – 2026-11-10 — Playwright smoke tests for the live site
 
 **Added**

@@ -1,0 +1,224 @@
+{
+  "generated": "2026-06-02T10:36:50.595160",
+  "period": "May 05 \u2013 Jun 01, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 620,
+      "users": 560,
+      "bounce": 73.4
+    },
+    "Organic Search": {
+      "sessions": 380,
+      "users": 219,
+      "bounce": 55.0
+    },
+    "Referral": {
+      "sessions": 79,
+      "users": 43,
+      "bounce": 62.0
+    },
+    "Unassigned": {
+      "sessions": 24,
+      "users": 22,
+      "bounce": 91.7
+    },
+    "Organic Social": {
+      "sessions": 18,
+      "users": 16,
+      "bounce": 72.2
+    }
+  },
+  "sources_prior": {
+    "Direct": 957,
+    "Organic Search": 253,
+    "Referral": 125,
+    "Organic Social": 14,
+    "Unassigned": 12
+  },
+  "weekly": [
+    {
+      "week": "13",
+      "year": "2026",
+      "sessions": 92
+    },
+    {
+      "week": "14",
+      "year": "2026",
+      "sessions": 280
+    },
+    {
+      "week": "15",
+      "year": "2026",
+      "sessions": 274
+    },
+    {
+      "week": "16",
+      "year": "2026",
+      "sessions": 350
+    },
+    {
+      "week": "17",
+      "year": "2026",
+      "sessions": 304
+    },
+    {
+      "week": "18",
+      "year": "2026",
+      "sessions": 393
+    },
+    {
+      "week": "19",
+      "year": "2026",
+      "sessions": 293
+    },
+    {
+      "week": "20",
+      "year": "2026",
+      "sessions": 232
+    },
+    {
+      "week": "21",
+      "year": "2026",
+      "sessions": 264
+    },
+    {
+      "week": "22",
+      "year": "2026",
+      "sessions": 332
+    },
+    {
+      "week": "23",
+      "year": "2026",
+      "sessions": 74
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 117,
+      "duration": 226,
+      "bounce": 39.3
+    },
+    "/": {
+      "sessions": 88,
+      "duration": 197,
+      "bounce": 51.1
+    },
+    "(not set)": {
+      "sessions": 52,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/industries/ports": {
+      "sessions": 15,
+      "duration": 411,
+      "bounce": 46.7
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 11,
+      "duration": 94,
+      "bounce": 54.5
+    },
+    "/es/k-dispatch": {
+      "sessions": 8,
+      "duration": 5,
+      "bounce": 62.5
+    },
+    "/es/resources": {
+      "sessions": 7,
+      "duration": 115,
+      "bounce": 71.4
+    },
+    "/about": {
+      "sessions": 6,
+      "duration": 299,
+      "bounce": 50.0
+    },
+    "/resources/smart-city-platform-guide": {
+      "sessions": 6,
+      "duration": 80,
+      "bounce": 16.7
+    },
+    "/es/k-safety": {
+      "sessions": 5,
+      "duration": 8,
+      "bounce": 80.0
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 5,
+      "duration": 15,
+      "bounce": 60.0
+    },
+    "/es/k-video": {
+      "sessions": 4,
+      "duration": 4,
+      "bounce": 75.0
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 4,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "": {
+      "sessions": 3,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/k-traffic": {
+      "sessions": 3,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 3,
+      "duration": 71,
+      "bounce": 33.3
+    },
+    "/es/resources/public-safety-software-peru": {
+      "sessions": 3,
+      "duration": 140,
+      "bounce": 0.0
+    },
+    "/es/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "duration": 296,
+      "bounce": 66.7
+    },
+    "/k-dispatch": {
+      "sessions": 3,
+      "duration": 196,
+      "bounce": 33.3
+    },
+    "/resources/what-is-video-analytics": {
+      "sessions": 3,
+      "duration": 106,
+      "bounce": 33.3
+    },
+    "/es/resources/ai-in-public-safety": {
+      "sessions": 2,
+      "duration": 41,
+      "bounce": 50.0
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 2,
+      "duration": 70,
+      "bounce": 0.0
+    },
+    "/k-safety": {
+      "sessions": 2,
+      "duration": 18,
+      "bounce": 50.0
+    },
+    "/k-video": {
+      "sessions": 2,
+      "duration": 91,
+      "bounce": 50.0
+    },
+    "/resources/psim-vs-unified-platform": {
+      "sessions": 2,
+      "duration": 88,
+      "bounce": 50.0
+    }
+  }
+}

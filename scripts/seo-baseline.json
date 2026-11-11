@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-08-30T08:20:05.326Z",
+  "runAt": "2026-09-01T07:08:14.199Z",
   "baseUrl": "https://staging.kabatone.com",
   "pagesAudited": 230,
   "coverage": {
@@ -21,8 +21,8 @@
     "coverageUnexplained": 0,
     "pagesWithIssues": 0,
     "pagesClean": 230,
-    "lastRun": "2026-08-28",
-    "missedDays": 1,
+    "lastRun": "2026-08-31",
+    "missedDays": 0,
     "newIssues": 0,
     "resolvedIssues": 0
   },

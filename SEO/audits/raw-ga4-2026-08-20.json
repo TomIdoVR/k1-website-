@@ -1,0 +1,245 @@
+{
+  "generated": "2026-08-20T20:15:29.365778",
+  "period": "Jul 23 \u2013 Aug 19, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 2387,
+      "users": 2104,
+      "bounce": 69.7
+    },
+    "Organic Search": {
+      "sessions": 859,
+      "users": 605,
+      "bounce": 49.8
+    },
+    "Referral": {
+      "sessions": 89,
+      "users": 61,
+      "bounce": 50.6
+    },
+    "AI Assistant": {
+      "sessions": 49,
+      "users": 34,
+      "bounce": 34.7
+    },
+    "Unassigned": {
+      "sessions": 45,
+      "users": 44,
+      "bounce": 100.0
+    },
+    "Organic Social": {
+      "sessions": 25,
+      "users": 23,
+      "bounce": 60.0
+    },
+    "Cross-network": {
+      "sessions": 4,
+      "users": 4,
+      "bounce": 75.0
+    }
+  },
+  "sources_prior": {
+    "Direct": 1149,
+    "Organic Search": 855,
+    "Referral": 99,
+    "AI Assistant": 45,
+    "Organic Social": 22,
+    "Unassigned": 10
+  },
+  "weekly": [
+    {
+      "week": "22",
+      "year": "2026",
+      "sessions": 64
+    },
+    {
+      "week": "23",
+      "year": "2026",
+      "sessions": 331
+    },
+    {
+      "week": "24",
+      "year": "2026",
+      "sessions": 393
+    },
+    {
+      "week": "25",
+      "year": "2026",
+      "sessions": 375
+    },
+    {
+      "week": "26",
+      "year": "2026",
+      "sessions": 521
+    },
+    {
+      "week": "27",
+      "year": "2026",
+      "sessions": 462
+    },
+    {
+      "week": "28",
+      "year": "2026",
+      "sessions": 564
+    },
+    {
+      "week": "29",
+      "year": "2026",
+      "sessions": 642
+    },
+    {
+      "week": "30",
+      "year": "2026",
+      "sessions": 581
+    },
+    {
+      "week": "31",
+      "year": "2026",
+      "sessions": 997
+    },
+    {
+      "week": "32",
+      "year": "2026",
+      "sessions": 1096
+    },
+    {
+      "week": "33",
+      "year": "2026",
+      "sessions": 681
+    },
+    {
+      "week": "34",
+      "year": "2026",
+      "sessions": 400
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 113,
+      "duration": 228,
+      "bounce": 36.3
+    },
+    "/": {
+      "sessions": 91,
+      "duration": 284,
+      "bounce": 34.1
+    },
+    "(not set)": {
+      "sessions": 86,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/resources/best-cad-dispatch-software": {
+      "sessions": 74,
+      "duration": 174,
+      "bounce": 39.2
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 72,
+      "duration": 100,
+      "bounce": 68.1
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 34,
+      "duration": 289,
+      "bounce": 58.8
+    },
+    "/resources/cctv-video-analytics": {
+      "sessions": 30,
+      "duration": 144,
+      "bounce": 40.0
+    },
+    "/resources/what-is-video-management-software": {
+      "sessions": 24,
+      "duration": 37,
+      "bounce": 41.7
+    },
+    "/k-dispatch": {
+      "sessions": 19,
+      "duration": 314,
+      "bounce": 15.8
+    },
+    "/es/k-dispatch": {
+      "sessions": 14,
+      "duration": 79,
+      "bounce": 35.7
+    },
+    "/resources/public-safety-software-singapore": {
+      "sessions": 14,
+      "duration": 132,
+      "bounce": 50.0
+    },
+    "/resources/best-ai-video-analytics-software": {
+      "sessions": 12,
+      "duration": 192,
+      "bounce": 50.0
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 11,
+      "duration": 264,
+      "bounce": 54.5
+    },
+    "/es/integrations/lpr": {
+      "sessions": 10,
+      "duration": 0,
+      "bounce": 100.0
+    },
+    "/es/k-safety": {
+      "sessions": 10,
+      "duration": 66,
+      "bounce": 60.0
+    },
+    "/es/resources/what-is-emergency-dispatch-software": {
+      "sessions": 10,
+      "duration": 55,
+      "bounce": 50.0
+    },
+    "": {
+      "sessions": 9,
+      "duration": 6,
+      "bounce": 100.0
+    },
+    "/es/resources/public-safety-software-peru": {
+      "sessions": 9,
+      "duration": 287,
+      "bounce": 22.2
+    },
+    "/about": {
+      "sessions": 8,
+      "duration": 374,
+      "bounce": 62.5
+    },
+    "/k-video": {
+      "sessions": 7,
+      "duration": 121,
+      "bounce": 71.4
+    },
+    "/resources/best-ng911-software": {
+      "sessions": 6,
+      "duration": 137,
+      "bounce": 16.7
+    },
+    "/vs/hexagon": {
+      "sessions": 6,
+      "duration": 225,
+      "bounce": 33.3
+    },
+    "/es/about": {
+      "sessions": 5,
+      "duration": 1831,
+      "bounce": 80.0
+    },
+    "/es/resources/que-es-un-c5": {
+      "sessions": 5,
+      "duration": 5,
+      "bounce": 60.0
+    },
+    "/k-traffic": {
+      "sessions": 5,
+      "duration": 314,
+      "bounce": 40.0
+    }
+  }
+}
