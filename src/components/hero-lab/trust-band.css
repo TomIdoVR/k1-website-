@@ -1,0 +1,89 @@
+/* Trust & performance band — light theme, follows the .eco-* conventions
+   in ecosystem.css so it sits cleanly between the case study and ecosystem
+   sections. */
+
+.tbd {
+  padding-block: clamp(52px, 6vw, 88px);
+  background: #f7f9fc;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.tbd-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.tbd-head {
+  max-width: 720px;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+.tbd-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* 3.49:1 on #f7f9fc -> 4.64:1, same cyan hue. */
+  color: #067b97;
+}
+
+.tbd-title {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: #0f1724;
+  margin: 0;
+}
+
+.tbd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.tbd-card {
+  background: #fff;
+  border: 1px solid rgba(77, 108, 171, 0.16);
+  border-radius: 14px;
+  padding: clamp(22px, 2.4vw, 30px);
+}
+
+.tbd-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(8, 145, 178, 0.1);
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0e7490;
+}
+
+.tbd-card-head {
+  margin: 0 0 10px;
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f1724;
+}
+
+.tbd-card-body {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4f5f84;
+}
+
+@media (max-width: 900px) {
+  .tbd-grid { grid-template-columns: 1fr; }
+}

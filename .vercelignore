@@ -1,0 +1,7 @@
+# Local tooling and agent scratch space — never part of a deployment.
+# .claude/worktrees alone is ~1.5GB of nested repo checkouts, which is enough
+# to time out a CLI upload, and none of it is app code.
+.claude/
+.worktrees/
+.k1/
+.codex/

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne — DETECT Stage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    background: #f1f4f8;
+  }
+
+  /* ── Full-page shell ── */
+  .demo-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  /* ════════════════════ TOP BAR ════════════════════ */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    height: 50px;
+    background: #060d19;
+    border-bottom: 1px solid rgba(255,255,255,0.055);
+    flex-shrink: 0;
+    gap: 16px;
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-right: 4px;
+  }
+
+  .incident-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 13px;
+    background: rgba(255,69,96,0.1);
+    border: 1px solid rgba(255,69,96,0.28);
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FF8C9E;
+    white-space: nowrap;
+  }
+
+  .top-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tb-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(75,142,255,0.18);
+    border: 1px solid rgba(75,142,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    color: #adc6ff;
+  }
+
+  /* ════════════════════ STAGE STRIP ════════════════════ */
+  .stage-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    background: #070e1b;
+    border-bottom: 1px solid rgba(255,255,255,0.055);
+    flex-shrink: 0;
+    gap: 2px;
+    padding: 0 28px;
+  }
+
+  .stage-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .stage-pill.active {
+    color: #fff;
+    background: rgba(75,142,255,0.14);
+    border: 1px solid rgba(75,142,255,0.38);
+  }
+
+  .chevron {
+    color: rgba(255,255,255,0.1);
+    font-size: 14px;
+    padding: 0 2px;
+    font-weight: 300;
+  }
+
+  /* ════════════════════ MODULE STRIP ════════════════════ */
+  .module-strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 28px;
+    height: 42px;
+    background: rgba(6,12,22,0.99);
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .mod-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 11px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.065);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    white-space: nowrap;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .mod-chip.on {
+    background: rgba(75,142,255,0.1);
+    border-color: rgba(75,142,255,0.28);
+    color: #adc6ff;
+  }
+
+  /* ════════════════════ WHITE CONTENT AREA ════════════════════ */
+  .content-area {
+    flex: 1;
+    min-height: 0;
+    background: #f1f4f8;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 28px 14px;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  /* ── Stage title block (on white) ── */
+  .title-block {
+    flex-shrink: 0;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .title-left { display: flex; flex-direction: column; gap: 0; }
+
+  .stage-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+
+  .eyebrow-text {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(20,50,100,0.38);
+  }
+
+  .eyebrow-line {
+    height: 1px;
+    width: 28px;
+    background: rgba(20,50,100,0.14);
+  }
+
+  .stage-headline {
+    font-size: clamp(1.35rem, 1.9vw, 1.85rem);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: #0b1c36;
+    margin-bottom: 5px;
+  }
+
+  .stage-desc {
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.55;
+    color: rgba(15,35,75,0.48);
+    max-width: 480px;
+  }
+
+  /* Right: module tags inline with title */
+  .title-modules {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+    padding-bottom: 4px;
+  }
+
+  .title-mod-tag {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(20,50,100,0.12);
+    color: rgba(20,50,100,0.45);
+    background: rgba(20,50,100,0.04);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── Cinematic panel (flex grow) ── */
+  .cinematic-panel {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,20,60,0.1);
+    box-shadow:
+      0 1px 3px rgba(0,20,60,0.06),
+      0 6px 20px rgba(0,20,60,0.1),
+      0 24px 60px rgba(0,20,60,0.1);
+  }
+
+  /* Dark scene fills the panel */
+  .scene-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(155deg, #0e2033 0%, #08121c 45%, #040c16 100%);
+  }
+
+  /* Road */
+  .road {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(to top, #111111 0%, #0a0a0a 55%, transparent 100%);
+    border-radius: 0 0 13px 0;
+  }
+
+  .road-dash {
+    position: absolute;
+    bottom: 27%;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 26%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 10px,
+      transparent 10px, transparent 20px
+    );
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 44px;
+    background: rgba(3,7,16,0.8);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0 12px;
+    gap: 14px;
+    z-index: 10;
+  }
+
+  .s-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .s-icon.on {
+    background: rgba(75,142,255,0.14);
+    border-color: rgba(75,142,255,0.25);
+    color: #adc6ff;
+  }
+
+  /* Inner scene (right of sidebar) */
+  .scene {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 44px; right: 0;
+  }
+
+  /* Camera top HUD */
+  .cam-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 100%);
+    z-index: 6;
+  }
+
+  .cam-left { display: flex; align-items: center; gap: 18px; }
+
+  .cam-id {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(173,198,255,0.6);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .cam-clock {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.88);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .cam-live {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Pulse dots */
+  .dot-red {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #FF4560;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+
+  .dot-blue {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #3b9eff;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+  }
+
+  /* Plate bounding boxes */
+  .pb {
+    position: absolute;
+    border-radius: 2px;
+    z-index: 6;
+  }
+
+  .pb-g {
+    border: 1.5px solid rgba(0,220,120,0.8);
+    box-shadow: 0 0 14px rgba(0,220,120,0.28);
+  }
+
+  .pb-r {
+    border: 2px solid rgba(255,60,80,0.9);
+    box-shadow: 0 0 24px rgba(255,60,80,0.42), inset 0 0 14px rgba(255,60,80,0.04);
+    background: rgba(255,60,80,0.025);
+  }
+
+  .pb-lbl {
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 6.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .pb-lbl-g {
+    background: rgba(0,200,100,0.12);
+    border: 1px solid rgba(0,200,100,0.35);
+    color: #00dc78;
+  }
+
+  .pb-lbl-r {
+    background: rgba(255,60,80,0.18);
+    border: 1px solid rgba(255,60,80,0.45);
+    color: #FF4560;
+  }
+
+  /* Alert banner */
+  .alert-banner {
+    position: absolute;
+    top: 20%;
+    left: 44%;
+    transform: translateX(-50%);
+    background: #FF4560;
+    color: #fff;
+    font-size: 8.5px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    padding: 5px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    box-shadow: 0 4px 22px rgba(255,69,96,0.52);
+    z-index: 8;
+  }
+
+  .alert-sub {
+    position: absolute;
+    top: calc(20% + 28px);
+    left: 44%;
+    transform: translateX(-50%);
+    background: rgba(255,69,96,0.14);
+    border: 1px solid rgba(255,69,96,0.38);
+    color: #FF8C9E;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    padding: 3px 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-family: 'Space Mono', monospace;
+    z-index: 8;
+  }
+
+  /* Plate info card */
+  .plate-card {
+    position: absolute;
+    top: 14%;
+    right: 22.5%;
+    background: rgba(5,11,22,0.96);
+    border: 1.5px solid rgba(255,60,80,0.55);
+    border-radius: 6px;
+    padding: 8px 14px;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.65);
+    z-index: 9;
+    min-width: 88px;
+  }
+
+  .pc-lbl {
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(173,198,255,0.42);
+    margin-bottom: 3px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .pc-val {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Bottom HUD */
+  .cam-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background: linear-gradient(to top, rgba(3,7,16,0.94) 0%, transparent 100%);
+    z-index: 6;
+  }
+
+  .stats { display: flex; gap: 28px; align-items: flex-end; }
+
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+
+  .s-lbl {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .s-val {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .scrubber {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+
+  .scrub-track {
+    width: 160px;
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+  }
+
+  .scrub-fill {
+    width: 52%;
+    height: 100%;
+    background: rgba(75,142,255,0.55);
+    border-radius: 2px;
+  }
+
+  .scrub-ctrls {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.22);
+  }
+
+  /* Thumbnail strip */
+  .thumb-strip {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 20%;
+    background: rgba(3,8,18,0.9);
+    border-left: 1px solid rgba(173,198,255,0.07);
+    display: flex;
+    flex-direction: column;
+    z-index: 7;
+  }
+
+  .ts-header {
+    padding: 9px 11px 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .ts-hdr-l {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .ts-hdr-r {
+    font-size: 7px;
+    color: rgba(255,255,255,0.15);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* reads count */
+  .reads-count {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 8px 11px 7px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    flex-shrink: 0;
+  }
+
+  .reads-num {
+    font-size: 18px;
+    font-weight: 900;
+    color: #adc6ff;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: -0.01em;
+  }
+
+  .reads-lbl {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .reads-alert {
+    margin-left: auto;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #FF8C9E;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .ts-list {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ts-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.035);
+    flex-shrink: 0;
+    cursor: default;
+  }
+
+  .ts-entry.alert-entry {
+    background: rgba(255,69,96,0.05);
+    border-left: 2px solid rgba(255,69,96,0.4);
+  }
+
+  .ts-img {
+    width: 40px;
+    height: 24px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5.5px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.38);
+    font-family: 'Space Mono', monospace;
+    flex-shrink: 0;
+  }
+
+  .ts-img.alert-img {
+    border-color: rgba(255,69,96,0.35);
+    color: #FF8C9E;
+    background: rgba(255,69,96,0.05);
+  }
+
+  .ts-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+  .ts-time {
+    font-size: 6.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.32);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .ts-plate {
+    font-size: 8px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .ts-plate.alerted { color: #FF8C9E; }
+
+  .ts-gps {
+    font-size: 5.5px;
+    color: rgba(255,255,255,0.17);
+    font-family: 'Space Mono', monospace;
+  }
+
+  .ts-footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 8px 11px 7px;
+    flex-shrink: 0;
+  }
+
+  .ts-f-lbl {
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.16);
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 5px;
+  }
+
+  .ts-f-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .ts-f-chip {
+    font-size: 6.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    padding: 3px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.02);
+    text-transform: uppercase;
+  }
+
+  /* ════════════════════ NAV ════════════════════ */
+  .stage-nav {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0 2px;
+    gap: 12px;
+  }
+
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 24px;
+    border-radius: 11px;
+    cursor: default;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .nav-btn-main {
+    background: #0b1a30;
+    border: 1px solid rgba(75,142,255,0.22);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+
+  .nav-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid rgba(75,142,255,0.28);
+    background: rgba(75,142,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #adc6ff;
+  }
+
+  .nav-text { display: flex; flex-direction: column; gap: 1px; }
+
+  .nav-sub {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(173,198,255,0.4);
+  }
+
+  .nav-main {
+    font-size: 11px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+<div class="demo-shell">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <span class="logo">KabatOne</span>
+    <div class="incident-badge">
+      <div class="dot-red"></div>
+      INCIDENT 7JKY442 (STOLEN)
+    </div>
+    <div class="top-right">
+      <div class="tb-icon">⊞</div>
+      <div class="avatar">O</div>
+    </div>
+  </div>
+
+  <!-- Stage strip -->
+  <div class="stage-strip">
+    <div class="stage-pill active">DETECT</div>
+    <div class="chevron">›</div>
+    <div class="stage-pill">UNDERSTAND</div>
+    <div class="chevron">›</div>
+    <div class="stage-pill">DECIDE</div>
+    <div class="chevron">›</div>
+    <div class="stage-pill">ACT</div>
+    <div class="chevron">›</div>
+    <div class="stage-pill">LEARN</div>
+  </div>
+
+  <!-- Module strip -->
+  <div class="module-strip">
+    <div class="mod-chip">📹 Video & Analytics</div>
+    <div class="mod-chip">📞 911 & Dispatch</div>
+    <div class="mod-chip">📅 Event Mgmt</div>
+    <div class="mod-chip">🗺 GIS</div>
+    <div class="mod-chip on">⚡ Integrations</div>
+    <div class="mod-chip">📱 Responder Apps</div>
+    <div class="mod-chip">🛡 Citizen Safety</div>
+    <div class="mod-chip on">🤖 AI Engine</div>
+    <div class="mod-chip">📊 BI</div>
+  </div>
+
+  <!-- White content area -->
+  <div class="content-area">
+
+    <!-- Title block (on white) -->
+    <div class="title-block">
+      <div class="title-left">
+        <div class="stage-eyebrow">
+          <span class="eyebrow-text">Stage 01: Detect</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="stage-headline">Vehicle Flagged: Stolen</h2>
+        <p class="stage-desc">Automated LPR trigger matched against regional hotlist. AI prioritized for immediate verification.</p>
+      </div>
+      <div class="title-modules">
+        <span class="title-mod-tag">Video & Analytics</span>
+        <span class="title-mod-tag">AI Engine</span>
+        <span class="title-mod-tag">Integrations</span>
+      </div>
+    </div>
+
+    <!-- Cinematic panel (fills remaining height) -->
+    <div class="cinematic-panel">
+      <div class="scene-bg"></div>
+      <div class="road"></div>
+      <div class="road-dash"></div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="s-icon on">⊞</div>
+        <div class="s-icon">📁</div>
+        <div class="s-icon">⚙</div>
+      </div>
+
+      <!-- Scene inner -->
+      <div class="scene">
+
+        <!-- Camera top HUD -->
+        <div class="cam-top">
+          <div class="cam-left">
+            <span class="cam-id">HWY-14 CAM 03 · NORTHBOUND</span>
+            <span class="cam-clock">12:04:01</span>
+          </div>
+          <div class="cam-live">
+            <div class="dot-blue"></div>
+            LIVE MONITORING
+          </div>
+        </div>
+
+        <!-- Plate boxes -->
+        <!-- Car 1 — green ABC-1234 -->
+        <div class="pb pb-g" style="top:52%;left:18%;width:12%;height:18%;transform:translateY(-50%)">
+          <div class="pb-lbl pb-lbl-g">ABC-1234</div>
+        </div>
+        <!-- Car 2 — green XYZ-5678 -->
+        <div class="pb pb-g" style="top:65%;left:33%;width:11%;height:16%;transform:translateY(-50%);opacity:0.8;">
+          <div class="pb-lbl pb-lbl-g">XYZ-5678</div>
+        </div>
+        <!-- Stolen car — red -->
+        <div class="pb pb-r" style="top:47%;left:49%;width:14%;height:21%;transform:translateY(-50%)">
+          <div class="pb-lbl pb-lbl-r">XYZ-5678</div>
+        </div>
+
+        <!-- Alert banners -->
+        <div class="alert-banner">STOLEN VEHICLE DETECTED</div>
+        <div class="alert-sub">STOLEN VEHICLE ALERT</div>
+
+        <!-- Plate card -->
+        <div class="plate-card">
+          <div class="pc-lbl">LICENSE PLATE</div>
+          <div class="pc-val">7JKY442</div>
+        </div>
+
+        <!-- Bottom HUD -->
+        <div class="cam-bottom">
+          <div class="stats">
+            <div class="stat">
+              <div class="s-lbl">PLATE ID</div>
+              <div class="s-val">7JKY442</div>
+            </div>
+            <div class="stat">
+              <div class="s-lbl">CONFIDENCE</div>
+              <div class="s-val">98.4%</div>
+            </div>
+          </div>
+          <div class="scrubber">
+            <div class="scrub-track"><div class="scrub-fill"></div></div>
+            <div class="scrub-ctrls">⏮ ▶ ⏭</div>
+          </div>
+        </div>
+
+        <!-- Thumbnail strip -->
+        <div class="thumb-strip">
+          <div class="ts-header">
+            <div class="ts-hdr-l"><div class="dot-red"></div>RECENT READS</div>
+            <div class="ts-hdr-r">↑↓</div>
+          </div>
+          <div class="reads-count">
+            <span class="reads-num">1,247</span>
+            <span class="reads-lbl">reads today</span>
+            <span class="reads-alert">2 ALERTS</span>
+          </div>
+          <div class="ts-list">
+            <div class="ts-entry alert-entry">
+              <div class="ts-img alert-img">7JKY442</div>
+              <div class="ts-info">
+                <div class="ts-time">17/29/2023, 13:28</div>
+                <div class="ts-plate alerted">7JKY442 ⚠</div>
+                <div class="ts-gps">GPS 11.849 N, 23.545 E</div>
+              </div>
+            </div>
+            <div class="ts-entry">
+              <div class="ts-img">XYZ-5678</div>
+              <div class="ts-info">
+                <div class="ts-time">17/29/2023, 13:26</div>
+                <div class="ts-plate">XYZ-5678</div>
+                <div class="ts-gps">GPS 11.859 N, 23.574 E</div>
+              </div>
+            </div>
+            <div class="ts-entry">
+              <div class="ts-img">ABC-1234</div>
+              <div class="ts-info">
+                <div class="ts-time">17/19/2023, 10:29</div>
+                <div class="ts-plate">ABC-1234</div>
+                <div class="ts-gps">GPS 11.562 N, 12.585 E</div>
+              </div>
+            </div>
+            <div class="ts-entry">
+              <div class="ts-img">XYZ-5678</div>
+              <div class="ts-info">
+                <div class="ts-time">17/10/2023, 13:33</div>
+                <div class="ts-plate">XYZ-5678</div>
+                <div class="ts-gps">GPS 11.862 N, 12.888 E</div>
+              </div>
+            </div>
+            <div class="ts-entry">
+              <div class="ts-img">ABC-1234</div>
+              <div class="ts-info">
+                <div class="ts-time">17/10/2023, 13:56</div>
+                <div class="ts-plate">ABC-1234</div>
+                <div class="ts-gps">GPS 11.562 N, 12.583 E</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-footer">
+            <div class="ts-f-lbl">System Modules</div>
+            <div class="ts-f-chips">
+              <span class="ts-f-chip">Video &amp; Analytics</span>
+              <span class="ts-f-chip">Integrations</span>
+              <span class="ts-f-chip">AI Engine</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /scene -->
+    </div><!-- /cinematic-panel -->
+
+    <!-- Nav -->
+    <div class="stage-nav">
+      <div class="nav-btn nav-btn-main">
+        <div class="nav-icon">→</div>
+        <div class="nav-text">
+          <div class="nav-sub">Proceed to Next Step</div>
+          <div class="nav-main">Next: Understand</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content-area -->
+</div><!-- /demo-shell -->
+</body>
+</html>

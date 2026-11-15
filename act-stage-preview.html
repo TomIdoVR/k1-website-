@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ACT · Enhanced preview (restrained)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<style>
+  :root { --bg:#162235; --card:#10131b; --map:#0a1520; --line:rgba(255,255,255,.06); --mute:#48647A; --text:#E0ECF8; --accent:#adc6ff; --blue:#3B9EFF; --good:#00C98A; --warn:#FF4560; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; background:#0a0f18; color:var(--text); font-family:'Manrope',sans-serif; }
+  .banner { background:#ffd84d; color:#1a1a1a; font-weight:800; font-size:12px; letter-spacing:.08em; padding:8px 14px; text-align:center; text-transform:uppercase; }
+  .pulse { animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+  /* Root matches demo-split-root (dark bg) */
+  .root { height:calc(100vh - 32px); background:var(--bg); display:flex; flex-direction:column; overflow:hidden; }
+
+  /* Stage header */
+  .header { padding:16px 32px 12px; border-bottom:1px solid var(--line); display:flex; align-items:flex-end; justify-content:space-between; flex-shrink:0; }
+  .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .eyebrow span { font-size:10px; font-weight:900; letter-spacing:.4em; text-transform:uppercase; color:var(--accent); }
+  .eyebrow .bar { height:1px; width:28px; background:rgba(173,198,255,.3); }
+  h2.headline { font-size:2.25rem; font-weight:900; font-style:italic; letter-spacing:-.025em; text-transform:uppercase; line-height:1.05; color:#fff; margin:0; }
+  .sub { font-size:.8125rem; color:rgba(255,255,255,.5); margin-top:6px; font-weight:500; }
+  .eta-wrap { text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+  .pill { display:inline-flex; align-items:center; gap:8px; padding:4px 12px; border-radius:999px; background:rgba(16,19,27,.6); border:1px solid var(--line); }
+  .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  .pill span { font-size:8px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); }
+  .eta-num { font-size:2rem; font-weight:900; font-style:italic; color:#fff; font-family:'Space Mono',monospace; line-height:1; }
+  .eta-lbl { font-size:.7rem; font-weight:700; letter-spacing:.1em; color:var(--accent); text-transform:uppercase; margin-left:6px; }
+
+  .progress { height:2px; background:rgba(255,255,255,.06); flex-shrink:0; }
+  .progress > div { height:100%; width:65%; background:linear-gradient(90deg,#3B9EFF,#adc6ff); }
+
+  /* Body split */
+  .body { display:flex; overflow:hidden; flex:1; min-height:0; }
+  .panel { flex:1; min-width:0; overflow:hidden; border-right:6px solid rgba(255,255,255,.6); }
+  .panel:last-child { border-right:none; }
+
+  /* MAP panel */
+  .map-wrap { position:relative; background:var(--map); height:100%; overflow:hidden; }
+  .map-title { position:absolute; top:0; left:0; right:0; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:10px 16px 8px; background:linear-gradient(to bottom, rgba(10,21,32,.9) 0%, rgba(10,21,32,0) 100%); pointer-events:none; }
+  .map-title-left { display:flex; align-items:center; gap:8px; color:var(--accent); }
+  .map-title-left b { font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+  .map-title-right { display:flex; gap:6px; pointer-events:auto; }
+  .chip { font-size:8px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 8px; border-radius:4px; background:rgba(173,198,255,.08); border:1px solid rgba(173,198,255,.18); color:var(--accent); }
+  .chip.on { background:rgba(59,158,255,.18); border-color:rgba(59,158,255,.45); color:#cfe0ff; }
+
+  .canvas { position:absolute; inset:0; }
+  .streets { position:absolute; inset:0; background:
+      linear-gradient(#132033 1px, transparent 1px) 0 0/100% 60px,
+      linear-gradient(90deg,#132033 1px, transparent 1px) 0 0/80px 100%;
+    opacity:.55;
+  }
+  .road { position:absolute; background:rgba(173,198,255,.06); }
+  .road.h { left:0; right:0; height:10px; }
+  .road.v { top:0; bottom:0; width:10px; }
+  .road.hi { background:rgba(173,198,255,.12); }
+  .road-label { position:absolute; font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:rgba(173,198,255,.35); font-family:'Space Mono',monospace; }
+
+  .building { position:absolute; background:rgba(59,158,255,.05); border:1px solid rgba(59,158,255,.18); border-radius:3px; }
+  .building.target { background:rgba(255,69,96,.08); border:1px solid rgba(255,69,96,.5); box-shadow:0 0 0 3px rgba(255,69,96,.06); }
+  .building-label { position:absolute; font-size:9px; font-weight:800; letter-spacing:.08em; color:#FF8C9E; font-family:'Space Mono',monospace; text-transform:uppercase; }
+
+  .marker { position:absolute; transform:translate(-50%,-50%); display:flex; align-items:center; gap:6px; }
+  .dot-m { width:14px; height:14px; border-radius:50%; background:var(--blue); border:2px solid #fff; box-shadow:0 0 0 3px rgba(59,158,255,.25); }
+  .dot-m.incident { background:var(--warn); box-shadow:0 0 0 3px rgba(255,69,96,.25); }
+  .dot-m.muted { width:10px; height:10px; background:var(--mute); box-shadow:none; border-color:rgba(255,255,255,.4); }
+  .m-label { font-size:9px; font-weight:800; color:#fff; font-family:'Space Mono',monospace; background:rgba(10,21,32,.75); border:1px solid var(--line); padding:2px 6px; border-radius:3px; letter-spacing:.08em; }
+
+  .legend { position:absolute; left:12px; bottom:12px; z-index:3; display:flex; flex-direction:column; gap:4px; background:rgba(10,21,32,.7); border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:9px; letter-spacing:.08em; color:rgba(255,255,255,.65); font-family:'Space Mono',monospace; }
+  .legend .row { display:flex; align-items:center; gap:8px; }
+  .legend .sw { width:8px; height:8px; border-radius:50%; }
+
+  .scale { position:absolute; right:12px; bottom:12px; z-index:3; font-size:8px; color:rgba(255,255,255,.45); letter-spacing:.12em; text-transform:uppercase; font-family:'Space Mono',monospace; text-align:right; }
+  .scale .line { width:60px; height:3px; background:rgba(255,255,255,.4); margin-top:3px; margin-left:auto; }
+
+  /* UNITS panel */
+  .units-wrap { display:flex; flex-direction:column; overflow:hidden; height:100%; }
+  .units-header { display:flex; align-items:center; justify-content:space-between; padding:12px 16px 8px; border-bottom:1px solid var(--line); flex-shrink:0; }
+  .units-header-left { display:flex; align-items:center; gap:8px; color:var(--accent); }
+  .units-header-left b { font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+  .counter { font-size:9px; font-weight:700; font-family:'Space Mono',monospace; color:rgba(255,255,255,.55); letter-spacing:.08em; }
+  .counter em { color:var(--good); font-style:normal; }
+
+  .units-list { flex:1; overflow-y:auto; }
+  .unit { padding:12px 16px; border-bottom:1px solid rgba(255,255,255,.04); display:grid; grid-template-columns:1fr auto; gap:6px 10px; border-left:3px solid transparent; }
+  .unit.active { border-left-color:var(--blue); background:rgba(59,158,255,.05); }
+  .u-id { font-size:11px; font-weight:700; color:var(--text); letter-spacing:.03em; font-family:'Space Mono',monospace; }
+  .unit:not(.active) .u-id { color:var(--mute); }
+  .u-role { font-size:8px; color:var(--mute); margin-top:2px; letter-spacing:.05em; text-transform:uppercase; }
+  .u-right { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+  .u-status { display:flex; align-items:center; gap:6px; font-size:8px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; }
+  .u-status .dt { width:7px; height:7px; border-radius:50%; background:var(--mute); }
+  .u-status.on .dt { background:var(--blue); } .u-status.on { color:var(--blue); }
+  .u-status.en .dt { background:var(--good); } .u-status.en { color:var(--good); }
+  .u-status.av .dt { background:var(--good); } .u-status.av { color:var(--good); }
+  .u-status.sb .dt { background:var(--mute); } .u-status.sb { color:var(--mute); }
+  .u-meta { grid-column:1 / -1; display:flex; gap:12px; font-size:8px; color:rgba(255,255,255,.45); letter-spacing:.08em; text-transform:uppercase; font-family:'Space Mono',monospace; }
+  .u-meta span b { color:rgba(255,255,255,.75); font-weight:700; }
+
+  .modules { padding:10px 16px; border-top:1px solid var(--line); flex-shrink:0; display:flex; flex-wrap:wrap; gap:5px; }
+  .mod { font-size:7px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; border-radius:4px; background:rgba(173,198,255,.08); border:1px solid rgba(173,198,255,.18); color:var(--accent); }
+
+  /* PHONE panel (unchanged from real SplitLayout) */
+  .phone-wrap { display:flex; flex-direction:column; align-items:center; padding:12px 24px 0; overflow-y:auto; height:100%; background:radial-gradient(ellipse at 50% 44%, #2a5280 0%, #111e2f 70%); }
+  .phone-title { width:100%; display:flex; align-items:center; gap:8px; margin-bottom:12px; color:var(--accent); }
+  .phone-title b { font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+  .phone-title .ln { flex:1; height:1px; background:rgba(173,198,255,.15); }
+  .iphone { position:relative; width:260px; border-radius:46px; background:linear-gradient(160deg,#2a2a2c 0%,#1a1a1c 50%,#111113 100%); border:1px solid rgba(255,255,255,.12); box-shadow:0 0 60px rgba(59,158,255,.1), 0 32px 64px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.1); padding:10px; }
+  .iphone .screen { border-radius:38px; overflow:hidden; background:var(--bg); display:flex; flex-direction:column; }
+  .statusbar { display:flex; justify-content:space-between; align-items:center; padding:6px 14px 2px; background:#000; }
+  .statusbar > span { font-family:monospace; font-size:8px; color:rgba(255,255,255,.4); letter-spacing:.08em; }
+  .island { display:flex; justify-content:center; padding:10px 0 6px; background:#000; }
+  .island > div { width:80px; height:22px; border-radius:11px; background:#000; border:1px solid rgba(255,255,255,.06); }
+  .alert-head { display:flex; justify-content:space-between; align-items:center; padding:8px 14px; background:linear-gradient(90deg,#c25b3f,#e07b5a); }
+  .alert-head b { font-size:9px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:#fff; }
+  .alert-head .prio { font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.8); }
+  .cam { position:relative; height:110px; background:#000; overflow:hidden; }
+  .cam .lbl { position:absolute; top:6px; left:8px; font-size:7px; font-weight:700; letter-spacing:.08em; color:rgba(255,255,255,.5); font-family:monospace; z-index:2; }
+  .cam .badge { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); background:rgba(255,69,96,.2); border:1.5px solid var(--warn); padding:3px 12px; border-radius:2px; font-size:8px; font-weight:800; color:var(--warn); letter-spacing:.15em; white-space:nowrap; z-index:2; }
+  .cam-bg { position:absolute; inset:0; background:linear-gradient(135deg,#1a2a3a,#0a1520); filter:brightness(.65); }
+  .rows { padding:10px 14px 8px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:6px; }
+  .rows .r { display:flex; justify-content:space-between; align-items:center; }
+  .rows .k { font-size:8px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); }
+  .rows .v { font-size:11px; font-weight:800; font-family:monospace; color:var(--text); }
+  .officer { padding:6px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+  .officer .av { width:22px; height:22px; border-radius:50%; background:rgba(59,158,255,.15); border:1px solid rgba(59,158,255,.3); display:flex; align-items:center; justify-content:center; color:var(--blue); }
+  .officer .nm { font-size:9px; font-weight:700; color:var(--text); letter-spacing:.05em; }
+  .officer .sb { font-size:7px; color:var(--mute); letter-spacing:.08em; text-transform:uppercase; }
+  .minimap { margin:8px 14px; border-radius:6px; height:64px; overflow:hidden; border:1px solid var(--line); position:relative; background:#0a1520; display:flex; align-items:center; justify-content:center; }
+  .minimap span { font-size:7px; font-weight:700; letter-spacing:.1em; color:rgba(173,198,255,.6); text-transform:uppercase; font-family:monospace; }
+  .ctas { padding:0 14px 10px; display:flex; flex-direction:column; gap:6px; }
+  .ctas button { width:100%; padding:9px 0; border-radius:8px; border:none; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; font-family:'Manrope',sans-serif; }
+  .ctas .accept { background:#059669; color:#fff; }
+  .ctas .ptt { background:transparent; border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.45); }
+  .bodycam { display:flex; align-items:center; justify-content:center; gap:6px; padding:6px 0 8px; background:var(--bg); color:var(--mute); font-size:8px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-family:monospace; }
+  .bodycam .d { width:5px; height:5px; border-radius:50%; background:var(--mute); }
+  .home { display:flex; justify-content:center; padding:6px 0 8px; background:#000; }
+  .home > div { width:80px; height:4px; border-radius:2px; background:rgba(255,255,255,.2); }
+  .stage-lbl { margin-top:12px; margin-bottom:12px; text-align:center; font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); }
+</style>
+</head>
+<body>
+<div class="banner">🧪 Preview · Restrained enhancement · Built on the real SplitLayout HTML · Not wired in</div>
+<div class="root">
+
+  <div class="header">
+    <div>
+      <div class="eyebrow"><span>STAGE 04: ACT — RESPONSE ACTIVE</span><div class="bar"></div></div>
+      <h2 class="headline">Officers Converging</h2>
+      <p class="sub">UNIT-9 · En Route</p>
+    </div>
+    <div class="eta-wrap">
+      <div class="pill"><span class="dot pulse"></span><span>Live Monitoring</span></div>
+      <div><span class="eta-num">1.4</span><span class="eta-lbl">MIN ETA</span></div>
+    </div>
+  </div>
+  <div class="progress"><div></div></div>
+
+  <div class="body">
+
+    <!-- PANEL 1 — Phone (unchanged) -->
+    <div class="panel">
+      <div class="phone-wrap">
+        <div class="phone-title"><span class="material-symbols-outlined" style="font-size:16px">smartphone</span><b>First Responder Application</b><span class="ln"></span></div>
+        <div class="iphone">
+          <div class="screen">
+            <div class="statusbar"><span>9:41</span><div style="display:flex;gap:4px;color:rgba(255,255,255,.5)"><span class="material-symbols-outlined" style="font-size:11px">signal_cellular_4_bar</span><span class="material-symbols-outlined" style="font-size:11px">wifi</span><span class="material-symbols-outlined" style="font-size:11px">battery_5_bar</span></div></div>
+            <div class="island"><div></div></div>
+            <div class="alert-head"><div style="display:flex;align-items:center;gap:6px"><span class="pulse" style="width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block"></span><b>Dispatch Alert</b></div><span class="prio">Priority 1</span></div>
+            <div class="cam"><div class="cam-bg"></div><div class="lbl">CAM-07 · EAST WING L3</div><div class="badge">ACCESS BREACH · AC-2281</div></div>
+            <div class="rows">
+              <div class="r"><span class="k">INCIDENT</span><span class="v">FORCED ENTRY</span></div>
+              <div class="r"><span class="k">BUILDING</span><span class="v">1800 W LOOP S</span></div>
+              <div class="r"><span class="k">STATUS</span><span class="v" style="color:var(--warn)">LOCKED DOWN</span></div>
+            </div>
+            <div class="officer">
+              <div style="display:flex;align-items:center;gap:6px">
+                <div class="av"><span class="material-symbols-outlined" style="font-size:12px">person</span></div>
+                <div><div class="nm">UNIT-9</div><div class="sb">Officer T. Reyes</div></div>
+              </div>
+              <div style="text-align:right"><div style="display:flex;align-items:center;gap:4px;justify-content:flex-end"><span style="width:5px;height:5px;border-radius:50%;background:var(--good);display:inline-block"></span><span style="font-size:8px;color:var(--good);font-weight:700;letter-spacing:.08em">EN ROUTE</span></div><div style="font-size:7px;color:var(--mute);font-family:monospace;margin-top:1px">ETA 1.4 MIN</div></div>
+            </div>
+            <div class="minimap"><span>NAVIGATION · ROUTE ACTIVE</span></div>
+            <div class="ctas">
+              <button class="accept"><span class="material-symbols-outlined" style="font-size:13px">check_circle</span>Accepted — En Route</button>
+              <button class="ptt"><span class="material-symbols-outlined" style="font-size:13px">mic</span>Push to Talk</button>
+            </div>
+            <div class="bodycam"><span class="d"></span>Body Cam — Standby</div>
+            <div class="home"><div></div></div>
+          </div>
+        </div>
+        <div class="stage-lbl">STAGE 04: ACT — RESPONSE ACTIVE</div>
+      </div>
+    </div>
+
+    <!-- PANEL 2 — Operational map (restrained) -->
+    <div class="panel">
+      <div class="map-wrap">
+        <div class="map-title">
+          <div class="map-title-left"><span class="material-symbols-outlined">map</span><b>Operational Map</b></div>
+          <div class="map-title-right"><span class="chip on">Routes</span><span class="chip">Zones</span></div>
+        </div>
+        <div class="canvas">
+          <div class="streets"></div>
+          <div class="road h hi" style="top:38%"></div>
+          <div class="road v hi" style="left:28%"></div>
+          <div class="road-label" style="top:calc(38% - 14px); left:12px">W LOOP S</div>
+          <div class="road-label" style="left:calc(28% + 6px); top:10px">WESTHEIMER</div>
+
+          <div class="building" style="left:50%; top:46%; width:120px; height:80px"></div>
+          <div class="building target" style="left:60%; top:52%; width:90px; height:58px"></div>
+          <div class="building-label" style="left:60%; top:calc(52% - 14px)">1800 W LOOP S</div>
+
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#3B9EFF"/>
+              </marker>
+              <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#00C98A"/>
+              </marker>
+            </defs>
+            <path d="M 85,22 L 75,35 L 66,56" stroke="#3B9EFF" stroke-width=".6" fill="none" stroke-dasharray="1.2,1" marker-end="url(#arr)"/>
+            <path d="M 15,75 L 35,65 L 58,58" stroke="#00C98A" stroke-width=".6" fill="none" stroke-dasharray="1.2,1" marker-end="url(#arrG)"/>
+          </svg>
+
+          <div class="marker" style="left:64%; top:56%"><div class="dot-m incident pulse"></div><div class="m-label" style="color:#FF8C9E">AC-2281</div></div>
+          <div class="marker" style="left:85%; top:22%"><div class="dot-m"></div><div class="m-label">UNIT-9</div></div>
+          <div class="marker" style="left:15%; top:75%"><div class="dot-m" style="background:#00C98A;box-shadow:0 0 0 3px rgba(0,201,138,.25)"></div><div class="m-label" style="color:#00C98A">SEC-1</div></div>
+          <div class="marker" style="left:22%; top:28%"><div class="dot-m muted"></div><div class="m-label" style="color:rgba(255,255,255,.6)">UNIT-3</div></div>
+
+          <div class="legend">
+            <div class="row"><span class="sw" style="background:var(--warn)"></span>Incident</div>
+            <div class="row"><span class="sw" style="background:var(--blue)"></span>Primary unit</div>
+            <div class="row"><span class="sw" style="background:var(--good)"></span>On scene / support</div>
+          </div>
+          <div class="scale">500 FT<div class="line"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3 — Tactical units (restrained) -->
+    <div class="panel">
+      <div class="units-wrap">
+        <div class="units-header">
+          <div class="units-header-left"><span class="material-symbols-outlined">monitor</span><b>Tactical Units</b></div>
+          <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+        </div>
+        <div class="units-list">
+
+          <div class="unit active">
+            <div><div class="u-id">SEC-1</div><div class="u-role">Level 3 · Approaching</div></div>
+            <div class="u-right"><div class="u-status on"><span class="dt"></span>Assigned</div></div>
+            <div class="u-meta"><span><b>J. Ortega</b></span><span>150 FT</span><span>CH-2</span></div>
+          </div>
+
+          <div class="unit active">
+            <div><div class="u-id">SEC-2</div><div class="u-role">Stairwell B</div></div>
+            <div class="u-right"><div class="u-status en"><span class="dt"></span>En Route</div></div>
+            <div class="u-meta"><span><b>L. Park</b></span><span>320 FT</span><span>CH-2</span></div>
+          </div>
+
+          <div class="unit active">
+            <div><div class="u-id">UNIT-9</div><div class="u-role">Primary response</div></div>
+            <div class="u-right"><div class="u-status en"><span class="dt"></span>En Route</div></div>
+            <div class="u-meta"><span><b>T. Reyes</b></span><span>0.3 MI · ETA 1.4</span><span>CH-1</span></div>
+          </div>
+
+          <div class="unit">
+            <div><div class="u-id">UNIT-3</div><div class="u-role">Building perimeter</div></div>
+            <div class="u-right"><div class="u-status sb"><span class="dt"></span>Standby</div></div>
+            <div class="u-meta"><span><b>R. Silva</b></span><span>0.6 MI</span><span>CH-1</span></div>
+          </div>
+
+          <div class="unit">
+            <div><div class="u-id">K9-2</div><div class="u-role">K9 · On standby</div></div>
+            <div class="u-right"><div class="u-status av"><span class="dt"></span>Available</div></div>
+            <div class="u-meta"><span><b>M. Chen</b></span><span>0.9 MI</span><span>CH-3</span></div>
+          </div>
+
+        </div>
+        <div class="modules">
+          <div class="mod">911 &amp; DISPATCH</div>
+          <div class="mod">FIRST RESPONDER APPS</div>
+          <div class="mod">GIS &amp; SITUATIONAL AWARENESS</div>
+          <div class="mod">INTEGRATIONS</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

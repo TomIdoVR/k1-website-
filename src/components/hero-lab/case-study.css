@@ -1,0 +1,132 @@
+/* Case study — ported from the Claude Design project (home/proof.css,
+   the .cust-* rules). Shared .section/.wrap/.eyebrow classes inlined as
+   .cust-* so this section stands alone. This is the design's dark
+   "moment" — it intentionally keeps the dark navy theme on the light
+   homepage, same as the hero's dark console frame. */
+
+.cust {
+  position: relative;
+  padding-block: clamp(52px, 6vw, 88px);
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(180deg, #0f1724, #0c1626);
+}
+
+.cust-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+
+.cust-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3dd6ef;
+}
+
+/* image-led hero: metric + customer sit over the photograph */
+.cust-hero {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  /* Flat 340px, not clamp(240px, 26vw, 340px). The vw term shrank the photo
+     to 238px tall on a phone, so the narrower the screen the more of the
+     photograph object-fit: cover cropped away — narrow AND short. Holding the
+     height means only the width changes with the viewport. */
+  min-height: 340px;
+  background: #0a1424;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cust-photo { object-fit: cover; }
+.cust-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(6, 12, 22, 0.95) 2%, rgba(6, 12, 22, 0.78) 30%, rgba(6, 12, 22, 0.42) 66%, rgba(6, 12, 22, 0.3) 100%);
+}
+.cust-overlay { position: absolute; inset: auto 0 0 0; z-index: 2; padding: clamp(20px, 2.8vw, 42px); }
+.cust-headline { display: flex; flex-direction: column; gap: 2px; }
+.cust-metric-v {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  line-height: 0.9;
+  font-size: clamp(52px, 7.6vw, 112px);
+  letter-spacing: -0.02em;
+  background: linear-gradient(100deg, #fff 30%, #3dd6ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.cust-metric-l {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-size: clamp(19px, 2.3vw, 31px);
+  color: #fff;
+  letter-spacing: 0.005em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+.cust-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 16px; }
+.cust-meta-1 {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(17px, 1.8vw, 23px);
+  color: #fff;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.cust-meta-sep { width: 26px; height: 1px; background: rgba(255, 255, 255, 0.3); }
+.cust-meta-2 { font-family: 'DM Mono', ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #3dd6ef; }
+
+/* below the image: outcomes + supporting metrics + quote */
+.cust-below { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 2.6vw, 44px); margin-top: clamp(26px, 3vw, 40px); }
+.cust-impact-label, .cust-metric-c { font-family: 'DM Mono', ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
+.cust-impact-label { font-size: 12px; color: #93a7c2; margin-bottom: 18px; }
+.cust-impact-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; }
+.cust-impact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(16px, 1.7vw, 21px);
+  color: #eaf2fb;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.cust-impact-list li:first-child { padding-top: 0; }
+.cust-impact-list li:last-child { border-bottom: none; }
+.cust-dot { width: 6px; height: 6px; border-radius: 50%; background: #3dd6ef; box-shadow: 0 0 10px #3dd6ef; flex-shrink: 0; }
+
+.cust-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 26px; }
+.cust-metric { display: flex; flex-direction: column; gap: 7px; padding: 16px 14px; border-radius: 14px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.08); }
+.cust-metric-n {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(19px, 2vw, 27px);
+  line-height: 1.05;
+  color: #fff;
+  text-transform: uppercase;
+}
+.cust-metric-c { font-size: 10.5px; color: #93a7c2; line-height: 1.35; }
+
+.cust-quote {
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.36;
+  color: #eaf1fa;
+  letter-spacing: 0.005em;
+  border-left: 2px solid #22b8d4;
+  padding-left: 20px;
+  margin: 0;
+}
+.cust-cite { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 13.5px; color: #93a7c2; margin-top: 12px; font-style: normal; letter-spacing: 0; }
+/* #6a7d96 measured 4.3:1 on the dark band — just under the 4.5 AA floor. */
+.cust-illu-note { font-size: 12.5px; color: #73859c; margin-top: 16px; }
+
+@media (max-width: 900px) { .cust-below { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .cust-metrics { grid-template-columns: 1fr; } }

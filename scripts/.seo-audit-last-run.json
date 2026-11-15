@@ -1,0 +1,13 @@
+{
+  "date": "2026-07-11",
+  "url": "https://staging.kabatone.com",
+  "pagesAudited": 71,
+  "critical": 0,
+  "warnings": 0,
+  "info": 11,
+  "newIssues": 0,
+  "resolvedIssues": 0,
+  "action": "silent-exit",
+  "shipped": false,
+  "note": "Zero new issues + zero fixes per KAB-1569 contract. No commit, no KAB-807 comment, no child issues. Next audit due 2026-07-12."
+}

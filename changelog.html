@@ -356,6 +356,19 @@
 
     <div class="timeline">
 
+      <!-- v2.407 -->
+      <div class="tl-entry added" id="v2.407">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.407</span><span class="tl-date">2026-11-15</span></div>
+          <h3 class="tl-title">Commit the hero redesign and tooling work that lived only on disk</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added:</strong> the hero-lab redesign work that was previously untracked: components, the <code>hero-lab*</code> routes and CSS, the hero, module and customer images, design source files, plans and prototypes, plus project tooling (<code>.claude/launch.json</code>, <code>.impeccable</code>).</p>
+          <p><strong>Changed:</strong> <code>AGENTS.md</code> gains a heading for imported Cowork instructions (no body yet).</p>
+          <p><strong>Notes:</strong> <code>.codex/config.toml</code> (holds an API key) is not committed and now ignored. <code>.k1/local</code> and <code>.k1/runs</code> (locks, person maps, run logs) are not committed and now ignored. Nested worktrees (<code>.worktrees/</code>, <code>.claude/worktrees/</code>) are not committed, nor are <code>.claude/skills</code>, <code>.claude/agents</code>, <code>research_notes/</code> and <code>reports/</code>, whose files are OneDrive cloud-only placeholders that cannot be read. No tracked file references hero-lab, so <code>/</code> on this branch is unchanged.</p>
+        </div>
+      </div>
+
       <!-- v2.406 -->
       <div class="tl-entry changed" id="v2.406">
         <div class="version-header">

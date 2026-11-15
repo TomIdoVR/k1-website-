@@ -1,0 +1,57 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js dev (kabatone-next)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "careers-prod worktree",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/private/tmp/claude-501/-Users-omercnaani-Library-CloudStorage-OneDrive-SYMSERVICIOSINTEGRALESSADECV-Claude-k1-Website/9eaa2f84-e0c0-4a12-abc2-7a6d76c5ce06/scratchpad/src-verify",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3200"
+      ],
+      "port": 3200
+    },
+    {
+      "name": "cad-wave1 worktree (prod build)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/omercnaani/dev/k1-cad-w1",
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3410"
+      ],
+      "port": 3410
+    },
+    {
+      "name": "motion-review clone",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/omercnaani/k1-review/k1-website",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3300"
+      ],
+      "port": 3300
+    }
+  ]
+}

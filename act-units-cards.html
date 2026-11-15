@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ACT · Tactical Units — Card Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<style>
+  :root { --bg:#162235; --line:rgba(255,255,255,.06); --mute:#48647A; --text:#E0ECF8; --accent:#adc6ff; --blue:#3B9EFF; --good:#00C98A; --warn:#FF4560; --amber:#FFB547; --purple:#a78bfa; }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0a0f18;color:var(--text);font-family:'Manrope',sans-serif}
+  .banner{background:#ffd84d;color:#1a1a1a;font-weight:800;font-size:12px;letter-spacing:.08em;padding:8px 14px;text-align:center;text-transform:uppercase}
+  .pulse{animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:16px;min-height:calc(100vh - 32px)}
+  .col{display:flex;flex-direction:column;background:var(--bg);border-radius:8px;border:1px solid var(--line);overflow:hidden}
+  .col-tag{padding:10px 14px;background:rgba(173,198,255,.06);border-bottom:1px solid var(--line);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:#fff;display:flex;justify-content:space-between;align-items:center}
+  .col-tag em{font-size:8px;font-weight:600;letter-spacing:.1em;color:rgba(173,198,255,.6);font-style:normal;text-transform:none}
+
+  .units-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px;border-bottom:1px solid var(--line)}
+  .uh-l{display:flex;align-items:center;gap:8px;color:var(--accent)}
+  .uh-l b{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+  .counter{font-size:9px;font-weight:700;font-family:'Space Mono',monospace;color:rgba(255,255,255,.55);letter-spacing:.08em}
+  .counter em{color:var(--good);font-style:normal}
+
+  .scroll{flex:1;overflow-y:auto;padding:12px}
+  .mods{padding:10px 14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:5px}
+  .mod{font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(173,198,255,.08);border:1px solid rgba(173,198,255,.18);color:var(--accent)}
+
+  /* shared color helpers */
+  .role-color-blue{color:var(--blue)} .role-color-green{color:var(--good)} .role-color-amber{color:var(--amber)} .role-color-mute{color:var(--mute)}
+  .bg-blue{background:var(--blue)} .bg-green{background:var(--good)} .bg-amber{background:var(--amber)} .bg-mute{background:var(--mute)} .bg-warn{background:var(--warn)}
+
+  /* ============ CONCEPT 1 — Roster cards (vertical photo + stats) ============ */
+  .r1-stack{display:flex;flex-direction:column;gap:10px}
+  .r1-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:8px;overflow:hidden;display:grid;grid-template-columns:60px 1fr;gap:0}
+  .r1-card.active{border-color:rgba(59,158,255,.4);box-shadow:inset 3px 0 0 var(--blue),0 4px 16px rgba(59,158,255,.08)}
+  .r1-card.lead{border-color:rgba(255,69,96,.45);box-shadow:inset 3px 0 0 var(--warn),0 4px 16px rgba(255,69,96,.08)}
+  .r1-photo{background:linear-gradient(135deg,#1f3756 0%,#0a1729 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 0;border-right:1px solid var(--line);position:relative}
+  .r1-photo .ico{width:32px;height:32px;border-radius:50%;background:rgba(173,198,255,.08);border:1px solid rgba(173,198,255,.25);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+  .r1-photo .ico .material-symbols-outlined{font-size:18px}
+  .r1-photo .badge{font-size:7px;letter-spacing:.1em;color:rgba(255,255,255,.4);font-family:'Space Mono',monospace;font-weight:700}
+  .r1-body{padding:10px 12px;min-width:0;display:flex;flex-direction:column;gap:6px}
+  .r1-top{display:flex;justify-content:space-between;align-items:center}
+  .r1-id{font-size:13px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;letter-spacing:.04em}
+  .r1-card:not(.active):not(.lead) .r1-id{color:rgba(255,255,255,.55)}
+  .r1-status{display:inline-flex;align-items:center;gap:5px;font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px}
+  .r1-status .d{width:5px;height:5px;border-radius:50%}
+  .r1-status.on{background:rgba(255,69,96,.15);color:#ff8c9e}.r1-status.on .d{background:var(--warn)}
+  .r1-status.en{background:rgba(0,201,138,.15);color:var(--good)}.r1-status.en .d{background:var(--good)}
+  .r1-status.av{background:rgba(0,201,138,.08);color:var(--good)}.r1-status.av .d{background:var(--good)}
+  .r1-status.sb{background:rgba(72,100,122,.15);color:var(--mute)}.r1-status.sb .d{background:var(--mute)}
+  .r1-meta{display:flex;justify-content:space-between;align-items:center}
+  .r1-name{font-size:9px;font-weight:700;color:var(--text);letter-spacing:.05em;text-transform:uppercase}
+  .r1-role{font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .r1-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.05)}
+  .r1-stats > div{text-align:center}
+  .r1-stats .n{font-size:11px;font-weight:800;font-family:'Space Mono',monospace;color:#fff;line-height:1}
+  .r1-stats .l{font-size:6.5px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase;font-weight:700;margin-top:2px}
+  .r1-stats .n.warn{color:var(--warn)}.r1-stats .n.g{color:var(--good)}
+
+  /* ============ CONCEPT 2 — Tactical badge cards (color band + iconic) ============ */
+  .r2-stack{display:flex;flex-direction:column;gap:8px}
+  .r2-card{position:relative;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:6px;padding:11px 12px 11px 16px;overflow:hidden}
+  .r2-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--mute)}
+  .r2-card.lead::before{background:linear-gradient(180deg,var(--warn),#c83a52)}
+  .r2-card.lead{background:rgba(255,69,96,.05)}
+  .r2-card.en::before{background:linear-gradient(180deg,var(--good),#03936a)}
+  .r2-card.en{background:rgba(0,201,138,.04)}
+  .r2-card.sb::before{background:linear-gradient(180deg,var(--mute),#2f4156)}
+  .r2-card.av::before{background:linear-gradient(180deg,var(--amber),#c8851d)}
+  .r2-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .r2-l{display:flex;align-items:center;gap:10px;min-width:0}
+  .r2-icn{width:36px;height:36px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+  .r2-icn .material-symbols-outlined{font-size:20px}
+  .r2-card.lead .r2-icn{background:rgba(255,69,96,.15);border-color:rgba(255,69,96,.35);color:#ff8c9e}
+  .r2-card.en .r2-icn{background:rgba(0,201,138,.12);border-color:rgba(0,201,138,.3);color:var(--good)}
+  .r2-card.av .r2-icn{background:rgba(255,181,71,.12);border-color:rgba(255,181,71,.3);color:var(--amber)}
+  .r2-card.sb .r2-icn{color:var(--mute)}
+  .r2-id-line{display:flex;align-items:baseline;gap:8px}
+  .r2-id{font-size:13px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;letter-spacing:.04em;line-height:1}
+  .r2-card.sb .r2-id{color:rgba(255,255,255,.6)}
+  .r2-name{font-size:9px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase}
+  .r2-role-line{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:3px}
+  .r2-card.lead .r2-role-line{color:#ff8c9e}
+  .r2-r{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .r2-status-tag{font-size:7.5px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:rgba(0,0,0,.25);color:rgba(255,255,255,.85)}
+  .r2-card.lead .r2-status-tag{background:var(--warn);color:#fff}
+  .r2-card.en .r2-status-tag{background:rgba(0,201,138,.2);color:var(--good)}
+  .r2-card.av .r2-status-tag{background:rgba(255,181,71,.18);color:var(--amber)}
+  .r2-card.sb .r2-status-tag{background:rgba(72,100,122,.2);color:var(--mute)}
+  .r2-eta{font-size:14px;font-weight:900;font-family:'Space Mono',monospace;font-style:italic;color:#fff;line-height:1}
+  .r2-eta.mute{color:var(--mute)}
+  .r2-eta-l{font-size:7px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase;font-weight:700;margin-top:2px}
+  .r2-foot{display:flex;align-items:center;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.05);font-size:8px;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase;font-family:'Space Mono',monospace}
+  .r2-foot .item{display:inline-flex;align-items:center;gap:4px}
+  .r2-foot .item .material-symbols-outlined{font-size:11px;color:var(--accent)}
+  .r2-foot b{color:#fff;font-weight:700}
+
+  /* ============ CONCEPT 3 — Player / trading cards (compact 2-col grid) ============ */
+  .r3-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .r3-card{background:linear-gradient(160deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,.01) 60%);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .r3-card.lead{border-color:rgba(255,69,96,.45);background:linear-gradient(160deg,rgba(255,69,96,.08) 0%,rgba(255,255,255,.01) 60%)}
+  .r3-card.en{border-color:rgba(0,201,138,.3);background:linear-gradient(160deg,rgba(0,201,138,.06) 0%,rgba(255,255,255,.01) 60%)}
+  .r3-corner{position:absolute;top:6px;right:6px;font-size:7px;font-weight:900;letter-spacing:.14em;color:rgba(255,255,255,.4);font-family:'Space Mono',monospace}
+  .r3-top{padding:12px 12px 10px;border-bottom:1px dashed rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:flex-start;gap:6px;flex:1}
+  .r3-portrait{width:42px;height:42px;border-radius:50%;background:rgba(173,198,255,.08);border:2px solid rgba(173,198,255,.25);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Space Mono',monospace;font-size:11px;font-weight:800}
+  .r3-card.lead .r3-portrait{background:rgba(255,69,96,.12);border-color:rgba(255,69,96,.4);color:#ff8c9e}
+  .r3-card.en .r3-portrait{background:rgba(0,201,138,.12);border-color:rgba(0,201,138,.4);color:var(--good)}
+  .r3-id{font-size:12px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;letter-spacing:.04em}
+  .r3-name{font-size:8px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase}
+  .r3-role{font-size:7px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);padding:2px 6px;border-radius:3px;background:rgba(173,198,255,.08)}
+  .r3-card.lead .r3-role{color:#ff8c9e;background:rgba(255,69,96,.1)}
+  .r3-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.05)}
+  .r3-stats > div{padding:7px 8px;background:rgba(0,0,0,.15);text-align:center}
+  .r3-stats .n{font-size:11px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;line-height:1}
+  .r3-stats .n.g{color:var(--good)}.r3-stats .n.warn{color:var(--warn)}.r3-stats .n.mute{color:var(--mute)}
+  .r3-stats .l{font-size:6.5px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase;font-weight:700;margin-top:2px}
+  .r3-foot{padding:6px 10px;display:flex;justify-content:space-between;align-items:center;font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;background:rgba(0,0,0,.25)}
+  .r3-foot .st{display:flex;align-items:center;gap:4px}
+  .r3-foot .st .d{width:5px;height:5px;border-radius:50%}
+  .r3-foot.on{color:#ff8c9e}.r3-foot.on .d{background:var(--warn)}
+  .r3-foot.en{color:var(--good)}.r3-foot.en .d{background:var(--good)}
+  .r3-foot.av{color:var(--amber)}.r3-foot.av .d{background:var(--amber)}
+  .r3-foot.sb{color:var(--mute)}.r3-foot.sb .d{background:var(--mute)}
+  .r3-foot .ch{color:rgba(255,255,255,.4);font-family:'Space Mono',monospace}
+
+</style>
+</head>
+<body>
+<div class="banner">🧪 Tactical Units · 3 card concepts</div>
+
+<div class="grid">
+
+  <!-- ============ CONCEPT 1 ============ -->
+  <div class="col">
+    <div class="col-tag">1 · Roster Card<em>vertical photo strip + 3-stat row</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="scroll">
+      <div class="r1-stack">
+
+        <div class="r1-card lead">
+          <div class="r1-photo"><div class="ico"><span class="material-symbols-outlined">security</span></div><div class="badge">#4471</div></div>
+          <div class="r1-body">
+            <div class="r1-top"><div class="r1-id">SEC-1</div><span class="r1-status on"><span class="d pulse"></span>On Scene</span></div>
+            <div class="r1-meta"><div class="r1-name">J. Ortega</div><div class="r1-role">Level 3 · Approaching</div></div>
+            <div class="r1-stats">
+              <div><div class="n warn">0:18</div><div class="l">TO BREACH</div></div>
+              <div><div class="n">150 FT</div><div class="l">DISTANCE</div></div>
+              <div><div class="n">CH-2</div><div class="l">RADIO</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r1-card active">
+          <div class="r1-photo"><div class="ico"><span class="material-symbols-outlined">security</span></div><div class="badge">#4488</div></div>
+          <div class="r1-body">
+            <div class="r1-top"><div class="r1-id">SEC-2</div><span class="r1-status en"><span class="d"></span>En Route</span></div>
+            <div class="r1-meta"><div class="r1-name">L. Park</div><div class="r1-role">Stairwell B</div></div>
+            <div class="r1-stats">
+              <div><div class="n g">0:48</div><div class="l">ETA</div></div>
+              <div><div class="n">320 FT</div><div class="l">DISTANCE</div></div>
+              <div><div class="n">CH-2</div><div class="l">RADIO</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r1-card active">
+          <div class="r1-photo"><div class="ico"><span class="material-symbols-outlined">local_police</span></div><div class="badge">#9012</div></div>
+          <div class="r1-body">
+            <div class="r1-top"><div class="r1-id">UNIT-9</div><span class="r1-status en"><span class="d"></span>En Route</span></div>
+            <div class="r1-meta"><div class="r1-name">T. Reyes</div><div class="r1-role">Primary Response</div></div>
+            <div class="r1-stats">
+              <div><div class="n g">1:24</div><div class="l">ETA</div></div>
+              <div><div class="n">0.3 MI</div><div class="l">DISTANCE</div></div>
+              <div><div class="n">CH-1</div><div class="l">RADIO</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r1-card">
+          <div class="r1-photo"><div class="ico"><span class="material-symbols-outlined">local_police</span></div><div class="badge">#3027</div></div>
+          <div class="r1-body">
+            <div class="r1-top"><div class="r1-id">UNIT-3</div><span class="r1-status sb"><span class="d"></span>Standby</span></div>
+            <div class="r1-meta"><div class="r1-name">R. Silva</div><div class="r1-role">Building Perimeter</div></div>
+            <div class="r1-stats">
+              <div><div class="n">—</div><div class="l">HOLD</div></div>
+              <div><div class="n">0.6 MI</div><div class="l">DISTANCE</div></div>
+              <div><div class="n">CH-1</div><div class="l">RADIO</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r1-card">
+          <div class="r1-photo"><div class="ico"><span class="material-symbols-outlined">pets</span></div><div class="badge">K9-02</div></div>
+          <div class="r1-body">
+            <div class="r1-top"><div class="r1-id">K9-2</div><span class="r1-status av"><span class="d"></span>Available</span></div>
+            <div class="r1-meta"><div class="r1-name">M. Chen</div><div class="r1-role">K9 Unit</div></div>
+            <div class="r1-stats">
+              <div><div class="n">—</div><div class="l">READY</div></div>
+              <div><div class="n">0.9 MI</div><div class="l">DISTANCE</div></div>
+              <div><div class="n">CH-3</div><div class="l">RADIO</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+  <!-- ============ CONCEPT 2 ============ -->
+  <div class="col">
+    <div class="col-tag">2 · Status-Band Card<em>color band by state · big ETA · footer meta</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="scroll">
+      <div class="r2-stack">
+
+        <div class="r2-card lead">
+          <div class="r2-row">
+            <div class="r2-l">
+              <div class="r2-icn"><span class="material-symbols-outlined">security</span></div>
+              <div>
+                <div class="r2-id-line"><div class="r2-id">SEC-1</div><div class="r2-name">J. Ortega</div></div>
+                <div class="r2-role-line">Level 3 · Approaching breach</div>
+              </div>
+            </div>
+            <div class="r2-r"><div class="r2-status-tag">On Scene</div><div class="r2-eta">0:18</div><div class="r2-eta-l">to breach</div></div>
+          </div>
+          <div class="r2-foot">
+            <span class="item"><span class="material-symbols-outlined">straighten</span><b>150 FT</b></span>
+            <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-2</b></span>
+            <span class="item"><span class="material-symbols-outlined">videocam</span>Body Cam</span>
+          </div>
+        </div>
+
+        <div class="r2-card en">
+          <div class="r2-row">
+            <div class="r2-l">
+              <div class="r2-icn"><span class="material-symbols-outlined">security</span></div>
+              <div>
+                <div class="r2-id-line"><div class="r2-id">SEC-2</div><div class="r2-name">L. Park</div></div>
+                <div class="r2-role-line">Stairwell B · climbing L1→L3</div>
+              </div>
+            </div>
+            <div class="r2-r"><div class="r2-status-tag">En Route</div><div class="r2-eta">0:48</div><div class="r2-eta-l">eta</div></div>
+          </div>
+          <div class="r2-foot">
+            <span class="item"><span class="material-symbols-outlined">straighten</span><b>320 FT</b></span>
+            <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-2</b></span>
+            <span class="item"><span class="material-symbols-outlined">videocam</span>Body Cam</span>
+          </div>
+        </div>
+
+        <div class="r2-card en">
+          <div class="r2-row">
+            <div class="r2-l">
+              <div class="r2-icn"><span class="material-symbols-outlined">local_police</span></div>
+              <div>
+                <div class="r2-id-line"><div class="r2-id">UNIT-9</div><div class="r2-name">T. Reyes</div></div>
+                <div class="r2-role-line">Primary response · Lights &amp; siren</div>
+              </div>
+            </div>
+            <div class="r2-r"><div class="r2-status-tag">En Route</div><div class="r2-eta">1:24</div><div class="r2-eta-l">eta</div></div>
+          </div>
+          <div class="r2-foot">
+            <span class="item"><span class="material-symbols-outlined">straighten</span><b>0.3 MI</b></span>
+            <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-1</b></span>
+            <span class="item"><span class="material-symbols-outlined">directions_car</span>Cruiser</span>
+          </div>
+        </div>
+
+        <div class="r2-card sb">
+          <div class="r2-row">
+            <div class="r2-l">
+              <div class="r2-icn"><span class="material-symbols-outlined">local_police</span></div>
+              <div>
+                <div class="r2-id-line"><div class="r2-id">UNIT-3</div><div class="r2-name">R. Silva</div></div>
+                <div class="r2-role-line">Holding · Building perimeter</div>
+              </div>
+            </div>
+            <div class="r2-r"><div class="r2-status-tag">Standby</div><div class="r2-eta mute">—</div><div class="r2-eta-l">on hold</div></div>
+          </div>
+          <div class="r2-foot">
+            <span class="item"><span class="material-symbols-outlined">straighten</span><b>0.6 MI</b></span>
+            <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-1</b></span>
+          </div>
+        </div>
+
+        <div class="r2-card av">
+          <div class="r2-row">
+            <div class="r2-l">
+              <div class="r2-icn"><span class="material-symbols-outlined">pets</span></div>
+              <div>
+                <div class="r2-id-line"><div class="r2-id">K9-2</div><div class="r2-name">M. Chen</div></div>
+                <div class="r2-role-line">K9 unit · Ready to deploy</div>
+              </div>
+            </div>
+            <div class="r2-r"><div class="r2-status-tag">Available</div><div class="r2-eta mute">—</div><div class="r2-eta-l">ready</div></div>
+          </div>
+          <div class="r2-foot">
+            <span class="item"><span class="material-symbols-outlined">straighten</span><b>0.9 MI</b></span>
+            <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-3</b></span>
+            <span class="item"><span class="material-symbols-outlined">pets</span>Canine: Rex</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+  <!-- ============ CONCEPT 3 ============ -->
+  <div class="col">
+    <div class="col-tag">3 · Player Cards<em>2-column grid · portrait + stats</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="scroll">
+      <div class="r3-grid">
+
+        <div class="r3-card lead">
+          <div class="r3-corner">#4471</div>
+          <div class="r3-top">
+            <div class="r3-portrait">JO</div>
+            <div class="r3-id">SEC-1</div>
+            <div class="r3-name">J. Ortega</div>
+            <div class="r3-role">On scene · L3</div>
+          </div>
+          <div class="r3-stats">
+            <div><div class="n warn">0:18</div><div class="l">BREACH</div></div>
+            <div><div class="n">150</div><div class="l">FT</div></div>
+          </div>
+          <div class="r3-foot on"><div class="st"><span class="d pulse"></span>On Scene</div><div class="ch">CH-2</div></div>
+        </div>
+
+        <div class="r3-card en">
+          <div class="r3-corner">#4488</div>
+          <div class="r3-top">
+            <div class="r3-portrait">LP</div>
+            <div class="r3-id">SEC-2</div>
+            <div class="r3-name">L. Park</div>
+            <div class="r3-role">Stairwell B</div>
+          </div>
+          <div class="r3-stats">
+            <div><div class="n g">0:48</div><div class="l">ETA</div></div>
+            <div><div class="n">320</div><div class="l">FT</div></div>
+          </div>
+          <div class="r3-foot en"><div class="st"><span class="d"></span>En Route</div><div class="ch">CH-2</div></div>
+        </div>
+
+        <div class="r3-card en">
+          <div class="r3-corner">#9012</div>
+          <div class="r3-top">
+            <div class="r3-portrait">TR</div>
+            <div class="r3-id">UNIT-9</div>
+            <div class="r3-name">T. Reyes</div>
+            <div class="r3-role">Primary</div>
+          </div>
+          <div class="r3-stats">
+            <div><div class="n g">1:24</div><div class="l">ETA</div></div>
+            <div><div class="n">0.3</div><div class="l">MI</div></div>
+          </div>
+          <div class="r3-foot en"><div class="st"><span class="d"></span>En Route</div><div class="ch">CH-1</div></div>
+        </div>
+
+        <div class="r3-card">
+          <div class="r3-corner">#3027</div>
+          <div class="r3-top">
+            <div class="r3-portrait">RS</div>
+            <div class="r3-id">UNIT-3</div>
+            <div class="r3-name">R. Silva</div>
+            <div class="r3-role">Perimeter</div>
+          </div>
+          <div class="r3-stats">
+            <div><div class="n mute">—</div><div class="l">HOLD</div></div>
+            <div><div class="n">0.6</div><div class="l">MI</div></div>
+          </div>
+          <div class="r3-foot sb"><div class="st"><span class="d"></span>Standby</div><div class="ch">CH-1</div></div>
+        </div>
+
+        <div class="r3-card">
+          <div class="r3-corner">K9-02</div>
+          <div class="r3-top">
+            <div class="r3-portrait">MC</div>
+            <div class="r3-id">K9-2</div>
+            <div class="r3-name">M. Chen</div>
+            <div class="r3-role">K9 Unit</div>
+          </div>
+          <div class="r3-stats">
+            <div><div class="n mute">—</div><div class="l">READY</div></div>
+            <div><div class="n">0.9</div><div class="l">MI</div></div>
+          </div>
+          <div class="r3-foot av"><div class="st"><span class="d"></span>Avail</div><div class="ch">CH-3</div></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

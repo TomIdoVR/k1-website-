@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ACT · Unit Cards v2 — type + big labels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<style>
+  :root { --bg:#162235; --line:rgba(255,255,255,.08); --mute:#48647A; --text:#E0ECF8; --accent:#adc6ff; --blue:#3B9EFF; --good:#00C98A; --warn:#FF4560; --amber:#FFB547; --purple:#a78bfa; --red:#ef4444; }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0a0f18;color:var(--text);font-family:'Manrope',sans-serif}
+  .banner{background:#ffd84d;color:#1a1a1a;font-weight:800;font-size:12px;letter-spacing:.08em;padding:10px 14px;text-align:center;text-transform:uppercase}
+  .pulse{animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  .stage{padding:20px;min-height:calc(100vh - 42px);background:var(--bg);display:flex;flex-direction:column;gap:14px}
+
+  .units-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+  .uh-l{display:flex;align-items:center;gap:10px;color:#fff}
+  .uh-l b{font-size:14px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+  .uh-l .material-symbols-outlined{font-size:22px;color:var(--accent)}
+  .counter{font-size:12px;font-weight:700;font-family:'Space Mono',monospace;color:rgba(255,255,255,.7);letter-spacing:.08em}
+  .counter em{color:var(--good);font-style:normal;font-weight:800}
+
+  .legend-label{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-top:4px}
+
+  /* =============== CARD GRID =============== */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+  /* =============== CARD =============== */
+  .card{
+    position:relative;
+    background:linear-gradient(160deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.01) 60%);
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .card.onscene{ border-color:rgba(255,69,96,.5); background:linear-gradient(160deg,rgba(255,69,96,.08) 0%,rgba(255,255,255,.01) 60%); box-shadow:0 0 0 1px rgba(255,69,96,.2), 0 8px 24px rgba(255,69,96,.08) }
+  .card.enroute{ border-color:rgba(0,201,138,.35); background:linear-gradient(160deg,rgba(0,201,138,.06) 0%,rgba(255,255,255,.01) 60%) }
+  .card.standby{ opacity:.82 }
+
+  /* ── Type banner (top) ── */
+  .type-banner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 14px;
+    background:rgba(0,0,0,.3);
+    border-bottom:1px solid var(--line);
+  }
+  .type-banner-l{display:flex; align-items:center; gap:10px}
+  .type-icon{
+    width:36px; height:36px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+  }
+  .type-icon .material-symbols-outlined{font-size:22px}
+  .type-icon.police{ background:rgba(59,158,255,.2); border:1px solid rgba(59,158,255,.5); color:#7fbcff }
+  .type-icon.security{ background:rgba(167,139,250,.18); border:1px solid rgba(167,139,250,.45); color:#cbbaff }
+  .type-icon.k9{ background:rgba(255,181,71,.18); border:1px solid rgba(255,181,71,.45); color:#ffcf80 }
+  .type-icon.ems{ background:rgba(239,68,68,.18); border:1px solid rgba(239,68,68,.45); color:#ff8a8a }
+  .type-icon.fire{ background:rgba(255,114,44,.2); border:1px solid rgba(255,114,44,.5); color:#ffa76b }
+  .type-label{
+    font-size:14px; font-weight:900; letter-spacing:.18em; text-transform:uppercase;
+    color:#fff;
+  }
+  .card.onscene .type-label,
+  .card.enroute .type-label{ color:#fff }
+  .badge-num{
+    font-size:10px; font-weight:800; letter-spacing:.1em;
+    color:rgba(255,255,255,.55); font-family:'Space Mono',monospace;
+    padding:4px 8px; background:rgba(0,0,0,.3); border-radius:4px;
+  }
+
+  /* ── Main body ── */
+  .body{padding:14px 16px 12px; display:flex; flex-direction:column; gap:10px}
+
+  .main-row{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+  .main-l{min-width:0}
+  .unit-num{
+    font-size:32px; font-weight:900; font-style:italic;
+    font-family:'Space Mono',monospace;
+    color:#fff; letter-spacing:-.01em; line-height:1;
+  }
+  .card.standby .unit-num{ color:rgba(255,255,255,.7) }
+  .officer{
+    margin-top:6px;
+    font-size:13px; font-weight:700;
+    color:rgba(255,255,255,.85); letter-spacing:.02em;
+    display:flex; align-items:center; gap:6px;
+  }
+  .officer .material-symbols-outlined{font-size:15px; color:var(--accent)}
+  .role-line{
+    margin-top:3px;
+    font-size:11px; font-weight:600;
+    color:rgba(255,255,255,.5); letter-spacing:.04em;
+  }
+
+  .status-block{ text-align:right; flex-shrink:0 }
+  .status-chip{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase;
+    padding:6px 12px; border-radius:20px;
+    border:1px solid transparent;
+  }
+  .status-chip .d{width:8px; height:8px; border-radius:50%}
+  .status-chip.on-scene{ background:rgba(255,69,96,.15); color:#ff8c9e; border-color:rgba(255,69,96,.4) }
+  .status-chip.on-scene .d{background:var(--warn)}
+  .status-chip.assigned{ background:rgba(59,158,255,.15); color:#7fbcff; border-color:rgba(59,158,255,.4) }
+  .status-chip.assigned .d{background:var(--blue)}
+  .status-chip.en-route{ background:rgba(0,201,138,.15); color:var(--good); border-color:rgba(0,201,138,.4) }
+  .status-chip.en-route .d{background:var(--good)}
+  .status-chip.available{ background:rgba(255,181,71,.15); color:var(--amber); border-color:rgba(255,181,71,.4) }
+  .status-chip.available .d{background:var(--amber)}
+  .status-chip.standby{ background:rgba(72,100,122,.22); color:#95afc2; border-color:rgba(72,100,122,.4) }
+  .status-chip.standby .d{background:var(--mute)}
+
+  /* ── Big metrics row ── */
+  .metrics{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:1px; background:var(--line);
+    border-radius:8px; overflow:hidden;
+    margin-top:4px;
+  }
+  .metric{
+    padding:10px 12px;
+    background:rgba(0,0,0,.25);
+    display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  }
+  .metric .lbl{
+    font-size:9px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--mute);
+    display:flex; align-items:center; gap:4px;
+  }
+  .metric .lbl .material-symbols-outlined{font-size:12px}
+  .metric .val{
+    font-size:20px; font-weight:900; font-style:italic;
+    font-family:'Space Mono',monospace;
+    color:#fff; line-height:1.1;
+  }
+  .metric .val.warn{color:#ff8c9e}
+  .metric .val.good{color:var(--good)}
+  .metric .val.mute{color:var(--mute)}
+  .metric .sub{font-size:9px; font-weight:600; color:rgba(255,255,255,.5); letter-spacing:.08em}
+
+  /* ── Footer actions ── */
+  .foot{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 14px;
+    background:rgba(0,0,0,.3);
+    border-top:1px solid var(--line);
+  }
+  .view-map{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--blue);
+    cursor:pointer;
+    padding:6px 10px; border-radius:6px;
+    background:rgba(59,158,255,.1);
+    border:1px solid rgba(59,158,255,.3);
+    transition:all .15s;
+  }
+  .view-map:hover{background:rgba(59,158,255,.2); color:#fff}
+  .view-map .material-symbols-outlined{font-size:15px}
+  .foot-meta{
+    display:flex; gap:10px; align-items:center;
+    font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:rgba(255,255,255,.55); font-family:'Space Mono',monospace;
+  }
+  .foot-meta .item{display:inline-flex; align-items:center; gap:4px}
+  .foot-meta .item .material-symbols-outlined{font-size:13px; color:var(--accent)}
+  .foot-meta b{color:#fff; font-weight:800}
+
+</style>
+</head>
+<body>
+<div class="banner">🧪 Unit Cards v2 · bigger labels · type · status · ETA · map link</div>
+
+<div class="stage">
+
+  <div class="units-header">
+    <div class="uh-l"><span class="material-symbols-outlined">groups</span><b>Tactical Units</b></div>
+    <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em> · 2 EN ROUTE · 2 HOLDING</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ============ SEC-1 · ON SCENE ============ -->
+    <div class="card onscene">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon security"><span class="material-symbols-outlined">security</span></div>
+          <div class="type-label">Security Officer</div>
+        </div>
+        <div class="badge-num">Badge #4471</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">SEC-1</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>J. Ortega</div>
+            <div class="role-line">Level 3 · Approaching Server Room B</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip on-scene"><span class="d pulse"></span>On Scene</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>Time to Event</div>
+            <div class="val warn">0:18</div>
+            <div class="sub">until breach point</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">150 ft</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-2</b></span>
+          <span class="item"><span class="material-symbols-outlined">videocam</span>Body Cam</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ UNIT-9 · EN ROUTE (POLICE) ============ -->
+    <div class="card enroute">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon police"><span class="material-symbols-outlined">local_police</span></div>
+          <div class="type-label">Police Car</div>
+        </div>
+        <div class="badge-num">Badge #9012</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">UNIT-9</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>T. Reyes</div>
+            <div class="role-line">Primary response · Lights &amp; siren</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip en-route"><span class="d pulse"></span>En Route</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA to Event</div>
+            <div class="val good">1:24</div>
+            <div class="sub">arriving soon</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">0.3 mi</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-1</b></span>
+          <span class="item"><span class="material-symbols-outlined">directions_car</span>Cruiser</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SEC-2 · EN ROUTE ============ -->
+    <div class="card enroute">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon security"><span class="material-symbols-outlined">security</span></div>
+          <div class="type-label">Security Officer</div>
+        </div>
+        <div class="badge-num">Badge #4488</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">SEC-2</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>L. Park</div>
+            <div class="role-line">Climbing stairwell B · L1 → L3</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip en-route"><span class="d pulse"></span>En Route</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA to Event</div>
+            <div class="val good">0:48</div>
+            <div class="sub">on foot · 3 floors</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">320 ft</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-2</b></span>
+          <span class="item"><span class="material-symbols-outlined">videocam</span>Body Cam</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ EMS-7 · AVAILABLE (AMBULANCE demo) ============ -->
+    <div class="card">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon ems"><span class="material-symbols-outlined">ambulance</span></div>
+          <div class="type-label">Ambulance</div>
+        </div>
+        <div class="badge-num">Unit EMS-07</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">EMS-7</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>A. Morales / D. Wolff</div>
+            <div class="role-line">Paramedic team · BLS equipped</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip available"><span class="d"></span>Available</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA if dispatched</div>
+            <div class="val mute">2:40</div>
+            <div class="sub">estimated</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">0.7 mi</div>
+            <div class="sub">at base</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-4</b></span>
+          <span class="item"><span class="material-symbols-outlined">medical_services</span>BLS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ UNIT-3 · STANDBY ============ -->
+    <div class="card standby">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon police"><span class="material-symbols-outlined">local_police</span></div>
+          <div class="type-label">Police Car</div>
+        </div>
+        <div class="badge-num">Badge #3027</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">UNIT-3</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>R. Silva</div>
+            <div class="role-line">Holding · Building perimeter</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip standby"><span class="d"></span>Standby</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA if dispatched</div>
+            <div class="val mute">2:10</div>
+            <div class="sub">on hold</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">0.6 mi</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-1</b></span>
+          <span class="item"><span class="material-symbols-outlined">directions_car</span>Cruiser</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ K9-2 · AVAILABLE ============ -->
+    <div class="card">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon k9"><span class="material-symbols-outlined">pets</span></div>
+          <div class="type-label">K9 Unit</div>
+        </div>
+        <div class="badge-num">K9-02</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">K9-2</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>M. Chen &amp; Rex</div>
+            <div class="role-line">Handler + canine · Ready to deploy</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip available"><span class="d"></span>Available</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA if dispatched</div>
+            <div class="val mute">3:05</div>
+            <div class="sub">estimated</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">0.9 mi</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-3</b></span>
+          <span class="item"><span class="material-symbols-outlined">pets</span>Canine Rex</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FIRE-4 · AVAILABLE (FIRE TRUCK demo) ============ -->
+    <div class="card">
+      <div class="type-banner">
+        <div class="type-banner-l">
+          <div class="type-icon fire"><span class="material-symbols-outlined">fire_truck</span></div>
+          <div class="type-label">Fire Truck</div>
+        </div>
+        <div class="badge-num">Engine 4</div>
+      </div>
+      <div class="body">
+        <div class="main-row">
+          <div class="main-l">
+            <div class="unit-num">FIRE-4</div>
+            <div class="officer"><span class="material-symbols-outlined">person</span>Captain B. Hayes · 4 crew</div>
+            <div class="role-line">Engine company · Fire suppression</div>
+          </div>
+          <div class="status-block">
+            <div class="status-chip available"><span class="d"></span>Available</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">schedule</span>ETA if dispatched</div>
+            <div class="val mute">3:50</div>
+            <div class="sub">estimated</div>
+          </div>
+          <div class="metric">
+            <div class="lbl"><span class="material-symbols-outlined">straighten</span>Distance</div>
+            <div class="val">1.2 mi</div>
+            <div class="sub">from target</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="view-map"><span class="material-symbols-outlined">map</span>View on Map</div>
+        <div class="foot-meta">
+          <span class="item"><span class="material-symbols-outlined">radio</span><b>CH-5</b></span>
+          <span class="item"><span class="material-symbols-outlined">fire_truck</span>Engine</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

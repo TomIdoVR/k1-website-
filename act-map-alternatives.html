@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ACT · Map (Roster Overlay v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<style>
+  :root {
+    --bg:#162235; --map:#0a1520; --line:rgba(255,255,255,.08);
+    --mute:#48647A; --text:#E0ECF8; --accent:#adc6ff;
+    --blue:#3B9EFF; --good:#00C98A; --warn:#FF4560;
+    --amber:#FFB547; --purple:#a78bfa; --red:#ef4444; --orange:#ff722c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0a0f18;color:var(--text);font-family:'Manrope',sans-serif}
+  .banner{background:#ffd84d;color:#1a1a1a;font-weight:800;font-size:12px;letter-spacing:.08em;padding:10px 14px;text-align:center;text-transform:uppercase}
+  .pulse{animation:pulse 1.6s ease-in-out infinite}
+  .pulse-strong{animation:pulse-strong 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  @keyframes pulse-strong{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.18);opacity:.55}}
+
+  .wrap{display:block;padding:14px}
+  .panel{display:block;background:var(--bg);border-radius:8px;border:1px solid var(--line);overflow:hidden}
+  .col-tag{padding:11px 16px;background:rgba(173,198,255,.06);border-bottom:1px solid var(--line);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#fff;display:flex;justify-content:space-between;align-items:center}
+  .col-tag em{font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(173,198,255,.7);font-style:normal;text-transform:none}
+
+  /* MAP FRAME — explicit height; no flex tricks */
+  .map-frame{position:relative;background:var(--map);overflow:hidden;height:820px;width:100%}
+
+  /* Inline SVG map background (unique; not reused from other scenarios) */
+  .map-bg{position:absolute;inset:0;z-index:1;background:#071220}
+  .map-bg svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .map-tint{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 45% 50%,rgba(10,21,32,0) 0%,rgba(10,21,32,.55) 100%);pointer-events:none}
+  .map-vignette{position:absolute;inset:0;z-index:3;box-shadow:inset 0 0 160px rgba(0,0,0,.85);pointer-events:none}
+
+  /* HUD */
+  .map-title{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:12px 16px 10px;background:linear-gradient(to bottom,rgba(10,21,32,.92) 0%,rgba(10,21,32,0) 100%);pointer-events:none}
+  .map-title-l{display:flex;align-items:center;gap:10px;color:var(--accent)}
+  .map-title-l b{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+  .map-title-l .material-symbols-outlined{font-size:16px}
+  .map-title-r{display:flex;gap:6px;pointer-events:auto}
+  .chip{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:4px;background:rgba(173,198,255,.08);border:1px solid rgba(173,198,255,.18);color:var(--accent);cursor:pointer}
+  .chip.on{background:rgba(59,158,255,.2);border-color:rgba(59,158,255,.5);color:#cfe0ff}
+  .chip-act{background:rgba(255,69,96,.2);border-color:rgba(255,69,96,.5);color:#ff8c9e}
+
+  .legend{position:absolute;left:14px;bottom:14px;z-index:4;display:flex;gap:10px;flex-wrap:wrap;background:rgba(10,21,32,.82);border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.75);font-family:'Space Mono',monospace;backdrop-filter:blur(6px)}
+  .legend .row{display:flex;align-items:center;gap:5px}
+  .legend .sw{width:9px;height:9px;border-radius:50%}
+
+  .scale{position:absolute;right:14px;bottom:14px;z-index:4;font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.12em;text-transform:uppercase;font-family:'Space Mono',monospace;text-align:right;background:rgba(10,21,32,.7);padding:5px 8px;border-radius:4px;border:1px solid var(--line)}
+  .scale .ln{width:60px;height:3px;background:rgba(255,255,255,.5);margin-top:4px;margin-left:auto}
+
+  /* INCIDENT MARKER */
+  .incident{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:7px;z-index:6}
+  .idot{width:26px;height:26px;border-radius:50%;background:var(--warn);border:3px solid #fff;box-shadow:0 0 0 7px rgba(255,69,96,.3),0 4px 12px rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;color:#fff}
+  .idot .material-symbols-outlined{font-size:14px}
+  .ilabel{font-size:10px;font-weight:900;color:#FF8C9E;font-family:'Space Mono',monospace;background:rgba(10,21,32,.92);border:1px solid rgba(255,69,96,.5);padding:3px 7px;border-radius:4px;letter-spacing:.08em;text-transform:uppercase}
+
+  /* UNIT MARKERS */
+  .unit{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:5px;cursor:pointer;z-index:5}
+  .udot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;border:2.5px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.6)}
+  .udot .material-symbols-outlined{font-size:13px}
+  .udot.police{background:#3B9EFF;box-shadow:0 0 0 4px rgba(59,158,255,.28),0 3px 8px rgba(0,0,0,.6)}
+  .udot.security{background:#a78bfa;box-shadow:0 0 0 4px rgba(167,139,250,.28),0 3px 8px rgba(0,0,0,.6)}
+  .udot.k9{background:#FFB547;box-shadow:0 0 0 4px rgba(255,181,71,.28),0 3px 8px rgba(0,0,0,.6)}
+  .udot.ems{background:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.28),0 3px 8px rgba(0,0,0,.6)}
+  .udot.fire{background:#ff722c;box-shadow:0 0 0 4px rgba(255,114,44,.28),0 3px 8px rgba(0,0,0,.6)}
+  .udot.muted{opacity:.55;width:16px;height:16px;box-shadow:0 2px 4px rgba(0,0,0,.5)}
+  .udot.muted .material-symbols-outlined{font-size:10px}
+  .ulabel{font-size:10px;font-weight:800;color:#fff;font-family:'Space Mono',monospace;background:rgba(10,21,32,.9);border:1px solid var(--line);padding:3px 6px;border-radius:4px;letter-spacing:.06em}
+  .ulabel.muted{opacity:.6;font-size:9px}
+
+  /* ROUTE PATHS */
+  .route{position:absolute;inset:0;pointer-events:none;z-index:4}
+
+  /* ROSTER OVERLAY (right side) */
+  .roster{position:absolute;top:60px;right:14px;width:240px;z-index:7;background:rgba(10,21,32,.92);border:1px solid var(--line);border-radius:8px;backdrop-filter:blur(10px);box-shadow:0 10px 32px rgba(0,0,0,.6);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100% - 80px)}
+  .roster-h{padding:10px 12px;background:rgba(173,198,255,.06);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .roster-h b{font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+  .roster-h em{font-size:9px;font-weight:700;color:var(--good);font-style:normal;letter-spacing:.08em;font-family:'Space Mono',monospace;display:flex;align-items:center;gap:4px}
+  .roster-h em .dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
+  .roster-list{flex:1;overflow-y:auto;padding:6px}
+  .ru{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:6px;margin-bottom:4px;cursor:pointer;border:1px solid transparent;transition:all .15s}
+  .ru:hover{background:rgba(173,198,255,.06);border-color:rgba(173,198,255,.12)}
+  .ru.sel{background:rgba(59,158,255,.12);border-color:rgba(59,158,255,.4)}
+  .ru-icon{flex:0 0 28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;border:2px solid rgba(255,255,255,.85)}
+  .ru-icon.police{background:#3B9EFF}
+  .ru-icon.security{background:#a78bfa}
+  .ru-icon.k9{background:#FFB547}
+  .ru-icon.ems{background:#ef4444}
+  .ru-icon.fire{background:#ff722c}
+  .ru-icon .material-symbols-outlined{font-size:15px}
+  .ru-info{flex:1;min-width:0}
+  .ru-id{font-size:11px;font-weight:800;color:#fff;font-family:'Space Mono',monospace;letter-spacing:.04em}
+  .ru-officer{font-size:9px;font-weight:600;color:rgba(255,255,255,.55);margin-top:1px}
+  .ru-eta{flex:0 0 auto;text-align:right}
+  .ru-eta .t{font-size:11px;font-weight:800;color:var(--accent);font-family:'Space Mono',monospace}
+  .ru-eta .l{font-size:8px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;margin-top:1px}
+  .ru-status{position:absolute;top:7px;right:7px;width:7px;height:7px;border-radius:50%}
+  .ru-status.assigned{background:var(--blue);box-shadow:0 0 0 2px rgba(59,158,255,.3)}
+  .ru-status.enroute{background:var(--blue);box-shadow:0 0 0 2px rgba(59,158,255,.3)}
+  .ru-status.standby{background:var(--amber)}
+  .ru-status.available{background:rgba(255,255,255,.4)}
+
+  /* BIG SELECTED CAMERA PREVIEW */
+  .cam-preview{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);width:400px;z-index:6;border-radius:10px;overflow:hidden;border:2px solid rgba(255,69,96,.65);background:#000;box-shadow:0 12px 40px rgba(255,69,96,.3),0 0 0 4px rgba(10,21,32,.6),0 12px 40px rgba(0,0,0,.7)}
+  /* visually pull the preview a bit up and left of the incident */
+  .cam-preview{left:28%;top:38%}
+  .cam-feed{position:relative;height:240px;background:#000;overflow:hidden}
+  .cam-feed img{width:100%;height:100%;object-fit:cover;display:block}
+  .cam-feed::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.35) 80%,rgba(0,0,0,.65) 100%);pointer-events:none}
+  .cam-rec{position:absolute;top:9px;left:9px;display:flex;align-items:center;gap:5px;font-size:10px;font-weight:800;color:#fff;letter-spacing:.12em;font-family:'Space Mono',monospace;background:rgba(0,0,0,.55);padding:4px 7px;border-radius:4px;z-index:2}
+  .cam-rec .d{width:7px;height:7px;border-radius:50%;background:var(--warn)}
+  .cam-time{position:absolute;top:9px;right:9px;font-size:10px;font-weight:700;color:rgba(255,255,255,.85);font-family:'Space Mono',monospace;letter-spacing:.08em;background:rgba(0,0,0,.55);padding:4px 7px;border-radius:4px;z-index:2}
+  .cam-overlay{position:absolute;inset:auto 0 0 0;padding:9px 12px;font-family:'Space Mono',monospace;z-index:2}
+  .cam-overlay .lbl{font-size:11px;font-weight:800;color:#fff;letter-spacing:.1em;text-transform:uppercase}
+  .cam-overlay .sub{font-size:9px;font-weight:600;color:rgba(255,255,255,.65);letter-spacing:.06em;margin-top:2px}
+  .cam-foot{padding:9px 12px;background:rgba(0,0,0,.85);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,69,96,.3)}
+  .cam-foot .alert{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;color:#FF8C9E;letter-spacing:.12em;text-transform:uppercase;font-family:'Space Mono',monospace}
+  .cam-foot .alert .material-symbols-outlined{font-size:13px}
+  .cam-foot .actions{display:flex;gap:6px}
+  .cam-btn{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;cursor:pointer;font-family:'Space Mono',monospace}
+  .cam-btn.primary{background:rgba(59,158,255,.3);border-color:rgba(59,158,255,.6);color:#cfe0ff}
+
+  /* connector dashed line from camera preview to incident pin */
+  .connector{position:absolute;z-index:5;pointer-events:none}
+  .connector svg{overflow:visible}
+</style>
+</head>
+<body>
+
+<div class="banner">ACT — Map (refined): new SVG street map · LPR camera feed · stolen vehicle intercept</div>
+
+<div class="wrap">
+  <div class="panel">
+    <div class="col-tag">
+      <span>Operational Map · LPR Intercept</span>
+      <em>Inline SVG street map · 6 units on roster · LPR camera preview</em>
+    </div>
+
+    <div class="map-frame">
+      <!-- Custom inline SVG map (unique to this preview) -->
+      <div class="map-bg">
+        <svg viewBox="0 0 1000 820" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mapBase" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0e1c30"/>
+              <stop offset="100%" stop-color="#05101e"/>
+            </linearGradient>
+            <linearGradient id="highway" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2a3a54"/>
+              <stop offset="100%" stop-color="#1b2840"/>
+            </linearGradient>
+            <pattern id="noise" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
+              <rect width="3" height="3" fill="transparent"/>
+              <rect x="1" y="1" width="1" height="1" fill="rgba(255,255,255,0.015)"/>
+            </pattern>
+          </defs>
+
+          <!-- Base -->
+          <rect width="1000" height="820" fill="url(#mapBase)"/>
+          <rect width="1000" height="820" fill="url(#noise)"/>
+
+          <!-- Park (green tinted block) -->
+          <rect x="60" y="80" width="200" height="160" rx="6" fill="#0e2620" opacity="0.75"/>
+          <text x="160" y="170" font-family="monospace" font-size="10" fill="rgba(120,200,170,0.45)" text-anchor="middle" letter-spacing="2">MEMORIAL PARK</text>
+
+          <!-- Buffalo Bayou (curved river) -->
+          <path d="M 0 420 Q 180 380 340 440 T 700 420 Q 850 410 1000 460"
+                stroke="#102840" stroke-width="28" fill="none" opacity="0.8"/>
+          <path d="M 0 420 Q 180 380 340 440 T 700 420 Q 850 410 1000 460"
+                stroke="#1a3a58" stroke-width="22" fill="none" opacity="0.5"/>
+          <text x="70" y="410" font-family="monospace" font-size="9" fill="rgba(120,170,210,0.4)" letter-spacing="2">BUFFALO BAYOU</text>
+
+          <!-- Major highways (wider + brighter) -->
+          <!-- I-10 horizontal -->
+          <rect x="0" y="180" width="1000" height="16" fill="url(#highway)"/>
+          <line x1="0" y1="188" x2="1000" y2="188" stroke="#3a4d6b" stroke-width="1" stroke-dasharray="14 10"/>
+          <text x="28" y="175" font-family="monospace" font-size="10" font-weight="700" fill="rgba(173,198,255,0.55)" letter-spacing="2">I-10 KATY FWY</text>
+
+          <!-- US-59 SW diagonal -->
+          <path d="M 1000 80 L 200 820" stroke="url(#highway)" stroke-width="14"/>
+          <path d="M 1000 80 L 200 820" stroke="#3a4d6b" stroke-width="1" stroke-dasharray="14 10"/>
+
+          <!-- Loop 610 (vertical west side) -->
+          <rect x="92" y="0" width="12" height="820" fill="url(#highway)"/>
+
+          <!-- Arterials (medium) -->
+          <!-- Westheimer Rd -->
+          <rect x="0" y="540" width="1000" height="7" fill="#1c2a3e"/>
+          <text x="28" y="535" font-family="monospace" font-size="9" fill="rgba(173,198,255,0.4)" letter-spacing="1">WESTHEIMER RD</text>
+          <!-- Richmond Ave -->
+          <rect x="0" y="680" width="1000" height="5" fill="#162538"/>
+          <text x="28" y="676" font-family="monospace" font-size="9" fill="rgba(173,198,255,0.32)" letter-spacing="1">RICHMOND AVE</text>
+          <!-- Memorial Dr -->
+          <rect x="0" y="300" width="1000" height="5" fill="#162538"/>
+          <text x="28" y="296" font-family="monospace" font-size="9" fill="rgba(173,198,255,0.32)" letter-spacing="1">MEMORIAL DR</text>
+
+          <!-- Montrose Blvd -->
+          <rect x="400" y="0" width="7" height="820" fill="#1c2a3e"/>
+          <text x="412" y="60" font-family="monospace" font-size="9" fill="rgba(173,198,255,0.4)" letter-spacing="1">MONTROSE</text>
+          <!-- Shepherd Dr -->
+          <rect x="240" y="0" width="5" height="820" fill="#162538"/>
+          <!-- Main St -->
+          <rect x="620" y="0" width="5" height="820" fill="#162538"/>
+          <!-- Kirby Dr -->
+          <rect x="780" y="0" width="5" height="820" fill="#162538"/>
+
+          <!-- Minor grid streets (thin) -->
+          <g stroke="#0f1a2a" stroke-width="1.2" opacity="0.7">
+            <!-- Horizontal minors -->
+            <line x1="0" y1="90" x2="1000" y2="90"/>
+            <line x1="0" y1="140" x2="1000" y2="140"/>
+            <line x1="0" y1="240" x2="1000" y2="240"/>
+            <line x1="0" y1="360" x2="1000" y2="360"/>
+            <line x1="0" y1="480" x2="1000" y2="480"/>
+            <line x1="0" y1="600" x2="1000" y2="600"/>
+            <line x1="0" y1="740" x2="1000" y2="740"/>
+            <!-- Vertical minors -->
+            <line x1="140" y1="0" x2="140" y2="820"/>
+            <line x1="320" y1="0" x2="320" y2="820"/>
+            <line x1="480" y1="0" x2="480" y2="820"/>
+            <line x1="540" y1="0" x2="540" y2="820"/>
+            <line x1="700" y1="0" x2="700" y2="820"/>
+            <line x1="860" y1="0" x2="860" y2="820"/>
+            <line x1="940" y1="0" x2="940" y2="820"/>
+          </g>
+
+          <!-- Building blocks (dim clusters) -->
+          <g fill="#162638" opacity="0.82">
+            <rect x="440" y="340" width="36" height="26" rx="1"/>
+            <rect x="482" y="340" width="50" height="36" rx="1"/>
+            <rect x="540" y="340" width="28" height="32" rx="1"/>
+            <rect x="440" y="380" width="48" height="24" rx="1"/>
+            <rect x="492" y="384" width="30" height="30" rx="1"/>
+
+            <rect x="630" y="250" width="40" height="38" rx="1"/>
+            <rect x="676" y="254" width="22" height="28" rx="1"/>
+            <rect x="630" y="298" width="28" height="24" rx="1"/>
+
+            <rect x="340" y="630" width="36" height="22" rx="1"/>
+            <rect x="382" y="628" width="42" height="30" rx="1"/>
+
+            <rect x="800" y="560" width="44" height="30" rx="1"/>
+            <rect x="848" y="560" width="28" height="36" rx="1"/>
+            <rect x="800" y="600" width="36" height="24" rx="1"/>
+
+            <rect x="160" y="620" width="30" height="24" rx="1"/>
+            <rect x="196" y="624" width="38" height="30" rx="1"/>
+          </g>
+
+          <!-- Target building (server room — highlighted) near incident pin (~60%,54% = 600,443) -->
+          <g>
+            <rect x="568" y="428" width="70" height="44" rx="2" fill="rgba(255,69,96,0.12)" stroke="rgba(255,69,96,0.7)" stroke-width="1.6"/>
+            <rect x="560" y="420" width="86" height="60" rx="2" fill="none" stroke="rgba(255,69,96,0.18)" stroke-width="1" stroke-dasharray="4 3"/>
+          </g>
+
+          <!-- Compass -->
+          <g transform="translate(954,60)">
+            <circle r="18" fill="rgba(10,21,32,0.7)" stroke="rgba(173,198,255,0.2)" stroke-width="1"/>
+            <path d="M 0 -13 L 4 0 L 0 13 L -4 0 Z" fill="rgba(173,198,255,0.75)"/>
+            <text y="-22" text-anchor="middle" font-family="monospace" font-size="9" fill="rgba(173,198,255,0.8)" font-weight="700">N</text>
+          </g>
+        </svg>
+      </div>
+      <div class="map-tint"></div>
+      <div class="map-vignette"></div>
+
+      <!-- HUD -->
+      <div class="map-title">
+        <div class="map-title-l">
+          <span class="material-symbols-outlined">map</span>
+          <b>OPERATIONAL MAP · LIVE</b>
+        </div>
+        <div class="map-title-r">
+          <span class="chip on">UNITS · 6</span>
+          <span class="chip on">LPR · 8</span>
+          <span class="chip chip-act pulse">⬤ STOLEN VEHICLE</span>
+        </div>
+      </div>
+
+      <!-- ROUTE LINES (SVG) -->
+      <svg class="route" viewBox="0 0 1000 760" preserveAspectRatio="none">
+        <defs>
+          <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#3B9EFF"/>
+          </marker>
+          <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#a78bfa"/>
+          </marker>
+          <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#FFB547"/>
+          </marker>
+          <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#ef4444"/>
+          </marker>
+          <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#ff722c"/>
+          </marker>
+        </defs>
+        <!-- 12-CHARLIE primary (police) -->
+        <path d="M 220 600 L 320 540 L 420 480 L 520 440 L 600 410" stroke="#3B9EFF" stroke-width="3" fill="none" stroke-dasharray="6 4" marker-end="url(#arrow-blue)" opacity=".95"/>
+        <!-- 08-BRAVO backup (police) -->
+        <path d="M 880 200 L 800 260 L 720 320 L 660 360 L 610 400" stroke="#3B9EFF" stroke-width="2.5" fill="none" stroke-dasharray="6 4" marker-end="url(#arrow-blue)" opacity=".8"/>
+        <!-- 04-ALPHA standby (police, faint) -->
+        <path d="M 100 120 L 220 200 L 340 280 L 460 350 L 580 400" stroke="#3B9EFF" stroke-width="2" fill="none" stroke-dasharray="3 5" marker-end="url(#arrow-blue)" opacity=".45"/>
+        <!-- EMS-7 standby -->
+        <path d="M 920 640 L 820 580 L 720 510 L 640 460 L 600 420" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="3 5" marker-end="url(#arrow-red)" opacity=".5"/>
+        <!-- K9-2 pursuit support -->
+        <path d="M 60 500 L 180 470 L 320 440 L 460 420 L 580 410" stroke="#FFB547" stroke-width="2.5" fill="none" stroke-dasharray="6 4" marker-end="url(#arrow-amber)" opacity=".75"/>
+        <!-- 11-ECHO available (faint) -->
+        <path d="M 200 700 L 320 640 L 440 560 L 540 480 L 600 420" stroke="#3B9EFF" stroke-width="1.5" fill="none" stroke-dasharray="2 6" marker-end="url(#arrow-blue)" opacity=".3"/>
+      </svg>
+
+      <!-- INCIDENT marker (stolen vehicle last known position) -->
+      <div class="incident" style="left:60%;top:54%">
+        <div class="idot pulse-strong"><span class="material-symbols-outlined">directions_car</span></div>
+        <div class="ilabel">STOLEN · 7JKY442</div>
+      </div>
+
+      <!-- UNITS on map -->
+      <div class="unit" style="left:22%;top:79%">
+        <div class="udot police"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="ulabel">12-CHARLIE</div>
+      </div>
+      <div class="unit" style="left:88%;top:26%">
+        <div class="udot police"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="ulabel">08-BRAVO</div>
+      </div>
+      <div class="unit" style="left:10%;top:16%">
+        <div class="udot police"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="ulabel">04-ALPHA</div>
+      </div>
+      <div class="unit" style="left:92%;top:84%">
+        <div class="udot ems"><span class="material-symbols-outlined">local_hospital</span></div>
+        <div class="ulabel">EMS-7</div>
+      </div>
+      <div class="unit" style="left:6%;top:66%">
+        <div class="udot k9"><span class="material-symbols-outlined">pets</span></div>
+        <div class="ulabel">K9-2</div>
+      </div>
+      <div class="unit" style="left:20%;top:92%">
+        <div class="udot police muted"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="ulabel muted">11-ECHO</div>
+      </div>
+
+      <!-- BIG CAMERA PREVIEW (selected) — LPR interchange feed (image has baked-in LPR overlay) -->
+      <div class="cam-preview">
+        <div class="cam-feed">
+          <img src="./public/demo/lpr/LPR.png" alt="CAM-118 Interchange LPR detection" />
+        </div>
+        <div class="cam-foot">
+          <div class="alert"><span class="material-symbols-outlined pulse">warning</span> LPR HIT · STOLEN VEHICLE CONFIRMED</div>
+          <div class="actions">
+            <button class="cam-btn">PIP</button>
+            <button class="cam-btn primary">EXPAND</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector line from camera preview corner to incident pin -->
+      <svg class="connector" style="left:0;top:0;width:100%;height:100%">
+        <line x1="44%" y1="44%" x2="58%" y2="53%" stroke="rgba(255,69,96,.5)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
+
+      <!-- ROSTER OVERLAY (right) -->
+      <div class="roster">
+        <div class="roster-h">
+          <b>LIVE UNITS · 6</b>
+          <em><span class="dot pulse"></span> SYNCING</em>
+        </div>
+        <div class="roster-list">
+          <div class="ru sel" style="position:relative">
+            <span class="ru-status assigned"></span>
+            <div class="ru-icon police"><span class="material-symbols-outlined">local_police</span></div>
+            <div class="ru-info">
+              <div class="ru-id">12-CHARLIE</div>
+              <div class="ru-officer">J. Reyes · Primary intercept</div>
+            </div>
+            <div class="ru-eta"><div class="t">2:48</div><div class="l">to intercept</div></div>
+          </div>
+          <div class="ru" style="position:relative">
+            <span class="ru-status enroute"></span>
+            <div class="ru-icon police"><span class="material-symbols-outlined">local_police</span></div>
+            <div class="ru-info">
+              <div class="ru-id">08-BRAVO</div>
+              <div class="ru-officer">M. Torres · Backup</div>
+            </div>
+            <div class="ru-eta"><div class="t">3:42</div><div class="l">to intercept</div></div>
+          </div>
+          <div class="ru" style="position:relative">
+            <span class="ru-status standby"></span>
+            <div class="ru-icon police"><span class="material-symbols-outlined">local_police</span></div>
+            <div class="ru-info">
+              <div class="ru-id">04-ALPHA</div>
+              <div class="ru-officer">D. Alvarez · Holding</div>
+            </div>
+            <div class="ru-eta"><div class="t">4:20</div><div class="l">if dispatched</div></div>
+          </div>
+          <div class="ru" style="position:relative">
+            <span class="ru-status enroute"></span>
+            <div class="ru-icon k9"><span class="material-symbols-outlined">pets</span></div>
+            <div class="ru-info">
+              <div class="ru-id">K9-2</div>
+              <div class="ru-officer">Handler · Pursuit support</div>
+            </div>
+            <div class="ru-eta"><div class="t">5:10</div><div class="l">to intercept</div></div>
+          </div>
+          <div class="ru" style="position:relative">
+            <span class="ru-status standby"></span>
+            <div class="ru-icon ems"><span class="material-symbols-outlined">local_hospital</span></div>
+            <div class="ru-info">
+              <div class="ru-id">EMS-7</div>
+              <div class="ru-officer">Standby · Pursuit safety</div>
+            </div>
+            <div class="ru-eta"><div class="t">6:30</div><div class="l">if dispatched</div></div>
+          </div>
+          <div class="ru" style="position:relative">
+            <span class="ru-status available"></span>
+            <div class="ru-icon police"><span class="material-symbols-outlined">local_police</span></div>
+            <div class="ru-info">
+              <div class="ru-id">11-ECHO</div>
+              <div class="ru-officer">P. Gomez · Available</div>
+            </div>
+            <div class="ru-eta"><div class="t">7:15</div><div class="l">if dispatched</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGEND -->
+      <div class="legend">
+        <div class="row"><span class="sw" style="background:#3B9EFF"></span> POLICE</div>
+        <div class="row"><span class="sw" style="background:#FFB547"></span> K9</div>
+        <div class="row"><span class="sw" style="background:#ef4444"></span> EMS</div>
+        <div class="row"><span class="sw" style="background:var(--warn)"></span> STOLEN VEHICLE</div>
+      </div>
+
+      <div class="scale">100 FT<div class="ln"></div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

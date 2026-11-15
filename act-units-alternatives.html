@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>ACT · Tactical Units — Alternatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<style>
+  :root { --bg:#162235; --line:rgba(255,255,255,.06); --mute:#48647A; --text:#E0ECF8; --accent:#adc6ff; --blue:#3B9EFF; --good:#00C98A; --warn:#FF4560; --amber:#FFB547; }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0a0f18;color:var(--text);font-family:'Manrope',sans-serif}
+  .banner{background:#ffd84d;color:#1a1a1a;font-weight:800;font-size:12px;letter-spacing:.08em;padding:8px 14px;text-align:center;text-transform:uppercase}
+  .pulse{animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* layout — 4 panels side by side */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:16px;min-height:calc(100vh - 32px)}
+  .col{display:flex;flex-direction:column;background:var(--bg);border-radius:8px;border:1px solid var(--line);overflow:hidden}
+  .col-tag{padding:10px 14px;background:rgba(173,198,255,.06);border-bottom:1px solid var(--line);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:#fff;display:flex;justify-content:space-between;align-items:center}
+  .col-tag em{font-size:8px;font-weight:600;letter-spacing:.1em;color:rgba(173,198,255,.6);font-style:normal;text-transform:none}
+
+  .units-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px;border-bottom:1px solid var(--line)}
+  .uh-l{display:flex;align-items:center;gap:8px;color:var(--accent)}
+  .uh-l b{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+  .counter{font-size:9px;font-weight:700;font-family:'Space Mono',monospace;color:rgba(255,255,255,.55);letter-spacing:.08em}
+  .counter em{color:var(--good);font-style:normal}
+
+  .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+  .stats-strip > div{padding:8px 10px;background:var(--bg);text-align:center}
+  .stats-strip .n{font-size:18px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;line-height:1}
+  .stats-strip .l{font-size:7px;font-weight:700;letter-spacing:.12em;color:var(--mute);text-transform:uppercase;margin-top:3px}
+  .stats-strip .n.g{color:var(--good)}
+  .stats-strip .n.b{color:var(--blue)}
+  .stats-strip .n.m{color:var(--mute)}
+
+  .mods{padding:10px 14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+  .mod{font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(173,198,255,.08);border:1px solid rgba(173,198,255,.18);color:var(--accent)}
+
+  .scroll{flex:1;overflow-y:auto}
+
+  /* ======== ALT A — Card with avatar + progress bar ======== */
+  .a-card{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);border-left:3px solid transparent;display:flex;gap:10px;align-items:flex-start}
+  .a-card.active{border-left-color:var(--blue);background:rgba(59,158,255,.04)}
+  .a-av{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:rgba(59,158,255,.15);border:1.5px solid rgba(59,158,255,.4);display:flex;align-items:center;justify-content:center;color:var(--blue);font-family:'Space Mono',monospace;font-size:10px;font-weight:800}
+  .a-av.k9{background:rgba(255,181,71,.15);border-color:rgba(255,181,71,.4);color:var(--amber)}
+  .a-av.mute{background:rgba(72,100,122,.15);border-color:rgba(72,100,122,.3);color:var(--mute)}
+  .a-body{flex:1;min-width:0}
+  .a-row1{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px}
+  .a-id{font-size:11px;font-weight:800;color:var(--text);letter-spacing:.05em;font-family:'Space Mono',monospace}
+  .a-card:not(.active) .a-id{color:rgba(255,255,255,.55)}
+  .a-pill{font-size:7px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:3px;display:inline-flex;align-items:center;gap:4px}
+  .a-pill .d{width:5px;height:5px;border-radius:50%}
+  .a-pill.on{background:rgba(59,158,255,.15);color:#9fc6ff}.a-pill.on .d{background:var(--blue)}
+  .a-pill.en{background:rgba(0,201,138,.15);color:var(--good)}.a-pill.en .d{background:var(--good)}
+  .a-pill.av{background:rgba(0,201,138,.1);color:var(--good)}.a-pill.av .d{background:var(--good)}
+  .a-pill.sb{background:rgba(72,100,122,.18);color:var(--mute)}.a-pill.sb .d{background:var(--mute)}
+  .a-name{font-size:9px;color:rgba(255,255,255,.7);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+  .a-name b{color:var(--text);font-weight:700}
+  .a-bar{height:3px;border-radius:2px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:4px}
+  .a-bar > div{height:100%;background:linear-gradient(90deg,var(--blue),#adc6ff)}
+  .a-bar.g > div{background:linear-gradient(90deg,var(--good),#7df0c0)}
+  .a-bar.m > div{background:rgba(255,255,255,.15)}
+  .a-meta{display:flex;justify-content:space-between;font-size:8px;letter-spacing:.08em;color:rgba(255,255,255,.5);font-family:'Space Mono',monospace;text-transform:uppercase}
+  .a-meta b{color:rgba(255,255,255,.85);font-weight:700}
+
+  /* ======== ALT B — Data-dense row with chips ======== */
+  .b-row{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);border-left:3px solid transparent}
+  .b-row.active{border-left-color:var(--blue);background:rgba(59,158,255,.04)}
+  .b-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+  .b-id-wrap{display:flex;align-items:center;gap:8px}
+  .b-id{font-size:12px;font-weight:800;font-family:'Space Mono',monospace;color:var(--text);letter-spacing:.04em}
+  .b-row:not(.active) .b-id{color:rgba(255,255,255,.55)}
+  .b-role{font-size:8px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+  .b-status{display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .b-status .d{width:7px;height:7px;border-radius:50%}
+  .b-status.on{color:var(--blue)}.b-status.on .d{background:var(--blue);box-shadow:0 0 0 3px rgba(59,158,255,.18)}
+  .b-status.en{color:var(--good)}.b-status.en .d{background:var(--good);box-shadow:0 0 0 3px rgba(0,201,138,.18)}
+  .b-status.av{color:var(--good)}.b-status.av .d{background:var(--good)}
+  .b-status.sb{color:var(--mute)}.b-status.sb .d{background:var(--mute)}
+  .b-chips{display:flex;gap:4px;flex-wrap:wrap}
+  .b-chip{display:inline-flex;align-items:center;gap:4px;font-size:8px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.7);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:3px 7px;border-radius:3px;font-family:'Space Mono',monospace}
+  .b-chip .material-symbols-outlined{font-size:10px;color:var(--accent)}
+  .b-chip.eta{background:rgba(59,158,255,.1);border-color:rgba(59,158,255,.25);color:#cfe0ff}
+  .b-chip.eta .material-symbols-outlined{color:var(--blue)}
+
+  /* ======== ALT C — Timeline / progress focused ======== */
+  .c-row{padding:14px;border-bottom:1px solid rgba(255,255,255,.04);border-left:3px solid transparent}
+  .c-row.active{border-left-color:var(--blue);background:rgba(59,158,255,.04)}
+  .c-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+  .c-id{font-size:12px;font-weight:800;font-family:'Space Mono',monospace;color:var(--text)}
+  .c-row:not(.active) .c-id{color:rgba(255,255,255,.55)}
+  .c-name{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .c-name b{color:rgba(255,255,255,.8);font-weight:700}
+  .c-eta{text-align:right;flex-shrink:0}
+  .c-eta .n{font-size:14px;font-weight:900;font-family:'Space Mono',monospace;color:#fff;line-height:1;font-style:italic}
+  .c-eta .l{font-size:7px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase;font-weight:700;margin-top:2px}
+  .c-eta.live .n{color:var(--good)}
+  .c-track{position:relative;height:18px;display:flex;align-items:center;margin:8px 0 6px}
+  .c-track .ln{position:absolute;left:0;right:0;height:2px;background:rgba(255,255,255,.08);border-radius:1px}
+  .c-track .fill{position:absolute;left:0;height:2px;background:linear-gradient(90deg,var(--blue),#adc6ff);border-radius:1px}
+  .c-track .fill.g{background:linear-gradient(90deg,var(--good),#7df0c0)}
+  .c-track .marker{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);transform:translate(-50%,0)}
+  .c-track .marker.g{background:var(--good)}
+  .c-track .marker.m{background:var(--mute)}
+  .c-stops{display:flex;justify-content:space-between;font-size:7px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-weight:700;font-family:'Space Mono',monospace}
+  .c-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:8px;color:rgba(255,255,255,.5);letter-spacing:.08em;font-family:'Space Mono',monospace}
+  .c-foot .role{text-transform:uppercase;color:var(--accent);font-weight:700;letter-spacing:.1em}
+  .c-foot .ch{padding:2px 6px;background:rgba(255,255,255,.04);border-radius:3px}
+
+  /* ======== ALT D — Compact dual-line with sparkline status ======== */
+  .d-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);border-left:3px solid transparent;align-items:center}
+  .d-row.active{border-left-color:var(--blue);background:rgba(59,158,255,.04)}
+  .d-icon{width:30px;height:30px;border-radius:6px;background:rgba(59,158,255,.12);border:1px solid rgba(59,158,255,.3);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+  .d-icon .material-symbols-outlined{font-size:18px}
+  .d-icon.k9{background:rgba(255,181,71,.12);border-color:rgba(255,181,71,.3);color:var(--amber)}
+  .d-icon.mute{background:rgba(72,100,122,.1);border-color:rgba(72,100,122,.25);color:var(--mute)}
+  .d-mid{min-width:0}
+  .d-l1{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+  .d-id{font-size:11px;font-weight:800;font-family:'Space Mono',monospace;color:var(--text);letter-spacing:.04em}
+  .d-row:not(.active) .d-id{color:rgba(255,255,255,.55)}
+  .d-nm{font-size:8px;color:rgba(255,255,255,.55);letter-spacing:.05em;text-transform:uppercase;font-weight:700}
+  .d-l2{display:flex;gap:10px;font-size:8px;color:rgba(255,255,255,.45);letter-spacing:.08em;font-family:'Space Mono',monospace;text-transform:uppercase;align-items:center}
+  .d-l2 .sep{width:2px;height:2px;border-radius:50%;background:rgba(255,255,255,.2)}
+  .d-l2 b{color:rgba(255,255,255,.85);font-weight:700}
+  .d-l2 .role{color:var(--accent);font-weight:700;letter-spacing:.1em}
+  .d-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+  .d-status{font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
+  .d-status .d{width:6px;height:6px;border-radius:50%}
+  .d-status.on{color:var(--blue)}.d-status.on .d{background:var(--blue)}
+  .d-status.en{color:var(--good)}.d-status.en .d{background:var(--good)}
+  .d-status.av{color:var(--good)}.d-status.av .d{background:var(--good)}
+  .d-status.sb{color:var(--mute)}.d-status.sb .d{background:var(--mute)}
+  .d-eta{font-size:9px;font-weight:800;font-family:'Space Mono',monospace;color:#fff;font-style:italic}
+  .d-eta.mute{color:var(--mute)}
+
+</style>
+</head>
+<body>
+<div class="banner">🧪 Tactical Units · 4 alternatives — same data, different layouts</div>
+
+<div class="grid">
+
+  <!-- ============ ALT A ============ -->
+  <div class="col">
+    <div class="col-tag">A · Card + Progress<em>avatar · status pill · bar</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="stats-strip">
+      <div><div class="n">5</div><div class="l">DEPLOY</div></div>
+      <div><div class="n b">1</div><div class="l">ON SCENE</div></div>
+      <div><div class="n g">2</div><div class="l">EN ROUTE</div></div>
+      <div><div class="n m">2</div><div class="l">STANDBY</div></div>
+    </div>
+    <div class="scroll">
+      <div class="a-card active">
+        <div class="a-av">S1</div>
+        <div class="a-body">
+          <div class="a-row1"><div class="a-id">SEC-1</div><span class="a-pill on"><span class="d"></span>Assigned</span></div>
+          <div class="a-name"><b>J. ORTEGA</b> · LEVEL 3 APPROACHING</div>
+          <div class="a-bar"><div style="width:88%"></div></div>
+          <div class="a-meta"><span>150 FT TO TARGET</span><span><b>CH-2</b></span></div>
+        </div>
+      </div>
+      <div class="a-card active">
+        <div class="a-av">S2</div>
+        <div class="a-body">
+          <div class="a-row1"><div class="a-id">SEC-2</div><span class="a-pill en"><span class="d"></span>En Route</span></div>
+          <div class="a-name"><b>L. PARK</b> · STAIRWELL B</div>
+          <div class="a-bar g"><div style="width:62%"></div></div>
+          <div class="a-meta"><span>320 FT · ETA 0:48</span><span><b>CH-2</b></span></div>
+        </div>
+      </div>
+      <div class="a-card active">
+        <div class="a-av">U9</div>
+        <div class="a-body">
+          <div class="a-row1"><div class="a-id">UNIT-9</div><span class="a-pill en"><span class="d"></span>En Route</span></div>
+          <div class="a-name"><b>T. REYES</b> · PRIMARY RESPONSE</div>
+          <div class="a-bar g"><div style="width:55%"></div></div>
+          <div class="a-meta"><span>0.3 MI · ETA 1:24</span><span><b>CH-1</b></span></div>
+        </div>
+      </div>
+      <div class="a-card">
+        <div class="a-av mute">U3</div>
+        <div class="a-body">
+          <div class="a-row1"><div class="a-id">UNIT-3</div><span class="a-pill sb"><span class="d"></span>Standby</span></div>
+          <div class="a-name"><b>R. SILVA</b> · BUILDING PERIMETER</div>
+          <div class="a-bar m"><div style="width:0%"></div></div>
+          <div class="a-meta"><span>0.6 MI AWAY</span><span><b>CH-1</b></span></div>
+        </div>
+      </div>
+      <div class="a-card">
+        <div class="a-av k9">K9</div>
+        <div class="a-body">
+          <div class="a-row1"><div class="a-id">K9-2</div><span class="a-pill av"><span class="d"></span>Available</span></div>
+          <div class="a-name"><b>M. CHEN</b> · K9 UNIT</div>
+          <div class="a-bar m"><div style="width:0%"></div></div>
+          <div class="a-meta"><span>0.9 MI AWAY</span><span><b>CH-3</b></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+  <!-- ============ ALT B ============ -->
+  <div class="col">
+    <div class="col-tag">B · Chips Row<em>data chips · monospace · fast scan</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="stats-strip">
+      <div><div class="n">5</div><div class="l">DEPLOY</div></div>
+      <div><div class="n b">1</div><div class="l">ON SCENE</div></div>
+      <div><div class="n g">2</div><div class="l">EN ROUTE</div></div>
+      <div><div class="n m">2</div><div class="l">STANDBY</div></div>
+    </div>
+    <div class="scroll">
+      <div class="b-row active">
+        <div class="b-top"><div class="b-id-wrap"><div class="b-id">SEC-1</div><span class="b-role">J. Ortega</span></div><div class="b-status on"><span class="d"></span>Assigned</div></div>
+        <div class="b-chips">
+          <div class="b-chip"><span class="material-symbols-outlined">badge</span>LEVEL 3</div>
+          <div class="b-chip"><span class="material-symbols-outlined">straighten</span>150 FT</div>
+          <div class="b-chip"><span class="material-symbols-outlined">radio</span>CH-2</div>
+          <div class="b-chip"><span class="material-symbols-outlined">videocam</span>BODY CAM</div>
+        </div>
+      </div>
+      <div class="b-row active">
+        <div class="b-top"><div class="b-id-wrap"><div class="b-id">SEC-2</div><span class="b-role">L. Park</span></div><div class="b-status en"><span class="d"></span>En Route</div></div>
+        <div class="b-chips">
+          <div class="b-chip eta"><span class="material-symbols-outlined">schedule</span>ETA 0:48</div>
+          <div class="b-chip"><span class="material-symbols-outlined">stairs</span>STAIRWELL B</div>
+          <div class="b-chip"><span class="material-symbols-outlined">straighten</span>320 FT</div>
+          <div class="b-chip"><span class="material-symbols-outlined">radio</span>CH-2</div>
+        </div>
+      </div>
+      <div class="b-row active">
+        <div class="b-top"><div class="b-id-wrap"><div class="b-id">UNIT-9</div><span class="b-role">T. Reyes</span></div><div class="b-status en"><span class="d"></span>En Route</div></div>
+        <div class="b-chips">
+          <div class="b-chip eta"><span class="material-symbols-outlined">schedule</span>ETA 1:24</div>
+          <div class="b-chip"><span class="material-symbols-outlined">local_police</span>PRIMARY</div>
+          <div class="b-chip"><span class="material-symbols-outlined">straighten</span>0.3 MI</div>
+          <div class="b-chip"><span class="material-symbols-outlined">radio</span>CH-1</div>
+        </div>
+      </div>
+      <div class="b-row">
+        <div class="b-top"><div class="b-id-wrap"><div class="b-id">UNIT-3</div><span class="b-role">R. Silva</span></div><div class="b-status sb"><span class="d"></span>Standby</div></div>
+        <div class="b-chips">
+          <div class="b-chip"><span class="material-symbols-outlined">fence</span>PERIMETER</div>
+          <div class="b-chip"><span class="material-symbols-outlined">straighten</span>0.6 MI</div>
+          <div class="b-chip"><span class="material-symbols-outlined">radio</span>CH-1</div>
+        </div>
+      </div>
+      <div class="b-row">
+        <div class="b-top"><div class="b-id-wrap"><div class="b-id">K9-2</div><span class="b-role">M. Chen</span></div><div class="b-status av"><span class="d"></span>Available</div></div>
+        <div class="b-chips">
+          <div class="b-chip"><span class="material-symbols-outlined">pets</span>K9 UNIT</div>
+          <div class="b-chip"><span class="material-symbols-outlined">straighten</span>0.9 MI</div>
+          <div class="b-chip"><span class="material-symbols-outlined">radio</span>CH-3</div>
+        </div>
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+  <!-- ============ ALT C ============ -->
+  <div class="col">
+    <div class="col-tag">C · ETA Track<em>visual progress · stop labels</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="stats-strip">
+      <div><div class="n">5</div><div class="l">DEPLOY</div></div>
+      <div><div class="n b">1</div><div class="l">ON SCENE</div></div>
+      <div><div class="n g">2</div><div class="l">EN ROUTE</div></div>
+      <div><div class="n m">2</div><div class="l">STANDBY</div></div>
+    </div>
+    <div class="scroll">
+      <div class="c-row active">
+        <div class="c-head"><div><div class="c-id">SEC-1</div><div class="c-name"><b>J. ORTEGA</b></div></div><div class="c-eta live"><div class="n">0:18</div><div class="l">TO BREACH</div></div></div>
+        <div class="c-track"><div class="ln"></div><div class="fill" style="width:88%"></div><div class="marker" style="left:88%"></div></div>
+        <div class="c-stops"><span>DISPATCH</span><span>EN ROUTE</span><span>ON SCENE</span></div>
+        <div class="c-foot"><span class="role">LEVEL 3 · APPROACHING</span><span class="ch">CH-2</span></div>
+      </div>
+      <div class="c-row active">
+        <div class="c-head"><div><div class="c-id">SEC-2</div><div class="c-name"><b>L. PARK</b></div></div><div class="c-eta"><div class="n">0:48</div><div class="l">ETA</div></div></div>
+        <div class="c-track"><div class="ln"></div><div class="fill g" style="width:62%"></div><div class="marker g" style="left:62%"></div></div>
+        <div class="c-stops"><span>DISPATCH</span><span>EN ROUTE</span><span>ON SCENE</span></div>
+        <div class="c-foot"><span class="role">STAIRWELL B</span><span class="ch">CH-2</span></div>
+      </div>
+      <div class="c-row active">
+        <div class="c-head"><div><div class="c-id">UNIT-9</div><div class="c-name"><b>T. REYES</b></div></div><div class="c-eta"><div class="n">1:24</div><div class="l">ETA</div></div></div>
+        <div class="c-track"><div class="ln"></div><div class="fill g" style="width:55%"></div><div class="marker g" style="left:55%"></div></div>
+        <div class="c-stops"><span>DISPATCH</span><span>EN ROUTE</span><span>ON SCENE</span></div>
+        <div class="c-foot"><span class="role">PRIMARY RESPONSE · 0.3 MI</span><span class="ch">CH-1</span></div>
+      </div>
+      <div class="c-row">
+        <div class="c-head"><div><div class="c-id">UNIT-3</div><div class="c-name"><b>R. SILVA</b></div></div><div class="c-eta"><div class="n" style="color:var(--mute)">--</div><div class="l">STDBY</div></div></div>
+        <div class="c-track"><div class="ln"></div><div class="marker m" style="left:0%"></div></div>
+        <div class="c-stops"><span>DISPATCH</span><span>EN ROUTE</span><span>ON SCENE</span></div>
+        <div class="c-foot"><span class="role">PERIMETER · 0.6 MI</span><span class="ch">CH-1</span></div>
+      </div>
+      <div class="c-row">
+        <div class="c-head"><div><div class="c-id">K9-2</div><div class="c-name"><b>M. CHEN</b></div></div><div class="c-eta"><div class="n" style="color:var(--mute)">--</div><div class="l">AVAIL</div></div></div>
+        <div class="c-track"><div class="ln"></div><div class="marker m" style="left:0%"></div></div>
+        <div class="c-stops"><span>DISPATCH</span><span>EN ROUTE</span><span>ON SCENE</span></div>
+        <div class="c-foot"><span class="role">K9 UNIT · 0.9 MI</span><span class="ch">CH-3</span></div>
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+  <!-- ============ ALT D ============ -->
+  <div class="col">
+    <div class="col-tag">D · Compact + Icon<em>icon · 2 lines · ETA on right</em></div>
+    <div class="units-header">
+      <div class="uh-l"><span class="material-symbols-outlined" style="font-size:14px">monitor</span><b>Tactical Units</b></div>
+      <div class="counter">5 DEPLOYED · <em>1 ON SCENE</em></div>
+    </div>
+    <div class="stats-strip">
+      <div><div class="n">5</div><div class="l">DEPLOY</div></div>
+      <div><div class="n b">1</div><div class="l">ON SCENE</div></div>
+      <div><div class="n g">2</div><div class="l">EN ROUTE</div></div>
+      <div><div class="n m">2</div><div class="l">STANDBY</div></div>
+    </div>
+    <div class="scroll">
+      <div class="d-row active">
+        <div class="d-icon"><span class="material-symbols-outlined">security</span></div>
+        <div class="d-mid">
+          <div class="d-l1"><span class="d-id">SEC-1</span><span class="d-nm">J. ORTEGA</span></div>
+          <div class="d-l2"><span class="role">LEVEL 3</span><span class="sep"></span><span><b>150 FT</b></span><span class="sep"></span><span>CH-2</span></div>
+        </div>
+        <div class="d-right"><div class="d-status on"><span class="d"></span>Assigned</div><div class="d-eta">0:18</div></div>
+      </div>
+      <div class="d-row active">
+        <div class="d-icon"><span class="material-symbols-outlined">security</span></div>
+        <div class="d-mid">
+          <div class="d-l1"><span class="d-id">SEC-2</span><span class="d-nm">L. PARK</span></div>
+          <div class="d-l2"><span class="role">STAIRWELL</span><span class="sep"></span><span><b>320 FT</b></span><span class="sep"></span><span>CH-2</span></div>
+        </div>
+        <div class="d-right"><div class="d-status en"><span class="d"></span>En Route</div><div class="d-eta">0:48</div></div>
+      </div>
+      <div class="d-row active">
+        <div class="d-icon"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="d-mid">
+          <div class="d-l1"><span class="d-id">UNIT-9</span><span class="d-nm">T. REYES</span></div>
+          <div class="d-l2"><span class="role">PRIMARY</span><span class="sep"></span><span><b>0.3 MI</b></span><span class="sep"></span><span>CH-1</span></div>
+        </div>
+        <div class="d-right"><div class="d-status en"><span class="d"></span>En Route</div><div class="d-eta">1:24</div></div>
+      </div>
+      <div class="d-row">
+        <div class="d-icon mute"><span class="material-symbols-outlined">local_police</span></div>
+        <div class="d-mid">
+          <div class="d-l1"><span class="d-id">UNIT-3</span><span class="d-nm">R. SILVA</span></div>
+          <div class="d-l2"><span class="role">PERIMETER</span><span class="sep"></span><span><b>0.6 MI</b></span><span class="sep"></span><span>CH-1</span></div>
+        </div>
+        <div class="d-right"><div class="d-status sb"><span class="d"></span>Standby</div><div class="d-eta mute">—</div></div>
+      </div>
+      <div class="d-row">
+        <div class="d-icon k9"><span class="material-symbols-outlined">pets</span></div>
+        <div class="d-mid">
+          <div class="d-l1"><span class="d-id">K9-2</span><span class="d-nm">M. CHEN</span></div>
+          <div class="d-l2"><span class="role">K9 UNIT</span><span class="sep"></span><span><b>0.9 MI</b></span><span class="sep"></span><span>CH-3</span></div>
+        </div>
+        <div class="d-right"><div class="d-status av"><span class="d"></span>Available</div><div class="d-eta mute">—</div></div>
+      </div>
+    </div>
+    <div class="mods">
+      <div class="mod">911 &amp; DISPATCH</div><div class="mod">FIRST RESPONDER APPS</div>
+      <div class="mod">GIS &amp; SITUATIONAL</div><div class="mod">INTEGRATIONS</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

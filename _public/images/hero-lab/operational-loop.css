@@ -1,0 +1,207 @@
+/* How It Works — 5-stage operational loop. Scoped under .olp-. */
+
+.olp {
+  position: relative;
+  width: 100%;
+  padding: 88px 24px 96px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #081a4d;
+  background: linear-gradient(180deg, #f5f8fd 0%, #fbfcfe 55%, #f7fafd 100%);
+}
+
+.olp-inner {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.olp-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.olp-eyebrow {
+  margin: 0 0 14px;
+  color: #0757f7;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.olp-title {
+  margin: 0;
+  color: #07194c;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.olp-title em {
+  font-style: normal;
+  background: linear-gradient(100deg, #0753ff 10%, #13c2bc 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.olp-sub {
+  max-width: 60ch;
+  margin: 16px auto 0;
+  color: #4f5f84;
+  font-size: 16.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+/* ── Flow ── */
+.olp-flow {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* The connecting rail runs behind the nodes, at node-centre height. */
+.olp-flow::before {
+  content: '';
+  position: absolute;
+  top: 33px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #12c7c2, #0a86ee 55%, #3f45e0);
+  opacity: 0.28;
+  border-radius: 2px;
+}
+
+.olp-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.olp-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  color: var(--sc);
+  background: #fff;
+  border: 1.5px solid color-mix(in srgb, var(--sc) 30%, #e6edf8);
+  box-shadow:
+    0 10px 24px -14px color-mix(in srgb, var(--sc) 60%, transparent),
+    0 0 0 6px #f7fafd;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.olp-stage:hover .olp-node {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 30px -14px color-mix(in srgb, var(--sc) 70%, transparent),
+    0 0 0 6px #f7fafd;
+}
+
+.olp-icon svg { width: 32px; height: 32px; display: block; }
+
+.olp-num {
+  margin-top: 18px;
+  color: var(--sc);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.olp-name {
+  margin: 7px 0 0;
+  color: #07194c;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.olp-body {
+  margin: 8px 0 0;
+  max-width: 24ch;
+  color: #55658a;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* ── Loop footer ── */
+.olp-foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 56px auto 0;
+  padding-top: 30px;
+  color: #5a6b91;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* Return arc: closes the loop from the last stage back to the first. */
+.olp-foot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 26px;
+  border: 2px solid;
+  border-color: transparent transparent rgba(63, 69, 224, 0.22) rgba(18, 199, 194, 0.22);
+  border-radius: 0 0 14px 14px;
+  border-top: 0;
+}
+
+.olp-foot-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #0757f7;
+  background: #fff;
+  border: 1px solid rgba(77, 108, 171, 0.2);
+}
+.olp-foot-icon svg { width: 12px; height: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 940px) {
+  .olp-flow { grid-template-columns: repeat(3, 1fr); row-gap: 44px; }
+  .olp-flow::before { display: none; }
+  .olp-foot::before { display: none; }
+  .olp-foot { padding-top: 0; }
+}
+
+@media (max-width: 620px) {
+  .olp { padding: 64px 20px 72px; }
+  .olp-head { margin-bottom: 44px; }
+  .olp-flow { grid-template-columns: repeat(2, 1fr); row-gap: 38px; gap: 16px; }
+  .olp-node { width: 56px; height: 56px; }
+  .olp-icon svg { width: 27px; height: 27px; }
+  .olp-body { font-size: 13px; }
+  .olp-foot { margin-top: 40px; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olp-node { transition: none; }
+  .olp-stage:hover .olp-node { transform: none; }
+}

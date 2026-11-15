@@ -1,0 +1,99 @@
+/* Customer / agency trust strip — compact auto-scrolling marquee.
+   Mirrors the mechanics of the current site's "Trusted by" strip
+   (seamless 32s loop, edge-fade masks, pause on hover) but with real
+   official seals instead of text badges, on the light theme.
+   Scoped under .cst-. */
+
+.cst {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 34px 0 38px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #081a4d;
+  background: #eef4fc;
+  border-top: 1px solid rgba(77, 108, 171, 0.14);
+  border-bottom: 1px solid rgba(77, 108, 171, 0.14);
+}
+
+.cst-label {
+  margin: 0 0 22px;
+  /* 3.81:1 on the #eef4fc strip — under the 4.5 floor for 11px text.
+     Darkened along the same hue to 4.66:1. */
+  color: #5e6d91;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cst-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.cst-mask::before,
+.cst-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.cst-mask::before { left: 0; background: linear-gradient(90deg, #eef4fc, transparent); }
+.cst-mask::after { right: 0; background: linear-gradient(270deg, #eef4fc, transparent); }
+
+.cst-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: cst-scroll 40s linear infinite;
+}
+.cst-track:hover { animation-play-state: paused; }
+
+@keyframes cst-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.cst-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  flex-shrink: 0;
+  /* Spacing lives on the item (not flex `gap`) so each item carries a
+     trailing gap. That makes the two halves exactly equal width, so
+     translateX(-50%) lands precisely on the clone and the loop is seamless. */
+  margin-right: 60px;
+}
+
+.cst-item img {
+  width: auto;
+  height: auto;
+  max-height: 42px;
+  max-width: 132px;
+  object-fit: contain;
+  /* Unify visually mismatched government seals: desaturate + soften,
+     restore full colour on hover of the strip. */
+  filter: grayscale(1) opacity(0.62);
+  transition: filter 260ms ease;
+}
+
+.cst-mask:hover .cst-item img { filter: grayscale(0) opacity(1); }
+
+@media (max-width: 720px) {
+  .cst { padding: 26px 0 30px; }
+  .cst-item { height: 38px; margin-right: 40px; }
+  .cst-item img { max-height: 34px; max-width: 108px; }
+  .cst-mask::before, .cst-mask::after { width: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cst-track { animation: none; }
+  .cst-item img { transition: none; }
+}

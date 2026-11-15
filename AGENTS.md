@@ -92,3 +92,5 @@ Each module has: a tab button + a panel (`#panel-{name}`) + an image in `images/
 
 - [ ] Enable GitHub Pages (pending — owner needs to set in repo Settings)
 - [ ] (Add tasks here as they're assigned)
+
+## Imported Claude Cowork project instructions

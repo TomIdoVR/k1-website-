@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""
+GSC Weekly Pull — OAuth2 refresh token auth, 28-day window.
+Reads credentials from .secrets/gsc-credentials.json (client_id, client_secret, refresh_token).
+Usage: python3 gsc_pull_weekly.py --out <output_path.json>
+"""
+
+import argparse
+import json
+import sys
+import urllib.parse
+import urllib.request
+import warnings
+from datetime import date, timedelta
+
+warnings.filterwarnings("ignore")
+
+CREDENTIALS_FILE = (
+    "/Users/omercnaani/Library/CloudStorage/"
+    "OneDrive-SYMSERVICIOSINTEGRALESSADECV/Claude/k1 Website/.secrets/gsc-credentials.json"
+)
+GSC_PROPERTY = "https://kabatone.com/"
+
+
+def get_access_token(creds):
+    data = urllib.parse.urlencode({
+        "client_id": creds["client_id"],
+        "client_secret": creds["client_secret"],
+        "refresh_token": creds["refresh_token"],
+        "grant_type": "refresh_token",
+    }).encode()
+    req = urllib.request.Request(
+        "https://oauth2.googleapis.com/token",
+        data=data,
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+    )
+    with urllib.request.urlopen(req) as r:
+        resp = json.loads(r.read())
+    if "access_token" not in resp:
+        print(f"Token error: {resp}", file=sys.stderr)
+        sys.exit(1)
+    return resp["access_token"]
+
+
+def gsc_post(token, payload):
+    encoded = urllib.parse.quote(GSC_PROPERTY, safe="")
+    url = f"https://www.googleapis.com/webmasters/v3/sites/{encoded}/searchAnalytics/query"
+    data = json.dumps(payload).encode()
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req) as r:
+            return json.loads(r.read()).get("rows", [])
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        print(f"HTTP {e.code} error: {body}", file=sys.stderr)
+        raise
+
+
+def build_payload(start, end, dimensions, row_limit=500, filters=None):
+    p = {
+        "startDate": start,
+        "endDate": end,
+        "dimensions": dimensions,
+        "rowLimit": row_limit,
+        "orderBy": [{"fieldName": "impressions", "sortOrder": "DESCENDING"}],
+    }
+    if filters:
+        p["dimensionFilterGroups"] = [{"filters": filters}]
+    return p
+
+
+def rows_to_dicts(rows, dim_keys):
+    out = []
+    for r in rows:
+        entry = {dim_keys[i]: r["keys"][i] for i in range(len(dim_keys))}
+        entry["clicks"] = int(r.get("clicks", 0))
+        entry["impressions"] = int(r.get("impressions", 0))
+        entry["ctr"] = round(r.get("ctr", 0) * 100, 2)
+        entry["position"] = round(r.get("position", 0), 1)
+        out.append(entry)
+    return out
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", required=True, help="Output JSON file path")
+    args = parser.parse_args()
+
+    with open(CREDENTIALS_FILE, encoding="utf-8") as f:
+        creds = json.load(f)
+
+    # 28-day window with GSC lag
+    end_date = date.today() - timedelta(days=2)
+    start_date = end_date - timedelta(days=27)
+    start = start_date.strftime("%Y-%m-%d")
+    end = end_date.strftime("%Y-%m-%d")
+
+    print(f"Fetching GSC data for {GSC_PROPERTY}")
+    print(f"Date range: {start} to {end} (28 days)")
+
+    token = get_access_token(creds)
+    print("Authentication: OK")
+
+    # 1. Top 30 queries by impressions
+    print("Pulling top queries (30)...")
+    raw_queries = gsc_post(token, build_payload(start, end, ["query"], row_limit=30))
+    top_queries = rows_to_dicts(raw_queries, ["query"])
+
+    # 2. Top 20 pages by impressions
+    print("Pulling top pages (20)...")
+    raw_pages = gsc_post(token, build_payload(start, end, ["page"], row_limit=20))
+    top_pages = rows_to_dicts(raw_pages, ["page"])
+
+    # 3. Striking distance: position 5-15, min 10 impressions — pull large pool first
+    print("Pulling striking distance queries (pos 5-15)...")
+    raw_large = gsc_post(token, build_payload(start, end, ["query"], row_limit=500))
+    striking = []
+    for r in raw_large:
+        pos = r.get("position", 0)
+        impr = r.get("impressions", 0)
+        if 5.0 <= pos <= 15.0 and impr >= 10:
+            striking.append(rows_to_dicts([r], ["query"])[0])
+    striking.sort(key=lambda x: x["impressions"], reverse=True)
+
+    # 4. Daily trend for totals
+    print("Pulling daily trend...")
+    raw_daily = gsc_post(token, build_payload(start, end, ["date"], row_limit=50))
+    daily = sorted(
+        [
+            {
+                "date": r["keys"][0],
+                "clicks": int(r.get("clicks", 0)),
+                "impressions": int(r.get("impressions", 0)),
+                "ctr": round(r.get("ctr", 0) * 100, 2),
+                "position": round(r.get("position", 0), 1),
+            }
+            for r in raw_daily
+        ],
+        key=lambda x: x["date"],
+    )
+
+    total_clicks = sum(d["clicks"] for d in daily)
+    total_impressions = sum(d["impressions"] for d in daily)
+    avg_position = (
+        round(sum(r.get("position", 0) for r in raw_daily) / len(raw_daily), 1)
+        if raw_daily else 0
+    )
+    avg_ctr = (
+        round(sum(d["ctr"] for d in daily) / len(daily), 2)
+        if daily else 0
+    )
+
+    result = {
+        "meta": {
+            "property": GSC_PROPERTY,
+            "date_range": f"{start} to {end}",
+            "days": 28,
+            "pulled_at": date.today().strftime("%Y-%m-%d"),
+            "data_source": "Google Search Console API (field data)",
+            "lag_note": f"GSC has ~2-3 day lag; data through {end}",
+        },
+        "totals": {
+            "total_clicks": total_clicks,
+            "total_impressions": total_impressions,
+            "avg_ctr_pct": avg_ctr,
+            "avg_position": avg_position,
+        },
+        "top_queries_by_impressions": top_queries,
+        "top_pages_by_impressions": top_pages,
+        "striking_distance": {
+            "description": "Queries with position 5-15 and >= 10 impressions (strong page-1 opportunities)",
+            "count": len(striking),
+            "rows": striking,
+        },
+        "daily_trend": daily,
+    }
+
+    with open(args.out, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    print(f"\nDone. Written to: {args.out}")
+    print(f"Total clicks:      {total_clicks:,}")
+    print(f"Total impressions: {total_impressions:,}")
+    print(f"Avg position:      {avg_position}")
+    print(f"Avg CTR:           {avg_ctr}%")
+    print(f"Striking distance queries: {len(striking)}")
+
+
+if __name__ == "__main__":
+    main()

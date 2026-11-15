@@ -1,3 +1,27 @@
+## [v2.407] – 2026-11-15 — Commit the hero redesign and tooling work that lived only on disk
+
+**Added**
+- **Hero-lab redesign work**, previously untracked: `src/components/hero-lab/`, the
+  `[locale]/hero-lab*` routes (module pages, story, prev, admin), their CSS, and the images under
+  `public/images/{hero,hero-cards,hero-lab,modules,industries,customers,case-study}`.
+- Design source material and plans: `design-assets/`, `_public/`, `images/Cards/`, `act-*.html`
+  prototypes, `claude-design-homepage-brief.md`, `docs/HERO-REDESIGN-LOCAL-WORKFLOW.md` and
+  `docs/superpowers/` specs and plans.
+- Project tooling: `.claude/launch.json`, `.impeccable/`, `.vercelignore`,
+  `PRODUCT.md`, `work/`.
+
+**Changed**
+- `AGENTS.md` gains a heading for imported Cowork project instructions (no body yet);
+  `SEO/weekly-report-2026-09-08.md` mode bit only.
+
+**Notes**
+- Not committed: `.codex/config.toml` (holds an API key; now ignored via `.codex/.gitignore`), `.k1/local` and `.k1/runs` (lock files, person maps and run logs; now ignored via
+  `.k1/.gitignore`), `.worktrees/` (2.8 GB of nested checkouts) and `.claude/worktrees/*`; also
+  `.claude/skills`, `.claude/agents`, `skills-lock.json`, `research_notes/` and `reports/`, whose
+  files are OneDrive cloud-only placeholders that cannot be read, so a partial copy would be broken.
+- Committed for safekeeping and branch consistency. The homepage live on production is built on
+  `main`; nothing here changes `/` on `nextjs` (no tracked file references hero-lab).
+
 ## [v2.406] – 2026-11-11 — Commit the SEO data snapshots that were sitting uncommitted
 
 **Changed**
