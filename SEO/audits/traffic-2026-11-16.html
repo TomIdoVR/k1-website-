@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KabatOne Weekly Traffic — 2026-11-16</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f1724;color:#e2e8f0;font-family:'Space Grotesk',sans-serif;font-size:14px;line-height:1.6}
+.header{background:linear-gradient(135deg,#0f1724 0%,#1e293b 100%);border-bottom:1px solid #1e3a5f;padding:28px 40px}
+.header-top{display:flex;align-items:center;gap:16px}
+.logo{width:34px;height:34px;background:#06b6d4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:#0f1724;flex-shrink:0}
+h1{font-size:20px;font-weight:700;color:#f8fafc}
+.tag{display:inline-block;background:rgba(6,182,212,.12);color:#06b6d4;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin-left:10px}
+.subtitle{color:#94a3b8;font-size:12px;margin-top:2px}
+.container{max-width:1200px;margin:0 auto;padding:28px 40px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.kpi-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px}
+.kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:6px}
+.kpi-value{font-size:26px;font-weight:700;color:#f8fafc;line-height:1}
+.kpi-delta{font-size:12px;font-weight:600;margin-top:5px}
+.section{margin-bottom:36px}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1e3a5f}
+.sh-icon{width:28px;height:28px;background:rgba(6,182,212,.12);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+h2{font-size:15px;font-weight:700;color:#f8fafc}
+.sh-meta{color:#64748b;font-size:11px;margin-left:auto}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+.chart-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px}
+.ct{font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:14px;text-transform:uppercase;letter-spacing:.07em}
+.cw{position:relative;height:210px}
+.table-card{background:#1e293b;border:1px solid #334155;border-radius:12px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead th{background:#0f1724;padding:9px 13px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#64748b;border-bottom:1px solid #334155}
+tbody tr{border-bottom:1px solid #1e293b}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:rgba(6,182,212,.03)}
+tbody td{padding:9px 13px;color:#cbd5e1}
+tfoot td{padding:9px 13px;background:#0f1724;border-top:1px solid #334155;font-weight:700;color:#f8fafc}
+.insight{background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.2);border-left:3px solid #06b6d4;border-radius:0 8px 8px 0;padding:13px 17px;margin-bottom:18px;font-size:13px;color:#94a3b8}
+.insight strong{color:#f8fafc}
+.footer{background:#0f1724;border-top:1px solid #1e3a5f;padding:18px 40px;text-align:center;color:#475569;font-size:11px}
+.footer a{color:#06b6d4;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-top">
+    <div class="logo">K1</div>
+    <div>
+      <h1>Weekly Traffic Report<span class="tag">auto-generated</span></h1>
+      <div class="subtitle">KabatOne.com &middot; GA4 + GSC &middot; Oct 19 – Nov 15, 2026 (28 days)</div>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Total Sessions</div>
+    <div class="kpi-value">3,476</div>
+    <div class="kpi-delta" style="color:#22c55e">+16.4% vs prior</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Organic Sessions</div>
+    <div class="kpi-value">884</div>
+    <div class="kpi-delta" style="color:#ef4444">-15.3% vs prior</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Organic Share</div>
+    <div class="kpi-value" style="color:#f59e0b">25.4%</div>
+    <div class="kpi-delta" style="color:#64748b">benchmark &ge;30%</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Opportunity Uplift</div>
+    <div class="kpi-value" style="color:#06b6d4">~1090</div>
+    <div class="kpi-delta" style="color:#64748b">extra clicks/mo (top 15)</div>
+  </div>
+</div>
+
+<div style="background:#0f1724;border:1px solid #1e3a5f;border-radius:12px;padding:24px 28px;margin-bottom:28px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e3a5f">
+    <span style="font-size:18px">&#x1F9E0;</span>
+    <span style="font-size:13px;font-weight:700;color:#f8fafc">Weekly Intelligence</span>
+    <span style="margin-left:auto;font-size:11px;color:#475569">claude-opus-5-5 &middot; 2026-11-16</span>
+  </div>
+  <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">What changed this week</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">Organic Search -15.3% (1,044→884 sessions); share now 25.4%: under the 30% healthy mark and only 0.4 pts above the 25% critical line.</li>
+<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">Direct +40.3% (1,700→2,385 sessions) produced all of the +16.4% total growth (2,985→3,476). Organic Social fell -61% (95→37).</li>
+<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">AI Assistant referrals +38% (29→40 sessions). It's a small channel but it grew the fastest after Direct.</li>
+</ul>
+<p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">What's surprising or worth watching</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">The reported "declining -18.6%" trend isn't real. The last 4-week average includes a partial week (52 sessions). Full weeks 774/985/817 average 859 vs 807 before (+6%). Check the Direct spike for bot traffic before reading it as demand.</li>
+<li style="padding:5px 0 5px 14px;border-left:2px solid #1e3a5f;margin-bottom:6px;color:#94a3b8;font-size:13px;line-height:1.6">Eight top-3 queries show exactly 0 clicks: "milestone ai alternatives" (885 impr, pos 2.3), "motorola solutions alternatives" (683, 3.2), "looking for enterprise platform for port security" (308, 1.5) and others. The prompt-style wording points to rank-tracker or synthetic traffic, not searchers. Confirm whether these impressions appeared suddenly at an unchanged position before rewriting snippets.</li>
+</ul>
+<p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#06b6d4;margin:18px 0 8px">Top 3 actions this week</p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.6">1. Rewrite the title and meta for the C5-definition page, which gets 0 clicks at pos ~6 across "que es el c5" (897), "c5 que es" (472), "que es c5" (368) and "que es el c5 en mexico" (304). That's ~122 recoverable clicks.</p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.6">2. Add a "CCTV analytics" H2 and FAQ block to the K-Video page: "cctv analytics" shows 360 impr at pos 4.1 and 0.28% CTR (~28 clicks).</p>
+<p style="color:#94a3b8;font-size:13px;line-height:1.6">3. Build out the CAD / Dispatch cluster: 16,120 impr, only 12 clicks, avg pos 16.8, and it's the highest business-value product.</p>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="ct">&#x1F4C8; Weekly Sessions Trend</div>
+    <div class="cw"><canvas id="weeklyChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="ct">&#x1F4CA; Traffic Source Mix</div>
+    <div class="cw"><canvas id="sourcesChart"></canvas></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh"><div class="sh-icon">&#x1F310;</div><h2>Traffic Sources</h2><div class="sh-meta">GA4 &middot; Oct 19 – Nov 15, 2026</div></div>
+  <div class="table-card"><table>
+    <thead><tr><th>Channel</th><th style="text-align:right">Sessions</th><th style="text-align:right">Share</th><th style="text-align:right">vs Prior</th><th style="text-align:right">Prior</th></tr></thead>
+    <tbody><tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#06b6d4;margin-right:8px;vertical-align:middle"></span>Direct</td><td style="text-align:right">2,385</td><td style="text-align:right">68.6%</td><td style="text-align:right;color:#22c55e;font-weight:600">↑ +40.3%</td><td style="text-align:right;color:#94a3b8">1,700</td></tr>
+<tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:8px;vertical-align:middle"></span>Organic Search</td><td style="text-align:right">884</td><td style="text-align:right">25.4%</td><td style="text-align:right;color:#ef4444;font-weight:600">↓ -15.3%</td><td style="text-align:right;color:#94a3b8">1,044</td></tr>
+<tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#8b5cf6;margin-right:8px;vertical-align:middle"></span>Referral</td><td style="text-align:right">121</td><td style="text-align:right">3.5%</td><td style="text-align:right;color:#22c55e;font-weight:600">↑ +16.3%</td><td style="text-align:right;color:#94a3b8">104</td></tr>
+<tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#64748b;margin-right:8px;vertical-align:middle"></span>AI Assistant</td><td style="text-align:right">40</td><td style="text-align:right">1.2%</td><td style="text-align:right;color:#22c55e;font-weight:600">↑ +37.9%</td><td style="text-align:right;color:#94a3b8">29</td></tr>
+<tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:8px;vertical-align:middle"></span>Organic Social</td><td style="text-align:right">37</td><td style="text-align:right">1.1%</td><td style="text-align:right;color:#ef4444;font-weight:600">↓ -61.1%</td><td style="text-align:right;color:#94a3b8">95</td></tr>
+<tr><td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#64748b;margin-right:8px;vertical-align:middle"></span>Unassigned</td><td style="text-align:right">9</td><td style="text-align:right">0.3%</td><td style="text-align:right;color:#ef4444;font-weight:600">↓ -10.0%</td><td style="text-align:right;color:#94a3b8">10</td></tr>
+</tbody>
+    <tfoot><tr><td>TOTAL</td><td style="text-align:right">3,476</td><td style="text-align:right">100%</td><td style="text-align:right;color:#22c55e;font-weight:600">+16.4%</td><td style="text-align:right;color:#94a3b8">2,985</td></tr></tfoot>
+  </table></div>
+</div>
+
+<div class="section">
+  <div class="sh"><div class="sh-icon">&#x1F4C4;</div><h2>Top Organic Landing Pages</h2><div class="sh-meta">GA4 Organic &middot; Top 15</div></div>
+  <div class="table-card"><table>
+    <thead><tr><th style="width:28px"></th><th>Page</th><th style="text-align:right">Sessions</th><th style="text-align:right">vs Prior</th><th style="text-align:right">Duration</th><th style="text-align:right">Bounce</th></tr></thead>
+    <tbody><tr><td>🔴</td><td><a href="https://kabatone.com/es" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es</a></td><td style="text-align:right">93</td><td style="text-align:right;color:#ef4444;font-weight:600">-38%</td><td style="text-align:right;color:#94a3b8">25:51</td><td style="text-align:right;color:#94a3b8">37.6%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com(not set)" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">(not set)</a></td><td style="text-align:right">79</td><td style="text-align:right;color:#ef4444;font-weight:600">-28%</td><td style="text-align:right;color:#94a3b8">0:02</td><td style="text-align:right;color:#94a3b8">98.7%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/</a></td><td style="text-align:right">67</td><td style="text-align:right;color:#ef4444;font-weight:600">-37%</td><td style="text-align:right;color:#94a3b8">3:30</td><td style="text-align:right;color:#94a3b8">38.8%</td></tr>
+<tr><td>🟢</td><td><a href="https://kabatone.com/es/resources/que-es-un-c5" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/que-es-un-c5</a></td><td style="text-align:right">59</td><td style="text-align:right;color:#22c55e;font-weight:600">+64%</td><td style="text-align:right;color:#94a3b8">1:49</td><td style="text-align:right;color:#94a3b8">42.4%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/resources/best-cad-dispatch-software" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/resources/best-cad-dispatch-software</a></td><td style="text-align:right">56</td><td style="text-align:right;color:#ef4444;font-weight:600">-23%</td><td style="text-align:right;color:#94a3b8">1:23</td><td style="text-align:right;color:#94a3b8">37.5%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/es/resources/how-c5-command-centers-work" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/how-c5-command-centers-work</a></td><td style="text-align:right">49</td><td style="text-align:right;color:#ef4444;font-weight:600">-40%</td><td style="text-align:right;color:#94a3b8">2:47</td><td style="text-align:right;color:#94a3b8">59.2%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/resources/cctv-video-analytics" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/resources/cctv-video-analytics</a></td><td style="text-align:right">28</td><td style="text-align:right;color:#ef4444;font-weight:600">-50%</td><td style="text-align:right;color:#94a3b8">4:07</td><td style="text-align:right;color:#94a3b8">39.3%</td></tr>
+<tr><td>🟡</td><td><a href="https://kabatone.com/es/resources/what-is-video-management-software" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/what-is-video-management-software</a></td><td style="text-align:right">20</td><td style="text-align:right;color:#22c55e;font-weight:600">+11%</td><td style="text-align:right;color:#94a3b8">1:55</td><td style="text-align:right;color:#94a3b8">45.0%</td></tr>
+<tr><td>🆕</td><td><a href="https://kabatone.com/resources/what-is-cad-dispatch-software" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/resources/what-is-cad-dispatch-software</a></td><td style="text-align:right">19</td><td style="text-align:right;color:#06b6d4;font-weight:600">new</td><td style="text-align:right;color:#94a3b8">1:58</td><td style="text-align:right;color:#94a3b8">73.7%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/es/resources/what-is-a-command-center" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/what-is-a-command-center</a></td><td style="text-align:right">17</td><td style="text-align:right;color:#ef4444;font-weight:600">-54%</td><td style="text-align:right;color:#94a3b8">2:01</td><td style="text-align:right;color:#94a3b8">52.9%</td></tr>
+<tr><td>🟡</td><td><a href="https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/what-is-lpr-license-plate-recognition</a></td><td style="text-align:right">14</td><td style="text-align:right;color:#22c55e;font-weight:600">+0%</td><td style="text-align:right;color:#94a3b8">2:39</td><td style="text-align:right;color:#94a3b8">42.9%</td></tr>
+<tr><td>🟢</td><td><a href="https://kabatone.com/resources/how-c5-command-centers-work" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/resources/how-c5-command-centers-work</a></td><td style="text-align:right">13</td><td style="text-align:right;color:#22c55e;font-weight:600">+30%</td><td style="text-align:right;color:#94a3b8">1:08</td><td style="text-align:right;color:#94a3b8">69.2%</td></tr>
+<tr><td>🟢</td><td><a href="https://kabatone.com/es/k-dispatch" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/k-dispatch</a></td><td style="text-align:right">12</td><td style="text-align:right;color:#22c55e;font-weight:600">+100%</td><td style="text-align:right;color:#94a3b8">0:19</td><td style="text-align:right;color:#94a3b8">50.0%</td></tr>
+<tr><td>🆕</td><td><a href="https://kabatone.com/es/resources/c5-command-centers-mexico-2026" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/c5-command-centers-mexico-2026</a></td><td style="text-align:right">12</td><td style="text-align:right;color:#06b6d4;font-weight:600">new</td><td style="text-align:right;color:#94a3b8">3:59</td><td style="text-align:right;color:#94a3b8">41.7%</td></tr>
+<tr><td>🔴</td><td><a href="https://kabatone.com/es/resources/cctv-video-analytics" target="_blank" style="color:#06b6d4;text-decoration:none;font-size:12px">/es/resources/cctv-video-analytics</a></td><td style="text-align:right">12</td><td style="text-align:right;color:#ef4444;font-weight:600">-46%</td><td style="text-align:right;color:#94a3b8">0:38</td><td style="text-align:right;color:#94a3b8">58.3%</td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<div class="section">
+  <div class="sh"><div class="sh-icon">&#x1F3AF;</div><h2>Keyword Opportunity Stack</h2><div class="sh-meta">GSC &middot; top 15 &middot; ~1090 extra clicks/mo</div></div>
+  <div class="table-card"><table>
+    <thead><tr><th style="text-align:center">#</th><th>Query</th><th style="text-align:right">Impr</th><th style="text-align:right">Pos</th><th style="text-align:right">CTR</th><th style="text-align:right">Gap</th><th style="text-align:right">Score</th><th style="text-align:center">BV</th></tr></thead>
+    <tbody><tr><td style="color:#64748b;text-align:center">1</td><td style="font-size:12px">motorola solutions alternatives</td><td style="text-align:right">683</td><td style="text-align:right">3.2</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+11.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">150.3</span></td><td style="text-align:center"><span style="background:#06b6d4;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">2.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">2</td><td style="font-size:12px">cctv video analytics</td><td style="text-align:right">457</td><td style="text-align:right">2.5</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">146.2</span></td><td style="text-align:center"><span style="background:#06b6d4;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">2.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">3</td><td style="font-size:12px">milestone ai alternatives</td><td style="text-align:right">885</td><td style="text-align:right">2.3</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">141.6</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">4</td><td style="font-size:12px">looking for enterprise platform for port security</td><td style="text-align:right">308</td><td style="text-align:right">1.5</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+28.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">86.2</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">5</td><td style="font-size:12px">kabatone alternatives</td><td style="text-align:right">295</td><td style="text-align:right">1.8</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+28.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">82.6</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">6</td><td style="font-size:12px">que es el c5</td><td style="text-align:right">897</td><td style="text-align:right">6.4</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+6.0%</td><td style="text-align:right"><span style="background:#ef4444;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">80.7</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.5x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">7</td><td style="font-size:12px">c5</td><td style="text-align:right">5,574</td><td style="text-align:right">8.0</td><td style="text-align:right">0.1%</td><td style="text-align:right;color:#22c55e">+3.9%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">43.4</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">0.2x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">8</td><td style="font-size:12px">c5 que es</td><td style="text-align:right">472</td><td style="text-align:right">6.2</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+6.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">42.5</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.5x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">9</td><td style="font-size:12px">axon alternatives for body cameras</td><td style="text-align:right">249</td><td style="text-align:right">2.8</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">39.8</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">10</td><td style="font-size:12px">milestone systems alternatives</td><td style="text-align:right">244</td><td style="text-align:right">2.8</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">39.0</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">11</td><td style="font-size:12px">best milestone vms alternatives</td><td style="text-align:right">117</td><td style="text-align:right">2.2</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">37.4</span></td><td style="text-align:center"><span style="background:#06b6d4;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">2.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">12</td><td style="font-size:12px">estadistica 911</td><td style="text-align:right">78</td><td style="text-align:right">2.6</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+16.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">37.4</span></td><td style="text-align:center"><span style="background:#ef4444;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">3.0x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">13</td><td style="font-size:12px">vms</td><td style="text-align:right">3,179</td><td style="text-align:right">6.2</td><td style="text-align:right">0.1%</td><td style="text-align:right;color:#22c55e">+5.9%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">37.3</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">0.2x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">14</td><td style="font-size:12px">centro de mando</td><td style="text-align:right">245</td><td style="text-align:right">6.0</td><td style="text-align:right">0.4%</td><td style="text-align:right;color:#22c55e">+5.6%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">34.2</span></td><td style="text-align:center"><span style="background:#f59e0b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">2.5x</span></td></tr>
+<tr><td style="color:#64748b;text-align:center">15</td><td style="font-size:12px">que es c5</td><td style="text-align:right">368</td><td style="text-align:right">6.3</td><td style="text-align:right">0.0%</td><td style="text-align:right;color:#22c55e">+6.0%</td><td style="text-align:right"><span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:12px">33.1</span></td><td style="text-align:center"><span style="background:#64748b;color:#fff;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700">1.5x</span></td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="ct">&#x1F50D; Cluster Impressions</div>
+    <div class="cw"><canvas id="clusterImprChart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="ct">&#x1F4CD; Cluster Avg Position</div>
+    <div class="cw"><canvas id="clusterPosChart"></canvas></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sh"><div class="sh-icon">&#x1F3F7;&#xFE0F;</div><h2>Keyword Cluster Momentum</h2><div class="sh-meta">GSC &middot; 5143 total queries</div></div>
+  <div class="table-card"><table>
+    <thead><tr><th>Cluster</th><th style="text-align:right">Impressions</th><th style="text-align:right">Clicks</th><th style="text-align:right">CTR</th><th style="text-align:right">Avg Pos</th><th style="text-align:right">Queries</th></tr></thead>
+    <tbody><tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#22c55e;margin-right:8px;vertical-align:middle"></span><strong>Brand</strong></td><td style="text-align:right">868</td><td style="text-align:right">88</td><td style="text-align:right">10.14%</td><td style="text-align:right">1.3</td><td style="text-align:right;color:#64748b">7</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#06b6d4;margin-right:8px;vertical-align:middle"></span><strong>C5 / Command Ctr</strong></td><td style="text-align:right">16,161</td><td style="text-align:right">29</td><td style="text-align:right">0.18%</td><td style="text-align:right">6.8</td><td style="text-align:right;color:#64748b">478</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8b5cf6;margin-right:8px;vertical-align:middle"></span><strong>Video / VMS</strong></td><td style="text-align:right">30,565</td><td style="text-align:right">31</td><td style="text-align:right">0.10%</td><td style="text-align:right">15.5</td><td style="text-align:right;color:#64748b">1055</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#ef4444;margin-right:8px;vertical-align:middle"></span><strong>CAD / Dispatch</strong></td><td style="text-align:right">16,120</td><td style="text-align:right">12</td><td style="text-align:right">0.07%</td><td style="text-align:right">16.8</td><td style="text-align:right;color:#64748b">829</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#f59e0b;margin-right:8px;vertical-align:middle"></span><strong>Comparisons</strong></td><td style="text-align:right">1,995</td><td style="text-align:right">3</td><td style="text-align:right">0.15%</td><td style="text-align:right">8.4</td><td style="text-align:right;color:#64748b">143</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#10b981;margin-right:8px;vertical-align:middle"></span><strong>Country / LATAM</strong></td><td style="text-align:right">67</td><td style="text-align:right">0</td><td style="text-align:right">0.00%</td><td style="text-align:right">13.4</td><td style="text-align:right;color:#64748b">18</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#f97316;margin-right:8px;vertical-align:middle"></span><strong>Emergency Mgmt</strong></td><td style="text-align:right">7,316</td><td style="text-align:right">1</td><td style="text-align:right">0.01%</td><td style="text-align:right">14.0</td><td style="text-align:right;color:#64748b">374</td></tr>
+<tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#a78bfa;margin-right:8px;vertical-align:middle"></span><strong>AI / Analytics</strong></td><td style="text-align:right">3,891</td><td style="text-align:right">4</td><td style="text-align:right">0.10%</td><td style="text-align:right">10.7</td><td style="text-align:right;color:#64748b">159</td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<div style="background:#0f1724;border:1px solid #1e3a5f;border-radius:12px;padding:24px 28px;margin-bottom:28px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e3a5f">
+    <span style="font-size:18px">&#x1F4CB;</span>
+    <span style="font-size:13px;font-weight:700;color:#f8fafc">Full Action Plan</span>
+    <span style="margin-left:auto;font-size:11px;color:#475569">claude-opus-5-5 &middot; 2026-11-16</span>
+  </div>
+  <p style="font-size:12px;font-weight:700;color:#f8fafc;margin:20px 0 10px;display:flex;align-items:center"><span style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid #ef4444;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:8px">P0</span>This Week</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="padding:8px 0 4px 14px;border-left:2px solid #ef4444;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Rewrite C5-definition title/meta in Spanish (definition first)</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">ranking page TBD (page data not returned; map in GSC)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">que es el c5 / c5 que es / que es c5 / que es el c5 en mexico</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~122 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Title "¿Qué es el C5? Centro de Comando y Control en México | KabatOne". Meta answers the question in the first 120 characters. Add a 40-word definition paragraph directly under the H1 to compete for the snippet (897+472+368+304 impr × 6% gap).</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #ef4444;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Add CCTV analytics section and FAQ</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">K-Video page (TBD in GSC)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">cctv analytics</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~28 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Add an H2 "CCTV Analytics with AI" and 3 FAQ Q&As with FAQPage schema. Rewrite the meta to lead with "CCTV analytics" (pos 4.1, 0.28% CTR, 360 impr).</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #ef4444;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Verify synthetic impressions on zero-click top-3 queries</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">GSC Performance report</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">milestone ai alternatives, motorola solutions alternatives, looking for enterprise platform for port security, cctv video analytics, kabatone alternatives</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~0 clicks (diagnostic)</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Compare daily impressions and position for each query. If impressions jumped suddenly at a flat position, tag the query as synthetic and drop it from the opportunity stack. Optimize snippets only for queries with an organic-looking curve. Gross potential if real: ~380 clicks.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #ef4444;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Audit the Direct traffic spike</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">GA4 Direct landing pages</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">n/a (channel: Direct +40%)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~0 clicks (diagnostic)</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Break Direct down by landing page, country, device and engagement time. Exclude bot or internal traffic so organic share (25.4%) and the trend read correctly.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #ef4444;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Optimize "centro de mando" and "command center" snippets</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">C5 / Command Center page (TBD)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">centro de mando, command center</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~27 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Put the exact phrases into the title and H1 variants and add a comparison table of C5/C4/C2 capabilities (245 impr pos 6.0 at 0.41% CTR; 313 impr pos 8.3 at 0%).</div>
+</ul>
+<p style="font-size:12px;font-weight:700;color:#f8fafc;margin:20px 0 10px;display:flex;align-items:center"><span style="background:rgba(245,158,11,0.12);color:#f59e0b;border:1px solid #f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:8px">P1</span>This Month</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="padding:8px 0 4px 14px;border-left:2px solid #f59e0b;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Push "vms software" from page 2 to page 1</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">K-Video VMS page (TBD)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">vms software</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~15 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Add a 1,200+ word VMS software section covering features, integrations and deployment. Add internal links from the Milestone and Genetec comparison content (968 impr, pos 12.4).</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #f59e0b;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Create a 911 statistics content asset</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">new: /blog/estadisticas-911-mexico/</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">estadistica 911</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~12 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Publish an annual 911 call statistics page for Mexico (SESNSP data) with charts and a CTA to K-Dispatch. The query has the highest business value in the stack (3.0) but only 78 impr at pos 2.6.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #f59e0b;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Build out the CAD / Dispatch cluster</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">K-Dispatch page + new support articles</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">CAD / Dispatch cluster</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~160 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: The cluster has 16,120 impr, 12 clicks and avg pos 16.8. Publish 3 articles (software CAD 911, despacho de emergencias, CAD vs Motorola) that internally link to K-Dispatch. Estimate assumes moving ~1% CTR uplift.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #f59e0b;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Respond to the "sistemas pfa" query</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">ranking page TBD</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">sistemas pfa</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~27 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Check the intent of the ranking page (452 impr, pos 6.9, 0% CTR). If KabatOne is relevant, add a section on it; if not, ignore the query.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #f59e0b;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Develop the Emergency Mgmt cluster</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">Emergency management hub (TBD)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">Emergency Mgmt cluster</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~70 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: The cluster has 7,316 impr, 1 click and pos 14.0. Build a Spanish hub page on gestión de emergencias municipales linking K-Safety and K-Dispatch.</div>
+</ul>
+<p style="font-size:12px;font-weight:700;color:#f8fafc;margin:20px 0 10px;display:flex;align-items:center"><span style="background:rgba(6,182,212,0.12);color:#06b6d4;border:1px solid #06b6d4;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:8px">P2</span>Backlog</p>
+<ul style="list-style:none;padding:0;margin:0">
+<li style="padding:8px 0 4px 14px;border-left:2px solid #06b6d4;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Legitimate comparison pages, once impressions are verified</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">/vs/milestone/, /vs/motorola/ (create or confirm)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">milestone systems alternatives, best milestone vms alternatives, motorola solutions alternatives</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~150 clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Only after the P0 verification confirms real demand, build comparison tables with a pricing/LATAM support angle.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #06b6d4;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Disambiguate the bare acronyms</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">C5 / VMS glossary</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">c5, vms (intent: definition lookup, BV 0.2)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">low-value clicks</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Don't chase raw volume. Keep a glossary entry that links to the qualified pages so definition traffic flows to buyer pages.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #06b6d4;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Country / LATAM landing pages</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">new: /co/, /pe/</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">Country / LATAM cluster</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">~0 clicks (67 impr, pos 13.4)</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Write localized pages for Colombia and Peru public-safety procurement.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #06b6d4;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">AI Assistant visibility</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">sitewide</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">AI Assistant channel (29→40 sessions)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">n/a</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Add llms.txt and structured product summaries so AI assistants keep citing KabatOne.</div>
+<li style="padding:8px 0 4px 14px;border-left:2px solid #06b6d4;margin-bottom:4px;color:#cbd5e1;font-size:13px;line-height:1.5"><strong style="color:#f8fafc">Recover Organic Social</strong> <span style="color:#334155;margin:0 4px">|</span> <span style="color:#64748b;font-size:11px">Page: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">n/a</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">Query: <code style="background:#1e293b;color:#06b6d4;padding:1px 5px;border-radius:3px;font-size:11px">Organic Social (95→37)</code></span> <span style="color:#334155">·</span> <span style="color:#64748b;font-size:11px">n/a</span></li>
+<div style="padding:4px 0 8px 16px;color:#64748b;font-size:12px;border-left:2px solid #334155;margin-left:8px;margin-bottom:4px">What: Work out what caused the 61% drop and restart LinkedIn posting tied to new content.</div>
+</ul>
+</div>
+</div>
+<div class="footer">
+  Auto-generated 2026-11-16 &middot; <a href="https://kabatone.com">kabatone.com</a> &middot; seo-weekly-agent
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#334155';
+new Chart(document.getElementById('weeklyChart'),{type:'line',data:{labels:["W35", "W36", "W37", "W38", "W39", "W40", "W41", "W42", "W43", "W44", "W45", "W46", "W47"],datasets:[{label:'Sessions',data:[485, 820, 689, 721, 658, 737, 761, 804, 926, 774, 985, 817, 52],borderColor:'#06b6d4',backgroundColor:'rgba(6,182,212,0.08)',borderWidth:2,fill:true,tension:0.3,pointRadius:3,pointBackgroundColor:'#06b6d4'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(51,65,85,0.5)'},ticks:{color:'#64748b'}},y:{grid:{color:'rgba(51,65,85,0.5)'},ticks:{color:'#64748b'},beginAtZero:true}}}});
+new Chart(document.getElementById('sourcesChart'),{type:'bar',data:{labels:["Direct", "Organic Search", "Referral", "AI Assistant", "Organic Social", "Unassigned"],datasets:[{label:'Current',data:[2385, 884, 121, 40, 37, 9],backgroundColor:'rgba(6,182,212,0.8)',borderRadius:4},{label:'Prior',data:[1700, 1044, 104, 29, 95, 10],backgroundColor:'rgba(100,116,139,0.4)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{labels:{color:'#94a3b8',boxWidth:10}}},scales:{x:{grid:{color:'rgba(51,65,85,0.5)'},ticks:{color:'#64748b'}},y:{grid:{display:false},ticks:{color:'#94a3b8'}}}}});
+const cc=["#22c55e", "#06b6d4", "#8b5cf6", "#ef4444", "#f59e0b", "#10b981", "#f97316", "#a78bfa"];
+new Chart(document.getElementById('clusterImprChart'),{type:'bar',data:{labels:["Brand", "C5 / Command Ctr", "Video / VMS", "CAD / Dispatch", "Comparisons", "Country / LATAM", "Emergency Mgmt", "AI / Analytics", "Other"],datasets:[{data:[868, 16161, 30565, 16120, 1995, 67, 7316, 3891, 24900],backgroundColor:cc,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(51,65,85,0.5)'},ticks:{color:'#64748b'}},y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}}}});
+new Chart(document.getElementById('clusterPosChart'),{type:'bar',data:{labels:["Brand", "C5 / Command Ctr", "Video / VMS", "CAD / Dispatch", "Comparisons", "Country / LATAM", "Emergency Mgmt", "AI / Analytics", "Other"],datasets:[{data:[1.3, 6.8, 15.5, 16.8, 8.4, 13.4, 14.0, 10.7, 17.8],backgroundColor:cc.map(c=>c+'99'),borderColor:cc,borderWidth:1,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' Pos '+ctx.raw.toFixed(1)}}},scales:{x:{grid:{color:'rgba(51,65,85,0.5)'},ticks:{color:'#64748b'},title:{display:true,text:'Lower = better',color:'#64748b',font:{size:11}}},y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}}}});
+</script>
+</body>
+</html>

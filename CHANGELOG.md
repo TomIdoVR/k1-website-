@@ -1,3 +1,12 @@
+## [v2.446] – 2026-11-16 — Weekly SEO + GEO report 2026-11-16; Monday jobs blocked by GitHub access and API credit
+**Added**
+- `SEO/weekly-report-2026-11-16.md`. Focus: the site is fine, the monitoring is not. Search held (28d clicks 631, −0.9%; W45 180, W46 151 in 6 days), all five INDEX-1 pages are indexed, and AI-referred sessions are rising (last 3 weeks avg 11 vs 5). But the Monday jobs could not push (GitHub 403: the active gh login changed to `omercnaani`, which has no write access), and OpenAI and Gemini ran out of API credit, so ChatGPT and Gemini (97.5% of AI referrals) went unmeasured. GEO: Claude core named 3 → 5, Perplexity 8 → 4 (CAD retrieval 9 → 3). `best-cad` W46 9 clicks in 6 days after 15: not closed. Refutes the Slack brief's "Organic −15%" (prior-window peak; W46 organic users 201) and its C5-snippet P0 (two earlier rewrites, definition query answered at the top of Google).
+- `SEO/gsc-fresh-2026-11-16.json`.
+- This PR also carries the four job commits that failed to push this morning (traffic report, keyword, crawler, GEO snapshots).
+
+**Changed**
+- `SEO/carry-over.md`: new OPS-3 (push 403) and OPS-4 (OpenAI + Gemini credit); closed INDEX-1 (indexed) and AI-1 (recovered); 11-16 notes on CAD-2, AI-2, GEO-5, PIPE-3.
+
 ## [v2.445] – 2026-11-11 — Ledger: G2/Capterra/GetApp/Software Advice listings live, OPS-2 closed
 **Changed**
 - `SEO/carry-over.md`: GEO-5 gets the 11-10 directory work. G2 categories fixed and unverified claims removed (99.99% uptime SLA, 8-16 weeks, 100+ agencies, SOC 2). Capterra, GetApp and Software Advice published with the K-Dispatch video (https://youtu.be/ofjw2Ti4Rb8). SourceForge and FeaturedCustomers submitted. GovLaunch still needs Omer's account. INDEX-1 moves to watching: indexing was requested for all five pages on 11-09, so verify on 11-16. OPS-2 closed: credit topped up and the Claude engine re-run on 11-09 (core 3/40 both runs).
