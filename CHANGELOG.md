@@ -1,3 +1,29 @@
+## [v2.447] – 2026-11-16 — Playwright smoke tests for the live site
+
+**Added**
+- **`e2e/` Playwright suite (49 tests, about a minute).** The only automated check was
+  `health-check.yml`, which curls `/` and `/es` for a 200 and cannot see a broken hero, a dead form
+  or a lost canonical. The suite covers: 13 key pages × EN/ES (200, `lang`, one visible H1, no
+  uncaught JS errors, no same-origin 4xx/5xx); SEO head on 5 pages (canonical, hreflang
+  en/es/x-default, description, JSON-LD parses, distinct ES canonical) plus `robots.txt`,
+  `llms.txt`, `sitemap.xml` and ~40 sampled sitemap URLs; the contact form (EN, ES, error path,
+  required fields); the two-step careers application with screening questions; header/footer
+  links, language switcher and demo CTA; and mobile (no horizontal scroll, menu opens).
+- Forms are stubbed at the network layer (Formspree and `/api/careers/apply`), so the suite never
+  creates a real lead or application.
+- **`.github/workflows/e2e.yml`** runs the suite after every successful Vercel Preview or
+  Production deployment (against that deployment's URL), nightly at 06:17 UTC against
+  https://www.kabatone.com (scheduled runs only fire from `main`), and on demand. Failures upload
+  the report and traces for 14 days. Optional repo secret `VERCEL_AUTOMATION_BYPASS_SECRET` lets
+  it reach protected previews.
+- Scripts: `npm run test:e2e` (local server), `test:e2e:prod` (live site), `test:e2e:ui`.
+
+**Notes**
+- Ported from `nextjs` (v2.405), where the first Action run passed 48 of 49 and caught a real
+  staging bug: `<html lang>` stays `en` after a client-side language switch. `main` is not
+  affected (it serves `lang` server-side); 49/49 pass against production from this branch.
+- No site code changed; nothing here ships to visitors.
+
 ## [v2.446] – 2026-11-16 — Weekly SEO + GEO report 2026-11-16; Monday jobs blocked by GitHub access and API credit
 **Added**
 - `SEO/weekly-report-2026-11-16.md`. Focus: the site is fine, the monitoring is not. Search held (28d clicks 631, −0.9%; W45 180, W46 151 in 6 days), all five INDEX-1 pages are indexed, and AI-referred sessions are rising (last 3 weeks avg 11 vs 5). But the Monday jobs could not push (GitHub 403: the active gh login changed to `omercnaani`, which has no write access), and OpenAI and Gemini ran out of API credit, so ChatGPT and Gemini (97.5% of AI referrals) went unmeasured. GEO: Claude core named 3 → 5, Perplexity 8 → 4 (CAD retrieval 9 → 3). `best-cad` W46 9 clicks in 6 days after 15: not closed. Refutes the Slack brief's "Organic −15%" (prior-window peak; W46 organic users 201) and its C5-snippet P0 (two earlier rewrites, definition query answered at the top of Google).
