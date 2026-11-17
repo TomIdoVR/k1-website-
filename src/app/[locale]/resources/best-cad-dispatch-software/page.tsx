@@ -39,7 +39,7 @@ export default async function BestCadDispatchSoftwarePage({
   const baseFaqs = es ? [
     {
       question: '¿Cuál es el mejor software CAD para centros 911?',
-      answer: 'El mejor software CAD para centros 911 depende del tamaño y las necesidades de tu agencia. Para municipios y gobiernos de LATAM, KabatOne K-Dispatch ofrece la integración más completa: recepción de llamadas 911, despacho asistido por IA, integración nativa con video y GIS, y soporte en español. Tyler Technologies y CentralSquare lideran el mercado de EE.UU. pero carecen de la integración de video y sensores IoT que ofrece una plataforma unificada.',
+      answer: 'El mejor software CAD para centros 911 depende del tamaño y las necesidades de tu agencia. Para municipios y gobiernos de LATAM, Kabat One K-Dispatch ofrece la integración más completa: recepción de llamadas 911, despacho asistido por IA, integración nativa con video y GIS, y soporte en español. Tyler Technologies y CentralSquare lideran el mercado de EE.UU. pero carecen de la integración de video y sensores IoT que ofrece una plataforma unificada.',
     },
     {
       question: '¿Qué diferencia hay entre un sistema CAD legacy y uno moderno?',
@@ -47,11 +47,11 @@ export default async function BestCadDispatchSoftwarePage({
     },
     {
       question: '¿Cuánto cuesta el software CAD para 911?',
-      answer: 'El costo del software CAD varía ampliamente según el número de posiciones de despacho, módulos incluidos y modelo de implementación (nube vs. local). Los sistemas legacy como Tyler EISS tienen altos costos de licencia y mantenimiento. Las plataformas modernas como KabatOne K-Dispatch funcionan bajo modelo SaaS con costo por posición de despacho, sin inversión inicial en hardware de servidores.',
+      answer: 'El costo del software CAD varía ampliamente según el número de posiciones de despacho, módulos incluidos y modelo de implementación (nube vs. local). Los sistemas legacy como Tyler EISS tienen altos costos de licencia y mantenimiento. Las plataformas modernas como Kabat One K-Dispatch funcionan bajo modelo SaaS con costo por posición de despacho, sin inversión inicial en hardware de servidores.',
     },
     {
       question: '¿El software CAD se puede integrar con video y GIS?',
-      answer: 'Sí, pero la calidad de integración varía significativamente. Los sistemas CAD standalone requieren middleware y APIs de terceros para conectarse con VMS y GIS — lo que genera fricción operativa y puntos de falla. Las plataformas unificadas como KabatOne integran CAD, video y GIS de forma nativa: cuando se crea un incidente, las cámaras más cercanas aparecen automáticamente y la posición se marca en el mapa operativo.',
+      answer: 'Sí, pero la calidad de integración varía significativamente. Los sistemas CAD standalone requieren middleware y APIs de terceros para conectarse con VMS y GIS — lo que genera fricción operativa y puntos de falla. Las plataformas unificadas como Kabat One integran CAD, video y GIS de forma nativa: cuando se crea un incidente, las cámaras más cercanas aparecen automáticamente y la posición se marca en el mapa operativo.',
     },
     {
       question: '¿Qué es el despacho asistido por computadora (CAD)?',
@@ -59,28 +59,28 @@ export default async function BestCadDispatchSoftwarePage({
     },
     {
       question: '¿Cuál es el mejor software CAD para despacho de bomberos?',
-      answer: 'El despacho de bomberos impone tres requisitos que el CAD policial no cubre: asignación por tipo de unidad (no basta la más cercana — un incendio estructural requiere autobomba, escala y rescate simultáneamente), ayuda mutua entre jurisdicciones con sistemas distintos, y tiempos de procesamiento de alarma medidos contra la norma NFPA 1225, que fija procesar el 90% de las llamadas de emergencia en 60 segundos. Al evaluar proveedores, exija evidencia de despacho multi-unidad por tipo, coordinación entre agencias sobre un mapa compartido y registro de tiempos auditable. KabatOne K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias e integración nativa de video y GIS — en lugar de silos por agencia conectados con integraciones frágiles.',
+      answer: 'El despacho de bomberos impone tres requisitos que el CAD policial no cubre: asignación por tipo de unidad (no basta la más cercana — un incendio estructural requiere autobomba, escala y rescate simultáneamente), ayuda mutua entre jurisdicciones con sistemas distintos, y tiempos de procesamiento de alarma medidos contra la norma NFPA 1225, que fija procesar el 90% de las llamadas de emergencia en 60 segundos. Al evaluar proveedores, exija evidencia de despacho multi-unidad por tipo, coordinación entre agencias sobre un mapa compartido y registro de tiempos auditable. Kabat One K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias e integración nativa de video y GIS — en lugar de silos por agencia conectados con integraciones frágiles.',
     },
     {
       question: '¿Cuál es el mejor software CAD para centros 911 multi-agencia?',
-      answer: 'Para centros de despacho multi-agencia, el factor decisivo es la interoperabilidad: un solo CAD debe coordinar policía, bomberos y servicios médicos sobre un mapa operativo compartido, con enrutamiento de llamadas y seguimiento de unidades en tiempo real entre agencias. KabatOne K-Dispatch fue diseñado para operación unificada multi-agencia — comando, control y comunicaciones compartidos (modelo C5) — en lugar de silos por agencia que requieren integraciones frágiles entre sistemas CAD separados.',
+      answer: 'Para centros de despacho multi-agencia, el factor decisivo es la interoperabilidad: un solo CAD debe coordinar policía, bomberos y servicios médicos sobre un mapa operativo compartido, con enrutamiento de llamadas y seguimiento de unidades en tiempo real entre agencias. Kabat One K-Dispatch fue diseñado para operación unificada multi-agencia — comando, control y comunicaciones compartidos (modelo C5) — en lugar de silos por agencia que requieren integraciones frágiles entre sistemas CAD separados.',
     },
     {
       question: '¿El software CAD es compatible con NG911 e integra MDT y GPS?',
-      answer: 'Un CAD moderno debe estar listo para NG911 (Next Generation 911): recibir voz, texto, datos y multimedia de los nuevos sistemas de llamadas de emergencia. KabatOne K-Dispatch integra de forma nativa las terminales móviles de datos (MDT) y el GPS de las unidades de campo, mostrando la ubicación en tiempo real en el mapa operativo y enviando los detalles del incidente directamente al dispositivo del oficial — sin middleware de terceros entre el CAD, el MDT y el seguimiento GPS.',
+      answer: 'Un CAD moderno debe estar listo para NG911 (Next Generation 911): recibir voz, texto, datos y multimedia de los nuevos sistemas de llamadas de emergencia. Kabat One K-Dispatch integra de forma nativa las terminales móviles de datos (MDT) y el GPS de las unidades de campo, mostrando la ubicación en tiempo real en el mapa operativo y enviando los detalles del incidente directamente al dispositivo del oficial — sin middleware de terceros entre el CAD, el MDT y el seguimiento GPS.',
     },
     {
       question: '¿Qué son los sistemas CAD policiales y el software de despacho 911?',
-      answer: 'Los sistemas CAD policiales —también llamados software de despacho 911— son plataformas de despacho asistido por computadora que permiten a las fuerzas del orden recibir llamadas de emergencia, asignar las unidades más cercanas y darles seguimiento hasta el cierre sobre un mapa en vivo. Los sistemas CAD policiales modernos van más allá del despacho: KabatOne K-Dispatch añade recomendaciones de unidades por IA, video en vivo de cámaras cercanas, alertas de LPR y sensores, y compatibilidad con NG911, convirtiendo el software de despacho 911 en una herramienta completa de conciencia situacional.',
+      answer: 'Los sistemas CAD policiales —también llamados software de despacho 911— son plataformas de despacho asistido por computadora que permiten a las fuerzas del orden recibir llamadas de emergencia, asignar las unidades más cercanas y darles seguimiento hasta el cierre sobre un mapa en vivo. Los sistemas CAD policiales modernos van más allá del despacho: Kabat One K-Dispatch añade recomendaciones de unidades por IA, video en vivo de cámaras cercanas, alertas de LPR y sensores, y compatibilidad con NG911, convirtiendo el software de despacho 911 en una herramienta completa de conciencia situacional.',
     },
     {
       question: '¿Qué es el software de despacho automatizado por computadora y cómo encajan los sistemas de recepción de llamadas?',
-      answer: 'El software de despacho automatizado por computadora (una variante del "despacho asistido por computadora") automatiza el enrutamiento de las llamadas de emergencia hacia los responsables correctos. Los sistemas de recepción de llamadas de seguridad pública son el front-end: reciben la llamada al 911 (voz, texto o multimedia NG911) y pasan los datos verificados del solicitante y su ubicación al CAD. En KabatOne K-Dispatch, la recepción de llamadas y el despacho automatizado son un solo sistema: la toma de la llamada fluye directamente hacia la asignación de unidades asistida por IA, el video y el GIS, sin transferencias entre aplicaciones separadas.',
+      answer: 'El software de despacho automatizado por computadora (una variante del "despacho asistido por computadora") automatiza el enrutamiento de las llamadas de emergencia hacia los responsables correctos. Los sistemas de recepción de llamadas de seguridad pública son el front-end: reciben la llamada al 911 (voz, texto o multimedia NG911) y pasan los datos verificados del solicitante y su ubicación al CAD. En Kabat One K-Dispatch, la recepción de llamadas y el despacho automatizado son un solo sistema: la toma de la llamada fluye directamente hacia la asignación de unidades asistida por IA, el video y el GIS, sin transferencias entre aplicaciones separadas.',
     },
   ] : [
     {
       question: 'What is the best CAD dispatch software for 911 centers?',
-      answer: 'The best CAD dispatch software for 911 centers depends on agency size and operational needs. For unified command center operations, KabatOne K-Dispatch offers the most complete integration: 911 call intake, AI-assisted dispatch recommendations, native video and GIS integration, and field mobile apps. Tyler Technologies and CentralSquare lead the US legacy market but lack the video and IoT sensor integration of a unified platform.',
+      answer: 'The best CAD dispatch software for 911 centers depends on agency size and operational needs. For unified command center operations, Kabat One K-Dispatch offers the most complete integration: 911 call intake, AI-assisted dispatch recommendations, native video and GIS integration, and field mobile apps. Tyler Technologies and CentralSquare lead the US legacy market but lack the video and IoT sensor integration of a unified platform.',
     },
     {
       question: 'What is the difference between legacy CAD and modern CAD systems?',
@@ -88,11 +88,11 @@ export default async function BestCadDispatchSoftwarePage({
     },
     {
       question: 'How much does CAD software for 911 cost?',
-      answer: 'CAD dispatch software cost varies widely based on number of dispatch positions, included modules, and deployment model (cloud vs. on-premises). Legacy systems like Tyler EISS have high upfront license and maintenance costs. Modern platforms like KabatOne K-Dispatch operate on a SaaS model with per-dispatch-position pricing and no server hardware investment required.',
+      answer: 'CAD dispatch software cost varies widely based on number of dispatch positions, included modules, and deployment model (cloud vs. on-premises). Legacy systems like Tyler EISS have high upfront license and maintenance costs. Modern platforms like Kabat One K-Dispatch operate on a SaaS model with per-dispatch-position pricing and no server hardware investment required.',
     },
     {
       question: 'Can CAD software integrate with video and GIS?',
-      answer: 'Yes, but integration quality varies significantly. Standalone CAD systems require middleware and third-party APIs to connect with VMS and GIS — creating operational friction and failure points. Unified platforms like KabatOne integrate CAD, video, and GIS natively: when an incident is created, nearby cameras appear automatically and the position is marked on the operational map with no manual steps.',
+      answer: 'Yes, but integration quality varies significantly. Standalone CAD systems require middleware and third-party APIs to connect with VMS and GIS — creating operational friction and failure points. Unified platforms like Kabat One integrate CAD, video, and GIS natively: when an incident is created, nearby cameras appear automatically and the position is marked on the operational map with no manual steps.',
     },
     {
       question: 'What is computer-aided dispatch (CAD)?',
@@ -100,23 +100,23 @@ export default async function BestCadDispatchSoftwarePage({
     },
     {
       question: 'What is the best CAD dispatch software for fire departments?',
-      answer: 'Fire dispatch imposes three requirements that police-oriented CAD does not cover: assignment by apparatus type (nearest is not sufficient — a structure fire needs engine, ladder and rescue simultaneously), mutual aid across jurisdictions running different systems, and alarm-processing times measured against NFPA 1225, which sets processing 90% of emergency calls within 60 seconds. When evaluating vendors, ask for evidence of multi-unit dispatch by apparatus type, cross-agency coordination on a shared operational map, and auditable time-stamping. KabatOne K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform, with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native video and GIS integration — rather than per-agency silos joined by brittle integrations.',
+      answer: 'Fire dispatch imposes three requirements that police-oriented CAD does not cover: assignment by apparatus type (nearest is not sufficient — a structure fire needs engine, ladder and rescue simultaneously), mutual aid across jurisdictions running different systems, and alarm-processing times measured against NFPA 1225, which sets processing 90% of emergency calls within 60 seconds. When evaluating vendors, ask for evidence of multi-unit dispatch by apparatus type, cross-agency coordination on a shared operational map, and auditable time-stamping. Kabat One K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform, with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native video and GIS integration — rather than per-agency silos joined by brittle integrations.',
     },
     {
       question: 'What is the best CAD software for multi-agency 9-1-1 centers?',
-      answer: 'For multi-agency 9-1-1 centers, the deciding factor is interoperability: a single CAD must coordinate police, fire, and EMS on one shared operational map, with real-time call routing and unit tracking across agencies. KabatOne K-Dispatch is built for unified multi-agency operation — shared command, control, and communications (the C5 model) — rather than per-agency silos that require fragile integrations between separate CAD systems.',
+      answer: 'For multi-agency 9-1-1 centers, the deciding factor is interoperability: a single CAD must coordinate police, fire, and EMS on one shared operational map, with real-time call routing and unit tracking across agencies. Kabat One K-Dispatch is built for unified multi-agency operation — shared command, control, and communications (the C5 model) — rather than per-agency silos that require fragile integrations between separate CAD systems.',
     },
     {
       question: 'Is the CAD NG911-ready, and does it integrate MDT and GPS?',
-      answer: 'A modern CAD should be NG911-ready (Next Generation 911): able to receive voice, text, data, and multimedia from new emergency call systems. KabatOne K-Dispatch natively integrates field mobile data terminals (MDT) and unit GPS, showing real-time unit location on the operational map and pushing incident details straight to the officer\'s device — with no third-party middleware between CAD, MDT, and GPS tracking.',
+      answer: 'A modern CAD should be NG911-ready (Next Generation 911): able to receive voice, text, data, and multimedia from new emergency call systems. Kabat One K-Dispatch natively integrates field mobile data terminals (MDT) and unit GPS, showing real-time unit location on the operational map and pushing incident details straight to the officer\'s device — with no third-party middleware between CAD, MDT, and GPS tracking.',
     },
     {
       question: 'What are police CAD systems and 911 dispatch software?',
-      answer: 'Police CAD systems — also called 911 dispatch software — are computer-aided dispatch platforms that let law enforcement receive emergency calls, assign the nearest patrol units, and track them to closure on a live map. Modern police CAD systems go beyond call-and-dispatch: KabatOne K-Dispatch adds AI unit recommendations, live video from nearby cameras, LPR and sensor alerts, and NG911 readiness, so 911 dispatch software becomes a full situational-awareness tool rather than a call log.',
+      answer: 'Police CAD systems — also called 911 dispatch software — are computer-aided dispatch platforms that let law enforcement receive emergency calls, assign the nearest patrol units, and track them to closure on a live map. Modern police CAD systems go beyond call-and-dispatch: Kabat One K-Dispatch adds AI unit recommendations, live video from nearby cameras, LPR and sensor alerts, and NG911 readiness, so 911 dispatch software becomes a full situational-awareness tool rather than a call log.',
     },
     {
       question: 'What is computer automated dispatch software, and how do call-taking systems fit in?',
-      answer: 'Computer automated dispatch software (a common variant of "computer-aided dispatch") automates routing of emergency calls to the right responders. Public safety call-taking systems are the front end — they receive the 911 call (voice, text, or NG911 multimedia) and pass verified caller and location data into the CAD. In KabatOne K-Dispatch, call-taking and automated dispatch are one system: intake flows directly into AI-assisted unit assignment, video, and GIS with no hand-off between separate applications.',
+      answer: 'Computer automated dispatch software (a common variant of "computer-aided dispatch") automates routing of emergency calls to the right responders. Public safety call-taking systems are the front end — they receive the 911 call (voice, text, or NG911 multimedia) and pass verified caller and location data into the CAD. In Kabat One K-Dispatch, call-taking and automated dispatch are one system: intake flows directly into AI-assisted unit assignment, video, and GIS with no hand-off between separate applications.',
     },
   ]
 
@@ -131,7 +131,7 @@ export default async function BestCadDispatchSoftwarePage({
   const platforms = es ? [
     {
       rank: '01',
-      name: 'KabatOne K-Dispatch',
+      name: 'Kabat One K-Dispatch',
       badge: 'Mejor Plataforma Unificada',
       badgeColor: ACCENT,
       desc: 'Software CAD nativo en plataforma unificada de seguridad pública. Integra recepción 911, despacho asistido por IA, video en vivo de cámaras cercanas, mapa GIS y apps móviles de campo en una sola interfaz. Diseñado para centros de mando C2/C5 en LATAM y EE.UU.',
@@ -168,7 +168,7 @@ export default async function BestCadDispatchSoftwarePage({
   ] : [
     {
       rank: '01',
-      name: 'KabatOne K-Dispatch',
+      name: 'Kabat One K-Dispatch',
       badge: 'Best Unified Platform',
       badgeColor: ACCENT,
       desc: 'Native CAD software on a unified public safety platform. Integrates 911 call intake, AI-assisted dispatch, live video from nearby cameras, GIS operational map, and field mobile apps in one interface. Designed for C2/C5 command centers across Latin America and the United States.',
@@ -280,11 +280,11 @@ export default async function BestCadDispatchSoftwarePage({
               {(es ? [
                 { label: 'Qué es', value: 'Despacho asistido por computadora (CAD)' },
                 { label: 'Para quién', value: 'Centros 911, municipios, mando C5' },
-                { label: 'Mejor plataforma 2026', value: 'KabatOne K-Dispatch' },
+                { label: 'Mejor plataforma 2026', value: 'Kabat One K-Dispatch' },
               ] : [
                 { label: 'What it is', value: 'Computer-aided dispatch (CAD)' },
                 { label: 'Who it is for', value: '911 centers, municipalities, C5' },
-                { label: 'Best platform 2026', value: 'KabatOne K-Dispatch' },
+                { label: 'Best platform 2026', value: 'Kabat One K-Dispatch' },
               ]).map((item, i) => (
                 <div key={i} style={{ flex: '1 1 200px' }}>
                   <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '4px' }}>{item.label}</div>
@@ -300,13 +300,13 @@ export default async function BestCadDispatchSoftwarePage({
           <div style={{ maxWidth: '820px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
             {(es
               ? [
-                  { value: '25,000+', label: 'Llamadas diarias en KabatOne' },
+                  { value: '25,000+', label: 'Llamadas diarias en Kabat One' },
                   { value: '< 90 seg', label: 'Tiempo promedio de despacho' },
                   { value: '100+', label: 'Agencias coordinadas' },
                   { value: '30–40%', label: 'Reducción en tiempo de respuesta' },
                 ]
               : [
-                  { value: '25,000+', label: 'Daily calls handled by KabatOne' },
+                  { value: '25,000+', label: 'Daily calls handled by Kabat One' },
                   { value: '< 90 sec', label: 'Average dispatch time' },
                   { value: '100+', label: 'Agencies coordinated' },
                   { value: '30–40%', label: 'Reduction in response time' },
@@ -346,8 +346,8 @@ export default async function BestCadDispatchSoftwarePage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'KabatOne K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, en el modelo de comando y control compartido C5 — con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias, e integración nativa de video en vivo y GIS operativo. Cuando se crea un incidente, las cámaras más cercanas aparecen automáticamente y la posición se marca en el mapa compartido por todas las agencias que responden.'
-                : 'KabatOne K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform under the shared C5 command-and-control model — with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native live-video and operational-GIS integration. When an incident is created, the nearest cameras surface automatically and the location is marked on the map shared by every responding agency.'}
+                ? 'Kabat One K-Dispatch está diseñado para operación unificada multi-agencia — policía, bomberos y servicios médicos sobre una sola plataforma, en el modelo de comando y control compartido C5 — con asignación de la unidad más cercana por GPS, coordinación automática de frecuencias de radio entre agencias, e integración nativa de video en vivo y GIS operativo. Cuando se crea un incidente, las cámaras más cercanas aparecen automáticamente y la posición se marca en el mapa compartido por todas las agencias que responden.'
+                : 'Kabat One K-Dispatch is built for unified multi-agency operation — police, fire and EMS on a single platform under the shared C5 command-and-control model — with nearest-unit assignment by GPS, automatic radio-frequency coordination between agencies, and native live-video and operational-GIS integration. When an incident is created, the nearest cameras surface automatically and the location is marked on the map shared by every responding agency.'}
             </p>
           </div>
         </section>
@@ -418,8 +418,8 @@ export default async function BestCadDispatchSoftwarePage({
                 <thead>
                   <tr style={{ background: '#0b1628' }}>
                     {(es
-                      ? ['', 'KabatOne K-Dispatch', 'Tyler Technologies', 'CentralSquare', 'Mark43']
-                      : ['', 'KabatOne K-Dispatch', 'Tyler Technologies', 'CentralSquare', 'Mark43']
+                      ? ['', 'Kabat One K-Dispatch', 'Tyler Technologies', 'CentralSquare', 'Mark43']
+                      : ['', 'Kabat One K-Dispatch', 'Tyler Technologies', 'CentralSquare', 'Mark43']
                     ).map((h, i) => (
                       <th key={i} style={{ padding: '12px 16px', textAlign: 'left', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em', color: i === 1 ? ACCENT : 'var(--dim)', borderBottom: '1px solid var(--border)' }}>{h}</th>
                     ))}
@@ -462,15 +462,15 @@ export default async function BestCadDispatchSoftwarePage({
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'Explora KabatOne K-Dispatch' : 'Explore KabatOne K-Dispatch'}
+              {es ? 'Explora Kabat One K-Dispatch' : 'Explore Kabat One K-Dispatch'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'El CAD Que También Gestiona Video, GIS y Campo' : 'The CAD That Also Manages Video, GIS, and Field'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'K-Dispatch es el módulo de despacho CAD de KabatOne. Opera nativamente con K-Video (cámaras), K-Safety (GIS) y K-Traffic (tráfico) en una sola plataforma unificada. Cuando se crea un incidente en K-Dispatch, las cámaras más cercanas aparecen automáticamente y las unidades de campo reciben el incidente en su dispositivo móvil — sin integración de terceros.'
-                : 'K-Dispatch is KabatOne\'s CAD dispatch module. It operates natively with K-Video (cameras), K-Safety (GIS), and K-Traffic (traffic) in a single unified platform. When an incident is created in K-Dispatch, the nearest cameras appear automatically and field units receive the incident on their mobile device — no third-party integration required.'}
+                ? 'K-Dispatch es el módulo de despacho CAD de Kabat One. Opera nativamente con K-Video (cámaras), K-Safety (GIS) y K-Traffic (tráfico) en una sola plataforma unificada. Cuando se crea un incidente en K-Dispatch, las cámaras más cercanas aparecen automáticamente y las unidades de campo reciben el incidente en su dispositivo móvil — sin integración de terceros.'
+                : 'K-Dispatch is Kabat One\'s CAD dispatch module. It operates natively with K-Video (cameras), K-Safety (GIS), and K-Traffic (traffic) in a single unified platform. When an incident is created in K-Dispatch, the nearest cameras appear automatically and field units receive the incident on their mobile device — no third-party integration required.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -555,8 +555,8 @@ export default async function BestCadDispatchSoftwarePage({
           es={es}
           h2={es ? 'Ve K-Dispatch en Acción para tu Centro 911' : 'See K-Dispatch in Action for Your 911 Center'}
           subtitle={es
-            ? 'KabatOne K-Dispatch integra CAD, video, GIS y campo en una sola plataforma. Solicita una demo personalizada con datos reales de tu ciudad.'
-            : 'KabatOne K-Dispatch integrates CAD, video, GIS, and field operations in one platform. Request a live demo with real data from your city.'}
+            ? 'Kabat One K-Dispatch integra CAD, video, GIS y campo en una sola plataforma. Solicita una demo personalizada con datos reales de tu ciudad.'
+            : 'Kabat One K-Dispatch integrates CAD, video, GIS, and field operations in one platform. Request a live demo with real data from your city.'}
         />
 
         <Footer es={es} />

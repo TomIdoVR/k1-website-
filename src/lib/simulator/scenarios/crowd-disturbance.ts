@@ -6,8 +6,8 @@ export const crowdDisturbance: Scenario = {
   id: 'crowd-disturbance',
   name: { en: 'Crowd Disturbance', es: 'Disturbio en Multitud' },
   description: {
-    en: 'A disturbance is detected at a public venue. Experience how the KabatOne platform handles every stage of the incident lifecycle.',
-    es: 'Se detecta un disturbio en un lugar público. Experimenta cómo la plataforma KabatOne maneja cada etapa del ciclo de vida del incidente.',
+    en: 'A disturbance is detected at a public venue. Experience how the Kabat One platform handles every stage of the incident lifecycle.',
+    es: 'Se detecta un disturbio en un lugar público. Experimenta cómo la plataforma Kabat One maneja cada etapa del ciclo de vida del incidente.',
   },
   icon: '👥',
   duration: { en: '~2 min', es: '~2 min' },

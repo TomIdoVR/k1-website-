@@ -46,7 +46,7 @@ export default async function WhatIsCadDispatchSoftwarePage({
         {
           question: '¿Puede el software CAD integrarse con sistemas de video y GIS?',
           answer:
-            'Sí. Los sistemas CAD modernos se integran con gestión de video (VMS) para mostrar automáticamente cámaras cercanas al incidente, con GIS para visualizar unidades en un mapa operativo en tiempo real, y con sistemas de comunicación para alertas automáticas. KabatOne K-Dispatch opera como parte de una plataforma unificada que conecta CAD, video, GIS y operaciones de campo en un solo entorno.',
+            'Sí. Los sistemas CAD modernos se integran con gestión de video (VMS) para mostrar automáticamente cámaras cercanas al incidente, con GIS para visualizar unidades en un mapa operativo en tiempo real, y con sistemas de comunicación para alertas automáticas. Kabat One K-Dispatch opera como parte de una plataforma unificada que conecta CAD, video, GIS y operaciones de campo en un solo entorno.',
         },
         {
           question: '¿Qué es el despacho 911 asistido por computadora?',
@@ -61,12 +61,12 @@ export default async function WhatIsCadDispatchSoftwarePage({
         {
           question: '¿Cuál es la diferencia entre software CAD y sistema RMS (Records Management System)?',
           answer:
-            'El software CAD (Computer-Aided Dispatch) gestiona el ciclo de vida de un incidente en tiempo real: recepción de llamada, clasificación, despacho de unidades y registro de tiempos de respuesta. El RMS (Records Management System) gestiona los datos históricos y administrativos post-incidente: informes policiales, registros de arrestos, gestión de evidencias y estadísticas. En la práctica, CAD y RMS son complementarios: el CAD captura el incidente en curso y el RMS archiva los datos para investigación, cumplimiento y análisis. Las plataformas modernas como KabatOne integran el ciclo completo de incidente sin necesidad de un RMS separado para las operaciones de despacho.',
+            'El software CAD (Computer-Aided Dispatch) gestiona el ciclo de vida de un incidente en tiempo real: recepción de llamada, clasificación, despacho de unidades y registro de tiempos de respuesta. El RMS (Records Management System) gestiona los datos históricos y administrativos post-incidente: informes policiales, registros de arrestos, gestión de evidencias y estadísticas. En la práctica, CAD y RMS son complementarios: el CAD captura el incidente en curso y el RMS archiva los datos para investigación, cumplimiento y análisis. Las plataformas modernas como Kabat One integran el ciclo completo de incidente sin necesidad de un RMS separado para las operaciones de despacho.',
         },
         {
           question: '¿Qué es el software CAD compatible con NG911?',
           answer:
-            'El software CAD compatible con NG911 (Next Generation 911) puede recibir llamadas de voz en banda ancha, mensajes de texto de emergencia, datos de video y localización mejorada a través de una red IP ESInet, en lugar de depender de la infraestructura analógica tradicional. Para los PSAPs en transición a NG911, el software CAD debe soportar protocolos NENA i3, integración con sistemas de enrutamiento de emergencias IP y datos adicionales de llamada (como la ubicación precisa del dispositivo móvil). KabatOne K-Dispatch está diseñado para operar con datos de emergencias multicanal, preparando a los centros 911 para la infraestructura NG911.',
+            'El software CAD compatible con NG911 (Next Generation 911) puede recibir llamadas de voz en banda ancha, mensajes de texto de emergencia, datos de video y localización mejorada a través de una red IP ESInet, en lugar de depender de la infraestructura analógica tradicional. Para los PSAPs en transición a NG911, el software CAD debe soportar protocolos NENA i3, integración con sistemas de enrutamiento de emergencias IP y datos adicionales de llamada (como la ubicación precisa del dispositivo móvil). Kabat One K-Dispatch está diseñado para operar con datos de emergencias multicanal, preparando a los centros 911 para la infraestructura NG911.',
         },
       ]
     : [
@@ -88,7 +88,7 @@ export default async function WhatIsCadDispatchSoftwarePage({
         {
           question: 'Can CAD software integrate with video and GIS systems?',
           answer:
-            'Yes. Modern CAD systems integrate with video management (VMS) to automatically display nearby cameras at an incident, with GIS to visualize units on a real-time operational map, and with communications systems for automatic alerts. KabatOne K-Dispatch operates as part of a unified platform that connects CAD, video, GIS, and field operations in a single environment.',
+            'Yes. Modern CAD systems integrate with video management (VMS) to automatically display nearby cameras at an incident, with GIS to visualize units on a real-time operational map, and with communications systems for automatic alerts. Kabat One K-Dispatch operates as part of a unified platform that connects CAD, video, GIS, and field operations in a single environment.',
         },
         {
           question: 'What is computer-aided 911 dispatch?',
@@ -103,12 +103,12 @@ export default async function WhatIsCadDispatchSoftwarePage({
         {
           question: 'What is the difference between CAD software and an RMS (Records Management System)?',
           answer:
-            'CAD (Computer-Aided Dispatch) software manages the real-time incident lifecycle: call receipt, classification, unit dispatch, and response time logging. RMS (Records Management System) manages post-incident historical and administrative data: police reports, arrest records, evidence management, and statistics. In practice, CAD and RMS are complementary: CAD captures the ongoing incident, RMS archives data for investigation, compliance, and analysis. Modern platforms like KabatOne integrate the complete incident lifecycle without requiring a separate RMS for dispatch operations.',
+            'CAD (Computer-Aided Dispatch) software manages the real-time incident lifecycle: call receipt, classification, unit dispatch, and response time logging. RMS (Records Management System) manages post-incident historical and administrative data: police reports, arrest records, evidence management, and statistics. In practice, CAD and RMS are complementary: CAD captures the ongoing incident, RMS archives data for investigation, compliance, and analysis. Modern platforms like Kabat One integrate the complete incident lifecycle without requiring a separate RMS for dispatch operations.',
         },
         {
           question: 'What is NG911-compatible CAD dispatch software?',
           answer:
-            'NG911-compatible CAD software (Next Generation 911) can receive broadband voice calls, emergency text messages, video data, and enhanced location information over an IP ESInet network, rather than depending on traditional analogue infrastructure. For PSAPs transitioning to NG911, CAD software must support NENA i3 protocols, integration with IP emergency routing systems, and additional call data such as precise mobile device location. KabatOne K-Dispatch is designed to operate with multichannel emergency data, preparing 911 centres for NG911 infrastructure.',
+            'NG911-compatible CAD software (Next Generation 911) can receive broadband voice calls, emergency text messages, video data, and enhanced location information over an IP ESInet network, rather than depending on traditional analogue infrastructure. For PSAPs transitioning to NG911, CAD software must support NENA i3 protocols, integration with IP emergency routing systems, and additional call data such as precise mobile device location. Kabat One K-Dispatch is designed to operate with multichannel emergency data, preparing 911 centres for NG911 infrastructure.',
         },
       ]
 
@@ -277,8 +277,8 @@ export default async function WhatIsCadDispatchSoftwarePage({
             </h3>
             <p style={pStyle}>
               {es
-                ? 'El motor de gestión de recursos rastrea en tiempo real el estado y la ubicación GPS de todas las unidades disponibles — patrullas, ambulancias, unidades de bomberos, recursos de respaldo. Cuando el operador confirma un incidente, el sistema recomienda automáticamente la unidad más cercana disponible y compatible con el tipo de incidente. El despacho se confirma con un clic, la unidad recibe la alerta en su dispositivo móvil y el CAD registra el tiempo exacto de despacho. KabatOne K-Dispatch procesa el flujo completo desde la llamada hasta el despacho en segundos.'
-                : 'The resource management engine tracks in real time the status and GPS location of all available units — patrol cars, ambulances, fire units, backup resources. When the operator confirms an incident, the system automatically recommends the nearest available unit compatible with the incident type. Dispatch is confirmed in one click, the unit receives the alert on their mobile device, and the CAD logs the exact dispatch time. KabatOne K-Dispatch processes the full flow from call to dispatch in seconds.'}
+                ? 'El motor de gestión de recursos rastrea en tiempo real el estado y la ubicación GPS de todas las unidades disponibles — patrullas, ambulancias, unidades de bomberos, recursos de respaldo. Cuando el operador confirma un incidente, el sistema recomienda automáticamente la unidad más cercana disponible y compatible con el tipo de incidente. El despacho se confirma con un clic, la unidad recibe la alerta en su dispositivo móvil y el CAD registra el tiempo exacto de despacho. Kabat One K-Dispatch procesa el flujo completo desde la llamada hasta el despacho en segundos.'
+                : 'The resource management engine tracks in real time the status and GPS location of all available units — patrol cars, ambulances, fire units, backup resources. When the operator confirms an incident, the system automatically recommends the nearest available unit compatible with the incident type. Dispatch is confirmed in one click, the unit receives the alert on their mobile device, and the CAD logs the exact dispatch time. Kabat One K-Dispatch processes the full flow from call to dispatch in seconds.'}
             </p>
 
             <h3 style={h3Style}>
@@ -391,8 +391,8 @@ export default async function WhatIsCadDispatchSoftwarePage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'Las plataformas unificadas de seguridad pública como KabatOne integran CAD, video, GIS y operaciones de campo en un solo entorno. Cuando el operador crea un incidente en K-Dispatch, las cámaras cercanas aparecen automáticamente en K-Video, la posición del incidente se marca en el mapa de K-Safety y las unidades reciben la alerta en su aplicación móvil — todo sin cambiar de sistema.'
-                : 'Unified public safety platforms like KabatOne integrate CAD, video, GIS, and field operations into a single environment. When an operator creates an incident in K-Dispatch, nearby cameras automatically appear in K-Video, the incident position is marked on the K-Safety map, and units receive the alert on their mobile app — all without switching systems.'}
+                ? 'Las plataformas unificadas de seguridad pública como Kabat One integran CAD, video, GIS y operaciones de campo en un solo entorno. Cuando el operador crea un incidente en K-Dispatch, las cámaras cercanas aparecen automáticamente en K-Video, la posición del incidente se marca en el mapa de K-Safety y las unidades reciben la alerta en su aplicación móvil — todo sin cambiar de sistema.'
+                : 'Unified public safety platforms like Kabat One integrate CAD, video, GIS, and field operations into a single environment. When an operator creates an incident in K-Dispatch, nearby cameras automatically appear in K-Video, the incident position is marked on the K-Safety map, and units receive the alert on their mobile app — all without switching systems.'}
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginTop: '32px' }}>
@@ -514,12 +514,12 @@ export default async function WhatIsCadDispatchSoftwarePage({
               {es ? 'Explora los Productos' : 'Explore the Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne K-Dispatch' : 'KabatOne K-Dispatch'}
+              {es ? 'Kabat One K-Dispatch' : 'Kabat One K-Dispatch'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'K-Dispatch es el módulo de despacho CAD de KabatOne. Opera de forma nativa con K-Video (gestión de video), K-Safety (GIS y conciencia situacional) y K-Traffic (gestión de tráfico) en una sola plataforma unificada.'
-                : 'K-Dispatch is KabatOne\'s CAD dispatch module. It operates natively with K-Video (video management), K-Safety (GIS and situational awareness), and K-Traffic (traffic management) in a single unified platform.'}
+                ? 'K-Dispatch es el módulo de despacho CAD de Kabat One. Opera de forma nativa con K-Video (gestión de video), K-Safety (GIS y conciencia situacional) y K-Traffic (gestión de tráfico) en una sola plataforma unificada.'
+                : 'K-Dispatch is Kabat One\'s CAD dispatch module. It operates natively with K-Video (video management), K-Safety (GIS and situational awareness), and K-Traffic (traffic management) in a single unified platform.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[

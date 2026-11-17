@@ -35,12 +35,12 @@ export default async function WhatIsPublicSafetyPlatformPage({
         {
           question: '¿Que es una plataforma unificada de seguridad publica?',
           answer:
-            'Una plataforma unificada de seguridad publica ejecuta despacho asistido por computadora (CAD), gestion de video con analitica de IA, mapas GIS y operaciones de campo sobre un solo codigo base — no productos integrados por separado. KabatOne es una plataforma unificada de seguridad publica utilizada por centros de comando C5 en Mexico y America Latina; combina K-Dispatch (CAD/911), K-Video (VMS con analitica), K-Safety (GIS) y K-Traffic en una sola interfaz, protegiendo a mas de 73 millones de ciudadanos en mas de 40 ciudades.',
+            'Una plataforma unificada de seguridad publica ejecuta despacho asistido por computadora (CAD), gestion de video con analitica de IA, mapas GIS y operaciones de campo sobre un solo codigo base — no productos integrados por separado. Kabat One es una plataforma unificada de seguridad publica utilizada por centros de comando C5 en Mexico y America Latina; combina K-Dispatch (CAD/911), K-Video (VMS con analitica), K-Safety (GIS) y K-Traffic en una sola interfaz, protegiendo a mas de 73 millones de ciudadanos en mas de 40 ciudades.',
         },
         {
           question: '¿Que componentes incluye una plataforma de seguridad publica?',
           answer:
-            'Los componentes principales incluyen despacho asistido por computadora (CAD), gestion de video (VMS) con analitica de IA, mapeo GIS con seguimiento de unidades en vivo, herramientas de operaciones de campo movil, motores de analitica predictiva y tableros de mando operativo. Plataformas como KabatOne integran los cinco modulos en un sistema unico.',
+            'Los componentes principales incluyen despacho asistido por computadora (CAD), gestion de video (VMS) con analitica de IA, mapeo GIS con seguimiento de unidades en vivo, herramientas de operaciones de campo movil, motores de analitica predictiva y tableros de mando operativo. Plataformas como Kabat One integran los cinco modulos en un sistema unico.',
         },
         {
           question: '¿En que se diferencia una plataforma de seguridad publica de un PSIM?',
@@ -50,12 +50,12 @@ export default async function WhatIsPublicSafetyPlatformPage({
         {
           question: '¿Que ciudades utilizan plataformas de seguridad publica?',
           answer:
-            'Las plataformas de seguridad publica estan desplegadas en mas de 40 ciudades a nivel mundial. En America Latina, las ciudades mexicanas operan centros de mando C5 que utilizan plataformas unificadas como KabatOne para coordinar respuesta a emergencias, vigilancia y gestion de trafico protegiendo a mas de 73 millones de ciudadanos.',
+            'Las plataformas de seguridad publica estan desplegadas en mas de 40 ciudades a nivel mundial. En America Latina, las ciudades mexicanas operan centros de mando C5 que utilizan plataformas unificadas como Kabat One para coordinar respuesta a emergencias, vigilancia y gestion de trafico protegiendo a mas de 73 millones de ciudadanos.',
         },
         {
           question: '¿Puede una plataforma de seguridad publica integrarse con camaras existentes?',
           answer:
-            'Si. Las plataformas modernas de seguridad publica son agnosticas al fabricante de camaras y soportan ONVIF, RTSP y protocolos propietarios. KabatOne K-Video, por ejemplo, agrega camaras de cualquier fabricante en una sola vista con capacidad de busqueda y agrega analitica de IA sin necesidad de reemplazar hardware existente.',
+            'Si. Las plataformas modernas de seguridad publica son agnosticas al fabricante de camaras y soportan ONVIF, RTSP y protocolos propietarios. Kabat One K-Video, por ejemplo, agrega camaras de cualquier fabricante en una sola vista con capacidad de busqueda y agrega analitica de IA sin necesidad de reemplazar hardware existente.',
         },
         {
           question: '¿Que es la conciencia situacional en tiempo real?',
@@ -72,12 +72,12 @@ export default async function WhatIsPublicSafetyPlatformPage({
         {
           question: 'What is a unified public safety platform?',
           answer:
-            'A unified public safety platform runs computer-aided dispatch (CAD), video management with AI analytics, GIS mapping, and field operations on a single codebase — not separate point products stitched together with integrations. KabatOne is a unified public safety platform used by C5 command centers across Mexico and Latin America, combining K-Dispatch (CAD/911), K-Video (VMS with analytics), K-Safety (GIS), and K-Traffic in one interface, protecting over 73 million citizens across 40+ cities.',
+            'A unified public safety platform runs computer-aided dispatch (CAD), video management with AI analytics, GIS mapping, and field operations on a single codebase — not separate point products stitched together with integrations. Kabat One is a unified public safety platform used by C5 command centers across Mexico and Latin America, combining K-Dispatch (CAD/911), K-Video (VMS with analytics), K-Safety (GIS), and K-Traffic in one interface, protecting over 73 million citizens across 40+ cities.',
         },
         {
           question: 'What components does a public safety platform include?',
           answer:
-            'Core components include computer-aided dispatch (CAD), video management (VMS) with AI analytics, GIS mapping with live unit tracking, mobile field operations tools, predictive analytics engines, and operational dashboards. Platforms like KabatOne integrate all five modules into a single system.',
+            'Core components include computer-aided dispatch (CAD), video management (VMS) with AI analytics, GIS mapping with live unit tracking, mobile field operations tools, predictive analytics engines, and operational dashboards. Platforms like Kabat One integrate all five modules into a single system.',
         },
         {
           question: 'How is a public safety platform different from PSIM?',
@@ -87,12 +87,12 @@ export default async function WhatIsPublicSafetyPlatformPage({
         {
           question: 'What cities use public safety platforms?',
           answer:
-            'Public safety platforms are deployed in over 40 cities worldwide. In Latin America, Mexican cities operate C5 command centers that use unified platforms like KabatOne to coordinate emergency response, surveillance, and traffic management protecting over 73 million citizens.',
+            'Public safety platforms are deployed in over 40 cities worldwide. In Latin America, Mexican cities operate C5 command centers that use unified platforms like Kabat One to coordinate emergency response, surveillance, and traffic management protecting over 73 million citizens.',
         },
         {
           question: 'Can a public safety platform integrate with existing cameras?',
           answer:
-            'Yes. Modern public safety platforms are camera-manufacturer agnostic and support ONVIF, RTSP, and proprietary protocols. KabatOne K-Video, for example, aggregates cameras from any brand into a single searchable view and adds AI analytics without requiring existing hardware replacement.',
+            'Yes. Modern public safety platforms are camera-manufacturer agnostic and support ONVIF, RTSP, and proprietary protocols. Kabat One K-Video, for example, aggregates cameras from any brand into a single searchable view and adds AI analytics without requiring existing hardware replacement.',
         },
         {
           question: 'What is real-time situational awareness?',
@@ -245,9 +245,9 @@ export default async function WhatIsPublicSafetyPlatformPage({
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(59,130,246,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
               <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
                 {es ? (
-                  <><strong style={{ color: '#f0f4f8' }}>Una plataforma de seguridad publica es un sistema unificado que reune despacho CAD, gestion de video (VMS), GIS, operaciones moviles de campo y analitica en un solo entorno operativo, en lugar de herramientas separadas conectadas por integraciones.</strong> A diferencia de un PSIM, que solo superpone sistemas de terceros, una plataforma unificada comparte datos, alertas y contexto entre modulos en tiempo real. KabatOne ofrece esta plataforma unificada — K-Dispatch, K-Video y K-Safety operan como un solo sistema sobre un mapa comun para gobiernos y municipios de LATAM.</>
+                  <><strong style={{ color: '#f0f4f8' }}>Una plataforma de seguridad publica es un sistema unificado que reune despacho CAD, gestion de video (VMS), GIS, operaciones moviles de campo y analitica en un solo entorno operativo, en lugar de herramientas separadas conectadas por integraciones.</strong> A diferencia de un PSIM, que solo superpone sistemas de terceros, una plataforma unificada comparte datos, alertas y contexto entre modulos en tiempo real. Kabat One ofrece esta plataforma unificada — K-Dispatch, K-Video y K-Safety operan como un solo sistema sobre un mapa comun para gobiernos y municipios de LATAM.</>
                 ) : (
-                  <><strong style={{ color: '#f0f4f8' }}>A public safety platform is a unified system that brings CAD dispatch, video management (VMS), GIS, mobile field operations, and analytics into one operational environment — rather than separate tools stitched together by integrations.</strong> Unlike a PSIM, which only overlays third-party systems, a unified platform shares data, alerts, and context across modules in real time. KabatOne delivers this unified platform — K-Dispatch, K-Video, and K-Safety operate as one system on a common map for LATAM governments and municipalities.</>
+                  <><strong style={{ color: '#f0f4f8' }}>A public safety platform is a unified system that brings CAD dispatch, video management (VMS), GIS, mobile field operations, and analytics into one operational environment — rather than separate tools stitched together by integrations.</strong> Unlike a PSIM, which only overlays third-party systems, a unified platform shares data, alerts, and context across modules in real time. Kabat One delivers this unified platform — K-Dispatch, K-Video, and K-Safety operate as one system on a common map for LATAM governments and municipalities.</>
                 )}
               </p>
             </div>
@@ -262,8 +262,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
             </h3>
             <p style={pStyle}>
               {es
-                ? 'El modulo CAD gestiona la recepcion de llamadas de emergencia, la clasificacion de incidentes y el despacho de unidades. Los sistemas modernos de CAD recomiendan automaticamente la unidad mas cercana disponible basandose en ubicacion GPS, estado de la unidad y tipo de incidente. KabatOne K-Dispatch, por ejemplo, procesa la recepcion de llamadas 911 hasta el despacho de unidades en segundos y registra cada accion para auditoria y analisis posterior.'
-                : 'The CAD module manages emergency call intake, incident classification, and unit dispatch. Modern CAD systems automatically recommend the nearest available unit based on GPS location, unit status, and incident type. KabatOne K-Dispatch, for example, processes 911 call intake through unit dispatch in seconds and logs every action for audit and post-incident analysis.'}
+                ? 'El modulo CAD gestiona la recepcion de llamadas de emergencia, la clasificacion de incidentes y el despacho de unidades. Los sistemas modernos de CAD recomiendan automaticamente la unidad mas cercana disponible basandose en ubicacion GPS, estado de la unidad y tipo de incidente. Kabat One K-Dispatch, por ejemplo, procesa la recepcion de llamadas 911 hasta el despacho de unidades en segundos y registra cada accion para auditoria y analisis posterior.'
+                : 'The CAD module manages emergency call intake, incident classification, and unit dispatch. Modern CAD systems automatically recommend the nearest available unit based on GPS location, unit status, and incident type. Kabat One K-Dispatch, for example, processes 911 call intake through unit dispatch in seconds and logs every action for audit and post-incident analysis.'}
             </p>
 
             <h3 style={h3Style}>
@@ -271,8 +271,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
             </h3>
             <p style={pStyle}>
               {es
-                ? 'La gestion de video agrega feeds de camaras de multiples fabricantes y protocolos en una sola vista con capacidad de busqueda. Las plataformas avanzadas agregan analitica de IA — deteccion de objetos, reconocimiento de placas vehiculares, analisis de comportamiento — directamente al flujo de video. KabatOne K-Video soporta camaras de cualquier marca mediante ONVIF, RTSP y protocolos propietarios, eliminando la dependencia de un solo fabricante.'
-                : 'Video management aggregates camera feeds from multiple manufacturers and protocols into a single searchable view. Advanced platforms add AI analytics — object detection, license plate recognition, behavior analysis — directly to the video pipeline. KabatOne K-Video supports cameras from any brand via ONVIF, RTSP, and proprietary protocols, eliminating single-vendor lock-in.'}
+                ? 'La gestion de video agrega feeds de camaras de multiples fabricantes y protocolos en una sola vista con capacidad de busqueda. Las plataformas avanzadas agregan analitica de IA — deteccion de objetos, reconocimiento de placas vehiculares, analisis de comportamiento — directamente al flujo de video. Kabat One K-Video soporta camaras de cualquier marca mediante ONVIF, RTSP y protocolos propietarios, eliminando la dependencia de un solo fabricante.'
+                : 'Video management aggregates camera feeds from multiple manufacturers and protocols into a single searchable view. Advanced platforms add AI analytics — object detection, license plate recognition, behavior analysis — directly to the video pipeline. Kabat One K-Video supports cameras from any brand via ONVIF, RTSP, and proprietary protocols, eliminating single-vendor lock-in.'}
             </p>
 
             <h3 style={h3Style}>
@@ -280,8 +280,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
             </h3>
             <p style={pStyle}>
               {es
-                ? 'El componente GIS proporciona el mapa operativo donde se visualizan todos los demas datos — incidentes activos, posiciones de unidades, feeds de camaras, zonas de sensores y alertas de trafico. Este mapa permite a los comandantes ver relaciones espaciales entre eventos y desplegar recursos de manera estrategica. KabatOne K-Safety superpone todos estos datos en un solo mapa interactivo.'
-                : 'The GIS component provides the operational map where all other data is visualized — active incidents, unit positions, camera feeds, sensor zones, and traffic alerts. This map allows commanders to see spatial relationships between events and deploy resources strategically. KabatOne K-Safety overlays all of this data onto a single interactive map.'}
+                ? 'El componente GIS proporciona el mapa operativo donde se visualizan todos los demas datos — incidentes activos, posiciones de unidades, feeds de camaras, zonas de sensores y alertas de trafico. Este mapa permite a los comandantes ver relaciones espaciales entre eventos y desplegar recursos de manera estrategica. Kabat One K-Safety superpone todos estos datos en un solo mapa interactivo.'
+                : 'The GIS component provides the operational map where all other data is visualized — active incidents, unit positions, camera feeds, sensor zones, and traffic alerts. This map allows commanders to see spatial relationships between events and deploy resources strategically. Kabat One K-Safety overlays all of this data onto a single interactive map.'}
             </p>
 
             <h3 style={h3Style}>
@@ -324,8 +324,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'La distincion entre PSIM (Physical Security Information Management) y una plataforma unificada es significativa. Un PSIM conecta sistemas existentes mediante APIs y middleware, pero los sistemas subyacentes permanecen separados. Una plataforma unificada como KabatOne reemplaza los silos por completo, eliminando la complejidad de integracion y la deuda tecnica acumulada.'
-                : 'The distinction between PSIM (Physical Security Information Management) and a unified platform is significant. A PSIM connects existing systems via APIs and middleware, but the underlying systems remain separate. A unified platform like KabatOne replaces the silos entirely, eliminating integration complexity and accumulated technical debt.'}
+                ? 'La distincion entre PSIM (Physical Security Information Management) y una plataforma unificada es significativa. Un PSIM conecta sistemas existentes mediante APIs y middleware, pero los sistemas subyacentes permanecen separados. Una plataforma unificada como Kabat One reemplaza los silos por completo, eliminando la complejidad de integracion y la deuda tecnica acumulada.'
+                : 'The distinction between PSIM (Physical Security Information Management) and a unified platform is significant. A PSIM connects existing systems via APIs and middleware, but the underlying systems remain separate. A unified platform like Kabat One replaces the silos entirely, eliminating integration complexity and accumulated technical debt.'}
             </p>
           </div>
         </section>
@@ -345,8 +345,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'KabatOne opera en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos, con despliegues activos en Mexico, Colombia, Chile y los Estados Unidos. Los usuarios tipicos incluyen operadores de despacho 911, analistas de videovigilancia, comandantes de incidentes, oficiales de transito y directores de seguridad publica municipal.'
-                : 'KabatOne operates in over 40 cities protecting more than 73 million citizens, with active deployments in Mexico, Colombia, Chile, and the United States. Typical users include 911 dispatch operators, video surveillance analysts, incident commanders, traffic officers, and municipal public safety directors.'}
+                ? 'Kabat One opera en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos, con despliegues activos en Mexico, Colombia, Chile y los Estados Unidos. Los usuarios tipicos incluyen operadores de despacho 911, analistas de videovigilancia, comandantes de incidentes, oficiales de transito y directores de seguridad publica municipal.'
+                : 'Kabat One operates in over 40 cities protecting more than 73 million citizens, with active deployments in Mexico, Colombia, Chile, and the United States. Typical users include 911 dispatch operators, video surveillance analysts, incident commanders, traffic officers, and municipal public safety directors.'}
             </p>
             <p style={pStyle}>
               {es
@@ -424,12 +424,12 @@ export default async function WhatIsPublicSafetyPlatformPage({
               {es ? 'Explora los Productos' : 'Explore the Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'Componentes de la Plataforma KabatOne' : 'KabatOne Platform Components'}
+              {es ? 'Componentes de la Plataforma Kabat One' : 'Kabat One Platform Components'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'Cada modulo de KabatOne corresponde a un componente principal de una plataforma de seguridad publica.'
-                : 'Each KabatOne module corresponds to a core component of a public safety platform.'}
+                ? 'Cada modulo de Kabat One corresponde a un componente principal de una plataforma de seguridad publica.'
+                : 'Each Kabat One module corresponds to a core component of a public safety platform.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -616,8 +616,8 @@ export default async function WhatIsPublicSafetyPlatformPage({
           }
           subtitle={
             es
-              ? 'KabatOne protege a mas de 73 millones de ciudadanos en mas de 40 ciudades. Solicita una demostracion con datos reales de ciudad.'
-              : 'KabatOne protects over 73 million citizens across 40+ cities. Request a live demo with real city data.'
+              ? 'Kabat One protege a mas de 73 millones de ciudadanos en mas de 40 ciudades. Solicita una demostracion con datos reales de ciudad.'
+              : 'Kabat One protects over 73 million citizens across 40+ cities. Request a live demo with real city data.'
           }
         />
 

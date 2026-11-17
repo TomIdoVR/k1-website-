@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Direction Générale de la Sûreté Nationale (DGSN) across Algeria\'s 58 wilayas?',
+    question: 'How does Kabat One integrate the Direction Générale de la Sûreté Nationale (DGSN) across Algeria\'s 58 wilayas?',
     answer:
-      'KabatOne unifies DGSN operations across all 58 wilayas — including Algiers, Oran, Constantine, Annaba, Blida, Sétif, Tlemcen, Béjaïa, and Ouargla — into a single operational map with shared CAD, CCTV/ANPR feeds, and coordination with the Gendarmerie Nationale (GN) responsible for rural and border security under the Ministry of National Defence (MDN).',
+      'Kabat One unifies DGSN operations across all 58 wilayas — including Algiers, Oran, Constantine, Annaba, Blida, Sétif, Tlemcen, Béjaïa, and Ouargla — into a single operational map with shared CAD, CCTV/ANPR feeds, and coordination with the Gendarmerie Nationale (GN) responsible for rural and border security under the Ministry of National Defence (MDN).',
   },
   {
     question: 'How does the platform support the Direction Générale de la Protection Civile (DGPC)?',
     answer:
-      'KabatOne connects DGPC fire and civil protection units across 58 wilayas, coordinates 14/15 emergency CAD dispatch with Mustapha Bacha/Parnet hospitals in Algiers and regional teaching hospitals, and integrates response at SONATRACH oil/gas installations, Arzew LNG terminal, Skikda refinery, and Houari Boumediene International Airport (ALG).',
+      'Kabat One connects DGPC fire and civil protection units across 58 wilayas, coordinates 14/15 emergency CAD dispatch with Mustapha Bacha/Parnet hospitals in Algiers and regional teaching hospitals, and integrates response at SONATRACH oil/gas installations, Arzew LNG terminal, Skikda refinery, and Houari Boumediene International Airport (ALG).',
   },
   {
-    question: 'How does KabatOne support Algeria\'s oil and gas infrastructure security?',
+    question: 'How does Kabat One support Algeria\'s oil and gas infrastructure security?',
     answer:
-      'KabatOne provides perimeter monitoring and incident management for SONATRACH critical assets: Hassi Messaoud oilfield (primary production hub), Hassi R\'Mel gas field (largest in Africa), In Amenas gas complex (Tiguentourine, post-2013 attack security upgrade), Arzew/Bethioua LNG complexes, Skikda refinery/LNG, and the Trans-Mediterranean Pipeline (Transmed) and Medgaz interconnectors — with Gendarmerie Nationale coordination and ANSC alert integration.',
+      'Kabat One provides perimeter monitoring and incident management for SONATRACH critical assets: Hassi Messaoud oilfield (primary production hub), Hassi R\'Mel gas field (largest in Africa), In Amenas gas complex (Tiguentourine, post-2013 attack security upgrade), Arzew/Bethioua LNG complexes, Skikda refinery/LNG, and the Trans-Mediterranean Pipeline (Transmed) and Medgaz interconnectors — with Gendarmerie Nationale coordination and ANSC alert integration.',
   },
   {
-    question: 'How does KabatOne comply with Algeria\'s Personal Data Protection Law (Law 18-07/ANPDP)?',
+    question: 'How does Kabat One comply with Algeria\'s Personal Data Protection Law (Law 18-07/ANPDP)?',
     answer:
-      'KabatOne implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Algerian Law 18-07 on Personal Data Protection supervised by the Autorité Nationale de Protection des Données à Caractère Personnel (ANPDP). The platform aligns with SGSI (Secrétariat Général des Services de Sécurité Informatique) cybersecurity directives for government systems and CERT-DZ incident response frameworks.',
+      'Kabat One implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Algerian Law 18-07 on Personal Data Protection supervised by the Autorité Nationale de Protection des Données à Caractère Personnel (ANPDP). The platform aligns with SGSI (Secrétariat Général des Services de Sécurité Informatique) cybersecurity directives for government systems and CERT-DZ incident response frameworks.',
   },
   {
-    question: 'Does KabatOne support Algiers Safe City and the Algerian Safe City programme?',
+    question: 'Does Kabat One support Algiers Safe City and the Algerian Safe City programme?',
     answer:
-      'Yes. KabatOne provides centralised video management for DGSN CCTV/ANPR cameras across Algiers — Grande-Aglommération d\'Alger, N1/N5/N11 national roads, the Périphérique, Houari Boumediene Airport (ALG), port of Algiers, and metro/tramway transit network — plus similar integration for Oran, Constantine, and Annaba, with AI analytics and real-time sharing with CNCLAT and DCSI operational centres.',
+      'Yes. Kabat One provides centralised video management for DGSN CCTV/ANPR cameras across Algiers — Grande-Aglommération d\'Alger, N1/N5/N11 national roads, the Périphérique, Houari Boumediene Airport (ALG), port of Algiers, and metro/tramway transit network — plus similar integration for Oran, Constantine, and Annaba, with AI analytics and real-time sharing with CNCLAT and DCSI operational centres.',
   },
   {
-    question: 'How does KabatOne handle Algeria border security and Sahel monitoring?',
+    question: 'How does Kabat One handle Algeria border security and Sahel monitoring?',
     answer:
-      'KabatOne integrates Gendarmerie Nationale border posts across Algeria\'s 6,343 km of land borders — Libya (982 km), Niger (956 km), Mali (1,376 km), Mauritania (463 km), Morocco (1,900 km+), Tunisia (965 km) — with CCTV/radar sensor fusion, vehicle ANPR, and real-time alert sharing between GN, DSS (Direction de la Sécurité et des Systèmes), and CNCLAT for Sahel-threat monitoring.',
+      'Kabat One integrates Gendarmerie Nationale border posts across Algeria\'s 6,343 km of land borders — Libya (982 km), Niger (956 km), Mali (1,376 km), Mauritania (463 km), Morocco (1,900 km+), Tunisia (965 km) — with CCTV/radar sensor fusion, vehicle ANPR, and real-time alert sharing between GN, DSS (Direction de la Sécurité et des Systèmes), and CNCLAT for Sahel-threat monitoring.',
   },
   {
-    question: 'How does KabatOne handle Algeria government procurement under the Code des marchés publics?',
+    question: 'How does Kabat One handle Algeria government procurement under the Code des marchés publics?',
     answer:
-      'KabatOne supports procurement under the Algerian Code des marchés publics (Décret présidentiel 15-247, amended 2020), ARMP (Autorité de Régulation des Marchés Publics et des Délégations de Service Public), Ministry of Finance e-procurement (SIGMAP), and SONATRACH direct procurement frameworks, with French/Arabic bilingual documentation and DZ-localised contract structures.',
+      'Kabat One supports procurement under the Algerian Code des marchés publics (Décret présidentiel 15-247, amended 2020), ARMP (Autorité de Régulation des Marchés Publics et des Délégations de Service Public), Ministry of Finance e-procurement (SIGMAP), and SONATRACH direct procurement frameworks, with French/Arabic bilingual documentation and DZ-localised contract structures.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Direction Générale de la Sûreté Nationale (DGSN) en las 58 wilayas de Argelia?',
+    question: '¿Cómo integra Kabat One la Direction Générale de la Sûreté Nationale (DGSN) en las 58 wilayas de Argelia?',
     answer:
-      'KabatOne unifica las operaciones de la DGSN en las 58 wilayas — incluidas Argel, Orán, Constantina, Annaba, Blida, Sétif, Tlemcen, Béjaïa y Ouargla — en un solo mapa operativo con CAD compartido, cámaras CCTV/ANPR y coordinación con la Gendarmería Nacional (GN), responsable de la seguridad rural y fronteriza bajo el Ministerio de Defensa Nacional (MDN).',
+      'Kabat One unifica las operaciones de la DGSN en las 58 wilayas — incluidas Argel, Orán, Constantina, Annaba, Blida, Sétif, Tlemcen, Béjaïa y Ouargla — en un solo mapa operativo con CAD compartido, cámaras CCTV/ANPR y coordinación con la Gendarmería Nacional (GN), responsable de la seguridad rural y fronteriza bajo el Ministerio de Defensa Nacional (MDN).',
   },
   {
     question: '¿Cómo admite la plataforma la Direction Générale de la Protection Civile (DGPC)?',
     answer:
-      'KabatOne conecta las unidades de protección civil y bomberos de la DGPC en las 58 wilayas, coordina el despacho de emergencias 14/15 con los hospitales Mustapha Bacha/Parnet en Argel y hospitales universitarios regionales, e integra la respuesta ante incidentes en instalaciones de SONATRACH, la terminal GNL de Arzew, la refinería de Skikda y el Aeropuerto Internacional Houari Boumediene (ALG).',
+      'Kabat One conecta las unidades de protección civil y bomberos de la DGPC en las 58 wilayas, coordina el despacho de emergencias 14/15 con los hospitales Mustapha Bacha/Parnet en Argel y hospitales universitarios regionales, e integra la respuesta ante incidentes en instalaciones de SONATRACH, la terminal GNL de Arzew, la refinería de Skikda y el Aeropuerto Internacional Houari Boumediene (ALG).',
   },
   {
-    question: '¿Cómo admite KabatOne la seguridad de la infraestructura de petróleo y gas de Argelia?',
+    question: '¿Cómo admite Kabat One la seguridad de la infraestructura de petróleo y gas de Argelia?',
     answer:
-      'KabatOne proporciona monitoreo perimetral y gestión de incidentes para los activos críticos de SONATRACH: yacimiento de Hassi Messaoud (centro de producción principal), campo de gas de Hassi R\'Mel (el mayor de África), complejo de gas de In Amenas (Tiguentourine, mejoras de seguridad post-atentado 2013), complejos GNL de Arzew/Bethioua, refinería/GNL de Skikda, y los gasoductos Transmed y Medgaz — con coordinación de la Gendarmería Nacional e integración de alertas ANSC.',
+      'Kabat One proporciona monitoreo perimetral y gestión de incidentes para los activos críticos de SONATRACH: yacimiento de Hassi Messaoud (centro de producción principal), campo de gas de Hassi R\'Mel (el mayor de África), complejo de gas de In Amenas (Tiguentourine, mejoras de seguridad post-atentado 2013), complejos GNL de Arzew/Bethioua, refinería/GNL de Skikda, y los gasoductos Transmed y Medgaz — con coordinación de la Gendarmería Nacional e integración de alertas ANSC.',
   },
   {
-    question: '¿Cómo cumple KabatOne con la Ley de Protección de Datos Personales de Argelia (Ley 18-07/ANPDP)?',
+    question: '¿Cómo cumple Kabat One con la Ley de Protección de Datos Personales de Argelia (Ley 18-07/ANPDP)?',
     answer:
-      'KabatOne implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas conforme a la Ley 18-07 de Protección de Datos Personales de Argelia supervisada por la ANPDP. La plataforma se alinea con las directivas de ciberseguridad del SGSI (Secrétariat Général des Services de Sécurité Informatique) para sistemas gubernamentales y los marcos de respuesta a incidentes del CERT-DZ.',
+      'Kabat One implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas conforme a la Ley 18-07 de Protección de Datos Personales de Argelia supervisada por la ANPDP. La plataforma se alinea con las directivas de ciberseguridad del SGSI (Secrétariat Général des Services de Sécurité Informatique) para sistemas gubernamentales y los marcos de respuesta a incidentes del CERT-DZ.',
   },
   {
-    question: '¿Admite KabatOne el Argel Safe City y el programa de Ciudades Seguras argelino?',
+    question: '¿Admite Kabat One el Argel Safe City y el programa de Ciudades Seguras argelino?',
     answer:
-      'Sí. KabatOne proporciona gestión de video centralizada para las cámaras CCTV/ANPR de la DGSN en Argel — Grand-Aglommération d\'Alger, carreteras nacionales N1/N5/N11, el Périphérique, Aeropuerto Houari Boumediene (ALG), puerto de Argel y la red de metro/tranvía — más integración similar para Orán, Constantina y Annaba, con análisis IA y compartición en tiempo real con el CNCLAT y los centros operativos del DCSI.',
+      'Sí. Kabat One proporciona gestión de video centralizada para las cámaras CCTV/ANPR de la DGSN en Argel — Grand-Aglommération d\'Alger, carreteras nacionales N1/N5/N11, el Périphérique, Aeropuerto Houari Boumediene (ALG), puerto de Argel y la red de metro/tranvía — más integración similar para Orán, Constantina y Annaba, con análisis IA y compartición en tiempo real con el CNCLAT y los centros operativos del DCSI.',
   },
   {
-    question: '¿Cómo gestiona KabatOne la seguridad fronteriza y el monitoreo del Sahel en Argelia?',
+    question: '¿Cómo gestiona Kabat One la seguridad fronteriza y el monitoreo del Sahel en Argelia?',
     answer:
-      'KabatOne integra los puestos fronterizos de la Gendarmería Nacional en los 6,343 km de fronteras terrestres de Argelia — Libia (982 km), Níger (956 km), Malí (1,376 km), Mauritania (463 km), Marruecos (más de 1,900 km), Túnez (965 km) — con fusión de sensores CCTV/radar, ANPR de vehículos y compartición de alertas en tiempo real entre GN, DSS y CNCLAT para el monitoreo de amenazas sahélianas.',
+      'Kabat One integra los puestos fronterizos de la Gendarmería Nacional en los 6,343 km de fronteras terrestres de Argelia — Libia (982 km), Níger (956 km), Malí (1,376 km), Mauritania (463 km), Marruecos (más de 1,900 km), Túnez (965 km) — con fusión de sensores CCTV/radar, ANPR de vehículos y compartición de alertas en tiempo real entre GN, DSS y CNCLAT para el monitoreo de amenazas sahélianas.',
   },
   {
-    question: '¿Cómo gestiona KabatOne las adquisiciones del gobierno argelino bajo el Code des marchés publics?',
+    question: '¿Cómo gestiona Kabat One las adquisiciones del gobierno argelino bajo el Code des marchés publics?',
     answer:
-      'KabatOne admite adquisiciones bajo el Código de Contratos Públicos de Argelia (Decreto Presidencial 15-247, modificado 2020), la ARMP (Autorité de Régulation des Marchés Publics), el sistema e-procurement del Ministerio de Finanzas (SIGMAP) y los marcos de adquisición directa de SONATRACH, con documentación bilingüe francés/árabe y estructuras contractuales adaptadas al marco jurídico argelino.',
+      'Kabat One admite adquisiciones bajo el Código de Contratos Públicos de Argelia (Decreto Presidencial 15-247, modificado 2020), la ARMP (Autorité de Régulation des Marchés Publics), el sistema e-procurement del Ministerio de Finanzas (SIGMAP) y los marcos de adquisición directa de SONATRACH, con documentación bilingüe francés/árabe y estructuras contractuales adaptadas al marco jurídico argelino.',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Argelia' : 'KabatOne Platform Capabilities for Algeria'}
+              {es ? 'Capacidades de la plataforma Kabat One para Argelia' : 'Kabat One Platform Capabilities for Algeria'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Gestión de video DGSN: Argel/Orán/Constantina/58 wilayas' : 'DGSN Video Management: Algiers/Oran/Constantine/58 Wilayas',
                   text: es
-                    ? 'KabatOne gestiona las cámaras CCTV/ANPR de la DGSN en las 58 wilayas — incluidas las cámaras del Safe City de Argel en el Périphérique/N1/N5/N11, el metro y el tranvía — integra la vigilancia del ALG y los puertos de Argel/Oran/Béjaïa, conecta el video de las instalaciones de SONATRACH, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, identificación de vehículos — con latencia de alerta inferior a 2 segundos.'
-                    : 'KabatOne manages DGSN CCTV/ANPR cameras across 58 wilayas — including Algiers Safe City cameras on the Périphérique/N1/N5/N11, metro, and tramway — integrates ALG Airport and Algiers/Oran/Béjaïa port surveillance, connects SONATRACH facility video, and provides AI video analytics — anomaly detection, crowd counting, vehicle identification — with sub-2-second alert latency.',
+                    ? 'Kabat One gestiona las cámaras CCTV/ANPR de la DGSN en las 58 wilayas — incluidas las cámaras del Safe City de Argel en el Périphérique/N1/N5/N11, el metro y el tranvía — integra la vigilancia del ALG y los puertos de Argel/Oran/Béjaïa, conecta el video de las instalaciones de SONATRACH, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, identificación de vehículos — con latencia de alerta inferior a 2 segundos.'
+                    : 'Kabat One manages DGSN CCTV/ANPR cameras across 58 wilayas — including Algiers Safe City cameras on the Périphérique/N1/N5/N11, metro, and tramway — integrates ALG Airport and Algiers/Oran/Béjaïa port surveillance, connects SONATRACH facility video, and provides AI video analytics — anomaly detection, crowd counting, vehicle identification — with sub-2-second alert latency.',
                 },
                 {
                   heading: es ? 'Seguridad infraestructura SONATRACH post-In Amenas' : 'SONATRACH Infrastructure Security Post-In Amenas',
                   text: es
-                    ? 'KabatOne proporciona monitoreo perimetral en tiempo real para todos los activos críticos de SONATRACH — Hassi Messaoud (hub principal, zona de seguridad multicapa), In Amenas/Tiguentourine (protocolo de seguridad reforzado USIP/GN/ANP), Hassi R\'Mel, Arzew/Bethioua y Skikda — con detección de intrusión, integración de video PTZ, SIEM para alertas de la GN, y procedimientos de escalada al CNCLAT para incidentes de seguridad críticos.'
-                    : 'KabatOne provides real-time perimeter monitoring for all SONATRACH critical assets — Hassi Messaoud (primary hub, multi-layer security zone), In Amenas/Tiguentourine (enhanced USIP/GN/ANP security protocol), Hassi R\'Mel, Arzew/Bethioua, and Skikda — with intrusion detection, PTZ video integration, SIEM for GN alerts, and CNCLAT escalation procedures for critical security incidents.',
+                    ? 'Kabat One proporciona monitoreo perimetral en tiempo real para todos los activos críticos de SONATRACH — Hassi Messaoud (hub principal, zona de seguridad multicapa), In Amenas/Tiguentourine (protocolo de seguridad reforzado USIP/GN/ANP), Hassi R\'Mel, Arzew/Bethioua y Skikda — con detección de intrusión, integración de video PTZ, SIEM para alertas de la GN, y procedimientos de escalada al CNCLAT para incidentes de seguridad críticos.'
+                    : 'Kabat One provides real-time perimeter monitoring for all SONATRACH critical assets — Hassi Messaoud (primary hub, multi-layer security zone), In Amenas/Tiguentourine (enhanced USIP/GN/ANP security protocol), Hassi R\'Mel, Arzew/Bethioua, and Skikda — with intrusion detection, PTZ video integration, SIEM for GN alerts, and CNCLAT escalation procedures for critical security incidents.',
                 },
                 {
                   heading: es ? 'Monitoreo de fronteras del Sahel y sensor fusion' : 'Sahel Border Monitoring & Sensor Fusion',
                   text: es
-                    ? 'KabatOne integra los puestos fronterizos de la GN en los 6,343 km de fronteras terrestres de Argelia con CCTV, radar de vigilancia terrestre, ANPR y drones (UAV) — proporcionando un mapa de conciencia situacional unificado para el CNCLAT, el ANP y el DSS, con alertas de cruce no autorizado, datos de inteligencia transfronteriza (AQIM/GSPC) y compatibilidad con los marcos de coordinación del G5 Sahel y Interpol.'
-                    : 'KabatOne integrates GN border posts across Algeria\'s 6,343 km land borders with CCTV, ground surveillance radar, ANPR, and UAV drones — providing a unified situational awareness map for CNCLAT, ANP, and DSS, with unauthorised crossing alerts, cross-border intelligence data (AQIM/GSPC), and compatibility with G5 Sahel and Interpol coordination frameworks.',
+                    ? 'Kabat One integra los puestos fronterizos de la GN en los 6,343 km de fronteras terrestres de Argelia con CCTV, radar de vigilancia terrestre, ANPR y drones (UAV) — proporcionando un mapa de conciencia situacional unificado para el CNCLAT, el ANP y el DSS, con alertas de cruce no autorizado, datos de inteligencia transfronteriza (AQIM/GSPC) y compatibilidad con los marcos de coordinación del G5 Sahel y Interpol.'
+                    : 'Kabat One integrates GN border posts across Algeria\'s 6,343 km land borders with CCTV, ground surveillance radar, ANPR, and UAV drones — providing a unified situational awareness map for CNCLAT, ANP, and DSS, with unauthorised crossing alerts, cross-border intelligence data (AQIM/GSPC), and compatibility with G5 Sahel and Interpol coordination frameworks.',
                 },
                 {
                   heading: es ? 'Cumplimiento Ley 18-07/ANPDP, CERT-DZ y Code des marchés publics' : 'Law 18-07/ANPDP, CERT-DZ & Code des marchés publics Compliance',
                   text: es
-                    ? 'KabatOne se alinea con la Ley 18-07 supervisada por la ANPDP — cifrado, gestión del consentimiento, derechos de acceso y notificación de brechas; las directivas de ciberseguridad del SGSI para sistemas gubernamentales; los estándares de respuesta a incidentes del CERT-DZ; y la documentación bilingüe francés/árabe para licitaciones bajo el Decreto Presidencial 15-247 y el sistema SIGMAP del Ministerio de Finanzas.'
-                    : 'KabatOne aligns with Law 18-07 supervised by ANPDP — encryption, consent management, data subject access rights, and breach notification; SGSI cybersecurity directives for government systems; CERT-DZ incident response standards; and bilingual French/Arabic documentation for tenders under Presidential Decree 15-247 and Ministry of Finance SIGMAP system.',
+                    ? 'Kabat One se alinea con la Ley 18-07 supervisada por la ANPDP — cifrado, gestión del consentimiento, derechos de acceso y notificación de brechas; las directivas de ciberseguridad del SGSI para sistemas gubernamentales; los estándares de respuesta a incidentes del CERT-DZ; y la documentación bilingüe francés/árabe para licitaciones bajo el Decreto Presidencial 15-247 y el sistema SIGMAP del Ministerio de Finanzas.'
+                    : 'Kabat One aligns with Law 18-07 supervised by ANPDP — encryption, consent management, data subject access rights, and breach notification; SGSI cybersecurity directives for government systems; CERT-DZ incident response standards; and bilingual French/Arabic documentation for tenders under Presidential Decree 15-247 and Ministry of Finance SIGMAP system.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la DGSN, la Gendarmería Nacional y la DGPC en una plataforma operativa conforme a la Ley 18-07/ANPDP, diseñada para proteger la infraestructura energética crítica de SONATRACH y las fronteras del Sahel de Argelia.'
-              : 'Discover how KabatOne unifies Algeria DGSN, Gendarmerie Nationale, and DGPC into one operational platform compliant with Law 18-07/ANPDP, designed to protect SONATRACH critical energy infrastructure and Algeria\'s Sahel borders.'
+              ? 'Descubra cómo Kabat One unifica la DGSN, la Gendarmería Nacional y la DGPC en una plataforma operativa conforme a la Ley 18-07/ANPDP, diseñada para proteger la infraestructura energética crítica de SONATRACH y las fronteras del Sahel de Argelia.'
+              : 'Discover how Kabat One unifies Algeria DGSN, Gendarmerie Nationale, and DGPC into one operational platform compliant with Law 18-07/ANPDP, designed to protect SONATRACH critical energy infrastructure and Algeria\'s Sahel borders.'
           }
         />
       </main>

@@ -48,7 +48,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
     },
     {
       question: '¿Cómo se llama el software de un C5?',
-      answer: 'Los centros C5 modernos utilizan plataformas de seguridad pública unificadas que integran CAD, VMS, GIS y analítica en un solo sistema. La plataforma K1 de KabatOne opera en más de 40 ciudades de América Latina, proporcionando conciencia situacional en tiempo real para centros C5 y C4.',
+      answer: 'Los centros C5 modernos utilizan plataformas de seguridad pública unificadas que integran CAD, VMS, GIS y analítica en un solo sistema. La plataforma K1 de Kabat One opera en más de 40 ciudades de América Latina, proporcionando conciencia situacional en tiempo real para centros C5 y C4.',
     },
     {
       question: '¿Qué hace un operador de C5?',
@@ -81,13 +81,13 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
     },
     {
       question: 'What software runs a C5 command center?',
-      answer: 'Modern C5 centers use unified public safety platforms that integrate CAD, VMS, GIS, and analytics into a single system. KabatOne\'s K1 platform operates in over 40 cities across Latin America, providing real-time situational awareness for C5 and C4 command centers.',
+      answer: 'Modern C5 centers use unified public safety platforms that integrate CAD, VMS, GIS, and analytics into a single system. Kabat One\'s K1 platform operates in over 40 cities across Latin America, providing real-time situational awareness for C5 and C4 command centers.',
     },
   ]
 
   const article = articleSchema(
     es ? '¿Qué es un C5? Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano' : 'What Is a C5 Command Center? Command, Control, Computing, Communications & Citizen Contact',
-    es ? 'Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de KabatOne.' : 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center for public safety. Learn how C5 centers operate in Mexico and Latin America with KabatOne\'s K1 platform.',
+    es ? 'Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de Kabat One.' : 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center for public safety. Learn how C5 centers operate in Mexico and Latin America with Kabat One\'s K1 platform.',
     es ? 'https://kabatone.com/es/resources/que-es-un-c5' : 'https://kabatone.com/resources/que-es-un-c5',
     '2024-01-15'
   )
@@ -258,8 +258,8 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
             </h2>
             <p style={{ textAlign: 'center', color: '#94a3b8', fontSize: 16, marginBottom: 40, maxWidth: 680, margin: '0 auto 40px' }}>
               {es
-                ? 'KabatOne K1 es la plataforma de seguridad pública unificada que integra todos los sistemas de un C5 en una sola interfaz operativa.'
-                : 'KabatOne K1 is the unified public safety platform that integrates all C5 systems into a single operational interface.'}
+                ? 'Kabat One K1 es la plataforma de seguridad pública unificada que integra todos los sistemas de un C5 en una sola interfaz operativa.'
+                : 'Kabat One K1 is the unified public safety platform that integrates all C5 systems into a single operational interface.'}
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
@@ -335,7 +335,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
         <CadVendorFacts es={es} />
         <CadLeadForm es={es} source="que-es-un-c5" />
 
-        <CTASection es={es} h2={es ? '¿Necesita una Plataforma para su Centro C5?' : 'Need a Platform for Your C5 Center?'} subtitle={es ? 'KabatOne K1 opera en más de 40 ciudades de América Latina. Solicite una demostración personalizada para su municipio o estado.' : 'KabatOne K1 operates in over 40 cities across Latin America. Request a personalized demo for your municipality or state.'} />
+        <CTASection es={es} h2={es ? '¿Necesita una Plataforma para su Centro C5?' : 'Need a Platform for Your C5 Center?'} subtitle={es ? 'Kabat One K1 opera en más de 40 ciudades de América Latina. Solicite una demostración personalizada para su municipio o estado.' : 'Kabat One K1 operates in over 40 cities across Latin America. Request a personalized demo for your municipality or state.'} />
       </main>
 
       <Footer es={es} />

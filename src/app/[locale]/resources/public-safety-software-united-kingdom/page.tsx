@@ -51,15 +51,15 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
     },
     {
       question: '¿Cuáles son los requisitos de protección de datos para software de vigilancia en el Reino Unido?',
-      answer: 'El software de vigilancia en el Reino Unido debe cumplir el UK GDPR (UK General Data Protection Regulation), la Ley de Protección de Datos 2018, el Código de Práctica del Comisionado de Cámaras de Vigilancia (Surveillance Camera Commissioner) y, para fuerzas del orden, la Parte 3 de la Ley de Protección de Datos 2018. Las organizaciones que gestionan datos biométricos o video de vigilancia deben nombrar un Data Protection Officer (DPO), realizar evaluaciones DPIA y mantener registros de actividades de procesamiento. KabatOne admite configuraciones de soberanía de datos para despliegues on-premises o en la nube UK.',
+      answer: 'El software de vigilancia en el Reino Unido debe cumplir el UK GDPR (UK General Data Protection Regulation), la Ley de Protección de Datos 2018, el Código de Práctica del Comisionado de Cámaras de Vigilancia (Surveillance Camera Commissioner) y, para fuerzas del orden, la Parte 3 de la Ley de Protección de Datos 2018. Las organizaciones que gestionan datos biométricos o video de vigilancia deben nombrar un Data Protection Officer (DPO), realizar evaluaciones DPIA y mantener registros de actividades de procesamiento. Kabat One admite configuraciones de soberanía de datos para despliegues on-premises o en la nube UK.',
     },
     {
       question: '¿Cómo se gestiona la seguridad en grandes eventos en el Reino Unido?',
-      answer: 'Los grandes eventos en el Reino Unido — el Carnaval de Notting Hill, Wimbledon, partidos de la Premier League, el Desfile del Trooping the Colour — requieren coordinación multiagencia entre policía, autoridades locales, servicios de ambulancia y servicios de seguridad privada. Las operaciones se gestionan desde salas de control conjuntas (Gold/Silver/Bronze command structure) con análisis de video en vivo, comunicaciones de radio y despacho CAD integrados. KabatOne K-Safety soporta el mando conjunto y permite a los comandantes de Oro/Plata/Bronce ver el estado operativo en un mapa compartido en tiempo real.',
+      answer: 'Los grandes eventos en el Reino Unido — el Carnaval de Notting Hill, Wimbledon, partidos de la Premier League, el Desfile del Trooping the Colour — requieren coordinación multiagencia entre policía, autoridades locales, servicios de ambulancia y servicios de seguridad privada. Las operaciones se gestionan desde salas de control conjuntas (Gold/Silver/Bronze command structure) con análisis de video en vivo, comunicaciones de radio y despacho CAD integrados. Kabat One K-Safety soporta el mando conjunto y permite a los comandantes de Oro/Plata/Bronce ver el estado operativo en un mapa compartido en tiempo real.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para fuerzas policiales y salas de control CCTV en el Reino Unido?',
-      answer: 'KabatOne integra las funciones que las salas de control del Reino Unido gestionan en sistemas separados: despacho CAD (K-Dispatch), gestión de video y analítica de IA (K-Video) y conciencia situacional GIS (K-Safety) en una sola plataforma. La plataforma es agnóstica al fabricante de cámaras — compatible con ONVIF, RTSP y los principales fabricantes de CCTV usados en el Reino Unido — y admite despliegue on-premises o en nubes privadas para cumplir los requisitos UK GDPR y del Comisionado de Cámaras de Vigilancia. Puede solicitar una demostración adaptada al contexto de mando estructurado Oro/Plata/Bronce.',
+      question: '¿Por qué Kabat One es adecuado para fuerzas policiales y salas de control CCTV en el Reino Unido?',
+      answer: 'Kabat One integra las funciones que las salas de control del Reino Unido gestionan en sistemas separados: despacho CAD (K-Dispatch), gestión de video y analítica de IA (K-Video) y conciencia situacional GIS (K-Safety) en una sola plataforma. La plataforma es agnóstica al fabricante de cámaras — compatible con ONVIF, RTSP y los principales fabricantes de CCTV usados en el Reino Unido — y admite despliegue on-premises o en nubes privadas para cumplir los requisitos UK GDPR y del Comisionado de Cámaras de Vigilancia. Puede solicitar una demostración adaptada al contexto de mando estructurado Oro/Plata/Bronce.',
     },
   ] : [
     {
@@ -76,15 +76,15 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
     },
     {
       question: 'What are the UK data protection requirements for surveillance software?',
-      answer: 'Surveillance software in the UK must comply with the UK GDPR, the Data Protection Act 2018, the Surveillance Camera Commissioner\'s Code of Practice, and for law enforcement, Part 3 of the Data Protection Act 2018. Organisations handling biometric data or surveillance video must appoint a Data Protection Officer (DPO), conduct DPIAs, and maintain records of processing activities. KabatOne supports data sovereignty configurations for on-premises or UK cloud deployments.',
+      answer: 'Surveillance software in the UK must comply with the UK GDPR, the Data Protection Act 2018, the Surveillance Camera Commissioner\'s Code of Practice, and for law enforcement, Part 3 of the Data Protection Act 2018. Organisations handling biometric data or surveillance video must appoint a Data Protection Officer (DPO), conduct DPIAs, and maintain records of processing activities. Kabat One supports data sovereignty configurations for on-premises or UK cloud deployments.',
     },
     {
       question: 'How is major event security managed in the UK?',
-      answer: 'Major events in the UK — Notting Hill Carnival, Wimbledon, Premier League matches, the Trooping the Colour parade — require multi-agency coordination between police, local authorities, ambulance services, and private security. Operations are managed from joint control rooms using a Gold/Silver/Bronze command structure with live video analysis, radio communications, and integrated CAD dispatch. KabatOne K-Safety supports the joint command structure, allowing Gold/Silver/Bronze commanders to view operational status on a shared real-time map.',
+      answer: 'Major events in the UK — Notting Hill Carnival, Wimbledon, Premier League matches, the Trooping the Colour parade — require multi-agency coordination between police, local authorities, ambulance services, and private security. Operations are managed from joint control rooms using a Gold/Silver/Bronze command structure with live video analysis, radio communications, and integrated CAD dispatch. Kabat One K-Safety supports the joint command structure, allowing Gold/Silver/Bronze commanders to view operational status on a shared real-time map.',
     },
     {
-      question: 'Why is KabatOne suited for UK police forces and local authority CCTV control rooms?',
-      answer: 'KabatOne integrates the functions UK control rooms manage across separate systems — CAD dispatch (K-Dispatch), video management and AI analytics (K-Video), and GIS situational awareness (K-Safety) — into a single platform. The platform is camera-manufacturer agnostic, compatible with ONVIF, RTSP, and major CCTV brands used across UK, and supports on-premises or private cloud deployment to meet UK GDPR and Surveillance Camera Commissioner requirements. Request a demo tailored to the Gold/Silver/Bronze structured command context.',
+      question: 'Why is Kabat One suited for UK police forces and local authority CCTV control rooms?',
+      answer: 'Kabat One integrates the functions UK control rooms manage across separate systems — CAD dispatch (K-Dispatch), video management and AI analytics (K-Video), and GIS situational awareness (K-Safety) — into a single platform. The platform is camera-manufacturer agnostic, compatible with ONVIF, RTSP, and major CCTV brands used across UK, and supports on-premises or private cloud deployment to meet UK GDPR and Surveillance Camera Commissioner requirements. Request a demo tailored to the Gold/Silver/Bronze structured command context.',
     },
   ]
 
@@ -194,8 +194,8 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'El Reino Unido opera 43+ fuerzas policiales independientes, una de las redes de CCTV más densas del mundo y un marco de privacidad de videovigilancia entre los más estrictos. KabatOne unifica el despacho 999, la gestión de video con analítica de IA y la conciencia situacional en una sola plataforma — con soporte para cumplimiento UK GDPR y el Código del Comisionado de Cámaras de Vigilancia.'
-                : 'The United Kingdom operates 43+ independent police forces, one of the world\'s densest CCTV networks, and one of the strictest surveillance privacy frameworks globally. KabatOne unifies 999 dispatch, video management with AI analytics, and situational awareness in a single platform — with UK GDPR compliance and Surveillance Camera Commissioner Code support.'}
+                ? 'El Reino Unido opera 43+ fuerzas policiales independientes, una de las redes de CCTV más densas del mundo y un marco de privacidad de videovigilancia entre los más estrictos. Kabat One unifica el despacho 999, la gestión de video con analítica de IA y la conciencia situacional en una sola plataforma — con soporte para cumplimiento UK GDPR y el Código del Comisionado de Cámaras de Vigilancia.'
+                : 'The United Kingdom operates 43+ independent police forces, one of the world\'s densest CCTV networks, and one of the strictest surveillance privacy frameworks globally. Kabat One unifies 999 dispatch, video management with AI analytics, and situational awareness in a single platform — with UK GDPR compliance and Surveillance Camera Commissioner Code support.'}
             </p>
           </div>
         </section>
@@ -258,14 +258,14 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
           </div>
         </section>
 
-        {/* ── SECTION 3: How KabatOne Works for UK ── */}
+        {/* ── SECTION 3: How Kabat One Works for UK ── */}
         <section style={sectionStyle}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos del Reino Unido' : 'How KabatOne Addresses UK Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos del Reino Unido' : 'How Kabat One Addresses UK Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para operar en entornos donde múltiples agencias independientes deben coordinarse en tiempo real desde salas de control que históricamente han operado sistemas separados.'
-                : 'KabatOne is designed to operate in environments where multiple independent agencies must coordinate in real time from control rooms that have historically run separate systems.'}
+                ? 'Kabat One está diseñado para operar en entornos donde múltiples agencias independientes deben coordinarse en tiempo real desde salas de control que históricamente han operado sistemas separados.'
+                : 'Kabat One is designed to operate in environments where multiple independent agencies must coordinate in real time from control rooms that have historically run separate systems.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -292,7 +292,7 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'K-Dispatch · K-Video · K-Safety' : 'K-Dispatch · K-Video · K-Safety'}
@@ -367,7 +367,7 @@ export default async function PublicSafetySoftwareUnitedKingdomPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Sala de Control' : 'Request a Demo for Your Control Room'}
-          subtitle={es ? 'KabatOne integra despacho 999, CCTV con analítica de IA y mando Oro/Plata/Bronce en una sola plataforma. Demo adaptada al contexto del Reino Unido.' : 'KabatOne integrates 999 dispatch, CCTV with AI analytics, and Gold/Silver/Bronze command in a single platform. Demo tailored to the UK context.'}
+          subtitle={es ? 'Kabat One integra despacho 999, CCTV con analítica de IA y mando Oro/Plata/Bronce en una sola plataforma. Demo adaptada al contexto del Reino Unido.' : 'Kabat One integrates 999 dispatch, CCTV with AI analytics, and Gold/Silver/Bronze command in a single platform. Demo tailored to the UK context.'}
         />
 
         <Footer es={es} />

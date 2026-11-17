@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareMalawiPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Malaui | MDF/MPS, Lago Malaui, SADC y Recursos Estratégicos – KabatOne"
-    : "Public Safety Software for Malawi | MDF/MPS, Lake Malawi, SADC & Strategic Resources – KabatOne";
+    ? "Software de Seguridad Pública para Malaui | MDF/MPS, Lago Malaui, SADC y Recursos Estratégicos – Kabat One"
+    : "Public Safety Software for Malawi | MDF/MPS, Lake Malawi, SADC & Strategic Resources – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas de Defensa de Malaui (MDF), Servicio de Policía, seguridad del Lago Malaui, gestión de fronteras SADC y protección de recursos de uranio/té/tabaco."
-    : "KabatOne delivers public safety platform for Malawi Defence Force (MDF), Police Service, Lake Malawi security, SADC border management, and protection of uranium/tea/tobacco strategic resources.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas de Defensa de Malaui (MDF), Servicio de Policía, seguridad del Lago Malaui, gestión de fronteras SADC y protección de recursos de uranio/té/tabaco."
+    : "Kabat One delivers public safety platform for Malawi Defence Force (MDF), Police Service, Lake Malawi security, SADC border management, and protection of uranium/tea/tobacco strategic resources.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-malawi"
     : "https://kabatone.com/resources/public-safety-software-malawi";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareMalawiPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Malaui?"
-        : "How does KabatOne support public safety in Malawi?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Malaui?"
+        : "How does Kabat One support public safety in Malawi?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones MDF/MPS en los 28 distritos/3 regiones. Los módulos de seguridad lacustre monitorean el Lago Malaui, el transporte (MV Ilala) y la pesquería. El sistema de gestión de fronteras cubre los corredores Tanzania, Mozambique y Zambia. Los módulos de protección de recursos aseguran las operaciones de tabaco (Kamuzu Banda era exportador), té y la mina de uranio de Kayelekera. La arquitectura es adaptable a entornos de baja conectividad en zonas rurales."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for MDF/MPS operations across all 28 districts/3 regions. Lake security modules monitor Lake Malawi, lake transport (MV Ilala), and the fishery. Border management system covers Tanzania, Mozambique, and Zambia corridors. Resource protection modules secure tobacco, tea, and the Kayelekera uranium mine operations. Architecture adapts to low-connectivity environments in rural areas.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones MDF/MPS en los 28 distritos/3 regiones. Los módulos de seguridad lacustre monitorean el Lago Malaui, el transporte (MV Ilala) y la pesquería. El sistema de gestión de fronteras cubre los corredores Tanzania, Mozambique y Zambia. Los módulos de protección de recursos aseguran las operaciones de tabaco (Kamuzu Banda era exportador), té y la mina de uranio de Kayelekera. La arquitectura es adaptable a entornos de baja conectividad en zonas rurales."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for MDF/MPS operations across all 28 districts/3 regions. Lake security modules monitor Lake Malawi, lake transport (MV Ilala), and the fishery. Border management system covers Tanzania, Mozambique, and Zambia corridors. Resource protection modules secure tobacco, tea, and the Kayelekera uranium mine operations. Architecture adapts to low-connectivity environments in rural areas.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareMalawiPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Malaui" : "KabatOne Capabilities for Malawi"}
+              {es ? "Capacidades Kabat One para Malaui" : "Kabat One Capabilities for Malawi"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

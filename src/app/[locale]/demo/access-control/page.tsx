@@ -18,16 +18,16 @@ export async function generateMetadata({
     ogImage: '/demo/access-control/cam03-server-corridor.jpg',
     en: {
       // Shortened from "Unauthorized Access Control Response Walkthrough |
-      // KabatOne Platform Demo" (73 chars), which the audit flagged as over the
+      // Kabat One Platform Demo" (73 chars), which the audit flagged as over the
       // 70-char title limit.
-      title: 'Unauthorized Access Response Walkthrough | KabatOne Demo',
+      title: 'Unauthorized Access Response Walkthrough | Kabat One Demo',
       description:
-        'See how KabatOne detects and responds to an unauthorized server room breach — from badge denial and face recognition to security lockdown and officer dispatch.',
+        'See how Kabat One detects and responds to an unauthorized server room breach — from badge denial and face recognition to security lockdown and officer dispatch.',
     },
     es: {
-      title: 'Recorrido de Respuesta a Acceso No Autorizado | Demo KabatOne',
+      title: 'Recorrido de Respuesta a Acceso No Autorizado | Demo Kabat One',
       description:
-        'Descubre cómo KabatOne detecta un acceso no autorizado a un centro de datos: de la denegación de credencial y reconocimiento facial al confinamiento.',
+        'Descubre cómo Kabat One detecta un acceso no autorizado a un centro de datos: de la denegación de credencial y reconocimiento facial al confinamiento.',
     },
   })
 }

@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareSierraLeonePage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Sierra Leona | RSLAF/SLP, Puerto de Freetown y Seguridad Minera – KabatOne"
-    : "Public Safety Software for Sierra Leone | RSLAF/SLP, Freetown Port & Mining Security – KabatOne";
+    ? "Software de Seguridad Pública para Sierra Leona | RSLAF/SLP, Puerto de Freetown y Seguridad Minera – Kabat One"
+    : "Public Safety Software for Sierra Leone | RSLAF/SLP, Freetown Port & Mining Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para la República de Sierra Leona Fuerzas Armadas (RSLAF), Policía (SLP), Puerto de Freetown y seguridad de recursos minerales estratégicos."
-    : "KabatOne delivers public safety platform for the Republic of Sierra Leone Armed Forces (RSLAF), Police (SLP), Port of Freetown, and security for strategic mineral resources.";
+    ? "Kabat One entrega plataforma de seguridad pública para la República de Sierra Leona Fuerzas Armadas (RSLAF), Policía (SLP), Puerto de Freetown y seguridad de recursos minerales estratégicos."
+    : "Kabat One delivers public safety platform for the Republic of Sierra Leone Armed Forces (RSLAF), Police (SLP), Port of Freetown, and security for strategic mineral resources.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-sierra-leone"
     : "https://kabatone.com/resources/public-safety-software-sierra-leone";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareSierraLeonePage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Sierra Leona?"
-        : "How does KabatOne support public safety in Sierra Leone?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Sierra Leona?"
+        : "How does Kabat One support public safety in Sierra Leone?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones RSLAF/SLP en las 5 regiones. La plataforma de seguridad portuaria protege el Queen Elizabeth II Quay de Freetown. Los módulos de seguridad minera monitorean operaciones en Tonkolili, Sierra Rutile y Marampa. El sistema de respuesta a emergencias gestiona riesgos de inundaciones/deslizamientos en Freetown. La arquitectura es adaptable a entornos de baja conectividad."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for RSLAF/SLP operations across all 5 regions. Port security platform protects Freetown's Queen Elizabeth II Quay. Mining security modules monitor operations at Tonkolili, Sierra Rutile, and Marampa. Emergency response system manages flood/landslide risks in Freetown. Architecture adapts to low-connectivity environments.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones RSLAF/SLP en las 5 regiones. La plataforma de seguridad portuaria protege el Queen Elizabeth II Quay de Freetown. Los módulos de seguridad minera monitorean operaciones en Tonkolili, Sierra Rutile y Marampa. El sistema de respuesta a emergencias gestiona riesgos de inundaciones/deslizamientos en Freetown. La arquitectura es adaptable a entornos de baja conectividad."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for RSLAF/SLP operations across all 5 regions. Port security platform protects Freetown's Queen Elizabeth II Quay. Mining security modules monitor operations at Tonkolili, Sierra Rutile, and Marampa. Emergency response system manages flood/landslide risks in Freetown. Architecture adapts to low-connectivity environments.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareSierraLeonePage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Sierra Leona" : "KabatOne Capabilities for Sierra Leone"}
+              {es ? "Capacidades Kabat One para Sierra Leona" : "Kabat One Capabilities for Sierra Leone"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

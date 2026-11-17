@@ -49,7 +49,7 @@ export default async function RtccSetupGuidePage({
         {
           question: '¿Un RTCC puede integrarse con sistemas CAD existentes?',
           answer:
-            'Sí. Los RTCC modernos se integran con sistemas CAD mediante APIs estándar. Cuando un analista del RTCC identifica un incidente, puede crear automáticamente un ticket en el sistema CAD del despachador, con la ubicación geolocalizadas y un enlace al feed de video en vivo. KabatOne K-Safety, por ejemplo, tiene integración nativa con K-Dispatch, eliminando la necesidad de middleware de terceros.',
+            'Sí. Los RTCC modernos se integran con sistemas CAD mediante APIs estándar. Cuando un analista del RTCC identifica un incidente, puede crear automáticamente un ticket en el sistema CAD del despachador, con la ubicación geolocalizadas y un enlace al feed de video en vivo. Kabat One K-Safety, por ejemplo, tiene integración nativa con K-Dispatch, eliminando la necesidad de middleware de terceros.',
         },
         {
           question: '¿Cuáles son los errores más comunes al implementar un RTCC?',
@@ -81,7 +81,7 @@ export default async function RtccSetupGuidePage({
         {
           question: 'Can an RTCC integrate with existing CAD systems?',
           answer:
-            'Yes. Modern RTCCs integrate with CAD systems via standard APIs. When an RTCC analyst identifies an incident, they can automatically create a ticket in the dispatcher\'s CAD system, with the geolocated address and a link to the live video feed. KabatOne K-Safety, for example, has native integration with K-Dispatch, eliminating the need for third-party middleware.',
+            'Yes. Modern RTCCs integrate with CAD systems via standard APIs. When an RTCC analyst identifies an incident, they can automatically create a ticket in the dispatcher\'s CAD system, with the geolocated address and a link to the live video feed. Kabat One K-Safety, for example, has native integration with K-Dispatch, eliminating the need for third-party middleware.',
         },
         {
           question: 'What are the most common RTCC implementation mistakes?',
@@ -279,8 +279,8 @@ export default async function RtccSetupGuidePage({
             <h3 style={h3Style}>{es ? 'Red de Video' : 'Video Network'}</h3>
             <p style={pStyle}>
               {es
-                ? 'La base del RTCC. Incluye cámaras fijas en puntos estratégicos, cámaras PTZ (pan-tilt-zoom) para seguimiento activo, y acceso a cámaras privadas de negocios y ciudadanos mediante programas de integración voluntaria. KabatOne K-Connect, por ejemplo, permite integrar cámaras de negocios sin costo de infraestructura adicional.'
-                : 'The foundation of the RTCC. Includes fixed cameras at strategic points, PTZ (pan-tilt-zoom) cameras for active tracking, and access to private business and citizen cameras through voluntary integration programs. KabatOne K-Connect, for example, allows integrating business cameras without additional infrastructure cost.'}
+                ? 'La base del RTCC. Incluye cámaras fijas en puntos estratégicos, cámaras PTZ (pan-tilt-zoom) para seguimiento activo, y acceso a cámaras privadas de negocios y ciudadanos mediante programas de integración voluntaria. Kabat One K-Connect, por ejemplo, permite integrar cámaras de negocios sin costo de infraestructura adicional.'
+                : 'The foundation of the RTCC. Includes fixed cameras at strategic points, PTZ (pan-tilt-zoom) cameras for active tracking, and access to private business and citizen cameras through voluntary integration programs. Kabat One K-Connect, for example, allows integrating business cameras without additional infrastructure cost.'}
             </p>
 
             <h3 style={h3Style}>{es ? 'Lectores de Placas Vehiculares (LPR)' : 'License Plate Readers (LPR)'}</h3>
@@ -293,15 +293,15 @@ export default async function RtccSetupGuidePage({
             <h3 style={h3Style}>{es ? 'Analítica de IA' : 'AI Analytics'}</h3>
             <p style={pStyle}>
               {es
-                ? 'Los analistas humanos no pueden monitorear cientos de feeds simultáneamente. La IA actúa como un filtro inteligente: detecta movimiento en zonas configuradas, identifica comportamientos anómalos, reconoce placas en listas de alerta y agrupa eventos relacionados espacial y temporalmente. K-Safety de KabatOne aplica análisis de IA directamente sobre los feeds de video sin requerir hardware de cómputo adicional.'
-                : 'Human analysts cannot monitor hundreds of feeds simultaneously. AI acts as an intelligent filter: detecting movement in configured zones, identifying anomalous behavior, recognizing plates on alert lists, and clustering related events spatially and temporally. KabatOne K-Safety applies AI analysis directly on video feeds without requiring additional compute hardware.'}
+                ? 'Los analistas humanos no pueden monitorear cientos de feeds simultáneamente. La IA actúa como un filtro inteligente: detecta movimiento en zonas configuradas, identifica comportamientos anómalos, reconoce placas en listas de alerta y agrupa eventos relacionados espacial y temporalmente. K-Safety de Kabat One aplica análisis de IA directamente sobre los feeds de video sin requerir hardware de cómputo adicional.'
+                : 'Human analysts cannot monitor hundreds of feeds simultaneously. AI acts as an intelligent filter: detecting movement in configured zones, identifying anomalous behavior, recognizing plates on alert lists, and clustering related events spatially and temporally. Kabat One K-Safety applies AI analysis directly on video feeds without requiring additional compute hardware.'}
             </p>
 
             <h3 style={h3Style}>{es ? 'Integración con CAD de Despacho' : 'CAD Dispatch Integration'}</h3>
             <p style={pStyle}>
               {es
-                ? 'La integración CAD convierte el RTCC de un sistema de observación a un sistema de acción. Cuando un analista confirma un incidente, puede crear directamente un ticket en el sistema CAD del despachador — con la ubicación exacta, el feed de video relevante y las notas del analista — sin hacer una llamada telefónica ni cambiar de sistema. KabatOne K-Safety tiene integración nativa bidireccional con K-Dispatch.'
-                : 'CAD integration transforms the RTCC from an observation system to an action system. When an analyst confirms an incident, they can directly create a ticket in the dispatcher\'s CAD system — with the exact location, the relevant video feed, and analyst notes — without making a phone call or switching systems. KabatOne K-Safety has native bidirectional integration with K-Dispatch.'}
+                ? 'La integración CAD convierte el RTCC de un sistema de observación a un sistema de acción. Cuando un analista confirma un incidente, puede crear directamente un ticket en el sistema CAD del despachador — con la ubicación exacta, el feed de video relevante y las notas del analista — sin hacer una llamada telefónica ni cambiar de sistema. Kabat One K-Safety tiene integración nativa bidireccional con K-Dispatch.'
+                : 'CAD integration transforms the RTCC from an observation system to an action system. When an analyst confirms an incident, they can directly create a ticket in the dispatcher\'s CAD system — with the exact location, the relevant video feed, and analyst notes — without making a phone call or switching systems. Kabat One K-Safety has native bidirectional integration with K-Dispatch.'}
             </p>
           </div>
         </section>
@@ -468,12 +468,12 @@ export default async function RtccSetupGuidePage({
               {es ? 'Productos Relacionados' : 'Related Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne para Centros RTCC' : 'KabatOne for RTCC Operations'}
+              {es ? 'Kabat One para Centros RTCC' : 'Kabat One for RTCC Operations'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es
-                ? 'Los módulos de KabatOne están diseñados para operar de forma integrada en entornos RTCC — sin middleware, sin cambio de pantalla.'
-                : 'KabatOne modules are designed to operate in an integrated way in RTCC environments — no middleware, no screen switching.'}
+                ? 'Los módulos de Kabat One están diseñados para operar de forma integrada en entornos RTCC — sin middleware, sin cambio de pantalla.'
+                : 'Kabat One modules are designed to operate in an integrated way in RTCC environments — no middleware, no screen switching.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -590,10 +590,10 @@ export default async function RtccSetupGuidePage({
 
         <CTASection
           es={es}
-          h2={es ? 'Implementa un RTCC con KabatOne' : 'Build Your RTCC with KabatOne'}
+          h2={es ? 'Implementa un RTCC con Kabat One' : 'Build Your RTCC with Kabat One'}
           subtitle={es
-            ? 'KabatOne integra video, LPR, despacho CAD y GIS en una sola plataforma para centros RTCC. Solicita una demo con datos reales de ciudad.'
-            : 'KabatOne integrates video, LPR, CAD dispatch, and GIS in one platform for RTCC operations. Request a demo with real city data.'}
+            ? 'Kabat One integra video, LPR, despacho CAD y GIS en una sola plataforma para centros RTCC. Solicita una demo con datos reales de ciudad.'
+            : 'Kabat One integrates video, LPR, CAD dispatch, and GIS in one platform for RTCC operations. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

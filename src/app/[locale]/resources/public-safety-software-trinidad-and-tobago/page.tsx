@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias de Trinidad y Tobago?",
-      answer: "Trinidad y Tobago opera el sistema 999 para emergencias policiales, 990 para bomberos y 811 para ambulancias. El Trinidad and Tobago Police Service (TTPS, ~7,000 oficiales) es la fuerza policial principal, organizada en 9 divisiones policiales. La National Operations Centre (NOC) funciona como centro de coordinacion bajo el Ministerio de Seguridad Nacional. KabatOne unifica estas lineas separadas en un CAD integrado que coordina TTPS, TTDF, TTFS y servicios de salud en una sola plataforma operativa.",
+      answer: "Trinidad y Tobago opera el sistema 999 para emergencias policiales, 990 para bomberos y 811 para ambulancias. El Trinidad and Tobago Police Service (TTPS, ~7,000 oficiales) es la fuerza policial principal, organizada en 9 divisiones policiales. La National Operations Centre (NOC) funciona como centro de coordinacion bajo el Ministerio de Seguridad Nacional. Kabat One unifica estas lineas separadas en un CAD integrado que coordina TTPS, TTDF, TTFS y servicios de salud en una sola plataforma operativa.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Trinidad y Tobago?",
@@ -50,21 +50,21 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
       answer: "Trinidad y Tobago es el mayor productor de petroleo y gas del Caribe, con la industria energetica representando aproximadamente el 30-40% del PIB y mas del 80% de las exportaciones. La Point Lisas Industrial Estate alberga petroquimicas que producen metanol (2do exportador mundial) y amoniaco (mayor exportador mundial). Atlantic LNG en Point Fortin opera 4 trenes de GNL. La proteccion de infraestructura energetica critica — plataformas offshore, terminales de GNL, oleoductos y la refineria de Petrotrin en Pointe-a-Pierre — requiere VMS integrado con despacho maritimo y terrestre.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Trinidad y Tobago?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del TTPS en Port of Spain, San Fernando y Chaguanas, las camaras del Puerto de Port of Spain (PATT), la videovigilancia del Aeropuerto Internacional Piarco (POS) y del Aeropuerto A.N.R. Robinson en Tobago (TAB), las camaras de seguridad de Atlantic LNG y Point Lisas, y los sistemas del Judiciary Marshals Service se conectan directamente. Compatible con la infraestructura de fibra de TSTT, Digicel y Flow.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Trinidad y Tobago?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del TTPS en Port of Spain, San Fernando y Chaguanas, las camaras del Puerto de Port of Spain (PATT), la videovigilancia del Aeropuerto Internacional Piarco (POS) y del Aeropuerto A.N.R. Robinson en Tobago (TAB), las camaras de seguridad de Atlantic LNG y Point Lisas, y los sistemas del Judiciary Marshals Service se conectan directamente. Compatible con la infraestructura de fibra de TSTT, Digicel y Flow.",
     },
     {
       question: "¿Cual es la relacion entre Trinidad y Tobago en materia de seguridad?",
-      answer: "Trinidad y Tobago es una republica unitaria con dos islas principales. Trinidad (4,768 km2, ~1.35M habitantes) concentra la actividad economica, industrial y la mayoria de la criminalidad. Tobago (300 km2, ~60,000 habitantes) tiene su propia Tobago House of Assembly (THA) con autonomia administrativa limitada y una economia basada en turismo. La Tobago Division del TTPS opera con recursos limitados. El Tobago Emergency Management Agency (TEMA) coordina desastres en la isla. KabatOne conecta ambas islas en una sola plataforma operativa con despacho unificado.",
+      answer: "Trinidad y Tobago es una republica unitaria con dos islas principales. Trinidad (4,768 km2, ~1.35M habitantes) concentra la actividad economica, industrial y la mayoria de la criminalidad. Tobago (300 km2, ~60,000 habitantes) tiene su propia Tobago House of Assembly (THA) con autonomia administrativa limitada y una economia basada en turismo. La Tobago Division del TTPS opera con recursos limitados. El Tobago Emergency Management Agency (TEMA) coordina desastres en la isla. Kabat One conecta ambas islas en una sola plataforma operativa con despacho unificado.",
     },
     {
-      question: "¿Como se alinea KabatOne con la legislacion de compras publicas de Trinidad y Tobago?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Public Procurement and Disposal of Public Property Act 2015 y la supervision de la Office of Procurement Regulation (OPR). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del MSN, el TTPS, las corporaciones municipales y la THA de Tobago. Trinidad y Tobago permite la participacion de empresas extranjeras en licitaciones publicas.",
+      question: "¿Como se alinea Kabat One con la legislacion de compras publicas de Trinidad y Tobago?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Public Procurement and Disposal of Public Property Act 2015 y la supervision de la Office of Procurement Regulation (OPR). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del MSN, el TTPS, las corporaciones municipales y la THA de Tobago. Trinidad y Tobago permite la participacion de empresas extranjeras en licitaciones publicas.",
     },
   ] : [
     {
       question: "How does Trinidad and Tobago's emergency response system work?",
-      answer: "Trinidad and Tobago operates the 999 system for police emergencies, 990 for fire, and 811 for ambulance. The Trinidad and Tobago Police Service (TTPS, ~7,000 officers) is the primary police force, organized into 9 police divisions. The National Operations Centre (NOC) functions as a coordination center under the Ministry of National Security. KabatOne unifies these separate lines into one integrated CAD that coordinates TTPS, TTDF, TTFS, and health services on a single operational platform.",
+      answer: "Trinidad and Tobago operates the 999 system for police emergencies, 990 for fire, and 811 for ambulance. The Trinidad and Tobago Police Service (TTPS, ~7,000 officers) is the primary police force, organized into 9 police divisions. The National Operations Centre (NOC) functions as a coordination center under the Ministry of National Security. Kabat One unifies these separate lines into one integrated CAD that coordinates TTPS, TTDF, TTFS, and health services on a single operational platform.",
     },
     {
       question: "How does Trinidad and Tobago fund public safety technology?",
@@ -75,16 +75,16 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
       answer: "Trinidad and Tobago is the Caribbean's largest oil and gas producer, with the energy industry representing approximately 30-40% of GDP and over 80% of exports. The Point Lisas Industrial Estate houses petrochemical plants producing methanol (2nd largest global exporter) and ammonia (largest global exporter). Atlantic LNG at Point Fortin operates 4 LNG trains. Protecting critical energy infrastructure — offshore platforms, LNG terminals, pipelines, and the Petrotrin refinery at Pointe-a-Pierre — requires integrated VMS with maritime and land-based dispatch.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in Trinidad and Tobago?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. TTPS CCTV networks in Port of Spain, San Fernando, and Chaguanas, Port of Port of Spain (PATT) cameras, Piarco International Airport (POS) and A.N.R. Robinson Airport Tobago (TAB) surveillance, Atlantic LNG and Point Lisas security cameras, and Judiciary Marshals Service systems connect directly. Compatible with TSTT, Digicel, and Flow fiber infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in Trinidad and Tobago?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. TTPS CCTV networks in Port of Spain, San Fernando, and Chaguanas, Port of Port of Spain (PATT) cameras, Piarco International Airport (POS) and A.N.R. Robinson Airport Tobago (TAB) surveillance, Atlantic LNG and Point Lisas security cameras, and Judiciary Marshals Service systems connect directly. Compatible with TSTT, Digicel, and Flow fiber infrastructure.",
     },
     {
       question: "What is the security relationship between Trinidad and Tobago?",
-      answer: "Trinidad and Tobago is a unitary republic with two main islands. Trinidad (4,768 km2, ~1.35M residents) concentrates economic, industrial activity, and most crime. Tobago (300 km2, ~60,000 residents) has its own Tobago House of Assembly (THA) with limited administrative autonomy and a tourism-based economy. The Tobago Division of TTPS operates with limited resources. The Tobago Emergency Management Agency (TEMA) coordinates disaster response on the island. KabatOne connects both islands on one operational platform with unified dispatch.",
+      answer: "Trinidad and Tobago is a unitary republic with two main islands. Trinidad (4,768 km2, ~1.35M residents) concentrates economic, industrial activity, and most crime. Tobago (300 km2, ~60,000 residents) has its own Tobago House of Assembly (THA) with limited administrative autonomy and a tourism-based economy. The Tobago Division of TTPS operates with limited resources. The Tobago Emergency Management Agency (TEMA) coordinates disaster response on the island. Kabat One connects both islands on one operational platform with unified dispatch.",
     },
     {
-      question: "How does KabatOne align with Trinidad and Tobago public procurement law?",
-      answer: "KabatOne is marketed through local distributors and integrators under the Public Procurement and Disposal of Public Property Act 2015 and Office of Procurement Regulation (OPR) oversight. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to MSN, TTPS, municipal corporation, and Tobago THA budgets. Trinidad and Tobago allows foreign firm participation in public tenders.",
+      question: "How does Kabat One align with Trinidad and Tobago public procurement law?",
+      answer: "Kabat One is marketed through local distributors and integrators under the Public Procurement and Disposal of Public Property Act 2015 and Office of Procurement Regulation (OPR) oversight. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to MSN, TTPS, municipal corporation, and Tobago THA budgets. Trinidad and Tobago allows foreign firm participation in public tenders.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareTrinidadAndTobagoPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica en Tu Municipio o Corporacion de Trinidad y Tobago' : 'Transform Public Safety in Your Trinidad and Tobago Municipality or Corporation'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para instituciones de Trinidad y Tobago — desde la proteccion de infraestructura energetica hasta la coordinacion entre ambas islas.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Trinidad and Tobago institutions — from energy infrastructure protection to cross-island coordination.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para instituciones de Trinidad y Tobago — desde la proteccion de infraestructura energetica hasta la coordinacion entre ambas islas.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Trinidad and Tobago institutions — from energy infrastructure protection to cross-island coordination.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

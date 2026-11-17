@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareNorthMacedonia({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Macedonia del Norte | MUP/UBK, Corredor 8/10, Aeropuerto Skopje y NATO – KabatOne"
-        : "Public Safety Software for North Macedonia | MUP/UBK, Corridor 8/10, Skopje Airport & NATO – KabatOne",
+        ? "Software de Seguridad Pública para Macedonia del Norte | MUP/UBK, Corredor 8/10, Aeropuerto Skopje y NATO – Kabat One"
+        : "Public Safety Software for North Macedonia | MUP/UBK, Corridor 8/10, Skopje Airport & NATO – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para el MUP macedonio, UBK inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor 10, candidatura UE 2005/negociaciones 2022, NATO desde 2020 y coordinación FRONTEX/SELEC."
-        : "KabatOne delivers public safety platform for Macedonian MUP, UBK intelligence, and Border Police — Corridor 8 and Corridor 10 management, EU candidacy 2005/negotiations 2022, NATO since 2020, and FRONTEX/SELEC coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para el MUP macedonio, UBK inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor 10, candidatura UE 2005/negociaciones 2022, NATO desde 2020 y coordinación FRONTEX/SELEC."
+        : "Kabat One delivers public safety platform for Macedonian MUP, UBK intelligence, and Border Police — Corridor 8 and Corridor 10 management, EU candidacy 2005/negotiations 2022, NATO since 2020, and FRONTEX/SELEC coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-north-macedonia"
         : "https://kabatone.com/resources/public-safety-software-north-macedonia",
@@ -344,13 +344,13 @@ export default async function PublicSafetySoftwareNorthMacedonia({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Macedonia del Norte"
-              : "KabatOne Capabilities for North Macedonia"}
+              ? "Capacidades Kabat One para Macedonia del Norte"
+              : "Kabat One Capabilities for North Macedonia"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -457,8 +457,8 @@ export default async function PublicSafetySoftwareNorthMacedonia({
         }
         subtitle={
           es
-            ? "KabatOne integra MUP, UBK y Policía de Fronteras en una plataforma unificada — nodo Veles Corredor 8/10, ruta balcánica, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
-            : "KabatOne integrates MUP, UBK, and Border Police in one unified platform — Corridor 8/10 Veles node, Balkan route, AZLP/GDPR compliance, and EU accession process support."
+            ? "Kabat One integra MUP, UBK y Policía de Fronteras en una plataforma unificada — nodo Veles Corredor 8/10, ruta balcánica, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
+            : "Kabat One integrates MUP, UBK, and Border Police in one unified platform — Corridor 8/10 Veles node, Balkan route, AZLP/GDPR compliance, and EU accession process support."
         }
       />
       <Footer es={es} />

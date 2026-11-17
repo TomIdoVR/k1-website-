@@ -28,58 +28,58 @@ export default async function VsCentralsquarePage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs CentralSquare', url: es ? 'https://kabatone.com/es/vs/centralsquare' : 'https://kabatone.com/vs/centralsquare' },
+    { name: 'Kabat One vs CentralSquare', url: es ? 'https://kabatone.com/es/vs/centralsquare' : 'https://kabatone.com/vs/centralsquare' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y CentralSquare?',
-      answer: 'CentralSquare Technologies es el resultado de la fusión en 2018 de Superion, TriTech Software Systems, Aptean Public Sector y Zuercher Technologies. Opera un portafolio amplio de CAD, RMS, gestión de incidentes, jail management, ERP municipal y módulos administrativos, con más de 8,000 agencias clientes en Estados Unidos y Canadá. KabatOne es una plataforma unificada de seguridad pública nativa en la nube que integra video con IA (K-Video), CAD (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma. La diferencia está en la arquitectura y el alcance: CentralSquare tiene amplitud histórica; KabatOne tiene profundidad operativa unificada.',
+      question: '¿Cuál es la diferencia entre Kabat One y CentralSquare?',
+      answer: 'CentralSquare Technologies es el resultado de la fusión en 2018 de Superion, TriTech Software Systems, Aptean Public Sector y Zuercher Technologies. Opera un portafolio amplio de CAD, RMS, gestión de incidentes, jail management, ERP municipal y módulos administrativos, con más de 8,000 agencias clientes en Estados Unidos y Canadá. Kabat One es una plataforma unificada de seguridad pública nativa en la nube que integra video con IA (K-Video), CAD (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma. La diferencia está en la arquitectura y el alcance: CentralSquare tiene amplitud histórica; Kabat One tiene profundidad operativa unificada.',
     },
     {
       question: '¿CentralSquare CAD incluye gestión de video?',
-      answer: 'No. El portafolio de seguridad pública de CentralSquare (CAD, RMS, jail management, análisis) no incluye un módulo VMS nativo. Las agencias que usan CentralSquare y necesitan videovigilancia deben contratar un VMS separado de Genetec, Milestone, Avigilon o Verkada, e integrarlo mediante middleware o desarrollos a medida. KabatOne incluye K-Video como módulo nativo con analítica IA, integrado directamente con el mapa operacional de K-Safety y el flujo de despacho de K-Dispatch.',
+      answer: 'No. El portafolio de seguridad pública de CentralSquare (CAD, RMS, jail management, análisis) no incluye un módulo VMS nativo. Las agencias que usan CentralSquare y necesitan videovigilancia deben contratar un VMS separado de Genetec, Milestone, Avigilon o Verkada, e integrarlo mediante middleware o desarrollos a medida. Kabat One incluye K-Video como módulo nativo con analítica IA, integrado directamente con el mapa operacional de K-Safety y el flujo de despacho de K-Dispatch.',
     },
     {
       question: '¿El stack de CentralSquare es cloud-native o legacy?',
-      answer: 'El portafolio de CentralSquare proviene de cuatro empresas fusionadas con productos diversos — algunos on-premise tradicionales, otros en proceso de modernización hacia arquitectura en la nube. La experiencia del cliente varía significativamente según el producto específico y la antigüedad del despliegue. KabatOne es cloud-native desde el inicio, con una sola arquitectura, una sola plataforma y el mismo código base para todos los clientes.',
+      answer: 'El portafolio de CentralSquare proviene de cuatro empresas fusionadas con productos diversos — algunos on-premise tradicionales, otros en proceso de modernización hacia arquitectura en la nube. La experiencia del cliente varía significativamente según el producto específico y la antigüedad del despliegue. Kabat One es cloud-native desde el inicio, con una sola arquitectura, una sola plataforma y el mismo código base para todos los clientes.',
     },
     {
       question: '¿CentralSquare está disponible en México y Latinoamérica?',
-      answer: 'CentralSquare opera principalmente en Estados Unidos y Canadá, con presencia limitada en Latinoamérica. KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica, con localización completa en español y experiencia directa en modelos operativos de centros C4/C5 multiagencia.',
+      answer: 'CentralSquare opera principalmente en Estados Unidos y Canadá, con presencia limitada en Latinoamérica. Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica, con localización completa en español y experiencia directa en modelos operativos de centros C4/C5 multiagencia.',
     },
     {
       question: '¿Qué pasa con el modelo C4/C5 de México con CentralSquare?',
-      answer: 'Los centros C4/C5 en México son operaciones multiagencia que combinan llamadas 911, miles de cámaras urbanas, botones de pánico, LPR, sensores IoT y coordinación entre policía municipal, estatal, Guardia Nacional, bomberos y protección civil. CentralSquare no tiene productos construidos específicamente para este modelo. KabatOne está diseñado desde cero para centros C4/C5: K-Safety unifica el mapa operacional, K-Dispatch soporta despacho multiagencia, K-Video integra miles de cámaras y K-Traffic coordina semáforos.',
+      answer: 'Los centros C4/C5 en México son operaciones multiagencia que combinan llamadas 911, miles de cámaras urbanas, botones de pánico, LPR, sensores IoT y coordinación entre policía municipal, estatal, Guardia Nacional, bomberos y protección civil. CentralSquare no tiene productos construidos específicamente para este modelo. Kabat One está diseñado desde cero para centros C4/C5: K-Safety unifica el mapa operacional, K-Dispatch soporta despacho multiagencia, K-Video integra miles de cámaras y K-Traffic coordina semáforos.',
     },
     {
-      question: '¿Qué ofrece KabatOne que CentralSquare no ofrece?',
-      answer: 'En comparación con CentralSquare, KabatOne agrega: gestión de video nativa con analítica IA (K-Video) — CentralSquare no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades, cámaras y sensores; gestión inteligente de tráfico (K-Traffic) con control de semáforos y detección de infracciones; video comunitario (K-Connect) para cámaras ciudadanas; arquitectura cloud-native unificada desde el inicio; y despliegues probados en México y Latinoamérica con localización nativa en español.',
+      question: '¿Qué ofrece Kabat One que CentralSquare no ofrece?',
+      answer: 'En comparación con CentralSquare, Kabat One agrega: gestión de video nativa con analítica IA (K-Video) — CentralSquare no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades, cámaras y sensores; gestión inteligente de tráfico (K-Traffic) con control de semáforos y detección de infracciones; video comunitario (K-Connect) para cámaras ciudadanas; arquitectura cloud-native unificada desde el inicio; y despliegues probados en México y Latinoamérica con localización nativa en español.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and CentralSquare?',
-      answer: 'CentralSquare Technologies was formed in 2018 by merging Superion, TriTech Software Systems, Aptean Public Sector, and Zuercher Technologies. It operates a broad portfolio of CAD, RMS, incident management, jail management, municipal ERP, and administrative modules, with more than 8,000 agency customers in the United States and Canada. KabatOne is a cloud-native unified public safety platform that integrates AI video (K-Video), CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), and community video (K-Connect) in one platform. The difference is architecture and scope: CentralSquare has historical breadth; KabatOne has unified operational depth.',
+      question: 'What is the difference between Kabat One and CentralSquare?',
+      answer: 'CentralSquare Technologies was formed in 2018 by merging Superion, TriTech Software Systems, Aptean Public Sector, and Zuercher Technologies. It operates a broad portfolio of CAD, RMS, incident management, jail management, municipal ERP, and administrative modules, with more than 8,000 agency customers in the United States and Canada. Kabat One is a cloud-native unified public safety platform that integrates AI video (K-Video), CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), and community video (K-Connect) in one platform. The difference is architecture and scope: CentralSquare has historical breadth; Kabat One has unified operational depth.',
     },
     {
       question: 'Does CentralSquare CAD include video management?',
-      answer: 'No. CentralSquare\'s public safety portfolio (CAD, RMS, jail management, analytics) does not include a native VMS module. Agencies running CentralSquare that need video surveillance must contract a separate VMS from Genetec, Milestone, Avigilon, or Verkada, and integrate it through middleware or custom development. KabatOne includes K-Video as a native module with AI analytics, directly integrated with the K-Safety operational map and the K-Dispatch workflow.',
+      answer: 'No. CentralSquare\'s public safety portfolio (CAD, RMS, jail management, analytics) does not include a native VMS module. Agencies running CentralSquare that need video surveillance must contract a separate VMS from Genetec, Milestone, Avigilon, or Verkada, and integrate it through middleware or custom development. Kabat One includes K-Video as a native module with AI analytics, directly integrated with the K-Safety operational map and the K-Dispatch workflow.',
     },
     {
       question: 'Is CentralSquare\'s stack cloud-native or legacy?',
-      answer: 'CentralSquare\'s portfolio comes from four merged companies with diverse products — some traditional on-premise, others in the process of modernizing toward cloud architecture. The customer experience varies significantly depending on the specific product and deployment vintage. KabatOne is cloud-native from the start, with one architecture, one platform, and the same codebase for all customers.',
+      answer: 'CentralSquare\'s portfolio comes from four merged companies with diverse products — some traditional on-premise, others in the process of modernizing toward cloud architecture. The customer experience varies significantly depending on the specific product and deployment vintage. Kabat One is cloud-native from the start, with one architecture, one platform, and the same codebase for all customers.',
     },
     {
       question: 'Is CentralSquare available in Mexico and Latin America?',
-      answer: 'CentralSquare operates primarily in the United States and Canada, with limited presence in Latin America. KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America, with full Spanish localization and direct experience in multi-agency C4/C5 command center operational models.',
+      answer: 'CentralSquare operates primarily in the United States and Canada, with limited presence in Latin America. Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America, with full Spanish localization and direct experience in multi-agency C4/C5 command center operational models.',
     },
     {
       question: 'What about Mexico\'s C4/C5 model with CentralSquare?',
-      answer: 'C4/C5 command centers in Mexico are multi-agency operations combining 911 calls, thousands of urban cameras, panic buttons, LPR, IoT sensors, and coordination across municipal police, state police, National Guard, fire, and civil protection. CentralSquare does not have products built specifically for this model. KabatOne is designed from the ground up for C4/C5 centers: K-Safety unifies the operational map, K-Dispatch supports multi-agency dispatch, K-Video integrates thousands of cameras, and K-Traffic coordinates traffic signals.',
+      answer: 'C4/C5 command centers in Mexico are multi-agency operations combining 911 calls, thousands of urban cameras, panic buttons, LPR, IoT sensors, and coordination across municipal police, state police, National Guard, fire, and civil protection. CentralSquare does not have products built specifically for this model. Kabat One is designed from the ground up for C4/C5 centers: K-Safety unifies the operational map, K-Dispatch supports multi-agency dispatch, K-Video integrates thousands of cameras, and K-Traffic coordinates traffic signals.',
     },
     {
-      question: 'What does KabatOne offer that CentralSquare does not?',
-      answer: 'Compared to CentralSquare, KabatOne adds: native video management with AI analytics (K-Video) — CentralSquare does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, cameras, and sensors; intelligent traffic management (K-Traffic) with signal control and violation detection; community video (K-Connect) for citizen cameras; unified cloud-native architecture from the start; and proven deployment in Mexico and Latin America with native Spanish localization.',
+      question: 'What does Kabat One offer that CentralSquare does not?',
+      answer: 'Compared to CentralSquare, Kabat One adds: native video management with AI analytics (K-Video) — CentralSquare does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, cameras, and sensors; intelligent traffic management (K-Traffic) with signal control and violation detection; community video (K-Connect) for citizen cameras; unified cloud-native architecture from the start; and proven deployment in Mexico and Latin America with native Spanish localization.',
     },
   ]
 
@@ -191,7 +191,7 @@ export default async function VsCentralsquarePage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs CentralSquare</span>
+          <span style={{ color: ACCENT }}>Kabat One vs CentralSquare</span>
         </div>
 
         {/* ── HERO ── */}
@@ -210,13 +210,13 @@ export default async function VsCentralsquarePage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs CentralSquare — Stack Heredado Fusionado vs Plataforma Unificada'
-              : 'KabatOne vs CentralSquare — Merged Legacy Stack vs Unified Platform'}
+              ? 'Kabat One vs CentralSquare — Stack Heredado Fusionado vs Plataforma Unificada'
+              : 'Kabat One vs CentralSquare — Merged Legacy Stack vs Unified Platform'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'CentralSquare es el resultado de fusionar cuatro empresas de software gubernamental — Superion, TriTech, Aptean Public Sector y Zuercher — en una cartera amplia pero heterogénea de productos CAD, RMS y ERP municipal. KabatOne ofrece el camino opuesto: una sola plataforma cloud-native, un solo código base, que unifica video, CAD, GIS y tráfico en el flujo operativo de respuesta — probada en 40+ ciudades de Latinoamérica.'
-              : 'CentralSquare is the result of merging four government software companies — Superion, TriTech, Aptean Public Sector, and Zuercher — into a broad but heterogeneous portfolio of CAD, RMS, and municipal ERP products. KabatOne offers the opposite path: one cloud-native platform, one codebase, unifying video, CAD, GIS, and traffic in the response operational workflow — proven in 40+ cities across Latin America.'}
+              ? 'CentralSquare es el resultado de fusionar cuatro empresas de software gubernamental — Superion, TriTech, Aptean Public Sector y Zuercher — en una cartera amplia pero heterogénea de productos CAD, RMS y ERP municipal. Kabat One ofrece el camino opuesto: una sola plataforma cloud-native, un solo código base, que unifica video, CAD, GIS y tráfico en el flujo operativo de respuesta — probada en 40+ ciudades de Latinoamérica.'
+              : 'CentralSquare is the result of merging four government software companies — Superion, TriTech, Aptean Public Sector, and Zuercher — into a broad but heterogeneous portfolio of CAD, RMS, and municipal ERP products. Kabat One offers the opposite path: one cloud-native platform, one codebase, unifying video, CAD, GIS, and traffic in the response operational workflow — proven in 40+ cities across Latin America.'}
           </p>
           {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
               answer engine finds a self-contained verdict at the top, not only in the FAQ.
@@ -273,22 +273,22 @@ export default async function VsCentralsquarePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando C4/C5 y agencias de respuesta multiagencia. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa.'
-                : 'KabatOne is a cloud-native unified public safety platform built for cities, municipalities, C4/C5 command centers, and multi-agency response organizations. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando C4/C5 y agencias de respuesta multiagencia. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa.'
+                : 'Kabat One is a cloud-native unified public safety platform built for cities, municipalities, C4/C5 command centers, and multi-agency response organizations. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'A diferencia de CentralSquare, KabatOne no es el resultado de fusionar múltiples productos heredados. Es una sola plataforma, construida desde el inicio como un sistema unificado. Esto se traduce en una sola interfaz, un solo modelo de datos, un solo ciclo de actualizaciones y una sola contraparte de soporte — en lugar de cuatro o cinco sistemas independientes unidos por integraciones.'
-                : 'Unlike CentralSquare, KabatOne is not the result of merging multiple legacy products. It is one platform, built from the start as a unified system. This translates to one interface, one data model, one update cycle, and one support counterpart — instead of four or five independent systems held together by integrations.'}
+                ? 'A diferencia de CentralSquare, Kabat One no es el resultado de fusionar múltiples productos heredados. Es una sola plataforma, construida desde el inicio como un sistema unificado. Esto se traduce en una sola interfaz, un solo modelo de datos, un solo ciclo de actualizaciones y una sola contraparte de soporte — en lugar de cuatro o cinco sistemas independientes unidos por integraciones.'
+                : 'Unlike CentralSquare, Kabat One is not the result of merging multiple legacy products. It is one platform, built from the start as a unified system. This translates to one interface, one data model, one update cycle, and one support counterpart — instead of four or five independent systems held together by integrations.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan evitar la complejidad de stacks heredados fusionados, KabatOne es la alternativa cloud-native nativamente unificada.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking to avoid the complexity of merged legacy stacks, KabatOne is the natively unified cloud-native alternative.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan evitar la complejidad de stacks heredados fusionados, Kabat One es la alternativa cloud-native nativamente unificada.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking to avoid the complexity of merged legacy stacks, Kabat One is the natively unified cloud-native alternative.'}
             </p>
           </div>
         </section>
@@ -301,12 +301,12 @@ export default async function VsCentralsquarePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs CentralSquare: Diferencias Clave' : 'KabatOne vs CentralSquare: Key Differences'}
+              {es ? 'Kabat One vs CentralSquare: Diferencias Clave' : 'Kabat One vs CentralSquare: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y CentralSquare en ocho dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and CentralSquare across eight operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y CentralSquare en ocho dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and CentralSquare across eight operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -321,7 +321,7 @@ export default async function VsCentralsquarePage({
                   CentralSquare
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -367,8 +367,8 @@ export default async function VsCentralsquarePage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne evita esta deuda técnica por construcción. Es una sola plataforma, un solo código base, una sola interfaz operativa y un solo ciclo de actualizaciones. Cuando un operador pasa de ver video en K-Video a despachar desde K-Dispatch, no está cambiando de sistema — está usando la misma plataforma.'
-                : 'KabatOne avoids this technical debt by construction. It is one platform, one codebase, one operational interface, and one update cycle. When an operator moves from viewing video in K-Video to dispatching from K-Dispatch, they are not switching systems — they are using the same platform.'}
+                ? 'Kabat One evita esta deuda técnica por construcción. Es una sola plataforma, un solo código base, una sola interfaz operativa y un solo ciclo de actualizaciones. Cuando un operador pasa de ver video en K-Video a despachar desde K-Dispatch, no está cambiando de sistema — está usando la misma plataforma.'
+                : 'Kabat One avoids this technical debt by construction. It is one platform, one codebase, one operational interface, and one update cycle. When an operator moves from viewing video in K-Video to dispatching from K-Dispatch, they are not switching systems — they are using the same platform.'}
             </p>
           </div>
         </section>
@@ -381,7 +381,7 @@ export default async function VsCentralsquarePage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -420,7 +420,7 @@ export default async function VsCentralsquarePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs CentralSquare: Preguntas y Respuestas' : 'KabatOne vs CentralSquare: Questions & Answers'}
+              {es ? 'Kabat One vs CentralSquare: Preguntas y Respuestas' : 'Kabat One vs CentralSquare: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -460,7 +460,7 @@ export default async function VsCentralsquarePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Tyler Technologies' : 'KabatOne vs Tyler Technologies'}</span>
+                <span>{es ? 'Kabat One vs Tyler Technologies' : 'Kabat One vs Tyler Technologies'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/mark43" style={{
@@ -469,7 +469,7 @@ export default async function VsCentralsquarePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Mark43' : 'KabatOne vs Mark43'}</span>
+                <span>{es ? 'Kabat One vs Mark43' : 'Kabat One vs Mark43'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/cad" style={{
@@ -478,7 +478,7 @@ export default async function VsCentralsquarePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/best-cad-dispatch-software" style={{
@@ -522,8 +522,8 @@ export default async function VsCentralsquarePage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

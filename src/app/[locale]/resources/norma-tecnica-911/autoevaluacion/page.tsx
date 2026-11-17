@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   const es = locale === 'es'
   return {
-    title: es ? 'Autoevaluación: Norma Técnica 9-1-1 para el CAD | KabatOne' : 'Self-assessment: Mexico 911 Technical Standard for CAD | KabatOne',
+    title: es ? 'Autoevaluación: Norma Técnica 9-1-1 para el CAD | Kabat One' : 'Self-assessment: Mexico 911 Technical Standard for CAD | Kabat One',
     robots: { index: false, follow: false },
   }
 }
@@ -46,7 +46,7 @@ export default async function NormaAutoevaluacionPage({ params }: { params: Prom
             </p>
           </div>
           <div style={{ fontSize: 11, color: dim, textAlign: 'right', lineHeight: 1.6, whiteSpace: 'nowrap' }}>
-            <div style={{ fontWeight: 800, fontSize: 15, color: ink }}>KabatOne</div>
+            <div style={{ fontWeight: 800, fontSize: 15, color: ink }}>Kabat One</div>
             <div>{es ? 'Centro:' : 'Center:'} ____________________</div>
             <div>{es ? 'Fecha:' : 'Date:'} ____________________</div>
             <div>{es ? 'Sistema evaluado:' : 'System assessed:'} __________</div>

@@ -28,58 +28,58 @@ export default async function VsMark43Page({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Mark43', url: es ? 'https://kabatone.com/es/vs/mark43' : 'https://kabatone.com/vs/mark43' },
+    { name: 'Kabat One vs Mark43', url: es ? 'https://kabatone.com/es/vs/mark43' : 'https://kabatone.com/vs/mark43' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Mark43?',
-      answer: 'Mark43 es una plataforma cloud-native de CAD y RMS (Records Management System) para agencias de seguridad pública, principalmente en Estados Unidos. Lleva modernidad y arquitectura en la nube a sistemas que históricamente eran on-premise. KabatOne va más allá de CAD y RMS: integra gestión de video (K-Video), CAD (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa. La diferencia es de alcance: Mark43 moderniza el stack de CAD/RMS; KabatOne unifica toda la operación de respuesta.',
+      question: '¿Cuál es la diferencia entre Kabat One y Mark43?',
+      answer: 'Mark43 es una plataforma cloud-native de CAD y RMS (Records Management System) para agencias de seguridad pública, principalmente en Estados Unidos. Lleva modernidad y arquitectura en la nube a sistemas que históricamente eran on-premise. Kabat One va más allá de CAD y RMS: integra gestión de video (K-Video), CAD (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa. La diferencia es de alcance: Mark43 moderniza el stack de CAD/RMS; Kabat One unifica toda la operación de respuesta.',
     },
     {
       question: '¿Mark43 incluye gestión de video?',
-      answer: 'No. Mark43 se centra en CAD y RMS — no incluye un módulo de gestión de video o VMS. Las organizaciones que necesitan video de vigilancia junto con Mark43 deben implementar un VMS separado como Genetec, Milestone o Avigilon. KabatOne incluye K-Video como módulo nativo con analítica IA, integrado directamente con el flujo de despacho, GIS y tráfico.',
+      answer: 'No. Mark43 se centra en CAD y RMS — no incluye un módulo de gestión de video o VMS. Las organizaciones que necesitan video de vigilancia junto con Mark43 deben implementar un VMS separado como Genetec, Milestone o Avigilon. Kabat One incluye K-Video como módulo nativo con analítica IA, integrado directamente con el flujo de despacho, GIS y tráfico.',
     },
     {
-      question: '¿Cómo se compara el CAD de Mark43 con K-Dispatch de KabatOne?',
-      answer: 'Mark43 CAD es moderno, intuitivo y cloud-native — una mejora significativa sobre sistemas CAD legacy. K-Dispatch de KabatOne ofrece funcionalidad CAD equivalente — intake de llamadas, recomendación de unidades, despacho y logging — con la ventaja de estar nativamente integrado con K-Video (video del incidente), K-Safety (mapa GIS con la unidad) y K-Traffic (estado del tráfico en la ruta) en la misma interfaz. Mark43 hace el CAD bien; KabatOne conecta el CAD con todo lo demás.',
+      question: '¿Cómo se compara el CAD de Mark43 con K-Dispatch de Kabat One?',
+      answer: 'Mark43 CAD es moderno, intuitivo y cloud-native — una mejora significativa sobre sistemas CAD legacy. K-Dispatch de Kabat One ofrece funcionalidad CAD equivalente — intake de llamadas, recomendación de unidades, despacho y logging — con la ventaja de estar nativamente integrado con K-Video (video del incidente), K-Safety (mapa GIS con la unidad) y K-Traffic (estado del tráfico en la ruta) en la misma interfaz. Mark43 hace el CAD bien; Kabat One conecta el CAD con todo lo demás.',
     },
     {
       question: '¿Mark43 está disponible fuera de los Estados Unidos?',
-      answer: 'Mark43 está principalmente orientado al mercado de seguridad pública de Estados Unidos. KabatOne está desplegado en más de 40 ciudades principalmente en México y Latinoamérica, con presencia también en Estados Unidos. Para municipios y centros de mando en México y Latinoamérica que necesitan CAD, video, GIS y tráfico en un solo sistema, KabatOne tiene la mayor presencia regional y casos de uso probados.',
+      answer: 'Mark43 está principalmente orientado al mercado de seguridad pública de Estados Unidos. Kabat One está desplegado en más de 40 ciudades principalmente en México y Latinoamérica, con presencia también en Estados Unidos. Para municipios y centros de mando en México y Latinoamérica que necesitan CAD, video, GIS y tráfico en un solo sistema, Kabat One tiene la mayor presencia regional y casos de uso probados.',
     },
     {
-      question: '¿Cuál es mejor para una plataforma moderna de seguridad pública — Mark43 o KabatOne?',
-      answer: 'Ambas son plataformas modernas cloud-native, pero con alcances distintos. Mark43 es la opción más fuerte para agencias de ley en Estados Unidos que priorizan modernizar su stack CAD/RMS y pueden gestionar integraciones separadas para video y GIS. KabatOne es la opción más fuerte para ciudades, municipios y centros C4/C5 que necesitan video, CAD, GIS y tráfico en un solo flujo operativo — especialmente fuera de Estados Unidos.',
+      question: '¿Cuál es mejor para una plataforma moderna de seguridad pública — Mark43 o Kabat One?',
+      answer: 'Ambas son plataformas modernas cloud-native, pero con alcances distintos. Mark43 es la opción más fuerte para agencias de ley en Estados Unidos que priorizan modernizar su stack CAD/RMS y pueden gestionar integraciones separadas para video y GIS. Kabat One es la opción más fuerte para ciudades, municipios y centros C4/C5 que necesitan video, CAD, GIS y tráfico en un solo flujo operativo — especialmente fuera de Estados Unidos.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Mark43 no ofrece?',
-      answer: 'En comparación con Mark43, KabatOne agrega: gestión de video nativa con analítica IA (K-Video) — Mark43 no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades y feeds de video — Mark43 tiene mapeo básico; gestión de tráfico inteligente (K-Traffic) con control de semáforos, detección de infracciones y coordinación de vehículos de emergencia; video comunitario (K-Connect) para integrar cámaras ciudadanas al centro de mando; y presencia probada en México y Latinoamérica.',
+      question: '¿Qué ofrece Kabat One que Mark43 no ofrece?',
+      answer: 'En comparación con Mark43, Kabat One agrega: gestión de video nativa con analítica IA (K-Video) — Mark43 no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades y feeds de video — Mark43 tiene mapeo básico; gestión de tráfico inteligente (K-Traffic) con control de semáforos, detección de infracciones y coordinación de vehículos de emergencia; video comunitario (K-Connect) para integrar cámaras ciudadanas al centro de mando; y presencia probada en México y Latinoamérica.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Mark43?',
-      answer: 'Mark43 is a cloud-native CAD and RMS (Records Management System) platform for public safety agencies, primarily in the United States. It brings modern architecture and cloud capabilities to systems that were historically on-premise. KabatOne goes beyond CAD and RMS: it integrates video management (K-Video), CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), and community video (K-Connect) in one native platform. The difference is scope: Mark43 modernizes the CAD/RMS stack; KabatOne unifies the entire response operation.',
+      question: 'What is the difference between Kabat One and Mark43?',
+      answer: 'Mark43 is a cloud-native CAD and RMS (Records Management System) platform for public safety agencies, primarily in the United States. It brings modern architecture and cloud capabilities to systems that were historically on-premise. Kabat One goes beyond CAD and RMS: it integrates video management (K-Video), CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), and community video (K-Connect) in one native platform. The difference is scope: Mark43 modernizes the CAD/RMS stack; Kabat One unifies the entire response operation.',
     },
     {
       question: 'Does Mark43 include video management?',
-      answer: 'No. Mark43 focuses on CAD and RMS — it does not include a video management or VMS module. Organizations that need surveillance video alongside Mark43 must deploy a separate VMS such as Genetec, Milestone, or Avigilon. KabatOne includes K-Video as a native module with AI analytics, integrated directly into the dispatch, GIS, and traffic workflow.',
+      answer: 'No. Mark43 focuses on CAD and RMS — it does not include a video management or VMS module. Organizations that need surveillance video alongside Mark43 must deploy a separate VMS such as Genetec, Milestone, or Avigilon. Kabat One includes K-Video as a native module with AI analytics, integrated directly into the dispatch, GIS, and traffic workflow.',
     },
     {
-      question: 'How does Mark43\'s CAD compare to KabatOne\'s K-Dispatch?',
-      answer: 'Mark43 CAD is modern, intuitive, and cloud-native — a significant improvement over legacy CAD systems. KabatOne\'s K-Dispatch provides equivalent CAD functionality — call intake, unit recommendation, dispatch, and logging — with the advantage of being natively integrated with K-Video (incident video), K-Safety (GIS map with the unit), and K-Traffic (traffic status on the route) in the same interface. Mark43 does CAD well; KabatOne connects CAD to everything else.',
+      question: 'How does Mark43\'s CAD compare to Kabat One\'s K-Dispatch?',
+      answer: 'Mark43 CAD is modern, intuitive, and cloud-native — a significant improvement over legacy CAD systems. Kabat One\'s K-Dispatch provides equivalent CAD functionality — call intake, unit recommendation, dispatch, and logging — with the advantage of being natively integrated with K-Video (incident video), K-Safety (GIS map with the unit), and K-Traffic (traffic status on the route) in the same interface. Mark43 does CAD well; Kabat One connects CAD to everything else.',
     },
     {
       question: 'Is Mark43 available outside the United States?',
-      answer: 'Mark43 is primarily oriented toward the United States public safety market. KabatOne is deployed across 40+ cities primarily in Mexico and Latin America, with a presence in the United States as well. For municipalities and command centers in Mexico and Latin America that need CAD, video, GIS, and traffic in one system, KabatOne has the strongest regional presence and proven use cases.',
+      answer: 'Mark43 is primarily oriented toward the United States public safety market. Kabat One is deployed across 40+ cities primarily in Mexico and Latin America, with a presence in the United States as well. For municipalities and command centers in Mexico and Latin America that need CAD, video, GIS, and traffic in one system, Kabat One has the strongest regional presence and proven use cases.',
     },
     {
-      question: 'Which is better for a modern public safety platform — Mark43 or KabatOne?',
-      answer: 'Both are modern cloud-native platforms, but with different scopes. Mark43 is the stronger choice for US law enforcement agencies that prioritize modernizing their CAD/RMS stack and can manage separate integrations for video and GIS. KabatOne is the stronger choice for cities, municipalities, and C4/C5 command centers that need video, CAD, GIS, and traffic in one operational workflow — especially outside the United States.',
+      question: 'Which is better for a modern public safety platform — Mark43 or Kabat One?',
+      answer: 'Both are modern cloud-native platforms, but with different scopes. Mark43 is the stronger choice for US law enforcement agencies that prioritize modernizing their CAD/RMS stack and can manage separate integrations for video and GIS. Kabat One is the stronger choice for cities, municipalities, and C4/C5 command centers that need video, CAD, GIS, and traffic in one operational workflow — especially outside the United States.',
     },
     {
-      question: 'What does KabatOne offer that Mark43 does not?',
-      answer: 'Compared to Mark43, KabatOne adds: native video management with AI analytics (K-Video) — Mark43 does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, and video feeds — Mark43 has basic mapping; intelligent traffic management (K-Traffic) with signal control, violation detection, and emergency vehicle coordination; community video (K-Connect) to integrate citizen cameras into the command center; and proven deployment in Mexico and Latin America.',
+      question: 'What does Kabat One offer that Mark43 does not?',
+      answer: 'Compared to Mark43, Kabat One adds: native video management with AI analytics (K-Video) — Mark43 does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, and video feeds — Mark43 has basic mapping; intelligent traffic management (K-Traffic) with signal control, violation detection, and emergency vehicle coordination; community video (K-Connect) to integrate citizen cameras into the command center; and proven deployment in Mexico and Latin America.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsMark43Page({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Mark43</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Mark43</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsMark43Page({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Mark43 — Cloud-Native CAD, Más el Flujo Completo'
-              : 'KabatOne vs Mark43 — Cloud-Native CAD, Plus the Full Workflow'}
+              ? 'Kabat One vs Mark43 — Cloud-Native CAD, Más el Flujo Completo'
+              : 'Kabat One vs Mark43 — Cloud-Native CAD, Plus the Full Workflow'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Mark43 llevó arquitectura cloud-native al mundo del CAD legacy — una mejora real para agencias que operaban con sistemas on-premise de décadas. KabatOne parte desde el mismo punto de partida cloud-native y lo extiende: video, CAD, GIS y gestión de tráfico en un solo flujo operativo, sin necesidad de sistemas adicionales para cubrir el ciclo completo de respuesta.'
-              : 'Mark43 brought cloud-native architecture to the legacy CAD world — a genuine improvement for agencies running decades-old on-premise systems. KabatOne starts from that same cloud-native baseline and extends it: video, CAD, GIS, and traffic management in one operational workflow, with no additional systems required to cover the full response cycle.'}
+              ? 'Mark43 llevó arquitectura cloud-native al mundo del CAD legacy — una mejora real para agencias que operaban con sistemas on-premise de décadas. Kabat One parte desde el mismo punto de partida cloud-native y lo extiende: video, CAD, GIS y gestión de tráfico en un solo flujo operativo, sin necesidad de sistemas adicionales para cubrir el ciclo completo de respuesta.'
+              : 'Mark43 brought cloud-native architecture to the legacy CAD world — a genuine improvement for agencies running decades-old on-premise systems. Kabat One starts from that same cloud-native baseline and extends it: video, CAD, GIS, and traffic management in one operational workflow, with no additional systems required to cover the full response cycle.'}
           </p>
           {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
               answer engine finds a self-contained verdict at the top, not only in the FAQ.
@@ -263,22 +263,22 @@ export default async function VsMark43Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a cloud-native unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a cloud-native unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Al igual que Mark43, KabatOne es cloud-native desde el inicio. La diferencia es el alcance: cuando un operador recibe un incidente en K-Dispatch, el evento aparece automáticamente en el mapa de K-Safety, activa el feed de video relevante en K-Video y puede coordinar la ruta de la unidad con K-Traffic — todo en una sola pantalla, sin cambiar de aplicación.'
-                : 'Like Mark43, KabatOne is cloud-native from the start. The difference is scope: when an operator receives an incident in K-Dispatch, the event automatically appears on the K-Safety map, triggers the relevant video feed in K-Video, and can coordinate the unit\'s route with K-Traffic — all in one screen, without switching applications.'}
+                ? 'Al igual que Mark43, Kabat One es cloud-native desde el inicio. La diferencia es el alcance: cuando un operador recibe un incidente en K-Dispatch, el evento aparece automáticamente en el mapa de K-Safety, activa el feed de video relevante en K-Video y puede coordinar la ruta de la unidad con K-Traffic — todo en una sola pantalla, sin cambiar de aplicación.'
+                : 'Like Mark43, Kabat One is cloud-native from the start. The difference is scope: when an operator receives an incident in K-Dispatch, the event automatically appears on the K-Safety map, triggers the relevant video feed in K-Video, and can coordinate the unit\'s route with K-Traffic — all in one screen, without switching applications.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan una plataforma moderna, unificada y probada, KabatOne es la referencia del mercado.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking for a modern, unified, proven platform, KabatOne is the market reference.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan una plataforma moderna, unificada y probada, Kabat One es la referencia del mercado.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking for a modern, unified, proven platform, Kabat One is the market reference.'}
             </p>
           </div>
         </section>
@@ -291,12 +291,12 @@ export default async function VsMark43Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Mark43: Diferencias Clave' : 'KabatOne vs Mark43: Key Differences'}
+              {es ? 'Kabat One vs Mark43: Diferencias Clave' : 'Kabat One vs Mark43: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Mark43 en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Mark43 across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Mark43 en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Mark43 across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -311,7 +311,7 @@ export default async function VsMark43Page({
                   Mark43
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -352,13 +352,13 @@ export default async function VsMark43Page({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne cubre todo el ciclo en una plataforma nativa. Cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, despachar una unidad desde K-Dispatch, ver la ruta de la unidad en el mapa GIS y monitorear el tráfico circundante con K-Traffic — todo sin salir de la plataforma. No hay proyectos de integración, no hay latencia entre sistemas y no hay múltiples contratos de soporte.'
-                : 'KabatOne covers the entire cycle in one native platform. When an operator detects an incident in K-Safety or K-Video, they can validate it, dispatch a unit from K-Dispatch, view the unit\'s route on the GIS map, and monitor surrounding traffic with K-Traffic — all without leaving the platform. No integration projects, no latency between systems, and no multiple support contracts.'}
+                ? 'Kabat One cubre todo el ciclo en una plataforma nativa. Cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, despachar una unidad desde K-Dispatch, ver la ruta de la unidad en el mapa GIS y monitorear el tráfico circundante con K-Traffic — todo sin salir de la plataforma. No hay proyectos de integración, no hay latencia entre sistemas y no hay múltiples contratos de soporte.'
+                : 'Kabat One covers the entire cycle in one native platform. When an operator detects an incident in K-Safety or K-Video, they can validate it, dispatch a unit from K-Dispatch, view the unit\'s route on the GIS map, and monitor surrounding traffic with K-Traffic — all without leaving the platform. No integration projects, no latency between systems, and no multiple support contracts.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne también tiene una ventaja regional significativa para México y Latinoamérica: más de 40 despliegues activos en municipios y centros C4/C5, localization completa en español y un equipo con experiencia en los modelos operativos de centros de mando latinoamericanos. Mark43 está primordialmente orientado al mercado de Estados Unidos.'
-                : 'KabatOne also has a significant regional advantage for Mexico and Latin America: 40+ active deployments in municipalities and C4/C5 centers, full Spanish localization, and a team with deep experience in Latin American command center operational models. Mark43 is primarily oriented toward the US market.'}
+                ? 'Kabat One también tiene una ventaja regional significativa para México y Latinoamérica: más de 40 despliegues activos en municipios y centros C4/C5, localization completa en español y un equipo con experiencia en los modelos operativos de centros de mando latinoamericanos. Mark43 está primordialmente orientado al mercado de Estados Unidos.'
+                : 'Kabat One also has a significant regional advantage for Mexico and Latin America: 40+ active deployments in municipalities and C4/C5 centers, full Spanish localization, and a team with deep experience in Latin American command center operational models. Mark43 is primarily oriented toward the US market.'}
             </p>
           </div>
         </section>
@@ -371,17 +371,17 @@ export default async function VsMark43Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'KabatOne Funciona con la Infraestructura Existente' : 'KabatOne Works with Existing Infrastructure'}
+              {es ? 'Kabat One Funciona con la Infraestructura Existente' : 'Kabat One Works with Existing Infrastructure'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está diseñado para integrarse con la infraestructura existente — cámaras de cualquier fabricante (ONVIF, RTSP), sistemas de radio estándar y sensores IoT. No requiere reemplazar hardware que ya funciona. Las organizaciones pueden incorporar KabatOne como plataforma de coordinación unificada y mantener sus inversiones en cámaras y comunicaciones existentes.'
-                : 'KabatOne is designed to integrate with existing infrastructure — cameras from any manufacturer (ONVIF, RTSP), standard radio systems, and IoT sensors. It does not require replacing hardware that is already working. Organizations can bring in KabatOne as the unified coordination platform and retain their existing camera and communications investments.'}
+                ? 'Kabat One está diseñado para integrarse con la infraestructura existente — cámaras de cualquier fabricante (ONVIF, RTSP), sistemas de radio estándar y sensores IoT. No requiere reemplazar hardware que ya funciona. Las organizaciones pueden incorporar Kabat One como plataforma de coordinación unificada y mantener sus inversiones en cámaras y comunicaciones existentes.'
+                : 'Kabat One is designed to integrate with existing infrastructure — cameras from any manufacturer (ONVIF, RTSP), standard radio systems, and IoT sensors. It does not require replacing hardware that is already working. Organizations can bring in Kabat One as the unified coordination platform and retain their existing camera and communications investments.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para organizaciones que actualmente evalúan Mark43 o que ya lo usan y necesitan ampliar capacidades con video y tráfico, KabatOne ofrece una plataforma integrada que reemplaza el stack fragmentado (Mark43 + VMS separado + sistema de tráfico separado) con un solo sistema nativo.'
-                : 'For organizations currently evaluating Mark43 or already using it and needing to expand capabilities with video and traffic, KabatOne offers an integrated platform that replaces the fragmented stack (Mark43 + separate VMS + separate traffic system) with one native system.'}
+                ? 'Para organizaciones que actualmente evalúan Mark43 o que ya lo usan y necesitan ampliar capacidades con video y tráfico, Kabat One ofrece una plataforma integrada que reemplaza el stack fragmentado (Mark43 + VMS separado + sistema de tráfico separado) con un solo sistema nativo.'
+                : 'For organizations currently evaluating Mark43 or already using it and needing to expand capabilities with video and traffic, Kabat One offers an integrated platform that replaces the fragmented stack (Mark43 + separate VMS + separate traffic system) with one native system.'}
             </p>
           </div>
         </section>
@@ -394,7 +394,7 @@ export default async function VsMark43Page({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -433,7 +433,7 @@ export default async function VsMark43Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Mark43: Preguntas y Respuestas' : 'KabatOne vs Mark43: Questions & Answers'}
+              {es ? 'Kabat One vs Mark43: Preguntas y Respuestas' : 'Kabat One vs Mark43: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -473,7 +473,7 @@ export default async function VsMark43Page({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/hexagon" style={{
@@ -482,7 +482,7 @@ export default async function VsMark43Page({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Hexagon HxGN OnCall' : 'KabatOne vs Hexagon HxGN OnCall'}</span>
+                <span>{es ? 'Kabat One vs Hexagon HxGN OnCall' : 'Kabat One vs Hexagon HxGN OnCall'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/what-is-a-public-safety-platform" style={{
@@ -543,8 +543,8 @@ export default async function VsMark43Page({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

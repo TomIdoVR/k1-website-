@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareSeychellesPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Seychelles | KabatOne"
-    : "Public Safety Software for Seychelles | KabatOne";
+    ? "Software de Seguridad Pública para Seychelles | Kabat One"
+    : "Public Safety Software for Seychelles | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Seychelles — SPDF, Policía Nacional, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Océano Índico."
-    : "KabatOne supports Seychelles security forces — SPDF, National Police, Coast Guard — with real-time surveillance, dispatch, and incident management for the Indian Ocean archipelago.";
+    ? "Kabat One apoya las fuerzas de seguridad de Seychelles — SPDF, Policía Nacional, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Océano Índico."
+    : "Kabat One supports Seychelles security forces — SPDF, National Police, Coast Guard — with real-time surveillance, dispatch, and incident management for the Indian Ocean archipelago.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-seychelles"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareSeychellesPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Seychelles?"
-        : "How does KabatOne support Seychelles security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Seychelles?"
+        : "How does Kabat One support Seychelles security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Fuerza de Defensa del Pueblo de Seychelles (SPDF ~500 efectivos), la Agencia Nacional de Policía (NPA), la Guardia Costera y la Agencia Nacional de Gestión de Riesgos (NDMA). La plataforma integra vigilancia marítima del Océano Índico, despacho CAD entre las ~115 islas habitadas, videoanalítica para el Puerto Victoria y el Aeropuerto Internacional de Seychelles, y coordinación con EUNAVFOR Atalanta y Combined Maritime Forces (CMF)."
-        : "KabatOne provides unified situational awareness for the Seychelles People's Defence Forces (SPDF ~500 personnel), National Police Agency (NPA), Coast Guard, and National Disaster Management Agency (NDMA). The platform integrates Indian Ocean maritime surveillance, CAD dispatch across the ~115 inhabited islands, video analytics for Victoria Port and Seychelles International Airport, and coordination with EUNAVFOR Atalanta and Combined Maritime Forces (CMF).",
+        ? "Kabat One proporciona conciencia situacional unificada para la Fuerza de Defensa del Pueblo de Seychelles (SPDF ~500 efectivos), la Agencia Nacional de Policía (NPA), la Guardia Costera y la Agencia Nacional de Gestión de Riesgos (NDMA). La plataforma integra vigilancia marítima del Océano Índico, despacho CAD entre las ~115 islas habitadas, videoanalítica para el Puerto Victoria y el Aeropuerto Internacional de Seychelles, y coordinación con EUNAVFOR Atalanta y Combined Maritime Forces (CMF)."
+        : "Kabat One provides unified situational awareness for the Seychelles People's Defence Forces (SPDF ~500 personnel), National Police Agency (NPA), Coast Guard, and National Disaster Management Agency (NDMA). The platform integrates Indian Ocean maritime surveillance, CAD dispatch across the ~115 inhabited islands, video analytics for Victoria Port and Seychelles International Airport, and coordination with EUNAVFOR Atalanta and Combined Maritime Forces (CMF).",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareSeychellesPage({
     },
     {
       question: es
-        ? "¿Cómo gestiona KabatOne la vigilancia marítima de la vasta ZEE de Seychelles?"
-        : "How does KabatOne manage maritime surveillance across Seychelles' vast EEZ?",
+        ? "¿Cómo gestiona Kabat One la vigilancia marítima de la vasta ZEE de Seychelles?"
+        : "How does Kabat One manage maritime surveillance across Seychelles' vast EEZ?",
       answer: es
-        ? "KabatOne integra el seguimiento AIS/radar satelital de la Guardia Costera de Seychelles en la ZEE de 1.37 millones de km² — la mayor por habitante del mundo. La plataforma coordina con el RCOC de Victoria, EUNAVFOR Atalanta, las Combined Maritime Forces (CTF-150/151), y el Sistema de Alerta Regional Marítima (MASE) del Océano Índico. Proporciona alertas de pesca ilegal IUU, seguimiento de buques sospechosos y protocolo de respuesta a incidentes de piratería."
-        : "KabatOne integrates satellite AIS/radar tracking from the Seychelles Coast Guard across the 1.37 million km² EEZ — the world's largest per capita. The platform coordinates with the Victoria RCOC, EUNAVFOR Atalanta, Combined Maritime Forces (CTF-150/151), and the Indian Ocean Regional Maritime Awareness System (MASE). It provides IUU illegal fishing alerts, suspicious vessel tracking, and piracy incident response protocols.",
+        ? "Kabat One integra el seguimiento AIS/radar satelital de la Guardia Costera de Seychelles en la ZEE de 1.37 millones de km² — la mayor por habitante del mundo. La plataforma coordina con el RCOC de Victoria, EUNAVFOR Atalanta, las Combined Maritime Forces (CTF-150/151), y el Sistema de Alerta Regional Marítima (MASE) del Océano Índico. Proporciona alertas de pesca ilegal IUU, seguimiento de buques sospechosos y protocolo de respuesta a incidentes de piratería."
+        : "Kabat One integrates satellite AIS/radar tracking from the Seychelles Coast Guard across the 1.37 million km² EEZ — the world's largest per capita. The platform coordinates with the Victoria RCOC, EUNAVFOR Atalanta, Combined Maritime Forces (CTF-150/151), and the Indian Ocean Regional Maritime Awareness System (MASE). It provides IUU illegal fishing alerts, suspicious vessel tracking, and piracy incident response protocols.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareSeychellesPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Seychelles"
-              : "KabatOne Capabilities for Seychelles"}
+              ? "Capacidades de Kabat One para Seychelles"
+              : "Kabat One Capabilities for Seychelles"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a los retos únicos de Seychelles: gestión de la mayor ZEE per cápita del mundo, protección del turismo de lujo en 115 islas, y coordinación con los principales centros antipiratería del Océano Índico."
-              : "The KabatOne platform provides an integrated suite adapted to Seychelles' unique challenges: managing the world's largest per capita EEZ, protecting luxury tourism across 115 islands, and coordinating with the Indian Ocean's leading anti-piracy centres."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a los retos únicos de Seychelles: gestión de la mayor ZEE per cápita del mundo, protección del turismo de lujo en 115 islas, y coordinación con los principales centros antipiratería del Océano Índico."
+              : "The Kabat One platform provides an integrated suite adapted to Seychelles' unique challenges: managing the world's largest per capita EEZ, protecting luxury tourism across 115 islands, and coordinating with the Indian Ocean's leading anti-piracy centres."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareSeychellesPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la SPDF, la Guardia Costera y la Policía Nacional en la protección del turismo y la vigilancia marítima del Océano Índico."
-            : "Speak with our team about how KabatOne can support the SPDF, Coast Guard, and National Police in tourism protection and Indian Ocean maritime surveillance."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la SPDF, la Guardia Costera y la Policía Nacional en la protección del turismo y la vigilancia marítima del Océano Índico."
+            : "Speak with our team about how Kabat One can support the SPDF, Coast Guard, and National Police in tourism protection and Indian Ocean maritime surveillance."
         }
       />
       <Footer es={es} />

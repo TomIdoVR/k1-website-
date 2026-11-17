@@ -50,7 +50,7 @@ export default async function PublicSafetySoftwareColombiaPage({
       answer: 'El CRUM — Centro Regulador de Urgencias y Emergencias — es el centro de despacho y coordinacion de urgencias medicas. Las plataformas unificadas conectan el CRUM con el despacho policial para lograr una cobertura completa de respuesta a emergencias.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de camaras existente en Colombia?',
+      question: '¿Puede Kabat One integrarse con la infraestructura de camaras existente en Colombia?',
       answer: 'Si. Cualquier camara ONVIF/RTSP se integra sin necesidad de reemplazo. Las camaras financiadas con FONSET y las transmisiones privadas compartidas se conectan de forma transparente, sin cambiar el hardware existente.',
     },
     {
@@ -58,7 +58,7 @@ export default async function PublicSafetySoftwareColombiaPage({
       answer: 'Si. Interfaz completa en espanol, soporte en castellano y socios de integracion locales en Colombia y en toda LATAM.',
     },
     {
-      question: '¿Como apoya KabatOne los objetivos PISCC de los municipios?',
+      question: '¿Como apoya Kabat One los objetivos PISCC de los municipios?',
       answer: 'K-Safety (GIS) + K-Dispatch (CAD) + K-Video en conjunto proporcionan los datos de incidentes en tiempo real, las metricas de respuesta y los registros de rendicion de cuentas que requiere el reporte PISCC.',
     },
   ] : [
@@ -75,7 +75,7 @@ export default async function PublicSafetySoftwareColombiaPage({
       answer: 'Centro Regulador de Urgencias y Emergencias — the medical dispatch and coordination center. Unified platforms bridge CRUM with police dispatch for full emergency response coverage.',
     },
     {
-      question: 'Can KabatOne integrate with existing Colombian camera infrastructure?',
+      question: 'Can Kabat One integrate with existing Colombian camera infrastructure?',
       answer: 'Yes — any ONVIF/RTSP camera integrates without replacement. Existing FONSET-funded cameras and privately shared feeds connect seamlessly without changing any hardware.',
     },
     {
@@ -83,7 +83,7 @@ export default async function PublicSafetySoftwareColombiaPage({
       answer: 'Yes — full Spanish interface, Spanish-language support, and local integration partners in Colombia and broader LATAM.',
     },
     {
-      question: 'How does KabatOne support municipal PISCC objectives?',
+      question: 'How does Kabat One support municipal PISCC objectives?',
       answer: "K-Safety's GIS + K-Dispatch CAD + K-Video together provide the real-time incident data, response metrics, and accountability logs that PISCC reporting requires.",
     },
   ]
@@ -561,8 +561,8 @@ export default async function PublicSafetySoftwareColombiaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio en Colombia' : 'Transform Public Safety in Your Colombian Municipality'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios y gobiernos departamentales colombianos.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Colombian municipalities and departmental governments.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios y gobiernos departamentales colombianos.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Colombian municipalities and departmental governments.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

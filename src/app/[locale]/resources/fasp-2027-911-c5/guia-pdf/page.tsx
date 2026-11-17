@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   const es = locale === 'es'
   return {
-    title: es ? 'Guía FASP 2027 para el 911 y el C5 (PDF) | KabatOne' : 'FASP 2027 guide for 911 and C5 (PDF) | KabatOne',
+    title: es ? 'Guía FASP 2027 para el 911 y el C5 (PDF) | Kabat One' : 'FASP 2027 guide for 911 and C5 (PDF) | Kabat One',
     robots: { index: false, follow: false },
   }
 }
@@ -43,7 +43,7 @@ export default async function FaspGuiaPdfPage({ params }: { params: Promise<{ lo
         <header style={{ borderBottom: `3px solid ${accent}`, paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: accent, textTransform: 'uppercase' }}>{c.eyebrow}</div>
-            <div style={{ fontWeight: 800, fontSize: 15 }}>KabatOne</div>
+            <div style={{ fontWeight: 800, fontSize: 15 }}>Kabat One</div>
           </div>
           <h1 style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.15, margin: '8px 0 0' }}>{c.h1a} {c.h1b}</h1>
           <p style={{ ...p, color: dim, margin: '8px 0 0' }}>{c.intro}</p>

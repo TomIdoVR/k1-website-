@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareSomaliaPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Somalia | SPF, SNA y Gestión Post-Conflicto – KabatOne"
-      : "Public Safety Software for Somalia | SPF, SNA & Post-Conflict Management – KabatOne",
+      ? "Software de Seguridad Pública para Somalia | SPF, SNA y Gestión Post-Conflicto – Kabat One"
+      : "Public Safety Software for Somalia | SPF, SNA & Post-Conflict Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones anti-Al-Shabaab y conciencia situacional para la Policía Federal de Somalia, SNA y programas de reconstrucción de la seguridad pública."
-      : "KabatOne delivers modular command-and-control, anti-Al-Shabaab operations coordination, and situational awareness for the Somali Federal Police, SNA, and public safety reconstruction programs.",
+      ? "Kabat One ofrece plataforma modular de mando y control, coordinación de operaciones anti-Al-Shabaab y conciencia situacional para la Policía Federal de Somalia, SNA y programas de reconstrucción de la seguridad pública."
+      : "Kabat One delivers modular command-and-control, anti-Al-Shabaab operations coordination, and situational awareness for the Somali Federal Police, SNA, and public safety reconstruction programs.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-somalia"
       : "https://kabatone.com/resources/public-safety-software-somalia",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareSomaliaPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Somalia?"
-        : "How can KabatOne support public safety in Somalia?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Somalia?"
+        : "How can Kabat One support public safety in Somalia?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 18 regiones/6 estados federales miembros, coordinación SPF/SNA/ATMIS con inteligencia táctica anti-Al-Shabaab, gestión de los 3+ millones de PDI y plataformas de comunicación de emergencia para Mogadiscio, Bosaso, Kismayo y Baidoa."
-        : "KabatOne provides modular CAD/incident management for all 18 regions/6 Federal Member States, SPF/SNA/ATMIS coordination with anti-Al-Shabaab tactical intelligence, management of 3+ million IDPs, and emergency communication platforms for Mogadishu, Bosaso, Kismayo, and Baidoa.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 18 regiones/6 estados federales miembros, coordinación SPF/SNA/ATMIS con inteligencia táctica anti-Al-Shabaab, gestión de los 3+ millones de PDI y plataformas de comunicación de emergencia para Mogadiscio, Bosaso, Kismayo y Baidoa."
+        : "Kabat One provides modular CAD/incident management for all 18 regions/6 Federal Member States, SPF/SNA/ATMIS coordination with anti-Al-Shabaab tactical intelligence, management of 3+ million IDPs, and emergency communication platforms for Mogadishu, Bosaso, Kismayo, and Baidoa.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Somalia?"
-        : "How does KabatOne support critical infrastructure security in Somalia?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Somalia?"
+        : "How does Kabat One support critical infrastructure security in Somalia?",
       answer: es
         ? "La plataforma monitorea el Puerto de Mogadiscio (principal puerto del Cuerno de África), el Aeropuerto Internacional Aden Adde (MGQ), las instalaciones offshore de Coastline Exploration/Saudi Aramco, la nueva planta Garowe-Beled Hawo de Jubba Power y las estaciones de telecomunicaciones HORMUUD/SOMTEL en Puntland/Somalilandia."
         : "The platform monitors Mogadishu Port (main Horn of Africa port), Aden Adde International Airport (MGQ), Coastline Exploration/Saudi Aramco offshore facilities, the new Jubba Power Garowe-Beled Hawo plant, and HORMUUD/SOMTEL telecom stations in Puntland/Somaliland.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Somalia?"
-        : "Can KabatOne integrate with humanitarian management in Somalia?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Somalia?"
+        : "Can Kabat One integrate with humanitarian management in Somalia?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP para la gestión de los 3+ millones de PDI, el Sistema de Alerta Temprana de hambruna/inundaciones (FEWS NET/FAO), las inundaciones del Juba/Shabelle/inundaciones repentinas de la temporada de gu, la crisis de sequía y la gestión de refugiados con Kenia/Etiopía/Yemen."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP for management of 3+ million IDPs, famine/flood early warning system (FEWS NET/FAO), Juba/Shabelle river flooding/gu season flash floods, drought crisis, and refugee management with Kenya/Ethiopia/Yemen.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP para la gestión de los 3+ millones de PDI, el Sistema de Alerta Temprana de hambruna/inundaciones (FEWS NET/FAO), las inundaciones del Juba/Shabelle/inundaciones repentinas de la temporada de gu, la crisis de sequía y la gestión de refugiados con Kenia/Etiopía/Yemen."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP for management of 3+ million IDPs, famine/flood early warning system (FEWS NET/FAO), Juba/Shabelle river flooding/gu season flash floods, drought crisis, and refugee management with Kenya/Ethiopia/Yemen.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Somalia?"
-        : "How does KabatOne comply with Somalia's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Somalia?"
+        : "How does Kabat One comply with Somalia's regulations?",
       answer: es
-        ? "KabatOne se alinea con las directrices de la Autoridad Nacional de Comunicaciones de Somalia (NCA), los estándares de ciberseguridad del Ministerio de Posts, Telecomunicaciones y Tecnología (MoPTT), y los marcos de adquisiciones del Banco Mundial/PNUD/USAID para proyectos de construcción de estado financiados por donantes."
-        : "KabatOne aligns with Somalia National Communications Authority (NCA) guidelines, Ministry of Posts, Telecommunications and Technology (MoPTT) cybersecurity standards, and World Bank/UNDP/USAID procurement frameworks for donor-funded state-building projects.",
+        ? "Kabat One se alinea con las directrices de la Autoridad Nacional de Comunicaciones de Somalia (NCA), los estándares de ciberseguridad del Ministerio de Posts, Telecomunicaciones y Tecnología (MoPTT), y los marcos de adquisiciones del Banco Mundial/PNUD/USAID para proyectos de construcción de estado financiados por donantes."
+        : "Kabat One aligns with Somalia National Communications Authority (NCA) guidelines, Ministry of Posts, Telecommunications and Technology (MoPTT) cybersecurity standards, and World Bank/UNDP/USAID procurement frameworks for donor-funded state-building projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Somalia?"
-        : "What sets KabatOne apart for Somalia's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Somalia?"
+        : "What sets Kabat One apart for Somalia's border management?",
       answer: es
-        ? "KabatOne puede unificar los 3 corredores fronterizos terrestres (Etiopía/Kenya/Somalilandia-autoproclamada) y la línea costera de 3,330 km (la más larga de África continental) con vigilancia marítima anti-piratería, listas Interpol/IGAD/UA, y protocolos de la Fuerza Naval de la UE (EUNAVFOR Atalanta)."
-        : "KabatOne can unify 3 land border corridors (Ethiopia/Kenya/self-declared Somaliland) and the 3,330 km coastline (longest in mainland Africa) with anti-piracy maritime surveillance, Interpol/IGAD/AU watchlists, and EU Naval Force (EUNAVFOR Atalanta) protocols.",
+        ? "Kabat One puede unificar los 3 corredores fronterizos terrestres (Etiopía/Kenya/Somalilandia-autoproclamada) y la línea costera de 3,330 km (la más larga de África continental) con vigilancia marítima anti-piratería, listas Interpol/IGAD/UA, y protocolos de la Fuerza Naval de la UE (EUNAVFOR Atalanta)."
+        : "Kabat One can unify 3 land border corridors (Ethiopia/Kenya/self-declared Somaliland) and the 3,330 km coastline (longest in mainland Africa) with anti-piracy maritime surveillance, Interpol/IGAD/AU watchlists, and EU Naval Force (EUNAVFOR Atalanta) protocols.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareSomaliaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Al-Shabaab controla vastas zonas del sur y centro de Somalia, y realiza atentados en Mogadiscio y otras ciudades. KabatOne proporciona plataformas de C2 modulares para la SPF/SNA con mapas operativos georreferenciados, coordinación segura con ATMIS/EUCAP, comunicaciones cifradas y gestión de logística para unidades en zonas de reconquista."
-              : "Al-Shabaab controls vast areas of southern and central Somalia, and carries out attacks in Mogadishu and other cities. KabatOne provides modular C2 platforms for SPF/SNA with georeferenced operational maps, secure coordination with ATMIS/EUCAP, encrypted communications, and logistics management for units in reconquest zones."}
+              ? "Al-Shabaab controla vastas zonas del sur y centro de Somalia, y realiza atentados en Mogadiscio y otras ciudades. Kabat One proporciona plataformas de C2 modulares para la SPF/SNA con mapas operativos georreferenciados, coordinación segura con ATMIS/EUCAP, comunicaciones cifradas y gestión de logística para unidades en zonas de reconquista."
+              : "Al-Shabaab controls vast areas of southern and central Somalia, and carries out attacks in Mogadishu and other cities. Kabat One provides modular C2 platforms for SPF/SNA with georeferenced operational maps, secure coordination with ATMIS/EUCAP, encrypted communications, and logistics management for units in reconquest zones."}
           </p>
 
           {/* Port & Maritime */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareSomaliaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona vigilancia marítima integrada para la Guardia Costera de Somalia (SCMG) con feeds EUNAVFOR Atalanta/CMF, detección AIS de embarcaciones sospechosas, gestión de incidentes en zonas económicas exclusivas (ZEE), y el monitoreo del corredor marítimo del Golfo de Adén/Cuerno de África."
-              : "KabatOne provides integrated maritime surveillance for the Somali Coast Guard (SCMG) with EUNAVFOR Atalanta/CMF feeds, AIS detection of suspicious vessels, incident management in Exclusive Economic Zones (EEZ), and monitoring of the Gulf of Aden/Horn of Africa maritime corridor."}
+              ? "Kabat One proporciona vigilancia marítima integrada para la Guardia Costera de Somalia (SCMG) con feeds EUNAVFOR Atalanta/CMF, detección AIS de embarcaciones sospechosas, gestión de incidentes en zonas económicas exclusivas (ZEE), y el monitoreo del corredor marítimo del Golfo de Adén/Cuerno de África."
+              : "Kabat One provides integrated maritime surveillance for the Somali Coast Guard (SCMG) with EUNAVFOR Atalanta/CMF feeds, AIS detection of suspicious vessels, incident management in Exclusive Economic Zones (EEZ), and monitoring of the Gulf of Aden/Horn of Africa maritime corridor."}
           </p>
 
           {/* Humanitarian */}
@@ -211,8 +211,8 @@ export default async function PublicSafetySoftwareSomaliaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está estructurado para despliegue bajo marcos de adquisiciones de emergencia del Banco Mundial/USAID/PNUD/UA, compatible con los sistemas de coordinación OCHA/ATMIS/EUCAP, y diseñado para transición gradual desde operaciones de estabilización de emergencia hacia plataformas de seguridad pública civiles sostenibles bajo los Marcos de Responsabilidad del Plan Nacional de Desarrollo de Somalia (NDP)."
-              : "KabatOne is structured for deployment under World Bank/USAID/UNDP/AU emergency procurement frameworks, compatible with OCHA/ATMIS/EUCAP coordination systems, and designed for gradual transition from emergency stabilisation operations to sustainable civilian public safety platforms under Somalia National Development Plan (NDP) Accountability Frameworks."}
+              ? "Kabat One está estructurado para despliegue bajo marcos de adquisiciones de emergencia del Banco Mundial/USAID/PNUD/UA, compatible con los sistemas de coordinación OCHA/ATMIS/EUCAP, y diseñado para transición gradual desde operaciones de estabilización de emergencia hacia plataformas de seguridad pública civiles sostenibles bajo los Marcos de Responsabilidad del Plan Nacional de Desarrollo de Somalia (NDP)."
+              : "Kabat One is structured for deployment under World Bank/USAID/UNDP/AU emergency procurement frameworks, compatible with OCHA/ATMIS/EUCAP coordination systems, and designed for gradual transition from emergency stabilisation operations to sustainable civilian public safety platforms under Somalia National Development Plan (NDP) Accountability Frameworks."}
           </p>
         </section>
 
@@ -226,43 +226,43 @@ export default async function PublicSafetySoftwareSomaliaPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Somalia?"
-                    : "How can KabatOne support public safety in Somalia?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Somalia?"
+                    : "How can Kabat One support public safety in Somalia?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 18 regiones/6 estados federales, coordinación SPF/SNA/ATMIS anti-Al-Shabaab, gestión 3M+ PDI y plataformas de emergencia para Mogadiscio, Bosaso, Kismayo y Baidoa."
-                    : "KabatOne provides modular CAD for 18 regions/6 Federal Member States, SPF/SNA/ATMIS anti-Al-Shabaab coordination, 3M+ IDP management, and emergency platforms for Mogadishu, Bosaso, Kismayo, and Baidoa.",
+                    ? "Kabat One proporciona CAD modular para 18 regiones/6 estados federales, coordinación SPF/SNA/ATMIS anti-Al-Shabaab, gestión 3M+ PDI y plataformas de emergencia para Mogadiscio, Bosaso, Kismayo y Baidoa."
+                    : "Kabat One provides modular CAD for 18 regions/6 Federal Member States, SPF/SNA/ATMIS anti-Al-Shabaab coordination, 3M+ IDP management, and emergency platforms for Mogadishu, Bosaso, Kismayo, and Baidoa.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Somalia?"
-                    : "How does KabatOne support critical infrastructure security in Somalia?",
+                    ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Somalia?"
+                    : "How does Kabat One support critical infrastructure security in Somalia?",
                   a: es
                     ? "La plataforma monitorea Puerto Mogadiscio (rehab turca/DP World), Bosaso Port/Kismayo Port, Aeropuerto MGQ, offshore Coastline Exploration/Saudi Aramco y estaciones telecomunicaciones HORMUUD/SOMTEL con gestión unificada de activos."
                     : "The platform monitors Mogadishu Port (Turkish/DP World rehab), Bosaso/Kismayo ports, MGQ Airport, Coastline Exploration/Saudi Aramco offshore facilities, and HORMUUD/SOMTEL telecom stations with unified asset management.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Somalia?"
-                    : "Can KabatOne integrate with humanitarian management in Somalia?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Somalia?"
+                    : "Can Kabat One integrate with humanitarian management in Somalia?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/UNHCR/WFP para 3M+ PDI, alertas hambruna/sequía FEWS NET/FAO/FSNAU, inundaciones Juba/Shabelle y gestión de refugiados Kenya/Etiopía."
-                    : "Yes. KabatOne integrates OCHA/UNHCR/WFP for 3M+ IDPs, FEWS NET/FAO/FSNAU famine/drought alerts, Juba/Shabelle flooding, and Kenya/Ethiopia refugee management.",
+                    ? "Sí. Kabat One integra OCHA/UNHCR/WFP para 3M+ PDI, alertas hambruna/sequía FEWS NET/FAO/FSNAU, inundaciones Juba/Shabelle y gestión de refugiados Kenya/Etiopía."
+                    : "Yes. Kabat One integrates OCHA/UNHCR/WFP for 3M+ IDPs, FEWS NET/FAO/FSNAU famine/drought alerts, Juba/Shabelle flooding, and Kenya/Ethiopia refugee management.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Somalia?"
-                    : "How does KabatOne comply with Somalia's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Somalia?"
+                    : "How does Kabat One comply with Somalia's regulations?",
                   a: es
-                    ? "KabatOne se alinea con NCA/Ley de Comunicaciones 2017, estándares MoPTT ciberseguridad y marcos de adquisiciones Banco Mundial/PNUD/USAID/UA para proyectos de construcción de estado financiados por donantes."
-                    : "KabatOne aligns with NCA/Communications Act 2017, MoPTT cybersecurity standards, and World Bank/UNDP/USAID/AU procurement frameworks for donor-funded state-building projects.",
+                    ? "Kabat One se alinea con NCA/Ley de Comunicaciones 2017, estándares MoPTT ciberseguridad y marcos de adquisiciones Banco Mundial/PNUD/USAID/UA para proyectos de construcción de estado financiados por donantes."
+                    : "Kabat One aligns with NCA/Communications Act 2017, MoPTT cybersecurity standards, and World Bank/UNDP/USAID/AU procurement frameworks for donor-funded state-building projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión costera y fronteriza de Somalia?"
-                    : "What sets KabatOne apart for Somalia's coastal and border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión costera y fronteriza de Somalia?"
+                    : "What sets Kabat One apart for Somalia's coastal and border management?",
                   a: es
-                    ? "KabatOne unifica 3,330 km de vigilancia costera anti-piratería con feeds EUNAVFOR Atalanta/CMF/AIS, corredores fronterizos Etiopía/Kenya y alertas IGAD/UA para la Guardia Costera SCMG/SPF."
-                    : "KabatOne unifies 3,330 km of anti-piracy coastal surveillance with EUNAVFOR Atalanta/CMF/AIS feeds, Ethiopia/Kenya border corridors, and IGAD/AU alerts for SCMG Coast Guard/SPF.",
+                    ? "Kabat One unifica 3,330 km de vigilancia costera anti-piratería con feeds EUNAVFOR Atalanta/CMF/AIS, corredores fronterizos Etiopía/Kenya y alertas IGAD/UA para la Guardia Costera SCMG/SPF."
+                    : "Kabat One unifies 3,330 km of anti-piracy coastal surveillance with EUNAVFOR Atalanta/CMF/AIS feeds, Ethiopia/Kenya border corridors, and IGAD/AU alerts for SCMG Coast Guard/SPF.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

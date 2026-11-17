@@ -36,10 +36,10 @@ export default async function CareersPage({
     h1a: es ? 'Construye sistemas' : 'Build systems',
     h1b: es ? 'que salvan vidas' : 'that save lives',
     sub: es
-      ? 'KabatOne desarrolla la plataforma unificada de seguridad pública en la que confían más de 40 ciudades para proteger a más de 73 millones de ciudadanos. El software que escribimos se usa en centros de mando reales, en el peor día de alguien más.'
-      : 'KabatOne builds the unified public safety platform that 40+ cities rely on to protect over 73 million citizens. The software we write runs in real command centers, on somebody’s worst day.',
+      ? 'Kabat One desarrolla la plataforma unificada de seguridad pública en la que confían más de 40 ciudades para proteger a más de 73 millones de ciudadanos. El software que escribimos se usa en centros de mando reales, en el peor día de alguien más.'
+      : 'Kabat One builds the unified public safety platform that 40+ cities rely on to protect over 73 million citizens. The software we write runs in real command centers, on somebody’s worst day.',
     cta: es ? 'Ver vacantes' : 'See open roles',
-    whyEyebrow: es ? 'Por qué KabatOne' : 'Why KabatOne',
+    whyEyebrow: es ? 'Por qué Kabat One' : 'Why Kabat One',
     whyH2a: es ? 'Trabajo real,' : 'Real work,',
     whyH2b: es ? 'consecuencias reales' : 'real consequences',
     openEyebrow: es ? 'Vacantes abiertas' : 'Open positions',

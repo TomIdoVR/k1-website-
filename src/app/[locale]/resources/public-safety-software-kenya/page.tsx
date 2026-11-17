@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with the National Police Service (NPS) Kenya structure?",
-    answer: "KabatOne aligns with NPS's command structure across 47 county commands, 290+ police stations, and the National Police Service Commission (NPSC) oversight framework — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Inspector General/NPS operational protocols across Kenya Police Service and Administration Police Service."
+    question: "How does Kabat One integrate with the National Police Service (NPS) Kenya structure?",
+    answer: "Kabat One aligns with NPS's command structure across 47 county commands, 290+ police stations, and the National Police Service Commission (NPSC) oversight framework — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Inspector General/NPS operational protocols across Kenya Police Service and Administration Police Service."
   },
   {
-    question: "Can KabatOne support Kenya's integrated emergency services including NYS and KFS?",
-    answer: "Yes. KabatOne integrates NPS, Kenya Fire and Rescue Service (KFRS), National Youth Service (NYS), Kenya Forest Service (KFS) for wildfire response, Kenya Red Cross, and the National Disaster Operations Centre (NDOC) — enabling unified command visibility and resource coordination across Kenya's emergency ecosystem."
+    question: "Can Kabat One support Kenya's integrated emergency services including NYS and KFS?",
+    answer: "Yes. Kabat One integrates NPS, Kenya Fire and Rescue Service (KFRS), National Youth Service (NYS), Kenya Forest Service (KFS) for wildfire response, Kenya Red Cross, and the National Disaster Operations Centre (NDOC) — enabling unified command visibility and resource coordination across Kenya's emergency ecosystem."
   },
   {
-    question: "How does KabatOne handle Kenya Data Protection Act (DPA 2019) compliance?",
-    answer: "KabatOne is designed for full DPA 2019 compliance — implementing data subject rights (access, erasure, portability), Data Protection Impact Assessments (DPIAs), lawful basis documentation, mandatory breach notification to the Office of the Data Protection Commissioner (ODPC), and cross-border transfer safeguards."
+    question: "How does Kabat One handle Kenya Data Protection Act (DPA 2019) compliance?",
+    answer: "Kabat One is designed for full DPA 2019 compliance — implementing data subject rights (access, erasure, portability), Data Protection Impact Assessments (DPIAs), lawful basis documentation, mandatory breach notification to the Office of the Data Protection Commissioner (ODPC), and cross-border transfer safeguards."
   },
   {
-    question: "Can KabatOne support Nairobi's Safe City and command centre operations?",
-    answer: "Yes. KabatOne integrates Nairobi City County CCTV networks, National Traffic Management Centre (NTMC) cameras, Kenya Police ANPR on highways, and Nairobi Metropolitan Services (NMS) command infrastructure — providing AI-powered analytics and unified situational awareness for the 5+ million population Greater Nairobi metro area."
+    question: "Can Kabat One support Nairobi's Safe City and command centre operations?",
+    answer: "Yes. Kabat One integrates Nairobi City County CCTV networks, National Traffic Management Centre (NTMC) cameras, Kenya Police ANPR on highways, and Nairobi Metropolitan Services (NMS) command infrastructure — providing AI-powered analytics and unified situational awareness for the 5+ million population Greater Nairobi metro area."
   },
   {
-    question: "How does KabatOne support drought and flood disaster operations in Kenya?",
-    answer: "KabatOne integrates Kenya Meteorological Department (KMD) weather alerts, National Drought Management Authority (NDMA) early warning systems, NDOC situational reports, and Kenya Red Cross field operations — enabling pre-emptive response dispatch across Kenya's Arid and Semi-Arid Lands (ASAL) and flash flood corridors."
+    question: "How does Kabat One support drought and flood disaster operations in Kenya?",
+    answer: "Kabat One integrates Kenya Meteorological Department (KMD) weather alerts, National Drought Management Authority (NDMA) early warning systems, NDOC situational reports, and Kenya Red Cross field operations — enabling pre-emptive response dispatch across Kenya's Arid and Semi-Arid Lands (ASAL) and flash flood corridors."
   },
   {
-    question: "What cybersecurity standards does KabatOne meet for Kenyan government procurement?",
-    answer: "KabatOne aligns with Kenya's Computer Misuse and Cybercrimes Act 2018, KNOC (Kenya National Cyber Coordination Center/KE-CIRT/CC), and ICT Authority standards for government systems — meeting technical specifications under Kenya ICT Action Plan and the Kenya Digital Economy Blueprint."
+    question: "What cybersecurity standards does Kabat One meet for Kenyan government procurement?",
+    answer: "Kabat One aligns with Kenya's Computer Misuse and Cybercrimes Act 2018, KNOC (Kenya National Cyber Coordination Center/KE-CIRT/CC), and ICT Authority standards for government systems — meeting technical specifications under Kenya ICT Action Plan and the Kenya Digital Economy Blueprint."
   },
   {
-    question: "What procurement pathway does KabatOne support in Kenya?",
-    answer: "KabatOne supports procurement through the Government Procurement Portal (GPP) under the Public Procurement and Asset Disposal Act (PPADA 2015) and PPOA (Public Procurement and Oversight Authority) regulations — including open tender, restricted tender, and direct procurement for security/emergency management systems at both national and county government levels."
+    question: "What procurement pathway does Kabat One support in Kenya?",
+    answer: "Kabat One supports procurement through the Government Procurement Portal (GPP) under the Public Procurement and Asset Disposal Act (PPADA 2015) and PPOA (Public Procurement and Oversight Authority) regulations — including open tender, restricted tender, and direct procurement for security/emergency management systems at both national and county government levels."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura del Servicio Nacional de Policía (NPS) de Kenia?",
-    answer: "KabatOne se alinea con la estructura de mando de la NPS en 47 mandos de condado, más de 290 estaciones de policía y el marco de supervisión de la Comisión del Servicio Nacional de Policía (NPSC) — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos del Inspector General/NPS."
+    question: "¿Cómo se integra Kabat One con la estructura del Servicio Nacional de Policía (NPS) de Kenia?",
+    answer: "Kabat One se alinea con la estructura de mando de la NPS en 47 mandos de condado, más de 290 estaciones de policía y el marco de supervisión de la Comisión del Servicio Nacional de Policía (NPSC) — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos del Inspector General/NPS."
   },
   {
-    question: "¿Puede KabatOne soportar los servicios integrados de emergencia de Kenia incluyendo NYS y KFS?",
-    answer: "Sí. KabatOne integra NPS, el Servicio de Bomberos y Rescate de Kenia (KFRS), el Servicio Nacional de la Juventud (NYS), el Servicio Forestal de Kenia (KFS) para incendios forestales, la Cruz Roja de Kenia y el Centro Nacional de Operaciones de Desastres (NDOC) — habilitando visibilidad de mando unificada."
+    question: "¿Puede Kabat One soportar los servicios integrados de emergencia de Kenia incluyendo NYS y KFS?",
+    answer: "Sí. Kabat One integra NPS, el Servicio de Bomberos y Rescate de Kenia (KFRS), el Servicio Nacional de la Juventud (NYS), el Servicio Forestal de Kenia (KFS) para incendios forestales, la Cruz Roja de Kenia y el Centro Nacional de Operaciones de Desastres (NDOC) — habilitando visibilidad de mando unificada."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Protección de Datos de Kenia (DPA 2019)?",
-    answer: "KabatOne está diseñado para cumplimiento total con la DPA 2019 — implementando derechos del titular de datos (acceso, borrado, portabilidad), Evaluaciones de Impacto en Protección de Datos (DPIA), documentación de base legal, notificación obligatoria de brechas a la ODPC y salvaguardias de transferencia transfronteriza."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Protección de Datos de Kenia (DPA 2019)?",
+    answer: "Kabat One está diseñado para cumplimiento total con la DPA 2019 — implementando derechos del titular de datos (acceso, borrado, portabilidad), Evaluaciones de Impacto en Protección de Datos (DPIA), documentación de base legal, notificación obligatoria de brechas a la ODPC y salvaguardias de transferencia transfronteriza."
   },
   {
-    question: "¿Puede KabatOne soportar el Safe City de Nairobi y las operaciones del centro de mando?",
-    answer: "Sí. KabatOne integra las redes CCTV del Condado de la Ciudad de Nairobi, cámaras del Centro Nacional de Gestión de Tráfico (NTMC), ANPR de la Policía de Kenia en autopistas e infraestructura de mando de los Servicios Metropolitanos de Nairobi (NMS) — proporcionando analítica de IA para el área metropolitana del Gran Nairobi con más de 5 millones de habitantes."
+    question: "¿Puede Kabat One soportar el Safe City de Nairobi y las operaciones del centro de mando?",
+    answer: "Sí. Kabat One integra las redes CCTV del Condado de la Ciudad de Nairobi, cámaras del Centro Nacional de Gestión de Tráfico (NTMC), ANPR de la Policía de Kenia en autopistas e infraestructura de mando de los Servicios Metropolitanos de Nairobi (NMS) — proporcionando analítica de IA para el área metropolitana del Gran Nairobi con más de 5 millones de habitantes."
   },
   {
-    question: "¿Cómo soporta KabatOne las operaciones ante sequías e inundaciones en Kenia?",
-    answer: "KabatOne integra alertas meteorológicas del Departamento Meteorológico de Kenia (KMD), sistemas de alerta temprana de la Autoridad Nacional de Gestión de Sequías (NDMA), informes situacionales del NDOC y operaciones de campo de la Cruz Roja de Kenia — habilitando despacho de respuesta preventiva en las Tierras Áridas y Semiáridas (ASAL) de Kenia."
+    question: "¿Cómo soporta Kabat One las operaciones ante sequías e inundaciones en Kenia?",
+    answer: "Kabat One integra alertas meteorológicas del Departamento Meteorológico de Kenia (KMD), sistemas de alerta temprana de la Autoridad Nacional de Gestión de Sequías (NDMA), informes situacionales del NDOC y operaciones de campo de la Cruz Roja de Kenia — habilitando despacho de respuesta preventiva en las Tierras Áridas y Semiáridas (ASAL) de Kenia."
   },
   {
-    question: "¿Qué estándares de ciberseguridad cumple KabatOne para contratación gubernamental en Kenia?",
-    answer: "KabatOne se alinea con la Ley de Uso Indebido de Computadoras y Ciberdelitos de Kenia de 2018, KNOC (Kenya National Cyber Coordination Center/KE-CIRT/CC) y estándares de la Autoridad TIC para sistemas gubernamentales — cumpliendo especificaciones técnicas bajo el Plan de Acción TIC de Kenia."
+    question: "¿Qué estándares de ciberseguridad cumple Kabat One para contratación gubernamental en Kenia?",
+    answer: "Kabat One se alinea con la Ley de Uso Indebido de Computadoras y Ciberdelitos de Kenia de 2018, KNOC (Kenya National Cyber Coordination Center/KE-CIRT/CC) y estándares de la Autoridad TIC para sistemas gubernamentales — cumpliendo especificaciones técnicas bajo el Plan de Acción TIC de Kenia."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Kenia?",
-    answer: "KabatOne soporta contratación a través del Portal de Contratación del Gobierno (GPP) bajo la Ley de Contratación Pública y Disposición de Activos (PPADA 2015) y regulaciones PPOA — incluyendo licitación abierta, restringida y contratación directa para sistemas de seguridad y gestión de emergencias a nivel nacional y de condado."
+    question: "¿Qué vía de contratación soporta Kabat One en Kenia?",
+    answer: "Kabat One soporta contratación a través del Portal de Contratación del Gobierno (GPP) bajo la Ley de Contratación Pública y Disposición de Activos (PPADA 2015) y regulaciones PPOA — incluyendo licitación abierta, restringida y contratación directa para sistemas de seguridad y gestión de emergencias a nivel nacional y de condado."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• GPP/Mygov: licitaciones NPS, KFRS, NDMA, NTSA' : '• GPP/Mygov: NPS, KFRS, NDMA, NTSA bids'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Kenia?' : 'Ready to modernize public safety in Kenya?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya al NPS, KFRS y NDOC de Kenia con una plataforma unificada conforme a DPA 2019/ODPC y compatible con GPP/PPADA 2015.'
-            : 'See how KabatOne supports Kenyan NPS, KFRS, and NDOC with a unified platform compliant with DPA 2019/ODPC and compatible with GPP/PPADA 2015 procurement.'}
+            ? 'Conozca cómo Kabat One apoya al NPS, KFRS y NDOC de Kenia con una plataforma unificada conforme a DPA 2019/ODPC y compatible con GPP/PPADA 2015.'
+            : 'See how Kabat One supports Kenyan NPS, KFRS, and NDOC with a unified platform compliant with DPA 2019/ODPC and compatible with GPP/PPADA 2015 procurement.'}
         />
       </main>
       <Footer es={es} />

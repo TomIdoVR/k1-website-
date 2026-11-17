@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareCostaRicaPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el Sistema de Emergencias 9-1-1 de Costa Rica?",
-      answer: "El Sistema de Emergencias 9-1-1 de Costa Rica opera bajo la Comision de Emergencias 911, coordinando la Fuerza Publica (~13,000 agentes), el Cuerpo de Bomberos de Costa Rica, la Cruz Roja Costarricense y el SAMU (Servicio de Atencion de Moviles de Urgencias). Desde su implementacion como numero unico en 2013, el 911 unifica el despacho de emergencias en tiempo real. Una plataforma como KabatOne se integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre la infraestructura existente.",
+      answer: "El Sistema de Emergencias 9-1-1 de Costa Rica opera bajo la Comision de Emergencias 911, coordinando la Fuerza Publica (~13,000 agentes), el Cuerpo de Bomberos de Costa Rica, la Cruz Roja Costarricense y el SAMU (Servicio de Atencion de Moviles de Urgencias). Desde su implementacion como numero unico en 2013, el 911 unifica el despacho de emergencias en tiempo real. Una plataforma como Kabat One se integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre la infraestructura existente.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Costa Rica?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareCostaRicaPage({
     },
     {
       question: "¿Que es la CNE y como coordina emergencias en Costa Rica?",
-      answer: "La Comision Nacional de Prevencion de Riesgos y Atencion de Emergencias (CNE) es el ente rector de la gestion del riesgo en Costa Rica. Coordina la respuesta a erupciones volcanicas (Arenal, Poas, Turrialba, Rincon de la Vieja — mas de seis volcanes activos), terremotos y deslizamientos. El OVSICORI-UNA y el RSN (Red Sismologica Nacional) proveen monitoreo en tiempo real. KabatOne integra alertas de la CNE, OVSICORI y RSN con video municipal, despacho 911 y posiciones de unidades en un unico entorno operativo.",
+      answer: "La Comision Nacional de Prevencion de Riesgos y Atencion de Emergencias (CNE) es el ente rector de la gestion del riesgo en Costa Rica. Coordina la respuesta a erupciones volcanicas (Arenal, Poas, Turrialba, Rincon de la Vieja — mas de seis volcanes activos), terremotos y deslizamientos. El OVSICORI-UNA y el RSN (Red Sismologica Nacional) proveen monitoreo en tiempo real. Kabat One integra alertas de la CNE, OVSICORI y RSN con video municipal, despacho 911 y posiciones de unidades en un unico entorno operativo.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Costa Rica?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de San Jose, Alajuela, Cartago y Heredia se conectan directamente. Camaras del MOPT en corredores viales nacionales, LPR en el Aeropuerto Juan Santamaria (SJO), sistemas de la JAPDEVA en Puerto Limon y del INCOP en Puerto Caldera tambien se integran sin cambiar infraestructura. El sistema es compatible con los entornos tecnologicos de las Zonas Francas.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Costa Rica?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de San Jose, Alajuela, Cartago y Heredia se conectan directamente. Camaras del MOPT en corredores viales nacionales, LPR en el Aeropuerto Juan Santamaria (SJO), sistemas de la JAPDEVA en Puerto Limon y del INCOP en Puerto Caldera tambien se integran sin cambiar infraestructura. El sistema es compatible con los entornos tecnologicos de las Zonas Francas.",
     },
     {
-      question: "¿Como apoya KabatOne a un pais sin ejercito como Costa Rica?",
-      answer: "Costa Rica abolio su ejercito en 1948 (Articulo 12 de la Constitucion), lo que significa que la Fuerza Publica es la unica fuerza de seguridad interna. Esta estructura requiere coordinacion especialmente estrecha entre la Fuerza Publica, el OIJ, Bomberos, Cruz Roja y la CNE. KabatOne unifica estas agencias en una sola plataforma operativa: K-Safety provee el mapa GIS compartido, K-Dispatch centraliza el despacho 911, y K-Video agrega todas las camaras municipales en un VMS buscable.",
+      question: "¿Como apoya Kabat One a un pais sin ejercito como Costa Rica?",
+      answer: "Costa Rica abolio su ejercito en 1948 (Articulo 12 de la Constitucion), lo que significa que la Fuerza Publica es la unica fuerza de seguridad interna. Esta estructura requiere coordinacion especialmente estrecha entre la Fuerza Publica, el OIJ, Bomberos, Cruz Roja y la CNE. Kabat One unifica estas agencias en una sola plataforma operativa: K-Safety provee el mapa GIS compartido, K-Dispatch centraliza el despacho 911, y K-Video agrega todas las camaras municipales en un VMS buscable.",
     },
     {
-      question: "¿Como se alinea KabatOne con la Ley de Contratacion Publica de Costa Rica (Ley 9986)?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Ley 9986 y su portal SICOP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de municipalidades, gobernaciones y el Ministerio de Seguridad Publica. Las licitaciones en SICOP estan abiertas a empresas extranjeras con representante local registrado ante la CCSS y la Tributacion Directa.",
+      question: "¿Como se alinea Kabat One con la Ley de Contratacion Publica de Costa Rica (Ley 9986)?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Ley 9986 y su portal SICOP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de municipalidades, gobernaciones y el Ministerio de Seguridad Publica. Las licitaciones en SICOP estan abiertas a empresas extranjeras con representante local registrado ante la CCSS y la Tributacion Directa.",
     },
   ] : [
     {
       question: "How does Costa Rica's 9-1-1 Emergency System work?",
-      answer: "Costa Rica's 9-1-1 Emergency System operates under the 911 Emergency Commission, coordinating the Fuerza Publica (~13,000 officers), the Costa Rican Fire Department (Bomberos), the Costa Rican Red Cross (Cruz Roja), and SAMU (mobile urgent care service). Since unification as a single emergency number in 2013, the 911 system centralizes real-time emergency dispatch. A unified platform like KabatOne integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
+      answer: "Costa Rica's 9-1-1 Emergency System operates under the 911 Emergency Commission, coordinating the Fuerza Publica (~13,000 officers), the Costa Rican Fire Department (Bomberos), the Costa Rican Red Cross (Cruz Roja), and SAMU (mobile urgent care service). Since unification as a single emergency number in 2013, the 911 system centralizes real-time emergency dispatch. A unified platform like Kabat One integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
     },
     {
       question: "How does Costa Rica fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareCostaRicaPage({
     },
     {
       question: "What is the CNE and how does it coordinate emergencies in Costa Rica?",
-      answer: "The National Commission for Risk Prevention and Emergency Response (CNE) is Costa Rica's risk management authority. It coordinates response to volcanic eruptions (Arenal, Poas, Turrialba, Rincon de la Vieja — more than six active volcanoes), earthquakes, and landslides. OVSICORI-UNA and the National Seismological Network (RSN) provide real-time monitoring. KabatOne integrates CNE, OVSICORI, and RSN alerts with municipal video, 911 dispatch, and unit positions in a single operational environment.",
+      answer: "The National Commission for Risk Prevention and Emergency Response (CNE) is Costa Rica's risk management authority. It coordinates response to volcanic eruptions (Arenal, Poas, Turrialba, Rincon de la Vieja — more than six active volcanoes), earthquakes, and landslides. OVSICORI-UNA and the National Seismological Network (RSN) provide real-time monitoring. Kabat One integrates CNE, OVSICORI, and RSN alerts with municipal video, 911 dispatch, and unit positions in a single operational environment.",
     },
     {
-      question: "Can KabatOne integrate with existing camera infrastructure in Costa Rica?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in San Jose, Alajuela, Cartago, and Heredia connect directly. MOPT cameras on national road corridors, LPR readers at Juan Santamaria International Airport (SJO), JAPDEVA systems at Puerto Limon, and INCOP systems at Puerto Caldera also integrate without changing infrastructure. The platform is compatible with technology environments used in Costa Rica's Free Trade Zones.",
+      question: "Can Kabat One integrate with existing camera infrastructure in Costa Rica?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in San Jose, Alajuela, Cartago, and Heredia connect directly. MOPT cameras on national road corridors, LPR readers at Juan Santamaria International Airport (SJO), JAPDEVA systems at Puerto Limon, and INCOP systems at Puerto Caldera also integrate without changing infrastructure. The platform is compatible with technology environments used in Costa Rica's Free Trade Zones.",
     },
     {
-      question: "How does KabatOne support a country without an army like Costa Rica?",
-      answer: "Costa Rica abolished its army in 1948 (Article 12 of the Constitution), meaning the Fuerza Publica is the sole internal security force. This structure requires especially close coordination between the Fuerza Publica, OIJ, Bomberos, Cruz Roja, and the CNE. KabatOne unifies these agencies on one operational platform: K-Safety provides the shared GIS map, K-Dispatch centralizes 911 dispatch, and K-Video aggregates all municipal cameras in a searchable VMS.",
+      question: "How does Kabat One support a country without an army like Costa Rica?",
+      answer: "Costa Rica abolished its army in 1948 (Article 12 of the Constitution), meaning the Fuerza Publica is the sole internal security force. This structure requires especially close coordination between the Fuerza Publica, OIJ, Bomberos, Cruz Roja, and the CNE. Kabat One unifies these agencies on one operational platform: K-Safety provides the shared GIS map, K-Dispatch centralizes 911 dispatch, and K-Video aggregates all municipal cameras in a searchable VMS.",
     },
     {
-      question: "How does KabatOne align with Costa Rica's Public Procurement Law (Law 9986)?",
-      answer: "KabatOne is marketed through local distributors and integrators under Law 9986 and the SICOP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities, provincial governments, and the Ministry of Public Security. SICOP tenders are open to foreign firms with a locally registered representative with CCSS and Tributacion Directa.",
+      question: "How does Kabat One align with Costa Rica's Public Procurement Law (Law 9986)?",
+      answer: "Kabat One is marketed through local distributors and integrators under Law 9986 and the SICOP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities, provincial governments, and the Ministry of Public Security. SICOP tenders are open to foreign firms with a locally registered representative with CCSS and Tributacion Directa.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareCostaRicaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipalidad o Canton en Costa Rica' : 'Transform Public Safety in Your Costa Rican Municipality or Canton'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias 9-1-1, GIS y gestion de incidentes en una sola plataforma operativa para municipalidades costarricenses — desde San Jose y Alajuela hasta los cantones turisticos de Guanacaste y la Peninsula de Osa.'
-            : 'See how KabatOne unifies video surveillance, 9-1-1 emergency dispatch, GIS, and incident management into one operational platform for Costa Rican municipalities — from San Jose and Alajuela to the tourist cantones of Guanacaste and the Osa Peninsula.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias 9-1-1, GIS y gestion de incidentes en una sola plataforma operativa para municipalidades costarricenses — desde San Jose y Alajuela hasta los cantones turisticos de Guanacaste y la Peninsula de Osa.'
+            : 'See how Kabat One unifies video surveillance, 9-1-1 emergency dispatch, GIS, and incident management into one operational platform for Costa Rican municipalities — from San Jose and Alajuela to the tourist cantones of Guanacaste and the Osa Peninsula.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

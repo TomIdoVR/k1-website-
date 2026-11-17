@@ -286,8 +286,8 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           marginBottom: '14px', fontFamily: 'Space Grotesk, sans-serif',
         }}>
           {es
-            ? 'Al enviar este formulario aceptas que KabatOne use tus datos para responder a tu solicitud. No los compartimos con terceros.'
-            : 'By submitting this form you agree that KabatOne may use your details to respond to your enquiry. We do not share them with third parties.'}{' '}
+            ? 'Al enviar este formulario aceptas que Kabat One use tus datos para responder a tu solicitud. No los compartimos con terceros.'
+            : 'By submitting this form you agree that Kabat One may use your details to respond to your enquiry. We do not share them with third parties.'}{' '}
           <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
             {es ? 'Aviso de privacidad' : 'Privacy notice'}
           </Link>

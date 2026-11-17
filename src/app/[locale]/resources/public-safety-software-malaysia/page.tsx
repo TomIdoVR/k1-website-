@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with the Royal Malaysia Police (PDRM) structure?",
-    answer: "KabatOne aligns with PDRM's command hierarchy across 14 state police contingents (13 states + Federal Territory), 165+ police districts, and the Bukit Aman national headquarters — providing unified CAD dispatch, real-time operations center management, and reporting compatible with PDRM's Integrated Incident Management System (IIMS) standards."
+    question: "How does Kabat One integrate with the Royal Malaysia Police (PDRM) structure?",
+    answer: "Kabat One aligns with PDRM's command hierarchy across 14 state police contingents (13 states + Federal Territory), 165+ police districts, and the Bukit Aman national headquarters — providing unified CAD dispatch, real-time operations center management, and reporting compatible with PDRM's Integrated Incident Management System (IIMS) standards."
   },
   {
-    question: "Can KabatOne support Malaysia's integrated emergency number 999?",
-    answer: "Yes. KabatOne integrates with Malaysia's single emergency number 999, which covers police (PDRM), fire (JBPM), and ambulance (SAMM/HEMS) response — enabling unified call-taking, cross-agency dispatch, and incident tracking across all 13 states and three Federal Territories."
+    question: "Can Kabat One support Malaysia's integrated emergency number 999?",
+    answer: "Yes. Kabat One integrates with Malaysia's single emergency number 999, which covers police (PDRM), fire (JBPM), and ambulance (SAMM/HEMS) response — enabling unified call-taking, cross-agency dispatch, and incident tracking across all 13 states and three Federal Territories."
   },
   {
-    question: "How does KabatOne handle the Personal Data Protection Act (PDPA 2010) compliance?",
-    answer: "KabatOne is designed for full PDPA 2010 (Act 709) compliance — implementing data subject consent management, data processing notices, retention period controls, and security safeguards aligned with the Department of Personal Data Protection (JPDP/PDPD) enforcement guidelines."
+    question: "How does Kabat One handle the Personal Data Protection Act (PDPA 2010) compliance?",
+    answer: "Kabat One is designed for full PDPA 2010 (Act 709) compliance — implementing data subject consent management, data processing notices, retention period controls, and security safeguards aligned with the Department of Personal Data Protection (JPDP/PDPD) enforcement guidelines."
   },
   {
     question: "Does the platform support Malaysia's Jabatan Bomba dan Penyelamat (JBPM) fire and rescue?",
-    answer: "Yes. KabatOne integrates JBPM's national fire and rescue command structure — supporting 15 state JBPM offices, 200+ fire stations, the National Crisis and Disaster Management Center (PKBM), and multi-agency coordination for industrial, forest fire, and flood rescue operations."
+    answer: "Yes. Kabat One integrates JBPM's national fire and rescue command structure — supporting 15 state JBPM offices, 200+ fire stations, the National Crisis and Disaster Management Center (PKBM), and multi-agency coordination for industrial, forest fire, and flood rescue operations."
   },
   {
-    question: "How does KabatOne support Malaysia's Safe City Programme and CCTV networks?",
-    answer: "KabatOne integrates with Malaysia's Safe City Programme (CCTV networks in Kuala Lumpur, Putrajaya, and major urban centres), DBKL Smart City cameras, PLUS Expressways ANPR, and MyCC (Malaysia City Command) operations centers — providing AI-powered analytics and unified command visibility."
+    question: "How does Kabat One support Malaysia's Safe City Programme and CCTV networks?",
+    answer: "Kabat One integrates with Malaysia's Safe City Programme (CCTV networks in Kuala Lumpur, Putrajaya, and major urban centres), DBKL Smart City cameras, PLUS Expressways ANPR, and MyCC (Malaysia City Command) operations centers — providing AI-powered analytics and unified command visibility."
   },
   {
-    question: "Can KabatOne manage flood operations in Malaysia?",
-    answer: "Yes. KabatOne integrates DID (Department of Irrigation and Drainage) flood alerts, JMM/MetMalaysia weather warnings, and NADMA (National Disaster Management Agency) situation reports — enabling pre-emptive flood response dispatch, rescue coordination, and temporary shelter management across Malaysia's monsoon season flood zones."
+    question: "Can Kabat One manage flood operations in Malaysia?",
+    answer: "Yes. Kabat One integrates DID (Department of Irrigation and Drainage) flood alerts, JMM/MetMalaysia weather warnings, and NADMA (National Disaster Management Agency) situation reports — enabling pre-emptive flood response dispatch, rescue coordination, and temporary shelter management across Malaysia's monsoon season flood zones."
   },
   {
-    question: "What procurement pathway does KabatOne support in Malaysia?",
-    answer: "KabatOne supports procurement through MyGPR (Malaysian Government Procurement Register), ePerolehan (e-procurement portal) under Treasury Circular 5/2007 and ICT Security Policy, CIDB for construction-linked systems, and Malaysia Digital Economy Corporation (MDEC) funding channels for Smart City projects."
+    question: "What procurement pathway does Kabat One support in Malaysia?",
+    answer: "Kabat One supports procurement through MyGPR (Malaysian Government Procurement Register), ePerolehan (e-procurement portal) under Treasury Circular 5/2007 and ICT Security Policy, CIDB for construction-linked systems, and Malaysia Digital Economy Corporation (MDEC) funding channels for Smart City projects."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura de la Policía Real de Malasia (PDRM)?",
-    answer: "KabatOne se alinea con la jerarquía de mando de la PDRM en 14 contingentes policiales estatales (13 estados + Territorio Federal), más de 165 distritos policiales y el cuartel general nacional de Bukit Aman — proporcionando despacho CAD unificado, gestión del centro de operaciones y reportes compatibles con los estándares IIMS de la PDRM."
+    question: "¿Cómo se integra Kabat One con la estructura de la Policía Real de Malasia (PDRM)?",
+    answer: "Kabat One se alinea con la jerarquía de mando de la PDRM en 14 contingentes policiales estatales (13 estados + Territorio Federal), más de 165 distritos policiales y el cuartel general nacional de Bukit Aman — proporcionando despacho CAD unificado, gestión del centro de operaciones y reportes compatibles con los estándares IIMS de la PDRM."
   },
   {
-    question: "¿Puede KabatOne soportar el número de emergencia integrado 999 de Malasia?",
-    answer: "Sí. KabatOne se integra con el número de emergencia único 999 de Malasia, que cubre respuesta policial (PDRM), bomberos (JBPM) y ambulancia (SAMM/HEMS) — habilitando recepción de llamadas unificada, despacho multiagencia y seguimiento de incidentes en todos los 13 estados y tres Territorios Federales."
+    question: "¿Puede Kabat One soportar el número de emergencia integrado 999 de Malasia?",
+    answer: "Sí. Kabat One se integra con el número de emergencia único 999 de Malasia, que cubre respuesta policial (PDRM), bomberos (JBPM) y ambulancia (SAMM/HEMS) — habilitando recepción de llamadas unificada, despacho multiagencia y seguimiento de incidentes en todos los 13 estados y tres Territorios Federales."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Protección de Datos Personales (PDPA 2010)?",
-    answer: "KabatOne está diseñado para cumplimiento total con la PDPA 2010 (Ley 709) — implementando gestión del consentimiento del titular, avisos de tratamiento de datos, controles de período de retención y salvaguardias de seguridad alineadas con las directrices del Departamento de Protección de Datos Personales (JPDP/PDPD)."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Protección de Datos Personales (PDPA 2010)?",
+    answer: "Kabat One está diseñado para cumplimiento total con la PDPA 2010 (Ley 709) — implementando gestión del consentimiento del titular, avisos de tratamiento de datos, controles de período de retención y salvaguardias de seguridad alineadas con las directrices del Departamento de Protección de Datos Personales (JPDP/PDPD)."
   },
   {
     question: "¿Soporta la plataforma al Jabatan Bomba dan Penyelamat (JBPM) de Malasia?",
-    answer: "Sí. KabatOne integra la estructura de mando nacional de bomberos y rescate de JBPM — soportando 15 oficinas JBPM estatales, más de 200 estaciones de bomberos, el Centro Nacional de Gestión de Crisis y Desastres (PKBM) y coordinación multiagencia para operaciones industriales, de incendios forestales e inundaciones."
+    answer: "Sí. Kabat One integra la estructura de mando nacional de bomberos y rescate de JBPM — soportando 15 oficinas JBPM estatales, más de 200 estaciones de bomberos, el Centro Nacional de Gestión de Crisis y Desastres (PKBM) y coordinación multiagencia para operaciones industriales, de incendios forestales e inundaciones."
   },
   {
-    question: "¿Cómo soporta KabatOne el Programa Safe City de Malasia y las redes CCTV?",
-    answer: "KabatOne se integra con el Programa Safe City de Malasia (redes CCTV en Kuala Lumpur, Putrajaya y principales centros urbanos), cámaras Smart City DBKL, ANPR de Autopistas PLUS y centros de operaciones MyCC — proporcionando analítica de IA y visibilidad de mando unificada."
+    question: "¿Cómo soporta Kabat One el Programa Safe City de Malasia y las redes CCTV?",
+    answer: "Kabat One se integra con el Programa Safe City de Malasia (redes CCTV en Kuala Lumpur, Putrajaya y principales centros urbanos), cámaras Smart City DBKL, ANPR de Autopistas PLUS y centros de operaciones MyCC — proporcionando analítica de IA y visibilidad de mando unificada."
   },
   {
-    question: "¿Puede KabatOne gestionar las operaciones ante inundaciones en Malasia?",
-    answer: "Sí. KabatOne integra alertas de inundación del DID (Departamento de Irrigación y Drenaje), avisos meteorológicos de JMM/MetMalaysia e informes situacionales de NADMA — habilitando despacho preventivo, coordinación de rescate y gestión de albergues temporales en las zonas de inundación de la temporada monzónica."
+    question: "¿Puede Kabat One gestionar las operaciones ante inundaciones en Malasia?",
+    answer: "Sí. Kabat One integra alertas de inundación del DID (Departamento de Irrigación y Drenaje), avisos meteorológicos de JMM/MetMalaysia e informes situacionales de NADMA — habilitando despacho preventivo, coordinación de rescate y gestión de albergues temporales en las zonas de inundación de la temporada monzónica."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Malasia?",
-    answer: "KabatOne soporta contratación a través de MyGPR (Registro de Adquisiciones del Gobierno Malayo), ePerolehan bajo la Circular de Tesorería 5/2007 y Política de Seguridad TIC, CIDB para sistemas vinculados a construcción y canales de financiación MDEC para proyectos de Ciudad Inteligente."
+    question: "¿Qué vía de contratación soporta Kabat One en Malasia?",
+    answer: "Kabat One soporta contratación a través de MyGPR (Registro de Adquisiciones del Gobierno Malayo), ePerolehan bajo la Circular de Tesorería 5/2007 y Política de Seguridad TIC, CIDB para sistemas vinculados a construcción y canales de financiación MDEC para proyectos de Ciudad Inteligente."
   }
 ]
 
@@ -263,7 +263,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• ePerolehan: licitaciones PDRM, JBPM, NADMA, KDN' : '• ePerolehan: PDRM, JBPM, NADMA, KDN bids'}</li>
@@ -297,8 +297,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Malasia?' : 'Ready to modernize public safety in Malaysia?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la PDRM, JBPM y NADMA con una plataforma unificada conforme a PDPA 2010/JPDP y compatible con ePerolehan/MyGPR.'
-            : 'See how KabatOne supports PDRM, JBPM, and NADMA with a unified platform compliant with PDPA 2010/JPDP and compatible with ePerolehan/MyGPR procurement.'}
+            ? 'Conozca cómo Kabat One apoya a la PDRM, JBPM y NADMA con una plataforma unificada conforme a PDPA 2010/JPDP y compatible con ePerolehan/MyGPR.'
+            : 'See how Kabat One supports PDRM, JBPM, and NADMA with a unified platform compliant with PDPA 2010/JPDP and compatible with ePerolehan/MyGPR procurement.'}
         />
       </main>
       <Footer es={es} />

@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareSingaporePage({
       answer: 'Singapur tiene una de las infraestructuras de videovigilancia más avanzadas y densas de Asia. La SPF opera miles de cámaras en HDB estates, vías públicas y espacios comunitarios, con un objetivo de 90,000+ cámaras integradas para 2030. Las cámaras están conectadas a centros de operaciones policiales que utilizan analítica de IA para detección de eventos, reconocimiento de comportamientos y búsqueda forense. El sistema "Police Cameras" integra feeds de múltiples agencias y propietarios de cámaras privadas bajo un protocolo de acceso regulado. La LTA (Land Transport Authority) gestiona cámaras de tráfico en las principales vías. La CAG (Changi Airport Group) opera su propio sistema de seguridad aeroportuaria integrado con las fuerzas de seguridad. El uso de reconocimiento facial está bajo supervisión de la PDPC y requiere evaluación de impacto.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la SPF, SCDF y la visión Smart Nation de Singapur?',
-      answer: 'KabatOne integra las funciones que la SPF, SCDF y las agencias de seguridad de Singapur gestionan a través de sistemas separados: despacho CAD con soporte para operaciones policiales 999 y respuestas SCDF 995 desde un dashboard unificado (K-Dispatch), gestión integrada de redes de cámaras de policía y SCDF con analítica de IA — detección de comportamientos, reconocimiento de placas, búsqueda forense — conforme a la PDPA y los estándares de datos gubernamentales (K-Video), y conciencia situacional GIS compartida entre SPF, SCDF y otras agencias del Home Team para coordinación multiagencia (K-Safety). Despliegue on-premises o en Government Managed Cloud (GMC) con cumplimiento PDPA y requisitos CSA. Demo adaptada al contexto de los centros de operaciones del MHA y el ecosistema Smart Nation de Singapur.',
+      question: '¿Por qué Kabat One es adecuado para la SPF, SCDF y la visión Smart Nation de Singapur?',
+      answer: 'Kabat One integra las funciones que la SPF, SCDF y las agencias de seguridad de Singapur gestionan a través de sistemas separados: despacho CAD con soporte para operaciones policiales 999 y respuestas SCDF 995 desde un dashboard unificado (K-Dispatch), gestión integrada de redes de cámaras de policía y SCDF con analítica de IA — detección de comportamientos, reconocimiento de placas, búsqueda forense — conforme a la PDPA y los estándares de datos gubernamentales (K-Video), y conciencia situacional GIS compartida entre SPF, SCDF y otras agencias del Home Team para coordinación multiagencia (K-Safety). Despliegue on-premises o en Government Managed Cloud (GMC) con cumplimiento PDPA y requisitos CSA. Demo adaptada al contexto de los centros de operaciones del MHA y el ecosistema Smart Nation de Singapur.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareSingaporePage({
       answer: 'Singapore has one of Asia\'s most advanced and dense video surveillance infrastructures. SPF operates thousands of cameras at HDB estates, public roads, and community spaces, targeting 90,000+ integrated AI-analytics cameras by 2030. Cameras feed into police operations centres using AI analytics for event detection, behavioural recognition, and forensic search. The "Police Cameras" system integrates feeds from multiple agencies and regulated private camera owners. The LTA (Land Transport Authority) manages traffic cameras on major roads. Changi Airport Group (CAG) operates its own airport security system integrated with security forces. Facial recognition use is under PDPC supervision and requires impact assessment.',
     },
     {
-      question: 'Why is KabatOne suited for SPF, SCDF, and Singapore\'s Smart Nation vision?',
-      answer: 'KabatOne integrates the functions SPF, SCDF, and Singapore\'s security agencies manage across separate systems: CAD dispatch with support for police 999 and SCDF 995 operations from a unified dashboard (K-Dispatch), integrated management of police and SCDF camera networks with AI analytics — behavioural detection, licence plate recognition, forensic search — compliant with PDPA and government data standards (K-Video), and GIS situational awareness shared across SPF, SCDF, and other Home Team agencies for multi-agency coordination (K-Safety). On-premises or Government Managed Cloud (GMC) deployment with PDPA and CSA compliance. Request a demo tailored to the MHA operations centre and Singapore Smart Nation ecosystem.',
+      question: 'Why is Kabat One suited for SPF, SCDF, and Singapore\'s Smart Nation vision?',
+      answer: 'Kabat One integrates the functions SPF, SCDF, and Singapore\'s security agencies manage across separate systems: CAD dispatch with support for police 999 and SCDF 995 operations from a unified dashboard (K-Dispatch), integrated management of police and SCDF camera networks with AI analytics — behavioural detection, licence plate recognition, forensic search — compliant with PDPA and government data standards (K-Video), and GIS situational awareness shared across SPF, SCDF, and other Home Team agencies for multi-agency coordination (K-Safety). On-premises or Government Managed Cloud (GMC) deployment with PDPA and CSA compliance. Request a demo tailored to the MHA operations centre and Singapore Smart Nation ecosystem.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareSingaporePage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Singapur es el referente mundial de ciudad segura inteligente — con 90,000+ cámaras de policía para 2030, un ecosistema GovTech liderado por el gobierno y el enfoque "Home Team" que integra la SPF, la SCDF y otras agencias bajo el Ministerio del Interior. KabatOne unifica el despacho CAD 999/995, la gestión de cámaras con IA y la conciencia situacional GIS en una plataforma con cumplimiento PDPA y requisitos CSA.'
-                : 'Singapore is the global benchmark for the intelligent safe city — with 90,000+ police cameras planned by 2030, a GovTech-led government technology ecosystem, and a "Home Team" approach integrating SPF, SCDF, and other agencies under the Ministry of Home Affairs. KabatOne unifies 999/995 CAD dispatch, AI camera management, and GIS situational awareness in a single platform with PDPA and CSA compliance.'}
+                ? 'Singapur es el referente mundial de ciudad segura inteligente — con 90,000+ cámaras de policía para 2030, un ecosistema GovTech liderado por el gobierno y el enfoque "Home Team" que integra la SPF, la SCDF y otras agencias bajo el Ministerio del Interior. Kabat One unifica el despacho CAD 999/995, la gestión de cámaras con IA y la conciencia situacional GIS en una plataforma con cumplimiento PDPA y requisitos CSA.'
+                : 'Singapore is the global benchmark for the intelligent safe city — with 90,000+ police cameras planned by 2030, a GovTech-led government technology ecosystem, and a "Home Team" approach integrating SPF, SCDF, and other agencies under the Ministry of Home Affairs. Kabat One unifies 999/995 CAD dispatch, AI camera management, and GIS situational awareness in a single platform with PDPA and CSA compliance.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareSingaporePage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos del Home Team y el Ecosistema Smart Nation' : 'How KabatOne Addresses Home Team and Smart Nation Ecosystem Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos del Home Team y el Ecosistema Smart Nation' : 'How Kabat One Addresses Home Team and Smart Nation Ecosystem Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los centros de operaciones del MHA, SPF y SCDF que necesitan un único dashboard para gestionar llamadas 999/995 simultáneas, monitorear redes de cámaras de policía con analítica de IA y coordinar recursos de múltiples agencias del Home Team sobre un mapa GIS — todo bajo los exigentes requisitos de datos gubernamentales, PDPA y ciberseguridad CSA de los sistemas de información de seguridad de Singapur.'
-                : 'KabatOne is designed for MHA, SPF, and SCDF operations centres that need a single dashboard to manage simultaneous 999/995 calls, monitor police camera networks with AI analytics, and coordinate resources from multiple Home Team agencies on a GIS map — all under Singapore\'s demanding government data standards, PDPA, and CSA cybersecurity requirements.'}
+                ? 'Kabat One está diseñado para los centros de operaciones del MHA, SPF y SCDF que necesitan un único dashboard para gestionar llamadas 999/995 simultáneas, monitorear redes de cámaras de policía con analítica de IA y coordinar recursos de múltiples agencias del Home Team sobre un mapa GIS — todo bajo los exigentes requisitos de datos gubernamentales, PDPA y ciberseguridad CSA de los sistemas de información de seguridad de Singapur.'
+                : 'Kabat One is designed for MHA, SPF, and SCDF operations centres that need a single dashboard to manage simultaneous 999/995 calls, monitor police camera networks with AI analytics, and coordinate resources from multiple Home Team agencies on a GIS map — all under Singapore\'s demanding government data standards, PDPA, and CSA cybersecurity requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareSingaporePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -342,7 +342,7 @@ export default async function PublicSafetySoftwareSingaporePage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para la SPF, SCDF o tu Agencia del Home Team' : 'Request a Demo for SPF, SCDF, or Your Home Team Agency'}
-          subtitle={es ? 'KabatOne integra despacho 999/995, gestión de 90K+ cámaras con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento PDPA y requisitos CSA. Demo adaptada al ecosistema Smart Nation de Singapur.' : 'KabatOne integrates 999/995 dispatch, 90K+ AI camera management, and GIS situational awareness in a single platform with PDPA and CSA compliance. Demo tailored to Singapore\'s Smart Nation ecosystem.'}
+          subtitle={es ? 'Kabat One integra despacho 999/995, gestión de 90K+ cámaras con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento PDPA y requisitos CSA. Demo adaptada al ecosistema Smart Nation de Singapur.' : 'Kabat One integrates 999/995 dispatch, 90K+ AI camera management, and GIS situational awareness in a single platform with PDPA and CSA compliance. Demo tailored to Singapore\'s Smart Nation ecosystem.'}
         />
 
         <Footer es={es} />

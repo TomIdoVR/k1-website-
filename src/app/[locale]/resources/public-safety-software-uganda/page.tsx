@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareUgandaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Uganda: UPF/UPDF/ISO, OPM/UNMA, Kampala Safe City, UETCL/Karuma Dam, UNOC/EACOP & Data Protection Act 2019 | KabatOne'
-      : 'Public Safety Software for Uganda: UPF/UPDF/ISO, OPM/UNMA, Kampala Safe City, UETCL/Karuma Dam, UNOC/EACOP & Data Protection Act 2019 | KabatOne',
+      ? 'Software de Seguridad Pública para Uganda: UPF/UPDF/ISO, OPM/UNMA, Kampala Safe City, UETCL/Karuma Dam, UNOC/EACOP & Data Protection Act 2019 | Kabat One'
+      : 'Public Safety Software for Uganda: UPF/UPDF/ISO, OPM/UNMA, Kampala Safe City, UETCL/Karuma Dam, UNOC/EACOP & Data Protection Act 2019 | Kabat One',
     es
       ? 'Plataforma unificada para la Policía de Uganda (UPF) y UPDF — despacho CAD integrado en 10 subregiones, Kampala Safe City, OPM/UNMA gestión de desastres, UETCL/Karuma Dam 600 MW, UNOC/TotalEnergies EACOP, fronteras EAC, Data Protection Act 2019/PDPO y adquisición PPDA/Act 85 2003.'
       : 'Unified platform for Uganda Police Force (UPF) and UPDF — integrated CAD dispatch across 10 subregions, Kampala Safe City, OPM/UNMA disaster management, UETCL/Karuma Dam 600 MW, UNOC/TotalEnergies EACOP, EAC borders, Data Protection Act 2019/PDPO compliance, and PPDA/Act 85 2003 procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareUgandaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Uganda?'
-        : 'How does KabatOne address Uganda critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Uganda?'
+        : 'How does Kabat One address Uganda critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de UETCL (Uganda Electricity Transmission Company) y las presas de Karuma (600 MW), Isimba (183 MW) e Itanda/Bujagali, la UNOC/TotalEnergies Tilenga (600 Mb) y el oleoducto EACOP (East Africa Crude Oil Pipeline, 1,443 km hasta Tanga/Tanzania), el Puerto de Entebbe (lago Victoria), el Aeropuerto Internacional de Entebbe (EBB) y las minas de oro de Busia/Karamoja.'
-        : 'KabatOne integrates management for UETCL (Uganda Electricity Transmission Company) and Karuma (600 MW), Isimba (183 MW) and Itanda/Bujagali dams, UNOC/TotalEnergies Tilenga (600 Mb) and the EACOP pipeline (East Africa Crude Oil Pipeline, 1,443 km to Tanga/Tanzania), Entebbe Port (Lake Victoria), Entebbe International Airport (EBB), and Busia/Karamoja gold mines.',
+        ? 'Kabat One integra gestión de UETCL (Uganda Electricity Transmission Company) y las presas de Karuma (600 MW), Isimba (183 MW) e Itanda/Bujagali, la UNOC/TotalEnergies Tilenga (600 Mb) y el oleoducto EACOP (East Africa Crude Oil Pipeline, 1,443 km hasta Tanga/Tanzania), el Puerto de Entebbe (lago Victoria), el Aeropuerto Internacional de Entebbe (EBB) y las minas de oro de Busia/Karamoja.'
+        : 'Kabat One integrates management for UETCL (Uganda Electricity Transmission Company) and Karuma (600 MW), Isimba (183 MW) and Itanda/Bujagali dams, UNOC/TotalEnergies Tilenga (600 Mb) and the EACOP pipeline (East Africa Crude Oil Pipeline, 1,443 km to Tanga/Tanzania), Entebbe Port (Lake Victoria), Entebbe International Airport (EBB), and Busia/Karamoja gold mines.',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Uganda?'
-        : 'Is KabatOne compliant with Uganda data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Uganda?'
+        : 'Is Kabat One compliant with Uganda data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Ley de Protección de Datos y Privacidad 2019 supervisada por la PDPO (Oficina de Protección de Datos Personales) del Ministerio de TIC. La arquitectura se alinea con la Ley sobre Delitos Informáticos 2011 y las directrices del NITA-U (Autoridad Nacional de Tecnología de la Información) para sistemas de gobierno digital.'
-        : 'Yes. KabatOne is designed to comply with the Data Protection and Privacy Act 2019 supervised by the PDPO (Personal Data Protection Office) of the Ministry of ICT. The architecture aligns with the Computer Misuse Act 2011 and NITA-U (National Information Technology Authority of Uganda) guidelines for digital government systems.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Ley de Protección de Datos y Privacidad 2019 supervisada por la PDPO (Oficina de Protección de Datos Personales) del Ministerio de TIC. La arquitectura se alinea con la Ley sobre Delitos Informáticos 2011 y las directrices del NITA-U (Autoridad Nacional de Tecnología de la Información) para sistemas de gobierno digital.'
+        : 'Yes. Kabat One is designed to comply with the Data Protection and Privacy Act 2019 supervised by the PDPO (Personal Data Protection Office) of the Ministry of ICT. The architecture aligns with the Computer Misuse Act 2011 and NITA-U (National Information Technology Authority of Uganda) guidelines for digital government systems.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la gestión de fronteras en Uganda?'
-        : 'How does KabatOne support border management in Uganda?',
+        ? '¿Cómo apoya Kabat One la gestión de fronteras en Uganda?'
+        : 'How does Kabat One support border management in Uganda?',
       answer: es
-        ? 'KabatOne gestiona los principales pasos fronterizos: Malaba/Busia (Kenia), Mutukula (Tanzania), Katuna/Cyanika (Ruanda), Mpondwe/Bunagana/Ishasha (RDC), Oraba/Nimule (Sudán del Sur) y el corredor de lago Victoria con Tanzania, con ANPR integrado y coordinación UPF/UPDF/Inmigración.'
-        : 'KabatOne manages major border crossings: Malaba/Busia (Kenya), Mutukula (Tanzania), Katuna/Cyanika (Rwanda), Mpondwe/Bunagana/Ishasha (DRC), Oraba/Nimule (South Sudan) and the Lake Victoria corridor with Tanzania, with integrated ANPR and UPF/UPDF/Immigration coordination.',
+        ? 'Kabat One gestiona los principales pasos fronterizos: Malaba/Busia (Kenia), Mutukula (Tanzania), Katuna/Cyanika (Ruanda), Mpondwe/Bunagana/Ishasha (RDC), Oraba/Nimule (Sudán del Sur) y el corredor de lago Victoria con Tanzania, con ANPR integrado y coordinación UPF/UPDF/Inmigración.'
+        : 'Kabat One manages major border crossings: Malaba/Busia (Kenya), Mutukula (Tanzania), Katuna/Cyanika (Rwanda), Mpondwe/Bunagana/Ishasha (DRC), Oraba/Nimule (South Sudan) and the Lake Victoria corridor with Tanzania, with integrated ANPR and UPF/UPDF/Immigration coordination.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareUgandaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Uganda'
-                : 'KabatOne Platform Capabilities for Uganda'}
+                ? 'Capacidades de la Plataforma Kabat One para Uganda'
+                : 'Kabat One Platform Capabilities for Uganda'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareUgandaPage({
                       a: 'La UPF bajo el Inspector General cubre 10 subregiones con 45,000+ efectivos y CID. Las UPDF apoyan seguridad interna y EACOP/Tilenga. La ISO gestiona inteligencia. La OPM/UNMA coordina desastres meteorológicos.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Uganda?',
-                      a: 'KabatOne integra gestión de UETCL/Karuma Dam (600 MW), Isimba/Bujagali, UNOC/TotalEnergies Tilenga (600 Mb), EACOP (1,443 km hasta Tanga), Puerto de Entebbe y el Aeropuerto Internacional EBB.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Uganda?',
+                      a: 'Kabat One integra gestión de UETCL/Karuma Dam (600 MW), Isimba/Bujagali, UNOC/TotalEnergies Tilenga (600 Mb), EACOP (1,443 km hasta Tanga), Puerto de Entebbe y el Aeropuerto Internacional EBB.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Uganda?',
-                      a: 'Sí. KabatOne cumple con la Data Protection Act 2019/PDPO. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2011 y las directrices NITA-U.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Uganda?',
+                      a: 'Sí. Kabat One cumple con la Data Protection Act 2019/PDPO. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2011 y las directrices NITA-U.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la gestión de fronteras en Uganda?',
-                      a: 'KabatOne gestiona Malaba/Busia (Kenia), Mutukula (Tanzania), Katuna/Cyanika (Ruanda), Mpondwe/Bunagana/Ishasha (RDC) y Oraba/Nimule (Sudán del Sur) con ANPR y coordinación UPF/UPDF/Inmigración.',
+                      q: '¿Cómo apoya Kabat One la gestión de fronteras en Uganda?',
+                      a: 'Kabat One gestiona Malaba/Busia (Kenia), Mutukula (Tanzania), Katuna/Cyanika (Ruanda), Mpondwe/Bunagana/Ishasha (RDC) y Oraba/Nimule (Sudán del Sur) con ANPR y coordinación UPF/UPDF/Inmigración.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareUgandaPage({
                       a: 'The UPF under the Inspector General covers 10 subregions with 45,000+ officers and CID. The UPDF supports internal security and EACOP/Tilenga protection. The ISO manages intelligence. The OPM/UNMA coordinates meteorological disasters.',
                     },
                     {
-                      q: 'How does KabatOne address Uganda critical infrastructure?',
-                      a: 'KabatOne integrates management for UETCL/Karuma Dam (600 MW), Isimba/Bujagali, UNOC/TotalEnergies Tilenga (600 Mb), EACOP (1,443 km to Tanga), Entebbe Port and Entebbe International Airport EBB.',
+                      q: 'How does Kabat One address Uganda critical infrastructure?',
+                      a: 'Kabat One integrates management for UETCL/Karuma Dam (600 MW), Isimba/Bujagali, UNOC/TotalEnergies Tilenga (600 Mb), EACOP (1,443 km to Tanga), Entebbe Port and Entebbe International Airport EBB.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Uganda data legislation?',
-                      a: 'Yes. KabatOne complies with Data Protection Act 2019/PDPO. The architecture aligns with the Computer Misuse Act 2011 and NITA-U guidelines.',
+                      q: 'Is Kabat One compliant with Uganda data legislation?',
+                      a: 'Yes. Kabat One complies with Data Protection Act 2019/PDPO. The architecture aligns with the Computer Misuse Act 2011 and NITA-U guidelines.',
                     },
                     {
-                      q: 'How does KabatOne support border management in Uganda?',
-                      a: 'KabatOne manages Malaba/Busia (Kenya), Mutukula (Tanzania), Katuna/Cyanika (Rwanda), Mpondwe/Bunagana/Ishasha (DRC) and Oraba/Nimule (South Sudan) with ANPR and UPF/UPDF/Immigration coordination.',
+                      q: 'How does Kabat One support border management in Uganda?',
+                      a: 'Kabat One manages Malaba/Busia (Kenya), Mutukula (Tanzania), Katuna/Cyanika (Rwanda), Mpondwe/Bunagana/Ishasha (DRC) and Oraba/Nimule (South Sudan) with ANPR and UPF/UPDF/Immigration coordination.',
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareUgandaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la UPF, UPDF y OPM de Uganda.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Uganda UPF, UPDF and OPM.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la UPF, UPDF y OPM de Uganda.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Uganda UPF, UPDF and OPM.'
           }
         />
       </main>

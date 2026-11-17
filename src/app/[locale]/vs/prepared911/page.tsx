@@ -28,58 +28,58 @@ export default async function VsPrepared911Page({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Prepared 911', url: es ? 'https://kabatone.com/es/vs/prepared911' : 'https://kabatone.com/vs/prepared911' },
+    { name: 'Kabat One vs Prepared 911', url: es ? 'https://kabatone.com/es/vs/prepared911' : 'https://kabatone.com/vs/prepared911' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Prepared 911?',
-      answer: 'Prepared 911 (ahora Prepared) es una plataforma moderna de recepción de llamadas 911 — un sistema de PSAP (Punto de Respuesta de Seguridad Pública) basado en la nube que moderniza la experiencia del operador de 911 con NG911, llamadas de video desde el teléfono del llamante, texto al 911 y despacho básico. KabatOne es la plataforma que gestiona todo lo que ocurre después de que se recibe la llamada: despacho CAD completo (K-Dispatch), video de cámaras de ciudad (K-Video), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic). Prepared moderniza los primeros 60 segundos del ciclo de emergencia; KabatOne coordina la respuesta completa.',
+      question: '¿Cuál es la diferencia entre Kabat One y Prepared 911?',
+      answer: 'Prepared 911 (ahora Prepared) es una plataforma moderna de recepción de llamadas 911 — un sistema de PSAP (Punto de Respuesta de Seguridad Pública) basado en la nube que moderniza la experiencia del operador de 911 con NG911, llamadas de video desde el teléfono del llamante, texto al 911 y despacho básico. Kabat One es la plataforma que gestiona todo lo que ocurre después de que se recibe la llamada: despacho CAD completo (K-Dispatch), video de cámaras de ciudad (K-Video), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic). Prepared moderniza los primeros 60 segundos del ciclo de emergencia; Kabat One coordina la respuesta completa.',
     },
     {
       question: '¿Prepared 911 tiene sistema CAD completo?',
-      answer: 'Prepared incluye funcionalidades básicas de despacho — puede crear y gestionar eventos de emergencia, asignar unidades y comunicarse con los respondedores. Sin embargo, no es un sistema CAD de grado operacional completo con recomendación de unidades basada en proximidad y disponibilidad en tiempo real, routing geoespacial avanzado, logging histórico de despacho para análisis operacional, ni integración nativa con video de ciudad, GIS y tráfico. KabatOne K-Dispatch está construido específicamente para centros de mando que coordinan operaciones complejas a escala de ciudad.',
+      answer: 'Prepared incluye funcionalidades básicas de despacho — puede crear y gestionar eventos de emergencia, asignar unidades y comunicarse con los respondedores. Sin embargo, no es un sistema CAD de grado operacional completo con recomendación de unidades basada en proximidad y disponibilidad en tiempo real, routing geoespacial avanzado, logging histórico de despacho para análisis operacional, ni integración nativa con video de ciudad, GIS y tráfico. Kabat One K-Dispatch está construido específicamente para centros de mando que coordinan operaciones complejas a escala de ciudad.',
     },
     {
-      question: '¿Qué es NG911 y cómo lo maneja KabatOne?',
-      answer: 'NG911 (Next Generation 911) es el estándar moderno para sistemas de respuesta a emergencias — permite que las llamadas de emergencia incluyan texto, fotos y video en tiempo real desde el teléfono del llamante, además de ubicación precisa por GPS. Prepared 911 está diseñado específicamente para PSAP NG911. KabatOne K-Dispatch integra con sistemas NG911 existentes para recibir esos datos — ubicación del llamante, tipo de emergencia, datos multimedia — y los incorpora al flujo de despacho CAD con video de cámaras de ciudad, rastreo de unidades en GIS y coordinación de tráfico.',
+      question: '¿Qué es NG911 y cómo lo maneja Kabat One?',
+      answer: 'NG911 (Next Generation 911) es el estándar moderno para sistemas de respuesta a emergencias — permite que las llamadas de emergencia incluyan texto, fotos y video en tiempo real desde el teléfono del llamante, además de ubicación precisa por GPS. Prepared 911 está diseñado específicamente para PSAP NG911. Kabat One K-Dispatch integra con sistemas NG911 existentes para recibir esos datos — ubicación del llamante, tipo de emergencia, datos multimedia — y los incorpora al flujo de despacho CAD con video de cámaras de ciudad, rastreo de unidades en GIS y coordinación de tráfico.',
     },
     {
-      question: '¿Puede KabatOne reemplazar a Prepared 911?',
-      answer: 'KabatOne K-Dispatch gestiona el despacho y coordinación de respuesta después de que se recibe la llamada. Para organizaciones que necesitan específicamente una solución de recepción de llamadas NG911 certificada (un PSAP), Prepared es un sistema especializado. Sin embargo, K-Dispatch tiene funcionalidades de intake de llamadas integradas, y KabatOne puede funcionar como la plataforma operacional central del centro de mando. Para muchas organizaciones — especialmente en mercados internacionales donde el estándar PSAP de EE.UU. no aplica — KabatOne cubre todo el flujo operacional sin necesidad de Prepared.',
+      question: '¿Puede Kabat One reemplazar a Prepared 911?',
+      answer: 'Kabat One K-Dispatch gestiona el despacho y coordinación de respuesta después de que se recibe la llamada. Para organizaciones que necesitan específicamente una solución de recepción de llamadas NG911 certificada (un PSAP), Prepared es un sistema especializado. Sin embargo, K-Dispatch tiene funcionalidades de intake de llamadas integradas, y Kabat One puede funcionar como la plataforma operacional central del centro de mando. Para muchas organizaciones — especialmente en mercados internacionales donde el estándar PSAP de EE.UU. no aplica — Kabat One cubre todo el flujo operacional sin necesidad de Prepared.',
     },
     {
-      question: '¿Cómo se integran Prepared 911 y KabatOne?',
-      answer: 'Prepared 911 puede integrarse con sistemas CAD a través de APIs estándar. Si una organización usa Prepared para la recepción de llamadas 911, KabatOne K-Dispatch puede recibir los eventos generados por Prepared y tomar el flujo de despacho completo — asignando unidades, monitoreando el video de las cámaras de ciudad más cercanas al incidente, rastreando la respuesta en GIS y coordinando el tráfico en la ruta. En este modelo, Prepared gestiona el primer contacto; KabatOne gestiona la respuesta completa.',
+      question: '¿Cómo se integran Prepared 911 y Kabat One?',
+      answer: 'Prepared 911 puede integrarse con sistemas CAD a través de APIs estándar. Si una organización usa Prepared para la recepción de llamadas 911, Kabat One K-Dispatch puede recibir los eventos generados por Prepared y tomar el flujo de despacho completo — asignando unidades, monitoreando el video de las cámaras de ciudad más cercanas al incidente, rastreando la respuesta en GIS y coordinando el tráfico en la ruta. En este modelo, Prepared gestiona el primer contacto; Kabat One gestiona la respuesta completa.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Prepared 911 no ofrece?',
-      answer: 'Más allá de la recepción de llamadas, KabatOne proporciona: despacho CAD completo (K-Dispatch) con recomendación de unidades, routing geoespacial y logging operacional; video de cámaras fijas de ciudad con analítica IA (K-Video) — el operador puede ver el video de las cámaras cercanas al incidente directamente en el contexto de despacho; conciencia situacional GIS a escala de ciudad (K-Safety) con rastreo de todas las unidades e incidentes; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos durante la respuesta; y video comunitario (K-Connect). Prepared se enfoca en modernizar el primer eslabón de la cadena de respuesta; KabatOne gestiona toda la cadena.',
+      question: '¿Qué ofrece Kabat One que Prepared 911 no ofrece?',
+      answer: 'Más allá de la recepción de llamadas, Kabat One proporciona: despacho CAD completo (K-Dispatch) con recomendación de unidades, routing geoespacial y logging operacional; video de cámaras fijas de ciudad con analítica IA (K-Video) — el operador puede ver el video de las cámaras cercanas al incidente directamente en el contexto de despacho; conciencia situacional GIS a escala de ciudad (K-Safety) con rastreo de todas las unidades e incidentes; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos durante la respuesta; y video comunitario (K-Connect). Prepared se enfoca en modernizar el primer eslabón de la cadena de respuesta; Kabat One gestiona toda la cadena.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Prepared 911?',
-      answer: 'Prepared 911 (now Prepared) is a modern 911 call-taking platform — a cloud-based PSAP (Public Safety Answering Point) system that modernizes the 911 operator experience with NG911, caller phone video calls, text-to-911, and basic dispatch. KabatOne is the platform that manages everything that happens after the call is received: full CAD dispatch (K-Dispatch), city camera video (K-Video), GIS situational awareness (K-Safety), and traffic management (K-Traffic). Prepared modernizes the first 60 seconds of the emergency cycle; KabatOne coordinates the full response.',
+      question: 'What is the difference between Kabat One and Prepared 911?',
+      answer: 'Prepared 911 (now Prepared) is a modern 911 call-taking platform — a cloud-based PSAP (Public Safety Answering Point) system that modernizes the 911 operator experience with NG911, caller phone video calls, text-to-911, and basic dispatch. Kabat One is the platform that manages everything that happens after the call is received: full CAD dispatch (K-Dispatch), city camera video (K-Video), GIS situational awareness (K-Safety), and traffic management (K-Traffic). Prepared modernizes the first 60 seconds of the emergency cycle; Kabat One coordinates the full response.',
     },
     {
       question: 'Does Prepared 911 have a full CAD system?',
-      answer: 'Prepared includes basic dispatch functionality — it can create and manage emergency events, assign units, and communicate with responders. However, it is not a full operational-grade CAD system with unit recommendation based on real-time proximity and availability, advanced geospatial routing, historical dispatch logging for operational analysis, or native integration with city video, GIS, and traffic. KabatOne K-Dispatch is built specifically for command centers coordinating complex operations at city scale.',
+      answer: 'Prepared includes basic dispatch functionality — it can create and manage emergency events, assign units, and communicate with responders. However, it is not a full operational-grade CAD system with unit recommendation based on real-time proximity and availability, advanced geospatial routing, historical dispatch logging for operational analysis, or native integration with city video, GIS, and traffic. Kabat One K-Dispatch is built specifically for command centers coordinating complex operations at city scale.',
     },
     {
-      question: 'What is NG911 and how does KabatOne handle it?',
-      answer: 'NG911 (Next Generation 911) is the modern standard for emergency response systems — it enables emergency calls to include real-time text, photos, and video from the caller\'s phone, as well as precise GPS location. Prepared 911 is designed specifically for NG911 PSAPs. KabatOne K-Dispatch integrates with existing NG911 systems to receive that data — caller location, incident type, multimedia data — and incorporates it into the CAD dispatch workflow with city camera video, unit tracking in GIS, and traffic coordination.',
+      question: 'What is NG911 and how does Kabat One handle it?',
+      answer: 'NG911 (Next Generation 911) is the modern standard for emergency response systems — it enables emergency calls to include real-time text, photos, and video from the caller\'s phone, as well as precise GPS location. Prepared 911 is designed specifically for NG911 PSAPs. Kabat One K-Dispatch integrates with existing NG911 systems to receive that data — caller location, incident type, multimedia data — and incorporates it into the CAD dispatch workflow with city camera video, unit tracking in GIS, and traffic coordination.',
     },
     {
-      question: 'Can KabatOne replace Prepared 911?',
-      answer: 'KabatOne K-Dispatch manages dispatch and response coordination after the call is received. For organizations that specifically need a certified NG911 call-taking solution (a PSAP), Prepared is a specialized system. However, K-Dispatch has integrated call intake functionality, and KabatOne can function as the central operational platform for the command center. For many organizations — especially in international markets where the US PSAP standard does not apply — KabatOne covers the full operational workflow without requiring Prepared.',
+      question: 'Can Kabat One replace Prepared 911?',
+      answer: 'Kabat One K-Dispatch manages dispatch and response coordination after the call is received. For organizations that specifically need a certified NG911 call-taking solution (a PSAP), Prepared is a specialized system. However, K-Dispatch has integrated call intake functionality, and Kabat One can function as the central operational platform for the command center. For many organizations — especially in international markets where the US PSAP standard does not apply — Kabat One covers the full operational workflow without requiring Prepared.',
     },
     {
-      question: 'How do Prepared 911 and KabatOne integrate?',
-      answer: 'Prepared 911 can integrate with CAD systems through standard APIs. If an organization uses Prepared for 911 call receipt, KabatOne K-Dispatch can receive events generated by Prepared and take over the full dispatch workflow — assigning units, monitoring the video from city cameras nearest the incident, tracking the response in GIS, and coordinating traffic on the response route. In this model, Prepared manages the first contact; KabatOne manages the complete response.',
+      question: 'How do Prepared 911 and Kabat One integrate?',
+      answer: 'Prepared 911 can integrate with CAD systems through standard APIs. If an organization uses Prepared for 911 call receipt, Kabat One K-Dispatch can receive events generated by Prepared and take over the full dispatch workflow — assigning units, monitoring the video from city cameras nearest the incident, tracking the response in GIS, and coordinating traffic on the response route. In this model, Prepared manages the first contact; Kabat One manages the complete response.',
     },
     {
-      question: 'What does KabatOne offer that Prepared 911 does not?',
-      answer: 'Beyond call receipt, KabatOne provides: full CAD dispatch (K-Dispatch) with unit recommendation, geospatial routing, and operational logging; city fixed camera video with AI analytics (K-Video) — the operator can see video from cameras near the incident directly in the dispatch context; city-scale GIS situational awareness (K-Safety) tracking all units and incidents; intelligent traffic management (K-Traffic) to coordinate signals during response; and community video (K-Connect). Prepared focuses on modernizing the first link in the response chain; KabatOne manages the entire chain.',
+      question: 'What does Kabat One offer that Prepared 911 does not?',
+      answer: 'Beyond call receipt, Kabat One provides: full CAD dispatch (K-Dispatch) with unit recommendation, geospatial routing, and operational logging; city fixed camera video with AI analytics (K-Video) — the operator can see video from cameras near the incident directly in the dispatch context; city-scale GIS situational awareness (K-Safety) tracking all units and incidents; intelligent traffic management (K-Traffic) to coordinate signals during response; and community video (K-Connect). Prepared focuses on modernizing the first link in the response chain; Kabat One manages the entire chain.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsPrepared911Page({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Prepared 911</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Prepared 911</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsPrepared911Page({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Prepared 911 — Más Allá de la Llamada'
-              : 'KabatOne vs Prepared 911 — Beyond the Call'}
+              ? 'Kabat One vs Prepared 911 — Más Allá de la Llamada'
+              : 'Kabat One vs Prepared 911 — Beyond the Call'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Prepared 911 modernizó la experiencia del operador de 911 — llamadas de video desde el teléfono del llamante, texto al 911, ubicación GPS precisa y una interfaz de despacho diseñada para el siglo XXI. KabatOne empieza donde termina la llamada: CAD completo, video de cámaras de ciudad, conciencia situacional GIS y gestión de tráfico — coordinando la respuesta completa desde el centro de mando.'
-              : 'Prepared 911 modernized the 911 operator experience — caller phone video calls, text-to-911, precise GPS location, and a dispatch interface designed for the 21st century. KabatOne starts where the call ends: full CAD, city camera video, GIS situational awareness, and traffic management — coordinating the complete response from the command center.'}
+              ? 'Prepared 911 modernizó la experiencia del operador de 911 — llamadas de video desde el teléfono del llamante, texto al 911, ubicación GPS precisa y una interfaz de despacho diseñada para el siglo XXI. Kabat One empieza donde termina la llamada: CAD completo, video de cámaras de ciudad, conciencia situacional GIS y gestión de tráfico — coordinando la respuesta completa desde el centro de mando.'
+              : 'Prepared 911 modernized the 911 operator experience — caller phone video calls, text-to-911, precise GPS location, and a dispatch interface designed for the 21st century. Kabat One starts where the call ends: full CAD, city camera video, GIS situational awareness, and traffic management — coordinating the complete response from the command center.'}
           </p>
         </section>
 
@@ -246,22 +246,22 @@ export default async function VsPrepared911Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa. No requiere hardware propietario — se integra con las cámaras, radios y sensores que la organización ya tiene.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform. It requires no proprietary hardware — it integrates with the cameras, radios, and sensors the organization already has.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa. No requiere hardware propietario — se integra con las cámaras, radios y sensores que la organización ya tiene.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform. It requires no proprietary hardware — it integrates with the cameras, radios, and sensors the organization already has.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Mientras Prepared se enfoca en los primeros momentos de la emergencia — la llamada al 911 — KabatOne gestiona todo el ciclo de respuesta: el operador del centro de mando recibe el evento, ve el video de las cámaras de ciudad más cercanas al incidente, asigna la unidad más adecuada basándose en proximidad y disponibilidad en tiempo real, rastrea la unidad respondedora en el GIS y coordina los semáforos en la ruta. Todo en una sola plataforma, sin cambiar de sistema.'
-                : 'While Prepared focuses on the first moments of the emergency — the 911 call — KabatOne manages the entire response cycle: the command center operator receives the event, sees video from city cameras nearest the incident, assigns the most appropriate unit based on real-time proximity and availability, tracks the responding unit in GIS, and coordinates traffic signals on the route. All in one platform, without switching systems.'}
+                ? 'Mientras Prepared se enfoca en los primeros momentos de la emergencia — la llamada al 911 — Kabat One gestiona todo el ciclo de respuesta: el operador del centro de mando recibe el evento, ve el video de las cámaras de ciudad más cercanas al incidente, asigna la unidad más adecuada basándose en proximidad y disponibilidad en tiempo real, rastrea la unidad respondedora en el GIS y coordina los semáforos en la ruta. Todo en una sola plataforma, sin cambiar de sistema.'
+                : 'While Prepared focuses on the first moments of the emergency — the 911 call — Kabat One manages the entire response cycle: the command center operator receives the event, sees video from city cameras nearest the incident, assigns the most appropriate unit based on real-time proximity and availability, tracks the responding unit in GIS, and coordinates traffic signals on the route. All in one platform, without switching systems.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica — mercados donde el modelo de PSAP de EE.UU. no aplica directamente, pero donde las ciudades necesitan la misma capacidad de coordinación operacional a escala de ciudad.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America — markets where the US PSAP model does not apply directly, but where cities need the same city-scale operational coordination capability.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica — mercados donde el modelo de PSAP de EE.UU. no aplica directamente, pero donde las ciudades necesitan la misma capacidad de coordinación operacional a escala de ciudad.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America — markets where the US PSAP model does not apply directly, but where cities need the same city-scale operational coordination capability.'}
             </p>
           </div>
         </section>
@@ -274,12 +274,12 @@ export default async function VsPrepared911Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Prepared 911: Diferencias Clave' : 'KabatOne vs Prepared 911: Key Differences'}
+              {es ? 'Kabat One vs Prepared 911: Diferencias Clave' : 'Kabat One vs Prepared 911: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Prepared 911 en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Prepared 911 across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Prepared 911 en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Prepared 911 across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -294,7 +294,7 @@ export default async function VsPrepared911Page({
                   Prepared 911
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -335,13 +335,13 @@ export default async function VsPrepared911Page({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Pero la respuesta de emergencia continúa mucho más allá de esos primeros 60 segundos. La unidad sale — ¿cómo la rastrea el centro de mando en el GIS? Hay un incidente en la calle — ¿qué cámara de ciudad está apuntando hacia ahí? El tráfico está bloqueado en la ruta de la unidad — ¿puede el centro de mando ajustar los semáforos? Hay múltiples incidentes simultáneos — ¿cómo prioriza el despachador y coordina los recursos? Estas preguntas definen el trabajo del centro de mando después de la llamada, y KabatOne está construido para responderlas.'
-                : 'But the emergency response continues far beyond those first 60 seconds. The unit deploys — how does the command center track it in GIS? There is an incident on the street — which city camera is pointing there? Traffic is blocked on the unit\'s route — can the command center adjust the signals? There are multiple simultaneous incidents — how does the dispatcher prioritize and coordinate resources? These questions define the command center\'s work after the call, and KabatOne is built to answer them.'}
+                ? 'Pero la respuesta de emergencia continúa mucho más allá de esos primeros 60 segundos. La unidad sale — ¿cómo la rastrea el centro de mando en el GIS? Hay un incidente en la calle — ¿qué cámara de ciudad está apuntando hacia ahí? El tráfico está bloqueado en la ruta de la unidad — ¿puede el centro de mando ajustar los semáforos? Hay múltiples incidentes simultáneos — ¿cómo prioriza el despachador y coordina los recursos? Estas preguntas definen el trabajo del centro de mando después de la llamada, y Kabat One está construido para responderlas.'
+                : 'But the emergency response continues far beyond those first 60 seconds. The unit deploys — how does the command center track it in GIS? There is an incident on the street — which city camera is pointing there? Traffic is blocked on the unit\'s route — can the command center adjust the signals? There are multiple simultaneous incidents — how does the dispatcher prioritize and coordinate resources? These questions define the command center\'s work after the call, and Kabat One is built to answer them.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Prepared y KabatOne son más complementarios que competidores directos. Prepared moderniza el primer eslabón de la cadena — la recepción de la llamada al 911. KabatOne gestiona toda la cadena de respuesta — desde la recepción del evento hasta la resolución del incidente, incluyendo video, despacho, GIS y tráfico. En muchos casos, las organizaciones pueden usar ambos: Prepared para la recepción NG911, KabatOne como la plataforma operacional central del centro de mando.'
-                : 'Prepared and KabatOne are more complementary than direct competitors. Prepared modernizes the first link in the chain — the 911 call receipt. KabatOne manages the entire response chain — from event receipt to incident resolution, including video, dispatch, GIS, and traffic. In many cases, organizations can use both: Prepared for NG911 call receipt, KabatOne as the central operational platform of the command center.'}
+                ? 'Prepared y Kabat One son más complementarios que competidores directos. Prepared moderniza el primer eslabón de la cadena — la recepción de la llamada al 911. Kabat One gestiona toda la cadena de respuesta — desde la recepción del evento hasta la resolución del incidente, incluyendo video, despacho, GIS y tráfico. En muchos casos, las organizaciones pueden usar ambos: Prepared para la recepción NG911, Kabat One como la plataforma operacional central del centro de mando.'
+                : 'Prepared and Kabat One are more complementary than direct competitors. Prepared modernizes the first link in the chain — the 911 call receipt. Kabat One manages the entire response chain — from event receipt to incident resolution, including video, dispatch, GIS, and traffic. In many cases, organizations can use both: Prepared for NG911 call receipt, Kabat One as the central operational platform of the command center.'}
             </p>
           </div>
         </section>
@@ -354,17 +354,17 @@ export default async function VsPrepared911Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'KabatOne y NG911 — Integrando el Contexto del Llamante' : 'KabatOne and NG911 — Integrating Caller Context'}
+              {es ? 'Kabat One y NG911 — Integrando el Contexto del Llamante' : 'Kabat One and NG911 — Integrating Caller Context'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne K-Dispatch puede recibir datos de sistemas NG911 a través de APIs estándar — incluyendo ubicación GPS del llamante, tipo de emergencia y datos multimedia. Una vez que se recibe el evento, K-Dispatch toma el flujo de coordinación: muestra la ubicación del incidente en el GIS de K-Safety, identifica las cámaras de K-Video más cercanas, recomienda las unidades disponibles más próximas y puede coordinar K-Traffic para preparar la ruta.'
-                : 'KabatOne K-Dispatch can receive data from NG911 systems through standard APIs — including caller GPS location, incident type, and multimedia data. Once the event is received, K-Dispatch takes over the coordination workflow: it shows the incident location in K-Safety GIS, identifies the nearest K-Video cameras, recommends the closest available units, and can coordinate K-Traffic to prepare the route.'}
+                ? 'Kabat One K-Dispatch puede recibir datos de sistemas NG911 a través de APIs estándar — incluyendo ubicación GPS del llamante, tipo de emergencia y datos multimedia. Una vez que se recibe el evento, K-Dispatch toma el flujo de coordinación: muestra la ubicación del incidente en el GIS de K-Safety, identifica las cámaras de K-Video más cercanas, recomienda las unidades disponibles más próximas y puede coordinar K-Traffic para preparar la ruta.'
+                : 'Kabat One K-Dispatch can receive data from NG911 systems through standard APIs — including caller GPS location, incident type, and multimedia data. Once the event is received, K-Dispatch takes over the coordination workflow: it shows the incident location in K-Safety GIS, identifies the nearest K-Video cameras, recommends the closest available units, and can coordinate K-Traffic to prepare the route.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para organizaciones en mercados internacionales — donde el sistema 911 puede funcionar de manera diferente o donde el estándar NG911 de EE.UU. no aplica directamente — KabatOne K-Dispatch funciona como el sistema de recepción y coordinación central, sin depender de infraestructura PSAP de EE.UU. K-Dispatch tiene funcionalidades nativas de intake de llamadas para centros de mando que gestionan directamente la recepción de emergencias.'
-                : 'For organizations in international markets — where the 911 system may work differently or where the US NG911 standard does not apply directly — KabatOne K-Dispatch functions as the central reception and coordination system, without depending on US PSAP infrastructure. K-Dispatch has native call intake functionality for command centers that directly manage emergency reception.'}
+                ? 'Para organizaciones en mercados internacionales — donde el sistema 911 puede funcionar de manera diferente o donde el estándar NG911 de EE.UU. no aplica directamente — Kabat One K-Dispatch funciona como el sistema de recepción y coordinación central, sin depender de infraestructura PSAP de EE.UU. K-Dispatch tiene funcionalidades nativas de intake de llamadas para centros de mando que gestionan directamente la recepción de emergencias.'
+                : 'For organizations in international markets — where the 911 system may work differently or where the US NG911 standard does not apply directly — Kabat One K-Dispatch functions as the central reception and coordination system, without depending on US PSAP infrastructure. K-Dispatch has native call intake functionality for command centers that directly manage emergency reception.'}
             </p>
           </div>
         </section>
@@ -377,7 +377,7 @@ export default async function VsPrepared911Page({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -446,7 +446,7 @@ export default async function VsPrepared911Page({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Prepared 911: Preguntas y Respuestas' : 'KabatOne vs Prepared 911: Questions & Answers'}
+              {es ? 'Kabat One vs Prepared 911: Preguntas y Respuestas' : 'Kabat One vs Prepared 911: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -486,7 +486,7 @@ export default async function VsPrepared911Page({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Carbyne' : 'KabatOne vs Carbyne'}</span>
+                <span>{es ? 'Kabat One vs Carbyne' : 'Kabat One vs Carbyne'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/cad" style={{
@@ -495,7 +495,7 @@ export default async function VsPrepared911Page({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -504,7 +504,7 @@ export default async function VsPrepared911Page({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/k-dispatch" style={{
@@ -525,8 +525,8 @@ export default async function VsPrepared911Page({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne coordina la respuesta completa — desde la llamada hasta la resolución del incidente — con video, CAD, GIS y tráfico en un solo sistema.'
-            : 'See how KabatOne coordinates the complete response — from the call to incident resolution — with video, CAD, GIS, and traffic in one system.'}
+            ? 'Descubre cómo Kabat One coordina la respuesta completa — desde la llamada hasta la resolución del incidente — con video, CAD, GIS y tráfico en un solo sistema.'
+            : 'See how Kabat One coordinates the complete response — from the call to incident resolution — with video, CAD, GIS, and traffic in one system.'}
         />
 
         <Footer es={es} />

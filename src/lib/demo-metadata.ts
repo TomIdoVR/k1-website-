@@ -47,7 +47,7 @@ export function demoMetadata({
       title: copy.title,
       description: copy.description,
       url,
-      siteName: 'KabatOne',
+      siteName: 'Kabat One',
       type: 'website',
       locale: isEs ? 'es_MX' : 'en_US',
       ...(ogImage ? { images: [ogImage] } : {}),

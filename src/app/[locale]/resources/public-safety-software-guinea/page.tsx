@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareGuineaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Guinea | FAG/PNF, Puerto de Conakry y Seguridad Minera – KabatOne"
-    : "Public Safety Software for Guinea | FAG/PNF, Port of Conakry & Mining Security – KabatOne";
+    ? "Software de Seguridad Pública para Guinea | FAG/PNF, Puerto de Conakry y Seguridad Minera – Kabat One"
+    : "Public Safety Software for Guinea | FAG/PNF, Port of Conakry & Mining Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea (FAG), Policía Nacional, Puerto de Conakry y seguridad de la mayor reserva mundial de bauxita y yacimientos de hierro."
-    : "KabatOne delivers public safety platform for the Guinean Armed Forces (FAG), National Police, Port of Conakry, and security for the world's largest bauxite reserves and iron ore deposits.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea (FAG), Policía Nacional, Puerto de Conakry y seguridad de la mayor reserva mundial de bauxita y yacimientos de hierro."
+    : "Kabat One delivers public safety platform for the Guinean Armed Forces (FAG), National Police, Port of Conakry, and security for the world's largest bauxite reserves and iron ore deposits.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-guinea"
     : "https://kabatone.com/resources/public-safety-software-guinea";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareGuineaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Guinea?"
-        : "How does KabatOne support public safety in Guinea?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Guinea?"
+        : "How does Kabat One support public safety in Guinea?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAG/PNF en las 7 regiones y 33 prefecturas. La plataforma de seguridad minera protege operaciones de CBG, GAC, SMB-Winning y el proyecto Simandou. El sistema de seguridad portuaria cubre el Puerto de Conakry. Los módulos de gestión de fronteras apoyan el control de fronteras con los 6 países vecinos. La arquitectura es adaptable a entornos de baja conectividad."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FAG/PNF operations across 7 regions and 33 prefectures. Mining security platform protects CBG, GAC, SMB-Winning operations, and the Simandou project. Port security system covers the Port of Conakry. Border management modules support control of borders with 6 neighboring countries. Architecture adapts to low-connectivity environments.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAG/PNF en las 7 regiones y 33 prefecturas. La plataforma de seguridad minera protege operaciones de CBG, GAC, SMB-Winning y el proyecto Simandou. El sistema de seguridad portuaria cubre el Puerto de Conakry. Los módulos de gestión de fronteras apoyan el control de fronteras con los 6 países vecinos. La arquitectura es adaptable a entornos de baja conectividad."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FAG/PNF operations across 7 regions and 33 prefectures. Mining security platform protects CBG, GAC, SMB-Winning operations, and the Simandou project. Port security system covers the Port of Conakry. Border management modules support control of borders with 6 neighboring countries. Architecture adapts to low-connectivity environments.",
     },
   ];
 
@@ -179,11 +179,11 @@ export default async function PublicSafetySoftwareGuineaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Guinea" : "KabatOne Capabilities for Guinea"}
+              {es ? "Capacidades Kabat One para Guinea" : "Kabat One Capabilities for Guinea"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

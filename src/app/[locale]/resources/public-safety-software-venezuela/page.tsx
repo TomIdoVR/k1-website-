@@ -39,52 +39,52 @@ export default async function PublicSafetySoftwareVenezuelaPage({
   const faqs = es ? [
     {
       question: "¿Cual es la estructura de seguridad publica en Venezuela?",
-      answer: "Venezuela opera un sistema de seguridad multi-estrato: la Policia Nacional Bolivariana (PNB) con mas de 100,000 funcionarios, el CICPC (Cuerpo de Investigaciones Cientificas Penales y Criminalisticas) con ~15,000 detectives, la Guardia Nacional Bolivariana (GNB) con ~30,000 efectivos y la FANB (Fuerzas Armadas Nacionales Bolivarianas) con ~350,000 integrantes. Cada estado tiene ademas su policia regional. Los numeros de emergencia principales son 171 (PNB), 911 (disponible en algunos estados) y 800-CICPC. KabatOne unifica videovigilancia, despacho CAD y GIS operacional en un solo entorno compartido entre todas estas agencias.",
+      answer: "Venezuela opera un sistema de seguridad multi-estrato: la Policia Nacional Bolivariana (PNB) con mas de 100,000 funcionarios, el CICPC (Cuerpo de Investigaciones Cientificas Penales y Criminalisticas) con ~15,000 detectives, la Guardia Nacional Bolivariana (GNB) con ~30,000 efectivos y la FANB (Fuerzas Armadas Nacionales Bolivarianas) con ~350,000 integrantes. Cada estado tiene ademas su policia regional. Los numeros de emergencia principales son 171 (PNB), 911 (disponible en algunos estados) y 800-CICPC. Kabat One unifica videovigilancia, despacho CAD y GIS operacional en un solo entorno compartido entre todas estas agencias.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Venezuela?",
       answer: "Las adquisiciones se rigen por la Ley de Contrataciones Publicas de 2010 y su reglamento, publicadas en el portal SISCOM (Sistema Integrado de Contratacion). El Ministerio del Poder Popular para Relaciones Interiores, Justicia y Paz centraliza el presupuesto de seguridad. Las gobernaciones estadales tienen fondos propios para infraestructura de vigilancia. Organismos internacionales como el BID, el BM y UNODC financian proyectos especificos de reforma policial y control de narco-trafico, generando licitaciones abiertas a proveedores con representacion local.",
     },
     {
-      question: "¿Como puede KabatOne integrarse con las camaras CCTV existentes en Venezuela?",
-      answer: "KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Camaras municipales en Caracas, Maracaibo, Valencia, Barquisimeto y Maracay se conectan directamente. Sistemas de vigilancia en el Puerto de La Guaira, Puerto Cabello (mayor puerto de contenedores del Caribe), el Aeropuerto Internacional Simon Bolivar (CCS) y la infraestructura PDVSA en el Lago de Maracaibo tambien se integran sin cambiar equipos. La plataforma es compatible con los entornos tecnologicos heredados del sector publico venezolano.",
+      question: "¿Como puede Kabat One integrarse con las camaras CCTV existentes en Venezuela?",
+      answer: "Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Camaras municipales en Caracas, Maracaibo, Valencia, Barquisimeto y Maracay se conectan directamente. Sistemas de vigilancia en el Puerto de La Guaira, Puerto Cabello (mayor puerto de contenedores del Caribe), el Aeropuerto Internacional Simon Bolivar (CCS) y la infraestructura PDVSA en el Lago de Maracaibo tambien se integran sin cambiar equipos. La plataforma es compatible con los entornos tecnologicos heredados del sector publico venezolano.",
     },
     {
       question: "¿Que es el FANB y como coordina operaciones de seguridad en Venezuela?",
-      answer: "La Fuerza Armada Nacional Bolivariana (FANB) integra el Ejercito, la Marina, la Aviacion y la Guardia Nacional Bolivariana, con un rol activo en seguridad interna bajo el concepto de seguridad integral. La FANB opera Zonas Operativas de Defensa Integral (ZODI) y Areas de Defensa Integral (ADI) en todo el territorio. En fronteras, particularmente con Colombia (2,219 km) y Brasil (2,200 km), la FANB coordina operaciones antidroga con la GNB y el CICPC. KabatOne provee el mapa GIS compartido y el registro de incidentes para coordinacion interinstitucional.",
+      answer: "La Fuerza Armada Nacional Bolivariana (FANB) integra el Ejercito, la Marina, la Aviacion y la Guardia Nacional Bolivariana, con un rol activo en seguridad interna bajo el concepto de seguridad integral. La FANB opera Zonas Operativas de Defensa Integral (ZODI) y Areas de Defensa Integral (ADI) en todo el territorio. En fronteras, particularmente con Colombia (2,219 km) y Brasil (2,200 km), la FANB coordina operaciones antidroga con la GNB y el CICPC. Kabat One provee el mapa GIS compartido y el registro de incidentes para coordinacion interinstitucional.",
     },
     {
-      question: "¿Como protege KabatOne la infraestructura de PDVSA y el Lago de Maracaibo?",
-      answer: "Venezuela posee las mayores reservas probadas de petroleo del mundo (~300,000 millones de barriles). La infraestructura de PDVSA en el Lago de Maracaibo, la Faja del Orinoco y los terminales de exportacion requiere vigilancia perimetral continua. KabatOne integra camaras LPR, detectores de intrusion, video analitico perimetral y alertas de sensores IoT en un VMS centralizado, vinculando la respuesta de la GNB y la Guardia de PDVSA con el despacho CAD en tiempo real.",
+      question: "¿Como protege Kabat One la infraestructura de PDVSA y el Lago de Maracaibo?",
+      answer: "Venezuela posee las mayores reservas probadas de petroleo del mundo (~300,000 millones de barriles). La infraestructura de PDVSA en el Lago de Maracaibo, la Faja del Orinoco y los terminales de exportacion requiere vigilancia perimetral continua. Kabat One integra camaras LPR, detectores de intrusion, video analitico perimetral y alertas de sensores IoT en un VMS centralizado, vinculando la respuesta de la GNB y la Guardia de PDVSA con el despacho CAD en tiempo real.",
     },
     {
-      question: "¿Como se alinea KabatOne con el marco de adquisiciones de Venezuela (Ley de Contrataciones Publicas)?",
-      answer: "KabatOne opera a traves de distribuidores e integradores tecnologicos locales conforme a la Ley de Contrataciones Publicas de 2010 y las resoluciones del SISCOM. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio de Relaciones Interiores, gobernaciones estadales y entes descentralizados como PDVSA. Las especificaciones tecnicas abiertas (ONVIF, REST API) facilitan la inclusion en carteles de licitacion sin clausulas de exclusividad de hardware.",
+      question: "¿Como se alinea Kabat One con el marco de adquisiciones de Venezuela (Ley de Contrataciones Publicas)?",
+      answer: "Kabat One opera a traves de distribuidores e integradores tecnologicos locales conforme a la Ley de Contrataciones Publicas de 2010 y las resoluciones del SISCOM. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio de Relaciones Interiores, gobernaciones estadales y entes descentralizados como PDVSA. Las especificaciones tecnicas abiertas (ONVIF, REST API) facilitan la inclusion en carteles de licitacion sin clausulas de exclusividad de hardware.",
     },
   ] : [
     {
       question: "What is Venezuela's public safety structure?",
-      answer: "Venezuela operates a multi-layer security model: the Bolivarian National Police (PNB) with 100,000+ officers, the CICPC (Scientific, Criminal and Forensic Investigations Body) with ~15,000 detectives, the Bolivarian National Guard (GNB) with ~30,000 troops, and the FANB (Bolivarian National Armed Forces) with ~350,000 members. Each state also has its own regional police. Main emergency numbers are 171 (PNB), 911 (available in some states), and 800-CICPC. KabatOne unifies video surveillance, CAD dispatch, and operational GIS into a single shared environment across all agencies.",
+      answer: "Venezuela operates a multi-layer security model: the Bolivarian National Police (PNB) with 100,000+ officers, the CICPC (Scientific, Criminal and Forensic Investigations Body) with ~15,000 detectives, the Bolivarian National Guard (GNB) with ~30,000 troops, and the FANB (Bolivarian National Armed Forces) with ~350,000 members. Each state also has its own regional police. Main emergency numbers are 171 (PNB), 911 (available in some states), and 800-CICPC. Kabat One unifies video surveillance, CAD dispatch, and operational GIS into a single shared environment across all agencies.",
     },
     {
       question: "How is public safety technology funded in Venezuela?",
       answer: "Procurement is governed by the 2010 Public Procurement Law and its regulations, published on the SISCOM portal (Integrated Contracting System). The Ministry of Interior, Justice and Peace centralizes the security budget. State governors have their own funds for surveillance infrastructure. International bodies including the IDB, World Bank, and UNODC fund specific police reform and narco-trafficking control projects, generating tenders open to vendors with local representation.",
     },
     {
-      question: "How can KabatOne integrate with existing CCTV infrastructure in Venezuela?",
-      answer: "KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in Caracas, Maracaibo, Valencia, Barquisimeto, and Maracay connect directly. Surveillance systems at La Guaira Port, Puerto Cabello (the Caribbean's largest container port), Simon Bolivar International Airport (CCS), and PDVSA infrastructure at Lake Maracaibo also integrate without changing equipment. The platform is compatible with legacy technology environments in the Venezuelan public sector.",
+      question: "How can Kabat One integrate with existing CCTV infrastructure in Venezuela?",
+      answer: "Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in Caracas, Maracaibo, Valencia, Barquisimeto, and Maracay connect directly. Surveillance systems at La Guaira Port, Puerto Cabello (the Caribbean's largest container port), Simon Bolivar International Airport (CCS), and PDVSA infrastructure at Lake Maracaibo also integrate without changing equipment. The platform is compatible with legacy technology environments in the Venezuelan public sector.",
     },
     {
       question: "What is FANB and how does it coordinate security operations in Venezuela?",
-      answer: "The Bolivarian National Armed Forces (FANB) integrates the Army, Navy, Air Force, and National Guard with an active role in internal security under Venezuela's integral security doctrine. The FANB operates Integral Defense Operational Zones (ZODI) and Integral Defense Areas (ADI) across the country. On borders — particularly with Colombia (2,219 km) and Brazil (2,200 km) — the FANB coordinates anti-drug operations with the GNB and CICPC. KabatOne provides the shared GIS map and incident record for interagency coordination.",
+      answer: "The Bolivarian National Armed Forces (FANB) integrates the Army, Navy, Air Force, and National Guard with an active role in internal security under Venezuela's integral security doctrine. The FANB operates Integral Defense Operational Zones (ZODI) and Integral Defense Areas (ADI) across the country. On borders — particularly with Colombia (2,219 km) and Brazil (2,200 km) — the FANB coordinates anti-drug operations with the GNB and CICPC. Kabat One provides the shared GIS map and incident record for interagency coordination.",
     },
     {
-      question: "How does KabatOne protect PDVSA and Lake Maracaibo infrastructure?",
-      answer: "Venezuela holds the world's largest proven oil reserves (~300 billion barrels). PDVSA infrastructure at Lake Maracaibo, the Orinoco Belt, and export terminals requires continuous perimeter surveillance. KabatOne integrates LPR cameras, intrusion detectors, perimeter video analytics, and IoT sensor alerts into a centralized VMS, linking GNB and PDVSA Guard response with real-time CAD dispatch.",
+      question: "How does Kabat One protect PDVSA and Lake Maracaibo infrastructure?",
+      answer: "Venezuela holds the world's largest proven oil reserves (~300 billion barrels). PDVSA infrastructure at Lake Maracaibo, the Orinoco Belt, and export terminals requires continuous perimeter surveillance. Kabat One integrates LPR cameras, intrusion detectors, perimeter video analytics, and IoT sensor alerts into a centralized VMS, linking GNB and PDVSA Guard response with real-time CAD dispatch.",
     },
     {
-      question: "How does KabatOne align with Venezuela's procurement framework (Ley de Contrataciones Publicas)?",
-      answer: "KabatOne operates through local technology distributors and integrators under the 2010 Public Procurement Law and SISCOM resolutions. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, state governor, and decentralized entity (PDVSA) budgets. Open technical specifications (ONVIF, REST API) facilitate inclusion in tender documents without hardware exclusivity clauses.",
+      question: "How does Kabat One align with Venezuela's procurement framework (Ley de Contrataciones Publicas)?",
+      answer: "Kabat One operates through local technology distributors and integrators under the 2010 Public Procurement Law and SISCOM resolutions. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, state governor, and decentralized entity (PDVSA) budgets. Open technical specifications (ONVIF, REST API) facilitate inclusion in tender documents without hardware exclusivity clauses.",
     },
   ]
 
@@ -201,8 +201,8 @@ export default async function PublicSafetySoftwareVenezuelaPage({
             color: 'var(--dim)', maxWidth: '720px', margin: '0 0 32px',
           }}>
             {es
-              ? 'Venezuela opera con la PNB, CICPC, GNB, FANB y policias estadales en 23 estados y el Distrito Capital. KabatOne unifica videovigilancia, despacho CAD, GIS operacional y proteccion de infraestructura PDVSA en una sola plataforma — desde el Area Metropolitana de Caracas hasta los terminales de exportacion del Lago de Maracaibo.'
-              : 'Venezuela operates with the PNB, CICPC, GNB, FANB, and state police across 23 states and the Capital District. KabatOne unifies video surveillance, CAD dispatch, operational GIS, and PDVSA infrastructure protection on one platform — from Greater Caracas to the Lake Maracaibo export terminals.'}
+              ? 'Venezuela opera con la PNB, CICPC, GNB, FANB y policias estadales en 23 estados y el Distrito Capital. Kabat One unifica videovigilancia, despacho CAD, GIS operacional y proteccion de infraestructura PDVSA en una sola plataforma — desde el Area Metropolitana de Caracas hasta los terminales de exportacion del Lago de Maracaibo.'
+              : 'Venezuela operates with the PNB, CICPC, GNB, FANB, and state police across 23 states and the Capital District. Kabat One unifies video surveillance, CAD dispatch, operational GIS, and PDVSA infrastructure protection on one platform — from Greater Caracas to the Lake Maracaibo export terminals.'}
           </p>
         </div>
 
@@ -248,7 +248,7 @@ export default async function PublicSafetySoftwareVenezuelaPage({
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--dim)', fontWeight: 500 }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#ef4444', fontWeight: 500 }}>{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</th>
-                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -270,7 +270,7 @@ export default async function PublicSafetySoftwareVenezuelaPage({
             fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
             fontSize: 'clamp(22px, 3vw, 30px)', color: 'var(--white)', margin: '0 0 28px',
           }}>
-            {es ? 'Como Funciona KabatOne en Venezuela' : 'How KabatOne Works in Venezuela'}
+            {es ? 'Como Funciona Kabat One en Venezuela' : 'How Kabat One Works in Venezuela'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {workflowSteps.map((step, i) => (
@@ -351,7 +351,7 @@ export default async function PublicSafetySoftwareVenezuelaPage({
         <div style={{ marginTop: '72px' }}>
           <CTASection
             es={es}
-            h2={es ? 'Conozca KabatOne para Venezuela' : 'See KabatOne for Venezuela'}
+            h2={es ? 'Conozca Kabat One para Venezuela' : 'See Kabat One for Venezuela'}
             subtitle={es
               ? 'Coordinacion PNB, CICPC, GNB y FANB en una sola plataforma. Solicite una demostracion con escenarios reales de su ciudad.'
               : 'PNB, CICPC, GNB, and FANB coordination on one platform. Request a demo with real scenarios from your city.'}

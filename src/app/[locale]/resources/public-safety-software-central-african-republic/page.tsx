@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – KabatOne"
-      : "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – KabatOne",
+      ? "Software de Seguridad Pública para República Centroafricana | FACA/MINUSCA, Gestión Post-Conflicto y Recursos Estratégicos – Kabat One"
+      : "Public Safety Software for Central African Republic | FACA/MINUSCA, Post-Conflict Management & Strategic Resources – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA."
-      : "KabatOne delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
+      ? "Kabat One ofrece plataforma de seguridad pública para las Fuerzas Armadas Centroafricanas (FACA), coordinación con MINUSCA (ONU), gestión de recursos de diamantes/oro/uranio y reconstrucción de la seguridad pública en la RCA."
+      : "Kabat One delivers public safety platform for the Central African Armed Forces (FACA), coordination with MINUSCA (UN), management of diamond/gold/uranium resources, and public safety reconstruction in the CAR.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-central-african-republic"
       : "https://kabatone.com/resources/public-safety-software-central-african-republic",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en la RCA?"
-        : "How does KabatOne support public safety in the CAR?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en la RCA?"
+        : "How does Kabat One support public safety in the CAR?",
       answer: es
-        ? "KabatOne integra sistemas de comando y control para FACA y la Policía Nacional en Bangui y las prefecturas, coordinación de incidentes con MINUSCA, supervisión de rutas de extracción de recursos (diamantes/oro/madera) y gestión de fronteras con Chad, Sudán, Sudan del Sur, RDC, Congo y Camerún."
-        : "KabatOne integrates command-and-control systems for FACA and National Police in Bangui and prefectures, incident coordination with MINUSCA, monitoring of resource extraction routes (diamonds/gold/timber), and border management with Chad, Sudan, South Sudan, DRC, Congo, and Cameroon.",
+        ? "Kabat One integra sistemas de comando y control para FACA y la Policía Nacional en Bangui y las prefecturas, coordinación de incidentes con MINUSCA, supervisión de rutas de extracción de recursos (diamantes/oro/madera) y gestión de fronteras con Chad, Sudán, Sudan del Sur, RDC, Congo y Camerún."
+        : "Kabat One integrates command-and-control systems for FACA and National Police in Bangui and prefectures, incident coordination with MINUSCA, monitoring of resource extraction routes (diamonds/gold/timber), and border management with Chad, Sudan, South Sudan, DRC, Congo, and Cameroon.",
     },
   ]);
 
@@ -263,11 +263,11 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
           </div>
         </section>
 
-        {/* KabatOne */}
+        {/* Kabat One */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para la RCA" : "KabatOne Platform for the CAR"}
+              {es ? "Plataforma Kabat One para la RCA" : "Kabat One Platform for the CAR"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -337,10 +337,10 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
                     : "The Code des Marchés Publics (Law 09-004) and UCGP govern procurement. Major projects are funded by World Bank, UNDP/MINUSCA, and EU (EUMAM/EDF). Russia has direct Wagner/AFRIK contracts.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en la RCA?" : "How does KabatOne support security in the CAR?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en la RCA?" : "How does Kabat One support security in the CAR?",
                   a: es
-                    ? "KabatOne integra comando FACA/DPSR/Gendarmería en Bangui y 7 prefecturas, interoperabilidad con MINUSCA, supervisión de sitios de extracción de recursos, seguimiento del corredor Bangui-Douala y gestión de 6 fronteras."
-                    : "KabatOne integrates FACA/DPSR/Gendarmerie command in Bangui and 7 prefectures, MINUSCA interoperability, resource extraction site monitoring, Bangui-Douala corridor tracking, and 6-border management.",
+                    ? "Kabat One integra comando FACA/DPSR/Gendarmería en Bangui y 7 prefecturas, interoperabilidad con MINUSCA, supervisión de sitios de extracción de recursos, seguimiento del corredor Bangui-Douala y gestión de 6 fronteras."
+                    : "Kabat One integrates FACA/DPSR/Gendarmerie command in Bangui and 7 prefectures, MINUSCA interoperability, resource extraction site monitoring, Bangui-Douala corridor tracking, and 6-border management.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -356,8 +356,8 @@ export default async function PublicSafetySoftwareCentralAfricanRepublicPage({
           es={es}
           h2={es ? "¿Listo para apoyar la reconstrucción de la seguridad pública en la RCA?" : "Ready to support public safety reconstruction in the CAR?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a las FACA, MINUSCA, la Policía Nacional y la gestión de recursos estratégicos en la República Centroafricana."
-            : "Contact us to discover how KabatOne supports FACA, MINUSCA, the National Police, and strategic resource management in the Central African Republic."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a las FACA, MINUSCA, la Policía Nacional y la gestión de recursos estratégicos en la República Centroafricana."
+            : "Contact us to discover how Kabat One supports FACA, MINUSCA, the National Police, and strategic resource management in the Central African Republic."}
         />
         <Footer es={es} />
       </main>

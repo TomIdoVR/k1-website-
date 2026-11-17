@@ -55,14 +55,14 @@ export default async function CallCenterSoftwareGuidePage({
             'El texto al 911 permite a los ciudadanos enviar SMS al 911 — fundamental para quienes no pueden hablar. La FCC exige que las operadoras lo soporten; el software del PSAP debe ser compatible con NG911 para recibir textos.',
         },
         {
-          question: '¿Cómo gestiona la plataforma de KabatOne las operaciones del centro de llamadas 911?',
+          question: '¿Cómo gestiona la plataforma de Kabat One las operaciones del centro de llamadas 911?',
           answer:
             'K-Dispatch integra la recepción de llamadas 911, el despacho CAD y GIS en una sola plataforma — eliminando el traspaso entre el receptor de llamadas y el despachador, y reduciendo significativamente el tiempo hasta el despacho.',
         },
         {
           question: '¿Qué software usa un departamento de despacho 911?',
           answer:
-            'Los departamentos de despacho 911 generalmente operan dos sistemas principales: un sistema de manejo de llamadas (CHS) para recibir y enrutar llamadas 911, y un sistema CAD (Computer-Aided Dispatch) para crear incidentes, asignar unidades y monitorear la respuesta en campo. Los principales proveedores de software para departamentos de despacho 911 incluyen Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety y Carbyne para recepción NG911. Plataformas modernas como KabatOne K-Dispatch unifican ambas funciones — recepción de llamadas y despacho CAD — en una sola interfaz, eliminando demoras en el traspaso de datos entre receptor y despachador.',
+            'Los departamentos de despacho 911 generalmente operan dos sistemas principales: un sistema de manejo de llamadas (CHS) para recibir y enrutar llamadas 911, y un sistema CAD (Computer-Aided Dispatch) para crear incidentes, asignar unidades y monitorear la respuesta en campo. Los principales proveedores de software para departamentos de despacho 911 incluyen Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety y Carbyne para recepción NG911. Plataformas modernas como Kabat One K-Dispatch unifican ambas funciones — recepción de llamadas y despacho CAD — en una sola interfaz, eliminando demoras en el traspaso de datos entre receptor y despachador.',
         },
       ]
     : [
@@ -92,14 +92,14 @@ export default async function CallCenterSoftwareGuidePage({
             'Text-to-911 allows citizens to send SMS to 911 — critical for callers who cannot speak. FCC requires carriers to support it; PSAP software must be NG911 compatible to receive texts.',
         },
         {
-          question: "How does KabatOne's platform handle 911 call center operations?",
+          question: "How does Kabat One's platform handle 911 call center operations?",
           answer:
             'K-Dispatch integrates 911 call intake, CAD dispatch, and GIS in one platform — eliminating the handoff between call-taker and dispatcher and cutting time-to-dispatch significantly.',
         },
         {
           question: 'What software do 911 dispatch departments use?',
           answer:
-            '911 dispatch departments typically run two core software systems: a call handling system (CHs) for answering and routing 911 calls, and a CAD (Computer-Aided Dispatch) system for creating incidents, assigning units, and tracking field response. Leading 911 dispatch department software vendors include Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety, and Carbyne for NG911 intake. Modern platforms like KabatOne K-Dispatch unify both functions — call intake and CAD dispatch — in one interface, eliminating data handoff delays between call-taker and dispatcher.',
+            '911 dispatch departments typically run two core software systems: a call handling system (CHs) for answering and routing 911 calls, and a CAD (Computer-Aided Dispatch) system for creating incidents, assigning units, and tracking field response. Leading 911 dispatch department software vendors include Motorola PremierOne, Tyler Technologies, CentralSquare, Hexagon Safety, and Carbyne for NG911 intake. Modern platforms like Kabat One K-Dispatch unify both functions — call intake and CAD dispatch — in one interface, eliminating data handoff delays between call-taker and dispatcher.',
         },
       ]
   const faqs = [...baseFaqs, ...PSAP_AI_FAQS.callCenterGuide[es ? 'es' : 'en']]
@@ -108,8 +108,8 @@ export default async function CallCenterSoftwareGuidePage({
 
   const artSchema = articleSchema(
     es
-      ? 'Software para Centro de Llamadas 911: Guía de Selección | KabatOne'
-      : '911 Call Center Software: Features & Selection Guide | KabatOne',
+      ? 'Software para Centro de Llamadas 911: Guía de Selección | Kabat One'
+      : '911 Call Center Software: Features & Selection Guide | Kabat One',
     es
       ? 'El software para centros de llamadas 911 gestiona la recepción de emergencias, clasificación de incidentes y despacho de unidades. Funciones clave, diferencia con CAD e integración con NG911.'
       : '911 call center software manages emergency call intake, incident classification, and unit dispatch. Learn the key features, how it differs from CAD, NG911 integration, and what to evaluate.',

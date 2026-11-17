@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareMozambiquePage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Mozambique: PRM/FADM, INGC, Maputo Safe City, ENH/TotalEnergies LNG & Lei 3/2022 | KabatOne'
-      : 'Public Safety Software for Mozambique: PRM/FADM, INGC, Maputo Safe City, ENH/TotalEnergies LNG & Law 3/2022 | KabatOne',
+      ? 'Software de Seguridad Pública para Mozambique: PRM/FADM, INGC, Maputo Safe City, ENH/TotalEnergies LNG & Lei 3/2022 | Kabat One'
+      : 'Public Safety Software for Mozambique: PRM/FADM, INGC, Maputo Safe City, ENH/TotalEnergies LNG & Law 3/2022 | Kabat One',
     es
       ? 'Plataforma unificada para la Policía de la República de Mozambique (PRM) y FADM — despacho CAD integrado en 11 provincias, Maputo Safe City, INGC gestión de desastres, TotalEnergies/ENH LNG Cabo Delgado, Port of Maputo/CFM, Lei 3/2022 y adquisición UGEA/CCP.'
       : 'Unified platform for Mozambique Republic Police (PRM) and FADM — integrated CAD dispatch across 11 provinces, Maputo Safe City, INGC disaster management, TotalEnergies/ENH LNG Cabo Delgado, Port of Maputo/CFM, Law 3/2022 compliance, and UGEA/CCP procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareMozambiquePage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Mozambique?'
-        : 'How does KabatOne address Mozambique critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Mozambique?'
+        : 'How does Kabat One address Mozambique critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de las instalaciones LNG de TotalEnergies/ENH en Cabo Delgado (Mozambique LNG, mayor proyecto de gas de África subsahariana), el corredor ferroviario y portuario CFM (Puerto de Maputo/Matola/Beira/Nacala), la Barragem de Cahora Bassa (hydroelectric 2,075 MW), Mozal aluminium y el Aeropuerto Internacional de Maputo (MPM).'
-        : 'KabatOne integrates management for TotalEnergies/ENH LNG facilities in Cabo Delgado (Mozambique LNG, largest sub-Saharan Africa gas project), CFM railway and port corridor (Port of Maputo/Matola/Beira/Nacala), Cahora Bassa Dam (hydroelectric 2,075 MW), Mozal aluminium smelter, and Maputo International Airport (MPM).',
+        ? 'Kabat One integra gestión de las instalaciones LNG de TotalEnergies/ENH en Cabo Delgado (Mozambique LNG, mayor proyecto de gas de África subsahariana), el corredor ferroviario y portuario CFM (Puerto de Maputo/Matola/Beira/Nacala), la Barragem de Cahora Bassa (hydroelectric 2,075 MW), Mozal aluminium y el Aeropuerto Internacional de Maputo (MPM).'
+        : 'Kabat One integrates management for TotalEnergies/ENH LNG facilities in Cabo Delgado (Mozambique LNG, largest sub-Saharan Africa gas project), CFM railway and port corridor (Port of Maputo/Matola/Beira/Nacala), Cahora Bassa Dam (hydroelectric 2,075 MW), Mozal aluminium smelter, and Maputo International Airport (MPM).',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Mozambique?'
-        : 'Is KabatOne compliant with Mozambique data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Mozambique?'
+        : 'Is Kabat One compliant with Mozambique data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Lei 3/2022 sobre Protección de Datos Personales supervisada por la ANPDP. La arquitectura se alinea con la Lei 4/2021 sobre Ciberseguridad y las directrices del CERT-Moçambique y del INTIC (Instituto Nacional de Tecnologías de la Información y Comunicación).'
-        : 'Yes. KabatOne is designed to comply with Law 3/2022 on Personal Data Protection supervised by the ANPDP. The architecture aligns with Law 4/2021 on Cybersecurity and the guidelines of CERT-Mozambique and INTIC (National Information and Communication Technology Institute).',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Lei 3/2022 sobre Protección de Datos Personales supervisada por la ANPDP. La arquitectura se alinea con la Lei 4/2021 sobre Ciberseguridad y las directrices del CERT-Moçambique y del INTIC (Instituto Nacional de Tecnologías de la Información y Comunicación).'
+        : 'Yes. Kabat One is designed to comply with Law 3/2022 on Personal Data Protection supervised by the ANPDP. The architecture aligns with Law 4/2021 on Cybersecurity and the guidelines of CERT-Mozambique and INTIC (National Information and Communication Technology Institute).',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la respuesta a ciclones en Mozambique?'
-        : 'How does KabatOne support cyclone response in Mozambique?',
+        ? '¿Cómo apoya Kabat One la respuesta a ciclones en Mozambique?'
+        : 'How does Kabat One support cyclone response in Mozambique?',
       answer: es
-        ? 'KabatOne proporciona coordinación multiagencia para la respuesta a ciclones del Índico (como Idai/Kenneth 2019) — integración con el INAM (meteorología), el INGC, las FAM/FADM y la Cruz Roja Mozambicana para alertas tempranas, evacuaciones costeras y gestión de campos de desplazados en las provincias de Sofala, Nampula y Cabo Delgado.'
-        : 'KabatOne provides multi-agency coordination for Indian Ocean cyclone response (like Idai/Kenneth 2019) — integration with INAM (meteorology), INGC, FAM/FADM and the Mozambican Red Cross for early warnings, coastal evacuations and displacement camp management in Sofala, Nampula and Cabo Delgado provinces.',
+        ? 'Kabat One proporciona coordinación multiagencia para la respuesta a ciclones del Índico (como Idai/Kenneth 2019) — integración con el INAM (meteorología), el INGC, las FAM/FADM y la Cruz Roja Mozambicana para alertas tempranas, evacuaciones costeras y gestión de campos de desplazados en las provincias de Sofala, Nampula y Cabo Delgado.'
+        : 'Kabat One provides multi-agency coordination for Indian Ocean cyclone response (like Idai/Kenneth 2019) — integration with INAM (meteorology), INGC, FAM/FADM and the Mozambican Red Cross for early warnings, coastal evacuations and displacement camp management in Sofala, Nampula and Cabo Delgado provinces.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareMozambiquePage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Mozambique'
-                : 'KabatOne Platform Capabilities for Mozambique'}
+                ? 'Capacidades de la Plataforma Kabat One para Mozambique'
+                : 'Kabat One Platform Capabilities for Mozambique'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -446,16 +446,16 @@ export default async function PublicSafetySoftwareMozambiquePage({
                       a: 'La PRM bajo el Ministerio del Interior cubre 11 provincias con SERNIC y Policía de Fronteras. Las FADM apoyan la seguridad en Cabo Delgado (contrainsurgencia) y zonas fronterizas. El INGC coordina la respuesta a ciclones, inundaciones y emergencias naturales.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Mozambique?',
-                      a: 'KabatOne integra gestión del Mozambique LNG (TotalEnergies/ENH Cabo Delgado), Coral Sul FLNG (Eni/ENH), el corredor portuario CFM (Maputo/Beira/Nacala), la Barragem de Cahora Bassa (2,075 MW), Mozal aluminium y el Aeropuerto MPM.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Mozambique?',
+                      a: 'Kabat One integra gestión del Mozambique LNG (TotalEnergies/ENH Cabo Delgado), Coral Sul FLNG (Eni/ENH), el corredor portuario CFM (Maputo/Beira/Nacala), la Barragem de Cahora Bassa (2,075 MW), Mozal aluminium y el Aeropuerto MPM.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Mozambique?',
-                      a: 'Sí. KabatOne cumple con la Lei 3/2022/ANPDP. La arquitectura está alineada con la Lei 4/2021 sobre Ciberseguridad y las directrices CERT-Moçambique/INTIC.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Mozambique?',
+                      a: 'Sí. Kabat One cumple con la Lei 3/2022/ANPDP. La arquitectura está alineada con la Lei 4/2021 sobre Ciberseguridad y las directrices CERT-Moçambique/INTIC.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la respuesta a ciclones en Mozambique?',
-                      a: 'KabatOne proporciona coordinación multiagencia para ciclones del Índico — integración con INAM, INGC/CENOE, FAM/FADM y la Cruz Roja para alertas tempranas, evacuaciones costeras en Sofala/Nampula/Cabo Delgado y gestión de campos de desplazados.',
+                      q: '¿Cómo apoya Kabat One la respuesta a ciclones en Mozambique?',
+                      a: 'Kabat One proporciona coordinación multiagencia para ciclones del Índico — integración con INAM, INGC/CENOE, FAM/FADM y la Cruz Roja para alertas tempranas, evacuaciones costeras en Sofala/Nampula/Cabo Delgado y gestión de campos de desplazados.',
                     },
                   ]
                 : [
@@ -464,16 +464,16 @@ export default async function PublicSafetySoftwareMozambiquePage({
                       a: 'The PRM under the Ministry of Interior covers 11 provinces with SERNIC and Border Police. The FADM support security in Cabo Delgado (counter-insurgency) and border zones. The INGC coordinates cyclone, flood and natural disaster response.',
                     },
                     {
-                      q: 'How does KabatOne address Mozambique critical infrastructure?',
-                      a: 'KabatOne integrates management for Mozambique LNG (TotalEnergies/ENH Cabo Delgado), Coral Sul FLNG (Eni/ENH), the CFM port corridor (Maputo/Beira/Nacala), Cahora Bassa Dam (2,075 MW), Mozal aluminium smelter and MPM Airport.',
+                      q: 'How does Kabat One address Mozambique critical infrastructure?',
+                      a: 'Kabat One integrates management for Mozambique LNG (TotalEnergies/ENH Cabo Delgado), Coral Sul FLNG (Eni/ENH), the CFM port corridor (Maputo/Beira/Nacala), Cahora Bassa Dam (2,075 MW), Mozal aluminium smelter and MPM Airport.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Mozambique data legislation?',
-                      a: 'Yes. KabatOne complies with Law 3/2022/ANPDP. The architecture aligns with Law 4/2021 on Cybersecurity and CERT-Mozambique/INTIC guidelines.',
+                      q: 'Is Kabat One compliant with Mozambique data legislation?',
+                      a: 'Yes. Kabat One complies with Law 3/2022/ANPDP. The architecture aligns with Law 4/2021 on Cybersecurity and CERT-Mozambique/INTIC guidelines.',
                     },
                     {
-                      q: 'How does KabatOne support cyclone response in Mozambique?',
-                      a: 'KabatOne provides multi-agency coordination for Indian Ocean cyclones — integration with INAM, INGC/CENOE, FAM/FADM and the Red Cross for early warnings, coastal evacuations in Sofala/Nampula/Cabo Delgado and displacement camp management.',
+                      q: 'How does Kabat One support cyclone response in Mozambique?',
+                      a: 'Kabat One provides multi-agency coordination for Indian Ocean cyclones — integration with INAM, INGC/CENOE, FAM/FADM and the Red Cross for early warnings, coastal evacuations in Sofala/Nampula/Cabo Delgado and displacement camp management.',
                     },
                   ]
               ).map((item) => (
@@ -495,8 +495,8 @@ export default async function PublicSafetySoftwareMozambiquePage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la PRM, FADM e INGC de Mozambique.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Mozambique PRM, FADM and INGC.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la PRM, FADM e INGC de Mozambique.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Mozambique PRM, FADM and INGC.'
           }
         />
       </main>

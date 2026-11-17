@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareElSalvadorPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias 911 de El Salvador?",
-      answer: "El sistema nacional de emergencias 911 de El Salvador opera bajo la coordinacion de la Policia Nacional Civil (PNC) y el Centro de Operaciones de Emergencia Nacional (COEN) de la Direccion General de Proteccion Civil (DGPC). El 911 integra despacho policial, ambulancias y bomberos. En el contexto del Estado de Excepcion desde marzo de 2022, el sistema ha aumentado su volumen de llamadas relacionadas con reportes de pandillas y actividad sospechosa. Una plataforma como KabatOne se integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS en tiempo real y fusion de video sobre la infraestructura existente.",
+      answer: "El sistema nacional de emergencias 911 de El Salvador opera bajo la coordinacion de la Policia Nacional Civil (PNC) y el Centro de Operaciones de Emergencia Nacional (COEN) de la Direccion General de Proteccion Civil (DGPC). El 911 integra despacho policial, ambulancias y bomberos. En el contexto del Estado de Excepcion desde marzo de 2022, el sistema ha aumentado su volumen de llamadas relacionadas con reportes de pandillas y actividad sospechosa. Una plataforma como Kabat One se integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS en tiempo real y fusion de video sobre la infraestructura existente.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en El Salvador?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareElSalvadorPage({
     },
     {
       question: "¿Que es el COEN y como coordina emergencias en El Salvador?",
-      answer: "El Centro de Operaciones de Emergencia Nacional (COEN), bajo la Direccion General de Proteccion Civil (DGPC), coordina la respuesta a emergencias naturales como erupciones volcanicas (Santa Ana/Ilamatepec, San Miguel/Chaparrastique), terremotos y temporadas de lluvias. El SNET (Servicio Nacional de Estudios Territoriales) provee alertas sismicas y volcanicas en tiempo real. KabatOne integra las alertas del SNET y COEN con video municipal, despacho PNC-FAES y posiciones de unidades en un unico entorno operativo, eliminando la brecha entre respuesta policial y gestion de desastres.",
+      answer: "El Centro de Operaciones de Emergencia Nacional (COEN), bajo la Direccion General de Proteccion Civil (DGPC), coordina la respuesta a emergencias naturales como erupciones volcanicas (Santa Ana/Ilamatepec, San Miguel/Chaparrastique), terremotos y temporadas de lluvias. El SNET (Servicio Nacional de Estudios Territoriales) provee alertas sismicas y volcanicas en tiempo real. Kabat One integra las alertas del SNET y COEN con video municipal, despacho PNC-FAES y posiciones de unidades en un unico entorno operativo, eliminando la brecha entre respuesta policial y gestion de desastres.",
     },
     {
-      question: "¿Puede KabatOne integrarse con los sistemas de videovigilancia existentes en El Salvador?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de San Salvador, Santa Ana, San Miguel y Sonsonate se conectan directamente a la plataforma. Camaras de la CEPA (Comision Ejecutiva Portuaria Autonoma) en Puerto Acajutla y Puerto La Union, LPR en accesos al Aeropuerto Internacional SAL, y sensores ambientales del SNET tambien se integran sin cambiar infraestructura.",
+      question: "¿Puede Kabat One integrarse con los sistemas de videovigilancia existentes en El Salvador?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de San Salvador, Santa Ana, San Miguel y Sonsonate se conectan directamente a la plataforma. Camaras de la CEPA (Comision Ejecutiva Portuaria Autonoma) en Puerto Acajutla y Puerto La Union, LPR en accesos al Aeropuerto Internacional SAL, y sensores ambientales del SNET tambien se integran sin cambiar infraestructura.",
     },
     {
-      question: "¿Como apoya KabatOne la coordinacion entre PNC, FAES y municipios durante el Estado de Excepcion?",
+      question: "¿Como apoya Kabat One la coordinacion entre PNC, FAES y municipios durante el Estado de Excepcion?",
       answer: "K-Safety provee un mapa GIS compartido donde operadores municipales, la PNC (~28,000 agentes) y la FAES (~25,000 efectivos) ven posiciones de unidades, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica la recepcion 911 en un solo registro de incidente, y K-Video centraliza camaras municipales, de infraestructura critica y de puertos en un VMS con busqueda por zona, fecha y tipo de evento. Esto reduce el tiempo de coordinacion en operaciones multi-fuerza que son criticas durante el Estado de Excepcion.",
     },
     {
-      question: "¿Como se alinea KabatOne con la LACAP de El Salvador?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la LACAP (Decreto 868) y su plataforma electronica Comprasal. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y del Ministerio de Justicia y Seguridad Publica, y a los requisitos tecnicos de licitaciones publicas.",
+      question: "¿Como se alinea Kabat One con la LACAP de El Salvador?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la LACAP (Decreto 868) y su plataforma electronica Comprasal. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y del Ministerio de Justicia y Seguridad Publica, y a los requisitos tecnicos de licitaciones publicas.",
     },
   ] : [
     {
       question: "How does El Salvador's 911 emergency system work?",
-      answer: "El Salvador's national 911 emergency system operates under the coordination of the National Civil Police (PNC) and the National Emergency Operations Center (COEN) under the General Directorate of Civil Protection (DGPC). The 911 integrates police dispatch, ambulances, and fire services. Under the State of Exception since March 2022, call volumes related to gang activity reports have increased significantly. A unified platform like KabatOne integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed.",
+      answer: "El Salvador's national 911 emergency system operates under the coordination of the National Civil Police (PNC) and the National Emergency Operations Center (COEN) under the General Directorate of Civil Protection (DGPC). The 911 integrates police dispatch, ambulances, and fire services. Under the State of Exception since March 2022, call volumes related to gang activity reports have increased significantly. A unified platform like Kabat One integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed.",
     },
     {
       question: "How does El Salvador fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareElSalvadorPage({
     },
     {
       question: "What is COEN and how does it coordinate emergencies in El Salvador?",
-      answer: "The National Emergency Operations Center (COEN), under the General Directorate of Civil Protection (DGPC), coordinates response to natural emergencies including volcanic eruptions (Santa Ana/Ilamatepec, San Miguel/Chaparrastique), earthquakes, and rainy season events. SNET (National Territorial Studies Service) provides real-time seismic and volcanic alerts. KabatOne integrates SNET and COEN alerts with municipal video, PNC-FAES dispatch, and unit positions in a single operational environment, closing the gap between police response and disaster management.",
+      answer: "The National Emergency Operations Center (COEN), under the General Directorate of Civil Protection (DGPC), coordinates response to natural emergencies including volcanic eruptions (Santa Ana/Ilamatepec, San Miguel/Chaparrastique), earthquakes, and rainy season events. SNET (National Territorial Studies Service) provides real-time seismic and volcanic alerts. Kabat One integrates SNET and COEN alerts with municipal video, PNC-FAES dispatch, and unit positions in a single operational environment, closing the gap between police response and disaster management.",
     },
     {
-      question: "Can KabatOne integrate with existing camera infrastructure in El Salvador?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in San Salvador, Santa Ana, San Miguel, and Sonsonate connect directly to the platform. CEPA (Executive Port Authority) cameras at Puerto Acajutla and Puerto La Unión, LPR readers at SAL International Airport access points, and SNET environmental sensors also integrate without changing infrastructure.",
+      question: "Can Kabat One integrate with existing camera infrastructure in El Salvador?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in San Salvador, Santa Ana, San Miguel, and Sonsonate connect directly to the platform. CEPA (Executive Port Authority) cameras at Puerto Acajutla and Puerto La Unión, LPR readers at SAL International Airport access points, and SNET environmental sensors also integrate without changing infrastructure.",
     },
     {
-      question: "How does KabatOne support PNC, FAES, and municipal coordination during the State of Exception?",
+      question: "How does Kabat One support PNC, FAES, and municipal coordination during the State of Exception?",
       answer: "K-Safety provides a shared GIS map where municipal operators, the PNC (~28,000 officers), and the FAES (~25,000 troops) see unit positions, active incidents, and live video feeds in real time. K-Dispatch unifies 911 intake into one incident record, and K-Video centralizes municipal, critical infrastructure, and port cameras in a searchable VMS by zone, date, and event type. This reduces coordination time in multi-force operations that are critical during the State of Exception.",
     },
     {
-      question: "How does KabatOne align with El Salvador's LACAP procurement law?",
-      answer: "KabatOne is marketed through local distributors and integrators under LACAP (Decree 868) and its Comprasal e-procurement portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and Ministry of Justice and Public Security budget ranges and the technical specifications of public tenders open to foreign firms.",
+      question: "How does Kabat One align with El Salvador's LACAP procurement law?",
+      answer: "Kabat One is marketed through local distributors and integrators under LACAP (Decree 868) and its Comprasal e-procurement portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and Ministry of Justice and Public Security budget ranges and the technical specifications of public tenders open to foreign firms.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareElSalvadorPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio o Departamento en El Salvador' : 'Transform Public Safety in Your Salvadoran Municipality or Department'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios salvadorenos — desde San Salvador y Santa Ana hasta cabeceras departamentales.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Salvadoran municipalities — from San Salvador and Santa Ana to departmental capitals.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios salvadorenos — desde San Salvador y Santa Ana hasta cabeceras departamentales.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Salvadoran municipalities — from San Salvador and Santa Ana to departmental capitals.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

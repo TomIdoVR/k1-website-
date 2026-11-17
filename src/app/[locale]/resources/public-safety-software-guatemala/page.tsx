@@ -47,19 +47,19 @@ export default async function PublicSafetySoftwareGuatemalaPage({
     },
     {
       question: '¿Que es el CCS de Guatemala City y como funciona?',
-      answer: 'El Centro de Comunicaciones y Servicios (CCS) de la Ciudad de Guatemala es el centro de mando municipal que integra videovigilancia urbana, despacho policial de la PNC y coordinacion con Bomberos Municipales. Opera camaras en los principales corredores viales, mercados y zonas comerciales de la capital. Una plataforma unificada como KabatOne se integra directamente con la infraestructura ONVIF/RTSP existente del CCS, anadiendo CAD estructurado, GIS en tiempo real y analitica de video sobre las camaras ya instaladas sin reemplazar infraestructura.',
+      answer: 'El Centro de Comunicaciones y Servicios (CCS) de la Ciudad de Guatemala es el centro de mando municipal que integra videovigilancia urbana, despacho policial de la PNC y coordinacion con Bomberos Municipales. Opera camaras en los principales corredores viales, mercados y zonas comerciales de la capital. Una plataforma unificada como Kabat One se integra directamente con la infraestructura ONVIF/RTSP existente del CCS, anadiendo CAD estructurado, GIS en tiempo real y analitica de video sobre las camaras ya instaladas sin reemplazar infraestructura.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de camaras existente en Guatemala?',
-      answer: 'Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del CCS de Guatemala City, los sistemas municipales de Quetzaltenango, Escuintla, Mixco y Villa Nueva se conectan directamente a la plataforma. Los lectores LPR de Puerto Quetzal y Puerto Santo Tomas de Castilla, paneles de control de acceso y sensores ambientales de CONRED tambien se integran sin cambiar infraestructura.',
+      question: '¿Puede Kabat One integrarse con la infraestructura de camaras existente en Guatemala?',
+      answer: 'Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del CCS de Guatemala City, los sistemas municipales de Quetzaltenango, Escuintla, Mixco y Villa Nueva se conectan directamente a la plataforma. Los lectores LPR de Puerto Quetzal y Puerto Santo Tomas de Castilla, paneles de control de acceso y sensores ambientales de CONRED tambien se integran sin cambiar infraestructura.',
     },
     {
-      question: '¿Como apoya KabatOne la coordinacion entre PNC, Ejercito y municipios?',
+      question: '¿Como apoya Kabat One la coordinacion entre PNC, Ejercito y municipios?',
       answer: 'K-Safety provee un mapa GIS compartido donde operadores municipales, comandos de la PNC y el Ejercito de Guatemala ven posiciones de unidades, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica la recepcion 110/122/128/1544 en un solo registro de incidente, y K-Video centraliza camaras municipales y de infraestructura critica en un VMS con busqueda por zona, fecha y tipo de evento. Esto reduce el tiempo de coordinacion interinstitucional en incidentes de alta complejidad como desastres naturales, extorsion y narcotrafico.',
     },
     {
-      question: '¿Como se alinea KabatOne con GUATECOMPRAS para licitaciones?',
-      answer: 'KabatOne se comercializa a traves de distribuidores e integradores locales registrados en GUATECOMPRAS (guatecompras.gt) conforme al Decreto 57-92. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y ministeriales y a los requisitos tecnicos de los pliegos de contratacion del MINGOB y del Ejercito de Guatemala.',
+      question: '¿Como se alinea Kabat One con GUATECOMPRAS para licitaciones?',
+      answer: 'Kabat One se comercializa a traves de distribuidores e integradores locales registrados en GUATECOMPRAS (guatecompras.gt) conforme al Decreto 57-92. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y ministeriales y a los requisitos tecnicos de los pliegos de contratacion del MINGOB y del Ejercito de Guatemala.',
     },
   ] : [
     {
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareGuatemalaPage({
     },
     {
       question: "What is Guatemala City's public safety command infrastructure?",
-      answer: "Guatemala City's Centro de Comunicaciones y Servicios (CCS) is the municipal command center integrating urban surveillance, PNC police dispatch, and coordination with Bomberos Municipales. It operates cameras across main road corridors, markets, and commercial areas in the capital. A unified platform like KabatOne integrates directly with the CCS's existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed without replacing hardware.",
+      answer: "Guatemala City's Centro de Comunicaciones y Servicios (CCS) is the municipal command center integrating urban surveillance, PNC police dispatch, and coordination with Bomberos Municipales. It operates cameras across main road corridors, markets, and commercial areas in the capital. A unified platform like Kabat One integrates directly with the CCS's existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed without replacing hardware.",
     },
     {
-      question: 'Can KabatOne integrate with existing camera infrastructure in Guatemala?',
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Guatemala City's CCS cameras, municipal systems in Quetzaltenango, Escuintla, Mixco, and Villa Nueva connect directly to the platform. LPR readers at Puerto Quetzal and Puerto Santo Tomás de Castilla, access control panels, and CONRED environmental sensors also integrate without changing infrastructure.",
+      question: 'Can Kabat One integrate with existing camera infrastructure in Guatemala?',
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Guatemala City's CCS cameras, municipal systems in Quetzaltenango, Escuintla, Mixco, and Villa Nueva connect directly to the platform. LPR readers at Puerto Quetzal and Puerto Santo Tomás de Castilla, access control panels, and CONRED environmental sensors also integrate without changing infrastructure.",
     },
     {
-      question: 'How does KabatOne support coordination between PNC, the Army, and municipalities?',
+      question: 'How does Kabat One support coordination between PNC, the Army, and municipalities?',
       answer: 'K-Safety provides a shared GIS map where municipal operators, PNC commands, and the Ejército de Guatemala see unit positions, active incidents, and live video feeds in real time. K-Dispatch unifies 110/122/128/1544 intake into one incident record, and K-Video centralizes municipal and critical infrastructure cameras in a searchable VMS by zone, date, and event type. This reduces inter-agency coordination time in high-complexity incidents such as natural disasters, extortion, and narcotraffic response.',
     },
     {
-      question: "How does KabatOne align with Guatemala's GUATECOMPRAS procurement system?",
-      answer: "KabatOne is marketed through local distributors and integrators registered on GUATECOMPRAS (guatecompras.gt) under Decree 57-92. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and ministerial budget ranges and the technical specifications of MINGOB and Ejército de Guatemala tender documents.",
+      question: "How does Kabat One align with Guatemala's GUATECOMPRAS procurement system?",
+      answer: "Kabat One is marketed through local distributors and integrators registered on GUATECOMPRAS (guatecompras.gt) under Decree 57-92. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and ministerial budget ranges and the technical specifications of MINGOB and Ejército de Guatemala tender documents.",
     },
   ]
 
@@ -566,8 +566,8 @@ export default async function PublicSafetySoftwareGuatemalaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio o Departamento en Guatemala' : 'Transform Public Safety in Your Guatemalan Municipality or Department'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios guatemaltecos — desde Guatemala City hasta cabeceras departamentales.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Guatemalan municipalities — from Guatemala City to departmental capitals.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios guatemaltecos — desde Guatemala City hasta cabeceras departamentales.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Guatemalan municipalities — from Guatemala City to departmental capitals.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

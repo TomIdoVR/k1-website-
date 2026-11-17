@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareBarbadosPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias de Barbados?",
-      answer: "Barbados opera un sistema de emergencias basado en tres lineas principales: 211 para la policia, 311 para bomberos, y 511 para ambulancias. El Royal Barbados Police Force (RBPF, ~1,500 oficiales) es la fuerza policial nacional, organizada en 4 divisiones policiales (Northern, Southern, Bridgetown y Central). La Barbados Defence Force (BDF, ~800 efectivos) incluye el Regiment y la Coast Guard que patrulla aguas territoriales. El Department of Emergency Management (DEM) coordina la respuesta a desastres bajo la Emergency Management Act. KabatOne unifica estas lineas separadas en un CAD integrado que coordina RBPF, BDF, Barbados Fire Service y Queen Elizabeth Hospital desde una sola plataforma operativa.",
+      answer: "Barbados opera un sistema de emergencias basado en tres lineas principales: 211 para la policia, 311 para bomberos, y 511 para ambulancias. El Royal Barbados Police Force (RBPF, ~1,500 oficiales) es la fuerza policial nacional, organizada en 4 divisiones policiales (Northern, Southern, Bridgetown y Central). La Barbados Defence Force (BDF, ~800 efectivos) incluye el Regiment y la Coast Guard que patrulla aguas territoriales. El Department of Emergency Management (DEM) coordina la respuesta a desastres bajo la Emergency Management Act. Kabat One unifica estas lineas separadas en un CAD integrado que coordina RBPF, BDF, Barbados Fire Service y Queen Elizabeth Hospital desde una sola plataforma operativa.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Barbados?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareBarbadosPage({
     },
     {
       question: "¿Cual es la importancia del turismo para la seguridad de Barbados?",
-      answer: "El turismo representa aproximadamente el 35-40% del PIB de Barbados y genera mas del 60% de las divisas extranjeras. La isla recibe 700K+ visitantes aereos/ano y 800K+ cruceristas/ano a traves del Bridgetown Cruise Terminal (operado por Berth 5 Ltd). Las zonas de alta concentracion turistica — South Coast (St. Lawrence Gap), West Coast (Platinum Coast), Bridgetown Historic Area (UNESCO) — requieren VMS con analitica de multitudes, cobertura CCTV extensa y despacho rapido. La Barbados Tourism Marketing Inc. y el RBPF Tourist Police Unit trabajan conjuntamente. KabatOne integra la vigilancia turistica con el despacho policial y de emergencias en una plataforma unica.",
+      answer: "El turismo representa aproximadamente el 35-40% del PIB de Barbados y genera mas del 60% de las divisas extranjeras. La isla recibe 700K+ visitantes aereos/ano y 800K+ cruceristas/ano a traves del Bridgetown Cruise Terminal (operado por Berth 5 Ltd). Las zonas de alta concentracion turistica — South Coast (St. Lawrence Gap), West Coast (Platinum Coast), Bridgetown Historic Area (UNESCO) — requieren VMS con analitica de multitudes, cobertura CCTV extensa y despacho rapido. La Barbados Tourism Marketing Inc. y el RBPF Tourist Police Unit trabajan conjuntamente. Kabat One integra la vigilancia turistica con el despacho policial y de emergencias en una plataforma unica.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Barbados?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del RBPF en Bridgetown y parroquias perifericas, las camaras del Aeropuerto Internacional Grantley Adams (BGI, 2.5M+ pasajeros/ano), la videovigilancia del Bridgetown Cruise Terminal y del Puerto de Bridgetown, los sistemas de seguridad hotelera en la costa oeste, y las camaras de la Barbados Water Authority (BWA) en estaciones de bombeo se conectan directamente. Compatible con la infraestructura de fibra de FLOW, Digicel y Cable & Wireless.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Barbados?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del RBPF en Bridgetown y parroquias perifericas, las camaras del Aeropuerto Internacional Grantley Adams (BGI, 2.5M+ pasajeros/ano), la videovigilancia del Bridgetown Cruise Terminal y del Puerto de Bridgetown, los sistemas de seguridad hotelera en la costa oeste, y las camaras de la Barbados Water Authority (BWA) en estaciones de bombeo se conectan directamente. Compatible con la infraestructura de fibra de FLOW, Digicel y Cable & Wireless.",
     },
     {
       question: "¿Como se estructura la gobernanza territorial en Barbados?",
       answer: "Barbados es una republica parlamentaria desde noviembre 2021 (antes monarquia constitucional bajo la Corona britanica). La isla tiene 11 parroquias (parishes) como divisiones administrativas historicas — Christ Church, St. Michael (Bridgetown), St. James (Holetown), St. Philip, St. Peter, St. Thomas, St. Joseph, St. Andrew, St. Lucy, St. George, y St. John. Con solo 431 km2 y ~280,000 habitantes, Barbados es uno de los paises mas densamente poblados del hemisferio occidental (~650 hab/km2). Esta densidad facilita un despliegue VMS centralizado que cubre toda la isla desde un unico centro de operaciones.",
     },
     {
-      question: "¿Como se alinea KabatOne con las regulaciones de compras de Barbados?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Financial Management and Audit Act y las directrices del Ministerio de Finanzas. Barbados tiene un compromiso con la transparencia en las adquisiciones publicas alineado con estandares de la OECD (miembro de OECD Global Forum on Transparency). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. La Data Protection Act 2019 rige la proteccion de datos personales, y KabatOne cumple con estos requisitos desde su diseno.",
+      question: "¿Como se alinea Kabat One con las regulaciones de compras de Barbados?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Financial Management and Audit Act y las directrices del Ministerio de Finanzas. Barbados tiene un compromiso con la transparencia en las adquisiciones publicas alineado con estandares de la OECD (miembro de OECD Global Forum on Transparency). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. La Data Protection Act 2019 rige la proteccion de datos personales, y Kabat One cumple con estos requisitos desde su diseno.",
     },
   ] : [
     {
       question: "How does Barbados' emergency response system work?",
-      answer: "Barbados operates an emergency system with three main lines: 211 for police, 311 for fire, and 511 for ambulance. The Royal Barbados Police Force (RBPF, ~1,500 officers) is the national police force, organized into 4 police divisions (Northern, Southern, Bridgetown, and Central). The Barbados Defence Force (BDF, ~800 personnel) includes the Regiment and Coast Guard patrolling territorial waters. The Department of Emergency Management (DEM) coordinates disaster response under the Emergency Management Act. KabatOne unifies these separate lines into one integrated CAD that coordinates RBPF, BDF, Barbados Fire Service, and Queen Elizabeth Hospital from a single operational platform.",
+      answer: "Barbados operates an emergency system with three main lines: 211 for police, 311 for fire, and 511 for ambulance. The Royal Barbados Police Force (RBPF, ~1,500 officers) is the national police force, organized into 4 police divisions (Northern, Southern, Bridgetown, and Central). The Barbados Defence Force (BDF, ~800 personnel) includes the Regiment and Coast Guard patrolling territorial waters. The Department of Emergency Management (DEM) coordinates disaster response under the Emergency Management Act. Kabat One unifies these separate lines into one integrated CAD that coordinates RBPF, BDF, Barbados Fire Service, and Queen Elizabeth Hospital from a single operational platform.",
     },
     {
       question: "How is public safety technology funded in Barbados?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareBarbadosPage({
     },
     {
       question: "How important is tourism to Barbados security?",
-      answer: "Tourism represents approximately 35-40% of Barbados GDP and generates over 60% of foreign exchange earnings. The island receives 700K+ air visitors/year and 800K+ cruise passengers/year through the Bridgetown Cruise Terminal (operated by Berth 5 Ltd). High-concentration tourist zones — South Coast (St. Lawrence Gap), West Coast (Platinum Coast), Bridgetown Historic Area (UNESCO) — require VMS with crowd analytics, extensive CCTV coverage, and rapid dispatch. Barbados Tourism Marketing Inc. and the RBPF Tourist Police Unit work jointly. KabatOne integrates tourist surveillance with police and emergency dispatch on one platform.",
+      answer: "Tourism represents approximately 35-40% of Barbados GDP and generates over 60% of foreign exchange earnings. The island receives 700K+ air visitors/year and 800K+ cruise passengers/year through the Bridgetown Cruise Terminal (operated by Berth 5 Ltd). High-concentration tourist zones — South Coast (St. Lawrence Gap), West Coast (Platinum Coast), Bridgetown Historic Area (UNESCO) — require VMS with crowd analytics, extensive CCTV coverage, and rapid dispatch. Barbados Tourism Marketing Inc. and the RBPF Tourist Police Unit work jointly. Kabat One integrates tourist surveillance with police and emergency dispatch on one platform.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in Barbados?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. RBPF CCTV networks in Bridgetown and peripheral parishes, Grantley Adams International Airport (BGI, 2.5M+ passengers/year) cameras, Bridgetown Cruise Terminal and Port of Bridgetown surveillance, West Coast hotel security systems, and Barbados Water Authority (BWA) pump station cameras connect directly. Compatible with FLOW, Digicel, and Cable & Wireless fiber infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in Barbados?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. RBPF CCTV networks in Bridgetown and peripheral parishes, Grantley Adams International Airport (BGI, 2.5M+ passengers/year) cameras, Bridgetown Cruise Terminal and Port of Bridgetown surveillance, West Coast hotel security systems, and Barbados Water Authority (BWA) pump station cameras connect directly. Compatible with FLOW, Digicel, and Cable & Wireless fiber infrastructure.",
     },
     {
       question: "How is territorial governance structured in Barbados?",
       answer: "Barbados became a parliamentary republic in November 2021 (previously a constitutional monarchy under the British Crown). The island has 11 parishes as historic administrative divisions — Christ Church, St. Michael (Bridgetown), St. James (Holetown), St. Philip, St. Peter, St. Thomas, St. Joseph, St. Andrew, St. Lucy, St. George, and St. John. At only 431 km2 and ~280,000 residents, Barbados is one of the most densely populated countries in the Western Hemisphere (~650 people/km2). This density enables a centralized VMS deployment covering the entire island from a single operations center.",
     },
     {
-      question: "How does KabatOne align with Barbados procurement regulations?",
-      answer: "KabatOne is marketed through local distributors and integrators under the Financial Management and Audit Act and Ministry of Finance guidelines. Barbados has a commitment to public procurement transparency aligned with OECD standards (OECD Global Forum on Transparency member). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Data Protection Act 2019 governs personal data protection, and KabatOne is compliant by design.",
+      question: "How does Kabat One align with Barbados procurement regulations?",
+      answer: "Kabat One is marketed through local distributors and integrators under the Financial Management and Audit Act and Ministry of Finance guidelines. Barbados has a commitment to public procurement transparency aligned with OECD standards (OECD Global Forum on Transparency member). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Data Protection Act 2019 governs personal data protection, and Kabat One is compliant by design.",
     },
   ]
 
@@ -234,7 +234,7 @@ export default async function PublicSafetySoftwareBarbadosPage({
               : 'Barbados hosts the headquarters of multiple regional security organizations, giving it a unique strategic role in the Caribbean:'}
           </p>
           <ul style={{ lineHeight: 1.8, color: '#1e3a5f', paddingLeft: 20 }}>
-            <li><strong>RSS:</strong> {es ? 'Regional Security System — alianza de seguridad del Caribe Oriental (7 miembros). Sede en Paragon, Christ Church. Coordina operaciones conjuntas anti-narcoticos, SAR, y respuesta a desastres. KabatOne puede servir como plataforma tecnologica para el RSS.' : 'Regional Security System — Eastern Caribbean security alliance (7 members). HQ at Paragon, Christ Church. Coordinates joint anti-narcotics, SAR, and disaster response operations. KabatOne can serve as the RSS technology platform.'}</li>
+            <li><strong>RSS:</strong> {es ? 'Regional Security System — alianza de seguridad del Caribe Oriental (7 miembros). Sede en Paragon, Christ Church. Coordina operaciones conjuntas anti-narcoticos, SAR, y respuesta a desastres. Kabat One puede servir como plataforma tecnologica para el RSS.' : 'Regional Security System — Eastern Caribbean security alliance (7 members). HQ at Paragon, Christ Church. Coordinates joint anti-narcotics, SAR, and disaster response operations. Kabat One can serve as the RSS technology platform.'}</li>
             <li><strong>CDEMA:</strong> {es ? 'Caribbean Disaster Emergency Management Agency — sede en Barbados. Coordina preparacion y respuesta a desastres para 19 estados participantes.' : 'Caribbean Disaster Emergency Management Agency — headquartered in Barbados. Coordinates disaster preparedness and response for 19 participating states.'}</li>
             <li><strong>CARICOM IMPACS:</strong> {es ? 'Implementation Agency for Crime and Security — ejecuta la agenda de seguridad de CARICOM. Programas de intercambio de inteligencia criminal y capacitacion regional.' : 'Implementation Agency for Crime and Security — executes CARICOM security agenda. Criminal intelligence exchange and regional training programs.'}</li>
             <li><strong>{es ? 'Centro financiero' : 'Financial center'}:</strong> {es ? 'Barbados es un centro financiero internacional (IBC) con 4,000+ entidades registradas. La Financial Services Commission (FSC) supervisa servicios financieros. La CBB (Central Bank of Barbados) opera en BBD. El cumplimiento AML/CFT requiere vigilancia financiera integrada.' : 'Barbados is an international business center (IBC) with 4,000+ registered entities. The Financial Services Commission (FSC) oversees financial services. The CBB (Central Bank of Barbados) operates in BBD. AML/CFT compliance requires integrated financial surveillance.'}</li>
@@ -244,7 +244,7 @@ export default async function PublicSafetySoftwareBarbadosPage({
         {/* ── Comparison Table ── */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 14, color: '#0f172a' }}>
-            {es ? 'KabatOne vs. Soluciones Fragmentadas' : 'KabatOne vs. Fragmented Solutions'}
+            {es ? 'Kabat One vs. Soluciones Fragmentadas' : 'Kabat One vs. Fragmented Solutions'}
           </h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -252,7 +252,7 @@ export default async function PublicSafetySoftwareBarbadosPage({
                 <tr style={{ background: '#f8fafc' }}>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Sistemas Tradicionales' : 'Legacy Systems'}</th>
-                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>KabatOne</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -345,8 +345,8 @@ export default async function PublicSafetySoftwareBarbadosPage({
           es={es}
           h2={es ? '¿Listo para unificar la seguridad publica de Barbados?' : 'Ready to unify public safety in Barbados?'}
           subtitle={es
-            ? 'KabatOne conecta RBPF, BDF Coast Guard, bomberos, emergencias medicas y DEM en una sola plataforma — con seguridad turistica integrada y coordinacion regional RSS/CDEMA.'
-            : 'KabatOne connects RBPF, BDF Coast Guard, fire service, EMS, and DEM on one platform — with integrated tourism security and RSS/CDEMA regional coordination.'}
+            ? 'Kabat One conecta RBPF, BDF Coast Guard, bomberos, emergencias medicas y DEM en una sola plataforma — con seguridad turistica integrada y coordinacion regional RSS/CDEMA.'
+            : 'Kabat One connects RBPF, BDF Coast Guard, fire service, EMS, and DEM on one platform — with integrated tourism security and RSS/CDEMA regional coordination.'}
         />
       </main>
 

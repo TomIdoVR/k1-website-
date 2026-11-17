@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import { Link } from '@/i18n/navigation'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy – Tamaulipas Contigo | KabatOne',
+  title: 'Privacy Policy – Tamaulipas Contigo | Kabat One',
   description: 'Privacy policy for the Tamaulipas Contigo mobile application, created by CityShob Software Ltd.',
   robots: { index: false },
 }

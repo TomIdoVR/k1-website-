@@ -1,3 +1,12 @@
+## [v2.447] – 2026-11-17 — Brand name is "Kabat One" site-wide; K-Dispatch no longer quotes an implementation duration
+**Changed**
+- Canonical written brand name is now "Kabat One" (Omer, 2026-11-17), matching the logo and the legal entity "Kabat One, S.A. de C.V.". Replaced "KabatOne" with "Kabat One" in all of `src/` (272 files: page copy, EN/ES metadata titles and descriptions, schema, alt text, comments) plus `public/llms.txt`, `public/site.webmanifest` and `public/ebook/siloed-response-en.html`. The domain kabatone.com is unchanged.
+- `src/lib/schema.ts`: Organization schema keeps `name: 'Kabat One'` and adds `alternateName: ['KabatOne', 'K1']`, so Google and AI answers can still match the old one-word spelling to the same entity.
+- `src/components/hero-lab/sol-kdispatch.ts`: the "How long does it take to deploy K-Dispatch?" FAQ (EN/ES) no longer quotes "8 to 16 weeks". It leads with fast setup on one platform and a phased rollout with parallel operation. No implementation duration is quoted publicly.
+
+**Not changed**
+- The two PDFs in `public/downloads/` still say "KabatOne" and need to be re-exported from their source. Scripts, docs and the SEO archive keep the old spelling (not served to visitors).
+
 ## [v2.446] – 2026-11-16 — Weekly SEO + GEO report 2026-11-16; Monday jobs blocked by GitHub access and API credit
 **Added**
 - `SEO/weekly-report-2026-11-16.md`. Focus: the site is fine, the monitoring is not. Search held (28d clicks 631, −0.9%; W45 180, W46 151 in 6 days), all five INDEX-1 pages are indexed, and AI-referred sessions are rising (last 3 weeks avg 11 vs 5). But the Monday jobs could not push (GitHub 403: the active gh login changed to `omercnaani`, which has no write access), and OpenAI and Gemini ran out of API credit, so ChatGPT and Gemini (97.5% of AI referrals) went unmeasured. GEO: Claude core named 3 → 5, Perplexity 8 → 4 (CAD retrieval 9 → 3). `best-cad` W46 9 clicks in 6 days after 15: not closed. Refutes the Slack brief's "Organic −15%" (prior-window peak; W46 organic users 201) and its C5-snippet P0 (two earlier rewrites, definition query answered at the top of Google).

@@ -28,58 +28,58 @@ export default async function VsCarbyneePage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Carbyne', url: es ? 'https://kabatone.com/es/vs/carbyne' : 'https://kabatone.com/vs/carbyne' },
+    { name: 'Kabat One vs Carbyne', url: es ? 'https://kabatone.com/es/vs/carbyne' : 'https://kabatone.com/vs/carbyne' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Carbyne?',
-      answer: 'Carbyne es una plataforma de next-gen 911 especializada en la recepción de llamadas de emergencia — entrega ubicación en tiempo real del llamante, video desde el teléfono del ciudadano y soporte de texto-a-911. Es una excelente solución para modernizar la experiencia del PSAP (Public Safety Answering Point). KabatOne cubre el ciclo completo: desde la recepción de la llamada hasta el despacho, el seguimiento de unidades en campo y el cierre del incidente. Carbyne mejora el punto de entrada del 911; KabatOne gestiona todo lo que ocurre después.',
+      question: '¿Cuál es la diferencia entre Kabat One y Carbyne?',
+      answer: 'Carbyne es una plataforma de next-gen 911 especializada en la recepción de llamadas de emergencia — entrega ubicación en tiempo real del llamante, video desde el teléfono del ciudadano y soporte de texto-a-911. Es una excelente solución para modernizar la experiencia del PSAP (Public Safety Answering Point). Kabat One cubre el ciclo completo: desde la recepción de la llamada hasta el despacho, el seguimiento de unidades en campo y el cierre del incidente. Carbyne mejora el punto de entrada del 911; Kabat One gestiona todo lo que ocurre después.',
     },
     {
       question: '¿Carbyne incluye software de despacho CAD?',
-      answer: 'No. Carbyne se especializa en el manejo de llamadas de emergencia — enriquecimiento de datos del llamante, ubicación precisa y video en tiempo real. No incluye un módulo CAD para despachar unidades, rastrear respondedores en un mapa GIS ni gestionar el ciclo de vida del incidente. Las agencias que usan Carbyne necesitan un sistema CAD separado — como Motorola PremierOne o Hexagon HxGN OnCall — para el despacho. KabatOne incluye K-Dispatch como módulo CAD nativo.',
+      answer: 'No. Carbyne se especializa en el manejo de llamadas de emergencia — enriquecimiento de datos del llamante, ubicación precisa y video en tiempo real. No incluye un módulo CAD para despachar unidades, rastrear respondedores en un mapa GIS ni gestionar el ciclo de vida del incidente. Las agencias que usan Carbyne necesitan un sistema CAD separado — como Motorola PremierOne o Hexagon HxGN OnCall — para el despacho. Kabat One incluye K-Dispatch como módulo CAD nativo.',
     },
     {
-      question: '¿Qué pasa después de la llamada en Carbyne vs KabatOne?',
-      answer: 'En Carbyne, el operador recibe la llamada con datos enriquecidos del llamante — ubicación, video, historial — pero el despacho de una unidad y el seguimiento del respondedor requieren un sistema CAD separado. En KabatOne, el operador recibe el incidente en K-Dispatch, despacha la unidad, la rastrea en tiempo real en el mapa GIS de K-Safety, puede validar con cámaras de K-Video y coordinar el tráfico con K-Traffic — todo en un solo flujo, sin cambiar de sistema.',
+      question: '¿Qué pasa después de la llamada en Carbyne vs Kabat One?',
+      answer: 'En Carbyne, el operador recibe la llamada con datos enriquecidos del llamante — ubicación, video, historial — pero el despacho de una unidad y el seguimiento del respondedor requieren un sistema CAD separado. En Kabat One, el operador recibe el incidente en K-Dispatch, despacha la unidad, la rastrea en tiempo real en el mapa GIS de K-Safety, puede validar con cámaras de K-Video y coordinar el tráfico con K-Traffic — todo en un solo flujo, sin cambiar de sistema.',
     },
     {
-      question: '¿Puede KabatOne integrarse con Carbyne para recepción de llamadas 911?',
-      answer: 'Sí, en principio los sistemas de recepción de llamadas pueden integrarse con plataformas CAD vía APIs estándar. KabatOne K-Dispatch está diseñado para recibir eventos de incidente desde múltiples fuentes y puede integrarse con sistemas de recepción NG911 como Carbyne. Sin embargo, para nuevas implementaciones, KabatOne provee recepción de llamadas integrada como parte del flujo nativo de K-Dispatch.',
+      question: '¿Puede Kabat One integrarse con Carbyne para recepción de llamadas 911?',
+      answer: 'Sí, en principio los sistemas de recepción de llamadas pueden integrarse con plataformas CAD vía APIs estándar. Kabat One K-Dispatch está diseñado para recibir eventos de incidente desde múltiples fuentes y puede integrarse con sistemas de recepción NG911 como Carbyne. Sin embargo, para nuevas implementaciones, Kabat One provee recepción de llamadas integrada como parte del flujo nativo de K-Dispatch.',
     },
     {
-      question: '¿Cuál es mejor para un centro de mando — Carbyne o KabatOne?',
-      answer: 'Carbyne y KabatOne atienden partes distintas del ciclo de respuesta. Carbyne es la opción más fuerte para modernizar la experiencia de recepción de llamadas 911 — la ubicación del llamante y el video desde el teléfono son capacidades genuinamente innovadoras. KabatOne es la plataforma más fuerte para el centro de mando completo: video de cámaras fijas, despacho CAD, GIS, tráfico y coordinación de campo en un flujo unificado. Un centro de mando moderno podría usar ambos — Carbyne para el intake, KabatOne para todo lo demás.',
+      question: '¿Cuál es mejor para un centro de mando — Carbyne o Kabat One?',
+      answer: 'Carbyne y Kabat One atienden partes distintas del ciclo de respuesta. Carbyne es la opción más fuerte para modernizar la experiencia de recepción de llamadas 911 — la ubicación del llamante y el video desde el teléfono son capacidades genuinamente innovadoras. Kabat One es la plataforma más fuerte para el centro de mando completo: video de cámaras fijas, despacho CAD, GIS, tráfico y coordinación de campo en un flujo unificado. Un centro de mando moderno podría usar ambos — Carbyne para el intake, Kabat One para todo lo demás.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Carbyne no ofrece?',
-      answer: 'En comparación con Carbyne, KabatOne ofrece: despacho CAD completo (K-Dispatch) con recomendación de unidades, asignación y logging; conciencia situacional GIS a escala de ciudad (K-Safety) con mapa en tiempo real de todos los incidentes y unidades respondedoras; video persistente de cámaras fijas de ciudad (K-Video) — Carbyne solo tiene video temporal del teléfono del llamante; gestión de tráfico inteligente (K-Traffic); y video comunitario (K-Connect). KabatOne cubre el ciclo completo de respuesta; Carbyne cubre el punto de entrada.',
+      question: '¿Qué ofrece Kabat One que Carbyne no ofrece?',
+      answer: 'En comparación con Carbyne, Kabat One ofrece: despacho CAD completo (K-Dispatch) con recomendación de unidades, asignación y logging; conciencia situacional GIS a escala de ciudad (K-Safety) con mapa en tiempo real de todos los incidentes y unidades respondedoras; video persistente de cámaras fijas de ciudad (K-Video) — Carbyne solo tiene video temporal del teléfono del llamante; gestión de tráfico inteligente (K-Traffic); y video comunitario (K-Connect). Kabat One cubre el ciclo completo de respuesta; Carbyne cubre el punto de entrada.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Carbyne?',
-      answer: 'Carbyne is a next-gen 911 platform specialized in emergency call intake — it delivers real-time caller location, video from the citizen\'s phone, and text-to-911 support. It is an excellent solution for modernizing the PSAP (Public Safety Answering Point) experience. KabatOne covers the full cycle: from call intake through dispatch, field unit tracking, and incident closure. Carbyne improves the 911 intake point; KabatOne manages everything that happens after.',
+      question: 'What is the difference between Kabat One and Carbyne?',
+      answer: 'Carbyne is a next-gen 911 platform specialized in emergency call intake — it delivers real-time caller location, video from the citizen\'s phone, and text-to-911 support. It is an excellent solution for modernizing the PSAP (Public Safety Answering Point) experience. Kabat One covers the full cycle: from call intake through dispatch, field unit tracking, and incident closure. Carbyne improves the 911 intake point; Kabat One manages everything that happens after.',
     },
     {
       question: 'Does Carbyne include CAD dispatch software?',
-      answer: 'No. Carbyne specializes in emergency call handling — caller data enrichment, precise location, and real-time video. It does not include a CAD module for dispatching units, tracking responders on a GIS map, or managing the incident lifecycle. Agencies using Carbyne need a separate CAD system — such as Motorola PremierOne or Hexagon HxGN OnCall — for dispatch. KabatOne includes K-Dispatch as a native CAD module.',
+      answer: 'No. Carbyne specializes in emergency call handling — caller data enrichment, precise location, and real-time video. It does not include a CAD module for dispatching units, tracking responders on a GIS map, or managing the incident lifecycle. Agencies using Carbyne need a separate CAD system — such as Motorola PremierOne or Hexagon HxGN OnCall — for dispatch. Kabat One includes K-Dispatch as a native CAD module.',
     },
     {
-      question: 'What happens after the call in Carbyne vs KabatOne?',
-      answer: 'In Carbyne, the operator receives the call with enriched caller data — location, video, history — but dispatching a unit and tracking the responder require a separate CAD system. In KabatOne, the operator receives the incident in K-Dispatch, dispatches the unit, tracks it in real time on the K-Safety GIS map, can validate with K-Video cameras, and coordinate traffic with K-Traffic — all in one workflow, without switching systems.',
+      question: 'What happens after the call in Carbyne vs Kabat One?',
+      answer: 'In Carbyne, the operator receives the call with enriched caller data — location, video, history — but dispatching a unit and tracking the responder require a separate CAD system. In Kabat One, the operator receives the incident in K-Dispatch, dispatches the unit, tracks it in real time on the K-Safety GIS map, can validate with K-Video cameras, and coordinate traffic with K-Traffic — all in one workflow, without switching systems.',
     },
     {
-      question: 'Can KabatOne integrate with Carbyne for 911 call intake?',
-      answer: 'Yes, in principle call intake systems can integrate with CAD platforms via standard APIs. KabatOne K-Dispatch is designed to receive incident events from multiple sources and can integrate with NG911 intake systems like Carbyne. However, for new deployments, KabatOne provides integrated call intake as part of the native K-Dispatch workflow.',
+      question: 'Can Kabat One integrate with Carbyne for 911 call intake?',
+      answer: 'Yes, in principle call intake systems can integrate with CAD platforms via standard APIs. Kabat One K-Dispatch is designed to receive incident events from multiple sources and can integrate with NG911 intake systems like Carbyne. However, for new deployments, Kabat One provides integrated call intake as part of the native K-Dispatch workflow.',
     },
     {
-      question: 'Which is better for a command center — Carbyne or KabatOne?',
-      answer: 'Carbyne and KabatOne address different parts of the response cycle. Carbyne is the stronger choice for modernizing the 911 call intake experience — caller location and phone video are genuinely innovative capabilities. KabatOne is the stronger platform for the full command center: fixed camera video, CAD dispatch, GIS, traffic, and field coordination in a unified workflow. A modern command center could use both — Carbyne for intake, KabatOne for everything after.',
+      question: 'Which is better for a command center — Carbyne or Kabat One?',
+      answer: 'Carbyne and Kabat One address different parts of the response cycle. Carbyne is the stronger choice for modernizing the 911 call intake experience — caller location and phone video are genuinely innovative capabilities. Kabat One is the stronger platform for the full command center: fixed camera video, CAD dispatch, GIS, traffic, and field coordination in a unified workflow. A modern command center could use both — Carbyne for intake, Kabat One for everything after.',
     },
     {
-      question: 'What does KabatOne offer that Carbyne does not?',
-      answer: 'Compared to Carbyne, KabatOne provides: full CAD dispatch (K-Dispatch) with unit recommendation, assignment, and logging; city-scale GIS situational awareness (K-Safety) with a real-time map of all incidents and responding units; persistent city fixed-camera video (K-Video) — Carbyne only has temporary caller-phone video; intelligent traffic management (K-Traffic); and community video (K-Connect). KabatOne covers the full response cycle; Carbyne covers the intake point.',
+      question: 'What does Kabat One offer that Carbyne does not?',
+      answer: 'Compared to Carbyne, Kabat One provides: full CAD dispatch (K-Dispatch) with unit recommendation, assignment, and logging; city-scale GIS situational awareness (K-Safety) with a real-time map of all incidents and responding units; persistent city fixed-camera video (K-Video) — Carbyne only has temporary caller-phone video; intelligent traffic management (K-Traffic); and community video (K-Connect). Kabat One covers the full response cycle; Carbyne covers the intake point.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsCarbyneePage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Carbyne</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Carbyne</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsCarbyneePage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Carbyne — Carbyne Reinventó el 911. KabatOne Gestiona Todo lo que Sigue.'
-              : 'KabatOne vs Carbyne — Carbyne Reinvented 911 Intake. KabatOne Manages Everything After.'}
+              ? 'Kabat One vs Carbyne — Carbyne Reinventó el 911. Kabat One Gestiona Todo lo que Sigue.'
+              : 'Kabat One vs Carbyne — Carbyne Reinvented 911 Intake. Kabat One Manages Everything After.'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Carbyne es una de las innovaciones más importantes en tecnología de 911 de la última década — ubicación precisa del llamante, video desde el teléfono del ciudadano y texto-a-911 en una plataforma de next-gen 911. KabatOne comienza donde termina la llamada: despacho CAD, conciencia situacional GIS, video de cámaras fijas de ciudad y gestión de tráfico en un flujo de respuesta unificado desde el centro de mando.'
-              : 'Carbyne is one of the most important innovations in 911 technology in the past decade — precise caller location, video from the citizen\'s phone, and text-to-911 in a next-gen 911 platform. KabatOne starts where the call ends: CAD dispatch, GIS situational awareness, city fixed-camera video, and traffic management in a unified response workflow from the command center.'}
+              ? 'Carbyne es una de las innovaciones más importantes en tecnología de 911 de la última década — ubicación precisa del llamante, video desde el teléfono del ciudadano y texto-a-911 en una plataforma de next-gen 911. Kabat One comienza donde termina la llamada: despacho CAD, conciencia situacional GIS, video de cámaras fijas de ciudad y gestión de tráfico en un flujo de respuesta unificado desde el centro de mando.'
+              : 'Carbyne is one of the most important innovations in 911 technology in the past decade — precise caller location, video from the citizen\'s phone, and text-to-911 in a next-gen 911 platform. Kabat One starts where the call ends: CAD dispatch, GIS situational awareness, city fixed-camera video, and traffic management in a unified response workflow from the command center.'}
           </p>
         </section>
 
@@ -246,22 +246,22 @@ export default async function VsCarbyneePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne cubre el ciclo completo de respuesta a emergencias — desde la recepción del incidente hasta el cierre en campo. Cuando un operador recibe un incidente en K-Dispatch, puede validarlo con cámaras de K-Video, despacharlo, rastrear la unidad respondedora en el mapa GIS de K-Safety, y coordinar el tráfico con K-Traffic — sin salir de la plataforma. KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos.'
-                : 'KabatOne covers the full emergency response cycle — from incident intake through field closure. When an operator receives an incident in K-Dispatch, they can validate it with K-Video cameras, dispatch it, track the responding unit on the K-Safety GIS map, and coordinate traffic with K-Traffic — without leaving the platform. KabatOne is deployed across 40+ cities protecting over 73 million citizens.'}
+                ? 'Kabat One cubre el ciclo completo de respuesta a emergencias — desde la recepción del incidente hasta el cierre en campo. Cuando un operador recibe un incidente en K-Dispatch, puede validarlo con cámaras de K-Video, despacharlo, rastrear la unidad respondedora en el mapa GIS de K-Safety, y coordinar el tráfico con K-Traffic — sin salir de la plataforma. Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos.'
+                : 'Kabat One covers the full emergency response cycle — from incident intake through field closure. When an operator receives an incident in K-Dispatch, they can validate it with K-Video cameras, dispatch it, track the responding unit on the K-Safety GIS map, and coordinate traffic with K-Traffic — without leaving the platform. Kabat One is deployed across 40+ cities protecting over 73 million citizens.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Carbyne y KabatOne no son necesariamente mutuamente excluyentes — Carbyne puede mejorar la calidad de la llamada de entrada, mientras KabatOne gestiona todo el flujo de respuesta posterior. Pero como plataforma central del centro de mando, KabatOne cubre un alcance significativamente mayor que Carbyne.'
-                : 'Carbyne and KabatOne are not necessarily mutually exclusive — Carbyne can improve incoming call quality while KabatOne manages the entire subsequent response workflow. But as the core command center platform, KabatOne covers a significantly broader scope than Carbyne.'}
+                ? 'Carbyne y Kabat One no son necesariamente mutuamente excluyentes — Carbyne puede mejorar la calidad de la llamada de entrada, mientras Kabat One gestiona todo el flujo de respuesta posterior. Pero como plataforma central del centro de mando, Kabat One cubre un alcance significativamente mayor que Carbyne.'
+                : 'Carbyne and Kabat One are not necessarily mutually exclusive — Carbyne can improve incoming call quality while Kabat One manages the entire subsequent response workflow. But as the core command center platform, Kabat One covers a significantly broader scope than Carbyne.'}
             </p>
           </div>
         </section>
@@ -274,12 +274,12 @@ export default async function VsCarbyneePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Carbyne: Diferencias Clave' : 'KabatOne vs Carbyne: Key Differences'}
+              {es ? 'Kabat One vs Carbyne: Diferencias Clave' : 'Kabat One vs Carbyne: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Carbyne en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Carbyne across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Carbyne en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Carbyne across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -294,7 +294,7 @@ export default async function VsCarbyneePage({
                   Carbyne
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -335,13 +335,13 @@ export default async function VsCarbyneePage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Una vez que el operador ha recibido la llamada con datos enriquecidos de Carbyne, necesita: despachar la unidad correcta (CAD), rastrear esa unidad en tiempo real sobre un mapa de ciudad (GIS), ver las cámaras fijas en la zona del incidente (video), y coordinar los semáforos para que la ambulancia llegue más rápido (tráfico). Ninguna de esas funciones está en Carbyne. KabatOne cubre todas en un solo flujo nativo.'
-                : 'Once the operator has received the call with Carbyne\'s enriched data, they need to: dispatch the right unit (CAD), track that unit in real time on a city map (GIS), see the fixed cameras in the incident zone (video), and coordinate traffic signals so the ambulance arrives faster (traffic). None of those functions are in Carbyne. KabatOne covers all of them in one native workflow.'}
+                ? 'Una vez que el operador ha recibido la llamada con datos enriquecidos de Carbyne, necesita: despachar la unidad correcta (CAD), rastrear esa unidad en tiempo real sobre un mapa de ciudad (GIS), ver las cámaras fijas en la zona del incidente (video), y coordinar los semáforos para que la ambulancia llegue más rápido (tráfico). Ninguna de esas funciones está en Carbyne. Kabat One cubre todas en un solo flujo nativo.'
+                : 'Once the operator has received the call with Carbyne\'s enriched data, they need to: dispatch the right unit (CAD), track that unit in real time on a city map (GIS), see the fixed cameras in the incident zone (video), and coordinate traffic signals so the ambulance arrives faster (traffic). None of those functions are in Carbyne. Kabat One covers all of them in one native workflow.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para centros de mando que buscan modernizar el ciclo completo — no solo el punto de entrada — KabatOne es la plataforma diseñada para ese objetivo. Para centros que ya tienen un stack CAD y necesitan mejorar específicamente la calidad de la recepción de llamadas móviles, Carbyne puede ser un componente valioso en el ecosistema.'
-                : 'For command centers looking to modernize the full cycle — not just the intake point — KabatOne is the platform designed for that goal. For centers that already have a CAD stack and specifically need to improve the quality of mobile call intake, Carbyne can be a valuable component in the ecosystem.'}
+                ? 'Para centros de mando que buscan modernizar el ciclo completo — no solo el punto de entrada — Kabat One es la plataforma diseñada para ese objetivo. Para centros que ya tienen un stack CAD y necesitan mejorar específicamente la calidad de la recepción de llamadas móviles, Carbyne puede ser un componente valioso en el ecosistema.'
+                : 'For command centers looking to modernize the full cycle — not just the intake point — Kabat One is the platform designed for that goal. For centers that already have a CAD stack and specifically need to improve the quality of mobile call intake, Carbyne can be a valuable component in the ecosystem.'}
             </p>
           </div>
         </section>
@@ -354,7 +354,7 @@ export default async function VsCarbyneePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'KabatOne: Video Persistente de Ciudad, No Solo Video de la Llamada' : 'KabatOne: Persistent City Video, Not Just Call Video'}
+              {es ? 'Kabat One: Video Persistente de Ciudad, No Solo Video de la Llamada' : 'Kabat One: Persistent City Video, Not Just Call Video'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
@@ -363,8 +363,8 @@ export default async function VsCarbyneePage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'K-Video de KabatOne gestiona video de cámaras fijas de ciudad — las cámaras instaladas en calles, intersecciones, parques y edificios. Ese video es persistente: disponible antes del incidente, durante y después, con capacidad de búsqueda y archivo. Para la validación de incidentes, el seguimiento de vehículos y la documentación de evidencia, el video de cámaras fijas es complementario — y frecuentemente superior — al video temporal del teléfono del llamante.'
-                : 'KabatOne K-Video manages city fixed-camera video — cameras installed on streets, intersections, parks, and buildings. That video is persistent: available before the incident, during, and after, with search and archive capabilities. For incident validation, vehicle tracking, and evidence documentation, fixed camera video is complementary to — and frequently superior to — temporary caller phone video.'}
+                ? 'K-Video de Kabat One gestiona video de cámaras fijas de ciudad — las cámaras instaladas en calles, intersecciones, parques y edificios. Ese video es persistente: disponible antes del incidente, durante y después, con capacidad de búsqueda y archivo. Para la validación de incidentes, el seguimiento de vehículos y la documentación de evidencia, el video de cámaras fijas es complementario — y frecuentemente superior — al video temporal del teléfono del llamante.'
+                : 'Kabat One K-Video manages city fixed-camera video — cameras installed on streets, intersections, parks, and buildings. That video is persistent: available before the incident, during, and after, with search and archive capabilities. For incident validation, vehicle tracking, and evidence documentation, fixed camera video is complementary to — and frequently superior to — temporary caller phone video.'}
             </p>
           </div>
         </section>
@@ -377,7 +377,7 @@ export default async function VsCarbyneePage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -446,7 +446,7 @@ export default async function VsCarbyneePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Carbyne: Preguntas y Respuestas' : 'KabatOne vs Carbyne: Questions & Answers'}
+              {es ? 'Kabat One vs Carbyne: Preguntas y Respuestas' : 'Kabat One vs Carbyne: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -486,7 +486,7 @@ export default async function VsCarbyneePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -495,7 +495,7 @@ export default async function VsCarbyneePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/how-c5-command-centers-work" style={{
@@ -525,8 +525,8 @@ export default async function VsCarbyneePage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne gestiona el ciclo completo de respuesta — desde el intake hasta el cierre en campo. Solicita una demo.'
-            : 'See how KabatOne manages the full response cycle — from intake through field closure. Request a demo.'}
+            ? 'Descubre cómo Kabat One gestiona el ciclo completo de respuesta — desde el intake hasta el cierre en campo. Solicita una demo.'
+            : 'See how Kabat One manages the full response cycle — from intake through field closure. Request a demo.'}
         />
 
         <Footer es={es} />

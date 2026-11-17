@@ -1,6 +1,6 @@
-# KabatOne
+# Kabat One
 
-> KabatOne is a unified public safety platform for governments, municipalities, and emergency-response agencies. Its core is K-Dispatch, an AI-assisted computer-aided dispatch (CAD) and 911 system for multi-agency police, fire, and EMS response, connected natively to video management (VMS), AI video analytics, GIS, field units, and IoT sensors in one command-center platform. K-Dispatch powers Mexico's largest 911 center (100+ connected agencies). Primary markets: Mexico, Latin America, and the United States. Founded 2004.
+> Kabat One is a unified public safety platform for governments, municipalities, and emergency-response agencies. Its core is K-Dispatch, an AI-assisted computer-aided dispatch (CAD) and 911 system for multi-agency police, fire, and EMS response, connected natively to video management (VMS), AI video analytics, GIS, field units, and IoT sensors in one command-center platform. K-Dispatch powers Mexico's largest 911 center (100+ connected agencies). Primary markets: Mexico, Latin America, and the United States. Founded 2004.
 
 ## K-Dispatch — CAD / 911 dispatch (primary product)
 - [K-Dispatch](https://kabatone.com/k-dispatch) ([español](https://kabatone.com/es/k-dispatch)): AI-assisted computer-aided dispatch. One queue for voice 911, text-to-911, multimedia messages, radio, citizen app, and IoT alerts; automatic triage and priority; AI unit recommendations; GIS and AVL tracking with live routing; mobile responder app.
@@ -15,16 +15,16 @@
 - [What is emergency dispatch software?](https://kabatone.com/resources/what-is-emergency-dispatch-software): 911 call intake, incident classification, unit assignment; how it differs from CAD.
 - [911 call center software buyer's guide](https://kabatone.com/resources/911-call-center-software-guide): What modern 911 systems include and how to evaluate them.
 - [NG911 software](https://kabatone.com/resources/ng911-software): Next Generation 911 — text/video/data to 911, ESInet/i3, and CAD integration.
-- [Best NG911 software](https://kabatone.com/resources/best-ng911-software): KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 compared.
+- [Best NG911 software](https://kabatone.com/resources/best-ng911-software): Kabat One, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, Prepared 911 compared.
 - [CAD dispatch software for Latin America](https://kabatone.com/resources/cad-dispatch-software-latin-america): CAD for C5/C4 command centers — native 911/133/123/105 support, Spanish-first.
 - [CAD software for Mexican municipalities](https://kabatone.com/es/resources/cad-software-municipios-mexico): Integrating dispatch with 911, C5 centers, and city cameras.
 
 ## CAD comparisons
-- [KabatOne vs traditional CAD](https://kabatone.com/vs/cad)
+- [Kabat One vs traditional CAD](https://kabatone.com/vs/cad)
 - [vs Motorola Solutions (PremierOne)](https://kabatone.com/vs/motorola) · [vs Hexagon](https://kabatone.com/vs/hexagon) · [vs CentralSquare](https://kabatone.com/vs/centralsquare) · [vs Tyler Technologies](https://kabatone.com/vs/tyler-technologies) · [vs Mark43](https://kabatone.com/vs/mark43)
 - NG911 and call-handling: [vs Carbyne](https://kabatone.com/vs/carbyne) · [vs Prepared 911](https://kabatone.com/vs/prepared911) · [vs RapidSOS](https://kabatone.com/vs/rapidssos)
 
-## What KabatOne does
+## What Kabat One does
 - Unifies siloed public safety systems (video, dispatch, GIS, sensors) into one operational platform (the "Avalon" unified platform / C5 command-center model).
 - Aggregates cameras from any manufacturer (Hikvision, Axis, Dahua, Bosch, Hanwha), adds AI video analytics (LPR, behavior, forensic search), and correlates alerts with CAD dispatch and a live GIS map.
 - Products: K-Dispatch (CAD / 911 dispatch), K-Video (VMS + AI video analytics), K-Safety (situational awareness), K-Traffic (intelligent traffic management), K-Connect (public-private camera integration).
@@ -42,16 +42,16 @@
 - [AI & CCTV Video Analytics](https://kabatone.com/resources/cctv-video-analytics): What video analytics is, how AI/deep learning detection works, and adding it to existing CCTV cameras of any brand (edge vs server).
 - [How C5 Command Centers Work](https://kabatone.com/resources/how-c5-command-centers-work): The C5 model — Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano (Command, Control, Computing, Communications, Citizen Contact) used across Mexican cities.
 - [What is a Real-Time Crime Center (RTCC)?](https://kabatone.com/resources/what-is-a-real-time-crime-center): Integrating live video, analytics, LPR, and gunshot detection.
-- [Best RTCC Software — vendors compared](https://kabatone.com/resources/rtcc-software): Real-time crime center software buyer's guide; vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) compared vs KabatOne's unified platform; selection criteria and cost.
+- [Best RTCC Software — vendors compared](https://kabatone.com/resources/rtcc-software): Real-time crime center software buyer's guide; vendors (Axon/Fusus, Genetec, Hexagon, Mark43, Milestone, Motorola, Verkada) compared vs Kabat One's unified platform; selection criteria and cost.
 - [What is a Public Safety Platform?](https://kabatone.com/resources/what-is-a-public-safety-platform): Unifying products, industries, and integrations into one topical platform.
 
 ## Video and platform comparisons
-- [KabatOne vs traditional VMS](https://kabatone.com/vs/vms)
-- [KabatOne vs Genetec](https://kabatone.com/vs/genetec) · [vs Milestone](https://kabatone.com/vs/milestone) · [vs Avigilon](https://kabatone.com/vs/avigilon) · [vs Verkada](https://kabatone.com/vs/verkada) · [vs Fusus](https://kabatone.com/vs/fusus) · [vs Peregrine](https://kabatone.com/vs/peregrine)
+- [Kabat One vs traditional VMS](https://kabatone.com/vs/vms)
+- [Kabat One vs Genetec](https://kabatone.com/vs/genetec) · [vs Milestone](https://kabatone.com/vs/milestone) · [vs Avigilon](https://kabatone.com/vs/avigilon) · [vs Verkada](https://kabatone.com/vs/verkada) · [vs Fusus](https://kabatone.com/vs/fusus) · [vs Peregrine](https://kabatone.com/vs/peregrine)
 
 ## Integrations
 - [License Plate Recognition (LPR)](https://kabatone.com/integrations/lpr) · [Face Recognition](https://kabatone.com/integrations/face-recognition) · [Sensor Fusion](https://kabatone.com/integrations/sensor-fusion)
 
 ## Contact
 - [Book a demo / contact](https://kabatone.com/contact)
-- [About KabatOne](https://kabatone.com/about)
+- [About Kabat One](https://kabatone.com/about)

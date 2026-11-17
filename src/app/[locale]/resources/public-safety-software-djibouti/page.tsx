@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareDjiboutiPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Yibuti | Gestión Portuaria, Bases Militares y Seguridad Marítima – KabatOne"
-      : "Public Safety Software for Djibouti | Port Management, Military Bases & Maritime Security – KabatOne",
+      ? "Software de Seguridad Pública para Yibuti | Gestión Portuaria, Bases Militares y Seguridad Marítima – Kabat One"
+      : "Public Safety Software for Djibouti | Port Management, Military Bases & Maritime Security – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Yibuti, gestión del Puerto de Yibuti, coordinación con Camp Lemonnier (AFRICOM) y seguridad marítima en el Estrecho de Bab-el-Mandeb."
-      : "KabatOne delivers public safety platform for the Djibouti National Police, Port of Djibouti management, coordination with Camp Lemonnier (AFRICOM), and maritime security across the Bab-el-Mandeb strait.",
+      ? "Kabat One ofrece plataforma de seguridad pública para la Policía Nacional de Yibuti, gestión del Puerto de Yibuti, coordinación con Camp Lemonnier (AFRICOM) y seguridad marítima en el Estrecho de Bab-el-Mandeb."
+      : "Kabat One delivers public safety platform for the Djibouti National Police, Port of Djibouti management, coordination with Camp Lemonnier (AFRICOM), and maritime security across the Bab-el-Mandeb strait.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-djibouti"
       : "https://kabatone.com/resources/public-safety-software-djibouti",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareDjiboutiPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad en Yibuti?"
-        : "How does KabatOne support security in Djibouti?",
+        ? "¿Cómo apoya Kabat One la seguridad en Yibuti?"
+        : "How does Kabat One support security in Djibouti?",
       answer: es
-        ? "KabatOne integra comunicaciones multi-fuente para PNJ y gendarmes, despacho para control portuario en Doraleh, y coordinación con las bases multinacionales aliadas. La plataforma Avalon permite conciencia situacional en tiempo real, gestión de incidentes costeros, y supervisión de fronteras terrestres con Etiopía, Somalia y Eritrea."
-        : "KabatOne integrates multi-source communications for PNJ and gendarmes, dispatch for Doraleh port control, and coordination with allied multinational bases. The Avalon platform enables real-time situational awareness, coastal incident management, and land border monitoring with Ethiopia, Somalia, and Eritrea.",
+        ? "Kabat One integra comunicaciones multi-fuente para PNJ y gendarmes, despacho para control portuario en Doraleh, y coordinación con las bases multinacionales aliadas. La plataforma Avalon permite conciencia situacional en tiempo real, gestión de incidentes costeros, y supervisión de fronteras terrestres con Etiopía, Somalia y Eritrea."
+        : "Kabat One integrates multi-source communications for PNJ and gendarmes, dispatch for Doraleh port control, and coordination with allied multinational bases. The Avalon platform enables real-time situational awareness, coastal incident management, and land border monitoring with Ethiopia, Somalia, and Eritrea.",
     },
   ]);
 
@@ -278,11 +278,11 @@ export default async function PublicSafetySoftwareDjiboutiPage({
           </div>
         </section>
 
-        {/* KabatOne Fit */}
+        {/* Kabat One Fit */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para Yibuti" : "KabatOne Platform for Djibouti"}
+              {es ? "Plataforma Kabat One para Yibuti" : "Kabat One Platform for Djibouti"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -352,10 +352,10 @@ export default async function PublicSafetySoftwareDjiboutiPage({
                     : "Public procurement follows the Code des Marchés Publics (Décret 2009-0224) overseen by ARMP. Djibouti works with World Bank, USAID, EUCAP, IGAD, and AFD for security projects.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en Yibuti?" : "How does KabatOne support security in Djibouti?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en Yibuti?" : "How does Kabat One support security in Djibouti?",
                   a: es
-                    ? "KabatOne integra comunicaciones multi-fuente para PNJ y gendarmes, despacho para control portuario en Doraleh, y coordinación con bases multinacionales. La plataforma Avalon permite conciencia situacional en tiempo real y gestión de fronteras con Etiopía, Somalia y Eritrea."
-                    : "KabatOne integrates multi-source communications for PNJ and gendarmes, dispatch for Doraleh port control, and coordination with multinational bases. The Avalon platform enables real-time situational awareness and border management with Ethiopia, Somalia, and Eritrea.",
+                    ? "Kabat One integra comunicaciones multi-fuente para PNJ y gendarmes, despacho para control portuario en Doraleh, y coordinación con bases multinacionales. La plataforma Avalon permite conciencia situacional en tiempo real y gestión de fronteras con Etiopía, Somalia y Eritrea."
+                    : "Kabat One integrates multi-source communications for PNJ and gendarmes, dispatch for Doraleh port control, and coordination with multinational bases. The Avalon platform enables real-time situational awareness and border management with Ethiopia, Somalia, and Eritrea.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -371,8 +371,8 @@ export default async function PublicSafetySoftwareDjiboutiPage({
           es={es}
           h2={es ? "¿Listo para modernizar la seguridad pública en Yibuti?" : "Ready to modernize public safety in Djibouti?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a la PNJ, operaciones portuarias en Doraleh y coordinación multi-base en el Cuerno de África."
-            : "Contact us to discover how KabatOne supports PNJ, Doraleh port operations, and multi-base coordination in the Horn of Africa."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a la PNJ, operaciones portuarias en Doraleh y coordinación multi-base en el Cuerno de África."
+            : "Contact us to discover how Kabat One supports PNJ, Doraleh port operations, and multi-base coordination in the Horn of Africa."}
         />
         <Footer es={es} />
       </main>

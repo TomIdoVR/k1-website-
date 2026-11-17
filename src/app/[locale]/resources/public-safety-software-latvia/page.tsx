@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareLatviaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Letonia | KabatOne"
-    : "Public Safety Software for Latvia | KabatOne";
+    ? "Software de Seguridad Pública para Letonia | Kabat One"
+    : "Public Safety Software for Latvia | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Letonia — Policía Estatal, Guardia de Fronteras, KNAB — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares de la OTAN y el sistema 112 letón."
-    : "KabatOne supports Latvia security forces — State Police, Border Guard, KNAB — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Latvian 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Letonia — Policía Estatal, Guardia de Fronteras, KNAB — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares de la OTAN y el sistema 112 letón."
+    : "Kabat One supports Latvia security forces — State Police, Border Guard, KNAB — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Latvian 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-latvia"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareLatviaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Letonia?"
-        : "How does KabatOne support Latvia security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Letonia?"
+        : "How does Kabat One support Latvia security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía Estatal (VP), la Guardia de Fronteras del Estado (VRS), el Servicio de Bomberos y Rescate del Estado (VUGD), la Guardia Nacional (Zemessardze ~8,000 reservistas), y el servicio de contrainteligencia SAB. La plataforma se integra con el sistema 112 de Letonia (operado por VUGD), cumple con el RGPD y los estándares de seguridad de la información de la UE/OTAN, y soporta la coordinación con Frontex."
-        : "KabatOne provides unified situational awareness for the State Police (VP), State Border Guard (VRS), State Fire and Rescue Service (VUGD), National Guard (Zemessardze ~8,000 reservists), and counterintelligence service SAB. The platform integrates with Latvia's 112 system (operated by VUGD), complies with GDPR and EU/NATO information security standards, and supports Frontex coordination.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía Estatal (VP), la Guardia de Fronteras del Estado (VRS), el Servicio de Bomberos y Rescate del Estado (VUGD), la Guardia Nacional (Zemessardze ~8,000 reservistas), y el servicio de contrainteligencia SAB. La plataforma se integra con el sistema 112 de Letonia (operado por VUGD), cumple con el RGPD y los estándares de seguridad de la información de la UE/OTAN, y soporta la coordinación con Frontex."
+        : "Kabat One provides unified situational awareness for the State Police (VP), State Border Guard (VRS), State Fire and Rescue Service (VUGD), National Guard (Zemessardze ~8,000 reservists), and counterintelligence service SAB. The platform integrates with Latvia's 112 system (operated by VUGD), complies with GDPR and EU/NATO information security standards, and supports Frontex coordination.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareLatviaPage({
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con las regulaciones de seguridad y datos de Letonia/UE?"
-        : "How does KabatOne comply with Latvia/EU security and data regulations?",
+        ? "¿Cómo cumple Kabat One con las regulaciones de seguridad y datos de Letonia/UE?"
+        : "How does Kabat One comply with Latvia/EU security and data regulations?",
       answer: es
-        ? "KabatOne cumple con el RGPD/GDPR y las directrices de la Inspección de Protección de Datos de Letonia (DVI). La plataforma implementa los estándares ISO 27001 requeridos por las instituciones estatales letones, cumple con la Directiva NIS2 de la UE para infraestructura crítica, y se alinea con los requerimientos de la Ley de Seguridad de la Información de Letonia. La arquitectura puede desplegarse en los centros de datos del gobierno letón o en la nube soberana de la UE."
-        : "KabatOne complies with GDPR and Latvia Data Inspectorate (DVI) guidelines. The platform implements ISO 27001 standards required by Latvian state institutions, meets the EU NIS2 Directive for critical infrastructure, and aligns with Latvia's Information Security Law requirements. The architecture can be deployed in Latvian government data centres or EU sovereign cloud.",
+        ? "Kabat One cumple con el RGPD/GDPR y las directrices de la Inspección de Protección de Datos de Letonia (DVI). La plataforma implementa los estándares ISO 27001 requeridos por las instituciones estatales letones, cumple con la Directiva NIS2 de la UE para infraestructura crítica, y se alinea con los requerimientos de la Ley de Seguridad de la Información de Letonia. La arquitectura puede desplegarse en los centros de datos del gobierno letón o en la nube soberana de la UE."
+        : "Kabat One complies with GDPR and Latvia Data Inspectorate (DVI) guidelines. The platform implements ISO 27001 standards required by Latvian state institutions, meets the EU NIS2 Directive for critical infrastructure, and aligns with Latvia's Information Security Law requirements. The architecture can be deployed in Latvian government data centres or EU sovereign cloud.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareLatviaPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Letonia"
-              : "KabatOne Capabilities for Latvia"}
+              ? "Capacidades de Kabat One para Letonia"
+              : "Kabat One Capabilities for Latvia"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a las necesidades de Letonia como nación del flanco oriental de la OTAN: gestión de fronteras con Rusia y Bielorrusia, protección de la infraestructura portuaria del Báltico, vigilancia urbana en Riga, y coordinación con las misiones de la OTAN en Adazi."
-              : "The KabatOne platform provides an integrated suite adapted to Latvia's needs as a NATO Eastern Flank nation: border management with Russia and Belarus, Baltic port infrastructure protection, urban surveillance in Riga, and coordination with NATO missions in Adazi."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a las necesidades de Letonia como nación del flanco oriental de la OTAN: gestión de fronteras con Rusia y Bielorrusia, protección de la infraestructura portuaria del Báltico, vigilancia urbana en Riga, y coordinación con las misiones de la OTAN en Adazi."
+              : "The Kabat One platform provides an integrated suite adapted to Latvia's needs as a NATO Eastern Flank nation: border management with Russia and Belarus, Baltic port infrastructure protection, urban surveillance in Riga, and coordination with NATO missions in Adazi."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareLatviaPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la Policía Estatal, la Guardia de Fronteras y el VUGD con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
-            : "Speak with our team about how KabatOne can support the State Police, Border Guard, and VUGD with a platform compatible with GDPR, NIS2, and NATO standards."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la Policía Estatal, la Guardia de Fronteras y el VUGD con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
+            : "Speak with our team about how Kabat One can support the State Police, Border Guard, and VUGD with a platform compatible with GDPR, NIS2, and NATO standards."
         }
       />
       <Footer es={es} />

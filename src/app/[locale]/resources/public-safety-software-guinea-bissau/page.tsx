@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareGuineaBissauPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Guinea-Bisáu | FARP/POP, Puerto de Bissau y Seguridad Marítima – KabatOne"
-    : "Public Safety Software for Guinea-Bissau | FARP/POP, Port of Bissau & Maritime Security – KabatOne";
+    ? "Software de Seguridad Pública para Guinea-Bisáu | FARP/POP, Puerto de Bissau y Seguridad Marítima – Kabat One"
+    : "Public Safety Software for Guinea-Bissau | FARP/POP, Port of Bissau & Maritime Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea-Bisáu (FARP), Policía de Orden Público, Puerto de Bissau y control de las rutas de narcotráfico atlántico."
-    : "KabatOne delivers public safety platform for the Guinea-Bissau Armed Forces (FARP), Public Order Police, Port of Bissau, and control of Atlantic drug trafficking routes.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Guinea-Bisáu (FARP), Policía de Orden Público, Puerto de Bissau y control de las rutas de narcotráfico atlántico."
+    : "Kabat One delivers public safety platform for the Guinea-Bissau Armed Forces (FARP), Public Order Police, Port of Bissau, and control of Atlantic drug trafficking routes.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-guinea-bissau"
     : "https://kabatone.com/resources/public-safety-software-guinea-bissau";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareGuineaBissauPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Guinea-Bisáu?"
-        : "How does KabatOne support public safety in Guinea-Bissau?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Guinea-Bisáu?"
+        : "How does Kabat One support public safety in Guinea-Bissau?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FARP/POP en las 8 regiones. Los módulos de seguridad marítima apoyan la guardia costera en el monitoreo del archipiélago Bijagós y la ZEE de 200 nm. El sistema de gestión de puertos cubre el Puerto de Bissau. La plataforma de inteligencia marítima se integra con INTERPOL y UNODC para seguimiento de embarcaciones sospechosas. La arquitectura es adaptable a entornos de baja conectividad."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FARP/POP operations across all 8 regions. Maritime security modules support the coast guard in monitoring the Bijagos Archipelago and 200 nm EEZ. Port management system covers Port of Bissau. Maritime intelligence platform integrates with INTERPOL and UNODC for suspicious vessel tracking. Architecture adapts to low-connectivity environments.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FARP/POP en las 8 regiones. Los módulos de seguridad marítima apoyan la guardia costera en el monitoreo del archipiélago Bijagós y la ZEE de 200 nm. El sistema de gestión de puertos cubre el Puerto de Bissau. La plataforma de inteligencia marítima se integra con INTERPOL y UNODC para seguimiento de embarcaciones sospechosas. La arquitectura es adaptable a entornos de baja conectividad."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FARP/POP operations across all 8 regions. Maritime security modules support the coast guard in monitoring the Bijagos Archipelago and 200 nm EEZ. Port management system covers Port of Bissau. Maritime intelligence platform integrates with INTERPOL and UNODC for suspicious vessel tracking. Architecture adapts to low-connectivity environments.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareGuineaBissauPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Guinea-Bisáu" : "KabatOne Capabilities for Guinea-Bissau"}
+              {es ? "Capacidades Kabat One para Guinea-Bisáu" : "Kabat One Capabilities for Guinea-Bissau"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

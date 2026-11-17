@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareIrelandPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Irlanda | KabatOne"
-    : "Public Safety Software for Ireland | KabatOne";
+    ? "Software de Seguridad Pública para Irlanda | Kabat One"
+    : "Public Safety Software for Ireland | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Irlanda — An Garda Síochána, Servicio de Ambulancias Nacional, Brigadas de Bomberos — con vigilancia en tiempo real, despacho y gestión de incidentes compatible con GDPR y los estándares de la Comisión de Información."
-    : "KabatOne supports Ireland security forces — An Garda Síochána, National Ambulance Service, Fire Brigades — with real-time surveillance, dispatch, and incident management compatible with GDPR and the Data Protection Commission standards.";
+    ? "Kabat One apoya las fuerzas de seguridad de Irlanda — An Garda Síochána, Servicio de Ambulancias Nacional, Brigadas de Bomberos — con vigilancia en tiempo real, despacho y gestión de incidentes compatible con GDPR y los estándares de la Comisión de Información."
+    : "Kabat One supports Ireland security forces — An Garda Síochána, National Ambulance Service, Fire Brigades — with real-time surveillance, dispatch, and incident management compatible with GDPR and the Data Protection Commission standards.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-ireland"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareIrelandPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Irlanda?"
-        : "How does KabatOne support Ireland security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Irlanda?"
+        : "How does Kabat One support Ireland security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para An Garda Síochána (~15,000 efectivos), el Servicio de Ambulancias Nacional (NAS), las Brigadas de Bomberos de los 26 condados, el Servicio de Guardia Costera de Irlanda (IRCG), y el Servicio de Prisiones de Irlanda. La plataforma se integra con el sistema de llamadas de emergencia 999/112 de Irlanda, cumple con el RGPD y las directrices de la Comisión de Protección de Datos (DPC), y soporta la interoperabilidad con el PSNI de Irlanda del Norte para incidentes transfronterizos."
-        : "KabatOne provides unified situational awareness for An Garda Síochána (~15,000 officers), the National Ambulance Service (NAS), Fire Brigades across 26 counties, the Irish Coast Guard (IRCG), and the Irish Prison Service. The platform integrates with Ireland's 999/112 emergency call system, complies with GDPR and Data Protection Commission (DPC) guidelines, and supports interoperability with PSNI in Northern Ireland for cross-border incidents.",
+        ? "Kabat One proporciona conciencia situacional unificada para An Garda Síochána (~15,000 efectivos), el Servicio de Ambulancias Nacional (NAS), las Brigadas de Bomberos de los 26 condados, el Servicio de Guardia Costera de Irlanda (IRCG), y el Servicio de Prisiones de Irlanda. La plataforma se integra con el sistema de llamadas de emergencia 999/112 de Irlanda, cumple con el RGPD y las directrices de la Comisión de Protección de Datos (DPC), y soporta la interoperabilidad con el PSNI de Irlanda del Norte para incidentes transfronterizos."
+        : "Kabat One provides unified situational awareness for An Garda Síochána (~15,000 officers), the National Ambulance Service (NAS), Fire Brigades across 26 counties, the Irish Coast Guard (IRCG), and the Irish Prison Service. The platform integrates with Ireland's 999/112 emergency call system, complies with GDPR and Data Protection Commission (DPC) guidelines, and supports interoperability with PSNI in Northern Ireland for cross-border incidents.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareIrelandPage({
     },
     {
       question: es
-        ? "¿Cómo gestiona KabatOne la cooperación transfronteriza con Irlanda del Norte?"
-        : "How does KabatOne manage cross-border cooperation with Northern Ireland?",
+        ? "¿Cómo gestiona Kabat One la cooperación transfronteriza con Irlanda del Norte?"
+        : "How does Kabat One manage cross-border cooperation with Northern Ireland?",
       answer: es
-        ? "KabatOne soporta los protocolos de interoperabilidad entre An Garda Síochána (República de Irlanda) y el Police Service of Northern Ireland (PSNI/RU), con gestión de incidentes transfronterizos bajo el marco del Acuerdo de Viernes Santo, comunicaciones seguras entre ambas jurisdicciones, y coordinación de la Guardia Costera conjunta Irlanda/RU para el Canal de San Jorge, el Mar de Irlanda y el Atlántico Norte."
-        : "KabatOne supports interoperability protocols between An Garda Síochána (Republic of Ireland) and the Police Service of Northern Ireland (PSNI/UK), with cross-border incident management under the Good Friday Agreement framework, secure communications between both jurisdictions, and joint Ireland/UK Coast Guard coordination for St. George's Channel, the Irish Sea, and North Atlantic.",
+        ? "Kabat One soporta los protocolos de interoperabilidad entre An Garda Síochána (República de Irlanda) y el Police Service of Northern Ireland (PSNI/RU), con gestión de incidentes transfronterizos bajo el marco del Acuerdo de Viernes Santo, comunicaciones seguras entre ambas jurisdicciones, y coordinación de la Guardia Costera conjunta Irlanda/RU para el Canal de San Jorge, el Mar de Irlanda y el Atlántico Norte."
+        : "Kabat One supports interoperability protocols between An Garda Síochána (Republic of Ireland) and the Police Service of Northern Ireland (PSNI/UK), with cross-border incident management under the Good Friday Agreement framework, secure communications between both jurisdictions, and joint Ireland/UK Coast Guard coordination for St. George's Channel, the Irish Sea, and North Atlantic.",
     },
   ];
 
@@ -176,12 +176,12 @@ export default async function PublicSafetySoftwareIrelandPage({
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
-            {es ? "Capacidades de KabatOne para Irlanda" : "KabatOne Capabilities for Ireland"}
+            {es ? "Capacidades de Kabat One para Irlanda" : "Kabat One Capabilities for Ireland"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a Irlanda: gestión del corredor fronterizo post-Brexit con Irlanda del Norte, protección de los centros de datos hiperescala y cables transatlánticos, respuesta de emergencias en el Atlántico Norte, y gestión de grandes eventos en el Estadio Aviva y el área metropolitana de Dublín."
-              : "The KabatOne platform provides an integrated suite adapted to Ireland: post-Brexit border corridor management with Northern Ireland, hyperscale data centre and transatlantic cable protection, North Atlantic emergency response, and large event management at the Aviva Stadium and Dublin metropolitan area."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a Irlanda: gestión del corredor fronterizo post-Brexit con Irlanda del Norte, protección de los centros de datos hiperescala y cables transatlánticos, respuesta de emergencias en el Atlántico Norte, y gestión de grandes eventos en el Estadio Aviva y el área metropolitana de Dublín."
+              : "The Kabat One platform provides an integrated suite adapted to Ireland: post-Brexit border corridor management with Northern Ireland, hyperscale data centre and transatlantic cable protection, North Atlantic emergency response, and large event management at the Aviva Stadium and Dublin metropolitan area."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -250,8 +250,8 @@ export default async function PublicSafetySoftwareIrelandPage({
         es={es}
         h2={es ? "¿Listo para modernizar la seguridad pública en Irlanda?" : "Ready to modernize public safety in Ireland?"}
         subtitle={es
-          ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a An Garda Síochána, la Guardia Costera y las Brigadas de Bomberos con una plataforma compatible con GDPR, DPC y NIS2."
-          : "Speak with our team about how KabatOne can support An Garda Síochána, the Irish Coast Guard, and Fire Brigades with a platform compatible with GDPR, DPC, and NIS2."}
+          ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a An Garda Síochána, la Guardia Costera y las Brigadas de Bomberos con una plataforma compatible con GDPR, DPC y NIS2."
+          : "Speak with our team about how Kabat One can support An Garda Síochána, the Irish Coast Guard, and Fire Brigades with a platform compatible with GDPR, DPC, and NIS2."}
       />
       <Footer es={es} />
     </>

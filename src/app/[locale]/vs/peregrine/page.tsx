@@ -28,58 +28,58 @@ export default async function VsPeregrinePage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Peregrine', url: es ? 'https://kabatone.com/es/vs/peregrine' : 'https://kabatone.com/vs/peregrine' },
+    { name: 'Kabat One vs Peregrine', url: es ? 'https://kabatone.com/es/vs/peregrine' : 'https://kabatone.com/vs/peregrine' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Peregrine?',
-      answer: 'Peregrine es una plataforma de analítica de seguridad pública que agrega datos de múltiples sistemas — CAD, RMS, cámaras, sensores — para producir análisis predictivos, informes de crimen y dashboards de inteligencia para líderes policiales. KabatOne es una plataforma operacional completa: incluye despacho CAD (K-Dispatch), gestión de video con IA (K-Video), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect). Peregrine es una capa de inteligencia analítica; KabatOne es el sistema donde ocurre la operación.',
+      question: '¿Cuál es la diferencia entre Kabat One y Peregrine?',
+      answer: 'Peregrine es una plataforma de analítica de seguridad pública que agrega datos de múltiples sistemas — CAD, RMS, cámaras, sensores — para producir análisis predictivos, informes de crimen y dashboards de inteligencia para líderes policiales. Kabat One es una plataforma operacional completa: incluye despacho CAD (K-Dispatch), gestión de video con IA (K-Video), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect). Peregrine es una capa de inteligencia analítica; Kabat One es el sistema donde ocurre la operación.',
     },
     {
       question: '¿Peregrine tiene sistema de despacho CAD?',
-      answer: 'No. Peregrine no incluye un sistema CAD propio. Se integra con los sistemas CAD y RMS existentes de la agencia para extraer datos y generar análisis, pero no gestiona el despacho de unidades en tiempo real. KabatOne K-Dispatch es un sistema CAD completo con intake de llamadas, recomendación de unidades, logging de despacho y seguimiento de unidades — nativo e integrado con video, GIS y tráfico.',
+      answer: 'No. Peregrine no incluye un sistema CAD propio. Se integra con los sistemas CAD y RMS existentes de la agencia para extraer datos y generar análisis, pero no gestiona el despacho de unidades en tiempo real. Kabat One K-Dispatch es un sistema CAD completo con intake de llamadas, recomendación de unidades, logging de despacho y seguimiento de unidades — nativo e integrado con video, GIS y tráfico.',
     },
     {
       question: '¿Qué tipo de analítica predictiva ofrece Peregrine?',
-      answer: 'Peregrine ofrece análisis de patrones de crimen, mapas de calor, predicción de zonas de riesgo, análisis de despliegue de recursos y dashboards para líderes de agencias. Estas herramientas ayudan a los directores de policía a tomar decisiones estratégicas sobre patrullaje y asignación de recursos. KabatOne se centra en la operación en tiempo real — K-Safety proporciona conciencia situacional en vivo con incidentes, unidades y video en un mapa operacional, pero no incluye análisis predictivos de largo plazo como los de Peregrine.',
+      answer: 'Peregrine ofrece análisis de patrones de crimen, mapas de calor, predicción de zonas de riesgo, análisis de despliegue de recursos y dashboards para líderes de agencias. Estas herramientas ayudan a los directores de policía a tomar decisiones estratégicas sobre patrullaje y asignación de recursos. Kabat One se centra en la operación en tiempo real — K-Safety proporciona conciencia situacional en vivo con incidentes, unidades y video en un mapa operacional, pero no incluye análisis predictivos de largo plazo como los de Peregrine.',
     },
     {
       question: '¿Peregrine tiene gestión de video o cámaras?',
-      answer: 'No. Peregrine puede conectarse a datos de sistemas de video existentes para incorporarlos en sus análisis, pero no es un sistema de gestión de video (VMS). No gestiona cámaras fijas de ciudad, no incluye analítica de video con IA, ni LPR nativo. KabatOne K-Video gestiona cámaras de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, etc.), incluye detección de eventos con IA, reconocimiento de matrículas y correlación de video con incidentes de despacho.',
+      answer: 'No. Peregrine puede conectarse a datos de sistemas de video existentes para incorporarlos en sus análisis, pero no es un sistema de gestión de video (VMS). No gestiona cámaras fijas de ciudad, no incluye analítica de video con IA, ni LPR nativo. Kabat One K-Video gestiona cámaras de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, etc.), incluye detección de eventos con IA, reconocimiento de matrículas y correlación de video con incidentes de despacho.',
     },
     {
-      question: '¿Puede KabatOne reemplazar a Peregrine?',
-      answer: 'Para organizaciones que buscan una plataforma unificada de operaciones, KabatOne cubre las operaciones en tiempo real que Peregrine no incluye — CAD, video, GIS operacional y tráfico. Sin embargo, Peregrine está especializado en análisis estratégico y predicción a largo plazo — capacidades que KabatOne no replica en la misma profundidad. Las dos plataformas pueden ser complementarias: KabatOne para la operación diaria y Peregrine para el análisis estratégico.',
+      question: '¿Puede Kabat One reemplazar a Peregrine?',
+      answer: 'Para organizaciones que buscan una plataforma unificada de operaciones, Kabat One cubre las operaciones en tiempo real que Peregrine no incluye — CAD, video, GIS operacional y tráfico. Sin embargo, Peregrine está especializado en análisis estratégico y predicción a largo plazo — capacidades que Kabat One no replica en la misma profundidad. Las dos plataformas pueden ser complementarias: Kabat One para la operación diaria y Peregrine para el análisis estratégico.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Peregrine no ofrece?',
-      answer: 'KabatOne proporciona: despacho CAD completo (K-Dispatch) con gestión de llamadas en tiempo real, recomendación de unidades y logging — Peregrine no tiene CAD operacional; gestión de video con IA (K-Video) con LPR, detección de eventos y correlación con incidentes — Peregrine no incluye gestión de video; GIS operacional en tiempo real (K-Safety) con posición de unidades y feeds de video en vivo — Peregrine ofrece dashboards analíticos pero no un GIS operacional nativo; gestión de tráfico (K-Traffic) para coordinar semáforos y respuesta de emergencia.',
+      question: '¿Qué ofrece Kabat One que Peregrine no ofrece?',
+      answer: 'Kabat One proporciona: despacho CAD completo (K-Dispatch) con gestión de llamadas en tiempo real, recomendación de unidades y logging — Peregrine no tiene CAD operacional; gestión de video con IA (K-Video) con LPR, detección de eventos y correlación con incidentes — Peregrine no incluye gestión de video; GIS operacional en tiempo real (K-Safety) con posición de unidades y feeds de video en vivo — Peregrine ofrece dashboards analíticos pero no un GIS operacional nativo; gestión de tráfico (K-Traffic) para coordinar semáforos y respuesta de emergencia.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Peregrine?',
-      answer: 'Peregrine is a public safety analytics platform that aggregates data from multiple systems — CAD, RMS, cameras, sensors — to produce predictive analysis, crime reporting, and intelligence dashboards for police leadership. KabatOne is a full operational platform: it includes CAD dispatch (K-Dispatch), AI-powered video management (K-Video), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect). Peregrine is an analytical intelligence layer; KabatOne is the system where the operation actually happens.',
+      question: 'What is the difference between Kabat One and Peregrine?',
+      answer: 'Peregrine is a public safety analytics platform that aggregates data from multiple systems — CAD, RMS, cameras, sensors — to produce predictive analysis, crime reporting, and intelligence dashboards for police leadership. Kabat One is a full operational platform: it includes CAD dispatch (K-Dispatch), AI-powered video management (K-Video), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect). Peregrine is an analytical intelligence layer; Kabat One is the system where the operation actually happens.',
     },
     {
       question: 'Does Peregrine have a CAD dispatch system?',
-      answer: 'No. Peregrine does not include its own CAD system. It integrates with the agency\'s existing CAD and RMS systems to extract data and generate analysis, but it does not manage real-time unit dispatch. KabatOne K-Dispatch is a full CAD system with call intake, unit recommendation, dispatch logging, and unit tracking — native and integrated with video, GIS, and traffic.',
+      answer: 'No. Peregrine does not include its own CAD system. It integrates with the agency\'s existing CAD and RMS systems to extract data and generate analysis, but it does not manage real-time unit dispatch. Kabat One K-Dispatch is a full CAD system with call intake, unit recommendation, dispatch logging, and unit tracking — native and integrated with video, GIS, and traffic.',
     },
     {
       question: 'What kind of predictive analytics does Peregrine offer?',
-      answer: 'Peregrine offers crime pattern analysis, heat maps, risk zone prediction, resource deployment analysis, and dashboards for agency leadership. These tools help police directors make strategic decisions about patrol and resource allocation. KabatOne focuses on real-time operations — K-Safety provides live situational awareness with incidents, units, and video on an operational map — but does not include the long-range predictive analytics that Peregrine specializes in.',
+      answer: 'Peregrine offers crime pattern analysis, heat maps, risk zone prediction, resource deployment analysis, and dashboards for agency leadership. These tools help police directors make strategic decisions about patrol and resource allocation. Kabat One focuses on real-time operations — K-Safety provides live situational awareness with incidents, units, and video on an operational map — but does not include the long-range predictive analytics that Peregrine specializes in.',
     },
     {
       question: 'Does Peregrine have video management or camera capabilities?',
-      answer: 'No. Peregrine can connect to data from existing video systems to incorporate into its analysis, but it is not a video management system (VMS). It does not manage city fixed cameras, does not include native AI video analytics, and does not provide LPR. KabatOne K-Video manages cameras from any manufacturer (Hikvision, Axis, Dahua, Bosch, etc.), includes AI event detection, license plate recognition, and correlates video directly with dispatch incidents.',
+      answer: 'No. Peregrine can connect to data from existing video systems to incorporate into its analysis, but it is not a video management system (VMS). It does not manage city fixed cameras, does not include native AI video analytics, and does not provide LPR. Kabat One K-Video manages cameras from any manufacturer (Hikvision, Axis, Dahua, Bosch, etc.), includes AI event detection, license plate recognition, and correlates video directly with dispatch incidents.',
     },
     {
-      question: 'Can KabatOne replace Peregrine?',
-      answer: 'For organizations seeking a unified operational platform, KabatOne covers the real-time operations that Peregrine does not include — CAD, video, operational GIS, and traffic. However, Peregrine specializes in strategic analytics and long-range prediction — capabilities KabatOne does not replicate in the same depth. The two platforms can be complementary: KabatOne for day-to-day operations and Peregrine for strategic analysis.',
+      question: 'Can Kabat One replace Peregrine?',
+      answer: 'For organizations seeking a unified operational platform, Kabat One covers the real-time operations that Peregrine does not include — CAD, video, operational GIS, and traffic. However, Peregrine specializes in strategic analytics and long-range prediction — capabilities Kabat One does not replicate in the same depth. The two platforms can be complementary: Kabat One for day-to-day operations and Peregrine for strategic analysis.',
     },
     {
-      question: 'What does KabatOne offer that Peregrine does not?',
-      answer: 'KabatOne provides: full CAD dispatch (K-Dispatch) with real-time call management, unit recommendation, and logging — Peregrine has no operational CAD; AI video management (K-Video) with LPR, event detection, and incident correlation — Peregrine has no video management; real-time operational GIS (K-Safety) with live unit positions and video feeds — Peregrine offers analytical dashboards but no native operational GIS; traffic management (K-Traffic) to coordinate signals and emergency response.',
+      question: 'What does Kabat One offer that Peregrine does not?',
+      answer: 'Kabat One provides: full CAD dispatch (K-Dispatch) with real-time call management, unit recommendation, and logging — Peregrine has no operational CAD; AI video management (K-Video) with LPR, event detection, and incident correlation — Peregrine has no video management; real-time operational GIS (K-Safety) with live unit positions and video feeds — Peregrine offers analytical dashboards but no native operational GIS; traffic management (K-Traffic) to coordinate signals and emergency response.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsPeregrinePage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Peregrine</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Peregrine</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsPeregrinePage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'Dashboards de Analítica Peregrine vs KabatOne — Inteligencia Estratégica vs Operaciones Unificadas'
-              : 'Peregrine Analytics Dashboards vs KabatOne — Predictive Intelligence vs Unified Operations'}
+              ? 'Dashboards de Analítica Peregrine vs Kabat One — Inteligencia Estratégica vs Operaciones Unificadas'
+              : 'Peregrine Analytics Dashboards vs Kabat One — Predictive Intelligence vs Unified Operations'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Peregrine ofrece analítica predictiva y dashboards de reporting para líderes de seguridad pública — agregando datos de CAD, RMS y sensores en análisis de patrones de crimen, mapas de calor e inteligencia de despliegue. KabatOne construye la plataforma operacional donde esa respuesta ocurre: despacho CAD completo, video con IA, GIS operacional y gestión de tráfico — todo nativo en un solo sistema.'
-              : 'Peregrine offers predictive analytics and reporting dashboards for public safety leaders — aggregating CAD, RMS, and sensor data into crime pattern analysis, heat maps, and deployment intelligence. KabatOne builds the operational platform where that response actually happens: full CAD dispatch, AI video, operational GIS, and traffic management — all native in one system.'}
+              ? 'Peregrine ofrece analítica predictiva y dashboards de reporting para líderes de seguridad pública — agregando datos de CAD, RMS y sensores en análisis de patrones de crimen, mapas de calor e inteligencia de despliegue. Kabat One construye la plataforma operacional donde esa respuesta ocurre: despacho CAD completo, video con IA, GIS operacional y gestión de tráfico — todo nativo en un solo sistema.'
+              : 'Peregrine offers predictive analytics and reporting dashboards for public safety leaders — aggregating CAD, RMS, and sensor data into crime pattern analysis, heat maps, and deployment intelligence. Kabat One builds the operational platform where that response actually happens: full CAD dispatch, AI video, operational GIS, and traffic management — all native in one system.'}
           </p>
         </section>
 
@@ -266,8 +266,8 @@ export default async function VsPeregrinePage({
             }}>
               <p style={{ fontSize: '14px', color: 'var(--dim)', lineHeight: 1.7 }}>
                 {es
-                  ? <><strong style={{ color: 'var(--white)' }}>Lo que los dashboards de Peregrine no muestran:</strong> la posición en tiempo real de las unidades, el estado de las cámaras de la ciudad, el flujo de tráfico actual, las llamadas activas al 911 ni el despacho de unidades en curso. Esas son las preguntas que responde KabatOne — no en reportes, sino en la pantalla operacional en tiempo real del operador de mando.</>
-                  : <><strong style={{ color: 'var(--white)' }}>What Peregrine dashboards don&apos;t show:</strong> real-time unit positions, live city camera feeds, current traffic flow, active 911 calls, or in-progress unit dispatch. Those are the questions KabatOne answers — not in reports, but in the command operator&apos;s real-time operational screen.</>
+                  ? <><strong style={{ color: 'var(--white)' }}>Lo que los dashboards de Peregrine no muestran:</strong> la posición en tiempo real de las unidades, el estado de las cámaras de la ciudad, el flujo de tráfico actual, las llamadas activas al 911 ni el despacho de unidades en curso. Esas son las preguntas que responde Kabat One — no en reportes, sino en la pantalla operacional en tiempo real del operador de mando.</>
+                  : <><strong style={{ color: 'var(--white)' }}>What Peregrine dashboards don&apos;t show:</strong> real-time unit positions, live city camera feeds, current traffic flow, active 911 calls, or in-progress unit dispatch. Those are the questions Kabat One answers — not in reports, but in the command operator&apos;s real-time operational screen.</>
                 }
               </p>
             </div>
@@ -310,22 +310,22 @@ export default async function VsPeregrinePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — donde todos los módulos comparten datos en tiempo real sin proyectos de integración entre sistemas.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — where all modules share real-time data without cross-system integration projects.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — donde todos los módulos comparten datos en tiempo real sin proyectos de integración entre sistemas.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — where all modules share real-time data without cross-system integration projects.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Donde Peregrine ayuda a los líderes a planificar el despliegue de patrullas con análisis predictivos, KabatOne gestiona la ejecución operacional de esa respuesta: K-Dispatch despacha unidades con recomendación automatizada basada en disponibilidad y proximidad; K-Video conecta alertas de cámara directamente al flujo de despacho; K-Safety muestra la posición de cada unidad y cada incidente activo en un mapa operacional en tiempo real; K-Traffic coordina semáforos en la ruta de la unidad respondedora.'
-                : 'Where Peregrine helps leaders plan patrol deployment with predictive analysis, KabatOne manages the operational execution of that response: K-Dispatch dispatches units with automated recommendation based on availability and proximity; K-Video connects camera alerts directly to the dispatch workflow; K-Safety shows every unit position and active incident on a real-time operational map; K-Traffic coordinates signals on the responding unit\'s route.'}
+                ? 'Donde Peregrine ayuda a los líderes a planificar el despliegue de patrullas con análisis predictivos, Kabat One gestiona la ejecución operacional de esa respuesta: K-Dispatch despacha unidades con recomendación automatizada basada en disponibilidad y proximidad; K-Video conecta alertas de cámara directamente al flujo de despacho; K-Safety muestra la posición de cada unidad y cada incidente activo en un mapa operacional en tiempo real; K-Traffic coordina semáforos en la ruta de la unidad respondedora.'
+                : 'Where Peregrine helps leaders plan patrol deployment with predictive analysis, Kabat One manages the operational execution of that response: K-Dispatch dispatches units with automated recommendation based on availability and proximity; K-Video connects camera alerts directly to the dispatch workflow; K-Safety shows every unit position and active incident on a real-time operational map; K-Traffic coordinates signals on the responding unit\'s route.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. A diferencia de Peregrine, que requiere que la agencia ya tenga CAD y sistemas operacionales en funcionamiento, KabatOne puede ser la plataforma operacional central del centro de mando — el sistema donde convergen el despacho, el video, el GIS y el tráfico desde el primer día.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Peregrine, which requires the agency to already have CAD and operational systems in place, KabatOne can be the central operational platform of the command center — the system where dispatch, video, GIS, and traffic converge from day one.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. A diferencia de Peregrine, que requiere que la agencia ya tenga CAD y sistemas operacionales en funcionamiento, Kabat One puede ser la plataforma operacional central del centro de mando — el sistema donde convergen el despacho, el video, el GIS y el tráfico desde el primer día.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Peregrine, which requires the agency to already have CAD and operational systems in place, Kabat One can be the central operational platform of the command center — the system where dispatch, video, GIS, and traffic converge from day one.'}
             </p>
           </div>
         </section>
@@ -338,12 +338,12 @@ export default async function VsPeregrinePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Peregrine: Diferencias Clave' : 'KabatOne vs Peregrine: Key Differences'}
+              {es ? 'Kabat One vs Peregrine: Diferencias Clave' : 'Kabat One vs Peregrine: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Peregrine en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Peregrine across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Peregrine en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Peregrine across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -358,7 +358,7 @@ export default async function VsPeregrinePage({
                   Peregrine
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -394,18 +394,18 @@ export default async function VsPeregrinePage({
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Peregrine y KabatOne atacan problemas diferentes en el ciclo de seguridad pública. Peregrine responde a la pregunta estratégica: ¿dónde debería desplegar mis patrullas mañana? ¿Qué zonas tienen mayor riesgo? ¿Cómo mejoró mi agencia en los últimos seis meses? Son preguntas que los directores y jefes de policía necesitan responder para planificar, presupuestar y rendir cuentas a sus jurisdicciones.'
-                : 'Peregrine and KabatOne attack different problems in the public safety cycle. Peregrine answers the strategic question: where should I deploy my patrols tomorrow? Which zones are at highest risk? How has my agency improved over the last six months? These are questions police directors and chiefs need to answer to plan, budget, and report to their jurisdictions.'}
+                ? 'Peregrine y Kabat One atacan problemas diferentes en el ciclo de seguridad pública. Peregrine responde a la pregunta estratégica: ¿dónde debería desplegar mis patrullas mañana? ¿Qué zonas tienen mayor riesgo? ¿Cómo mejoró mi agencia en los últimos seis meses? Son preguntas que los directores y jefes de policía necesitan responder para planificar, presupuestar y rendir cuentas a sus jurisdicciones.'
+                : 'Peregrine and Kabat One attack different problems in the public safety cycle. Peregrine answers the strategic question: where should I deploy my patrols tomorrow? Which zones are at highest risk? How has my agency improved over the last six months? These are questions police directors and chiefs need to answer to plan, budget, and report to their jurisdictions.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne responde la pregunta operacional: un incidente está ocurriendo ahora — ¿cuál es la unidad disponible más cercana? ¿Qué cámaras están en el área? ¿El sospechoso coincide con alguna matrícula en la lista de búsqueda? ¿El semáforo en la ruta de la unidad respondedora está en verde? Estas preguntas se responden en segundos, no en dashboards — en el calor de la respuesta, no en el análisis posterior.'
-                : 'KabatOne answers the operational question: an incident is happening right now — which is the closest available unit? Which cameras are in the area? Does the suspect match any plate on the lookout list? Is the signal on the responding unit\'s route green? These questions are answered in seconds, not in dashboards — in the heat of response, not in after-action analysis.'}
+                ? 'Kabat One responde la pregunta operacional: un incidente está ocurriendo ahora — ¿cuál es la unidad disponible más cercana? ¿Qué cámaras están en el área? ¿El sospechoso coincide con alguna matrícula en la lista de búsqueda? ¿El semáforo en la ruta de la unidad respondedora está en verde? Estas preguntas se responden en segundos, no en dashboards — en el calor de la respuesta, no en el análisis posterior.'
+                : 'Kabat One answers the operational question: an incident is happening right now — which is the closest available unit? Which cameras are in the area? Does the suspect match any plate on the lookout list? Is the signal on the responding unit\'s route green? These questions are answered in seconds, not in dashboards — in the heat of response, not in after-action analysis.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para organizaciones que necesitan primero construir la capacidad operacional — un centro de mando funcional con CAD, video, GIS y tráfico integrados — KabatOne es la plataforma de punto de partida. Para organizaciones con operaciones maduras que quieren añadir una capa de inteligencia estratégica sobre sus datos históricos, Peregrine puede ser complementario. Pero sin la infraestructura operacional, el análisis predictivo de Peregrine no tiene sistema de ejecución detrás.'
-                : 'For organizations that first need to build operational capability — a functional command center with integrated CAD, video, GIS, and traffic — KabatOne is the starting platform. For organizations with mature operations that want to add a strategic intelligence layer on top of their historical data, Peregrine can be complementary. But without the operational infrastructure, Peregrine\'s predictive analysis has no execution system behind it.'}
+                ? 'Para organizaciones que necesitan primero construir la capacidad operacional — un centro de mando funcional con CAD, video, GIS y tráfico integrados — Kabat One es la plataforma de punto de partida. Para organizaciones con operaciones maduras que quieren añadir una capa de inteligencia estratégica sobre sus datos históricos, Peregrine puede ser complementario. Pero sin la infraestructura operacional, el análisis predictivo de Peregrine no tiene sistema de ejecución detrás.'
+                : 'For organizations that first need to build operational capability — a functional command center with integrated CAD, video, GIS, and traffic — Kabat One is the starting platform. For organizations with mature operations that want to add a strategic intelligence layer on top of their historical data, Peregrine can be complementary. But without the operational infrastructure, Peregrine\'s predictive analysis has no execution system behind it.'}
             </p>
           </div>
         </section>
@@ -418,7 +418,7 @@ export default async function VsPeregrinePage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -487,7 +487,7 @@ export default async function VsPeregrinePage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Peregrine: Preguntas y Respuestas' : 'KabatOne vs Peregrine: Questions & Answers'}
+              {es ? 'Kabat One vs Peregrine: Preguntas y Respuestas' : 'Kabat One vs Peregrine: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -527,7 +527,7 @@ export default async function VsPeregrinePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Fusus' : 'KabatOne vs Fusus'}</span>
+                <span>{es ? 'Kabat One vs Fusus' : 'Kabat One vs Fusus'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -536,7 +536,7 @@ export default async function VsPeregrinePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/hexagon" style={{
@@ -545,7 +545,7 @@ export default async function VsPeregrinePage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Hexagon Safety' : 'KabatOne vs Hexagon Safety'}</span>
+                <span>{es ? 'Kabat One vs Hexagon Safety' : 'Kabat One vs Hexagon Safety'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/ai-in-public-safety" style={{
@@ -566,8 +566,8 @@ export default async function VsPeregrinePage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
-            : 'See how KabatOne unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
+            ? 'Descubre cómo Kabat One unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
+            : 'See how Kabat One unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
         />
 
         <Footer es={es} />

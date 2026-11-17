@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareMauritiusPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Mauricio | KabatOne"
-    : "Public Safety Software for Mauritius | KabatOne";
+    ? "Software de Seguridad Pública para Mauricio | Kabat One"
+    : "Public Safety Software for Mauritius | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Mauricio — PMF, Guardia Costera, Policía Nacional — con vigilancia en tiempo real, despacho y gestión de incidentes para el estado insular del Océano Índico."
-    : "KabatOne supports Mauritius security forces — PMF, Coast Guard, National Police — with real-time surveillance, dispatch, and incident management for the Indian Ocean island state.";
+    ? "Kabat One apoya las fuerzas de seguridad de Mauricio — PMF, Guardia Costera, Policía Nacional — con vigilancia en tiempo real, despacho y gestión de incidentes para el estado insular del Océano Índico."
+    : "Kabat One supports Mauritius security forces — PMF, Coast Guard, National Police — with real-time surveillance, dispatch, and incident management for the Indian Ocean island state.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-mauritius"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareMauritiusPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Mauricio?"
-        : "How does KabatOne support Mauritius security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Mauricio?"
+        : "How does Kabat One support Mauritius security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Fuerza Paramilitar de Mauricio (PMF ~2,000 efectivos), la Policía Nacional (~12,000 efectivos), la Guardia Costera y el Equipo Especial de Respuesta a Desastres (NDRRMC). La plataforma integra vigilancia marítima de la ZEE de 2.3 millones de km², despacho CAD para Port Louis y las islas exteriores, videoanalítica para el Puerto de Port Louis y el Aeropuerto Internacional Sir Seewoosagur Ramgoolam (SSR), y coordinación con la Guardia Costera de la India."
-        : "KabatOne provides unified situational awareness for the Mauritius Police Force (MPF ~12,000 officers), Paramilitary Force (PMF ~2,000), Coast Guard, and National Disaster Risk Reduction and Management Centre (NDRRMC). The platform integrates maritime surveillance across the 2.3 million km² EEZ, CAD dispatch for Port Louis and outer islands, video analytics for Port Louis Harbour and Sir Seewoosagur Ramgoolam (SSR) International Airport, and coordination with the Indian Coast Guard.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Fuerza Paramilitar de Mauricio (PMF ~2,000 efectivos), la Policía Nacional (~12,000 efectivos), la Guardia Costera y el Equipo Especial de Respuesta a Desastres (NDRRMC). La plataforma integra vigilancia marítima de la ZEE de 2.3 millones de km², despacho CAD para Port Louis y las islas exteriores, videoanalítica para el Puerto de Port Louis y el Aeropuerto Internacional Sir Seewoosagur Ramgoolam (SSR), y coordinación con la Guardia Costera de la India."
+        : "Kabat One provides unified situational awareness for the Mauritius Police Force (MPF ~12,000 officers), Paramilitary Force (PMF ~2,000), Coast Guard, and National Disaster Risk Reduction and Management Centre (NDRRMC). The platform integrates maritime surveillance across the 2.3 million km² EEZ, CAD dispatch for Port Louis and outer islands, video analytics for Port Louis Harbour and Sir Seewoosagur Ramgoolam (SSR) International Airport, and coordination with the Indian Coast Guard.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareMauritiusPage({
     },
     {
       question: es
-        ? "¿Cómo integra KabatOne la vigilancia marítima de la amplia ZEE de Mauricio?"
-        : "How does KabatOne integrate maritime surveillance across Mauritius' wide EEZ?",
+        ? "¿Cómo integra Kabat One la vigilancia marítima de la amplia ZEE de Mauricio?"
+        : "How does Kabat One integrate maritime surveillance across Mauritius' wide EEZ?",
       answer: es
-        ? "KabatOne integra seguimiento AIS/radar de la Guardia Costera en la ZEE de 2.3 millones de km², cubriendo Mauricio principal, Rodrigues (~620 km al este), las Islas Agalega (~1,100 km al norte) y las Islas Cargados Carajos. La plataforma coordina con la Guardia Costera de la India para el patrullaje conjunto, el Centro de Coordinación de Rescate Marítimo (MRCC) de Mauricio, y MASE para la conciencia marítima regional del Océano Índico."
-        : "KabatOne integrates Coast Guard AIS/radar tracking across the 2.3 million km² EEZ, covering mainland Mauritius, Rodrigues (~620 km east), Agalega Islands (~1,100 km north), and Cargados Carajos Shoals. The platform coordinates with the Indian Coast Guard for joint patrols, the Mauritius Maritime Rescue Coordination Centre (MRCC), and MASE for regional Indian Ocean maritime awareness.",
+        ? "Kabat One integra seguimiento AIS/radar de la Guardia Costera en la ZEE de 2.3 millones de km², cubriendo Mauricio principal, Rodrigues (~620 km al este), las Islas Agalega (~1,100 km al norte) y las Islas Cargados Carajos. La plataforma coordina con la Guardia Costera de la India para el patrullaje conjunto, el Centro de Coordinación de Rescate Marítimo (MRCC) de Mauricio, y MASE para la conciencia marítima regional del Océano Índico."
+        : "Kabat One integrates Coast Guard AIS/radar tracking across the 2.3 million km² EEZ, covering mainland Mauritius, Rodrigues (~620 km east), Agalega Islands (~1,100 km north), and Cargados Carajos Shoals. The platform coordinates with the Indian Coast Guard for joint patrols, the Mauritius Maritime Rescue Coordination Centre (MRCC), and MASE for regional Indian Ocean maritime awareness.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareMauritiusPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Mauricio"
-              : "KabatOne Capabilities for Mauritius"}
+              ? "Capacidades de Kabat One para Mauricio"
+              : "Kabat One Capabilities for Mauritius"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a los retos de Mauricio como hub financiero y turístico del Océano Índico: protección de infraestructura crítica financiera, vigilancia de la ZEE más extensa de África por habitante, y gestión de desastres naturales ciclónicos."
-              : "The KabatOne platform provides an integrated suite adapted to Mauritius' challenges as an Indian Ocean financial and tourism hub: critical financial infrastructure protection, surveillance of Africa's most extensive per-capita EEZ, and cyclone natural disaster management."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a los retos de Mauricio como hub financiero y turístico del Océano Índico: protección de infraestructura crítica financiera, vigilancia de la ZEE más extensa de África por habitante, y gestión de desastres naturales ciclónicos."
+              : "The Kabat One platform provides an integrated suite adapted to Mauritius' challenges as an Indian Ocean financial and tourism hub: critical financial infrastructure protection, surveillance of Africa's most extensive per-capita EEZ, and cyclone natural disaster management."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareMauritiusPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la MPF, la Guardia Costera y el NDRRMC en la protección del hub financiero, el turismo de lujo y la vigilancia marítima del Océano Índico."
-            : "Speak with our team about how KabatOne can support the MPF, Coast Guard, and NDRRMC in protecting the financial hub, luxury tourism, and Indian Ocean maritime surveillance."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la MPF, la Guardia Costera y el NDRRMC en la protección del hub financiero, el turismo de lujo y la vigilancia marítima del Océano Índico."
+            : "Speak with our team about how Kabat One can support the MPF, Coast Guard, and NDRRMC in protecting the financial hub, luxury tourism, and Indian Ocean maritime surveillance."
         }
       />
       <Footer es={es} />

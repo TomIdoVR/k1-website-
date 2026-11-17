@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para República del Congo | FAC/PNR, Puerto de Pointe-Noire y Seguridad Petrolera – KabatOne"
-      : "Public Safety Software for Republic of Congo | FAC/PNR, Port of Pointe-Noire & Oil Security – KabatOne",
+      ? "Software de Seguridad Pública para República del Congo | FAC/PNR, Puerto de Pointe-Noire y Seguridad Petrolera – Kabat One"
+      : "Public Safety Software for Republic of Congo | FAC/PNR, Port of Pointe-Noire & Oil Security – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas Armadas Congolesas (FAC), la Policía Nacional Republicana (PNR), gestión del Puerto de Pointe-Noire y seguridad de la infraestructura petrolera del Congo."
-      : "KabatOne delivers public safety platform for the Congolese Armed Forces (FAC), National Republican Police (PNR), Port of Pointe-Noire management, and oil infrastructure security in the Republic of Congo.",
+      ? "Kabat One ofrece plataforma de seguridad pública para las Fuerzas Armadas Congolesas (FAC), la Policía Nacional Republicana (PNR), gestión del Puerto de Pointe-Noire y seguridad de la infraestructura petrolera del Congo."
+      : "Kabat One delivers public safety platform for the Congolese Armed Forces (FAC), National Republican Police (PNR), Port of Pointe-Noire management, and oil infrastructure security in the Republic of Congo.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-republic-of-congo"
       : "https://kabatone.com/resources/public-safety-software-republic-of-congo",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en la República del Congo?"
-        : "How does KabatOne support public safety in the Republic of Congo?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en la República del Congo?"
+        : "How does Kabat One support public safety in the Republic of Congo?",
       answer: es
-        ? "KabatOne integra despacho para la PNR y la Gendarmería en 12 departamentos, gestión de incidentes para el Puerto de Pointe-Noire, seguridad de las plataformas petrolíferas offshore (TotalEnergies/ENI), supervisión de fronteras con RDC/CAR/Camerún/Gabón/Angola y alerta temprana en la región del Pool."
-        : "KabatOne integrates dispatch for PNR and Gendarmerie across 12 departments, incident management for Port of Pointe-Noire, offshore oil platform security (TotalEnergies/ENI), border monitoring with DRC/CAR/Cameroon/Gabon/Angola, and Pool region early warning.",
+        ? "Kabat One integra despacho para la PNR y la Gendarmería en 12 departamentos, gestión de incidentes para el Puerto de Pointe-Noire, seguridad de las plataformas petrolíferas offshore (TotalEnergies/ENI), supervisión de fronteras con RDC/CAR/Camerún/Gabón/Angola y alerta temprana en la región del Pool."
+        : "Kabat One integrates dispatch for PNR and Gendarmerie across 12 departments, incident management for Port of Pointe-Noire, offshore oil platform security (TotalEnergies/ENI), border monitoring with DRC/CAR/Cameroon/Gabon/Angola, and Pool region early warning.",
     },
   ]);
 
@@ -261,11 +261,11 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
           </div>
         </section>
 
-        {/* KabatOne */}
+        {/* Kabat One */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para la República del Congo" : "KabatOne Platform for the Republic of Congo"}
+              {es ? "Plataforma Kabat One para la República del Congo" : "Kabat One Platform for the Republic of Congo"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -335,10 +335,10 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
                     : "Code des Marchés Publics (Law 11-2009) and ARMP govern procurement. Projects are financed by World Bank, AFD, China EXIM Bank/CRBC, and IMF. ARPCE oversees the ICT sector.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en la República del Congo?" : "How does KabatOne support security in the Republic of Congo?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en la República del Congo?" : "How does Kabat One support security in the Republic of Congo?",
                   a: es
-                    ? "KabatOne integra despacho PNR/Gendarmería en 12 departamentos, gestión de incidentes en Pointe-Noire (puerto/plataformas offshore), supervisión de fronteras con 5 vecinos y alertas en la región del Pool."
-                    : "KabatOne integrates PNR/Gendarmerie dispatch across 12 departments, incident management in Pointe-Noire (port/offshore platforms), 5-neighbor border monitoring, and Pool region alerts.",
+                    ? "Kabat One integra despacho PNR/Gendarmería en 12 departamentos, gestión de incidentes en Pointe-Noire (puerto/plataformas offshore), supervisión de fronteras con 5 vecinos y alertas en la región del Pool."
+                    : "Kabat One integrates PNR/Gendarmerie dispatch across 12 departments, incident management in Pointe-Noire (port/offshore platforms), 5-neighbor border monitoring, and Pool region alerts.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -354,8 +354,8 @@ export default async function PublicSafetySoftwareRepublicOfCongoPage({
           es={es}
           h2={es ? "¿Listo para modernizar la seguridad pública en la República del Congo?" : "Ready to modernize public safety in the Republic of Congo?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a las FAC, la PNR, la seguridad portuaria en Pointe-Noire y la protección de las plataformas petrolíferas offshore."
-            : "Contact us to discover how KabatOne supports FAC, PNR, port security in Pointe-Noire, and offshore oil platform protection."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a las FAC, la PNR, la seguridad portuaria en Pointe-Noire y la protección de las plataformas petrolíferas offshore."
+            : "Contact us to discover how Kabat One supports FAC, PNR, port security in Pointe-Noire, and offshore oil platform protection."}
         />
         <Footer es={es} />
       </main>

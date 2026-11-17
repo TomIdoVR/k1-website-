@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareSloveniaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Eslovenia | KabatOne"
-    : "Public Safety Software for Slovenia | KabatOne";
+    ? "Software de Seguridad Pública para Eslovenia | Kabat One"
+    : "Public Safety Software for Slovenia | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Eslovenia — Policía Nacional, Guardia de Fronteras, URSZR — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 esloveno."
-    : "KabatOne supports Slovenia security forces — National Police, Border Guard, URSZR civil protection — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Slovenian 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Eslovenia — Policía Nacional, Guardia de Fronteras, URSZR — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 esloveno."
+    : "Kabat One supports Slovenia security forces — National Police, Border Guard, URSZR civil protection — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Slovenian 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-slovenia"
@@ -37,10 +37,10 @@ export default async function PublicSafetySoftwareSloveniaPage({
         : "Slovenia is a key transit corridor on the Balkan migration route: the border with Croatia (670 km), while an internal EU/Schengen border since 2023, records high irregular transit volumes. The border with non-Schengen Bosnia-Herzegovina is a pressure point. Managing the Julian Alps (natural hazards: avalanches, floods, earthquakes) and protecting the Port of Koper — Slovenia's only seaport and hub for Austria/Hungary/Slovakia — are priorities.",
     },
     {
-      question: es ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Eslovenia?" : "How does KabatOne support Slovenia security forces?",
+      question: es ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Eslovenia?" : "How does Kabat One support Slovenia security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía Nacional de Eslovenia (PU ~9,000 efectivos), la Administración de Protección Civil y Gestión de Catástrofes (URSZR), el Centro de Notificación de Eslovenia (operador 112), el Servicio de Información y Seguridad (SOVA), y la Defensa Nacional (SV). La plataforma se integra con el sistema 112 esloveno, cumple con GDPR y la legislación nacional de protección de datos."
-        : "KabatOne provides unified situational awareness for the Slovenian National Police (PU ~9,000 officers), Administration for Civil Protection and Disaster Relief (URSZR), Slovenian Reporting Centre (112 operator), Intelligence and Security Service (SOVA), and National Defence (SV). The platform integrates with the Slovenian 112 system and complies with GDPR and national data protection legislation.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía Nacional de Eslovenia (PU ~9,000 efectivos), la Administración de Protección Civil y Gestión de Catástrofes (URSZR), el Centro de Notificación de Eslovenia (operador 112), el Servicio de Información y Seguridad (SOVA), y la Defensa Nacional (SV). La plataforma se integra con el sistema 112 esloveno, cumple con GDPR y la legislación nacional de protección de datos."
+        : "Kabat One provides unified situational awareness for the Slovenian National Police (PU ~9,000 officers), Administration for Civil Protection and Disaster Relief (URSZR), Slovenian Reporting Centre (112 operator), Intelligence and Security Service (SOVA), and National Defence (SV). The platform integrates with the Slovenian 112 system and complies with GDPR and national data protection legislation.",
     },
     {
       question: es ? "¿Qué infraestructura crítica requiere protección en Eslovenia?" : "What critical infrastructure requires protection in Slovenia?",
@@ -49,10 +49,10 @@ export default async function PublicSafetySoftwareSloveniaPage({
         : "Critical infrastructure includes the Port of Koper (Luka Koper, ~27M t/year — Alpine gateway for Austria, Hungary, Slovakia, Czech Republic), Ljubljana Jože Pučnik International Airport (LJU), Krško Nuclear Power Plant (NEK, 50% Slovenian electricity, jointly operated with Croatia), Divača-Koper railway corridor (€1.5B expansion project), Karavanken tunnels toward Austria, and Pan-European Corridors V and X.",
     },
     {
-      question: es ? "¿Cómo gestiona KabatOne los riesgos naturales en los Alpes Eslovenos?" : "How does KabatOne manage natural hazards in the Slovenian Alps?",
+      question: es ? "¿Cómo gestiona Kabat One los riesgos naturales en los Alpes Eslovenos?" : "How does Kabat One manage natural hazards in the Slovenian Alps?",
       answer: es
-        ? "KabatOne integra alertas sísmicas del Agencia de Medioambiente de Eslovenia (ARSO), alertas de aludes del URSZR en las estaciones de los Alpes Julianos, gestión de inundaciones del Río Sava y sus afluentes (las inundaciones de agosto 2023 causaron €500M en daños), y alertas de emergencia en los túneles del Karavanken. La plataforma coordina el despacho de rescate montaña con la Asociación de Montañeros de Eslovenia y la Guardia de Fronteras en zonas de alta altitud."
-        : "KabatOne integrates seismic alerts from the Slovenian Environment Agency (ARSO), URSZR avalanche alerts at Julian Alps stations, flood management for the Sava River and tributaries (August 2023 floods caused €500M in damage), and emergency alerts in the Karavanken tunnels. The platform coordinates mountain rescue dispatch with the Alpine Association of Slovenia and Border Guard in high-altitude zones.",
+        ? "Kabat One integra alertas sísmicas del Agencia de Medioambiente de Eslovenia (ARSO), alertas de aludes del URSZR en las estaciones de los Alpes Julianos, gestión de inundaciones del Río Sava y sus afluentes (las inundaciones de agosto 2023 causaron €500M en daños), y alertas de emergencia en los túneles del Karavanken. La plataforma coordina el despacho de rescate montaña con la Asociación de Montañeros de Eslovenia y la Guardia de Fronteras en zonas de alta altitud."
+        : "Kabat One integrates seismic alerts from the Slovenian Environment Agency (ARSO), URSZR avalanche alerts at Julian Alps stations, flood management for the Sava River and tributaries (August 2023 floods caused €500M in damage), and emergency alerts in the Karavanken tunnels. The platform coordinates mountain rescue dispatch with the Alpine Association of Slovenia and Border Guard in high-altitude zones.",
     },
   ];
 
@@ -168,12 +168,12 @@ export default async function PublicSafetySoftwareSloveniaPage({
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
-            {es ? "Capacidades de KabatOne para Eslovenia" : "KabatOne Capabilities for Slovenia"}
+            {es ? "Capacidades de Kabat One para Eslovenia" : "Kabat One Capabilities for Slovenia"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a Eslovenia: gestión de la ruta migratoria balcánica en la frontera con Croacia/Bosnia, protección del Puerto de Koper y la CNE de Krško, respuesta a desastres naturales alpinos, y coordinación con la OTAN y Frontex."
-              : "The KabatOne platform provides an integrated suite adapted to Slovenia: Balkan migration route management on the Croatia/Bosnia border, Port of Koper and Krško Nuclear Plant protection, Alpine natural disaster response, and NATO and Frontex coordination."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a Eslovenia: gestión de la ruta migratoria balcánica en la frontera con Croacia/Bosnia, protección del Puerto de Koper y la CNE de Krško, respuesta a desastres naturales alpinos, y coordinación con la OTAN y Frontex."
+              : "The Kabat One platform provides an integrated suite adapted to Slovenia: Balkan migration route management on the Croatia/Bosnia border, Port of Koper and Krško Nuclear Plant protection, Alpine natural disaster response, and NATO and Frontex coordination."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -242,8 +242,8 @@ export default async function PublicSafetySoftwareSloveniaPage({
         es={es}
         h2={es ? "¿Listo para modernizar la seguridad pública en Eslovenia?" : "Ready to modernize public safety in Slovenia?"}
         subtitle={es
-          ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la Policía Nacional, URSZR y la Guardia de Fronteras con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
-          : "Speak with our team about how KabatOne can support the National Police, URSZR, and Border Guard with a platform compatible with GDPR, NIS2, and NATO standards."}
+          ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la Policía Nacional, URSZR y la Guardia de Fronteras con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
+          : "Speak with our team about how Kabat One can support the National Police, URSZR, and Border Guard with a platform compatible with GDPR, NIS2, and NATO standards."}
       />
       <Footer es={es} />
     </>

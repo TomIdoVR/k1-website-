@@ -29,7 +29,7 @@ export default async function MilestoneAlternativesPage({
         {
           question: '¿Cuáles son las mejores alternativas a Milestone XProtect para seguridad pública?',
           answer:
-            'Las mejores alternativas a Milestone XProtect para seguridad pública son KabatOne (K-Video) como plataforma unificada que integra video, analítica de IA, CAD y GIS; Genetec Security Center como VMS empresarial con control de acceso; Avigilon (Motorola) por su analítica de IA integrada; Verkada por su modelo nativo en la nube; Axon/Fusus para centros de crimen en tiempo real; y Motorola Solutions como suite integral. KabatOne es la única diseñada específicamente para operación multi-agencia (modelo C5), donde una detección de video se convierte en un despacho desde la misma pantalla, en lugar de dejar el despacho a una integración aparte.',
+            'Las mejores alternativas a Milestone XProtect para seguridad pública son Kabat One (K-Video) como plataforma unificada que integra video, analítica de IA, CAD y GIS; Genetec Security Center como VMS empresarial con control de acceso; Avigilon (Motorola) por su analítica de IA integrada; Verkada por su modelo nativo en la nube; Axon/Fusus para centros de crimen en tiempo real; y Motorola Solutions como suite integral. Kabat One es la única diseñada específicamente para operación multi-agencia (modelo C5), donde una detección de video se convierte en un despacho desde la misma pantalla, en lugar de dejar el despacho a una integración aparte.',
         },
         {
           question: '¿Por qué las agencias buscan alternativas a Milestone?',
@@ -37,31 +37,31 @@ export default async function MilestoneAlternativesPage({
             'Milestone XProtect es un VMS abierto y potente, pero las agencias de seguridad pública encuentran tres límites: (1) es un VMS puro — gestiona y graba video, pero no despacha unidades ni unifica el flujo operativo; (2) la analítica avanzada, el CAD y el GIS dependen de complementos y middleware de terceros, con el costo y los puntos de falla que eso implica; y (3) el modelo de licencias por dispositivo y la administración de servidores locales encarecen los despliegues grandes. Las agencias en México y Latinoamérica también buscan soporte local e interfaz en español.',
         },
         {
-          question: '¿En qué se diferencia KabatOne de Milestone XProtect?',
+          question: '¿En qué se diferencia Kabat One de Milestone XProtect?',
           answer:
-            'Milestone XProtect es un VMS empresarial abierto: su fortaleza es gestionar video a gran escala con un amplio ecosistema de cámaras y complementos. KabatOne es una plataforma unificada de seguridad pública: gestiona el video como un VMS y además integra de forma nativa analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS. En Milestone, convertir una alerta de video en una respuesta requiere integraciones separadas; en KabatOne, una detección aparece geolocalizada en el mapa y el operador despacha una unidad sin cambiar de sistema. Ver la comparación directa en KabatOne vs Milestone.',
+            'Milestone XProtect es un VMS empresarial abierto: su fortaleza es gestionar video a gran escala con un amplio ecosistema de cámaras y complementos. Kabat One es una plataforma unificada de seguridad pública: gestiona el video como un VMS y además integra de forma nativa analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS. En Milestone, convertir una alerta de video en una respuesta requiere integraciones separadas; en Kabat One, una detección aparece geolocalizada en el mapa y el operador despacha una unidad sin cambiar de sistema. Ver la comparación directa en Kabat One vs Milestone.',
         },
         {
           question: '¿Cuál es la mejor alternativa a Milestone en México y Latinoamérica?',
           answer:
-            'Para México y Latinoamérica, KabatOne es la alternativa a Milestone diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de video, CAD, GIS y despacho para operación multi-agencia. A diferencia de un VMS que solo gestiona cámaras, KabatOne convierte cada detección en una acción operativa dentro del centro de mando, que es exactamente el flujo que necesitan los C5 estatales y municipales.',
+            'Para México y Latinoamérica, Kabat One es la alternativa a Milestone diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de video, CAD, GIS y despacho para operación multi-agencia. A diferencia de un VMS que solo gestiona cámaras, Kabat One convierte cada detección en una acción operativa dentro del centro de mando, que es exactamente el flujo que necesitan los C5 estatales y municipales.',
         },
         {
           question: '¿Las alternativas a Milestone funcionan con cámaras de cualquier marca?',
           answer:
-            'Sí. Como Milestone, las mejores alternativas son agnósticas al fabricante y soportan cámaras vía ONVIF y RTSP además de integraciones nativas con Hikvision, Axis, Dahua, Bosch, Hanwha y otras. KabatOne agrega cámaras de cualquier fabricante — incluidas analógicas mediante codificador — en una sola interfaz, lo que evita el bloqueo de proveedor y permite aprovechar el parque de cámaras existente sin reemplazar la infraestructura.',
+            'Sí. Como Milestone, las mejores alternativas son agnósticas al fabricante y soportan cámaras vía ONVIF y RTSP además de integraciones nativas con Hikvision, Axis, Dahua, Bosch, Hanwha y otras. Kabat One agrega cámaras de cualquier fabricante — incluidas analógicas mediante codificador — en una sola interfaz, lo que evita el bloqueo de proveedor y permite aprovechar el parque de cámaras existente sin reemplazar la infraestructura.',
         },
         {
           question: '¿Una alternativa a Milestone reemplaza también el sistema de despacho (CAD)?',
           answer:
-            'Depende de la plataforma. Un VMS puro como Milestone, Genetec o Verkada gestiona el video, pero el despacho sigue siendo un sistema aparte que hay que integrar. Una plataforma unificada como KabatOne reemplaza al VMS para video y además incorpora el CAD/despacho de forma nativa, eliminando el middleware entre el video y la respuesta. Esa es la decisión clave: reemplazar solo el VMS o unificar todo el flujo operativo.',
+            'Depende de la plataforma. Un VMS puro como Milestone, Genetec o Verkada gestiona el video, pero el despacho sigue siendo un sistema aparte que hay que integrar. Una plataforma unificada como Kabat One reemplaza al VMS para video y además incorpora el CAD/despacho de forma nativa, eliminando el middleware entre el video y la respuesta. Esa es la decisión clave: reemplazar solo el VMS o unificar todo el flujo operativo.',
         },
       ]
     : [
         {
           question: 'What are the best Milestone XProtect alternatives for public safety?',
           answer:
-            'The best Milestone XProtect alternatives for public safety are KabatOne (K-Video) as a unified platform integrating video, AI analytics, CAD, and GIS; Genetec Security Center as an enterprise VMS with access control; Avigilon (Motorola) for built-in AI analytics; Verkada for its cloud-native model; Axon/Fusus for real-time crime centers; and Motorola Solutions as a full-stack suite. KabatOne is the only one purpose-built for multi-agency operation (the C5 model), where a video detection becomes a dispatch from the same screen instead of leaving dispatch to a separate integration.',
+            'The best Milestone XProtect alternatives for public safety are Kabat One (K-Video) as a unified platform integrating video, AI analytics, CAD, and GIS; Genetec Security Center as an enterprise VMS with access control; Avigilon (Motorola) for built-in AI analytics; Verkada for its cloud-native model; Axon/Fusus for real-time crime centers; and Motorola Solutions as a full-stack suite. Kabat One is the only one purpose-built for multi-agency operation (the C5 model), where a video detection becomes a dispatch from the same screen instead of leaving dispatch to a separate integration.',
         },
         {
           question: 'Why do agencies look for alternatives to Milestone?',
@@ -69,24 +69,24 @@ export default async function MilestoneAlternativesPage({
             'Milestone XProtect is an open, powerful VMS, but public safety agencies hit three limits: (1) it is a pure VMS — it manages and records video, but does not dispatch units or unify the operational flow; (2) advanced analytics, CAD, and GIS depend on third-party add-ons and middleware, with the cost and failure points that entails; and (3) the per-device licensing model and local server administration make large deployments expensive. Agencies in Mexico and Latin America also look for local support and a Spanish-language interface.',
         },
         {
-          question: 'How is KabatOne different from Milestone XProtect?',
+          question: 'How is Kabat One different from Milestone XProtect?',
           answer:
-            'Milestone XProtect is an open enterprise VMS: its strength is managing video at scale with a broad ecosystem of cameras and add-ons. KabatOne is a unified public safety platform: it manages video like a VMS and also natively integrates AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS. In Milestone, turning a video alert into a response requires separate integrations; in KabatOne, a detection appears geolocated on the map and the operator dispatches a unit without switching systems. See the head-to-head at KabatOne vs Milestone.',
+            'Milestone XProtect is an open enterprise VMS: its strength is managing video at scale with a broad ecosystem of cameras and add-ons. Kabat One is a unified public safety platform: it manages video like a VMS and also natively integrates AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS. In Milestone, turning a video alert into a response requires separate integrations; in Kabat One, a detection appears geolocated on the map and the operator dispatches a unit without switching systems. See the head-to-head at Kabat One vs Milestone.',
         },
         {
           question: 'What is the best Milestone alternative in Mexico and Latin America?',
           answer:
-            'For Mexico and Latin America, KabatOne is the Milestone alternative built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of video, CAD, GIS, and dispatch for multi-agency operation. Unlike a VMS that only manages cameras, KabatOne turns every detection into an operational action inside the command center — exactly the flow that state and municipal C5 centers need.',
+            'For Mexico and Latin America, Kabat One is the Milestone alternative built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of video, CAD, GIS, and dispatch for multi-agency operation. Unlike a VMS that only manages cameras, Kabat One turns every detection into an operational action inside the command center — exactly the flow that state and municipal C5 centers need.',
         },
         {
           question: 'Do Milestone alternatives work with any camera brand?',
           answer:
-            'Yes. Like Milestone, the best alternatives are manufacturer-agnostic and support cameras via ONVIF and RTSP alongside native integrations with Hikvision, Axis, Dahua, Bosch, Hanwha, and others. KabatOne aggregates cameras from any manufacturer — including analog via encoder — into a single interface, which avoids vendor lock-in and lets you leverage the existing camera fleet without replacing infrastructure.',
+            'Yes. Like Milestone, the best alternatives are manufacturer-agnostic and support cameras via ONVIF and RTSP alongside native integrations with Hikvision, Axis, Dahua, Bosch, Hanwha, and others. Kabat One aggregates cameras from any manufacturer — including analog via encoder — into a single interface, which avoids vendor lock-in and lets you leverage the existing camera fleet without replacing infrastructure.',
         },
         {
           question: 'Does a Milestone alternative also replace the dispatch (CAD) system?',
           answer:
-            'It depends on the platform. A pure VMS like Milestone, Genetec, or Verkada manages the video, but dispatch remains a separate system you must integrate. A unified platform like KabatOne replaces the VMS for video and adds CAD/dispatch natively, removing the middleware between video and response. That is the key decision: replace only the VMS, or unify the entire operational flow.',
+            'It depends on the platform. A pure VMS like Milestone, Genetec, or Verkada manages the video, but dispatch remains a separate system you must integrate. A unified platform like Kabat One replaces the VMS for video and adds CAD/dispatch natively, removing the middleware between video and response. That is the key decision: replace only the VMS, or unify the entire operational flow.',
         },
       ]
 
@@ -94,8 +94,8 @@ export default async function MilestoneAlternativesPage({
   const artSchema = articleSchema(
     es ? 'Mejores Alternativas a Milestone XProtect para Seguridad Pública (2026)' : 'Best Milestone XProtect Alternatives for Public Safety (2026)',
     es
-      ? 'Las mejores alternativas a Milestone XProtect para seguridad pública: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y cuál es la mejor plataforma unificada.'
-      : 'The best Milestone XProtect alternatives for public safety: KabatOne, Genetec, Avigilon, Verkada, Axon/Fusus, and Motorola compared — why agencies switch, selection criteria, and the best unified platform.',
+      ? 'Las mejores alternativas a Milestone XProtect para seguridad pública: Kabat One, Genetec, Avigilon, Verkada, Axon/Fusus y Motorola comparadas — por qué las agencias cambian, criterios de selección y cuál es la mejor plataforma unificada.'
+      : 'The best Milestone XProtect alternatives for public safety: Kabat One, Genetec, Avigilon, Verkada, Axon/Fusus, and Motorola compared — why agencies switch, selection criteria, and the best unified platform.',
     es
       ? 'https://kabatone.com/es/resources/milestone-alternatives'
       : 'https://kabatone.com/resources/milestone-alternatives',
@@ -114,7 +114,7 @@ export default async function MilestoneAlternativesPage({
 
   const vendors = es
     ? [
-        { name: 'KabatOne (K-Video)', strength: 'Plataforma unificada: video + IA + CAD + GIS + despacho', bestFor: 'Seguridad pública multi-agencia y centros C5' },
+        { name: 'Kabat One (K-Video)', strength: 'Plataforma unificada: video + IA + CAD + GIS + despacho', bestFor: 'Seguridad pública multi-agencia y centros C5' },
         { name: 'Genetec Security Center', strength: 'VMS empresarial con control de acceso', bestFor: 'Despliegues empresariales de video y accesos' },
         { name: 'Avigilon (Motorola)', strength: 'Analítica de IA integrada y cámaras propias', bestFor: 'Seguridad con detección proactiva' },
         { name: 'Verkada', strength: 'VMS nativo en la nube, gestión simplificada', bestFor: 'Despliegues sin servidores locales' },
@@ -122,7 +122,7 @@ export default async function MilestoneAlternativesPage({
         { name: 'Motorola Solutions', strength: 'Suite integral de radio, CAD y video', bestFor: 'Agencias que ya operan en el ecosistema Motorola' },
       ]
     : [
-        { name: 'KabatOne (K-Video)', strength: 'Unified platform: video + AI + CAD + GIS + dispatch', bestFor: 'Multi-agency public safety & C5 command centers' },
+        { name: 'Kabat One (K-Video)', strength: 'Unified platform: video + AI + CAD + GIS + dispatch', bestFor: 'Multi-agency public safety & C5 command centers' },
         { name: 'Genetec Security Center', strength: 'Enterprise VMS with access control', bestFor: 'Enterprise video and access deployments' },
         { name: 'Avigilon (Motorola)', strength: 'Built-in AI analytics and proprietary cameras', bestFor: 'Security with proactive detection' },
         { name: 'Verkada', strength: 'Cloud-native VMS, simplified management', bestFor: 'Deployments without local servers' },
@@ -132,7 +132,7 @@ export default async function MilestoneAlternativesPage({
 
   const profiles = es
     ? [
-        { n: '1', name: 'KabatOne (K-Video)', body: 'La alternativa a Milestone cuando la meta no es solo gestionar video, sino convertirlo en respuesta. KabatOne unifica video, analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS en una sola plataforma. Diseñada para el modelo C5 multi-agencia: una detección aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Agnóstica al fabricante de cámaras, con interfaz en español y soporte local para México y Latinoamérica.' },
+        { n: '1', name: 'Kabat One (K-Video)', body: 'La alternativa a Milestone cuando la meta no es solo gestionar video, sino convertirlo en respuesta. Kabat One unifica video, analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS en una sola plataforma. Diseñada para el modelo C5 multi-agencia: una detección aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Agnóstica al fabricante de cámaras, con interfaz en español y soporte local para México y Latinoamérica.' },
         { n: '2', name: 'Genetec Security Center', body: 'VMS empresarial de nivel alto que suma control de acceso y reconocimiento de placas en un solo entorno. Es una alternativa sólida a Milestone para gestión de video empresarial, pero — como Milestone — deja el despacho y la operación de seguridad pública a integraciones separadas. Ver también Alternativas a Genetec.' },
         { n: '3', name: 'Avigilon (Motorola)', body: 'Fuerte en analítica de IA integrada y en un stack de cámaras propias. Buena opción si priorizas detección proactiva sobre video pasivo, aunque tiende al bloqueo de proveedor en hardware y sigue siendo principalmente una plataforma de seguridad, no de operación de seguridad pública unificada.' },
         { n: '4', name: 'Verkada', body: 'VMS nativo en la nube que simplifica el despliegue y el mantenimiento al eliminar los servidores locales — el modelo opuesto al de servidores de Milestone. Atractivo para organizaciones que quieren gestión centralizada sin infraestructura, con la contrapartida de depender de cámaras propietarias y de la nube.' },
@@ -140,7 +140,7 @@ export default async function MilestoneAlternativesPage({
         { n: '6', name: 'Motorola Solutions', body: 'Suite integral de radio, CAD y video para agencias que ya viven en el ecosistema Motorola. Amplia pero también compleja y costosa; la unificación real entre módulos puede requerir servicios profesionales significativos.' },
       ]
     : [
-        { n: '1', name: 'KabatOne (K-Video)', body: 'The Milestone alternative when the goal is not just to manage video, but to turn it into response. KabatOne unifies video, AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS in one platform. Built for the multi-agency C5 model: a detection appears geolocated on the map and the operator dispatches from the same screen. Camera-manufacturer agnostic, with a Spanish-language interface and local support for Mexico and Latin America.' },
+        { n: '1', name: 'Kabat One (K-Video)', body: 'The Milestone alternative when the goal is not just to manage video, but to turn it into response. Kabat One unifies video, AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS in one platform. Built for the multi-agency C5 model: a detection appears geolocated on the map and the operator dispatches from the same screen. Camera-manufacturer agnostic, with a Spanish-language interface and local support for Mexico and Latin America.' },
         { n: '2', name: 'Genetec Security Center', body: 'A high-end enterprise VMS that adds access control and license-plate recognition in one environment. It is a solid Milestone alternative for enterprise video management, but — like Milestone — it leaves dispatch and public safety operation to separate integrations. See also Genetec Alternatives.' },
         { n: '3', name: 'Avigilon (Motorola)', body: 'Strong on built-in AI analytics and a proprietary camera stack. A good option if you prioritize proactive detection over passive video, though it tends toward hardware vendor lock-in and remains primarily a security platform, not a unified public safety operation.' },
         { n: '4', name: 'Verkada', body: 'A cloud-native VMS that simplifies deployment and maintenance by removing local servers — the opposite of Milestone\'s server model. Attractive for organizations that want centralized management without infrastructure, with the tradeoff of dependence on proprietary cameras and the cloud.' },
@@ -182,7 +182,7 @@ export default async function MilestoneAlternativesPage({
             </p>
             <div style={{ fontSize: '12px', color: '#475569', lineHeight: 2 }}>
               <span style={{ marginRight: '8px', fontWeight: 600, color: '#64748b' }}>{es ? 'Recursos:' : 'Resources:'}</span>
-              <Link href="/vs/milestone" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>KabatOne vs Milestone</Link>
+              <Link href="/vs/milestone" style={{ color: ACCENT, textDecoration: 'none', marginRight: '14px' }}>Kabat One vs Milestone</Link>
               <Link href="/resources/best-vms-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? 'Mejor Software VMS' : 'Best VMS Software'}</Link>
               <Link href="/resources/what-is-video-management-software" style={{ color: '#94a3b8', textDecoration: 'none', marginRight: '14px' }}>{es ? '¿Qué es un VMS?' : 'What Is a VMS?'}</Link>
               <Link href="/k-video" style={{ color: '#94a3b8', textDecoration: 'none' }}>K-Video</Link>
@@ -197,7 +197,7 @@ export default async function MilestoneAlternativesPage({
               {es
                 ? 'Las mejores alternativas a Milestone XProtect para seguridad pública en 2026 son '
                 : 'The best Milestone XProtect alternatives for public safety in 2026 are '}
-              <strong style={{ color: '#f0f4f8' }}>KabatOne (K-Video)</strong>
+              <strong style={{ color: '#f0f4f8' }}>Kabat One (K-Video)</strong>
               {es ? ' — la única plataforma unificada que integra video, analítica de IA, CAD y GIS para operación multi-agencia — ' : ' — the only unified platform that integrates video, AI analytics, CAD, and GIS for multi-agency operation — '}
               <strong style={{ color: '#f0f4f8' }}>Genetec Security Center</strong>{es ? ' (VMS empresarial), ' : ' (enterprise VMS), '}
               <strong style={{ color: '#f0f4f8' }}>Avigilon</strong>{es ? ' (analítica de IA), ' : ' (AI analytics), '}
@@ -205,8 +205,8 @@ export default async function MilestoneAlternativesPage({
               <strong style={{ color: '#f0f4f8' }}>Axon / Fusus</strong>{es ? ' (centro de crimen en tiempo real) y ' : ' (real-time crime center), and '}
               <strong style={{ color: '#f0f4f8' }}>Motorola Solutions</strong>{es ? ' (suite integral).' : ' (full-stack suite).'}
               {es
-                ? ' Para centros de mando C5 donde el video debe convertirse en despacho, KabatOne es la alternativa más completa.'
-                : ' For C5 command centers where video must turn into dispatch, KabatOne is the most complete alternative.'}
+                ? ' Para centros de mando C5 donde el video debe convertirse en despacho, Kabat One es la alternativa más completa.'
+                : ' For C5 command centers where video must turn into dispatch, Kabat One is the most complete alternative.'}
             </p>
           </div>
         </section>
@@ -248,7 +248,7 @@ export default async function MilestoneAlternativesPage({
             {es
               ? 'Ahí es donde una plataforma unificada cambia la ecuación. Para el detalle cabeza a cabeza, consulta '
               : 'That is where a unified platform changes the equation. For the head-to-head detail, see '}
-            <Link href="/vs/milestone" style={{ color: ACCENT, textDecoration: 'none' }}>KabatOne vs Milestone</Link>
+            <Link href="/vs/milestone" style={{ color: ACCENT, textDecoration: 'none' }}>Kabat One vs Milestone</Link>
             {es ? '.' : '.'}
           </p>
         </section>
@@ -287,13 +287,13 @@ export default async function MilestoneAlternativesPage({
           <h2 style={{ ...sectionH2, fontSize: '20px' }}>{es ? 'Relacionado' : 'Related'}</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '6px' }}>
             {[
-              { href: '/vs/milestone', label: es ? 'KabatOne vs Milestone (comparación directa)' : 'KabatOne vs Milestone (head-to-head)' },
+              { href: '/vs/milestone', label: es ? 'Kabat One vs Milestone (comparación directa)' : 'Kabat One vs Milestone (head-to-head)' },
               { href: '/resources/genetec-alternatives', label: es ? 'Alternativas a Genetec' : 'Genetec Alternatives' },
               { href: '/resources/best-vms-software', label: es ? 'Mejor Software VMS' : 'Best VMS Software' },
               { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS?' : 'What Is a VMS?' },
               { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video con IA' : 'AI Video Analytics' },
-              { href: '/vs/genetec', label: es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec' },
-              { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
+              { href: '/vs/genetec', label: es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec' },
+              { href: '/vs/avigilon', label: es ? 'Kabat One vs Avigilon' : 'Kabat One vs Avigilon' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>
@@ -307,8 +307,8 @@ export default async function MilestoneAlternativesPage({
           es={es}
           h2={es ? '¿Evaluando Alternativas a Milestone?' : 'Evaluating Milestone Alternatives?'}
           subtitle={es
-            ? 'KabatOne unifica video, analítica de IA, CAD y GIS en una sola plataforma para seguridad pública. Agenda una demo de K-Video.'
-            : 'KabatOne unifies video, AI analytics, CAD and GIS in one platform for public safety. Book a K-Video demo.'}
+            ? 'Kabat One unifica video, analítica de IA, CAD y GIS en una sola plataforma para seguridad pública. Agenda una demo de K-Video.'
+            : 'Kabat One unifies video, AI analytics, CAD and GIS in one platform for public safety. Book a K-Video demo.'}
         />
       </main>
       <Footer es={es} />

@@ -29,7 +29,7 @@ export default async function PsimAlternativesPage({
         {
           question: '¿Cuáles son las mejores alternativas a un PSIM tradicional para ciudades inteligentes?',
           answer:
-            'Las mejores alternativas a un PSIM (Physical Security Information Management) tradicional para ciudades inteligentes son KabatOne como plataforma unificada de origen que integra video, analítica de IA, CAD y GIS sin capas de middleware; Genetec Security Center como PSIM/VMS empresarial; CNL IPSecurityCenter (Vidsys/OCTOPUS) como plataforma PSIM clásica de correlación de eventos; y Hexagon como suite de gestión de seguridad y despacho. KabatOne se diferencia porque no correlaciona sistemas de terceros después del hecho — nace unificado, así que una detección de video se convierte en un despacho geolocalizado sin integraciones adicionales.',
+            'Las mejores alternativas a un PSIM (Physical Security Information Management) tradicional para ciudades inteligentes son Kabat One como plataforma unificada de origen que integra video, analítica de IA, CAD y GIS sin capas de middleware; Genetec Security Center como PSIM/VMS empresarial; CNL IPSecurityCenter (Vidsys/OCTOPUS) como plataforma PSIM clásica de correlación de eventos; y Hexagon como suite de gestión de seguridad y despacho. Kabat One se diferencia porque no correlaciona sistemas de terceros después del hecho — nace unificado, así que una detección de video se convierte en un despacho geolocalizado sin integraciones adicionales.',
         },
         {
           question: '¿Por qué las ciudades buscan alternativas a un PSIM?',
@@ -37,31 +37,31 @@ export default async function PsimAlternativesPage({
             'Un PSIM clásico fue diseñado para correlacionar alertas de sistemas de seguridad ya existentes (video, control de acceso, sensores) mediante una capa de software de integración. Esa capa agrega valor pero también agrega costo, complejidad de mantenimiento (cada actualización de un sistema subyacente puede romper la integración) y latencia entre la detección y la acción. Las ciudades y agencias de seguridad pública buscan alternativas cuando necesitan que la correlación se convierta directamente en una respuesta operativa — despacho de una unidad, no solo una alerta en una pantalla — sin depender de conectores de terceros.',
         },
         {
-          question: '¿En qué se diferencia KabatOne de un PSIM como Genetec o CNL IPSecurityCenter?',
+          question: '¿En qué se diferencia Kabat One de un PSIM como Genetec o CNL IPSecurityCenter?',
           answer:
-            'Un PSIM integra sistemas de seguridad existentes y dispares mediante conectores — es una capa de correlación sobre infraestructura de terceros. KabatOne es una plataforma unificada de seguridad pública: video, analítica de IA, CAD/despacho y GIS viven de forma nativa en el mismo sistema, no conectados después. El resultado práctico es que una alerta no solo se correlaciona y se muestra — se convierte en una unidad despachada al lugar exacto del incidente, desde la misma pantalla y sin retraso de integración.',
+            'Un PSIM integra sistemas de seguridad existentes y dispares mediante conectores — es una capa de correlación sobre infraestructura de terceros. Kabat One es una plataforma unificada de seguridad pública: video, analítica de IA, CAD/despacho y GIS viven de forma nativa en el mismo sistema, no conectados después. El resultado práctico es que una alerta no solo se correlaciona y se muestra — se convierte en una unidad despachada al lugar exacto del incidente, desde la misma pantalla y sin retraso de integración.',
         },
         {
           question: '¿Cuál es la mejor alternativa a un PSIM para operación multi-agencia (modelo C5)?',
           answer:
-            'Para operación multi-agencia — el modelo C5/C4/C2 usado en México y Latinoamérica — KabatOne es la alternativa purpose-built: interfaz en español, soporte local, y arquitectura pensada desde el inicio para que múltiples agencias (policía, protección civil, tránsito) compartan una sola vista operativa. Un PSIM tradicional puede correlacionar sus sistemas, pero la coordinación entre agencias y el despacho compartido normalmente requieren trabajo de integración adicional que KabatOne no necesita.',
+            'Para operación multi-agencia — el modelo C5/C4/C2 usado en México y Latinoamérica — Kabat One es la alternativa purpose-built: interfaz en español, soporte local, y arquitectura pensada desde el inicio para que múltiples agencias (policía, protección civil, tránsito) compartan una sola vista operativa. Un PSIM tradicional puede correlacionar sus sistemas, pero la coordinación entre agencias y el despacho compartido normalmente requieren trabajo de integración adicional que Kabat One no necesita.',
         },
         {
           question: '¿Una alternativa a un PSIM reemplaza también el software de despacho (CAD)?',
           answer:
-            'Depende de la plataforma. Un PSIM tradicional (Genetec, CNL IPSecurityCenter) correlaciona alertas pero típicamente deja el despacho como un sistema CAD separado que hay que integrar. KabatOne, como plataforma unificada, incorpora el CAD/despacho de forma nativa junto con el video y el GIS — eliminando esa integración adicional y el punto de falla que representa.',
+            'Depende de la plataforma. Un PSIM tradicional (Genetec, CNL IPSecurityCenter) correlaciona alertas pero típicamente deja el despacho como un sistema CAD separado que hay que integrar. Kabat One, como plataforma unificada, incorpora el CAD/despacho de forma nativa junto con el video y el GIS — eliminando esa integración adicional y el punto de falla que representa.',
         },
         {
           question: '¿Los PSIM/alternativas funcionan con la infraestructura de cámaras y sensores que ya tengo?',
           answer:
-            'Sí, en general. Tanto los PSIM tradicionales como KabatOne están diseñados para ser agnósticos al fabricante, soportando cámaras vía ONVIF/RTSP e integraciones con marcas como Hikvision, Axis, Dahua, Bosch y Hanwha. La diferencia no está en la compatibilidad de hardware, sino en qué tan nativa es la correlación: un PSIM la agrega como capa externa, KabatOne la construye dentro de la misma plataforma que gestiona video, IA, CAD y GIS.',
+            'Sí, en general. Tanto los PSIM tradicionales como Kabat One están diseñados para ser agnósticos al fabricante, soportando cámaras vía ONVIF/RTSP e integraciones con marcas como Hikvision, Axis, Dahua, Bosch y Hanwha. La diferencia no está en la compatibilidad de hardware, sino en qué tan nativa es la correlación: un PSIM la agrega como capa externa, Kabat One la construye dentro de la misma plataforma que gestiona video, IA, CAD y GIS.',
         },
       ]
     : [
         {
           question: 'What are the best alternatives to a traditional PSIM for smart cities?',
           answer:
-            'The best alternatives to a traditional PSIM (Physical Security Information Management) for smart cities are KabatOne as a unified-from-the-ground-up platform integrating video, AI analytics, CAD, and GIS without middleware layers; Genetec Security Center as an enterprise PSIM/VMS; CNL IPSecurityCenter (Vidsys/OCTOPUS) as a classic event-correlation PSIM platform; and Hexagon as a security management and dispatch suite. KabatOne differs because it does not correlate third-party systems after the fact — it is born unified, so a video detection becomes a geolocated dispatch without additional integrations.',
+            'The best alternatives to a traditional PSIM (Physical Security Information Management) for smart cities are Kabat One as a unified-from-the-ground-up platform integrating video, AI analytics, CAD, and GIS without middleware layers; Genetec Security Center as an enterprise PSIM/VMS; CNL IPSecurityCenter (Vidsys/OCTOPUS) as a classic event-correlation PSIM platform; and Hexagon as a security management and dispatch suite. Kabat One differs because it does not correlate third-party systems after the fact — it is born unified, so a video detection becomes a geolocated dispatch without additional integrations.',
         },
         {
           question: 'Why do cities look for alternatives to a PSIM?',
@@ -69,24 +69,24 @@ export default async function PsimAlternativesPage({
             'A classic PSIM was designed to correlate alerts from already-existing security systems (video, access control, sensors) through an integration software layer. That layer adds value but also adds cost, maintenance complexity (every update to an underlying system can break the integration), and latency between detection and action. Cities and public safety agencies look for alternatives when they need correlation to become a direct operational response — dispatching a unit, not just an alert on a screen — without depending on third-party connectors.',
         },
         {
-          question: 'How is KabatOne different from a PSIM like Genetec or CNL IPSecurityCenter?',
+          question: 'How is Kabat One different from a PSIM like Genetec or CNL IPSecurityCenter?',
           answer:
-            'A PSIM integrates existing, disparate security systems through connectors — it is a correlation layer over third-party infrastructure. KabatOne is a unified public safety platform: video, AI analytics, CAD/dispatch, and GIS live natively in the same system, not connected afterward. The practical result is that an alert is not just correlated and displayed — it becomes a unit dispatched to the exact incident location, from the same screen, with no integration lag.',
+            'A PSIM integrates existing, disparate security systems through connectors — it is a correlation layer over third-party infrastructure. Kabat One is a unified public safety platform: video, AI analytics, CAD/dispatch, and GIS live natively in the same system, not connected afterward. The practical result is that an alert is not just correlated and displayed — it becomes a unit dispatched to the exact incident location, from the same screen, with no integration lag.',
         },
         {
           question: 'What is the best PSIM alternative for multi-agency operation (the C5 model)?',
           answer:
-            'For multi-agency operation — the C5/C4/C2 model used in Mexico and Latin America — KabatOne is the purpose-built alternative: Spanish-language interface, local support, and an architecture designed from day one for multiple agencies (police, civil protection, traffic) to share a single operational view. A traditional PSIM can correlate its systems, but cross-agency coordination and shared dispatch usually require additional integration work that KabatOne does not need.',
+            'For multi-agency operation — the C5/C4/C2 model used in Mexico and Latin America — Kabat One is the purpose-built alternative: Spanish-language interface, local support, and an architecture designed from day one for multiple agencies (police, civil protection, traffic) to share a single operational view. A traditional PSIM can correlate its systems, but cross-agency coordination and shared dispatch usually require additional integration work that Kabat One does not need.',
         },
         {
           question: 'Does a PSIM alternative also replace the dispatch (CAD) software?',
           answer:
-            'It depends on the platform. A traditional PSIM (Genetec, CNL IPSecurityCenter) correlates alerts but typically leaves dispatch as a separate CAD system that must be integrated. KabatOne, as a unified platform, natively incorporates CAD/dispatch alongside video and GIS — removing that additional integration and the failure point it represents.',
+            'It depends on the platform. A traditional PSIM (Genetec, CNL IPSecurityCenter) correlates alerts but typically leaves dispatch as a separate CAD system that must be integrated. Kabat One, as a unified platform, natively incorporates CAD/dispatch alongside video and GIS — removing that additional integration and the failure point it represents.',
         },
         {
           question: 'Do PSIM alternatives work with the camera and sensor infrastructure I already have?',
           answer:
-            'Generally, yes. Both traditional PSIMs and KabatOne are designed to be manufacturer-agnostic, supporting cameras via ONVIF/RTSP and integrations with brands like Hikvision, Axis, Dahua, Bosch, and Hanwha. The difference is not hardware compatibility but how native the correlation is: a PSIM adds it as an external layer, while KabatOne builds it inside the same platform that manages video, AI, CAD, and GIS.',
+            'Generally, yes. Both traditional PSIMs and Kabat One are designed to be manufacturer-agnostic, supporting cameras via ONVIF/RTSP and integrations with brands like Hikvision, Axis, Dahua, Bosch, and Hanwha. The difference is not hardware compatibility but how native the correlation is: a PSIM adds it as an external layer, while Kabat One builds it inside the same platform that manages video, AI, CAD, and GIS.',
         },
       ]
 
@@ -94,8 +94,8 @@ export default async function PsimAlternativesPage({
   const artSchema = articleSchema(
     es ? 'Mejores Alternativas a PSIM para Ciudades Inteligentes (2026)' : 'Best PSIM Alternatives for Smart Cities (2026)',
     es
-      ? 'Las mejores alternativas a un PSIM tradicional para ciudades inteligentes y seguridad pública: KabatOne, Genetec, CNL IPSecurityCenter y Hexagon comparadas — por qué las ciudades cambian y cuándo una plataforma unificada supera a una capa de correlación.'
-      : 'The best alternatives to a traditional PSIM for smart cities and public safety: KabatOne, Genetec, CNL IPSecurityCenter, and Hexagon compared — why cities switch and when a unified platform beats a correlation layer.',
+      ? 'Las mejores alternativas a un PSIM tradicional para ciudades inteligentes y seguridad pública: Kabat One, Genetec, CNL IPSecurityCenter y Hexagon comparadas — por qué las ciudades cambian y cuándo una plataforma unificada supera a una capa de correlación.'
+      : 'The best alternatives to a traditional PSIM for smart cities and public safety: Kabat One, Genetec, CNL IPSecurityCenter, and Hexagon compared — why cities switch and when a unified platform beats a correlation layer.',
     es
       ? 'https://kabatone.com/es/resources/psim-alternatives/'
       : 'https://kabatone.com/resources/psim-alternatives/',
@@ -114,7 +114,7 @@ export default async function PsimAlternativesPage({
 
   const vendors = es
     ? [
-        { name: 'KabatOne', strength: 'Plataforma unificada de origen: video + IA + CAD + GIS + despacho', bestFor: 'Ciudades inteligentes y seguridad pública multi-agencia' },
+        { name: 'Kabat One', strength: 'Plataforma unificada de origen: video + IA + CAD + GIS + despacho', bestFor: 'Ciudades inteligentes y seguridad pública multi-agencia' },
         { name: 'Genetec Security Center', strength: 'PSIM/VMS empresarial con amplio ecosistema', bestFor: 'Correlación de video y control de acceso a gran escala' },
         { name: 'CNL IPSecurityCenter (Vidsys/OCTOPUS)', strength: 'PSIM clásico de correlación de eventos multi-sistema', bestFor: 'Entornos corporativos con muchos sistemas heredados' },
         { name: 'Hexagon', strength: 'Suite de gestión de seguridad y despacho geoespacial', bestFor: 'Agencias que priorizan GIS y análisis geoespacial' },
@@ -122,7 +122,7 @@ export default async function PsimAlternativesPage({
         { name: 'Motorola CommandCentral', strength: 'Correlación de alertas ligada al ecosistema Motorola', bestFor: 'Agencias que ya operan radios y CAD Motorola' },
       ]
     : [
-        { name: 'KabatOne', strength: 'Unified-from-the-ground-up: video + AI + CAD + GIS + dispatch', bestFor: 'Smart cities and multi-agency public safety' },
+        { name: 'Kabat One', strength: 'Unified-from-the-ground-up: video + AI + CAD + GIS + dispatch', bestFor: 'Smart cities and multi-agency public safety' },
         { name: 'Genetec Security Center', strength: 'Enterprise PSIM/VMS with a broad ecosystem', bestFor: 'Large-scale video and access-control correlation' },
         { name: 'CNL IPSecurityCenter (Vidsys/OCTOPUS)', strength: 'Classic multi-system event-correlation PSIM', bestFor: 'Corporate environments with many legacy systems' },
         { name: 'Hexagon', strength: 'Security management and geospatial dispatch suite', bestFor: 'Agencies prioritizing GIS and geospatial analysis' },
@@ -132,7 +132,7 @@ export default async function PsimAlternativesPage({
 
   const profiles = es
     ? [
-        { n: '1', name: 'KabatOne', body: 'La alternativa a un PSIM cuando la meta no es solo correlacionar alertas, sino convertirlas en una respuesta desde la misma plataforma. KabatOne unifica video, analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS — sin capa de integración de terceros. Diseñada para el modelo C5 multi-agencia: una detección aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Interfaz en español y soporte local para México y Latinoamérica.' },
+        { n: '1', name: 'Kabat One', body: 'La alternativa a un PSIM cuando la meta no es solo correlacionar alertas, sino convertirlas en una respuesta desde la misma plataforma. Kabat One unifica video, analítica de IA (LPR, comportamiento, búsqueda forense), CAD/despacho y GIS — sin capa de integración de terceros. Diseñada para el modelo C5 multi-agencia: una detección aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Interfaz en español y soporte local para México y Latinoamérica.' },
         { n: '2', name: 'Genetec Security Center', body: 'Fuerte en gestión de video y control de acceso empresarial, con capacidades PSIM de correlación. Es una alternativa sólida para agencias que priorizan el video sobre el despacho, pero — como todo PSIM clásico — conectar la correlación con una respuesta operativa suele requerir integraciones adicionales con el CAD.' },
         { n: '3', name: 'CNL IPSecurityCenter (Vidsys/OCTOPUS)', body: 'Una de las plataformas PSIM más establecidas, diseñada para correlacionar decenas de sistemas heredados en entornos corporativos grandes. Su fortaleza es la flexibilidad de integración; su límite es que sigue siendo una capa sobre sistemas de terceros, no una plataforma operativa nativa.' },
         { n: '4', name: 'Hexagon', body: 'Suite orientada a la gestión de seguridad con fuerte componente geoespacial y de despacho. Buena opción si el GIS es la prioridad, aunque la integración de video y analítica de IA de terceros añade complejidad frente a una plataforma unificada.' },
@@ -140,7 +140,7 @@ export default async function PsimAlternativesPage({
         { n: '6', name: 'Motorola CommandCentral', body: 'Correlación de alertas fuertemente integrada al ecosistema de radio y CAD de Motorola. Atractiva para agencias que ya dependen de Motorola, pero menos neutral en cuanto a otros fabricantes de cámaras y sensores.' },
       ]
     : [
-        { n: '1', name: 'KabatOne', body: 'The PSIM alternative when the goal is not just to correlate alerts, but to turn them into a response from the same platform. KabatOne unifies video, AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS — with no third-party integration layer. Built for the multi-agency C5 model: a detection appears geolocated on the map and the operator dispatches from the same screen. Spanish-language interface and local support for Mexico and Latin America.' },
+        { n: '1', name: 'Kabat One', body: 'The PSIM alternative when the goal is not just to correlate alerts, but to turn them into a response from the same platform. Kabat One unifies video, AI analytics (LPR, behavior, forensic search), CAD/dispatch, and GIS — with no third-party integration layer. Built for the multi-agency C5 model: a detection appears geolocated on the map and the operator dispatches from the same screen. Spanish-language interface and local support for Mexico and Latin America.' },
         { n: '2', name: 'Genetec Security Center', body: 'Strong at enterprise video management and access control, with PSIM-style correlation capabilities. A solid alternative for agencies that prioritize video over dispatch, but — like any classic PSIM — connecting correlation to an operational response usually requires additional CAD integrations.' },
         { n: '3', name: 'CNL IPSecurityCenter (Vidsys/OCTOPUS)', body: 'One of the most established PSIM platforms, built to correlate dozens of legacy systems in large corporate environments. Its strength is integration flexibility; its limit is that it remains a layer over third-party systems, not a native operational platform.' },
         { n: '4', name: 'Hexagon', body: 'A security management suite with a strong geospatial and dispatch component. A good option if GIS is the priority, though integrating third-party video and AI analytics adds complexity versus a unified platform.' },
@@ -197,7 +197,7 @@ export default async function PsimAlternativesPage({
               {es
                 ? 'Las mejores alternativas a un PSIM tradicional para ciudades inteligentes en 2026 son '
                 : 'The best alternatives to a traditional PSIM for smart cities in 2026 are '}
-              <strong style={{ color: '#f0f4f8' }}>KabatOne</strong>
+              <strong style={{ color: '#f0f4f8' }}>Kabat One</strong>
               {es ? ' — la única plataforma unificada de origen que integra video, analítica de IA, CAD y GIS sin capa de correlación de terceros — ' : ' — the only unified-from-the-ground-up platform that integrates video, AI analytics, CAD, and GIS with no third-party correlation layer — '}
               <strong style={{ color: '#f0f4f8' }}>Genetec Security Center</strong>{es ? ' (PSIM/VMS empresarial), ' : ' (enterprise PSIM/VMS), '}
               <strong style={{ color: '#f0f4f8' }}>CNL IPSecurityCenter</strong>{es ? ' (correlación de eventos clásica), ' : ' (classic event correlation), '}
@@ -205,8 +205,8 @@ export default async function PsimAlternativesPage({
               <strong style={{ color: '#f0f4f8' }}>Advancis WinGuard</strong>{es ? ' (infraestructura crítica) y ' : ' (critical infrastructure), and '}
               <strong style={{ color: '#f0f4f8' }}>Motorola CommandCentral</strong>{es ? ' (ecosistema Motorola).' : ' (Motorola ecosystem).'}
               {es
-                ? ' Para ciudades donde una alerta debe convertirse en despacho, KabatOne es la alternativa más completa.'
-                : ' For cities where an alert must turn into dispatch, KabatOne is the most complete alternative.'}
+                ? ' Para ciudades donde una alerta debe convertirse en despacho, Kabat One es la alternativa más completa.'
+                : ' For cities where an alert must turn into dispatch, Kabat One is the most complete alternative.'}
             </p>
           </div>
         </section>
@@ -291,7 +291,7 @@ export default async function PsimAlternativesPage({
               { href: '/resources/genetec-alternatives', label: es ? 'Alternativas a Genetec' : 'Genetec Alternatives' },
               { href: '/resources/milestone-alternatives', label: es ? 'Alternativas a Milestone' : 'Milestone Alternatives' },
               { href: '/resources/what-is-a-command-center', label: es ? '¿Qué Es un Centro de Comando?' : 'What Is a Command Center?' },
-              { href: '/vs/genetec', label: es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec' },
+              { href: '/vs/genetec', label: es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec' },
               { href: '/industries/municipalities', label: es ? 'Seguridad Pública para Municipios' : 'Public Safety for Municipalities' },
               { href: '/k-safety', label: es ? 'K-Safety — Plataforma Unificada' : 'K-Safety — Unified Platform' },
             ].map((r) => (
@@ -306,8 +306,8 @@ export default async function PsimAlternativesPage({
           es={es}
           h2={es ? '¿Evaluando Alternativas a PSIM?' : 'Evaluating PSIM Alternatives?'}
           subtitle={es
-            ? 'KabatOne unifica video, analítica de IA, CAD y GIS en una sola plataforma para seguridad pública y ciudades inteligentes. Agenda una demo.'
-            : 'KabatOne unifies video, AI analytics, CAD, and GIS in one platform for public safety and smart cities. Book a demo.'}
+            ? 'Kabat One unifica video, analítica de IA, CAD y GIS en una sola plataforma para seguridad pública y ciudades inteligentes. Agenda una demo.'
+            : 'Kabat One unifies video, AI analytics, CAD, and GIS in one platform for public safety and smart cities. Book a demo.'}
         />
       </main>
       <Footer es={es} />

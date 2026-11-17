@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with Vietnam's Ministry of Public Security (MPS/Bộ Công an) structure?",
-    answer: "KabatOne aligns with Vietnam's MPS command hierarchy — integrating with the General Department of Police, 63 provincial police departments (Công an tỉnh/thành phố), and district/commune stations. The platform provides unified CAD dispatch and operations center management compatible with C06/C09 technical standards."
+    question: "How does Kabat One integrate with Vietnam's Ministry of Public Security (MPS/Bộ Công an) structure?",
+    answer: "Kabat One aligns with Vietnam's MPS command hierarchy — integrating with the General Department of Police, 63 provincial police departments (Công an tỉnh/thành phố), and district/commune stations. The platform provides unified CAD dispatch and operations center management compatible with C06/C09 technical standards."
   },
   {
-    question: "Can KabatOne support Vietnam's national emergency number 113/114/115 dispatch?",
-    answer: "Yes. KabatOne integrates Vietnam's tri-service emergency numbers: 113 (police/Công an), 114 (fire/Cảnh sát PCCC), and 115 (medical/VSATTP) — enabling unified call-taking, cross-agency dispatch, and incident tracking from a single operations center."
+    question: "Can Kabat One support Vietnam's national emergency number 113/114/115 dispatch?",
+    answer: "Yes. Kabat One integrates Vietnam's tri-service emergency numbers: 113 (police/Công an), 114 (fire/Cảnh sát PCCC), and 115 (medical/VSATTP) — enabling unified call-taking, cross-agency dispatch, and incident tracking from a single operations center."
   },
   {
-    question: "How does KabatOne handle Vietnam's Personal Data Protection Decree (Nghị định 13/2023)?",
-    answer: "KabatOne is designed for compliance with Decree 13/2023/NĐ-CP — implementing data subject consent management, data processing logs, cross-border data transfer controls, and mandatory breach notification aligned with the Ministry of Public Security enforcement framework."
+    question: "How does Kabat One handle Vietnam's Personal Data Protection Decree (Nghị định 13/2023)?",
+    answer: "Kabat One is designed for compliance with Decree 13/2023/NĐ-CP — implementing data subject consent management, data processing logs, cross-border data transfer controls, and mandatory breach notification aligned with the Ministry of Public Security enforcement framework."
   },
   {
-    question: "Does KabatOne support flood and typhoon operations in Vietnam?",
-    answer: "Yes. KabatOne integrates VNMHA weather alerts, NCHMF typhoon tracks, and Central Steering Committee for Natural Disaster Prevention (Ban Chỉ đạo TW về PCTT) situation reports — enabling pre-emptive evacuation dispatch and rescue coordination for the Mekong Delta and Central Coast typhoon corridors."
+    question: "Does Kabat One support flood and typhoon operations in Vietnam?",
+    answer: "Yes. Kabat One integrates VNMHA weather alerts, NCHMF typhoon tracks, and Central Steering Committee for Natural Disaster Prevention (Ban Chỉ đạo TW về PCTT) situation reports — enabling pre-emptive evacuation dispatch and rescue coordination for the Mekong Delta and Central Coast typhoon corridors."
   },
   {
     question: "Can the platform connect to Vietnam's national surveillance and camera networks?",
-    answer: "KabatOne integrates with Hanoi and Ho Chi Minh City Smart City CCTV networks, ANPR systems on national highways (VEC/VECE), and MPS crime prevention camera networks — providing AI-powered analytics compliant with Vietnam's cybersecurity law (Luật An ninh mạng 2018)."
+    answer: "Kabat One integrates with Hanoi and Ho Chi Minh City Smart City CCTV networks, ANPR systems on national highways (VEC/VECE), and MPS crime prevention camera networks — providing AI-powered analytics compliant with Vietnam's cybersecurity law (Luật An ninh mạng 2018)."
   },
   {
-    question: "How does KabatOne support procurement through Vietnam's national e-procurement system?",
-    answer: "KabatOne supports procurement through the National Procurement Network (Hệ thống mạng đấu thầu quốc gia / muasamcong.mpi.gov.vn) under the Bidding Law (Luật Đấu thầu) and MPS/MOST/MOF guidelines for ICT security systems, including direct procurement under Circular 58/2016/TT-BTC."
+    question: "How does Kabat One support procurement through Vietnam's national e-procurement system?",
+    answer: "Kabat One supports procurement through the National Procurement Network (Hệ thống mạng đấu thầu quốc gia / muasamcong.mpi.gov.vn) under the Bidding Law (Luật Đấu thầu) and MPS/MOST/MOF guidelines for ICT security systems, including direct procurement under Circular 58/2016/TT-BTC."
   },
   {
-    question: "Is KabatOne suitable for Vietnam's Smart City initiatives in Hanoi and Ho Chi Minh City?",
-    answer: "Yes. KabatOne aligns with Vietnam's National Smart City Program (Decision 950/QĐ-TTg, 2018) — providing integrated public safety operations center capabilities for urban command centers in Hanoi's IOC (Integrated Operations Center) and Ho Chi Minh City's TTGS (Supervisory Center)."
+    question: "Is Kabat One suitable for Vietnam's Smart City initiatives in Hanoi and Ho Chi Minh City?",
+    answer: "Yes. Kabat One aligns with Vietnam's National Smart City Program (Decision 950/QĐ-TTg, 2018) — providing integrated public safety operations center capabilities for urban command centers in Hanoi's IOC (Integrated Operations Center) and Ho Chi Minh City's TTGS (Supervisory Center)."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura del Ministerio de Seguridad Pública de Vietnam (MPS/Bộ Công an)?",
-    answer: "KabatOne se alinea con la jerarquía de mando del MPS — integrándose con el Departamento General de Policía, 63 departamentos provinciales de policía (Công an tỉnh/thành phố) y estaciones distritales. La plataforma proporciona despacho CAD unificado y gestión del centro de operaciones compatible con los estándares técnicos C06/C09."
+    question: "¿Cómo se integra Kabat One con la estructura del Ministerio de Seguridad Pública de Vietnam (MPS/Bộ Công an)?",
+    answer: "Kabat One se alinea con la jerarquía de mando del MPS — integrándose con el Departamento General de Policía, 63 departamentos provinciales de policía (Công an tỉnh/thành phố) y estaciones distritales. La plataforma proporciona despacho CAD unificado y gestión del centro de operaciones compatible con los estándares técnicos C06/C09."
   },
   {
-    question: "¿Puede KabatOne apoyar el despacho de emergencias nacionales 113/114/115 de Vietnam?",
-    answer: "Sí. KabatOne integra los tres números de emergencia de Vietnam: 113 (policía/Công an), 114 (bomberos/Cảnh sát PCCC) y 115 (médico/VSATTP) — habilitando recepción de llamadas unificada, despacho multiagencia y seguimiento de incidentes desde un único centro de operaciones."
+    question: "¿Puede Kabat One apoyar el despacho de emergencias nacionales 113/114/115 de Vietnam?",
+    answer: "Sí. Kabat One integra los tres números de emergencia de Vietnam: 113 (policía/Công an), 114 (bomberos/Cảnh sát PCCC) y 115 (médico/VSATTP) — habilitando recepción de llamadas unificada, despacho multiagencia y seguimiento de incidentes desde un único centro de operaciones."
   },
   {
-    question: "¿Cómo gestiona KabatOne el Decreto de Protección de Datos Personales de Vietnam (Nghị định 13/2023)?",
-    answer: "KabatOne está diseñado para cumplimiento con el Decreto 13/2023/NĐ-CP — implementando gestión de consentimiento de titulares, registros de tratamiento de datos, controles de transferencia transfronteriza y notificación de brechas alineada con el marco de aplicación del Ministerio de Seguridad Pública."
+    question: "¿Cómo gestiona Kabat One el Decreto de Protección de Datos Personales de Vietnam (Nghị định 13/2023)?",
+    answer: "Kabat One está diseñado para cumplimiento con el Decreto 13/2023/NĐ-CP — implementando gestión de consentimiento de titulares, registros de tratamiento de datos, controles de transferencia transfronteriza y notificación de brechas alineada con el marco de aplicación del Ministerio de Seguridad Pública."
   },
   {
-    question: "¿Soporta KabatOne operaciones ante inundaciones y tifones en Vietnam?",
-    answer: "Sí. KabatOne integra alertas meteorológicas de VNMHA, rutas de tifones del NCHMF e informes del Comité Central de Prevención de Desastres Naturales (Ban Chỉ đạo TW về PCTT) — habilitando despacho de evacuación preventiva y coordinación de rescate para el Delta del Mekong y el corredor de tifones de la Costa Central."
+    question: "¿Soporta Kabat One operaciones ante inundaciones y tifones en Vietnam?",
+    answer: "Sí. Kabat One integra alertas meteorológicas de VNMHA, rutas de tifones del NCHMF e informes del Comité Central de Prevención de Desastres Naturales (Ban Chỉ đạo TW về PCTT) — habilitando despacho de evacuación preventiva y coordinación de rescate para el Delta del Mekong y el corredor de tifones de la Costa Central."
   },
   {
     question: "¿Puede la plataforma conectarse a las redes nacionales de vigilancia y cámaras de Vietnam?",
-    answer: "KabatOne se integra con las redes CCTV Smart City de Hanói y Ciudad Ho Chi Minh, sistemas ANPR en autopistas nacionales (VEC/VECE) y redes de cámaras de prevención del crimen del MPS — proporcionando analítica de IA conforme a la Ley de Ciberseguridad de Vietnam (Luật An ninh mạng 2018)."
+    answer: "Kabat One se integra con las redes CCTV Smart City de Hanói y Ciudad Ho Chi Minh, sistemas ANPR en autopistas nacionales (VEC/VECE) y redes de cámaras de prevención del crimen del MPS — proporcionando analítica de IA conforme a la Ley de Ciberseguridad de Vietnam (Luật An ninh mạng 2018)."
   },
   {
-    question: "¿Cómo soporta KabatOne la contratación a través del sistema nacional de e-procurement de Vietnam?",
-    answer: "KabatOne soporta contratación a través de la Red Nacional de Adquisiciones (muasamcong.mpi.gov.vn) bajo la Ley de Licitaciones (Luật Đấu thầu) y directrices MPS/MOST/MOF para sistemas de seguridad TIC, incluyendo contratación directa bajo la Circular 58/2016/TT-BTC."
+    question: "¿Cómo soporta Kabat One la contratación a través del sistema nacional de e-procurement de Vietnam?",
+    answer: "Kabat One soporta contratación a través de la Red Nacional de Adquisiciones (muasamcong.mpi.gov.vn) bajo la Ley de Licitaciones (Luật Đấu thầu) y directrices MPS/MOST/MOF para sistemas de seguridad TIC, incluyendo contratación directa bajo la Circular 58/2016/TT-BTC."
   },
   {
-    question: "¿Es KabatOne adecuado para las iniciativas de Ciudad Inteligente de Hanói y Ciudad Ho Chi Minh?",
-    answer: "Sí. KabatOne se alinea con el Programa Nacional de Ciudad Inteligente de Vietnam (Decisión 950/QĐ-TTg, 2018) — proporcionando capacidades integradas de centro de operaciones de seguridad pública para los IOC de Hanói y el Centro de Supervisión (TTGS) de Ciudad Ho Chi Minh."
+    question: "¿Es Kabat One adecuado para las iniciativas de Ciudad Inteligente de Hanói y Ciudad Ho Chi Minh?",
+    answer: "Sí. Kabat One se alinea con el Programa Nacional de Ciudad Inteligente de Vietnam (Decisión 950/QĐ-TTg, 2018) — proporcionando capacidades integradas de centro de operaciones de seguridad pública para los IOC de Hanói y el Centro de Supervisión (TTGS) de Ciudad Ho Chi Minh."
   }
 ]
 
@@ -263,7 +263,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• muasamcong: licitaciones MPS, Công an tỉnh, PCCC' : '• muasamcong: MPS, Công an tỉnh, PCCC bids'}</li>
@@ -297,8 +297,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Vietnam?' : 'Ready to modernize public safety in Vietnam?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya al MPS/Công an y PCCC de Vietnam con una plataforma unificada conforme al Decreto 13/2023 y compatible con muasamcong/Luật Đấu thầu.'
-            : 'See how KabatOne supports Vietnam MPS/Công an and PCCC with a unified platform compliant with Decree 13/2023 and compatible with muasamcong/Bidding Law procurement.'}
+            ? 'Conozca cómo Kabat One apoya al MPS/Công an y PCCC de Vietnam con una plataforma unificada conforme al Decreto 13/2023 y compatible con muasamcong/Luật Đấu thầu.'
+            : 'See how Kabat One supports Vietnam MPS/Công an and PCCC with a unified platform compliant with Decree 13/2023 and compatible with muasamcong/Bidding Law procurement.'}
         />
       </main>
       <Footer es={es} />

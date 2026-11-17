@@ -46,7 +46,7 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: '¿Puede la analítica de video funcionar con cámaras existentes?',
-      answer: 'Sí. Los sistemas de analítica de video modernos como KabatOne procesan el stream RTSP/ONVIF de cualquier cámara existente — sin necesidad de reemplazar hardware. La analítica se aplica en el servidor central (o en la nube) sobre el video ya instalado. La excepción son las funciones que requieren edge computing en la cámara (como detección a muy baja latencia) que sí necesitan cámaras con chip de IA embebido. Para la mayoría de los casos de uso en centros de mando, el procesamiento centralizado es suficiente y más flexible.',
+      answer: 'Sí. Los sistemas de analítica de video modernos como Kabat One procesan el stream RTSP/ONVIF de cualquier cámara existente — sin necesidad de reemplazar hardware. La analítica se aplica en el servidor central (o en la nube) sobre el video ya instalado. La excepción son las funciones que requieren edge computing en la cámara (como detección a muy baja latencia) que sí necesitan cámaras con chip de IA embebido. Para la mayoría de los casos de uso en centros de mando, el procesamiento centralizado es suficiente y más flexible.',
     },
     {
       question: '¿Qué diferencia hay entre analítica de video y reconocimiento facial?',
@@ -54,11 +54,11 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: '¿Qué infraestructura necesita un sistema de analítica de video a escala municipal?',
-      answer: 'Para 200-500 cámaras con analítica en tiempo real se necesita: servidores GPU para procesamiento (8-16 GPU cores por cada 100 streams concurrentes), red con 2-4 Mbps por cámara a 1080p/30fps, almacenamiento para retención (30-90 días), y una plataforma de gestión que unifique alertas, mapa GIS y CAD. El dimensionamiento varía significativamente según la complejidad de los modelos de IA aplicados. KabatOne escala desde municipios pequeños con 50 cámaras hasta C5 estaduales con 10,000+ streams concurrentes.',
+      answer: 'Para 200-500 cámaras con analítica en tiempo real se necesita: servidores GPU para procesamiento (8-16 GPU cores por cada 100 streams concurrentes), red con 2-4 Mbps por cámara a 1080p/30fps, almacenamiento para retención (30-90 días), y una plataforma de gestión que unifique alertas, mapa GIS y CAD. El dimensionamiento varía significativamente según la complejidad de los modelos de IA aplicados. Kabat One escala desde municipios pequeños con 50 cámaras hasta C5 estaduales con 10,000+ streams concurrentes.',
     },
     {
       question: '¿Cómo se integra la analítica de video con un centro C5 o CIOPS?',
-      answer: 'En un C5 o CIOPS, las alertas de analítica de video no son notificaciones aisladas — se integran directamente en el mapa operativo GIS como eventos geolocalizados. El operador ve la alerta en el mapa con la cámara vinculada, evalúa el video en tiempo real, y puede despachar una unidad directamente desde la misma pantalla. KabatOne correlaciona automáticamente la alerta de video con el historial de incidentes de esa zona, los recursos disponibles más cercanos y las alertas LPR activas — entregando contexto completo en segundos.',
+      answer: 'En un C5 o CIOPS, las alertas de analítica de video no son notificaciones aisladas — se integran directamente en el mapa operativo GIS como eventos geolocalizados. El operador ve la alerta en el mapa con la cámara vinculada, evalúa el video en tiempo real, y puede despachar una unidad directamente desde la misma pantalla. Kabat One correlaciona automáticamente la alerta de video con el historial de incidentes de esa zona, los recursos disponibles más cercanos y las alertas LPR activas — entregando contexto completo en segundos.',
     },
     {
       question: '¿Cuál es el ROI de implementar analítica de video en seguridad pública?',
@@ -66,11 +66,11 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: '¿Qué tan precisa es la analítica de video con IA en condiciones reales?',
-      answer: 'La precisión varía significativamente según el tipo de detección y las condiciones ambientales. Los sistemas actuales logran: 95%+ de precisión en LPR durante el día (85-90% de noche con iluminación IR), 92-98% en detección de intrusión perimetral en condiciones controladas, 85-93% en conteo de personas en densidades moderadas, y 75-88% en detección de comportamientos anómalos. Los factores que más afectan la precisión son la calidad de la cámara, la iluminación, el ángulo de instalación y la calibración inicial del modelo. KabatOne permite ajustar los umbrales de sensibilidad por zona para balancear entre tasa de detección y falsos positivos.',
+      answer: 'La precisión varía significativamente según el tipo de detección y las condiciones ambientales. Los sistemas actuales logran: 95%+ de precisión en LPR durante el día (85-90% de noche con iluminación IR), 92-98% en detección de intrusión perimetral en condiciones controladas, 85-93% en conteo de personas en densidades moderadas, y 75-88% en detección de comportamientos anómalos. Los factores que más afectan la precisión son la calidad de la cámara, la iluminación, el ángulo de instalación y la calibración inicial del modelo. Kabat One permite ajustar los umbrales de sensibilidad por zona para balancear entre tasa de detección y falsos positivos.',
     },
     {
       question: '¿Puede la analítica de video funcionar sin conexión a internet?',
-      answer: 'Sí, los despliegues en seguridad pública generalmente funcionan en redes cerradas (LAN/WAN privada) sin depender de internet público. El procesamiento de analítica se ejecuta en servidores GPU locales dentro del centro de mando. La arquitectura on-premise es preferida en gobierno y seguridad pública por razones de soberanía de datos y latencia. KabatOne soporta tanto despliegues completamente on-premise como arquitecturas híbridas donde el procesamiento principal es local pero la gestión y actualización de modelos de IA puede ser remota.',
+      answer: 'Sí, los despliegues en seguridad pública generalmente funcionan en redes cerradas (LAN/WAN privada) sin depender de internet público. El procesamiento de analítica se ejecuta en servidores GPU locales dentro del centro de mando. La arquitectura on-premise es preferida en gobierno y seguridad pública por razones de soberanía de datos y latencia. Kabat One soporta tanto despliegues completamente on-premise como arquitecturas híbridas donde el procesamiento principal es local pero la gestión y actualización de modelos de IA puede ser remota.',
     },
   ] : [
     {
@@ -83,7 +83,7 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: 'Can video analytics work with existing cameras?',
-      answer: "Yes. Modern video analytics systems like KabatOne process the RTSP/ONVIF stream from any existing camera — no hardware replacement needed. Analytics run on a central server (or in the cloud) on top of already-installed video infrastructure. The exception is functions requiring edge computing on the camera itself (like very low-latency detection) which do need cameras with embedded AI chips. For most command center use cases, centralized processing is sufficient and more flexible.",
+      answer: "Yes. Modern video analytics systems like Kabat One process the RTSP/ONVIF stream from any existing camera — no hardware replacement needed. Analytics run on a central server (or in the cloud) on top of already-installed video infrastructure. The exception is functions requiring edge computing on the camera itself (like very low-latency detection) which do need cameras with embedded AI chips. For most command center use cases, centralized processing is sufficient and more flexible.",
     },
     {
       question: 'What is the difference between video analytics and facial recognition?',
@@ -91,11 +91,11 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: 'What infrastructure does a municipal-scale video analytics system require?',
-      answer: 'For 200-500 cameras with real-time analytics: GPU servers for processing (8-16 GPU cores per 100 concurrent streams), network with 2-4 Mbps per camera at 1080p/30fps, storage for retention (30-90 days), and a management platform that unifies alerts, GIS map, and CAD. Sizing varies significantly based on the complexity of AI models applied. KabatOne scales from small municipalities with 50 cameras to state-level C5 centers with 10,000+ concurrent streams.',
+      answer: 'For 200-500 cameras with real-time analytics: GPU servers for processing (8-16 GPU cores per 100 concurrent streams), network with 2-4 Mbps per camera at 1080p/30fps, storage for retention (30-90 days), and a management platform that unifies alerts, GIS map, and CAD. Sizing varies significantly based on the complexity of AI models applied. Kabat One scales from small municipalities with 50 cameras to state-level C5 centers with 10,000+ concurrent streams.',
     },
     {
       question: 'How does video analytics integrate with a C5 or CIOPS command center?',
-      answer: 'In a C5 or CIOPS, video analytics alerts are not isolated notifications — they integrate directly into the GIS operational map as geolocated events. The operator sees the alert on the map with the linked camera, reviews the live feed, and can dispatch a unit from the same screen. KabatOne automatically correlates the video alert with that zone\'s incident history, nearest available resources, and active LPR alerts — delivering complete context in seconds.',
+      answer: 'In a C5 or CIOPS, video analytics alerts are not isolated notifications — they integrate directly into the GIS operational map as geolocated events. The operator sees the alert on the map with the linked camera, reviews the live feed, and can dispatch a unit from the same screen. Kabat One automatically correlates the video alert with that zone\'s incident history, nearest available resources, and active LPR alerts — delivering complete context in seconds.',
     },
     {
       question: 'What is the ROI of implementing video analytics in public safety?',
@@ -103,11 +103,11 @@ export default async function VideoAnalyticsUseCasesPage({
     },
     {
       question: 'How accurate is AI video analytics in real-world conditions?',
-      answer: 'Accuracy varies significantly by detection type and environmental conditions. Current systems achieve: 95%+ LPR accuracy during daylight (85-90% at night with IR illumination), 92-98% in perimeter intrusion detection under controlled conditions, 85-93% in people counting at moderate densities, and 75-88% in behavioral anomaly detection. The main factors affecting accuracy are camera quality, lighting, installation angle, and initial model calibration. KabatOne allows sensitivity threshold adjustments per zone to balance detection rate against false positives.',
+      answer: 'Accuracy varies significantly by detection type and environmental conditions. Current systems achieve: 95%+ LPR accuracy during daylight (85-90% at night with IR illumination), 92-98% in perimeter intrusion detection under controlled conditions, 85-93% in people counting at moderate densities, and 75-88% in behavioral anomaly detection. The main factors affecting accuracy are camera quality, lighting, installation angle, and initial model calibration. Kabat One allows sensitivity threshold adjustments per zone to balance detection rate against false positives.',
     },
     {
       question: 'Can video analytics work without internet connectivity?',
-      answer: 'Yes, public safety deployments typically run on closed networks (private LAN/WAN) without depending on public internet. Analytics processing runs on local GPU servers within the command center. On-premise architecture is preferred in government and public safety for data sovereignty and latency reasons. KabatOne supports both fully on-premise deployments and hybrid architectures where primary processing is local but AI model management and updates can be remote.',
+      answer: 'Yes, public safety deployments typically run on closed networks (private LAN/WAN) without depending on public internet. Analytics processing runs on local GPU servers within the command center. On-premise architecture is preferred in government and public safety for data sovereignty and latency reasons. Kabat One supports both fully on-premise deployments and hybrid architectures where primary processing is local but AI model management and updates can be remote.',
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function VideoAnalyticsUseCasesPage({
         es={es}
         h2={es ? 'Implementa Analítica de Video en tu Centro de Mando' : 'Deploy Video Analytics in Your Command Center'}
         subtitle={es
-          ? 'KabatOne integra analítica de video con despacho CAD, GIS en tiempo real y gestión de incidentes en una sola plataforma operativa.'
-          : 'KabatOne integrates video analytics with CAD dispatch, real-time GIS, and incident management in one unified operational platform.'}
+          ? 'Kabat One integra analítica de video con despacho CAD, GIS en tiempo real y gestión de incidentes en una sola plataforma operativa.'
+          : 'Kabat One integrates video analytics with CAD dispatch, real-time GIS, and incident management in one unified operational platform.'}
         cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
         cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
       />

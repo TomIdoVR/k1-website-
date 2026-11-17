@@ -34,27 +34,27 @@ export default async function LprIntegrationPage({
         {
           question: '¿Cuál es la precisión del LPR en condiciones reales?',
           answer:
-            'En condiciones óptimas (luz adecuada, velocidad menor a 100 km/h, placa limpia), los sistemas LPR modernos alcanzan entre 95% y 99% de precisión. En condiciones adversas — lluvia intensa, noche sin iluminación adecuada, placas sucias o dañadas — la precisión puede caer a 80-90%. Por eso los sistemas de grado público-safety usan múltiples lecturas por vehículo y confirman antes de generar una alerta. KabatOne aplica un proceso de confirmación con umbral configurable para reducir los falsos positivos.',
+            'En condiciones óptimas (luz adecuada, velocidad menor a 100 km/h, placa limpia), los sistemas LPR modernos alcanzan entre 95% y 99% de precisión. En condiciones adversas — lluvia intensa, noche sin iluminación adecuada, placas sucias o dañadas — la precisión puede caer a 80-90%. Por eso los sistemas de grado público-safety usan múltiples lecturas por vehículo y confirman antes de generar una alerta. Kabat One aplica un proceso de confirmación con umbral configurable para reducir los falsos positivos.',
         },
         {
-          question: '¿Qué cámaras son compatibles con el LPR de KabatOne?',
+          question: '¿Qué cámaras son compatibles con el LPR de Kabat One?',
           answer:
-            'KabatOne K-Video soporta cámaras LPR de todos los fabricantes principales — Axis, Milestone, Hikvision, Dahua, Genetec, y cámaras LPR dedicadas de fabricantes especializados como Genetec AutoVu, Vigilant/Motorola y Neology. La arquitectura es agnóstica al fabricante: K-Video recibe los eventos LPR mediante API o integración ONVIF/SDK y los integra en la plataforma sin requerir hardware propietario.',
+            'Kabat One K-Video soporta cámaras LPR de todos los fabricantes principales — Axis, Milestone, Hikvision, Dahua, Genetec, y cámaras LPR dedicadas de fabricantes especializados como Genetec AutoVu, Vigilant/Motorola y Neology. La arquitectura es agnóstica al fabricante: K-Video recibe los eventos LPR mediante API o integración ONVIF/SDK y los integra en la plataforma sin requerir hardware propietario.',
         },
         {
           question: '¿Puede el LPR leer placas en movimiento a alta velocidad?',
           answer:
-            'Sí. Las cámaras LPR de seguridad pública están diseñadas para capturar vehículos en movimiento a velocidades de hasta 200 km/h. Utilizan obturadores electrónicos de alta velocidad e iluminación infrarroja para capturar imágenes nítidas sin importar las condiciones de luz. Para operaciones en autopistas y corredores de alta velocidad, KabatOne recomienda cámaras LPR con iluminación IR integrada y resolución mínima de 2MP.',
+            'Sí. Las cámaras LPR de seguridad pública están diseñadas para capturar vehículos en movimiento a velocidades de hasta 200 km/h. Utilizan obturadores electrónicos de alta velocidad e iluminación infrarroja para capturar imágenes nítidas sin importar las condiciones de luz. Para operaciones en autopistas y corredores de alta velocidad, Kabat One recomienda cámaras LPR con iluminación IR integrada y resolución mínima de 2MP.',
         },
         {
           question: '¿Qué bases de datos se pueden integrar con el sistema LPR?',
           answer:
-            'KabatOne puede integrarse con múltiples bases de datos de alertas: registros de vehículos robados (REPUVE en México, NCIC en Estados Unidos), listas de vehículos de personas buscadas, bases de datos de multas no pagadas, registros de control de acceso vehicular, y listas de interés creadas localmente por la operación. Las alertas se configuran por prioridad, y el sistema puede activar diferentes protocolos según el tipo de alerta detectada.',
+            'Kabat One puede integrarse con múltiples bases de datos de alertas: registros de vehículos robados (REPUVE en México, NCIC en Estados Unidos), listas de vehículos de personas buscadas, bases de datos de multas no pagadas, registros de control de acceso vehicular, y listas de interés creadas localmente por la operación. Las alertas se configuran por prioridad, y el sistema puede activar diferentes protocolos según el tipo de alerta detectada.',
         },
         {
           question: '¿Cómo se maneja la privacidad con los datos de LPR?',
           answer:
-            'KabatOne aplica controles de acceso granulares: solo usuarios con permisos específicos pueden consultar el historial de movimiento de una placa. Los datos de lecturas LPR se retienen por un período configurable (típicamente 30-90 días para registros sin alerta) y se documenta cada consulta para auditoría. En México, el uso de LPR en espacios públicos es legal bajo la Ley General de Seguridad Pública; en Estados Unidos varía por estado.',
+            'Kabat One aplica controles de acceso granulares: solo usuarios con permisos específicos pueden consultar el historial de movimiento de una placa. Los datos de lecturas LPR se retienen por un período configurable (típicamente 30-90 días para registros sin alerta) y se documenta cada consulta para auditoría. En México, el uso de LPR en espacios públicos es legal bajo la Ley General de Seguridad Pública; en Estados Unidos varía por estado.',
         },
       ]
     : [
@@ -66,27 +66,27 @@ export default async function LprIntegrationPage({
         {
           question: 'How accurate is LPR in real-world conditions?',
           answer:
-            'Under optimal conditions (adequate lighting, speeds below 60 mph, clean plate), modern LPR systems achieve 95–99% accuracy. In adverse conditions — heavy rain, night without adequate lighting, dirty or damaged plates — accuracy can drop to 80–90%. That is why public-safety-grade systems use multiple reads per vehicle and confirm before generating an alert. KabatOne applies a confirmation process with a configurable threshold to reduce false positives.',
+            'Under optimal conditions (adequate lighting, speeds below 60 mph, clean plate), modern LPR systems achieve 95–99% accuracy. In adverse conditions — heavy rain, night without adequate lighting, dirty or damaged plates — accuracy can drop to 80–90%. That is why public-safety-grade systems use multiple reads per vehicle and confirm before generating an alert. Kabat One applies a confirmation process with a configurable threshold to reduce false positives.',
         },
         {
-          question: 'What cameras are compatible with KabatOne LPR?',
+          question: 'What cameras are compatible with Kabat One LPR?',
           answer:
-            'KabatOne K-Video supports LPR cameras from all major manufacturers — Axis, Milestone, Hikvision, Dahua, Genetec, and dedicated LPR cameras from specialized vendors like Genetec AutoVu, Vigilant/Motorola, and Neology. The architecture is vendor-agnostic: K-Video receives LPR events via API or ONVIF/SDK integration and incorporates them into the platform without requiring proprietary hardware.',
+            'Kabat One K-Video supports LPR cameras from all major manufacturers — Axis, Milestone, Hikvision, Dahua, Genetec, and dedicated LPR cameras from specialized vendors like Genetec AutoVu, Vigilant/Motorola, and Neology. The architecture is vendor-agnostic: K-Video receives LPR events via API or ONVIF/SDK integration and incorporates them into the platform without requiring proprietary hardware.',
         },
         {
           question: 'Can LPR read plates on vehicles moving at high speed?',
           answer:
-            'Yes. Public-safety LPR cameras are designed to capture moving vehicles at speeds up to 125 mph. They use high-speed electronic shutters and infrared illumination to capture sharp images regardless of lighting conditions. For highway and high-speed corridor operations, KabatOne recommends LPR cameras with integrated IR illumination and minimum 2MP resolution.',
+            'Yes. Public-safety LPR cameras are designed to capture moving vehicles at speeds up to 125 mph. They use high-speed electronic shutters and infrared illumination to capture sharp images regardless of lighting conditions. For highway and high-speed corridor operations, Kabat One recommends LPR cameras with integrated IR illumination and minimum 2MP resolution.',
         },
         {
           question: 'What databases can be integrated with the LPR system?',
           answer:
-            'KabatOne can integrate with multiple alert databases: stolen vehicle registries (REPUVE in Mexico, NCIC in the United States), wanted persons\' vehicle lists, outstanding warrant databases, vehicle access control records, and locally created watch lists. Alerts are configured by priority, and the system can activate different protocols based on the type of alert detected.',
+            'Kabat One can integrate with multiple alert databases: stolen vehicle registries (REPUVE in Mexico, NCIC in the United States), wanted persons\' vehicle lists, outstanding warrant databases, vehicle access control records, and locally created watch lists. Alerts are configured by priority, and the system can activate different protocols based on the type of alert detected.',
         },
         {
           question: 'How is privacy handled with LPR data?',
           answer:
-            'KabatOne applies granular access controls: only users with specific permissions can query the movement history of a plate. LPR read data is retained for a configurable period (typically 30–90 days for records without alerts), and every query is logged for audit. In the United States, LPR use in public spaces varies by state; KabatOne supports configurable retention policies and data minimization practices.',
+            'Kabat One applies granular access controls: only users with specific permissions can query the movement history of a plate. LPR read data is retained for a configurable period (typically 30–90 days for records without alerts), and every query is logged for audit. In the United States, LPR use in public spaces varies by state; Kabat One supports configurable retention policies and data minimization practices.',
         },
       ]
 
@@ -156,8 +156,8 @@ export default async function LprIntegrationPage({
                 ? 'Integración de Reconocimiento de Placas Vehiculares (LPR)'
                 : 'License Plate Recognition (LPR) Integration',
               es
-                ? 'Cómo KabatOne integra LPR y ALPR en operaciones de seguridad pública. Cotejo en tiempo real con listas de alertas y captura automática de evidencia.'
-                : 'How KabatOne integrates LPR and ALPR into public safety operations. Real-time hot list matching, stolen vehicle alerts, and automatic evidence capture.',
+                ? 'Cómo Kabat One integra LPR y ALPR en operaciones de seguridad pública. Cotejo en tiempo real con listas de alertas y captura automática de evidencia.'
+                : 'How Kabat One integrates LPR and ALPR into public safety operations. Real-time hot list matching, stolen vehicle alerts, and automatic evidence capture.',
               es ? 'https://kabatone.com/es/integrations/lpr' : 'https://kabatone.com/integrations/lpr',
               '2026-03-20'
             )
@@ -208,8 +208,8 @@ export default async function LprIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'El reconocimiento de placas vehiculares convierte cada corredor monitorizado en un punto de inteligencia táctica. KabatOne integra LPR nativamente con gestión de video, despacho CAD y GIS para que cuando una placa de interés aparezca en la red, el despachador tenga contexto completo en segundos — no en minutos.'
-                : 'License plate recognition turns every monitored corridor into a tactical intelligence point. KabatOne integrates LPR natively with video management, CAD dispatch, and GIS so that when a plate of interest appears on the network, the dispatcher has full context in seconds — not minutes.'}
+                ? 'El reconocimiento de placas vehiculares convierte cada corredor monitorizado en un punto de inteligencia táctica. Kabat One integra LPR nativamente con gestión de video, despacho CAD y GIS para que cuando una placa de interés aparezca en la red, el despachador tenga contexto completo en segundos — no en minutos.'
+                : 'License plate recognition turns every monitored corridor into a tactical intelligence point. Kabat One integrates LPR natively with video management, CAD dispatch, and GIS so that when a plate of interest appears on the network, the dispatcher has full context in seconds — not minutes.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -240,8 +240,8 @@ export default async function LprIntegrationPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'La integración con plataformas operativas como KabatOne es lo que transforma el LPR de una herramienta de registro pasivo a una herramienta de inteligencia activa. Sin integración, las lecturas LPR son datos almacenados que alguien tiene que consultar manualmente. Con integración, las alertas se generan automáticamente y llegan al despachador correcto en el momento correcto, con el contexto de video y ubicación ya incluido.'
-                : 'Integration with operational platforms like KabatOne is what transforms LPR from a passive logging tool into an active intelligence tool. Without integration, LPR reads are stored data that someone has to query manually. With integration, alerts are generated automatically and reach the right dispatcher at the right moment, with video and location context already included.'}
+                ? 'La integración con plataformas operativas como Kabat One es lo que transforma el LPR de una herramienta de registro pasivo a una herramienta de inteligencia activa. Sin integración, las lecturas LPR son datos almacenados que alguien tiene que consultar manualmente. Con integración, las alertas se generan automáticamente y llegan al despachador correcto en el momento correcto, con el contexto de video y ubicación ya incluido.'
+                : 'Integration with operational platforms like Kabat One is what transforms LPR from a passive logging tool into an active intelligence tool. Without integration, LPR reads are stored data that someone has to query manually. With integration, alerts are generated automatically and reach the right dispatcher at the right moment, with video and location context already included.'}
             </p>
           </div>
         </section>
@@ -250,12 +250,12 @@ export default async function LprIntegrationPage({
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
             <h2 style={h2Style}>
-              {es ? 'Cómo KabatOne Integra el LPR' : 'How KabatOne Integrates LPR'}
+              {es ? 'Cómo Kabat One Integra el LPR' : 'How Kabat One Integrates LPR'}
             </h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne K-Video es agnóstico al fabricante de cámaras LPR. Independientemente de la marca — Axis, Hikvision, Genetec AutoVu, Neology, Vigilant/Motorola — K-Video recibe los eventos LPR mediante API estándar o integración ONVIF/SDK y los procesa en la plataforma unificada.'
-                : 'KabatOne K-Video is vendor-agnostic for LPR cameras. Regardless of brand — Axis, Hikvision, Genetec AutoVu, Neology, Vigilant/Motorola — K-Video receives LPR events via standard API or ONVIF/SDK integration and processes them in the unified platform.'}
+                ? 'Kabat One K-Video es agnóstico al fabricante de cámaras LPR. Independientemente de la marca — Axis, Hikvision, Genetec AutoVu, Neology, Vigilant/Motorola — K-Video recibe los eventos LPR mediante API estándar o integración ONVIF/SDK y los procesa en la plataforma unificada.'
+                : 'Kabat One K-Video is vendor-agnostic for LPR cameras. Regardless of brand — Axis, Hikvision, Genetec AutoVu, Neology, Vigilant/Motorola — K-Video receives LPR events via standard API or ONVIF/SDK integration and processes them in the unified platform.'}
             </p>
             <p style={pStyle}>
               {es
@@ -298,8 +298,8 @@ export default async function LprIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'El LPR integrado con KabatOne tiene aplicaciones directas en operaciones policiales, investigación criminal y gestión de tráfico:'
-                : 'LPR integrated with KabatOne has direct applications in police operations, criminal investigations, and traffic management:'}
+                ? 'El LPR integrado con Kabat One tiene aplicaciones directas en operaciones policiales, investigación criminal y gestión de tráfico:'
+                : 'LPR integrated with Kabat One has direct applications in police operations, criminal investigations, and traffic management:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }} className="usecase-grid">
               {useCases.map((uc, i) => (
@@ -341,8 +341,8 @@ export default async function LprIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'Las especificaciones técnicas del sistema LPR integrado en KabatOne para operaciones de seguridad pública:'
-                : 'Technical specifications of the LPR system integrated in KabatOne for public safety operations:'}
+                ? 'Las especificaciones técnicas del sistema LPR integrado en Kabat One para operaciones de seguridad pública:'
+                : 'Technical specifications of the LPR system integrated in Kabat One for public safety operations:'}
             </p>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
@@ -397,12 +397,12 @@ export default async function LprIntegrationPage({
               {es ? 'Productos Relacionados' : 'Related Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne para Operaciones LPR' : 'KabatOne for LPR Operations'}
+              {es ? 'Kabat One para Operaciones LPR' : 'Kabat One for LPR Operations'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es
-                ? 'Los módulos de KabatOne que trabajan en conjunto con la integración LPR:'
-                : 'KabatOne modules that work together with LPR integration:'}
+                ? 'Los módulos de Kabat One que trabajan en conjunto con la integración LPR:'
+                : 'Kabat One modules that work together with LPR integration:'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -490,8 +490,8 @@ export default async function LprIntegrationPage({
           es={es}
           h2={es ? 'Integra LPR con tu Centro de Mando' : 'Integrate LPR with Your Command Center'}
           subtitle={es
-            ? 'KabatOne conecta lectores de placas de cualquier fabricante con tu sistema CAD, video y GIS. Solicita una demo con datos reales de ciudad.'
-            : 'KabatOne connects license plate readers from any vendor with your CAD, video, and GIS system. Request a demo with real city data.'}
+            ? 'Kabat One conecta lectores de placas de cualquier fabricante con tu sistema CAD, video y GIS. Solicita una demo con datos reales de ciudad.'
+            : 'Kabat One connects license plate readers from any vendor with your CAD, video, and GIS system. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

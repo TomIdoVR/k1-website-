@@ -53,9 +53,9 @@ export default async function WhatIsACommandCenterPage({
             'Una plataforma unificada elimina la fragmentación entre sistemas. En lugar de que el operador cambie entre 4-6 aplicaciones distintas (VMS, CAD, GIS, radio, bases de datos), toda la información converge en una sola interfaz. Esto reduce los tiempos de respuesta entre 30% y 40%, elimina errores de transcripción entre sistemas, permite correlación automática de eventos multi-sensor, y genera un expediente digital completo de cada incidente con video, comunicaciones y línea de tiempo.',
         },
         {
-          question: '¿Cómo apoya KabatOne a los centros de mando?',
+          question: '¿Cómo apoya Kabat One a los centros de mando?',
           answer:
-            'KabatOne provee la plataforma operativa unificada para centros de mando: K-Safety es el mapa GIS operativo con posición de unidades en tiempo real e incidentes activos. K-Video gestiona miles de cámaras con analítica de IA integrada. K-Dispatch maneja el despacho CAD completo con asignación inteligente de unidades. K-Traffic monitorea semaforización y flujo vehicular. Todo opera desde una sola interfaz, sin cambiar entre sistemas de diferentes proveedores. KabatOne se integra con la infraestructura existente del centro de mando.',
+            'Kabat One provee la plataforma operativa unificada para centros de mando: K-Safety es el mapa GIS operativo con posición de unidades en tiempo real e incidentes activos. K-Video gestiona miles de cámaras con analítica de IA integrada. K-Dispatch maneja el despacho CAD completo con asignación inteligente de unidades. K-Traffic monitorea semaforización y flujo vehicular. Todo opera desde una sola interfaz, sin cambiar entre sistemas de diferentes proveedores. Kabat One se integra con la infraestructura existente del centro de mando.',
         },
       ]
     : [
@@ -85,9 +85,9 @@ export default async function WhatIsACommandCenterPage({
             'A unified platform eliminates fragmentation between systems. Instead of operators switching between 4-6 separate applications (VMS, CAD, GIS, radio, databases), all information converges in a single interface. This reduces response times by 30% to 40%, eliminates transcription errors between systems, enables automatic multi-sensor event correlation, and generates a complete digital record of each incident with video, communications, and timeline.',
         },
         {
-          question: 'How does KabatOne support command centers?',
+          question: 'How does Kabat One support command centers?',
           answer:
-            'KabatOne provides the unified operational platform for command centers: K-Safety is the operational GIS map with real-time unit positions and active incidents. K-Video manages thousands of cameras with integrated AI analytics. K-Dispatch handles full CAD dispatch with intelligent unit assignment. K-Traffic monitors signalization and vehicle flow. Everything runs from a single interface without switching between systems from different vendors. KabatOne integrates with the command center\'s existing infrastructure.',
+            'Kabat One provides the unified operational platform for command centers: K-Safety is the operational GIS map with real-time unit positions and active incidents. K-Video manages thousands of cameras with integrated AI analytics. K-Dispatch handles full CAD dispatch with intelligent unit assignment. K-Traffic monitors signalization and vehicle flow. Everything runs from a single interface without switching between systems from different vendors. Kabat One integrates with the command center\'s existing infrastructure.',
         },
       ]
 
@@ -566,19 +566,19 @@ export default async function WhatIsACommandCenterPage({
           </div>
         </section>
 
-        {/* ── SECTION 5: KabatOne Platform ── */}
+        {/* ── SECTION 5: Kabat One Platform ── */}
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'KabatOne para Centros de Mando' : 'KabatOne for Command Centers'}
+              {es ? 'Kabat One para Centros de Mando' : 'Kabat One for Command Centers'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Una Sola Plataforma para el Centro de Mando Completo' : 'One Platform for the Complete Command Center'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne provee la plataforma operativa unificada que los centros de mando C2 a C5 necesitan: K-Safety es el mapa GIS operativo con posición de unidades e incidentes en tiempo real. K-Video gestiona miles de cámaras con analítica de IA integrada. K-Dispatch maneja el despacho CAD completo con asignación inteligente de recursos. K-Traffic monitorea semaforización y flujo vehicular. Todo opera desde una sola interfaz, integrándose con la infraestructura existente del centro de mando.'
-                : 'KabatOne provides the unified operational platform that C2 through C5 command centers need: K-Safety is the operational GIS map with real-time unit positions and incidents. K-Video manages thousands of cameras with integrated AI analytics. K-Dispatch handles full CAD dispatch with intelligent resource assignment. K-Traffic monitors signalization and vehicle flow. Everything runs from a single interface, integrating with the command center\'s existing infrastructure.'}
+                ? 'Kabat One provee la plataforma operativa unificada que los centros de mando C2 a C5 necesitan: K-Safety es el mapa GIS operativo con posición de unidades e incidentes en tiempo real. K-Video gestiona miles de cámaras con analítica de IA integrada. K-Dispatch maneja el despacho CAD completo con asignación inteligente de recursos. K-Traffic monitorea semaforización y flujo vehicular. Todo opera desde una sola interfaz, integrándose con la infraestructura existente del centro de mando.'
+                : 'Kabat One provides the unified operational platform that C2 through C5 command centers need: K-Safety is the operational GIS map with real-time unit positions and incidents. K-Video manages thousands of cameras with integrated AI analytics. K-Dispatch handles full CAD dispatch with intelligent resource assignment. K-Traffic monitors signalization and vehicle flow. Everything runs from a single interface, integrating with the command center\'s existing infrastructure.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -699,8 +699,8 @@ export default async function WhatIsACommandCenterPage({
           es={es}
           h2={es ? '¿Listo para Unificar tu Centro de Mando?' : 'Ready to Unify Your Command Center?'}
           subtitle={es
-            ? 'Agenda una demo personalizada y descubre cómo KabatOne integra videovigilancia, despacho CAD, GIS y operaciones de campo en una sola plataforma para centros C2 a C5.'
-            : 'Schedule a personalized demo and see how KabatOne integrates video surveillance, CAD dispatch, GIS, and field operations into one platform for C2 through C5 centers.'}
+            ? 'Agenda una demo personalizada y descubre cómo Kabat One integra videovigilancia, despacho CAD, GIS y operaciones de campo en una sola plataforma para centros C2 a C5.'
+            : 'Schedule a personalized demo and see how Kabat One integrates video surveillance, CAD dispatch, GIS, and field operations into one platform for C2 through C5 centers.'}
         />
       </div>
 

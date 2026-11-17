@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareGhanaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Ghana: GPS/GNFS, NADMO, Ghana Safe City/CCTV, ECOWAS/ECOMOG y Data Protection Act 2012 | KabatOne'
-      : 'Public Safety Software for Ghana: GPS/GNFS, NADMO, Ghana Safe City/CCTV, ECOWAS/ECOMOG & Data Protection Act 2012 | KabatOne',
+      ? 'Software de Seguridad Pública para Ghana: GPS/GNFS, NADMO, Ghana Safe City/CCTV, ECOWAS/ECOMOG y Data Protection Act 2012 | Kabat One'
+      : 'Public Safety Software for Ghana: GPS/GNFS, NADMO, Ghana Safe City/CCTV, ECOWAS/ECOMOG & Data Protection Act 2012 | Kabat One',
     es
       ? 'Plataforma unificada para el Servicio de Policía de Ghana (GPS) y GNFS — despacho CAD integrado en 16 regiones, Accra Safe City, NADMO gestión de desastres, Puerto de Tema/GPHA, hub ECOWAS/ECOMOG, Data Protection Act 2012/DPC y GPPA/PPA 2003.'
       : 'Unified platform for Ghana Police Service (GPS) and GNFS — integrated CAD dispatch across 16 regions, Accra Safe City, NADMO disaster management, Port of Tema/GPHA, ECOWAS/ECOMOG hub, Data Protection Act 2012/DPC compliance, and GPPA/PPA 2003 procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareGhanaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Ghana?'
-        : 'How does KabatOne address Ghana critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Ghana?'
+        : 'How does Kabat One address Ghana critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de la Autoridad Portuaria de Ghana (GPHA) — Puerto de Tema (mayor puerto del África Occidental), Puerto de Takoradi, GNPC gas offshore Jubilee/TEN/Sankofa, GRIDCO red eléctrica, GWCL agua, el Aeropuerto Internacional de Kotoka (ACC) y las refinerías de oro de Obuasi/Tarkwa.'
-        : 'KabatOne integrates management for the Ghana Ports and Harbours Authority (GPHA) — Port of Tema (largest West Africa port), Port of Takoradi, GNPC offshore gas Jubilee/TEN/Sankofa fields, GRIDCO power grid, GWCL water, Kotoka International Airport (ACC), and Obuasi/Tarkwa gold refineries.',
+        ? 'Kabat One integra gestión de la Autoridad Portuaria de Ghana (GPHA) — Puerto de Tema (mayor puerto del África Occidental), Puerto de Takoradi, GNPC gas offshore Jubilee/TEN/Sankofa, GRIDCO red eléctrica, GWCL agua, el Aeropuerto Internacional de Kotoka (ACC) y las refinerías de oro de Obuasi/Tarkwa.'
+        : 'Kabat One integrates management for the Ghana Ports and Harbours Authority (GPHA) — Port of Tema (largest West Africa port), Port of Takoradi, GNPC offshore gas Jubilee/TEN/Sankofa fields, GRIDCO power grid, GWCL water, Kotoka International Airport (ACC), and Obuasi/Tarkwa gold refineries.',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Ghana?'
-        : 'Is KabatOne compliant with Ghana data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Ghana?'
+        : 'Is Kabat One compliant with Ghana data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Ley de Protección de Datos 2012 (Ley 843) supervisada por la Comisión de Protección de Datos (DPC). La arquitectura se alinea con la Ley de Delitos Electrónicos 2008 (Ley 772) y las directrices NCSA/CERT-GH para ciberseguridad.'
-        : 'Yes. KabatOne is designed to comply with the Data Protection Act 2012 (Act 843) supervised by the Data Protection Commission (DPC). The architecture aligns with the Electronic Transactions Act 2008 (Act 772) and NCSA/CERT-GH cybersecurity guidelines.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Ley de Protección de Datos 2012 (Ley 843) supervisada por la Comisión de Protección de Datos (DPC). La arquitectura se alinea con la Ley de Delitos Electrónicos 2008 (Ley 772) y las directrices NCSA/CERT-GH para ciberseguridad.'
+        : 'Yes. Kabat One is designed to comply with the Data Protection Act 2012 (Act 843) supervised by the Data Protection Commission (DPC). The architecture aligns with the Electronic Transactions Act 2008 (Act 772) and NCSA/CERT-GH cybersecurity guidelines.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne el rol de Ghana como hub regional ECOWAS?'
-        : "How does KabatOne support Ghana's role as an ECOWAS regional hub?",
+        ? '¿Cómo apoya Kabat One el rol de Ghana como hub regional ECOWAS?'
+        : "How does Kabat One support Ghana's role as an ECOWAS regional hub?",
       answer: es
-        ? 'KabatOne facilita la coordinación transfronteriza con los marcos ECOWAS/ECOMOG, gestión de los pasos fronterizos con Togo (Aflao), Costa de Marfil (Elubo), Burkina Faso (Paga/Hamile) y el Centro de Coordinación Regional de INTERPOL en Accra para compartir inteligencia en tiempo real.'
-        : 'KabatOne facilitates cross-border coordination with ECOWAS/ECOMOG frameworks, management of border crossings with Togo (Aflao), Ivory Coast (Elubo), Burkina Faso (Paga/Hamile), and the INTERPOL Regional Coordination Centre in Accra for real-time intelligence sharing.',
+        ? 'Kabat One facilita la coordinación transfronteriza con los marcos ECOWAS/ECOMOG, gestión de los pasos fronterizos con Togo (Aflao), Costa de Marfil (Elubo), Burkina Faso (Paga/Hamile) y el Centro de Coordinación Regional de INTERPOL en Accra para compartir inteligencia en tiempo real.'
+        : 'Kabat One facilitates cross-border coordination with ECOWAS/ECOMOG frameworks, management of border crossings with Togo (Aflao), Ivory Coast (Elubo), Burkina Faso (Paga/Hamile), and the INTERPOL Regional Coordination Centre in Accra for real-time intelligence sharing.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareGhanaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Ghana'
-                : 'KabatOne Platform Capabilities for Ghana'}
+                ? 'Capacidades de la Plataforma Kabat One para Ghana'
+                : 'Kabat One Platform Capabilities for Ghana'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareGhanaPage({
                       a: 'El GPS bajo el IGP cubre 16 regiones con 30,000+ efectivos. El GNFS gestiona emergencias de incendios. El NADMO coordina desastres. La NISS y la Guardia del Presidente cubren seguridad nacional.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Ghana?',
-                      a: 'KabatOne integra gestión de GPHA (Puerto de Tema y Takoradi), GNPC offshore Jubilee/TEN/Sankofa, GRIDCO red eléctrica, GWCL agua, Aeropuerto Kotoka (ACC) y minas de oro Obuasi/Tarkwa.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Ghana?',
+                      a: 'Kabat One integra gestión de GPHA (Puerto de Tema y Takoradi), GNPC offshore Jubilee/TEN/Sankofa, GRIDCO red eléctrica, GWCL agua, Aeropuerto Kotoka (ACC) y minas de oro Obuasi/Tarkwa.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Ghana?',
-                      a: 'Sí. KabatOne cumple con la Data Protection Act 2012 (Act 843)/DPC. La arquitectura está alineada con la Electronic Transactions Act 2008 y las directrices NCSA/CERT-GH.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Ghana?',
+                      a: 'Sí. Kabat One cumple con la Data Protection Act 2012 (Act 843)/DPC. La arquitectura está alineada con la Electronic Transactions Act 2008 y las directrices NCSA/CERT-GH.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne el rol regional ECOWAS de Ghana?',
-                      a: 'KabatOne facilita la coordinación transfronteriza con marcos ECOWAS/ECOMOG, gestión de los pasos fronterizos con Togo (Aflao), Costa de Marfil (Elubo), Burkina Faso (Paga/Hamile) y el Centro INTERPOL Accra.',
+                      q: '¿Cómo apoya Kabat One el rol regional ECOWAS de Ghana?',
+                      a: 'Kabat One facilita la coordinación transfronteriza con marcos ECOWAS/ECOMOG, gestión de los pasos fronterizos con Togo (Aflao), Costa de Marfil (Elubo), Burkina Faso (Paga/Hamile) y el Centro INTERPOL Accra.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareGhanaPage({
                       a: 'The GPS under the IGP covers 16 regions with 30,000+ officers. The GNFS manages fire emergencies. The NADMO coordinates disasters. The NISS and Presidential Guard cover national security.',
                     },
                     {
-                      q: 'How does KabatOne address Ghana critical infrastructure?',
-                      a: 'KabatOne integrates management for GPHA (Tema and Takoradi ports), GNPC offshore Jubilee/TEN/Sankofa, GRIDCO power grid, GWCL water, Kotoka Airport (ACC), and Obuasi/Tarkwa gold mines.',
+                      q: 'How does Kabat One address Ghana critical infrastructure?',
+                      a: 'Kabat One integrates management for GPHA (Tema and Takoradi ports), GNPC offshore Jubilee/TEN/Sankofa, GRIDCO power grid, GWCL water, Kotoka Airport (ACC), and Obuasi/Tarkwa gold mines.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Ghana data legislation?',
-                      a: 'Yes. KabatOne complies with Data Protection Act 2012 (Act 843)/DPC. The architecture aligns with the Electronic Transactions Act 2008 and NCSA/CERT-GH guidelines.',
+                      q: 'Is Kabat One compliant with Ghana data legislation?',
+                      a: 'Yes. Kabat One complies with Data Protection Act 2012 (Act 843)/DPC. The architecture aligns with the Electronic Transactions Act 2008 and NCSA/CERT-GH guidelines.',
                     },
                     {
-                      q: "How does KabatOne support Ghana's ECOWAS regional role?",
-                      a: 'KabatOne facilitates cross-border coordination with ECOWAS/ECOMOG frameworks, management of border crossings with Togo (Aflao), Ivory Coast (Elubo), Burkina Faso (Paga/Hamile), and the INTERPOL Centre in Accra.',
+                      q: "How does Kabat One support Ghana's ECOWAS regional role?",
+                      a: 'Kabat One facilitates cross-border coordination with ECOWAS/ECOMOG frameworks, management of border crossings with Togo (Aflao), Ivory Coast (Elubo), Burkina Faso (Paga/Hamile), and the INTERPOL Centre in Accra.',
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareGhanaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada al GPS, GNFS y NADMO de Ghana.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Ghana GPS, GNFS and NADMO.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada al GPS, GNFS y NADMO de Ghana.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Ghana GPS, GNFS and NADMO.'
           }
         />
       </main>

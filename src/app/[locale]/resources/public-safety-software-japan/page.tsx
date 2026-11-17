@@ -47,7 +47,7 @@ export default async function PublicSafetySoftwareJapanPage({
     },
     {
       question: '¿Qué es el sistema J-Alert y cómo funciona la alerta temprana en Japón?',
-      answer: 'J-Alert (全国瞬時警報システム — Sistema Nacional de Alerta Inmediata) es el sistema nacional de alerta de emergencias de Japón gestionado por la Agencia de Gestión de Incendios y Desastres. Transmite alertas de desastres naturales (terremotos, tsunamis, erupuciones volcánicas) y amenazas de seguridad nacional (misiles balísticos) directamente a televisores, radios, sistemas de megafonía municipales y teléfonos móviles en segundos. J-Alert se activa desde el Centro de Gestión de Crisis del Gabinete (内閣危機管理センター). Cada municipio debe mantener sistemas de difusión compatibles con J-Alert. Las plataformas de seguridad pública como KabatOne pueden integrarse con las alertas J-Alert para activar automáticamente flujos de respuesta de emergencia y coordinar los recursos de múltiples agencias ante un evento de nivel nacional.',
+      answer: 'J-Alert (全国瞬時警報システム — Sistema Nacional de Alerta Inmediata) es el sistema nacional de alerta de emergencias de Japón gestionado por la Agencia de Gestión de Incendios y Desastres. Transmite alertas de desastres naturales (terremotos, tsunamis, erupuciones volcánicas) y amenazas de seguridad nacional (misiles balísticos) directamente a televisores, radios, sistemas de megafonía municipales y teléfonos móviles en segundos. J-Alert se activa desde el Centro de Gestión de Crisis del Gabinete (内閣危機管理センター). Cada municipio debe mantener sistemas de difusión compatibles con J-Alert. Las plataformas de seguridad pública como Kabat One pueden integrarse con las alertas J-Alert para activar automáticamente flujos de respuesta de emergencia y coordinar los recursos de múltiples agencias ante un evento de nivel nacional.',
     },
     {
       question: '¿Cómo se adquiere software de seguridad pública en Japón?',
@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareJapanPage({
       answer: 'Japón tiene una infraestructura de videovigilancia densa y sofisticada, especialmente en entornos urbanos como Tokio, Osaka y Nagoya. El MPD opera miles de cámaras de vigilancia pública (防犯カメラ) integradas con el Centro de Seguridad de Video de la Policía Metropolitana. Los 47 cuerpos prefecturales de policía gestionan sus propias redes de cámaras municipales y viales. La Autopista Metropolitan Expressway y la red ferroviaria (JR, metro) cuentan con sistemas de CCTV de alta densidad conectados a centros de control operativos. La videoanalítica con IA se usa para la detección de eventos en transporte público, la búsqueda forense de sospechosos y el análisis de multitudes en eventos masivos (Osaka Expo 2025, Juegos Olímpicos). El uso de reconocimiento facial está sujeto a las directrices de la PPC y la NPA, con un debate regulatorio en curso sobre su alcance.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la NPA, el MPD, las policías prefecturales y los departamentos de bomberos de Japón?',
-      answer: 'KabatOne integra las funciones que las 47 policías prefecturales, el MPD y los 759 departamentos de bomberos de Japón gestionan a través de sistemas separados: despacho CAD unificado para líneas 110 y 119 simultáneas con asignación automática de recursos (K-Dispatch), gestión de redes de cámaras de videovigilancia pública con analítica de IA conforme a la APPI y las directrices de la NPA — reconocimiento de placas, detección de comportamientos, búsqueda forense — (K-Video), y conciencia situacional GIS compartida entre policía, bomberos, gobierno municipal y unidades de respuesta a desastres naturales (K-Safety). Integración con J-Alert para activar flujos de respuesta ante alertas de emergencia nacional. Despliegue on-premises o cloud certificado ISMAP. Demo adaptada al contexto de los Centros de Mando y Comunicaciones prefecturales de Japón y la visión Society 5.0.',
+      question: '¿Por qué Kabat One es adecuado para la NPA, el MPD, las policías prefecturales y los departamentos de bomberos de Japón?',
+      answer: 'Kabat One integra las funciones que las 47 policías prefecturales, el MPD y los 759 departamentos de bomberos de Japón gestionan a través de sistemas separados: despacho CAD unificado para líneas 110 y 119 simultáneas con asignación automática de recursos (K-Dispatch), gestión de redes de cámaras de videovigilancia pública con analítica de IA conforme a la APPI y las directrices de la NPA — reconocimiento de placas, detección de comportamientos, búsqueda forense — (K-Video), y conciencia situacional GIS compartida entre policía, bomberos, gobierno municipal y unidades de respuesta a desastres naturales (K-Safety). Integración con J-Alert para activar flujos de respuesta ante alertas de emergencia nacional. Despliegue on-premises o cloud certificado ISMAP. Demo adaptada al contexto de los Centros de Mando y Comunicaciones prefecturales de Japón y la visión Society 5.0.',
     },
   ] : [
     {
@@ -76,7 +76,7 @@ export default async function PublicSafetySoftwareJapanPage({
     },
     {
       question: 'What is J-Alert and how does Japan\'s early warning system work?',
-      answer: 'J-Alert (全国瞬時警報システム — National Instant Alert System) is Japan\'s national emergency alert system managed by the Fire and Disaster Management Agency. It transmits alerts for natural disasters (earthquakes, tsunamis, volcanic eruptions) and national security threats (ballistic missiles) directly to televisions, radios, municipal public address systems, and mobile phones within seconds. J-Alert is activated from the Cabinet Crisis Management Centre (内閣危機管理センター). Every municipality must maintain J-Alert-compatible broadcast infrastructure. Public safety platforms like KabatOne can integrate with J-Alert feeds to automatically trigger emergency response workflows and coordinate multi-agency resources during a national-level event.',
+      answer: 'J-Alert (全国瞬時警報システム — National Instant Alert System) is Japan\'s national emergency alert system managed by the Fire and Disaster Management Agency. It transmits alerts for natural disasters (earthquakes, tsunamis, volcanic eruptions) and national security threats (ballistic missiles) directly to televisions, radios, municipal public address systems, and mobile phones within seconds. J-Alert is activated from the Cabinet Crisis Management Centre (内閣危機管理センター). Every municipality must maintain J-Alert-compatible broadcast infrastructure. Public safety platforms like Kabat One can integrate with J-Alert feeds to automatically trigger emergency response workflows and coordinate multi-agency resources during a national-level event.',
     },
     {
       question: 'How is public safety software procured in Japan?',
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareJapanPage({
       answer: 'Japan has dense and sophisticated video surveillance infrastructure, especially in urban environments like Tokyo, Osaka, and Nagoya. The MPD operates thousands of public surveillance cameras (防犯カメラ) integrated with the Metropolitan Police Video Security Centre. All 47 prefectural police forces manage their own municipal and road camera networks. The Metropolitan Expressway and rail network (JR, metro) feature high-density CCTV systems connected to operational control centres. AI video analytics are used for event detection in public transport, forensic suspect search, and crowd analysis at major events (Osaka Expo 2025, Olympic Games). Use of facial recognition is subject to PPC and NPA guidelines, with an ongoing regulatory debate about its scope.',
     },
     {
-      question: 'Why is KabatOne suited for Japan\'s NPA, MPD, prefectural police forces, and fire departments?',
-      answer: 'KabatOne integrates the functions that Japan\'s 47 prefectural police forces, the MPD, and 759 fire departments manage through separate systems: unified CAD dispatch for simultaneous 110 and 119 lines with automatic resource assignment (K-Dispatch), public surveillance camera network management with AI analytics compliant with APPI and NPA guidelines — licence plate recognition, behavioural detection, forensic search — (K-Video), and shared GIS situational awareness across police, fire, municipal government, and natural disaster response units (K-Safety). Integration with J-Alert to automatically trigger response workflows on national emergency alerts. On-premises or ISMAP-certified cloud deployment. Demo tailored to Japan\'s prefectural Command and Communication Centre context and Society 5.0 vision.',
+      question: 'Why is Kabat One suited for Japan\'s NPA, MPD, prefectural police forces, and fire departments?',
+      answer: 'Kabat One integrates the functions that Japan\'s 47 prefectural police forces, the MPD, and 759 fire departments manage through separate systems: unified CAD dispatch for simultaneous 110 and 119 lines with automatic resource assignment (K-Dispatch), public surveillance camera network management with AI analytics compliant with APPI and NPA guidelines — licence plate recognition, behavioural detection, forensic search — (K-Video), and shared GIS situational awareness across police, fire, municipal government, and natural disaster response units (K-Safety). Integration with J-Alert to automatically trigger response workflows on national emergency alerts. On-premises or ISMAP-certified cloud deployment. Demo tailored to Japan\'s prefectural Command and Communication Centre context and Society 5.0 vision.',
     },
   ]
 
@@ -155,8 +155,8 @@ export default async function PublicSafetySoftwareJapanPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Japón opera 47 policías prefecturales autónomas, el MPD de Tokio con ~47,000 efectivos, 759 departamentos de bomberos bajo la FDMA y el sistema J-Alert de alerta nacional de desastres. La reforma DX del Agencia Digital está abriendo el mercado a plataformas cloud certificadas ISMAP. KabatOne unifica el despacho CAD 110/119, la gestión de cámaras con IA y la conciencia situacional GIS bajo los requisitos de la APPI y el NISC.'
-                : 'Japan operates 47 autonomous prefectural police forces, the Tokyo MPD with ~47,000 officers, 759 fire departments under FDMA, and the J-Alert national disaster warning system. The Digital Agency DX reform is opening the market to ISMAP-certified cloud platforms. KabatOne unifies 110/119 CAD dispatch, AI camera management, and GIS situational awareness under APPI and NISC requirements.'}
+                ? 'Japón opera 47 policías prefecturales autónomas, el MPD de Tokio con ~47,000 efectivos, 759 departamentos de bomberos bajo la FDMA y el sistema J-Alert de alerta nacional de desastres. La reforma DX del Agencia Digital está abriendo el mercado a plataformas cloud certificadas ISMAP. Kabat One unifica el despacho CAD 110/119, la gestión de cámaras con IA y la conciencia situacional GIS bajo los requisitos de la APPI y el NISC.'
+                : 'Japan operates 47 autonomous prefectural police forces, the Tokyo MPD with ~47,000 officers, 759 fire departments under FDMA, and the J-Alert national disaster warning system. The Digital Agency DX reform is opening the market to ISMAP-certified cloud platforms. Kabat One unifies 110/119 CAD dispatch, AI camera management, and GIS situational awareness under APPI and NISC requirements.'}
             </p>
           </div>
         </section>
@@ -199,14 +199,14 @@ export default async function PublicSafetySoftwareJapanPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de la NPA, el MPD y los Departamentos de Bomberos de Japón' : 'How KabatOne Addresses Japan\'s NPA, MPD, and Fire Department Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de la NPA, el MPD y los Departamentos de Bomberos de Japón' : 'How Kabat One Addresses Japan\'s NPA, MPD, and Fire Department Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los Centros de Mando y Comunicaciones prefecturales (指令センター), el MPD Communication Center y los centros de despacho 119 que necesitan un dashboard unificado para gestionar llamadas 110 y 119 simultáneas, coordinar recursos de múltiples agencias —policía, bomberos, Fuerzas de Autodefensa— durante desastres naturales, y monitorizar redes de cámaras municipales con analítica de IA bajo los requisitos de la APPI, la PPC y el NISC.'
-                : 'KabatOne is designed for prefectural Command and Communication Centres (指令センター), the MPD Communication Center, and 119 dispatch centres that need a unified dashboard to manage simultaneous 110 and 119 calls, coordinate multi-agency resources — police, fire, Self-Defence Forces — during natural disasters, and monitor municipal camera networks with AI analytics under APPI, PPC, and NISC requirements.'}
+                ? 'Kabat One está diseñado para los Centros de Mando y Comunicaciones prefecturales (指令センター), el MPD Communication Center y los centros de despacho 119 que necesitan un dashboard unificado para gestionar llamadas 110 y 119 simultáneas, coordinar recursos de múltiples agencias —policía, bomberos, Fuerzas de Autodefensa— durante desastres naturales, y monitorizar redes de cámaras municipales con analítica de IA bajo los requisitos de la APPI, la PPC y el NISC.'
+                : 'Kabat One is designed for prefectural Command and Communication Centres (指令センター), the MPD Communication Center, and 119 dispatch centres that need a unified dashboard to manage simultaneous 110 and 119 calls, coordinate multi-agency resources — police, fire, Self-Defence Forces — during natural disasters, and monitor municipal camera networks with AI analytics under APPI, PPC, and NISC requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -233,7 +233,7 @@ export default async function PublicSafetySoftwareJapanPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -307,7 +307,7 @@ export default async function PublicSafetySoftwareJapanPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para la NPA, el MPD o tu Centro de Mando Prefectural' : 'Request a Demo for Japan\'s NPA, MPD, or Your Prefectural Command Centre'}
-          subtitle={es ? 'KabatOne integra despacho 110/119, gestión de cámaras con IA y conciencia situacional GIS en una plataforma con integración J-Alert, cumplimiento APPI/NISC y despliegue ISMAP. Demo adaptada al modelo de Centros de Mando prefecturales de Japón y la visión Society 5.0.' : 'KabatOne integrates 110/119 dispatch, AI camera management, and GIS situational awareness in a single platform with J-Alert integration, APPI/NISC compliance, and ISMAP deployment. Demo tailored to Japan\'s prefectural Command Centre model and Society 5.0 vision.'}
+          subtitle={es ? 'Kabat One integra despacho 110/119, gestión de cámaras con IA y conciencia situacional GIS en una plataforma con integración J-Alert, cumplimiento APPI/NISC y despliegue ISMAP. Demo adaptada al modelo de Centros de Mando prefecturales de Japón y la visión Society 5.0.' : 'Kabat One integrates 110/119 dispatch, AI camera management, and GIS situational awareness in a single platform with J-Alert integration, APPI/NISC compliance, and ISMAP deployment. Demo tailored to Japan\'s prefectural Command Centre model and Society 5.0 vision.'}
         />
 
         <Footer es={es} />

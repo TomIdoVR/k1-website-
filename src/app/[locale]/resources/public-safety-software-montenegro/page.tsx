@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareMontenegro({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Montenegro | Policía/ANB, Puerto Bar, Autopista Bar-Boljare y NATO – KabatOne"
-        : "Public Safety Software for Montenegro | Police/ANB, Port of Bar, Bar-Boljare Highway & NATO – KabatOne",
+        ? "Software de Seguridad Pública para Montenegro | Policía/ANB, Puerto Bar, Autopista Bar-Boljare y NATO – Kabat One"
+        : "Public Safety Software for Montenegro | Police/ANB, Port of Bar, Bar-Boljare Highway & NATO – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía montenegrina, ANB inteligencia y Guardia de Fronteras — gestión del Puerto de Bar y costa adriática 293 km, autopista Bar-Boljare financiada por China, candidatura UE y coordinación NATO/FRONTEX."
-        : "KabatOne delivers public safety platform for Montenegrin Police, ANB intelligence, and Border Guard — Port of Bar and Adriatic coast 293 km management, Bar-Boljare highway funded by China, EU candidacy, and NATO/FRONTEX coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía montenegrina, ANB inteligencia y Guardia de Fronteras — gestión del Puerto de Bar y costa adriática 293 km, autopista Bar-Boljare financiada por China, candidatura UE y coordinación NATO/FRONTEX."
+        : "Kabat One delivers public safety platform for Montenegrin Police, ANB intelligence, and Border Guard — Port of Bar and Adriatic coast 293 km management, Bar-Boljare highway funded by China, EU candidacy, and NATO/FRONTEX coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-montenegro"
         : "https://kabatone.com/resources/public-safety-software-montenegro",
@@ -344,13 +344,13 @@ export default async function PublicSafetySoftwareMontenegro({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Montenegro"
-              : "KabatOne Capabilities for Montenegro"}
+              ? "Capacidades Kabat One para Montenegro"
+              : "Kabat One Capabilities for Montenegro"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -457,8 +457,8 @@ export default async function PublicSafetySoftwareMontenegro({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía, ANB y Guardia de Fronteras en una plataforma unificada — Puerto Bar, costa adriática 293 km, autopista Bar-Boljare, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
-            : "KabatOne integrates Police, ANB, and Border Guard in one unified platform — Port of Bar, Adriatic coast 293 km, Bar-Boljare highway, AZLP/GDPR compliance, and EU accession process support."
+            ? "Kabat One integra Policía, ANB y Guardia de Fronteras en una plataforma unificada — Puerto Bar, costa adriática 293 km, autopista Bar-Boljare, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
+            : "Kabat One integrates Police, ANB, and Border Guard in one unified platform — Port of Bar, Adriatic coast 293 km, Bar-Boljare highway, AZLP/GDPR compliance, and EU accession process support."
         }
       />
       <Footer es={es} />

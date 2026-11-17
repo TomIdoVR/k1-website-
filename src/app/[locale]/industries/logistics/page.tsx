@@ -59,8 +59,8 @@ export default async function LogisticsPage({
   const coverageLabel = es ? 'Cobertura por Zona' : 'Coverage by Zone'
   const coverageH2 = es ? 'Cobertura Logística de Extremo a Extremo' : 'End-to-End Logistics Coverage'
   const coverageDesc = es
-    ? 'KabatOne asegura cada punto de tu operación logística — desde el interior del almacén hasta el perímetro exterior.'
-    : 'KabatOne secures every point of your logistics operation — from inside the warehouse to the outer perimeter.'
+    ? 'Kabat One asegura cada punto de tu operación logística — desde el interior del almacén hasta el perímetro exterior.'
+    : 'Kabat One secures every point of your logistics operation — from inside the warehouse to the outer perimeter.'
 
   const coverageZones = es ? [
     { zone: 'Zona 01', title: 'Interior del Almacén', desc: 'Analítica de video para monitoreo de inventario, detección de acceso no autorizado, detección de incendio y humo, y cumplimiento de seguridad laboral.' },
@@ -110,8 +110,8 @@ export default async function LogisticsPage({
     ? 'Asegura Toda Tu Operación Logística'
     : 'Secure Your Entire Logistics Operation'
   const ctaSub = es
-    ? 'Desde el almacén hasta la última milla — KabatOne entrega visibilidad total, respuesta en tiempo real e inteligencia operativa a través de tu red logística.'
-    : 'From warehouse to last mile — KabatOne delivers total visibility, real-time response, and operational intelligence across your logistics network.'
+    ? 'Desde el almacén hasta la última milla — Kabat One entrega visibilidad total, respuesta en tiempo real e inteligencia operativa a través de tu red logística.'
+    : 'From warehouse to last mile — Kabat One delivers total visibility, real-time response, and operational intelligence across your logistics network.'
 
   /* ── shared styles ── */
   const sectionStyle = { position: 'relative' as const, zIndex: 10, padding: '80px 0', borderTop: '1px solid var(--border)' }
@@ -122,13 +122,13 @@ export default async function LogisticsPage({
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
   const logisticsFaqs = es ? [
-    { question: '¿Cómo protege KabatOne las operaciones logísticas?', answer: 'KabatOne asegura cada punto de la operación logística con cuatro zonas de cobertura: interior del almacén, puntos de acceso y control, patios de maniobras y muelles, y perímetro exterior. Integra analítica de video, LPR, RFID y sensores IoT.' },
-    { question: '¿Qué zonas cubre KabatOne en instalaciones logísticas?', answer: 'KabatOne cubre cuatro zonas: interior del almacén con detección de incendio e intrusión, puntos de acceso con reconocimiento facial y LPR, patios de maniobras con seguimiento vehicular, y perímetro exterior con cámaras PTZ e imagen térmica.' },
-    { question: '¿Escala KabatOne desde una instalación a redes nacionales?', answer: 'Sí. KabatOne es modular y escalable, protegiendo desde una sola instalación hasta redes de distribución nacionales con dashboards personalizables, análisis de tendencias de riesgo y reportes automáticos de cumplimiento.' },
+    { question: '¿Cómo protege Kabat One las operaciones logísticas?', answer: 'Kabat One asegura cada punto de la operación logística con cuatro zonas de cobertura: interior del almacén, puntos de acceso y control, patios de maniobras y muelles, y perímetro exterior. Integra analítica de video, LPR, RFID y sensores IoT.' },
+    { question: '¿Qué zonas cubre Kabat One en instalaciones logísticas?', answer: 'Kabat One cubre cuatro zonas: interior del almacén con detección de incendio e intrusión, puntos de acceso con reconocimiento facial y LPR, patios de maniobras con seguimiento vehicular, y perímetro exterior con cámaras PTZ e imagen térmica.' },
+    { question: '¿Escala Kabat One desde una instalación a redes nacionales?', answer: 'Sí. Kabat One es modular y escalable, protegiendo desde una sola instalación hasta redes de distribución nacionales con dashboards personalizables, análisis de tendencias de riesgo y reportes automáticos de cumplimiento.' },
   ] : [
-    { question: 'How does KabatOne protect logistics operations?', answer: 'KabatOne secures every point of the logistics operation across four coverage zones: inside warehouse, access and control points, maneuvering yards and docks, and perimeter exterior. It integrates video analytics, LPR, RFID, and IoT sensors.' },
-    { question: 'What zones does KabatOne cover in logistics facilities?', answer: 'KabatOne covers four zones: warehouse interior with fire and intrusion detection, access points with facial recognition and LPR, maneuvering yards with vehicle tracking, and perimeter exterior with PTZ cameras and thermal imaging.' },
-    { question: 'Does KabatOne scale from single facilities to national networks?', answer: 'Yes. KabatOne is modular and scalable, protecting from a single facility to nationwide distribution networks with customizable dashboards, risk trend analysis, and automatic compliance reports.' },
+    { question: 'How does Kabat One protect logistics operations?', answer: 'Kabat One secures every point of the logistics operation across four coverage zones: inside warehouse, access and control points, maneuvering yards and docks, and perimeter exterior. It integrates video analytics, LPR, RFID, and IoT sensors.' },
+    { question: 'What zones does Kabat One cover in logistics facilities?', answer: 'Kabat One covers four zones: warehouse interior with fire and intrusion detection, access points with facial recognition and LPR, maneuvering yards with vehicle tracking, and perimeter exterior with PTZ cameras and thermal imaging.' },
+    { question: 'Does Kabat One scale from single facilities to national networks?', answer: 'Yes. Kabat One is modular and scalable, protecting from a single facility to nationwide distribution networks with customizable dashboards, risk trend analysis, and automatic compliance reports.' },
   ]
 
   return (

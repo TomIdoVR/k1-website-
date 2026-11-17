@@ -28,52 +28,52 @@ export default async function VsAvigilonPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Avigilon', url: es ? 'https://kabatone.com/es/vs/avigilon' : 'https://kabatone.com/vs/avigilon' },
+    { name: 'Kabat One vs Avigilon', url: es ? 'https://kabatone.com/es/vs/avigilon' : 'https://kabatone.com/vs/avigilon' },
   ]
 
   const pageUrl = es ? 'https://kabatone.com/es/vs/avigilon' : 'https://kabatone.com/vs/avigilon'
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Avigilon?',
-      answer: 'Avigilon (de Motorola Solutions) es un sistema de gestión de video (VMS) premium con analítica de video de autoaprendizaje y hardware de cámaras propio. Es una solución sólida para gestión de video empresarial, pero no incluye despacho CAD, GIS operacional, ni gestión de tráfico. KabatOne es una plataforma de seguridad pública unificada: además de gestión de video con analítica IA (K-Video), incluye despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) — todo nativo en un solo sistema.',
+      question: '¿Cuál es la diferencia entre Kabat One y Avigilon?',
+      answer: 'Avigilon (de Motorola Solutions) es un sistema de gestión de video (VMS) premium con analítica de video de autoaprendizaje y hardware de cámaras propio. Es una solución sólida para gestión de video empresarial, pero no incluye despacho CAD, GIS operacional, ni gestión de tráfico. Kabat One es una plataforma de seguridad pública unificada: además de gestión de video con analítica IA (K-Video), incluye despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) — todo nativo en un solo sistema.',
     },
     {
       question: '¿Avigilon tiene sistema de despacho CAD o coordinación de emergencias?',
-      answer: 'No. Avigilon es un VMS — gestiona cámaras, almacena video y aplica analítica de IA sobre los feeds. No incluye despacho de emergencias, gestión de incidentes operacionales ni coordinación de unidades en campo. Avigilon puede integrarse con sistemas de despacho de terceros a través de APIs, pero no reemplaza un CAD. KabatOne K-Dispatch es un sistema CAD completo con recepción de llamadas, recomendación automática de unidades, logging de despacho y rastreo de unidades en tiempo real — nativo e integrado con video, GIS y tráfico.',
+      answer: 'No. Avigilon es un VMS — gestiona cámaras, almacena video y aplica analítica de IA sobre los feeds. No incluye despacho de emergencias, gestión de incidentes operacionales ni coordinación de unidades en campo. Avigilon puede integrarse con sistemas de despacho de terceros a través de APIs, pero no reemplaza un CAD. Kabat One K-Dispatch es un sistema CAD completo con recepción de llamadas, recomendación automática de unidades, logging de despacho y rastreo de unidades en tiempo real — nativo e integrado con video, GIS y tráfico.',
     },
     {
       question: '¿Qué es Avigilon Alta y en qué se diferencia del VMS tradicional de Avigilon?',
-      answer: 'Avigilon Alta (anteriormente Avigilon Unity) es la evolución cloud-managed de Avigilon — un VMS administrado desde la nube con analítica de video de autoaprendizaje, acceso remoto y gestión de dispositivos desde la plataforma de Motorola Solutions. El VMS tradicional de Avigilon era on-premise. En ambos casos, el enfoque es video: cámaras, analítica de video, control de acceso. Ninguna versión de Avigilon incluye despacho CAD, GIS operacional para centros de mando, ni gestión de tráfico — las capacidades que KabatOne añade nativamente a la gestión de video.',
+      answer: 'Avigilon Alta (anteriormente Avigilon Unity) es la evolución cloud-managed de Avigilon — un VMS administrado desde la nube con analítica de video de autoaprendizaje, acceso remoto y gestión de dispositivos desde la plataforma de Motorola Solutions. El VMS tradicional de Avigilon era on-premise. En ambos casos, el enfoque es video: cámaras, analítica de video, control de acceso. Ninguna versión de Avigilon incluye despacho CAD, GIS operacional para centros de mando, ni gestión de tráfico — las capacidades que Kabat One añade nativamente a la gestión de video.',
     },
     {
-      question: '¿KabatOne puede reemplazar a Avigilon?',
-      answer: 'Para organizaciones que necesitan una plataforma unificada de seguridad pública, KabatOne puede reemplazar a Avigilon como sistema de gestión de video y agregar las capacidades que Avigilon no tiene: CAD completo, GIS operacional y gestión de tráfico. KabatOne K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar — puede integrarse con cámaras existentes, incluyendo hardware de Avigilon. Para organizaciones con una instalación de cámaras Avigilon y sin intención de reemplazar el hardware, KabatOne puede actuar como capa de gestión unificada sobre esas cámaras mientras añade las capacidades operacionales que faltan.',
+      question: '¿Kabat One puede reemplazar a Avigilon?',
+      answer: 'Para organizaciones que necesitan una plataforma unificada de seguridad pública, Kabat One puede reemplazar a Avigilon como sistema de gestión de video y agregar las capacidades que Avigilon no tiene: CAD completo, GIS operacional y gestión de tráfico. Kabat One K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar — puede integrarse con cámaras existentes, incluyendo hardware de Avigilon. Para organizaciones con una instalación de cámaras Avigilon y sin intención de reemplazar el hardware, Kabat One puede actuar como capa de gestión unificada sobre esas cámaras mientras añade las capacidades operacionales que faltan.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Avigilon no ofrece?',
-      answer: 'Más allá de la gestión de video, KabatOne proporciona: CAD completo (K-Dispatch) con recepción de llamadas, recomendación de unidades y logging — Avigilon no tiene CAD; GIS operacional (K-Safety) con conciencia situacional a escala de ciudad, rastreo de unidades y correlación de incidentes con video — Avigilon no tiene GIS operacional nativo para centros de mando; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos y vehículos de emergencia — Avigilon no incluye tráfico; coordinación multiagencia nativa — despacho, video, GIS y tráfico comparten datos en tiempo real sin proyectos de integración. KabatOne también no requiere hardware propietario — soporta cámaras de cualquier fabricante.',
+      question: '¿Qué ofrece Kabat One que Avigilon no ofrece?',
+      answer: 'Más allá de la gestión de video, Kabat One proporciona: CAD completo (K-Dispatch) con recepción de llamadas, recomendación de unidades y logging — Avigilon no tiene CAD; GIS operacional (K-Safety) con conciencia situacional a escala de ciudad, rastreo de unidades y correlación de incidentes con video — Avigilon no tiene GIS operacional nativo para centros de mando; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos y vehículos de emergencia — Avigilon no incluye tráfico; coordinación multiagencia nativa — despacho, video, GIS y tráfico comparten datos en tiempo real sin proyectos de integración. Kabat One también no requiere hardware propietario — soporta cámaras de cualquier fabricante.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Avigilon?',
-      answer: 'Avigilon (by Motorola Solutions) is a premium video management system (VMS) with self-learning video analytics and proprietary camera hardware. It is a strong enterprise video management solution, but it does not include CAD dispatch, operational GIS, or traffic management. KabatOne is a unified public safety platform: in addition to AI-powered video management (K-Video), it includes full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) — all native in one system.',
+      question: 'What is the difference between Kabat One and Avigilon?',
+      answer: 'Avigilon (by Motorola Solutions) is a premium video management system (VMS) with self-learning video analytics and proprietary camera hardware. It is a strong enterprise video management solution, but it does not include CAD dispatch, operational GIS, or traffic management. Kabat One is a unified public safety platform: in addition to AI-powered video management (K-Video), it includes full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) — all native in one system.',
     },
     {
       question: 'Does Avigilon have a CAD dispatch system or emergency coordination capabilities?',
-      answer: 'No. Avigilon is a VMS — it manages cameras, stores video, and applies AI analytics to feeds. It does not include emergency dispatch, operational incident management, or field unit coordination. Avigilon can integrate with third-party dispatch systems via APIs, but it does not replace a CAD. KabatOne K-Dispatch is a full CAD system with call intake, automatic unit recommendation, dispatch logging, and real-time unit tracking — native and integrated with video, GIS, and traffic.',
+      answer: 'No. Avigilon is a VMS — it manages cameras, stores video, and applies AI analytics to feeds. It does not include emergency dispatch, operational incident management, or field unit coordination. Avigilon can integrate with third-party dispatch systems via APIs, but it does not replace a CAD. Kabat One K-Dispatch is a full CAD system with call intake, automatic unit recommendation, dispatch logging, and real-time unit tracking — native and integrated with video, GIS, and traffic.',
     },
     {
       question: 'What is Avigilon Alta and how does it differ from traditional Avigilon VMS?',
-      answer: 'Avigilon Alta (formerly Avigilon Unity) is the cloud-managed evolution of Avigilon — a VMS administered from the cloud with self-learning video analytics, remote access, and device management from the Motorola Solutions platform. Traditional Avigilon VMS was on-premise. In both cases, the focus is video: cameras, video analytics, access control. Neither version of Avigilon includes CAD dispatch, operational GIS for command centers, or traffic management — the capabilities that KabatOne adds natively to video management.',
+      answer: 'Avigilon Alta (formerly Avigilon Unity) is the cloud-managed evolution of Avigilon — a VMS administered from the cloud with self-learning video analytics, remote access, and device management from the Motorola Solutions platform. Traditional Avigilon VMS was on-premise. In both cases, the focus is video: cameras, video analytics, access control. Neither version of Avigilon includes CAD dispatch, operational GIS for command centers, or traffic management — the capabilities that Kabat One adds natively to video management.',
     },
     {
-      question: 'Can KabatOne replace Avigilon?',
-      answer: 'For organizations that need a unified public safety platform, KabatOne can replace Avigilon as the video management system and add the capabilities Avigilon lacks: full CAD, operational GIS, and traffic management. KabatOne K-Video supports ONVIF, RTSP, and all standard IP protocols — it can integrate with existing cameras, including Avigilon hardware. For organizations with an existing Avigilon camera installation and no intent to replace the hardware, KabatOne can act as the unified management layer over those cameras while adding the missing operational capabilities.',
+      question: 'Can Kabat One replace Avigilon?',
+      answer: 'For organizations that need a unified public safety platform, Kabat One can replace Avigilon as the video management system and add the capabilities Avigilon lacks: full CAD, operational GIS, and traffic management. Kabat One K-Video supports ONVIF, RTSP, and all standard IP protocols — it can integrate with existing cameras, including Avigilon hardware. For organizations with an existing Avigilon camera installation and no intent to replace the hardware, Kabat One can act as the unified management layer over those cameras while adding the missing operational capabilities.',
     },
     {
-      question: 'What does KabatOne offer that Avigilon does not?',
-      answer: 'Beyond video management, KabatOne provides: full CAD (K-Dispatch) with call intake, unit recommendation, and logging — Avigilon has no CAD; operational GIS (K-Safety) with city-scale situational awareness, unit tracking, and incident correlation with video — Avigilon has no native operational GIS for command centers; intelligent traffic management (K-Traffic) to coordinate signals and emergency vehicles — Avigilon does not include traffic; native multi-agency coordination — dispatch, video, GIS, and traffic share real-time data without integration projects. KabatOne also requires no proprietary hardware — it supports cameras from any manufacturer.',
+      question: 'What does Kabat One offer that Avigilon does not?',
+      answer: 'Beyond video management, Kabat One provides: full CAD (K-Dispatch) with call intake, unit recommendation, and logging — Avigilon has no CAD; operational GIS (K-Safety) with city-scale situational awareness, unit tracking, and incident correlation with video — Avigilon has no native operational GIS for command centers; intelligent traffic management (K-Traffic) to coordinate signals and emergency vehicles — Avigilon does not include traffic; native multi-agency coordination — dispatch, video, GIS, and traffic share real-time data without integration projects. Kabat One also requires no proprietary hardware — it supports cameras from any manufacturer.',
     },
   ]
 
@@ -174,36 +174,36 @@ export default async function VsAvigilonPage({
   const whyKabatoneCards = es ? [
     {
       title: 'Del video al despacho — sin cambiar de sistema',
-      body: 'En Avigilon, una alerta de video es el final del flujo. El operador necesita cambiar a otro sistema para despachar unidades. En KabatOne, una alerta de K-Video genera automáticamente un evento en K-Dispatch. El despachador ve el video más cercano directamente en el contexto del incidente. Sin cambios de sistema, sin pérdida de tiempo.',
+      body: 'En Avigilon, una alerta de video es el final del flujo. El operador necesita cambiar a otro sistema para despachar unidades. En Kabat One, una alerta de K-Video genera automáticamente un evento en K-Dispatch. El despachador ve el video más cercano directamente en el contexto del incidente. Sin cambios de sistema, sin pérdida de tiempo.',
     },
     {
       title: 'GIS operacional nativo — no solo un mapa de cámaras',
-      body: 'Avigilon muestra cámaras en un mapa. KabatOne K-Safety es un GIS operacional completo: incidentes en tiempo real, rastreo de unidades, correlación de eventos con feeds de video, y zonas de riesgo configurables — todo en la misma vista donde el despachador trabaja. Conciencia situacional real, no solo geografía de cámaras.',
+      body: 'Avigilon muestra cámaras en un mapa. Kabat One K-Safety es un GIS operacional completo: incidentes en tiempo real, rastreo de unidades, correlación de eventos con feeds de video, y zonas de riesgo configurables — todo en la misma vista donde el despachador trabaja. Conciencia situacional real, no solo geografía de cámaras.',
     },
     {
       title: 'Sin hardware propietario obligatorio',
-      body: 'Avigilon empuja hacia su propio hardware de cámaras para maximizar las capacidades de analítica. KabatOne K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar — puede gestionar cámaras de Hikvision, Dahua, Axis, Bosch, Hanwha y cualquier otro fabricante. Si ya tienes cámaras Avigilon, KabatOne las integra sin reemplazarlas.',
+      body: 'Avigilon empuja hacia su propio hardware de cámaras para maximizar las capacidades de analítica. Kabat One K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar — puede gestionar cámaras de Hikvision, Dahua, Axis, Bosch, Hanwha y cualquier otro fabricante. Si ya tienes cámaras Avigilon, Kabat One las integra sin reemplazarlas.',
     },
     {
       title: 'Trayectoria probada en C5 y centros de mando en LATAM',
-      body: 'KabatOne está desplegado en más de 40 ciudades en México y América Latina — principalmente en entornos C5 y C2 donde convergen despacho, video, GIS y tráfico en operaciones reales. Avigilon no tiene un registro de referencia equivalente en centros de mando gubernamentales LATAM. Para compradores de gobierno que necesitan confianza en el proveedor, el historial de despliegue importa.',
+      body: 'Kabat One está desplegado en más de 40 ciudades en México y América Latina — principalmente en entornos C5 y C2 donde convergen despacho, video, GIS y tráfico en operaciones reales. Avigilon no tiene un registro de referencia equivalente en centros de mando gubernamentales LATAM. Para compradores de gobierno que necesitan confianza en el proveedor, el historial de despliegue importa.',
     },
   ] : [
     {
       title: 'From video alert to dispatch — without switching systems',
-      body: 'In Avigilon, a video alert is the end of the workflow. The operator must switch to another system to dispatch units. In KabatOne, a K-Video alert automatically generates an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. No system switching, no time lost.',
+      body: 'In Avigilon, a video alert is the end of the workflow. The operator must switch to another system to dispatch units. In Kabat One, a K-Video alert automatically generates an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. No system switching, no time lost.',
     },
     {
       title: 'Native operational GIS — not just a camera map',
-      body: 'Avigilon shows cameras on a map. KabatOne K-Safety is a full operational GIS: real-time incidents, unit tracking, event correlation with video feeds, and configurable risk zones — all in the same view where the dispatcher works. Real situational awareness, not just camera geography.',
+      body: 'Avigilon shows cameras on a map. Kabat One K-Safety is a full operational GIS: real-time incidents, unit tracking, event correlation with video feeds, and configurable risk zones — all in the same view where the dispatcher works. Real situational awareness, not just camera geography.',
     },
     {
       title: 'No mandatory proprietary hardware',
-      body: 'Avigilon pushes toward its own camera hardware to maximize analytics capabilities. KabatOne K-Video supports ONVIF, RTSP, and all standard IP protocols — it can manage cameras from Hikvision, Dahua, Axis, Bosch, Hanwha, and any other manufacturer. If you already have Avigilon cameras, KabatOne integrates them without replacement.',
+      body: 'Avigilon pushes toward its own camera hardware to maximize analytics capabilities. Kabat One K-Video supports ONVIF, RTSP, and all standard IP protocols — it can manage cameras from Hikvision, Dahua, Axis, Bosch, Hanwha, and any other manufacturer. If you already have Avigilon cameras, Kabat One integrates them without replacement.',
     },
     {
       title: 'Proven track record in C5 and command centers across LATAM',
-      body: 'KabatOne is deployed across 40+ cities in Mexico and Latin America — primarily in C5 and C2 environments where dispatch, video, GIS, and traffic converge in real operations. Avigilon has no equivalent reference record in LATAM government command centers. For government buyers who need supplier confidence, deployment history matters.',
+      body: 'Kabat One is deployed across 40+ cities in Mexico and Latin America — primarily in C5 and C2 environments where dispatch, video, GIS, and traffic converge in real operations. Avigilon has no equivalent reference record in LATAM government command centers. For government buyers who need supplier confidence, deployment history matters.',
     },
   ]
 
@@ -224,11 +224,11 @@ export default async function VsAvigilonPage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? 'KabatOne vs Avigilon — VMS Premium vs Plataforma de Seguridad Pública Unificada'
-                : 'KabatOne vs Avigilon — Premium VMS vs Unified Public Safety Platform',
+                ? 'Kabat One vs Avigilon — VMS Premium vs Plataforma de Seguridad Pública Unificada'
+                : 'Kabat One vs Avigilon — Premium VMS vs Unified Public Safety Platform',
               es
-                ? 'Avigilon de Motorola Solutions es un VMS premium con analítica de video de autoaprendizaje. KabatOne agrega despacho CAD completo, GIS operacional y gestión de tráfico — conectando el flujo completo de respuesta en una sola plataforma.'
-                : 'Avigilon by Motorola Solutions is a premium VMS with self-learning video analytics. KabatOne adds full CAD dispatch, operational GIS, and traffic management — connecting the complete response workflow in one platform.',
+                ? 'Avigilon de Motorola Solutions es un VMS premium con analítica de video de autoaprendizaje. Kabat One agrega despacho CAD completo, GIS operacional y gestión de tráfico — conectando el flujo completo de respuesta en una sola plataforma.'
+                : 'Avigilon by Motorola Solutions is a premium VMS with self-learning video analytics. Kabat One adds full CAD dispatch, operational GIS, and traffic management — connecting the complete response workflow in one platform.',
               pageUrl,
               '2026-04-07'
             )
@@ -248,7 +248,7 @@ export default async function VsAvigilonPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Avigilon</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Avigilon</span>
         </div>
 
         {/* ── HERO ── */}
@@ -267,13 +267,13 @@ export default async function VsAvigilonPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Avigilon — VMS Premium vs Plataforma de Seguridad Pública Unificada'
-              : 'KabatOne vs Avigilon — Premium VMS vs Unified Public Safety Platform'}
+              ? 'Kabat One vs Avigilon — VMS Premium vs Plataforma de Seguridad Pública Unificada'
+              : 'Kabat One vs Avigilon — Premium VMS vs Unified Public Safety Platform'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Avigilon es el VMS premium de Motorola Solutions — hardware de cámaras, almacenamiento de video y analítica de autoaprendizaje. Es una solución fuerte para gestión de video empresarial. KabatOne añade lo que Avigilon no tiene: despacho CAD completo, GIS operacional y gestión de tráfico — todo nativo en una plataforma diseñada para centros de mando C5 y organizaciones de seguridad pública.'
-              : 'Avigilon is Motorola Solutions\' premium VMS — camera hardware, video storage, and self-learning analytics. It is a strong solution for enterprise video management. KabatOne adds what Avigilon lacks: full CAD dispatch, operational GIS, and traffic management — all native in a platform built for C5 command centers and public safety organizations.'}
+              ? 'Avigilon es el VMS premium de Motorola Solutions — hardware de cámaras, almacenamiento de video y analítica de autoaprendizaje. Es una solución fuerte para gestión de video empresarial. Kabat One añade lo que Avigilon no tiene: despacho CAD completo, GIS operacional y gestión de tráfico — todo nativo en una plataforma diseñada para centros de mando C5 y organizaciones de seguridad pública.'
+              : 'Avigilon is Motorola Solutions\' premium VMS — camera hardware, video storage, and self-learning analytics. It is a strong solution for enterprise video management. Kabat One adds what Avigilon lacks: full CAD dispatch, operational GIS, and traffic management — all native in a platform built for C5 command centers and public safety organizations.'}
           </p>
         </section>
 
@@ -313,22 +313,22 @@ export default async function VsAvigilonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'K-Video de KabatOne gestiona cámaras fijas de ciudad con analítica IA — reconocimiento de placas (LPR), detección de eventos, análisis de movimiento — y conecta directamente esas alertas al flujo de despacho CAD. Una alerta de video puede generar automáticamente un evento en K-Dispatch sin que el operador cambie de sistema. K-Safety superpone incidentes, unidades y feeds de video en un mapa GIS operacional — el mismo mapa donde trabaja el despachador.'
-                : 'KabatOne K-Video manages city fixed cameras with AI analytics — license plate recognition (LPR), event detection, motion analysis — and directly connects those alerts to the CAD dispatch workflow. A video alert can automatically generate an event in K-Dispatch without the operator switching systems. K-Safety overlays incidents, units, and video feeds on an operational GIS map — the same map where the dispatcher works.'}
+                ? 'K-Video de Kabat One gestiona cámaras fijas de ciudad con analítica IA — reconocimiento de placas (LPR), detección de eventos, análisis de movimiento — y conecta directamente esas alertas al flujo de despacho CAD. Una alerta de video puede generar automáticamente un evento en K-Dispatch sin que el operador cambie de sistema. K-Safety superpone incidentes, unidades y feeds de video en un mapa GIS operacional — el mismo mapa donde trabaja el despachador.'
+                : 'Kabat One K-Video manages city fixed cameras with AI analytics — license plate recognition (LPR), event detection, motion analysis — and directly connects those alerts to the CAD dispatch workflow. A video alert can automatically generate an event in K-Dispatch without the operator switching systems. K-Safety overlays incidents, units, and video feeds on an operational GIS map — the same map where the dispatcher works.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y América Latina. A diferencia de Avigilon, que es una capa de video que requiere sistemas adicionales para completar las operaciones de un centro de mando, KabatOne es la plataforma operacional central — donde convergen el despacho, el video, el GIS y el tráfico en un solo flujo de trabajo.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Avigilon, which is a video layer that requires additional systems to complete command center operations, KabatOne is the central operational platform — where dispatch, video, GIS, and traffic converge in one workflow.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y América Latina. A diferencia de Avigilon, que es una capa de video que requiere sistemas adicionales para completar las operaciones de un centro de mando, Kabat One es la plataforma operacional central — donde convergen el despacho, el video, el GIS y el tráfico en un solo flujo de trabajo.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Avigilon, which is a video layer that requires additional systems to complete command center operations, Kabat One is the central operational platform — where dispatch, video, GIS, and traffic converge in one workflow.'}
             </p>
           </div>
         </section>
@@ -341,12 +341,12 @@ export default async function VsAvigilonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Avigilon: Diferencias Clave' : 'KabatOne vs Avigilon: Key Differences'}
+              {es ? 'Kabat One vs Avigilon: Diferencias Clave' : 'Kabat One vs Avigilon: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Avigilon en nueve dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
-                : 'The following table compares KabatOne and Avigilon across nine operational dimensions critical for public safety organizations and command centers.'}
+                ? 'La siguiente tabla compara Kabat One y Avigilon en nueve dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
+                : 'The following table compares Kabat One and Avigilon across nine operational dimensions critical for public safety organizations and command centers.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -361,7 +361,7 @@ export default async function VsAvigilonPage({
                   Avigilon
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -400,7 +400,7 @@ export default async function VsAvigilonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'Por Qué KabatOne Gana en Entornos C5' : 'Why KabatOne Wins in C5 Environments'}
+              {es ? 'Por Qué Kabat One Gana en Entornos C5' : 'Why Kabat One Wins in C5 Environments'}
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {whyKabatoneCards.map((card, i) => (
@@ -446,8 +446,8 @@ export default async function VsAvigilonPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne parte de un punto diferente: es la plataforma operacional central. Video, despacho, GIS y tráfico son módulos nativos de la misma plataforma — comparten datos en tiempo real sin proyectos de integración. Para centros de mando que buscan consolidar sus operaciones en un solo sistema, esa diferencia arquitectónica es la ventaja más importante.'
-                : 'KabatOne starts from a different point: it is the central operational platform. Video, dispatch, GIS, and traffic are native modules of the same platform — they share real-time data without integration projects. For command centers looking to consolidate operations into one system, that architectural difference is the most important advantage.'}
+                ? 'Kabat One parte de un punto diferente: es la plataforma operacional central. Video, despacho, GIS y tráfico son módulos nativos de la misma plataforma — comparten datos en tiempo real sin proyectos de integración. Para centros de mando que buscan consolidar sus operaciones en un solo sistema, esa diferencia arquitectónica es la ventaja más importante.'
+                : 'Kabat One starts from a different point: it is the central operational platform. Video, dispatch, GIS, and traffic are native modules of the same platform — they share real-time data without integration projects. For command centers looking to consolidate operations into one system, that architectural difference is the most important advantage.'}
             </p>
           </div>
         </section>
@@ -460,7 +460,7 @@ export default async function VsAvigilonPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -531,7 +531,7 @@ export default async function VsAvigilonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Avigilon: Preguntas y Respuestas' : 'KabatOne vs Avigilon: Questions & Answers'}
+              {es ? 'Kabat One vs Avigilon: Preguntas y Respuestas' : 'Kabat One vs Avigilon: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -571,7 +571,7 @@ export default async function VsAvigilonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/genetec" style={{
@@ -580,7 +580,7 @@ export default async function VsAvigilonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec'}</span>
+                <span>{es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/milestone" style={{
@@ -589,7 +589,7 @@ export default async function VsAvigilonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Milestone XProtect' : 'KabatOne vs Milestone XProtect'}</span>
+                <span>{es ? 'Kabat One vs Milestone XProtect' : 'Kabat One vs Milestone XProtect'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/vms" style={{
@@ -598,7 +598,7 @@ export default async function VsAvigilonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS'}</span>
+                <span>{es ? 'Kabat One vs VMS Tradicional' : 'Kabat One vs Traditional VMS'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
@@ -610,8 +610,8 @@ export default async function VsAvigilonPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, CAD, GIS y tráfico donde Avigilon se detiene. Solicita una demo con datos reales de ciudad.'
-            : 'See how KabatOne unifies video, CAD, GIS, and traffic where Avigilon stops. Request a demo with real city data.'}
+            ? 'Descubre cómo Kabat One unifica video, CAD, GIS y tráfico donde Avigilon se detiene. Solicita una demo con datos reales de ciudad.'
+            : 'See how Kabat One unifies video, CAD, GIS, and traffic where Avigilon stops. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

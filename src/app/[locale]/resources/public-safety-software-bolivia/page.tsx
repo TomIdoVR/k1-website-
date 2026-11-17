@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareBoliviaPage({
   const faqs = es ? [
     {
       question: "¿Cual es la estructura de seguridad publica en Bolivia?",
-      answer: "Bolivia organiza su seguridad en la Policia Boliviana con mas de 40,000 efectivos distribuidos en 9 departamentos, la FELCN (Fuerza Especial de Lucha Contra el Narcotrafico) — unidad especializada de control de drogas — y las Fuerzas Armadas de la Nacion (FAN) con ~46,000 integrantes entre el Ejercito, la Fuerza Aerea Boliviana (FAB) y la Armada Boliviana (que opera en el Lago Titicaca y los rios amazo nicos). Los numeros de emergencia son 110 (policia), 118 (bomberos) y 119 (ambulancia). KabatOne unifica videovigilancia, despacho CAD y GIS operacional en un entorno compartido entre todas las agencias.",
+      answer: "Bolivia organiza su seguridad en la Policia Boliviana con mas de 40,000 efectivos distribuidos en 9 departamentos, la FELCN (Fuerza Especial de Lucha Contra el Narcotrafico) — unidad especializada de control de drogas — y las Fuerzas Armadas de la Nacion (FAN) con ~46,000 integrantes entre el Ejercito, la Fuerza Aerea Boliviana (FAB) y la Armada Boliviana (que opera en el Lago Titicaca y los rios amazo nicos). Los numeros de emergencia son 110 (policia), 118 (bomberos) y 119 (ambulancia). Kabat One unifica videovigilancia, despacho CAD y GIS operacional en un entorno compartido entre todas las agencias.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Bolivia?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareBoliviaPage({
     },
     {
       question: "¿Que es la FELCN y como opera en Bolivia?",
-      answer: "La Fuerza Especial de Lucha Contra el Narcotrafico (FELCN) es la unidad especializada de la Policia Boliviana para el control de drogas, con presencia en las regiones cocaleras del Chapare (Cochabamba) y los Yungas (La Paz). Bolivia es el tercer productor mundial de hoja de coca. La FELCN coordina con la DEA, UNODC y la Policia de Frontera en operaciones de interdiccion. KabatOne integra el video de los puestos de control de la FELCN con el despacho CAD y el GIS operacional de la Policia Boliviana en un mapa compartido.",
+      answer: "La Fuerza Especial de Lucha Contra el Narcotrafico (FELCN) es la unidad especializada de la Policia Boliviana para el control de drogas, con presencia en las regiones cocaleras del Chapare (Cochabamba) y los Yungas (La Paz). Bolivia es el tercer productor mundial de hoja de coca. La FELCN coordina con la DEA, UNODC y la Policia de Frontera en operaciones de interdiccion. Kabat One integra el video de los puestos de control de la FELCN con el despacho CAD y el GIS operacional de la Policia Boliviana en un mapa compartido.",
     },
     {
-      question: "¿Como puede KabatOne integrarse con las camaras CCTV existentes en Bolivia?",
-      answer: "KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Camaras municipales en La Paz, Santa Cruz de la Sierra, Cochabamba, Oruro y Potosi se conectan directamente. Sistemas de vigilancia en el Aeropuerto Internacional Viru Viru (VVI) de Santa Cruz, el Aeropuerto El Alto (LPB) de La Paz, el Puerto Suarez en la Hidrovía Paraguay-Parana y los terminales de exportacion de gas natural a Brasil y Argentina tambien se integran sin cambiar equipos.",
+      question: "¿Como puede Kabat One integrarse con las camaras CCTV existentes en Bolivia?",
+      answer: "Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Camaras municipales en La Paz, Santa Cruz de la Sierra, Cochabamba, Oruro y Potosi se conectan directamente. Sistemas de vigilancia en el Aeropuerto Internacional Viru Viru (VVI) de Santa Cruz, el Aeropuerto El Alto (LPB) de La Paz, el Puerto Suarez en la Hidrovía Paraguay-Parana y los terminales de exportacion de gas natural a Brasil y Argentina tambien se integran sin cambiar equipos.",
     },
     {
-      question: "¿Como puede KabatOne apoyar la seguridad del litio boliviano en el Salar de Uyuni?",
-      answer: "El Salar de Uyuni (~21 millones de toneladas de litio) es la mayor reserva de litio del mundo. YLB (Yacimientos de Litio Bolivianos) opera las plantas de extraccion y las baterias de sodio-boro bajo soberania estatal. La infraestructura de YLB en Potosi y Oruro requiere vigilancia perimetral continua y coordinacion con la Policia Minera y el Ejercito. KabatOne integra video analitico perimetral, LPR y sensores IoT en un VMS centralizado, vinculando la respuesta policial con el despacho CAD en tiempo real.",
+      question: "¿Como puede Kabat One apoyar la seguridad del litio boliviano en el Salar de Uyuni?",
+      answer: "El Salar de Uyuni (~21 millones de toneladas de litio) es la mayor reserva de litio del mundo. YLB (Yacimientos de Litio Bolivianos) opera las plantas de extraccion y las baterias de sodio-boro bajo soberania estatal. La infraestructura de YLB en Potosi y Oruro requiere vigilancia perimetral continua y coordinacion con la Policia Minera y el Ejercito. Kabat One integra video analitico perimetral, LPR y sensores IoT en un VMS centralizado, vinculando la respuesta policial con el despacho CAD en tiempo real.",
     },
     {
-      question: "¿Como se alinea KabatOne con el marco de adquisiciones de Bolivia (NB-SABS/SICOES)?",
-      answer: "KabatOne opera a traves de distribuidores e integradores tecnologicos locales conforme al DS 181 NB-SABS y el portal SICOES. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio de Gobierno, gobernaciones departamentales y municipios. Las especificaciones tecnicas abiertas (ONVIF, REST API) facilitan la inclusion en carteles de licitacion sin clausulas de exclusividad de hardware.",
+      question: "¿Como se alinea Kabat One con el marco de adquisiciones de Bolivia (NB-SABS/SICOES)?",
+      answer: "Kabat One opera a traves de distribuidores e integradores tecnologicos locales conforme al DS 181 NB-SABS y el portal SICOES. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio de Gobierno, gobernaciones departamentales y municipios. Las especificaciones tecnicas abiertas (ONVIF, REST API) facilitan la inclusion en carteles de licitacion sin clausulas de exclusividad de hardware.",
     },
   ] : [
     {
       question: "What is Bolivia's public safety structure?",
-      answer: "Bolivia organizes its security around the Bolivian National Police with 40,000+ officers across 9 departments, the FELCN (Special Force Against Drug Trafficking) — a specialized drug control unit — and the National Armed Forces (FAN) with ~46,000 members including the Army, Bolivian Air Force (FAB), and the Bolivian Navy (operating on Lake Titicaca and Amazonian rivers). Emergency numbers are 110 (police), 118 (fire), and 119 (ambulance). KabatOne unifies video surveillance, CAD dispatch, and operational GIS in a shared environment across all agencies.",
+      answer: "Bolivia organizes its security around the Bolivian National Police with 40,000+ officers across 9 departments, the FELCN (Special Force Against Drug Trafficking) — a specialized drug control unit — and the National Armed Forces (FAN) with ~46,000 members including the Army, Bolivian Air Force (FAB), and the Bolivian Navy (operating on Lake Titicaca and Amazonian rivers). Emergency numbers are 110 (police), 118 (fire), and 119 (ambulance). Kabat One unifies video surveillance, CAD dispatch, and operational GIS in a shared environment across all agencies.",
     },
     {
       question: "How is public safety technology funded in Bolivia?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareBoliviaPage({
     },
     {
       question: "What is FELCN and how does it operate in Bolivia?",
-      answer: "The Special Force Against Drug Trafficking (FELCN) is the Bolivian National Police's specialized drug control unit, with presence in the coca-growing regions of Chapare (Cochabamba) and the Yungas (La Paz). Bolivia is the world's third-largest coca leaf producer. FELCN coordinates with the DEA, UNODC, and the Border Police on interdiction operations. KabatOne integrates FELCN checkpoint video with Bolivian National Police CAD dispatch and operational GIS on a shared map.",
+      answer: "The Special Force Against Drug Trafficking (FELCN) is the Bolivian National Police's specialized drug control unit, with presence in the coca-growing regions of Chapare (Cochabamba) and the Yungas (La Paz). Bolivia is the world's third-largest coca leaf producer. FELCN coordinates with the DEA, UNODC, and the Border Police on interdiction operations. Kabat One integrates FELCN checkpoint video with Bolivian National Police CAD dispatch and operational GIS on a shared map.",
     },
     {
-      question: "How can KabatOne integrate with existing CCTV infrastructure in Bolivia?",
-      answer: "KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in La Paz, Santa Cruz de la Sierra, Cochabamba, Oruro, and Potosi connect directly. Surveillance systems at Santa Cruz Viru Viru International Airport (VVI), La Paz El Alto Airport (LPB), Puerto Suarez on the Paraguay-Parana Waterway, and natural gas export terminals to Brazil and Argentina also integrate without changing equipment.",
+      question: "How can Kabat One integrate with existing CCTV infrastructure in Bolivia?",
+      answer: "Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras in La Paz, Santa Cruz de la Sierra, Cochabamba, Oruro, and Potosi connect directly. Surveillance systems at Santa Cruz Viru Viru International Airport (VVI), La Paz El Alto Airport (LPB), Puerto Suarez on the Paraguay-Parana Waterway, and natural gas export terminals to Brazil and Argentina also integrate without changing equipment.",
     },
     {
-      question: "How can KabatOne support security for Bolivia's lithium at Salar de Uyuni?",
-      answer: "The Salar de Uyuni (~21 million tonnes of lithium) is the world's largest lithium reserve. YLB (Bolivian Lithium Deposits) operates extraction plants and sodium-boron batteries under state sovereignty. YLB infrastructure in Potosi and Oruro requires continuous perimeter surveillance and coordination with the Mining Police and Army. KabatOne integrates perimeter video analytics, LPR, and IoT sensors into a centralized VMS, linking police response with real-time CAD dispatch.",
+      question: "How can Kabat One support security for Bolivia's lithium at Salar de Uyuni?",
+      answer: "The Salar de Uyuni (~21 million tonnes of lithium) is the world's largest lithium reserve. YLB (Bolivian Lithium Deposits) operates extraction plants and sodium-boron batteries under state sovereignty. YLB infrastructure in Potosi and Oruro requires continuous perimeter surveillance and coordination with the Mining Police and Army. Kabat One integrates perimeter video analytics, LPR, and IoT sensors into a centralized VMS, linking police response with real-time CAD dispatch.",
     },
     {
-      question: "How does KabatOne align with Bolivia's procurement framework (NB-SABS/SICOES)?",
-      answer: "KabatOne operates through local technology distributors and integrators under DS 181 NB-SABS and the SICOES portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Government, departmental governor, and municipal budgets. Open technical specifications (ONVIF, REST API) facilitate inclusion in tender documents without hardware exclusivity clauses.",
+      question: "How does Kabat One align with Bolivia's procurement framework (NB-SABS/SICOES)?",
+      answer: "Kabat One operates through local technology distributors and integrators under DS 181 NB-SABS and the SICOES portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Government, departmental governor, and municipal budgets. Open technical specifications (ONVIF, REST API) facilitate inclusion in tender documents without hardware exclusivity clauses.",
     },
   ]
 
@@ -198,8 +198,8 @@ export default async function PublicSafetySoftwareBoliviaPage({
             color: 'var(--dim)', maxWidth: '720px', margin: '0 0 32px',
           }}>
             {es
-              ? 'Bolivia opera con mas de 40,000 efectivos de la Policia Boliviana y la FELCN en 9 departamentos, ademas de las FAN. KabatOne unifica videovigilancia, despacho CAD, GIS operacional y proteccion de infraestructura estrategica — desde el Lago Titicaca hasta el Salar de Uyuni y los terminales de gas natural.'
-              : 'Bolivia operates with 40,000+ Bolivian National Police and FELCN officers across 9 departments, plus the FAN armed forces. KabatOne unifies video surveillance, CAD dispatch, operational GIS, and strategic infrastructure protection — from Lake Titicaca to Salar de Uyuni and natural gas export terminals.'}
+              ? 'Bolivia opera con mas de 40,000 efectivos de la Policia Boliviana y la FELCN en 9 departamentos, ademas de las FAN. Kabat One unifica videovigilancia, despacho CAD, GIS operacional y proteccion de infraestructura estrategica — desde el Lago Titicaca hasta el Salar de Uyuni y los terminales de gas natural.'
+              : 'Bolivia operates with 40,000+ Bolivian National Police and FELCN officers across 9 departments, plus the FAN armed forces. Kabat One unifies video surveillance, CAD dispatch, operational GIS, and strategic infrastructure protection — from Lake Titicaca to Salar de Uyuni and natural gas export terminals.'}
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default async function PublicSafetySoftwareBoliviaPage({
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--dim)', fontWeight: 500 }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#ef4444', fontWeight: 500 }}>{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</th>
-                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -264,7 +264,7 @@ export default async function PublicSafetySoftwareBoliviaPage({
             fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
             fontSize: 'clamp(22px, 3vw, 30px)', color: 'var(--white)', margin: '0 0 28px',
           }}>
-            {es ? 'Como Funciona KabatOne en Bolivia' : 'How KabatOne Works in Bolivia'}
+            {es ? 'Como Funciona Kabat One en Bolivia' : 'How Kabat One Works in Bolivia'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {workflowSteps.map((step, i) => (
@@ -343,7 +343,7 @@ export default async function PublicSafetySoftwareBoliviaPage({
         <div style={{ marginTop: '72px' }}>
           <CTASection
             es={es}
-            h2={es ? 'Conozca KabatOne para Bolivia' : 'See KabatOne for Bolivia'}
+            h2={es ? 'Conozca Kabat One para Bolivia' : 'See Kabat One for Bolivia'}
             subtitle={es
               ? 'Coordinacion Policia Boliviana, FELCN y FAN en una sola plataforma. Solicite una demostracion con escenarios reales.'
               : 'Bolivian National Police, FELCN, and FAN coordination on one platform. Request a demo with real scenarios.'}

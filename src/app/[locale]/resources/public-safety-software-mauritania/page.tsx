@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareMauritaniaPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Mauritania | PN/GSN, Fronteras Saharianas y Seguridad Marítima – KabatOne"
-      : "Public Safety Software for Mauritania | PN/GSN, Saharan Borders & Maritime Security – KabatOne",
+      ? "Software de Seguridad Pública para Mauritania | PN/GSN, Fronteras Saharianas y Seguridad Marítima – Kabat One"
+      : "Public Safety Software for Mauritania | PN/GSN, Saharan Borders & Maritime Security – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional de Mauritania, la Gendarmería Nacional (GSN), gestión del Puerto de Nouakchott, fronteras saharianas y coordinación contra el GSIM/Al-Qaeda en el Sahel."
-      : "KabatOne delivers public safety platform for the Mauritania National Police, National Gendarmerie (GSN), Port of Nouakchott management, Saharan border control, and coordination against GSIM/Al-Qaeda in the Sahel.",
+      ? "Kabat One ofrece plataforma de seguridad pública para la Policía Nacional de Mauritania, la Gendarmería Nacional (GSN), gestión del Puerto de Nouakchott, fronteras saharianas y coordinación contra el GSIM/Al-Qaeda en el Sahel."
+      : "Kabat One delivers public safety platform for the Mauritania National Police, National Gendarmerie (GSN), Port of Nouakchott management, Saharan border control, and coordination against GSIM/Al-Qaeda in the Sahel.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-mauritania"
       : "https://kabatone.com/resources/public-safety-software-mauritania",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareMauritaniaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Mauritania?"
-        : "How does KabatOne support public safety in Mauritania?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Mauritania?"
+        : "How does Kabat One support public safety in Mauritania?",
       answer: es
-        ? "KabatOne integra sistemas de despacho para la Policía Nacional y la Gendarmería en 15 wilayas, gestión de incidentes para los puertos de Nouakchott y Nouadhibou, supervisión de fronteras saharianas con Mali, Senegal, Argelia y el Sahara Occidental, y coordinación con el G5 Sahel."
-        : "KabatOne integrates dispatch systems for the National Police and Gendarmerie across 15 wilayas, incident management for Nouakchott and Nouadhibou ports, Saharan border monitoring with Mali, Senegal, Algeria, and Western Sahara, and G5 Sahel coordination.",
+        ? "Kabat One integra sistemas de despacho para la Policía Nacional y la Gendarmería en 15 wilayas, gestión de incidentes para los puertos de Nouakchott y Nouadhibou, supervisión de fronteras saharianas con Mali, Senegal, Argelia y el Sahara Occidental, y coordinación con el G5 Sahel."
+        : "Kabat One integrates dispatch systems for the National Police and Gendarmerie across 15 wilayas, incident management for Nouakchott and Nouadhibou ports, Saharan border monitoring with Mali, Senegal, Algeria, and Western Sahara, and G5 Sahel coordination.",
     },
   ]);
 
@@ -260,11 +260,11 @@ export default async function PublicSafetySoftwareMauritaniaPage({
           </div>
         </section>
 
-        {/* KabatOne */}
+        {/* Kabat One */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para Mauritania" : "KabatOne Platform for Mauritania"}
+              {es ? "Plataforma Kabat One para Mauritania" : "Kabat One Platform for Mauritania"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -334,10 +334,10 @@ export default async function PublicSafetySoftwareMauritaniaPage({
                     : "The Code des Marchés Publics (Décret 2011-242) and ARMP regulate procurement. Mauritania works with World Bank, IMF, EU (EUCAP Sahel), USAID/AFRICOM, and G5 Sahel for security projects.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en Mauritania?" : "How does KabatOne support security in Mauritania?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en Mauritania?" : "How does Kabat One support security in Mauritania?",
                   a: es
-                    ? "KabatOne integra despacho DGSN/GSN en 15 wilayas, gestión de incidentes portuarios en Nouakchott/Nouadhibou, supervisión fronteriza con Mali/Senegal/Argelia/Sahara Occidental e interoperabilidad con la Fuerza Conjunta del G5 Sahel."
-                    : "KabatOne integrates DGSN/GSN dispatch across 15 wilayas, port incident management in Nouakchott/Nouadhibou, border monitoring with Mali/Senegal/Algeria/Western Sahara, and G5 Sahel Joint Force interoperability.",
+                    ? "Kabat One integra despacho DGSN/GSN en 15 wilayas, gestión de incidentes portuarios en Nouakchott/Nouadhibou, supervisión fronteriza con Mali/Senegal/Argelia/Sahara Occidental e interoperabilidad con la Fuerza Conjunta del G5 Sahel."
+                    : "Kabat One integrates DGSN/GSN dispatch across 15 wilayas, port incident management in Nouakchott/Nouadhibou, border monitoring with Mali/Senegal/Algeria/Western Sahara, and G5 Sahel Joint Force interoperability.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -353,8 +353,8 @@ export default async function PublicSafetySoftwareMauritaniaPage({
           es={es}
           h2={es ? "¿Listo para modernizar la seguridad pública en Mauritania?" : "Ready to modernize public safety in Mauritania?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a la DGSN, GSN, operaciones portuarias en Nouakchott/Nouadhibou y coordinación fronteriza en el G5 Sahel."
-            : "Contact us to discover how KabatOne supports DGSN, GSN, port operations in Nouakchott/Nouadhibou, and border coordination within the G5 Sahel."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a la DGSN, GSN, operaciones portuarias en Nouakchott/Nouadhibou y coordinación fronteriza en el G5 Sahel."
+            : "Contact us to discover how Kabat One supports DGSN, GSN, port operations in Nouakchott/Nouadhibou, and border coordination within the G5 Sahel."}
         />
         <Footer es={es} />
       </main>

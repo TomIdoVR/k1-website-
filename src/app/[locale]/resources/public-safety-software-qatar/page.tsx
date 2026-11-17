@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with Qatar's Ministry of Interior (MOI) and Qatar Police?",
-    answer: "KabatOne aligns with Qatar MOI's command structure — integrating with General Directorate of Prisons and Reformation, General Directorate of Public Security (Qatar Police), Border Security Force, Immigration Department, and the Joint Operations Centre (JOC) — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Qatar Police protocols and the National Command Centre (NCC)."
+    question: "How does Kabat One integrate with Qatar's Ministry of Interior (MOI) and Qatar Police?",
+    answer: "Kabat One aligns with Qatar MOI's command structure — integrating with General Directorate of Prisons and Reformation, General Directorate of Public Security (Qatar Police), Border Security Force, Immigration Department, and the Joint Operations Centre (JOC) — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Qatar Police protocols and the National Command Centre (NCC)."
   },
   {
-    question: "Can KabatOne support Hamad Medical Corporation (HMC) emergency and QAWS operations?",
-    answer: "Yes. KabatOne integrates Qatar's national ambulance service (QAWS — Qatar Ambulance and Wellness Services), Hamad Medical Corporation Emergency Department, Qatar Fire and Rescue Service (QFRS), Qatar Red Crescent Society, and the National Command Centre — enabling unified call-taking, cross-agency dispatch, and integrated incident management for Qatar's world-class emergency response system."
+    question: "Can Kabat One support Hamad Medical Corporation (HMC) emergency and QAWS operations?",
+    answer: "Yes. Kabat One integrates Qatar's national ambulance service (QAWS — Qatar Ambulance and Wellness Services), Hamad Medical Corporation Emergency Department, Qatar Fire and Rescue Service (QFRS), Qatar Red Crescent Society, and the National Command Centre — enabling unified call-taking, cross-agency dispatch, and integrated incident management for Qatar's world-class emergency response system."
   },
   {
-    question: "How does KabatOne handle Qatar's Personal Data Protection Law (PDPL Law 13 of 2016) compliance?",
-    answer: "KabatOne is designed for compliance with Qatar's Personal Data Protection Law No. 13 of 2016 and Ministry of Transport and Communications (MOTC/MCIT) implementing regulations — implementing data subject rights, lawful processing basis documentation, cross-border data transfer safeguards, mandatory breach notification to the designated supervisory authority, and Qatar Central Systems & Security Standards."
+    question: "How does Kabat One handle Qatar's Personal Data Protection Law (PDPL Law 13 of 2016) compliance?",
+    answer: "Kabat One is designed for compliance with Qatar's Personal Data Protection Law No. 13 of 2016 and Ministry of Transport and Communications (MOTC/MCIT) implementing regulations — implementing data subject rights, lawful processing basis documentation, cross-border data transfer safeguards, mandatory breach notification to the designated supervisory authority, and Qatar Central Systems & Security Standards."
   },
   {
-    question: "How does KabatOne integrate with Lusail Smart City and Qatar's National Vision 2030 infrastructure?",
-    answer: "KabatOne integrates Lusail City's Smart City operations center, Qatar National Command Centre, FIFA 2022 legacy CCTV infrastructure (30,000+ cameras), Qatar Traffic Information Centre (QTIC/Ashghal), and Mowasalat (Karwa) transit systems — supporting Qatar National Vision 2030 digital transformation goals for integrated urban safety management."
+    question: "How does Kabat One integrate with Lusail Smart City and Qatar's National Vision 2030 infrastructure?",
+    answer: "Kabat One integrates Lusail City's Smart City operations center, Qatar National Command Centre, FIFA 2022 legacy CCTV infrastructure (30,000+ cameras), Qatar Traffic Information Centre (QTIC/Ashghal), and Mowasalat (Karwa) transit systems — supporting Qatar National Vision 2030 digital transformation goals for integrated urban safety management."
   },
   {
-    question: "What cybersecurity standards does KabatOne meet for Qatar's national security infrastructure?",
-    answer: "KabatOne aligns with Qatar's National Cybersecurity Strategy (NCSS 2014, updated 2021), NCSA (National Cyber Security Agency) standards, Q-CERT (Qatar Computer Emergency Response Team) guidelines, and Qatar Digital Government Authority (MOCI/MDPS) ICT security requirements — meeting Qatar Government Cloud (QGCLOUD) and national security procurement standards."
+    question: "What cybersecurity standards does Kabat One meet for Qatar's national security infrastructure?",
+    answer: "Kabat One aligns with Qatar's National Cybersecurity Strategy (NCSS 2014, updated 2021), NCSA (National Cyber Security Agency) standards, Q-CERT (Qatar Computer Emergency Response Team) guidelines, and Qatar Digital Government Authority (MOCI/MDPS) ICT security requirements — meeting Qatar Government Cloud (QGCLOUD) and national security procurement standards."
   },
   {
-    question: "Can KabatOne support Qatar's integrated operations for World Cup 2022 legacy events?",
-    answer: "Yes. KabatOne can leverage Qatar's post-FIFA 2022 infrastructure investment including the 30,000+ camera national surveillance network, 8 smart stadiums with integrated security systems, Doha Safe City platforms, and the National Command Centre (NCC) — providing ongoing unified public safety operations for Qatar's growing event hosting portfolio."
+    question: "Can Kabat One support Qatar's integrated operations for World Cup 2022 legacy events?",
+    answer: "Yes. Kabat One can leverage Qatar's post-FIFA 2022 infrastructure investment including the 30,000+ camera national surveillance network, 8 smart stadiums with integrated security systems, Doha Safe City platforms, and the National Command Centre (NCC) — providing ongoing unified public safety operations for Qatar's growing event hosting portfolio."
   },
   {
-    question: "What procurement pathway does KabatOne support in Qatar?",
-    answer: "KabatOne supports procurement through the Government Procurement Portal (Etimad/MOF) under Qatar Law No. 24 of 2015 (Government Tenders and Auctions Law) — including public tender, limited tender, and direct contract for national security systems through Ministry of Interior specialized procurement and MOTC/MOCI ICT procurement channels."
+    question: "What procurement pathway does Kabat One support in Qatar?",
+    answer: "Kabat One supports procurement through the Government Procurement Portal (Etimad/MOF) under Qatar Law No. 24 of 2015 (Government Tenders and Auctions Law) — including public tender, limited tender, and direct contract for national security systems through Ministry of Interior specialized procurement and MOTC/MOCI ICT procurement channels."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con el Ministerio del Interior (MOI) y la Policía de Qatar?",
-    answer: "KabatOne se alinea con la estructura de mando del MOI de Qatar — integrándose con la Dirección General de Seguridad Pública (Policía de Qatar), la Fuerza de Seguridad Fronteriza, el Departamento de Inmigración y el Centro de Operaciones Conjuntas (JOC) — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos de la Policía de Qatar y el Centro de Mando Nacional (NCC)."
+    question: "¿Cómo se integra Kabat One con el Ministerio del Interior (MOI) y la Policía de Qatar?",
+    answer: "Kabat One se alinea con la estructura de mando del MOI de Qatar — integrándose con la Dirección General de Seguridad Pública (Policía de Qatar), la Fuerza de Seguridad Fronteriza, el Departamento de Inmigración y el Centro de Operaciones Conjuntas (JOC) — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos de la Policía de Qatar y el Centro de Mando Nacional (NCC)."
   },
   {
-    question: "¿Puede KabatOne soportar las operaciones de emergencia de la HMC y QAWS?",
-    answer: "Sí. KabatOne integra el servicio nacional de ambulancias de Qatar (QAWS), el Departamento de Emergencias de Hamad Medical Corporation, el Servicio de Bomberos y Rescate de Qatar (QFRS), la Sociedad de la Media Luna Roja de Qatar y el Centro de Mando Nacional — habilitando despacho unificado y gestión integrada de incidentes para el sistema de respuesta de emergencia de primer nivel de Qatar."
+    question: "¿Puede Kabat One soportar las operaciones de emergencia de la HMC y QAWS?",
+    answer: "Sí. Kabat One integra el servicio nacional de ambulancias de Qatar (QAWS), el Departamento de Emergencias de Hamad Medical Corporation, el Servicio de Bomberos y Rescate de Qatar (QFRS), la Sociedad de la Media Luna Roja de Qatar y el Centro de Mando Nacional — habilitando despacho unificado y gestión integrada de incidentes para el sistema de respuesta de emergencia de primer nivel de Qatar."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Protección de Datos Personales de Qatar (PDPL Ley 13 de 2016)?",
-    answer: "KabatOne está diseñado para cumplimiento con la Ley N.° 13 de 2016 de Protección de Datos Personales de Qatar y los reglamentos de implementación del MOTC/MCIT — implementando derechos del titular de datos, documentación de base legal, salvaguardias de transferencia transfronteriza, notificación obligatoria de brechas y estándares de seguridad centrales de Qatar."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Protección de Datos Personales de Qatar (PDPL Ley 13 de 2016)?",
+    answer: "Kabat One está diseñado para cumplimiento con la Ley N.° 13 de 2016 de Protección de Datos Personales de Qatar y los reglamentos de implementación del MOTC/MCIT — implementando derechos del titular de datos, documentación de base legal, salvaguardias de transferencia transfronteriza, notificación obligatoria de brechas y estándares de seguridad centrales de Qatar."
   },
   {
-    question: "¿Cómo se integra KabatOne con Lusail Smart City y la infraestructura de la Visión Nacional de Qatar 2030?",
-    answer: "KabatOne integra el centro de operaciones Smart City de Lusail, el Centro de Mando Nacional de Qatar, la infraestructura CCTV legado del FIFA 2022 (30,000+ cámaras), el Centro de Información de Tráfico de Qatar (QTIC/Ashghal) y los sistemas de tránsito Mowasalat/Karwa — apoyando los objetivos de transformación digital de la Visión Nacional de Qatar 2030."
+    question: "¿Cómo se integra Kabat One con Lusail Smart City y la infraestructura de la Visión Nacional de Qatar 2030?",
+    answer: "Kabat One integra el centro de operaciones Smart City de Lusail, el Centro de Mando Nacional de Qatar, la infraestructura CCTV legado del FIFA 2022 (30,000+ cámaras), el Centro de Información de Tráfico de Qatar (QTIC/Ashghal) y los sistemas de tránsito Mowasalat/Karwa — apoyando los objetivos de transformación digital de la Visión Nacional de Qatar 2030."
   },
   {
-    question: "¿Qué estándares de ciberseguridad cumple KabatOne para la infraestructura de seguridad nacional de Qatar?",
-    answer: "KabatOne se alinea con la Estrategia Nacional de Ciberseguridad de Qatar (NCSS 2014, actualizada 2021), estándares de la NCSA (Agencia Nacional de Ciberseguridad), directrices de Q-CERT y requisitos de seguridad TIC de la Autoridad Digital del Gobierno de Qatar (MOCI/MDPS) — cumpliendo los estándares de Qatar Government Cloud (QGCLOUD) y contratación de seguridad nacional."
+    question: "¿Qué estándares de ciberseguridad cumple Kabat One para la infraestructura de seguridad nacional de Qatar?",
+    answer: "Kabat One se alinea con la Estrategia Nacional de Ciberseguridad de Qatar (NCSS 2014, actualizada 2021), estándares de la NCSA (Agencia Nacional de Ciberseguridad), directrices de Q-CERT y requisitos de seguridad TIC de la Autoridad Digital del Gobierno de Qatar (MOCI/MDPS) — cumpliendo los estándares de Qatar Government Cloud (QGCLOUD) y contratación de seguridad nacional."
   },
   {
-    question: "¿Puede KabatOne soportar las operaciones integradas del legado del Mundial 2022 de Qatar?",
-    answer: "Sí. KabatOne puede aprovechar la infraestructura post-FIFA 2022 de Qatar incluyendo la red de vigilancia nacional de 30,000+ cámaras, 8 estadios inteligentes con sistemas de seguridad integrados, plataformas Doha Safe City y el Centro de Mando Nacional (NCC) — proporcionando operaciones continuas de seguridad pública unificada."
+    question: "¿Puede Kabat One soportar las operaciones integradas del legado del Mundial 2022 de Qatar?",
+    answer: "Sí. Kabat One puede aprovechar la infraestructura post-FIFA 2022 de Qatar incluyendo la red de vigilancia nacional de 30,000+ cámaras, 8 estadios inteligentes con sistemas de seguridad integrados, plataformas Doha Safe City y el Centro de Mando Nacional (NCC) — proporcionando operaciones continuas de seguridad pública unificada."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Qatar?",
-    answer: "KabatOne soporta contratación a través del Portal de Contratación del Gobierno (Etimad/MOF) bajo la Ley N.° 24 de 2015 de Qatar (Ley de Licitaciones y Subastas del Gobierno) — incluyendo licitación pública, licitación limitada y contrato directo para sistemas de seguridad nacional a través del MOI y canales de contratación TIC del MOTC/MOCI."
+    question: "¿Qué vía de contratación soporta Kabat One en Qatar?",
+    answer: "Kabat One soporta contratación a través del Portal de Contratación del Gobierno (Etimad/MOF) bajo la Ley N.° 24 de 2015 de Qatar (Ley de Licitaciones y Subastas del Gobierno) — incluyendo licitación pública, licitación limitada y contrato directo para sistemas de seguridad nacional a través del MOI y canales de contratación TIC del MOTC/MOCI."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• Etimad/MOF: licitaciones MOI, QFRS, MOCI, Ashghal' : '• Etimad/MOF: MOI, QFRS, MOCI, Ashghal tenders'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Qatar?' : 'Ready to modernize public safety in Qatar?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya al MOI, la Policía de Qatar y QFRS con una plataforma unificada conforme a PDPL 2016/NCSA y compatible con Etimad/Ley 24/2015.'
-            : 'See how KabatOne supports Qatar MOI, Police, and QFRS with a unified platform compliant with PDPL 2016/NCSA and compatible with Etimad/Law 24/2015 procurement.'}
+            ? 'Conozca cómo Kabat One apoya al MOI, la Policía de Qatar y QFRS con una plataforma unificada conforme a PDPL 2016/NCSA y compatible con Etimad/Ley 24/2015.'
+            : 'See how Kabat One supports Qatar MOI, Police, and QFRS with a unified platform compliant with PDPL 2016/NCSA and compatible with Etimad/Law 24/2015 procurement.'}
         />
       </main>
       <Footer es={es} />

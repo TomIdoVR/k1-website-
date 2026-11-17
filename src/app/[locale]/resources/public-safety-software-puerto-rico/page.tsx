@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema 9-1-1 en Puerto Rico?",
-      answer: "Puerto Rico opera el Sistema 9-1-1 a traves del Negociado de Telecomunicaciones (NETEL), que recibe aproximadamente 3 millones de llamadas al ano. Las llamadas se enrutan a 10 PSAPs (Public Safety Answering Points) que coordinan el despacho al Negociado de la Policia de Puerto Rico (NPPR, ~12,000 oficiales), el Cuerpo de Bomberos (~2,800 bomberos) y el Sistema de Emergencias Medicas (SEM). KabatOne unifica estos PSAPs en un CAD integrado con geolocalizacion que coordina todas las agencias desde una sola plataforma operativa.",
+      answer: "Puerto Rico opera el Sistema 9-1-1 a traves del Negociado de Telecomunicaciones (NETEL), que recibe aproximadamente 3 millones de llamadas al ano. Las llamadas se enrutan a 10 PSAPs (Public Safety Answering Points) que coordinan el despacho al Negociado de la Policia de Puerto Rico (NPPR, ~12,000 oficiales), el Cuerpo de Bomberos (~2,800 bomberos) y el Sistema de Emergencias Medicas (SEM). Kabat One unifica estos PSAPs en un CAD integrado con geolocalizacion que coordina todas las agencias desde una sola plataforma operativa.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Puerto Rico?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
     },
     {
       question: "¿Por que la resiliencia ante huracanes es critica para la seguridad publica?",
-      answer: "El Huracan Maria (2017, Cat. 4) causo ~3,000 muertes, $90B+ en danos, y un apagon total de 11 meses — el mas largo en la historia de EE.UU. El Huracan Fiona (2022) derribo nuevamente la red electrica completa. LUMA Energy opera la transmision/distribucion desde 2021. PREPA mantiene la generacion. Puerto Rico tiene un mandato de 100% energia renovable para 2050 (Ley 17-2019). KabatOne opera con capacidades offline/edge computing y respaldo satelital para mantener operaciones durante apagones prolongados y eventos climaticos extremos.",
+      answer: "El Huracan Maria (2017, Cat. 4) causo ~3,000 muertes, $90B+ en danos, y un apagon total de 11 meses — el mas largo en la historia de EE.UU. El Huracan Fiona (2022) derribo nuevamente la red electrica completa. LUMA Energy opera la transmision/distribucion desde 2021. PREPA mantiene la generacion. Puerto Rico tiene un mandato de 100% energia renovable para 2050 (Ley 17-2019). Kabat One opera con capacidades offline/edge computing y respaldo satelital para mantener operaciones durante apagones prolongados y eventos climaticos extremos.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Puerto Rico?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del NPPR en San Juan, Bayamon, Carolina y Ponce, las camaras del Aeropuerto Internacional Luis Munoz Marin (SJU, 9M+ pasajeros/ano), la videovigilancia del Puerto de San Juan (2do mas activo del Caribe en cruceros, 1.5M+ pasajeros), los sistemas de LUMA Energy en subestaciones criticas, y las camaras de la Autoridad de Carreteras y Transportacion (ACT) se conectan directamente. Compatible con la infraestructura de fibra de Claro, Liberty y T-Mobile.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Puerto Rico?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del NPPR en San Juan, Bayamon, Carolina y Ponce, las camaras del Aeropuerto Internacional Luis Munoz Marin (SJU, 9M+ pasajeros/ano), la videovigilancia del Puerto de San Juan (2do mas activo del Caribe en cruceros, 1.5M+ pasajeros), los sistemas de LUMA Energy en subestaciones criticas, y las camaras de la Autoridad de Carreteras y Transportacion (ACT) se conectan directamente. Compatible con la infraestructura de fibra de Claro, Liberty y T-Mobile.",
     },
     {
       question: "¿Como se estructura la gobernanza municipal en Puerto Rico?",
-      answer: "Puerto Rico tiene 78 municipios, cada uno gobernado por un alcalde electo con autonomia administrativa. Los municipios mas grandes — San Juan (320K+), Bayamon (185K+), Carolina (150K+), Ponce (130K+) — operan policias municipales propias ademas del NPPR estatal. La Asociacion de Alcaldes y el Centro de Recaudacion de Ingresos Municipales (CRIM) coordinan servicios. KabatOne se adapta a la estructura municipal con despliegues que integran policia municipal + NPPR + bomberos + SEM en una sola plataforma, escalable desde municipios rurales hasta areas metropolitanas.",
+      answer: "Puerto Rico tiene 78 municipios, cada uno gobernado por un alcalde electo con autonomia administrativa. Los municipios mas grandes — San Juan (320K+), Bayamon (185K+), Carolina (150K+), Ponce (130K+) — operan policias municipales propias ademas del NPPR estatal. La Asociacion de Alcaldes y el Centro de Recaudacion de Ingresos Municipales (CRIM) coordinan servicios. Kabat One se adapta a la estructura municipal con despliegues que integran policia municipal + NPPR + bomberos + SEM en una sola plataforma, escalable desde municipios rurales hasta areas metropolitanas.",
     },
     {
-      question: "¿Como se alinea KabatOne con las regulaciones de compras de Puerto Rico?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Ley de Compras 73-2019 y la supervision de la Administracion de Servicios Generales (ASG). Como territorio de EE.UU., Puerto Rico tambien accede a contratos GSA Schedule y programas federales de adquisicion. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a presupuestos municipales, estatales y federales. El cumplimiento con CJIS Security Policy y NIST frameworks es nativo.",
+      question: "¿Como se alinea Kabat One con las regulaciones de compras de Puerto Rico?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Ley de Compras 73-2019 y la supervision de la Administracion de Servicios Generales (ASG). Como territorio de EE.UU., Puerto Rico tambien accede a contratos GSA Schedule y programas federales de adquisicion. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a presupuestos municipales, estatales y federales. El cumplimiento con CJIS Security Policy y NIST frameworks es nativo.",
     },
   ] : [
     {
       question: "How does Puerto Rico's 9-1-1 system work?",
-      answer: "Puerto Rico operates the 9-1-1 System through the Negociado de Telecomunicaciones (NETEL), handling approximately 3 million calls annually. Calls route to 10 PSAPs (Public Safety Answering Points) that coordinate dispatch to the Negociado de la Policia de Puerto Rico (NPPR, ~12,000 officers), Cuerpo de Bomberos (~2,800 firefighters), and Sistema de Emergencias Medicas (SEM). KabatOne unifies these PSAPs into one integrated CAD with geolocation that coordinates all agencies from a single operational platform.",
+      answer: "Puerto Rico operates the 9-1-1 System through the Negociado de Telecomunicaciones (NETEL), handling approximately 3 million calls annually. Calls route to 10 PSAPs (Public Safety Answering Points) that coordinate dispatch to the Negociado de la Policia de Puerto Rico (NPPR, ~12,000 officers), Cuerpo de Bomberos (~2,800 firefighters), and Sistema de Emergencias Medicas (SEM). Kabat One unifies these PSAPs into one integrated CAD with geolocation that coordinates all agencies from a single operational platform.",
     },
     {
       question: "How is public safety technology funded in Puerto Rico?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
     },
     {
       question: "Why is hurricane resilience critical for public safety?",
-      answer: "Hurricane Maria (2017, Cat. 4) caused ~3,000 deaths, $90B+ in damages, and an 11-month total blackout — the longest in US history. Hurricane Fiona (2022) again knocked out the entire power grid. LUMA Energy operates transmission/distribution since 2021. PREPA maintains generation. Puerto Rico has a 100% renewable energy mandate by 2050 (Act 17-2019). KabatOne operates with offline/edge computing capabilities and satellite backup to maintain operations during prolonged blackouts and extreme weather events.",
+      answer: "Hurricane Maria (2017, Cat. 4) caused ~3,000 deaths, $90B+ in damages, and an 11-month total blackout — the longest in US history. Hurricane Fiona (2022) again knocked out the entire power grid. LUMA Energy operates transmission/distribution since 2021. PREPA maintains generation. Puerto Rico has a 100% renewable energy mandate by 2050 (Act 17-2019). Kabat One operates with offline/edge computing capabilities and satellite backup to maintain operations during prolonged blackouts and extreme weather events.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in Puerto Rico?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. NPPR CCTV networks in San Juan, Bayamon, Carolina, and Ponce, Luis Munoz Marin International Airport (SJU, 9M+ passengers/year) cameras, Port of San Juan surveillance (2nd busiest Caribbean cruise port, 1.5M+ passengers), LUMA Energy critical substation systems, and Autoridad de Carreteras y Transportacion (ACT) traffic cameras connect directly. Compatible with Claro, Liberty, and T-Mobile fiber infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in Puerto Rico?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. NPPR CCTV networks in San Juan, Bayamon, Carolina, and Ponce, Luis Munoz Marin International Airport (SJU, 9M+ passengers/year) cameras, Port of San Juan surveillance (2nd busiest Caribbean cruise port, 1.5M+ passengers), LUMA Energy critical substation systems, and Autoridad de Carreteras y Transportacion (ACT) traffic cameras connect directly. Compatible with Claro, Liberty, and T-Mobile fiber infrastructure.",
     },
     {
       question: "How is municipal governance structured in Puerto Rico?",
-      answer: "Puerto Rico has 78 municipalities, each governed by an elected mayor with administrative autonomy. The largest — San Juan (320K+), Bayamon (185K+), Carolina (150K+), Ponce (130K+) — operate their own municipal police forces alongside the state-level NPPR. The Asociacion de Alcaldes and Centro de Recaudacion de Ingresos Municipales (CRIM) coordinate services. KabatOne adapts to this municipal structure with deployments integrating municipal police + NPPR + fire + EMS on one platform, scalable from rural municipalities to metro areas.",
+      answer: "Puerto Rico has 78 municipalities, each governed by an elected mayor with administrative autonomy. The largest — San Juan (320K+), Bayamon (185K+), Carolina (150K+), Ponce (130K+) — operate their own municipal police forces alongside the state-level NPPR. The Asociacion de Alcaldes and Centro de Recaudacion de Ingresos Municipales (CRIM) coordinate services. Kabat One adapts to this municipal structure with deployments integrating municipal police + NPPR + fire + EMS on one platform, scalable from rural municipalities to metro areas.",
     },
     {
-      question: "How does KabatOne align with Puerto Rico procurement regulations?",
-      answer: "KabatOne is marketed through local distributors and integrators under Ley de Compras 73-2019 and Administracion de Servicios Generales (ASG) oversight. As a US territory, Puerto Rico also accesses GSA Schedule contracts and federal procurement programs. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal, state, and federal budgets. CJIS Security Policy and NIST framework compliance is native.",
+      question: "How does Kabat One align with Puerto Rico procurement regulations?",
+      answer: "Kabat One is marketed through local distributors and integrators under Ley de Compras 73-2019 and Administracion de Servicios Generales (ASG) oversight. As a US territory, Puerto Rico also accesses GSA Schedule contracts and federal procurement programs. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal, state, and federal budgets. CJIS Security Policy and NIST framework compliance is native.",
     },
   ]
 
@@ -207,8 +207,8 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#78350f', marginTop: 14 }}>
             {es
-              ? 'KabatOne esta disenado para estos escenarios extremos: procesamiento edge/local que opera sin conexion a la nube, respaldo de comunicaciones por satelite Starlink, baterias integradas de 72+ horas, y recuperacion automatica post-evento que restaura operaciones completas al restablecerse la conectividad.'
-              : 'KabatOne is designed for these extreme scenarios: edge/local processing that operates without cloud connectivity, Starlink satellite communication backup, 72+ hour integrated battery backup, and automatic post-event recovery that restores full operations when connectivity returns.'}
+              ? 'Kabat One esta disenado para estos escenarios extremos: procesamiento edge/local que opera sin conexion a la nube, respaldo de comunicaciones por satelite Starlink, baterias integradas de 72+ horas, y recuperacion automatica post-evento que restaura operaciones completas al restablecerse la conectividad.'
+              : 'Kabat One is designed for these extreme scenarios: edge/local processing that operates without cloud connectivity, Starlink satellite communication backup, 72+ hour integrated battery backup, and automatic post-event recovery that restores full operations when connectivity returns.'}
           </p>
         </section>
 
@@ -274,15 +274,15 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#15803d', marginTop: 14 }}>
             {es
-              ? 'KabatOne se despliega a nivel municipal con un modelo hub-and-spoke: municipios ancla (San Juan, Ponce, Mayaguez, Arecibo) actuan como centros regionales que conectan municipios adyacentes mas pequenos. La plataforma escala desde un municipio rural de 5,000 habitantes hasta el area metropolitana de San Juan (1M+).'
-              : 'KabatOne deploys at the municipal level with a hub-and-spoke model: anchor municipalities (San Juan, Ponce, Mayaguez, Arecibo) act as regional centers connecting smaller adjacent municipalities. The platform scales from a rural municipality of 5,000 residents to the San Juan metropolitan area (1M+).'}
+              ? 'Kabat One se despliega a nivel municipal con un modelo hub-and-spoke: municipios ancla (San Juan, Ponce, Mayaguez, Arecibo) actuan como centros regionales que conectan municipios adyacentes mas pequenos. La plataforma escala desde un municipio rural de 5,000 habitantes hasta el area metropolitana de San Juan (1M+).'
+              : 'Kabat One deploys at the municipal level with a hub-and-spoke model: anchor municipalities (San Juan, Ponce, Mayaguez, Arecibo) act as regional centers connecting smaller adjacent municipalities. The platform scales from a rural municipality of 5,000 residents to the San Juan metropolitan area (1M+).'}
           </p>
         </section>
 
         {/* ── Comparison Table ── */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 14, color: '#0f172a' }}>
-            {es ? 'KabatOne vs. Soluciones Fragmentadas' : 'KabatOne vs. Fragmented Solutions'}
+            {es ? 'Kabat One vs. Soluciones Fragmentadas' : 'Kabat One vs. Fragmented Solutions'}
           </h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -290,7 +290,7 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
                 <tr style={{ background: '#f8fafc' }}>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Sistemas Tradicionales' : 'Legacy Systems'}</th>
-                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>{es ? 'KabatOne' : 'KabatOne'}</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>{es ? 'Kabat One' : 'Kabat One'}</th>
                 </tr>
               </thead>
               <tbody>
@@ -403,8 +403,8 @@ export default async function PublicSafetySoftwarePuertoRicoPage({
           es={es}
           h2={es ? '¿Listo para unificar la seguridad publica de su municipio en Puerto Rico?' : 'Ready to unify public safety in your Puerto Rico municipality?'}
           subtitle={es
-            ? 'KabatOne conecta NPPR, policia municipal, bomberos, SEM y gestion de desastres en una sola plataforma resiliente — con cumplimiento CJIS/NIST y acceso a fondos federales.'
-            : 'KabatOne connects NPPR, municipal police, fire, EMS, and disaster management on one resilient platform — with CJIS/NIST compliance and federal funding access.'}
+            ? 'Kabat One conecta NPPR, policia municipal, bomberos, SEM y gestion de desastres en una sola plataforma resiliente — con cumplimiento CJIS/NIST y acceso a fondos federales.'
+            : 'Kabat One connects NPPR, municipal police, fire, EMS, and disaster management on one resilient platform — with CJIS/NIST compliance and federal funding access.'}
         />
       </main>
 

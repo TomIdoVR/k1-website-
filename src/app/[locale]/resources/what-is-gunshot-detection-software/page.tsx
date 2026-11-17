@@ -53,9 +53,9 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
             'Los sistemas de detección de disparos están desplegados en más de 150 ciudades a nivel mundial. En Estados Unidos, ciudades como Chicago, Nueva York, Washington D.C. y Detroit operan redes extensas. En Latinoamérica, ciudades en México, Colombia y Brasil han implementado sistemas similares como parte de sus centros de mando C4 y C5. La tecnología es particularmente relevante en zonas urbanas con alta incidencia de violencia armada donde las llamadas al 911 reportan menos del 20% de los incidentes con arma de fuego.',
         },
         {
-          question: '¿Cómo integra KabatOne la detección de disparos?',
+          question: '¿Cómo integra Kabat One la detección de disparos?',
           answer:
-            'KabatOne integra los sensores de detección de disparos a través de K-Safety, su plataforma de conciencia situacional GIS. Cuando un sensor detecta un disparo, la alerta aparece automáticamente en el mapa operativo con la ubicación exacta. K-Video activa las cámaras más cercanas al punto del disparo para verificación visual inmediata. K-Dispatch genera automáticamente un incidente en la cola de despacho para enviar unidades. Todo ocurre en una sola interfaz — el operador no necesita cambiar entre sistemas.',
+            'Kabat One integra los sensores de detección de disparos a través de K-Safety, su plataforma de conciencia situacional GIS. Cuando un sensor detecta un disparo, la alerta aparece automáticamente en el mapa operativo con la ubicación exacta. K-Video activa las cámaras más cercanas al punto del disparo para verificación visual inmediata. K-Dispatch genera automáticamente un incidente en la cola de despacho para enviar unidades. Todo ocurre en una sola interfaz — el operador no necesita cambiar entre sistemas.',
         },
       ]
     : [
@@ -85,9 +85,9 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
             'Gunshot detection systems are deployed in over 150 cities worldwide. In the United States, cities like Chicago, New York, Washington D.C., and Detroit operate extensive networks. In Latin America, cities in Mexico, Colombia, and Brazil have implemented similar systems as part of their C4 and C5 command centers. The technology is particularly relevant in urban areas with high gun violence incidence where 911 calls report fewer than 20% of firearm incidents.',
         },
         {
-          question: 'How does KabatOne integrate gunshot detection?',
+          question: 'How does Kabat One integrate gunshot detection?',
           answer:
-            'KabatOne integrates gunshot detection sensors through K-Safety, its GIS situational awareness platform. When a sensor detects a gunshot, the alert appears automatically on the operational map with the exact location. K-Video activates the nearest cameras to the shot point for immediate visual verification. K-Dispatch automatically generates an incident in the dispatch queue to send units. Everything happens in one interface — the operator does not need to switch between systems.',
+            'Kabat One integrates gunshot detection sensors through K-Safety, its GIS situational awareness platform. When a sensor detects a gunshot, the alert appears automatically on the operational map with the exact location. K-Video activates the nearest cameras to the shot point for immediate visual verification. K-Dispatch automatically generates an incident in the dispatch queue to send units. Everything happens in one interface — the operator does not need to switch between systems.',
         },
       ]
 
@@ -512,15 +512,15 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'KabatOne para Detección de Disparos' : 'KabatOne for Gunshot Detection'}
+              {es ? 'Kabat One para Detección de Disparos' : 'Kabat One for Gunshot Detection'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Una Sola Plataforma que Integra los Sensores' : 'One Platform That Integrates the Sensors'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne integra los sensores de detección de disparos dentro de su plataforma unificada: K-Safety muestra las alertas en el mapa operativo GIS, K-Video activa las cámaras cercanas automáticamente, K-Dispatch genera el incidente en la cola de despacho, y K-Traffic gestiona las rutas de respuesta. El operador ve todo en una sola interfaz.'
-                : 'KabatOne integrates gunshot detection sensors into its unified platform: K-Safety displays alerts on the GIS operational map, K-Video activates nearby cameras automatically, K-Dispatch generates the incident in the dispatch queue, and K-Traffic manages response routes. The operator sees everything in one interface.'}
+                ? 'Kabat One integra los sensores de detección de disparos dentro de su plataforma unificada: K-Safety muestra las alertas en el mapa operativo GIS, K-Video activa las cámaras cercanas automáticamente, K-Dispatch genera el incidente en la cola de despacho, y K-Traffic gestiona las rutas de respuesta. El operador ve todo en una sola interfaz.'
+                : 'Kabat One integrates gunshot detection sensors into its unified platform: K-Safety displays alerts on the GIS operational map, K-Video activates nearby cameras automatically, K-Dispatch generates the incident in the dispatch queue, and K-Traffic manages response routes. The operator sees everything in one interface.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -638,8 +638,8 @@ export default async function WhatIsGunshotDetectionSoftwarePage({
           es={es}
           h2={es ? '¿Listo para Integrar Detección de Disparos?' : 'Ready to Integrate Gunshot Detection?'}
           subtitle={es
-            ? 'Agenda una demo y descubre cómo KabatOne conecta sensores acústicos con video, despacho y GIS en una sola plataforma operativa.'
-            : 'Schedule a demo and see how KabatOne connects acoustic sensors with video, dispatch, and GIS in one operational platform.'}
+            ? 'Agenda una demo y descubre cómo Kabat One conecta sensores acústicos con video, despacho y GIS en una sola plataforma operativa.'
+            : 'Schedule a demo and see how Kabat One connects acoustic sensors with video, dispatch, and GIS in one operational platform.'}
         />
       </div>
 

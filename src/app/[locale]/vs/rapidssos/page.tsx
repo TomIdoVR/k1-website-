@@ -28,58 +28,58 @@ export default async function VsRapidsosPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs RapidSOS', url: es ? 'https://kabatone.com/es/vs/rapidssos' : 'https://kabatone.com/vs/rapidssos' },
+    { name: 'Kabat One vs RapidSOS', url: es ? 'https://kabatone.com/es/vs/rapidssos' : 'https://kabatone.com/vs/rapidssos' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y RapidSOS?',
-      answer: 'RapidSOS es una plataforma de datos que enriquece la fase de recepción de llamadas 911 — entrega ubicación precisa del llamante, datos de salud de wearables, datos de impacto vehicular y contexto multimedia al centro de despacho (PSAP). KabatOne es una plataforma de operaciones unificada que gestiona todo el ciclo de respuesta después de que se recibe la información: despacho CAD completo (K-Dispatch), video de cámaras de ciudad (K-Video), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic). RapidSOS enriquece los datos de la llamada; KabatOne coordina la respuesta.',
+      question: '¿Cuál es la diferencia entre Kabat One y RapidSOS?',
+      answer: 'RapidSOS es una plataforma de datos que enriquece la fase de recepción de llamadas 911 — entrega ubicación precisa del llamante, datos de salud de wearables, datos de impacto vehicular y contexto multimedia al centro de despacho (PSAP). Kabat One es una plataforma de operaciones unificada que gestiona todo el ciclo de respuesta después de que se recibe la información: despacho CAD completo (K-Dispatch), video de cámaras de ciudad (K-Video), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic). RapidSOS enriquece los datos de la llamada; Kabat One coordina la respuesta.',
     },
     {
       question: '¿RapidSOS tiene despacho CAD o gestión de video?',
-      answer: 'No. RapidSOS no es un sistema de despacho, ni gestiona video de cámaras de ciudad, ni proporciona GIS operacional ni gestión de tráfico. RapidSOS se enfoca exclusivamente en enriquecer los datos que llegan al centro de despacho durante la recepción de la llamada — ubicación del dispositivo, datos de salud, información de vehículos conectados y datos multimedia del llamante. Para gestionar la respuesta operacional — despacho de unidades, monitoreo de video, rastreo GIS y coordinación de tráfico — se necesita una plataforma como KabatOne.',
+      answer: 'No. RapidSOS no es un sistema de despacho, ni gestiona video de cámaras de ciudad, ni proporciona GIS operacional ni gestión de tráfico. RapidSOS se enfoca exclusivamente en enriquecer los datos que llegan al centro de despacho durante la recepción de la llamada — ubicación del dispositivo, datos de salud, información de vehículos conectados y datos multimedia del llamante. Para gestionar la respuesta operacional — despacho de unidades, monitoreo de video, rastreo GIS y coordinación de tráfico — se necesita una plataforma como Kabat One.',
     },
     {
-      question: '¿Puede KabatOne integrarse con datos de RapidSOS?',
-      answer: 'Sí. KabatOne puede consumir datos enriquecidos del llamante como fuente de entrada. Si un centro de mando recibe datos de ubicación, salud o contexto vehicular a través de RapidSOS, KabatOne K-Dispatch puede incorporar esa información al flujo de despacho CAD — mostrando la ubicación precisa del llamante en el GIS de K-Safety, activando las cámaras más cercanas en K-Video y recomendando las unidades disponibles más próximas. RapidSOS enriquece la entrada; KabatOne gestiona la acción.',
+      question: '¿Puede Kabat One integrarse con datos de RapidSOS?',
+      answer: 'Sí. Kabat One puede consumir datos enriquecidos del llamante como fuente de entrada. Si un centro de mando recibe datos de ubicación, salud o contexto vehicular a través de RapidSOS, Kabat One K-Dispatch puede incorporar esa información al flujo de despacho CAD — mostrando la ubicación precisa del llamante en el GIS de K-Safety, activando las cámaras más cercanas en K-Video y recomendando las unidades disponibles más próximas. RapidSOS enriquece la entrada; Kabat One gestiona la acción.',
     },
     {
-      question: '¿RapidSOS reemplaza a KabatOne o son complementarios?',
-      answer: 'Son complementarios. RapidSOS mejora la calidad de los datos que llegan durante la fase de recepción de la llamada al 911 — proporciona mejor ubicación, contexto del dispositivo y datos de salud. KabatOne es la plataforma donde se ejecuta la respuesta operacional: despacho de unidades, coordinación de video de cámaras de ciudad, GIS a escala de ciudad y gestión de tráfico. Usar ambos significa tener mejor información de entrada (RapidSOS) gestionada por una plataforma operacional completa (KabatOne).',
+      question: '¿RapidSOS reemplaza a Kabat One o son complementarios?',
+      answer: 'Son complementarios. RapidSOS mejora la calidad de los datos que llegan durante la fase de recepción de la llamada al 911 — proporciona mejor ubicación, contexto del dispositivo y datos de salud. Kabat One es la plataforma donde se ejecuta la respuesta operacional: despacho de unidades, coordinación de video de cámaras de ciudad, GIS a escala de ciudad y gestión de tráfico. Usar ambos significa tener mejor información de entrada (RapidSOS) gestionada por una plataforma operacional completa (Kabat One).',
     },
     {
       question: '¿Qué tipos de datos proporciona RapidSOS?',
-      answer: 'RapidSOS entrega datos de ubicación mejorados desde dispositivos móviles (más precisos que la ubicación de red celular tradicional), datos de salud de wearables como Apple Watch y Fitbit, datos de impacto vehicular de automóviles conectados, información de viajes compartidos desde aplicaciones como Uber y Lyft, y datos multimedia del llamante. Estos datos llegan al PSAP en tiempo real para que el operador tenga mejor contexto al crear el evento de emergencia. KabatOne toma ese evento y gestiona todo lo que sigue.',
+      answer: 'RapidSOS entrega datos de ubicación mejorados desde dispositivos móviles (más precisos que la ubicación de red celular tradicional), datos de salud de wearables como Apple Watch y Fitbit, datos de impacto vehicular de automóviles conectados, información de viajes compartidos desde aplicaciones como Uber y Lyft, y datos multimedia del llamante. Estos datos llegan al PSAP en tiempo real para que el operador tenga mejor contexto al crear el evento de emergencia. Kabat One toma ese evento y gestiona todo lo que sigue.',
     },
     {
-      question: '¿Qué ofrece KabatOne que RapidSOS no ofrece?',
-      answer: 'KabatOne proporciona capacidades que RapidSOS no cubre: despacho CAD completo (K-Dispatch) con recomendación de unidades basada en proximidad y disponibilidad; gestión de video de cámaras fijas de ciudad con analítica IA (K-Video); conciencia situacional GIS a escala de ciudad (K-Safety) con rastreo de todas las unidades e incidentes; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos durante la respuesta; y video comunitario (K-Connect). RapidSOS enriquece un eslabón de la cadena — los datos de la llamada. KabatOne gestiona toda la cadena de respuesta.',
+      question: '¿Qué ofrece Kabat One que RapidSOS no ofrece?',
+      answer: 'Kabat One proporciona capacidades que RapidSOS no cubre: despacho CAD completo (K-Dispatch) con recomendación de unidades basada en proximidad y disponibilidad; gestión de video de cámaras fijas de ciudad con analítica IA (K-Video); conciencia situacional GIS a escala de ciudad (K-Safety) con rastreo de todas las unidades e incidentes; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos durante la respuesta; y video comunitario (K-Connect). RapidSOS enriquece un eslabón de la cadena — los datos de la llamada. Kabat One gestiona toda la cadena de respuesta.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and RapidSOS?',
-      answer: 'RapidSOS is a data platform that enriches the 911 call intake phase — it delivers precise caller location, health data from wearables, connected vehicle crash data, and multimedia context to the dispatch center (PSAP). KabatOne is a unified operations platform that manages the entire response cycle after the information is received: full CAD dispatch (K-Dispatch), city camera video (K-Video), GIS situational awareness (K-Safety), and traffic management (K-Traffic). RapidSOS enriches the call data; KabatOne coordinates the response.',
+      question: 'What is the difference between Kabat One and RapidSOS?',
+      answer: 'RapidSOS is a data platform that enriches the 911 call intake phase — it delivers precise caller location, health data from wearables, connected vehicle crash data, and multimedia context to the dispatch center (PSAP). Kabat One is a unified operations platform that manages the entire response cycle after the information is received: full CAD dispatch (K-Dispatch), city camera video (K-Video), GIS situational awareness (K-Safety), and traffic management (K-Traffic). RapidSOS enriches the call data; Kabat One coordinates the response.',
     },
     {
       question: 'Does RapidSOS have CAD dispatch or video management?',
-      answer: 'No. RapidSOS is not a dispatch system, does not manage city camera video, and does not provide operational GIS or traffic management. RapidSOS focuses exclusively on enriching the data that reaches the dispatch center during call intake — device location, health data, connected vehicle information, and caller multimedia. To manage the operational response — unit dispatch, video monitoring, GIS tracking, and traffic coordination — a platform like KabatOne is required.',
+      answer: 'No. RapidSOS is not a dispatch system, does not manage city camera video, and does not provide operational GIS or traffic management. RapidSOS focuses exclusively on enriching the data that reaches the dispatch center during call intake — device location, health data, connected vehicle information, and caller multimedia. To manage the operational response — unit dispatch, video monitoring, GIS tracking, and traffic coordination — a platform like Kabat One is required.',
     },
     {
-      question: 'Can KabatOne integrate with RapidSOS data?',
-      answer: 'Yes. KabatOne can consume enriched caller data as an input source. If a command center receives location, health, or vehicle context data through RapidSOS, KabatOne K-Dispatch can incorporate that information into the CAD dispatch workflow — displaying the precise caller location in K-Safety GIS, activating the nearest cameras in K-Video, and recommending the closest available units. RapidSOS enriches the input; KabatOne manages the action.',
+      question: 'Can Kabat One integrate with RapidSOS data?',
+      answer: 'Yes. Kabat One can consume enriched caller data as an input source. If a command center receives location, health, or vehicle context data through RapidSOS, Kabat One K-Dispatch can incorporate that information into the CAD dispatch workflow — displaying the precise caller location in K-Safety GIS, activating the nearest cameras in K-Video, and recommending the closest available units. RapidSOS enriches the input; Kabat One manages the action.',
     },
     {
-      question: 'Does RapidSOS replace KabatOne, or are they complementary?',
-      answer: 'They are complementary. RapidSOS improves the quality of data arriving during the 911 call intake phase — it provides better location, device context, and health data. KabatOne is the platform where the operational response is executed: unit dispatch, city camera video coordination, city-scale GIS, and traffic management. Using both means having better input data (RapidSOS) managed by a complete operational platform (KabatOne).',
+      question: 'Does RapidSOS replace Kabat One, or are they complementary?',
+      answer: 'They are complementary. RapidSOS improves the quality of data arriving during the 911 call intake phase — it provides better location, device context, and health data. Kabat One is the platform where the operational response is executed: unit dispatch, city camera video coordination, city-scale GIS, and traffic management. Using both means having better input data (RapidSOS) managed by a complete operational platform (Kabat One).',
     },
     {
       question: 'What types of data does RapidSOS provide?',
-      answer: 'RapidSOS delivers enhanced location data from mobile devices (more precise than traditional cell tower location), health data from wearables such as Apple Watch and Fitbit, crash data from connected vehicles, ride-share trip information from apps like Uber and Lyft, and caller multimedia data. This data arrives at the PSAP in real time so the operator has better context when creating the emergency event. KabatOne takes that event and manages everything that follows.',
+      answer: 'RapidSOS delivers enhanced location data from mobile devices (more precise than traditional cell tower location), health data from wearables such as Apple Watch and Fitbit, crash data from connected vehicles, ride-share trip information from apps like Uber and Lyft, and caller multimedia data. This data arrives at the PSAP in real time so the operator has better context when creating the emergency event. Kabat One takes that event and manages everything that follows.',
     },
     {
-      question: 'What does KabatOne offer that RapidSOS does not?',
-      answer: 'KabatOne provides capabilities that RapidSOS does not cover: full CAD dispatch (K-Dispatch) with unit recommendation based on proximity and availability; city fixed camera video management with AI analytics (K-Video); city-scale GIS situational awareness (K-Safety) tracking all units and incidents; intelligent traffic management (K-Traffic) to coordinate signals during response; and community video (K-Connect). RapidSOS enriches one link in the chain — the call data. KabatOne manages the entire response chain.',
+      question: 'What does Kabat One offer that RapidSOS does not?',
+      answer: 'Kabat One provides capabilities that RapidSOS does not cover: full CAD dispatch (K-Dispatch) with unit recommendation based on proximity and availability; city fixed camera video management with AI analytics (K-Video); city-scale GIS situational awareness (K-Safety) tracking all units and incidents; intelligent traffic management (K-Traffic) to coordinate signals during response; and community video (K-Connect). RapidSOS enriches one link in the chain — the call data. Kabat One manages the entire response chain.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsRapidsosPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs RapidSOS</span>
+          <span style={{ color: ACCENT }}>Kabat One vs RapidSOS</span>
         </div>
 
         {/* -- HERO -- */}
@@ -200,13 +200,13 @@ export default async function VsRapidsosPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs RapidSOS — Datos de Llamada vs Respuesta Completa'
-              : 'KabatOne vs RapidSOS — Call Data vs Full Response'}
+              ? 'Kabat One vs RapidSOS — Datos de Llamada vs Respuesta Completa'
+              : 'Kabat One vs RapidSOS — Call Data vs Full Response'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'RapidSOS enriquece la fase de recepcion de llamadas 911 con ubicacion precisa del llamante, datos de salud y contexto del dispositivo. KabatOne gestiona todo lo que sigue despues de que se recibe la informacion: despacho CAD completo, video de camaras de ciudad, conciencia situacional GIS y gestion de trafico. Son complementarios — RapidSOS mejora los datos de entrada, KabatOne coordina la respuesta operacional.'
-              : 'RapidSOS enriches the 911 call intake phase with precise caller location, health data, and device context. KabatOne manages everything that follows after the information is received: full CAD dispatch, city camera video, GIS situational awareness, and traffic management. They are complementary — RapidSOS improves the input data, KabatOne coordinates the operational response.'}
+              ? 'RapidSOS enriquece la fase de recepcion de llamadas 911 con ubicacion precisa del llamante, datos de salud y contexto del dispositivo. Kabat One gestiona todo lo que sigue despues de que se recibe la informacion: despacho CAD completo, video de camaras de ciudad, conciencia situacional GIS y gestion de trafico. Son complementarios — RapidSOS mejora los datos de entrada, Kabat One coordina la respuesta operacional.'
+              : 'RapidSOS enriches the 911 call intake phase with precise caller location, health data, and device context. Kabat One manages everything that follows after the information is received: full CAD dispatch, city camera video, GIS situational awareness, and traffic management. They are complementary — RapidSOS improves the input data, Kabat One coordinates the operational response.'}
           </p>
         </section>
 
@@ -246,22 +246,22 @@ export default async function VsRapidsosPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Que Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Que Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad publica construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestion de video con analitica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestion inteligente de trafico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa. No requiere hardware propietario — se integra con las camaras, radios y sensores que la organizacion ya tiene.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform. It requires no proprietary hardware — it integrates with the cameras, radios, and sensors the organization already has.'}
+                ? 'Kabat One es una plataforma unificada de seguridad publica construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestion de video con analitica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestion inteligente de trafico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa. No requiere hardware propietario — se integra con las camaras, radios y sensores que la organizacion ya tiene.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform. It requires no proprietary hardware — it integrates with the cameras, radios, and sensors the organization already has.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Mientras RapidSOS mejora los datos que llegan al centro de despacho durante la fase de llamada, KabatOne gestiona todo el ciclo de respuesta: el operador del centro de mando recibe el evento con los datos enriquecidos, ve el video de las camaras de ciudad mas cercanas al incidente, asigna la unidad mas adecuada basandose en proximidad y disponibilidad en tiempo real, rastrea la unidad respondedora en el GIS y coordina los semaforos en la ruta. Todo en una sola plataforma, sin cambiar de sistema.'
-                : 'While RapidSOS improves the data arriving at the dispatch center during the call phase, KabatOne manages the entire response cycle: the command center operator receives the event with enriched data, sees video from city cameras nearest the incident, assigns the most appropriate unit based on real-time proximity and availability, tracks the responding unit in GIS, and coordinates traffic signals on the route. All in one platform, without switching systems.'}
+                ? 'Mientras RapidSOS mejora los datos que llegan al centro de despacho durante la fase de llamada, Kabat One gestiona todo el ciclo de respuesta: el operador del centro de mando recibe el evento con los datos enriquecidos, ve el video de las camaras de ciudad mas cercanas al incidente, asigna la unidad mas adecuada basandose en proximidad y disponibilidad en tiempo real, rastrea la unidad respondedora en el GIS y coordina los semaforos en la ruta. Todo en una sola plataforma, sin cambiar de sistema.'
+                : 'While RapidSOS improves the data arriving at the dispatch center during the call phase, Kabat One manages the entire response cycle: the command center operator receives the event with enriched data, sees video from city cameras nearest the incident, assigns the most appropriate unit based on real-time proximity and availability, tracks the responding unit in GIS, and coordinates traffic signals on the route. All in one platform, without switching systems.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne esta desplegado en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos, principalmente en Mexico y Latinoamerica — mercados donde las ciudades necesitan capacidad de coordinacion operacional a escala de ciudad, y donde los datos enriquecidos del llamante pueden alimentar directamente al flujo de despacho CAD de KabatOne.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America — markets where cities need city-scale operational coordination capability, and where enriched caller data can feed directly into KabatOne\'s CAD dispatch workflow.'}
+                ? 'Kabat One esta desplegado en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos, principalmente en Mexico y Latinoamerica — mercados donde las ciudades necesitan capacidad de coordinacion operacional a escala de ciudad, y donde los datos enriquecidos del llamante pueden alimentar directamente al flujo de despacho CAD de Kabat One.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America — markets where cities need city-scale operational coordination capability, and where enriched caller data can feed directly into Kabat One\'s CAD dispatch workflow.'}
             </p>
           </div>
         </section>
@@ -274,12 +274,12 @@ export default async function VsRapidsosPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs RapidSOS: Diferencias Clave' : 'KabatOne vs RapidSOS: Key Differences'}
+              {es ? 'Kabat One vs RapidSOS: Diferencias Clave' : 'Kabat One vs RapidSOS: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y RapidSOS en siete dimensiones operativas. RapidSOS es una plataforma de datos; KabatOne es una plataforma de operaciones. Operan en fases diferentes del ciclo de respuesta a emergencias.'
-                : 'The following table compares KabatOne and RapidSOS across seven operational dimensions. RapidSOS is a data platform; KabatOne is an operations platform. They operate in different phases of the emergency response cycle.'}
+                ? 'La siguiente tabla compara Kabat One y RapidSOS en siete dimensiones operativas. RapidSOS es una plataforma de datos; Kabat One es una plataforma de operaciones. Operan en fases diferentes del ciclo de respuesta a emergencias.'
+                : 'The following table compares Kabat One and RapidSOS across seven operational dimensions. RapidSOS is a data platform; Kabat One is an operations platform. They operate in different phases of the emergency response cycle.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -294,7 +294,7 @@ export default async function VsRapidsosPage({
                   RapidSOS
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -335,13 +335,13 @@ export default async function VsRapidsosPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Pero saber donde esta el llamante y que le sucede es solo el inicio. La respuesta operacional requiere despachar la unidad mas adecuada, monitorear las camaras de ciudad cercanas al incidente, rastrear la unidad respondedora en el GIS, coordinar el trafico en la ruta de respuesta y gestionar multiples incidentes simultaneos. Estas capacidades no las proporciona una plataforma de datos — las proporciona una plataforma de operaciones como KabatOne.'
-                : 'But knowing where the caller is and what happened to them is only the beginning. The operational response requires dispatching the most appropriate unit, monitoring city cameras near the incident, tracking the responding unit in GIS, coordinating traffic on the response route, and managing multiple simultaneous incidents. These capabilities are not provided by a data platform — they are provided by an operations platform like KabatOne.'}
+                ? 'Pero saber donde esta el llamante y que le sucede es solo el inicio. La respuesta operacional requiere despachar la unidad mas adecuada, monitorear las camaras de ciudad cercanas al incidente, rastrear la unidad respondedora en el GIS, coordinar el trafico en la ruta de respuesta y gestionar multiples incidentes simultaneos. Estas capacidades no las proporciona una plataforma de datos — las proporciona una plataforma de operaciones como Kabat One.'
+                : 'But knowing where the caller is and what happened to them is only the beginning. The operational response requires dispatching the most appropriate unit, monitoring city cameras near the incident, tracking the responding unit in GIS, coordinating traffic on the response route, and managing multiple simultaneous incidents. These capabilities are not provided by a data platform — they are provided by an operations platform like Kabat One.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'RapidSOS y KabatOne son complementarios por diseno. RapidSOS enriquece la fase de entrada con mejores datos del llamante. KabatOne toma esos datos y los convierte en respuesta coordinada — despacho, video, GIS y trafico. Un centro de mando que usa ambos tiene mejor informacion de entrada y una plataforma operacional completa para actuar sobre esa informacion.'
-                : 'RapidSOS and KabatOne are complementary by design. RapidSOS enriches the intake phase with better caller data. KabatOne takes that data and turns it into coordinated response — dispatch, video, GIS, and traffic. A command center using both has better input information and a complete operational platform to act on that information.'}
+                ? 'RapidSOS y Kabat One son complementarios por diseno. RapidSOS enriquece la fase de entrada con mejores datos del llamante. Kabat One toma esos datos y los convierte en respuesta coordinada — despacho, video, GIS y trafico. Un centro de mando que usa ambos tiene mejor informacion de entrada y una plataforma operacional completa para actuar sobre esa informacion.'
+                : 'RapidSOS and Kabat One are complementary by design. RapidSOS enriches the intake phase with better caller data. Kabat One takes that data and turns it into coordinated response — dispatch, video, GIS, and traffic. A command center using both has better input information and a complete operational platform to act on that information.'}
             </p>
           </div>
         </section>
@@ -354,12 +354,12 @@ export default async function VsRapidsosPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'Como Funcionan Juntos RapidSOS y KabatOne' : 'How RapidSOS and KabatOne Work Together'}
+              {es ? 'Como Funcionan Juntos RapidSOS y Kabat One' : 'How RapidSOS and Kabat One Work Together'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'RapidSOS funciona como una fuente de datos que alimenta al sistema de despacho. KabatOne K-Dispatch puede recibir datos enriquecidos del llamante a traves de APIs estandar — ubicacion GPS precisa, tipo de emergencia, datos de salud del llamante y contexto del dispositivo. Una vez que K-Dispatch recibe esa informacion, toma el flujo de coordinacion operacional.'
-                : 'RapidSOS functions as a data source that feeds into the dispatch system. KabatOne K-Dispatch can receive enriched caller data through standard APIs — precise GPS location, incident type, caller health data, and device context. Once K-Dispatch receives that information, it takes over the operational coordination workflow.'}
+                ? 'RapidSOS funciona como una fuente de datos que alimenta al sistema de despacho. Kabat One K-Dispatch puede recibir datos enriquecidos del llamante a traves de APIs estandar — ubicacion GPS precisa, tipo de emergencia, datos de salud del llamante y contexto del dispositivo. Una vez que K-Dispatch recibe esa informacion, toma el flujo de coordinacion operacional.'
+                : 'RapidSOS functions as a data source that feeds into the dispatch system. Kabat One K-Dispatch can receive enriched caller data through standard APIs — precise GPS location, incident type, caller health data, and device context. Once K-Dispatch receives that information, it takes over the operational coordination workflow.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
@@ -368,8 +368,8 @@ export default async function VsRapidsosPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para organizaciones en mercados internacionales — como Mexico y Latinoamerica, donde el ecosistema de datos de emergencia puede funcionar de manera diferente — KabatOne K-Dispatch tiene funcionalidades nativas de intake de llamadas que no dependen de RapidSOS ni de infraestructura PSAP de EE.UU. K-Dispatch gestiona directamente la recepcion y coordinacion de emergencias, y puede enriquecerse con datos de RapidSOS cuando estan disponibles.'
-                : 'For organizations in international markets — such as Mexico and Latin America, where the emergency data ecosystem may work differently — KabatOne K-Dispatch has native call intake functionality that does not depend on RapidSOS or US PSAP infrastructure. K-Dispatch directly manages emergency reception and coordination, and can be enriched with RapidSOS data when available.'}
+                ? 'Para organizaciones en mercados internacionales — como Mexico y Latinoamerica, donde el ecosistema de datos de emergencia puede funcionar de manera diferente — Kabat One K-Dispatch tiene funcionalidades nativas de intake de llamadas que no dependen de RapidSOS ni de infraestructura PSAP de EE.UU. K-Dispatch gestiona directamente la recepcion y coordinacion de emergencias, y puede enriquecerse con datos de RapidSOS cuando estan disponibles.'
+                : 'For organizations in international markets — such as Mexico and Latin America, where the emergency data ecosystem may work differently — Kabat One K-Dispatch has native call intake functionality that does not depend on RapidSOS or US PSAP infrastructure. K-Dispatch directly manages emergency reception and coordination, and can be enriched with RapidSOS data when available.'}
             </p>
           </div>
         </section>
@@ -382,7 +382,7 @@ export default async function VsRapidsosPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Modulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Modulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -451,7 +451,7 @@ export default async function VsRapidsosPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs RapidSOS: Preguntas y Respuestas' : 'KabatOne vs RapidSOS: Questions & Answers'}
+              {es ? 'Kabat One vs RapidSOS: Preguntas y Respuestas' : 'Kabat One vs RapidSOS: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -491,7 +491,7 @@ export default async function VsRapidsosPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Carbyne' : 'KabatOne vs Carbyne'}</span>
+                <span>{es ? 'Kabat One vs Carbyne' : 'Kabat One vs Carbyne'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/prepared911" style={{
@@ -500,7 +500,7 @@ export default async function VsRapidsosPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Prepared 911' : 'KabatOne vs Prepared 911'}</span>
+                <span>{es ? 'Kabat One vs Prepared 911' : 'Kabat One vs Prepared 911'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/cad" style={{
@@ -509,7 +509,7 @@ export default async function VsRapidsosPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/k-dispatch" style={{
@@ -530,8 +530,8 @@ export default async function VsRapidsosPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre como KabatOne coordina la respuesta completa — desde los datos del llamante hasta la resolucion del incidente — con video, CAD, GIS y trafico en un solo sistema.'
-            : 'See how KabatOne coordinates the complete response — from caller data to incident resolution — with video, CAD, GIS, and traffic in one system.'}
+            ? 'Descubre como Kabat One coordina la respuesta completa — desde los datos del llamante hasta la resolucion del incidente — con video, CAD, GIS y trafico en un solo sistema.'
+            : 'See how Kabat One coordinates the complete response — from caller data to incident resolution — with video, CAD, GIS, and traffic in one system.'}
         />
 
         <Footer es={es} />

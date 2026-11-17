@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Costa de Marfil | DGPN, FRCI y Abidjan Smart City – KabatOne"
-      : "Public Safety Software for Ivory Coast | DGPN, FRCI & Abidjan Smart City – KabatOne",
+      ? "Software de Seguridad Pública para Costa de Marfil | DGPN, FRCI y Abidjan Smart City – Kabat One"
+      : "Public Safety Software for Ivory Coast | DGPN, FRCI & Abidjan Smart City – Kabat One",
     es
-      ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Police Nationale, FRCI, gestión de emergencias y programas de ciudad inteligente en Costa de Marfil."
-      : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Police Nationale, FRCI, emergency management, and smart city programs in Ivory Coast.",
+      ? "Kabat One ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Police Nationale, FRCI, gestión de emergencias y programas de ciudad inteligente en Costa de Marfil."
+      : "Kabat One delivers unified command-and-control, AI-dispatch, and situational awareness for the Police Nationale, FRCI, emergency management, and smart city programs in Ivory Coast.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-ivory-coast"
       : "https://kabatone.com/resources/public-safety-software-ivory-coast",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Qué capacidades ofrece KabatOne a la Police Nationale de Costa de Marfil?"
-        : "What capabilities does KabatOne offer the Police Nationale of Ivory Coast?",
+        ? "¿Qué capacidades ofrece Kabat One a la Police Nationale de Costa de Marfil?"
+        : "What capabilities does Kabat One offer the Police Nationale of Ivory Coast?",
       answer: es
-        ? "KabatOne proporciona CAD unificado para los 31 districtos/14 regiones, despacho IA que integra el CCTV de Abidjan Safe City, gestión de incidentes transfronterizos con 5 países vecinos y cumplimiento de la Loi 2013-450 de protección de datos/ARTCI."
-        : "KabatOne provides unified CAD for all 31 districts/14 regions, AI-dispatch integrating Abidjan Safe City CCTV, cross-border incident management with 5 neighboring countries, and compliance with Law 2013-450 on data protection/ARTCI.",
+        ? "Kabat One proporciona CAD unificado para los 31 districtos/14 regiones, despacho IA que integra el CCTV de Abidjan Safe City, gestión de incidentes transfronterizos con 5 países vecinos y cumplimiento de la Loi 2013-450 de protección de datos/ARTCI."
+        : "Kabat One provides unified CAD for all 31 districts/14 regions, AI-dispatch integrating Abidjan Safe City CCTV, cross-border incident management with 5 neighboring countries, and compliance with Law 2013-450 on data protection/ARTCI.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Costa de Marfil?"
-        : "How does KabatOne support critical infrastructure security in Ivory Coast?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Costa de Marfil?"
+        : "How does Kabat One support critical infrastructure security in Ivory Coast?",
       answer: es
         ? "La plataforma monitorea PETROCI/Foxtrot offshore, Abidjan Oil Refinery SIR, CI-Energies red eléctrica (Kossou/Taabo dams), Puerto Autónomo de Abidjan (primer puerto de África Occidental del sur), ABIDJAN-BOUAKÉ-OUANGOLODOUGOU rail y el Aeropuerto Internacional Félix-Houphouët-Boigny (ABJ)."
         : "The platform monitors PETROCI/Foxtrot offshore operations, Abidjan Oil Refinery SIR, CI-Energies power grid (Kossou/Taabo dams), Autonomous Port of Abidjan (West Africa's busiest southern port), Abidjan-Bouake-Ouangolodougou rail, and Felix-Houphouet-Boigny International Airport (ABJ).",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión de emergencias de Costa de Marfil?"
-        : "Can KabatOne integrate with emergency management in Ivory Coast?",
+        ? "¿Puede Kabat One integrarse con la gestión de emergencias de Costa de Marfil?"
+        : "Can Kabat One integrate with emergency management in Ivory Coast?",
       answer: es
-        ? "Sí. KabatOne se integra con la ONAD/ONPC para inundaciones de Abidjan/Laguna Ebrié, gestión de emergencias para la industria del cacao (1/3 de la producción mundial), alertas de CEDEAO/CEDEAO-ECOWAS y coordinación de fronteras con Liberia/Guinea/Mali/Burkina Faso/Ghana."
-        : "Yes. KabatOne integrates with ONAD/ONPC for Abidjan/Ebrié Lagoon flooding, emergency management for the cocoa industry (1/3 of world production), ECOWAS/CEDEAO alerts, and border coordination with Liberia/Guinea/Mali/Burkina Faso/Ghana.",
+        ? "Sí. Kabat One se integra con la ONAD/ONPC para inundaciones de Abidjan/Laguna Ebrié, gestión de emergencias para la industria del cacao (1/3 de la producción mundial), alertas de CEDEAO/CEDEAO-ECOWAS y coordinación de fronteras con Liberia/Guinea/Mali/Burkina Faso/Ghana."
+        : "Yes. Kabat One integrates with ONAD/ONPC for Abidjan/Ebrié Lagoon flooding, emergency management for the cocoa industry (1/3 of world production), ECOWAS/CEDEAO alerts, and border coordination with Liberia/Guinea/Mali/Burkina Faso/Ghana.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Costa de Marfil?"
-        : "How does KabatOne comply with Ivory Coast's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Costa de Marfil?"
+        : "How does Kabat One comply with Ivory Coast's regulations?",
       answer: es
-        ? "KabatOne se alinea con la Loi 2013-450 de protección de datos personales/ARTCI, la Loi 2013-451 sobre ciberseguridad, las directrices de la Autorité de Régulation des Télécommunications de Côte d'Ivoire (ARTCI) y el Décret 2017-547 sobre contratación pública."
-        : "KabatOne aligns with Law 2013-450 on personal data protection/ARTCI, Law 2013-451 on cybersecurity, Autorité de Régulation des Télécommunications de Côte d'Ivoire (ARTCI) guidelines, and Decree 2017-547 on public procurement.",
+        ? "Kabat One se alinea con la Loi 2013-450 de protección de datos personales/ARTCI, la Loi 2013-451 sobre ciberseguridad, las directrices de la Autorité de Régulation des Télécommunications de Côte d'Ivoire (ARTCI) y el Décret 2017-547 sobre contratación pública."
+        : "Kabat One aligns with Law 2013-450 on personal data protection/ARTCI, Law 2013-451 on cybersecurity, Autorité de Régulation des Télécommunications de Côte d'Ivoire (ARTCI) guidelines, and Decree 2017-547 on public procurement.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Costa de Marfil?"
-        : "What sets KabatOne apart for Ivory Coast's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Costa de Marfil?"
+        : "What sets Kabat One apart for Ivory Coast's border management?",
       answer: es
-        ? "KabatOne unifica los 5 corredores fronterizos (Liberia/Guinea/Mali/Burkina Faso/Ghana) con ANPR, listas Interpol/CEDEAO, alertas de seguridad de CEDEAO-ECOWAS y monitoreo del corredor Norte-Sur Abidjan-Bamako con gestión unificada de incidentes DGP/Gendarmerie."
-        : "KabatOne unifies 5 border corridors (Liberia/Guinea/Mali/Burkina Faso/Ghana) with ANPR, Interpol/ECOWAS watchlists, ECOWAS security alerts, and monitoring of the North-South Abidjan-Bamako corridor with unified DGP/Gendarmerie incident management.",
+        ? "Kabat One unifica los 5 corredores fronterizos (Liberia/Guinea/Mali/Burkina Faso/Ghana) con ANPR, listas Interpol/CEDEAO, alertas de seguridad de CEDEAO-ECOWAS y monitoreo del corredor Norte-Sur Abidjan-Bamako con gestión unificada de incidentes DGP/Gendarmerie."
+        : "Kabat One unifies 5 border corridors (Liberia/Guinea/Mali/Burkina Faso/Ghana) with ANPR, Interpol/ECOWAS watchlists, ECOWAS security alerts, and monitoring of the North-South Abidjan-Bamako corridor with unified DGP/Gendarmerie incident management.",
     },
   ]);
 
@@ -143,8 +143,8 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones distritales con el Centro de Mando Nacional de Abidjan y Yamoussoukro, distribución de patrullas en tiempo real y tableros de inteligencia delictiva para Abidjan, Bouaké, Daloa, San-Pédro y Korhogo."
-              : "KabatOne provides unified CAD/incident management integrating district operations centers with the Abidjan and Yamoussoukro National Command Centers, real-time patrol deployment, and crime intelligence dashboards for Abidjan, Bouake, Daloa, San-Pedro, and Korhogo."}
+              ? "Kabat One proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones distritales con el Centro de Mando Nacional de Abidjan y Yamoussoukro, distribución de patrullas en tiempo real y tableros de inteligencia delictiva para Abidjan, Bouaké, Daloa, San-Pédro y Korhogo."
+              : "Kabat One provides unified CAD/incident management integrating district operations centers with the Abidjan and Yamoussoukro National Command Centers, real-time patrol deployment, and crime intelligence dashboards for Abidjan, Bouake, Daloa, San-Pedro, and Korhogo."}
           </p>
 
           {/* Abidjan Smart City */}
@@ -160,8 +160,8 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne se integra con el CCTV de Abidjan Safe City para conciencia situacional en tiempo real, correlaciona datos del Sistema de Transporte Inteligente (STI) para gestión de emergencias de tráfico, y apoya los eventos del Festival des Musiques Urbaines d'Anoumabo (FEMUA) y otros eventos masivos con coordinación de seguridad."
-              : "KabatOne integrates with Abidjan Safe City CCTV for real-time situational awareness, correlates Intelligent Transport System (ITS) data for traffic emergency management, and supports mass events like FEMUA festival with security coordination."}
+              ? "Kabat One se integra con el CCTV de Abidjan Safe City para conciencia situacional en tiempo real, correlaciona datos del Sistema de Transporte Inteligente (STI) para gestión de emergencias de tráfico, y apoya los eventos del Festival des Musiques Urbaines d'Anoumabo (FEMUA) y otros eventos masivos con coordinación de seguridad."
+              : "Kabat One integrates with Abidjan Safe City CCTV for real-time situational awareness, correlates Intelligent Transport System (ITS) data for traffic emergency management, and supports mass events like FEMUA festival with security coordination."}
           </p>
 
           {/* Critical Infrastructure */}
@@ -194,8 +194,8 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra la Direction Générale des Douanes (DGD) y la Gendarmerie Nationale con feeds ANPR en tiempo real, listas de control compartidas con Interpol/CEDEAO, alertas de seguridad del Sahel/Burkina Faso y el sistema de seguimiento del corredor Abidjan-Lagos (CEDEAO) para gestión de incidentes de tránsito."
-              : "KabatOne integrates the Direction Générale des Douanes (DGD) and Gendarmerie Nationale with real-time ANPR feeds, shared watchlists with Interpol/ECOWAS, Sahel/Burkina Faso security alerts, and the Abidjan-Lagos corridor (ECOWAS) tracking system for transit incident management."}
+              ? "Kabat One integra la Direction Générale des Douanes (DGD) y la Gendarmerie Nationale con feeds ANPR en tiempo real, listas de control compartidas con Interpol/CEDEAO, alertas de seguridad del Sahel/Burkina Faso y el sistema de seguimiento del corredor Abidjan-Lagos (CEDEAO) para gestión de incidentes de tránsito."
+              : "Kabat One integrates the Direction Générale des Douanes (DGD) and Gendarmerie Nationale with real-time ANPR feeds, shared watchlists with Interpol/ECOWAS, Sahel/Burkina Faso security alerts, and the Abidjan-Lagos corridor (ECOWAS) tracking system for transit incident management."}
           </p>
 
           {/* Compliance */}
@@ -216,8 +216,8 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "La Vision 2030 de Costa de Marfil (Plan National de Développement PND 2021-2025) prioriza la modernización de la seguridad pública, la transformación digital del gobierno y el posicionamiento de Costa de Marfil como hub digital de CEDEAO. KabatOne se alinea como infraestructura digital de seguridad pública compatible con los estándares UEMOA/CEDEAO."
-              : "Ivory Coast's Vision 2030 (Plan National de Développement PND 2021-2025) prioritises public safety modernisation, government digital transformation, and Ivory Coast's positioning as the ECOWAS digital hub. KabatOne aligns as public safety digital infrastructure compatible with UEMOA/ECOWAS standards."}
+              ? "La Vision 2030 de Costa de Marfil (Plan National de Développement PND 2021-2025) prioriza la modernización de la seguridad pública, la transformación digital del gobierno y el posicionamiento de Costa de Marfil como hub digital de CEDEAO. Kabat One se alinea como infraestructura digital de seguridad pública compatible con los estándares UEMOA/CEDEAO."
+              : "Ivory Coast's Vision 2030 (Plan National de Développement PND 2021-2025) prioritises public safety modernisation, government digital transformation, and Ivory Coast's positioning as the ECOWAS digital hub. Kabat One aligns as public safety digital infrastructure compatible with UEMOA/ECOWAS standards."}
           </p>
         </section>
 
@@ -231,43 +231,43 @@ export default async function PublicSafetySoftwareIvoryCoastPage({
               {[
                 {
                   q: es
-                    ? "¿Qué capacidades ofrece KabatOne a la Police Nationale de Costa de Marfil?"
-                    : "What capabilities does KabatOne offer the Police Nationale of Ivory Coast?",
+                    ? "¿Qué capacidades ofrece Kabat One a la Police Nationale de Costa de Marfil?"
+                    : "What capabilities does Kabat One offer the Police Nationale of Ivory Coast?",
                   a: es
-                    ? "KabatOne proporciona CAD unificado para los 31 distritos/14 regiones, despacho IA con CCTV Abidjan Safe City, gestión de incidentes transfronterizos y cumplimiento Loi 2013-450/ARTCI."
-                    : "KabatOne provides unified CAD for 31 districts/14 regions, AI-dispatch with Abidjan Safe City CCTV, cross-border incident management, and Law 2013-450/ARTCI compliance.",
+                    ? "Kabat One proporciona CAD unificado para los 31 distritos/14 regiones, despacho IA con CCTV Abidjan Safe City, gestión de incidentes transfronterizos y cumplimiento Loi 2013-450/ARTCI."
+                    : "Kabat One provides unified CAD for 31 districts/14 regions, AI-dispatch with Abidjan Safe City CCTV, cross-border incident management, and Law 2013-450/ARTCI compliance.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Costa de Marfil?"
-                    : "How does KabatOne support critical infrastructure security in Ivory Coast?",
+                    ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Costa de Marfil?"
+                    : "How does Kabat One support critical infrastructure security in Ivory Coast?",
                   a: es
                     ? "La plataforma monitorea PETROCI/Foxtrot offshore, SIR refinery, CI-Energies ~2,200 MW, Puerto Autónomo de Abidjan 25M+ toneladas (mayor puerto de cacao del mundo), ABJ Airport y el corredor RNCF Abidjan-Ouagadougou."
                     : "The platform monitors PETROCI/Foxtrot offshore, SIR refinery, CI-Energies ~2,200 MW grid, Port of Abidjan 25M+ tonnes (world's top cocoa export port), ABJ Airport, and RNCF Abidjan-Ouagadougou corridor.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión de emergencias de Costa de Marfil?"
-                    : "Can KabatOne integrate with emergency management in Ivory Coast?",
+                    ? "¿Puede Kabat One integrarse con la gestión de emergencias de Costa de Marfil?"
+                    : "Can Kabat One integrate with emergency management in Ivory Coast?",
                   a: es
-                    ? "Sí. KabatOne integra ONAD/ONPC para inundaciones de Abidjan/Laguna Ebrié, gestión de emergencias de la cadena cacao y alertas CEDEAO/Sahel."
-                    : "Yes. KabatOne integrates ONAD/ONPC for Abidjan/Ebrié Lagoon flooding, cocoa supply chain emergency management, and ECOWAS/Sahel alerts.",
+                    ? "Sí. Kabat One integra ONAD/ONPC para inundaciones de Abidjan/Laguna Ebrié, gestión de emergencias de la cadena cacao y alertas CEDEAO/Sahel."
+                    : "Yes. Kabat One integrates ONAD/ONPC for Abidjan/Ebrié Lagoon flooding, cocoa supply chain emergency management, and ECOWAS/Sahel alerts.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Costa de Marfil?"
-                    : "How does KabatOne comply with Ivory Coast's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Costa de Marfil?"
+                    : "How does Kabat One comply with Ivory Coast's regulations?",
                   a: es
-                    ? "KabatOne se alinea con la Loi 2013-450/APDP, la Loi 2013-451 de ciberseguridad, ARTCI, el Décret 2009-259/ANRMP y marcos UEMOA/CEDEAO para proyectos de seguridad pública."
-                    : "KabatOne aligns with Law 2013-450/APDP, Law 2013-451 cybersecurity, ARTCI, Décret 2009-259/ANRMP, and UEMOA/ECOWAS frameworks for public safety projects.",
+                    ? "Kabat One se alinea con la Loi 2013-450/APDP, la Loi 2013-451 de ciberseguridad, ARTCI, el Décret 2009-259/ANRMP y marcos UEMOA/CEDEAO para proyectos de seguridad pública."
+                    : "Kabat One aligns with Law 2013-450/APDP, Law 2013-451 cybersecurity, ARTCI, Décret 2009-259/ANRMP, and UEMOA/ECOWAS frameworks for public safety projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Costa de Marfil?"
-                    : "What sets KabatOne apart for Ivory Coast's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Costa de Marfil?"
+                    : "What sets Kabat One apart for Ivory Coast's border management?",
                   a: es
-                    ? "KabatOne unifica los 5 corredores fronterizos (Liberia/Guinea/Mali/Burkina Faso/Ghana) con ANPR, listas Interpol/CEDEAO, alertas del Sahel y monitoreo del corredor Abidjan-Bamako para DGD/Gendarmerie."
-                    : "KabatOne unifies 5 border corridors (Liberia/Guinea/Mali/Burkina Faso/Ghana) with ANPR, Interpol/ECOWAS watchlists, Sahel alerts, and Abidjan-Bamako corridor monitoring for DGD/Gendarmerie.",
+                    ? "Kabat One unifica los 5 corredores fronterizos (Liberia/Guinea/Mali/Burkina Faso/Ghana) con ANPR, listas Interpol/CEDEAO, alertas del Sahel y monitoreo del corredor Abidjan-Bamako para DGD/Gendarmerie."
+                    : "Kabat One unifies 5 border corridors (Liberia/Guinea/Mali/Burkina Faso/Ghana) with ANPR, Interpol/ECOWAS watchlists, Sahel alerts, and Abidjan-Bamako corridor monitoring for DGD/Gendarmerie.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

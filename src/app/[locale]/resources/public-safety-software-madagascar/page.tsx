@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareMadagascarPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Madagascar | FAM/GN, Puerto de Toamasina y Seguridad del Océano Índico – KabatOne"
-    : "Public Safety Software for Madagascar | FAM/GN, Port of Toamasina & Indian Ocean Security – KabatOne";
+    ? "Software de Seguridad Pública para Madagascar | FAM/GN, Puerto de Toamasina y Seguridad del Océano Índico – Kabat One"
+    : "Public Safety Software for Madagascar | FAM/GN, Port of Toamasina & Indian Ocean Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Madagascar (FAM), Gendarmerie Nationale, Puerto de Toamasina y gestión de desastres por ciclones en el Océano Índico."
-    : "KabatOne delivers public safety platform for Madagascar Armed Forces (FAM), Gendarmerie Nationale, Port of Toamasina, and cyclone disaster management in the Indian Ocean.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Madagascar (FAM), Gendarmerie Nationale, Puerto de Toamasina y gestión de desastres por ciclones en el Océano Índico."
+    : "Kabat One delivers public safety platform for Madagascar Armed Forces (FAM), Gendarmerie Nationale, Port of Toamasina, and cyclone disaster management in the Indian Ocean.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-madagascar"
     : "https://kabatone.com/resources/public-safety-software-madagascar";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareMadagascarPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Madagascar?"
-        : "How does KabatOne support public safety in Madagascar?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Madagascar?"
+        : "How does Kabat One support public safety in Madagascar?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAM/GN en las 25 regiones. Los módulos de gestión de desastres coordinan la respuesta a ciclones (12-15/año) entre FAM, BNGRC (Buró Nacional de Gestión de Riesgos y Catástrofes), Cruz Roja y equipos internacionales. El sistema de seguridad portuaria protege el Puerto de Toamasina. Los módulos de seguridad minera monitorean operaciones QMM/Ambatovy. La plataforma marítima apoya la gestión de la ZEE de 1.2M km² contra pesca ilegal y piratería."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FAM/GN operations across all 25 regions. Disaster management modules coordinate cyclone response (12-15/year) between FAM, BNGRC (National Disaster Risk Management Bureau), Red Cross, and international teams. Port security system protects Port of Toamasina. Mining security modules monitor QMM/Ambatovy operations. Maritime platform supports management of the 1.2M km² EEZ against illegal fishing and piracy.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAM/GN en las 25 regiones. Los módulos de gestión de desastres coordinan la respuesta a ciclones (12-15/año) entre FAM, BNGRC (Buró Nacional de Gestión de Riesgos y Catástrofes), Cruz Roja y equipos internacionales. El sistema de seguridad portuaria protege el Puerto de Toamasina. Los módulos de seguridad minera monitorean operaciones QMM/Ambatovy. La plataforma marítima apoya la gestión de la ZEE de 1.2M km² contra pesca ilegal y piratería."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FAM/GN operations across all 25 regions. Disaster management modules coordinate cyclone response (12-15/year) between FAM, BNGRC (National Disaster Risk Management Bureau), Red Cross, and international teams. Port security system protects Port of Toamasina. Mining security modules monitor QMM/Ambatovy operations. Maritime platform supports management of the 1.2M km² EEZ against illegal fishing and piracy.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareMadagascarPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Madagascar" : "KabatOne Capabilities for Madagascar"}
+              {es ? "Capacidades Kabat One para Madagascar" : "Kabat One Capabilities for Madagascar"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

@@ -29,7 +29,7 @@ export default async function AboutPage({
     breadcrumbHome: es ? 'Inicio' : 'Home',
     breadcrumbCurrent: es ? 'Nosotros' : 'About',
     eyebrow: es ? 'Quienes Somos' : 'Who We Are',
-    h1: es ? 'Somos KabatOne' : 'The Team Behind KabatOne',
+    h1: es ? 'Somos Kabat One' : 'The Team Behind Kabat One',
     subtitle: es
       ? 'Una nueva generación de inteligencia, tecnología y protección. Operamos en América Latina, Norteamérica y Europa — brindando inteligencia de seguridad en tiempo real que salva vidas.'
       : 'A new generation of intelligence, technology, and protection. We operate across Latin America, North America, and Europe \u2014 delivering real-time safety intelligence that saves lives.',
@@ -73,8 +73,8 @@ export default async function AboutPage({
       ? <>Estamos Contigo.<br />En Cada Paso.</>
       : <>We&apos;re With You.<br />Every Step of the Way.</>,
     csBody: es
-      ? 'Desde el despliegue hasta las operaciones diarias, KabatOne proporciona la infraestructura completa de soporte que las organizaciones de misión crítica necesitan para mantenerse seguras, capaces y cubiertas.'
-      : 'From deployment to daily operations, KabatOne provides the full support infrastructure that mission-critical organizations need to stay confident, capable, and covered.',
+      ? 'Desde el despliegue hasta las operaciones diarias, Kabat One proporciona la infraestructura completa de soporte que las organizaciones de misión crítica necesitan para mantenerse seguras, capaces y cubiertas.'
+      : 'From deployment to daily operations, Kabat One provides the full support infrastructure that mission-critical organizations need to stay confident, capable, and covered.',
 
     // Global Presence
     gpEyebrow: es ? 'Presencia Global' : 'Global Presence',
@@ -86,10 +86,10 @@ export default async function AboutPage({
       : 'Development teams in Mexico and Israel combine with operations across three continents to deliver localized solutions with world-class engineering.',
 
     // CTA
-    ctaH2: es ? 'Ve KabatOne en Acción' : 'See KabatOne in Action',
+    ctaH2: es ? 'Ve Kabat One en Acción' : 'See Kabat One in Action',
     ctaSub: es
-      ? 'Únete a más de 68 organizaciones en todo el mundo que confían en KabatOne para proteger a sus personas, operaciones y comunidades.'
-      : 'Join 68+ organizations worldwide that trust KabatOne to protect their people, operations, and communities.',
+      ? 'Únete a más de 68 organizaciones en todo el mundo que confían en Kabat One para proteger a sus personas, operaciones y comunidades.'
+      : 'Join 68+ organizations worldwide that trust Kabat One to protect their people, operations, and communities.',
   }
 
   const missionBullets = es ? [
@@ -153,15 +153,15 @@ export default async function AboutPage({
   ]
 
   const aboutFaqs = es ? [
-    { question: '¿Qué es KabatOne?', answer: 'KabatOne es una plataforma de tecnología de seguridad pública que integra despacho CAD, gestión de video, GIS en tiempo real, gestión de tráfico y video comunitario en un sistema unificado. Atiende a más de 40 ciudades protegiendo a más de 73 millones de ciudadanos.' },
-    { question: '¿Dónde tiene su sede KabatOne?', answer: 'KabatOne tiene su sede corporativa en Cresskill, Nueva Jersey, EE.UU., con operaciones de desarrollo en Ciudad de México, un centro de I+D en Israel y alianzas en Europa.' },
-    { question: '¿Cuántas ciudades usan KabatOne?', answer: 'KabatOne opera en más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos.' },
-    { question: '¿Qué productos ofrece KabatOne?', answer: 'KabatOne ofrece cinco productos principales: K-Safety (plataforma de seguridad pública), K-Dispatch (despacho CAD), K-Video (gestión de video), K-Traffic (gestión de tráfico) y K-Connect (video comunitario compartido).' },
+    { question: '¿Qué es Kabat One?', answer: 'Kabat One es una plataforma de tecnología de seguridad pública que integra despacho CAD, gestión de video, GIS en tiempo real, gestión de tráfico y video comunitario en un sistema unificado. Atiende a más de 40 ciudades protegiendo a más de 73 millones de ciudadanos.' },
+    { question: '¿Dónde tiene su sede Kabat One?', answer: 'Kabat One tiene su sede corporativa en Cresskill, Nueva Jersey, EE.UU., con operaciones de desarrollo en Ciudad de México, un centro de I+D en Israel y alianzas en Europa.' },
+    { question: '¿Cuántas ciudades usan Kabat One?', answer: 'Kabat One opera en más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos.' },
+    { question: '¿Qué productos ofrece Kabat One?', answer: 'Kabat One ofrece cinco productos principales: K-Safety (plataforma de seguridad pública), K-Dispatch (despacho CAD), K-Video (gestión de video), K-Traffic (gestión de tráfico) y K-Connect (video comunitario compartido).' },
   ] : [
-    { question: 'What is KabatOne?', answer: 'KabatOne is a public safety technology platform that integrates CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into one unified system. It serves 40+ cities protecting over 73 million citizens.' },
-    { question: 'Where is KabatOne headquartered?', answer: 'KabatOne is headquartered in Cresskill, New Jersey, USA, with development operations in Mexico City, an R&D center in Israel, and partnerships across Europe.' },
-    { question: 'How many cities use KabatOne?', answer: 'KabatOne operates in 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens.' },
-    { question: 'What products does KabatOne offer?', answer: 'KabatOne offers five core products: K-Safety (public safety platform), K-Dispatch (CAD dispatch), K-Video (video management), K-Traffic (traffic management), and K-Connect (community video sharing).' },
+    { question: 'What is Kabat One?', answer: 'Kabat One is a public safety technology platform that integrates CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into one unified system. It serves 40+ cities protecting over 73 million citizens.' },
+    { question: 'Where is Kabat One headquartered?', answer: 'Kabat One is headquartered in Cresskill, New Jersey, USA, with development operations in Mexico City, an R&D center in Israel, and partnerships across Europe.' },
+    { question: 'How many cities use Kabat One?', answer: 'Kabat One operates in 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens.' },
+    { question: 'What products does Kabat One offer?', answer: 'Kabat One offers five core products: K-Safety (public safety platform), K-Dispatch (CAD dispatch), K-Video (video management), K-Traffic (traffic management), and K-Connect (community video sharing).' },
   ]
 
   return (
@@ -486,7 +486,7 @@ export default async function AboutPage({
               letterSpacing: '0.25em', textTransform: 'uppercase',
               color: 'var(--cyan)', marginBottom: '16px',
             }}>
-              {es ? 'Acerca de KabatOne' : 'About KabatOne'}
+              {es ? 'Acerca de Kabat One' : 'About Kabat One'}
             </p>
             <div style={{
               fontSize: '17px', fontWeight: 300, color: 'var(--dim)',
@@ -494,13 +494,13 @@ export default async function AboutPage({
             }}>
               <p style={{ marginBottom: '16px' }}>
                 {es
-                  ? 'KabatOne es una empresa de tecnología de seguridad pública con sede en Cresskill, Nueva Jersey, fundada por Omer Cnaani. La compañía desarrolla la plataforma K1 — un sistema unificado de inteligencia operativa que integra despacho asistido por computadora (CAD), gestión de video (VMS), conciencia situacional GIS en tiempo real, gestión de tráfico y video comunitario compartido.'
-                  : 'KabatOne is a public safety technology company headquartered in Cresskill, New Jersey, founded by Omer Cnaani. The company develops the K1 platform — a unified operational intelligence system integrating computer-aided dispatch (CAD), video management (VMS), real-time GIS situational awareness, traffic management, and community video sharing.'}
+                  ? 'Kabat One es una empresa de tecnología de seguridad pública con sede en Cresskill, Nueva Jersey, fundada por Omer Cnaani. La compañía desarrolla la plataforma K1 — un sistema unificado de inteligencia operativa que integra despacho asistido por computadora (CAD), gestión de video (VMS), conciencia situacional GIS en tiempo real, gestión de tráfico y video comunitario compartido.'
+                  : 'Kabat One is a public safety technology company headquartered in Cresskill, New Jersey, founded by Omer Cnaani. The company develops the K1 platform — a unified operational intelligence system integrating computer-aided dispatch (CAD), video management (VMS), real-time GIS situational awareness, traffic management, and community video sharing.'}
               </p>
               <p>
                 {es
-                  ? 'KabatOne atiende a más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos. Productos: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Categoría: Plataforma de Seguridad Pública / Alternativa PSIM / Plataforma de Ciudad Inteligente.'
-                  : 'KabatOne serves 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens. Products: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Category: Public Safety Platform / PSIM Alternative / Smart City Platform.'}
+                  ? 'Kabat One atiende a más de 40 ciudades y municipios en América Latina, Norteamérica y Europa, protegiendo a más de 73 millones de ciudadanos. Productos: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Categoría: Plataforma de Seguridad Pública / Alternativa PSIM / Plataforma de Ciudad Inteligente.'
+                  : 'Kabat One serves 40+ cities and municipalities across Latin America, North America, and Europe, protecting over 73 million citizens. Products: K-Safety, K-Dispatch, K-Traffic, K-Video, K-Connect. Category: Public Safety Platform / PSIM Alternative / Smart City Platform.'}
               </p>
             </div>
           </div>

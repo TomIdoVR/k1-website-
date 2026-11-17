@@ -3,12 +3,14 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'KabatOne',
+    name: 'Kabat One',
+    // Canonical written name is "Kabat One" (2026-11-17); keep the old one-word spelling and short form as aliases so search and AI entity matching carry over.
+    alternateName: ['KabatOne', 'K1'],
     url: 'https://kabatone.com',
     logo: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png',
     // Leads with dispatch: CAD / K-Dispatch is the 2027+ focus, and this block is emitted
     // site-wide from the layout -- the one entity description every AI crawler reads. (v2.412)
-    description: 'KabatOne is a unified public safety platform for governments, municipalities, and emergency response organizations. Its core is K-Dispatch, AI-assisted computer-aided dispatch (CAD) and 911 software for multi-agency police, fire, and EMS response, connected natively to video management, GIS, field operations, and AI analytics in one platform.',
+    description: 'Kabat One is a unified public safety platform for governments, municipalities, and emergency response organizations. Its core is K-Dispatch, AI-assisted computer-aided dispatch (CAD) and 911 software for multi-agency police, fire, and EMS response, connected natively to video management, GIS, field operations, and AI analytics in one platform.',
     knowsAbout: [
       'Computer-aided dispatch (CAD)', '911 dispatch', 'NG911', 'Emergency call handling',
       'Multi-agency dispatch', 'C5 command centers', 'Video management systems (VMS)',
@@ -16,7 +18,7 @@ export function organizationSchema() {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'KabatOne public safety platform',
+      name: 'Kabat One public safety platform',
       itemListElement: [
         ['K-Dispatch', 'https://kabatone.com/k-dispatch', 'AI-assisted CAD and 911 dispatch for police, fire, and EMS'],
         ['K-Safety', 'https://kabatone.com/k-safety', 'Unified situational awareness and operational GIS'],
@@ -46,11 +48,11 @@ export function webSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'KabatOne',
+    name: 'Kabat One',
     url: 'https://kabatone.com',
     publisher: {
       '@type': 'Organization',
-      name: 'KabatOne',
+      name: 'Kabat One',
       url: 'https://kabatone.com',
     },
     inLanguage: ['en', 'es'],
@@ -80,7 +82,7 @@ export function softwareApplicationSchema(
     },
     publisher: {
       '@type': 'Organization',
-      name: 'KabatOne',
+      name: 'Kabat One',
       url: 'https://kabatone.com',
     },
   }
@@ -120,12 +122,12 @@ export function articleSchema(
     dateModified,
     author: {
       '@type': 'Organization',
-      name: 'KabatOne',
+      name: 'Kabat One',
       url: 'https://kabatone.com',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'KabatOne',
+      name: 'Kabat One',
       url: 'https://kabatone.com',
       logo: {
         '@type': 'ImageObject',
@@ -177,7 +179,7 @@ export function jobPostingSchema(job: {
     employmentType: job.employmentType,
     hiringOrganization: {
       '@type': 'Organization',
-      name: 'KabatOne',
+      name: 'Kabat One',
       sameAs: 'https://kabatone.com',
       logo: 'https://cdn.prod.website-files.com/67a25cd047d7f58ef27ec3f5/680a90f272b333a28e1a331f_Kabat%20One%20Logo%20horizontal%20v4.png',
     },

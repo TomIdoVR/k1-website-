@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareChadPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Chad | ANT, MNJTF y Gestión del Lago Chad – KabatOne"
-      : "Public Safety Software for Chad | ANT, MNJTF & Lake Chad Management – KabatOne",
+      ? "Software de Seguridad Pública para Chad | ANT, MNJTF y Gestión del Lago Chad – Kabat One"
+      : "Public Safety Software for Chad | ANT, MNJTF & Lake Chad Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, coordinación de la MNJTF contra ISWAP/Boko Haram y conciencia situacional para las Armées Nationales du Tchad, gestión de desastres del Lago Chad y programas de estabilización en Chad."
-      : "KabatOne delivers modular command-and-control, MNJTF coordination against ISWAP/Boko Haram, and situational awareness for the Armées Nationales du Tchad, Lake Chad disaster management, and stabilisation programs in Chad.",
+      ? "Kabat One ofrece plataforma modular de mando y control, coordinación de la MNJTF contra ISWAP/Boko Haram y conciencia situacional para las Armées Nationales du Tchad, gestión de desastres del Lago Chad y programas de estabilización en Chad."
+      : "Kabat One delivers modular command-and-control, MNJTF coordination against ISWAP/Boko Haram, and situational awareness for the Armées Nationales du Tchad, Lake Chad disaster management, and stabilisation programs in Chad.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-chad"
       : "https://kabatone.com/resources/public-safety-software-chad",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareChadPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Chad?"
-        : "How can KabatOne support public safety in Chad?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Chad?"
+        : "How can Kabat One support public safety in Chad?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 23 regiones/61 departamentos, coordinación ANT/MNJTF para operaciones anti-ISWAP/Boko Haram en el Lago Chad, gestión de los 600,000+ PDI y plataformas de comunicación de emergencia para N'Djamena, Moundou, Sarh y Abéché."
-        : "KabatOne provides modular CAD/incident management for all 23 regions/61 departments, ANT/MNJTF coordination for anti-ISWAP/Boko Haram operations in Lake Chad, management of 600,000+ IDPs, and emergency communication platforms for N'Djamena, Moundou, Sarh, and Abeche.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 23 regiones/61 departamentos, coordinación ANT/MNJTF para operaciones anti-ISWAP/Boko Haram en el Lago Chad, gestión de los 600,000+ PDI y plataformas de comunicación de emergencia para N'Djamena, Moundou, Sarh y Abéché."
+        : "Kabat One provides modular CAD/incident management for all 23 regions/61 departments, ANT/MNJTF coordination for anti-ISWAP/Boko Haram operations in Lake Chad, management of 600,000+ IDPs, and emergency communication platforms for N'Djamena, Moundou, Sarh, and Abeche.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de la infraestructura petrolera de Chad?"
-        : "How does KabatOne support Chad's oil infrastructure security?",
+        ? "¿Cómo apoya Kabat One la seguridad de la infraestructura petrolera de Chad?"
+        : "How does Kabat One support Chad's oil infrastructure security?",
       answer: es
         ? "La plataforma monitorea los campos de petróleo de Doba (CNPC/Exxon/TOTCO/SHT ~130,000 bpd), el oleoducto Chad-Camerún (COTCO/TOTCO, 1,070 km hasta el Terminal Kome-Kribi 1), la refinería de N'Djamena (SONAREP 1,000 bpd), y la red de oleoductos de la SHT con alertas de seguridad perimetral."
         : "The platform monitors Doba oil fields (CNPC/Exxon/TOTCO/SHT ~130,000 bpd), Chad-Cameroon pipeline (COTCO/TOTCO, 1,070 km to Kome-Kribi 1 Terminal), N'Djamena refinery (SONAREP 1,000 bpd), and SHT pipeline network with perimeter security alerts.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión de desastres en Chad?"
-        : "Can KabatOne integrate with disaster management in Chad?",
+        ? "¿Puede Kabat One integrarse con la gestión de desastres en Chad?"
+        : "Can Kabat One integrate with disaster management in Chad?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP para la gestión de los 600,000+ PDI, el Comité de Urgencia del Lago Chad (CBLT/LCBC), las alertas de desecación del Lago Chad (reducción del 90% desde 1960), inundaciones estacionales del río Chari/Logone y corredores humanitarios con Sudán/CAR/Níger/Camerún."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP for management of 600,000+ IDPs, Lake Chad Basin Commission (CBLT/LCBC) emergency committee, Lake Chad desiccation alerts (90% reduction since 1960), seasonal Chari/Logone river flooding, and humanitarian corridors with Sudan/CAR/Niger/Cameroon.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP para la gestión de los 600,000+ PDI, el Comité de Urgencia del Lago Chad (CBLT/LCBC), las alertas de desecación del Lago Chad (reducción del 90% desde 1960), inundaciones estacionales del río Chari/Logone y corredores humanitarios con Sudán/CAR/Níger/Camerún."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP for management of 600,000+ IDPs, Lake Chad Basin Commission (CBLT/LCBC) emergency committee, Lake Chad desiccation alerts (90% reduction since 1960), seasonal Chari/Logone river flooding, and humanitarian corridors with Sudan/CAR/Niger/Cameroon.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Chad?"
-        : "How does KabatOne comply with Chad's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Chad?"
+        : "How does Kabat One comply with Chad's regulations?",
       answer: es
-        ? "KabatOne se alinea con la Loi 007/PR/2015 du 10 février 2015 portant protection des données à caractère personnel, la Autorité de Régulation des Communications Électroniques et des Postes (ARCEP-Tchad), los estándares del CERT Chad y los marcos de adquisiciones del Banco Mundial/PNUD/UA para proyectos de estabilización financiados por donantes."
-        : "KabatOne aligns with Law 007/PR/2015 of 10 February 2015 on personal data protection, Autorité de Régulation des Communications Électroniques et des Postes (ARCEP-Chad), CERT Chad standards, and World Bank/UNDP/AU procurement frameworks for donor-funded stabilisation projects.",
+        ? "Kabat One se alinea con la Loi 007/PR/2015 du 10 février 2015 portant protection des données à caractère personnel, la Autorité de Régulation des Communications Électroniques et des Postes (ARCEP-Tchad), los estándares del CERT Chad y los marcos de adquisiciones del Banco Mundial/PNUD/UA para proyectos de estabilización financiados por donantes."
+        : "Kabat One aligns with Law 007/PR/2015 of 10 February 2015 on personal data protection, Autorité de Régulation des Communications Électroniques et des Postes (ARCEP-Chad), CERT Chad standards, and World Bank/UNDP/AU procurement frameworks for donor-funded stabilisation projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Chad?"
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Chad?"
         : "What sets KavbatOne apart for Chad's border management?",
       answer: es
-        ? "KabatOne puede unificar los 6 corredores fronterizos (Libia/Sudán/CAR/Camerún/Nigeria/Níger) con ANPR, listas Interpol/MNJTF/UA, alertas ISWAP/Boko Haram del Lago Chad y monitoreo del oleoducto Chad-Camerún con gestión unificada ANT/Gendarmerie/MNJTF."
-        : "KabatOne can unify 6 border corridors (Libya/Sudan/CAR/Cameroon/Nigeria/Niger) with ANPR, Interpol/MNJTF/AU watchlists, ISWAP/Boko Haram Lake Chad alerts, and Chad-Cameroon pipeline monitoring with unified ANT/Gendarmerie/MNJTF management.",
+        ? "Kabat One puede unificar los 6 corredores fronterizos (Libia/Sudán/CAR/Camerún/Nigeria/Níger) con ANPR, listas Interpol/MNJTF/UA, alertas ISWAP/Boko Haram del Lago Chad y monitoreo del oleoducto Chad-Camerún con gestión unificada ANT/Gendarmerie/MNJTF."
+        : "Kabat One can unify 6 border corridors (Libya/Sudan/CAR/Cameroon/Nigeria/Niger) with ANPR, Interpol/MNJTF/AU watchlists, ISWAP/Boko Haram Lake Chad alerts, and Chad-Cameroon pipeline monitoring with unified ANT/Gendarmerie/MNJTF management.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareChadPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona plataformas de C2 modulares para las ANT con mapas operativos georreferenciados del teatro del Lago Chad, coordinación segura con las unidades MNJTF de Nigeria/Níger/Camerún/Benín, comunicaciones cifradas y gestión de logística para unidades desplegadas en zonas remotas."
-              : "KabatOne provides modular C2 platforms for ANT with georeferenced operational maps of the Lake Chad theater, secure coordination with MNJTF units from Nigeria/Niger/Cameroon/Benin, encrypted communications, and logistics management for units deployed in remote zones."}
+              ? "Kabat One proporciona plataformas de C2 modulares para las ANT con mapas operativos georreferenciados del teatro del Lago Chad, coordinación segura con las unidades MNJTF de Nigeria/Níger/Camerún/Benín, comunicaciones cifradas y gestión de logística para unidades desplegadas en zonas remotas."
+              : "Kabat One provides modular C2 platforms for ANT with georeferenced operational maps of the Lake Chad theater, secure coordination with MNJTF units from Nigeria/Niger/Cameroon/Benin, encrypted communications, and logistics management for units deployed in remote zones."}
           </p>
 
           {/* Oil Infrastructure */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareChadPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne monitorea los campos de Doba con seguridad perimetral georreferenciada, el oleoducto Chad-Camerún con alertas de intrusión/derrames, gestión de incidentes del personal internacional CNPC/Exxon, y las fuerzas de protección de infraestructura de la SHT/ANT con coordenadas GPS en tiempo real."
-              : "KabatOne monitors Doba fields with georeferenced perimeter security, the Chad-Cameroon pipeline with intrusion/spill alerts, CNPC/Exxon international staff incident management, and SHT/ANT infrastructure protection forces with real-time GPS coordinates."}
+              ? "Kabat One monitorea los campos de Doba con seguridad perimetral georreferenciada, el oleoducto Chad-Camerún con alertas de intrusión/derrames, gestión de incidentes del personal internacional CNPC/Exxon, y las fuerzas de protección de infraestructura de la SHT/ANT con coordenadas GPS en tiempo real."
+              : "Kabat One monitors Doba fields with georeferenced perimeter security, the Chad-Cameroon pipeline with intrusion/spill alerts, CNPC/Exxon international staff incident management, and SHT/ANT infrastructure protection forces with real-time GPS coordinates."}
           </p>
 
           {/* Lake Chad */}
@@ -175,8 +175,8 @@ export default async function PublicSafetySoftwareChadPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra los feeds de CBLT/LCBC para el monitoreo del nivel del lago, los feeds humanitarios de OCHA/UNHCR/WFP para la gestión de los 600,000+ PDI en Chad, las alertas de inundaciones estacionales del río Chari/Logone, y la coordinación de la MNJTF con los 4 países ribereños para la gestión de emergencias del Lago Chad."
-              : "KabatOne integrates CBLT/LCBC feeds for lake-level monitoring, OCHA/UNHCR/WFP humanitarian feeds for management of 600,000+ IDPs in Chad, seasonal Chari/Logone river flood alerts, and MNJTF coordination with all 4 riparian countries for Lake Chad emergency management."}
+              ? "Kabat One integra los feeds de CBLT/LCBC para el monitoreo del nivel del lago, los feeds humanitarios de OCHA/UNHCR/WFP para la gestión de los 600,000+ PDI en Chad, las alertas de inundaciones estacionales del río Chari/Logone, y la coordinación de la MNJTF con los 4 países ribereños para la gestión de emergencias del Lago Chad."
+              : "Kabat One integrates CBLT/LCBC feeds for lake-level monitoring, OCHA/UNHCR/WFP humanitarian feeds for management of 600,000+ IDPs in Chad, seasonal Chari/Logone river flood alerts, and MNJTF coordination with all 4 riparian countries for Lake Chad emergency management."}
           </p>
 
           {/* Border */}
@@ -204,8 +204,8 @@ export default async function PublicSafetySoftwareChadPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Chad es el principal aliado occidental en la seguridad del Sahel, manteniendo bases militares francesas (Éléments Français au Tchad/EFT, ~1,000 tropas), y es el principal receptor de financiación del Banco Mundial/AfDB, USAID y la UE para la estabilización. KabatOne está estructurado para estos marcos de adquisición de donantes."
-              : "Chad is the West's primary Sahel security ally, maintaining French military bases (Éléments Français au Tchad/EFT, ~1,000 troops), and is the primary recipient of World Bank/AfDB, USAID, and EU stabilisation funding. KabatOne is structured for these donor procurement frameworks."}
+              ? "Chad es el principal aliado occidental en la seguridad del Sahel, manteniendo bases militares francesas (Éléments Français au Tchad/EFT, ~1,000 tropas), y es el principal receptor de financiación del Banco Mundial/AfDB, USAID y la UE para la estabilización. Kabat One está estructurado para estos marcos de adquisición de donantes."
+              : "Chad is the West's primary Sahel security ally, maintaining French military bases (Éléments Français au Tchad/EFT, ~1,000 troops), and is the primary recipient of World Bank/AfDB, USAID, and EU stabilisation funding. Kabat One is structured for these donor procurement frameworks."}
           </p>
         </section>
 
@@ -219,43 +219,43 @@ export default async function PublicSafetySoftwareChadPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Chad?"
-                    : "How can KabatOne support public safety in Chad?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Chad?"
+                    : "How can Kabat One support public safety in Chad?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 23 regiones/61 departamentos, coordinación ANT/MNJTF anti-ISWAP/Boko Haram, gestión 600K+ PDI y plataformas de emergencia para N'Djamena, Moundou, Sarh y Abéché."
-                    : "KabatOne provides modular CAD for 23 regions/61 departments, ANT/MNJTF anti-ISWAP/Boko Haram coordination, 600K+ IDP management, and emergency platforms for N'Djamena, Moundou, Sarh, and Abeche.",
+                    ? "Kabat One proporciona CAD modular para 23 regiones/61 departamentos, coordinación ANT/MNJTF anti-ISWAP/Boko Haram, gestión 600K+ PDI y plataformas de emergencia para N'Djamena, Moundou, Sarh y Abéché."
+                    : "Kabat One provides modular CAD for 23 regions/61 departments, ANT/MNJTF anti-ISWAP/Boko Haram coordination, 600K+ IDP management, and emergency platforms for N'Djamena, Moundou, Sarh, and Abeche.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de la infraestructura petrolera de Chad?"
-                    : "How does KabatOne support Chad's oil infrastructure security?",
+                    ? "¿Cómo apoya Kabat One la seguridad de la infraestructura petrolera de Chad?"
+                    : "How does Kabat One support Chad's oil infrastructure security?",
                   a: es
                     ? "La plataforma monitorea campos Doba CNPC/Exxon ~130K bpd, oleoducto COTCO/TOTCO 1,070 km a Camerún, refinería SONAREP N'Djamena y red SHT con seguridad perimetral y alertas de intrusión/derrames."
                     : "The platform monitors Doba CNPC/Exxon ~130K bpd fields, COTCO/TOTCO pipeline 1,070 km to Cameroon, SONAREP refinery N'Djamena, and SHT network with perimeter security and intrusion/spill alerts.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión de desastres del Lago Chad?"
-                    : "Can KabatOne integrate with Lake Chad disaster management?",
+                    ? "¿Puede Kabat One integrarse con la gestión de desastres del Lago Chad?"
+                    : "Can Kabat One integrate with Lake Chad disaster management?",
                   a: es
-                    ? "Sí. KabatOne integra CBLT/LCBC monitoreo del lago, OCHA/UNHCR/WFP para 600K+ PDI y 600K+ refugiados sudaneses, alertas inundaciones Chari/Logone y coordinación MNJTF 4 países ribereños."
-                    : "Yes. KabatOne integrates CBLT/LCBC lake monitoring, OCHA/UNHCR/WFP for 600K+ IDPs and 600K+ Sudanese refugees, Chari/Logone flood alerts, and MNJTF coordination with 4 riparian countries.",
+                    ? "Sí. Kabat One integra CBLT/LCBC monitoreo del lago, OCHA/UNHCR/WFP para 600K+ PDI y 600K+ refugiados sudaneses, alertas inundaciones Chari/Logone y coordinación MNJTF 4 países ribereños."
+                    : "Yes. Kabat One integrates CBLT/LCBC lake monitoring, OCHA/UNHCR/WFP for 600K+ IDPs and 600K+ Sudanese refugees, Chari/Logone flood alerts, and MNJTF coordination with 4 riparian countries.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Chad?"
-                    : "How does KabatOne comply with Chad's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Chad?"
+                    : "How does Kabat One comply with Chad's regulations?",
                   a: es
-                    ? "KabatOne se alinea con Loi 007/PR/2015/CNDP, ARCEP-Tchad/CERT-Chad, Ordonnance 11/PR/2011/DGMP-Tchad y marcos de adquisiciones Banco Mundial/AfDB/USAID/UE para proyectos de estabilización."
-                    : "KabatOne aligns with Law 007/PR/2015/CNDP, ARCEP-Chad/CERT-Chad, Ordonnance 11/PR/2011/DGMP-Chad, and World Bank/AfDB/USAID/EU procurement frameworks for stabilisation projects.",
+                    ? "Kabat One se alinea con Loi 007/PR/2015/CNDP, ARCEP-Tchad/CERT-Chad, Ordonnance 11/PR/2011/DGMP-Tchad y marcos de adquisiciones Banco Mundial/AfDB/USAID/UE para proyectos de estabilización."
+                    : "Kabat One aligns with Law 007/PR/2015/CNDP, ARCEP-Chad/CERT-Chad, Ordonnance 11/PR/2011/DGMP-Chad, and World Bank/AfDB/USAID/EU procurement frameworks for stabilisation projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Chad?"
-                    : "What sets KabatOne apart for Chad's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Chad?"
+                    : "What sets Kabat One apart for Chad's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 6 corredores (Libia/Sudán/CAR/Camerún/Nigeria/Níger) con ANPR, listas Interpol/MNJTF/UA, alertas ISWAP/Boko Haram Lago Chad y monitoreo oleoducto Chad-Camerún con ANT/Gendarmerie/MNJTF."
-                    : "KabatOne can unify 6 corridors (Libya/Sudan/CAR/Cameroon/Nigeria/Niger) with ANPR, Interpol/MNJTF/AU watchlists, ISWAP/Boko Haram Lake Chad alerts, and Chad-Cameroon pipeline monitoring with ANT/Gendarmerie/MNJTF.",
+                    ? "Kabat One puede unificar los 6 corredores (Libia/Sudán/CAR/Camerún/Nigeria/Níger) con ANPR, listas Interpol/MNJTF/UA, alertas ISWAP/Boko Haram Lago Chad y monitoreo oleoducto Chad-Camerún con ANT/Gendarmerie/MNJTF."
+                    : "Kabat One can unify 6 corridors (Libya/Sudan/CAR/Cameroon/Nigeria/Niger) with ANPR, Interpol/MNJTF/AU watchlists, ISWAP/Boko Haram Lake Chad alerts, and Chad-Cameroon pipeline monitoring with ANT/Gendarmerie/MNJTF.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

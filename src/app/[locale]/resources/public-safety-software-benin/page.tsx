@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareBeninPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Benin | FAB/PNB, Puerto de Cotonou y Seguridad del Sahel – KabatOne"
-    : "Public Safety Software for Benin | FAB/PNB, Port of Cotonou & Sahel Security – KabatOne";
+    ? "Software de Seguridad Pública para Benin | FAB/PNB, Puerto de Cotonou y Seguridad del Sahel – Kabat One"
+    : "Public Safety Software for Benin | FAB/PNB, Port of Cotonou & Sahel Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Benin (FAB), Policía Nacional, Puerto de Cotonou y seguridad ante amenaza yihadista en el norte del país."
-    : "KabatOne delivers public safety platform for the Beninese Armed Forces (FAB), National Police, Port of Cotonou, and security against jihadist threats in the country's north.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Benin (FAB), Policía Nacional, Puerto de Cotonou y seguridad ante amenaza yihadista en el norte del país."
+    : "Kabat One delivers public safety platform for the Beninese Armed Forces (FAB), National Police, Port of Cotonou, and security against jihadist threats in the country's north.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-benin"
     : "https://kabatone.com/resources/public-safety-software-benin";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareBeninPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Benin?"
-        : "How does KabatOne support public safety in Benin?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Benin?"
+        : "How does Kabat One support public safety in Benin?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAB/PNB en los 12 departamentos. Los módulos de gestión de fronteras apoyan la FSI en las regiones norte de Atacora y Alibori. La plataforma de seguridad portuaria protege el Puerto de Cotonou y la ZEE del Golfo de Guinea. El sistema es adaptable a entornos de baja conectividad en zonas rurales del norte."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FAB/PNB operations across all 12 departments. Border management modules support FSI in northern Atacora and Alibori regions. Port security platform protects the Port of Cotonou and Gulf of Guinea EEZ. System adapts to low-connectivity environments in rural northern zones.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAB/PNB en los 12 departamentos. Los módulos de gestión de fronteras apoyan la FSI en las regiones norte de Atacora y Alibori. La plataforma de seguridad portuaria protege el Puerto de Cotonou y la ZEE del Golfo de Guinea. El sistema es adaptable a entornos de baja conectividad en zonas rurales del norte."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FAB/PNB operations across all 12 departments. Border management modules support FSI in northern Atacora and Alibori regions. Port security platform protects the Port of Cotonou and Gulf of Guinea EEZ. System adapts to low-connectivity environments in rural northern zones.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareBeninPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Benin" : "KabatOne Capabilities for Benin"}
+              {es ? "Capacidades Kabat One para Benin" : "Kabat One Capabilities for Benin"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

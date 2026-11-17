@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with Pakistan's federal and provincial police structure?",
-    answer: "KabatOne aligns with Pakistan's decentralized police structure — integrating with the Inspector General of Police (IGP) offices across 4 provinces (Punjab, Sindh, KPK, Balochistan), Islamabad Capital Territory Police (ICTP), Azad Jammu & Kashmir Police, and Gilgit-Baltistan Police — providing unified CAD dispatch, operations center management, and cross-agency coordination compatible with Police Order 2002 command protocols."
+    question: "How does Kabat One integrate with Pakistan's federal and provincial police structure?",
+    answer: "Kabat One aligns with Pakistan's decentralized police structure — integrating with the Inspector General of Police (IGP) offices across 4 provinces (Punjab, Sindh, KPK, Balochistan), Islamabad Capital Territory Police (ICTP), Azad Jammu & Kashmir Police, and Gilgit-Baltistan Police — providing unified CAD dispatch, operations center management, and cross-agency coordination compatible with Police Order 2002 command protocols."
   },
   {
-    question: "Can KabatOne support Pakistan's Rescue 1122 and emergency services?",
-    answer: "Yes. KabatOne integrates Punjab Emergency Service (PES/Rescue 1122), Khyber Pakhtunkhwa Rescue 1122, Sindh Emergency Rescue Service, and Edhi Foundation emergency response — enabling unified call-taking, cross-agency dispatch, and incident tracking. The platform also supports PDMA (Provincial Disaster Management Authority) and NDMA (National Disaster Management Authority) operations centers."
+    question: "Can Kabat One support Pakistan's Rescue 1122 and emergency services?",
+    answer: "Yes. Kabat One integrates Punjab Emergency Service (PES/Rescue 1122), Khyber Pakhtunkhwa Rescue 1122, Sindh Emergency Rescue Service, and Edhi Foundation emergency response — enabling unified call-taking, cross-agency dispatch, and incident tracking. The platform also supports PDMA (Provincial Disaster Management Authority) and NDMA (National Disaster Management Authority) operations centers."
   },
   {
-    question: "How does KabatOne handle Pakistan Personal Data Protection Act (PDPA 2023) compliance?",
-    answer: "KabatOne is designed for compliance with Pakistan's PDPA 2023 — implementing data subject rights management, lawful processing basis documentation, Data Protection Officer (DPO) accountability frameworks, mandatory breach notification to the National Commission for Personal Data Protection (NCPDP), and cross-border data transfer safeguards."
+    question: "How does Kabat One handle Pakistan Personal Data Protection Act (PDPA 2023) compliance?",
+    answer: "Kabat One is designed for compliance with Pakistan's PDPA 2023 — implementing data subject rights management, lawful processing basis documentation, Data Protection Officer (DPO) accountability frameworks, mandatory breach notification to the National Commission for Personal Data Protection (NCPDP), and cross-border data transfer safeguards."
   },
   {
-    question: "Can KabatOne support Safe City operations in Lahore, Karachi, and Islamabad?",
-    answer: "Yes. KabatOne integrates Punjab Safe Cities Authority (PSCA) Lahore network with 8,000+ cameras, Islamabad Safe City project (ISC) with 1,900+ cameras, Karachi Safe City with 3,000+ cameras, and the Integrated Traffic Management System (ITMS) — providing AI-powered analytics, ANPR integration, and unified command visibility for Pakistan's major cities."
+    question: "Can Kabat One support Safe City operations in Lahore, Karachi, and Islamabad?",
+    answer: "Yes. Kabat One integrates Punjab Safe Cities Authority (PSCA) Lahore network with 8,000+ cameras, Islamabad Safe City project (ISC) with 1,900+ cameras, Karachi Safe City with 3,000+ cameras, and the Integrated Traffic Management System (ITMS) — providing AI-powered analytics, ANPR integration, and unified command visibility for Pakistan's major cities."
   },
   {
-    question: "How does KabatOne manage earthquake and flood disaster operations in Pakistan?",
-    answer: "KabatOne integrates NDMA situational reports, PMD (Pakistan Meteorological Department) weather alerts, PDMA operations centers, and Flash Flood Early Warning Systems (FFEWS) — supporting response to Pakistan's catastrophic floods (2022: 33 million affected, 1,700+ deaths), Karakoram/Hindu Kush glacial outbursts (GLOF), and earthquake response (Balochistan/KPK seismic zones)."
+    question: "How does Kabat One manage earthquake and flood disaster operations in Pakistan?",
+    answer: "Kabat One integrates NDMA situational reports, PMD (Pakistan Meteorological Department) weather alerts, PDMA operations centers, and Flash Flood Early Warning Systems (FFEWS) — supporting response to Pakistan's catastrophic floods (2022: 33 million affected, 1,700+ deaths), Karakoram/Hindu Kush glacial outbursts (GLOF), and earthquake response (Balochistan/KPK seismic zones)."
   },
   {
-    question: "What cybersecurity standards does KabatOne meet for Pakistani government procurement?",
-    answer: "KabatOne aligns with Pakistan Telecommunication Authority (PTA) regulations, PECA 2016 (Prevention of Electronic Crimes Act), National Cyber Security Policy 2021, and IGNITE (National Technology Fund) standards for government ICT systems — meeting requirements for procurement under PPRA (Public Procurement Regulatory Authority) rules."
+    question: "What cybersecurity standards does Kabat One meet for Pakistani government procurement?",
+    answer: "Kabat One aligns with Pakistan Telecommunication Authority (PTA) regulations, PECA 2016 (Prevention of Electronic Crimes Act), National Cyber Security Policy 2021, and IGNITE (National Technology Fund) standards for government ICT systems — meeting requirements for procurement under PPRA (Public Procurement Regulatory Authority) rules."
   },
   {
-    question: "What procurement pathway does KabatOne support in Pakistan?",
-    answer: "KabatOne supports procurement through PPRA (Public Procurement Regulatory Authority) e-procurement portal under PPRA Rules 2004 (amended 2017), provincial procurement rules (SPRRA/KPPRA/BPPRA), and Safe City Authority direct procurement for security systems — including open competitive bidding, request for proposals, and single-stage bidding for emergency management systems."
+    question: "What procurement pathway does Kabat One support in Pakistan?",
+    answer: "Kabat One supports procurement through PPRA (Public Procurement Regulatory Authority) e-procurement portal under PPRA Rules 2004 (amended 2017), provincial procurement rules (SPRRA/KPPRA/BPPRA), and Safe City Authority direct procurement for security systems — including open competitive bidding, request for proposals, and single-stage bidding for emergency management systems."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura policial federal y provincial de Pakistán?",
-    answer: "KabatOne se alinea con la estructura policial descentralizada de Pakistán — integrándose con las oficinas del Inspector General de Policía (IGP) en 4 provincias (Punjab, Sindh, KPK, Baluchistán), la Policía del Territorio de la Capital de Islamabad (ICTP), la Policía de Azad Jammu & Cachemira y la Policía de Gilgit-Baltistán — proporcionando despacho CAD unificado compatible con los protocolos del Decreto Policial 2002."
+    question: "¿Cómo se integra Kabat One con la estructura policial federal y provincial de Pakistán?",
+    answer: "Kabat One se alinea con la estructura policial descentralizada de Pakistán — integrándose con las oficinas del Inspector General de Policía (IGP) en 4 provincias (Punjab, Sindh, KPK, Baluchistán), la Policía del Territorio de la Capital de Islamabad (ICTP), la Policía de Azad Jammu & Cachemira y la Policía de Gilgit-Baltistán — proporcionando despacho CAD unificado compatible con los protocolos del Decreto Policial 2002."
   },
   {
-    question: "¿Puede KabatOne soportar el Rescue 1122 y los servicios de emergencia de Pakistán?",
-    answer: "Sí. KabatOne integra el Servicio de Emergencia del Punjab (PES/Rescue 1122), Rescue 1122 de Khyber Pakhtunkhwa, el Servicio de Rescate de Emergencia de Sindh y la respuesta de emergencia de la Fundación Edhi — habilitando despacho unificado y seguimiento de incidentes. La plataforma también soporta los centros de operaciones de PDMA y NDMA."
+    question: "¿Puede Kabat One soportar el Rescue 1122 y los servicios de emergencia de Pakistán?",
+    answer: "Sí. Kabat One integra el Servicio de Emergencia del Punjab (PES/Rescue 1122), Rescue 1122 de Khyber Pakhtunkhwa, el Servicio de Rescate de Emergencia de Sindh y la respuesta de emergencia de la Fundación Edhi — habilitando despacho unificado y seguimiento de incidentes. La plataforma también soporta los centros de operaciones de PDMA y NDMA."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Protección de Datos Personales de Pakistán (PDPA 2023)?",
-    answer: "KabatOne está diseñado para cumplimiento con la PDPA 2023 de Pakistán — implementando gestión de derechos del titular, documentación de base legal, marcos de responsabilidad del Oficial de Protección de Datos (DPO), notificación obligatoria de brechas a la NCPDP y salvaguardias de transferencia transfronteriza de datos."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Protección de Datos Personales de Pakistán (PDPA 2023)?",
+    answer: "Kabat One está diseñado para cumplimiento con la PDPA 2023 de Pakistán — implementando gestión de derechos del titular, documentación de base legal, marcos de responsabilidad del Oficial de Protección de Datos (DPO), notificación obligatoria de brechas a la NCPDP y salvaguardias de transferencia transfronteriza de datos."
   },
   {
-    question: "¿Puede KabatOne soportar operaciones Safe City en Lahore, Karachi e Islamabad?",
-    answer: "Sí. KabatOne integra la red de la Autoridad de Ciudades Seguras del Punjab (PSCA) en Lahore con 8,000+ cámaras, el proyecto Safe City de Islamabad (ISC) con 1,900+ cámaras, Safe City de Karachi con 3,000+ cámaras y el Sistema Integrado de Gestión de Tráfico (ITMS) — proporcionando analítica de IA, integración ANPR y visibilidad de mando unificada."
+    question: "¿Puede Kabat One soportar operaciones Safe City en Lahore, Karachi e Islamabad?",
+    answer: "Sí. Kabat One integra la red de la Autoridad de Ciudades Seguras del Punjab (PSCA) en Lahore con 8,000+ cámaras, el proyecto Safe City de Islamabad (ISC) con 1,900+ cámaras, Safe City de Karachi con 3,000+ cámaras y el Sistema Integrado de Gestión de Tráfico (ITMS) — proporcionando analítica de IA, integración ANPR y visibilidad de mando unificada."
   },
   {
-    question: "¿Cómo gestiona KabatOne las operaciones ante terremotos e inundaciones en Pakistán?",
-    answer: "KabatOne integra informes situacionales de NDMA, alertas meteorológicas del PMD (Departamento Meteorológico de Pakistán), centros de operaciones PDMA y Sistemas de Alerta Temprana de Inundaciones Repentinas (FFEWS) — apoyando la respuesta ante las inundaciones catastróficas de 2022 (33 millones de afectados, 1,700+ fallecidos) y eventos GLOF."
+    question: "¿Cómo gestiona Kabat One las operaciones ante terremotos e inundaciones en Pakistán?",
+    answer: "Kabat One integra informes situacionales de NDMA, alertas meteorológicas del PMD (Departamento Meteorológico de Pakistán), centros de operaciones PDMA y Sistemas de Alerta Temprana de Inundaciones Repentinas (FFEWS) — apoyando la respuesta ante las inundaciones catastróficas de 2022 (33 millones de afectados, 1,700+ fallecidos) y eventos GLOF."
   },
   {
-    question: "¿Qué estándares de ciberseguridad cumple KabatOne para la contratación gubernamental en Pakistán?",
-    answer: "KabatOne se alinea con las regulaciones de la PTA (Autoridad de Telecomunicaciones de Pakistán), PECA 2016 (Ley de Prevención de Delitos Electrónicos), la Política Nacional de Ciberseguridad 2021 e IGNITE — cumpliendo los requisitos para contratación bajo las reglas de la PPRA (Autoridad Reguladora de Contratación Pública)."
+    question: "¿Qué estándares de ciberseguridad cumple Kabat One para la contratación gubernamental en Pakistán?",
+    answer: "Kabat One se alinea con las regulaciones de la PTA (Autoridad de Telecomunicaciones de Pakistán), PECA 2016 (Ley de Prevención de Delitos Electrónicos), la Política Nacional de Ciberseguridad 2021 e IGNITE — cumpliendo los requisitos para contratación bajo las reglas de la PPRA (Autoridad Reguladora de Contratación Pública)."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Pakistán?",
-    answer: "KabatOne soporta contratación a través del portal de e-procurement de la PPRA (Autoridad Reguladora de Contratación Pública) bajo las Reglas PPRA 2004 (modificadas 2017), reglas provinciales de contratación (SPRRA/KPPRA/BPPRA) y contratación directa de autoridades Safe City — incluyendo licitación competitiva abierta, solicitudes de propuestas y licitación uniétapa para sistemas de gestión de emergencias."
+    question: "¿Qué vía de contratación soporta Kabat One en Pakistán?",
+    answer: "Kabat One soporta contratación a través del portal de e-procurement de la PPRA (Autoridad Reguladora de Contratación Pública) bajo las Reglas PPRA 2004 (modificadas 2017), reglas provinciales de contratación (SPRRA/KPPRA/BPPRA) y contratación directa de autoridades Safe City — incluyendo licitación competitiva abierta, solicitudes de propuestas y licitación uniétapa para sistemas de gestión de emergencias."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• PPRA portal: licitaciones NDMA, ICTP, Min. Interior federal' : '• PPRA portal: NDMA, ICTP, federal Ministry of Interior bids'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Pakistán?' : 'Ready to modernize public safety in Pakistan?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la Policía Provincial, Rescue 1122 y NDMA de Pakistán con una plataforma unificada conforme a PDPA 2023/NCPDP y compatible con PPRA 2004.'
-            : 'See how KabatOne supports Pakistan Provincial Police, Rescue 1122, and NDMA with a unified platform compliant with PDPA 2023/NCPDP and compatible with PPRA 2004 procurement.'}
+            ? 'Conozca cómo Kabat One apoya a la Policía Provincial, Rescue 1122 y NDMA de Pakistán con una plataforma unificada conforme a PDPA 2023/NCPDP y compatible con PPRA 2004.'
+            : 'See how Kabat One supports Pakistan Provincial Police, Rescue 1122, and NDMA with a unified platform compliant with PDPA 2023/NCPDP and compatible with PPRA 2004 procurement.'}
         />
       </main>
       <Footer es={es} />

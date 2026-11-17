@@ -1,6 +1,6 @@
 /* Two AI-generated concepts, per the two directions requested:
    1. The admin itself — a unified dashboard with a few modules visible.
-   2. Not admin-related — modules connected to a central KabatOne hub.
+   2. Not admin-related — modules connected to a central Kabat One hub.
    All AI-generated — swap for real product screenshots / brand art
    before this ships to production. */
 
@@ -42,8 +42,8 @@ export default function ImageConcepts({ es }: { es: boolean }) {
           <Image
             src="/images/hero-lab/concept-5-hub.webp"
             alt={es
-              ? 'KabatOne en el centro conectado a seis módulos'
-              : 'KabatOne at the center connected to six modules'}
+              ? 'Kabat One en el centro conectado a seis módulos'
+              : 'Kabat One at the center connected to six modules'}
             fill
             sizes="(max-width: 900px) 90vw, 560px"
           />
@@ -53,8 +53,8 @@ export default function ImageConcepts({ es }: { es: boolean }) {
         </h3>
         <p className="hl-concept-desc">
           {es
-            ? 'KabatOne al centro, cada módulo conectado a su alrededor — comunica la arquitectura sin aparentar ser software.'
-            : 'KabatOne at the center, each module connected around it — communicates the architecture without pretending to be software.'}
+            ? 'Kabat One al centro, cada módulo conectado a su alrededor — comunica la arquitectura sin aparentar ser software.'
+            : 'Kabat One at the center, each module connected around it — communicates the architecture without pretending to be software.'}
         </p>
       </div>
     </div>

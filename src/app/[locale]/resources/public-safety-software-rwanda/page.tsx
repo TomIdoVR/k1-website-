@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareRwandaPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Ruanda | RNP, RDF y Smart City Kigali – KabatOne"
-      : "Public Safety Software for Rwanda | RNP, RDF & Kigali Smart City – KabatOne",
+      ? "Software de Seguridad Pública para Ruanda | RNP, RDF y Smart City Kigali – Kabat One"
+      : "Public Safety Software for Rwanda | RNP, RDF & Kigali Smart City – Kabat One",
     es
-      ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional de Ruanda, RDF, gestión de desastres MIDIMAR y programas de ciudad inteligente Kigali."
-      : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for Rwanda National Police, RDF, MIDIMAR disaster management, and Kigali Smart City programs.",
+      ? "Kabat One ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional de Ruanda, RDF, gestión de desastres MIDIMAR y programas de ciudad inteligente Kigali."
+      : "Kabat One delivers unified command-and-control, AI-dispatch, and situational awareness for Rwanda National Police, RDF, MIDIMAR disaster management, and Kigali Smart City programs.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-rwanda"
       : "https://kabatone.com/resources/public-safety-software-rwanda",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareRwandaPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Qué capacidades ofrece KabatOne a la Policía Nacional de Ruanda?"
-        : "What capabilities does KabatOne offer Rwanda National Police?",
+        ? "¿Qué capacidades ofrece Kabat One a la Policía Nacional de Ruanda?"
+        : "What capabilities does Kabat One offer Rwanda National Police?",
       answer: es
-        ? "KabatOne proporciona CAD unificado para los 5 provincias/30 distritos/416 sectores, despacho IA que integra Kigali Safe City CCTV, gestión de incidentes transfronterizos y cumplimiento de la Ley de Ciberseguridad 2016/RURA/RwandaCSIRT."
-        : "KabatOne provides unified CAD for all 5 provinces/30 districts/416 sectors, AI-dispatch integrating Kigali Safe City CCTV, cross-border incident management, and compliance with the Cybersecurity Law 2016/RURA/RwandaCSIRT.",
+        ? "Kabat One proporciona CAD unificado para los 5 provincias/30 distritos/416 sectores, despacho IA que integra Kigali Safe City CCTV, gestión de incidentes transfronterizos y cumplimiento de la Ley de Ciberseguridad 2016/RURA/RwandaCSIRT."
+        : "Kabat One provides unified CAD for all 5 provinces/30 districts/416 sectors, AI-dispatch integrating Kigali Safe City CCTV, cross-border incident management, and compliance with the Cybersecurity Law 2016/RURA/RwandaCSIRT.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Ruanda?"
-        : "How does KabatOne support critical infrastructure security in Rwanda?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Ruanda?"
+        : "How does Kabat One support critical infrastructure security in Rwanda?",
       answer: es
         ? "La plataforma monitorea RECO/REG red eléctrica, Rwandair KGL/aeropuerto BK (en construcción Bugesera), RNRA/ONATRACOM rutas nacionales, y el corredor portuario de Mombasa/Dar es Salaam con gestión unificada de activos."
         : "The platform monitors RECO/REG power grid, Rwandair KGL/Bugesera airport (under construction), RNRA/ONATRACOM road network, and Mombasa/Dar es Salaam port corridor with unified asset management.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión de desastres de Ruanda?"
-        : "Can KabatOne integrate with Rwanda's disaster management?",
+        ? "¿Puede Kabat One integrarse con la gestión de desastres de Ruanda?"
+        : "Can Kabat One integrate with Rwanda's disaster management?",
       answer: es
-        ? "Sí. KabatOne se integra con MIDIMAR/REMA para alertas de inundaciones/deslizamientos en la cadena de volcanes Virunga, monitoreo de los volcanes Karisimbi/Nyiragongo (DRC frontera), y coordinación de emergencias del Lago Kivu gas metano."
-        : "Yes. KabatOne integrates with MIDIMAR/REMA for flood/landslide alerts in the Virunga volcanic chain, monitoring of Karisimbi/Nyiragongo (DRC border) volcanoes, and Lake Kivu methane gas emergency coordination.",
+        ? "Sí. Kabat One se integra con MIDIMAR/REMA para alertas de inundaciones/deslizamientos en la cadena de volcanes Virunga, monitoreo de los volcanes Karisimbi/Nyiragongo (DRC frontera), y coordinación de emergencias del Lago Kivu gas metano."
+        : "Yes. Kabat One integrates with MIDIMAR/REMA for flood/landslide alerts in the Virunga volcanic chain, monitoring of Karisimbi/Nyiragongo (DRC border) volcanoes, and Lake Kivu methane gas emergency coordination.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de datos de Ruanda?"
-        : "How does KabatOne comply with Rwanda's data regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de datos de Ruanda?"
+        : "How does Kabat One comply with Rwanda's data regulations?",
       answer: es
-        ? "KabatOne se ajusta a la Ley de Protección de Datos y Privacidad N° 058/2021, la Ley de Ciberseguridad N° 014/2016, los estándares NCSA/RwandaCSIRT, y las directrices RURA para telecomunicaciones de seguridad pública."
-        : "KabatOne aligns with the Law on Personal Data Protection and Privacy No. 058/2021, Cybersecurity Law No. 014/2016, NCSA/RwandaCSIRT standards, and RURA guidelines for public safety telecommunications.",
+        ? "Kabat One se ajusta a la Ley de Protección de Datos y Privacidad N° 058/2021, la Ley de Ciberseguridad N° 014/2016, los estándares NCSA/RwandaCSIRT, y las directrices RURA para telecomunicaciones de seguridad pública."
+        : "Kabat One aligns with the Law on Personal Data Protection and Privacy No. 058/2021, Cybersecurity Law No. 014/2016, NCSA/RwandaCSIRT standards, and RURA guidelines for public safety telecommunications.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión de fronteras de Ruanda?"
-        : "What sets KabatOne apart for Rwanda's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión de fronteras de Ruanda?"
+        : "What sets Kabat One apart for Rwanda's border management?",
       answer: es
-        ? "KabatOne unifica la inteligencia de los cruces fronterizos de Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi) y Goma/Gisenyi (DRC) con reconocimiento de matrículas ANPR, flujos de EAC/AfCFTA y alerta temprana RIM."
-        : "KabatOne unifies intelligence from Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi), and Goma/Gisenyi (DRC) border crossings with ANPR plate recognition, EAC/AfCFTA trade flows, and RIM early warning.",
+        ? "Kabat One unifica la inteligencia de los cruces fronterizos de Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi) y Goma/Gisenyi (DRC) con reconocimiento de matrículas ANPR, flujos de EAC/AfCFTA y alerta temprana RIM."
+        : "Kabat One unifies intelligence from Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi), and Goma/Gisenyi (DRC) border crossings with ANPR plate recognition, EAC/AfCFTA trade flows, and RIM early warning.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones provinciales con el Centro de Mando Nacional de Kigali, distribución de turnos en tiempo real para los 416 sectores y tableros de inteligencia delictiva conforme a la Estrategia Nacional de Seguridad de Rwanda."
-              : "KabatOne provides unified CAD/incident management integrating provincial operations centers with the Kigali National Command Center, real-time shift deployment across all 416 sectors, and crime intelligence dashboards aligned with Rwanda's National Security Strategy."}
+              ? "Kabat One proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones provinciales con el Centro de Mando Nacional de Kigali, distribución de turnos en tiempo real para los 416 sectores y tableros de inteligencia delictiva conforme a la Estrategia Nacional de Seguridad de Rwanda."
+              : "Kabat One provides unified CAD/incident management integrating provincial operations centers with the Kigali National Command Center, real-time shift deployment across all 416 sectors, and crime intelligence dashboards aligned with Rwanda's National Security Strategy."}
           </p>
 
           {/* RDF */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne apoya las funciones de C2 de la RDF con mapas operativos georreferenciados de las zonas fronterizas, coordinación multiagencia con RNP/DGIE/NSS, comunicaciones seguras y tableros de seguimiento de misiones de paz en el extranjero."
-              : "KabatOne supports RDF C2 functions with georeferenced operational maps of border zones, multi-agency coordination with RNP/DGIE/NSS, secure communications, and overseas peacekeeping mission tracking dashboards."}
+              ? "Kabat One apoya las funciones de C2 de la RDF con mapas operativos georreferenciados de las zonas fronterizas, coordinación multiagencia con RNP/DGIE/NSS, comunicaciones seguras y tableros de seguimiento de misiones de paz en el extranjero."
+              : "Kabat One supports RDF C2 functions with georeferenced operational maps of border zones, multi-agency coordination with RNP/DGIE/NSS, secure communications, and overseas peacekeeping mission tracking dashboards."}
           </p>
 
           {/* Disaster Management */}
@@ -175,8 +175,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "El Lago Kivu almacena grandes reservas de gas metano y CO₂ disuelto en sus aguas; KivuWatt de ContourGlobal genera 25 MW extrayendo este gas. KabatOne integra alertas sísmicas/volcánicas de l'Observatoire Volcanologique de Goma (OVG), monitoreo de niveles del lago, y planes de evacuación de Rubavu/Rusizi con protocolos de respuesta multi-agencia RNP-RDF-MIDIMAR."
-              : "Lake Kivu stores large reserves of dissolved methane and CO₂; ContourGlobal KivuWatt generates 25 MW by extracting this gas. KabatOne integrates seismic/volcanic alerts from the Goma Volcanological Observatory (OVG), lake-level monitoring, and Rubavu/Rusizi evacuation plans with RNP-RDF-MIDIMAR multi-agency response protocols."}
+              ? "El Lago Kivu almacena grandes reservas de gas metano y CO₂ disuelto en sus aguas; KivuWatt de ContourGlobal genera 25 MW extrayendo este gas. Kabat One integra alertas sísmicas/volcánicas de l'Observatoire Volcanologique de Goma (OVG), monitoreo de niveles del lago, y planes de evacuación de Rubavu/Rusizi con protocolos de respuesta multi-agencia RNP-RDF-MIDIMAR."
+              : "Lake Kivu stores large reserves of dissolved methane and CO₂; ContourGlobal KivuWatt generates 25 MW by extracting this gas. Kabat One integrates seismic/volcanic alerts from the Goma Volcanological Observatory (OVG), lake-level monitoring, and Rubavu/Rusizi evacuation plans with RNP-RDF-MIDIMAR multi-agency response protocols."}
           </p>
 
           {/* Kigali Smart City */}
@@ -192,8 +192,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne se integra con el CCTV de Kigali Safe City para conciencia situacional en tiempo real, correlaciona datos de Intelligent Transport Systems (ITS) para gestión de emergencias de tráfico, y apoya el Kigali Convention Centre (KCC) y eventos del CHOGM/UA con coordinación de seguridad."
-              : "KabatOne integrates with Kigali Safe City CCTV for real-time situational awareness, correlates Intelligent Transport Systems (ITS) data for traffic emergency management, and supports the Kigali Convention Centre (KCC) and CHOGM/AU events with security coordination."}
+              ? "Kabat One se integra con el CCTV de Kigali Safe City para conciencia situacional en tiempo real, correlaciona datos de Intelligent Transport Systems (ITS) para gestión de emergencias de tráfico, y apoya el Kigali Convention Centre (KCC) y eventos del CHOGM/UA con coordinación de seguridad."
+              : "Kabat One integrates with Kigali Safe City CCTV for real-time situational awareness, correlates Intelligent Transport Systems (ITS) data for traffic emergency management, and supports the Kigali Convention Centre (KCC) and CHOGM/AU events with security coordination."}
           </p>
 
           {/* Critical Infrastructure */}
@@ -209,8 +209,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "La red vial nacional RNRA/ONATRACOM conecta los corredores Kigali–Gatuna (Uganda/EAC), Kigali–Rusumo (Tanzania/TAZARA), Kigali–Akanyaru (Burundi) y Kigali–Goma/Gisenyi (DRC). Rwanda Railways conecta con el Corredor Central Tanzania/Dar es Salaam. KabatOne monitorea estos corredores de transporte críticos con ANPR, video y gestión unificada de activos."
-              : "Rwanda's RNRA/ONATRACOM road network connects Kigali–Gatuna (Uganda/EAC), Kigali–Rusumo (Tanzania/TAZARA), Kigali–Akanyaru (Burundi), and Kigali–Goma/Gisenyi (DRC) corridors. Rwanda Railways connects to the Central Corridor Tanzania/Dar es Salaam. KabatOne monitors these critical transport corridors with ANPR, video, and unified asset management."}
+              ? "La red vial nacional RNRA/ONATRACOM conecta los corredores Kigali–Gatuna (Uganda/EAC), Kigali–Rusumo (Tanzania/TAZARA), Kigali–Akanyaru (Burundi) y Kigali–Goma/Gisenyi (DRC). Rwanda Railways conecta con el Corredor Central Tanzania/Dar es Salaam. Kabat One monitorea estos corredores de transporte críticos con ANPR, video y gestión unificada de activos."
+              : "Rwanda's RNRA/ONATRACOM road network connects Kigali–Gatuna (Uganda/EAC), Kigali–Rusumo (Tanzania/TAZARA), Kigali–Akanyaru (Burundi), and Kigali–Goma/Gisenyi (DRC) corridors. Rwanda Railways connects to the Central Corridor Tanzania/Dar es Salaam. Kabat One monitors these critical transport corridors with ANPR, video, and unified asset management."}
           </p>
 
           {/* Border Management */}
@@ -226,8 +226,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra la Dirección General de Inmigración y Emigración (DGIE) con feeds ANPR en tiempo real, listas de vigilancia compartidas con Interpol/EAC, alerta temprana transfronteriza de Monusco (DRC) y análisis de flujos del Protocolo de Libre Circulación de la EAC."
-              : "KabatOne integrates the Directorate General of Immigration and Emigration (DGIE) with real-time ANPR feeds, shared watchlists with Interpol/EAC, cross-border early warning from MONUSCO (DRC), and EAC Free Movement Protocol flow analytics."}
+              ? "Kabat One integra la Dirección General de Inmigración y Emigración (DGIE) con feeds ANPR en tiempo real, listas de vigilancia compartidas con Interpol/EAC, alerta temprana transfronteriza de Monusco (DRC) y análisis de flujos del Protocolo de Libre Circulación de la EAC."
+              : "Kabat One integrates the Directorate General of Immigration and Emigration (DGIE) with real-time ANPR feeds, shared watchlists with Interpol/EAC, cross-border early warning from MONUSCO (DRC), and EAC Free Movement Protocol flow analytics."}
           </p>
 
           {/* Compliance */}
@@ -248,8 +248,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está estructurado para cumplir con los requisitos de soberanía de datos del NCSA, los estándares de cifrado de extremo a extremo, la localización de datos conforme a la Ley N° 058/2021 y los procedimientos de adquisición competitiva de la RPPA para contratos de seguridad pública."
-              : "KabatOne is structured to meet NCSA data sovereignty requirements, end-to-end encryption standards, data localisation under Law No. 058/2021, and RPPA competitive procurement procedures for public safety contracts."}
+              ? "Kabat One está estructurado para cumplir con los requisitos de soberanía de datos del NCSA, los estándares de cifrado de extremo a extremo, la localización de datos conforme a la Ley N° 058/2021 y los procedimientos de adquisición competitiva de la RPPA para contratos de seguridad pública."
+              : "Kabat One is structured to meet NCSA data sovereignty requirements, end-to-end encryption standards, data localisation under Law No. 058/2021, and RPPA competitive procurement procedures for public safety contracts."}
           </p>
 
           {/* Vision 2050 */}
@@ -265,8 +265,8 @@ export default async function PublicSafetySoftwareRwandaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne se alinea con NST1/Vision 2050 como infraestructura digital de seguridad pública de próxima generación, interoperable con el Rwanda Information Society Authority (RISA), el Hub de Innovación Kigali (KIC), el servicio de pago móvil Momo y los estándares de integración de datos del gobierno Rwanda Data Portal."
-              : "KabatOne aligns with NST1/Vision 2050 as next-generation public safety digital infrastructure, interoperable with Rwanda Information Society Authority (RISA), Kigali Innovation City (KIC), Momo mobile payment service, and Rwanda Data Portal government data integration standards."}
+              ? "Kabat One se alinea con NST1/Vision 2050 como infraestructura digital de seguridad pública de próxima generación, interoperable con el Rwanda Information Society Authority (RISA), el Hub de Innovación Kigali (KIC), el servicio de pago móvil Momo y los estándares de integración de datos del gobierno Rwanda Data Portal."
+              : "Kabat One aligns with NST1/Vision 2050 as next-generation public safety digital infrastructure, interoperable with Rwanda Information Society Authority (RISA), Kigali Innovation City (KIC), Momo mobile payment service, and Rwanda Data Portal government data integration standards."}
           </p>
         </section>
 
@@ -280,43 +280,43 @@ export default async function PublicSafetySoftwareRwandaPage({
               {[
                 {
                   q: es
-                    ? "¿Qué capacidades ofrece KabatOne a la Policía Nacional de Rwanda?"
-                    : "What capabilities does KabatOne offer Rwanda National Police?",
+                    ? "¿Qué capacidades ofrece Kabat One a la Policía Nacional de Rwanda?"
+                    : "What capabilities does Kabat One offer Rwanda National Police?",
                   a: es
-                    ? "KabatOne proporciona CAD unificado para los 5 provincias/30 distritos/416 sectores, despacho IA que integra Kigali Safe City CCTV, gestión de incidentes transfronterizos y cumplimiento de la Ley de Ciberseguridad 2016/RURA/RwandaCSIRT."
-                    : "KabatOne provides unified CAD for all 5 provinces/30 districts/416 sectors, AI-dispatch integrating Kigali Safe City CCTV, cross-border incident management, and compliance with Cybersecurity Law 2016/RURA/RwandaCSIRT.",
+                    ? "Kabat One proporciona CAD unificado para los 5 provincias/30 distritos/416 sectores, despacho IA que integra Kigali Safe City CCTV, gestión de incidentes transfronterizos y cumplimiento de la Ley de Ciberseguridad 2016/RURA/RwandaCSIRT."
+                    : "Kabat One provides unified CAD for all 5 provinces/30 districts/416 sectors, AI-dispatch integrating Kigali Safe City CCTV, cross-border incident management, and compliance with Cybersecurity Law 2016/RURA/RwandaCSIRT.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Rwanda?"
-                    : "How does KabatOne support critical infrastructure security in Rwanda?",
+                    ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Rwanda?"
+                    : "How does Kabat One support critical infrastructure security in Rwanda?",
                   a: es
                     ? "La plataforma monitorea RECO/REG red eléctrica, Rwandair KGL/aeropuerto BK (en construcción Bugesera), RNRA/ONATRACOM rutas nacionales, y el corredor portuario de Mombasa/Dar es Salaam con gestión unificada de activos."
                     : "The platform monitors RECO/REG power grid, Rwandair KGL/Bugesera airport under construction, RNRA/ONATRACOM road network, and Mombasa/Dar es Salaam port corridor with unified asset management.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión de desastres de Rwanda?"
-                    : "Can KabatOne integrate with Rwanda's disaster management?",
+                    ? "¿Puede Kabat One integrarse con la gestión de desastres de Rwanda?"
+                    : "Can Kabat One integrate with Rwanda's disaster management?",
                   a: es
-                    ? "Sí. KabatOne se integra con MIDIMAR/REMA para alertas de inundaciones/deslizamientos Virunga, monitoreo de volcanes Karisimbi/Nyiragongo (DRC frontera), y coordinación del gas metano del Lago Kivu."
-                    : "Yes. KabatOne integrates with MIDIMAR/REMA for Virunga flood/landslide alerts, Karisimbi/Nyiragongo volcano monitoring (DRC border), and Lake Kivu methane gas emergency coordination.",
+                    ? "Sí. Kabat One se integra con MIDIMAR/REMA para alertas de inundaciones/deslizamientos Virunga, monitoreo de volcanes Karisimbi/Nyiragongo (DRC frontera), y coordinación del gas metano del Lago Kivu."
+                    : "Yes. Kabat One integrates with MIDIMAR/REMA for Virunga flood/landslide alerts, Karisimbi/Nyiragongo volcano monitoring (DRC border), and Lake Kivu methane gas emergency coordination.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de datos de Rwanda?"
-                    : "How does KabatOne comply with Rwanda's data regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de datos de Rwanda?"
+                    : "How does Kabat One comply with Rwanda's data regulations?",
                   a: es
-                    ? "KabatOne se ajusta a la Ley N° 058/2021 de Protección de Datos, la Ley de Ciberseguridad N° 014/2016, los estándares NCSA/RwandaCSIRT y las directrices RURA para telecomunicaciones de seguridad pública."
-                    : "KabatOne aligns with Law No. 058/2021 on Data Protection, Cybersecurity Law No. 014/2016, NCSA/RwandaCSIRT standards, and RURA guidelines for public safety telecommunications.",
+                    ? "Kabat One se ajusta a la Ley N° 058/2021 de Protección de Datos, la Ley de Ciberseguridad N° 014/2016, los estándares NCSA/RwandaCSIRT y las directrices RURA para telecomunicaciones de seguridad pública."
+                    : "Kabat One aligns with Law No. 058/2021 on Data Protection, Cybersecurity Law No. 014/2016, NCSA/RwandaCSIRT standards, and RURA guidelines for public safety telecommunications.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión de fronteras de Rwanda?"
-                    : "What sets KabatOne apart for Rwanda's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión de fronteras de Rwanda?"
+                    : "What sets Kabat One apart for Rwanda's border management?",
                   a: es
-                    ? "KabatOne unifica la inteligencia de los cruces Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi) y Goma/Gisenyi (DRC) con reconocimiento ANPR, flujos EAC/AfCFTA y alerta temprana RIM."
-                    : "KabatOne unifies intelligence from Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi), and Goma/Gisenyi (DRC) crossings with ANPR recognition, EAC/AfCFTA trade flows, and RIM early warning.",
+                    ? "Kabat One unifica la inteligencia de los cruces Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi) y Goma/Gisenyi (DRC) con reconocimiento ANPR, flujos EAC/AfCFTA y alerta temprana RIM."
+                    : "Kabat One unifies intelligence from Gatuna/Katuna (Uganda), Rusumo (Tanzania), Akanyaru/Nemba (Burundi), and Goma/Gisenyi (DRC) crossings with ANPR recognition, EAC/AfCFTA trade flows, and RIM early warning.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

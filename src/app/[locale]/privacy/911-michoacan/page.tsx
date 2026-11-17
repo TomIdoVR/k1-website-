@@ -17,8 +17,8 @@ export async function generateMetadata({
 
   return {
     title: es
-      ? `Política de Privacidad — ${APP_NAME} | KabatOne`
-      : `Privacy Policy — ${APP_NAME} | KabatOne`,
+      ? `Política de Privacidad — ${APP_NAME} | Kabat One`
+      : `Privacy Policy — ${APP_NAME} | Kabat One`,
     description: es
       ? `Aviso de privacidad de la aplicación móvil ${APP_NAME}: qué datos recopilamos, cómo los usamos y protegemos, tus derechos ARCO y cómo eliminar tu cuenta.`
       : `Privacy policy for the ${APP_NAME} mobile app: what data we collect, how we use and protect it, your ARCO rights, and how to delete your account.`,

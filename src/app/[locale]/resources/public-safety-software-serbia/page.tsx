@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareSerbia({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Serbia | MUP/BIA, Rio Danubio, Corredor Paneuropeo y Schengen – KabatOne"
-        : "Public Safety Software for Serbia | MUP/BIA, Danube River, Pan-European Corridor & Schengen Path – KabatOne",
+        ? "Software de Seguridad Pública para Serbia | MUP/BIA, Rio Danubio, Corredor Paneuropeo y Schengen – Kabat One"
+        : "Public Safety Software for Serbia | MUP/BIA, Danube River, Pan-European Corridor & Schengen Path – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para el MUP serbio, BIA inteligencia y Policía de Fronteras — gestión Corredor X y VII, protección Puerto de Belgrado y Novi Sad, seguridad Rio Danubio 588 km, proceso candidatura UE/Schengen y coordinación FRONTEX/SELEC."
-        : "KabatOne delivers public safety platform for Serbian MUP, BIA intelligence, and Border Police — Corridor X and VII management, Port of Belgrade and Novi Sad protection, Danube 588 km river security, EU/Schengen candidacy process, and FRONTEX/SELEC coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para el MUP serbio, BIA inteligencia y Policía de Fronteras — gestión Corredor X y VII, protección Puerto de Belgrado y Novi Sad, seguridad Rio Danubio 588 km, proceso candidatura UE/Schengen y coordinación FRONTEX/SELEC."
+        : "Kabat One delivers public safety platform for Serbian MUP, BIA intelligence, and Border Police — Corridor X and VII management, Port of Belgrade and Novi Sad protection, Danube 588 km river security, EU/Schengen candidacy process, and FRONTEX/SELEC coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-serbia"
         : "https://kabatone.com/resources/public-safety-software-serbia",
@@ -81,11 +81,11 @@ export default async function PublicSafetySoftwareSerbia({
       },
       {
         question: es
-          ? "¿Cómo puede KabatOne integrarse con los sistemas serbios?"
-          : "How can KabatOne integrate with Serbian systems?",
+          ? "¿Cómo puede Kabat One integrarse con los sistemas serbios?"
+          : "How can Kabat One integrate with Serbian systems?",
         answer: es
-          ? "KabatOne se integra con los sistemas CAD/112 del MUP, lectores de matrículas ANPR en los 15 pasos fronterizos principales, el sistema de gestión del tráfico fluvial del Danubio y los sistemas CCTV de Belgrado, cumpliendo ZZPPL (ley de datos personales) y normativa NORA."
-          : "KabatOne integrates with MUP CAD/112 systems, ANPR license plate readers at 15 major border crossings, Danube inland waterway traffic management systems, and Belgrade CCTV networks, complying with ZZPPL (personal data law) and NORA regulations.",
+          ? "Kabat One se integra con los sistemas CAD/112 del MUP, lectores de matrículas ANPR en los 15 pasos fronterizos principales, el sistema de gestión del tráfico fluvial del Danubio y los sistemas CCTV de Belgrado, cumpliendo ZZPPL (ley de datos personales) y normativa NORA."
+          : "Kabat One integrates with MUP CAD/112 systems, ANPR license plate readers at 15 major border crossings, Danube inland waterway traffic management systems, and Belgrade CCTV networks, complying with ZZPPL (personal data law) and NORA regulations.",
       },
     ]),
   ];
@@ -360,13 +360,13 @@ export default async function PublicSafetySoftwareSerbia({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Serbia"
-              : "KabatOne Capabilities for Serbia"}
+              ? "Capacidades Kabat One para Serbia"
+              : "Kabat One Capabilities for Serbia"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -453,11 +453,11 @@ export default async function PublicSafetySoftwareSerbia({
               },
               {
                 q: es
-                  ? "¿Cómo puede KabatOne integrarse con los sistemas serbios?"
-                  : "How can KabatOne integrate with Serbian systems?",
+                  ? "¿Cómo puede Kabat One integrarse con los sistemas serbios?"
+                  : "How can Kabat One integrate with Serbian systems?",
                 a: es
-                  ? "KabatOne se integra con los sistemas CAD/112 del MUP, ANPR en los 15 pasos fronterizos principales, gestión del tráfico fluvial del Danubio y CCTV de Belgrado, cumpliendo ZZPPL y normativa NORA."
-                  : "KabatOne integrates with MUP CAD/112 systems, ANPR at 15 major border crossings, Danube waterway traffic management, and Belgrade CCTV networks, complying with ZZPPL and NORA regulations.",
+                  ? "Kabat One se integra con los sistemas CAD/112 del MUP, ANPR en los 15 pasos fronterizos principales, gestión del tráfico fluvial del Danubio y CCTV de Belgrado, cumpliendo ZZPPL y normativa NORA."
+                  : "Kabat One integrates with MUP CAD/112 systems, ANPR at 15 major border crossings, Danube waterway traffic management, and Belgrade CCTV networks, complying with ZZPPL and NORA regulations.",
               },
             ].map((item) => (
               <div
@@ -481,8 +481,8 @@ export default async function PublicSafetySoftwareSerbia({
         }
         subtitle={
           es
-            ? "KabatOne integra MUP, BIA y Policía de Fronteras en una plataforma unificada — gestión del Corredor X/VII, seguridad fluvial del Danubio, candidatura UE y cumplimiento ZZPPL."
-            : "KabatOne integrates MUP, BIA, and Border Police in one unified platform — Corridor X/VII management, Danube river security, EU candidacy support, and ZZPPL compliance."
+            ? "Kabat One integra MUP, BIA y Policía de Fronteras en una plataforma unificada — gestión del Corredor X/VII, seguridad fluvial del Danubio, candidatura UE y cumplimiento ZZPPL."
+            : "Kabat One integrates MUP, BIA, and Border Police in one unified platform — Corridor X/VII management, Danube river security, EU candidacy support, and ZZPPL compliance."
         }
       />
       <Footer es={es} />

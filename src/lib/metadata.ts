@@ -74,7 +74,7 @@ export function generatePageMetadata(
       title: page.title,
       description: page.description,
       url: page.canonical,
-      siteName: 'KabatOne',
+      siteName: 'Kabat One',
       type: 'website',
       locale: locale === 'es' ? 'es_MX' : 'en_US',
       images: [
@@ -82,7 +82,7 @@ export function generatePageMetadata(
           url: 'https://kabatone.com/og-default.png',
           width: 1200,
           height: 630,
-          alt: 'KabatOne — Public Safety Platform',
+          alt: 'Kabat One — Public Safety Platform',
         },
       ],
     },

@@ -43,23 +43,23 @@ export default async function PublicSafetySoftwareMiddleEastPage({
     },
     {
       question: '¿Cómo se adquiere tecnología de seguridad pública en el Golfo (UAE, Arabia Saudita, Qatar)?',
-      answer: 'La adquisición en el Golfo sigue modelos de contratación gubernamental directa. En UAE, los ministerios del Interior (MOI) y las autoridades policiales de Abu Dhabi y Dubai licitan directamente o a través de integradores de sistemas locales. En Arabia Saudita, la Saudi Vision 2030 canaliza financiamiento a través del Fondo de Inversión Pública (PIF) y los ministerios del Interior (MOI) y Municipal. Se requiere presencia local o un socio distribuidor regional registrado. KabatOne trabaja con integradores certificados en la región GCC para cumplir con requisitos de contenido local (Saudización, Emiratización).',
+      answer: 'La adquisición en el Golfo sigue modelos de contratación gubernamental directa. En UAE, los ministerios del Interior (MOI) y las autoridades policiales de Abu Dhabi y Dubai licitan directamente o a través de integradores de sistemas locales. En Arabia Saudita, la Saudi Vision 2030 canaliza financiamiento a través del Fondo de Inversión Pública (PIF) y los ministerios del Interior (MOI) y Municipal. Se requiere presencia local o un socio distribuidor regional registrado. Kabat One trabaja con integradores certificados en la región GCC para cumplir con requisitos de contenido local (Saudización, Emiratización).',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura CCTV existente en ciudades del Medio Oriente?',
-      answer: 'Sí. KabatOne K-Video integra cualquier cámara ONVIF/RTSP, incluidas las marcas más comunes en la región: Hikvision, Dahua, Axis, Bosch, Hanwha y Samsung. Las redes CCTV existentes en Dubai (Safe Dubai), Abu Dhabi, Riad y Doha se conectan directamente sin reemplazar hardware. La plataforma soporta analítica de video con IA (LPR árabe, detección de intrusión, conteo de multitudes para eventos religiosos masivos como el Hajj y Umrah) e integración con sistemas de gestión de multitudes específicos de la región.',
+      question: '¿Puede Kabat One integrarse con la infraestructura CCTV existente en ciudades del Medio Oriente?',
+      answer: 'Sí. Kabat One K-Video integra cualquier cámara ONVIF/RTSP, incluidas las marcas más comunes en la región: Hikvision, Dahua, Axis, Bosch, Hanwha y Samsung. Las redes CCTV existentes en Dubai (Safe Dubai), Abu Dhabi, Riad y Doha se conectan directamente sin reemplazar hardware. La plataforma soporta analítica de video con IA (LPR árabe, detección de intrusión, conteo de multitudes para eventos religiosos masivos como el Hajj y Umrah) e integración con sistemas de gestión de multitudes específicos de la región.',
     },
     {
-      question: '¿Qué considera KabatOne en cuanto a privacidad y cumplimiento legal en el Medio Oriente?',
-      answer: 'KabatOne opera bajo los marcos regulatorios locales de cada país. En UAE aplica la UAE Federal Data Protection Law (Federal Decree-Law No. 45 of 2021) y las regulaciones del TDRA. En Arabia Saudita aplica la PDPL (Personal Data Protection Law). La plataforma implementa controles de acceso basados en roles (RBAC), audit logging completo, retención configurable de datos y puede desplegarse en infraestructura local o en nube regional (AWS me-south-1, Azure UAE North) para cumplir con requisitos de soberanía de datos de cada jurisdicción.',
+      question: '¿Qué considera Kabat One en cuanto a privacidad y cumplimiento legal en el Medio Oriente?',
+      answer: 'Kabat One opera bajo los marcos regulatorios locales de cada país. En UAE aplica la UAE Federal Data Protection Law (Federal Decree-Law No. 45 of 2021) y las regulaciones del TDRA. En Arabia Saudita aplica la PDPL (Personal Data Protection Law). La plataforma implementa controles de acceso basados en roles (RBAC), audit logging completo, retención configurable de datos y puede desplegarse en infraestructura local o en nube regional (AWS me-south-1, Azure UAE North) para cumplir con requisitos de soberanía de datos de cada jurisdicción.',
     },
     {
-      question: '¿Cómo apoya KabatOne operaciones de seguridad en eventos masivos como el Hajj en La Meca?',
-      answer: 'Los eventos de gran escala en el Medio Oriente — Hajj y Umrah (2M+ peregrinos en Meca), eventos deportivos (Qatar 2022, Formula 1 en Abu Dhabi y Riad, Saudi Pro League) y festividades nacionales — requieren gestión de multitudes en tiempo real. KabatOne K-Video integra analítica de conteo de personas por zona, alertas de densidad crítica y correlación con despacho CAD para activación automática de unidades de emergencia cuando se supera el umbral de aforo. K-Safety provee el mapa operativo GIS con todos los puntos de control, cámaras y unidades de respuesta en una sola vista.',
+      question: '¿Cómo apoya Kabat One operaciones de seguridad en eventos masivos como el Hajj en La Meca?',
+      answer: 'Los eventos de gran escala en el Medio Oriente — Hajj y Umrah (2M+ peregrinos en Meca), eventos deportivos (Qatar 2022, Formula 1 en Abu Dhabi y Riad, Saudi Pro League) y festividades nacionales — requieren gestión de multitudes en tiempo real. Kabat One K-Video integra analítica de conteo de personas por zona, alertas de densidad crítica y correlación con despacho CAD para activación automática de unidades de emergencia cuando se supera el umbral de aforo. K-Safety provee el mapa operativo GIS con todos los puntos de control, cámaras y unidades de respuesta en una sola vista.',
     },
     {
-      question: '¿Tiene KabatOne experiencia en despliegues en el Medio Oriente o mercados similares?',
-      answer: 'KabatOne opera en más de 40 ciudades en América Latina protegiendo a 73 millones de ciudadanos — un mercado con características similares al Golfo en cuanto a escala de despliegue gubernamental, velocidad de adopción tecnológica y proyectos de ciudad inteligente de gran escala. La plataforma ha demostrado capacidad para integrarse con infraestructura CCTV heterogénea existente, operar en entornos multiagencia complejos y adaptarse a flujos de trabajo de diferentes cuerpos de seguridad. Para proyectos en la región GCC, KabatOne trabaja con integradores regionales certificados.',
+      question: '¿Tiene Kabat One experiencia en despliegues en el Medio Oriente o mercados similares?',
+      answer: 'Kabat One opera en más de 40 ciudades en América Latina protegiendo a 73 millones de ciudadanos — un mercado con características similares al Golfo en cuanto a escala de despliegue gubernamental, velocidad de adopción tecnológica y proyectos de ciudad inteligente de gran escala. La plataforma ha demostrado capacidad para integrarse con infraestructura CCTV heterogénea existente, operar en entornos multiagencia complejos y adaptarse a flujos de trabajo de diferentes cuerpos de seguridad. Para proyectos en la región GCC, Kabat One trabaja con integradores regionales certificados.',
     },
   ] : [
     {
@@ -68,23 +68,23 @@ export default async function PublicSafetySoftwareMiddleEastPage({
     },
     {
       question: 'How is public safety technology procured in the Gulf (UAE, Saudi Arabia, Qatar)?',
-      answer: 'Gulf procurement follows government direct contracting models. In UAE, the Ministry of Interior (MOI) and Abu Dhabi/Dubai police authorities tender directly or through local system integrators. In Saudi Arabia, Vision 2030 channels funding through the Public Investment Fund (PIF) and the Interior and Municipal ministries. Local presence or a registered regional distribution partner is required. KabatOne works with certified GCC-region integrators to meet local content requirements (Saudization, Emiratization).',
+      answer: 'Gulf procurement follows government direct contracting models. In UAE, the Ministry of Interior (MOI) and Abu Dhabi/Dubai police authorities tender directly or through local system integrators. In Saudi Arabia, Vision 2030 channels funding through the Public Investment Fund (PIF) and the Interior and Municipal ministries. Local presence or a registered regional distribution partner is required. Kabat One works with certified GCC-region integrators to meet local content requirements (Saudization, Emiratization).',
     },
     {
-      question: 'Can KabatOne integrate with existing CCTV infrastructure in Middle Eastern cities?',
-      answer: 'Yes. KabatOne K-Video integrates any ONVIF/RTSP camera, including the most common brands in the region: Hikvision, Dahua, Axis, Bosch, Hanwha, and Samsung. Existing CCTV networks in Dubai (Safe Dubai), Abu Dhabi, Riyadh, and Doha connect directly without hardware replacement. The platform supports AI video analytics (Arabic LPR, intrusion detection, crowd counting for mass religious events like Hajj and Umrah) and integrates with region-specific crowd management systems.',
+      question: 'Can Kabat One integrate with existing CCTV infrastructure in Middle Eastern cities?',
+      answer: 'Yes. Kabat One K-Video integrates any ONVIF/RTSP camera, including the most common brands in the region: Hikvision, Dahua, Axis, Bosch, Hanwha, and Samsung. Existing CCTV networks in Dubai (Safe Dubai), Abu Dhabi, Riyadh, and Doha connect directly without hardware replacement. The platform supports AI video analytics (Arabic LPR, intrusion detection, crowd counting for mass religious events like Hajj and Umrah) and integrates with region-specific crowd management systems.',
     },
     {
-      question: 'What does KabatOne address regarding privacy and legal compliance in the Middle East?',
-      answer: "KabatOne operates under local regulatory frameworks in each country. In UAE it applies the UAE Federal Data Protection Law (Federal Decree-Law No. 45 of 2021) and TDRA regulations. In Saudi Arabia it applies the PDPL (Personal Data Protection Law). The platform implements role-based access controls (RBAC), full audit logging, configurable data retention, and can be deployed on local infrastructure or regional cloud (AWS me-south-1, Azure UAE North) to meet each jurisdiction's data sovereignty requirements.",
+      question: 'What does Kabat One address regarding privacy and legal compliance in the Middle East?',
+      answer: "Kabat One operates under local regulatory frameworks in each country. In UAE it applies the UAE Federal Data Protection Law (Federal Decree-Law No. 45 of 2021) and TDRA regulations. In Saudi Arabia it applies the PDPL (Personal Data Protection Law). The platform implements role-based access controls (RBAC), full audit logging, configurable data retention, and can be deployed on local infrastructure or regional cloud (AWS me-south-1, Azure UAE North) to meet each jurisdiction's data sovereignty requirements.",
     },
     {
-      question: 'How does KabatOne support mass event security operations like Hajj in Mecca?',
-      answer: 'Large-scale events in the Middle East — Hajj and Umrah (2M+ pilgrims in Mecca), sporting events (Qatar 2022, Abu Dhabi and Riyadh Formula 1, Saudi Pro League), and national celebrations — require real-time crowd management. KabatOne K-Video integrates per-zone crowd counting analytics, critical density alerts, and CAD dispatch correlation for automatic unit activation when occupancy thresholds are exceeded. K-Safety provides the GIS operational map with all checkpoints, cameras, and response units in one unified view.',
+      question: 'How does Kabat One support mass event security operations like Hajj in Mecca?',
+      answer: 'Large-scale events in the Middle East — Hajj and Umrah (2M+ pilgrims in Mecca), sporting events (Qatar 2022, Abu Dhabi and Riyadh Formula 1, Saudi Pro League), and national celebrations — require real-time crowd management. Kabat One K-Video integrates per-zone crowd counting analytics, critical density alerts, and CAD dispatch correlation for automatic unit activation when occupancy thresholds are exceeded. K-Safety provides the GIS operational map with all checkpoints, cameras, and response units in one unified view.',
     },
     {
-      question: 'Does KabatOne have experience in Middle East deployments or similar markets?',
-      answer: 'KabatOne operates in 40+ cities across Latin America protecting 73 million citizens — a market with similar characteristics to the Gulf in terms of government deployment scale, technology adoption speed, and large-scale smart city projects. The platform has demonstrated capability to integrate with heterogeneous existing CCTV infrastructure, operate in complex multi-agency environments, and adapt to different security agency workflows. For GCC region projects, KabatOne works with certified regional system integrators.',
+      question: 'Does Kabat One have experience in Middle East deployments or similar markets?',
+      answer: 'Kabat One operates in 40+ cities across Latin America protecting 73 million citizens — a market with similar characteristics to the Gulf in terms of government deployment scale, technology adoption speed, and large-scale smart city projects. The platform has demonstrated capability to integrate with heterogeneous existing CCTV infrastructure, operate in complex multi-agency environments, and adapt to different security agency workflows. For GCC region projects, Kabat One works with certified regional system integrators.',
     },
   ]
 
@@ -102,12 +102,12 @@ export default async function PublicSafetySoftwareMiddleEastPage({
     {
       icon: '🔒',
       title: 'Soberanía de Datos y Cumplimiento Local',
-      desc: 'UAE Federal Data Protection Law, PDPL de Arabia Saudita y regulaciones de Qatar exigen que datos de seguridad pública residan dentro de fronteras nacionales. KabatOne despliega en AWS me-south-1 (Bahréin), Azure UAE North o infraestructura on-premise para cumplimiento total.',
+      desc: 'UAE Federal Data Protection Law, PDPL de Arabia Saudita y regulaciones de Qatar exigen que datos de seguridad pública residan dentro de fronteras nacionales. Kabat One despliega en AWS me-south-1 (Bahréin), Azure UAE North o infraestructura on-premise para cumplimiento total.',
     },
     {
       icon: '🤝',
       title: 'Contenido Local y Saudización/Emiratización',
-      desc: 'Los contratos gubernamentales en el Golfo exigen porcentajes de contenido local (Saudización 30%+ en Arabia Saudita, Emiratización en UAE). KabatOne trabaja con integradores regionales certificados y partners locales para cumplir con estos requisitos en cada licitación.',
+      desc: 'Los contratos gubernamentales en el Golfo exigen porcentajes de contenido local (Saudización 30%+ en Arabia Saudita, Emiratización en UAE). Kabat One trabaja con integradores regionales certificados y partners locales para cumplir con estos requisitos en cada licitación.',
     },
   ] : [
     {
@@ -123,12 +123,12 @@ export default async function PublicSafetySoftwareMiddleEastPage({
     {
       icon: '🔒',
       title: 'Data Sovereignty and Local Compliance',
-      desc: "UAE Federal Data Protection Law, Saudi PDPL, and Qatar's regulations require public safety data to reside within national borders. KabatOne deploys on AWS me-south-1 (Bahrain), Azure UAE North, or on-premise infrastructure for full compliance.",
+      desc: "UAE Federal Data Protection Law, Saudi PDPL, and Qatar's regulations require public safety data to reside within national borders. Kabat One deploys on AWS me-south-1 (Bahrain), Azure UAE North, or on-premise infrastructure for full compliance.",
     },
     {
       icon: '🤝',
       title: 'Local Content and Saudization/Emiratization',
-      desc: 'Gulf government contracts require local content percentages (Saudization 30%+ in Saudi Arabia, Emiratization in UAE). KabatOne works with certified regional system integrators and local partners to meet these requirements for each tender.',
+      desc: 'Gulf government contracts require local content percentages (Saudization 30%+ in Saudi Arabia, Emiratization in UAE). Kabat One works with certified regional system integrators and local partners to meet these requirements for each tender.',
     },
   ]
 
@@ -299,7 +299,7 @@ export default async function PublicSafetySoftwareMiddleEastPage({
         <section style={{ padding: '64px 32px', borderBottom: '1px solid var(--border)' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', marginBottom: '8px' }}>
-              {es ? 'La Plataforma KabatOne para el Golfo' : 'KabatOne Platform for the Gulf'}
+              {es ? 'La Plataforma Kabat One para el Golfo' : 'Kabat One Platform for the Gulf'}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--dim)', marginBottom: '32px', lineHeight: 1.7 }}>
               {es
@@ -363,10 +363,10 @@ export default async function PublicSafetySoftwareMiddleEastPage({
 
         <CTASection
           es={es}
-          h2={es ? 'Lleva KabatOne al Golfo y el Medio Oriente' : 'Bring KabatOne to the Gulf and Middle East'}
+          h2={es ? 'Lleva Kabat One al Golfo y el Medio Oriente' : 'Bring Kabat One to the Gulf and Middle East'}
           subtitle={es
-            ? 'Desde Smart City a gran escala hasta gestión de eventos masivos — KabatOne integra CAD, video y GIS en una plataforma lista para el GCC. Agenda una sesión con nuestro equipo de ventas internacional.'
-            : 'From large-scale Smart City to mass event management — KabatOne integrates CAD, video, and GIS in a GCC-ready platform. Schedule a session with our international sales team.'}
+            ? 'Desde Smart City a gran escala hasta gestión de eventos masivos — Kabat One integra CAD, video y GIS en una plataforma lista para el GCC. Agenda una sesión con nuestro equipo de ventas internacional.'
+            : 'From large-scale Smart City to mass event management — Kabat One integrates CAD, video, and GIS in a GCC-ready platform. Schedule a session with our international sales team.'}
           cta1={es ? 'Solicitar Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas Intl.' : 'Contact Intl. Sales'}
         />
