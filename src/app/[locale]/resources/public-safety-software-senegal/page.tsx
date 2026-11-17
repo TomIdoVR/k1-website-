@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareSenegalPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/SGBS & CDP/Loi 2008-12 | KabatOne'
-      : 'Public Safety Software for Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/SGBS & CDP/Law 2008-12 | KabatOne',
+      ? 'Software de Seguridad Pública para Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/SGBS & CDP/Loi 2008-12 | Kabat One'
+      : 'Public Safety Software for Senegal: Police Nationale/Gendarmerie, DGPC, Dakar Safe City, PETROSEN/SGBS & CDP/Law 2008-12 | Kabat One',
     es
       ? 'Plataforma unificada para la Police Nationale y Gendarmerie de Senegal — despacho CAD integrado en 14 regiones, Dakar Safe City, DGPC protección civil, Puerto de Dakar/PAD, PETROSEN gas offshore Sangomar, CDP/Loi 2008-12 y adquisición DCMP/Code des marchés.'
       : 'Unified platform for Senegal Police Nationale and Gendarmerie — integrated CAD dispatch across 14 regions, Dakar Safe City, DGPC civil protection, Port of Dakar/PAD, PETROSEN Sangomar offshore gas, CDP/Law 2008-12 compliance, and DCMP/Code des marchés procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareSenegalPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Senegal?'
-        : 'How does KabatOne address Senegal critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Senegal?'
+        : 'How does Kabat One address Senegal critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión del Puerto Autónomo de Dakar (PAD, mayor puerto de África Occidental), el aeropuerto AIBD (Blaise Diagne International), las plataformas offshore PETROSEN/BP Sangomar (primeras exportaciones petrolíferas 2024), las plantas GNL SGBS, la red SENELEC y los ferrocarriles TER Dakar-Thiès.'
-        : 'KabatOne integrates management for the Port Autonome de Dakar (PAD, largest West Africa port), AIBD Airport (Blaise Diagne International), PETROSEN/BP Sangomar offshore platforms (first oil exports 2024), SGBS LNG plants, SENELEC power grid, and TER Dakar-Thiès railway.',
+        ? 'Kabat One integra gestión del Puerto Autónomo de Dakar (PAD, mayor puerto de África Occidental), el aeropuerto AIBD (Blaise Diagne International), las plataformas offshore PETROSEN/BP Sangomar (primeras exportaciones petrolíferas 2024), las plantas GNL SGBS, la red SENELEC y los ferrocarriles TER Dakar-Thiès.'
+        : 'Kabat One integrates management for the Port Autonome de Dakar (PAD, largest West Africa port), AIBD Airport (Blaise Diagne International), PETROSEN/BP Sangomar offshore platforms (first oil exports 2024), SGBS LNG plants, SENELEC power grid, and TER Dakar-Thiès railway.',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Senegal?'
-        : 'Is KabatOne compliant with Senegal data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Senegal?'
+        : 'Is Kabat One compliant with Senegal data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Loi 2008-12 sur la Protection des Données à Caractère Personnel supervisada por la CDP (Commission de Protection des Données Personnelles). La arquitectura se alinea con la Loi 2008-11 sobre Cibercriminalidad y las directrices DaIS (División de Asistencia a las Instituciones de Seguridad).'
-        : 'Yes. KabatOne is designed to comply with Law 2008-12 on Personal Data Protection supervised by the CDP (Commission de Protection des Données Personnelles). The architecture aligns with Law 2008-11 on Cybercrime and DaIS (Division d\'Assistance aux Institutions de Sécurité) guidelines.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Loi 2008-12 sur la Protection des Données à Caractère Personnel supervisada por la CDP (Commission de Protection des Données Personnelles). La arquitectura se alinea con la Loi 2008-11 sobre Cibercriminalidad y las directrices DaIS (División de Asistencia a las Instituciones de Seguridad).'
+        : 'Yes. Kabat One is designed to comply with Law 2008-12 on Personal Data Protection supervised by the CDP (Commission de Protection des Données Personnelles). The architecture aligns with Law 2008-11 on Cybercrime and DaIS (Division d\'Assistance aux Institutions de Sécurité) guidelines.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la gestión de fronteras en Senegal?'
-        : 'How does KabatOne support border management in Senegal?',
+        ? '¿Cómo apoya Kabat One la gestión de fronteras en Senegal?'
+        : 'How does Kabat One support border management in Senegal?',
       answer: es
-        ? 'KabatOne gestiona los pasos fronterizos con Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos/Farafenni), Guinea (Médina Gounas) y la frontera enclavada con Gambia (Farafenni/Sénoba) con ANPR integrado y coordinación entre Police Nationale, Gendarmerie y Guardia de Fronteras.'
-        : 'KabatOne manages border crossings with Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos/Farafenni), Guinea (Médina Gounas) and the enclave Gambia border (Farafenni/Sénoba) with integrated ANPR and coordination between Police Nationale, Gendarmerie and Border Guard.',
+        ? 'Kabat One gestiona los pasos fronterizos con Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos/Farafenni), Guinea (Médina Gounas) y la frontera enclavada con Gambia (Farafenni/Sénoba) con ANPR integrado y coordinación entre Police Nationale, Gendarmerie y Guardia de Fronteras.'
+        : 'Kabat One manages border crossings with Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos/Farafenni), Guinea (Médina Gounas) and the enclave Gambia border (Farafenni/Sénoba) with integrated ANPR and coordination between Police Nationale, Gendarmerie and Border Guard.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareSenegalPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Senegal'
-                : 'KabatOne Platform Capabilities for Senegal'}
+                ? 'Capacidades de la Plataforma Kabat One para Senegal'
+                : 'Kabat One Platform Capabilities for Senegal'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareSenegalPage({
                       a: 'La Police Nationale cubre 14 regiones con DPJ y UAT. La Gendarmerie Nationale gestiona zonas rurales y fronterizas. La DGPC coordina emergencias nacionales (18). El SDIS gestiona incendios y el SAMU emergencias médicas.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Senegal?',
-                      a: 'KabatOne integra gestión del PAD (mayor puerto de África Occidental), el aeropuerto AIBD, las plataformas offshore PETROSEN/Woodside Sangomar (primeras exportaciones 2024), la red SENELEC y el TER Dakar-Thiès.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Senegal?',
+                      a: 'Kabat One integra gestión del PAD (mayor puerto de África Occidental), el aeropuerto AIBD, las plataformas offshore PETROSEN/Woodside Sangomar (primeras exportaciones 2024), la red SENELEC y el TER Dakar-Thiès.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Senegal?',
-                      a: 'Sí. KabatOne cumple con la Loi 2008-12/CDP. La arquitectura está alineada con la Loi 2008-11 sobre Cibercriminalidad y las directrices ADIE para sistemas de gobierno digital.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Senegal?',
+                      a: 'Sí. Kabat One cumple con la Loi 2008-12/CDP. La arquitectura está alineada con la Loi 2008-11 sobre Cibercriminalidad y las directrices ADIE para sistemas de gobierno digital.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la gestión de fronteras en Senegal?',
-                      a: 'KabatOne gestiona los pasos fronterizos con Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos) y la frontera enclavada con Gambia (Farafenni/Sénoba) con ANPR y coordinación Gendarmerie.',
+                      q: '¿Cómo apoya Kabat One la gestión de fronteras en Senegal?',
+                      a: 'Kabat One gestiona los pasos fronterizos con Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos) y la frontera enclavada con Gambia (Farafenni/Sénoba) con ANPR y coordinación Gendarmerie.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareSenegalPage({
                       a: 'The Police Nationale covers 14 regions with DPJ and UAT. The Gendarmerie Nationale manages rural and border zones. The DGPC coordinates national emergencies (18). The SDIS manages fires and SAMU medical emergencies.',
                     },
                     {
-                      q: 'How does KabatOne address Senegal critical infrastructure?',
-                      a: 'KabatOne integrates management for the PAD (largest West Africa port), AIBD Airport, PETROSEN/Woodside Sangomar offshore platforms (first exports 2024), SENELEC power grid, and TER Dakar-Thiès railway.',
+                      q: 'How does Kabat One address Senegal critical infrastructure?',
+                      a: 'Kabat One integrates management for the PAD (largest West Africa port), AIBD Airport, PETROSEN/Woodside Sangomar offshore platforms (first exports 2024), SENELEC power grid, and TER Dakar-Thiès railway.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Senegal data legislation?',
-                      a: 'Yes. KabatOne complies with Law 2008-12/CDP. The architecture aligns with Law 2008-11 on Cybercrime and ADIE guidelines for digital government systems.',
+                      q: 'Is Kabat One compliant with Senegal data legislation?',
+                      a: 'Yes. Kabat One complies with Law 2008-12/CDP. The architecture aligns with Law 2008-11 on Cybercrime and ADIE guidelines for digital government systems.',
                     },
                     {
-                      q: 'How does KabatOne support border management in Senegal?',
-                      a: 'KabatOne manages border crossings with Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos) and the enclave Gambia border (Farafenni/Sénoba) with ANPR and Gendarmerie coordination.',
+                      q: 'How does Kabat One support border management in Senegal?',
+                      a: 'Kabat One manages border crossings with Mauritania (Rosso/Diama), Mali (Kidira/Diboli), Guinea-Bissau (São Domingos) and the enclave Gambia border (Farafenni/Sénoba) with ANPR and Gendarmerie coordination.',
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareSenegalPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la Police Nationale, Gendarmerie y DGPC de Senegal.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Senegal Police Nationale, Gendarmerie and DGPC.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la Police Nationale, Gendarmerie y DGPC de Senegal.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Senegal Police Nationale, Gendarmerie and DGPC.'
           }
         />
       </main>

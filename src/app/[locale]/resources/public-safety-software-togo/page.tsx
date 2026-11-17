@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareTogoPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Togo | FAT/PNT, Puerto de Lomé y Seguridad Marítima – KabatOne"
-    : "Public Safety Software for Togo | FAT/PNT, Port of Lomé & Maritime Security – KabatOne";
+    ? "Software de Seguridad Pública para Togo | FAT/PNT, Puerto de Lomé y Seguridad Marítima – Kabat One"
+    : "Public Safety Software for Togo | FAT/PNT, Port of Lomé & Maritime Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Togo (FAT), Policía Nacional, gestión del Puerto de Lomé y seguridad marítima en el Golfo de Guinea."
-    : "KabatOne delivers public safety platform for the Togolese Armed Forces (FAT), National Police, Port of Lomé management, and maritime security in the Gulf of Guinea.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Togo (FAT), Policía Nacional, gestión del Puerto de Lomé y seguridad marítima en el Golfo de Guinea."
+    : "Kabat One delivers public safety platform for the Togolese Armed Forces (FAT), National Police, Port of Lomé management, and maritime security in the Gulf of Guinea.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-togo"
     : "https://kabatone.com/resources/public-safety-software-togo";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareTogoPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Togo?"
-        : "How does KabatOne support public safety in Togo?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Togo?"
+        : "How does Kabat One support public safety in Togo?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAT/PNT a lo largo de las 5 regiones. Los módulos de seguridad marítima apoyan la marina en el Golfo de Guinea y protegen las operaciones del Puerto de Lomé. Las capacidades de gestión de fronteras respaldan el control de la triple frontera norte. El sistema es adaptable a entornos de conectividad limitada en zonas rurales de la región Savanes."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FAT/PNT operations across all 5 regions. Maritime security modules support the navy in the Gulf of Guinea and protect Port of Lomé operations. Border management capabilities support control of the northern triple-border area. System adapts to limited-connectivity environments in rural Savanes region.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAT/PNT a lo largo de las 5 regiones. Los módulos de seguridad marítima apoyan la marina en el Golfo de Guinea y protegen las operaciones del Puerto de Lomé. Las capacidades de gestión de fronteras respaldan el control de la triple frontera norte. El sistema es adaptable a entornos de conectividad limitada en zonas rurales de la región Savanes."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FAT/PNT operations across all 5 regions. Maritime security modules support the navy in the Gulf of Guinea and protect Port of Lomé operations. Border management capabilities support control of the northern triple-border area. System adapts to limited-connectivity environments in rural Savanes region.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareTogoPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Togo" : "KabatOne Capabilities for Togo"}
+              {es ? "Capacidades Kabat One para Togo" : "Kabat One Capabilities for Togo"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

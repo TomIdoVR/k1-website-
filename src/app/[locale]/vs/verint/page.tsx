@@ -28,50 +28,50 @@ export default async function VsVerintPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Verint', url: es ? 'https://kabatone.com/es/vs/verint' : 'https://kabatone.com/vs/verint' },
+    { name: 'Kabat One vs Verint', url: es ? 'https://kabatone.com/es/vs/verint' : 'https://kabatone.com/vs/verint' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Verint?',
-      answer: 'Verint es una plataforma de inteligencia de seguridad que se especializa en gestión de video, analítica de IA, gestión de situaciones y software de investigación para gobiernos, aeropuertos y grandes empresas. Es fuerte en inteligencia de video y flujos de trabajo de investigación, pero no ofrece despacho CAD nativo ni es una plataforma de mando y control verdadera para entornos C5. KabatOne es una plataforma de operaciones completa: video con IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) — todo nativo, sin hardware propietario requerido.',
+      question: '¿Cuál es la diferencia entre Kabat One y Verint?',
+      answer: 'Verint es una plataforma de inteligencia de seguridad que se especializa en gestión de video, analítica de IA, gestión de situaciones y software de investigación para gobiernos, aeropuertos y grandes empresas. Es fuerte en inteligencia de video y flujos de trabajo de investigación, pero no ofrece despacho CAD nativo ni es una plataforma de mando y control verdadera para entornos C5. Kabat One es una plataforma de operaciones completa: video con IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) — todo nativo, sin hardware propietario requerido.',
     },
     {
       question: '¿Verint tiene sistema de despacho CAD?',
-      answer: 'No. Verint se centra en vigilancia de video, analítica de IA, gestión de situaciones e inteligencia de investigaciones — no incluye un sistema de despacho CAD. Para organizaciones que necesitan coordinar el ciclo completo desde la detección hasta la respuesta en campo, Verint requiere integrarse con sistemas CAD de terceros. KabatOne K-Dispatch es un CAD completo con recepción de llamadas, recomendación de unidades por disponibilidad y proximidad, registro de despacho y seguimiento en tiempo real — nativo e integrado con video, GIS y tráfico.',
+      answer: 'No. Verint se centra en vigilancia de video, analítica de IA, gestión de situaciones e inteligencia de investigaciones — no incluye un sistema de despacho CAD. Para organizaciones que necesitan coordinar el ciclo completo desde la detección hasta la respuesta en campo, Verint requiere integrarse con sistemas CAD de terceros. Kabat One K-Dispatch es un CAD completo con recepción de llamadas, recomendación de unidades por disponibilidad y proximidad, registro de despacho y seguimiento en tiempo real — nativo e integrado con video, GIS y tráfico.',
     },
     {
       question: '¿Es Verint adecuado para centros de mando C5?',
-      answer: 'Verint cubre algunos de los requisitos de un centro C5 — gestión de video a escala, analítica de IA y gestión de situaciones — pero no cubre el flujo completo de operaciones C5. Un C5 requiere coordinación unificada de video, CAD, GIS y tráfico en una sola plataforma operativa. KabatOne está diseñado específicamente para este caso de uso: todos los módulos comparten datos en tiempo real, una alerta de video puede convertirse en un evento de despacho automáticamente, y el centro de mando puede gestionar semáforos, unidades en campo e incidentes desde una sola interfaz.',
+      answer: 'Verint cubre algunos de los requisitos de un centro C5 — gestión de video a escala, analítica de IA y gestión de situaciones — pero no cubre el flujo completo de operaciones C5. Un C5 requiere coordinación unificada de video, CAD, GIS y tráfico en una sola plataforma operativa. Kabat One está diseñado específicamente para este caso de uso: todos los módulos comparten datos en tiempo real, una alerta de video puede convertirse en un evento de despacho automáticamente, y el centro de mando puede gestionar semáforos, unidades en campo e incidentes desde una sola interfaz.',
     },
     {
-      question: '¿KabatOne requiere hardware propietario como Verint?',
-      answer: 'No. KabatOne es una plataforma de software que funciona con la infraestructura de cámaras existente — soporta ONVIF, RTSP y todos los protocolos IP estándar, permitiendo integrar cámaras de cualquier fabricante: Hikvision, Dahua, Axis, Bosch, Hanwha y muchos otros. Verint históricamente ha tenido integraciones más estrechas con su propio hardware y el de socios selectos. KabatOne elimina la dependencia de hardware propietario.',
+      question: '¿Kabat One requiere hardware propietario como Verint?',
+      answer: 'No. Kabat One es una plataforma de software que funciona con la infraestructura de cámaras existente — soporta ONVIF, RTSP y todos los protocolos IP estándar, permitiendo integrar cámaras de cualquier fabricante: Hikvision, Dahua, Axis, Bosch, Hanwha y muchos otros. Verint históricamente ha tenido integraciones más estrechas con su propio hardware y el de socios selectos. Kabat One elimina la dependencia de hardware propietario.',
     },
     {
-      question: '¿Qué ventajas tiene KabatOne frente a Verint en LATAM?',
-      answer: 'KabatOne tiene más de 40 despliegues activos en ciudades de México y América Latina — experiencia operativa real en entornos municipales de LATAM, incluyendo centros C5 y C2. Entiende los requisitos de licitación gubernamental, los marcos regulatorios locales y las necesidades específicas de coordinación multiagencia en la región. Verint no tiene presencia operativa comparable en LATAM. Además, KabatOne ofrece soporte y capacitación en español como parte estándar de su modelo de entrega.',
+      question: '¿Qué ventajas tiene Kabat One frente a Verint en LATAM?',
+      answer: 'Kabat One tiene más de 40 despliegues activos en ciudades de México y América Latina — experiencia operativa real en entornos municipales de LATAM, incluyendo centros C5 y C2. Entiende los requisitos de licitación gubernamental, los marcos regulatorios locales y las necesidades específicas de coordinación multiagencia en la región. Verint no tiene presencia operativa comparable en LATAM. Además, Kabat One ofrece soporte y capacitación en español como parte estándar de su modelo de entrega.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Verint?',
-      answer: 'Verint is an intelligence-driven security platform specializing in video surveillance management, AI analytics, situation management, and investigation software for governments, airports, and large enterprises. It is strong in video intelligence and investigation workflows, but does not offer native CAD dispatch and is not a true command-and-control platform for C5 environments. KabatOne is a complete operations platform: AI-powered video (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) — all native, with no proprietary hardware required.',
+      question: 'What is the difference between Kabat One and Verint?',
+      answer: 'Verint is an intelligence-driven security platform specializing in video surveillance management, AI analytics, situation management, and investigation software for governments, airports, and large enterprises. It is strong in video intelligence and investigation workflows, but does not offer native CAD dispatch and is not a true command-and-control platform for C5 environments. Kabat One is a complete operations platform: AI-powered video (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) — all native, with no proprietary hardware required.',
     },
     {
       question: 'Does Verint have a CAD dispatch system?',
-      answer: 'No. Verint focuses on video surveillance, AI analytics, situation management, and investigation intelligence — it does not include a CAD dispatch system. For organizations that need to coordinate the full cycle from detection to field response, Verint requires integration with third-party CAD systems. KabatOne K-Dispatch is a full CAD with call intake, unit recommendation by availability and proximity, dispatch logging, and real-time unit tracking — native and integrated with video, GIS, and traffic.',
+      answer: 'No. Verint focuses on video surveillance, AI analytics, situation management, and investigation intelligence — it does not include a CAD dispatch system. For organizations that need to coordinate the full cycle from detection to field response, Verint requires integration with third-party CAD systems. Kabat One K-Dispatch is a full CAD with call intake, unit recommendation by availability and proximity, dispatch logging, and real-time unit tracking — native and integrated with video, GIS, and traffic.',
     },
     {
       question: 'Is Verint suitable for C5 command center environments?',
-      answer: 'Verint covers some C5 requirements — large-scale video management, AI analytics, and situation management — but does not cover the full C5 operations workflow. A C5 command center requires unified coordination of video, CAD, GIS, and traffic in one operational platform. KabatOne is designed specifically for this use case: all modules share real-time data, a video alert can automatically become a dispatch event, and the command center can manage traffic signals, field units, and incidents from a single interface.',
+      answer: 'Verint covers some C5 requirements — large-scale video management, AI analytics, and situation management — but does not cover the full C5 operations workflow. A C5 command center requires unified coordination of video, CAD, GIS, and traffic in one operational platform. Kabat One is designed specifically for this use case: all modules share real-time data, a video alert can automatically become a dispatch event, and the command center can manage traffic signals, field units, and incidents from a single interface.',
     },
     {
-      question: 'Does KabatOne require proprietary hardware like Verint?',
-      answer: 'No. KabatOne is a software platform that works with existing camera infrastructure — it supports ONVIF, RTSP, and all standard IP protocols, allowing cameras from any manufacturer to be integrated: Hikvision, Dahua, Axis, Bosch, Hanwha, and many others. Verint has historically had tighter integrations with its own hardware and select partner hardware. KabatOne eliminates dependency on proprietary hardware.',
+      question: 'Does Kabat One require proprietary hardware like Verint?',
+      answer: 'No. Kabat One is a software platform that works with existing camera infrastructure — it supports ONVIF, RTSP, and all standard IP protocols, allowing cameras from any manufacturer to be integrated: Hikvision, Dahua, Axis, Bosch, Hanwha, and many others. Verint has historically had tighter integrations with its own hardware and select partner hardware. Kabat One eliminates dependency on proprietary hardware.',
     },
     {
-      question: 'What advantages does KabatOne have over Verint in LATAM?',
-      answer: 'KabatOne has 40+ active deployments in cities across Mexico and Latin America — real operational experience in LATAM municipal environments, including C5 and C2 command centers. It understands government procurement requirements, local regulatory frameworks, and the specific multi-agency coordination needs of the region. Verint does not have comparable operational presence in LATAM. Additionally, KabatOne provides Spanish-language support and training as a standard part of its delivery model.',
+      question: 'What advantages does Kabat One have over Verint in LATAM?',
+      answer: 'Kabat One has 40+ active deployments in cities across Mexico and Latin America — real operational experience in LATAM municipal environments, including C5 and C2 command centers. It understands government procurement requirements, local regulatory frameworks, and the specific multi-agency coordination needs of the region. Verint does not have comparable operational presence in LATAM. Additionally, Kabat One provides Spanish-language support and training as a standard part of its delivery model.',
     },
   ]
 
@@ -162,36 +162,36 @@ export default async function VsVerintPage({
   const wins = es ? [
     {
       title: 'CAD y Video en un Solo Flujo',
-      body: 'Verint ofrece inteligencia de video potente, pero no tiene CAD. KabatOne conecta una alerta de video directamente con el despacho — sin cambio de sistema, sin demora operativa.',
+      body: 'Verint ofrece inteligencia de video potente, pero no tiene CAD. Kabat One conecta una alerta de video directamente con el despacho — sin cambio de sistema, sin demora operativa.',
     },
     {
       title: 'Preparado para C5 por Diseño',
-      body: 'KabatOne integra video, GIS, CAD y tráfico en un solo entorno operativo. Es la plataforma base del centro C5, no una capa adicional encima de un CAD existente.',
+      body: 'Kabat One integra video, GIS, CAD y tráfico en un solo entorno operativo. Es la plataforma base del centro C5, no una capa adicional encima de un CAD existente.',
     },
     {
       title: 'Sin Lock-in de Hardware Propietario',
-      body: 'KabatOne soporta ONVIF, RTSP y todos los protocolos IP estándar. Los municipios pueden usar la infraestructura de cámaras existente sin reemplazar equipos ni depender de un proveedor de hardware.',
+      body: 'Kabat One soporta ONVIF, RTSP y todos los protocolos IP estándar. Los municipios pueden usar la infraestructura de cámaras existente sin reemplazar equipos ni depender de un proveedor de hardware.',
     },
     {
       title: 'Track Record en LATAM',
-      body: 'Más de 40 ciudades en México y América Latina operan con KabatOne. Conocemos los procesos de licitación, los marcos regulatorios y las necesidades de coordinación en la región.',
+      body: 'Más de 40 ciudades en México y América Latina operan con Kabat One. Conocemos los procesos de licitación, los marcos regulatorios y las necesidades de coordinación en la región.',
     },
   ] : [
     {
       title: 'CAD and Video in One Workflow',
-      body: 'Verint delivers powerful video intelligence, but has no CAD. KabatOne connects a video alert directly to dispatch — no system switching, no operational delay.',
+      body: 'Verint delivers powerful video intelligence, but has no CAD. Kabat One connects a video alert directly to dispatch — no system switching, no operational delay.',
     },
     {
       title: 'C5 Command Center Ready by Design',
-      body: 'KabatOne integrates video, GIS, CAD, and traffic in one operational environment. It is the command center base platform, not an additional layer on top of an existing CAD.',
+      body: 'Kabat One integrates video, GIS, CAD, and traffic in one operational environment. It is the command center base platform, not an additional layer on top of an existing CAD.',
     },
     {
       title: 'No Proprietary Hardware Lock-in',
-      body: 'KabatOne supports ONVIF, RTSP, and all standard IP protocols. Municipalities can use existing camera infrastructure without replacing equipment or depending on a specific hardware vendor.',
+      body: 'Kabat One supports ONVIF, RTSP, and all standard IP protocols. Municipalities can use existing camera infrastructure without replacing equipment or depending on a specific hardware vendor.',
     },
     {
       title: 'Proven LATAM Deployment Track Record',
-      body: '40+ cities in Mexico and Latin America operate on KabatOne. We understand procurement processes, regulatory frameworks, and the coordination requirements specific to the region.',
+      body: '40+ cities in Mexico and Latin America operate on Kabat One. We understand procurement processes, regulatory frameworks, and the coordination requirements specific to the region.',
     },
   ]
 
@@ -207,8 +207,8 @@ export default async function VsVerintPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             articleSchema(
-              es ? 'KabatOne vs Verint — Inteligencia de Video vs Plataforma de Operaciones Unificada' : 'KabatOne vs Verint — Video Intelligence vs Unified Operations Platform',
-              es ? 'Verint gestiona video a escala con analítica IA. KabatOne agrega despacho CAD, GIS operacional y gestión de tráfico — la plataforma de operaciones completa para centros de mando C5.' : 'Verint manages video at scale with AI analytics. KabatOne adds CAD dispatch, operational GIS, and traffic management — the complete operations platform for C5 command centers.',
+              es ? 'Kabat One vs Verint — Inteligencia de Video vs Plataforma de Operaciones Unificada' : 'Kabat One vs Verint — Video Intelligence vs Unified Operations Platform',
+              es ? 'Verint gestiona video a escala con analítica IA. Kabat One agrega despacho CAD, GIS operacional y gestión de tráfico — la plataforma de operaciones completa para centros de mando C5.' : 'Verint manages video at scale with AI analytics. Kabat One adds CAD dispatch, operational GIS, and traffic management — the complete operations platform for C5 command centers.',
               es ? 'https://kabatone.com/es/vs/verint' : 'https://kabatone.com/vs/verint',
               '2026-04-07'
             )
@@ -232,7 +232,7 @@ export default async function VsVerintPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Verint</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Verint</span>
         </div>
 
         {/* ── HERO ── */}
@@ -251,13 +251,13 @@ export default async function VsVerintPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Verint — Inteligencia de Video vs Operaciones Unificadas'
-              : 'KabatOne vs Verint — Video Intelligence vs Unified Operations'}
+              ? 'Kabat One vs Verint — Inteligencia de Video vs Operaciones Unificadas'
+              : 'Kabat One vs Verint — Video Intelligence vs Unified Operations'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Verint es una plataforma de inteligencia de seguridad reconocida — fuerte en gestión de video, analítica de IA y flujos de trabajo de investigación para gobiernos y aeropuertos. Pero no tiene despacho CAD, no tiene GIS operacional y no está diseñada para el flujo de operaciones C5 completo. KabatOne conecta video, CAD, GIS y tráfico en un solo entorno operativo — sin hardware propietario, con más de 40 despliegues activos en LATAM.'
-              : 'Verint is a recognized intelligence-driven security platform — strong in video management, AI analytics, and investigation workflows for governments and airports. But it has no CAD dispatch, no operational GIS, and is not designed for the full C5 operations workflow. KabatOne connects video, CAD, GIS, and traffic in one operational environment — no proprietary hardware, with 40+ active deployments across LATAM.'}
+              ? 'Verint es una plataforma de inteligencia de seguridad reconocida — fuerte en gestión de video, analítica de IA y flujos de trabajo de investigación para gobiernos y aeropuertos. Pero no tiene despacho CAD, no tiene GIS operacional y no está diseñada para el flujo de operaciones C5 completo. Kabat One conecta video, CAD, GIS y tráfico en un solo entorno operativo — sin hardware propietario, con más de 40 despliegues activos en LATAM.'
+              : 'Verint is a recognized intelligence-driven security platform — strong in video management, AI analytics, and investigation workflows for governments and airports. But it has no CAD dispatch, no operational GIS, and is not designed for the full C5 operations workflow. Kabat One connects video, CAD, GIS, and traffic in one operational environment — no proprietary hardware, with 40+ active deployments across LATAM.'}
           </p>
         </section>
 
@@ -297,22 +297,22 @@ export default async function VsVerintPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'A diferencia de Verint, que es una plataforma de inteligencia de video que se integra con sistemas CAD de terceros, KabatOne es la plataforma operacional central del centro de mando. Una alerta de reconocimiento de matrícula en K-Video puede generar automáticamente un evento en K-Dispatch. El despachador ve el video de la cámara más cercana directamente en el contexto del incidente. K-Traffic puede ajustar semáforos en la ruta de la unidad respondedora — todo sin salir del flujo de trabajo.'
-                : 'Unlike Verint, which is a video intelligence platform that integrates with third-party CAD systems, KabatOne is the central operational platform of the command center. A license plate recognition alert in K-Video can automatically generate an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. K-Traffic can adjust signals on the responding unit\'s route — all without leaving the workflow.'}
+                ? 'A diferencia de Verint, que es una plataforma de inteligencia de video que se integra con sistemas CAD de terceros, Kabat One es la plataforma operacional central del centro de mando. Una alerta de reconocimiento de matrícula en K-Video puede generar automáticamente un evento en K-Dispatch. El despachador ve el video de la cámara más cercana directamente en el contexto del incidente. K-Traffic puede ajustar semáforos en la ruta de la unidad respondedora — todo sin salir del flujo de trabajo.'
+                : 'Unlike Verint, which is a video intelligence platform that integrates with third-party CAD systems, Kabat One is the central operational platform of the command center. A license plate recognition alert in K-Video can automatically generate an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. K-Traffic can adjust signals on the responding unit\'s route — all without leaving the workflow.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Es una plataforma software-first que soporta ONVIF, RTSP y todos los protocolos IP estándar — sin lock-in de hardware propietario. Para centros C5 y C2 en LATAM que necesitan una plataforma operacional completa con soporte local y experiencia en la región, KabatOne es la elección natural.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. It is a software-first platform that supports ONVIF, RTSP, and all standard IP protocols — no proprietary hardware lock-in. For C5 and C2 command centers in LATAM that need a complete operational platform with local support and regional experience, KabatOne is the natural choice.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Es una plataforma software-first que soporta ONVIF, RTSP y todos los protocolos IP estándar — sin lock-in de hardware propietario. Para centros C5 y C2 en LATAM que necesitan una plataforma operacional completa con soporte local y experiencia en la región, Kabat One es la elección natural.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. It is a software-first platform that supports ONVIF, RTSP, and all standard IP protocols — no proprietary hardware lock-in. For C5 and C2 command centers in LATAM that need a complete operational platform with local support and regional experience, Kabat One is the natural choice.'}
             </p>
           </div>
         </section>
@@ -325,12 +325,12 @@ export default async function VsVerintPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Verint: Diferencias Clave' : 'KabatOne vs Verint: Key Differences'}
+              {es ? 'Kabat One vs Verint: Diferencias Clave' : 'Kabat One vs Verint: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Verint en ocho dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Verint across eight operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Verint en ocho dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Verint across eight operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -345,7 +345,7 @@ export default async function VsVerintPage({
                   Verint
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -377,7 +377,7 @@ export default async function VsVerintPage({
               letterSpacing: '0.25em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Por Qué KabatOne Gana' : 'Why KabatOne Wins'}
+              {es ? 'Por Qué Kabat One Gana' : 'Why Kabat One Wins'}
             </p>
             <h2 style={{
               fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 800,
@@ -435,13 +435,13 @@ export default async function VsVerintPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne parte de un punto diferente: es la plataforma operacional central. En lugar de añadir inteligencia de video sobre un CAD existente, KabatOne construye el CAD, el video, el GIS y el tráfico como módulos nativos de una misma plataforma. El resultado es un flujo de operaciones sin fricciones: detección en video, alerta automática al despachador, despacho de unidad, ajuste de semáforos en la ruta, seguimiento de la unidad en GIS — todo en una sola pantalla sin cambio de sistema.'
-                : 'KabatOne starts from a different point: it is the central operational platform. Rather than adding video intelligence on top of an existing CAD, KabatOne builds CAD, video, GIS, and traffic as native modules of the same platform. The result is a frictionless operations workflow: video detection, automatic alert to dispatcher, unit dispatch, signal adjustment on the route, unit tracking on GIS — all in one screen without switching systems.'}
+                ? 'Kabat One parte de un punto diferente: es la plataforma operacional central. En lugar de añadir inteligencia de video sobre un CAD existente, Kabat One construye el CAD, el video, el GIS y el tráfico como módulos nativos de una misma plataforma. El resultado es un flujo de operaciones sin fricciones: detección en video, alerta automática al despachador, despacho de unidad, ajuste de semáforos en la ruta, seguimiento de la unidad en GIS — todo en una sola pantalla sin cambio de sistema.'
+                : 'Kabat One starts from a different point: it is the central operational platform. Rather than adding video intelligence on top of an existing CAD, Kabat One builds CAD, video, GIS, and traffic as native modules of the same platform. The result is a frictionless operations workflow: video detection, automatic alert to dispatcher, unit dispatch, signal adjustment on the route, unit tracking on GIS — all in one screen without switching systems.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para centros C5 y C2 que están construyendo o modernizando su infraestructura operacional — especialmente en México y América Latina — KabatOne ofrece la plataforma diseñada para ese caso de uso específico: un solo entorno donde video, despacho, GIS y tráfico convergen en un flujo de trabajo unificado, con experiencia de despliegue real en la región.'
-                : 'For C5 and C2 command centers building or modernizing their operational infrastructure — especially in Mexico and Latin America — KabatOne provides the platform designed for that specific use case: a single environment where video, dispatch, GIS, and traffic converge in a unified workflow, with real deployment experience in the region.'}
+                ? 'Para centros C5 y C2 que están construyendo o modernizando su infraestructura operacional — especialmente en México y América Latina — Kabat One ofrece la plataforma diseñada para ese caso de uso específico: un solo entorno donde video, despacho, GIS y tráfico convergen en un flujo de trabajo unificado, con experiencia de despliegue real en la región.'
+                : 'For C5 and C2 command centers building or modernizing their operational infrastructure — especially in Mexico and Latin America — Kabat One provides the platform designed for that specific use case: a single environment where video, dispatch, GIS, and traffic converge in a unified workflow, with real deployment experience in the region.'}
             </p>
           </div>
         </section>
@@ -454,7 +454,7 @@ export default async function VsVerintPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -524,7 +524,7 @@ export default async function VsVerintPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Verint: Preguntas y Respuestas' : 'KabatOne vs Verint: Questions & Answers'}
+              {es ? 'Kabat One vs Verint: Preguntas y Respuestas' : 'Kabat One vs Verint: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -564,7 +564,7 @@ export default async function VsVerintPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec'}</span>
+                <span>{es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/milestone" style={{
@@ -573,7 +573,7 @@ export default async function VsVerintPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Milestone XProtect' : 'KabatOne vs Milestone XProtect'}</span>
+                <span>{es ? 'Kabat One vs Milestone XProtect' : 'Kabat One vs Milestone XProtect'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/avigilon" style={{
@@ -582,7 +582,7 @@ export default async function VsVerintPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon'}</span>
+                <span>{es ? 'Kabat One vs Avigilon' : 'Kabat One vs Avigilon'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -591,7 +591,7 @@ export default async function VsVerintPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
@@ -603,8 +603,8 @@ export default async function VsVerintPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
-            : 'See how KabatOne unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
+            ? 'Descubre cómo Kabat One unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
+            : 'See how Kabat One unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
         />
 
         <Footer es={es} />

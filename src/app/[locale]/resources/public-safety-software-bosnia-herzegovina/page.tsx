@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareBosniaHerzegovina({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Bosnia y Herzegovina | SIPA/OSA-OBA, Corredor Vc, Puerto de Ploče y Proceso UE – KabatOne"
-        : "Public Safety Software for Bosnia and Herzegovina | SIPA/OSA-OBA, Corridor Vc, Port of Ploče & EU Process – KabatOne",
+        ? "Software de Seguridad Pública para Bosnia y Herzegovina | SIPA/OSA-OBA, Corredor Vc, Puerto de Ploče y Proceso UE – Kabat One"
+        : "Public Safety Software for Bosnia and Herzegovina | SIPA/OSA-OBA, Corridor Vc, Port of Ploče & EU Process – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para Bosnia y Herzegovina — SIPA policía estatal, OSA-OBA inteligencia, Corredor Vc Budapest-Ploče, gestión entidades RS/FBiH/Brčko, proceso candidatura UE 2022 y coordinación EUFOR Althea/Frontex."
-        : "KabatOne delivers public safety platform for Bosnia and Herzegovina — SIPA state police, OSA-OBA intelligence, Corridor Vc Budapest-Ploče, RS/FBiH/Brčko entity management, EU candidacy process 2022, and EUFOR Althea/Frontex coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para Bosnia y Herzegovina — SIPA policía estatal, OSA-OBA inteligencia, Corredor Vc Budapest-Ploče, gestión entidades RS/FBiH/Brčko, proceso candidatura UE 2022 y coordinación EUFOR Althea/Frontex."
+        : "Kabat One delivers public safety platform for Bosnia and Herzegovina — SIPA state police, OSA-OBA intelligence, Corridor Vc Budapest-Ploče, RS/FBiH/Brčko entity management, EU candidacy process 2022, and EUFOR Althea/Frontex coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-bosnia-herzegovina"
         : "https://kabatone.com/resources/public-safety-software-bosnia-herzegovina",
@@ -344,13 +344,13 @@ export default async function PublicSafetySoftwareBosniaHerzegovina({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Bosnia y Herzegovina"
-              : "KabatOne Capabilities for Bosnia and Herzegovina"}
+              ? "Capacidades Kabat One para Bosnia y Herzegovina"
+              : "Kabat One Capabilities for Bosnia and Herzegovina"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -437,11 +437,11 @@ export default async function PublicSafetySoftwareBosniaHerzegovina({
               },
               {
                 q: es
-                  ? "¿Cómo puede KabatOne gestionar el complejo marco institucional de BiH?"
-                  : "How can KabatOne manage BiH's complex institutional framework?",
+                  ? "¿Cómo puede Kabat One gestionar el complejo marco institucional de BiH?"
+                  : "How can Kabat One manage BiH's complex institutional framework?",
                 a: es
-                  ? "KabatOne utiliza una arquitectura multi-tenancy con capas de permisos por jurisdicción, permitiendo a SIPA, MUP FBiH, MUP RS y Policía Brčko trabajar en la misma plataforma respetando la soberanía de cada entidad y el marco constitucional de Dayton."
-                  : "KabatOne uses a multi-tenancy architecture with jurisdiction-based permission layers, allowing SIPA, MoI FBiH, MUP RS, and Brčko Police to work on the same platform while respecting each entity's sovereignty and the Dayton constitutional framework.",
+                  ? "Kabat One utiliza una arquitectura multi-tenancy con capas de permisos por jurisdicción, permitiendo a SIPA, MUP FBiH, MUP RS y Policía Brčko trabajar en la misma plataforma respetando la soberanía de cada entidad y el marco constitucional de Dayton."
+                  : "Kabat One uses a multi-tenancy architecture with jurisdiction-based permission layers, allowing SIPA, MoI FBiH, MUP RS, and Brčko Police to work on the same platform while respecting each entity's sovereignty and the Dayton constitutional framework.",
               },
             ].map((item) => (
               <div
@@ -465,8 +465,8 @@ export default async function PublicSafetySoftwareBosniaHerzegovina({
         }
         subtitle={
           es
-            ? "KabatOne conecta SIPA, MUP FBiH, MUP RS y Policía Brčko en una plataforma unificada — Corredor Vc, gestión de fronteras, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
-            : "KabatOne connects SIPA, MoI FBiH, MUP RS, and Brčko Police in one unified platform — Corridor Vc, border management, AZLP/GDPR compliance, and support for the EU accession process."
+            ? "Kabat One conecta SIPA, MUP FBiH, MUP RS y Policía Brčko en una plataforma unificada — Corredor Vc, gestión de fronteras, cumplimiento AZLP/GDPR y soporte para el proceso de adhesión UE."
+            : "Kabat One connects SIPA, MoI FBiH, MUP RS, and Brčko Police in one unified platform — Corridor Vc, border management, AZLP/GDPR compliance, and support for the EU accession process."
         }
       />
       <Footer es={es} />

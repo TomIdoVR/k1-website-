@@ -28,17 +28,17 @@ export default async function VsPalantirPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Palantir', url: es ? 'https://kabatone.com/es/vs/palantir' : 'https://kabatone.com/vs/palantir' },
+    { name: 'Kabat One vs Palantir', url: es ? 'https://kabatone.com/es/vs/palantir' : 'https://kabatone.com/vs/palantir' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Palantir Gotham?',
-      answer: 'Palantir Gotham es una plataforma de inteligencia y análisis de datos — agrega fuentes de información heterogéneas, construye grafos de relaciones, detecta patrones y apoya el análisis de investigación criminal y contraterrorismo. Es una herramienta de analistas e investigadores. KabatOne es una plataforma de operaciones en tiempo real — conecta cámaras, sensores, CAD de despacho y unidades de campo en un flujo operativo unificado para centros de mando. Palantir pregunta "¿qué está pasando?"; KabatOne ejecuta la respuesta.',
+      question: '¿Cuál es la diferencia entre Kabat One y Palantir Gotham?',
+      answer: 'Palantir Gotham es una plataforma de inteligencia y análisis de datos — agrega fuentes de información heterogéneas, construye grafos de relaciones, detecta patrones y apoya el análisis de investigación criminal y contraterrorismo. Es una herramienta de analistas e investigadores. Kabat One es una plataforma de operaciones en tiempo real — conecta cámaras, sensores, CAD de despacho y unidades de campo en un flujo operativo unificado para centros de mando. Palantir pregunta "¿qué está pasando?"; Kabat One ejecuta la respuesta.',
     },
     {
-      question: '¿KabatOne reemplaza a Palantir?',
-      answer: 'No son sustitutos directos. Palantir Gotham opera en el tiempo de la inteligencia — análisis retrospectivo, identificación de patrones, investigación criminal. KabatOne opera en el tiempo de la respuesta — los próximos 90 segundos de un incidente activo. Una agencia grande puede usar ambos: Palantir para análisis predictivo e investigación, KabatOne para operaciones en tiempo real y coordinación de respuesta. Para ciudades y municipios que no tienen (y no pueden pagar) Palantir, KabatOne cubre las necesidades operativas de un centro de mando moderno.',
+      question: '¿Kabat One reemplaza a Palantir?',
+      answer: 'No son sustitutos directos. Palantir Gotham opera en el tiempo de la inteligencia — análisis retrospectivo, identificación de patrones, investigación criminal. Kabat One opera en el tiempo de la respuesta — los próximos 90 segundos de un incidente activo. Una agencia grande puede usar ambos: Palantir para análisis predictivo e investigación, Kabat One para operaciones en tiempo real y coordinación de respuesta. Para ciudades y municipios que no tienen (y no pueden pagar) Palantir, Kabat One cubre las necesidades operativas de un centro de mando moderno.',
     },
     {
       question: '¿Qué hace Palantir Gotham?',
@@ -46,24 +46,24 @@ export default async function VsPalantirPage({
     },
     {
       question: '¿Palantir es adecuado para municipios y centros C4/C5?',
-      answer: 'Palantir Gotham está orientado a agencias nacionales de inteligencia, grandes fuerzas de seguridad federal y clientes de defensa. El precio, la complejidad de implementación y el perfil de usuario (analistas de inteligencia especializados) lo hacen poco práctico para la mayoría de municipios. KabatOne está construido específicamente para el modelo operativo de ciudades y centros C4/C5 — despacho 911, gestión de cámaras urbanas, botones de pánico, LPR, coordinación multiagencia — con localización en español y experiencia directa en el mercado LATAM.',
+      answer: 'Palantir Gotham está orientado a agencias nacionales de inteligencia, grandes fuerzas de seguridad federal y clientes de defensa. El precio, la complejidad de implementación y el perfil de usuario (analistas de inteligencia especializados) lo hacen poco práctico para la mayoría de municipios. Kabat One está construido específicamente para el modelo operativo de ciudades y centros C4/C5 — despacho 911, gestión de cámaras urbanas, botones de pánico, LPR, coordinación multiagencia — con localización en español y experiencia directa en el mercado LATAM.',
     },
     {
-      question: '¿KabatOne tiene capacidades analíticas?',
-      answer: 'KabatOne incluye analítica IA dentro del flujo operativo: K-Video aplica analítica de video para detectar objetos, comportamientos y anomalías en tiempo real; K-Safety cruza incidentes, unidades y sensores en el mapa operacional; K-Dispatch analiza la disponibilidad y proximidad de unidades para recomendar el mejor recurso. No es una plataforma de investigación retroactiva como Palantir, sino analítica aplicada directamente al flujo de respuesta.',
+      question: '¿Kabat One tiene capacidades analíticas?',
+      answer: 'Kabat One incluye analítica IA dentro del flujo operativo: K-Video aplica analítica de video para detectar objetos, comportamientos y anomalías en tiempo real; K-Safety cruza incidentes, unidades y sensores en el mapa operacional; K-Dispatch analiza la disponibilidad y proximidad de unidades para recomendar el mejor recurso. No es una plataforma de investigación retroactiva como Palantir, sino analítica aplicada directamente al flujo de respuesta.',
     },
     {
-      question: '¿Cuál es el precio de Palantir vs KabatOne?',
-      answer: 'Palantir no publica precios públicamente; los contratos típicos de Palantir Gotham con agencias gubernamentales van desde millones de dólares al año, con costos de implementación, entrenamiento especializado y equipos de ingeniería dedicados. KabatOne opera como SaaS con precios adaptados al tamaño y capacidades del municipio, sin hardware propietario y con implementación asistida. Para ciudades de tamaño medio en Latinoamérica, KabatOne ofrece capacidades operativas de clase mundial a una fracción del costo de una plataforma de inteligencia de nivel federal.',
+      question: '¿Cuál es el precio de Palantir vs Kabat One?',
+      answer: 'Palantir no publica precios públicamente; los contratos típicos de Palantir Gotham con agencias gubernamentales van desde millones de dólares al año, con costos de implementación, entrenamiento especializado y equipos de ingeniería dedicados. Kabat One opera como SaaS con precios adaptados al tamaño y capacidades del municipio, sin hardware propietario y con implementación asistida. Para ciudades de tamaño medio en Latinoamérica, Kabat One ofrece capacidades operativas de clase mundial a una fracción del costo de una plataforma de inteligencia de nivel federal.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Palantir Gotham?',
-      answer: 'Palantir Gotham is an intelligence and data analytics platform — it aggregates heterogeneous information sources, builds relationship graphs, detects patterns, and supports criminal investigation and counterterrorism analysis. It is a tool for analysts and investigators. KabatOne is a real-time operations platform — it connects cameras, sensors, CAD dispatch, and field units in a unified operational workflow for command centers. Palantir asks "what is happening?"; KabatOne executes the response.',
+      question: 'What is the difference between Kabat One and Palantir Gotham?',
+      answer: 'Palantir Gotham is an intelligence and data analytics platform — it aggregates heterogeneous information sources, builds relationship graphs, detects patterns, and supports criminal investigation and counterterrorism analysis. It is a tool for analysts and investigators. Kabat One is a real-time operations platform — it connects cameras, sensors, CAD dispatch, and field units in a unified operational workflow for command centers. Palantir asks "what is happening?"; Kabat One executes the response.',
     },
     {
-      question: 'Does KabatOne replace Palantir?',
-      answer: 'They are not direct substitutes. Palantir Gotham operates in intelligence time — retrospective analysis, pattern identification, criminal investigation. KabatOne operates in response time — the next 90 seconds of an active incident. A large agency can use both: Palantir for predictive analytics and investigation, KabatOne for real-time operations and response coordination. For cities and municipalities that do not have (and cannot afford) Palantir, KabatOne covers the operational needs of a modern command center.',
+      question: 'Does Kabat One replace Palantir?',
+      answer: 'They are not direct substitutes. Palantir Gotham operates in intelligence time — retrospective analysis, pattern identification, criminal investigation. Kabat One operates in response time — the next 90 seconds of an active incident. A large agency can use both: Palantir for predictive analytics and investigation, Kabat One for real-time operations and response coordination. For cities and municipalities that do not have (and cannot afford) Palantir, Kabat One covers the operational needs of a modern command center.',
     },
     {
       question: 'What does Palantir Gotham do?',
@@ -71,15 +71,15 @@ export default async function VsPalantirPage({
     },
     {
       question: 'Is Palantir suitable for municipalities and C4/C5 centers?',
-      answer: 'Palantir Gotham is oriented toward national intelligence agencies, large federal security forces, and defense clients. The price, implementation complexity, and user profile (specialized intelligence analysts) make it impractical for most municipalities. KabatOne is built specifically for the operational model of cities and C4/C5 centers — 911 dispatch, urban camera management, panic buttons, LPR, multi-agency coordination — with Spanish localization and direct experience in the LATAM market.',
+      answer: 'Palantir Gotham is oriented toward national intelligence agencies, large federal security forces, and defense clients. The price, implementation complexity, and user profile (specialized intelligence analysts) make it impractical for most municipalities. Kabat One is built specifically for the operational model of cities and C4/C5 centers — 911 dispatch, urban camera management, panic buttons, LPR, multi-agency coordination — with Spanish localization and direct experience in the LATAM market.',
     },
     {
-      question: 'Does KabatOne have analytics capabilities?',
-      answer: 'KabatOne includes AI analytics within the operational workflow: K-Video applies video analytics to detect objects, behaviors, and anomalies in real time; K-Safety cross-references incidents, units, and sensors on the operational map; K-Dispatch analyzes unit availability and proximity to recommend the best resource. It is not a retroactive investigation platform like Palantir, but analytics applied directly to the response workflow.',
+      question: 'Does Kabat One have analytics capabilities?',
+      answer: 'Kabat One includes AI analytics within the operational workflow: K-Video applies video analytics to detect objects, behaviors, and anomalies in real time; K-Safety cross-references incidents, units, and sensors on the operational map; K-Dispatch analyzes unit availability and proximity to recommend the best resource. It is not a retroactive investigation platform like Palantir, but analytics applied directly to the response workflow.',
     },
     {
-      question: 'What is the price of Palantir vs KabatOne?',
-      answer: 'Palantir does not publish public pricing; typical Palantir Gotham contracts with government agencies run from millions of dollars per year, with implementation costs, specialized training, and dedicated engineering teams. KabatOne operates as SaaS with pricing adapted to municipality size and capabilities, with no proprietary hardware and assisted implementation. For mid-size cities in Latin America, KabatOne delivers world-class operational capabilities at a fraction of the cost of a federal-level intelligence platform.',
+      question: 'What is the price of Palantir vs Kabat One?',
+      answer: 'Palantir does not publish public pricing; typical Palantir Gotham contracts with government agencies run from millions of dollars per year, with implementation costs, specialized training, and dedicated engineering teams. Kabat One operates as SaaS with pricing adapted to municipality size and capabilities, with no proprietary hardware and assisted implementation. For mid-size cities in Latin America, Kabat One delivers world-class operational capabilities at a fraction of the cost of a federal-level intelligence platform.',
     },
   ]
 
@@ -201,7 +201,7 @@ export default async function VsPalantirPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Palantir</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Palantir</span>
         </div>
 
         {/* ── HERO ── */}
@@ -220,13 +220,13 @@ export default async function VsPalantirPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Palantir Gotham — Operaciones en Tiempo Real vs Plataforma de Inteligencia'
-              : 'KabatOne vs Palantir Gotham — Real-Time Operations vs Intelligence Platform'}
+              ? 'Kabat One vs Palantir Gotham — Operaciones en Tiempo Real vs Plataforma de Inteligencia'
+              : 'Kabat One vs Palantir Gotham — Real-Time Operations vs Intelligence Platform'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Palantir Gotham analiza lo que ocurrió — agrega datos, construye grafos de relaciones y apoya la inteligencia investigativa. KabatOne coordina lo que está ocurriendo ahora — conecta cámaras, sensores, CAD y unidades en el flujo de respuesta de los próximos 90 segundos. Son capas diferentes, pero complementarias, de la seguridad pública moderna.'
-              : 'Palantir Gotham analyzes what happened — it aggregates data, builds relationship graphs, and supports investigative intelligence. KabatOne coordinates what is happening right now — it connects cameras, sensors, CAD, and units in the response workflow of the next 90 seconds. They are different, but complementary, layers of modern public safety.'}
+              ? 'Palantir Gotham analiza lo que ocurrió — agrega datos, construye grafos de relaciones y apoya la inteligencia investigativa. Kabat One coordina lo que está ocurriendo ahora — conecta cámaras, sensores, CAD y unidades en el flujo de respuesta de los próximos 90 segundos. Son capas diferentes, pero complementarias, de la seguridad pública moderna.'
+              : 'Palantir Gotham analyzes what happened — it aggregates data, builds relationship graphs, and supports investigative intelligence. Kabat One coordinates what is happening right now — it connects cameras, sensors, CAD, and units in the response workflow of the next 90 seconds. They are different, but complementary, layers of modern public safety.'}
           </p>
         </section>
 
@@ -266,22 +266,22 @@ export default async function VsPalantirPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública cloud-native construida para la capa de operaciones en tiempo real. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma operativa.'
-                : 'KabatOne is a cloud-native unified public safety platform built for the real-time operations layer. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one operational platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública cloud-native construida para la capa de operaciones en tiempo real. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma operativa.'
+                : 'Kabat One is a cloud-native unified public safety platform built for the real-time operations layer. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one operational platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Cuando llega una llamada al 911, KabatOne integra el intake en K-Dispatch, muestra el incidente en el mapa de K-Safety, abre las cámaras del área en K-Video, recomienda la unidad más cercana con su ETA y permite coordinar la ruta de emergencia con K-Traffic — todo en una pantalla, en segundos. Para un operador de centro de mando, esto es lo que importa: velocidad, integración y claridad en el momento del incidente activo.'
-                : 'When a 911 call comes in, KabatOne integrates the intake in K-Dispatch, shows the incident on the K-Safety map, opens the area cameras in K-Video, recommends the nearest unit with its ETA, and enables emergency route coordination with K-Traffic — all in one screen, in seconds. For a command center operator, this is what matters: speed, integration, and clarity at the moment of the active incident.'}
+                ? 'Cuando llega una llamada al 911, Kabat One integra el intake en K-Dispatch, muestra el incidente en el mapa de K-Safety, abre las cámaras del área en K-Video, recomienda la unidad más cercana con su ETA y permite coordinar la ruta de emergencia con K-Traffic — todo en una pantalla, en segundos. Para un operador de centro de mando, esto es lo que importa: velocidad, integración y claridad en el momento del incidente activo.'
+                : 'When a 911 call comes in, Kabat One integrates the intake in K-Dispatch, shows the incident on the K-Safety map, opens the area cameras in K-Video, recommends the nearest unit with its ETA, and enables emergency route coordination with K-Traffic — all in one screen, in seconds. For a command center operator, this is what matters: speed, integration, and clarity at the moment of the active incident.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y Latinoamérica. Para ciudades que necesitan la capa de operaciones en tiempo real — no la capa de inteligencia — KabatOne es la plataforma de referencia en el mercado LATAM.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens in Mexico and Latin America. For cities that need the real-time operations layer — not the intelligence layer — KabatOne is the reference platform in the LATAM market.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y Latinoamérica. Para ciudades que necesitan la capa de operaciones en tiempo real — no la capa de inteligencia — Kabat One es la plataforma de referencia en el mercado LATAM.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens in Mexico and Latin America. For cities that need the real-time operations layer — not the intelligence layer — Kabat One is the reference platform in the LATAM market.'}
             </p>
           </div>
         </section>
@@ -294,12 +294,12 @@ export default async function VsPalantirPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Palantir Gotham: Diferencias Clave' : 'KabatOne vs Palantir Gotham: Key Differences'}
+              {es ? 'Kabat One vs Palantir Gotham: Diferencias Clave' : 'Kabat One vs Palantir Gotham: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'Palantir opera en el tiempo de la inteligencia; KabatOne opera en el tiempo de la respuesta. Son capas complementarias, no competidoras directas.'
-                : 'Palantir operates in intelligence time; KabatOne operates in response time. They are complementary layers, not direct competitors.'}
+                ? 'Palantir opera en el tiempo de la inteligencia; Kabat One opera en el tiempo de la respuesta. Son capas complementarias, no competidoras directas.'
+                : 'Palantir operates in intelligence time; Kabat One operates in response time. They are complementary layers, not direct competitors.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -314,7 +314,7 @@ export default async function VsPalantirPage({
                   Palantir Gotham
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -360,8 +360,8 @@ export default async function VsPalantirPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'La arquitectura correcta para una agencia grande puede incluir ambas capas: Palantir o una herramienta de análisis similar para el ciclo de inteligencia, y KabatOne para el ciclo de respuesta operativa. Para ciudades y municipios que necesitan resolver las operaciones del centro de mando sin la complejidad y el costo de una plataforma federal de inteligencia, KabatOne cubre la capa operativa de forma completa.'
-                : 'The right architecture for a large agency may include both layers: Palantir or a similar analytics tool for the intelligence cycle, and KabatOne for the operational response cycle. For cities and municipalities that need to solve command center operations without the complexity and cost of a federal intelligence platform, KabatOne fully covers the operational layer.'}
+                ? 'La arquitectura correcta para una agencia grande puede incluir ambas capas: Palantir o una herramienta de análisis similar para el ciclo de inteligencia, y Kabat One para el ciclo de respuesta operativa. Para ciudades y municipios que necesitan resolver las operaciones del centro de mando sin la complejidad y el costo de una plataforma federal de inteligencia, Kabat One cubre la capa operativa de forma completa.'
+                : 'The right architecture for a large agency may include both layers: Palantir or a similar analytics tool for the intelligence cycle, and Kabat One for the operational response cycle. For cities and municipalities that need to solve command center operations without the complexity and cost of a federal intelligence platform, Kabat One fully covers the operational layer.'}
             </p>
           </div>
         </section>
@@ -383,8 +383,8 @@ export default async function VsPalantirPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne cubre esa brecha operativa. Está construido para el modelo de los centros C4/C5 en Latinoamérica — con localización nativa en español, experiencia directa en los modelos operativos de México, Perú y Colombia, y precio adaptado a municipios de la región. Para la capa de inteligencia, las agencias que lo necesiten pueden integrar herramientas analíticas vía API. Para la capa de operaciones en tiempo real, KabatOne es la referencia del mercado.'
-                : 'KabatOne fills that operational gap. It is built for the C4/C5 center model in Latin America — with native Spanish localization, direct experience in operational models from Mexico, Peru, and Colombia, and pricing adapted to municipalities in the region. For the intelligence layer, agencies that need it can integrate analytical tools via API. For the real-time operations layer, KabatOne is the market reference.'}
+                ? 'Kabat One cubre esa brecha operativa. Está construido para el modelo de los centros C4/C5 en Latinoamérica — con localización nativa en español, experiencia directa en los modelos operativos de México, Perú y Colombia, y precio adaptado a municipios de la región. Para la capa de inteligencia, las agencias que lo necesiten pueden integrar herramientas analíticas vía API. Para la capa de operaciones en tiempo real, Kabat One es la referencia del mercado.'
+                : 'Kabat One fills that operational gap. It is built for the C4/C5 center model in Latin America — with native Spanish localization, direct experience in operational models from Mexico, Peru, and Colombia, and pricing adapted to municipalities in the region. For the intelligence layer, agencies that need it can integrate analytical tools via API. For the real-time operations layer, Kabat One is the market reference.'}
             </p>
           </div>
         </section>
@@ -397,7 +397,7 @@ export default async function VsPalantirPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -436,7 +436,7 @@ export default async function VsPalantirPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Palantir: Preguntas y Respuestas' : 'KabatOne vs Palantir: Questions & Answers'}
+              {es ? 'Kabat One vs Palantir: Preguntas y Respuestas' : 'Kabat One vs Palantir: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -494,7 +494,7 @@ export default async function VsPalantirPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Hexagon (HxGN OnCall)' : 'KabatOne vs Hexagon (HxGN OnCall)'}</span>
+                <span>{es ? 'Kabat One vs Hexagon (HxGN OnCall)' : 'Kabat One vs Hexagon (HxGN OnCall)'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -503,7 +503,7 @@ export default async function VsPalantirPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/build-rtcc-implementation-guide" style={{
@@ -524,8 +524,8 @@ export default async function VsPalantirPage({
           es={es}
           h2={es ? '¿Listo para Ver la Capa de Operaciones en Acción?' : 'Ready to See the Operations Layer in Action?'}
           subtitle={es
-            ? 'Ve cómo KabatOne conecta video, CAD, GIS y tráfico en un flujo de respuesta unificado. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, CAD, GIS, and traffic in a unified response workflow. Request a personalized demo.'}
+            ? 'Ve cómo Kabat One conecta video, CAD, GIS y tráfico en un flujo de respuesta unificado. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, CAD, GIS, and traffic in a unified response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

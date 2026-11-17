@@ -29,22 +29,22 @@ export default async function FaceRecognitionIntegrationPage({
         {
           question: '¿Cómo funciona el reconocimiento facial en seguridad pública?',
           answer:
-            'El reconocimiento facial en seguridad pública funciona en dos modalidades: cotejo en tiempo real (compara rostros capturados por cámaras en vivo contra una base de datos de personas de interés) y cotejo forense (el investigador toma una imagen fija — foto de cámara de seguridad, captura de video — y la compara contra bases de datos para identificar al sujeto). KabatOne soporta ambas modalidades con controles de acceso separados, dado que las implicaciones operativas y legales son distintas.',
+            'El reconocimiento facial en seguridad pública funciona en dos modalidades: cotejo en tiempo real (compara rostros capturados por cámaras en vivo contra una base de datos de personas de interés) y cotejo forense (el investigador toma una imagen fija — foto de cámara de seguridad, captura de video — y la compara contra bases de datos para identificar al sujeto). Kabat One soporta ambas modalidades con controles de acceso separados, dado que las implicaciones operativas y legales son distintas.',
         },
         {
           question: '¿Cuál es la tasa de acierto y falsos positivos del sistema?',
           answer:
-            'La precisión depende de la calidad de la imagen y las condiciones de captura. En condiciones de frente, iluminación adecuada y resolución mínima de 1MP, los sistemas modernos alcanzan tasas de identificación del 95%+ con tasas de falso positivo menores al 1%. Para cotejo en tiempo real — con cámaras en ángulo, iluminación variable y sujetos en movimiento — la precisión es menor. KabatOne aplica un proceso de confirmación de dos pasos: el sistema sugiere candidatos con porcentaje de confianza, y un analista humano toma la decisión final antes de cualquier acción operativa.',
+            'La precisión depende de la calidad de la imagen y las condiciones de captura. En condiciones de frente, iluminación adecuada y resolución mínima de 1MP, los sistemas modernos alcanzan tasas de identificación del 95%+ con tasas de falso positivo menores al 1%. Para cotejo en tiempo real — con cámaras en ángulo, iluminación variable y sujetos en movimiento — la precisión es menor. Kabat One aplica un proceso de confirmación de dos pasos: el sistema sugiere candidatos con porcentaje de confianza, y un analista humano toma la decisión final antes de cualquier acción operativa.',
         },
         {
-          question: '¿El reconocimiento facial de KabatOne cumple con regulaciones de privacidad?',
+          question: '¿El reconocimiento facial de Kabat One cumple con regulaciones de privacidad?',
           answer:
-            'KabatOne diseña sus integraciones de reconocimiento facial con controles de privacidad por defecto: acceso restringido a roles autorizados, registro completo de auditoría de cada búsqueda, retención de datos configurable, y arquitectura que evita el almacenamiento masivo de biometría de personas sin alerta. El cumplimiento legal específico (CJIS en EE.UU., Ley General de Protección de Datos Personales en México) depende de la política de uso del organismo operador, no solo del software. KabatOne provee las herramientas técnicas de cumplimiento; el organismo define la política.',
+            'Kabat One diseña sus integraciones de reconocimiento facial con controles de privacidad por defecto: acceso restringido a roles autorizados, registro completo de auditoría de cada búsqueda, retención de datos configurable, y arquitectura que evita el almacenamiento masivo de biometría de personas sin alerta. El cumplimiento legal específico (CJIS en EE.UU., Ley General de Protección de Datos Personales en México) depende de la política de uso del organismo operador, no solo del software. Kabat One provee las herramientas técnicas de cumplimiento; el organismo define la política.',
         },
         {
           question: '¿Puede integrarse con bases de datos externas de personas buscadas?',
           answer:
-            'Sí. KabatOne puede integrarse con bases de datos externas mediante API segura: registros AFIS (Automated Fingerprint Identification System) que incluyan datos faciales, listas de personas buscadas de agencias estatales o federales, y registros de personas desaparecidas. La integración se realiza mediante feeds programados o alertas en tiempo real, con protocolo de acceso cifrado y autenticado. Los datos de la base de datos externa nunca se almacenan localmente en los servidores de KabatOne — se consultan en tiempo real.',
+            'Sí. Kabat One puede integrarse con bases de datos externas mediante API segura: registros AFIS (Automated Fingerprint Identification System) que incluyan datos faciales, listas de personas buscadas de agencias estatales o federales, y registros de personas desaparecidas. La integración se realiza mediante feeds programados o alertas en tiempo real, con protocolo de acceso cifrado y autenticado. Los datos de la base de datos externa nunca se almacenan localmente en los servidores de Kabat One — se consultan en tiempo real.',
         },
         {
           question: '¿Qué cámaras son necesarias para el reconocimiento facial?',
@@ -54,29 +54,29 @@ export default async function FaceRecognitionIntegrationPage({
         {
           question: '¿Cómo se protege contra el sesgo del algoritmo de reconocimiento facial?',
           answer:
-            'Los sesgos algorítmicos en reconocimiento facial son un problema documentado, especialmente para ciertos grupos demográficos. KabatOne aborda esto en tres niveles: selección de motores de IA con baja tasa de sesgo demostrada en auditorías independientes, proceso obligatorio de confirmación humana antes de cualquier acción operativa (el sistema nunca actúa autónomamente), y reporte mensual de métricas de precisión por grupo demográfico para detección temprana de sesgos en producción. El reconocimiento facial en KabatOne es siempre una herramienta de investigación, no una herramienta de decisión autónoma.',
+            'Los sesgos algorítmicos en reconocimiento facial son un problema documentado, especialmente para ciertos grupos demográficos. Kabat One aborda esto en tres niveles: selección de motores de IA con baja tasa de sesgo demostrada en auditorías independientes, proceso obligatorio de confirmación humana antes de cualquier acción operativa (el sistema nunca actúa autónomamente), y reporte mensual de métricas de precisión por grupo demográfico para detección temprana de sesgos en producción. El reconocimiento facial en Kabat One es siempre una herramienta de investigación, no una herramienta de decisión autónoma.',
         },
       ]
     : [
         {
           question: 'How does facial recognition work in public safety?',
           answer:
-            'Facial recognition in public safety works in two modes: real-time matching (comparing faces captured by live cameras against a database of persons of interest) and forensic matching (an investigator takes a still image — security camera photo, video capture — and compares it against databases to identify the subject). KabatOne supports both modes with separate access controls, given that the operational and legal implications differ.',
+            'Facial recognition in public safety works in two modes: real-time matching (comparing faces captured by live cameras against a database of persons of interest) and forensic matching (an investigator takes a still image — security camera photo, video capture — and compares it against databases to identify the subject). Kabat One supports both modes with separate access controls, given that the operational and legal implications differ.',
         },
         {
           question: 'What are the hit rate and false positive rates of the system?',
           answer:
-            'Accuracy depends on image quality and capture conditions. Under front-facing conditions, adequate lighting, and minimum 1MP resolution, modern systems achieve identification rates of 95%+ with false positive rates below 1%. For real-time matching — with angled cameras, variable lighting, and subjects in motion — accuracy is lower. KabatOne applies a two-step confirmation process: the system suggests candidates with a confidence percentage, and a human analyst makes the final decision before any operational action.',
+            'Accuracy depends on image quality and capture conditions. Under front-facing conditions, adequate lighting, and minimum 1MP resolution, modern systems achieve identification rates of 95%+ with false positive rates below 1%. For real-time matching — with angled cameras, variable lighting, and subjects in motion — accuracy is lower. Kabat One applies a two-step confirmation process: the system suggests candidates with a confidence percentage, and a human analyst makes the final decision before any operational action.',
         },
         {
-          question: 'Does KabatOne\'s facial recognition comply with privacy regulations?',
+          question: 'Does Kabat One\'s facial recognition comply with privacy regulations?',
           answer:
-            'KabatOne designs its facial recognition integrations with privacy-by-default controls: access restricted to authorized roles, complete audit trail of every query, configurable data retention, and an architecture that avoids mass storage of biometrics of persons without an alert. Specific legal compliance (CJIS in the US, data protection laws in Mexico) depends on the operating agency\'s use policy, not just the software. KabatOne provides the technical compliance tools; the agency defines the policy.',
+            'Kabat One designs its facial recognition integrations with privacy-by-default controls: access restricted to authorized roles, complete audit trail of every query, configurable data retention, and an architecture that avoids mass storage of biometrics of persons without an alert. Specific legal compliance (CJIS in the US, data protection laws in Mexico) depends on the operating agency\'s use policy, not just the software. Kabat One provides the technical compliance tools; the agency defines the policy.',
         },
         {
           question: 'Can it integrate with external wanted persons databases?',
           answer:
-            'Yes. KabatOne can integrate with external databases via secure API: AFIS (Automated Fingerprint Identification System) records that include facial data, wanted persons lists from state or federal agencies, and missing persons registries. Integration is via scheduled feeds or real-time alerts, with encrypted and authenticated access protocol. External database data is never stored locally on KabatOne servers — it is queried in real time.',
+            'Yes. Kabat One can integrate with external databases via secure API: AFIS (Automated Fingerprint Identification System) records that include facial data, wanted persons lists from state or federal agencies, and missing persons registries. Integration is via scheduled feeds or real-time alerts, with encrypted and authenticated access protocol. External database data is never stored locally on Kabat One servers — it is queried in real time.',
         },
         {
           question: 'What cameras are needed for facial recognition?',
@@ -86,7 +86,7 @@ export default async function FaceRecognitionIntegrationPage({
         {
           question: 'How is algorithmic bias in facial recognition addressed?',
           answer:
-            'Algorithmic bias in facial recognition is a documented problem, especially for certain demographic groups. KabatOne addresses this at three levels: selection of AI engines with demonstrated low bias rates in independent audits, mandatory human confirmation before any operational action (the system never acts autonomously), and monthly reporting of accuracy metrics by demographic group for early bias detection in production. Facial recognition in KabatOne is always an investigative tool, never an autonomous decision tool.',
+            'Algorithmic bias in facial recognition is a documented problem, especially for certain demographic groups. Kabat One addresses this at three levels: selection of AI engines with demonstrated low bias rates in independent audits, mandatory human confirmation before any operational action (the system never acts autonomously), and monthly reporting of accuracy metrics by demographic group for early bias detection in production. Facial recognition in Kabat One is always an investigative tool, never an autonomous decision tool.',
         },
       ]
 
@@ -142,13 +142,13 @@ export default async function FaceRecognitionIntegrationPage({
     ? [
         { title: 'Acceso basado en roles', desc: 'Solo usuarios con autorización explícita pueden realizar búsquedas de reconocimiento facial. El acceso se registra, se audita y puede revocarse en tiempo real.' },
         { title: 'Auditoría completa', desc: 'Cada búsqueda genera un registro inmutable: quién buscó, cuándo, qué imagen utilizó y qué resultado obtuvo. Esta auditoría es exportable para revisiones de supervisión.' },
-        { title: 'Sin identificación masiva pasiva', desc: 'KabatOne no construye perfiles de identidad de personas que no están en listas de alerta. Las lecturas de rostros no se vinculan a identidades sin una acción intencional del operador.' },
+        { title: 'Sin identificación masiva pasiva', desc: 'Kabat One no construye perfiles de identidad de personas que no están en listas de alerta. Las lecturas de rostros no se vinculan a identidades sin una acción intencional del operador.' },
         { title: 'Confirmación humana obligatoria', desc: 'El sistema nunca actúa de forma autónoma. Toda coincidencia de reconocimiento facial requiere confirmación de un analista antes de que se genere cualquier alerta operativa o acción de campo.' },
       ]
     : [
         { title: 'Role-based access', desc: 'Only users with explicit authorization can perform facial recognition queries. Access is logged, audited, and can be revoked in real time.' },
         { title: 'Full audit trail', desc: 'Every query generates an immutable record: who searched, when, what image they used, and what result they obtained. This audit trail is exportable for oversight reviews.' },
-        { title: 'No passive mass identification', desc: 'KabatOne does not build identity profiles of persons not on alert lists. Face reads are not linked to identities without an intentional operator action.' },
+        { title: 'No passive mass identification', desc: 'Kabat One does not build identity profiles of persons not on alert lists. Face reads are not linked to identities without an intentional operator action.' },
         { title: 'Mandatory human confirmation', desc: 'The system never acts autonomously. Every facial recognition match requires analyst confirmation before any operational alert or field action is generated.' },
       ]
 
@@ -170,8 +170,8 @@ export default async function FaceRecognitionIntegrationPage({
                 ? 'Integración de Reconocimiento Facial para Seguridad Pública'
                 : 'Facial Recognition Integration for Public Safety',
               es
-                ? 'Cómo KabatOne integra reconocimiento facial para personas buscadas, desaparecidos y monitoreo de multitudes con arquitectura de privacidad por diseño.'
-                : 'How KabatOne integrates facial recognition for wanted persons, missing persons, and crowd monitoring with privacy-by-design architecture.',
+                ? 'Cómo Kabat One integra reconocimiento facial para personas buscadas, desaparecidos y monitoreo de multitudes con arquitectura de privacidad por diseño.'
+                : 'How Kabat One integrates facial recognition for wanted persons, missing persons, and crowd monitoring with privacy-by-design architecture.',
               es ? 'https://kabatone.com/es/integrations/face-recognition' : 'https://kabatone.com/integrations/face-recognition',
               '2026-03-20'
             )
@@ -222,8 +222,8 @@ export default async function FaceRecognitionIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'El reconocimiento facial en seguridad pública es una herramienta poderosa cuando se implementa correctamente — con controles de privacidad rigurosos, confirmación humana obligatoria y auditoría completa. KabatOne integra reconocimiento facial con esos controles incorporados, no como opciones adicionales.'
-                : 'Facial recognition in public safety is a powerful tool when implemented correctly — with rigorous privacy controls, mandatory human confirmation, and a complete audit trail. KabatOne integrates facial recognition with those controls built in, not as optional add-ons.'}
+                ? 'El reconocimiento facial en seguridad pública es una herramienta poderosa cuando se implementa correctamente — con controles de privacidad rigurosos, confirmación humana obligatoria y auditoría completa. Kabat One integra reconocimiento facial con esos controles incorporados, no como opciones adicionales.'
+                : 'Facial recognition in public safety is a powerful tool when implemented correctly — with rigorous privacy controls, mandatory human confirmation, and a complete audit trail. Kabat One integrates facial recognition with those controls built in, not as optional add-ons.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -249,8 +249,8 @@ export default async function FaceRecognitionIntegrationPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'En seguridad pública, el reconocimiento facial se utiliza en dos contextos fundamentalmente diferentes con implicaciones operativas y legales distintas: el cotejo forense (búsqueda retrospectiva de sospechosos en investigaciones criminales) y el cotejo en tiempo real (identificación de personas en listas de alerta en cámaras de video en vivo). KabatOne soporta ambos modos con controles de acceso separados porque los protocolos operativos y los marcos legales aplicables son diferentes.'
-                : 'In public safety, facial recognition is used in two fundamentally different contexts with distinct operational and legal implications: forensic matching (retrospective suspect search in criminal investigations) and real-time matching (identification of persons on alert lists in live video cameras). KabatOne supports both modes with separate access controls because the applicable operational protocols and legal frameworks differ.'}
+                ? 'En seguridad pública, el reconocimiento facial se utiliza en dos contextos fundamentalmente diferentes con implicaciones operativas y legales distintas: el cotejo forense (búsqueda retrospectiva de sospechosos en investigaciones criminales) y el cotejo en tiempo real (identificación de personas en listas de alerta en cámaras de video en vivo). Kabat One soporta ambos modos con controles de acceso separados porque los protocolos operativos y los marcos legales aplicables son diferentes.'
+                : 'In public safety, facial recognition is used in two fundamentally different contexts with distinct operational and legal implications: forensic matching (retrospective suspect search in criminal investigations) and real-time matching (identification of persons on alert lists in live video cameras). Kabat One supports both modes with separate access controls because the applicable operational protocols and legal frameworks differ.'}
             </p>
             <p style={pStyle}>
               {es
@@ -311,8 +311,8 @@ export default async function FaceRecognitionIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'El reconocimiento facial es la tecnología de seguridad pública más sensible desde el punto de vista de los derechos civiles. KabatOne incorpora cuatro controles de privacidad que no son opcionales — son parte de la arquitectura base:'
-                : 'Facial recognition is the most civil-rights-sensitive public safety technology. KabatOne incorporates four privacy controls that are not optional — they are part of the base architecture:'}
+                ? 'El reconocimiento facial es la tecnología de seguridad pública más sensible desde el punto de vista de los derechos civiles. Kabat One incorpora cuatro controles de privacidad que no son opcionales — son parte de la arquitectura base:'
+                : 'Facial recognition is the most civil-rights-sensitive public safety technology. Kabat One incorporates four privacy controls that are not optional — they are part of the base architecture:'}
             </p>
 
             {/* ── Key metrics strip ── */}
@@ -369,12 +369,12 @@ export default async function FaceRecognitionIntegrationPage({
               {es ? 'Productos Relacionados' : 'Related Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne para Operaciones de Reconocimiento Facial' : 'KabatOne for Face Recognition Operations'}
+              {es ? 'Kabat One para Operaciones de Reconocimiento Facial' : 'Kabat One for Face Recognition Operations'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es
-                ? 'Los módulos de KabatOne que soportan la integración de reconocimiento facial:'
-                : 'KabatOne modules that support facial recognition integration:'}
+                ? 'Los módulos de Kabat One que soportan la integración de reconocimiento facial:'
+                : 'Kabat One modules that support facial recognition integration:'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -461,8 +461,8 @@ export default async function FaceRecognitionIntegrationPage({
           es={es}
           h2={es ? 'Implementa Reconocimiento Facial con los Controles Correctos' : 'Deploy Face Recognition with the Right Controls'}
           subtitle={es
-            ? 'KabatOne integra reconocimiento facial con privacidad por diseño — auditoría completa, confirmación humana y control de acceso granular. Solicita una demo.'
-            : 'KabatOne integrates facial recognition with privacy by design — full audit trail, human confirmation, and granular access control. Request a demo.'}
+            ? 'Kabat One integra reconocimiento facial con privacidad por diseño — auditoría completa, confirmación humana y control de acceso granular. Solicita una demo.'
+            : 'Kabat One integrates facial recognition with privacy by design — full audit trail, human confirmation, and granular access control. Request a demo.'}
         />
 
         <Footer es={es} />

@@ -25,8 +25,8 @@ export default function HeroV1Screenshot({ es }: { es: boolean }) {
           </h1>
           <p className="hl-sub">
             {es
-              ? 'KabatOne unifica despacho, video, GIS, gestión de incidentes, analítica y equipos móviles en una sola plataforma — sobre la infraestructura que ya tienes.'
-              : 'KabatOne unifies dispatch, video, GIS, incident management, analytics, and mobile teams into one platform — built on the infrastructure you already have.'}
+              ? 'Kabat One unifica despacho, video, GIS, gestión de incidentes, analítica y equipos móviles en una sola plataforma — sobre la infraestructura que ya tienes.'
+              : 'Kabat One unifies dispatch, video, GIS, incident management, analytics, and mobile teams into one platform — built on the infrastructure you already have.'}
           </p>
           <div className="hl-ctas">
             <a className="hl-btn-primary" href="#demo">

@@ -71,7 +71,7 @@ export default function TopBar({ incidentBadge, currentStage, onNavigate, active
               textShadow: '0 0 12px rgba(75,142,255,0.45)',
             }}
           >
-            KabatOne
+            Kabat One
           </Link>
 
           <div

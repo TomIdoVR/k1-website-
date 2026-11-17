@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareDominicanRepublicPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el Sistema 911 de la Republica Dominicana?",
-      answer: "El Sistema Nacional de Atencion a Emergencias y Seguridad 9-1-1 opera desde 2014 (Santo Domingo) y 2017 (Santiago). Cubre mas del 90% de la poblacion y coordina la respuesta de la Policia Nacional (~37,000 agentes), el Cuerpo de Bomberos, AMET, CESFRONT y los servicios de salud. El sistema centraliza la recepcion de llamadas y despacho de unidades. Una plataforma como KabatOne integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre las camaras ya instaladas.",
+      answer: "El Sistema Nacional de Atencion a Emergencias y Seguridad 9-1-1 opera desde 2014 (Santo Domingo) y 2017 (Santiago). Cubre mas del 90% de la poblacion y coordina la respuesta de la Policia Nacional (~37,000 agentes), el Cuerpo de Bomberos, AMET, CESFRONT y los servicios de salud. El sistema centraliza la recepcion de llamadas y despacho de unidades. Una plataforma como Kabat One integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre las camaras ya instaladas.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en la Republica Dominicana?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareDominicanRepublicPage({
     },
     {
       question: "¿Que es el CESFRONT y como protege las fronteras dominicanas?",
-      answer: "El Cuerpo Especializado de Seguridad Fronteriza Terrestre (CESFRONT, ~3,500 agentes) protege los 376 km de frontera terrestre con Haiti. CESFRONT opera puestos de control en Dajabon, Jimani, Elias Pina, Pedernales y Comendador, y coordina con la Direccion General de Migracion (DGM). Desde la crisis haitiana de 2021, el control fronterizo se ha intensificado significativamente. KabatOne integra video de puestos fronterizos, LPR en checkpoints y posiciones de unidades CESFRONT en un solo entorno operativo.",
+      answer: "El Cuerpo Especializado de Seguridad Fronteriza Terrestre (CESFRONT, ~3,500 agentes) protege los 376 km de frontera terrestre con Haiti. CESFRONT opera puestos de control en Dajabon, Jimani, Elias Pina, Pedernales y Comendador, y coordina con la Direccion General de Migracion (DGM). Desde la crisis haitiana de 2021, el control fronterizo se ha intensificado significativamente. Kabat One integra video de puestos fronterizos, LPR en checkpoints y posiciones de unidades CESFRONT en un solo entorno operativo.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en la Republica Dominicana?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del Sistema 911, las redes de videovigilancia del Distrito Nacional y Santiago, las camaras del AILA (Aeropuerto Las Americas) y del Aeropuerto del Cibao, los sistemas de seguridad portuaria en Haina, Caucedo y Puerto Plata, y las camaras de peaje de las autopistas Coral, Nordeste y Duarte se conectan directamente. El sistema es compatible con la infraestructura de fibra optica de Claro, Altice y OPTIC.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en la Republica Dominicana?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del Sistema 911, las redes de videovigilancia del Distrito Nacional y Santiago, las camaras del AILA (Aeropuerto Las Americas) y del Aeropuerto del Cibao, los sistemas de seguridad portuaria en Haina, Caucedo y Puerto Plata, y las camaras de peaje de las autopistas Coral, Nordeste y Duarte se conectan directamente. El sistema es compatible con la infraestructura de fibra optica de Claro, Altice y OPTIC.",
     },
     {
       question: "¿Que papel juega el turismo en la estrategia de seguridad dominicana?",
-      answer: "La Republica Dominicana recibe mas de 10 millones de turistas anuales, generando mas del 15% del PIB. Punta Cana, Puerto Plata, La Romana y Santo Domingo son los principales destinos. El CESTUR (Cuerpo Especializado de Seguridad Turistica, ~4,000 agentes) opera exclusivamente para la proteccion de zonas turisticas. La seguridad turistica requiere coordinacion entre CESTUR, la Policia Nacional, el 911, y los operadores hoteleros — exactamente el tipo de integracion multi-institucional que KabatOne resuelve.",
+      answer: "La Republica Dominicana recibe mas de 10 millones de turistas anuales, generando mas del 15% del PIB. Punta Cana, Puerto Plata, La Romana y Santo Domingo son los principales destinos. El CESTUR (Cuerpo Especializado de Seguridad Turistica, ~4,000 agentes) opera exclusivamente para la proteccion de zonas turisticas. La seguridad turistica requiere coordinacion entre CESTUR, la Policia Nacional, el 911, y los operadores hoteleros — exactamente el tipo de integracion multi-institucional que Kabat One resuelve.",
     },
     {
-      question: "¿Como se alinea KabatOne con la Ley de Compras Publicas de la Republica Dominicana?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Ley 340-06 de Compras y Contrataciones Publicas y el portal de la DGCP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de ayuntamientos, la Policia Nacional, las Fuerzas Armadas y el Ministerio de Interior y Policia. La Republica Dominicana permite la participacion de empresas extranjeras con representante legal en el pais.",
+      question: "¿Como se alinea Kabat One con la Ley de Compras Publicas de la Republica Dominicana?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Ley 340-06 de Compras y Contrataciones Publicas y el portal de la DGCP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de ayuntamientos, la Policia Nacional, las Fuerzas Armadas y el Ministerio de Interior y Policia. La Republica Dominicana permite la participacion de empresas extranjeras con representante legal en el pais.",
     },
   ] : [
     {
       question: "How does the Dominican Republic 911 System work?",
-      answer: "The National Emergency and Security Response System 9-1-1 has operated since 2014 (Santo Domingo) and 2017 (Santiago). It covers over 90% of the population and coordinates the response of the National Police (~37,000 officers), Fire Department, AMET (transit authority), CESFRONT, and health services. The system centralizes call intake and unit dispatch. A unified platform like KabatOne integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
+      answer: "The National Emergency and Security Response System 9-1-1 has operated since 2014 (Santo Domingo) and 2017 (Santiago). It covers over 90% of the population and coordinates the response of the National Police (~37,000 officers), Fire Department, AMET (transit authority), CESFRONT, and health services. The system centralizes call intake and unit dispatch. A unified platform like Kabat One integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
     },
     {
       question: "How does the Dominican Republic fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareDominicanRepublicPage({
     },
     {
       question: "What is CESFRONT and how does it protect Dominican borders?",
-      answer: "The Specialized Land Border Security Corps (CESFRONT, ~3,500 officers) protects the 376 km land border with Haiti. CESFRONT operates checkpoints at Dajabon, Jimani, Elias Pina, Pedernales, and Comendador, and coordinates with the General Directorate of Migration (DGM). Since the Haitian crisis of 2021, border enforcement has intensified significantly. KabatOne integrates border post video, checkpoint LPR, and CESFRONT unit positions in a single operational environment.",
+      answer: "The Specialized Land Border Security Corps (CESFRONT, ~3,500 officers) protects the 376 km land border with Haiti. CESFRONT operates checkpoints at Dajabon, Jimani, Elias Pina, Pedernales, and Comendador, and coordinates with the General Directorate of Migration (DGM). Since the Haitian crisis of 2021, border enforcement has intensified significantly. Kabat One integrates border post video, checkpoint LPR, and CESFRONT unit positions in a single operational environment.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in the Dominican Republic?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Cameras from the 911 System, Distrito Nacional and Santiago surveillance networks, AILA (Las Americas Airport) and Cibao Airport cameras, port security systems at Haina, Caucedo, and Puerto Plata, and toll cameras on the Coral, Nordeste, and Duarte highways connect directly. The platform is compatible with Claro, Altice, and OPTIC fiber optic infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in the Dominican Republic?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Cameras from the 911 System, Distrito Nacional and Santiago surveillance networks, AILA (Las Americas Airport) and Cibao Airport cameras, port security systems at Haina, Caucedo, and Puerto Plata, and toll cameras on the Coral, Nordeste, and Duarte highways connect directly. The platform is compatible with Claro, Altice, and OPTIC fiber optic infrastructure.",
     },
     {
       question: "What role does tourism play in Dominican security strategy?",
-      answer: "The Dominican Republic receives over 10 million tourists annually, generating more than 15% of GDP. Punta Cana, Puerto Plata, La Romana, and Santo Domingo are the main destinations. CESTUR (Specialized Tourist Security Corps, ~4,000 officers) operates exclusively for the protection of tourist zones. Tourism security requires coordination between CESTUR, the National Police, the 911 system, and hotel operators — exactly the kind of multi-institutional integration that KabatOne solves.",
+      answer: "The Dominican Republic receives over 10 million tourists annually, generating more than 15% of GDP. Punta Cana, Puerto Plata, La Romana, and Santo Domingo are the main destinations. CESTUR (Specialized Tourist Security Corps, ~4,000 officers) operates exclusively for the protection of tourist zones. Tourism security requires coordination between CESTUR, the National Police, the 911 system, and hotel operators — exactly the kind of multi-institutional integration that Kabat One solves.",
     },
     {
-      question: "How does KabatOne align with Dominican Republic public procurement law?",
-      answer: "KabatOne is marketed through local distributors and integrators under Law 340-06 on Public Procurement and Contracting and the DGCP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities (ayuntamientos), the National Police, the Armed Forces, and the Ministry of Interior and Police. The Dominican Republic allows participation of foreign firms with legal representation in the country.",
+      question: "How does Kabat One align with Dominican Republic public procurement law?",
+      answer: "Kabat One is marketed through local distributors and integrators under Law 340-06 on Public Procurement and Contracting and the DGCP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities (ayuntamientos), the National Police, the Armed Forces, and the Ministry of Interior and Police. The Dominican Republic allows participation of foreign firms with legal representation in the country.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareDominicanRepublicPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica en Tu Municipio o Provincia Dominicana' : 'Transform Public Safety in Your Dominican Municipality or Province'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias 911, GIS y gestion de incidentes en una sola plataforma operativa para instituciones dominicanas — desde las zonas turisticas de Punta Cana hasta los puestos fronterizos con Haiti.'
-            : 'See how KabatOne unifies video surveillance, 911 emergency dispatch, GIS, and incident management into one operational platform for Dominican institutions — from Punta Cana tourist zones to Haiti border posts.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias 911, GIS y gestion de incidentes en una sola plataforma operativa para instituciones dominicanas — desde las zonas turisticas de Punta Cana hasta los puestos fronterizos con Haiti.'
+            : 'See how Kabat One unifies video surveillance, 911 emergency dispatch, GIS, and incident management into one operational platform for Dominican institutions — from Punta Cana tourist zones to Haiti border posts.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

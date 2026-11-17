@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareHondurasPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el Sistema Nacional de Emergencias 911 de Honduras?",
-      answer: "El Sistema Nacional de Emergencias 911 (SNE 911) de Honduras opera centros de atencion de llamadas 24/7 con aproximadamente 250 operadores en tres turnos. El centro incluye sala de videovigilancia, centro de llamadas, area de despacho y enlaces, centro de datos y sala de video forense. Desde 2020, el SNE 911 ha expandido la videovigilancia CCTV a ciudades como Choluteca, Nacaome y San Lorenzo, utilizando conectividad inalambrica RADWIN para monitoreo centralizado. Una plataforma unificada como KabatOne se integra directamente con la infraestructura ONVIF/RTSP del SNE 911, anadiendo CAD estructurado, GIS en tiempo real y analitica de video sobre la infraestructura existente.",
+      answer: "El Sistema Nacional de Emergencias 911 (SNE 911) de Honduras opera centros de atencion de llamadas 24/7 con aproximadamente 250 operadores en tres turnos. El centro incluye sala de videovigilancia, centro de llamadas, area de despacho y enlaces, centro de datos y sala de video forense. Desde 2020, el SNE 911 ha expandido la videovigilancia CCTV a ciudades como Choluteca, Nacaome y San Lorenzo, utilizando conectividad inalambrica RADWIN para monitoreo centralizado. Una plataforma unificada como Kabat One se integra directamente con la infraestructura ONVIF/RTSP del SNE 911, anadiendo CAD estructurado, GIS en tiempo real y analitica de video sobre la infraestructura existente.",
     },
     {
       question: "¿Como financia Honduras tecnologia de seguridad publica?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareHondurasPage({
     },
     {
       question: "¿Que es FUSINA y como coordina la seguridad en Honduras?",
-      answer: "FUSINA (Fuerza Nacional de Seguridad Interinstitucional) fue creada en 2014 para coordinar las responsabilidades de la Policia Nacional de Honduras (PNH), la Policia Militar del Orden Publico (PMOP), la Direccion Nacional de Investigacion e Inteligencia, el Ministerio Publico y el sistema judicial. FUSINA despliega 4,400 efectivos de las Fuerzas Armadas, la PNH y agencias civiles en los 18 departamentos del pais. KabatOne proporciona el cuadro operativo compartido que FUSINA necesita: posiciones de unidades PNH, PMOP y Ejercito en un solo mapa GIS, video centralizado de camaras municipales y registros unificados de incidentes.",
+      answer: "FUSINA (Fuerza Nacional de Seguridad Interinstitucional) fue creada en 2014 para coordinar las responsabilidades de la Policia Nacional de Honduras (PNH), la Policia Militar del Orden Publico (PMOP), la Direccion Nacional de Investigacion e Inteligencia, el Ministerio Publico y el sistema judicial. FUSINA despliega 4,400 efectivos de las Fuerzas Armadas, la PNH y agencias civiles en los 18 departamentos del pais. Kabat One proporciona el cuadro operativo compartido que FUSINA necesita: posiciones de unidades PNH, PMOP y Ejercito en un solo mapa GIS, video centralizado de camaras municipales y registros unificados de incidentes.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de camaras existente en Honduras?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del SNE 911 en Tegucigalpa, San Pedro Sula, Choluteca y La Ceiba se conectan directamente a la plataforma. Los lectores LPR en Puerto Cortes y la Empresa Nacional Portuaria, paneles de control de acceso y sensores ambientales de COPECO tambien se integran sin cambiar infraestructura.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de camaras existente en Honduras?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del SNE 911 en Tegucigalpa, San Pedro Sula, Choluteca y La Ceiba se conectan directamente a la plataforma. Los lectores LPR en Puerto Cortes y la Empresa Nacional Portuaria, paneles de control de acceso y sensores ambientales de COPECO tambien se integran sin cambiar infraestructura.",
     },
     {
-      question: "¿Como apoya KabatOne la coordinacion entre PNH, PMOP, TIGRES y municipios?",
+      question: "¿Como apoya Kabat One la coordinacion entre PNH, PMOP, TIGRES y municipios?",
       answer: "K-Safety provee un mapa GIS compartido donde operadores municipales, la PNH (~15,000 agentes), la PMOP (~5,000 efectivos) y TIGRES ven posiciones de unidades, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica la recepcion 911 en un solo registro de incidente, y K-Video centraliza camaras municipales y de infraestructura critica en un VMS con busqueda por zona, fecha y tipo de evento. Esto reduce el tiempo de coordinacion interinstitucional en incidentes de alta complejidad como narcotransito, extorsion y desastres naturales.",
     },
     {
-      question: "¿Como se alinea KabatOne con la Ley de Contratacion del Estado de Honduras?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme al Decreto 148.5 (Ley de Contratacion del Estado). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y de la Secretaria de Seguridad, y a los requisitos tecnicos de licitaciones publicas que otorgan trato nacional a empresas extranjeras con representante local.",
+      question: "¿Como se alinea Kabat One con la Ley de Contratacion del Estado de Honduras?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme al Decreto 148.5 (Ley de Contratacion del Estado). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios municipales y de la Secretaria de Seguridad, y a los requisitos tecnicos de licitaciones publicas que otorgan trato nacional a empresas extranjeras con representante local.",
     },
   ] : [
     {
       question: "How does Honduras' Sistema Nacional de Emergencias 911 work?",
-      answer: "Honduras' Sistema Nacional de Emergencias 911 (SNE 911) operates 24/7 call centers with approximately 250 operators across three shifts. The center includes a video surveillance room, call center, dispatch and liaison area, data center, and forensic video room. Since 2020, the SNE 911 has expanded CCTV surveillance to cities including Choluteca, Nacaome, and San Lorenzo using RADWIN wireless connectivity for centralized monitoring. A unified platform like KabatOne integrates directly with the SNE 911's existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed.",
+      answer: "Honduras' Sistema Nacional de Emergencias 911 (SNE 911) operates 24/7 call centers with approximately 250 operators across three shifts. The center includes a video surveillance room, call center, dispatch and liaison area, data center, and forensic video room. Since 2020, the SNE 911 has expanded CCTV surveillance to cities including Choluteca, Nacaome, and San Lorenzo using RADWIN wireless connectivity for centralized monitoring. A unified platform like Kabat One integrates directly with the SNE 911's existing ONVIF/RTSP infrastructure, adding structured CAD, real-time GIS, and video analytics on top of cameras already installed.",
     },
     {
       question: "How does Honduras fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareHondurasPage({
     },
     {
       question: "What is FUSINA and how does it coordinate security in Honduras?",
-      answer: "FUSINA (National Interinstitutional Security Force) was created in 2014 to coordinate the overlapping responsibilities of the Honduran National Police (HNP), the Military Police of Public Order (PMOP), the National Directorate of Investigation and Intelligence, the Public Ministry, and the court system. FUSINA deploys 4,400 personnel from the Armed Forces, HNP, and civilian agencies across all 18 departments. KabatOne provides the shared operational picture FUSINA needs: HNP, PMOP, and Army unit positions on one GIS map, centralized video from municipal cameras, and unified incident records.",
+      answer: "FUSINA (National Interinstitutional Security Force) was created in 2014 to coordinate the overlapping responsibilities of the Honduran National Police (HNP), the Military Police of Public Order (PMOP), the National Directorate of Investigation and Intelligence, the Public Ministry, and the court system. FUSINA deploys 4,400 personnel from the Armed Forces, HNP, and civilian agencies across all 18 departments. Kabat One provides the shared operational picture FUSINA needs: HNP, PMOP, and Army unit positions on one GIS map, centralized video from municipal cameras, and unified incident records.",
     },
     {
-      question: "Can KabatOne integrate with existing camera infrastructure in Honduras?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. SNE 911 cameras in Tegucigalpa, San Pedro Sula, Choluteca, and La Ceiba connect directly to the platform. LPR readers at Puerto Cortés and the Empresa Nacional Portuaria, access control panels, and COPECO environmental sensors also integrate without changing infrastructure.",
+      question: "Can Kabat One integrate with existing camera infrastructure in Honduras?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. SNE 911 cameras in Tegucigalpa, San Pedro Sula, Choluteca, and La Ceiba connect directly to the platform. LPR readers at Puerto Cortés and the Empresa Nacional Portuaria, access control panels, and COPECO environmental sensors also integrate without changing infrastructure.",
     },
     {
-      question: "How does KabatOne support coordination between HNP, PMOP, TIGRES, and municipalities?",
+      question: "How does Kabat One support coordination between HNP, PMOP, TIGRES, and municipalities?",
       answer: "K-Safety provides a shared GIS map where municipal operators, the HNP (~15,000 officers), PMOP (~5,000 troops), and TIGRES see unit positions, active incidents, and live video feeds in real time. K-Dispatch unifies 911 intake into one incident record, and K-Video centralizes municipal and critical infrastructure cameras in a searchable VMS by zone, date, and event type. This reduces inter-agency coordination time in high-complexity incidents such as narcotraffic, extortion, and natural disaster response.",
     },
     {
-      question: "How does KabatOne align with Honduras' Government Procurement Law?",
-      answer: "KabatOne is marketed through local distributors and integrators under Decree 148.5 (Government Procurement Law). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and Secretariat of Security budget ranges and the technical specifications of public tenders that grant national treatment to foreign firms with a registered local representative.",
+      question: "How does Kabat One align with Honduras' Government Procurement Law?",
+      answer: "Kabat One is marketed through local distributors and integrators under Decree 148.5 (Government Procurement Law). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal and Secretariat of Security budget ranges and the technical specifications of public tenders that grant national treatment to foreign firms with a registered local representative.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareHondurasPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio o Departamento en Honduras' : 'Transform Public Safety in Your Honduran Municipality or Department'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios hondurenos — desde Tegucigalpa y San Pedro Sula hasta cabeceras departamentales.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Honduran municipalities — from Tegucigalpa and San Pedro Sula to departmental capitals.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios hondurenos — desde Tegucigalpa y San Pedro Sula hasta cabeceras departamentales.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Honduran municipalities — from Tegucigalpa and San Pedro Sula to departmental capitals.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

@@ -58,8 +58,8 @@ export default async function PublicSafetySoftwareAustraliaPage({
       answer: 'Australia tiene una de las mayores proporciones de territorio remoto del mundo. Los incendios forestales (bushfires), inundaciones y ciclones tropicales son amenazas recurrentes que requieren coordinación de emergencias entre múltiples jurisdicciones. La Agencia de Gestión de Emergencias de Australia (NEMA) coordina la respuesta nacional. Los centros de operaciones de emergencia (EOC) estatales usan sistemas de conciencia situacional GIS para monitorear incidentes que cruzan fronteras estatales, como los incendios del Black Summer de 2019-2020 que afectaron a múltiples estados.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para los servicios de emergencias australianos?',
-      answer: 'KabatOne integra las funciones que los centros de comunicaciones de emergencias australianos gestionan en sistemas separados: despacho CAD con clasificación automática de incidentes (K-Dispatch), gestión de video y analítica de IA (K-Video) y conciencia situacional GIS para coordinación multiagencia (K-Safety). La plataforma admite despliegue on-premises o en la nube australiana para cumplir los requisitos ISM del ACSC. Solicite una demostración adaptada al modelo federado australiano de servicios de emergencias.',
+      question: '¿Por qué Kabat One es adecuado para los servicios de emergencias australianos?',
+      answer: 'Kabat One integra las funciones que los centros de comunicaciones de emergencias australianos gestionan en sistemas separados: despacho CAD con clasificación automática de incidentes (K-Dispatch), gestión de video y analítica de IA (K-Video) y conciencia situacional GIS para coordinación multiagencia (K-Safety). La plataforma admite despliegue on-premises o en la nube australiana para cumplir los requisitos ISM del ACSC. Solicite una demostración adaptada al modelo federado australiano de servicios de emergencias.',
     },
   ] : [
     {
@@ -83,8 +83,8 @@ export default async function PublicSafetySoftwareAustraliaPage({
       answer: 'Australia has one of the world\'s highest proportions of remote territory. Bushfires, floods, and tropical cyclones are recurring threats requiring multi-jurisdictional emergency coordination. The National Emergency Management Agency (NEMA) coordinates the national response. State Emergency Operations Centres (EOCs) use GIS situational awareness systems to monitor incidents crossing state boundaries, such as the Black Summer fires of 2019-2020 that affected multiple states.',
     },
     {
-      question: 'Why is KabatOne suited for Australian emergency services?',
-      answer: 'KabatOne integrates the functions Australian Emergency Communications Centres manage across separate systems — CAD dispatch with automatic incident classification (K-Dispatch), video management and AI analytics (K-Video), and GIS situational awareness for multi-agency coordination (K-Safety) — into a single platform. The platform supports on-premises or Australian cloud deployment to meet ACSC ISM requirements. Request a demo tailored to Australia\'s federated emergency services model.',
+      question: 'Why is Kabat One suited for Australian emergency services?',
+      answer: 'Kabat One integrates the functions Australian Emergency Communications Centres manage across separate systems — CAD dispatch with automatic incident classification (K-Dispatch), video management and AI analytics (K-Video), and GIS situational awareness for multi-agency coordination (K-Safety) — into a single platform. The platform supports on-premises or Australian cloud deployment to meet ACSC ISM requirements. Request a demo tailored to Australia\'s federated emergency services model.',
     },
   ]
 
@@ -182,8 +182,8 @@ export default async function PublicSafetySoftwareAustraliaPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Australia opera 8 fuerzas policiales estatales independientes, moderniza su sistema de emergencias Triple Zero hacia IP y gestiona algunos de los desastres naturales más complejos del mundo. KabatOne unifica el despacho de emergencias, la gestión de video con analítica de IA y la conciencia situacional multiagencia en una sola plataforma que cumple los requisitos ISM del ACSC.'
-                : 'Australia operates 8 independent state police forces, is modernising its Triple Zero emergency system to IP, and manages some of the world\'s most complex natural disasters. KabatOne unifies emergency dispatch, video management with AI analytics, and multi-agency situational awareness in a single platform meeting ACSC ISM requirements.'}
+                ? 'Australia opera 8 fuerzas policiales estatales independientes, moderniza su sistema de emergencias Triple Zero hacia IP y gestiona algunos de los desastres naturales más complejos del mundo. Kabat One unifica el despacho de emergencias, la gestión de video con analítica de IA y la conciencia situacional multiagencia en una sola plataforma que cumple los requisitos ISM del ACSC.'
+                : 'Australia operates 8 independent state police forces, is modernising its Triple Zero emergency system to IP, and manages some of the world\'s most complex natural disasters. Kabat One unifies emergency dispatch, video management with AI analytics, and multi-agency situational awareness in a single platform meeting ACSC ISM requirements.'}
             </p>
           </div>
         </section>
@@ -226,14 +226,14 @@ export default async function PublicSafetySoftwareAustraliaPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works for Australia ── */}
+        {/* ── SECTION 2: How Kabat One Works for Australia ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos Australianos' : 'How KabatOne Addresses Australian Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos Australianos' : 'How Kabat One Addresses Australian Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para operar en entornos donde múltiples agencias independientes deben coordinar la respuesta a emergencias — desde centros urbanos densos hasta regiones remotas — desde una plataforma unificada.'
-                : 'KabatOne is designed to operate in environments where multiple independent agencies must coordinate emergency response — from dense urban centres to remote regions — from a unified platform.'}
+                ? 'Kabat One está diseñado para operar en entornos donde múltiples agencias independientes deben coordinar la respuesta a emergencias — desde centros urbanos densos hasta regiones remotas — desde una plataforma unificada.'
+                : 'Kabat One is designed to operate in environments where multiple independent agencies must coordinate emergency response — from dense urban centres to remote regions — from a unified platform.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -260,7 +260,7 @@ export default async function PublicSafetySoftwareAustraliaPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -334,7 +334,7 @@ export default async function PublicSafetySoftwareAustraliaPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Centro de Comunicaciones' : 'Request a Demo for Your Communications Centre'}
-          subtitle={es ? 'KabatOne integra despacho Triple Zero, CCTV con analítica de IA y conciencia situacional multiagencia en una sola plataforma. Demo adaptada al contexto australiano.' : 'KabatOne integrates Triple Zero dispatch, CCTV with AI analytics, and multi-agency situational awareness in a single platform. Demo tailored to the Australian context.'}
+          subtitle={es ? 'Kabat One integra despacho Triple Zero, CCTV con analítica de IA y conciencia situacional multiagencia en una sola plataforma. Demo adaptada al contexto australiano.' : 'Kabat One integrates Triple Zero dispatch, CCTV with AI analytics, and multi-agency situational awareness in a single platform. Demo tailored to the Australian context.'}
         />
 
         <Footer es={es} />

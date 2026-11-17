@@ -1,5 +1,5 @@
 /* Hero direction 2 — hub-and-spoke hero. Deliberately NOT a software
-   screenshot: KabatOne at the center, modules connected around it. Same
+   screenshot: Kabat One at the center, modules connected around it. Same
    copy as V1 so the only variable being compared is the visual approach
    (unified admin console vs. abstract connected-modules diagram).
    Image is AI-generated (concept-5-hub) — swap for a polished brand
@@ -26,8 +26,8 @@ export default function HeroV2Hub({ es }: { es: boolean }) {
           </h1>
           <p className="hl-sub">
             {es
-              ? 'KabatOne unifica despacho, video, GIS, gestión de incidentes, analítica y equipos móviles en una sola plataforma — sobre la infraestructura que ya tienes.'
-              : 'KabatOne unifies dispatch, video, GIS, incident management, analytics, and mobile teams into one platform — built on the infrastructure you already have.'}
+              ? 'Kabat One unifica despacho, video, GIS, gestión de incidentes, analítica y equipos móviles en una sola plataforma — sobre la infraestructura que ya tienes.'
+              : 'Kabat One unifies dispatch, video, GIS, incident management, analytics, and mobile teams into one platform — built on the infrastructure you already have.'}
           </p>
           <div className="hl-ctas">
             <a className="hl-btn-primary" href="#demo">
@@ -47,8 +47,8 @@ export default function HeroV2Hub({ es }: { es: boolean }) {
             <Image
               src="/images/hero-lab/concept-5-hub.webp"
               alt={es
-                ? 'Diagrama de KabatOne en el centro conectado a seis módulos: CAD/911, GIS, video, eventos, móvil e integraciones'
-                : 'Diagram of KabatOne at the center connected to six modules: CAD/911, GIS, video, events, mobile, and integrations'}
+                ? 'Diagrama de Kabat One en el centro conectado a seis módulos: CAD/911, GIS, video, eventos, móvil e integraciones'
+                : 'Diagram of Kabat One at the center connected to six modules: CAD/911, GIS, video, events, mobile, and integrations'}
               fill
               sizes="(max-width: 980px) 90vw, 600px"
               priority

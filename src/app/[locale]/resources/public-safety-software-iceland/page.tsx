@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareIceland({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Islandia | Policía Ríkislögregluþjónn/KÍB, Guardia Costera, Keflavík NATO y Volcanes – KabatOne"
-        : "Public Safety Software for Iceland | National Police/KÍB, Coast Guard, Keflavík NATO & Volcanoes – KabatOne",
+        ? "Software de Seguridad Pública para Islandia | Policía Ríkislögregluþjónn/KÍB, Guardia Costera, Keflavík NATO y Volcanes – Kabat One"
+        : "Public Safety Software for Iceland | National Police/KÍB, Coast Guard, Keflavík NATO & Volcanoes – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía Nacional islandesa, KÍB Inteligencia y Guardia Costera — gestión de riesgos volcánicos Fagradalsfjall/Grindavík, ZEE pesquera 200 nm, Base Keflavík NATO, Corredor Ártico y coordinación FRONTEX/Schengen."
-        : "KabatOne delivers public safety platform for Iceland National Police, KÍB Intelligence, and Coast Guard — volcanic risk management Fagradalsfjall/Grindavík, 200 nm fishing EEZ, NATO Keflavík Base, Arctic Corridor, and FRONTEX/Schengen coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía Nacional islandesa, KÍB Inteligencia y Guardia Costera — gestión de riesgos volcánicos Fagradalsfjall/Grindavík, ZEE pesquera 200 nm, Base Keflavík NATO, Corredor Ártico y coordinación FRONTEX/Schengen."
+        : "Kabat One delivers public safety platform for Iceland National Police, KÍB Intelligence, and Coast Guard — volcanic risk management Fagradalsfjall/Grindavík, 200 nm fishing EEZ, NATO Keflavík Base, Arctic Corridor, and FRONTEX/Schengen coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-iceland"
         : "https://kabatone.com/resources/public-safety-software-iceland",
@@ -348,13 +348,13 @@ export default async function PublicSafetySoftwareIceland({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Islandia"
-              : "KabatOne Capabilities for Iceland"}
+              ? "Capacidades Kabat One para Islandia"
+              : "Kabat One Capabilities for Iceland"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -461,8 +461,8 @@ export default async function PublicSafetySoftwareIceland({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía Nacional, KÍB y Guardia Costera en una plataforma unificada — gestión volcánica con IMO/Almannavarnir, ZEE 830.000 km², Keflavík NATO, cumplimiento Persónuvernd/GDPR-EEA y vigilancia ártica."
-            : "KabatOne integrates National Police, KÍB, and Coast Guard in one unified platform — volcanic management with IMO/Almannavarnir, 830,000 km² EEZ, NATO Keflavík, Persónuvernd/GDPR-EEA compliance, and Arctic surveillance."
+            ? "Kabat One integra Policía Nacional, KÍB y Guardia Costera en una plataforma unificada — gestión volcánica con IMO/Almannavarnir, ZEE 830.000 km², Keflavík NATO, cumplimiento Persónuvernd/GDPR-EEA y vigilancia ártica."
+            : "Kabat One integrates National Police, KÍB, and Coast Guard in one unified platform — volcanic management with IMO/Almannavarnir, 830,000 km² EEZ, NATO Keflavík, Persónuvernd/GDPR-EEA compliance, and Arctic surveillance."
         }
       />
       <Footer es={es} />

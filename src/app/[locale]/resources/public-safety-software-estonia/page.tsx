@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareEstoniaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Estonia | KabatOne"
-    : "Public Safety Software for Estonia | KabatOne";
+    ? "Software de Seguridad Pública para Estonia | Kabat One"
+    : "Public Safety Software for Estonia | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Estonia — Policía y Guardia de Fronteras, KAPO, Rescate — con vigilancia en tiempo real, despacho y gestión de incidentes. Solución compatible con los altos estándares de ciberseguridad de la nación digital líder de Europa."
-    : "KabatOne supports Estonia security forces — Police and Border Guard Board, KAPO, Rescue Board — with real-time surveillance, dispatch, and incident management. Solution compatible with the cybersecurity standards of Europe's leading digital nation.";
+    ? "Kabat One apoya las fuerzas de seguridad de Estonia — Policía y Guardia de Fronteras, KAPO, Rescate — con vigilancia en tiempo real, despacho y gestión de incidentes. Solución compatible con los altos estándares de ciberseguridad de la nación digital líder de Europa."
+    : "Kabat One supports Estonia security forces — Police and Border Guard Board, KAPO, Rescue Board — with real-time surveillance, dispatch, and incident management. Solution compatible with the cybersecurity standards of Europe's leading digital nation.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-estonia"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareEstoniaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Estonia?"
-        : "How does KabatOne support Estonia security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Estonia?"
+        : "How does Kabat One support Estonia security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Junta de Policía y Guardia de Fronteras (PPA), la Junta de Rescate (PäästAmet), la Policía de Seguridad Interior (KAPO) y la Liga de Defensa (Kaitseliit). La plataforma se integra con los estándares de interoperabilidad estatal de Estonia (X-Road/RIHA), el sistema de llamadas de emergencia 112 (Häirekeskus), y los requerimientos de datos soberanos de ISKE (estándar nacional de seguridad de la información)."
-        : "KabatOne provides unified situational awareness for the Police and Border Guard Board (PPA), Rescue Board (PäästAmet), Internal Security Service (KAPO), and Defence League (Kaitseliit). The platform integrates with Estonia's state interoperability standards (X-Road/RIHA), the 112 emergency call system (Häirekeskus), and ISKE (national information security standard) sovereign data requirements.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Junta de Policía y Guardia de Fronteras (PPA), la Junta de Rescate (PäästAmet), la Policía de Seguridad Interior (KAPO) y la Liga de Defensa (Kaitseliit). La plataforma se integra con los estándares de interoperabilidad estatal de Estonia (X-Road/RIHA), el sistema de llamadas de emergencia 112 (Häirekeskus), y los requerimientos de datos soberanos de ISKE (estándar nacional de seguridad de la información)."
+        : "Kabat One provides unified situational awareness for the Police and Border Guard Board (PPA), Rescue Board (PäästAmet), Internal Security Service (KAPO), and Defence League (Kaitseliit). The platform integrates with Estonia's state interoperability standards (X-Road/RIHA), the 112 emergency call system (Häirekeskus), and ISKE (national information security standard) sovereign data requirements.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareEstoniaPage({
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con las regulaciones de protección de datos de Estonia/UE?"
-        : "How does KabatOne comply with Estonia/EU data protection regulations?",
+        ? "¿Cómo cumple Kabat One con las regulaciones de protección de datos de Estonia/UE?"
+        : "How does Kabat One comply with Estonia/EU data protection regulations?",
       answer: es
-        ? "KabatOne cumple con el RGPD/GDPR europeo y las directrices de la Autoridad de Protección de Datos de Estonia (AKI). La plataforma implementa los principios de soberanía de datos de X-Road, cumple con el estándar nacional de seguridad de la información ISKE (3 niveles H/M/L), soporta la Directiva NIS2 de la UE para infraestructura crítica, y se alinea con los requerimientos de la Ley de Ciberseguridad de Estonia. Los datos pueden alojarse en el Centro Nacional de Datos o en la nube de la UE."
-        : "KabatOne complies with EU GDPR and Estonia Data Protection Inspectorate (AKI) guidelines. The platform implements X-Road data sovereignty principles, meets the ISKE national information security standard (3 levels H/M/L), supports the EU NIS2 Directive for critical infrastructure, and aligns with Estonia's Cybersecurity Act requirements. Data can be hosted at the National Data Centre or EU cloud.",
+        ? "Kabat One cumple con el RGPD/GDPR europeo y las directrices de la Autoridad de Protección de Datos de Estonia (AKI). La plataforma implementa los principios de soberanía de datos de X-Road, cumple con el estándar nacional de seguridad de la información ISKE (3 niveles H/M/L), soporta la Directiva NIS2 de la UE para infraestructura crítica, y se alinea con los requerimientos de la Ley de Ciberseguridad de Estonia. Los datos pueden alojarse en el Centro Nacional de Datos o en la nube de la UE."
+        : "Kabat One complies with EU GDPR and Estonia Data Protection Inspectorate (AKI) guidelines. The platform implements X-Road data sovereignty principles, meets the ISKE national information security standard (3 levels H/M/L), supports the EU NIS2 Directive for critical infrastructure, and aligns with Estonia's Cybersecurity Act requirements. Data can be hosted at the National Data Centre or EU cloud.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareEstoniaPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Estonia"
-              : "KabatOne Capabilities for Estonia"}
+              ? "Capacidades de Kabat One para Estonia"
+              : "Kabat One Capabilities for Estonia"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a los estándares tecnológicos líderes de Estonia: integración con X-Road para interoperabilidad estatal, cumplimiento ISKE, soporte del sistema 112 de Häirekeskus, y capacidades de ciberresiliencia para la nación digital más avanzada de Europa."
-              : "The KabatOne platform provides an integrated suite adapted to Estonia's leading technology standards: X-Road integration for state interoperability, ISKE compliance, Häirekeskus 112 system support, and cyber-resilience capabilities for Europe's most advanced digital nation."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a los estándares tecnológicos líderes de Estonia: integración con X-Road para interoperabilidad estatal, cumplimiento ISKE, soporte del sistema 112 de Häirekeskus, y capacidades de ciberresiliencia para la nación digital más avanzada de Europa."
+              : "The Kabat One platform provides an integrated suite adapted to Estonia's leading technology standards: X-Road integration for state interoperability, ISKE compliance, Häirekeskus 112 system support, and cyber-resilience capabilities for Europe's most advanced digital nation."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareEstoniaPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la PPA, la Junta de Rescate y el KAPO con una plataforma compatible con X-Road, ISKE y los estándares de ciberseguridad de Estonia."
-            : "Speak with our team about how KabatOne can support the PPA, Rescue Board, and KAPO with a platform compatible with X-Road, ISKE, and Estonia's cybersecurity standards."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la PPA, la Junta de Rescate y el KAPO con una plataforma compatible con X-Road, ISKE y los estándares de ciberseguridad de Estonia."
+            : "Speak with our team about how Kabat One can support the PPA, Rescue Board, and KAPO with a platform compatible with X-Road, ISKE, and Estonia's cybersecurity standards."
         }
       />
       <Footer es={es} />

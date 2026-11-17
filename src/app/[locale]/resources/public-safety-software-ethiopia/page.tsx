@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Ethiopian Federal Police Commission (EFPC) across all regions and city administrations?',
+    question: 'How does Kabat One integrate the Ethiopian Federal Police Commission (EFPC) across all regions and city administrations?',
     answer:
-      'KabatOne unifies Ethiopian Federal Police Commission (EFPC) operations across the 12 regional states and 2 city administrations — Addis Ababa and Dire Dawa — alongside regional police commissions (Oromia, Amhara, Tigray, SNNP, Somali, Benishangul-Gumuz, Afar, Harari, Gambela, Sidama, South West, Central Ethiopia) into a single operational map with shared CAD, CCTV integration, and coordination with the National Intelligence and Security Service (NISS).',
+      'Kabat One unifies Ethiopian Federal Police Commission (EFPC) operations across the 12 regional states and 2 city administrations — Addis Ababa and Dire Dawa — alongside regional police commissions (Oromia, Amhara, Tigray, SNNP, Somali, Benishangul-Gumuz, Afar, Harari, Gambela, Sidama, South West, Central Ethiopia) into a single operational map with shared CAD, CCTV integration, and coordination with the National Intelligence and Security Service (NISS).',
   },
   {
     question: 'How does the platform support Ethiopia\'s Addis Ababa Safe City programme?',
     answer:
-      'KabatOne provides centralised video management for Addis Ababa Safe City camera networks, integrating CCTV/ANPR across the ring roads, Bole International Airport (ADD), major intersections and Addis Ababa Light Rail Transit (LRT) stations — with AI analytics for crowd monitoring at Meskel Square, Merkato market, and major protest-prone corridors, plus real-time sharing with EFPC command and city administration.',
+      'Kabat One provides centralised video management for Addis Ababa Safe City camera networks, integrating CCTV/ANPR across the ring roads, Bole International Airport (ADD), major intersections and Addis Ababa Light Rail Transit (LRT) stations — with AI analytics for crowd monitoring at Meskel Square, Merkato market, and major protest-prone corridors, plus real-time sharing with EFPC command and city administration.',
   },
   {
-    question: 'How does KabatOne support Ethiopia\'s National Disaster Risk Management Commission (NDRMC)?',
+    question: 'How does Kabat One support Ethiopia\'s National Disaster Risk Management Commission (NDRMC)?',
     answer:
-      'KabatOne integrates with the National Disaster Risk Management Commission (NDRMC) under the Ministry of Peace for multi-hazard coordination — drought/famine alerts (Tigray/Amhara/Afar/Somali regions), flash floods (Blue Nile/Awash basin), locust swarms, and civil unrest mass displacement. The platform provides situational dashboards shared with IGAD Conflict Early Warning and Response Mechanism (CEWARN) and UN OCHA Ethiopia.',
+      'Kabat One integrates with the National Disaster Risk Management Commission (NDRMC) under the Ministry of Peace for multi-hazard coordination — drought/famine alerts (Tigray/Amhara/Afar/Somali regions), flash floods (Blue Nile/Awash basin), locust swarms, and civil unrest mass displacement. The platform provides situational dashboards shared with IGAD Conflict Early Warning and Response Mechanism (CEWARN) and UN OCHA Ethiopia.',
   },
   {
-    question: 'Does KabatOne support Ethiopian border security and cross-border coordination?',
+    question: 'Does Kabat One support Ethiopian border security and cross-border coordination?',
     answer:
-      'Yes. KabatOne integrates Ethiopian Immigration and Nationality Service and Federal Police border operations at major crossings — Moyale (Kenya), Tog Wajale/Dewele (Somalia), Metema (Sudan), Humera (Sudan/Eritrea corridor), and Galafi (Djibouti) — with biometric integration, ANPR, and real-time alert sharing with the NISS and regional security commands for cross-border insurgency monitoring (OLA/TPLF/ASM).',
+      'Yes. Kabat One integrates Ethiopian Immigration and Nationality Service and Federal Police border operations at major crossings — Moyale (Kenya), Tog Wajale/Dewele (Somalia), Metema (Sudan), Humera (Sudan/Eritrea corridor), and Galafi (Djibouti) — with biometric integration, ANPR, and real-time alert sharing with the NISS and regional security commands for cross-border insurgency monitoring (OLA/TPLF/ASM).',
   },
   {
-    question: 'How does KabatOne comply with Ethiopia\'s data protection and cybersecurity requirements?',
+    question: 'How does Kabat One comply with Ethiopia\'s data protection and cybersecurity requirements?',
     answer:
-      'KabatOne aligns with Ethiopia\'s Computer Crime Proclamation (No. 958/2016), the Cybersecurity Strategy of 2022 coordinated by the Information Network Security Administration (INSA), and the Personal Data Protection Proclamation (No. 1321/2024). The platform supports air-gapped deployment for NISS classified networks and implements IHL-compliant data handling for UN/NGO coordination during armed conflict phases.',
+      'Kabat One aligns with Ethiopia\'s Computer Crime Proclamation (No. 958/2016), the Cybersecurity Strategy of 2022 coordinated by the Information Network Security Administration (INSA), and the Personal Data Protection Proclamation (No. 1321/2024). The platform supports air-gapped deployment for NISS classified networks and implements IHL-compliant data handling for UN/NGO coordination during armed conflict phases.',
   },
   {
-    question: 'How does KabatOne handle Ethiopia government procurement?',
+    question: 'How does Kabat One handle Ethiopia government procurement?',
     answer:
-      'KabatOne supports procurement under the Ethiopian Public Procurement and Property Administration Agency (PPAA) framework (Proclamation No. 649/2009 and amendments), the Public Financial Management Proclamation, and development financing from World Bank, AfDB (African Development Bank), EU, USAID, and bilateral donors (China/Turkey/Israel) for security sector modernisation.',
+      'Kabat One supports procurement under the Ethiopian Public Procurement and Property Administration Agency (PPAA) framework (Proclamation No. 649/2009 and amendments), the Public Financial Management Proclamation, and development financing from World Bank, AfDB (African Development Bank), EU, USAID, and bilateral donors (China/Turkey/Israel) for security sector modernisation.',
   },
   {
-    question: 'How does KabatOne align with Ethiopia\'s Digital Ethiopia 2025 strategy?',
+    question: 'How does Kabat One align with Ethiopia\'s Digital Ethiopia 2025 strategy?',
     answer:
-      'KabatOne aligns with Digital Ethiopia 2025 and the 10-Year Perspective Development Plan (2021–2030) by providing AI/IoT-integrated public safety platforms that support Ministry of Peace (EFPC/NDRMC) and Addis Ababa City Administration digitalisation goals, INSA cybersecurity frameworks, and IGAD/AU Silence the Guns continental peace architecture.',
+      'Kabat One aligns with Digital Ethiopia 2025 and the 10-Year Perspective Development Plan (2021–2030) by providing AI/IoT-integrated public safety platforms that support Ministry of Peace (EFPC/NDRMC) and Addis Ababa City Administration digitalisation goals, INSA cybersecurity frameworks, and IGAD/AU Silence the Guns continental peace architecture.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Comisión Federal de Policía de Etiopía (EFPC) en todas las regiones y administraciones de ciudades?',
+    question: '¿Cómo integra Kabat One la Comisión Federal de Policía de Etiopía (EFPC) en todas las regiones y administraciones de ciudades?',
     answer:
-      'KabatOne unifica las operaciones de la Comisión Federal de Policía de Etiopía (EFPC) en los 12 estados regionales y 2 administraciones de ciudades — Adís Abeba y Dire Dawa — junto con las comisiones de policía regionales (Oromia, Amhara, Tigray, SNNP, Somalí, Benishangul-Gumuz, Afar, Harari, Gambela, Sidama, Suroeste, Etiopía Central) en un único mapa operativo con CAD compartido, integración CCTV y coordinación con el Servicio Nacional de Inteligencia y Seguridad (NISS).',
+      'Kabat One unifica las operaciones de la Comisión Federal de Policía de Etiopía (EFPC) en los 12 estados regionales y 2 administraciones de ciudades — Adís Abeba y Dire Dawa — junto con las comisiones de policía regionales (Oromia, Amhara, Tigray, SNNP, Somalí, Benishangul-Gumuz, Afar, Harari, Gambela, Sidama, Suroeste, Etiopía Central) en un único mapa operativo con CAD compartido, integración CCTV y coordinación con el Servicio Nacional de Inteligencia y Seguridad (NISS).',
   },
   {
     question: '¿Cómo admite la plataforma el programa Addis Abeba Safe City de Etiopía?',
     answer:
-      'KabatOne proporciona gestión de video centralizada para las redes de cámaras del Addis Abeba Safe City, integrando CCTV/ANPR en los anillos viales, el Aeropuerto Internacional Bole (ADD), las principales intersecciones y las estaciones del Tren Ligero de Adís Abeba (LRT) — con análisis IA para monitoreo de multitudes en la Plaza Meskel, el mercado Merkato y los principales corredores con historial de protestas, más compartición en tiempo real con el comando de la EFPC y la administración de la ciudad.',
+      'Kabat One proporciona gestión de video centralizada para las redes de cámaras del Addis Abeba Safe City, integrando CCTV/ANPR en los anillos viales, el Aeropuerto Internacional Bole (ADD), las principales intersecciones y las estaciones del Tren Ligero de Adís Abeba (LRT) — con análisis IA para monitoreo de multitudes en la Plaza Meskel, el mercado Merkato y los principales corredores con historial de protestas, más compartición en tiempo real con el comando de la EFPC y la administración de la ciudad.',
   },
   {
-    question: '¿Cómo apoya KabatOne la Comisión Nacional de Gestión del Riesgo de Desastres de Etiopía (NDRMC)?',
+    question: '¿Cómo apoya Kabat One la Comisión Nacional de Gestión del Riesgo de Desastres de Etiopía (NDRMC)?',
     answer:
-      'KabatOne se integra con la Comisión Nacional de Gestión del Riesgo de Desastres (NDRMC) bajo el Ministerio de Paz para la coordinación de múltiples amenazas — alertas de sequía/hambruna (regiones de Tigray/Amhara/Afar/Somalí), inundaciones repentinas (cuenca del Nilo Azul/Awash), plagas de langosta y desplazamiento masivo por conflictos civiles — con paneles de situación compartidos con el CEWARN del IGAD y la OCHA de la ONU en Etiopía.',
+      'Kabat One se integra con la Comisión Nacional de Gestión del Riesgo de Desastres (NDRMC) bajo el Ministerio de Paz para la coordinación de múltiples amenazas — alertas de sequía/hambruna (regiones de Tigray/Amhara/Afar/Somalí), inundaciones repentinas (cuenca del Nilo Azul/Awash), plagas de langosta y desplazamiento masivo por conflictos civiles — con paneles de situación compartidos con el CEWARN del IGAD y la OCHA de la ONU en Etiopía.',
   },
   {
-    question: '¿Admite KabatOne la seguridad fronteriza y la coordinación transfronteriza de Etiopía?',
+    question: '¿Admite Kabat One la seguridad fronteriza y la coordinación transfronteriza de Etiopía?',
     answer:
-      'Sí. KabatOne integra el Servicio de Inmigración y Nacionalidad de Etiopía y las operaciones de la Policía Federal en los principales pasos fronterizos — Moyale (Kenia), Tog Wajale/Dewele (Somalia), Metema (Sudán), Humera (corredor Sudán/Eritrea) y Galafi (Yibuti) — con integración biométrica, ANPR y compartición de alertas en tiempo real con el NISS y los comandos de seguridad regionales.',
+      'Sí. Kabat One integra el Servicio de Inmigración y Nacionalidad de Etiopía y las operaciones de la Policía Federal en los principales pasos fronterizos — Moyale (Kenia), Tog Wajale/Dewele (Somalia), Metema (Sudán), Humera (corredor Sudán/Eritrea) y Galafi (Yibuti) — con integración biométrica, ANPR y compartición de alertas en tiempo real con el NISS y los comandos de seguridad regionales.',
   },
   {
-    question: '¿Cómo cumple KabatOne con los requisitos de protección de datos y ciberseguridad de Etiopía?',
+    question: '¿Cómo cumple Kabat One con los requisitos de protección de datos y ciberseguridad de Etiopía?',
     answer:
-      'KabatOne se alinea con la Proclamación de Delitos Informáticos de Etiopía (N.º 958/2016), la Estrategia de Ciberseguridad de 2022 coordinada por la Administración de Seguridad de Redes de Información (INSA) y la Proclamación de Protección de Datos Personales (N.º 1321/2024). La plataforma admite implementación en red aislada para las redes clasificadas del NISS e implementa gestión de datos conforme al DIH para la coordinación con ONU/ONG durante las fases de conflicto armado.',
+      'Kabat One se alinea con la Proclamación de Delitos Informáticos de Etiopía (N.º 958/2016), la Estrategia de Ciberseguridad de 2022 coordinada por la Administración de Seguridad de Redes de Información (INSA) y la Proclamación de Protección de Datos Personales (N.º 1321/2024). La plataforma admite implementación en red aislada para las redes clasificadas del NISS e implementa gestión de datos conforme al DIH para la coordinación con ONU/ONG durante las fases de conflicto armado.',
   },
   {
-    question: '¿Cómo gestiona KabatOne las adquisiciones del gobierno etíope?',
+    question: '¿Cómo gestiona Kabat One las adquisiciones del gobierno etíope?',
     answer:
-      'KabatOne admite adquisiciones bajo el marco de la Agencia de Administración de Adquisiciones y Propiedades Públicas de Etiopía (PPAA, Proclamación N.º 649/2009 y modificaciones), la Proclamación de Gestión Financiera Pública y el financiamiento de desarrollo del Banco Mundial, el BAD (Banco Africano de Desarrollo), la UE, USAID y donantes bilaterales (China/Turquía/Israel) para la modernización del sector de seguridad.',
+      'Kabat One admite adquisiciones bajo el marco de la Agencia de Administración de Adquisiciones y Propiedades Públicas de Etiopía (PPAA, Proclamación N.º 649/2009 y modificaciones), la Proclamación de Gestión Financiera Pública y el financiamiento de desarrollo del Banco Mundial, el BAD (Banco Africano de Desarrollo), la UE, USAID y donantes bilaterales (China/Turquía/Israel) para la modernización del sector de seguridad.',
   },
   {
-    question: '¿Cómo se alinea KabatOne con la estrategia Digital Etiopía 2025?',
+    question: '¿Cómo se alinea Kabat One con la estrategia Digital Etiopía 2025?',
     answer:
-      'KabatOne se alinea con Digital Etiopía 2025 y el Plan de Desarrollo de Perspectiva de 10 Años (2021–2030), proporcionando plataformas de seguridad pública integradas con IA/IoT que apoyan los objetivos de digitalización del Ministerio de Paz (EFPC/NDRMC) y la Administración de la Ciudad de Adís Abeba, los marcos de ciberseguridad del INSA y la arquitectura continental de paz IGAD/UA "Silenciar las Armas".',
+      'Kabat One se alinea con Digital Etiopía 2025 y el Plan de Desarrollo de Perspectiva de 10 Años (2021–2030), proporcionando plataformas de seguridad pública integradas con IA/IoT que apoyan los objetivos de digitalización del Ministerio de Paz (EFPC/NDRMC) y la Administración de la Ciudad de Adís Abeba, los marcos de ciberseguridad del INSA y la arquitectura continental de paz IGAD/UA "Silenciar las Armas".',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Etiopía' : 'KabatOne Platform Capabilities for Ethiopia'}
+              {es ? 'Capacidades de la plataforma Kabat One para Etiopía' : 'Kabat One Platform Capabilities for Ethiopia'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Gestión de vídeo Addis Abeba Safe City y LRT' : 'Addis Ababa Safe City Video Management & LRT',
                   text: es
-                    ? 'KabatOne gestiona las cámaras CCTV/ANPR del Addis Abeba Safe City en los 10 sub-ciudades (subcities), integra la vigilancia del ADD y las estaciones del LRT, conecta el video del Meskel Square y el Merkato, y proporciona análisis de video con IA — detección de aglomeraciones, análisis de comportamiento de multitudes, identificación de vehículos — con latencia de alerta inferior a 2 segundos y compartición de transmisiones con la EFPC y la Administración de la Ciudad.'
-                    : 'KabatOne manages Addis Ababa Safe City CCTV/ANPR cameras across 10 sub-cities, integrates ADD Airport and LRT station surveillance, connects Meskel Square and Merkato video, and provides AI video analytics — crowd density detection, mass gathering behaviour analysis, vehicle identification — with sub-2-second alert latency and stream sharing with EFPC and City Administration.',
+                    ? 'Kabat One gestiona las cámaras CCTV/ANPR del Addis Abeba Safe City en los 10 sub-ciudades (subcities), integra la vigilancia del ADD y las estaciones del LRT, conecta el video del Meskel Square y el Merkato, y proporciona análisis de video con IA — detección de aglomeraciones, análisis de comportamiento de multitudes, identificación de vehículos — con latencia de alerta inferior a 2 segundos y compartición de transmisiones con la EFPC y la Administración de la Ciudad.'
+                    : 'Kabat One manages Addis Ababa Safe City CCTV/ANPR cameras across 10 sub-cities, integrates ADD Airport and LRT station surveillance, connects Meskel Square and Merkato video, and provides AI video analytics — crowd density detection, mass gathering behaviour analysis, vehicle identification — with sub-2-second alert latency and stream sharing with EFPC and City Administration.',
                 },
                 {
                   heading: es ? 'Coordinación NDRMC y conciencia situacional multi-amenaza' : 'NDRMC Coordination & Multi-Hazard Situational Awareness',
                   text: es
-                    ? 'KabatOne proporciona paneles de situación multi-amenaza en tiempo real para el NDRMC — integración de datos meteorológicos del Servicio Meteorológico Nacional (NMS) para sequías/inundaciones, alertas sísmicas del Instituto Etíope de Geofísica (IGSSA), datos de movimiento de refugiados del ACNUR/IOM, y feeds del CEWARN del IGAD para incidentes transfronterizos — con escalada de respuesta a la UA y UN OCHA para crisis humanitarias mayores.'
-                    : 'KabatOne provides real-time multi-hazard situational dashboards for NDRMC — National Meteorological Service (NMS) weather data for droughts/floods, Ethiopian Institute of Geophysics (IGSSA) seismic alerts, UNHCR/IOM refugee movement data, and IGAD CEWARN feeds for cross-border incidents — with AU and UN OCHA escalation for major humanitarian crises.',
+                    ? 'Kabat One proporciona paneles de situación multi-amenaza en tiempo real para el NDRMC — integración de datos meteorológicos del Servicio Meteorológico Nacional (NMS) para sequías/inundaciones, alertas sísmicas del Instituto Etíope de Geofísica (IGSSA), datos de movimiento de refugiados del ACNUR/IOM, y feeds del CEWARN del IGAD para incidentes transfronterizos — con escalada de respuesta a la UA y UN OCHA para crisis humanitarias mayores.'
+                    : 'Kabat One provides real-time multi-hazard situational dashboards for NDRMC — National Meteorological Service (NMS) weather data for droughts/floods, Ethiopian Institute of Geophysics (IGSSA) seismic alerts, UNHCR/IOM refugee movement data, and IGAD CEWARN feeds for cross-border incidents — with AU and UN OCHA escalation for major humanitarian crises.',
                 },
                 {
                   heading: es ? 'Seguridad fronteriza y monitoreo de amenazas IGAD' : 'Border Security & IGAD Threat Monitoring',
                   text: es
-                    ? 'KabatOne integra los puestos fronterizos de la EFPC/Inmigración en los 6 países limítrofes con CCTV, ANPR, biometría y — en zonas de alta amenaza (frontera Somalí, Gambela/Sudán del Sur, Tigray/Eritrea) — sensores radar y UAVs; proporciona alertas en tiempo real sobre movimientos de Al-Shabaab/OLA/TPLF, y el panel IGAD/CEWARN para coordinación multinacional de respuesta en el Cuerno de África.'
-                    : 'KabatOne integrates EFPC/Immigration border posts across 6 bordering countries with CCTV, ANPR, biometrics, and — in high-threat zones (Somali border, Gambela/South Sudan, Tigray/Eritrea) — radar sensors and UAVs; provides real-time Al-Shabaab/OLA/TPLF movement alerts, and the IGAD/CEWARN dashboard for multinational Horn of Africa response coordination.',
+                    ? 'Kabat One integra los puestos fronterizos de la EFPC/Inmigración en los 6 países limítrofes con CCTV, ANPR, biometría y — en zonas de alta amenaza (frontera Somalí, Gambela/Sudán del Sur, Tigray/Eritrea) — sensores radar y UAVs; proporciona alertas en tiempo real sobre movimientos de Al-Shabaab/OLA/TPLF, y el panel IGAD/CEWARN para coordinación multinacional de respuesta en el Cuerno de África.'
+                    : 'Kabat One integrates EFPC/Immigration border posts across 6 bordering countries with CCTV, ANPR, biometrics, and — in high-threat zones (Somali border, Gambela/South Sudan, Tigray/Eritrea) — radar sensors and UAVs; provides real-time Al-Shabaab/OLA/TPLF movement alerts, and the IGAD/CEWARN dashboard for multinational Horn of Africa response coordination.',
                 },
                 {
                   heading: es ? 'Cumplimiento INSA/Proc. 1321/2024 y adquisición PPAA' : 'INSA/Proc. 1321/2024 Compliance & PPAA Procurement',
                   text: es
-                    ? 'KabatOne se alinea con la Proclamación de Protección de Datos Personales de Etiopía (N.º 1321/2024), la Estrategia de Ciberseguridad INSA de 2022, la Proclamación de Delitos Informáticos (N.º 958/2016) y el CERT-ET; admite adquisición bajo el marco PPAA (Proc. N.º 649/2009), el financiamiento de desarrollo del Banco Mundial/BAD/UE/USAID/donantes bilaterales, y los marcos de procurement de la UA para proyectos continentales.'
-                    : 'KabatOne aligns with Ethiopia Personal Data Protection Proclamation (No. 1321/2024), INSA Cybersecurity Strategy 2022, Computer Crime Proclamation (No. 958/2016), and CERT-ET; supports procurement under PPAA framework (Proc. No. 649/2009), World Bank/AfDB/EU/USAID/bilateral donor development financing, and AU procurement frameworks for continental projects.',
+                    ? 'Kabat One se alinea con la Proclamación de Protección de Datos Personales de Etiopía (N.º 1321/2024), la Estrategia de Ciberseguridad INSA de 2022, la Proclamación de Delitos Informáticos (N.º 958/2016) y el CERT-ET; admite adquisición bajo el marco PPAA (Proc. N.º 649/2009), el financiamiento de desarrollo del Banco Mundial/BAD/UE/USAID/donantes bilaterales, y los marcos de procurement de la UA para proyectos continentales.'
+                    : 'Kabat One aligns with Ethiopia Personal Data Protection Proclamation (No. 1321/2024), INSA Cybersecurity Strategy 2022, Computer Crime Proclamation (No. 958/2016), and CERT-ET; supports procurement under PPAA framework (Proc. No. 649/2009), World Bank/AfDB/EU/USAID/bilateral donor development financing, and AU procurement frameworks for continental projects.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la EFPC, el NDRMC y la Administración de Addis Abeba en una plataforma operativa conforme a INSA/Proc. 1321/2024, diseñada para el Cuerno de África y alineada con Digital Etiopía 2025.'
-              : 'Discover how KabatOne unifies Ethiopia EFPC, NDRMC, and Addis Ababa City Administration into one operational platform compliant with INSA/Proc. 1321/2024, designed for the Horn of Africa and aligned with Digital Ethiopia 2025.'
+              ? 'Descubra cómo Kabat One unifica la EFPC, el NDRMC y la Administración de Addis Abeba en una plataforma operativa conforme a INSA/Proc. 1321/2024, diseñada para el Cuerno de África y alineada con Digital Etiopía 2025.'
+              : 'Discover how Kabat One unifies Ethiopia EFPC, NDRMC, and Addis Ababa City Administration into one operational platform compliant with INSA/Proc. 1321/2024, designed for the Horn of Africa and aligned with Digital Ethiopia 2025.'
           }
         />
       </main>

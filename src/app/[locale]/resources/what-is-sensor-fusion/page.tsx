@@ -287,8 +287,8 @@ export default async function WhatIsSensorFusionPage({
           es={es}
           h2={es ? '¿Listo para Unificar tus Sensores en una Sola Plataforma?' : 'Ready to Unify Your Sensors Into One Platform?'}
           subtitle={es
-            ? 'KabatOne conecta video, LPR, sensores acústicos y unidades de campo en un mapa operativo unificado. Agenda una demo.'
-            : 'KabatOne connects video, LPR, acoustic sensors, and field units into a unified operational map. Schedule a demo.'}
+            ? 'Kabat One conecta video, LPR, sensores acústicos y unidades de campo en un mapa operativo unificado. Agenda una demo.'
+            : 'Kabat One connects video, LPR, acoustic sensors, and field units into a unified operational map. Schedule a demo.'}
         />
       </main>
 

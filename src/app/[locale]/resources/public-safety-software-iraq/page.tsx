@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Iraqi Federal Police (IFP) and Ministry of Interior across 18 governorates?',
+    question: 'How does Kabat One integrate the Iraqi Federal Police (IFP) and Ministry of Interior across 18 governorates?',
     answer:
-      'KabatOne unifies Iraqi Federal Police (IFP) and Ministry of Interior operations across all 18 governorates — Baghdad, Basra, Nineveh, Erbil (KRI), Sulaymaniyah, Duhok, Kirkuk, Diyala, Anbar, Karbala, Najaf, Babylon, Wasit, Dhi Qar, Muthanna, Qadisiyyah, Maysan, and Salah ad-Din — into a single operational map with shared CAD, CCTV integration, and coordination between IFP, Counter-Terrorism Service (CTS), and Kurdistan Region Security Council (KRSC).',
+      'Kabat One unifies Iraqi Federal Police (IFP) and Ministry of Interior operations across all 18 governorates — Baghdad, Basra, Nineveh, Erbil (KRI), Sulaymaniyah, Duhok, Kirkuk, Diyala, Anbar, Karbala, Najaf, Babylon, Wasit, Dhi Qar, Muthanna, Qadisiyyah, Maysan, and Salah ad-Din — into a single operational map with shared CAD, CCTV integration, and coordination between IFP, Counter-Terrorism Service (CTS), and Kurdistan Region Security Council (KRSC).',
   },
   {
     question: 'How does the platform support Iraq Civil Defence and emergency management?',
     answer:
-      'KabatOne connects Iraqi Civil Defence Directorate stations across 18 governorates, coordinates 122/115 emergency dispatch with major hospitals (Medical City Baghdad/Basra Teaching Hospital/Erbil Emergency Hospital), and integrates incident response at oil installations (Rumaila, West Qurna, Kirkuk fields), Umm Qasr Port, and Baghdad International Airport (BGW).',
+      'Kabat One connects Iraqi Civil Defence Directorate stations across 18 governorates, coordinates 122/115 emergency dispatch with major hospitals (Medical City Baghdad/Basra Teaching Hospital/Erbil Emergency Hospital), and integrates incident response at oil installations (Rumaila, West Qurna, Kirkuk fields), Umm Qasr Port, and Baghdad International Airport (BGW).',
   },
   {
-    question: 'How does KabatOne support Baghdad Safe City and major urban security programmes?',
+    question: 'How does Kabat One support Baghdad Safe City and major urban security programmes?',
     answer:
-      'KabatOne provides centralised video management for Baghdad Safe City camera networks and MOI CCTV/ANPR across the Baghdad Ring Road, Expressways, and major checkpoints — integrating video from Green Zone/IZ security perimeter, Baghdad International Airport (BGW), and the city\'s 9 districts (qadhas) with AI analytics, crowd monitoring, and real-time alert sharing with the National Operations Centre (NOC).',
+      'Kabat One provides centralised video management for Baghdad Safe City camera networks and MOI CCTV/ANPR across the Baghdad Ring Road, Expressways, and major checkpoints — integrating video from Green Zone/IZ security perimeter, Baghdad International Airport (BGW), and the city\'s 9 districts (qadhas) with AI analytics, crowd monitoring, and real-time alert sharing with the National Operations Centre (NOC).',
   },
   {
-    question: 'Does KabatOne support Kurdistan Region Security Council (KRSC) and Peshmerga security operations?',
+    question: 'Does Kabat One support Kurdistan Region Security Council (KRSC) and Peshmerga security operations?',
     answer:
-      'Yes. KabatOne supports Kurdistan Region of Iraq (KRI) security architecture — Kurdistan Region Security Council (KRSC), Asayish (internal security), Peshmerga coordination with Iraqi Security Forces (ISF) under JCCC frameworks, Erbil/Sulaymaniyah/Duhok governorate operations, and KRI-specific data sovereignty requirements separate from Baghdad-managed systems.',
+      'Yes. Kabat One supports Kurdistan Region of Iraq (KRI) security architecture — Kurdistan Region Security Council (KRSC), Asayish (internal security), Peshmerga coordination with Iraqi Security Forces (ISF) under JCCC frameworks, Erbil/Sulaymaniyah/Duhok governorate operations, and KRI-specific data sovereignty requirements separate from Baghdad-managed systems.',
   },
   {
-    question: 'How does KabatOne support Iraq oil infrastructure security?',
+    question: 'How does Kabat One support Iraq oil infrastructure security?',
     answer:
-      'KabatOne provides perimeter monitoring and incident management for Iraq\'s critical oil infrastructure: Rumaila oilfield (1.4M+ bpd, Basra), West Qurna 1 & 2 (ExxonMobil/Lukoil), Majnoon (Shell), Kirkuk oilfields (INOC/KAR Group), Basra Oil Terminal (ABOT/KAAOT), Umm Qasr Port and Khor al-Zubair — with Oil Police Directorate (INOC) and MOI coordination, PTZ camera integration, and SIEM alert escalation.',
+      'Kabat One provides perimeter monitoring and incident management for Iraq\'s critical oil infrastructure: Rumaila oilfield (1.4M+ bpd, Basra), West Qurna 1 & 2 (ExxonMobil/Lukoil), Majnoon (Shell), Kirkuk oilfields (INOC/KAR Group), Basra Oil Terminal (ABOT/KAAOT), Umm Qasr Port and Khor al-Zubair — with Oil Police Directorate (INOC) and MOI coordination, PTZ camera integration, and SIEM alert escalation.',
   },
   {
-    question: 'How does KabatOne comply with Iraq data protection and cybersecurity requirements?',
+    question: 'How does Kabat One comply with Iraq data protection and cybersecurity requirements?',
     answer:
-      'KabatOne aligns with Iraqi Communications and Media Commission (CMC) data governance guidelines, Ministry of Communications encryption requirements, and National Information Technology Authority (NITA-Iraq) cybersecurity standards. The platform supports air-gapped deployment for classified MOI/CTS networks and implements INTERPOL-compatible data handling for cross-border law enforcement coordination with Jordan, Kuwait, Turkey, and Iran.',
+      'Kabat One aligns with Iraqi Communications and Media Commission (CMC) data governance guidelines, Ministry of Communications encryption requirements, and National Information Technology Authority (NITA-Iraq) cybersecurity standards. The platform supports air-gapped deployment for classified MOI/CTS networks and implements INTERPOL-compatible data handling for cross-border law enforcement coordination with Jordan, Kuwait, Turkey, and Iran.',
   },
   {
-    question: 'How does KabatOne handle Iraq government procurement through the PMAC/GCB?',
+    question: 'How does Kabat One handle Iraq government procurement through the PMAC/GCB?',
     answer:
-      'KabatOne supports procurement under Iraq Government Contracting Board (GCB/PMO) regulations, Public Financial Management Law, and Iraqi procurement frameworks for federal ministries. The platform aligns with World Bank/UN-supported security sector reform financing, US DoS/DoD ITACSS programme procurement, EU civilian mission (EUAM Iraq) requirements, and KRG (Kurdistan Regional Government) separate procurement rules.',
+      'Kabat One supports procurement under Iraq Government Contracting Board (GCB/PMO) regulations, Public Financial Management Law, and Iraqi procurement frameworks for federal ministries. The platform aligns with World Bank/UN-supported security sector reform financing, US DoS/DoD ITACSS programme procurement, EU civilian mission (EUAM Iraq) requirements, and KRG (Kurdistan Regional Government) separate procurement rules.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Policía Federal de Iraq (IFP) y el Ministerio del Interior en los 18 gobernados?',
+    question: '¿Cómo integra Kabat One la Policía Federal de Iraq (IFP) y el Ministerio del Interior en los 18 gobernados?',
     answer:
-      'KabatOne unifica las operaciones de la Policía Federal de Iraq (IFP) y el Ministerio del Interior en los 18 gobernados — Bagdad, Basra, Nínive, Erbil (KRI), Suleimanía, Dohuk, Kirkuk, Diyala, Anbar, Karbala, Nayaf, Babilonia, Wasit, Dhi Qar, Muthanna, Qadisiyya, Maisán y Salah ad-Din — en un solo mapa operativo con CAD compartido, integración CCTV y coordinación entre IFP, Servicio Antiterrorista (CTS) y el Consejo de Seguridad de la Región del Kurdistán (KRSC).',
+      'Kabat One unifica las operaciones de la Policía Federal de Iraq (IFP) y el Ministerio del Interior en los 18 gobernados — Bagdad, Basra, Nínive, Erbil (KRI), Suleimanía, Dohuk, Kirkuk, Diyala, Anbar, Karbala, Nayaf, Babilonia, Wasit, Dhi Qar, Muthanna, Qadisiyya, Maisán y Salah ad-Din — en un solo mapa operativo con CAD compartido, integración CCTV y coordinación entre IFP, Servicio Antiterrorista (CTS) y el Consejo de Seguridad de la Región del Kurdistán (KRSC).',
   },
   {
     question: '¿Cómo admite la plataforma la Defensa Civil de Iraq y la gestión de emergencias?',
     answer:
-      'KabatOne conecta las estaciones de la Dirección de Defensa Civil de Iraq en los 18 gobernados, coordina el despacho de emergencias 122/115 con los principales hospitales (Ciudad Médica de Bagdad/Hospital Universitario de Basra/Hospital de Emergencias de Erbil), e integra la respuesta ante incidentes en instalaciones petroleras (Rumaila, West Qurna, yacimientos de Kirkuk), Puerto Umm Qasr y el Aeropuerto Internacional de Bagdad (BGW).',
+      'Kabat One conecta las estaciones de la Dirección de Defensa Civil de Iraq en los 18 gobernados, coordina el despacho de emergencias 122/115 con los principales hospitales (Ciudad Médica de Bagdad/Hospital Universitario de Basra/Hospital de Emergencias de Erbil), e integra la respuesta ante incidentes en instalaciones petroleras (Rumaila, West Qurna, yacimientos de Kirkuk), Puerto Umm Qasr y el Aeropuerto Internacional de Bagdad (BGW).',
   },
   {
-    question: '¿Cómo apoya KabatOne la Ciudad Segura de Bagdad y los principales programas de seguridad urbana?',
+    question: '¿Cómo apoya Kabat One la Ciudad Segura de Bagdad y los principales programas de seguridad urbana?',
     answer:
-      'KabatOne proporciona gestión de video centralizada para las redes de cámaras del Baghdad Safe City y el CCTV/ANPR del MOI en el Anillo Vial de Bagdad, autopistas y puntos de control principales — integrando video del perímetro de la Zona Verde/IZ, el Aeropuerto Internacional de Bagdad (BGW) y los 9 distritos (qadhas) de la ciudad, con análisis IA, monitoreo de multitudes y compartición de alertas en tiempo real con el Centro Nacional de Operaciones (NOC).',
+      'Kabat One proporciona gestión de video centralizada para las redes de cámaras del Baghdad Safe City y el CCTV/ANPR del MOI en el Anillo Vial de Bagdad, autopistas y puntos de control principales — integrando video del perímetro de la Zona Verde/IZ, el Aeropuerto Internacional de Bagdad (BGW) y los 9 distritos (qadhas) de la ciudad, con análisis IA, monitoreo de multitudes y compartición de alertas en tiempo real con el Centro Nacional de Operaciones (NOC).',
   },
   {
-    question: '¿Admite KabatOne las operaciones de seguridad del Consejo de Seguridad de la Región del Kurdistán (KRSC) y los Peshmerga?',
+    question: '¿Admite Kabat One las operaciones de seguridad del Consejo de Seguridad de la Región del Kurdistán (KRSC) y los Peshmerga?',
     answer:
-      'Sí. KabatOne admite la arquitectura de seguridad de la Región del Kurdistán de Iraq (KRI) — Consejo de Seguridad de la Región del Kurdistán (KRSC), Asayish (seguridad interior), coordinación Peshmerga con las Fuerzas de Seguridad de Iraq (ISF) bajo marcos JCCC, operaciones en los gobernados de Erbil/Suleimanía/Dohuk y requisitos de soberanía de datos específicos del KRI, independientes de los sistemas gestionados desde Bagdad.',
+      'Sí. Kabat One admite la arquitectura de seguridad de la Región del Kurdistán de Iraq (KRI) — Consejo de Seguridad de la Región del Kurdistán (KRSC), Asayish (seguridad interior), coordinación Peshmerga con las Fuerzas de Seguridad de Iraq (ISF) bajo marcos JCCC, operaciones en los gobernados de Erbil/Suleimanía/Dohuk y requisitos de soberanía de datos específicos del KRI, independientes de los sistemas gestionados desde Bagdad.',
   },
   {
-    question: '¿Cómo admite KabatOne la seguridad de la infraestructura petrolera de Iraq?',
+    question: '¿Cómo admite Kabat One la seguridad de la infraestructura petrolera de Iraq?',
     answer:
-      'KabatOne proporciona monitoreo perimetral y gestión de incidentes para la infraestructura petrolera crítica de Iraq: yacimiento de Rumaila (+1.4M bpd, Basra), West Qurna 1 y 2 (ExxonMobil/Lukoil), Majnoon (Shell), yacimientos de Kirkuk (INOC/KAR Group), Terminal Petrolera de Basra (ABOT/KAAOT), Puerto Umm Qasr y Khor al-Zubair — con coordinación de la Dirección de Policía Petrolera (INOC) y MOI, integración de cámaras PTZ y escalada de alertas SIEM.',
+      'Kabat One proporciona monitoreo perimetral y gestión de incidentes para la infraestructura petrolera crítica de Iraq: yacimiento de Rumaila (+1.4M bpd, Basra), West Qurna 1 y 2 (ExxonMobil/Lukoil), Majnoon (Shell), yacimientos de Kirkuk (INOC/KAR Group), Terminal Petrolera de Basra (ABOT/KAAOT), Puerto Umm Qasr y Khor al-Zubair — con coordinación de la Dirección de Policía Petrolera (INOC) y MOI, integración de cámaras PTZ y escalada de alertas SIEM.',
   },
   {
-    question: '¿Cómo cumple KabatOne con los requisitos de protección de datos y ciberseguridad en Iraq?',
+    question: '¿Cómo cumple Kabat One con los requisitos de protección de datos y ciberseguridad en Iraq?',
     answer:
-      'KabatOne se alinea con las directrices de gobernanza de datos de la Comisión de Comunicaciones y Medios de Iraq (CMC), los requisitos de cifrado del Ministerio de Comunicaciones y los estándares de ciberseguridad de la Autoridad Nacional de Tecnología de la Información (NITA-Iraq). La plataforma admite implementación en red aislada para redes clasificadas del MOI/CTS e implementa gestión de datos compatible con INTERPOL para coordinación policial transfronteriza con Jordania, Kuwait, Turquía e Irán.',
+      'Kabat One se alinea con las directrices de gobernanza de datos de la Comisión de Comunicaciones y Medios de Iraq (CMC), los requisitos de cifrado del Ministerio de Comunicaciones y los estándares de ciberseguridad de la Autoridad Nacional de Tecnología de la Información (NITA-Iraq). La plataforma admite implementación en red aislada para redes clasificadas del MOI/CTS e implementa gestión de datos compatible con INTERPOL para coordinación policial transfronteriza con Jordania, Kuwait, Turquía e Irán.',
   },
   {
-    question: '¿Cómo gestiona KabatOne las adquisiciones del gobierno de Iraq a través del PMAC/GCB?',
+    question: '¿Cómo gestiona Kabat One las adquisiciones del gobierno de Iraq a través del PMAC/GCB?',
     answer:
-      'KabatOne admite adquisiciones bajo las regulaciones del Consejo de Contratación del Gobierno de Iraq (GCB/PMO), la Ley de Gestión Financiera Pública y los marcos de adquisición para ministerios federales. La plataforma se alinea con el financiamiento de reforma del sector de seguridad respaldado por el Banco Mundial/ONU, el programa ITACSS del DoS/DoD de EE. UU., los requisitos de la misión civil de la UE (EUAM Iraq) y las normas de adquisición separadas del GRK (Gobierno Regional del Kurdistán).',
+      'Kabat One admite adquisiciones bajo las regulaciones del Consejo de Contratación del Gobierno de Iraq (GCB/PMO), la Ley de Gestión Financiera Pública y los marcos de adquisición para ministerios federales. La plataforma se alinea con el financiamiento de reforma del sector de seguridad respaldado por el Banco Mundial/ONU, el programa ITACSS del DoS/DoD de EE. UU., los requisitos de la misión civil de la UE (EUAM Iraq) y las normas de adquisición separadas del GRK (Gobierno Regional del Kurdistán).',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Iraq' : 'KabatOne Platform Capabilities for Iraq'}
+              {es ? 'Capacidades de la plataforma Kabat One para Iraq' : 'Kabat One Platform Capabilities for Iraq'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Baghdad Safe City y gestión de video CCTV' : 'Baghdad Safe City Video Management & CCTV',
                   text: es
-                    ? 'KabatOne gestiona las cámaras del Baghdad Safe City y los puntos de control ANPR del BOC en los 9 distritos de Bagdad, integra la vigilancia del BGW y los checkpoints de la Zona Verde/IZ, conecta el video de las instalaciones del INOC/ABOT, y proporciona análisis de video con IA — detección de coches bomba, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y compartición de transmisiones con el NOC, CTS y el BOC.'
-                    : 'KabatOne manages Baghdad Safe City cameras and BOC ANPR checkpoints across 9 Baghdad districts, integrates BGW Airport and Green Zone/IZ perimeter surveillance, connects INOC/ABOT facility video, and provides AI video analytics — VBIED detection, crowd counting, behavioural analysis — with sub-2-second alert latency and stream sharing with NOC, CTS, and BOC.',
+                    ? 'Kabat One gestiona las cámaras del Baghdad Safe City y los puntos de control ANPR del BOC en los 9 distritos de Bagdad, integra la vigilancia del BGW y los checkpoints de la Zona Verde/IZ, conecta el video de las instalaciones del INOC/ABOT, y proporciona análisis de video con IA — detección de coches bomba, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y compartición de transmisiones con el NOC, CTS y el BOC.'
+                    : 'Kabat One manages Baghdad Safe City cameras and BOC ANPR checkpoints across 9 Baghdad districts, integrates BGW Airport and Green Zone/IZ perimeter surveillance, connects INOC/ABOT facility video, and provides AI video analytics — VBIED detection, crowd counting, behavioural analysis — with sub-2-second alert latency and stream sharing with NOC, CTS, and BOC.',
                 },
                 {
                   heading: es ? 'Seguridad de infraestructura petrolera y portuaria' : 'Oil & Port Infrastructure Security',
                   text: es
-                    ? 'KabatOne proporciona monitoreo perimetral en tiempo real de los megacampos de Basra (Rumaila/West Qurna 1-2/Majnoon), los yacimientos de Kirkuk (ISF+KRI coordinados), la Terminal de Basra (ABOT/KAAOT), el Puerto de Umm Qasr y las terminales de Khor al-Zubair — con alertas SIEM de la Policía Petrolera INOC, cámaras PTZ, integración AIS para vigilancia marítima Shatt al-Arab/Golfo Pérsico y escalada a la Guardia Costera de Iraq (ICG).'
-                    : 'KabatOne provides real-time perimeter monitoring of Basra mega-fields (Rumaila/West Qurna 1-2/Majnoon), Kirkuk oilfields (ISF+KRI coordinated), Basra Terminal (ABOT/KAAOT), Umm Qasr Port, and Khor al-Zubair terminals — with INOC Oil Police SIEM alerts, PTZ cameras, AIS integration for Shatt al-Arab/Persian Gulf maritime surveillance, and escalation to Iraq Coastguard (ICG).',
+                    ? 'Kabat One proporciona monitoreo perimetral en tiempo real de los megacampos de Basra (Rumaila/West Qurna 1-2/Majnoon), los yacimientos de Kirkuk (ISF+KRI coordinados), la Terminal de Basra (ABOT/KAAOT), el Puerto de Umm Qasr y las terminales de Khor al-Zubair — con alertas SIEM de la Policía Petrolera INOC, cámaras PTZ, integración AIS para vigilancia marítima Shatt al-Arab/Golfo Pérsico y escalada a la Guardia Costera de Iraq (ICG).'
+                    : 'Kabat One provides real-time perimeter monitoring of Basra mega-fields (Rumaila/West Qurna 1-2/Majnoon), Kirkuk oilfields (ISF+KRI coordinated), Basra Terminal (ABOT/KAAOT), Umm Qasr Port, and Khor al-Zubair terminals — with INOC Oil Police SIEM alerts, PTZ cameras, AIS integration for Shatt al-Arab/Persian Gulf maritime surveillance, and escalation to Iraq Coastguard (ICG).',
                 },
                 {
                   heading: es ? 'Seguridad de la Región del Kurdistán (KRSC/Asayish/Peshmerga)' : 'Kurdistan Region Security (KRSC/Asayish/Peshmerga)',
                   text: es
-                    ? 'KabatOne admite la arquitectura dual de seguridad del KRI — paneles separados para las operaciones del KRSC/Asayish de Erbil/Suleimanía/Dohuk con soberanía de datos independiente del MOI federal, integración de los puntos de control del ESOC de Erbil, coordinación JCCC para zonas disputadas (Kirkuk/Sinjar/Khanaqin) y alertas de frontera para los pasos Iraq-Turquía (Ibrahim Khalil/Fishkhabur) e Iraq-Irán (Parwiz Khan/Bashmakh).'
-                    : 'KabatOne supports KRI\'s dual security architecture — separate dashboards for KRSC/Asayish operations in Erbil/Sulaymaniyah/Duhok with data sovereignty independent of federal MOI, Erbil ESOC checkpoint integration, JCCC coordination for disputed zones (Kirkuk/Sinjar/Khanaqin), and border alerts for Iraq-Turkey (Ibrahim Khalil/Fishkhabur) and Iraq-Iran (Parwiz Khan/Bashmakh) crossings.',
+                    ? 'Kabat One admite la arquitectura dual de seguridad del KRI — paneles separados para las operaciones del KRSC/Asayish de Erbil/Suleimanía/Dohuk con soberanía de datos independiente del MOI federal, integración de los puntos de control del ESOC de Erbil, coordinación JCCC para zonas disputadas (Kirkuk/Sinjar/Khanaqin) y alertas de frontera para los pasos Iraq-Turquía (Ibrahim Khalil/Fishkhabur) e Iraq-Irán (Parwiz Khan/Bashmakh).'
+                    : 'Kabat One supports KRI\'s dual security architecture — separate dashboards for KRSC/Asayish operations in Erbil/Sulaymaniyah/Duhok with data sovereignty independent of federal MOI, Erbil ESOC checkpoint integration, JCCC coordination for disputed zones (Kirkuk/Sinjar/Khanaqin), and border alerts for Iraq-Turkey (Ibrahim Khalil/Fishkhabur) and Iraq-Iran (Parwiz Khan/Bashmakh) crossings.',
                 },
                 {
                   heading: es ? 'Cumplimiento CMC/NITA-Iraq y adquisición GCB/PMO' : 'CMC/NITA-Iraq Compliance & GCB/PMO Procurement',
                   text: es
-                    ? 'KabatOne se alinea con las directrices de gobernanza de datos de la CMC, los estándares de ciberseguridad del NITA-Iraq y los requisitos de cifrado del Ministerio de Comunicaciones; admite implementación en red aislada para redes clasificadas del CTS/MOI; soporta adquisición bajo el GCB/PMO federal, los marcos de financiamiento del Banco Mundial/PNUD/UNOPS para reconstrucción de Nínive/Anbar, el programa ITACSS del DoS/DoD de EE. UU. y los marcos separados del GRK para proyectos en el KRI.'
-                    : 'KabatOne aligns with CMC data governance guidelines, NITA-Iraq cybersecurity standards, and Ministry of Communications encryption requirements; supports air-gapped deployment for CTS/MOI classified networks; procurement under federal GCB/PMO, World Bank/UNDP/UNOPS financing frameworks for Nineveh/Anbar reconstruction, US DoS/DoD ITACSS programme, and separate KRG frameworks for KRI projects.',
+                    ? 'Kabat One se alinea con las directrices de gobernanza de datos de la CMC, los estándares de ciberseguridad del NITA-Iraq y los requisitos de cifrado del Ministerio de Comunicaciones; admite implementación en red aislada para redes clasificadas del CTS/MOI; soporta adquisición bajo el GCB/PMO federal, los marcos de financiamiento del Banco Mundial/PNUD/UNOPS para reconstrucción de Nínive/Anbar, el programa ITACSS del DoS/DoD de EE. UU. y los marcos separados del GRK para proyectos en el KRI.'
+                    : 'Kabat One aligns with CMC data governance guidelines, NITA-Iraq cybersecurity standards, and Ministry of Communications encryption requirements; supports air-gapped deployment for CTS/MOI classified networks; procurement under federal GCB/PMO, World Bank/UNDP/UNOPS financing frameworks for Nineveh/Anbar reconstruction, US DoS/DoD ITACSS programme, and separate KRG frameworks for KRI projects.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la IFP, el KRSC y el NOC de Iraq en una plataforma operativa que protege infraestructura petrolera crítica, puertos del Golfo Pérsico y ciudades en reconstrucción conforme a CMC/NITA-Iraq.'
-              : 'Discover how KabatOne unifies Iraq IFP, KRSC, and NOC into one operational platform protecting critical oil infrastructure, Persian Gulf ports, and rebuilding cities — compliant with CMC/NITA-Iraq standards.'
+              ? 'Descubra cómo Kabat One unifica la IFP, el KRSC y el NOC de Iraq en una plataforma operativa que protege infraestructura petrolera crítica, puertos del Golfo Pérsico y ciudades en reconstrucción conforme a CMC/NITA-Iraq.'
+              : 'Discover how Kabat One unifies Iraq IFP, KRSC, and NOC into one operational platform protecting critical oil infrastructure, Persian Gulf ports, and rebuilding cities — compliant with CMC/NITA-Iraq standards.'
           }
         />
       </main>

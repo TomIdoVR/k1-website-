@@ -11,8 +11,8 @@ import { Link } from '@/i18n/navigation'
  * Developer name, legal entity and contact details are constant across apps.
  */
 
-const DEVELOPER_NAME = 'KabatOne (Formerly CityShob Software Ltd.) R&D'
-const LEGAL_ENTITY = 'KabatOne (Formerly CityShob Software Ltd.) Legal Department'
+const DEVELOPER_NAME = 'Kabat One (Formerly CityShob Software Ltd.) R&D'
+const LEGAL_ENTITY = 'Kabat One (Formerly CityShob Software Ltd.) Legal Department'
 const CONTACT = {
   address: 'Av. Ejército Nacional Mexicano 57, Floor 4, Mexico City',
   addressEs: 'Av. Ejército Nacional Mexicano 57, Piso 4, Ciudad de México',
@@ -45,8 +45,8 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
       heading: 'Identificación de la Aplicación y del Desarrollador',
       identification: [
         { label: 'Aplicación', value: appName },
-        { label: 'Desarrollador', value: 'KabatOne (anteriormente CityShob Software Ltd.) R&D' },
-        { label: 'Entidad legal', value: 'KabatOne (anteriormente CityShob Software Ltd.), Departamento Legal' },
+        { label: 'Desarrollador', value: 'Kabat One (anteriormente CityShob Software Ltd.) R&D' },
+        { label: 'Entidad legal', value: 'Kabat One (anteriormente CityShob Software Ltd.), Departamento Legal' },
       ],
     },
     {
@@ -57,7 +57,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'scope',
       heading: 'Alcance de este Aviso',
-      body: `KabatOne (anteriormente CityShob Software Ltd.), con domicilio en ${CONTACT.addressEs}, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, la aplicación ${appName}, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, la aplicación ${appName}, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.`,
+      body: `Kabat One (anteriormente CityShob Software Ltd.), con domicilio en ${CONTACT.addressEs}, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, la aplicación ${appName}, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, la aplicación ${appName}, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.`,
     },
     {
       id: 'data-collected',
@@ -77,7 +77,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
       id: 'purposes',
       heading: 'Finalidades del Tratamiento',
       bullets: [
-        `Personalización de los servicios ofrecidos a través de KabatOne y la aplicación ${appName}.`,
+        `Personalización de los servicios ofrecidos a través de Kabat One y la aplicación ${appName}.`,
         'Optimización del sitio web y la aplicación en función de la retroalimentación recibida.',
         'Procesamiento de pedidos y detección de fraudes.',
         'Administración de concursos y promociones.',
@@ -88,7 +88,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'social-media',
       heading: 'Redes Sociales',
-      body: 'Las plataformas de redes sociales son ajenas a KabatOne y no están reguladas por este aviso de privacidad. Te recomendamos revisar las políticas de privacidad de cada plataforma que utilices.',
+      body: 'Las plataformas de redes sociales son ajenas a Kabat One y no están reguladas por este aviso de privacidad. Te recomendamos revisar las políticas de privacidad de cada plataforma que utilices.',
     },
     {
       id: 'cookies',
@@ -98,7 +98,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'security',
       heading: 'Protección de Datos',
-      body: 'KabatOne implementa medidas de seguridad administrativas, técnicas y físicas para proteger tus datos personales. La información financiera se transmite mediante tecnología Secure Socket Layer (SSL) y se encuentra encriptada en todo momento.',
+      body: 'Kabat One implementa medidas de seguridad administrativas, técnicas y físicas para proteger tus datos personales. La información financiera se transmite mediante tecnología Secure Socket Layer (SSL) y se encuentra encriptada en todo momento.',
     },
     {
       id: 'third-parties',
@@ -114,15 +114,15 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
       id: 'retention',
       heading: 'Conservación y Eliminación de Datos',
       paragraphs: [
-        `KabatOne conserva los datos personales únicamente durante el tiempo necesario para proporcionar la aplicación ${appName} y los servicios relacionados, cumplir con las finalidades descritas en este aviso de privacidad, cumplir con obligaciones legales, resolver disputas, prevenir fraudes, mantener la seguridad y hacer cumplir los acuerdos aplicables.`,
+        `Kabat One conserva los datos personales únicamente durante el tiempo necesario para proporcionar la aplicación ${appName} y los servicios relacionados, cumplir con las finalidades descritas en este aviso de privacidad, cumplir con obligaciones legales, resolver disputas, prevenir fraudes, mantener la seguridad y hacer cumplir los acuerdos aplicables.`,
         `Los usuarios pueden solicitar la eliminación de su cuenta de ${appName} y de los datos personales asociados escribiendo a ${CONTACT.email}.`,
-        'Una vez completada una solicitud de eliminación, KabatOne eliminará la cuenta y los datos personales asociados, salvo la información que deba conservarse por motivos legítimos de seguridad, prevención de fraudes, legales, contractuales o regulatorios.',
+        'Una vez completada una solicitud de eliminación, Kabat One eliminará la cuenta y los datos personales asociados, salvo la información que deba conservarse por motivos legítimos de seguridad, prevención de fraudes, legales, contractuales o regulatorios.',
       ],
     },
     {
       id: 'minors',
       heading: 'Protección de Menores',
-      body: 'KabatOne cumple con la legislación aplicable en materia de protección de menores, incluyendo COPPA. No recopilamos intencionalmente datos personales de menores de 13 años.',
+      body: 'Kabat One cumple con la legislación aplicable en materia de protección de menores, incluyendo COPPA. No recopilamos intencionalmente datos personales de menores de 13 años.',
     },
     {
       id: 'jurisdiction',
@@ -132,7 +132,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'updates',
       heading: 'Modificaciones',
-      body: `KabatOne se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en los sitios web y servicios oficiales de KabatOne, incluyendo la aplicación ${appName}. Te recomendamos revisar esta página periódicamente.`,
+      body: `Kabat One se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en los sitios web y servicios oficiales de Kabat One, incluyendo la aplicación ${appName}. Te recomendamos revisar esta página periódicamente.`,
     },
   ] : [
     {
@@ -152,7 +152,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'scope',
       heading: 'Scope of This Notice',
-      body: `KabatOne (Formerly CityShob Software Ltd.), located at ${CONTACT.address}, is responsible for the processing of your personal data. This notice applies to information gathered through our website, the ${appName} application, emails, text messages, forms, and services. By using the website, the ${appName} application, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.`,
+      body: `Kabat One (Formerly CityShob Software Ltd.), located at ${CONTACT.address}, is responsible for the processing of your personal data. This notice applies to information gathered through our website, the ${appName} application, emails, text messages, forms, and services. By using the website, the ${appName} application, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.`,
     },
     {
       id: 'data-collected',
@@ -172,7 +172,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
       id: 'purposes',
       heading: 'Purposes of Processing',
       bullets: [
-        `Personalization of services offered through KabatOne and the ${appName} application.`,
+        `Personalization of services offered through Kabat One and the ${appName} application.`,
         'Website and application optimization based on feedback received.',
         'Order processing and fraud detection.',
         'Contest and promotion management.',
@@ -183,7 +183,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'social-media',
       heading: 'Social Media',
-      body: 'Social media platforms are unrelated to KabatOne and are not governed by this privacy notice. We recommend reviewing the privacy policies of each platform you use.',
+      body: 'Social media platforms are unrelated to Kabat One and are not governed by this privacy notice. We recommend reviewing the privacy policies of each platform you use.',
     },
     {
       id: 'cookies',
@@ -193,7 +193,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'security',
       heading: 'Data Protection',
-      body: 'KabatOne implements administrative, technical, and physical security measures to protect your personal data. Financial information is transmitted using Secure Socket Layer technology and is encrypted at all times.',
+      body: 'Kabat One implements administrative, technical, and physical security measures to protect your personal data. Financial information is transmitted using Secure Socket Layer technology and is encrypted at all times.',
     },
     {
       id: 'third-parties',
@@ -209,15 +209,15 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
       id: 'retention',
       heading: 'Data Retention and Deletion',
       paragraphs: [
-        `KabatOne retains personal data only for as long as necessary to provide the ${appName} application and related services, fulfill the purposes described in this privacy policy, comply with legal obligations, resolve disputes, prevent fraud, maintain security, and enforce applicable agreements.`,
+        `Kabat One retains personal data only for as long as necessary to provide the ${appName} application and related services, fulfill the purposes described in this privacy policy, comply with legal obligations, resolve disputes, prevent fraud, maintain security, and enforce applicable agreements.`,
         `Users may request deletion of their ${appName} account and associated personal data by contacting ${CONTACT.email}.`,
-        'When a deletion request is completed, KabatOne will delete the account and associated personal data, except for information that must be retained for legitimate security, fraud-prevention, legal, contractual, or regulatory purposes.',
+        'When a deletion request is completed, Kabat One will delete the account and associated personal data, except for information that must be retained for legitimate security, fraud-prevention, legal, contractual, or regulatory purposes.',
       ],
     },
     {
       id: 'minors',
       heading: 'Protection of Minors',
-      body: 'KabatOne complies with applicable legislation on the protection of minors, including COPPA. We do not intentionally collect personal data from children under 13 years of age.',
+      body: 'Kabat One complies with applicable legislation on the protection of minors, including COPPA. We do not intentionally collect personal data from children under 13 years of age.',
     },
     {
       id: 'jurisdiction',
@@ -227,7 +227,7 @@ export default function AppPrivacyPolicy({ appName, slug, lastUpdated, es }: App
     {
       id: 'updates',
       heading: 'Modifications',
-      body: `KabatOne reserves the right to update this privacy notice at any time. Changes will be posted on KabatOne's official websites and services, including the ${appName} application. We recommend reviewing this page periodically.`,
+      body: `Kabat One reserves the right to update this privacy notice at any time. Changes will be posted on Kabat One's official websites and services, including the ${appName} application. We recommend reviewing this page periodically.`,
     },
   ]
 

@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareJamaicaPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias de Jamaica?",
-      answer: "Jamaica opera un sistema de emergencias multilinea: 119 para la policia (JCF), 110 para bomberos (JFRS) y 116 para ambulancias. No existe un numero unico 911 centralizado. La Jamaica Constabulary Force (~12,000 oficiales) es la fuerza policial principal. Las Zonas de Operaciones Especiales (ZOSO) combinan presencia militar con intervencion social en comunidades de alto riesgo. KabatOne unifica estas lineas separadas en un CAD integrado que coordina JCF, JDF, JFRS y servicios de salud en una sola plataforma operativa.",
+      answer: "Jamaica opera un sistema de emergencias multilinea: 119 para la policia (JCF), 110 para bomberos (JFRS) y 116 para ambulancias. No existe un numero unico 911 centralizado. La Jamaica Constabulary Force (~12,000 oficiales) es la fuerza policial principal. Las Zonas de Operaciones Especiales (ZOSO) combinan presencia militar con intervencion social en comunidades de alto riesgo. Kabat One unifica estas lineas separadas en un CAD integrado que coordina JCF, JDF, JFRS y servicios de salud en una sola plataforma operativa.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Jamaica?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareJamaicaPage({
     },
     {
       question: "¿Que son las ZOSO y como funcionan?",
-      answer: "Las Zonas de Operaciones Especiales (ZOSO) son areas designadas por el gobierno donde la Jamaica Defence Force (JDF) y la JCF operan conjuntamente con presencia sostenida, combinada con programas de intervencion social. Norwood, un antiguo punto critico de pandillas, no registro un solo homicidio en 2024 ni 2025 despues de implementar una ZOSO. El exito de las ZOSO demuestra el valor de la coordinacion interinstitucional — exactamente el tipo de operacion que KabatOne facilita con GIS en tiempo real, video unificado y despacho coordinado entre JCF y JDF.",
+      answer: "Las Zonas de Operaciones Especiales (ZOSO) son areas designadas por el gobierno donde la Jamaica Defence Force (JDF) y la JCF operan conjuntamente con presencia sostenida, combinada con programas de intervencion social. Norwood, un antiguo punto critico de pandillas, no registro un solo homicidio en 2024 ni 2025 despues de implementar una ZOSO. El exito de las ZOSO demuestra el valor de la coordinacion interinstitucional — exactamente el tipo de operacion que Kabat One facilita con GIS en tiempo real, video unificado y despacho coordinado entre JCF y JDF.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Jamaica?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV de la JCF en Kingston y Montego Bay, las camaras de la Jamaica Urban Transit Company (JUTC), la videovigilancia del Puerto de Kingston (KFTL/CMA CGM) y del Aeropuerto Internacional Norman Manley (NMIA), las camaras de los puertos cruceristas de Falmouth y Ocho Rios, y los sistemas de seguridad hotelera se conectan directamente. El sistema es compatible con la infraestructura de fibra optica de FLOW, Digicel y la red gubernamental GovNet.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Jamaica?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV de la JCF en Kingston y Montego Bay, las camaras de la Jamaica Urban Transit Company (JUTC), la videovigilancia del Puerto de Kingston (KFTL/CMA CGM) y del Aeropuerto Internacional Norman Manley (NMIA), las camaras de los puertos cruceristas de Falmouth y Ocho Rios, y los sistemas de seguridad hotelera se conectan directamente. El sistema es compatible con la infraestructura de fibra optica de FLOW, Digicel y la red gubernamental GovNet.",
     },
     {
       question: "¿Que papel juega el turismo en la estrategia de seguridad jamaicana?",
-      answer: "Jamaica recibe mas de 4 millones de visitantes anuales (stopover + cruceristas), con el turismo representando aproximadamente el 10% del PIB y generando mas de US$4,000 millones en divisas. Montego Bay, Ocho Rios, Negril, Falmouth y Kingston son los destinos principales. La Tourism Product Development Company (TPDCo) y la policía de la Area 1 (St. James/Montego Bay) coordinan la seguridad turistica. Un incidente de seguridad en zonas turisticas tiene impacto directo en la economia — KabatOne integra video de hoteles, puertos cruceristas y camaras de la JCF en un solo entorno operativo.",
+      answer: "Jamaica recibe mas de 4 millones de visitantes anuales (stopover + cruceristas), con el turismo representando aproximadamente el 10% del PIB y generando mas de US$4,000 millones en divisas. Montego Bay, Ocho Rios, Negril, Falmouth y Kingston son los destinos principales. La Tourism Product Development Company (TPDCo) y la policía de la Area 1 (St. James/Montego Bay) coordinan la seguridad turistica. Un incidente de seguridad en zonas turisticas tiene impacto directo en la economia — Kabat One integra video de hoteles, puertos cruceristas y camaras de la JCF en un solo entorno operativo.",
     },
     {
-      question: "¿Como se alinea KabatOne con la legislacion de compras publicas de Jamaica?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme al Handbook of Public Sector Procurement Procedures del Gobierno de Jamaica y el portal electronico GOJEP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del MNS, la JCF, las parroquias (parishes) y los municipios. La National Contracts Commission (NCC) supervisa las adjudicaciones. Jamaica permite la participacion de empresas extranjeras en licitaciones publicas.",
+      question: "¿Como se alinea Kabat One con la legislacion de compras publicas de Jamaica?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme al Handbook of Public Sector Procurement Procedures del Gobierno de Jamaica y el portal electronico GOJEP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del MNS, la JCF, las parroquias (parishes) y los municipios. La National Contracts Commission (NCC) supervisa las adjudicaciones. Jamaica permite la participacion de empresas extranjeras en licitaciones publicas.",
     },
   ] : [
     {
       question: "How does Jamaica's emergency response system work?",
-      answer: "Jamaica operates a multi-line emergency system: 119 for police (JCF), 110 for fire (JFRS), and 116 for ambulance. There is no single centralized 911 number. The Jamaica Constabulary Force (~12,000 officers) is the primary police force. Zones of Special Operations (ZOSOs) combine military presence with social intervention in high-risk communities. KabatOne unifies these separate lines into one integrated CAD that coordinates JCF, JDF, JFRS, and health services on a single operational platform.",
+      answer: "Jamaica operates a multi-line emergency system: 119 for police (JCF), 110 for fire (JFRS), and 116 for ambulance. There is no single centralized 911 number. The Jamaica Constabulary Force (~12,000 officers) is the primary police force. Zones of Special Operations (ZOSOs) combine military presence with social intervention in high-risk communities. Kabat One unifies these separate lines into one integrated CAD that coordinates JCF, JDF, JFRS, and health services on a single operational platform.",
     },
     {
       question: "How does Jamaica fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareJamaicaPage({
     },
     {
       question: "What are ZOSOs and how do they work?",
-      answer: "Zones of Special Operations (ZOSOs) are government-designated areas where the Jamaica Defence Force (JDF) and JCF operate jointly with sustained presence, combined with social intervention programs. Norwood, once a major gang hotspot, recorded zero murders in 2024 and 2025 after implementing a ZOSO. The success of ZOSOs demonstrates the value of inter-agency coordination — exactly the type of operation KabatOne facilitates with real-time GIS, unified video, and coordinated dispatch between JCF and JDF.",
+      answer: "Zones of Special Operations (ZOSOs) are government-designated areas where the Jamaica Defence Force (JDF) and JCF operate jointly with sustained presence, combined with social intervention programs. Norwood, once a major gang hotspot, recorded zero murders in 2024 and 2025 after implementing a ZOSO. The success of ZOSOs demonstrates the value of inter-agency coordination — exactly the type of operation Kabat One facilitates with real-time GIS, unified video, and coordinated dispatch between JCF and JDF.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in Jamaica?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. JCF CCTV networks in Kingston and Montego Bay, Jamaica Urban Transit Company (JUTC) cameras, Port of Kingston (KFTL/CMA CGM) and Norman Manley International Airport (NMIA) surveillance, Falmouth and Ocho Rios cruise port cameras, and hotel security systems connect directly. The platform is compatible with FLOW, Digicel, and GovNet fiber optic infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in Jamaica?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. JCF CCTV networks in Kingston and Montego Bay, Jamaica Urban Transit Company (JUTC) cameras, Port of Kingston (KFTL/CMA CGM) and Norman Manley International Airport (NMIA) surveillance, Falmouth and Ocho Rios cruise port cameras, and hotel security systems connect directly. The platform is compatible with FLOW, Digicel, and GovNet fiber optic infrastructure.",
     },
     {
       question: "What role does tourism play in Jamaican security strategy?",
-      answer: "Jamaica receives over 4 million visitors annually (stopover + cruise), with tourism representing approximately 10% of GDP and generating over US$4 billion in foreign exchange. Montego Bay, Ocho Rios, Negril, Falmouth, and Kingston are the main destinations. The Tourism Product Development Company (TPDCo) and Area 1 police (St. James/Montego Bay) coordinate tourism security. A security incident in tourist zones directly impacts the economy — KabatOne integrates hotel, cruise port, and JCF cameras in one operational environment.",
+      answer: "Jamaica receives over 4 million visitors annually (stopover + cruise), with tourism representing approximately 10% of GDP and generating over US$4 billion in foreign exchange. Montego Bay, Ocho Rios, Negril, Falmouth, and Kingston are the main destinations. The Tourism Product Development Company (TPDCo) and Area 1 police (St. James/Montego Bay) coordinate tourism security. A security incident in tourist zones directly impacts the economy — Kabat One integrates hotel, cruise port, and JCF cameras in one operational environment.",
     },
     {
-      question: "How does KabatOne align with Jamaican public procurement law?",
-      answer: "KabatOne is marketed through local distributors and integrators under the Government of Jamaica Handbook of Public Sector Procurement Procedures and the GOJEP electronic portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to MNS, JCF, parish, and municipal budgets. The National Contracts Commission (NCC) oversees awards. Jamaica allows foreign firm participation in public tenders.",
+      question: "How does Kabat One align with Jamaican public procurement law?",
+      answer: "Kabat One is marketed through local distributors and integrators under the Government of Jamaica Handbook of Public Sector Procurement Procedures and the GOJEP electronic portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to MNS, JCF, parish, and municipal budgets. The National Contracts Commission (NCC) oversees awards. Jamaica allows foreign firm participation in public tenders.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwareJamaicaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica en Tu Parroquia o Municipio Jamaicano' : 'Transform Public Safety in Your Jamaican Parish or Municipality'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para instituciones jamaicanas — desde las zonas turisticas de Montego Bay hasta las operaciones ZOSO.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Jamaican institutions — from Montego Bay tourist zones to ZOSO operations.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para instituciones jamaicanas — desde las zonas turisticas de Montego Bay hasta las operaciones ZOSO.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Jamaican institutions — from Montego Bay tourist zones to ZOSO operations.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

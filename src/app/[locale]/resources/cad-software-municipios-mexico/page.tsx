@@ -45,7 +45,7 @@ export default async function CadSoftwareMunicipiosMexicoPage({
     },
     {
       question: '¿Qué diferencia hay entre CAD municipal y CAD estatal en México?',
-      answer: 'El CAD municipal gestiona las unidades y recursos de un municipio específico — policía municipal, bomberos locales, servicios médicos. El CAD estatal coordina múltiples municipios y agencias estatales desde el centro C5. Los sistemas modernos como KabatOne permiten visibilidad compartida entre niveles, de modo que el C5 estatal puede ver y apoyar operaciones municipales sin duplicar infraestructura.',
+      answer: 'El CAD municipal gestiona las unidades y recursos de un municipio específico — policía municipal, bomberos locales, servicios médicos. El CAD estatal coordina múltiples municipios y agencias estatales desde el centro C5. Los sistemas modernos como Kabat One permiten visibilidad compartida entre niveles, de modo que el C5 estatal puede ver y apoyar operaciones municipales sin duplicar infraestructura.',
     },
     {
       question: '¿Qué funcionalidades debe tener el software CAD para México?',
@@ -53,11 +53,11 @@ export default async function CadSoftwareMunicipiosMexicoPage({
     },
     {
       question: '¿Cuánto cuesta implementar software CAD en un municipio mexicano?',
-      answer: 'El costo varía según el tamaño del municipio y el alcance del despliegue. Un sistema CAD básico para un municipio de 100,000 habitantes puede arrancar desde USD $80,000, incluyendo licencias, integración y capacitación. Municipios que ya operan C5 o que integran VMS y GIS existentes pueden aprovechar fondos FORTASEG y SUBSEMUN para financiar parte del proyecto. KabatOne ofrece modelos de licenciamiento por ciudad o por operador.',
+      answer: 'El costo varía según el tamaño del municipio y el alcance del despliegue. Un sistema CAD básico para un municipio de 100,000 habitantes puede arrancar desde USD $80,000, incluyendo licencias, integración y capacitación. Municipios que ya operan C5 o que integran VMS y GIS existentes pueden aprovechar fondos FORTASEG y SUBSEMUN para financiar parte del proyecto. Kabat One ofrece modelos de licenciamiento por ciudad o por operador.',
     },
     {
-      question: '¿KabatOne tiene despliegues activos en México?',
-      answer: 'Sí. KabatOne opera en más de 40 ciudades en América Latina, incluyendo múltiples municipios y estados en México. La plataforma gestiona miles de cámaras, despacho CAD y coordinación multiagencia en entornos C5 reales. El estado de Michoacán es uno de los despliegues de referencia, con cobertura de más de 4 millones de ciudadanos.',
+      question: '¿Kabat One tiene despliegues activos en México?',
+      answer: 'Sí. Kabat One opera en más de 40 ciudades en América Latina, incluyendo múltiples municipios y estados en México. La plataforma gestiona miles de cámaras, despacho CAD y coordinación multiagencia en entornos C5 reales. El estado de Michoacán es uno de los despliegues de referencia, con cobertura de más de 4 millones de ciudadanos.',
     },
   ] : [
     {
@@ -70,7 +70,7 @@ export default async function CadSoftwareMunicipiosMexicoPage({
     },
     {
       question: 'What is the difference between municipal and state CAD in Mexico?',
-      answer: 'Municipal CAD manages units and resources for a specific municipality — local police, fire department, medical services. State CAD coordinates multiple municipalities and state agencies from the C5 center. Modern systems like KabatOne enable shared visibility across levels, so the state C5 can monitor and support municipal operations without duplicating infrastructure.',
+      answer: 'Municipal CAD manages units and resources for a specific municipality — local police, fire department, medical services. State CAD coordinates multiple municipalities and state agencies from the C5 center. Modern systems like Kabat One enable shared visibility across levels, so the state C5 can monitor and support municipal operations without duplicating infrastructure.',
     },
     {
       question: 'What features must CAD software have for Mexico?',
@@ -78,11 +78,11 @@ export default async function CadSoftwareMunicipiosMexicoPage({
     },
     {
       question: 'How much does it cost to implement CAD software in a Mexican municipality?',
-      answer: 'Costs vary by municipality size and deployment scope. A basic CAD system for a 100,000-person municipality can start from USD $80,000, including licenses, integration, and training. Municipalities already operating C5s or integrating existing VMS and GIS can leverage FORTASEG and SUBSEMUN funds to finance part of the project. KabatOne offers per-city or per-operator licensing models.',
+      answer: 'Costs vary by municipality size and deployment scope. A basic CAD system for a 100,000-person municipality can start from USD $80,000, including licenses, integration, and training. Municipalities already operating C5s or integrating existing VMS and GIS can leverage FORTASEG and SUBSEMUN funds to finance part of the project. Kabat One offers per-city or per-operator licensing models.',
     },
     {
-      question: 'Does KabatOne have active deployments in Mexico?',
-      answer: 'Yes. KabatOne operates in 40+ cities across Latin America, including multiple municipalities and states in Mexico. The platform manages thousands of cameras, CAD dispatch, and multi-agency coordination in real C5 environments. The state of Michoacán is one of the reference deployments, covering more than 4 million citizens.',
+      question: 'Does Kabat One have active deployments in Mexico?',
+      answer: 'Yes. Kabat One operates in 40+ cities across Latin America, including multiple municipalities and states in Mexico. The platform manages thousands of cameras, CAD dispatch, and multi-agency coordination in real C5 environments. The state of Michoacán is one of the reference deployments, covering more than 4 million citizens.',
     },
   ]
 
@@ -268,8 +268,8 @@ export default async function CadSoftwareMunicipiosMexicoPage({
           es={es}
           h2={es ? 'Transforma el Despacho 911 de Tu Municipio' : 'Transform 911 Dispatch for Your Municipality'}
           subtitle={es
-            ? 'Conoce cómo KabatOne integra despacho CAD, videovigilancia, GIS y coordinación multiagencia en una sola plataforma para municipios mexicanos.'
-            : 'See how KabatOne integrates CAD dispatch, video surveillance, GIS, and multi-agency coordination into one platform for Mexican municipalities.'}
+            ? 'Conoce cómo Kabat One integra despacho CAD, videovigilancia, GIS y coordinación multiagencia en una sola plataforma para municipios mexicanos.'
+            : 'See how Kabat One integrates CAD dispatch, video surveillance, GIS, and multi-agency coordination into one platform for Mexican municipalities.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

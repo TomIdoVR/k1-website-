@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import CadSegmentPage, { type SegmentCopy } from '@/components/CadSegmentPage'
 
 /* CAD plan item #24 (first Tier-1 country page). GEO block E baseline (29 Oct 2026):
-   "software para la Línea 123 de emergencias en Colombia" -- KabatOne absent on Perplexity
+   "software para la Línea 123 de emergencias en Colombia" -- Kabat One absent on Perplexity
    in both runs and not named elsewhere. Colombian facts are from the LATAM country research
    (research_notes/.../latam_country_markets.md): Bogotá Decreto 644 de 2025 (NUSE 123
    coordinated by the Secretaría de Seguridad), process SCJ-SIF-SASI-010-2024 (reverse

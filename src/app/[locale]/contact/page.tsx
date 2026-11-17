@@ -66,8 +66,8 @@ export default async function ContactPage({
     ctaLabel: es ? 'Velo en Vivo' : 'See It Live',
     ctaH2: es ? '\u00BFListo para una Demo Personalizada?' : 'Ready for a Personalized Demo?',
     ctaSub: es
-      ? 'Recorre la plataforma KabatOne con uno de nuestros ingenieros de soluciones \u2014 adaptado a los desafíos específicos de tu ciudad.'
-      : 'Walk through the KabatOne platform with one of our solutions engineers \u2014 tailored to your city\u2019s specific challenges.',
+      ? 'Recorre la plataforma Kabat One con uno de nuestros ingenieros de soluciones \u2014 adaptado a los desafíos específicos de tu ciudad.'
+      : 'Walk through the Kabat One platform with one of our solutions engineers \u2014 tailored to your city\u2019s specific challenges.',
     ctaBtn: es ? 'Solicita una Demo' : 'Request a Demo',
   }
 
@@ -77,7 +77,7 @@ export default async function ContactPage({
     { value: 'K-Traffic', label: 'K-Traffic \u2014 Gestión de Tráfico' },
     { value: 'K-Video', label: 'K-Video \u2014 Inteligencia de Video' },
     { value: 'K-Connect', label: 'K-Connect \u2014 Participación Ciudadana' },
-    { value: 'Platform', label: 'Plataforma Completa KabatOne' },
+    { value: 'Platform', label: 'Plataforma Completa Kabat One' },
     { value: 'Partnership', label: 'Alianza / Integración' },
     { value: 'Other', label: 'Otro' },
   ] : [
@@ -86,7 +86,7 @@ export default async function ContactPage({
     { value: 'K-Traffic', label: 'K-Traffic \u2014 Traffic Management' },
     { value: 'K-Video', label: 'K-Video \u2014 Video Intelligence' },
     { value: 'K-Connect', label: 'K-Connect \u2014 Citizen Engagement' },
-    { value: 'Platform', label: 'Full KabatOne Platform' },
+    { value: 'Platform', label: 'Full Kabat One Platform' },
     { value: 'Partnership', label: 'Partnership / Integration' },
     { value: 'Other', label: 'Other' },
   ]

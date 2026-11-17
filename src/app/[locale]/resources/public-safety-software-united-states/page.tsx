@@ -43,23 +43,23 @@ export default async function PublicSafetySoftwareUSAPage({
     },
     {
       question: '¿Qué es NG911 y cómo afecta a los centros PSAP en EE.UU.?',
-      answer: 'NG911 (Next Generation 911) es el mandato federal de la FCC para modernizar la infraestructura 911 de EE.UU. de sistemas analógicos a IP. Bajo NG911, los PSAPs reciben llamadas de voz, texto, video y datos de localización en tiempo real a través de redes ESInet (Emergency Services IP Networks). La transición a NG911 requiere actualizar CAD, equipos de consola y software de gestión de incidentes para procesar multimedia. KabatOne integra con ESInet y soporta intake de video de llamante vía protocolos i3 de NENA.',
+      answer: 'NG911 (Next Generation 911) es el mandato federal de la FCC para modernizar la infraestructura 911 de EE.UU. de sistemas analógicos a IP. Bajo NG911, los PSAPs reciben llamadas de voz, texto, video y datos de localización en tiempo real a través de redes ESInet (Emergency Services IP Networks). La transición a NG911 requiere actualizar CAD, equipos de consola y software de gestión de incidentes para procesar multimedia. Kabat One integra con ESInet y soporta intake de video de llamante vía protocolos i3 de NENA.',
     },
     {
-      question: '¿Puede KabatOne integrarse con sistemas CAD existentes (PremierOne, Tyler CAD, CentralSquare) en EE.UU.?',
-      answer: 'KabatOne se integra con los principales sistemas CAD vía APIs estándar (REST/JSON) y protocolos CAD-to-CAD de APCO. No reemplaza el CAD existente — agrega video analytics en tiempo real (K-Video), gestión del mapa operativo (K-Safety) y capacidades avanzadas de despacho (K-Dispatch) sobre la infraestructura CAD actual. Para agencias en proceso de modernización de CAD, K-Dispatch puede operar como CAD primario con soporte para flujos de trabajo APCO ANS 1.101.',
+      question: '¿Puede Kabat One integrarse con sistemas CAD existentes (PremierOne, Tyler CAD, CentralSquare) en EE.UU.?',
+      answer: 'Kabat One se integra con los principales sistemas CAD vía APIs estándar (REST/JSON) y protocolos CAD-to-CAD de APCO. No reemplaza el CAD existente — agrega video analytics en tiempo real (K-Video), gestión del mapa operativo (K-Safety) y capacidades avanzadas de despacho (K-Dispatch) sobre la infraestructura CAD actual. Para agencias en proceso de modernización de CAD, K-Dispatch puede operar como CAD primario con soporte para flujos de trabajo APCO ANS 1.101.',
     },
     {
-      question: '¿Cómo apoya KabatOne la interoperabilidad multiagencia requerida en EE.UU.?',
-      answer: 'La interoperabilidad multiagencia en EE.UU. es mandatoria bajo el NIMS (National Incident Management System). KabatOne K-Safety provee un Common Operating Picture (COP) compartido entre policía, bomberos y EMS — con unidades de cada agencia visibles en el mismo mapa GIS en tiempo real. K-Dispatch soporta transferencia CAD-to-CAD entre PSAPs bajo protocolos APCO y NENA i3. La plataforma opera en nube privada, pública (AWS GovCloud) o híbrida, según los requisitos CJIS de cada agencia.',
+      question: '¿Cómo apoya Kabat One la interoperabilidad multiagencia requerida en EE.UU.?',
+      answer: 'La interoperabilidad multiagencia en EE.UU. es mandatoria bajo el NIMS (National Incident Management System). Kabat One K-Safety provee un Common Operating Picture (COP) compartido entre policía, bomberos y EMS — con unidades de cada agencia visibles en el mismo mapa GIS en tiempo real. K-Dispatch soporta transferencia CAD-to-CAD entre PSAPs bajo protocolos APCO y NENA i3. La plataforma opera en nube privada, pública (AWS GovCloud) o híbrida, según los requisitos CJIS de cada agencia.',
     },
     {
-      question: '¿Qué certificaciones de seguridad cumple KabatOne para agencias de seguridad pública en EE.UU.?',
-      answer: 'KabatOne está diseñado para alinearse con los requerimientos de la CJIS Security Policy (Criminal Justice Information Services) del FBI, incluyendo autenticación multifactor (MFA), cifrado AES-256 en tránsito y en reposo, audit logging completo y controles de acceso basados en roles (RBAC). La plataforma puede desplegarse en AWS GovCloud o infraestructura on-premise para cumplir con requisitos de soberanía de datos de agencias federales y estatales.',
+      question: '¿Qué certificaciones de seguridad cumple Kabat One para agencias de seguridad pública en EE.UU.?',
+      answer: 'Kabat One está diseñado para alinearse con los requerimientos de la CJIS Security Policy (Criminal Justice Information Services) del FBI, incluyendo autenticación multifactor (MFA), cifrado AES-256 en tránsito y en reposo, audit logging completo y controles de acceso basados en roles (RBAC). La plataforma puede desplegarse en AWS GovCloud o infraestructura on-premise para cumplir con requisitos de soberanía de datos de agencias federales y estatales.',
     },
     {
-      question: '¿Cómo se adquiere KabatOne en EE.UU.? ¿Está disponible en el GSA Schedule?',
-      answer: 'KabatOne está disponible para agencias públicas en EE.UU. a través de proceso de RFP/RFQ estándar. Para contratos de nivel federal o de grandes ciudades, KabatOne trabaja con integradores de sistemas que poseen GSA Schedule 70 (IT Solutions). Las agencias estatales y municipales pueden procurar la plataforma directamente o a través de contratos cooperativos como NASPO ValuePoint y Sourcewell. Contacta a nuestro equipo de ventas gubernamentales para CAGE Code, UEI SAM.gov y documentación de requisitos.',
+      question: '¿Cómo se adquiere Kabat One en EE.UU.? ¿Está disponible en el GSA Schedule?',
+      answer: 'Kabat One está disponible para agencias públicas en EE.UU. a través de proceso de RFP/RFQ estándar. Para contratos de nivel federal o de grandes ciudades, Kabat One trabaja con integradores de sistemas que poseen GSA Schedule 70 (IT Solutions). Las agencias estatales y municipales pueden procurar la plataforma directamente o a través de contratos cooperativos como NASPO ValuePoint y Sourcewell. Contacta a nuestro equipo de ventas gubernamentales para CAGE Code, UEI SAM.gov y documentación de requisitos.',
     },
   ] : [
     {
@@ -68,23 +68,23 @@ export default async function PublicSafetySoftwareUSAPage({
     },
     {
       question: 'What is NG911 and how does it affect PSAP operations in the US?',
-      answer: 'NG911 (Next Generation 911) is the FCC\'s federal mandate to modernize US 911 infrastructure from analog to IP-based systems. Under NG911, PSAPs receive voice calls, text, video, and real-time location data over ESInet (Emergency Services IP Networks). The transition requires updating CAD, console equipment, and incident management software to handle multimedia intake. KabatOne integrates with ESInet and supports caller video intake via NENA i3 protocols.',
+      answer: 'NG911 (Next Generation 911) is the FCC\'s federal mandate to modernize US 911 infrastructure from analog to IP-based systems. Under NG911, PSAPs receive voice calls, text, video, and real-time location data over ESInet (Emergency Services IP Networks). The transition requires updating CAD, console equipment, and incident management software to handle multimedia intake. Kabat One integrates with ESInet and supports caller video intake via NENA i3 protocols.',
     },
     {
-      question: 'Can KabatOne integrate with existing CAD systems (PremierOne, Tyler CAD, CentralSquare) in the US?',
-      answer: 'KabatOne integrates with major CAD systems via standard APIs (REST/JSON) and APCO CAD-to-CAD protocols. It does not replace existing CAD — it adds real-time video analytics (K-Video), operational map management (K-Safety), and advanced dispatch capabilities (K-Dispatch) on top of current CAD infrastructure. For agencies modernizing their CAD, K-Dispatch can operate as the primary CAD with support for APCO ANS 1.101 workflows.',
+      question: 'Can Kabat One integrate with existing CAD systems (PremierOne, Tyler CAD, CentralSquare) in the US?',
+      answer: 'Kabat One integrates with major CAD systems via standard APIs (REST/JSON) and APCO CAD-to-CAD protocols. It does not replace existing CAD — it adds real-time video analytics (K-Video), operational map management (K-Safety), and advanced dispatch capabilities (K-Dispatch) on top of current CAD infrastructure. For agencies modernizing their CAD, K-Dispatch can operate as the primary CAD with support for APCO ANS 1.101 workflows.',
     },
     {
-      question: 'How does KabatOne support multi-agency interoperability required in the US?',
-      answer: 'Multi-agency interoperability is mandated under the NIMS (National Incident Management System). KabatOne K-Safety provides a shared Common Operating Picture (COP) across law enforcement, fire, and EMS — with units from each agency visible on the same real-time GIS map. K-Dispatch supports CAD-to-CAD transfer between PSAPs under APCO and NENA i3 protocols. The platform runs on private cloud, public cloud (AWS GovCloud), or hybrid infrastructure depending on each agency\'s CJIS requirements.',
+      question: 'How does Kabat One support multi-agency interoperability required in the US?',
+      answer: 'Multi-agency interoperability is mandated under the NIMS (National Incident Management System). Kabat One K-Safety provides a shared Common Operating Picture (COP) across law enforcement, fire, and EMS — with units from each agency visible on the same real-time GIS map. K-Dispatch supports CAD-to-CAD transfer between PSAPs under APCO and NENA i3 protocols. The platform runs on private cloud, public cloud (AWS GovCloud), or hybrid infrastructure depending on each agency\'s CJIS requirements.',
     },
     {
-      question: 'What security certifications does KabatOne meet for US public safety agencies?',
-      answer: 'KabatOne is designed to align with the FBI\'s CJIS Security Policy, including multi-factor authentication (MFA), AES-256 encryption at rest and in transit, full audit logging, and role-based access controls (RBAC). The platform can be deployed on AWS GovCloud or on-premise infrastructure to meet data sovereignty requirements of federal and state agencies.',
+      question: 'What security certifications does Kabat One meet for US public safety agencies?',
+      answer: 'Kabat One is designed to align with the FBI\'s CJIS Security Policy, including multi-factor authentication (MFA), AES-256 encryption at rest and in transit, full audit logging, and role-based access controls (RBAC). The platform can be deployed on AWS GovCloud or on-premise infrastructure to meet data sovereignty requirements of federal and state agencies.',
     },
     {
-      question: 'How do US agencies procure KabatOne? Is it available on the GSA Schedule?',
-      answer: 'KabatOne is available for US public agencies through standard RFP/RFQ processes. For federal-level or major city contracts, KabatOne works with system integrators holding GSA Schedule 70 (IT Solutions) contracts. State and municipal agencies can procure directly or through cooperative contracts such as NASPO ValuePoint and Sourcewell. Contact our government sales team for CAGE Code, UEI SAM.gov registration, and requirements documentation.',
+      question: 'How do US agencies procure Kabat One? Is it available on the GSA Schedule?',
+      answer: 'Kabat One is available for US public agencies through standard RFP/RFQ processes. For federal-level or major city contracts, Kabat One works with system integrators holding GSA Schedule 70 (IT Solutions) contracts. State and municipal agencies can procure directly or through cooperative contracts such as NASPO ValuePoint and Sourcewell. Contact our government sales team for CAGE Code, UEI SAM.gov registration, and requirements documentation.',
     },
   ]
 
@@ -92,7 +92,7 @@ export default async function PublicSafetySoftwareUSAPage({
     {
       icon: '📞',
       title: 'Modernización de PSAP y NG911',
-      desc: 'Más de 5,800 PSAPs en EE.UU. operan con sistemas CAD legacy. El mandato federal NG911 requiere migración a infraestructura IP-multimedia para 2028. KabatOne K-Dispatch se integra con ESInet y soporta flujos NENA i3 sin reemplazar hardware de consola existente.',
+      desc: 'Más de 5,800 PSAPs en EE.UU. operan con sistemas CAD legacy. El mandato federal NG911 requiere migración a infraestructura IP-multimedia para 2028. Kabat One K-Dispatch se integra con ESInet y soporta flujos NENA i3 sin reemplazar hardware de consola existente.',
     },
     {
       icon: '🗺️',
@@ -107,13 +107,13 @@ export default async function PublicSafetySoftwareUSAPage({
     {
       icon: '🔒',
       title: 'Cumplimiento CJIS y Seguridad de Datos',
-      desc: 'Las agencias de seguridad pública en EE.UU. deben cumplir con la CJIS Security Policy del FBI. KabatOne opera en AWS GovCloud o infraestructura on-premise con MFA, cifrado AES-256 y audit logging completo para cumplir los requisitos de datos criminales y de emergencias.',
+      desc: 'Las agencias de seguridad pública en EE.UU. deben cumplir con la CJIS Security Policy del FBI. Kabat One opera en AWS GovCloud o infraestructura on-premise con MFA, cifrado AES-256 y audit logging completo para cumplir los requisitos de datos criminales y de emergencias.',
     },
   ] : [
     {
       icon: '📞',
       title: 'PSAP Modernization and NG911 Transition',
-      desc: 'Over 5,800 PSAPs across the US operate on legacy CAD systems. The federal NG911 mandate requires migration to IP-multimedia infrastructure by 2028. KabatOne K-Dispatch integrates with ESInet and supports NENA i3 workflows without replacing existing console hardware.',
+      desc: 'Over 5,800 PSAPs across the US operate on legacy CAD systems. The federal NG911 mandate requires migration to IP-multimedia infrastructure by 2028. Kabat One K-Dispatch integrates with ESInet and supports NENA i3 workflows without replacing existing console hardware.',
     },
     {
       icon: '🗺️',
@@ -128,7 +128,7 @@ export default async function PublicSafetySoftwareUSAPage({
     {
       icon: '🔒',
       title: 'CJIS Compliance and Data Security',
-      desc: 'US public safety agencies must comply with the FBI\'s CJIS Security Policy. KabatOne runs on AWS GovCloud or on-premise infrastructure with MFA, AES-256 encryption, and full audit logging — meeting criminal and emergency data security requirements.',
+      desc: 'US public safety agencies must comply with the FBI\'s CJIS Security Policy. Kabat One runs on AWS GovCloud or on-premise infrastructure with MFA, AES-256 encryption, and full audit logging — meeting criminal and emergency data security requirements.',
     },
   ]
 
@@ -335,7 +335,7 @@ export default async function PublicSafetySoftwareUSAPage({
         <section style={{ padding: '64px 32px', borderBottom: '1px solid var(--border)', background: 'rgba(255,255,255,0.01)' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', marginBottom: '8px' }}>
-              {es ? 'La Plataforma KabatOne para Agencias de EE.UU.' : 'KabatOne Platform for US Agencies'}
+              {es ? 'La Plataforma Kabat One para Agencias de EE.UU.' : 'Kabat One Platform for US Agencies'}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--dim)', marginBottom: '32px', lineHeight: 1.7 }}>
               {es
@@ -403,8 +403,8 @@ export default async function PublicSafetySoftwareUSAPage({
           es={es}
           h2={es ? 'Moderniza tu Centro de Seguridad Pública en EE.UU.' : 'Modernize Your US Public Safety Operations'}
           subtitle={es
-            ? 'KabatOne integra CAD, video y GIS en una sola plataforma. Agenda una demo con nuestro equipo de ventas gubernamentales.'
-            : 'KabatOne unifies CAD, video, and GIS in one platform built for public safety agencies. Schedule a demo with our government sales team.'}
+            ? 'Kabat One integra CAD, video y GIS en una sola plataforma. Agenda una demo con nuestro equipo de ventas gubernamentales.'
+            : 'Kabat One unifies CAD, video, and GIS in one platform built for public safety agencies. Schedule a demo with our government sales team.'}
           cta1={es ? 'Solicitar Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas Gov.' : 'Contact Gov. Sales'}
         />

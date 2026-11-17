@@ -54,9 +54,9 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
             'Los seis criterios clave son: (1) Mapa operativo en tiempo real con posición GPS de todas las unidades, (2) Integración con sistemas de video para ver cámaras cercanas al incidente antes de despachar, (3) Multi-agencia — capacidad de coordinar policía, bomberos y EMS en un solo entorno, (4) Registro automático de tiempos para cumplimiento normativo y análisis de rendimiento, (5) Disponibilidad alta (99.99%+) con redundancia ante fallos, (6) Integración con infraestructura NG911 para recibir texto, imagen y video de ciudadanos.',
         },
         {
-          question: '¿Cómo apoya KabatOne el despacho de emergencias?',
+          question: '¿Cómo apoya Kabat One el despacho de emergencias?',
           answer:
-            'KabatOne K-Dispatch es el módulo de despacho de la plataforma unificada. Gestiona el ciclo completo del incidente — desde la recepción de la llamada hasta el cierre — con asignación inteligente de unidades por proximidad y disponibilidad GPS. A diferencia de los sistemas CAD aislados, K-Dispatch opera conectado a K-Video (videovigilancia) y K-Safety (GIS y conciencia situacional), permitiendo al despachador ver las cámaras cercanas al incidente al mismo tiempo que coordina el despacho. KabatOne está desplegado en más de 40 ciudades y centros C4/C5.',
+            'Kabat One K-Dispatch es el módulo de despacho de la plataforma unificada. Gestiona el ciclo completo del incidente — desde la recepción de la llamada hasta el cierre — con asignación inteligente de unidades por proximidad y disponibilidad GPS. A diferencia de los sistemas CAD aislados, K-Dispatch opera conectado a K-Video (videovigilancia) y K-Safety (GIS y conciencia situacional), permitiendo al despachador ver las cámaras cercanas al incidente al mismo tiempo que coordina el despacho. Kabat One está desplegado en más de 40 ciudades y centros C4/C5.',
         },
       ]
     : [
@@ -86,9 +86,9 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
             'The six key criteria are: (1) Real-time operational map with GPS position of all units, (2) Video integration to view cameras near the incident before dispatching, (3) Multi-agency capability — ability to coordinate police, fire, and EMS in a single environment, (4) Automatic time logging for regulatory compliance and performance analysis, (5) High availability (99.99%+) with failover redundancy, (6) NG911 integration to receive text, image, and video from citizens.',
         },
         {
-          question: 'How does KabatOne support emergency dispatch?',
+          question: 'How does Kabat One support emergency dispatch?',
           answer:
-            'KabatOne K-Dispatch is the dispatch module of the unified platform. It manages the complete incident lifecycle — from call intake to closure — with intelligent unit assignment by GPS proximity and availability. Unlike siloed CAD systems, K-Dispatch operates connected to K-Video (surveillance) and K-Safety (GIS and situational awareness), allowing the dispatcher to view cameras near the incident while simultaneously coordinating dispatch. KabatOne is deployed across 40+ cities and C4/C5 command centers.',
+            'Kabat One K-Dispatch is the dispatch module of the unified platform. It manages the complete incident lifecycle — from call intake to closure — with intelligent unit assignment by GPS proximity and availability. Unlike siloed CAD systems, K-Dispatch operates connected to K-Video (surveillance) and K-Safety (GIS and situational awareness), allowing the dispatcher to view cameras near the incident while simultaneously coordinating dispatch. Kabat One is deployed across 40+ cities and C4/C5 command centers.',
         },
       ]
 
@@ -336,8 +336,8 @@ export default async function WhatIsEmergencyDispatchSoftwarePage({
           </div>
           <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.7 }}>
             {es
-              ? 'En México, los centros C4/C5 están en proceso de transición hacia infraestructura NG911. El sistema 911 nacional, implementado en 2017, continúa expandiendo su capacidad tecnológica. Las plataformas de despacho modernas como KabatOne están diseñadas para operar en entornos NG911 desde el inicio.'
-              : 'In Mexico, C4/C5 centers are in the process of transitioning to NG911 infrastructure. The national 911 system, implemented in 2017, continues expanding its technological capability. Modern dispatch platforms like KabatOne are designed to operate in NG911 environments from the start.'}
+              ? 'En México, los centros C4/C5 están en proceso de transición hacia infraestructura NG911. El sistema 911 nacional, implementado en 2017, continúa expandiendo su capacidad tecnológica. Las plataformas de despacho modernas como Kabat One están diseñadas para operar en entornos NG911 desde el inicio.'
+              : 'In Mexico, C4/C5 centers are in the process of transitioning to NG911 infrastructure. The national 911 system, implemented in 2017, continues expanding its technological capability. Modern dispatch platforms like Kabat One are designed to operate in NG911 environments from the start.'}
           </p>
         </section>
 

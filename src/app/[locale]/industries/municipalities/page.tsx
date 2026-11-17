@@ -192,13 +192,13 @@ export default async function MunicipalitiesPage({
   )
 
   const municipalityFaqs = es ? [
-    { question: '¿Cómo ayuda KabatOne a los municipios?', answer: 'KabatOne unifica cámaras, sensores, analítica, flujos de despacho y alertas de emergencia en una sola plataforma de comando, brindando a las ciudades claridad inmediata y una respuesta más rápida y coordinada.' },
-    { question: '¿Qué resultados obtienen los municipios con KabatOne?', answer: 'Los municipios que usan KabatOne han reducido los tiempos promedio de respuesta de 12.5 minutos a 7 minutos — una mejora del 40% en velocidad de respuesta a emergencias.' },
-    { question: '¿Se integra KabatOne con sistemas municipales existentes?', answer: 'Sí. KabatOne se conecta a los sistemas existentes de la ciudad sin reemplazarlos, funcionando con cámaras, sensores e infraestructura legada. Las ciudades pueden expandirse a su propio ritmo con total compatibilidad.' },
+    { question: '¿Cómo ayuda Kabat One a los municipios?', answer: 'Kabat One unifica cámaras, sensores, analítica, flujos de despacho y alertas de emergencia en una sola plataforma de comando, brindando a las ciudades claridad inmediata y una respuesta más rápida y coordinada.' },
+    { question: '¿Qué resultados obtienen los municipios con Kabat One?', answer: 'Los municipios que usan Kabat One han reducido los tiempos promedio de respuesta de 12.5 minutos a 7 minutos — una mejora del 40% en velocidad de respuesta a emergencias.' },
+    { question: '¿Se integra Kabat One con sistemas municipales existentes?', answer: 'Sí. Kabat One se conecta a los sistemas existentes de la ciudad sin reemplazarlos, funcionando con cámaras, sensores e infraestructura legada. Las ciudades pueden expandirse a su propio ritmo con total compatibilidad.' },
   ] : [
-    { question: 'How does KabatOne help municipalities?', answer: 'KabatOne unifies cameras, sensors, analytics, dispatch workflows, and emergency alerts into a single command platform, giving cities immediate clarity and faster, more coordinated response.' },
-    { question: 'What results do municipalities get with KabatOne?', answer: 'Municipalities using KabatOne have reduced average response times from 12.5 minutes to 7 minutes — a 40% improvement in emergency response speed.' },
-    { question: 'Does KabatOne integrate with existing municipal systems?', answer: 'Yes. KabatOne connects to existing city systems without replacement, working with legacy cameras, sensors, and infrastructure. Cities can expand at their own pace with full compatibility.' },
+    { question: 'How does Kabat One help municipalities?', answer: 'Kabat One unifies cameras, sensors, analytics, dispatch workflows, and emergency alerts into a single command platform, giving cities immediate clarity and faster, more coordinated response.' },
+    { question: 'What results do municipalities get with Kabat One?', answer: 'Municipalities using Kabat One have reduced average response times from 12.5 minutes to 7 minutes — a 40% improvement in emergency response speed.' },
+    { question: 'Does Kabat One integrate with existing municipal systems?', answer: 'Yes. Kabat One connects to existing city systems without replacement, working with legacy cameras, sensors, and infrastructure. Cities can expand at their own pace with full compatibility.' },
   ]
 
   return (
@@ -240,15 +240,15 @@ export default async function MunicipalitiesPage({
         <section style={{ borderTop: '1px solid var(--border)', padding: '80px 32px' }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Por Que las Ciudades Eligen KabatOne' : 'Why Cities Choose KabatOne'}
+              {es ? 'Por Que las Ciudades Eligen Kabat One' : 'Why Cities Choose Kabat One'}
             </p>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.0, marginBottom: '12px' }}>
               {es ? 'Disenado para Como Realmente Trabajan los Municipios' : 'Built for How Municipalities Actually Work'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }}>
               {es
-                ? 'Cinco ventajas fundamentales que hacen de KabatOne la plataforma preferida para operaciones de emergencia municipales en todo el mundo.'
-                : 'Five core advantages that make KabatOne the platform of choice for municipal emergency operations worldwide.'}
+                ? 'Cinco ventajas fundamentales que hacen de Kabat One la plataforma preferida para operaciones de emergencia municipales en todo el mundo.'
+                : 'Five core advantages that make Kabat One the platform of choice for municipal emergency operations worldwide.'}
             </p>
             <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {benefits.map((b, i) => (
@@ -296,8 +296,8 @@ export default async function MunicipalitiesPage({
                 </p>
                 <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, margin: 0 }}>
                   {es
-                    ? 'Municipios en KabatOne reemplazan herramientas separadas de CAD, VMS, análisis de tráfico y despacho con una sola plataforma de mando — un contrato, una pantalla, un equipo.'
-                    : 'Cities on KabatOne replace separate CAD, VMS, traffic analytics, and dispatch tools with one command platform — one contract, one screen, one team.'}
+                    ? 'Municipios en Kabat One reemplazan herramientas separadas de CAD, VMS, análisis de tráfico y despacho con una sola plataforma de mando — un contrato, una pantalla, un equipo.'
+                    : 'Cities on Kabat One replace separate CAD, VMS, traffic analytics, and dispatch tools with one command platform — one contract, one screen, one team.'}
                 </p>
               </div>
             </div>
@@ -372,8 +372,8 @@ export default async function MunicipalitiesPage({
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '32px' }}>
               {es
-                ? 'Desplegado como suite completa o modularmente — KabatOne se adapta a las necesidades y presupuesto de cada municipio.'
-                : 'Deployed as a complete suite or modularly — KabatOne fits every municipality\'s needs and budget.'}
+                ? 'Desplegado como suite completa o modularmente — Kabat One se adapta a las necesidades y presupuesto de cada municipio.'
+                : 'Deployed as a complete suite or modularly — Kabat One fits every municipality\'s needs and budget.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {products.map((p) => (
@@ -478,8 +478,8 @@ export default async function MunicipalitiesPage({
           es={es}
           h2={es ? 'Transforma la Respuesta de tu Municipio' : 'Transform Your Municipality\'s Response'}
           subtitle={es
-            ? 'Reduce los tiempos promedio de respuesta de 12.5 a 7 minutos con la plataforma unificada de comando municipal de KabatOne.'
-            : 'Reduce average response times from 12.5 minutes to 7 minutes with KabatOne\'s unified municipal command platform.'}
+            ? 'Reduce los tiempos promedio de respuesta de 12.5 a 7 minutos con la plataforma unificada de comando municipal de Kabat One.'
+            : 'Reduce average response times from 12.5 minutes to 7 minutes with Kabat One\'s unified municipal command platform.'}
         />
 
         <Footer es={es} />

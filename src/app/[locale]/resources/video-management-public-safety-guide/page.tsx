@@ -39,52 +39,52 @@ export default async function VideoManagementPublicSafetyGuidePage({
   const faqs = es ? [
     {
       question: '¿Que es un VMS para seguridad publica y en que se diferencia de un VMS comercial?',
-      answer: 'Un VMS (Video Management System) para seguridad publica es una plataforma de gestion de video disenada para operaciones gubernamentales de comando y control. A diferencia de un VMS comercial (orientado a retail o edificios corporativos), un VMS de seguridad publica se integra con sistemas CAD de despacho, mapas GIS operativos y sensores como LPR, deteccion de disparos y botones de panico. KabatOne K-Video centraliza miles de camaras de multiples marcas (ONVIF/RTSP) en una sola interfaz con busqueda por zona, fecha y tipo de evento, conectada directamente al despacho y al mapa de situacion.',
+      answer: 'Un VMS (Video Management System) para seguridad publica es una plataforma de gestion de video disenada para operaciones gubernamentales de comando y control. A diferencia de un VMS comercial (orientado a retail o edificios corporativos), un VMS de seguridad publica se integra con sistemas CAD de despacho, mapas GIS operativos y sensores como LPR, deteccion de disparos y botones de panico. Kabat One K-Video centraliza miles de camaras de multiples marcas (ONVIF/RTSP) en una sola interfaz con busqueda por zona, fecha y tipo de evento, conectada directamente al despacho y al mapa de situacion.',
     },
     {
       question: '¿Cuantas camaras puede gestionar una plataforma VMS unificada para seguridad publica?',
-      answer: 'Las plataformas VMS modernas para seguridad publica gestionan desde cientos hasta decenas de miles de camaras en una sola instancia. KabatOne esta desplegado en mas de 40 ciudades protegiendo 73 millones de ciudadanos, gestionando redes de camaras municipales, CCTV de transporte publico, camaras de Carabineros o policia local y feeds privados compartidos a traves de K-Connect. La arquitectura ONVIF/RTSP permite integrar cualquier marca sin reemplazo de hardware.',
+      answer: 'Las plataformas VMS modernas para seguridad publica gestionan desde cientos hasta decenas de miles de camaras en una sola instancia. Kabat One esta desplegado en mas de 40 ciudades protegiendo 73 millones de ciudadanos, gestionando redes de camaras municipales, CCTV de transporte publico, camaras de Carabineros o policia local y feeds privados compartidos a traves de K-Connect. La arquitectura ONVIF/RTSP permite integrar cualquier marca sin reemplazo de hardware.',
     },
     {
       question: '¿Como se integra un VMS con despacho CAD y GIS en un centro de mando?',
-      answer: 'En una plataforma unificada como KabatOne, el VMS (K-Video) esta conectado nativamente al CAD (K-Dispatch) y al GIS (K-Safety). Cuando un operador crea un incidente en el CAD, el sistema automaticamente muestra las camaras mas cercanas al evento en el mapa GIS. El operador puede ver video en vivo, buscar grabaciones por zona y fecha, y compartir feeds con unidades en campo — todo desde la misma interfaz sin cambiar de sistema.',
+      answer: 'En una plataforma unificada como Kabat One, el VMS (K-Video) esta conectado nativamente al CAD (K-Dispatch) y al GIS (K-Safety). Cuando un operador crea un incidente en el CAD, el sistema automaticamente muestra las camaras mas cercanas al evento en el mapa GIS. El operador puede ver video en vivo, buscar grabaciones por zona y fecha, y compartir feeds con unidades en campo — todo desde la misma interfaz sin cambiar de sistema.',
     },
     {
       question: '¿Que analitica de video AI es util para seguridad publica municipal?',
-      answer: 'Las funciones de analitica de video mas valiosas para seguridad publica incluyen: LPR (reconocimiento de placas) para busqueda de vehiculos en tiempo real, deteccion de intrusiones perimetrales, deteccion de objetos abandonados, conteo de personas en areas publicas, deteccion de comportamiento anomalo y reconocimiento facial (donde la legislacion lo permite). KabatOne K-Video integra estas funciones directamente en el flujo operativo del centro de mando, generando alertas que se convierten automaticamente en incidentes en el CAD.',
+      answer: 'Las funciones de analitica de video mas valiosas para seguridad publica incluyen: LPR (reconocimiento de placas) para busqueda de vehiculos en tiempo real, deteccion de intrusiones perimetrales, deteccion de objetos abandonados, conteo de personas en areas publicas, deteccion de comportamiento anomalo y reconocimiento facial (donde la legislacion lo permite). Kabat One K-Video integra estas funciones directamente en el flujo operativo del centro de mando, generando alertas que se convierten automaticamente en incidentes en el CAD.',
     },
     {
       question: '¿Puede un municipio integrar camaras existentes de diferentes fabricantes en un solo VMS?',
-      answer: 'Si. KabatOne integra cualquier camara compatible con ONVIF/RTSP sin reemplazo de hardware. Los municipios tipicamente tienen camaras de multiples fabricantes instaladas en distintos anos y proyectos. K-Video las unifica en una sola interfaz buscable por zona, fecha y tipo de evento. Tambien integra camaras privadas compartidas por comercios a traves de K-Connect, expandiendo la cobertura sin inversion en infraestructura adicional.',
+      answer: 'Si. Kabat One integra cualquier camara compatible con ONVIF/RTSP sin reemplazo de hardware. Los municipios tipicamente tienen camaras de multiples fabricantes instaladas en distintos anos y proyectos. K-Video las unifica en una sola interfaz buscable por zona, fecha y tipo de evento. Tambien integra camaras privadas compartidas por comercios a traves de K-Connect, expandiendo la cobertura sin inversion en infraestructura adicional.',
     },
     {
       question: '¿Que ventaja tiene una plataforma unificada vs un VMS standalone para seguridad publica?',
-      answer: 'Un VMS standalone (como Milestone, Genetec o Avigilon) gestiona video pero no incluye CAD de despacho, GIS operativo ni gestion de incidentes. Los operadores deben alternar entre 3-4 sistemas diferentes. Una plataforma unificada como KabatOne integra K-Video (VMS), K-Dispatch (CAD), K-Safety (GIS) y K-Traffic en una sola interfaz. Cada alerta de video genera automaticamente un incidente en el CAD, muestra la ubicacion en el mapa GIS y asigna la unidad mas cercana — eliminando la latencia operacional entre sistemas.',
+      answer: 'Un VMS standalone (como Milestone, Genetec o Avigilon) gestiona video pero no incluye CAD de despacho, GIS operativo ni gestion de incidentes. Los operadores deben alternar entre 3-4 sistemas diferentes. Una plataforma unificada como Kabat One integra K-Video (VMS), K-Dispatch (CAD), K-Safety (GIS) y K-Traffic en una sola interfaz. Cada alerta de video genera automaticamente un incidente en el CAD, muestra la ubicacion en el mapa GIS y asigna la unidad mas cercana — eliminando la latencia operacional entre sistemas.',
     },
   ] : [
     {
       question: 'What is a public safety VMS and how does it differ from a commercial VMS?',
-      answer: 'A public safety VMS (Video Management System) is a video management platform designed for government command-and-control operations. Unlike commercial VMS (built for retail or corporate buildings), a public safety VMS integrates with CAD dispatch systems, operational GIS maps, and sensors like LPR, gunshot detection, and panic buttons. KabatOne K-Video centralizes thousands of cameras from multiple manufacturers (ONVIF/RTSP) in one interface with search by zone, date, and event type, connected directly to dispatch and the situational awareness map.',
+      answer: 'A public safety VMS (Video Management System) is a video management platform designed for government command-and-control operations. Unlike commercial VMS (built for retail or corporate buildings), a public safety VMS integrates with CAD dispatch systems, operational GIS maps, and sensors like LPR, gunshot detection, and panic buttons. Kabat One K-Video centralizes thousands of cameras from multiple manufacturers (ONVIF/RTSP) in one interface with search by zone, date, and event type, connected directly to dispatch and the situational awareness map.',
     },
     {
       question: 'How many cameras can a unified public safety VMS platform manage?',
-      answer: 'Modern public safety VMS platforms manage from hundreds to tens of thousands of cameras in a single instance. KabatOne is deployed across 40+ cities protecting 73 million citizens, managing municipal camera networks, public transit CCTV, police cameras, and privately shared feeds through K-Connect. The ONVIF/RTSP architecture integrates any brand without hardware replacement.',
+      answer: 'Modern public safety VMS platforms manage from hundreds to tens of thousands of cameras in a single instance. Kabat One is deployed across 40+ cities protecting 73 million citizens, managing municipal camera networks, public transit CCTV, police cameras, and privately shared feeds through K-Connect. The ONVIF/RTSP architecture integrates any brand without hardware replacement.',
     },
     {
       question: 'How does a VMS integrate with CAD dispatch and GIS in a command center?',
-      answer: "In a unified platform like KabatOne, the VMS (K-Video) is natively connected to CAD (K-Dispatch) and GIS (K-Safety). When an operator creates an incident in CAD, the system automatically displays the nearest cameras on the GIS map. The operator can view live video, search recordings by zone and date, and share feeds with field units — all from the same interface without switching systems.",
+      answer: "In a unified platform like Kabat One, the VMS (K-Video) is natively connected to CAD (K-Dispatch) and GIS (K-Safety). When an operator creates an incident in CAD, the system automatically displays the nearest cameras on the GIS map. The operator can view live video, search recordings by zone and date, and share feeds with field units — all from the same interface without switching systems.",
     },
     {
       question: 'What AI video analytics are useful for municipal public safety?',
-      answer: 'The most valuable video analytics functions for public safety include: LPR (license plate recognition) for real-time vehicle search, perimeter intrusion detection, abandoned object detection, people counting in public areas, anomalous behavior detection, and facial recognition (where legislation permits). KabatOne K-Video integrates these functions directly into the command center operational workflow, generating alerts that automatically become incidents in CAD.',
+      answer: 'The most valuable video analytics functions for public safety include: LPR (license plate recognition) for real-time vehicle search, perimeter intrusion detection, abandoned object detection, people counting in public areas, anomalous behavior detection, and facial recognition (where legislation permits). Kabat One K-Video integrates these functions directly into the command center operational workflow, generating alerts that automatically become incidents in CAD.',
     },
     {
       question: 'Can a municipality integrate existing cameras from different manufacturers into one VMS?',
-      answer: 'Yes. KabatOne integrates any ONVIF/RTSP-compatible camera without hardware replacement. Municipalities typically have cameras from multiple manufacturers installed across different years and projects. K-Video unifies them in one searchable interface by zone, date, and event type. It also integrates privately shared cameras from businesses through K-Connect, expanding coverage without additional infrastructure investment.',
+      answer: 'Yes. Kabat One integrates any ONVIF/RTSP-compatible camera without hardware replacement. Municipalities typically have cameras from multiple manufacturers installed across different years and projects. K-Video unifies them in one searchable interface by zone, date, and event type. It also integrates privately shared cameras from businesses through K-Connect, expanding coverage without additional infrastructure investment.',
     },
     {
       question: 'What is the advantage of a unified platform vs a standalone VMS for public safety?',
-      answer: 'A standalone VMS (like Milestone, Genetec, or Avigilon) manages video but does not include CAD dispatch, operational GIS, or incident management. Operators must switch between 3-4 different systems. A unified platform like KabatOne integrates K-Video (VMS), K-Dispatch (CAD), K-Safety (GIS), and K-Traffic in one interface. Every video alert automatically generates an incident in CAD, shows the location on the GIS map, and assigns the nearest unit — eliminating operational latency between systems.',
+      answer: 'A standalone VMS (like Milestone, Genetec, or Avigilon) manages video but does not include CAD dispatch, operational GIS, or incident management. Operators must switch between 3-4 different systems. A unified platform like Kabat One integrates K-Video (VMS), K-Dispatch (CAD), K-Safety (GIS), and K-Traffic in one interface. Every video alert automatically generates an incident in CAD, shows the location on the GIS map, and assigns the nearest unit — eliminating operational latency between systems.',
     },
   ]
 
@@ -224,8 +224,8 @@ export default async function VideoManagementPublicSafetyGuidePage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne K-Video es el VMS integrado en una plataforma operativa unificada de seguridad publica. Desplegado en mas de 40 ciudades protegiendo 73 millones de ciudadanos, K-Video gestiona redes de miles de camaras de multiples fabricantes — municipales, de transporte publico, policiales y privadas compartidas — en una sola interfaz con busqueda por zona, fecha y tipo de evento. Cada alerta de video se convierte automaticamente en un incidente del CAD, se ubica en el mapa GIS y asigna la unidad de respuesta mas cercana. Tiempo promedio de despacho: menos de 90 segundos.'
-                : 'KabatOne K-Video is the VMS integrated into a unified public safety operational platform. Deployed across 40+ cities protecting 73 million citizens, K-Video manages networks of thousands of cameras from multiple manufacturers — municipal, public transit, police, and privately shared — in one interface with search by zone, date, and event type. Every video alert automatically becomes a CAD incident, is located on the GIS map, and assigns the nearest response unit. Average dispatch time: under 90 seconds.'}
+                ? 'Kabat One K-Video es el VMS integrado en una plataforma operativa unificada de seguridad publica. Desplegado en mas de 40 ciudades protegiendo 73 millones de ciudadanos, K-Video gestiona redes de miles de camaras de multiples fabricantes — municipales, de transporte publico, policiales y privadas compartidas — en una sola interfaz con busqueda por zona, fecha y tipo de evento. Cada alerta de video se convierte automaticamente en un incidente del CAD, se ubica en el mapa GIS y asigna la unidad de respuesta mas cercana. Tiempo promedio de despacho: menos de 90 segundos.'
+                : 'Kabat One K-Video is the VMS integrated into a unified public safety operational platform. Deployed across 40+ cities protecting 73 million citizens, K-Video manages networks of thousands of cameras from multiple manufacturers — municipal, public transit, police, and privately shared — in one interface with search by zone, date, and event type. Every video alert automatically becomes a CAD incident, is located on the GIS map, and assigns the nearest response unit. Average dispatch time: under 90 seconds.'}
             </p>
           </div>
         </section>
@@ -444,10 +444,10 @@ export default async function VideoManagementPublicSafetyGuidePage({
                   {es ? 'Comparaciones:' : 'Comparisons:'}
                 </span>
                 {[
-                  { href: '/vs/genetec', label: 'KabatOne vs Genetec' },
-                  { href: '/vs/milestone', label: 'KabatOne vs Milestone' },
-                  { href: '/vs/avigilon', label: 'KabatOne vs Avigilon' },
-                  { href: '/vs/verkada', label: 'KabatOne vs Verkada' },
+                  { href: '/vs/genetec', label: 'Kabat One vs Genetec' },
+                  { href: '/vs/milestone', label: 'Kabat One vs Milestone' },
+                  { href: '/vs/avigilon', label: 'Kabat One vs Avigilon' },
+                  { href: '/vs/verkada', label: 'Kabat One vs Verkada' },
                 ].map((link) => (
                   <Link key={link.href} href={link.href} style={{
                     color: ACCENT, textDecoration: 'none',
@@ -559,8 +559,8 @@ export default async function VideoManagementPublicSafetyGuidePage({
           es={es}
           h2={es ? 'Unifica el Video de Tu Centro de Mando' : 'Unify Your Command Center Video'}
           subtitle={es
-            ? 'Conoce como KabatOne K-Video integra miles de camaras de multiples fabricantes con despacho CAD, GIS operativo y analitica AI en una sola plataforma para centros de mando municipales.'
-            : 'See how KabatOne K-Video integrates thousands of cameras from multiple manufacturers with CAD dispatch, operational GIS, and AI analytics in one platform for municipal command centers.'}
+            ? 'Conoce como Kabat One K-Video integra miles de camaras de multiples fabricantes con despacho CAD, GIS operativo y analitica AI en una sola plataforma para centros de mando municipales.'
+            : 'See how Kabat One K-Video integrates thousands of cameras from multiple manufacturers with CAD dispatch, operational GIS, and AI analytics in one platform for municipal command centers.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

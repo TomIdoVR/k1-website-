@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareSpainPage({
       answer: 'El SIVE (Sistema Integrado de Vigilancia Exterior) es la red de vigilancia costera operada por la Guardia Civil, desplegada en el litoral mediterráneo sur, el Estrecho de Gibraltar, las Islas Canarias y el Estrecho de Ceuta. Integra radares de largo alcance, cámaras diurnas/nocturnas/térmicas, sensores AIS y puestos de observación fijos. Los datos se procesan en Centros de Apoyo Logístico (CAL) y se comparten con la Agencia Europea de la Guardia de Fronteras y Costas (Frontex). La Guardia Civil coordina operaciones marítimas de rescate con Salvamento Marítimo (SASEMAR). El creciente flujo migratorio hacia Canarias y el Mediterráneo ha impulsado la expansión e integración de sensores del SIVE con plataformas de conciencia situacional marítima en tiempo real.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para el CNP, la Guardia Civil, los Mossos d\'Esquadra y las Policías Locales españolas?',
-      answer: 'KabatOne integra las funciones que los distintos cuerpos de seguridad españoles gestionan en plataformas separadas: despacho CAD compatible con los centros 112/SUE y las salas de coordinación del CNP y la Guardia Civil (K-Dispatch), gestión unificada de redes de videovigilancia urbana y rural con analítica de IA — LPR de matrículas, detección de comportamientos, búsqueda forense — conforme al RGPD/LOPDGDD y las directrices de la AEPD (K-Video), y conciencia situacional GIS compartida entre CNP, Guardia Civil, cuerpos autonómicos y Policías Locales (K-Safety). Despliegue on-premises con cumplimiento ENS categoría ALTA y certificación CCN-STIC. Solicite una demo adaptada al contexto de los centros 112 y salas de coordinación españolas.',
+      question: '¿Por qué Kabat One es adecuado para el CNP, la Guardia Civil, los Mossos d\'Esquadra y las Policías Locales españolas?',
+      answer: 'Kabat One integra las funciones que los distintos cuerpos de seguridad españoles gestionan en plataformas separadas: despacho CAD compatible con los centros 112/SUE y las salas de coordinación del CNP y la Guardia Civil (K-Dispatch), gestión unificada de redes de videovigilancia urbana y rural con analítica de IA — LPR de matrículas, detección de comportamientos, búsqueda forense — conforme al RGPD/LOPDGDD y las directrices de la AEPD (K-Video), y conciencia situacional GIS compartida entre CNP, Guardia Civil, cuerpos autonómicos y Policías Locales (K-Safety). Despliegue on-premises con cumplimiento ENS categoría ALTA y certificación CCN-STIC. Solicite una demo adaptada al contexto de los centros 112 y salas de coordinación españolas.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareSpainPage({
       answer: 'SIVE (Sistema Integrado de Vigilancia Exterior) is the coastal surveillance network operated by the Guardia Civil, deployed along the southern Mediterranean coast, the Strait of Gibraltar, the Canary Islands, and the Ceuta Strait. It integrates long-range radars, day/night/thermal cameras, AIS sensors, and fixed observation posts. Data is processed in Logistics Support Centres (CAL) and shared with Frontex. The Guardia Civil coordinates maritime rescue operations with Salvamento Marítimo (SASEMAR). Growing migration flows to the Canaries and the Mediterranean have driven SIVE expansion and integration with real-time maritime situational awareness platforms.',
     },
     {
-      question: 'Why is KabatOne suited for Spain\'s CNP, Guardia Civil, Mossos d\'Esquadra, and Policías Locales?',
-      answer: 'KabatOne integrates the functions Spain\'s security forces manage across separate platforms: CAD dispatch compatible with 112/SUE centres and CNP and Guardia Civil coordination rooms (K-Dispatch), unified management of urban and rural surveillance networks with AI analytics — licence plate LPR, behavioural detection, forensic search — compliant with GDPR/LOPDGDD and AEPD guidelines (K-Video), and GIS situational awareness shared across CNP, Guardia Civil, autonomous regional forces, and Policías Locales (K-Safety). On-premises deployment with HIGH-category ENS compliance and CCN-STIC certification. Request a demo tailored to the Spanish 112 centre and sala de coordinación context.',
+      question: 'Why is Kabat One suited for Spain\'s CNP, Guardia Civil, Mossos d\'Esquadra, and Policías Locales?',
+      answer: 'Kabat One integrates the functions Spain\'s security forces manage across separate platforms: CAD dispatch compatible with 112/SUE centres and CNP and Guardia Civil coordination rooms (K-Dispatch), unified management of urban and rural surveillance networks with AI analytics — licence plate LPR, behavioural detection, forensic search — compliant with GDPR/LOPDGDD and AEPD guidelines (K-Video), and GIS situational awareness shared across CNP, Guardia Civil, autonomous regional forces, and Policías Locales (K-Safety). On-premises deployment with HIGH-category ENS compliance and CCN-STIC certification. Request a demo tailored to the Spanish 112 centre and sala de coordinación context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareSpainPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'España opera un sistema de seguridad pública en cuatro niveles — CNP, Guardia Civil, cuerpos autonómicos (Mossos, Ertzaintza) y Policías Locales — con 17 centros 112 autonómicos y el SIVE para vigilancia costera. KabatOne unifica el despacho CAD con soporte 112/SUE, la videovigilancia con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento ENS categoría ALTA, LOPDGDD y certificación CCN-STIC.'
-                : 'Spain operates a four-tier public safety system — CNP, Guardia Civil, autonomous forces (Mossos, Ertzaintza), and Policías Locales — with 17 autonomous 112 centres and SIVE for coastal surveillance. KabatOne unifies CAD dispatch with 112/SUE support, AI video surveillance analytics, and GIS situational awareness in a single platform with HIGH-category ENS, LOPDGDD, and CCN-STIC compliance.'}
+                ? 'España opera un sistema de seguridad pública en cuatro niveles — CNP, Guardia Civil, cuerpos autonómicos (Mossos, Ertzaintza) y Policías Locales — con 17 centros 112 autonómicos y el SIVE para vigilancia costera. Kabat One unifica el despacho CAD con soporte 112/SUE, la videovigilancia con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento ENS categoría ALTA, LOPDGDD y certificación CCN-STIC.'
+                : 'Spain operates a four-tier public safety system — CNP, Guardia Civil, autonomous forces (Mossos, Ertzaintza), and Policías Locales — with 17 autonomous 112 centres and SIVE for coastal surveillance. Kabat One unifies CAD dispatch with 112/SUE support, AI video surveillance analytics, and GIS situational awareness in a single platform with HIGH-category ENS, LOPDGDD, and CCN-STIC compliance.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareSpainPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de los Centros 112 y Salas de Coordinación Españoles' : 'How KabatOne Addresses Spanish 112 Centre and Coordination Room Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de los Centros 112 y Salas de Coordinación Españoles' : 'How Kabat One Addresses Spanish 112 Centre and Coordination Room Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los centros 112/SUE y las salas de coordinación del CNP y la Guardia Civil que necesitan un único dashboard para gestionar llamadas de emergencia, monitorear redes de videovigilancia y coordinar unidades de múltiples cuerpos sobre un mapa GIS — todo bajo los exigentes requisitos de cumplimiento ENS, LOPDGDD y CCN-STIC de los sistemas de información policiales españoles.'
-                : 'KabatOne is designed for Spanish 112/SUE centres and CNP and Guardia Civil coordination rooms that need a single dashboard to manage emergency calls, monitor surveillance networks, and coordinate units from multiple forces on a GIS map — all under the demanding ENS, LOPDGDD, and CCN-STIC compliance requirements for Spanish police information systems.'}
+                ? 'Kabat One está diseñado para los centros 112/SUE y las salas de coordinación del CNP y la Guardia Civil que necesitan un único dashboard para gestionar llamadas de emergencia, monitorear redes de videovigilancia y coordinar unidades de múltiples cuerpos sobre un mapa GIS — todo bajo los exigentes requisitos de cumplimiento ENS, LOPDGDD y CCN-STIC de los sistemas de información policiales españoles.'
+                : 'Kabat One is designed for Spanish 112/SUE centres and CNP and Guardia Civil coordination rooms that need a single dashboard to manage emergency calls, monitor surveillance networks, and coordinate units from multiple forces on a GIS map — all under the demanding ENS, LOPDGDD, and CCN-STIC compliance requirements for Spanish police information systems.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareSpainPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -341,7 +341,7 @@ export default async function PublicSafetySoftwareSpainPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Centro 112, CNP o Guardia Civil' : 'Request a Demo for Your 112 Centre, CNP, or Guardia Civil'}
-          subtitle={es ? 'KabatOne integra despacho 112/SUE, videovigilancia con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento ENS categoría ALTA, LOPDGDD y certificación CCN-STIC. Demo adaptada al contexto de la seguridad pública española.' : 'KabatOne integrates 112/SUE dispatch, AI surveillance analytics, and GIS situational awareness in a single platform with HIGH-category ENS, LOPDGDD, and CCN-STIC compliance. Demo tailored to the Spanish public safety context.'}
+          subtitle={es ? 'Kabat One integra despacho 112/SUE, videovigilancia con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento ENS categoría ALTA, LOPDGDD y certificación CCN-STIC. Demo adaptada al contexto de la seguridad pública española.' : 'Kabat One integrates 112/SUE dispatch, AI surveillance analytics, and GIS situational awareness in a single platform with HIGH-category ENS, LOPDGDD, and CCN-STIC compliance. Demo tailored to the Spanish public safety context.'}
         />
 
         <Footer es={es} />

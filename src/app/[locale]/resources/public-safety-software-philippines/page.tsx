@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne support the Philippine National Police's 17 regional commands?",
-    answer: "KabatOne integrates with PNP's command hierarchy across 17 regional offices, 82 provincial police offices, and 1,400+ city/municipal stations — providing unified CAD dispatch, real-time situational awareness, and IMPLAN/SOPLAN-compatible reporting aligned with DILG-NHQ protocols."
+    question: "How does Kabat One support the Philippine National Police's 17 regional commands?",
+    answer: "Kabat One integrates with PNP's command hierarchy across 17 regional offices, 82 provincial police offices, and 1,400+ city/municipal stations — providing unified CAD dispatch, real-time situational awareness, and IMPLAN/SOPLAN-compatible reporting aligned with DILG-NHQ protocols."
   },
   {
-    question: "Can KabatOne coordinate NDRRMC multi-agency disaster response?",
-    answer: "Yes. KabatOne's operations center integrates NDRRMC member agencies including PNP, BFP, PCG, and AFP — synchronizing EOC dashboards, resource tracking, and incident logs with RA 10121 (DRRM Act) protocols and PDNA workflows across all DRRM levels."
+    question: "Can Kabat One coordinate NDRRMC multi-agency disaster response?",
+    answer: "Yes. Kabat One's operations center integrates NDRRMC member agencies including PNP, BFP, PCG, and AFP — synchronizing EOC dashboards, resource tracking, and incident logs with RA 10121 (DRRM Act) protocols and PDNA workflows across all DRRM levels."
   },
   {
     question: "How does the platform handle DICT/e-Government interoperability in the Philippines?",
-    answer: "KabatOne supports DICT interoperability standards and can integrate with PhilSys (national ID), eGovPH portals, and NG-112 Next Generation Emergency Call systems — enabling data sharing across national agencies per EO 2 (FOI) and the DICT ICT roadmap."
+    answer: "Kabat One supports DICT interoperability standards and can integrate with PhilSys (national ID), eGovPH portals, and NG-112 Next Generation Emergency Call systems — enabling data sharing across national agencies per EO 2 (FOI) and the DICT ICT roadmap."
   },
   {
-    question: "Is KabatOne compliant with the Philippine Data Privacy Act (RA 10173)?",
-    answer: "Yes. KabatOne is designed for full DPA/NPC compliance — implementing Privacy Impact Assessments (PIAs), data subject rights management, mandatory breach notification within 72 hours, and privacy-by-design video analytics for CCTV/NatSec compliance."
+    question: "Is Kabat One compliant with the Philippine Data Privacy Act (RA 10173)?",
+    answer: "Yes. Kabat One is designed for full DPA/NPC compliance — implementing Privacy Impact Assessments (PIAs), data subject rights management, mandatory breach notification within 72 hours, and privacy-by-design video analytics for CCTV/NatSec compliance."
   },
   {
-    question: "How does KabatOne manage typhoon and flood operations in the Philippines?",
-    answer: "KabatOne integrates PAGASA weather alerts, PHIVOLCS volcano/earthquake feeds, and NDRRMC situational reports — enabling pre-emptive evacuation dispatch, rescue coordination, and post-disaster damage assessment across typhoon-prone provinces."
+    question: "How does Kabat One manage typhoon and flood operations in the Philippines?",
+    answer: "Kabat One integrates PAGASA weather alerts, PHIVOLCS volcano/earthquake feeds, and NDRRMC situational reports — enabling pre-emptive evacuation dispatch, rescue coordination, and post-disaster damage assessment across typhoon-prone provinces."
   },
   {
     question: "Can the platform scale across Metro Manila's 16 cities and NCR policing?",
-    answer: "KabatOne handles Metro Manila's multi-city complexity — coordinating NCR Regional Police Command, MMDA traffic management, Manila 911, and Quezon City 911 — with a unified operations picture for the 13+ million population National Capital Region."
+    answer: "Kabat One handles Metro Manila's multi-city complexity — coordinating NCR Regional Police Command, MMDA traffic management, Manila 911, and Quezon City 911 — with a unified operations picture for the 13+ million population National Capital Region."
   },
   {
-    question: "What procurement pathway does KabatOne support under Philippine law?",
-    answer: "KabatOne supports procurement through PhilGEPS (Government Electronic Procurement System) under RA 9184 (Government Procurement Reform Act) — including competitive bidding, alternative procurement modes, and DBM-approved ICT procurement for national and LGU agencies."
+    question: "What procurement pathway does Kabat One support under Philippine law?",
+    answer: "Kabat One supports procurement through PhilGEPS (Government Electronic Procurement System) under RA 9184 (Government Procurement Reform Act) — including competitive bidding, alternative procurement modes, and DBM-approved ICT procurement for national and LGU agencies."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo apoya KabatOne los 17 mandos regionales de la Philippine National Police?",
-    answer: "KabatOne se integra con la jerarquía de mando de la PNP en 17 oficinas regionales, 82 oficinas provinciales y más de 1,400 estaciones municipales — proporcionando despacho CAD unificado, conciencia situacional en tiempo real e informes compatibles con IMPLAN/SOPLAN alineados con protocolos DILG-NHQ."
+    question: "¿Cómo apoya Kabat One los 17 mandos regionales de la Philippine National Police?",
+    answer: "Kabat One se integra con la jerarquía de mando de la PNP en 17 oficinas regionales, 82 oficinas provinciales y más de 1,400 estaciones municipales — proporcionando despacho CAD unificado, conciencia situacional en tiempo real e informes compatibles con IMPLAN/SOPLAN alineados con protocolos DILG-NHQ."
   },
   {
-    question: "¿Puede KabatOne coordinar la respuesta multiagencia ante desastres del NDRRMC?",
-    answer: "Sí. La central de operaciones de KabatOne integra agencias miembro del NDRRMC incluidas PNP, BFP, PCG y AFP — sincronizando dashboards EOC, seguimiento de recursos y registros de incidentes con protocolos de la RA 10121 (Ley DRRM) y flujos PDNA."
+    question: "¿Puede Kabat One coordinar la respuesta multiagencia ante desastres del NDRRMC?",
+    answer: "Sí. La central de operaciones de Kabat One integra agencias miembro del NDRRMC incluidas PNP, BFP, PCG y AFP — sincronizando dashboards EOC, seguimiento de recursos y registros de incidentes con protocolos de la RA 10121 (Ley DRRM) y flujos PDNA."
   },
   {
     question: "¿Cómo maneja la plataforma la interoperabilidad DICT/eGobierno en Filipinas?",
-    answer: "KabatOne soporta estándares de interoperabilidad DICT y puede integrarse con PhilSys (ID nacional), portales eGovPH y sistemas NG-112 de llamada de emergencia de nueva generación — permitiendo intercambio de datos entre agencias conforme a la EO 2 (FOI) y la hoja de ruta TIC del DICT."
+    answer: "Kabat One soporta estándares de interoperabilidad DICT y puede integrarse con PhilSys (ID nacional), portales eGovPH y sistemas NG-112 de llamada de emergencia de nueva generación — permitiendo intercambio de datos entre agencias conforme a la EO 2 (FOI) y la hoja de ruta TIC del DICT."
   },
   {
-    question: "¿Es KabatOne conforme con la Ley de Privacidad de Datos de Filipinas (RA 10173)?",
-    answer: "Sí. KabatOne está diseñado para cumplimiento total con DPA/NPC — implementando Evaluaciones de Impacto en la Privacidad (PIA), gestión de derechos de titulares, notificación obligatoria de brechas en 72 horas y videoanalítica de privacidad-por-diseño para CCTV."
+    question: "¿Es Kabat One conforme con la Ley de Privacidad de Datos de Filipinas (RA 10173)?",
+    answer: "Sí. Kabat One está diseñado para cumplimiento total con DPA/NPC — implementando Evaluaciones de Impacto en la Privacidad (PIA), gestión de derechos de titulares, notificación obligatoria de brechas en 72 horas y videoanalítica de privacidad-por-diseño para CCTV."
   },
   {
-    question: "¿Cómo gestiona KabatOne las operaciones de tifones e inundaciones en Filipinas?",
-    answer: "KabatOne integra alertas meteorológicas de PAGASA, feeds sísmicos/volcánicos de PHIVOLCS e informes situacionales del NDRRMC — habilitando despacho de evacuación preventiva, coordinación de rescate y evaluación de daños post-desastre en provincias propensas a tifones."
+    question: "¿Cómo gestiona Kabat One las operaciones de tifones e inundaciones en Filipinas?",
+    answer: "Kabat One integra alertas meteorológicas de PAGASA, feeds sísmicos/volcánicos de PHIVOLCS e informes situacionales del NDRRMC — habilitando despacho de evacuación preventiva, coordinación de rescate y evaluación de daños post-desastre en provincias propensas a tifones."
   },
   {
     question: "¿Puede la plataforma escalar en las 16 ciudades de Metro Manila y el NCR?",
-    answer: "KabatOne gestiona la complejidad multiciudad de Metro Manila — coordinando el Mando Policial Regional NCR, gestión de tráfico MMDA, Manila 911 y Quezon City 911 — con una imagen operacional unificada para la Región Capital Nacional de más de 13 millones de habitantes."
+    answer: "Kabat One gestiona la complejidad multiciudad de Metro Manila — coordinando el Mando Policial Regional NCR, gestión de tráfico MMDA, Manila 911 y Quezon City 911 — con una imagen operacional unificada para la Región Capital Nacional de más de 13 millones de habitantes."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne bajo la legislación filipina?",
-    answer: "KabatOne soporta contratación a través de PhilGEPS (Sistema Electrónico de Contratación del Gobierno) bajo la RA 9184 (Ley de Reforma de Contratación) — incluyendo licitación competitiva, modos alternativos y contratación TIC aprobada por DBM para agencias nacionales y LGU."
+    question: "¿Qué vía de contratación soporta Kabat One bajo la legislación filipina?",
+    answer: "Kabat One soporta contratación a través de PhilGEPS (Sistema Electrónico de Contratación del Gobierno) bajo la RA 9184 (Ley de Reforma de Contratación) — incluyendo licitación competitiva, modos alternativos y contratación TIC aprobada por DBM para agencias nacionales y LGU."
   }
 ]
 
@@ -196,7 +196,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-6">
               <h3 className="font-semibold text-yellow-900 mb-2">
-                {es ? 'Integración KabatOne para Emergencias Nacionales' : 'KabatOne Integration for National Emergencies'}
+                {es ? 'Integración Kabat One para Emergencias Nacionales' : 'Kabat One Integration for National Emergencies'}
               </h3>
               <ul className="space-y-1 text-yellow-800">
                 <li>{es ? '• Feeds en tiempo real: PAGASA PSWS, PHIVOLCS, NDRRMC' : '• Real-time feeds: PAGASA PSWS, PHIVOLCS, NDRRMC alerts'}</li>
@@ -293,7 +293,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• PhilGEPS: licitaciones PNP, BFP, PCG, NDRRMC, DICT' : '• PhilGEPS: PNP, BFP, PCG, NDRRMC, DICT bids'}</li>
@@ -327,8 +327,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Filipinas?' : 'Ready to modernize public safety in the Philippines?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la PNP, BFP, PCG y NDRRMC con una plataforma unificada conforme a RA 10173/NPC y compatible con PhilGEPS.'
-            : 'See how KabatOne supports PNP, BFP, PCG, and NDRRMC with a unified platform compliant with RA 10173/NPC and compatible with PhilGEPS.'}
+            ? 'Conozca cómo Kabat One apoya a la PNP, BFP, PCG y NDRRMC con una plataforma unificada conforme a RA 10173/NPC y compatible con PhilGEPS.'
+            : 'See how Kabat One supports PNP, BFP, PCG, and NDRRMC with a unified platform compliant with RA 10173/NPC and compatible with PhilGEPS.'}
         />
       </main>
       <Footer es={es} />

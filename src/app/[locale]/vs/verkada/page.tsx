@@ -28,7 +28,7 @@ export default async function VsVerkadaPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Verkada', url: es ? 'https://kabatone.com/es/vs/verkada' : 'https://kabatone.com/vs/verkada' },
+    { name: 'Kabat One vs Verkada', url: es ? 'https://kabatone.com/es/vs/verkada' : 'https://kabatone.com/vs/verkada' },
   ]
 
   const pageUrl = es ? 'https://kabatone.com/es/vs/verkada' : 'https://kabatone.com/vs/verkada'
@@ -36,52 +36,52 @@ export default async function VsVerkadaPage({
   const faqs = es ? [
     {
       question: '¿Puede Verkada manejar el despacho de emergencias o coordinación de incidentes?',
-      answer: 'No. Verkada es una plataforma de seguridad física gestionada en la nube — cámaras, control de acceso, alarmas y sensores ambientales. No incluye despacho CAD, gestión de incidentes operacionales ni coordinación de unidades en campo. Para organizaciones que necesitan coordinar la respuesta desde la detección hasta el despacho, Verkada requiere integrar un sistema CAD de terceros. KabatOne K-Dispatch es un sistema CAD completo nativo — recepción de llamadas, recomendación automática de unidades, logging de despacho y rastreo en tiempo real — integrado con video, GIS y tráfico en la misma plataforma.',
+      answer: 'No. Verkada es una plataforma de seguridad física gestionada en la nube — cámaras, control de acceso, alarmas y sensores ambientales. No incluye despacho CAD, gestión de incidentes operacionales ni coordinación de unidades en campo. Para organizaciones que necesitan coordinar la respuesta desde la detección hasta el despacho, Verkada requiere integrar un sistema CAD de terceros. Kabat One K-Dispatch es un sistema CAD completo nativo — recepción de llamadas, recomendación automática de unidades, logging de despacho y rastreo en tiempo real — integrado con video, GIS y tráfico en la misma plataforma.',
     },
     {
-      question: '¿KabatOne requiere hardware propietario como Verkada?',
-      answer: 'No. Verkada requiere sus propias cámaras y dispositivos de acceso — el hardware propietario es parte central de su modelo de negocio. KabatOne K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar, lo que significa que puede gestionar cámaras de cualquier fabricante: Hikvision, Dahua, Axis, Bosch, Hanwha, y otras. Si una organización ya tiene cámaras existentes, KabatOne las integra sin reemplazarlas. No hay dependencia de hardware propietario.',
+      question: '¿Kabat One requiere hardware propietario como Verkada?',
+      answer: 'No. Verkada requiere sus propias cámaras y dispositivos de acceso — el hardware propietario es parte central de su modelo de negocio. Kabat One K-Video soporta ONVIF, RTSP y todos los protocolos IP estándar, lo que significa que puede gestionar cámaras de cualquier fabricante: Hikvision, Dahua, Axis, Bosch, Hanwha, y otras. Si una organización ya tiene cámaras existentes, Kabat One las integra sin reemplazarlas. No hay dependencia de hardware propietario.',
     },
     {
       question: '¿Cuál es mejor para centros de mando gubernamentales?',
-      answer: 'KabatOne está diseñado específicamente para entornos de mando C5/C2 y organizaciones de seguridad pública. Incluye CAD completo (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic), video con IA (K-Video) y video comunitario (K-Connect) — todos nativos en una sola plataforma. Verkada es una plataforma de seguridad para instalaciones — sólida para edificios corporativos, campus y retail, pero sin las capacidades operacionales que los centros de mando gubernamentales necesitan: despacho, GIS a escala de ciudad, gestión de tráfico o coordinación multiagencia.',
+      answer: 'Kabat One está diseñado específicamente para entornos de mando C5/C2 y organizaciones de seguridad pública. Incluye CAD completo (K-Dispatch), GIS operacional (K-Safety), gestión de tráfico (K-Traffic), video con IA (K-Video) y video comunitario (K-Connect) — todos nativos en una sola plataforma. Verkada es una plataforma de seguridad para instalaciones — sólida para edificios corporativos, campus y retail, pero sin las capacidades operacionales que los centros de mando gubernamentales necesitan: despacho, GIS a escala de ciudad, gestión de tráfico o coordinación multiagencia.',
     },
     {
-      question: '¿Puede KabatOne integrarse con cámaras Verkada?',
-      answer: 'KabatOne K-Video soporta ONVIF y RTSP — los protocolos IP estándar de la industria. La compatibilidad específica con dispositivos Verkada depende del soporte ONVIF/RTSP de Verkada para cada modelo de cámara. Para organizaciones con infraestructura Verkada existente que necesitan añadir capacidades de despacho CAD, GIS operacional y gestión de tráfico, KabatOne puede actuar como capa de gestión unificada mientras preserva las inversiones de hardware existentes donde sea técnicamente compatible.',
+      question: '¿Puede Kabat One integrarse con cámaras Verkada?',
+      answer: 'Kabat One K-Video soporta ONVIF y RTSP — los protocolos IP estándar de la industria. La compatibilidad específica con dispositivos Verkada depende del soporte ONVIF/RTSP de Verkada para cada modelo de cámara. Para organizaciones con infraestructura Verkada existente que necesitan añadir capacidades de despacho CAD, GIS operacional y gestión de tráfico, Kabat One puede actuar como capa de gestión unificada mientras preserva las inversiones de hardware existentes donde sea técnicamente compatible.',
     },
     {
-      question: '¿Qué diferencia a KabatOne de Verkada para municipios?',
-      answer: 'Verkada gestiona la seguridad de instalaciones — cámaras, puertas, alarmas. Para un municipio que opera un centro de mando, eso cubre solo la capa de video y acceso físico. KabatOne cubre el flujo operacional completo: video de cámaras de ciudad (K-Video), despacho de emergencias (K-Dispatch), conciencia situacional GIS a escala de ciudad (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido por ciudadanos y negocios (K-Connect). Para municipios que necesitan coordinar policía, bomberos, tráfico y video en una sola operación, KabatOne es la plataforma operacional central — no una herramienta de seguridad de instalaciones.',
+      question: '¿Qué diferencia a Kabat One de Verkada para municipios?',
+      answer: 'Verkada gestiona la seguridad de instalaciones — cámaras, puertas, alarmas. Para un municipio que opera un centro de mando, eso cubre solo la capa de video y acceso físico. Kabat One cubre el flujo operacional completo: video de cámaras de ciudad (K-Video), despacho de emergencias (K-Dispatch), conciencia situacional GIS a escala de ciudad (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido por ciudadanos y negocios (K-Connect). Para municipios que necesitan coordinar policía, bomberos, tráfico y video en una sola operación, Kabat One es la plataforma operacional central — no una herramienta de seguridad de instalaciones.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Verkada no ofrece?',
-      answer: 'Más allá del video y acceso físico, KabatOne proporciona: CAD completo (K-Dispatch) con recepción de llamadas, recomendación de unidades y logging — Verkada no tiene CAD; GIS operacional (K-Safety) con conciencia situacional a escala de ciudad, rastreo de unidades y correlación con video en tiempo real — Verkada no tiene GIS operacional; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos, incidentes viales y vehículos de emergencia — Verkada no incluye tráfico; video comunitario (K-Connect) para incorporar cámaras de ciudadanos y negocios sin hardware propietario; y coordinación multiagencia nativa entre todos los módulos sin integraciones adicionales.',
+      question: '¿Qué ofrece Kabat One que Verkada no ofrece?',
+      answer: 'Más allá del video y acceso físico, Kabat One proporciona: CAD completo (K-Dispatch) con recepción de llamadas, recomendación de unidades y logging — Verkada no tiene CAD; GIS operacional (K-Safety) con conciencia situacional a escala de ciudad, rastreo de unidades y correlación con video en tiempo real — Verkada no tiene GIS operacional; gestión inteligente de tráfico (K-Traffic) para coordinar semáforos, incidentes viales y vehículos de emergencia — Verkada no incluye tráfico; video comunitario (K-Connect) para incorporar cámaras de ciudadanos y negocios sin hardware propietario; y coordinación multiagencia nativa entre todos los módulos sin integraciones adicionales.',
     },
   ] : [
     {
       question: 'Can Verkada handle emergency dispatch or incident coordination?',
-      answer: 'No. Verkada is a cloud-managed physical security platform — cameras, access control, alarms, and environmental sensors. It does not include CAD dispatch, operational incident management, or field unit coordination. For organizations that need to coordinate response from detection to dispatch, Verkada requires integrating a third-party CAD system. KabatOne K-Dispatch is a native full CAD system — call intake, automatic unit recommendation, dispatch logging, and real-time tracking — integrated with video, GIS, and traffic in the same platform.',
+      answer: 'No. Verkada is a cloud-managed physical security platform — cameras, access control, alarms, and environmental sensors. It does not include CAD dispatch, operational incident management, or field unit coordination. For organizations that need to coordinate response from detection to dispatch, Verkada requires integrating a third-party CAD system. Kabat One K-Dispatch is a native full CAD system — call intake, automatic unit recommendation, dispatch logging, and real-time tracking — integrated with video, GIS, and traffic in the same platform.',
     },
     {
-      question: 'Does KabatOne require proprietary hardware like Verkada?',
-      answer: 'No. Verkada requires its own cameras and access devices — proprietary hardware is a core part of its business model. KabatOne K-Video supports ONVIF, RTSP, and all standard IP protocols, which means it can manage cameras from any manufacturer: Hikvision, Dahua, Axis, Bosch, Hanwha, and others. If an organization already has existing cameras, KabatOne integrates them without replacement. There is no proprietary hardware dependency.',
+      question: 'Does Kabat One require proprietary hardware like Verkada?',
+      answer: 'No. Verkada requires its own cameras and access devices — proprietary hardware is a core part of its business model. Kabat One K-Video supports ONVIF, RTSP, and all standard IP protocols, which means it can manage cameras from any manufacturer: Hikvision, Dahua, Axis, Bosch, Hanwha, and others. If an organization already has existing cameras, Kabat One integrates them without replacement. There is no proprietary hardware dependency.',
     },
     {
       question: 'Which is better for government command centers?',
-      answer: 'KabatOne is purpose-built for C5/C2 command environments and public safety organizations. It includes full CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), AI video (K-Video), and community video (K-Connect) — all native in one platform. Verkada is a facility security platform — strong for corporate buildings, campuses, and retail, but without the operational capabilities government command centers need: dispatch, city-scale GIS, traffic management, or multi-agency coordination.',
+      answer: 'Kabat One is purpose-built for C5/C2 command environments and public safety organizations. It includes full CAD (K-Dispatch), operational GIS (K-Safety), traffic management (K-Traffic), AI video (K-Video), and community video (K-Connect) — all native in one platform. Verkada is a facility security platform — strong for corporate buildings, campuses, and retail, but without the operational capabilities government command centers need: dispatch, city-scale GIS, traffic management, or multi-agency coordination.',
     },
     {
-      question: 'Can KabatOne integrate with Verkada cameras?',
-      answer: 'KabatOne K-Video supports ONVIF and RTSP — the industry-standard IP protocols. Specific compatibility with Verkada devices depends on Verkada\'s ONVIF/RTSP support for each camera model. For organizations with existing Verkada infrastructure that need to add CAD dispatch, operational GIS, and traffic management capabilities, KabatOne can act as a unified management layer while preserving existing hardware investments where technically compatible.',
+      question: 'Can Kabat One integrate with Verkada cameras?',
+      answer: 'Kabat One K-Video supports ONVIF and RTSP — the industry-standard IP protocols. Specific compatibility with Verkada devices depends on Verkada\'s ONVIF/RTSP support for each camera model. For organizations with existing Verkada infrastructure that need to add CAD dispatch, operational GIS, and traffic management capabilities, Kabat One can act as a unified management layer while preserving existing hardware investments where technically compatible.',
     },
     {
-      question: 'What is the difference between KabatOne and Verkada for municipalities?',
-      answer: 'Verkada manages facility security — cameras, doors, alarms. For a municipality operating a command center, that covers only the video and physical access layer. KabatOne covers the full operational workflow: city camera video (K-Video), emergency dispatch (K-Dispatch), city-scale GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video shared by citizens and businesses (K-Connect). For municipalities that need to coordinate police, fire, traffic, and video in one operation, KabatOne is the central operational platform — not a facility security tool.',
+      question: 'What is the difference between Kabat One and Verkada for municipalities?',
+      answer: 'Verkada manages facility security — cameras, doors, alarms. For a municipality operating a command center, that covers only the video and physical access layer. Kabat One covers the full operational workflow: city camera video (K-Video), emergency dispatch (K-Dispatch), city-scale GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video shared by citizens and businesses (K-Connect). For municipalities that need to coordinate police, fire, traffic, and video in one operation, Kabat One is the central operational platform — not a facility security tool.',
     },
     {
-      question: 'What does KabatOne offer that Verkada does not?',
-      answer: 'Beyond video and physical access, KabatOne provides: full CAD (K-Dispatch) with call intake, unit recommendation, and logging — Verkada has no CAD; operational GIS (K-Safety) with city-scale situational awareness, unit tracking, and real-time video correlation — Verkada has no operational GIS; intelligent traffic management (K-Traffic) to coordinate signals, road incidents, and emergency vehicles — Verkada does not include traffic; community video (K-Connect) to incorporate citizen and business cameras without proprietary hardware; and native multi-agency coordination across all modules without additional integrations.',
+      question: 'What does Kabat One offer that Verkada does not?',
+      answer: 'Beyond video and physical access, Kabat One provides: full CAD (K-Dispatch) with call intake, unit recommendation, and logging — Verkada has no CAD; operational GIS (K-Safety) with city-scale situational awareness, unit tracking, and real-time video correlation — Verkada has no operational GIS; intelligent traffic management (K-Traffic) to coordinate signals, road incidents, and emergency vehicles — Verkada does not include traffic; community video (K-Connect) to incorporate citizen and business cameras without proprietary hardware; and native multi-agency coordination across all modules without additional integrations.',
     },
   ]
 
@@ -182,36 +182,36 @@ export default async function VsVerkadaPage({
   const whyKabatoneCards = es ? [
     {
       title: 'Respuesta centrada en el despacho — no solo monitoreo',
-      body: 'Verkada detecta un evento en cámara. El operador entonces necesita cambiar a un sistema CAD separado para despachar unidades. En KabatOne, una alerta de K-Video puede generar automáticamente un evento en K-Dispatch — el despachador ve el video del incidente directamente en el contexto del caso, sin cambiar de pantalla. El flujo completo de detección a respuesta ocurre en una sola plataforma.',
+      body: 'Verkada detecta un evento en cámara. El operador entonces necesita cambiar a un sistema CAD separado para despachar unidades. En Kabat One, una alerta de K-Video puede generar automáticamente un evento en K-Dispatch — el despachador ve el video del incidente directamente en el contexto del caso, sin cambiar de pantalla. El flujo completo de detección a respuesta ocurre en una sola plataforma.',
     },
     {
       title: 'Sin dependencia de hardware propietario',
-      body: 'El modelo Verkada requiere sus propias cámaras y dispositivos de acceso — una vez que entras en el ecosistema, el costo de salida es alto. KabatOne K-Video es agnóstico de hardware: soporta ONVIF, RTSP y cualquier fabricante de cámaras IP. Las organizaciones con infraestructura existente pueden preservar su inversión. No hay lock-in, no hay renovaciones de hardware forzadas.',
+      body: 'El modelo Verkada requiere sus propias cámaras y dispositivos de acceso — una vez que entras en el ecosistema, el costo de salida es alto. Kabat One K-Video es agnóstico de hardware: soporta ONVIF, RTSP y cualquier fabricante de cámaras IP. Las organizaciones con infraestructura existente pueden preservar su inversión. No hay lock-in, no hay renovaciones de hardware forzadas.',
     },
     {
       title: 'GIS gubernamental a escala de ciudad',
-      body: 'Verkada muestra cámaras en un mapa de instalación. KabatOne K-Safety es un GIS operacional de ciudad completo: incidentes en tiempo real, rastreo de unidades de policía y bomberos, zonas de riesgo configurables, correlación de eventos con feeds de video — todo visible en el mismo mapa operativo donde trabaja el despachador. La diferencia entre un mapa de cámaras y conciencia situacional real.',
+      body: 'Verkada muestra cámaras en un mapa de instalación. Kabat One K-Safety es un GIS operacional de ciudad completo: incidentes en tiempo real, rastreo de unidades de policía y bomberos, zonas de riesgo configurables, correlación de eventos con feeds de video — todo visible en el mismo mapa operativo donde trabaja el despachador. La diferencia entre un mapa de cámaras y conciencia situacional real.',
     },
     {
       title: 'Tráfico y seguridad pública en una plataforma',
-      body: 'KabatOne K-Traffic gestiona semáforos, detecta incidentes viales y coordina el paso de vehículos de emergencia — integrado con el mismo sistema de despacho y GIS. Cuando ocurre un incidente, el despachador puede coordinar la ruta de la unidad más cercana, activar semáforos en verde y ver el video del sector desde la misma interfaz. Verkada no tiene estas capacidades; son herramientas de seguridad de instalaciones, no de operaciones urbanas.',
+      body: 'Kabat One K-Traffic gestiona semáforos, detecta incidentes viales y coordina el paso de vehículos de emergencia — integrado con el mismo sistema de despacho y GIS. Cuando ocurre un incidente, el despachador puede coordinar la ruta de la unidad más cercana, activar semáforos en verde y ver el video del sector desde la misma interfaz. Verkada no tiene estas capacidades; son herramientas de seguridad de instalaciones, no de operaciones urbanas.',
     },
   ] : [
     {
       title: 'Dispatch-centric response — not just monitoring',
-      body: 'Verkada detects a camera event. The operator then needs to switch to a separate CAD system to dispatch units. In KabatOne, a K-Video alert can automatically generate an event in K-Dispatch — the dispatcher sees the incident video directly in the case context, without switching screens. The full detection-to-response workflow happens in one platform.',
+      body: 'Verkada detects a camera event. The operator then needs to switch to a separate CAD system to dispatch units. In Kabat One, a K-Video alert can automatically generate an event in K-Dispatch — the dispatcher sees the incident video directly in the case context, without switching screens. The full detection-to-response workflow happens in one platform.',
     },
     {
       title: 'Hardware freedom — no vendor lock-in',
-      body: 'The Verkada model requires its own cameras and access devices — once you enter the ecosystem, the exit cost is high. KabatOne K-Video is hardware-agnostic: it supports ONVIF, RTSP, and any IP camera manufacturer. Organizations with existing infrastructure can preserve their investment. No lock-in, no forced hardware refreshes.',
+      body: 'The Verkada model requires its own cameras and access devices — once you enter the ecosystem, the exit cost is high. Kabat One K-Video is hardware-agnostic: it supports ONVIF, RTSP, and any IP camera manufacturer. Organizations with existing infrastructure can preserve their investment. No lock-in, no forced hardware refreshes.',
     },
     {
       title: 'Government-grade GIS at city scale',
-      body: 'Verkada shows cameras on a facility floor plan. KabatOne K-Safety is a full city-scale operational GIS: real-time incidents, police and fire unit tracking, configurable risk zones, event correlation with video feeds — all visible in the same operational map where the dispatcher works. The difference between a camera map and real situational awareness.',
+      body: 'Verkada shows cameras on a facility floor plan. Kabat One K-Safety is a full city-scale operational GIS: real-time incidents, police and fire unit tracking, configurable risk zones, event correlation with video feeds — all visible in the same operational map where the dispatcher works. The difference between a camera map and real situational awareness.',
     },
     {
       title: 'Traffic and public safety in one platform',
-      body: 'KabatOne K-Traffic manages signals, detects road incidents, and coordinates emergency vehicle clearance — integrated with the same dispatch system and GIS. When an incident occurs, the dispatcher can route the nearest unit, trigger green lights, and view the sector video from the same interface. Verkada has none of these capabilities; they are facility security tools, not urban operations tools.',
+      body: 'Kabat One K-Traffic manages signals, detects road incidents, and coordinates emergency vehicle clearance — integrated with the same dispatch system and GIS. When an incident occurs, the dispatcher can route the nearest unit, trigger green lights, and view the sector video from the same interface. Verkada has none of these capabilities; they are facility security tools, not urban operations tools.',
     },
   ]
 
@@ -232,11 +232,11 @@ export default async function VsVerkadaPage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? 'KabatOne vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada'
-                : 'KabatOne vs Verkada — Cloud Physical Security vs Unified Public Safety Platform',
+                ? 'Kabat One vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada'
+                : 'Kabat One vs Verkada — Cloud Physical Security vs Unified Public Safety Platform',
               es
-                ? 'Verkada ofrece cámaras, control de acceso y alarmas en la nube. KabatOne agrega despacho CAD completo, GIS operacional, gestión de tráfico y coordinación multiagencia — el flujo completo desde detección hasta respuesta.'
-                : 'Verkada provides cloud-managed cameras, access control, and alarms. KabatOne adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — the complete workflow from detection to response.',
+                ? 'Verkada ofrece cámaras, control de acceso y alarmas en la nube. Kabat One agrega despacho CAD completo, GIS operacional, gestión de tráfico y coordinación multiagencia — el flujo completo desde detección hasta respuesta.'
+                : 'Verkada provides cloud-managed cameras, access control, and alarms. Kabat One adds full CAD dispatch, operational GIS, traffic management, and multi-agency coordination — the complete workflow from detection to response.',
               pageUrl,
               '2026-04-07'
             )
@@ -256,7 +256,7 @@ export default async function VsVerkadaPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Verkada</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Verkada</span>
         </div>
 
         {/* ── HERO ── */}
@@ -275,13 +275,13 @@ export default async function VsVerkadaPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada'
-              : 'KabatOne vs Verkada — Cloud Physical Security vs Unified Public Safety Platform'}
+              ? 'Kabat One vs Verkada — Seguridad Física en la Nube vs Plataforma de Seguridad Pública Unificada'
+              : 'Kabat One vs Verkada — Cloud Physical Security vs Unified Public Safety Platform'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Verkada es una plataforma de seguridad física gestionada en la nube — cámaras propias, control de acceso, alarmas y sensores ambientales con una interfaz pulida. Es una solución sólida para instalaciones corporativas, educación y salud. KabatOne añade lo que Verkada no tiene: despacho CAD completo, GIS operacional a escala de ciudad, gestión de tráfico y coordinación multiagencia — todo nativo en una plataforma diseñada para centros de mando C5 y organizaciones de seguridad pública.'
-              : 'Verkada is a cloud-managed physical security platform — proprietary cameras, access control, alarms, and environmental sensors with a polished interface. It is a strong solution for corporate facilities, education, and healthcare. KabatOne adds what Verkada lacks: full CAD dispatch, city-scale operational GIS, traffic management, and multi-agency coordination — all native in a platform built for C5 command centers and public safety organizations.'}
+              ? 'Verkada es una plataforma de seguridad física gestionada en la nube — cámaras propias, control de acceso, alarmas y sensores ambientales con una interfaz pulida. Es una solución sólida para instalaciones corporativas, educación y salud. Kabat One añade lo que Verkada no tiene: despacho CAD completo, GIS operacional a escala de ciudad, gestión de tráfico y coordinación multiagencia — todo nativo en una plataforma diseñada para centros de mando C5 y organizaciones de seguridad pública.'
+              : 'Verkada is a cloud-managed physical security platform — proprietary cameras, access control, alarms, and environmental sensors with a polished interface. It is a strong solution for corporate facilities, education, and healthcare. Kabat One adds what Verkada lacks: full CAD dispatch, city-scale operational GIS, traffic management, and multi-agency coordination — all native in a platform built for C5 command centers and public safety organizations.'}
           </p>
         </section>
 
@@ -321,22 +321,22 @@ export default async function VsVerkadaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'K-Video de KabatOne gestiona cámaras de cualquier fabricante compatible con ONVIF o RTSP — incluyendo las cámaras más populares en entornos gubernamentales de LATAM. La plataforma aplica analítica IA sobre esos feeds: reconocimiento de placas (LPR), detección de eventos, análisis de movimiento — y conecta esas alertas directamente al flujo de despacho CAD. Una alerta de video puede generar automáticamente un evento en K-Dispatch sin que el operador cambie de sistema.'
-                : 'KabatOne K-Video manages cameras from any ONVIF or RTSP-compatible manufacturer — including the most common cameras in LATAM government environments. The platform applies AI analytics to those feeds: license plate recognition (LPR), event detection, motion analysis — and connects those alerts directly to the CAD dispatch workflow. A video alert can automatically generate an event in K-Dispatch without the operator switching systems.'}
+                ? 'K-Video de Kabat One gestiona cámaras de cualquier fabricante compatible con ONVIF o RTSP — incluyendo las cámaras más populares en entornos gubernamentales de LATAM. La plataforma aplica analítica IA sobre esos feeds: reconocimiento de placas (LPR), detección de eventos, análisis de movimiento — y conecta esas alertas directamente al flujo de despacho CAD. Una alerta de video puede generar automáticamente un evento en K-Dispatch sin que el operador cambie de sistema.'
+                : 'Kabat One K-Video manages cameras from any ONVIF or RTSP-compatible manufacturer — including the most common cameras in LATAM government environments. The platform applies AI analytics to those feeds: license plate recognition (LPR), event detection, motion analysis — and connects those alerts directly to the CAD dispatch workflow. A video alert can automatically generate an event in K-Dispatch without the operator switching systems.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y América Latina. A diferencia de Verkada, que está optimizada para la gestión de instalaciones de una sola organización, KabatOne está construida para coordinar múltiples agencias, flotas y disciplinas operacionales en un solo entorno de mando — el estándar que los centros C5 y C2 requieren.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Verkada, which is optimized for single-organization facility management, KabatOne is built to coordinate multiple agencies, fleets, and operational disciplines in one command environment — the standard that C5 and C2 centers require.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y América Latina. A diferencia de Verkada, que está optimizada para la gestión de instalaciones de una sola organización, Kabat One está construida para coordinar múltiples agencias, flotas y disciplinas operacionales en un solo entorno de mando — el estándar que los centros C5 y C2 requieren.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. Unlike Verkada, which is optimized for single-organization facility management, Kabat One is built to coordinate multiple agencies, fleets, and operational disciplines in one command environment — the standard that C5 and C2 centers require.'}
             </p>
           </div>
         </section>
@@ -349,12 +349,12 @@ export default async function VsVerkadaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Verkada: Diferencias Clave' : 'KabatOne vs Verkada: Key Differences'}
+              {es ? 'Kabat One vs Verkada: Diferencias Clave' : 'Kabat One vs Verkada: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Verkada en nueve dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
-                : 'The following table compares KabatOne and Verkada across nine operational dimensions critical for public safety organizations and command centers.'}
+                ? 'La siguiente tabla compara Kabat One y Verkada en nueve dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
+                : 'The following table compares Kabat One and Verkada across nine operational dimensions critical for public safety organizations and command centers.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -369,7 +369,7 @@ export default async function VsVerkadaPage({
                   Verkada
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -408,7 +408,7 @@ export default async function VsVerkadaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'Por Qué KabatOne Gana en Entornos de Seguridad Pública' : 'Why KabatOne Wins in Public Safety Environments'}
+              {es ? 'Por Qué Kabat One Gana en Entornos de Seguridad Pública' : 'Why Kabat One Wins in Public Safety Environments'}
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {whyKabatoneCards.map((card, i) => (
@@ -454,8 +454,8 @@ export default async function VsVerkadaPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne parte de un punto diferente: es la plataforma operacional central. Video, despacho, GIS y tráfico son módulos nativos de la misma plataforma — comparten datos en tiempo real sin proyectos de integración. Para gobiernos y centros de mando que buscan consolidar sus operaciones en un solo sistema, esa diferencia arquitectónica es la ventaja más importante — y la razón por la que KabatOne está desplegado en más de 40 ciudades en México y América Latina.'
-                : 'KabatOne starts from a different point: it is the central operational platform. Video, dispatch, GIS, and traffic are native modules of the same platform — they share real-time data without integration projects. For governments and command centers looking to consolidate operations into one system, that architectural difference is the most important advantage — and the reason KabatOne is deployed across 40+ cities in Mexico and Latin America.'}
+                ? 'Kabat One parte de un punto diferente: es la plataforma operacional central. Video, despacho, GIS y tráfico son módulos nativos de la misma plataforma — comparten datos en tiempo real sin proyectos de integración. Para gobiernos y centros de mando que buscan consolidar sus operaciones en un solo sistema, esa diferencia arquitectónica es la ventaja más importante — y la razón por la que Kabat One está desplegado en más de 40 ciudades en México y América Latina.'
+                : 'Kabat One starts from a different point: it is the central operational platform. Video, dispatch, GIS, and traffic are native modules of the same platform — they share real-time data without integration projects. For governments and command centers looking to consolidate operations into one system, that architectural difference is the most important advantage — and the reason Kabat One is deployed across 40+ cities in Mexico and Latin America.'}
             </p>
           </div>
         </section>
@@ -468,7 +468,7 @@ export default async function VsVerkadaPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -537,7 +537,7 @@ export default async function VsVerkadaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Verkada: Preguntas y Respuestas' : 'KabatOne vs Verkada: Questions & Answers'}
+              {es ? 'Kabat One vs Verkada: Preguntas y Respuestas' : 'Kabat One vs Verkada: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -577,7 +577,7 @@ export default async function VsVerkadaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon'}</span>
+                <span>{es ? 'Kabat One vs Avigilon' : 'Kabat One vs Avigilon'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/genetec" style={{
@@ -586,7 +586,7 @@ export default async function VsVerkadaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec'}</span>
+                <span>{es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/milestone" style={{
@@ -595,7 +595,7 @@ export default async function VsVerkadaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Milestone XProtect' : 'KabatOne vs Milestone XProtect'}</span>
+                <span>{es ? 'Kabat One vs Milestone XProtect' : 'Kabat One vs Milestone XProtect'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
@@ -607,8 +607,8 @@ export default async function VsVerkadaPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, CAD, GIS y tráfico donde Verkada se detiene. Solicita una demo con datos reales de ciudad.'
-            : 'See how KabatOne unifies video, CAD, GIS, and traffic where Verkada stops. Request a demo with real city data.'}
+            ? 'Descubre cómo Kabat One unifica video, CAD, GIS y tráfico donde Verkada se detiene. Solicita una demo con datos reales de ciudad.'
+            : 'See how Kabat One unifies video, CAD, GIS, and traffic where Verkada stops. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

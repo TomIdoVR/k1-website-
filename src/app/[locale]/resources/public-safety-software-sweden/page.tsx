@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareSwedenPage({
       answer: 'Suecia tiene una infraestructura de videovigilancia más limitada que otros países europeos, reflejo de una tradición cultural de privacidad. El uso de cámaras de vigilancia en espacio público está regulado por la Kameraövervakningslag (Ley de Vigilancia por Cámaras, 2013), que requiere autorización de la IMY para cámaras en espacios accesibles al público. Polisen gestiona cámaras en zonas críticas y participa en programas de vigilancia colaborativa con municipios. Las ciudades como Estocolmo, Gotemburgo y Malmö tienen redes de cámaras de tráfico y seguridad gestionadas por los municipios. El sistema RAKEL integra la comunicación entre policía, bomberos y EMS para coordinación operativa. Polisen está modernizando su infraestructura de videovigilancia con analítica de IA para reconocimiento de matrículas (ANPR) y búsqueda forense, sujeto a las directrices de la IMY sobre uso de biometría.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para Polisen, SOS Alarm y los servicios de rescate suecos?',
-      answer: 'KabatOne integra las funciones que Polisen, SOS Alarm y los räddningstjänst suecos gestionan a través de plataformas separadas: despacho CAD unificado compatible con los flujos de trabajo de los 18 centros SOS Alarm y los ledningscentraler de las 7 regiones policiales de Polisen — con clasificación automática de incidentes y asignación de recursos (K-Dispatch), gestión de redes de cámaras de vigilancia con analítica de IA conforme a la Kameraövervakningslag, la IMY y el RGPD — ANPR, detección de comportamientos, búsqueda forense (K-Video), y conciencia situacional GIS compartida entre Polisen, SOS Alarm, räddningstjänst y la MSB (K-Safety). Integración con el ecosistema RAKEL para coordinación de radiocomunicaciones. Despliegue on-premises o cloud en EEE con cumplimiento RGPD/IMY/NIS2. Demo adaptada al contexto de la reforma policial sueca y el marco de gestión de emergencias de la MSB.',
+      question: '¿Por qué Kabat One es adecuado para Polisen, SOS Alarm y los servicios de rescate suecos?',
+      answer: 'Kabat One integra las funciones que Polisen, SOS Alarm y los räddningstjänst suecos gestionan a través de plataformas separadas: despacho CAD unificado compatible con los flujos de trabajo de los 18 centros SOS Alarm y los ledningscentraler de las 7 regiones policiales de Polisen — con clasificación automática de incidentes y asignación de recursos (K-Dispatch), gestión de redes de cámaras de vigilancia con analítica de IA conforme a la Kameraövervakningslag, la IMY y el RGPD — ANPR, detección de comportamientos, búsqueda forense (K-Video), y conciencia situacional GIS compartida entre Polisen, SOS Alarm, räddningstjänst y la MSB (K-Safety). Integración con el ecosistema RAKEL para coordinación de radiocomunicaciones. Despliegue on-premises o cloud en EEE con cumplimiento RGPD/IMY/NIS2. Demo adaptada al contexto de la reforma policial sueca y el marco de gestión de emergencias de la MSB.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareSwedenPage({
       answer: 'Sweden has a more limited video surveillance infrastructure than other European countries, reflecting a cultural tradition of privacy. The use of surveillance cameras in public spaces is regulated by the Kameraövervakningslag (Camera Surveillance Act, 2013), which requires IMY authorisation for cameras in publicly accessible spaces. Polisen manages cameras in critical areas and participates in collaborative surveillance programmes with municipalities. Cities like Stockholm, Gothenburg, and Malmö have traffic and security camera networks managed by municipalities. The RAKEL system integrates police, fire, and EMS communications for operational coordination. Polisen is modernising its video surveillance infrastructure with AI analytics for licence plate recognition (ANPR) and forensic search, subject to IMY guidelines on biometrics.',
     },
     {
-      question: 'Why is KabatOne suited for Polisen, SOS Alarm, and Sweden\'s rescue services?',
-      answer: 'KabatOne integrates the functions that Polisen, SOS Alarm, and Swedish räddningstjänst manage through separate platforms: unified CAD dispatch compatible with the workflows of 18 SOS Alarm centres and Polisen\'s 7 regional ledningscentraler — with automatic incident classification and resource assignment (K-Dispatch), surveillance camera network management with AI analytics compliant with the Kameraövervakningslag, IMY, and GDPR — ANPR, behaviour detection, forensic search (K-Video), and shared GIS situational awareness across Polisen, SOS Alarm, räddningstjänst, and MSB (K-Safety). Integration with the RAKEL radio communication ecosystem. On-premises or EEA cloud deployment with GDPR/IMY/NIS2 compliance. Demo tailored to Sweden\'s police reform context and MSB emergency management framework.',
+      question: 'Why is Kabat One suited for Polisen, SOS Alarm, and Sweden\'s rescue services?',
+      answer: 'Kabat One integrates the functions that Polisen, SOS Alarm, and Swedish räddningstjänst manage through separate platforms: unified CAD dispatch compatible with the workflows of 18 SOS Alarm centres and Polisen\'s 7 regional ledningscentraler — with automatic incident classification and resource assignment (K-Dispatch), surveillance camera network management with AI analytics compliant with the Kameraövervakningslag, IMY, and GDPR — ANPR, behaviour detection, forensic search (K-Video), and shared GIS situational awareness across Polisen, SOS Alarm, räddningstjänst, and MSB (K-Safety). Integration with the RAKEL radio communication ecosystem. On-premises or EEA cloud deployment with GDPR/IMY/NIS2 compliance. Demo tailored to Sweden\'s police reform context and MSB emergency management framework.',
     },
   ]
 
@@ -155,8 +155,8 @@ export default async function PublicSafetySoftwareSwedenPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Suecia opera una fuerza policial nacional unificada (Polisen) con 7 regiones y ~33,000 agentes, SOS Alarm como operador del 112 con 18 centros y la red RAKEL integrando todas las agencias de seguridad pública. La modernización de la plataforma ZENIT de SOS Alarm y la Estrategia Digital de Polisen abren nuevas oportunidades para plataformas cloud con IA. KabatOne unifica el despacho CAD 112, la gestión de videovigilancia y la conciencia situacional GIS bajo cumplimiento RGPD/IMY y NIS2.'
-                : 'Sweden operates a unified national police force (Polisen) with 7 regions and ~33,000 officers, SOS Alarm as the 112 operator with 18 centres, and the RAKEL network integrating all public safety agencies. The modernisation of SOS Alarm\'s ZENIT platform and Polisen\'s Digital Strategy are opening new opportunities for AI-enabled cloud platforms. KabatOne unifies 112 CAD dispatch, video surveillance management, and GIS situational awareness under GDPR/IMY and NIS2 compliance.'}
+                ? 'Suecia opera una fuerza policial nacional unificada (Polisen) con 7 regiones y ~33,000 agentes, SOS Alarm como operador del 112 con 18 centros y la red RAKEL integrando todas las agencias de seguridad pública. La modernización de la plataforma ZENIT de SOS Alarm y la Estrategia Digital de Polisen abren nuevas oportunidades para plataformas cloud con IA. Kabat One unifica el despacho CAD 112, la gestión de videovigilancia y la conciencia situacional GIS bajo cumplimiento RGPD/IMY y NIS2.'
+                : 'Sweden operates a unified national police force (Polisen) with 7 regions and ~33,000 officers, SOS Alarm as the 112 operator with 18 centres, and the RAKEL network integrating all public safety agencies. The modernisation of SOS Alarm\'s ZENIT platform and Polisen\'s Digital Strategy are opening new opportunities for AI-enabled cloud platforms. Kabat One unifies 112 CAD dispatch, video surveillance management, and GIS situational awareness under GDPR/IMY and NIS2 compliance.'}
             </p>
           </div>
         </section>
@@ -199,14 +199,14 @@ export default async function PublicSafetySoftwareSwedenPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de Polisen, SOS Alarm y los Räddningstjänst Suecos' : 'How KabatOne Addresses Polisen, SOS Alarm, and Swedish Räddningstjänst Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de Polisen, SOS Alarm y los Räddningstjänst Suecos' : 'How Kabat One Addresses Polisen, SOS Alarm, and Swedish Räddningstjänst Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los ledningscentraler de las 7 regiones de Polisen, los 18 centros de despacho de SOS Alarm y los centros de mando de räddningstjänst que necesitan un dashboard unificado para gestionar el despacho 112, monitorizar redes de cámaras de vigilancia con analítica de IA y coordinar la respuesta de múltiples agencias — todo bajo los requisitos del RGPD/IMY, la Polisdatalagen, la NIS2 y la Säkerhetsskyddslagen.'
-                : 'KabatOne is designed for Polisen\'s 7 regional ledningscentraler, SOS Alarm\'s 18 dispatch centres, and räddningstjänst command centres that need a unified dashboard to manage 112 dispatch, monitor surveillance camera networks with AI analytics, and coordinate multi-agency response — all under GDPR/IMY, Polisdatalagen, NIS2, and Säkerhetsskyddslagen requirements.'}
+                ? 'Kabat One está diseñado para los ledningscentraler de las 7 regiones de Polisen, los 18 centros de despacho de SOS Alarm y los centros de mando de räddningstjänst que necesitan un dashboard unificado para gestionar el despacho 112, monitorizar redes de cámaras de vigilancia con analítica de IA y coordinar la respuesta de múltiples agencias — todo bajo los requisitos del RGPD/IMY, la Polisdatalagen, la NIS2 y la Säkerhetsskyddslagen.'
+                : 'Kabat One is designed for Polisen\'s 7 regional ledningscentraler, SOS Alarm\'s 18 dispatch centres, and räddningstjänst command centres that need a unified dashboard to manage 112 dispatch, monitor surveillance camera networks with AI analytics, and coordinate multi-agency response — all under GDPR/IMY, Polisdatalagen, NIS2, and Säkerhetsskyddslagen requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -233,7 +233,7 @@ export default async function PublicSafetySoftwareSwedenPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -306,7 +306,7 @@ export default async function PublicSafetySoftwareSwedenPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para Polisen, SOS Alarm o tu Räddningstjänst' : 'Request a Demo for Polisen, SOS Alarm, or Your Räddningstjänst'}
-          subtitle={es ? 'KabatOne integra el despacho 112 compatible con ZENIT, la gestión de cámaras con analítica IA conforme RGPD/IMY y la conciencia situacional GIS multiagencia en una plataforma con cumplimiento NIS2 y despliegue en cloud EEE. Demo adaptada al marco de Polisen y SOS Alarm.' : 'KabatOne integrates ZENIT-compatible 112 dispatch, GDPR/IMY-compliant AI camera analytics, and multi-agency GIS situational awareness in a single platform with NIS2 compliance and EEA cloud deployment. Demo tailored to Polisen and SOS Alarm\'s framework.'}
+          subtitle={es ? 'Kabat One integra el despacho 112 compatible con ZENIT, la gestión de cámaras con analítica IA conforme RGPD/IMY y la conciencia situacional GIS multiagencia en una plataforma con cumplimiento NIS2 y despliegue en cloud EEE. Demo adaptada al marco de Polisen y SOS Alarm.' : 'Kabat One integrates ZENIT-compatible 112 dispatch, GDPR/IMY-compliant AI camera analytics, and multi-agency GIS situational awareness in a single platform with NIS2 compliance and EEA cloud deployment. Demo tailored to Polisen and SOS Alarm\'s framework.'}
         />
 
         <Footer es={es} />

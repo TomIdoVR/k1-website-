@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareLithuaniaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Lituania | KabatOne"
-    : "Public Safety Software for Lithuania | KabatOne";
+    ? "Software de Seguridad Pública para Lituania | Kabat One"
+    : "Public Safety Software for Lithuania | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Lituania — Policía, Guardia de Fronteras, SBGS — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN y el sistema 112 lituano."
-    : "KabatOne supports Lithuania security forces — Police, State Border Guard Service, SBGS — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Lithuanian 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Lituania — Policía, Guardia de Fronteras, SBGS — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN y el sistema 112 lituano."
+    : "Kabat One supports Lithuania security forces — Police, State Border Guard Service, SBGS — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Lithuanian 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-lithuania"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareLithuaniaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Lituania?"
-        : "How does KabatOne support Lithuania security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Lituania?"
+        : "How does Kabat One support Lithuania security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía Lituania (~12,000 efectivos), el Servicio de Guardafronteras del Estado (VSAT), el Servicio de Bomberos y Rescate del Departamento de Protección contra Incendios (PRIEŠGAISRINĖ), el Servicio de Seguridad del Estado (VSD) y la Guardia Nacional (Šaulių sąjunga). La plataforma se integra con el sistema 112 del Centro de Comunicaciones de Emergencia (BPT) y cumple con el RGPD y los estándares de seguridad NIS2/ISO 27001."
-        : "KabatOne provides unified situational awareness for the Lithuanian Police (~12,000 officers), State Border Guard Service (VSAT), Fire and Rescue Department, State Security Department (VSD), and National Riflemen Union (Šaulių sąjunga). The platform integrates with the 112 system of the Emergency Communications Centre (BPT) and complies with GDPR and NIS2/ISO 27001 security standards.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía Lituania (~12,000 efectivos), el Servicio de Guardafronteras del Estado (VSAT), el Servicio de Bomberos y Rescate del Departamento de Protección contra Incendios (PRIEŠGAISRINĖ), el Servicio de Seguridad del Estado (VSD) y la Guardia Nacional (Šaulių sąjunga). La plataforma se integra con el sistema 112 del Centro de Comunicaciones de Emergencia (BPT) y cumple con el RGPD y los estándares de seguridad NIS2/ISO 27001."
+        : "Kabat One provides unified situational awareness for the Lithuanian Police (~12,000 officers), State Border Guard Service (VSAT), Fire and Rescue Department, State Security Department (VSD), and National Riflemen Union (Šaulių sąjunga). The platform integrates with the 112 system of the Emergency Communications Centre (BPT) and complies with GDPR and NIS2/ISO 27001 security standards.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareLithuaniaPage({
     },
     {
       question: es
-        ? "¿Cómo gestiona KabatOne la seguridad de la frontera con Bielorrusia?"
-        : "How does KabatOne manage Belarus border security?",
+        ? "¿Cómo gestiona Kabat One la seguridad de la frontera con Bielorrusia?"
+        : "How does Kabat One manage Belarus border security?",
       answer: es
-        ? "KabatOne integra la videovigilancia de la valla inteligente fronteriza lituano-bielorrusa (679 km en construcción), el seguimiento de unidades VSAT, y los datos de sensores de movimiento/térmicos para detección de cruces ilegales. La plataforma coordina con Frontex para el despliegue de recursos, gestiona el sistema de alertas de zona de exclusión, y proporciona un flujo de trabajo de documentación de incidentes conforme al Código de Fronteras Schengen y el estándar EUROSUR para la vigilancia de fronteras exteriores de la UE."
-        : "KabatOne integrates video surveillance from the Lithuanian-Belarusian smart border fence (679 km under construction), VSAT unit tracking, and motion/thermal sensor data for illegal crossing detection. The platform coordinates with Frontex for resource deployment, manages exclusion zone alert systems, and provides an incident documentation workflow compliant with the Schengen Border Code and EUROSUR standard for EU external border surveillance.",
+        ? "Kabat One integra la videovigilancia de la valla inteligente fronteriza lituano-bielorrusa (679 km en construcción), el seguimiento de unidades VSAT, y los datos de sensores de movimiento/térmicos para detección de cruces ilegales. La plataforma coordina con Frontex para el despliegue de recursos, gestiona el sistema de alertas de zona de exclusión, y proporciona un flujo de trabajo de documentación de incidentes conforme al Código de Fronteras Schengen y el estándar EUROSUR para la vigilancia de fronteras exteriores de la UE."
+        : "Kabat One integrates video surveillance from the Lithuanian-Belarusian smart border fence (679 km under construction), VSAT unit tracking, and motion/thermal sensor data for illegal crossing detection. The platform coordinates with Frontex for resource deployment, manages exclusion zone alert systems, and provides an incident documentation workflow compliant with the Schengen Border Code and EUROSUR standard for EU external border surveillance.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareLithuaniaPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Lituania"
-              : "KabatOne Capabilities for Lithuania"}
+              ? "Capacidades de Kabat One para Lituania"
+              : "Kabat One Capabilities for Lithuania"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a las prioridades estratégicas de Lituania: gestión del Corredor de Suwałki, vigilancia de la valla fronteriza con Bielorrusia, protección del Puerto y Terminal GNL de Klaipėda, y coordinación con la División Multinacional OTAN-Nordeste."
-              : "The KabatOne platform provides an integrated suite adapted to Lithuania's strategic priorities: Suwalki Corridor management, Belarus border fence surveillance, Klaipeda Port and LNG Terminal protection, and coordination with the NATO Multinational Division Northeast."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a las prioridades estratégicas de Lituania: gestión del Corredor de Suwałki, vigilancia de la valla fronteriza con Bielorrusia, protección del Puerto y Terminal GNL de Klaipėda, y coordinación con la División Multinacional OTAN-Nordeste."
+              : "The Kabat One platform provides an integrated suite adapted to Lithuania's strategic priorities: Suwalki Corridor management, Belarus border fence surveillance, Klaipeda Port and LNG Terminal protection, and coordination with the NATO Multinational Division Northeast."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareLithuaniaPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la Policía Lituania, VSAT y Bomberos con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN para la seguridad del flanco oriental."
-            : "Speak with our team about how KabatOne can support Lithuanian Police, VSAT, and Fire Services with a platform compatible with GDPR, NIS2, and NATO standards for Eastern Flank security."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la Policía Lituania, VSAT y Bomberos con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN para la seguridad del flanco oriental."
+            : "Speak with our team about how Kabat One can support Lithuanian Police, VSAT, and Fire Services with a platform compatible with GDPR, NIS2, and NATO standards for Eastern Flank security."
         }
       />
       <Footer es={es} />

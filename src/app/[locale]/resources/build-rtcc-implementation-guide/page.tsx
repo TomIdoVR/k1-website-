@@ -53,9 +53,9 @@ export default async function BuildRtccImplementationGuidePage({
             'Como mínimo, se necesitan 2 analistas por turno para una cobertura adecuada. Los RTCC con un solo analista por turno son operativos, pero limitan la capacidad de alerta en tiempo real. Un analista no puede monitorear eficazmente más de 30 a 40 cámaras de forma continua.',
         },
         {
-          question: '¿Cómo apoya KabatOne la implementación de un RTCC?',
+          question: '¿Cómo apoya Kabat One la implementación de un RTCC?',
           answer:
-            'La plataforma de KabatOne proporciona VMS unificado, fusión de sensores, GIS operacional en tiempo real e integración de despacho CAD en un solo entorno — diseñado específicamente para centros de comando. Esto elimina la necesidad de integrar múltiples proveedores y reduce los tiempos de implementación.',
+            'La plataforma de Kabat One proporciona VMS unificado, fusión de sensores, GIS operacional en tiempo real e integración de despacho CAD en un solo entorno — diseñado específicamente para centros de comando. Esto elimina la necesidad de integrar múltiples proveedores y reduce los tiempos de implementación.',
         },
       ]
     : [
@@ -85,9 +85,9 @@ export default async function BuildRtccImplementationGuidePage({
             'At minimum, 2 analysts per shift for adequate coverage. Single-analyst RTCCs are operational but limit real-time alerting capacity. One analyst cannot effectively monitor more than 30–40 cameras continuously.',
         },
         {
-          question: 'How does KabatOne support RTCC implementations?',
+          question: 'How does Kabat One support RTCC implementations?',
           answer:
-            "KabatOne's platform provides unified VMS, sensor fusion, real-time GIS, and CAD dispatch integration in one environment — purpose-built for command center operations. This eliminates multi-vendor integration complexity and reduces implementation timelines.",
+            "Kabat One's platform provides unified VMS, sensor fusion, real-time GIS, and CAD dispatch integration in one environment — purpose-built for command center operations. This eliminates multi-vendor integration complexity and reduces implementation timelines.",
         },
       ]
 
@@ -114,8 +114,8 @@ export default async function BuildRtccImplementationGuidePage({
   /* ── Schema ── */
   const artSchema = articleSchema(
     es
-      ? 'Guía de Implementación de un RTCC para Gobiernos | KabatOne'
-      : 'How to Build a Real-Time Crime Center: RTCC Guide | KabatOne',
+      ? 'Guía de Implementación de un RTCC para Gobiernos | Kabat One'
+      : 'How to Build a Real-Time Crime Center: RTCC Guide | Kabat One',
     es
       ? 'Guía paso a paso para planificar e implementar un centro de crimen en tiempo real (RTCC) — requisitos tecnológicos, modelo de personal, fuentes de datos y errores comunes a evitar.'
       : 'Step-by-step guide to planning and implementing a real-time crime center (RTCC) — technology requirements, staffing model, data feeds, vendor selection, and common pitfalls to avoid.',
@@ -763,8 +763,8 @@ export default async function BuildRtccImplementationGuidePage({
         es={es}
         h2={es ? '¿Listo para Implementar tu RTCC?' : 'Ready to Build Your Real-Time Crime Center?'}
         subtitle={es
-          ? 'KabatOne provee la plataforma operativa unificada que los centros de crimen en tiempo real necesitan — VMS, fusión de sensores, GIS y despacho CAD en una sola interfaz. Agenda una demo.'
-          : 'KabatOne provides the unified platform RTCCs need — VMS, sensor fusion, operational GIS, and CAD dispatch in one interface. Schedule a demo to see it in action.'}
+          ? 'Kabat One provee la plataforma operativa unificada que los centros de crimen en tiempo real necesitan — VMS, fusión de sensores, GIS y despacho CAD en una sola interfaz. Agenda una demo.'
+          : 'Kabat One provides the unified platform RTCCs need — VMS, sensor fusion, operational GIS, and CAD dispatch in one interface. Schedule a demo to see it in action.'}
       />
       <Footer es={es} />
     </>

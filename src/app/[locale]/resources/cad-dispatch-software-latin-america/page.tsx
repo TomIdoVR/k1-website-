@@ -39,60 +39,60 @@ export default async function CadDispatchLatinAmericaPage({
   const faqs = es ? [
     {
       question: '¿Qué software CAD de despacho se usa en América Latina?',
-      answer: 'Los centros de mando C4/C5 en América Latina utilizan una combinación de plataformas de origen estadounidense (Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall) y soluciones regionales como KabatOne y GINA. KabatOne es la única plataforma unificada construida nativamente para el mercado latinoamericano, con soporte para los sistemas de numeración de emergencia de cada país, interfaces en español y experiencia en procesos de licitación locales como CompraNet (México), ChileCompra y SECOP (Colombia).',
+      answer: 'Los centros de mando C4/C5 en América Latina utilizan una combinación de plataformas de origen estadounidense (Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall) y soluciones regionales como Kabat One y GINA. Kabat One es la única plataforma unificada construida nativamente para el mercado latinoamericano, con soporte para los sistemas de numeración de emergencia de cada país, interfaces en español y experiencia en procesos de licitación locales como CompraNet (México), ChileCompra y SECOP (Colombia).',
     },
     {
-      question: '¿Cómo maneja KabatOne los distintos números de emergencia en América Latina?',
-      answer: 'KabatOne soporta cualquier número de emergencia local: 911 (México, Ecuador, Panamá), 133/131/132/149 (Chile), 123/112 (Colombia), 105/106/116 (Perú) y 911/101/102/103 (Argentina). La plataforma K-Dispatch unifica la recepción de llamadas de todos los canales activos en un solo registro de incidente, independientemente del número marcado, eliminando duplicidades cuando un mismo evento genera llamadas a múltiples agencias.',
+      question: '¿Cómo maneja Kabat One los distintos números de emergencia en América Latina?',
+      answer: 'Kabat One soporta cualquier número de emergencia local: 911 (México, Ecuador, Panamá), 133/131/132/149 (Chile), 123/112 (Colombia), 105/106/116 (Perú) y 911/101/102/103 (Argentina). La plataforma K-Dispatch unifica la recepción de llamadas de todos los canales activos en un solo registro de incidente, independientemente del número marcado, eliminando duplicidades cuando un mismo evento genera llamadas a múltiples agencias.',
     },
     {
       question: '¿Qué es un centro C5 en América Latina y cómo se diferencia del C4?',
-      answer: 'Un centro C5 (Comando, Control, Comunicaciones, Cómputo y Coordinación) es la arquitectura de comando de seguridad pública más avanzada de América Latina. Integra video en vivo, despacho CAD, GIS operativo, comunicaciones de radio y análisis de datos en una sola plataforma. Los centros C4 omiten la capa de "Cómputo" (analytics e IA). México cuenta con más de 40 centros C5 activos. KabatOne está diseñado específicamente para la arquitectura C5/C4 de la región.',
+      answer: 'Un centro C5 (Comando, Control, Comunicaciones, Cómputo y Coordinación) es la arquitectura de comando de seguridad pública más avanzada de América Latina. Integra video en vivo, despacho CAD, GIS operativo, comunicaciones de radio y análisis de datos en una sola plataforma. Los centros C4 omiten la capa de "Cómputo" (analytics e IA). México cuenta con más de 40 centros C5 activos. Kabat One está diseñado específicamente para la arquitectura C5/C4 de la región.',
     },
     {
-      question: '¿Cuántas ciudades en América Latina usan KabatOne?',
-      answer: 'KabatOne está desplegado en más de 40 ciudades en América Latina, protegiendo a más de 73 millones de ciudadanos. Las implementaciones abarcan México, Colombia, Perú y Chile, con centros de mando que gestionan despacho de emergencias, videovigilancia y coordinación de campo en tiempo real. La plataforma es operada por municipios, secretarías de seguridad pública y gobiernos estatales de la región.',
+      question: '¿Cuántas ciudades en América Latina usan Kabat One?',
+      answer: 'Kabat One está desplegado en más de 40 ciudades en América Latina, protegiendo a más de 73 millones de ciudadanos. Las implementaciones abarcan México, Colombia, Perú y Chile, con centros de mando que gestionan despacho de emergencias, videovigilancia y coordinación de campo en tiempo real. La plataforma es operada por municipios, secretarías de seguridad pública y gobiernos estatales de la región.',
     },
     {
-      question: '¿Cómo compara KabatOne con Tyler Technologies y Motorola para América Latina?',
-      answer: 'Tyler Technologies y Motorola CommandCentral son plataformas diseñadas para el mercado norteamericano (EUA/Canadá) con interfaces en inglés, integración con sistemas de despacho 911 anglosajones y procesos de licitación orientados a gobiernos de EUA. KabatOne es nativo de América Latina: español como idioma primario, soporte multi-número de emergencia (911/133/123/105), experiencia en licitaciones públicas LATAM, y arquitectura C5 alineada con los estándares de la región.',
+      question: '¿Cómo compara Kabat One con Tyler Technologies y Motorola para América Latina?',
+      answer: 'Tyler Technologies y Motorola CommandCentral son plataformas diseñadas para el mercado norteamericano (EUA/Canadá) con interfaces en inglés, integración con sistemas de despacho 911 anglosajones y procesos de licitación orientados a gobiernos de EUA. Kabat One es nativo de América Latina: español como idioma primario, soporte multi-número de emergencia (911/133/123/105), experiencia en licitaciones públicas LATAM, y arquitectura C5 alineada con los estándares de la región.',
     },
     {
-      question: '¿Puede KabatOne integrarse con infraestructura de video y radio existente?',
-      answer: 'Sí. KabatOne integra cualquier cámara ONVIF/RTSP sin reemplazo de hardware, sistemas de radio analógico y digital (DMR, P25), LPR, botones de pánico y sensores IoT. Las ciudades latinoamericanas con años de inversión en infraestructura de cámaras y radio no necesitan reemplazar equipos — KabatOne se conecta sobre la infraestructura existente y agrega la capa de operaciones unificada.',
+      question: '¿Puede Kabat One integrarse con infraestructura de video y radio existente?',
+      answer: 'Sí. Kabat One integra cualquier cámara ONVIF/RTSP sin reemplazo de hardware, sistemas de radio analógico y digital (DMR, P25), LPR, botones de pánico y sensores IoT. Las ciudades latinoamericanas con años de inversión en infraestructura de cámaras y radio no necesitan reemplazar equipos — Kabat One se conecta sobre la infraestructura existente y agrega la capa de operaciones unificada.',
     },
   ] : [
     {
       question: 'What CAD dispatch software is used in Latin America?',
-      answer: 'C4/C5 command centers in Latin America use a combination of US-origin platforms (Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall) and regional solutions including KabatOne and GINA. KabatOne is the only unified platform built natively for the Latin American market, with support for each country\'s emergency numbering system, Spanish-first interfaces, and experience with local procurement processes such as CompraNet (Mexico), ChileCompra, and SECOP (Colombia).',
+      answer: 'C4/C5 command centers in Latin America use a combination of US-origin platforms (Tyler Technologies, Motorola CommandCentral, Hexagon HxGN OnCall) and regional solutions including Kabat One and GINA. Kabat One is the only unified platform built natively for the Latin American market, with support for each country\'s emergency numbering system, Spanish-first interfaces, and experience with local procurement processes such as CompraNet (Mexico), ChileCompra, and SECOP (Colombia).',
     },
     {
-      question: 'How does KabatOne handle different emergency numbers across Latin America?',
-      answer: 'KabatOne supports any local emergency number: 911 (Mexico, Ecuador, Panama), 133/131/132/149 (Chile), 123/112 (Colombia), 105/106/116 (Peru), and 911/101/102/103 (Argentina). The K-Dispatch platform unifies call intake from all active channels into a single incident record, regardless of which number is dialed, eliminating duplication when a single event generates calls to multiple agencies.',
+      question: 'How does Kabat One handle different emergency numbers across Latin America?',
+      answer: 'Kabat One supports any local emergency number: 911 (Mexico, Ecuador, Panama), 133/131/132/149 (Chile), 123/112 (Colombia), 105/106/116 (Peru), and 911/101/102/103 (Argentina). The K-Dispatch platform unifies call intake from all active channels into a single incident record, regardless of which number is dialed, eliminating duplication when a single event generates calls to multiple agencies.',
     },
     {
       question: 'What is a C5 command center in Latin America and how does it differ from C4?',
-      answer: 'A C5 center (Comando, Control, Comunicaciones, Cómputo y Coordinación — Command, Control, Communications, Computing, and Coordination) is the most advanced public safety command architecture in Latin America. It integrates live video, CAD dispatch, operational GIS, radio communications, and data analytics in one platform. C4 centers omit the Computing (analytics/AI) layer. Mexico has over 40 active C5 centers. KabatOne is designed specifically for the C5/C4 architecture prevalent across the region.',
+      answer: 'A C5 center (Comando, Control, Comunicaciones, Cómputo y Coordinación — Command, Control, Communications, Computing, and Coordination) is the most advanced public safety command architecture in Latin America. It integrates live video, CAD dispatch, operational GIS, radio communications, and data analytics in one platform. C4 centers omit the Computing (analytics/AI) layer. Mexico has over 40 active C5 centers. Kabat One is designed specifically for the C5/C4 architecture prevalent across the region.',
     },
     {
-      question: 'How many cities in Latin America use KabatOne?',
-      answer: 'KabatOne is deployed in more than 40 cities across Latin America, protecting over 73 million citizens. Implementations span Mexico, Colombia, Peru, and Chile, with command centers managing emergency dispatch, video surveillance, and real-time field coordination. The platform is operated by municipalities, secretarías de seguridad pública, and state governments across the region.',
+      question: 'How many cities in Latin America use Kabat One?',
+      answer: 'Kabat One is deployed in more than 40 cities across Latin America, protecting over 73 million citizens. Implementations span Mexico, Colombia, Peru, and Chile, with command centers managing emergency dispatch, video surveillance, and real-time field coordination. The platform is operated by municipalities, secretarías de seguridad pública, and state governments across the region.',
     },
     {
-      question: 'How does KabatOne compare to Tyler Technologies and Motorola for Latin America?',
-      answer: 'Tyler Technologies and Motorola CommandCentral are platforms designed for the North American market (US/Canada) with English-first interfaces, US 911 dispatch integration, and procurement processes oriented toward US government buyers. KabatOne is native to Latin America: Spanish as the primary language, multi-number emergency support (911/133/123/105), experience with LATAM public procurement, and C5 architecture aligned with regional standards.',
+      question: 'How does Kabat One compare to Tyler Technologies and Motorola for Latin America?',
+      answer: 'Tyler Technologies and Motorola CommandCentral are platforms designed for the North American market (US/Canada) with English-first interfaces, US 911 dispatch integration, and procurement processes oriented toward US government buyers. Kabat One is native to Latin America: Spanish as the primary language, multi-number emergency support (911/133/123/105), experience with LATAM public procurement, and C5 architecture aligned with regional standards.',
     },
     {
-      question: 'Can KabatOne integrate with existing video and radio infrastructure?',
-      answer: 'Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement, analog and digital radio systems (DMR, P25), LPR, panic buttons, and IoT sensors. Latin American cities with years of investment in camera and radio infrastructure do not need to replace equipment — KabatOne connects on top of existing infrastructure and adds the unified operations layer.',
+      question: 'Can Kabat One integrate with existing video and radio infrastructure?',
+      answer: 'Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement, analog and digital radio systems (DMR, P25), LPR, panic buttons, and IoT sensors. Latin American cities with years of investment in camera and radio infrastructure do not need to replace equipment — Kabat One connects on top of existing infrastructure and adds the unified operations layer.',
     },
   ]
 
   const artSchema = articleSchema(
     es ? 'Software CAD de Despacho para América Latina: Guía de Centros de Emergencia' : 'CAD Dispatch Software for Latin America: Emergency Response Guide',
     es
-      ? 'Guía completa sobre software CAD de despacho para centros C5/C4 en América Latina — números de emergencia por país, arquitectura C5, comparación de plataformas y cómo KabatOne sirve a más de 40 ciudades en la región.'
-      : 'Complete guide to CAD dispatch software for C5/C4 command centers in Latin America — country-by-country emergency numbers, C5 architecture, platform comparison, and how KabatOne serves 40+ cities across the region.',
+      ? 'Guía completa sobre software CAD de despacho para centros C5/C4 en América Latina — números de emergencia por país, arquitectura C5, comparación de plataformas y cómo Kabat One sirve a más de 40 ciudades en la región.'
+      : 'Complete guide to CAD dispatch software for C5/C4 command centers in Latin America — country-by-country emergency numbers, C5 architecture, platform comparison, and how Kabat One serves 40+ cities across the region.',
     pageUrl,
     '2026-05-04'
   )
@@ -131,12 +131,12 @@ export default async function CadDispatchLatinAmericaPage({
     { icon: '📞', title: 'Múltiples sistemas de numeración de emergencia', text: 'México usa 911. Chile usa 133, 131, 132 y 149. Colombia usa 123 y 112. Perú usa 105, 106 y 116. Un centro de mando regional que coordina operaciones en varios países enfrenta múltiples canales de ingreso sin un registro unificado de incidente.' },
     { icon: '🌐', title: 'Plataformas CAD diseñadas para EUA', text: 'Los grandes proveedores de CAD (Tyler Technologies, Motorola, Hexagon) están diseñados para el mercado norteamericano. Sus plataformas asumen inglés, PSAP 911 EUA, y procesos de compra estadounidenses — generando costos adicionales de localización y tiempos de implementación de 12–24 meses en LATAM.' },
     { icon: '📷', title: 'Video y CAD en sistemas separados', text: 'La mayoría de los centros de mando latinoamericanos operan el sistema CAD y el VMS (gestión de video) como plataformas separadas. El operador debe cambiar entre pantallas para ver el video del incidente, perdiendo segundos críticos en la respuesta.' },
-    { icon: '📋', title: 'Licitaciones y marcos de compra locales', text: 'CompraNet (México), ChileCompra, SECOP (Colombia) y sus equivalentes tienen requisitos de cumplimiento locales que los proveedores internacionales no dominan. KabatOne opera a través de distribuidores e integradores certificados en cada país con experiencia en licitación pública regional.' },
+    { icon: '📋', title: 'Licitaciones y marcos de compra locales', text: 'CompraNet (México), ChileCompra, SECOP (Colombia) y sus equivalentes tienen requisitos de cumplimiento locales que los proveedores internacionales no dominan. Kabat One opera a través de distribuidores e integradores certificados en cada país con experiencia en licitación pública regional.' },
   ] : [
     { icon: '📞', title: 'Multiple emergency numbering systems', text: 'Mexico uses 911. Chile uses 133, 131, 132, and 149. Colombia uses 123 and 112. Peru uses 105, 106, and 116. A regional command center coordinating operations across multiple countries faces multiple intake channels without a unified incident record.' },
     { icon: '🌐', title: 'CAD platforms designed for the US market', text: 'The major CAD vendors (Tyler Technologies, Motorola, Hexagon) are designed for the North American market. Their platforms assume English, US 911 PSAPs, and US purchasing processes — generating additional localization costs and 12–24 month deployment timelines in Latin America.' },
     { icon: '📷', title: 'Video and CAD on separate systems', text: 'Most Latin American command centers operate CAD and VMS (video management) as separate platforms. Operators must switch between screens to view incident video, losing critical seconds in the response.' },
-    { icon: '📋', title: 'Local procurement and purchasing frameworks', text: 'CompraNet (Mexico), ChileCompra, SECOP (Colombia), and their regional equivalents have local compliance requirements that international vendors do not master. KabatOne operates through certified distributors and integrators in each country with experience in regional public procurement.' },
+    { icon: '📋', title: 'Local procurement and purchasing frameworks', text: 'CompraNet (Mexico), ChileCompra, SECOP (Colombia), and their regional equivalents have local compliance requirements that international vendors do not master. Kabat One operates through certified distributors and integrators in each country with experience in regional public procurement.' },
   ]
 
   const deploymentStats = es ? [
@@ -212,8 +212,8 @@ export default async function CadDispatchLatinAmericaPage({
             lineHeight: 1.75, maxWidth: '720px', marginBottom: '40px',
           }}>
             {es
-              ? 'CAD dispatch software para América Latina requiere soporte nativo para múltiples números de emergencia, arquitectura C5/C4 y experiencia en licitaciones públicas regionales. KabatOne está desplegado en más de 40 ciudades latinoamericanas protegiendo 73 millones de ciudadanos.'
-              : 'CAD dispatch software for Latin America requires native support for multiple emergency numbers, C5/C4 architecture, and experience with regional public procurement. KabatOne is deployed in over 40 Latin American cities protecting 73 million citizens.'}
+              ? 'CAD dispatch software para América Latina requiere soporte nativo para múltiples números de emergencia, arquitectura C5/C4 y experiencia en licitaciones públicas regionales. Kabat One está desplegado en más de 40 ciudades latinoamericanas protegiendo 73 millones de ciudadanos.'
+              : 'CAD dispatch software for Latin America requires native support for multiple emergency numbers, C5/C4 architecture, and experience with regional public procurement. Kabat One is deployed in over 40 Latin American cities protecting 73 million citizens.'}
           </p>
 
           {/* Deployment stats bar */}
@@ -269,8 +269,8 @@ export default async function CadDispatchLatinAmericaPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne es la única plataforma de CAD dispatch construida nativamente para América Latina. Con más de 40 ciudades desplegadas en México, Colombia, Perú y Chile, KabatOne ha procesado millones de llamadas de emergencia reales en centros C5/C4 de la región desde 2018.'
-                : 'KabatOne is the only CAD dispatch platform built natively for Latin America. With more than 40 cities deployed in Mexico, Colombia, Peru, and Chile, KabatOne has processed millions of real emergency calls in C5/C4 centers across the region since 2018.'}
+                ? 'Kabat One es la única plataforma de CAD dispatch construida nativamente para América Latina. Con más de 40 ciudades desplegadas en México, Colombia, Perú y Chile, Kabat One ha procesado millones de llamadas de emergencia reales en centros C5/C4 de la región desde 2018.'
+                : 'Kabat One is the only CAD dispatch platform built natively for Latin America. With more than 40 cities deployed in Mexico, Colombia, Peru, and Chile, Kabat One has processed millions of real emergency calls in C5/C4 centers across the region since 2018.'}
             </p>
           </div>
         </section>
@@ -331,8 +331,8 @@ export default async function CadDispatchLatinAmericaPage({
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--dim)', lineHeight: 1.7, marginBottom: '32px' }}>
               {es
-                ? 'Un software CAD para América Latina debe soportar nativamente la numeración de emergencia de cada país. KabatOne K-Dispatch maneja todos los canales activos en un solo sistema.'
-                : 'CAD software for Latin America must natively support each country\'s emergency numbering. KabatOne K-Dispatch handles all active channels in a single system.'}
+                ? 'Un software CAD para América Latina debe soportar nativamente la numeración de emergencia de cada país. Kabat One K-Dispatch maneja todos los canales activos en un solo sistema.'
+                : 'CAD software for Latin America must natively support each country\'s emergency numbering. Kabat One K-Dispatch handles all active channels in a single system.'}
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
@@ -378,8 +378,8 @@ export default async function CadDispatchLatinAmericaPage({
               color: 'var(--white)', marginBottom: '32px',
             }}>
               {es
-                ? '¿Cómo Funciona KabatOne CAD Dispatch en América Latina?'
-                : 'How Does KabatOne CAD Dispatch Work in Latin America?'}
+                ? '¿Cómo Funciona Kabat One CAD Dispatch en América Latina?'
+                : 'How Does Kabat One CAD Dispatch Work in Latin America?'}
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -453,8 +453,8 @@ export default async function CadDispatchLatinAmericaPage({
               color: 'var(--white)', marginBottom: '32px',
             }}>
               {es
-                ? 'CAD Norteamericano vs KabatOne para América Latina'
-                : 'North American CAD vs KabatOne for Latin America'}
+                ? 'CAD Norteamericano vs Kabat One para América Latina'
+                : 'North American CAD vs Kabat One for Latin America'}
             </h2>
 
             <div style={{
@@ -469,7 +469,7 @@ export default async function CadDispatchLatinAmericaPage({
                 {[
                   es ? 'Capacidad' : 'Capability',
                   es ? 'CAD Norteamericano (Tyler/Motorola/Hexagon)' : 'North American CAD (Tyler/Motorola/Hexagon)',
-                  es ? 'KabatOne para LATAM' : 'KabatOne for LATAM',
+                  es ? 'Kabat One para LATAM' : 'Kabat One for LATAM',
                 ].map((h, i) => (
                   <span key={i} style={{
                     fontFamily: 'DM Mono, monospace', fontSize: '10px',
@@ -664,8 +664,8 @@ export default async function CadDispatchLatinAmericaPage({
           es={es}
           h2={es ? 'Moderniza el Despacho de Emergencias en tu Ciudad' : 'Modernize Emergency Dispatch in Your City'}
           subtitle={es
-            ? 'KabatOne está desplegado en más de 40 ciudades latinoamericanas. Conoce cómo nuestra plataforma CAD nativa para LATAM puede transformar la respuesta de emergencias en tu municipio o centro de mando.'
-            : 'KabatOne is deployed in more than 40 Latin American cities. See how our LATAM-native CAD platform can transform emergency response in your municipality or command center.'}
+            ? 'Kabat One está desplegado en más de 40 ciudades latinoamericanas. Conoce cómo nuestra plataforma CAD nativa para LATAM puede transformar la respuesta de emergencias en tu municipio o centro de mando.'
+            : 'Kabat One is deployed in more than 40 Latin American cities. See how our LATAM-native CAD platform can transform emergency response in your municipality or command center.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

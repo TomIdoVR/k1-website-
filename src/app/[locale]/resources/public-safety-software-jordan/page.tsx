@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Public Security Directorate (PSD) across Jordan\'s 12 governorates?',
+    question: 'How does Kabat One integrate the Public Security Directorate (PSD) across Jordan\'s 12 governorates?',
     answer:
-      'KabatOne unifies Public Security Directorate (PSD) operations across all 12 governorates — Amman, Zarqa, Irbid, Balqa, Madaba, Karak, Tafilah, Ma\'an, Aqaba, Mafraq, Jerash, and Ajloun — into a single operational map with shared CAD, ANPR camera feeds, and integration of specialised units (CID, Border Guard, Anti-Narcotics, Traffic Police, Gendarmerie/GADSA).',
+      'Kabat One unifies Public Security Directorate (PSD) operations across all 12 governorates — Amman, Zarqa, Irbid, Balqa, Madaba, Karak, Tafilah, Ma\'an, Aqaba, Mafraq, Jerash, and Ajloun — into a single operational map with shared CAD, ANPR camera feeds, and integration of specialised units (CID, Border Guard, Anti-Narcotics, Traffic Police, Gendarmerie/GADSA).',
   },
   {
     question: 'How does the platform support Jordan Civil Defence Directorate (CDD)?',
     answer:
-      'KabatOne connects Civil Defence Directorate (CDD) stations across all 12 governorates, coordinates 911 unified CAD dispatch with King Hussein Medical Center/Jordan University Hospital/Prince Hamzah Hospital for patient transfers, and integrates fire response at JEPCO/NEPCO power facilities, Jordan Petroleum Refinery Company (JPRC), Aqaba Port, and Queen Alia International Airport (AMM).',
+      'Kabat One connects Civil Defence Directorate (CDD) stations across all 12 governorates, coordinates 911 unified CAD dispatch with King Hussein Medical Center/Jordan University Hospital/Prince Hamzah Hospital for patient transfers, and integrates fire response at JEPCO/NEPCO power facilities, Jordan Petroleum Refinery Company (JPRC), Aqaba Port, and Queen Alia International Airport (AMM).',
   },
   {
-    question: 'Does KabatOne support Amman Safe City and Jordan\'s CCTV network?',
+    question: 'Does Kabat One support Amman Safe City and Jordan\'s CCTV network?',
     answer:
-      'Yes. KabatOne provides centralised video management for Amman Safe City cameras and PSD CCTV/ANPR across the Greater Amman Municipality (GAM) road network — including Highways 35/40/65, the Desert Highway, Jordan Valley Highway, Amman Ring Road, and Queen Alia International Airport (AMM) — with AI video analytics and real-time alerts shared with the National Centre for Security and Crisis Management (NCSCM).',
+      'Yes. Kabat One provides centralised video management for Amman Safe City cameras and PSD CCTV/ANPR across the Greater Amman Municipality (GAM) road network — including Highways 35/40/65, the Desert Highway, Jordan Valley Highway, Amman Ring Road, and Queen Alia International Airport (AMM) — with AI video analytics and real-time alerts shared with the National Centre for Security and Crisis Management (NCSCM).',
   },
   {
-    question: 'How does KabatOne comply with Jordan Personal Data Protection Law (Law 24/2023) and NITC requirements?',
+    question: 'How does Kabat One comply with Jordan Personal Data Protection Law (Law 24/2023) and NITC requirements?',
     answer:
-      'KabatOne implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Jordan\'s Personal Data Protection Law (Law 24/2023) supervised by the Ministry of Digital Economy and Entrepreneurship (MODEE). The platform aligns with National Information Technology Center (NITC) cybersecurity standards and Jordan CERT (CERT.jo) incident response frameworks.',
+      'Kabat One implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Jordan\'s Personal Data Protection Law (Law 24/2023) supervised by the Ministry of Digital Economy and Entrepreneurship (MODEE). The platform aligns with National Information Technology Center (NITC) cybersecurity standards and Jordan CERT (CERT.jo) incident response frameworks.',
   },
   {
-    question: 'How does KabatOne support Aqaba Special Economic Zone and Port of Aqaba security?',
+    question: 'How does Kabat One support Aqaba Special Economic Zone and Port of Aqaba security?',
     answer:
-      'KabatOne integrates Aqaba Port (Jordan\'s only sea outlet, handling 26M+ tonnes/year), Aqaba Special Economic Zone Authority (ASEZA) industrial zones, and the port\'s CCTV/access control into unified situational dashboards with AIS maritime radar, ANPR gates, and coordination between PSD Aqaba branch, CDD, and Jordan Armed Forces (JAF) for border security along the Gulf of Aqaba.',
+      'Kabat One integrates Aqaba Port (Jordan\'s only sea outlet, handling 26M+ tonnes/year), Aqaba Special Economic Zone Authority (ASEZA) industrial zones, and the port\'s CCTV/access control into unified situational dashboards with AIS maritime radar, ANPR gates, and coordination between PSD Aqaba branch, CDD, and Jordan Armed Forces (JAF) for border security along the Gulf of Aqaba.',
   },
   {
-    question: 'How does KabatOne handle Jordan border security and crossing management?',
+    question: 'How does Kabat One handle Jordan border security and crossing management?',
     answer:
-      'KabatOne connects the Jordan Border Guard Corps across all major crossings — King Hussein Bridge/Allenby (West Bank), Sheikh Hussein Bridge (north), Wadi Araba/Yitzhak Rabin (south), Jaber/Nassib (Syria), Al-Karama/Al-Omari (Iraq), and Aqaba/Durra (Saudi Arabia) — providing ANPR, biometric access integration, and real-time incident escalation to GID and NCSCM.',
+      'Kabat One connects the Jordan Border Guard Corps across all major crossings — King Hussein Bridge/Allenby (West Bank), Sheikh Hussein Bridge (north), Wadi Araba/Yitzhak Rabin (south), Jaber/Nassib (Syria), Al-Karama/Al-Omari (Iraq), and Aqaba/Durra (Saudi Arabia) — providing ANPR, biometric access integration, and real-time incident escalation to GID and NCSCM.',
   },
   {
-    question: 'How does KabatOne align with Jordan Vision 2030 and digital transformation?',
+    question: 'How does Kabat One align with Jordan Vision 2030 and digital transformation?',
     answer:
-      'KabatOne aligns with Jordan Economic Modernisation Vision 2025/2033 pillars — Digital Jordan, Smart City Amman (GAM), NITC e-Government framework, and CERT.jo cybersecurity roadmap — by providing AI/IoT public safety platforms that modernise PSD, CDD, and NCSCM operations compliant with Law 24/2023 and Regulation 32/1994 government procurement rules.',
+      'Kabat One aligns with Jordan Economic Modernisation Vision 2025/2033 pillars — Digital Jordan, Smart City Amman (GAM), NITC e-Government framework, and CERT.jo cybersecurity roadmap — by providing AI/IoT public safety platforms that modernise PSD, CDD, and NCSCM operations compliant with Law 24/2023 and Regulation 32/1994 government procurement rules.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Dirección de Seguridad Pública (PSD) en los 12 gobernados de Jordania?',
+    question: '¿Cómo integra Kabat One la Dirección de Seguridad Pública (PSD) en los 12 gobernados de Jordania?',
     answer:
-      'KabatOne unifica las operaciones de la Dirección de Seguridad Pública (PSD) en los 12 gobernados — Amán, Zarqa, Irbid, Balqa, Madaba, Karak, Tafilah, Ma\'an, Aqaba, Mafraq, Jerash y Ajloun — en un solo mapa operativo con CAD compartido, cámaras ANPR e integración de unidades especializadas (CID, Guardia Fronteriza, Antinarcóticos, Policía de Tráfico, Gendarmería/GADSA).',
+      'Kabat One unifica las operaciones de la Dirección de Seguridad Pública (PSD) en los 12 gobernados — Amán, Zarqa, Irbid, Balqa, Madaba, Karak, Tafilah, Ma\'an, Aqaba, Mafraq, Jerash y Ajloun — en un solo mapa operativo con CAD compartido, cámaras ANPR e integración de unidades especializadas (CID, Guardia Fronteriza, Antinarcóticos, Policía de Tráfico, Gendarmería/GADSA).',
   },
   {
     question: '¿Cómo admite la plataforma la Dirección de Defensa Civil de Jordania (CDD)?',
     answer:
-      'KabatOne conecta las estaciones de la Dirección de Defensa Civil (CDD) en los 12 gobernados, coordina el despacho CAD unificado del 911 con el Centro Médico Rey Hussein/Hospital de la Universidad de Jordania/Hospital Príncipe Hamzah para traslados de pacientes, e integra la respuesta de incendios en instalaciones JEPCO/NEPCO, la Compañía de Refinería de Petróleo de Jordania (JPRC), el Puerto de Aqaba y el Aeropuerto Internacional Reina Alía (AMM).',
+      'Kabat One conecta las estaciones de la Dirección de Defensa Civil (CDD) en los 12 gobernados, coordina el despacho CAD unificado del 911 con el Centro Médico Rey Hussein/Hospital de la Universidad de Jordania/Hospital Príncipe Hamzah para traslados de pacientes, e integra la respuesta de incendios en instalaciones JEPCO/NEPCO, la Compañía de Refinería de Petróleo de Jordania (JPRC), el Puerto de Aqaba y el Aeropuerto Internacional Reina Alía (AMM).',
   },
   {
-    question: '¿Admite KabatOne la Ciudad Segura de Amán y la red de CCTV de Jordania?',
+    question: '¿Admite Kabat One la Ciudad Segura de Amán y la red de CCTV de Jordania?',
     answer:
-      'Sí. KabatOne proporciona gestión de video centralizada para las cámaras del Amman Safe City y el CCTV/ANPR de la PSD en la red vial del Gran Municipio de Amán (GAM) — incluidas las Carreteras 35/40/65, la Autopista del Desierto, la Autopista del Valle del Jordán, el Anillo Vial de Amán y el Aeropuerto Internacional Reina Alía (AMM) — con análisis de video IA y alertas en tiempo real compartidas con el NCSCM.',
+      'Sí. Kabat One proporciona gestión de video centralizada para las cámaras del Amman Safe City y el CCTV/ANPR de la PSD en la red vial del Gran Municipio de Amán (GAM) — incluidas las Carreteras 35/40/65, la Autopista del Desierto, la Autopista del Valle del Jordán, el Anillo Vial de Amán y el Aeropuerto Internacional Reina Alía (AMM) — con análisis de video IA y alertas en tiempo real compartidas con el NCSCM.',
   },
   {
-    question: '¿Cómo cumple KabatOne con la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) y los requisitos del NITC?',
+    question: '¿Cómo cumple Kabat One con la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) y los requisitos del NITC?',
     answer:
-      'KabatOne implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas conforme a la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) supervisada por el MODEE. La plataforma se alinea con los estándares de ciberseguridad del Centro Nacional de Tecnología de la Información (NITC) y los marcos de respuesta a incidentes del CERT.jo.',
+      'Kabat One implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas conforme a la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) supervisada por el MODEE. La plataforma se alinea con los estándares de ciberseguridad del Centro Nacional de Tecnología de la Información (NITC) y los marcos de respuesta a incidentes del CERT.jo.',
   },
   {
-    question: '¿Cómo apoya KabatOne la seguridad de la Zona Económica Especial de Aqaba y el Puerto de Aqaba?',
+    question: '¿Cómo apoya Kabat One la seguridad de la Zona Económica Especial de Aqaba y el Puerto de Aqaba?',
     answer:
-      'KabatOne integra el Puerto de Aqaba (única salida al mar de Jordania, más de 26M toneladas/año), las zonas industriales de la Autoridad de la Zona Económica Especial de Aqaba (ASEZA) y el CCTV/control de acceso del puerto en paneles de situación unificados con radar AIS marítimo, portales ANPR y coordinación entre la sucursal de la PSD en Aqaba, la CDD y las Fuerzas Armadas de Jordania (JAF).',
+      'Kabat One integra el Puerto de Aqaba (única salida al mar de Jordania, más de 26M toneladas/año), las zonas industriales de la Autoridad de la Zona Económica Especial de Aqaba (ASEZA) y el CCTV/control de acceso del puerto en paneles de situación unificados con radar AIS marítimo, portales ANPR y coordinación entre la sucursal de la PSD en Aqaba, la CDD y las Fuerzas Armadas de Jordania (JAF).',
   },
   {
-    question: '¿Cómo gestiona KabatOne la seguridad fronteriza y los pasos fronterizos de Jordania?',
+    question: '¿Cómo gestiona Kabat One la seguridad fronteriza y los pasos fronterizos de Jordania?',
     answer:
-      'KabatOne conecta el Cuerpo de la Guardia Fronteriza de Jordania en todos los pasos principales — Puente Rey Hussein/Allenby (Cisjordania), Puente Sheikh Hussein (norte), Wadi Araba/Yitzhak Rabin (sur), Jaber/Nassib (Siria), Al-Karama/Al-Omari (Iraq) y Aqaba/Durra (Arabia Saudí) — proporcionando ANPR, integración biométrica y escalada de incidentes en tiempo real hacia el GID y el NCSCM.',
+      'Kabat One conecta el Cuerpo de la Guardia Fronteriza de Jordania en todos los pasos principales — Puente Rey Hussein/Allenby (Cisjordania), Puente Sheikh Hussein (norte), Wadi Araba/Yitzhak Rabin (sur), Jaber/Nassib (Siria), Al-Karama/Al-Omari (Iraq) y Aqaba/Durra (Arabia Saudí) — proporcionando ANPR, integración biométrica y escalada de incidentes en tiempo real hacia el GID y el NCSCM.',
   },
   {
-    question: '¿Cómo se alinea KabatOne con la Visión Jordania 2030 y la transformación digital?',
+    question: '¿Cómo se alinea Kabat One con la Visión Jordania 2030 y la transformación digital?',
     answer:
-      'KabatOne se alinea con los pilares de la Visión de Modernización Económica de Jordania 2025/2033 — Digital Jordan, Smart City Amán (GAM), marco de gobierno electrónico del NITC y hoja de ruta de ciberseguridad de CERT.jo — proporcionando plataformas de seguridad pública integradas con IA/IoT que modernizan las operaciones de la PSD, CDD y NCSCM conforme a la Ley 24/2023 y las normas de adquisición pública del Reglamento 32/1994.',
+      'Kabat One se alinea con los pilares de la Visión de Modernización Económica de Jordania 2025/2033 — Digital Jordan, Smart City Amán (GAM), marco de gobierno electrónico del NITC y hoja de ruta de ciberseguridad de CERT.jo — proporcionando plataformas de seguridad pública integradas con IA/IoT que modernizan las operaciones de la PSD, CDD y NCSCM conforme a la Ley 24/2023 y las normas de adquisición pública del Reglamento 32/1994.',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Jordania' : 'KabatOne Platform Capabilities for Jordan'}
+              {es ? 'Capacidades de la plataforma Kabat One para Jordania' : 'Kabat One Platform Capabilities for Jordan'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Gestión de vídeo Amman Safe City y cámaras PSD' : 'Amman Safe City Video Management & PSD Cameras',
                   text: es
-                    ? 'KabatOne gestiona las cámaras CCTV/ANPR de la PSD y el GAM Amman Safe City en los 12 gobernados, integra la vigilancia del AMM y el Puerto de Aqaba/ASEZA, conecta el video de las instalaciones de la JPRC/NEPCO, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y compartición de transmisiones en tiempo real con el NCSCM y el GID.'
-                    : 'KabatOne manages PSD and GAM Amman Safe City CCTV/ANPR across 12 governorates, integrates AMM and Aqaba Port/ASEZA surveillance, connects JPRC/NEPCO facility video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency and real-time stream sharing with NCSCM and GID.',
+                    ? 'Kabat One gestiona las cámaras CCTV/ANPR de la PSD y el GAM Amman Safe City en los 12 gobernados, integra la vigilancia del AMM y el Puerto de Aqaba/ASEZA, conecta el video de las instalaciones de la JPRC/NEPCO, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y compartición de transmisiones en tiempo real con el NCSCM y el GID.'
+                    : 'Kabat One manages PSD and GAM Amman Safe City CCTV/ANPR across 12 governorates, integrates AMM and Aqaba Port/ASEZA surveillance, connects JPRC/NEPCO facility video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency and real-time stream sharing with NCSCM and GID.',
                 },
                 {
                   heading: es ? 'Gestión de fronteras y cruces: 6 pasos activos' : 'Border & Crossing Management: 6 Active Crossings',
                   text: es
-                    ? 'KabatOne proporciona gestión de incidentes en tiempo real en los 6 cruces fronterizos activos de Jordania — integración biométrica con los sistemas de la Guardia Fronteriza de la PSD, ANPR para vehículos de carga/pasajeros, coordinación de flujo de refugiados (UNHCR/UNHCR SynergyApp), alertas de listas de vigilancia del GID, y paneles de gestión de crisis del NCSCM con acceso de las Fuerzas Armadas Jordanas (JAF).'
-                    : 'KabatOne provides real-time incident management at all 6 active Jordan border crossings — biometric integration with PSD Border Guard systems, ANPR for freight/passenger vehicles, refugee flow coordination (UNHCR/SynergyApp), GID watchlist alerts, and NCSCM crisis management dashboards with Jordan Armed Forces (JAF) access.',
+                    ? 'Kabat One proporciona gestión de incidentes en tiempo real en los 6 cruces fronterizos activos de Jordania — integración biométrica con los sistemas de la Guardia Fronteriza de la PSD, ANPR para vehículos de carga/pasajeros, coordinación de flujo de refugiados (UNHCR/UNHCR SynergyApp), alertas de listas de vigilancia del GID, y paneles de gestión de crisis del NCSCM con acceso de las Fuerzas Armadas Jordanas (JAF).'
+                    : 'Kabat One provides real-time incident management at all 6 active Jordan border crossings — biometric integration with PSD Border Guard systems, ANPR for freight/passenger vehicles, refugee flow coordination (UNHCR/SynergyApp), GID watchlist alerts, and NCSCM crisis management dashboards with Jordan Armed Forces (JAF) access.',
                 },
                 {
                   heading: es ? 'Cumplimiento Ley 24/2023/NITC y CERT.jo' : 'Law 24/2023/NITC & CERT.jo Cybersecurity Compliance',
                   text: es
-                    ? 'KabatOne se alinea con la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) supervisada por el MODEE — cifrado, gestión del consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; el marco de ciberseguridad del NITC para sistemas gubernamentales; los estándares de respuesta a incidentes del CERT.jo; y los requisitos del Centro de Gobierno Electrónico de Jordania (e-Government Gateway) para sistemas integrados del sector público.'
-                    : 'KabatOne aligns with Jordan Personal Data Protection Law (Law 24/2023) supervised by MODEE — encryption, consent management, data subject access rights, and breach notification; NITC cybersecurity framework for government systems; CERT.jo incident response standards; and Jordan e-Government Gateway requirements for integrated public sector systems.',
+                    ? 'Kabat One se alinea con la Ley de Protección de Datos Personales de Jordania (Ley 24/2023) supervisada por el MODEE — cifrado, gestión del consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; el marco de ciberseguridad del NITC para sistemas gubernamentales; los estándares de respuesta a incidentes del CERT.jo; y los requisitos del Centro de Gobierno Electrónico de Jordania (e-Government Gateway) para sistemas integrados del sector público.'
+                    : 'Kabat One aligns with Jordan Personal Data Protection Law (Law 24/2023) supervised by MODEE — encryption, consent management, data subject access rights, and breach notification; NITC cybersecurity framework for government systems; CERT.jo incident response standards; and Jordan e-Government Gateway requirements for integrated public sector systems.',
                 },
                 {
                   heading: es ? 'Adquisición Reglamento 32/1994 y Visión Económica 2033' : 'Regulation 32/1994 Procurement & Economic Modernisation Vision 2033',
                   text: es
-                    ? 'KabatOne admite licitaciones bajo el Reglamento de Adquisiciones del Gobierno (Reglamento 32/1994 y modificaciones), el Sistema de Contratación Electrónica del Gobierno de Jordania (e-Procurement/ISTISHARA), los marcos ASEZA para proyectos en la Zona Económica de Aqaba, y los mecanismos de cofinanciamiento de la Cuenta de Desafío del Milenio (MCC)/USAID para modernización de infraestructura de seguridad.'
-                    : 'KabatOne supports tenders under Government Procurement Regulation (Regulation 32/1994 and amendments), Jordan Government e-Procurement system (ISTISHARA), ASEZA frameworks for Aqaba Economic Zone projects, and Millennium Challenge Corporation (MCC)/USAID co-financing mechanisms for security infrastructure modernisation.',
+                    ? 'Kabat One admite licitaciones bajo el Reglamento de Adquisiciones del Gobierno (Reglamento 32/1994 y modificaciones), el Sistema de Contratación Electrónica del Gobierno de Jordania (e-Procurement/ISTISHARA), los marcos ASEZA para proyectos en la Zona Económica de Aqaba, y los mecanismos de cofinanciamiento de la Cuenta de Desafío del Milenio (MCC)/USAID para modernización de infraestructura de seguridad.'
+                    : 'Kabat One supports tenders under Government Procurement Regulation (Regulation 32/1994 and amendments), Jordan Government e-Procurement system (ISTISHARA), ASEZA frameworks for Aqaba Economic Zone projects, and Millennium Challenge Corporation (MCC)/USAID co-financing mechanisms for security infrastructure modernisation.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la PSD, la CDD y el NCSCM de Jordania en una plataforma operativa conforme a la Ley 24/2023/NITC y alineada con la Visión de Modernización Económica 2033.'
-              : 'Discover how KabatOne unifies Jordan PSD, CDD, and NCSCM into one operational platform compliant with Law 24/2023/NITC and aligned with Jordan Economic Modernisation Vision 2033.'
+              ? 'Descubra cómo Kabat One unifica la PSD, la CDD y el NCSCM de Jordania en una plataforma operativa conforme a la Ley 24/2023/NITC y alineada con la Visión de Modernización Económica 2033.'
+              : 'Discover how Kabat One unifies Jordan PSD, CDD, and NCSCM into one operational platform compliant with Law 24/2023/NITC and aligned with Jordan Economic Modernisation Vision 2033.'
           }
         />
       </main>

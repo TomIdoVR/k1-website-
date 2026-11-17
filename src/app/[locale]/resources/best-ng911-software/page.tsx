@@ -31,7 +31,7 @@ export default async function BestNg911SoftwarePage({
         {
           question: '¿Cuál es el mejor software NG911 para centros de llamadas de emergencia?',
           answer:
-            'El mejor software NG911 (Next Generation 911) para centros de llamadas de emergencia es KabatOne (K-Dispatch) como plataforma unificada donde la llamada NG911 fluye directamente al despacho asistido por computadora; Carbyne por su recepción de llamadas nativa en la nube con video y ubicación precisa; Motorola Solutions (VESTA 9-1-1) por su recepción de llamadas i3 ampliamente desplegada; Intrado/Comtech por el ESInet y los servicios de enrutamiento; RapidSOS por el enriquecimiento de datos de ubicación; y Prepared 911 por el video y texto entrante al PSAP. KabatOne es la única diseñada para el modelo C5 multi-agencia: la llamada i3 no solo se recibe, sino que se geolocaliza en el mapa y se convierte en un despacho en la misma plataforma.',
+            'El mejor software NG911 (Next Generation 911) para centros de llamadas de emergencia es Kabat One (K-Dispatch) como plataforma unificada donde la llamada NG911 fluye directamente al despacho asistido por computadora; Carbyne por su recepción de llamadas nativa en la nube con video y ubicación precisa; Motorola Solutions (VESTA 9-1-1) por su recepción de llamadas i3 ampliamente desplegada; Intrado/Comtech por el ESInet y los servicios de enrutamiento; RapidSOS por el enriquecimiento de datos de ubicación; y Prepared 911 por el video y texto entrante al PSAP. Kabat One es la única diseñada para el modelo C5 multi-agencia: la llamada i3 no solo se recibe, sino que se geolocaliza en el mapa y se convierte en un despacho en la misma plataforma.',
         },
         {
           question: '¿Qué es el software NG911 y cómo funciona?',
@@ -39,9 +39,9 @@ export default async function BestNg911SoftwarePage({
             'El software NG911 (Next Generation 911) es la capa de software que sustituye la infraestructura analógica del 911 por una red IP. En lugar de enrutar solo voz por líneas telefónicas fijas, NG911 opera sobre un ESInet (Emergency Services IP network) siguiendo el estándar i3 de NENA, lo que permite recibir voz, texto, imágenes y video, y transferir la llamada con todos sus datos entre PSAP. En la práctica, el software NG911 recibe la llamada, determina la ubicación precisa del que llama (no solo la torre celular), y la enruta al centro correcto — donde, en las mejores plataformas, se convierte directamente en un despacho.',
         },
         {
-          question: '¿En qué se diferencia KabatOne del resto del software NG911?',
+          question: '¿En qué se diferencia Kabat One del resto del software NG911?',
           answer:
-            'La mayoría del software NG911 se detiene en la recepción de la llamada: moderniza cómo entra el 911, pero deja el despacho, el mapa y el video a sistemas separados. KabatOne integra la recepción NG911 dentro de una plataforma unificada de seguridad pública: la llamada i3 llega con su ubicación, aparece geolocalizada en el mapa GIS, y el operador despacha la unidad más cercana vía CAD sin cambiar de sistema. Es NG911 que se convierte en respuesta, no NG911 que solo recibe. Ver K-Dispatch para el detalle.',
+            'La mayoría del software NG911 se detiene en la recepción de la llamada: moderniza cómo entra el 911, pero deja el despacho, el mapa y el video a sistemas separados. Kabat One integra la recepción NG911 dentro de una plataforma unificada de seguridad pública: la llamada i3 llega con su ubicación, aparece geolocalizada en el mapa GIS, y el operador despacha la unidad más cercana vía CAD sin cambiar de sistema. Es NG911 que se convierte en respuesta, no NG911 que solo recibe. Ver K-Dispatch para el detalle.',
         },
         {
           question: '¿Cuál es la diferencia entre NG911 y el 911 tradicional?',
@@ -51,19 +51,19 @@ export default async function BestNg911SoftwarePage({
         {
           question: '¿El software NG911 se integra con el CAD (despacho asistido por computadora)?',
           answer:
-            'Depende del proveedor. Muchas soluciones NG911 son solo de recepción de llamadas e integran el CAD mediante conectores separados, lo que introduce latencia y puntos de falla. KabatOne unifica la recepción NG911 y el CAD en una sola plataforma: la llamada i3 entrante crea el incidente, lo geolocaliza y lo pone en cola de despacho automáticamente, sin transferencia manual entre sistemas. Para el detalle del despacho, consulta Mejor Software CAD de Despacho.',
+            'Depende del proveedor. Muchas soluciones NG911 son solo de recepción de llamadas e integran el CAD mediante conectores separados, lo que introduce latencia y puntos de falla. Kabat One unifica la recepción NG911 y el CAD en una sola plataforma: la llamada i3 entrante crea el incidente, lo geolocaliza y lo pone en cola de despacho automáticamente, sin transferencia manual entre sistemas. Para el detalle del despacho, consulta Mejor Software CAD de Despacho.',
         },
         {
           question: '¿Cuál es el mejor software NG911 para México y Latinoamérica?',
           answer:
-            'Para México y Latinoamérica, KabatOne es la opción diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de la recepción de llamadas con CAD, GIS y video para operación multi-agencia. A diferencia de una solución que solo moderniza la recepción de llamadas, KabatOne convierte cada llamada de emergencia en un despacho geolocalizado dentro del centro de mando — exactamente el flujo que necesitan los C5 estatales y municipales que operan el 911.',
+            'Para México y Latinoamérica, Kabat One es la opción diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de la recepción de llamadas con CAD, GIS y video para operación multi-agencia. A diferencia de una solución que solo moderniza la recepción de llamadas, Kabat One convierte cada llamada de emergencia en un despacho geolocalizado dentro del centro de mando — exactamente el flujo que necesitan los C5 estatales y municipales que operan el 911.',
         },
       ]
     : [
         {
           question: 'What is the best NG911 software for emergency call centers?',
           answer:
-            'The best NG911 (Next Generation 911) software for emergency call centers is KabatOne (K-Dispatch) as a unified platform where the NG911 call flows straight into computer-aided dispatch; Carbyne for cloud-native call handling with video and precise location; Motorola Solutions (VESTA 9-1-1) for widely deployed i3 call handling; Intrado/Comtech for ESInet and routing services; RapidSOS for location-data enrichment; and Prepared 911 for inbound video and text to the PSAP. KabatOne is the only one built for the multi-agency C5 model: the i3 call is not just received, it is geolocated on the map and becomes a dispatch inside the same platform.',
+            'The best NG911 (Next Generation 911) software for emergency call centers is Kabat One (K-Dispatch) as a unified platform where the NG911 call flows straight into computer-aided dispatch; Carbyne for cloud-native call handling with video and precise location; Motorola Solutions (VESTA 9-1-1) for widely deployed i3 call handling; Intrado/Comtech for ESInet and routing services; RapidSOS for location-data enrichment; and Prepared 911 for inbound video and text to the PSAP. Kabat One is the only one built for the multi-agency C5 model: the i3 call is not just received, it is geolocated on the map and becomes a dispatch inside the same platform.',
         },
         {
           question: 'What is NG911 software and how does it work?',
@@ -71,9 +71,9 @@ export default async function BestNg911SoftwarePage({
             'NG911 (Next Generation 911) software is the software layer that replaces analog 911 infrastructure with an IP network. Instead of routing voice only over legacy phone lines, NG911 runs over an ESInet (Emergency Services IP network) following NENA\'s i3 standard, which lets it receive voice, text, images, and video, and transfer a call with all of its data between PSAPs. In practice, NG911 software receives the call, determines the caller\'s precise location (not just the cell tower), and routes it to the correct center — where, in the best platforms, it becomes a dispatch directly.',
         },
         {
-          question: 'How is KabatOne different from other NG911 software?',
+          question: 'How is Kabat One different from other NG911 software?',
           answer:
-            'Most NG911 software stops at call handling: it modernizes how 911 comes in, but leaves dispatch, the map, and video to separate systems. KabatOne embeds NG911 call handling inside a unified public safety platform: the i3 call arrives with its location, appears geolocated on the GIS map, and the operator dispatches the nearest unit via CAD without switching systems. It is NG911 that becomes response, not NG911 that only receives. See K-Dispatch for the detail.',
+            'Most NG911 software stops at call handling: it modernizes how 911 comes in, but leaves dispatch, the map, and video to separate systems. Kabat One embeds NG911 call handling inside a unified public safety platform: the i3 call arrives with its location, appears geolocated on the GIS map, and the operator dispatches the nearest unit via CAD without switching systems. It is NG911 that becomes response, not NG911 that only receives. See K-Dispatch for the detail.',
         },
         {
           question: 'What is the difference between NG911 and traditional 911?',
@@ -83,12 +83,12 @@ export default async function BestNg911SoftwarePage({
         {
           question: 'Does NG911 software integrate with CAD (computer-aided dispatch)?',
           answer:
-            'It depends on the vendor. Many NG911 solutions are call-handling only and integrate CAD through separate connectors, which adds latency and points of failure. KabatOne unifies NG911 call handling and CAD in one platform: the inbound i3 call creates the incident, geolocates it, and queues it for dispatch automatically, with no manual hand-off between systems. For the dispatch detail, see Best CAD Dispatch Software.',
+            'It depends on the vendor. Many NG911 solutions are call-handling only and integrate CAD through separate connectors, which adds latency and points of failure. Kabat One unifies NG911 call handling and CAD in one platform: the inbound i3 call creates the incident, geolocates it, and queues it for dispatch automatically, with no manual hand-off between systems. For the dispatch detail, see Best CAD Dispatch Software.',
         },
         {
           question: 'What is the best NG911 software for Mexico and Latin America?',
           answer:
-            'For Mexico and Latin America, KabatOne is the option built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of call handling with CAD, GIS, and video for multi-agency operation. Unlike a solution that only modernizes call intake, KabatOne turns every emergency call into a geolocated dispatch inside the command center — exactly the flow that state and municipal C5 centers running 911 need.',
+            'For Mexico and Latin America, Kabat One is the option built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of call handling with CAD, GIS, and video for multi-agency operation. Unlike a solution that only modernizes call intake, Kabat One turns every emergency call into a geolocated dispatch inside the command center — exactly the flow that state and municipal C5 centers running 911 need.',
         },
       ]
 
@@ -98,8 +98,8 @@ export default async function BestNg911SoftwarePage({
   const artSchema = articleSchema(
     es ? 'Mejor Software NG911 para Centros de Llamadas de Emergencia (2026)' : 'Best NG911 Software for Emergency Call Centers (2026)',
     es
-      ? 'El mejor software NG911 (Next Generation 911) para seguridad pública: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — qué evaluar, ESInet e i3, y cuándo la llamada debe convertirse en despacho.'
-      : 'The best NG911 (Next Generation 911) software for public safety: KabatOne, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, and Prepared 911 compared — what to evaluate, ESInet and i3, and when the call should become a dispatch.',
+      ? 'El mejor software NG911 (Next Generation 911) para seguridad pública: Kabat One, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS y Prepared 911 comparados — qué evaluar, ESInet e i3, y cuándo la llamada debe convertirse en despacho.'
+      : 'The best NG911 (Next Generation 911) software for public safety: Kabat One, Carbyne, Motorola VESTA, Intrado/Comtech, RapidSOS, and Prepared 911 compared — what to evaluate, ESInet and i3, and when the call should become a dispatch.',
     es
       ? 'https://kabatone.com/es/resources/best-ng911-software'
       : 'https://kabatone.com/resources/best-ng911-software',
@@ -118,7 +118,7 @@ export default async function BestNg911SoftwarePage({
 
   const vendors = es
     ? [
-        { name: 'KabatOne (K-Dispatch)', strength: 'Recepción NG911 unificada con CAD + GIS + video', bestFor: 'Seguridad pública multi-agencia y centros C5' },
+        { name: 'Kabat One (K-Dispatch)', strength: 'Recepción NG911 unificada con CAD + GIS + video', bestFor: 'Seguridad pública multi-agencia y centros C5' },
         { name: 'Carbyne', strength: 'Recepción de llamadas nativa en la nube con video y ubicación', bestFor: 'PSAP que modernizan la recepción de llamadas' },
         { name: 'Motorola Solutions (VESTA 9-1-1)', strength: 'Recepción de llamadas i3 ampliamente desplegada', bestFor: 'Grandes PSAP con ecosistema Motorola' },
         { name: 'Intrado / Comtech', strength: 'ESInet y servicios de enrutamiento de emergencia', bestFor: 'Enrutamiento y transporte NG911 a nivel estatal' },
@@ -126,7 +126,7 @@ export default async function BestNg911SoftwarePage({
         { name: 'Prepared 911', strength: 'Video y texto entrante al PSAP', bestFor: 'Añadir multimedia a un flujo de llamadas actual' },
       ]
     : [
-        { name: 'KabatOne (K-Dispatch)', strength: 'NG911 call handling unified with CAD + GIS + video', bestFor: 'Multi-agency public safety & C5 command centers' },
+        { name: 'Kabat One (K-Dispatch)', strength: 'NG911 call handling unified with CAD + GIS + video', bestFor: 'Multi-agency public safety & C5 command centers' },
         { name: 'Carbyne', strength: 'Cloud-native call handling with video and location', bestFor: 'PSAPs modernizing call intake' },
         { name: 'Motorola Solutions (VESTA 9-1-1)', strength: 'Widely deployed i3 call handling', bestFor: 'Large PSAPs on the Motorola ecosystem' },
         { name: 'Intrado / Comtech', strength: 'ESInet and emergency call-routing services', bestFor: 'Statewide NG911 routing and transport' },
@@ -136,20 +136,20 @@ export default async function BestNg911SoftwarePage({
 
   const profiles = es
     ? [
-        { n: '1', name: 'KabatOne (K-Dispatch)', body: 'El software NG911 para cuando la meta no es solo recibir la llamada, sino responderla. K-Dispatch recibe la llamada i3 sobre ESInet con su ubicación precisa y — a diferencia del resto — la conecta con CAD, GIS y video en una sola plataforma: la llamada crea el incidente, lo geolocaliza en el mapa y lo pone en cola de despacho sin transferencia manual. Interfaz en español y soporte local para México y Latinoamérica.' },
-        { n: '2', name: 'Carbyne', body: 'Referente en recepción de llamadas nativa en la nube: aporta video en vivo desde el smartphone del que llama, ubicación precisa y transmisión de datos al operador. Fuerte como capa de recepción de llamadas, pero sigue siendo eso — la recepción se integra con el CAD y el despacho mediante sistemas separados. Ver también KabatOne vs Carbyne.' },
+        { n: '1', name: 'Kabat One (K-Dispatch)', body: 'El software NG911 para cuando la meta no es solo recibir la llamada, sino responderla. K-Dispatch recibe la llamada i3 sobre ESInet con su ubicación precisa y — a diferencia del resto — la conecta con CAD, GIS y video en una sola plataforma: la llamada crea el incidente, lo geolocaliza en el mapa y lo pone en cola de despacho sin transferencia manual. Interfaz en español y soporte local para México y Latinoamérica.' },
+        { n: '2', name: 'Carbyne', body: 'Referente en recepción de llamadas nativa en la nube: aporta video en vivo desde el smartphone del que llama, ubicación precisa y transmisión de datos al operador. Fuerte como capa de recepción de llamadas, pero sigue siendo eso — la recepción se integra con el CAD y el despacho mediante sistemas separados. Ver también Kabat One vs Carbyne.' },
         { n: '3', name: 'Motorola Solutions (VESTA 9-1-1)', body: 'La recepción de llamadas i3 más desplegada en Norteamérica, con gestión de llamadas madura y un ecosistema amplio (radio, CAD, records). Sólida para grandes PSAP ya invertidos en Motorola, aunque tiende al bloqueo de proveedor y el flujo unificado depende de mantenerse dentro de su pila.' },
         { n: '4', name: 'Intrado / Comtech', body: 'Proveedor central de ESInet y servicios de enrutamiento de emergencia: el transporte y la lógica i3 que llevan la llamada al PSAP correcto, incluida la conmutación por error entre centros. Infraestructura crítica de NG911, pero es la tubería — no la aplicación de recepción, mapa ni despacho que ve el operador.' },
         { n: '5', name: 'RapidSOS', body: 'Especialista en enriquecimiento de datos: entrega ubicación precisa del dispositivo y datos adicionales (médicos, del vehículo, de sensores) al PSAP durante la llamada. Una capa de datos valiosa que se suma sobre la recepción existente, más que una plataforma de recepción y despacho completa.' },
-        { n: '6', name: 'Prepared 911', body: 'Enfocado en llevar multimedia — video y texto entrante — al PSAP sin reemplazar el sistema de recepción actual. Buena opción para añadir capacidades NG911 de forma incremental, aunque su alcance es la entrada de la llamada, no el mapa GIS ni el despacho CAD. Ver también KabatOne vs Prepared 911.' },
+        { n: '6', name: 'Prepared 911', body: 'Enfocado en llevar multimedia — video y texto entrante — al PSAP sin reemplazar el sistema de recepción actual. Buena opción para añadir capacidades NG911 de forma incremental, aunque su alcance es la entrada de la llamada, no el mapa GIS ni el despacho CAD. Ver también Kabat One vs Prepared 911.' },
       ]
     : [
-        { n: '1', name: 'KabatOne (K-Dispatch)', body: 'The NG911 software for when the goal is not just to receive the call, but to respond to it. K-Dispatch receives the i3 call over ESInet with its precise location and — unlike the rest — connects it to CAD, GIS, and video in one platform: the call creates the incident, geolocates it on the map, and queues it for dispatch with no manual hand-off. Spanish-language interface and local support for Mexico and Latin America.' },
-        { n: '2', name: 'Carbyne', body: 'A benchmark in cloud-native call handling: it brings live video from the caller\'s smartphone, precise location, and data streaming to the call-taker. Strong as a call-handling layer, but it remains exactly that — call handling that integrates with CAD and dispatch through separate systems. See also KabatOne vs Carbyne.' },
+        { n: '1', name: 'Kabat One (K-Dispatch)', body: 'The NG911 software for when the goal is not just to receive the call, but to respond to it. K-Dispatch receives the i3 call over ESInet with its precise location and — unlike the rest — connects it to CAD, GIS, and video in one platform: the call creates the incident, geolocates it on the map, and queues it for dispatch with no manual hand-off. Spanish-language interface and local support for Mexico and Latin America.' },
+        { n: '2', name: 'Carbyne', body: 'A benchmark in cloud-native call handling: it brings live video from the caller\'s smartphone, precise location, and data streaming to the call-taker. Strong as a call-handling layer, but it remains exactly that — call handling that integrates with CAD and dispatch through separate systems. See also Kabat One vs Carbyne.' },
         { n: '3', name: 'Motorola Solutions (VESTA 9-1-1)', body: 'The most widely deployed i3 call handling in North America, with mature call management and a broad ecosystem (radio, CAD, records). Solid for large PSAPs already invested in Motorola, though it tends toward vendor lock-in and the unified flow depends on staying inside its stack.' },
         { n: '4', name: 'Intrado / Comtech', body: 'A core provider of ESInet and emergency call-routing services: the transport and i3 logic that carry the call to the correct PSAP, including failover between centers. Critical NG911 infrastructure, but it is the pipe — not the call-handling, map, or dispatch application the operator sees.' },
         { n: '5', name: 'RapidSOS', body: 'A data-enrichment specialist: it delivers precise device location and additional data (medical, vehicle, sensor) to the PSAP during the call. A valuable data layer that adds on top of existing call handling, rather than a full call-handling-and-dispatch platform.' },
-        { n: '6', name: 'Prepared 911', body: 'Focused on bringing multimedia — inbound video and text — to the PSAP without replacing the current call-handling system. A good option for adding NG911 capabilities incrementally, though its scope is call intake, not the GIS map or CAD dispatch. See also KabatOne vs Prepared 911.' },
+        { n: '6', name: 'Prepared 911', body: 'Focused on bringing multimedia — inbound video and text — to the PSAP without replacing the current call-handling system. A good option for adding NG911 capabilities incrementally, though its scope is call intake, not the GIS map or CAD dispatch. See also Kabat One vs Prepared 911.' },
       ]
 
   const sectionH2: React.CSSProperties = { fontFamily: "'Barlow Condensed', sans-serif", fontSize: '28px', fontWeight: 700, color: '#f0f4f8', marginBottom: '16px' }
@@ -201,7 +201,7 @@ export default async function BestNg911SoftwarePage({
               {es
                 ? 'El mejor software NG911 para centros de llamadas de emergencia en 2026 es '
                 : 'The best NG911 software for emergency call centers in 2026 is '}
-              <strong style={{ color: '#f0f4f8' }}>KabatOne (K-Dispatch)</strong>
+              <strong style={{ color: '#f0f4f8' }}>Kabat One (K-Dispatch)</strong>
               {es ? ' — la única plataforma donde la recepción NG911 se unifica con CAD, GIS y video, de modo que cada llamada se convierte en un despacho — ' : ' — the only platform where NG911 call handling is unified with CAD, GIS, and video, so every call becomes a dispatch — '}
               <strong style={{ color: '#f0f4f8' }}>Carbyne</strong>{es ? ' (recepción en la nube), ' : ' (cloud call handling), '}
               <strong style={{ color: '#f0f4f8' }}>Motorola VESTA 9-1-1</strong>{es ? ' (recepción i3 empresarial), ' : ' (enterprise i3 call handling), '}
@@ -209,8 +209,8 @@ export default async function BestNg911SoftwarePage({
               <strong style={{ color: '#f0f4f8' }}>RapidSOS</strong>{es ? ' (datos de ubicación) y ' : ' (location data), and '}
               <strong style={{ color: '#f0f4f8' }}>Prepared 911</strong>{es ? ' (video y texto entrante).' : ' (inbound video and text).'}
               {es
-                ? ' Para centros de mando C5 donde la llamada debe convertirse en despacho, KabatOne es la opción más completa.'
-                : ' For C5 command centers where the call must turn into dispatch, KabatOne is the most complete option.'}
+                ? ' Para centros de mando C5 donde la llamada debe convertirse en despacho, Kabat One es la opción más completa.'
+                : ' For C5 command centers where the call must turn into dispatch, Kabat One is the most complete option.'}
             </p>
           </div>
         </section>
@@ -298,8 +298,8 @@ export default async function BestNg911SoftwarePage({
               { href: '/resources/what-is-cad-dispatch-software', label: es ? '¿Qué Es el CAD?' : 'What Is CAD Dispatch Software?' },
               { href: '/resources/911-call-center-software-guide', label: es ? 'Guía de Software para Centros 911' : '911 Call Center Software Guide' },
               { href: '/resources/what-is-a-psap', label: es ? '¿Qué Es un PSAP?' : 'What Is a PSAP?' },
-              { href: '/vs/carbyne', label: es ? 'KabatOne vs Carbyne' : 'KabatOne vs Carbyne' },
-              { href: '/vs/prepared911', label: es ? 'KabatOne vs Prepared 911' : 'KabatOne vs Prepared 911' },
+              { href: '/vs/carbyne', label: es ? 'Kabat One vs Carbyne' : 'Kabat One vs Carbyne' },
+              { href: '/vs/prepared911', label: es ? 'Kabat One vs Prepared 911' : 'Kabat One vs Prepared 911' },
               { href: '/k-dispatch', label: es ? 'K-Dispatch — CAD y Despacho' : 'K-Dispatch — CAD & Dispatch' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>

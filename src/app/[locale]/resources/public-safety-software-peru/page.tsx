@@ -51,11 +51,11 @@ export default async function PublicSafetySoftwarePeruPage({
     },
     {
       question: '¿Puede una plataforma unificada funcionar con las camaras existentes en municipios peruanos?',
-      answer: 'Si. Las plataformas modernas como KabatOne son compatibles con camaras ONVIF/RTSP de cualquier fabricante. Esto permite integrar la infraestructura de videovigilancia ya instalada sin reemplazar equipos, reduciendo costos y acelerando el despliegue.',
+      answer: 'Si. Las plataformas modernas como Kabat One son compatibles con camaras ONVIF/RTSP de cualquier fabricante. Esto permite integrar la infraestructura de videovigilancia ya instalada sin reemplazar equipos, reduciendo costos y acelerando el despliegue.',
     },
     {
-      question: '¿Como apoya KabatOne los despliegues en gobiernos peruanos?',
-      answer: 'La plataforma de KabatOne unifica el GPS del serenazgo, video de vigilancia, despacho de emergencias y gestion de incidentes en un solo entorno operativo. El sistema es desplegable sobre infraestructura existente y no requiere hardware propietario, lo que facilita la adopcion en municipios con presupuesto acotado.',
+      question: '¿Como apoya Kabat One los despliegues en gobiernos peruanos?',
+      answer: 'La plataforma de Kabat One unifica el GPS del serenazgo, video de vigilancia, despacho de emergencias y gestion de incidentes en un solo entorno operativo. El sistema es desplegable sobre infraestructura existente y no requiere hardware propietario, lo que facilita la adopcion en municipios con presupuesto acotado.',
     },
     {
       question: '¿Que presupuesto se requiere tipicamente para un centro de mando municipal en Peru?',
@@ -76,11 +76,11 @@ export default async function PublicSafetySoftwarePeruPage({
     },
     {
       question: 'Can a unified platform work with existing cameras in Peruvian municipalities?',
-      answer: 'Yes. Modern platforms like KabatOne are compatible with ONVIF/RTSP cameras from any manufacturer. This allows municipalities to integrate already-installed surveillance infrastructure without replacing equipment, reducing costs and accelerating deployment.',
+      answer: 'Yes. Modern platforms like Kabat One are compatible with ONVIF/RTSP cameras from any manufacturer. This allows municipalities to integrate already-installed surveillance infrastructure without replacing equipment, reducing costs and accelerating deployment.',
     },
     {
-      question: 'How does KabatOne support Peruvian government deployments?',
-      answer: "KabatOne's platform unifies serenazgo GPS, surveillance video, emergency dispatch, and incident management in a single operational environment. The system is deployable on existing infrastructure and requires no proprietary hardware, making adoption accessible for municipalities with constrained budgets.",
+      question: 'How does Kabat One support Peruvian government deployments?',
+      answer: "Kabat One's platform unifies serenazgo GPS, surveillance video, emergency dispatch, and incident management in a single operational environment. The system is deployable on existing infrastructure and requires no proprietary hardware, making adoption accessible for municipalities with constrained budgets.",
     },
     {
       question: 'What budget is typically needed for a municipal command center in Peru?',
@@ -558,8 +558,8 @@ export default async function PublicSafetySoftwarePeruPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio en Peru' : 'Transform Public Safety in Your Peruvian Municipality'}
           subtitle={es
-            ? 'Conoce como KabatOne integra serenazgo, videovigilancia, despacho de emergencias y gestion de incidentes en una sola plataforma operativa.'
-            : 'See how KabatOne unifies serenazgo GPS, surveillance video, emergency dispatch, and incident management into one operational platform.'}
+            ? 'Conoce como Kabat One integra serenazgo, videovigilancia, despacho de emergencias y gestion de incidentes en una sola plataforma operativa.'
+            : 'See how Kabat One unifies serenazgo GPS, surveillance video, emergency dispatch, and incident management into one operational platform.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

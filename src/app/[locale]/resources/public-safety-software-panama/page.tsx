@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwarePanamaPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el Sistema Nacional 911 de Panama?",
-      answer: "El Sistema Nacional Integrado de Operaciones de Seguridad (SENAFRONT, Policia Nacional, SINAPROC y Bomberos) se coordina a traves del Centro de Operaciones Conjuntas que atiende las llamadas 911. La Policia Nacional de Panama (~26,000 agentes) despliega unidades en 10 provincias y 5 comarcas indigenas. Una plataforma como KabatOne integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre la infraestructura existente.",
+      answer: "El Sistema Nacional Integrado de Operaciones de Seguridad (SENAFRONT, Policia Nacional, SINAPROC y Bomberos) se coordina a traves del Centro de Operaciones Conjuntas que atiende las llamadas 911. La Policia Nacional de Panama (~26,000 agentes) despliega unidades en 10 provincias y 5 comarcas indigenas. Una plataforma como Kabat One integra directamente con la infraestructura ONVIF/RTSP del 911, anadiendo CAD estructurado, GIS operacional y fusion de video sobre la infraestructura existente.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Panama?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwarePanamaPage({
     },
     {
       question: "¿Que es el SENAFRONT y como protege las fronteras de Panama?",
-      answer: "El Servicio Nacional de Fronteras (SENAFRONT, ~4,000 agentes) protege las fronteras terrestres de Panama, con enfasis en el tapon del Darien — la unica brecha del corredor terrestre entre Sudamerica y Norteamerica. Desde 2021, mas de 500,000 migrantes irregulares cruzan anualmente el Darien. SENAFRONT opera Estaciones de Recepcion Migratoria (ERM) y coordina con el Servicio Nacional de Migracion (SNM). KabatOne integra video de estaciones ERM, LPR en checkpoints y posiciones de unidades SENAFRONT en un solo entorno operativo.",
+      answer: "El Servicio Nacional de Fronteras (SENAFRONT, ~4,000 agentes) protege las fronteras terrestres de Panama, con enfasis en el tapon del Darien — la unica brecha del corredor terrestre entre Sudamerica y Norteamerica. Desde 2021, mas de 500,000 migrantes irregulares cruzan anualmente el Darien. SENAFRONT opera Estaciones de Recepcion Migratoria (ERM) y coordina con el Servicio Nacional de Migracion (SNM). Kabat One integra video de estaciones ERM, LPR en checkpoints y posiciones de unidades SENAFRONT en un solo entorno operativo.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video del Canal de Panama?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras de la Autoridad del Canal de Panama (ACP) en las esclusas de Miraflores, Gatun y Agua Clara, video del Puerto de Balboa y Colon, sistemas LPR del Corredor Sur y la Autopista Panama-Colon, y camaras del Aeropuerto Tocumen (PTY) se conectan directamente. El sistema es compatible con los corredores de fibra optica de Cable & Wireless Panama.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video del Canal de Panama?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras de la Autoridad del Canal de Panama (ACP) en las esclusas de Miraflores, Gatun y Agua Clara, video del Puerto de Balboa y Colon, sistemas LPR del Corredor Sur y la Autopista Panama-Colon, y camaras del Aeropuerto Tocumen (PTY) se conectan directamente. El sistema es compatible con los corredores de fibra optica de Cable & Wireless Panama.",
     },
     {
       question: "¿Que papel juega el Canal de Panama en la estrategia de seguridad nacional?",
       answer: "El Canal de Panama maneja el 6% del comercio maritimo mundial, con mas de 14,000 transitos anuales y $4,400 millones en ingresos por peajes. La ACP opera su propia Division de Seguridad del Canal. Las esclusas neopanamax de Agua Clara y Cocoli ampliaron la capacidad para buques de 14,000+ TEU. Proteger esta infraestructura critica requiere vigilancia perimetral, LPR, deteccion de intrusos y coordinacion con la Policia Nacional y el SENAN (Servicio Aeronaval Nacional).",
     },
     {
-      question: "¿Como se alinea KabatOne con la Ley de Contratacion Publica de Panama?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Ley 22 de Contratacion Publica y el portal PanamaCompra (gestionado por la DGCP). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de municipios, la Policia Nacional, la ACP, y el MINSEG. PanamaCompra esta abierto a empresas extranjeras con representante legal en Panama.",
+      question: "¿Como se alinea Kabat One con la Ley de Contratacion Publica de Panama?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Ley 22 de Contratacion Publica y el portal PanamaCompra (gestionado por la DGCP). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de municipios, la Policia Nacional, la ACP, y el MINSEG. PanamaCompra esta abierto a empresas extranjeras con representante legal en Panama.",
     },
   ] : [
     {
       question: "How does Panama's National 911 System work?",
-      answer: "The National Integrated Security Operations System (SENAFRONT, National Police, SINAPROC, and Fire Department) coordinates through the Joint Operations Center handling 911 calls. The Panama National Police (~26,000 officers) deploys units across 10 provinces and 5 indigenous comarcas. A unified platform like KabatOne integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
+      answer: "The National Integrated Security Operations System (SENAFRONT, National Police, SINAPROC, and Fire Department) coordinates through the Joint Operations Center handling 911 calls. The Panama National Police (~26,000 officers) deploys units across 10 provinces and 5 indigenous comarcas. A unified platform like Kabat One integrates directly with the existing ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of cameras already installed.",
     },
     {
       question: "How does Panama fund public safety technology?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwarePanamaPage({
     },
     {
       question: "What is SENAFRONT and how does it protect Panama's borders?",
-      answer: "The National Border Service (SENAFRONT, ~4,000 officers) protects Panama's land borders, with emphasis on the Darien Gap — the only break in the land corridor between South and North America. Since 2021, over 500,000 irregular migrants cross the Darien annually. SENAFRONT operates Migratory Reception Stations (ERM) and coordinates with the National Migration Service (SNM). KabatOne integrates ERM station video, LPR at checkpoints, and SENAFRONT unit positions in a single operational environment.",
+      answer: "The National Border Service (SENAFRONT, ~4,000 officers) protects Panama's land borders, with emphasis on the Darien Gap — the only break in the land corridor between South and North America. Since 2021, over 500,000 irregular migrants cross the Darien annually. SENAFRONT operates Migratory Reception Stations (ERM) and coordinates with the National Migration Service (SNM). Kabat One integrates ERM station video, LPR at checkpoints, and SENAFRONT unit positions in a single operational environment.",
     },
     {
-      question: "Can KabatOne integrate with Panama Canal video infrastructure?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Panama Canal Authority (ACP) cameras at Miraflores, Gatun, and Agua Clara locks, Port of Balboa and Colon video, LPR readers on the Corredor Sur and Panama-Colon Highway, and Tocumen Airport (PTY) cameras connect directly. The platform is compatible with Cable & Wireless Panama fiber optic corridors.",
+      question: "Can Kabat One integrate with Panama Canal video infrastructure?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Panama Canal Authority (ACP) cameras at Miraflores, Gatun, and Agua Clara locks, Port of Balboa and Colon video, LPR readers on the Corredor Sur and Panama-Colon Highway, and Tocumen Airport (PTY) cameras connect directly. The platform is compatible with Cable & Wireless Panama fiber optic corridors.",
     },
     {
       question: "What role does the Panama Canal play in national security strategy?",
       answer: "The Panama Canal handles 6% of global maritime trade, with over 14,000 annual transits and $4.4 billion in toll revenues. The ACP operates its own Canal Security Division. The Neopanamax locks at Agua Clara and Cocoli expanded capacity for 14,000+ TEU vessels. Protecting this critical infrastructure requires perimeter surveillance, LPR, intrusion detection, and coordination with the National Police and SENAN (National Aeronaval Service).",
     },
     {
-      question: "How does KabatOne align with Panama's Public Procurement Law?",
-      answer: "KabatOne is marketed through local distributors and integrators under Public Procurement Law 22 and the PanamaCompra portal (managed by DGCP). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities, the National Police, the ACP, and MINSEG. PanamaCompra is open to foreign firms with legal representation in Panama.",
+      question: "How does Kabat One align with Panama's Public Procurement Law?",
+      answer: "Kabat One is marketed through local distributors and integrators under Public Procurement Law 22 and the PanamaCompra portal (managed by DGCP). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipalities, the National Police, the ACP, and MINSEG. PanamaCompra is open to foreign firms with legal representation in Panama.",
     },
   ]
 
@@ -565,8 +565,8 @@ export default async function PublicSafetySoftwarePanamaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica en Tu Municipio o Provincia de Panama' : 'Transform Public Safety in Your Panamanian Municipality or Province'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias 911, GIS y gestion de incidentes en una sola plataforma operativa para instituciones panamenas — desde la zona del Canal y Ciudad de Panama hasta los puestos fronterizos del Darien.'
-            : 'See how KabatOne unifies video surveillance, 911 emergency dispatch, GIS, and incident management into one operational platform for Panamanian institutions — from the Canal Zone and Panama City to Darien border posts.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias 911, GIS y gestion de incidentes en una sola plataforma operativa para instituciones panamenas — desde la zona del Canal y Ciudad de Panama hasta los puestos fronterizos del Darien.'
+            : 'See how Kabat One unifies video surveillance, 911 emergency dispatch, GIS, and incident management into one operational platform for Panamanian institutions — from the Canal Zone and Panama City to Darien border posts.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

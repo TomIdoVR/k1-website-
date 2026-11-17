@@ -50,16 +50,16 @@ export default async function PublicSafetySoftwareParaguayPage({
       answer: "La Secretaria Nacional Antidrogas (SENAD) es el organismo especializado en la lucha contra el narcotrafico y el crimen organizado en Paraguay. Paraguay es un corredor clave para la cocaina sudamericana y la marihuana del triangulo PBC (Paraguay-Brasil-Argentina). La SENAD coordina operaciones con la Policia Nacional, el Ejercito y la DEA norteamericana. Cualquier plataforma de seguridad publica en Paraguay debe integrar la coordinacion SENAD-Policia Nacional-Ministerio del Interior para operaciones antidroga y control fronterizo del Rio Pilcomayo y el Rio Paraguay.",
     },
     {
-      question: "¿Como puede KabatOne integrarse con las camaras CCTV existentes en Paraguay?",
-      answer: "KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. El sistema de videovigilancia de Asuncion (camaras de la Municipalidad y el Ministerio del Interior), las camaras en Ciudad del Este (la tercera zona franca mas grande del mundo), Encarnacion, Pedro Juan Caballero (frontera con Brasil/corredor narco), el Puerto de Asuncion (Administracion Nacional de Navegacion y Puertos — ANNP) y el Aeropuerto Internacional Silvio Pettirossi (ASU) se conectan directamente sin cambiar infraestructura.",
+      question: "¿Como puede Kabat One integrarse con las camaras CCTV existentes en Paraguay?",
+      answer: "Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. El sistema de videovigilancia de Asuncion (camaras de la Municipalidad y el Ministerio del Interior), las camaras en Ciudad del Este (la tercera zona franca mas grande del mundo), Encarnacion, Pedro Juan Caballero (frontera con Brasil/corredor narco), el Puerto de Asuncion (Administracion Nacional de Navegacion y Puertos — ANNP) y el Aeropuerto Internacional Silvio Pettirossi (ASU) se conectan directamente sin cambiar infraestructura.",
     },
     {
-      question: "¿Como aborda KabatOne el narcotrafico y el crimen organizado en Paraguay?",
-      answer: "Paraguay es el mayor productor de marihuana de Sudamerica y un corredor clave para la cocaina. Los departamentos de San Pedro, Amambay (Pedro Juan Caballero) y Canindeyu concentran la mayor actividad del narcotrafico. KabatOne provee el mapa GIS compartido de unidades de la Policia Nacional y la SENAD, LPR para control de vehiculos en rutas del narcotrafico, analitico de video para zonas de alta incidencia y despacho CAD que integra el 911 con las comisarias departamentales y los puestos fronterizos del Rio Pilcomayo y Rio Apa.",
+      question: "¿Como aborda Kabat One el narcotrafico y el crimen organizado en Paraguay?",
+      answer: "Paraguay es el mayor productor de marihuana de Sudamerica y un corredor clave para la cocaina. Los departamentos de San Pedro, Amambay (Pedro Juan Caballero) y Canindeyu concentran la mayor actividad del narcotrafico. Kabat One provee el mapa GIS compartido de unidades de la Policia Nacional y la SENAD, LPR para control de vehiculos en rutas del narcotrafico, analitico de video para zonas de alta incidencia y despacho CAD que integra el 911 con las comisarias departamentales y los puestos fronterizos del Rio Pilcomayo y Rio Apa.",
     },
     {
-      question: "¿Como se alinea KabatOne con el marco de adquisiciones de Paraguay (Ley 2051/03 DNCP)?",
-      answer: "KabatOne opera a traves de distribuidores e integradores locales conforme a la Ley 2051/03 de Contrataciones Publicas y el portal contrataciones.gov.py de la DNCP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio del Interior, Gobernaciones departamentales y la Municipalidad de Asuncion. Las especificaciones tecnicas abiertas facilitan la inclusion en pliegos. La Ley 6534/20 de Proteccion de Datos Personales (SENATIC) rige el manejo de datos en sistemas publicos.",
+      question: "¿Como se alinea Kabat One con el marco de adquisiciones de Paraguay (Ley 2051/03 DNCP)?",
+      answer: "Kabat One opera a traves de distribuidores e integradores locales conforme a la Ley 2051/03 de Contrataciones Publicas y el portal contrataciones.gov.py de la DNCP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio del Interior, Gobernaciones departamentales y la Municipalidad de Asuncion. Las especificaciones tecnicas abiertas facilitan la inclusion en pliegos. La Ley 6534/20 de Proteccion de Datos Personales (SENATIC) rige el manejo de datos en sistemas publicos.",
     },
   ] : [
     {
@@ -75,16 +75,16 @@ export default async function PublicSafetySoftwareParaguayPage({
       answer: "The National Anti-Drug Secretariat (SENAD) is the specialized agency for fighting narco-trafficking and organized crime in Paraguay. Paraguay is a key corridor for South American cocaine and marijuana from the PBC triangle (Paraguay-Brazil-Argentina). SENAD coordinates operations with the National Police, Army, and US DEA. Any public safety platform in Paraguay must integrate SENAD-National Police-Ministry of Interior coordination for anti-drug operations and border control along the Pilcomayo and Paraguay rivers.",
     },
     {
-      question: "How can KabatOne integrate with existing CCTV infrastructure in Paraguay?",
-      answer: "KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Asuncion's video surveillance system (cameras from the Municipality and Ministry of Interior), cameras in Ciudad del Este (the world's third-largest free trade zone), Encarnacion, Pedro Juan Caballero (Brazil border/narco corridor), the Port of Asuncion (National Navigation and Ports Administration — ANNP), and Silvio Pettirossi International Airport (ASU) connect directly without changing infrastructure.",
+      question: "How can Kabat One integrate with existing CCTV infrastructure in Paraguay?",
+      answer: "Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Asuncion's video surveillance system (cameras from the Municipality and Ministry of Interior), cameras in Ciudad del Este (the world's third-largest free trade zone), Encarnacion, Pedro Juan Caballero (Brazil border/narco corridor), the Port of Asuncion (National Navigation and Ports Administration — ANNP), and Silvio Pettirossi International Airport (ASU) connect directly without changing infrastructure.",
     },
     {
-      question: "How does KabatOne address narco-trafficking and organized crime in Paraguay?",
-      answer: "Paraguay is South America's largest marijuana producer and a key corridor for cocaine. The departments of San Pedro, Amambay (Pedro Juan Caballero), and Canindeyu concentrate the most narco-trafficking activity. KabatOne provides the shared GIS map of National Police and SENAD units, LPR for vehicle control on narco-trafficking routes, video analytics for high-incidence zones, and CAD dispatch integrating 911 with departmental police stations and border posts on the Pilcomayo and Apa rivers.",
+      question: "How does Kabat One address narco-trafficking and organized crime in Paraguay?",
+      answer: "Paraguay is South America's largest marijuana producer and a key corridor for cocaine. The departments of San Pedro, Amambay (Pedro Juan Caballero), and Canindeyu concentrate the most narco-trafficking activity. Kabat One provides the shared GIS map of National Police and SENAD units, LPR for vehicle control on narco-trafficking routes, video analytics for high-incidence zones, and CAD dispatch integrating 911 with departmental police stations and border posts on the Pilcomayo and Apa rivers.",
     },
     {
-      question: "How does KabatOne align with Paraguay's procurement framework (Law 2051/03 DNCP)?",
-      answer: "KabatOne operates through local distributors and integrators under Law 2051/03 on Public Contracting and the DNCP contrataciones.gov.py portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, departmental government, and Municipality of Asuncion budgets. Open technical specifications facilitate inclusion in procurement documents. Law 6534/20 on Personal Data Protection (SENATIC) governs data handling in public systems.",
+      question: "How does Kabat One align with Paraguay's procurement framework (Law 2051/03 DNCP)?",
+      answer: "Kabat One operates through local distributors and integrators under Law 2051/03 on Public Contracting and the DNCP contrataciones.gov.py portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, departmental government, and Municipality of Asuncion budgets. Open technical specifications facilitate inclusion in procurement documents. Law 6534/20 on Personal Data Protection (SENATIC) governs data handling in public systems.",
     },
   ]
 
@@ -198,8 +198,8 @@ export default async function PublicSafetySoftwareParaguayPage({
             color: 'var(--dim)', maxWidth: '720px', margin: '0 0 32px',
           }}>
             {es
-              ? 'Paraguay opera con ~25,000 efectivos de la Policia Nacional en 17 departamentos y enfrenta el desafio del narcotrafico en el triangulo PBC. KabatOne unifica videovigilancia, despacho CAD, GIS operacional y coordinacion SENAD en una sola plataforma — desde Ciudad del Este hasta los rios fronterizos.'
-              : 'Paraguay operates with ~25,000 National Police officers across 17 departments and faces the challenge of narco-trafficking in the PBC triangle. KabatOne unifies video surveillance, CAD dispatch, operational GIS, and SENAD coordination on one platform — from Ciudad del Este to the border rivers.'}
+              ? 'Paraguay opera con ~25,000 efectivos de la Policia Nacional en 17 departamentos y enfrenta el desafio del narcotrafico en el triangulo PBC. Kabat One unifica videovigilancia, despacho CAD, GIS operacional y coordinacion SENAD en una sola plataforma — desde Ciudad del Este hasta los rios fronterizos.'
+              : 'Paraguay operates with ~25,000 National Police officers across 17 departments and faces the challenge of narco-trafficking in the PBC triangle. Kabat One unifies video surveillance, CAD dispatch, operational GIS, and SENAD coordination on one platform — from Ciudad del Este to the border rivers.'}
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default async function PublicSafetySoftwareParaguayPage({
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--dim)', fontWeight: 500 }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#ef4444', fontWeight: 500 }}>{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</th>
-                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -264,7 +264,7 @@ export default async function PublicSafetySoftwareParaguayPage({
             fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
             fontSize: 'clamp(22px, 3vw, 30px)', color: 'var(--white)', margin: '0 0 28px',
           }}>
-            {es ? 'Como Funciona KabatOne en Paraguay' : 'How KabatOne Works in Paraguay'}
+            {es ? 'Como Funciona Kabat One en Paraguay' : 'How Kabat One Works in Paraguay'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {workflowSteps.map((step, i) => (
@@ -343,7 +343,7 @@ export default async function PublicSafetySoftwareParaguayPage({
         <div style={{ marginTop: '72px' }}>
           <CTASection
             es={es}
-            h2={es ? 'Conozca KabatOne para Paraguay' : 'See KabatOne for Paraguay'}
+            h2={es ? 'Conozca Kabat One para Paraguay' : 'See Kabat One for Paraguay'}
             subtitle={es
               ? 'Policia Nacional, SENAD y coordinacion antidroga en una sola plataforma. Solicite una demostracion con escenarios reales.'
               : 'National Police, SENAD, and anti-drug coordination on one platform. Request a demo with real scenarios.'}

@@ -26,7 +26,7 @@ export default async function PrivacyPage({
     {
       id: 'scope',
       heading: 'Alcance de este Aviso',
-      body: 'Kabat One, S.A. de C.V. (en adelante "KabatOne"), antes conocida como CityShob Software LTD., con domicilio en Av. Ejército Nacional Mexicano 57, Piso 4, Ciudad de México, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, la aplicación Wang\\Ica, las plataformas C-Share y C-React, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, aplicaciones, plataformas, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.',
+      body: 'Kabat One, S.A. de C.V. (en adelante "Kabat One"), antes conocida como CityShob Software LTD., con domicilio en Av. Ejército Nacional Mexicano 57, Piso 4, Ciudad de México, es responsable del tratamiento de tus datos personales. Este aviso aplica a la información recopilada a través de nuestro sitio web, la aplicación Wang\\Ica, las plataformas C-Share y C-React, correos electrónicos, mensajes de texto, formularios y servicios. Al utilizar el sitio web, aplicaciones, plataformas, responder a nuestras comunicaciones o no darte de baja de ellas, aceptas los términos de este aviso de privacidad.',
     },
     {
       id: 'data-collected',
@@ -46,7 +46,7 @@ export default async function PrivacyPage({
       id: 'purposes',
       heading: 'Finalidades del Tratamiento',
       bullets: [
-        'Personalización de los servicios ofrecidos a través de KabatOne, Wang\\Ica, C-Share y C-React.',
+        'Personalización de los servicios ofrecidos a través de Kabat One, Wang\\Ica, C-Share y C-React.',
         'Optimización del sitio web y aplicaciones en función de la retroalimentación recibida.',
         'Procesamiento de pedidos y detección de fraudes.',
         'Administración de concursos y promociones.',
@@ -57,7 +57,7 @@ export default async function PrivacyPage({
     {
       id: 'social-media',
       heading: 'Redes Sociales',
-      body: 'Las plataformas de redes sociales son ajenas a KabatOne y no están reguladas por este aviso de privacidad. Te recomendamos revisar las políticas de privacidad de cada plataforma que utilices.',
+      body: 'Las plataformas de redes sociales son ajenas a Kabat One y no están reguladas por este aviso de privacidad. Te recomendamos revisar las políticas de privacidad de cada plataforma que utilices.',
     },
     {
       id: 'cookies',
@@ -67,7 +67,7 @@ export default async function PrivacyPage({
     {
       id: 'security',
       heading: 'Protección de Datos',
-      body: 'KabatOne implementa medidas de seguridad administrativas, técnicas y físicas para proteger tus datos personales. La información financiera se transmite mediante tecnología Secure Socket Layer (SSL) y se encuentra encriptada en todo momento.',
+      body: 'Kabat One implementa medidas de seguridad administrativas, técnicas y físicas para proteger tus datos personales. La información financiera se transmite mediante tecnología Secure Socket Layer (SSL) y se encuentra encriptada en todo momento.',
     },
     {
       id: 'third-parties',
@@ -82,7 +82,7 @@ export default async function PrivacyPage({
     {
       id: 'minors',
       heading: 'Protección de Menores',
-      body: 'KabatOne cumple con la legislación aplicable en materia de protección de menores, incluyendo COPPA. No recopilamos intencionalmente datos personales de menores de 13 años.',
+      body: 'Kabat One cumple con la legislación aplicable en materia de protección de menores, incluyendo COPPA. No recopilamos intencionalmente datos personales de menores de 13 años.',
     },
     {
       id: 'jurisdiction',
@@ -92,7 +92,7 @@ export default async function PrivacyPage({
     {
       id: 'updates',
       heading: 'Modificaciones',
-      body: 'KabatOne se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en los sitios web y servicios oficiales de KabatOne, incluyendo Wang\\Ica, C-Share y C-React. Te recomendamos revisar esta página periódicamente.',
+      body: 'Kabat One se reserva el derecho de actualizar este aviso de privacidad en cualquier momento. Los cambios se publicarán en los sitios web y servicios oficiales de Kabat One, incluyendo Wang\\Ica, C-Share y C-React. Te recomendamos revisar esta página periódicamente.',
     },
     {
       id: 'contact',
@@ -107,7 +107,7 @@ export default async function PrivacyPage({
     {
       id: 'scope',
       heading: 'Scope of This Notice',
-      body: 'Kabat One, S.A. de C.V. ("KabatOne"), formerly known as CityShob Software LTD., located at Av. Ejército Nacional Mexicano 57, Floor 4, Mexico City, is responsible for the processing of your personal data. This notice applies to information gathered through our website, the Wang\\Ica application, the C-Share and C-React platforms, emails, text messages, forms, and services. By using the website, applications, platforms, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.',
+      body: 'Kabat One, S.A. de C.V. ("Kabat One"), formerly known as CityShob Software LTD., located at Av. Ejército Nacional Mexicano 57, Floor 4, Mexico City, is responsible for the processing of your personal data. This notice applies to information gathered through our website, the Wang\\Ica application, the C-Share and C-React platforms, emails, text messages, forms, and services. By using the website, applications, platforms, responding to our communications, or choosing not to unsubscribe, you accept the terms of this privacy notice.',
     },
     {
       id: 'data-collected',
@@ -127,7 +127,7 @@ export default async function PrivacyPage({
       id: 'purposes',
       heading: 'Purposes of Processing',
       bullets: [
-        'Personalization of services offered through KabatOne, Wang\\Ica, C-Share, and C-React.',
+        'Personalization of services offered through Kabat One, Wang\\Ica, C-Share, and C-React.',
         'Website and application optimization based on feedback received.',
         'Order processing and fraud detection.',
         'Contest and promotion management.',
@@ -138,7 +138,7 @@ export default async function PrivacyPage({
     {
       id: 'social-media',
       heading: 'Social Media',
-      body: 'Social media platforms are unrelated to KabatOne and are not governed by this privacy notice. We recommend reviewing the privacy policies of each platform you use.',
+      body: 'Social media platforms are unrelated to Kabat One and are not governed by this privacy notice. We recommend reviewing the privacy policies of each platform you use.',
     },
     {
       id: 'cookies',
@@ -148,7 +148,7 @@ export default async function PrivacyPage({
     {
       id: 'security',
       heading: 'Data Protection',
-      body: 'KabatOne implements administrative, technical, and physical security measures to protect your personal data. Financial information is transmitted using Secure Socket Layer (SSL) technology and is encrypted at all times.',
+      body: 'Kabat One implements administrative, technical, and physical security measures to protect your personal data. Financial information is transmitted using Secure Socket Layer (SSL) technology and is encrypted at all times.',
     },
     {
       id: 'third-parties',
@@ -163,7 +163,7 @@ export default async function PrivacyPage({
     {
       id: 'minors',
       heading: 'Protection of Minors',
-      body: 'KabatOne complies with applicable legislation on the protection of minors, including COPPA. We do not intentionally collect personal data from children under 13 years of age.',
+      body: 'Kabat One complies with applicable legislation on the protection of minors, including COPPA. We do not intentionally collect personal data from children under 13 years of age.',
     },
     {
       id: 'jurisdiction',
@@ -173,7 +173,7 @@ export default async function PrivacyPage({
     {
       id: 'updates',
       heading: 'Modifications',
-      body: 'KabatOne reserves the right to update this privacy notice at any time. Changes will be posted on KabatOne\'s official websites and services, including Wang\\Ica, C-Share, and C-React. We recommend reviewing this page periodically.',
+      body: 'Kabat One reserves the right to update this privacy notice at any time. Changes will be posted on Kabat One\'s official websites and services, including Wang\\Ica, C-Share, and C-React. We recommend reviewing this page periodically.',
     },
     {
       id: 'contact',

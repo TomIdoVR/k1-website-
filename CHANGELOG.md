@@ -1,4 +1,4 @@
-## [v2.447] – 2026-11-16 — Playwright smoke tests for the live site
+## [v2.448] – 2026-11-17 — Playwright smoke tests for the live site
 
 **Added**
 - **`e2e/` Playwright suite (49 tests, about a minute).** The only automated check was
@@ -23,6 +23,14 @@
   staging bug: `<html lang>` stays `en` after a client-side language switch. `main` is not
   affected (it serves `lang` server-side); 49/49 pass against production from this branch.
 - No site code changed; nothing here ships to visitors.
+## [v2.447] – 2026-11-17 — Brand name is "Kabat One" site-wide; K-Dispatch no longer quotes an implementation duration
+**Changed**
+- Canonical written brand name is now "Kabat One" (Omer, 2026-11-17), matching the logo and the legal entity "Kabat One, S.A. de C.V.". Replaced "KabatOne" with "Kabat One" in all of `src/` (272 files: page copy, EN/ES metadata titles and descriptions, schema, alt text, comments) plus `public/llms.txt`, `public/site.webmanifest` and `public/ebook/siloed-response-en.html`. The domain kabatone.com is unchanged.
+- `src/lib/schema.ts`: Organization schema keeps `name: 'Kabat One'` and adds `alternateName: ['KabatOne', 'K1']`, so Google and AI answers can still match the old one-word spelling to the same entity.
+- `src/components/hero-lab/sol-kdispatch.ts`: the "How long does it take to deploy K-Dispatch?" FAQ (EN/ES) no longer quotes "8 to 16 weeks". It leads with fast setup on one platform and a phased rollout with parallel operation. No implementation duration is quoted publicly.
+
+**Not changed**
+- The two PDFs in `public/downloads/` still say "KabatOne" and need to be re-exported from their source. Scripts, docs and the SEO archive keep the old spelling (not served to visitors).
 
 ## [v2.446] – 2026-11-16 — Weekly SEO + GEO report 2026-11-16; Monday jobs blocked by GitHub access and API credit
 **Added**

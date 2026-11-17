@@ -50,16 +50,16 @@ export default async function PublicSafetySoftwareSurinamePage({
       answer: "Surinam es uno de los principales puntos de transito de la cocaina de Sudamerica hacia Europa, debido a su posicion geografica (frontera con Brasil y Guyana) y los lazos historicos con los Paises Bajos. El Puerto de Paramaribo y el Aeropuerto Internacional Johan Adolf Pengel (PBM) son puntos de salida de cargamentos de cocaina camuflados en contenedores de exportacion de banano, arroz y madera. Europol, la DEA, la Guardia Costera neerlandesa y el KLPD colaboran con el KPS en operaciones de interdiccion. Cualquier plataforma de seguridad publica debe integrar el video portuario y aeroportuario con el despacho policial.",
     },
     {
-      question: "¿Como puede KabatOne integrarse con las camaras CCTV existentes en Surinam?",
-      answer: "KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del sistema de videovigilancia de Paramaribo (KPS y Ministerie van Binnenlandse Zaken), las camaras del Puerto de Paramaribo (NV Haven Suriname), el Aeropuerto Internacional Johan Adolf Pengel (PBM), las instalaciones de Staatsolie Maatschappij Suriname (refineria y terminales de petroleo en Saramacca) y las operaciones mineras de Newmont Merian y Rosebel (IAMGOLD) se conectan directamente sin cambiar infraestructura.",
+      question: "¿Como puede Kabat One integrarse con las camaras CCTV existentes en Surinam?",
+      answer: "Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del sistema de videovigilancia de Paramaribo (KPS y Ministerie van Binnenlandse Zaken), las camaras del Puerto de Paramaribo (NV Haven Suriname), el Aeropuerto Internacional Johan Adolf Pengel (PBM), las instalaciones de Staatsolie Maatschappij Suriname (refineria y terminales de petroleo en Saramacca) y las operaciones mineras de Newmont Merian y Rosebel (IAMGOLD) se conectan directamente sin cambiar infraestructura.",
     },
     {
-      question: "¿Como puede KabatOne apoyar el control fronterizo de Surinam con Brasil, Guyana y la Guyana Francesa?",
-      answer: "Surinam comparte fronteras terrestres con Brasil (595 km — Rio Marowijne/Maroni), Guyana (600 km — Rio Corentijn) y la Guyana Francesa (520 km). Las fronteras fluviales son los principales vectores de transito de cocaina, oro ilegal y migrantes irregulares. KabatOne integra camaras en los puestos fronterizos fluviales con el GIS operacional del KPS, permitiendo que los officiales vean en tiempo real que embarcaciones y vehiculos cruzan los rios fronterizos y despachen unidades de respuesta desde el mismo mapa operativo.",
+      question: "¿Como puede Kabat One apoyar el control fronterizo de Surinam con Brasil, Guyana y la Guyana Francesa?",
+      answer: "Surinam comparte fronteras terrestres con Brasil (595 km — Rio Marowijne/Maroni), Guyana (600 km — Rio Corentijn) y la Guyana Francesa (520 km). Las fronteras fluviales son los principales vectores de transito de cocaina, oro ilegal y migrantes irregulares. Kabat One integra camaras en los puestos fronterizos fluviales con el GIS operacional del KPS, permitiendo que los officiales vean en tiempo real que embarcaciones y vehiculos cruzan los rios fronterizos y despachen unidades de respuesta desde el mismo mapa operativo.",
     },
     {
-      question: "¿Como se alinea KabatOne con el marco de adquisiciones de Surinam (Wet Financieel Beheer)?",
-      answer: "KabatOne opera a traves de distribuidores e integradores locales conforme a la Wet Financieel Beheer 2015 y el portal e-GP del Ministerie van Financien. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerie van Binnenlandse Zaken, los distritos y las empresas publicas (Staatsolie, SLM — Surinam Airways). Surinam no cuenta con una ley de proteccion de datos equivalente al GDPR — KabatOne provee controles de acceso robustos para el manejo de datos de video y biometria.",
+      question: "¿Como se alinea Kabat One con el marco de adquisiciones de Surinam (Wet Financieel Beheer)?",
+      answer: "Kabat One opera a traves de distribuidores e integradores locales conforme a la Wet Financieel Beheer 2015 y el portal e-GP del Ministerie van Financien. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerie van Binnenlandse Zaken, los distritos y las empresas publicas (Staatsolie, SLM — Surinam Airways). Surinam no cuenta con una ley de proteccion de datos equivalente al GDPR — Kabat One provee controles de acceso robustos para el manejo de datos de video y biometria.",
     },
   ] : [
     {
@@ -75,16 +75,16 @@ export default async function PublicSafetySoftwareSurinamePage({
       answer: "Suriname is one of the main transit points for South American cocaine to Europe, due to its geographic position (border with Brazil and Guyana) and historical ties with the Netherlands. The Port of Paramaribo and Johan Adolf Pengel International Airport (PBM) are departure points for cocaine shipments camouflaged in export containers of bananas, rice, and timber. Europol, DEA, Dutch Coast Guard, and KLPD collaborate with KPS in interdiction operations. Any public safety platform must integrate port and airport video with police dispatch.",
     },
     {
-      question: "How can KabatOne integrate with existing CCTV infrastructure in Suriname?",
-      answer: "KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Cameras from Paramaribo's video surveillance system (KPS and Ministerie van Binnenlandse Zaken), Port of Paramaribo cameras (NV Haven Suriname), Johan Adolf Pengel International Airport (PBM), Staatsolie Maatschappij Suriname facilities (refinery and oil terminals in Saramacca), and Newmont Merian and Rosebel (IAMGOLD) mining operations connect directly without changing infrastructure.",
+      question: "How can Kabat One integrate with existing CCTV infrastructure in Suriname?",
+      answer: "Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Cameras from Paramaribo's video surveillance system (KPS and Ministerie van Binnenlandse Zaken), Port of Paramaribo cameras (NV Haven Suriname), Johan Adolf Pengel International Airport (PBM), Staatsolie Maatschappij Suriname facilities (refinery and oil terminals in Saramacca), and Newmont Merian and Rosebel (IAMGOLD) mining operations connect directly without changing infrastructure.",
     },
     {
-      question: "How can KabatOne support Suriname's border control with Brazil, Guyana, and French Guiana?",
-      answer: "Suriname shares land borders with Brazil (595 km — Marowijne/Maroni River), Guyana (600 km — Corentijn River), and French Guiana (520 km). River borders are the main transit vectors for cocaine, illegal gold, and irregular migrants. KabatOne integrates cameras at river border posts with the KPS operational GIS, allowing officers to see in real time which boats and vehicles cross the border rivers and dispatch response units from the same operational map.",
+      question: "How can Kabat One support Suriname's border control with Brazil, Guyana, and French Guiana?",
+      answer: "Suriname shares land borders with Brazil (595 km — Marowijne/Maroni River), Guyana (600 km — Corentijn River), and French Guiana (520 km). River borders are the main transit vectors for cocaine, illegal gold, and irregular migrants. Kabat One integrates cameras at river border posts with the KPS operational GIS, allowing officers to see in real time which boats and vehicles cross the border rivers and dispatch response units from the same operational map.",
     },
     {
-      question: "How does KabatOne align with Suriname's procurement framework (Wet Financieel Beheer)?",
-      answer: "KabatOne operates through local distributors and integrators under the Wet Financieel Beheer 2015 and the Ministerie van Financien e-GP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministerie van Binnenlandse Zaken, district, and state enterprise (Staatsolie, SLM — Surinam Airways) budgets. Suriname does not have a GDPR-equivalent data protection law — KabatOne provides robust access controls for video and biometric data handling.",
+      question: "How does Kabat One align with Suriname's procurement framework (Wet Financieel Beheer)?",
+      answer: "Kabat One operates through local distributors and integrators under the Wet Financieel Beheer 2015 and the Ministerie van Financien e-GP portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministerie van Binnenlandse Zaken, district, and state enterprise (Staatsolie, SLM — Surinam Airways) budgets. Suriname does not have a GDPR-equivalent data protection law — Kabat One provides robust access controls for video and biometric data handling.",
     },
   ]
 
@@ -198,8 +198,8 @@ export default async function PublicSafetySoftwareSurinamePage({
             color: 'var(--dim)', maxWidth: '720px', margin: '0 0 32px',
           }}>
             {es
-              ? 'Surinam opera con ~2,500 efectivos del KPS en 10 distritos y enfrenta el desafio del narcotrafico portuario hacia Europa. KabatOne unifica videovigilancia, despacho CAD, GIS operacional y control fronterizo fluvial en una sola plataforma — desde el Puerto de Paramaribo hasta los rios Marowijne y Corentijn.'
-              : 'Suriname operates with ~2,500 KPS officers across 10 districts and faces the challenge of port-based narco-trafficking to Europe. KabatOne unifies video surveillance, CAD dispatch, operational GIS, and river border control on one platform — from the Port of Paramaribo to the Marowijne and Corentijn rivers.'}
+              ? 'Surinam opera con ~2,500 efectivos del KPS en 10 distritos y enfrenta el desafio del narcotrafico portuario hacia Europa. Kabat One unifica videovigilancia, despacho CAD, GIS operacional y control fronterizo fluvial en una sola plataforma — desde el Puerto de Paramaribo hasta los rios Marowijne y Corentijn.'
+              : 'Suriname operates with ~2,500 KPS officers across 10 districts and faces the challenge of port-based narco-trafficking to Europe. Kabat One unifies video surveillance, CAD dispatch, operational GIS, and river border control on one platform — from the Port of Paramaribo to the Marowijne and Corentijn rivers.'}
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default async function PublicSafetySoftwareSurinamePage({
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--dim)', fontWeight: 500 }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#ef4444', fontWeight: 500 }}>{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</th>
-                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -264,7 +264,7 @@ export default async function PublicSafetySoftwareSurinamePage({
             fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
             fontSize: 'clamp(22px, 3vw, 30px)', color: 'var(--white)', margin: '0 0 28px',
           }}>
-            {es ? 'Como Funciona KabatOne en Surinam' : 'How KabatOne Works in Suriname'}
+            {es ? 'Como Funciona Kabat One en Surinam' : 'How Kabat One Works in Suriname'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {workflowSteps.map((step, i) => (
@@ -343,7 +343,7 @@ export default async function PublicSafetySoftwareSurinamePage({
         <div style={{ marginTop: '72px' }}>
           <CTASection
             es={es}
-            h2={es ? 'Conozca KabatOne para Surinam' : 'See KabatOne for Suriname'}
+            h2={es ? 'Conozca Kabat One para Surinam' : 'See Kabat One for Suriname'}
             subtitle={es
               ? 'KPS, control portuario antidroga y fronteras fluviales en una sola plataforma. Solicite una demostracion con escenarios reales.'
               : 'KPS, anti-drug port control, and river borders on one platform. Request a demo with real scenarios.'}

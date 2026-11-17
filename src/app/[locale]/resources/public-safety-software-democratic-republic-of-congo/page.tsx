@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareDRCPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para RDC | PNC, FARDC y Gestión de Crisis – KabatOne"
-      : "Public Safety Software for DRC | PNC, FARDC & Crisis Management – KabatOne",
+      ? "Software de Seguridad Pública para RDC | PNC, FARDC y Gestión de Crisis – Kabat One"
+      : "Public Safety Software for DRC | PNC, FARDC & Crisis Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional Congolesa, FARDC, gestión de desastres y programas de ciudad inteligente en la República Democrática del Congo."
-      : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Congolese National Police, FARDC, disaster management, and smart city programs in the Democratic Republic of Congo.",
+      ? "Kabat One ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para la Policía Nacional Congolesa, FARDC, gestión de desastres y programas de ciudad inteligente en la República Democrática del Congo."
+      : "Kabat One delivers unified command-and-control, AI-dispatch, and situational awareness for the Congolese National Police, FARDC, disaster management, and smart city programs in the Democratic Republic of Congo.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-democratic-republic-of-congo"
       : "https://kabatone.com/resources/public-safety-software-democratic-republic-of-congo",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareDRCPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Qué capacidades ofrece KabatOne a la Policía Nacional Congolesa (PNC)?"
-        : "What capabilities does KabatOne offer the Congolese National Police (PNC)?",
+        ? "¿Qué capacidades ofrece Kabat One a la Policía Nacional Congolesa (PNC)?"
+        : "What capabilities does Kabat One offer the Congolese National Police (PNC)?",
       answer: es
-        ? "KabatOne proporciona CAD unificado para las 26 provincias, despacho IA que integra circuitos CCTV de Kinshasa/Lubumbashi, gestión de incidentes transfronterizos con 9 países vecinos y cumplimiento de la Ley 20/017 de protección de datos."
-        : "KabatOne provides unified CAD for all 26 provinces, AI-dispatch integrating Kinshasa/Lubumbashi CCTV networks, cross-border incident management with 9 neighboring countries, and compliance with Law 20/017 on data protection.",
+        ? "Kabat One proporciona CAD unificado para las 26 provincias, despacho IA que integra circuitos CCTV de Kinshasa/Lubumbashi, gestión de incidentes transfronterizos con 9 países vecinos y cumplimiento de la Ley 20/017 de protección de datos."
+        : "Kabat One provides unified CAD for all 26 provinces, AI-dispatch integrating Kinshasa/Lubumbashi CCTV networks, cross-border incident management with 9 neighboring countries, and compliance with Law 20/017 on data protection.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de los recursos minerales de la RDC?"
-        : "How does KabatOne support security for DRC's mineral resources?",
+        ? "¿Cómo apoya Kabat One la seguridad de los recursos minerales de la RDC?"
+        : "How does Kabat One support security for DRC's mineral resources?",
       answer: es
         ? "La plataforma monitorea las zonas mineras de cobalto/cobre del Katanga (Glencore/Tenke Fungurume/Kamoa-Kakula), Kivu oro/coltán, y los sitios de extracción del casiterita/wolframita con gestión unificada de activos y alertas geofence."
         : "The platform monitors Katanga cobalt/copper mining zones (Glencore/Tenke Fungurume/Kamoa-Kakula), Kivu gold/coltan, and cassiterite/wolframite extraction sites with unified asset management and geofence alerts.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión de desastres en la RDC?"
-        : "Can KabatOne integrate with disaster management in the DRC?",
+        ? "¿Puede Kabat One integrarse con la gestión de desastres en la RDC?"
+        : "Can Kabat One integrate with disaster management in the DRC?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/MONUSCO alertas humanitarias, erupciones del Nyiragongo/Nyamulagira (Virunga), inundaciones del río Congo/Lualaba, y protocolos OCHA de desplazamiento interno con los 6+ millones de PDI en el este del país."
-        : "Yes. KabatOne integrates with OCHA/MONUSCO humanitarian alerts, Nyiragongo/Nyamulagira eruptions (Virunga), Congo/Lualaba river flooding, and OCHA internal displacement protocols with the 6+ million IDPs in eastern DRC.",
+        ? "Sí. Kabat One se integra con OCHA/MONUSCO alertas humanitarias, erupciones del Nyiragongo/Nyamulagira (Virunga), inundaciones del río Congo/Lualaba, y protocolos OCHA de desplazamiento interno con los 6+ millones de PDI en el este del país."
+        : "Yes. Kabat One integrates with OCHA/MONUSCO humanitarian alerts, Nyiragongo/Nyamulagira eruptions (Virunga), Congo/Lualaba river flooding, and OCHA internal displacement protocols with the 6+ million IDPs in eastern DRC.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de la RDC?"
-        : "How does KabatOne comply with DRC regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de la RDC?"
+        : "How does Kabat One comply with DRC regulations?",
       answer: es
-        ? "KabatOne se alinea con la Ley 20/017 de protección de datos, las directrices de la Autoridad de Regulación de Correos y Telecomunicaciones (ARPTC) y el marco de la Agencia Nacional de Seguridad Informática (ANSSI-RDC) para sistemas de seguridad pública."
-        : "KabatOne aligns with Law 20/017 on data protection, Post and Telecommunications Regulatory Authority (ARPTC) guidelines, and the National Information Security Agency (ANSSI-RDC) framework for public safety systems.",
+        ? "Kabat One se alinea con la Ley 20/017 de protección de datos, las directrices de la Autoridad de Regulación de Correos y Telecomunicaciones (ARPTC) y el marco de la Agencia Nacional de Seguridad Informática (ANSSI-RDC) para sistemas de seguridad pública."
+        : "Kabat One aligns with Law 20/017 on data protection, Post and Telecommunications Regulatory Authority (ARPTC) guidelines, and the National Information Security Agency (ANSSI-RDC) framework for public safety systems.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de la RDC?"
-        : "What sets KabatOne apart for DRC's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de la RDC?"
+        : "What sets Kabat One apart for DRC's border management?",
       answer: es
-        ? "KabatOne unifica los 9 corredores fronterizos (Congo/Brazzaville, República Centroafricana, Sudán del Sur, Uganda, Rwanda, Burundi, Tanzania, Zambia, Angola) con ANPR, listas de control compartidas con Interpol/SADC/CEEAC y alertas humanitarias de MONUSCO."
-        : "KabatOne unifies 9 border corridors (Congo/Brazzaville, CAR, South Sudan, Uganda, Rwanda, Burundi, Tanzania, Zambia, Angola) with ANPR, shared watchlists with Interpol/SADC/ECCAS, and MONUSCO humanitarian alerts.",
+        ? "Kabat One unifica los 9 corredores fronterizos (Congo/Brazzaville, República Centroafricana, Sudán del Sur, Uganda, Rwanda, Burundi, Tanzania, Zambia, Angola) con ANPR, listas de control compartidas con Interpol/SADC/CEEAC y alertas humanitarias de MONUSCO."
+        : "Kabat One unifies 9 border corridors (Congo/Brazzaville, CAR, South Sudan, Uganda, Rwanda, Burundi, Tanzania, Zambia, Angola) with ANPR, shared watchlists with Interpol/SADC/ECCAS, and MONUSCO humanitarian alerts.",
     },
   ]);
 
@@ -143,8 +143,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones provinciales con el Centro de Mando Nacional de Kinshasa, distribución de patrullas en tiempo real para Kinshasa/Lubumbashi/Goma/Bukavu y tableros de inteligencia delictiva."
-              : "KabatOne provides unified CAD/incident management integrating provincial operations centers with the Kinshasa National Command Center, real-time patrol deployment for Kinshasa/Lubumbashi/Goma/Bukavu, and crime intelligence dashboards."}
+              ? "Kabat One proporciona un CAD/gestión de incidentes unificado que integra los centros de operaciones provinciales con el Centro de Mando Nacional de Kinshasa, distribución de patrullas en tiempo real para Kinshasa/Lubumbashi/Goma/Bukavu y tableros de inteligencia delictiva."
+              : "Kabat One provides unified CAD/incident management integrating provincial operations centers with the Kinshasa National Command Center, real-time patrol deployment for Kinshasa/Lubumbashi/Goma/Bukavu, and crime intelligence dashboards."}
           </p>
 
           {/* FARDC */}
@@ -160,8 +160,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne apoya las funciones de C2 de las FARDC con mapas operativos georreferenciados de los teatros del este, coordinación multiagencia con PNC/ANR/DEMIAP, comunicaciones seguras cifradas y gestión de logística para el seguimiento de convoys humanitarios en colaboración con OCHA."
-              : "KabatOne supports FARDC C2 functions with georeferenced operational maps of eastern theaters, multi-agency coordination with PNC/ANR/DEMIAP, encrypted secure communications, and logistics management for humanitarian convoy tracking in collaboration with OCHA."}
+              ? "Kabat One apoya las funciones de C2 de las FARDC con mapas operativos georreferenciados de los teatros del este, coordinación multiagencia con PNC/ANR/DEMIAP, comunicaciones seguras cifradas y gestión de logística para el seguimiento de convoys humanitarios en colaboración con OCHA."
+              : "Kabat One supports FARDC C2 functions with georeferenced operational maps of eastern theaters, multi-agency coordination with PNC/ANR/DEMIAP, encrypted secure communications, and logistics management for humanitarian convoy tracking in collaboration with OCHA."}
           </p>
 
           {/* Mining Security */}
@@ -177,8 +177,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona seguridad perimetral georreferenciada para sitios mineros, alertas de intrusión en zonas de exclusión, monitoreo de corredores de transporte mineral (Lobito Corridor/Dar es Salaam/Durban), y cumplimiento del Programa iTSCi/OCDE para la cadena de custodia de minerales de conflicto."
-              : "KabatOne provides georeferenced perimeter security for mining sites, exclusion zone intrusion alerts, mineral transport corridor monitoring (Lobito Corridor/Dar es Salaam/Durban), and iTSCi/OECD conflict minerals chain-of-custody compliance."}
+              ? "Kabat One proporciona seguridad perimetral georreferenciada para sitios mineros, alertas de intrusión en zonas de exclusión, monitoreo de corredores de transporte mineral (Lobito Corridor/Dar es Salaam/Durban), y cumplimiento del Programa iTSCi/OCDE para la cadena de custodia de minerales de conflicto."
+              : "Kabat One provides georeferenced perimeter security for mining sites, exclusion zone intrusion alerts, mineral transport corridor monitoring (Lobito Corridor/Dar es Salaam/Durban), and iTSCi/OECD conflict minerals chain-of-custody compliance."}
           </p>
 
           {/* Disaster Management */}
@@ -194,8 +194,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra alertas sísmicas/volcánicas del OVG, monitoreo hidrológico del río Congo, feeds humanitarios de OCHA/UNHCR para los 6.9M PDI, coordinación de corredores humanitarios con MSF/CICR y planes de evacuación de Goma/Butembo/Beni con protocolos de respuesta PNC-FARDC-ONU."
-              : "KabatOne integrates OVG seismic/volcanic alerts, Congo river hydrological monitoring, OCHA/UNHCR humanitarian feeds for 6.9M IDPs, humanitarian corridor coordination with MSF/ICRC, and Goma/Butembo/Beni evacuation plans with PNC-FARDC-UN response protocols."}
+              ? "Kabat One integra alertas sísmicas/volcánicas del OVG, monitoreo hidrológico del río Congo, feeds humanitarios de OCHA/UNHCR para los 6.9M PDI, coordinación de corredores humanitarios con MSF/CICR y planes de evacuación de Goma/Butembo/Beni con protocolos de respuesta PNC-FARDC-ONU."
+              : "Kabat One integrates OVG seismic/volcanic alerts, Congo river hydrological monitoring, OCHA/UNHCR humanitarian feeds for 6.9M IDPs, humanitarian corridor coordination with MSF/ICRC, and Goma/Butembo/Beni evacuation plans with PNC-FARDC-UN response protocols."}
           </p>
 
           {/* Infrastructure */}
@@ -211,8 +211,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "El Corredor de Lobito (Lobito Angola–Kolwezi RDC–Dar es Salaam, financiado por EU/US/AfDB) emerge como el principal corredor de exportación de minerales críticos. KabatOne monitorea el transporte ferroviario SNCC (Société Nationale des Chemins de Fer du Congo), las rutas de navegación del río Congo/Kasaï y los corredores CEMAC/SADC con gestión unificada de incidentes."
-              : "The Lobito Corridor (Lobito Angola–Kolwezi DRC–Dar es Salaam, EU/US/AfDB-funded) emerges as the primary critical minerals export corridor. KabatOne monitors SNCC rail transport (Société Nationale des Chemins de Fer du Congo), Congo/Kasai river navigation routes, and CEMAC/SADC corridors with unified incident management."}
+              ? "El Corredor de Lobito (Lobito Angola–Kolwezi RDC–Dar es Salaam, financiado por EU/US/AfDB) emerge como el principal corredor de exportación de minerales críticos. Kabat One monitorea el transporte ferroviario SNCC (Société Nationale des Chemins de Fer du Congo), las rutas de navegación del río Congo/Kasaï y los corredores CEMAC/SADC con gestión unificada de incidentes."
+              : "The Lobito Corridor (Lobito Angola–Kolwezi DRC–Dar es Salaam, EU/US/AfDB-funded) emerges as the primary critical minerals export corridor. Kabat One monitors SNCC rail transport (Société Nationale des Chemins de Fer du Congo), Congo/Kasai river navigation routes, and CEMAC/SADC corridors with unified incident management."}
           </p>
 
           {/* Border Management */}
@@ -228,8 +228,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra la DGM con feeds ANPR en tiempo real, listas de vigilancia compartidas con Interpol/SADC/CEEAC, alertas humanitarias de OCHA/MONUSCO para gestión de flujos de refugiados, y el Sistema de Control de Tráfico de Mercancías para el seguimiento de exportaciones de minerales."
-              : "KabatOne integrates DGM with real-time ANPR feeds, shared watchlists with Interpol/SADC/ECCAS, OCHA/MONUSCO humanitarian alerts for refugee flow management, and the Cargo Traffic Control System for mineral export tracking."}
+              ? "Kabat One integra la DGM con feeds ANPR en tiempo real, listas de vigilancia compartidas con Interpol/SADC/CEEAC, alertas humanitarias de OCHA/MONUSCO para gestión de flujos de refugiados, y el Sistema de Control de Tráfico de Mercancías para el seguimiento de exportaciones de minerales."
+              : "Kabat One integrates DGM with real-time ANPR feeds, shared watchlists with Interpol/SADC/ECCAS, OCHA/MONUSCO humanitarian alerts for refugee flow management, and the Cargo Traffic Control System for mineral export tracking."}
           </p>
 
           {/* Compliance */}
@@ -262,8 +262,8 @@ export default async function PublicSafetySoftwareDRCPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne se alinea con el PNSD y la Agenda 2063 de la UA como infraestructura digital de seguridad pública de próxima generación, interoperable con los sistemas de gestión de emergencias de la CEEAC/SADC, los protocolos humanitarios de OCHA/MONUSCO y los estándares de protección de infraestructuras críticas del Corredor de Lobito."
-              : "KabatOne aligns with PNSD and AU Agenda 2063 as next-generation public safety digital infrastructure, interoperable with ECCAS/SADC emergency management systems, OCHA/MONUSCO humanitarian protocols, and Lobito Corridor critical infrastructure protection standards."}
+              ? "Kabat One se alinea con el PNSD y la Agenda 2063 de la UA como infraestructura digital de seguridad pública de próxima generación, interoperable con los sistemas de gestión de emergencias de la CEEAC/SADC, los protocolos humanitarios de OCHA/MONUSCO y los estándares de protección de infraestructuras críticas del Corredor de Lobito."
+              : "Kabat One aligns with PNSD and AU Agenda 2063 as next-generation public safety digital infrastructure, interoperable with ECCAS/SADC emergency management systems, OCHA/MONUSCO humanitarian protocols, and Lobito Corridor critical infrastructure protection standards."}
           </p>
         </section>
 
@@ -277,43 +277,43 @@ export default async function PublicSafetySoftwareDRCPage({
               {[
                 {
                   q: es
-                    ? "¿Qué capacidades ofrece KabatOne a la PNC?"
-                    : "What capabilities does KabatOne offer the PNC?",
+                    ? "¿Qué capacidades ofrece Kabat One a la PNC?"
+                    : "What capabilities does Kabat One offer the PNC?",
                   a: es
-                    ? "KabatOne proporciona CAD unificado para las 26 provincias, despacho IA que integra CCTV de Kinshasa/Lubumbashi, gestión de incidentes transfronterizos con 9 países vecinos y cumplimiento de la Ley 20/017 de protección de datos."
-                    : "KabatOne provides unified CAD for all 26 provinces, AI-dispatch integrating Kinshasa/Lubumbashi CCTV networks, cross-border incident management with 9 neighboring countries, and compliance with Law 20/017 on data protection.",
+                    ? "Kabat One proporciona CAD unificado para las 26 provincias, despacho IA que integra CCTV de Kinshasa/Lubumbashi, gestión de incidentes transfronterizos con 9 países vecinos y cumplimiento de la Ley 20/017 de protección de datos."
+                    : "Kabat One provides unified CAD for all 26 provinces, AI-dispatch integrating Kinshasa/Lubumbashi CCTV networks, cross-border incident management with 9 neighboring countries, and compliance with Law 20/017 on data protection.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad minera en la RDC?"
-                    : "How does KabatOne support mining security in DRC?",
+                    ? "¿Cómo apoya Kabat One la seguridad minera en la RDC?"
+                    : "How does Kabat One support mining security in DRC?",
                   a: es
                     ? "La plataforma monitorea las zonas mineras de cobalto/cobre del Katanga (Kamoa-Kakula/Tenke Fungurume/Mutanda), coltán/oro del Kivu y diamantes de Mbuji-Mayi con gestión unificada de activos y alertas geofence."
                     : "The platform monitors Katanga cobalt/copper mining zones (Kamoa-Kakula/Tenke Fungurume/Mutanda), Kivu coltan/gold, and Mbuji-Mayi diamonds with unified asset management and geofence alerts.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión de desastres en la RDC?"
-                    : "Can KabatOne integrate with disaster management in DRC?",
+                    ? "¿Puede Kabat One integrarse con la gestión de desastres en la RDC?"
+                    : "Can Kabat One integrate with disaster management in DRC?",
                   a: es
-                    ? "Sí. KabatOne integra alertas sísmicas del OVG (Nyiragongo/Nyamulagira), monitoreo hidrológico del río Congo, feeds humanitarios OCHA/UNHCR para 6.9M PDI y coordinación de corredores humanitarios MSF/CICR."
-                    : "Yes. KabatOne integrates OVG seismic alerts (Nyiragongo/Nyamulagira), Congo river hydrological monitoring, OCHA/UNHCR humanitarian feeds for 6.9M IDPs, and MSF/ICRC humanitarian corridor coordination.",
+                    ? "Sí. Kabat One integra alertas sísmicas del OVG (Nyiragongo/Nyamulagira), monitoreo hidrológico del río Congo, feeds humanitarios OCHA/UNHCR para 6.9M PDI y coordinación de corredores humanitarios MSF/CICR."
+                    : "Yes. Kabat One integrates OVG seismic alerts (Nyiragongo/Nyamulagira), Congo river hydrological monitoring, OCHA/UNHCR humanitarian feeds for 6.9M IDPs, and MSF/ICRC humanitarian corridor coordination.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de la RDC?"
-                    : "How does KabatOne comply with DRC regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de la RDC?"
+                    : "How does Kabat One comply with DRC regulations?",
                   a: es
-                    ? "KabatOne se alinea con la Ley 20/017 de telecomunicaciones/datos, directrices ARPTC, estándares ANSSI-RDC y procedimientos de adquisición ARMP-DRC/DGCMP para contratos de seguridad pública."
-                    : "KabatOne aligns with Law 20/017 on telecommunications/data, ARPTC guidelines, ANSSI-RDC standards, and ARMP-DRC/DGCMP procurement procedures for public safety contracts.",
+                    ? "Kabat One se alinea con la Ley 20/017 de telecomunicaciones/datos, directrices ARPTC, estándares ANSSI-RDC y procedimientos de adquisición ARMP-DRC/DGCMP para contratos de seguridad pública."
+                    : "Kabat One aligns with Law 20/017 on telecommunications/data, ARPTC guidelines, ANSSI-RDC standards, and ARMP-DRC/DGCMP procurement procedures for public safety contracts.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de la RDC?"
-                    : "What sets KabatOne apart for DRC's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de la RDC?"
+                    : "What sets Kabat One apart for DRC's border management?",
                   a: es
-                    ? "KabatOne unifica los 9 corredores fronterizos (Rep. Congo/CAR/Sudán del Sur/Uganda/Rwanda/Burundi/Tanzania/Zambia/Angola) con ANPR, listas Interpol/SADC/CEEAC y alertas humanitarias MONUSCO."
-                    : "KabatOne unifies all 9 border corridors (Rep. Congo/CAR/South Sudan/Uganda/Rwanda/Burundi/Tanzania/Zambia/Angola) with ANPR, Interpol/SADC/ECCAS watchlists, and MONUSCO humanitarian alerts.",
+                    ? "Kabat One unifica los 9 corredores fronterizos (Rep. Congo/CAR/Sudán del Sur/Uganda/Rwanda/Burundi/Tanzania/Zambia/Angola) con ANPR, listas Interpol/SADC/CEEAC y alertas humanitarias MONUSCO."
+                    : "Kabat One unifies all 9 border corridors (Rep. Congo/CAR/South Sudan/Uganda/Rwanda/Burundi/Tanzania/Zambia/Angola) with ANPR, Interpol/SADC/ECCAS watchlists, and MONUSCO humanitarian alerts.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

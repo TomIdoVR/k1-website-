@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareCroatiaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Croacia | KabatOne"
-    : "Public Safety Software for Croatia | KabatOne";
+    ? "Software de Seguridad Pública para Croacia | Kabat One"
+    : "Public Safety Software for Croatia | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Croacia — Policía Nacional, Guardia de Fronteras, DUZS — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 croata."
-    : "KabatOne supports Croatia security forces — National Police, Border Guard, DUZS civil protection — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Croatian 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Croacia — Policía Nacional, Guardia de Fronteras, DUZS — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 croata."
+    : "Kabat One supports Croatia security forces — National Police, Border Guard, DUZS civil protection — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Croatian 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-croatia"
@@ -37,10 +37,10 @@ export default async function PublicSafetySoftwareCroatiaPage({
         : "Croatia manages the longest Schengen external border in the Balkans with Bosnia-Herzegovina and Serbia (1,009 km), being the main entry point of the Balkan migration route into the EU. The Adriatic coast (~6,000 km with 1,246 islands) requires intensive maritime surveillance. Joining Schengen in 2023 increased pressure. The jointly operated Krško Nuclear Plant with Slovenia, seismic risks in Dalmatia, and tourism management (~20M visitors/year) are also priorities.",
     },
     {
-      question: es ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Croacia?" : "How does KabatOne support Croatia security forces?",
+      question: es ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Croacia?" : "How does Kabat One support Croatia security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía Nacional de Croacia (MUP ~20,000 efectivos), la Guardia de Fronteras (GR), la Dirección Nacional de Protección Civil y Bomberos (DUZS), la Guardia Costera de Croacia (OBP), y el Servicio de Seguridad e Inteligencia (SOA). La plataforma se integra con el sistema 112 croata, cumple con GDPR y la legislación de protección de datos de Croacia, y soporta la coordinación con Frontex para la gestión de la ruta balcánica."
-        : "KabatOne provides unified situational awareness for Croatia National Police (MUP ~20,000 officers), Border Guard (GR), National Civil Protection and Fire Protection Directorate (DUZS), Croatian Coast Guard (OBP), and Security and Intelligence Agency (SOA). The platform integrates with Croatia's 112 system, complies with GDPR and Croatian data protection legislation, and supports Frontex coordination for Balkan route management.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía Nacional de Croacia (MUP ~20,000 efectivos), la Guardia de Fronteras (GR), la Dirección Nacional de Protección Civil y Bomberos (DUZS), la Guardia Costera de Croacia (OBP), y el Servicio de Seguridad e Inteligencia (SOA). La plataforma se integra con el sistema 112 croata, cumple con GDPR y la legislación de protección de datos de Croacia, y soporta la coordinación con Frontex para la gestión de la ruta balcánica."
+        : "Kabat One provides unified situational awareness for Croatia National Police (MUP ~20,000 officers), Border Guard (GR), National Civil Protection and Fire Protection Directorate (DUZS), Croatian Coast Guard (OBP), and Security and Intelligence Agency (SOA). The platform integrates with Croatia's 112 system, complies with GDPR and Croatian data protection legislation, and supports Frontex coordination for Balkan route management.",
     },
     {
       question: es ? "¿Qué infraestructura crítica requiere protección en Croacia?" : "What critical infrastructure requires protection in Croatia?",
@@ -49,10 +49,10 @@ export default async function PublicSafetySoftwareCroatiaPage({
         : "Critical infrastructure includes the Port of Rijeka (Croatia's largest port, container hub for Central Europe), Zagreb Franjo Tuđman International Airport (ZAG), Krško Nuclear Power Plant (jointly operated with Slovenia, 50% Croatian energy), Krk LNG terminal gas corridor (Russian gas independence), Janaf/INA pipelines, Adriatic tourist ports (Split, Dubrovnik, Zadar), and NATO Naval Base in Split.",
     },
     {
-      question: es ? "¿Cómo gestiona KabatOne la vigilancia costera del Adriático?" : "How does KabatOne manage Adriatic coastal surveillance?",
+      question: es ? "¿Cómo gestiona Kabat One la vigilancia costera del Adriático?" : "How does Kabat One manage Adriatic coastal surveillance?",
       answer: es
-        ? "KabatOne integra el seguimiento AIS/radar de la Guardia Costera croata en los ~6,000 km de costa y las 1,246 islas, gestiona el tráfico de cruceros de lujo (Dubrovnik ~1M pasajeros/año de crucero), y coordina con la Marina de la OTAN en el Adriático. La plataforma provee alertas de migración irregular por mar (ruta Bosnia→islas croatas), gestión de emergencias marítimas y búsqueda y rescate con el MRCC Split."
-        : "KabatOne integrates AIS/radar tracking from the Croatian Coast Guard across ~6,000 km of coastline and 1,246 islands, manages luxury cruise traffic (Dubrovnik ~1M cruise passengers/year), and coordinates with NATO Navy in the Adriatic. The platform provides irregular sea migration alerts (Bosnia→Croatian islands route), maritime emergency management, and search and rescue coordination with MRCC Split.",
+        ? "Kabat One integra el seguimiento AIS/radar de la Guardia Costera croata en los ~6,000 km de costa y las 1,246 islas, gestiona el tráfico de cruceros de lujo (Dubrovnik ~1M pasajeros/año de crucero), y coordina con la Marina de la OTAN en el Adriático. La plataforma provee alertas de migración irregular por mar (ruta Bosnia→islas croatas), gestión de emergencias marítimas y búsqueda y rescate con el MRCC Split."
+        : "Kabat One integrates AIS/radar tracking from the Croatian Coast Guard across ~6,000 km of coastline and 1,246 islands, manages luxury cruise traffic (Dubrovnik ~1M cruise passengers/year), and coordinates with NATO Navy in the Adriatic. The platform provides irregular sea migration alerts (Bosnia→Croatian islands route), maritime emergency management, and search and rescue coordination with MRCC Split.",
     },
   ];
 
@@ -168,12 +168,12 @@ export default async function PublicSafetySoftwareCroatiaPage({
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
-            {es ? "Capacidades de KabatOne para Croacia" : "KabatOne Capabilities for Croatia"}
+            {es ? "Capacidades de Kabat One para Croacia" : "Kabat One Capabilities for Croatia"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a Croacia: gestión de la frontera Schengen más larga de los Balcanes, vigilancia de la costa adriática con 1,246 islas, protección del turismo masivo en Dubrovnik/Split/Hvar, y coordinación con la OTAN en la Base Naval de Split."
-              : "The KabatOne platform provides an integrated suite adapted to Croatia: management of the Balkans' longest Schengen border, surveillance of the Adriatic coast with 1,246 islands, mass tourism protection in Dubrovnik/Split/Hvar, and coordination with NATO at Split Naval Base."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a Croacia: gestión de la frontera Schengen más larga de los Balcanes, vigilancia de la costa adriática con 1,246 islas, protección del turismo masivo en Dubrovnik/Split/Hvar, y coordinación con la OTAN en la Base Naval de Split."
+              : "The Kabat One platform provides an integrated suite adapted to Croatia: management of the Balkans' longest Schengen border, surveillance of the Adriatic coast with 1,246 islands, mass tourism protection in Dubrovnik/Split/Hvar, and coordination with NATO at Split Naval Base."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -242,8 +242,8 @@ export default async function PublicSafetySoftwareCroatiaPage({
         es={es}
         h2={es ? "¿Listo para modernizar la seguridad pública en Croacia?" : "Ready to modernize public safety in Croatia?"}
         subtitle={es
-          ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar al MUP, la Guardia Costera y la DUZS con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
-          : "Speak with our team about how KabatOne can support MUP, the Coast Guard, and DUZS with a platform compatible with GDPR, NIS2, and NATO standards."}
+          ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar al MUP, la Guardia Costera y la DUZS con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
+          : "Speak with our team about how Kabat One can support MUP, the Coast Guard, and DUZS with a platform compatible with GDPR, NIS2, and NATO standards."}
       />
       <Footer es={es} />
     </>

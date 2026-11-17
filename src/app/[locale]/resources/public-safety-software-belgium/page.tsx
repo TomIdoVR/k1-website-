@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareBelgiumPage({
       answer: 'Bélgica regula la videovigilancia en el espacio público mediante la Loi caméras / Camerawet (Ley de 21 de marzo de 2007, actualizada). Toda cámara de vigilancia en el espacio público debe registrarse en la GBA y cumplir con señalización, limitación de finalidad y períodos de conservación. La Policía Federal y las zonas de policía local gestionan redes de cámaras urbanas (principalmente en Bruselas, Amberes, Gante, Lieja). La Región de Bruselas-Capital tiene el plan de seguridad Smart City más desarrollado, con miles de cámaras integradas en el centro de operaciones de la Policía de Bruselas. Amberes (Antwerpen) ha implementado un sistema de cámaras ANPR a gran escala — el más avanzado de Bélgica — con miles de puntos de lectura de matrículas cubriendo la ciudad y sus accesos. La integración entre videovigilancia urbana, ANPR y sistemas de despacho CAD es la principal tendencia de modernización en seguridad pública belga.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Policía Federal belga, las zones de police y los COS/OHC?',
-      answer: 'KabatOne integra las capacidades que la Policía Federal, las 188 zones de police y los Centros Operacionales COS/OHC necesitan unificadas: despacho CAD compatible con los flujos del sistema integrado 112/101 y los centros OHC provinciales — con clasificación automática de incidentes y coordinación multiagencia policía-bomberos-ambulancias, conforme al modelo belga (K-Dispatch), gestión de redes de videovigilancia urbana y ANPR con analítica IA — detección de placas, comportamientos, búsqueda forense — cumpliendo la Camerawet, RGPD y la Loi de policía (K-Video), y conciencia situacional GIS compartida entre la Policía Federal, zonas locales, COS/OHC y el CGCCR para coordinación en eventos de alto impacto como las cumbres OTAN/UE en Bruselas (K-Safety). Cloud EU con cumplimiento RGPD/GBA y NIS2/CCB. Demo adaptada al modelo integrado de dos niveles de la policía belga.',
+      question: '¿Por qué Kabat One es adecuado para la Policía Federal belga, las zones de police y los COS/OHC?',
+      answer: 'Kabat One integra las capacidades que la Policía Federal, las 188 zones de police y los Centros Operacionales COS/OHC necesitan unificadas: despacho CAD compatible con los flujos del sistema integrado 112/101 y los centros OHC provinciales — con clasificación automática de incidentes y coordinación multiagencia policía-bomberos-ambulancias, conforme al modelo belga (K-Dispatch), gestión de redes de videovigilancia urbana y ANPR con analítica IA — detección de placas, comportamientos, búsqueda forense — cumpliendo la Camerawet, RGPD y la Loi de policía (K-Video), y conciencia situacional GIS compartida entre la Policía Federal, zonas locales, COS/OHC y el CGCCR para coordinación en eventos de alto impacto como las cumbres OTAN/UE en Bruselas (K-Safety). Cloud EU con cumplimiento RGPD/GBA y NIS2/CCB. Demo adaptada al modelo integrado de dos niveles de la policía belga.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareBelgiumPage({
       answer: 'Belgium regulates public space video surveillance through the Loi caméras / Camerawet (Law of 21 March 2007, updated). All surveillance cameras in public spaces must be registered with the GBA and comply with signage, purpose limitation, and retention period requirements. The Federal Police and local police zones manage urban camera networks (mainly in Brussels, Antwerp, Ghent, Liège). Brussels-Capital Region has the most developed Smart City security plan, with thousands of cameras integrated into the Brussels Police operations centre. Antwerp (Antwerpen) has deployed the most advanced large-scale ANPR camera system in Belgium — thousands of licence plate reading points covering the city and its access routes. The integration of urban surveillance, ANPR, and CAD dispatch systems is the leading modernisation trend in Belgian public safety.',
     },
     {
-      question: 'Why is KabatOne suited for the Belgian Federal Police, zones de police, and COS/OHC centres?',
-      answer: 'KabatOne integrates the capabilities that the Federal Police, 188 zones de police, and provincial COS/OHC Operational Centres need unified: CAD dispatch compatible with the integrated 112/101 and provincial OHC flows — with automatic incident classification and multi-agency police-fire-ambulance coordination, compliant with the Belgian integrated model (K-Dispatch), management of urban surveillance and ANPR networks with AI analytics — plate detection, behaviour, forensic search — meeting the Camerawet, GDPR, and Police Act (K-Video), and shared GIS situational awareness across Federal Police, local zones, COS/OHC, and CGCCR for high-impact event coordination like NATO/EU summits in Brussels (K-Safety). EU cloud with GDPR/GBA and NIS2/CCB compliance. Demo adapted to the Belgian two-tier integrated police model.',
+      question: 'Why is Kabat One suited for the Belgian Federal Police, zones de police, and COS/OHC centres?',
+      answer: 'Kabat One integrates the capabilities that the Federal Police, 188 zones de police, and provincial COS/OHC Operational Centres need unified: CAD dispatch compatible with the integrated 112/101 and provincial OHC flows — with automatic incident classification and multi-agency police-fire-ambulance coordination, compliant with the Belgian integrated model (K-Dispatch), management of urban surveillance and ANPR networks with AI analytics — plate detection, behaviour, forensic search — meeting the Camerawet, GDPR, and Police Act (K-Video), and shared GIS situational awareness across Federal Police, local zones, COS/OHC, and CGCCR for high-impact event coordination like NATO/EU summits in Brussels (K-Safety). EU cloud with GDPR/GBA and NIS2/CCB compliance. Demo adapted to the Belgian two-tier integrated police model.',
     },
   ]
 
@@ -169,8 +169,8 @@ export default async function PublicSafetySoftwareBelgiumPage({
     : 'Federal Police · 188 Zones de Police · ASTRID 112 · Camerawet · GDPR/GBA · NIS2/CCB'
 
   const intro = es
-    ? 'Bélgica — sede de la OTAN, las instituciones de la UE y 11.5 millones de habitantes en tres regiones lingüísticas — opera un modelo de seguridad pública integrado de dos niveles con la Policía Federal y 188 zonas de policía local. La red ASTRID TETRA conecta a todos los servicios de emergencia con más de 90,000 usuarios, mientras los centros COS/OHC provinciales unifican el despacho 112/100/101 en un sistema multiagencia. KabatOne proporciona la plataforma CAD, vídeo y GIS adaptada a la Camerawet belga, el RGPD/GBA y los requisitos de ciberseguridad NIS2/CCB.'
-    : 'Belgium — home to NATO, EU institutions, and 11.5 million people across three linguistic regions — operates an integrated two-tier public safety model with the Federal Police and 188 local police zones. The ASTRID TETRA network connects all emergency services with over 90,000 active users, while provincial COS/OHC centres unify 112/100/101 dispatch in a multi-agency system. KabatOne delivers the CAD, video, and GIS platform adapted to the Belgian Camerawet, GDPR/GBA, and NIS2/CCB cybersecurity requirements.'
+    ? 'Bélgica — sede de la OTAN, las instituciones de la UE y 11.5 millones de habitantes en tres regiones lingüísticas — opera un modelo de seguridad pública integrado de dos niveles con la Policía Federal y 188 zonas de policía local. La red ASTRID TETRA conecta a todos los servicios de emergencia con más de 90,000 usuarios, mientras los centros COS/OHC provinciales unifican el despacho 112/100/101 en un sistema multiagencia. Kabat One proporciona la plataforma CAD, vídeo y GIS adaptada a la Camerawet belga, el RGPD/GBA y los requisitos de ciberseguridad NIS2/CCB.'
+    : 'Belgium — home to NATO, EU institutions, and 11.5 million people across three linguistic regions — operates an integrated two-tier public safety model with the Federal Police and 188 local police zones. The ASTRID TETRA network connects all emergency services with over 90,000 active users, while provincial COS/OHC centres unify 112/100/101 dispatch in a multi-agency system. Kabat One delivers the CAD, video, and GIS platform adapted to the Belgian Camerawet, GDPR/GBA, and NIS2/CCB cybersecurity requirements.'
 
   return (
     <>
@@ -243,11 +243,11 @@ export default async function PublicSafetySoftwareBelgiumPage({
         </div>
       </section>
 
-      {/* How KabatOne Works */}
+      {/* How Kabat One Works */}
       <section style={{ padding: '64px 24px', background: '#f8fafc' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: '#0f172a' }}>
-            {es ? 'Cómo KabatOne Apoya a los Servicios Belgas de Seguridad Pública' : 'How KabatOne Supports Belgian Public Safety Services'}
+            {es ? 'Cómo Kabat One Apoya a los Servicios Belgas de Seguridad Pública' : 'How Kabat One Supports Belgian Public Safety Services'}
           </h2>
           <p style={{ color: '#64748b', marginBottom: 36, fontSize: 16 }}>
             {es
@@ -354,7 +354,7 @@ export default async function PublicSafetySoftwareBelgiumPage({
       <CTASection
         es={es}
         h2={es ? 'Solicita una Demo para la Policía Federal belga, las Zones de Police o los Centros COS/OHC' : 'Request a Demo for Belgian Federal Police, Zones de Police, or COS/OHC Centres'}
-        subtitle={es ? 'KabatOne integra el despacho CAD 112/101 compatible con los centros COS/OHC provinciales, la gestión de videovigilancia urbana y ANPR conforme a la Camerawet/RGPD, y la conciencia situacional GIS para operaciones multiagencia y cumbres OTAN/UE — con cloud EU, cumplimiento GBA y NIS2/CCB.' : 'KabatOne integrates 112/101 CAD dispatch compatible with provincial COS/OHC centres, Camerawet/GDPR-compliant urban surveillance and ANPR management, and GIS situational awareness for multi-agency operations and NATO/EU summits — with EU cloud, GBA, and NIS2/CCB compliance.'}
+        subtitle={es ? 'Kabat One integra el despacho CAD 112/101 compatible con los centros COS/OHC provinciales, la gestión de videovigilancia urbana y ANPR conforme a la Camerawet/RGPD, y la conciencia situacional GIS para operaciones multiagencia y cumbres OTAN/UE — con cloud EU, cumplimiento GBA y NIS2/CCB.' : 'Kabat One integrates 112/101 CAD dispatch compatible with provincial COS/OHC centres, Camerawet/GDPR-compliant urban surveillance and ANPR management, and GIS situational awareness for multi-agency operations and NATO/EU summits — with EU cloud, GBA, and NIS2/CCB compliance.'}
       />
       <Footer es={es} />
     </>

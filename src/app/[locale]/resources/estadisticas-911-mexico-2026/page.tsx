@@ -64,7 +64,7 @@ export default async function Estadisticas911Page({ params }: { params: Promise<
   const dataset = {
     '@context': 'https://schema.org', '@type': 'Dataset', name: headline, description: desc, url,
     temporalCoverage: '2026-01/2026-09', spatialCoverage: { '@type': 'Country', name: 'México' },
-    isBasedOn: SRC_DATA, creator: { '@type': 'Organization', name: 'KabatOne', url: 'https://kabatone.com' }, dateModified: '2026-11-03',
+    isBasedOn: SRC_DATA, creator: { '@type': 'Organization', name: 'Kabat One', url: 'https://kabatone.com' }, dateModified: '2026-11-03',
   }
 
   const h2 = { fontFamily: 'var(--font-barlow-condensed)', fontSize: 30, fontWeight: 700 } as const

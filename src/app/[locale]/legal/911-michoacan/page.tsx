@@ -16,8 +16,8 @@ export async function generateMetadata({
 
   return {
     title: es
-      ? `Condiciones de Uso y Política de Privacidad — ${APP_NAME} | KabatOne`
-      : `Terms of Use & Privacy Policy — ${APP_NAME} | KabatOne`,
+      ? `Condiciones de Uso y Política de Privacidad — ${APP_NAME} | Kabat One`
+      : `Terms of Use & Privacy Policy — ${APP_NAME} | Kabat One`,
     description: es
       ? `Condiciones de Uso y Política de Privacidad de la aplicación de emergencias ${APP_NAME}, desarrollada por Kabat-One Software Ltd.: licencia de uso, contenido del usuario, responsabilidad, datos recopilados y contacto.`
       : `Terms of Use and Privacy Policy for the ${APP_NAME} emergency app, developed by Kabat-One Software Ltd.: license, user content, liability, data collected, and contact.`,

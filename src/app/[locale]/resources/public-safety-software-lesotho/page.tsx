@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareLesothoPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Lesoto | LDF/LMPS, Agua LHWP, Diamantes Letseng y Seguridad Montañosa – KabatOne"
-    : "Public Safety Software for Lesotho | LDF/LMPS, LHWP Water, Letseng Diamonds & Mountain Security – KabatOne";
+    ? "Software de Seguridad Pública para Lesoto | LDF/LMPS, Agua LHWP, Diamantes Letseng y Seguridad Montañosa – Kabat One"
+    : "Public Safety Software for Lesotho | LDF/LMPS, LHWP Water, Letseng Diamonds & Mountain Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Lesoto (LDF), Servicio de Policía Montada, proyecto hídrico LHWP, mina de diamantes Letseng y seguridad en las montañas del Drakensberg — completamente rodeado por Sudáfrica."
-    : "KabatOne delivers public safety platform for Lesotho Defence Force (LDF), Mounted Police Service, LHWP water project, Letseng diamond mine, and Drakensberg mountain security — entirely surrounded by South Africa.";
+    ? "Kabat One entrega plataforma de seguridad pública para la Fuerza de Defensa de Lesoto (LDF), Servicio de Policía Montada, proyecto hídrico LHWP, mina de diamantes Letseng y seguridad en las montañas del Drakensberg — completamente rodeado por Sudáfrica."
+    : "Kabat One delivers public safety platform for Lesotho Defence Force (LDF), Mounted Police Service, LHWP water project, Letseng diamond mine, and Drakensberg mountain security — entirely surrounded by South Africa.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-lesotho"
     : "https://kabatone.com/resources/public-safety-software-lesotho";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareLesothoPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Lesoto?"
-        : "How does KabatOne support public safety in Lesotho?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Lesoto?"
+        : "How does Kabat One support public safety in Lesotho?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones LDF/LMPS en los 10 distritos. Los módulos de protección de infraestructura crítica aseguran las instalaciones del LHWP (presas Katse, Mohale, Polihali) — activos estratégicos para Sudáfrica. El sistema de seguridad minera protege la mina de diamantes de Letseng (3,100 m de altitud, Gem Diamonds). Los módulos de gestión de crisis apoyan la coordinación política en contextos de inestabilidad recurrente. La arquitectura funciona en entornos de alta altitud y terreno montañoso con conectividad limitada."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for LDF/LMPS operations across all 10 districts. Critical infrastructure protection modules secure LHWP facilities (Katse, Mohale, Polihali dams) — strategic assets for South Africa. Mining security system protects Letseng diamond mine (3,100 m altitude, Gem Diamonds). Crisis management modules support political coordination in recurring instability contexts. Architecture operates in high-altitude mountain terrain with limited connectivity.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones LDF/LMPS en los 10 distritos. Los módulos de protección de infraestructura crítica aseguran las instalaciones del LHWP (presas Katse, Mohale, Polihali) — activos estratégicos para Sudáfrica. El sistema de seguridad minera protege la mina de diamantes de Letseng (3,100 m de altitud, Gem Diamonds). Los módulos de gestión de crisis apoyan la coordinación política en contextos de inestabilidad recurrente. La arquitectura funciona en entornos de alta altitud y terreno montañoso con conectividad limitada."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for LDF/LMPS operations across all 10 districts. Critical infrastructure protection modules secure LHWP facilities (Katse, Mohale, Polihali dams) — strategic assets for South Africa. Mining security system protects Letseng diamond mine (3,100 m altitude, Gem Diamonds). Crisis management modules support political coordination in recurring instability contexts. Architecture operates in high-altitude mountain terrain with limited connectivity.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareLesothoPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Lesoto" : "KabatOne Capabilities for Lesotho"}
+              {es ? "Capacidades Kabat One para Lesoto" : "Kabat One Capabilities for Lesotho"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareTanzaniaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Tanzania: JPF/Policía de Tanzania, NFRS, NEMC/DMS, TPA/Puerto de Dar es Salaam y PDPA 2022 | KabatOne'
-      : 'Public Safety Software for Tanzania: JPF/Tanzania Police Force, NFRS, NEMC/DMS, TPA/Port of Dar es Salaam & PDPA 2022 | KabatOne',
+      ? 'Software de Seguridad Pública para Tanzania: JPF/Policía de Tanzania, NFRS, NEMC/DMS, TPA/Puerto de Dar es Salaam y PDPA 2022 | Kabat One'
+      : 'Public Safety Software for Tanzania: JPF/Tanzania Police Force, NFRS, NEMC/DMS, TPA/Port of Dar es Salaam & PDPA 2022 | Kabat One',
     es
       ? 'Plataforma unificada para la Fuerza de Policía de Tanzania y JPF — despacho CAD integrado en 31 regiones, Dar es Salaam Safe City, NFRS protección contra incendios, Puerto de TPA 20M+ TEU, PDPA 2022/TCRA y adquisición PPRA/Tendas.'
       : 'Unified platform for Tanzania Police Force and JPF — integrated CAD dispatch across 31 regions, Dar es Salaam Safe City, NFRS fire protection, TPA Port 20M+ TEU, PDPA 2022/TCRA compliance, and PPRA/Tendas procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareTanzaniaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Tanzania?'
-        : 'How does KabatOne address Tanzania critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Tanzania?'
+        : 'How does Kabat One address Tanzania critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de la Autoridad Portuaria de Tanzania (TPA) en Dar es Salaam (20M+ TEU), Tanga, Mtwara y el Ferry de Zanzíbar, la seguridad del gaseoducto TPDC/offshore gas, la red TAZARA/TAZAMA, el Aeropuerto JRO (Kilimanjaro) y el Julius Nyerere International Airport (DAR).'
-        : 'KabatOne integrates management for the Tanzania Port Authority (TPA) at Dar es Salaam (20M+ TEU), Tanga, Mtwara and Zanzibar Ferry, TPDC/offshore gas pipeline security, TAZARA/TAZAMA network, Kilimanjaro Airport JRO, and Julius Nyerere International Airport DAR.',
+        ? 'Kabat One integra gestión de la Autoridad Portuaria de Tanzania (TPA) en Dar es Salaam (20M+ TEU), Tanga, Mtwara y el Ferry de Zanzíbar, la seguridad del gaseoducto TPDC/offshore gas, la red TAZARA/TAZAMA, el Aeropuerto JRO (Kilimanjaro) y el Julius Nyerere International Airport (DAR).'
+        : 'Kabat One integrates management for the Tanzania Port Authority (TPA) at Dar es Salaam (20M+ TEU), Tanga, Mtwara and Zanzibar Ferry, TPDC/offshore gas pipeline security, TAZARA/TAZAMA network, Kilimanjaro Airport JRO, and Julius Nyerere International Airport DAR.',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Tanzania?'
-        : 'Is KabatOne compliant with Tanzania data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Tanzania?'
+        : 'Is Kabat One compliant with Tanzania data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Ley de Protección de Datos Personales (PDPA) 2022 supervisada por la TCRA y el PDPC. La arquitectura se alinea con la Ley de Delitos Informáticos y Electrónicos 2015 y las directrices de seguridad digital del e-Government Authority (eGA).'
-        : 'Yes. KabatOne is designed to comply with the Personal Data Protection Act (PDPA) 2022 supervised by the TCRA and PDPC. The architecture aligns with the Cybercrimes Act 2015 and digital security guidelines of the e-Government Authority (eGA).',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Ley de Protección de Datos Personales (PDPA) 2022 supervisada por la TCRA y el PDPC. La arquitectura se alinea con la Ley de Delitos Informáticos y Electrónicos 2015 y las directrices de seguridad digital del e-Government Authority (eGA).'
+        : 'Yes. Kabat One is designed to comply with the Personal Data Protection Act (PDPA) 2022 supervised by the TCRA and PDPC. The architecture aligns with the Cybercrimes Act 2015 and digital security guidelines of the e-Government Authority (eGA).',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la seguridad fronteriza en Tanzania?'
-        : 'How does KabatOne support border security in Tanzania?',
+        ? '¿Cómo apoya Kabat One la seguridad fronteriza en Tanzania?'
+        : 'How does Kabat One support border security in Tanzania?',
       answer: es
-        ? 'KabatOne proporciona gestión para los pasos fronterizos principales: Namanga/Holili/Sirari (Kenia), Tunduma/Kasumulu (Zambia/Malawi), Mutukula (Uganda), Rusumo (Ruanda) y Kabanga (Burundi) con ANPR integrado y coordinación entre TPF, TPDF e Inmigración.'
-        : 'KabatOne provides management for major border crossings: Namanga/Holili/Sirari (Kenya), Tunduma/Kasumulu (Zambia/Malawi), Mutukula (Uganda), Rusumo (Rwanda) and Kabanga (Burundi) with integrated ANPR and coordination between TPF, TPDF and Immigration.',
+        ? 'Kabat One proporciona gestión para los pasos fronterizos principales: Namanga/Holili/Sirari (Kenia), Tunduma/Kasumulu (Zambia/Malawi), Mutukula (Uganda), Rusumo (Ruanda) y Kabanga (Burundi) con ANPR integrado y coordinación entre TPF, TPDF e Inmigración.'
+        : 'Kabat One provides management for major border crossings: Namanga/Holili/Sirari (Kenya), Tunduma/Kasumulu (Zambia/Malawi), Mutukula (Uganda), Rusumo (Rwanda) and Kabanga (Burundi) with integrated ANPR and coordination between TPF, TPDF and Immigration.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareTanzaniaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Tanzania'
-                : 'KabatOne Platform Capabilities for Tanzania'}
+                ? 'Capacidades de la Plataforma Kabat One para Tanzania'
+                : 'Kabat One Platform Capabilities for Tanzania'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -442,16 +442,16 @@ export default async function PublicSafetySoftwareTanzaniaPage({
                       a: 'La Fuerza de Policía de Tanzania (TPF) cubre 31 regiones continentales con 65,000+ efectivos. La Fuerza de Policía de Zanzíbar (ZPF) gestiona las islas. La NFRS coordina incendios y rescates. La TPDF y la ATU apoyan operaciones de alta prioridad y seguridad fronteriza.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Tanzania?',
-                      a: 'KabatOne integra gestión del Puerto de Dar es Salaam (20M+ TEU), Tanga, Mtwara y Ferry de Zanzíbar, la seguridad del gas offshore TPDC, la red TAZARA/TAZAMA, el Aeropuerto JRO (Kilimanjaro) y el Julius Nyerere International Airport (DAR).',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Tanzania?',
+                      a: 'Kabat One integra gestión del Puerto de Dar es Salaam (20M+ TEU), Tanga, Mtwara y Ferry de Zanzíbar, la seguridad del gas offshore TPDC, la red TAZARA/TAZAMA, el Aeropuerto JRO (Kilimanjaro) y el Julius Nyerere International Airport (DAR).',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Tanzania?',
-                      a: 'Sí. KabatOne cumple con la PDPA 2022 supervisada por la TCRA y el PDPC. La arquitectura está alineada con la Ley de Delitos Informáticos 2015 y las directrices de seguridad digital del eGA.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Tanzania?',
+                      a: 'Sí. Kabat One cumple con la PDPA 2022 supervisada por la TCRA y el PDPC. La arquitectura está alineada con la Ley de Delitos Informáticos 2015 y las directrices de seguridad digital del eGA.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la seguridad fronteriza en Tanzania?',
-                      a: 'KabatOne gestiona los pasos fronterizos con Kenia (Namanga/Holili/Sirari), Zambia/Malawi (Tunduma/Kasumulu), Uganda (Mutukula), Ruanda (Rusumo) y Burundi (Kabanga) con ANPR integrado y coordinación entre TPF, TPDF e Inmigración.',
+                      q: '¿Cómo apoya Kabat One la seguridad fronteriza en Tanzania?',
+                      a: 'Kabat One gestiona los pasos fronterizos con Kenia (Namanga/Holili/Sirari), Zambia/Malawi (Tunduma/Kasumulu), Uganda (Mutukula), Ruanda (Rusumo) y Burundi (Kabanga) con ANPR integrado y coordinación entre TPF, TPDF e Inmigración.',
                     },
                   ]
                 : [
@@ -460,16 +460,16 @@ export default async function PublicSafetySoftwareTanzaniaPage({
                       a: 'The Tanzania Police Force (TPF) covers 31 mainland regions with 65,000+ officers. The Zanzibar Police Force (ZPF) manages the islands. The NFRS coordinates fires and rescues. The TPDF and ATU support high-priority operations and border security.',
                     },
                     {
-                      q: 'How does KabatOne address Tanzania critical infrastructure?',
-                      a: 'KabatOne integrates management for the Port of Dar es Salaam (20M+ TEU), Tanga, Mtwara and Zanzibar Ferry, TPDC offshore gas security, TAZARA/TAZAMA network, Kilimanjaro Airport JRO, and Julius Nyerere International Airport DAR.',
+                      q: 'How does Kabat One address Tanzania critical infrastructure?',
+                      a: 'Kabat One integrates management for the Port of Dar es Salaam (20M+ TEU), Tanga, Mtwara and Zanzibar Ferry, TPDC offshore gas security, TAZARA/TAZAMA network, Kilimanjaro Airport JRO, and Julius Nyerere International Airport DAR.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Tanzania data legislation?',
-                      a: 'Yes. KabatOne complies with PDPA 2022 supervised by TCRA and PDPC. The architecture aligns with the Cybercrimes Act 2015 and digital security guidelines of the eGA.',
+                      q: 'Is Kabat One compliant with Tanzania data legislation?',
+                      a: 'Yes. Kabat One complies with PDPA 2022 supervised by TCRA and PDPC. The architecture aligns with the Cybercrimes Act 2015 and digital security guidelines of the eGA.',
                     },
                     {
-                      q: 'How does KabatOne support border security in Tanzania?',
-                      a: 'KabatOne manages border crossings with Kenya (Namanga/Holili/Sirari), Zambia/Malawi (Tunduma/Kasumulu), Uganda (Mutukula), Rwanda (Rusumo) and Burundi (Kabanga) with integrated ANPR and coordination between TPF, TPDF and Immigration.',
+                      q: 'How does Kabat One support border security in Tanzania?',
+                      a: 'Kabat One manages border crossings with Kenya (Namanga/Holili/Sirari), Zambia/Malawi (Tunduma/Kasumulu), Uganda (Mutukula), Rwanda (Rusumo) and Burundi (Kabanga) with integrated ANPR and coordination between TPF, TPDF and Immigration.',
                     },
                   ]
               ).map((item) => (
@@ -491,8 +491,8 @@ export default async function PublicSafetySoftwareTanzaniaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la TPF, ZPF y NFRS de Tanzania.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Tanzania TPF, ZPF and NFRS.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la TPF, ZPF y NFRS de Tanzania.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Tanzania TPF, ZPF and NFRS.'
           }
         />
       </main>

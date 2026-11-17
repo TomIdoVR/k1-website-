@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareLeiberiaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Liberia | AFL/LNP, Puerto de Monrovia y Seguridad Minera – KabatOne"
-    : "Public Safety Software for Liberia | AFL/LNP, Port of Monrovia & Mining Security – KabatOne";
+    ? "Software de Seguridad Pública para Liberia | AFL/LNP, Puerto de Monrovia y Seguridad Minera – Kabat One"
+    : "Public Safety Software for Liberia | AFL/LNP, Port of Monrovia & Mining Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Liberia (AFL), Policía Nacional (LNP), Puerto de Monrovia y seguridad de hierro, caucho y recursos minerales."
-    : "KabatOne delivers public safety platform for the Armed Forces of Liberia (AFL), National Police (LNP), Port of Monrovia, and security for iron ore, rubber, and mineral resources.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Liberia (AFL), Policía Nacional (LNP), Puerto de Monrovia y seguridad de hierro, caucho y recursos minerales."
+    : "Kabat One delivers public safety platform for the Armed Forces of Liberia (AFL), National Police (LNP), Port of Monrovia, and security for iron ore, rubber, and mineral resources.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-liberia"
     : "https://kabatone.com/resources/public-safety-software-liberia";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareLeiberiaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Liberia?"
-        : "How does KabatOne support public safety in Liberia?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Liberia?"
+        : "How does Kabat One support public safety in Liberia?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones AFL/LNP en los 15 condados. La plataforma de seguridad portuaria protege los puertos de Monrovia y Buchanan. Los módulos de seguridad minera monitorean operaciones ArcelorMittal/Nimba y Firestone. El sistema soporta la gestión de fronteras con Guinea, Sierra Leona y Costa de Marfil. La arquitectura cloud-native es adaptable a entornos de conectividad limitada en zonas rurales."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for AFL/LNP operations across all 15 counties. Port security platform protects Monrovia and Buchanan ports. Mining security modules monitor ArcelorMittal/Nimba and Firestone operations. System supports border management with Guinea, Sierra Leone, and Ivory Coast. Cloud-native architecture adapts to limited-connectivity rural environments.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones AFL/LNP en los 15 condados. La plataforma de seguridad portuaria protege los puertos de Monrovia y Buchanan. Los módulos de seguridad minera monitorean operaciones ArcelorMittal/Nimba y Firestone. El sistema soporta la gestión de fronteras con Guinea, Sierra Leona y Costa de Marfil. La arquitectura cloud-native es adaptable a entornos de conectividad limitada en zonas rurales."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for AFL/LNP operations across all 15 counties. Port security platform protects Monrovia and Buchanan ports. Mining security modules monitor ArcelorMittal/Nimba and Firestone operations. System supports border management with Guinea, Sierra Leone, and Ivory Coast. Cloud-native architecture adapts to limited-connectivity rural environments.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareLeiberiaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Liberia" : "KabatOne Capabilities for Liberia"}
+              {es ? "Capacidades Kabat One para Liberia" : "Kabat One Capabilities for Liberia"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

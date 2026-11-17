@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareComorosPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Comoras | KabatOne"
-    : "Public Safety Software for Comoros | KabatOne";
+    ? "Software de Seguridad Pública para Comoras | Kabat One"
+    : "Public Safety Software for Comoros | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Comoras — FNDF, Gendarmería, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Océano Índico."
-    : "KabatOne supports Comoros security forces — FNDF, Gendarmerie, Coast Guard — with real-time surveillance, dispatch, and incident management for the Indian Ocean archipelago.";
+    ? "Kabat One apoya las fuerzas de seguridad de Comoras — FNDF, Gendarmería, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Océano Índico."
+    : "Kabat One supports Comoros security forces — FNDF, Gendarmerie, Coast Guard — with real-time surveillance, dispatch, and incident management for the Indian Ocean archipelago.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-comoros"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareComorosPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Comoras?"
-        : "How does KabatOne support Comoros security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Comoras?"
+        : "How does Kabat One support Comoros security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la FNDF (~800 efectivos), la Gendarmería Nacional y la Guardia Costera. La plataforma integra vigilancia marítima del Canal de Mozambique, despacho CAD interisleño, videoanalítica para el Puerto de Moroni, y coordinación con la misión EUNAVFOR Atalanta."
-        : "KabatOne provides unified situational awareness for the FNDF (~800 personnel), National Gendarmerie, and Coast Guard. The platform integrates Mozambique Channel maritime surveillance, inter-island CAD dispatch, video analytics for the Port of Moroni, and coordination with the EUNAVFOR Atalanta mission.",
+        ? "Kabat One proporciona conciencia situacional unificada para la FNDF (~800 efectivos), la Gendarmería Nacional y la Guardia Costera. La plataforma integra vigilancia marítima del Canal de Mozambique, despacho CAD interisleño, videoanalítica para el Puerto de Moroni, y coordinación con la misión EUNAVFOR Atalanta."
+        : "Kabat One provides unified situational awareness for the FNDF (~800 personnel), National Gendarmerie, and Coast Guard. The platform integrates Mozambique Channel maritime surveillance, inter-island CAD dispatch, video analytics for the Port of Moroni, and coordination with the EUNAVFOR Atalanta mission.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareComorosPage({
     },
     {
       question: es
-        ? "¿Cómo gestiona KabatOne la coordinación marítima interisleña?"
-        : "How does KabatOne manage inter-island maritime coordination?",
+        ? "¿Cómo gestiona Kabat One la coordinación marítima interisleña?"
+        : "How does Kabat One manage inter-island maritime coordination?",
       answer: es
-        ? "KabatOne integra el seguimiento AIS/radar de la Guardia Costera de Comoras a través de los tres principales grupos de islas, coordina con la Marina francesa en Mayotte, y proporciona alertas de zonas de exclusión para la pesca ilegal (IUU) en la ZEE de 320,000 km². La plataforma soporta comunicaciones multicanal entre las comisarías de Moroni, Mutsamudu y Fomboni."
-        : "KabatOne integrates AIS/radar tracking from the Comorian Coast Guard across the three main island groups, coordinates with the French Navy in Mayotte, and provides exclusion zone alerts for illegal fishing (IUU) in the 320,000 km² EEZ. The platform supports multi-channel communications between police stations in Moroni, Mutsamudu, and Fomboni.",
+        ? "Kabat One integra el seguimiento AIS/radar de la Guardia Costera de Comoras a través de los tres principales grupos de islas, coordina con la Marina francesa en Mayotte, y proporciona alertas de zonas de exclusión para la pesca ilegal (IUU) en la ZEE de 320,000 km². La plataforma soporta comunicaciones multicanal entre las comisarías de Moroni, Mutsamudu y Fomboni."
+        : "Kabat One integrates AIS/radar tracking from the Comorian Coast Guard across the three main island groups, coordinates with the French Navy in Mayotte, and provides exclusion zone alerts for illegal fishing (IUU) in the 320,000 km² EEZ. The platform supports multi-channel communications between police stations in Moroni, Mutsamudu, and Fomboni.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareComorosPage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Comoras"
-              : "KabatOne Capabilities for Comoros"}
+              ? "Capacidades de Kabat One para Comoras"
+              : "Kabat One Capabilities for Comoros"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a los retos del archipiélago comorense, desde la vigilancia marítima del Canal de Mozambique hasta la coordinación interisleña y la gestión de riesgos volcánicos."
-              : "The KabatOne platform provides an integrated suite adapted to Comorian archipelago challenges, from Mozambique Channel maritime surveillance to inter-island coordination and volcanic risk management."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a los retos del archipiélago comorense, desde la vigilancia marítima del Canal de Mozambique hasta la coordinación interisleña y la gestión de riesgos volcánicos."
+              : "The Kabat One platform provides an integrated suite adapted to Comorian archipelago challenges, from Mozambique Channel maritime surveillance to inter-island coordination and volcanic risk management."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareComorosPage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la FNDF, la Guardia Costera y la Policía Nacional en el archipiélago comorense."
-            : "Speak with our team about how KabatOne can support the FNDF, Coast Guard, and National Police across the Comorian archipelago."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la FNDF, la Guardia Costera y la Policía Nacional en el archipiélago comorense."
+            : "Speak with our team about how Kabat One can support the FNDF, Coast Guard, and National Police across the Comorian archipelago."
         }
       />
       <Footer es={es} />

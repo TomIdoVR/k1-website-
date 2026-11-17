@@ -28,58 +28,58 @@ export default async function VsTylerTechnologiesPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Tyler Technologies', url: es ? 'https://kabatone.com/es/vs/tyler-technologies' : 'https://kabatone.com/vs/tyler-technologies' },
+    { name: 'Kabat One vs Tyler Technologies', url: es ? 'https://kabatone.com/es/vs/tyler-technologies' : 'https://kabatone.com/vs/tyler-technologies' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Tyler Technologies?',
-      answer: 'Tyler Technologies es el proveedor de software gubernamental más grande de Estados Unidos, con una suite amplia que incluye CAD empresarial (Enterprise CAD, antes New World CAD), RMS, gestión de tribunales, ERP municipal, tesorería y cientos de otros módulos administrativos. KabatOne es una plataforma unificada de seguridad pública nativa en la nube que integra gestión de video con IA (K-Video), CAD de despacho (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en un solo sistema operativo. La diferencia es de enfoque: Tyler cubre la amplitud del software gubernamental; KabatOne cubre la profundidad del flujo operativo de respuesta.',
+      question: '¿Cuál es la diferencia entre Kabat One y Tyler Technologies?',
+      answer: 'Tyler Technologies es el proveedor de software gubernamental más grande de Estados Unidos, con una suite amplia que incluye CAD empresarial (Enterprise CAD, antes New World CAD), RMS, gestión de tribunales, ERP municipal, tesorería y cientos de otros módulos administrativos. Kabat One es una plataforma unificada de seguridad pública nativa en la nube que integra gestión de video con IA (K-Video), CAD de despacho (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en un solo sistema operativo. La diferencia es de enfoque: Tyler cubre la amplitud del software gubernamental; Kabat One cubre la profundidad del flujo operativo de respuesta.',
     },
     {
       question: '¿El CAD Empresarial de Tyler incluye gestión de video?',
-      answer: 'No. Enterprise CAD (y el portafolio heredado de New World Public Safety) se enfoca en intake de llamadas, despacho, RMS y movilidad de campo — no incluye un módulo VMS. Las agencias que usan Tyler y necesitan video de vigilancia deben implementar un VMS separado (Genetec, Milestone, Avigilon, Verkada) e integrarlo vía middleware. KabatOne incluye K-Video como módulo nativo, con analítica IA, integrado directamente al mapa de K-Safety y al flujo de K-Dispatch.',
+      answer: 'No. Enterprise CAD (y el portafolio heredado de New World Public Safety) se enfoca en intake de llamadas, despacho, RMS y movilidad de campo — no incluye un módulo VMS. Las agencias que usan Tyler y necesitan video de vigilancia deben implementar un VMS separado (Genetec, Milestone, Avigilon, Verkada) e integrarlo vía middleware. Kabat One incluye K-Video como módulo nativo, con analítica IA, integrado directamente al mapa de K-Safety y al flujo de K-Dispatch.',
     },
     {
       question: '¿Tyler Technologies está disponible fuera de Estados Unidos?',
-      answer: 'Tyler Technologies opera principalmente en el mercado de gobiernos estatales y locales de Estados Unidos — con más de 40,000 clientes en agencias gubernamentales de Norteamérica. Su presencia en México y Latinoamérica es limitada. KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica, con localización completa en español y experiencia operativa en modelos de centro de mando C4/C5.',
+      answer: 'Tyler Technologies opera principalmente en el mercado de gobiernos estatales y locales de Estados Unidos — con más de 40,000 clientes en agencias gubernamentales de Norteamérica. Su presencia en México y Latinoamérica es limitada. Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica, con localización completa en español y experiencia operativa en modelos de centro de mando C4/C5.',
     },
     {
       question: '¿Tyler Enterprise CAD es cloud-native o legacy?',
-      answer: 'Tyler ha estado migrando su portafolio de seguridad pública hacia arquitectura en la nube (Enterprise Justice, Enterprise Supervisor, etc.), pero el stack histórico incluye instalaciones on-premise significativas y el proceso de modernización a SaaS es gradual. KabatOne es cloud-native desde el inicio — una sola plataforma, entrega SaaS, actualizaciones continuas sin downtime, y el mismo código base para todos los clientes.',
+      answer: 'Tyler ha estado migrando su portafolio de seguridad pública hacia arquitectura en la nube (Enterprise Justice, Enterprise Supervisor, etc.), pero el stack histórico incluye instalaciones on-premise significativas y el proceso de modernización a SaaS es gradual. Kabat One es cloud-native desde el inicio — una sola plataforma, entrega SaaS, actualizaciones continuas sin downtime, y el mismo código base para todos los clientes.',
     },
     {
       question: '¿Qué pasa con los centros de mando C4 y C5 en México?',
-      answer: 'Los centros C4 y C5 en México tienen un modelo operativo específico: respuesta multiagencia (policía, bomberos, protección civil, tránsito), integración masiva de cámaras urbanas, botones de pánico, LPR y sensores IoT, y coordinación con la Guardia Nacional. Tyler Technologies no tiene presencia significativa en este mercado. KabatOne está construido para este modelo: K-Safety unifica el mapa operacional, K-Dispatch soporta despacho multiagencia, K-Video integra miles de cámaras urbanas y K-Traffic coordina semáforos y vehículos de emergencia.',
+      answer: 'Los centros C4 y C5 en México tienen un modelo operativo específico: respuesta multiagencia (policía, bomberos, protección civil, tránsito), integración masiva de cámaras urbanas, botones de pánico, LPR y sensores IoT, y coordinación con la Guardia Nacional. Tyler Technologies no tiene presencia significativa en este mercado. Kabat One está construido para este modelo: K-Safety unifica el mapa operacional, K-Dispatch soporta despacho multiagencia, K-Video integra miles de cámaras urbanas y K-Traffic coordina semáforos y vehículos de emergencia.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Tyler no ofrece?',
-      answer: 'En comparación con Tyler Technologies, KabatOne agrega: gestión de video nativa con analítica IA (K-Video) — Tyler no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades, cámaras y sensores en una sola pantalla; gestión inteligente de tráfico (K-Traffic) con control de semáforos y detección de infracciones; video comunitario (K-Connect) para integrar cámaras ciudadanas; arquitectura cloud-native unificada desde el inicio; y presencia probada en México y Latinoamérica con localización nativa en español.',
+      question: '¿Qué ofrece Kabat One que Tyler no ofrece?',
+      answer: 'En comparación con Tyler Technologies, Kabat One agrega: gestión de video nativa con analítica IA (K-Video) — Tyler no incluye VMS; GIS operacional completo (K-Safety) con mapa en tiempo real de incidentes, unidades, cámaras y sensores en una sola pantalla; gestión inteligente de tráfico (K-Traffic) con control de semáforos y detección de infracciones; video comunitario (K-Connect) para integrar cámaras ciudadanas; arquitectura cloud-native unificada desde el inicio; y presencia probada en México y Latinoamérica con localización nativa en español.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Tyler Technologies?',
-      answer: 'Tyler Technologies is the largest government software provider in the United States, with a broad suite that includes Enterprise CAD (formerly New World CAD), RMS, courts, municipal ERP, treasury, and hundreds of other administrative modules. KabatOne is a cloud-native unified public safety platform that integrates AI video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one operational system. The difference is focus: Tyler covers the breadth of government software; KabatOne covers the depth of the response operational workflow.',
+      question: 'What is the difference between Kabat One and Tyler Technologies?',
+      answer: 'Tyler Technologies is the largest government software provider in the United States, with a broad suite that includes Enterprise CAD (formerly New World CAD), RMS, courts, municipal ERP, treasury, and hundreds of other administrative modules. Kabat One is a cloud-native unified public safety platform that integrates AI video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one operational system. The difference is focus: Tyler covers the breadth of government software; Kabat One covers the depth of the response operational workflow.',
     },
     {
       question: 'Does Tyler Enterprise CAD include video management?',
-      answer: 'No. Enterprise CAD (and the legacy New World Public Safety portfolio) focuses on call intake, dispatch, RMS, and field mobility — it does not include a VMS module. Agencies running Tyler that need surveillance video must deploy a separate VMS (Genetec, Milestone, Avigilon, Verkada) and integrate it through middleware. KabatOne includes K-Video as a native module with AI analytics, directly integrated into the K-Safety map and K-Dispatch workflow.',
+      answer: 'No. Enterprise CAD (and the legacy New World Public Safety portfolio) focuses on call intake, dispatch, RMS, and field mobility — it does not include a VMS module. Agencies running Tyler that need surveillance video must deploy a separate VMS (Genetec, Milestone, Avigilon, Verkada) and integrate it through middleware. Kabat One includes K-Video as a native module with AI analytics, directly integrated into the K-Safety map and K-Dispatch workflow.',
     },
     {
       question: 'Is Tyler Technologies available outside the United States?',
-      answer: 'Tyler Technologies operates primarily in the US state and local government market — with 40,000+ customers in North American government agencies. Its presence in Mexico and Latin America is limited. KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America, with full Spanish localization and operational experience in C4/C5 command center models.',
+      answer: 'Tyler Technologies operates primarily in the US state and local government market — with 40,000+ customers in North American government agencies. Its presence in Mexico and Latin America is limited. Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America, with full Spanish localization and operational experience in C4/C5 command center models.',
     },
     {
       question: 'Is Tyler Enterprise CAD cloud-native or legacy?',
-      answer: 'Tyler has been migrating its public safety portfolio toward cloud architecture (Enterprise Justice, Enterprise Supervisor, etc.), but the historical stack includes significant on-premise installations and the modernization process to full SaaS is gradual. KabatOne is cloud-native from the ground up — one platform, SaaS delivery, continuous updates with no downtime, and the same codebase for all customers.',
+      answer: 'Tyler has been migrating its public safety portfolio toward cloud architecture (Enterprise Justice, Enterprise Supervisor, etc.), but the historical stack includes significant on-premise installations and the modernization process to full SaaS is gradual. Kabat One is cloud-native from the ground up — one platform, SaaS delivery, continuous updates with no downtime, and the same codebase for all customers.',
     },
     {
       question: 'What about C4 and C5 command centers in Mexico?',
-      answer: 'C4 and C5 command centers in Mexico have a specific operational model: multi-agency response (police, fire, civil protection, traffic), massive integration of urban cameras, panic buttons, LPR, and IoT sensors, plus coordination with the National Guard. Tyler Technologies has no significant presence in this market. KabatOne is built for this model: K-Safety unifies the operational map, K-Dispatch supports multi-agency dispatch, K-Video integrates thousands of urban cameras, and K-Traffic coordinates signals and emergency vehicles.',
+      answer: 'C4 and C5 command centers in Mexico have a specific operational model: multi-agency response (police, fire, civil protection, traffic), massive integration of urban cameras, panic buttons, LPR, and IoT sensors, plus coordination with the National Guard. Tyler Technologies has no significant presence in this market. Kabat One is built for this model: K-Safety unifies the operational map, K-Dispatch supports multi-agency dispatch, K-Video integrates thousands of urban cameras, and K-Traffic coordinates signals and emergency vehicles.',
     },
     {
-      question: 'What does KabatOne offer that Tyler does not?',
-      answer: 'Compared to Tyler Technologies, KabatOne adds: native video management with AI analytics (K-Video) — Tyler does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, cameras, and sensors in one screen; intelligent traffic management (K-Traffic) with signal control and violation detection; community video (K-Connect) to integrate citizen cameras; unified cloud-native architecture from the ground up; and proven deployment in Mexico and Latin America with native Spanish localization.',
+      question: 'What does Kabat One offer that Tyler does not?',
+      answer: 'Compared to Tyler Technologies, Kabat One adds: native video management with AI analytics (K-Video) — Tyler does not include a VMS; full operational GIS (K-Safety) with a real-time map of incidents, units, cameras, and sensors in one screen; intelligent traffic management (K-Traffic) with signal control and violation detection; community video (K-Connect) to integrate citizen cameras; unified cloud-native architecture from the ground up; and proven deployment in Mexico and Latin America with native Spanish localization.',
     },
   ]
 
@@ -201,7 +201,7 @@ export default async function VsTylerTechnologiesPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Tyler Technologies</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Tyler Technologies</span>
         </div>
 
         {/* ── HERO ── */}
@@ -220,13 +220,13 @@ export default async function VsTylerTechnologiesPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Tyler Technologies — Amplitud de Software Gubernamental vs Profundidad Operativa'
-              : 'KabatOne vs Tyler Technologies — Government Software Breadth vs Operational Depth'}
+              ? 'Kabat One vs Tyler Technologies — Amplitud de Software Gubernamental vs Profundidad Operativa'
+              : 'Kabat One vs Tyler Technologies — Government Software Breadth vs Operational Depth'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Tyler Technologies es el proveedor de software gubernamental más grande de Estados Unidos — una suite amplia que cubre CAD, RMS, ERP municipal, tribunales, tesorería y decenas de otros módulos administrativos. KabatOne no compite en amplitud: compite en profundidad operativa. Una sola plataforma cloud-native que une video, CAD, GIS y tráfico en el flujo de respuesta, construida y probada en los centros de mando más exigentes de Latinoamérica.'
-              : 'Tyler Technologies is the largest government software provider in the United States — a broad suite covering CAD, RMS, municipal ERP, courts, treasury, and dozens of other administrative modules. KabatOne does not compete on breadth: it competes on operational depth. A single cloud-native platform that unifies video, CAD, GIS, and traffic in the response workflow — built and proven in Latin America\'s most demanding command centers.'}
+              ? 'Tyler Technologies es el proveedor de software gubernamental más grande de Estados Unidos — una suite amplia que cubre CAD, RMS, ERP municipal, tribunales, tesorería y decenas de otros módulos administrativos. Kabat One no compite en amplitud: compite en profundidad operativa. Una sola plataforma cloud-native que une video, CAD, GIS y tráfico en el flujo de respuesta, construida y probada en los centros de mando más exigentes de Latinoamérica.'
+              : 'Tyler Technologies is the largest government software provider in the United States — a broad suite covering CAD, RMS, municipal ERP, courts, treasury, and dozens of other administrative modules. Kabat One does not compete on breadth: it competes on operational depth. A single cloud-native platform that unifies video, CAD, GIS, and traffic in the response workflow — built and proven in Latin America\'s most demanding command centers.'}
           </p>
           {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
               answer engine finds a self-contained verdict at the top, not only in the FAQ.
@@ -283,22 +283,22 @@ export default async function VsTylerTechnologiesPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando C4/C5 y agencias de respuesta multiagencia. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa sobre el sistema operativo K1.'
-                : 'KabatOne is a cloud-native unified public safety platform built for cities, municipalities, C4/C5 command centers, and multi-agency response organizations. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 operating system.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios, centros de mando C4/C5 y agencias de respuesta multiagencia. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma nativa sobre el sistema operativo K1.'
+                : 'Kabat One is a cloud-native unified public safety platform built for cities, municipalities, C4/C5 command centers, and multi-agency response organizations. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform on the K1 operating system.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'La diferencia con Tyler es el enfoque: KabatOne no intenta cubrir ERP municipal, tesorería o gestión de tribunales. Se concentra en la profundidad del flujo operativo de respuesta — el trabajo real de un centro de mando moderno — y lo resuelve en una sola plataforma. Cuando un operador recibe un incidente, el evento aparece automáticamente en el mapa de K-Safety, activa el feed de video relevante de K-Video y permite coordinar ruta y tráfico con K-Traffic, todo en una pantalla.'
-                : 'The difference with Tyler is focus: KabatOne does not try to cover municipal ERP, treasury, or court management. It concentrates on the depth of the response operational workflow — the actual work of a modern command center — and solves it in one platform. When an operator receives an incident, the event automatically appears on the K-Safety map, triggers the relevant video feed in K-Video, and enables route and traffic coordination with K-Traffic, all in one screen.'}
+                ? 'La diferencia con Tyler es el enfoque: Kabat One no intenta cubrir ERP municipal, tesorería o gestión de tribunales. Se concentra en la profundidad del flujo operativo de respuesta — el trabajo real de un centro de mando moderno — y lo resuelve en una sola plataforma. Cuando un operador recibe un incidente, el evento aparece automáticamente en el mapa de K-Safety, activa el feed de video relevante de K-Video y permite coordinar ruta y tráfico con K-Traffic, todo en una pantalla.'
+                : 'The difference with Tyler is focus: Kabat One does not try to cover municipal ERP, treasury, or court management. It concentrates on the depth of the response operational workflow — the actual work of a modern command center — and solves it in one platform. When an operator receives an incident, the event automatically appears on the K-Safety map, triggers the relevant video feed in K-Video, and enables route and traffic coordination with K-Traffic, all in one screen.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan una plataforma operativa moderna, unificada y probada en modelos multiagencia, KabatOne es la referencia del mercado.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking for a modern, unified operational platform proven in multi-agency models, KabatOne is the market reference.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Para municipios y centros C4/C5 en la región que buscan una plataforma operativa moderna, unificada y probada en modelos multiagencia, Kabat One es la referencia del mercado.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. For municipalities and C4/C5 command centers in the region looking for a modern, unified operational platform proven in multi-agency models, Kabat One is the market reference.'}
             </p>
           </div>
         </section>
@@ -311,12 +311,12 @@ export default async function VsTylerTechnologiesPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Tyler Technologies: Diferencias Clave' : 'KabatOne vs Tyler Technologies: Key Differences'}
+              {es ? 'Kabat One vs Tyler Technologies: Diferencias Clave' : 'Kabat One vs Tyler Technologies: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Tyler Technologies en nueve dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Tyler Technologies across nine operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Tyler Technologies en nueve dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Tyler Technologies across nine operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -331,7 +331,7 @@ export default async function VsTylerTechnologiesPage({
                   Tyler
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -367,8 +367,8 @@ export default async function VsTylerTechnologiesPage({
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'La comparación entre KabatOne y Tyler no es realmente una comparación de productos equivalentes — es una comparación de dos estrategias distintas. Tyler es la respuesta a la pregunta "¿cómo administramos todos los procesos digitales de un gobierno local?". KabatOne es la respuesta a la pregunta "¿cómo operamos un centro de mando moderno de seguridad pública?". Ambas son preguntas válidas, y una agencia grande puede necesitar ambas soluciones simultáneamente.'
-                : 'The comparison between KabatOne and Tyler is not really a comparison of equivalent products — it is a comparison of two different strategies. Tyler is the answer to "how do we administer all the digital processes of a local government?". KabatOne is the answer to "how do we operate a modern public safety command center?". Both are valid questions, and a large agency may need both solutions simultaneously.'}
+                ? 'La comparación entre Kabat One y Tyler no es realmente una comparación de productos equivalentes — es una comparación de dos estrategias distintas. Tyler es la respuesta a la pregunta "¿cómo administramos todos los procesos digitales de un gobierno local?". Kabat One es la respuesta a la pregunta "¿cómo operamos un centro de mando moderno de seguridad pública?". Ambas son preguntas válidas, y una agencia grande puede necesitar ambas soluciones simultáneamente.'
+                : 'The comparison between Kabat One and Tyler is not really a comparison of equivalent products — it is a comparison of two different strategies. Tyler is the answer to "how do we administer all the digital processes of a local government?". Kabat One is the answer to "how do we operate a modern public safety command center?". Both are valid questions, and a large agency may need both solutions simultaneously.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
@@ -377,8 +377,8 @@ export default async function VsTylerTechnologiesPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne resuelve el problema de profundidad operativa nativamente. Si una agencia grande ya tiene Tyler para ERP municipal y tribunales, KabatOne coexiste perfectamente — se conecta via API al CAD de Tyler cuando es necesario y opera el centro de mando con su stack unificado de video, GIS y tráfico.'
-                : 'KabatOne solves the operational depth problem natively. If a large agency already runs Tyler for municipal ERP and courts, KabatOne coexists perfectly — it connects via API to Tyler\'s CAD when needed and operates the command center with its unified video, GIS, and traffic stack.'}
+                ? 'Kabat One resuelve el problema de profundidad operativa nativamente. Si una agencia grande ya tiene Tyler para ERP municipal y tribunales, Kabat One coexiste perfectamente — se conecta via API al CAD de Tyler cuando es necesario y opera el centro de mando con su stack unificado de video, GIS y tráfico.'
+                : 'Kabat One solves the operational depth problem natively. If a large agency already runs Tyler for municipal ERP and courts, Kabat One coexists perfectly — it connects via API to Tyler\'s CAD when needed and operates the command center with its unified video, GIS, and traffic stack.'}
             </p>
           </div>
         </section>
@@ -400,8 +400,8 @@ export default async function VsTylerTechnologiesPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está construido para este modelo desde el inicio. K-Safety unifica el mapa operacional con cámaras, unidades, incidentes y sensores, K-Dispatch soporta jerarquías de despacho multiagencia, K-Video maneja miles de cámaras urbanas con analítica IA, K-Traffic integra con semáforos de la ciudad, y K-Connect permite incorporar cámaras ciudadanas al centro de mando. Está localizado al 100% en español y el equipo tiene experiencia directa en los modelos operativos de C4/C5 en México, Perú, Colombia y Guatemala.'
-                : 'KabatOne is built for this model from the start. K-Safety unifies the operational map with cameras, units, incidents, and sensors; K-Dispatch supports multi-agency dispatch hierarchies; K-Video handles thousands of urban cameras with AI analytics; K-Traffic integrates with city traffic signals; and K-Connect brings citizen cameras into the command center. It is 100% Spanish-localized and the team has direct experience with C4/C5 operational models in Mexico, Peru, Colombia, and Guatemala.'}
+                ? 'Kabat One está construido para este modelo desde el inicio. K-Safety unifica el mapa operacional con cámaras, unidades, incidentes y sensores, K-Dispatch soporta jerarquías de despacho multiagencia, K-Video maneja miles de cámaras urbanas con analítica IA, K-Traffic integra con semáforos de la ciudad, y K-Connect permite incorporar cámaras ciudadanas al centro de mando. Está localizado al 100% en español y el equipo tiene experiencia directa en los modelos operativos de C4/C5 en México, Perú, Colombia y Guatemala.'
+                : 'Kabat One is built for this model from the start. K-Safety unifies the operational map with cameras, units, incidents, and sensors; K-Dispatch supports multi-agency dispatch hierarchies; K-Video handles thousands of urban cameras with AI analytics; K-Traffic integrates with city traffic signals; and K-Connect brings citizen cameras into the command center. It is 100% Spanish-localized and the team has direct experience with C4/C5 operational models in Mexico, Peru, Colombia, and Guatemala.'}
             </p>
           </div>
         </section>
@@ -414,7 +414,7 @@ export default async function VsTylerTechnologiesPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -453,7 +453,7 @@ export default async function VsTylerTechnologiesPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Tyler Technologies: Preguntas y Respuestas' : 'KabatOne vs Tyler Technologies: Questions & Answers'}
+              {es ? 'Kabat One vs Tyler Technologies: Preguntas y Respuestas' : 'Kabat One vs Tyler Technologies: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -493,7 +493,7 @@ export default async function VsTylerTechnologiesPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Mark43' : 'KabatOne vs Mark43'}</span>
+                <span>{es ? 'Kabat One vs Mark43' : 'Kabat One vs Mark43'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -502,7 +502,7 @@ export default async function VsTylerTechnologiesPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/cad" style={{
@@ -511,7 +511,7 @@ export default async function VsTylerTechnologiesPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/best-cad-dispatch-software" style={{
@@ -555,8 +555,8 @@ export default async function VsTylerTechnologiesPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta video, CAD, GIS y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, CAD, GIS, and traffic in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareNigerPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Níger | FAN, AES y Gestión de Crisis Sahel – KabatOne"
-      : "Public Safety Software for Niger | FAN, AES & Sahel Crisis Management – KabatOne",
+      ? "Software de Seguridad Pública para Níger | FAN, AES y Gestión de Crisis Sahel – Kabat One"
+      : "Public Safety Software for Niger | FAN, AES & Sahel Crisis Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, coordinación antiterrorista y conciencia situacional para las Forces Armées du Niger, gestión de emergencias y programas de estabilización en Níger — el corazón de la AES."
-      : "KabatOne delivers modular command-and-control, counter-terrorism coordination, and situational awareness for the Forces Armées du Niger, emergency management, and stabilisation programs in Niger — the heart of the AES.",
+      ? "Kabat One ofrece plataforma modular de mando y control, coordinación antiterrorista y conciencia situacional para las Forces Armées du Niger, gestión de emergencias y programas de estabilización en Níger — el corazón de la AES."
+      : "Kabat One delivers modular command-and-control, counter-terrorism coordination, and situational awareness for the Forces Armées du Niger, emergency management, and stabilisation programs in Niger — the heart of the AES.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-niger"
       : "https://kabatone.com/resources/public-safety-software-niger",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareNigerPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Níger?"
-        : "How can KabatOne support public safety in Niger?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Níger?"
+        : "How can Kabat One support public safety in Niger?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 8 regiones/63 departamentos, coordinación antiterrorista FAN con inteligencia táctica de JNIM/GSIM/ISWAP, gestión de los 300,000+ PDI y plataformas de comunicación de emergencia para Niamey, Zinder, Maradi, Tahoua y Agadez."
-        : "KabatOne provides modular CAD/incident management for all 8 regions/63 departments, FAN counter-terrorism coordination with JNIM/GSIM/ISWAP tactical intelligence, management of 300,000+ IDPs, and emergency communication platforms for Niamey, Zinder, Maradi, Tahoua, and Agadez.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 8 regiones/63 departamentos, coordinación antiterrorista FAN con inteligencia táctica de JNIM/GSIM/ISWAP, gestión de los 300,000+ PDI y plataformas de comunicación de emergencia para Niamey, Zinder, Maradi, Tahoua y Agadez."
+        : "Kabat One provides modular CAD/incident management for all 8 regions/63 departments, FAN counter-terrorism coordination with JNIM/GSIM/ISWAP tactical intelligence, management of 300,000+ IDPs, and emergency communication platforms for Niamey, Zinder, Maradi, Tahoua, and Agadez.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Níger?"
-        : "How does KabatOne support critical infrastructure security in Niger?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Níger?"
+        : "How does Kabat One support critical infrastructure security in Niger?",
       answer: es
         ? "La plataforma monitorea las minas de uranio de Arlit/Akouta (ORANO/SOMAÏR/COMINAK — Níger es el 7mo productor mundial de uranio), los yacimientos de petróleo de Agadem (CNPC/SH/ORLEN ~20,000 bpd), el oleoducto de exportación Agadem-Cotonou (WAPCO, 2,000+ km), la presa de Kandadji (130 MW en construcción) y NIGELEC red eléctrica."
         : "The platform monitors Arlit/Akouta uranium mines (ORANO/SOMAÏR/COMINAK — Niger is the world's 7th largest uranium producer), Agadem oil fields (CNPC/SH/ORLEN ~20,000 bpd), Agadem-Cotonou export pipeline (WAPCO, 2,000+ km), Kandadji Dam (130 MW under construction), and NIGELEC power grid.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Níger?"
-        : "Can KabatOne integrate with humanitarian management in Niger?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Níger?"
+        : "Can Kabat One integrate with humanitarian management in Niger?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP para la gestión de los 300,000+ PDI (zonas de Diffa/Tillabéri/Tahoua), alertas FEWS NET de inseguridad alimentaria (uno de los países con mayor inseguridad alimentaria del mundo), el Sistema de Alerta Temprana del Sahel y la coordinación de la AES/G5 Sahel."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP for management of 300,000+ IDPs (Diffa/Tillaberi/Tahoua zones), FEWS NET food insecurity alerts (one of the world's highest food insecurity countries), Sahel Early Warning System, and AES/G5 Sahel coordination.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP para la gestión de los 300,000+ PDI (zonas de Diffa/Tillabéri/Tahoua), alertas FEWS NET de inseguridad alimentaria (uno de los países con mayor inseguridad alimentaria del mundo), el Sistema de Alerta Temprana del Sahel y la coordinación de la AES/G5 Sahel."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP for management of 300,000+ IDPs (Diffa/Tillaberi/Tahoua zones), FEWS NET food insecurity alerts (one of the world's highest food insecurity countries), Sahel Early Warning System, and AES/G5 Sahel coordination.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Níger?"
-        : "How does KabatOne comply with Niger's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Níger?"
+        : "How does Kabat One comply with Niger's regulations?",
       answer: es
-        ? "KabatOne se alinea con la Loi 2017-28 du 3 mai 2017 portant Protection des Données Personnelles, la Autorité de Régulation des Postes et Télécommunications du Niger (ARTP), los estándares del CERT Niger y los marcos de adquisiciones del Banco Mundial/PNUD/AES para proyectos de estabilización."
-        : "KabatOne aligns with Law 2017-28 of 3 May 2017 on Personal Data Protection, Autorité de Régulation des Postes et Télécommunications du Niger (ARTP), CERT Niger standards, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
+        ? "Kabat One se alinea con la Loi 2017-28 du 3 mai 2017 portant Protection des Données Personnelles, la Autorité de Régulation des Postes et Télécommunications du Niger (ARTP), los estándares del CERT Niger y los marcos de adquisiciones del Banco Mundial/PNUD/AES para proyectos de estabilización."
+        : "Kabat One aligns with Law 2017-28 of 3 May 2017 on Personal Data Protection, Autorité de Régulation des Postes et Télécommunications du Niger (ARTP), CERT Niger standards, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Níger?"
-        : "What sets KabatOne apart for Niger's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Níger?"
+        : "What sets Kabat One apart for Niger's border management?",
       answer: es
-        ? "KabatOne puede unificar los 7 corredores fronterizos (Algeria/Libia/Chad/Nigeria/Benín/Burkina Faso/Mali) con ANPR, listas Interpol/AES, alertas ISWAP/JNIM del Lago Chad/Diffa y monitoreo del corredor de uranio Arlit-Agadez-Niamey con gestión unificada FAN/Gendarmerie."
-        : "KabatOne can unify 7 border corridors (Algeria/Libya/Chad/Nigeria/Benin/Burkina Faso/Mali) with ANPR, Interpol/AES watchlists, ISWAP/JNIM Lake Chad/Diffa alerts, and Arlit-Agadez-Niamey uranium corridor monitoring with unified FAN/Gendarmerie management.",
+        ? "Kabat One puede unificar los 7 corredores fronterizos (Algeria/Libia/Chad/Nigeria/Benín/Burkina Faso/Mali) con ANPR, listas Interpol/AES, alertas ISWAP/JNIM del Lago Chad/Diffa y monitoreo del corredor de uranio Arlit-Agadez-Niamey con gestión unificada FAN/Gendarmerie."
+        : "Kabat One can unify 7 border corridors (Algeria/Libya/Chad/Nigeria/Benin/Burkina Faso/Mali) with ANPR, Interpol/AES watchlists, ISWAP/JNIM Lake Chad/Diffa alerts, and Arlit-Agadez-Niamey uranium corridor monitoring with unified FAN/Gendarmerie management.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareNigerPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Las Forces Armées du Niger (FAN), con más de 25,000 efectivos, y la Gendarmerie Nationale conducen operaciones antiterroristas con apoyo ruso (Africa Corps/Wagner) tras la expulsión de las fuerzas francesas (Barkhane) y la misión de la UE EUCAP Sahel Niger. KabatOne proporciona plataformas de C2 modulares adaptadas a las condiciones de conectividad limitada y alta amenaza del Sahel."
-              : "Forces Armées du Niger (FAN), with over 25,000 troops, and the Gendarmerie Nationale conduct counter-terrorism operations with Russian support (Africa Corps/Wagner) after the expulsion of French forces (Barkhane) and EU mission EUCAP Sahel Niger. KabatOne provides modular C2 platforms adapted to the Sahel's limited connectivity and high-threat conditions."}
+              ? "Las Forces Armées du Niger (FAN), con más de 25,000 efectivos, y la Gendarmerie Nationale conducen operaciones antiterroristas con apoyo ruso (Africa Corps/Wagner) tras la expulsión de las fuerzas francesas (Barkhane) y la misión de la UE EUCAP Sahel Niger. Kabat One proporciona plataformas de C2 modulares adaptadas a las condiciones de conectividad limitada y alta amenaza del Sahel."
+              : "Forces Armées du Niger (FAN), with over 25,000 troops, and the Gendarmerie Nationale conduct counter-terrorism operations with Russian support (Africa Corps/Wagner) after the expulsion of French forces (Barkhane) and EU mission EUCAP Sahel Niger. Kabat One provides modular C2 platforms adapted to the Sahel's limited connectivity and high-threat conditions."}
           </p>
 
           {/* Strategic Resources */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareNigerPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona seguridad perimetral georreferenciada para las minas de uranio de Arlit/Akouta, el yacimiento de petróleo de Agadem, monitoreo del oleoducto WAPCO con alertas de intrusión/sabotaje, gestión de incidentes del personal internacional ORANO/CNPC/SH, y coordinación FAN para las unidades de protección de infraestructura crítica."
-              : "KabatOne provides georeferenced perimeter security for Arlit/Akouta uranium mines, Agadem oil field, WAPCO pipeline monitoring with intrusion/sabotage alerts, ORANO/CNPC/SH international staff incident management, and FAN coordination for critical infrastructure protection units."}
+              ? "Kabat One proporciona seguridad perimetral georreferenciada para las minas de uranio de Arlit/Akouta, el yacimiento de petróleo de Agadem, monitoreo del oleoducto WAPCO con alertas de intrusión/sabotaje, gestión de incidentes del personal internacional ORANO/CNPC/SH, y coordinación FAN para las unidades de protección de infraestructura crítica."
+              : "Kabat One provides georeferenced perimeter security for Arlit/Akouta uranium mines, Agadem oil field, WAPCO pipeline monitoring with intrusion/sabotage alerts, ORANO/CNPC/SH international staff incident management, and FAN coordination for critical infrastructure protection units."}
           </p>
 
           {/* Humanitarian */}
@@ -199,8 +199,8 @@ export default async function PublicSafetySoftwareNigerPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Los proyectos de estabilización en Níger son financiados principalmente por el Banco Mundial, el PNUD, el CNPC/China (a través de la AES), y algunos donantes europeos bajo restricciones post-junta. KabatOne está estructurado para despliegue bajo marcos de adquisición de donantes, compatible con los estándares AES y los protocolos de coordinación humanitaria OCHA/CONASUR."
-              : "Stabilisation projects in Niger are primarily funded by the World Bank, UNDP, CNPC/China (through AES), and some European donors under post-junta restrictions. KabatOne is structured for deployment under donor procurement frameworks, compatible with AES standards and OCHA/CONASUR humanitarian coordination protocols."}
+              ? "Los proyectos de estabilización en Níger son financiados principalmente por el Banco Mundial, el PNUD, el CNPC/China (a través de la AES), y algunos donantes europeos bajo restricciones post-junta. Kabat One está estructurado para despliegue bajo marcos de adquisición de donantes, compatible con los estándares AES y los protocolos de coordinación humanitaria OCHA/CONASUR."
+              : "Stabilisation projects in Niger are primarily funded by the World Bank, UNDP, CNPC/China (through AES), and some European donors under post-junta restrictions. Kabat One is structured for deployment under donor procurement frameworks, compatible with AES standards and OCHA/CONASUR humanitarian coordination protocols."}
           </p>
         </section>
 
@@ -214,43 +214,43 @@ export default async function PublicSafetySoftwareNigerPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Níger?"
-                    : "How can KabatOne support public safety in Niger?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Níger?"
+                    : "How can Kabat One support public safety in Niger?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 8 regiones/63 departamentos, coordinación FAN antiterrorista JNIM/ISWAP, gestión 300K+ PDI y plataformas de emergencia para Niamey, Zinder, Maradi, Tahoua y Agadez."
-                    : "KabatOne provides modular CAD for 8 regions/63 departments, FAN counter-terrorism coordination JNIM/ISWAP, 300K+ IDP management, and emergency platforms for Niamey, Zinder, Maradi, Tahoua, and Agadez.",
+                    ? "Kabat One proporciona CAD modular para 8 regiones/63 departamentos, coordinación FAN antiterrorista JNIM/ISWAP, gestión 300K+ PDI y plataformas de emergencia para Niamey, Zinder, Maradi, Tahoua y Agadez."
+                    : "Kabat One provides modular CAD for 8 regions/63 departments, FAN counter-terrorism coordination JNIM/ISWAP, 300K+ IDP management, and emergency platforms for Niamey, Zinder, Maradi, Tahoua, and Agadez.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Níger?"
-                    : "How does KabatOne support critical infrastructure security in Niger?",
+                    ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Níger?"
+                    : "How does Kabat One support critical infrastructure security in Niger?",
                   a: es
                     ? "La plataforma monitorea minas uranio Arlit/Akouta (ORANO/SOMAÏR/COMINAK, 7mo productor mundial), campos petróleo Agadem (CNPC/SH, ~20K bpd), oleoducto WAPCO 2,000+ km a Cotonou (inaugural 2024) y presa Kandadji 130 MW."
                     : "The platform monitors Arlit/Akouta uranium mines (ORANO/SOMAÏR/COMINAK, world 7th producer), Agadem oil fields (CNPC/SH, ~20K bpd), WAPCO pipeline 2,000+ km to Cotonou (inaugurated 2024), and Kandadji Dam 130 MW.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Níger?"
-                    : "Can KabatOne integrate with humanitarian management in Niger?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Níger?"
+                    : "Can Kabat One integrate with humanitarian management in Niger?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/UNHCR/WFP para 300K+ PDI Diffa/Tillabéri/Tahoua, FEWS NET/SAP alertas inseguridad alimentaria y coordinación AES/G5 Sahel corredores humanitarios."
-                    : "Yes. KabatOne integrates OCHA/UNHCR/WFP for 300K+ IDPs Diffa/Tillaberi/Tahoua, FEWS NET/SAP food insecurity alerts, and AES/G5 Sahel humanitarian corridor coordination.",
+                    ? "Sí. Kabat One integra OCHA/UNHCR/WFP para 300K+ PDI Diffa/Tillabéri/Tahoua, FEWS NET/SAP alertas inseguridad alimentaria y coordinación AES/G5 Sahel corredores humanitarios."
+                    : "Yes. Kabat One integrates OCHA/UNHCR/WFP for 300K+ IDPs Diffa/Tillaberi/Tahoua, FEWS NET/SAP food insecurity alerts, and AES/G5 Sahel humanitarian corridor coordination.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Níger?"
-                    : "How does KabatOne comply with Niger's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Níger?"
+                    : "How does Kabat One comply with Niger's regulations?",
                   a: es
-                    ? "KabatOne se alinea con Loi 2017-28/CNIL-Niger, ARTP/CERT-Niger, Loi 2012-07/ARMP-Niger y marcos de adquisiciones Banco Mundial/PNUD/AES para proyectos de estabilización."
-                    : "KabatOne aligns with Law 2017-28/CNIL-Niger, ARTP/CERT-Niger, Law 2012-07/ARMP-Niger, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
+                    ? "Kabat One se alinea con Loi 2017-28/CNIL-Niger, ARTP/CERT-Niger, Loi 2012-07/ARMP-Niger y marcos de adquisiciones Banco Mundial/PNUD/AES para proyectos de estabilización."
+                    : "Kabat One aligns with Law 2017-28/CNIL-Niger, ARTP/CERT-Niger, Law 2012-07/ARMP-Niger, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Níger?"
-                    : "What sets KabatOne apart for Niger's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Níger?"
+                    : "What sets Kabat One apart for Niger's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 7 corredores (Algeria/Libia/Chad/Nigeria/Benín/Burkina Faso/Mali) con ANPR, listas Interpol/AES, alertas ISWAP Lago Chad/Diffa y JNIM triple frontera, con gestión FAN/Gendarmerie."
-                    : "KabatOne can unify 7 corridors (Algeria/Libya/Chad/Nigeria/Benin/Burkina Faso/Mali) with ANPR, Interpol/AES watchlists, ISWAP Lake Chad/Diffa and JNIM triple frontier alerts, with FAN/Gendarmerie management.",
+                    ? "Kabat One puede unificar los 7 corredores (Algeria/Libia/Chad/Nigeria/Benín/Burkina Faso/Mali) con ANPR, listas Interpol/AES, alertas ISWAP Lago Chad/Diffa y JNIM triple frontera, con gestión FAN/Gendarmerie."
+                    : "Kabat One can unify 7 corridors (Algeria/Libya/Chad/Nigeria/Benin/Burkina Faso/Mali) with ANPR, Interpol/AES watchlists, ISWAP Lake Chad/Diffa and JNIM triple frontier alerts, with FAN/Gendarmerie management.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

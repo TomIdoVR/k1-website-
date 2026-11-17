@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareItalyPage({
       answer: 'El NUE 112 (Numero Unico di Emergenza) es el proyecto nacional para adoptar el número europeo único 112 como punto de entrada para todas las emergencias en Italia. Las centrales NUE 112 — llamadas SOREU (Sale Operative Regionali Emergenza Urgenza) en Lombardía — reciben todas las llamadas, identifican la emergencia y redirigen al cuerpo competente (Carabinieri, Polizia, VVF, SUEM). La implementación es progresiva por región. Este proyecto requiere plataformas de despacho CAD que soporten transferencia de llamadas con datos de incidente (CTI) entre centrales NUE y salas operativas de cada cuerpo. Los sistemas tecnológicos deben integrarse con el protocolo EENA/ETSI para el intercambio de datos de emergencia.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Polizia di Stato, Carabinieri y Polizia Locale italianos?',
-      answer: 'KabatOne integra las funciones que las distintas fuerzas de seguridad italianas gestionan en plataformas separadas: despacho CAD compatible con los flujos NUE 112/SOREU y las salas operativas de Questure y Carabinieri (K-Dispatch), gestión unificada de redes CCTV municipales y provinciales con analítica de IA — LPR/ANPR, reconocimiento de comportamientos, búsqueda forense — conforme al GDPR y las directrices del Garante Privacy (K-Video), y conciencia situacional GIS compartida entre Prefettura, Questura, Comandi dei Carabinieri y Polizia Locale (K-Safety). Despliegue on-premises con cumplimiento GDPR y requisitos ACN. Solicite una demo adaptada al contexto de las sale operative provinciali italianas.',
+      question: '¿Por qué Kabat One es adecuado para la Polizia di Stato, Carabinieri y Polizia Locale italianos?',
+      answer: 'Kabat One integra las funciones que las distintas fuerzas de seguridad italianas gestionan en plataformas separadas: despacho CAD compatible con los flujos NUE 112/SOREU y las salas operativas de Questure y Carabinieri (K-Dispatch), gestión unificada de redes CCTV municipales y provinciales con analítica de IA — LPR/ANPR, reconocimiento de comportamientos, búsqueda forense — conforme al GDPR y las directrices del Garante Privacy (K-Video), y conciencia situacional GIS compartida entre Prefettura, Questura, Comandi dei Carabinieri y Polizia Locale (K-Safety). Despliegue on-premises con cumplimiento GDPR y requisitos ACN. Solicite una demo adaptada al contexto de las sale operative provinciali italianas.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareItalyPage({
       answer: 'The NUE 112 (Numero Unico di Emergenza) is Italy\'s national project to adopt the European 112 number as the single entry point for all emergencies. NUE 112 centres — known as SOREU (Sale Operative Regionali Emergenza Urgenza) in Lombardy — receive all calls, identify the emergency type, and route to the competent body (Carabinieri, Polizia, VVF, SUEM). Implementation is rolling out region by region. This requires CAD dispatch platforms that support call transfer with incident data (CTI) between NUE centres and each force\'s own operational rooms. Technology systems must integrate with EENA/ETSI protocols for emergency data exchange.',
     },
     {
-      question: 'Why is KabatOne suited for Italy\'s Polizia di Stato, Carabinieri, and Polizia Locale?',
-      answer: 'KabatOne integrates the functions Italy\'s security forces manage across separate platforms: CAD dispatch compatible with NUE 112/SOREU flows and the operational rooms of Questure and Carabinieri commands (K-Dispatch), unified management of municipal and provincial CCTV networks with AI analytics — LPR/ANPR, behavioural detection, forensic search — compliant with GDPR and Garante Privacy guidelines (K-Video), and GIS situational awareness shared across Prefetture, Questure, Carabinieri commands, and Polizia Locale (K-Safety). On-premises deployment with GDPR compliance and ACN requirements. Request a demo tailored to the Italian sala operativa provinciale context.',
+      question: 'Why is Kabat One suited for Italy\'s Polizia di Stato, Carabinieri, and Polizia Locale?',
+      answer: 'Kabat One integrates the functions Italy\'s security forces manage across separate platforms: CAD dispatch compatible with NUE 112/SOREU flows and the operational rooms of Questure and Carabinieri commands (K-Dispatch), unified management of municipal and provincial CCTV networks with AI analytics — LPR/ANPR, behavioural detection, forensic search — compliant with GDPR and Garante Privacy guidelines (K-Video), and GIS situational awareness shared across Prefetture, Questure, Carabinieri commands, and Polizia Locale (K-Safety). On-premises deployment with GDPR compliance and ACN requirements. Request a demo tailored to the Italian sala operativa provinciale context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareItalyPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Italia opera un sistema de seguridad pública multi-fuerza — Polizia di Stato, Carabinieri, Guardia di Finanza y 7,000+ Polizie Locali — con un proyecto nacional NUE 112 que moderniza el despacho de emergencias. KabatOne unifica el despacho CAD con soporte SOREU/NUE, la gestión de CCTV con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento GDPR y requisitos ACN.'
-                : 'Italy operates a multi-force public safety system — Polizia di Stato, Carabinieri, Guardia di Finanza, and 7,000+ Polizie Locali — with a national NUE 112 project modernising emergency dispatch. KabatOne unifies CAD dispatch with SOREU/NUE support, CCTV management with AI analytics, and GIS situational awareness in a single platform with GDPR compliance and ACN requirements.'}
+                ? 'Italia opera un sistema de seguridad pública multi-fuerza — Polizia di Stato, Carabinieri, Guardia di Finanza y 7,000+ Polizie Locali — con un proyecto nacional NUE 112 que moderniza el despacho de emergencias. Kabat One unifica el despacho CAD con soporte SOREU/NUE, la gestión de CCTV con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento GDPR y requisitos ACN.'
+                : 'Italy operates a multi-force public safety system — Polizia di Stato, Carabinieri, Guardia di Finanza, and 7,000+ Polizie Locali — with a national NUE 112 project modernising emergency dispatch. Kabat One unifies CAD dispatch with SOREU/NUE support, CCTV management with AI analytics, and GIS situational awareness in a single platform with GDPR compliance and ACN requirements.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareItalyPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de las Sale Operative Italiane' : 'How KabatOne Addresses Italian Sala Operativa Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de las Sale Operative Italiane' : 'How Kabat One Addresses Italian Sala Operativa Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para las sale operative provinciali y centros de mando municipales que necesitan un único dashboard para gestionar llamadas NUE 112/113 simultáneas, monitorear redes de CCTV provinciales y municipales, y coordinar unidades de múltiples cuerpos sobre un mapa GIS — todo bajo los exigentes requisitos de privacidad del Garante e infraestructura de la ACN.'
-                : 'KabatOne is designed for Italian sale operative provinciali and municipal command centres that need a single dashboard to manage simultaneous NUE 112/113 calls, monitor provincial and municipal CCTV networks, and coordinate units from multiple forces on a GIS map — all under the Garante\'s demanding privacy requirements and ACN infrastructure standards.'}
+                ? 'Kabat One está diseñado para las sale operative provinciali y centros de mando municipales que necesitan un único dashboard para gestionar llamadas NUE 112/113 simultáneas, monitorear redes de CCTV provinciales y municipales, y coordinar unidades de múltiples cuerpos sobre un mapa GIS — todo bajo los exigentes requisitos de privacidad del Garante e infraestructura de la ACN.'
+                : 'Kabat One is designed for Italian sale operative provinciali and municipal command centres that need a single dashboard to manage simultaneous NUE 112/113 calls, monitor provincial and municipal CCTV networks, and coordinate units from multiple forces on a GIS map — all under the Garante\'s demanding privacy requirements and ACN infrastructure standards.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareItalyPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -341,7 +341,7 @@ export default async function PublicSafetySoftwareItalyPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Questura, Comando o Polizia Locale' : 'Request a Demo for Your Questura, Comando, or Polizia Locale'}
-          subtitle={es ? 'KabatOne integra despacho NUE 112/113, CCTV con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento GDPR y requisitos ACN. Demo adaptada al contexto de las sale operative italiane.' : 'KabatOne integrates NUE 112/113 dispatch, CCTV with AI analytics, and GIS situational awareness in a single platform with GDPR compliance and ACN requirements. Demo tailored to the Italian sala operativa context.'}
+          subtitle={es ? 'Kabat One integra despacho NUE 112/113, CCTV con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento GDPR y requisitos ACN. Demo adaptada al contexto de las sale operative italiane.' : 'Kabat One integrates NUE 112/113 dispatch, CCTV with AI analytics, and GIS situational awareness in a single platform with GDPR compliance and ACN requirements. Demo tailored to the Italian sala operativa context.'}
         />
 
         <Footer es={es} />

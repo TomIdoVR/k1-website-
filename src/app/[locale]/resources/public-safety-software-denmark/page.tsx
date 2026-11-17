@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareDenmarkPage({
       answer: 'Dinamarca regula la videovigilancia mediante la Lov om tv-overvågning (Ley de Videovigilancia) y el RGPD (Datatilsynet). Las cámaras en espacios públicos por parte de la policía requieren base legal específica. Copenhague tiene el sistema más desarrollado — integrado en el centro operativo de la policía de Copenhague (Kødbyen). Los sistemas ANPR (automatisk nummerpladegenkendelse) están integrados en las autopistas (Vejdirektoratet) y en puntos de control policial. El sistema de cámaras del metro de Copenhague (Metro Copenhagen) y los trenes (DSB) están conectados a los centros policiales. Los proyectos Smart City de Copenhague (Copenhagen City of Solutions) integran cámaras y sensores urbanos con analítica de datos bajo el marco del Datatilsynet. La tendencia hacia la Smart City incluye el uso de IA en videovigilancia con supervisión del Datatilsynet y evaluaciones de impacto (DPIA) obligatorias.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Politiet danesa, las Alarmcentraler y el Beredskabsstyrelsen?',
-      answer: 'KabatOne integra las capacidades que la Politiet danesa, las 12 Alarmcentraler, los municipios y el Beredskabsstyrelsen necesitan unificadas: despacho CAD multiagencia compatible con los vagtcentraler de los 12 distritos policiales y las Alarmcentraler — con integración SINE TETRA, clasificación automática de incidentes y coordinación policía-brandvæsen-ambulancias (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a Databeskyttelsesloven/Datatilsynet — con gestión de DPIA, limitación de finalidad y retención RGPD (K-Video), y conciencia situacional GIS compartida entre los 12 distritos policiales, brandvæsen municipales y el Beredskabsstyrelsen para coordinación en grandes catástrofes (K-Safety). Cloud EU con cumplimiento RGPD/Datatilsynet y NIS2/CFCS. Integración SINE. Demo adaptada al modelo de las Alarmcentraler y los 12 politikredse daneses.',
+      question: '¿Por qué Kabat One es adecuado para la Politiet danesa, las Alarmcentraler y el Beredskabsstyrelsen?',
+      answer: 'Kabat One integra las capacidades que la Politiet danesa, las 12 Alarmcentraler, los municipios y el Beredskabsstyrelsen necesitan unificadas: despacho CAD multiagencia compatible con los vagtcentraler de los 12 distritos policiales y las Alarmcentraler — con integración SINE TETRA, clasificación automática de incidentes y coordinación policía-brandvæsen-ambulancias (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a Databeskyttelsesloven/Datatilsynet — con gestión de DPIA, limitación de finalidad y retención RGPD (K-Video), y conciencia situacional GIS compartida entre los 12 distritos policiales, brandvæsen municipales y el Beredskabsstyrelsen para coordinación en grandes catástrofes (K-Safety). Cloud EU con cumplimiento RGPD/Datatilsynet y NIS2/CFCS. Integración SINE. Demo adaptada al modelo de las Alarmcentraler y los 12 politikredse daneses.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareDenmarkPage({
       answer: 'Denmark regulates video surveillance through the Lov om tv-overvågning (Video Surveillance Act) and GDPR (Datatilsynet). Police cameras in public spaces require a specific legal basis. Copenhagen has the most developed system — integrated with the Copenhagen police operations centre (Kødbyen). ANPR systems (automatisk nummerpladegenkendelse) are integrated on motorways (Vejdirektoratet) and at police checkpoints. Copenhagen Metro and DSB rail camera systems are connected to police centres. Copenhagen Smart City projects (Copenhagen City of Solutions) integrate urban cameras and sensors with data analytics under the Datatilsynet framework. The Smart City trend includes AI-powered surveillance with mandatory DPIA assessments and Datatilsynet oversight.',
     },
     {
-      question: 'Why is KabatOne suited for Danish Politiet, Alarmcentraler, and Beredskabsstyrelsen?',
-      answer: 'KabatOne integrates the capabilities that Danish Politiet, the 12 Alarmcentraler, municipalities, and Beredskabsstyrelsen need unified: multi-agency CAD dispatch compatible with 12-district vagtcentraler and Alarmcentraler — with SINE TETRA integration, automatic incident classification, and police-brandvæsen-ambulance coordination (K-Dispatch), urban camera and ANPR management with AI analytics compliant with Databeskyttelsesloven/Datatilsynet — with DPIA management, purpose limitation, and GDPR retention (K-Video), and shared GIS situational awareness across 12 police districts, municipal brandvæsen, and Beredskabsstyrelsen for major disaster coordination (K-Safety). EU cloud with GDPR/Datatilsynet and NIS2/CFCS compliance. SINE integration. Demo adapted to the Alarmcentralen model and Denmark\'s 12 politikredse.',
+      question: 'Why is Kabat One suited for Danish Politiet, Alarmcentraler, and Beredskabsstyrelsen?',
+      answer: 'Kabat One integrates the capabilities that Danish Politiet, the 12 Alarmcentraler, municipalities, and Beredskabsstyrelsen need unified: multi-agency CAD dispatch compatible with 12-district vagtcentraler and Alarmcentraler — with SINE TETRA integration, automatic incident classification, and police-brandvæsen-ambulance coordination (K-Dispatch), urban camera and ANPR management with AI analytics compliant with Databeskyttelsesloven/Datatilsynet — with DPIA management, purpose limitation, and GDPR retention (K-Video), and shared GIS situational awareness across 12 police districts, municipal brandvæsen, and Beredskabsstyrelsen for major disaster coordination (K-Safety). EU cloud with GDPR/Datatilsynet and NIS2/CFCS compliance. SINE integration. Demo adapted to the Alarmcentralen model and Denmark\'s 12 politikredse.',
     },
   ]
 
@@ -169,8 +169,8 @@ export default async function PublicSafetySoftwareDenmarkPage({
     : 'Politiet 12 Districts · SINE TETRA Network · Alarmcentralen 112 · Beredskabsstyrelsen · Databeskyttelsesloven/Datatilsynet · NIS2/CFCS'
 
   const intro = es
-    ? 'Dinamarca — 5.9 millones de habitantes en uno de los países más digitalizados del mundo — opera la Politiet en 12 distritos y la red SINE TETRA para todos sus servicios de emergencia. Las Alarmcentraler coordinan el despacho 112 multiagencia, el Beredskabsstyrelsen gestiona la preparación civil y el CFCS lidera la ciberseguridad nacional bajo NIS2. KabatOne proporciona la plataforma CAD, vídeo y GIS integrada con SINE, conforme a Databeskyttelsesloven/Datatilsynet y alineada con el alto nivel de digitalización del modelo danés.'
-    : 'Denmark — 5.9 million people in one of the world\'s most digitalised countries — operates Politiet across 12 districts and the SINE TETRA network for all emergency services. Alarmcentraler coordinate 112 multi-agency dispatch, Beredskabsstyrelsen manages civil preparedness, and CFCS leads national cybersecurity under NIS2. KabatOne delivers the CAD, video, and GIS platform integrated with SINE, compliant with Databeskyttelsesloven/Datatilsynet, and aligned with the Danish model\'s high digitalisation standard.'
+    ? 'Dinamarca — 5.9 millones de habitantes en uno de los países más digitalizados del mundo — opera la Politiet en 12 distritos y la red SINE TETRA para todos sus servicios de emergencia. Las Alarmcentraler coordinan el despacho 112 multiagencia, el Beredskabsstyrelsen gestiona la preparación civil y el CFCS lidera la ciberseguridad nacional bajo NIS2. Kabat One proporciona la plataforma CAD, vídeo y GIS integrada con SINE, conforme a Databeskyttelsesloven/Datatilsynet y alineada con el alto nivel de digitalización del modelo danés.'
+    : 'Denmark — 5.9 million people in one of the world\'s most digitalised countries — operates Politiet across 12 districts and the SINE TETRA network for all emergency services. Alarmcentraler coordinate 112 multi-agency dispatch, Beredskabsstyrelsen manages civil preparedness, and CFCS leads national cybersecurity under NIS2. Kabat One delivers the CAD, video, and GIS platform integrated with SINE, compliant with Databeskyttelsesloven/Datatilsynet, and aligned with the Danish model\'s high digitalisation standard.'
 
   return (
     <>
@@ -243,11 +243,11 @@ export default async function PublicSafetySoftwareDenmarkPage({
         </div>
       </section>
 
-      {/* How KabatOne Works */}
+      {/* How Kabat One Works */}
       <section style={{ padding: '64px 24px', background: '#f8fafc' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: '#0f172a' }}>
-            {es ? 'Cómo KabatOne Apoya a los Servicios Daneses de Seguridad Pública' : 'How KabatOne Supports Danish Public Safety Services'}
+            {es ? 'Cómo Kabat One Apoya a los Servicios Daneses de Seguridad Pública' : 'How Kabat One Supports Danish Public Safety Services'}
           </h2>
           <p style={{ color: '#64748b', marginBottom: 36, fontSize: 16 }}>
             {es
@@ -354,7 +354,7 @@ export default async function PublicSafetySoftwareDenmarkPage({
       <CTASection
         es={es}
         h2={es ? 'Solicita una Demo para la Politiet, las Alarmcentraler o el Beredskabsstyrelsen de Dinamarca' : 'Request a Demo for Danish Politiet, Alarmcentraler, or Beredskabsstyrelsen'}
-        subtitle={es ? 'KabatOne integra el despacho CAD 112 compatible con las 12 Alarmcentraler policiales danesas — con integración SINE TETRA (preparado para SINE Next), gestión de cámaras urbanas/ANPR conforme a Databeskyttelsesloven/Datatilsynet, y conciencia situacional GIS con el Beredskabsstyrelsen. Cloud EU con cumplimiento NIS2/CFCS y el alto estándar de digitalización danés.' : 'KabatOne integrates 112 CAD dispatch compatible with all 12 Danish police Alarmcentraler — with SINE TETRA integration (SINE Next ready), urban camera/ANPR management compliant with Databeskyttelsesloven/Datatilsynet, and GIS situational awareness with Beredskabsstyrelsen. EU cloud with NIS2/CFCS compliance and Denmark\'s high digitalisation standard.'}
+        subtitle={es ? 'Kabat One integra el despacho CAD 112 compatible con las 12 Alarmcentraler policiales danesas — con integración SINE TETRA (preparado para SINE Next), gestión de cámaras urbanas/ANPR conforme a Databeskyttelsesloven/Datatilsynet, y conciencia situacional GIS con el Beredskabsstyrelsen. Cloud EU con cumplimiento NIS2/CFCS y el alto estándar de digitalización danés.' : 'Kabat One integrates 112 CAD dispatch compatible with all 12 Danish police Alarmcentraler — with SINE TETRA integration (SINE Next ready), urban camera/ANPR management compliant with Databeskyttelsesloven/Datatilsynet, and GIS situational awareness with Beredskabsstyrelsen. EU cloud with NIS2/CFCS compliance and Denmark\'s high digitalisation standard.'}
       />
       <Footer es={es} />
     </>

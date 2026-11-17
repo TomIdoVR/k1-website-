@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareIndiaPage({
       answer: 'India tiene proyectos Safe City en Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Ahmedabad y Lucknow, financiados por el MHA bajo el Fondo Nirbhaya. Estos proyectos integran redes de CCTV con analítica de IA (reconocimiento facial, LPR, detección de comportamiento), sistemas de despacho de emergencias y centros de mando centralizados. Delhi\'s Safe City project opera más de 300,000 cámaras integradas con el Delhi Police Command Center. Lucknow\'s ICCC es uno de los más completos de India.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para los ICCC y proyectos Safe City de India?',
-      answer: 'KabatOne integra exactamente las capacidades que los ICCC de India requieren bajo un solo proveedor: despacho de emergencias 112 con clasificación automática de incidentes (K-Dispatch), gestión de CCTV con analítica de IA — reconocimiento facial, LPR, detección de comportamiento — (K-Video) y conciencia situacional GIS para coordinación multiagencia (K-Safety). La plataforma admite despliegue on-premises para cumplir los requisitos de localización de datos del gobierno indio. Solicite una demostración adaptada al contexto de los proyectos Smart City de India.',
+      question: '¿Por qué Kabat One es adecuado para los ICCC y proyectos Safe City de India?',
+      answer: 'Kabat One integra exactamente las capacidades que los ICCC de India requieren bajo un solo proveedor: despacho de emergencias 112 con clasificación automática de incidentes (K-Dispatch), gestión de CCTV con analítica de IA — reconocimiento facial, LPR, detección de comportamiento — (K-Video) y conciencia situacional GIS para coordinación multiagencia (K-Safety). La plataforma admite despliegue on-premises para cumplir los requisitos de localización de datos del gobierno indio. Solicite una demostración adaptada al contexto de los proyectos Smart City de India.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareIndiaPage({
       answer: 'India has Safe City projects in Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Ahmedabad, and Lucknow, funded by MHA under the Nirbhaya Fund. These projects integrate CCTV networks with AI analytics (facial recognition, LPR, behavioural detection), emergency dispatch systems, and centralised command centres. Delhi\'s Safe City project operates over 300,000 cameras integrated with the Delhi Police Command Centre. Lucknow\'s ICCC is among India\'s most comprehensive.',
     },
     {
-      question: 'Why is KabatOne suited for Indian ICCCs and Safe City projects?',
-      answer: 'KabatOne integrates exactly the capabilities Indian ICCCs require under a single vendor: 112 emergency dispatch with automatic incident classification (K-Dispatch), CCTV management with AI analytics — facial recognition, LPR, behavioural detection — (K-Video), and GIS situational awareness for multi-agency coordination (K-Safety). The platform supports on-premises deployment to meet Indian government data localisation requirements. Request a demo tailored to India\'s Smart City project context.',
+      question: 'Why is Kabat One suited for Indian ICCCs and Safe City projects?',
+      answer: 'Kabat One integrates exactly the capabilities Indian ICCCs require under a single vendor: 112 emergency dispatch with automatic incident classification (K-Dispatch), CCTV management with AI analytics — facial recognition, LPR, behavioural detection — (K-Video), and GIS situational awareness for multi-agency coordination (K-Safety). The platform supports on-premises deployment to meet Indian government data localisation requirements. Request a demo tailored to India\'s Smart City project context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareIndiaPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'India opera 28 fuerzas policiales estatales independientes, está desplegando más de 100 Integrated Command and Control Centers (ICCC) bajo la Misión Smart Cities y moderniza su sistema de emergencias unificado al 112. KabatOne unifica el despacho de emergencias, la gestión de video con analítica de IA y la conciencia situacional GIS en una plataforma lista para el contexto ICCC indio con localización de datos on-premises.'
-                : 'India operates 28 independent state police forces, is deploying 100+ Integrated Command and Control Centres (ICCCs) under the Smart Cities Mission, and is modernising its unified emergency system to 112. KabatOne unifies emergency dispatch, AI video analytics, and GIS situational awareness in a single platform built for India\'s ICCC context with on-premises data localisation.'}
+                ? 'India opera 28 fuerzas policiales estatales independientes, está desplegando más de 100 Integrated Command and Control Centers (ICCC) bajo la Misión Smart Cities y moderniza su sistema de emergencias unificado al 112. Kabat One unifica el despacho de emergencias, la gestión de video con analítica de IA y la conciencia situacional GIS en una plataforma lista para el contexto ICCC indio con localización de datos on-premises.'
+                : 'India operates 28 independent state police forces, is deploying 100+ Integrated Command and Control Centres (ICCCs) under the Smart Cities Mission, and is modernising its unified emergency system to 112. Kabat One unifies emergency dispatch, AI video analytics, and GIS situational awareness in a single platform built for India\'s ICCC context with on-premises data localisation.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareIndiaPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works for India ── */}
+        {/* ── SECTION 2: How Kabat One Works for India ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de los ICCC Indios' : 'How KabatOne Addresses Indian ICCC Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de los ICCC Indios' : 'How Kabat One Addresses Indian ICCC Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para integrar múltiples funciones operativas de seguridad pública en un solo dashboard de mando — exactamente el modelo que los ICCC de la Misión Smart Cities de India requieren para gestionar CCTV, despacho de emergencias y análisis urbano en tiempo real desde una sola interfaz.'
-                : 'KabatOne is designed to integrate multiple public safety operational functions into a single command dashboard — exactly the model India\'s Smart Cities Mission ICCCs require to manage CCTV, emergency dispatch, and real-time urban analytics from a single interface.'}
+                ? 'Kabat One está diseñado para integrar múltiples funciones operativas de seguridad pública en un solo dashboard de mando — exactamente el modelo que los ICCC de la Misión Smart Cities de India requieren para gestionar CCTV, despacho de emergencias y análisis urbano en tiempo real desde una sola interfaz.'
+                : 'Kabat One is designed to integrate multiple public safety operational functions into a single command dashboard — exactly the model India\'s Smart Cities Mission ICCCs require to manage CCTV, emergency dispatch, and real-time urban analytics from a single interface.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareIndiaPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -341,7 +341,7 @@ export default async function PublicSafetySoftwareIndiaPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu ICCC o Proyecto Safe City' : 'Request a Demo for Your ICCC or Safe City Project'}
-          subtitle={es ? 'KabatOne integra despacho 112, redes masivas de CCTV con analítica de IA y conciencia situacional multiagencia en una plataforma lista para el ICCC de India con localización de datos on-premises.' : 'KabatOne integrates 112 dispatch, large-scale CCTV networks with AI analytics, and multi-agency situational awareness in a single platform built for India\'s ICCC with on-premises data localisation.'}
+          subtitle={es ? 'Kabat One integra despacho 112, redes masivas de CCTV con analítica de IA y conciencia situacional multiagencia en una plataforma lista para el ICCC de India con localización de datos on-premises.' : 'Kabat One integrates 112 dispatch, large-scale CCTV networks with AI analytics, and multi-agency situational awareness in a single platform built for India\'s ICCC with on-premises data localisation.'}
         />
 
         <Footer es={es} />

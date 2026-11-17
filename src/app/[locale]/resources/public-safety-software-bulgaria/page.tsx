@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareBulgariaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Bulgaria | KabatOne"
-    : "Public Safety Software for Bulgaria | KabatOne";
+    ? "Software de Seguridad Pública para Bulgaria | Kabat One"
+    : "Public Safety Software for Bulgaria | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Bulgaria — MVR (Ministerio del Interior), GDBOP, Guardia de Fronteras — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares de la OTAN y el sistema 112 búlgaro."
-    : "KabatOne supports Bulgaria security forces — MVR (Ministry of Interior), GDBOP, Border Police — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Bulgarian 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Bulgaria — MVR (Ministerio del Interior), GDBOP, Guardia de Fronteras — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares de la OTAN y el sistema 112 búlgaro."
+    : "Kabat One supports Bulgaria security forces — MVR (Ministry of Interior), GDBOP, Border Police — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO standards, and the Bulgarian 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-bulgaria"
@@ -37,10 +37,10 @@ export default async function PublicSafetySoftwareBulgariaPage({
         : "Bulgaria faces pressure on its EU external borders with Turkey (259 km) and Serbia, being the main entry point of the Balkan migration route. Over 300,000 irregular crossings were recorded in 2022-2023. Proximity to the Ukraine conflict, management of the Russian-speaking diaspora, and transnational organized crime (human/drug trafficking via the Balkan route) are persistent threats. Bulgaria also hosts NATO facilities such as Graf Ignatievo Air Base.",
     },
     {
-      question: es ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Bulgaria?" : "How does KabatOne support Bulgaria security forces?",
+      question: es ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Bulgaria?" : "How does Kabat One support Bulgaria security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía Nacional de Bulgaria (GDNP), la Dirección General de Lucha contra el Crimen Organizado (GDBOP), la Policía de Fronteras (GDGP), la Dirección General de Bomberos y Protección Civil (GDBZN), y el Servicio Estatal de Seguridad (DANS). La plataforma se integra con el sistema 112 búlgaro (operado por EEMS), cumple con el RGPD y la legislación de protección de datos de Bulgaria, y soporta la coordinación con Frontex para la gestión de la ruta balcánica."
-        : "KabatOne provides unified situational awareness for the Bulgarian National Police (GDNP), Directorate General for Combating Organized Crime (GDBOP), Border Police (GDGP), Fire Safety and Civil Protection Directorate (GDBZN), and State Security Agency (DANS). The platform integrates with Bulgaria's 112 system (operated by EEMS), complies with GDPR and Bulgarian data protection legislation, and supports Frontex coordination for Balkan route management.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía Nacional de Bulgaria (GDNP), la Dirección General de Lucha contra el Crimen Organizado (GDBOP), la Policía de Fronteras (GDGP), la Dirección General de Bomberos y Protección Civil (GDBZN), y el Servicio Estatal de Seguridad (DANS). La plataforma se integra con el sistema 112 búlgaro (operado por EEMS), cumple con el RGPD y la legislación de protección de datos de Bulgaria, y soporta la coordinación con Frontex para la gestión de la ruta balcánica."
+        : "Kabat One provides unified situational awareness for the Bulgarian National Police (GDNP), Directorate General for Combating Organized Crime (GDBOP), Border Police (GDGP), Fire Safety and Civil Protection Directorate (GDBZN), and State Security Agency (DANS). The platform integrates with Bulgaria's 112 system (operated by EEMS), complies with GDPR and Bulgarian data protection legislation, and supports Frontex coordination for Balkan route management.",
     },
     {
       question: es ? "¿Qué infraestructura crítica requiere protección en Bulgaria?" : "What critical infrastructure requires protection in Bulgaria?",
@@ -49,10 +49,10 @@ export default async function PublicSafetySoftwareBulgariaPage({
         : "Critical infrastructure includes Kozloduy Nuclear Power Plant (2 VVER-1000 reactors, 40% of Bulgarian electricity), Sofia International Airport (SOF), Varna Port and Burgas Port on the Black Sea, Trans-Balkan Pipeline gas corridor, Burgas-Alexandroupolis oil pipeline, and NATO bases at Graf Ignatievo and Bezmer. Bulgaria also hosts the Frontex Coordination Centre for the eastern Mediterranean route.",
     },
     {
-      question: es ? "¿Cómo gestiona KabatOne la vigilancia de fronteras en Bulgaria?" : "How does KabatOne manage border surveillance in Bulgaria?",
+      question: es ? "¿Cómo gestiona Kabat One la vigilancia de fronteras en Bulgaria?" : "How does Kabat One manage border surveillance in Bulgaria?",
       answer: es
-        ? "KabatOne integra los sistemas de vigilancia EUROSUR de la frontera turca (259 km), el seguimiento de unidades de la Policía de Fronteras, y la videoanalítica de las barreras de alambre de espino y cámaras térmicas instaladas en la frontera búlgaro-turca. La plataforma coordina con el Centro de Coordinación Nacional de Frontex, el EUBAM (Misión de Asistencia Fronteriza UE) y Europol para la inteligencia sobre la ruta balcánica."
-        : "KabatOne integrates EUROSUR surveillance systems on the Turkish border (259 km), Border Police unit tracking, and video analytics from barbed wire barriers and thermal cameras installed on the Bulgarian-Turkish border. The platform coordinates with the Frontex National Coordination Centre, EUBAM (EU Border Assistance Mission), and Europol for Balkan route intelligence.",
+        ? "Kabat One integra los sistemas de vigilancia EUROSUR de la frontera turca (259 km), el seguimiento de unidades de la Policía de Fronteras, y la videoanalítica de las barreras de alambre de espino y cámaras térmicas instaladas en la frontera búlgaro-turca. La plataforma coordina con el Centro de Coordinación Nacional de Frontex, el EUBAM (Misión de Asistencia Fronteriza UE) y Europol para la inteligencia sobre la ruta balcánica."
+        : "Kabat One integrates EUROSUR surveillance systems on the Turkish border (259 km), Border Police unit tracking, and video analytics from barbed wire barriers and thermal cameras installed on the Bulgarian-Turkish border. The platform coordinates with the Frontex National Coordination Centre, EUBAM (EU Border Assistance Mission), and Europol for Balkan route intelligence.",
     },
   ];
 
@@ -168,12 +168,12 @@ export default async function PublicSafetySoftwareBulgariaPage({
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
-            {es ? "Capacidades de KabatOne para Bulgaria" : "KabatOne Capabilities for Bulgaria"}
+            {es ? "Capacidades de Kabat One para Bulgaria" : "Kabat One Capabilities for Bulgaria"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a Bulgaria: gestión de la ruta migratoria balcánica en la frontera turca, protección de la Central Nuclear de Kozloduy, vigilancia portuaria en el Mar Negro, y coordinación con las misiones de la OTAN en las bases de Graf Ignatievo y Bezmer."
-              : "The KabatOne platform provides an integrated suite adapted to Bulgaria: Balkan migration route management on the Turkish border, Kozloduy Nuclear Power Plant protection, Black Sea port surveillance, and coordination with NATO missions at Graf Ignatievo and Bezmer bases."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a Bulgaria: gestión de la ruta migratoria balcánica en la frontera turca, protección de la Central Nuclear de Kozloduy, vigilancia portuaria en el Mar Negro, y coordinación con las misiones de la OTAN en las bases de Graf Ignatievo y Bezmer."
+              : "The Kabat One platform provides an integrated suite adapted to Bulgaria: Balkan migration route management on the Turkish border, Kozloduy Nuclear Power Plant protection, Black Sea port surveillance, and coordination with NATO missions at Graf Ignatievo and Bezmer bases."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -242,8 +242,8 @@ export default async function PublicSafetySoftwareBulgariaPage({
         es={es}
         h2={es ? "¿Listo para modernizar la seguridad pública en Bulgaria?" : "Ready to modernize public safety in Bulgaria?"}
         subtitle={es
-          ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar al MVR, la Guardia de Fronteras y GDBZN con una plataforma compatible con GDPR, NIS2, EUROSUR y los estándares de la OTAN."
-          : "Speak with our team about how KabatOne can support MVR, Border Police, and GDBZN with a platform compatible with GDPR, NIS2, EUROSUR, and NATO standards."}
+          ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar al MVR, la Guardia de Fronteras y GDBZN con una plataforma compatible con GDPR, NIS2, EUROSUR y los estándares de la OTAN."
+          : "Speak with our team about how Kabat One can support MVR, Border Police, and GDBZN with a platform compatible with GDPR, NIS2, EUROSUR, and NATO standards."}
       />
       <Footer es={es} />
     </>

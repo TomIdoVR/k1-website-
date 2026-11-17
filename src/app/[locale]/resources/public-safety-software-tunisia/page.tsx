@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareTunisiaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Túnez: DGPN/Garde Nationale, ONPC, INPDP/Loi 63-2004 y Visión 2035 | KabatOne'
-      : 'Public Safety Software for Tunisia: DGPN/Garde Nationale, ONPC, INPDP/Law 63-2004 & Vision 2035 | KabatOne',
+      ? 'Software de Seguridad Pública para Túnez: DGPN/Garde Nationale, ONPC, INPDP/Loi 63-2004 y Visión 2035 | Kabat One'
+      : 'Public Safety Software for Tunisia: DGPN/Garde Nationale, ONPC, INPDP/Law 63-2004 & Vision 2035 | Kabat One',
     es
       ? 'Plataforma unificada para la DGPN y Garde Nationale de Túnez — despacho CAD integrado en 24 gobernaciones, Túnez Safe City, ONPC protección civil, Puerto de Túnez Radès/Sfax, INPDP/Loi 63-2004 y adquisición HAICOP/Code des marchés publics.'
       : 'Unified platform for Tunisia DGPN and Garde Nationale — integrated CAD dispatch across 24 governorates, Tunis Safe City, ONPC civil protection, Port of Tunis Radès/Sfax, INPDP/Law 63-2004 compliance, and HAICOP/Code des marchés publics procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareTunisiaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Túnez?'
-        : 'How does KabatOne address Tunisia critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Túnez?'
+        : 'How does Kabat One address Tunisia critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión del Puerto de Túnez Radès (principal contenedor), Puerto de Sfax, Bizerta y Sousse, STEG (energía) y SONEDE (agua), vigilancia del oleoducto Transmed y coordinación del Aeropuerto TUN (6M+ pasajeros/año).'
-        : 'KabatOne integrates management for the Port of Tunis Radès (main container), Port of Sfax, Bizerta and Sousse, STEG (energy) and SONEDE (water), Transmed pipeline surveillance, and coordination for Tunis-Carthage Airport TUN (6M+ passengers/year).',
+        ? 'Kabat One integra gestión del Puerto de Túnez Radès (principal contenedor), Puerto de Sfax, Bizerta y Sousse, STEG (energía) y SONEDE (agua), vigilancia del oleoducto Transmed y coordinación del Aeropuerto TUN (6M+ pasajeros/año).'
+        : 'Kabat One integrates management for the Port of Tunis Radès (main container), Port of Sfax, Bizerta and Sousse, STEG (energy) and SONEDE (water), Transmed pipeline surveillance, and coordination for Tunis-Carthage Airport TUN (6M+ passengers/year).',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la protección de datos de Túnez?'
-        : 'Is KabatOne compliant with Tunisia data protection?',
+        ? '¿Es Kabat One compatible con la protección de datos de Túnez?'
+        : 'Is Kabat One compliant with Tunisia data protection?',
       answer: es
-        ? 'Sí. KabatOne cumple con la Loi organique 63-2004 supervisada por el INPDP. La arquitectura está alineada con el Décret-loi 54-2022 (ciberseguridad) y las directrices ANSI/CERT-TN.'
-        : 'Yes. KabatOne complies with Law 63-2004 supervised by the INPDP. The architecture aligns with Décret-loi 54-2022 (cybersecurity) and ANSI/CERT-TN guidelines.',
+        ? 'Sí. Kabat One cumple con la Loi organique 63-2004 supervisada por el INPDP. La arquitectura está alineada con el Décret-loi 54-2022 (ciberseguridad) y las directrices ANSI/CERT-TN.'
+        : 'Yes. Kabat One complies with Law 63-2004 supervised by the INPDP. The architecture aligns with Décret-loi 54-2022 (cybersecurity) and ANSI/CERT-TN guidelines.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la gestión de fronteras en Túnez?'
-        : 'How does KabatOne support border management in Tunisia?',
+        ? '¿Cómo apoya Kabat One la gestión de fronteras en Túnez?'
+        : 'How does Kabat One support border management in Tunisia?',
       answer: es
-        ? 'KabatOne gestiona los pasos fronterizos terrestres con Argelia (Bouchebka/Haïdra/Sakiet Sidi Youssef) y Libia (Ras Jedir/Dhehiba) con ANPR integrado, cámaras térmicas y coordinación entre DGPN, Garde Nationale y Unidades Anti-Terroristas.'
-        : 'KabatOne manages land border crossings with Algeria (Bouchebka/Haïdra/Sakiet Sidi Youssef) and Libya (Ras Jedir/Dhehiba) with integrated ANPR, thermal cameras, and cross-agency coordination between DGPN, Garde Nationale, and Anti-Terrorism Units.',
+        ? 'Kabat One gestiona los pasos fronterizos terrestres con Argelia (Bouchebka/Haïdra/Sakiet Sidi Youssef) y Libia (Ras Jedir/Dhehiba) con ANPR integrado, cámaras térmicas y coordinación entre DGPN, Garde Nationale y Unidades Anti-Terroristas.'
+        : 'Kabat One manages land border crossings with Algeria (Bouchebka/Haïdra/Sakiet Sidi Youssef) and Libya (Ras Jedir/Dhehiba) with integrated ANPR, thermal cameras, and cross-agency coordination between DGPN, Garde Nationale, and Anti-Terrorism Units.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareTunisiaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Túnez'
-                : 'KabatOne Platform Capabilities for Tunisia'}
+                ? 'Capacidades de la Plataforma Kabat One para Túnez'
+                : 'Kabat One Platform Capabilities for Tunisia'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -440,16 +440,16 @@ export default async function PublicSafetySoftwareTunisiaPage({
                       a: 'La DGPN bajo el Ministerio del Interior cubre 24 gobernaciones con Brigades de recherche, Policía Judicial y Policía de Fronteras. La Garde Nationale gestiona fronteras y zonas rurales/costeras. La ONPC coordina protección civil con línea de emergencia 198.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Túnez?',
-                      a: 'KabatOne integra gestión del Puerto de Túnez Radès (principal contenedor), Puerto de Sfax, Bizerta y Sousse, STEG (energía) y SONEDE (agua), vigilancia del oleoducto Transmed y coordinación del Aeropuerto TUN (6M+ pasajeros/año).',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Túnez?',
+                      a: 'Kabat One integra gestión del Puerto de Túnez Radès (principal contenedor), Puerto de Sfax, Bizerta y Sousse, STEG (energía) y SONEDE (agua), vigilancia del oleoducto Transmed y coordinación del Aeropuerto TUN (6M+ pasajeros/año).',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la protección de datos de Túnez?',
-                      a: 'Sí. KabatOne cumple con la Loi organique 63-2004 supervisada por el INPDP. La arquitectura está alineada con el Décret-loi 54-2022 (ciberseguridad) y las directrices ANSI/CERT-TN.',
+                      q: '¿Es Kabat One compatible con la protección de datos de Túnez?',
+                      a: 'Sí. Kabat One cumple con la Loi organique 63-2004 supervisada por el INPDP. La arquitectura está alineada con el Décret-loi 54-2022 (ciberseguridad) y las directrices ANSI/CERT-TN.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la gestión de fronteras en Túnez?',
-                      a: 'KabatOne gestiona los pasos fronterizos terrestres con Argelia (Bouchebka/Haïdra/Sakiet Sidi Youssef) y Libia (Ras Jedir/Dhehiba) con ANPR integrado, cámaras térmicas y coordinación entre DGPN, Garde Nationale y Unidades Anti-Terroristas.',
+                      q: '¿Cómo apoya Kabat One la gestión de fronteras en Túnez?',
+                      a: 'Kabat One gestiona los pasos fronterizos terrestres con Argelia (Bouchebka/Haïdra/Sakiet Sidi Youssef) y Libia (Ras Jedir/Dhehiba) con ANPR integrado, cámaras térmicas y coordinación entre DGPN, Garde Nationale y Unidades Anti-Terroristas.',
                     },
                   ]
                 : [
@@ -458,16 +458,16 @@ export default async function PublicSafetySoftwareTunisiaPage({
                       a: 'The DGPN under the Ministry of Interior covers 24 governorates with Brigades de recherche, Judicial Police and Border Police. The Garde Nationale manages borders and rural/coastal zones. The ONPC coordinates civil protection with emergency line 198.',
                     },
                     {
-                      q: 'How does KabatOne address Tunisia critical infrastructure?',
-                      a: 'KabatOne integrates management for the Port of Tunis Radès (main container), Port of Sfax, Bizerta and Sousse, STEG (energy) and SONEDE (water), Transmed pipeline surveillance, and coordination for Tunis-Carthage Airport TUN (6M+ passengers/year).',
+                      q: 'How does Kabat One address Tunisia critical infrastructure?',
+                      a: 'Kabat One integrates management for the Port of Tunis Radès (main container), Port of Sfax, Bizerta and Sousse, STEG (energy) and SONEDE (water), Transmed pipeline surveillance, and coordination for Tunis-Carthage Airport TUN (6M+ passengers/year).',
                     },
                     {
-                      q: 'Is KabatOne compliant with Tunisia data protection?',
-                      a: 'Yes. KabatOne complies with Law 63-2004 supervised by the INPDP. The architecture aligns with Décret-loi 54-2022 (cybersecurity) and ANSI/CERT-TN guidelines.',
+                      q: 'Is Kabat One compliant with Tunisia data protection?',
+                      a: 'Yes. Kabat One complies with Law 63-2004 supervised by the INPDP. The architecture aligns with Décret-loi 54-2022 (cybersecurity) and ANSI/CERT-TN guidelines.',
                     },
                     {
-                      q: 'How does KabatOne support border management in Tunisia?',
-                      a: 'KabatOne manages land border crossings with Algeria (Bouchebka/Haïdra/Sakiet Sidi Youssef) and Libya (Ras Jedir/Dhehiba) with integrated ANPR, thermal cameras, and cross-agency coordination between DGPN, Garde Nationale, and Anti-Terrorism Units.',
+                      q: 'How does Kabat One support border management in Tunisia?',
+                      a: 'Kabat One manages land border crossings with Algeria (Bouchebka/Haïdra/Sakiet Sidi Youssef) and Libya (Ras Jedir/Dhehiba) with integrated ANPR, thermal cameras, and cross-agency coordination between DGPN, Garde Nationale, and Anti-Terrorism Units.',
                     },
                   ]
               ).map((item) => (
@@ -489,8 +489,8 @@ export default async function PublicSafetySoftwareTunisiaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la DGPN, Garde Nationale y ONPC de Túnez.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Tunisia DGPN, Garde Nationale and ONPC.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la DGPN, Garde Nationale y ONPC de Túnez.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Tunisia DGPN, Garde Nationale and ONPC.'
           }
         />
       </main>

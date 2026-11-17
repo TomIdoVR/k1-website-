@@ -29,27 +29,27 @@ export default async function DronesIntegrationPage({
         {
           question: '¿Cómo se integra un dron con una plataforma de seguridad pública?',
           answer:
-            'La integración de drones con KabatOne funciona en dos capas. La primera es telemetría: la posición GPS, altitud, velocidad, batería y estado del dron se transmiten en tiempo real al mapa GIS de K-Safety, donde el dron aparece como una unidad más junto con vehículos y personal en campo. La segunda es video: el feed de la cámara del dron se ingiere en K-Video, donde los operadores pueden acceder a él como cualquier otra cámara de la red, incluso si el dron está en movimiento.',
+            'La integración de drones con Kabat One funciona en dos capas. La primera es telemetría: la posición GPS, altitud, velocidad, batería y estado del dron se transmiten en tiempo real al mapa GIS de K-Safety, donde el dron aparece como una unidad más junto con vehículos y personal en campo. La segunda es video: el feed de la cámara del dron se ingiere en K-Video, donde los operadores pueden acceder a él como cualquier otra cámara de la red, incluso si el dron está en movimiento.',
         },
         {
-          question: '¿Qué modelos de drones son compatibles con KabatOne?',
+          question: '¿Qué modelos de drones son compatibles con Kabat One?',
           answer:
-            'KabatOne integra drones mediante el SDK de DJI (Enterprise series: Matrice 300, Matrice 350, M30, Dock), APIs MQTT/MAVLink para sistemas basados en ArduPilot y PX4, y protocolos de streaming estándar (RTSP, WebRTC) para cualquier dron que transmita video. Los sistemas de dron-en-caja (dock stations) de DJI, Skydio, y Percepto también son compatibles mediante integración API directa con el sistema de gestión de flota.',
+            'Kabat One integra drones mediante el SDK de DJI (Enterprise series: Matrice 300, Matrice 350, M30, Dock), APIs MQTT/MAVLink para sistemas basados en ArduPilot y PX4, y protocolos de streaming estándar (RTSP, WebRTC) para cualquier dron que transmita video. Los sistemas de dron-en-caja (dock stations) de DJI, Skydio, y Percepto también son compatibles mediante integración API directa con el sistema de gestión de flota.',
         },
         {
-          question: '¿Puede KabatOne despachar drones automáticamente a incidentes?',
+          question: '¿Puede Kabat One despachar drones automáticamente a incidentes?',
           answer:
             'Sí, cuando el dron está en una dock station (base automatizada). Cuando K-Dispatch crea un incidente en una zona cubierta por un dron disponible en dock, el sistema puede enviar automáticamente el dron a la ubicación del incidente — activación de la dock, despegue, navegación autónoma al punto de interés, transmisión de video en vivo al despachador — todo antes de que lleguen las unidades terrestres. El operador mantiene control total y puede redirigir o abortar en cualquier momento.',
         },
         {
           question: '¿Cómo se maneja el cumplimiento regulatorio con drones en espacio público?',
           answer:
-            'KabatOne proporciona las herramientas de registro y documentación para cumplimiento regulatorio: log automático de cada vuelo con timestamp, coordenadas de despegue y aterrizaje, ruta volada, operador responsable, y propósito del vuelo. Para organizaciones que operan en el espacio aéreo de EE.UU., KabatOne soporta integración con LAANC (Low Altitude Authorization and Notification Capability) de la FAA. En México, el sistema genera los reportes de vuelo requeridos por la AFAC.',
+            'Kabat One proporciona las herramientas de registro y documentación para cumplimiento regulatorio: log automático de cada vuelo con timestamp, coordenadas de despegue y aterrizaje, ruta volada, operador responsable, y propósito del vuelo. Para organizaciones que operan en el espacio aéreo de EE.UU., Kabat One soporta integración con LAANC (Low Altitude Authorization and Notification Capability) de la FAA. En México, el sistema genera los reportes de vuelo requeridos por la AFAC.',
         },
         {
           question: '¿Cuánto tiempo puede un dron dar soporte a una operación?',
           answer:
-            'La autonomía de vuelo depende del modelo: los drones de seguridad pública más comunes (DJI M300, M350) tienen entre 45 y 55 minutos de vuelo. Para operaciones prolongadas, los sistemas de dock station permiten aterrizaje automático, carga rápida (30-45 minutos) y redespegue sin intervención humana, efectivamente creando capacidad de patrullaje continuo. KabatOne monitorea el nivel de batería en tiempo real y alerta al operador cuando el dron debe regresar a base.',
+            'La autonomía de vuelo depende del modelo: los drones de seguridad pública más comunes (DJI M300, M350) tienen entre 45 y 55 minutos de vuelo. Para operaciones prolongadas, los sistemas de dock station permiten aterrizaje automático, carga rápida (30-45 minutos) y redespegue sin intervención humana, efectivamente creando capacidad de patrullaje continuo. Kabat One monitorea el nivel de batería en tiempo real y alerta al operador cuando el dron debe regresar a base.',
         },
         {
           question: '¿El feed de video del dron puede incluir análisis de IA?',
@@ -61,27 +61,27 @@ export default async function DronesIntegrationPage({
         {
           question: 'How does a drone integrate with a public safety platform?',
           answer:
-            'Drone integration with KabatOne works on two layers. The first is telemetry: the drone\'s GPS position, altitude, speed, battery, and status are transmitted in real time to the K-Safety GIS map, where the drone appears as another unit alongside field vehicles and personnel. The second is video: the drone camera feed is ingested into K-Video, where operators can access it like any other network camera, even while the drone is in motion.',
+            'Drone integration with Kabat One works on two layers. The first is telemetry: the drone\'s GPS position, altitude, speed, battery, and status are transmitted in real time to the K-Safety GIS map, where the drone appears as another unit alongside field vehicles and personnel. The second is video: the drone camera feed is ingested into K-Video, where operators can access it like any other network camera, even while the drone is in motion.',
         },
         {
-          question: 'Which drone models are compatible with KabatOne?',
+          question: 'Which drone models are compatible with Kabat One?',
           answer:
-            'KabatOne integrates drones via DJI SDK (Enterprise series: Matrice 300, Matrice 350, M30, Dock), MQTT/MAVLink APIs for ArduPilot and PX4-based systems, and standard streaming protocols (RTSP, WebRTC) for any drone that broadcasts video. Drone-in-a-box systems (dock stations) from DJI, Skydio, and Percepto are also compatible via direct API integration with the fleet management system.',
+            'Kabat One integrates drones via DJI SDK (Enterprise series: Matrice 300, Matrice 350, M30, Dock), MQTT/MAVLink APIs for ArduPilot and PX4-based systems, and standard streaming protocols (RTSP, WebRTC) for any drone that broadcasts video. Drone-in-a-box systems (dock stations) from DJI, Skydio, and Percepto are also compatible via direct API integration with the fleet management system.',
         },
         {
-          question: 'Can KabatOne automatically dispatch drones to incidents?',
+          question: 'Can Kabat One automatically dispatch drones to incidents?',
           answer:
             'Yes, when the drone is in a dock station (automated base). When K-Dispatch creates an incident in an area covered by an available docked drone, the system can automatically send the drone to the incident location — dock activation, takeoff, autonomous navigation to the point of interest, live video transmission to the dispatcher — all before ground units arrive. The operator retains full control and can redirect or abort at any time.',
         },
         {
           question: 'How is regulatory compliance handled for drones in public airspace?',
           answer:
-            'KabatOne provides logging and documentation tools for regulatory compliance: automatic log of every flight with timestamp, takeoff and landing coordinates, flight path, responsible operator, and flight purpose. For organizations operating in US airspace, KabatOne supports integration with the FAA\'s LAANC (Low Altitude Authorization and Notification Capability). In Mexico, the system generates flight reports required by AFAC.',
+            'Kabat One provides logging and documentation tools for regulatory compliance: automatic log of every flight with timestamp, takeoff and landing coordinates, flight path, responsible operator, and flight purpose. For organizations operating in US airspace, Kabat One supports integration with the FAA\'s LAANC (Low Altitude Authorization and Notification Capability). In Mexico, the system generates flight reports required by AFAC.',
         },
         {
           question: 'How long can a drone support an operation?',
           answer:
-            'Flight endurance depends on the model: the most common public safety drones (DJI M300, M350) have 45–55 minutes of flight time. For extended operations, dock station systems enable automatic landing, fast charging (30–45 minutes), and relaunch without human intervention, effectively creating continuous patrol capability. KabatOne monitors battery levels in real time and alerts the operator when the drone must return to base.',
+            'Flight endurance depends on the model: the most common public safety drones (DJI M300, M350) have 45–55 minutes of flight time. For extended operations, dock station systems enable automatic landing, fast charging (30–45 minutes), and relaunch without human intervention, effectively creating continuous patrol capability. Kabat One monitors battery levels in real time and alerts the operator when the drone must return to base.',
         },
         {
           question: 'Can the drone video feed include AI analytics?',
@@ -113,7 +113,7 @@ export default async function DronesIntegrationPage({
         { title: 'Video Aéreo en Vivo', desc: 'El feed de cámara del dron se ingiere en K-Video con latencia menor a 1 segundo. Operadores y despachadores acceden al video desde la misma interfaz que usan para cámaras fijas — sin aplicaciones separadas.', color: '#06b6d4' },
         { title: 'Despacho Automático desde Dock', desc: 'Con drones en dock station, K-Dispatch puede enviar el dron automáticamente a la ubicación de un incidente. El dron despega, navega y transmite video antes de que lleguen las unidades terrestres.', color: '#a855f7' },
         { title: 'IA Analítica sobre Video Aéreo', desc: 'Los algoritmos de K-Video operan sobre el feed del dron: detección de personas, lectura de placas en vuelo bajo, conteo de multitudes y detección de comportamiento anómalo en tiempo real desde el aire.', color: '#22c55e' },
-        { title: 'Gestión de Flota Multi-Dron', desc: 'KabatOne gestiona flotas de múltiples drones desde una sola interfaz: asignación de zonas de patrullaje, programación de misiones, monitoreo de estado de batería y dock, y log completo de cada vuelo.', color: '#f59e0b' },
+        { title: 'Gestión de Flota Multi-Dron', desc: 'Kabat One gestiona flotas de múltiples drones desde una sola interfaz: asignación de zonas de patrullaje, programación de misiones, monitoreo de estado de batería y dock, y log completo de cada vuelo.', color: '#f59e0b' },
         { title: 'Evidencia Digital Documentada', desc: 'Cada vuelo genera registro inmutable: ruta GPS, video completo, operador, timestamps. El material es admisible como evidencia con cadena de custodia documentada — desde el momento de despacho hasta el aterrizaje.', color: '#ef4444' },
       ]
     : [
@@ -121,21 +121,21 @@ export default async function DronesIntegrationPage({
         { title: 'Live Aerial Video', desc: 'Drone camera feed ingested into K-Video with under 1-second latency. Operators and dispatchers access the video from the same interface used for fixed cameras — no separate applications.', color: '#06b6d4' },
         { title: 'Automatic Dispatch from Dock', desc: 'With drones in dock stations, K-Dispatch can automatically send the drone to an incident location. The drone takes off, navigates, and transmits video before ground units arrive.', color: '#a855f7' },
         { title: 'AI Analytics on Aerial Video', desc: 'K-Video algorithms run on the drone feed: person detection, plate reading at low altitude, crowd counting, and real-time abnormal behavior detection from the air.', color: '#22c55e' },
-        { title: 'Multi-Drone Fleet Management', desc: 'KabatOne manages multi-drone fleets from a single interface: patrol zone assignment, mission scheduling, battery and dock status monitoring, and complete flight logging.', color: '#f59e0b' },
+        { title: 'Multi-Drone Fleet Management', desc: 'Kabat One manages multi-drone fleets from a single interface: patrol zone assignment, mission scheduling, battery and dock status monitoring, and complete flight logging.', color: '#f59e0b' },
         { title: 'Documented Digital Evidence', desc: 'Every flight generates an immutable record: GPS route, full video, operator, timestamps. Material is admissible as evidence with documented chain of custody — from dispatch to landing.', color: '#ef4444' },
       ]
 
   const useCases = es
     ? [
         { title: 'Apoyo en Persecuciones', desc: 'Cuando una unidad inicia una persecución vehicular, el dron disponible más cercano despega automáticamente y mantiene el vehículo en seguimiento desde el aire. El despachador tiene visión aérea continua — incluso cuando el vehículo se pierde de vista de las cámaras fijas o cuando las unidades terrestres se quedan atrás.' },
-        { title: 'Búsqueda y Rescate', desc: 'En operaciones de búsqueda y rescate en áreas amplias (zonas boscosas, periferias urbanas, desastres naturales), un dron con cámara térmica puede cubrir en minutos el área que tomaría horas recorrer a pie. KabatOne integra el feed térmico del dron en el mapa de operaciones con los equipos de rescate en tierra.' },
-        { title: 'Seguridad en Eventos Masivos', desc: 'Para eventos con miles de asistentes, el dron proporciona visión cenital que ninguna cámara fija puede dar: patrones de movimiento de multitud, cuellos de botella en accesos, zonas de concentración anómala. La IA de KabatOne puede contar personas en tiempo real y alertar cuando la densidad supera umbrales seguros.' },
+        { title: 'Búsqueda y Rescate', desc: 'En operaciones de búsqueda y rescate en áreas amplias (zonas boscosas, periferias urbanas, desastres naturales), un dron con cámara térmica puede cubrir en minutos el área que tomaría horas recorrer a pie. Kabat One integra el feed térmico del dron en el mapa de operaciones con los equipos de rescate en tierra.' },
+        { title: 'Seguridad en Eventos Masivos', desc: 'Para eventos con miles de asistentes, el dron proporciona visión cenital que ninguna cámara fija puede dar: patrones de movimiento de multitud, cuellos de botella en accesos, zonas de concentración anómala. La IA de Kabat One puede contar personas en tiempo real y alertar cuando la densidad supera umbrales seguros.' },
         { title: 'Evaluación de Desastres', desc: 'Tras un terremoto, inundación o accidente industrial, el dron permite evaluar daños y acceso en minutos sin poner personal en riesgo. El video aéreo se integra directamente en el mapa de operaciones del centro de mando con posicionamiento GPS exacto de cada imagen capturada.' },
       ]
     : [
         { title: 'Pursuit Support', desc: 'When a unit initiates a vehicle pursuit, the nearest available drone automatically launches and maintains the vehicle in aerial tracking. The dispatcher has continuous aerial vision — even when the vehicle is out of sight of fixed cameras or when ground units fall behind.' },
-        { title: 'Search and Rescue', desc: 'In search and rescue operations across large areas (forested zones, urban peripheries, natural disasters), a drone with thermal camera can cover in minutes what would take hours on foot. KabatOne integrates the drone\'s thermal feed into the operations map with ground rescue teams.' },
-        { title: 'Mass Event Security', desc: 'For events with thousands of attendees, the drone provides an overhead view no fixed camera can match: crowd movement patterns, access bottlenecks, abnormal concentration zones. KabatOne\'s AI can count people in real time and alert when density exceeds safe thresholds.' },
+        { title: 'Search and Rescue', desc: 'In search and rescue operations across large areas (forested zones, urban peripheries, natural disasters), a drone with thermal camera can cover in minutes what would take hours on foot. Kabat One integrates the drone\'s thermal feed into the operations map with ground rescue teams.' },
+        { title: 'Mass Event Security', desc: 'For events with thousands of attendees, the drone provides an overhead view no fixed camera can match: crowd movement patterns, access bottlenecks, abnormal concentration zones. Kabat One\'s AI can count people in real time and alert when density exceeds safe thresholds.' },
         { title: 'Disaster Assessment', desc: 'After an earthquake, flood, or industrial accident, the drone allows damage and access assessment in minutes without putting personnel at risk. Aerial video integrates directly into the command center\'s operations map with exact GPS positioning of every captured image.' },
       ]
 
@@ -146,7 +146,7 @@ export default async function DronesIntegrationPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema(
           es ? 'Integración de Drones (UAV/UAS) para Seguridad Pública' : 'Drone (UAV/UAS) Integration for Public Safety',
-          es ? 'Cómo KabatOne integra drones con video, despacho CAD y GIS para persecuciones, búsqueda y rescate, y vigilancia aérea en tiempo real.' : 'How KabatOne integrates drones with video, CAD dispatch, and GIS for pursuits, search and rescue, and real-time aerial surveillance.',
+          es ? 'Cómo Kabat One integra drones con video, despacho CAD y GIS para persecuciones, búsqueda y rescate, y vigilancia aérea en tiempo real.' : 'How Kabat One integrates drones with video, CAD dispatch, and GIS for pursuits, search and rescue, and real-time aerial surveillance.',
           es ? 'https://kabatone.com/es/integrations/drones' : 'https://kabatone.com/integrations/drones',
           '2026-03-20'
         ))
@@ -176,8 +176,8 @@ export default async function DronesIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'Un dron sin conexión al centro de mando es solo una cámara voladora. Integrado con KabatOne, es una unidad operativa: el despachador ve el feed aéreo, el GIS muestra la posición en tiempo real, y el sistema puede despachar automáticamente el dron al siguiente incidente desde su dock.'
-                : 'A drone without connection to the command center is just a flying camera. Integrated with KabatOne, it is an operational unit: the dispatcher sees the aerial feed, GIS shows its real-time position, and the system can automatically dispatch the drone to the next incident from its dock.'}
+                ? 'Un dron sin conexión al centro de mando es solo una cámara voladora. Integrado con Kabat One, es una unidad operativa: el despachador ve el feed aéreo, el GIS muestra la posición en tiempo real, y el sistema puede despachar automáticamente el dron al siguiente incidente desde su dock.'
+                : 'A drone without connection to the command center is just a flying camera. Integrated with Kabat One, it is an operational unit: the dispatcher sees the aerial feed, GIS shows its real-time position, and the system can automatically dispatch the drone to the next incident from its dock.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -196,8 +196,8 @@ export default async function DronesIntegrationPage({
             <h2 style={h2Style}>{es ? 'Capacidades de la Integración de Drones' : 'Drone Integration Capabilities'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne convierte el dron de una herramienta táctica aislada en una unidad integrada de la plataforma de seguridad pública:'
-                : 'KabatOne transforms the drone from an isolated tactical tool into an integrated unit of the public safety platform:'}
+                ? 'Kabat One convierte el dron de una herramienta táctica aislada en una unidad integrada de la plataforma de seguridad pública:'
+                : 'Kabat One transforms the drone from an isolated tactical tool into an integrated unit of the public safety platform:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }} className="usecase-grid">
               {capabilities.map((cap, i) => (
@@ -283,7 +283,7 @@ export default async function DronesIntegrationPage({
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>{es ? 'Productos Relacionados' : 'Related Products'}</p>
-            <h2 style={{ ...h2Style, marginBottom: '12px' }}>{es ? 'KabatOne para Operaciones con Drones' : 'KabatOne for Drone Operations'}</h2>
+            <h2 style={{ ...h2Style, marginBottom: '12px' }}>{es ? 'Kabat One para Operaciones con Drones' : 'Kabat One for Drone Operations'}</h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es ? 'Los módulos que reciben y procesan datos de drones:' : 'Modules that receive and process drone data:'}
             </p>
@@ -343,8 +343,8 @@ export default async function DronesIntegrationPage({
           es={es}
           h2={es ? 'Integra tus Drones al Centro de Mando' : 'Integrate Your Drones into Command'}
           subtitle={es
-            ? 'KabatOne conecta drones DJI, Skydio y otros al mapa GIS, video y despacho CAD. Solicita una demo con tu flota de drones.'
-            : 'KabatOne connects DJI, Skydio, and other drones to GIS map, video, and CAD dispatch. Request a demo with your drone fleet.'}
+            ? 'Kabat One conecta drones DJI, Skydio y otros al mapa GIS, video y despacho CAD. Solicita una demo con tu flota de drones.'
+            : 'Kabat One connects DJI, Skydio, and other drones to GIS map, video, and CAD dispatch. Request a demo with your drone fleet.'}
         />
         <Footer es={es} />
 

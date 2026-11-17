@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import type { AgentContext, IntentResult } from './types'
 
-const SYSTEM_PROMPT = (ctx: AgentContext) => `You are the KabatOne SEO agent embedded in Slack. \
+const SYSTEM_PROMPT = (ctx: AgentContext) => `You are the Kabat One SEO agent embedded in Slack. \
 You have full context about kabatone.com — a B2B public safety software site targeting LATAM municipalities, \
 primary focus Mexico. Products: K-Safety, K-911/K-Dispatch (CAD), K-Traffic.
 

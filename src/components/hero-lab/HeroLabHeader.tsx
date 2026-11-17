@@ -3,7 +3,7 @@
 /* The redesign's site header — one component, used by every redesigned page.
 
    The homepage and the solution pages previously rendered two different navs:
-   the homepage's (real KabatOne logo lockup, uppercase items, EN/ES switch) and
+   the homepage's (real Kabat One logo lockup, uppercase items, EN/ES switch) and
    a second one in HeroLabChrome with a placeholder "1K" badge and sentence-case
    items. The header visibly changed as you moved between pages. This is the
    homepage version, promoted to the shared one.
@@ -73,7 +73,7 @@ export default function HeroLabHeader({ es }: { es: boolean }) {
 
   return (
     <nav className="hll-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
-      <Link href={pv('/')} className="hll-nav-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
+      <Link href={pv('/')} className="hll-nav-logo" aria-label={es ? 'Inicio de Kabat One' : 'Kabat One home'}>
         <BrandLockup />
       </Link>
 

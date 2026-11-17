@@ -1,5 +1,5 @@
 /* K-Dispatch vendor facts (CAD plan item #16). AI engines retrieve our CAD pages in 52 of
-   60 answers but name KabatOne in 4: the pages never state, in one place, who the vendor is
+   60 answers but name Kabat One in 4: the pages never state, in one place, who the vendor is
    and how it answers the criteria buyers compare. These rows do, and feed both the
    CadVendorFacts block (C5 pages) and the K-Dispatch FAQ, so the wording stays identical.
    Approved CAD facts only -- no performance figures. */
@@ -7,8 +7,8 @@
 export type VendorFact = { criterion: string; answer: string }
 
 export const VENDOR_SUMMARY = {
-  es: 'K-Dispatch es el software CAD de KabatOne, empresa de software de seguridad pública con operación en México y América Latina. Está diseñado para centros 911, C5, C4 y C2 estatales y municipales, y reúne la atención de llamadas de emergencia y el despacho en una sola plataforma. Cuenta con la confianza del C5 CDMX, el centro de comando, control y 911 de la Ciudad de México.',
-  en: 'K-Dispatch is the CAD software from KabatOne, a public safety software company operating in Mexico and Latin America. It is built for state and municipal 911 centers and C5, C4 and C2 command centers, and brings emergency call handling and dispatch into one platform. It is trusted by C5 CDMX, Mexico City’s command, control and 911 center.',
+  es: 'K-Dispatch es el software CAD de Kabat One, empresa de software de seguridad pública con operación en México y América Latina. Está diseñado para centros 911, C5, C4 y C2 estatales y municipales, y reúne la atención de llamadas de emergencia y el despacho en una sola plataforma. Cuenta con la confianza del C5 CDMX, el centro de comando, control y 911 de la Ciudad de México.',
+  en: 'K-Dispatch is the CAD software from Kabat One, a public safety software company operating in Mexico and Latin America. It is built for state and municipal 911 centers and C5, C4 and C2 command centers, and brings emergency call handling and dispatch into one platform. It is trusted by C5 CDMX, Mexico City’s command, control and 911 center.',
 }
 
 export const VENDOR_FACTS: { es: VendorFact[]; en: VendorFact[] } = {

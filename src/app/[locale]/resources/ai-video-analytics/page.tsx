@@ -29,7 +29,7 @@ export default async function AiVideoAnalyticsPage({
         {
           question: '¿Qué es la analítica de video con IA?',
           answer:
-            'La analítica de video con IA (también llamada analítica de video inteligente o IVA) usa redes neuronales y aprendizaje profundo para interpretar automáticamente las imágenes de las cámaras — en lugar de reglas fijas basadas en movimiento. Distingue una persona de un animal, clasifica tipos de vehículo, lee placas (LPR), reconoce rostros y detecta comportamientos como merodeo o aglomeraciones, con tasas de falsos positivos mucho menores que la analítica tradicional. En KabatOne, la analítica de video con IA corre sobre cámaras de cualquier fabricante y envía solo los eventos relevantes al mapa operativo del centro de mando.',
+            'La analítica de video con IA (también llamada analítica de video inteligente o IVA) usa redes neuronales y aprendizaje profundo para interpretar automáticamente las imágenes de las cámaras — en lugar de reglas fijas basadas en movimiento. Distingue una persona de un animal, clasifica tipos de vehículo, lee placas (LPR), reconoce rostros y detecta comportamientos como merodeo o aglomeraciones, con tasas de falsos positivos mucho menores que la analítica tradicional. En Kabat One, la analítica de video con IA corre sobre cámaras de cualquier fabricante y envía solo los eventos relevantes al mapa operativo del centro de mando.',
         },
         {
           question: '¿Cómo funciona la analítica de video con IA?',
@@ -49,12 +49,12 @@ export default async function AiVideoAnalyticsPage({
         {
           question: '¿Qué tan precisa es la analítica de video con IA?',
           answer:
-            'Los sistemas maduros de analítica de video con IA logran precisiones del 95–99% para eventos simples (intrusión perimetral, conteo de personas) y del 85–95% para comportamientos complejos (detección de agresividad, objetos abandonados). La precisión depende de la calidad de la imagen, la variabilidad de las condiciones y la calidad del dataset de entrenamiento. KabatOne aplica filtros de confirmación configurables y correlación multi-sensor para reducir aún más las alertas irrelevantes antes de notificar al operador.',
+            'Los sistemas maduros de analítica de video con IA logran precisiones del 95–99% para eventos simples (intrusión perimetral, conteo de personas) y del 85–95% para comportamientos complejos (detección de agresividad, objetos abandonados). La precisión depende de la calidad de la imagen, la variabilidad de las condiciones y la calidad del dataset de entrenamiento. Kabat One aplica filtros de confirmación configurables y correlación multi-sensor para reducir aún más las alertas irrelevantes antes de notificar al operador.',
         },
         {
           question: '¿La analítica de video con IA funciona con mis cámaras CCTV existentes?',
           answer:
-            'Sí. La analítica de video con IA moderna es agnóstica al hardware: se aplica sobre el flujo de video de cámaras CCTV/IP existentes de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, etc.) sin reemplazar la infraestructura. El procesamiento puede ejecutarse en un servidor central con GPU o en el borde (chip de IA de la cámara). KabatOne agrega la analítica de todas tus cámaras en una sola interfaz, sin importar la marca.',
+            'Sí. La analítica de video con IA moderna es agnóstica al hardware: se aplica sobre el flujo de video de cámaras CCTV/IP existentes de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, etc.) sin reemplazar la infraestructura. El procesamiento puede ejecutarse en un servidor central con GPU o en el borde (chip de IA de la cámara). Kabat One agrega la analítica de todas tus cámaras en una sola interfaz, sin importar la marca.',
         },
         {
           question: '¿Cuál es la diferencia entre analítica de video con IA y visión por computadora?',
@@ -66,7 +66,7 @@ export default async function AiVideoAnalyticsPage({
         {
           question: 'What is AI video analytics?',
           answer:
-            'AI video analytics (also called intelligent video analytics, or IVA) uses neural networks and deep learning to automatically interpret camera footage — instead of fixed motion-based rules. It tells a person from an animal, classifies vehicle types, reads license plates (LPR), recognizes faces, and detects behaviors like loitering or crowding, with far lower false-positive rates than traditional analytics. In KabatOne, AI video analytics runs on cameras from any manufacturer and pushes only the relevant events to the command center operational map.',
+            'AI video analytics (also called intelligent video analytics, or IVA) uses neural networks and deep learning to automatically interpret camera footage — instead of fixed motion-based rules. It tells a person from an animal, classifies vehicle types, reads license plates (LPR), recognizes faces, and detects behaviors like loitering or crowding, with far lower false-positive rates than traditional analytics. In Kabat One, AI video analytics runs on cameras from any manufacturer and pushes only the relevant events to the command center operational map.',
         },
         {
           question: 'How does AI video analytics work?',
@@ -86,12 +86,12 @@ export default async function AiVideoAnalyticsPage({
         {
           question: 'How accurate is AI video analytics?',
           answer:
-            'Mature AI video analytics systems achieve 95–99% accuracy for simple events (perimeter intrusion, people counting) and 85–95% for complex behaviors (aggression detection, abandoned objects). Accuracy depends on image quality, condition variability, and training-dataset quality. KabatOne applies configurable confirmation filters and multi-sensor correlation to further reduce irrelevant alerts before notifying the operator.',
+            'Mature AI video analytics systems achieve 95–99% accuracy for simple events (perimeter intrusion, people counting) and 85–95% for complex behaviors (aggression detection, abandoned objects). Accuracy depends on image quality, condition variability, and training-dataset quality. Kabat One applies configurable confirmation filters and multi-sensor correlation to further reduce irrelevant alerts before notifying the operator.',
         },
         {
           question: 'Does AI video analytics work with my existing CCTV cameras?',
           answer:
-            'Yes. Modern AI video analytics is hardware-agnostic: it applies to the video stream from existing CCTV/IP cameras of any manufacturer (Hikvision, Axis, Dahua, Bosch, etc.) without replacing the infrastructure. Processing can run on a central GPU server or at the edge (camera AI chip). KabatOne aggregates analytics from all your cameras into a single interface, regardless of brand.',
+            'Yes. Modern AI video analytics is hardware-agnostic: it applies to the video stream from existing CCTV/IP cameras of any manufacturer (Hikvision, Axis, Dahua, Bosch, etc.) without replacing the infrastructure. Processing can run on a central GPU server or at the edge (camera AI chip). Kabat One aggregates analytics from all your cameras into a single interface, regardless of brand.',
         },
         {
           question: 'What is the difference between AI video analytics and computer vision?',
@@ -216,9 +216,9 @@ export default async function AiVideoAnalyticsPage({
           <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(168,85,247,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
             <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
               {es ? (
-                <><strong style={{ color: '#f0f4f8' }}>La analítica de video con IA es software que usa redes neuronales de aprendizaje profundo para identificar automáticamente personas, vehículos, armas y comportamientos en video de cámaras — en vivo o grabado.</strong> Reemplaza la detección de movimiento por comprensión de la escena, reduciendo los falsos positivos de un 30–50% típico a menos del 5%. En seguridad pública, K-Video de KabatOne ejecuta analítica de video con IA sobre cámaras de cualquier fabricante y muestra solo los eventos relevantes en el mapa operativo del centro de mando.</>
+                <><strong style={{ color: '#f0f4f8' }}>La analítica de video con IA es software que usa redes neuronales de aprendizaje profundo para identificar automáticamente personas, vehículos, armas y comportamientos en video de cámaras — en vivo o grabado.</strong> Reemplaza la detección de movimiento por comprensión de la escena, reduciendo los falsos positivos de un 30–50% típico a menos del 5%. En seguridad pública, K-Video de Kabat One ejecuta analítica de video con IA sobre cámaras de cualquier fabricante y muestra solo los eventos relevantes en el mapa operativo del centro de mando.</>
               ) : (
-                <><strong style={{ color: '#f0f4f8' }}>AI video analytics is software that uses deep-learning neural networks to automatically identify people, vehicles, weapons, and behaviors in live or recorded camera footage.</strong> It replaces pixel-change motion detection with scene understanding, cutting false positives from a typical 30–50% down to under 5%. In public safety, KabatOne&apos;s K-Video runs AI video analytics on cameras from any manufacturer and surfaces only the relevant events on the command-center operational map.</>
+                <><strong style={{ color: '#f0f4f8' }}>AI video analytics is software that uses deep-learning neural networks to automatically identify people, vehicles, weapons, and behaviors in live or recorded camera footage.</strong> It replaces pixel-change motion detection with scene understanding, cutting false positives from a typical 30–50% down to under 5%. In public safety, Kabat One&apos;s K-Video runs AI video analytics on cameras from any manufacturer and surfaces only the relevant events on the command-center operational map.</>
               )}
             </p>
           </div>
@@ -288,8 +288,8 @@ export default async function AiVideoAnalyticsPage({
           <h2 style={sectionH2}>{es ? 'La IA es más valiosa dentro de una plataforma unificada' : 'AI is most valuable inside a unified platform'}</h2>
           <p style={para}>
             {es
-              ? 'La analítica de video con IA aislada solo genera alertas. Su valor se multiplica cuando las detecciones se integran en un centro de mando unificado: una alerta de IA aparece geolocalizada en el mapa GIS, correlacionada con LPR, sensores y el estado de las unidades — y el operador puede despachar una unidad desde la misma pantalla. KabatOne aplica analítica de video con IA sobre cámaras de cualquier fabricante y convierte cada detección en una acción operativa.'
-              : 'AI video analytics on its own only generates alerts. Its value multiplies when detections are integrated into a unified command center: an AI alert appears geolocated on the GIS map, correlated with LPR, sensors, and unit status — and the operator can dispatch a unit from the same screen. KabatOne applies AI video analytics across cameras from any manufacturer and turns every detection into an operational action.'}
+              ? 'La analítica de video con IA aislada solo genera alertas. Su valor se multiplica cuando las detecciones se integran en un centro de mando unificado: una alerta de IA aparece geolocalizada en el mapa GIS, correlacionada con LPR, sensores y el estado de las unidades — y el operador puede despachar una unidad desde la misma pantalla. Kabat One aplica analítica de video con IA sobre cámaras de cualquier fabricante y convierte cada detección en una acción operativa.'
+              : 'AI video analytics on its own only generates alerts. Its value multiplies when detections are integrated into a unified command center: an AI alert appears geolocated on the GIS map, correlated with LPR, sensors, and unit status — and the operator can dispatch a unit from the same screen. Kabat One applies AI video analytics across cameras from any manufacturer and turns every detection into an operational action.'}
           </p>
           <p style={para}>
             {es
@@ -340,8 +340,8 @@ export default async function AiVideoAnalyticsPage({
           es={es}
           h2={es ? '¿Listo para Activar Analítica de Video con IA?' : 'Ready to Activate AI Video Analytics in Your Operation?'}
           subtitle={es
-            ? 'KabatOne ejecuta analítica de video con IA sobre cámaras de cualquier fabricante, integrada con LPR, GIS y despacho. Agenda una demo de K-Video.'
-            : 'KabatOne runs AI video analytics on cameras from any manufacturer, integrated with LPR, GIS and dispatch. Book a K-Video demo.'}
+            ? 'Kabat One ejecuta analítica de video con IA sobre cámaras de cualquier fabricante, integrada con LPR, GIS y despacho. Agenda una demo de K-Video.'
+            : 'Kabat One runs AI video analytics on cameras from any manufacturer, integrated with LPR, GIS and dispatch. Book a K-Video demo.'}
         />
       </main>
       <Footer es={es} />

@@ -31,7 +31,7 @@ const HEARD_OPTIONS: { v: string; en: string; es: string }[] = [
   { v: 'Referred by someone I know', en: 'Someone I know referred me', es: 'Me la recomendó alguien que conozco' },
   { v: 'Job board', en: 'A job board', es: 'Una bolsa de trabajo' },
   { v: 'Search engine', en: 'Google or another search engine', es: 'Google u otro buscador' },
-  { v: 'KabatOne website', en: 'The KabatOne website', es: 'El sitio de KabatOne' },
+  { v: 'Kabat One website', en: 'The Kabat One website', es: 'El sitio de Kabat One' },
   { v: 'Other', en: 'Other', es: 'Otro' },
 ]
 

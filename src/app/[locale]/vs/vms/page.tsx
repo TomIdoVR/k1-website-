@@ -28,58 +28,58 @@ export default async function VsVmsPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS', url: es ? 'https://kabatone.com/es/vs/vms' : 'https://kabatone.com/vs/vms' },
+    { name: es ? 'Kabat One vs VMS Tradicional' : 'Kabat One vs Traditional VMS', url: es ? 'https://kabatone.com/es/vs/vms' : 'https://kabatone.com/vs/vms' },
   ]
 
   const faqs = es ? [
     {
       question: '¿Cuál es la diferencia entre un VMS y una plataforma de seguridad pública?',
-      answer: 'Un sistema de gestión de video (VMS) está diseñado para gestionar cámaras — grabación, reproducción, alertas de video y, en algunos casos, analítica. Una plataforma de seguridad pública como KabatOne agrega las capas que suceden después de que se detecta un incidente en cámara: despacho CAD para coordinar unidades, GIS para rastrear respondedores en tiempo real, gestión de tráfico para adaptar el entorno urbano a la emergencia, y flujos de trabajo para campo. El VMS te dice qué está pasando; la plataforma de seguridad pública coordina la respuesta.',
+      answer: 'Un sistema de gestión de video (VMS) está diseñado para gestionar cámaras — grabación, reproducción, alertas de video y, en algunos casos, analítica. Una plataforma de seguridad pública como Kabat One agrega las capas que suceden después de que se detecta un incidente en cámara: despacho CAD para coordinar unidades, GIS para rastrear respondedores en tiempo real, gestión de tráfico para adaptar el entorno urbano a la emergencia, y flujos de trabajo para campo. El VMS te dice qué está pasando; la plataforma de seguridad pública coordina la respuesta.',
     },
     {
       question: '¿Por qué un VMS no es suficiente para operaciones de seguridad pública?',
       answer: 'El VMS fue diseñado para el monitoreo, no para la respuesta. Un operador que detecta un incidente en un VMS típico debe luego cambiar a un sistema CAD separado para despachar una unidad, abrir una capa GIS separada para rastrear a los respondedores, y gestionar la coordinación por radio. Cada cambio de sistema consume tiempo y aumenta la probabilidad de error humano. Para centros de mando que gestionan cientos de incidentes diarios, esta fragmentación tiene un costo operativo real. Una plataforma de seguridad pública unificada conecta todos estos pasos en un solo flujo.',
     },
     {
-      question: '¿KabatOne puede reemplazar el VMS existente de una ciudad?',
-      answer: 'KabatOne K-Video es un módulo de gestión de video completo con analítica IA que puede reemplazar un VMS independiente. Sin embargo, KabatOne también puede funcionar junto a la infraestructura de cámaras existente — K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de cualquier fabricante y VMS. Las ciudades pueden incorporar KabatOne como la capa de coordinación de respuesta sin necesidad de reemplazar su hardware de cámaras.',
+      question: '¿Kabat One puede reemplazar el VMS existente de una ciudad?',
+      answer: 'Kabat One K-Video es un módulo de gestión de video completo con analítica IA que puede reemplazar un VMS independiente. Sin embargo, Kabat One también puede funcionar junto a la infraestructura de cámaras existente — K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de cualquier fabricante y VMS. Las ciudades pueden incorporar Kabat One como la capa de coordinación de respuesta sin necesidad de reemplazar su hardware de cámaras.',
     },
     {
-      question: '¿Qué capacidades agrega KabatOne que un VMS estándar no tiene?',
-      answer: 'KabatOne agrega cuatro capas que no existen en un VMS estándar: (1) K-Dispatch — despacho CAD nativo con recepción de llamadas, recomendación de unidades y registro de incidentes; (2) K-Safety — conciencia situacional GIS con seguimiento en tiempo real de incidentes, unidades y activos en toda la ciudad; (3) K-Traffic — gestión inteligente de tráfico con control adaptativo de semáforos, detección de infracciones y coordinación de corredor de emergencia; (4) K-Connect — integración de video ciudadano y empresarial en el centro de mando. Estas capacidades son específicas para operaciones de seguridad pública.',
+      question: '¿Qué capacidades agrega Kabat One que un VMS estándar no tiene?',
+      answer: 'Kabat One agrega cuatro capas que no existen en un VMS estándar: (1) K-Dispatch — despacho CAD nativo con recepción de llamadas, recomendación de unidades y registro de incidentes; (2) K-Safety — conciencia situacional GIS con seguimiento en tiempo real de incidentes, unidades y activos en toda la ciudad; (3) K-Traffic — gestión inteligente de tráfico con control adaptativo de semáforos, detección de infracciones y coordinación de corredor de emergencia; (4) K-Connect — integración de video ciudadano y empresarial en el centro de mando. Estas capacidades son específicas para operaciones de seguridad pública.',
     },
     {
-      question: '¿Un VMS con analítica de terceros es equivalente a KabatOne?',
-      answer: 'No. Los VMS con ecosistemas de analítica de terceros permiten agregar módulos de detección de comportamiento, reconocimiento facial o análisis de multitudes — pero estas son capas de detección adicionales, no capacidades de respuesta. El despacho CAD, la gestión GIS de respondedores en tiempo real, el control de tráfico y los flujos de trabajo de campo son sistemas operativos complejos, no módulos de analítica. Integrarlos sobre un VMS requiere proyectos de integración costosos y mantener contratos y actualizaciones independientes para cada sistema. KabatOne ofrece todo esto de forma nativa.',
+      question: '¿Un VMS con analítica de terceros es equivalente a Kabat One?',
+      answer: 'No. Los VMS con ecosistemas de analítica de terceros permiten agregar módulos de detección de comportamiento, reconocimiento facial o análisis de multitudes — pero estas son capas de detección adicionales, no capacidades de respuesta. El despacho CAD, la gestión GIS de respondedores en tiempo real, el control de tráfico y los flujos de trabajo de campo son sistemas operativos complejos, no módulos de analítica. Integrarlos sobre un VMS requiere proyectos de integración costosos y mantener contratos y actualizaciones independientes para cada sistema. Kabat One ofrece todo esto de forma nativa.',
     },
     {
-      question: '¿Para qué organizaciones es más adecuado KabatOne frente a un VMS estándar?',
-      answer: 'KabatOne es la opción más fuerte para organizaciones de seguridad pública que gestionan respuesta operativa a incidentes: municipios con centros de mando C4/C5, agencias de gestión de emergencias, puertos, aeropuertos y estadios con operaciones de seguridad activas. Un VMS estándar es más adecuado para organizaciones cuya necesidad principal es grabación de video y monitoreo sin despacho activo de recursos de respuesta. Si tu operación necesita coordinar quién responde, cómo llega y qué hace al llegar, necesitas más que un VMS.',
+      question: '¿Para qué organizaciones es más adecuado Kabat One frente a un VMS estándar?',
+      answer: 'Kabat One es la opción más fuerte para organizaciones de seguridad pública que gestionan respuesta operativa a incidentes: municipios con centros de mando C4/C5, agencias de gestión de emergencias, puertos, aeropuertos y estadios con operaciones de seguridad activas. Un VMS estándar es más adecuado para organizaciones cuya necesidad principal es grabación de video y monitoreo sin despacho activo de recursos de respuesta. Si tu operación necesita coordinar quién responde, cómo llega y qué hace al llegar, necesitas más que un VMS.',
     },
   ] : [
     {
       question: 'What is the difference between a VMS and a public safety platform?',
-      answer: 'A video management system (VMS) is designed to manage cameras — recording, playback, video alerts, and in some cases analytics. A public safety platform like KabatOne adds the layers that happen after an incident is detected on camera: CAD dispatch to coordinate units, GIS to track responders in real time, traffic management to adapt the urban environment to the emergency, and field workflows. The VMS tells you what is happening; the public safety platform coordinates the response.',
+      answer: 'A video management system (VMS) is designed to manage cameras — recording, playback, video alerts, and in some cases analytics. A public safety platform like Kabat One adds the layers that happen after an incident is detected on camera: CAD dispatch to coordinate units, GIS to track responders in real time, traffic management to adapt the urban environment to the emergency, and field workflows. The VMS tells you what is happening; the public safety platform coordinates the response.',
     },
     {
       question: 'Why is a VMS not enough for public safety operations?',
       answer: 'A VMS was designed for monitoring, not for response. An operator who detects an incident in a typical VMS must then switch to a separate CAD system to dispatch a unit, open a separate GIS layer to track responders, and manage coordination over radio. Every system switch costs time and increases the probability of human error. For command centers managing hundreds of incidents per day, this fragmentation has a real operational cost. A unified public safety platform connects all of those steps in one workflow.',
     },
     {
-      question: 'Can KabatOne replace a city\'s existing VMS?',
-      answer: 'KabatOne K-Video is a full video management module with AI analytics that can replace a standalone VMS. However, KabatOne can also work alongside existing camera infrastructure — K-Video supports ONVIF, RTSP, and standard industry IP protocols, which allows aggregating camera feeds from any manufacturer and VMS. Cities can bring KabatOne in as the response coordination layer without needing to replace their camera hardware.',
+      question: 'Can Kabat One replace a city\'s existing VMS?',
+      answer: 'Kabat One K-Video is a full video management module with AI analytics that can replace a standalone VMS. However, Kabat One can also work alongside existing camera infrastructure — K-Video supports ONVIF, RTSP, and standard industry IP protocols, which allows aggregating camera feeds from any manufacturer and VMS. Cities can bring Kabat One in as the response coordination layer without needing to replace their camera hardware.',
     },
     {
-      question: 'What capabilities does KabatOne add that a standard VMS does not have?',
-      answer: 'KabatOne adds four layers that do not exist in a standard VMS: (1) K-Dispatch — native CAD dispatch with call intake, unit recommendation, and incident logging; (2) K-Safety — GIS situational awareness with real-time tracking of incidents, units, and assets across the city; (3) K-Traffic — intelligent traffic management with adaptive signal control, violation detection, and emergency corridor coordination; (4) K-Connect — integration of citizen and business cameras into the command center. These capabilities are specific to public safety operations.',
+      question: 'What capabilities does Kabat One add that a standard VMS does not have?',
+      answer: 'Kabat One adds four layers that do not exist in a standard VMS: (1) K-Dispatch — native CAD dispatch with call intake, unit recommendation, and incident logging; (2) K-Safety — GIS situational awareness with real-time tracking of incidents, units, and assets across the city; (3) K-Traffic — intelligent traffic management with adaptive signal control, violation detection, and emergency corridor coordination; (4) K-Connect — integration of citizen and business cameras into the command center. These capabilities are specific to public safety operations.',
     },
     {
-      question: 'Is a VMS with third-party analytics equivalent to KabatOne?',
-      answer: 'No. VMS platforms with third-party analytics ecosystems allow adding behavior detection, facial recognition, or crowd analysis modules — but these are additional detection layers, not response capabilities. CAD dispatch, real-time GIS responder management, traffic control, and field workflows are complex operational systems, not analytics modules. Integrating them on top of a VMS requires costly integration projects and maintaining separate contracts and updates for each system. KabatOne delivers all of this natively.',
+      question: 'Is a VMS with third-party analytics equivalent to Kabat One?',
+      answer: 'No. VMS platforms with third-party analytics ecosystems allow adding behavior detection, facial recognition, or crowd analysis modules — but these are additional detection layers, not response capabilities. CAD dispatch, real-time GIS responder management, traffic control, and field workflows are complex operational systems, not analytics modules. Integrating them on top of a VMS requires costly integration projects and maintaining separate contracts and updates for each system. Kabat One delivers all of this natively.',
     },
     {
-      question: 'Which organizations are best suited for KabatOne vs a standard VMS?',
-      answer: 'KabatOne is the stronger choice for public safety organizations that manage active incident response: municipalities with C4/C5 command centers, emergency management agencies, ports, airports, and stadiums with active security operations. A standard VMS is better suited for organizations whose primary need is video recording and monitoring without active dispatch of response resources. If your operation needs to coordinate who responds, how they get there, and what they do when they arrive — you need more than a VMS.',
+      question: 'Which organizations are best suited for Kabat One vs a standard VMS?',
+      answer: 'Kabat One is the stronger choice for public safety organizations that manage active incident response: municipalities with C4/C5 command centers, emergency management agencies, ports, airports, and stadiums with active security operations. A standard VMS is better suited for organizations whose primary need is video recording and monitoring without active dispatch of response resources. If your operation needs to coordinate who responds, how they get there, and what they do when they arrive — you need more than a VMS.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsVmsPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>{es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS'}</span>
+          <span style={{ color: ACCENT }}>{es ? 'Kabat One vs VMS Tradicional' : 'Kabat One vs Traditional VMS'}</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsVmsPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs VMS Tradicional — Más Allá del Monitoreo de Video'
-              : 'KabatOne vs Traditional VMS — Beyond Video Monitoring'}
+              ? 'Kabat One vs VMS Tradicional — Más Allá del Monitoreo de Video'
+              : 'Kabat One vs Traditional VMS — Beyond Video Monitoring'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Los sistemas de gestión de video (VMS) son excelentes para lo que fueron diseñados: gestionar cámaras, almacenar grabaciones y alertar sobre eventos de video. Para los municipios, centros de mando y agencias de seguridad pública que necesitan coordinar la respuesta — no solo monitorear — un VMS es el punto de partida, no la solución completa. KabatOne es la plataforma unificada que conecta video con despacho CAD, GIS, gestión de tráfico y operaciones de campo en un solo flujo operativo.'
-              : 'Video management systems (VMS) are excellent at what they were designed to do: manage cameras, store recordings, and alert on video events. For municipalities, command centers, and public safety agencies that need to coordinate response — not just monitor — a VMS is the starting point, not the complete solution. KabatOne is the unified platform that connects video with CAD dispatch, GIS, traffic management, and field operations in one operational workflow.'}
+              ? 'Los sistemas de gestión de video (VMS) son excelentes para lo que fueron diseñados: gestionar cámaras, almacenar grabaciones y alertar sobre eventos de video. Para los municipios, centros de mando y agencias de seguridad pública que necesitan coordinar la respuesta — no solo monitorear — un VMS es el punto de partida, no la solución completa. Kabat One es la plataforma unificada que conecta video con despacho CAD, GIS, gestión de tráfico y operaciones de campo en un solo flujo operativo.'
+              : 'Video management systems (VMS) are excellent at what they were designed to do: manage cameras, store recordings, and alert on video events. For municipalities, command centers, and public safety agencies that need to coordinate response — not just monitor — a VMS is the starting point, not the complete solution. Kabat One is the unified platform that connects video with CAD dispatch, GIS, traffic management, and field operations in one operational workflow.'}
           </p>
         </section>
 
@@ -246,22 +246,22 @@ export default async function VsVmsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. KabatOne integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. KabatOne integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Kabat One integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. Kabat One integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. El diseño central de KabatOne es el flujo de respuesta completo en una sola plataforma: cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS en tiempo real, adaptar el tráfico con K-Traffic y cerrar el ciclo con documentación de campo — sin salir de la plataforma y sin depender de integraciones de terceros para cada paso.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. The core design of KabatOne is the complete response workflow in one platform: when an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map in real time, adapt traffic with K-Traffic, and close the loop with field documentation — without leaving the platform and without depending on third-party integrations for every step.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. El diseño central de Kabat One es el flujo de respuesta completo en una sola plataforma: cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS en tiempo real, adaptar el tráfico con K-Traffic y cerrar el ciclo con documentación de campo — sin salir de la plataforma y sin depender de integraciones de terceros para cada paso.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. The core design of Kabat One is the complete response workflow in one platform: when an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map in real time, adapt traffic with K-Traffic, and close the loop with field documentation — without leaving the platform and without depending on third-party integrations for every step.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'La diferencia fundamental no es que KabatOne tenga un mejor VMS — es que KabatOne fue diseñado desde el principio para la respuesta a incidentes, no para el monitoreo de activos. El video es el punto de partida, no el producto final.'
-                : 'The fundamental difference is not that KabatOne has a better VMS — it is that KabatOne was designed from the ground up for incident response, not asset monitoring. Video is the starting point, not the end product.'}
+                ? 'La diferencia fundamental no es que Kabat One tenga un mejor VMS — es que Kabat One fue diseñado desde el principio para la respuesta a incidentes, no para el monitoreo de activos. El video es el punto de partida, no el producto final.'
+                : 'The fundamental difference is not that Kabat One has a better VMS — it is that Kabat One was designed from the ground up for incident response, not asset monitoring. Video is the starting point, not the end product.'}
             </p>
           </div>
         </section>
@@ -274,12 +274,12 @@ export default async function VsVmsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'VMS Tradicional vs KabatOne: Diferencias Clave' : 'Traditional VMS vs KabatOne: Key Differences'}
+              {es ? 'VMS Tradicional vs Kabat One: Diferencias Clave' : 'Traditional VMS vs Kabat One: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara las capacidades de un VMS estándar frente a KabatOne en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares a standard VMS against KabatOne across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara las capacidades de un VMS estándar frente a Kabat One en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares a standard VMS against Kabat One across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -294,7 +294,7 @@ export default async function VsVmsPage({
                   {es ? 'VMS Tradicional' : 'Traditional VMS'}
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -340,8 +340,8 @@ export default async function VsVmsPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne elimina este costo de integración. Todas las capacidades — video, despacho, GIS, tráfico y campo — son módulos nativos que comparten la misma base de datos de incidentes, el mismo mapa operativo y el mismo contexto de usuario. Cuando un operador crea un evento CAD en K-Dispatch, el incidente aparece automáticamente en K-Safety. Cuando una unidad es despachada, su trayectoria aparece en el mapa. No hay integración que mantener porque no hay separación.'
-                : 'KabatOne eliminates this integration cost. All capabilities — video, dispatch, GIS, traffic, and field — are native modules that share the same incident database, the same operational map, and the same user context. When an operator creates a CAD event in K-Dispatch, the incident automatically appears in K-Safety. When a unit is dispatched, its route appears on the map. There is no integration to maintain because there is no separation.'}
+                ? 'Kabat One elimina este costo de integración. Todas las capacidades — video, despacho, GIS, tráfico y campo — son módulos nativos que comparten la misma base de datos de incidentes, el mismo mapa operativo y el mismo contexto de usuario. Cuando un operador crea un evento CAD en K-Dispatch, el incidente aparece automáticamente en K-Safety. Cuando una unidad es despachada, su trayectoria aparece en el mapa. No hay integración que mantener porque no hay separación.'
+                : 'Kabat One eliminates this integration cost. All capabilities — video, dispatch, GIS, traffic, and field — are native modules that share the same incident database, the same operational map, and the same user context. When an operator creates a CAD event in K-Dispatch, the incident automatically appears in K-Safety. When a unit is dispatched, its route appears on the map. There is no integration to maintain because there is no separation.'}
             </p>
           </div>
         </section>
@@ -354,17 +354,17 @@ export default async function VsVmsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'KabatOne Funciona con las Cámaras que Ya Tienes' : 'KabatOne Works with the Cameras You Already Have'}
+              {es ? 'Kabat One Funciona con las Cámaras que Ya Tienes' : 'Kabat One Works with the Cameras You Already Have'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Adoptar KabatOne no requiere reemplazar la infraestructura de cámaras existente. K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite conectar cámaras de cualquier fabricante — Axis, Hanwha, Bosch, Dahua, Hikvision, y otros — directamente a la plataforma. Las ciudades que han invertido en redes de cámaras sobre cualquier VMS pueden incorporar KabatOne como la capa de coordinación de respuesta sin perder esa inversión.'
-                : 'Adopting KabatOne does not require replacing existing camera infrastructure. K-Video supports ONVIF, RTSP, and standard industry IP protocols, which allows connecting cameras from any manufacturer — Axis, Hanwha, Bosch, Dahua, Hikvision, and others — directly to the platform. Cities that have invested in camera networks on any VMS can bring KabatOne in as the response coordination layer without abandoning that investment.'}
+                ? 'Adoptar Kabat One no requiere reemplazar la infraestructura de cámaras existente. K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite conectar cámaras de cualquier fabricante — Axis, Hanwha, Bosch, Dahua, Hikvision, y otros — directamente a la plataforma. Las ciudades que han invertido en redes de cámaras sobre cualquier VMS pueden incorporar Kabat One como la capa de coordinación de respuesta sin perder esa inversión.'
+                : 'Adopting Kabat One does not require replacing existing camera infrastructure. K-Video supports ONVIF, RTSP, and standard industry IP protocols, which allows connecting cameras from any manufacturer — Axis, Hanwha, Bosch, Dahua, Hikvision, and others — directly to the platform. Cities that have invested in camera networks on any VMS can bring Kabat One in as the response coordination layer without abandoning that investment.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'El objetivo no es reemplazar el hardware de cámaras — es reemplazar la fragmentación operativa. Las cámaras son sensores. KabatOne es el sistema operativo que convierte lo que esos sensores detectan en acción coordinada: despacho, seguimiento, control de tráfico y cierre de incidente.'
-                : 'The goal is not to replace camera hardware — it is to replace operational fragmentation. Cameras are sensors. KabatOne is the operating system that turns what those sensors detect into coordinated action: dispatch, tracking, traffic control, and incident closure.'}
+                ? 'El objetivo no es reemplazar el hardware de cámaras — es reemplazar la fragmentación operativa. Las cámaras son sensores. Kabat One es el sistema operativo que convierte lo que esos sensores detectan en acción coordinada: despacho, seguimiento, control de tráfico y cierre de incidente.'
+                : 'The goal is not to replace camera hardware — it is to replace operational fragmentation. Cameras are sensors. Kabat One is the operating system that turns what those sensors detect into coordinated action: dispatch, tracking, traffic control, and incident closure.'}
             </p>
           </div>
         </section>
@@ -377,7 +377,7 @@ export default async function VsVmsPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -456,7 +456,7 @@ export default async function VsVmsPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Genetec Security Center' : 'KabatOne vs Genetec Security Center'}</span>
+                <span>{es ? 'Kabat One vs Genetec Security Center' : 'Kabat One vs Genetec Security Center'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/milestone" style={{
@@ -465,7 +465,7 @@ export default async function VsVmsPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Milestone XProtect' : 'KabatOne vs Milestone XProtect'}</span>
+                <span>{es ? 'Kabat One vs Milestone XProtect' : 'Kabat One vs Milestone XProtect'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/psim-vs-unified-platform" style={{
@@ -528,8 +528,8 @@ export default async function VsVmsPage({
           es={es}
           h2={es ? '¿Listo para Ir Más Allá del Monitoreo?' : 'Ready to Go Beyond Monitoring?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

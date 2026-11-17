@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareHungaryPage({
       answer: 'Hungría impulsa la digitalización de la seguridad pública con varios proyectos. Budapest tiene el programa Smart Budapest con integración de sistemas de videovigilancia urbana de la Rendőrség y la Policía Municipal de Budapest (BKK). El sistema HERR (Helyszíni Esemény- és Rendészeti Rendszer) gestiona los incidentes policiales con herramientas móviles. El sistema ROBOTZSARU/ROBZSARU es el sistema de información policial integrado de la Rendőrség (equivalente al POLSAG danés o el NICHE neerlandés). El proyecto KEHOP (Környezeti és Energiahatékonysági Operatív Program) financia sensores ambientales y de inundaciones integrados con los sistemas del BM OKF para la gestión de catástrofes naturales (Hungría tiene riesgo significativo de inundaciones del Danubio). El programa Digitális Magyarország 2.0 impulsa la modernización de TIC del sector público con fondos del Plan de Recuperación de la UE. El sistema ANPR/FRR (Forgalomirányítás és Rendészet Rendszere) gestiona el reconocimiento de matrículas para la Rendőrség.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Rendőrség húngara, el BM OKF y el OMSZ?',
-      answer: 'KabatOne integra las capacidades que la Rendőrség, el BM OKF (Katasztrófavédelem), el OMSZ y los centros 112 necesitan unificadas: despacho CAD multiagencia compatible con los 19 condados y la ORFK — con integración VIRTAL TETRA y preparación para broadband 4G/5G, coordinación 107/105/104/112 y gestión de emergencias de catástrofes (inundaciones, incendios forestales), compatible con los centros regionales del Katasztrófavédelem (K-Dispatch), gestión de cámaras urbanas y ANPR/FRR con analítica IA conforme a RGPD/NAIH/Infotv. — con DPIA, base legal Rtv., gestión de retención y cumplimiento NIS2/SZTFH/NBSZ (K-Video), y conciencia situacional GIS para la Rendőrség, el BM OKF, el OMSZ y el TEK — con integración Smart Budapest y sensores de inundación del Danubio para gestión de catástrofes naturales (K-Safety). Cloud EU con cumplimiento RGPD/NAIH y NIS2/SZTFH/NBSZ. Compatible con los marcos de contratación EKR/Kbt./TED. Demo adaptada al modelo centralizado húngaro de seguridad pública.',
+      question: '¿Por qué Kabat One es adecuado para la Rendőrség húngara, el BM OKF y el OMSZ?',
+      answer: 'Kabat One integra las capacidades que la Rendőrség, el BM OKF (Katasztrófavédelem), el OMSZ y los centros 112 necesitan unificadas: despacho CAD multiagencia compatible con los 19 condados y la ORFK — con integración VIRTAL TETRA y preparación para broadband 4G/5G, coordinación 107/105/104/112 y gestión de emergencias de catástrofes (inundaciones, incendios forestales), compatible con los centros regionales del Katasztrófavédelem (K-Dispatch), gestión de cámaras urbanas y ANPR/FRR con analítica IA conforme a RGPD/NAIH/Infotv. — con DPIA, base legal Rtv., gestión de retención y cumplimiento NIS2/SZTFH/NBSZ (K-Video), y conciencia situacional GIS para la Rendőrség, el BM OKF, el OMSZ y el TEK — con integración Smart Budapest y sensores de inundación del Danubio para gestión de catástrofes naturales (K-Safety). Cloud EU con cumplimiento RGPD/NAIH y NIS2/SZTFH/NBSZ. Compatible con los marcos de contratación EKR/Kbt./TED. Demo adaptada al modelo centralizado húngaro de seguridad pública.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareHungaryPage({
       answer: 'Hungary drives public safety digitalisation through several projects. Budapest has the Smart Budapest programme integrating Rendőrség and Municipal Police (BKK) urban surveillance systems. The HERR system manages police incidents with mobile tools. ROBOTZSARU/ROBZSARU is the Rendőrség\'s integrated police information system. The KEHOP programme funds environmental and flood sensors integrated with BM OKF systems for natural disaster management (Hungary faces significant Danube flood risk). The Digitális Magyarország 2.0 programme drives ICT modernisation of the public sector with EU Recovery Plan funds. The ANPR/FRR system manages plate recognition for the Rendőrség.',
     },
     {
-      question: 'Why is KabatOne suited for Hungarian Rendőrség, BM OKF, and OMSZ?',
-      answer: 'KabatOne integrates the capabilities that Rendőrség, BM OKF (Katasztrófavédelem), OMSZ, and 112 centres need unified: multi-agency CAD dispatch compatible with all 19 counties and ORFK — with VIRTAL TETRA integration and 4G/5G broadband readiness, 107/105/104/112 coordination and disaster emergency management (floods, wildfires), compatible with Katasztrófavédelem regional centres (K-Dispatch), urban camera and ANPR/FRR management with AI analytics compliant with GDPR/NAIH/Infotv. — with DPIA, Rtv. legal basis, retention management, and NIS2/SZTFH/NBSZ compliance (K-Video), and GIS situational awareness for Rendőrség, BM OKF, OMSZ, and TEK — with Smart Budapest integration and Danube flood sensors for natural disaster management (K-Safety). EU cloud with GDPR/NAIH and NIS2/SZTFH/NBSZ compliance. Compatible with EKR/Kbt./TED procurement frameworks. Demo adapted to Hungary\'s centralised public safety model.',
+      question: 'Why is Kabat One suited for Hungarian Rendőrség, BM OKF, and OMSZ?',
+      answer: 'Kabat One integrates the capabilities that Rendőrség, BM OKF (Katasztrófavédelem), OMSZ, and 112 centres need unified: multi-agency CAD dispatch compatible with all 19 counties and ORFK — with VIRTAL TETRA integration and 4G/5G broadband readiness, 107/105/104/112 coordination and disaster emergency management (floods, wildfires), compatible with Katasztrófavédelem regional centres (K-Dispatch), urban camera and ANPR/FRR management with AI analytics compliant with GDPR/NAIH/Infotv. — with DPIA, Rtv. legal basis, retention management, and NIS2/SZTFH/NBSZ compliance (K-Video), and GIS situational awareness for Rendőrség, BM OKF, OMSZ, and TEK — with Smart Budapest integration and Danube flood sensors for natural disaster management (K-Safety). EU cloud with GDPR/NAIH and NIS2/SZTFH/NBSZ compliance. Compatible with EKR/Kbt./TED procurement frameworks. Demo adapted to Hungary\'s centralised public safety model.',
     },
   ]
 
@@ -237,11 +237,11 @@ export default async function PublicSafetySoftwareHungaryPage({
         </div>
       </section>
 
-      {/* How KabatOne helps */}
+      {/* How Kabat One helps */}
       <section style={{ padding: '64px 24px', background: '#f1f5f9' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h2 style={{ fontSize: '1.7rem', fontWeight: 700, marginBottom: 32 }}>
-            {es ? 'Cómo KabatOne Unifica la Seguridad Pública Húngara' : 'How KabatOne Unifies Hungarian Public Safety'}
+            {es ? 'Cómo Kabat One Unifica la Seguridad Pública Húngara' : 'How Kabat One Unifies Hungarian Public Safety'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 24 }}>
             {[

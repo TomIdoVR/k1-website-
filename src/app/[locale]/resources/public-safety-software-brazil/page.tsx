@@ -47,19 +47,19 @@ export default async function PublicSafetySoftwareBrazilPage({
     },
     {
       question: '¿Que son los CIOPS y como funcionan en Brasil?',
-      answer: 'Los CIOPS (Centros Integrados de Operaciones de Seguridad Publica) son centros de comando que unifican la Policia Militar, los Bombeiros y el SAMU en un solo espacio operativo. Estados como Bahia, Minas Gerais y Rio de Janeiro han desplegado CIOPS consolidados. Una plataforma como KabatOne se integra directamente con la infraestructura ONVIF/RTSP existente del CIOPS y agrega video analytics, GIS en tiempo real y despacho CAD unificado sobre las camaras ya instaladas, sin reemplazar hardware.',
+      answer: 'Los CIOPS (Centros Integrados de Operaciones de Seguridad Publica) son centros de comando que unifican la Policia Militar, los Bombeiros y el SAMU en un solo espacio operativo. Estados como Bahia, Minas Gerais y Rio de Janeiro han desplegado CIOPS consolidados. Una plataforma como Kabat One se integra directamente con la infraestructura ONVIF/RTSP existente del CIOPS y agrega video analytics, GIS en tiempo real y despacho CAD unificado sobre las camaras ya instaladas, sin reemplazar hardware.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de camaras existente en Brasil?',
-      answer: 'Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de Sao Paulo (CCTV e Detecta), Rio de Janeiro (COR — Centro de Operacoes), Curitiba, Porto Alegre y Belo Horizonte se conectan directamente a la plataforma. Los sistemas LPR de autopistas estaduales, paneles de control de acceso y sensores IoT existentes tambien se integran sin cambiar infraestructura.',
+      question: '¿Puede Kabat One integrarse con la infraestructura de camaras existente en Brasil?',
+      answer: 'Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras municipales de Sao Paulo (CCTV e Detecta), Rio de Janeiro (COR — Centro de Operacoes), Curitiba, Porto Alegre y Belo Horizonte se conectan directamente a la plataforma. Los sistemas LPR de autopistas estaduales, paneles de control de acceso y sensores IoT existentes tambien se integran sin cambiar infraestructura.',
     },
     {
-      question: '¿Como apoya KabatOne la coordinacion entre PM, PC, Bombeiros y SAMU en Brasil?',
+      question: '¿Como apoya Kabat One la coordinacion entre PM, PC, Bombeiros y SAMU en Brasil?',
       answer: 'K-Safety provee un mapa GIS compartido donde los operadores del CIOPS ven posiciones de unidades de PM, Bombeiros y SAMU, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica la recepcion del 190/192/193 en un solo registro de incidente, y K-Video centraliza camaras municipales y privadas compartidas en un VMS con busqueda por zona, fecha y tipo de evento. Cada agencia mantiene su flujo de trabajo interno mientras comparte contexto operativo con las demas.',
     },
     {
-      question: '¿Como se alinea KabatOne con las licitaciones bajo la Lei 14.133/2021 en Brasil?',
-      answer: 'KabatOne se comercializa a traves de distribuidores e integradores locales registrados en el Portal de Compras (comprasnet.gov.br) y en plataformas estaduales como el BEC de Sao Paulo. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios de los FNSP estaduales y a los requisitos de los pliegos bajo la nueva Lei de Licitacoes.',
+      question: '¿Como se alinea Kabat One con las licitaciones bajo la Lei 14.133/2021 en Brasil?',
+      answer: 'Kabat One se comercializa a traves de distribuidores e integradores locales registrados en el Portal de Compras (comprasnet.gov.br) y en plataformas estaduales como el BEC de Sao Paulo. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios de los FNSP estaduales y a los requisitos de los pliegos bajo la nueva Lei de Licitacoes.',
     },
   ] : [
     {
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareBrazilPage({
     },
     {
       question: 'What are CIOPS centers and how do they work in Brazil?',
-      answer: 'CIOPS (Centros Integrados de Operações de Segurança Pública) are command centers that unify Polícia Militar, Bombeiros, and SAMU in one operational space. States like Bahia, Minas Gerais, and Rio de Janeiro have deployed consolidated CIOPS. A platform like KabatOne integrates directly with existing ONVIF/RTSP infrastructure inside CIOPS centers and adds video analytics, real-time GIS, and unified CAD dispatch on top of already-installed cameras — without hardware replacement.',
+      answer: 'CIOPS (Centros Integrados de Operações de Segurança Pública) are command centers that unify Polícia Militar, Bombeiros, and SAMU in one operational space. States like Bahia, Minas Gerais, and Rio de Janeiro have deployed consolidated CIOPS. A platform like Kabat One integrates directly with existing ONVIF/RTSP infrastructure inside CIOPS centers and adds video analytics, real-time GIS, and unified CAD dispatch on top of already-installed cameras — without hardware replacement.',
     },
     {
-      question: 'Can KabatOne integrate with existing camera infrastructure in Brazil?',
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras from São Paulo (CCTV and Detecta), Rio de Janeiro (COR — Centro de Operações), Curitiba, Porto Alegre, and Belo Horizonte connect directly to the platform. State highway LPR systems, access control panels, and existing IoT sensors also integrate without infrastructure changes.",
+      question: 'Can Kabat One integrate with existing camera infrastructure in Brazil?',
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Municipal cameras from São Paulo (CCTV and Detecta), Rio de Janeiro (COR — Centro de Operações), Curitiba, Porto Alegre, and Belo Horizonte connect directly to the platform. State highway LPR systems, access control panels, and existing IoT sensors also integrate without infrastructure changes.",
     },
     {
-      question: 'How does KabatOne support coordination between PM, PC, Bombeiros, and SAMU in Brazil?',
+      question: 'How does Kabat One support coordination between PM, PC, Bombeiros, and SAMU in Brazil?',
       answer: 'K-Safety provides a shared GIS map where CIOPS operators see real-time positions of PM, Bombeiros, and SAMU units, active incidents, and live video feeds. K-Dispatch unifies 190/192/193 intake into one incident record, and K-Video centralizes municipal and privately shared cameras in a searchable VMS with zone, date, and event-type search. Each agency maintains its internal workflow while sharing operational context with others.',
     },
     {
-      question: 'How does KabatOne align with public procurement under Lei 14.133/2021 in Brazil?',
-      answer: 'KabatOne is marketed through local distributors and integrators registered on the Portal de Compras (comprasnet.gov.br) and state platforms like São Paulo\'s BEC. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to state FNSP budget frameworks and the requirements of tenders under the new Lei de Licitações.',
+      question: 'How does Kabat One align with public procurement under Lei 14.133/2021 in Brazil?',
+      answer: 'Kabat One is marketed through local distributors and integrators registered on the Portal de Compras (comprasnet.gov.br) and state platforms like São Paulo\'s BEC. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to state FNSP budget frameworks and the requirements of tenders under the new Lei de Licitações.',
     },
   ]
 
@@ -514,8 +514,8 @@ export default async function PublicSafetySoftwareBrazilPage({
         es={es}
         h2={es ? 'Transforma la Seguridad Publica de Tu Estado o Municipio en Brasil' : 'Transform Public Safety in Your Brazilian State or Municipality'}
         subtitle={es
-          ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para CIOPS estaduales y municipios brasilenhos.'
-          : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Brazilian state CIOPS centers and municipalities.'}
+          ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para CIOPS estaduales y municipios brasilenhos.'
+          : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Brazilian state CIOPS centers and municipalities.'}
         cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
         cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
       />

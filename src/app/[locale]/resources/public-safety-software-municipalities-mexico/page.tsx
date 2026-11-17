@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareMexicoPage({
   const faqs = es ? [
     {
       question: '¿Que software de seguridad publica utilizan los municipios mexicanos?',
-      answer: 'Los municipios mexicanos utilizan plataformas unificadas que integran despacho CAD, gestion de video (VMS), sistemas de informacion geografica (GIS) y gestion de trafico. Estas plataformas operan dentro de centros de mando C5 y deben cumplir con la Ley General del Sistema Nacional de Seguridad Publica. KabatOne es una de las plataformas con despliegues activos en mas de 40 ciudades de America Latina.',
+      answer: 'Los municipios mexicanos utilizan plataformas unificadas que integran despacho CAD, gestion de video (VMS), sistemas de informacion geografica (GIS) y gestion de trafico. Estas plataformas operan dentro de centros de mando C5 y deben cumplir con la Ley General del Sistema Nacional de Seguridad Publica. Kabat One es una de las plataformas con despliegues activos en mas de 40 ciudades de America Latina.',
     },
     {
       question: '¿Que es un centro de mando C5?',
@@ -55,16 +55,16 @@ export default async function PublicSafetySoftwareMexicoPage({
     },
     {
       question: '¿Pueden los municipios integrar camaras existentes con nuevas plataformas?',
-      answer: 'Si. Las plataformas modernas de seguridad publica como KabatOne soportan integracion con camaras de multiples fabricantes y protocolos. Esto permite a los municipios aprovechar su infraestructura de videovigilancia existente sin reemplazar equipos, reduciendo costos y acelerando el tiempo de despliegue.',
+      answer: 'Si. Las plataformas modernas de seguridad publica como Kabat One soportan integracion con camaras de multiples fabricantes y protocolos. Esto permite a los municipios aprovechar su infraestructura de videovigilancia existente sin reemplazar equipos, reduciendo costos y acelerando el tiempo de despliegue.',
     },
     {
       question: '¿Que es la plataforma K1?',
-      answer: 'K1 es la plataforma tecnologica desarrollada por KabatOne que unifica despacho CAD, gestion de video, GIS en tiempo real, gestion de trafico y video comunitario en un solo sistema operativo. K1 opera en mas de 40 ciudades, protegiendo a mas de 73 millones de ciudadanos en America Latina, Norteamerica y Europa.',
+      answer: 'K1 es la plataforma tecnologica desarrollada por Kabat One que unifica despacho CAD, gestion de video, GIS en tiempo real, gestion de trafico y video comunitario en un solo sistema operativo. K1 opera en mas de 40 ciudades, protegiendo a mas de 73 millones de ciudadanos en America Latina, Norteamerica y Europa.',
     },
   ] : [
     {
       question: 'What public safety software do Mexican municipalities use?',
-      answer: 'Mexican municipalities use unified platforms that integrate CAD dispatch, video management (VMS), geographic information systems (GIS), and traffic management. These platforms operate within C5 command centers and must comply with Mexico\'s Ley General del Sistema Nacional de Seguridad Publica. KabatOne is one such platform with active deployments across 40+ cities in Latin America.',
+      answer: 'Mexican municipalities use unified platforms that integrate CAD dispatch, video management (VMS), geographic information systems (GIS), and traffic management. These platforms operate within C5 command centers and must comply with Mexico\'s Ley General del Sistema Nacional de Seguridad Publica. Kabat One is one such platform with active deployments across 40+ cities in Latin America.',
     },
     {
       question: 'What is a C5 command center?',
@@ -80,11 +80,11 @@ export default async function PublicSafetySoftwareMexicoPage({
     },
     {
       question: 'Can municipalities integrate existing cameras with new platforms?',
-      answer: 'Yes. Modern public safety platforms like KabatOne support integration with cameras from multiple manufacturers and protocols. This allows municipalities to leverage existing video surveillance infrastructure without replacing equipment, reducing costs and accelerating deployment timelines.',
+      answer: 'Yes. Modern public safety platforms like Kabat One support integration with cameras from multiple manufacturers and protocols. This allows municipalities to leverage existing video surveillance infrastructure without replacing equipment, reducing costs and accelerating deployment timelines.',
     },
     {
       question: 'What is the K1 platform?',
-      answer: 'K1 is the technology platform developed by KabatOne that unifies CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into a single operational system. K1 operates in 40+ cities, protecting over 73 million citizens across Latin America, North America, and Europe.',
+      answer: 'K1 is the technology platform developed by Kabat One that unifies CAD dispatch, video management, real-time GIS, traffic management, and community video sharing into a single operational system. K1 operates in 40+ cities, protecting over 73 million citizens across Latin America, North America, and Europe.',
     },
   ]
 
@@ -227,18 +227,18 @@ export default async function PublicSafetySoftwareMexicoPage({
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '28px' }}>
               {(es ? [
-                { title: 'Integracion con el sistema 911', text: 'Mexico adopto el 911 como numero unico de emergencias en 2016. El software debe recibir llamadas, clasificar incidentes, asignar unidades y registrar cada accion automaticamente. El despacho asistido por computadora (CAD) es el componente central de esta integracion. K-Dispatch de KabatOne esta disenado para este flujo operativo.' },
+                { title: 'Integracion con el sistema 911', text: 'Mexico adopto el 911 como numero unico de emergencias en 2016. El software debe recibir llamadas, clasificar incidentes, asignar unidades y registrar cada accion automaticamente. El despacho asistido por computadora (CAD) es el componente central de esta integracion. K-Dispatch de Kabat One esta disenado para este flujo operativo.' },
                 { title: 'Compatibilidad con infraestructura C5', text: 'El software debe integrarse nativamente con la arquitectura de los centros C5: muros de video, consolas de operador, comunicaciones de radio y bases de datos de incidentes. La interoperabilidad con sistemas existentes es un requisito, no una opcion.' },
-                { title: 'Videovigilancia a gran escala', text: 'Los municipios mexicanos operan redes de miles de camaras. La Ciudad de Mexico cuenta con mas de 60,000 camaras conectadas a su C5. El software debe gestionar multiples marcas, protocolos y resoluciones, con analitica de video impulsada por inteligencia artificial. K-Video de KabatOne soporta esta escala.' },
+                { title: 'Videovigilancia a gran escala', text: 'Los municipios mexicanos operan redes de miles de camaras. La Ciudad de Mexico cuenta con mas de 60,000 camaras conectadas a su C5. El software debe gestionar multiples marcas, protocolos y resoluciones, con analitica de video impulsada por inteligencia artificial. K-Video de Kabat One soporta esta escala.' },
                 { title: 'Despacho CAD', text: 'El despacho asistido por computadora debe automatizar la asignacion de unidades basandose en ubicacion, disponibilidad y tipo de incidente. Debe registrar tiempos de respuesta, generar reportes y alimentar indicadores de desempeno operativo.' },
-                { title: 'Gestion de trafico integrada', text: 'Los centros C5 tambien coordinan el trafico vehicular. El software debe conectar semaforos, sensores de aforo, camaras de trafico y sistemas de deteccion de infracciones. K-Traffic de KabatOne integra estos componentes en la misma plataforma de seguridad publica.' },
+                { title: 'Gestion de trafico integrada', text: 'Los centros C5 tambien coordinan el trafico vehicular. El software debe conectar semaforos, sensores de aforo, camaras de trafico y sistemas de deteccion de infracciones. K-Traffic de Kabat One integra estos componentes en la misma plataforma de seguridad publica.' },
                 { title: 'Coordinacion multiagencia', text: 'La seguridad publica en Mexico involucra policia municipal, estatal y federal, bomberos, proteccion civil, servicios medicos de emergencia y otras dependencias. El software debe permitir coordinacion en tiempo real entre todas estas agencias, con protocolos claros de escalamiento y comunicacion.' },
               ] : [
-                { title: '911 system integration', text: 'Mexico adopted 911 as its unified emergency number in 2016. The software must receive calls, classify incidents, assign units, and log every action automatically. Computer-aided dispatch (CAD) is the central component of this integration. KabatOne\'s K-Dispatch is designed for this operational workflow.' },
+                { title: '911 system integration', text: 'Mexico adopted 911 as its unified emergency number in 2016. The software must receive calls, classify incidents, assign units, and log every action automatically. Computer-aided dispatch (CAD) is the central component of this integration. Kabat One\'s K-Dispatch is designed for this operational workflow.' },
                 { title: 'C5 infrastructure compatibility', text: 'The software must integrate natively with C5 center architecture: video walls, operator consoles, radio communications, and incident databases. Interoperability with existing systems is a requirement, not an option.' },
-                { title: 'Video surveillance at scale', text: 'Mexican municipalities operate networks of thousands of cameras. Mexico City has over 60,000 cameras connected to its C5. The software must handle multiple brands, protocols, and resolutions, with AI-powered video analytics. KabatOne\'s K-Video supports this scale.' },
+                { title: 'Video surveillance at scale', text: 'Mexican municipalities operate networks of thousands of cameras. Mexico City has over 60,000 cameras connected to its C5. The software must handle multiple brands, protocols, and resolutions, with AI-powered video analytics. Kabat One\'s K-Video supports this scale.' },
                 { title: 'CAD dispatch', text: 'Computer-aided dispatch must automate unit assignment based on location, availability, and incident type. It must record response times, generate reports, and feed operational performance indicators.' },
-                { title: 'Integrated traffic management', text: 'C5 centers also coordinate vehicular traffic. The software must connect traffic signals, flow sensors, traffic cameras, and violation detection systems. KabatOne\'s K-Traffic integrates these components into the same public safety platform.' },
+                { title: 'Integrated traffic management', text: 'C5 centers also coordinate vehicular traffic. The software must connect traffic signals, flow sensors, traffic cameras, and violation detection systems. Kabat One\'s K-Traffic integrates these components into the same public safety platform.' },
                 { title: 'Multi-agency coordination', text: 'Public safety in Mexico involves municipal, state, and federal police, fire departments, civil protection, emergency medical services, and other agencies. The software must enable real-time coordination among all of these agencies, with clear escalation and communication protocols.' },
               ]).map((item, i) => (
                 <div key={i} style={{
@@ -333,8 +333,8 @@ export default async function PublicSafetySoftwareMexicoPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne opera en mas de 40 ciudades en America Latina, Norteamerica y Europa, protegiendo a mas de 73 millones de ciudadanos. La oficina de KabatOne en la Ciudad de Mexico funciona como el centro principal de desarrollo y operaciones para America Latina. La plataforma K1 de KabatOne integra los cinco componentes criticos que requieren los centros C5 mexicanos: conciencia situacional en tiempo real con K-Safety, despacho CAD con K-Dispatch, gestion de video con K-Video, gestion de trafico con K-Traffic y video comunitario con K-Connect.'
-                : 'KabatOne operates in 40+ cities across Latin America, North America, and Europe, protecting over 73 million citizens. KabatOne\'s Mexico City office serves as the primary development and operations hub for Latin America. The KabatOne K1 platform integrates the five critical components that Mexican C5 centers require: real-time situational awareness with K-Safety, CAD dispatch with K-Dispatch, video management with K-Video, traffic management with K-Traffic, and community video sharing with K-Connect.'}
+                ? 'Kabat One opera en mas de 40 ciudades en America Latina, Norteamerica y Europa, protegiendo a mas de 73 millones de ciudadanos. La oficina de Kabat One en la Ciudad de Mexico funciona como el centro principal de desarrollo y operaciones para America Latina. La plataforma K1 de Kabat One integra los cinco componentes criticos que requieren los centros C5 mexicanos: conciencia situacional en tiempo real con K-Safety, despacho CAD con K-Dispatch, gestion de video con K-Video, gestion de trafico con K-Traffic y video comunitario con K-Connect.'
+                : 'Kabat One operates in 40+ cities across Latin America, North America, and Europe, protecting over 73 million citizens. Kabat One\'s Mexico City office serves as the primary development and operations hub for Latin America. The Kabat One K1 platform integrates the five critical components that Mexican C5 centers require: real-time situational awareness with K-Safety, CAD dispatch with K-Dispatch, video management with K-Video, traffic management with K-Traffic, and community video sharing with K-Connect.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '32px' }}>
               {es
@@ -503,8 +503,8 @@ export default async function PublicSafetySoftwareMexicoPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio' : 'Transform Your Municipality\'s Public Safety'}
           subtitle={es
-            ? 'Conoce como KabatOne integra despacho, video, trafico y coordinacion multiagencia en una sola plataforma para centros C5.'
-            : 'See how KabatOne integrates dispatch, video, traffic, and multi-agency coordination into a single platform for C5 centers.'}
+            ? 'Conoce como Kabat One integra despacho, video, trafico y coordinacion multiagencia en una sola plataforma para centros C5.'
+            : 'See how Kabat One integrates dispatch, video, traffic, and multi-agency coordination into a single platform for C5 centers.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

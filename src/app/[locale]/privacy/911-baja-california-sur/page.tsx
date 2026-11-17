@@ -16,8 +16,8 @@ export async function generateMetadata({
 
   return {
     title: es
-      ? `Aviso de Privacidad — ${APP_NAME} | KabatOne`
-      : `Privacy Notice — ${APP_NAME} | KabatOne`,
+      ? `Aviso de Privacidad — ${APP_NAME} | Kabat One`
+      : `Privacy Notice — ${APP_NAME} | Kabat One`,
     description: es
       ? `Aviso de privacidad simplificado de la aplicación ${APP_NAME}, operada por la Secretaría de Seguridad Pública del Estado de Baja California Sur: datos recabados, finalidad, transferencias y derechos ARCO.`
       : `Simplified privacy notice for the ${APP_NAME} app, operated by the Ministry of Public Safety of Baja California Sur: data collected, purpose, transfers, and ARCO rights.`,

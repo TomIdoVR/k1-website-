@@ -233,8 +233,8 @@ const KDISPATCH: SolutionContent = {
     {
       q: S('How long does it take to deploy K-Dispatch?',
         '¿Cuánto tiempo toma implementar K-Dispatch?'),
-      a: S('A typical deployment takes 8 to 16 weeks depending on the number of agencies, integration complexity, and training requirements. KabatOne provides a phased rollout with parallel operation so your existing CAD continues running until the transition is complete.',
-        'Una implementación típica toma de 8 a 16 semanas dependiendo del número de agencias, complejidad de integraciones y requisitos de capacitación. KabatOne ofrece un despliegue por fases con operación en paralelo para que su CAD existente continúe funcionando hasta completar la transición.'),
+      a: S('Setup is fast because call handling, dispatch and integrations ship as one platform, so there is no stack of separate systems to install and connect. The rollout is phased, with parallel operation, so your current system keeps running until your team is ready to switch. The exact schedule depends on the number of agencies, the integrations you need, and training.',
+        'La puesta en marcha es rápida porque la atención de llamadas, el despacho y las integraciones vienen en una sola plataforma, sin una pila de sistemas separados que instalar y conectar. El despliegue es por fases, con operación en paralelo, para que su sistema actual siga funcionando hasta que su equipo esté listo para el cambio. El calendario exacto depende del número de agencias, las integraciones que necesite y la capacitación.'),
     },
     {
       q: S('Does K-Dispatch support cloud deployment?',

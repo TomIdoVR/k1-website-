@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwarePolandPage({
       answer: 'Polonia tiene una infraestructura de videovigilancia en rápido crecimiento, principalmente a nivel municipal (miejski monitoring). Varsovia opera miles de cámaras en el espacio público gestionadas desde el Centro de Seguridad Municipal (Centrum Bezpieczeństwa Miasta). Cracovia, Wroclaw, Poznan y otras ciudades importantes tienen sistemas similares conectados a los centros de operaciones de la Policja local. Los sistemas de reconocimiento de matrículas (ANPR) están integrados en las autopistas y puntos de entrada a las ciudades bajo la gestión del GITD (Główny Inspektorat Transportu Drogowego). El sistema de videovigilancia ferroviaria (PKP, metro de Varsovia) opera redes propias. El uso de análisis facial y biometría en videovigilancia pública está sujeto a las restricciones del RODO y requiere base legal específica. Los proyectos de ciudad inteligente (Smart City Warszawa, Smart City Kraków) integran videovigilancia con gestión de tráfico y servicios municipales.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Policja, los CPR y los servicios de emergencias de Polonia?',
-      answer: 'KabatOne integra las funciones que la Policja polaca, los CPR de los 16 voivodatos y la PSP gestionan a través de sistemas separados: despacho CAD unificado compatible con los flujos de los CPR y los centros de operaciones policiales voivodales — con clasificación automática de incidentes y asignación de recursos (K-Dispatch), gestión de redes de miejski monitoring y cámaras policiales con analítica de IA — ANPR, detección de comportamientos, búsqueda forense — conforme al RODO, UODO y la Ley de Policía polaca (K-Video), y conciencia situacional GIS compartida entre Policja, PSP, Pogotowie Ratunkowe y los CPR para coordinación multiagencia (K-Safety). Cloud en UE con cumplimiento RODO/KSC/NIS2. Compatible con los procesos PZP para licitaciones públicas polacas. Demo adaptada al modelo de CPR y los centros de operaciones policiales voivodales.',
+      question: '¿Por qué Kabat One es adecuado para la Policja, los CPR y los servicios de emergencias de Polonia?',
+      answer: 'Kabat One integra las funciones que la Policja polaca, los CPR de los 16 voivodatos y la PSP gestionan a través de sistemas separados: despacho CAD unificado compatible con los flujos de los CPR y los centros de operaciones policiales voivodales — con clasificación automática de incidentes y asignación de recursos (K-Dispatch), gestión de redes de miejski monitoring y cámaras policiales con analítica de IA — ANPR, detección de comportamientos, búsqueda forense — conforme al RODO, UODO y la Ley de Policía polaca (K-Video), y conciencia situacional GIS compartida entre Policja, PSP, Pogotowie Ratunkowe y los CPR para coordinación multiagencia (K-Safety). Cloud en UE con cumplimiento RODO/KSC/NIS2. Compatible con los procesos PZP para licitaciones públicas polacas. Demo adaptada al modelo de CPR y los centros de operaciones policiales voivodales.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwarePolandPage({
       answer: 'Poland has a rapidly growing video surveillance infrastructure, primarily at the municipal level (miejski monitoring). Warsaw operates thousands of cameras in public spaces managed from the Municipal Security Centre (Centrum Bezpieczeństwa Miasta). Kraków, Wrocław, Poznań, and other major cities have similar systems connected to local Policja operations centres. ANPR licence plate recognition systems are integrated on motorways and city entry points under the GITD (Główny Inspektorat Transportu Drogowego). Railway surveillance (PKP, Warsaw Metro) operates own networks. The use of facial analysis and biometrics in public surveillance is restricted by RODO and requires a specific legal basis. Smart city projects (Smart City Warszawa, Smart City Kraków) integrate surveillance with traffic management and municipal services.',
     },
     {
-      question: 'Why is KabatOne suited for the Policja, CPR centres, and Polish emergency services?',
-      answer: 'KabatOne integrates the functions that the Polish Policja, 16 voivodeship CPR centres, and PSP manage through separate systems: unified CAD dispatch compatible with CPR and voivodeship police operations centre workflows — with automatic incident classification and resource assignment (K-Dispatch), miejski monitoring and police camera network management with AI analytics — ANPR, behaviour detection, forensic search — compliant with RODO, UODO, and the Polish Police Act (K-Video), and shared GIS situational awareness across Policja, PSP, Pogotowie Ratunkowe, and CPR for multi-agency coordination (K-Safety). EU cloud with RODO/KSC/NIS2 compliance. Compatible with PZP procurement processes. Demo tailored to the CPR model and voivodeship police operations centres.',
+      question: 'Why is Kabat One suited for the Policja, CPR centres, and Polish emergency services?',
+      answer: 'Kabat One integrates the functions that the Polish Policja, 16 voivodeship CPR centres, and PSP manage through separate systems: unified CAD dispatch compatible with CPR and voivodeship police operations centre workflows — with automatic incident classification and resource assignment (K-Dispatch), miejski monitoring and police camera network management with AI analytics — ANPR, behaviour detection, forensic search — compliant with RODO, UODO, and the Polish Police Act (K-Video), and shared GIS situational awareness across Policja, PSP, Pogotowie Ratunkowe, and CPR for multi-agency coordination (K-Safety). EU cloud with RODO/KSC/NIS2 compliance. Compatible with PZP procurement processes. Demo tailored to the CPR model and voivodeship police operations centres.',
     },
   ]
 
@@ -152,8 +152,8 @@ export default async function PublicSafetySoftwarePolandPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Polonia es el mayor mercado de Europa Central y Oriental para software de seguridad pública — con ~100,000 agentes de la Policja en 16 voivodatos, 16 Centros CPR que coordinan el 112 nacional y un ambicioso programa de modernización financiado por fondos EU (KPO/POPC). KabatOne unifica el despacho CAD multiagencia, la gestión del miejski monitoring con IA y la conciencia situacional GIS bajo cumplimiento RODO y los requisitos KSC/NIS2.'
-                : 'Poland is the largest Central and Eastern European market for public safety software — with ~100,000 Policja officers across 16 voivodeships, 16 CPR centres coordinating the national 112, and an ambitious EU-funded modernisation programme (KPO/POPC). KabatOne unifies multi-agency CAD dispatch, miejski monitoring AI management, and GIS situational awareness under RODO compliance and KSC/NIS2 requirements.'}
+                ? 'Polonia es el mayor mercado de Europa Central y Oriental para software de seguridad pública — con ~100,000 agentes de la Policja en 16 voivodatos, 16 Centros CPR que coordinan el 112 nacional y un ambicioso programa de modernización financiado por fondos EU (KPO/POPC). Kabat One unifica el despacho CAD multiagencia, la gestión del miejski monitoring con IA y la conciencia situacional GIS bajo cumplimiento RODO y los requisitos KSC/NIS2.'
+                : 'Poland is the largest Central and Eastern European market for public safety software — with ~100,000 Policja officers across 16 voivodeships, 16 CPR centres coordinating the national 112, and an ambitious EU-funded modernisation programme (KPO/POPC). Kabat One unifies multi-agency CAD dispatch, miejski monitoring AI management, and GIS situational awareness under RODO compliance and KSC/NIS2 requirements.'}
             </p>
           </div>
         </section>
@@ -196,11 +196,11 @@ export default async function PublicSafetySoftwarePolandPage({
 
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de la Policja, los CPR y la PSP de Polonia' : 'How KabatOne Addresses Poland\'s Policja, CPR Centres, and PSP Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de la Policja, los CPR y la PSP de Polonia' : 'How Kabat One Addresses Poland\'s Policja, CPR Centres, and PSP Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los Comandos Voivodales de la Policja, los 16 CPR del 112 y los comandos de la PSP que necesitan un dashboard unificado para gestionar el despacho multiagencia 112/997/998/999, monitorizar redes de miejski monitoring con analítica de IA y coordinar la respuesta de múltiples agencias — todo bajo los requisitos del RODO/UODO, la Ley KSC y los estándares de seguridad de la ABW para sistemas críticos de seguridad pública polaca.'
-                : 'KabatOne is designed for Policja Voivodeship Commands, 16 CPR 112 centres, and PSP commands that need a unified dashboard to manage 112/997/998/999 multi-agency dispatch, monitor miejski monitoring networks with AI analytics, and coordinate multi-agency response — all under RODO/UODO, KSC Act, and ABW security standards for Polish public safety critical systems.'}
+                ? 'Kabat One está diseñado para los Comandos Voivodales de la Policja, los 16 CPR del 112 y los comandos de la PSP que necesitan un dashboard unificado para gestionar el despacho multiagencia 112/997/998/999, monitorizar redes de miejski monitoring con analítica de IA y coordinar la respuesta de múltiples agencias — todo bajo los requisitos del RODO/UODO, la Ley KSC y los estándares de seguridad de la ABW para sistemas críticos de seguridad pública polaca.'
+                : 'Kabat One is designed for Policja Voivodeship Commands, 16 CPR 112 centres, and PSP commands that need a unified dashboard to manage 112/997/998/999 multi-agency dispatch, monitor miejski monitoring networks with AI analytics, and coordinate multi-agency response — all under RODO/UODO, KSC Act, and ABW security standards for Polish public safety critical systems.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -226,7 +226,7 @@ export default async function PublicSafetySoftwarePolandPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -296,7 +296,7 @@ export default async function PublicSafetySoftwarePolandPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para la Policja, los CPR del 112 o la PSP de Polonia' : 'Request a Demo for Poland\'s Policja, CPR 112 Centres, or PSP'}
-          subtitle={es ? 'KabatOne integra el despacho 112/997/998/999 multiagencia compatible con los CPR voivodales, la gestión del miejski monitoring con analítica IA y la conciencia situacional GIS en una plataforma con cumplimiento RODO/KSC y cloud en la UE. Demo adaptada al modelo CPR y los proyectos CPR 2.0/SESPOL.' : 'KabatOne integrates voivodeship CPR-compatible 112/997/998/999 multi-agency dispatch, miejski monitoring AI management, and GIS situational awareness in a single platform with RODO/KSC compliance and EU cloud. Demo tailored to the CPR model and CPR 2.0/SESPOL projects.'}
+          subtitle={es ? 'Kabat One integra el despacho 112/997/998/999 multiagencia compatible con los CPR voivodales, la gestión del miejski monitoring con analítica IA y la conciencia situacional GIS en una plataforma con cumplimiento RODO/KSC y cloud en la UE. Demo adaptada al modelo CPR y los proyectos CPR 2.0/SESPOL.' : 'Kabat One integrates voivodeship CPR-compatible 112/997/998/999 multi-agency dispatch, miejski monitoring AI management, and GIS situational awareness in a single platform with RODO/KSC compliance and EU cloud. Demo tailored to the CPR model and CPR 2.0/SESPOL projects.'}
         />
 
         <Footer es={es} />

@@ -34,7 +34,7 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: '¿Cuál es la diferencia entre analítica de video basada en servidor y en cámara?',
           answer:
-            'La analítica en cámara (edge analytics) procesa las imágenes directamente en el chip de la cámara — tiene baja latencia y no requiere transmitir video de alta resolución a un servidor central, pero está limitada por la capacidad de procesamiento del chip. La analítica en servidor centraliza el procesamiento de múltiples cámaras en un servidor o nube potente, permitiendo modelos de IA más complejos y correlación entre cámaras. Los sistemas avanzados como KabatOne usan ambas: edge para alertas inmediatas, servidor para correlación y análisis profundo.',
+            'La analítica en cámara (edge analytics) procesa las imágenes directamente en el chip de la cámara — tiene baja latencia y no requiere transmitir video de alta resolución a un servidor central, pero está limitada por la capacidad de procesamiento del chip. La analítica en servidor centraliza el procesamiento de múltiples cámaras en un servidor o nube potente, permitiendo modelos de IA más complejos y correlación entre cámaras. Los sistemas avanzados como Kabat One usan ambas: edge para alertas inmediatas, servidor para correlación y análisis profundo.',
         },
         {
           question: '¿Qué tipos de eventos puede detectar la analítica de video?',
@@ -44,17 +44,17 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: '¿Cuál es la tasa de falsos positivos en analítica de video con IA?',
           answer:
-            'Los sistemas maduros de analítica de video con IA entrenados en condiciones reales logran tasas de falsos positivos de 1-5% para eventos simples como intrusión perimetral, y 5-15% para comportamientos complejos como detección de agresividad. Los factores que más afectan la precisión son: calidad de imagen (resolución, iluminación), variabilidad de condiciones (clima, oclusión), calidad del dataset de entrenamiento y ajuste del umbral de confianza. KabatOne aplica filtros de confirmación configurables para reducir alertas irrelevantes antes de notificar al operador.',
+            'Los sistemas maduros de analítica de video con IA entrenados en condiciones reales logran tasas de falsos positivos de 1-5% para eventos simples como intrusión perimetral, y 5-15% para comportamientos complejos como detección de agresividad. Los factores que más afectan la precisión son: calidad de imagen (resolución, iluminación), variabilidad de condiciones (clima, oclusión), calidad del dataset de entrenamiento y ajuste del umbral de confianza. Kabat One aplica filtros de confirmación configurables para reducir alertas irrelevantes antes de notificar al operador.',
         },
         {
           question: '¿Cómo se integra la analítica de video en un centro de mando?',
           answer:
-            'En un centro de mando unificado, las alertas de analítica de video no llegan como notificaciones aisladas — se integran en el mapa operativo GIS como eventos geolocalizados. El operador ve la alerta en el mapa, abre la cámara correspondiente con un clic, y puede despachar una unidad directamente desde la misma interfaz. KabatOne correlaciona alertas de video con datos de LPR, sensores IoT y el estado de las unidades de campo para proporcionar contexto completo antes de que el operador tome una decisión.',
+            'En un centro de mando unificado, las alertas de analítica de video no llegan como notificaciones aisladas — se integran en el mapa operativo GIS como eventos geolocalizados. El operador ve la alerta en el mapa, abre la cámara correspondiente con un clic, y puede despachar una unidad directamente desde la misma interfaz. Kabat One correlaciona alertas de video con datos de LPR, sensores IoT y el estado de las unidades de campo para proporcionar contexto completo antes de que el operador tome una decisión.',
         },
         {
           question: '¿Qué infraestructura necesita la analítica de video a escala municipal?',
           answer:
-            'Para un despliegue municipal de 200-500 cámaras con analítica de video en tiempo real, se necesita: servidores con GPUs para procesamiento (o infraestructura cloud con latencia controlada), red de transmisión con ancho de banda suficiente (mínimo 2-4 Mbps por cámara a 1080p), almacenamiento para retención de video (30-90 días según normativa), y una plataforma de gestión como KabatOne que unifique las alertas de analítica con el mapa operativo. El dimensionamiento depende de si se usa edge analytics en las cámaras o procesamiento centralizado.',
+            'Para un despliegue municipal de 200-500 cámaras con analítica de video en tiempo real, se necesita: servidores con GPUs para procesamiento (o infraestructura cloud con latencia controlada), red de transmisión con ancho de banda suficiente (mínimo 2-4 Mbps por cámara a 1080p), almacenamiento para retención de video (30-90 días según normativa), y una plataforma de gestión como Kabat One que unifique las alertas de analítica con el mapa operativo. El dimensionamiento depende de si se usa edge analytics en las cámaras o procesamiento centralizado.',
         },
         {
           question: '¿Qué es un sistema de analítica de video (VAS)?',
@@ -64,12 +64,12 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: '¿Qué es la analítica de video con IA?',
           answer:
-            'La analítica de video con IA (también llamada analítica de video inteligente) usa redes neuronales y aprendizaje profundo para interpretar las imágenes de las cámaras en lugar de reglas fijas de movimiento. Esto le permite distinguir una persona de un animal, clasificar tipos de vehículo, leer placas (LPR), reconocer rostros y detectar comportamientos como merodeo o aglomeraciones — con tasas de falsos positivos mucho menores que la analítica tradicional. En KabatOne, la analítica de video con IA corre sobre cámaras de cualquier fabricante y envía solo los eventos relevantes al mapa operativo del centro de mando.',
+            'La analítica de video con IA (también llamada analítica de video inteligente) usa redes neuronales y aprendizaje profundo para interpretar las imágenes de las cámaras en lugar de reglas fijas de movimiento. Esto le permite distinguir una persona de un animal, clasificar tipos de vehículo, leer placas (LPR), reconocer rostros y detectar comportamientos como merodeo o aglomeraciones — con tasas de falsos positivos mucho menores que la analítica tradicional. En Kabat One, la analítica de video con IA corre sobre cámaras de cualquier fabricante y envía solo los eventos relevantes al mapa operativo del centro de mando.',
         },
         {
           question: '¿Qué es la analítica de video CCTV y en qué se diferencia de la analítica en cámara?',
           answer:
-            'La analítica de video CCTV aplica procesamiento inteligente a las cámaras de circuito cerrado existentes de una ciudad o instalación — sin reemplazar la infraestructura. Puede ejecutarse en la propia cámara (analítica en cámara o edge) o en un servidor central que procesa varias cámaras a la vez. La ventaja de una plataforma como KabatOne es que agrega la analítica CCTV de cámaras Hikvision, Axis, Dahua, Bosch y otras en una sola interfaz, correlacionando las alertas de todas las cámaras con LPR, sensores y despacho.',
+            'La analítica de video CCTV aplica procesamiento inteligente a las cámaras de circuito cerrado existentes de una ciudad o instalación — sin reemplazar la infraestructura. Puede ejecutarse en la propia cámara (analítica en cámara o edge) o en un servidor central que procesa varias cámaras a la vez. La ventaja de una plataforma como Kabat One es que agrega la analítica CCTV de cámaras Hikvision, Axis, Dahua, Bosch y otras en una sola interfaz, correlacionando las alertas de todas las cámaras con LPR, sensores y despacho.',
         },
       ]
     : [
@@ -81,7 +81,7 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: 'What is the difference between server-based and camera-based video analytics?',
           answer:
-            'Edge analytics processes images directly on the camera chip — it has low latency and does not require transmitting high-resolution video to a central server, but is limited by the chip\'s processing capacity. Server-based analytics centralizes processing from multiple cameras on a powerful server or cloud, enabling more complex AI models and cross-camera correlation. Advanced systems like KabatOne use both: edge for immediate alerts, server for correlation and deep analysis.',
+            'Edge analytics processes images directly on the camera chip — it has low latency and does not require transmitting high-resolution video to a central server, but is limited by the chip\'s processing capacity. Server-based analytics centralizes processing from multiple cameras on a powerful server or cloud, enabling more complex AI models and cross-camera correlation. Advanced systems like Kabat One use both: edge for immediate alerts, server for correlation and deep analysis.',
         },
         {
           question: 'What types of events can video analytics detect?',
@@ -91,17 +91,17 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: 'What is the false positive rate in AI video analytics?',
           answer:
-            'Mature AI video analytics systems trained on real-world conditions achieve false positive rates of 1–5% for simple events like perimeter intrusion, and 5–15% for complex behaviors like aggression detection. The factors that most affect accuracy are: image quality (resolution, lighting), condition variability (weather, occlusion), training dataset quality, and confidence threshold tuning. KabatOne applies configurable confirmation filters to reduce irrelevant alerts before notifying the operator.',
+            'Mature AI video analytics systems trained on real-world conditions achieve false positive rates of 1–5% for simple events like perimeter intrusion, and 5–15% for complex behaviors like aggression detection. The factors that most affect accuracy are: image quality (resolution, lighting), condition variability (weather, occlusion), training dataset quality, and confidence threshold tuning. Kabat One applies configurable confirmation filters to reduce irrelevant alerts before notifying the operator.',
         },
         {
           question: 'How does video analytics integrate into a command center?',
           answer:
-            'In a unified command center, video analytics alerts do not arrive as isolated notifications — they integrate into the operational GIS map as geolocated events. The operator sees the alert on the map, opens the corresponding camera with one click, and can dispatch a unit directly from the same interface. KabatOne correlates video alerts with LPR data, IoT sensors, and field unit status to provide complete context before the operator makes a decision.',
+            'In a unified command center, video analytics alerts do not arrive as isolated notifications — they integrate into the operational GIS map as geolocated events. The operator sees the alert on the map, opens the corresponding camera with one click, and can dispatch a unit directly from the same interface. Kabat One correlates video alerts with LPR data, IoT sensors, and field unit status to provide complete context before the operator makes a decision.',
         },
         {
           question: 'What infrastructure does video analytics require at municipal scale?',
           answer:
-            'For a municipal deployment of 200–500 cameras with real-time video analytics, you need: GPU-equipped servers for processing (or cloud infrastructure with controlled latency), a transmission network with sufficient bandwidth (minimum 2–4 Mbps per camera at 1080p), storage for video retention (30–90 days per regulation), and a management platform like KabatOne that unifies analytics alerts with the operational map. Sizing depends on whether edge analytics is used at the cameras or centralized processing.',
+            'For a municipal deployment of 200–500 cameras with real-time video analytics, you need: GPU-equipped servers for processing (or cloud infrastructure with controlled latency), a transmission network with sufficient bandwidth (minimum 2–4 Mbps per camera at 1080p), storage for video retention (30–90 days per regulation), and a management platform like Kabat One that unifies analytics alerts with the operational map. Sizing depends on whether edge analytics is used at the cameras or centralized processing.',
         },
         {
           question: 'What is a video analytics system?',
@@ -111,12 +111,12 @@ export default async function WhatIsVideoAnalyticsPage({
         {
           question: 'What is AI video analytics?',
           answer:
-            'AI video analytics (also called intelligent video analytics) uses neural networks and deep learning to interpret camera footage rather than fixed motion rules. This lets it tell a person from an animal, classify vehicle types, read license plates (LPR), recognize faces, and detect behaviors like loitering or crowding — with far lower false-positive rates than traditional motion-based analytics. In KabatOne, AI video analytics runs on cameras from any manufacturer and pushes only the relevant events to the command center operational map.',
+            'AI video analytics (also called intelligent video analytics) uses neural networks and deep learning to interpret camera footage rather than fixed motion rules. This lets it tell a person from an animal, classify vehicle types, read license plates (LPR), recognize faces, and detect behaviors like loitering or crowding — with far lower false-positive rates than traditional motion-based analytics. In Kabat One, AI video analytics runs on cameras from any manufacturer and pushes only the relevant events to the command center operational map.',
         },
         {
           question: 'What is CCTV video analytics, and how is it different from camera-based analytics?',
           answer:
-            'CCTV video analytics applies intelligent processing to a city or facility existing closed-circuit cameras — without replacing the infrastructure. It can run on the camera itself (camera-based or edge analytics) or on a central server that processes many camera feeds at once. The advantage of a platform like KabatOne is that it aggregates CCTV analytics from Hikvision, Axis, Dahua, Bosch, and other cameras into a single interface, correlating alerts from every camera with LPR, sensors, and dispatch.',
+            'CCTV video analytics applies intelligent processing to a city or facility existing closed-circuit cameras — without replacing the infrastructure. It can run on the camera itself (camera-based or edge analytics) or on a central server that processes many camera feeds at once. The advantage of a platform like Kabat One is that it aggregates CCTV analytics from Hikvision, Axis, Dahua, Bosch, and other cameras into a single interface, correlating alerts from every camera with LPR, sensors, and dispatch.',
         },
       ]
 
@@ -341,7 +341,7 @@ export default async function WhatIsVideoAnalyticsPage({
             {es ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
           </h2>
           <p style={{ fontSize: '12px', color: '#475569', marginBottom: '24px' }}>
-            {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
+            {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de Kabat One' : 'Updated: July 2026 · Reviewed by the Kabat One platform team'}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {faqs.map((faq, i) => (
@@ -382,8 +382,8 @@ export default async function WhatIsVideoAnalyticsPage({
           es={es}
           h2={es ? '¿Listo para Activar Analítica de Video en tu Operación?' : 'Ready to Activate Video Analytics in Your Operation?'}
           subtitle={es
-            ? 'KabatOne integra analítica de video con LPR, GIS y despacho en una sola plataforma. Agenda una demo de K-Video.'
-            : 'KabatOne integrates video analytics with LPR, GIS, and dispatch in a single platform. Schedule a K-Video demo.'}
+            ? 'Kabat One integra analítica de video con LPR, GIS y despacho en una sola plataforma. Agenda una demo de K-Video.'
+            : 'Kabat One integrates video analytics with LPR, GIS, and dispatch in a single platform. Schedule a K-Video demo.'}
         />
       </main>
 

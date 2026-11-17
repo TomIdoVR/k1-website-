@@ -72,7 +72,7 @@ export function HeroLabNav({ es }: { es: boolean }) {
   return (
     <nav className="hlc-nav" aria-label={es ? 'Navegación principal' : 'Primary navigation'}>
       <div className="hlc-nav-inner">
-        <Link href={pv('/')} className="hlc-logo" aria-label={es ? 'Inicio de KabatOne' : 'KabatOne home'}>
+        <Link href={pv('/')} className="hlc-logo" aria-label={es ? 'Inicio de Kabat One' : 'Kabat One home'}>
           <span className="hlc-logo-mark" aria-hidden="true">1K</span>
           <span className="hlc-logo-word">KABAT ONE</span>
         </Link>
@@ -138,7 +138,7 @@ export function HeroLabFooter({ es }: { es: boolean }) {
         </div>
       </div>
       <div className="hlc-footer-base">
-        <span>© 2026 KabatOne Inc. {es ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
+        <span>© 2026 Kabat One Inc. {es ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
       </div>
     </footer>
   )

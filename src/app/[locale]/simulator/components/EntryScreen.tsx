@@ -39,7 +39,7 @@ export default function EntryScreen() {
         color: '#4cd7f6',
         marginBottom: 16,
       }}>
-        KabatOne
+        Kabat One
       </div>
       <h1 style={{
         fontSize: 'clamp(32px, 5vw, 48px)',

@@ -49,9 +49,9 @@ export default async function C5CommandCentersMexico2026Page({
             'C2 es el nivel básico de coordinación con funciones de mando y control, típicamente municipal. C4 agrega Cómputo y Comunicaciones al modelo C2 — habilitando despacho asistido por computadora y videovigilancia centralizada. C5 incorpora Contacto Ciudadano como quinta dimensión: el centro deja de recibir únicamente incidentes canalizados por la autoridad y pasa a operar directamente los canales del ciudadano — 911, denuncia anónima 089 y atención ciudadana. C5i suma Inteligencia: análisis criminal y explotación de datos en la misma instalación. La escalera describe alcance institucional, no una certificación tecnológica.',
         },
         {
-          question: '¿Cómo apoya KabatOne a los centros C5?',
+          question: '¿Cómo apoya Kabat One a los centros C5?',
           answer:
-            'La plataforma de KabatOne unifica VMS, despacho CAD, GIS, fusión de sensores y gestión de tráfico en una sola interfaz operativa — desplegada en más de 40 ciudades en América Latina, incluyendo entornos C5 en México. K-Safety provee el mapa operativo en tiempo real, K-Video gestiona miles de cámaras con analítica de IA, K-Dispatch maneja el despacho CAD completo y K-Traffic integra la gestión semafórica e incidentes viales.',
+            'La plataforma de Kabat One unifica VMS, despacho CAD, GIS, fusión de sensores y gestión de tráfico en una sola interfaz operativa — desplegada en más de 40 ciudades en América Latina, incluyendo entornos C5 en México. K-Safety provee el mapa operativo en tiempo real, K-Video gestiona miles de cámaras con analítica de IA, K-Dispatch maneja el despacho CAD completo y K-Traffic integra la gestión semafórica e incidentes viales.',
         },
         {
           question: '¿Cuál es el presupuesto tecnológico de un C5 municipal?',
@@ -81,9 +81,9 @@ export default async function C5CommandCentersMexico2026Page({
             'C2 is the basic coordination level covering command and control, typically municipal. C4 adds Computing and Communications to the C2 model — enabling computer-aided dispatch and centralized video surveillance. C5 incorporates Citizen Contact as the fifth dimension: the center stops merely receiving incidents channelled by the authorities and starts operating the public\'s own channels — 911, the 089 anonymous tip line, and citizen-service lines. C5i adds Intelligence: crime analysis and data exploitation in the same facility. The ladder describes institutional scope, not a technology certification.',
         },
         {
-          question: 'How does KabatOne support C5 command centers?',
+          question: 'How does Kabat One support C5 command centers?',
           answer:
-            'KabatOne\'s platform unifies VMS, CAD dispatch, GIS, sensor fusion, and traffic management in a single operational interface — deployed in 40+ cities in Latin America, including C5 environments in Mexico. K-Safety provides the real-time operational map, K-Video manages thousands of cameras with AI analytics, K-Dispatch handles full CAD dispatch, and K-Traffic integrates signal control and traffic incident management.',
+            'Kabat One\'s platform unifies VMS, CAD dispatch, GIS, sensor fusion, and traffic management in a single operational interface — deployed in 40+ cities in Latin America, including C5 environments in Mexico. K-Safety provides the real-time operational map, K-Video manages thousands of cameras with AI analytics, K-Dispatch handles full CAD dispatch, and K-Traffic integrates signal control and traffic incident management.',
         },
         {
           question: 'What is the technology budget for a municipal C5?',
@@ -643,11 +643,11 @@ export default async function C5CommandCentersMexico2026Page({
           </div>
         </section>
 
-        {/* ── SECTION 7: KabatOne for C5 ── */}
+        {/* ── SECTION 7: Kabat One for C5 ── */}
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'KabatOne para Centros C5' : 'KabatOne for C5 Command Centers'}
+              {es ? 'Kabat One para Centros C5' : 'Kabat One for C5 Command Centers'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es
@@ -656,8 +656,8 @@ export default async function C5CommandCentersMexico2026Page({
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne unifica VMS, despacho CAD, GIS, fusión de sensores y gestión de tráfico en una sola interfaz operativa. Desplegada en más de 40 ciudades en América Latina, incluyendo entornos C5 en México. La plataforma se integra con la infraestructura existente del centro — sin reemplazar lo que ya funciona.'
-                : 'KabatOne unifies VMS, CAD dispatch, GIS, sensor fusion, and traffic management in a single operational interface. Deployed in 40+ cities in Latin America, including C5 environments in Mexico. The platform integrates with the center\'s existing infrastructure — without replacing what already works.'}
+                ? 'Kabat One unifica VMS, despacho CAD, GIS, fusión de sensores y gestión de tráfico en una sola interfaz operativa. Desplegada en más de 40 ciudades en América Latina, incluyendo entornos C5 en México. La plataforma se integra con la infraestructura existente del centro — sin reemplazar lo que ya funciona.'
+                : 'Kabat One unifies VMS, CAD dispatch, GIS, sensor fusion, and traffic management in a single operational interface. Deployed in 40+ cities in Latin America, including C5 environments in Mexico. The platform integrates with the center\'s existing infrastructure — without replacing what already works.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[

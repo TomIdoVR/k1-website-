@@ -39,52 +39,52 @@ export default async function PublicSafetySoftwareGuyanaPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias de Guyana?",
-      answer: "Guyana opera el sistema 911 para emergencias policiales, 912 para bomberos y 913 para ambulancias. La Guyana Police Force (GPF, ~4,500 oficiales) es la fuerza policial nacional, organizada en divisiones que cubren las 10 regiones administrativas. La Guyana Defence Force (GDF, ~3,400 efectivos) incluye infanteria, Coast Guard y Air Corps. La Civil Defence Commission (CDC) coordina la respuesta a desastres e inundaciones. KabatOne unifica estas lineas en un CAD integrado con geolocalizacion que coordina GPF, GDF, bomberos y servicios de salud.",
+      answer: "Guyana opera el sistema 911 para emergencias policiales, 912 para bomberos y 913 para ambulancias. La Guyana Police Force (GPF, ~4,500 oficiales) es la fuerza policial nacional, organizada en divisiones que cubren las 10 regiones administrativas. La Guyana Defence Force (GDF, ~3,400 efectivos) incluye infanteria, Coast Guard y Air Corps. La Civil Defence Commission (CDC) coordina la respuesta a desastres e inundaciones. Kabat One unifica estas lineas en un CAD integrado con geolocalizacion que coordina GPF, GDF, bomberos y servicios de salud.",
     },
     {
       question: "¿Como impacta el boom petrolero en la seguridad publica?",
-      answer: "El descubrimiento del bloque Stabroek por ExxonMobil en 2015 ha transformado a Guyana en uno de los productores de petroleo de mas rapido crecimiento del mundo. La produccion supera 600,000 barriles/dia (2024-2025) con proyeccion a 1.2M bbl/dia para 2028. Esto crea necesidades urgentes de seguridad: proteccion de infraestructura petrolera offshore (FPSOs Liza Destiny, Liza Unity, Prosperity, Yellowtail), vigilancia maritima de la zona exclusiva economica, seguridad del nuevo FPSO shore base en Georgetown, proteccion de oleoductos y terminales, y gestion del boom demografico en Georgetown. KabatOne integra vigilancia maritima, terrestre y de infraestructura critica en una plataforma unificada.",
+      answer: "El descubrimiento del bloque Stabroek por ExxonMobil en 2015 ha transformado a Guyana en uno de los productores de petroleo de mas rapido crecimiento del mundo. La produccion supera 600,000 barriles/dia (2024-2025) con proyeccion a 1.2M bbl/dia para 2028. Esto crea necesidades urgentes de seguridad: proteccion de infraestructura petrolera offshore (FPSOs Liza Destiny, Liza Unity, Prosperity, Yellowtail), vigilancia maritima de la zona exclusiva economica, seguridad del nuevo FPSO shore base en Georgetown, proteccion de oleoductos y terminales, y gestion del boom demografico en Georgetown. Kabat One integra vigilancia maritima, terrestre y de infraestructura critica en una plataforma unificada.",
     },
     {
       question: "¿Cual es la importancia de la disputa territorial con Venezuela?",
-      answer: "Venezuela reclama el Esequibo (159,500 km2, ~74% del territorio de Guyana) basandose en un laudo arbitral de 1899 que considera nulo. En diciembre 2023, Venezuela realizo un referendo para anexar el Esequibo y movilizo tropas a la frontera. La Corte Internacional de Justicia (CIJ) tiene jurisdiccion sobre el caso. EE.UU., Reino Unido y Brasil han respaldado la soberania de Guyana. La GDF ha reforzado su presencia en la frontera occidental con apoyo militar de EE.UU. (SOUTHCOM), Reino Unido y Brasil. KabatOne provee inteligencia situacional para zonas fronterizas, vigilancia aerea/satelital y coordinacion con fuerzas aliadas.",
+      answer: "Venezuela reclama el Esequibo (159,500 km2, ~74% del territorio de Guyana) basandose en un laudo arbitral de 1899 que considera nulo. En diciembre 2023, Venezuela realizo un referendo para anexar el Esequibo y movilizo tropas a la frontera. La Corte Internacional de Justicia (CIJ) tiene jurisdiccion sobre el caso. EE.UU., Reino Unido y Brasil han respaldado la soberania de Guyana. La GDF ha reforzado su presencia en la frontera occidental con apoyo militar de EE.UU. (SOUTHCOM), Reino Unido y Brasil. Kabat One provee inteligencia situacional para zonas fronterizas, vigilancia aerea/satelital y coordinacion con fuerzas aliadas.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en Guyana?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del Safe City Georgetown (>200 camaras), las camaras del Aeropuerto Internacional Cheddi Jagan (GEO, en expansion), la videovigilancia del Puerto de Georgetown (Demerara Harbour), las camaras de ExxonMobil shore base y terminales petroleras, y los sistemas del Guyana Sugar Corporation y minas de oro/bauxita se conectan directamente. Compatible con la infraestructura de fibra de GTT (Guyana Telephone & Telegraph) y E-Networks.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en Guyana?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV del Safe City Georgetown (>200 camaras), las camaras del Aeropuerto Internacional Cheddi Jagan (GEO, en expansion), la videovigilancia del Puerto de Georgetown (Demerara Harbour), las camaras de ExxonMobil shore base y terminales petroleras, y los sistemas del Guyana Sugar Corporation y minas de oro/bauxita se conectan directamente. Compatible con la infraestructura de fibra de GTT (Guyana Telephone & Telegraph) y E-Networks.",
     },
     {
       question: "¿Como se estructura la gobernanza regional en Guyana?",
-      answer: "Guyana se divide en 10 regiones administrativas, cada una gobernada por un Regional Democratic Council (RDC). Georgetown (Region 4, Demerara-Mahaica) concentra ~300,000 habitantes y es el centro economico. Linden (Region 10) es el segundo centro urbano (mineria de bauxita). New Amsterdam (Region 6) es la tercera ciudad. El interior (Regions 1, 7, 8, 9) es vasto, selvativo, de baja densidad y hogar de comunidades indigenas amerindias. La cobertura de seguridad en el interior es un desafio critico que KabatOne resuelve con estaciones satelitales autonomas y drones de vigilancia.",
+      answer: "Guyana se divide en 10 regiones administrativas, cada una gobernada por un Regional Democratic Council (RDC). Georgetown (Region 4, Demerara-Mahaica) concentra ~300,000 habitantes y es el centro economico. Linden (Region 10) es el segundo centro urbano (mineria de bauxita). New Amsterdam (Region 6) es la tercera ciudad. El interior (Regions 1, 7, 8, 9) es vasto, selvativo, de baja densidad y hogar de comunidades indigenas amerindias. La cobertura de seguridad en el interior es un desafio critico que Kabat One resuelve con estaciones satelitales autonomas y drones de vigilancia.",
     },
     {
-      question: "¿Como se alinea KabatOne con las regulaciones de compras de Guyana?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Procurement Act 2003 y la supervision de la National Procurement and Tender Administration Board (NPTAB). Guyana recibe financiamiento significativo del BID, Banco Mundial, IDB Invest, USAID y el UK FCDO para proyectos de seguridad y gobernanza. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. El Natural Resource Fund (NRF) de los ingresos petroleros proporciona una nueva fuente de financiamiento para infraestructura de seguridad publica. GYD/BoG.",
+      question: "¿Como se alinea Kabat One con las regulaciones de compras de Guyana?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Procurement Act 2003 y la supervision de la National Procurement and Tender Administration Board (NPTAB). Guyana recibe financiamiento significativo del BID, Banco Mundial, IDB Invest, USAID y el UK FCDO para proyectos de seguridad y gobernanza. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. El Natural Resource Fund (NRF) de los ingresos petroleros proporciona una nueva fuente de financiamiento para infraestructura de seguridad publica. GYD/BoG.",
     },
   ] : [
     {
       question: "How does Guyana's emergency response system work?",
-      answer: "Guyana operates the 911 system for police emergencies, 912 for fire, and 913 for ambulance. The Guyana Police Force (GPF, ~4,500 officers) is the national police force, organized into divisions covering all 10 administrative regions. The Guyana Defence Force (GDF, ~3,400 personnel) includes infantry, Coast Guard, and Air Corps. The Civil Defence Commission (CDC) coordinates disaster and flood response. KabatOne unifies these lines into one integrated CAD with geolocation coordinating GPF, GDF, fire, and health services.",
+      answer: "Guyana operates the 911 system for police emergencies, 912 for fire, and 913 for ambulance. The Guyana Police Force (GPF, ~4,500 officers) is the national police force, organized into divisions covering all 10 administrative regions. The Guyana Defence Force (GDF, ~3,400 personnel) includes infantry, Coast Guard, and Air Corps. The Civil Defence Commission (CDC) coordinates disaster and flood response. Kabat One unifies these lines into one integrated CAD with geolocation coordinating GPF, GDF, fire, and health services.",
     },
     {
       question: "How does the oil boom impact public safety?",
-      answer: "The Stabroek block discovery by ExxonMobil in 2015 has transformed Guyana into one of the world's fastest-growing oil producers. Production exceeds 600,000 barrels/day (2024-2025) with projections to 1.2M bbl/day by 2028. This creates urgent security needs: offshore oil infrastructure protection (FPSOs Liza Destiny, Liza Unity, Prosperity, Yellowtail), maritime EEZ surveillance, new FPSO shore base security in Georgetown, pipeline and terminal protection, and managing Georgetown's demographic boom. KabatOne integrates maritime, land-based, and critical infrastructure surveillance on one unified platform.",
+      answer: "The Stabroek block discovery by ExxonMobil in 2015 has transformed Guyana into one of the world's fastest-growing oil producers. Production exceeds 600,000 barrels/day (2024-2025) with projections to 1.2M bbl/day by 2028. This creates urgent security needs: offshore oil infrastructure protection (FPSOs Liza Destiny, Liza Unity, Prosperity, Yellowtail), maritime EEZ surveillance, new FPSO shore base security in Georgetown, pipeline and terminal protection, and managing Georgetown's demographic boom. Kabat One integrates maritime, land-based, and critical infrastructure surveillance on one unified platform.",
     },
     {
       question: "What is the significance of the Venezuela territorial dispute?",
-      answer: "Venezuela claims the Essequibo (159,500 km2, ~74% of Guyana's territory) based on an 1899 arbitral award it considers null. In December 2023, Venezuela held a referendum to annex the Essequibo and mobilized troops to the border. The International Court of Justice (ICJ) has jurisdiction over the case. The US, UK, and Brazil have backed Guyana's sovereignty. The GDF has reinforced its western border presence with military support from the US (SOUTHCOM), UK, and Brazil. KabatOne provides situational intelligence for border zones, aerial/satellite surveillance, and allied force coordination.",
+      answer: "Venezuela claims the Essequibo (159,500 km2, ~74% of Guyana's territory) based on an 1899 arbitral award it considers null. In December 2023, Venezuela held a referendum to annex the Essequibo and mobilized troops to the border. The International Court of Justice (ICJ) has jurisdiction over the case. The US, UK, and Brazil have backed Guyana's sovereignty. The GDF has reinforced its western border presence with military support from the US (SOUTHCOM), UK, and Brazil. Kabat One provides situational intelligence for border zones, aerial/satellite surveillance, and allied force coordination.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in Guyana?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Safe City Georgetown CCTV networks (200+ cameras), Cheddi Jagan International Airport (GEO, expanding) cameras, Port of Georgetown (Demerara Harbour) surveillance, ExxonMobil shore base and oil terminal cameras, and Guyana Sugar Corporation and gold/bauxite mining facility systems connect directly. Compatible with GTT (Guyana Telephone & Telegraph) and E-Networks fiber infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in Guyana?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Safe City Georgetown CCTV networks (200+ cameras), Cheddi Jagan International Airport (GEO, expanding) cameras, Port of Georgetown (Demerara Harbour) surveillance, ExxonMobil shore base and oil terminal cameras, and Guyana Sugar Corporation and gold/bauxite mining facility systems connect directly. Compatible with GTT (Guyana Telephone & Telegraph) and E-Networks fiber infrastructure.",
     },
     {
       question: "How is regional governance structured in Guyana?",
-      answer: "Guyana is divided into 10 administrative regions, each governed by a Regional Democratic Council (RDC). Georgetown (Region 4, Demerara-Mahaica) concentrates ~300,000 residents and is the economic center. Linden (Region 10) is the second urban center (bauxite mining). New Amsterdam (Region 6) is the third city. The interior (Regions 1, 7, 8, 9) is vast, forested, low-density, and home to indigenous Amerindian communities. Security coverage in the interior is a critical challenge that KabatOne solves with autonomous satellite stations and surveillance drones.",
+      answer: "Guyana is divided into 10 administrative regions, each governed by a Regional Democratic Council (RDC). Georgetown (Region 4, Demerara-Mahaica) concentrates ~300,000 residents and is the economic center. Linden (Region 10) is the second urban center (bauxite mining). New Amsterdam (Region 6) is the third city. The interior (Regions 1, 7, 8, 9) is vast, forested, low-density, and home to indigenous Amerindian communities. Security coverage in the interior is a critical challenge that Kabat One solves with autonomous satellite stations and surveillance drones.",
     },
     {
-      question: "How does KabatOne align with Guyana procurement regulations?",
-      answer: "KabatOne is marketed through local distributors and integrators under the Procurement Act 2003 and National Procurement and Tender Administration Board (NPTAB) oversight. Guyana receives significant funding from the IDB, World Bank, IDB Invest, USAID, and UK FCDO for security and governance projects. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Natural Resource Fund (NRF) from oil revenues provides a new funding source for public safety infrastructure. GYD/BoG.",
+      question: "How does Kabat One align with Guyana procurement regulations?",
+      answer: "Kabat One is marketed through local distributors and integrators under the Procurement Act 2003 and National Procurement and Tender Administration Board (NPTAB) oversight. Guyana receives significant funding from the IDB, World Bank, IDB Invest, USAID, and UK FCDO for security and governance projects. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Natural Resource Fund (NRF) from oil revenues provides a new funding source for public safety infrastructure. GYD/BoG.",
     },
   ]
 
@@ -206,8 +206,8 @@ export default async function PublicSafetySoftwareGuyanaPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#713f12', marginTop: 14 }}>
             {es
-              ? 'La proteccion de esta infraestructura offshore requiere vigilancia maritima 24/7, coordinacion con la Coast Guard de la GDF, monitoreo de embarcaciones no autorizadas, y respuesta rapida ante incidentes ambientales o de seguridad. El shore base de ExxonMobil en Houston, Georgetown, y las terminales asociadas requieren VMS terrestre integrado. KabatOne fusiona vigilancia maritima y terrestre en una sola plataforma operativa.'
-              : 'Protecting this offshore infrastructure requires 24/7 maritime surveillance, GDF Coast Guard coordination, unauthorized vessel monitoring, and rapid response to environmental or security incidents. The ExxonMobil shore base in Houston, Georgetown, and associated terminals require integrated land-based VMS. KabatOne fuses maritime and land-based surveillance on one operational platform.'}
+              ? 'La proteccion de esta infraestructura offshore requiere vigilancia maritima 24/7, coordinacion con la Coast Guard de la GDF, monitoreo de embarcaciones no autorizadas, y respuesta rapida ante incidentes ambientales o de seguridad. El shore base de ExxonMobil en Houston, Georgetown, y las terminales asociadas requieren VMS terrestre integrado. Kabat One fusiona vigilancia maritima y terrestre en una sola plataforma operativa.'
+              : 'Protecting this offshore infrastructure requires 24/7 maritime surveillance, GDF Coast Guard coordination, unauthorized vessel monitoring, and rapid response to environmental or security incidents. The ExxonMobil shore base in Houston, Georgetown, and associated terminals require integrated land-based VMS. Kabat One fuses maritime and land-based surveillance on one operational platform.'}
           </p>
         </section>
 
@@ -230,15 +230,15 @@ export default async function PublicSafetySoftwareGuyanaPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#7f1d1d', marginTop: 14 }}>
             {es
-              ? 'KabatOne provee inteligencia situacional para la frontera de 743 km con Venezuela: vigilancia con drones, radar terrestre, camaras termicas, sensores de movimiento en selva densa, y comunicaciones satelitales para areas sin cobertura celular. La plataforma permite coordinacion en tiempo real entre GDF, GPF y fuerzas aliadas.'
-              : 'KabatOne provides situational intelligence for the 743 km Venezuela border: drone surveillance, ground radar, thermal cameras, motion sensors in dense jungle, and satellite communications for areas without cell coverage. The platform enables real-time coordination between GDF, GPF, and allied forces.'}
+              ? 'Kabat One provee inteligencia situacional para la frontera de 743 km con Venezuela: vigilancia con drones, radar terrestre, camaras termicas, sensores de movimiento en selva densa, y comunicaciones satelitales para areas sin cobertura celular. La plataforma permite coordinacion en tiempo real entre GDF, GPF y fuerzas aliadas.'
+              : 'Kabat One provides situational intelligence for the 743 km Venezuela border: drone surveillance, ground radar, thermal cameras, motion sensors in dense jungle, and satellite communications for areas without cell coverage. The platform enables real-time coordination between GDF, GPF, and allied forces.'}
           </p>
         </section>
 
         {/* ── Comparison Table ── */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 14, color: '#0f172a' }}>
-            {es ? 'KabatOne vs. Soluciones Fragmentadas' : 'KabatOne vs. Fragmented Solutions'}
+            {es ? 'Kabat One vs. Soluciones Fragmentadas' : 'Kabat One vs. Fragmented Solutions'}
           </h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -246,7 +246,7 @@ export default async function PublicSafetySoftwareGuyanaPage({
                 <tr style={{ background: '#f8fafc' }}>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Sistemas Tradicionales' : 'Legacy Systems'}</th>
-                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>KabatOne</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -339,8 +339,8 @@ export default async function PublicSafetySoftwareGuyanaPage({
           es={es}
           h2={es ? '¿Listo para asegurar el boom petrolero de Guyana?' : "Ready to secure Guyana's oil boom?"}
           subtitle={es
-            ? 'KabatOne conecta GPF, GDF, vigilancia maritima petrolera, seguridad fronteriza y Safe City Georgetown en una sola plataforma — con cobertura satelital para el interior selvático.'
-            : 'KabatOne connects GPF, GDF, offshore oil maritime surveillance, border security, and Safe City Georgetown on one platform — with satellite coverage for the jungle interior.'}
+            ? 'Kabat One conecta GPF, GDF, vigilancia maritima petrolera, seguridad fronteriza y Safe City Georgetown en una sola plataforma — con cobertura satelital para el interior selvático.'
+            : 'Kabat One connects GPF, GDF, offshore oil maritime surveillance, border security, and Safe City Georgetown on one platform — with satellite coverage for the jungle interior.'}
         />
       </main>
 

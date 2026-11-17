@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareBotswanaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Botsuana | BDF/BPS, Diamantes De Beers, Kalahari y SADC – KabatOne"
-    : "Public Safety Software for Botswana | BDF/BPS, De Beers Diamonds, Kalahari & SADC – KabatOne";
+    ? "Software de Seguridad Pública para Botsuana | BDF/BPS, Diamantes De Beers, Kalahari y SADC – Kabat One"
+    : "Public Safety Software for Botswana | BDF/BPS, De Beers Diamonds, Kalahari & SADC – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Botsuana (BDF), Servicio de Policía, protección de las minas de diamantes De Beers/Debswana, gestión del Kalahari y coordinación SADC."
-    : "KabatOne delivers public safety platform for Botswana Defence Force (BDF), Police Service, De Beers/Debswana diamond mine protection, Kalahari management, and SADC coordination.";
+    ? "Kabat One entrega plataforma de seguridad pública para la Fuerza de Defensa de Botsuana (BDF), Servicio de Policía, protección de las minas de diamantes De Beers/Debswana, gestión del Kalahari y coordinación SADC."
+    : "Kabat One delivers public safety platform for Botswana Defence Force (BDF), Police Service, De Beers/Debswana diamond mine protection, Kalahari management, and SADC coordination.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-botswana"
     : "https://kabatone.com/resources/public-safety-software-botswana";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareBotswanaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Botsuana?"
-        : "How does KabatOne support public safety in Botswana?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Botsuana?"
+        : "How does Kabat One support public safety in Botswana?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones BDF/BPPS en los 16 distritos. Los módulos de seguridad minera protegen las instalaciones de Debswana (Jwaneng, Orapa, Letlhakane) con vigilancia perimetral avanzada y control de acceso. El sistema anti-caza furtiva integra cámaras, analítica de IA y coordinación con rangers del DWNP en el Delta del Okavango y Chobe. El sistema de gestión de fronteras cubre los corredores Zimbabwe, Sudáfrica, Namibia y Zambia. La plataforma cumple con la Data Protection Act 2018."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for BDF/BPPS operations across all 16 districts. Mining security modules protect Debswana facilities (Jwaneng, Orapa, Letlhakane) with advanced perimeter surveillance and access control. The anti-poaching system integrates cameras, AI analytics, and coordination with DWNP rangers in the Okavango Delta and Chobe. Border management system covers Zimbabwe, South Africa, Namibia, and Zambia corridors. Platform complies with the Data Protection Act 2018.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones BDF/BPPS en los 16 distritos. Los módulos de seguridad minera protegen las instalaciones de Debswana (Jwaneng, Orapa, Letlhakane) con vigilancia perimetral avanzada y control de acceso. El sistema anti-caza furtiva integra cámaras, analítica de IA y coordinación con rangers del DWNP en el Delta del Okavango y Chobe. El sistema de gestión de fronteras cubre los corredores Zimbabwe, Sudáfrica, Namibia y Zambia. La plataforma cumple con la Data Protection Act 2018."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for BDF/BPPS operations across all 16 districts. Mining security modules protect Debswana facilities (Jwaneng, Orapa, Letlhakane) with advanced perimeter surveillance and access control. The anti-poaching system integrates cameras, AI analytics, and coordination with DWNP rangers in the Okavango Delta and Chobe. Border management system covers Zimbabwe, South Africa, Namibia, and Zambia corridors. Platform complies with the Data Protection Act 2018.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareBotswanaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Botsuana" : "KabatOne Capabilities for Botswana"}
+              {es ? "Capacidades Kabat One para Botsuana" : "Kabat One Capabilities for Botswana"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

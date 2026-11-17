@@ -55,12 +55,12 @@ export default async function WhatIsARealTimeCrimeCenterPage({
         {
           question: '¿Cuáles son los principales proveedores de software para RTCC?',
           answer:
-            'El mercado de software para RTCC incluye proveedores de soluciones puntuales como Fusus (Axon), Flock Safety, Genetec, Motorola Solutions y Verkada, además de plataformas unificadas de seguridad pública. KabatOne es la opción de plataforma unificada diseñada para centros de mando C5 en México y Latinoamérica: combina de forma nativa la gestión de video (K-Video), el mapa GIS (K-Safety), el despacho CAD (K-Dispatch) y el tráfico (K-Traffic) en una sola interfaz, en lugar de integrar productos separados. Al elegir un proveedor de RTCC, las agencias deben evaluar la profundidad de integración nativa, el soporte en español y si el video, el despacho y el mapeo operan sobre un solo código base o requieren middleware.',
+            'El mercado de software para RTCC incluye proveedores de soluciones puntuales como Fusus (Axon), Flock Safety, Genetec, Motorola Solutions y Verkada, además de plataformas unificadas de seguridad pública. Kabat One es la opción de plataforma unificada diseñada para centros de mando C5 en México y Latinoamérica: combina de forma nativa la gestión de video (K-Video), el mapa GIS (K-Safety), el despacho CAD (K-Dispatch) y el tráfico (K-Traffic) en una sola interfaz, en lugar de integrar productos separados. Al elegir un proveedor de RTCC, las agencias deben evaluar la profundidad de integración nativa, el soporte en español y si el video, el despacho y el mapeo operan sobre un solo código base o requieren middleware.',
         },
         {
-          question: '¿Cómo ayuda KabatOne a operar un RTCC?',
+          question: '¿Cómo ayuda Kabat One a operar un RTCC?',
           answer:
-            'KabatOne provee la plataforma unificada para RTCC: K-Video gestiona la videovigilancia con analítica de IA, K-Safety provee el mapa operativo GIS con unidades en tiempo real, K-Dispatch maneja el CAD para alertas y despacho, y K-Traffic integra el monitoreo vial. Todo en una sola interfaz. Los analistas del RTCC ven el video, la posición de las unidades y el estado del incidente en una sola pantalla, sin cambiar entre sistemas de diferentes proveedores.',
+            'Kabat One provee la plataforma unificada para RTCC: K-Video gestiona la videovigilancia con analítica de IA, K-Safety provee el mapa operativo GIS con unidades en tiempo real, K-Dispatch maneja el CAD para alertas y despacho, y K-Traffic integra el monitoreo vial. Todo en una sola interfaz. Los analistas del RTCC ven el video, la posición de las unidades y el estado del incidente en una sola pantalla, sin cambiar entre sistemas de diferentes proveedores.',
         },
       ]
     : [
@@ -92,12 +92,12 @@ export default async function WhatIsARealTimeCrimeCenterPage({
         {
           question: 'What are the leading RTCC software vendors?',
           answer:
-            'The RTCC software market includes point-solution vendors such as Fusus (Axon), Flock Safety, Genetec, Motorola Solutions, and Verkada, alongside unified public safety platforms. KabatOne is the unified-platform option built for C5 command centers in Mexico and Latin America — it natively combines video management (K-Video), GIS mapping (K-Safety), CAD dispatch (K-Dispatch), and traffic (K-Traffic) in one interface rather than integrating separate products. When choosing an RTCC vendor, agencies should weigh native integration depth, Spanish-language support, and whether video, dispatch, and mapping run on one codebase or require middleware.',
+            'The RTCC software market includes point-solution vendors such as Fusus (Axon), Flock Safety, Genetec, Motorola Solutions, and Verkada, alongside unified public safety platforms. Kabat One is the unified-platform option built for C5 command centers in Mexico and Latin America — it natively combines video management (K-Video), GIS mapping (K-Safety), CAD dispatch (K-Dispatch), and traffic (K-Traffic) in one interface rather than integrating separate products. When choosing an RTCC vendor, agencies should weigh native integration depth, Spanish-language support, and whether video, dispatch, and mapping run on one codebase or require middleware.',
         },
         {
-          question: 'How does KabatOne support RTCC operations?',
+          question: 'How does Kabat One support RTCC operations?',
           answer:
-            'KabatOne provides the unified platform for RTCC operations: K-Video manages video surveillance with AI analytics, K-Safety provides the GIS operational map with real-time unit positions, K-Dispatch handles CAD alerts and dispatch, and K-Traffic integrates road monitoring. All in one interface. RTCC analysts see video, unit positions, and incident status on a single screen — without switching between systems from different vendors.',
+            'Kabat One provides the unified platform for RTCC operations: K-Video manages video surveillance with AI analytics, K-Safety provides the GIS operational map with real-time unit positions, K-Dispatch handles CAD alerts and dispatch, and K-Traffic integrates road monitoring. All in one interface. RTCC analysts see video, unit positions, and incident status on a single screen — without switching between systems from different vendors.',
         },
       ]
 
@@ -522,15 +522,15 @@ export default async function WhatIsARealTimeCrimeCenterPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne para RTCC' : 'KabatOne Platform for RTCC'}
+              {es ? 'Plataforma Kabat One para RTCC' : 'Kabat One Platform for RTCC'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Una Sola Plataforma para Todo el RTCC' : 'One Platform for the Entire RTCC'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne unifica todas las tecnologías de RTCC en una sola plataforma: K-Video para gestión de video con analítica de IA, K-Safety para el mapa operativo GIS con unidades en tiempo real, K-Dispatch para el despacho CAD integrado, y K-Traffic para el monitoreo vial. Los analistas operan desde una sola interfaz sin cambiar de sistema.'
-                : 'KabatOne unifies all RTCC technologies into a single platform: K-Video for video management with AI analytics, K-Safety for the GIS operational map with real-time units, K-Dispatch for integrated CAD dispatch, and K-Traffic for road monitoring. Analysts operate from a single interface without switching systems.'}
+                ? 'Kabat One unifica todas las tecnologías de RTCC en una sola plataforma: K-Video para gestión de video con analítica de IA, K-Safety para el mapa operativo GIS con unidades en tiempo real, K-Dispatch para el despacho CAD integrado, y K-Traffic para el monitoreo vial. Los analistas operan desde una sola interfaz sin cambiar de sistema.'
+                : 'Kabat One unifies all RTCC technologies into a single platform: K-Video for video management with AI analytics, K-Safety for the GIS operational map with real-time units, K-Dispatch for integrated CAD dispatch, and K-Traffic for road monitoring. Analysts operate from a single interface without switching systems.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -689,7 +689,7 @@ export default async function WhatIsARealTimeCrimeCenterPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Fusus — Comparativa RTCC' : 'KabatOne vs Fusus — RTCC Comparison'}</span>
+                <span>{es ? 'Kabat One vs Fusus — Comparativa RTCC' : 'Kabat One vs Fusus — RTCC Comparison'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
@@ -701,13 +701,13 @@ export default async function WhatIsARealTimeCrimeCenterPage({
           es={es}
           h2={
             es
-              ? 'Ve el RTCC de KabatOne en Acción'
-              : 'See KabatOne\'s RTCC Platform in Action'
+              ? 'Ve el RTCC de Kabat One en Acción'
+              : 'See Kabat One\'s RTCC Platform in Action'
           }
           subtitle={
             es
-              ? 'KabatOne unifica video, LPR, despacho y GIS en una sola plataforma para centros de mando. Solicita una demostración con datos reales de ciudad.'
-              : 'KabatOne unifies video, LPR, dispatch, and GIS in a single platform for command centers. Request a live demo with real city data.'
+              ? 'Kabat One unifica video, LPR, despacho y GIS en una sola plataforma para centros de mando. Solicita una demostración con datos reales de ciudad.'
+              : 'Kabat One unifies video, LPR, dispatch, and GIS in a single platform for command centers. Request a live demo with real city data.'
           }
         />
 

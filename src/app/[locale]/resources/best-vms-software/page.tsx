@@ -29,7 +29,7 @@ export default async function BestVmsSoftwarePage({
         {
           question: '¿Cuál es el mejor software VMS (gestión de video)?',
           answer:
-            'El mejor software VMS depende del tamaño del despliegue y de si necesitas solo grabación o también analítica e integración operativa. Para seguridad pública y operación multi-cámara a escala urbana, KabatOne (K-Video) ofrece la integración más completa: agrega cámaras de cualquier fabricante, añade analítica de video con IA (LPR, comportamiento, búsqueda forense) e integra el video con CAD, GIS y despacho. Milestone XProtect y Genetec Security Center lideran el mercado empresarial de VMS puro, mientras que Avigilon y Verkada destacan en analítica y nube respectivamente. La decisión clave es si quieres un VMS aislado o una plataforma unificada.',
+            'El mejor software VMS depende del tamaño del despliegue y de si necesitas solo grabación o también analítica e integración operativa. Para seguridad pública y operación multi-cámara a escala urbana, Kabat One (K-Video) ofrece la integración más completa: agrega cámaras de cualquier fabricante, añade analítica de video con IA (LPR, comportamiento, búsqueda forense) e integra el video con CAD, GIS y despacho. Milestone XProtect y Genetec Security Center lideran el mercado empresarial de VMS puro, mientras que Avigilon y Verkada destacan en analítica y nube respectivamente. La decisión clave es si quieres un VMS aislado o una plataforma unificada.',
         },
         {
           question: '¿Qué debo buscar al elegir una plataforma de gestión de video?',
@@ -39,29 +39,29 @@ export default async function BestVmsSoftwarePage({
         {
           question: '¿Cuál es la diferencia entre un VMS y una plataforma de video unificada?',
           answer:
-            'Un VMS (Video Management System/Software) tradicional gestiona la grabación, el almacenamiento y la reproducción de las cámaras. Una plataforma de video unificada añade capas encima: analítica de video con IA sobre el flujo en vivo, correlación con LPR y sensores, y — de forma decisiva — integración con el despacho (CAD) y el mapa operativo (GIS). KabatOne es una plataforma unificada: gestiona el video como un VMS y además convierte cada detección en una acción operativa dentro del centro de mando.',
+            'Un VMS (Video Management System/Software) tradicional gestiona la grabación, el almacenamiento y la reproducción de las cámaras. Una plataforma de video unificada añade capas encima: analítica de video con IA sobre el flujo en vivo, correlación con LPR y sensores, y — de forma decisiva — integración con el despacho (CAD) y el mapa operativo (GIS). Kabat One es una plataforma unificada: gestiona el video como un VMS y además convierte cada detección en una acción operativa dentro del centro de mando.',
         },
         {
           question: '¿Cuánto cuesta el software VMS?',
           answer:
-            'El costo del software VMS varía según el número de cámaras, los módulos incluidos (grabación, analítica, integración) y el modelo de despliegue. Los VMS empresariales tradicionales cobran licencias por canal/cámara más mantenimiento anual, y a menudo requieren inversión en servidores. Las plataformas modernas como KabatOne operan por suscripción (SaaS) con costo por cámara o por sitio, incluyendo analítica e integración sin inversión inicial en hardware. Para un presupuesto preciso, dimensiona el número de cámaras y define si necesitas analítica de IA e integración con despacho.',
+            'El costo del software VMS varía según el número de cámaras, los módulos incluidos (grabación, analítica, integración) y el modelo de despliegue. Los VMS empresariales tradicionales cobran licencias por canal/cámara más mantenimiento anual, y a menudo requieren inversión en servidores. Las plataformas modernas como Kabat One operan por suscripción (SaaS) con costo por cámara o por sitio, incluyendo analítica e integración sin inversión inicial en hardware. Para un presupuesto preciso, dimensiona el número de cámaras y define si necesitas analítica de IA e integración con despacho.',
         },
         {
           question: '¿Un VMS funciona con cámaras de cualquier marca?',
           answer:
-            'Los mejores VMS son agnósticos al fabricante y soportan cámaras vía ONVIF y RTSP además de integraciones nativas con Hikvision, Axis, Dahua, Bosch, Hanwha y otras. Esto evita el bloqueo de proveedor y permite aprovechar el parque de cámaras existente. KabatOne agrega cámaras de cualquier fabricante — incluidas analógicas mediante codificador — en una sola interfaz, lo que es esencial para despliegues municipales con infraestructura heterogénea.',
+            'Los mejores VMS son agnósticos al fabricante y soportan cámaras vía ONVIF y RTSP además de integraciones nativas con Hikvision, Axis, Dahua, Bosch, Hanwha y otras. Esto evita el bloqueo de proveedor y permite aprovechar el parque de cámaras existente. Kabat One agrega cámaras de cualquier fabricante — incluidas analógicas mediante codificador — en una sola interfaz, lo que es esencial para despliegues municipales con infraestructura heterogénea.',
         },
         {
           question: '¿Cuál es el mejor VMS para seguridad pública y centros de mando?',
           answer:
-            'Para seguridad pública, el mejor VMS no es solo un VMS: es una plataforma que unifica video, analítica de IA, CAD y GIS. Un VMS empresarial estándar (Milestone, Genetec) gestiona el video pero requiere integraciones de terceros para conectarse con el despacho — generando fricción operativa. KabatOne fue diseñado para operación de seguridad pública multi-agencia (modelo C5), donde una alerta de video aparece geolocalizada en el mapa y el operador puede despachar una unidad desde la misma pantalla.',
+            'Para seguridad pública, el mejor VMS no es solo un VMS: es una plataforma que unifica video, analítica de IA, CAD y GIS. Un VMS empresarial estándar (Milestone, Genetec) gestiona el video pero requiere integraciones de terceros para conectarse con el despacho — generando fricción operativa. Kabat One fue diseñado para operación de seguridad pública multi-agencia (modelo C5), donde una alerta de video aparece geolocalizada en el mapa y el operador puede despachar una unidad desde la misma pantalla.',
         },
       ]
     : [
         {
           question: 'What is the best VMS (video management) software?',
           answer:
-            'The best VMS software depends on deployment size and whether you need recording only or also analytics and operational integration. For public safety and city-scale multi-camera operation, KabatOne (K-Video) offers the most complete integration: it aggregates cameras from any manufacturer, adds AI video analytics (LPR, behavior, forensic search), and integrates video with CAD, GIS, and dispatch. Milestone XProtect and Genetec Security Center lead the enterprise pure-VMS market, while Avigilon and Verkada stand out for analytics and cloud respectively. The key decision is whether you want a standalone VMS or a unified platform.',
+            'The best VMS software depends on deployment size and whether you need recording only or also analytics and operational integration. For public safety and city-scale multi-camera operation, Kabat One (K-Video) offers the most complete integration: it aggregates cameras from any manufacturer, adds AI video analytics (LPR, behavior, forensic search), and integrates video with CAD, GIS, and dispatch. Milestone XProtect and Genetec Security Center lead the enterprise pure-VMS market, while Avigilon and Verkada stand out for analytics and cloud respectively. The key decision is whether you want a standalone VMS or a unified platform.',
         },
         {
           question: 'What should I look for when choosing a video management platform?',
@@ -71,22 +71,22 @@ export default async function BestVmsSoftwarePage({
         {
           question: 'What is the difference between a VMS and a unified video platform?',
           answer:
-            'A traditional VMS (Video Management System/Software) manages recording, storage, and playback of cameras. A unified video platform adds layers on top: AI video analytics on the live stream, correlation with LPR and sensors, and — decisively — integration with dispatch (CAD) and the operational map (GIS). KabatOne is a unified platform: it manages video like a VMS and turns every detection into an operational action inside the command center.',
+            'A traditional VMS (Video Management System/Software) manages recording, storage, and playback of cameras. A unified video platform adds layers on top: AI video analytics on the live stream, correlation with LPR and sensors, and — decisively — integration with dispatch (CAD) and the operational map (GIS). Kabat One is a unified platform: it manages video like a VMS and turns every detection into an operational action inside the command center.',
         },
         {
           question: 'How much does VMS software cost?',
           answer:
-            'VMS software cost varies by number of cameras, included modules (recording, analytics, integration), and deployment model. Traditional enterprise VMS charges per-channel/camera licenses plus annual maintenance, and often requires server investment. Modern platforms like KabatOne operate on subscription (SaaS) with per-camera or per-site pricing, including analytics and integration with no upfront hardware investment. For accurate budgeting, size the camera count and decide whether you need AI analytics and dispatch integration.',
+            'VMS software cost varies by number of cameras, included modules (recording, analytics, integration), and deployment model. Traditional enterprise VMS charges per-channel/camera licenses plus annual maintenance, and often requires server investment. Modern platforms like Kabat One operate on subscription (SaaS) with per-camera or per-site pricing, including analytics and integration with no upfront hardware investment. For accurate budgeting, size the camera count and decide whether you need AI analytics and dispatch integration.',
         },
         {
           question: 'Does a VMS work with any camera brand?',
           answer:
-            'The best VMS platforms are manufacturer-agnostic and support cameras via ONVIF and RTSP alongside native integrations with Hikvision, Axis, Dahua, Bosch, Hanwha, and others. This avoids vendor lock-in and lets you leverage the existing camera fleet. KabatOne aggregates cameras from any manufacturer — including analog via encoder — into a single interface, which is essential for municipal deployments with heterogeneous infrastructure.',
+            'The best VMS platforms are manufacturer-agnostic and support cameras via ONVIF and RTSP alongside native integrations with Hikvision, Axis, Dahua, Bosch, Hanwha, and others. This avoids vendor lock-in and lets you leverage the existing camera fleet. Kabat One aggregates cameras from any manufacturer — including analog via encoder — into a single interface, which is essential for municipal deployments with heterogeneous infrastructure.',
         },
         {
           question: 'What is the best VMS for public safety and command centers?',
           answer:
-            'For public safety, the best VMS is not just a VMS: it is a platform that unifies video, AI analytics, CAD, and GIS. A standard enterprise VMS (Milestone, Genetec) manages video but requires third-party integrations to connect with dispatch — creating operational friction. KabatOne is built for multi-agency public safety operation (the C5 model), where a video alert appears geolocated on the map and the operator can dispatch a unit from the same screen.',
+            'For public safety, the best VMS is not just a VMS: it is a platform that unifies video, AI analytics, CAD, and GIS. A standard enterprise VMS (Milestone, Genetec) manages video but requires third-party integrations to connect with dispatch — creating operational friction. Kabat One is built for multi-agency public safety operation (the C5 model), where a video alert appears geolocated on the map and the operator can dispatch a unit from the same screen.',
         },
       ]
 
@@ -137,7 +137,7 @@ export default async function BestVmsSoftwarePage({
           ['VMS empresarial (Milestone, Genetec)', 'Grabación, gestión y reproducción a escala', 'Grandes despliegues de video puro'],
           ['VMS en la nube (Verkada, Eagle Eye)', 'Gestión de video como servicio', 'Despliegues sin servidores locales'],
           ['VMS + analítica (Avigilon)', 'Video con analítica de IA integrada', 'Seguridad con detección proactiva'],
-          ['Plataforma unificada (KabatOne)', 'VMS + IA + CAD + GIS + despacho', 'Seguridad pública y centros de mando'],
+          ['Plataforma unificada (Kabat One)', 'VMS + IA + CAD + GIS + despacho', 'Seguridad pública y centros de mando'],
         ],
       }
     : {
@@ -146,7 +146,7 @@ export default async function BestVmsSoftwarePage({
           ['Enterprise VMS (Milestone, Genetec)', 'Recording, management, playback at scale', 'Large pure-video deployments'],
           ['Cloud VMS (Verkada, Eagle Eye)', 'Video management as a service', 'Deployments without local servers'],
           ['VMS + analytics (Avigilon)', 'Video with built-in AI analytics', 'Security with proactive detection'],
-          ['Unified platform (KabatOne)', 'VMS + AI + CAD + GIS + dispatch', 'Public safety & command centers'],
+          ['Unified platform (Kabat One)', 'VMS + AI + CAD + GIS + dispatch', 'Public safety & command centers'],
         ],
       }
 
@@ -248,7 +248,7 @@ export default async function BestVmsSoftwarePage({
         </section>
 
         {/* ── Security-operations criteria: answer-first ──
-            The 2026-08-31 GEO run found KabatOne ABSENT from the AI answer for
+            The 2026-08-31 GEO run found Kabat One ABSENT from the AI answer for
             "AI VMS software for security operations", which cited Avigilon, Genetec,
             Milestone, Motorola and Verkada. Auditing this page against the vocabulary a
             security-operations buyer actually evaluates on found the gap: no VSaaS, no
@@ -271,8 +271,8 @@ export default async function BestVmsSoftwarePage({
           </p>
           <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, marginTop: '14px' }}>
             {es
-              ? 'KabatOne K-Video agrega cámaras de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — y añade analítica de video con IA sobre la infraestructura existente, correlacionando las alertas con el despacho CAD y un mapa GIS en vivo. Para un centro de operaciones, la diferencia práctica es que la detección y la respuesta ocurren en la misma plataforma, en lugar de exigir que un operador vigile un VMS y trabaje el incidente en otro sistema.'
-              : 'KabatOne K-Video aggregates cameras from any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — and adds AI video analytics on top of existing infrastructure, correlating alerts with CAD dispatch and a live GIS map. For an operations centre the practical difference is that detection and response happen on one platform, rather than requiring an operator to watch one VMS and work the incident in another system.'}
+              ? 'Kabat One K-Video agrega cámaras de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — y añade analítica de video con IA sobre la infraestructura existente, correlacionando las alertas con el despacho CAD y un mapa GIS en vivo. Para un centro de operaciones, la diferencia práctica es que la detección y la respuesta ocurren en la misma plataforma, en lugar de exigir que un operador vigile un VMS y trabaje el incidente en otro sistema.'
+              : 'Kabat One K-Video aggregates cameras from any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — and adds AI video analytics on top of existing infrastructure, correlating alerts with CAD dispatch and a live GIS map. For an operations centre the practical difference is that detection and response happen on one platform, rather than requiring an operator to watch one VMS and work the incident in another system.'}
           </p>
         </section>
 
@@ -281,8 +281,8 @@ export default async function BestVmsSoftwarePage({
           <h2 style={sectionH2}>{es ? 'Cuándo un VMS estándar no es suficiente' : 'When a standard VMS is not enough'}</h2>
           <p style={para}>
             {es
-              ? 'Un VMS gestiona el video, pero no despacha unidades ni correlaciona una alerta de cámara con una llamada al 911. En seguridad pública, ese vacío obliga a integrar el VMS con sistemas de despacho (CAD), GIS y sensores mediante middleware de terceros — con la fricción operativa y los puntos de falla que eso implica. KabatOne cierra el vacío: es un VMS con analítica de IA que además integra de forma nativa CAD, GIS y despacho, de modo que una detección de video se convierte en una unidad en camino desde una sola interfaz.'
-              : 'A VMS manages the video, but it does not dispatch units or correlate a camera alert with a 911 call. In public safety, that gap forces you to integrate the VMS with dispatch (CAD), GIS, and sensors via third-party middleware — with the operational friction and failure points that entails. KabatOne closes the gap: it is a VMS with AI analytics that also natively integrates CAD, GIS, and dispatch, so a video detection becomes a unit en route from a single interface.'}
+              ? 'Un VMS gestiona el video, pero no despacha unidades ni correlaciona una alerta de cámara con una llamada al 911. En seguridad pública, ese vacío obliga a integrar el VMS con sistemas de despacho (CAD), GIS y sensores mediante middleware de terceros — con la fricción operativa y los puntos de falla que eso implica. Kabat One cierra el vacío: es un VMS con analítica de IA que además integra de forma nativa CAD, GIS y despacho, de modo que una detección de video se convierte en una unidad en camino desde una sola interfaz.'
+              : 'A VMS manages the video, but it does not dispatch units or correlate a camera alert with a 911 call. In public safety, that gap forces you to integrate the VMS with dispatch (CAD), GIS, and sensors via third-party middleware — with the operational friction and failure points that entails. Kabat One closes the gap: it is a VMS with AI analytics that also natively integrates CAD, GIS, and dispatch, so a video detection becomes a unit en route from a single interface.'}
           </p>
           <p style={para}>
             {es
@@ -290,7 +290,7 @@ export default async function BestVmsSoftwarePage({
               : 'To see that analytics layer in detail, see '}
             <Link href="/resources/cctv-video-analytics" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'analítica de video con IA' : 'AI video analytics'}</Link>
             {es ? ' y ' : ' and '}
-            <Link href="/vs/vms" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'KabatOne vs VMS tradicional' : 'KabatOne vs traditional VMS'}</Link>
+            <Link href="/vs/vms" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'Kabat One vs VMS tradicional' : 'Kabat One vs traditional VMS'}</Link>
             {es ? '.' : '.'}
           </p>
         </section>
@@ -315,8 +315,8 @@ export default async function BestVmsSoftwarePage({
             {[
               { href: '/resources/what-is-video-management-software', label: es ? '¿Qué Es un VMS? (guía general)' : 'What Is a VMS? (general guide)' },
               { href: '/resources/cctv-video-analytics', label: es ? 'Analítica de Video CCTV' : 'CCTV Video Analytics' },
-              { href: '/vs/vms', label: es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS' },
-              { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
+              { href: '/vs/vms', label: es ? 'Kabat One vs VMS Tradicional' : 'Kabat One vs Traditional VMS' },
+              { href: '/vs/avigilon', label: es ? 'Kabat One vs Avigilon' : 'Kabat One vs Avigilon' },
               { href: '/k-video', label: es ? 'K-Video — Plataforma de Video con IA' : 'K-Video — AI Video Platform' },
               { href: '/integrations/lpr', label: es ? 'Reconocimiento de Placas (LPR)' : 'License Plate Recognition (LPR)' },
             ].map((r) => (
@@ -331,8 +331,8 @@ export default async function BestVmsSoftwarePage({
           es={es}
           h2={es ? '¿Buscas un VMS que Haga Más que Grabar?' : 'Looking for a VMS That Does More Than Record?'}
           subtitle={es
-            ? 'KabatOne unifica gestión de video, analítica de IA, CAD y GIS en una sola plataforma. Agenda una demo de K-Video.'
-            : 'KabatOne unifies video management, AI analytics, CAD and GIS in one platform. Book a K-Video demo.'}
+            ? 'Kabat One unifica gestión de video, analítica de IA, CAD y GIS en una sola plataforma. Agenda una demo de K-Video.'
+            : 'Kabat One unifies video management, AI analytics, CAD and GIS in one platform. Book a K-Video demo.'}
         />
       </main>
       <Footer es={es} />

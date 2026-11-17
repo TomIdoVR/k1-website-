@@ -32,29 +32,29 @@ export default async function SensorFusionIntegrationPage({
             'La fusión de sensores es el proceso de combinar datos de múltiples fuentes heterogéneas — cámaras de video, sensores de gunshot detection, sensores IoT ambientales, sismógrafos, lectores de placas, datos de redes sociales georeferenciadas — para crear una imagen operativa más completa y confiable que la que cualquier sensor individual puede proveer. El término viene de tecnología militar y aeronáutica, donde combinar radar, sonar e imagen infrarroja daba una "conciencia situacional" mucho más precisa que cualquier tecnología individual.',
         },
         {
-          question: '¿Qué tipos de sensores puede integrar KabatOne?',
+          question: '¿Qué tipos de sensores puede integrar Kabat One?',
           answer:
-            'KabatOne integra sensores mediante APIs estándar y protocolos IoT. Los tipos de sensores más comunes integrados en implementaciones actuales incluyen: detectores de gunshots acústicos (ShotSpotter, SST, Sentri), sensores de calidad del aire, sensores de nivel de agua para alertas de inundación, sismógrafos urbanos, sensores de temperatura y humedad para alertas de calor extremo, lectores de placas vehiculares (LPR), cámaras de video con análisis de IA, y feeds de redes sociales con geolocalización. Si el sensor tiene API o genera datos en formato estándar, puede integrarse.',
+            'Kabat One integra sensores mediante APIs estándar y protocolos IoT. Los tipos de sensores más comunes integrados en implementaciones actuales incluyen: detectores de gunshots acústicos (ShotSpotter, SST, Sentri), sensores de calidad del aire, sensores de nivel de agua para alertas de inundación, sismógrafos urbanos, sensores de temperatura y humedad para alertas de calor extremo, lectores de placas vehiculares (LPR), cámaras de video con análisis de IA, y feeds de redes sociales con geolocalización. Si el sensor tiene API o genera datos en formato estándar, puede integrarse.',
         },
         {
           question: '¿Cómo reduce la fusión de sensores los falsos positivos?',
           answer:
-            'Los sistemas individuales tienen tasas de falso positivo que pueden ser manejables en aislamiento pero problemáticas en volumen. Un detector de gunshots puede generar alertas por fuegos artificiales, neumáticos reventados o puertas de metal. Un sensor de movimiento puede activarse por animales o personal autorizado. Cuando múltiples sensores independientes generan alertas relacionadas en el mismo lugar y tiempo — gunshot + cámara detecta movimiento anormal + LPR ve un vehículo sospechoso — la probabilidad de que sea un evento real aumenta dramáticamente. KabatOne aplica motor de correlación configurable que solo genera alertas de alta prioridad cuando múltiples fuentes confirman el evento.',
+            'Los sistemas individuales tienen tasas de falso positivo que pueden ser manejables en aislamiento pero problemáticas en volumen. Un detector de gunshots puede generar alertas por fuegos artificiales, neumáticos reventados o puertas de metal. Un sensor de movimiento puede activarse por animales o personal autorizado. Cuando múltiples sensores independientes generan alertas relacionadas en el mismo lugar y tiempo — gunshot + cámara detecta movimiento anormal + LPR ve un vehículo sospechoso — la probabilidad de que sea un evento real aumenta dramáticamente. Kabat One aplica motor de correlación configurable que solo genera alertas de alta prioridad cuando múltiples fuentes confirman el evento.',
         },
         {
           question: '¿Qué tan rápido puede correlacionar eventos el sistema?',
           answer:
-            'El motor de correlación de KabatOne procesa eventos en tiempo real con latencia menor a 500 milisegundos desde la recepción del primer evento. La correlación temporal es configurable: el sistema puede agrupar eventos que ocurran dentro de una ventana de 30 segundos a 5 minutos y dentro de un radio geográfico de 50 a 500 metros, dependiendo de los protocolos operativos del organismo. Para eventos de alta prioridad como gunshots, la alerta consolidada llega al operador en menos de 2 segundos.',
+            'El motor de correlación de Kabat One procesa eventos en tiempo real con latencia menor a 500 milisegundos desde la recepción del primer evento. La correlación temporal es configurable: el sistema puede agrupar eventos que ocurran dentro de una ventana de 30 segundos a 5 minutos y dentro de un radio geográfico de 50 a 500 metros, dependiendo de los protocolos operativos del organismo. Para eventos de alta prioridad como gunshots, la alerta consolidada llega al operador en menos de 2 segundos.',
         },
         {
           question: '¿La fusión de sensores requiere infraestructura especial?',
           answer:
-            'No. KabatOne está diseñado para funcionar con la infraestructura de red existente. Los sensores se conectan a través de internet o redes privadas usando protocolos estándar (MQTT, HTTP/REST, ONVIF). El procesamiento ocurre en la plataforma KabatOne, que puede estar en la nube, en servidores on-premise del municipio, o en configuración híbrida. Para sensores IoT de bajo consumo en áreas remotas, KabatOne soporta conectividad LoRaWAN y LTE/4G para transmitir datos a la plataforma central.',
+            'No. Kabat One está diseñado para funcionar con la infraestructura de red existente. Los sensores se conectan a través de internet o redes privadas usando protocolos estándar (MQTT, HTTP/REST, ONVIF). El procesamiento ocurre en la plataforma Kabat One, que puede estar en la nube, en servidores on-premise del municipio, o en configuración híbrida. Para sensores IoT de bajo consumo en áreas remotas, Kabat One soporta conectividad LoRaWAN y LTE/4G para transmitir datos a la plataforma central.',
         },
         {
           question: '¿Puede el sistema aprender y mejorar con el tiempo?',
           answer:
-            'Sí. El motor de correlación de KabatOne incluye capacidades de aprendizaje adaptativo: el sistema registra qué correlaciones resultaron en incidentes reales confirmados y cuáles fueron falsos positivos, y ajusta automáticamente los pesos y umbrales de confianza. Con 3-6 meses de operación en un entorno específico, la tasa de falsos positivos en alertas consolidadas puede reducirse hasta un 60% respecto a los valores iniciales. Los operadores también pueden retroalimentar manualmente el sistema marcando alertas como válidas o inválidas.',
+            'Sí. El motor de correlación de Kabat One incluye capacidades de aprendizaje adaptativo: el sistema registra qué correlaciones resultaron en incidentes reales confirmados y cuáles fueron falsos positivos, y ajusta automáticamente los pesos y umbrales de confianza. Con 3-6 meses de operación en un entorno específico, la tasa de falsos positivos en alertas consolidadas puede reducirse hasta un 60% respecto a los valores iniciales. Los operadores también pueden retroalimentar manualmente el sistema marcando alertas como válidas o inválidas.',
         },
       ]
     : [
@@ -64,29 +64,29 @@ export default async function SensorFusionIntegrationPage({
             'Sensor fusion is the process of combining data from multiple heterogeneous sources — video cameras, gunshot detection sensors, environmental IoT sensors, seismographs, license plate readers, georeferenced social media data — to create a more complete and reliable operational picture than any single sensor can provide. The term comes from military and aeronautical technology, where combining radar, sonar, and infrared imaging gave much more accurate "situational awareness" than any individual technology.',
         },
         {
-          question: 'What types of sensors can KabatOne integrate?',
+          question: 'What types of sensors can Kabat One integrate?',
           answer:
-            'KabatOne integrates sensors via standard APIs and IoT protocols. The most common sensor types integrated in current deployments include: acoustic gunshot detectors (ShotSpotter, SST, Sentri), air quality sensors, water level sensors for flood alerts, urban seismographs, temperature and humidity sensors for extreme heat alerts, license plate readers (LPR), video cameras with AI analytics, and georeferenced social media feeds. If the sensor has an API or generates data in a standard format, it can be integrated.',
+            'Kabat One integrates sensors via standard APIs and IoT protocols. The most common sensor types integrated in current deployments include: acoustic gunshot detectors (ShotSpotter, SST, Sentri), air quality sensors, water level sensors for flood alerts, urban seismographs, temperature and humidity sensors for extreme heat alerts, license plate readers (LPR), video cameras with AI analytics, and georeferenced social media feeds. If the sensor has an API or generates data in a standard format, it can be integrated.',
         },
         {
           question: 'How does sensor fusion reduce false positives?',
           answer:
-            'Individual systems have false positive rates that can be manageable in isolation but problematic at volume. A gunshot detector may generate alerts for fireworks, blown tires, or slamming metal doors. A motion sensor may trigger for animals or authorized personnel. When multiple independent sensors generate related alerts at the same location and time — gunshot + camera detects abnormal movement + LPR sees a suspicious vehicle — the probability that it is a real event increases dramatically. KabatOne applies a configurable correlation engine that only generates high-priority alerts when multiple sources confirm the event.',
+            'Individual systems have false positive rates that can be manageable in isolation but problematic at volume. A gunshot detector may generate alerts for fireworks, blown tires, or slamming metal doors. A motion sensor may trigger for animals or authorized personnel. When multiple independent sensors generate related alerts at the same location and time — gunshot + camera detects abnormal movement + LPR sees a suspicious vehicle — the probability that it is a real event increases dramatically. Kabat One applies a configurable correlation engine that only generates high-priority alerts when multiple sources confirm the event.',
         },
         {
           question: 'How fast can the system correlate events?',
           answer:
-            'KabatOne\'s correlation engine processes events in real time with latency under 500 milliseconds from receipt of the first event. Temporal correlation is configurable: the system can group events occurring within a 30-second to 5-minute window and within a geographic radius of 50 to 500 meters, depending on the agency\'s operational protocols. For high-priority events like gunshots, the consolidated alert reaches the operator in under 2 seconds.',
+            'Kabat One\'s correlation engine processes events in real time with latency under 500 milliseconds from receipt of the first event. Temporal correlation is configurable: the system can group events occurring within a 30-second to 5-minute window and within a geographic radius of 50 to 500 meters, depending on the agency\'s operational protocols. For high-priority events like gunshots, the consolidated alert reaches the operator in under 2 seconds.',
         },
         {
           question: 'Does sensor fusion require special infrastructure?',
           answer:
-            'No. KabatOne is designed to work with existing network infrastructure. Sensors connect via internet or private networks using standard protocols (MQTT, HTTP/REST, ONVIF). Processing happens in the KabatOne platform, which can be in the cloud, on the municipality\'s on-premise servers, or in a hybrid configuration. For low-power IoT sensors in remote areas, KabatOne supports LoRaWAN and LTE/4G connectivity to transmit data to the central platform.',
+            'No. Kabat One is designed to work with existing network infrastructure. Sensors connect via internet or private networks using standard protocols (MQTT, HTTP/REST, ONVIF). Processing happens in the Kabat One platform, which can be in the cloud, on the municipality\'s on-premise servers, or in a hybrid configuration. For low-power IoT sensors in remote areas, Kabat One supports LoRaWAN and LTE/4G connectivity to transmit data to the central platform.',
         },
         {
           question: 'Can the system learn and improve over time?',
           answer:
-            'Yes. KabatOne\'s correlation engine includes adaptive learning capabilities: the system records which correlations resulted in confirmed real incidents and which were false positives, and automatically adjusts weights and confidence thresholds. With 3–6 months of operation in a specific environment, the false positive rate in consolidated alerts can be reduced by up to 60% from initial values. Operators can also manually provide feedback by marking alerts as valid or invalid.',
+            'Yes. Kabat One\'s correlation engine includes adaptive learning capabilities: the system records which correlations resulted in confirmed real incidents and which were false positives, and automatically adjusts weights and confidence thresholds. With 3–6 months of operation in a specific environment, the false positive rate in consolidated alerts can be reduced by up to 60% from initial values. Operators can also manually provide feedback by marking alerts as valid or invalid.',
         },
       ]
 
@@ -172,8 +172,8 @@ export default async function SensorFusionIntegrationPage({
                 ? 'Fusión de Sensores para Seguridad Pública'
                 : 'Sensor Fusion Platform for Public Safety',
               es
-                ? 'Cómo KabatOne integra detección de disparos, sensores IoT, datos ambientales y video en una sola vista de conciencia situacional.'
-                : 'How KabatOne fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view.',
+                ? 'Cómo Kabat One integra detección de disparos, sensores IoT, datos ambientales y video en una sola vista de conciencia situacional.'
+                : 'How Kabat One fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view.',
               es ? 'https://kabatone.com/es/integrations/sensor-fusion' : 'https://kabatone.com/integrations/sensor-fusion',
               '2026-03-20'
             )
@@ -224,8 +224,8 @@ export default async function SensorFusionIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'Un disparo aislado, un sensor de calidad del aire fuera de rango, y tres reportes en redes sociales sobre un incidente en el mismo bloque. Por separado, son alertas individuales. Juntos, son evidencia de una emergencia. KabatOne correlaciona automáticamente múltiples fuentes de sensores para darte la imagen completa — no fragmentos.'
-                : 'An isolated gunshot, an out-of-range air quality sensor, and three social media reports about an incident on the same block. Separately, they are individual alerts. Together, they are evidence of an emergency. KabatOne automatically correlates multiple sensor sources to give you the complete picture — not fragments.'}
+                ? 'Un disparo aislado, un sensor de calidad del aire fuera de rango, y tres reportes en redes sociales sobre un incidente en el mismo bloque. Por separado, son alertas individuales. Juntos, son evidencia de una emergencia. Kabat One correlaciona automáticamente múltiples fuentes de sensores para darte la imagen completa — no fragmentos.'
+                : 'An isolated gunshot, an out-of-range air quality sensor, and three social media reports about an incident on the same block. Separately, they are individual alerts. Together, they are evidence of an emergency. Kabat One automatically correlates multiple sensor sources to give you the complete picture — not fragments.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -251,13 +251,13 @@ export default async function SensorFusionIntegrationPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'En operaciones de seguridad pública, la fusión de sensores reduce los tiempos de detección y respuesta porque el sistema identifica patrones que los humanos no podrían detectar manualmente. Un solo disparo puede ser ambiguo — fuegos artificiales, un neumático que revienta. Pero un disparo acústico confirmado + movimiento anormal en la cámara del área + un vehículo con alerta activa que pasa por el LPR cercano — ese patrón compuesto es inequívoco, y KabatOne puede generar una alerta consolidada en menos de 2 segundos.'
-                : 'In public safety operations, sensor fusion reduces detection and response times because the system identifies patterns that humans could not manually detect. A single gunshot can be ambiguous — fireworks, a tire blowing out. But an acoustic gunshot confirmation + abnormal movement on the area camera + a vehicle with an active alert passing the nearby LPR — that composite pattern is unambiguous, and KabatOne can generate a consolidated alert in under 2 seconds.'}
+                ? 'En operaciones de seguridad pública, la fusión de sensores reduce los tiempos de detección y respuesta porque el sistema identifica patrones que los humanos no podrían detectar manualmente. Un solo disparo puede ser ambiguo — fuegos artificiales, un neumático que revienta. Pero un disparo acústico confirmado + movimiento anormal en la cámara del área + un vehículo con alerta activa que pasa por el LPR cercano — ese patrón compuesto es inequívoco, y Kabat One puede generar una alerta consolidada en menos de 2 segundos.'
+                : 'In public safety operations, sensor fusion reduces detection and response times because the system identifies patterns that humans could not manually detect. A single gunshot can be ambiguous — fireworks, a tire blowing out. But an acoustic gunshot confirmation + abnormal movement on the area camera + a vehicle with an active alert passing the nearby LPR — that composite pattern is unambiguous, and Kabat One can generate a consolidated alert in under 2 seconds.'}
             </p>
             <p style={pStyle}>
               {es
-                ? 'A diferencia de los sistemas PSIM (Physical Security Information Management) que simplemente agregan alarmas de sistemas silados, KabatOne aplica correlación inteligente: los eventos solo se consolidan en una alerta cuando múltiples fuentes independientes los confirman, con pesos de confianza y ventanas temporales configurables. Esto reduce dramáticamente los falsos positivos sin perder los eventos reales.'
-                : 'Unlike PSIM (Physical Security Information Management) systems that simply aggregate alarms from siloed systems, KabatOne applies intelligent correlation: events are only consolidated into an alert when multiple independent sources confirm them, with configurable confidence weights and time windows. This dramatically reduces false positives without missing real events.'}
+                ? 'A diferencia de los sistemas PSIM (Physical Security Information Management) que simplemente agregan alarmas de sistemas silados, Kabat One aplica correlación inteligente: los eventos solo se consolidan en una alerta cuando múltiples fuentes independientes los confirman, con pesos de confianza y ventanas temporales configurables. Esto reduce dramáticamente los falsos positivos sin perder los eventos reales.'
+                : 'Unlike PSIM (Physical Security Information Management) systems that simply aggregate alarms from siloed systems, Kabat One applies intelligent correlation: events are only consolidated into an alert when multiple independent sources confirm them, with configurable confidence weights and time windows. This dramatically reduces false positives without missing real events.'}
             </p>
           </div>
         </section>
@@ -266,12 +266,12 @@ export default async function SensorFusionIntegrationPage({
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
             <h2 style={h2Style}>
-              {es ? 'Sensores que KabatOne Integra' : 'Sensors KabatOne Integrates'}
+              {es ? 'Sensores que Kabat One Integra' : 'Sensors Kabat One Integrates'}
             </h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne conecta sensores mediante APIs estándar (REST, MQTT, ONVIF) y protocolos IoT. Los tipos de sensores más comunes en implementaciones actuales:'
-                : 'KabatOne connects sensors via standard APIs (REST, MQTT, ONVIF) and IoT protocols. The most common sensor types in current deployments:'}
+                ? 'Kabat One conecta sensores mediante APIs estándar (REST, MQTT, ONVIF) y protocolos IoT. Los tipos de sensores más comunes en implementaciones actuales:'
+                : 'Kabat One connects sensors via standard APIs (REST, MQTT, ONVIF) and IoT protocols. The most common sensor types in current deployments:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }} className="sensor-grid">
               {sensorTypes.map((sensor, i) => (
@@ -314,8 +314,8 @@ export default async function SensorFusionIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'El motor de correlación de KabatOne procesa todos los eventos de sensores en tiempo real y aplica reglas de correlación configurables:'
-                : 'KabatOne\'s correlation engine processes all sensor events in real time and applies configurable correlation rules:'}
+                ? 'El motor de correlación de Kabat One procesa todos los eventos de sensores en tiempo real y aplica reglas de correlación configurables:'
+                : 'Kabat One\'s correlation engine processes all sensor events in real time and applies configurable correlation rules:'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)', marginBottom: '32px' }}>
               <img
@@ -436,12 +436,12 @@ export default async function SensorFusionIntegrationPage({
               {es ? 'Productos Relacionados' : 'Related Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne para Operaciones de Fusión de Sensores' : 'KabatOne for Sensor Fusion Operations'}
+              {es ? 'Kabat One para Operaciones de Fusión de Sensores' : 'Kabat One for Sensor Fusion Operations'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es
-                ? 'Los módulos de KabatOne que reciben y procesan datos de sensores fusionados:'
-                : 'KabatOne modules that receive and process fused sensor data:'}
+                ? 'Los módulos de Kabat One que reciben y procesan datos de sensores fusionados:'
+                : 'Kabat One modules that receive and process fused sensor data:'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -527,8 +527,8 @@ export default async function SensorFusionIntegrationPage({
           es={es}
           h2={es ? 'Conecta Todos tus Sensores en una Sola Vista' : 'Connect All Your Sensors in One View'}
           subtitle={es
-            ? 'KabatOne integra sensores de gunshot, IoT, video y LPR en una plataforma de conciencia situacional unificada. Solicita una demo con datos de ciudad real.'
-            : 'KabatOne integrates gunshot, IoT, video, and LPR sensors in a unified situational awareness platform. Request a demo with real city data.'}
+            ? 'Kabat One integra sensores de gunshot, IoT, video y LPR en una plataforma de conciencia situacional unificada. Solicita una demo con datos de ciudad real.'
+            : 'Kabat One integrates gunshot, IoT, video, and LPR sensors in a unified situational awareness platform. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

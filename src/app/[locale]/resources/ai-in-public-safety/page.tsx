@@ -44,7 +44,7 @@ export default async function AiInPublicSafetyPage({
         {
           question: '¿La IA en seguridad pública viola la privacidad?',
           answer:
-            'El uso de IA en seguridad pública plantea preguntas legítimas de privacidad, especialmente el reconocimiento facial en espacios públicos. Las regulaciones varían por país y estado. Los sistemas bien implementados aplican principios de minimización de datos (solo capturar lo necesario), acceso por roles (solo personal autorizado accede a ciertos datos), retención limitada (videos eliminados automáticamente después de un período definido) y auditoría completa de quién accedió a qué información. KabatOne incluye controles de privacidad y auditoría completa en su plataforma.',
+            'El uso de IA en seguridad pública plantea preguntas legítimas de privacidad, especialmente el reconocimiento facial en espacios públicos. Las regulaciones varían por país y estado. Los sistemas bien implementados aplican principios de minimización de datos (solo capturar lo necesario), acceso por roles (solo personal autorizado accede a ciertos datos), retención limitada (videos eliminados automáticamente después de un período definido) y auditoría completa de quién accedió a qué información. Kabat One incluye controles de privacidad y auditoría completa en su plataforma.',
         },
         {
           question: '¿Cuánto mejora la IA los tiempos de respuesta?',
@@ -76,7 +76,7 @@ export default async function AiInPublicSafetyPage({
         {
           question: 'Does AI in public safety violate privacy?',
           answer:
-            'AI use in public safety raises legitimate privacy questions, especially facial recognition in public spaces. Regulations vary by country and state. Well-implemented systems apply data minimization (only capture what is necessary), role-based access (only authorized personnel access certain data), limited retention (videos automatically deleted after a defined period), and full audit trails of who accessed what information. KabatOne includes privacy controls and complete audit trails in its platform.',
+            'AI use in public safety raises legitimate privacy questions, especially facial recognition in public spaces. Regulations vary by country and state. Well-implemented systems apply data minimization (only capture what is necessary), role-based access (only authorized personnel access certain data), limited retention (videos automatically deleted after a defined period), and full audit trails of who accessed what information. Kabat One includes privacy controls and complete audit trails in its platform.',
         },
         {
           question: 'How much does AI improve response times?',
@@ -425,15 +425,15 @@ export default async function AiInPublicSafetyPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'IA Integrada en KabatOne' : 'AI Built into KabatOne'}
+              {es ? 'IA Integrada en Kabat One' : 'AI Built into Kabat One'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Módulos con Analítica de IA' : 'Modules with AI Analytics'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne integra IA directamente en cada módulo operativo — sin middleware, sin configuración adicional.'
-                : 'KabatOne integrates AI directly into each operational module — no middleware, no additional configuration.'}
+                ? 'Kabat One integra IA directamente en cada módulo operativo — sin middleware, sin configuración adicional.'
+                : 'Kabat One integrates AI directly into each operational module — no middleware, no additional configuration.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -550,10 +550,10 @@ export default async function AiInPublicSafetyPage({
 
         <CTASection
           es={es}
-          h2={es ? 'Ve la IA de KabatOne en Acción' : 'See KabatOne\'s AI in Action'}
+          h2={es ? 'Ve la IA de Kabat One en Acción' : 'See Kabat One\'s AI in Action'}
           subtitle={es
-            ? 'KabatOne integra analítica de IA en video, despacho y GIS en una sola plataforma. Solicita una demo con datos reales de ciudad.'
-            : 'KabatOne integrates AI analytics across video, dispatch, and GIS in one platform. Request a demo with real city data.'}
+            ? 'Kabat One integra analítica de IA en video, despacho y GIS en una sola plataforma. Solicita una demo con datos reales de ciudad.'
+            : 'Kabat One integrates AI analytics across video, dispatch, and GIS in one platform. Request a demo with real city data.'}
         />
 
         <Footer es={es} />

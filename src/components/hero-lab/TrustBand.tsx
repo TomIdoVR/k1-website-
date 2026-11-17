@@ -20,8 +20,8 @@ const T: Record<string, Loc> = {
   speedTag: { en: 'SECONDS MATTER', es: 'LOS SEGUNDOS CUENTAN' },
   speedHead: { en: 'Under 90 seconds, end to end', es: 'Menos de 90 segundos, de principio a fin' },
   speedBody: {
-    en: 'From 911 call intake to unit recommendation to field deployment — the average dispatch cycle runs under 90 seconds on KabatOne vs. 4–6 minutes on legacy CAD systems.',
-    es: 'Desde la recepción de llamadas 911 hasta la recomendación de unidades y el despliegue — el ciclo de despacho promedio es menor a 90 segundos en KabatOne vs. 4–6 minutos en sistemas CAD heredados.',
+    en: 'From 911 call intake to unit recommendation to field deployment — the average dispatch cycle runs under 90 seconds on Kabat One vs. 4–6 minutes on legacy CAD systems.',
+    es: 'Desde la recepción de llamadas 911 hasta la recomendación de unidades y el despliegue — el ciclo de despacho promedio es menor a 90 segundos en Kabat One vs. 4–6 minutos en sistemas CAD heredados.',
   },
   secTag: { en: 'SOC 2 CERTIFIED', es: 'CERTIFICADO SOC 2' },
   secHead: { en: 'Enterprise-grade security', es: 'Seguridad de nivel empresarial' },

@@ -47,19 +47,19 @@ export default async function PublicSafetySoftwareArgentinaPage({
     },
     {
       question: '¿Que es el Centro de Monitoreo Urbano de CABA y como funciona?',
-      answer: 'El Centro de Monitoreo Urbano (CMU) de la Ciudad de Buenos Aires opera mas de 14.000 camaras de vigilancia integradas con el sistema de emergencias de la Policia de la Ciudad. Es uno de los sistemas de videovigilancia urbana mas extensos de America Latina. El CMU centraliza el monitoreo en tiempo real, coordina el despacho de unidades y genera alertas automaticas. Una plataforma unificada como KabatOne se integra directamente con la infraestructura ONVIF/RTSP existente del CMU y de municipios del GBA, anadiendo CAD, GIS y analitica sobre las camaras ya instaladas.',
+      answer: 'El Centro de Monitoreo Urbano (CMU) de la Ciudad de Buenos Aires opera mas de 14.000 camaras de vigilancia integradas con el sistema de emergencias de la Policia de la Ciudad. Es uno de los sistemas de videovigilancia urbana mas extensos de America Latina. El CMU centraliza el monitoreo en tiempo real, coordina el despacho de unidades y genera alertas automaticas. Una plataforma unificada como Kabat One se integra directamente con la infraestructura ONVIF/RTSP existente del CMU y de municipios del GBA, anadiendo CAD, GIS y analitica sobre las camaras ya instaladas.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de camaras existente en Argentina?',
-      answer: 'Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del CMU de CABA, los sistemas provinciales de Cordoba, Mendoza, Rosario y otros municipios del GBA se conectan directamente a la plataforma. Los paneles de control de acceso, lectores LPR y sensores acusticos existentes tambien se integran sin cambiar infraestructura.',
+      question: '¿Puede Kabat One integrarse con la infraestructura de camaras existente en Argentina?',
+      answer: 'Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del CMU de CABA, los sistemas provinciales de Cordoba, Mendoza, Rosario y otros municipios del GBA se conectan directamente a la plataforma. Los paneles de control de acceso, lectores LPR y sensores acusticos existentes tambien se integran sin cambiar infraestructura.',
     },
     {
-      question: '¿Como apoya KabatOne la coordinacion entre PFA, policia provincial y seguridad municipal?',
+      question: '¿Como apoya Kabat One la coordinacion entre PFA, policia provincial y seguridad municipal?',
       answer: 'K-Safety provee un mapa GIS compartido donde los operadores municipales, la Policia de la Ciudad y los comandos provinciales ven posiciones de unidades, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica la recepcion 911/101/107 en un solo registro de incidente, y K-Video centraliza camaras municipales y privadas compartidas en un VMS con busqueda por zona, fecha y tipo de evento.',
     },
     {
-      question: '¿Como se alinea KabatOne con Argentina Compra y BAC para licitaciones?',
-      answer: 'KabatOne se comercializa a traves de distribuidores e integradores locales con registro en Argentina Compra (compr.ar) y BAC (Buenos Aires Compras). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios provinciales y municipales y a los requisitos de los pliegos de licitacion de la ONC.',
+      question: '¿Como se alinea Kabat One con Argentina Compra y BAC para licitaciones?',
+      answer: 'Kabat One se comercializa a traves de distribuidores e integradores locales con registro en Argentina Compra (compr.ar) y BAC (Buenos Aires Compras). La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios provinciales y municipales y a los requisitos de los pliegos de licitacion de la ONC.',
     },
   ] : [
     {
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareArgentinaPage({
     },
     {
       question: "What is CABA's Centro de Monitoreo Urbano and how does it work?",
-      answer: "Buenos Aires City's Centro de Monitoreo Urbano (CMU) operates over 14,000 surveillance cameras integrated with the Policía de la Ciudad emergency response system — one of the most extensive urban video surveillance networks in Latin America. The CMU centralizes real-time monitoring, coordinates unit dispatch, and generates automatic alerts. A unified platform like KabatOne integrates directly with existing ONVIF/RTSP infrastructure from the CMU and GBA municipalities, adding CAD, GIS, and analytics on top of cameras already installed.",
+      answer: "Buenos Aires City's Centro de Monitoreo Urbano (CMU) operates over 14,000 surveillance cameras integrated with the Policía de la Ciudad emergency response system — one of the most extensive urban video surveillance networks in Latin America. The CMU centralizes real-time monitoring, coordinates unit dispatch, and generates automatic alerts. A unified platform like Kabat One integrates directly with existing ONVIF/RTSP infrastructure from the CMU and GBA municipalities, adding CAD, GIS, and analytics on top of cameras already installed.",
     },
     {
-      question: 'Can KabatOne integrate with existing camera infrastructure in Argentina?',
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. CABA's CMU cameras, provincial systems in Córdoba, Mendoza, Rosario, and other GBA municipalities connect directly to the platform. Existing access control panels, LPR readers, and acoustic sensors also integrate without changing infrastructure.",
+      question: 'Can Kabat One integrate with existing camera infrastructure in Argentina?',
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. CABA's CMU cameras, provincial systems in Córdoba, Mendoza, Rosario, and other GBA municipalities connect directly to the platform. Existing access control panels, LPR readers, and acoustic sensors also integrate without changing infrastructure.",
     },
     {
-      question: 'How does KabatOne support coordination between PFA, provincial police, and municipal security?',
+      question: 'How does Kabat One support coordination between PFA, provincial police, and municipal security?',
       answer: 'K-Safety provides a shared GIS map where municipal operators, Policía de la Ciudad, and provincial commands see unit positions, active incidents, and live video feeds in real time. K-Dispatch unifies 911/101/107 intake into one incident record, and K-Video centralizes municipal and privately shared cameras in a searchable VMS with zone, date, and event-type search.',
     },
     {
-      question: 'How does KabatOne align with Argentina Compra and BAC procurement processes?',
-      answer: 'KabatOne is marketed through local distributors and integrators registered on Argentina Compra (compr.ar) and BAC (Buenos Aires Compras). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to provincial and municipal budget frameworks and ONC tender requirements.',
+      question: 'How does Kabat One align with Argentina Compra and BAC procurement processes?',
+      answer: 'Kabat One is marketed through local distributors and integrators registered on Argentina Compra (compr.ar) and BAC (Buenos Aires Compras). The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to provincial and municipal budget frameworks and ONC tender requirements.',
     },
   ]
 
@@ -567,8 +567,8 @@ export default async function PublicSafetySoftwareArgentinaPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Provincia o Municipio en Argentina' : 'Transform Public Safety in Your Argentine Province or Municipality'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para jurisdicciones argentinas — desde CABA hasta municipios del interior.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Argentine jurisdictions — from CABA to interior municipalities.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para jurisdicciones argentinas — desde CABA hasta municipios del interior.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Argentine jurisdictions — from CABA to interior municipalities.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

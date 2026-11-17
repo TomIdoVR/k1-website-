@@ -356,16 +356,28 @@
 
     <div class="timeline">
 
-      <!-- v2.447 -->
-      <div class="tl-entry added" id="v2.447">
+      <!-- v2.448 -->
+      <div class="tl-entry added" id="v2.448">
         <div class="version-header">
-          <div class="tl-meta"><span class="tl-ver">v2.447</span><span class="tl-date">2026-11-16</span></div>
+          <div class="tl-meta"><span class="tl-ver">v2.448</span><span class="tl-date">2026-11-17</span></div>
           <h3 class="tl-title">Playwright smoke tests for the live site</h3>
         </div>
         <div class="tl-body">
           <p><strong>Added:</strong> an <code>e2e/</code> Playwright suite (49 tests, about a minute). The only automated check before this was <code>health-check.yml</code>, which curls <code>/</code> and <code>/es</code> for a 200 and cannot see a broken hero, a dead form or a lost canonical. It covers 13 key pages in EN and ES, the SEO head, <code>robots.txt</code>, <code>llms.txt</code> and the sitemap, the contact and careers forms, navigation and the language switcher, and mobile layout.</p>
           <p><strong>Added:</strong> forms are stubbed at the network layer, so the suite never creates a real lead or application. <code>.github/workflows/e2e.yml</code> runs it after each Vercel deployment, nightly against kabatone.com, and on demand. Scripts: <code>test:e2e</code>, <code>test:e2e:prod</code>, <code>test:e2e:ui</code>.</p>
           <p><strong>Notes:</strong> 49/49 pass against production. No site code changed, so nothing here ships to visitors.</p>
+        </div>
+      </div>
+
+      <!-- v2.447 -->
+      <div class="tl-entry changed" id="v2.447">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.447</span><span class="tl-date">2026-11-17</span></div>
+          <h3 class="tl-title">The brand name is now written "Kabat One" everywhere</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Changed:</strong> the whole site now writes the company name as "Kabat One", matching the logo, in page text, search titles and descriptions, and the information search engines and AI assistants read. The old spelling "KabatOne" is kept as an alias so search results still connect the two. The web address stays kabatone.com.</p>
+          <p><strong>Changed:</strong> the K-Dispatch page no longer promises an implementation time of 8 to 16 weeks. The answer now explains that setup is fast because everything comes on one platform, and that the rollout runs alongside the current system until the team is ready.</p>
         </div>
       </div>
 

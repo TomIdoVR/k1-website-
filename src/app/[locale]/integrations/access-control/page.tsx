@@ -32,9 +32,9 @@ export default async function AccessControlIntegrationPage({
             'El control de acceso físico es el conjunto de sistemas que regulan quién puede entrar a qué área y cuándo: lectores de tarjetas, torniquetes, cerraduras electrónicas, lectores biométricos. En el contexto de seguridad pública, la integración significa que los eventos de control de acceso — entradas autorizadas, rechazos, intentos de forzamiento — fluyen en tiempo real al centro de comando, donde se correlacionan con video y se pueden convertir en despachos automáticos cuando hay una violación.',
         },
         {
-          question: '¿Con qué fabricantes de control de acceso es compatible KabatOne?',
+          question: '¿Con qué fabricantes de control de acceso es compatible Kabat One?',
           answer:
-            'KabatOne integra sistemas de control de acceso mediante protocolos estándar de la industria: OSDP (Open Supervised Device Protocol), Wiegand, y APIs REST/WebSocket. Los sistemas más comunes en implementaciones actuales incluyen Lenel OnGuard, Genetec Synergis, Software House CCURE, Honeywell Pro-Watch, Bosch AMS, y Mercury Security. Para sistemas más antiguos con protocolos propietarios, KabatOne utiliza middleboxes de integración que traducen los eventos al formato estándar de la plataforma.',
+            'Kabat One integra sistemas de control de acceso mediante protocolos estándar de la industria: OSDP (Open Supervised Device Protocol), Wiegand, y APIs REST/WebSocket. Los sistemas más comunes en implementaciones actuales incluyen Lenel OnGuard, Genetec Synergis, Software House CCURE, Honeywell Pro-Watch, Bosch AMS, y Mercury Security. Para sistemas más antiguos con protocolos propietarios, Kabat One utiliza middleboxes de integración que traducen los eventos al formato estándar de la plataforma.',
         },
         {
           question: '¿Qué sucede cuando se detecta una violación de acceso?',
@@ -44,17 +44,17 @@ export default async function AccessControlIntegrationPage({
         {
           question: '¿Puede el sistema bloquear o desbloquear puertas remotamente?',
           answer:
-            'Sí. KabatOne soporta control bidireccional con sistemas de acceso compatibles: operadores autorizados pueden bloquear o desbloquear puertas específicas desde el centro de comando en respuesta a una emergencia, activar lockdown de todo un edificio con un solo comando, o abrir puertas de evacuación automáticamente cuando se activa una alarma de incendio. Estas acciones requieren doble autorización y se registran completamente en el log de auditoría.',
+            'Sí. Kabat One soporta control bidireccional con sistemas de acceso compatibles: operadores autorizados pueden bloquear o desbloquear puertas específicas desde el centro de comando en respuesta a una emergencia, activar lockdown de todo un edificio con un solo comando, o abrir puertas de evacuación automáticamente cuando se activa una alarma de incendio. Estas acciones requieren doble autorización y se registran completamente en el log de auditoría.',
         },
         {
           question: '¿Qué tipo de instalaciones se benefician más de la integración de control de acceso?',
           answer:
-            'Las instalaciones con mayor retorno de la integración son aquellas que combinan alto volumen de acceso con consecuencias significativas de violación: edificios de gobierno y tribunales, instalaciones penitenciarias, subestaciones eléctricas y agua, centros de datos, instalaciones portuarias y aeroportuarias, hospitales y centros de salud, y campus universitarios con múltiples edificios. KabatOne escala desde instalaciones de 50 puertas hasta redes de miles de puntos de acceso en múltiples ubicaciones.',
+            'Las instalaciones con mayor retorno de la integración son aquellas que combinan alto volumen de acceso con consecuencias significativas de violación: edificios de gobierno y tribunales, instalaciones penitenciarias, subestaciones eléctricas y agua, centros de datos, instalaciones portuarias y aeroportuarias, hospitales y centros de salud, y campus universitarios con múltiples edificios. Kabat One escala desde instalaciones de 50 puertas hasta redes de miles de puntos de acceso en múltiples ubicaciones.',
         },
         {
           question: '¿Cómo se maneja la gestión de credenciales en emergencias?',
           answer:
-            'KabatOne incluye un módulo de gestión de credenciales de emergencia que permite: provisionar temporalmente a personal de respuesta de emergencia (bomberos, paramédicos, personal de mantenimiento crítico) con acceso temporal a zonas específicas, revocar instantáneamente el acceso de una credencial comprometida o de un empleado separado, y activar perfiles de acceso de emergencia predefinidos (ej: "modo lockdown", "modo evacuación") que modifican las reglas de acceso de todo el edificio con un solo comando.',
+            'Kabat One incluye un módulo de gestión de credenciales de emergencia que permite: provisionar temporalmente a personal de respuesta de emergencia (bomberos, paramédicos, personal de mantenimiento crítico) con acceso temporal a zonas específicas, revocar instantáneamente el acceso de una credencial comprometida o de un empleado separado, y activar perfiles de acceso de emergencia predefinidos (ej: "modo lockdown", "modo evacuación") que modifican las reglas de acceso de todo el edificio con un solo comando.',
         },
       ]
     : [
@@ -64,9 +64,9 @@ export default async function AccessControlIntegrationPage({
             'Physical access control is the set of systems that regulate who can enter what area and when: card readers, turnstiles, electronic locks, biometric readers. In the public safety context, integration means access control events — authorized entries, rejections, forced entry attempts — flow in real time to the command center, where they are correlated with video and can trigger automatic dispatches when a violation occurs.',
         },
         {
-          question: 'Which access control vendors is KabatOne compatible with?',
+          question: 'Which access control vendors is Kabat One compatible with?',
           answer:
-            'KabatOne integrates access control systems via industry-standard protocols: OSDP (Open Supervised Device Protocol), Wiegand, and REST/WebSocket APIs. The most common systems in current deployments include Lenel OnGuard, Genetec Synergis, Software House C•CURE, Honeywell Pro-Watch, Bosch AMS, and Mercury Security. For older systems with proprietary protocols, KabatOne uses integration middleboxes that translate events to the platform\'s standard format.',
+            'Kabat One integrates access control systems via industry-standard protocols: OSDP (Open Supervised Device Protocol), Wiegand, and REST/WebSocket APIs. The most common systems in current deployments include Lenel OnGuard, Genetec Synergis, Software House C•CURE, Honeywell Pro-Watch, Bosch AMS, and Mercury Security. For older systems with proprietary protocols, Kabat One uses integration middleboxes that translate events to the platform\'s standard format.',
         },
         {
           question: 'What happens when an access violation is detected?',
@@ -76,17 +76,17 @@ export default async function AccessControlIntegrationPage({
         {
           question: 'Can the system remotely lock or unlock doors?',
           answer:
-            'Yes. KabatOne supports bidirectional control with compatible access systems: authorized operators can lock or unlock specific doors from the command center in response to an emergency, activate a full building lockdown with a single command, or automatically open evacuation doors when a fire alarm is triggered. These actions require dual authorization and are fully logged in the audit trail.',
+            'Yes. Kabat One supports bidirectional control with compatible access systems: authorized operators can lock or unlock specific doors from the command center in response to an emergency, activate a full building lockdown with a single command, or automatically open evacuation doors when a fire alarm is triggered. These actions require dual authorization and are fully logged in the audit trail.',
         },
         {
           question: 'What types of facilities benefit most from access control integration?',
           answer:
-            'Facilities with the highest integration ROI are those combining high access volume with significant violation consequences: government buildings and courthouses, correctional facilities, electrical and water substations, data centers, port and airport installations, hospitals and healthcare facilities, and university campuses with multiple buildings. KabatOne scales from facilities with 50 doors to networks of thousands of access points across multiple locations.',
+            'Facilities with the highest integration ROI are those combining high access volume with significant violation consequences: government buildings and courthouses, correctional facilities, electrical and water substations, data centers, port and airport installations, hospitals and healthcare facilities, and university campuses with multiple buildings. Kabat One scales from facilities with 50 doors to networks of thousands of access points across multiple locations.',
         },
         {
           question: 'How is credential management handled in emergencies?',
           answer:
-            'KabatOne includes an emergency credential management module that enables: provisioning emergency response personnel (firefighters, paramedics, critical maintenance staff) with temporary access to specific zones, instantly revoking access for a compromised credential or separated employee, and activating predefined emergency access profiles (e.g., "lockdown mode", "evacuation mode") that modify building-wide access rules with a single command.',
+            'Kabat One includes an emergency credential management module that enables: provisioning emergency response personnel (firefighters, paramedics, critical maintenance staff) with temporary access to specific zones, instantly revoking access for a compromised credential or separated employee, and activating predefined emergency access profiles (e.g., "lockdown mode", "evacuation mode") that modify building-wide access rules with a single command.',
         },
       ]
 
@@ -126,16 +126,16 @@ export default async function AccessControlIntegrationPage({
 
   const useCases = es
     ? [
-        { title: 'Instalaciones Gubernamentales y Tribunales', desc: 'Edificios de gobierno, tribunales y legislaturas requieren control de acceso de alta seguridad con múltiples capas de credenciales por zona. KabatOne integra el sistema de acceso con el sistema de despacho de seguridad interna: cualquier violación genera automáticamente un incidente en el CAD con el video del punto de acceso ya adjunto.' },
-        { title: 'Infraestructura Crítica', desc: 'Subestaciones eléctricas, plantas de agua, centros de datos y telecomunicaciones tienen tolerancia cero a accesos no autorizados. La integración con KabatOne añade la capa de correlación: una tarjeta rechazada + movimiento detectado por cámara en el mismo punto genera una alerta de máxima prioridad, no solo un registro en el sistema de acceso.' },
-        { title: 'Centros de Salud y Hospitales', desc: 'Hospitales tienen zonas de acceso diferenciado: salas de emergencias, unidades psiquiátricas, farmacia, servidor de registros médicos. KabatOne permite gestionar estas zonas en un mapa unificado y correlacionar eventos de acceso con incidentes de seguridad hospitalaria — paciente agresivo, código de seguridad — para coordinar la respuesta del personal de seguridad interno.' },
-        { title: 'Campus Universitarios', desc: 'Con docenas o cientos de edificios y miles de credenciales activas, los campus universitarios necesitan visibilidad centralizada. KabatOne agrega todos los eventos de acceso en una vista única, permite gestionar lockdowns de edificios individuales o del campus completo desde el centro de seguridad, y correlaciona accesos con alertas de seguridad en tiempo real.' },
+        { title: 'Instalaciones Gubernamentales y Tribunales', desc: 'Edificios de gobierno, tribunales y legislaturas requieren control de acceso de alta seguridad con múltiples capas de credenciales por zona. Kabat One integra el sistema de acceso con el sistema de despacho de seguridad interna: cualquier violación genera automáticamente un incidente en el CAD con el video del punto de acceso ya adjunto.' },
+        { title: 'Infraestructura Crítica', desc: 'Subestaciones eléctricas, plantas de agua, centros de datos y telecomunicaciones tienen tolerancia cero a accesos no autorizados. La integración con Kabat One añade la capa de correlación: una tarjeta rechazada + movimiento detectado por cámara en el mismo punto genera una alerta de máxima prioridad, no solo un registro en el sistema de acceso.' },
+        { title: 'Centros de Salud y Hospitales', desc: 'Hospitales tienen zonas de acceso diferenciado: salas de emergencias, unidades psiquiátricas, farmacia, servidor de registros médicos. Kabat One permite gestionar estas zonas en un mapa unificado y correlacionar eventos de acceso con incidentes de seguridad hospitalaria — paciente agresivo, código de seguridad — para coordinar la respuesta del personal de seguridad interno.' },
+        { title: 'Campus Universitarios', desc: 'Con docenas o cientos de edificios y miles de credenciales activas, los campus universitarios necesitan visibilidad centralizada. Kabat One agrega todos los eventos de acceso en una vista única, permite gestionar lockdowns de edificios individuales o del campus completo desde el centro de seguridad, y correlaciona accesos con alertas de seguridad en tiempo real.' },
       ]
     : [
-        { title: 'Government Buildings & Courthouses', desc: 'Government buildings, courthouses, and legislative facilities require high-security access control with multiple credential layers per zone. KabatOne integrates the access system with the internal security dispatch system: any violation automatically generates a CAD incident with the access point video already attached.' },
-        { title: 'Critical Infrastructure', desc: 'Electrical substations, water plants, data centers, and telecom facilities have zero tolerance for unauthorized access. KabatOne integration adds the correlation layer: a rejected card + camera-detected movement at the same point generates a maximum-priority alert, not just a log entry in the access system.' },
-        { title: 'Healthcare & Hospitals', desc: 'Hospitals have differentiated access zones: emergency rooms, psychiatric units, pharmacy, medical records servers. KabatOne manages these zones on a unified map and correlates access events with hospital security incidents — aggressive patient, security code — to coordinate internal security staff response.' },
-        { title: 'University Campuses', desc: 'With dozens or hundreds of buildings and thousands of active credentials, university campuses need centralized visibility. KabatOne aggregates all access events in a single view, enables lockdown management for individual buildings or the full campus from the security center, and correlates accesses with real-time security alerts.' },
+        { title: 'Government Buildings & Courthouses', desc: 'Government buildings, courthouses, and legislative facilities require high-security access control with multiple credential layers per zone. Kabat One integrates the access system with the internal security dispatch system: any violation automatically generates a CAD incident with the access point video already attached.' },
+        { title: 'Critical Infrastructure', desc: 'Electrical substations, water plants, data centers, and telecom facilities have zero tolerance for unauthorized access. Kabat One integration adds the correlation layer: a rejected card + camera-detected movement at the same point generates a maximum-priority alert, not just a log entry in the access system.' },
+        { title: 'Healthcare & Hospitals', desc: 'Hospitals have differentiated access zones: emergency rooms, psychiatric units, pharmacy, medical records servers. Kabat One manages these zones on a unified map and correlates access events with hospital security incidents — aggressive patient, security code — to coordinate internal security staff response.' },
+        { title: 'University Campuses', desc: 'With dozens or hundreds of buildings and thousands of active credentials, university campuses need centralized visibility. Kabat One aggregates all access events in a single view, enables lockdown management for individual buildings or the full campus from the security center, and correlates accesses with real-time security alerts.' },
       ]
 
   const protocols = es
@@ -167,8 +167,8 @@ export default async function AccessControlIntegrationPage({
             articleSchema(
               es ? 'Integración de Control de Acceso para Seguridad Pública' : 'Access Control Integration for Public Safety',
               es
-                ? 'Cómo KabatOne integra sistemas de control de acceso físico con video, despacho CAD y GIS para respuesta automática a violaciones de acceso.'
-                : 'How KabatOne integrates physical access control systems with video, CAD dispatch, and GIS for automatic response to access violations.',
+                ? 'Cómo Kabat One integra sistemas de control de acceso físico con video, despacho CAD y GIS para respuesta automática a violaciones de acceso.'
+                : 'How Kabat One integrates physical access control systems with video, CAD dispatch, and GIS for automatic response to access violations.',
               es ? 'https://kabatone.com/es/integrations/access-control' : 'https://kabatone.com/integrations/access-control',
               '2026-03-20'
             )
@@ -213,8 +213,8 @@ export default async function AccessControlIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'Un sistema de control de acceso aislado solo registra quién entró y cuándo. Integrado con KabatOne, cada evento de acceso se convierte en inteligencia operativa: la puerta forzada en el sótano activa automáticamente las cámaras del área, notifica al despachador, y abre un incidente en el CAD — todo en menos de 2 segundos.'
-                : 'An isolated access control system only logs who entered and when. Integrated with KabatOne, every access event becomes operational intelligence: a forced door in the basement automatically activates area cameras, notifies the dispatcher, and opens a CAD incident — all in under 2 seconds.'}
+                ? 'Un sistema de control de acceso aislado solo registra quién entró y cuándo. Integrado con Kabat One, cada evento de acceso se convierte en inteligencia operativa: la puerta forzada en el sótano activa automáticamente las cámaras del área, notifica al despachador, y abre un incidente en el CAD — todo en menos de 2 segundos.'
+                : 'An isolated access control system only logs who entered and when. Integrated with Kabat One, every access event becomes operational intelligence: a forced door in the basement automatically activates area cameras, notifies the dispatcher, and opens a CAD incident — all in under 2 seconds.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -245,8 +245,8 @@ export default async function AccessControlIntegrationPage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'KabatOne resuelve este problema integrando el sistema de control de acceso directamente con K-Video, K-Safety y K-Dispatch. El resultado es un flujo unificado: evento de acceso → correlación con video → alerta al despachador → despacho de unidad. Sin llamadas manuales. Sin cambio de pantallas. Sin tiempo perdido.'
-                : 'KabatOne solves this by integrating the access control system directly with K-Video, K-Safety, and K-Dispatch. The result is a unified flow: access event → video correlation → dispatcher alert → unit dispatch. No manual calls. No screen switching. No wasted time.'}
+                ? 'Kabat One resuelve este problema integrando el sistema de control de acceso directamente con K-Video, K-Safety y K-Dispatch. El resultado es un flujo unificado: evento de acceso → correlación con video → alerta al despachador → despacho de unidad. Sin llamadas manuales. Sin cambio de pantallas. Sin tiempo perdido.'
+                : 'Kabat One solves this by integrating the access control system directly with K-Video, K-Safety, and K-Dispatch. The result is a unified flow: access event → video correlation → dispatcher alert → unit dispatch. No manual calls. No screen switching. No wasted time.'}
             </p>
           </div>
         </section>
@@ -259,8 +259,8 @@ export default async function AccessControlIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'La integración de control de acceso con KabatOne aporta valor directo en instalaciones donde la seguridad perimetral tiene consecuencias operativas:'
-                : 'Access control integration with KabatOne delivers direct value in facilities where perimeter security has operational consequences:'}
+                ? 'La integración de control de acceso con Kabat One aporta valor directo en instalaciones donde la seguridad perimetral tiene consecuencias operativas:'
+                : 'Access control integration with Kabat One delivers direct value in facilities where perimeter security has operational consequences:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }} className="usecase-grid">
               {useCases.map((uc, i) => (
@@ -285,8 +285,8 @@ export default async function AccessControlIntegrationPage({
             </h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne soporta los principales protocolos de control de acceso para garantizar compatibilidad con cualquier sistema existente:'
-                : 'KabatOne supports the major access control protocols to ensure compatibility with any existing system:'}
+                ? 'Kabat One soporta los principales protocolos de control de acceso para garantizar compatibilidad con cualquier sistema existente:'
+                : 'Kabat One supports the major access control protocols to ensure compatibility with any existing system:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }} className="protocol-grid">
               {protocols.map((p, i) => (
@@ -320,7 +320,7 @@ export default async function AccessControlIntegrationPage({
               {es ? 'Productos Relacionados' : 'Related Products'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
-              {es ? 'KabatOne para Operaciones de Control de Acceso' : 'KabatOne for Access Control Operations'}
+              {es ? 'Kabat One para Operaciones de Control de Acceso' : 'Kabat One for Access Control Operations'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es ? 'Los módulos que trabajan en conjunto con el control de acceso integrado:' : 'Modules that work together with integrated access control:'}
@@ -391,8 +391,8 @@ export default async function AccessControlIntegrationPage({
           es={es}
           h2={es ? 'Conecta tu Control de Acceso al Centro de Mando' : 'Connect Your Access Control to Command'}
           subtitle={es
-            ? 'KabatOne integra sistemas de control de acceso de cualquier fabricante con tu plataforma de video, CAD y GIS. Solicita una demo con datos de tu instalación.'
-            : 'KabatOne integrates access control systems from any vendor with your video, CAD, and GIS platform. Request a demo with your facility data.'}
+            ? 'Kabat One integra sistemas de control de acceso de cualquier fabricante con tu plataforma de video, CAD y GIS. Solicita una demo con datos de tu instalación.'
+            : 'Kabat One integrates access control systems from any vendor with your video, CAD, and GIS platform. Request a demo with your facility data.'}
         />
 
         <Footer es={es} />

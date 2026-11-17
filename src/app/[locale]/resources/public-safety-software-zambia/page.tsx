@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareZambiaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Zambia: ZP/ZAF, DMMU, Lusaka Safe City, ZESCO/Kariba Dam, Copperbelt & Data Protection Act 2021 | KabatOne'
-      : 'Public Safety Software for Zambia: ZP/ZAF, DMMU, Lusaka Safe City, ZESCO/Kariba Dam, Copperbelt & Data Protection Act 2021 | KabatOne',
+      ? 'Software de Seguridad Pública para Zambia: ZP/ZAF, DMMU, Lusaka Safe City, ZESCO/Kariba Dam, Copperbelt & Data Protection Act 2021 | Kabat One'
+      : 'Public Safety Software for Zambia: ZP/ZAF, DMMU, Lusaka Safe City, ZESCO/Kariba Dam, Copperbelt & Data Protection Act 2021 | Kabat One',
     es
       ? 'Plataforma unificada para la Policía de Zambia (ZP) y ZAF — despacho CAD integrado en 10 provincias, Lusaka Safe City, DMMU gestión de desastres, ZESCO/Kariba Dam, Copperbelt cobre/cobalto, Tunduma/Chirundu/Kazungula fronteras, Data Protection Act 2021/ZICTA y adquisición ZPPA/PPA 2020.'
       : 'Unified platform for Zambia Police (ZP) and ZAF — integrated CAD dispatch across 10 provinces, Lusaka Safe City, DMMU disaster management, ZESCO/Kariba Dam, Copperbelt copper/cobalt, Tunduma/Chirundu/Kazungula borders, Data Protection Act 2021/ZICTA compliance, and ZPPA/PPA 2020 procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareZambiaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Zambia?'
-        : 'How does KabatOne address Zambia critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Zambia?'
+        : 'How does Kabat One address Zambia critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de ZESCO (Zambia Electricity Supply Corporation) y la Kariba Dam (1,626 MW, compartida con Zimbabwe), las minas de cobre y cobalto del Copperbelt (CNMC/Mopani/Konkola/Chambishi), el corredor TAZARA (Tanzania-Zambia Railway), el Puerto de Lusaka y el Aeropuerto Internacional Kenneth Kaunda (LUN).'
-        : 'KabatOne integrates management for ZESCO (Zambia Electricity Supply Corporation) and Kariba Dam (1,626 MW, shared with Zimbabwe), Copperbelt copper/cobalt mines (CNMC/Mopani/Konkola/Chambishi), TAZARA corridor (Tanzania-Zambia Railway), Port of Lusaka and Kenneth Kaunda International Airport (LUN).',
+        ? 'Kabat One integra gestión de ZESCO (Zambia Electricity Supply Corporation) y la Kariba Dam (1,626 MW, compartida con Zimbabwe), las minas de cobre y cobalto del Copperbelt (CNMC/Mopani/Konkola/Chambishi), el corredor TAZARA (Tanzania-Zambia Railway), el Puerto de Lusaka y el Aeropuerto Internacional Kenneth Kaunda (LUN).'
+        : 'Kabat One integrates management for ZESCO (Zambia Electricity Supply Corporation) and Kariba Dam (1,626 MW, shared with Zimbabwe), Copperbelt copper/cobalt mines (CNMC/Mopani/Konkola/Chambishi), TAZARA corridor (Tanzania-Zambia Railway), Port of Lusaka and Kenneth Kaunda International Airport (LUN).',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Zambia?'
-        : 'Is KabatOne compliant with Zambia data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Zambia?'
+        : 'Is Kabat One compliant with Zambia data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Ley de Protección de Datos 2021 supervisada por la ZICTA (Autoridad Reguladora de Tecnología de la Información y Comunicaciones de Zambia). La arquitectura se alinea con la Ley sobre Delitos Informáticos y Electrónicos 2021 y las directrices nacionales de ciberseguridad.'
-        : 'Yes. KabatOne is designed to comply with the Data Protection Act 2021 supervised by ZICTA (Zambia Information and Communications Technology Authority). The architecture aligns with the Computer Crimes and Cyber Security Act 2021 and national cybersecurity guidelines.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Ley de Protección de Datos 2021 supervisada por la ZICTA (Autoridad Reguladora de Tecnología de la Información y Comunicaciones de Zambia). La arquitectura se alinea con la Ley sobre Delitos Informáticos y Electrónicos 2021 y las directrices nacionales de ciberseguridad.'
+        : 'Yes. Kabat One is designed to comply with the Data Protection Act 2021 supervised by ZICTA (Zambia Information and Communications Technology Authority). The architecture aligns with the Computer Crimes and Cyber Security Act 2021 and national cybersecurity guidelines.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la gestión de fronteras en Zambia?'
-        : 'How does KabatOne support border management in Zambia?',
+        ? '¿Cómo apoya Kabat One la gestión de fronteras en Zambia?'
+        : 'How does Kabat One support border management in Zambia?',
       answer: es
-        ? 'KabatOne gestiona los principales pasos fronterizos: Tunduma (Tanzania, corredor TAZARA), Chirundu/Kariba (Zimbabwe, corredor norte-sur SADC), Kazungula (Botsuana/Zimbabwe/Namibia cuádruple frontera), Kasumulu (Malawi), Cassacatiza (Mozambique) y Nakonde (corredor Tanzania) con ANPR integrado y coordinación ZP/ZAF/Fronteras.'
-        : 'KabatOne manages major border crossings: Tunduma (Tanzania, TAZARA corridor), Chirundu/Kariba (Zimbabwe, SADC north-south corridor), Kazungula (Botswana/Zimbabwe/Namibia quadruple border), Kasumulu (Malawi), Cassacatiza (Mozambique) and Nakonde (Tanzania corridor) with integrated ANPR and ZP/ZAF/Border coordination.',
+        ? 'Kabat One gestiona los principales pasos fronterizos: Tunduma (Tanzania, corredor TAZARA), Chirundu/Kariba (Zimbabwe, corredor norte-sur SADC), Kazungula (Botsuana/Zimbabwe/Namibia cuádruple frontera), Kasumulu (Malawi), Cassacatiza (Mozambique) y Nakonde (corredor Tanzania) con ANPR integrado y coordinación ZP/ZAF/Fronteras.'
+        : 'Kabat One manages major border crossings: Tunduma (Tanzania, TAZARA corridor), Chirundu/Kariba (Zimbabwe, SADC north-south corridor), Kazungula (Botswana/Zimbabwe/Namibia quadruple border), Kasumulu (Malawi), Cassacatiza (Mozambique) and Nakonde (Tanzania corridor) with integrated ANPR and ZP/ZAF/Border coordination.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareZambiaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Zambia'
-                : 'KabatOne Platform Capabilities for Zambia'}
+                ? 'Capacidades de la Plataforma Kabat One para Zambia'
+                : 'Kabat One Platform Capabilities for Zambia'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareZambiaPage({
                       a: 'La ZP bajo el Inspector General cubre 10 provincias con 20,000+ efectivos y SICS. El ZAF y el Ejército de Zambia apoyan la seguridad interna y Copperbelt. La DMMU coordina inundaciones, sequías y emergencias. El ZIS gestiona la inteligencia nacional.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Zambia?',
-                      a: 'KabatOne integra gestión de ZESCO/Kariba Dam (1,626 MW), Copperbelt mines (CNMC/Mopani/KCM/Konkola/Chambishi), corredor TAZARA, Lusaka LUN Airport y el sistema de distribución eléctrica nacional.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Zambia?',
+                      a: 'Kabat One integra gestión de ZESCO/Kariba Dam (1,626 MW), Copperbelt mines (CNMC/Mopani/KCM/Konkola/Chambishi), corredor TAZARA, Lusaka LUN Airport y el sistema de distribución eléctrica nacional.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Zambia?',
-                      a: 'Sí. KabatOne cumple con la Data Protection Act 2021/ZICTA. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2021 y la Política Nacional de Ciberseguridad.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Zambia?',
+                      a: 'Sí. Kabat One cumple con la Data Protection Act 2021/ZICTA. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2021 y la Política Nacional de Ciberseguridad.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la gestión de fronteras en Zambia?',
-                      a: 'KabatOne gestiona Tunduma (Tanzania/TAZARA), Chirundu/Kariba (Zimbabwe), Kazungula (cuádruple frontera), Kasumulu (Malawi), Cassacatiza (Mozambique) y Nakonde con ANPR y coordinación ZP/ZAF.',
+                      q: '¿Cómo apoya Kabat One la gestión de fronteras en Zambia?',
+                      a: 'Kabat One gestiona Tunduma (Tanzania/TAZARA), Chirundu/Kariba (Zimbabwe), Kazungula (cuádruple frontera), Kasumulu (Malawi), Cassacatiza (Mozambique) y Nakonde con ANPR y coordinación ZP/ZAF.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareZambiaPage({
                       a: 'The ZP under the Inspector General covers 10 provinces with 20,000+ officers and SICS. The ZAF and Zambia Army support internal and Copperbelt security. The DMMU coordinates floods, droughts and emergencies. The ZIS manages national intelligence.',
                     },
                     {
-                      q: 'How does KabatOne address Zambia critical infrastructure?',
-                      a: 'KabatOne integrates management for ZESCO/Kariba Dam (1,626 MW), Copperbelt mines (CNMC/Mopani/KCM/Konkola/Chambishi), TAZARA corridor, Lusaka LUN Airport and national power distribution.',
+                      q: 'How does Kabat One address Zambia critical infrastructure?',
+                      a: 'Kabat One integrates management for ZESCO/Kariba Dam (1,626 MW), Copperbelt mines (CNMC/Mopani/KCM/Konkola/Chambishi), TAZARA corridor, Lusaka LUN Airport and national power distribution.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Zambia data legislation?',
-                      a: 'Yes. KabatOne complies with Data Protection Act 2021/ZICTA. The architecture aligns with the Computer Crimes Act 2021 and the National Cybersecurity Policy.',
+                      q: 'Is Kabat One compliant with Zambia data legislation?',
+                      a: 'Yes. Kabat One complies with Data Protection Act 2021/ZICTA. The architecture aligns with the Computer Crimes Act 2021 and the National Cybersecurity Policy.',
                     },
                     {
-                      q: 'How does KabatOne support border management in Zambia?',
-                      a: 'KabatOne manages Tunduma (Tanzania/TAZARA), Chirundu/Kariba (Zimbabwe), Kazungula (quadruple border), Kasumulu (Malawi), Cassacatiza (Mozambique) and Nakonde with ANPR and ZP/ZAF coordination.',
+                      q: 'How does Kabat One support border management in Zambia?',
+                      a: 'Kabat One manages Tunduma (Tanzania/TAZARA), Chirundu/Kariba (Zimbabwe), Kazungula (quadruple border), Kasumulu (Malawi), Cassacatiza (Mozambique) and Nakonde with ANPR and ZP/ZAF coordination.',
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareZambiaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la Policía de Zambia, ZAF y DMMU.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Zambia Police, ZAF and DMMU.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la Policía de Zambia, ZAF y DMMU.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Zambia Police, ZAF and DMMU.'
           }
         />
       </main>

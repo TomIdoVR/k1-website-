@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareGabonPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Gabón | FDG/PNR, Puerto de Owendo y Seguridad de Recursos – KabatOne"
-      : "Public Safety Software for Gabon | FDG/PNR, Port of Owendo & Resource Security – KabatOne",
+      ? "Software de Seguridad Pública para Gabón | FDG/PNR, Puerto de Owendo y Seguridad de Recursos – Kabat One"
+      : "Public Safety Software for Gabon | FDG/PNR, Port of Owendo & Resource Security – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Gabón (FDG), la Policía Nacional Republicana (PNR), gestión del Puerto de Owendo y seguridad de los recursos de petróleo y manganeso en Gabón."
-      : "KabatOne delivers public safety platform for the Gabonese Defence Forces (FDG), National Republican Police (PNR), Port of Owendo management, and security for oil and manganese resources in Gabon.",
+      ? "Kabat One ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Gabón (FDG), la Policía Nacional Republicana (PNR), gestión del Puerto de Owendo y seguridad de los recursos de petróleo y manganeso en Gabón."
+      : "Kabat One delivers public safety platform for the Gabonese Defence Forces (FDG), National Republican Police (PNR), Port of Owendo management, and security for oil and manganese resources in Gabon.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-gabon"
       : "https://kabatone.com/resources/public-safety-software-gabon",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareGabonPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Gabón?"
-        : "How does KabatOne support public safety in Gabon?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Gabón?"
+        : "How does Kabat One support public safety in Gabon?",
       answer: es
-        ? "KabatOne integra sistemas de despacho para la PNR en 9 provincias, gestión de incidentes para el Puerto de Owendo y Port-Gentil, seguridad de plataformas petrolíferas offshore, coordinación del período de transición CTRI y supervisión de fronteras con Camerún, Guinea Ecuatorial, República del Congo y São Tomé."
-        : "KabatOne integrates dispatch systems for PNR across 9 provinces, incident management for Port of Owendo and Port-Gentil, offshore oil platform security, CTRI transition period coordination, and border monitoring with Cameroon, Equatorial Guinea, Republic of Congo, and São Tomé.",
+        ? "Kabat One integra sistemas de despacho para la PNR en 9 provincias, gestión de incidentes para el Puerto de Owendo y Port-Gentil, seguridad de plataformas petrolíferas offshore, coordinación del período de transición CTRI y supervisión de fronteras con Camerún, Guinea Ecuatorial, República del Congo y São Tomé."
+        : "Kabat One integrates dispatch systems for PNR across 9 provinces, incident management for Port of Owendo and Port-Gentil, offshore oil platform security, CTRI transition period coordination, and border monitoring with Cameroon, Equatorial Guinea, Republic of Congo, and São Tomé.",
     },
   ]);
 
@@ -261,11 +261,11 @@ export default async function PublicSafetySoftwareGabonPage({
           </div>
         </section>
 
-        {/* KabatOne */}
+        {/* Kabat One */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para Gabón" : "KabatOne Platform for Gabon"}
+              {es ? "Plataforma Kabat One para Gabón" : "Kabat One Platform for Gabon"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -335,10 +335,10 @@ export default async function PublicSafetySoftwareGabonPage({
                     : "Code des Marchés Publics (Decree 001/PR/2012) and DGB govern procurement. France (AFD), China (EXIM/CRBC), and World Bank/AfDB are main financiers. ARCEP oversees the ICT sector.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en Gabón?" : "How does KabatOne support security in Gabon?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en Gabón?" : "How does Kabat One support security in Gabon?",
                   a: es
-                    ? "KabatOne integra despacho PNR/Gendarmería en 9 provincias, gestión portuaria Owendo/Port-Gentil, seguridad offshore TotalEnergies/Assala, coordinación CTRI y monitoreo fronterizo con Camerún/Guinea Ecuatorial/República del Congo."
-                    : "KabatOne integrates PNR/Gendarmerie dispatch across 9 provinces, Owendo/Port-Gentil port management, TotalEnergies/Assala offshore security, CTRI coordination, and border monitoring with Cameroon/Equatorial Guinea/Republic of Congo.",
+                    ? "Kabat One integra despacho PNR/Gendarmería en 9 provincias, gestión portuaria Owendo/Port-Gentil, seguridad offshore TotalEnergies/Assala, coordinación CTRI y monitoreo fronterizo con Camerún/Guinea Ecuatorial/República del Congo."
+                    : "Kabat One integrates PNR/Gendarmerie dispatch across 9 provinces, Owendo/Port-Gentil port management, TotalEnergies/Assala offshore security, CTRI coordination, and border monitoring with Cameroon/Equatorial Guinea/Republic of Congo.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -354,8 +354,8 @@ export default async function PublicSafetySoftwareGabonPage({
           es={es}
           h2={es ? "¿Listo para modernizar la seguridad pública en Gabón?" : "Ready to modernize public safety in Gabon?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a las FDG, la PNR, las operaciones portuarias en Owendo/Port-Gentil y la seguridad de las plataformas petrolíferas offshore de Gabón."
-            : "Contact us to discover how KabatOne supports FDG, PNR, port operations in Owendo/Port-Gentil, and Gabon's offshore oil platform security."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a las FDG, la PNR, las operaciones portuarias en Owendo/Port-Gentil y la seguridad de las plataformas petrolíferas offshore de Gabón."
+            : "Contact us to discover how Kabat One supports FDG, PNR, port operations in Owendo/Port-Gentil, and Gabon's offshore oil platform security."}
         />
         <Footer es={es} />
       </main>

@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareZimbabwePage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Zimbabue: ZRP/ZNA, ZINWA/ZIMRA, Harare Safe City, ZETDC/ZESA & Cybercrime Act 2017 | KabatOne'
-      : 'Public Safety Software for Zimbabwe: ZRP/ZNA, ZINWA/ZIMRA, Harare Safe City, ZETDC/ZESA & Cybercrime Act 2017 | KabatOne',
+      ? 'Software de Seguridad Pública para Zimbabue: ZRP/ZNA, ZINWA/ZIMRA, Harare Safe City, ZETDC/ZESA & Cybercrime Act 2017 | Kabat One'
+      : 'Public Safety Software for Zimbabwe: ZRP/ZNA, ZINWA/ZIMRA, Harare Safe City, ZETDC/ZESA & Cybercrime Act 2017 | Kabat One',
     es
       ? 'Plataforma unificada para la Policía de la República de Zimbabue (ZRP) y ZNA — despacho CAD integrado en 10 provincias, Harare Safe City, ZINWA gestión hídrica, Zimbabwe Power Company/ZETDC, Puerto Beitbridge/Forbes y Cybercrime Act 2017/PDA y adquisición PRAZ/PFMA.'
       : 'Unified platform for Zimbabwe Republic Police (ZRP) and ZNA — integrated CAD dispatch across 10 provinces, Harare Safe City, ZINWA water management, Zimbabwe Power Company/ZETDC, Beitbridge/Forbes border, Cybercrime Act 2017/PDA compliance, and PRAZ/PFMA procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareZimbabwePage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Zimbabue?'
-        : 'How does KabatOne address Zimbabwe critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Zimbabue?'
+        : 'How does Kabat One address Zimbabwe critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de Zimbabwe Power Company (ZPC) y ZETDC (distribución eléctrica), la Barragem de Kariba (1,626 MW, compartida con Zambia), ZINWA (agua), el corredor ferroviario NRZ hacia los puertos de Mozambique (Beira/Maputo), las minas de diamante de Chiadzwa/Marange, Zimplats (platino) y el Aeropuerto Internacional de Harare (HRE).'
-        : 'KabatOne integrates management for Zimbabwe Power Company (ZPC) and ZETDC (power distribution), Kariba Dam (1,626 MW, shared with Zambia), ZINWA (water), NRZ railway corridor to Mozambique ports (Beira/Maputo), Chiadzwa/Marange diamond mines, Zimplats (platinum), and Harare International Airport (HRE).',
+        ? 'Kabat One integra gestión de Zimbabwe Power Company (ZPC) y ZETDC (distribución eléctrica), la Barragem de Kariba (1,626 MW, compartida con Zambia), ZINWA (agua), el corredor ferroviario NRZ hacia los puertos de Mozambique (Beira/Maputo), las minas de diamante de Chiadzwa/Marange, Zimplats (platino) y el Aeropuerto Internacional de Harare (HRE).'
+        : 'Kabat One integrates management for Zimbabwe Power Company (ZPC) and ZETDC (power distribution), Kariba Dam (1,626 MW, shared with Zambia), ZINWA (water), NRZ railway corridor to Mozambique ports (Beira/Maputo), Chiadzwa/Marange diamond mines, Zimplats (platinum), and Harare International Airport (HRE).',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Zimbabue?'
-        : 'Is KabatOne compliant with Zimbabwe data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Zimbabue?'
+        : 'Is Kabat One compliant with Zimbabwe data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Ley de Protección de Datos Personales (PDA) 2021 supervisada por la POTRAZ (Autoridad Reguladora de los Servicios Postales y de Telecomunicaciones). La arquitectura se alinea con la Ley sobre Delitos Informáticos y Ciberdelincuencia 2017 y la Política Nacional de Ciberseguridad del Ministerio de ICT.'
-        : 'Yes. KabatOne is designed to comply with the Personal Data Protection Act (PDA) 2021 supervised by POTRAZ (Postal and Telecommunications Regulatory Authority). The architecture aligns with the Cybercrime and Cybersecurity Act 2017 and the Ministry of ICT National Cybersecurity Policy.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Ley de Protección de Datos Personales (PDA) 2021 supervisada por la POTRAZ (Autoridad Reguladora de los Servicios Postales y de Telecomunicaciones). La arquitectura se alinea con la Ley sobre Delitos Informáticos y Ciberdelincuencia 2017 y la Política Nacional de Ciberseguridad del Ministerio de ICT.'
+        : 'Yes. Kabat One is designed to comply with the Personal Data Protection Act (PDA) 2021 supervised by POTRAZ (Postal and Telecommunications Regulatory Authority). The architecture aligns with the Cybercrime and Cybersecurity Act 2017 and the Ministry of ICT National Cybersecurity Policy.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la gestión de fronteras en Zimbabue?'
-        : 'How does KabatOne support border management in Zimbabwe?',
+        ? '¿Cómo apoya Kabat One la gestión de fronteras en Zimbabue?'
+        : 'How does Kabat One support border management in Zimbabwe?',
       answer: es
-        ? 'KabatOne gestiona los principales pasos fronterizos: Beitbridge (Sudáfrica, uno de los más transitados de África), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (Botsuana/Zambia/Namibia/Zimbabue cuádruple frontera) y Victoria Falls/Plumtree (Botsuana) con ANPR integrado y coordinación ZRP/ZNA/ZIMRA.'
-        : 'KabatOne manages major border crossings: Beitbridge (South Africa, one of Africa\'s busiest), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (Botswana/Zambia/Namibia/Zimbabwe quadruple border) and Victoria Falls/Plumtree (Botswana) with integrated ANPR and ZRP/ZNA/ZIMRA coordination.',
+        ? 'Kabat One gestiona los principales pasos fronterizos: Beitbridge (Sudáfrica, uno de los más transitados de África), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (Botsuana/Zambia/Namibia/Zimbabue cuádruple frontera) y Victoria Falls/Plumtree (Botsuana) con ANPR integrado y coordinación ZRP/ZNA/ZIMRA.'
+        : 'Kabat One manages major border crossings: Beitbridge (South Africa, one of Africa\'s busiest), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (Botswana/Zambia/Namibia/Zimbabwe quadruple border) and Victoria Falls/Plumtree (Botswana) with integrated ANPR and ZRP/ZNA/ZIMRA coordination.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareZimbabwePage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Zimbabue'
-                : 'KabatOne Platform Capabilities for Zimbabwe'}
+                ? 'Capacidades de la Plataforma Kabat One para Zimbabue'
+                : 'Kabat One Platform Capabilities for Zimbabwe'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareZimbabwePage({
                       a: 'La ZRP bajo el Ministerio del Interior cubre 10 provincias con 35,000+ efectivos y CID. El ZNA apoya la seguridad interna y fronteriza. La CPU/DMA coordina ciclones, inundaciones y emergencias. El CIO gestiona la inteligencia nacional.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Zimbabue?',
-                      a: 'KabatOne integra gestión de ZPC/ZETDC/Kariba Dam (1,626 MW), ZINWA agua, NRZ ferroviario, minas de diamante Chiadzwa/Marange, Zimplats platinum Great Dyke y el Aeropuerto Internacional de Harare HRE.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Zimbabue?',
+                      a: 'Kabat One integra gestión de ZPC/ZETDC/Kariba Dam (1,626 MW), ZINWA agua, NRZ ferroviario, minas de diamante Chiadzwa/Marange, Zimplats platinum Great Dyke y el Aeropuerto Internacional de Harare HRE.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Zimbabue?',
-                      a: 'Sí. KabatOne cumple con la PDA 2021/POTRAZ. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2017 y la Política Nacional de Ciberseguridad 2021-2025 del Ministerio de ICT.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Zimbabue?',
+                      a: 'Sí. Kabat One cumple con la PDA 2021/POTRAZ. La arquitectura está alineada con la Ley sobre Delitos Informáticos 2017 y la Política Nacional de Ciberseguridad 2021-2025 del Ministerio de ICT.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la gestión de fronteras en Zimbabue?',
-                      a: 'KabatOne gestiona Beitbridge (Sudáfrica, 5M+ cruces/año), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (cuádruple frontera) y Victoria Falls/Plumtree (Botsuana) con ANPR y coordinación ZIMRA/ZRP/ZNA.',
+                      q: '¿Cómo apoya Kabat One la gestión de fronteras en Zimbabue?',
+                      a: 'Kabat One gestiona Beitbridge (Sudáfrica, 5M+ cruces/año), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (cuádruple frontera) y Victoria Falls/Plumtree (Botsuana) con ANPR y coordinación ZIMRA/ZRP/ZNA.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareZimbabwePage({
                       a: 'The ZRP under the Ministry of Home Affairs covers 10 provinces with 35,000+ officers and CID. The ZNA supports internal and border security. The CPU/DMA coordinates cyclones, floods and emergencies. The CIO manages national intelligence.',
                     },
                     {
-                      q: 'How does KabatOne address Zimbabwe critical infrastructure?',
-                      a: 'KabatOne integrates management for ZPC/ZETDC/Kariba Dam (1,626 MW), ZINWA water, NRZ railway, Chiadzwa/Marange diamond mines, Zimplats platinum Great Dyke and Harare International Airport HRE.',
+                      q: 'How does Kabat One address Zimbabwe critical infrastructure?',
+                      a: 'Kabat One integrates management for ZPC/ZETDC/Kariba Dam (1,626 MW), ZINWA water, NRZ railway, Chiadzwa/Marange diamond mines, Zimplats platinum Great Dyke and Harare International Airport HRE.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Zimbabwe data legislation?',
-                      a: 'Yes. KabatOne complies with PDA 2021/POTRAZ. The architecture aligns with the Cybercrime Act 2017 and the Ministry of ICT National Cybersecurity Policy 2021-2025.',
+                      q: 'Is Kabat One compliant with Zimbabwe data legislation?',
+                      a: 'Yes. Kabat One complies with PDA 2021/POTRAZ. The architecture aligns with the Cybercrime Act 2017 and the Ministry of ICT National Cybersecurity Policy 2021-2025.',
                     },
                     {
-                      q: 'How does KabatOne support border management in Zimbabwe?',
-                      a: "KabatOne manages Beitbridge (South Africa, 5M+ crossings/year), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (quadruple border) and Victoria Falls/Plumtree (Botswana) with ANPR and ZIMRA/ZRP/ZNA coordination.",
+                      q: 'How does Kabat One support border management in Zimbabwe?',
+                      a: "Kabat One manages Beitbridge (South Africa, 5M+ crossings/year), Forbes/Nyamapanda (Mozambique), Chirundu/Kariba (Zambia), Kazungula (quadruple border) and Victoria Falls/Plumtree (Botswana) with ANPR and ZIMRA/ZRP/ZNA coordination.",
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareZimbabwePage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la ZRP, ZNA y Civil Protection Unit de Zimbabue.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Zimbabwe ZRP, ZNA and Civil Protection Unit.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la ZRP, ZNA y Civil Protection Unit de Zimbabue.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Zimbabwe ZRP, ZNA and Civil Protection Unit.'
           }
         />
       </main>

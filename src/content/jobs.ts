@@ -134,9 +134,9 @@ export const jobs: Job[] = [
         'We are building our next-generation platform: a greenfield, cloud-native and on-premises-deployable operational platform that will become the foundation of our product line. We are looking for a hands-on Tech Lead to own it from the ground up.',
       sections: [
         {
-          heading: 'About KabatOne',
+          heading: 'About Kabat One',
           layout: 'prose',
-          body: 'KabatOne builds a unified, mission-critical public safety platform connecting emergency dispatch, GIS, video, sensors, incident management, mobile responders, evidence, and third-party systems. Our products support real-time decision-making in complex command-center environments across multiple countries.',
+          body: 'Kabat One builds a unified, mission-critical public safety platform connecting emergency dispatch, GIS, video, sensors, incident management, mobile responders, evidence, and third-party systems. Our products support real-time decision-making in complex command-center environments across multiple countries.',
         },
         {
           heading: 'The Role',
@@ -185,7 +185,7 @@ export const jobs: Job[] = [
             'Public safety, CAD, PSIM, video management, GIS or smart-city domain experience.',
             'Angular; Kubernetes and Helm; on-premises or air-gapped delivery; Kafka, Temporal, Keycloak / OIDC; OpenTelemetry.',
             'Shipping LLM-based features inside a product (retrieval, agents, evaluations, guardrails).',
-            'Leading distributed teams. KabatOne operates development teams in Israel and Mexico.',
+            'Leading distributed teams. Kabat One operates development teams in Israel and Mexico.',
             'Spanish.',
           ],
         },
@@ -210,9 +210,9 @@ export const jobs: Job[] = [
         'Estamos construyendo nuestra plataforma de nueva generación: una plataforma operativa greenfield, cloud-native y desplegable on-premises, que será la base de toda nuestra línea de producto. Buscamos un Tech Lead hands-on que la haga suya desde cero.',
       sections: [
         {
-          heading: 'Sobre KabatOne',
+          heading: 'Sobre Kabat One',
           layout: 'prose',
-          body: 'KabatOne desarrolla una plataforma unificada de seguridad pública de misión crítica que conecta despacho de emergencias, GIS, video, sensores, gestión de incidentes, unidades móviles en campo, evidencia y sistemas de terceros. Nuestros productos sostienen la toma de decisiones en tiempo real en entornos complejos de centros de mando en varios países.',
+          body: 'Kabat One desarrolla una plataforma unificada de seguridad pública de misión crítica que conecta despacho de emergencias, GIS, video, sensores, gestión de incidentes, unidades móviles en campo, evidencia y sistemas de terceros. Nuestros productos sostienen la toma de decisiones en tiempo real en entornos complejos de centros de mando en varios países.',
         },
         {
           heading: 'El Rol',
@@ -261,7 +261,7 @@ export const jobs: Job[] = [
             'Experiencia de dominio en seguridad pública, CAD, PSIM, gestión de video, GIS o ciudad inteligente.',
             'Angular; Kubernetes y Helm; entrega on-premises o en entornos air-gapped; Kafka, Temporal, Keycloak / OIDC; OpenTelemetry.',
             'Haber llevado a producción funcionalidades basadas en LLM dentro de un producto (retrieval, agentes, evaluaciones, guardrails).',
-            'Liderazgo de equipos distribuidos. KabatOne opera equipos de desarrollo en Israel y México.',
+            'Liderazgo de equipos distribuidos. Kabat One opera equipos de desarrollo en Israel y México.',
             'Español.',
           ],
         },

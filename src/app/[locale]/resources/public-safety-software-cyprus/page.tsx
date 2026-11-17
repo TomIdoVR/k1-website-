@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareCyprus({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Chipre | Policía/KYP, Puerto de Limassol, EEZ Gasífera y Green Line – KabatOne"
-        : "Public Safety Software for Cyprus | Police/KYP, Port of Limassol, Gas EEZ & Green Line – KabatOne",
+        ? "Software de Seguridad Pública para Chipre | Policía/KYP, Puerto de Limassol, EEZ Gasífera y Green Line – Kabat One"
+        : "Public Safety Software for Cyprus | Police/KYP, Port of Limassol, Gas EEZ & Green Line – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía de Chipre, KYP inteligencia y Guardia Nacional — gestión de la Línea Verde ONU, protección de la ZEE gasífera Afrodita/ENI, Puerto de Limassol, bases militares británicas y coordinación Frontex/UE."
-        : "KabatOne delivers public safety platform for Cyprus Police, KYP intelligence, and National Guard — UN Green Line management, Aphrodite/ENI gas EEZ protection, Port of Limassol, British military bases, and Frontex/EU coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía de Chipre, KYP inteligencia y Guardia Nacional — gestión de la Línea Verde ONU, protección de la ZEE gasífera Afrodita/ENI, Puerto de Limassol, bases militares británicas y coordinación Frontex/UE."
+        : "Kabat One delivers public safety platform for Cyprus Police, KYP intelligence, and National Guard — UN Green Line management, Aphrodite/ENI gas EEZ protection, Port of Limassol, British military bases, and Frontex/EU coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-cyprus"
         : "https://kabatone.com/resources/public-safety-software-cyprus",
@@ -344,13 +344,13 @@ export default async function PublicSafetySoftwareCyprus({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Chipre"
-              : "KabatOne Capabilities for Cyprus"}
+              ? "Capacidades Kabat One para Chipre"
+              : "Kabat One Capabilities for Cyprus"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -437,11 +437,11 @@ export default async function PublicSafetySoftwareCyprus({
               },
               {
                 q: es
-                  ? "¿Cómo puede KabatOne gestionar la seguridad de la Línea Verde?"
-                  : "How can KabatOne manage Green Line security?",
+                  ? "¿Cómo puede Kabat One gestionar la seguridad de la Línea Verde?"
+                  : "How can Kabat One manage Green Line security?",
                 a: es
-                  ? "KabatOne despliega CCTV en los 9 puntos de cruce habilitados, sensores de movimiento en la zona tampón, integración con el COP de UNFICYP, alertas en tiempo real para la Policía y la Guardia Nacional, y reportes de incidentes compatibles con el protocolo ONU."
-                  : "KabatOne deploys CCTV at 9 enabled crossing points, motion sensors in the buffer zone, integration with UNFICYP COP, real-time alerts for Police and National Guard, and UN-protocol-compatible incident reports.",
+                  ? "Kabat One despliega CCTV en los 9 puntos de cruce habilitados, sensores de movimiento en la zona tampón, integración con el COP de UNFICYP, alertas en tiempo real para la Policía y la Guardia Nacional, y reportes de incidentes compatibles con el protocolo ONU."
+                  : "Kabat One deploys CCTV at 9 enabled crossing points, motion sensors in the buffer zone, integration with UNFICYP COP, real-time alerts for Police and National Guard, and UN-protocol-compatible incident reports.",
               },
             ].map((item) => (
               <div
@@ -465,8 +465,8 @@ export default async function PublicSafetySoftwareCyprus({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía, KYP y Guardia Nacional en una plataforma unificada — Línea Verde ONU, ZEE gasífera, Puerto Limassol, cumplimiento GDPR/NIS2 y coordinación FRONTEX/EUNAVFOR."
-            : "KabatOne integrates Police, KYP, and National Guard in one unified platform — UN Green Line, gas EEZ, Port of Limassol, GDPR/NIS2 compliance, and FRONTEX/EUNAVFOR coordination."
+            ? "Kabat One integra Policía, KYP y Guardia Nacional en una plataforma unificada — Línea Verde ONU, ZEE gasífera, Puerto Limassol, cumplimiento GDPR/NIS2 y coordinación FRONTEX/EUNAVFOR."
+            : "Kabat One integrates Police, KYP, and National Guard in one unified platform — UN Green Line, gas EEZ, Port of Limassol, GDPR/NIS2 compliance, and FRONTEX/EUNAVFOR coordination."
         }
       />
       <Footer es={es} />
