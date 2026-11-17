@@ -140,13 +140,13 @@ export default async function AirportPage({
   }
 
   const airportFaqs = es ? [
-    { question: '¿Cómo protege KabatOne los aeropuertos?', answer: 'KabatOne unifica videovigilancia con IA, control de acceso, detección perimetral y gestión de incidentes en una sola plataforma. Cubre desde el perímetro hasta la puerta de embarque con un flujo de trabajo automatizado de cinco pasos.' },
-    { question: '¿Qué analítica de IA utiliza KabatOne en aeropuertos?', answer: 'KabatOne utiliza reconocimiento facial, detección de anomalías, identificación de comportamiento sospechoso y detección de objetos abandonados para identificar amenazas en tiempo real antes de que escalen.' },
-    { question: '¿Cumple KabatOne con los estándares de seguridad aeronáutica?', answer: 'Sí. La plataforma documenta cada incidente para cumplimiento y auditoría, gestionando la integración de diferentes sistemas mientras mantiene el cumplimiento con estándares de seguridad aeronáutica.' },
+    { question: '¿Cómo protege Kabat One los aeropuertos?', answer: 'Kabat One unifica videovigilancia con IA, control de acceso, detección perimetral y gestión de incidentes en una sola plataforma. Cubre desde el perímetro hasta la puerta de embarque con un flujo de trabajo automatizado de cinco pasos.' },
+    { question: '¿Qué analítica de IA utiliza Kabat One en aeropuertos?', answer: 'Kabat One utiliza reconocimiento facial, detección de anomalías, identificación de comportamiento sospechoso y detección de objetos abandonados para identificar amenazas en tiempo real antes de que escalen.' },
+    { question: '¿Cumple Kabat One con los estándares de seguridad aeronáutica?', answer: 'Sí. La plataforma documenta cada incidente para cumplimiento y auditoría, gestionando la integración de diferentes sistemas mientras mantiene el cumplimiento con estándares de seguridad aeronáutica.' },
   ] : [
-    { question: 'How does KabatOne protect airports?', answer: 'KabatOne unifies AI video surveillance, access control, perimeter detection, and incident management into a single platform. It covers from perimeter to gate with an automated five-step workflow.' },
-    { question: 'What AI analytics does KabatOne use in airports?', answer: 'KabatOne uses facial recognition, anomaly detection, suspicious behavior identification, and abandoned object detection to identify threats in real time before they escalate.' },
-    { question: 'Does KabatOne comply with aviation security standards?', answer: 'Yes. The platform documents every incident for compliance and audit, managing integration of different systems while maintaining compliance with aviation security standards.' },
+    { question: 'How does Kabat One protect airports?', answer: 'Kabat One unifies AI video surveillance, access control, perimeter detection, and incident management into a single platform. It covers from perimeter to gate with an automated five-step workflow.' },
+    { question: 'What AI analytics does Kabat One use in airports?', answer: 'Kabat One uses facial recognition, anomaly detection, suspicious behavior identification, and abandoned object detection to identify threats in real time before they escalate.' },
+    { question: 'Does Kabat One comply with aviation security standards?', answer: 'Yes. The platform documents every incident for compliance and audit, managing integration of different systems while maintaining compliance with aviation security standards.' },
   ]
 
   return (
@@ -232,8 +232,8 @@ export default async function AirportPage({
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }}>
               {es
-                ? 'La plataforma de seguridad aeroportuaria de KabatOne sigue un flujo de trabajo estructurado y automatizado que asegura que ninguna amenaza quede sin atender.'
-                : 'KabatOne\'s airport security platform follows a structured, automated workflow that ensures no threat goes unaddressed.'}
+                ? 'La plataforma de seguridad aeroportuaria de Kabat One sigue un flujo de trabajo estructurado y automatizado que asegura que ninguna amenaza quede sin atender.'
+                : 'Kabat One\'s airport security platform follows a structured, automated workflow that ensures no threat goes unaddressed.'}
             </p>
             <div className="ind-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, position: 'relative' }}>
               {/* connector line */}
@@ -306,8 +306,8 @@ export default async function AirportPage({
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '32px' }}>
               {es
-                ? 'KabatOne despliega una suite integrada disenada especificamente para entornos aeroportuarios.'
-                : 'KabatOne deploys an integrated suite purpose-built for airport environments.'}
+                ? 'Kabat One despliega una suite integrada disenada especificamente para entornos aeroportuarios.'
+                : 'Kabat One deploys an integrated suite purpose-built for airport environments.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {products.map((p) => (
@@ -402,8 +402,8 @@ export default async function AirportPage({
           es={es}
           h2={es ? 'Eleva la Seguridad de tu Aeropuerto' : 'Elevate Your Airport\'s Security'}
           subtitle={es
-            ? 'Del perimetro a la puerta de embarque — KabatOne unifica cada sistema en un solo centro de comando inteligente para seguridad aeronautica.'
-            : 'From perimeter to gate — KabatOne unifies every system into a single intelligent command center for aviation security.'}
+            ? 'Del perimetro a la puerta de embarque — Kabat One unifica cada sistema en un solo centro de comando inteligente para seguridad aeronautica.'
+            : 'From perimeter to gate — Kabat One unifies every system into a single intelligent command center for aviation security.'}
         />
 
         <Footer es={es} />

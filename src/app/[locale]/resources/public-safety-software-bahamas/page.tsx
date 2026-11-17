@@ -39,7 +39,7 @@ export default async function PublicSafetySoftwareBahamasPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el sistema de emergencias de las Bahamas?",
-      answer: "Las Bahamas operan el sistema 919 para emergencias policiales y el 911 para bomberos y emergencias medicas (introducido progresivamente). La Royal Bahamas Police Force (RBPF, ~3,500 oficiales) es la fuerza policial nacional, con sede en Nassau y presencia en las principales islas habitadas. La Royal Bahamas Defence Force (RBDF, ~1,800 efectivos) opera la mayor flota de patrulleras del Caribe, cubriendo un territorio maritimo de ~260,000 millas nauticas cuadradas. El National Emergency Management Agency (NEMA) coordina la respuesta a huracanes bajo la Disaster Preparedness and Response Act. KabatOne unifica todas estas agencias en un CAD integrado con capacidad maritima y terrestre.",
+      answer: "Las Bahamas operan el sistema 919 para emergencias policiales y el 911 para bomberos y emergencias medicas (introducido progresivamente). La Royal Bahamas Police Force (RBPF, ~3,500 oficiales) es la fuerza policial nacional, con sede en Nassau y presencia en las principales islas habitadas. La Royal Bahamas Defence Force (RBDF, ~1,800 efectivos) opera la mayor flota de patrulleras del Caribe, cubriendo un territorio maritimo de ~260,000 millas nauticas cuadradas. El National Emergency Management Agency (NEMA) coordina la respuesta a huracanes bajo la Disaster Preparedness and Response Act. Kabat One unifica todas estas agencias en un CAD integrado con capacidad maritima y terrestre.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en las Bahamas?",
@@ -47,24 +47,24 @@ export default async function PublicSafetySoftwareBahamasPage({
     },
     {
       question: "¿Por que la seguridad maritima es la prioridad principal de las Bahamas?",
-      answer: "Las Bahamas son un archipielago de 700+ islas y cayos que se extienden sobre 100,000 millas cuadradas de oceano, con solo 30 islas habitadas. El 97% del territorio nacional es agua. La proximidad a Florida (solo 50 millas) convierte a las Bahamas en punto critico de trafico de drogas (cocaina Colombia/Venezuela→EE.UU.), migracion ilegal (Haiti, Cuba), y contrabando maritimo. La RBDF opera bases navales en Nassau (Coral Harbour), Freeport, Inagua, Ragged Island y Exuma. OPBAT (Operation Bahamas, Turks and Caicos) es una operacion conjunta anti-narcoticos permanente con DEA, USCG y fuerzas britanicas. KabatOne integra radar costero, AIS, VMS y drones maritimos en una plataforma de vigilancia unificada.",
+      answer: "Las Bahamas son un archipielago de 700+ islas y cayos que se extienden sobre 100,000 millas cuadradas de oceano, con solo 30 islas habitadas. El 97% del territorio nacional es agua. La proximidad a Florida (solo 50 millas) convierte a las Bahamas en punto critico de trafico de drogas (cocaina Colombia/Venezuela→EE.UU.), migracion ilegal (Haiti, Cuba), y contrabando maritimo. La RBDF opera bases navales en Nassau (Coral Harbour), Freeport, Inagua, Ragged Island y Exuma. OPBAT (Operation Bahamas, Turks and Caicos) es una operacion conjunta anti-narcoticos permanente con DEA, USCG y fuerzas britanicas. Kabat One integra radar costero, AIS, VMS y drones maritimos en una plataforma de vigilancia unificada.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente en las Bahamas?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV de la RBPF en Nassau (New Providence) y Freeport (Grand Bahama), las camaras del Aeropuerto Internacional Lynden Pindling (NAS, 3.5M+ pasajeros/ano), la videovigilancia del Puerto de Nassau (3.5M+ cruceristas/ano), las camaras de Atlantis Paradise Island y Baha Mar, y los sistemas de seguridad del Freeport Container Port se conectan directamente. Compatible con la infraestructura de fibra de BTC (Bahamas Telecommunications Company), Cable Bahamas/REV, y Aliv.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente en las Bahamas?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las redes de CCTV de la RBPF en Nassau (New Providence) y Freeport (Grand Bahama), las camaras del Aeropuerto Internacional Lynden Pindling (NAS, 3.5M+ pasajeros/ano), la videovigilancia del Puerto de Nassau (3.5M+ cruceristas/ano), las camaras de Atlantis Paradise Island y Baha Mar, y los sistemas de seguridad del Freeport Container Port se conectan directamente. Compatible con la infraestructura de fibra de BTC (Bahamas Telecommunications Company), Cable Bahamas/REV, y Aliv.",
     },
     {
       question: "¿Como se estructura la gobernanza territorial de las Bahamas?",
-      answer: "Las Bahamas son una monarquia constitucional parlamentaria (Commonwealth) con el Rey Carlos III como jefe de estado. El pais se divide en 32 distritos administrativos, de los cuales New Providence (Nassau, capital, ~280,000 hab. — 70% de la poblacion total) y Grand Bahama (Freeport, ~55,000 hab.) son los principales centros urbanos. Las Family Islands (Out Islands) — Abaco, Eleuthera, Exuma, Long Island, Andros, Cat Island, Inagua — tienen poblaciones pequenas pero extensiones territoriales enormes. La gobernanza local se ejerce a traves de Local Government Councils. KabatOne se adapta a esta dispersion geografica extrema con operacion satelital, edge computing y despacho inter-isla.",
+      answer: "Las Bahamas son una monarquia constitucional parlamentaria (Commonwealth) con el Rey Carlos III como jefe de estado. El pais se divide en 32 distritos administrativos, de los cuales New Providence (Nassau, capital, ~280,000 hab. — 70% de la poblacion total) y Grand Bahama (Freeport, ~55,000 hab.) son los principales centros urbanos. Las Family Islands (Out Islands) — Abaco, Eleuthera, Exuma, Long Island, Andros, Cat Island, Inagua — tienen poblaciones pequenas pero extensiones territoriales enormes. La gobernanza local se ejerce a traves de Local Government Councils. Kabat One se adapta a esta dispersion geografica extrema con operacion satelital, edge computing y despacho inter-isla.",
     },
     {
-      question: "¿Como se alinea KabatOne con las regulaciones de compras de las Bahamas?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales conforme a la Financial Administration and Audit Act y las directrices del Treasury Department. Las Bahamas tienen compromiso con la transparencia en las adquisiciones publicas. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. La Data Protection (Privacy of Personal Information) Act 2003 rige la proteccion de datos, y KabatOne cumple con estos requisitos. El BSD (dolar bahameño) esta a paridad 1:1 con el USD, simplificando la contratacion con proveedores estadounidenses.",
+      question: "¿Como se alinea Kabat One con las regulaciones de compras de las Bahamas?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales conforme a la Financial Administration and Audit Act y las directrices del Treasury Department. Las Bahamas tienen compromiso con la transparencia en las adquisiciones publicas. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada. La Data Protection (Privacy of Personal Information) Act 2003 rige la proteccion de datos, y Kabat One cumple con estos requisitos. El BSD (dolar bahameño) esta a paridad 1:1 con el USD, simplificando la contratacion con proveedores estadounidenses.",
     },
   ] : [
     {
       question: "How does The Bahamas emergency response system work?",
-      answer: "The Bahamas operates the 919 system for police emergencies and 911 for fire and medical emergencies (progressively introduced). The Royal Bahamas Police Force (RBPF, ~3,500 officers) is the national police force, headquartered in Nassau with presence on major inhabited islands. The Royal Bahamas Defence Force (RBDF, ~1,800 personnel) operates the largest patrol fleet in the Caribbean, covering a maritime territory of ~260,000 square nautical miles. The National Emergency Management Agency (NEMA) coordinates hurricane response under the Disaster Preparedness and Response Act. KabatOne unifies all these agencies into one integrated CAD with maritime and land-based capability.",
+      answer: "The Bahamas operates the 919 system for police emergencies and 911 for fire and medical emergencies (progressively introduced). The Royal Bahamas Police Force (RBPF, ~3,500 officers) is the national police force, headquartered in Nassau with presence on major inhabited islands. The Royal Bahamas Defence Force (RBDF, ~1,800 personnel) operates the largest patrol fleet in the Caribbean, covering a maritime territory of ~260,000 square nautical miles. The National Emergency Management Agency (NEMA) coordinates hurricane response under the Disaster Preparedness and Response Act. Kabat One unifies all these agencies into one integrated CAD with maritime and land-based capability.",
     },
     {
       question: "How is public safety technology funded in The Bahamas?",
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareBahamasPage({
     },
     {
       question: "Why is maritime security The Bahamas' top priority?",
-      answer: "The Bahamas is an archipelago of 700+ islands and cays spanning 100,000 square miles of ocean, with only 30 inhabited islands. 97% of national territory is water. Proximity to Florida (just 50 miles) makes The Bahamas a critical point for drug trafficking (cocaine Colombia/Venezuela→US), illegal migration (Haiti, Cuba), and maritime smuggling. RBDF operates naval bases at Nassau (Coral Harbour), Freeport, Inagua, Ragged Island, and Exuma. OPBAT (Operation Bahamas, Turks and Caicos) is a permanent joint anti-narcotics operation with DEA, USCG, and British forces. KabatOne integrates coastal radar, AIS, VMS, and maritime drones into one unified surveillance platform.",
+      answer: "The Bahamas is an archipelago of 700+ islands and cays spanning 100,000 square miles of ocean, with only 30 inhabited islands. 97% of national territory is water. Proximity to Florida (just 50 miles) makes The Bahamas a critical point for drug trafficking (cocaine Colombia/Venezuela→US), illegal migration (Haiti, Cuba), and maritime smuggling. RBDF operates naval bases at Nassau (Coral Harbour), Freeport, Inagua, Ragged Island, and Exuma. OPBAT (Operation Bahamas, Turks and Caicos) is a permanent joint anti-narcotics operation with DEA, USCG, and British forces. Kabat One integrates coastal radar, AIS, VMS, and maritime drones into one unified surveillance platform.",
     },
     {
-      question: "Can KabatOne integrate with existing video infrastructure in The Bahamas?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. RBPF CCTV networks in Nassau (New Providence) and Freeport (Grand Bahama), Lynden Pindling International Airport (NAS, 3.5M+ passengers/year) cameras, Port of Nassau surveillance (3.5M+ cruise passengers/year), Atlantis Paradise Island and Baha Mar security cameras, and Freeport Container Port systems connect directly. Compatible with BTC (Bahamas Telecommunications Company), Cable Bahamas/REV, and Aliv fiber infrastructure.",
+      question: "Can Kabat One integrate with existing video infrastructure in The Bahamas?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. RBPF CCTV networks in Nassau (New Providence) and Freeport (Grand Bahama), Lynden Pindling International Airport (NAS, 3.5M+ passengers/year) cameras, Port of Nassau surveillance (3.5M+ cruise passengers/year), Atlantis Paradise Island and Baha Mar security cameras, and Freeport Container Port systems connect directly. Compatible with BTC (Bahamas Telecommunications Company), Cable Bahamas/REV, and Aliv fiber infrastructure.",
     },
     {
       question: "How is territorial governance structured in The Bahamas?",
-      answer: "The Bahamas is a parliamentary constitutional monarchy (Commonwealth) with King Charles III as head of state. The country is divided into 32 administrative districts, with New Providence (Nassau, capital, ~280,000 pop. — 70% of total population) and Grand Bahama (Freeport, ~55,000 pop.) as the main urban centers. The Family Islands (Out Islands) — Abaco, Eleuthera, Exuma, Long Island, Andros, Cat Island, Inagua — have small populations but enormous territorial extensions. Local governance operates through Local Government Councils. KabatOne adapts to this extreme geographic dispersion with satellite operation, edge computing, and inter-island dispatch.",
+      answer: "The Bahamas is a parliamentary constitutional monarchy (Commonwealth) with King Charles III as head of state. The country is divided into 32 administrative districts, with New Providence (Nassau, capital, ~280,000 pop. — 70% of total population) and Grand Bahama (Freeport, ~55,000 pop.) as the main urban centers. The Family Islands (Out Islands) — Abaco, Eleuthera, Exuma, Long Island, Andros, Cat Island, Inagua — have small populations but enormous territorial extensions. Local governance operates through Local Government Councils. Kabat One adapts to this extreme geographic dispersion with satellite operation, edge computing, and inter-island dispatch.",
     },
     {
-      question: "How does KabatOne align with Bahamas procurement regulations?",
-      answer: "KabatOne is marketed through local distributors and integrators under the Financial Administration and Audit Act and Treasury Department guidelines. The Bahamas maintains a commitment to public procurement transparency. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Data Protection (Privacy of Personal Information) Act 2003 governs data protection, and KabatOne is compliant by design. The BSD (Bahamian dollar) is at 1:1 parity with the USD, simplifying contracting with US-based vendors.",
+      question: "How does Kabat One align with Bahamas procurement regulations?",
+      answer: "Kabat One is marketed through local distributors and integrators under the Financial Administration and Audit Act and Treasury Department guidelines. The Bahamas maintains a commitment to public procurement transparency. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform. The Data Protection (Privacy of Personal Information) Act 2003 governs data protection, and Kabat One is compliant by design. The BSD (Bahamian dollar) is at 1:1 parity with the USD, simplifying contracting with US-based vendors.",
     },
   ]
 
@@ -205,8 +205,8 @@ export default async function PublicSafetySoftwareBahamasPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#164e63', marginTop: 14 }}>
             {es
-              ? 'KabatOne integra radar costero, AIS (Automatic Identification System), VMS de flota pesquera, drones maritimos, camaras termicas y datos satelitales en una plataforma unica que da imagen operativa completa de las aguas bahameñas.'
-              : 'KabatOne integrates coastal radar, AIS (Automatic Identification System), fishing fleet VMS, maritime drones, thermal cameras, and satellite data into one platform providing complete operational picture of Bahamian waters.'}
+              ? 'Kabat One integra radar costero, AIS (Automatic Identification System), VMS de flota pesquera, drones maritimos, camaras termicas y datos satelitales en una plataforma unica que da imagen operativa completa de las aguas bahameñas.'
+              : 'Kabat One integrates coastal radar, AIS (Automatic Identification System), fishing fleet VMS, maritime drones, thermal cameras, and satellite data into one platform providing complete operational picture of Bahamian waters.'}
           </p>
         </section>
 
@@ -245,15 +245,15 @@ export default async function PublicSafetySoftwareBahamasPage({
           </ul>
           <p style={{ lineHeight: 1.7, color: '#78350f', marginTop: 14 }}>
             {es
-              ? 'KabatOne opera con capacidades edge/local por isla que funcionan independientemente cuando se pierden las comunicaciones inter-isla. Respaldo satelital Starlink, baterias de 72+ horas, y restauracion automatica al recuperarse la conectividad. El NEMA puede coordinar evacuaciones y respuesta desde cualquier isla operativa.'
-              : 'KabatOne operates with per-island edge/local capabilities that function independently when inter-island communications are lost. Starlink satellite backup, 72+ hour batteries, and automatic restoration when connectivity recovers. NEMA can coordinate evacuations and response from any operational island.'}
+              ? 'Kabat One opera con capacidades edge/local por isla que funcionan independientemente cuando se pierden las comunicaciones inter-isla. Respaldo satelital Starlink, baterias de 72+ horas, y restauracion automatica al recuperarse la conectividad. El NEMA puede coordinar evacuaciones y respuesta desde cualquier isla operativa.'
+              : 'Kabat One operates with per-island edge/local capabilities that function independently when inter-island communications are lost. Starlink satellite backup, 72+ hour batteries, and automatic restoration when connectivity recovers. NEMA can coordinate evacuations and response from any operational island.'}
           </p>
         </section>
 
         {/* ── Comparison Table ── */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 14, color: '#0f172a' }}>
-            {es ? 'KabatOne vs. Soluciones Fragmentadas' : 'KabatOne vs. Fragmented Solutions'}
+            {es ? 'Kabat One vs. Soluciones Fragmentadas' : 'Kabat One vs. Fragmented Solutions'}
           </h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -261,7 +261,7 @@ export default async function PublicSafetySoftwareBahamasPage({
                 <tr style={{ background: '#f8fafc' }}>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: '#475569' }}>{es ? 'Sistemas Tradicionales' : 'Legacy Systems'}</th>
-                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>KabatOne</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0', color: ACCENT }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -354,8 +354,8 @@ export default async function PublicSafetySoftwareBahamasPage({
           es={es}
           h2={es ? '¿Listo para unificar la seguridad del archipielago bahameño?' : 'Ready to unify security across the Bahamian archipelago?'}
           subtitle={es
-            ? 'KabatOne conecta RBPF, RBDF, NEMA y operaciones maritimas en una plataforma integrada — con vigilancia maritima, despacho inter-isla y resiliencia ante huracanes.'
-            : 'KabatOne connects RBPF, RBDF, NEMA, and maritime operations on one integrated platform — with maritime surveillance, inter-island dispatch, and hurricane resilience.'}
+            ? 'Kabat One conecta RBPF, RBDF, NEMA y operaciones maritimas en una plataforma integrada — con vigilancia maritima, despacho inter-isla y resiliencia ante huracanes.'
+            : 'Kabat One connects RBPF, RBDF, NEMA, and maritime operations on one integrated platform — with maritime surveillance, inter-island dispatch, and hurricane resilience.'}
         />
       </main>
 

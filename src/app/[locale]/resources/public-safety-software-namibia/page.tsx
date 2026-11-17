@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareNamibiaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Namibia | NDF/NPF, Uranio Rossing/Husab, Costa Atlántica y SADC – KabatOne"
-    : "Public Safety Software for Namibia | NDF/NPF, Rossing/Husab Uranium, Atlantic Coast & SADC – KabatOne";
+    ? "Software de Seguridad Pública para Namibia | NDF/NPF, Uranio Rossing/Husab, Costa Atlántica y SADC – Kabat One"
+    : "Public Safety Software for Namibia | NDF/NPF, Rossing/Husab Uranium, Atlantic Coast & SADC – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa de Namibia (NDF), Policía Nacional, protección de minas de uranio Rossing/Husab, seguridad marítima del Atlántico y gestión de fronteras SADC."
-    : "KabatOne delivers public safety platform for Namibia Defence Force (NDF), National Police, Rossing/Husab uranium mine protection, Atlantic maritime security, and SADC border management.";
+    ? "Kabat One entrega plataforma de seguridad pública para la Fuerza de Defensa de Namibia (NDF), Policía Nacional, protección de minas de uranio Rossing/Husab, seguridad marítima del Atlántico y gestión de fronteras SADC."
+    : "Kabat One delivers public safety platform for Namibia Defence Force (NDF), National Police, Rossing/Husab uranium mine protection, Atlantic maritime security, and SADC border management.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-namibia"
     : "https://kabatone.com/resources/public-safety-software-namibia";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareNamibiaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Namibia?"
-        : "How does KabatOne support public safety in Namibia?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Namibia?"
+        : "How does Kabat One support public safety in Namibia?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones NDF/NPF en las 14 regiones. Los módulos de seguridad nuclear/minera protegen las instalaciones de Rossing y Husab con vigilancia perimetral avanzada. El sistema de seguridad portuaria cubre el Puerto de Walvis Bay (hub SADC). Los módulos de seguridad marítima monitoran la ZEE de 200 nm y las operaciones offshore de gas del Cuenca Orange. El sistema anti-caza furtiva protege rinocerontes y elefantes en Etosha y áreas de conservación. La gestión de fronteras cubre los corredores Sudáfrica, Botsuana, Zambia, Angola y Zimbabwe."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for NDF/NPF operations across all 14 regions. Nuclear/mining security modules protect Rossing and Husab facilities with advanced perimeter surveillance. Port security system covers Port of Walvis Bay (SADC hub). Maritime security modules monitor the 200 nm EEZ and Orange Basin offshore gas operations. Anti-poaching system protects rhinos and elephants in Etosha and conservation areas. Border management covers South Africa, Botswana, Zambia, Angola, and Zimbabwe corridors.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones NDF/NPF en las 14 regiones. Los módulos de seguridad nuclear/minera protegen las instalaciones de Rossing y Husab con vigilancia perimetral avanzada. El sistema de seguridad portuaria cubre el Puerto de Walvis Bay (hub SADC). Los módulos de seguridad marítima monitoran la ZEE de 200 nm y las operaciones offshore de gas del Cuenca Orange. El sistema anti-caza furtiva protege rinocerontes y elefantes en Etosha y áreas de conservación. La gestión de fronteras cubre los corredores Sudáfrica, Botsuana, Zambia, Angola y Zimbabwe."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for NDF/NPF operations across all 14 regions. Nuclear/mining security modules protect Rossing and Husab facilities with advanced perimeter surveillance. Port security system covers Port of Walvis Bay (SADC hub). Maritime security modules monitor the 200 nm EEZ and Orange Basin offshore gas operations. Anti-poaching system protects rhinos and elephants in Etosha and conservation areas. Border management covers South Africa, Botswana, Zambia, Angola, and Zimbabwe corridors.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareNamibiaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Namibia" : "KabatOne Capabilities for Namibia"}
+              {es ? "Capacidades Kabat One para Namibia" : "Kabat One Capabilities for Namibia"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

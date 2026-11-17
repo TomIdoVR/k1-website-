@@ -17,14 +17,14 @@ export async function generateMetadata({
     locale,
     ogImage: '/demo/violence/stage-1-detect.jpg',
     en: {
-      title: 'Violence Detection Walkthrough | KabatOne Platform Demo',
+      title: 'Violence Detection Walkthrough | Kabat One Platform Demo',
       description:
-        "See how KabatOne's AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
+        "See how Kabat One's AI video analytics detects violent incidents in real time — from initial alert to field response in under 2 minutes.",
     },
     es: {
-      title: 'Recorrido de Detección de Violencia | Demo de la Plataforma KabatOne',
+      title: 'Recorrido de Detección de Violencia | Demo de la Plataforma Kabat One',
       description:
-        'Descubre cómo la analítica de video con IA de KabatOne detecta incidentes violentos en tiempo real, de la alerta a la respuesta en campo en 2 minutos.',
+        'Descubre cómo la analítica de video con IA de Kabat One detecta incidentes violentos en tiempo real, de la alerta a la respuesta en campo en 2 minutos.',
     },
   })
 }

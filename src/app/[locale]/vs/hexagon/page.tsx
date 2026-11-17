@@ -28,58 +28,58 @@ export default async function VsHexagonPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Hexagon Safety', url: es ? 'https://kabatone.com/es/vs/hexagon' : 'https://kabatone.com/vs/hexagon' },
+    { name: 'Kabat One vs Hexagon Safety', url: es ? 'https://kabatone.com/es/vs/hexagon' : 'https://kabatone.com/vs/hexagon' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Hexagon Safety?',
-      answer: 'Hexagon Safety & Infrastructure, a través de su producto HxGN OnCall CAD, ofrece uno de los sistemas CAD más maduros del mercado, respaldado por la experiencia geoespacial del grupo Hexagon AB. Su fortaleza está en despacho y GIS. KabatOne integra esas mismas capacidades — más gestión de video (K-Video) y gestión de tráfico (K-Traffic) — en una plataforma unificada nativa. La diferencia principal es el alcance: Hexagon hace CAD y GIS de forma excelente; KabatOne hace CAD, GIS, video y tráfico en un solo flujo sin proyectos de integración.',
+      question: '¿Cuál es la diferencia entre Kabat One y Hexagon Safety?',
+      answer: 'Hexagon Safety & Infrastructure, a través de su producto HxGN OnCall CAD, ofrece uno de los sistemas CAD más maduros del mercado, respaldado por la experiencia geoespacial del grupo Hexagon AB. Su fortaleza está en despacho y GIS. Kabat One integra esas mismas capacidades — más gestión de video (K-Video) y gestión de tráfico (K-Traffic) — en una plataforma unificada nativa. La diferencia principal es el alcance: Hexagon hace CAD y GIS de forma excelente; Kabat One hace CAD, GIS, video y tráfico en un solo flujo sin proyectos de integración.',
     },
     {
       question: '¿HxGN OnCall incluye gestión de video?',
-      answer: 'No. HxGN OnCall CAD de Hexagon no incluye un módulo nativo de gestión de video. Las organizaciones que necesitan video de vigilancia junto con Hexagon CAD deben integrar un VMS de terceros por separado — lo que añade costos de licencia, complejidad de integración y un equipo de soporte adicional. KabatOne incluye K-Video como módulo nativo con analítica IA, integrando video directamente con el flujo de despacho CAD.',
+      answer: 'No. HxGN OnCall CAD de Hexagon no incluye un módulo nativo de gestión de video. Las organizaciones que necesitan video de vigilancia junto con Hexagon CAD deben integrar un VMS de terceros por separado — lo que añade costos de licencia, complejidad de integración y un equipo de soporte adicional. Kabat One incluye K-Video como módulo nativo con analítica IA, integrando video directamente con el flujo de despacho CAD.',
     },
     {
-      question: '¿Cómo se compara el GIS de Hexagon con K-Safety de KabatOne?',
-      answer: 'Hexagon AB es una de las empresas de geoespacial más grandes del mundo, y HxGN OnCall refleja esa fortaleza en CAD con mapeo avanzado, AVL y routing de unidades. K-Safety de KabatOne ofrece capacidades comparables de conciencia situacional GIS — mapa operativo en tiempo real, seguimiento de incidentes y unidades, integración de feeds de video — con la ventaja de estar nativamente integrado con K-Dispatch, K-Video y K-Traffic sin requerir un sistema GIS separado.',
+      question: '¿Cómo se compara el GIS de Hexagon con K-Safety de Kabat One?',
+      answer: 'Hexagon AB es una de las empresas de geoespacial más grandes del mundo, y HxGN OnCall refleja esa fortaleza en CAD con mapeo avanzado, AVL y routing de unidades. K-Safety de Kabat One ofrece capacidades comparables de conciencia situacional GIS — mapa operativo en tiempo real, seguimiento de incidentes y unidades, integración de feeds de video — con la ventaja de estar nativamente integrado con K-Dispatch, K-Video y K-Traffic sin requerir un sistema GIS separado.',
     },
     {
-      question: '¿Puede KabatOne trabajar junto a un despliegue de Hexagon CAD existente?',
-      answer: 'Sí, en principio KabatOne puede integrarse con sistemas CAD existentes vía APIs. Sin embargo, la propuesta de valor de KabatOne es reemplazar el stack fragmentado (CAD separado + VMS separado + GIS separado) con una plataforma unificada. Para nuevas implementaciones o renovaciones de contrato, KabatOne entrega todas esas capacidades — incluyendo video y tráfico que Hexagon no incluye — en un solo sistema.',
+      question: '¿Puede Kabat One trabajar junto a un despliegue de Hexagon CAD existente?',
+      answer: 'Sí, en principio Kabat One puede integrarse con sistemas CAD existentes vía APIs. Sin embargo, la propuesta de valor de Kabat One es reemplazar el stack fragmentado (CAD separado + VMS separado + GIS separado) con una plataforma unificada. Para nuevas implementaciones o renovaciones de contrato, Kabat One entrega todas esas capacidades — incluyendo video y tráfico que Hexagon no incluye — en un solo sistema.',
     },
     {
-      question: '¿Cuál es mejor para centros de mando — Hexagon o KabatOne?',
-      answer: 'Hexagon HxGN OnCall es excelente para agencias que priorizan CAD maduro con capacidades GIS avanzadas y pueden gestionar integraciones separadas para video y tráfico. KabatOne es la opción más fuerte para centros de mando C4/C5 y municipios que necesitan video, CAD, GIS y tráfico en un solo flujo operativo — especialmente en México y Latinoamérica, donde KabatOne tiene más de 40 despliegues activos con esa estructura.',
+      question: '¿Cuál es mejor para centros de mando — Hexagon o Kabat One?',
+      answer: 'Hexagon HxGN OnCall es excelente para agencias que priorizan CAD maduro con capacidades GIS avanzadas y pueden gestionar integraciones separadas para video y tráfico. Kabat One es la opción más fuerte para centros de mando C4/C5 y municipios que necesitan video, CAD, GIS y tráfico en un solo flujo operativo — especialmente en México y Latinoamérica, donde Kabat One tiene más de 40 despliegues activos con esa estructura.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Hexagon Safety no ofrece?',
-      answer: 'En comparación con Hexagon HxGN OnCall, KabatOne agrega: gestión de video nativa con analítica IA (K-Video) — Hexagon requiere VMS de terceros; gestión de tráfico inteligente (K-Traffic) con control de semáforos, detección de infracciones y coordinación de vehículos de emergencia; video comunitario y ciudadano integrado al centro de mando (K-Connect); y arquitectura cloud-native desde el inicio, frente a la implementación on-premise/híbrida típica de Hexagon.',
+      question: '¿Qué ofrece Kabat One que Hexagon Safety no ofrece?',
+      answer: 'En comparación con Hexagon HxGN OnCall, Kabat One agrega: gestión de video nativa con analítica IA (K-Video) — Hexagon requiere VMS de terceros; gestión de tráfico inteligente (K-Traffic) con control de semáforos, detección de infracciones y coordinación de vehículos de emergencia; video comunitario y ciudadano integrado al centro de mando (K-Connect); y arquitectura cloud-native desde el inicio, frente a la implementación on-premise/híbrida típica de Hexagon.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Hexagon Safety?',
-      answer: 'Hexagon Safety & Infrastructure, through its HxGN OnCall CAD product, offers one of the most mature CAD systems in the market, backed by the geospatial expertise of the Hexagon AB group. Its strength is in dispatch and GIS. KabatOne integrates those same capabilities — plus video management (K-Video) and traffic management (K-Traffic) — in one native unified platform. The core difference is scope: Hexagon does CAD and GIS very well; KabatOne does CAD, GIS, video, and traffic in one workflow without integration projects.',
+      question: 'What is the difference between Kabat One and Hexagon Safety?',
+      answer: 'Hexagon Safety & Infrastructure, through its HxGN OnCall CAD product, offers one of the most mature CAD systems in the market, backed by the geospatial expertise of the Hexagon AB group. Its strength is in dispatch and GIS. Kabat One integrates those same capabilities — plus video management (K-Video) and traffic management (K-Traffic) — in one native unified platform. The core difference is scope: Hexagon does CAD and GIS very well; Kabat One does CAD, GIS, video, and traffic in one workflow without integration projects.',
     },
     {
       question: 'Does HxGN OnCall include video management?',
-      answer: 'No. Hexagon HxGN OnCall CAD does not include a native video management module. Organizations that need surveillance video alongside Hexagon CAD must integrate a separate third-party VMS — adding licensing costs, integration complexity, and an additional support team. KabatOne includes K-Video as a native module with AI analytics, integrating video directly into the CAD dispatch workflow.',
+      answer: 'No. Hexagon HxGN OnCall CAD does not include a native video management module. Organizations that need surveillance video alongside Hexagon CAD must integrate a separate third-party VMS — adding licensing costs, integration complexity, and an additional support team. Kabat One includes K-Video as a native module with AI analytics, integrating video directly into the CAD dispatch workflow.',
     },
     {
-      question: 'How does Hexagon\'s GIS compare to KabatOne\'s K-Safety?',
-      answer: 'Hexagon AB is one of the world\'s largest geospatial companies, and HxGN OnCall reflects that strength with advanced mapping, AVL, and unit routing in CAD. KabatOne\'s K-Safety offers comparable situational awareness GIS capabilities — real-time operational map, incident and unit tracking, video feed integration — with the advantage of being natively integrated with K-Dispatch, K-Video, and K-Traffic without requiring a separate GIS system.',
+      question: 'How does Hexagon\'s GIS compare to Kabat One\'s K-Safety?',
+      answer: 'Hexagon AB is one of the world\'s largest geospatial companies, and HxGN OnCall reflects that strength with advanced mapping, AVL, and unit routing in CAD. Kabat One\'s K-Safety offers comparable situational awareness GIS capabilities — real-time operational map, incident and unit tracking, video feed integration — with the advantage of being natively integrated with K-Dispatch, K-Video, and K-Traffic without requiring a separate GIS system.',
     },
     {
-      question: 'Can KabatOne work alongside an existing Hexagon CAD deployment?',
-      answer: 'Yes, KabatOne can integrate with existing CAD systems via APIs in principle. However, KabatOne\'s core value proposition is replacing the fragmented stack (separate CAD + separate VMS + separate GIS) with a unified platform. For new deployments or contract renewals, KabatOne delivers all those capabilities — including video and traffic that Hexagon does not include — in one system.',
+      question: 'Can Kabat One work alongside an existing Hexagon CAD deployment?',
+      answer: 'Yes, Kabat One can integrate with existing CAD systems via APIs in principle. However, Kabat One\'s core value proposition is replacing the fragmented stack (separate CAD + separate VMS + separate GIS) with a unified platform. For new deployments or contract renewals, Kabat One delivers all those capabilities — including video and traffic that Hexagon does not include — in one system.',
     },
     {
-      question: 'Which is better for command centers — Hexagon or KabatOne?',
-      answer: 'Hexagon HxGN OnCall is excellent for agencies that prioritize mature CAD with advanced GIS capabilities and can manage separate integrations for video and traffic. KabatOne is the stronger choice for C4/C5 command centers and municipalities that need video, CAD, GIS, and traffic in one operational workflow — especially in Mexico and Latin America, where KabatOne has 40+ active deployments with that structure.',
+      question: 'Which is better for command centers — Hexagon or Kabat One?',
+      answer: 'Hexagon HxGN OnCall is excellent for agencies that prioritize mature CAD with advanced GIS capabilities and can manage separate integrations for video and traffic. Kabat One is the stronger choice for C4/C5 command centers and municipalities that need video, CAD, GIS, and traffic in one operational workflow — especially in Mexico and Latin America, where Kabat One has 40+ active deployments with that structure.',
     },
     {
-      question: 'What does KabatOne offer that Hexagon Safety does not?',
-      answer: 'Compared to Hexagon HxGN OnCall, KabatOne adds: native video management with AI analytics (K-Video) — Hexagon requires a third-party VMS; intelligent traffic management (K-Traffic) with signal control, violation detection, and emergency vehicle coordination; community and citizen video integration into the command center (K-Connect); and cloud-native architecture from day one, versus the typical on-premise or hybrid Hexagon deployment.',
+      question: 'What does Kabat One offer that Hexagon Safety does not?',
+      answer: 'Compared to Hexagon HxGN OnCall, Kabat One adds: native video management with AI analytics (K-Video) — Hexagon requires a third-party VMS; intelligent traffic management (K-Traffic) with signal control, violation detection, and emergency vehicle coordination; community and citizen video integration into the command center (K-Connect); and cloud-native architecture from day one, versus the typical on-premise or hybrid Hexagon deployment.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsHexagonPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Hexagon Safety</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Hexagon Safety</span>
         </div>
 
         {/* ── HERO ── */}
@@ -200,13 +200,13 @@ export default async function VsHexagonPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Hexagon Safety — CAD y GIS, Más el Resto'
-              : 'KabatOne vs Hexagon Safety — CAD and GIS, Plus the Rest'}
+              ? 'Kabat One vs Hexagon Safety — CAD y GIS, Más el Resto'
+              : 'Kabat One vs Hexagon Safety — CAD and GIS, Plus the Rest'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'Hexagon HxGN OnCall es uno de los sistemas CAD más maduros del mercado, respaldado por el liderazgo geoespacial de Hexagon AB. KabatOne incluye capacidades de CAD y GIS equivalentes y las combina con gestión de video nativa (K-Video) y gestión de tráfico inteligente (K-Traffic) — conectando el flujo completo de respuesta en un solo sistema sin requerir integraciones adicionales.'
-              : 'Hexagon HxGN OnCall is one of the most mature CAD systems in the market, backed by Hexagon AB\'s geospatial leadership. KabatOne includes equivalent CAD and GIS capabilities and combines them with native video management (K-Video) and intelligent traffic management (K-Traffic) — connecting the full response workflow in one system without additional integrations.'}
+              ? 'Hexagon HxGN OnCall es uno de los sistemas CAD más maduros del mercado, respaldado por el liderazgo geoespacial de Hexagon AB. Kabat One incluye capacidades de CAD y GIS equivalentes y las combina con gestión de video nativa (K-Video) y gestión de tráfico inteligente (K-Traffic) — conectando el flujo completo de respuesta en un solo sistema sin requerir integraciones adicionales.'
+              : 'Hexagon HxGN OnCall is one of the most mature CAD systems in the market, backed by Hexagon AB\'s geospatial leadership. Kabat One includes equivalent CAD and GIS capabilities and combines them with native video management (K-Video) and intelligent traffic management (K-Traffic) — connecting the full response workflow in one system without additional integrations.'}
           </p>
           {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
               answer engine finds a self-contained verdict at the top, not only in the FAQ.
@@ -263,22 +263,22 @@ export default async function VsHexagonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos. K-Safety ofrece capacidades comparables a las de HxGN OnCall en cuanto a GIS y conciencia situacional — mapa operativo en tiempo real, tracking de unidades, análisis de incidentes — con la ventaja de que están nativamente integradas con video, despacho y tráfico en un solo flujo de trabajo.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens. K-Safety offers capabilities comparable to HxGN OnCall in terms of GIS and situational awareness — real-time operational map, unit tracking, incident analysis — with the advantage that they are natively integrated with video, dispatch, and traffic in one workflow.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos. K-Safety ofrece capacidades comparables a las de HxGN OnCall en cuanto a GIS y conciencia situacional — mapa operativo en tiempo real, tracking de unidades, análisis de incidentes — con la ventaja de que están nativamente integradas con video, despacho y tráfico en un solo flujo de trabajo.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens. K-Safety offers capabilities comparable to HxGN OnCall in terms of GIS and situational awareness — real-time operational map, unit tracking, incident analysis — with the advantage that they are natively integrated with video, dispatch, and traffic in one workflow.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'La diferencia clave es que KabatOne no requiere un proyecto de integración entre sus módulos. Cuando un incidente es creado en K-Dispatch, se refleja automáticamente en K-Safety con la unidad asignada, el feed de video relevante de K-Video y el estado del tráfico circundante de K-Traffic — todo sin configuración adicional.'
-                : 'The key difference is that KabatOne requires no integration project between its modules. When an incident is created in K-Dispatch, it automatically appears in K-Safety with the assigned unit, the relevant K-Video feed, and surrounding traffic status from K-Traffic — all without additional configuration.'}
+                ? 'La diferencia clave es que Kabat One no requiere un proyecto de integración entre sus módulos. Cuando un incidente es creado en K-Dispatch, se refleja automáticamente en K-Safety con la unidad asignada, el feed de video relevante de K-Video y el estado del tráfico circundante de K-Traffic — todo sin configuración adicional.'
+                : 'The key difference is that Kabat One requires no integration project between its modules. When an incident is created in K-Dispatch, it automatically appears in K-Safety with the assigned unit, the relevant K-Video feed, and surrounding traffic status from K-Traffic — all without additional configuration.'}
             </p>
           </div>
         </section>
@@ -291,12 +291,12 @@ export default async function VsHexagonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Hexagon Safety: Diferencias Clave' : 'KabatOne vs Hexagon Safety: Key Differences'}
+              {es ? 'Kabat One vs Hexagon Safety: Diferencias Clave' : 'Kabat One vs Hexagon Safety: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Hexagon HxGN OnCall en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Hexagon HxGN OnCall across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Hexagon HxGN OnCall en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Hexagon HxGN OnCall across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -311,7 +311,7 @@ export default async function VsHexagonPage({
                   Hexagon Safety
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -352,13 +352,13 @@ export default async function VsHexagonPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne fue diseñado para ese escenario. K-Safety ofrece la misma profundidad de GIS operacional que HxGN OnCall — mapa en tiempo real, AVL, routing de unidades, análisis de zonas — pero conectado nativamente con K-Video para validar incidentes con cámaras y con K-Dispatch para crear el evento CAD sin cambiar de aplicación. Para centros C4/C5 que gestionan múltiples disciplinas simultáneamente, este flujo unificado reduce el tiempo de respuesta y la carga cognitiva del operador.'
-                : 'KabatOne was designed for that scenario. K-Safety provides the same depth of operational GIS as HxGN OnCall — real-time map, AVL, unit routing, zone analysis — but natively connected to K-Video to validate incidents with cameras and to K-Dispatch to create the CAD event without switching applications. For C4/C5 centers managing multiple disciplines simultaneously, this unified workflow reduces response time and operator cognitive load.'}
+                ? 'Kabat One fue diseñado para ese escenario. K-Safety ofrece la misma profundidad de GIS operacional que HxGN OnCall — mapa en tiempo real, AVL, routing de unidades, análisis de zonas — pero conectado nativamente con K-Video para validar incidentes con cámaras y con K-Dispatch para crear el evento CAD sin cambiar de aplicación. Para centros C4/C5 que gestionan múltiples disciplinas simultáneamente, este flujo unificado reduce el tiempo de respuesta y la carga cognitiva del operador.'
+                : 'Kabat One was designed for that scenario. K-Safety provides the same depth of operational GIS as HxGN OnCall — real-time map, AVL, unit routing, zone analysis — but natively connected to K-Video to validate incidents with cameras and to K-Dispatch to create the CAD event without switching applications. For C4/C5 centers managing multiple disciplines simultaneously, this unified workflow reduces response time and operator cognitive load.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne también incluye K-Traffic — gestión inteligente de semáforos y tráfico urbano integrada directamente con el flujo de respuesta a emergencias. Cuando una unidad es despachada en K-Dispatch, K-Traffic puede coordinar los semáforos en la ruta. Esta capacidad no existe en el ecosistema de Hexagon y requeriría un cuarto sistema en un despliegue tradicional.'
-                : 'KabatOne also includes K-Traffic — intelligent signal and urban traffic management integrated directly with the emergency response workflow. When a unit is dispatched in K-Dispatch, K-Traffic can coordinate signals on the route. This capability does not exist in the Hexagon ecosystem and would require a fourth system in a traditional deployment.'}
+                ? 'Kabat One también incluye K-Traffic — gestión inteligente de semáforos y tráfico urbano integrada directamente con el flujo de respuesta a emergencias. Cuando una unidad es despachada en K-Dispatch, K-Traffic puede coordinar los semáforos en la ruta. Esta capacidad no existe en el ecosistema de Hexagon y requeriría un cuarto sistema en un despliegue tradicional.'
+                : 'Kabat One also includes K-Traffic — intelligent signal and urban traffic management integrated directly with the emergency response workflow. When a unit is dispatched in K-Dispatch, K-Traffic can coordinate signals on the route. This capability does not exist in the Hexagon ecosystem and would require a fourth system in a traditional deployment.'}
             </p>
           </div>
         </section>
@@ -371,17 +371,17 @@ export default async function VsHexagonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? 'KabatOne Funciona con la Infraestructura que Ya Tienes' : 'KabatOne Works with the Infrastructure You Already Have'}
+              {es ? 'Kabat One Funciona con la Infraestructura que Ya Tienes' : 'Kabat One Works with the Infrastructure You Already Have'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está diseñado para integrarse con la infraestructura existente en lugar de forzar un reemplazo completo. K-Video soporta ONVIF, RTSP y protocolos IP estándar — lo que permite agregar cámaras de cualquier fabricante al centro de mando sin comprar hardware nuevo. K-Dispatch se integra con redes de radio estándar de la industria.'
-                : 'KabatOne is designed to integrate with existing infrastructure rather than force a full replacement. K-Video supports ONVIF, RTSP, and standard IP protocols — allowing cameras from any manufacturer to be added to the command center without purchasing new hardware. K-Dispatch integrates with standard industry radio networks.'}
+                ? 'Kabat One está diseñado para integrarse con la infraestructura existente en lugar de forzar un reemplazo completo. K-Video soporta ONVIF, RTSP y protocolos IP estándar — lo que permite agregar cámaras de cualquier fabricante al centro de mando sin comprar hardware nuevo. K-Dispatch se integra con redes de radio estándar de la industria.'
+                : 'Kabat One is designed to integrate with existing infrastructure rather than force a full replacement. K-Video supports ONVIF, RTSP, and standard IP protocols — allowing cameras from any manufacturer to be added to the command center without purchasing new hardware. K-Dispatch integrates with standard industry radio networks.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Para organizaciones que evalúan reemplazar Hexagon HxGN OnCall o ampliar sus capacidades actuales, KabatOne puede asumir el rol de plataforma unificada — preservando las inversiones en cámaras y hardware de comunicaciones existentes mientras se añaden video, tráfico y coordinación de campo nativa que Hexagon no provee.'
-                : 'For organizations evaluating replacing Hexagon HxGN OnCall or expanding their current capabilities, KabatOne can take on the role of unified platform — preserving investments in existing cameras and communications hardware while adding native video, traffic, and field coordination that Hexagon does not provide.'}
+                ? 'Para organizaciones que evalúan reemplazar Hexagon HxGN OnCall o ampliar sus capacidades actuales, Kabat One puede asumir el rol de plataforma unificada — preservando las inversiones en cámaras y hardware de comunicaciones existentes mientras se añaden video, tráfico y coordinación de campo nativa que Hexagon no provee.'
+                : 'For organizations evaluating replacing Hexagon HxGN OnCall or expanding their current capabilities, Kabat One can take on the role of unified platform — preserving investments in existing cameras and communications hardware while adding native video, traffic, and field coordination that Hexagon does not provide.'}
             </p>
           </div>
         </section>
@@ -394,7 +394,7 @@ export default async function VsHexagonPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -433,7 +433,7 @@ export default async function VsHexagonPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Hexagon: Preguntas y Respuestas' : 'KabatOne vs Hexagon: Questions & Answers'}
+              {es ? 'Kabat One vs Hexagon: Preguntas y Respuestas' : 'Kabat One vs Hexagon: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -473,7 +473,7 @@ export default async function VsHexagonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Zetron: alternativa para centros 911' : 'KabatOne vs Zetron'}</span>
+                <span>{es ? 'Kabat One vs Zetron: alternativa para centros 911' : 'Kabat One vs Zetron'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/cad" style={{
@@ -482,7 +482,7 @@ export default async function VsHexagonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Sistemas CAD Tradicionales' : 'KabatOne vs Traditional CAD Systems'}</span>
+                <span>{es ? 'Kabat One vs Sistemas CAD Tradicionales' : 'Kabat One vs Traditional CAD Systems'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -491,7 +491,7 @@ export default async function VsHexagonPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/psim-vs-unified-platform" style={{
@@ -534,8 +534,8 @@ export default async function VsHexagonPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta CAD, GIS, video y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects CAD, GIS, video, and traffic in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta CAD, GIS, video y tráfico en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects CAD, GIS, video, and traffic in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

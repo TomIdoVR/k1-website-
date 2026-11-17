@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareGermanyPage({
       answer: 'Alemania tiene un enfoque más restrictivo hacia la videovigilancia que otros países europeos, fundamentado en los derechos constitucionales a la privacidad (artículo 2 de la Ley Fundamental). Las cámaras en espacios públicos requieren justificación legal (Polizeigesetze estatales). El reconocimiento facial en tiempo real está bajo escrutinio del Bundestag y las Datenschutzbeauftragten estatales. Sin embargo, proyectos como el sistema CCTV de la Berliner Polizei, la videovigilancia en estaciones ferroviarias (Deutsche Bahn + Bundespolizei) y los centros de mando de NRW demuestran uso creciente de analítica de video con IA para seguridad pública.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para las Leitstellen y fuerzas policiales alemanas?',
-      answer: 'KabatOne integra las funciones que los Leitstellen alemanes gestionan en sistemas separados: despacho CAD con soporte para sistemas 110/112 simultáneos (K-Dispatch), gestión de CCTV con analítica de IA conforme al principio de minimización de datos DSGVO (K-Video) y conciencia situacional GIS para coordinación Landkreis/Landespolizei (K-Safety). La plataforma admite despliegue on-premises en infraestructura alemana y cumple los requisitos BSI IT-Grundschutz. Solicite una demostración adaptada al contexto de los Leitstellen integrados alemanes.',
+      question: '¿Por qué Kabat One es adecuado para las Leitstellen y fuerzas policiales alemanas?',
+      answer: 'Kabat One integra las funciones que los Leitstellen alemanes gestionan en sistemas separados: despacho CAD con soporte para sistemas 110/112 simultáneos (K-Dispatch), gestión de CCTV con analítica de IA conforme al principio de minimización de datos DSGVO (K-Video) y conciencia situacional GIS para coordinación Landkreis/Landespolizei (K-Safety). La plataforma admite despliegue on-premises en infraestructura alemana y cumple los requisitos BSI IT-Grundschutz. Solicite una demostración adaptada al contexto de los Leitstellen integrados alemanes.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareGermanyPage({
       answer: 'Germany takes a more restrictive approach to surveillance than other European countries, grounded in constitutional privacy rights (Article 2 of the Basic Law). Cameras in public spaces require legal justification under state police laws (Polizeigesetze). Real-time facial recognition faces scrutiny from the Bundestag and state data protection commissioners. However, projects like the Berliner Polizei CCTV system, station surveillance (Deutsche Bahn + Bundespolizei), and NRW command centres demonstrate growing use of AI video analytics for public safety.',
     },
     {
-      question: 'Why is KabatOne suited for German Leitstellen and police forces?',
-      answer: 'KabatOne integrates the functions German Leitstellen manage across separate systems: CAD dispatch with simultaneous 110/112 support (K-Dispatch), CCTV management with AI analytics compliant with DSGVO data minimisation principles (K-Video), and GIS situational awareness for Landkreis/Landespolizei coordination (K-Safety). The platform supports on-premises deployment on German infrastructure meeting BSI IT-Grundschutz requirements. Request a demo tailored to the German Integrierte Leitstellen context.',
+      question: 'Why is Kabat One suited for German Leitstellen and police forces?',
+      answer: 'Kabat One integrates the functions German Leitstellen manage across separate systems: CAD dispatch with simultaneous 110/112 support (K-Dispatch), CCTV management with AI analytics compliant with DSGVO data minimisation principles (K-Video), and GIS situational awareness for Landkreis/Landespolizei coordination (K-Safety). The platform supports on-premises deployment on German infrastructure meeting BSI IT-Grundschutz requirements. Request a demo tailored to the German Integrierte Leitstellen context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareGermanyPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Alemania opera 16 fuerzas policiales federales independientes y más de 300 Leitstellen integrados con el estándar BOS Digital TETRA. KabatOne unifica el despacho de emergencias 110/112, la gestión de CCTV con analítica de IA y la conciencia situacional GIS en una plataforma lista para el contexto alemán con cumplimiento DSGVO y BSI IT-Grundschutz.'
-                : 'Germany operates 16 independent state police forces and over 300 Integrated Leitstellen using the BOS Digital TETRA standard. KabatOne unifies 110/112 emergency dispatch, CCTV management with AI analytics, and GIS situational awareness in a single platform built for the German context with DSGVO and BSI IT-Grundschutz compliance.'}
+                ? 'Alemania opera 16 fuerzas policiales federales independientes y más de 300 Leitstellen integrados con el estándar BOS Digital TETRA. Kabat One unifica el despacho de emergencias 110/112, la gestión de CCTV con analítica de IA y la conciencia situacional GIS en una plataforma lista para el contexto alemán con cumplimiento DSGVO y BSI IT-Grundschutz.'
+                : 'Germany operates 16 independent state police forces and over 300 Integrated Leitstellen using the BOS Digital TETRA standard. Kabat One unifies 110/112 emergency dispatch, CCTV management with AI analytics, and GIS situational awareness in a single platform built for the German context with DSGVO and BSI IT-Grundschutz compliance.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareGermanyPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de los Leitstellen Alemanes' : 'How KabatOne Addresses German Leitstellen Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de los Leitstellen Alemanes' : 'How Kabat One Addresses German Leitstellen Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los Leitstellen que necesitan un único dashboard para gestionar simultáneamente llamadas 110 de policía y 112 de bomberos/médicos, monitorear redes de CCTV urbanas y coordinar unidades sobre un mapa GIS — todo bajo los estrictos requisitos de seguridad y privacidad alemanes.'
-                : 'KabatOne is designed for Leitstellen that need a single dashboard to simultaneously manage 110 police and 112 fire/medical calls, monitor urban CCTV networks, and coordinate units on a GIS map — all under Germany\'s strict security and privacy requirements.'}
+                ? 'Kabat One está diseñado para los Leitstellen que necesitan un único dashboard para gestionar simultáneamente llamadas 110 de policía y 112 de bomberos/médicos, monitorear redes de CCTV urbanas y coordinar unidades sobre un mapa GIS — todo bajo los estrictos requisitos de seguridad y privacidad alemanes.'
+                : 'Kabat One is designed for Leitstellen that need a single dashboard to simultaneously manage 110 police and 112 fire/medical calls, monitor urban CCTV networks, and coordinate units on a GIS map — all under Germany\'s strict security and privacy requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareGermanyPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -342,7 +342,7 @@ export default async function PublicSafetySoftwareGermanyPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Leitstelle o Fuerza Policial' : 'Request a Demo for Your Leitstelle or Police Force'}
-          subtitle={es ? 'KabatOne integra despacho 110/112, CCTV con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento DSGVO y BSI IT-Grundschutz. Demo adaptada al contexto alemán.' : 'KabatOne integrates 110/112 dispatch, CCTV with AI analytics, and GIS situational awareness in a single platform with DSGVO and BSI IT-Grundschutz compliance. Demo tailored to the German context.'}
+          subtitle={es ? 'Kabat One integra despacho 110/112, CCTV con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento DSGVO y BSI IT-Grundschutz. Demo adaptada al contexto alemán.' : 'Kabat One integrates 110/112 dispatch, CCTV with AI analytics, and GIS situational awareness in a single platform with DSGVO and BSI IT-Grundschutz compliance. Demo tailored to the German context.'}
         />
 
         <Footer es={es} />

@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareGambiaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Gambia | GAF/GPS, Río Gambia, Turismo y Post-Dictadura – KabatOne"
-    : "Public Safety Software for Gambia | GAF/GPS, Gambia River, Tourism & Post-Dictatorship – KabatOne";
+    ? "Software de Seguridad Pública para Gambia | GAF/GPS, Río Gambia, Turismo y Post-Dictadura – Kabat One"
+    : "Public Safety Software for Gambia | GAF/GPS, Gambia River, Tourism & Post-Dictatorship – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Gambia (GAF), Servicio de Policía, gestión del Río Gambia, seguridad turística y transición post-dictadura en el país más pequeño del continente africano."
-    : "KabatOne delivers public safety platform for Gambia Armed Forces (GAF), Police Service, Gambia River management, tourist security, and post-dictatorship transition in the smallest mainland country in Africa.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Gambia (GAF), Servicio de Policía, gestión del Río Gambia, seguridad turística y transición post-dictadura en el país más pequeño del continente africano."
+    : "Kabat One delivers public safety platform for Gambia Armed Forces (GAF), Police Service, Gambia River management, tourist security, and post-dictatorship transition in the smallest mainland country in Africa.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-gambia"
     : "https://kabatone.com/resources/public-safety-software-gambia";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareGambiaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Gambia?"
-        : "How does KabatOne support public safety in Gambia?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Gambia?"
+        : "How does Kabat One support public safety in Gambia?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones GAF/GPS en las 5 divisiones. Los módulos de seguridad turística protegen las zonas hoteleras costeras (Bakau, Kololi, Senegambia Strip) que son críticas para la economía. El sistema de seguridad portuaria y fluvial cubre el Puerto de Banjul y los corredores del Río Gambia (lanzaderas, terminales fluviales). Los módulos de gestión de fronteras cubren los 740 km de frontera con Senegal y el corredor Guinea-Bissau. La plataforma de gestión de investigaciones apoya las reformas post-TRRC del sistema de justicia."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for GAF/GPS operations across all 5 divisions. Tourist security modules protect coastal hotel zones (Bakau, Kololi, Senegambia Strip) critical to the economy. Port and river security system covers Port of Banjul and Gambia River corridors (ferries, river terminals). Border management modules cover the 740 km border with Senegal and Guinea-Bissau corridor. Investigation management platform supports post-TRRC justice system reforms.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones GAF/GPS en las 5 divisiones. Los módulos de seguridad turística protegen las zonas hoteleras costeras (Bakau, Kololi, Senegambia Strip) que son críticas para la economía. El sistema de seguridad portuaria y fluvial cubre el Puerto de Banjul y los corredores del Río Gambia (lanzaderas, terminales fluviales). Los módulos de gestión de fronteras cubren los 740 km de frontera con Senegal y el corredor Guinea-Bissau. La plataforma de gestión de investigaciones apoya las reformas post-TRRC del sistema de justicia."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for GAF/GPS operations across all 5 divisions. Tourist security modules protect coastal hotel zones (Bakau, Kololi, Senegambia Strip) critical to the economy. Port and river security system covers Port of Banjul and Gambia River corridors (ferries, river terminals). Border management modules cover the 740 km border with Senegal and Guinea-Bissau corridor. Investigation management platform supports post-TRRC justice system reforms.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareGambiaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Gambia" : "KabatOne Capabilities for Gambia"}
+              {es ? "Capacidades Kabat One para Gambia" : "Kabat One Capabilities for Gambia"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareEritreaPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Eritrea | EDF/EPS, Puerto de Massawa y Seguridad Marítima en el Mar Rojo – KabatOne"
-      : "Public Safety Software for Eritrea | EDF/EPS, Port of Massawa & Red Sea Maritime Security – KabatOne",
+      ? "Software de Seguridad Pública para Eritrea | EDF/EPS, Puerto de Massawa y Seguridad Marítima en el Mar Rojo – Kabat One"
+      : "Public Safety Software for Eritrea | EDF/EPS, Port of Massawa & Red Sea Maritime Security – Kabat One",
     es
-      ? "KabatOne ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Eritrea, la Policía del Estado de Eritrea, gestión portuaria en Massawa/Assab y seguridad marítima en el Estrecho de Bab-el-Mandeb."
-      : "KabatOne delivers public safety platform for the Eritrea Defence Forces, Eritrea State Police, port management at Massawa/Assab, and maritime security across the Red Sea and Bab-el-Mandeb corridor.",
+      ? "Kabat One ofrece plataforma de seguridad pública para las Fuerzas de Defensa de Eritrea, la Policía del Estado de Eritrea, gestión portuaria en Massawa/Assab y seguridad marítima en el Estrecho de Bab-el-Mandeb."
+      : "Kabat One delivers public safety platform for the Eritrea Defence Forces, Eritrea State Police, port management at Massawa/Assab, and maritime security across the Red Sea and Bab-el-Mandeb corridor.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-eritrea"
       : "https://kabatone.com/resources/public-safety-software-eritrea",
@@ -69,11 +69,11 @@ export default async function PublicSafetySoftwareEritreaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Eritrea?"
-        : "How does KabatOne support public safety in Eritrea?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Eritrea?"
+        : "How does Kabat One support public safety in Eritrea?",
       answer: es
-        ? "KabatOne integra sistemas de despacho para la EPS en 6 zonas administrativas, gestión de incidentes para los puertos de Massawa y Assab, coordinación de la Guardia Costera en el Archipiélago Dahlak, y supervisión de fronteras con Etiopía, Djibouti y Sudán con alertas en tiempo real."
-        : "KabatOne integrates dispatch systems for EPS across 6 administrative zones, incident management for Massawa and Assab ports, Coast Guard coordination in the Dahlak Archipelago, and border monitoring with Ethiopia, Djibouti, and Sudan with real-time alerts.",
+        ? "Kabat One integra sistemas de despacho para la EPS en 6 zonas administrativas, gestión de incidentes para los puertos de Massawa y Assab, coordinación de la Guardia Costera en el Archipiélago Dahlak, y supervisión de fronteras con Etiopía, Djibouti y Sudán con alertas en tiempo real."
+        : "Kabat One integrates dispatch systems for EPS across 6 administrative zones, incident management for Massawa and Assab ports, Coast Guard coordination in the Dahlak Archipelago, and border monitoring with Ethiopia, Djibouti, and Sudan with real-time alerts.",
     },
   ]);
 
@@ -277,11 +277,11 @@ export default async function PublicSafetySoftwareEritreaPage({
           </div>
         </section>
 
-        {/* KabatOne Fit */}
+        {/* Kabat One Fit */}
         <section className="py-16 px-6 bg-blue-900 text-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Plataforma KabatOne para Eritrea" : "KabatOne Platform for Eritrea"}
+              {es ? "Plataforma Kabat One para Eritrea" : "Kabat One Platform for Eritrea"}
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-800 rounded-xl p-6">
@@ -351,10 +351,10 @@ export default async function PublicSafetySoftwareEritreaPage({
                     : "The Ministry of Finance oversees procurement with heavy state enterprise involvement (RSADO, Segen Construction). International projects involve China (EXIM Bank/CCCC) and OPEC Fund. Market access is highly centralized.",
                 },
                 {
-                  q: es ? "¿Cómo apoya KabatOne la seguridad en Eritrea?" : "How does KabatOne support security in Eritrea?",
+                  q: es ? "¿Cómo apoya Kabat One la seguridad en Eritrea?" : "How does Kabat One support security in Eritrea?",
                   a: es
-                    ? "KabatOne integra despacho para la EPS en 6 zonas, gestión de incidentes en Massawa/Assab, coordinación de la Guardia Costera en el Archipiélago Dahlak y supervisión de fronteras con Etiopía, Sudán y Yibuti."
-                    : "KabatOne integrates EPS dispatch across 6 zones, incident management at Massawa/Assab, Coast Guard coordination in the Dahlak Archipelago, and border monitoring with Ethiopia, Sudan, and Djibouti.",
+                    ? "Kabat One integra despacho para la EPS en 6 zonas, gestión de incidentes en Massawa/Assab, coordinación de la Guardia Costera en el Archipiélago Dahlak y supervisión de fronteras con Etiopía, Sudán y Yibuti."
+                    : "Kabat One integrates EPS dispatch across 6 zones, incident management at Massawa/Assab, Coast Guard coordination in the Dahlak Archipelago, and border monitoring with Ethiopia, Sudan, and Djibouti.",
                 },
               ].map(({ q, a }, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
@@ -370,8 +370,8 @@ export default async function PublicSafetySoftwareEritreaPage({
           es={es}
           h2={es ? "¿Listo para modernizar la seguridad pública en Eritrea?" : "Ready to modernize public safety in Eritrea?"}
           subtitle={es
-            ? "Contáctenos para descubrir cómo KabatOne apoya a la EPS, operaciones portuarias en Massawa y Assab, y coordinación marítima a lo largo del Mar Rojo eritreo."
-            : "Contact us to discover how KabatOne supports EPS, port operations at Massawa and Assab, and maritime coordination along Eritrea's Red Sea coastline."}
+            ? "Contáctenos para descubrir cómo Kabat One apoya a la EPS, operaciones portuarias en Massawa y Assab, y coordinación marítima a lo largo del Mar Rojo eritreo."
+            : "Contact us to discover how Kabat One supports EPS, port operations at Massawa and Assab, and maritime coordination along Eritrea's Red Sea coastline."}
         />
         <Footer es={es} />
       </main>

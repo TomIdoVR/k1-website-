@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with Bangladesh Police's district and metropolitan structure?",
-    answer: "KabatOne aligns with Bangladesh Police's command hierarchy — integrating with the Inspector General of Police (IGP) at PHQ Dhaka, 8 Police Ranges covering 64 districts, Metropolitan Police Services (DMP/CMP/KMP/RMP/SMP/BMP/NRMP), and 650+ police stations — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Bangladesh Police protocols."
+    question: "How does Kabat One integrate with Bangladesh Police's district and metropolitan structure?",
+    answer: "Kabat One aligns with Bangladesh Police's command hierarchy — integrating with the Inspector General of Police (IGP) at PHQ Dhaka, 8 Police Ranges covering 64 districts, Metropolitan Police Services (DMP/CMP/KMP/RMP/SMP/BMP/NRMP), and 650+ police stations — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with Bangladesh Police protocols."
   },
   {
-    question: "Can KabatOne support Bangladesh Fire Service and Civil Defence (FSCD) operations?",
-    answer: "Yes. KabatOne integrates Bangladesh Fire Service and Civil Defence (FSCD) across 64 districts and 8 divisions, the Department of Disaster Management (DDM), Bangladesh Meteorological Department (BMD), and District/Upazila Disaster Management Committees — enabling unified command visibility and multi-agency coordination for cyclone response, floods, and fire emergencies."
+    question: "Can Kabat One support Bangladesh Fire Service and Civil Defence (FSCD) operations?",
+    answer: "Yes. Kabat One integrates Bangladesh Fire Service and Civil Defence (FSCD) across 64 districts and 8 divisions, the Department of Disaster Management (DDM), Bangladesh Meteorological Department (BMD), and District/Upazila Disaster Management Committees — enabling unified command visibility and multi-agency coordination for cyclone response, floods, and fire emergencies."
   },
   {
-    question: "How does KabatOne handle Bangladesh Digital Security Act and data protection compliance?",
-    answer: "KabatOne is designed for compliance with Bangladesh's Digital Security Act 2018, the Data Protection Bill (pending), and existing ICT Act 2006 provisions — implementing access controls, audit logs, data handling procedures, and cybersecurity frameworks aligned with Bangladesh Telecommunication Regulatory Commission (BTRC) and Digital Bangladesh guidelines."
+    question: "How does Kabat One handle Bangladesh Digital Security Act and data protection compliance?",
+    answer: "Kabat One is designed for compliance with Bangladesh's Digital Security Act 2018, the Data Protection Bill (pending), and existing ICT Act 2006 provisions — implementing access controls, audit logs, data handling procedures, and cybersecurity frameworks aligned with Bangladesh Telecommunication Regulatory Commission (BTRC) and Digital Bangladesh guidelines."
   },
   {
-    question: "Can KabatOne support cyclone and flood disaster operations in Bangladesh?",
-    answer: "Yes. KabatOne integrates BMD cyclone alerts, Bangladesh Flood Forecasting and Warning Centre (BFFWC/FFWC) flood data, Cyclone Preparedness Programme (CPP) volunteer networks, and DDM situation reports — supporting pre-emptive evacuation dispatch to 2,000+ cyclone shelters and the world-class Bangladesh disaster management system that has reduced cyclone deaths from 500,000 (1970) to near zero."
+    question: "Can Kabat One support cyclone and flood disaster operations in Bangladesh?",
+    answer: "Yes. Kabat One integrates BMD cyclone alerts, Bangladesh Flood Forecasting and Warning Centre (BFFWC/FFWC) flood data, Cyclone Preparedness Programme (CPP) volunteer networks, and DDM situation reports — supporting pre-emptive evacuation dispatch to 2,000+ cyclone shelters and the world-class Bangladesh disaster management system that has reduced cyclone deaths from 500,000 (1970) to near zero."
   },
   {
-    question: "How does KabatOne support Dhaka Metropolitan Police operations and Safe City?",
-    answer: "KabatOne integrates Dhaka Metropolitan Police (DMP) Command and Control Centre, Dhaka Safe City CCTV network, Bangladesh Road Transport Authority (BRTA) traffic cameras, and Dhaka Transport Coordination Authority (DTCA) — providing AI-powered analytics, ANPR integration, and unified situational awareness for greater Dhaka's 22+ million population."
+    question: "How does Kabat One support Dhaka Metropolitan Police operations and Safe City?",
+    answer: "Kabat One integrates Dhaka Metropolitan Police (DMP) Command and Control Centre, Dhaka Safe City CCTV network, Bangladesh Road Transport Authority (BRTA) traffic cameras, and Dhaka Transport Coordination Authority (DTCA) — providing AI-powered analytics, ANPR integration, and unified situational awareness for greater Dhaka's 22+ million population."
   },
   {
-    question: "What cybersecurity standards does KabatOne meet for Bangladeshi government procurement?",
-    answer: "KabatOne aligns with Bangladesh CIRT (Computer Incident Response Team) standards under BGD e-GOV CIRT, Digital Security Act 2018, National Cybersecurity Strategy, and Bangladesh Computer Council (BCC) ICT infrastructure guidelines — meeting e-Government standards under the a2i (Access to Information) and Smart Bangladesh programme."
+    question: "What cybersecurity standards does Kabat One meet for Bangladeshi government procurement?",
+    answer: "Kabat One aligns with Bangladesh CIRT (Computer Incident Response Team) standards under BGD e-GOV CIRT, Digital Security Act 2018, National Cybersecurity Strategy, and Bangladesh Computer Council (BCC) ICT infrastructure guidelines — meeting e-Government standards under the a2i (Access to Information) and Smart Bangladesh programme."
   },
   {
-    question: "What procurement pathway does KabatOne support in Bangladesh?",
-    answer: "KabatOne supports procurement through the Central Procurement Technical Unit (CPTU) e-GP (e-Government Procurement) portal under the Public Procurement Act 2006 and Public Procurement Rules 2008 — including open tendering, limited tendering, and direct procurement for emergency management systems at national, divisional, and district levels."
+    question: "What procurement pathway does Kabat One support in Bangladesh?",
+    answer: "Kabat One supports procurement through the Central Procurement Technical Unit (CPTU) e-GP (e-Government Procurement) portal under the Public Procurement Act 2006 and Public Procurement Rules 2008 — including open tendering, limited tendering, and direct procurement for emergency management systems at national, divisional, and district levels."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura distrital y metropolitana de la Policía de Bangladesh?",
-    answer: "KabatOne se alinea con la jerarquía de mando de la Policía de Bangladesh — integrándose con el Inspector General de la Policía (IGP) en el PHQ de Dhaka, 8 Rangos Policiales que cubren 64 distritos, Servicios de Policía Metropolitana (DMP/CMP/KMP/RMP/SMP/BMP/NRMP) y más de 650 estaciones de policía — proporcionando despacho CAD unificado y conciencia situacional en tiempo real."
+    question: "¿Cómo se integra Kabat One con la estructura distrital y metropolitana de la Policía de Bangladesh?",
+    answer: "Kabat One se alinea con la jerarquía de mando de la Policía de Bangladesh — integrándose con el Inspector General de la Policía (IGP) en el PHQ de Dhaka, 8 Rangos Policiales que cubren 64 distritos, Servicios de Policía Metropolitana (DMP/CMP/KMP/RMP/SMP/BMP/NRMP) y más de 650 estaciones de policía — proporcionando despacho CAD unificado y conciencia situacional en tiempo real."
   },
   {
-    question: "¿Puede KabatOne soportar las operaciones del Servicio de Bomberos y Defensa Civil de Bangladesh (FSCD)?",
-    answer: "Sí. KabatOne integra el FSCD de Bangladesh en 64 distritos y 8 divisiones, el Departamento de Gestión de Desastres (DDM), el Departamento Meteorológico de Bangladesh (BMD) y los Comités de Gestión de Desastres de Distrito/Upazila — habilitando visibilidad de mando unificada y coordinación multiagencia para respuesta ante ciclones, inundaciones e incendios."
+    question: "¿Puede Kabat One soportar las operaciones del Servicio de Bomberos y Defensa Civil de Bangladesh (FSCD)?",
+    answer: "Sí. Kabat One integra el FSCD de Bangladesh en 64 distritos y 8 divisiones, el Departamento de Gestión de Desastres (DDM), el Departamento Meteorológico de Bangladesh (BMD) y los Comités de Gestión de Desastres de Distrito/Upazila — habilitando visibilidad de mando unificada y coordinación multiagencia para respuesta ante ciclones, inundaciones e incendios."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Seguridad Digital de Bangladesh y la protección de datos?",
-    answer: "KabatOne está diseñado para cumplimiento con la Ley de Seguridad Digital 2018 de Bangladesh, el Proyecto de Ley de Protección de Datos (pendiente) y las disposiciones vigentes de la Ley TIC 2006 — implementando controles de acceso, registros de auditoría y marcos de ciberseguridad alineados con la BTRC y las directrices de Bangladesh Digital."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Seguridad Digital de Bangladesh y la protección de datos?",
+    answer: "Kabat One está diseñado para cumplimiento con la Ley de Seguridad Digital 2018 de Bangladesh, el Proyecto de Ley de Protección de Datos (pendiente) y las disposiciones vigentes de la Ley TIC 2006 — implementando controles de acceso, registros de auditoría y marcos de ciberseguridad alineados con la BTRC y las directrices de Bangladesh Digital."
   },
   {
-    question: "¿Puede KabatOne soportar operaciones ante ciclones e inundaciones en Bangladesh?",
-    answer: "Sí. KabatOne integra alertas de ciclones del BMD, datos de inundaciones del BFFWC/FFWC, redes de voluntarios del Programa de Preparación ante Ciclones (CPP) e informes situacionales del DDM — apoyando el despacho de evacuación preventiva a más de 2,000 refugios anticiclónicos y el sistema de gestión de desastres de Bangladesh reconocido mundialmente."
+    question: "¿Puede Kabat One soportar operaciones ante ciclones e inundaciones en Bangladesh?",
+    answer: "Sí. Kabat One integra alertas de ciclones del BMD, datos de inundaciones del BFFWC/FFWC, redes de voluntarios del Programa de Preparación ante Ciclones (CPP) e informes situacionales del DDM — apoyando el despacho de evacuación preventiva a más de 2,000 refugios anticiclónicos y el sistema de gestión de desastres de Bangladesh reconocido mundialmente."
   },
   {
-    question: "¿Cómo soporta KabatOne las operaciones de la Policía Metropolitana de Dhaka y el Safe City?",
-    answer: "KabatOne integra el Centro de Mando y Control de la Policía Metropolitana de Dhaka (DMP), la red CCTV Safe City de Dhaka, cámaras de tráfico de la BRTA y la DTCA — proporcionando analítica de IA, integración ANPR y visibilidad de mando unificada para la Gran Dhaka con más de 22 millones de habitantes."
+    question: "¿Cómo soporta Kabat One las operaciones de la Policía Metropolitana de Dhaka y el Safe City?",
+    answer: "Kabat One integra el Centro de Mando y Control de la Policía Metropolitana de Dhaka (DMP), la red CCTV Safe City de Dhaka, cámaras de tráfico de la BRTA y la DTCA — proporcionando analítica de IA, integración ANPR y visibilidad de mando unificada para la Gran Dhaka con más de 22 millones de habitantes."
   },
   {
-    question: "¿Qué estándares de ciberseguridad cumple KabatOne para la contratación gubernamental en Bangladesh?",
-    answer: "KabatOne se alinea con los estándares del CIRT de Bangladesh (BGD e-GOV CIRT), la Ley de Seguridad Digital 2018, la Estrategia Nacional de Ciberseguridad y las directrices de infraestructura TIC del BCC — cumpliendo los estándares de eGobierno bajo los programas a2i y Smart Bangladesh."
+    question: "¿Qué estándares de ciberseguridad cumple Kabat One para la contratación gubernamental en Bangladesh?",
+    answer: "Kabat One se alinea con los estándares del CIRT de Bangladesh (BGD e-GOV CIRT), la Ley de Seguridad Digital 2018, la Estrategia Nacional de Ciberseguridad y las directrices de infraestructura TIC del BCC — cumpliendo los estándares de eGobierno bajo los programas a2i y Smart Bangladesh."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Bangladesh?",
-    answer: "KabatOne soporta contratación a través del portal e-GP (e-Government Procurement) de la CPTU (Unidad Técnica Central de Adquisiciones) bajo la Ley de Contratación Pública 2006 y las Normas de Contratación Pública 2008 — incluyendo licitación abierta, restringida y contratación directa para sistemas de gestión de emergencias a nivel nacional, divisional y distrital."
+    question: "¿Qué vía de contratación soporta Kabat One en Bangladesh?",
+    answer: "Kabat One soporta contratación a través del portal e-GP (e-Government Procurement) de la CPTU (Unidad Técnica Central de Adquisiciones) bajo la Ley de Contratación Pública 2006 y las Normas de Contratación Pública 2008 — incluyendo licitación abierta, restringida y contratación directa para sistemas de gestión de emergencias a nivel nacional, divisional y distrital."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• e-GP portal: licitaciones Bangladesh Police, FSCD, DDM' : '• e-GP portal: Bangladesh Police, FSCD, DDM bids'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Bangladesh?' : 'Ready to modernize public safety in Bangladesh?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la Policía de Bangladesh, FSCD y DDM con una plataforma unificada conforme a la Ley de Seguridad Digital 2018 y compatible con e-GP/APP 2006.'
-            : 'See how KabatOne supports Bangladesh Police, FSCD, and DDM with a unified platform compliant with Digital Security Act 2018 and compatible with e-GP/PPA 2006 procurement.'}
+            ? 'Conozca cómo Kabat One apoya a la Policía de Bangladesh, FSCD y DDM con una plataforma unificada conforme a la Ley de Seguridad Digital 2018 y compatible con e-GP/APP 2006.'
+            : 'See how Kabat One supports Bangladesh Police, FSCD, and DDM with a unified platform compliant with Digital Security Act 2018 and compatible with e-GP/PPA 2006 procurement.'}
         />
       </main>
       <Footer es={es} />

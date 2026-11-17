@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareEswatiniPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Eswatini | UMBUTFO/RPM, Monarquía Absoluta, Azúcar y Manufactura – KabatOne"
-    : "Public Safety Software for Eswatini | UMBUTFO/RPM, Absolute Monarchy, Sugar & Manufacturing – KabatOne";
+    ? "Software de Seguridad Pública para Eswatini | UMBUTFO/RPM, Monarquía Absoluta, Azúcar y Manufactura – Kabat One"
+    : "Public Safety Software for Eswatini | UMBUTFO/RPM, Absolute Monarchy, Sugar & Manufacturing – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas de Defensa de Eswatini (UMBUTFO), Policía Real de Mozambique (RPM), protección de la industria azucarera y manufacturera, y gestión de fronteras con Sudáfrica y Mozambique."
-    : "KabatOne delivers public safety platform for Eswatini Defence Force (UMBUTFO), Royal Eswatini Police Service (REPS), sugar and manufacturing industry protection, and border management with South Africa and Mozambique.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas de Defensa de Eswatini (UMBUTFO), Policía Real de Mozambique (RPM), protección de la industria azucarera y manufacturera, y gestión de fronteras con Sudáfrica y Mozambique."
+    : "Kabat One delivers public safety platform for Eswatini Defence Force (UMBUTFO), Royal Eswatini Police Service (REPS), sugar and manufacturing industry protection, and border management with South Africa and Mozambique.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-eswatini"
     : "https://kabatone.com/resources/public-safety-software-eswatini";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareEswatiniPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Eswatini?"
-        : "How does KabatOne support public safety in Eswatini?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Eswatini?"
+        : "How does Kabat One support public safety in Eswatini?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones UEDF/REPS en los 4 distritos/tinkhundla. El sistema de gestión de orden público apoya la coordinación de respuesta ante protestas y disturbios civiles. Los módulos de protección industrial aseguran las operaciones azucareras RSSC/Ubombo y las plantaciones madereras Sappi/SWADE. El sistema de gestión de fronteras cubre los 365 km de frontera total con Sudáfrica y Mozambique. La plataforma de detección de incendios forestales integra analítica de vídeo IA para las plantaciones de pinos de Sappi/SWADE."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for UEDF/REPS operations across all 4 districts/tinkhundla. The public order management system supports protest and civil unrest response coordination. Industrial protection modules secure RSSC/Ubombo sugar operations and Sappi/SWADE timber plantations. Border management system covers the 365 km total border with South Africa and Mozambique. Forest fire detection platform integrates AI video analytics for Sappi/SWADE pine plantations.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones UEDF/REPS en los 4 distritos/tinkhundla. El sistema de gestión de orden público apoya la coordinación de respuesta ante protestas y disturbios civiles. Los módulos de protección industrial aseguran las operaciones azucareras RSSC/Ubombo y las plantaciones madereras Sappi/SWADE. El sistema de gestión de fronteras cubre los 365 km de frontera total con Sudáfrica y Mozambique. La plataforma de detección de incendios forestales integra analítica de vídeo IA para las plantaciones de pinos de Sappi/SWADE."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for UEDF/REPS operations across all 4 districts/tinkhundla. The public order management system supports protest and civil unrest response coordination. Industrial protection modules secure RSSC/Ubombo sugar operations and Sappi/SWADE timber plantations. Border management system covers the 365 km total border with South Africa and Mozambique. Forest fire detection platform integrates AI video analytics for Sappi/SWADE pine plantations.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareEswatiniPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Eswatini" : "KabatOne Capabilities for Eswatini"}
+              {es ? "Capacidades Kabat One para Eswatini" : "Kabat One Capabilities for Eswatini"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

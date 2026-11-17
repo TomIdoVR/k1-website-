@@ -28,58 +28,58 @@ export default async function VsMotorolaPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Motorola Solutions', url: es ? 'https://kabatone.com/es/vs/motorola' : 'https://kabatone.com/vs/motorola' },
+    { name: 'Kabat One vs Motorola Solutions', url: es ? 'https://kabatone.com/es/vs/motorola' : 'https://kabatone.com/vs/motorola' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Motorola Solutions?',
-      answer: 'Motorola Solutions es una empresa de comunicaciones y seguridad pública conocida por sus radios LMR, PremierOne CAD, CommandCentral y la plataforma de video Avigilon — cada uno como un producto separado. KabatOne es una plataforma unificada que integra video (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic) en un solo flujo de trabajo operativo. La diferencia principal es la integración: Motorola vende capacidades individuales que deben conectarse entre sí; KabatOne entrega todo de forma nativa en una plataforma.',
+      question: '¿Cuál es la diferencia entre Kabat One y Motorola Solutions?',
+      answer: 'Motorola Solutions es una empresa de comunicaciones y seguridad pública conocida por sus radios LMR, PremierOne CAD, CommandCentral y la plataforma de video Avigilon — cada uno como un producto separado. Kabat One es una plataforma unificada que integra video (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety) y gestión de tráfico (K-Traffic) en un solo flujo de trabajo operativo. La diferencia principal es la integración: Motorola vende capacidades individuales que deben conectarse entre sí; Kabat One entrega todo de forma nativa en una plataforma.',
     },
     {
       question: '¿Motorola Solutions incluye CAD y video en una sola plataforma?',
-      answer: 'No directamente. PremierOne CAD es el sistema de despacho de Motorola, Avigilon es su plataforma de video inteligente y CommandCentral Aware es su solución de conciencia situacional — cada uno es un producto con licencia independiente que requiere integración. KabatOne, en cambio, integra video, CAD, GIS y gestión de tráfico como módulos nativos en una sola plataforma sobre la plataforma K1, eliminando la necesidad de conectar múltiples sistemas.',
+      answer: 'No directamente. PremierOne CAD es el sistema de despacho de Motorola, Avigilon es su plataforma de video inteligente y CommandCentral Aware es su solución de conciencia situacional — cada uno es un producto con licencia independiente que requiere integración. Kabat One, en cambio, integra video, CAD, GIS y gestión de tráfico como módulos nativos en una sola plataforma sobre la plataforma K1, eliminando la necesidad de conectar múltiples sistemas.',
     },
     {
-      question: '¿Puede KabatOne trabajar con infraestructura de radio Motorola existente?',
-      answer: 'Sí. KabatOne es agnóstico en cuanto a radio. K-Dispatch se integra con los sistemas de radio existentes — incluidas las redes APX y ASTRO 25 de Motorola — a través de interfaces estándar. Las ciudades y municipios con infraestructura de radio Motorola pueden incorporar KabatOne como capa de coordinación de operaciones sin reemplazar su infraestructura de comunicaciones.',
+      question: '¿Puede Kabat One trabajar con infraestructura de radio Motorola existente?',
+      answer: 'Sí. Kabat One es agnóstico en cuanto a radio. K-Dispatch se integra con los sistemas de radio existentes — incluidas las redes APX y ASTRO 25 de Motorola — a través de interfaces estándar. Las ciudades y municipios con infraestructura de radio Motorola pueden incorporar Kabat One como capa de coordinación de operaciones sin reemplazar su infraestructura de comunicaciones.',
     },
     {
-      question: '¿Es KabatOne una alternativa a Motorola Solutions para operaciones de seguridad pública?',
-      answer: 'KabatOne y Motorola Solutions atienden necesidades que se superponen pero con enfoques distintos. Motorola es la opción dominante para agencias que priorizan las comunicaciones por radio y ya tienen Avigilon o PremierOne implementados. KabatOne es la opción más fuerte para ciudades y municipios que necesitan un flujo de respuesta unificado — video, despacho CAD, GIS y tráfico — en un solo sistema sin gestionar múltiples contratos y proveedores.',
+      question: '¿Es Kabat One una alternativa a Motorola Solutions para operaciones de seguridad pública?',
+      answer: 'Kabat One y Motorola Solutions atienden necesidades que se superponen pero con enfoques distintos. Motorola es la opción dominante para agencias que priorizan las comunicaciones por radio y ya tienen Avigilon o PremierOne implementados. Kabat One es la opción más fuerte para ciudades y municipios que necesitan un flujo de respuesta unificado — video, despacho CAD, GIS y tráfico — en un solo sistema sin gestionar múltiples contratos y proveedores.',
     },
     {
-      question: '¿Cuál es mejor para centros de mando — Motorola o KabatOne?',
-      answer: 'Ambas plataformas sirven a centros de mando, pero con diferente arquitectura. Un centro de mando Motorola típicamente combina PremierOne CAD + CommandCentral Aware + Avigilon + radio APX — cuatro productos que requieren integración y mantenimiento separados. KabatOne entrega todas esas funciones en una sola plataforma nativa. Para centros de mando C4/C5 en México y Latinoamérica que gestionan múltiples disciplinas de emergencia, la arquitectura unificada de KabatOne reduce la complejidad operativa y los costos de integración.',
+      question: '¿Cuál es mejor para centros de mando — Motorola o Kabat One?',
+      answer: 'Ambas plataformas sirven a centros de mando, pero con diferente arquitectura. Un centro de mando Motorola típicamente combina PremierOne CAD + CommandCentral Aware + Avigilon + radio APX — cuatro productos que requieren integración y mantenimiento separados. Kabat One entrega todas esas funciones en una sola plataforma nativa. Para centros de mando C4/C5 en México y Latinoamérica que gestionan múltiples disciplinas de emergencia, la arquitectura unificada de Kabat One reduce la complejidad operativa y los costos de integración.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Motorola Solutions no ofrece?',
-      answer: 'KabatOne ofrece: gestión de tráfico inteligente nativa (K-Traffic) — semáforos adaptativos, detección de infracciones, coordinación de vehículos de emergencia — que no existe en el ecosistema de Motorola; video comunitario (K-Connect) para integrar cámaras de ciudadanos y negocios al centro de mando; y un flujo de respuesta de extremo a extremo — desde detección hasta cierre de incidente en campo — en una sola interfaz. Motorola ofrece productos poderosos individualmente; KabatOne los conecta todos de forma nativa.',
+      question: '¿Qué ofrece Kabat One que Motorola Solutions no ofrece?',
+      answer: 'Kabat One ofrece: gestión de tráfico inteligente nativa (K-Traffic) — semáforos adaptativos, detección de infracciones, coordinación de vehículos de emergencia — que no existe en el ecosistema de Motorola; video comunitario (K-Connect) para integrar cámaras de ciudadanos y negocios al centro de mando; y un flujo de respuesta de extremo a extremo — desde detección hasta cierre de incidente en campo — en una sola interfaz. Motorola ofrece productos poderosos individualmente; Kabat One los conecta todos de forma nativa.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Motorola Solutions?',
-      answer: 'Motorola Solutions is a public safety communications and technology company known for LMR radios, PremierOne CAD, CommandCentral, and the Avigilon video platform — each as a separate product. KabatOne is a unified platform that integrates video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), and traffic management (K-Traffic) in one operational workflow. The core difference is integration: Motorola sells individual capabilities that must be connected together; KabatOne delivers everything natively in one platform.',
+      question: 'What is the difference between Kabat One and Motorola Solutions?',
+      answer: 'Motorola Solutions is a public safety communications and technology company known for LMR radios, PremierOne CAD, CommandCentral, and the Avigilon video platform — each as a separate product. Kabat One is a unified platform that integrates video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), and traffic management (K-Traffic) in one operational workflow. The core difference is integration: Motorola sells individual capabilities that must be connected together; Kabat One delivers everything natively in one platform.',
     },
     {
       question: 'Does Motorola Solutions include CAD and video in one platform?',
-      answer: 'Not directly. PremierOne CAD is Motorola\'s dispatch system, Avigilon is its intelligent video platform, and CommandCentral Aware is its situational awareness solution — each is an independently licensed product requiring integration. KabatOne, in contrast, integrates video, CAD, GIS, and traffic management as native modules in one platform on the K1 platform, eliminating the need to stitch together multiple systems.',
+      answer: 'Not directly. PremierOne CAD is Motorola\'s dispatch system, Avigilon is its intelligent video platform, and CommandCentral Aware is its situational awareness solution — each is an independently licensed product requiring integration. Kabat One, in contrast, integrates video, CAD, GIS, and traffic management as native modules in one platform on the K1 platform, eliminating the need to stitch together multiple systems.',
     },
     {
-      question: 'Can KabatOne work with existing Motorola radio infrastructure?',
-      answer: 'Yes. KabatOne is radio-agnostic. K-Dispatch integrates with existing radio systems — including Motorola APX and ASTRO 25 networks — through standard interfaces. Cities and municipalities with Motorola radio infrastructure can bring in KabatOne as the operations coordination layer without replacing their communications infrastructure.',
+      question: 'Can Kabat One work with existing Motorola radio infrastructure?',
+      answer: 'Yes. Kabat One is radio-agnostic. K-Dispatch integrates with existing radio systems — including Motorola APX and ASTRO 25 networks — through standard interfaces. Cities and municipalities with Motorola radio infrastructure can bring in Kabat One as the operations coordination layer without replacing their communications infrastructure.',
     },
     {
-      question: 'Is KabatOne an alternative to Motorola Solutions for public safety operations?',
-      answer: 'KabatOne and Motorola Solutions serve overlapping needs with different approaches. Motorola is the dominant choice for agencies that prioritize radio communications and already have Avigilon or PremierOne deployed. KabatOne is the stronger choice for cities and municipalities that need a unified response workflow — video, CAD dispatch, GIS, and traffic — in one system without managing multiple contracts and vendors.',
+      question: 'Is Kabat One an alternative to Motorola Solutions for public safety operations?',
+      answer: 'Kabat One and Motorola Solutions serve overlapping needs with different approaches. Motorola is the dominant choice for agencies that prioritize radio communications and already have Avigilon or PremierOne deployed. Kabat One is the stronger choice for cities and municipalities that need a unified response workflow — video, CAD dispatch, GIS, and traffic — in one system without managing multiple contracts and vendors.',
     },
     {
-      question: 'Which is better for command center operations — Motorola or KabatOne?',
-      answer: 'Both platforms serve command centers, but with different architecture. A typical Motorola command center combines PremierOne CAD + CommandCentral Aware + Avigilon + APX radio — four products requiring separate integration and maintenance. KabatOne delivers all of those functions in one native platform. For C4/C5 command centers in Mexico and Latin America managing multiple emergency disciplines, KabatOne\'s unified architecture reduces operational complexity and integration costs.',
+      question: 'Which is better for command center operations — Motorola or Kabat One?',
+      answer: 'Both platforms serve command centers, but with different architecture. A typical Motorola command center combines PremierOne CAD + CommandCentral Aware + Avigilon + APX radio — four products requiring separate integration and maintenance. Kabat One delivers all of those functions in one native platform. For C4/C5 command centers in Mexico and Latin America managing multiple emergency disciplines, Kabat One\'s unified architecture reduces operational complexity and integration costs.',
     },
     {
-      question: 'What does KabatOne offer that Motorola Solutions does not?',
-      answer: 'KabatOne provides: native intelligent traffic management (K-Traffic) — adaptive signals, violation detection, emergency vehicle coordination — which does not exist in the Motorola ecosystem; community video (K-Connect) to bring citizen and business cameras into the command center; and an end-to-end response workflow — from detection through field incident closure — in one interface. Motorola offers powerful individual products; KabatOne connects them all natively.',
+      question: 'What does Kabat One offer that Motorola Solutions does not?',
+      answer: 'Kabat One provides: native intelligent traffic management (K-Traffic) — adaptive signals, violation detection, emergency vehicle coordination — which does not exist in the Motorola ecosystem; community video (K-Connect) to bring citizen and business cameras into the command center; and an end-to-end response workflow — from detection through field incident closure — in one interface. Motorola offers powerful individual products; Kabat One connects them all natively.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsMotorolaPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Motorola Solutions</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Motorola Solutions</span>
         </div>
 
         {/* ── HERO ── */}
@@ -202,16 +202,16 @@ export default async function VsMotorolaPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Motorola Solutions — Más Allá de las Comunicaciones'
-              : 'KabatOne vs Motorola Solutions — Beyond Communications'}
+              ? 'Kabat One vs Motorola Solutions — Más Allá de las Comunicaciones'
+              : 'Kabat One vs Motorola Solutions — Beyond Communications'}
           </h1>
           <p style={{
             fontSize: '18px', fontWeight: 300, color: 'var(--dim)',
             lineHeight: 1.75, marginBottom: '0',
           }}>
             {es
-              ? 'Motorola Solutions domina las comunicaciones de seguridad pública — radios LMR, PremierOne CAD, CommandCentral Aware y Avigilon son líderes del mercado. El desafío es que cada uno es un producto separado con su propia licencia, integración y contrato de mantenimiento. KabatOne integra video, despacho CAD, GIS y gestión de tráfico en un flujo de respuesta nativo desde el primer día — sin proyectos de integración entre sistemas.'
-              : 'Motorola Solutions dominates public safety communications — LMR radios, PremierOne CAD, CommandCentral Aware, and Avigilon are all market leaders. The challenge is that each is a separate product with its own license, integration effort, and maintenance contract. KabatOne integrates video, CAD dispatch, GIS, and traffic management into one native response workflow from day one — no cross-system integration projects required.'}
+              ? 'Motorola Solutions domina las comunicaciones de seguridad pública — radios LMR, PremierOne CAD, CommandCentral Aware y Avigilon son líderes del mercado. El desafío es que cada uno es un producto separado con su propia licencia, integración y contrato de mantenimiento. Kabat One integra video, despacho CAD, GIS y gestión de tráfico en un flujo de respuesta nativo desde el primer día — sin proyectos de integración entre sistemas.'
+              : 'Motorola Solutions dominates public safety communications — LMR radios, PremierOne CAD, CommandCentral Aware, and Avigilon are all market leaders. The challenge is that each is a separate product with its own license, integration effort, and maintenance contract. Kabat One integrates video, CAD dispatch, GIS, and traffic management into one native response workflow from day one — no cross-system integration projects required.'}
           </p>
           {/* Short answer: the page's own first FAQ answer, lifted under the H1 so an AI
               answer engine finds a self-contained verdict at the top, not only in the FAQ.
@@ -268,22 +268,22 @@ export default async function VsMotorolaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. Cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS y cerrar el ciclo con documentación de campo — sin salir de la plataforma.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. When an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map, and close the loop with field documentation — without leaving the platform.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. Cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS y cerrar el ciclo con documentación de campo — sin salir de la plataforma.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. When an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map, and close the loop with field documentation — without leaving the platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'A diferencia de los ecosistemas construidos a través de adquisiciones, KabatOne fue diseñado como una plataforma unificada desde el inicio. No hay proyectos de integración entre módulos, no hay duplicidad de datos y no hay múltiples contratos de soporte — es un flujo de respuesta operativa de extremo a extremo.'
-                : 'Unlike ecosystems built through acquisitions, KabatOne was designed as a unified platform from the start. There are no cross-module integration projects, no data duplication, and no multiple support contracts — it is one end-to-end operational response workflow.'}
+                ? 'A diferencia de los ecosistemas construidos a través de adquisiciones, Kabat One fue diseñado como una plataforma unificada desde el inicio. No hay proyectos de integración entre módulos, no hay duplicidad de datos y no hay múltiples contratos de soporte — es un flujo de respuesta operativa de extremo a extremo.'
+                : 'Unlike ecosystems built through acquisitions, Kabat One was designed as a unified platform from the start. There are no cross-module integration projects, no data duplication, and no multiple support contracts — it is one end-to-end operational response workflow.'}
             </p>
           </div>
         </section>
@@ -296,12 +296,12 @@ export default async function VsMotorolaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Motorola Solutions: Diferencias Clave' : 'KabatOne vs Motorola Solutions: Key Differences'}
+              {es ? 'Kabat One vs Motorola Solutions: Diferencias Clave' : 'Kabat One vs Motorola Solutions: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Motorola Solutions en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Motorola Solutions across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Motorola Solutions en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Motorola Solutions across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -316,7 +316,7 @@ export default async function VsMotorolaPage({
                   Motorola Solutions
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -357,13 +357,13 @@ export default async function VsMotorolaPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne elimina esa fricción. Video, CAD, GIS y tráfico comparten el mismo modelo de datos desde el inicio — cuando un incidente es creado en K-Dispatch, aparece automáticamente en el mapa de K-Safety con la unidad asignada y el video correspondiente de K-Video. No hay sincronización de datos, no hay mapeo de campos entre sistemas y no hay retrasos por latencia de integración.'
-                : 'KabatOne eliminates that friction. Video, CAD, GIS, and traffic share the same data model from the start — when an incident is created in K-Dispatch, it appears automatically on the K-Safety map with the assigned unit and corresponding K-Video feed. There is no data synchronization, no field mapping between systems, and no latency from integration middleware.'}
+                ? 'Kabat One elimina esa fricción. Video, CAD, GIS y tráfico comparten el mismo modelo de datos desde el inicio — cuando un incidente es creado en K-Dispatch, aparece automáticamente en el mapa de K-Safety con la unidad asignada y el video correspondiente de K-Video. No hay sincronización de datos, no hay mapeo de campos entre sistemas y no hay retrasos por latencia de integración.'
+                : 'Kabat One eliminates that friction. Video, CAD, GIS, and traffic share the same data model from the start — when an incident is created in K-Dispatch, it appears automatically on the K-Safety map with the assigned unit and corresponding K-Video feed. There is no data synchronization, no field mapping between systems, and no latency from integration middleware.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne también agrega gestión de tráfico inteligente (K-Traffic) — control adaptativo de semáforos, detección de infracciones vehiculares, coordinación de vehículos de emergencia — una capacidad que no existe en el portafolio de Motorola Solutions y que requeriría un cuarto o quinto proveedor en un despliegue tradicional.'
-                : 'KabatOne also adds intelligent traffic management (K-Traffic) — adaptive signal control, vehicle violation detection, emergency vehicle coordination — a capability that does not exist in the Motorola Solutions portfolio and would require a fourth or fifth vendor in a traditional deployment.'}
+                ? 'Kabat One también agrega gestión de tráfico inteligente (K-Traffic) — control adaptativo de semáforos, detección de infracciones vehiculares, coordinación de vehículos de emergencia — una capacidad que no existe en el portafolio de Motorola Solutions y que requeriría un cuarto o quinto proveedor en un despliegue tradicional.'
+                : 'Kabat One also adds intelligent traffic management (K-Traffic) — adaptive signal control, vehicle violation detection, emergency vehicle coordination — a capability that does not exist in the Motorola Solutions portfolio and would require a fourth or fifth vendor in a traditional deployment.'}
             </p>
           </div>
         </section>
@@ -376,17 +376,17 @@ export default async function VsMotorolaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Puede KabatOne Trabajar con Infraestructura Motorola Existente?' : 'Can KabatOne Work with Existing Motorola Infrastructure?'}
+              {es ? '¿Puede Kabat One Trabajar con Infraestructura Motorola Existente?' : 'Can Kabat One Work with Existing Motorola Infrastructure?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Sí. KabatOne está diseñado para integrarse con la infraestructura existente. K-Dispatch se integra con redes de radio estándar — incluyendo APX y ASTRO 25 de Motorola — a través de interfaces estándar de la industria. K-Video soporta ONVIF, RTSP y protocolos IP estándar, lo que permite agregar cámaras de Avigilon junto con cámaras de cualquier otro fabricante.'
-                : 'Yes. KabatOne is designed to integrate with existing infrastructure. K-Dispatch integrates with standard radio networks — including Motorola APX and ASTRO 25 — through industry-standard interfaces. K-Video supports ONVIF, RTSP, and standard IP protocols, allowing it to aggregate Avigilon cameras alongside cameras from any other manufacturer.'}
+                ? 'Sí. Kabat One está diseñado para integrarse con la infraestructura existente. K-Dispatch se integra con redes de radio estándar — incluyendo APX y ASTRO 25 de Motorola — a través de interfaces estándar de la industria. K-Video soporta ONVIF, RTSP y protocolos IP estándar, lo que permite agregar cámaras de Avigilon junto con cámaras de cualquier otro fabricante.'
+                : 'Yes. Kabat One is designed to integrate with existing infrastructure. K-Dispatch integrates with standard radio networks — including Motorola APX and ASTRO 25 — through industry-standard interfaces. K-Video supports ONVIF, RTSP, and standard IP protocols, allowing it to aggregate Avigilon cameras alongside cameras from any other manufacturer.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'Esto permite a las organizaciones con inversiones existentes en hardware Motorola incorporar KabatOne como la capa de coordinación de respuesta unificada — aprovechando sus radios, cámaras y datos existentes — mientras eliminan la complejidad de gestionar múltiples sistemas de software. KabatOne no requiere reemplazar infraestructura de radio o de cámaras que ya funciona.'
-                : 'This allows organizations with existing Motorola hardware investments to bring in KabatOne as the unified response coordination layer — leveraging their existing radios, cameras, and data — while eliminating the complexity of managing multiple software systems. KabatOne does not require replacing radio or camera infrastructure that is already working.'}
+                ? 'Esto permite a las organizaciones con inversiones existentes en hardware Motorola incorporar Kabat One como la capa de coordinación de respuesta unificada — aprovechando sus radios, cámaras y datos existentes — mientras eliminan la complejidad de gestionar múltiples sistemas de software. Kabat One no requiere reemplazar infraestructura de radio o de cámaras que ya funciona.'
+                : 'This allows organizations with existing Motorola hardware investments to bring in Kabat One as the unified response coordination layer — leveraging their existing radios, cameras, and data — while eliminating the complexity of managing multiple software systems. Kabat One does not require replacing radio or camera infrastructure that is already working.'}
             </p>
           </div>
         </section>
@@ -399,7 +399,7 @@ export default async function VsMotorolaPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -438,7 +438,7 @@ export default async function VsMotorolaPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Motorola Solutions: Preguntas y Respuestas' : 'KabatOne vs Motorola Solutions: Questions & Answers'}
+              {es ? 'Kabat One vs Motorola Solutions: Preguntas y Respuestas' : 'Kabat One vs Motorola Solutions: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -478,7 +478,7 @@ export default async function VsMotorolaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Zetron: alternativa para centros 911' : 'KabatOne vs Zetron'}</span>
+                <span>{es ? 'Kabat One vs Zetron: alternativa para centros 911' : 'Kabat One vs Zetron'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/vms" style={{
@@ -487,7 +487,7 @@ export default async function VsMotorolaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs VMS Tradicional' : 'KabatOne vs Traditional VMS'}</span>
+                <span>{es ? 'Kabat One vs VMS Tradicional' : 'Kabat One vs Traditional VMS'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/genetec" style={{
@@ -496,7 +496,7 @@ export default async function VsMotorolaPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Genetec Security Center' : 'KabatOne vs Genetec Security Center'}</span>
+                <span>{es ? 'Kabat One vs Genetec Security Center' : 'Kabat One vs Genetec Security Center'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/resources/psim-vs-unified-platform" style={{
@@ -558,8 +558,8 @@ export default async function VsMotorolaPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne unifies video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One unifica video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One unifies video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

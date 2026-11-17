@@ -1,6 +1,6 @@
 {
-  "name": "KabatOne",
-  "short_name": "KabatOne",
+  "name": "Kabat One",
+  "short_name": "Kabat One",
   "description": "Public safety and smart city platform",
   "start_url": "/",
   "display": "standalone",

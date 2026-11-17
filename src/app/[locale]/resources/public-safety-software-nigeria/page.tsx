@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with the Nigeria Police Force (NPF) federal structure?",
-    answer: "KabatOne aligns with NPF's command structure across 36 state commands and the FCT command, 1,400+ police divisions, and the Nigeria Police Force Headquarters (NPHQ) in Abuja — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with IGP/NPF operational protocols across all six geo-political zones."
+    question: "How does Kabat One integrate with the Nigeria Police Force (NPF) federal structure?",
+    answer: "Kabat One aligns with NPF's command structure across 36 state commands and the FCT command, 1,400+ police divisions, and the Nigeria Police Force Headquarters (NPHQ) in Abuja — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with IGP/NPF operational protocols across all six geo-political zones."
   },
   {
-    question: "Can KabatOne support the Nigeria Security and Civil Defence Corps (NSCDC) and other agencies?",
-    answer: "Yes. KabatOne integrates multi-agency operations including NPF, NSCDC, Federal Fire Service (FFS), State Fire Services, Federal Road Safety Corps (FRSC), and NEMA (National Emergency Management Agency) — enabling unified command visibility and resource coordination across Nigeria's complex security ecosystem."
+    question: "Can Kabat One support the Nigeria Security and Civil Defence Corps (NSCDC) and other agencies?",
+    answer: "Yes. Kabat One integrates multi-agency operations including NPF, NSCDC, Federal Fire Service (FFS), State Fire Services, Federal Road Safety Corps (FRSC), and NEMA (National Emergency Management Agency) — enabling unified command visibility and resource coordination across Nigeria's complex security ecosystem."
   },
   {
-    question: "How does KabatOne handle Nigeria Data Protection Act (NDPA 2023) compliance?",
-    answer: "KabatOne is designed for full NDPA 2023 compliance — implementing data subject rights management, mandatory breach notification to NDPC (Nigeria Data Protection Commission), lawful basis documentation, and Data Protection Impact Assessments (DPIAs) aligned with NDPC enforcement guidelines."
+    question: "How does Kabat One handle Nigeria Data Protection Act (NDPA 2023) compliance?",
+    answer: "Kabat One is designed for full NDPA 2023 compliance — implementing data subject rights management, mandatory breach notification to NDPC (Nigeria Data Protection Commission), lawful basis documentation, and Data Protection Impact Assessments (DPIAs) aligned with NDPC enforcement guidelines."
   },
   {
-    question: "Can KabatOne support Safe City operations in Lagos, Abuja, and Port Harcourt?",
-    answer: "Yes. KabatOne integrates Lagos State Security Trust Fund (LSSTF) CCTV networks, Abuja Integrated Security System, Eko Safe City cameras, and state government command centers — providing AI-powered analytics, ANPR integration, and unified situational awareness for Nigeria's major urban agglomerations."
+    question: "Can Kabat One support Safe City operations in Lagos, Abuja, and Port Harcourt?",
+    answer: "Yes. Kabat One integrates Lagos State Security Trust Fund (LSSTF) CCTV networks, Abuja Integrated Security System, Eko Safe City cameras, and state government command centers — providing AI-powered analytics, ANPR integration, and unified situational awareness for Nigeria's major urban agglomerations."
   },
   {
-    question: "How does KabatOne manage multi-agency disaster response in Nigeria?",
-    answer: "KabatOne integrates NEMA's National Emergency Coordination Centre (NECC), State Emergency Management Agencies (SEMAs), Nigerian Meteorological Agency (NiMet), and NIHSA (National Inland Waterways Safety Authority) — supporting flood coordination, oil spill response in the Niger Delta, and north-east security operations."
+    question: "How does Kabat One manage multi-agency disaster response in Nigeria?",
+    answer: "Kabat One integrates NEMA's National Emergency Coordination Centre (NECC), State Emergency Management Agencies (SEMAs), Nigerian Meteorological Agency (NiMet), and NIHSA (National Inland Waterways Safety Authority) — supporting flood coordination, oil spill response in the Niger Delta, and north-east security operations."
   },
   {
-    question: "What cybersecurity compliance does KabatOne meet for Nigerian government procurement?",
-    answer: "KabatOne aligns with Nigeria Cybersecurity Act 2024, NITDA guidelines, ncfrmi/NCC sector regulations, and Central Bank of Nigeria (CBN) digital infrastructure standards — meeting requirements for government ICT procurement under NITDA approval processes."
+    question: "What cybersecurity compliance does Kabat One meet for Nigerian government procurement?",
+    answer: "Kabat One aligns with Nigeria Cybersecurity Act 2024, NITDA guidelines, ncfrmi/NCC sector regulations, and Central Bank of Nigeria (CBN) digital infrastructure standards — meeting requirements for government ICT procurement under NITDA approval processes."
   },
   {
-    question: "What procurement pathway does KabatOne support in Nigeria?",
-    answer: "KabatOne supports procurement through the Bureau of Public Procurement (BPP) e-procurement portal under the Public Procurement Act 2007, State Procurement Laws, and Nigerian Content Development Act for technology systems — including open competitive bidding, selective tendering, and direct procurement for security/emergency systems."
+    question: "What procurement pathway does Kabat One support in Nigeria?",
+    answer: "Kabat One supports procurement through the Bureau of Public Procurement (BPP) e-procurement portal under the Public Procurement Act 2007, State Procurement Laws, and Nigerian Content Development Act for technology systems — including open competitive bidding, selective tendering, and direct procurement for security/emergency systems."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura federal de la Policía de Nigeria (NPF)?",
-    answer: "KabatOne se alinea con la estructura de mando de la NPF en 36 mandos estatales y el mando del FCT, más de 1,400 divisiones policiales y el Cuartel General de la Policía de Nigeria (NPHQ) en Abuja — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos operativos del IGP/NPF."
+    question: "¿Cómo se integra Kabat One con la estructura federal de la Policía de Nigeria (NPF)?",
+    answer: "Kabat One se alinea con la estructura de mando de la NPF en 36 mandos estatales y el mando del FCT, más de 1,400 divisiones policiales y el Cuartel General de la Policía de Nigeria (NPHQ) en Abuja — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con los protocolos operativos del IGP/NPF."
   },
   {
-    question: "¿Puede KabatOne soportar el Cuerpo de Seguridad y Defensa Civil de Nigeria (NSCDC) y otras agencias?",
-    answer: "Sí. KabatOne integra operaciones multiagencia incluyendo NPF, NSCDC, Servicio Federal de Bomberos (FFS), servicios estatales de bomberos, FRSC y NEMA — habilitando visibilidad de mando unificada y coordinación de recursos en el complejo ecosistema de seguridad de Nigeria."
+    question: "¿Puede Kabat One soportar el Cuerpo de Seguridad y Defensa Civil de Nigeria (NSCDC) y otras agencias?",
+    answer: "Sí. Kabat One integra operaciones multiagencia incluyendo NPF, NSCDC, Servicio Federal de Bomberos (FFS), servicios estatales de bomberos, FRSC y NEMA — habilitando visibilidad de mando unificada y coordinación de recursos en el complejo ecosistema de seguridad de Nigeria."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de la Ley de Protección de Datos de Nigeria (NDPA 2023)?",
-    answer: "KabatOne está diseñado para cumplimiento total con la NDPA 2023 — implementando gestión de derechos de titulares, notificación obligatoria de brechas a la NDPC (Comisión de Protección de Datos de Nigeria), documentación de base legal y Evaluaciones de Impacto en Protección de Datos (DPIA) alineadas con las directrices de la NDPC."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de la Ley de Protección de Datos de Nigeria (NDPA 2023)?",
+    answer: "Kabat One está diseñado para cumplimiento total con la NDPA 2023 — implementando gestión de derechos de titulares, notificación obligatoria de brechas a la NDPC (Comisión de Protección de Datos de Nigeria), documentación de base legal y Evaluaciones de Impacto en Protección de Datos (DPIA) alineadas con las directrices de la NDPC."
   },
   {
-    question: "¿Puede KabatOne soportar operaciones Safe City en Lagos, Abuja y Port Harcourt?",
-    answer: "Sí. KabatOne integra las redes CCTV del Fondo de Confianza de Seguridad del Estado de Lagos (LSSTF), el Sistema Integrado de Seguridad de Abuja, cámaras Eko Safe City y centros de mando de gobiernos estatales — proporcionando analítica de IA, integración ANPR y conciencia situacional unificada."
+    question: "¿Puede Kabat One soportar operaciones Safe City en Lagos, Abuja y Port Harcourt?",
+    answer: "Sí. Kabat One integra las redes CCTV del Fondo de Confianza de Seguridad del Estado de Lagos (LSSTF), el Sistema Integrado de Seguridad de Abuja, cámaras Eko Safe City y centros de mando de gobiernos estatales — proporcionando analítica de IA, integración ANPR y conciencia situacional unificada."
   },
   {
-    question: "¿Cómo gestiona KabatOne la respuesta multiagencia ante desastres en Nigeria?",
-    answer: "KabatOne integra el Centro Nacional de Coordinación de Emergencias (NECC) de NEMA, Agencias Estatales de Gestión de Emergencias (SEMA), la Agencia Meteorológica de Nigeria (NiMet) y NIHSA — apoyando coordinación de inundaciones, respuesta a derrames en el Delta del Níger y operaciones de seguridad en el noreste."
+    question: "¿Cómo gestiona Kabat One la respuesta multiagencia ante desastres en Nigeria?",
+    answer: "Kabat One integra el Centro Nacional de Coordinación de Emergencias (NECC) de NEMA, Agencias Estatales de Gestión de Emergencias (SEMA), la Agencia Meteorológica de Nigeria (NiMet) y NIHSA — apoyando coordinación de inundaciones, respuesta a derrames en el Delta del Níger y operaciones de seguridad en el noreste."
   },
   {
-    question: "¿Qué cumplimiento de ciberseguridad ofrece KabatOne para contratación gubernamental en Nigeria?",
-    answer: "KabatOne se alinea con la Ley de Ciberseguridad de Nigeria 2024, directrices NITDA, regulaciones sectoriales NCC y estándares de infraestructura digital del CBN — cumpliendo con los requisitos de contratación TIC gubernamental bajo los procesos de aprobación NITDA."
+    question: "¿Qué cumplimiento de ciberseguridad ofrece Kabat One para contratación gubernamental en Nigeria?",
+    answer: "Kabat One se alinea con la Ley de Ciberseguridad de Nigeria 2024, directrices NITDA, regulaciones sectoriales NCC y estándares de infraestructura digital del CBN — cumpliendo con los requisitos de contratación TIC gubernamental bajo los procesos de aprobación NITDA."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Nigeria?",
-    answer: "KabatOne soporta contratación a través del portal de e-procurement de la Oficina de Contratación Pública (BPP) bajo la Ley de Contratación Pública de 2007, leyes estatales de contratación y la Ley de Desarrollo de Contenido Nigeriano para sistemas tecnológicos — incluyendo licitación competitiva abierta y adquisición directa para sistemas de seguridad."
+    question: "¿Qué vía de contratación soporta Kabat One en Nigeria?",
+    answer: "Kabat One soporta contratación a través del portal de e-procurement de la Oficina de Contratación Pública (BPP) bajo la Ley de Contratación Pública de 2007, leyes estatales de contratación y la Ley de Desarrollo de Contenido Nigeriano para sistemas tecnológicos — incluyendo licitación competitiva abierta y adquisición directa para sistemas de seguridad."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• BPP portal: licitaciones NPF, NSCDC, FFS, NEMA' : '• BPP portal: NPF, NSCDC, FFS, NEMA bids'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Nigeria?' : 'Ready to modernize public safety in Nigeria?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la NPF, NSCDC y NEMA con una plataforma unificada conforme a NDPA 2023/NDPC y compatible con BPP/PPA 2007.'
-            : 'See how KabatOne supports NPF, NSCDC, and NEMA with a unified platform compliant with NDPA 2023/NDPC and compatible with BPP/PPA 2007 procurement.'}
+            ? 'Conozca cómo Kabat One apoya a la NPF, NSCDC y NEMA con una plataforma unificada conforme a NDPA 2023/NDPC y compatible con BPP/PPA 2007.'
+            : 'See how Kabat One supports NPF, NSCDC, and NEMA with a unified platform compliant with NDPA 2023/NDPC and compatible with BPP/PPA 2007 procurement.'}
         />
       </main>
       <Footer es={es} />

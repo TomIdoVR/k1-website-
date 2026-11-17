@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareMaliPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Mali | FAMa, JNIM y Gestión de Crisis Sahel – KabatOne"
-      : "Public Safety Software for Mali | FAMa, JNIM & Sahel Crisis Management – KabatOne",
+      ? "Software de Seguridad Pública para Mali | FAMa, JNIM y Gestión de Crisis Sahel – Kabat One"
+      : "Public Safety Software for Mali | FAMa, JNIM & Sahel Crisis Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para las Forces Armées Maliennes, gestión humanitaria y programas de estabilización del Sahel en Mali."
-      : "KabatOne delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Forces Armées Maliennes, humanitarian management, and Sahel stabilisation programs in Mali.",
+      ? "Kabat One ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para las Forces Armées Maliennes, gestión humanitaria y programas de estabilización del Sahel en Mali."
+      : "Kabat One delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Forces Armées Maliennes, humanitarian management, and Sahel stabilisation programs in Mali.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-mali"
       : "https://kabatone.com/resources/public-safety-software-mali",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareMaliPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Mali?"
-        : "How can KabatOne support public safety in Mali?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Mali?"
+        : "How can Kabat One support public safety in Mali?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 10 regiones/cercles, coordinación antiterrorista FAMa/Fuerzas Wagner con inteligencia táctica, gestión de los 400,000+ PDI y plataformas de comunicación de emergencia para Bamako y las ciudades en las zonas de seguridad del norte/centro."
-        : "KabatOne provides modular CAD/incident management for all 10 regions/cercles, FAMa/Wagner Forces counter-terrorism coordination with tactical intelligence, management of 400,000+ IDPs, and emergency communication platforms for Bamako and cities in the northern/central security zones.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 10 regiones/cercles, coordinación antiterrorista FAMa/Fuerzas Wagner con inteligencia táctica, gestión de los 400,000+ PDI y plataformas de comunicación de emergencia para Bamako y las ciudades en las zonas de seguridad del norte/centro."
+        : "Kabat One provides modular CAD/incident management for all 10 regions/cercles, FAMa/Wagner Forces counter-terrorism coordination with tactical intelligence, management of 400,000+ IDPs, and emergency communication platforms for Bamako and cities in the northern/central security zones.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Mali?"
-        : "How does KabatOne support critical infrastructure security in Mali?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Mali?"
+        : "How does Kabat One support critical infrastructure security in Mali?",
       answer: es
         ? "La plataforma monitorea las minas de oro de Loulo-Gounkoto (Barrick ~700K oz/año), Syama (Resolute), Fekola (B2Gold ~600K oz/año), las presas hidroeléctricas de Sélingué (68 MW)/Manantali (200 MW)/Sotuba, el corredor ferroviario Dakar-Bamako y el aeropuerto de Bamako-Sénou (BKO)."
         : "The platform monitors Loulo-Gounkoto gold mines (Barrick ~700K oz/year), Syama (Resolute), Fekola (B2Gold ~600K oz/year), Selingue (68 MW)/Manantali (200 MW)/Sotuba hydroelectric dams, Dakar-Bamako rail corridor, and Bamako-Senou Airport (BKO).",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Mali?"
-        : "Can KabatOne integrate with humanitarian management in Mali?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Mali?"
+        : "Can Kabat One integrate with humanitarian management in Mali?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP/MINUSMA-sucesora para la gestión de los 400,000+ PDI, el Sistema de Alerta Temprana del Sahel/FEWS NET, alertas de inundaciones del río Níger/Delta Interior, coordinación de fronteras con Mauritania/Argelia/Níger/Burkina Faso/Costa de Marfil/Guinea/Senegal."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP/MINUSMA successor for management of 400,000+ IDPs, Sahel/FEWS NET Early Warning System, Niger River/Inner Delta flood alerts, and border coordination with Mauritania/Algeria/Niger/Burkina Faso/Ivory Coast/Guinea/Senegal.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP/MINUSMA-sucesora para la gestión de los 400,000+ PDI, el Sistema de Alerta Temprana del Sahel/FEWS NET, alertas de inundaciones del río Níger/Delta Interior, coordinación de fronteras con Mauritania/Argelia/Níger/Burkina Faso/Costa de Marfil/Guinea/Senegal."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP/MINUSMA successor for management of 400,000+ IDPs, Sahel/FEWS NET Early Warning System, Niger River/Inner Delta flood alerts, and border coordination with Mauritania/Algeria/Niger/Burkina Faso/Ivory Coast/Guinea/Senegal.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Mali?"
-        : "How does KabatOne comply with Mali's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Mali?"
+        : "How does Kabat One comply with Mali's regulations?",
       answer: es
-        ? "KabatOne se alinea con la Loi 2013-015/AN-RM del 21 de mayo de 2013 sobre Protección de Datos Personales, la Autorité Malienne de Régulation des Télécommunications et des Postes (AMRTP), los estándares del CERT Mali y los marcos de adquisiciones del Banco Mundial/PNUD/AES para proyectos de estabilización financiados por donantes."
-        : "KabatOne aligns with Law 2013-015/AN-RM of 21 May 2013 on Personal Data Protection, Autorité Malienne de Régulation des Télécommunications et des Postes (AMRTP), CERT Mali standards, and World Bank/UNDP/AES procurement frameworks for donor-funded stabilisation projects.",
+        ? "Kabat One se alinea con la Loi 2013-015/AN-RM del 21 de mayo de 2013 sobre Protección de Datos Personales, la Autorité Malienne de Régulation des Télécommunications et des Postes (AMRTP), los estándares del CERT Mali y los marcos de adquisiciones del Banco Mundial/PNUD/AES para proyectos de estabilización financiados por donantes."
+        : "Kabat One aligns with Law 2013-015/AN-RM of 21 May 2013 on Personal Data Protection, Autorité Malienne de Régulation des Télécommunications et des Postes (AMRTP), CERT Mali standards, and World Bank/UNDP/AES procurement frameworks for donor-funded stabilisation projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Mali?"
-        : "What sets KabatOne apart for Mali's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Mali?"
+        : "What sets Kabat One apart for Mali's border management?",
       answer: es
-        ? "KabatOne puede unificar los 7 corredores fronterizos (Mauritania/Argelia/Níger/Burkina Faso/Costa de Marfil/Guinea/Senegal) con ANPR, listas Interpol/AES, alertas de JNIM/GSIM/ISGS y monitoreo del corredor Bamako-Dakar/Abidjan con gestión unificada FAMa/Gendarmerie."
-        : "KabatOne can unify 7 border corridors (Mauritania/Algeria/Niger/Burkina Faso/Ivory Coast/Guinea/Senegal) with ANPR, Interpol/AES watchlists, JNIM/GSIM/ISGS alerts, and Bamako-Dakar/Abidjan corridor monitoring with unified FAMa/Gendarmerie management.",
+        ? "Kabat One puede unificar los 7 corredores fronterizos (Mauritania/Argelia/Níger/Burkina Faso/Costa de Marfil/Guinea/Senegal) con ANPR, listas Interpol/AES, alertas de JNIM/GSIM/ISGS y monitoreo del corredor Bamako-Dakar/Abidjan con gestión unificada FAMa/Gendarmerie."
+        : "Kabat One can unify 7 border corridors (Mauritania/Algeria/Niger/Burkina Faso/Ivory Coast/Guinea/Senegal) with ANPR, Interpol/AES watchlists, JNIM/GSIM/ISGS alerts, and Bamako-Dakar/Abidjan corridor monitoring with unified FAMa/Gendarmerie management.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareMaliPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Las Forces Armées du Mali (FAMa), con más de 20,000 efectivos, y las unidades del Groupe Wagner/Africa Corps (estimados 1,000-1,500) conducen operaciones conjuntas contra el JNIM y el EIGS. La Police Nationale/Gendarmerie Nationale opera principalmente en Bamako y las principales ciudades. KabatOne proporciona plataformas de C2 modulares adaptadas a las condiciones operativas del Sahel."
-              : "Forces Armées du Mali (FAMa), with over 20,000 troops, and Wagner Group/Africa Corps units (estimated 1,000-1,500) conduct joint operations against JNIM and EIGS. Police Nationale/Gendarmerie Nationale operates primarily in Bamako and major cities. KabatOne provides modular C2 platforms adapted to Sahel operational conditions."}
+              ? "Las Forces Armées du Mali (FAMa), con más de 20,000 efectivos, y las unidades del Groupe Wagner/Africa Corps (estimados 1,000-1,500) conducen operaciones conjuntas contra el JNIM y el EIGS. La Police Nationale/Gendarmerie Nationale opera principalmente en Bamako y las principales ciudades. Kabat One proporciona plataformas de C2 modulares adaptadas a las condiciones operativas del Sahel."
+              : "Forces Armées du Mali (FAMa), with over 20,000 troops, and Wagner Group/Africa Corps units (estimated 1,000-1,500) conduct joint operations against JNIM and EIGS. Police Nationale/Gendarmerie Nationale operates primarily in Bamako and major cities. Kabat One provides modular C2 platforms adapted to Sahel operational conditions."}
           </p>
 
           {/* Mining */}
@@ -206,8 +206,8 @@ export default async function PublicSafetySoftwareMaliPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Los proyectos de estabilización en Mali son financiados principalmente por el Banco Mundial, el PNUD, la UE (bajo restricciones post-junta), USAID, el G5 Sahel (suspendido) y la AES. KabatOne está estructurado para despliegue bajo estos marcos, compatible con los estándares de coordinación OCHA/PNUD y los protocolos de la AES."
-              : "Stabilisation projects in Mali are primarily funded by the World Bank, UNDP, EU (under post-junta restrictions), USAID, G5 Sahel (suspended), and AES. KabatOne is structured for deployment under these frameworks, compatible with OCHA/UNDP coordination standards and AES protocols."}
+              ? "Los proyectos de estabilización en Mali son financiados principalmente por el Banco Mundial, el PNUD, la UE (bajo restricciones post-junta), USAID, el G5 Sahel (suspendido) y la AES. Kabat One está estructurado para despliegue bajo estos marcos, compatible con los estándares de coordinación OCHA/PNUD y los protocolos de la AES."
+              : "Stabilisation projects in Mali are primarily funded by the World Bank, UNDP, EU (under post-junta restrictions), USAID, G5 Sahel (suspended), and AES. Kabat One is structured for deployment under these frameworks, compatible with OCHA/UNDP coordination standards and AES protocols."}
           </p>
         </section>
 
@@ -221,43 +221,43 @@ export default async function PublicSafetySoftwareMaliPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Mali?"
-                    : "How can KabatOne support public safety in Mali?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Mali?"
+                    : "How can Kabat One support public safety in Mali?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 10 regiones/cercles, coordinación FAMa antiterrorista, gestión 400K+ PDI y plataformas de emergencia para Bamako y zonas de reconquista norte/centro."
-                    : "KabatOne provides modular CAD for 10 regions/cercles, FAMa counter-terrorism coordination, 400K+ IDP management, and emergency platforms for Bamako and northern/central reconquest zones.",
+                    ? "Kabat One proporciona CAD modular para 10 regiones/cercles, coordinación FAMa antiterrorista, gestión 400K+ PDI y plataformas de emergencia para Bamako y zonas de reconquista norte/centro."
+                    : "Kabat One provides modular CAD for 10 regions/cercles, FAMa counter-terrorism coordination, 400K+ IDP management, and emergency platforms for Bamako and northern/central reconquest zones.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad minera en Mali?"
-                    : "How does KabatOne support mining security in Mali?",
+                    ? "¿Cómo apoya Kabat One la seguridad minera en Mali?"
+                    : "How does Kabat One support mining security in Mali?",
                   a: es
                     ? "La plataforma monitorea Loulo-Gounkoto ~700K oz/Fekola ~600K oz/Syama gold mines con seguridad perimetral, gestión de evacuaciones de personal Barrick/B2Gold/Resolute y coordinación FAMa."
                     : "The platform monitors Loulo-Gounkoto ~700K oz/Fekola ~600K oz/Syama gold mines with perimeter security, Barrick/B2Gold/Resolute staff evacuation management, and FAMa coordination.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Mali?"
-                    : "Can KabatOne integrate with humanitarian management in Mali?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Mali?"
+                    : "Can Kabat One integrate with humanitarian management in Mali?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/UNHCR/WFP para 400K+ PDI, alertas inundaciones Delta Interior Níger, FEWS NET inseguridad alimentaria y coordinación AES/G5 Sahel corredores humanitarios."
-                    : "Yes. KabatOne integrates OCHA/UNHCR/WFP for 400K+ IDPs, Niger Inner Delta flood alerts, FEWS NET food insecurity, and AES/G5 Sahel humanitarian corridor coordination.",
+                    ? "Sí. Kabat One integra OCHA/UNHCR/WFP para 400K+ PDI, alertas inundaciones Delta Interior Níger, FEWS NET inseguridad alimentaria y coordinación AES/G5 Sahel corredores humanitarios."
+                    : "Yes. Kabat One integrates OCHA/UNHCR/WFP for 400K+ IDPs, Niger Inner Delta flood alerts, FEWS NET food insecurity, and AES/G5 Sahel humanitarian corridor coordination.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Mali?"
-                    : "How does KabatOne comply with Mali's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Mali?"
+                    : "How does Kabat One comply with Mali's regulations?",
                   a: es
-                    ? "KabatOne se alinea con Loi 2013-015/CNIL-Mali, AMRTP/CERT-Mali, Décret 08-485/DGMP-DSP y marcos de adquisiciones Banco Mundial/PNUD/AES para proyectos de estabilización."
-                    : "KabatOne aligns with Law 2013-015/CNIL-Mali, AMRTP/CERT-Mali, Décret 08-485/DGMP-DSP, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
+                    ? "Kabat One se alinea con Loi 2013-015/CNIL-Mali, AMRTP/CERT-Mali, Décret 08-485/DGMP-DSP y marcos de adquisiciones Banco Mundial/PNUD/AES para proyectos de estabilización."
+                    : "Kabat One aligns with Law 2013-015/CNIL-Mali, AMRTP/CERT-Mali, Décret 08-485/DGMP-DSP, and World Bank/UNDP/AES procurement frameworks for stabilisation projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Mali?"
-                    : "What sets KabatOne apart for Mali's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Mali?"
+                    : "What sets Kabat One apart for Mali's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 7 corredores (Mauritania/Argelia/Níger/Burkina Faso/CI/Guinea/Senegal) con ANPR, listas Interpol/AES, alertas JNIM/GSIM/ISGS y monitoreo corredor Bamako-Dakar/Abidjan."
-                    : "KabatOne can unify 7 corridors (Mauritania/Algeria/Niger/Burkina Faso/CI/Guinea/Senegal) with ANPR, Interpol/AES watchlists, JNIM/GSIM/ISGS alerts, and Bamako-Dakar/Abidjan corridor monitoring.",
+                    ? "Kabat One puede unificar los 7 corredores (Mauritania/Argelia/Níger/Burkina Faso/CI/Guinea/Senegal) con ANPR, listas Interpol/AES, alertas JNIM/GSIM/ISGS y monitoreo corredor Bamako-Dakar/Abidjan."
+                    : "Kabat One can unify 7 corridors (Mauritania/Algeria/Niger/Burkina Faso/CI/Guinea/Senegal) with ANPR, Interpol/AES watchlists, JNIM/GSIM/ISGS alerts, and Bamako-Dakar/Abidjan corridor monitoring.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

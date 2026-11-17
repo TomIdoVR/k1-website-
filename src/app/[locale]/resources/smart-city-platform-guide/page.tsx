@@ -46,7 +46,7 @@ export default async function SmartCityPlatformGuidePage({
     },
     {
       question: '¿Que ciudades utilizan plataformas de ciudad inteligente?',
-      answer: 'Mas de 250 ciudades en el mundo han implementado plataformas de ciudad inteligente. En America Latina, KabatOne opera en mas de 40 ciudades protegiendo a 73 millones de ciudadanos, incluyendo despliegues en Mexico, Colombia y Chile. A nivel global, Singapur, Barcelona, Dubai y Seul son ejemplos destacados de implementaciones a gran escala.',
+      answer: 'Mas de 250 ciudades en el mundo han implementado plataformas de ciudad inteligente. En America Latina, Kabat One opera en mas de 40 ciudades protegiendo a 73 millones de ciudadanos, incluyendo despliegues en Mexico, Colombia y Chile. A nivel global, Singapur, Barcelona, Dubai y Seul son ejemplos destacados de implementaciones a gran escala.',
     },
     {
       question: '¿Como mejoran las plataformas de ciudad inteligente la seguridad publica?',
@@ -71,7 +71,7 @@ export default async function SmartCityPlatformGuidePage({
     },
     {
       question: 'What cities use smart city platforms?',
-      answer: 'Over 250 cities worldwide have deployed smart city platforms. In Latin America, KabatOne operates in more than 40 cities protecting 73 million citizens, including deployments in Mexico, Colombia, and Chile. Globally, Singapore, Barcelona, Dubai, and Seoul are prominent examples of large-scale implementations.',
+      answer: 'Over 250 cities worldwide have deployed smart city platforms. In Latin America, Kabat One operates in more than 40 cities protecting 73 million citizens, including deployments in Mexico, Colombia, and Chile. Globally, Singapore, Barcelona, Dubai, and Seoul are prominent examples of large-scale implementations.',
     },
     {
       question: 'How do smart city platforms improve public safety?',
@@ -192,7 +192,7 @@ export default async function SmartCityPlatformGuidePage({
                   : 'Video management is the highest-bandwidth component of a smart city platform. Modern platforms aggregate camera feeds from multiple manufacturers — including Hikvision, Dahua, Axis, and Hanwha — into a unified video management system (VMS). AI analytics applied to video enable abandoned object detection, facial recognition, people counting, and automatic license plate recognition (LPR).'}
                 {' '}
                 <Link href="/k-video" style={{ color: ACCENT, textDecoration: 'none', fontWeight: 500 }}>
-                  {es ? 'K-Video de KabatOne' : 'KabatOne K-Video'}
+                  {es ? 'K-Video de Kabat One' : 'Kabat One K-Video'}
                 </Link>
                 {es
                   ? ' soporta mas de 50 fabricantes de camaras y procesa analitica de IA a escala municipal.'
@@ -242,7 +242,7 @@ export default async function SmartCityPlatformGuidePage({
                   : 'Smart city platforms extend surveillance coverage through community video programs. Businesses and residents can voluntarily share their security camera feeds with the command center, expanding coverage without additional infrastructure cost.'}
                 {' '}
                 <Link href="/k-connect" style={{ color: ACCENT, textDecoration: 'none', fontWeight: 500 }}>
-                  {es ? 'K-Connect de KabatOne' : 'KabatOne K-Connect'}
+                  {es ? 'K-Connect de Kabat One' : 'Kabat One K-Connect'}
                 </Link>
                 {es
                   ? ' permite a los ciudadanos conectar sus camaras al centro de mando municipal con una sola aplicacion.'
@@ -281,8 +281,8 @@ export default async function SmartCityPlatformGuidePage({
           </p>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)' }}>
             {es
-              ? 'La plataforma KabatOne, por ejemplo, integra gestion de video (K-Video), despacho CAD, conciencia situacional GIS (K-Safety), gestion de trafico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma.'
-              : 'The KabatOne platform, for example, integrates video management (K-Video), CAD dispatch, GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) into a single platform.'}
+              ? 'La plataforma Kabat One, por ejemplo, integra gestion de video (K-Video), despacho CAD, conciencia situacional GIS (K-Safety), gestion de trafico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma.'
+              : 'The Kabat One platform, for example, integrates video management (K-Video), CAD dispatch, GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video (K-Connect) into a single platform.'}
             {' '}
             <Link href="/k-safety" style={{ color: ACCENT, textDecoration: 'none', fontWeight: 500 }}>
               {es ? 'Conoce K-Safety' : 'Learn about K-Safety'}
@@ -349,13 +349,13 @@ export default async function SmartCityPlatformGuidePage({
           </h2>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)', marginBottom: '16px' }}>
             {es
-              ? 'KabatOne opera en mas de 40 ciudades de America Latina y Estados Unidos, protegiendo a 73 millones de ciudadanos. La plataforma K1 de KabatOne integra K-Safety, K-Video, K-Traffic, K-Connect y K-Dispatch en despliegues que van desde municipios de 100,000 habitantes hasta estados completos con poblaciones superiores a 8 millones.'
-              : 'KabatOne operates in more than 40 cities across Latin America and the United States, protecting 73 million citizens. The KabatOne K1 platform integrates K-Safety, K-Video, K-Traffic, K-Connect, and K-Dispatch in deployments ranging from municipalities of 100,000 residents to entire states with populations exceeding 8 million.'}
+              ? 'Kabat One opera en mas de 40 ciudades de America Latina y Estados Unidos, protegiendo a 73 millones de ciudadanos. La plataforma K1 de Kabat One integra K-Safety, K-Video, K-Traffic, K-Connect y K-Dispatch en despliegues que van desde municipios de 100,000 habitantes hasta estados completos con poblaciones superiores a 8 millones.'
+              : 'Kabat One operates in more than 40 cities across Latin America and the United States, protecting 73 million citizens. The Kabat One K1 platform integrates K-Safety, K-Video, K-Traffic, K-Connect, and K-Dispatch in deployments ranging from municipalities of 100,000 residents to entire states with populations exceeding 8 million.'}
           </p>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)', marginBottom: '16px' }}>
             {es
-              ? 'En Jalisco, Mexico, la plataforma KabatOne conecta mas de 35,000 camaras, cientos de sensores IoT y multiples agencias de seguridad publica en un centro de mando estatal que opera las 24 horas. El despliegue redujo los tiempos de respuesta a emergencias en un 40% y proporciona cobertura de conciencia situacional en tiempo real para todo el estado.'
-              : 'In Jalisco, Mexico, the KabatOne platform connects over 35,000 cameras, hundreds of IoT sensors, and multiple public safety agencies into a state-level command center that operates 24/7. The deployment reduced emergency response times by 40% and provides real-time situational awareness coverage across the entire state.'}
+              ? 'En Jalisco, Mexico, la plataforma Kabat One conecta mas de 35,000 camaras, cientos de sensores IoT y multiples agencias de seguridad publica en un centro de mando estatal que opera las 24 horas. El despliegue redujo los tiempos de respuesta a emergencias en un 40% y proporciona cobertura de conciencia situacional en tiempo real para todo el estado.'
+              : 'In Jalisco, Mexico, the Kabat One platform connects over 35,000 cameras, hundreds of IoT sensors, and multiple public safety agencies into a state-level command center that operates 24/7. The deployment reduced emergency response times by 40% and provides real-time situational awareness coverage across the entire state.'}
           </p>
           <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--dim)' }}>
             {es
@@ -476,8 +476,8 @@ export default async function SmartCityPlatformGuidePage({
           es={es}
           h2={es ? '¿Listo para Implementar una Plataforma de Ciudad Inteligente?' : 'Ready to Deploy a Smart City Platform?'}
           subtitle={es
-            ? 'Agenda una demo con el equipo de KabatOne y descubre como la plataforma K1 puede unificar las operaciones de tu ciudad.'
-            : 'Schedule a demo with the KabatOne team and discover how the K1 platform can unify your city\'s operations.'}
+            ? 'Agenda una demo con el equipo de Kabat One y descubre como la plataforma K1 puede unificar las operaciones de tu ciudad.'
+            : 'Schedule a demo with the Kabat One team and discover how the K1 platform can unify your city\'s operations.'}
         />
       </main>
 

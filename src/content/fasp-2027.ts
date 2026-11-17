@@ -28,7 +28,7 @@ export const FASP_ES: SegmentCopy = {
     { title: 'Mayo a septiembre: reprogramaciones', body: 'Las reprogramaciones se solicitan de mayo al 30 de septiembre y no pueden exceder el 25 % del total convenido ni el 25 % de cada programa. Ejercer sin resolución favorable es un incumplimiento.', ask: 'Seguimiento mensual del avance para reprogramar a tiempo.' },
     { title: '31 de diciembre y primer trimestre: comprometer y pagar', body: 'Lo no comprometido al 31 de diciembre se reintegra a la Tesorería de la Federación. Lo comprometido o devengado debe pagarse a más tardar durante el primer trimestre del año siguiente.', ask: 'Contrato firmado antes de fin de año y entregas programadas antes del 31 de marzo.' },
   ],
-  howTitle: 'Cómo puede apoyarle KabatOne',
+  howTitle: 'Cómo puede apoyarle Kabat One',
   how: [
     'Atención de llamadas de emergencia y despacho en una sola plataforma: la llamada pasa del operador al despachador sin recapturar datos.',
     'Ubicación de quien llama generada automáticamente; incidente, unidades, cámaras y sensores en un solo mapa en vivo.',
@@ -74,7 +74,7 @@ export const FASP_EN: SegmentCopy = {
     { title: 'May to September: reprogramming', body: 'Reprogramming requests run from May to 30 September and cannot exceed 25% of the agreed total or 25% of any program. Spending without a favorable resolution is non-compliance.', ask: 'Monthly progress tracking so you can reprogram in time.' },
     { title: '31 December and Q1: commit and pay', body: 'Funds not committed by 31 December go back to the federal treasury. Committed or accrued funds must be paid by the end of the first quarter of the following year.', ask: 'A contract signed before year-end and deliveries scheduled before 31 March.' },
   ],
-  howTitle: 'How KabatOne can help',
+  howTitle: 'How Kabat One can help',
   how: [
     'Emergency call handling and dispatch in one platform: the call moves from call taker to dispatcher without re-entry.',
     'Caller location generated automatically; incident, units, cameras and sensors on one live map.',

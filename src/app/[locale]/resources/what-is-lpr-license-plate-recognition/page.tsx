@@ -45,7 +45,7 @@ export default async function WhatIsLprPage({
         {
           question: '¿Cuál es la diferencia entre LPR fijo y móvil?',
           answer:
-            'El LPR fijo se instala en postes, puentes o accesos controlados — cubre un punto específico de forma permanente y genera historial de movimiento de todos los vehículos que pasan. El LPR móvil se monta en vehículos policiales o patrullas — lee placas de los vehículos estacionados o en movimiento mientras la patrulla circula, ampliando la cobertura geográfica sin infraestructura fija. Los sistemas avanzados como KabatOne integran ambos tipos en un solo mapa operativo.',
+            'El LPR fijo se instala en postes, puentes o accesos controlados — cubre un punto específico de forma permanente y genera historial de movimiento de todos los vehículos que pasan. El LPR móvil se monta en vehículos policiales o patrullas — lee placas de los vehículos estacionados o en movimiento mientras la patrulla circula, ampliando la cobertura geográfica sin infraestructura fija. Los sistemas avanzados como Kabat One integran ambos tipos en un solo mapa operativo.',
         },
         {
           question: '¿Qué bases de datos se pueden integrar con LPR?',
@@ -55,7 +55,7 @@ export default async function WhatIsLprPage({
         {
           question: '¿Cómo se integra el LPR en una plataforma de seguridad pública?',
           answer:
-            'En una plataforma unificada como KabatOne, el LPR no opera como sistema aislado. Cada lectura de placa se superpone sobre el mapa GIS en tiempo real, mostrando la posición del vehículo junto con todas las unidades de respuesta activas. Cuando se genera una alerta, el operador puede ver simultáneamente las cámaras de videovigilancia cercanas al vehículo detectado y despachar la unidad más próxima directamente desde la misma interfaz, sin cambiar de sistema.',
+            'En una plataforma unificada como Kabat One, el LPR no opera como sistema aislado. Cada lectura de placa se superpone sobre el mapa GIS en tiempo real, mostrando la posición del vehículo junto con todas las unidades de respuesta activas. Cuando se genera una alerta, el operador puede ver simultáneamente las cámaras de videovigilancia cercanas al vehículo detectado y despachar la unidad más próxima directamente desde la misma interfaz, sin cambiar de sistema.',
         },
       ]
     : [
@@ -77,7 +77,7 @@ export default async function WhatIsLprPage({
         {
           question: 'What is the difference between fixed and mobile LPR?',
           answer:
-            'Fixed LPR is installed on poles, bridges, or controlled access points — it covers a specific location permanently and builds movement history for every vehicle that passes. Mobile LPR is mounted on police or patrol vehicles — it reads plates of parked or moving vehicles as the patrol drives, extending geographic coverage without fixed infrastructure. Advanced platforms like KabatOne integrate both types into a single operational map.',
+            'Fixed LPR is installed on poles, bridges, or controlled access points — it covers a specific location permanently and builds movement history for every vehicle that passes. Mobile LPR is mounted on police or patrol vehicles — it reads plates of parked or moving vehicles as the patrol drives, extending geographic coverage without fixed infrastructure. Advanced platforms like Kabat One integrate both types into a single operational map.',
         },
         {
           question: 'What databases can be integrated with LPR?',
@@ -87,7 +87,7 @@ export default async function WhatIsLprPage({
         {
           question: 'How does LPR integrate into a public safety platform?',
           answer:
-            'In a unified platform like KabatOne, LPR does not operate as an isolated system. Every plate read is overlaid on the real-time GIS map, showing the vehicle position alongside all active response units. When an alert is generated, the operator can simultaneously view nearby surveillance cameras and dispatch the closest unit directly from the same interface — no system switching required.',
+            'In a unified platform like Kabat One, LPR does not operate as an isolated system. Every plate read is overlaid on the real-time GIS map, showing the vehicle position alongside all active response units. When an alert is generated, the operator can simultaneously view nearby surveillance cameras and dispatch the closest unit directly from the same interface — no system switching required.',
         },
       ]
 
@@ -357,8 +357,8 @@ export default async function WhatIsLprPage({
           es={es}
           h2={es ? '¿Listo para Integrar LPR en tu Plataforma Operativa?' : 'Ready to Integrate LPR into Your Operational Platform?'}
           subtitle={es
-            ? 'KabatOne conecta LPR fijo y móvil con video, GIS y despacho en un solo entorno. Agenda una demo de K-Video.'
-            : 'KabatOne connects fixed and mobile LPR with video, GIS, and dispatch in a single environment. Schedule a K-Video demo.'}
+            ? 'Kabat One conecta LPR fijo y móvil con video, GIS y despacho en un solo entorno. Agenda una demo de K-Video.'
+            : 'Kabat One connects fixed and mobile LPR with video, GIS, and dispatch in a single environment. Schedule a K-Video demo.'}
         />
       </main>
 

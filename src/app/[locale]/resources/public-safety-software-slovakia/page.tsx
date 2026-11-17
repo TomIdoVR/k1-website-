@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareSlovakiaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Eslovaquia | KabatOne"
-    : "Public Safety Software for Slovakia | KabatOne";
+    ? "Software de Seguridad Pública para Eslovaquia | Kabat One"
+    : "Public Safety Software for Slovakia | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Eslovaquia — Policía de Eslovaquia, Guardia de Fronteras y Extranjería, HaZZ — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 eslovaco."
-    : "KabatOne supports Slovakia security forces — Police of Slovakia, Border and Alien Police, HaZZ fire service — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Slovak 112 system.";
+    ? "Kabat One apoya las fuerzas de seguridad de Eslovaquia — Policía de Eslovaquia, Guardia de Fronteras y Extranjería, HaZZ — con vigilancia en tiempo real, despacho y gestión de incidentes. Compatible con GDPR, estándares OTAN/UE y el sistema 112 eslovaco."
+    : "Kabat One supports Slovakia security forces — Police of Slovakia, Border and Alien Police, HaZZ fire service — with real-time surveillance, dispatch, and incident management. Compatible with GDPR, NATO/EU standards, and the Slovak 112 system.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-slovakia"
@@ -37,10 +37,10 @@ export default async function PublicSafetySoftwareSlovakiaPage({
         : "Slovakia faces challenges on the NATO Eastern Flank: border with Ukraine (98 km) managing refugee transit (1M+ crossed in 2022-2023) and military aid flows. The border with Hungary is relevant for Balkan migration route flows. As a transit corridor for Russian gas to Western Europe (TBG/Eustream pipeline), energy security is a priority. It also faces internal political polarization and disinformation risks.",
     },
     {
-      question: es ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Eslovaquia?" : "How does KabatOne support Slovakia security forces?",
+      question: es ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Eslovaquia?" : "How does Kabat One support Slovakia security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la Policía de Eslovaquia (PZ ~20,000 efectivos), la Guardia de Fronteras y Extranjería (ÚHCP), el Cuerpo de Bomberos y Rescate de Eslovaquia (HaZZ), el Servicio de Inteligencia (SIS), y el Centro de Operaciones del Sistema de Seguridad Nacional (KRIZOVÝ ŠTÁB). La plataforma se integra con el sistema 112 eslovaco (operado por la Operadora del Sistema de Emergencias), cumple con GDPR y la legislación eslovaca de protección de datos."
-        : "KabatOne provides unified situational awareness for the Police of Slovakia (PZ ~20,000 officers), Border and Alien Police (ÚHCP), Fire and Rescue Corps (HaZZ), Intelligence Service (SIS), and the National Security System Operations Centre (KRIZOVÝ ŠTÁB). The platform integrates with Slovakia's 112 system, complies with GDPR and Slovak data protection legislation.",
+        ? "Kabat One proporciona conciencia situacional unificada para la Policía de Eslovaquia (PZ ~20,000 efectivos), la Guardia de Fronteras y Extranjería (ÚHCP), el Cuerpo de Bomberos y Rescate de Eslovaquia (HaZZ), el Servicio de Inteligencia (SIS), y el Centro de Operaciones del Sistema de Seguridad Nacional (KRIZOVÝ ŠTÁB). La plataforma se integra con el sistema 112 eslovaco (operado por la Operadora del Sistema de Emergencias), cumple con GDPR y la legislación eslovaca de protección de datos."
+        : "Kabat One provides unified situational awareness for the Police of Slovakia (PZ ~20,000 officers), Border and Alien Police (ÚHCP), Fire and Rescue Corps (HaZZ), Intelligence Service (SIS), and the National Security System Operations Centre (KRIZOVÝ ŠTÁB). The platform integrates with Slovakia's 112 system, complies with GDPR and Slovak data protection legislation.",
     },
     {
       question: es ? "¿Qué infraestructura crítica requiere protección en Eslovaquia?" : "What critical infrastructure requires protection in Slovakia?",
@@ -49,10 +49,10 @@ export default async function PublicSafetySoftwareSlovakiaPage({
         : "Critical infrastructure includes Mochovce Nuclear Power Plant (4 VVER-440 reactors, ~50% Slovak electricity), Bratislava International Airport (BTS) and Košice Airport (KSC), Eustream gas corridor (TBG pipeline — 87.8 bcm/year capacity, main Russian gas→Europe route), Bratislava riverport on the Danube, VW/Stellantis/Kia plants (world's largest car plant concentration per capita), and NATO barracks in Slovakia.",
     },
     {
-      question: es ? "¿Cómo apoya KabatOne la gestión de la frontera con Ucrania?" : "How does KabatOne support the Ukraine border management?",
+      question: es ? "¿Cómo apoya Kabat One la gestión de la frontera con Ucrania?" : "How does Kabat One support the Ukraine border management?",
       answer: es
-        ? "KabatOne integra la videovigilancia de los pasos fronterizos eslovaco-ucranianos, el seguimiento de unidades de la Guardia de Fronteras y Extranjería, el monitoreo de flujos de refugiados en los 4 puntos de paso principales (Vyšné Nemecké, Ubľa, Veľké Slemence, Čierna nad Tisou), y la coordinación con Frontex y el Centro de Control de Crisis de la UE para la gestión de desplazamientos masivos. La plataforma gestiona también el control de equipos militares y ayuda humanitaria en tránsito."
-        : "KabatOne integrates video surveillance at Slovak-Ukrainian border crossings, Border and Alien Police unit tracking, refugee flow monitoring at the 4 main crossing points (Vyšné Nemecké, Ubľa, Veľké Slemence, Čierna nad Tisou), and coordination with Frontex and the EU Crisis Control Centre for mass displacement management. The platform also manages military equipment and humanitarian aid in transit.",
+        ? "Kabat One integra la videovigilancia de los pasos fronterizos eslovaco-ucranianos, el seguimiento de unidades de la Guardia de Fronteras y Extranjería, el monitoreo de flujos de refugiados en los 4 puntos de paso principales (Vyšné Nemecké, Ubľa, Veľké Slemence, Čierna nad Tisou), y la coordinación con Frontex y el Centro de Control de Crisis de la UE para la gestión de desplazamientos masivos. La plataforma gestiona también el control de equipos militares y ayuda humanitaria en tránsito."
+        : "Kabat One integrates video surveillance at Slovak-Ukrainian border crossings, Border and Alien Police unit tracking, refugee flow monitoring at the 4 main crossing points (Vyšné Nemecké, Ubľa, Veľké Slemence, Čierna nad Tisou), and coordination with Frontex and the EU Crisis Control Centre for mass displacement management. The platform also manages military equipment and humanitarian aid in transit.",
     },
   ];
 
@@ -168,12 +168,12 @@ export default async function PublicSafetySoftwareSlovakiaPage({
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
-            {es ? "Capacidades de KabatOne para Eslovaquia" : "KabatOne Capabilities for Slovakia"}
+            {es ? "Capacidades de Kabat One para Eslovaquia" : "Kabat One Capabilities for Slovakia"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a Eslovaquia: gestión de la frontera con Ucrania y flujos de refugiados, protección de la Central Nuclear de Mochovce y el corredor Eustream, vigilancia de las plantas de producción de automóviles, y coordinación con la OTAN en el flanco oriental."
-              : "The KabatOne platform provides an integrated suite adapted to Slovakia: Ukraine border and refugee flow management, Mochovce Nuclear Plant and Eustream corridor protection, automotive plant surveillance, and NATO Eastern Flank coordination."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a Eslovaquia: gestión de la frontera con Ucrania y flujos de refugiados, protección de la Central Nuclear de Mochovce y el corredor Eustream, vigilancia de las plantas de producción de automóviles, y coordinación con la OTAN en el flanco oriental."
+              : "The Kabat One platform provides an integrated suite adapted to Slovakia: Ukraine border and refugee flow management, Mochovce Nuclear Plant and Eustream corridor protection, automotive plant surveillance, and NATO Eastern Flank coordination."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -242,8 +242,8 @@ export default async function PublicSafetySoftwareSlovakiaPage({
         es={es}
         h2={es ? "¿Listo para modernizar la seguridad pública en Eslovaquia?" : "Ready to modernize public safety in Slovakia?"}
         subtitle={es
-          ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la Policía de Eslovaquia, ÚHCP y HaZZ con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
-          : "Speak with our team about how KabatOne can support Slovakia Police, ÚHCP, and HaZZ with a platform compatible with GDPR, NIS2, and NATO standards."}
+          ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la Policía de Eslovaquia, ÚHCP y HaZZ con una plataforma compatible con GDPR, NIS2 y los estándares de la OTAN."
+          : "Speak with our team about how Kabat One can support Slovakia Police, ÚHCP, and HaZZ with a platform compatible with GDPR, NIS2, and NATO standards."}
       />
       <Footer es={es} />
     </>

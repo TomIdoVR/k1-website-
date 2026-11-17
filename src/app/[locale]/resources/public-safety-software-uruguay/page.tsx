@@ -47,19 +47,19 @@ export default async function PublicSafetySoftwareUruguayPage({
     },
     {
       question: "¿Que es AGESIC y como impacta la tecnologia de seguridad publica en Uruguay?",
-      answer: "La Agencia de Gobierno Electronico y Sociedad de la Informacion y del Conocimiento (AGESIC) lidera la transformacion digital del Estado uruguayo, incluyendo la estandarizacion de plataformas tecnologicas para el Ministerio del Interior y los municipios. AGESIC define los estandares de interoperabilidad y ciberseguridad para sistemas gubernamentales, lo que significa que cualquier plataforma de seguridad publica — incluyendo VMS, CAD y GIS — debe cumplir con los marcos tecnologicos que AGESIC establece. KabatOne cumple con estandares abiertos (ONVIF, REST API) compatibles con los requerimientos de AGESIC.",
+      answer: "La Agencia de Gobierno Electronico y Sociedad de la Informacion y del Conocimiento (AGESIC) lidera la transformacion digital del Estado uruguayo, incluyendo la estandarizacion de plataformas tecnologicas para el Ministerio del Interior y los municipios. AGESIC define los estandares de interoperabilidad y ciberseguridad para sistemas gubernamentales, lo que significa que cualquier plataforma de seguridad publica — incluyendo VMS, CAD y GIS — debe cumplir con los marcos tecnologicos que AGESIC establece. Kabat One cumple con estandares abiertos (ONVIF, REST API) compatibles con los requerimientos de AGESIC.",
     },
     {
-      question: "¿Como puede KabatOne integrarse con las camaras CCTV existentes en Uruguay?",
-      answer: "KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. El sistema de videovigilancia municipal de Montevideo (con cientos de camaras operadas por la Intendencia y el Ministerio del Interior), las camaras en Ciudad de la Costa, Las Piedras, Maldonado y Punta del Este se conectan directamente. Camaras en el Puerto de Montevideo (Katoen Natie, terminal mas moderna de Sudamerica), el Aeropuerto Internacional Carrasco (MVD), el Puerto de Nueva Palmira y los terminales de granos del Rio Uruguay tambien se integran sin cambiar infraestructura.",
+      question: "¿Como puede Kabat One integrarse con las camaras CCTV existentes en Uruguay?",
+      answer: "Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. El sistema de videovigilancia municipal de Montevideo (con cientos de camaras operadas por la Intendencia y el Ministerio del Interior), las camaras en Ciudad de la Costa, Las Piedras, Maldonado y Punta del Este se conectan directamente. Camaras en el Puerto de Montevideo (Katoen Natie, terminal mas moderna de Sudamerica), el Aeropuerto Internacional Carrasco (MVD), el Puerto de Nueva Palmira y los terminales de granos del Rio Uruguay tambien se integran sin cambiar infraestructura.",
     },
     {
-      question: "¿Como aborda KabatOne el crecimiento del crimen organizado en Uruguay?",
-      answer: "Uruguay mantiene indices de criminalidad bajos para la region, pero ha experimentado crecimiento del crimen organizado en Montevideo — incluyendo el narcotrafico de pasta base, el robo de autos y las bandas del tipo Primer Cartel Uruguayo. La Policia Nacional opera la Jefatura de Policia de Montevideo y 18 jefaturas departamentales. KabatOne provee el mapa GIS compartido de unidades policiales, LPR para persecucion de vehiculos robados, analitico de video para zonas de mayor incidencia y despacho CAD que integra el 911 con las jefaturas departamentales.",
+      question: "¿Como aborda Kabat One el crecimiento del crimen organizado en Uruguay?",
+      answer: "Uruguay mantiene indices de criminalidad bajos para la region, pero ha experimentado crecimiento del crimen organizado en Montevideo — incluyendo el narcotrafico de pasta base, el robo de autos y las bandas del tipo Primer Cartel Uruguayo. La Policia Nacional opera la Jefatura de Policia de Montevideo y 18 jefaturas departamentales. Kabat One provee el mapa GIS compartido de unidades policiales, LPR para persecucion de vehiculos robados, analitico de video para zonas de mayor incidencia y despacho CAD que integra el 911 con las jefaturas departamentales.",
     },
     {
-      question: "¿Como se alinea KabatOne con el marco de adquisiciones de Uruguay (TOCAF/CR Online)?",
-      answer: "KabatOne opera a traves de distribuidores e integradores locales conforme al TOCAF (Decreto 150/012) y el portal compras.gub.uy del ACCE. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio del Interior, Intendencias departamentales y empresas publicas (ANCAP, UTE, OSE, ANTEL). Las especificaciones tecnicas abiertas facilitan la inclusion en pliegos sin clausulas de exclusividad. La Ley 18.331 de Proteccion de Datos Personales (URCDP) — una de las mas robustas de LATAM, equivalente al GDPR — rige el manejo de datos en cualquier sistema publico.",
+      question: "¿Como se alinea Kabat One con el marco de adquisiciones de Uruguay (TOCAF/CR Online)?",
+      answer: "Kabat One opera a traves de distribuidores e integradores locales conforme al TOCAF (Decreto 150/012) y el portal compras.gub.uy del ACCE. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los presupuestos del Ministerio del Interior, Intendencias departamentales y empresas publicas (ANCAP, UTE, OSE, ANTEL). Las especificaciones tecnicas abiertas facilitan la inclusion en pliegos sin clausulas de exclusividad. La Ley 18.331 de Proteccion de Datos Personales (URCDP) — una de las mas robustas de LATAM, equivalente al GDPR — rige el manejo de datos en cualquier sistema publico.",
     },
   ] : [
     {
@@ -72,19 +72,19 @@ export default async function PublicSafetySoftwareUruguayPage({
     },
     {
       question: "What is AGESIC and how does it impact public safety technology in Uruguay?",
-      answer: "The Agency for E-Government and the Information and Knowledge Society (AGESIC) leads the digital transformation of the Uruguayan State, including standardization of technology platforms for the Ministry of Interior and municipalities. AGESIC defines interoperability and cybersecurity standards for government systems, meaning any public safety platform — including VMS, CAD, and GIS — must comply with AGESIC technology frameworks. KabatOne complies with open standards (ONVIF, REST API) compatible with AGESIC requirements.",
+      answer: "The Agency for E-Government and the Information and Knowledge Society (AGESIC) leads the digital transformation of the Uruguayan State, including standardization of technology platforms for the Ministry of Interior and municipalities. AGESIC defines interoperability and cybersecurity standards for government systems, meaning any public safety platform — including VMS, CAD, and GIS — must comply with AGESIC technology frameworks. Kabat One complies with open standards (ONVIF, REST API) compatible with AGESIC requirements.",
     },
     {
-      question: "How can KabatOne integrate with existing CCTV infrastructure in Uruguay?",
-      answer: "KabatOne integrates any ONVIF/RTSP camera without hardware replacement. Montevideo's municipal video surveillance system (with hundreds of cameras operated by the municipality and Ministry of Interior), cameras in Ciudad de la Costa, Las Piedras, Maldonado, and Punta del Este connect directly. Cameras at the Port of Montevideo (Katoen Natie, South America's most modern terminal), Carrasco International Airport (MVD), Port of Nueva Palmira, and grain terminals on the Uruguay River also integrate without changing infrastructure.",
+      question: "How can Kabat One integrate with existing CCTV infrastructure in Uruguay?",
+      answer: "Kabat One integrates any ONVIF/RTSP camera without hardware replacement. Montevideo's municipal video surveillance system (with hundreds of cameras operated by the municipality and Ministry of Interior), cameras in Ciudad de la Costa, Las Piedras, Maldonado, and Punta del Este connect directly. Cameras at the Port of Montevideo (Katoen Natie, South America's most modern terminal), Carrasco International Airport (MVD), Port of Nueva Palmira, and grain terminals on the Uruguay River also integrate without changing infrastructure.",
     },
     {
-      question: "How does KabatOne address the growth of organized crime in Uruguay?",
-      answer: "Uruguay maintains low crime rates for the region, but has experienced organized crime growth in Montevideo — including paste-base drug trafficking, vehicle theft, and gangs. The National Police operates the Montevideo Police Headquarters and 18 departmental police headquarters. KabatOne provides the shared GIS map of police units, LPR for stolen vehicle pursuit, video analytics for high-incidence zones, and CAD dispatch that integrates the 911 system with departmental headquarters.",
+      question: "How does Kabat One address the growth of organized crime in Uruguay?",
+      answer: "Uruguay maintains low crime rates for the region, but has experienced organized crime growth in Montevideo — including paste-base drug trafficking, vehicle theft, and gangs. The National Police operates the Montevideo Police Headquarters and 18 departmental police headquarters. Kabat One provides the shared GIS map of police units, LPR for stolen vehicle pursuit, video analytics for high-incidence zones, and CAD dispatch that integrates the 911 system with departmental headquarters.",
     },
     {
-      question: "How does KabatOne align with Uruguay's procurement framework (TOCAF/CR Online)?",
-      answer: "KabatOne operates through local distributors and integrators under the TOCAF (Decree 150/012) and the ACCE compras.gub.uy portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, departmental government, and state enterprise (ANCAP, UTE, OSE, ANTEL) budgets. Open technical specifications facilitate inclusion in procurement documents without exclusivity clauses. Law 18,331 on Personal Data Protection (URCDP) — one of the most robust in LATAM, equivalent to GDPR — governs data handling in any public system.",
+      question: "How does Kabat One align with Uruguay's procurement framework (TOCAF/CR Online)?",
+      answer: "Kabat One operates through local distributors and integrators under the TOCAF (Decree 150/012) and the ACCE compras.gub.uy portal. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to Ministry of Interior, departmental government, and state enterprise (ANCAP, UTE, OSE, ANTEL) budgets. Open technical specifications facilitate inclusion in procurement documents without exclusivity clauses. Law 18,331 on Personal Data Protection (URCDP) — one of the most robust in LATAM, equivalent to GDPR — governs data handling in any public system.",
     },
   ]
 
@@ -198,8 +198,8 @@ export default async function PublicSafetySoftwareUruguayPage({
             color: 'var(--dim)', maxWidth: '720px', margin: '0 0 32px',
           }}>
             {es
-              ? 'Uruguay opera con ~17,000 efectivos de la Policia Nacional en 19 departamentos y es referente regional en gobernanza digital (AGESIC). KabatOne unifica videovigilancia, despacho CAD, GIS operacional y cumplimiento URCDP en una sola plataforma — desde el Puerto de Montevideo hasta Punta del Este.'
-              : 'Uruguay operates with ~17,000 National Police officers across 19 departments and is a regional leader in digital governance (AGESIC). KabatOne unifies video surveillance, CAD dispatch, operational GIS, and URCDP compliance on one platform — from the Port of Montevideo to Punta del Este.'}
+              ? 'Uruguay opera con ~17,000 efectivos de la Policia Nacional en 19 departamentos y es referente regional en gobernanza digital (AGESIC). Kabat One unifica videovigilancia, despacho CAD, GIS operacional y cumplimiento URCDP en una sola plataforma — desde el Puerto de Montevideo hasta Punta del Este.'
+              : 'Uruguay operates with ~17,000 National Police officers across 19 departments and is a regional leader in digital governance (AGESIC). Kabat One unifies video surveillance, CAD dispatch, operational GIS, and URCDP compliance on one platform — from the Port of Montevideo to Punta del Este.'}
           </p>
         </div>
 
@@ -243,7 +243,7 @@ export default async function PublicSafetySoftwareUruguayPage({
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: 'var(--dim)', fontWeight: 500 }}>{es ? 'Capacidad' : 'Capability'}</th>
                   <th style={{ textAlign: 'left', padding: '10px 12px', color: '#ef4444', fontWeight: 500 }}>{es ? 'Sistemas fragmentados' : 'Fragmented systems'}</th>
-                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', color: '#22c55e', fontWeight: 500 }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -264,7 +264,7 @@ export default async function PublicSafetySoftwareUruguayPage({
             fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700,
             fontSize: 'clamp(22px, 3vw, 30px)', color: 'var(--white)', margin: '0 0 28px',
           }}>
-            {es ? 'Como Funciona KabatOne en Uruguay' : 'How KabatOne Works in Uruguay'}
+            {es ? 'Como Funciona Kabat One en Uruguay' : 'How Kabat One Works in Uruguay'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {workflowSteps.map((step, i) => (
@@ -343,7 +343,7 @@ export default async function PublicSafetySoftwareUruguayPage({
         <div style={{ marginTop: '72px' }}>
           <CTASection
             es={es}
-            h2={es ? 'Conozca KabatOne para Uruguay' : 'See KabatOne for Uruguay'}
+            h2={es ? 'Conozca Kabat One para Uruguay' : 'See Kabat One for Uruguay'}
             subtitle={es
               ? 'Policia Nacional, 911 y AGESIC-compatible en una sola plataforma. Solicite una demostracion con escenarios reales.'
               : 'National Police, 911, and AGESIC-compatible on one platform. Request a demo with real scenarios.'}

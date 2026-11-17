@@ -8,7 +8,7 @@ import { Link } from '@/i18n/navigation'
  * 911 Michoacán emergency app. Responsible entity is Kabat-One Software Ltd.
  * The Spanish text is the governing version and is reproduced verbatim in
  * both the EN and ES routes (no unofficial translation of binding legal terms).
- * One-off page, not the reusable KabatOne Google Play template.
+ * One-off page, not the reusable Kabat One Google Play template.
  */
 
 const APP_NAME = '911 Michoacán'

@@ -28,17 +28,17 @@ export default async function VsShotSpotterPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs ShotSpotter', url: es ? 'https://kabatone.com/es/vs/shotspotter' : 'https://kabatone.com/vs/shotspotter' },
+    { name: 'Kabat One vs ShotSpotter', url: es ? 'https://kabatone.com/es/vs/shotspotter' : 'https://kabatone.com/vs/shotspotter' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y ShotSpotter?',
-      answer: 'ShotSpotter (ahora SoundThinking) es un sistema de detección acústica de disparos — sensores de audio instalados en postes y edificios que detectan detonaciones, trianglan la ubicación y envían alertas a las unidades de campo. Es un sensor de entrada, no una plataforma operativa. KabatOne es una plataforma unificada de seguridad pública que puede integrar ShotSpotter u otros sistemas de detección de disparos como una fuente de datos más, y conectar automáticamente esa alerta con el flujo de respuesta: video del área, asignación de unidades, protocolo de despacho CAD y coordinación de tráfico, todo en una sola pantalla.',
+      question: '¿Cuál es la diferencia entre Kabat One y ShotSpotter?',
+      answer: 'ShotSpotter (ahora SoundThinking) es un sistema de detección acústica de disparos — sensores de audio instalados en postes y edificios que detectan detonaciones, trianglan la ubicación y envían alertas a las unidades de campo. Es un sensor de entrada, no una plataforma operativa. Kabat One es una plataforma unificada de seguridad pública que puede integrar ShotSpotter u otros sistemas de detección de disparos como una fuente de datos más, y conectar automáticamente esa alerta con el flujo de respuesta: video del área, asignación de unidades, protocolo de despacho CAD y coordinación de tráfico, todo en una sola pantalla.',
     },
     {
-      question: '¿KabatOne puede integrarse con ShotSpotter?',
-      answer: 'Sí. KabatOne puede recibir alertas de ShotSpotter u otros sistemas de detección de disparos vía API y mostrarlas automáticamente en el mapa de K-Safety, activar las cámaras más cercanas en K-Video y generar un incidente en K-Dispatch. La alerta de disparo se convierte en un flujo operativo completo — no solo en una notificación.',
+      question: '¿Kabat One puede integrarse con ShotSpotter?',
+      answer: 'Sí. Kabat One puede recibir alertas de ShotSpotter u otros sistemas de detección de disparos vía API y mostrarlas automáticamente en el mapa de K-Safety, activar las cámaras más cercanas en K-Video y generar un incidente en K-Dispatch. La alerta de disparo se convierte en un flujo operativo completo — no solo en una notificación.',
     },
     {
       question: '¿Qué hace ShotSpotter exactamente?',
@@ -46,24 +46,24 @@ export default async function VsShotSpotterPage({
     },
     {
       question: '¿Es ShotSpotter suficiente para un centro de mando moderno?',
-      answer: 'No. ShotSpotter resuelve un problema específico: la detección temprana de disparos. Pero una vez que llega la alerta, el centro de mando necesita verificar con video, despachar la unidad más cercana, comunicarse con el campo, coordinar la ruta de emergencia y gestionar el incidente con un protocolo estructurado. Para todo eso, necesitas una plataforma operativa completa. ShotSpotter puede ser uno de los muchos sensores que alimentan a KabatOne.',
+      answer: 'No. ShotSpotter resuelve un problema específico: la detección temprana de disparos. Pero una vez que llega la alerta, el centro de mando necesita verificar con video, despachar la unidad más cercana, comunicarse con el campo, coordinar la ruta de emergencia y gestionar el incidente con un protocolo estructurado. Para todo eso, necesitas una plataforma operativa completa. ShotSpotter puede ser uno de los muchos sensores que alimentan a Kabat One.',
     },
     {
       question: '¿Hay alternativas a ShotSpotter para detección de disparos?',
-      answer: 'Sí. Entre las alternativas están SST (ShotSpotter comprado por SoundThinking), Motorola Solutions con tecnología similar, Shooter Detection Systems (integrado en Genetec y otros VMS), y cámaras con analítica IA de audio integrada. KabatOne puede integrarse con cualquiera de estas fuentes — la clave es que la detección de disparos es una entrada al flujo operativo, no el destino final.',
+      answer: 'Sí. Entre las alternativas están SST (ShotSpotter comprado por SoundThinking), Motorola Solutions con tecnología similar, Shooter Detection Systems (integrado en Genetec y otros VMS), y cámaras con analítica IA de audio integrada. Kabat One puede integrarse con cualquiera de estas fuentes — la clave es que la detección de disparos es una entrada al flujo operativo, no el destino final.',
     },
     {
-      question: '¿KabatOne tiene detección de disparos nativa?',
-      answer: 'KabatOne puede integrarse con sensores de detección de disparos de terceros. Adicionalmente, K-Video incluye analítica IA aplicada al feed de video y audio de cámaras existentes, que puede detectar anomalías sonoras en entornos donde ya se tienen cámaras instaladas. Esto permite a municipios con infraestructura de cámaras urbanas agregar capacidad de detección sin desplegar sensores adicionales.',
+      question: '¿Kabat One tiene detección de disparos nativa?',
+      answer: 'Kabat One puede integrarse con sensores de detección de disparos de terceros. Adicionalmente, K-Video incluye analítica IA aplicada al feed de video y audio de cámaras existentes, que puede detectar anomalías sonoras en entornos donde ya se tienen cámaras instaladas. Esto permite a municipios con infraestructura de cámaras urbanas agregar capacidad de detección sin desplegar sensores adicionales.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and ShotSpotter?',
-      answer: 'ShotSpotter (now SoundThinking) is an acoustic gunshot detection system — audio sensors installed on poles and buildings that detect gunfire, triangulate the location, and send alerts to field units. It is an input sensor, not an operational platform. KabatOne is a unified public safety platform that can integrate ShotSpotter or other gunshot detection systems as one data source, and automatically connect that alert to the full response workflow: area video, unit assignment, CAD dispatch protocol, and traffic coordination — all in one screen.',
+      question: 'What is the difference between Kabat One and ShotSpotter?',
+      answer: 'ShotSpotter (now SoundThinking) is an acoustic gunshot detection system — audio sensors installed on poles and buildings that detect gunfire, triangulate the location, and send alerts to field units. It is an input sensor, not an operational platform. Kabat One is a unified public safety platform that can integrate ShotSpotter or other gunshot detection systems as one data source, and automatically connect that alert to the full response workflow: area video, unit assignment, CAD dispatch protocol, and traffic coordination — all in one screen.',
     },
     {
-      question: 'Can KabatOne integrate with ShotSpotter?',
-      answer: 'Yes. KabatOne can receive alerts from ShotSpotter or other gunshot detection systems via API and automatically display them on the K-Safety map, trigger the nearest cameras in K-Video, and generate an incident in K-Dispatch. The gunshot alert becomes a complete operational workflow — not just a notification.',
+      question: 'Can Kabat One integrate with ShotSpotter?',
+      answer: 'Yes. Kabat One can receive alerts from ShotSpotter or other gunshot detection systems via API and automatically display them on the K-Safety map, trigger the nearest cameras in K-Video, and generate an incident in K-Dispatch. The gunshot alert becomes a complete operational workflow — not just a notification.',
     },
     {
       question: 'What does ShotSpotter actually do?',
@@ -71,15 +71,15 @@ export default async function VsShotSpotterPage({
     },
     {
       question: 'Is ShotSpotter enough for a modern command center?',
-      answer: 'No. ShotSpotter solves a specific problem: early gunshot detection. But once the alert arrives, the command center needs to verify with video, dispatch the nearest unit, communicate with the field, coordinate the emergency route, and manage the incident with a structured protocol. For all of that, you need a complete operational platform. ShotSpotter can be one of many sensors feeding into KabatOne.',
+      answer: 'No. ShotSpotter solves a specific problem: early gunshot detection. But once the alert arrives, the command center needs to verify with video, dispatch the nearest unit, communicate with the field, coordinate the emergency route, and manage the incident with a structured protocol. For all of that, you need a complete operational platform. ShotSpotter can be one of many sensors feeding into Kabat One.',
     },
     {
       question: 'Are there alternatives to ShotSpotter for gunshot detection?',
-      answer: 'Yes. Alternatives include SST (ShotSpotter acquired by SoundThinking), Motorola Solutions with similar technology, Shooter Detection Systems (integrated into Genetec and other VMS), and cameras with integrated AI audio analytics. KabatOne can integrate with any of these sources — the key is that gunshot detection is an input to the operational workflow, not the final destination.',
+      answer: 'Yes. Alternatives include SST (ShotSpotter acquired by SoundThinking), Motorola Solutions with similar technology, Shooter Detection Systems (integrated into Genetec and other VMS), and cameras with integrated AI audio analytics. Kabat One can integrate with any of these sources — the key is that gunshot detection is an input to the operational workflow, not the final destination.',
     },
     {
-      question: 'Does KabatOne have native gunshot detection?',
-      answer: 'KabatOne can integrate with third-party gunshot detection sensors. Additionally, K-Video includes AI analytics applied to the video and audio feeds of existing cameras, which can detect sonic anomalies in environments that already have cameras installed. This allows municipalities with urban camera infrastructure to add detection capability without deploying additional sensors.',
+      question: 'Does Kabat One have native gunshot detection?',
+      answer: 'Kabat One can integrate with third-party gunshot detection sensors. Additionally, K-Video includes AI analytics applied to the video and audio feeds of existing cameras, which can detect sonic anomalies in environments that already have cameras installed. This allows municipalities with urban camera infrastructure to add detection capability without deploying additional sensors.',
     },
   ]
 
@@ -201,7 +201,7 @@ export default async function VsShotSpotterPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs ShotSpotter</span>
+          <span style={{ color: ACCENT }}>Kabat One vs ShotSpotter</span>
         </div>
 
         {/* ── HERO ── */}
@@ -220,13 +220,13 @@ export default async function VsShotSpotterPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs ShotSpotter — Detección de Disparos vs Plataforma de Respuesta Unificada'
-              : 'KabatOne vs ShotSpotter — Gunshot Detection vs Unified Response Platform'}
+              ? 'Kabat One vs ShotSpotter — Detección de Disparos vs Plataforma de Respuesta Unificada'
+              : 'Kabat One vs ShotSpotter — Gunshot Detection vs Unified Response Platform'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'ShotSpotter (SoundThinking) detecta disparos. Es muy bueno en eso. Pero detectar un disparo es solo el primer segundo del incidente — lo que pasa en los siguientes 90 segundos determina el resultado. KabatOne integra la alerta de ShotSpotter con el flujo operativo completo: verificación de video, asignación de unidad, despacho CAD y coordinación de tráfico, todo en una sola pantalla.'
-              : 'ShotSpotter (SoundThinking) detects gunshots. It is very good at that. But detecting a gunshot is only the first second of the incident — what happens in the next 90 seconds determines the outcome. KabatOne integrates the ShotSpotter alert with the full operational workflow: video verification, unit assignment, CAD dispatch, and traffic coordination — all in one screen.'}
+              ? 'ShotSpotter (SoundThinking) detecta disparos. Es muy bueno en eso. Pero detectar un disparo es solo el primer segundo del incidente — lo que pasa en los siguientes 90 segundos determina el resultado. Kabat One integra la alerta de ShotSpotter con el flujo operativo completo: verificación de video, asignación de unidad, despacho CAD y coordinación de tráfico, todo en una sola pantalla.'
+              : 'ShotSpotter (SoundThinking) detects gunshots. It is very good at that. But detecting a gunshot is only the first second of the incident — what happens in the next 90 seconds determines the outcome. Kabat One integrates the ShotSpotter alert with the full operational workflow: video verification, unit assignment, CAD dispatch, and traffic coordination — all in one screen.'}
           </p>
         </section>
 
@@ -266,22 +266,22 @@ export default async function VsShotSpotterPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios y centros de mando C4/C5. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma.'
-                : 'KabatOne is a cloud-native unified public safety platform built for cities, municipalities, and C4/C5 command centers. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública cloud-native construida para ciudades, municipios y centros de mando C4/C5. Integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una sola plataforma.'
+                : 'Kabat One is a cloud-native unified public safety platform built for cities, municipalities, and C4/C5 command centers. It integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Cuando un sistema de detección de disparos — ShotSpotter, Shooter Detection Systems, o analítica de audio en cámaras existentes — genera una alerta, KabatOne la recibe vía API y ejecuta automáticamente el flujo de respuesta: muestra la ubicación en K-Safety, abre el feed de las cámaras más cercanas en K-Video, crea el incidente en K-Dispatch con el protocolo de disparos activos, y notifica a las unidades más cercanas. En lugar de un operador corriendo entre sistemas, todo ocurre en una pantalla.'
-                : 'When a gunshot detection system — ShotSpotter, Shooter Detection Systems, or audio analytics on existing cameras — generates an alert, KabatOne receives it via API and automatically executes the response workflow: displays the location on K-Safety, opens the nearest camera feeds in K-Video, creates the incident in K-Dispatch with the active shooter protocol, and notifies the nearest units. Instead of an operator running between systems, everything happens in one screen.'}
+                ? 'Cuando un sistema de detección de disparos — ShotSpotter, Shooter Detection Systems, o analítica de audio en cámaras existentes — genera una alerta, Kabat One la recibe vía API y ejecuta automáticamente el flujo de respuesta: muestra la ubicación en K-Safety, abre el feed de las cámaras más cercanas en K-Video, crea el incidente en K-Dispatch con el protocolo de disparos activos, y notifica a las unidades más cercanas. En lugar de un operador corriendo entre sistemas, todo ocurre en una pantalla.'
+                : 'When a gunshot detection system — ShotSpotter, Shooter Detection Systems, or audio analytics on existing cameras — generates an alert, Kabat One receives it via API and automatically executes the response workflow: displays the location on K-Safety, opens the nearest camera feeds in K-Video, creates the incident in K-Dispatch with the active shooter protocol, and notifies the nearest units. Instead of an operator running between systems, everything happens in one screen.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y Latinoamérica. Para municipios que ya tienen o planean desplegar detección de disparos, KabatOne es la capa operativa que convierte esa señal en una respuesta coordinada.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens in Mexico and Latin America. For municipalities that already have or plan to deploy gunshot detection, KabatOne is the operational layer that turns that signal into a coordinated response.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y Latinoamérica. Para municipios que ya tienen o planean desplegar detección de disparos, Kabat One es la capa operativa que convierte esa señal en una respuesta coordinada.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens in Mexico and Latin America. For municipalities that already have or plan to deploy gunshot detection, Kabat One is the operational layer that turns that signal into a coordinated response.'}
             </p>
           </div>
         </section>
@@ -294,12 +294,12 @@ export default async function VsShotSpotterPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs ShotSpotter: Diferencias Clave' : 'KabatOne vs ShotSpotter: Key Differences'}
+              {es ? 'Kabat One vs ShotSpotter: Diferencias Clave' : 'Kabat One vs ShotSpotter: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'ShotSpotter y KabatOne no son competidores directos — uno es un sensor de entrada, el otro es la plataforma operativa que usa esa señal.'
-                : 'ShotSpotter and KabatOne are not direct competitors — one is an input sensor, the other is the operational platform that acts on that signal.'}
+                ? 'ShotSpotter y Kabat One no son competidores directos — uno es un sensor de entrada, el otro es la plataforma operativa que usa esa señal.'
+                : 'ShotSpotter and Kabat One are not direct competitors — one is an input sensor, the other is the operational platform that acts on that signal.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -314,7 +314,7 @@ export default async function VsShotSpotterPage({
                   ShotSpotter / SoundThinking
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -360,8 +360,8 @@ export default async function VsShotSpotterPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'La combinación correcta es: ShotSpotter como sensor de detección + KabatOne como plataforma operativa de respuesta. La alerta entra por la API, KabatOne la convierte en un flujo de respuesta completo, y el operador actúa — no coordina sistemas.'
-                : 'The right combination is: ShotSpotter as the detection sensor + KabatOne as the operational response platform. The alert comes in through the API, KabatOne turns it into a complete response workflow, and the operator acts — not coordinates systems.'}
+                ? 'La combinación correcta es: ShotSpotter como sensor de detección + Kabat One como plataforma operativa de respuesta. La alerta entra por la API, Kabat One la convierte en un flujo de respuesta completo, y el operador actúa — no coordina sistemas.'
+                : 'The right combination is: ShotSpotter as the detection sensor + Kabat One as the operational response platform. The alert comes in through the API, Kabat One turns it into a complete response workflow, and the operator acts — not coordinates systems.'}
             </p>
           </div>
         </section>
@@ -383,8 +383,8 @@ export default async function VsShotSpotterPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne puede integrar detección acústica de disparos de terceros en ciudades donde ya esté desplegada, o trabajar con la analítica de audio de K-Video en cámaras existentes para añadir capacidad de detección sin infraestructura adicional. El objetivo no es reemplazar ShotSpotter donde funciona bien — es proporcionar una plataforma operativa que maximice el valor de cualquier sensor de detección que la ciudad ya tenga o decida adoptar.'
-                : 'KabatOne can integrate third-party acoustic gunshot detection in cities where it is already deployed, or leverage K-Video audio analytics on existing cameras to add detection capability without additional infrastructure. The goal is not to replace ShotSpotter where it works well — it is to provide an operational platform that maximizes the value of whatever detection sensor the city already has or decides to adopt.'}
+                ? 'Kabat One puede integrar detección acústica de disparos de terceros en ciudades donde ya esté desplegada, o trabajar con la analítica de audio de K-Video en cámaras existentes para añadir capacidad de detección sin infraestructura adicional. El objetivo no es reemplazar ShotSpotter donde funciona bien — es proporcionar una plataforma operativa que maximice el valor de cualquier sensor de detección que la ciudad ya tenga o decida adoptar.'
+                : 'Kabat One can integrate third-party acoustic gunshot detection in cities where it is already deployed, or leverage K-Video audio analytics on existing cameras to add detection capability without additional infrastructure. The goal is not to replace ShotSpotter where it works well — it is to provide an operational platform that maximizes the value of whatever detection sensor the city already has or decides to adopt.'}
             </p>
           </div>
         </section>
@@ -397,7 +397,7 @@ export default async function VsShotSpotterPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -436,7 +436,7 @@ export default async function VsShotSpotterPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs ShotSpotter: Preguntas y Respuestas' : 'KabatOne vs ShotSpotter: Questions & Answers'}
+              {es ? 'Kabat One vs ShotSpotter: Preguntas y Respuestas' : 'Kabat One vs ShotSpotter: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -494,7 +494,7 @@ export default async function VsShotSpotterPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Fusus' : 'KabatOne vs Fusus'}</span>
+                <span>{es ? 'Kabat One vs Fusus' : 'Kabat One vs Fusus'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/vs/motorola" style={{
@@ -503,7 +503,7 @@ export default async function VsShotSpotterPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions'}</span>
+                <span>{es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
               <Link href="/integrations/sensor-fusion" style={{
@@ -512,7 +512,7 @@ export default async function VsShotSpotterPage({
                 border: '1px solid var(--border)', textDecoration: 'none',
                 color: 'var(--dim)', fontSize: '15px',
               }}>
-                <span>{es ? 'Fusión de Sensores en KabatOne' : 'Sensor Fusion in KabatOne'}</span>
+                <span>{es ? 'Fusión de Sensores en Kabat One' : 'Sensor Fusion in Kabat One'}</span>
                 <span style={{ color: ACCENT, fontSize: '14px' }}>→</span>
               </Link>
             </div>
@@ -524,8 +524,8 @@ export default async function VsShotSpotterPage({
           es={es}
           h2={es ? '¿Listo para Ver el Flujo Completo de Respuesta?' : 'Ready to See the Full Response Workflow?'}
           subtitle={es
-            ? 'Ve cómo KabatOne convierte una alerta de disparo en una respuesta coordinada en menos de 90 segundos. Solicita una demo personalizada.'
-            : 'See how KabatOne turns a gunshot alert into a coordinated response in under 90 seconds. Request a personalized demo.'}
+            ? 'Ve cómo Kabat One convierte una alerta de disparo en una respuesta coordinada en menos de 90 segundos. Solicita una demo personalizada.'
+            : 'See how Kabat One turns a gunshot alert into a coordinated response in under 90 seconds. Request a personalized demo.'}
         />
 
         <Footer es={es} />

@@ -34,37 +34,37 @@ export default async function PanicButtonsIntegrationPage({
         {
           question: '¿Cuánto tiempo tarda en llegar la alerta al despachador?',
           answer:
-            'Con KabatOne, la alerta de botón de pánico llega al despachador en menos de 4 segundos desde la activación: el evento se transmite por red (WiFi, celular, o radio), el sistema lo procesa y genera un incidente de alta prioridad en K-Dispatch, activa automáticamente las cámaras más cercanas a la ubicación, y muestra la alerta en el mapa GIS de K-Safety con el pin parpadeando. El despachador tiene toda la información para despachar unidades sin necesidad de hablar con la víctima.',
+            'Con Kabat One, la alerta de botón de pánico llega al despachador en menos de 4 segundos desde la activación: el evento se transmite por red (WiFi, celular, o radio), el sistema lo procesa y genera un incidente de alta prioridad en K-Dispatch, activa automáticamente las cámaras más cercanas a la ubicación, y muestra la alerta en el mapa GIS de K-Safety con el pin parpadeando. El despachador tiene toda la información para despachar unidades sin necesidad de hablar con la víctima.',
         },
         {
-          question: '¿Qué tipos de dispositivos de pánico se integran con KabatOne?',
+          question: '¿Qué tipos de dispositivos de pánico se integran con Kabat One?',
           answer:
-            'KabatOne integra cualquier dispositivo que pueda generar una señal de alerta con datos de identidad y ubicación: botones de pánico físicos fijos (Inovonics, Napco, Bosch, ASSA ABLOY), dispositivos portátiles tipo badge (Aiphone, Alertus, Singlewire), aplicaciones móviles con SOS (integración via API), radios digitales con botón de emergencia (Motorola, Kenwood, Hytera), y wearables de seguridad personal. La integración es via API REST, MQTT o webhooks según el fabricante.',
+            'Kabat One integra cualquier dispositivo que pueda generar una señal de alerta con datos de identidad y ubicación: botones de pánico físicos fijos (Inovonics, Napco, Bosch, ASSA ABLOY), dispositivos portátiles tipo badge (Aiphone, Alertus, Singlewire), aplicaciones móviles con SOS (integración via API), radios digitales con botón de emergencia (Motorola, Kenwood, Hytera), y wearables de seguridad personal. La integración es via API REST, MQTT o webhooks según el fabricante.',
         },
         {
           question: '¿Los botones de pánico funcionan sin conectividad de red?',
           answer:
-            'Depende del dispositivo. Los botones de pánico conectados via WiFi o celular requieren cobertura de red. Para instalaciones con zonas de baja cobertura (sótanos, salas de servidores, áreas remotas), KabatOne recomienda dispositivos con radio de largo alcance (LoRa, 900 MHz) o sistemas de mesh radio que no dependen de la infraestructura WiFi del edificio. Los sistemas más robustos combinan múltiples tecnologías de comunicación con fallback automático.',
+            'Depende del dispositivo. Los botones de pánico conectados via WiFi o celular requieren cobertura de red. Para instalaciones con zonas de baja cobertura (sótanos, salas de servidores, áreas remotas), Kabat One recomienda dispositivos con radio de largo alcance (LoRa, 900 MHz) o sistemas de mesh radio que no dependen de la infraestructura WiFi del edificio. Los sistemas más robustos combinan múltiples tecnologías de comunicación con fallback automático.',
         },
         {
           question: '¿Puede el sistema distinguir entre activaciones accidentales e intencionales?',
           answer:
-            'Sí. KabatOne soporta varias estrategias para reducir falsas alarmas: requerir activación sostenida (mantener presionado 3 segundos), doble activación (dos pulsaciones en 2 segundos), o código de confirmación para cancelar la alerta. Los sistemas más avanzados incluyen una ventana de cancelación de 15-30 segundos tras la activación, durante la cual el usuario puede abortar la alerta si fue accidental. Si no cancela, la alerta se convierte en incidente activo. La tasa de falsa alarma típica con estos controles es inferior al 2%.',
+            'Sí. Kabat One soporta varias estrategias para reducir falsas alarmas: requerir activación sostenida (mantener presionado 3 segundos), doble activación (dos pulsaciones en 2 segundos), o código de confirmación para cancelar la alerta. Los sistemas más avanzados incluyen una ventana de cancelación de 15-30 segundos tras la activación, durante la cual el usuario puede abortar la alerta si fue accidental. Si no cancela, la alerta se convierte en incidente activo. La tasa de falsa alarma típica con estos controles es inferior al 2%.',
         },
         {
           question: '¿Cómo se usan los botones de pánico en escuelas?',
           answer:
-            'En protocolos de seguridad escolar, KabatOne integra los botones de pánico de los maestros y personal administrativo con el sistema de despacho municipal. Cuando un maestro activa su botón, el centro de despacho 911 recibe automáticamente: nombre del maestro, aula exacta, plano del edificio con la ubicación marcada, feed de video de la cámara del pasillo más cercano, y protocolo de respuesta preconfigurado (lockdown, evacuación, respuesta médica). Las unidades de policía y EMS reciben la notificación simultáneamente con el despachador.',
+            'En protocolos de seguridad escolar, Kabat One integra los botones de pánico de los maestros y personal administrativo con el sistema de despacho municipal. Cuando un maestro activa su botón, el centro de despacho 911 recibe automáticamente: nombre del maestro, aula exacta, plano del edificio con la ubicación marcada, feed de video de la cámara del pasillo más cercano, y protocolo de respuesta preconfigurado (lockdown, evacuación, respuesta médica). Las unidades de policía y EMS reciben la notificación simultáneamente con el despachador.',
         },
         {
           question: '¿Qué es una alarma de coacción (duress alarm)?',
           answer:
-            'Una alarma de coacción o duress alarm es un mecanismo de alerta silenciosa que el personal activa discretamente cuando está bajo amenaza sin que el agresor pueda saberlo. A diferencia de una alarma audible, envía una señal silenciosa al centro de despacho con la identidad del activador, su ubicación y el feed de cámaras cercanas. Los botones de pánico integrados con KabatOne funcionan como sistemas de alarma de coacción en bancos, juzgados y hospitales donde el personal debe alertar sin generar pánico visible.',
+            'Una alarma de coacción o duress alarm es un mecanismo de alerta silenciosa que el personal activa discretamente cuando está bajo amenaza sin que el agresor pueda saberlo. A diferencia de una alarma audible, envía una señal silenciosa al centro de despacho con la identidad del activador, su ubicación y el feed de cámaras cercanas. Los botones de pánico integrados con Kabat One funcionan como sistemas de alarma de coacción en bancos, juzgados y hospitales donde el personal debe alertar sin generar pánico visible.',
         },
         {
           question: '¿Cómo se conectan los botones de pánico con el despacho 911?',
           answer:
-            'En KabatOne, los botones de pánico se conectan con K-Dispatch (despacho CAD) mediante protocolo IP o middleware de integración. Al activarse, el sistema crea automáticamente un incidente en el CAD con la geolocalización del activador, categoriza la respuesta según el tipo de instalación y asigna el protocolo de despacho correspondiente. El despachador ve la alerta en el mapa operativo con el video de las cámaras del área ya cargado — sin que nadie necesite llamar al 911 manualmente.',
+            'En Kabat One, los botones de pánico se conectan con K-Dispatch (despacho CAD) mediante protocolo IP o middleware de integración. Al activarse, el sistema crea automáticamente un incidente en el CAD con la geolocalización del activador, categoriza la respuesta según el tipo de instalación y asigna el protocolo de despacho correspondiente. El despachador ve la alerta en el mapa operativo con el video de las cámaras del área ya cargado — sin que nadie necesite llamar al 911 manualmente.',
         },
       ]
     : [
@@ -76,37 +76,37 @@ export default async function PanicButtonsIntegrationPage({
         {
           question: 'How long does it take for the alert to reach the dispatcher?',
           answer:
-            'With KabatOne, a panic button alert reaches the dispatcher in under 4 seconds from activation: the event transmits over network (WiFi, cellular, or radio), the system processes it and generates a high-priority incident in K-Dispatch, automatically activates the nearest cameras to the location, and displays the alert on the K-Safety GIS map with a blinking pin. The dispatcher has all the information to dispatch units without needing to speak with the victim.',
+            'With Kabat One, a panic button alert reaches the dispatcher in under 4 seconds from activation: the event transmits over network (WiFi, cellular, or radio), the system processes it and generates a high-priority incident in K-Dispatch, automatically activates the nearest cameras to the location, and displays the alert on the K-Safety GIS map with a blinking pin. The dispatcher has all the information to dispatch units without needing to speak with the victim.',
         },
         {
-          question: 'What types of panic devices integrate with KabatOne?',
+          question: 'What types of panic devices integrate with Kabat One?',
           answer:
-            'KabatOne integrates any device that can generate an alert signal with identity and location data: fixed physical panic buttons (Inovonics, Napco, Bosch, ASSA ABLOY), portable badge devices (Aiphone, Alertus, Singlewire), mobile apps with SOS (API integration), digital radios with emergency button (Motorola, Kenwood, Hytera), and personal safety wearables. Integration is via REST API, MQTT, or webhooks depending on the vendor.',
+            'Kabat One integrates any device that can generate an alert signal with identity and location data: fixed physical panic buttons (Inovonics, Napco, Bosch, ASSA ABLOY), portable badge devices (Aiphone, Alertus, Singlewire), mobile apps with SOS (API integration), digital radios with emergency button (Motorola, Kenwood, Hytera), and personal safety wearables. Integration is via REST API, MQTT, or webhooks depending on the vendor.',
         },
         {
           question: 'Do panic buttons work without network connectivity?',
           answer:
-            'It depends on the device. WiFi or cellular-connected panic buttons require network coverage. For facilities with low-coverage zones (basements, server rooms, remote areas), KabatOne recommends long-range radio devices (LoRa, 900 MHz) or mesh radio systems that don\'t depend on building WiFi infrastructure. The most robust systems combine multiple communication technologies with automatic fallback.',
+            'It depends on the device. WiFi or cellular-connected panic buttons require network coverage. For facilities with low-coverage zones (basements, server rooms, remote areas), Kabat One recommends long-range radio devices (LoRa, 900 MHz) or mesh radio systems that don\'t depend on building WiFi infrastructure. The most robust systems combine multiple communication technologies with automatic fallback.',
         },
         {
           question: 'Can the system distinguish between accidental and intentional activations?',
           answer:
-            'Yes. KabatOne supports several strategies to reduce false alarms: requiring sustained activation (hold for 3 seconds), double activation (two presses in 2 seconds), or confirmation code to cancel the alert. More advanced systems include a 15–30 second cancellation window after activation, during which the user can abort if it was accidental. If not cancelled, the alert becomes an active incident. Typical false alarm rates with these controls are below 2%.',
+            'Yes. Kabat One supports several strategies to reduce false alarms: requiring sustained activation (hold for 3 seconds), double activation (two presses in 2 seconds), or confirmation code to cancel the alert. More advanced systems include a 15–30 second cancellation window after activation, during which the user can abort if it was accidental. If not cancelled, the alert becomes an active incident. Typical false alarm rates with these controls are below 2%.',
         },
         {
           question: 'How are panic buttons used in schools?',
           answer:
-            'In school safety protocols, KabatOne integrates teacher and administrative staff panic buttons with the municipal dispatch system. When a teacher activates their button, the 911 dispatch center automatically receives: teacher name, exact classroom, building floor plan with location marked, video feed from the nearest hallway camera, and a pre-configured response protocol (lockdown, evacuation, medical response). Police and EMS units receive notification simultaneously with the dispatcher.',
+            'In school safety protocols, Kabat One integrates teacher and administrative staff panic buttons with the municipal dispatch system. When a teacher activates their button, the 911 dispatch center automatically receives: teacher name, exact classroom, building floor plan with location marked, video feed from the nearest hallway camera, and a pre-configured response protocol (lockdown, evacuation, medical response). Police and EMS units receive notification simultaneously with the dispatcher.',
         },
         {
           question: 'What is a duress alarm system?',
           answer:
-            'A duress alarm system is a silent alert mechanism that staff activate discreetly when under threat — without the aggressor knowing help was called. Unlike an audible alarm, a duress alarm sends a silent signal to the dispatch center with the activator\'s identity, exact location, and nearby camera feeds. Panic buttons integrated with KabatOne function as duress alarm systems in banks, courthouses, hospitals, and any environment where staff must alert without triggering visible panic.',
+            'A duress alarm system is a silent alert mechanism that staff activate discreetly when under threat — without the aggressor knowing help was called. Unlike an audible alarm, a duress alarm sends a silent signal to the dispatch center with the activator\'s identity, exact location, and nearby camera feeds. Panic buttons integrated with Kabat One function as duress alarm systems in banks, courthouses, hospitals, and any environment where staff must alert without triggering visible panic.',
         },
         {
           question: 'How do panic buttons connect to 911 dispatch?',
           answer:
-            'On the KabatOne platform, panic buttons connect to K-Dispatch (CAD dispatch) via direct IP protocol or integration middleware. When a device activates, the system automatically creates an incident in the CAD with the activator\'s geolocation, categorizes the response based on facility type (school, hospital, bank), and assigns the corresponding dispatch protocol. The dispatcher sees the alert on the operational map with the area camera feeds already loaded — without anyone needing to call 911 manually.',
+            'On the Kabat One platform, panic buttons connect to K-Dispatch (CAD dispatch) via direct IP protocol or integration middleware. When a device activates, the system automatically creates an incident in the CAD with the activator\'s geolocation, categorizes the response based on facility type (school, hospital, bank), and assigns the corresponding dispatch protocol. The dispatcher sees the alert on the operational map with the area camera feeds already loaded — without anyone needing to call 911 manually.',
         },
       ]
 
@@ -147,14 +147,14 @@ export default async function PanicButtonsIntegrationPage({
 
   const responseSteps = es
     ? [
-        { step: '01', title: 'Activación del Botón', desc: 'El usuario activa el botón de pánico. La señal se transmite inmediatamente por WiFi, celular o radio al servidor de KabatOne.' },
+        { step: '01', title: 'Activación del Botón', desc: 'El usuario activa el botón de pánico. La señal se transmite inmediatamente por WiFi, celular o radio al servidor de Kabat One.' },
         { step: '02', title: 'Alerta en K-Dispatch', desc: 'En menos de 4 segundos, K-Dispatch crea un incidente de prioridad máxima con nombre del activador, ubicación exacta y tipo de emergencia configurado.' },
         { step: '03', title: 'Activación Automática de Cámaras', desc: 'K-Video activa automáticamente las cámaras más cercanas a la ubicación del activador. El despachador ve el video del área sin buscar manualmente.' },
         { step: '04', title: 'Notificación a Unidades', desc: 'K-Dispatch notifica a las unidades disponibles más cercanas con toda la información: ubicación, tipo de alerta, protocolo de respuesta y feed de video en vivo.' },
         { step: '05', title: 'Seguimiento y Cierre', desc: 'El incidente se documenta automáticamente: tiempo de activación, tiempo de respuesta, unidades despachadas, resolución. Todo con cadena de custodia para informes.' },
       ]
     : [
-        { step: '01', title: 'Button Activation', desc: 'The user activates the panic button. The signal transmits immediately via WiFi, cellular, or radio to KabatOne\'s server.' },
+        { step: '01', title: 'Button Activation', desc: 'The user activates the panic button. The signal transmits immediately via WiFi, cellular, or radio to Kabat One\'s server.' },
         { step: '02', title: 'K-Dispatch Alert', desc: 'In under 4 seconds, K-Dispatch creates a maximum-priority incident with the activator\'s name, exact location, and configured emergency type.' },
         { step: '03', title: 'Automatic Camera Activation', desc: 'K-Video automatically activates the cameras nearest to the activator\'s location. The dispatcher sees area video without manually searching.' },
         { step: '04', title: 'Unit Notification', desc: 'K-Dispatch notifies the nearest available units with all information: location, alert type, response protocol, and live video feed.' },
@@ -168,7 +168,7 @@ export default async function PanicButtonsIntegrationPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema(
           es ? 'Integración de Botones de Pánico para Seguridad Pública' : 'Panic Button Integration for Public Safety',
-          es ? 'Cómo KabatOne integra botones de pánico físicos y wearables con despacho CAD, video y GIS para respuesta de emergencia en segundos.' : 'How KabatOne integrates physical and wearable panic buttons with CAD dispatch, video, and GIS for emergency response in seconds.',
+          es ? 'Cómo Kabat One integra botones de pánico físicos y wearables con despacho CAD, video y GIS para respuesta de emergencia en segundos.' : 'How Kabat One integrates physical and wearable panic buttons with CAD dispatch, video, and GIS for emergency response in seconds.',
           es ? 'https://kabatone.com/es/integrations/panic-buttons' : 'https://kabatone.com/integrations/panic-buttons',
           '2026-05-18'
         ))
@@ -198,8 +198,8 @@ export default async function PanicButtonsIntegrationPage({
             </h1>
             <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.8, maxWidth: '720px', marginBottom: '40px' }}>
               {es
-                ? 'Cuando alguien no puede hablar pero necesita ayuda ahora, el botón de pánico es el único canal que funciona. Integrado con KabatOne, una activación pone en movimiento el despacho, activa las cámaras del área, y notifica a las unidades más cercanas — todo en menos de 4 segundos, todo en silencio.'
-                : 'When someone cannot speak but needs help right now, the panic button is the only channel that works. Integrated with KabatOne, one activation triggers dispatch, activates area cameras, and notifies the nearest units — all in under 4 seconds, all in silence.'}
+                ? 'Cuando alguien no puede hablar pero necesita ayuda ahora, el botón de pánico es el único canal que funciona. Integrado con Kabat One, una activación pone en movimiento el despacho, activa las cámaras del área, y notifica a las unidades más cercanas — todo en menos de 4 segundos, todo en silencio.'
+                : 'When someone cannot speak but needs help right now, the panic button is the only channel that works. Integrated with Kabat One, one activation triggers dispatch, activates area cameras, and notifies the nearest units — all in under 4 seconds, all in silence.'}
             </p>
             <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
               <img
@@ -218,8 +218,8 @@ export default async function PanicButtonsIntegrationPage({
             <h2 style={h2Style}>{es ? 'De la Activación a la Respuesta en Menos de 4 Segundos' : 'From Activation to Response in Under 4 Seconds'}</h2>
             <p style={pStyle}>
               {es
-                ? 'El flujo de respuesta integrado de KabatOne convierte una pulsación en una operación de emergencia coordinada:'
-                : 'KabatOne\'s integrated response flow converts a button press into a coordinated emergency operation:'}
+                ? 'El flujo de respuesta integrado de Kabat One convierte una pulsación en una operación de emergencia coordinada:'
+                : 'Kabat One\'s integrated response flow converts a button press into a coordinated emergency operation:'}
             </p>
 
             {/* ── Key metrics ── */}
@@ -258,8 +258,8 @@ export default async function PanicButtonsIntegrationPage({
             <h2 style={h2Style}>{es ? 'Casos de Uso por Sector' : 'Use Cases by Sector'}</h2>
             <p style={pStyle}>
               {es
-                ? 'Los botones de pánico integrados con KabatOne sirven a cualquier organización donde el personal enfrenta situaciones de riesgo:'
-                : 'Panic buttons integrated with KabatOne serve any organization where personnel face risk situations:'}
+                ? 'Los botones de pánico integrados con Kabat One sirven a cualquier organización donde el personal enfrenta situaciones de riesgo:'
+                : 'Panic buttons integrated with Kabat One serve any organization where personnel face risk situations:'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }} className="usecase-grid">
               {verticals.map((v, i) => (
@@ -278,7 +278,7 @@ export default async function PanicButtonsIntegrationPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>{es ? 'Productos Relacionados' : 'Related Products'}</p>
-            <h2 style={{ ...h2Style, marginBottom: '12px' }}>{es ? 'KabatOne para Respuesta a Alertas de Pánico' : 'KabatOne for Panic Alert Response'}</h2>
+            <h2 style={{ ...h2Style, marginBottom: '12px' }}>{es ? 'Kabat One para Respuesta a Alertas de Pánico' : 'Kabat One for Panic Alert Response'}</h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.7, marginBottom: '28px' }}>
               {es ? 'Los módulos que reciben y procesan alertas de pánico:' : 'Modules that receive and process panic alerts:'}
             </p>
@@ -338,8 +338,8 @@ export default async function PanicButtonsIntegrationPage({
           es={es}
           h2={es ? 'Integra Alertas de Pánico en tu Centro de Despacho' : 'Integrate Panic Alerts into Your Dispatch Center'}
           subtitle={es
-            ? 'KabatOne conecta botones de pánico físicos y wearables con despacho CAD, video y GIS. Respuesta coordinada en segundos. Solicita una demo.'
-            : 'KabatOne connects physical and wearable panic buttons with CAD dispatch, video, and GIS. Coordinated response in seconds. Request a demo.'}
+            ? 'Kabat One conecta botones de pánico físicos y wearables con despacho CAD, video y GIS. Respuesta coordinada en segundos. Solicita una demo.'
+            : 'Kabat One connects physical and wearable panic buttons with CAD dispatch, video, and GIS. Coordinated response in seconds. Request a demo.'}
         />
         <Footer es={es} />
 

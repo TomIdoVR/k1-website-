@@ -60,8 +60,8 @@ export default async function EndOfSiloedResponsePage({
       ? '"Las agencias que consolidan detección, coordinación y respuesta en un solo entorno no solo operan más rápido — operan con un nivel de conciencia situacional compartida que los sistemas fragmentados estructuralmente no pueden ofrecer."'
       : '"Agencies that consolidate detection, coordination, and response into one environment don\'t just operate faster — they operate with a level of shared situational awareness that fragmented systems structurally cannot deliver."',
     quoteAttrib: es
-      ? '— KabatOne · The End of Siloed Response, 2026'
-      : '— KabatOne · The End of Siloed Response, 2026',
+      ? '— Kabat One · The End of Siloed Response, 2026'
+      : '— Kabat One · The End of Siloed Response, 2026',
 
     ctaEyebrow: es ? 'PRÓXIMO PASO' : 'NEXT STEP',
     ctaH2: es ? '¿Listo para Evaluar tu Arquitectura?' : 'Ready to Evaluate Your Architecture?',
@@ -75,7 +75,7 @@ export default async function EndOfSiloedResponsePage({
   const jsonLd = [
     organizationSchema(),
     articleSchema(
-      es ? 'El Fin de la Respuesta en Silos — KabatOne 2026' : 'The End of Siloed Response — KabatOne Industry Brief 2026',
+      es ? 'El Fin de la Respuesta en Silos — Kabat One 2026' : 'The End of Siloed Response — Kabat One Industry Brief 2026',
       es
         ? 'Cómo los líderes de seguridad pública pueden pasar de sistemas fragmentados a operaciones unificadas.'
         : 'How public safety leaders can move from fragmented systems to unified operations.',
@@ -418,7 +418,7 @@ export default async function EndOfSiloedResponsePage({
                 <circle cx="730" cy="205" r="50" fill="#07122a" stroke="#2563eb" strokeWidth="2.5" filter="url(#glow-hub)" />
                 <circle cx="730" cy="205" r="50" fill="none" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.3" />
                 <circle cx="730" cy="205" r="42" fill="none" stroke="#1d3a70" strokeWidth="0.5" strokeOpacity="0.4" />
-                <text x="730" y="200" textAnchor="middle" fontFamily="Barlow Condensed, sans-serif" fontSize="16" fontWeight="800" fill="#e8f0ff" letterSpacing="0.05em">KabatOne</text>
+                <text x="730" y="200" textAnchor="middle" fontFamily="Barlow Condensed, sans-serif" fontSize="16" fontWeight="800" fill="#e8f0ff" letterSpacing="0.05em">Kabat One</text>
                 <text x="730" y="215" textAnchor="middle" fontFamily="DM Mono, monospace" fontSize="7" fontWeight="500" fill="#60a5fa" letterSpacing="0.18em">UNIFIED PLATFORM</text>
 
                 {/* LIVE badge on hub */}

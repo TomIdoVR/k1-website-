@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareFrancePage({
       answer: 'VIGPIRATE es el sistema nacional de alerta antiterrorista de Francia, gestionado por el SGDSN (Secrétariat Général de la Défense et de la Sécurité Nationale). Tiene tres niveles: Vigilance (base permanente), Sécurité renforcée – risque attentat (elevado), y Urgence attentat (máximo, activado tras ataques). Cuando se activa VIGPIRATE reforzado, los centros de mando deben elevar la vigilancia en transporte, eventos masivos e infraestructuras críticas. Esto requiere plataformas que integren feeds de CCTV, gestión de incidentes y coordinación multiagencia (Police/Gendarmerie/Pompiers/SAMU) en tiempo real bajo un dashboard unificado.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Police Nationale, Gendarmerie y CSU franceses?',
-      answer: 'KabatOne integra las funciones que la Police Nationale, Gendarmerie y los CSU gestionan en sistemas separados: despacho CAD con soporte para llamadas 17/15/18 simultáneas y coordinación con NexSIS (K-Dispatch), gestión de redes de Vidéoprotection con analítica de IA conforme al RGPD y la Loi JO 2024 (K-Video) y conciencia situacional GIS para coordinación entre Préfectures, Police, Gendarmerie y SDIS (K-Safety). La plataforma admite despliegue on-premises en infraestructura francesa con cumplimiento RGPD/CNIL y requisitos ANSSI. Solicite una demo adaptada al contexto de los CSU y salles de commandement franceses.',
+      question: '¿Por qué Kabat One es adecuado para la Police Nationale, Gendarmerie y CSU franceses?',
+      answer: 'Kabat One integra las funciones que la Police Nationale, Gendarmerie y los CSU gestionan en sistemas separados: despacho CAD con soporte para llamadas 17/15/18 simultáneas y coordinación con NexSIS (K-Dispatch), gestión de redes de Vidéoprotection con analítica de IA conforme al RGPD y la Loi JO 2024 (K-Video) y conciencia situacional GIS para coordinación entre Préfectures, Police, Gendarmerie y SDIS (K-Safety). La plataforma admite despliegue on-premises en infraestructura francesa con cumplimiento RGPD/CNIL y requisitos ANSSI. Solicite una demo adaptada al contexto de los CSU y salles de commandement franceses.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareFrancePage({
       answer: 'VIGPIRATE is France\'s national counter-terrorism alert system, managed by the SGDSN (Secrétariat Général de la Défense et de la Sécurité Nationale). It has three levels: Vigilance (permanent baseline), Sécurité renforcée – risque attentat (elevated), and Urgence attentat (maximum, activated after attacks). When elevated VIGPIRATE is active, command centres must increase surveillance of transport hubs, mass events, and critical infrastructure. This requires platforms that integrate CCTV feeds, incident management, and multi-agency coordination (Police/Gendarmerie/Pompiers/SAMU) in real time under a unified dashboard.',
     },
     {
-      question: 'Why is KabatOne suited for France\'s Police Nationale, Gendarmerie, and CSU operations?',
-      answer: 'KabatOne integrates the functions that Police Nationale, Gendarmerie, and CSU centres manage across separate systems: CAD dispatch with support for simultaneous 17/15/18 calls and coordination with NexSIS (K-Dispatch), Vidéoprotection network management with AI analytics compliant with GDPR/RGPD and the Olympic Games Act framework (K-Video), and GIS situational awareness for coordination across Préfectures, Police, Gendarmerie, and SDIS (K-Safety). The platform supports on-premises deployment on French infrastructure with RGPD/CNIL compliance and ANSSI requirements. Request a demo tailored to the French CSU and salle de commandement context.',
+      question: 'Why is Kabat One suited for France\'s Police Nationale, Gendarmerie, and CSU operations?',
+      answer: 'Kabat One integrates the functions that Police Nationale, Gendarmerie, and CSU centres manage across separate systems: CAD dispatch with support for simultaneous 17/15/18 calls and coordination with NexSIS (K-Dispatch), Vidéoprotection network management with AI analytics compliant with GDPR/RGPD and the Olympic Games Act framework (K-Video), and GIS situational awareness for coordination across Préfectures, Police, Gendarmerie, and SDIS (K-Safety). The platform supports on-premises deployment on French infrastructure with RGPD/CNIL compliance and ANSSI requirements. Request a demo tailored to the French CSU and salle de commandement context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareFrancePage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Francia opera una estructura de seguridad dual — Police Nationale y Gendarmerie — con más de 1.9 millones de cámaras de Vidéoprotection y un sistema de despacho en transición hacia NexSIS 18-112. KabatOne unifica el despacho de emergencias 15/17/18, la gestión de CSU con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento RGPD/CNIL y requisitos ANSSI.'
-                : 'France operates a dual security structure — Police Nationale and Gendarmerie — with over 1.9 million Vidéoprotection cameras and a dispatch system transitioning to NexSIS 18-112. KabatOne unifies 15/17/18 emergency dispatch, CSU management with AI analytics, and GIS situational awareness in a single platform with RGPD/CNIL compliance and ANSSI requirements.'}
+                ? 'Francia opera una estructura de seguridad dual — Police Nationale y Gendarmerie — con más de 1.9 millones de cámaras de Vidéoprotection y un sistema de despacho en transición hacia NexSIS 18-112. Kabat One unifica el despacho de emergencias 15/17/18, la gestión de CSU con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento RGPD/CNIL y requisitos ANSSI.'
+                : 'France operates a dual security structure — Police Nationale and Gendarmerie — with over 1.9 million Vidéoprotection cameras and a dispatch system transitioning to NexSIS 18-112. Kabat One unifies 15/17/18 emergency dispatch, CSU management with AI analytics, and GIS situational awareness in a single platform with RGPD/CNIL compliance and ANSSI requirements.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareFrancePage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de la Police Nationale y los CSU' : 'How KabatOne Addresses Police Nationale and CSU Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de la Police Nationale y los CSU' : 'How Kabat One Addresses Police Nationale and CSU Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para salles de commandement y CSU que necesitan un único dashboard para gestionar simultáneamente llamadas 17 de Police y 18 de Pompiers, monitorear redes de Vidéoprotection con analítica de IA y coordinar unidades sobre un mapa GIS — todo bajo los exigentes requisitos de privacidad y seguridad franceses.'
-                : 'KabatOne is designed for salles de commandement and CSU centres that need a single dashboard to simultaneously manage Police 17 and Pompiers 18 calls, monitor Vidéoprotection networks with AI analytics, and coordinate units on a GIS map — all under France\'s demanding privacy and security requirements.'}
+                ? 'Kabat One está diseñado para salles de commandement y CSU que necesitan un único dashboard para gestionar simultáneamente llamadas 17 de Police y 18 de Pompiers, monitorear redes de Vidéoprotection con analítica de IA y coordinar unidades sobre un mapa GIS — todo bajo los exigentes requisitos de privacidad y seguridad franceses.'
+                : 'Kabat One is designed for salles de commandement and CSU centres that need a single dashboard to simultaneously manage Police 17 and Pompiers 18 calls, monitor Vidéoprotection networks with AI analytics, and coordinate units on a GIS map — all under France\'s demanding privacy and security requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareFrancePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -342,7 +342,7 @@ export default async function PublicSafetySoftwareFrancePage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu CSU o Salle de Commandement' : 'Request a Demo for Your CSU or Salle de Commandement'}
-          subtitle={es ? 'KabatOne integra despacho 15/17/18, Vidéoprotection con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento RGPD/CNIL y requisitos ANSSI. Demo adaptada al contexto francés.' : 'KabatOne integrates 15/17/18 dispatch, Vidéoprotection with AI analytics, and GIS situational awareness in a single platform with RGPD/CNIL compliance and ANSSI requirements. Demo tailored to the French context.'}
+          subtitle={es ? 'Kabat One integra despacho 15/17/18, Vidéoprotection con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento RGPD/CNIL y requisitos ANSSI. Demo adaptada al contexto francés.' : 'Kabat One integrates 15/17/18 dispatch, Vidéoprotection with AI analytics, and GIS situational awareness in a single platform with RGPD/CNIL compliance and ANSSI requirements. Demo tailored to the French context.'}
         />
 
         <Footer es={es} />

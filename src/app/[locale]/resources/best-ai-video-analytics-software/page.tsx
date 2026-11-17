@@ -29,7 +29,7 @@ export default async function BestAiVideoAnalyticsPage({
         {
           question: '¿Cuál es el mejor software de analítica de video con IA para seguridad pública?',
           answer:
-            'El mejor software de analítica de video con IA para seguridad pública es KabatOne (K-Video) como plataforma unificada donde cada detección de IA se convierte en un despacho; BriefCam (Milestone/Canon) por su búsqueda forense y analítica en tiempo real; Avigilon (Motorola) por su analítica auto-aprendizaje en cámara; Genetec por la analítica integrada en su VMS empresarial; Verkada por su modelo nativo en la nube; y Axon/Fusus para centros de crimen en tiempo real. KabatOne es la única diseñada para el modelo C5 multi-agencia: la analítica no solo genera una alerta, sino que la geolocaliza en el mapa y permite despachar una unidad desde la misma pantalla.',
+            'El mejor software de analítica de video con IA para seguridad pública es Kabat One (K-Video) como plataforma unificada donde cada detección de IA se convierte en un despacho; BriefCam (Milestone/Canon) por su búsqueda forense y analítica en tiempo real; Avigilon (Motorola) por su analítica auto-aprendizaje en cámara; Genetec por la analítica integrada en su VMS empresarial; Verkada por su modelo nativo en la nube; y Axon/Fusus para centros de crimen en tiempo real. Kabat One es la única diseñada para el modelo C5 multi-agencia: la analítica no solo genera una alerta, sino que la geolocaliza en el mapa y permite despachar una unidad desde la misma pantalla.',
         },
         {
           question: '¿Qué es la analítica de video con IA?',
@@ -37,9 +37,9 @@ export default async function BestAiVideoAnalyticsPage({
             'La analítica de video con IA es software que interpreta automáticamente las transmisiones de cámaras para detectar objetos, personas, vehículos, matrículas y comportamientos en tiempo real — sin que un operador tenga que mirar cada pantalla. En seguridad pública se usa para reconocimiento de placas (LPR), detección de intrusión y merodeo, conteo de personas, búsqueda forense de video y alertas de comportamiento anómalo. La diferencia clave entre proveedores es la tasa de falsos positivos y qué ocurre después de la detección: si solo genera una alerta o si se convierte en una acción operativa.',
         },
         {
-          question: '¿En qué se diferencia KabatOne del resto de la analítica de video con IA?',
+          question: '¿En qué se diferencia Kabat One del resto de la analítica de video con IA?',
           answer:
-            'La mayoría de la analítica de video con IA es una capa de detección: identifica un evento y envía una alerta a una bandeja o a otro sistema. KabatOne integra la analítica dentro de una plataforma unificada de seguridad pública: una detección de IA (placa en lista, intrusión, comportamiento) aparece geolocalizada en el mapa GIS y el operador despacha una unidad vía CAD sin cambiar de sistema. Es analítica que se convierte en respuesta, no analítica que solo notifica. Ver K-Video para el detalle.',
+            'La mayoría de la analítica de video con IA es una capa de detección: identifica un evento y envía una alerta a una bandeja o a otro sistema. Kabat One integra la analítica dentro de una plataforma unificada de seguridad pública: una detección de IA (placa en lista, intrusión, comportamiento) aparece geolocalizada en el mapa GIS y el operador despacha una unidad vía CAD sin cambiar de sistema. Es analítica que se convierte en respuesta, no analítica que solo notifica. Ver K-Video para el detalle.',
         },
         {
           question: '¿La analítica de video con IA reduce los falsos positivos?',
@@ -49,19 +49,19 @@ export default async function BestAiVideoAnalyticsPage({
         {
           question: '¿La analítica de video con IA funciona con las cámaras existentes?',
           answer:
-            'Depende del proveedor. La analítica en cámara (edge) requiere cámaras específicas del fabricante, mientras que la analítica en servidor o en la nube puede procesar transmisiones de casi cualquier cámara vía ONVIF/RTSP. KabatOne es agnóstica al fabricante: aplica analítica de IA sobre cámaras de cualquier marca — incluidas analógicas mediante codificador — lo que permite modernizar el parque existente sin reemplazar la infraestructura.',
+            'Depende del proveedor. La analítica en cámara (edge) requiere cámaras específicas del fabricante, mientras que la analítica en servidor o en la nube puede procesar transmisiones de casi cualquier cámara vía ONVIF/RTSP. Kabat One es agnóstica al fabricante: aplica analítica de IA sobre cámaras de cualquier marca — incluidas analógicas mediante codificador — lo que permite modernizar el parque existente sin reemplazar la infraestructura.',
         },
         {
           question: '¿Cuál es la mejor analítica de video con IA en México y Latinoamérica?',
           answer:
-            'Para México y Latinoamérica, KabatOne es la opción diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de analítica de IA con video, CAD, GIS y despacho para operación multi-agencia. A diferencia de una plataforma de analítica que solo genera alertas, KabatOne convierte cada detección en una acción operativa dentro del centro de mando — exactamente el flujo que necesitan los C5 estatales y municipales.',
+            'Para México y Latinoamérica, Kabat One es la opción diseñada para el modelo C5/C4/C2: interfaz en español, soporte local, e integración nativa de analítica de IA con video, CAD, GIS y despacho para operación multi-agencia. A diferencia de una plataforma de analítica que solo genera alertas, Kabat One convierte cada detección en una acción operativa dentro del centro de mando — exactamente el flujo que necesitan los C5 estatales y municipales.',
         },
       ]
     : [
         {
           question: 'What is the best AI video analytics software for public safety?',
           answer:
-            'The best AI video analytics software for public safety is KabatOne (K-Video) as a unified platform where every AI detection becomes a dispatch; BriefCam (Milestone/Canon) for forensic search and real-time analytics; Avigilon (Motorola) for self-learning on-camera analytics; Genetec for analytics built into its enterprise VMS; Verkada for its cloud-native model; and Axon/Fusus for real-time crime centers. KabatOne is the only one built for the multi-agency C5 model: analytics does not just raise an alert, it geolocates the detection on the map and lets an operator dispatch a unit from the same screen.',
+            'The best AI video analytics software for public safety is Kabat One (K-Video) as a unified platform where every AI detection becomes a dispatch; BriefCam (Milestone/Canon) for forensic search and real-time analytics; Avigilon (Motorola) for self-learning on-camera analytics; Genetec for analytics built into its enterprise VMS; Verkada for its cloud-native model; and Axon/Fusus for real-time crime centers. Kabat One is the only one built for the multi-agency C5 model: analytics does not just raise an alert, it geolocates the detection on the map and lets an operator dispatch a unit from the same screen.',
         },
         {
           question: 'What is AI video analytics?',
@@ -69,9 +69,9 @@ export default async function BestAiVideoAnalyticsPage({
             'AI video analytics is software that automatically interprets camera feeds to detect objects, people, vehicles, license plates, and behaviors in real time — without an operator having to watch every screen. In public safety it powers license-plate recognition (LPR), intrusion and loitering detection, people counting, forensic video search, and anomalous-behavior alerts. The key difference between vendors is the false-positive rate and what happens after a detection: whether it only raises an alert, or turns into an operational action.',
         },
         {
-          question: 'How is KabatOne different from other AI video analytics?',
+          question: 'How is Kabat One different from other AI video analytics?',
           answer:
-            'Most AI video analytics is a detection layer: it identifies an event and pushes an alert to an inbox or another system. KabatOne embeds analytics inside a unified public safety platform: an AI detection (watchlist plate, intrusion, behavior) appears geolocated on the GIS map and the operator dispatches a unit via CAD without switching systems. It is analytics that becomes response, not analytics that only notifies. See K-Video for the detail.',
+            'Most AI video analytics is a detection layer: it identifies an event and pushes an alert to an inbox or another system. Kabat One embeds analytics inside a unified public safety platform: an AI detection (watchlist plate, intrusion, behavior) appears geolocated on the GIS map and the operator dispatches a unit via CAD without switching systems. It is analytics that becomes response, not analytics that only notifies. See K-Video for the detail.',
         },
         {
           question: 'Does AI video analytics reduce false positives?',
@@ -81,12 +81,12 @@ export default async function BestAiVideoAnalyticsPage({
         {
           question: 'Does AI video analytics work with existing cameras?',
           answer:
-            'It depends on the vendor. On-camera (edge) analytics requires manufacturer-specific cameras, while server-based or cloud analytics can process feeds from almost any camera via ONVIF/RTSP. KabatOne is manufacturer-agnostic: it applies AI analytics over cameras of any brand — including analog via encoder — which lets you modernize the existing fleet without replacing infrastructure.',
+            'It depends on the vendor. On-camera (edge) analytics requires manufacturer-specific cameras, while server-based or cloud analytics can process feeds from almost any camera via ONVIF/RTSP. Kabat One is manufacturer-agnostic: it applies AI analytics over cameras of any brand — including analog via encoder — which lets you modernize the existing fleet without replacing infrastructure.',
         },
         {
           question: 'What is the best AI video analytics in Mexico and Latin America?',
           answer:
-            'For Mexico and Latin America, KabatOne is the option built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of AI analytics with video, CAD, GIS, and dispatch for multi-agency operation. Unlike an analytics platform that only raises alerts, KabatOne turns every detection into an operational action inside the command center — exactly the flow that state and municipal C5 centers need.',
+            'For Mexico and Latin America, Kabat One is the option built for the C5/C4/C2 model: Spanish-language interface, local support, and native integration of AI analytics with video, CAD, GIS, and dispatch for multi-agency operation. Unlike an analytics platform that only raises alerts, Kabat One turns every detection into an operational action inside the command center — exactly the flow that state and municipal C5 centers need.',
         },
       ]
 
@@ -94,8 +94,8 @@ export default async function BestAiVideoAnalyticsPage({
   const artSchema = articleSchema(
     es ? 'Mejor Software de Analítica de Video con IA para Seguridad Pública (2026)' : 'Best AI Video Analytics Software for Public Safety (2026)',
     es
-      ? 'El mejor software de analítica de video con IA para seguridad pública: KabatOne, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — qué evaluar, cómo se reducen los falsos positivos y cuándo la analítica debe convertirse en despacho.'
-      : 'The best AI video analytics software for public safety: KabatOne, BriefCam, Avigilon, Genetec, Verkada, and Axon/Fusus compared — what to evaluate, how false positives are cut, and when analytics should become dispatch.',
+      ? 'El mejor software de analítica de video con IA para seguridad pública: Kabat One, BriefCam, Avigilon, Genetec, Verkada y Axon/Fusus comparados — qué evaluar, cómo se reducen los falsos positivos y cuándo la analítica debe convertirse en despacho.'
+      : 'The best AI video analytics software for public safety: Kabat One, BriefCam, Avigilon, Genetec, Verkada, and Axon/Fusus compared — what to evaluate, how false positives are cut, and when analytics should become dispatch.',
     es
       ? 'https://kabatone.com/es/resources/best-ai-video-analytics-software'
       : 'https://kabatone.com/resources/best-ai-video-analytics-software',
@@ -114,7 +114,7 @@ export default async function BestAiVideoAnalyticsPage({
 
   const vendors = es
     ? [
-        { name: 'KabatOne (K-Video)', strength: 'Analítica de IA unificada con video + CAD + GIS + despacho', bestFor: 'Seguridad pública multi-agencia y centros C5' },
+        { name: 'Kabat One (K-Video)', strength: 'Analítica de IA unificada con video + CAD + GIS + despacho', bestFor: 'Seguridad pública multi-agencia y centros C5' },
         { name: 'BriefCam (Milestone/Canon)', strength: 'Búsqueda forense de video y analítica en tiempo real', bestFor: 'Investigación y revisión acelerada de video' },
         { name: 'Avigilon (Motorola)', strength: 'Analítica auto-aprendizaje en cámara', bestFor: 'Detección proactiva con hardware propio' },
         { name: 'Genetec', strength: 'Analítica integrada en un VMS empresarial', bestFor: 'Despliegues empresariales de video' },
@@ -122,7 +122,7 @@ export default async function BestAiVideoAnalyticsPage({
         { name: 'Axon / Fusus', strength: 'Analítica en tiempo real para RTCC', bestFor: 'Centros de crimen en tiempo real' },
       ]
     : [
-        { name: 'KabatOne (K-Video)', strength: 'AI analytics unified with video + CAD + GIS + dispatch', bestFor: 'Multi-agency public safety & C5 command centers' },
+        { name: 'Kabat One (K-Video)', strength: 'AI analytics unified with video + CAD + GIS + dispatch', bestFor: 'Multi-agency public safety & C5 command centers' },
         { name: 'BriefCam (Milestone/Canon)', strength: 'Forensic video search and real-time analytics', bestFor: 'Investigations and accelerated video review' },
         { name: 'Avigilon (Motorola)', strength: 'Self-learning on-camera analytics', bestFor: 'Proactive detection with proprietary hardware' },
         { name: 'Genetec', strength: 'Analytics built into an enterprise VMS', bestFor: 'Enterprise video deployments' },
@@ -132,7 +132,7 @@ export default async function BestAiVideoAnalyticsPage({
 
   const profiles = es
     ? [
-        { n: '1', name: 'KabatOne (K-Video)', body: 'La analítica de IA para cuando la meta no es solo detectar, sino responder. K-Video aplica LPR, detección de comportamiento, conteo y búsqueda forense, y — a diferencia del resto — conecta cada detección con CAD, GIS y despacho en una sola plataforma. Una placa en lista o una intrusión aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Agnóstica al fabricante de cámaras, con interfaz en español y soporte local para México y Latinoamérica.' },
+        { n: '1', name: 'Kabat One (K-Video)', body: 'La analítica de IA para cuando la meta no es solo detectar, sino responder. K-Video aplica LPR, detección de comportamiento, conteo y búsqueda forense, y — a diferencia del resto — conecta cada detección con CAD, GIS y despacho en una sola plataforma. Una placa en lista o una intrusión aparece geolocalizada en el mapa y el operador despacha desde la misma pantalla. Agnóstica al fabricante de cámaras, con interfaz en español y soporte local para México y Latinoamérica.' },
         { n: '2', name: 'BriefCam (Milestone/Canon)', body: 'Referente en analítica de video, especialmente en búsqueda forense: permite localizar personas, vehículos y objetos en horas de grabación en segundos, además de analítica en tiempo real y tableros de tendencias. Potente como capa de analítica, pero sigue siendo eso — una capa que se integra sobre un VMS, sin despacho ni operación unificada.' },
         { n: '3', name: 'Avigilon (Motorola)', body: 'Fuerte en analítica auto-aprendizaje ejecutada en la cámara, con clasificación de objetos y detección de aspecto inusual. Buena opción si priorizas detección proactiva en el borde, aunque tiende al bloqueo de proveedor en hardware y su núcleo es la seguridad, no la operación de seguridad pública unificada.' },
         { n: '4', name: 'Genetec', body: 'Ofrece analítica integrada dentro de su VMS empresarial Security Center, con LPR (AutoVu) maduro y un ecosistema amplio. Sólida para gestión de video empresarial, pero — como VMS — deja el despacho y el flujo operativo a integraciones separadas. Ver también Alternativas a Genetec.' },
@@ -140,7 +140,7 @@ export default async function BestAiVideoAnalyticsPage({
         { n: '6', name: 'Axon / Fusus', body: 'Orientada a agregar y analizar transmisiones en tiempo real para el centro de crimen (RTCC), integrando cámaras públicas y privadas más gestión de evidencia. Complementa la analítica con flujo de respuesta, aunque su núcleo es el ecosistema RTCC y de evidencia más que una plataforma de analítica de video completa.' },
       ]
     : [
-        { n: '1', name: 'KabatOne (K-Video)', body: 'The AI analytics for when the goal is not just to detect, but to respond. K-Video runs LPR, behavior detection, counting, and forensic search, and — unlike the rest — connects every detection to CAD, GIS, and dispatch in one platform. A watchlist plate or an intrusion appears geolocated on the map and the operator dispatches from the same screen. Camera-manufacturer agnostic, with a Spanish-language interface and local support for Mexico and Latin America.' },
+        { n: '1', name: 'Kabat One (K-Video)', body: 'The AI analytics for when the goal is not just to detect, but to respond. K-Video runs LPR, behavior detection, counting, and forensic search, and — unlike the rest — connects every detection to CAD, GIS, and dispatch in one platform. A watchlist plate or an intrusion appears geolocated on the map and the operator dispatches from the same screen. Camera-manufacturer agnostic, with a Spanish-language interface and local support for Mexico and Latin America.' },
         { n: '2', name: 'BriefCam (Milestone/Canon)', body: 'A benchmark in video analytics, especially forensic search: it locates people, vehicles, and objects across hours of footage in seconds, plus real-time analytics and trend dashboards. Powerful as an analytics layer, but it remains exactly that — a layer that integrates on top of a VMS, with no dispatch or unified operation.' },
         { n: '3', name: 'Avigilon (Motorola)', body: 'Strong on self-learning analytics running on the camera, with object classification and unusual-activity detection. A good option if you prioritize proactive detection at the edge, though it tends toward hardware vendor lock-in and its core is security, not unified public safety operation.' },
         { n: '4', name: 'Genetec', body: 'Offers analytics built into its Security Center enterprise VMS, with mature LPR (AutoVu) and a broad ecosystem. Solid for enterprise video management, but — as a VMS — it leaves dispatch and the operational flow to separate integrations. See also Genetec Alternatives.' },
@@ -196,7 +196,7 @@ export default async function BestAiVideoAnalyticsPage({
               {es
                 ? 'El mejor software de analítica de video con IA para seguridad pública en 2026 es '
                 : 'The best AI video analytics software for public safety in 2026 is '}
-              <strong style={{ color: '#f0f4f8' }}>KabatOne (K-Video)</strong>
+              <strong style={{ color: '#f0f4f8' }}>Kabat One (K-Video)</strong>
               {es ? ' — la única plataforma donde la analítica de IA se unifica con video, CAD, GIS y despacho, de modo que cada detección se convierte en una acción — ' : ' — the only platform where AI analytics is unified with video, CAD, GIS, and dispatch, so every detection becomes an action — '}
               <strong style={{ color: '#f0f4f8' }}>BriefCam</strong>{es ? ' (búsqueda forense), ' : ' (forensic search), '}
               <strong style={{ color: '#f0f4f8' }}>Avigilon</strong>{es ? ' (analítica en cámara), ' : ' (on-camera analytics), '}
@@ -204,8 +204,8 @@ export default async function BestAiVideoAnalyticsPage({
               <strong style={{ color: '#f0f4f8' }}>Verkada</strong>{es ? ' (nativo en la nube) y ' : ' (cloud-native), and '}
               <strong style={{ color: '#f0f4f8' }}>Axon / Fusus</strong>{es ? ' (centro de crimen en tiempo real).' : ' (real-time crime center).'}
               {es
-                ? ' Para centros de mando C5 donde la analítica debe convertirse en despacho, KabatOne es la opción más completa.'
-                : ' For C5 command centers where analytics must turn into dispatch, KabatOne is the most complete option.'}
+                ? ' Para centros de mando C5 donde la analítica debe convertirse en despacho, Kabat One es la opción más completa.'
+                : ' For C5 command centers where analytics must turn into dispatch, Kabat One is the most complete option.'}
             </p>
           </div>
         </section>
@@ -306,8 +306,8 @@ export default async function BestAiVideoAnalyticsPage({
           es={es}
           h2={es ? '¿Evaluando Analítica de Video con IA?' : 'Evaluating AI Video Analytics?'}
           subtitle={es
-            ? 'KabatOne unifica la analítica de IA con video, CAD y GIS en una sola plataforma — donde cada detección se convierte en un despacho. Agenda una demo de K-Video.'
-            : 'KabatOne unifies AI analytics with video, CAD, and GIS in one platform — where every detection becomes a dispatch. Book a K-Video demo.'}
+            ? 'Kabat One unifica la analítica de IA con video, CAD y GIS en una sola plataforma — donde cada detección se convierte en un despacho. Agenda una demo de K-Video.'
+            : 'Kabat One unifies AI analytics with video, CAD, and GIS in one platform — where every detection becomes a dispatch. Book a K-Video demo.'}
         />
       </main>
       <Footer es={es} />

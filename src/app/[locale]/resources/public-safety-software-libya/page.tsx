@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareLibyaPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Libia | GNU, LNA y Reconstrucción Post-Conflicto – KabatOne"
-      : "Public Safety Software for Libya | GNU, LNA & Post-Conflict Reconstruction – KabatOne",
+      ? "Software de Seguridad Pública para Libia | GNU, LNA y Reconstrucción Post-Conflicto – Kabat One"
+      : "Public Safety Software for Libya | GNU, LNA & Post-Conflict Reconstruction – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, protección de infraestructura petrolera y conciencia situacional para el Gobierno de Unidad Nacional de Libia, programas de seguridad en Trípoli/Bengasi y reconstrucción post-conflicto."
-      : "KabatOne delivers modular command-and-control, oil infrastructure protection, and situational awareness for Libya's Government of National Unity, Tripoli/Benghazi security programs, and post-conflict reconstruction.",
+      ? "Kabat One ofrece plataforma modular de mando y control, protección de infraestructura petrolera y conciencia situacional para el Gobierno de Unidad Nacional de Libia, programas de seguridad en Trípoli/Bengasi y reconstrucción post-conflicto."
+      : "Kabat One delivers modular command-and-control, oil infrastructure protection, and situational awareness for Libya's Government of National Unity, Tripoli/Benghazi security programs, and post-conflict reconstruction.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-libya"
       : "https://kabatone.com/resources/public-safety-software-libya",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareLibyaPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Libia?"
-        : "How can KabatOne support public safety in Libya?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Libia?"
+        : "How can Kabat One support public safety in Libya?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para los 22 municipios/3 regiones históricas (Tripolitania/Cirenaica/Fezzan), integración con los sistemas humanitarios OCHA/UNSMIL, coordinación de la Policía Judicial GNU y gestión de emergencias en Trípoli/Bengasi/Misrata."
-        : "KabatOne provides modular CAD/incident management for all 22 municipalities/3 historical regions (Tripolitania/Cyrenaica/Fezzan), integration with OCHA/UNSMIL humanitarian systems, GNU Judicial Police coordination, and emergency management in Tripoli/Benghazi/Misrata.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para los 22 municipios/3 regiones históricas (Tripolitania/Cirenaica/Fezzan), integración con los sistemas humanitarios OCHA/UNSMIL, coordinación de la Policía Judicial GNU y gestión de emergencias en Trípoli/Bengasi/Misrata."
+        : "Kabat One provides modular CAD/incident management for all 22 municipalities/3 historical regions (Tripolitania/Cyrenaica/Fezzan), integration with OCHA/UNSMIL humanitarian systems, GNU Judicial Police coordination, and emergency management in Tripoli/Benghazi/Misrata.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de la infraestructura petrolera de Libia?"
-        : "How does KabatOne support Libya's oil infrastructure security?",
+        ? "¿Cómo apoya Kabat One la seguridad de la infraestructura petrolera de Libia?"
+        : "How does Kabat One support Libya's oil infrastructure security?",
       answer: es
         ? "La plataforma monitorea los campos de petróleo de la NOC (Sharara 300K bpd, El Feel, Waha/Oasis, Elephant/Murzuq), el oleoducto Greenstream (gas a Italia), los terminales de exportación Es Sider/Ras Lanuf/Zueitina/Marsa El Brega, y las refinerías de Zawiya/Ras Lanuf con alertas de seguridad perimetral."
         : "The platform monitors NOC oil fields (Sharara 300K bpd, El Feel, Waha/Oasis, Elephant/Murzuq), Greenstream pipeline (gas to Italy), Es Sider/Ras Lanuf/Zueitina/Marsa El Brega export terminals, and Zawiya/Ras Lanuf refineries with perimeter security alerts.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Libia?"
-        : "Can KabatOne integrate with humanitarian management in Libya?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Libia?"
+        : "Can Kabat One integrate with humanitarian management in Libya?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNSMIL/UNHCR para la gestión de los 188,000+ PDI y los migrantes subsaharianos en centros de detención, el monitoreo de la ruta de migración mediterránea (Trípoli/Zuara-Malta/Lampedusa), y la coordinación FRONTEX/Guardia Costera Italiana."
-        : "Yes. KabatOne integrates with OCHA/UNSMIL/UNHCR for management of 188,000+ IDPs and Sub-Saharan migrants in detention centers, Mediterranean migration route monitoring (Tripoli/Zuara-Malta/Lampedusa), and FRONTEX/Italian Coast Guard coordination.",
+        ? "Sí. Kabat One se integra con OCHA/UNSMIL/UNHCR para la gestión de los 188,000+ PDI y los migrantes subsaharianos en centros de detención, el monitoreo de la ruta de migración mediterránea (Trípoli/Zuara-Malta/Lampedusa), y la coordinación FRONTEX/Guardia Costera Italiana."
+        : "Yes. Kabat One integrates with OCHA/UNSMIL/UNHCR for management of 188,000+ IDPs and Sub-Saharan migrants in detention centers, Mediterranean migration route monitoring (Tripoli/Zuara-Malta/Lampedusa), and FRONTEX/Italian Coast Guard coordination.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Libia?"
-        : "How does KabatOne comply with Libya's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Libia?"
+        : "How does Kabat One comply with Libya's regulations?",
       answer: es
-        ? "KabatOne se alinea con las directrices de telecomunicaciones de la Autoridad General de Comunicaciones e Informática (AGCI/GICI), los estándares de ciberseguridad del GNU, y los marcos de adquisiciones del Banco Mundial/ONU/USAID para proyectos de reconstrucción y estabilización financiados por donantes."
-        : "KabatOne aligns with General Authority for Communications and Informatics (AGCI/GICI) telecommunications guidelines, GNU cybersecurity standards, and World Bank/UN/USAID procurement frameworks for donor-funded reconstruction and stabilisation projects.",
+        ? "Kabat One se alinea con las directrices de telecomunicaciones de la Autoridad General de Comunicaciones e Informática (AGCI/GICI), los estándares de ciberseguridad del GNU, y los marcos de adquisiciones del Banco Mundial/ONU/USAID para proyectos de reconstrucción y estabilización financiados por donantes."
+        : "Kabat One aligns with General Authority for Communications and Informatics (AGCI/GICI) telecommunications guidelines, GNU cybersecurity standards, and World Bank/UN/USAID procurement frameworks for donor-funded reconstruction and stabilisation projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Libia?"
-        : "What sets KabatOne apart for Libya's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Libia?"
+        : "What sets Kabat One apart for Libya's border management?",
       answer: es
-        ? "KabatOne puede unificar los 6 corredores fronterizos (Túnez/Algeria/Níger/Chad/Sudán/Egipto) con ANPR, listas Interpol/UA/EUTF-Africa, monitoreo de la ruta de tráfico de migrantes Sahel-Mediterráneo, y alertas de contrabando de armas para las Fuerzas de Guardia de Instalaciones Petroleras (OGIG)."
-        : "KabatOne can unify 6 border corridors (Tunisia/Algeria/Niger/Chad/Sudan/Egypt) with ANPR, Interpol/AU/EUTF-Africa watchlists, Sahel-Mediterranean migrant trafficking route monitoring, and arms smuggling alerts for the Oil Facilities Guard (OGIG).",
+        ? "Kabat One puede unificar los 6 corredores fronterizos (Túnez/Algeria/Níger/Chad/Sudán/Egipto) con ANPR, listas Interpol/UA/EUTF-Africa, monitoreo de la ruta de tráfico de migrantes Sahel-Mediterráneo, y alertas de contrabando de armas para las Fuerzas de Guardia de Instalaciones Petroleras (OGIG)."
+        : "Kabat One can unify 6 border corridors (Tunisia/Algeria/Niger/Chad/Sudan/Egypt) with ANPR, Interpol/AU/EUTF-Africa watchlists, Sahel-Mediterranean migrant trafficking route monitoring, and arms smuggling alerts for the Oil Facilities Guard (OGIG).",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareLibyaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está posicionado como plataforma de reconstrucción de seguridad pública post-conflicto: modular, escalable y compatible con los estándares de coordinación humanitaria OCHA/UNSMIL, con capacidad de despliegue en Trípoli, Bengasi, Misrata, Sabha y otras ciudades en proceso de estabilización."
-              : "KabatOne is positioned as a post-conflict public safety reconstruction platform: modular, scalable, and compatible with OCHA/UNSMIL humanitarian coordination standards, with deployment capacity in Tripoli, Benghazi, Misrata, Sabha, and other stabilising cities."}
+              ? "Kabat One está posicionado como plataforma de reconstrucción de seguridad pública post-conflicto: modular, escalable y compatible con los estándares de coordinación humanitaria OCHA/UNSMIL, con capacidad de despliegue en Trípoli, Bengasi, Misrata, Sabha y otras ciudades en proceso de estabilización."
+              : "Kabat One is positioned as a post-conflict public safety reconstruction platform: modular, scalable, and compatible with OCHA/UNSMIL humanitarian coordination standards, with deployment capacity in Tripoli, Benghazi, Misrata, Sabha, and other stabilising cities."}
           </p>
 
           {/* Oil Infrastructure */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareLibyaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Los terminales de exportación de crudo incluyen: Es Sider (mayor terminal, 350,000+ bpd), Ras Lanuf, Zueitina, Marsa El Brega y El Hariga (Tobruk). Las Oil Facilities Guard (OGIG/Petroleum Facilities Guard, PFG) protegen estas instalaciones. KabatOne proporciona seguridad perimetral georreferenciada, monitoreo de oleoductos con alertas de intrusión, gestión de incidentes del personal internacional NOC/ENI/BP y coordinación OGIG/PFG."
-              : "Crude export terminals include: Es Sider (largest terminal, 350,000+ bpd), Ras Lanuf, Zueitina, Marsa El Brega, and El Hariga (Tobruk). Oil Facilities Guard (OGIG/Petroleum Facilities Guard, PFG) protect these facilities. KabatOne provides georeferenced perimeter security, pipeline monitoring with intrusion alerts, NOC/ENI/BP international staff incident management, and OGIG/PFG coordination."}
+              ? "Los terminales de exportación de crudo incluyen: Es Sider (mayor terminal, 350,000+ bpd), Ras Lanuf, Zueitina, Marsa El Brega y El Hariga (Tobruk). Las Oil Facilities Guard (OGIG/Petroleum Facilities Guard, PFG) protegen estas instalaciones. Kabat One proporciona seguridad perimetral georreferenciada, monitoreo de oleoductos con alertas de intrusión, gestión de incidentes del personal internacional NOC/ENI/BP y coordinación OGIG/PFG."
+              : "Crude export terminals include: Es Sider (largest terminal, 350,000+ bpd), Ras Lanuf, Zueitina, Marsa El Brega, and El Hariga (Tobruk). Oil Facilities Guard (OGIG/Petroleum Facilities Guard, PFG) protect these facilities. Kabat One provides georeferenced perimeter security, pipeline monitoring with intrusion alerts, NOC/ENI/BP international staff incident management, and OGIG/PFG coordination."}
           </p>
 
           {/* Migration */}
@@ -175,8 +175,8 @@ export default async function PublicSafetySoftwareLibyaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra el monitoreo de la Guardia Costera Libia con feeds de FRONTEX/Guardia Costera Italiana, gestión de los 188,000+ PDI y migrantes en centros de detención con UNHCR/OIM, el Sistema de Monitoreo Migratorio SAR y los protocolos de rescate marítimo coordinados con el MRCC Roma."
-              : "KabatOne integrates Libyan Coast Guard monitoring with FRONTEX/Italian Coast Guard feeds, management of 188,000+ IDPs and migrants in detention centers with UNHCR/IOM, SAR Migration Monitoring System, and maritime rescue protocols coordinated with MRCC Rome."}
+              ? "Kabat One integra el monitoreo de la Guardia Costera Libia con feeds de FRONTEX/Guardia Costera Italiana, gestión de los 188,000+ PDI y migrantes en centros de detención con UNHCR/OIM, el Sistema de Monitoreo Migratorio SAR y los protocolos de rescate marítimo coordinados con el MRCC Roma."
+              : "Kabat One integrates Libyan Coast Guard monitoring with FRONTEX/Italian Coast Guard feeds, management of 188,000+ IDPs and migrants in detention centers with UNHCR/IOM, SAR Migration Monitoring System, and maritime rescue protocols coordinated with MRCC Rome."}
           </p>
 
           {/* Border */}
@@ -204,8 +204,8 @@ export default async function PublicSafetySoftwareLibyaPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está estructurado para despliegue bajo marcos de adquisiciones de emergencia ONU/UE/USAID, compatible con los sistemas de coordinación UNSMIL/OCHA, y diseñado para escalar desde operaciones de estabilización de emergencia hacia plataformas de seguridad pública civiles sostenibles bajo la Agenda de Reconstrucción y Estabilización de Libia de la ONU."
-              : "KabatOne is structured for deployment under UN/EU/USAID emergency procurement frameworks, compatible with UNSMIL/OCHA coordination systems, and designed to scale from emergency stabilisation operations to sustainable civilian public safety platforms under the UN Libya Reconstruction and Stabilisation Agenda."}
+              ? "Kabat One está estructurado para despliegue bajo marcos de adquisiciones de emergencia ONU/UE/USAID, compatible con los sistemas de coordinación UNSMIL/OCHA, y diseñado para escalar desde operaciones de estabilización de emergencia hacia plataformas de seguridad pública civiles sostenibles bajo la Agenda de Reconstrucción y Estabilización de Libia de la ONU."
+              : "Kabat One is structured for deployment under UN/EU/USAID emergency procurement frameworks, compatible with UNSMIL/OCHA coordination systems, and designed to scale from emergency stabilisation operations to sustainable civilian public safety platforms under the UN Libya Reconstruction and Stabilisation Agenda."}
           </p>
         </section>
 
@@ -219,43 +219,43 @@ export default async function PublicSafetySoftwareLibyaPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Libia?"
-                    : "How can KabatOne support public safety in Libya?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Libia?"
+                    : "How can Kabat One support public safety in Libya?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 22 municipios/3 regiones, integración OCHA/UNSMIL, coordinación Policía Judicial GNU y gestión de emergencias en Trípoli/Bengasi/Misrata."
-                    : "KabatOne provides modular CAD for 22 municipalities/3 regions, OCHA/UNSMIL integration, GNU Judicial Police coordination, and emergency management in Tripoli/Benghazi/Misrata.",
+                    ? "Kabat One proporciona CAD modular para 22 municipios/3 regiones, integración OCHA/UNSMIL, coordinación Policía Judicial GNU y gestión de emergencias en Trípoli/Bengasi/Misrata."
+                    : "Kabat One provides modular CAD for 22 municipalities/3 regions, OCHA/UNSMIL integration, GNU Judicial Police coordination, and emergency management in Tripoli/Benghazi/Misrata.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de la infraestructura petrolera de Libia?"
-                    : "How does KabatOne support Libya's oil infrastructure security?",
+                    ? "¿Cómo apoya Kabat One la seguridad de la infraestructura petrolera de Libia?"
+                    : "How does Kabat One support Libya's oil infrastructure security?",
                   a: es
                     ? "La plataforma monitorea NOC Sharara 300K bpd/El Feel/Waha/Oasis, Greenstream pipeline, terminales Es Sider/Ras Lanuf/Zueitina y personal NOC/ENI/BP con seguridad perimetral y coordinación OGIG/PFG."
                     : "The platform monitors NOC Sharara 300K bpd/El Feel/Waha/Oasis, Greenstream pipeline, Es Sider/Ras Lanuf/Zueitina terminals, and NOC/ENI/BP staff with perimeter security and OGIG/PFG coordination.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Libia?"
-                    : "Can KabatOne integrate with humanitarian management in Libya?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Libia?"
+                    : "Can Kabat One integrate with humanitarian management in Libya?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/UNSMIL/UNHCR para 188K+ PDI y migrantes detenidos, ruta migratoria Mediterránea Central y coordinación FRONTEX/Guardia Costera Italiana/MRCC Roma."
-                    : "Yes. KabatOne integrates OCHA/UNSMIL/UNHCR for 188K+ IDPs and detained migrants, Central Mediterranean migration route, and FRONTEX/Italian Coast Guard/MRCC Rome coordination.",
+                    ? "Sí. Kabat One integra OCHA/UNSMIL/UNHCR para 188K+ PDI y migrantes detenidos, ruta migratoria Mediterránea Central y coordinación FRONTEX/Guardia Costera Italiana/MRCC Roma."
+                    : "Yes. Kabat One integrates OCHA/UNSMIL/UNHCR for 188K+ IDPs and detained migrants, Central Mediterranean migration route, and FRONTEX/Italian Coast Guard/MRCC Rome coordination.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Libia?"
-                    : "How does KabatOne comply with Libya's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Libia?"
+                    : "How does Kabat One comply with Libya's regulations?",
                   a: es
-                    ? "KabatOne se alinea con AGCI/GICI telecom, estándares GNU y marcos de adquisiciones ONU/UE/USAID/Banco Mundial para proyectos de reconstrucción y estabilización."
-                    : "KabatOne aligns with AGCI/GICI telecom, GNU standards, and UN/EU/USAID/World Bank procurement frameworks for reconstruction and stabilisation projects.",
+                    ? "Kabat One se alinea con AGCI/GICI telecom, estándares GNU y marcos de adquisiciones ONU/UE/USAID/Banco Mundial para proyectos de reconstrucción y estabilización."
+                    : "Kabat One aligns with AGCI/GICI telecom, GNU standards, and UN/EU/USAID/World Bank procurement frameworks for reconstruction and stabilisation projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Libia?"
-                    : "What sets KabatOne apart for Libya's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Libia?"
+                    : "What sets Kabat One apart for Libya's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 6 corredores (Túnez/Algeria/Níger/Chad/Sudán/Egipto) con ANPR, listas Interpol/UA/EUTF-Africa, monitoreo de la ruta de migración Sahel-Mediterráneo y alertas de contrabando de armas OGIG."
-                    : "KabatOne can unify 6 corridors (Tunisia/Algeria/Niger/Chad/Sudan/Egypt) with ANPR, Interpol/AU/EUTF-Africa watchlists, Sahel-Mediterranean migration route monitoring, and OGIG arms smuggling alerts.",
+                    ? "Kabat One puede unificar los 6 corredores (Túnez/Algeria/Níger/Chad/Sudán/Egipto) con ANPR, listas Interpol/UA/EUTF-Africa, monitoreo de la ruta de migración Sahel-Mediterráneo y alertas de contrabando de armas OGIG."
+                    : "Kabat One can unify 6 corridors (Tunisia/Algeria/Niger/Chad/Sudan/Egypt) with ANPR, Interpol/AU/EUTF-Africa watchlists, Sahel-Mediterranean migration route monitoring, and OGIG arms smuggling alerts.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

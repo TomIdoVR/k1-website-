@@ -22,8 +22,8 @@ export default async function PublicSafetySoftwareAngolaPage({
 
   const articleData = articleSchema(
     es
-      ? 'Software de Seguridad Pública para Angola: PNA/FAA, SINSE, Luanda Safe City, Sonangol/ANPG & Lei 22/2011 | KabatOne'
-      : 'Public Safety Software for Angola: PNA/FAA, SINSE, Luanda Safe City, Sonangol/ANPG & Law 22/2011 | KabatOne',
+      ? 'Software de Seguridad Pública para Angola: PNA/FAA, SINSE, Luanda Safe City, Sonangol/ANPG & Lei 22/2011 | Kabat One'
+      : 'Public Safety Software for Angola: PNA/FAA, SINSE, Luanda Safe City, Sonangol/ANPG & Law 22/2011 | Kabat One',
     es
       ? 'Plataforma unificada para la Policía Nacional de Angola (PNA) y FAA — despacho CAD integrado en 18 provincias, Luanda Safe City, SINSE inteligencia, Sonangol infraestructura petrolífera, Puerto de Luanda/Porto de Lobito, Lei 22/2011/ANPD y adquisición Contratação Pública.'
       : 'Unified platform for Angola National Police (PNA) and FAA — integrated CAD dispatch across 18 provinces, Luanda Safe City, SINSE intelligence, Sonangol oil infrastructure, Port of Luanda/Lobito, Law 22/2011/ANPD compliance, and Contratação Pública procurement.',
@@ -44,27 +44,27 @@ export default async function PublicSafetySoftwareAngolaPage({
     },
     {
       question: es
-        ? '¿Cómo aborda KabatOne la infraestructura crítica de Angola?'
-        : 'How does KabatOne address Angola critical infrastructure?',
+        ? '¿Cómo aborda Kabat One la infraestructura crítica de Angola?'
+        : 'How does Kabat One address Angola critical infrastructure?',
       answer: es
-        ? 'KabatOne integra gestión de Sonangol (mayor empresa de petróleo/gas de África subsahariana, Bloco 0/15/17/31 offshore), la ANPG, el Puerto de Luanda, el Porto de Lobito (corredor TAZARA), PRODEL zona especial económica, REDE (red eléctrica), la Barragem de Laúca (hidroeléctrica) y el Aeropuerto Internacional de Luanda (LAD).'
-        : 'KabatOne integrates management for Sonangol (sub-Saharan Africa largest oil/gas company, Bloco 0/15/17/31 offshore), ANPG, Port of Luanda, Porto de Lobito (TAZARA corridor), PRODEL special economic zone, REDE power grid, Laúca Dam (hydroelectric), and Luanda International Airport (LAD).',
+        ? 'Kabat One integra gestión de Sonangol (mayor empresa de petróleo/gas de África subsahariana, Bloco 0/15/17/31 offshore), la ANPG, el Puerto de Luanda, el Porto de Lobito (corredor TAZARA), PRODEL zona especial económica, REDE (red eléctrica), la Barragem de Laúca (hidroeléctrica) y el Aeropuerto Internacional de Luanda (LAD).'
+        : 'Kabat One integrates management for Sonangol (sub-Saharan Africa largest oil/gas company, Bloco 0/15/17/31 offshore), ANPG, Port of Luanda, Porto de Lobito (TAZARA corridor), PRODEL special economic zone, REDE power grid, Laúca Dam (hydroelectric), and Luanda International Airport (LAD).',
     },
     {
       question: es
-        ? '¿Es KabatOne compatible con la legislación de datos de Angola?'
-        : 'Is KabatOne compliant with Angola data legislation?',
+        ? '¿Es Kabat One compatible con la legislación de datos de Angola?'
+        : 'Is Kabat One compliant with Angola data legislation?',
       answer: es
-        ? 'Sí. KabatOne está diseñado para cumplir con la Lei 22/2011 de Protección de Datos Personales supervisada por la ANPD (Agência Nacional de Proteção de Dados). La arquitectura se alinea con la Lei 7/2017 sobre Delitos Informáticos y el Decreto Presidencial 270/2019 sobre Ciberseguridad y Ciberdefensa.'
-        : 'Yes. KabatOne is designed to comply with Law 22/2011 on Personal Data Protection supervised by the ANPD (Agência Nacional de Proteção de Dados). The architecture aligns with Law 7/2017 on Computer Crimes and Presidential Decree 270/2019 on Cybersecurity and Cyberdefence.',
+        ? 'Sí. Kabat One está diseñado para cumplir con la Lei 22/2011 de Protección de Datos Personales supervisada por la ANPD (Agência Nacional de Proteção de Dados). La arquitectura se alinea con la Lei 7/2017 sobre Delitos Informáticos y el Decreto Presidencial 270/2019 sobre Ciberseguridad y Ciberdefensa.'
+        : 'Yes. Kabat One is designed to comply with Law 22/2011 on Personal Data Protection supervised by the ANPD (Agência Nacional de Proteção de Dados). The architecture aligns with Law 7/2017 on Computer Crimes and Presidential Decree 270/2019 on Cybersecurity and Cyberdefence.',
     },
     {
       question: es
-        ? '¿Cómo apoya KabatOne la seguridad de la infraestructura petrolífera de Angola?'
-        : 'How does KabatOne support Angola oil infrastructure security?',
+        ? '¿Cómo apoya Kabat One la seguridad de la infraestructura petrolífera de Angola?'
+        : 'How does Kabat One support Angola oil infrastructure security?',
       answer: es
-        ? 'KabatOne proporciona monitorización integrada para las plataformas offshore Sonangol (Bloco 0, 15, 17, 31), el terminal de exportación de crudo de Luanda, la refinería de Luanda (SONANGALP), el oleoducto Malongo/Cabinda, las instalaciones de GNL Soyo y coordinación con la Guardia Costeira y la Polícia Marítima.'
-        : 'KabatOne provides integrated monitoring for Sonangol offshore platforms (Bloco 0, 15, 17, 31), Luanda crude export terminal, Luanda refinery (SONANGALP), Malongo/Cabinda pipeline, Soyo LNG facilities, and coordination with the Coast Guard and Maritime Police.',
+        ? 'Kabat One proporciona monitorización integrada para las plataformas offshore Sonangol (Bloco 0, 15, 17, 31), el terminal de exportación de crudo de Luanda, la refinería de Luanda (SONANGALP), el oleoducto Malongo/Cabinda, las instalaciones de GNL Soyo y coordinación con la Guardia Costeira y la Polícia Marítima.'
+        : 'Kabat One provides integrated monitoring for Sonangol offshore platforms (Bloco 0, 15, 17, 31), Luanda crude export terminal, Luanda refinery (SONANGALP), Malongo/Cabinda pipeline, Soyo LNG facilities, and coordination with the Coast Guard and Maritime Police.',
     },
   ])
 
@@ -298,8 +298,8 @@ export default async function PublicSafetySoftwareAngolaPage({
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               {es
-                ? 'Capacidades de la Plataforma KabatOne para Angola'
-                : 'KabatOne Platform Capabilities for Angola'}
+                ? 'Capacidades de la Plataforma Kabat One para Angola'
+                : 'Kabat One Platform Capabilities for Angola'}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -444,16 +444,16 @@ export default async function PublicSafetySoftwareAngolaPage({
                       a: 'La PNA bajo el Ministerio del Interior cubre 18 provincias con 100,000+ efectivos. La FAA (Ejército/Fuerza Aérea/Armada) apoya la seguridad fronteriza. El SINSE gestiona la inteligencia nacional. La Protección Civil coordina emergencias.',
                     },
                     {
-                      q: '¿Cómo aborda KabatOne la infraestructura crítica de Angola?',
-                      a: 'KabatOne integra gestión de Sonangol (Bloco 0/15/17/31 offshore), ANPG, Puerto de Luanda, Porto de Lobito (corredor TAZARA), instalaciones GNL de Soyo, REDE red eléctrica, Barragem de Laúca y el Aeropuerto LAD.',
+                      q: '¿Cómo aborda Kabat One la infraestructura crítica de Angola?',
+                      a: 'Kabat One integra gestión de Sonangol (Bloco 0/15/17/31 offshore), ANPG, Puerto de Luanda, Porto de Lobito (corredor TAZARA), instalaciones GNL de Soyo, REDE red eléctrica, Barragem de Laúca y el Aeropuerto LAD.',
                     },
                     {
-                      q: '¿Es KabatOne compatible con la legislación de datos de Angola?',
-                      a: 'Sí. KabatOne cumple con la Lei 22/2011/ANPD. La arquitectura está alineada con la Lei 7/2017 sobre Delitos Informáticos y el Decreto Presidencial 270/2019 sobre Ciberseguridad y Ciberdefensa.',
+                      q: '¿Es Kabat One compatible con la legislación de datos de Angola?',
+                      a: 'Sí. Kabat One cumple con la Lei 22/2011/ANPD. La arquitectura está alineada con la Lei 7/2017 sobre Delitos Informáticos y el Decreto Presidencial 270/2019 sobre Ciberseguridad y Ciberdefensa.',
                     },
                     {
-                      q: '¿Cómo apoya KabatOne la seguridad de la infraestructura petrolífera de Angola?',
-                      a: 'KabatOne proporciona monitorización integrada para las plataformas offshore Sonangol (Bloco 0, 15, 17, 31), el terminal de Luanda, la refinería SONANGALP, el oleoducto Malongo/Cabinda, las instalaciones GNL de Soyo y coordinación con la Guardia Costera y la Polícia Marítima.',
+                      q: '¿Cómo apoya Kabat One la seguridad de la infraestructura petrolífera de Angola?',
+                      a: 'Kabat One proporciona monitorización integrada para las plataformas offshore Sonangol (Bloco 0, 15, 17, 31), el terminal de Luanda, la refinería SONANGALP, el oleoducto Malongo/Cabinda, las instalaciones GNL de Soyo y coordinación con la Guardia Costera y la Polícia Marítima.',
                     },
                   ]
                 : [
@@ -462,16 +462,16 @@ export default async function PublicSafetySoftwareAngolaPage({
                       a: 'The PNA under the Ministry of Interior covers 18 provinces with 100,000+ officers. The FAA (Army/Air Force/Navy) supports border security. The SINSE manages national intelligence. Civil Protection coordinates emergencies.',
                     },
                     {
-                      q: 'How does KabatOne address Angola critical infrastructure?',
-                      a: 'KabatOne integrates management for Sonangol (Bloco 0/15/17/31 offshore), ANPG, Port of Luanda, Porto de Lobito (TAZARA corridor), Soyo LNG facilities, REDE power grid, Laúca Dam and LAD Airport.',
+                      q: 'How does Kabat One address Angola critical infrastructure?',
+                      a: 'Kabat One integrates management for Sonangol (Bloco 0/15/17/31 offshore), ANPG, Port of Luanda, Porto de Lobito (TAZARA corridor), Soyo LNG facilities, REDE power grid, Laúca Dam and LAD Airport.',
                     },
                     {
-                      q: 'Is KabatOne compliant with Angola data legislation?',
-                      a: 'Yes. KabatOne complies with Law 22/2011/ANPD. The architecture aligns with Law 7/2017 on Computer Crimes and Presidential Decree 270/2019 on Cybersecurity and Cyberdefence.',
+                      q: 'Is Kabat One compliant with Angola data legislation?',
+                      a: 'Yes. Kabat One complies with Law 22/2011/ANPD. The architecture aligns with Law 7/2017 on Computer Crimes and Presidential Decree 270/2019 on Cybersecurity and Cyberdefence.',
                     },
                     {
-                      q: 'How does KabatOne support Angola oil infrastructure security?',
-                      a: 'KabatOne provides integrated monitoring for Sonangol offshore platforms (Bloco 0, 15, 17, 31), Luanda export terminal, SONANGALP refinery, Malongo/Cabinda pipeline, Soyo LNG facilities, and coordination with the Coast Guard and Maritime Police.',
+                      q: 'How does Kabat One support Angola oil infrastructure security?',
+                      a: 'Kabat One provides integrated monitoring for Sonangol offshore platforms (Bloco 0, 15, 17, 31), Luanda export terminal, SONANGALP refinery, Malongo/Cabinda pipeline, Soyo LNG facilities, and coordination with the Coast Guard and Maritime Police.',
                     },
                   ]
               ).map((item) => (
@@ -493,8 +493,8 @@ export default async function PublicSafetySoftwareAngolaPage({
           }
           subtitle={
             es
-              ? 'Conecte con expertos de KabatOne para una evaluación de plataforma adaptada a la PNA, FAA y Sonangol de Angola.'
-              : 'Connect with KabatOne experts for a platform assessment tailored to Angola PNA, FAA and Sonangol infrastructure.'
+              ? 'Conecte con expertos de Kabat One para una evaluación de plataforma adaptada a la PNA, FAA y Sonangol de Angola.'
+              : 'Connect with Kabat One experts for a platform assessment tailored to Angola PNA, FAA and Sonangol infrastructure.'
           }
         />
       </main>

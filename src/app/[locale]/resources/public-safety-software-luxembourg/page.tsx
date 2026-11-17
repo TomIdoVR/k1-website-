@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareLuxembourg({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Luxemburgo | Policía Grand-Ducal, SREL, Aeropuerto Luxembourg y Centro Financiero – KabatOne"
-        : "Public Safety Software for Luxembourg | Grand-Ducal Police, SREL, Luxembourg Airport & Financial Center – KabatOne",
+        ? "Software de Seguridad Pública para Luxemburgo | Policía Grand-Ducal, SREL, Aeropuerto Luxembourg y Centro Financiero – Kabat One"
+        : "Public Safety Software for Luxembourg | Grand-Ducal Police, SREL, Luxembourg Airport & Financial Center – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía Grand-Ducal luxemburguesa, SREL inteligencia y Ejército — protección del mayor centro financiero europeo per cápita, seguridad de LuxAir/Cargolux, instituciones UE/NATO y coordinación INTERPOL/Europol."
-        : "KabatOne delivers public safety platform for Luxembourg Grand-Ducal Police, SREL intelligence, and Army — protection of Europe's largest per-capita financial center, LuxAir/Cargolux security, EU/NATO institutions, and INTERPOL/Europol coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía Grand-Ducal luxemburguesa, SREL inteligencia y Ejército — protección del mayor centro financiero europeo per cápita, seguridad de LuxAir/Cargolux, instituciones UE/NATO y coordinación INTERPOL/Europol."
+        : "Kabat One delivers public safety platform for Luxembourg Grand-Ducal Police, SREL intelligence, and Army — protection of Europe's largest per-capita financial center, LuxAir/Cargolux security, EU/NATO institutions, and INTERPOL/Europol coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-luxembourg"
         : "https://kabatone.com/resources/public-safety-software-luxembourg",
@@ -346,13 +346,13 @@ export default async function PublicSafetySoftwareLuxembourg({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Luxemburgo"
-              : "KabatOne Capabilities for Luxembourg"}
+              ? "Capacidades Kabat One para Luxemburgo"
+              : "Kabat One Capabilities for Luxembourg"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -459,8 +459,8 @@ export default async function PublicSafetySoftwareLuxembourg({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía Grand-Ducal, SREL y Ejército en una plataforma unificada — instituciones UE/NATO, centro financiero €5T+, Cargolux, centros de datos críticos y cumplimiento GDPR/NIS2."
-            : "KabatOne integrates Grand-Ducal Police, SREL, and Army in one unified platform — EU/NATO institutions, €5T+ financial center, Cargolux, critical data centers, and GDPR/NIS2 compliance."
+            ? "Kabat One integra Policía Grand-Ducal, SREL y Ejército en una plataforma unificada — instituciones UE/NATO, centro financiero €5T+, Cargolux, centros de datos críticos y cumplimiento GDPR/NIS2."
+            : "Kabat One integrates Grand-Ducal Police, SREL, and Army in one unified platform — EU/NATO institutions, €5T+ financial center, Cargolux, critical data centers, and GDPR/NIS2 compliance."
         }
       />
       <Footer es={es} />

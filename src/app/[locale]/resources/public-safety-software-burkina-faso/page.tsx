@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Burkina Faso | DGSN, FAN y Gestión de Crisis Sahel – KabatOne"
-      : "Public Safety Software for Burkina Faso | DGSN, FAN & Sahel Crisis Management – KabatOne",
+      ? "Software de Seguridad Pública para Burkina Faso | DGSN, FAN y Gestión de Crisis Sahel – Kabat One"
+      : "Public Safety Software for Burkina Faso | DGSN, FAN & Sahel Crisis Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para la Police Nationale, Forces Armées Nationales y programas de estabilización del Sahel en Burkina Faso."
-      : "KabatOne delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Police Nationale, Forces Armées Nationales, and Sahel stabilisation programs in Burkina Faso.",
+      ? "Kabat One ofrece plataforma modular de mando y control, coordinación de operaciones antiterroristas y conciencia situacional para la Police Nationale, Forces Armées Nationales y programas de estabilización del Sahel en Burkina Faso."
+      : "Kabat One delivers modular command-and-control, counter-terrorism operations coordination, and situational awareness for the Police Nationale, Forces Armées Nationales, and Sahel stabilisation programs in Burkina Faso.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-burkina-faso"
       : "https://kabatone.com/resources/public-safety-software-burkina-faso",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la seguridad pública en Burkina Faso?"
-        : "How can KabatOne support public safety in Burkina Faso?",
+        ? "¿Cómo puede Kabat One apoyar la seguridad pública en Burkina Faso?"
+        : "How can Kabat One support public safety in Burkina Faso?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 13 regiones/45 provincias, coordinación antiterrorista FAN/VDP con inteligencia táctica, gestión de los 2+ millones de PDI y plataformas de comunicación de emergencia para Ouagadougou y las ciudades en las zonas de seguridad."
-        : "KabatOne provides modular CAD/incident management for all 13 regions/45 provinces, FAN/VDP counter-terrorism coordination with tactical intelligence, management of 2+ million IDPs, and emergency communication platforms for Ouagadougou and cities in security zones.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 13 regiones/45 provincias, coordinación antiterrorista FAN/VDP con inteligencia táctica, gestión de los 2+ millones de PDI y plataformas de comunicación de emergencia para Ouagadougou y las ciudades en las zonas de seguridad."
+        : "Kabat One provides modular CAD/incident management for all 13 regions/45 provinces, FAN/VDP counter-terrorism coordination with tactical intelligence, management of 2+ million IDPs, and emergency communication platforms for Ouagadougou and cities in security zones.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Burkina Faso?"
-        : "How does KabatOne support critical infrastructure security in Burkina Faso?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Burkina Faso?"
+        : "How does Kabat One support critical infrastructure security in Burkina Faso?",
       answer: es
         ? "La plataforma monitorea las minas de oro de IAMGOLD Essakane/Hounde/Mana (Burkina Faso es el 4to productor de oro de África), la presa de Bagré (16 MW), SONABEL red eléctrica, el oleoducto de productos refinados desde Costa de Marfil, el corredor ferroviario Abidjan-Ouagadougou-Niger y el aeropuerto de Ouagadougou OUA."
         : "The platform monitors IAMGOLD Essakane/Hounde/Mana gold mines (Burkina Faso is Africa's 4th gold producer), Bagre Dam (16 MW), SONABEL power grid, refined products pipeline from Ivory Coast, Abidjan-Ouagadougou-Niger rail corridor, and Ouagadougou OUA airport.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Burkina Faso?"
-        : "Can KabatOne integrate with humanitarian management in Burkina Faso?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Burkina Faso?"
+        : "Can Kabat One integrate with humanitarian management in Burkina Faso?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP para la gestión de los 2+ millones de PDI (mayor crisis de desplazamiento de África Occidental), el Système d'Alerte Précoce (SAP/CONASUR), alertas FEWS NET de inseguridad alimentaria, la coordinación humanitaria del G5 Sahel y los corredores de ayuda de países vecinos."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP for management of 2+ million IDPs (West Africa's largest displacement crisis), the Early Warning System (SAP/CONASUR), FEWS NET food insecurity alerts, G5 Sahel humanitarian coordination, and aid corridors from neighboring countries.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP para la gestión de los 2+ millones de PDI (mayor crisis de desplazamiento de África Occidental), el Système d'Alerte Précoce (SAP/CONASUR), alertas FEWS NET de inseguridad alimentaria, la coordinación humanitaria del G5 Sahel y los corredores de ayuda de países vecinos."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP for management of 2+ million IDPs (West Africa's largest displacement crisis), the Early Warning System (SAP/CONASUR), FEWS NET food insecurity alerts, G5 Sahel humanitarian coordination, and aid corridors from neighboring countries.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Burkina Faso?"
-        : "How does KabatOne comply with Burkina Faso's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Burkina Faso?"
+        : "How does Kabat One comply with Burkina Faso's regulations?",
       answer: es
-        ? "KabatOne se alinea con la Loi 010-2004/AN sobre Protección de Datos Personales, la Autorité de Régulation des Communications Électroniques et des Postes (ARCEP), los estándares del CERT Burkina Faso y los marcos de adquisiciones del Banco Mundial/PNUD/G5 Sahel para proyectos de estabilización financiados por donantes."
-        : "KabatOne aligns with Law 010-2004/AN on Personal Data Protection, Autorité de Régulation des Communications Électroniques et des Postes (ARCEP), CERT Burkina Faso standards, and World Bank/UNDP/G5 Sahel procurement frameworks for donor-funded stabilisation projects.",
+        ? "Kabat One se alinea con la Loi 010-2004/AN sobre Protección de Datos Personales, la Autorité de Régulation des Communications Électroniques et des Postes (ARCEP), los estándares del CERT Burkina Faso y los marcos de adquisiciones del Banco Mundial/PNUD/G5 Sahel para proyectos de estabilización financiados por donantes."
+        : "Kabat One aligns with Law 010-2004/AN on Personal Data Protection, Autorité de Régulation des Communications Électroniques et des Postes (ARCEP), CERT Burkina Faso standards, and World Bank/UNDP/G5 Sahel procurement frameworks for donor-funded stabilisation projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Burkina Faso?"
-        : "What sets KabatOne apart for Burkina Faso's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Burkina Faso?"
+        : "What sets Kabat One apart for Burkina Faso's border management?",
       answer: es
-        ? "KabatOne puede unificar los 6 corredores fronterizos (Mali/Níger/Benín/Togo/Ghana/Costa de Marfil) con ANPR, listas Interpol/G5 Sahel/CEDEAO, alertas de JNIM/GSIM/ISGS y monitoreo del corredor Abidjan-Ouagadougou-Niamey con gestión unificada de incidentes."
-        : "KabatOne can unify 6 border corridors (Mali/Niger/Benin/Togo/Ghana/Ivory Coast) with ANPR, Interpol/G5 Sahel/ECOWAS watchlists, JNIM/GSIM/ISGS alerts, and Abidjan-Ouagadougou-Niamey corridor monitoring with unified incident management.",
+        ? "Kabat One puede unificar los 6 corredores fronterizos (Mali/Níger/Benín/Togo/Ghana/Costa de Marfil) con ANPR, listas Interpol/G5 Sahel/CEDEAO, alertas de JNIM/GSIM/ISGS y monitoreo del corredor Abidjan-Ouagadougou-Niamey con gestión unificada de incidentes."
+        : "Kabat One can unify 6 border corridors (Mali/Niger/Benin/Togo/Ghana/Ivory Coast) with ANPR, Interpol/G5 Sahel/ECOWAS watchlists, JNIM/GSIM/ISGS alerts, and Abidjan-Ouagadougou-Niamey corridor monitoring with unified incident management.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Las Forces Armées Nationales (FAN/FAB), con más de 10,000 efectivos, y los Volontaires pour la Défense de la Patrie (VDP, ~50,000 voluntarios armados) son las principales fuerzas de seguridad. La Police Nationale/Gendarmerie Nationale opera en zonas más seguras. KabatOne proporciona plataformas de C2 modulares adaptadas a condiciones operativas de alta amenaza, conectividad intermitente y capacidades de despliegue rápido en zonas de reconquista."
-              : "Forces Armées Nationales (FAN/FAB), with over 10,000 troops, and the Volunteers for the Defence of the Homeland (VDP, ~50,000 armed volunteers) are the main security forces. Police Nationale/Gendarmerie Nationale operates in more secure zones. KabatOne provides modular C2 platforms adapted to high-threat operational conditions, intermittent connectivity, and rapid deployment capacity in reconquest zones."}
+              ? "Las Forces Armées Nationales (FAN/FAB), con más de 10,000 efectivos, y los Volontaires pour la Défense de la Patrie (VDP, ~50,000 voluntarios armados) son las principales fuerzas de seguridad. La Police Nationale/Gendarmerie Nationale opera en zonas más seguras. Kabat One proporciona plataformas de C2 modulares adaptadas a condiciones operativas de alta amenaza, conectividad intermitente y capacidades de despliegue rápido en zonas de reconquista."
+              : "Forces Armées Nationales (FAN/FAB), with over 10,000 troops, and the Volunteers for the Defence of the Homeland (VDP, ~50,000 armed volunteers) are the main security forces. Police Nationale/Gendarmerie Nationale operates in more secure zones. Kabat One provides modular C2 platforms adapted to high-threat operational conditions, intermittent connectivity, and rapid deployment capacity in reconquest zones."}
           </p>
 
           {/* Mining Security */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne proporciona seguridad perimetral georreferenciada para los sitios mineros, alertas de intrusión con geofence, gestión de evacuaciones de emergencia del personal internacional, monitoreo del corredor de transporte mineral Ouagadougou–Abidjan y coordinación con las unidades de protección FAN/VDP asignadas a las minas."
-              : "KabatOne provides georeferenced perimeter security for mining sites, geofence intrusion alerts, emergency evacuation management for international staff, monitoring of the Ouagadougou-Abidjan mineral transport corridor, and coordination with FAN/VDP protection units assigned to mines."}
+              ? "Kabat One proporciona seguridad perimetral georreferenciada para los sitios mineros, alertas de intrusión con geofence, gestión de evacuaciones de emergencia del personal internacional, monitoreo del corredor de transporte mineral Ouagadougou–Abidjan y coordinación con las unidades de protección FAN/VDP asignadas a las minas."
+              : "Kabat One provides georeferenced perimeter security for mining sites, geofence intrusion alerts, emergency evacuation management for international staff, monitoring of the Ouagadougou-Abidjan mineral transport corridor, and coordination with FAN/VDP protection units assigned to mines."}
           </p>
 
           {/* Humanitarian */}
@@ -199,8 +199,8 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "Los proyectos de estabilización y seguridad en Burkina Faso son financiados principalmente por el Banco Mundial, el PNUD, USAID, la UE (Plan d'Action Régional Sahel), el Fondo Monetario Internacional (FMI) y los donantes del G5 Sahel/AES. KabatOne está estructurado para despliegue bajo estos marcos de adquisición de donantes, compatible con los estándares de coordinación humanitaria OCHA/CONASUR."
-              : "Stabilisation and security projects in Burkina Faso are primarily funded by World Bank, UNDP, USAID, EU (Regional Action Plan Sahel), IMF, and G5 Sahel/AES donors. KabatOne is structured for deployment under these donor procurement frameworks, compatible with OCHA/CONASUR humanitarian coordination standards."}
+              ? "Los proyectos de estabilización y seguridad en Burkina Faso son financiados principalmente por el Banco Mundial, el PNUD, USAID, la UE (Plan d'Action Régional Sahel), el Fondo Monetario Internacional (FMI) y los donantes del G5 Sahel/AES. Kabat One está estructurado para despliegue bajo estos marcos de adquisición de donantes, compatible con los estándares de coordinación humanitaria OCHA/CONASUR."
+              : "Stabilisation and security projects in Burkina Faso are primarily funded by World Bank, UNDP, USAID, EU (Regional Action Plan Sahel), IMF, and G5 Sahel/AES donors. Kabat One is structured for deployment under these donor procurement frameworks, compatible with OCHA/CONASUR humanitarian coordination standards."}
           </p>
         </section>
 
@@ -214,43 +214,43 @@ export default async function PublicSafetySoftwareBurkinaFasoPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la seguridad pública en Burkina Faso?"
-                    : "How can KabatOne support public safety in Burkina Faso?",
+                    ? "¿Cómo puede Kabat One apoyar la seguridad pública en Burkina Faso?"
+                    : "How can Kabat One support public safety in Burkina Faso?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para 13 regiones/45 provincias, coordinación FAN/VDP antiterrorista, gestión 2+ millones de PDI y plataformas de emergencia para Ouagadougou y zonas de estabilización."
-                    : "KabatOne provides modular CAD for 13 regions/45 provinces, FAN/VDP counter-terrorism coordination, 2+ million IDP management, and emergency platforms for Ouagadougou and stabilisation zones.",
+                    ? "Kabat One proporciona CAD modular para 13 regiones/45 provincias, coordinación FAN/VDP antiterrorista, gestión 2+ millones de PDI y plataformas de emergencia para Ouagadougou y zonas de estabilización."
+                    : "Kabat One provides modular CAD for 13 regions/45 provinces, FAN/VDP counter-terrorism coordination, 2+ million IDP management, and emergency platforms for Ouagadougou and stabilisation zones.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad minera en Burkina Faso?"
-                    : "How does KabatOne support mining security in Burkina Faso?",
+                    ? "¿Cómo apoya Kabat One la seguridad minera en Burkina Faso?"
+                    : "How does Kabat One support mining security in Burkina Faso?",
                   a: es
                     ? "La plataforma monitorea Essakane/Houndé/Mana/Wahgnion gold mines con seguridad perimetral georreferenciada, gestión de evacuaciones de personal internacional y coordinación FAN/VDP para las unidades de protección minera."
                     : "The platform monitors Essakane/Hounde/Mana/Wahgnion gold mines with georeferenced perimeter security, international staff evacuation management, and FAN/VDP coordination for mining protection units.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Burkina Faso?"
-                    : "Can KabatOne integrate with humanitarian management in Burkina Faso?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Burkina Faso?"
+                    : "Can Kabat One integrate with humanitarian management in Burkina Faso?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/CONASUR/WFP para 2M+ PDI (mayor crisis desplazamiento África Occidental), SAP alertas alimentarias, G5 Sahel/AES coordinación y corredores humanitarios países vecinos."
-                    : "Yes. KabatOne integrates OCHA/CONASUR/WFP for 2M+ IDPs (West Africa's largest displacement crisis), SAP food alerts, G5 Sahel/AES coordination, and humanitarian corridors from neighboring countries.",
+                    ? "Sí. Kabat One integra OCHA/CONASUR/WFP para 2M+ PDI (mayor crisis desplazamiento África Occidental), SAP alertas alimentarias, G5 Sahel/AES coordinación y corredores humanitarios países vecinos."
+                    : "Yes. Kabat One integrates OCHA/CONASUR/WFP for 2M+ IDPs (West Africa's largest displacement crisis), SAP food alerts, G5 Sahel/AES coordination, and humanitarian corridors from neighboring countries.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Burkina Faso?"
-                    : "How does KabatOne comply with Burkina Faso's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Burkina Faso?"
+                    : "How does Kabat One comply with Burkina Faso's regulations?",
                   a: es
-                    ? "KabatOne se alinea con Loi 010-2004/CIL, ARCEP/CERT-BF, Décret 2017-0049/DGCMP y marcos de adquisiciones Banco Mundial/PNUD/UE/G5 Sahel para proyectos de estabilización."
-                    : "KabatOne aligns with Law 010-2004/CIL, ARCEP/CERT-BF, Décret 2017-0049/DGCMP, and World Bank/UNDP/EU/G5 Sahel procurement frameworks for stabilisation projects.",
+                    ? "Kabat One se alinea con Loi 010-2004/CIL, ARCEP/CERT-BF, Décret 2017-0049/DGCMP y marcos de adquisiciones Banco Mundial/PNUD/UE/G5 Sahel para proyectos de estabilización."
+                    : "Kabat One aligns with Law 010-2004/CIL, ARCEP/CERT-BF, Décret 2017-0049/DGCMP, and World Bank/UNDP/EU/G5 Sahel procurement frameworks for stabilisation projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Burkina Faso?"
-                    : "What sets KabatOne apart for Burkina Faso's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Burkina Faso?"
+                    : "What sets Kabat One apart for Burkina Faso's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 6 corredores (Mali/Níger/Benín/Togo/Ghana/Costa de Marfil) con ANPR, listas Interpol/G5 Sahel/AES/CEDEAO y alertas JNIM/GSIM/ISGS para FAN/Gendarmerie."
-                    : "KabatOne can unify 6 corridors (Mali/Niger/Benin/Togo/Ghana/Ivory Coast) with ANPR, Interpol/G5 Sahel/AES/ECOWAS watchlists, and JNIM/GSIM/ISGS alerts for FAN/Gendarmerie.",
+                    ? "Kabat One puede unificar los 6 corredores (Mali/Níger/Benín/Togo/Ghana/Costa de Marfil) con ANPR, listas Interpol/G5 Sahel/AES/CEDEAO y alertas JNIM/GSIM/ISGS para FAN/Gendarmerie."
+                    : "Kabat One can unify 6 corridors (Mali/Niger/Benin/Togo/Ghana/Ivory Coast) with ANPR, Interpol/G5 Sahel/AES/ECOWAS watchlists, and JNIM/GSIM/ISGS alerts for FAN/Gendarmerie.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

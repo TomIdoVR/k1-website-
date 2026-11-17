@@ -18,12 +18,12 @@ export default async function PublicSafetySoftwareSaoTomeAndPrincipePage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Santo Tomé y Príncipe | KabatOne"
-    : "Public Safety Software for São Tomé and Príncipe | KabatOne";
+    ? "Software de Seguridad Pública para Santo Tomé y Príncipe | Kabat One"
+    : "Public Safety Software for São Tomé and Príncipe | Kabat One";
 
   const description = es
-    ? "KabatOne apoya las fuerzas de seguridad de Santo Tomé y Príncipe — FASTP, Policía Nacional, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Golfo de Guinea."
-    : "KabatOne supports São Tomé and Príncipe security forces — FASTP, National Police, Coast Guard — with real-time surveillance, dispatch, and incident management for the Gulf of Guinea archipelago.";
+    ? "Kabat One apoya las fuerzas de seguridad de Santo Tomé y Príncipe — FASTP, Policía Nacional, Guardia Costera — con vigilancia en tiempo real, despacho y gestión de incidentes para el archipiélago del Golfo de Guinea."
+    : "Kabat One supports São Tomé and Príncipe security forces — FASTP, National Police, Coast Guard — with real-time surveillance, dispatch, and incident management for the Gulf of Guinea archipelago.";
 
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-sao-tome-and-principe"
@@ -40,11 +40,11 @@ export default async function PublicSafetySoftwareSaoTomeAndPrincipePage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne a las fuerzas de seguridad de Santo Tomé y Príncipe?"
-        : "How does KabatOne support São Tomé and Príncipe security forces?",
+        ? "¿Cómo apoya Kabat One a las fuerzas de seguridad de Santo Tomé y Príncipe?"
+        : "How does Kabat One support São Tomé and Príncipe security forces?",
       answer: es
-        ? "KabatOne proporciona conciencia situacional unificada para la FASTP (~400-500 efectivos), la Policía Nacional (PNSTP) y la Guardia Costera. La plataforma integra vigilancia marítima del Golfo de Guinea, despacho CAD entre la isla de São Tomé y la isla de Príncipe, videoanalítica para el Puerto de São Tomé y el Aeropuerto Internacional, y coordinación con la arquitectura CRESMAO/Zona F de la CEDEAO para antipiratería."
-        : "KabatOne provides unified situational awareness for the FASTP (~400-500 personnel), National Police (PNSTP), and Coast Guard. The platform integrates Gulf of Guinea maritime surveillance, CAD dispatch between São Tomé island and Príncipe island, video analytics for the Port of São Tomé and International Airport, and coordination with the CRESMAO/Zone F ECOWAS architecture for anti-piracy.",
+        ? "Kabat One proporciona conciencia situacional unificada para la FASTP (~400-500 efectivos), la Policía Nacional (PNSTP) y la Guardia Costera. La plataforma integra vigilancia marítima del Golfo de Guinea, despacho CAD entre la isla de São Tomé y la isla de Príncipe, videoanalítica para el Puerto de São Tomé y el Aeropuerto Internacional, y coordinación con la arquitectura CRESMAO/Zona F de la CEDEAO para antipiratería."
+        : "Kabat One provides unified situational awareness for the FASTP (~400-500 personnel), National Police (PNSTP), and Coast Guard. The platform integrates Gulf of Guinea maritime surveillance, CAD dispatch between São Tomé island and Príncipe island, video analytics for the Port of São Tomé and International Airport, and coordination with the CRESMAO/Zone F ECOWAS architecture for anti-piracy.",
     },
     {
       question: es
@@ -56,11 +56,11 @@ export default async function PublicSafetySoftwareSaoTomeAndPrincipePage({
     },
     {
       question: es
-        ? "¿Cómo gestiona KabatOne la coordinación marítima interinsular?"
-        : "How does KabatOne manage inter-island maritime coordination?",
+        ? "¿Cómo gestiona Kabat One la coordinación marítima interinsular?"
+        : "How does Kabat One manage inter-island maritime coordination?",
       answer: es
-        ? "KabatOne integra el seguimiento AIS/radar de la Guardia Costera de Santo Tomé y Príncipe entre las dos islas principales (~150 km de separación), coordina con la Marina de Nigeria en la ZDC, y proporciona alertas de zonas de exclusión para pesca ilegal IUU en la ZEE de 160,000 km². La plataforma soporta comunicaciones multicanal entre la comisaría central de São Tomé y el destacamento de la isla de Príncipe."
-        : "KabatOne integrates AIS/radar tracking from the Coast Guard between the two main islands (~150 km apart), coordinates with the Nigerian Navy in the JDZ, and provides exclusion zone alerts for IUU illegal fishing across the 160,000 km² EEZ. The platform supports multi-channel communications between the central police station in São Tomé and the Príncipe island detachment.",
+        ? "Kabat One integra el seguimiento AIS/radar de la Guardia Costera de Santo Tomé y Príncipe entre las dos islas principales (~150 km de separación), coordina con la Marina de Nigeria en la ZDC, y proporciona alertas de zonas de exclusión para pesca ilegal IUU en la ZEE de 160,000 km². La plataforma soporta comunicaciones multicanal entre la comisaría central de São Tomé y el destacamento de la isla de Príncipe."
+        : "Kabat One integrates AIS/radar tracking from the Coast Guard between the two main islands (~150 km apart), coordinates with the Nigerian Navy in the JDZ, and provides exclusion zone alerts for IUU illegal fishing across the 160,000 km² EEZ. The platform supports multi-channel communications between the central police station in São Tomé and the Príncipe island detachment.",
     },
   ];
 
@@ -214,18 +214,18 @@ export default async function PublicSafetySoftwareSaoTomeAndPrincipePage({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-20 px-6 bg-[#0f1724]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-barlow)" }}>
             {es
-              ? "Capacidades de KabatOne para Santo Tomé y Príncipe"
-              : "KabatOne Capabilities for São Tomé and Príncipe"}
+              ? "Capacidades de Kabat One para Santo Tomé y Príncipe"
+              : "Kabat One Capabilities for São Tomé and Príncipe"}
           </h2>
           <p className="text-blue-100/70 mb-10">
             {es
-              ? "La plataforma KabatOne ofrece una suite integrada adaptada a los retos del archipiélago de Santo Tomé y Príncipe, desde la vigilancia antipiratería en el Golfo de Guinea hasta la coordinación entre las dos islas y la seguridad de la Zona de Desarrollo Conjunto con Nigeria."
-              : "The KabatOne platform provides an integrated suite adapted to São Tomé and Príncipe's archipelago challenges, from Gulf of Guinea anti-piracy surveillance to inter-island coordination and Joint Development Zone security with Nigeria."}
+              ? "La plataforma Kabat One ofrece una suite integrada adaptada a los retos del archipiélago de Santo Tomé y Príncipe, desde la vigilancia antipiratería en el Golfo de Guinea hasta la coordinación entre las dos islas y la seguridad de la Zona de Desarrollo Conjunto con Nigeria."
+              : "The Kabat One platform provides an integrated suite adapted to São Tomé and Príncipe's archipelago challenges, from Gulf of Guinea anti-piracy surveillance to inter-island coordination and Joint Development Zone security with Nigeria."}
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -300,8 +300,8 @@ export default async function PublicSafetySoftwareSaoTomeAndPrincipePage({
         }
         subtitle={
           es
-            ? "Hable con nuestro equipo sobre cómo KabatOne puede apoyar a la FASTP, la Guardia Costera y la Policía Nacional en el archipiélago del Golfo de Guinea."
-            : "Speak with our team about how KabatOne can support the FASTP, Coast Guard, and National Police across the Gulf of Guinea archipelago."
+            ? "Hable con nuestro equipo sobre cómo Kabat One puede apoyar a la FASTP, la Guardia Costera y la Policía Nacional en el archipiélago del Golfo de Guinea."
+            : "Speak with our team about how Kabat One can support the FASTP, Coast Guard, and National Police across the Gulf of Guinea archipelago."
         }
       />
       <Footer es={es} />

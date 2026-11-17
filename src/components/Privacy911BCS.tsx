@@ -8,7 +8,7 @@ import { Link } from '@/i18n/navigation'
  * Responsible entity is the Secretaría de Seguridad Pública del Estado de Baja
  * California Sur — the Spanish text is the official / governing version; the
  * English rendering is an unofficial translation for accessibility.
- * One-off (state-specific) notice, not the reusable KabatOne Google Play template.
+ * One-off (state-specific) notice, not the reusable Kabat One Google Play template.
  */
 
 const APP_NAME = '911 Baja California Sur'

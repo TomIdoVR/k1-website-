@@ -92,7 +92,7 @@ export default async function WhatIsIncidentManagementSoftwarePage({
 
   const faqSchema = faqPageSchema(faqs)
   const artSchema = articleSchema(
-    es ? '¿Qué Es un Software de Gestión de Incidentes? Guía de Seguridad Pública | KabatOne' : 'What Is Incident Management Software? Public Safety Guide | KabatOne',
+    es ? '¿Qué Es un Software de Gestión de Incidentes? Guía de Seguridad Pública | Kabat One' : 'What Is Incident Management Software? Public Safety Guide | Kabat One',
     es
       ? 'El software de gestión de incidentes rastrea, coordina y resuelve emergencias en tiempo real — conectando despacho, unidades de campo, video y mando. Cómo funciona y qué considerar al elegirlo.'
       : 'Incident management software tracks, coordinates, and resolves emergencies in real time — connecting dispatch, field units, video, and command. How it works, key features, and what to look for.',
@@ -349,8 +349,8 @@ export default async function WhatIsIncidentManagementSoftwarePage({
           es={es}
           h2={es ? '¿Listo para Unificar la Gestión de Incidentes en tu Operación?' : 'Ready to Unify Incident Management in Your Operation?'}
           subtitle={es
-            ? 'KabatOne conecta despacho, video, GIS y campo en una sola plataforma. Agenda una demo de K-Safety o K-Dispatch.'
-            : 'KabatOne connects dispatch, video, GIS, and field operations in a single platform. Schedule a K-Safety or K-Dispatch demo.'}
+            ? 'Kabat One conecta despacho, video, GIS y campo en una sola plataforma. Agenda una demo de K-Safety o K-Dispatch.'
+            : 'Kabat One connects dispatch, video, GIS, and field operations in a single platform. Schedule a K-Safety or K-Dispatch demo.'}
         />
       </main>
 

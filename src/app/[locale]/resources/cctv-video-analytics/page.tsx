@@ -34,12 +34,12 @@ export default async function CctvVideoAnalyticsPage({
         {
           question: '¿Puedo añadir analítica de IA a mis cámaras CCTV existentes?',
           answer:
-            'Sí. La analítica de video moderna es agnóstica al hardware: se aplica sobre el flujo de las cámaras CCTV/IP existentes de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, Hanwha, etc.) sin sustituir la infraestructura. El procesamiento puede correr en un servidor central con GPU (analítica en servidor) o en el borde mediante un chip de IA. KabatOne agrega la analítica de todas tus cámaras CCTV en una sola interfaz, sin importar la marca ni la antigüedad.',
+            'Sí. La analítica de video moderna es agnóstica al hardware: se aplica sobre el flujo de las cámaras CCTV/IP existentes de cualquier fabricante (Hikvision, Axis, Dahua, Bosch, Hanwha, etc.) sin sustituir la infraestructura. El procesamiento puede correr en un servidor central con GPU (analítica en servidor) o en el borde mediante un chip de IA. Kabat One agrega la analítica de todas tus cámaras CCTV en una sola interfaz, sin importar la marca ni la antigüedad.',
         },
         {
           question: '¿Cuál es la diferencia entre analítica CCTV en el borde y en servidor?',
           answer:
-            'La analítica en el borde (edge) procesa el video en la propia cámara o en un dispositivo cercano — baja latencia y menor uso de ancho de banda, pero limitada por el procesador del dispositivo. La analítica en servidor centraliza el procesamiento de muchas cámaras CCTV en un servidor o nube potente, permitiendo modelos de IA más complejos y correlación entre cámaras. Para despliegues CCTV a escala urbana, KabatOne combina ambas: edge para alertas inmediatas y servidor para análisis profundo y correlación.',
+            'La analítica en el borde (edge) procesa el video en la propia cámara o en un dispositivo cercano — baja latencia y menor uso de ancho de banda, pero limitada por el procesador del dispositivo. La analítica en servidor centraliza el procesamiento de muchas cámaras CCTV en un servidor o nube potente, permitiendo modelos de IA más complejos y correlación entre cámaras. Para despliegues CCTV a escala urbana, Kabat One combina ambas: edge para alertas inmediatas y servidor para análisis profundo y correlación.',
         },
         {
           question: '¿Qué puede detectar la analítica de video de vigilancia?',
@@ -49,12 +49,12 @@ export default async function CctvVideoAnalyticsPage({
         {
           question: '¿La analítica de video CCTV reemplaza a mi VMS?',
           answer:
-            'No — la complementa. El VMS (software de gestión de video) gestiona la grabación, el almacenamiento y la reproducción de las cámaras CCTV; la analítica de video añade la capa de detección inteligente sobre ese flujo. Una plataforma unificada como KabatOne integra ambas: gestiona las cámaras CCTV como un VMS y ejecuta analítica de IA sobre ellas, enviando solo los eventos relevantes al mapa operativo del centro de mando.',
+            'No — la complementa. El VMS (software de gestión de video) gestiona la grabación, el almacenamiento y la reproducción de las cámaras CCTV; la analítica de video añade la capa de detección inteligente sobre ese flujo. Una plataforma unificada como Kabat One integra ambas: gestiona las cámaras CCTV como un VMS y ejecuta analítica de IA sobre ellas, enviando solo los eventos relevantes al mapa operativo del centro de mando.',
         },
         {
           question: '¿Qué infraestructura necesita la analítica CCTV a escala municipal?',
           answer:
-            'Para un despliegue de 200–500 cámaras CCTV con analítica de video en tiempo real se necesita: servidores con GPU o infraestructura cloud con latencia controlada; red con ancho de banda suficiente (2–4 Mbps por cámara a 1080p); almacenamiento para retención (30–90 días según normativa); y una plataforma como KabatOne que unifique la analítica de todas las cámaras con el mapa operativo. Al aprovechar el CCTV existente, el costo se concentra en el procesamiento, no en reemplazar cámaras.',
+            'Para un despliegue de 200–500 cámaras CCTV con analítica de video en tiempo real se necesita: servidores con GPU o infraestructura cloud con latencia controlada; red con ancho de banda suficiente (2–4 Mbps por cámara a 1080p); almacenamiento para retención (30–90 días según normativa); y una plataforma como Kabat One que unifique la analítica de todas las cámaras con el mapa operativo. Al aprovechar el CCTV existente, el costo se concentra en el procesamiento, no en reemplazar cámaras.',
         },
         {
           question: '¿La analítica de video CCTV funciona con cámaras analógicas antiguas?',
@@ -71,12 +71,12 @@ export default async function CctvVideoAnalyticsPage({
         {
           question: 'Can I add AI analytics to my existing CCTV cameras?',
           answer:
-            'Yes. Modern video analytics is hardware-agnostic: it applies to the stream from existing CCTV/IP cameras of any manufacturer (Hikvision, Axis, Dahua, Bosch, Hanwha, etc.) without replacing the infrastructure. Processing can run on a central GPU server (server-based analytics) or at the edge via an AI chip. KabatOne aggregates analytics from all your CCTV cameras into a single interface, regardless of brand or age.',
+            'Yes. Modern video analytics is hardware-agnostic: it applies to the stream from existing CCTV/IP cameras of any manufacturer (Hikvision, Axis, Dahua, Bosch, Hanwha, etc.) without replacing the infrastructure. Processing can run on a central GPU server (server-based analytics) or at the edge via an AI chip. Kabat One aggregates analytics from all your CCTV cameras into a single interface, regardless of brand or age.',
         },
         {
           question: 'What is the difference between edge and server-based CCTV analytics?',
           answer:
-            'Edge analytics processes video on the camera itself or a nearby device — low latency and lower bandwidth, but limited by the device\'s processor. Server-based analytics centralizes processing of many CCTV cameras on a powerful server or cloud, enabling more complex AI models and cross-camera correlation. For city-scale CCTV deployments, KabatOne combines both: edge for immediate alerts and server for deep analysis and correlation.',
+            'Edge analytics processes video on the camera itself or a nearby device — low latency and lower bandwidth, but limited by the device\'s processor. Server-based analytics centralizes processing of many CCTV cameras on a powerful server or cloud, enabling more complex AI models and cross-camera correlation. For city-scale CCTV deployments, Kabat One combines both: edge for immediate alerts and server for deep analysis and correlation.',
         },
         {
           question: 'What can surveillance video analytics detect?',
@@ -86,12 +86,12 @@ export default async function CctvVideoAnalyticsPage({
         {
           question: 'Does CCTV video analytics replace my VMS?',
           answer:
-            'No — it complements it. A VMS (video management software) handles recording, storage, and playback of CCTV cameras; video analytics adds the intelligent-detection layer on top of that stream. A unified platform like KabatOne integrates both: it manages CCTV cameras like a VMS and runs AI analytics on them, pushing only the relevant events to the command center operational map.',
+            'No — it complements it. A VMS (video management software) handles recording, storage, and playback of CCTV cameras; video analytics adds the intelligent-detection layer on top of that stream. A unified platform like Kabat One integrates both: it manages CCTV cameras like a VMS and runs AI analytics on them, pushing only the relevant events to the command center operational map.',
         },
         {
           question: 'What infrastructure does CCTV analytics need at municipal scale?',
           answer:
-            'For a 200–500 CCTV camera deployment with real-time video analytics you need: GPU servers or cloud infrastructure with controlled latency; a network with sufficient bandwidth (2–4 Mbps per camera at 1080p); storage for retention (30–90 days per regulation); and a platform like KabatOne that unifies analytics from all cameras with the operational map. By leveraging existing CCTV, cost concentrates on processing, not on replacing cameras.',
+            'For a 200–500 CCTV camera deployment with real-time video analytics you need: GPU servers or cloud infrastructure with controlled latency; a network with sufficient bandwidth (2–4 Mbps per camera at 1080p); storage for retention (30–90 days per regulation); and a platform like Kabat One that unifies analytics from all cameras with the operational map. By leveraging existing CCTV, cost concentrates on processing, not on replacing cameras.',
         },
         {
           question: 'Does CCTV video analytics work with old analog cameras?',
@@ -232,17 +232,17 @@ export default async function CctvVideoAnalyticsPage({
           <h2 style={sectionH2}>{es ? 'Añadir analítica a tu CCTV existente — sin reemplazar cámaras' : 'Adding analytics to existing CCTV — without replacing cameras'}</h2>
           <p style={para}>
             {es
-              ? 'La analítica de video moderna es agnóstica al hardware. Se aplica sobre el flujo de las cámaras CCTV/IP existentes de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — e incluso sobre cámaras analógicas mediante un codificador. Esto significa que una ciudad o instalación puede activar detección inteligente sobre cientos de cámaras ya desplegadas, concentrando la inversión en el procesamiento en lugar de en reemplazar el parque de cámaras. KabatOne agrega la analítica de todas ellas en una sola interfaz operativa.'
-              : 'Modern video analytics is hardware-agnostic. It applies to the stream from existing CCTV/IP cameras of any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — and even to analog cameras via an encoder. This means a city or facility can turn on intelligent detection across hundreds of already-deployed cameras, concentrating investment in processing rather than replacing the camera fleet. KabatOne aggregates analytics from all of them into a single operational interface.'}
+              ? 'La analítica de video moderna es agnóstica al hardware. Se aplica sobre el flujo de las cámaras CCTV/IP existentes de cualquier fabricante — Hikvision, Axis, Dahua, Bosch, Hanwha — e incluso sobre cámaras analógicas mediante un codificador. Esto significa que una ciudad o instalación puede activar detección inteligente sobre cientos de cámaras ya desplegadas, concentrando la inversión en el procesamiento en lugar de en reemplazar el parque de cámaras. Kabat One agrega la analítica de todas ellas en una sola interfaz operativa.'
+              : 'Modern video analytics is hardware-agnostic. It applies to the stream from existing CCTV/IP cameras of any manufacturer — Hikvision, Axis, Dahua, Bosch, Hanwha — and even to analog cameras via an encoder. This means a city or facility can turn on intelligent detection across hundreds of already-deployed cameras, concentrating investment in processing rather than replacing the camera fleet. Kabat One aggregates analytics from all of them into a single operational interface.'}
           </p>
         </section>
 
         {/* ── City surveillance: answer-first ──
-            The 2026-08-31 GEO run found KabatOne ABSENT from the AI answer for
+            The 2026-08-31 GEO run found Kabat One ABSENT from the AI answer for
             "analytic CCTV cameras for city surveillance", which cited Avigilon and
             Motorola. The gap this page had: no false-positive numbers, no tripwire /
             object-left vocabulary, and the retrofit argument -- analytics on the cameras
-            a city already owns, which is KabatOne's actual differentiator -- was stated
+            a city already owns, which is Kabat One's actual differentiator -- was stated
             once in passing. Municipal buyers do not replace camera estates; that is the
             question they are actually asking. */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '48px 24px 0' }}>
@@ -261,8 +261,8 @@ export default async function CctvVideoAnalyticsPage({
           </p>
           <p style={{ ...para, marginTop: '14px' }}>
             {es
-              ? 'KabatOne K-Video agrega cámaras de cualquier fabricante y aplica analítica con IA sobre la infraestructura existente, correlacionando cada alerta con el despacho CAD y un mapa GIS en vivo. Para una ciudad, eso significa que una detección no termina en una notificación: crea un incidente con la cámara más cercana ya vinculada y la posición marcada en el mapa que comparten todas las agencias que responden.'
-              : 'KabatOne K-Video aggregates cameras from any manufacturer and applies AI analytics over existing infrastructure, correlating each alert with CAD dispatch and a live GIS map. For a city that means a detection does not end in a notification: it creates an incident with the nearest camera already attached and the location marked on the map shared by every responding agency.'}
+              ? 'Kabat One K-Video agrega cámaras de cualquier fabricante y aplica analítica con IA sobre la infraestructura existente, correlacionando cada alerta con el despacho CAD y un mapa GIS en vivo. Para una ciudad, eso significa que una detección no termina en una notificación: crea un incidente con la cámara más cercana ya vinculada y la posición marcada en el mapa que comparten todas las agencias que responden.'
+              : 'Kabat One K-Video aggregates cameras from any manufacturer and applies AI analytics over existing infrastructure, correlating each alert with CAD dispatch and a live GIS map. For a city that means a detection does not end in a notification: it creates an incident with the nearest camera already attached and the location marked on the map shared by every responding agency.'}
           </p>
         </section>
 
@@ -314,8 +314,8 @@ export default async function CctvVideoAnalyticsPage({
               : 'CCTV video analytics does not replace your '}
             <Link href="/resources/what-is-video-management-software" style={{ color: ACCENT, textDecoration: 'none' }}>{es ? 'software de gestión de video (VMS)' : 'video management software (VMS)'}</Link>
             {es
-              ? ' — lo complementa. El VMS gestiona la grabación y el almacenamiento de las cámaras; la analítica añade la detección inteligente. KabatOne unifica ambas capas y correlaciona cada alerta de CCTV con LPR, sensores y despacho en el mapa operativo del centro de mando, convirtiendo la vigilancia pasiva en respuesta activa.'
-              : ' — it complements it. The VMS handles recording and storage of the cameras; analytics adds intelligent detection. KabatOne unifies both layers and correlates every CCTV alert with LPR, sensors, and dispatch on the command center operational map, turning passive surveillance into active response.'}
+              ? ' — lo complementa. El VMS gestiona la grabación y el almacenamiento de las cámaras; la analítica añade la detección inteligente. Kabat One unifica ambas capas y correlaciona cada alerta de CCTV con LPR, sensores y despacho en el mapa operativo del centro de mando, convirtiendo la vigilancia pasiva en respuesta activa.'
+              : ' — it complements it. The VMS handles recording and storage of the cameras; analytics adds intelligent detection. Kabat One unifies both layers and correlates every CCTV alert with LPR, sensors, and dispatch on the command center operational map, turning passive surveillance into active response.'}
           </p>
         </section>
 
@@ -355,8 +355,8 @@ export default async function CctvVideoAnalyticsPage({
           es={es}
           h2={es ? '¿Listo para Activar Analítica sobre tu CCTV?' : 'Ready to Activate Analytics on Your CCTV?'}
           subtitle={es
-            ? 'KabatOne añade analítica de IA a tus cámaras CCTV existentes de cualquier marca, integrada con LPR, GIS y despacho. Agenda una demo de K-Video.'
-            : 'KabatOne adds AI analytics to your existing CCTV cameras of any brand, integrated with LPR, GIS and dispatch. Book a K-Video demo.'}
+            ? 'Kabat One añade analítica de IA a tus cámaras CCTV existentes de cualquier marca, integrada con LPR, GIS y despacho. Agenda una demo de K-Video.'
+            : 'Kabat One adds AI analytics to your existing CCTV cameras of any brand, integrated with LPR, GIS and dispatch. Book a K-Video demo.'}
         />
       </main>
       <Footer es={es} />

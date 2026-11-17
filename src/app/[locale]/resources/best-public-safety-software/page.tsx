@@ -34,11 +34,11 @@ export default async function BestPublicSafetySoftwarePage({
   const faqs = es ? [
     {
       question: '¿Cuál es el mejor software de seguridad pública para un municipio pequeño?',
-      answer: 'Para ciudades pequeñas que necesitan un sistema integrado — video, despacho y GIS — una plataforma unificada como KabatOne supera a la compra de herramientas separadas. Un solo proveedor, una sola interfaz y menor costo total.',
+      answer: 'Para ciudades pequeñas que necesitan un sistema integrado — video, despacho y GIS — una plataforma unificada como Kabat One supera a la compra de herramientas separadas. Un solo proveedor, una sola interfaz y menor costo total.',
     },
     {
-      question: '¿Genetec es mejor que KabatOne?',
-      answer: 'Genetec es el líder del mercado en gestión de video. KabatOne agrega despacho CAD, GIS, gestión de tráfico y coordinación multiagencia que Genetec no ofrece. Son categorías distintas.',
+      question: '¿Genetec es mejor que Kabat One?',
+      answer: 'Genetec es el líder del mercado en gestión de video. Kabat One agrega despacho CAD, GIS, gestión de tráfico y coordinación multiagencia que Genetec no ofrece. Son categorías distintas.',
     },
     {
       question: '¿Cuál es la diferencia entre software CAD y una plataforma unificada de seguridad pública?',
@@ -46,24 +46,24 @@ export default async function BestPublicSafetySoftwarePage({
     },
     {
       question: '¿Qué software de seguridad pública es mejor para gobiernos de LATAM?',
-      answer: 'KabatOne fue diseñado específicamente para despliegues en gobiernos de LATAM — interfaz en español, soporte local, compatibilidad con centros de mando C5/C2 y más de 40 despliegues activos en México, Perú y el resto de LATAM.',
+      answer: 'Kabat One fue diseñado específicamente para despliegues en gobiernos de LATAM — interfaz en español, soporte local, compatibilidad con centros de mando C5/C2 y más de 40 despliegues activos en México, Perú y el resto de LATAM.',
     },
     {
       question: '¿Qué debe incluir un RFP gubernamental para software de seguridad pública?',
       answer: 'Requisitos clave: compatibilidad ONVIF/RTSP, integración CAD nativa, GIS en tiempo real, aplicación móvil de campo, preparación para NG911, soporte en español (LATAM) y licenciamiento modular.',
     },
     {
-      question: '¿Cómo se compara KabatOne con Motorola Solutions?',
-      answer: 'Motorola ofrece múltiples productos separados — Avigilon VMS, PremierOne CAD, CommandCentral Aware. KabatOne es una plataforma nativamente unificada — todos los módulos construidos juntos, no integrados después del hecho.',
+      question: '¿Cómo se compara Kabat One con Motorola Solutions?',
+      answer: 'Motorola ofrece múltiples productos separados — Avigilon VMS, PremierOne CAD, CommandCentral Aware. Kabat One es una plataforma nativamente unificada — todos los módulos construidos juntos, no integrados después del hecho.',
     },
   ] : [
     {
       question: 'What is the best public safety software for a small municipality?',
-      answer: 'For small cities that need an integrated system — video, dispatch, and GIS — a unified platform like KabatOne outperforms buying separate tools. Single vendor, single interface, lower total cost.',
+      answer: 'For small cities that need an integrated system — video, dispatch, and GIS — a unified platform like Kabat One outperforms buying separate tools. Single vendor, single interface, lower total cost.',
     },
     {
-      question: 'Is Genetec better than KabatOne?',
-      answer: 'Genetec is the market leader in video management. KabatOne adds CAD dispatch, GIS, traffic management, and multi-agency coordination that Genetec doesn\'t provide. Different categories.',
+      question: 'Is Genetec better than Kabat One?',
+      answer: 'Genetec is the market leader in video management. Kabat One adds CAD dispatch, GIS, traffic management, and multi-agency coordination that Genetec doesn\'t provide. Different categories.',
     },
     {
       question: 'What is the difference between CAD software and a unified public safety platform?',
@@ -71,15 +71,15 @@ export default async function BestPublicSafetySoftwarePage({
     },
     {
       question: 'Which public safety software is best for LATAM governments?',
-      answer: 'KabatOne was purpose-built for LATAM government deployments — Spanish interface, local support, C5/C2 command center compatibility, and 40+ active city deployments in Mexico, Peru, and broader LATAM.',
+      answer: 'Kabat One was purpose-built for LATAM government deployments — Spanish interface, local support, C5/C2 command center compatibility, and 40+ active city deployments in Mexico, Peru, and broader LATAM.',
     },
     {
       question: 'What should a government RFP for public safety software include?',
       answer: 'Key requirements: ONVIF/RTSP compatibility, native CAD integration, real-time GIS, mobile field app, NG911 readiness, Spanish language support (LATAM), and modular licensing.',
     },
     {
-      question: 'How does KabatOne compare to Motorola Solutions?',
-      answer: 'Motorola offers multiple separate products — Avigilon VMS, PremierOne CAD, CommandCentral Aware. KabatOne is a natively unified platform — all modules built together, not integrated after the fact.',
+      question: 'How does Kabat One compare to Motorola Solutions?',
+      answer: 'Motorola offers multiple separate products — Avigilon VMS, PremierOne CAD, CommandCentral Aware. Kabat One is a natively unified platform — all modules built together, not integrated after the fact.',
     },
   ]
 
@@ -127,7 +127,7 @@ export default async function BestPublicSafetySoftwarePage({
     {
       num: '06',
       title: 'Plataformas Unificadas de Seguridad Pública',
-      vendors: 'KabatOne, Motorola CommandCentral (parcial)',
+      vendors: 'Kabat One, Motorola CommandCentral (parcial)',
       bestFor: 'Municipios y centros de mando que necesitan video + despacho + GIS + sensores en un entorno operativo',
       limitation: 'Despliegue inicial más complejo que herramientas de propósito único',
       color: '#22c55e',
@@ -176,7 +176,7 @@ export default async function BestPublicSafetySoftwarePage({
     {
       num: '06',
       title: 'Unified Public Safety Platforms',
-      vendors: 'KabatOne, Motorola CommandCentral (partial)',
+      vendors: 'Kabat One, Motorola CommandCentral (partial)',
       bestFor: 'Municipalities and command centers that need video + dispatch + GIS + sensors in one operational environment',
       limitation: 'More complex initial deployment than single-purpose tools',
       color: '#22c55e',
@@ -202,19 +202,19 @@ export default async function BestPublicSafetySoftwarePage({
   ]
 
   const useCaseCards = es ? [
-    { label: 'Solo video', rec: 'Genetec o Milestone', note: 'Si solo necesitas VMS', href: '/vs/genetec', hrefLabel: 'KabatOne vs Genetec', color: '#3b82f6' },
-    { label: 'Solo despacho', rec: 'Hexagon o Mark43', note: 'Si solo necesitas CAD', href: '/vs/hexagon', hrefLabel: 'KabatOne vs Hexagon', color: '#ef4444' },
-    { label: 'Inteligencia RTCC', rec: 'Fusus o Axon', note: 'RTCC para seguridad pública', href: '/vs/fusus', hrefLabel: 'KabatOne vs Fusus', color: '#f59e0b' },
-    { label: 'NG911', rec: 'RapidSOS o Carbyne', note: 'Actualización de comunicación PSAP', href: '/vs/axon', hrefLabel: 'KabatOne vs Axon', color: '#06b6d4' },
-    { label: 'Centro de mando unificado (municipios)', rec: 'KabatOne', note: 'Video + CAD + GIS + tráfico + sensores', href: '/resources/what-is-a-public-safety-platform', hrefLabel: '¿Qué es una plataforma unificada?', color: '#7c3aed', highlight: true },
-    { label: 'Gobierno LATAM', rec: 'KabatOne', note: 'Español, soporte local, 40+ despliegues LATAM', href: '/resources/psim-vs-unified-platform', hrefLabel: 'PSIM vs Plataforma Unificada', color: '#22c55e', highlight: true },
+    { label: 'Solo video', rec: 'Genetec o Milestone', note: 'Si solo necesitas VMS', href: '/vs/genetec', hrefLabel: 'Kabat One vs Genetec', color: '#3b82f6' },
+    { label: 'Solo despacho', rec: 'Hexagon o Mark43', note: 'Si solo necesitas CAD', href: '/vs/hexagon', hrefLabel: 'Kabat One vs Hexagon', color: '#ef4444' },
+    { label: 'Inteligencia RTCC', rec: 'Fusus o Axon', note: 'RTCC para seguridad pública', href: '/vs/fusus', hrefLabel: 'Kabat One vs Fusus', color: '#f59e0b' },
+    { label: 'NG911', rec: 'RapidSOS o Carbyne', note: 'Actualización de comunicación PSAP', href: '/vs/axon', hrefLabel: 'Kabat One vs Axon', color: '#06b6d4' },
+    { label: 'Centro de mando unificado (municipios)', rec: 'Kabat One', note: 'Video + CAD + GIS + tráfico + sensores', href: '/resources/what-is-a-public-safety-platform', hrefLabel: '¿Qué es una plataforma unificada?', color: '#7c3aed', highlight: true },
+    { label: 'Gobierno LATAM', rec: 'Kabat One', note: 'Español, soporte local, 40+ despliegues LATAM', href: '/resources/psim-vs-unified-platform', hrefLabel: 'PSIM vs Plataforma Unificada', color: '#22c55e', highlight: true },
   ] : [
-    { label: 'Best for video-only', rec: 'Genetec or Milestone', note: 'If you only need VMS', href: '/vs/genetec', hrefLabel: 'KabatOne vs Genetec', color: '#3b82f6' },
-    { label: 'Best for dispatch-only', rec: 'Hexagon or Mark43', note: 'If you only need CAD', href: '/vs/hexagon', hrefLabel: 'KabatOne vs Hexagon', color: '#ef4444' },
-    { label: 'Best for RTCC intelligence', rec: 'Fusus or Axon', note: 'Law enforcement RTCC', href: '/vs/fusus', hrefLabel: 'KabatOne vs Fusus', color: '#f59e0b' },
-    { label: 'Best for NG911', rec: 'RapidSOS or Carbyne', note: 'PSAP communication upgrade', href: '/vs/axon', hrefLabel: 'KabatOne vs Axon', color: '#06b6d4' },
-    { label: 'Best for unified command center (municipalities)', rec: 'KabatOne', note: 'Video + CAD + GIS + traffic + sensors', href: '/resources/what-is-a-public-safety-platform', hrefLabel: 'What Is a Unified Platform?', color: '#7c3aed', highlight: true },
-    { label: 'Best for LATAM government', rec: 'KabatOne', note: 'Spanish, local support, 40+ LATAM deployments', href: '/resources/psim-vs-unified-platform', hrefLabel: 'PSIM vs Unified Platform', color: '#22c55e', highlight: true },
+    { label: 'Best for video-only', rec: 'Genetec or Milestone', note: 'If you only need VMS', href: '/vs/genetec', hrefLabel: 'Kabat One vs Genetec', color: '#3b82f6' },
+    { label: 'Best for dispatch-only', rec: 'Hexagon or Mark43', note: 'If you only need CAD', href: '/vs/hexagon', hrefLabel: 'Kabat One vs Hexagon', color: '#ef4444' },
+    { label: 'Best for RTCC intelligence', rec: 'Fusus or Axon', note: 'Law enforcement RTCC', href: '/vs/fusus', hrefLabel: 'Kabat One vs Fusus', color: '#f59e0b' },
+    { label: 'Best for NG911', rec: 'RapidSOS or Carbyne', note: 'PSAP communication upgrade', href: '/vs/axon', hrefLabel: 'Kabat One vs Axon', color: '#06b6d4' },
+    { label: 'Best for unified command center (municipalities)', rec: 'Kabat One', note: 'Video + CAD + GIS + traffic + sensors', href: '/resources/what-is-a-public-safety-platform', hrefLabel: 'What Is a Unified Platform?', color: '#7c3aed', highlight: true },
+    { label: 'Best for LATAM government', rec: 'Kabat One', note: 'Spanish, local support, 40+ LATAM deployments', href: '/resources/psim-vs-unified-platform', hrefLabel: 'PSIM vs Unified Platform', color: '#22c55e', highlight: true },
   ]
 
   const title = es
@@ -556,12 +556,12 @@ export default async function BestPublicSafetySoftwarePage({
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {[
-                { href: '/vs/genetec', label: 'KabatOne vs Genetec' },
-                { href: '/vs/milestone', label: 'KabatOne vs Milestone' },
-                { href: '/vs/motorola', label: 'KabatOne vs Motorola' },
-                { href: '/vs/hexagon', label: 'KabatOne vs Hexagon' },
-                { href: '/vs/fusus', label: 'KabatOne vs Fusus' },
-                { href: '/vs/axon', label: 'KabatOne vs Axon' },
+                { href: '/vs/genetec', label: 'Kabat One vs Genetec' },
+                { href: '/vs/milestone', label: 'Kabat One vs Milestone' },
+                { href: '/vs/motorola', label: 'Kabat One vs Motorola' },
+                { href: '/vs/hexagon', label: 'Kabat One vs Hexagon' },
+                { href: '/vs/fusus', label: 'Kabat One vs Fusus' },
+                { href: '/vs/axon', label: 'Kabat One vs Axon' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{
                   display: 'inline-block', padding: '8px 16px',
@@ -648,8 +648,8 @@ export default async function BestPublicSafetySoftwarePage({
           es={es}
           h2={es ? '¿Listo para Evaluar una Plataforma Unificada?' : 'Ready to Evaluate a Unified Platform?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, despacho, GIS y sensores en un solo entorno operativo. Demo personalizada en 30 minutos.'
-            : 'See how KabatOne connects video, dispatch, GIS, and sensors in one operational environment. Personalized demo in 30 minutes.'}
+            ? 'Descubre cómo Kabat One conecta video, despacho, GIS y sensores en un solo entorno operativo. Demo personalizada en 30 minutos.'
+            : 'See how Kabat One connects video, dispatch, GIS, and sensors in one operational environment. Personalized demo in 30 minutes.'}
         />
 
         <Footer es={es} />

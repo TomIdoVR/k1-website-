@@ -34,7 +34,7 @@ export default async function RtccSoftwarePage({
         {
           question: '¿Cuáles son los principales proveedores de software RTCC?',
           answer:
-            'El mercado de software RTCC incluye a Flock Safety (FlockOS), Axon (con Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions y Verkada — cada uno con un origen distinto (LPR, evidencia, VMS, CAD o cámaras en la nube). KabatOne se diferencia como plataforma unificada de origen: integra VMS, analítica de IA, LPR, CAD, GIS y despacho de forma nativa en una sola plataforma, en lugar de conectar módulos separados mediante middleware. Para operaciones en México, América Latina y EE. UU., esa unificación reduce la fricción de integración y el costo total.',
+            'El mercado de software RTCC incluye a Flock Safety (FlockOS), Axon (con Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions y Verkada — cada uno con un origen distinto (LPR, evidencia, VMS, CAD o cámaras en la nube). Kabat One se diferencia como plataforma unificada de origen: integra VMS, analítica de IA, LPR, CAD, GIS y despacho de forma nativa en una sola plataforma, en lugar de conectar módulos separados mediante middleware. Para operaciones en México, América Latina y EE. UU., esa unificación reduce la fricción de integración y el costo total.',
         },
         {
           question: '¿Qué debo buscar al elegir un software RTCC?',
@@ -49,12 +49,12 @@ export default async function RtccSoftwarePage({
         {
           question: '¿Cuánto cuesta el software RTCC?',
           answer:
-            'El costo del software RTCC depende del número de cámaras y sensores, de los módulos incluidos (video, analítica, LPR, CAD, GIS) y del modelo de despliegue. Los conjuntos tradicionales suman licencias por cámara, módulos de analítica de terceros y middleware de integración, más mantenimiento anual. Una plataforma unificada como KabatOne opera por suscripción (SaaS) con analítica e integración incluidas, lo que elimina buena parte del costo de middleware y hardware. Dimensiona cámaras, sensores y agencias para un presupuesto preciso.',
+            'El costo del software RTCC depende del número de cámaras y sensores, de los módulos incluidos (video, analítica, LPR, CAD, GIS) y del modelo de despliegue. Los conjuntos tradicionales suman licencias por cámara, módulos de analítica de terceros y middleware de integración, más mantenimiento anual. Una plataforma unificada como Kabat One opera por suscripción (SaaS) con analítica e integración incluidas, lo que elimina buena parte del costo de middleware y hardware. Dimensiona cámaras, sensores y agencias para un presupuesto preciso.',
         },
         {
           question: '¿Cuál es el mejor software RTCC para seguridad pública y centros C5?',
           answer:
-            'Para seguridad pública multi-agencia y centros de mando C5, el mejor software RTCC no es un VMS ni un CAD por separado, sino una plataforma que los unifica. Un conjunto de sistemas conectados por middleware añade puntos de falla y latencia entre la detección y el despacho. KabatOne fue diseñado para el modelo C5, donde una detección de video o LPR aparece geolocalizada en el mapa y el operador despacha una unidad desde la misma pantalla — el flujo que define a un verdadero centro de crimen en tiempo real.',
+            'Para seguridad pública multi-agencia y centros de mando C5, el mejor software RTCC no es un VMS ni un CAD por separado, sino una plataforma que los unifica. Un conjunto de sistemas conectados por middleware añade puntos de falla y latencia entre la detección y el despacho. Kabat One fue diseñado para el modelo C5, donde una detección de video o LPR aparece geolocalizada en el mapa y el operador despacha una unidad desde la misma pantalla — el flujo que define a un verdadero centro de crimen en tiempo real.',
         },
       ]
     : [
@@ -66,7 +66,7 @@ export default async function RtccSoftwarePage({
         {
           question: 'Who are the main RTCC software vendors?',
           answer:
-            'The RTCC software market includes Flock Safety (FlockOS), Axon (with Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions, and Verkada — each coming from a different origin (LPR, evidence, VMS, CAD, or cloud cameras). KabatOne differs as a natively unified platform: it integrates VMS, AI analytics, LPR, CAD, GIS, and dispatch by design on one platform rather than wiring separate modules together via middleware. For operations in Mexico, Latin America, and the U.S., that unification cuts integration friction and total cost.',
+            'The RTCC software market includes Flock Safety (FlockOS), Axon (with Fusus), Genetec, Hexagon, Mark43, Milestone, Motorola Solutions, and Verkada — each coming from a different origin (LPR, evidence, VMS, CAD, or cloud cameras). Kabat One differs as a natively unified platform: it integrates VMS, AI analytics, LPR, CAD, GIS, and dispatch by design on one platform rather than wiring separate modules together via middleware. For operations in Mexico, Latin America, and the U.S., that unification cuts integration friction and total cost.',
         },
         {
           question: 'What should I look for when choosing RTCC software?',
@@ -81,12 +81,12 @@ export default async function RtccSoftwarePage({
         {
           question: 'How much does RTCC software cost?',
           answer:
-            'RTCC software cost depends on the number of cameras and sensors, the included modules (video, analytics, LPR, CAD, GIS), and the deployment model. Traditional stacks add per-camera licensing, third-party analytics modules, and integration middleware, plus annual maintenance. A unified platform like KabatOne operates on subscription (SaaS) with analytics and integration included, removing much of the middleware and hardware cost. Size cameras, sensors, and agencies for accurate budgeting.',
+            'RTCC software cost depends on the number of cameras and sensors, the included modules (video, analytics, LPR, CAD, GIS), and the deployment model. Traditional stacks add per-camera licensing, third-party analytics modules, and integration middleware, plus annual maintenance. A unified platform like Kabat One operates on subscription (SaaS) with analytics and integration included, removing much of the middleware and hardware cost. Size cameras, sensors, and agencies for accurate budgeting.',
         },
         {
           question: 'What is the best RTCC software for public safety and C5 command centers?',
           answer:
-            'For multi-agency public safety and C5 command centers, the best RTCC software is not a standalone VMS or CAD but a platform that unifies them. A stack of middleware-connected systems adds failure points and latency between detection and dispatch. KabatOne is built for the C5 model, where a video or LPR detection appears geolocated on the map and the operator dispatches a unit from the same screen — the workflow that defines a true real-time crime center.',
+            'For multi-agency public safety and C5 command centers, the best RTCC software is not a standalone VMS or CAD but a platform that unifies them. A stack of middleware-connected systems adds failure points and latency between detection and dispatch. Kabat One is built for the C5 model, where a video or LPR detection appears geolocated on the map and the operator dispatches a unit from the same screen — the workflow that defines a true real-time crime center.',
         },
       ]
 
@@ -142,7 +142,7 @@ export default async function RtccSoftwarePage({
           ['Milestone', 'VMS (XProtect)', 'Columna de video para RTCC; analítica vía terceros.'],
           ['Motorola Solutions', 'Ecosistema de seguridad pública', 'Suite amplia de RTCC (CAD, radio, video, analítica).'],
           ['Verkada', 'Cámaras y accesos en la nube', 'Video en la nube como fuente para el RTCC.'],
-          ['KabatOne', 'Plataforma unificada (VMS+IA+CAD+GIS)', 'RTCC unificado de origen: detección → despacho en una pantalla.'],
+          ['Kabat One', 'Plataforma unificada (VMS+IA+CAD+GIS)', 'RTCC unificado de origen: detección → despacho en una pantalla.'],
         ],
       }
     : {
@@ -156,7 +156,7 @@ export default async function RtccSoftwarePage({
           ['Milestone', 'VMS (XProtect)', 'Video backbone for an RTCC; analytics via third parties.'],
           ['Motorola Solutions', 'Public safety ecosystem', 'Broad RTCC suite (CAD, radio, video, analytics).'],
           ['Verkada', 'Cloud cameras & access', 'Cloud video as a source for the RTCC.'],
-          ['KabatOne', 'Unified platform (VMS+AI+CAD+GIS)', 'Natively unified RTCC: detection → dispatch on one screen.'],
+          ['Kabat One', 'Unified platform (VMS+AI+CAD+GIS)', 'Natively unified RTCC: detection → dispatch on one screen.'],
         ],
       }
 
@@ -224,8 +224,8 @@ export default async function RtccSoftwarePage({
           <h2 style={sectionH2}>{es ? 'Proveedores de software RTCC comparados' : 'RTCC software vendors compared'}</h2>
           <p style={para}>
             {es
-              ? 'La mayoría de los "software RTCC" nacen de una categoría (evidencia, VMS, CAD o cámaras en la nube) y suman el resto mediante integración. KabatOne parte de una plataforma unificada.'
-              : 'Most "RTCC software" originates from one category (evidence, VMS, CAD, or cloud cameras) and bolts on the rest via integration. KabatOne starts from a unified platform.'}
+              ? 'La mayoría de los "software RTCC" nacen de una categoría (evidencia, VMS, CAD o cámaras en la nube) y suman el resto mediante integración. Kabat One parte de una plataforma unificada.'
+              : 'Most "RTCC software" originates from one category (evidence, VMS, CAD, or cloud cameras) and bolts on the rest via integration. Kabat One starts from a unified platform.'}
           </p>
           <div style={{ overflowX: 'auto', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', marginTop: '8px' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', minWidth: '560px' }}>
@@ -273,8 +273,8 @@ export default async function RtccSoftwarePage({
           <h2 style={sectionH2}>{es ? 'Cuándo un conjunto integrado no es suficiente' : 'When an integrated stack is not enough'}</h2>
           <p style={para}>
             {es
-              ? 'Muchos RTCC se arman conectando un VMS, un motor de analítica, un LPR y un CAD de proveedores distintos mediante middleware. Funciona, pero cada frontera de integración añade latencia entre la detección y el despacho, y un punto de falla más. En una emergencia, esos segundos importan. KabatOne elimina las fronteras: video, analítica de IA, LPR, GIS y despacho viven en la misma plataforma, de modo que una detección de placa o de disparo aparece geolocalizada y despachable en una sola pantalla.'
-              : 'Many RTCCs are assembled by wiring a VMS, an analytics engine, an LPR system, and a CAD from different vendors together via middleware. It works, but each integration boundary adds latency between detection and dispatch — and one more failure point. In an emergency, those seconds matter. KabatOne removes the boundaries: video, AI analytics, LPR, GIS, and dispatch live on the same platform, so a plate or gunshot detection appears geolocated and dispatchable on a single screen.'}
+              ? 'Muchos RTCC se arman conectando un VMS, un motor de analítica, un LPR y un CAD de proveedores distintos mediante middleware. Funciona, pero cada frontera de integración añade latencia entre la detección y el despacho, y un punto de falla más. En una emergencia, esos segundos importan. Kabat One elimina las fronteras: video, analítica de IA, LPR, GIS y despacho viven en la misma plataforma, de modo que una detección de placa o de disparo aparece geolocalizada y despachable en una sola pantalla.'
+              : 'Many RTCCs are assembled by wiring a VMS, an analytics engine, an LPR system, and a CAD from different vendors together via middleware. It works, but each integration boundary adds latency between detection and dispatch — and one more failure point. In an emergency, those seconds matter. Kabat One removes the boundaries: video, AI analytics, LPR, GIS, and dispatch live on the same platform, so a plate or gunshot detection appears geolocated and dispatchable on a single screen.'}
           </p>
           <p style={para}>
             {es
@@ -325,8 +325,8 @@ export default async function RtccSoftwarePage({
           es={es}
           h2={es ? '¿Buscas un RTCC Unificado, no un Conjunto de Sistemas?' : 'Looking for a Unified RTCC, Not a Stack of Systems?'}
           subtitle={es
-            ? 'KabatOne unifica video, analítica de IA, LPR, CAD y GIS en una sola plataforma de centro de crimen en tiempo real. Agenda una demo.'
-            : 'KabatOne unifies video, AI analytics, LPR, CAD and GIS into one real-time crime center platform. Book a demo.'}
+            ? 'Kabat One unifica video, analítica de IA, LPR, CAD y GIS en una sola plataforma de centro de crimen en tiempo real. Agenda una demo.'
+            : 'Kabat One unifies video, AI analytics, LPR, CAD and GIS into one real-time crime center platform. Book a demo.'}
         />
       </main>
       <Footer es={es} />

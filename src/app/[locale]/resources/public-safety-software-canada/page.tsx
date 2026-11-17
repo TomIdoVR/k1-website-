@@ -50,16 +50,16 @@ export default async function PublicSafetySoftwareCanadaPage({
       answer: 'El financiamiento principal proviene del gobierno federal a través de Seguridad Pública Canadá (Public Safety Canada) y del Fondo para la Infraestructura Bilingüe (BIF). Los gobiernos provinciales financian directamente sus cuerpos de policía y servicios de emergencias. La RCMP opera contratos de servicio policial con provincias y municipios. Los municipios con más de 5,000 habitantes generalmente gestionan sus propios presupuestos de tecnología de emergencias a través de licitaciones (RFP/RFQ) provinciales.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de cámaras municipales existente en Canadá?',
-      answer: 'Sí. KabatOne K-Video integra cualquier cámara ONVIF/RTSP sin reemplazar hardware existente. Las redes CCTV municipales de Toronto, Vancouver, Montreal, Calgary y Edmonton se conectan directamente a la plataforma. Sistemas LPR de autopistas provinciales, controles de acceso y sensores IoT también se integran. KabatOne soporta flujos de trabajo bilingües (EN/FR) para municipios de Quebec y el este de Canadá.',
+      question: '¿Puede Kabat One integrarse con la infraestructura de cámaras municipales existente en Canadá?',
+      answer: 'Sí. Kabat One K-Video integra cualquier cámara ONVIF/RTSP sin reemplazar hardware existente. Las redes CCTV municipales de Toronto, Vancouver, Montreal, Calgary y Edmonton se conectan directamente a la plataforma. Sistemas LPR de autopistas provinciales, controles de acceso y sensores IoT también se integran. Kabat One soporta flujos de trabajo bilingües (EN/FR) para municipios de Quebec y el este de Canadá.',
     },
     {
-      question: '¿Qué certificaciones de seguridad cumple KabatOne para agencias canadienses?',
-      answer: 'KabatOne está diseñado para alinearse con la Protected B security classification del Gobierno de Canadá (ITSG-33) para datos de seguridad pública sensibles. La plataforma soporta cifrado AES-256, MFA y audit logging completo. Para datos bajo la PIPEDA (Personal Information Protection and Electronic Documents Act), la plataforma puede desplegarse en infraestructura cloud canadiense (AWS ca-central-1, Azure Canada Central) para mantener soberanía de datos.',
+      question: '¿Qué certificaciones de seguridad cumple Kabat One para agencias canadienses?',
+      answer: 'Kabat One está diseñado para alinearse con la Protected B security classification del Gobierno de Canadá (ITSG-33) para datos de seguridad pública sensibles. La plataforma soporta cifrado AES-256, MFA y audit logging completo. Para datos bajo la PIPEDA (Personal Information Protection and Electronic Documents Act), la plataforma puede desplegarse en infraestructura cloud canadiense (AWS ca-central-1, Azure Canada Central) para mantener soberanía de datos.',
     },
     {
-      question: '¿Cómo se adquiere KabatOne en Canadá para agencias públicas?',
-      answer: 'Las agencias de seguridad pública en Canadá pueden adquirir KabatOne a través de RFP/RFQ provinciales o acuerdos de contratación cooperativa como CanadaBuys (buyandsell.gc.ca) para nivel federal, o contratos provinciales como OECM (Ontario Education Collaborative Marketplace) para Ontario. KabatOne trabaja con integradores de sistemas con experiencia en gobierno canadiense para facilitar el proceso de adquisición y cumplir con requisitos de contenido local donde aplique.',
+      question: '¿Cómo se adquiere Kabat One en Canadá para agencias públicas?',
+      answer: 'Las agencias de seguridad pública en Canadá pueden adquirir Kabat One a través de RFP/RFQ provinciales o acuerdos de contratación cooperativa como CanadaBuys (buyandsell.gc.ca) para nivel federal, o contratos provinciales como OECM (Ontario Education Collaborative Marketplace) para Ontario. Kabat One trabaja con integradores de sistemas con experiencia en gobierno canadiense para facilitar el proceso de adquisición y cumplir con requisitos de contenido local donde aplique.',
     },
   ] : [
     {
@@ -75,16 +75,16 @@ export default async function PublicSafetySoftwareCanadaPage({
       answer: 'Primary funding comes from the federal government through Public Safety Canada and provincial governments. The RCMP manages policing service contracts with provinces and municipalities. Municipalities over 5,000 residents typically manage their own emergency technology budgets through provincial RFP/RFQ processes. Federal grants for NG911 infrastructure are available through the CRTC transition program.',
     },
     {
-      question: 'Can KabatOne integrate with existing municipal camera infrastructure in Canada?',
-      answer: 'Yes. KabatOne K-Video integrates any ONVIF/RTSP camera without hardware replacement. Municipal CCTV networks in Toronto, Vancouver, Montreal, Calgary, and Edmonton connect directly to the platform. Provincial highway LPR systems, access control panels, and IoT sensors also integrate. KabatOne supports bilingual workflows (EN/FR) for Quebec and eastern Canadian municipalities.',
+      question: 'Can Kabat One integrate with existing municipal camera infrastructure in Canada?',
+      answer: 'Yes. Kabat One K-Video integrates any ONVIF/RTSP camera without hardware replacement. Municipal CCTV networks in Toronto, Vancouver, Montreal, Calgary, and Edmonton connect directly to the platform. Provincial highway LPR systems, access control panels, and IoT sensors also integrate. Kabat One supports bilingual workflows (EN/FR) for Quebec and eastern Canadian municipalities.',
     },
     {
-      question: 'What security certifications does KabatOne meet for Canadian agencies?',
-      answer: "KabatOne is designed to align with the Government of Canada's Protected B security classification (ITSG-33) for sensitive public safety data. The platform supports AES-256 encryption, MFA, and complete audit logging. For data under PIPEDA (Personal Information Protection and Electronic Documents Act), the platform can be deployed on Canadian cloud infrastructure (AWS ca-central-1, Azure Canada Central) to maintain data sovereignty.",
+      question: 'What security certifications does Kabat One meet for Canadian agencies?',
+      answer: "Kabat One is designed to align with the Government of Canada's Protected B security classification (ITSG-33) for sensitive public safety data. The platform supports AES-256 encryption, MFA, and complete audit logging. For data under PIPEDA (Personal Information Protection and Electronic Documents Act), the platform can be deployed on Canadian cloud infrastructure (AWS ca-central-1, Azure Canada Central) to maintain data sovereignty.",
     },
     {
-      question: 'How do Canadian public agencies procure KabatOne?',
-      answer: 'Canadian public safety agencies can procure KabatOne through provincial RFP/RFQ processes or cooperative purchasing agreements such as CanadaBuys (buyandsell.gc.ca) at the federal level, or provincial contracts like OECM (Ontario Education Collaborative Marketplace) for Ontario. KabatOne works with system integrators experienced in Canadian government procurement to facilitate the acquisition process and meet local content requirements where applicable.',
+      question: 'How do Canadian public agencies procure Kabat One?',
+      answer: 'Canadian public safety agencies can procure Kabat One through provincial RFP/RFQ processes or cooperative purchasing agreements such as CanadaBuys (buyandsell.gc.ca) at the federal level, or provincial contracts like OECM (Ontario Education Collaborative Marketplace) for Ontario. Kabat One works with system integrators experienced in Canadian government procurement to facilitate the acquisition process and meet local content requirements where applicable.',
     },
   ]
 
@@ -92,7 +92,7 @@ export default async function PublicSafetySoftwareCanadaPage({
     {
       icon: '📞',
       title: 'Modernización NG911 y Transición CRTC',
-      desc: 'Los PSAPs canadienses están migrando de sistemas analógicos a infraestructura i3 ESInet bajo el mandato CRTC. KabatOne K-Dispatch integra con ESInet y soporta intake multimedia (texto, video, datos de localización) sin reemplazar hardware de consola existente.',
+      desc: 'Los PSAPs canadienses están migrando de sistemas analógicos a infraestructura i3 ESInet bajo el mandato CRTC. Kabat One K-Dispatch integra con ESInet y soporta intake multimedia (texto, video, datos de localización) sin reemplazar hardware de consola existente.',
     },
     {
       icon: '🇨🇦',
@@ -102,18 +102,18 @@ export default async function PublicSafetySoftwareCanadaPage({
     {
       icon: '🌐',
       title: 'Requisitos Bilingües (EN/FR)',
-      desc: 'Las agencias federales y las de Quebec operan en inglés y francés. KabatOne soporta interfaz bilingüe completa para operadores, supervisores y reportes. La plataforma cumple con la Ley de Idiomas Oficiales de Canadá para despliegues federales y de Quebec.',
+      desc: 'Las agencias federales y las de Quebec operan en inglés y francés. Kabat One soporta interfaz bilingüe completa para operadores, supervisores y reportes. La plataforma cumple con la Ley de Idiomas Oficiales de Canadá para despliegues federales y de Quebec.',
     },
     {
       icon: '🔒',
       title: 'Soberanía de Datos y PIPEDA',
-      desc: 'Los datos de seguridad pública en Canadá deben residir dentro de fronteras canadienses bajo la PIPEDA. KabatOne puede desplegarse en AWS ca-central-1 o Azure Canada Central, o en infraestructura on-premise provincial/municipal para cumplir con requisitos de soberanía de datos.',
+      desc: 'Los datos de seguridad pública en Canadá deben residir dentro de fronteras canadienses bajo la PIPEDA. Kabat One puede desplegarse en AWS ca-central-1 o Azure Canada Central, o en infraestructura on-premise provincial/municipal para cumplir con requisitos de soberanía de datos.',
     },
   ] : [
     {
       icon: '📞',
       title: 'NG911 Modernization and CRTC Transition',
-      desc: 'Canadian PSAPs are migrating from analog systems to i3 ESInet infrastructure under the CRTC mandate. KabatOne K-Dispatch integrates with ESInet and supports multimedia intake (text, video, location data) without replacing existing console hardware.',
+      desc: 'Canadian PSAPs are migrating from analog systems to i3 ESInet infrastructure under the CRTC mandate. Kabat One K-Dispatch integrates with ESInet and supports multimedia intake (text, video, location data) without replacing existing console hardware.',
     },
     {
       icon: '🇨🇦',
@@ -123,12 +123,12 @@ export default async function PublicSafetySoftwareCanadaPage({
     {
       icon: '🌐',
       title: 'Bilingual Requirements (EN/FR)',
-      desc: 'Federal agencies and Quebec operations must run in English and French. KabatOne supports full bilingual interface for operators, supervisors, and reports — compliant with Canada\'s Official Languages Act for federal and Quebec deployments.',
+      desc: 'Federal agencies and Quebec operations must run in English and French. Kabat One supports full bilingual interface for operators, supervisors, and reports — compliant with Canada\'s Official Languages Act for federal and Quebec deployments.',
     },
     {
       icon: '🔒',
       title: 'Data Sovereignty and PIPEDA',
-      desc: 'Public safety data in Canada must reside within Canadian borders under PIPEDA. KabatOne can be deployed on AWS ca-central-1 or Azure Canada Central, or on provincial/municipal on-premise infrastructure to meet data sovereignty requirements.',
+      desc: 'Public safety data in Canada must reside within Canadian borders under PIPEDA. Kabat One can be deployed on AWS ca-central-1 or Azure Canada Central, or on provincial/municipal on-premise infrastructure to meet data sovereignty requirements.',
     },
   ]
 
@@ -304,7 +304,7 @@ export default async function PublicSafetySoftwareCanadaPage({
         <section style={{ padding: '64px 32px', borderBottom: '1px solid var(--border)' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', marginBottom: '8px' }}>
-              {es ? 'La Plataforma KabatOne para Agencias Canadienses' : 'KabatOne Platform for Canadian Agencies'}
+              {es ? 'La Plataforma Kabat One para Agencias Canadienses' : 'Kabat One Platform for Canadian Agencies'}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--dim)', marginBottom: '32px', lineHeight: 1.7 }}>
               {es
@@ -370,8 +370,8 @@ export default async function PublicSafetySoftwareCanadaPage({
           es={es}
           h2={es ? 'Moderniza tu Agencia de Seguridad Pública en Canadá' : 'Modernize Your Canadian Public Safety Agency'}
           subtitle={es
-            ? 'KabatOne integra CAD, video y GIS con soporte NG911/CRTC e interfaz bilingüe EN/FR. Agenda una demo con nuestro equipo.'
-            : 'KabatOne unifies CAD, video, and GIS with NG911/CRTC support and full EN/FR bilingual interface. Schedule a demo with our team.'}
+            ? 'Kabat One integra CAD, video y GIS con soporte NG911/CRTC e interfaz bilingüe EN/FR. Agenda una demo con nuestro equipo.'
+            : 'Kabat One unifies CAD, video, and GIS with NG911/CRTC support and full EN/FR bilingual interface. Schedule a demo with our team.'}
           cta1={es ? 'Solicitar Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

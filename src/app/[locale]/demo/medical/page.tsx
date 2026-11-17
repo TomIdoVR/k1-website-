@@ -17,14 +17,14 @@ export async function generateMetadata({
     locale,
     ogImage: '/demo/medical/stage-1-detect.jpg',
     en: {
-      title: '911 Medical Emergency Scenario | KabatOne Platform',
+      title: '911 Medical Emergency Scenario | Kabat One Platform',
       description:
-        'See how KabatOne handles a 911 cardiac emergency — from AI call intake and geo-location to paramedic dispatch and hospital pre-alert in under 3 minutes.',
+        'See how Kabat One handles a 911 cardiac emergency — from AI call intake and geo-location to paramedic dispatch and hospital pre-alert in under 3 minutes.',
     },
     es: {
-      title: 'Escenario de Emergencia Médica 911 | Plataforma KabatOne',
+      title: 'Escenario de Emergencia Médica 911 | Plataforma Kabat One',
       description:
-        'Descubre cómo KabatOne atiende una emergencia cardíaca 911: de la recepción con IA y geolocalización al despacho de paramédicos en menos de 3 minutos.',
+        'Descubre cómo Kabat One atiende una emergencia cardíaca 911: de la recepción con IA y geolocalización al despacho de paramédicos en menos de 3 minutos.',
     },
   })
 }

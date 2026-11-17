@@ -218,15 +218,15 @@ export default async function PublicSafetyPage({
   }
 
   const publicSafetyFaqs = es ? [
-    { question: '¿Cómo ayuda KabatOne a la seguridad pública?', answer: 'KabatOne proporciona una plataforma unificada que transforma datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada. Conecta cámaras, sensores, drones y sistemas de comunicación en una sola imagen operativa.' },
-    { question: '¿Cuántas ciudades protege KabatOne?', answer: 'KabatOne opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.99%.' },
-    { question: '¿Qué productos ofrece KabatOne para seguridad pública?', answer: 'KabatOne despliega la suite completa: K-Safety para conciencia situacional, K-Dispatch para despacho CAD, K-Traffic para gestión de tráfico, K-Video para gestión de video y K-Connect para video comunitario compartido.' },
-    { question: '¿Cómo reduce KabatOne los tiempos de respuesta?', answer: 'Los motores de reglas impulsados por IA detectan incidentes automáticamente, activan protocolos y despachan recursos. El despacho inteligente y la analítica geoespacial aseguran que las unidades correctas lleguen a las ubicaciones correctas en el menor tiempo.' },
+    { question: '¿Cómo ayuda Kabat One a la seguridad pública?', answer: 'Kabat One proporciona una plataforma unificada que transforma datos fragmentados de la ciudad en inteligencia accionable y respuesta coordinada. Conecta cámaras, sensores, drones y sistemas de comunicación en una sola imagen operativa.' },
+    { question: '¿Cuántas ciudades protege Kabat One?', answer: 'Kabat One opera en más de 40 proyectos activos, protegiendo a más de 73 millones de ciudadanos con una disponibilidad de plataforma del 99.99%.' },
+    { question: '¿Qué productos ofrece Kabat One para seguridad pública?', answer: 'Kabat One despliega la suite completa: K-Safety para conciencia situacional, K-Dispatch para despacho CAD, K-Traffic para gestión de tráfico, K-Video para gestión de video y K-Connect para video comunitario compartido.' },
+    { question: '¿Cómo reduce Kabat One los tiempos de respuesta?', answer: 'Los motores de reglas impulsados por IA detectan incidentes automáticamente, activan protocolos y despachan recursos. El despacho inteligente y la analítica geoespacial aseguran que las unidades correctas lleguen a las ubicaciones correctas en el menor tiempo.' },
   ] : [
-    { question: 'How does KabatOne help public safety?', answer: 'KabatOne provides a unified platform that transforms fragmented city data into actionable intelligence and coordinated response. It connects cameras, sensors, drones, and communication systems into a single operational picture.' },
-    { question: 'How many cities does KabatOne protect?', answer: 'KabatOne operates across 40+ active projects, protecting over 73 million citizens with 99.99% platform uptime.' },
-    { question: 'What products does KabatOne offer for public safety?', answer: 'KabatOne deploys the complete suite: K-Safety for situational awareness, K-Dispatch for CAD dispatch, K-Traffic for traffic management, K-Video for video management, and K-Connect for community video sharing.' },
-    { question: 'How does KabatOne reduce response times?', answer: 'AI-powered rule engines automatically detect incidents, trigger protocols, and dispatch resources. Smart dispatch and geospatial analytics ensure the right units reach the right locations in minimum time.' },
+    { question: 'How does Kabat One help public safety?', answer: 'Kabat One provides a unified platform that transforms fragmented city data into actionable intelligence and coordinated response. It connects cameras, sensors, drones, and communication systems into a single operational picture.' },
+    { question: 'How many cities does Kabat One protect?', answer: 'Kabat One operates across 40+ active projects, protecting over 73 million citizens with 99.99% platform uptime.' },
+    { question: 'What products does Kabat One offer for public safety?', answer: 'Kabat One deploys the complete suite: K-Safety for situational awareness, K-Dispatch for CAD dispatch, K-Traffic for traffic management, K-Video for video management, and K-Connect for community video sharing.' },
+    { question: 'How does Kabat One reduce response times?', answer: 'AI-powered rule engines automatically detect incidents, trigger protocols, and dispatch resources. Smart dispatch and geospatial analytics ensure the right units reach the right locations in minimum time.' },
   ]
 
   return (
@@ -315,7 +315,7 @@ export default async function PublicSafetyPage({
                   {'< 90s'}
                 </div>
                 <div style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: ACCENT, marginTop: '4px', opacity: 0.8 }}>
-                  {es ? 'Tiempo de despacho en KabatOne' : 'Dispatch time on KabatOne'}
+                  {es ? 'Tiempo de despacho en Kabat One' : 'Dispatch time on Kabat One'}
                 </div>
               </div>
               <div style={{ borderLeft: `1px solid ${ACCENT}28`, paddingLeft: '40px', flex: 1, minWidth: '240px' }}>
@@ -339,7 +339,7 @@ export default async function PublicSafetyPage({
               {es ? 'Nuestro Enfoque' : 'Our Approach'}
             </p>
             <h2 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase', lineHeight: 1.0, marginBottom: '12px' }}>
-              {es ? 'Como KabatOne lo Resuelve' : 'How KabatOne Solves It'}
+              {es ? 'Como Kabat One lo Resuelve' : 'How Kabat One Solves It'}
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '52px' }}>
               {es
@@ -383,8 +383,8 @@ export default async function PublicSafetyPage({
             </h2>
             <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '32px' }}>
               {es
-                ? 'KabatOne despliega la suite completa de productos para entornos de seguridad publica.'
-                : 'KabatOne deploys the complete product suite for public safety environments.'}
+                ? 'Kabat One despliega la suite completa de productos para entornos de seguridad publica.'
+                : 'Kabat One deploys the complete product suite for public safety environments.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {products.map((p) => (
@@ -489,8 +489,8 @@ export default async function PublicSafetyPage({
           es={es}
           h2={es ? 'Listo para Transformar la Seguridad de tu Ciudad?' : 'Ready to Transform Your City\'s Safety?'}
           subtitle={es
-            ? 'Unete a mas de 40 ciudades que protegen a 73 millones de ciudadanos con la plataforma unificada de seguridad publica de KabatOne.'
-            : 'Join 40+ cities protecting 73 million citizens with KabatOne\'s unified public safety platform.'}
+            ? 'Unete a mas de 40 ciudades que protegen a 73 millones de ciudadanos con la plataforma unificada de seguridad publica de Kabat One.'
+            : 'Join 40+ cities protecting 73 million citizens with Kabat One\'s unified public safety platform.'}
         />
 
         <Footer es={es} />

@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareCzechRepublicPage({
       answer: 'La República Checa impulsa la digitalización de la seguridad pública a través de varios proyectos clave. El proyecto Chytrá policie (Policía Inteligente) del MV ČR moderniza los sistemas de gestión de incidentes de la Policie ČR con sistemas ISKP (Informační systém krizového plánování). Praga (Praha) tiene el programa Smart Prague con integración de cámaras urbanas, gestión de tráfico TRAFIS y centros de mando de la Policie Praha y la Městská policie Praha. Brno, Ostrava y Plzeň tienen programas Smart City con integración de cámaras, sensores de tráfico y sistemas de ANPR. El sistema AMDS (Automatizovaný monitorovací a diagnostický systém) gestiona la vigilancia de infraestructuras. El KASR (Koordinační a analytické středisko) apoya el análisis de inteligencia. El proyecto e-Government czechpoint moderniza los sistemas digitales de la administración pública. Los Krajský operační program impulsan la modernización de los centros de despacho del IZS en todas las regiones con fondos europeos.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Policie ČR, el IZS y PEGAS TETRA?',
-      answer: 'KabatOne integra las capacidades que la Policie ČR, el HZS ČR, la ZZS y los centros IZS necesitan unificadas: despacho CAD multiagencia compatible con los 14 Krajská operační střediska del IZS — con integración PEGAS TETRA y preparación para broadband 4G/5G, clasificación automática de incidentes y coordinación policía-bomberos-ambulancias conforme al zákon č. 239/2000 Sb. del IZS (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a RGPD/zákon č. 110/2019 Sb. y ÚOOÚ — con DPIA, base legal zákon č. 273/2008 Sb. y gestión de retención (K-Video), y conciencia situacional GIS compartida entre la Policie ČR, el HZS ČR, la ZZS y el BIS para coordinación en crisis y grandes operaciones de seguridad — con integración Smart Prague/TRAFIS y sistemas de alerta nacional (K-Safety). Cloud EU con cumplimiento RGPD/ÚOOÚ y zákon č. 60/2024 Sb./NÚKIB/NIS2. Compatible con los marcos de contratación NEN/zákon č. 134/2016 Sb. Demo adaptada al modelo del IZS checo.',
+      question: '¿Por qué Kabat One es adecuado para la Policie ČR, el IZS y PEGAS TETRA?',
+      answer: 'Kabat One integra las capacidades que la Policie ČR, el HZS ČR, la ZZS y los centros IZS necesitan unificadas: despacho CAD multiagencia compatible con los 14 Krajská operační střediska del IZS — con integración PEGAS TETRA y preparación para broadband 4G/5G, clasificación automática de incidentes y coordinación policía-bomberos-ambulancias conforme al zákon č. 239/2000 Sb. del IZS (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a RGPD/zákon č. 110/2019 Sb. y ÚOOÚ — con DPIA, base legal zákon č. 273/2008 Sb. y gestión de retención (K-Video), y conciencia situacional GIS compartida entre la Policie ČR, el HZS ČR, la ZZS y el BIS para coordinación en crisis y grandes operaciones de seguridad — con integración Smart Prague/TRAFIS y sistemas de alerta nacional (K-Safety). Cloud EU con cumplimiento RGPD/ÚOOÚ y zákon č. 60/2024 Sb./NÚKIB/NIS2. Compatible con los marcos de contratación NEN/zákon č. 134/2016 Sb. Demo adaptada al modelo del IZS checo.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareCzechRepublicPage({
       answer: 'The Czech Republic drives public safety digitalisation through several key projects. The Chytrá policie (Smart Police) project of MV ČR modernises Policie ČR incident management systems with ISKP (Crisis Planning Information System). Prague (Praha) has the Smart Prague programme integrating urban cameras, TRAFIS traffic management, and command centres for Policie Praha and Městská policie Praha. Brno, Ostrava, and Plzeň have Smart City programmes with camera, traffic sensor, and ANPR integration. The AMDS system manages infrastructure surveillance. GovCERT.cz supports intelligence analysis. The e-Government czechpoint project modernises digital administrative systems. Krajský operační programs (Regional Operational Programmes) drive IZS dispatch centre modernisation in all regions with EU funding.',
     },
     {
-      question: 'Why is KabatOne suited for Czech Policie ČR, IZS, and PEGAS TETRA?',
-      answer: 'KabatOne integrates the capabilities that Policie ČR, HZS ČR, ZZS, and IZS centres need unified: multi-agency CAD dispatch compatible with all 14 Krajská operační střediska IZS — with PEGAS TETRA integration and 4G/5G broadband readiness, automatic incident classification, and police-fire-ambulance coordination compliant with IZS Act zákon č. 239/2000 Sb. (K-Dispatch), urban camera and ANPR management with AI analytics compliant with GDPR/zákon č. 110/2019 Sb. and ÚOOÚ — with DPIA, zákon č. 273/2008 Sb. legal basis, and retention management (K-Video), and shared GIS situational awareness across Policie ČR, HZS ČR, ZZS, and BIS for crisis coordination and major security operations — with Smart Prague/TRAFIS and national alert system integration (K-Safety). EU cloud with GDPR/ÚOOÚ and zákon č. 60/2024 Sb./NÚKIB/NIS2 compliance. Compatible with NEN/zákon č. 134/2016 Sb. procurement frameworks. Demo adapted to the Czech IZS model.',
+      question: 'Why is Kabat One suited for Czech Policie ČR, IZS, and PEGAS TETRA?',
+      answer: 'Kabat One integrates the capabilities that Policie ČR, HZS ČR, ZZS, and IZS centres need unified: multi-agency CAD dispatch compatible with all 14 Krajská operační střediska IZS — with PEGAS TETRA integration and 4G/5G broadband readiness, automatic incident classification, and police-fire-ambulance coordination compliant with IZS Act zákon č. 239/2000 Sb. (K-Dispatch), urban camera and ANPR management with AI analytics compliant with GDPR/zákon č. 110/2019 Sb. and ÚOOÚ — with DPIA, zákon č. 273/2008 Sb. legal basis, and retention management (K-Video), and shared GIS situational awareness across Policie ČR, HZS ČR, ZZS, and BIS for crisis coordination and major security operations — with Smart Prague/TRAFIS and national alert system integration (K-Safety). EU cloud with GDPR/ÚOOÚ and zákon č. 60/2024 Sb./NÚKIB/NIS2 compliance. Compatible with NEN/zákon č. 134/2016 Sb. procurement frameworks. Demo adapted to the Czech IZS model.',
     },
   ]
 
@@ -237,11 +237,11 @@ export default async function PublicSafetySoftwareCzechRepublicPage({
         </div>
       </section>
 
-      {/* How KabatOne helps */}
+      {/* How Kabat One helps */}
       <section style={{ padding: '64px 24px', background: '#f1f5f9' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h2 style={{ fontSize: '1.7rem', fontWeight: 700, marginBottom: 32 }}>
-            {es ? 'Cómo KabatOne Unifica la Seguridad Pública Checa' : 'How KabatOne Unifies Czech Public Safety'}
+            {es ? 'Cómo Kabat One Unifica la Seguridad Pública Checa' : 'How Kabat One Unifies Czech Public Safety'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 24 }}>
             {[

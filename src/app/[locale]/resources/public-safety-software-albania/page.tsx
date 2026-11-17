@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareAlbania({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Albania | Policía del Estado/SHISH, Puerto de Durrës, Corredor 8 y NATO – KabatOne"
-        : "Public Safety Software for Albania | State Police/SHISH, Port of Durrës, Corridor 8 & NATO – KabatOne",
+        ? "Software de Seguridad Pública para Albania | Policía del Estado/SHISH, Puerto de Durrës, Corredor 8 y NATO – Kabat One"
+        : "Public Safety Software for Albania | State Police/SHISH, Port of Durrës, Corridor 8 & NATO – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía del Estado albanesa, SHISH inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor R7, seguridad del Puerto de Durrës, candidatura UE y coordinación NATO/FRONTEX."
-        : "KabatOne delivers public safety platform for Albanian State Police, SHISH intelligence, and Border Guard — Corridor 8 and Corridor R7 management, Port of Durrës security, EU candidacy, and NATO/FRONTEX coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía del Estado albanesa, SHISH inteligencia y Guardia de Fronteras — gestión del Corredor 8 y Corredor R7, seguridad del Puerto de Durrës, candidatura UE y coordinación NATO/FRONTEX."
+        : "Kabat One delivers public safety platform for Albanian State Police, SHISH intelligence, and Border Guard — Corridor 8 and Corridor R7 management, Port of Durrës security, EU candidacy, and NATO/FRONTEX coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-albania"
         : "https://kabatone.com/resources/public-safety-software-albania",
@@ -348,13 +348,13 @@ export default async function PublicSafetySoftwareAlbania({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Albania"
-              : "KabatOne Capabilities for Albania"}
+              ? "Capacidades Kabat One para Albania"
+              : "Kabat One Capabilities for Albania"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -441,11 +441,11 @@ export default async function PublicSafetySoftwareAlbania({
               },
               {
                 q: es
-                  ? "¿Cómo puede KabatOne apoyar la gestión portuaria y costera albanesa?"
-                  : "How can KabatOne support Albanian port and coastal management?",
+                  ? "¿Cómo puede Kabat One apoyar la gestión portuaria y costera albanesa?"
+                  : "How can Kabat One support Albanian port and coastal management?",
                 a: es
-                  ? "KabatOne integra el sistema AIS del Canal de Otranto, CCTV en los puertos de Durrës y Vlorë, ANPR en accesos portuarios, gestión de incidentes marítimos con MRCC Durrës y cumplimiento con el código ISPS para seguridad portuaria."
-                  : "KabatOne integrates Strait of Otranto AIS system, CCTV at Durrës and Vlorë ports, ANPR at port access points, maritime incident management with MRCC Durrës, and ISPS code compliance for port security.",
+                  ? "Kabat One integra el sistema AIS del Canal de Otranto, CCTV en los puertos de Durrës y Vlorë, ANPR en accesos portuarios, gestión de incidentes marítimos con MRCC Durrës y cumplimiento con el código ISPS para seguridad portuaria."
+                  : "Kabat One integrates Strait of Otranto AIS system, CCTV at Durrës and Vlorë ports, ANPR at port access points, maritime incident management with MRCC Durrës, and ISPS code compliance for port security.",
               },
             ].map((item) => (
               <div
@@ -469,8 +469,8 @@ export default async function PublicSafetySoftwareAlbania({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía del Estado, SHISH y Guardia de Fronteras en una plataforma unificada — Corredor 8, seguridad portuaria Durrës/Vlorë, cumplimiento IDPMP/GDPR y soporte para el proceso de adhesión UE."
-            : "KabatOne integrates State Police, SHISH, and Border Guard in one unified platform — Corridor 8, Durrës/Vlorë port security, IDPMP/GDPR compliance, and EU accession process support."
+            ? "Kabat One integra Policía del Estado, SHISH y Guardia de Fronteras en una plataforma unificada — Corredor 8, seguridad portuaria Durrës/Vlorë, cumplimiento IDPMP/GDPR y soporte para el proceso de adhesión UE."
+            : "Kabat One integrates State Police, SHISH, and Border Guard in one unified platform — Corridor 8, Durrës/Vlorë port security, IDPMP/GDPR compliance, and EU accession process support."
         }
       />
       <Footer es={es} />

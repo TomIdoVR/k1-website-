@@ -45,7 +45,7 @@ export async function generateMetadata({
   const es = locale === 'es'
   const c = es ? job.es : job.en
   const location = es ? job.location.es : job.location.en
-  const title = `${c.title} — ${location} | KabatOne`
+  const title = `${c.title} — ${location} | Kabat One`
   const enUrl = canonicalFor(slug, 'en')
   const esUrl = canonicalFor(slug, 'es')
   return {
@@ -57,8 +57,8 @@ export async function generateMetadata({
     },
     openGraph: {
       title, description: c.summary, url: canonicalFor(slug, locale),
-      siteName: 'KabatOne', type: 'website', locale: es ? 'es_MX' : 'en_US',
-      images: [{ url: 'https://kabatone.com/og-default.png', width: 1200, height: 630, alt: 'KabatOne — Public Safety Platform' }],
+      siteName: 'Kabat One', type: 'website', locale: es ? 'es_MX' : 'en_US',
+      images: [{ url: 'https://kabatone.com/og-default.png', width: 1200, height: 630, alt: 'Kabat One — Public Safety Platform' }],
     },
     twitter: {
       card: 'summary_large_image', title, description: c.summary,

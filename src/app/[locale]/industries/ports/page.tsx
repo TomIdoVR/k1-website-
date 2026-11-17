@@ -59,8 +59,8 @@ export default async function PortsPage({
   const advLabel = es ? 'Ventajas de la Plataforma' : 'Platform Advantages'
   const advH2 = es ? 'Cinco Pilares de Seguridad Portuaria' : 'Five Pillars of Port Security'
   const advDesc = es
-    ? 'KabatOne entrega una plataforma completa de seguridad y operaciones portuarias diseñada para las demandas únicas de entornos marítimos.'
-    : 'KabatOne delivers a complete port security and operations platform designed for the unique demands of maritime environments.'
+    ? 'Kabat One entrega una plataforma completa de seguridad y operaciones portuarias diseñada para las demandas únicas de entornos marítimos.'
+    : 'Kabat One delivers a complete port security and operations platform designed for the unique demands of maritime environments.'
 
   const advantages = es ? [
     { num: '01 — Centralización', title: 'Unidad Total del Sistema', desc: 'Unifica videovigilancia, radares, sensores, control de acceso y drones en un solo entorno operativo.' },
@@ -80,8 +80,8 @@ export default async function PortsPage({
   const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'Diseñado para Entornos Marítimos' : 'Built for Maritime Environments'
   const productsDesc = es
-    ? 'KabatOne despliega una suite completa diseñada específicamente para seguridad y operaciones portuarias.'
-    : 'KabatOne deploys a complete suite purpose-built for port security and operations.'
+    ? 'Kabat One despliega una suite completa diseñada específicamente para seguridad y operaciones portuarias.'
+    : 'Kabat One deploys a complete suite purpose-built for port security and operations.'
 
   const products = [
     { name: 'K-Safety', href: '/k-safety' },
@@ -96,8 +96,8 @@ export default async function PortsPage({
     ? 'Asegura Tus Operaciones Portuarias'
     : 'Secure Your Port Operations'
   const ctaSub = es
-    ? 'Cumplimiento ISPS e IMO — KabatOne conecta cada sensor, cámara y radar en un centro de mando de seguridad portuaria unificado.'
-    : 'ISPS and IMO compliant — KabatOne connects every sensor, camera, and radar into a unified port security command center.'
+    ? 'Cumplimiento ISPS e IMO — Kabat One conecta cada sensor, cámara y radar en un centro de mando de seguridad portuaria unificado.'
+    : 'ISPS and IMO compliant — Kabat One connects every sensor, camera, and radar into a unified port security command center.'
 
   /* ── shared styles ── */
   const sectionStyle = { position: 'relative' as const, zIndex: 10, padding: '80px 0', borderTop: '1px solid var(--border)' }
@@ -108,15 +108,15 @@ export default async function PortsPage({
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
   const portsFaqs = es ? [
-    { question: '¿Cómo asegura KabatOne los puertos marítimos?', answer: 'KabatOne conecta cámaras, radares, sensores IoT, control de acceso y analítica de video en una sola plataforma para proteger personal, carga e infraestructura portuaria crítica con monitoreo en tiempo real.' },
-    { question: '¿Cumple KabatOne con los estándares ISPS e IMO?', answer: 'Sí. KabatOne registra cada evento cumpliendo con estándares ISPS e IMO, asegurando trazabilidad regulatoria completa y preparación para auditorías en operaciones portuarias.' },
-    { question: '¿Qué sistemas integra KabatOne en puertos?', answer: 'KabatOne unifica videovigilancia, radares, sensores, control de acceso y drones en un solo entorno operativo. Es compatible con múltiples VMS, radares y sistemas de control con integración ilimitada de cámaras y dispositivos.' },
-    { question: '¿Ofrece KabatOne gestión predictiva para puertos?', answer: 'Sí. El motor de reglas de KabatOne activa respuestas automatizadas basadas en datos de sensores, analítica de video y protocolos de seguridad predefinidos, proporcionando dashboards en tiempo real con visualización geoespacial de embarcaciones, activos e incidentes.' },
+    { question: '¿Cómo asegura Kabat One los puertos marítimos?', answer: 'Kabat One conecta cámaras, radares, sensores IoT, control de acceso y analítica de video en una sola plataforma para proteger personal, carga e infraestructura portuaria crítica con monitoreo en tiempo real.' },
+    { question: '¿Cumple Kabat One con los estándares ISPS e IMO?', answer: 'Sí. Kabat One registra cada evento cumpliendo con estándares ISPS e IMO, asegurando trazabilidad regulatoria completa y preparación para auditorías en operaciones portuarias.' },
+    { question: '¿Qué sistemas integra Kabat One en puertos?', answer: 'Kabat One unifica videovigilancia, radares, sensores, control de acceso y drones en un solo entorno operativo. Es compatible con múltiples VMS, radares y sistemas de control con integración ilimitada de cámaras y dispositivos.' },
+    { question: '¿Ofrece Kabat One gestión predictiva para puertos?', answer: 'Sí. El motor de reglas de Kabat One activa respuestas automatizadas basadas en datos de sensores, analítica de video y protocolos de seguridad predefinidos, proporcionando dashboards en tiempo real con visualización geoespacial de embarcaciones, activos e incidentes.' },
   ] : [
-    { question: 'How does KabatOne secure maritime ports?', answer: 'KabatOne connects cameras, radars, IoT sensors, access control, and video analytics on a single platform to protect personnel, cargo, and critical port infrastructure with real-time monitoring.' },
-    { question: 'Does KabatOne comply with ISPS and IMO standards?', answer: 'Yes. KabatOne records every event complying with ISPS and IMO standards, ensuring full regulatory traceability and audit readiness in port operations.' },
-    { question: 'What systems does KabatOne integrate in ports?', answer: 'KabatOne unifies video surveillance, radars, sensors, access control, and drones in a single operational environment. It is compatible with multiple VMS, radars, and control systems with unlimited camera and device integration.' },
-    { question: 'Does KabatOne offer predictive management for ports?', answer: 'Yes. KabatOne\'s rule engine triggers automated responses based on sensor data, video analytics, and predefined security protocols, providing real-time dashboards with geospatial visualization of vessels, assets, and incidents.' },
+    { question: 'How does Kabat One secure maritime ports?', answer: 'Kabat One connects cameras, radars, IoT sensors, access control, and video analytics on a single platform to protect personnel, cargo, and critical port infrastructure with real-time monitoring.' },
+    { question: 'Does Kabat One comply with ISPS and IMO standards?', answer: 'Yes. Kabat One records every event complying with ISPS and IMO standards, ensuring full regulatory traceability and audit readiness in port operations.' },
+    { question: 'What systems does Kabat One integrate in ports?', answer: 'Kabat One unifies video surveillance, radars, sensors, access control, and drones in a single operational environment. It is compatible with multiple VMS, radars, and control systems with unlimited camera and device integration.' },
+    { question: 'Does Kabat One offer predictive management for ports?', answer: 'Yes. Kabat One\'s rule engine triggers automated responses based on sensor data, video analytics, and predefined security protocols, providing real-time dashboards with geospatial visualization of vessels, assets, and incidents.' },
   ]
 
   return (
@@ -211,8 +211,8 @@ export default async function PortsPage({
                 </p>
                 <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, margin: 0 }}>
                   {es
-                    ? 'Activada automáticamente cuando KabatOne detecta una embarcación no autorizada o intrusión perimetral — frente a 8–12 minutos de revisión manual de CCTV en sistemas heredados, con trazabilidad ISPS completa.'
-                    : 'Triggered automatically when KabatOne detects an unauthorized vessel or perimeter intrusion — vs. 8–12 minutes of manual CCTV review on legacy systems, with full ISPS traceability.'}
+                    ? 'Activada automáticamente cuando Kabat One detecta una embarcación no autorizada o intrusión perimetral — frente a 8–12 minutos de revisión manual de CCTV en sistemas heredados, con trazabilidad ISPS completa.'
+                    : 'Triggered automatically when Kabat One detects an unauthorized vessel or perimeter intrusion — vs. 8–12 minutes of manual CCTV review on legacy systems, with full ISPS traceability.'}
                 </p>
               </div>
             </div>

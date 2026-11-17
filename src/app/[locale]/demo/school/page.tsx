@@ -17,14 +17,14 @@ export async function generateMetadata({
     locale,
     ogImage: '/demo/school/cam01-entrance.jpg',
     en: {
-      title: 'Active Shooter School Response Walkthrough | KabatOne Demo',
+      title: 'Active Shooter School Response Walkthrough | Kabat One Demo',
       description:
-        'See how KabatOne coordinates an active threat response at a school — from SOS alert and CCTV detection to officer dispatch and lockdown in under 90 seconds.',
+        'See how Kabat One coordinates an active threat response at a school — from SOS alert and CCTV detection to officer dispatch and lockdown in under 90 seconds.',
     },
     es: {
-      title: 'Recorrido de Respuesta a Tirador Activo en Escuela | Demo KabatOne',
+      title: 'Recorrido de Respuesta a Tirador Activo en Escuela | Demo Kabat One',
       description:
-        'Descubre cómo KabatOne coordina una amenaza activa en una escuela: de la alerta SOS y la detección CCTV al despacho y confinamiento en 90 segundos.',
+        'Descubre cómo Kabat One coordina una amenaza activa en una escuela: de la alerta SOS y la detección CCTV al despacho y confinamiento en 90 segundos.',
     },
   })
 }

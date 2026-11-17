@@ -46,15 +46,15 @@ export default async function PsimVsUnifiedPlatformPage({
     },
     {
       question: '¿Que es una alternativa a PSIM?',
-      answer: 'Una alternativa a PSIM es una plataforma unificada de seguridad publica como KabatOne. KabatOne conecta video, despacho CAD, GIS, gestion de trafico y operaciones de campo en una sola plataforma nativa. En lugar de actuar como middleware entre sistemas aislados, KabatOne reemplaza los silos con modulos integrados nativamente: K-Safety, K-Dispatch, K-Video, K-Traffic y K-Connect.',
+      answer: 'Una alternativa a PSIM es una plataforma unificada de seguridad publica como Kabat One. Kabat One conecta video, despacho CAD, GIS, gestion de trafico y operaciones de campo en una sola plataforma nativa. En lugar de actuar como middleware entre sistemas aislados, Kabat One reemplaza los silos con modulos integrados nativamente: K-Safety, K-Dispatch, K-Video, K-Traffic y K-Connect.',
     },
     {
       question: '¿Como manejan las plataformas unificadas los sistemas de camaras heredados?',
-      answer: 'Las plataformas unificadas como KabatOne soportan protocolos estandar de la industria como ONVIF y RTSP, lo que permite incorporar camaras de cualquier fabricante. K-Video de KabatOne agrega camaras IP, CCTV analogico, body cams y feeds de drones en una sola vista sin requerir hardware propietario adicional.',
+      answer: 'Las plataformas unificadas como Kabat One soportan protocolos estandar de la industria como ONVIF y RTSP, lo que permite incorporar camaras de cualquier fabricante. K-Video de Kabat One agrega camaras IP, CCTV analogico, body cams y feeds de drones en una sola vista sin requerir hardware propietario adicional.',
     },
     {
-      question: '¿Cual es el enfoque de KabatOne para reemplazar PSIM?',
-      answer: 'KabatOne reemplaza la arquitectura PSIM con una plataforma nativa donde despacho (K-Dispatch), video (K-Video), GIS (K-Safety), trafico (K-Traffic) y video comunitario (K-Connect) comparten una base de datos unificada, un motor de reglas comun y una interfaz unica para el operador. Esto elimina los conectores de middleware y reduce el tiempo de despliegue a semanas en lugar de meses.',
+      question: '¿Cual es el enfoque de Kabat One para reemplazar PSIM?',
+      answer: 'Kabat One reemplaza la arquitectura PSIM con una plataforma nativa donde despacho (K-Dispatch), video (K-Video), GIS (K-Safety), trafico (K-Traffic) y video comunitario (K-Connect) comparten una base de datos unificada, un motor de reglas comun y una interfaz unica para el operador. Esto elimina los conectores de middleware y reduce el tiempo de despliegue a semanas en lugar de meses.',
     },
   ] : [
     {
@@ -71,15 +71,15 @@ export default async function PsimVsUnifiedPlatformPage({
     },
     {
       question: 'What is a PSIM alternative?',
-      answer: 'A PSIM alternative is a unified public safety platform such as KabatOne. KabatOne connects video, CAD dispatch, GIS, traffic management, and field operations in one native platform. Instead of acting as middleware between siloed systems, KabatOne replaces silos with natively integrated modules: K-Safety, K-Dispatch, K-Video, K-Traffic, and K-Connect.',
+      answer: 'A PSIM alternative is a unified public safety platform such as Kabat One. Kabat One connects video, CAD dispatch, GIS, traffic management, and field operations in one native platform. Instead of acting as middleware between siloed systems, Kabat One replaces silos with natively integrated modules: K-Safety, K-Dispatch, K-Video, K-Traffic, and K-Connect.',
     },
     {
       question: 'How do unified platforms handle legacy camera systems?',
-      answer: 'Unified platforms like KabatOne support industry-standard protocols such as ONVIF and RTSP, enabling integration of cameras from any manufacturer. KabatOne K-Video aggregates IP cameras, analog CCTV, body cams, and drone feeds into a single view without requiring additional proprietary hardware.',
+      answer: 'Unified platforms like Kabat One support industry-standard protocols such as ONVIF and RTSP, enabling integration of cameras from any manufacturer. Kabat One K-Video aggregates IP cameras, analog CCTV, body cams, and drone feeds into a single view without requiring additional proprietary hardware.',
     },
     {
-      question: 'What is KabatOne\'s approach to PSIM replacement?',
-      answer: 'KabatOne replaces PSIM architecture with a native platform where dispatch (K-Dispatch), video (K-Video), GIS (K-Safety), traffic (K-Traffic), and community video (K-Connect) share a unified database, a common rules engine, and a single operator interface. This eliminates middleware connectors and reduces deployment time from months to weeks.',
+      question: 'What is Kabat One\'s approach to PSIM replacement?',
+      answer: 'Kabat One replaces PSIM architecture with a native platform where dispatch (K-Dispatch), video (K-Video), GIS (K-Safety), traffic (K-Traffic), and community video (K-Connect) share a unified database, a common rules engine, and a single operator interface. This eliminates middleware connectors and reduces deployment time from months to weeks.',
     },
   ]
 
@@ -259,13 +259,13 @@ export default async function PsimVsUnifiedPlatformPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es un ejemplo de plataforma unificada de seguridad publica. KabatOne integra cinco modulos nativos: K-Safety para conciencia situacional GIS, K-Dispatch para despacho CAD de emergencias, K-Video para gestion de video con analitica IA, K-Traffic para gestion de trafico inteligente, y K-Connect para video comunitario compartido. Todos los modulos de KabatOne operan sobre la plataforma K1, compartiendo datos en tiempo real sin conectores intermedios.'
-                : 'KabatOne is an example of a unified public safety platform. KabatOne integrates five native modules: K-Safety for GIS situational awareness, K-Dispatch for emergency CAD dispatch, K-Video for video management with AI analytics, K-Traffic for intelligent traffic management, and K-Connect for community video sharing. All KabatOne modules operate on the K1 platform, sharing real-time data without intermediate connectors.'}
+                ? 'Kabat One es un ejemplo de plataforma unificada de seguridad publica. Kabat One integra cinco modulos nativos: K-Safety para conciencia situacional GIS, K-Dispatch para despacho CAD de emergencias, K-Video para gestion de video con analitica IA, K-Traffic para gestion de trafico inteligente, y K-Connect para video comunitario compartido. Todos los modulos de Kabat One operan sobre la plataforma K1, compartiendo datos en tiempo real sin conectores intermedios.'
+                : 'Kabat One is an example of a unified public safety platform. Kabat One integrates five native modules: K-Safety for GIS situational awareness, K-Dispatch for emergency CAD dispatch, K-Video for video management with AI analytics, K-Traffic for intelligent traffic management, and K-Connect for community video sharing. All Kabat One modules operate on the K1 platform, sharing real-time data without intermediate connectors.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'La diferencia practica para los operadores es significativa. En un entorno PSIM, un operador puede recibir una alarma de intrusion y luego debe abrir manualmente el VMS para encontrar la camara correspondiente. En una plataforma unificada como KabatOne, la alarma, el video en vivo, la ubicacion GIS y la unidad de despacho mas cercana aparecen automaticamente en la misma pantalla.'
-                : 'The practical difference for operators is significant. In a PSIM environment, an operator may receive an intrusion alarm and then must manually open the VMS to find the corresponding camera. In a unified platform like KabatOne, the alarm, live video, GIS location, and nearest dispatch unit appear automatically on the same screen.'}
+                ? 'La diferencia practica para los operadores es significativa. En un entorno PSIM, un operador puede recibir una alarma de intrusion y luego debe abrir manualmente el VMS para encontrar la camara correspondiente. En una plataforma unificada como Kabat One, la alarma, el video en vivo, la ubicacion GIS y la unidad de despacho mas cercana aparecen automaticamente en la misma pantalla.'
+                : 'The practical difference for operators is significant. In a PSIM environment, an operator may receive an intrusion alarm and then must manually open the VMS to find the corresponding camera. In a unified platform like Kabat One, the alarm, live video, GIS location, and nearest dispatch unit appear automatically on the same screen.'}
             </p>
           </div>
         </section>
@@ -342,8 +342,8 @@ export default async function PsimVsUnifiedPlatformPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Las ciudades y municipios que operan centros de mando C4 o C5 se benefician especialmente de plataformas unificadas. Estos centros de mando requieren que video, despacho, trafico y GIS operen como un sistema unico en tiempo real. KabatOne opera en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos con este enfoque unificado.'
-                : 'Cities and municipalities operating C4 or C5 command centers benefit especially from unified platforms. These command centers require video, dispatch, traffic, and GIS to operate as a single real-time system. KabatOne operates in 40+ cities protecting over 73 million citizens with this unified approach.'}
+                ? 'Las ciudades y municipios que operan centros de mando C4 o C5 se benefician especialmente de plataformas unificadas. Estos centros de mando requieren que video, despacho, trafico y GIS operen como un sistema unico en tiempo real. Kabat One opera en mas de 40 ciudades protegiendo a mas de 73 millones de ciudadanos con este enfoque unificado.'
+                : 'Cities and municipalities operating C4 or C5 command centers benefit especially from unified platforms. These command centers require video, dispatch, traffic, and GIS to operate as a single real-time system. Kabat One operates in 40+ cities protecting over 73 million citizens with this unified approach.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '32px' }}>
               {es
@@ -361,7 +361,7 @@ export default async function PsimVsUnifiedPlatformPage({
                 letterSpacing: '0.18em', textTransform: 'uppercase',
                 color: ACCENT, marginBottom: '16px',
               }}>
-                {es ? 'Modulos de KabatOne' : 'KabatOne Modules'}
+                {es ? 'Modulos de Kabat One' : 'Kabat One Modules'}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                 {[
@@ -511,8 +511,8 @@ export default async function PsimVsUnifiedPlatformPage({
           es={es}
           h2={es ? '¿Listo para Reemplazar PSIM?' : 'Ready to Replace PSIM?'}
           subtitle={es
-            ? 'Descubre como KabatOne unifica video, despacho y GIS en una sola plataforma. Solicita una demo personalizada.'
-            : 'Discover how KabatOne unifies video, dispatch, and GIS in one platform. Request a personalized demo.'}
+            ? 'Descubre como Kabat One unifica video, despacho y GIS en una sola plataforma. Solicita una demo personalizada.'
+            : 'Discover how Kabat One unifies video, dispatch, and GIS in one platform. Request a personalized demo.'}
         />
 
         <Footer es={es} />

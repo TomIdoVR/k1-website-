@@ -28,50 +28,50 @@ export default async function VsNiceSystemsPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs NICE Systems', url: es ? 'https://kabatone.com/es/vs/nice-systems' : 'https://kabatone.com/vs/nice-systems' },
+    { name: 'Kabat One vs NICE Systems', url: es ? 'https://kabatone.com/es/vs/nice-systems' : 'https://kabatone.com/vs/nice-systems' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y NICE Systems (Qognify)?',
-      answer: 'NICE Systems — a través de su adquisición de Qognify — proporciona gestión de evidencia de video, PSIM y grabación de cumplimiento para gobiernos y grandes empresas. Su enfoque está en la captura forense, gestión de evidencia y cumplimiento regulatorio. KabatOne es una plataforma operacional unificada en tiempo real: integra video con analítica IA, despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety) y gestión inteligente de tráfico (K-Traffic) en una sola plataforma nativa. NICE/Qognify es fuerte en evidencia post-incidente; KabatOne está diseñado para la coordinación y respuesta operacional en tiempo real.',
+      question: '¿Cuál es la diferencia entre Kabat One y NICE Systems (Qognify)?',
+      answer: 'NICE Systems — a través de su adquisición de Qognify — proporciona gestión de evidencia de video, PSIM y grabación de cumplimiento para gobiernos y grandes empresas. Su enfoque está en la captura forense, gestión de evidencia y cumplimiento regulatorio. Kabat One es una plataforma operacional unificada en tiempo real: integra video con analítica IA, despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety) y gestión inteligente de tráfico (K-Traffic) en una sola plataforma nativa. NICE/Qognify es fuerte en evidencia post-incidente; Kabat One está diseñado para la coordinación y respuesta operacional en tiempo real.',
     },
     {
       question: '¿NICE Qognify tiene despacho CAD nativo?',
-      answer: 'No. NICE Qognify no incluye un sistema CAD nativo. Su enfoque es el PSIM (gestión física de información de seguridad) y la gestión de evidencia de video — captura, almacenamiento y recuperación de video para investigaciones forenses y cumplimiento. Para organizaciones que necesitan despacho, deben integrar un sistema CAD separado. KabatOne K-Dispatch es un sistema CAD completo con intake de llamadas, recomendación de unidades, logging de despacho y seguimiento de unidades — totalmente integrado con video, GIS y tráfico en la misma plataforma.',
+      answer: 'No. NICE Qognify no incluye un sistema CAD nativo. Su enfoque es el PSIM (gestión física de información de seguridad) y la gestión de evidencia de video — captura, almacenamiento y recuperación de video para investigaciones forenses y cumplimiento. Para organizaciones que necesitan despacho, deben integrar un sistema CAD separado. Kabat One K-Dispatch es un sistema CAD completo con intake de llamadas, recomendación de unidades, logging de despacho y seguimiento de unidades — totalmente integrado con video, GIS y tráfico en la misma plataforma.',
     },
     {
-      question: '¿Qué es PSIM y en qué se diferencia del enfoque de KabatOne?',
-      answer: 'PSIM (Physical Security Information Management) es una categoría de software que agrega feeds de múltiples sistemas de seguridad — video, control de acceso, alarmas, sensores — en una sola interfaz de visualización. NICE Qognify es un proveedor de PSIM reconocido. El PSIM tradicional es fuerte en agregación e integración de alertas, pero su arquitectura generalmente no incluye CAD nativo ni gestión de tráfico, y las integraciones pueden ser complejas y costosas. KabatOne va más allá del PSIM: no solo agrega y visualiza — también despacha, coordina respuesta en campo y gestiona tráfico de forma nativa en una sola plataforma.',
+      question: '¿Qué es PSIM y en qué se diferencia del enfoque de Kabat One?',
+      answer: 'PSIM (Physical Security Information Management) es una categoría de software que agrega feeds de múltiples sistemas de seguridad — video, control de acceso, alarmas, sensores — en una sola interfaz de visualización. NICE Qognify es un proveedor de PSIM reconocido. El PSIM tradicional es fuerte en agregación e integración de alertas, pero su arquitectura generalmente no incluye CAD nativo ni gestión de tráfico, y las integraciones pueden ser complejas y costosas. Kabat One va más allá del PSIM: no solo agrega y visualiza — también despacha, coordina respuesta en campo y gestiona tráfico de forma nativa en una sola plataforma.',
     },
     {
-      question: '¿Puede KabatOne reemplazar a NICE Qognify en un entorno de centro de mando?',
-      answer: 'Para centros de mando que necesitan una plataforma operacional unificada — video en tiempo real, despacho CAD, GIS operacional y gestión de tráfico — KabatOne cubre y supera el caso de uso central de Qognify. KabatOne incluye grabación y gestión de video, analítica IA, y conectividad a cámaras ONVIF/RTSP de cualquier fabricante. Para organizaciones con requerimientos muy específicos de gestión de evidencia forense o cumplimiento regulatorio de grabación en entornos empresariales (banca, aeropuertos grandes), Qognify puede seguir siendo relevante en esa capa específica.',
+      question: '¿Puede Kabat One reemplazar a NICE Qognify en un entorno de centro de mando?',
+      answer: 'Para centros de mando que necesitan una plataforma operacional unificada — video en tiempo real, despacho CAD, GIS operacional y gestión de tráfico — Kabat One cubre y supera el caso de uso central de Qognify. Kabat One incluye grabación y gestión de video, analítica IA, y conectividad a cámaras ONVIF/RTSP de cualquier fabricante. Para organizaciones con requerimientos muy específicos de gestión de evidencia forense o cumplimiento regulatorio de grabación en entornos empresariales (banca, aeropuertos grandes), Qognify puede seguir siendo relevante en esa capa específica.',
     },
     {
-      question: '¿KabatOne soporta la misma cantidad de cámaras y escala que NICE Qognify?',
-      answer: 'KabatOne está diseñado para entornos de ciudad y municipio — desde decenas hasta miles de cámaras por despliegue. Está activo en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos. NICE Qognify también está posicionado para escala enterprise. La diferencia clave no es la escala de cámaras sino el alcance funcional: KabatOne unifica video con CAD, GIS y tráfico, mientras que Qognify se enfoca en video y evidencia, requiriendo sistemas adicionales para completar el flujo operacional.',
+      question: '¿Kabat One soporta la misma cantidad de cámaras y escala que NICE Qognify?',
+      answer: 'Kabat One está diseñado para entornos de ciudad y municipio — desde decenas hasta miles de cámaras por despliegue. Está activo en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos. NICE Qognify también está posicionado para escala enterprise. La diferencia clave no es la escala de cámaras sino el alcance funcional: Kabat One unifica video con CAD, GIS y tráfico, mientras que Qognify se enfoca en video y evidencia, requiriendo sistemas adicionales para completar el flujo operacional.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and NICE Systems (Qognify)?',
-      answer: 'NICE Systems — through its acquisition of Qognify — provides video evidence management, PSIM, and compliance recording for governments and large enterprises. Their focus is on forensic capture, evidence management, and regulatory compliance. KabatOne is a unified real-time operational platform: it integrates AI-powered video management, full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), and intelligent traffic management (K-Traffic) in one native platform. NICE/Qognify is strong in post-incident evidence; KabatOne is built for real-time operational coordination and response.',
+      question: 'What is the difference between Kabat One and NICE Systems (Qognify)?',
+      answer: 'NICE Systems — through its acquisition of Qognify — provides video evidence management, PSIM, and compliance recording for governments and large enterprises. Their focus is on forensic capture, evidence management, and regulatory compliance. Kabat One is a unified real-time operational platform: it integrates AI-powered video management, full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), and intelligent traffic management (K-Traffic) in one native platform. NICE/Qognify is strong in post-incident evidence; Kabat One is built for real-time operational coordination and response.',
     },
     {
       question: 'Does NICE Qognify have native CAD dispatch?',
-      answer: 'No. NICE Qognify does not include a native CAD system. Its focus is PSIM (physical security information management) and video evidence management — capturing, storing, and retrieving video for forensic investigations and compliance. Organizations that need dispatch must integrate a separate CAD system. KabatOne K-Dispatch is a full CAD system with call intake, unit recommendation, dispatch logging, and unit tracking — fully integrated with video, GIS, and traffic in the same platform.',
+      answer: 'No. NICE Qognify does not include a native CAD system. Its focus is PSIM (physical security information management) and video evidence management — capturing, storing, and retrieving video for forensic investigations and compliance. Organizations that need dispatch must integrate a separate CAD system. Kabat One K-Dispatch is a full CAD system with call intake, unit recommendation, dispatch logging, and unit tracking — fully integrated with video, GIS, and traffic in the same platform.',
     },
     {
-      question: 'What is PSIM and how does it differ from KabatOne\'s approach?',
-      answer: 'PSIM (Physical Security Information Management) is a software category that aggregates feeds from multiple security systems — video, access control, alarms, sensors — into a single viewing interface. NICE Qognify is a recognized PSIM vendor. Traditional PSIM is strong at aggregation and alert integration, but its architecture typically does not include native CAD or traffic management, and integrations can be complex and expensive. KabatOne goes beyond PSIM: it does not just aggregate and display — it also dispatches, coordinates field response, and manages traffic natively in one platform.',
+      question: 'What is PSIM and how does it differ from Kabat One\'s approach?',
+      answer: 'PSIM (Physical Security Information Management) is a software category that aggregates feeds from multiple security systems — video, access control, alarms, sensors — into a single viewing interface. NICE Qognify is a recognized PSIM vendor. Traditional PSIM is strong at aggregation and alert integration, but its architecture typically does not include native CAD or traffic management, and integrations can be complex and expensive. Kabat One goes beyond PSIM: it does not just aggregate and display — it also dispatches, coordinates field response, and manages traffic natively in one platform.',
     },
     {
-      question: 'Can KabatOne replace NICE Qognify in a command center environment?',
-      answer: 'For command centers that need a unified operational platform — real-time video, CAD dispatch, operational GIS, and traffic management — KabatOne covers and extends the core Qognify use case. KabatOne includes video recording and management, AI analytics, and connectivity to ONVIF/RTSP cameras from any manufacturer. For organizations with very specific forensic evidence management or regulatory compliance recording requirements in enterprise environments (banking, large airports), Qognify may remain relevant in that specific layer.',
+      question: 'Can Kabat One replace NICE Qognify in a command center environment?',
+      answer: 'For command centers that need a unified operational platform — real-time video, CAD dispatch, operational GIS, and traffic management — Kabat One covers and extends the core Qognify use case. Kabat One includes video recording and management, AI analytics, and connectivity to ONVIF/RTSP cameras from any manufacturer. For organizations with very specific forensic evidence management or regulatory compliance recording requirements in enterprise environments (banking, large airports), Qognify may remain relevant in that specific layer.',
     },
     {
-      question: 'Does KabatOne support the same camera scale as NICE Qognify?',
-      answer: 'KabatOne is designed for city and municipal environments — from tens to thousands of cameras per deployment. It is active across 40+ cities protecting over 73 million citizens. NICE Qognify is also positioned for enterprise scale. The key difference is not camera scale but functional scope: KabatOne unifies video with CAD, GIS, and traffic, while Qognify focuses on video and evidence, requiring additional systems to complete the operational workflow.',
+      question: 'Does Kabat One support the same camera scale as NICE Qognify?',
+      answer: 'Kabat One is designed for city and municipal environments — from tens to thousands of cameras per deployment. It is active across 40+ cities protecting over 73 million citizens. NICE Qognify is also positioned for enterprise scale. The key difference is not camera scale but functional scope: Kabat One unifies video with CAD, GIS, and traffic, while Qognify focuses on video and evidence, requiring additional systems to complete the operational workflow.',
     },
   ]
 
@@ -160,10 +160,10 @@ export default async function VsNiceSystemsPage({
   ]
 
   const articleSchemaData = articleSchema(
-    es ? 'KabatOne vs NICE Systems (Qognify) — Comparación de Plataformas de Seguridad Pública' : 'KabatOne vs NICE Systems (Qognify) — Public Safety Platform Comparison',
+    es ? 'Kabat One vs NICE Systems (Qognify) — Comparación de Plataformas de Seguridad Pública' : 'Kabat One vs NICE Systems (Qognify) — Public Safety Platform Comparison',
     es
-      ? 'Comparación detallada entre KabatOne y NICE Systems/Qognify: despacho CAD, GIS operacional, gestión de video y tráfico para municipios y centros de mando en LATAM.'
-      : 'Detailed comparison between KabatOne and NICE Systems/Qognify: CAD dispatch, operational GIS, video management, and traffic for municipalities and command centers.',
+      ? 'Comparación detallada entre Kabat One y NICE Systems/Qognify: despacho CAD, GIS operacional, gestión de video y tráfico para municipios y centros de mando en LATAM.'
+      : 'Detailed comparison between Kabat One and NICE Systems/Qognify: CAD dispatch, operational GIS, video management, and traffic for municipalities and command centers.',
     es ? 'https://kabatone.com/es/vs/nice-systems' : 'https://kabatone.com/vs/nice-systems',
     '2026-04-07',
   )
@@ -196,7 +196,7 @@ export default async function VsNiceSystemsPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs NICE Systems</span>
+          <span style={{ color: ACCENT }}>Kabat One vs NICE Systems</span>
         </div>
 
         {/* ── HERO ── */}
@@ -215,13 +215,13 @@ export default async function VsNiceSystemsPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs NICE Systems — Gestión de Evidencia vs Operaciones Unificadas'
-              : 'KabatOne vs NICE Systems — Evidence Management vs Unified Operations'}
+              ? 'Kabat One vs NICE Systems — Gestión de Evidencia vs Operaciones Unificadas'
+              : 'Kabat One vs NICE Systems — Evidence Management vs Unified Operations'}
           </h1>
           <p style={{ fontSize: '18px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75 }}>
             {es
-              ? 'NICE Systems adquirió Qognify para reforzar su cartera de seguridad pública con gestión de evidencia de video, PSIM y grabación de cumplimiento para gobiernos y grandes empresas. KabatOne parte desde un enfoque diferente: una plataforma operacional nativa donde video con analítica IA, despacho CAD completo, GIS operacional y gestión de tráfico funcionan juntos sin integraciones complejas ni hardware propietario.'
-              : 'NICE Systems acquired Qognify to strengthen its public safety portfolio with video evidence management, PSIM, and compliance recording for governments and large enterprises. KabatOne starts from a different position: a native operational platform where AI-powered video, full CAD dispatch, operational GIS, and traffic management work together without complex integrations or proprietary hardware.'}
+              ? 'NICE Systems adquirió Qognify para reforzar su cartera de seguridad pública con gestión de evidencia de video, PSIM y grabación de cumplimiento para gobiernos y grandes empresas. Kabat One parte desde un enfoque diferente: una plataforma operacional nativa donde video con analítica IA, despacho CAD completo, GIS operacional y gestión de tráfico funcionan juntos sin integraciones complejas ni hardware propietario.'
+              : 'NICE Systems acquired Qognify to strengthen its public safety portfolio with video evidence management, PSIM, and compliance recording for governments and large enterprises. Kabat One starts from a different position: a native operational platform where AI-powered video, full CAD dispatch, operational GIS, and traffic management work together without complex integrations or proprietary hardware.'}
           </p>
         </section>
 
@@ -261,22 +261,22 @@ export default async function VsNiceSystemsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
-                : 'KabatOne is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida para ciudades, municipios, centros de mando C5/C2 y agencias de respuesta. Integra gestión de video con analítica IA (K-Video), despacho CAD completo (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario (K-Connect) en una plataforma nativa — sin hardware propietario, sin proyectos de integración entre sistemas.'
+                : 'Kabat One is a unified public safety platform built for cities, municipalities, C5/C2 command centers, and response agencies. It integrates AI-powered video management (K-Video), full CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video (K-Connect) in one native platform — no proprietary hardware, no cross-system integration projects.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'A diferencia de NICE Qognify, que actúa como una capa PSIM sobre sistemas existentes, KabatOne es la plataforma operacional central del centro de mando. Una alerta de reconocimiento de matrícula en K-Video puede generar automáticamente un evento en K-Dispatch. El despachador ve el video de la cámara más cercana directamente en el contexto del incidente. K-Traffic puede ajustar semáforos en la ruta de la unidad respondedora sin salir del flujo de despacho.'
-                : 'Unlike NICE Qognify, which acts as a PSIM layer on top of existing systems, KabatOne is the central operational platform of the command center. A license plate recognition alert in K-Video can automatically generate an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. K-Traffic can adjust signals on the responding unit route without leaving the dispatch workflow.'}
+                ? 'A diferencia de NICE Qognify, que actúa como una capa PSIM sobre sistemas existentes, Kabat One es la plataforma operacional central del centro de mando. Una alerta de reconocimiento de matrícula en K-Video puede generar automáticamente un evento en K-Dispatch. El despachador ve el video de la cámara más cercana directamente en el contexto del incidente. K-Traffic puede ajustar semáforos en la ruta de la unidad respondedora sin salir del flujo de despacho.'
+                : 'Unlike NICE Qognify, which acts as a PSIM layer on top of existing systems, Kabat One is the central operational platform of the command center. A license plate recognition alert in K-Video can automatically generate an event in K-Dispatch. The dispatcher sees the nearest camera video directly in the incident context. K-Traffic can adjust signals on the responding unit route without leaving the dispatch workflow.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Sin hardware propietario y con soporte nativo para ONVIF, RTSP y todos los protocolos IP estándar, KabatOne integra cámaras de cualquier fabricante — Hikvision, Dahua, Axis, Bosch, Hanwha y muchos otros — y funciona con la infraestructura existente del cliente sin reemplazarla.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. With no proprietary hardware and native support for ONVIF, RTSP, and all standard IP protocols, KabatOne integrates cameras from any manufacturer — Hikvision, Dahua, Axis, Bosch, Hanwha, and many others — and works with the customer\'s existing infrastructure without replacing it.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos, principalmente en México y Latinoamérica. Sin hardware propietario y con soporte nativo para ONVIF, RTSP y todos los protocolos IP estándar, Kabat One integra cámaras de cualquier fabricante — Hikvision, Dahua, Axis, Bosch, Hanwha y muchos otros — y funciona con la infraestructura existente del cliente sin reemplazarla.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens, primarily in Mexico and Latin America. With no proprietary hardware and native support for ONVIF, RTSP, and all standard IP protocols, Kabat One integrates cameras from any manufacturer — Hikvision, Dahua, Axis, Bosch, Hanwha, and many others — and works with the customer\'s existing infrastructure without replacing it.'}
             </p>
           </div>
         </section>
@@ -289,12 +289,12 @@ export default async function VsNiceSystemsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs NICE Systems: Diferencias Clave' : 'KabatOne vs NICE Systems: Key Differences'}
+              {es ? 'Kabat One vs NICE Systems: Diferencias Clave' : 'Kabat One vs NICE Systems: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y NICE Systems/Qognify en ocho dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
-                : 'The following table compares KabatOne and NICE Systems/Qognify across eight operational dimensions critical for public safety organizations and command centers.'}
+                ? 'La siguiente tabla compara Kabat One y NICE Systems/Qognify en ocho dimensiones operativas críticas para organizaciones de seguridad pública y centros de mando.'
+                : 'The following table compares Kabat One and NICE Systems/Qognify across eight operational dimensions critical for public safety organizations and command centers.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -309,7 +309,7 @@ export default async function VsNiceSystemsPage({
                   NICE / Qognify
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -355,8 +355,8 @@ export default async function VsNiceSystemsPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne resuelve esto desde la arquitectura: video, despacho CAD, GIS y tráfico son módulos nativos de la misma plataforma. No hay integraciones que mantener entre módulos — comparten el mismo modelo de datos en tiempo real. Para municipios y centros C5 en LATAM, esto significa un tiempo de implementación menor, menores costos de propiedad a largo plazo y una curva de adopción más simple para los operadores.'
-                : 'KabatOne solves this at the architecture level: video, CAD dispatch, GIS, and traffic are native modules of the same platform. There are no cross-module integrations to maintain — they share the same real-time data model. For municipalities and C5 centers in LATAM, this means shorter implementation time, lower long-term ownership costs, and a simpler adoption curve for operators.'}
+                ? 'Kabat One resuelve esto desde la arquitectura: video, despacho CAD, GIS y tráfico son módulos nativos de la misma plataforma. No hay integraciones que mantener entre módulos — comparten el mismo modelo de datos en tiempo real. Para municipios y centros C5 en LATAM, esto significa un tiempo de implementación menor, menores costos de propiedad a largo plazo y una curva de adopción más simple para los operadores.'
+                : 'Kabat One solves this at the architecture level: video, CAD dispatch, GIS, and traffic are native modules of the same platform. There are no cross-module integrations to maintain — they share the same real-time data model. For municipalities and C5 centers in LATAM, this means shorter implementation time, lower long-term ownership costs, and a simpler adoption curve for operators.'}
             </p>
           </div>
         </section>
@@ -376,33 +376,33 @@ export default async function VsNiceSystemsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'Por Qué KabatOne Gana en Entornos C5 y Municipales' : 'Why KabatOne Wins in C5 and Municipal Environments'}
+              {es ? 'Por Qué Kabat One Gana en Entornos C5 y Municipales' : 'Why Kabat One Wins in C5 and Municipal Environments'}
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
               {[
                 {
                   title: es ? 'CAD Nativo — Sin Integración' : 'Native CAD — No Integration Required',
                   body: es
-                    ? 'NICE Qognify no tiene CAD. KabatOne K-Dispatch es CAD nativo integrado con video, GIS y tráfico en tiempo real — sin proyectos de integración costosos ni dependencias de terceros.'
-                    : 'NICE Qognify has no CAD. KabatOne K-Dispatch is native CAD integrated with video, GIS, and traffic in real time — no costly integration projects or third-party dependencies.',
+                    ? 'NICE Qognify no tiene CAD. Kabat One K-Dispatch es CAD nativo integrado con video, GIS y tráfico en tiempo real — sin proyectos de integración costosos ni dependencias de terceros.'
+                    : 'NICE Qognify has no CAD. Kabat One K-Dispatch is native CAD integrated with video, GIS, and traffic in real time — no costly integration projects or third-party dependencies.',
                 },
                 {
                   title: es ? 'Propósito Municipal, No Enterprise Genérico' : 'Municipal Purpose-Built, Not Generic Enterprise',
                   body: es
-                    ? 'NICE está diseñado para enterprise global con requerimientos de cumplimiento y evidencia forense. KabatOne está construido específicamente para operaciones municipales y centros C5 — la prioridad es la respuesta operacional, no la evidencia post-incidente.'
-                    : 'NICE is designed for global enterprise with compliance and forensic evidence requirements. KabatOne is built specifically for municipal operations and C5 centers — the priority is operational response, not post-incident evidence.',
+                    ? 'NICE está diseñado para enterprise global con requerimientos de cumplimiento y evidencia forense. Kabat One está construido específicamente para operaciones municipales y centros C5 — la prioridad es la respuesta operacional, no la evidencia post-incidente.'
+                    : 'NICE is designed for global enterprise with compliance and forensic evidence requirements. Kabat One is built specifically for municipal operations and C5 centers — the priority is operational response, not post-incident evidence.',
                 },
                 {
                   title: es ? 'Sin Hardware Propietario' : 'No Proprietary Hardware',
                   body: es
-                    ? 'KabatOne soporta ONVIF, RTSP y todos los protocolos IP estándar — integra cámaras de cualquier fabricante sin hardware adicional. Funciona con la infraestructura existente del cliente.'
-                    : 'KabatOne supports ONVIF, RTSP, and all standard IP protocols — integrates cameras from any manufacturer without additional hardware. It works with the customer\'s existing infrastructure.',
+                    ? 'Kabat One soporta ONVIF, RTSP y todos los protocolos IP estándar — integra cámaras de cualquier fabricante sin hardware adicional. Funciona con la infraestructura existente del cliente.'
+                    : 'Kabat One supports ONVIF, RTSP, and all standard IP protocols — integrates cameras from any manufacturer without additional hardware. It works with the customer\'s existing infrastructure.',
                 },
                 {
                   title: es ? 'Experiencia Real en LATAM' : 'Real LATAM Deployment Experience',
                   body: es
-                    ? 'KabatOne está activo en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y LATAM. NICE Qognify tiene presencia principalmente en mercados desarrollados con ciclos de venta y soporte enterprise que no están optimizados para el contexto municipal latinoamericano.'
-                    : 'KabatOne is active across 40+ cities protecting over 73 million citizens in Mexico and LATAM. NICE Qognify operates primarily in developed markets with enterprise sales and support cycles not optimized for the Latin American municipal context.',
+                    ? 'Kabat One está activo en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos en México y LATAM. NICE Qognify tiene presencia principalmente en mercados desarrollados con ciclos de venta y soporte enterprise que no están optimizados para el contexto municipal latinoamericano.'
+                    : 'Kabat One is active across 40+ cities protecting over 73 million citizens in Mexico and LATAM. NICE Qognify operates primarily in developed markets with enterprise sales and support cycles not optimized for the Latin American municipal context.',
                 },
               ].map((card, i) => (
                 <div key={i} style={{
@@ -432,7 +432,7 @@ export default async function VsNiceSystemsPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -489,7 +489,7 @@ export default async function VsNiceSystemsPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs NICE Systems: Preguntas y Respuestas' : 'KabatOne vs NICE Systems: Questions & Answers'}
+              {es ? 'Kabat One vs NICE Systems: Preguntas y Respuestas' : 'Kabat One vs NICE Systems: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -524,10 +524,10 @@ export default async function VsNiceSystemsPage({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[
-                { href: '/vs/verint', label: es ? 'KabatOne vs Verint' : 'KabatOne vs Verint' },
-                { href: '/vs/avigilon', label: es ? 'KabatOne vs Avigilon' : 'KabatOne vs Avigilon' },
-                { href: '/vs/genetec', label: es ? 'KabatOne vs Genetec' : 'KabatOne vs Genetec' },
-                { href: '/vs/motorola', label: es ? 'KabatOne vs Motorola Solutions' : 'KabatOne vs Motorola Solutions' },
+                { href: '/vs/verint', label: es ? 'Kabat One vs Verint' : 'Kabat One vs Verint' },
+                { href: '/vs/avigilon', label: es ? 'Kabat One vs Avigilon' : 'Kabat One vs Avigilon' },
+                { href: '/vs/genetec', label: es ? 'Kabat One vs Genetec' : 'Kabat One vs Genetec' },
+                { href: '/vs/motorola', label: es ? 'Kabat One vs Motorola Solutions' : 'Kabat One vs Motorola Solutions' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -548,8 +548,8 @@ export default async function VsNiceSystemsPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
-            : 'See how KabatOne unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
+            ? 'Descubre cómo Kabat One unifica video, CAD, GIS y tráfico en un solo sistema operacional. Solicita una demo.'
+            : 'See how Kabat One unifies video, CAD, GIS, and traffic in one operational system. Request a demo.'}
         />
 
         <Footer es={es} />

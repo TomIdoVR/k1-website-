@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareRomaniaPage({
       answer: 'Rumanía impulsa la digitalización de la seguridad pública principalmente con fondos europeos. El proyecto IM (Investiție în modernizarea Sistemului Informatic al Poliției Române) moderniza los sistemas de información de la Poliția Română con fondos PNRR. El proyecto Smart Cluj-Napoca integra cámaras de tráfico, ANPR y datos del ISU con el centro de control urbano. Timișoara y București también tienen programas Smart City con integración de cámaras urbanas y datos de emergencias. El sistema 112-RO del STS está siendo modernizado con capacidades de Next Generation 112 (NG112/eCall) para recibir alertas automáticas de vehículos y datos multimedia. El programa SMURD Digital moderniza los sistemas de despacho y telemetría médica del SMURD. El proyecto RO-ALERT (sistema de alertas de emergencias) cubre todo el territorio con alertas Cell Broadcast para sismos (Rumanía tiene alta sismicidad — zona Vrancea), inundaciones e incidentes CBRN.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Poliția Română, el ISU/SMURD y los SAJ?',
-      answer: 'KabatOne integra las capacidades que la Poliția Română, la Jandarmeria, el ISU/SMURD y los SAJ necesitan unificadas: despacho CAD multiagencia compatible con los 41 condados y el IGPR — con integración TETRA/ROIIS del STS y preparación NG112/broadband, coordinación 112 y gestión de emergencias sísmicas (zona Vrancea) e inundaciones, compatible con los DIU (centros integrados de despacho) (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a RGPD/ANSPDCP/Ley 190/2018 y Ley 333/2003 — con DPIA, base legal MAI/Ley 218/2002 y gestión de retención (K-Video), y conciencia situacional GIS integrada con RO-ALERT, datos sísmicos, sensores de inundación y centros de control Smart City (Cluj, Timișoara, București) (K-Safety). Cloud EU con cumplimiento RGPD/ANSPDCP y DNSC/CERT-RO/NIS2. Compatible con los marcos de contratación SICAP/Ley 98/2016 y fondos PNRR/UE. Demo adaptada al modelo del MAI rumano y al contexto sísmico.',
+      question: '¿Por qué Kabat One es adecuado para la Poliția Română, el ISU/SMURD y los SAJ?',
+      answer: 'Kabat One integra las capacidades que la Poliția Română, la Jandarmeria, el ISU/SMURD y los SAJ necesitan unificadas: despacho CAD multiagencia compatible con los 41 condados y el IGPR — con integración TETRA/ROIIS del STS y preparación NG112/broadband, coordinación 112 y gestión de emergencias sísmicas (zona Vrancea) e inundaciones, compatible con los DIU (centros integrados de despacho) (K-Dispatch), gestión de cámaras urbanas y ANPR con analítica IA conforme a RGPD/ANSPDCP/Ley 190/2018 y Ley 333/2003 — con DPIA, base legal MAI/Ley 218/2002 y gestión de retención (K-Video), y conciencia situacional GIS integrada con RO-ALERT, datos sísmicos, sensores de inundación y centros de control Smart City (Cluj, Timișoara, București) (K-Safety). Cloud EU con cumplimiento RGPD/ANSPDCP y DNSC/CERT-RO/NIS2. Compatible con los marcos de contratación SICAP/Ley 98/2016 y fondos PNRR/UE. Demo adaptada al modelo del MAI rumano y al contexto sísmico.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareRomaniaPage({
       answer: 'Romania drives public safety digitalisation primarily with EU funds. The IM project modernises Poliția Română information systems with PNRR funds. Smart Cluj-Napoca integrates traffic cameras, ANPR, and ISU data with the urban control centre. Timișoara and Bucharest also have Smart City programmes integrating urban cameras and emergency data. The STS 112-RO system is being modernised with Next Generation 112 (NG112/eCall) capabilities to receive automatic vehicle alerts and multimedia data. The SMURD Digital programme modernises SMURD dispatch and medical telemetry systems. The RO-ALERT Cell Broadcast system covers the entire territory for seismic alerts (Romania has high seismicity — Vrancea zone), floods, and CBRN incidents.',
     },
     {
-      question: 'Why is KabatOne suited for Romanian Poliția Română, ISU/SMURD, and SAJ?',
-      answer: 'KabatOne integrates the capabilities that Poliția Română, Jandarmeria, ISU/SMURD, and SAJ need unified: multi-agency CAD dispatch compatible with all 41 counties and IGPR — with STS TETRA/ROIIS integration and NG112/broadband readiness, 112 coordination and seismic (Vrancea zone) and flood emergency management, compatible with DIU integrated dispatch centres (K-Dispatch), urban camera and ANPR management with AI analytics compliant with GDPR/ANSPDCP/Law 190/2018 and Law 333/2003 — with DPIA, MAI/Law 218/2002 legal basis, and retention management (K-Video), and GIS situational awareness integrated with RO-ALERT, seismic data, flood sensors, and Smart City control centres (Cluj, Timișoara, Bucharest) (K-Safety). EU cloud with GDPR/ANSPDCP and DNSC/CERT-RO/NIS2 compliance. Compatible with SICAP/Law 98/2016 and PNRR/EU funds procurement frameworks. Demo adapted to Romania\'s MAI model and seismic context.',
+      question: 'Why is Kabat One suited for Romanian Poliția Română, ISU/SMURD, and SAJ?',
+      answer: 'Kabat One integrates the capabilities that Poliția Română, Jandarmeria, ISU/SMURD, and SAJ need unified: multi-agency CAD dispatch compatible with all 41 counties and IGPR — with STS TETRA/ROIIS integration and NG112/broadband readiness, 112 coordination and seismic (Vrancea zone) and flood emergency management, compatible with DIU integrated dispatch centres (K-Dispatch), urban camera and ANPR management with AI analytics compliant with GDPR/ANSPDCP/Law 190/2018 and Law 333/2003 — with DPIA, MAI/Law 218/2002 legal basis, and retention management (K-Video), and GIS situational awareness integrated with RO-ALERT, seismic data, flood sensors, and Smart City control centres (Cluj, Timișoara, Bucharest) (K-Safety). EU cloud with GDPR/ANSPDCP and DNSC/CERT-RO/NIS2 compliance. Compatible with SICAP/Law 98/2016 and PNRR/EU funds procurement frameworks. Demo adapted to Romania\'s MAI model and seismic context.',
     },
   ]
 
@@ -237,11 +237,11 @@ export default async function PublicSafetySoftwareRomaniaPage({
         </div>
       </section>
 
-      {/* How KabatOne helps */}
+      {/* How Kabat One helps */}
       <section style={{ padding: '64px 24px', background: '#f1f5f9' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <h2 style={{ fontSize: '1.7rem', fontWeight: 700, marginBottom: 32 }}>
-            {es ? 'Cómo KabatOne Unifica la Seguridad Pública Rumana' : 'How KabatOne Unifies Romanian Public Safety'}
+            {es ? 'Cómo Kabat One Unifica la Seguridad Pública Rumana' : 'How Kabat One Unifies Romanian Public Safety'}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 24 }}>
             {[

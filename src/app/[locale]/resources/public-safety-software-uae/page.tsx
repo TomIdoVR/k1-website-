@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareUAEPage({
       answer: 'Los EAU tienen una de las infraestructuras de videovigilancia más avanzadas y densas del mundo. Dubai Safe City opera más de 50,000 cámaras inteligentes integradas con el IPOC, utilizando analítica de IA para reconocimiento de matrículas, detección de comportamientos y búsqueda forense. Abu Dhabi Safe City tiene una red de densidad similar bajo la Policía de Abu Dhabi. El sistema de reconocimiento facial de la Policía de Dubai ha sido ampliamente publicado como un referente mundial. Sharjah, Ajman y otros emiratos tienen redes Safe City propias. Las cámaras están conectadas a centros de operaciones que integran el despacho CAD, el tráfico y los sistemas de inteligencia criminal en tiempo real. La tecnología proveedora incluye empresas líderes mundiales de videovigilancia y AI analytics. Las nuevas expansiones urbanas (Expo City, Yas Island) requieren integración de decenas de miles de cámaras adicionales.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU?',
-      answer: 'KabatOne integra las funciones que la Policía de Dubai (IPOC), la Policía de Abu Dhabi (ADPOC) y los proyectos Safe City de los EAU gestionan a través de sistemas separados: despacho CAD unificado para las operaciones policiales de Dubai y Abu Dhabi con clasificación automática de incidentes, asignación de recursos por IA y coordinación con ambulancias DAS/NAMAT y Defensa Civil (K-Dispatch), gestión de 50,000+ cámaras inteligentes con analítica de IA — reconocimiento de matrículas ANPR, detección de comportamientos, reconocimiento facial, búsqueda forense — integrada con el IPOC/ADPOC y cumplimiento PDPL/NESA (K-Video), y conciencia situacional GIS compartida entre policía, Defensa Civil, EMS y autoridades de tráfico para coordinación en eventos masivos (Expo City, World Cup de fútbol, F1 Abu Dhabi Grand Prix) (K-Safety). Data residency en EAU, cumplimiento UAE Cybersecurity Council. Demo adaptada al modelo IPOC de Dubai Safe City y la visión UAE 2031.',
+      question: '¿Por qué Kabat One es adecuado para la Policía de Dubai, la Policía de Abu Dhabi y los proyectos Safe City de los EAU?',
+      answer: 'Kabat One integra las funciones que la Policía de Dubai (IPOC), la Policía de Abu Dhabi (ADPOC) y los proyectos Safe City de los EAU gestionan a través de sistemas separados: despacho CAD unificado para las operaciones policiales de Dubai y Abu Dhabi con clasificación automática de incidentes, asignación de recursos por IA y coordinación con ambulancias DAS/NAMAT y Defensa Civil (K-Dispatch), gestión de 50,000+ cámaras inteligentes con analítica de IA — reconocimiento de matrículas ANPR, detección de comportamientos, reconocimiento facial, búsqueda forense — integrada con el IPOC/ADPOC y cumplimiento PDPL/NESA (K-Video), y conciencia situacional GIS compartida entre policía, Defensa Civil, EMS y autoridades de tráfico para coordinación en eventos masivos (Expo City, World Cup de fútbol, F1 Abu Dhabi Grand Prix) (K-Safety). Data residency en EAU, cumplimiento UAE Cybersecurity Council. Demo adaptada al modelo IPOC de Dubai Safe City y la visión UAE 2031.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareUAEPage({
       answer: 'The UAE has one of the world\'s most advanced and dense video surveillance infrastructures. Dubai Safe City operates over 50,000 smart cameras integrated with the IPOC, using AI analytics for licence plate recognition, behavioural detection, and forensic search. Abu Dhabi Safe City has a similarly dense network under Abu Dhabi Police. Dubai Police\'s facial recognition system has been widely cited as a global benchmark. Sharjah, Ajman, and other emirates have their own Safe City networks. Cameras are connected to operations centres integrating CAD dispatch, traffic, and real-time criminal intelligence systems. Technology providers include world-leading video surveillance and AI analytics companies. New urban expansions (Expo City, Yas Island) require integration of tens of thousands of additional cameras.',
     },
     {
-      question: 'Why is KabatOne suited for Dubai Police, Abu Dhabi Police, and UAE Safe City projects?',
-      answer: 'KabatOne integrates the functions that Dubai Police (IPOC), Abu Dhabi Police (ADPOC), and UAE Safe City projects manage through separate systems: unified CAD dispatch for Dubai and Abu Dhabi police operations with automatic incident classification, AI resource assignment, and coordination with DAS/NAMAT ambulances and Civil Defence (K-Dispatch), 50,000+ smart camera management with AI analytics — ANPR, behaviour detection, facial recognition, forensic search — integrated with IPOC/ADPOC and compliant with PDPL/NESA (K-Video), and shared GIS situational awareness across police, Civil Defence, EMS, and traffic authorities for major event coordination (Expo City, Football World Cup, F1 Abu Dhabi Grand Prix) (K-Safety). UAE data residency, UAE Cybersecurity Council compliance. Demo tailored to Dubai Safe City\'s IPOC model and UAE 2031 Vision.',
+      question: 'Why is Kabat One suited for Dubai Police, Abu Dhabi Police, and UAE Safe City projects?',
+      answer: 'Kabat One integrates the functions that Dubai Police (IPOC), Abu Dhabi Police (ADPOC), and UAE Safe City projects manage through separate systems: unified CAD dispatch for Dubai and Abu Dhabi police operations with automatic incident classification, AI resource assignment, and coordination with DAS/NAMAT ambulances and Civil Defence (K-Dispatch), 50,000+ smart camera management with AI analytics — ANPR, behaviour detection, facial recognition, forensic search — integrated with IPOC/ADPOC and compliant with PDPL/NESA (K-Video), and shared GIS situational awareness across police, Civil Defence, EMS, and traffic authorities for major event coordination (Expo City, Football World Cup, F1 Abu Dhabi Grand Prix) (K-Safety). UAE data residency, UAE Cybersecurity Council compliance. Demo tailored to Dubai Safe City\'s IPOC model and UAE 2031 Vision.',
     },
   ]
 
@@ -155,8 +155,8 @@ export default async function PublicSafetySoftwareUAEPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Los Emiratos Árabes Unidos son el referente mundial de las iniciativas Safe City — Dubai Police gestiona más de 50,000 cámaras inteligentes desde el IPOC con IA y reconocimiento facial, Abu Dhabi Police opera el ADPOC de nivel comparable, y el programa UAE 2031 impulsa la mayor inversión por habitante en tecnología de seguridad pública del mundo. KabatOne unifica el despacho CAD policial, la gestión de cámaras con IA y la conciencia situacional GIS bajo data residency en EAU y cumplimiento PDPL/NESA.'
-                : 'The UAE is the global benchmark for Safe City initiatives — Dubai Police manages over 50,000 smart cameras from the AI-powered IPOC with facial recognition, Abu Dhabi Police operates the comparably advanced ADPOC, and the UAE 2031 programme drives the highest per-capita investment in public safety technology in the world. KabatOne unifies police CAD dispatch, AI camera management, and GIS situational awareness under UAE data residency and PDPL/NESA compliance.'}
+                ? 'Los Emiratos Árabes Unidos son el referente mundial de las iniciativas Safe City — Dubai Police gestiona más de 50,000 cámaras inteligentes desde el IPOC con IA y reconocimiento facial, Abu Dhabi Police opera el ADPOC de nivel comparable, y el programa UAE 2031 impulsa la mayor inversión por habitante en tecnología de seguridad pública del mundo. Kabat One unifica el despacho CAD policial, la gestión de cámaras con IA y la conciencia situacional GIS bajo data residency en EAU y cumplimiento PDPL/NESA.'
+                : 'The UAE is the global benchmark for Safe City initiatives — Dubai Police manages over 50,000 smart cameras from the AI-powered IPOC with facial recognition, Abu Dhabi Police operates the comparably advanced ADPOC, and the UAE 2031 programme drives the highest per-capita investment in public safety technology in the world. Kabat One unifies police CAD dispatch, AI camera management, and GIS situational awareness under UAE data residency and PDPL/NESA compliance.'}
             </p>
           </div>
         </section>
@@ -199,14 +199,14 @@ export default async function PublicSafetySoftwareUAEPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos del IPOC de Dubai Police, ADPOC de Abu Dhabi y los Proyectos Safe City de los EAU' : 'How KabatOne Addresses Dubai Police IPOC, Abu Dhabi ADPOC, and UAE Safe City Project Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos del IPOC de Dubai Police, ADPOC de Abu Dhabi y los Proyectos Safe City de los EAU' : 'How Kabat One Addresses Dubai Police IPOC, Abu Dhabi ADPOC, and UAE Safe City Project Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para el IPOC de Dubai Police, el ADPOC de Abu Dhabi Police y los centros de operaciones Safe City de los EAU que necesitan un dashboard unificado para gestionar el despacho policial de todos los emiratos, monitorizar redes de 50,000+ cámaras inteligentes con analítica de IA avanzada y coordinar recursos de múltiples agencias en eventos de escala mundial — todo bajo los requisitos de data residency en EAU, la PDPL y los estándares IAS de la NESA/UAE Cybersecurity Council.'
-                : 'KabatOne is designed for Dubai Police\'s IPOC, Abu Dhabi Police\'s ADPOC, and UAE Safe City operations centres that need a unified dashboard to manage emirate-wide police dispatch, monitor 50,000+ smart camera networks with advanced AI analytics, and coordinate multi-agency resources at world-scale events — all under UAE data residency requirements, PDPL, and NESA/UAE Cybersecurity Council IAS standards.'}
+                ? 'Kabat One está diseñado para el IPOC de Dubai Police, el ADPOC de Abu Dhabi Police y los centros de operaciones Safe City de los EAU que necesitan un dashboard unificado para gestionar el despacho policial de todos los emiratos, monitorizar redes de 50,000+ cámaras inteligentes con analítica de IA avanzada y coordinar recursos de múltiples agencias en eventos de escala mundial — todo bajo los requisitos de data residency en EAU, la PDPL y los estándares IAS de la NESA/UAE Cybersecurity Council.'
+                : 'Kabat One is designed for Dubai Police\'s IPOC, Abu Dhabi Police\'s ADPOC, and UAE Safe City operations centres that need a unified dashboard to manage emirate-wide police dispatch, monitor 50,000+ smart camera networks with advanced AI analytics, and coordinate multi-agency resources at world-scale events — all under UAE data residency requirements, PDPL, and NESA/UAE Cybersecurity Council IAS standards.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -233,7 +233,7 @@ export default async function PublicSafetySoftwareUAEPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -307,7 +307,7 @@ export default async function PublicSafetySoftwareUAEPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para el IPOC de Dubai Police, el ADPOC de Abu Dhabi o tu Proyecto Safe City en los EAU' : 'Request a Demo for Dubai Police IPOC, Abu Dhabi ADPOC, or Your UAE Safe City Project'}
-          subtitle={es ? 'KabatOne integra el despacho policial con IA predictiva, la gestión de 50,000+ cámaras Safe City con analítica avanzada y la conciencia situacional GIS multiagencia en una plataforma con data residency en EAU y cumplimiento PDPL/NESA. Demo adaptada al modelo IPOC de Dubai Safe City y la visión UAE 2031.' : 'KabatOne integrates predictive AI police dispatch, 50,000+ Safe City camera management with advanced analytics, and multi-agency GIS situational awareness in a single platform with UAE data residency and PDPL/NESA compliance. Demo tailored to Dubai Safe City\'s IPOC model and UAE 2031 Vision.'}
+          subtitle={es ? 'Kabat One integra el despacho policial con IA predictiva, la gestión de 50,000+ cámaras Safe City con analítica avanzada y la conciencia situacional GIS multiagencia en una plataforma con data residency en EAU y cumplimiento PDPL/NESA. Demo adaptada al modelo IPOC de Dubai Safe City y la visión UAE 2031.' : 'Kabat One integrates predictive AI police dispatch, 50,000+ Safe City camera management with advanced analytics, and multi-agency GIS situational awareness in a single platform with UAE data residency and PDPL/NESA compliance. Demo tailored to Dubai Safe City\'s IPOC model and UAE 2031 Vision.'}
         />
 
         <Footer es={es} />

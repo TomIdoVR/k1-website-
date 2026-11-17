@@ -57,7 +57,7 @@ export default async function RetailPage({
 
   /* capabilities */
   const capLabel = es ? 'Capacidades de la Plataforma' : 'Platform Capabilities'
-  const capH2 = es ? 'Cómo KabatOne Potencia la Seguridad Retail' : 'How KabatOne Powers Retail Security'
+  const capH2 = es ? 'Cómo Kabat One Potencia la Seguridad Retail' : 'How Kabat One Powers Retail Security'
   const capDesc = es
     ? 'Cobertura integral desde la entrada de la tienda hasta la oficina — protegiendo activos mientras genera inteligencia operativa.'
     : 'Comprehensive coverage from store entrance to back office — protecting assets while generating operational intelligence.'
@@ -78,8 +78,8 @@ export default async function RetailPage({
   const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'El Stack de Seguridad Retail' : 'The Retail Security Stack'
   const productsDesc = es
-    ? 'La plataforma modular de KabatOne despliega exactamente lo que tu entorno retail necesita.'
-    : "KabatOne's modular platform deploys exactly what your retail environment needs."
+    ? 'La plataforma modular de Kabat One despliega exactamente lo que tu entorno retail necesita.'
+    : "Kabat One's modular platform deploys exactly what your retail environment needs."
 
   const products = [
     { name: 'K-Video', href: '/k-video' },
@@ -92,8 +92,8 @@ export default async function RetailPage({
     ? 'Asegura Tus Operaciones Retail Hoy'
     : 'Secure Your Retail Operations Today'
   const ctaSub = es
-    ? 'Desde tiendas individuales hasta cadenas nacionales — KabatOne entrega la plataforma de seguridad inteligente que protege activos e impulsa el crecimiento del negocio.'
-    : 'From single stores to nationwide chains — KabatOne delivers the intelligent security platform that protects assets and drives business growth.'
+    ? 'Desde tiendas individuales hasta cadenas nacionales — Kabat One entrega la plataforma de seguridad inteligente que protege activos e impulsa el crecimiento del negocio.'
+    : 'From single stores to nationwide chains — Kabat One delivers the intelligent security platform that protects assets and drives business growth.'
 
   /* ── shared styles ── */
   const sectionStyle = { position: 'relative' as const, zIndex: 10, padding: '80px 0', borderTop: '1px solid var(--border)' }
@@ -104,13 +104,13 @@ export default async function RetailPage({
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
   const retailFaqs = es ? [
-    { question: '¿Cómo protege KabatOne los entornos retail?', answer: 'KabatOne integra CCTV, control de acceso, alarmas e IoT en una sola plataforma que protege activos mientras genera inteligencia de negocio. Utiliza IA para detección de violencia, objetos desatendidos y comportamiento sospechoso.' },
-    { question: '¿Qué analítica de negocio ofrece KabatOne para retail?', answer: 'KabatOne proporciona mapas de calor, analítica de flujo peatonal, conteo de clientes y dashboards operativos que convierten datos de seguridad en ventaja competitiva para retailers.' },
-    { question: '¿Se adapta KabatOne desde tiendas individuales a cadenas nacionales?', answer: 'Sí. La plataforma modular de KabatOne despliega exactamente lo que cada entorno retail necesita, escalando desde tiendas individuales hasta cadenas nacionales con gestión centralizada.' },
+    { question: '¿Cómo protege Kabat One los entornos retail?', answer: 'Kabat One integra CCTV, control de acceso, alarmas e IoT en una sola plataforma que protege activos mientras genera inteligencia de negocio. Utiliza IA para detección de violencia, objetos desatendidos y comportamiento sospechoso.' },
+    { question: '¿Qué analítica de negocio ofrece Kabat One para retail?', answer: 'Kabat One proporciona mapas de calor, analítica de flujo peatonal, conteo de clientes y dashboards operativos que convierten datos de seguridad en ventaja competitiva para retailers.' },
+    { question: '¿Se adapta Kabat One desde tiendas individuales a cadenas nacionales?', answer: 'Sí. La plataforma modular de Kabat One despliega exactamente lo que cada entorno retail necesita, escalando desde tiendas individuales hasta cadenas nacionales con gestión centralizada.' },
   ] : [
-    { question: 'How does KabatOne protect retail environments?', answer: 'KabatOne integrates CCTV, access control, alarms, and IoT into a single platform that protects assets while generating business intelligence. It uses AI for violence detection, unattended objects, and suspicious behavior.' },
-    { question: 'What business analytics does KabatOne offer for retail?', answer: 'KabatOne provides heat maps, foot traffic analytics, customer counting, and operational dashboards that turn security data into competitive advantage for retailers.' },
-    { question: 'Does KabatOne scale from single stores to national chains?', answer: 'Yes. KabatOne\'s modular platform deploys exactly what each retail environment needs, scaling from single stores to nationwide chains with centralized management.' },
+    { question: 'How does Kabat One protect retail environments?', answer: 'Kabat One integrates CCTV, access control, alarms, and IoT into a single platform that protects assets while generating business intelligence. It uses AI for violence detection, unattended objects, and suspicious behavior.' },
+    { question: 'What business analytics does Kabat One offer for retail?', answer: 'Kabat One provides heat maps, foot traffic analytics, customer counting, and operational dashboards that turn security data into competitive advantage for retailers.' },
+    { question: 'Does Kabat One scale from single stores to national chains?', answer: 'Yes. Kabat One\'s modular platform deploys exactly what each retail environment needs, scaling from single stores to nationwide chains with centralized management.' },
   ]
 
   return (
@@ -191,8 +191,8 @@ export default async function RetailPage({
                 </p>
                 <p style={{ fontSize: '16px', fontWeight: 300, color: 'var(--dim)', lineHeight: 1.75, margin: 0 }}>
                   {es
-                    ? 'Los equipos de seguridad retail que usan la analítica conductual de KabatOne detectan incidentes de robo antes de que los artículos salgan de la tienda — alertas proactivas en tiempo real en lugar de revisión reactiva de CCTV.'
-                    : 'Retail security teams using KabatOne\'s behavioral analytics detect shoplifting incidents before items leave the store — proactive real-time alerts instead of reactive CCTV review.'}
+                    ? 'Los equipos de seguridad retail que usan la analítica conductual de Kabat One detectan incidentes de robo antes de que los artículos salgan de la tienda — alertas proactivas en tiempo real en lugar de revisión reactiva de CCTV.'
+                    : 'Retail security teams using Kabat One\'s behavioral analytics detect shoplifting incidents before items leave the store — proactive real-time alerts instead of reactive CCTV review.'}
                 </p>
               </div>
             </div>

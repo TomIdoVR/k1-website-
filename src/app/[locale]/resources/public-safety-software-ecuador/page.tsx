@@ -39,52 +39,52 @@ export default async function PublicSafetySoftwareEcuadorPage({
   const faqs = es ? [
     {
       question: "¿Como funciona el Sistema ECU-911 en Ecuador?",
-      answer: "El ECU-911 (Sistema Integrado de Seguridad ECU-911) es la plataforma nacional de emergencias de Ecuador, operativa desde 2012 y considerada una de las mas avanzadas de America Latina. Unifica la Policia Nacional (~47,000 agentes), Fuerzas Armadas, bomberos municipales, servicios de salud (SNEM/Cruz Roja Ecuatoriana) y otros servicios de emergencia bajo un solo numero nacional: 911. Cuenta con centros de atencion en todas las provincias y opera videovigilancia integrada en las principales ciudades. KabatOne se integra con la infraestructura ONVIF/RTSP del ECU-911, anadiendo CAD estructurado, GIS operacional y analisis de video sobre la plataforma existente.",
+      answer: "El ECU-911 (Sistema Integrado de Seguridad ECU-911) es la plataforma nacional de emergencias de Ecuador, operativa desde 2012 y considerada una de las mas avanzadas de America Latina. Unifica la Policia Nacional (~47,000 agentes), Fuerzas Armadas, bomberos municipales, servicios de salud (SNEM/Cruz Roja Ecuatoriana) y otros servicios de emergencia bajo un solo numero nacional: 911. Cuenta con centros de atencion en todas las provincias y opera videovigilancia integrada en las principales ciudades. Kabat One se integra con la infraestructura ONVIF/RTSP del ECU-911, anadiendo CAD estructurado, GIS operacional y analisis de video sobre la plataforma existente.",
     },
     {
       question: "¿Como se financia la tecnologia de seguridad publica en Ecuador?",
       answer: "El financiamiento proviene del Ministerio del Interior, el Ministerio de Defensa y los gobiernos autonomos descentralizados (GAD) municipales. Las adquisiciones se rigen por el SERCOP (Servicio Nacional de Contratacion Publica) y el portal compraspublicas.gob.ec, donde se publican todas las licitaciones abiertas a empresas extranjeras con representacion local o en consorcio. Organismos internacionales como el BID, CAF, USAID y la UE cofinancian proyectos de modernizacion tecnologica para el ECU-911 y la Policia Nacional.",
     },
     {
-      question: "¿Como aborda KabatOne el alto nivel de inseguridad en Guayaquil y la costa ecuatoriana?",
-      answer: "Guayaquil y las provincias costeras del Guayas, Los Rios y Esmeraldas enfrentan altos indices de criminalidad vinculados al narcotrafico en la ruta Colombia–Ecuador–Peru. KabatOne unifica el video del ECU-911, las UPC (Unidades de Policia Comunitaria), el video municipal de Guayaquil y el sistema portuario de Guayaquil (el mayor puerto de Ecuador) en una sola plataforma: deteccion de disparos, LPR en perimetros urbanos, alertas de cruce de fronteras y despacho policial en tiempo real desde el mismo entorno operativo.",
+      question: "¿Como aborda Kabat One el alto nivel de inseguridad en Guayaquil y la costa ecuatoriana?",
+      answer: "Guayaquil y las provincias costeras del Guayas, Los Rios y Esmeraldas enfrentan altos indices de criminalidad vinculados al narcotrafico en la ruta Colombia–Ecuador–Peru. Kabat One unifica el video del ECU-911, las UPC (Unidades de Policia Comunitaria), el video municipal de Guayaquil y el sistema portuario de Guayaquil (el mayor puerto de Ecuador) en una sola plataforma: deteccion de disparos, LPR en perimetros urbanos, alertas de cruce de fronteras y despacho policial en tiempo real desde el mismo entorno operativo.",
     },
     {
-      question: "¿Puede KabatOne integrarse con la infraestructura de video existente del ECU-911?",
-      answer: "Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del ECU-911 en Quito, Guayaquil, Cuenca, Manta y las 24 provincias se conectan directamente. Camaras municipales del Municipio del Distrito Metropolitano de Quito (MDMQ), del Municipio de Guayaquil, LPR en el aeropuerto Mariscal Sucre (UIO) y el aeropuerto Jose Joaquin de Olmedo (GYE), y el circuito de video del Puerto de Guayaquil (APG) tambien se integran sin cambiar infraestructura.",
+      question: "¿Puede Kabat One integrarse con la infraestructura de video existente del ECU-911?",
+      answer: "Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras del ECU-911 en Quito, Guayaquil, Cuenca, Manta y las 24 provincias se conectan directamente. Camaras municipales del Municipio del Distrito Metropolitano de Quito (MDMQ), del Municipio de Guayaquil, LPR en el aeropuerto Mariscal Sucre (UIO) y el aeropuerto Jose Joaquin de Olmedo (GYE), y el circuito de video del Puerto de Guayaquil (APG) tambien se integran sin cambiar infraestructura.",
     },
     {
-      question: "¿Como apoya KabatOne la coordinacion entre la Policia Nacional y las Fuerzas Armadas en Ecuador?",
-      answer: "Desde 2023, Ecuador declaro emergencia de seguridad y despliega Fuerzas Armadas en apoyo a la Policia Nacional para operaciones anticrimen. KabatOne proporciona un mapa GIS compartido donde unidades policiales y militares son visibles en tiempo real, el despacho ECU-911 puede coordinar respuesta conjunta, y el registro de incidentes es unico para ambas instituciones. Esto elimina la coordinacion solo por radio y reduce tiempos de respuesta en operaciones combinadas.",
+      question: "¿Como apoya Kabat One la coordinacion entre la Policia Nacional y las Fuerzas Armadas en Ecuador?",
+      answer: "Desde 2023, Ecuador declaro emergencia de seguridad y despliega Fuerzas Armadas en apoyo a la Policia Nacional para operaciones anticrimen. Kabat One proporciona un mapa GIS compartido donde unidades policiales y militares son visibles en tiempo real, el despacho ECU-911 puede coordinar respuesta conjunta, y el registro de incidentes es unico para ambas instituciones. Esto elimina la coordinacion solo por radio y reduce tiempos de respuesta en operaciones combinadas.",
     },
     {
-      question: "¿Como se alinea KabatOne con el SERCOP y el portal de compras publicas de Ecuador?",
-      answer: "KabatOne se comercializa a traves de distribuidores e integradores locales registrados ante el SERCOP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de GAD municipales, gobernaciones provinciales y el Ministerio del Interior. Las licitaciones en compraspublicas.gob.ec estan abiertas a empresas extranjeras con representacion local o mediante consorcio con empresa ecuatoriana.",
+      question: "¿Como se alinea Kabat One con el SERCOP y el portal de compras publicas de Ecuador?",
+      answer: "Kabat One se comercializa a traves de distribuidores e integradores locales registrados ante el SERCOP. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los rangos presupuestarios de GAD municipales, gobernaciones provinciales y el Ministerio del Interior. Las licitaciones en compraspublicas.gob.ec estan abiertas a empresas extranjeras con representacion local o mediante consorcio con empresa ecuatoriana.",
     },
   ] : [
     {
       question: "How does Ecuador's ECU-911 system work?",
-      answer: "ECU-911 (Sistema Integrado de Seguridad ECU-911) is Ecuador's national emergency platform, operational since 2012 and considered one of the most advanced in Latin America. It unifies the National Police (~47,000 officers), Armed Forces, municipal fire departments, health services (SNEM/Cruz Roja Ecuatoriana), and other emergency services under one national number: 911. It has response centers in all provinces and operates integrated video surveillance in major cities. KabatOne integrates with ECU-911's ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of the existing platform.",
+      answer: "ECU-911 (Sistema Integrado de Seguridad ECU-911) is Ecuador's national emergency platform, operational since 2012 and considered one of the most advanced in Latin America. It unifies the National Police (~47,000 officers), Armed Forces, municipal fire departments, health services (SNEM/Cruz Roja Ecuatoriana), and other emergency services under one national number: 911. It has response centers in all provinces and operates integrated video surveillance in major cities. Kabat One integrates with ECU-911's ONVIF/RTSP infrastructure, adding structured CAD, operational GIS, and video analytics on top of the existing platform.",
     },
     {
       question: "How does Ecuador fund public safety technology?",
       answer: "Funding comes from the Ministry of the Interior, Ministry of Defense, and decentralized autonomous municipal governments (GADs). Procurement is governed by SERCOP (National Public Procurement Service) and the compraspublicas.gob.ec portal, which publishes all tenders open to foreign firms with local representation or in consortium. International organizations including the IDB, CAF, USAID, and the EU co-finance technology modernization projects for ECU-911 and the National Police.",
     },
     {
-      question: "How does KabatOne address the high crime levels in Guayaquil and the Ecuadorian coast?",
-      answer: "Guayaquil and the coastal provinces of Guayas, Los Rios, and Esmeraldas face high crime rates linked to drug trafficking on the Colombia–Ecuador–Peru corridor. KabatOne unifies ECU-911 video, UPC (Community Police Unit) cameras, Guayaquil municipal video, and the Port of Guayaquil surveillance system — Ecuador's largest port — on one platform: gunshot detection, LPR on urban perimeters, border crossing alerts, and real-time police dispatch from the same operational environment.",
+      question: "How does Kabat One address the high crime levels in Guayaquil and the Ecuadorian coast?",
+      answer: "Guayaquil and the coastal provinces of Guayas, Los Rios, and Esmeraldas face high crime rates linked to drug trafficking on the Colombia–Ecuador–Peru corridor. Kabat One unifies ECU-911 video, UPC (Community Police Unit) cameras, Guayaquil municipal video, and the Port of Guayaquil surveillance system — Ecuador's largest port — on one platform: gunshot detection, LPR on urban perimeters, border crossing alerts, and real-time police dispatch from the same operational environment.",
     },
     {
-      question: "Can KabatOne integrate with Ecuador's existing ECU-911 camera infrastructure?",
-      answer: "Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. ECU-911 cameras in Quito, Guayaquil, Cuenca, Manta, and all 24 provinces connect directly. Municipal cameras from the Quito Metropolitan District Municipality (MDMQ) and Guayaquil Municipality, LPR readers at Mariscal Sucre International Airport (UIO) and Jose Joaquin de Olmedo Airport (GYE), and the Port of Guayaquil (APG) video circuit also integrate without changing infrastructure.",
+      question: "Can Kabat One integrate with Ecuador's existing ECU-911 camera infrastructure?",
+      answer: "Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. ECU-911 cameras in Quito, Guayaquil, Cuenca, Manta, and all 24 provinces connect directly. Municipal cameras from the Quito Metropolitan District Municipality (MDMQ) and Guayaquil Municipality, LPR readers at Mariscal Sucre International Airport (UIO) and Jose Joaquin de Olmedo Airport (GYE), and the Port of Guayaquil (APG) video circuit also integrate without changing infrastructure.",
     },
     {
-      question: "How does KabatOne support coordination between Ecuador's National Police and Armed Forces?",
-      answer: "Since 2023, Ecuador has declared a security emergency and deployed Armed Forces in support of the National Police for anti-crime operations. KabatOne provides a shared GIS map where police and military units are visible in real time, ECU-911 dispatch can coordinate joint responses, and the incident record is unified for both institutions. This eliminates radio-only coordination and reduces response times in combined operations.",
+      question: "How does Kabat One support coordination between Ecuador's National Police and Armed Forces?",
+      answer: "Since 2023, Ecuador has declared a security emergency and deployed Armed Forces in support of the National Police for anti-crime operations. Kabat One provides a shared GIS map where police and military units are visible in real time, ECU-911 dispatch can coordinate joint responses, and the incident record is unified for both institutions. This eliminates radio-only coordination and reduces response times in combined operations.",
     },
     {
-      question: "How does KabatOne align with SERCOP and Ecuador's public procurement portal?",
-      answer: "KabatOne is marketed through local distributors and integrators registered with SERCOP. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipal GADs, provincial governments, and the Ministry of the Interior. Tenders on compraspublicas.gob.ec are open to foreign firms with local representation or through consortium with an Ecuadorian company.",
+      question: "How does Kabat One align with SERCOP and Ecuador's public procurement portal?",
+      answer: "Kabat One is marketed through local distributors and integrators registered with SERCOP. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to the budget ranges of municipal GADs, provincial governments, and the Ministry of the Interior. Tenders on compraspublicas.gob.ec are open to foreign firms with local representation or through consortium with an Ecuadorian company.",
     },
   ]
 
@@ -566,8 +566,8 @@ export default async function PublicSafetySoftwareEcuadorPage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipalidad o Canton en Ecuador' : 'Transform Public Safety in Your Ecuadorian Municipality or Canton'}
           subtitle={es
-            ? 'Conoce como KabatOne integra el ECU-911, videovigilancia municipal, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipalidades ecuatorianas — desde Quito y Guayaquil hasta los cantones de la costa, la sierra y la Amazonia.'
-            : 'See how KabatOne unifies ECU-911, municipal video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Ecuadorian municipalities — from Quito and Guayaquil to cantones across the coast, highlands, and Amazon.'}
+            ? 'Conoce como Kabat One integra el ECU-911, videovigilancia municipal, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipalidades ecuatorianas — desde Quito y Guayaquil hasta los cantones de la costa, la sierra y la Amazonia.'
+            : 'See how Kabat One unifies ECU-911, municipal video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Ecuadorian municipalities — from Quito and Guayaquil to cantones across the coast, highlands, and Amazon.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

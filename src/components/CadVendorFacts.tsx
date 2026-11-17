@@ -2,7 +2,7 @@ import { Link } from '@/i18n/navigation'
 import { VENDOR_SUMMARY, VENDOR_FACTS } from '@/content/cad-vendor-facts'
 
 /* "Vendor profile" block for C5 and CAD resource pages (CAD plan item #16): one answer-first
-   paragraph naming KabatOne and K-Dispatch, then the criteria buyers compare as a
+   paragraph naming Kabat One and K-Dispatch, then the criteria buyers compare as a
    definition list, so an engine quoting the page has a vendor to name. Facts come from
    src/content/cad-vendor-facts.ts. */
 

@@ -221,9 +221,9 @@ export default async function Ng911SoftwarePage({
           <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(34,211,238,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
             <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
               {es ? (
-                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) es software que traslada el sistema de emergencias 9-1-1 de la red telefónica analógica (PSTN) a una arquitectura IP moderna (ESInet), permitiendo que el PSAP reciba texto, video, ubicación de alta precisión y datos de sensores además de voz.</strong> Sigue el estándar i3 de NENA. Su valor operativo real aparece cuando esos datos multimedia llegan al despacho: K-Dispatch de KabatOne consume flujos NG911/ESInet y los convierte en incidentes accionables en el mapa CAD, uniendo la llamada con las unidades en campo y las cámaras del centro de mando.</>
+                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) es software que traslada el sistema de emergencias 9-1-1 de la red telefónica analógica (PSTN) a una arquitectura IP moderna (ESInet), permitiendo que el PSAP reciba texto, video, ubicación de alta precisión y datos de sensores además de voz.</strong> Sigue el estándar i3 de NENA. Su valor operativo real aparece cuando esos datos multimedia llegan al despacho: K-Dispatch de Kabat One consume flujos NG911/ESInet y los convierte en incidentes accionables en el mapa CAD, uniendo la llamada con las unidades en campo y las cámaras del centro de mando.</>
               ) : (
-                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) is software that moves the 9-1-1 emergency system off the analog telephone network (PSTN) and onto a modern IP architecture (ESInet), letting the PSAP receive text, video, high-precision location, and sensor data alongside voice.</strong> It follows NENA&apos;s i3 standard. Its real operational value shows up at dispatch: KabatOne&apos;s K-Dispatch consumes NG911/ESInet feeds and turns them into actionable incidents on the CAD map, tying the call to field units and command-center cameras.</>
+                <><strong style={{ color: '#f0f4f8' }}>NG911 (Next Generation 911) is software that moves the 9-1-1 emergency system off the analog telephone network (PSTN) and onto a modern IP architecture (ESInet), letting the PSAP receive text, video, high-precision location, and sensor data alongside voice.</strong> It follows NENA&apos;s i3 standard. Its real operational value shows up at dispatch: Kabat One&apos;s K-Dispatch consumes NG911/ESInet feeds and turns them into actionable incidents on the CAD map, tying the call to field units and command-center cameras.</>
               )}
             </p>
           </div>
@@ -343,8 +343,8 @@ export default async function Ng911SoftwarePage({
               { href: '/resources/best-cad-dispatch-software', label: es ? 'Mejor Software CAD' : 'Best CAD Dispatch Software' },
               { href: '/resources/911-call-center-software-guide', label: es ? 'Software para Centro de Llamadas 911' : '911 Call Center Software' },
               { href: '/resources/what-is-emergency-dispatch-software', label: es ? 'Software de Despacho de Emergencias' : 'Emergency Dispatch Software' },
-              { href: '/vs/carbyne', label: es ? 'KabatOne vs Carbyne' : 'KabatOne vs Carbyne' },
-              { href: '/vs/prepared911', label: es ? 'KabatOne vs Prepared 911' : 'KabatOne vs Prepared 911' },
+              { href: '/vs/carbyne', label: es ? 'Kabat One vs Carbyne' : 'Kabat One vs Carbyne' },
+              { href: '/vs/prepared911', label: es ? 'Kabat One vs Prepared 911' : 'Kabat One vs Prepared 911' },
               { href: '/k-dispatch', label: es ? 'K-Dispatch — CAD para Emergencias' : 'K-Dispatch — Emergency CAD' },
             ].map((r) => (
               <Link key={r.href} href={r.href} style={{ fontSize: '12px', color: '#64748b', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', padding: '6px 12px', textDecoration: 'none' }}>

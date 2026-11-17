@@ -15,14 +15,14 @@ export async function generateMetadata({
     locale,
     ogImage: '/og-default.png',
     en: {
-      title: 'Scenario Explorer | KabatOne Platform',
+      title: 'Scenario Explorer | Kabat One Platform',
       description:
-        "Walk through real public safety scenarios and see how KabatOne's unified platform handles incidents end-to-end.",
+        "Walk through real public safety scenarios and see how Kabat One's unified platform handles incidents end-to-end.",
     },
     es: {
-      title: 'Explorador de Escenarios | Plataforma KabatOne',
+      title: 'Explorador de Escenarios | Plataforma Kabat One',
       description:
-        'Recorre escenarios reales de seguridad pública y descubre cómo la plataforma unificada de KabatOne gestiona incidentes de principio a fin.',
+        'Recorre escenarios reales de seguridad pública y descubre cómo la plataforma unificada de Kabat One gestiona incidentes de principio a fin.',
     },
   })
 }
@@ -504,7 +504,7 @@ export default async function DemoHubPage({ params }: { params: Promise<{ locale
           }}
         >
           <span style={{ color: '#475569' }}>
-            © 2025 KabatOne Command &amp; Control. All Systems Operational.
+            © 2025 Kabat One Command &amp; Control. All Systems Operational.
           </span>
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             <Link

@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with the South African Police Service (SAPS) structure?",
-    answer: "KabatOne aligns with SAPS's command structure across 9 provincial commissioners, 145 police districts, 1,150+ police stations, and the National Commissioner headquarters in Pretoria — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with SAPS CIMAC (Crime Intelligence Management and Analysis Centre) and 10111 command centre protocols."
+    question: "How does Kabat One integrate with the South African Police Service (SAPS) structure?",
+    answer: "Kabat One aligns with SAPS's command structure across 9 provincial commissioners, 145 police districts, 1,150+ police stations, and the National Commissioner headquarters in Pretoria — providing unified CAD dispatch, real-time situational awareness, and reporting compatible with SAPS CIMAC (Crime Intelligence Management and Analysis Centre) and 10111 command centre protocols."
   },
   {
-    question: "Can KabatOne support SAPS, Metro Police, and Municipal Police integration?",
-    answer: "Yes. KabatOne integrates SAPS with Metro Police Services (Johannesburg Metro Police JMPD, Tshwane Metro Police TMPD, Cape Town Metro Police CTMPD, eThekwini Metro Police) and Municipal Police Services — enabling unified command visibility, cross-jurisdictional dispatch, and incident management across all policing layers."
+    question: "Can Kabat One support SAPS, Metro Police, and Municipal Police integration?",
+    answer: "Yes. Kabat One integrates SAPS with Metro Police Services (Johannesburg Metro Police JMPD, Tshwane Metro Police TMPD, Cape Town Metro Police CTMPD, eThekwini Metro Police) and Municipal Police Services — enabling unified command visibility, cross-jurisdictional dispatch, and incident management across all policing layers."
   },
   {
-    question: "How does KabatOne handle POPIA (Protection of Personal Information Act) compliance?",
-    answer: "KabatOne is designed for full POPIA (Act 4 of 2013, enforced from July 2021) compliance — implementing data subject rights (access, correction, deletion), lawful processing conditions, mandatory breach notification to the Information Regulator within 72 hours, Data Protection Impact Assessments, and Information Officer accountability frameworks."
+    question: "How does Kabat One handle POPIA (Protection of Personal Information Act) compliance?",
+    answer: "Kabat One is designed for full POPIA (Act 4 of 2013, enforced from July 2021) compliance — implementing data subject rights (access, correction, deletion), lawful processing conditions, mandatory breach notification to the Information Regulator within 72 hours, Data Protection Impact Assessments, and Information Officer accountability frameworks."
   },
   {
-    question: "Can KabatOne support Disaster Management Act operations including NDMC coordination?",
-    answer: "Yes. KabatOne integrates the National Disaster Management Centre (NDMC), Provincial Disaster Management Centres (PDMCs), South African Weather Service (SAWS) alerts, and SADC Early Warning systems — supporting flood response (KwaZulu-Natal 2022 floods: 450+ deaths), fire management, and drought operations across all 9 provinces."
+    question: "Can Kabat One support Disaster Management Act operations including NDMC coordination?",
+    answer: "Yes. Kabat One integrates the National Disaster Management Centre (NDMC), Provincial Disaster Management Centres (PDMCs), South African Weather Service (SAWS) alerts, and SADC Early Warning systems — supporting flood response (KwaZulu-Natal 2022 floods: 450+ deaths), fire management, and drought operations across all 9 provinces."
   },
   {
-    question: "How does KabatOne support Johannesburg, Cape Town, and Durban City Safety operations?",
-    answer: "KabatOne integrates City of Johannesburg CCTV Command Centre, Cape Town Law Enforcement cameras, eThekwini CCTV surveillance, and Tshwane Safe City cameras — providing AI-powered analytics, ANPR on national highways (SANRAL e-NATIS), and unified command visibility for South Africa's major metros."
+    question: "How does Kabat One support Johannesburg, Cape Town, and Durban City Safety operations?",
+    answer: "Kabat One integrates City of Johannesburg CCTV Command Centre, Cape Town Law Enforcement cameras, eThekwini CCTV surveillance, and Tshwane Safe City cameras — providing AI-powered analytics, ANPR on national highways (SANRAL e-NATIS), and unified command visibility for South Africa's major metros."
   },
   {
-    question: "What cybersecurity standards does KabatOne meet for South African government procurement?",
-    answer: "KabatOne aligns with the Cybercrimes Act 19 of 2020, SITA (State Information Technology Agency) security standards, DPSA (Department of Public Service and Administration) ICT guidelines, and CSIRT-vGov requirements — meeting technical specifications for national and provincial government ICT procurement."
+    question: "What cybersecurity standards does Kabat One meet for South African government procurement?",
+    answer: "Kabat One aligns with the Cybercrimes Act 19 of 2020, SITA (State Information Technology Agency) security standards, DPSA (Department of Public Service and Administration) ICT guidelines, and CSIRT-vGov requirements — meeting technical specifications for national and provincial government ICT procurement."
   },
   {
-    question: "What procurement pathway does KabatOne support in South Africa?",
-    answer: "KabatOne supports procurement through the Central Supplier Database (CSD) and Government Tender Bulletin under PFMA (Public Finance Management Act, 1999), MFMA (Municipal Finance Management Act), National Treasury SCM regulations, and CIDB (Construction Industry Development Board) for integrated infrastructure projects."
+    question: "What procurement pathway does Kabat One support in South Africa?",
+    answer: "Kabat One supports procurement through the Central Supplier Database (CSD) and Government Tender Bulletin under PFMA (Public Finance Management Act, 1999), MFMA (Municipal Finance Management Act), National Treasury SCM regulations, and CIDB (Construction Industry Development Board) for integrated infrastructure projects."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la estructura del Servicio de Policía de Sudáfrica (SAPS)?",
-    answer: "KabatOne se alinea con la estructura de mando de la SAPS en 9 comisarios provinciales, 145 distritos policiales, más de 1,150 estaciones de policía y el cuartel general del Comisario Nacional en Pretoria — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con CIMAC y los protocolos del centro de mando 10111."
+    question: "¿Cómo se integra Kabat One con la estructura del Servicio de Policía de Sudáfrica (SAPS)?",
+    answer: "Kabat One se alinea con la estructura de mando de la SAPS en 9 comisarios provinciales, 145 distritos policiales, más de 1,150 estaciones de policía y el cuartel general del Comisario Nacional en Pretoria — proporcionando despacho CAD unificado, conciencia situacional en tiempo real y reportes compatibles con CIMAC y los protocolos del centro de mando 10111."
   },
   {
-    question: "¿Puede KabatOne soportar la integración de SAPS, Policía Metropolitana y Municipal?",
-    answer: "Sí. KabatOne integra la SAPS con los Servicios de Policía Metropolitana (JMPD de Johannesburgo, TMPD de Tshwane, CTMPD de Ciudad del Cabo, Policía Metropolitana de eThekwini) y Servicios de Policía Municipal — habilitando visibilidad de mando unificada, despacho interjurisdiccional y gestión de incidentes en todas las capas policiales."
+    question: "¿Puede Kabat One soportar la integración de SAPS, Policía Metropolitana y Municipal?",
+    answer: "Sí. Kabat One integra la SAPS con los Servicios de Policía Metropolitana (JMPD de Johannesburgo, TMPD de Tshwane, CTMPD de Ciudad del Cabo, Policía Metropolitana de eThekwini) y Servicios de Policía Municipal — habilitando visibilidad de mando unificada, despacho interjurisdiccional y gestión de incidentes en todas las capas policiales."
   },
   {
-    question: "¿Cómo gestiona KabatOne el cumplimiento de POPIA (Ley de Protección de Información Personal)?",
-    answer: "KabatOne está diseñado para cumplimiento total con POPIA (Ley 4 de 2013, en vigor desde julio de 2021) — implementando derechos del titular de datos, condiciones de procesamiento lícito, notificación obligatoria de brechas al Regulador de Información en 72h, Evaluaciones de Impacto en Protección de Datos y marcos de responsabilidad del Oficial de Información."
+    question: "¿Cómo gestiona Kabat One el cumplimiento de POPIA (Ley de Protección de Información Personal)?",
+    answer: "Kabat One está diseñado para cumplimiento total con POPIA (Ley 4 de 2013, en vigor desde julio de 2021) — implementando derechos del titular de datos, condiciones de procesamiento lícito, notificación obligatoria de brechas al Regulador de Información en 72h, Evaluaciones de Impacto en Protección de Datos y marcos de responsabilidad del Oficial de Información."
   },
   {
-    question: "¿Puede KabatOne soportar operaciones de la Ley de Gestión de Desastres incluyendo la coordinación del NDMC?",
-    answer: "Sí. KabatOne integra el Centro Nacional de Gestión de Desastres (NDMC), Centros Provinciales de Gestión de Desastres (PDMC), alertas del Servicio Meteorológico de Sudáfrica (SAWS) y sistemas de alerta temprana de la SADC — apoyando la respuesta ante inundaciones (KwaZulu-Natal 2022: 450+ fallecidos) y gestión de incendios en las 9 provincias."
+    question: "¿Puede Kabat One soportar operaciones de la Ley de Gestión de Desastres incluyendo la coordinación del NDMC?",
+    answer: "Sí. Kabat One integra el Centro Nacional de Gestión de Desastres (NDMC), Centros Provinciales de Gestión de Desastres (PDMC), alertas del Servicio Meteorológico de Sudáfrica (SAWS) y sistemas de alerta temprana de la SADC — apoyando la respuesta ante inundaciones (KwaZulu-Natal 2022: 450+ fallecidos) y gestión de incendios en las 9 provincias."
   },
   {
-    question: "¿Cómo soporta KabatOne las operaciones de seguridad urbana de Johannesburgo, Ciudad del Cabo y Durban?",
-    answer: "KabatOne integra el Centro de Mando CCTV de la Ciudad de Johannesburgo, cámaras de Aplicación de la Ley de Ciudad del Cabo, vigilancia CCTV de eThekwini y cámaras Safe City de Tshwane — proporcionando analítica de IA, ANPR en autopistas nacionales (SANRAL e-NATIS) y visibilidad de mando unificada."
+    question: "¿Cómo soporta Kabat One las operaciones de seguridad urbana de Johannesburgo, Ciudad del Cabo y Durban?",
+    answer: "Kabat One integra el Centro de Mando CCTV de la Ciudad de Johannesburgo, cámaras de Aplicación de la Ley de Ciudad del Cabo, vigilancia CCTV de eThekwini y cámaras Safe City de Tshwane — proporcionando analítica de IA, ANPR en autopistas nacionales (SANRAL e-NATIS) y visibilidad de mando unificada."
   },
   {
-    question: "¿Qué estándares de ciberseguridad cumple KabatOne para la contratación gubernamental en Sudáfrica?",
-    answer: "KabatOne se alinea con la Ley de Ciberdelitos 19 de 2020, estándares de seguridad de la SITA (Agencia de Tecnología de la Información del Estado), directrices TIC del DPSA y requisitos CSIRT-vGov — cumpliendo especificaciones técnicas para contratación TIC de gobierno nacional y provincial."
+    question: "¿Qué estándares de ciberseguridad cumple Kabat One para la contratación gubernamental en Sudáfrica?",
+    answer: "Kabat One se alinea con la Ley de Ciberdelitos 19 de 2020, estándares de seguridad de la SITA (Agencia de Tecnología de la Información del Estado), directrices TIC del DPSA y requisitos CSIRT-vGov — cumpliendo especificaciones técnicas para contratación TIC de gobierno nacional y provincial."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Sudáfrica?",
-    answer: "KabatOne soporta contratación a través de la Base de Datos Central de Proveedores (CSD) y el Boletín de Licitaciones del Gobierno bajo la PFMA (Ley de Gestión de Finanzas Públicas, 1999), MFMA (Ley de Gestión de Finanzas Municipales), regulaciones SCM del Tesoro Nacional y CIDB para proyectos de infraestructura integrada."
+    question: "¿Qué vía de contratación soporta Kabat One en Sudáfrica?",
+    answer: "Kabat One soporta contratación a través de la Base de Datos Central de Proveedores (CSD) y el Boletín de Licitaciones del Gobierno bajo la PFMA (Ley de Gestión de Finanzas Públicas, 1999), MFMA (Ley de Gestión de Finanzas Municipales), regulaciones SCM del Tesoro Nacional y CIDB para proyectos de infraestructura integrada."
   }
 ]
 
@@ -263,7 +263,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• CSD/GTB: licitaciones SAPS, SITA, NDMC, Metro Police' : '• CSD/GTB: SAPS, SITA, NDMC, Metro Police tenders'}</li>
@@ -297,8 +297,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Sudáfrica?' : 'Ready to modernize public safety in South Africa?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la SAPS, Metro Police y NDMC con una plataforma unificada conforme a POPIA/Regulador de Información y compatible con CSD/PFMA.'
-            : 'See how KabatOne supports SAPS, Metro Police, and NDMC with a unified platform compliant with POPIA/Information Regulator and compatible with CSD/PFMA procurement.'}
+            ? 'Conozca cómo Kabat One apoya a la SAPS, Metro Police y NDMC con una plataforma unificada conforme a POPIA/Regulador de Información y compatible con CSD/PFMA.'
+            : 'See how Kabat One supports SAPS, Metro Police, and NDMC with a unified platform compliant with POPIA/Information Regulator and compatible with CSD/PFMA procurement.'}
         />
       </main>
       <Footer es={es} />

@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareBurundiPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Burundi | FDN/PNB, Lago Tanganica, AMISOM/ATMIS y Gestión de Crisis – KabatOne"
-    : "Public Safety Software for Burundi | FDN/PNB, Lake Tanganyika, AMISOM/ATMIS & Crisis Management – KabatOne";
+    ? "Software de Seguridad Pública para Burundi | FDN/PNB, Lago Tanganica, AMISOM/ATMIS y Gestión de Crisis – Kabat One"
+    : "Public Safety Software for Burundi | FDN/PNB, Lake Tanganyika, AMISOM/ATMIS & Crisis Management – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para la Fuerza de Defensa Nacional de Burundi (FDN), Policía Nacional, misiones de paz de la UA, control del Lago Tanganica y gestión de crisis en una de las regiones más volátiles de los Grandes Lagos."
-    : "KabatOne delivers public safety platform for Burundi's National Defence Force (FDN), National Police, AU peacekeeping missions, Lake Tanganyika monitoring, and crisis management in one of the Great Lakes' most volatile regions.";
+    ? "Kabat One entrega plataforma de seguridad pública para la Fuerza de Defensa Nacional de Burundi (FDN), Policía Nacional, misiones de paz de la UA, control del Lago Tanganica y gestión de crisis en una de las regiones más volátiles de los Grandes Lagos."
+    : "Kabat One delivers public safety platform for Burundi's National Defence Force (FDN), National Police, AU peacekeeping missions, Lake Tanganyika monitoring, and crisis management in one of the Great Lakes' most volatile regions.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-burundi"
     : "https://kabatone.com/resources/public-safety-software-burundi";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareBurundiPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Burundi?"
-        : "How does KabatOne support public safety in Burundi?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Burundi?"
+        : "How does Kabat One support public safety in Burundi?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FDN/PNB en las 18 provincias. Los módulos de seguridad lacustre monitorean el Lago Tanganica, el Puerto de Bujumbura y los movimientos de milicias transfronterizas DRC/Burundi. El sistema de gestión de fronteras cubre los 900 km de frontera con DRC y los cruces con Tanzania/Rwanda. Los módulos de gestión de crisis coordinan la respuesta humanitaria (ACNUR, OCHA, WFP). La arquitectura es adaptable a entornos de baja conectividad para zonas rurales."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FDN/PNB operations across all 18 provinces. Lake security modules monitor Lake Tanganyika, Port of Bujumbura, and cross-border militia movements DRC/Burundi. Border management system covers the 900 km DRC border and crossings with Tanzania/Rwanda. Crisis management modules coordinate humanitarian response (UNHCR, OCHA, WFP). Architecture adapts to low-connectivity environments for rural areas.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FDN/PNB en las 18 provincias. Los módulos de seguridad lacustre monitorean el Lago Tanganica, el Puerto de Bujumbura y los movimientos de milicias transfronterizas DRC/Burundi. El sistema de gestión de fronteras cubre los 900 km de frontera con DRC y los cruces con Tanzania/Rwanda. Los módulos de gestión de crisis coordinan la respuesta humanitaria (ACNUR, OCHA, WFP). La arquitectura es adaptable a entornos de baja conectividad para zonas rurales."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FDN/PNB operations across all 18 provinces. Lake security modules monitor Lake Tanganyika, Port of Bujumbura, and cross-border militia movements DRC/Burundi. Border management system covers the 900 km DRC border and crossings with Tanzania/Rwanda. Crisis management modules coordinate humanitarian response (UNHCR, OCHA, WFP). Architecture adapts to low-connectivity environments for rural areas.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareBurundiPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Burundi" : "KabatOne Capabilities for Burundi"}
+              {es ? "Capacidades Kabat One para Burundi" : "Kabat One Capabilities for Burundi"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

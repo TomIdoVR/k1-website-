@@ -50,16 +50,16 @@ export default async function PublicSafetySoftwareChilePage({
       answer: 'Los municipios chilenos operan sus propios sistemas CCTV financiados por FNDR, separados de las camaras y sistemas de despacho de Carabineros. Una plataforma unificada conecta ambas infraestructuras sin reemplazar el hardware existente — cualquier camara ONVIF/RTSP se integra directamente, creando una vista operacional compartida entre el municipio y la comisaria local.',
     },
     {
-      question: '¿Puede KabatOne integrarse con la infraestructura de camaras existente en Chile?',
-      answer: 'Si. KabatOne integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras financiadas por FNDR instaladas en municipios chilenos se conectan directamente a la plataforma. Los paneles de control de acceso, lectores LPR y sensores existentes tambien se integran sin cambiar infraestructura.',
+      question: '¿Puede Kabat One integrarse con la infraestructura de camaras existente en Chile?',
+      answer: 'Si. Kabat One integra cualquier camara ONVIF/RTSP sin reemplazo de hardware. Las camaras financiadas por FNDR instaladas en municipios chilenos se conectan directamente a la plataforma. Los paneles de control de acceso, lectores LPR y sensores existentes tambien se integran sin cambiar infraestructura.',
     },
     {
-      question: '¿Como apoya KabatOne la coordinacion entre Carabineros y la seguridad municipal?',
+      question: '¿Como apoya Kabat One la coordinacion entre Carabineros y la seguridad municipal?',
       answer: 'K-Safety proporciona un mapa GIS compartido donde tanto los operadores municipales como los comandos de Carabineros ven posiciones de unidades, incidentes activos y feeds de video en tiempo real. K-Dispatch unifica el despacho 133/SAMU en un solo sistema, y K-Video centraliza el video municipal y las camaras privadas compartidas en una interfaz VMS con busqueda por zona y fecha.',
     },
     {
-      question: '¿Como se alinea KabatOne con ChileCompra y los procesos de licitacion chilenos?',
-      answer: 'KabatOne se comercializa a traves de distribuidores e integradores locales con registro en ChileCompra. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios municipales y a los requisitos de licitacion del Mercado Publico.',
+      question: '¿Como se alinea Kabat One con ChileCompra y los procesos de licitacion chilenos?',
+      answer: 'Kabat One se comercializa a traves de distribuidores e integradores locales con registro en ChileCompra. La arquitectura modular permite licitar por componente (K-Video, K-Dispatch, K-Safety) o como plataforma unificada, adaptandose a los marcos presupuestarios municipales y a los requisitos de licitacion del Mercado Publico.',
     },
   ] : [
     {
@@ -75,16 +75,16 @@ export default async function PublicSafetySoftwareChilePage({
       answer: 'Chilean municipalities operate their own FNDR-funded CCTV systems, separate from Carabineros cameras and dispatch infrastructure. A unified platform connects both infrastructures without replacing existing hardware — any ONVIF/RTSP camera integrates directly, creating a shared operational view between the municipality and the local comisaría.',
     },
     {
-      question: 'Can KabatOne integrate with existing camera infrastructure in Chile?',
-      answer: 'Yes. KabatOne integrates any ONVIF/RTSP camera without hardware replacement. FNDR-funded cameras installed across Chilean municipalities connect directly to the platform. Existing access control panels, LPR readers, and sensors also integrate without changing infrastructure.',
+      question: 'Can Kabat One integrate with existing camera infrastructure in Chile?',
+      answer: 'Yes. Kabat One integrates any ONVIF/RTSP camera without hardware replacement. FNDR-funded cameras installed across Chilean municipalities connect directly to the platform. Existing access control panels, LPR readers, and sensors also integrate without changing infrastructure.',
     },
     {
-      question: 'How does KabatOne support coordination between Carabineros and municipal security?',
+      question: 'How does Kabat One support coordination between Carabineros and municipal security?',
       answer: 'K-Safety provides a shared GIS map where both municipal operators and Carabineros command posts see unit positions, active incidents, and live video feeds in real time. K-Dispatch unifies 133/SAMU intake into one system, and K-Video centralizes municipal and privately shared cameras in a searchable VMS with zone and date-based search.',
     },
     {
-      question: 'How does KabatOne align with ChileCompra and Chilean procurement processes?',
-      answer: 'KabatOne is marketed through local distributors and integrators registered on ChileCompra. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal budget frameworks and Mercado Público procurement requirements.',
+      question: 'How does Kabat One align with ChileCompra and Chilean procurement processes?',
+      answer: 'Kabat One is marketed through local distributors and integrators registered on ChileCompra. The modular architecture allows tendering by component (K-Video, K-Dispatch, K-Safety) or as a unified platform, adapting to municipal budget frameworks and Mercado Público procurement requirements.',
     },
   ]
 
@@ -567,8 +567,8 @@ export default async function PublicSafetySoftwareChilePage({
           es={es}
           h2={es ? 'Transforma la Seguridad Publica de Tu Municipio en Chile' : 'Transform Public Safety in Your Chilean Municipality'}
           subtitle={es
-            ? 'Conoce como KabatOne integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios y gobiernos regionales chilenos.'
-            : 'See how KabatOne unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Chilean municipalities and regional governments.'}
+            ? 'Conoce como Kabat One integra videovigilancia, despacho de emergencias, GIS y gestion de incidentes en una sola plataforma operativa para municipios y gobiernos regionales chilenos.'
+            : 'See how Kabat One unifies video surveillance, emergency dispatch, GIS, and incident management into one operational platform for Chilean municipalities and regional governments.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

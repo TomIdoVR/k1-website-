@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
       answer: 'Corea del Sur tiene una de las infraestructuras de CCTV per cápita más densas del mundo. Seoul opera más de 60,000 cámaras CCTV gestionadas desde el Centro de Control Integrado de CCTV de Seoul (서울시 통합관제센터), accesibles por la policía y los servicios de emergencias. Las 18 agencias de policía de Sido gestionan sus propias redes de cámaras de vigilancia policial. Los centros de control integrados (통합관제센터) municipales son el modelo estándar coreano para la gestión unificada de video, tráfico y seguridad pública. El sistema ANPR nacional conecta las cámaras de tráfico con la base de datos de vehículos robados y personas buscadas de la KNP. La videoanalítica con IA — detección de comportamientos sospechosos, reconocimiento facial en entornos específicos, gestión de multitudes en eventos masivos (K-League, K-Pop conciertos) — está regulada por la PIPC.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la KNP, el NFS y los centros de control integrados de Corea del Sur?',
-      answer: 'KabatOne integra las funciones que la Agencia Nacional de Policía (KNP), el Servicio Nacional de Bomberos (NFS) y los Centros de Control Integrado municipales de Corea del Sur gestionan a través de sistemas separados: despacho CAD unificado para el sistema 112 integrado con clasificación automática de incidentes y asignación de recursos por IA (K-Dispatch), gestión de redes de CCTV municipales y policiales con analítica de IA — LPR/ANPR, detección de comportamientos, búsqueda forense — conforme a la PIPA y las directrices de la PIPC (K-Video), y conciencia situacional GIS compartida entre policía, bomberos y gobierno municipal (K-Safety). Certificación CSAP y despliegue on-premises o cloud coreano. Integración con KONEPS para licitaciones. Demo adaptada al modelo de Centros de Situaciones 112 y Smart Safety City de Corea del Sur.',
+      question: '¿Por qué Kabat One es adecuado para la KNP, el NFS y los centros de control integrados de Corea del Sur?',
+      answer: 'Kabat One integra las funciones que la Agencia Nacional de Policía (KNP), el Servicio Nacional de Bomberos (NFS) y los Centros de Control Integrado municipales de Corea del Sur gestionan a través de sistemas separados: despacho CAD unificado para el sistema 112 integrado con clasificación automática de incidentes y asignación de recursos por IA (K-Dispatch), gestión de redes de CCTV municipales y policiales con analítica de IA — LPR/ANPR, detección de comportamientos, búsqueda forense — conforme a la PIPA y las directrices de la PIPC (K-Video), y conciencia situacional GIS compartida entre policía, bomberos y gobierno municipal (K-Safety). Certificación CSAP y despliegue on-premises o cloud coreano. Integración con KONEPS para licitaciones. Demo adaptada al modelo de Centros de Situaciones 112 y Smart Safety City de Corea del Sur.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
       answer: 'South Korea has one of the densest per-capita CCTV infrastructures in the world. Seoul operates over 60,000 CCTV cameras managed from the Seoul Integrated CCTV Control Centre (서울시 통합관제센터), accessible by police and emergency services. The 18 Sido police agencies manage their own police surveillance camera networks. Municipal integrated control centres (통합관제센터) are the standard Korean model for unified video, traffic, and public safety management. The national ANPR system connects traffic cameras with the KNP\'s stolen vehicle and wanted persons database. AI video analytics — suspicious behaviour detection, facial recognition in specific contexts, crowd management for mass events (K-League, K-Pop concerts) — are regulated by the PIPC.',
     },
     {
-      question: 'Why is KabatOne suited for South Korea\'s KNP, NFS, and integrated control centres?',
-      answer: 'KabatOne integrates the functions that the Korean National Police Agency (KNP), National Fire Service (NFS), and municipal Integrated Control Centres manage through separate systems: unified CAD dispatch for the integrated 112 system with automatic incident classification and AI-driven resource assignment (K-Dispatch), municipal and police CCTV network management with AI analytics — LPR/ANPR, behavioural detection, forensic search — compliant with PIPA and PIPC guidelines (K-Video), and shared GIS situational awareness across police, fire, and municipal government (K-Safety). CSAP-certified on-premises or Korean cloud deployment. KONEPS procurement integration. Demo tailored to South Korea\'s 112 Situation Centre and Smart Safety City models.',
+      question: 'Why is Kabat One suited for South Korea\'s KNP, NFS, and integrated control centres?',
+      answer: 'Kabat One integrates the functions that the Korean National Police Agency (KNP), National Fire Service (NFS), and municipal Integrated Control Centres manage through separate systems: unified CAD dispatch for the integrated 112 system with automatic incident classification and AI-driven resource assignment (K-Dispatch), municipal and police CCTV network management with AI analytics — LPR/ANPR, behavioural detection, forensic search — compliant with PIPA and PIPC guidelines (K-Video), and shared GIS situational awareness across police, fire, and municipal government (K-Safety). CSAP-certified on-premises or Korean cloud deployment. KONEPS procurement integration. Demo tailored to South Korea\'s 112 Situation Centre and Smart Safety City models.',
     },
   ]
 
@@ -155,8 +155,8 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Corea del Sur es el referente mundial del despacho unificado — el número 112 integra policía, bomberos y EMS desde 2014 en 18 Centros de Situaciones provinciales. Seoul gestiona 60,000+ cámaras CCTV desde centros integrados. El programa Smart Safety City del MOIS y el proyecto Policing 4.0 de la KNP están modernizando toda la infraestructura de seguridad pública. KabatOne unifica el despacho CAD 112, la gestión de CCTV con IA y la conciencia situacional GIS bajo cumplimiento PIPA y certificación CSAP.'
-                : 'South Korea is the global benchmark for unified dispatch — the 112 number has integrated police, fire, and EMS since 2014 across 18 provincial Situation Centres. Seoul manages 60,000+ CCTV cameras from integrated control centres. The MOIS Smart Safety City programme and the KNP\'s Policing 4.0 project are modernising the entire public safety infrastructure. KabatOne unifies 112 CAD dispatch, AI CCTV management, and GIS situational awareness under PIPA compliance and CSAP certification.'}
+                ? 'Corea del Sur es el referente mundial del despacho unificado — el número 112 integra policía, bomberos y EMS desde 2014 en 18 Centros de Situaciones provinciales. Seoul gestiona 60,000+ cámaras CCTV desde centros integrados. El programa Smart Safety City del MOIS y el proyecto Policing 4.0 de la KNP están modernizando toda la infraestructura de seguridad pública. Kabat One unifica el despacho CAD 112, la gestión de CCTV con IA y la conciencia situacional GIS bajo cumplimiento PIPA y certificación CSAP.'
+                : 'South Korea is the global benchmark for unified dispatch — the 112 number has integrated police, fire, and EMS since 2014 across 18 provincial Situation Centres. Seoul manages 60,000+ CCTV cameras from integrated control centres. The MOIS Smart Safety City programme and the KNP\'s Policing 4.0 project are modernising the entire public safety infrastructure. Kabat One unifies 112 CAD dispatch, AI CCTV management, and GIS situational awareness under PIPA compliance and CSAP certification.'}
             </p>
           </div>
         </section>
@@ -199,14 +199,14 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de la KNP, el NFS y los Centros Integrados de Corea del Sur' : 'How KabatOne Addresses South Korea\'s KNP, NFS, and Integrated Control Centre Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de la KNP, el NFS y los Centros Integrados de Corea del Sur' : 'How Kabat One Addresses South Korea\'s KNP, NFS, and Integrated Control Centre Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los Centros de Situaciones 112 de los 18 Sidos, los Centros de Control Integrado de CCTV municipales y los centros de despacho del NFS que necesitan un dashboard unificado para gestionar el sistema 112 integrado, monitorizar redes de 60,000+ cámaras con analítica de IA y coordinar recursos de múltiples agencias en el marco del Smart Safety City — todo bajo los requisitos de la PIPA, la PIPC y la certificación CSAP del KISA.'
-                : 'KabatOne is designed for the 18 Sido 112 Situation Centres, municipal Integrated CCTV Control Centres, and NFS dispatch centres that need a unified dashboard to manage the integrated 112 system, monitor 60,000+ camera networks with AI analytics, and coordinate multi-agency resources within the Smart Safety City framework — all under PIPA, PIPC, and KISA CSAP certification requirements.'}
+                ? 'Kabat One está diseñado para los Centros de Situaciones 112 de los 18 Sidos, los Centros de Control Integrado de CCTV municipales y los centros de despacho del NFS que necesitan un dashboard unificado para gestionar el sistema 112 integrado, monitorizar redes de 60,000+ cámaras con analítica de IA y coordinar recursos de múltiples agencias en el marco del Smart Safety City — todo bajo los requisitos de la PIPA, la PIPC y la certificación CSAP del KISA.'
+                : 'Kabat One is designed for the 18 Sido 112 Situation Centres, municipal Integrated CCTV Control Centres, and NFS dispatch centres that need a unified dashboard to manage the integrated 112 system, monitor 60,000+ camera networks with AI analytics, and coordinate multi-agency resources within the Smart Safety City framework — all under PIPA, PIPC, and KISA CSAP certification requirements.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -233,7 +233,7 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -306,7 +306,7 @@ export default async function PublicSafetySoftwareSouthKoreaPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para la KNP, el NFS o tu Centro de Control Integrado' : 'Request a Demo for South Korea\'s KNP, NFS, or Your Integrated Control Centre'}
-          subtitle={es ? 'KabatOne integra el despacho 112 unificado, la gestión de 60,000+ CCTV con analítica IA y la conciencia situacional GIS en una plataforma con certificación CSAP, cumplimiento PIPA y compatibilidad KONEPS. Demo adaptada al modelo Smart Safety City y Policing 4.0 de Corea del Sur.' : 'KabatOne integrates unified 112 dispatch, 60,000+ CCTV management with AI analytics, and GIS situational awareness in a single platform with CSAP certification, PIPA compliance, and KONEPS compatibility. Demo tailored to South Korea\'s Smart Safety City and Policing 4.0 model.'}
+          subtitle={es ? 'Kabat One integra el despacho 112 unificado, la gestión de 60,000+ CCTV con analítica IA y la conciencia situacional GIS en una plataforma con certificación CSAP, cumplimiento PIPA y compatibilidad KONEPS. Demo adaptada al modelo Smart Safety City y Policing 4.0 de Corea del Sur.' : 'Kabat One integrates unified 112 dispatch, 60,000+ CCTV management with AI analytics, and GIS situational awareness in a single platform with CSAP certification, PIPA compliance, and KONEPS compatibility. Demo tailored to South Korea\'s Smart Safety City and Policing 4.0 model.'}
         />
 
         <Footer es={es} />

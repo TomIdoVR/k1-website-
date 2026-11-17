@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate Kuwait Police (MOI/KNP) across 6 security districts?',
+    question: 'How does Kabat One integrate Kuwait Police (MOI/KNP) across 6 security districts?',
     answer:
-      'KabatOne unifies all 6 Kuwait National Police (KNP) security districts — Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer — into a single operational map with shared CAD, ANPR, and integration of special units (SWAT/Coast Guard/Border Patrol).',
+      'Kabat One unifies all 6 Kuwait National Police (KNP) security districts — Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer — into a single operational map with shared CAD, ANPR, and integration of special units (SWAT/Coast Guard/Border Patrol).',
   },
   {
     question: 'How does the platform support Kuwait fire and emergency medical services?',
     answer:
-      'KabatOne connects MOI General Directorate of Fire Services (DGFD) with 50+ stations across 6 governorates, coordinates 112 CAD dispatch with MOH Ambulance Service, and links response times with Kuwait Hospital/Mubarak Hospital/Jaber Al-Ahmad Hospital for real-time patient transfers.',
+      'Kabat One connects MOI General Directorate of Fire Services (DGFD) with 50+ stations across 6 governorates, coordinates 112 CAD dispatch with MOH Ambulance Service, and links response times with Kuwait Hospital/Mubarak Hospital/Jaber Al-Ahmad Hospital for real-time patient transfers.',
   },
   {
     question: 'Does the platform support Kuwait port and coastal security operations?',
     answer:
-      'Yes. KabatOne integrates Mina Al-Ahmadi Port (largest oil export terminal in the Gulf), Shuwaikh/Shuaiba/Abdullah Ports, and MOI Coast Guard/Border Patrol into unified situational dashboards with CCTV video, AIS radar, and ANPR access management.',
+      'Yes. Kabat One integrates Mina Al-Ahmadi Port (largest oil export terminal in the Gulf), Shuwaikh/Shuaiba/Abdullah Ports, and MOI Coast Guard/Border Patrol into unified situational dashboards with CCTV video, AIS radar, and ANPR access management.',
   },
   {
-    question: 'How does KabatOne comply with Kuwait Personal Data Protection Law (Law 22/2023) and CITRA?',
+    question: 'How does Kabat One comply with Kuwait Personal Data Protection Law (Law 22/2023) and CITRA?',
     answer:
-      'KabatOne implements encryption at rest and in transit, role-based access controls, consent management, and breach notification within Law 22/2023 timelines supervised by CITRA, with data localisation support aligned with Kuwait 2040 digital sovereignty requirements.',
+      'Kabat One implements encryption at rest and in transit, role-based access controls, consent management, and breach notification within Law 22/2023 timelines supervised by CITRA, with data localisation support aligned with Kuwait 2040 digital sovereignty requirements.',
   },
   {
-    question: 'How does KabatOne support Kuwait Safe City and Kuwait City CCTV cameras?',
+    question: 'How does Kabat One support Kuwait Safe City and Kuwait City CCTV cameras?',
     answer:
-      'KabatOne provides centralised video management for the 70,000+ CCTV cameras of the Kuwait Safe City Project (KSCP), including General Directorate of Traffic (GDT) ANPR/ALPR cameras on MOW highways and JKIA, with AI video analytics and real-time anomaly alerts.',
+      'Kabat One provides centralised video management for the 70,000+ CCTV cameras of the Kuwait Safe City Project (KSCP), including General Directorate of Traffic (GDT) ANPR/ALPR cameras on MOW highways and JKIA, with AI video analytics and real-time anomaly alerts.',
   },
   {
-    question: 'How does KabatOne handle Kuwait government procurement through CAPT/MoF?',
+    question: 'How does Kabat One handle Kuwait government procurement through CAPT/MoF?',
     answer:
-      'KabatOne supports Kuwait Central Agency for Public Tenders (CAPT) under MoF, Government Procurement Law (Decree 37bis/1964 and amendments), CSSP (Central Security Procurement Policy), and financing frameworks from Kuwait Fund for Arab Economic Development (KFAED) and KIA.',
+      'Kabat One supports Kuwait Central Agency for Public Tenders (CAPT) under MoF, Government Procurement Law (Decree 37bis/1964 and amendments), CSSP (Central Security Procurement Policy), and financing frameworks from Kuwait Fund for Arab Economic Development (KFAED) and KIA.',
   },
   {
-    question: 'How does KabatOne align with Kuwait Vision 2035 "New Kuwait" and digital transformation?',
+    question: 'How does Kabat One align with Kuwait Vision 2035 "New Kuwait" and digital transformation?',
     answer:
-      'KabatOne aligns with "New Kuwait" Vision 2035 pillars — Smart City (MOCI/Digital Kuwait), KOC/KNPC critical infrastructure security, State Cybersecurity Law/CITRA/KU-CERT, CSC/MOF digital government, and MOCI Smart Government Initiative to modernise public safety with AI/IoT.',
+      'Kabat One aligns with "New Kuwait" Vision 2035 pillars — Smart City (MOCI/Digital Kuwait), KOC/KNPC critical infrastructure security, State Cybersecurity Law/CITRA/KU-CERT, CSC/MOF digital government, and MOCI Smart Government Initiative to modernise public safety with AI/IoT.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Policía de Kuwait (MOI/KNP) y los 6 distritos de seguridad?',
+    question: '¿Cómo integra Kabat One la Policía de Kuwait (MOI/KNP) y los 6 distritos de seguridad?',
     answer:
-      'KabatOne unifica los 6 distritos de seguridad de la Policía Nacional de Kuwait (KNP) — Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer — en un solo mapa operativo con CAD compartido, ANPR e integración de unidades especiales (SWAT/Guardia Costera/Patrulla de Fronteras).',
+      'Kabat One unifica los 6 distritos de seguridad de la Policía Nacional de Kuwait (KNP) — Kuwait City/Hawalli/Farwaniya/Ahmadi/Jahra/Mubarak Al-Kabeer — en un solo mapa operativo con CAD compartido, ANPR e integración de unidades especiales (SWAT/Guardia Costera/Patrulla de Fronteras).',
   },
   {
     question: '¿Cómo admite la plataforma los servicios de bomberos y emergencias médicas de Kuwait?',
     answer:
-      'KabatOne conecta la Dirección General de Bomberos del MOI (DGFD) con más de 50 estaciones distribuidas en 6 gobernaciones, coordina el despacho CAD del 112 con el Servicio de Ambulancias del MOH, y vincula los tiempos de respuesta con los Hospitales de Kuwait/Hospital Mubarak/Jaber Al-Ahmad para transferencias de pacientes en tiempo real.',
+      'Kabat One conecta la Dirección General de Bomberos del MOI (DGFD) con más de 50 estaciones distribuidas en 6 gobernaciones, coordina el despacho CAD del 112 con el Servicio de Ambulancias del MOH, y vincula los tiempos de respuesta con los Hospitales de Kuwait/Hospital Mubarak/Jaber Al-Ahmad para transferencias de pacientes en tiempo real.',
   },
   {
     question: '¿Admite la plataforma las operaciones de seguridad portuaria y costera de Kuwait?',
     answer:
-      'Sí. KabatOne integra las operaciones del Puerto Mina Al-Ahmadi (mayor exportador de petróleo del Golfo), el Puerto Shuwaikh/Shuaiba/Abdullah y la Guardia Costera/Patrulla de Fronteras del MOI en paneles de situación unificados con video CCTV, radar AIS y gestión de acceso ANPR.',
+      'Sí. Kabat One integra las operaciones del Puerto Mina Al-Ahmadi (mayor exportador de petróleo del Golfo), el Puerto Shuwaikh/Shuaiba/Abdullah y la Guardia Costera/Patrulla de Fronteras del MOI en paneles de situación unificados con video CCTV, radar AIS y gestión de acceso ANPR.',
   },
   {
-    question: '¿Cómo cumple KabatOne con la Ley de Protección de Datos Personales de Kuwait (Ley 22/2023) y la CITRA?',
+    question: '¿Cómo cumple Kabat One con la Ley de Protección de Datos Personales de Kuwait (Ley 22/2023) y la CITRA?',
     answer:
-      'KabatOne implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de consentimiento y notificación de brechas dentro de los plazos de la Ley 22/2023 supervisada por la CITRA, y soporte de localización de datos en línea con los requisitos de soberanía digital de Kuwait 2040.',
+      'Kabat One implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de consentimiento y notificación de brechas dentro de los plazos de la Ley 22/2023 supervisada por la CITRA, y soporte de localización de datos en línea con los requisitos de soberanía digital de Kuwait 2040.',
   },
   {
-    question: '¿Cómo apoya KabatOne el Kuwait Safe City y las cámaras CCTV de la Ciudad de Kuwait?',
+    question: '¿Cómo apoya Kabat One el Kuwait Safe City y las cámaras CCTV de la Ciudad de Kuwait?',
     answer:
-      'KabatOne proporciona gestión de video centralizada para las más de 70,000 cámaras CCTV del Kuwait Safe City Project (KSCP), incluidas cámaras ANPR/ALPR de la GDT en autopistas del MOW y el JKIA, con análisis de video IA y alertas de anomalías en tiempo real.',
+      'Kabat One proporciona gestión de video centralizada para las más de 70,000 cámaras CCTV del Kuwait Safe City Project (KSCP), incluidas cámaras ANPR/ALPR de la GDT en autopistas del MOW y el JKIA, con análisis de video IA y alertas de anomalías en tiempo real.',
   },
   {
-    question: '¿Cómo maneja KabatOne las adquisiciones del gobierno de Kuwait a través de la CAPT/MoF?',
+    question: '¿Cómo maneja Kabat One las adquisiciones del gobierno de Kuwait a través de la CAPT/MoF?',
     answer:
-      'KabatOne admite el Portal de Licitaciones Centrales de Kuwait (CAPT) bajo el MoF, la Ley de Licitaciones y Adquisiciones del Gobierno (Decreto 37bis/1964 y modificaciones), la CSSP y marcos de financiamiento del KFAED y el KIA.',
+      'Kabat One admite el Portal de Licitaciones Centrales de Kuwait (CAPT) bajo el MoF, la Ley de Licitaciones y Adquisiciones del Gobierno (Decreto 37bis/1964 y modificaciones), la CSSP y marcos de financiamiento del KFAED y el KIA.',
   },
   {
-    question: '¿Cómo se alinea KabatOne con Kuwait Vision 2035 "Nueva Kuwait" y la transformación digital?',
+    question: '¿Cómo se alinea Kabat One con Kuwait Vision 2035 "Nueva Kuwait" y la transformación digital?',
     answer:
-      'KabatOne se alinea con los pilares de la Visión 2035 "Nueva Kuwait" — Smart City (MOCI/Digital Kuwait), seguridad de infraestructura crítica del KOC/KNPC, Ley de Ciberseguridad del Estado/CITRA/KU-CERT, gobierno digital del CSC/MOF y Smart Government Initiative del MOCI para modernizar la seguridad pública con IA/IoT.',
+      'Kabat One se alinea con los pilares de la Visión 2035 "Nueva Kuwait" — Smart City (MOCI/Digital Kuwait), seguridad de infraestructura crítica del KOC/KNPC, Ley de Ciberseguridad del Estado/CITRA/KU-CERT, gobierno digital del CSC/MOF y Smart Government Initiative del MOCI para modernizar la seguridad pública con IA/IoT.',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Kuwait' : 'KabatOne Platform Capabilities for Kuwait'}
+              {es ? 'Capacidades de la plataforma Kabat One para Kuwait' : 'Kabat One Platform Capabilities for Kuwait'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Gestión de vídeo KSCP — 70,000+ cámaras' : 'KSCP Video Management — 70,000+ Cameras',
                   text: es
-                    ? 'KabatOne maneja las más de 70,000 cámaras del KSCP, integra alimentaciones ANPR/ALPR de la GDT de todas las autopistas principales y el JKIA, conecta con el video de los puertos de Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos.'
-                    : 'KabatOne handles 70,000+ KSCP cameras, integrates GDT ANPR/ALPR feeds from all major motorways and JKIA, connects with Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah port video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency.',
+                    ? 'Kabat One maneja las más de 70,000 cámaras del KSCP, integra alimentaciones ANPR/ALPR de la GDT de todas las autopistas principales y el JKIA, conecta con el video de los puertos de Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos.'
+                    : 'Kabat One handles 70,000+ KSCP cameras, integrates GDT ANPR/ALPR feeds from all major motorways and JKIA, connects with Mina Al-Ahmadi/Shuwaikh/Shuaiba/Abdullah port video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency.',
                 },
                 {
                   heading: es ? 'Protección de infraestructura crítica: KOC/KNPC/KIPIC' : 'Critical Infrastructure Protection: KOC/KNPC/KIPIC',
                   text: es
-                    ? 'KabatOne proporciona monitoreo perimetral continuo de los campos del KOC (Greater Burgan/Raudhatain/Sabriya/Minagish/Umm Gudair), refinerías del KNPC (Mina Abdullah/Mina Al-Ahmadi/Shuaiba), instalaciones del KIPIC y el corredor de exportación de Mina Al-Ahmadi — con alertas de violación de perímetro, integración de video PTZ y coordinación con la KNSF/Guardia Costera.'
-                    : 'KabatOne provides continuous perimeter monitoring of KOC oilfields (Greater Burgan/Raudhatain/Sabriya/Minagish/Umm Gudair), KNPC refineries (Mina Abdullah/Mina Al-Ahmadi/Shuaiba), KIPIC facilities, and Mina Al-Ahmadi export corridor — with perimeter breach alerts, PTZ video integration, and KNSF/Coast Guard coordination.',
+                    ? 'Kabat One proporciona monitoreo perimetral continuo de los campos del KOC (Greater Burgan/Raudhatain/Sabriya/Minagish/Umm Gudair), refinerías del KNPC (Mina Abdullah/Mina Al-Ahmadi/Shuaiba), instalaciones del KIPIC y el corredor de exportación de Mina Al-Ahmadi — con alertas de violación de perímetro, integración de video PTZ y coordinación con la KNSF/Guardia Costera.'
+                    : 'Kabat One provides continuous perimeter monitoring of KOC oilfields (Greater Burgan/Raudhatain/Sabriya/Minagish/Umm Gudair), KNPC refineries (Mina Abdullah/Mina Al-Ahmadi/Shuaiba), KIPIC facilities, and Mina Al-Ahmadi export corridor — with perimeter breach alerts, PTZ video integration, and KNSF/Coast Guard coordination.',
                 },
                 {
                   heading: es ? 'Cumplimiento Ley 22/2023/CITRA y KU-CERT' : 'Law 22/2023/CITRA & KU-CERT Cybersecurity Compliance',
                   text: es
-                    ? 'KabatOne se alinea con la Ley 22/2023 supervisada por la CITRA con cifrado, gestión de consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; la Ley de Ciberseguridad del Estado y los marcos del KU-CERT; los Estándares de Seguridad de Sistemas Centrales de Kuwait; y los requisitos de continuidad del negocio del CIED/MOCI.'
-                    : 'KabatOne aligns with Law 22/2023 supervised by CITRA with encryption, consent management, data subject access rights, and breach notification; State Cybersecurity Law and KU-CERT frameworks; Kuwait Central Systems Security Standards; and CIED/MOCI business continuity requirements.',
+                    ? 'Kabat One se alinea con la Ley 22/2023 supervisada por la CITRA con cifrado, gestión de consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; la Ley de Ciberseguridad del Estado y los marcos del KU-CERT; los Estándares de Seguridad de Sistemas Centrales de Kuwait; y los requisitos de continuidad del negocio del CIED/MOCI.'
+                    : 'Kabat One aligns with Law 22/2023 supervised by CITRA with encryption, consent management, data subject access rights, and breach notification; State Cybersecurity Law and KU-CERT frameworks; Kuwait Central Systems Security Standards; and CIED/MOCI business continuity requirements.',
                 },
                 {
                   heading: es ? 'Adquisición CAPT/MoF y Digital Kuwait 2035' : 'CAPT/MoF Procurement & Digital Kuwait 2035',
                   text: es
-                    ? 'KabatOne se integra con la CAPT bajo el MoF, la Ley de Adquisiciones del Gobierno (Decreto 37bis/1964), la CSSP y los marcos de subvención del KFAED; apoya las iniciativas de Smart Government del MOCI/Digital Kuwait bajo Kuwait Vision 2035; y se alinea con las prioridades del KIA para la modernización del sector público.'
-                    : 'KabatOne integrates with CAPT under MoF, Government Procurement Law (Decree 37bis/1964), CSSP, and KFAED grant frameworks; supports MOCI/Digital Kuwait Smart Government initiatives under Kuwait Vision 2035; and aligns with KIA investment priorities for public sector modernisation.',
+                    ? 'Kabat One se integra con la CAPT bajo el MoF, la Ley de Adquisiciones del Gobierno (Decreto 37bis/1964), la CSSP y los marcos de subvención del KFAED; apoya las iniciativas de Smart Government del MOCI/Digital Kuwait bajo Kuwait Vision 2035; y se alinea con las prioridades del KIA para la modernización del sector público.'
+                    : 'Kabat One integrates with CAPT under MoF, Government Procurement Law (Decree 37bis/1964), CSSP, and KFAED grant frameworks; supports MOCI/Digital Kuwait Smart Government initiatives under Kuwait Vision 2035; and aligns with KIA investment priorities for public sector modernisation.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica el MOI/KNP, la DGFD y el Kuwait Safe City Project en una plataforma operativa conforme a la Ley 22/2023/CITRA y alineada con Kuwait Vision 2035.'
-              : 'Discover how KabatOne unifies Kuwait MOI/KNP, DGFD, and Kuwait Safe City Project into one operational platform compliant with Law 22/2023/CITRA and aligned with Kuwait Vision 2035.'
+              ? 'Descubra cómo Kabat One unifica el MOI/KNP, la DGFD y el Kuwait Safe City Project en una plataforma operativa conforme a la Ley 22/2023/CITRA y alineada con Kuwait Vision 2035.'
+              : 'Discover how Kabat One unifies Kuwait MOI/KNP, DGFD, and Kuwait Safe City Project into one operational platform compliant with Law 22/2023/CITRA and aligned with Kuwait Vision 2035.'
           }
         />
       </main>

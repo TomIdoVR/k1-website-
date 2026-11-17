@@ -68,7 +68,7 @@ export default async function StadiumsPage({
 
   /* capabilities */
   const capLabel = es ? 'Capacidades de la Plataforma' : 'Platform Capabilities'
-  const capH2 = es ? 'Cómo KabatOne Gestiona Tu Recinto' : 'How KabatOne Manages Your Venue'
+  const capH2 = es ? 'Cómo Kabat One Gestiona Tu Recinto' : 'How Kabat One Manages Your Venue'
   const capDesc = es
     ? 'Mando y control impulsado por IA que centraliza seguridad, comunicación y gestión de incidentes en cada metro cuadrado de tu recinto.'
     : 'AI-powered command and control that centralizes security, communication, and incident management across every square meter of your venue.'
@@ -89,8 +89,8 @@ export default async function StadiumsPage({
   const zonesLabel = es ? 'Cobertura por Zona' : 'Coverage by Zone'
   const zonesH2 = es ? 'Cada Rincón de Tu Recinto, Cubierto' : 'Every Corner of Your Venue, Covered'
   const zonesDesc = es
-    ? 'KabatOne monitorea y asegura cada zona de tu estadio — desde la primera entrada hasta la última salida.'
-    : 'KabatOne monitors and secures every zone of your stadium — from first entry to last exit.'
+    ? 'Kabat One monitorea y asegura cada zona de tu estadio — desde la primera entrada hasta la última salida.'
+    : 'Kabat One monitors and secures every zone of your stadium — from first entry to last exit.'
 
   const zones = es ? [
     { title: 'Entradas y Acceso', features: ['Conteo de personas y gestión de flujo', 'Reconocimiento facial (opcional, según regulación)', 'Detección de objetos sospechosos', 'Control y validación de boletos en tiempo real'] },
@@ -108,8 +108,8 @@ export default async function StadiumsPage({
   const productsLabel = es ? 'Soluciones de la Plataforma' : 'Platform Solutions'
   const productsH2 = es ? 'El Stack Completo de Seguridad para Recintos' : 'The Full Venue Security Stack'
   const productsDesc = es
-    ? 'KabatOne se integra con tus sistemas existentes — sin necesidad de reemplazar, solo inteligencia unificada.'
-    : "KabatOne integrates with your existing systems — no rip-and-replace required, just unified intelligence."
+    ? 'Kabat One se integra con tus sistemas existentes — sin necesidad de reemplazar, solo inteligencia unificada.'
+    : "Kabat One integrates with your existing systems — no rip-and-replace required, just unified intelligence."
 
   const products = [
     { name: 'K-Safety', href: '/k-safety' },
@@ -123,8 +123,8 @@ export default async function StadiumsPage({
     ? 'Haz Cada Evento Más Seguro e Inteligente'
     : 'Make Every Event Safer & Smarter'
   const ctaSub = es
-    ? 'Reduce los tiempos de resolución de incidentes en un 60% mientras ofreces una mejor experiencia a los asistentes — con la plataforma de mando unificado de KabatOne.'
-    : "Reduce incident resolution times by 60% while delivering a better fan experience — with KabatOne's unified venue command platform."
+    ? 'Reduce los tiempos de resolución de incidentes en un 60% mientras ofreces una mejor experiencia a los asistentes — con la plataforma de mando unificado de Kabat One.'
+    : "Reduce incident resolution times by 60% while delivering a better fan experience — with Kabat One's unified venue command platform."
 
   /* ── shared styles ── */
   const sectionStyle = { position: 'relative' as const, zIndex: 10, padding: '80px 0', borderTop: '1px solid var(--border)' }
@@ -135,15 +135,15 @@ export default async function StadiumsPage({
   const cardStyle = { background: '#0b1628', borderRadius: '12px', border: '1px solid var(--border)', padding: '28px 24px' }
 
   const stadiumFaqs = es ? [
-    { question: '¿Cómo gestiona KabatOne la seguridad de estadios?', answer: 'KabatOne unifica todos los sistemas del recinto — CCTV, control de acceso, alarmas y comunicaciones — en una sola plataforma con mando y control impulsado por IA, reduciendo los tiempos de resolución de incidentes en un 60%.' },
-    { question: '¿Qué zonas cubre KabatOne en estadios?', answer: 'KabatOne cubre cuatro zonas: entradas y acceso con conteo de personas y reconocimiento facial, áreas de estacionamiento con LPR, interior del estadio con detección de incendio y análisis de multitudes, y centro de comunicaciones con coordinación entre equipos.' },
-    { question: '¿Qué analítica de IA utiliza KabatOne en estadios?', answer: 'KabatOne utiliza detección de anomalías de densidad de multitudes, detección de incendios y humo, identificación de objetos sospechosos y análisis de patrones de comportamiento para prevenir incidentes críticos durante eventos.' },
-    { question: '¿Se integra KabatOne con sistemas existentes del estadio?', answer: 'Sí. KabatOne se integra con los sistemas existentes del recinto sin necesidad de reemplazarlos, proporcionando inteligencia unificada sobre la infraestructura actual de CCTV, control de acceso y comunicaciones.' },
+    { question: '¿Cómo gestiona Kabat One la seguridad de estadios?', answer: 'Kabat One unifica todos los sistemas del recinto — CCTV, control de acceso, alarmas y comunicaciones — en una sola plataforma con mando y control impulsado por IA, reduciendo los tiempos de resolución de incidentes en un 60%.' },
+    { question: '¿Qué zonas cubre Kabat One en estadios?', answer: 'Kabat One cubre cuatro zonas: entradas y acceso con conteo de personas y reconocimiento facial, áreas de estacionamiento con LPR, interior del estadio con detección de incendio y análisis de multitudes, y centro de comunicaciones con coordinación entre equipos.' },
+    { question: '¿Qué analítica de IA utiliza Kabat One en estadios?', answer: 'Kabat One utiliza detección de anomalías de densidad de multitudes, detección de incendios y humo, identificación de objetos sospechosos y análisis de patrones de comportamiento para prevenir incidentes críticos durante eventos.' },
+    { question: '¿Se integra Kabat One con sistemas existentes del estadio?', answer: 'Sí. Kabat One se integra con los sistemas existentes del recinto sin necesidad de reemplazarlos, proporcionando inteligencia unificada sobre la infraestructura actual de CCTV, control de acceso y comunicaciones.' },
   ] : [
-    { question: 'How does KabatOne manage stadium security?', answer: 'KabatOne unifies all venue systems — CCTV, access control, alarms, and communications — into a single platform with AI-powered command and control, reducing incident resolution times by 60%.' },
-    { question: 'What zones does KabatOne cover in stadiums?', answer: 'KabatOne covers four zones: entrances and access with people counting and facial recognition, parking areas with LPR, stadium interior with fire detection and crowd analysis, and communications hub with team coordination.' },
-    { question: 'What AI analytics does KabatOne use in stadiums?', answer: 'KabatOne uses crowd density anomaly detection, fire and smoke detection, suspicious object identification, and behavioral pattern analysis to prevent critical incidents during events.' },
-    { question: 'Does KabatOne integrate with existing stadium systems?', answer: 'Yes. KabatOne integrates with existing venue systems without rip-and-replace, providing unified intelligence on top of current CCTV, access control, and communications infrastructure.' },
+    { question: 'How does Kabat One manage stadium security?', answer: 'Kabat One unifies all venue systems — CCTV, access control, alarms, and communications — into a single platform with AI-powered command and control, reducing incident resolution times by 60%.' },
+    { question: 'What zones does Kabat One cover in stadiums?', answer: 'Kabat One covers four zones: entrances and access with people counting and facial recognition, parking areas with LPR, stadium interior with fire detection and crowd analysis, and communications hub with team coordination.' },
+    { question: 'What AI analytics does Kabat One use in stadiums?', answer: 'Kabat One uses crowd density anomaly detection, fire and smoke detection, suspicious object identification, and behavioral pattern analysis to prevent critical incidents during events.' },
+    { question: 'Does Kabat One integrate with existing stadium systems?', answer: 'Yes. Kabat One integrates with existing venue systems without rip-and-replace, providing unified intelligence on top of current CCTV, access control, and communications infrastructure.' },
   ]
 
   return (

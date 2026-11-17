@@ -49,8 +49,8 @@ export default async function WhatIsAPsapPage({
           answer: 'En Estados Unidos operan aproximadamente 6,000 PSAPs que colectivamente manejan más de 240 millones de llamadas al 911 por año. La cifra ha disminuido conforme las jurisdicciones consolidan centros pequeños en operaciones regionales más grandes. En México, los centros C4 y C5 cumplen la función de PSAP, con al menos un centro por estado que atiende llamadas al 911. El sistema 911 nacional de México se implementó en 2017 y continúa expandiéndose en capacidad tecnológica.',
         },
         {
-          question: '¿Cómo apoya KabatOne a los PSAPs?',
-          answer: 'KabatOne provee la plataforma operativa que los PSAPs necesitan para ir más allá de la recepción de llamadas. K-Dispatch maneja el despacho CAD completo — desde la recepción de la llamada hasta el cierre del incidente — con asignación inteligente de unidades. K-Video permite a los operadores del PSAP ver las cámaras cercanas al incidente antes de despachar, proporcionando contexto visual que mejora la clasificación. K-Safety muestra todas las unidades y incidentes activos en un mapa GIS operativo. KabatOne se integra con la infraestructura telefónica existente del PSAP y está desplegado en más de 40 ciudades.',
+          question: '¿Cómo apoya Kabat One a los PSAPs?',
+          answer: 'Kabat One provee la plataforma operativa que los PSAPs necesitan para ir más allá de la recepción de llamadas. K-Dispatch maneja el despacho CAD completo — desde la recepción de la llamada hasta el cierre del incidente — con asignación inteligente de unidades. K-Video permite a los operadores del PSAP ver las cámaras cercanas al incidente antes de despachar, proporcionando contexto visual que mejora la clasificación. K-Safety muestra todas las unidades y incidentes activos en un mapa GIS operativo. Kabat One se integra con la infraestructura telefónica existente del PSAP y está desplegado en más de 40 ciudades.',
         },
       ]
     : [
@@ -75,8 +75,8 @@ export default async function WhatIsAPsapPage({
           answer: 'The United States operates approximately 6,000 PSAPs that collectively handle over 240 million 911 calls per year. The number has been declining as jurisdictions consolidate smaller centers into larger regional operations. In Mexico, C4 and C5 centers serve the PSAP function, with at least one center per state handling 911 calls. Mexico\'s national 911 system was implemented in 2017 and continues expanding in technological capability.',
         },
         {
-          question: 'How does KabatOne support PSAPs?',
-          answer: 'KabatOne provides the operational platform PSAPs need to go beyond call-taking. K-Dispatch handles full CAD dispatch — from call intake to incident closure — with intelligent unit assignment. K-Video lets PSAP operators view cameras near the incident before dispatching, providing visual context that improves classification. K-Safety displays all active units and incidents on an operational GIS map. KabatOne integrates with the PSAP\'s existing telephony infrastructure and is deployed across 40+ cities.',
+          question: 'How does Kabat One support PSAPs?',
+          answer: 'Kabat One provides the operational platform PSAPs need to go beyond call-taking. K-Dispatch handles full CAD dispatch — from call intake to incident closure — with intelligent unit assignment. K-Video lets PSAP operators view cameras near the incident before dispatching, providing visual context that improves classification. K-Safety displays all active units and incidents on an operational GIS map. Kabat One integrates with the PSAP\'s existing telephony infrastructure and is deployed across 40+ cities.',
         },
       ]
   const faqs = [...baseFaqs, ...PSAP_AI_FAQS.whatIsPsap[es ? 'es' : 'en']]
@@ -500,19 +500,19 @@ export default async function WhatIsAPsapPage({
           </div>
         </section>
 
-        {/* ── SECTION 5: KabatOne for PSAPs ── */}
+        {/* ── SECTION 5: Kabat One for PSAPs ── */}
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'KabatOne para PSAPs' : 'KabatOne for PSAPs'}
+              {es ? 'Kabat One para PSAPs' : 'Kabat One for PSAPs'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Del 911 a la Resolución en una Sola Plataforma' : 'From 911 to Resolution in One Platform'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne convierte el PSAP de un centro de recepción de llamadas en un centro de operaciones completo. K-Dispatch maneja el ciclo completo del despacho — desde la recepción de la llamada al 911 hasta el cierre del incidente — con asignación inteligente de unidades y protocolos de clasificación. K-Video permite a los operadores ver las cámaras cercanas a la emergencia antes de despachar, proporcionando contexto visual que reduce errores de clasificación. K-Safety muestra todas las unidades activas y los incidentes en un mapa GIS operativo en tiempo real. KabatOne se integra con la infraestructura telefónica existente y está desplegado en más de 40 ciudades protegiendo a 73 millones de ciudadanos.'
-                : 'KabatOne transforms the PSAP from a call-receiving center into a complete operations center. K-Dispatch handles the full dispatch cycle — from 911 call intake to incident closure — with intelligent unit assignment and classification protocols. K-Video lets operators view cameras near the emergency before dispatching, providing visual context that reduces classification errors. K-Safety displays all active units and incidents on a real-time operational GIS map. KabatOne integrates with existing telephony infrastructure and is deployed across 40+ cities protecting 73 million citizens.'}
+                ? 'Kabat One convierte el PSAP de un centro de recepción de llamadas en un centro de operaciones completo. K-Dispatch maneja el ciclo completo del despacho — desde la recepción de la llamada al 911 hasta el cierre del incidente — con asignación inteligente de unidades y protocolos de clasificación. K-Video permite a los operadores ver las cámaras cercanas a la emergencia antes de despachar, proporcionando contexto visual que reduce errores de clasificación. K-Safety muestra todas las unidades activas y los incidentes en un mapa GIS operativo en tiempo real. Kabat One se integra con la infraestructura telefónica existente y está desplegado en más de 40 ciudades protegiendo a 73 millones de ciudadanos.'
+                : 'Kabat One transforms the PSAP from a call-receiving center into a complete operations center. K-Dispatch handles the full dispatch cycle — from 911 call intake to incident closure — with intelligent unit assignment and classification protocols. K-Video lets operators view cameras near the emergency before dispatching, providing visual context that reduces classification errors. K-Safety displays all active units and incidents on a real-time operational GIS map. Kabat One integrates with existing telephony infrastructure and is deployed across 40+ cities protecting 73 million citizens.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -631,8 +631,8 @@ export default async function WhatIsAPsapPage({
           es={es}
           h2={es ? '¿Listo para Modernizar tu PSAP?' : 'Ready to Modernize Your PSAP?'}
           subtitle={es
-            ? 'Agenda una demo personalizada y descubre cómo KabatOne transforma el PSAP de un centro de llamadas en un centro de operaciones completo con despacho CAD, video integrado y GIS operativo.'
-            : 'Schedule a personalized demo and see how KabatOne transforms the PSAP from a call center into a complete operations center with CAD dispatch, integrated video, and operational GIS.'}
+            ? 'Agenda una demo personalizada y descubre cómo Kabat One transforma el PSAP de un centro de llamadas en un centro de operaciones completo con despacho CAD, video integrado y GIS operativo.'
+            : 'Schedule a personalized demo and see how Kabat One transforms the PSAP from a call center into a complete operations center with CAD dispatch, integrated video, and operational GIS.'}
         />
       </div>
 

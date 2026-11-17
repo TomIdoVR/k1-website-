@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Royal Oman Police (ROP) across all 11 governorates?',
+    question: 'How does Kabat One integrate the Royal Oman Police (ROP) across all 11 governorates?',
     answer:
-      'KabatOne unifies Royal Oman Police (ROP) operations across all 11 governorates — Muscat, Dhofar, Al Batinah North/South, Al Dakhiliyah, Al Buraimi, Al Wusta, Ash Sharqiyah North/South, Al Dhahirah, and Musandam — into a single operational map with shared CAD, ANPR camera feeds, and integration of specialised units (CID, Border Guard, Coastguard, Traffic Police).',
+      'Kabat One unifies Royal Oman Police (ROP) operations across all 11 governorates — Muscat, Dhofar, Al Batinah North/South, Al Dakhiliyah, Al Buraimi, Al Wusta, Ash Sharqiyah North/South, Al Dhahirah, and Musandam — into a single operational map with shared CAD, ANPR camera feeds, and integration of specialised units (CID, Border Guard, Coastguard, Traffic Police).',
   },
   {
     question: 'How does the platform support the Civil Defence and Ambulance Authority (CDAA)?',
     answer:
-      'KabatOne connects Civil Defence and Ambulance Authority (CDAA) stations across all 11 governorates, coordinates 999/9999 CAD dispatch with Sultan Qaboos University Hospital/Royal Hospital/Khoula Hospital for patient transfers, and integrates fire response at PDO oilfields, Port of Salalah, Muscat International Airport (MCT), and industrial zones in Duqm/Sohar.',
+      'Kabat One connects Civil Defence and Ambulance Authority (CDAA) stations across all 11 governorates, coordinates 999/9999 CAD dispatch with Sultan Qaboos University Hospital/Royal Hospital/Khoula Hospital for patient transfers, and integrates fire response at PDO oilfields, Port of Salalah, Muscat International Airport (MCT), and industrial zones in Duqm/Sohar.',
   },
   {
-    question: 'Does KabatOne support Oman port and oil infrastructure security?',
+    question: 'Does Kabat One support Oman port and oil infrastructure security?',
     answer:
-      'Yes. KabatOne integrates Port of Salalah (top regional transshipment hub, 4M+ TEU/year), Sultan Qaboos Port, Duqm Port/SEZ, and Sohar Port/Freezone into unified situational dashboards with CCTV, AIS radar, and ANPR access management. For petroleum infrastructure, the platform monitors PDO oilfields, OQ Saih Nihayda/Saih Rawl, and the Mina Al-Fahal export terminal.',
+      'Yes. Kabat One integrates Port of Salalah (top regional transshipment hub, 4M+ TEU/year), Sultan Qaboos Port, Duqm Port/SEZ, and Sohar Port/Freezone into unified situational dashboards with CCTV, AIS radar, and ANPR access management. For petroleum infrastructure, the platform monitors PDO oilfields, OQ Saih Nihayda/Saih Rawl, and the Mina Al-Fahal export terminal.',
   },
   {
-    question: 'How does KabatOne comply with Oman Personal Data Protection Law (Royal Decree 6/2022) and ITA/OCERT requirements?',
+    question: 'How does Kabat One comply with Oman Personal Data Protection Law (Royal Decree 6/2022) and ITA/OCERT requirements?',
     answer:
-      'KabatOne implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Royal Decree 6/2022 PDPPL timelines supervised by the ITA. The platform aligns with Oman National CERT (OCERT) incident response frameworks and ITA cybersecurity standards for critical national infrastructure.',
+      'Kabat One implements encryption at rest and in transit, role-based access controls, data subject rights management, and breach notification aligned with Royal Decree 6/2022 PDPPL timelines supervised by the ITA. The platform aligns with Oman National CERT (OCERT) incident response frameworks and ITA cybersecurity standards for critical national infrastructure.',
   },
   {
-    question: 'How does KabatOne support Muscat Integrated Security Operations Centre (ISOC) and Safe City initiatives?',
+    question: 'How does Kabat One support Muscat Integrated Security Operations Centre (ISOC) and Safe City initiatives?',
     answer:
-      'KabatOne provides centralised video management for Muscat ISOC, integrating ROP CCTV/ANPR cameras on highways (Routes 1/15/17/18/40), Muscat International Airport (MCT), and Muscat Expressway — with AI video analytics for anomaly detection, crowd monitoring at Muttrah Corniche, and real-time dashboard sharing between ROP, CDAA, and National Emergency Management Committee (NEMC).',
+      'Kabat One provides centralised video management for Muscat ISOC, integrating ROP CCTV/ANPR cameras on highways (Routes 1/15/17/18/40), Muscat International Airport (MCT), and Muscat Expressway — with AI video analytics for anomaly detection, crowd monitoring at Muttrah Corniche, and real-time dashboard sharing between ROP, CDAA, and National Emergency Management Committee (NEMC).',
   },
   {
-    question: 'How does KabatOne handle Oman government procurement through ITA/MOCI tenders?',
+    question: 'How does Kabat One handle Oman government procurement through ITA/MOCI tenders?',
     answer:
-      'KabatOne supports procurement under the Oman Tendering Law (Royal Decree 36/2008 and amendments), the National Centre for Statistics and Information (NCSI), and ITA/eOman digital government frameworks. The platform integrates with Etimad-compatible documentation, Oman Investment Authority (OIA) financing mechanisms, and special economic zone procurement rules for Duqm/Sohar/Salalah.',
+      'Kabat One supports procurement under the Oman Tendering Law (Royal Decree 36/2008 and amendments), the National Centre for Statistics and Information (NCSI), and ITA/eOman digital government frameworks. The platform integrates with Etimad-compatible documentation, Oman Investment Authority (OIA) financing mechanisms, and special economic zone procurement rules for Duqm/Sohar/Salalah.',
   },
   {
-    question: 'How does KabatOne align with Oman Vision 2040 and digital transformation?',
+    question: 'How does Kabat One align with Oman Vision 2040 and digital transformation?',
     answer:
-      'KabatOne aligns with Oman Vision 2040 pillars — Digital Oman Strategy, Smart City Muscat, ITA e-Government framework, and OCERT cybersecurity roadmap — by providing AI/IoT-integrated public safety platforms that modernise ROP, CDAA, and NEMC operations under the National Emergency Management Committee framework and Oman 2040 smart infrastructure priorities.',
+      'Kabat One aligns with Oman Vision 2040 pillars — Digital Oman Strategy, Smart City Muscat, ITA e-Government framework, and OCERT cybersecurity roadmap — by providing AI/IoT-integrated public safety platforms that modernise ROP, CDAA, and NEMC operations under the National Emergency Management Committee framework and Oman 2040 smart infrastructure priorities.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Policía Real de Omán (ROP) en los 11 gobernados?',
+    question: '¿Cómo integra Kabat One la Policía Real de Omán (ROP) en los 11 gobernados?',
     answer:
-      'KabatOne unifica las operaciones de la Policía Real de Omán (ROP) en los 11 gobernados — Mascate, Dhofar, Al Batinah Norte/Sur, Al Dakhiliyah, Al Buraimi, Al Wusta, Ash Sharqiyah Norte/Sur, Al Dhahirah y Musandam — en un solo mapa operativo con CAD compartido, cámaras ANPR y unidades especializadas (CID, Guardia Fronteriza, Guardia Costera, Policía de Tráfico).',
+      'Kabat One unifica las operaciones de la Policía Real de Omán (ROP) en los 11 gobernados — Mascate, Dhofar, Al Batinah Norte/Sur, Al Dakhiliyah, Al Buraimi, Al Wusta, Ash Sharqiyah Norte/Sur, Al Dhahirah y Musandam — en un solo mapa operativo con CAD compartido, cámaras ANPR y unidades especializadas (CID, Guardia Fronteriza, Guardia Costera, Policía de Tráfico).',
   },
   {
     question: '¿Cómo admite la plataforma la Autoridad de Defensa Civil y Ambulancias (CDAA)?',
     answer:
-      'KabatOne conecta las estaciones de la Autoridad de Defensa Civil y Ambulancias (CDAA) en los 11 gobernados, coordina el despacho CAD del 999/9999 con el Hospital de la Universidad Sultan Qaboos/Hospital Real/Hospital Khoula para traslados de pacientes, e integra respuesta de incendios en instalaciones PDO, Puerto de Salalah, Aeropuerto Internacional de Mascate (MCT) y zonas industriales en Duqm/Sohar.',
+      'Kabat One conecta las estaciones de la Autoridad de Defensa Civil y Ambulancias (CDAA) en los 11 gobernados, coordina el despacho CAD del 999/9999 con el Hospital de la Universidad Sultan Qaboos/Hospital Real/Hospital Khoula para traslados de pacientes, e integra respuesta de incendios en instalaciones PDO, Puerto de Salalah, Aeropuerto Internacional de Mascate (MCT) y zonas industriales en Duqm/Sohar.',
   },
   {
-    question: '¿Admite KabatOne la seguridad de puertos e infraestructura petrolera de Omán?',
+    question: '¿Admite Kabat One la seguridad de puertos e infraestructura petrolera de Omán?',
     answer:
-      'Sí. KabatOne integra el Puerto de Salalah (hub regional de transbordo líder, más de 4M TEU/año), Puerto Sultan Qaboos, Puerto Duqm/ZEE y Puerto Sohar/Zona Franca en paneles de situación unificados con CCTV, radar AIS y control de acceso ANPR. Para infraestructura petrolera, la plataforma monitorea yacimientos de la PDO, OQ Saih Nihayda/Saih Rawl y la terminal de exportación de Mina Al-Fahal.',
+      'Sí. Kabat One integra el Puerto de Salalah (hub regional de transbordo líder, más de 4M TEU/año), Puerto Sultan Qaboos, Puerto Duqm/ZEE y Puerto Sohar/Zona Franca en paneles de situación unificados con CCTV, radar AIS y control de acceso ANPR. Para infraestructura petrolera, la plataforma monitorea yacimientos de la PDO, OQ Saih Nihayda/Saih Rawl y la terminal de exportación de Mina Al-Fahal.',
   },
   {
-    question: '¿Cómo cumple KabatOne con la Ley de Protección de Datos Personales de Omán (Decreto Real 6/2022) y los requisitos de ITA/OCERT?',
+    question: '¿Cómo cumple Kabat One con la Ley de Protección de Datos Personales de Omán (Decreto Real 6/2022) y los requisitos de ITA/OCERT?',
     answer:
-      'KabatOne implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas alineada con los plazos del PDPPL del Decreto Real 6/2022 supervisado por la ITA. La plataforma se alinea con los marcos de respuesta a incidentes del OCERT y los estándares de ciberseguridad de la ITA para infraestructura crítica nacional.',
+      'Kabat One implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, gestión de derechos de sujetos de datos y notificación de brechas alineada con los plazos del PDPPL del Decreto Real 6/2022 supervisado por la ITA. La plataforma se alinea con los marcos de respuesta a incidentes del OCERT y los estándares de ciberseguridad de la ITA para infraestructura crítica nacional.',
   },
   {
-    question: '¿Cómo apoya KabatOne el Centro de Operaciones de Seguridad Integrada de Mascate (ISOC) y las iniciativas Safe City?',
+    question: '¿Cómo apoya Kabat One el Centro de Operaciones de Seguridad Integrada de Mascate (ISOC) y las iniciativas Safe City?',
     answer:
-      'KabatOne proporciona gestión de video centralizada para el ISOC de Mascate, integrando cámaras CCTV/ANPR de la ROP en carreteras (Rutas 1/15/17/18/40), Aeropuerto Internacional de Mascate (MCT) y Autopista de Mascate — con análisis de video IA para detección de anomalías, monitoreo de multitudes en el Corniche de Muttrah y compartición de paneles en tiempo real entre ROP, CDAA y el NEMC.',
+      'Kabat One proporciona gestión de video centralizada para el ISOC de Mascate, integrando cámaras CCTV/ANPR de la ROP en carreteras (Rutas 1/15/17/18/40), Aeropuerto Internacional de Mascate (MCT) y Autopista de Mascate — con análisis de video IA para detección de anomalías, monitoreo de multitudes en el Corniche de Muttrah y compartición de paneles en tiempo real entre ROP, CDAA y el NEMC.',
   },
   {
-    question: '¿Cómo gestiona KabatOne las adquisiciones del gobierno de Omán a través de licitaciones ITA/MOCI?',
+    question: '¿Cómo gestiona Kabat One las adquisiciones del gobierno de Omán a través de licitaciones ITA/MOCI?',
     answer:
-      'KabatOne admite las adquisiciones bajo la Ley de Licitaciones de Omán (Decreto Real 36/2008 y modificaciones), el Centro Nacional de Estadística e Información (NCSI) y los marcos de gobierno digital ITA/eOman. La plataforma se integra con documentación compatible con Etimad, mecanismos de financiamiento de la Autoridad de Inversiones de Omán (OIA) y reglas de adquisición de las zonas económicas especiales de Duqm/Sohar/Salalah.',
+      'Kabat One admite las adquisiciones bajo la Ley de Licitaciones de Omán (Decreto Real 36/2008 y modificaciones), el Centro Nacional de Estadística e Información (NCSI) y los marcos de gobierno digital ITA/eOman. La plataforma se integra con documentación compatible con Etimad, mecanismos de financiamiento de la Autoridad de Inversiones de Omán (OIA) y reglas de adquisición de las zonas económicas especiales de Duqm/Sohar/Salalah.',
   },
   {
-    question: '¿Cómo se alinea KabatOne con la Visión Omán 2040 y la transformación digital?',
+    question: '¿Cómo se alinea Kabat One con la Visión Omán 2040 y la transformación digital?',
     answer:
-      'KabatOne se alinea con los pilares de la Visión Omán 2040 — Estrategia Digital Omán, Smart City Mascate, marco de gobierno electrónico ITA y hoja de ruta de ciberseguridad OCERT — proporcionando plataformas de seguridad pública integradas con IA/IoT que modernizan las operaciones de la ROP, CDAA y NEMC bajo el marco del Comité Nacional de Gestión de Emergencias y las prioridades de infraestructura inteligente Omán 2040.',
+      'Kabat One se alinea con los pilares de la Visión Omán 2040 — Estrategia Digital Omán, Smart City Mascate, marco de gobierno electrónico ITA y hoja de ruta de ciberseguridad OCERT — proporcionando plataformas de seguridad pública integradas con IA/IoT que modernizan las operaciones de la ROP, CDAA y NEMC bajo el marco del Comité Nacional de Gestión de Emergencias y las prioridades de infraestructura inteligente Omán 2040.',
   },
 ]
 
@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para Omán' : 'KabatOne Platform Capabilities for Oman'}
+              {es ? 'Capacidades de la plataforma Kabat One para Omán' : 'Kabat One Platform Capabilities for Oman'}
             </h2>
             <div className="space-y-8">
               {[
@@ -231,26 +231,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 {
                   heading: es ? 'Gestión de vídeo ISOC Mascate y cámaras ROP' : 'Muscat ISOC Video Management & ROP Cameras',
                   text: es
-                    ? 'KabatOne gestiona las transmisiones CCTV/ANPR de la ROP de los 11 gobernados, integra la vigilancia del MCT y el Corniche de Muttrah, conecta el video de los puertos de Salalah/Duqm/Sohar/Sultan Qaboos, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y uso compartido de transmisiones en tiempo real con el NEMC.'
-                    : 'KabatOne manages ROP CCTV/ANPR feeds across 11 governorates, integrates MCT and Muttrah Corniche surveillance, connects Port of Salalah/Duqm/Sohar/Sultan Qaboos video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency and real-time stream sharing with NEMC.',
+                    ? 'Kabat One gestiona las transmisiones CCTV/ANPR de la ROP de los 11 gobernados, integra la vigilancia del MCT y el Corniche de Muttrah, conecta el video de los puertos de Salalah/Duqm/Sohar/Sultan Qaboos, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, análisis de comportamiento — con latencia de alerta inferior a 2 segundos y uso compartido de transmisiones en tiempo real con el NEMC.'
+                    : 'Kabat One manages ROP CCTV/ANPR feeds across 11 governorates, integrates MCT and Muttrah Corniche surveillance, connects Port of Salalah/Duqm/Sohar/Sultan Qaboos video, and provides AI video analytics — anomaly detection, crowd counting, behavioural analysis — with sub-2-second alert latency and real-time stream sharing with NEMC.',
                 },
                 {
                   heading: es ? 'Protección de infraestructura crítica: PDO/OQ/LNG' : 'Critical Infrastructure Protection: PDO/OQ/LNG',
                   text: es
-                    ? 'KabatOne proporciona monitoreo perimetral continuo de los campos PDO (Fahud/Yibal/Lekhwair/Al Huwaisah), instalaciones OQ (Saih Nihayda/Saih Rawl/Muscat Refinery), complejo LNG de Qalhat (3 trenes, 10.4 Mtpa) y terminal de exportación de Mina Al-Fahal — con alertas de violación de perímetro, integración de video PTZ y coordinación con la CDAA y la Guardia Costera de la ROP.'
-                    : 'KabatOne provides continuous perimeter monitoring of PDO oilfields (Fahud/Yibal/Lekhwair/Al Huwaisah), OQ facilities (Saih Nihayda/Saih Rawl/Muscat Refinery), Qalhat LNG complex (3 trains, 10.4 Mtpa), and Mina Al-Fahal export terminal — with perimeter breach alerts, PTZ video integration, and coordination with CDAA and ROP Coastguard.',
+                    ? 'Kabat One proporciona monitoreo perimetral continuo de los campos PDO (Fahud/Yibal/Lekhwair/Al Huwaisah), instalaciones OQ (Saih Nihayda/Saih Rawl/Muscat Refinery), complejo LNG de Qalhat (3 trenes, 10.4 Mtpa) y terminal de exportación de Mina Al-Fahal — con alertas de violación de perímetro, integración de video PTZ y coordinación con la CDAA y la Guardia Costera de la ROP.'
+                    : 'Kabat One provides continuous perimeter monitoring of PDO oilfields (Fahud/Yibal/Lekhwair/Al Huwaisah), OQ facilities (Saih Nihayda/Saih Rawl/Muscat Refinery), Qalhat LNG complex (3 trains, 10.4 Mtpa), and Mina Al-Fahal export terminal — with perimeter breach alerts, PTZ video integration, and coordination with CDAA and ROP Coastguard.',
                 },
                 {
                   heading: es ? 'Cumplimiento DR 6/2022/ITA y OCERT' : 'Royal Decree 6/2022/ITA & OCERT Cybersecurity Compliance',
                   text: es
-                    ? 'KabatOne se alinea con la PDPPL del Decreto Real 6/2022 supervisada por la ITA — cifrado, gestión del consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; marcos de ciberseguridad OCERT y estándares de seguridad de la ITA para infraestructura crítica nacional; y requisitos de continuidad de negocio del eOman/ITA para sistemas gubernamentales.'
-                    : 'KabatOne aligns with Royal Decree 6/2022 PDPPL supervised by ITA — encryption, consent management, data subject access rights, and breach notification; OCERT cybersecurity frameworks and ITA security standards for critical national infrastructure; and eOman/ITA business continuity requirements for government systems.',
+                    ? 'Kabat One se alinea con la PDPPL del Decreto Real 6/2022 supervisada por la ITA — cifrado, gestión del consentimiento, derechos de acceso de sujetos de datos y notificación de brechas; marcos de ciberseguridad OCERT y estándares de seguridad de la ITA para infraestructura crítica nacional; y requisitos de continuidad de negocio del eOman/ITA para sistemas gubernamentales.'
+                    : 'Kabat One aligns with Royal Decree 6/2022 PDPPL supervised by ITA — encryption, consent management, data subject access rights, and breach notification; OCERT cybersecurity frameworks and ITA security standards for critical national infrastructure; and eOman/ITA business continuity requirements for government systems.',
                 },
                 {
                   heading: es ? 'Adquisición DR 36/2008 y Digital Oman 2040' : 'Royal Decree 36/2008 Procurement & Digital Oman 2040',
                   text: es
-                    ? 'KabatOne admite licitaciones bajo la Ley de Adquisiciones del Gobierno (Decreto Real 36/2008 y modificaciones), los marcos de adquisición del ITA/eOman y las reglas de ZEE para Duqm/Sohar/Salalah Free Zone; apoya las prioridades Smart City y Digital Oman de la Visión 2040; y se alinea con los mecanismos de financiamiento de la Autoridad de Inversiones de Omán (OIA) para la modernización del sector público.'
-                    : 'KabatOne supports tenders under Government Procurement Law (Royal Decree 36/2008 and amendments), ITA/eOman procurement frameworks, and SEZ rules for Duqm/Sohar/Salalah Free Zone; supports Vision 2040 Smart City and Digital Oman priorities; and aligns with Oman Investment Authority (OIA) financing mechanisms for public sector modernisation.',
+                    ? 'Kabat One admite licitaciones bajo la Ley de Adquisiciones del Gobierno (Decreto Real 36/2008 y modificaciones), los marcos de adquisición del ITA/eOman y las reglas de ZEE para Duqm/Sohar/Salalah Free Zone; apoya las prioridades Smart City y Digital Oman de la Visión 2040; y se alinea con los mecanismos de financiamiento de la Autoridad de Inversiones de Omán (OIA) para la modernización del sector público.'
+                    : 'Kabat One supports tenders under Government Procurement Law (Royal Decree 36/2008 and amendments), ITA/eOman procurement frameworks, and SEZ rules for Duqm/Sohar/Salalah Free Zone; supports Vision 2040 Smart City and Digital Oman priorities; and aligns with Oman Investment Authority (OIA) financing mechanisms for public sector modernisation.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la ROP, la CDAA y el NEMC en una plataforma operativa conforme al Decreto Real 6/2022/ITA y alineada con la Visión Omán 2040.'
-              : 'Discover how KabatOne unifies Oman ROP, CDAA, and NEMC into one operational platform compliant with Royal Decree 6/2022/ITA and aligned with Oman Vision 2040.'
+              ? 'Descubra cómo Kabat One unifica la ROP, la CDAA y el NEMC en una plataforma operativa conforme al Decreto Real 6/2022/ITA y alineada con la Visión Omán 2040.'
+              : 'Discover how Kabat One unifies Oman ROP, CDAA, and NEMC into one operational platform compliant with Royal Decree 6/2022/ITA and aligned with Oman Vision 2040.'
           }
         />
       </main>

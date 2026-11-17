@@ -11,7 +11,7 @@ import { Link } from '@/i18n/navigation'
    facts are from its own product pages and Codan's 2021 acquisition release
    (research_notes/CAD inbound leads LATAM plan/zetron_sismed911_facts.md). The page never
    says Zetron lacks something the research could not confirm (cloud deployment, AI, TETRA);
-   the contrast rests on verified facts and KabatOne's approved claims only. */
+   the contrast rests on verified facts and Kabat One's approved claims only. */
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -26,7 +26,7 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Zetron', url: es ? 'https://kabatone.com/es/vs/zetron' : 'https://kabatone.com/vs/zetron' },
+    { name: 'Kabat One vs Zetron', url: es ? 'https://kabatone.com/es/vs/zetron' : 'https://kabatone.com/vs/zetron' },
   ]
 
   const rows = es ? [
@@ -51,14 +51,14 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
 
   const faqs = es ? [
     { question: '¿Qué es Zetron?', answer: 'Zetron es un fabricante estadounidense de sistemas para centros de despacho, con sede en Redmond, Washington, y parte del grupo australiano Codan desde 2021. Es conocido por sus consolas de despacho por radio (MAX Dispatch y ACOM) y ofrece también recepción de llamadas 911 (MAX Call Taking) y CAD (MAX CAD).' },
-    { question: '¿Cuál es la diferencia entre Zetron y KabatOne?', answer: 'Zetron nació en las consolas de radio y amplió su oferta a la recepción de llamadas y al CAD. KabatOne nació en el centro de mando: K-Dispatch une la atención de llamadas y el despacho con video, sensores y un AI Co-Pilot en el mismo mapa del incidente, y está construido en español para centros 911 y C5 de América Latina.' },
-    { question: '¿Cuáles son las alternativas a Zetron para un centro 911 en México?', answer: 'Las opciones que suelen evaluarse son Motorola Solutions, Hexagon y KabatOne, además de integradores con plataformas propias. La decisión depende de si la prioridad es la consola de radio, la integración de video y sensores con el despacho, el cumplimiento de la Norma Técnica 9-1-1 o el soporte local.' },
-    { question: '¿Se puede usar KabatOne junto con consolas de radio existentes?', answer: 'Sí. K-Dispatch está diseñado para conectarse con los sistemas de radio y registros que el centro ya opera, con interoperabilidad P25, TETRA y DMR, sin reemplazar todo de una vez.' },
+    { question: '¿Cuál es la diferencia entre Zetron y Kabat One?', answer: 'Zetron nació en las consolas de radio y amplió su oferta a la recepción de llamadas y al CAD. Kabat One nació en el centro de mando: K-Dispatch une la atención de llamadas y el despacho con video, sensores y un AI Co-Pilot en el mismo mapa del incidente, y está construido en español para centros 911 y C5 de América Latina.' },
+    { question: '¿Cuáles son las alternativas a Zetron para un centro 911 en México?', answer: 'Las opciones que suelen evaluarse son Motorola Solutions, Hexagon y Kabat One, además de integradores con plataformas propias. La decisión depende de si la prioridad es la consola de radio, la integración de video y sensores con el despacho, el cumplimiento de la Norma Técnica 9-1-1 o el soporte local.' },
+    { question: '¿Se puede usar Kabat One junto con consolas de radio existentes?', answer: 'Sí. K-Dispatch está diseñado para conectarse con los sistemas de radio y registros que el centro ya opera, con interoperabilidad P25, TETRA y DMR, sin reemplazar todo de una vez.' },
   ] : [
     { question: 'What is Zetron?', answer: 'Zetron is a US maker of dispatch-center systems, headquartered in Redmond, Washington, and part of Australia’s Codan group since 2021. It is known for radio dispatch consoles (MAX Dispatch and ACOM) and also offers 911 call handling (MAX Call Taking) and CAD (MAX CAD).' },
-    { question: 'What is the difference between Zetron and KabatOne?', answer: 'Zetron grew from radio consoles and extended into call handling and CAD. KabatOne grew from the command center: K-Dispatch brings call handling and dispatch together with video, sensors and an AI Co-Pilot on the same incident map, and is built Spanish-first for 911 centers and C5s in Latin America.' },
-    { question: 'What are the alternatives to Zetron for a 911 center?', answer: 'Agencies commonly evaluate Motorola Solutions, Hexagon, CentralSquare and KabatOne. The choice depends on whether the priority is the radio console, video and sensor integration with dispatch, local standards such as Mexico’s Norma Técnica 9-1-1, or local support.' },
-    { question: 'Can KabatOne work alongside existing radio consoles?', answer: 'Yes. K-Dispatch connects to the radio and records systems a center already runs, with P25, TETRA and DMR interoperability, without replacing everything at once.' },
+    { question: 'What is the difference between Zetron and Kabat One?', answer: 'Zetron grew from radio consoles and extended into call handling and CAD. Kabat One grew from the command center: K-Dispatch brings call handling and dispatch together with video, sensors and an AI Co-Pilot on the same incident map, and is built Spanish-first for 911 centers and C5s in Latin America.' },
+    { question: 'What are the alternatives to Zetron for a 911 center?', answer: 'Agencies commonly evaluate Motorola Solutions, Hexagon, CentralSquare and Kabat One. The choice depends on whether the priority is the radio console, video and sensor integration with dispatch, local standards such as Mexico’s Norma Técnica 9-1-1, or local support.' },
+    { question: 'Can Kabat One work alongside existing radio consoles?', answer: 'Yes. K-Dispatch connects to the radio and records systems a center already runs, with P25, TETRA and DMR interoperability, without replacing everything at once.' },
   ]
 
   const h2 = { fontFamily: 'var(--font-barlow-condensed)', fontSize: 30, fontWeight: 700 } as const
@@ -76,7 +76,7 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
             {es ? 'Comparación' : 'Comparison'}
           </div>
           <h1 style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(36px, 6vw, 58px)', fontWeight: 700, lineHeight: 1.08, marginBottom: 20 }}>
-            {es ? <>KabatOne vs Zetron: <span style={{ color: '#60a5fa' }}>alternativa para centros 911 y C5</span></> : <>KabatOne vs Zetron: <span style={{ color: '#60a5fa' }}>an alternative for 911 centers</span></>}
+            {es ? <>Kabat One vs Zetron: <span style={{ color: '#60a5fa' }}>alternativa para centros 911 y C5</span></> : <>Kabat One vs Zetron: <span style={{ color: '#60a5fa' }}>an alternative for 911 centers</span></>}
           </h1>
           <p style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: '#94a3b8', lineHeight: 1.7, maxWidth: 780 }}>
             {es
@@ -93,7 +93,7 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
                 <tr style={{ background: 'rgba(255,255,255,0.04)' }}>
                   <th style={{ textAlign: 'left', padding: '12px 14px', color: '#94a3b8', width: '22%' }}>{es ? 'Aspecto' : 'Area'}</th>
                   <th style={{ textAlign: 'left', padding: '12px 14px', color: '#94a3b8' }}>Zetron</th>
-                  <th style={{ textAlign: 'left', padding: '12px 14px', color: ACCENT === '#2563eb' ? '#60a5fa' : ACCENT }}>KabatOne</th>
+                  <th style={{ textAlign: 'left', padding: '12px 14px', color: ACCENT === '#2563eb' ? '#60a5fa' : ACCENT }}>Kabat One</th>
                 </tr>
               </thead>
               <tbody>
@@ -122,7 +122,7 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
               <p style={{ color: '#cbd5e1', lineHeight: 1.65 }}>{es ? 'Cuando la prioridad es la consola de radio y el centro ya trabaja con su ecosistema de despacho por radio.' : 'When the priority is the radio console and the center already works within its radio dispatch ecosystem.'}</p>
             </div>
             <div style={card}>
-              <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>KabatOne</h3>
+              <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Kabat One</h3>
               <p style={{ color: '#cbd5e1', lineHeight: 1.65 }}>{es ? 'Cuando el objetivo es que la llamada, el despacho, el video y los sensores estén en el mismo mapa, con asistencia de IA para el operador, despliegue en la nube, en sitio o híbrido, y soporte en México.' : 'When the goal is to put the call, the dispatch, video and sensors on one map, with AI assistance for the operator, cloud, on-premise or hybrid deployment, and local support in Latin America.'}</p>
             </div>
           </div>
@@ -142,9 +142,9 @@ export default async function VsZetronPage({ params }: { params: Promise<{ local
 
         <section style={{ padding: '0 24px 64px', maxWidth: 960, margin: '0 auto', display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 14 }}>
           {[
-            { href: '/vs/motorola', label: 'KabatOne vs Motorola' },
-            { href: '/vs/hexagon', label: 'KabatOne vs Hexagon' },
-            { href: '/vs/carbyne', label: 'KabatOne vs Carbyne' },
+            { href: '/vs/motorola', label: 'Kabat One vs Motorola' },
+            { href: '/vs/hexagon', label: 'Kabat One vs Hexagon' },
+            { href: '/vs/carbyne', label: 'Kabat One vs Carbyne' },
             { href: '/resources/norma-tecnica-911', label: es ? 'Norma Técnica 9-1-1: requisitos del CAD' : "Mexico's 911 standard: CAD requirements" },
             { href: '/k-dispatch', label: 'K-Dispatch' },
           ].map((l) => (

@@ -4,7 +4,7 @@ import CadSegmentPage, { type SegmentCopy } from '@/components/CadSegmentPage'
 
 /* CAD plan item #7 (the public guide; the downloadable template follows once Daniel
    validates it). GEO block E baseline (29 Oct 2026): "¿Qué debe incluir el anexo técnico de
-   una licitación de sistema CAD 911?" was the weakest Spanish buyer question -- KabatOne
+   una licitación de sistema CAD 911?" was the weakest Spanish buyer question -- Kabat One
    absent or only a source on every engine. Section wording builds on the Norma Técnica
    9-1-1 v2.0 clauses (see /resources/norma-tecnica-911). Procurement facts: new LAASSP in
    force 17 Apr 2025; Compras MX replaced CompraNet 18 Apr 2025 (research notes,
@@ -55,7 +55,7 @@ const ES: SegmentCopy = {
     { title: '11. Seguridad de la información', body: 'Control de accesos por rol, bitácora de auditoría, cifrado y continuidad, en línea con la política de ciberseguridad del centro.', ask: '“El sistema mantendrá bitácora inalterable de cada acción de usuario.”' },
     { title: '12. Pruebas de aceptación y demostración', body: 'Pida una demostración con escenarios reales del centro y pruebas de aceptación antes de la entrada en operación.', ask: '“El licitante demostrará en sesión técnica la atención y despacho de los escenarios del Anexo B.”' },
   ],
-  howTitle: 'Cómo puede apoyarle KabatOne',
+  howTitle: 'Cómo puede apoyarle Kabat One',
   how: HOW_ES,
   faqTitle: 'Preguntas frecuentes',
   faqs: [
@@ -118,7 +118,7 @@ const EN: SegmentCopy = {
       '“In a technical session, the bidder shall demonstrate call handling and dispatch of the scenarios in Annex B.”',
     ][i],
   })),
-  howTitle: 'How KabatOne can help',
+  howTitle: 'How Kabat One can help',
   how: HOW_EN,
   faqTitle: 'Frequently asked questions',
   faqs: [

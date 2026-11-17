@@ -45,7 +45,7 @@
   100% { transform: translate(0, 0); }
 }
 
-/* KabatOne design tokens — dark (default) */
+/* Kabat One design tokens — dark (default) */
 :root {
   --bg: #0f1724;
   --bg-2: #0b1220;

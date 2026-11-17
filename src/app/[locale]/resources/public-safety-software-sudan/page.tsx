@@ -23,11 +23,11 @@ export default async function PublicSafetySoftwareSudanPage({
 
   const article = articleSchema(
     es
-      ? "Software de Seguridad Pública para Sudán | SAF, RSF y Gestión de Crisis – KabatOne"
-      : "Public Safety Software for Sudan | SAF, RSF & Crisis Management – KabatOne",
+      ? "Software de Seguridad Pública para Sudán | SAF, RSF y Gestión de Crisis – Kabat One"
+      : "Public Safety Software for Sudan | SAF, RSF & Crisis Management – Kabat One",
     es
-      ? "KabatOne ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para las Fuerzas Armadas Sudanesas, gestión de desastres y programas de reconstrucción en Sudán."
-      : "KabatOne delivers unified command-and-control, AI-dispatch, and situational awareness for the Sudanese Armed Forces, disaster management, and reconstruction programs in Sudan.",
+      ? "Kabat One ofrece plataforma unificada de mando y control, despacho IA y conciencia situacional para las Fuerzas Armadas Sudanesas, gestión de desastres y programas de reconstrucción en Sudán."
+      : "Kabat One delivers unified command-and-control, AI-dispatch, and situational awareness for the Sudanese Armed Forces, disaster management, and reconstruction programs in Sudan.",
     es
       ? "https://kabatone.com/es/resources/public-safety-software-sudan"
       : "https://kabatone.com/resources/public-safety-software-sudan",
@@ -37,43 +37,43 @@ export default async function PublicSafetySoftwareSudanPage({
   const faqs = faqPageSchema([
     {
       question: es
-        ? "¿Cómo puede KabatOne apoyar la reconstrucción de la seguridad pública en Sudán?"
-        : "How can KabatOne support public safety reconstruction in Sudan?",
+        ? "¿Cómo puede Kabat One apoyar la reconstrucción de la seguridad pública en Sudán?"
+        : "How can Kabat One support public safety reconstruction in Sudan?",
       answer: es
-        ? "KabatOne proporciona CAD/gestión de incidentes modular para las 18 estados, integración con sistemas de respuesta humanitaria OCHA/UNHCR para los 10+ millones de PDI, coordinación de corredores humanitarios y plataformas de comunicación de emergencia para Port Sudan y las ciudades que se están reconstruyendo."
-        : "KabatOne provides modular CAD/incident management for all 18 states, integration with OCHA/UNHCR humanitarian response systems for 10+ million IDPs, humanitarian corridor coordination, and emergency communication platforms for Port Sudan and rebuilding cities.",
+        ? "Kabat One proporciona CAD/gestión de incidentes modular para las 18 estados, integración con sistemas de respuesta humanitaria OCHA/UNHCR para los 10+ millones de PDI, coordinación de corredores humanitarios y plataformas de comunicación de emergencia para Port Sudan y las ciudades que se están reconstruyendo."
+        : "Kabat One provides modular CAD/incident management for all 18 states, integration with OCHA/UNHCR humanitarian response systems for 10+ million IDPs, humanitarian corridor coordination, and emergency communication platforms for Port Sudan and rebuilding cities.",
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Sudán?"
-        : "How does KabatOne support critical infrastructure security in Sudan?",
+        ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Sudán?"
+        : "How does Kabat One support critical infrastructure security in Sudan?",
       answer: es
         ? "La plataforma monitorea el oleoducto Sudan/Sudán del Sur (1,600 km hasta Port Sudan), la presa de Merowe (1,250 MW en el Nilo), la presa de Sennar/Roseires, el Puerto de Port Sudan (acceso al Mar Rojo), el aeropuerto KRT y las instalaciones de SUDAPET/CNPC."
         : "The platform monitors the Sudan/South Sudan pipeline (1,600 km to Port Sudan), Merowe Dam (1,250 MW on the Nile), Sennar/Roseires dams, Port Sudan (Red Sea access), KRT airport, and SUDAPET/CNPC facilities.",
     },
     {
       question: es
-        ? "¿Puede KabatOne integrarse con la gestión humanitaria en Sudán?"
-        : "Can KabatOne integrate with humanitarian management in Sudan?",
+        ? "¿Puede Kabat One integrarse con la gestión humanitaria en Sudán?"
+        : "Can Kabat One integrate with humanitarian management in Sudan?",
       answer: es
-        ? "Sí. KabatOne se integra con OCHA/UNHCR/WFP para la gestión de los 10+ millones de PDI (la mayor crisis de desplazamiento del mundo en 2024), monitoreo de inundaciones del Nilo/Azul/Blanco, alertas de sequía del Sahel y coordinación de corredores humanitarios con Chad/Egipto/Sudán del Sur."
-        : "Yes. KabatOne integrates with OCHA/UNHCR/WFP for management of 10+ million IDPs (the world's largest displacement crisis in 2024), Nile/Blue Nile/White Nile flood monitoring, Sahel drought alerts, and humanitarian corridor coordination with Chad/Egypt/South Sudan.",
+        ? "Sí. Kabat One se integra con OCHA/UNHCR/WFP para la gestión de los 10+ millones de PDI (la mayor crisis de desplazamiento del mundo en 2024), monitoreo de inundaciones del Nilo/Azul/Blanco, alertas de sequía del Sahel y coordinación de corredores humanitarios con Chad/Egipto/Sudán del Sur."
+        : "Yes. Kabat One integrates with OCHA/UNHCR/WFP for management of 10+ million IDPs (the world's largest displacement crisis in 2024), Nile/Blue Nile/White Nile flood monitoring, Sahel drought alerts, and humanitarian corridor coordination with Chad/Egypt/South Sudan.",
     },
     {
       question: es
-        ? "¿Cómo cumple KabatOne con la normativa de Sudán?"
-        : "How does KabatOne comply with Sudan's regulations?",
+        ? "¿Cómo cumple Kabat One con la normativa de Sudán?"
+        : "How does Kabat One comply with Sudan's regulations?",
       answer: es
-        ? "KabatOne está diseñado para alinearse con las leyes de telecomunicaciones de la Autoridad Nacional de Telecomunicaciones de Sudán (NTC), los estándares de ciberseguridad del Consejo de Soberanía de Transición, y los marcos de adquisiciones del Banco Mundial/ONU para proyectos de reconstrucción financiados por donantes."
-        : "KabatOne is designed to align with Sudan National Telecommunications Authority (NTC) telecommunications laws, Transitional Sovereignty Council cybersecurity standards, and World Bank/UN procurement frameworks for donor-funded reconstruction projects.",
+        ? "Kabat One está diseñado para alinearse con las leyes de telecomunicaciones de la Autoridad Nacional de Telecomunicaciones de Sudán (NTC), los estándares de ciberseguridad del Consejo de Soberanía de Transición, y los marcos de adquisiciones del Banco Mundial/ONU para proyectos de reconstrucción financiados por donantes."
+        : "Kabat One is designed to align with Sudan National Telecommunications Authority (NTC) telecommunications laws, Transitional Sovereignty Council cybersecurity standards, and World Bank/UN procurement frameworks for donor-funded reconstruction projects.",
     },
     {
       question: es
-        ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Sudán?"
-        : "What sets KabatOne apart for Sudan's border management?",
+        ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Sudán?"
+        : "What sets Kabat One apart for Sudan's border management?",
       answer: es
-        ? "KabatOne puede unificar los 7 corredores fronterizos (Egipto/Libia/Chad/CAR/Sudán del Sur/Etiopía/Eritrea) con gestión de flujos de refugiados UNHCR, monitoreo del corredor del Mar Rojo/Port Sudan y coordinación con IGAD/UA para estabilización regional."
-        : "KabatOne can unify 7 border corridors (Egypt/Libya/Chad/CAR/South Sudan/Ethiopia/Eritrea) with UNHCR refugee flow management, Red Sea/Port Sudan corridor monitoring, and IGAD/AU coordination for regional stabilization.",
+        ? "Kabat One puede unificar los 7 corredores fronterizos (Egipto/Libia/Chad/CAR/Sudán del Sur/Etiopía/Eritrea) con gestión de flujos de refugiados UNHCR, monitoreo del corredor del Mar Rojo/Port Sudan y coordinación con IGAD/UA para estabilización regional."
+        : "Kabat One can unify 7 border corridors (Egypt/Libya/Chad/CAR/South Sudan/Ethiopia/Eritrea) with UNHCR refugee flow management, Red Sea/Port Sudan corridor monitoring, and IGAD/AU coordination for regional stabilization.",
     },
   ]);
 
@@ -141,8 +141,8 @@ export default async function PublicSafetySoftwareSudanPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está posicionado como plataforma de reconstrucción de seguridad pública post-conflicto: modular, escalable y compatible con los estándares de coordinación humanitaria de OCHA/UNHCR/WFP, con capacidad de despliegue rápido en ciudades liberadas y zonas de estabilización."
-              : "KabatOne is positioned as a post-conflict public safety reconstruction platform: modular, scalable, and compatible with OCHA/UNHCR/WFP humanitarian coordination standards, with rapid deployment capacity in liberated cities and stabilisation zones."}
+              ? "Kabat One está posicionado como plataforma de reconstrucción de seguridad pública post-conflicto: modular, escalable y compatible con los estándares de coordinación humanitaria de OCHA/UNHCR/WFP, con capacidad de despliegue rápido en ciudades liberadas y zonas de estabilización."
+              : "Kabat One is positioned as a post-conflict public safety reconstruction platform: modular, scalable, and compatible with OCHA/UNHCR/WFP humanitarian coordination standards, with rapid deployment capacity in liberated cities and stabilisation zones."}
           </p>
 
           {/* Humanitarian */}
@@ -158,8 +158,8 @@ export default async function PublicSafetySoftwareSudanPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra los feeds humanitarios de OCHA/UNHCR/WFP para la gestión de los 10+ millones de PDI, monitoreo de los corredores de ayuda en tiempo real, coordinación de evacuaciones médicas de emergencia, y gestión de campamentos de desplazados en las zonas de Port Sudan/Kassala/Gedaref/Nyala."
-              : "KabatOne integrates OCHA/UNHCR/WFP humanitarian feeds for management of 10+ million IDPs, real-time aid corridor monitoring, medical emergency evacuation coordination, and displaced persons camp management in Port Sudan/Kassala/Gedaref/Nyala zones."}
+              ? "Kabat One integra los feeds humanitarios de OCHA/UNHCR/WFP para la gestión de los 10+ millones de PDI, monitoreo de los corredores de ayuda en tiempo real, coordinación de evacuaciones médicas de emergencia, y gestión de campamentos de desplazados en las zonas de Port Sudan/Kassala/Gedaref/Nyala."
+              : "Kabat One integrates OCHA/UNHCR/WFP humanitarian feeds for management of 10+ million IDPs, real-time aid corridor monitoring, medical emergency evacuation coordination, and displaced persons camp management in Port Sudan/Kassala/Gedaref/Nyala zones."}
           </p>
 
           {/* Critical Infrastructure */}
@@ -175,8 +175,8 @@ export default async function PublicSafetySoftwareSudanPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "El Puerto de Port Sudan (Mar Rojo) es el único puerto marítimo de Sudán y la puerta de entrada/salida del comercio de toda la región. El Aeropuerto Internacional de Port Sudan (PZU) ha sustituido al Aeropuerto Internacional de Jartum (KRT) como principal punto de entrada aérea durante el conflicto. KabatOne monitorea toda esta infraestructura crítica con gestión unificada de activos y alertas de seguridad."
-              : "Port Sudan Port (Red Sea) is Sudan's only seaport and the region's trade gateway. Port Sudan International Airport (PZU) has replaced Khartoum International Airport (KRT) as the main air entry point during the conflict. KabatOne monitors all this critical infrastructure with unified asset management and security alerts."}
+              ? "El Puerto de Port Sudan (Mar Rojo) es el único puerto marítimo de Sudán y la puerta de entrada/salida del comercio de toda la región. El Aeropuerto Internacional de Port Sudan (PZU) ha sustituido al Aeropuerto Internacional de Jartum (KRT) como principal punto de entrada aérea durante el conflicto. Kabat One monitorea toda esta infraestructura crítica con gestión unificada de activos y alertas de seguridad."
+              : "Port Sudan Port (Red Sea) is Sudan's only seaport and the region's trade gateway. Port Sudan International Airport (PZU) has replaced Khartoum International Airport (KRT) as the main air entry point during the conflict. Kabat One monitors all this critical infrastructure with unified asset management and security alerts."}
           </p>
 
           {/* Border Management */}
@@ -192,8 +192,8 @@ export default async function PublicSafetySoftwareSudanPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne integra el monitoreo de los 7 corredores fronterizos con gestión de flujos de refugiados UNHCR, alertas de tráfico de armas de la UA/IGAD, seguimiento del corredor de exportación de petróleo Sudán del Sur/Port Sudan y el sistema de vigilancia marítima del Mar Rojo en coordinación con la marina sudanesa."
-              : "KabatOne integrates monitoring of all 7 border corridors with UNHCR refugee flow management, AU/IGAD arms trafficking alerts, South Sudan/Port Sudan oil export corridor tracking, and Red Sea maritime surveillance system in coordination with the Sudanese navy."}
+              ? "Kabat One integra el monitoreo de los 7 corredores fronterizos con gestión de flujos de refugiados UNHCR, alertas de tráfico de armas de la UA/IGAD, seguimiento del corredor de exportación de petróleo Sudán del Sur/Port Sudan y el sistema de vigilancia marítima del Mar Rojo en coordinación con la marina sudanesa."
+              : "Kabat One integrates monitoring of all 7 border corridors with UNHCR refugee flow management, AU/IGAD arms trafficking alerts, South Sudan/Port Sudan oil export corridor tracking, and Red Sea maritime surveillance system in coordination with the Sudanese navy."}
           </p>
 
           {/* Reconstruction */}
@@ -209,8 +209,8 @@ export default async function PublicSafetySoftwareSudanPage({
           </p>
           <p className="text-gray-700 mb-4">
             {es
-              ? "KabatOne está estructurado para despliegue rápido bajo marcos de adquisiciones de emergencia del Banco Mundial/ONU, compatible con los sistemas de coordinación OCHA/UNDP, y diseñado para escalar desde operaciones humanitarias de emergencia hasta plataformas de seguridad pública civiles a medida que avanza la normalización institucional."
-              : "KabatOne is structured for rapid deployment under World Bank/UN emergency procurement frameworks, compatible with OCHA/UNDP coordination systems, and designed to scale from emergency humanitarian operations to civilian public safety platforms as institutional normalisation advances."}
+              ? "Kabat One está estructurado para despliegue rápido bajo marcos de adquisiciones de emergencia del Banco Mundial/ONU, compatible con los sistemas de coordinación OCHA/UNDP, y diseñado para escalar desde operaciones humanitarias de emergencia hasta plataformas de seguridad pública civiles a medida que avanza la normalización institucional."
+              : "Kabat One is structured for rapid deployment under World Bank/UN emergency procurement frameworks, compatible with OCHA/UNDP coordination systems, and designed to scale from emergency humanitarian operations to civilian public safety platforms as institutional normalisation advances."}
           </p>
         </section>
 
@@ -224,43 +224,43 @@ export default async function PublicSafetySoftwareSudanPage({
               {[
                 {
                   q: es
-                    ? "¿Cómo puede KabatOne apoyar la reconstrucción de la seguridad pública en Sudán?"
-                    : "How can KabatOne support public safety reconstruction in Sudan?",
+                    ? "¿Cómo puede Kabat One apoyar la reconstrucción de la seguridad pública en Sudán?"
+                    : "How can Kabat One support public safety reconstruction in Sudan?",
                   a: es
-                    ? "KabatOne proporciona CAD modular para las 18 estados, integración OCHA/UNHCR para 10+ millones de PDI, coordinación de corredores humanitarios y plataformas de emergencia para Port Sudan y ciudades en reconstrucción."
-                    : "KabatOne provides modular CAD for 18 states, OCHA/UNHCR integration for 10+ million IDPs, humanitarian corridor coordination, and emergency platforms for Port Sudan and rebuilding cities.",
+                    ? "Kabat One proporciona CAD modular para las 18 estados, integración OCHA/UNHCR para 10+ millones de PDI, coordinación de corredores humanitarios y plataformas de emergencia para Port Sudan y ciudades en reconstrucción."
+                    : "Kabat One provides modular CAD for 18 states, OCHA/UNHCR integration for 10+ million IDPs, humanitarian corridor coordination, and emergency platforms for Port Sudan and rebuilding cities.",
                 },
                 {
                   q: es
-                    ? "¿Cómo apoya KabatOne la seguridad de infraestructura crítica en Sudán?"
-                    : "How does KabatOne support critical infrastructure security in Sudan?",
+                    ? "¿Cómo apoya Kabat One la seguridad de infraestructura crítica en Sudán?"
+                    : "How does Kabat One support critical infrastructure security in Sudan?",
                   a: es
                     ? "La plataforma monitorea Merowe Dam 1,250 MW/Roseires/Sennar, oleoducto GNPOC 1,610 km hasta Port Sudan/Bashayer, Puerto de Port Sudan (único acceso al Mar Rojo) y aeropuerto PZU."
                     : "The platform monitors Merowe Dam 1,250 MW/Roseires/Sennar, GNPOC pipeline 1,610 km to Port Sudan/Bashayer Terminal, Port Sudan (only Red Sea access), and PZU airport.",
                 },
                 {
                   q: es
-                    ? "¿Puede KabatOne integrarse con la gestión humanitaria en Sudán?"
-                    : "Can KabatOne integrate with humanitarian management in Sudan?",
+                    ? "¿Puede Kabat One integrarse con la gestión humanitaria en Sudán?"
+                    : "Can Kabat One integrate with humanitarian management in Sudan?",
                   a: es
-                    ? "Sí. KabatOne integra OCHA/UNHCR/WFP para 10+ millones de PDI (mayor crisis desplazamiento mundial 2024), monitoreo de inundaciones del Nilo, alertas del Sahel y corredores humanitarios Chad/Egipto/Sudán del Sur."
-                    : "Yes. KabatOne integrates OCHA/UNHCR/WFP for 10+ million IDPs (world's largest displacement crisis 2024), Nile flood monitoring, Sahel drought alerts, and Chad/Egypt/South Sudan humanitarian corridors.",
+                    ? "Sí. Kabat One integra OCHA/UNHCR/WFP para 10+ millones de PDI (mayor crisis desplazamiento mundial 2024), monitoreo de inundaciones del Nilo, alertas del Sahel y corredores humanitarios Chad/Egipto/Sudán del Sur."
+                    : "Yes. Kabat One integrates OCHA/UNHCR/WFP for 10+ million IDPs (world's largest displacement crisis 2024), Nile flood monitoring, Sahel drought alerts, and Chad/Egypt/South Sudan humanitarian corridors.",
                 },
                 {
                   q: es
-                    ? "¿Cómo cumple KabatOne con la normativa de Sudán?"
-                    : "How does KabatOne comply with Sudan's regulations?",
+                    ? "¿Cómo cumple Kabat One con la normativa de Sudán?"
+                    : "How does Kabat One comply with Sudan's regulations?",
                   a: es
-                    ? "KabatOne se alinea con las leyes de telecomunicaciones NTC, estándares del Consejo de Soberanía de Transición y marcos de adquisiciones Banco Mundial/ONU para proyectos de reconstrucción financiados por donantes."
-                    : "KabatOne aligns with NTC telecommunications laws, Transitional Sovereignty Council standards, and World Bank/UN procurement frameworks for donor-funded reconstruction projects.",
+                    ? "Kabat One se alinea con las leyes de telecomunicaciones NTC, estándares del Consejo de Soberanía de Transición y marcos de adquisiciones Banco Mundial/ONU para proyectos de reconstrucción financiados por donantes."
+                    : "Kabat One aligns with NTC telecommunications laws, Transitional Sovereignty Council standards, and World Bank/UN procurement frameworks for donor-funded reconstruction projects.",
                 },
                 {
                   q: es
-                    ? "¿Qué diferencia a KabatOne en la gestión fronteriza de Sudán?"
-                    : "What sets KabatOne apart for Sudan's border management?",
+                    ? "¿Qué diferencia a Kabat One en la gestión fronteriza de Sudán?"
+                    : "What sets Kabat One apart for Sudan's border management?",
                   a: es
-                    ? "KabatOne puede unificar los 7 corredores fronterizos (Egipto/Libia/Chad/CAR/Sudán del Sur/Etiopía/Eritrea) con gestión de refugiados UNHCR, monitoreo del Mar Rojo/Port Sudan y coordinación IGAD/UA."
-                    : "KabatOne can unify 7 border corridors (Egypt/Libya/Chad/CAR/South Sudan/Ethiopia/Eritrea) with UNHCR refugee management, Red Sea/Port Sudan monitoring, and IGAD/AU coordination.",
+                    ? "Kabat One puede unificar los 7 corredores fronterizos (Egipto/Libia/Chad/CAR/Sudán del Sur/Etiopía/Eritrea) con gestión de refugiados UNHCR, monitoreo del Mar Rojo/Port Sudan y coordinación IGAD/UA."
+                    : "Kabat One can unify 7 border corridors (Egypt/Libya/Chad/CAR/South Sudan/Ethiopia/Eritrea) with UNHCR refugee management, Red Sea/Port Sudan monitoring, and IGAD/AU coordination.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm p-6">

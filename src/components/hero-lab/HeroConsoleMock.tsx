@@ -28,8 +28,8 @@ const EVENTS = [
 export default function HeroConsoleMock({ es }: { es: boolean }) {
   return (
     <div className="hcm" role="img" aria-label={es
-      ? 'Consola de operaciones KabatOne con mapa en vivo, cola de despacho, muro de video y registro de eventos'
-      : 'KabatOne operations console with live map, dispatch queue, video wall, and event log'}>
+      ? 'Consola de operaciones Kabat One con mapa en vivo, cola de despacho, muro de video y registro de eventos'
+      : 'Kabat One operations console with live map, dispatch queue, video wall, and event log'}>
 
       {/* module rail */}
       <aside className="hcm-rail">

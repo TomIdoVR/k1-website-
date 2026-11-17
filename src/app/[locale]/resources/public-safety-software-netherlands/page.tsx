@@ -62,8 +62,8 @@ export default async function PublicSafetySoftwareNetherlandsPage({
       answer: 'Los Países Bajos tienen un ecosistema de cameratoezicht (videovigilancia) distribuido: los municipios gestionan las redes de CCTV en espacios públicos bajo la Gemeentewet y la AVG, mientras que la Politie accede a las imágenes con base legal específica. Ciudades como Ámsterdam, Rotterdam y La Haya tienen extensas redes de cámaras municipales integradas con las salas de operaciones de la Politie. El uso de analítica de video con IA (incluyendo reconocimiento facial) está bajo escrutinio del AP y requiere una evaluación de impacto de protección de datos (DPIA/PIA) previa. El sistema ANPR (kentekenherkenning) es operado por de Politie en carreteras y accesos urbanos principales.',
     },
     {
-      question: '¿Por qué KabatOne es adecuado para la Politie, Brandweer y los Meldkamers neerlandeses?',
-      answer: 'KabatOne integra las funciones que la Politie, Brandweer y los Meldkamers gestionan en plataformas separadas: despacho CAD compatible con la arquitectura GMK del proyecto Meldkamer NL y los flujos de trabajo 112 multiagencia (K-Dispatch), gestión unificada de redes de cameratoezicht con analítica de IA — kentekenherkenning ANPR, detección de comportamientos, búsqueda forense — conforme a la AVG, la WPG y las directrices del AP (K-Video), y conciencia situacional GIS compartida entre Politie Eenheden, Brandweer, GHOR y veiligheidsregio (K-Safety). Despliegue on-premises con cumplimiento BIO y requisitos NCSC. Demo adaptada al contexto del Meldkamer NL y las veiligheidsregio neerlandesas.',
+      question: '¿Por qué Kabat One es adecuado para la Politie, Brandweer y los Meldkamers neerlandeses?',
+      answer: 'Kabat One integra las funciones que la Politie, Brandweer y los Meldkamers gestionan en plataformas separadas: despacho CAD compatible con la arquitectura GMK del proyecto Meldkamer NL y los flujos de trabajo 112 multiagencia (K-Dispatch), gestión unificada de redes de cameratoezicht con analítica de IA — kentekenherkenning ANPR, detección de comportamientos, búsqueda forense — conforme a la AVG, la WPG y las directrices del AP (K-Video), y conciencia situacional GIS compartida entre Politie Eenheden, Brandweer, GHOR y veiligheidsregio (K-Safety). Despliegue on-premises con cumplimiento BIO y requisitos NCSC. Demo adaptada al contexto del Meldkamer NL y las veiligheidsregio neerlandesas.',
     },
   ] : [
     {
@@ -91,8 +91,8 @@ export default async function PublicSafetySoftwareNetherlandsPage({
       answer: 'The Netherlands has a distributed cameratoezicht (video surveillance) ecosystem: municipalities manage public space CCTV networks under the Gemeentewet and AVG, while the Politie accesses footage with specific legal basis. Cities including Amsterdam, Rotterdam, and The Hague have extensive municipal camera networks integrated with Politie operations rooms. AI video analytics (including facial recognition) is under AP scrutiny and requires a prior Data Protection Impact Assessment (DPIA). The ANPR system (kentekenherkenning) is operated by the Politie on main roads and urban access points.',
     },
     {
-      question: 'Why is KabatOne suited for Dutch Politie, Brandweer, and Meldkamer operations?',
-      answer: 'KabatOne integrates the functions Politie, Brandweer, and Meldkamers manage across separate platforms: CAD dispatch compatible with the GMK architecture of the Meldkamer NL project and 112 multi-agency workflows (K-Dispatch), unified management of cameratoezicht networks with AI analytics — ANPR kentekenherkenning, behavioural detection, forensic search — compliant with AVG, WPG, and AP guidelines (K-Video), and GIS situational awareness shared across Politie Eenheden, Brandweer, GHOR, and veiligheidsregio (K-Safety). On-premises deployment with BIO compliance and NCSC requirements. Request a demo tailored to the Dutch Meldkamer NL and veiligheidsregio context.',
+      question: 'Why is Kabat One suited for Dutch Politie, Brandweer, and Meldkamer operations?',
+      answer: 'Kabat One integrates the functions Politie, Brandweer, and Meldkamers manage across separate platforms: CAD dispatch compatible with the GMK architecture of the Meldkamer NL project and 112 multi-agency workflows (K-Dispatch), unified management of cameratoezicht networks with AI analytics — ANPR kentekenherkenning, behavioural detection, forensic search — compliant with AVG, WPG, and AP guidelines (K-Video), and GIS situational awareness shared across Politie Eenheden, Brandweer, GHOR, and veiligheidsregio (K-Safety). On-premises deployment with BIO compliance and NCSC requirements. Request a demo tailored to the Dutch Meldkamer NL and veiligheidsregio context.',
     },
   ]
 
@@ -190,8 +190,8 @@ export default async function PublicSafetySoftwareNetherlandsPage({
             </h1>
             <p style={{ ...pStyle, fontSize: '18px', maxWidth: '720px' }}>
               {es
-                ? 'Los Países Bajos consolidaron 26 fuerzas regionales en una única Politie nacional con 10 Eenheden, y están modernizando el despacho de emergencias bajo el proyecto Meldkamer NL hacia Gezamenlijke Meldkamers integrados. KabatOne unifica el despacho CAD compatible con CAD 2.0/GMK, la gestión de cameratoezicht con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento AVG, WPG y BIO.'
-                : 'The Netherlands consolidated 26 regional forces into a single national Politie with 10 Eenheden, and is modernising emergency dispatch under the Meldkamer NL project towards integrated Gezamenlijke Meldkamers. KabatOne unifies CAD dispatch compatible with CAD 2.0/GMK, cameratoezicht management with AI analytics, and GIS situational awareness in a single platform with AVG, WPG, and BIO compliance.'}
+                ? 'Los Países Bajos consolidaron 26 fuerzas regionales en una única Politie nacional con 10 Eenheden, y están modernizando el despacho de emergencias bajo el proyecto Meldkamer NL hacia Gezamenlijke Meldkamers integrados. Kabat One unifica el despacho CAD compatible con CAD 2.0/GMK, la gestión de cameratoezicht con analítica de IA y la conciencia situacional GIS en una plataforma con cumplimiento AVG, WPG y BIO.'
+                : 'The Netherlands consolidated 26 regional forces into a single national Politie with 10 Eenheden, and is modernising emergency dispatch under the Meldkamer NL project towards integrated Gezamenlijke Meldkamers. Kabat One unifies CAD dispatch compatible with CAD 2.0/GMK, cameratoezicht management with AI analytics, and GIS situational awareness in a single platform with AVG, WPG, and BIO compliance.'}
             </p>
           </div>
         </section>
@@ -234,14 +234,14 @@ export default async function PublicSafetySoftwareNetherlandsPage({
           </div>
         </section>
 
-        {/* ── SECTION 2: How KabatOne Works ── */}
+        {/* ── SECTION 2: How Kabat One Works ── */}
         <section style={{ ...sectionStyle, background: 'rgba(255,255,255,0.01)' }}>
           <div style={containerStyle}>
-            <h2 style={h2Style}>{es ? 'Cómo KabatOne Responde a los Requisitos de los Meldkamers y Politie Eenheden' : 'How KabatOne Addresses Dutch Meldkamer and Politie Eenheid Requirements'}</h2>
+            <h2 style={h2Style}>{es ? 'Cómo Kabat One Responde a los Requisitos de los Meldkamers y Politie Eenheden' : 'How Kabat One Addresses Dutch Meldkamer and Politie Eenheid Requirements'}</h2>
             <p style={pStyle}>
               {es
-                ? 'KabatOne está diseñado para los Meldkamers y salas de operaciones de la Politie que necesitan un único dashboard para gestionar llamadas 112 multiagencia, monitorear redes de cameratoezicht y coordinar unidades de Politie, Brandweer y GHOR sobre un mapa GIS — todo bajo el triple marco de cumplimiento AVG/WPG/BIO de los sistemas de información de seguridad pública neerlandeses.'
-                : 'KabatOne is designed for Dutch Meldkamers and Politie operations rooms that need a single dashboard to manage 112 multi-agency calls, monitor cameratoezicht networks, and coordinate Politie, Brandweer, and GHOR units on a GIS map — all under the triple AVG/WPG/BIO compliance framework for Dutch public safety information systems.'}
+                ? 'Kabat One está diseñado para los Meldkamers y salas de operaciones de la Politie que necesitan un único dashboard para gestionar llamadas 112 multiagencia, monitorear redes de cameratoezicht y coordinar unidades de Politie, Brandweer y GHOR sobre un mapa GIS — todo bajo el triple marco de cumplimiento AVG/WPG/BIO de los sistemas de información de seguridad pública neerlandeses.'
+                : 'Kabat One is designed for Dutch Meldkamers and Politie operations rooms that need a single dashboard to manage 112 multi-agency calls, monitor cameratoezicht networks, and coordinate Politie, Brandweer, and GHOR units on a GIS map — all under the triple AVG/WPG/BIO compliance framework for Dutch public safety information systems.'}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
               {(es ? [
@@ -268,7 +268,7 @@ export default async function PublicSafetySoftwareNetherlandsPage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
-              {es ? 'Plataforma KabatOne' : 'KabatOne Platform'}
+              {es ? 'Plataforma Kabat One' : 'Kabat One Platform'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>K-Dispatch · K-Video · K-Safety</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
@@ -341,7 +341,7 @@ export default async function PublicSafetySoftwareNetherlandsPage({
         <CTASection
           es={es}
           h2={es ? 'Solicita una Demo para tu Meldkamer, Politie Eenheid o Veiligheidsregio' : 'Request a Demo for Your Meldkamer, Politie Eenheid, or Veiligheidsregio'}
-          subtitle={es ? 'KabatOne integra despacho 112/GMK, cameratoezicht con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento AVG, WPG y BIO. Demo adaptada al contexto del Meldkamer NL y las veiligheidsregio neerlandesas.' : 'KabatOne integrates 112/GMK dispatch, AI cameratoezicht analytics, and GIS situational awareness in a single platform with AVG, WPG, and BIO compliance. Demo tailored to the Dutch Meldkamer NL and veiligheidsregio context.'}
+          subtitle={es ? 'Kabat One integra despacho 112/GMK, cameratoezicht con analítica de IA y conciencia situacional GIS en una plataforma con cumplimiento AVG, WPG y BIO. Demo adaptada al contexto del Meldkamer NL y las veiligheidsregio neerlandesas.' : 'Kabat One integrates 112/GMK dispatch, AI cameratoezicht analytics, and GIS situational awareness in a single platform with AVG, WPG, and BIO compliance. Demo tailored to the Dutch Meldkamer NL and veiligheidsregio context.'}
         />
 
         <Footer es={es} />

@@ -28,58 +28,58 @@ export default async function VsGenetecPage({
   const breadcrumbs = [
     { name: es ? 'Inicio' : 'Home', url: es ? 'https://kabatone.com/es' : 'https://kabatone.com/' },
     { name: es ? 'Comparaciones' : 'Compare', url: es ? 'https://kabatone.com/es/vs' : 'https://kabatone.com/vs' },
-    { name: 'KabatOne vs Genetec', url: es ? 'https://kabatone.com/es/vs/genetec' : 'https://kabatone.com/vs/genetec' },
+    { name: 'Kabat One vs Genetec', url: es ? 'https://kabatone.com/es/vs/genetec' : 'https://kabatone.com/vs/genetec' },
   ]
 
   const faqs = es ? [
     {
-      question: '¿Cuál es la diferencia entre KabatOne y Genetec Security Center?',
-      answer: 'Genetec Security Center es una plataforma de seguridad empresarial centrada en gestión de video, control de acceso y reconocimiento de placas. KabatOne es una plataforma unificada de seguridad pública que agrega despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) a la gestión de video — conectando toda la cadena de respuesta en un solo sistema. La diferencia central es de alcance: Genetec gestiona activos de seguridad física; KabatOne coordina el flujo completo de respuesta a incidentes.',
+      question: '¿Cuál es la diferencia entre Kabat One y Genetec Security Center?',
+      answer: 'Genetec Security Center es una plataforma de seguridad empresarial centrada en gestión de video, control de acceso y reconocimiento de placas. Kabat One es una plataforma unificada de seguridad pública que agrega despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión de tráfico (K-Traffic) y video comunitario (K-Connect) a la gestión de video — conectando toda la cadena de respuesta en un solo sistema. La diferencia central es de alcance: Genetec gestiona activos de seguridad física; Kabat One coordina el flujo completo de respuesta a incidentes.',
     },
     {
       question: '¿Genetec incluye software de despacho CAD?',
-      answer: 'Genetec Security Center no incluye un módulo de despacho CAD nativo. Las organizaciones que necesitan CAD o despacho de emergencias junto con Genetec deben integrar un sistema CAD de terceros por separado. KabatOne incluye K-Dispatch como módulo nativo, integrando recepción de llamadas, recomendación de unidades y registro de despacho directamente con video y GIS en una sola plataforma.',
+      answer: 'Genetec Security Center no incluye un módulo de despacho CAD nativo. Las organizaciones que necesitan CAD o despacho de emergencias junto con Genetec deben integrar un sistema CAD de terceros por separado. Kabat One incluye K-Dispatch como módulo nativo, integrando recepción de llamadas, recomendación de unidades y registro de despacho directamente con video y GIS en una sola plataforma.',
     },
     {
-      question: '¿KabatOne puede integrarse con cámaras Genetec existentes?',
-      answer: 'Sí. KabatOne K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de despliegues Genetec junto con cámaras de otros fabricantes. Esto permite a las organizaciones con infraestructura Genetec existente incorporar las capacidades de despacho, GIS y tráfico de KabatOne sin reemplazar su infraestructura de cámaras.',
+      question: '¿Kabat One puede integrarse con cámaras Genetec existentes?',
+      answer: 'Sí. Kabat One K-Video soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de despliegues Genetec junto con cámaras de otros fabricantes. Esto permite a las organizaciones con infraestructura Genetec existente incorporar las capacidades de despacho, GIS y tráfico de Kabat One sin reemplazar su infraestructura de cámaras.',
     },
     {
-      question: '¿Es KabatOne una alternativa a Genetec para seguridad pública?',
-      answer: 'KabatOne y Genetec atienden casos de uso distintos que se superponen parcialmente. Genetec es la opción más fuerte para entornos empresariales donde la necesidad principal es gestión de video a gran escala y control de acceso. KabatOne es la opción más fuerte para operaciones de seguridad pública — municipios, centros de mando y agencias de emergencia — que necesitan el flujo completo de respuesta: video, despacho, GIS, tráfico y coordinación de campo en un solo sistema.',
+      question: '¿Es Kabat One una alternativa a Genetec para seguridad pública?',
+      answer: 'Kabat One y Genetec atienden casos de uso distintos que se superponen parcialmente. Genetec es la opción más fuerte para entornos empresariales donde la necesidad principal es gestión de video a gran escala y control de acceso. Kabat One es la opción más fuerte para operaciones de seguridad pública — municipios, centros de mando y agencias de emergencia — que necesitan el flujo completo de respuesta: video, despacho, GIS, tráfico y coordinación de campo en un solo sistema.',
     },
     {
-      question: '¿Cuál es mejor para centros de mando C5 — Genetec o KabatOne?',
-      answer: 'KabatOne está diseñado específicamente para operaciones de centros de mando C4 y C5 en México y Latinoamérica. Los centros C5 requieren integración en tiempo real de múltiples disciplinas de emergencia — videovigilancia, despacho CAD, gestión de tráfico y reporte ciudadano de incidentes — en una sola vista operativa. Los módulos K-Safety, K-Dispatch, K-Video y K-Traffic de KabatOne están diseñados específicamente para este modelo operativo. KabatOne opera en más de 40 ciudades con estructuras de centros de mando C5 o similares en Latinoamérica.',
+      question: '¿Cuál es mejor para centros de mando C5 — Genetec o Kabat One?',
+      answer: 'Kabat One está diseñado específicamente para operaciones de centros de mando C4 y C5 en México y Latinoamérica. Los centros C5 requieren integración en tiempo real de múltiples disciplinas de emergencia — videovigilancia, despacho CAD, gestión de tráfico y reporte ciudadano de incidentes — en una sola vista operativa. Los módulos K-Safety, K-Dispatch, K-Video y K-Traffic de Kabat One están diseñados específicamente para este modelo operativo. Kabat One opera en más de 40 ciudades con estructuras de centros de mando C5 o similares en Latinoamérica.',
     },
     {
-      question: '¿Qué ofrece KabatOne que Genetec no ofrece?',
-      answer: 'En comparación con Genetec Security Center, KabatOne agrega: software CAD/despacho (K-Dispatch) para coordinación de emergencias; conciencia situacional GIS nativa (K-Safety) con seguimiento en vivo de incidentes en toda la ciudad; gestión inteligente de tráfico (K-Traffic) para control de semáforos y detección de infracciones; compartición de video comunitario (K-Connect) para integración de video público-privado; y soporte de flujo de trabajo para responders en campo. KabatOne está diseñado específicamente para el flujo de respuesta de extremo a extremo, no solo para monitoreo de activos.',
+      question: '¿Qué ofrece Kabat One que Genetec no ofrece?',
+      answer: 'En comparación con Genetec Security Center, Kabat One agrega: software CAD/despacho (K-Dispatch) para coordinación de emergencias; conciencia situacional GIS nativa (K-Safety) con seguimiento en vivo de incidentes en toda la ciudad; gestión inteligente de tráfico (K-Traffic) para control de semáforos y detección de infracciones; compartición de video comunitario (K-Connect) para integración de video público-privado; y soporte de flujo de trabajo para responders en campo. Kabat One está diseñado específicamente para el flujo de respuesta de extremo a extremo, no solo para monitoreo de activos.',
     },
   ] : [
     {
-      question: 'What is the difference between KabatOne and Genetec Security Center?',
-      answer: 'Genetec Security Center is an enterprise IP security platform focused on video management, access control, and license plate recognition. KabatOne is a unified public safety platform that adds CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video sharing (K-Connect) to video management — connecting the full incident response chain in one system. The core difference is scope: Genetec manages physical security assets; KabatOne coordinates the full response workflow.',
+      question: 'What is the difference between Kabat One and Genetec Security Center?',
+      answer: 'Genetec Security Center is an enterprise IP security platform focused on video management, access control, and license plate recognition. Kabat One is a unified public safety platform that adds CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), traffic management (K-Traffic), and community video sharing (K-Connect) to video management — connecting the full incident response chain in one system. The core difference is scope: Genetec manages physical security assets; Kabat One coordinates the full response workflow.',
     },
     {
       question: 'Does Genetec include CAD dispatch software?',
-      answer: 'Genetec Security Center does not include a native CAD dispatch module. Organizations that need CAD or emergency dispatch alongside Genetec must integrate a separate third-party CAD system. KabatOne includes K-Dispatch as a native module, integrating call intake, unit recommendation, and dispatch logging directly with video and GIS in one platform.',
+      answer: 'Genetec Security Center does not include a native CAD dispatch module. Organizations that need CAD or emergency dispatch alongside Genetec must integrate a separate third-party CAD system. Kabat One includes K-Dispatch as a native module, integrating call intake, unit recommendation, and dispatch logging directly with video and GIS in one platform.',
     },
     {
-      question: 'Can KabatOne integrate with existing Genetec cameras?',
-      answer: 'Yes. KabatOne K-Video supports ONVIF, RTSP, and standard IP camera protocols, which allows it to aggregate camera feeds from Genetec deployments alongside cameras from other manufacturers. This enables organizations with existing Genetec camera infrastructure to add KabatOne\'s dispatch, GIS, and traffic capabilities without replacing their cameras.',
+      question: 'Can Kabat One integrate with existing Genetec cameras?',
+      answer: 'Yes. Kabat One K-Video supports ONVIF, RTSP, and standard IP camera protocols, which allows it to aggregate camera feeds from Genetec deployments alongside cameras from other manufacturers. This enables organizations with existing Genetec camera infrastructure to add Kabat One\'s dispatch, GIS, and traffic capabilities without replacing their cameras.',
     },
     {
-      question: 'Is KabatOne a Genetec alternative for public safety?',
-      answer: 'KabatOne and Genetec serve overlapping but distinct use cases. Genetec is the stronger choice for enterprise environments where the primary need is large-scale camera management and access control. KabatOne is the stronger choice for public safety operations — municipalities, command centers, and emergency agencies — that need the full response workflow: video, dispatch, GIS, traffic, and field coordination in one system.',
+      question: 'Is Kabat One a Genetec alternative for public safety?',
+      answer: 'Kabat One and Genetec serve overlapping but distinct use cases. Genetec is the stronger choice for enterprise environments where the primary need is large-scale camera management and access control. Kabat One is the stronger choice for public safety operations — municipalities, command centers, and emergency agencies — that need the full response workflow: video, dispatch, GIS, traffic, and field coordination in one system.',
     },
     {
-      question: 'Which is better for C5 command centers — Genetec or KabatOne?',
-      answer: 'KabatOne is purpose-built for C4 and C5 command center operations in Mexico and Latin America. C5 command centers require real-time integration of multiple emergency disciplines — video surveillance, CAD dispatch, traffic management, and citizen incident reporting — in one operational view. KabatOne\'s K-Safety, K-Dispatch, K-Video, and K-Traffic modules are designed specifically for this operational model. KabatOne operates in 40+ cities with C5 or similar command center structures across Latin America.',
+      question: 'Which is better for C5 command centers — Genetec or Kabat One?',
+      answer: 'Kabat One is purpose-built for C4 and C5 command center operations in Mexico and Latin America. C5 command centers require real-time integration of multiple emergency disciplines — video surveillance, CAD dispatch, traffic management, and citizen incident reporting — in one operational view. Kabat One\'s K-Safety, K-Dispatch, K-Video, and K-Traffic modules are designed specifically for this operational model. Kabat One operates in 40+ cities with C5 or similar command center structures across Latin America.',
     },
     {
-      question: 'What does KabatOne offer that Genetec does not?',
-      answer: 'Compared to Genetec Security Center, KabatOne adds: CAD/dispatch software (K-Dispatch) for emergency coordination; native GIS situational awareness (K-Safety) with live incident tracking across the city; intelligent traffic management (K-Traffic) for signal control and violation detection; community camera sharing (K-Connect) for public-private video integration; and field responder workflow support for managing units after dispatch. KabatOne is specifically designed for the end-to-end response workflow, not just asset monitoring.',
+      question: 'What does Kabat One offer that Genetec does not?',
+      answer: 'Compared to Genetec Security Center, Kabat One adds: CAD/dispatch software (K-Dispatch) for emergency coordination; native GIS situational awareness (K-Safety) with live incident tracking across the city; intelligent traffic management (K-Traffic) for signal control and violation detection; community camera sharing (K-Connect) for public-private video integration; and field responder workflow support for managing units after dispatch. Kabat One is specifically designed for the end-to-end response workflow, not just asset monitoring.',
     },
   ]
 
@@ -181,7 +181,7 @@ export default async function VsGenetecPage({
           <span style={{ opacity: 0.35 }}>/</span>
           <span style={{ color: 'var(--muted)' }}>{es ? 'Comparaciones' : 'Compare'}</span>
           <span style={{ opacity: 0.35 }}>/</span>
-          <span style={{ color: ACCENT }}>KabatOne vs Genetec</span>
+          <span style={{ color: ACCENT }}>Kabat One vs Genetec</span>
         </div>
 
         {/* ── HERO ── */}
@@ -202,16 +202,16 @@ export default async function VsGenetecPage({
             letterSpacing: '-0.01em', color: 'var(--white)', marginBottom: '28px',
           }}>
             {es
-              ? 'KabatOne vs Genetec — ¿Cuál Plataforma Es la Correcta para Seguridad Pública?'
-              : 'KabatOne vs Genetec — Which Platform Is Right for Public Safety?'}
+              ? 'Kabat One vs Genetec — ¿Cuál Plataforma Es la Correcta para Seguridad Pública?'
+              : 'Kabat One vs Genetec — Which Platform Is Right for Public Safety?'}
           </h1>
           <p style={{
             fontSize: '18px', fontWeight: 300, color: 'var(--dim)',
             lineHeight: 1.75, marginBottom: '0',
           }}>
             {es
-              ? 'Genetec Security Center es una plataforma de seguridad empresarial construida alrededor de gestión de video, control de acceso y reconocimiento de placas vehiculares. KabatOne es una plataforma unificada de seguridad pública que conecta video, despacho CAD, GIS, gestión de tráfico y operaciones de campo en un flujo de respuesta coordinada. Ambas plataformas gestionan cámaras, pero la comparación termina ahí: Genetec está construido para gestionar activos de seguridad física; KabatOne está construido para coordinar el flujo completo de respuesta desde la detección hasta la ejecución en campo.'
-              : 'Genetec Security Center is an enterprise security platform built around video management, access control, and license plate recognition. KabatOne is a unified public safety platform that connects video, CAD dispatch, GIS, traffic management, and field operations into a coordinated response workflow. Both platforms handle cameras, but the comparison ends there: Genetec is built to manage physical security assets, while KabatOne is built to coordinate the full response workflow from detection through field execution.'}
+              ? 'Genetec Security Center es una plataforma de seguridad empresarial construida alrededor de gestión de video, control de acceso y reconocimiento de placas vehiculares. Kabat One es una plataforma unificada de seguridad pública que conecta video, despacho CAD, GIS, gestión de tráfico y operaciones de campo en un flujo de respuesta coordinada. Ambas plataformas gestionan cámaras, pero la comparación termina ahí: Genetec está construido para gestionar activos de seguridad física; Kabat One está construido para coordinar el flujo completo de respuesta desde la detección hasta la ejecución en campo.'
+              : 'Genetec Security Center is an enterprise security platform built around video management, access control, and license plate recognition. Kabat One is a unified public safety platform that connects video, CAD dispatch, GIS, traffic management, and field operations into a coordinated response workflow. Both platforms handle cameras, but the comparison ends there: Genetec is built to manage physical security assets, while Kabat One is built to coordinate the full response workflow from detection through field execution.'}
           </p>
         </section>
 
@@ -251,22 +251,22 @@ export default async function VsGenetecPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Qué Es KabatOne?' : 'What Is KabatOne?'}
+              {es ? '¿Qué Es Kabat One?' : 'What Is Kabat One?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. KabatOne integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
-                : 'KabatOne is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. KabatOne integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
+                ? 'Kabat One es una plataforma unificada de seguridad pública construida específicamente para ciudades, municipios, centros de mando y agencias de respuesta a emergencias. Kabat One integra gestión de video con analítica IA (K-Video), despacho CAD (K-Dispatch), conciencia situacional GIS (K-Safety), gestión inteligente de tráfico (K-Traffic) y video comunitario compartido (K-Connect) en una plataforma nativa sobre la plataforma K1.'
+                : 'Kabat One is a unified public safety platform purpose-built for cities, municipalities, command centers, and emergency response agencies. Kabat One integrates AI-powered video management (K-Video), CAD dispatch (K-Dispatch), GIS situational awareness (K-Safety), intelligent traffic management (K-Traffic), and community video sharing (K-Connect) in one native platform on the K1 platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. A diferencia de las plataformas construidas alrededor de gestión de activos, KabatOne está diseñado para el flujo completo de respuesta a incidentes: cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS y cerrar el ciclo con documentación de campo — sin salir de la plataforma.'
-                : 'KabatOne is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. Unlike platforms built around asset management, KabatOne is designed for the full incident response workflow: when an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map, and close the loop with field documentation — without leaving the platform.'}
+                ? 'Kabat One está desplegado en más de 40 ciudades protegiendo a más de 73 millones de ciudadanos principalmente en Latinoamérica y los Estados Unidos. A diferencia de las plataformas construidas alrededor de gestión de activos, Kabat One está diseñado para el flujo completo de respuesta a incidentes: cuando un operador detecta un incidente en K-Safety o K-Video, puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS y cerrar el ciclo con documentación de campo — sin salir de la plataforma.'
+                : 'Kabat One is deployed across 40+ cities protecting over 73 million citizens primarily in Latin America and the United States. Unlike platforms built around asset management, Kabat One is designed for the full incident response workflow: when an operator detects an incident in K-Safety or K-Video, they can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map, and close the loop with field documentation — without leaving the platform.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne se posiciona como una plataforma de seguridad pública unificada — distinta de los sistemas VMS empresariales, las capas PSIM y los productos CAD independientes. Está construida para reemplazar múltiples sistemas fragmentados con un flujo operativo único.'
-                : 'KabatOne positions as a unified public safety platform — distinct from enterprise VMS systems, PSIM layers, and standalone CAD products. It is built to replace multiple fragmented systems with one operational workflow.'}
+                ? 'Kabat One se posiciona como una plataforma de seguridad pública unificada — distinta de los sistemas VMS empresariales, las capas PSIM y los productos CAD independientes. Está construida para reemplazar múltiples sistemas fragmentados con un flujo operativo único.'
+                : 'Kabat One positions as a unified public safety platform — distinct from enterprise VMS systems, PSIM layers, and standalone CAD products. It is built to replace multiple fragmented systems with one operational workflow.'}
             </p>
           </div>
         </section>
@@ -279,12 +279,12 @@ export default async function VsGenetecPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '16px',
             }}>
-              {es ? 'KabatOne vs Genetec: Diferencias Clave' : 'KabatOne vs Genetec: Key Differences'}
+              {es ? 'Kabat One vs Genetec: Diferencias Clave' : 'Kabat One vs Genetec: Key Differences'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '40px' }}>
               {es
-                ? 'La siguiente tabla compara KabatOne y Genetec Security Center en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
-                : 'The following table compares KabatOne and Genetec Security Center across seven operational dimensions critical for public safety organizations.'}
+                ? 'La siguiente tabla compara Kabat One y Genetec Security Center en siete dimensiones operativas críticas para organizaciones de seguridad pública.'
+                : 'The following table compares Kabat One and Genetec Security Center across seven operational dimensions critical for public safety organizations.'}
             </p>
 
             <div style={{ borderRadius: '12px', border: '1px solid var(--border)', overflow: 'hidden' }}>
@@ -300,7 +300,7 @@ export default async function VsGenetecPage({
                   Genetec
                 </div>
                 <div style={{ padding: '16px 20px', fontFamily: 'Barlow Condensed, sans-serif', fontWeight: 700, fontSize: '14px', letterSpacing: '0.08em', textTransform: 'uppercase', color: ACCENT, borderLeft: '1px solid var(--border)' }}>
-                  KabatOne
+                  Kabat One
                 </div>
               </div>
               {comparisonRows.map((row, i) => (
@@ -332,7 +332,7 @@ export default async function VsGenetecPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿En Qué Va Más Allá KabatOne?' : 'Where Does KabatOne Go Further?'}
+              {es ? '¿En Qué Va Más Allá Kabat One?' : 'Where Does Kabat One Go Further?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
@@ -341,13 +341,13 @@ export default async function VsGenetecPage({
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'KabatOne conecta todos esos pasos en un solo flujo de trabajo. En el momento en que un incidente es detectado en K-Safety o K-Video, el operador puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS en tiempo real y cerrar el ciclo con documentación de campo — sin salir de la plataforma. Para los centros de mando C4 y C5 en México que gestionan cientos de eventos diarios, esta diferencia operativa es fundamental.'
-                : 'KabatOne connects all of those steps in one workflow. The moment an incident is detected in K-Safety or K-Video, the operator can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map in real time, and close the loop with field documentation — without leaving the platform. For C4 and C5 command centers in Mexico managing hundreds of events per day, this operational difference is fundamental.'}
+                ? 'Kabat One conecta todos esos pasos en un solo flujo de trabajo. En el momento en que un incidente es detectado en K-Safety o K-Video, el operador puede validarlo, crear un evento CAD en K-Dispatch, rastrear las unidades respondedoras en el mapa GIS en tiempo real y cerrar el ciclo con documentación de campo — sin salir de la plataforma. Para los centros de mando C4 y C5 en México que gestionan cientos de eventos diarios, esta diferencia operativa es fundamental.'
+                : 'Kabat One connects all of those steps in one workflow. The moment an incident is detected in K-Safety or K-Video, the operator can validate it, create a CAD event in K-Dispatch, track responding units on the GIS map in real time, and close the loop with field documentation — without leaving the platform. For C4 and C5 command centers in Mexico managing hundreds of events per day, this operational difference is fundamental.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne también agrega capacidades que no existen en el ecosistema de Genetec: gestión de tráfico inteligente con control de semáforos adaptativos (K-Traffic), integración de cámaras ciudadanas y de negocios en el centro de mando (K-Connect), y flujos de trabajo completos para equipos de respuesta en campo. Estas capacidades son específicas para operaciones de seguridad pública — no están disponibles como módulos estándar de Genetec.'
-                : 'KabatOne also adds capabilities that do not exist in the Genetec ecosystem: intelligent traffic management with adaptive signal control (K-Traffic), integration of citizen and business cameras into the command center (K-Connect), and complete workflows for field response teams. These capabilities are specific to public safety operations — they are not available as standard Genetec modules.'}
+                ? 'Kabat One también agrega capacidades que no existen en el ecosistema de Genetec: gestión de tráfico inteligente con control de semáforos adaptativos (K-Traffic), integración de cámaras ciudadanas y de negocios en el centro de mando (K-Connect), y flujos de trabajo completos para equipos de respuesta en campo. Estas capacidades son específicas para operaciones de seguridad pública — no están disponibles como módulos estándar de Genetec.'
+                : 'Kabat One also adds capabilities that do not exist in the Genetec ecosystem: intelligent traffic management with adaptive signal control (K-Traffic), integration of citizen and business cameras into the command center (K-Connect), and complete workflows for field response teams. These capabilities are specific to public safety operations — they are not available as standard Genetec modules.'}
             </p>
           </div>
         </section>
@@ -360,17 +360,17 @@ export default async function VsGenetecPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '24px',
             }}>
-              {es ? '¿Puede KabatOne Trabajar con Infraestructura Genetec Existente?' : 'Can KabatOne Work with Existing Genetec Infrastructure?'}
+              {es ? '¿Puede Kabat One Trabajar con Infraestructura Genetec Existente?' : 'Can Kabat One Work with Existing Genetec Infrastructure?'}
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75, marginBottom: '20px' }}>
               {es
-                ? 'Sí. El módulo K-Video de KabatOne soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de despliegues Genetec junto con cámaras de cualquier otro fabricante. Esto significa que las organizaciones con inversiones existentes en infraestructura de cámaras Genetec pueden incorporar las capacidades de despacho, GIS y tráfico de KabatOne sin reemplazar sus cámaras.'
-                : 'Yes. KabatOne\'s K-Video module supports ONVIF, RTSP, and standard industry IP protocols, which allows it to aggregate camera feeds from Genetec deployments alongside cameras from any other manufacturer. This means organizations with existing Genetec camera infrastructure can add KabatOne\'s dispatch, GIS, and traffic capabilities without replacing their cameras.'}
+                ? 'Sí. El módulo K-Video de Kabat One soporta ONVIF, RTSP y protocolos IP estándar de la industria, lo que permite agregar feeds de cámaras de despliegues Genetec junto con cámaras de cualquier otro fabricante. Esto significa que las organizaciones con inversiones existentes en infraestructura de cámaras Genetec pueden incorporar las capacidades de despacho, GIS y tráfico de Kabat One sin reemplazar sus cámaras.'
+                : 'Yes. Kabat One\'s K-Video module supports ONVIF, RTSP, and standard industry IP protocols, which allows it to aggregate camera feeds from Genetec deployments alongside cameras from any other manufacturer. This means organizations with existing Genetec camera infrastructure can add Kabat One\'s dispatch, GIS, and traffic capabilities without replacing their cameras.'}
             </p>
             <p style={{ fontSize: '16px', color: 'var(--dim)', lineHeight: 1.75 }}>
               {es
-                ? 'KabatOne está diseñado para integrarse con la infraestructura existente en lugar de forzar un reemplazo completo. Las ciudades y municipios que han invertido en cámaras compatibles con Genetec o cualquier otro fabricante pueden incorporar a KabatOne como la capa de coordinación de respuesta, aprovechando el hardware existente mientras añaden las capacidades de despacho, GIS y tráfico que las plataformas VMS por sí solas no proporcionan.'
-                : 'KabatOne is designed to integrate with existing infrastructure rather than force a full rip-and-replace. Cities and municipalities that have invested in Genetec-compatible cameras or any other manufacturer can bring KabatOne in as the response coordination layer, leveraging existing hardware while adding the dispatch, GIS, and traffic capabilities that VMS platforms alone do not provide.'}
+                ? 'Kabat One está diseñado para integrarse con la infraestructura existente en lugar de forzar un reemplazo completo. Las ciudades y municipios que han invertido en cámaras compatibles con Genetec o cualquier otro fabricante pueden incorporar a Kabat One como la capa de coordinación de respuesta, aprovechando el hardware existente mientras añaden las capacidades de despacho, GIS y tráfico que las plataformas VMS por sí solas no proporcionan.'
+                : 'Kabat One is designed to integrate with existing infrastructure rather than force a full rip-and-replace. Cities and municipalities that have invested in Genetec-compatible cameras or any other manufacturer can bring Kabat One in as the response coordination layer, leveraging existing hardware while adding the dispatch, GIS, and traffic capabilities that VMS platforms alone do not provide.'}
             </p>
           </div>
         </section>
@@ -383,7 +383,7 @@ export default async function VsGenetecPage({
               letterSpacing: '0.18em', textTransform: 'uppercase',
               color: ACCENT, marginBottom: '16px',
             }}>
-              {es ? 'Módulos de KabatOne' : 'KabatOne Modules'}
+              {es ? 'Módulos de Kabat One' : 'Kabat One Modules'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
               {[
@@ -422,7 +422,7 @@ export default async function VsGenetecPage({
               fontSize: 'clamp(28px, 3.5vw, 40px)', lineHeight: 1.1,
               color: 'var(--white)', marginBottom: '40px',
             }}>
-              {es ? 'KabatOne vs Genetec: Preguntas y Respuestas' : 'KabatOne vs Genetec: Questions & Answers'}
+              {es ? 'Kabat One vs Genetec: Preguntas y Respuestas' : 'Kabat One vs Genetec: Questions & Answers'}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -524,8 +524,8 @@ export default async function VsGenetecPage({
           es={es}
           h2={es ? '¿Listo para Ver la Diferencia?' : 'Ready to See the Difference?'}
           subtitle={es
-            ? 'Descubre cómo KabatOne conecta video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
-            : 'See how KabatOne connects video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
+            ? 'Descubre cómo Kabat One conecta video, despacho y GIS en un solo flujo de respuesta. Solicita una demo personalizada.'
+            : 'See how Kabat One connects video, dispatch, and GIS in one response workflow. Request a personalized demo.'}
         />
 
         <Footer es={es} />

@@ -12,77 +12,77 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: 'How does KabatOne integrate the Guardia Nacional (GN) and SSPC across Mexico\'s 31 states and CDMX?',
+    question: 'How does Kabat One integrate the Guardia Nacional (GN) and SSPC across Mexico\'s 31 states and CDMX?',
     answer:
-      'KabatOne unifies Guardia Nacional (GN) and SSPC operations across all 31 states and Mexico City (CDMX) — connecting GN regional commands, state public security secretariats (SSP/SSPE), municipal police forces, and C5/C4/C2 command centres into a single operational map with shared CAD, PLATAFORMA MEXICO integration, ANPR feeds, and AI incident prioritisation via the 911 National Emergency System.',
+      'Kabat One unifies Guardia Nacional (GN) and SSPC operations across all 31 states and Mexico City (CDMX) — connecting GN regional commands, state public security secretariats (SSP/SSPE), municipal police forces, and C5/C4/C2 command centres into a single operational map with shared CAD, PLATAFORMA MEXICO integration, ANPR feeds, and AI incident prioritisation via the 911 National Emergency System.',
   },
   {
     question: 'How does the platform integrate Mexico\'s 911 National Emergency System and C5 command centres?',
     answer:
-      'KabatOne integrates with Mexico\'s 911 Sistema Nacional de Emergencias across all states, connects to C5 (Command, Control, Communications, Computing and Citizen Services) centres in CDMX, Jalisco, Nuevo León, Estado de México, and major cities, provides unified CAD dispatch for police/fire/medical, and delivers real-time CCTV/ANPR feeds from municipal Safe City cameras to state and federal dashboards.',
+      'Kabat One integrates with Mexico\'s 911 Sistema Nacional de Emergencias across all states, connects to C5 (Command, Control, Communications, Computing and Citizen Services) centres in CDMX, Jalisco, Nuevo León, Estado de México, and major cities, provides unified CAD dispatch for police/fire/medical, and delivers real-time CCTV/ANPR feeds from municipal Safe City cameras to state and federal dashboards.',
   },
   {
-    question: 'How does KabatOne support Mexico\'s National Civil Protection System (SINAPROC)?',
+    question: 'How does Kabat One support Mexico\'s National Civil Protection System (SINAPROC)?',
     answer:
-      'KabatOne integrates with the National Civil Protection Coordination (CNPC) under SSPC and SINAPROC for multi-hazard response — earthquakes (SASMEX seismic alerts), hurricanes (Pacific/Atlantic season), volcanic activity (Popocatépetl/Colima/Pico de Orizaba), floods, and drought alerts from CONAGUA. The platform provides dashboards shared with CENAPRED, state protection civil units, and UN OCHA Mexico.',
+      'Kabat One integrates with the National Civil Protection Coordination (CNPC) under SSPC and SINAPROC for multi-hazard response — earthquakes (SASMEX seismic alerts), hurricanes (Pacific/Atlantic season), volcanic activity (Popocatépetl/Colima/Pico de Orizaba), floods, and drought alerts from CONAGUA. The platform provides dashboards shared with CENAPRED, state protection civil units, and UN OCHA Mexico.',
   },
   {
-    question: 'How does KabatOne comply with Mexico\'s Federal Law on Personal Data Protection (LFPDPPP) and INAI?',
+    question: 'How does Kabat One comply with Mexico\'s Federal Law on Personal Data Protection (LFPDPPP) and INAI?',
     answer:
-      'KabatOne implements encryption at rest and in transit, role-based access controls, data subject rights (access/rectification/cancellation/opposition — ARCO rights), and breach notification aligned with the Federal Law on Personal Data Protection in Possession of Private Parties (LFPDPPP, 2010) and the General Law on Data Protection in Possession of Obligated Subjects (LGPDPPSO, 2017), supervised by INAI — the National Institute for Transparency, Access to Information and Personal Data Protection.',
+      'Kabat One implements encryption at rest and in transit, role-based access controls, data subject rights (access/rectification/cancellation/opposition — ARCO rights), and breach notification aligned with the Federal Law on Personal Data Protection in Possession of Private Parties (LFPDPPP, 2010) and the General Law on Data Protection in Possession of Obligated Subjects (LGPDPPSO, 2017), supervised by INAI — the National Institute for Transparency, Access to Information and Personal Data Protection.',
   },
   {
-    question: 'Does KabatOne support SEMAR and SEDENA for military-police coordination?',
+    question: 'Does Kabat One support SEMAR and SEDENA for military-police coordination?',
     answer:
-      'Yes. KabatOne supports joint operation dashboards for SEMAR (Secretaría de Marina, coastal/port security and maritime surveillance), SEDENA (Secretaría de la Defensa Nacional, army-supported public security in states under federal security plans), and Guardia Nacional — enabling coordinated CAD dispatch, shared CCTV/ANPR feeds, and unified situational maps for Plan DN-III-E disaster response and Joint Security Operations.',
+      'Yes. Kabat One supports joint operation dashboards for SEMAR (Secretaría de Marina, coastal/port security and maritime surveillance), SEDENA (Secretaría de la Defensa Nacional, army-supported public security in states under federal security plans), and Guardia Nacional — enabling coordinated CAD dispatch, shared CCTV/ANPR feeds, and unified situational maps for Plan DN-III-E disaster response and Joint Security Operations.',
   },
   {
-    question: 'How does KabatOne handle Mexico government procurement through CompraNet/MercadoPúblico?',
+    question: 'How does Kabat One handle Mexico government procurement through CompraNet/MercadoPúblico?',
     answer:
-      'KabatOne supports procurement under Mexico\'s Government Procurement Law (Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público, LAASSP), the Public Works Law (LOPSRM), and the CompraNet/MercadoPúblico.mx federal e-procurement platform under SHCP/Secretaría de Hacienda. The platform aligns with PAIS (Plan de Apoyo e Infraestructura para la Seguridad), World Bank/IDB security sector financing, and INE/INAI compliance requirements.',
+      'Kabat One supports procurement under Mexico\'s Government Procurement Law (Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público, LAASSP), the Public Works Law (LOPSRM), and the CompraNet/MercadoPúblico.mx federal e-procurement platform under SHCP/Secretaría de Hacienda. The platform aligns with PAIS (Plan de Apoyo e Infraestructura para la Seguridad), World Bank/IDB security sector financing, and INE/INAI compliance requirements.',
   },
   {
-    question: 'How does KabatOne align with Mexico\'s National Public Security System (SNSP) and Digital Mexico strategy?',
+    question: 'How does Kabat One align with Mexico\'s National Public Security System (SNSP) and Digital Mexico strategy?',
     answer:
-      'KabatOne aligns with the National Public Security System (SNSP) coordination framework under the National Public Security Council (CNSP), PLATAFORMA MEXICO national intelligence platform, Mexico Digital 2025 strategy, and the National Development Plan (PND 2019–2024) security pillars — providing AI/IoT-integrated public safety platforms for the SSPC, state SSPs, and municipal police forces.',
+      'Kabat One aligns with the National Public Security System (SNSP) coordination framework under the National Public Security Council (CNSP), PLATAFORMA MEXICO national intelligence platform, Mexico Digital 2025 strategy, and the National Development Plan (PND 2019–2024) security pillars — providing AI/IoT-integrated public safety platforms for the SSPC, state SSPs, and municipal police forces.',
   },
 ]
 
 const faqsEs = [
   {
-    question: '¿Cómo integra KabatOne la Guardia Nacional (GN) y la SSPC en los 31 estados y la CDMX?',
+    question: '¿Cómo integra Kabat One la Guardia Nacional (GN) y la SSPC en los 31 estados y la CDMX?',
     answer:
-      'KabatOne unifica las operaciones de la Guardia Nacional (GN) y la SSPC en los 31 estados y la Ciudad de México (CDMX) — conectando los comandos regionales de la GN, las secretarías de seguridad pública estatales (SSP/SSPE), las policías municipales y los centros de mando C5/C4/C2 en un único mapa operativo con CAD compartido, integración con PLATAFORMA MÉXICO, alimentaciones ANPR y priorización de incidentes por IA a través del Sistema Nacional de Emergencias 911.',
+      'Kabat One unifica las operaciones de la Guardia Nacional (GN) y la SSPC en los 31 estados y la Ciudad de México (CDMX) — conectando los comandos regionales de la GN, las secretarías de seguridad pública estatales (SSP/SSPE), las policías municipales y los centros de mando C5/C4/C2 en un único mapa operativo con CAD compartido, integración con PLATAFORMA MÉXICO, alimentaciones ANPR y priorización de incidentes por IA a través del Sistema Nacional de Emergencias 911.',
   },
   {
     question: '¿Cómo integra la plataforma el Sistema Nacional de Emergencias 911 de México y los centros C5?',
     answer:
-      'KabatOne se integra con el Sistema Nacional de Emergencias 911 en todos los estados, conecta con los centros C5 (Comando, Control, Comunicaciones, Cómputo y Atención Ciudadana) de la CDMX, Jalisco, Nuevo León, Estado de México y las principales ciudades, proporciona despacho CAD unificado para policía/bomberos/médicos, y distribuye alimentaciones en tiempo real de CCTV/ANPR de las cámaras del Safe City municipal a los tableros estatales y federales.',
+      'Kabat One se integra con el Sistema Nacional de Emergencias 911 en todos los estados, conecta con los centros C5 (Comando, Control, Comunicaciones, Cómputo y Atención Ciudadana) de la CDMX, Jalisco, Nuevo León, Estado de México y las principales ciudades, proporciona despacho CAD unificado para policía/bomberos/médicos, y distribuye alimentaciones en tiempo real de CCTV/ANPR de las cámaras del Safe City municipal a los tableros estatales y federales.',
   },
   {
-    question: '¿Cómo apoya KabatOne al Sistema Nacional de Protección Civil de México (SINAPROC)?',
+    question: '¿Cómo apoya Kabat One al Sistema Nacional de Protección Civil de México (SINAPROC)?',
     answer:
-      'KabatOne se integra con la Coordinación Nacional de Protección Civil (CNPC) bajo la SSPC y el SINAPROC para la respuesta ante múltiples amenazas — terremotos (alertas sísmicas SASMEX), huracanes (temporada Pacífico/Atlántico), actividad volcánica (Popocatépetl/Colima/Pico de Orizaba), inundaciones y alertas de sequía de la CONAGUA — con paneles compartidos con el CENAPRED, las unidades estatales de protección civil y OCHA México.',
+      'Kabat One se integra con la Coordinación Nacional de Protección Civil (CNPC) bajo la SSPC y el SINAPROC para la respuesta ante múltiples amenazas — terremotos (alertas sísmicas SASMEX), huracanes (temporada Pacífico/Atlántico), actividad volcánica (Popocatépetl/Colima/Pico de Orizaba), inundaciones y alertas de sequía de la CONAGUA — con paneles compartidos con el CENAPRED, las unidades estatales de protección civil y OCHA México.',
   },
   {
-    question: '¿Cómo cumple KabatOne con la Ley Federal de Protección de Datos Personales (LFPDPPP) y el INAI?',
+    question: '¿Cómo cumple Kabat One con la Ley Federal de Protección de Datos Personales (LFPDPPP) y el INAI?',
     answer:
-      'KabatOne implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, derechos ARCO (Acceso/Rectificación/Cancelación/Oposición) de titulares de datos y notificación de brechas conforme a la LFPDPPP (2010) y la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO, 2017), supervisadas por el INAI — el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales.',
+      'Kabat One implementa cifrado en reposo y en tránsito, controles de acceso basados en roles, derechos ARCO (Acceso/Rectificación/Cancelación/Oposición) de titulares de datos y notificación de brechas conforme a la LFPDPPP (2010) y la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO, 2017), supervisadas por el INAI — el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales.',
   },
   {
-    question: '¿Admite KabatOne a la SEMAR y a la SEDENA para la coordinación policial-militar?',
+    question: '¿Admite Kabat One a la SEMAR y a la SEDENA para la coordinación policial-militar?',
     answer:
-      'Sí. KabatOne admite tableros de operaciones conjuntas para la SEMAR (seguridad costera/portuaria y vigilancia marítima), la SEDENA (apoyo del ejército a la seguridad pública en estados bajo planes federales de seguridad) y la Guardia Nacional — habilitando despacho CAD coordinado, alimentaciones compartidas de CCTV/ANPR y mapas de situación unificados para la respuesta a desastres del Plan DN-III-E y las Operaciones Conjuntas de Seguridad.',
+      'Sí. Kabat One admite tableros de operaciones conjuntas para la SEMAR (seguridad costera/portuaria y vigilancia marítima), la SEDENA (apoyo del ejército a la seguridad pública en estados bajo planes federales de seguridad) y la Guardia Nacional — habilitando despacho CAD coordinado, alimentaciones compartidas de CCTV/ANPR y mapas de situación unificados para la respuesta a desastres del Plan DN-III-E y las Operaciones Conjuntas de Seguridad.',
   },
   {
-    question: '¿Cómo gestiona KabatOne las adquisiciones del gobierno mexicano a través de CompraNet/MercadoPúblico?',
+    question: '¿Cómo gestiona Kabat One las adquisiciones del gobierno mexicano a través de CompraNet/MercadoPúblico?',
     answer:
-      'KabatOne admite adquisiciones bajo la Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público (LAASSP), la Ley de Obras Públicas y Servicios Relacionados con las Mismas (LOPSRM) y la plataforma federal de contratación electrónica CompraNet/MercadoPúblico.mx bajo la SHCP. La plataforma se alinea con el PAIS (Plan de Apoyo e Infraestructura para la Seguridad), el financiamiento del Banco Mundial/BID para el sector de seguridad y los requisitos de cumplimiento del INE/INAI.',
+      'Kabat One admite adquisiciones bajo la Ley de Adquisiciones, Arrendamientos y Servicios del Sector Público (LAASSP), la Ley de Obras Públicas y Servicios Relacionados con las Mismas (LOPSRM) y la plataforma federal de contratación electrónica CompraNet/MercadoPúblico.mx bajo la SHCP. La plataforma se alinea con el PAIS (Plan de Apoyo e Infraestructura para la Seguridad), el financiamiento del Banco Mundial/BID para el sector de seguridad y los requisitos de cumplimiento del INE/INAI.',
   },
   {
-    question: '¿Cómo se alinea KabatOne con el Sistema Nacional de Seguridad Pública (SNSP) y la estrategia Digital México?',
+    question: '¿Cómo se alinea Kabat One con el Sistema Nacional de Seguridad Pública (SNSP) y la estrategia Digital México?',
     answer:
-      'KabatOne se alinea con el marco de coordinación del Sistema Nacional de Seguridad Pública (SNSP) bajo el Consejo Nacional de Seguridad Pública (CNSP), la plataforma de inteligencia nacional PLATAFORMA MÉXICO, la estrategia México Digital 2025 y los pilares de seguridad del Plan Nacional de Desarrollo (PND 2019–2024) — proporcionando plataformas de seguridad pública integradas con IA/IoT para la SSPC, las SSP estatales y las policías municipales.',
+      'Kabat One se alinea con el marco de coordinación del Sistema Nacional de Seguridad Pública (SNSP) bajo el Consejo Nacional de Seguridad Pública (CNSP), la plataforma de inteligencia nacional PLATAFORMA MÉXICO, la estrategia México Digital 2025 y los pilares de seguridad del Plan Nacional de Desarrollo (PND 2019–2024) — proporcionando plataformas de seguridad pública integradas con IA/IoT para la SSPC, las SSP estatales y las policías municipales.',
   },
 ]
 
@@ -218,39 +218,39 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              {es ? 'Capacidades de la plataforma KabatOne para México' : 'KabatOne Platform Capabilities for Mexico'}
+              {es ? 'Capacidades de la plataforma Kabat One para México' : 'Kabat One Platform Capabilities for Mexico'}
             </h2>
             <div className="space-y-8">
               {[
                 {
                   heading: es ? 'CAD unificado: Sistema 911 + GN + C5/C4 + Policías Estatales' : 'Unified CAD: 911 System + GN + C5/C4 + State Police',
                   text: es
-                    ? 'KabatOne integra el despacho CAD del Sistema 911 nacional con los C5/C4/C2 estatales — unificando la GN, las policías estatales (SSP/SSPE), las policías municipales, bomberos y los SUMA/CRUM médicos en un único mapa operativo con priorización por IA, geolocalización de patrullas, tiempos de respuesta en tiempo real y panel de desbordamiento a la CNPC/CENAPRED para alertas de protección civil (SASMEX, POPO24, SMN).'
-                    : 'KabatOne integrates 911 national system CAD dispatch with state C5/C4/C2 centres — unifying GN, state police (SSP/SSPE), municipal police, fire services, and SUMA/CRUM medical units on a single operational map with AI prioritisation, patrol geolocation, real-time response times, and CNPC/CENAPRED overflow dashboard for civil protection alerts (SASMEX, POPO24, SMN).',
+                    ? 'Kabat One integra el despacho CAD del Sistema 911 nacional con los C5/C4/C2 estatales — unificando la GN, las policías estatales (SSP/SSPE), las policías municipales, bomberos y los SUMA/CRUM médicos en un único mapa operativo con priorización por IA, geolocalización de patrullas, tiempos de respuesta en tiempo real y panel de desbordamiento a la CNPC/CENAPRED para alertas de protección civil (SASMEX, POPO24, SMN).'
+                    : 'Kabat One integrates 911 national system CAD dispatch with state C5/C4/C2 centres — unifying GN, state police (SSP/SSPE), municipal police, fire services, and SUMA/CRUM medical units on a single operational map with AI prioritisation, patrol geolocation, real-time response times, and CNPC/CENAPRED overflow dashboard for civil protection alerts (SASMEX, POPO24, SMN).',
                 },
                 {
                   heading: es ? 'Gestión de vídeo: Safe City CDMX/C5 y cámaras estatales' : 'Video Management: CDMX/C5 Safe City & State Cameras',
                   text: es
-                    ? 'KabatOne gestiona las más de 10,000 cámaras del Safe City de la CDMX (C5-CDMX), integra los sistemas CCTV/ANPR de los C5 de Jalisco, Nuevo León, Estado de México y Chihuahua, conecta la vigilancia portuaria de la SEMAR en Manzanillo/Lázaro Cárdenas/Veracruz, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, reconocimiento facial con PLATAFORMA MÉXICO — con latencia de alerta inferior a 2 segundos.'
-                    : 'KabatOne manages CDMX Safe City\'s 10,000+ cameras (C5-CDMX), integrates CCTV/ANPR systems from Jalisco, Nuevo León, Estado de México, and Chihuahua C5 centres, connects SEMAR port surveillance at Manzanillo/Lázaro Cárdenas/Veracruz, and provides AI video analytics — anomaly detection, crowd counting, facial recognition with PLATAFORMA MEXICO — with sub-2-second alert latency.',
+                    ? 'Kabat One gestiona las más de 10,000 cámaras del Safe City de la CDMX (C5-CDMX), integra los sistemas CCTV/ANPR de los C5 de Jalisco, Nuevo León, Estado de México y Chihuahua, conecta la vigilancia portuaria de la SEMAR en Manzanillo/Lázaro Cárdenas/Veracruz, y proporciona análisis de video con IA — detección de anomalías, conteo de personas, reconocimiento facial con PLATAFORMA MÉXICO — con latencia de alerta inferior a 2 segundos.'
+                    : 'Kabat One manages CDMX Safe City\'s 10,000+ cameras (C5-CDMX), integrates CCTV/ANPR systems from Jalisco, Nuevo León, Estado de México, and Chihuahua C5 centres, connects SEMAR port surveillance at Manzanillo/Lázaro Cárdenas/Veracruz, and provides AI video analytics — anomaly detection, crowd counting, facial recognition with PLATAFORMA MEXICO — with sub-2-second alert latency.',
                 },
                 {
                   heading: es ? 'Respuesta a desastres: SINAPROC/CENAPRED/CONAGUA' : 'Disaster Response: SINAPROC/CENAPRED/CONAGUA',
                   text: es
-                    ? 'KabatOne proporciona paneles de situación multi-riesgo en tiempo real para la CNPC/SINAPROC — integración de alertas sísmicas del SASMEX/CIRES (tiempo de alerta: 40–120 segundos antes de P-ondas), el semáforo volcánico del Popocatépetl (CENAPRED), alertas de ciclones del SMN/CONAGUA y pronósticos de inundación del IMTA — con escalada al Plan DN-III-E (SEDENA) y el Plan Marina (SEMAR) para respuesta a desastres mayores.'
-                    : 'KabatOne provides real-time multi-hazard situational dashboards for CNPC/SINAPROC — SASMEX/CIRES seismic alert integration (warning time: 40–120 seconds before P-waves), Popocatépetl volcanic traffic light (CENAPRED), SMN/CONAGUA cyclone alerts, and IMTA flood forecasts — with escalation to Plan DN-III-E (SEDENA) and Plan Marina (SEMAR) for major disaster response.',
+                    ? 'Kabat One proporciona paneles de situación multi-riesgo en tiempo real para la CNPC/SINAPROC — integración de alertas sísmicas del SASMEX/CIRES (tiempo de alerta: 40–120 segundos antes de P-ondas), el semáforo volcánico del Popocatépetl (CENAPRED), alertas de ciclones del SMN/CONAGUA y pronósticos de inundación del IMTA — con escalada al Plan DN-III-E (SEDENA) y el Plan Marina (SEMAR) para respuesta a desastres mayores.'
+                    : 'Kabat One provides real-time multi-hazard situational dashboards for CNPC/SINAPROC — SASMEX/CIRES seismic alert integration (warning time: 40–120 seconds before P-waves), Popocatépetl volcanic traffic light (CENAPRED), SMN/CONAGUA cyclone alerts, and IMTA flood forecasts — with escalation to Plan DN-III-E (SEDENA) and Plan Marina (SEMAR) for major disaster response.',
                 },
                 {
                   heading: es ? 'PLATAFORMA MÉXICO e integración de inteligencia criminal' : 'PLATAFORMA MEXICO & Criminal Intelligence Integration',
                   text: es
-                    ? 'KabatOne se integra con PLATAFORMA MÉXICO del SESNSP — consultando el REPUVE (vehículos robados/ANPR), el RENAPO (validación CURP), el AFIS (biométrico), el C4 nacional (llamadas de voz al 911) y las bases de datos delictivas del SNSP — para validación automática de placas en puntos de control, alertas de personas buscadas y consultas integradas para el personal policial en campo.'
-                    : 'KabatOne integrates with SESNSP\'s PLATAFORMA MEXICO — querying REPUVE (stolen vehicles/ANPR), RENAPO (CURP validation), AFIS (biometrics), national C4 (911 voice calls), and SNSP criminal databases — for automatic plate validation at checkpoints, wanted-person alerts, and integrated field officer queries.',
+                    ? 'Kabat One se integra con PLATAFORMA MÉXICO del SESNSP — consultando el REPUVE (vehículos robados/ANPR), el RENAPO (validación CURP), el AFIS (biométrico), el C4 nacional (llamadas de voz al 911) y las bases de datos delictivas del SNSP — para validación automática de placas en puntos de control, alertas de personas buscadas y consultas integradas para el personal policial en campo.'
+                    : 'Kabat One integrates with SESNSP\'s PLATAFORMA MEXICO — querying REPUVE (stolen vehicles/ANPR), RENAPO (CURP validation), AFIS (biometrics), national C4 (911 voice calls), and SNSP criminal databases — for automatic plate validation at checkpoints, wanted-person alerts, and integrated field officer queries.',
                 },
                 {
                   heading: es ? 'Cumplimiento LFPDPPP/LGPDPPSO/INAI y adquisición LAASSP' : 'LFPDPPP/LGPDPPSO/INAI Compliance & LAASSP Procurement',
                   text: es
-                    ? 'KabatOne se alinea con la LFPDPPP y la LGPDPPSO supervisadas por el INAI — derechos ARCO, cifrado, avisos de privacidad, transferencias internacionales y notificación de brechas; la NOM-035-STPS y las normas técnicas de la SSPC para sistemas C5; y la adquisición federal bajo la LAASSP/LOPSRM a través de CompraNet/MercadoPúblico.mx, con soporte para financiamiento del Banco Mundial/BID para modernización de la seguridad pública.'
-                    : 'KabatOne aligns with LFPDPPP and LGPDPPSO supervised by INAI — ARCO rights, encryption, privacy notices, international transfers, and breach notification; SSPC technical standards for C5 systems; and federal procurement under LAASSP/LOPSRM through CompraNet/MercadoPúblico.mx, with World Bank/IDB financing support for public safety modernisation.',
+                    ? 'Kabat One se alinea con la LFPDPPP y la LGPDPPSO supervisadas por el INAI — derechos ARCO, cifrado, avisos de privacidad, transferencias internacionales y notificación de brechas; la NOM-035-STPS y las normas técnicas de la SSPC para sistemas C5; y la adquisición federal bajo la LAASSP/LOPSRM a través de CompraNet/MercadoPúblico.mx, con soporte para financiamiento del Banco Mundial/BID para modernización de la seguridad pública.'
+                    : 'Kabat One aligns with LFPDPPP and LGPDPPSO supervised by INAI — ARCO rights, encryption, privacy notices, international transfers, and breach notification; SSPC technical standards for C5 systems; and federal procurement under LAASSP/LOPSRM through CompraNet/MercadoPúblico.mx, with World Bank/IDB financing support for public safety modernisation.',
                 },
               ].map(({ heading, text }) => (
                 <div key={heading} className="border-l-4 border-green-600 pl-6">
@@ -340,8 +340,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           }
           subtitle={
             es
-              ? 'Descubra cómo KabatOne unifica la SSPC, la Guardia Nacional y los C5 estatales en una plataforma operativa conforme a la LFPDPPP/LGPDPPSO/INAI, integrada con PLATAFORMA MÉXICO y el Sistema Nacional de Emergencias 911.'
-              : 'Discover how KabatOne unifies Mexico SSPC, Guardia Nacional, and state C5 centres into one operational platform compliant with LFPDPPP/LGPDPPSO/INAI, integrated with PLATAFORMA MEXICO and the 911 National Emergency System.'
+              ? 'Descubra cómo Kabat One unifica la SSPC, la Guardia Nacional y los C5 estatales en una plataforma operativa conforme a la LFPDPPP/LGPDPPSO/INAI, integrada con PLATAFORMA MÉXICO y el Sistema Nacional de Emergencias 911.'
+              : 'Discover how Kabat One unifies Mexico SSPC, Guardia Nacional, and state C5 centres into one operational platform compliant with LFPDPPP/LGPDPPSO/INAI, integrated with PLATAFORMA MEXICO and the 911 National Emergency System.'
           }
         />
       </main>

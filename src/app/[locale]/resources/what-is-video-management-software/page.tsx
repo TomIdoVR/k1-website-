@@ -35,7 +35,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: '¿Cuántas cámaras puede gestionar un VMS?',
           answer:
-            'Los sistemas VMS de nivel empresarial gestionan desde cientos hasta decenas de miles de cámaras simultáneamente. KabatOne K-Video, por ejemplo, agrega cámaras de cualquier fabricante y protocolo (ONVIF, RTSP, propietarios) en una sola vista con capacidad de búsqueda, sin límite práctico de dispositivos.',
+            'Los sistemas VMS de nivel empresarial gestionan desde cientos hasta decenas de miles de cámaras simultáneamente. Kabat One K-Video, por ejemplo, agrega cámaras de cualquier fabricante y protocolo (ONVIF, RTSP, propietarios) en una sola vista con capacidad de búsqueda, sin límite práctico de dispositivos.',
         },
         {
           question: '¿Un VMS funciona con cámaras de cualquier marca?',
@@ -50,7 +50,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: '¿Un VMS puede integrarse con despacho y GIS?',
           answer:
-            'Sí. Los VMS avanzados se integran con despacho CAD para mostrar automáticamente cámaras cercanas al incidente, con GIS para visualizar la cobertura de cámaras en el mapa operativo, y con sistemas de campo para compartir video en tiempo real con unidades en terreno. KabatOne K-Video opera nativamente con K-Dispatch y K-Safety en una sola plataforma unificada.',
+            'Sí. Los VMS avanzados se integran con despacho CAD para mostrar automáticamente cámaras cercanas al incidente, con GIS para visualizar la cobertura de cámaras en el mapa operativo, y con sistemas de campo para compartir video en tiempo real con unidades en terreno. Kabat One K-Video opera nativamente con K-Dispatch y K-Safety en una sola plataforma unificada.',
         },
         {
           question: '¿Qué analítica de IA incluye un VMS moderno?',
@@ -60,27 +60,27 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: '¿Qué es un sistema de gestión de audio y video (AVMS)?',
           answer:
-            'Un sistema de gestión de audio y video (AVMS) es una plataforma VMS que integra tanto feeds de videovigilancia como flujos de audio — sensores de detección de disparos, intercomunicadores y micrófonos ambientales — en una sola interfaz unificada. Para centros de mando de seguridad pública, un sistema de gestión de audio-video permite correlacionar automáticamente una alerta de disparo de un sensor acústico con la cámara más cercana, acelerando la verificación del incidente y el despacho. KabatOne K-Video integra video, LPR y fuentes de eventos de audio en una sola vista operativa.',
+            'Un sistema de gestión de audio y video (AVMS) es una plataforma VMS que integra tanto feeds de videovigilancia como flujos de audio — sensores de detección de disparos, intercomunicadores y micrófonos ambientales — en una sola interfaz unificada. Para centros de mando de seguridad pública, un sistema de gestión de audio-video permite correlacionar automáticamente una alerta de disparo de un sensor acústico con la cámara más cercana, acelerando la verificación del incidente y el despacho. Kabat One K-Video integra video, LPR y fuentes de eventos de audio en una sola vista operativa.',
         },
         {
           question: '¿Qué es un VMS general y en qué difiere de un VMS para seguridad pública?',
           answer:
-            'Un VMS general (software de gestión de video de propósito general) está diseñado para aplicaciones comerciales amplias — retail, campus corporativos, almacenes — con énfasis en grabación y reproducción básica. Un VMS para seguridad pública está construido específicamente para fuerzas del orden, centros de mando y operaciones municipales. Agrega capacidades que un VMS general típicamente no tiene: integración nativa con despacho CAD, mapeo GIS en tiempo real de ubicaciones de cámaras, control de acceso multiagencia, búsqueda forense simultánea en miles de cámaras y registro de cadena de custodia de evidencias. KabatOne K-Video está diseñado específicamente para seguridad pública, no adaptado de un VMS de propósito general.',
+            'Un VMS general (software de gestión de video de propósito general) está diseñado para aplicaciones comerciales amplias — retail, campus corporativos, almacenes — con énfasis en grabación y reproducción básica. Un VMS para seguridad pública está construido específicamente para fuerzas del orden, centros de mando y operaciones municipales. Agrega capacidades que un VMS general típicamente no tiene: integración nativa con despacho CAD, mapeo GIS en tiempo real de ubicaciones de cámaras, control de acceso multiagencia, búsqueda forense simultánea en miles de cámaras y registro de cadena de custodia de evidencias. Kabat One K-Video está diseñado específicamente para seguridad pública, no adaptado de un VMS de propósito general.',
         },
         {
           question: '¿Cuál es el mejor software VMS para seguridad pública?',
           answer:
-            'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, KabatOne integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
+            'El mejor software VMS para seguridad pública depende del tamaño del despliegue, el protocolo de las cámaras existentes, los requisitos de integración y el presupuesto disponible. Para agencias que necesitan solo gestión de video, plataformas dedicadas como Genetec Security Center, Milestone XProtect o Avigilon Control Center cubren bien las necesidades básicas. Para agencias que requieren también despacho CAD, GIS operativo y gestión de campo en una sola plataforma, Kabat One integra VMS (K-Video), despacho CAD (K-Dispatch) y conciencia situacional (K-Safety) sin middleware adicional — eliminando la complejidad de integración entre sistemas de diferentes proveedores. La evaluación correcta siempre parte de los requisitos operativos, no de la plataforma.',
         },
         {
           question: '¿Qué es un sistema de gestión de video CCTV?',
           answer:
-            'Un sistema de gestión de video CCTV es software VMS que centraliza los feeds de cámaras de videovigilancia CCTV —sin importar marca o protocolo— en una sola interfaz para monitoreo en vivo, grabación, reproducción y analítica de IA. A diferencia de un DVR o NVR autónomo, un sistema de gestión de video empresarial escala a decenas de miles de cámaras CCTV en múltiples sitios, agrega búsqueda forense y reconocimiento de placas (LPR), e integra con despacho y GIS. KabatOne K-Video es un sistema de gestión de video CCTV para seguridad pública que unifica redes de cámaras de toda la ciudad con CAD y mapas en una sola vista operativa.',
+            'Un sistema de gestión de video CCTV es software VMS que centraliza los feeds de cámaras de videovigilancia CCTV —sin importar marca o protocolo— en una sola interfaz para monitoreo en vivo, grabación, reproducción y analítica de IA. A diferencia de un DVR o NVR autónomo, un sistema de gestión de video empresarial escala a decenas de miles de cámaras CCTV en múltiples sitios, agrega búsqueda forense y reconocimiento de placas (LPR), e integra con despacho y GIS. Kabat One K-Video es un sistema de gestión de video CCTV para seguridad pública que unifica redes de cámaras de toda la ciudad con CAD y mapas en una sola vista operativa.',
         },
         {
           question: '¿Cuál es la diferencia entre un VMS y un PSIM?',
           answer:
-            'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como KabatOne van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
+            'Un VMS (Video Management Software) gestiona específicamente cámaras de videovigilancia: grabación, reproducción, analítica de video y búsqueda forense. Un PSIM (Physical Security Information Management) es una capa de integración que conecta múltiples sistemas de seguridad — VMS, control de acceso, detección de intrusión, alarmas — en una sola interfaz, sin reemplazarlos. La diferencia clave: el VMS es una plataforma funcional de video; el PSIM es un agregador de sistemas. Las plataformas unificadas de seguridad pública como Kabat One van más allá de ambos: integran video, despacho CAD, GIS y campo en una sola base de datos y un solo motor de alertas, eliminando la necesidad de un PSIM separado.',
         },
       ]
     : [
@@ -92,7 +92,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: 'How many cameras can a VMS manage?',
           answer:
-            'Enterprise-grade VMS systems manage from hundreds to tens of thousands of cameras simultaneously. KabatOne K-Video, for example, aggregates cameras from any manufacturer and protocol (ONVIF, RTSP, proprietary) into a single searchable view, with no practical device limit.',
+            'Enterprise-grade VMS systems manage from hundreds to tens of thousands of cameras simultaneously. Kabat One K-Video, for example, aggregates cameras from any manufacturer and protocol (ONVIF, RTSP, proprietary) into a single searchable view, with no practical device limit.',
         },
         {
           question: 'Does a VMS work with cameras from any brand?',
@@ -107,7 +107,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: 'Can a VMS integrate with dispatch and GIS?',
           answer:
-            'Yes. Advanced VMS platforms integrate with CAD dispatch to automatically display nearby cameras at an incident, with GIS to visualize camera coverage on the operational map, and with field systems to share real-time video with units on the ground. KabatOne K-Video operates natively with K-Dispatch and K-Safety in a single unified platform.',
+            'Yes. Advanced VMS platforms integrate with CAD dispatch to automatically display nearby cameras at an incident, with GIS to visualize camera coverage on the operational map, and with field systems to share real-time video with units on the ground. Kabat One K-Video operates natively with K-Dispatch and K-Safety in a single unified platform.',
         },
         {
           question: 'What AI analytics does a modern VMS include?',
@@ -117,27 +117,27 @@ export default async function WhatIsVideoManagementSoftwarePage({
         {
           question: 'What is an audio video management system?',
           answer:
-            'An audio video management system (AVMS) is a VMS platform that handles both video surveillance feeds and audio streams — including gunshot detection sensors, intercom systems, and ambient microphones — in a single unified interface. For public safety command centers, an audio video management system allows operators to correlate a gunshot alert from an acoustic sensor with the nearest camera feed automatically, speeding incident verification and dispatch. KabatOne K-Video integrates video, LPR, and audio event sources into one operational view.',
+            'An audio video management system (AVMS) is a VMS platform that handles both video surveillance feeds and audio streams — including gunshot detection sensors, intercom systems, and ambient microphones — in a single unified interface. For public safety command centers, an audio video management system allows operators to correlate a gunshot alert from an acoustic sensor with the nearest camera feed automatically, speeding incident verification and dispatch. Kabat One K-Video integrates video, LPR, and audio event sources into one operational view.',
         },
         {
           question: 'What is a general VMS and how does it differ from a public safety VMS?',
           answer:
-            'A general VMS (general-purpose video management software) is designed for broad commercial applications — retail, corporate campuses, warehouses — with emphasis on recording and basic playback. A public safety VMS is built specifically for law enforcement, command centers, and municipal operations. It adds capabilities a general VMS typically lacks: native CAD dispatch integration so camera alerts trigger incident creation automatically, real-time GIS mapping of camera locations, multi-agency access control, forensic search across thousands of cameras simultaneously, and compliance logging for evidence chain-of-custody. KabatOne K-Video is purpose-built for public safety, not adapted from a general-purpose VMS.',
+            'A general VMS (general-purpose video management software) is designed for broad commercial applications — retail, corporate campuses, warehouses — with emphasis on recording and basic playback. A public safety VMS is built specifically for law enforcement, command centers, and municipal operations. It adds capabilities a general VMS typically lacks: native CAD dispatch integration so camera alerts trigger incident creation automatically, real-time GIS mapping of camera locations, multi-agency access control, forensic search across thousands of cameras simultaneously, and compliance logging for evidence chain-of-custody. Kabat One K-Video is purpose-built for public safety, not adapted from a general-purpose VMS.',
         },
         {
           question: 'What is the best VMS software for public safety?',
           answer:
-            'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, KabatOne integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
+            'The best VMS software for public safety depends on deployment size, existing camera protocols, integration requirements, and budget. For agencies that need video management only, dedicated VMS platforms like Genetec Security Center, Milestone XProtect, or Avigilon Control Center cover core needs well. For agencies that also require CAD dispatch, operational GIS, and field management in one platform, Kabat One integrates VMS (K-Video), CAD dispatch (K-Dispatch), and situational awareness (K-Safety) without additional middleware — eliminating integration complexity across different vendor systems. The right evaluation always starts from operational requirements, not from the platform.',
         },
         {
           question: 'What is a CCTV video management system?',
           answer:
-            'A CCTV video management system is VMS software that centralizes feeds from CCTV surveillance cameras — regardless of brand or protocol — into one interface for live monitoring, recording, playback, and AI analytics. Unlike a standalone DVR or NVR, an enterprise video management system scales to tens of thousands of CCTV cameras across multiple sites, adds forensic search and license plate recognition, and integrates with dispatch and GIS. KabatOne K-Video is a public-safety CCTV video management system that unifies citywide camera networks with CAD and mapping in a single operational view.',
+            'A CCTV video management system is VMS software that centralizes feeds from CCTV surveillance cameras — regardless of brand or protocol — into one interface for live monitoring, recording, playback, and AI analytics. Unlike a standalone DVR or NVR, an enterprise video management system scales to tens of thousands of CCTV cameras across multiple sites, adds forensic search and license plate recognition, and integrates with dispatch and GIS. Kabat One K-Video is a public-safety CCTV video management system that unifies citywide camera networks with CAD and mapping in a single operational view.',
         },
         {
           question: 'What is the difference between VMS software and PSIM?',
           answer:
-            'VMS (Video Management Software) specifically manages video surveillance cameras: recording, playback, video analytics, and forensic search. PSIM (Physical Security Information Management) is an integration layer that connects multiple security systems — VMS, access control, intrusion detection, alarms — into a single interface, without replacing them. The key difference: VMS is a functional video platform; PSIM is a system aggregator. Unified public safety platforms like KabatOne go beyond both: they integrate video, CAD dispatch, GIS, and field operations into a single database and single alert engine — eliminating the need for a separate PSIM layer.',
+            'VMS (Video Management Software) specifically manages video surveillance cameras: recording, playback, video analytics, and forensic search. PSIM (Physical Security Information Management) is an integration layer that connects multiple security systems — VMS, access control, intrusion detection, alarms — into a single interface, without replacing them. The key difference: VMS is a functional video platform; PSIM is a system aggregator. Unified public safety platforms like Kabat One go beyond both: they integrate video, CAD dispatch, GIS, and field operations into a single database and single alert engine — eliminating the need for a separate PSIM layer.',
         },
       ]
 
@@ -237,9 +237,9 @@ export default async function WhatIsVideoManagementSoftwarePage({
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: 'rgba(59,130,246,0.06)', borderRadius: '0 8px 8px 0', padding: '20px 24px', marginBottom: '28px' }}>
               <p style={{ fontSize: '16px', color: '#e2e8f0', lineHeight: 1.75, margin: 0 }}>
                 {es ? (
-                  <><strong style={{ color: '#f0f4f8' }}>El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante en una sola interfaz para grabar, reproducir y analizar el video de forma centralizada.</strong> Un VMS moderno para seguridad pública va más allá de la grabación: ejecuta analítica de IA sobre el flujo de video y se integra con despacho CAD y GIS operacional. K-Video de KabatOne es un VMS para seguridad pública que unifica cámaras de cualquier marca y envía solo los eventos relevantes al mapa operativo del centro de mando.</>
+                  <><strong style={{ color: '#f0f4f8' }}>El software de gestión de video (VMS) es una plataforma que agrega feeds de cámaras de videovigilancia de cualquier fabricante en una sola interfaz para grabar, reproducir y analizar el video de forma centralizada.</strong> Un VMS moderno para seguridad pública va más allá de la grabación: ejecuta analítica de IA sobre el flujo de video y se integra con despacho CAD y GIS operacional. K-Video de Kabat One es un VMS para seguridad pública que unifica cámaras de cualquier marca y envía solo los eventos relevantes al mapa operativo del centro de mando.</>
                 ) : (
-                  <><strong style={{ color: '#f0f4f8' }}>Video management software (VMS) is a platform that aggregates surveillance camera feeds from any manufacturer into a single interface to record, play back, and analyze video centrally.</strong> A modern public-safety VMS goes beyond recording: it runs AI analytics on the video stream and integrates with CAD dispatch and operational GIS. KabatOne&apos;s K-Video is a public-safety VMS that unifies cameras from any brand and pushes only the relevant events to the command-center operational map.</>
+                  <><strong style={{ color: '#f0f4f8' }}>Video management software (VMS) is a platform that aggregates surveillance camera feeds from any manufacturer into a single interface to record, play back, and analyze video centrally.</strong> A modern public-safety VMS goes beyond recording: it runs AI analytics on the video stream and integrates with CAD dispatch and operational GIS. Kabat One&apos;s K-Video is a public-safety VMS that unifies cameras from any brand and pushes only the relevant events to the command-center operational map.</>
                 )}
               </p>
             </div>
@@ -252,8 +252,8 @@ export default async function WhatIsVideoManagementSoftwarePage({
             <h3 style={h3Style}>{es ? 'Agregación de Cámaras Multi-Fabricante' : 'Multi-Manufacturer Camera Aggregation'}</h3>
             <p style={pStyle}>
               {es
-                ? 'Un VMS agrega cámaras de cualquier fabricante — Axis, Hikvision, Dahua, Bosch, Hanwha, Pelco — usando protocolos estándar como ONVIF y RTSP, además de protocolos propietarios. Esto permite a las agencias de seguridad pública desplegar y mantener cámaras de múltiples marcas sin estar atados a un solo proveedor. KabatOne K-Video soporta cámaras de cualquier marca en una sola vista con capacidad de búsqueda.'
-                : 'A VMS aggregates cameras from any manufacturer — Axis, Hikvision, Dahua, Bosch, Hanwha, Pelco — using standard protocols like ONVIF and RTSP, plus proprietary protocols. This allows public safety agencies to deploy and maintain cameras from multiple brands without single-vendor lock-in. KabatOne K-Video supports cameras from any brand in a single searchable view.'}
+                ? 'Un VMS agrega cámaras de cualquier fabricante — Axis, Hikvision, Dahua, Bosch, Hanwha, Pelco — usando protocolos estándar como ONVIF y RTSP, además de protocolos propietarios. Esto permite a las agencias de seguridad pública desplegar y mantener cámaras de múltiples marcas sin estar atados a un solo proveedor. Kabat One K-Video soporta cámaras de cualquier marca en una sola vista con capacidad de búsqueda.'
+                : 'A VMS aggregates cameras from any manufacturer — Axis, Hikvision, Dahua, Bosch, Hanwha, Pelco — using standard protocols like ONVIF and RTSP, plus proprietary protocols. This allows public safety agencies to deploy and maintain cameras from multiple brands without single-vendor lock-in. Kabat One K-Video supports cameras from any brand in a single searchable view.'}
             </p>
 
             <h3 style={h3Style}>{es ? 'Grabación y Almacenamiento' : 'Recording and Storage'}</h3>
@@ -269,7 +269,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                 ? 'Los VMS de última generación ejecutan modelos de IA directamente sobre el flujo de video: detección y clasificación de objetos (personas, vehículos, armas), reconocimiento de placas vehiculares (LPR/ALPR), reconocimiento facial, análisis de comportamiento (merodeo, intrusión perimetral, abandono de objeto), conteo de personas y mapas de calor. Cada detección genera una alerta automática al operador con la imagen del evento y la ubicación de la cámara en el mapa.'
                 : 'State-of-the-art VMS systems run AI models directly on the video stream: object detection and classification (people, vehicles, weapons), license plate recognition (LPR/ALPR), facial recognition, behavioral analysis (loitering, perimeter intrusion, abandoned object), people counting, and heat maps. Each detection generates an automatic alert to the operator with the event image and the camera location on the map.'}{' '}
               <Link href="/k-video" style={{ color: ACCENT, fontWeight: 500, textDecoration: 'none', borderBottom: `1px solid ${ACCENT}40` }}>
-                {es ? 'K-Video de KabatOne' : "KabatOne's K-Video"}
+                {es ? 'K-Video de Kabat One' : "Kabat One's K-Video"}
               </Link>
               {es
                 ? ' ejecuta estas capacidades de IA nativamente — integradas con despacho CAD y GIS operacional.'
@@ -353,8 +353,8 @@ export default async function WhatIsVideoManagementSoftwarePage({
             </p>
             <p style={pStyle}>
               {es
-                ? 'Las plataformas unificadas de seguridad pública como KabatOne integran VMS, despacho CAD, GIS y operaciones de campo en un solo entorno. Cuando un operador crea un incidente en K-Dispatch, las cámaras cercanas aparecen automáticamente en K-Video, la posición se marca en el mapa de K-Safety y las unidades reciben la alerta en su dispositivo móvil — todo sin cambiar de sistema ni depender de integración middleware.'
-                : 'Unified public safety platforms like KabatOne integrate VMS, CAD dispatch, GIS, and field operations into a single environment. When an operator creates an incident in K-Dispatch, nearby cameras automatically appear in K-Video, the position is marked on the K-Safety map, and units receive the alert on their mobile device — all without switching systems or relying on middleware integration.'}
+                ? 'Las plataformas unificadas de seguridad pública como Kabat One integran VMS, despacho CAD, GIS y operaciones de campo en un solo entorno. Cuando un operador crea un incidente en K-Dispatch, las cámaras cercanas aparecen automáticamente en K-Video, la posición se marca en el mapa de K-Safety y las unidades reciben la alerta en su dispositivo móvil — todo sin cambiar de sistema ni depender de integración middleware.'
+                : 'Unified public safety platforms like Kabat One integrate VMS, CAD dispatch, GIS, and field operations into a single environment. When an operator creates an incident in K-Dispatch, nearby cameras automatically appear in K-Video, the position is marked on the K-Safety map, and units receive the alert on their mobile device — all without switching systems or relying on middleware integration.'}
             </p>
           </div>
         </section>
@@ -420,11 +420,11 @@ export default async function WhatIsVideoManagementSoftwarePage({
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: 'var(--cyan)', marginBottom: '14px' }}>
               {es ? 'Explora los Productos' : 'Explore the Products'}
             </p>
-            <h2 style={{ ...h2Style, marginBottom: '12px' }}>KabatOne K-Video</h2>
+            <h2 style={{ ...h2Style, marginBottom: '12px' }}>Kabat One K-Video</h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'K-Video es el módulo VMS de KabatOne. Opera nativamente con K-Dispatch (despacho CAD), K-Safety (GIS y conciencia situacional) y K-Traffic (gestión de tráfico) en una sola plataforma unificada.'
-                : 'K-Video is KabatOne\'s VMS module. It operates natively with K-Dispatch (CAD dispatch), K-Safety (GIS and situational awareness), and K-Traffic (traffic management) in a single unified platform.'}
+                ? 'K-Video es el módulo VMS de Kabat One. Opera nativamente con K-Dispatch (despacho CAD), K-Safety (GIS y conciencia situacional) y K-Traffic (gestión de tráfico) en una sola plataforma unificada.'
+                : 'K-Video is Kabat One\'s VMS module. It operates natively with K-Dispatch (CAD dispatch), K-Safety (GIS and situational awareness), and K-Traffic (traffic management) in a single unified platform.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -487,7 +487,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
               {es ? 'Preguntas Comunes sobre Software VMS' : 'Common Questions About VMS Software'}
             </h2>
             <p style={{ fontSize: '12px', color: 'var(--muted)', marginBottom: '32px' }}>
-              {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de KabatOne' : 'Updated: July 2026 · Reviewed by the KabatOne platform team'}
+              {es ? 'Actualizado: julio de 2026 · Revisado por el equipo de plataforma de Kabat One' : 'Updated: July 2026 · Reviewed by the Kabat One platform team'}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {faqs.map((faq, i) => (
@@ -513,7 +513,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
                 { href: '/resources/what-is-cad-dispatch-software', en: 'What Is CAD Dispatch Software?', es: '¿Qué es el software CAD de despacho?' },
                 { href: '/resources/what-is-a-public-safety-platform', en: 'What Is a Public Safety Platform?', es: '¿Qué es una plataforma de seguridad pública?' },
                 { href: '/resources/what-is-a-real-time-crime-center', en: 'What Is a Real-Time Crime Center (RTCC)?', es: '¿Qué es un centro de crimen en tiempo real (RTCC)?' },
-                { href: '/vs/avigilon', en: 'KabatOne vs Avigilon (VMS comparison)', es: 'KabatOne vs Avigilon (comparación VMS)' },
+                { href: '/vs/avigilon', en: 'Kabat One vs Avigilon (VMS comparison)', es: 'Kabat One vs Avigilon (comparación VMS)' },
                 { href: '/resources/ai-in-public-safety', en: 'AI in Public Safety: A Guide for Cities', es: 'IA en Seguridad Pública: Guía para Ciudades' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderRadius: '8px', border: '1px solid var(--border)', textDecoration: 'none', color: 'var(--dim)', fontSize: '15px' }}>
@@ -529,7 +529,7 @@ export default async function WhatIsVideoManagementSoftwarePage({
         <CTASection
           es={es}
           h2={es ? 'Ve K-Video en Acción en tu Ciudad' : 'See K-Video in Action for Your City'}
-          subtitle={es ? 'KabatOne K-Video agrega cámaras de cualquier marca con analítica de IA en una sola plataforma. Solicita una demostración con datos reales.' : 'KabatOne K-Video aggregates cameras from any brand with AI analytics in one unified platform. Request a live demo with real data.'}
+          subtitle={es ? 'Kabat One K-Video agrega cámaras de cualquier marca con analítica de IA en una sola plataforma. Solicita una demostración con datos reales.' : 'Kabat One K-Video aggregates cameras from any brand with AI analytics in one unified platform. Request a live demo with real data.'}
         />
 
         <Footer es={es} />

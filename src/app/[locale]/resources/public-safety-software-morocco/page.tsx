@@ -12,63 +12,63 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const faqs = [
   {
-    question: "How does KabatOne integrate with the Royal Gendarmerie and Sûreté Nationale in Morocco?",
-    answer: "KabatOne aligns with Morocco's dual policing structure — integrating with the Direction Générale de la Sûreté Nationale (DGSN) for urban areas and the Gendarmerie Royale for rural and highway zones — providing unified CAD dispatch, real-time operations center management, and reporting compatible with the Ministry of Interior (MdI) command protocols across Morocco's 12 regions and 75 prefectures/provinces."
+    question: "How does Kabat One integrate with the Royal Gendarmerie and Sûreté Nationale in Morocco?",
+    answer: "Kabat One aligns with Morocco's dual policing structure — integrating with the Direction Générale de la Sûreté Nationale (DGSN) for urban areas and the Gendarmerie Royale for rural and highway zones — providing unified CAD dispatch, real-time operations center management, and reporting compatible with the Ministry of Interior (MdI) command protocols across Morocco's 12 regions and 75 prefectures/provinces."
   },
   {
-    question: "Can KabatOne support Morocco's Protection Civile emergency response?",
-    answer: "Yes. KabatOne integrates the Direction Générale de la Protection Civile (DGPC) with 120+ fire and rescue stations, Direction Générale de la Météorologie (DGM) weather alerts, Agence du Bassin Hydraulique (ABH) flood monitoring, and ONSSA (earthquake/disaster) coordination — enabling unified multi-agency dispatch and incident management across all 12 regions."
+    question: "Can Kabat One support Morocco's Protection Civile emergency response?",
+    answer: "Yes. Kabat One integrates the Direction Générale de la Protection Civile (DGPC) with 120+ fire and rescue stations, Direction Générale de la Météorologie (DGM) weather alerts, Agence du Bassin Hydraulique (ABH) flood monitoring, and ONSSA (earthquake/disaster) coordination — enabling unified multi-agency dispatch and incident management across all 12 regions."
   },
   {
-    question: "How does KabatOne handle Morocco's personal data protection under Law 09-08 and CNDP?",
-    answer: "KabatOne is designed for compliance with Morocco's Law 09-08 on Personal Data Protection — implementing data subject rights (access, rectification, opposition), mandatory registration with CNDP (Commission Nationale de contrôle de la protection des Données à caractère Personnel), lawful processing conditions, and cross-border transfer authorizations aligned with CNDP guidelines."
+    question: "How does Kabat One handle Morocco's personal data protection under Law 09-08 and CNDP?",
+    answer: "Kabat One is designed for compliance with Morocco's Law 09-08 on Personal Data Protection — implementing data subject rights (access, rectification, opposition), mandatory registration with CNDP (Commission Nationale de contrôle de la protection des Données à caractère Personnel), lawful processing conditions, and cross-border transfer authorizations aligned with CNDP guidelines."
   },
   {
-    question: "Can KabatOne support Morocco's Safe City initiatives including Rabat and Casablanca?",
-    answer: "Yes. KabatOne integrates Casablanca Safe City CCTV network (15,000+ cameras), Rabat Integrated Security Centre cameras, Gendarmerie Royale ANPR on highways, and DGSN surveillance systems — providing AI-powered analytics and unified command visibility for Morocco's urban centers as part of the Smart Morocco and Digital Morocco 2030 strategy."
+    question: "Can Kabat One support Morocco's Safe City initiatives including Rabat and Casablanca?",
+    answer: "Yes. Kabat One integrates Casablanca Safe City CCTV network (15,000+ cameras), Rabat Integrated Security Centre cameras, Gendarmerie Royale ANPR on highways, and DGSN surveillance systems — providing AI-powered analytics and unified command visibility for Morocco's urban centers as part of the Smart Morocco and Digital Morocco 2030 strategy."
   },
   {
-    question: "How does KabatOne support Morocco's 2030 FIFA World Cup and mega-event security planning?",
-    answer: "KabatOne supports FIFA 2030 World Cup security operations by providing integrated command center capabilities for Morocco's 6 host cities (Casablanca, Rabat, Marrakech, Fez, Tangier, Agadir), multi-agency coordination between DGSN, Gendarmerie, Protection Civile, and venue security, and real-time situational awareness for millions of international visitors."
+    question: "How does Kabat One support Morocco's 2030 FIFA World Cup and mega-event security planning?",
+    answer: "Kabat One supports FIFA 2030 World Cup security operations by providing integrated command center capabilities for Morocco's 6 host cities (Casablanca, Rabat, Marrakech, Fez, Tangier, Agadir), multi-agency coordination between DGSN, Gendarmerie, Protection Civile, and venue security, and real-time situational awareness for millions of international visitors."
   },
   {
-    question: "What cybersecurity compliance does KabatOne offer for Moroccan government systems?",
-    answer: "KabatOne aligns with Morocco's Law 05-20 on Cybersecurity (2020), Directive Nationale de la Sécurité des Systèmes d'Information (DNSSI 2014), DGSSI (Direction Générale de la Sécurité des Systèmes d'Information/maCERT) standards, and NIP (Normes et Indicateurs de Performance) for critical infrastructure — meeting requirements for national and regional government ICT procurement."
+    question: "What cybersecurity compliance does Kabat One offer for Moroccan government systems?",
+    answer: "Kabat One aligns with Morocco's Law 05-20 on Cybersecurity (2020), Directive Nationale de la Sécurité des Systèmes d'Information (DNSSI 2014), DGSSI (Direction Générale de la Sécurité des Systèmes d'Information/maCERT) standards, and NIP (Normes et Indicateurs de Performance) for critical infrastructure — meeting requirements for national and regional government ICT procurement."
   },
   {
-    question: "What procurement pathway does KabatOne support in Morocco?",
-    answer: "KabatOne supports procurement through the portail des marchés publics (marchespublics.gov.ma) under Décret n° 2-12-349 (Public Procurement Decree 2013, updated 2022) — including appel d'offres ouvert, appel d'offres restreint, and bon de commande for security/emergency systems, with Ministry of Interior specialized procurement channels for national security ICT."
+    question: "What procurement pathway does Kabat One support in Morocco?",
+    answer: "Kabat One supports procurement through the portail des marchés publics (marchespublics.gov.ma) under Décret n° 2-12-349 (Public Procurement Decree 2013, updated 2022) — including appel d'offres ouvert, appel d'offres restreint, and bon de commande for security/emergency systems, with Ministry of Interior specialized procurement channels for national security ICT."
   }
 ]
 
 const faqsEs = [
   {
-    question: "¿Cómo se integra KabatOne con la Gendarmería Real y la Sûreté Nationale de Marruecos?",
-    answer: "KabatOne se alinea con la estructura policial dual de Marruecos — integrándose con la Dirección General de Seguridad Nacional (DGSN) para áreas urbanas y la Gendarmería Real para zonas rurales y de autopistas — proporcionando despacho CAD unificado, gestión del centro de operaciones y reportes compatibles con los protocolos de mando del Ministerio del Interior en 12 regiones y 75 prefecturas/provincias."
+    question: "¿Cómo se integra Kabat One con la Gendarmería Real y la Sûreté Nationale de Marruecos?",
+    answer: "Kabat One se alinea con la estructura policial dual de Marruecos — integrándose con la Dirección General de Seguridad Nacional (DGSN) para áreas urbanas y la Gendarmería Real para zonas rurales y de autopistas — proporcionando despacho CAD unificado, gestión del centro de operaciones y reportes compatibles con los protocolos de mando del Ministerio del Interior en 12 regiones y 75 prefecturas/provincias."
   },
   {
-    question: "¿Puede KabatOne soportar la respuesta de emergencia de la Protection Civile de Marruecos?",
-    answer: "Sí. KabatOne integra la Dirección General de Protección Civil (DGPC) con más de 120 estaciones de bomberos y rescate, alertas meteorológicas de la DGM, monitoreo de inundaciones del ABH y coordinación sísmica/desastres — habilitando despacho multiagencia unificado y gestión de incidentes en las 12 regiones."
+    question: "¿Puede Kabat One soportar la respuesta de emergencia de la Protection Civile de Marruecos?",
+    answer: "Sí. Kabat One integra la Dirección General de Protección Civil (DGPC) con más de 120 estaciones de bomberos y rescate, alertas meteorológicas de la DGM, monitoreo de inundaciones del ABH y coordinación sísmica/desastres — habilitando despacho multiagencia unificado y gestión de incidentes en las 12 regiones."
   },
   {
-    question: "¿Cómo gestiona KabatOne la protección de datos personales bajo la Ley 09-08 y la CNDP de Marruecos?",
-    answer: "KabatOne está diseñado para cumplimiento con la Ley 09-08 de Protección de Datos Personales de Marruecos — implementando derechos del titular (acceso, rectificación, oposición), registro obligatorio ante la CNDP, condiciones de procesamiento lícito y autorizaciones de transferencia transfronteriza alineadas con las directrices de la CNDP."
+    question: "¿Cómo gestiona Kabat One la protección de datos personales bajo la Ley 09-08 y la CNDP de Marruecos?",
+    answer: "Kabat One está diseñado para cumplimiento con la Ley 09-08 de Protección de Datos Personales de Marruecos — implementando derechos del titular (acceso, rectificación, oposición), registro obligatorio ante la CNDP, condiciones de procesamiento lícito y autorizaciones de transferencia transfronteriza alineadas con las directrices de la CNDP."
   },
   {
-    question: "¿Puede KabatOne soportar las iniciativas Safe City de Marruecos incluyendo Rabat y Casablanca?",
-    answer: "Sí. KabatOne integra la red CCTV Safe City de Casablanca (15,000+ cámaras), las cámaras del Centro de Seguridad Integrado de Rabat, el ANPR de la Gendarmería Real en autopistas y los sistemas de vigilancia de la DGSN — proporcionando analítica de IA y visibilidad de mando unificada en el marco de la estrategia Smart Morocco y Maroc Digital 2030."
+    question: "¿Puede Kabat One soportar las iniciativas Safe City de Marruecos incluyendo Rabat y Casablanca?",
+    answer: "Sí. Kabat One integra la red CCTV Safe City de Casablanca (15,000+ cámaras), las cámaras del Centro de Seguridad Integrado de Rabat, el ANPR de la Gendarmería Real en autopistas y los sistemas de vigilancia de la DGSN — proporcionando analítica de IA y visibilidad de mando unificada en el marco de la estrategia Smart Morocco y Maroc Digital 2030."
   },
   {
-    question: "¿Cómo soporta KabatOne la planificación de seguridad para el Mundial de Fútbol 2030 de Marruecos?",
-    answer: "KabatOne apoya las operaciones de seguridad del Mundial FIFA 2030 proporcionando capacidades de centro de mando integrado para las 6 ciudades sede de Marruecos (Casablanca, Rabat, Marrakech, Fez, Tánger, Agadir), coordinación multiagencia DGSN/Gendarmería/Protection Civile y conciencia situacional en tiempo real para millones de visitantes internacionales."
+    question: "¿Cómo soporta Kabat One la planificación de seguridad para el Mundial de Fútbol 2030 de Marruecos?",
+    answer: "Kabat One apoya las operaciones de seguridad del Mundial FIFA 2030 proporcionando capacidades de centro de mando integrado para las 6 ciudades sede de Marruecos (Casablanca, Rabat, Marrakech, Fez, Tánger, Agadir), coordinación multiagencia DGSN/Gendarmería/Protection Civile y conciencia situacional en tiempo real para millones de visitantes internacionales."
   },
   {
-    question: "¿Qué cumplimiento de ciberseguridad ofrece KabatOne para sistemas gubernamentales marroquíes?",
-    answer: "KabatOne se alinea con la Ley 05-20 sobre Ciberseguridad de Marruecos (2020), la Directiva Nacional de Seguridad de Sistemas de Información (DNSSI 2014), estándares de la DGSSI (maCERT) e indicadores NIP para infraestructura crítica — cumpliendo los requisitos de contratación TIC gubernamental nacional y regional."
+    question: "¿Qué cumplimiento de ciberseguridad ofrece Kabat One para sistemas gubernamentales marroquíes?",
+    answer: "Kabat One se alinea con la Ley 05-20 sobre Ciberseguridad de Marruecos (2020), la Directiva Nacional de Seguridad de Sistemas de Información (DNSSI 2014), estándares de la DGSSI (maCERT) e indicadores NIP para infraestructura crítica — cumpliendo los requisitos de contratación TIC gubernamental nacional y regional."
   },
   {
-    question: "¿Qué vía de contratación soporta KabatOne en Marruecos?",
-    answer: "KabatOne soporta contratación a través del portail des marchés publics (marchespublics.gov.ma) bajo el Decreto N.° 2-12-349 (Decreto de Contratación Pública 2013, actualizado 2022) — incluyendo convocatoria abierta, convocatoria restringida y bon de commande para sistemas de seguridad/emergencia, con canales especializados del Ministerio del Interior para TIC de seguridad nacional."
+    question: "¿Qué vía de contratación soporta Kabat One en Marruecos?",
+    answer: "Kabat One soporta contratación a través del portail des marchés publics (marchespublics.gov.ma) bajo el Decreto N.° 2-12-349 (Decreto de Contratación Pública 2013, actualizado 2022) — incluyendo convocatoria abierta, convocatoria restringida y bon de commande para sistemas de seguridad/emergencia, con canales especializados del Ministerio del Interior para TIC de seguridad nacional."
   }
 ]
 
@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             </p>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
               <h3 className="font-semibold text-blue-900 mb-2">
-                {es ? 'Canales de Contratación KabatOne' : 'KabatOne Procurement Channels'}
+                {es ? 'Canales de Contratación Kabat One' : 'Kabat One Procurement Channels'}
               </h3>
               <ul className="space-y-1 text-blue-800">
                 <li>{es ? '• marchespublics.gov.ma: licitaciones DGSN, DGPC, MdI' : '• marchespublics.gov.ma: DGSN, DGPC, MdI tenders'}</li>
@@ -293,8 +293,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           es={es}
           h2={es ? '¿Listo para modernizar la seguridad pública en Marruecos?' : 'Ready to modernize public safety in Morocco?'}
           subtitle={es
-            ? 'Conozca cómo KabatOne apoya a la DGSN, Gendarmería Real y DGPC de Marruecos con una plataforma unificada conforme a Loi 09-08/CNDP y lista para el Mundial FIFA 2030.'
-            : 'See how KabatOne supports Moroccan DGSN, Royal Gendarmerie, and DGPC with a unified platform compliant with Loi 09-08/CNDP and ready for FIFA 2030 World Cup security.'}
+            ? 'Conozca cómo Kabat One apoya a la DGSN, Gendarmería Real y DGPC de Marruecos con una plataforma unificada conforme a Loi 09-08/CNDP y lista para el Mundial FIFA 2030.'
+            : 'See how Kabat One supports Moroccan DGSN, Royal Gendarmerie, and DGPC with a unified platform compliant with Loi 09-08/CNDP and ready for FIFA 2030 World Cup security.'}
         />
       </main>
       <Footer es={es} />

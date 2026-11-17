@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'KabatOne — Plataforma de Seguridad Pública para Municipios',
+  title: 'Kabat One — Plataforma de Seguridad Pública para Municipios',
   description: 'Una plataforma para despacho, GIS, video e inteligencia de tráfico. Solicita una demo hoy.',
   robots: 'noindex, nofollow',
 }
@@ -84,14 +84,14 @@ export default async function LandingPage({
   const clients = ['C5i Ciudad de México', 'Guardia Nacional', 'SSP Michoacán', 'SSP Jalisco', 'C4 Monterrey']
 
   const selectOptions = es ? [
-    { value: 'demo',        label: 'Demo de la Plataforma KabatOne' },
+    { value: 'demo',        label: 'Demo de la Plataforma Kabat One' },
     { value: 'K-Safety',    label: 'K-Safety — GIS y Conciencia Situacional' },
     { value: 'K-Dispatch',  label: 'K-Dispatch — Despacho Municipal' },
     { value: 'K-Traffic',   label: 'K-Traffic — Gestión de Tráfico' },
     { value: 'Platform',    label: 'Plataforma Completa Avalon' },
     { value: 'Partnership', label: 'Alianza / Integración' },
   ] : [
-    { value: 'demo',        label: 'Full KabatOne Platform Demo' },
+    { value: 'demo',        label: 'Full Kabat One Platform Demo' },
     { value: 'K-Safety',    label: 'K-Safety — GIS & Situational Awareness' },
     { value: 'K-Dispatch',  label: 'K-Dispatch — Emergency Dispatch' },
     { value: 'K-Traffic',   label: 'K-Traffic — Traffic Management' },
@@ -106,7 +106,7 @@ export default async function LandingPage({
         {/* ── FIXED MINIMAL HEADER ── */}
         <header className="lp-header">
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <Image src="/images/logo.png" alt="KabatOne" width={130} height={32} style={{ height: '28px', width: 'auto' }} />
+            <Image src="/images/logo.png" alt="Kabat One" width={130} height={32} style={{ height: '28px', width: 'auto' }} />
           </Link>
           <a href="#lp-form" className="lp-header-cta">
             {ctaText}
@@ -133,8 +133,8 @@ export default async function LandingPage({
             </h1>
             <p className="lp-sub">
               {sp.sub ?? (es
-                ? 'KabatOne unifica cámaras, despacho, GIS y tráfico en una sola pantalla operativa — para que tu equipo responda más rápido, con menos recursos y más rendición de cuentas.'
-                : 'KabatOne unifies cameras, dispatch, GIS, and traffic into one operational screen — so your team responds faster, with fewer resources and full accountability.')}
+                ? 'Kabat One unifica cámaras, despacho, GIS y tráfico en una sola pantalla operativa — para que tu equipo responda más rápido, con menos recursos y más rendición de cuentas.'
+                : 'Kabat One unifies cameras, dispatch, GIS, and traffic into one operational screen — so your team responds faster, with fewer resources and full accountability.')}
             </p>
 
             {/* Stats */}
@@ -255,7 +255,7 @@ export default async function LandingPage({
                 <div className="lp-quote">
                   <div className="lp-quote-mark">❝</div>
                   <blockquote className="lp-quote-text">
-                    KabatOne replaced four separate systems overnight. Our dispatchers had a full common
+                    Kabat One replaced four separate systems overnight. Our dispatchers had a full common
                     operating picture within 72 hours of go-live. It wasn&apos;t an upgrade — it was a
                     different category of tool.
                   </blockquote>

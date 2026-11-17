@@ -50,7 +50,7 @@ export default async function PublicSafetySoftwareSmallCitiesPage({
       answer: 'Si. Las plataformas modulares permiten comenzar con lo que se necesita. Una instalacion basica de video + GIS puede empezar entre $80,000 y $200,000 USD para un municipio pequeno. El modelo modular evita pagar por capacidades que no se necesitan todavia.',
     },
     {
-      question: '¿KabatOne funciona para ciudades de menos de 50,000 habitantes?',
+      question: '¿Kabat One funciona para ciudades de menos de 50,000 habitantes?',
       answer: 'Si. La plataforma escala desde 20 camaras hasta 20,000. Los municipios pequenos tipicamente comienzan con K-Video + K-Safety y agregan K-Dispatch a medida que crecen las operaciones.',
     },
     {
@@ -66,7 +66,7 @@ export default async function PublicSafetySoftwareSmallCitiesPage({
       answer: 'Los despliegues pequenos: 4 a 8 semanas. Instalaciones mayores con integracion de despacho: 3 a 6 meses. El cronograma depende de la cantidad de camaras, integraciones y flujos de trabajo requeridos.',
     },
     {
-      question: '¿KabatOne esta disponible en espanol con soporte en espanol?',
+      question: '¿Kabat One esta disponible en espanol con soporte en espanol?',
       answer: 'Si. Interfaz completa en espanol, soporte en espanol, e integradores locales en Mexico, Peru y el resto de LATAM.',
     },
   ] : [
@@ -75,7 +75,7 @@ export default async function PublicSafetySoftwareSmallCitiesPage({
       answer: 'Yes — modular platforms let you start with what you need. A basic video + GIS installation can start at $80K–$200K USD for a small municipality. The modular model avoids paying for capabilities you do not yet need.',
     },
     {
-      question: 'Does KabatOne work for cities under 50,000 residents?',
+      question: 'Does Kabat One work for cities under 50,000 residents?',
       answer: 'Yes — the platform scales from 20 cameras to 20,000. Small municipalities typically start with K-Video + K-Safety and add K-Dispatch as operations grow.',
     },
     {
@@ -91,7 +91,7 @@ export default async function PublicSafetySoftwareSmallCitiesPage({
       answer: 'Small deployments: 4–8 weeks. Larger installations with dispatch integration: 3–6 months. Timeline depends on camera count, integrations, and workflow requirements.',
     },
     {
-      question: 'Is KabatOne available in Spanish with Spanish-speaking support?',
+      question: 'Is Kabat One available in Spanish with Spanish-speaking support?',
       answer: 'Yes — full Spanish interface, Spanish-language support, and local integrators in Mexico, Peru, and broader LATAM.',
     },
   ]
@@ -566,8 +566,8 @@ export default async function PublicSafetySoftwareSmallCitiesPage({
           es={es}
           h2={es ? 'Una Plataforma que Escala con Tu Ciudad' : 'A Platform That Scales with Your City'}
           subtitle={es
-            ? 'KabatOne funciona con las camaras que ya tienes, se despliega en semanas y puede ser operado por un equipo pequeno. Ideal para municipios que necesitan una solucion real, no una promesa empresarial.'
-            : 'KabatOne works with the cameras you already have, deploys in weeks, and can be operated by a small team. Built for municipalities that need a real solution, not an enterprise promise.'}
+            ? 'Kabat One funciona con las camaras que ya tienes, se despliega en semanas y puede ser operado por un equipo pequeno. Ideal para municipios que necesitan una solucion real, no una promesa empresarial.'
+            : 'Kabat One works with the cameras you already have, deploys in weeks, and can be operated by a small team. Built for municipalities that need a real solution, not an enterprise promise.'}
           cta1={es ? 'Solicita una Demo' : 'Book a Demo'}
           cta2={es ? 'Contactar Ventas' : 'Contact Sales'}
         />

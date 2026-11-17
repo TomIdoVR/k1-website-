@@ -24,11 +24,11 @@ export default async function PublicSafetySoftwareMalta({
   const schema = [
     articleSchema(
       es
-        ? "Software de Seguridad Pública para Malta | Policía/Ejército AFM, Puerto Gran Marsaxlokk, Migración Mediterráneo y Frontex – KabatOne"
-        : "Public Safety Software for Malta | Police/AFM Army, Grand Harbour Marsaxlokk, Mediterranean Migration & Frontex – KabatOne",
+        ? "Software de Seguridad Pública para Malta | Policía/Ejército AFM, Puerto Gran Marsaxlokk, Migración Mediterráneo y Frontex – Kabat One"
+        : "Public Safety Software for Malta | Police/AFM Army, Grand Harbour Marsaxlokk, Mediterranean Migration & Frontex – Kabat One",
       es
-        ? "KabatOne ofrece plataforma de seguridad pública para la Policía maltesa, Fuerzas Armadas AFM y Guardia de Fronteras — gestión del Gran Puerto de La Valeta y Marsaxlokk, ruta migratoria central del Mediterráneo, Schengen y coordinación FRONTEX/Eurosur."
-        : "KabatOne delivers public safety platform for Malta Police, Armed Forces AFM, and Border Guard — Grand Harbour Valletta and Marsaxlokk management, Central Mediterranean migration route, Schengen, and FRONTEX/Eurosur coordination.",
+        ? "Kabat One ofrece plataforma de seguridad pública para la Policía maltesa, Fuerzas Armadas AFM y Guardia de Fronteras — gestión del Gran Puerto de La Valeta y Marsaxlokk, ruta migratoria central del Mediterráneo, Schengen y coordinación FRONTEX/Eurosur."
+        : "Kabat One delivers public safety platform for Malta Police, Armed Forces AFM, and Border Guard — Grand Harbour Valletta and Marsaxlokk management, Central Mediterranean migration route, Schengen, and FRONTEX/Eurosur coordination.",
       es
         ? "https://kabatone.com/es/resources/public-safety-software-malta"
         : "https://kabatone.com/resources/public-safety-software-malta",
@@ -346,13 +346,13 @@ export default async function PublicSafetySoftwareMalta({
         </div>
       </section>
 
-      {/* KabatOne Capabilities */}
+      {/* Kabat One Capabilities */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
             {es
-              ? "Capacidades KabatOne para Malta"
-              : "KabatOne Capabilities for Malta"}
+              ? "Capacidades Kabat One para Malta"
+              : "Kabat One Capabilities for Malta"}
           </h2>
           <p className="text-center text-slate-500 mb-10 max-w-2xl mx-auto">
             {es
@@ -459,8 +459,8 @@ export default async function PublicSafetySoftwareMalta({
         }
         subtitle={
           es
-            ? "KabatOne integra Policía, AFM y Guardia Costera en una plataforma unificada — Gran Puerto La Valeta, Marsaxlokk >3M TEU, SAR Mediterráneo 250.000 km², cumplimiento GDPR/NIS2 y coordinación FRONTEX/EUNAVFOR."
-            : "KabatOne integrates Police, AFM, and Coast Guard in one unified platform — Grand Harbour Valletta, Marsaxlokk >3M TEU, Mediterranean SAR 250,000 km², GDPR/NIS2 compliance, and FRONTEX/EUNAVFOR coordination."
+            ? "Kabat One integra Policía, AFM y Guardia Costera en una plataforma unificada — Gran Puerto La Valeta, Marsaxlokk >3M TEU, SAR Mediterráneo 250.000 km², cumplimiento GDPR/NIS2 y coordinación FRONTEX/EUNAVFOR."
+            : "Kabat One integrates Police, AFM, and Coast Guard in one unified platform — Grand Harbour Valletta, Marsaxlokk >3M TEU, Mediterranean SAR 250,000 km², GDPR/NIS2 compliance, and FRONTEX/EUNAVFOR coordination."
         }
       />
       <Footer es={es} />

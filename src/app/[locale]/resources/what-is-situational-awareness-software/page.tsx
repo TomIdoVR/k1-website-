@@ -53,9 +53,9 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
             'Las herramientas separadas obligan a los operadores a cambiar entre múltiples sistemas — el VMS en un monitor, el CAD en otro, el GIS en un tercero. Cada sistema tiene su propia interfaz, su propia base de datos y sus propias alertas. Una plataforma unificada muestra video, posición de unidades, estado de incidentes y alertas de sensores en una sola pantalla. Los estudios muestran que la integración nativa reduce los tiempos de respuesta entre 30% y 40% comparado con sistemas aislados, porque elimina la fricción de cambio de contexto entre aplicaciones.',
         },
         {
-          question: '¿Cómo ayuda KabatOne con la conciencia situacional?',
+          question: '¿Cómo ayuda Kabat One con la conciencia situacional?',
           answer:
-            'KabatOne provee la plataforma unificada de conciencia situacional: K-Safety es el mapa operativo GIS que muestra incidentes, unidades de campo y alertas en tiempo real. K-Video agrega video en vivo con analítica de IA. K-Dispatch maneja el despacho CAD integrado. K-Traffic monitorea señalización y flujo vehicular. Todo en una sola interfaz. Los operadores del centro de mando ven el video, las posiciones de unidades y el estado del incidente en una pantalla — sin cambiar entre sistemas de diferentes proveedores.',
+            'Kabat One provee la plataforma unificada de conciencia situacional: K-Safety es el mapa operativo GIS que muestra incidentes, unidades de campo y alertas en tiempo real. K-Video agrega video en vivo con analítica de IA. K-Dispatch maneja el despacho CAD integrado. K-Traffic monitorea señalización y flujo vehicular. Todo en una sola interfaz. Los operadores del centro de mando ven el video, las posiciones de unidades y el estado del incidente en una pantalla — sin cambiar entre sistemas de diferentes proveedores.',
         },
         {
           question: '¿Qué es un Cuadro Operativo Común (COP) en conciencia situacional?',
@@ -95,9 +95,9 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
             'Separate tools force operators to switch between multiple systems — VMS on one monitor, CAD on another, GIS on a third. Each system has its own interface, its own database, and its own alerts. A unified platform displays video, unit positions, incident status, and sensor alerts on a single screen. Studies show that native integration reduces response times by 30% to 40% compared to siloed systems because it eliminates the context-switching friction between applications.',
         },
         {
-          question: 'How does KabatOne support situational awareness?',
+          question: 'How does Kabat One support situational awareness?',
           answer:
-            'KabatOne provides the unified situational awareness platform: K-Safety is the GIS operational map showing incidents, field units, and alerts in real time. K-Video aggregates live video with AI analytics. K-Dispatch handles integrated CAD dispatch. K-Traffic monitors signalization and vehicle flow. All in one interface. Command center operators see video, unit positions, and incident status on one screen — without switching between systems from different vendors.',
+            'Kabat One provides the unified situational awareness platform: K-Safety is the GIS operational map showing incidents, field units, and alerts in real time. K-Video aggregates live video with AI analytics. K-Dispatch handles integrated CAD dispatch. K-Traffic monitors signalization and vehicle flow. All in one interface. Command center operators see video, unit positions, and incident status on one screen — without switching between systems from different vendors.',
         },
         {
           question: 'What is a Common Operating Picture (COP) in situational awareness?',
@@ -532,15 +532,15 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
         <section style={sectionStyle}>
           <div style={containerStyle}>
             <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.28em', color: ACCENT, marginBottom: '14px' }}>
-              {es ? 'KabatOne para Conciencia Situacional' : 'KabatOne for Situational Awareness'}
+              {es ? 'Kabat One para Conciencia Situacional' : 'Kabat One for Situational Awareness'}
             </p>
             <h2 style={{ ...h2Style, marginBottom: '12px' }}>
               {es ? 'Una Sola Plataforma para Conciencia Situacional Completa' : 'One Platform for Complete Situational Awareness'}
             </h2>
             <p style={{ ...pStyle, marginBottom: '28px' }}>
               {es
-                ? 'KabatOne unifica todas las capas de conciencia situacional en una sola plataforma: K-Safety provee el mapa operativo GIS con unidades en tiempo real, K-Video gestiona la videovigilancia con analítica de IA, K-Dispatch maneja el despacho CAD integrado, y K-Traffic monitorea señalización y flujo vehicular. Los operadores del centro de mando trabajan desde una sola interfaz sin cambiar entre sistemas de diferentes proveedores.'
-                : 'KabatOne unifies all situational awareness layers into a single platform: K-Safety provides the GIS operational map with real-time units, K-Video manages video surveillance with AI analytics, K-Dispatch handles integrated CAD dispatch, and K-Traffic monitors signalization and vehicle flow. Command center operators work from a single interface without switching between systems from different vendors.'}
+                ? 'Kabat One unifica todas las capas de conciencia situacional en una sola plataforma: K-Safety provee el mapa operativo GIS con unidades en tiempo real, K-Video gestiona la videovigilancia con analítica de IA, K-Dispatch maneja el despacho CAD integrado, y K-Traffic monitorea señalización y flujo vehicular. Los operadores del centro de mando trabajan desde una sola interfaz sin cambiar entre sistemas de diferentes proveedores.'
+                : 'Kabat One unifies all situational awareness layers into a single platform: K-Safety provides the GIS operational map with real-time units, K-Video manages video surveillance with AI analytics, K-Dispatch handles integrated CAD dispatch, and K-Traffic monitors signalization and vehicle flow. Command center operators work from a single interface without switching between systems from different vendors.'}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
               {[
@@ -663,8 +663,8 @@ export default async function WhatIsSituationalAwarenessSoftwarePage({
           es={es}
           h2={es ? '¿Listo para Unificar tu Conciencia Situacional?' : 'Ready to Unify Your Situational Awareness?'}
           subtitle={es
-            ? 'Agenda una demo personalizada y descubre cómo KabatOne conecta video, despacho, GIS y sensores en una sola plataforma operativa.'
-            : 'Schedule a personalized demo and see how KabatOne connects video, dispatch, GIS, and sensors into one operational platform.'}
+            ? 'Agenda una demo personalizada y descubre cómo Kabat One conecta video, despacho, GIS y sensores en una sola plataforma operativa.'
+            : 'Schedule a personalized demo and see how Kabat One connects video, dispatch, GIS, and sensors into one operational platform.'}
         />
       </div>
 

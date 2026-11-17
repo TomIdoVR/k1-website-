@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareEquatorialGuineaPage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Guinea Ecuatorial | FAR/PNR, Puerto de Malabo y Seguridad Petrolera – KabatOne"
-    : "Public Safety Software for Equatorial Guinea | FAR/PNR, Malabo Port & Oil Security – KabatOne";
+    ? "Software de Seguridad Pública para Guinea Ecuatorial | FAR/PNR, Puerto de Malabo y Seguridad Petrolera – Kabat One"
+    : "Public Safety Software for Equatorial Guinea | FAR/PNR, Malabo Port & Oil Security – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de la República (FAR), Policía Nacional, Puerto de Malabo, y seguridad de infraestructura petrolera offshore en Guinea Ecuatorial."
-    : "KabatOne delivers public safety platform for the Armed Forces of the Republic (FAR), National Police, Port of Malabo, and offshore oil infrastructure security in Equatorial Guinea.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de la República (FAR), Policía Nacional, Puerto de Malabo, y seguridad de infraestructura petrolera offshore en Guinea Ecuatorial."
+    : "Kabat One delivers public safety platform for the Armed Forces of the Republic (FAR), National Police, Port of Malabo, and offshore oil infrastructure security in Equatorial Guinea.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-equatorial-guinea"
     : "https://kabatone.com/resources/public-safety-software-equatorial-guinea";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareEquatorialGuineaPage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Guinea Ecuatorial?"
-        : "How does KabatOne support public safety in Equatorial Guinea?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Guinea Ecuatorial?"
+        : "How does Kabat One support public safety in Equatorial Guinea?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAR/PNR en Bioko y Río Muni. Los módulos de seguridad marítima respaldan la guardia costera y protegen plataformas offshore de ExxonMobil/GEPetrol. El sistema de despacho coordina respuesta de emergencia entre Malabo y Bata. La arquitectura cloud-native se adapta a entornos de conectividad limitada."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FAR/PNR operations across Bioko and Rio Muni. Maritime security modules support the coast guard and protect ExxonMobil/GEPetrol offshore platforms. Dispatch system coordinates emergency response between Malabo and Bata. Cloud-native architecture adapts to limited-connectivity environments.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FAR/PNR en Bioko y Río Muni. Los módulos de seguridad marítima respaldan la guardia costera y protegen plataformas offshore de ExxonMobil/GEPetrol. El sistema de despacho coordina respuesta de emergencia entre Malabo y Bata. La arquitectura cloud-native se adapta a entornos de conectividad limitada."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FAR/PNR operations across Bioko and Rio Muni. Maritime security modules support the coast guard and protect ExxonMobil/GEPetrol offshore platforms. Dispatch system coordinates emergency response between Malabo and Bata. Cloud-native architecture adapts to limited-connectivity environments.",
     },
   ];
 
@@ -184,11 +184,11 @@ export default async function PublicSafetySoftwareEquatorialGuineaPage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Guinea Ecuatorial" : "KabatOne Capabilities for Equatorial Guinea"}
+              {es ? "Capacidades Kabat One para Guinea Ecuatorial" : "Kabat One Capabilities for Equatorial Guinea"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

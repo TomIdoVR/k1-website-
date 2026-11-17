@@ -18,11 +18,11 @@ export default async function PublicSafetySoftwareCapeVerdePage({
   const es = locale === "es";
 
   const title = es
-    ? "Software de Seguridad Pública para Cabo Verde | FACV/PNR, Seguridad Marítima Atlántica, Turismo y ECOWAS – KabatOne"
-    : "Public Safety Software for Cape Verde | FACV/PNR, Atlantic Maritime Security, Tourism & ECOWAS – KabatOne";
+    ? "Software de Seguridad Pública para Cabo Verde | FACV/PNR, Seguridad Marítima Atlántica, Turismo y ECOWAS – Kabat One"
+    : "Public Safety Software for Cape Verde | FACV/PNR, Atlantic Maritime Security, Tourism & ECOWAS – Kabat One";
   const description = es
-    ? "KabatOne entrega plataforma de seguridad pública para las Fuerzas Armadas de Cabo Verde (FACV), Policía Nacional, seguridad marítima atlántica, protección del turismo y coordinación ECOWAS — archipiélago estratégico en la encrucijada atlántica."
-    : "KabatOne delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security, tourism protection, and ECOWAS coordination — strategic archipelago at the Atlantic crossroads.";
+    ? "Kabat One entrega plataforma de seguridad pública para las Fuerzas Armadas de Cabo Verde (FACV), Policía Nacional, seguridad marítima atlántica, protección del turismo y coordinación ECOWAS — archipiélago estratégico en la encrucijada atlántica."
+    : "Kabat One delivers public safety platform for Cape Verde Armed Forces (FACV), National Police, Atlantic maritime security, tourism protection, and ECOWAS coordination — strategic archipelago at the Atlantic crossroads.";
   const canonical = es
     ? "https://kabatone.com/es/resources/public-safety-software-cape-verde"
     : "https://kabatone.com/resources/public-safety-software-cape-verde";
@@ -62,11 +62,11 @@ export default async function PublicSafetySoftwareCapeVerdePage({
     },
     {
       question: es
-        ? "¿Cómo apoya KabatOne la seguridad pública en Cabo Verde?"
-        : "How does KabatOne support public safety in Cape Verde?",
+        ? "¿Cómo apoya Kabat One la seguridad pública en Cabo Verde?"
+        : "How does Kabat One support public safety in Cape Verde?",
       answer: es
-        ? "KabatOne integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FACV/PNR en los 22 municipios de las 9 islas. Los módulos marítimos monitorean la ZEE de 734,265 km², los puertos de Mindelo y Praia, y coordinan con la Guardia Costera contra el narcotráfico atlántico e inmigración irregular. El sistema de seguridad turística protege las zonas de resort de Sal y Boa Vista (economía crítica). La arquitectura multi-isla coordina respuesta entre islas con enlaces de radio y satélite. La plataforma se integra con marcos MAOC-N (Centro de Análisis y Operaciones Marítimas — Narcóticos) y ECOWAS/CRESMAO."
-        : "KabatOne integrates video surveillance, CAD dispatch, and situational awareness for FACV/PNR operations across 22 municipalities on all 9 islands. Maritime modules monitor the 734,265 km² EEZ, ports of Mindelo and Praia, and coordinate with Coast Guard against Atlantic drug trafficking and irregular migration. Tourist security system protects resort zones on Sal and Boa Vista (critical economy). Multi-island architecture coordinates inter-island response via radio and satellite links. Platform integrates with MAOC-N (Maritime Analysis and Operations Centre — Narcotics) and ECOWAS/CRESMAO frameworks.",
+        ? "Kabat One integra vigilancia de vídeo, despacho CAD y awareness situacional para operaciones FACV/PNR en los 22 municipios de las 9 islas. Los módulos marítimos monitorean la ZEE de 734,265 km², los puertos de Mindelo y Praia, y coordinan con la Guardia Costera contra el narcotráfico atlántico e inmigración irregular. El sistema de seguridad turística protege las zonas de resort de Sal y Boa Vista (economía crítica). La arquitectura multi-isla coordina respuesta entre islas con enlaces de radio y satélite. La plataforma se integra con marcos MAOC-N (Centro de Análisis y Operaciones Marítimas — Narcóticos) y ECOWAS/CRESMAO."
+        : "Kabat One integrates video surveillance, CAD dispatch, and situational awareness for FACV/PNR operations across 22 municipalities on all 9 islands. Maritime modules monitor the 734,265 km² EEZ, ports of Mindelo and Praia, and coordinate with Coast Guard against Atlantic drug trafficking and irregular migration. Tourist security system protects resort zones on Sal and Boa Vista (critical economy). Multi-island architecture coordinates inter-island response via radio and satellite links. Platform integrates with MAOC-N (Maritime Analysis and Operations Centre — Narcotics) and ECOWAS/CRESMAO frameworks.",
     },
   ];
 
@@ -178,11 +178,11 @@ export default async function PublicSafetySoftwareCapeVerdePage({
           </div>
         </section>
 
-        {/* KabatOne Capabilities */}
+        {/* Kabat One Capabilities */}
         <section className="py-16 px-6 bg-gray-50">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">
-              {es ? "Capacidades KabatOne para Cabo Verde" : "KabatOne Capabilities for Cape Verde"}
+              {es ? "Capacidades Kabat One para Cabo Verde" : "Kabat One Capabilities for Cape Verde"}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>

@@ -17,14 +17,14 @@ export async function generateMetadata({
     // — the page has been declaring a 404 as its social preview.
     ogImage: '/demo/lpr/cam-highway-lpr.jpeg',
     en: {
-      title: 'LPR Detection Walkthrough | KabatOne Platform Demo',
+      title: 'LPR Detection Walkthrough | Kabat One Platform Demo',
       description:
-        'See how KabatOne\'s unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.',
+        'See how Kabat One\'s unified platform handles a stolen vehicle alert — from ALPR detection to field dispatch in under 10 minutes.',
     },
     es: {
-      title: 'Recorrido de Detección LPR | Demo de la Plataforma KabatOne',
+      title: 'Recorrido de Detección LPR | Demo de la Plataforma Kabat One',
       description:
-        'Descubre cómo KabatOne atiende una alerta de vehículo robado: de la detección LPR al despacho en campo en menos de 10 minutos.',
+        'Descubre cómo Kabat One atiende una alerta de vehículo robado: de la detección LPR al despacho en campo en menos de 10 minutos.',
     },
   })
 }
