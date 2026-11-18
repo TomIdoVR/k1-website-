@@ -356,16 +356,29 @@
 
     <div class="timeline">
 
-      <!-- v2.448 -->
-      <div class="tl-entry added" id="v2.448">
+      <!-- v2.449 -->
+      <div class="tl-entry added" id="v2.449">
         <div class="version-header">
-          <div class="tl-meta"><span class="tl-ver">v2.448</span><span class="tl-date">2026-11-17</span></div>
+          <div class="tl-meta"><span class="tl-ver">v2.449</span><span class="tl-date">2026-11-18</span></div>
           <h3 class="tl-title">Playwright smoke tests for the live site</h3>
         </div>
         <div class="tl-body">
           <p><strong>Added:</strong> an <code>e2e/</code> Playwright suite (49 tests, about a minute). The only automated check before this was <code>health-check.yml</code>, which curls <code>/</code> and <code>/es</code> for a 200 and cannot see a broken hero, a dead form or a lost canonical. It covers 13 key pages in EN and ES, the SEO head, <code>robots.txt</code>, <code>llms.txt</code> and the sitemap, the contact and careers forms, navigation and the language switcher, and mobile layout.</p>
           <p><strong>Added:</strong> forms are stubbed at the network layer, so the suite never creates a real lead or application. <code>.github/workflows/e2e.yml</code> runs it after each Vercel deployment, nightly against kabatone.com, and on demand. Scripts: <code>test:e2e</code>, <code>test:e2e:prod</code>, <code>test:e2e:ui</code>.</p>
           <p><strong>Notes:</strong> 49/49 pass against production. No site code changed, so nothing here ships to visitors.</p>
+        </div>
+      </div>
+
+      <!-- v2.448 -->
+      <div class="tl-entry added" id="v2.448">
+        <div class="version-header">
+          <div class="tl-meta"><span class="tl-ver">v2.448</span><span class="tl-date">2026-11-17</span></div>
+          <h3 class="tl-title">ChatGPT and Gemini AI-search checks re-run; trend lines for the weekly report</h3>
+        </div>
+        <div class="tl-body">
+          <p><strong>Added:</strong> the ChatGPT and Gemini checks that stopped on 11-16 for lack of API credit were re-run after the top-up. ChatGPT named Kabat One in 5 of 6 core questions, Gemini in 6 of 8.</p>
+          <p><strong>Added:</strong> a script that builds 7-day and 28-day trend lines for search clicks, search impressions, organic visits and AI-assistant visits. Every weekly report now includes these charts.</p>
+          <p><strong>Changed:</strong> the SEO to-do list closes the API-credit item and records the status of the software directory listings.</p>
         </div>
       </div>
 
