@@ -1,3 +1,11 @@
+## [v2.448] – 2026-11-17 — GEO re-run for ChatGPT and Gemini; 7-day/28-day rolling-window data; ledger update
+**Added**
+- `scripts/rolling_windows.py`: daily GSC clicks/impressions and GA4 sessions (Organic Search, AI Assistant, Referral) with trailing 7-day and 28-day totals and per-day averages, stopping each series on its source's last real day (GSC lags ~2 days). Feeds the line charts now required in every weekly report artifact. `SEO/audits/rolling-2026-11-16.json` is the first output (28d: clicks 631, impressions 148,806, organic sessions 885, AI sessions 40).
+- `SEO/geo/geo-results.csv`: 208 rows from the 11-16 ChatGPT + Gemini re-run after the API top-up. ChatGPT core 5/6 (flat), Gemini core 6/8 (up), Gemini CAD retrieval 15/13 of 15.
+
+**Changed**
+- `SEO/carry-over.md`: OPS-4 closed (credit topped up, re-run done). OPS-3 gets the collaborator fix; verify at the 11-23 Monday push. GEO-5 gets the 11-16/17 directory status (G2 Emergency Management approved, YouTube public, SourceForge claim pending, GovLaunch vendor access requested, FeaturedCustomers waiting).
+
 ## [v2.447] – 2026-11-17 — Brand name is "Kabat One" site-wide; K-Dispatch no longer quotes an implementation duration
 **Changed**
 - Canonical written brand name is now "Kabat One" (Omer, 2026-11-17), matching the logo and the legal entity "Kabat One, S.A. de C.V.". Replaced "KabatOne" with "Kabat One" in all of `src/` (272 files: page copy, EN/ES metadata titles and descriptions, schema, alt text, comments) plus `public/llms.txt`, `public/site.webmanifest` and `public/ebook/siloed-response-en.html`. The domain kabatone.com is unchanged.
