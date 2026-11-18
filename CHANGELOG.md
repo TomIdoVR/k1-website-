@@ -1,3 +1,28 @@
+## [v2.450] – 2026-11-18 — Playwright smoke tests for the live site
+
+**Added**
+- **`e2e/` Playwright suite (49 tests, about a minute).** The only automated check was
+  `health-check.yml`, which curls `/` and `/es` for a 200 and cannot see a broken hero, a dead form
+  or a lost canonical. The suite covers: 13 key pages × EN/ES (200, `lang`, one visible H1, no
+  uncaught JS errors, no same-origin 4xx/5xx); SEO head on 5 pages (canonical, hreflang
+  en/es/x-default, description, JSON-LD parses, distinct ES canonical) plus `robots.txt`,
+  `llms.txt`, `sitemap.xml` and ~40 sampled sitemap URLs; the contact form (EN, ES, error path,
+  required fields); the two-step careers application with screening questions; header/footer
+  links, language switcher and demo CTA; and mobile (no horizontal scroll, menu opens).
+- Forms are stubbed at the network layer (Formspree and `/api/careers/apply`), so the suite never
+  creates a real lead or application.
+- **`.github/workflows/e2e.yml`** runs the suite after every successful Vercel Preview or
+  Production deployment (against that deployment's URL), nightly at 06:17 UTC against
+  https://www.kabatone.com (scheduled runs only fire from `main`), and on demand. Failures upload
+  the report and traces for 14 days. Optional repo secret `VERCEL_AUTOMATION_BYPASS_SECRET` lets
+  it reach protected previews.
+- Scripts: `npm run test:e2e` (local server), `test:e2e:prod` (live site), `test:e2e:ui`.
+
+**Notes**
+- Ported from `nextjs` (v2.405), where the first Action run passed 48 of 49 and caught a real
+  staging bug: `<html lang>` stays `en` after a client-side language switch. `main` is not
+  affected (it serves `lang` server-side); 49/49 pass against production from this branch.
+- No site code changed; nothing here ships to visitors.
 ## [v2.449] – 2026-11-18 — GEO page checks: Google AI-feature hygiene across the whole sitemap
 **Added**
 - `scripts/geo_page_checks.py`: pass/fail checks on every sitemap URL, reimplementing the Google-rule checks from Auriti-Labs/geo-optimizer-skill (logic only; the package itself was reviewed and not installed: unpinned PyPI auto-updates, single maintainer, and its own 341-page study found its GEO score does not predict Perplexity citations). Checks: G-INDEX (200, no noindex, Googlebot allowed), G-SNIPPET (nosnippet / max-snippet / data-nosnippet share), G-CANONICAL (one absolute self-canonical), G-DATES (no future or inverted JSON-LD dates; visible `<time>` agrees), G-SD-VISIBLE (page-level JSON-LD headline/name visible on the page), G-VIEWPORT, G-SITEMAP, and an injection scan (prompt-injection phrases, large inline-hidden text). Exit 1 on any FAIL, so it can gate CI or the Monday job.
